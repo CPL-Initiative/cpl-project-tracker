@@ -205,13 +205,18 @@ function resetFilters() {
         filterBtns.appendChild(updateBtn);
 
         // Rewrite all card-level Update buttons to use shared URL
-        if (SHARED_EXCEL_URL) {
+        function rewriteUpdateBtns() {
+            if (!SHARED_EXCEL_URL) return;
             var cardBtns = document.querySelectorAll('a.update-btn');
             for (var i = 0; i < cardBtns.length; i++) {
                 cardBtns[i].href = SHARED_EXCEL_URL;
                 cardBtns[i].target = '_blank';
             }
         }
+        rewriteUpdateBtns();
+        // Also rewrite after DOM fully loads (in case buttons render late)
+        document.addEventListener('DOMContentLoaded', rewriteUpdateBtns);
+        setTimeout(rewriteUpdateBtns, 500);
     }
 
     // Notes history toggle — show/hide full history per card
