@@ -4,6 +4,12 @@
  * Filters Activity KPI cards (with Goal sub-headers) and Project cards (grouped by Goal)
  */
 
+// ── Shared Excel URL ──
+// When hosted (GitHub Pages, etc.), Update buttons link to this shared URL.
+// Replace with your OneDrive/SharePoint share link.
+// When empty, buttons link to the local Excel file.
+var SHARED_EXCEL_URL = 'https://studentrcc.sharepoint.com/:x:/s/MilitaryArticulationPlatform/IQDty6HbFa5LT570zG79QtgdAaqq7tvOU5lNGue-uVl5-wQ?e=XbOULb';
+
 function applyFilters() {
     var actVal = document.getElementById('filterActivity').value;
     var visVal = document.getElementById('filterVision').value;
@@ -189,13 +195,23 @@ function resetFilters() {
         filterBtns.appendChild(reportBtn);
 
         var updateBtn = document.createElement('a');
-        updateBtn.href = 'CPL_Initiative_Project_List_v3.xlsx';
+        updateBtn.href = SHARED_EXCEL_URL || 'CPL_Initiative_Project_List_v3.xlsx';
+        if (SHARED_EXCEL_URL) updateBtn.target = '_blank';
         updateBtn.innerHTML = '&#9998; Update Projects';
         updateBtn.style.cssText = 'display:inline-flex;align-items:center;gap:0.3rem;background:#C9A84C;color:#FFFFFF;border:none;padding:8px 18px;font-weight:700;cursor:pointer;border-radius:4px;font-size:0.9rem;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;';
         updateBtn.onmouseover = function() { this.style.background = '#b89540'; };
         updateBtn.onmouseout = function() { this.style.background = '#C9A84C'; };
         updateBtn.title = 'Open Excel to update project data';
         filterBtns.appendChild(updateBtn);
+
+        // Rewrite all card-level Update buttons to use shared URL
+        if (SHARED_EXCEL_URL) {
+            var cardBtns = document.querySelectorAll('a.update-btn');
+            for (var i = 0; i < cardBtns.length; i++) {
+                cardBtns[i].href = SHARED_EXCEL_URL;
+                cardBtns[i].target = '_blank';
+            }
+        }
     }
 
     // Notes history toggle — show/hide full history per card
