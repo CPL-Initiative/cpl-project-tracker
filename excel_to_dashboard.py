@@ -1230,6 +1230,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                          f'<span style="font-size:0.8rem;">&#9998;</span> Update</a>'
                          f'<a href="#" '
                          f'class="attach-btn" '
+                         f'data-folder="{kpi_pid} {kpi["name"]}" '
                          f'style="{btn_style}color:#163A5F;background:#fafafa;"'
                          f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
                          f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
@@ -1492,6 +1493,7 @@ def _render_single_project_card(p, update_log=None, attachments=None):
                     title="Open Excel to update cell P{p.get('excel_row', '')}">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
+                    data-folder="{pid} {p['name']}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#163A5F;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;

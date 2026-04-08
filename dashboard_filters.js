@@ -11,8 +11,22 @@
 var SHARED_EXCEL_URL = 'https://studentrcc.sharepoint.com/:x:/s/MilitaryArticulationPlatform/IQDtrAHqCEmCTZXE7sqqeLMZAQkt2PJzGno44GfJVp5b6Ak?e=8W61fK';
 
 // ── Attachments Folder URL ──
-// SharePoint folder for project attachments (workplan docs, reports, etc.)
-var ATTACHMENTS_URL = 'https://studentrcc.sharepoint.com/:f:/s/MilitaryArticulationPlatform/IgDh8urbvLg-QZbE9GUsQdLlAe-90oKBhwbWe26Zn2DAWVM?e=vWAsg5';
+// SharePoint document library base path for constructing subfolder URLs.
+// Each attach button has a data-folder attribute (e.g., "Activity 1", "1.1 MAP Platform Development").
+var ATTACHMENTS_BASE_ID = '/sites/MilitaryArticulationPlatform/Shared Documents/CPL Workplan Dashboard/Attachments';
+var ATTACHMENTS_VIEW_ID = '562abb89-79c8-4db7-bbbe-614229e53d64';
+var ATTACHMENTS_SITE = 'https://studentrcc.sharepoint.com';
+
+function buildAttachmentUrl(subfolder) {
+    var basePath = ATTACHMENTS_BASE_ID;
+    if (subfolder) {
+        basePath += '/' + subfolder;
+    }
+    return ATTACHMENTS_SITE + '/sites/MilitaryArticulationPlatform/Shared%20Documents/Forms/AllItems.aspx'
+        + '?id=' + encodeURIComponent(basePath)
+        + '&viewid=' + ATTACHMENTS_VIEW_ID;
+}
+var ATTACHMENTS_URL = buildAttachmentUrl('');
 
 function applyFilters() {
     var actVal = document.getElementById('filterActivity').value;
@@ -234,10 +248,11 @@ function resetFilters() {
             }
         }
         function rewriteAttachBtns() {
-            if (!ATTACHMENTS_URL) return;
+            if (!ATTACHMENTS_BASE_ID) return;
             var attachBtns = document.querySelectorAll('a.attach-btn');
             for (var i = 0; i < attachBtns.length; i++) {
-                attachBtns[i].href = ATTACHMENTS_URL;
+                var folder = attachBtns[i].getAttribute('data-folder') || '';
+                attachBtns[i].href = buildAttachmentUrl(folder);
                 attachBtns[i].target = '_blank';
             }
         }
