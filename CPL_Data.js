@@ -100,7 +100,7 @@ window.CPL_DATA = {
         },
         {
           "label": "Eligible CPL",
-          "value": "96K Units"
+          "value": "101k Units"
         }
       ],
       "live": true

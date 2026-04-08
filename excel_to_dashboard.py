@@ -1992,7 +1992,7 @@ def compute_headline_kpis(projects, budget):
             "breakdowns": [
                 {"label": "JST Credits", "value": "{jst_credits} / 30,000"},
                 {"label": "Basic Training Credit", "value": "47 Colleges"},
-                {"label": "Eligible CPL", "value": "96K Units"},
+                {"label": "Eligible CPL", "value": "{eligible_cpl} Units"},
             ],
         },
     }
@@ -2064,17 +2064,26 @@ def merge_live_metrics(kpis, live_data):
                 "live": True,
             }
 
-    # Update Veteran Sprint JST Credits from Military students count
-    if "veteran_sprint" in kpis and "cumulative_students" in kpis:
-        mil_bd = [b for b in kpis["cumulative_students"].get("breakdowns", [])
-                  if b["label"].lower().startswith("military")]
-        if mil_bd:
-            jst_val = mil_bd[0]["value"]
-            # Replace {jst_credits} placeholder in veteran sprint breakdowns
-            for bd in kpis["veteran_sprint"].get("breakdowns", []):
-                if "{jst_credits}" in bd["value"]:
-                    bd["value"] = bd["value"].replace("{jst_credits}", str(jst_val))
-            kpis["veteran_sprint"]["live"] = True
+    # Update Veteran Sprint card from live scraped values
+    if "veteran_sprint" in kpis:
+        vs_bds = kpis["veteran_sprint"].get("breakdowns", [])
+        # JST Credits = Military students count
+        if "cumulative_students" in kpis:
+            mil_students = [b for b in kpis["cumulative_students"].get("breakdowns", [])
+                            if b["label"].lower().startswith("military")]
+            if mil_students:
+                for bd in vs_bds:
+                    if "{jst_credits}" in bd["value"]:
+                        bd["value"] = bd["value"].replace("{jst_credits}", str(mil_students[0]["value"]))
+        # Eligible CPL = Military eligible units
+        if "eligible_units" in kpis:
+            mil_units = [b for b in kpis["eligible_units"].get("breakdowns", [])
+                         if b["label"].lower().startswith("military")]
+            if mil_units:
+                for bd in vs_bds:
+                    if "{eligible_cpl}" in bd["value"]:
+                        bd["value"] = bd["value"].replace("{eligible_cpl}", str(mil_units[0]["value"]))
+        kpis["veteran_sprint"]["live"] = True
 
     kpis["_live_updated"] = live_data.get("scraped_at", "")
     return kpis
