@@ -307,4 +307,80 @@ function resetFilters() {
             historyDiv.style.display = e.target.checked ? 'block' : 'none';
         }
     });
+
+    // ── Mobile: collapsible filter bar ──
+    function setupMobileFilters() {
+        var filterBar = document.querySelector('.filter-bar');
+        if (!filterBar) return;
+
+        // Only activate on narrow screens
+        function isMobile() { return window.innerWidth <= 768; }
+
+        // Wrap filter groups in a collapsible div (only once)
+        if (filterBar.querySelector('.filter-toggle-btn')) return;
+
+        var filterGroups = filterBar.querySelectorAll('.filter-group');
+        var filterBtns = filterBar.querySelector('#filterButtons');
+
+        // Create toggle button
+        var toggleBtn = document.createElement('button');
+        toggleBtn.className = 'filter-toggle-btn';
+        toggleBtn.innerHTML = '<span>Filters & Actions</span><span class="arrow">&#9654;</span>';
+        toggleBtn.type = 'button';
+
+        // Create collapsible wrapper
+        var collapsible = document.createElement('div');
+        collapsible.className = 'filter-collapsible';
+
+        // Move filter groups into collapsible
+        for (var i = 0; i < filterGroups.length; i++) {
+            collapsible.appendChild(filterGroups[i]);
+        }
+        if (filterBtns) collapsible.appendChild(filterBtns);
+
+        // Insert toggle + collapsible into filter bar
+        filterBar.insertBefore(toggleBtn, filterBar.firstChild);
+        filterBar.appendChild(collapsible);
+
+        // Default collapsed on mobile
+        filterBar.classList.add('filters-collapsed');
+
+        toggleBtn.addEventListener('click', function() {
+            if (filterBar.classList.contains('filters-collapsed')) {
+                filterBar.classList.remove('filters-collapsed');
+                filterBar.classList.add('filters-expanded');
+            } else {
+                filterBar.classList.remove('filters-expanded');
+                filterBar.classList.add('filters-collapsed');
+            }
+        });
+
+        // Show/hide toggle based on screen size
+        function checkWidth() {
+            if (isMobile()) {
+                toggleBtn.style.display = 'flex';
+                if (!filterBar.classList.contains('filters-expanded')) {
+                    collapsible.style.display = 'none';
+                    filterBar.classList.add('filters-collapsed');
+                }
+            } else {
+                toggleBtn.style.display = 'none';
+                collapsible.style.display = 'flex';
+                collapsible.style.flexWrap = 'wrap';
+                collapsible.style.gap = '1rem';
+                collapsible.style.alignItems = 'center';
+                collapsible.style.flexDirection = 'row';
+                filterBar.classList.remove('filters-collapsed', 'filters-expanded');
+            }
+        }
+        checkWidth();
+        window.addEventListener('resize', checkWidth);
+    }
+
+    // Run after DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupMobileFilters);
+    } else {
+        setupMobileFilters();
+    }
 })();

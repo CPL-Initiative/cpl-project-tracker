@@ -656,6 +656,56 @@
             .filter-bar {
                 flex-direction: column;
                 align-items: stretch;
+                padding: 0.8rem 1rem;
+            }
+
+            /* Collapsible filters on mobile */
+            .filter-bar .filter-toggle-btn {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                background: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                padding: 0.5rem 0.8rem;
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: var(--navy-primary);
+                cursor: pointer;
+                font-family: 'Source Sans 3', Arial, sans-serif;
+            }
+
+            .filter-bar .filter-toggle-btn .arrow {
+                transition: transform 0.2s;
+                font-size: 0.7rem;
+            }
+
+            .filter-bar.filters-collapsed .filter-toggle-btn .arrow {
+                transform: rotate(0deg);
+            }
+
+            .filter-bar.filters-expanded .filter-toggle-btn .arrow {
+                transform: rotate(90deg);
+            }
+
+            .filter-bar .filter-collapsible {
+                display: none;
+                flex-direction: column;
+                gap: 0.6rem;
+                width: 100%;
+            }
+
+            .filter-bar.filters-expanded .filter-collapsible {
+                display: flex;
+            }
+
+            /* Keep action buttons always visible on mobile */
+            .filter-bar .filter-actions-mobile {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.4rem;
+                width: 100%;
             }
 
             .filter-group {
@@ -688,6 +738,16 @@
             .budget-table td {
                 padding: 0.5rem;
             }
+
+            /* Activity KPI cards single column on mobile */
+            .activity-kpi-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Chart side-by-side → stacked on mobile */
+            .workplan-goals-section table {
+                font-size: 0.7rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -701,6 +761,10 @@
 
             .header .subtitle {
                 font-size: 0.85rem;
+            }
+
+            .filter-bar {
+                padding: 0.6rem 0.8rem;
             }
         }
 
@@ -949,6 +1013,7 @@
         <details class="project-description" style="max-width:800px;margin:0.4rem auto 0;cursor:pointer;"><summary style="font-size:0.82rem;color:#9BBCD8;font-weight:600;list-style:none;display:inline-flex;align-items:center;gap:0.3rem;"><span class="desc-arrow" style="font-size:0.7rem;transition:transform 0.2s;">&#9654;</span> Project Description</summary><div style="font-size:0.82rem;color:#ccc;line-height:1.5;margin-top:0.4rem;padding:0.5rem 0.8rem;border-left:2px solid rgba(155,188,216,0.3);text-align:left;">The CPL Initiative is a statewide effort led by the California Community Colleges Chancellor's Office to expand Credit for Prior Learning opportunities for veterans, working adults, and apprentices across all 116 colleges. Aligned with Vision 2030, the initiative builds AI-enhanced infrastructure, faculty-led credit recommendations, student-centered data systems, and strategic partnerships to ensure prior learning is recognized and applied toward degree completion and career advancement. The initiative has served over 43,000 students, transcribed 97,000+ units, and established the foundation for a permanent statewide CPL service.</div></details><style>.project-description[open] .desc-arrow{transform:rotate(90deg);}</style>
         <div style="margin-top:0.5rem;"><a href="#" class="attach-btn" target="_blank" style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.82rem;color:#fff;text-decoration:none;font-weight:600;padding:6px 14px;border:1px solid rgba(255,255,255,0.3);border-radius:4px;background:rgba(255,255,255,0.1);cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files">&#128206; See Attachments <span style="background:#C9A84C;color:#0A2240;font-size:0.65rem;font-weight:700;padding:1px 6px;border-radius:8px;margin-left:4px;">2</span></a></div>
         <!-- PROJ-INFO-END -->
+        
         
         
         
@@ -5410,6 +5475,8 @@ Cont</td>
     <!-- End Budget Section -->
 
         
+
+                
 
                 
 
