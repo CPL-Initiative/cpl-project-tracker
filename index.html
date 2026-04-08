@@ -993,14 +993,14 @@
 <div class="kpi-bd-row"><span class="kpi-bd-label">Apprentice</span><span class="kpi-bd-value">$6M</span></div>
 </div>
         </div>
-        <div class="kpi-card kpi-card-veteran" style="background:linear-gradient(135deg,#0A2240 0%,#163A5F 100%);color:#fff;">
-            <div class="kpi-number" style="color:#C9A84C;">47 <span style="font-size:0.55em;color:#fff;">Star Colleges</span></div>
-            <div class="kpi-label" style="color:#fff;font-weight:700;font-size:1rem;">Veteran Sprint</div>
-            <div class="kpi-breakdowns" style="margin-top:0.5rem;">
-<div class="kpi-bd-row" style="color:#fff;"><span class="kpi-bd-label" style="color:rgba(255,255,255,0.85);">JST Credits</span><span class="kpi-bd-value" style="color:#C9A84C;font-weight:700;">21,173 / 30,000</span></div>
-<div class="kpi-bd-row" style="color:#fff;"><span class="kpi-bd-label" style="color:rgba(255,255,255,0.85);">Basic Training Credit</span><span class="kpi-bd-value" style="color:#C9A84C;font-weight:700;">47 Colleges</span></div>
-<div class="kpi-bd-row" style="color:#fff;"><span class="kpi-bd-label" style="color:rgba(255,255,255,0.85);">Eligible CPL</span><span class="kpi-bd-value" style="color:#C9A84C;font-weight:700;">96K Units</span></div>
-            </div>
+        <div class="kpi-card">
+            <div class="kpi-number">47 <span class="kpi-live-badge">LIVE</span></div>
+            <div class="kpi-label">VETERAN SPRINT</div>
+            <div class="kpi-sub" style="font-size:0.75rem;opacity:0.85;margin-top:2px;color:#fff;">Star Colleges</div>
+            <div class="kpi-breakdowns"><div class="kpi-bd-row"><span class="kpi-bd-label">JST Credits</span><span class="kpi-bd-value">22,258 / 30,000</span></div>
+<div class="kpi-bd-row"><span class="kpi-bd-label">Basic Training Credit</span><span class="kpi-bd-value">47 Colleges</span></div>
+<div class="kpi-bd-row"><span class="kpi-bd-label">Eligible CPL</span><span class="kpi-bd-value">96K Units</span></div>
+</div>
         </div>
         <div class="kpi-card">
             <div class="kpi-number">$1.12B <span class="kpi-live-badge">LIVE</span></div>
@@ -5901,11 +5901,12 @@ Cont</td>
     },
     "veteran_sprint": {
       "value": "47",
-      "label": "Veteran Sprint",
-      "goals": [
+      "label": "VETERAN SPRINT",
+      "sub": "Star Colleges",
+      "breakdowns": [
         {
           "label": "JST Credits",
-          "value": "21,173 / 30,000"
+          "value": "22,258 / 30,000"
         },
         {
           "label": "Basic Training Credit",
@@ -5915,7 +5916,8 @@ Cont</td>
           "label": "Eligible CPL",
           "value": "96K Units"
         }
-      ]
+      ],
+      "live": true
     },
     "eligible_units": {
       "value": "197k",

@@ -770,30 +770,6 @@ def render_kpi_section_html(kpis, kpi_display_order=None):
         if not kpi:
             continue
 
-        # ── Special rendering for the Veteran Sprint card ──
-        if key == "veteran_sprint":
-            vs = kpi
-            cards_html += (
-                '        <div class="kpi-card kpi-card-veteran"'
-                ' style="background:linear-gradient(135deg,#0A2240 0%,#163A5F 100%);color:#fff;">\n'
-                f'            <div class="kpi-number" style="color:#C9A84C;">'
-                f'{vs.get("value","47")} <span style="font-size:0.55em;color:#fff;">Star Colleges</span></div>\n'
-                f'            <div class="kpi-label" style="color:#fff;font-weight:700;font-size:1rem;">Veteran Sprint</div>\n'
-            )
-            goals = vs.get("goals", [])
-            if goals:
-                cards_html += '            <div class="kpi-breakdowns" style="margin-top:0.5rem;">\n'
-                for g in goals:
-                    cards_html += (
-                        f'<div class="kpi-bd-row" style="color:#fff;">'
-                        f'<span class="kpi-bd-label" style="color:rgba(255,255,255,0.85);">{g["label"]}</span>'
-                        f'<span class="kpi-bd-value" style="color:#C9A84C;font-weight:700;">{g["value"]}</span>'
-                        f'</div>\n'
-                    )
-                cards_html += '            </div>\n'
-            cards_html += '        </div>\n'
-            continue
-
         # ── Standard KPI card rendering ──
         live_badge = ' <span class="kpi-live-badge">LIVE</span>' if kpi.get("live") else ""
         sub_html = ""
@@ -2011,9 +1987,10 @@ def compute_headline_kpis(projects, budget):
         },
         "veteran_sprint": {
             "value": "47",
-            "label": "Veteran Sprint",
-            "goals": [
-                {"label": "JST Credits", "value": "21,173 / 30,000"},
+            "label": "VETERAN SPRINT",
+            "sub": "Star Colleges",
+            "breakdowns": [
+                {"label": "JST Credits", "value": "{jst_credits} / 30,000"},
                 {"label": "Basic Training Credit", "value": "47 Colleges"},
                 {"label": "Eligible CPL", "value": "96K Units"},
             ],
@@ -2086,6 +2063,18 @@ def merge_live_metrics(kpis, live_data):
                 "breakdowns": breakdowns,
                 "live": True,
             }
+
+    # Update Veteran Sprint JST Credits from Military students count
+    if "veteran_sprint" in kpis and "cumulative_students" in kpis:
+        mil_bd = [b for b in kpis["cumulative_students"].get("breakdowns", [])
+                  if b["label"].lower().startswith("military")]
+        if mil_bd:
+            jst_val = mil_bd[0]["value"]
+            # Replace {jst_credits} placeholder in veteran sprint breakdowns
+            for bd in kpis["veteran_sprint"].get("breakdowns", []):
+                if "{jst_credits}" in bd["value"]:
+                    bd["value"] = bd["value"].replace("{jst_credits}", str(jst_val))
+            kpis["veteran_sprint"]["live"] = True
 
     kpis["_live_updated"] = live_data.get("scraped_at", "")
     return kpis

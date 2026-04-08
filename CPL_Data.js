@@ -87,11 +87,12 @@ window.CPL_DATA = {
     },
     "veteran_sprint": {
       "value": "47",
-      "label": "Veteran Sprint",
-      "goals": [
+      "label": "VETERAN SPRINT",
+      "sub": "Star Colleges",
+      "breakdowns": [
         {
           "label": "JST Credits",
-          "value": "21,173 / 30,000"
+          "value": "22,258 / 30,000"
         },
         {
           "label": "Basic Training Credit",
@@ -101,7 +102,8 @@ window.CPL_DATA = {
           "label": "Eligible CPL",
           "value": "96K Units"
         }
-      ]
+      ],
+      "live": true
     },
     "eligible_units": {
       "value": "197k",
