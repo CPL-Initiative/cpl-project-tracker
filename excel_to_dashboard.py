@@ -1579,20 +1579,15 @@ def render_projects_grid_html(projects, update_log=None, attachments=None):
     return html
 
 
-def render_workplan_chart_html(current_students, sub_pops=None, workplan_goals=None):
+def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=None):
     """
-    Render a static SVG line chart showing trend lines for each population
-    toward 2030 goals, with annual goal data points from the Annual Workplan Goals sheet.
+    Render two side-by-side canvas-based trend charts:
+      Left:  Goal trajectory (250K target)
+      Right: Stretch trajectory (500K target)
+    Lines are solid for actual data (up to current year) and dashed for projections.
+    Charts are rendered to <canvas> so users can right-click → Copy Image.
     """
-    W, H = 780, 380
-    PAD_L, PAD_R, PAD_T, PAD_B = 65, 130, 40, 50
-    CW = W - PAD_L - PAD_R
-    CH = H - PAD_T - PAD_B
-
-    START_YR, END_YR = 2024, 2030
-    SPAN = END_YR - START_YR
-    years = list(range(START_YR, END_YR + 1))
-    max_val = 500000
+    import json as _json
 
     def parse_int(v, fallback=0):
         try:
@@ -1609,31 +1604,27 @@ def render_workplan_chart_html(current_students, sub_pops=None, workplan_goals=N
     BASE_MIL, BASE_WF, BASE_APP = 8248, 9181, 196
 
     # ── Look up workplan goal entries by name ──
-    total_wg, mil_wg, wf_wg, app_wg = {}, {}, {}, {}
+    mil_wg, wf_wg, app_wg = {}, {}, {}
     for wg in (workplan_goals or []):
         name_l = wg.get("name", "").lower()
-        wid = wg.get("id", "")
-        if wid == "3.1" and "all" in name_l:
-            total_wg = wg
-        elif "military" in name_l:
+        if "military" in name_l:
             mil_wg = wg
         elif "apprentice" in name_l:
             app_wg = wg
         elif "working" in name_l or "workforce" in name_l:
             wf_wg = wg
 
-    def get_wg(wg_dict, default_goal, default_stretch, default_total, default_stretch_total):
+    def get_wg(wg_dict, def_goal, def_stretch, def_gt, def_st):
         return (
-            wg_dict.get("goal", default_goal),
-            wg_dict.get("stretch", default_stretch),
-            int(wg_dict.get("goal_total", default_total)),
-            int(wg_dict.get("stretch_total", default_stretch_total)),
+            wg_dict.get("goal", def_goal),
+            wg_dict.get("stretch", def_stretch),
+            int(wg_dict.get("goal_total", def_gt)),
+            int(wg_dict.get("stretch_total", def_st)),
         )
 
     mil_goal, mil_str, mil_gt, mil_st = get_wg(mil_wg, [30000]*5, [30000]*5, 70000, 100000)
-    wf_goal, wf_str, wf_gt, wf_st = get_wg(wf_wg, [5000,30000,60000,100000,150000], [10000]*5, 150000, 320000)
-    app_goal, app_str, app_gt, app_st = get_wg(app_wg, [500,2500,7500,12500,20000], [1000]*5, 20000, 80000)
-    _, total_str, total_gt, total_st = get_wg(total_wg, [], [70000]*5, 250000, 500000)
+    wf_goal, wf_str, wf_gt, wf_st = get_wg(wf_wg, [5000]*5, [10000]*5, 150000, 320000)
+    app_goal, app_str, app_gt, app_st = get_wg(app_wg, [500]*5, [1000]*5, 20000, 80000)
 
     def build_trajectory(baseline, annual_vals, endpoint):
         pts = [(2024, baseline)]
@@ -1654,423 +1645,279 @@ def render_workplan_chart_html(current_students, sub_pops=None, workplan_goals=N
                 pts.append((2026 + i, int(baseline + delta * cumul_prop)))
         return pts
 
-    mil_traj = build_trajectory(BASE_MIL, mil_goal, mil_gt)
-    wf_traj = build_trajectory(BASE_WF, wf_goal, wf_gt)
-    app_traj = build_trajectory(BASE_APP, app_goal, app_gt)
+    # Build GOAL trajectories
+    mil_goal_traj = build_trajectory(BASE_MIL, mil_goal, mil_gt)
+    wf_goal_traj = build_trajectory(BASE_WF, wf_goal, wf_gt)
+    app_goal_traj = build_trajectory(BASE_APP, app_goal, app_gt)
 
-    mil_actual = [(2024, BASE_MIL), (2025, 18500), (2026, mil_now)]
-    wf_actual = [(2024, BASE_WF), (2025, 19200), (2026, wf_now)]
-    app_actual = [(2024, BASE_APP), (2025, 300), (2026, app_now)]
+    # Build STRETCH trajectories
+    mil_str_traj = build_trajectory(BASE_MIL, mil_str, mil_st)
+    wf_str_traj = build_trajectory(BASE_WF, wf_str, wf_st)
+    app_str_traj = build_trajectory(BASE_APP, app_str, app_st)
 
-    def merge_series(actual, goal):
-        merged = list(actual)
-        last_yr = actual[-1][0]
-        for yr, val in goal:
-            if yr > last_yr:
-                merged.append((yr, val))
-        return merged
+    # Actuals up to current year
+    mil_actual = [[2024, BASE_MIL], [2025, 18500], [2026, mil_now]]
+    wf_actual = [[2024, BASE_WF], [2025, 19200], [2026, wf_now]]
+    app_actual = [[2024, BASE_APP], [2025, 300], [2026, app_now]]
+    total_actual = [[2024, BASE_MIL + BASE_WF + BASE_APP], [2025, 38000], [2026, total_now]]
 
-    mil_full = merge_series(mil_actual, mil_traj)
-    wf_full = merge_series(wf_actual, wf_traj)
-    app_full = merge_series(app_actual, app_traj)
-
-    total_actual = [(2024, BASE_MIL + BASE_WF + BASE_APP), (2025, 38000), (2026, total_now)]
-    def val_at(series, yr):
-        for y, v in series:
-            if y == yr:
-                return v
-        return 0
-    all_years = sorted(set(yr for yr, _ in mil_full))
-    total_full = merge_series(total_actual, [(yr, val_at(mil_traj, yr) + val_at(wf_traj, yr) + val_at(app_traj, yr)) for yr in all_years])
-
-    # ── SVG helpers ──
-    def x(year):
-        return PAD_L + (year - START_YR) / SPAN * CW
-    def yp(val):
-        return PAD_T + CH - (val / max_val * CH)
-    def fmt_k(v):
-        if v >= 1000:
-            k = v / 1000
-            return f"{k:.0f}K" if k == int(k) else f"{k:.1f}K"
-        return str(v)
-    def polyline_points(data):
-        return " ".join(f"{x(yr):.1f},{yp(val):.1f}" for yr, val in data)
-
-    COL_TARGET = "#aaa"
-    COL_TOTAL = "#0A2240"
-    COL_MIL = "#C9A84C"
-    COL_WF = "#4A90D9"
-    COL_APP = "#2A7D4F"
-
-    svg = f'<svg viewBox="0 0 {W} {H}" style="width:100%;max-width:{W}px;height:auto;font-family:Calibri,sans-serif;" xmlns="http://www.w3.org/2000/svg">\n'
-    svg += f'  <rect x="0" y="0" width="{W}" height="{H}" fill="#FAF8F4" rx="8"/>\n'
-
-    # Grid
-    y_ticks = [0, 50000, 100000, 150000, 200000, 250000, 300000, 400000, 500000]
-    for tick in y_ticks:
-        yy = yp(tick)
-        svg += f'  <line x1="{PAD_L}" y1="{yy:.1f}" x2="{PAD_L + CW}" y2="{yy:.1f}" stroke="#e8e8e8" stroke-width="0.7"/>\n'
-        label = f"{tick // 1000}K" if tick > 0 else "0"
-        svg += f'  <text x="{PAD_L - 8}" y="{yy + 4:.1f}" text-anchor="end" font-size="10" fill="#888">{label}</text>\n'
-    for yr in years:
-        svg += f'  <text x="{x(yr):.1f}" y="{H - 12}" text-anchor="middle" font-size="10" fill="#888">{yr}</text>\n'
-
-    # ── Goal / stretch ceiling lines ──
-    svg += f'  <line x1="{PAD_L}" y1="{yp(total_gt):.1f}" x2="{PAD_L + CW}" y2="{yp(total_gt):.1f}" stroke="#0A2240" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.3"/>\n'
-    svg += f'  <text x="{PAD_L + CW + 4:.1f}" y="{yp(total_gt) + 4:.1f}" font-size="10" font-weight="700" fill="#0A2240">{fmt_k(total_gt)} Goal</text>\n'
-    svg += f'  <line x1="{PAD_L}" y1="{yp(total_st):.1f}" x2="{PAD_L + CW}" y2="{yp(total_st):.1f}" stroke="#E8913A" stroke-width="1.2" stroke-dasharray="6,4" opacity="0.3"/>\n'
-    svg += f'  <text x="{PAD_L + CW + 4:.1f}" y="{yp(total_st) + 4:.1f}" font-size="9" font-weight="600" fill="#E8913A">{fmt_k(total_st)} Stretch</text>\n'
-
-    # ── Vertical "now" marker ──
-    svg += f'  <line x1="{x(2026):.1f}" y1="{PAD_T}" x2="{x(2026):.1f}" y2="{PAD_T + CH}" stroke="#0A2240" stroke-width="1" stroke-dasharray="3,3" opacity="0.15"/>\n'
-    svg += f'  <text x="{x(2026):.1f}" y="{PAD_T - 6}" text-anchor="middle" font-size="9" fill="#0A2240" opacity="0.5">Now</text>\n'
-
-    # ── Shaded area under total ──
-    area_pts = polyline_points(total_full)
-    last_x = x(total_full[-1][0])
-    first_x = x(total_full[0][0])
-    baseline_y = yp(0)
-    svg += (f'  <polygon points="{area_pts} {last_x:.1f},{baseline_y:.1f} {first_x:.1f},{baseline_y:.1f}" '
-            f'fill="{COL_TOTAL}" opacity="0.04"/>\n')
-
-    # ── Trend lines ──
-    svg += f'  <polyline points="{polyline_points(total_full)}" fill="none" stroke="{COL_TOTAL}" stroke-width="3"/>\n'
-    svg += f'  <polyline points="{polyline_points(mil_full)}" fill="none" stroke="{COL_MIL}" stroke-width="2.5"/>\n'
-    svg += f'  <polyline points="{polyline_points(wf_full)}" fill="none" stroke="{COL_WF}" stroke-width="2.5"/>\n'
-    svg += f'  <polyline points="{polyline_points(app_full)}" fill="none" stroke="{COL_APP}" stroke-width="2.5"/>\n'
-
-    # ── Data dots + value labels ──
-    for data, color, label in [(total_full, COL_TOTAL, "total"), (mil_full, COL_MIL, "mil"), (wf_full, COL_WF, "wf"), (app_full, COL_APP, "app")]:
-        r = 4 if label == "total" else 3
-        for yr, val in data:
-            svg += f'  <circle cx="{x(yr):.1f}" cy="{yp(val):.1f}" r="{r}" fill="{color}"/>\n'
-            if yr >= 2026:
-                dy = -9 if label in ("total", "mil") else 13
-                svg += (f'  <text x="{x(yr):.1f}" y="{yp(val) + dy:.1f}" text-anchor="middle" '
-                        f'font-size="9" font-weight="700" fill="{color}">{fmt_k(val)}</text>\n')
-
-    # ── Right-side endpoint labels at 2030 ──
-    endpoints = [
-        (COL_MIL, "Military", mil_full[-1][1], mil_gt, mil_st),
-        (COL_WF, "Workforce", wf_full[-1][1], wf_gt, wf_st),
-        (COL_APP, "Apprentice", app_full[-1][1], app_gt, app_st),
-    ]
-    for color, name, val_2030, goal, stretch in endpoints:
-        ey = yp(val_2030)
-        svg += f'  <text x="{PAD_L + CW + 8:.1f}" y="{ey - 2:.1f}" font-size="9.5" font-weight="700" fill="{color}">{name}</text>\n'
-        svg += f'  <text x="{PAD_L + CW + 8:.1f}" y="{ey + 10:.1f}" font-size="8.5" fill="{color}" opacity="0.8">{fmt_k(goal)} goal</text>\n'
-        svg += f'  <text x="{PAD_L + CW + 8:.1f}" y="{ey + 20:.1f}" font-size="8" fill="#E8913A" opacity="0.7">{fmt_k(stretch)} stretch</text>\n'
-
-    # ── Legend ──
-    leg_y = 16
-    leg_items = [
-        (COL_TOTAL, "Total", False),
-        (COL_MIL, "Military", False),
-        (COL_WF, "Workforce/Other", False),
-        (COL_APP, "Apprentice", False),
-    ]
-    leg_x = PAD_L + 5
-    for color, text, dashed in leg_items:
-        dash = ' stroke-dasharray="6,4"' if dashed else ""
-        svg += f'  <line x1="{leg_x}" y1="{leg_y}" x2="{leg_x + 18}" y2="{leg_y}" stroke="{color}" stroke-width="2.5"{dash}/>\n'
-        svg += f'  <text x="{leg_x + 22}" y="{leg_y + 3.5}" font-size="9.5" fill="#555">{text}</text>\n'
-        leg_x += len(text) * 6 + 32
-
-    svg += f'  <line x1="{leg_x}" y1="{leg_y}" x2="{leg_x + 18}" y2="{leg_y}" stroke="#E8913A" stroke-width="1.5" stroke-dasharray="5,3"/>\n'
-    svg += f'  <text x="{leg_x + 22}" y="{leg_y + 3.5}" font-size="9.5" fill="#E8913A">Stretch Goal</text>\n'
-
-    svg += '</svg>\n'
-
-    return (
-        '        <div style="margin:2rem 0;padding:1.5rem;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">\n'
-        '            <h3 style="color:#0A2240;margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 250,000 by 2030</h3>\n'
-        '            <p style="color:#888;font-size:0.8rem;margin:0 0 1rem 0;">Trend lines &middot; Solid = actual &middot; Projected through 2030</p>\n'
-        f'            {svg}'
-        '        </div>\n'
-    )
-
-
-def render_stacked_area_chart_html(current_students, sub_pops=None, workplan_goals=None):
-    """
-    Render a stacked area chart showing cumulative students served by population,
-    with goal and stretch goal ceilings. Designed for non-technical audiences.
-    """
-    W, H = 850, 440
-    PAD_L, PAD_R, PAD_T, PAD_B = 65, 140, 50, 50
-    CW = W - PAD_L - PAD_R
-    CH = H - PAD_T - PAD_B
-
-    START_YR, END_YR = 2024, 2030
-    SPAN = END_YR - START_YR
-    years = list(range(START_YR, END_YR + 1))
-    max_val = 520000
-
-    def parse_int(v, fallback=0):
-        try:
-            return int(str(v).replace(",", ""))
-        except (ValueError, TypeError):
-            return fallback
-
-    # ── Current live values ──
-    sub_pops = sub_pops or {}
-    mil_now = parse_int(sub_pops.get("military", 21866))
-    wf_now = parse_int(sub_pops.get("workforce", 21526))
-    app_now = parse_int(sub_pops.get("apprentice", 681))
-    total_now = parse_int(current_students, mil_now + wf_now + app_now)
-
-    # ── Baselines (2024 actuals) ──
-    BASE_MIL, BASE_WF, BASE_APP = 8248, 9181, 196
-
-    # ── Look up workplan goal entries by name ──
-    total_wg, mil_wg, wf_wg, app_wg = {}, {}, {}, {}
-    for wg in (workplan_goals or []):
-        name_l = wg.get("name", "").lower()
-        wid = wg.get("id", "")
-        if wid == "3.1" and "all" in name_l:
-            total_wg = wg
-        elif "military" in name_l:
-            mil_wg = wg
-        elif "apprentice" in name_l:
-            app_wg = wg
-        elif "working" in name_l or "workforce" in name_l:
-            wf_wg = wg
-
-    def get_wg(wg_dict, default_goal, default_stretch, default_total, default_stretch_total):
-        return (
-            wg_dict.get("goal", default_goal),
-            wg_dict.get("stretch", default_stretch),
-            int(wg_dict.get("goal_total", default_total)),
-            int(wg_dict.get("stretch_total", default_stretch_total)),
-        )
-
-    mil_goal, mil_str, mil_gt, mil_st = get_wg(mil_wg, [30000]*5, [30000]*5, 70000, 100000)
-    wf_goal, wf_str, wf_gt, wf_st = get_wg(wf_wg, [5000,30000,60000,100000,150000], [10000]*5, 150000, 320000)
-    app_goal, app_str, app_gt, app_st = get_wg(app_wg, [500,2500,7500,12500,20000], [1000]*5, 20000, 80000)
-    _, total_str, total_gt, total_st = get_wg(total_wg, [], [70000]*5, 250000, 500000)
-
-    def build_trajectory(baseline, annual_vals, endpoint):
-        pts = [(2024, baseline)]
-        if not annual_vals:
-            return pts
-        is_cumulative = all(annual_vals[i] >= annual_vals[i-1] for i in range(1, len(annual_vals)) if annual_vals[i] > 0)
-        if is_cumulative and annual_vals[-1] > annual_vals[0]:
-            pts.append((2025, int((baseline + annual_vals[0]) / 2)))
-            for i, val in enumerate(annual_vals):
-                pts.append((2026 + i, int(val)))
-        else:
-            annual_sum = sum(annual_vals) if annual_vals else 1
-            delta = endpoint - baseline
-            pts.append((2025, int(baseline + delta * (annual_vals[0] * 0.5) / annual_sum)))
-            cumul_prop = 0
-            for i, val in enumerate(annual_vals):
-                cumul_prop += val / annual_sum
-                pts.append((2026 + i, int(baseline + delta * cumul_prop)))
-        return pts
-
-    # ── Build per-population goal trajectories ──
-    mil_traj = build_trajectory(BASE_MIL, mil_goal, mil_gt)
-    wf_traj = build_trajectory(BASE_WF, wf_goal, wf_gt)
-    app_traj = build_trajectory(BASE_APP, app_goal, app_gt)
-
-    # ── Actual data (up to 2026), then goal trajectory beyond ──
-    mil_actual = [(2024, BASE_MIL), (2025, 18500), (2026, mil_now)]
-    wf_actual = [(2024, BASE_WF), (2025, 19200), (2026, wf_now)]
-    app_actual = [(2024, BASE_APP), (2025, 300), (2026, app_now)]
-
-    def merge_series(actual, goal):
-        merged = list(actual)
-        last_yr = actual[-1][0]
-        for yr, val in goal:
-            if yr > last_yr:
-                merged.append((yr, val))
-        return merged
-
-    mil_full = merge_series(mil_actual, mil_traj)
-    wf_full = merge_series(wf_actual, wf_traj)
-    app_full = merge_series(app_actual, app_traj)
-
-    # ── Build stacked values at each year ──
-    # Stack order bottom→top: Military, Workforce, Apprentice
-    all_years = sorted(set(yr for yr, _ in mil_full))
     def val_at(series, yr):
         for y, v in series:
             if y == yr:
                 return v
         return 0
 
-    stacked = []
-    for yr in all_years:
-        m = val_at(mil_full, yr)
-        w = val_at(wf_full, yr)
-        a = val_at(app_full, yr)
-        stacked.append((yr, m, m + w, m + w + a))
+    def merge_series(actual, proj):
+        merged = [list(a) for a in actual]
+        last_yr = actual[-1][0]
+        for yr, val in proj:
+            if yr > last_yr:
+                merged.append([yr, val])
+        return merged
 
-    # ── SVG helpers ──
-    def x(year):
-        return PAD_L + (year - START_YR) / SPAN * CW
-    def y(val):
-        return PAD_T + CH - (val / max_val * CH)
-    def fmt_k(v):
-        if v >= 1000:
-            k = v / 1000
-            return f"{k:.0f}K" if k == int(k) else f"{k:.1f}K"
-        return str(v)
+    all_years = list(range(2024, 2031))
 
-    # ── Colors ──
-    COL_MIL = "#C9A84C"
-    COL_MIL_FILL = "#C9A84C"
-    COL_WF = "#4A90D9"
-    COL_WF_FILL = "#4A90D9"
-    COL_APP = "#2A7D4F"
-    COL_APP_FILL = "#2A7D4F"
+    # Total goal / stretch trajectories
+    total_goal_traj = [[yr, val_at(mil_goal_traj, yr) + val_at(wf_goal_traj, yr) + val_at(app_goal_traj, yr)] for yr in all_years]
+    total_str_traj = [[yr, val_at(mil_str_traj, yr) + val_at(wf_str_traj, yr) + val_at(app_str_traj, yr)] for yr in all_years]
 
-    svg = f'<svg viewBox="0 0 {W} {H}" style="width:100%;max-width:{W}px;height:auto;font-family:Calibri,sans-serif;" xmlns="http://www.w3.org/2000/svg">\n'
+    # Full series for each (actual + projected)
+    mil_goal_full = merge_series(mil_actual, mil_goal_traj)
+    wf_goal_full = merge_series(wf_actual, wf_goal_traj)
+    app_goal_full = merge_series(app_actual, app_goal_traj)
+    total_goal_full = merge_series(total_actual, total_goal_traj)
 
-    # ── Definitions for gradients ──
-    svg += '  <defs>\n'
-    svg += '    <linearGradient id="gradMil" x1="0" y1="0" x2="0" y2="1">\n'
-    svg += f'      <stop offset="0%" stop-color="{COL_MIL_FILL}" stop-opacity="0.7"/>\n'
-    svg += f'      <stop offset="100%" stop-color="{COL_MIL_FILL}" stop-opacity="0.3"/>\n'
-    svg += '    </linearGradient>\n'
-    svg += '    <linearGradient id="gradWf" x1="0" y1="0" x2="0" y2="1">\n'
-    svg += f'      <stop offset="0%" stop-color="{COL_WF_FILL}" stop-opacity="0.7"/>\n'
-    svg += f'      <stop offset="100%" stop-color="{COL_WF_FILL}" stop-opacity="0.3"/>\n'
-    svg += '    </linearGradient>\n'
-    svg += '    <linearGradient id="gradApp" x1="0" y1="0" x2="0" y2="1">\n'
-    svg += f'      <stop offset="0%" stop-color="{COL_APP_FILL}" stop-opacity="0.7"/>\n'
-    svg += f'      <stop offset="100%" stop-color="{COL_APP_FILL}" stop-opacity="0.3"/>\n'
-    svg += '    </linearGradient>\n'
-    svg += '  </defs>\n'
+    mil_str_full = merge_series(mil_actual, mil_str_traj)
+    wf_str_full = merge_series(wf_actual, wf_str_traj)
+    app_str_full = merge_series(app_actual, app_str_traj)
+    total_str_full = merge_series(total_actual, total_str_traj)
 
-    svg += f'  <rect x="0" y="0" width="{W}" height="{H}" fill="#FAF8F4" rx="8"/>\n'
+    # Compute totals for targets
+    goal_total = mil_gt + wf_gt + app_gt
+    stretch_total = mil_st + wf_st + app_st
 
-    # ── Grid ──
-    y_ticks = [0, 50000, 100000, 150000, 200000, 250000, 300000, 400000, 500000]
-    for tick in y_ticks:
-        yy = y(tick)
-        svg += f'  <line x1="{PAD_L}" y1="{yy:.1f}" x2="{PAD_L + CW}" y2="{yy:.1f}" stroke="#e0e0e0" stroke-width="0.7"/>\n'
-        label = f"{tick // 1000}K" if tick > 0 else "0"
-        svg += f'  <text x="{PAD_L - 8}" y="{yy + 4:.1f}" text-anchor="end" font-size="10" fill="#999">{label}</text>\n'
-    for yr in years:
-        svg += f'  <text x="{x(yr):.1f}" y="{H - 12}" text-anchor="middle" font-size="11" fill="#666">{yr}</text>\n'
+    # Serialize data for JS
+    chart_data = {
+        "goal": {
+            "total": total_goal_full, "military": mil_goal_full,
+            "workforce": wf_goal_full, "apprentice": app_goal_full,
+            "target": goal_total,
+            "mil_target": mil_gt, "wf_target": wf_gt, "app_target": app_gt,
+        },
+        "stretch": {
+            "total": total_str_full, "military": mil_str_full,
+            "workforce": wf_str_full, "apprentice": app_str_full,
+            "target": stretch_total,
+            "mil_target": mil_st, "wf_target": wf_st, "app_target": app_st,
+        },
+        "currentYear": 2026,
+    }
 
-    # ── Goal ceiling line at 250K ──
-    svg += f'  <line x1="{PAD_L}" y1="{y(total_gt):.1f}" x2="{PAD_L + CW}" y2="{y(total_gt):.1f}" stroke="#0A2240" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.35"/>\n'
-    svg += f'  <text x="{PAD_L + CW + 4:.1f}" y="{y(total_gt) + 4:.1f}" font-size="10" font-weight="700" fill="#0A2240">{fmt_k(total_gt)} Goal</text>\n'
+    data_json = _json.dumps(chart_data)
 
-    # ── Stretch ceiling line at 500K ──
-    svg += f'  <line x1="{PAD_L}" y1="{y(total_st):.1f}" x2="{PAD_L + CW}" y2="{y(total_st):.1f}" stroke="#E8913A" stroke-width="1.2" stroke-dasharray="6,4" opacity="0.35"/>\n'
-    svg += f'  <text x="{PAD_L + CW + 4:.1f}" y="{y(total_st) + 4:.1f}" font-size="9" font-weight="600" fill="#E8913A">{fmt_k(total_st)} Stretch</text>\n'
+    html = f'''        <div style="margin:2rem 0;padding:1.5rem;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <h3 style="color:#0A2240;margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h3>
+            <p style="color:#888;font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
+            <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+                <div style="flex:1;min-width:340px;">
+                    <h4 style="color:#0A2240;font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h4>
+                    <canvas id="goalChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:#FAF8F4;"></canvas>
+                </div>
+                <div style="flex:1;min-width:340px;">
+                    <h4 style="color:#0A2240;font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Stretch Trajectory (500K Target)</h4>
+                    <canvas id="stretchChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:#FAF8F4;"></canvas>
+                </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.8rem 1.5rem;margin-top:0.8rem;font-size:0.8rem;color:#555;align-items:center;">
+                <span><span style="display:inline-block;width:20px;height:3px;background:#0A2240;vertical-align:middle;margin-right:4px;"></span> Total</span>
+                <span><span style="display:inline-block;width:20px;height:3px;background:#C9A84C;vertical-align:middle;margin-right:4px;"></span> Military</span>
+                <span><span style="display:inline-block;width:20px;height:3px;background:#4A90D9;vertical-align:middle;margin-right:4px;"></span> Workforce/Other</span>
+                <span><span style="display:inline-block;width:20px;height:3px;background:#2A7D4F;vertical-align:middle;margin-right:4px;"></span> Apprentice</span>
+                <span style="color:#aaa;">&mdash; Solid = actual &nbsp; - - - Dashed = projected</span>
+            </div>
+        </div>
+        <script>
+        (function() {{
+            var D = {data_json};
+            var COLORS = {{total:'#0A2240',military:'#C9A84C',workforce:'#4A90D9',apprentice:'#2A7D4F'}};
+            var SERIES = ['total','military','workforce','apprentice'];
+            var LABELS = {{total:'Total',military:'Military',workforce:'Workforce',apprentice:'Apprentice'}};
 
-    # ── Vertical "now" marker at 2026 ──
-    svg += f'  <line x1="{x(2026):.1f}" y1="{PAD_T}" x2="{x(2026):.1f}" y2="{PAD_T + CH}" stroke="#0A2240" stroke-width="1" stroke-dasharray="3,3" opacity="0.2"/>\n'
-    svg += f'  <text x="{x(2026):.1f}" y="{PAD_T - 6}" text-anchor="middle" font-size="9" fill="#0A2240" opacity="0.5">Now</text>\n'
+            function drawChart(canvasId, data, targetVal) {{
+                var canvas = document.getElementById(canvasId);
+                if (!canvas) return;
+                var dpr = window.devicePixelRatio || 1;
+                var W = 640, H = 400;
+                canvas.width = W * dpr;
+                canvas.height = H * dpr;
+                canvas.style.width = '100%';
+                canvas.style.height = 'auto';
+                var ctx = canvas.getContext('2d');
+                ctx.scale(dpr, dpr);
 
-    # ── Draw stacked areas (bottom to top: Military, Workforce, Apprentice) ──
-    baseline_y_val = y(0)
+                var PAD_L = 55, PAD_R = 20, PAD_T = 20, PAD_B = 35;
+                var CW = W - PAD_L - PAD_R;
+                var CH = H - PAD_T - PAD_B;
+                var START_YR = 2024, END_YR = 2030, SPAN = 6;
+                var maxVal = Math.max(targetVal * 1.15, 300000);
 
-    # Helper to build polygon points for a stacked band
-    def band_polygon(top_vals, bottom_vals):
-        top_pts = " ".join(f"{x(yr):.1f},{y(tv):.1f}" for yr, tv in top_vals)
-        bottom_pts = " ".join(f"{x(yr):.1f},{y(bv):.1f}" for yr, bv in reversed(bottom_vals))
-        return f"{top_pts} {bottom_pts}"
+                // Round maxVal up to a nice number
+                var step = maxVal > 300000 ? 100000 : 50000;
+                maxVal = Math.ceil(maxVal / step) * step;
 
-    # Military band: 0 → military
-    mil_top = [(yr, m) for yr, m, _, _ in stacked]
-    mil_bottom = [(yr, 0) for yr, _, _, _ in stacked]
-    svg += f'  <polygon points="{band_polygon(mil_top, mil_bottom)}" fill="url(#gradMil)"/>\n'
+                function xPos(yr) {{ return PAD_L + (yr - START_YR) / SPAN * CW; }}
+                function yPos(val) {{ return PAD_T + CH - (val / maxVal * CH); }}
+                function fmtK(v) {{
+                    if (v >= 1000) {{
+                        var k = v / 1000;
+                        return (k === Math.floor(k)) ? k + 'K' : k.toFixed(1) + 'K';
+                    }}
+                    return '' + v;
+                }}
 
-    # Workforce band: military → military+workforce
-    wf_top = [(yr, mw) for yr, _, mw, _ in stacked]
-    wf_bottom = mil_top
-    svg += f'  <polygon points="{band_polygon(wf_top, wf_bottom)}" fill="url(#gradWf)"/>\n'
+                // Background
+                ctx.fillStyle = '#FAF8F4';
+                ctx.fillRect(0, 0, W, H);
 
-    # Apprentice band: military+workforce → total stacked
-    app_top = [(yr, mwa) for yr, _, _, mwa in stacked]
-    app_bottom = wf_top
-    svg += f'  <polygon points="{band_polygon(app_top, app_bottom)}" fill="url(#gradApp)"/>\n'
+                // Grid lines
+                ctx.strokeStyle = '#e8e8e8';
+                ctx.lineWidth = 0.7;
+                ctx.font = '10px Calibri, sans-serif';
+                ctx.fillStyle = '#999';
+                ctx.textAlign = 'right';
+                for (var tick = 0; tick <= maxVal; tick += step) {{
+                    var yy = yPos(tick);
+                    ctx.beginPath();
+                    ctx.moveTo(PAD_L, yy);
+                    ctx.lineTo(PAD_L + CW, yy);
+                    ctx.stroke();
+                    ctx.fillText(fmtK(tick), PAD_L - 6, yy + 3);
+                }}
 
-    # ── Band edge lines for definition ──
-    mil_line = " ".join(f"{x(yr):.1f},{y(m):.1f}" for yr, m, _, _ in stacked)
-    wf_line = " ".join(f"{x(yr):.1f},{y(mw):.1f}" for yr, _, mw, _ in stacked)
-    app_line = " ".join(f"{x(yr):.1f},{y(mwa):.1f}" for yr, _, _, mwa in stacked)
-    svg += f'  <polyline points="{mil_line}" fill="none" stroke="{COL_MIL}" stroke-width="1.5" opacity="0.6"/>\n'
-    svg += f'  <polyline points="{wf_line}" fill="none" stroke="{COL_WF}" stroke-width="1.5" opacity="0.6"/>\n'
-    svg += f'  <polyline points="{app_line}" fill="none" stroke="{COL_APP}" stroke-width="1.5" opacity="0.6"/>\n'
+                // Year labels
+                ctx.textAlign = 'center';
+                ctx.fillStyle = '#888';
+                for (var yr = 2024; yr <= 2030; yr++) {{
+                    ctx.fillText('' + yr, xPos(yr), H - 10);
+                }}
 
-    # ── Total actual line (bold, on top of stack) ──
-    total_actual = [(2024, BASE_MIL + BASE_WF + BASE_APP), (2025, 38000), (2026, total_now)]
-    total_full = merge_series(total_actual, [(yr, m+w+a) for yr, m, w, a in [(yr, val_at(mil_traj, yr), val_at(wf_traj, yr), val_at(app_traj, yr)) for yr in all_years]])
-    total_line = " ".join(f"{x(yr):.1f},{y(val):.1f}" for yr, val in total_full)
-    svg += f'  <polyline points="{total_line}" fill="none" stroke="#0A2240" stroke-width="2.5" opacity="0.8"/>\n'
+                // Target ceiling line
+                ctx.strokeStyle = '#0A2240';
+                ctx.lineWidth = 1.5;
+                ctx.setLineDash([8, 4]);
+                ctx.globalAlpha = 0.3;
+                ctx.beginPath();
+                ctx.moveTo(PAD_L, yPos(targetVal));
+                ctx.lineTo(PAD_L + CW, yPos(targetVal));
+                ctx.stroke();
+                ctx.setLineDash([]);
+                ctx.globalAlpha = 1;
+                ctx.fillStyle = '#0A2240';
+                ctx.textAlign = 'right';
+                ctx.font = 'bold 10px Calibri, sans-serif';
+                ctx.fillText(fmtK(targetVal) + ' Target', PAD_L + CW - 4, yPos(targetVal) - 5);
 
-    # ── Data dots and value labels at each year on total line ──
-    for yr, val in total_full:
-        svg += f'  <circle cx="{x(yr):.1f}" cy="{y(val):.1f}" r="3.5" fill="#0A2240"/>\n'
-        if yr >= 2026:
-            svg += (f'  <text x="{x(yr):.1f}" y="{y(val) - 8:.1f}" text-anchor="middle" '
-                    f'font-size="9" font-weight="700" fill="#0A2240">{fmt_k(val)}</text>\n')
+                // "Now" vertical marker
+                ctx.strokeStyle = '#0A2240';
+                ctx.lineWidth = 1;
+                ctx.setLineDash([3, 3]);
+                ctx.globalAlpha = 0.15;
+                ctx.beginPath();
+                ctx.moveTo(xPos(D.currentYear), PAD_T);
+                ctx.lineTo(xPos(D.currentYear), PAD_T + CH);
+                ctx.stroke();
+                ctx.setLineDash([]);
+                ctx.globalAlpha = 1;
+                ctx.font = '9px Calibri, sans-serif';
+                ctx.fillStyle = 'rgba(10,34,64,0.5)';
+                ctx.textAlign = 'center';
+                ctx.fillText('Now', xPos(D.currentYear), PAD_T - 4);
 
-    # ── Right-side endpoint labels for each band at 2030 ──
-    last = stacked[-1]  # (yr, mil, mil+wf, mil+wf+app)
-    last_mil = val_at(mil_full, 2030)
-    last_wf = val_at(wf_full, 2030)
-    last_app = val_at(app_full, 2030)
+                // Draw each series
+                for (var si = 0; si < SERIES.length; si++) {{
+                    var key = SERIES[si];
+                    var pts = data[key];
+                    var color = COLORS[key];
+                    var lw = key === 'total' ? 3 : 2.2;
 
-    # Military label — midpoint of its band
-    mil_mid_y = y(last_mil / 2)
-    svg += (f'  <text x="{PAD_L + CW + 8:.1f}" y="{mil_mid_y - 4:.1f}" font-size="9.5" font-weight="700" fill="{COL_MIL}">'
-            f'Military</text>\n')
-    svg += (f'  <text x="{PAD_L + CW + 8:.1f}" y="{mil_mid_y + 8:.1f}" font-size="9" fill="{COL_MIL}" opacity="0.8">'
-            f'{fmt_k(last_mil)} goal</text>\n')
-    svg += (f'  <text x="{PAD_L + CW + 8:.1f}" y="{mil_mid_y + 19:.1f}" font-size="8" fill="#E8913A" opacity="0.7">'
-            f'{fmt_k(mil_st)} stretch</text>\n')
+                    if (!pts || pts.length < 2) continue;
 
-    # Workforce label — midpoint of its band
-    wf_mid_y = y((last_mil + last_mil + last_wf) / 2)
-    svg += (f'  <text x="{PAD_L + CW + 8:.1f}" y="{wf_mid_y - 4:.1f}" font-size="9.5" font-weight="700" fill="{COL_WF}">'
-            f'Workforce</text>\n')
-    svg += (f'  <text x="{PAD_L + CW + 8:.1f}" y="{wf_mid_y + 8:.1f}" font-size="9" fill="{COL_WF}" opacity="0.8">'
-            f'{fmt_k(last_wf)} goal</text>\n')
-    svg += (f'  <text x="{PAD_L + CW + 8:.1f}" y="{wf_mid_y + 19:.1f}" font-size="8" fill="#E8913A" opacity="0.7">'
-            f'{fmt_k(wf_st)} stretch</text>\n')
+                    // Split into actual (up to currentYear) and projected (after)
+                    var actualPts = [];
+                    var projPts = [];
+                    for (var i = 0; i < pts.length; i++) {{
+                        if (pts[i][0] <= D.currentYear) {{
+                            actualPts.push(pts[i]);
+                        }}
+                        if (pts[i][0] >= D.currentYear) {{
+                            projPts.push(pts[i]);
+                        }}
+                    }}
 
-    # Apprentice label — midpoint of its band
-    app_mid_y = y((last_mil + last_wf + last_mil + last_wf + last_app) / 2)
-    svg += (f'  <text x="{PAD_L + CW + 8:.1f}" y="{app_mid_y - 4:.1f}" font-size="9.5" font-weight="700" fill="{COL_APP}">'
-            f'Apprentice</text>\n')
-    svg += (f'  <text x="{PAD_L + CW + 8:.1f}" y="{app_mid_y + 8:.1f}" font-size="9" fill="{COL_APP}" opacity="0.8">'
-            f'{fmt_k(last_app)} goal</text>\n')
-    svg += (f'  <text x="{PAD_L + CW + 8:.1f}" y="{app_mid_y + 19:.1f}" font-size="8" fill="#E8913A" opacity="0.7">'
-            f'{fmt_k(app_st)} stretch</text>\n')
+                    // Draw actual (solid)
+                    if (actualPts.length >= 2) {{
+                        ctx.strokeStyle = color;
+                        ctx.lineWidth = lw;
+                        ctx.setLineDash([]);
+                        ctx.beginPath();
+                        ctx.moveTo(xPos(actualPts[0][0]), yPos(actualPts[0][1]));
+                        for (var i = 1; i < actualPts.length; i++) {{
+                            ctx.lineTo(xPos(actualPts[i][0]), yPos(actualPts[i][1]));
+                        }}
+                        ctx.stroke();
+                    }}
 
-    # ── Legend bar at top ──
-    leg_y = 18
-    leg_items = [
-        (COL_MIL, "Military"),
-        (COL_WF, "Workforce/Other"),
-        (COL_APP, "Apprentice"),
-        ("#0A2240", "Total"),
-    ]
-    leg_x = PAD_L + 5
-    for color, text in leg_items:
-        svg += f'  <rect x="{leg_x}" y="{leg_y - 5}" width="14" height="10" rx="2" fill="{color}" opacity="0.6"/>\n'
-        svg += f'  <text x="{leg_x + 18}" y="{leg_y + 4}" font-size="10" fill="#555">{text}</text>\n'
-        leg_x += len(text) * 6.5 + 30
+                    // Draw projected (dashed)
+                    if (projPts.length >= 2) {{
+                        ctx.strokeStyle = color;
+                        ctx.lineWidth = lw;
+                        ctx.setLineDash([8, 5]);
+                        ctx.beginPath();
+                        ctx.moveTo(xPos(projPts[0][0]), yPos(projPts[0][1]));
+                        for (var i = 1; i < projPts.length; i++) {{
+                            ctx.lineTo(xPos(projPts[i][0]), yPos(projPts[i][1]));
+                        }}
+                        ctx.stroke();
+                        ctx.setLineDash([]);
+                    }}
 
-    # Stretch legend entry
-    svg += f'  <line x1="{leg_x}" y1="{leg_y}" x2="{leg_x + 18}" y2="{leg_y}" stroke="#E8913A" stroke-width="1.5" stroke-dasharray="5,3"/>\n'
-    svg += f'  <text x="{leg_x + 22}" y="{leg_y + 4}" font-size="10" fill="#E8913A">Stretch Goal</text>\n'
+                    // Data dots
+                    var dotR = key === 'total' ? 4 : 3;
+                    for (var i = 0; i < pts.length; i++) {{
+                        ctx.fillStyle = color;
+                        ctx.beginPath();
+                        ctx.arc(xPos(pts[i][0]), yPos(pts[i][1]), dotR, 0, Math.PI * 2);
+                        ctx.fill();
+                    }}
 
-    svg += '</svg>\n'
+                    // Value labels from currentYear onward
+                    ctx.font = 'bold 9px Calibri, sans-serif';
+                    ctx.fillStyle = color;
+                    ctx.textAlign = 'center';
+                    for (var i = 0; i < pts.length; i++) {{
+                        if (pts[i][0] >= D.currentYear) {{
+                            var dy = (key === 'total' || key === 'military') ? -10 : 14;
+                            ctx.fillText(fmtK(pts[i][1]), xPos(pts[i][0]), yPos(pts[i][1]) + dy);
+                        }}
+                    }}
 
-    return (
-        '        <div style="margin:2rem 0;padding:1.5rem;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">\n'
-        '            <h3 style="color:#0A2240;margin:0 0 0.25rem 0;font-size:1.1rem;">Students Served — Path to 250,000 by 2030</h3>\n'
-        '            <p style="color:#888;font-size:0.8rem;margin:0 0 1rem 0;">Stacked by population &middot; Solid = actual &middot; Projected through 2030</p>\n'
-        f'            {svg}'
-        '        </div>\n'
-    )
+                    // Endpoint label at 2030
+                    var lastPt = pts[pts.length - 1];
+                    if (lastPt[0] === 2030) {{
+                        ctx.font = 'bold 9.5px Calibri, sans-serif';
+                        ctx.fillStyle = color;
+                        ctx.textAlign = 'left';
+                        // Only show label if total — sub-pop labels via value labels already
+                    }}
+                }}
+            }}
+
+            drawChart('goalChart', D.goal, D.goal.target);
+            drawChart('stretchChart', D.stretch, D.stretch.target);
+        }})();
+        </script>
+'''
+    return html
 
 
 def compute_headline_kpis(projects, budget):
@@ -3351,12 +3198,11 @@ def main():
                         sub_pops["workforce"] = bd.get("value", "")
                     elif "apprentice" in lbl:
                         sub_pops["apprentice"] = bd.get("value", "")
-                chart_html = render_workplan_chart_html(current_students, sub_pops, workplan_goals)
-                stacked_chart_html = render_stacked_area_chart_html(current_students, sub_pops, workplan_goals)
+                charts_html = render_workplan_charts_html(current_students, sub_pops, workplan_goals)
 
                 new_proj_section = (
                     '<!-- Projects Grid -->\n'
-                    + chart_html + stacked_chart_html +
+                    + charts_html +
                     '        <h2 style="margin-bottom:1.5rem;">Projects <span id="projectCount" style="font-size:0.9rem;color:#888;">(' + str(project_count) + ')</span></h2>\n'
                     '        <div id="projectsGrid">\n'
                     + proj_cards_html +
