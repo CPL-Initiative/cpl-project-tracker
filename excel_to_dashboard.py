@@ -2303,6 +2303,151 @@ def read_workplan_goals(wb):
     return activities
 
 
+def build_workplan_goals_from_projects(projects):
+    """
+    Derive the workplan-goals data structure directly from the Project List tab,
+    so the 'Annual Workplan Goals' sheet is no longer required.
+
+    Each project row already carries columns:
+        kpi_goal_2526, kpi_stretch_2526, kpi_goal_2627, …, kpi_goal_2930, kpi_stretch_2930
+
+    Returns two things as a tuple:
+        workplan_goals – list of dicts compatible with render_workplan_goals_html()
+        annual_goals   – list of dicts compatible with render_annual_goals_table_html()
+    """
+    import re as _re
+
+    year_keys = [
+        ("2025-26", "kpi_goal_2526", "kpi_stretch_2526"),
+        ("2026-27", "kpi_goal_2627", "kpi_stretch_2627"),
+        ("2027-28", "kpi_goal_2728", "kpi_stretch_2728"),
+        ("2028-29", "kpi_goal_2829", "kpi_stretch_2829"),
+        ("2029-30", "kpi_goal_2930", "kpi_stretch_2930"),
+    ]
+
+    # Core sub-activity IDs (same as build_activity_kpis)
+    core_ids = [
+        "1.1", "1.2", "1.3", "1.4",
+        "2.1", "2.2", "2.3", "2.4",
+        "3.1", "3.2", "3.3", "3.4", "3.5", "3.6",
+        "4.1",  # aggregated from 4.1a-4.1d
+        "4.2", "4.3", "4.4", "4.5",
+    ]
+    sprint_ids = ["4.1a", "4.1b", "4.1c", "4.1d"]
+
+    activity_labels = {
+        "1": "Activity 1: Build AI-Enhanced CPL Infrastructure",
+        "2": "Activity 2: Faculty Workgroups & Credit Recommendations",
+        "3": "Activity 3: Build CPL Data Infrastructure",
+        "4": "Activity 4: Sprints, Projects, Partnerships & Scale",
+    }
+
+    proj_map = {p["id"]: p for p in projects}
+
+    def _parse_num(val):
+        """Parse a formatted number string back to a float."""
+        if val is None or val == "":
+            return 0
+        if isinstance(val, (int, float)):
+            return float(val)
+        s = str(val).strip().replace(",", "").replace("+", "")
+        if s.lower().endswith("k"):
+            try:
+                return float(s[:-1]) * 1000
+            except ValueError:
+                return 0
+        try:
+            return float(s)
+        except ValueError:
+            return 0
+
+    # ── Build per-sub-activity rows ──
+    workplan_goals = []   # for render_workplan_goals_html
+    annual_goals = []     # for render_annual_goals_table_html
+
+    for pid in core_ids:
+        # For 4.1, aggregate sprint sub-projects
+        if pid == "4.1":
+            sprint_projs = [proj_map[sid] for sid in sprint_ids if sid in proj_map]
+            if not sprint_projs:
+                continue
+            name = "Sprints (Veteran, Apprenticeship, Adoption, 29 Palms)"
+            goal_values = []
+            stretch_values = []
+            goal_dict = {}
+            stretch_dict = {}
+            current_dict = {}
+            for yr_label, g_key, s_key in year_keys:
+                g_sum = sum(_parse_num(sp.get(g_key, 0)) for sp in sprint_projs)
+                s_sum = sum(_parse_num(sp.get(s_key, 0)) for sp in sprint_projs)
+                goal_values.append(g_sum)
+                stretch_values.append(s_sum)
+                goal_dict[yr_label] = g_sum
+                stretch_dict[yr_label] = s_sum
+                current_dict[yr_label] = 0
+            current_metric = _parse_num(proj_map.get("4.1a", {}).get("kpi_metric", 0))
+        else:
+            p = proj_map.get(pid)
+            if not p:
+                continue
+            name = p["name"]
+            goal_values = []
+            stretch_values = []
+            goal_dict = {}
+            stretch_dict = {}
+            current_dict = {}
+            for yr_label, g_key, s_key in year_keys:
+                g_val = _parse_num(p.get(g_key, 0))
+                s_val = _parse_num(p.get(s_key, 0))
+                goal_values.append(g_val)
+                stretch_values.append(s_val)
+                goal_dict[yr_label] = g_val
+                stretch_dict[yr_label] = s_val
+                current_dict[yr_label] = 0
+            current_metric = _parse_num(p.get("kpi_metric", 0))
+
+        goal_total = sum(goal_values)
+        stretch_total = sum(stretch_values)
+
+        # Populate current 2025-26 with actual KPI metric
+        current_dict["2025-26"] = current_metric
+        current_dict["total"] = current_metric
+
+        # Determine activity group
+        act_num = pid.split(".")[0]
+        act_label = activity_labels.get(act_num, f"Activity {act_num}")
+
+        # Check if values are percentages
+        is_pct = all(0 < v < 1 for v in goal_values if v)
+
+        # workplan_goals format (for render_workplan_goals_html)
+        workplan_goals.append({
+            "id": pid,
+            "name": name,
+            "is_percentage": is_pct,
+            "years": ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"],
+            "goal": goal_values,
+            "goal_total": goal_total,
+            "stretch": stretch_values if stretch_values else [0] * 5,
+            "stretch_total": stretch_total,
+        })
+
+        # annual_goals format (for render_annual_goals_table_html)
+        goal_dict["total"] = goal_total
+        stretch_dict["total"] = stretch_total
+        annual_goals.append({
+            "id": pid,
+            "name": name,
+            "activity": act_label,
+            "goal": goal_dict,
+            "current": current_dict,
+            "stretch": stretch_dict,
+        })
+
+    print(f"  Built {len(workplan_goals)} workplan goal rows from Project List")
+    return workplan_goals, annual_goals
+
+
 def read_budget_plan(wb):
     """
     Read comprehensive budget and expenditure data from the "20260324 CPL Budget" tab.
@@ -2894,24 +3039,10 @@ def main():
 
     print(f"Reading: {EXCEL_FILE}")
 
-    # First pass: read workplan goals and sync them to Project List
-    wb_goals = load_workbook(EXCEL_FILE, data_only=True)
-    workplan_goals = read_workplan_goals(wb_goals)
-    wb_goals.close()
-
-    # NOTE: Goal sync from Annual Workplan Goals → Project List is DISABLED.
-    # The Project List tab is now the single source of truth for all KPI
-    # Goal/Stretch values across all years. Edit them directly on the Project List.
-    # if workplan_goals:
-    #     try:
-    #         sync_goals_to_project_list(EXCEL_FILE, workplan_goals)
-    #     except PermissionError:
-    #         print("  (Skipping goal sync — Excel file is locked)")
-
     # Archive current Project List notes to Update Log tab
     archive_updates_to_log(EXCEL_FILE)
 
-    # Second pass: read all data (now with synced targets)
+    # Read all data from the Project List (single source of truth)
     wb = load_workbook(EXCEL_FILE, data_only=True)
     project_config  = read_project_config(wb)
     print(f"  Project: {project_config['title']} ({project_config['project_id']})")
@@ -2930,9 +3061,12 @@ def main():
     projects        = read_projects(wb)
     update_log      = read_update_log(wb)
     budget          = read_budget_plan(wb)
-    annual_goals    = read_annual_goals(wb)
     kpis            = compute_headline_kpis(projects, budget)
     activity_kpis   = build_activity_kpis(projects)
+
+    # Build workplan goals & annual goals from the Project List tab
+    # (no longer needs the old 'Annual Workplan Goals' sheet)
+    workplan_goals, annual_goals = build_workplan_goals_from_projects(projects)
 
     # Auto-create attachment subfolders for new activities/projects
     new_folders = ensure_attachment_subfolders(att_dir, projects)
@@ -2941,10 +3075,6 @@ def main():
     attachments = scan_attachments(att_dir)
     print(f"  Attachments: {attachments['total']} files, by activity: {attachments['by_activity']}")
 
-    # Populate current metrics in the annual goals from live project data
-    if annual_goals:
-        populate_current_metrics(annual_goals, projects)
-        print(f"  Read {len(annual_goals)} annual workplan goal rows")
     now             = datetime.now().strftime("%B %d, %Y")
 
     # ── Build custom KPI display order from column W if present ──

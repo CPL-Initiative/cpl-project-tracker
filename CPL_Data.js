@@ -3810,5 +3810,510 @@ window.CPL_DATA = {
       "excel_row": 52
     }
   ],
-  "workplan_goals": []
+  "workplan_goals": [
+    {
+      "id": "1.1",
+      "name": "MAP Platform Development",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        4.0,
+        9.0,
+        18.0,
+        22.0,
+        25.0
+      ],
+      "goal_total": 78.0,
+      "stretch": [
+        8.0,
+        18.0,
+        28.0,
+        36.0,
+        50.0
+      ],
+      "stretch_total": 140.0
+    },
+    {
+      "id": "1.2",
+      "name": "System Integration & Interoperability",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ],
+      "goal_total": 15.0,
+      "stretch": [
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0
+      ],
+      "stretch_total": 30.0
+    },
+    {
+      "id": "1.3",
+      "name": "CPL Student Portal",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        100.0,
+        1000.0,
+        5000.0,
+        11000.0,
+        20000.0
+      ],
+      "goal_total": 37100.0,
+      "stretch": [
+        200.0,
+        2000.0,
+        10000.0,
+        22000.0,
+        40000.0
+      ],
+      "stretch_total": 74200.0
+    },
+    {
+      "id": "1.4",
+      "name": "California Credential Registry",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        0.0,
+        50.0,
+        110.0,
+        175.0,
+        250.0
+      ],
+      "goal_total": 585.0,
+      "stretch": [
+        0.0,
+        200.0,
+        440.0,
+        900.0,
+        1000.0
+      ],
+      "stretch_total": 2540.0
+    },
+    {
+      "id": "2.1",
+      "name": "Statewide Credit Recommendations",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        200.0,
+        400.0,
+        600.0,
+        800.0,
+        1000.0
+      ],
+      "goal_total": 3000.0,
+      "stretch": [
+        400.0,
+        1000.0,
+        1600.0,
+        2200.0,
+        2800.0
+      ],
+      "stretch_total": 8000.0
+    },
+    {
+      "id": "2.2",
+      "name": "Faculty Discipline Workgroups",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        6.0,
+        15.0,
+        19.0,
+        22.0,
+        25.0
+      ],
+      "goal_total": 87.0,
+      "stretch": [
+        10.0,
+        22.0,
+        30.0,
+        36.0,
+        40.0
+      ],
+      "stretch_total": 138.0
+    },
+    {
+      "id": "2.3",
+      "name": "Common Course Crosswalks",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        20.0,
+        50.0,
+        90.0,
+        140.0,
+        200.0
+      ],
+      "goal_total": 500.0,
+      "stretch": [
+        40.0,
+        100.0,
+        180.0,
+        280.0,
+        400.0
+      ],
+      "stretch_total": 1000.0
+    },
+    {
+      "id": "2.4",
+      "name": "Validated Skills",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        25.0,
+        65.0,
+        115.0,
+        175.0,
+        250.0
+      ],
+      "goal_total": 630.0,
+      "stretch": [
+        50.0,
+        130.0,
+        230.0,
+        350.0,
+        500.0
+      ],
+      "stretch_total": 1260.0
+    },
+    {
+      "id": "3.1",
+      "name": "CPL Offers & Awards Tracking",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        40000.0,
+        90000.0,
+        140000.0,
+        196000.0,
+        250000.0
+      ],
+      "goal_total": 716000.0,
+      "stretch": [
+        80000.0,
+        160000.0,
+        260000.0,
+        380000.0,
+        380000.0
+      ],
+      "stretch_total": 1260000.0
+    },
+    {
+      "id": "3.2",
+      "name": "CPL Units Transcription",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        90000.0,
+        195000.0,
+        315000.0,
+        450000.0,
+        750000.0
+      ],
+      "goal_total": 1800000.0,
+      "stretch": [
+        180000.0,
+        390000.0,
+        630000.0,
+        930000.0,
+        1500000.0
+      ],
+      "stretch_total": 3630000.0
+    },
+    {
+      "id": "3.3",
+      "name": "Institutional Participation",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        50.0,
+        60.0,
+        80.0,
+        90.0,
+        100.0
+      ],
+      "goal_total": 380.0,
+      "stretch": [
+        100.0,
+        116.0,
+        118.0,
+        130.0,
+        140.0
+      ],
+      "stretch_total": 604.0
+    },
+    {
+      "id": "3.4",
+      "name": "Student Impact Rate Survey",
+      "is_percentage": true,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        0.7,
+        0.8,
+        0.8,
+        0.8,
+        0.9
+      ],
+      "goal_total": 3.9999999999999996,
+      "stretch": [
+        0.8,
+        0.8,
+        0.9,
+        0.9,
+        0.9
+      ],
+      "stretch_total": 4.3
+    },
+    {
+      "id": "3.5",
+      "name": "Student Stories",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        30.0,
+        60.0,
+        120.0,
+        160.0,
+        200.0
+      ],
+      "goal_total": 570.0,
+      "stretch": [
+        100.0,
+        150.0,
+        200.0,
+        230.0,
+        250.0
+      ],
+      "stretch_total": 930.0
+    },
+    {
+      "id": "3.6",
+      "name": "College Tracking & Recognition",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        2.0,
+        5.0,
+        8.0,
+        10.0,
+        12.0
+      ],
+      "goal_total": 37.0,
+      "stretch": [
+        4.0,
+        10.0,
+        16.0,
+        20.0,
+        24.0
+      ],
+      "stretch_total": 74.0
+    },
+    {
+      "id": "4.2",
+      "name": "Strategic Partnerships",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        3.0,
+        7.0,
+        11.0,
+        15.0,
+        40.0
+      ],
+      "goal_total": 76.0,
+      "stretch": [
+        6.0,
+        12.0,
+        22.0,
+        30.0,
+        8.0
+      ],
+      "stretch_total": 78.0
+    },
+    {
+      "id": "4.3",
+      "name": "Technical Assistance & Training",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        10.0,
+        23.0,
+        35.0,
+        48.0,
+        60.0
+      ],
+      "goal_total": 176.0,
+      "stretch": [
+        20.0,
+        26.0,
+        70.0,
+        96.0,
+        120.0
+      ],
+      "stretch_total": 332.0
+    },
+    {
+      "id": "4.4",
+      "name": "Law & Regulation Review",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        2.0,
+        5.0,
+        7.0,
+        9.0,
+        10.0
+      ],
+      "goal_total": 33.0,
+      "stretch": [
+        4.0,
+        10.0,
+        14.0,
+        18.0,
+        20.0
+      ],
+      "stretch_total": 66.0
+    },
+    {
+      "id": "4.5",
+      "name": "Sustainable Funding",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        1.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0
+      ],
+      "goal_total": 19.0,
+      "stretch": [
+        2.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0
+      ],
+      "stretch_total": 38.0
+    }
+  ]
 };
