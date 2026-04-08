@@ -1985,16 +1985,16 @@ def compute_headline_kpis(projects, budget):
             "label": "Estimated Savings",
             "sub": "Eligible units, Beacon Economics"
         },
-        "veteran_sprint": {
-            "value": "47",
+        "veteran_sprint": (lambda: {
+            "value": next((p["kpi_metric"] for p in projects if p["id"] == "4.1a"), "47"),
             "label": "VETERAN SPRINT",
             "sub": "Star Colleges",
             "breakdowns": [
                 {"label": "JST Credits", "value": "{jst_credits} / 30,000"},
-                {"label": "Basic Training Credit", "value": "47 Colleges"},
+                {"label": "Basic Training Credit", "value": f'{next((p["kpi_metric"] for p in projects if p["id"] == "4.1a"), "47")} Colleges'},
                 {"label": "Eligible CPL", "value": "{eligible_cpl} Units"},
             ],
-        },
+        })(),
     }
 
 
