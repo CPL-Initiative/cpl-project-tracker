@@ -11,20 +11,55 @@
 var SHARED_EXCEL_URL = 'https://studentrcc.sharepoint.com/:x:/s/MilitaryArticulationPlatform/IQDtrAHqCEmCTZXE7sqqeLMZAQkt2PJzGno44GfJVp5b6Ak?e=8W61fK';
 
 // ── Attachments Folder URL ──
-// SharePoint document library base path for constructing subfolder URLs.
-// Each attach button has a data-folder attribute (e.g., "Activity 1", "1.1 MAP Platform Development").
-var ATTACHMENTS_BASE_ID = '/sites/MilitaryArticulationPlatform/Shared Documents/CPL Workplan Dashboard/Attachments';
-var ATTACHMENTS_VIEW_ID = '562abb89-79c8-4db7-bbbe-614229e53d64';
-var ATTACHMENTS_SITE = 'https://studentrcc.sharepoint.com';
+// Read from window.CPL_ATTACHMENTS_URL (injected by the pipeline from Excel config row 1, cell I1).
+// The URL should be a direct SharePoint document library URL with an ?id= parameter.
+// Each attach button has a data-folder attribute (e.g., "1.1 MAP Platform Development").
+var _rawAttUrl = (window.CPL_ATTACHMENTS_URL || '').trim();
+
+// Parse the SharePoint URL to extract base path, site, and viewid
+var ATTACHMENTS_BASE_ID = '';
+var ATTACHMENTS_VIEW_ID = '';
+var ATTACHMENTS_SITE = '';
+
+(function parseAttUrl() {
+    if (!_rawAttUrl) return;
+    try {
+        var u = new URL(_rawAttUrl);
+        ATTACHMENTS_SITE = u.origin;
+        // Extract the id parameter (folder path)
+        var idParam = u.searchParams.get('id') || '';
+        if (idParam) {
+            ATTACHMENTS_BASE_ID = decodeURIComponent(idParam);
+        }
+        // Extract viewid if present
+        ATTACHMENTS_VIEW_ID = u.searchParams.get('viewid') || '';
+    } catch(e) {
+        // Fallback: use the raw URL as-is for the root
+        ATTACHMENTS_BASE_ID = '';
+    }
+})();
 
 function buildAttachmentUrl(subfolder) {
+    if (!ATTACHMENTS_BASE_ID) return _rawAttUrl || '#';
     var basePath = ATTACHMENTS_BASE_ID;
     if (subfolder) {
         basePath += '/' + subfolder;
     }
-    return ATTACHMENTS_SITE + '/sites/MilitaryArticulationPlatform/Shared%20Documents/Forms/AllItems.aspx'
-        + '?id=' + encodeURIComponent(basePath)
-        + '&viewid=' + ATTACHMENTS_VIEW_ID;
+    var pathParts = ATTACHMENTS_BASE_ID.split('/');
+    // Reconstruct the AllItems.aspx URL from the site path
+    // Pattern: /sites/{SiteName}/Shared Documents/Forms/AllItems.aspx
+    var sitePath = '';
+    for (var i = 0; i < pathParts.length; i++) {
+        if (pathParts[i] === 'Shared Documents' || pathParts[i] === 'Shared%20Documents') {
+            sitePath = pathParts.slice(0, i).join('/');
+            break;
+        }
+    }
+    if (!sitePath) sitePath = pathParts.slice(0, 3).join('/');
+    var url = ATTACHMENTS_SITE + sitePath + '/Shared%20Documents/Forms/AllItems.aspx'
+        + '?id=' + encodeURIComponent(basePath);
+    if (ATTACHMENTS_VIEW_ID) url += '&viewid=' + encodeURIComponent(ATTACHMENTS_VIEW_ID);
+    return url;
 }
 var ATTACHMENTS_URL = buildAttachmentUrl('');
 

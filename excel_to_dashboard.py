@@ -3094,6 +3094,22 @@ def main():
 
         print(f"  Updated dashboard title: {proj_title}")
 
+        # ── Inject attachments URL from Excel config into JS global ──
+        att_script_marker = '<script src="dashboard_filters.js">'
+        att_script_pos = html.find(att_script_marker)
+        if att_script_pos != -1 and attach_url:
+            escaped_url = attach_url.replace("'", "\\'")
+            inject_js = f"<script>window.CPL_ATTACHMENTS_URL='{escaped_url}';</script>\n    "
+            # Remove any previously injected CPL_ATTACHMENTS_URL script
+            old_marker = "<script>window.CPL_ATTACHMENTS_URL="
+            old_pos = html.find(old_marker)
+            if old_pos != -1:
+                old_end = html.find("</script>", old_pos) + len("</script>")
+                html = html[:old_pos] + html[old_end:].lstrip()
+                att_script_pos = html.find(att_script_marker)
+            html = html[:att_script_pos] + inject_js + html[att_script_pos:]
+            print(f"  Injected attachments URL from Excel config")
+
         START_MARKER = "<!-- DATA-START"
         END_MARKER   = "<!-- DATA-END -->"
         i_start = html.find(START_MARKER)
