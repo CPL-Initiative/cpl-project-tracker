@@ -3052,7 +3052,7 @@ def main():
         proj_title = project_config.get("title", "CPL Initiative")
         proj_desc = project_config.get("description", "")
         attach_url = project_config.get("attachments_url", "")
-        dash_title = f"{proj_title} &amp; MAP Team &mdash; Project Dashboard"
+        dash_title = f"{proj_title} &mdash; Project Dashboard"
 
         # Replace <title> tag
         import re
@@ -3060,7 +3060,7 @@ def main():
         # Replace <h1> in header
         html = re.sub(
             r'<h1>[^<]*</h1>',
-            f'<h1>{proj_title} &amp; MAP Team &mdash; Project Dashboard</h1>',
+            f'<h1>{proj_title} &mdash; Project Dashboard</h1>',
             html,
             count=1
         )
@@ -3072,14 +3072,23 @@ def main():
         if pi_start != -1 and pi_end != -1:
             html = html[:pi_start] + html[pi_end + len(PROJ_INFO_END):]
 
-        # Build description + See Attachments block
+        # Build description (collapsible, default collapsed) + See Attachments block
         proj_info_parts = [PROJ_INFO_START]
         if proj_desc:
-            short_desc = proj_desc[:200] + ("…" if len(proj_desc) > 200 else "")
+            # Use full description in a collapsible <details> element
+            escaped_desc = proj_desc.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
             proj_info_parts.append(
-                f'<div class="project-description" style="font-size:0.82rem;'
-                f'color:#ccc;max-width:800px;margin:0.3rem auto 0;line-height:1.4;">'
-                f'{short_desc}</div>')
+                f'<details class="project-description" style="max-width:800px;margin:0.4rem auto 0;'
+                f'cursor:pointer;">'
+                f'<summary style="font-size:0.82rem;color:#9BBCD8;font-weight:600;'
+                f'list-style:none;display:inline-flex;align-items:center;gap:0.3rem;">'
+                f'<span class="desc-arrow" style="font-size:0.7rem;transition:transform 0.2s;">&#9654;</span>'
+                f' Project Description</summary>'
+                f'<div style="font-size:0.82rem;color:#ccc;line-height:1.5;'
+                f'margin-top:0.4rem;padding:0.5rem 0.8rem;'
+                f'border-left:2px solid rgba(155,188,216,0.3);text-align:left;">'
+                f'{escaped_desc}</div></details>'
+                f'<style>.project-description[open] .desc-arrow{{transform:rotate(90deg);}}</style>')
         att_count = attachments.get("total", 0)
         badge_html = (f' <span style="background:#C9A84C;color:#0A2240;font-size:0.65rem;'
                       f'font-weight:700;padding:1px 6px;border-radius:8px;margin-left:4px;">'
