@@ -71,6 +71,90 @@ COL_WP_NOTES    = 30   # AD
 COL_KPI_ORDER   = 31   # AE — display order for headline KPI cards (lower = first)
 
 
+def scan_attachments(attachments_dir):
+    """Scan a local attachments directory with subfolders and return counts.
+    Expected structure:
+      Attachments/
+        Activity 1/         ← activity-level attachments
+        Activity 2/
+        1.1 MAP Platform Development/  ← project-level attachments
+        2.1 Credit Recommendations/
+        (root-level files count toward total only)
+    Returns dict:
+      {"total": N, "root_files": N,
+       "by_activity": {"1": N, "2": N, ...},
+       "by_project": {"1.1": N, "2.1": N, ...}}
+    """
+    import re as _re
+    result = {"total": 0, "root_files": 0, "by_activity": {}, "by_project": {}}
+    if not attachments_dir or not os.path.isdir(attachments_dir):
+        return result
+
+    def _count_files(folder):
+        """Count non-hidden files in a directory (non-recursive)."""
+        if not os.path.isdir(folder):
+            return 0
+        return sum(1 for f in os.listdir(folder)
+                   if os.path.isfile(os.path.join(folder, f)) and not f.startswith('.'))
+
+    for entry in os.listdir(attachments_dir):
+        fpath = os.path.join(attachments_dir, entry)
+        if entry.startswith('.'):
+            continue
+        if os.path.isfile(fpath):
+            result["root_files"] += 1
+            result["total"] += 1
+        elif os.path.isdir(fpath):
+            count = _count_files(fpath)
+            result["total"] += count
+            # Match "Activity N" folders
+            m_act = _re.match(r'^Activity\s+(\d+)', entry, _re.IGNORECASE)
+            if m_act:
+                result["by_activity"][m_act.group(1)] = count
+                continue
+            # Match "N.N Project Name" folders
+            m_proj = _re.match(r'^(\d+\.\d+)', entry)
+            if m_proj:
+                pid = m_proj.group(1)
+                result["by_project"][pid] = count
+                # Also roll up to activity
+                act_num = pid.split(".")[0]
+                result["by_activity"][act_num] = result["by_activity"].get(act_num, 0) + count
+    return result
+
+
+def ensure_attachment_subfolders(attachments_dir, projects):
+    """Create subfolders for each Activity and Project if they don't exist.
+    Called during pipeline run to auto-create folders for new projects.
+    """
+    if not attachments_dir or not os.path.isdir(attachments_dir):
+        return 0
+    created = 0
+    activities_seen = set()
+    for p in projects:
+        pid = p.get("id", "")
+        name = p.get("name", "")
+        if not pid:
+            continue
+        act_num = pid.split(".")[0]
+        # Create Activity folder
+        if act_num not in activities_seen:
+            activities_seen.add(act_num)
+            act_folder = os.path.join(attachments_dir, f"Activity {act_num}")
+            if not os.path.exists(act_folder):
+                os.makedirs(act_folder, exist_ok=True)
+                created += 1
+        # Create project folder (skip sub-population rows like 3.1.1)
+        if pid.count(".") == 1 and name:
+            # Sanitize folder name
+            safe_name = "".join(c for c in name if c.isalnum() or c in " -_&().").strip()
+            proj_folder = os.path.join(attachments_dir, f"{pid} {safe_name}")
+            if not os.path.exists(proj_folder):
+                os.makedirs(proj_folder, exist_ok=True)
+                created += 1
+    return created
+
+
 def read_project_config(wb):
     """Read project configuration from rows 1-2 of the Project List tab.
     Layout:
@@ -814,7 +898,23 @@ def render_kpi_section_html(kpis, kpi_display_order=None):
     return cards_html
 
 
-def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None):
+def _att_badge(attachments, act_num=None, project_id=None):
+    """Return a small count badge HTML if there are attachments for an activity or project."""
+    if not attachments:
+        return ""
+    count = 0
+    if project_id:
+        count = attachments.get("by_project", {}).get(str(project_id), 0)
+    elif act_num:
+        count = attachments.get("by_activity", {}).get(str(act_num), 0)
+    if count <= 0:
+        return ""
+    return (f' <span style="background:#C9A84C;color:#0A2240;font-size:0.6rem;'
+            f'font-weight:700;padding:1px 5px;border-radius:8px;margin-left:2px;">'
+            f'{count}</span>')
+
+
+def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None, attachments=None):
     """
     Generate static HTML for the 19 activity-level KPI cards section.
     KPI cards are grouped under Goal sub-headers within each Activity.
@@ -1132,8 +1232,9 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None)
                          f'class="attach-btn" '
                          f'style="{btn_style}color:#163A5F;background:#fafafa;"'
                          f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
-                         f' title="Open attachments folder">'
-                         f'<span style="font-size:0.8rem;">&#128206;</span> Attach</a>\n')
+                         f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
+                         f'<span style="font-size:0.8rem;">&#128206;</span> Attach'
+                         f'{_att_badge(attachments, act_num)}</a>\n')
 
                 html += '            </div>\n'  # close activity-kpi-card
 
@@ -1247,7 +1348,7 @@ def render_workplan_goals_html(workplan_goals):
     return html
 
 
-def _render_single_project_card(p, update_log=None):
+def _render_single_project_card(p, update_log=None, attachments=None):
     """Render a single project card HTML string with full notes history."""
     pid = p["id"]
     status = p.get("status", "")
@@ -1396,14 +1497,14 @@ def _render_single_project_card(p, update_log=None):
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
-                    title="Open attachments folder">
-                    <span style="font-size:0.85rem;">&#128206;</span> Attach</a>
+                    title="Open SharePoint folder — use Upload or drag &amp; drop to add files">
+                    <span style="font-size:0.85rem;">&#128206;</span> Attach{_att_badge(attachments, project_id=pid)}</a>
             </div>
         </div>
 '''
 
 
-def render_projects_grid_html(projects, update_log=None):
+def render_projects_grid_html(projects, update_log=None, attachments=None):
     """
     Generate static HTML for the projects grid with cards,
     grouped under Goal headers (Goal 1, Goal 2, Goal 3).
@@ -1472,7 +1573,7 @@ def render_projects_grid_html(projects, update_log=None):
         # Project cards grid for this goal
         html += '        <div class="projects-grid goal-project-group">\n'
         for p in goal_projects:
-            html += _render_single_project_card(p, update_log)
+            html += _render_single_project_card(p, update_log, attachments=attachments)
         html += '        </div>\n'
 
     return html
@@ -2814,12 +2915,31 @@ def main():
     wb = load_workbook(EXCEL_FILE, data_only=True)
     project_config  = read_project_config(wb)
     print(f"  Project: {project_config['title']} ({project_config['project_id']})")
+
+    # Scan attachments folder (SharePoint sync or local)
+    ATTACHMENTS_DIR = os.path.join(
+        os.path.expanduser("~"),
+        "Riverside Community College District",
+        "California MAP Initiative - Documents",
+        "CPL Workplan Dashboard",
+        "Attachments",
+    )
+    _LOCAL_ATTACHMENTS = os.path.join(SCRIPT_DIR, "Attachments")
+    att_dir = ATTACHMENTS_DIR if os.path.isdir(ATTACHMENTS_DIR) else _LOCAL_ATTACHMENTS
+    # Will scan after projects are read (need project list for subfolder creation)
     projects        = read_projects(wb)
     update_log      = read_update_log(wb)
     budget          = read_budget_plan(wb)
     annual_goals    = read_annual_goals(wb)
     kpis            = compute_headline_kpis(projects, budget)
     activity_kpis   = build_activity_kpis(projects)
+
+    # Auto-create attachment subfolders for new activities/projects
+    new_folders = ensure_attachment_subfolders(att_dir, projects)
+    if new_folders:
+        print(f"  Created {new_folders} new attachment subfolder(s)")
+    attachments = scan_attachments(att_dir)
+    print(f"  Attachments: {attachments['total']} files, by activity: {attachments['by_activity']}")
 
     # Populate current metrics in the annual goals from live project data
     if annual_goals:
@@ -2944,17 +3064,46 @@ def main():
             html,
             count=1
         )
-        # Inject description as a subtitle if present
+        # Remove any previously injected description/attachment block
+        PROJ_INFO_START = '<!-- PROJ-INFO-START -->'
+        PROJ_INFO_END = '<!-- PROJ-INFO-END -->'
+        pi_start = html.find(PROJ_INFO_START)
+        pi_end = html.find(PROJ_INFO_END)
+        if pi_start != -1 and pi_end != -1:
+            html = html[:pi_start] + html[pi_end + len(PROJ_INFO_END):]
+
+        # Build description + See Attachments block
+        proj_info_parts = [PROJ_INFO_START]
         if proj_desc:
             short_desc = proj_desc[:200] + ("…" if len(proj_desc) > 200 else "")
-            desc_div = (f'<div class="project-description" style="font-size:0.82rem;'
-                        f'color:#ccc;max-width:800px;margin:0.3rem auto 0;line-height:1.4;">'
-                        f'{short_desc}</div>')
-            # Insert after the subtitle div
-            subtitle_end = html.find('</div>', html.find('class="subtitle"'))
-            if subtitle_end != -1:
-                insert_pos = subtitle_end + len('</div>')
-                html = html[:insert_pos] + '\n        ' + desc_div + html[insert_pos:]
+            proj_info_parts.append(
+                f'<div class="project-description" style="font-size:0.82rem;'
+                f'color:#ccc;max-width:800px;margin:0.3rem auto 0;line-height:1.4;">'
+                f'{short_desc}</div>')
+        att_count = attachments.get("total", 0)
+        badge_html = (f' <span style="background:#C9A84C;color:#0A2240;font-size:0.65rem;'
+                      f'font-weight:700;padding:1px 6px;border-radius:8px;margin-left:4px;">'
+                      f'{att_count}</span>') if att_count > 0 else ''
+        proj_info_parts.append(
+            f'<div style="margin-top:0.5rem;">'
+            f'<a href="#" class="attach-btn" target="_blank" '
+            f'style="display:inline-flex;align-items:center;gap:0.3rem;'
+            f'font-size:0.82rem;color:#fff;text-decoration:none;font-weight:600;'
+            f'padding:6px 14px;border:1px solid rgba(255,255,255,0.3);border-radius:4px;'
+            f'background:rgba(255,255,255,0.1);cursor:pointer;transition:background 0.2s;"'
+            f' onmouseover="this.style.background=\'rgba(255,255,255,0.2)\'"'
+            f' onmouseout="this.style.background=\'rgba(255,255,255,0.1)\'"'
+            f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
+            f'&#128206; See Attachments{badge_html}</a></div>')
+        proj_info_parts.append(PROJ_INFO_END)
+        proj_info_html = '\n        '.join(proj_info_parts)
+
+        # Insert after the subtitle div
+        subtitle_end = html.find('</div>', html.find('class="subtitle"'))
+        if subtitle_end != -1:
+            insert_pos = subtitle_end + len('</div>')
+            html = html[:insert_pos] + '\n        ' + proj_info_html + html[insert_pos:]
+
         print(f"  Updated dashboard title: {proj_title}")
 
         START_MARKER = "<!-- DATA-START"
@@ -3013,7 +3162,7 @@ def main():
             act_section_end_tag = '</div>\n\n        <!-- Projects Grid -->'
             act_section_end = html.find('<!-- Projects Grid -->')
             if act_section_start != -1 and act_section_end != -1:
-                act_html = render_activity_kpis_html(activity_kpis, annual_goals, update_log)
+                act_html = render_activity_kpis_html(activity_kpis, annual_goals, update_log, attachments=attachments)
                 new_act_section = (
                     '<div class="activity-kpi-section" id="activityKpiSection">\n'
                     + act_html +
@@ -3047,7 +3196,7 @@ def main():
             proj_grid_start = html.find('<!-- Projects Grid -->')
             proj_grid_end = html.find('<!-- Budget Section -->')
             if proj_grid_start != -1 and proj_grid_end != -1:
-                proj_cards_html = render_projects_grid_html(projects, update_log)
+                proj_cards_html = render_projects_grid_html(projects, update_log, attachments=attachments)
                 project_count = len([p for p in projects if not p["id"].startswith("D.")])
 
                 # Build the Workplan Progress Chart with sub-population trend lines

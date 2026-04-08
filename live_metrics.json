@@ -1,0 +1,51 @@
+{
+  "scraped_at": "2026-04-08T12:00:00Z",
+  "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
+  "metrics": [
+    {
+      "title": "STUDENTS SERVED",
+      "value": "43,742",
+      "breakdowns": [
+        {"label": "Military", "value": "22,258"},
+        {"label": "Workforce/Other", "value": "21,555"},
+        {"label": "Apprentice", "value": "701"}
+      ]
+    },
+    {
+      "title": "ELIGIBLE UNITS",
+      "value": "197k",
+      "breakdowns": [
+        {"label": "Military", "value": "101k"},
+        {"label": "Workforce/Other", "value": "102k"},
+        {"label": "Apprentice", "value": "6k"}
+      ]
+    },
+    {
+      "title": "TRANSCRIBED UNITS",
+      "value": "97k",
+      "breakdowns": [
+        {"label": "Military", "value": "13k"},
+        {"label": "Workforce/Other", "value": "84k"},
+        {"label": "Apprentice", "value": "6k"}
+      ]
+    },
+    {
+      "title": "SAVINGS",
+      "value": "$279M",
+      "breakdowns": [
+        {"label": "Military", "value": "$174M"},
+        {"label": "Workforce/Other", "value": "$98M"},
+        {"label": "Apprentice", "value": "$6M"}
+      ]
+    },
+    {
+      "title": "20-YEAR IMPACT",
+      "value": "$1.12B",
+      "breakdowns": [
+        {"label": "Military", "value": "$611M"},
+        {"label": "Workforce/Other", "value": "$482M"},
+        {"label": "Apprentice", "value": "$30M"}
+      ]
+    }
+  ]
+}

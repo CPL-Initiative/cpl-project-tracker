@@ -220,7 +220,7 @@ function resetFilters() {
             attachBtn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:#0A2240;border:1px solid #ccc;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;";
             attachBtn.onmouseover = function() { this.style.background = '#f5f5f5'; };
             attachBtn.onmouseout = function() { this.style.background = 'transparent'; };
-            attachBtn.title = 'Open attachments folder in SharePoint';
+            attachBtn.title = 'Open SharePoint folder — use Upload or drag & drop to add files';
             filterBtns.appendChild(attachBtn);
         }
 
