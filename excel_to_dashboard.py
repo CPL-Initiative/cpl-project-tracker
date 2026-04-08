@@ -892,14 +892,13 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None)
 
         html += f'            <div class="activity-group">\n'
         html += (f'            <div class="activity-group-header">\n'
-                 f'                <span class="activity-badge">{act_id}</span>\n'
-                 f'                <h3>{act_name}</h3>\n'
+                 f'                <h3><span style="color:#888;font-weight:600;">{act_id}:</span> {act_name}</h3>\n'
                  f'            </div>\n')
         # Activity progress bar with goal + annual targets
         html += (f'            <div style="padding:0 0.5rem 0.6rem 0.5rem;">\n'
                  f'                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25rem;">\n'
                  f'                    <span style="font-size:0.75rem;color:#555;">{act_goal_text}</span>\n'
-                 f'                    <span style="font-size:0.75rem;font-weight:700;color:{bar_color};white-space:nowrap;margin-left:0.5rem;">{avg_pct}% avg &middot; {completed}/{total_kpis} complete</span>\n'
+                 f'                    <span style="font-size:0.75rem;font-weight:700;color:{bar_color};white-space:nowrap;margin-left:0.5rem;">{avg_pct}% avg &middot; {completed}/{total_kpis} complete (toward 2030 goal)</span>\n'
                  f'                </div>\n'
                  f'                <div style="height:6px;background:#e8e8e8;border-radius:3px;overflow:hidden;">\n'
                  f'                    <div style="height:100%;width:{avg_pct}%;background:{bar_color};border-radius:3px;transition:width 0.3s;"></div>\n'

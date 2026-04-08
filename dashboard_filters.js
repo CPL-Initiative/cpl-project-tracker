@@ -37,8 +37,11 @@ function applyFilters() {
     var actGroups = document.querySelectorAll('.activity-group');
     for (var g = 0; g < actGroups.length; g++) {
         var group = actGroups[g];
-        var badge = group.querySelector('.activity-badge');
-        var badgeText = badge ? badge.textContent.trim() : '';
+        var header = group.querySelector('.activity-group-header h3');
+        var headerText = header ? header.textContent.trim() : '';
+        // Extract "Activity N" from "Activity N: ..."
+        var badgeMatch = headerText.match(/^(Activity\s+\d+)/);
+        var badgeText = badgeMatch ? badgeMatch[1] : '';
 
         // Show/hide the entire activity group based on the Activity filter
         if (actNum && badgeText !== actNum) {
@@ -189,7 +192,7 @@ function resetFilters() {
         reportBtn.href = 'reports/CPL_Master_Report.docx';
         reportBtn.download = '';
         reportBtn.innerHTML = '&#128196; Master Report';
-        reportBtn.style.cssText = 'display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:#0A2240;border:1px solid #ccc;padding:6px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.82rem;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;';
+        reportBtn.style.cssText = 'display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:#0A2240;border:1px solid #ccc;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;line-height:1.2;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;';
         reportBtn.onmouseover = function() { this.style.background = '#f5f5f5'; };
         reportBtn.onmouseout = function() { this.style.background = 'transparent'; };
         filterBtns.appendChild(reportBtn);
@@ -198,7 +201,7 @@ function resetFilters() {
         updateBtn.href = SHARED_EXCEL_URL || 'CPL_Initiative_Project_List_v3.xlsx';
         if (SHARED_EXCEL_URL) updateBtn.target = '_blank';
         updateBtn.innerHTML = '&#9998; Update Projects';
-        updateBtn.style.cssText = 'display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:#0A2240;border:1px solid #ccc;padding:6px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.82rem;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;';
+        updateBtn.style.cssText = 'display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:#0A2240;border:1px solid #ccc;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;line-height:1.2;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;';
         updateBtn.onmouseover = function() { this.style.background = '#f5f5f5'; };
         updateBtn.onmouseout = function() { this.style.background = 'transparent'; };
         updateBtn.title = 'Open Excel to update project data';
