@@ -70,6 +70,25 @@ COL_KPI_S2930   = 29   # AC — KPI Stretch 29-30
 COL_WP_NOTES    = 30   # AD
 COL_KPI_ORDER   = 31   # AE — display order for headline KPI cards (lower = first)
 
+
+def read_project_config(wb):
+    """Read project configuration from rows 1-2 of the Project List tab.
+    Layout:
+      A1='Project Title:', B1=title, E1='Project ID:', F1=id,
+      H1='Attachments URL:', I1=url
+      A2='Description:', B2=description text
+    Returns dict with keys: title, project_id, description, attachments_url
+    """
+    ws = wb["Project List"]
+    config = {
+        "title": str(ws.cell(1, 2).value or "CPL Initiative").strip(),
+        "project_id": str(ws.cell(1, 6).value or "").strip(),
+        "attachments_url": str(ws.cell(1, 9).value or "").strip(),
+        "description": str(ws.cell(2, 2).value or "").strip(),
+    }
+    return config
+
+
 # ── Official CPL Workplan Goal Definitions ─────────────────────────
 # Source: CCCCO Vision 2030 Credit for Prior Learning Workplan
 CPL_GOALS = {
@@ -1108,7 +1127,13 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None)
                          f'style="{btn_style}color:#FFFFFF;background:#C9A84C;"'
                          f' onmouseover="this.style.background=\'#b89540\'" onmouseout="this.style.background=\'#C9A84C\'"'
                          f' title="Open Excel to update cell P{excel_row}">'
-                         f'<span style="font-size:0.8rem;">&#9998;</span> Update</a>\n')
+                         f'<span style="font-size:0.8rem;">&#9998;</span> Update</a>'
+                         f'<a href="#" '
+                         f'class="attach-btn" '
+                         f'style="{btn_style}color:#163A5F;background:#fafafa;"'
+                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
+                         f' title="Open attachments folder">'
+                         f'<span style="font-size:0.8rem;">&#128206;</span> Attach</a>\n')
 
                 html += '            </div>\n'  # close activity-kpi-card
 
@@ -1365,6 +1390,14 @@ def _render_single_project_card(p, update_log=None):
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
                     title="Open Excel to update cell P{p.get('excel_row', '')}">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
+                <a href="#" class="attach-btn"
+                    style="display:inline-flex;align-items:center;gap:0.3rem;
+                    font-size:0.75rem;color:#163A5F;text-decoration:none;font-weight:600;
+                    padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
+                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
+                    title="Open attachments folder">
+                    <span style="font-size:0.85rem;">&#128206;</span> Attach</a>
             </div>
         </div>
 '''
@@ -2779,6 +2812,8 @@ def main():
 
     # Second pass: read all data (now with synced targets)
     wb = load_workbook(EXCEL_FILE, data_only=True)
+    project_config  = read_project_config(wb)
+    print(f"  Project: {project_config['title']} ({project_config['project_id']})")
     projects        = read_projects(wb)
     update_log      = read_update_log(wb)
     budget          = read_budget_plan(wb)
@@ -2892,6 +2927,35 @@ def main():
     if os.path.exists(HTML_FILE):
         with open(HTML_FILE, "r", encoding="utf-8") as f:
             html = f.read()
+
+        # ── Update dashboard title from project config ──
+        proj_title = project_config.get("title", "CPL Initiative")
+        proj_desc = project_config.get("description", "")
+        attach_url = project_config.get("attachments_url", "")
+        dash_title = f"{proj_title} &amp; MAP Team &mdash; Project Dashboard"
+
+        # Replace <title> tag
+        import re
+        html = re.sub(r'<title>[^<]*</title>', f'<title>{proj_title} — Project Dashboard</title>', html)
+        # Replace <h1> in header
+        html = re.sub(
+            r'<h1>[^<]*</h1>',
+            f'<h1>{proj_title} &amp; MAP Team &mdash; Project Dashboard</h1>',
+            html,
+            count=1
+        )
+        # Inject description as a subtitle if present
+        if proj_desc:
+            short_desc = proj_desc[:200] + ("…" if len(proj_desc) > 200 else "")
+            desc_div = (f'<div class="project-description" style="font-size:0.82rem;'
+                        f'color:#ccc;max-width:800px;margin:0.3rem auto 0;line-height:1.4;">'
+                        f'{short_desc}</div>')
+            # Insert after the subtitle div
+            subtitle_end = html.find('</div>', html.find('class="subtitle"'))
+            if subtitle_end != -1:
+                insert_pos = subtitle_end + len('</div>')
+                html = html[:insert_pos] + '\n        ' + desc_div + html[insert_pos:]
+        print(f"  Updated dashboard title: {proj_title}")
 
         START_MARKER = "<!-- DATA-START"
         END_MARKER   = "<!-- DATA-END -->"

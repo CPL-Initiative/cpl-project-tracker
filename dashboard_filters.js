@@ -10,6 +10,10 @@
 // When empty, buttons link to the local Excel file.
 var SHARED_EXCEL_URL = 'https://studentrcc.sharepoint.com/:x:/s/MilitaryArticulationPlatform/IQDtrAHqCEmCTZXE7sqqeLMZAQkt2PJzGno44GfJVp5b6Ak?e=8W61fK';
 
+// ── Attachments Folder URL ──
+// SharePoint folder for project attachments (workplan docs, reports, etc.)
+var ATTACHMENTS_URL = 'https://studentrcc.sharepoint.com/:f:/s/MilitaryArticulationPlatform/IgDh8urbvLg-QZbE9GUsQdLlAe-90oKBhwbWe26Zn2DAWVM?e=vWAsg5';
+
 function applyFilters() {
     var actVal = document.getElementById('filterActivity').value;
     var visVal = document.getElementById('filterVision').value;
@@ -207,7 +211,20 @@ function resetFilters() {
         updateBtn.title = 'Open Excel to update project data';
         filterBtns.appendChild(updateBtn);
 
-        // Rewrite all card-level Update buttons to use shared URL
+        // Attach Doc button — opens SharePoint attachments folder
+        if (ATTACHMENTS_URL) {
+            var attachBtn = document.createElement('a');
+            attachBtn.href = ATTACHMENTS_URL;
+            attachBtn.target = '_blank';
+            attachBtn.innerHTML = '&#128206; Attach Doc';
+            attachBtn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:#0A2240;border:1px solid #ccc;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;";
+            attachBtn.onmouseover = function() { this.style.background = '#f5f5f5'; };
+            attachBtn.onmouseout = function() { this.style.background = 'transparent'; };
+            attachBtn.title = 'Open attachments folder in SharePoint';
+            filterBtns.appendChild(attachBtn);
+        }
+
+        // Rewrite all card-level Update & Attach buttons to use shared URLs
         function rewriteUpdateBtns() {
             if (!SHARED_EXCEL_URL) return;
             var cardBtns = document.querySelectorAll('a.update-btn');
@@ -216,10 +233,19 @@ function resetFilters() {
                 cardBtns[i].target = '_blank';
             }
         }
+        function rewriteAttachBtns() {
+            if (!ATTACHMENTS_URL) return;
+            var attachBtns = document.querySelectorAll('a.attach-btn');
+            for (var i = 0; i < attachBtns.length; i++) {
+                attachBtns[i].href = ATTACHMENTS_URL;
+                attachBtns[i].target = '_blank';
+            }
+        }
         rewriteUpdateBtns();
+        rewriteAttachBtns();
         // Also rewrite after DOM fully loads (in case buttons render late)
-        document.addEventListener('DOMContentLoaded', rewriteUpdateBtns);
-        setTimeout(rewriteUpdateBtns, 500);
+        document.addEventListener('DOMContentLoaded', function() { rewriteUpdateBtns(); rewriteAttachBtns(); });
+        setTimeout(function() { rewriteUpdateBtns(); rewriteAttachBtns(); }, 500);
     }
 
     // Notes history toggle — show/hide full history per card
