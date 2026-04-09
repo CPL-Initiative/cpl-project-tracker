@@ -10,7 +10,7 @@
     // ── Configuration ──
     // Set these in the HTML or via window globals before this script loads
     var PROXY_URL = window.CPL_REPORT_PROXY_URL || '';
-    var CLAUDE_MODEL = 'claude-sonnet-4-5-20250514';
+    var CLAUDE_MODEL = 'claude-sonnet-4-5-20250929';
 
     // ── Load docx library from CDN ──
     var docxLoaded = false;
