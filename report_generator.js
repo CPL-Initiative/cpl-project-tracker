@@ -107,12 +107,7 @@
             html += '</div></div>';
         });
 
-        // API Key field
-        html += '<div style="margin-top:1rem;padding:0.8rem;background:#FAF8F4;border-radius:6px;border:1px solid #e8e8e8;">';
-        html += '<label style="font-weight:700;color:#0A2240;font-size:0.85rem;display:block;margin-bottom:0.3rem;">Anthropic API Key</label>';
-        html += '<p style="font-size:0.75rem;color:#666;margin:0 0 0.4rem 0;">Your key is stored locally in your browser and never sent anywhere except Anthropic\'s API.</p>';
-        html += '<input type="password" id="reportApiKey" placeholder="sk-ant-..." style="width:100%;padding:7px 10px;border:1px solid #ccc;border-radius:4px;font-size:0.82rem;font-family:monospace;box-sizing:border-box;">';
-        html += '</div>';
+        // (API key handled server-side by Cloudflare Worker proxy)
 
         html += '</div>'; // end body
 
@@ -159,11 +154,7 @@
         // Generate button
         document.getElementById('reportGenBtn').addEventListener('click', generateReport);
 
-        // Restore saved API key
-        try {
-            var savedKey = localStorage.getItem('cpl_api_key');
-            if (savedKey) document.getElementById('reportApiKey').value = savedKey;
-        } catch (e) { }
+        // (API key handled by proxy — no client-side storage needed)
     }
 
     function openModal() {
@@ -251,17 +242,12 @@
     }
 
     // ── Call Claude API ──
-    async function callClaude(apiKey, prompt) {
+    async function callClaude(prompt) {
         var url = PROXY_URL || 'https://api.anthropic.com/v1/messages';
         var headers = {
             'Content-Type': 'application/json',
-            'x-api-key': apiKey,
             'anthropic-version': '2023-06-01',
         };
-        // If using proxy, pass the key in a custom header
-        if (PROXY_URL) {
-            headers['x-anthropic-api-key'] = apiKey;
-        }
 
         var body = JSON.stringify({
             model: CLAUDE_MODEL,
@@ -405,14 +391,10 @@
             return;
         }
 
-        var apiKey = document.getElementById('reportApiKey').value.trim();
-        if (!apiKey) {
-            setStatus('Please enter your Anthropic API key.', '#c00');
+        if (!PROXY_URL) {
+            setStatus('Report proxy not configured. Contact your administrator.', '#c00');
             return;
         }
-
-        // Save key for convenience
-        try { localStorage.setItem('cpl_api_key', apiKey); } catch (e) { }
 
         var btn = document.getElementById('reportGenBtn');
         btn.disabled = true;
@@ -423,7 +405,7 @@
             var prompt = buildPrompt(sel);
             setStatus('Calling Claude API — this may take 15-30 seconds...', '#4A90D9');
 
-            var narrative = await callClaude(apiKey, prompt);
+            var narrative = await callClaude(prompt);
 
             setStatus('Building Word document...', '#4A90D9');
 
