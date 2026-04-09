@@ -17,7 +17,7 @@
     function ensureDocxLib(cb) {
         if (docxLoaded || window.docx) { docxLoaded = true; cb(); return; }
         var s = document.createElement('script');
-        s.src = 'https://unpkg.com/docx@8.0.4/build/index.umd.js';
+        s.src = 'docx.min.js';
         s.onload = function () { docxLoaded = true; cb(); };
         s.onerror = function () { alert('Failed to load docx library.'); };
         document.head.appendChild(s);
