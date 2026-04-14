@@ -2461,7 +2461,7 @@ def merge_exhibit_metrics(kpis, exhibit_data):
     return kpis
 
 
-# ── MAP Exhibit Analysis Tables ─────────────────────────────────────
+# ── MAP Articulation Analysis Tables ─────────────────────────────────────
 
 def _load_top_code_lookup():
     """Load MAP TOP Code → CCC Discipline mapping from TOP_Code_Lookup.xlsx.
@@ -2662,11 +2662,137 @@ def build_exhibit_analysis_tables(exhibit_data):
         "generated_at": exhibit_data.get("generated_at", ""),
     }
 
+    # ── Statewide Exhibit Adoption Analysis ──
+    # Cross-reference CCC Collaborative exhibits with College Courses to find potential adopters
+    statewide_adoption = _build_statewide_adoption(data, rows, cm)
+    if statewide_adoption:
+        tables["statewide_adoption"] = statewide_adoption
+
     print(f"  Built exhibit analysis tables: {len(tables['by_college'])} colleges, "
           f"{len(tables['by_discipline'])} disciplines, {len(tables['by_cpl_type'])} CPL types, "
-          f"{len(tables['by_mode_of_learning'])} modes, {len(tables['top_exhibits'])} top exhibits")
+          f"{len(tables['by_mode_of_learning'])} modes, {len(tables['top_exhibits'])} top exhibits"
+          + (f", {len(statewide_adoption)} statewide exhibits" if statewide_adoption else ""))
 
     return tables
+
+
+def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
+    """
+    For each CCC Collaborative exhibit, identify:
+      - Colleges that have already adopted it
+      - Colleges that could adopt it (have matching courses by CID or TOP code)
+
+    Uses View_CollegeCourses and TOP_Code_Lookup.xlsx for matching.
+    Returns a sorted list of exhibit dicts, or None.
+    """
+    from collections import defaultdict
+
+    # ── Load MAP TOP Code → CCC 4-digit code mapping ──
+    top_lookup = _load_top_code_lookup()  # MAP code → discipline name
+    # Need MAP code → CCC 4-digit code for course matching
+    map_to_ccc4 = {}
+    for folder in _EXHIBIT_LOCATIONS:
+        path = os.path.join(folder, "TOP_Code_Lookup.xlsx")
+        if os.path.exists(path):
+            try:
+                wb = load_workbook(path, data_only=True)
+                ws = wb["TOP Code Lookup"]
+                for row in ws.iter_rows(min_row=2, max_col=5, values_only=True):
+                    map_code = str(row[0]).strip() if row[0] is not None else ""
+                    ccc_4digit = str(row[3]).strip() if row[3] else ""
+                    if map_code and ccc_4digit:
+                        map_to_ccc4[map_code] = ccc_4digit
+                wb.close()
+            except Exception:
+                pass
+            break
+
+    # ── Find College Courses dataset ──
+    courses_ds = None
+    for report in all_data:
+        if report.get("viewName") == "View_CollegeCourses_APIDataset":
+            courses_ds = report
+            break
+    if not courses_ds:
+        return None
+
+    course_rows = courses_ds["columnValue"]
+    ccm = {c: i for i, c in enumerate(courses_ds.get("columnName", []))}
+
+    # Build CID → colleges and CCC4 TOP → colleges lookups from College Courses
+    cid_to_colleges = defaultdict(set)
+    ccc4_to_colleges = defaultdict(set)
+
+    for row in course_rows:
+        college = (row[ccm.get("College", 0)] or "").strip()
+        cid = (row[ccm.get("CID Number", 1)] or "").strip()
+        top_raw = (row[ccm.get("Top Code", 6)] or "").strip()
+        # Extract 4-digit code from "0948.00: Automotive Technology"
+        ccc4 = top_raw.split(".")[0] if "." in top_raw else ""
+        if college and cid:
+            cid_to_colleges[cid].add(college)
+        if college and ccc4:
+            ccc4_to_colleges[ccc4].add(college)
+
+    # ── Gather CCC Collaborative exhibits ──
+    i_collab = exhibit_cm.get("Collaborative Type", 7)
+    i_eid = exhibit_cm.get("ExhibitID", 1)
+    i_title = exhibit_cm.get("Exhibit Title", 2)
+    i_artic = exhibit_cm.get("Articulation College", 4)
+    i_cid = exhibit_cm.get("CID Number", 9)
+    i_top = exhibit_cm.get("TOP Code", 8)
+    i_cpl = exhibit_cm.get("CPL Type Description", 13)
+
+    ccc_exhibits = defaultdict(lambda: {
+        "adopters": set(), "cids": set(), "map_top": "",
+        "title": "", "cpl_type": "",
+    })
+
+    for row in exhibit_rows:
+        if "CCC" not in (row[i_collab] or ""):
+            continue
+        eid = (row[i_eid] or "").strip()
+        e = ccc_exhibits[eid]
+        e["title"] = (row[i_title] or "").strip()
+        artic = (row[i_artic] or "").strip()
+        if artic: e["adopters"].add(artic)
+        cid = (row[i_cid] or "").strip()
+        if cid: e["cids"].add(cid)
+        top = (row[i_top] or "").strip()
+        if top and not e["map_top"]: e["map_top"] = top
+        cpl = (row[i_cpl] or "").strip()
+        if cpl and not e["cpl_type"]: e["cpl_type"] = cpl
+
+    # ── Compute potential for each exhibit ──
+    results = []
+    for eid, e in ccc_exhibits.items():
+        adopters = e["adopters"]
+        ccc4 = map_to_ccc4.get(e["map_top"], "")
+
+        potential_cid = set()
+        for cid in e["cids"]:
+            potential_cid.update(cid_to_colleges.get(cid, set()))
+
+        potential_top = ccc4_to_colleges.get(ccc4, set()) if ccc4 else set()
+        new_colleges = (potential_cid | potential_top) - adopters
+
+        disc = top_lookup.get(e["map_top"], "Not Mapped")
+
+        results.append({
+            "exhibit_id": eid,
+            "title": e["title"],
+            "cpl_type": e["cpl_type"],
+            "discipline": disc,
+            "adopters": len(adopters),
+            "adopter_names": sorted(adopters),
+            "potential": len(new_colleges),
+            "potential_names": sorted(new_colleges),
+            "total_addressable": len(adopters) + len(new_colleges),
+        })
+
+    # Sort: exhibits with most potential first, then by adopters descending
+    results.sort(key=lambda x: (-x["potential"], -x["adopters"]))
+    return results
 
 
 def render_exhibit_analysis_html(tables):
@@ -2797,13 +2923,60 @@ def render_exhibit_analysis_html(tables):
                    f'<td>{r["discipline"]}</td></tr>\n')
     )
 
+    # ── 7. Statewide Exhibit Adoption ──
+    statewide_card = ""
+    statewide_data = tables.get("statewide_adoption", [])
+    if statewide_data:
+        total_potential = sum(r["potential"] for r in statewide_data)
+        with_potential = sum(1 for r in statewide_data if r["potential"] > 0)
+
+        def render_statewide_row(r):
+            adopter_tags = ", ".join(
+                f'<span class="sw-college sw-adopted">{c}</span>' for c in r["adopter_names"]
+            )
+            potential_tags = ", ".join(
+                f'<span class="sw-college sw-potential">{c}</span>' for c in r["potential_names"]
+            ) if r["potential_names"] else '<span style="opacity:0.4;font-style:italic;">none identified</span>'
+            return (
+                f'<tr>'
+                f'<td class="exhibit-cell-name" style="max-width:220px;">{r["title"]}</td>'
+                f'<td class="exhibit-cell-num">{r["adopters"]}</td>'
+                f'<td class="exhibit-cell-num" style="color:#C9A84C;font-weight:600;">{r["potential"]}</td>'
+                f'<td class="sw-college-list">{adopter_tags}</td>'
+                f'<td class="sw-college-list">{potential_tags}</td>'
+                f'</tr>\n'
+            )
+
+        sw_header_cells = "".join(f'<th>{h}</th>' for h in [
+            "Statewide Exhibit", "Adopted", "Potential", "Colleges Adopted", "Colleges — Potential Adopters"
+        ])
+        sw_body = "".join(render_statewide_row(r) for r in statewide_data)
+
+        statewide_card = (
+            f'<div class="exhibit-card exhibit-card-full" id="exhibit-statewide">\n'
+            f'  <div class="exhibit-card-header">\n'
+            f'    <div class="exhibit-card-title">Statewide (CCC Collaborative) Exhibit Adoption</div>\n'
+            f'    <div class="exhibit-card-subtitle">'
+            f'{len(statewide_data)} statewide exhibits | '
+            f'{with_potential} with growth potential | '
+            f'{fmt(total_potential)} potential new college adoptions</div>\n'
+            f'  </div>\n'
+            f'  <div class="exhibit-card-body" style="max-height:600px;">\n'
+            f'    <table class="exhibit-table">\n'
+            f'      <thead><tr>{sw_header_cells}</tr></thead>\n'
+            f'      <tbody>{sw_body}</tbody>\n'
+            f'    </table>\n'
+            f'  </div>\n'
+            f'</div>\n'
+        )
+
     # ── Assemble section ──
     gen_at = tables.get("generated_at", "")
     section = (
-        f'<!-- ═══ MAP Exhibit Analysis Section ═══ -->\n'
+        f'<!-- ═══ MAP Articulation Analysis Section ═══ -->\n'
         f'<div class="exhibit-analysis-section" id="exhibitAnalysisSection">\n'
         f'  <div class="exhibit-section-header">\n'
-        f'    <h2 style="margin:0;font-size:1.3rem;">MAP Exhibit Analysis</h2>\n'
+        f'    <h2 style="margin:0;font-size:1.3rem;">MAP Articulation Analysis</h2>\n'
         f'    <div style="font-size:0.75rem;opacity:0.7;margin-top:2px;">'
         f'Source: MAP Custom Reporting Module | Generated: {gen_at}</div>\n'
         f'  </div>\n'
@@ -2815,7 +2988,8 @@ def render_exhibit_analysis_html(tables):
         f'    {college_card}\n'
         f'    {top_card}\n'
         f'  </div>\n'
-        f'</div>\n'
+        + (f'  {statewide_card}\n' if statewide_card else '')
+        + f'</div>\n'
     )
 
     return section
@@ -2823,7 +2997,7 @@ def render_exhibit_analysis_html(tables):
 
 # ── CSS for exhibit analysis cards ──
 EXHIBIT_ANALYSIS_CSS = """
-/* ═══ MAP Exhibit Analysis Cards ═══ */
+/* ═══ MAP Articulation Analysis Cards ═══ */
 .exhibit-analysis-section {
     display: none;
     margin: 1.5rem auto;
@@ -2917,24 +3091,54 @@ EXHIBIT_ANALYSIS_CSS = """
     white-space: nowrap;
     color: rgba(255,255,255,0.6);
 }
+/* Full-width card (statewide adoption) */
+.exhibit-card-full {
+    grid-column: 1 / -1;
+}
+/* College name tags */
+.sw-college-list {
+    line-height: 1.8;
+    max-width: 500px;
+}
+.sw-college {
+    display: inline-block;
+    font-size: 0.62rem;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin: 1px 2px;
+    white-space: nowrap;
+}
+.sw-adopted {
+    background: rgba(42,125,79,0.25);
+    color: #6fcf97;
+    border: 1px solid rgba(42,125,79,0.4);
+}
+.sw-potential {
+    background: rgba(201,168,76,0.12);
+    color: #C9A84C;
+    border: 1px solid rgba(201,168,76,0.25);
+}
 /* Toggle button */
 .exhibit-toggle-btn {
     display: inline-block;
-    margin: 1rem auto;
-    padding: 0.5rem 1.5rem;
-    background: rgba(201,168,76,0.15);
-    border: 1px solid rgba(201,168,76,0.4);
-    border-radius: 6px;
-    color: #C9A84C;
-    font-size: 0.8rem;
-    font-weight: 600;
+    margin: 1.2rem auto;
+    padding: 0.75rem 2.5rem;
+    background: #0A2240;
+    border: 2px solid #1a3a60;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.2s;
     text-align: center;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 .exhibit-toggle-btn:hover {
-    background: rgba(201,168,76,0.25);
-    border-color: #C9A84C;
+    background: #122d4f;
+    border-color: #2a5a8f;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 """
 
@@ -4052,8 +4256,8 @@ def main():
                     '<button class="exhibit-toggle-btn" onclick="'
                     "var s=document.getElementById('exhibitAnalysisSection');"
                     "s.classList.toggle('visible');"
-                    "this.textContent=s.classList.contains('visible')?'Hide Exhibit Analysis':'Show Exhibit Analysis';"
-                    '">Show Exhibit Analysis</button></div>\n\n    '
+                    "this.textContent=s.classList.contains('visible')?'Hide Detailed Articulation Data':'Show Detailed Articulation Data';"
+                    '">Show Detailed Articulation Data</button></div>\n\n    '
                 )
                 # Insert toggle + analysis section before the Filter Bar
                 filter_marker = '<!-- Filter Bar -->'
