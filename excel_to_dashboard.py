@@ -2923,52 +2923,11 @@ def render_exhibit_analysis_html(tables):
                    f'<td>{r["discipline"]}</td></tr>\n')
     )
 
-    # ── 7. Statewide Exhibit Adoption ──
+    # ── 7. Statewide Exhibit Adoption (dynamic — powered by statewide_data.js) ──
     statewide_card = ""
     statewide_data = tables.get("statewide_adoption", [])
     if statewide_data:
-        total_potential = sum(r["potential"] for r in statewide_data)
-        with_potential = sum(1 for r in statewide_data if r["potential"] > 0)
-
-        def render_statewide_row(r):
-            adopter_tags = ", ".join(
-                f'<span class="sw-college sw-adopted">{c}</span>' for c in r["adopter_names"]
-            )
-            potential_tags = ", ".join(
-                f'<span class="sw-college sw-potential">{c}</span>' for c in r["potential_names"]
-            ) if r["potential_names"] else '<span style="opacity:0.4;font-style:italic;">none identified</span>'
-            return (
-                f'<tr>'
-                f'<td class="exhibit-cell-name" style="max-width:220px;">{r["title"]}</td>'
-                f'<td class="exhibit-cell-num">{r["adopters"]}</td>'
-                f'<td class="exhibit-cell-num" style="color:#C9A84C;font-weight:600;">{r["potential"]}</td>'
-                f'<td class="sw-college-list">{adopter_tags}</td>'
-                f'<td class="sw-college-list">{potential_tags}</td>'
-                f'</tr>\n'
-            )
-
-        sw_header_cells = "".join(f'<th>{h}</th>' for h in [
-            "Statewide Exhibit", "Adopted", "Potential", "Colleges Adopted", "Colleges — Potential Adopters"
-        ])
-        sw_body = "".join(render_statewide_row(r) for r in statewide_data)
-
-        statewide_card = (
-            f'<div class="exhibit-card exhibit-card-full" id="exhibit-statewide">\n'
-            f'  <div class="exhibit-card-header">\n'
-            f'    <div class="exhibit-card-title">Statewide (CCC Collaborative) Exhibit Adoption</div>\n'
-            f'    <div class="exhibit-card-subtitle">'
-            f'{len(statewide_data)} statewide exhibits | '
-            f'{with_potential} with growth potential | '
-            f'{fmt(total_potential)} potential new college adoptions</div>\n'
-            f'  </div>\n'
-            f'  <div class="exhibit-card-body" style="max-height:600px;">\n'
-            f'    <table class="exhibit-table">\n'
-            f'      <thead><tr>{sw_header_cells}</tr></thead>\n'
-            f'      <tbody>{sw_body}</tbody>\n'
-            f'    </table>\n'
-            f'  </div>\n'
-            f'</div>\n'
-        )
+        statewide_card = '<div id="statewide-interactive-container"></div>\n'
 
     # ── Assemble section ──
     gen_at = tables.get("generated_at", "")
@@ -3140,6 +3099,33 @@ EXHIBIT_ANALYSIS_CSS = """
     border-color: #2a5a8f;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
+/* ═══ Interactive Statewide Card ═══ */
+#statewide-interactive-container { grid-column: 1 / -1; }
+.sw-interactive { background:rgba(10,34,64,0.85); border:1px solid rgba(201,168,76,0.25); border-radius:10px; overflow:hidden; }
+.sw-toolbar { padding:0.8rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.08); }
+.sw-toolbar input[type=text] { flex:1 1 200px; padding:0.4rem 0.6rem; border:1px solid rgba(255,255,255,0.2); border-radius:5px; background:rgba(255,255,255,0.06); color:#fff; font-size:0.78rem; outline:none; }
+.sw-toolbar input[type=text]:focus { border-color:#C9A84C; }
+.sw-toolbar input[type=text]::placeholder { color:rgba(255,255,255,0.35); }
+.sw-filter-group { position:relative; display:inline-block; }
+.sw-filter-btn { padding:0.35rem 0.7rem; border:1px solid rgba(255,255,255,0.2); border-radius:5px; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.8); font-size:0.72rem; cursor:pointer; white-space:nowrap; }
+.sw-filter-btn:hover, .sw-filter-btn.active { border-color:#C9A84C; color:#C9A84C; }
+.sw-filter-dropdown { display:none; position:absolute; top:100%; left:0; z-index:100; min-width:220px; max-height:280px; overflow-y:auto; background:#0e2a4a; border:1px solid rgba(201,168,76,0.3); border-radius:6px; box-shadow:0 6px 20px rgba(0,0,0,0.5); margin-top:4px; }
+.sw-filter-dropdown.open { display:block; }
+.sw-filter-dropdown label { display:flex; align-items:center; gap:0.4rem; padding:0.3rem 0.6rem; font-size:0.7rem; color:rgba(255,255,255,0.8); cursor:pointer; }
+.sw-filter-dropdown label:hover { background:rgba(201,168,76,0.1); }
+.sw-filter-dropdown input[type=checkbox] { accent-color:#C9A84C; }
+.sw-filter-search { width:calc(100% - 1rem); margin:0.4rem 0.5rem; padding:0.3rem 0.5rem; border:1px solid rgba(255,255,255,0.15); border-radius:4px; background:rgba(255,255,255,0.05); color:#fff; font-size:0.68rem; }
+.sw-action-bar { padding:0.5rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.06); }
+.sw-action-btn { padding:0.35rem 0.9rem; border:1px solid rgba(201,168,76,0.4); border-radius:5px; background:rgba(201,168,76,0.1); color:#C9A84C; font-size:0.72rem; font-weight:600; cursor:pointer; transition:all 0.15s; }
+.sw-action-btn:hover { background:rgba(201,168,76,0.25); }
+.sw-action-btn.primary { background:#C9A84C; color:#0A2240; border-color:#C9A84C; }
+.sw-action-btn.primary:hover { background:#d4b35c; }
+.sw-count { font-size:0.7rem; color:rgba(255,255,255,0.5); margin-left:auto; }
+.sw-table-wrap { max-height:600px; overflow:auto; scrollbar-width:thin; scrollbar-color:rgba(201,168,76,0.3) transparent; }
+.sw-table-wrap::-webkit-scrollbar { width:6px; height:6px; }
+.sw-table-wrap::-webkit-scrollbar-thumb { background:rgba(201,168,76,0.3); border-radius:3px; }
+.sw-chk { accent-color:#C9A84C; cursor:pointer; }
+.sw-row-selected { background:rgba(201,168,76,0.08) !important; }
 """
 
 
@@ -4107,6 +4093,29 @@ def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(js_content)
 
+    # ── Write statewide exhibit data as separate JS for interactive card ──
+    exhibit_tables = build_exhibit_analysis_tables(exhibit_data) if exhibit_data else None
+    if exhibit_tables and exhibit_tables.get("statewide_adoption"):
+        sw_js_path = os.path.join(SCRIPT_DIR, "statewide_data.js")
+        sw_data = {
+            "exhibits": exhibit_tables["statewide_adoption"],
+            "analysis": {
+                "by_college": exhibit_tables["by_college"],
+                "by_discipline": exhibit_tables["by_discipline"],
+                "by_cpl_type": exhibit_tables["by_cpl_type"],
+                "by_mode_of_learning": exhibit_tables["by_mode_of_learning"],
+                "collaborative_analysis": exhibit_tables["collaborative_analysis"],
+                "top_exhibits": exhibit_tables["top_exhibits"],
+            },
+            "generated_at": exhibit_tables.get("generated_at", ""),
+            "total_credit_recs": exhibit_tables.get("total_credit_recs", 0),
+        }
+        sw_js = ("/* Statewide Exhibit Adoption Data — auto-generated */\n"
+                 "window.CPL_STATEWIDE = " + json.dumps(sw_data, indent=2, ensure_ascii=False) + ";\n")
+        with open(sw_js_path, "w", encoding="utf-8") as f:
+            f.write(sw_js)
+        print(f"  Exported statewide data to {sw_js_path} ({len(exhibit_tables['statewide_adoption'])} exhibits)")
+
     # ── Inject data inline AND render static HTML into the dashboard ──
     if os.path.exists(HTML_FILE):
         with open(HTML_FILE, "r", encoding="utf-8") as f:
@@ -4194,6 +4203,21 @@ def main():
                 att_script_pos = html.find(att_script_marker)
             html = html[:att_script_pos] + inject_js + html[att_script_pos:]
             print(f"  Injected attachments URL from Excel config")
+
+        # ── Inject statewide interactive scripts (college_lookup, statewide_data, statewide_interactive) ──
+        sw_scripts = [
+            '<script src="college_lookup.js"></script>',
+            '<script src="statewide_data.js"></script>',
+            '<script src="statewide_interactive.js"></script>',
+        ]
+        for sw_tag in sw_scripts:
+            if sw_tag not in html:
+                # Insert before </body>
+                body_end = html.rfind('</body>')
+                if body_end == -1:
+                    body_end = len(html)
+                html = html[:body_end] + '    ' + sw_tag + '\n' + html[body_end:]
+        print("  Ensured statewide interactive script tags present")
 
         START_MARKER = "<!-- DATA-START"
         END_MARKER   = "<!-- DATA-END -->"
