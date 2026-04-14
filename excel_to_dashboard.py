@@ -2300,8 +2300,12 @@ def render_kpi_history_card(history):
     return html
 
 
-def render_college_activity_card(live_data):
-    """Render a full-width College Activity card showing most/least active colleges."""
+def render_college_activity_card(live_data, last_activity=None):
+    """Render a full-width College Activity card showing most/least active colleges.
+
+    last_activity: optional dict of {college_name: datetime} from _compute_college_last_activity().
+    When provided, a color-coded 'Last MAP Activity' column is added to both tables.
+    """
     if not live_data:
         return ""
 
@@ -2314,6 +2318,9 @@ def render_college_activity_card(live_data):
         return ""
 
     scraped_at = live_data.get("scraped_at", "")[:10]
+    today_dt   = datetime.now()
+    la         = last_activity or {}
+    show_la    = bool(la)  # only add column when we have data
 
     # ── Shared helpers ──────────────────────────────────────────────
     CRITERIA_LABELS = ["Students≥500", "Units≥3k", "Avg≥5", "Trans≥25%", "AvgTrans≥3"]
@@ -2345,6 +2352,29 @@ def render_college_activity_card(live_data):
                 f'<span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">{pct:.0f}%</span>'
                 f'</div>')
 
+    def _last_activity_cell(college_name):
+        """Return a TD with color-coded days-since badge for the given college."""
+        dt = la.get(college_name)
+        if dt is None:
+            return (f'<td style="padding:0.25rem 0.4rem;text-align:center;">'
+                    f'<span style="font-size:0.62rem;color:rgba(255,255,255,0.25);">—</span>'
+                    f'</td>')
+        days = (today_dt - dt).days
+        if days <= 30:
+            dot_color = "#4CAF50"   # green
+            text_color = "#4CAF50"
+        elif days <= 90:
+            dot_color = "#FF9800"   # amber
+            text_color = "#FF9800"
+        else:
+            dot_color = "#EF5350"   # red
+            text_color = "#EF5350"
+        label = f"{days}d" if days < 365 else f"{days // 365}y {(days % 365) // 30}m"
+        return (f'<td style="padding:0.25rem 0.4rem;text-align:center;white-space:nowrap;">'
+                f'<span style="font-size:0.62rem;color:{dot_color};">●</span>'
+                f'<span style="font-size:0.62rem;color:{text_color};margin-left:2px;">{label}</span>'
+                f'</td>')
+
     # ── Section: Most Active (Leading colleges) ───────────────────
     def _leading_rows():
         rows = ""
@@ -2353,6 +2383,7 @@ def render_college_activity_card(live_data):
             n     = c.get("criteriaMetCount", 0)
             tr    = c.get("transcriptionRate", 0)
             bar_color = GREEN if tr >= 50 else (AMBER if tr >= 25 else "rgba(255,255,255,0.25)")
+            la_cell = _last_activity_cell(c["college"]) if show_la else ""
             rows += (
                 f'<tr>'
                 f'<td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">{i}</td>'
@@ -2360,6 +2391,7 @@ def render_college_activity_card(live_data):
                 f'<td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:{GOLD};text-align:right;white-space:nowrap;">{c.get("students",0):,}</td>'
                 f'<td style="padding:0.25rem 0.4rem;">{_pct_bar(tr, bar_color)}</td>'
                 f'<td style="padding:0.25rem 0.4rem;text-align:center;">{_dots(n)}</td>'
+                + la_cell +
                 f'</tr>'
             )
         return rows
@@ -2374,15 +2406,21 @@ def render_college_activity_card(live_data):
         for c in bottom_advancing:
             n  = c.get("criteriaMetCount", 0)
             tr = c.get("transcriptionRate", 0)
+            la_cell = _last_activity_cell(c["college"]) if show_la else ""
             rows += (
                 f'<tr>'
                 f'<td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.7);">{c["college"]}</td>'
                 f'<td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.5);text-align:right;white-space:nowrap;">{c.get("students",0):,}</td>'
                 f'<td style="padding:0.25rem 0.4rem;">{_pct_bar(tr, AMBER if tr > 0 else GRAY, width=36)}</td>'
                 f'<td style="padding:0.25rem 0.4rem;text-align:center;">{_dots(n)}</td>'
+                + la_cell +
                 f'</tr>'
             )
         return rows
+
+    # ── Column headers for Last Activity (only when data available) ──────
+    la_th = ('<th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:center;">Last MAP Activity</th>'
+             if show_la else "")
 
     # ── Section: Inactive colleges ────────────────────────────────
     inactive_pills = " ".join(
@@ -2399,6 +2437,17 @@ def render_college_activity_card(live_data):
     )
 
     scraped_note = f'<span style="font-size:0.65rem;color:rgba(255,255,255,0.3);">As of {scraped_at}</span>' if scraped_at else ""
+
+    # ── Last Activity legend line ─────────────────────────────────
+    la_legend = (
+        '&nbsp;&nbsp;&nbsp;'
+        '<span style="font-size:0.62rem;color:rgba(255,255,255,0.35);">Last MAP Activity: </span>'
+        '<span style="font-size:0.62rem;color:#4CAF50;">● ≤30d</span> '
+        '<span style="font-size:0.62rem;color:#FF9800;">● 31–90d</span> '
+        '<span style="font-size:0.62rem;color:#EF5350;">● 90+d</span> '
+        '<span style="font-size:0.62rem;color:rgba(255,255,255,0.25);">— no data</span>'
+        if show_la else ""
+    )
 
     html = f"""
     <div style="grid-column:1/-1;background:var(--navy-primary);border-radius:8px;
@@ -2436,6 +2485,7 @@ def render_college_activity_card(live_data):
                   <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:right;">Students</th>
                   <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;">Trans. Rate</th>
                   <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:center;">Criteria</th>
+                  {la_th}
                 </tr>
               </thead>
               <tbody style="border-top:1px solid rgba(255,255,255,0.08);">
@@ -2460,6 +2510,7 @@ def render_college_activity_card(live_data):
                   <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:right;">Students</th>
                   <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;">Trans. Rate</th>
                   <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:center;">Criteria</th>
+                  {la_th}
                 </tr>
               </thead>
               <tbody style="border-top:1px solid rgba(255,255,255,0.08);">
@@ -2478,9 +2529,9 @@ def render_college_activity_card(live_data):
 
       </div>
 
-      <!-- Criteria legend -->
+      <!-- Criteria legend + Last Activity legend -->
       <div style="margin-top:0.8rem;padding-top:0.6rem;border-top:1px solid rgba(255,255,255,0.06);">
-        ● Criteria met: &nbsp; {legend}
+        ● Criteria met: &nbsp; {legend}{la_legend}
       </div>
 
     </div>
@@ -2643,16 +2694,55 @@ def read_exhibit_metrics():
     # ── Parse credit distribution by college ──
     credit_dist = _parse_credit_distribution(datasets)
 
+    # ── Compute last MAP activity per college ──
+    last_activity = _compute_college_last_activity(datasets)
+
     # ── Combine into unified result ──
     result = exhibits_result or {}
     result["source_file"] = os.path.basename(EXHIBIT_FILE)
     result["generated_at"] = generated_at
     result["datasets_found"] = list(datasets.keys())
+    result["college_last_activity"] = last_activity
 
     if credit_dist:
         result["credit_distribution"] = credit_dist
 
     return result if result.get("total_credit_recs") else None
+
+
+_TEST_COLLEGES = {"RivTest City College", "MorTest City College", "Nortest City College", "CA MAP INITIATIVE COLLEGE"}
+
+def _compute_college_last_activity(datasets):
+    """Return {college_name: datetime} for the most recent 'Last Submitted On' date
+    per college in View_ArticulatedCollegeCourses_APIDataset.
+    Filters out known test colleges.
+    Returns empty dict if dataset is unavailable.
+    """
+    ds = datasets.get("View_ArticulatedCollegeCourses_APIDataset")
+    if not ds:
+        return {}
+
+    rows   = ds["rows"]
+    cm     = ds["col_map"]
+    i_col  = cm.get("College", 0)
+    i_date = cm.get("Last Submitted On", 18)
+
+    college_latest = {}  # college_name -> datetime
+    for row in rows:
+        college = (row[i_col] or "").strip()
+        if not college or college in _TEST_COLLEGES:
+            continue
+        raw_date = (row[i_date] or "").strip()
+        if not raw_date:
+            continue
+        try:
+            dt = datetime.strptime(raw_date, "%m/%d/%Y %I:%M:%S %p")
+        except ValueError:
+            continue
+        if college not in college_latest or dt > college_latest[college]:
+            college_latest[college] = dt
+
+    return college_latest
 
 
 def _parse_exhibits(datasets):
@@ -4535,7 +4625,8 @@ def main():
     # Log daily snapshot and render trends + activity cards
     kpi_history = log_daily_snapshot(live_data, exhibit_data)
     trends_card_html   = render_kpi_history_card(kpi_history)
-    activity_card_html = render_college_activity_card(live_data)
+    college_last_activity = exhibit_data.get("college_last_activity", {}) if exhibit_data else {}
+    activity_card_html = render_college_activity_card(live_data, last_activity=college_last_activity)
 
     data = {
         "last_updated": now,
