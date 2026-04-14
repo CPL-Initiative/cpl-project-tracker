@@ -51,14 +51,39 @@ window.CPL_DATA = {
         {
           "label": "Apprentice",
           "value": "6k"
+        },
+        {
+          "label": "Applied Credits",
+          "value": "198,884",
+          "note": "posted to student records"
         }
       ],
       "live": true
     },
     "credit_recommendations": {
-      "value": "288",
+      "value": "7,290",
       "label": "Credit Recommendations",
-      "sub": "281 adopted this year"
+      "sub": "Source: MAP Custom Reporting Module",
+      "breakdowns": [
+        {
+          "label": "CCC Collaborative",
+          "value": "955",
+          "note": "statewide faculty workgroups"
+        },
+        {
+          "label": "Local",
+          "value": "6,335",
+          "note": "individual college articulations"
+        }
+      ],
+      "live": false,
+      "footnote": [
+        "Standardized Assessment: 2,948",
+        "Industry Certification: 2,548",
+        "Credit By Exam: 1,302",
+        "Portfolio Review: 342",
+        "Military: 109"
+      ]
     },
     "active_colleges": {
       "value": "95",
@@ -170,7 +195,67 @@ window.CPL_DATA = {
       ],
       "live": true
     },
-    "_live_updated": "2026-04-14T16:32:43.212Z"
+    "_live_updated": "2026-04-14T16:32:43.212Z",
+    "map_exhibits": {
+      "value": "3,036",
+      "label": "MAP Exhibits",
+      "sub": "62 originating colleges",
+      "breakdowns": [
+        {
+          "label": "CCC Collaborative",
+          "value": "116",
+          "note": "statewide exhibits"
+        },
+        {
+          "label": "Local",
+          "value": "2,920",
+          "note": "college-created exhibits"
+        }
+      ]
+    },
+    "ccc_collaborative": {
+      "value": "55",
+      "label": "CCC Collaborative Adoption",
+      "sub": "Colleges adopting statewide exhibits",
+      "breakdowns": [
+        {
+          "label": "Collaborative Exhibits",
+          "value": "116"
+        },
+        {
+          "label": "Collaborative Credit Recs",
+          "value": "955"
+        }
+      ]
+    },
+    "articulation_colleges": {
+      "value": "82",
+      "label": "Articulating Colleges",
+      "sub": "Colleges with MAP exhibits",
+      "breakdowns": [
+        {
+          "label": "Originating Colleges",
+          "value": "62",
+          "note": "created exhibits"
+        },
+        {
+          "label": "Adopting CCC Collaborative",
+          "value": "55",
+          "note": "statewide exhibits"
+        }
+      ]
+    },
+    "_exhibit_updated": "2026-04-14T17:42:21",
+    "_exhibit_source": "CustomReport_2026-04-14-10.42.48.json",
+    "_exhibit_datasets": [
+      "View_ArticulatedCollegeCourses_APIDataset",
+      "View_CreditDistributionByCollege_APIDataset",
+      "View_PointInTime_StudentAggregatedValues_APIDataset",
+      "View_ArticulatedMAPExhibits_APIDataset",
+      "View_CollegeCourses_APIDataset",
+      "View_ProgramsofStudy_APIDataset",
+      "View_StudentAggregatedValues_APIDataset"
+    ]
   },
   "activity_kpis": [
     {

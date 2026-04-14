@@ -37,6 +37,45 @@ OUTPUT_FILE = os.path.join(SCRIPT_DIR, "CPL_Data.js")
 HTML_FILE   = os.path.join(SCRIPT_DIR, "CPL_Dashboard.html")
 LIVE_FILE   = os.path.join(SCRIPT_DIR, "live_metrics.json")
 
+# ── MAP Exhibit / Custom Report data source ─────────────────────────
+# The Custom Reporting Module (customreportingmodule.azurewebsites.net) exports
+# a combined JSON file containing multiple datasets.  The pipeline reads all
+# available datasets and extracts KPIs from each.
+#
+# Search order for the JSON file:
+#   1. User's Documents folder (Windows native path)
+#   2. Cowork sandbox mount path (sibling project folder)
+#   3. Local CPL Project Tracker folder (fallback)
+_EXHIBIT_LOCATIONS = [
+    os.path.join(os.path.expanduser("~"), "Documents", "Claude", "Projects", "MAP Exhibit Project"),
+    os.path.join(os.path.dirname(SCRIPT_DIR), "..", "MAP Exhibit Project"),  # sibling mount in Cowork
+    SCRIPT_DIR,  # fallback: same folder as pipeline
+]
+
+def _find_exhibit_json(folder):
+    """Find the most recent CustomReport_*.json file in a folder.
+    Prefers combined multi-dataset exports (largest file) over single-view exports.
+    """
+    if not os.path.isdir(folder):
+        return None
+    candidates = [f for f in os.listdir(folder)
+                  if f.startswith("CustomReport_") and f.endswith(".json")]
+    if not candidates:
+        # Also check for Articulations-prefixed exports (older naming convention)
+        candidates = [f for f in os.listdir(folder)
+                      if f.startswith("Articulations_CustomReport_") and f.endswith(".json")]
+    if not candidates:
+        return None
+    # Sort by date-stamp in filename (newest first)
+    candidates.sort(reverse=True)
+    return os.path.join(folder, candidates[0])
+
+EXHIBIT_FILE = None
+for _loc in _EXHIBIT_LOCATIONS:
+    EXHIBIT_FILE = _find_exhibit_json(_loc)
+    if EXHIBIT_FILE:
+        break
+
 # ── Column map (1-indexed) ──────────────────────────────────────────
 COL_ID          = 1
 COL_NAME        = 2
@@ -863,7 +902,8 @@ def render_kpi_section_html(kpis, kpi_display_order=None):
     kpi_display_order: list of KPI keys in desired display order.
     """
     default_order = ['cumulative_students', 'eligible_units', 'transcripted_units',
-                     'credit_recommendations', 'active_colleges',
+                     'credit_recommendations', 'map_exhibits', 'ccc_collaborative',
+                     'active_colleges', 'articulation_colleges',
                      'estimated_savings', 'veteran_sprint', 'twenty_year_impact']
     display_keys = kpi_display_order if kpi_display_order else default_order
 
@@ -882,17 +922,26 @@ def render_kpi_section_html(kpis, kpi_display_order=None):
         if kpi.get("breakdowns"):
             rows = ""
             for bd in kpi["breakdowns"]:
+                note_html = f' <span class="kpi-bd-note">({bd["note"]})</span>' if bd.get("note") else ""
                 rows += (f'<div class="kpi-bd-row">'
-                         f'<span class="kpi-bd-label">{bd["label"]}</span>'
+                         f'<span class="kpi-bd-label">{bd["label"]}{note_html}</span>'
                          f'<span class="kpi-bd-value">{bd["value"]}</span>'
                          f'</div>\n')
             bd_html = f'<div class="kpi-breakdowns">{rows}</div>'
+
+        # Footnote (e.g. tier criteria for Active Colleges)
+        fn_html = ""
+        if kpi.get("footnote"):
+            fn_items = "".join(f'<div class="kpi-fn-item">{item}</div>' for item in kpi["footnote"])
+            fn_html = f'<div class="kpi-footnote">{fn_items}</div>'
+
         cards_html += (
             f'        <div class="kpi-card">\n'
             f'            <div class="kpi-number">{kpi["value"]}{live_badge}</div>\n'
             f'            <div class="kpi-label">{kpi["label"]}</div>\n'
             f'            {sub_html}\n'
             f'            {bd_html}\n'
+            f'            {fn_html}\n'
             f'        </div>\n'
         )
     return cards_html
@@ -2019,6 +2068,7 @@ def merge_live_metrics(kpis, live_data):
         "TRANSCRIBED UNITS": "transcripted_units",
         "SAVINGS": "estimated_savings",
         "20-YEAR IMPACT": "twenty_year_impact",
+        "ACTIVE COLLEGES": "active_colleges",
     }
 
     for metric in live_data["metrics"]:
@@ -2027,10 +2077,12 @@ def merge_live_metrics(kpis, live_data):
         if not key:
             continue
 
-        breakdowns = [
-            {"label": b["label"], "value": b["value"]}
-            for b in metric.get("breakdowns", [])
-        ]
+        breakdowns = []
+        for b in metric.get("breakdowns", []):
+            bd_entry = {"label": b["label"], "value": b["value"]}
+            if b.get("note"):
+                bd_entry["note"] = b["note"]
+            breakdowns.append(bd_entry)
 
         if key in kpis:
             # Update existing KPI with live value + breakdowns
@@ -2038,7 +2090,7 @@ def merge_live_metrics(kpis, live_data):
             kpis[key]["breakdowns"] = breakdowns
             kpis[key]["live"] = True
         else:
-            # Add new KPI (eligible_units, twenty_year_impact)
+            # Add new KPI (eligible_units, twenty_year_impact, active_colleges)
             kpis[key] = {
                 "value": metric["value"],
                 "label": metric.get("title", title.title()),
@@ -2046,6 +2098,10 @@ def merge_live_metrics(kpis, live_data):
                 "breakdowns": breakdowns,
                 "live": True,
             }
+
+        # Preserve footnote (e.g. Active Colleges criteria list)
+        if metric.get("footnote"):
+            kpis[key]["footnote"] = metric["footnote"]
 
     # Update Veteran Sprint card from live scraped values
     if "veteran_sprint" in kpis:
@@ -2069,6 +2125,339 @@ def merge_live_metrics(kpis, live_data):
         kpis["veteran_sprint"]["live"] = True
 
     kpis["_live_updated"] = live_data.get("scraped_at", "")
+    return kpis
+
+
+# ── MAP Exhibit Metrics ─────────────────────────────────────────────
+
+def read_exhibit_metrics():
+    """
+    Read the combined CustomReport JSON exported from the MAP Custom Reporting Module.
+    The file contains multiple datasets (views) in a single JSON array.
+
+    Recognized datasets:
+      - View_ArticulatedMAPExhibits_APIDataset      → exhibit-level credit recs + Collaborative Type
+      - View_ArticulatedCollegeCourses_APIDataset    → course-level articulation detail
+      - View_CreditDistributionByCollege_APIDataset  → per-college credit breakdown
+      - View_StudentAggregatedValues_APIDataset      → student-level credit data
+      - View_PointInTime_StudentAggregatedValues_APIDataset → student aggregates by year/type
+      - View_CollegeCourses_APIDataset               → college course catalog
+      - View_ProgramsofStudy_APIDataset              → programs of study
+
+    Returns a dict of computed KPIs or None if file unavailable.
+    """
+    if not EXHIBIT_FILE or not os.path.exists(EXHIBIT_FILE):
+        return None
+    try:
+        with open(EXHIBIT_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, IOError) as e:
+        print(f"WARNING: Could not read exhibit file {EXHIBIT_FILE}: {e}")
+        return None
+
+    if not data or not isinstance(data, list):
+        print("WARNING: Exhibit JSON has unexpected structure")
+        return None
+
+    # ── Index datasets by view name ──
+    datasets = {}
+    for report in data:
+        view = report.get("viewName", "")
+        if view and report.get("columnValue"):
+            col_map = {c: i for i, c in enumerate(report.get("columnName", []))}
+            datasets[view] = {
+                "rows": report["columnValue"],
+                "col_map": col_map,
+                "generated_at": report.get("generatedAt", ""),
+                "count": report.get("dataCount", len(report["columnValue"])),
+            }
+            print(f"  Dataset: {view} ({len(report['columnValue']):,} rows)")
+
+    if not datasets:
+        print("WARNING: No usable datasets in exhibit JSON")
+        return None
+
+    generated_at = data[0].get("generatedAt", "")
+
+    # ── Parse exhibits from ArticulatedMAPExhibits (preferred — has Collaborative Type) ──
+    exhibits_result = _parse_exhibits(datasets)
+
+    # ── Parse credit distribution by college ──
+    credit_dist = _parse_credit_distribution(datasets)
+
+    # ── Combine into unified result ──
+    result = exhibits_result or {}
+    result["source_file"] = os.path.basename(EXHIBIT_FILE)
+    result["generated_at"] = generated_at
+    result["datasets_found"] = list(datasets.keys())
+
+    if credit_dist:
+        result["credit_distribution"] = credit_dist
+
+    return result if result.get("total_credit_recs") else None
+
+
+def _parse_exhibits(datasets):
+    """Extract exhibit metrics from available datasets.
+    Prefers View_ArticulatedMAPExhibits (has Collaborative Type column).
+    Falls back to View_ArticulatedCollegeCourses if needed.
+    """
+    # ── Primary source: ArticulatedMAPExhibits (has Collaborative Type) ──
+    ds = datasets.get("View_ArticulatedMAPExhibits_APIDataset")
+    if ds:
+        rows = ds["rows"]
+        cm = ds["col_map"]
+
+        i_college = cm.get("College", 0)
+        i_exhibit = cm.get("ExhibitID", 1)
+        i_artic = cm.get("Articulation College", 4)
+        i_collab = cm.get("Collaborative Type", 7)
+        i_cpl = cm.get("CPL Type Description", 13)
+
+        exhibit_ids = set()
+        originating_colleges = set()
+        articulation_colleges = set()
+        ccc_credit_recs = 0
+        ccc_exhibit_ids = set()
+        ccc_artic_colleges = set()
+        cpl_type_counts = {}
+
+        for row in rows:
+            college = (row[i_college] or "").strip()
+            exhibit_id = (row[i_exhibit] or "").strip()
+            artic_college = (row[i_artic] or "").strip()
+            collab_type = (row[i_collab] or "").strip()
+            cpl_type = (row[i_cpl] or "").strip()
+
+            exhibit_ids.add(exhibit_id)
+            if college:
+                originating_colleges.add(college)
+            if artic_college:
+                articulation_colleges.add(artic_college)
+
+            if "CCC" in collab_type:
+                ccc_credit_recs += 1
+                ccc_exhibit_ids.add(exhibit_id)
+                ccc_artic_colleges.add(artic_college)
+
+            if cpl_type:
+                cpl_type_counts[cpl_type] = cpl_type_counts.get(cpl_type, 0) + 1
+
+        local_credit_recs = len(rows) - ccc_credit_recs
+        local_exhibit_ids = exhibit_ids - ccc_exhibit_ids
+
+        return {
+            "total_credit_recs": len(rows),
+            "unique_exhibits": len(exhibit_ids),
+            "originating_colleges": len(originating_colleges),
+            "articulation_colleges": len(articulation_colleges),
+            "articulation_college_names": sorted(articulation_colleges),
+            "ccc_collaborative": {
+                "credit_recs": ccc_credit_recs,
+                "unique_exhibits": len(ccc_exhibit_ids),
+                "adopting_colleges": len(ccc_artic_colleges),
+                "college_names": sorted(ccc_artic_colleges),
+            },
+            "local": {
+                "credit_recs": local_credit_recs,
+                "unique_exhibits": len(local_exhibit_ids),
+            },
+            "cpl_type_breakdown": cpl_type_counts,
+        }
+
+    # ── Fallback: ArticulatedCollegeCourses (no Collaborative Type) ──
+    ds = datasets.get("View_ArticulatedCollegeCourses_APIDataset")
+    if ds:
+        rows = ds["rows"]
+        cm = ds["col_map"]
+
+        i_college = cm.get("College", 0)
+        i_exhibit = cm.get("ExhibitID", 15)
+        i_cpl = cm.get("CPL Type Description", 11)
+
+        exhibit_ids = set()
+        colleges = set()
+        cpl_type_counts = {}
+
+        for row in rows:
+            college = (row[i_college] or "").strip()
+            exhibit_id = (row[i_exhibit] or "").strip()
+            cpl_type = (row[i_cpl] or "").strip()
+            if exhibit_id:
+                exhibit_ids.add(exhibit_id)
+            if college:
+                colleges.add(college)
+            if cpl_type:
+                cpl_type_counts[cpl_type] = cpl_type_counts.get(cpl_type, 0) + 1
+
+        return {
+            "total_credit_recs": len(rows),
+            "unique_exhibits": len(exhibit_ids),
+            "originating_colleges": len(colleges),
+            "articulation_colleges": len(colleges),
+            "articulation_college_names": sorted(colleges),
+            "ccc_collaborative": {
+                "credit_recs": 0,
+                "unique_exhibits": 0,
+                "adopting_colleges": 0,
+                "college_names": [],
+            },
+            "local": {
+                "credit_recs": len(rows),
+                "unique_exhibits": len(exhibit_ids),
+            },
+            "cpl_type_breakdown": cpl_type_counts,
+        }
+
+    return None
+
+
+def _parse_credit_distribution(datasets):
+    """Parse View_CreditDistributionByCollege for per-college credit metrics.
+    Returns a dict with system totals and per-college detail, or None.
+    """
+    ds = datasets.get("View_CreditDistributionByCollege_APIDataset")
+    if not ds:
+        return None
+
+    rows = ds["rows"]
+    cm = ds["col_map"]
+
+    i_college = cm.get("College", 0)
+    i_eligible = cm.get("Eligible Credits", 7)
+    i_transcribed = cm.get("Transcribed Credits", 9)
+    i_applied = cm.get("Applied Credits", 2)
+    i_students = cm.get("Students Awarded", 8)
+
+    total_eligible = 0
+    total_transcribed = 0
+    total_applied = 0
+    total_students = 0
+    per_college = []
+
+    for row in rows:
+        college = (row[i_college] or "").strip()
+        eligible = float(row[i_eligible] or 0)
+        transcribed = float(row[i_transcribed] or 0)
+        applied = float(row[i_applied] or 0)
+        students = int(float(row[i_students] or 0))
+
+        total_eligible += eligible
+        total_transcribed += transcribed
+        total_applied += applied
+        total_students += students
+
+        per_college.append({
+            "college": college,
+            "eligible_credits": eligible,
+            "transcribed_credits": transcribed,
+            "applied_credits": applied,
+            "students_awarded": students,
+        })
+
+    return {
+        "colleges": len(per_college),
+        "total_eligible_credits": total_eligible,
+        "total_transcribed_credits": total_transcribed,
+        "total_applied_credits": total_applied,
+        "total_students_awarded": total_students,
+        "per_college": sorted(per_college, key=lambda x: -x["eligible_credits"]),
+    }
+
+
+def _fmt_int(n):
+    """Format an integer with comma separators."""
+    return f"{n:,}"
+
+
+def merge_exhibit_metrics(kpis, exhibit_data):
+    """
+    Merge exhibit metrics into headline KPIs.
+    Updates credit_recommendations and adds MAP Exhibits, CCC Collaborative,
+    and Articulating Colleges cards.  Optionally enriches with credit distribution data.
+    """
+    if not exhibit_data:
+        return kpis
+
+    ccc = exhibit_data["ccc_collaborative"]
+
+    # ── 1. Replace/enhance CREDIT RECOMMENDATIONS KPI ──
+    kpis["credit_recommendations"] = {
+        "value": _fmt_int(exhibit_data["total_credit_recs"]),
+        "label": "Credit Recommendations",
+        "sub": "Source: MAP Custom Reporting Module",
+        "breakdowns": [
+            {"label": "CCC Collaborative", "value": _fmt_int(ccc["credit_recs"]),
+             "note": "statewide faculty workgroups"},
+            {"label": "Local", "value": _fmt_int(exhibit_data["local"]["credit_recs"]),
+             "note": "individual college articulations"},
+        ],
+        "live": False,
+    }
+
+    # ── 2. MAP EXHIBITS KPI ──
+    kpis["map_exhibits"] = {
+        "value": _fmt_int(exhibit_data["unique_exhibits"]),
+        "label": "MAP Exhibits",
+        "sub": f"{_fmt_int(exhibit_data['originating_colleges'])} originating colleges",
+        "breakdowns": [
+            {"label": "CCC Collaborative", "value": _fmt_int(ccc["unique_exhibits"]),
+             "note": "statewide exhibits"},
+            {"label": "Local", "value": _fmt_int(exhibit_data["local"]["unique_exhibits"]),
+             "note": "college-created exhibits"},
+        ],
+    }
+
+    # ── 3. CCC COLLABORATIVE ADOPTION KPI ──
+    kpis["ccc_collaborative"] = {
+        "value": _fmt_int(ccc["adopting_colleges"]),
+        "label": "CCC Collaborative Adoption",
+        "sub": "Colleges adopting statewide exhibits",
+        "breakdowns": [
+            {"label": "Collaborative Exhibits", "value": _fmt_int(ccc["unique_exhibits"])},
+            {"label": "Collaborative Credit Recs", "value": _fmt_int(ccc["credit_recs"])},
+        ],
+    }
+
+    # ── 4. ARTICULATING COLLEGES KPI ──
+    kpis["articulation_colleges"] = {
+        "value": _fmt_int(exhibit_data["articulation_colleges"]),
+        "label": "Articulating Colleges",
+        "sub": "Colleges with MAP exhibits",
+        "breakdowns": [
+            {"label": "Originating Colleges", "value": _fmt_int(exhibit_data["originating_colleges"]),
+             "note": "created exhibits"},
+            {"label": "Adopting CCC Collaborative", "value": _fmt_int(ccc["adopting_colleges"]),
+             "note": "statewide exhibits"},
+        ],
+    }
+
+    # ── CPL Type breakdown in footnote on Credit Recs card ──
+    cpl_types = exhibit_data.get("cpl_type_breakdown", {})
+    if cpl_types:
+        sorted_types = sorted(cpl_types.items(), key=lambda x: -x[1])
+        fn = [f"{name}: {_fmt_int(count)}" for name, count in sorted_types[:5]]
+        kpis["credit_recommendations"]["footnote"] = fn
+
+    # ── Enrich with credit distribution data if available ──
+    cd = exhibit_data.get("credit_distribution")
+    if cd:
+        # Add Applied Credits breakdown to Transcribed Units card (if it exists)
+        if "transcripted_units" in kpis:
+            existing_bds = kpis["transcripted_units"].get("breakdowns", [])
+            # Add applied credits as a breakdown if not already present
+            has_applied = any("applied" in (b.get("label", "").lower()) for b in existing_bds)
+            if not has_applied:
+                existing_bds.append({
+                    "label": "Applied Credits",
+                    "value": _fmt_int(int(cd["total_applied_credits"])),
+                    "note": "posted to student records",
+                })
+                kpis["transcripted_units"]["breakdowns"] = existing_bds
+
+    kpis["_exhibit_updated"] = exhibit_data.get("generated_at", "")
+    kpis["_exhibit_source"] = exhibit_data.get("source_file", "")
+    kpis["_exhibit_datasets"] = exhibit_data.get("datasets_found", [])
     return kpis
 
 
@@ -2946,7 +3335,8 @@ def main():
         kpi_order_pairs.sort(key=lambda x: x[0])
         kpi_display_order = [k for _, k in kpi_order_pairs]
         default_keys = ['cumulative_students', 'eligible_units', 'transcripted_units',
-                        'credit_recommendations', 'active_colleges',
+                        'credit_recommendations', 'map_exhibits', 'ccc_collaborative',
+                        'active_colleges', 'articulation_colleges',
                         'estimated_savings', 'veteran_sprint', 'twenty_year_impact']
         for dk in default_keys:
             if dk not in kpi_display_order:
@@ -2962,6 +3352,19 @@ def main():
         print(f"Merged live metrics from {live_data.get('scraped_at', 'unknown')}")
     else:
         print("No live_metrics.json found — using Excel data only")
+
+    # Merge MAP Exhibit metrics (credit recommendations, exhibits, CCC Collaborative)
+    exhibit_data = read_exhibit_metrics()
+    if exhibit_data:
+        kpis = merge_exhibit_metrics(kpis, exhibit_data)
+        ds_list = exhibit_data.get('datasets_found', [])
+        print(f"Merged exhibit metrics from {exhibit_data.get('source_file', 'unknown')} "
+              f"({len(ds_list)} datasets, "
+              f"{exhibit_data['total_credit_recs']:,} credit recs, "
+              f"{exhibit_data['unique_exhibits']:,} exhibits, "
+              f"{exhibit_data['ccc_collaborative']['adopting_colleges']} CCC Collaborative colleges)")
+    else:
+        print("No exhibit data found — skipping exhibit KPIs")
 
     data = {
         "last_updated": now,
