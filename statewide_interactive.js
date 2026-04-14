@@ -1,8 +1,8 @@
 /**
  * Statewide Exhibit Adoption — Interactive Card
  * Reads window.CPL_STATEWIDE and window.CCC_COLLEGE_LOOKUP
- * Renders search, multi-select filters, checkboxes, expandable credit recs,
- * Statewide/Local toggle, Word/Excel/JSON export
+ * Paginated (50 rows/page), search, multi-select filters, checkboxes,
+ * expandable credit recs, Statewide/Local toggle, Word/Excel/JSON export
  */
 (function () {
   "use strict";
@@ -14,6 +14,8 @@
   var exhibits = DATA.exhibits;
   var container = document.getElementById("statewide-interactive-container");
   if (!container) return;
+
+  var PAGE_SIZE = 50;
 
   // ── Derive filter option sets ──
   var cplTypes = unique(exhibits.map(function (e) { return e.cpl_type || "Unknown"; }));
@@ -27,7 +29,6 @@
   });
   var collegeNames = Object.keys(allColleges).sort();
 
-  // Derive district and SW region lists from lookup
   var districtSet = {}, swRegionSet = {};
   collegeNames.forEach(function (c) {
     var info = LOOKUP[c];
@@ -45,7 +46,8 @@
     filters: { collabType: [], cplType: [], discipline: [], college: [], district: [], swRegion: [] },
     selected: {},
     expanded: {},
-    selectAll: false
+    page: 0,
+    filteredCache: null
   };
 
   // ── Helpers ──
@@ -58,52 +60,45 @@
     var f = state.filters;
     if (f.college.length && f.college.indexOf(name) === -1) return false;
     var info = LOOKUP[name];
-    if (f.district.length) {
-      if (!info || f.district.indexOf(info.district) === -1) return false;
-    }
-    if (f.swRegion.length) {
-      if (!info || f.swRegion.indexOf(info.swRegion) === -1) return false;
-    }
+    if (f.district.length && (!info || f.district.indexOf(info.district) === -1)) return false;
+    if (f.swRegion.length && (!info || f.swRegion.indexOf(info.swRegion) === -1)) return false;
     return true;
   }
 
   function exhibitMatchesFilters(e) {
     var f = state.filters;
-    // Collaborative Type (Statewide / Local)
     if (f.collabType.length && f.collabType.indexOf(e.collaborative_type || "Local") === -1) return false;
-    // CPL Type
     if (f.cplType.length && f.cplType.indexOf(e.cpl_type || "Unknown") === -1) return false;
-    // Discipline (TOP Code Category)
     if (f.discipline.length && f.discipline.indexOf(e.discipline || "Unknown") === -1) return false;
-    // College / District / SW Region: at least one adopter or potential must match
     if (f.college.length || f.district.length || f.swRegion.length) {
       var names = (e.adopter_names || []).concat(e.potential_names || []);
-      var hasMatch = names.some(collegeMatchesFilters);
-      if (!hasMatch) return false;
+      if (!names.some(collegeMatchesFilters)) return false;
     }
-    // Search
     if (state.search) {
       var q = state.search.toLowerCase();
-      var hay = (e.title || "").toLowerCase() + " " +
-        (e.adopter_names || []).join(" ").toLowerCase() + " " +
-        (e.potential_names || []).join(" ").toLowerCase() + " " +
-        (e.cpl_type || "").toLowerCase() + " " +
-        (e.discipline || "").toLowerCase() + " " +
-        (e.collaborative_type || "").toLowerCase() + " " +
-        (e.credit_recs || []).map(function(r) { return r.course + " " + r.credit; }).join(" ").toLowerCase();
-      if (hay.indexOf(q) === -1) return false;
+      var hay = (e.title || "") + " " + (e.cpl_type || "") + " " + (e.discipline || "") + " " +
+        (e.collaborative_type || "") + " " + (e.adopter_names || []).join(" ") + " " +
+        (e.potential_names || []).join(" ");
+      if (hay.toLowerCase().indexOf(q) === -1) return false;
     }
     return true;
   }
 
   function getFiltered() {
-    return exhibits.filter(exhibitMatchesFilters);
+    if (!state.filteredCache) {
+      state.filteredCache = exhibits.filter(exhibitMatchesFilters);
+    }
+    return state.filteredCache;
+  }
+
+  function invalidateCache() {
+    state.filteredCache = null;
+    state.page = 0;
   }
 
   // ── Build DOM ──
   function buildCard() {
-    var totalPotential = 0, withPotential = 0, totalRecs = 0;
-    var statewide = 0, local = 0;
+    var totalPotential = 0, withPotential = 0, totalRecs = 0, statewide = 0, local = 0;
     exhibits.forEach(function (e) {
       totalPotential += (e.potential || 0);
       if (e.potential > 0) withPotential++;
@@ -113,19 +108,16 @@
 
     var html = '<div class="sw-interactive">';
 
-    // Header
     html += '<div class="exhibit-card-header">' +
       '<div class="exhibit-card-title">Exhibit Adoption &amp; Credit Recommendations</div>' +
-      '<div class="exhibit-card-subtitle">' + exhibits.length + ' exhibits (' +
-      statewide + ' CCC Collaborative, ' + local + ' Local) | ' +
-      withPotential + ' with growth potential | ' +
+      '<div class="exhibit-card-subtitle">' + fmt(exhibits.length) + ' exhibits (' +
+      fmt(statewide) + ' CCC Collaborative, ' + fmt(local) + ' Local) | ' +
+      fmt(withPotential) + ' with growth potential | ' +
       fmt(totalPotential) + ' potential new adoptions | ' +
-      fmt(totalRecs) + ' credit recommendations</div>' +
-      '</div>';
+      fmt(totalRecs) + ' credit recommendations</div></div>';
 
-    // Toolbar: search + filters
     html += '<div class="sw-toolbar">';
-    html += '<input type="text" id="sw-search" placeholder="Search exhibits, colleges, courses, credit recs..." />';
+    html += '<input type="text" id="sw-search" placeholder="Search exhibits, colleges, courses..." />';
     html += buildFilterButton("collabType", "Statewide / Local", collabTypes);
     html += buildFilterButton("cplType", "CPL Type", cplTypes);
     html += buildFilterButton("discipline", "TOP Code Category", disciplines);
@@ -134,7 +126,6 @@
     html += buildFilterButton("swRegion", "SW Region", swRegions);
     html += '</div>';
 
-    // Action bar: select all, generate report, export
     html += '<div class="sw-action-bar">';
     html += '<label style="font-size:0.72rem;color:rgba(255,255,255,0.7);cursor:pointer;display:flex;align-items:center;gap:0.3rem;">' +
       '<input type="checkbox" class="sw-chk" id="sw-select-all" /> Select All</label>';
@@ -144,7 +135,6 @@
     html += '<span class="sw-count" id="sw-status"></span>';
     html += '</div>';
 
-    // Table
     html += '<div class="sw-table-wrap" id="sw-table-wrap">';
     html += '<table class="exhibit-table" id="sw-table"><thead><tr>' +
       '<th style="width:30px;"></th>' +
@@ -152,6 +142,9 @@
       '<th>Adopted</th><th>Potential</th><th>Credit Recs</th>' +
       '<th>Colleges Adopted</th><th>Colleges — Potential Adopters</th>' +
       '</tr></thead><tbody id="sw-tbody"></tbody></table>';
+
+    // Pagination
+    html += '<div class="sw-pagination" id="sw-pagination"></div>';
     html += '</div></div>';
 
     container.innerHTML = html;
@@ -173,40 +166,49 @@
   function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
   function escAttr(s) { return esc(s).replace(/"/g, "&quot;"); }
 
-  // ── Render table rows ──
+  // ── Render rows (paginated) ──
   function renderRows() {
     var filtered = getFiltered();
     var tbody = document.getElementById("sw-tbody");
     if (!tbody) return;
 
+    var totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+    if (state.page >= totalPages) state.page = Math.max(0, totalPages - 1);
+    var startIdx = state.page * PAGE_SIZE;
+    var pageItems = filtered.slice(startIdx, startIdx + PAGE_SIZE);
+
+    var hasCollegeFilter = state.filters.college.length || state.filters.district.length || state.filters.swRegion.length;
     var selectedCount = 0;
     var rows = [];
-    filtered.forEach(function (e) {
+
+    pageItems.forEach(function (e) {
       var eid = e.exhibit_id || e.title;
       var checked = state.selected[eid] ? ' checked' : '';
       if (state.selected[eid]) selectedCount++;
       var isExpanded = state.expanded[eid];
 
-      var adopters = (e.adopter_names || []).filter(collegeMatchesFilters);
-      var potentials = (e.potential_names || []).filter(collegeMatchesFilters);
-      if (!state.filters.college.length && !state.filters.district.length && !state.filters.swRegion.length) {
-        adopters = e.adopter_names || [];
-        potentials = e.potential_names || [];
+      var adopters = hasCollegeFilter ? (e.adopter_names || []).filter(collegeMatchesFilters) : (e.adopter_names || []);
+      var potentials = hasCollegeFilter ? (e.potential_names || []).filter(collegeMatchesFilters) : (e.potential_names || []);
+
+      var adopterTags = adopters.length > 0
+        ? adopters.map(function (c) { return '<span class="sw-college sw-adopted">' + esc(c) + '</span>'; }).join(", ")
+        : '<span style="opacity:0.4;font-style:italic;">none</span>';
+
+      var potentialTags;
+      if (potentials.length > 10 && !isExpanded) {
+        potentialTags = potentials.slice(0, 10).map(function (c) {
+          return '<span class="sw-college sw-potential">' + esc(c) + '</span>';
+        }).join(", ") + ' <span class="sw-show-more" data-eid="' + escAttr(eid) + '">+' + (potentials.length - 10) + ' more</span>';
+      } else if (potentials.length > 0) {
+        potentialTags = potentials.map(function (c) { return '<span class="sw-college sw-potential">' + esc(c) + '</span>'; }).join(", ");
+      } else {
+        potentialTags = '<span style="opacity:0.4;font-style:italic;">none identified</span>';
       }
 
-      var adopterTags = adopters.map(function (c) {
-        return '<span class="sw-college sw-adopted">' + esc(c) + '</span>';
-      }).join(", ");
-      var potentialTags = potentials.length > 0
-        ? potentials.map(function (c) { return '<span class="sw-college sw-potential">' + esc(c) + '</span>'; }).join(", ")
-        : '<span style="opacity:0.4;font-style:italic;">none identified</span>';
-
-      // Collaborative type badge
       var typeBadge = e.collaborative_type === "CCC Collaborative"
         ? '<span class="sw-badge sw-badge-ccc">CCC</span>'
         : '<span class="sw-badge sw-badge-local">' + esc(e.collaborative_type || "Local") + '</span>';
 
-      // Credit recs count with expand toggle
       var recs = e.credit_recs || [];
       var recsCell = recs.length > 0
         ? '<span class="sw-recs-toggle" data-eid="' + escAttr(eid) + '">' + recs.length + ' ▸</span>'
@@ -222,10 +224,9 @@
         '<td class="exhibit-cell-num" style="color:#C9A84C;font-weight:600;">' + (e.potential || 0) + '</td>' +
         '<td class="exhibit-cell-num">' + recsCell + '</td>' +
         '<td class="sw-college-list">' + adopterTags + '</td>' +
-        '<td class="sw-college-list">' + potentialTags + '</td>' +
-        '</tr>');
+        '<td class="sw-college-list">' + potentialTags + '</td></tr>');
 
-      // Expandable credit recs row
+      // Expandable credit recs
       if (isExpanded && recs.length > 0) {
         var recRows = recs.map(function (r) {
           return '<tr><td style="padding:2px 8px;font-size:0.68rem;color:rgba(255,255,255,0.7);">' +
@@ -243,25 +244,64 @@
     });
 
     tbody.innerHTML = rows.join("");
+
+    // Pagination controls
+    renderPagination(filtered.length, totalPages);
+
+    // Status
+    var totalSelected = Object.keys(state.selected).length;
     var statusEl = document.getElementById("sw-status");
     if (statusEl) {
-      statusEl.textContent = "Showing " + filtered.length + " of " + exhibits.length +
-        " exhibits" + (selectedCount > 0 ? " | " + selectedCount + " selected" : "");
+      statusEl.textContent = "Showing " + (startIdx + 1) + "-" + Math.min(startIdx + PAGE_SIZE, filtered.length) +
+        " of " + fmt(filtered.length) + " exhibits" +
+        (totalSelected > 0 ? " | " + totalSelected + " selected" : "");
     }
+  }
+
+  function renderPagination(totalItems, totalPages) {
+    var el = document.getElementById("sw-pagination");
+    if (!el || totalPages <= 1) { if (el) el.innerHTML = ""; return; }
+
+    var html = [];
+    html.push('<button class="sw-page-btn" data-page="prev"' + (state.page === 0 ? ' disabled' : '') + '>◀ Prev</button>');
+
+    // Show max 7 page buttons
+    var start = Math.max(0, state.page - 3);
+    var end = Math.min(totalPages, start + 7);
+    if (end - start < 7) start = Math.max(0, end - 7);
+
+    if (start > 0) {
+      html.push('<button class="sw-page-btn" data-page="0">1</button>');
+      if (start > 1) html.push('<span style="color:rgba(255,255,255,0.3);padding:0 4px;">…</span>');
+    }
+    for (var i = start; i < end; i++) {
+      html.push('<button class="sw-page-btn' + (i === state.page ? ' active' : '') + '" data-page="' + i + '">' + (i + 1) + '</button>');
+    }
+    if (end < totalPages) {
+      if (end < totalPages - 1) html.push('<span style="color:rgba(255,255,255,0.3);padding:0 4px;">…</span>');
+      html.push('<button class="sw-page-btn" data-page="' + (totalPages - 1) + '">' + totalPages + '</button>');
+    }
+
+    html.push('<button class="sw-page-btn" data-page="next"' + (state.page >= totalPages - 1 ? ' disabled' : '') + '>Next ▶</button>');
+    el.innerHTML = html.join("");
   }
 
   // ── Bind events ──
   function bindEvents() {
-    // Search
+    var debounceTimer;
     var searchEl = document.getElementById("sw-search");
     if (searchEl) {
       searchEl.addEventListener("input", function () {
-        state.search = this.value;
-        renderRows();
+        var val = this.value;
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(function () {
+          state.search = val;
+          invalidateCache();
+          renderRows();
+        }, 300);
       });
     }
 
-    // Filter dropdown toggle + credit recs expand
     container.addEventListener("click", function (ev) {
       // Credit recs toggle
       var recsToggle = ev.target.closest(".sw-recs-toggle");
@@ -272,6 +312,32 @@
         return;
       }
 
+      // Show more potential colleges
+      var showMore = ev.target.closest(".sw-show-more");
+      if (showMore) {
+        var eid2 = showMore.getAttribute("data-eid");
+        state.expanded[eid2 + "_pot"] = true;
+        renderRows();
+        return;
+      }
+
+      // Pagination
+      var pageBtn = ev.target.closest(".sw-page-btn");
+      if (pageBtn && !pageBtn.disabled) {
+        var p = pageBtn.getAttribute("data-page");
+        var filtered = getFiltered();
+        var totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+        if (p === "prev") state.page = Math.max(0, state.page - 1);
+        else if (p === "next") state.page = Math.min(totalPages - 1, state.page + 1);
+        else state.page = parseInt(p, 10);
+        renderRows();
+        // Scroll to top of table
+        var wrap = document.getElementById("sw-table-wrap");
+        if (wrap) wrap.scrollTop = 0;
+        return;
+      }
+
+      // Filter dropdown toggle
       var btn = ev.target.closest(".sw-filter-btn");
       if (btn) {
         var group = btn.closest(".sw-filter-group");
@@ -285,40 +351,28 @@
           if (si) setTimeout(function () { si.focus(); }, 50);
         }
         ev.stopPropagation();
-        return;
       }
     });
 
-    // Close dropdowns on outside click
     document.addEventListener("click", function (ev) {
       if (!ev.target.closest(".sw-filter-group")) {
-        container.querySelectorAll(".sw-filter-dropdown.open").forEach(function (d) {
-          d.classList.remove("open");
-        });
+        container.querySelectorAll(".sw-filter-dropdown.open").forEach(function (d) { d.classList.remove("open"); });
       }
     });
 
-    // Filter checkbox changes
     container.addEventListener("change", function (ev) {
       var cb = ev.target;
       if (cb.type !== "checkbox") return;
 
-      // Row checkbox
       if (cb.classList.contains("sw-row-chk")) {
         var tr = cb.closest("tr");
         var eid = tr.getAttribute("data-eid");
-        if (cb.checked) {
-          state.selected[eid] = true;
-          tr.classList.add("sw-row-selected");
-        } else {
-          delete state.selected[eid];
-          tr.classList.remove("sw-row-selected");
-        }
+        if (cb.checked) { state.selected[eid] = true; tr.classList.add("sw-row-selected"); }
+        else { delete state.selected[eid]; tr.classList.remove("sw-row-selected"); }
         updateStatus();
         return;
       }
 
-      // Select all
       if (cb.id === "sw-select-all") {
         var filtered = getFiltered();
         if (cb.checked) {
@@ -330,11 +384,11 @@
         return;
       }
 
-      // Filter checkbox
       var group = cb.closest(".sw-filter-group");
       if (group) {
         var filterKey = group.getAttribute("data-filter");
         updateFilterState(filterKey, group);
+        invalidateCache();
         renderRows();
         var btnEl = group.querySelector(".sw-filter-btn");
         var labels = { collabType: "Statewide / Local", cplType: "CPL Type", discipline: "TOP Code Category", college: "College", district: "District", swRegion: "SW Region" };
@@ -344,18 +398,15 @@
       }
     });
 
-    // Filter search within dropdowns
     container.addEventListener("input", function (ev) {
       if (ev.target.classList.contains("sw-filter-search")) {
         var q = ev.target.value.toLowerCase();
-        var labels = ev.target.closest(".sw-filter-dropdown").querySelectorAll("label");
-        labels.forEach(function (lbl) {
+        ev.target.closest(".sw-filter-dropdown").querySelectorAll("label").forEach(function (lbl) {
           lbl.style.display = lbl.textContent.toLowerCase().indexOf(q) !== -1 ? "" : "none";
         });
       }
     });
 
-    // Action buttons
     document.getElementById("sw-gen-report").addEventListener("click", generateWordReport);
     document.getElementById("sw-export-excel").addEventListener("click", exportExcel);
     document.getElementById("sw-export-json").addEventListener("click", exportJSON);
@@ -369,14 +420,15 @@
   function updateStatus() {
     var count = Object.keys(state.selected).length;
     var filtered = getFiltered();
+    var startIdx = state.page * PAGE_SIZE;
     var statusEl = document.getElementById("sw-status");
     if (statusEl) {
-      statusEl.textContent = "Showing " + filtered.length + " of " + exhibits.length +
-        " exhibits" + (count > 0 ? " | " + count + " selected" : "");
+      statusEl.textContent = "Showing " + (startIdx + 1) + "-" + Math.min(startIdx + PAGE_SIZE, filtered.length) +
+        " of " + fmt(filtered.length) + " exhibits" + (count > 0 ? " | " + count + " selected" : "");
     }
   }
 
-  // ── Export: JSON ──
+  // ── Exports ──
   function exportJSON() {
     var data = getSelectedExhibits();
     if (!data.length) { alert("Select at least one exhibit to export."); return; }
@@ -384,7 +436,6 @@
     downloadBlob(blob, "exhibit_adoption_export.json");
   }
 
-  // ── Export: Excel (CSV for broad compatibility) ──
   function exportExcel() {
     var data = getSelectedExhibits();
     if (!data.length) { alert("Select at least one exhibit to export."); return; }
@@ -392,138 +443,73 @@
       "Credit Recs", "Colleges Adopted", "Potential Adopters", "Credit Recommendation Details"];
     var rows = data.map(function (e) {
       var recDetails = (e.credit_recs || []).map(function (r) { return r.course + ": " + r.credit; }).join(" | ");
-      return [
-        csvCell(e.title),
-        csvCell(e.collaborative_type || "Local"),
-        csvCell(e.cpl_type || ""),
-        csvCell(e.discipline || ""),
-        e.adopters || 0,
-        e.potential || 0,
-        (e.credit_recs || []).length,
-        csvCell((e.adopter_names || []).join("; ")),
-        csvCell((e.potential_names || []).join("; ")),
-        csvCell(recDetails)
-      ].join(",");
+      return [csvCell(e.title), csvCell(e.collaborative_type || "Local"), csvCell(e.cpl_type || ""),
+        csvCell(e.discipline || ""), e.adopters || 0, e.potential || 0, (e.credit_recs || []).length,
+        csvCell((e.adopter_names || []).join("; ")), csvCell((e.potential_names || []).join("; ")),
+        csvCell(recDetails)].join(",");
     });
     var csv = headers.join(",") + "\n" + rows.join("\n");
-    var blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
-    downloadBlob(blob, "exhibit_adoption_export.csv");
+    downloadBlob(new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" }), "exhibit_adoption_export.csv");
   }
 
-  function csvCell(s) {
-    if (/[",\n\r]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
-    return s;
-  }
+  function csvCell(s) { return /[",\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; }
 
-  // ── Export: Word Report (using docx.min.js) ──
   function generateWordReport() {
     var data = getSelectedExhibits();
     if (!data.length) { alert("Select at least one exhibit to generate a report."); return; }
-
-    if (typeof docx === "undefined") {
-      alert("Word document library (docx.min.js) not loaded. Cannot generate report.");
-      return;
-    }
+    if (typeof docx === "undefined") { alert("Word document library (docx.min.js) not loaded."); return; }
 
     var children = [];
-
-    // Title
     children.push(new docx.Paragraph({
       children: [new docx.TextRun({ text: "Exhibit Adoption & Credit Recommendations Report", bold: true, size: 32, font: "Calibri" })],
-      spacing: { after: 200 },
-      alignment: docx.AlignmentType.CENTER
+      spacing: { after: 200 }, alignment: docx.AlignmentType.CENTER
     }));
     children.push(new docx.Paragraph({
       children: [new docx.TextRun({ text: "Generated: " + new Date().toLocaleDateString() + " | " + data.length + " exhibits", size: 20, color: "666666", font: "Calibri" })],
-      spacing: { after: 400 },
-      alignment: docx.AlignmentType.CENTER
+      spacing: { after: 400 }, alignment: docx.AlignmentType.CENTER
     }));
 
     data.forEach(function (e, idx) {
-      // Exhibit title
       children.push(new docx.Paragraph({
         children: [new docx.TextRun({ text: (idx + 1) + ". " + e.title, bold: true, size: 24, font: "Calibri" })],
         spacing: { before: 300, after: 100 },
         border: { bottom: { style: docx.BorderStyle.SINGLE, size: 1, color: "CCCCCC" } }
       }));
-
-      // Metadata
-      var meta = "Type: " + (e.collaborative_type || "Local") +
-        "  |  CPL Type: " + (e.cpl_type || "N/A") +
-        "  |  Discipline: " + (e.discipline || "N/A") +
-        "  |  Adopters: " + (e.adopters || 0) +
-        "  |  Potential: " + (e.potential || 0);
       children.push(new docx.Paragraph({
-        children: [new docx.TextRun({ text: meta, size: 18, color: "555555", font: "Calibri" })],
+        children: [new docx.TextRun({ text: "Type: " + (e.collaborative_type || "Local") + "  |  CPL: " + (e.cpl_type || "N/A") + "  |  Discipline: " + (e.discipline || "N/A") + "  |  Adopters: " + (e.adopters || 0) + "  |  Potential: " + (e.potential || 0), size: 18, color: "555555", font: "Calibri" })],
         spacing: { after: 100 }
       }));
 
-      // Credit Recommendations
       var recs = e.credit_recs || [];
       if (recs.length > 0) {
-        children.push(new docx.Paragraph({
-          children: [new docx.TextRun({ text: "Credit Recommendations (" + recs.length + "):", bold: true, size: 20, font: "Calibri" })],
-          spacing: { before: 100 }
-        }));
+        children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: "Credit Recommendations (" + recs.length + "):", bold: true, size: 20, font: "Calibri" })], spacing: { before: 100 } }));
         recs.forEach(function (r) {
           children.push(new docx.Paragraph({
-            children: [
-              new docx.TextRun({ text: r.course + ": ", bold: true, size: 18, font: "Calibri" }),
-              new docx.TextRun({ text: r.credit, size: 18, font: "Calibri" })
-            ],
-            spacing: { after: 40 },
-            indent: { left: 360 }
+            children: [new docx.TextRun({ text: r.course + ": ", bold: true, size: 18, font: "Calibri" }), new docx.TextRun({ text: r.credit, size: 18, font: "Calibri" })],
+            spacing: { after: 40 }, indent: { left: 360 }
           }));
         });
       }
 
-      // Adopted colleges
-      children.push(new docx.Paragraph({
-        children: [new docx.TextRun({ text: "Colleges Adopted (" + (e.adopters || 0) + "):", bold: true, size: 20, font: "Calibri" })],
-        spacing: { before: 100 }
-      }));
-      children.push(new docx.Paragraph({
-        children: [new docx.TextRun({ text: (e.adopter_names || []).join(", ") || "None", size: 18, font: "Calibri" })],
-        spacing: { after: 100 }
-      }));
-
-      // Potential adopters
-      children.push(new docx.Paragraph({
-        children: [new docx.TextRun({ text: "Potential Adopters (" + (e.potential || 0) + "):", bold: true, size: 20, font: "Calibri" })],
-        spacing: { before: 100 }
-      }));
-      children.push(new docx.Paragraph({
-        children: [new docx.TextRun({ text: (e.potential_names || []).join(", ") || "None identified", size: 18, font: "Calibri" })],
-        spacing: { after: 200 }
-      }));
+      children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: "Colleges Adopted (" + (e.adopters || 0) + "):", bold: true, size: 20, font: "Calibri" })], spacing: { before: 100 } }));
+      children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: (e.adopter_names || []).join(", ") || "None", size: 18, font: "Calibri" })], spacing: { after: 100 } }));
+      children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: "Potential Adopters (" + (e.potential || 0) + "):", bold: true, size: 20, font: "Calibri" })], spacing: { before: 100 } }));
+      children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: (e.potential_names || []).join(", ") || "None identified", size: 18, font: "Calibri" })], spacing: { after: 200 } }));
     });
 
-    var doc = new docx.Document({
-      sections: [{ properties: {}, children: children }]
-    });
-
-    docx.Packer.toBlob(doc).then(function (blob) {
-      downloadBlob(blob, "Exhibit_Adoption_Report.docx");
-    });
+    var doc = new docx.Document({ sections: [{ properties: {}, children: children }] });
+    docx.Packer.toBlob(doc).then(function (blob) { downloadBlob(blob, "Exhibit_Adoption_Report.docx"); });
   }
 
   function getSelectedExhibits() {
     var keys = Object.keys(state.selected);
-    if (!keys.length) {
-      return getFiltered();
-    }
-    return exhibits.filter(function (e) {
-      return state.selected[e.exhibit_id || e.title];
-    });
+    return keys.length ? exhibits.filter(function (e) { return state.selected[e.exhibit_id || e.title]; }) : getFiltered();
   }
 
   function downloadBlob(blob, filename) {
     var url = URL.createObjectURL(blob);
-    var a = document.createElement("a");
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
+    var a = document.createElement("a"); a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click();
     setTimeout(function () { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
   }
 

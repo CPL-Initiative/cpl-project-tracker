@@ -3150,6 +3150,15 @@ EXHIBIT_ANALYSIS_CSS = """
 /* Credit recs panel */
 .sw-recs-panel { background:rgba(0,0,0,0.2); border:1px solid rgba(201,168,76,0.15); border-radius:6px; padding:0.4rem 0.6rem; max-height:200px; overflow-y:auto; }
 .sw-recs-row td { padding:0 !important; border-bottom:none !important; }
+/* Pagination */
+.sw-pagination { display:flex; justify-content:center; align-items:center; gap:4px; padding:0.6rem 1rem; border-top:1px solid rgba(255,255,255,0.06); }
+.sw-page-btn { padding:4px 10px; border:1px solid rgba(255,255,255,0.15); border-radius:4px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.7); font-size:0.68rem; cursor:pointer; }
+.sw-page-btn:hover:not([disabled]) { background:rgba(201,168,76,0.15); border-color:#C9A84C; color:#C9A84C; }
+.sw-page-btn.active { background:rgba(201,168,76,0.25); border-color:#C9A84C; color:#C9A84C; font-weight:700; }
+.sw-page-btn[disabled] { opacity:0.3; cursor:default; }
+/* Show more link */
+.sw-show-more { cursor:pointer; color:#C9A84C; font-size:0.62rem; font-weight:600; }
+.sw-show-more:hover { text-decoration:underline; }
 """
 
 
