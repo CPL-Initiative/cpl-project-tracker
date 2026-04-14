@@ -15,7 +15,7 @@ Open (or refresh) CPL_Dashboard.html in your browser to see updated data.
 """
 
 import json, os, re, sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from openpyxl import load_workbook
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -35,7 +35,8 @@ _LOCAL_EXCEL = os.path.join(SCRIPT_DIR, "CPL_Initiative_Project_List_v3.xlsx")
 EXCEL_FILE = SHAREPOINT_EXCEL if os.path.exists(SHAREPOINT_EXCEL) else _LOCAL_EXCEL
 OUTPUT_FILE = os.path.join(SCRIPT_DIR, "CPL_Data.js")
 HTML_FILE   = os.path.join(SCRIPT_DIR, "CPL_Dashboard.html")
-LIVE_FILE   = os.path.join(SCRIPT_DIR, "live_metrics.json")
+LIVE_FILE    = os.path.join(SCRIPT_DIR, "live_metrics.json")
+HISTORY_FILE = os.path.join(SCRIPT_DIR, "kpi_history.json")
 
 # ── MAP Exhibit / Custom Report data source ─────────────────────────
 # The Custom Reporting Module (customreportingmodule.azurewebsites.net) exports
@@ -2027,6 +2028,258 @@ def compute_headline_kpis(projects, budget):
             ],
         })(),
     }
+
+
+# ── KPI History Logging & Trend Card ────────────────────────────────
+
+def _academic_quarter(dt):
+    """Return academic quarter label for a datetime (Q1=Jul-Sep, Q2=Oct-Dec, Q3=Jan-Mar, Q4=Apr-Jun)."""
+    m = dt.month
+    if   m in (7, 8, 9):   return f"Q1 {dt.year}"
+    elif m in (10, 11, 12): return f"Q2 {dt.year}"
+    elif m in (1, 2, 3):    return f"Q3 {dt.year}"
+    else:                   return f"Q4 {dt.year}"
+
+def _quarter_start(dt):
+    """Return the first day of the academic quarter containing dt."""
+    m = dt.month
+    if   m in (7, 8, 9):   return dt.replace(month=7,  day=1)
+    elif m in (10, 11, 12): return dt.replace(month=10, day=1)
+    elif m in (1, 2, 3):    return dt.replace(month=1,  day=1)
+    else:                   return dt.replace(month=4,  day=1)
+
+
+def log_daily_snapshot(live_data, exhibit_data):
+    """Append today's metric snapshot to kpi_history.json (idempotent — overwrites same-day entry).
+    Returns the full sorted history list.
+    """
+    today = datetime.now().strftime("%Y-%m-%d")
+    raw = (live_data or {}).get("raw", {})
+    tiers = (live_data or {}).get("tiers", {})
+
+    snapshot = {
+        "date":                  today,
+        # Scraped live metrics
+        "students":              int(raw.get("Students", 0)),
+        "eligible_units":        int(raw.get("Units", 0)),
+        "transcribed_units":     int(raw.get("TranscribedUnits", 0)),
+        "savings_m":             round(raw.get("Savings", 0) / 1_000_000, 1),
+        "year_impact_b":         round(raw.get("YearImpact", 0) / 1_000_000_000, 2),
+        "active_colleges":       int((live_data or {}).get("active_college_count", 0)),
+        "leading_colleges":      int(tiers.get("leading", {}).get("count", 0)),
+        "star_colleges":         int((live_data or {}).get("star_college_count", 0)),
+        # Exhibit / CustomReport metrics
+        "credit_recs":           int((exhibit_data or {}).get("total_credit_recs", 0)),
+        "map_exhibits":          int((exhibit_data or {}).get("unique_exhibits", 0)),
+        "ccc_collaborative":     int((exhibit_data or {}).get("ccc_collaborative", {}).get("adopting_colleges", 0)),
+        "articulating_colleges": int((exhibit_data or {}).get("articulation_colleges", 0)),
+    }
+
+    history = []
+    if os.path.exists(HISTORY_FILE):
+        try:
+            with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+                history = json.load(f)
+        except (json.JSONDecodeError, IOError):
+            history = []
+
+    history = [e for e in history if e.get("date") != today]
+    history.append(snapshot)
+    history.sort(key=lambda e: e.get("date", ""))
+
+    with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+        json.dump(history, f, indent=2, ensure_ascii=False)
+
+    print(f"  Logged daily KPI snapshot ({len(history)} total entries in kpi_history.json)")
+    return history
+
+
+def _sparkline_svg(values, width=110, height=30, color="#C9A84C"):
+    """Return an inline SVG sparkline for a list of numeric values."""
+    vals = [v for v in values if v is not None and v > 0]
+    if len(vals) < 2:
+        return f'<svg width="{width}" height="{height}"></svg>'
+    mn, mx = min(vals), max(vals)
+    rng = mx - mn if mx != mn else max(mx, 1)
+    pad = 4
+    pts = [
+        (pad + i * (width - 2*pad) / (len(vals) - 1),
+         pad + (1 - (v - mn) / rng) * (height - 2*pad))
+        for i, v in enumerate(vals)
+    ]
+    line = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+    area_pts = [(pad, height - pad)] + pts + [(width - pad, height - pad)]
+    area = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in area_pts) + " Z"
+    cx, cy = pts[-1]
+    return (
+        f'<svg width="{width}" height="{height}" style="display:block;overflow:visible">'
+        f'<defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">'
+        f'<stop offset="0%" stop-color="{color}" stop-opacity="0.25"/>'
+        f'<stop offset="100%" stop-color="{color}" stop-opacity="0.02"/>'
+        f'</linearGradient></defs>'
+        f'<path d="{area}" fill="url(#sg)" stroke="none"/>'
+        f'<path d="{line}" fill="none" stroke="{color}" stroke-width="1.8" '
+        f'stroke-linejoin="round" stroke-linecap="round"/>'
+        f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="3" fill="{color}"/>'
+        f'</svg>'
+    )
+
+
+def _history_lookup(history, key, days_ago=None, date_str=None):
+    """Return the value of `key` from `days_ago` days before today, or from a specific date."""
+    if date_str is None:
+        target = (datetime.now() - timedelta(days=days_ago)).strftime("%Y-%m-%d")
+    else:
+        target = date_str
+    candidates = [e for e in history if e.get("date", "") <= target and e.get(key, 0) > 0]
+    if not candidates:
+        return None
+    return max(candidates, key=lambda e: e["date"]).get(key)
+
+
+def _delta_badge(current, previous, abs_format=False):
+    """Return (html_badge, sort_key) showing change from previous to current."""
+    if previous is None or previous == 0 or current == 0:
+        return '<span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span>', 0
+    diff = current - previous
+    pct  = diff / previous * 100
+    if abs(pct) < 0.05:
+        return '<span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span>', 0
+    color = "#4CAF50" if diff >= 0 else "#f44336"
+    arrow = "▲" if diff >= 0 else "▼"
+    if abs_format:
+        label = f"{arrow}{abs(diff):,.0f}"
+    else:
+        label = f"{arrow}{abs(pct):.1f}%"
+    badge = (f'<span style="color:{color};font-size:0.68rem;font-weight:700;'
+             f'white-space:nowrap;">{label}</span>')
+    return badge, pct
+
+
+def render_kpi_history_card(history):
+    """Render a full-width KPI Trends card from kpi_history.json data."""
+    if not history:
+        return ""
+
+    today_entry = history[-1]
+    today_str   = today_entry.get("date", "")
+    today_dt    = datetime.strptime(today_str, "%Y-%m-%d") if today_str else datetime.now()
+
+    # Academic quarter start date for current quarter
+    q_start = _quarter_start(today_dt).strftime("%Y-%m-%d")
+
+    # Periods: label → days_ago (None means use date_str for quarter)
+    PERIODS = [
+        ("1d",  1,   None),
+        ("7d",  7,   None),
+        ("30d", 30,  None),
+        ("QTD", None, q_start),
+        ("1yr", 365, None),
+    ]
+
+    # Metrics to display: (key, display_label, format_fn, abs_delta?)
+    def _fmt_students(v): return f"{v:,}"
+    def _fmt_units(v):    return f"{int(v/1000)}k" if v >= 1000 else str(v)
+    def _fmt_savings(v):  return f"${v:.0f}M"
+    def _fmt_int(v):      return f"{v:,}"
+    def _fmt_recs(v):     return f"{v:,}"
+
+    METRICS = [
+        ("students",              "CPL Students",           _fmt_students, False),
+        ("credit_recs",           "Credit Recs",            _fmt_recs,    False),
+        ("active_colleges",       "Active Colleges",        _fmt_int,      True),
+        ("savings_m",             "Est. Savings",           _fmt_savings,  False),
+        ("map_exhibits",          "MAP Exhibits",           _fmt_int,      True),
+        ("ccc_collaborative",     "CCC Collaborative",      _fmt_int,      True),
+        ("articulating_colleges", "Articulating Colleges",  _fmt_int,      True),
+        ("star_colleges",         "Veteran Star Colleges",  _fmt_int,      True),
+    ]
+
+    # Build sparkline values (last 30 entries) for each metric
+    recent = history[-30:]
+
+    # Header row
+    period_headers = "".join(
+        f'<th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;'
+        f'text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;'
+        f'white-space:nowrap;">{p[0]}</th>'
+        for p in PERIODS
+    )
+    header = (
+        f'<tr>'
+        f'<th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;'
+        f'text-transform:uppercase;padding:0.2rem 0.5rem;text-align:left;">Metric</th>'
+        f'<th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;'
+        f'text-transform:uppercase;padding:0.2rem 0.5rem;text-align:right;">Today</th>'
+        f'{period_headers}'
+        f'<th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;'
+        f'text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;">30-Day Trend</th>'
+        f'</tr>'
+    )
+
+    rows_html = ""
+    for key, label, fmt_fn, use_abs in METRICS:
+        current = today_entry.get(key, 0)
+        if current == 0:
+            continue
+        current_str = fmt_fn(current)
+
+        # Delta badges for each period
+        delta_cells = ""
+        for _, days_ago, date_str in PERIODS:
+            prev = _history_lookup(history, key, days_ago=days_ago, date_str=date_str)
+            badge, _ = _delta_badge(current, prev, abs_format=use_abs)
+            delta_cells += (
+                f'<td style="padding:0.3rem 0.5rem;text-align:center;'
+                f'border-top:1px solid rgba(255,255,255,0.06);">{badge}</td>'
+            )
+
+        # Sparkline
+        spark_vals = [e.get(key, 0) for e in recent]
+        spark_svg  = _sparkline_svg(spark_vals)
+
+        rows_html += (
+            f'<tr>'
+            f'<td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);'
+            f'border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">{label}</td>'
+            f'<td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;'
+            f'text-align:right;border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">'
+            f'{current_str}</td>'
+            f'{delta_cells}'
+            f'<td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);">'
+            f'{spark_svg}</td>'
+            f'</tr>'
+        )
+
+    n_entries = len(history)
+    first_date = history[0].get("date", "") if history else ""
+    since_note = f"Tracking since {first_date} &nbsp;·&nbsp; {n_entries} daily snapshot{'s' if n_entries != 1 else ''}" if first_date else ""
+    aq_label   = _academic_quarter(today_dt)
+
+    html = f"""
+    <div style="grid-column:1/-1;background:var(--navy-primary);border-radius:8px;
+                border-top:4px solid var(--gold-accent);padding:1.2rem 1.5rem;
+                box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;
+                  margin-bottom:0.8rem;">
+        <div>
+          <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
+                       color:var(--gold-accent);">&#128200; KPI Trends</span>
+          <span style="font-size:0.7rem;color:rgba(255,255,255,0.45);margin-left:0.8rem;">
+            Academic {aq_label} &nbsp;·&nbsp; QTD resets each academic quarter (Jul/Oct/Jan/Apr)
+          </span>
+        </div>
+        <span style="font-size:0.65rem;color:rgba(255,255,255,0.35);">{since_note}</span>
+      </div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;">
+          <thead>{header}</thead>
+          <tbody>{rows_html}</tbody>
+        </table>
+      </div>
+    </div>
+"""
+    return html
 
 
 def read_live_metrics():
@@ -4073,6 +4326,10 @@ def main():
     else:
         print("No exhibit data found — skipping exhibit KPIs")
 
+    # Log daily snapshot and render trends card
+    kpi_history = log_daily_snapshot(live_data, exhibit_data)
+    trends_card_html = render_kpi_history_card(kpi_history)
+
     data = {
         "last_updated": now,
         "data_as_of":   now,
@@ -4311,7 +4568,8 @@ def main():
                     '            <span class="kpi-toggle-arrow">&#9650;</span>\n'
                     '        </div>\n'
                     '    <div class="kpi-section">\n'
-                    + kpi_cards_html +
+                    + kpi_cards_html
+                    + trends_card_html +
                     '    </div>\n'
                     '    </div>\n\n    '
                 )
