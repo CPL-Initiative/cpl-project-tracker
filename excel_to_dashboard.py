@@ -2391,7 +2391,7 @@ def merge_exhibit_metrics(kpis, exhibit_data):
             {"label": "Local", "value": _fmt_int(exhibit_data["local"]["credit_recs"]),
              "note": "individual college articulations"},
         ],
-        "live": False,
+        "live": True,
     }
 
     # ── 2. MAP EXHIBITS KPI ──
@@ -2405,6 +2405,7 @@ def merge_exhibit_metrics(kpis, exhibit_data):
             {"label": "Local", "value": _fmt_int(exhibit_data["local"]["unique_exhibits"]),
              "note": "college-created exhibits"},
         ],
+        "live": True,
     }
 
     # ── 3. CCC COLLABORATIVE ADOPTION KPI ──
@@ -2416,6 +2417,7 @@ def merge_exhibit_metrics(kpis, exhibit_data):
             {"label": "Collaborative Exhibits", "value": _fmt_int(ccc["unique_exhibits"])},
             {"label": "Collaborative Credit Recs", "value": _fmt_int(ccc["credit_recs"])},
         ],
+        "live": True,
     }
 
     # ── 4. ARTICULATING COLLEGES KPI ──
@@ -2429,6 +2431,7 @@ def merge_exhibit_metrics(kpis, exhibit_data):
             {"label": "Adopting CCC Collaborative", "value": _fmt_int(ccc["adopting_colleges"]),
              "note": "statewide exhibits"},
         ],
+        "live": True,
     }
 
     # ── CPL Type breakdown in footnote on Credit Recs card ──

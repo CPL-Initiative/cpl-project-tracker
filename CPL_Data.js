@@ -76,7 +76,7 @@ window.CPL_DATA = {
           "note": "individual college articulations"
         }
       ],
-      "live": false,
+      "live": true,
       "footnote": [
         "Standardized Assessment: 2,948",
         "Industry Certification: 2,548",
@@ -211,7 +211,8 @@ window.CPL_DATA = {
           "value": "2,920",
           "note": "college-created exhibits"
         }
-      ]
+      ],
+      "live": true
     },
     "ccc_collaborative": {
       "value": "55",
@@ -226,7 +227,8 @@ window.CPL_DATA = {
           "label": "Collaborative Credit Recs",
           "value": "955"
         }
-      ]
+      ],
+      "live": true
     },
     "articulation_colleges": {
       "value": "82",
@@ -243,7 +245,8 @@ window.CPL_DATA = {
           "value": "55",
           "note": "statewide exhibits"
         }
-      ]
+      ],
+      "live": true
     },
     "_exhibit_updated": "2026-04-14T17:42:21",
     "_exhibit_source": "CustomReport_2026-04-14-10.42.48.json",
