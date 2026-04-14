@@ -138,8 +138,8 @@
     html += '<div class="sw-table-wrap" id="sw-table-wrap">';
     html += '<table class="exhibit-table" id="sw-table"><thead><tr>' +
       '<th style="width:30px;"></th>' +
-      '<th>Exhibit</th><th>Type</th><th>CPL Type</th><th>Discipline</th>' +
-      '<th>Adopted</th><th>Potential</th><th>Credit Recs</th>' +
+      '<th>Exhibit &amp; Credit Recommendations</th><th>Type</th><th>CPL Type</th><th>Discipline</th>' +
+      '<th>Adopted</th><th>Potential</th>' +
       '<th>Colleges Adopted</th><th>Colleges — Potential Adopters</th>' +
       '</tr></thead><tbody id="sw-tbody"></tbody></table>';
 
@@ -209,38 +209,35 @@
         ? '<span class="sw-badge sw-badge-ccc">CCC</span>'
         : '<span class="sw-badge sw-badge-local">' + esc(e.collaborative_type || "Local") + '</span>';
 
+      // Build credit recs inline under the title
       var recs = e.credit_recs || [];
-      var recsCell = recs.length > 0
-        ? '<span class="sw-recs-toggle" data-eid="' + escAttr(eid) + '">' + recs.length + ' ▸</span>'
-        : '<span style="opacity:0.4;">0</span>';
+      var recsHtml = "";
+      if (recs.length > 0) {
+        recsHtml = '<div class="sw-credit-recs">' + recs.map(function (r) {
+          // Extract units from CRUnits-style ("3.00") or from credit text
+          var units = r.course.match(/(\d+\.?\d*)\s*(unit|hr|hour)/i);
+          var unitStr = "";
+          // Try to parse "3 hours in Course Title" pattern from credit field
+          var creditMatch = r.credit.match(/^(\d+\.?\d*)\s*(hours?|units?)\s+(?:in\s+)?(.+)/i);
+          if (creditMatch) {
+            unitStr = creditMatch[1] + " " + creditMatch[2].charAt(0).toUpperCase() + creditMatch[2].slice(1).toLowerCase();
+            if (unitStr.match(/hour/i)) unitStr = unitStr.replace(/hours?/i, "Hours");
+            return '<div class="sw-rec-line">' + esc(unitStr) + ' — ' + esc(creditMatch[3]) + ' <span class="sw-rec-course">(' + esc(r.course) + ')</span></div>';
+          }
+          return '<div class="sw-rec-line">' + esc(r.course) + ': ' + esc(r.credit) + '</div>';
+        }).join("") + '</div>';
+      }
 
       rows.push('<tr class="' + (state.selected[eid] ? 'sw-row-selected' : '') + '" data-eid="' + escAttr(eid) + '">' +
         '<td><input type="checkbox" class="sw-chk sw-row-chk"' + checked + ' /></td>' +
-        '<td class="exhibit-cell-name" style="max-width:220px;">' + esc(e.title) + '</td>' +
+        '<td style="max-width:350px;"><div class="exhibit-cell-name">' + esc(e.title) + '</div>' + recsHtml + '</td>' +
         '<td>' + typeBadge + '</td>' +
         '<td>' + esc(e.cpl_type || "") + '</td>' +
         '<td>' + esc(e.discipline || "") + '</td>' +
         '<td class="exhibit-cell-num">' + (e.adopters || 0) + '</td>' +
         '<td class="exhibit-cell-num" style="color:#C9A84C;font-weight:600;">' + (e.potential || 0) + '</td>' +
-        '<td class="exhibit-cell-num">' + recsCell + '</td>' +
         '<td class="sw-college-list">' + adopterTags + '</td>' +
         '<td class="sw-college-list">' + potentialTags + '</td></tr>');
-
-      // Expandable credit recs
-      if (isExpanded && recs.length > 0) {
-        var recRows = recs.map(function (r) {
-          return '<tr><td style="padding:2px 8px;font-size:0.68rem;color:rgba(255,255,255,0.7);">' +
-            esc(r.course) + '</td><td style="padding:2px 8px;font-size:0.68rem;color:rgba(255,255,255,0.6);">' +
-            esc(r.credit) + '</td></tr>';
-        }).join("");
-        rows.push('<tr class="sw-recs-row"><td></td><td colspan="9" style="padding:0.3rem 0.5rem;">' +
-          '<div class="sw-recs-panel">' +
-          '<div style="font-size:0.68rem;color:#C9A84C;font-weight:600;margin-bottom:0.3rem;">Credit Recommendations (' + recs.length + ')</div>' +
-          '<table style="width:100%;border-collapse:collapse;"><thead><tr>' +
-          '<th style="text-align:left;font-size:0.65rem;color:#C9A84C;padding:2px 8px;border-bottom:1px solid rgba(201,168,76,0.2);">Course</th>' +
-          '<th style="text-align:left;font-size:0.65rem;color:#C9A84C;padding:2px 8px;border-bottom:1px solid rgba(201,168,76,0.2);">Credit Recommendation</th>' +
-          '</tr></thead><tbody>' + recRows + '</tbody></table></div></td></tr>');
-      }
     });
 
     tbody.innerHTML = rows.join("");
@@ -303,15 +300,6 @@
     }
 
     container.addEventListener("click", function (ev) {
-      // Credit recs toggle
-      var recsToggle = ev.target.closest(".sw-recs-toggle");
-      if (recsToggle) {
-        var eid = recsToggle.getAttribute("data-eid");
-        state.expanded[eid] = !state.expanded[eid];
-        renderRows();
-        return;
-      }
-
       // Show more potential colleges
       var showMore = ev.target.closest(".sw-show-more");
       if (showMore) {

@@ -3159,6 +3159,10 @@ EXHIBIT_ANALYSIS_CSS = """
 /* Show more link */
 .sw-show-more { cursor:pointer; color:#C9A84C; font-size:0.62rem; font-weight:600; }
 .sw-show-more:hover { text-decoration:underline; }
+/* Inline credit recs */
+.sw-credit-recs { margin-top:0.25rem; padding-top:0.2rem; border-top:1px solid rgba(255,255,255,0.05); }
+.sw-rec-line { font-size:0.64rem; color:rgba(255,255,255,0.55); line-height:1.5; padding:1px 0; }
+.sw-rec-course { font-size:0.58rem; color:rgba(201,168,76,0.5); }
 """
 
 
