@@ -43,13 +43,12 @@ LIVE_FILE   = os.path.join(SCRIPT_DIR, "live_metrics.json")
 # available datasets and extracts KPIs from each.
 #
 # Search order for the JSON file:
-#   1. User's Documents folder (Windows native path)
-#   2. Cowork sandbox mount path (sibling project folder)
-#   3. Local CPL Project Tracker folder (fallback)
+#   1. CPL Project Tracker folder (primary — consolidated location)
+#   2. Legacy MAP Exhibit Project folder paths (backward compatibility)
 _EXHIBIT_LOCATIONS = [
+    SCRIPT_DIR,  # primary: same folder as pipeline (consolidated)
     os.path.join(os.path.expanduser("~"), "Documents", "Claude", "Projects", "MAP Exhibit Project"),
     os.path.join(os.path.dirname(SCRIPT_DIR), "..", "MAP Exhibit Project"),  # sibling mount in Cowork
-    SCRIPT_DIR,  # fallback: same folder as pipeline
 ]
 
 def _find_exhibit_json(folder):
