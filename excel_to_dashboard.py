@@ -2300,11 +2300,11 @@ def render_kpi_history_card(history):
     return html
 
 
-def render_college_activity_card(live_data, last_activity=None):
-    """Render a full-width College Activity card showing most/least active colleges.
+def render_college_activity_card(live_data, last_activity=None, military_students=None):
+    """Render a full-width College Activity card grouped by tier in descending order of activity.
 
-    last_activity: optional dict of {college_name: datetime} from _compute_college_last_activity().
-    When provided, a color-coded 'Last MAP Activity' column is added to both tables.
+    last_activity:      optional {college_name: datetime} — adds color-coded Last MAP Activity column.
+    military_students:  optional {college_name: int}      — adds JST/Veteran student count column.
     """
     if not live_data:
         return ""
@@ -2320,15 +2320,18 @@ def render_college_activity_card(live_data, last_activity=None):
     scraped_at = live_data.get("scraped_at", "")[:10]
     today_dt   = datetime.now()
     la         = last_activity or {}
-    show_la    = bool(la)  # only add column when we have data
+    ms         = military_students or {}
+    show_la    = bool(la)
+    show_ms    = bool(ms)
 
     # ── Shared helpers ──────────────────────────────────────────────
     CRITERIA_LABELS = ["Students≥500", "Units≥3k", "Avg≥5", "Trans≥25%", "AvgTrans≥3"]
     GOLD   = "#C9A84C"
-    NAVY   = "var(--navy-secondary)"
     GREEN  = "#4CAF50"
     AMBER  = "#FF9800"
+    BLUE   = "#5B9BD5"
     GRAY   = "rgba(255,255,255,0.3)"
+    RED    = "#EF5350"
 
     def _dots(n, total=5):
         return "".join(
@@ -2342,112 +2345,129 @@ def render_college_activity_card(live_data, last_activity=None):
                 f'letter-spacing:0.4px;color:{color};border:1px solid {color};'
                 f'border-radius:3px;padding:0.05rem 0.3rem;white-space:nowrap;">{label}</span>')
 
-    def _pct_bar(pct, color=GREEN, width=48):
+    def _pct_bar(pct, color=GREEN, width=44):
         filled = min(pct / 100, 1.0) * width
         return (f'<div style="display:flex;align-items:center;gap:4px;">'
                 f'<div style="width:{width}px;height:5px;background:rgba(255,255,255,0.1);'
                 f'border-radius:3px;overflow:hidden;flex-shrink:0;">'
                 f'<div style="width:{filled:.1f}px;height:100%;background:{color};border-radius:3px;"></div>'
                 f'</div>'
-                f'<span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">{pct:.0f}%</span>'
+                f'<span style="font-size:0.67rem;color:rgba(255,255,255,0.7);">{pct:.0f}%</span>'
                 f'</div>')
 
-    def _last_activity_cell(college_name):
-        """Return a TD with color-coded days-since badge for the given college."""
+    def _star_cell(college_name, criteria_n):
+        """⭐ if criteriaMetCount >= 1 (proxy for MAP Dashboard star status)."""
+        if criteria_n >= 1:
+            return (f'<td style="padding:0.2rem 0.3rem;text-align:center;font-size:0.75rem;" '
+                    f'title="MAP Star College">&#11088;</td>')
+        return '<td style="padding:0.2rem 0.3rem;text-align:center;"></td>'
+
+    def _jst_cell(college_name):
+        """JST/Military student count."""
+        count = ms.get(college_name, 0)
+        if count:
+            return (f'<td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#7EC8E3;'
+                    f'text-align:right;white-space:nowrap;">{count:,}</td>')
+        return '<td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:rgba(255,255,255,0.2);text-align:right;">—</td>'
+
+    def _la_cell(college_name):
+        """Color-coded days-since-last-MAP-submission badge."""
         dt = la.get(college_name)
         if dt is None:
-            return (f'<td style="padding:0.25rem 0.4rem;text-align:center;">'
-                    f'<span style="font-size:0.62rem;color:rgba(255,255,255,0.25);">—</span>'
-                    f'</td>')
+            return (f'<td style="padding:0.2rem 0.3rem;text-align:center;">'
+                    f'<span style="font-size:0.61rem;color:rgba(255,255,255,0.2);">—</span></td>')
         days = (today_dt - dt).days
-        if days <= 30:
-            dot_color = "#4CAF50"   # green
-            text_color = "#4CAF50"
-        elif days <= 90:
-            dot_color = "#FF9800"   # amber
-            text_color = "#FF9800"
-        else:
-            dot_color = "#EF5350"   # red
-            text_color = "#EF5350"
+        color = GREEN if days <= 30 else (AMBER if days <= 90 else RED)
         label = f"{days}d" if days < 365 else f"{days // 365}y {(days % 365) // 30}m"
-        return (f'<td style="padding:0.25rem 0.4rem;text-align:center;white-space:nowrap;">'
-                f'<span style="font-size:0.62rem;color:{dot_color};">●</span>'
-                f'<span style="font-size:0.62rem;color:{text_color};margin-left:2px;">{label}</span>'
-                f'</td>')
+        return (f'<td style="padding:0.2rem 0.3rem;text-align:center;white-space:nowrap;">'
+                f'<span style="font-size:0.61rem;color:{color};">●</span>'
+                f'<span style="font-size:0.61rem;color:{color};margin-left:2px;">{label}</span></td>')
 
-    # ── Section: Most Active (Leading colleges) ───────────────────
-    def _leading_rows():
-        rows = ""
-        sorted_leading = sorted(leading, key=lambda c: (-c.get("criteriaMetCount", 0), -c.get("students", 0)))
-        for i, c in enumerate(sorted_leading, 1):
-            n     = c.get("criteriaMetCount", 0)
-            tr    = c.get("transcriptionRate", 0)
-            bar_color = GREEN if tr >= 50 else (AMBER if tr >= 25 else "rgba(255,255,255,0.25)")
-            la_cell = _last_activity_cell(c["college"]) if show_la else ""
-            rows += (
-                f'<tr>'
-                f'<td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">{i}</td>'
-                f'<td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">{c["college"]}</td>'
-                f'<td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:{GOLD};text-align:right;white-space:nowrap;">{c.get("students",0):,}</td>'
-                f'<td style="padding:0.25rem 0.4rem;">{_pct_bar(tr, bar_color)}</td>'
-                f'<td style="padding:0.25rem 0.4rem;text-align:center;">{_dots(n)}</td>'
-                + la_cell +
-                f'</tr>'
-            )
-        return rows
+    # ── Column header helpers ─────────────────────────────────────
+    def _th(text, align="left", extra=""):
+        return (f'<th style="font-size:0.59rem;color:rgba(255,255,255,0.35);'
+                f'padding:0.2rem 0.3rem;text-align:{align};white-space:nowrap;{extra}">{text}</th>')
 
-    # ── Section: Advancing — sorted worst to best for "least active" panel ──
-    # "Least active advancing" = criteriaMetCount=0, low students, 0% transcription
-    advancing_sorted_asc = sorted(advancing, key=lambda c: (c.get("criteriaMetCount", 0), c.get("students", 0), c.get("transcriptionRate", 0)))
-    bottom_advancing = advancing_sorted_asc[:10]
+    star_th = _th("★", "center") if True else ""         # always shown
+    jst_th  = _th("JST", "right") if show_ms else ""
+    la_th   = _th("Last Activity", "center") if show_la else ""
 
-    def _bottom_rows():
-        rows = ""
-        for c in bottom_advancing:
-            n  = c.get("criteriaMetCount", 0)
-            tr = c.get("transcriptionRate", 0)
-            la_cell = _last_activity_cell(c["college"]) if show_la else ""
-            rows += (
-                f'<tr>'
-                f'<td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.7);">{c["college"]}</td>'
-                f'<td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.5);text-align:right;white-space:nowrap;">{c.get("students",0):,}</td>'
-                f'<td style="padding:0.25rem 0.4rem;">{_pct_bar(tr, AMBER if tr > 0 else GRAY, width=36)}</td>'
-                f'<td style="padding:0.25rem 0.4rem;text-align:center;">{_dots(n)}</td>'
-                + la_cell +
-                f'</tr>'
-            )
-        return rows
+    # ── Sort orders ───────────────────────────────────────────────
+    # Leading: desc by criteria → students
+    sorted_leading = sorted(leading, key=lambda c: (-c.get("criteriaMetCount", 0), -c.get("students", 0)))
+    # Advancing: desc by criteria → transcription → students  (most active first)
+    sorted_advancing = sorted(advancing,
+        key=lambda c: (-c.get("criteriaMetCount", 0), -c.get("transcriptionRate", 0), -c.get("students", 0)))
 
-    # ── Column headers for Last Activity (only when data available) ──────
-    la_th = ('<th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:center;">Last MAP Activity</th>'
-             if show_la else "")
+    # ── Row builders ─────────────────────────────────────────────
+    def _college_row(c, rank=None, tier="leading"):
+        n  = c.get("criteriaMetCount", 0)
+        tr = c.get("transcriptionRate", 0)
+        if tier == "leading":
+            name_color = "rgba(255,255,255,0.95)"
+            stu_color  = GOLD
+            bar_color  = GREEN if tr >= 50 else (AMBER if tr >= 25 else "rgba(255,255,255,0.25)")
+        else:
+            name_color = "rgba(255,255,255,0.75)"
+            stu_color  = "rgba(255,255,255,0.55)"
+            bar_color  = AMBER if tr > 0 else "rgba(255,255,255,0.12)"
 
-    # ── Section: Inactive colleges ────────────────────────────────
+        rank_td = (f'<td style="padding:0.2rem 0.3rem;font-size:0.62rem;'
+                   f'color:rgba(255,255,255,0.35);text-align:center;">{rank}</td>'
+                   if rank is not None else "")
+        jst_td = _jst_cell(c["college"]) if show_ms else ""
+        la_td  = _la_cell(c["college"])  if show_la else ""
+        return (
+            f'<tr>'
+            + rank_td
+            + _star_cell(c["college"], n)
+            + f'<td style="padding:0.2rem 0.3rem;font-size:0.7rem;color:{name_color};">{c["college"]}</td>'
+            + f'<td style="padding:0.2rem 0.3rem;font-size:0.7rem;color:{stu_color};text-align:right;white-space:nowrap;">{c.get("students",0):,}</td>'
+            + jst_td
+            + f'<td style="padding:0.2rem 0.3rem;">{_pct_bar(tr, bar_color)}</td>'
+            + f'<td style="padding:0.2rem 0.3rem;text-align:center;">{_dots(n)}</td>'
+            + la_td
+            + f'</tr>'
+        )
+
+    leading_rows   = "".join(_college_row(c, i+1, "leading")   for i, c in enumerate(sorted_leading))
+    advancing_rows = "".join(_college_row(c, None, "advancing") for c in sorted_advancing)
+
+    # ── Rank col header (only for Leading) ───────────────────────
+    rank_th_leading = _th("#", "center")
+
+    # ── Inactive pills ────────────────────────────────────────────
     inactive_pills = " ".join(
-        f'<span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;'
-        f'font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);'
-        f'color:rgba(255,255,255,0.4);">{name}</span>'
-        for name in inactive
+        f'<span style="display:inline-block;margin:0.15rem;padding:0.12rem 0.45rem;'
+        f'font-size:0.63rem;border-radius:10px;background:rgba(255,255,255,0.05);'
+        f'color:rgba(255,255,255,0.35);">{name}</span>'
+        for name in sorted(inactive)
     )
 
-    # ── Criteria legend ───────────────────────────────────────────
+    # ── Criteria + legend ─────────────────────────────────────────
     legend = " &nbsp;·&nbsp; ".join(
-        f'<span style="font-size:0.62rem;color:rgba(255,255,255,0.35);">{i+1}. {lbl}</span>'
+        f'<span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">{i+1}. {lbl}</span>'
         for i, lbl in enumerate(CRITERIA_LABELS)
     )
-
-    scraped_note = f'<span style="font-size:0.65rem;color:rgba(255,255,255,0.3);">As of {scraped_at}</span>' if scraped_at else ""
-
-    # ── Last Activity legend line ─────────────────────────────────
     la_legend = (
         '&nbsp;&nbsp;&nbsp;'
-        '<span style="font-size:0.62rem;color:rgba(255,255,255,0.35);">Last MAP Activity: </span>'
-        '<span style="font-size:0.62rem;color:#4CAF50;">● ≤30d</span> '
-        '<span style="font-size:0.62rem;color:#FF9800;">● 31–90d</span> '
-        '<span style="font-size:0.62rem;color:#EF5350;">● 90+d</span> '
-        '<span style="font-size:0.62rem;color:rgba(255,255,255,0.25);">— no data</span>'
+        '<span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">Last Activity: </span>'
+        f'<span style="font-size:0.61rem;color:{GREEN};">● ≤30d</span> '
+        f'<span style="font-size:0.61rem;color:{AMBER};">● 31–90d</span> '
+        f'<span style="font-size:0.61rem;color:{RED};">● 90+d</span> '
+        '<span style="font-size:0.61rem;color:rgba(255,255,255,0.2);">— no data</span>'
         if show_la else ""
     )
+    star_legend = ('&nbsp;&nbsp;&nbsp;'
+                   '<span style="font-size:0.61rem;">&#11088;</span>'
+                   '<span style="font-size:0.61rem;color:rgba(255,255,255,0.32);"> MAP Star College (≥1 criterion)</span>'
+                   )
+    jst_legend  = ('&nbsp;&nbsp;&nbsp;'
+                   '<span style="font-size:0.61rem;color:#7EC8E3;">JST</span>'
+                   '<span style="font-size:0.61rem;color:rgba(255,255,255,0.32);"> = Military/JST students</span>'
+                   if show_ms else "")
+
+    scraped_note = f'<span style="font-size:0.64rem;color:rgba(255,255,255,0.28);">As of {scraped_at}</span>' if scraped_at else ""
 
     html = f"""
     <div style="grid-column:1/-1;background:var(--navy-primary);border-radius:8px;
@@ -2459,79 +2479,88 @@ def render_college_activity_card(live_data, last_activity=None):
         <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;color:{GOLD};">
           &#127942; College Activity
         </span>
-        <div style="display:flex;gap:1rem;align-items:center;">
+        <div style="display:flex;gap:0.8rem;align-items:center;flex-wrap:wrap;">
           {_tier_badge("Leading", GOLD)}
-          {_tier_badge("Advancing", "#5B9BD5")}
+          {_tier_badge("Advancing", BLUE)}
           {_tier_badge("Inactive", "rgba(255,255,255,0.3)")}
           {scraped_note}
         </div>
       </div>
 
-      <!-- Two-column layout -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+      <!-- Two-column layout: Leading | Advancing + Inactive -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;">
 
-        <!-- LEFT: Most Active (Leading) -->
+        <!-- LEFT: Leading Colleges -->
         <div>
-          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
-                      color:{GOLD};margin-bottom:0.5rem;">
-            &#127941; Most Active &mdash; Leading Colleges ({len(leading)})
+          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
+                      color:{GOLD};margin-bottom:0.5rem;display:flex;align-items:center;gap:0.4rem;">
+            {_tier_badge("Leading", GOLD)} &nbsp;{len(sorted_leading)} colleges &mdash; most active
           </div>
           <div style="overflow-x:auto;">
             <table style="width:100%;border-collapse:collapse;">
               <thead>
                 <tr>
-                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:center;">#</th>
-                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:left;">College</th>
-                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:right;">Students</th>
-                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;">Trans. Rate</th>
-                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:center;">Criteria</th>
+                  {rank_th_leading}
+                  {star_th}
+                  {_th("College")}
+                  {_th("Students", "right")}
+                  {jst_th}
+                  {_th("Trans. Rate")}
+                  {_th("Criteria", "center")}
                   {la_th}
                 </tr>
               </thead>
-              <tbody style="border-top:1px solid rgba(255,255,255,0.08);">
-                {_leading_rows()}
+              <tbody style="border-top:1px solid rgba(255,255,255,0.07);">
+                {leading_rows}
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- RIGHT: Least Active -->
+        <!-- RIGHT: Advancing + Inactive -->
         <div>
-          <!-- Bottom Advancing -->
-          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
-                      color:rgba(255,255,255,0.5);margin-bottom:0.5rem;">
-            &#9650; Needs Attention &mdash; Bottom Advancing ({len(advancing_sorted_asc)} total, showing lowest 10)
+          <!-- Advancing colleges (scrollable, all, desc order) -->
+          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
+                      color:{BLUE};margin-bottom:0.5rem;display:flex;align-items:center;gap:0.4rem;">
+            {_tier_badge("Advancing", BLUE)} &nbsp;{len(sorted_advancing)} colleges &mdash; most to least active
           </div>
-          <div style="overflow-x:auto;margin-bottom:1rem;">
+          <div style="max-height:340px;overflow-y:auto;overflow-x:auto;margin-bottom:1rem;
+                      scrollbar-width:thin;scrollbar-color:rgba(91,155,213,0.3) transparent;">
             <table style="width:100%;border-collapse:collapse;">
-              <thead>
-                <tr>
-                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:left;">College</th>
-                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:right;">Students</th>
-                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;">Trans. Rate</th>
-                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:center;">Criteria</th>
+              <thead style="position:sticky;top:0;z-index:2;">
+                <tr style="background:var(--navy-primary);">
+                  {star_th}
+                  {_th("College")}
+                  {_th("Students", "right")}
+                  {jst_th}
+                  {_th("Trans. Rate")}
+                  {_th("Criteria", "center")}
                   {la_th}
                 </tr>
               </thead>
-              <tbody style="border-top:1px solid rgba(255,255,255,0.08);">
-                {_bottom_rows()}
+              <tbody style="border-top:1px solid rgba(255,255,255,0.07);">
+                {advancing_rows}
               </tbody>
             </table>
           </div>
 
-          <!-- Inactive -->
-          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
-                      color:rgba(255,255,255,0.3);margin-bottom:0.4rem;">
+          <!-- Inactive colleges -->
+          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
+                      color:rgba(255,255,255,0.28);margin-bottom:0.4rem;">
             &#9711; Inactive &mdash; {len(inactive)} Colleges
           </div>
-          <div style="line-height:1.8;">{inactive_pills}</div>
+          <div style="line-height:1.9;">{inactive_pills}</div>
         </div>
 
       </div>
 
-      <!-- Criteria legend + Last Activity legend -->
-      <div style="margin-top:0.8rem;padding-top:0.6rem;border-top:1px solid rgba(255,255,255,0.06);">
-        ● Criteria met: &nbsp; {legend}{la_legend}
+      <!-- Legend row -->
+      <div style="margin-top:0.8rem;padding-top:0.6rem;border-top:1px solid rgba(255,255,255,0.06);
+                  display:flex;flex-wrap:wrap;gap:0.2rem 0;">
+        <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">● Criteria met: &nbsp; {legend}</span>
+        {star_legend}
+        {jst_legend}
+        {la_legend}
       </div>
 
     </div>
@@ -2697,12 +2726,16 @@ def read_exhibit_metrics():
     # ── Compute last MAP activity per college ──
     last_activity = _compute_college_last_activity(datasets)
 
+    # ── Compute per-college military/JST student counts ──
+    military_students = _compute_college_military_students(datasets)
+
     # ── Combine into unified result ──
     result = exhibits_result or {}
     result["source_file"] = os.path.basename(EXHIBIT_FILE)
     result["generated_at"] = generated_at
     result["datasets_found"] = list(datasets.keys())
     result["college_last_activity"] = last_activity
+    result["college_military_students"] = military_students
 
     if credit_dist:
         result["credit_distribution"] = credit_dist
@@ -2710,7 +2743,8 @@ def read_exhibit_metrics():
     return result if result.get("total_credit_recs") else None
 
 
-_TEST_COLLEGES = {"RivTest City College", "MorTest City College", "Nortest City College", "CA MAP INITIATIVE COLLEGE"}
+_TEST_COLLEGES = {"RivTest City College", "MorTest City College", "Nortest City College", "CA MAP INITIATIVE COLLEGE",
+                  "RivTest", "MorTest", "Nortest"}
 
 def _compute_college_last_activity(datasets):
     """Return {college_name: datetime} for the most recent 'Last Submitted On' date
@@ -2743,6 +2777,54 @@ def _compute_college_last_activity(datasets):
             college_latest[college] = dt
 
     return college_latest
+
+
+def _compute_college_military_students(datasets):
+    """Return {college_name: int} of military/JST student counts per college
+    from View_StudentAggregatedValues_APIDataset.
+    Counts distinct students (by MAP Internal StudentID when available, else rows)
+    where Military Credits > 0. Filters test and potential students.
+    Returns empty dict if dataset unavailable.
+    """
+    ds = datasets.get("View_StudentAggregatedValues_APIDataset")
+    if not ds:
+        return {}
+
+    rows   = ds["rows"]
+    cm     = ds["col_map"]
+    i_col  = cm.get("College", 0)
+    i_milcr = cm.get("Military Credits", 16)
+    i_pot  = cm.get("Potential Student", 18)
+    i_test = cm.get("Test Student", 20)
+    i_sid  = cm.get("MAP Internal StudentID", 15)
+
+    # Track (college, student_id) to avoid double-counting
+    seen = set()
+    counts = {}
+    for row in rows:
+        college = (row[i_col] or "").strip()
+        if not college or college in _TEST_COLLEGES:
+            continue
+        test_s = (row[i_test] or "").strip().lower()
+        pot_s  = (row[i_pot]  or "").strip().lower()
+        if test_s == "yes" or pot_s == "yes":
+            continue
+        mil_cr_raw = (row[i_milcr] or "").strip()
+        if not mil_cr_raw or mil_cr_raw == "0":
+            continue
+        try:
+            if float(mil_cr_raw) <= 0:
+                continue
+        except ValueError:
+            continue
+
+        sid = (row[i_sid] or "").strip()
+        key = (college, sid) if sid else (college, id(row))
+        if key not in seen:
+            seen.add(key)
+            counts[college] = counts.get(college, 0) + 1
+
+    return counts
 
 
 def _parse_exhibits(datasets):
@@ -3378,9 +3460,13 @@ def render_exhibit_analysis_html(tables):
                 f'<div style="width:{w}%;height:100%;background:#C9A84C;border-radius:4px;"></div></div>')
 
     # ── Card builder helper ──
-    def table_card(card_id, title, subtitle, headers, rows_data, row_renderer):
+    def table_card(card_id, title, subtitle, headers, rows_data, row_renderer, footer=None):
         header_cells = "".join(f'<th>{h}</th>' for h in headers)
         body_rows = "".join(row_renderer(r) for r in rows_data)
+        footer_html = (
+            f'  <div class="exhibit-card-footer">{footer}</div>\n'
+            if footer else ""
+        )
         return (
             f'<div class="exhibit-card" id="{card_id}">\n'
             f'  <div class="exhibit-card-header">\n'
@@ -3393,14 +3479,16 @@ def render_exhibit_analysis_html(tables):
             f'      <tbody>{body_rows}</tbody>\n'
             f'    </table>\n'
             f'  </div>\n'
-            f'</div>\n'
+            + footer_html
+            + f'</div>\n'
         )
 
     # ── 1. By College ──
+    total_recs = tables['total_credit_recs']
     college_card = table_card(
         "exhibit-by-college",
         "Credit Recommendations by College",
-        f"{len(tables['by_college'])} articulating colleges | {fmt(tables['total_credit_recs'])} total credit recs",
+        f"{len(tables['by_college'])} articulating colleges | {fmt(total_recs)} total credit recs",
         ["#", "College", "Credit Recs", "Exhibits", "Disciplines", "CCC Collab", "Industry Certs", "%"],
         tables["by_college"],
         lambda r: (f'<tr><td>{tables["by_college"].index(r)+1}</td>'
@@ -3410,7 +3498,8 @@ def render_exhibit_analysis_html(tables):
                    f'<td class="exhibit-cell-num">{r["disciplines"]}</td>'
                    f'<td class="exhibit-cell-num">{fmt(r["ccc_collaborative"])}</td>'
                    f'<td class="exhibit-cell-num">{fmt(r["industry_certs"])}</td>'
-                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n')
+                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n'),
+        footer=f'% = each college\'s share of the {fmt(total_recs)} total credit recommendations statewide',
     )
 
     # ── 2. By Discipline ──
@@ -3537,7 +3626,7 @@ EXHIBIT_ANALYSIS_CSS = """
 .exhibit-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 1rem;
+    gap: 1.5rem;
 }
 .exhibit-card {
     background: rgba(10,34,64,0.85);
@@ -3564,6 +3653,13 @@ EXHIBIT_ANALYSIS_CSS = """
     overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: rgba(201,168,76,0.3) transparent;
+}
+.exhibit-card-footer {
+    padding: 0.45rem 1rem;
+    font-size: 0.64rem;
+    color: rgba(255,255,255,0.38);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-style: italic;
 }
 .exhibit-card-body::-webkit-scrollbar { width: 6px; height: 6px; }
 .exhibit-card-body::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 3px; }
@@ -4625,8 +4721,13 @@ def main():
     # Log daily snapshot and render trends + activity cards
     kpi_history = log_daily_snapshot(live_data, exhibit_data)
     trends_card_html   = render_kpi_history_card(kpi_history)
-    college_last_activity = exhibit_data.get("college_last_activity", {}) if exhibit_data else {}
-    activity_card_html = render_college_activity_card(live_data, last_activity=college_last_activity)
+    college_last_activity    = exhibit_data.get("college_last_activity",    {}) if exhibit_data else {}
+    college_military_students = exhibit_data.get("college_military_students", {}) if exhibit_data else {}
+    activity_card_html = render_college_activity_card(
+        live_data,
+        last_activity=college_last_activity,
+        military_students=college_military_students,
+    )
 
     data = {
         "last_updated": now,
