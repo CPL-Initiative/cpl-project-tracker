@@ -4305,8 +4305,14 @@ def main():
                 kpi_cards_html = render_kpi_section_html(kpis, kpi_display_order)
                 new_kpi_section = (
                     '<!-- KPI Summary Cards -->\n'
+                    '    <div class="kpi-section-wrapper" id="kpiSectionWrapper">\n'
+                    '        <div class="kpi-section-header" onclick="(function(){var w=document.getElementById(\'kpiSectionWrapper\');w.classList.toggle(\'collapsed\');})()"> \n'
+                    '            <span class="kpi-section-title">Live KPI Summary</span>\n'
+                    '            <span class="kpi-toggle-arrow">&#9650;</span>\n'
+                    '        </div>\n'
                     '    <div class="kpi-section">\n'
                     + kpi_cards_html +
+                    '    </div>\n'
                     '    </div>\n\n    '
                 )
                 html = html[:kpi_section_start] + new_kpi_section + html[kpi_section_end:]
