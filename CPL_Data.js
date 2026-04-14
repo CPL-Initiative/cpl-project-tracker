@@ -16,21 +16,21 @@ window.CPL_DATA = {
   "data_as_of": "April 14, 2026",
   "kpis": {
     "cumulative_students": {
-      "value": "43,773",
+      "value": "44,254",
       "label": "Cumulative CPL Students",
       "sub": "Target: 250,000 by 2030",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "22,281"
+          "value": "22,756"
         },
         {
           "label": "Workforce/Other",
-          "value": "21,563"
+          "value": "21,569"
         },
         {
           "label": "Apprentice",
-          "value": "702"
+          "value": "704"
         }
       ],
       "live": true
@@ -46,7 +46,7 @@ window.CPL_DATA = {
         },
         {
           "label": "Workforce/Other",
-          "value": "84k"
+          "value": "85k"
         },
         {
           "label": "Apprentice",
@@ -61,26 +61,51 @@ window.CPL_DATA = {
       "sub": "281 adopted this year"
     },
     "active_colleges": {
-      "value": "84",
+      "value": "95",
       "label": "Active Colleges",
-      "sub": "of 116 system colleges"
+      "sub": "of 116 system colleges",
+      "breakdowns": [
+        {
+          "label": "Leading Colleges",
+          "value": "13",
+          "note": "meeting at least 3 of 5 criteria"
+        },
+        {
+          "label": "Advancing Colleges",
+          "value": "82",
+          "note": "active, building capacity"
+        },
+        {
+          "label": "Inactive Colleges",
+          "value": "20",
+          "note": "<10 students and 0 units"
+        }
+      ],
+      "live": true,
+      "footnote": [
+        "1. Student Volume ≥ 500",
+        "2. Eligible Units ≥ 3,000",
+        "3. Avg Eligible Units/Student ≥ 5",
+        "4. Transcription Rate ≥ 25%",
+        "5. Avg Transcribed Units/Student ≥ 3"
+      ]
     },
     "estimated_savings": {
-      "value": "$279M",
+      "value": "$281M",
       "label": "Estimated Savings",
       "sub": "Eligible units, Beacon Economics",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$174M"
+          "value": "$144M"
         },
         {
           "label": "Workforce/Other",
-          "value": "$98M"
+          "value": "$144M"
         },
         {
           "label": "Apprentice",
-          "value": "$6M"
+          "value": "$9M"
         }
       ],
       "live": true
@@ -92,7 +117,7 @@ window.CPL_DATA = {
       "breakdowns": [
         {
           "label": "JST Credits",
-          "value": "22,281 / 30,000"
+          "value": "22,756 / 30,000"
         },
         {
           "label": "Basic Training Credit",
@@ -100,19 +125,19 @@ window.CPL_DATA = {
         },
         {
           "label": "Eligible CPL",
-          "value": "101k Units"
+          "value": "102k Units"
         }
       ],
       "live": true
     },
     "eligible_units": {
-      "value": "197k",
+      "value": "199k",
       "label": "ELIGIBLE UNITS",
       "sub": "Source: MAP CPL Dashboard",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "101k"
+          "value": "102k"
         },
         {
           "label": "Workforce/Other",
@@ -126,26 +151,26 @@ window.CPL_DATA = {
       "live": true
     },
     "twenty_year_impact": {
-      "value": "$1.12B",
+      "value": "$1.13B",
       "label": "20-YEAR IMPACT",
       "sub": "Source: MAP CPL Dashboard",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$611M"
+          "value": "$581M"
         },
         {
           "label": "Workforce/Other",
-          "value": "$482M"
+          "value": "$582M"
         },
         {
           "label": "Apprentice",
-          "value": "$30M"
+          "value": "$36M"
         }
       ],
       "live": true
     },
-    "_live_updated": "2026-04-09T00:00:00Z"
+    "_live_updated": "2026-04-14T16:32:43.212Z"
   },
   "activity_kpis": [
     {
@@ -2124,7 +2149,7 @@ window.CPL_DATA = {
         "name": "Expand Equitable Access & Boost Student Success",
         "target": "250,000 Californians by 2030",
         "progress": 17,
-        "current": "43,773 cumulative students"
+        "current": "44,254 cumulative students"
       },
       {
         "id": "Goal 2",
