@@ -3589,6 +3589,202 @@
 .sw-rec-line { font-size:0.64rem; color:rgba(255,255,255,0.55); line-height:1.5; padding:1px 0; }
 .sw-rec-course { font-size:0.58rem; color:rgba(201,168,76,0.5); }
 
+
+
+/* ═══ MAP Articulation Analysis Cards ═══ */
+.exhibit-analysis-section {
+    display: none;
+    margin: 1.5rem auto;
+    max-width: 1400px;
+    padding: 0 1rem;
+}
+.exhibit-analysis-section.visible { display: block; }
+.exhibit-section-header {
+    text-align: center;
+    color: #C9A84C;
+    margin-bottom: 1.2rem;
+}
+.exhibit-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 1rem;
+}
+.exhibit-card {
+    background: rgba(10,34,64,0.85);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.exhibit-card-header {
+    padding: 0.8rem 1rem 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.exhibit-card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #C9A84C;
+}
+.exhibit-card-subtitle {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 2px;
+}
+.exhibit-card-body {
+    max-height: 420px;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201,168,76,0.3) transparent;
+}
+.exhibit-card-body::-webkit-scrollbar { width: 6px; height: 6px; }
+.exhibit-card-body::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 3px; }
+.exhibit-card-body::-webkit-scrollbar-track { background: transparent; }
+.exhibit-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.85);
+}
+.exhibit-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.exhibit-table th {
+    background: rgba(10,34,64,0.98);
+    color: #C9A84C;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.45rem 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    white-space: nowrap;
+}
+.exhibit-table td {
+    padding: 0.35rem 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+}
+.exhibit-table tbody tr:hover {
+    background: rgba(201,168,76,0.06);
+}
+.exhibit-cell-name {
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.exhibit-cell-num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+.exhibit-cell-pct {
+    text-align: right;
+    white-space: nowrap;
+    color: rgba(255,255,255,0.6);
+}
+/* Full-width card (statewide adoption) */
+.exhibit-card-full {
+    grid-column: 1 / -1;
+}
+/* College name tags */
+.sw-college-list {
+    line-height: 1.8;
+    max-width: 500px;
+}
+.sw-college {
+    display: inline-block;
+    font-size: 0.62rem;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin: 1px 2px;
+    white-space: nowrap;
+}
+.sw-adopted {
+    background: rgba(42,125,79,0.25);
+    color: #6fcf97;
+    border: 1px solid rgba(42,125,79,0.4);
+}
+.sw-potential {
+    background: rgba(201,168,76,0.12);
+    color: #C9A84C;
+    border: 1px solid rgba(201,168,76,0.25);
+}
+/* Toggle button */
+.exhibit-toggle-btn {
+    display: inline-block;
+    margin: 1.2rem auto;
+    padding: 0.75rem 2.5rem;
+    background: #0A2240;
+    border: 2px solid #1a3a60;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.exhibit-toggle-btn:hover {
+    background: #122d4f;
+    border-color: #2a5a8f;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+/* ═══ Interactive Statewide Card ═══ */
+#statewide-interactive-container { grid-column: 1 / -1; }
+.sw-interactive { background:rgba(10,34,64,0.85); border:1px solid rgba(201,168,76,0.25); border-radius:10px; overflow:hidden; }
+.sw-toolbar { padding:0.8rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.08); }
+.sw-toolbar input[type=text] { flex:1 1 200px; padding:0.4rem 0.6rem; border:1px solid rgba(255,255,255,0.2); border-radius:5px; background:rgba(255,255,255,0.06); color:#fff; font-size:0.78rem; outline:none; }
+.sw-toolbar input[type=text]:focus { border-color:#C9A84C; }
+.sw-toolbar input[type=text]::placeholder { color:rgba(255,255,255,0.35); }
+.sw-filter-group { position:relative; display:inline-block; }
+.sw-filter-btn { padding:0.35rem 0.7rem; border:1px solid rgba(255,255,255,0.2); border-radius:5px; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.8); font-size:0.72rem; cursor:pointer; white-space:nowrap; }
+.sw-filter-btn:hover, .sw-filter-btn.active { border-color:#C9A84C; color:#C9A84C; }
+.sw-filter-dropdown { display:none; position:absolute; top:100%; left:0; z-index:100; min-width:220px; max-height:280px; overflow-y:auto; background:#0e2a4a; border:1px solid rgba(201,168,76,0.3); border-radius:6px; box-shadow:0 6px 20px rgba(0,0,0,0.5); margin-top:4px; }
+.sw-filter-dropdown.open { display:block; }
+.sw-filter-dropdown label { display:flex; align-items:center; gap:0.4rem; padding:0.3rem 0.6rem; font-size:0.7rem; color:rgba(255,255,255,0.8); cursor:pointer; }
+.sw-filter-dropdown label:hover { background:rgba(201,168,76,0.1); }
+.sw-filter-dropdown input[type=checkbox] { accent-color:#C9A84C; }
+.sw-filter-search { width:calc(100% - 1rem); margin:0.4rem 0.5rem; padding:0.3rem 0.5rem; border:1px solid rgba(255,255,255,0.15); border-radius:4px; background:rgba(255,255,255,0.05); color:#fff; font-size:0.68rem; }
+.sw-action-bar { padding:0.5rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.06); }
+.sw-action-btn { padding:0.35rem 0.9rem; border:1px solid rgba(201,168,76,0.4); border-radius:5px; background:rgba(201,168,76,0.1); color:#C9A84C; font-size:0.72rem; font-weight:600; cursor:pointer; transition:all 0.15s; }
+.sw-action-btn:hover { background:rgba(201,168,76,0.25); }
+.sw-action-btn.primary { background:#C9A84C; color:#0A2240; border-color:#C9A84C; }
+.sw-action-btn.primary:hover { background:#d4b35c; }
+.sw-count { font-size:0.7rem; color:rgba(255,255,255,0.5); margin-left:auto; }
+.sw-table-wrap { max-height:600px; overflow:auto; scrollbar-width:thin; scrollbar-color:rgba(201,168,76,0.3) transparent; }
+.sw-table-wrap::-webkit-scrollbar { width:6px; height:6px; }
+.sw-table-wrap::-webkit-scrollbar-thumb { background:rgba(201,168,76,0.3); border-radius:3px; }
+.sw-chk { accent-color:#C9A84C; cursor:pointer; }
+.sw-row-selected { background:rgba(201,168,76,0.08) !important; }
+/* Badges */
+.sw-badge { display:inline-block; font-size:0.58rem; font-weight:700; padding:1px 5px; border-radius:3px; text-transform:uppercase; letter-spacing:0.03em; }
+.sw-badge-ccc { background:rgba(42,125,79,0.25); color:#6fcf97; border:1px solid rgba(42,125,79,0.4); }
+.sw-badge-local { background:rgba(100,149,237,0.15); color:#6495ed; border:1px solid rgba(100,149,237,0.3); }
+/* Credit recs toggle */
+.sw-recs-toggle { cursor:pointer; color:#C9A84C; font-weight:600; }
+.sw-recs-toggle:hover { text-decoration:underline; }
+/* Credit recs panel */
+.sw-recs-panel { background:rgba(0,0,0,0.2); border:1px solid rgba(201,168,76,0.15); border-radius:6px; padding:0.4rem 0.6rem; max-height:200px; overflow-y:auto; }
+.sw-recs-row td { padding:0 !important; border-bottom:none !important; }
+/* Pagination */
+.sw-pagination { display:flex; justify-content:center; align-items:center; gap:4px; padding:0.6rem 1rem; border-top:1px solid rgba(255,255,255,0.06); }
+.sw-page-btn { padding:4px 10px; border:1px solid rgba(255,255,255,0.15); border-radius:4px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.7); font-size:0.68rem; cursor:pointer; }
+.sw-page-btn:hover:not([disabled]) { background:rgba(201,168,76,0.15); border-color:#C9A84C; color:#C9A84C; }
+.sw-page-btn.active { background:rgba(201,168,76,0.25); border-color:#C9A84C; color:#C9A84C; font-weight:700; }
+.sw-page-btn[disabled] { opacity:0.3; cursor:default; }
+/* Show more link */
+.sw-show-more { cursor:pointer; color:#C9A84C; font-size:0.62rem; font-weight:600; }
+.sw-show-more:hover { text-decoration:underline; }
+/* Inline credit recs */
+.sw-credit-recs { margin-top:0.25rem; padding-top:0.2rem; border-top:1px solid rgba(255,255,255,0.05); }
+.sw-rec-line { font-size:0.64rem; color:rgba(255,255,255,0.55); line-height:1.5; padding:1px 0; }
+.sw-rec-course { font-size:0.58rem; color:rgba(201,168,76,0.5); }
+
 </style>
 </head>
 <body>
@@ -3600,6 +3796,7 @@
         <details class="project-description" style="max-width:800px;margin:0.4rem auto 0;cursor:pointer;"><summary style="font-size:0.82rem;color:#9BBCD8;font-weight:600;list-style:none;display:inline-flex;align-items:center;gap:0.3rem;"><span class="desc-arrow" style="font-size:0.7rem;transition:transform 0.2s;">&#9654;</span> Project Description</summary><div style="font-size:0.82rem;color:#ccc;line-height:1.5;margin-top:0.4rem;padding:0.5rem 0.8rem;border-left:2px solid rgba(155,188,216,0.3);text-align:left;">The CPL Initiative is a statewide effort led by the California Community Colleges Chancellor's Office to expand Credit for Prior Learning opportunities for veterans, working adults, and apprentices across all 116 colleges. Aligned with Vision 2030, the initiative builds AI-enhanced infrastructure, faculty-led credit recommendations, student-centered data systems, and strategic partnerships to ensure prior learning is recognized and applied toward degree completion and career advancement. The initiative has served over 43,000 students, transcribed 97,000+ units, and established the foundation for a permanent statewide CPL service.</div></details><style>.project-description[open] .desc-arrow{transform:rotate(90deg);}</style>
         <div style="margin-top:0.5rem;"><a href="#" class="attach-btn" target="_blank" style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.82rem;color:#fff;text-decoration:none;font-weight:600;padding:6px 14px;border:1px solid rgba(255,255,255,0.3);border-radius:4px;background:rgba(255,255,255,0.1);cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files">&#128206; See Attachments</a></div>
         <!-- PROJ-INFO-END -->
+        
         
         
         
@@ -3774,6 +3971,90 @@
           <tbody><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">CPL Students</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">44,347</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.15rem 0.5rem 0.15rem 1.2rem;font-size:0.68rem;color:rgba(255,255,255,0.5);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.04);">↳ Military</td><td style="padding:0.15rem 0.5rem;font-size:0.68rem;font-weight:600;color:rgba(201,168,76,0.65);text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.04);">  22,843</td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.8rem;border-top:1px solid rgba(255,255,255,0.04);"><svg width="110" height="20"></svg></td></tr><tr><td style="padding:0.15rem 0.5rem 0.15rem 1.2rem;font-size:0.68rem;color:rgba(255,255,255,0.5);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.04);">↳ Workforce / Other</td><td style="padding:0.15rem 0.5rem;font-size:0.68rem;font-weight:600;color:rgba(201,168,76,0.65);text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.04);">  21,575</td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.8rem;border-top:1px solid rgba(255,255,255,0.04);"><svg width="110" height="20"></svg></td></tr><tr><td style="padding:0.15rem 0.5rem 0.15rem 1.2rem;font-size:0.68rem;color:rgba(255,255,255,0.5);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.04);">↳ Apprentice</td><td style="padding:0.15rem 0.5rem;font-size:0.68rem;font-weight:600;color:rgba(201,168,76,0.65);text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.04);">  704</td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.8rem;border-top:1px solid rgba(255,255,255,0.04);"><svg width="110" height="20"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">Credit Recs</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">7,290</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">Active Colleges</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">95</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">Est. Savings</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">$281M</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">MAP Exhibits</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">3,036</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">CCC Collaborative</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">55</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">Articulating Colleges</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">82</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">Veteran Star Colleges</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">48</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr></tbody>
         </table>
       </div>
+    </div>
+
+    <div style="grid-column:1/-1;background:var(--navy-primary);border-radius:8px;
+                border-top:4px solid var(--gold-accent);padding:1.2rem 1.5rem;
+                box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+
+      <!-- Header -->
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1rem;">
+        <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;color:#C9A84C;">
+          &#127942; College Activity
+        </span>
+        <div style="display:flex;gap:1rem;align-items:center;">
+          <span style="font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#C9A84C;border:1px solid #C9A84C;border-radius:3px;padding:0.05rem 0.3rem;white-space:nowrap;">Leading</span>
+          <span style="font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:#5B9BD5;border:1px solid #5B9BD5;border-radius:3px;padding:0.05rem 0.3rem;white-space:nowrap;">Advancing</span>
+          <span style="font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;color:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.3);border-radius:3px;padding:0.05rem 0.3rem;white-space:nowrap;">Inactive</span>
+          <span style="font-size:0.65rem;color:rgba(255,255,255,0.3);">As of 2026-04-14</span>
+        </div>
+      </div>
+
+      <!-- Two-column layout -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+
+        <!-- LEFT: Most Active (Leading) -->
+        <div>
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
+                      color:#C9A84C;margin-bottom:0.5rem;">
+            &#127941; Most Active &mdash; Leading Colleges (13)
+          </div>
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;">
+              <thead>
+                <tr>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:center;">#</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:left;">College</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:right;">Students</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;">Trans. Rate</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:center;">Criteria</th>
+                </tr>
+              </thead>
+              <tbody style="border-top:1px solid rgba(255,255,255,0.08);">
+                <tr><td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">1</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">Merced College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:#C9A84C;text-align:right;white-space:nowrap;">3,335</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:48px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:47.7px;height:100%;background:#4CAF50;border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">99%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">2</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">Los Angeles Pierce College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:#C9A84C;text-align:right;white-space:nowrap;">1,829</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:48px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:47.6px;height:100%;background:#4CAF50;border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">99%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">3</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">Moreno Valley College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:#C9A84C;text-align:right;white-space:nowrap;">1,432</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:48px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:43.2px;height:100%;background:#4CAF50;border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">90%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">4</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">Norco College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:#C9A84C;text-align:right;white-space:nowrap;">723</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:48px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:30.0px;height:100%;background:#4CAF50;border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">62%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">5</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">Riverside City College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:#C9A84C;text-align:right;white-space:nowrap;">669</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:48px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:44.5px;height:100%;background:#4CAF50;border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">93%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">6</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">West Los Angeles College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:#C9A84C;text-align:right;white-space:nowrap;">651</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:48px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:44.1px;height:100%;background:#4CAF50;border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">92%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">7</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">San Diego City College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:#C9A84C;text-align:right;white-space:nowrap;">6,413</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:48px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:30.9px;height:100%;background:#4CAF50;border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">64%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">8</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">San Diego Mesa College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:#C9A84C;text-align:right;white-space:nowrap;">5,508</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:48px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:31.1px;height:100%;background:#4CAF50;border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">65%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">9</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">San Diego Miramar College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:#C9A84C;text-align:right;white-space:nowrap;">3,202</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:48px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:25.1px;height:100%;background:#4CAF50;border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">52%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">10</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">Long Beach City College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:#C9A84C;text-align:right;white-space:nowrap;">778</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:48px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:0.0px;height:100%;background:rgba(255,255,255,0.25);border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">0%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">11</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">Bakersfield College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:#C9A84C;text-align:right;white-space:nowrap;">549</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:48px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:3.1px;height:100%;background:rgba(255,255,255,0.25);border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">6%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">12</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">Modesto Junior College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:#C9A84C;text-align:right;white-space:nowrap;">353</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:48px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:26.6px;height:100%;background:#4CAF50;border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">55%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">13</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">Palo Verde College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:#C9A84C;text-align:right;white-space:nowrap;">14</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:48px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:38.1px;height:100%;background:#4CAF50;border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">79%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:#C9A84C;font-size:0.7rem;">●</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- RIGHT: Least Active -->
+        <div>
+          <!-- Bottom Advancing -->
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
+                      color:rgba(255,255,255,0.5);margin-bottom:0.5rem;">
+            &#9650; Needs Attention &mdash; Bottom Advancing (82 total, showing lowest 10)
+          </div>
+          <div style="overflow-x:auto;margin-bottom:1rem;">
+            <table style="width:100%;border-collapse:collapse;">
+              <thead>
+                <tr>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:left;">College</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:right;">Students</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;">Trans. Rate</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:center;">Criteria</th>
+                </tr>
+              </thead>
+              <tbody style="border-top:1px solid rgba(255,255,255,0.08);">
+                <tr><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.7);">Mendocino College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.5);text-align:right;white-space:nowrap;">8</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:36px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:0.0px;height:100%;background:rgba(255,255,255,0.3);border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">0%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.7);">Woodland Community College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.5);text-align:right;white-space:nowrap;">8</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:36px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:0.0px;height:100%;background:rgba(255,255,255,0.3);border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">0%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.7);">Taft College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.5);text-align:right;white-space:nowrap;">10</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:36px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:0.0px;height:100%;background:rgba(255,255,255,0.3);border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">0%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.7);">Butte College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.5);text-align:right;white-space:nowrap;">10</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:36px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:0.0px;height:100%;background:rgba(255,255,255,0.3);border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">0%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.7);">Copper Mountain College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.5);text-align:right;white-space:nowrap;">14</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:36px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:0.0px;height:100%;background:rgba(255,255,255,0.3);border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">0%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.7);">Merritt College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.5);text-align:right;white-space:nowrap;">15</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:36px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:3.3px;height:100%;background:#FF9800;border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">9%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.7);">Columbia College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.5);text-align:right;white-space:nowrap;">17</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:36px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:0.0px;height:100%;background:rgba(255,255,255,0.3);border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">0%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.7);">College of the Canyons</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.5);text-align:right;white-space:nowrap;">20</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:36px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:0.0px;height:100%;background:rgba(255,255,255,0.3);border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">0%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.7);">Porterville College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.5);text-align:right;white-space:nowrap;">23</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:36px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:0.0px;height:100%;background:rgba(255,255,255,0.3);border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">0%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr><tr><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.7);">Cañada College</td><td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.5);text-align:right;white-space:nowrap;">30</td><td style="padding:0.25rem 0.4rem;"><div style="display:flex;align-items:center;gap:4px;"><div style="width:36px;height:5px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;flex-shrink:0;"><div style="width:0.0px;height:100%;background:rgba(255,255,255,0.3);border-radius:3px;"></div></div><span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">0%</span></div></td><td style="padding:0.25rem 0.4rem;text-align:center;"><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span><span style="color:rgba(255,255,255,0.3);font-size:0.7rem;">○</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Inactive -->
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
+                      color:rgba(255,255,255,0.3);margin-bottom:0.4rem;">
+            &#9711; Inactive &mdash; 20 Colleges
+          </div>
+          <div style="line-height:1.8;"><span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Feather River College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Chabot College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">MiraCosta College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Imperial Valley College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Contra Costa College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Rio Hondo College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Grossmont College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Sacramento City College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Orange Coast College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Palomar College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Yuba College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Cosumnes River College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Coalinga College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Lake Tahoe Community College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Los Angeles Southwest College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">College of the Siskiyous</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Ohlone College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Folsom Lake College</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">College of Marin</span> <span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);">Santa Monica College</span></div>
+        </div>
+
+      </div>
+
+      <!-- Criteria legend -->
+      <div style="margin-top:0.8rem;padding-top:0.6rem;border-top:1px solid rgba(255,255,255,0.06);">
+        ● Criteria met: &nbsp; <span style="font-size:0.62rem;color:rgba(255,255,255,0.35);">1. Students≥500</span> &nbsp;·&nbsp; <span style="font-size:0.62rem;color:rgba(255,255,255,0.35);">2. Units≥3k</span> &nbsp;·&nbsp; <span style="font-size:0.62rem;color:rgba(255,255,255,0.35);">3. Avg≥5</span> &nbsp;·&nbsp; <span style="font-size:0.62rem;color:rgba(255,255,255,0.35);">4. Trans≥25%</span> &nbsp;·&nbsp; <span style="font-size:0.62rem;color:rgba(255,255,255,0.35);">5. AvgTrans≥3</span>
+      </div>
+
     </div>
     </div>
     </div>
@@ -8428,6 +8709,8 @@ Cont</td>
     <!-- End Budget Section -->
 
         
+
+                
 
                 
 

@@ -2300,6 +2300,194 @@ def render_kpi_history_card(history):
     return html
 
 
+def render_college_activity_card(live_data):
+    """Render a full-width College Activity card showing most/least active colleges."""
+    if not live_data:
+        return ""
+
+    tiers    = live_data.get("tiers", {})
+    leading  = tiers.get("leading",  {}).get("colleges", [])
+    advancing = tiers.get("advancing", {}).get("colleges", [])
+    inactive = tiers.get("inactive", {}).get("colleges", [])
+
+    if not leading and not advancing and not inactive:
+        return ""
+
+    scraped_at = live_data.get("scraped_at", "")[:10]
+
+    # ── Shared helpers ──────────────────────────────────────────────
+    CRITERIA_LABELS = ["Students≥500", "Units≥3k", "Avg≥5", "Trans≥25%", "AvgTrans≥3"]
+    GOLD   = "#C9A84C"
+    NAVY   = "var(--navy-secondary)"
+    GREEN  = "#4CAF50"
+    AMBER  = "#FF9800"
+    GRAY   = "rgba(255,255,255,0.3)"
+
+    def _dots(n, total=5):
+        return "".join(
+            f'<span style="color:{GOLD};font-size:0.7rem;">●</span>' if i < n
+            else f'<span style="color:{GRAY};font-size:0.7rem;">○</span>'
+            for i in range(total)
+        )
+
+    def _tier_badge(label, color):
+        return (f'<span style="font-size:0.6rem;font-weight:700;text-transform:uppercase;'
+                f'letter-spacing:0.4px;color:{color};border:1px solid {color};'
+                f'border-radius:3px;padding:0.05rem 0.3rem;white-space:nowrap;">{label}</span>')
+
+    def _pct_bar(pct, color=GREEN, width=48):
+        filled = min(pct / 100, 1.0) * width
+        return (f'<div style="display:flex;align-items:center;gap:4px;">'
+                f'<div style="width:{width}px;height:5px;background:rgba(255,255,255,0.1);'
+                f'border-radius:3px;overflow:hidden;flex-shrink:0;">'
+                f'<div style="width:{filled:.1f}px;height:100%;background:{color};border-radius:3px;"></div>'
+                f'</div>'
+                f'<span style="font-size:0.68rem;color:rgba(255,255,255,0.7);">{pct:.0f}%</span>'
+                f'</div>')
+
+    # ── Section: Most Active (Leading colleges) ───────────────────
+    def _leading_rows():
+        rows = ""
+        sorted_leading = sorted(leading, key=lambda c: (-c.get("criteriaMetCount", 0), -c.get("students", 0)))
+        for i, c in enumerate(sorted_leading, 1):
+            n     = c.get("criteriaMetCount", 0)
+            tr    = c.get("transcriptionRate", 0)
+            bar_color = GREEN if tr >= 50 else (AMBER if tr >= 25 else "rgba(255,255,255,0.25)")
+            rows += (
+                f'<tr>'
+                f'<td style="padding:0.25rem 0.4rem;font-size:0.68rem;color:rgba(255,255,255,0.45);text-align:center;">{i}</td>'
+                f'<td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.9);">{c["college"]}</td>'
+                f'<td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:{GOLD};text-align:right;white-space:nowrap;">{c.get("students",0):,}</td>'
+                f'<td style="padding:0.25rem 0.4rem;">{_pct_bar(tr, bar_color)}</td>'
+                f'<td style="padding:0.25rem 0.4rem;text-align:center;">{_dots(n)}</td>'
+                f'</tr>'
+            )
+        return rows
+
+    # ── Section: Advancing — sorted worst to best for "least active" panel ──
+    # "Least active advancing" = criteriaMetCount=0, low students, 0% transcription
+    advancing_sorted_asc = sorted(advancing, key=lambda c: (c.get("criteriaMetCount", 0), c.get("students", 0), c.get("transcriptionRate", 0)))
+    bottom_advancing = advancing_sorted_asc[:10]
+
+    def _bottom_rows():
+        rows = ""
+        for c in bottom_advancing:
+            n  = c.get("criteriaMetCount", 0)
+            tr = c.get("transcriptionRate", 0)
+            rows += (
+                f'<tr>'
+                f'<td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.7);">{c["college"]}</td>'
+                f'<td style="padding:0.25rem 0.4rem;font-size:0.72rem;color:rgba(255,255,255,0.5);text-align:right;white-space:nowrap;">{c.get("students",0):,}</td>'
+                f'<td style="padding:0.25rem 0.4rem;">{_pct_bar(tr, AMBER if tr > 0 else GRAY, width=36)}</td>'
+                f'<td style="padding:0.25rem 0.4rem;text-align:center;">{_dots(n)}</td>'
+                f'</tr>'
+            )
+        return rows
+
+    # ── Section: Inactive colleges ────────────────────────────────
+    inactive_pills = " ".join(
+        f'<span style="display:inline-block;margin:0.15rem;padding:0.15rem 0.5rem;'
+        f'font-size:0.65rem;border-radius:10px;background:rgba(255,255,255,0.06);'
+        f'color:rgba(255,255,255,0.4);">{name}</span>'
+        for name in inactive
+    )
+
+    # ── Criteria legend ───────────────────────────────────────────
+    legend = " &nbsp;·&nbsp; ".join(
+        f'<span style="font-size:0.62rem;color:rgba(255,255,255,0.35);">{i+1}. {lbl}</span>'
+        for i, lbl in enumerate(CRITERIA_LABELS)
+    )
+
+    scraped_note = f'<span style="font-size:0.65rem;color:rgba(255,255,255,0.3);">As of {scraped_at}</span>' if scraped_at else ""
+
+    html = f"""
+    <div style="grid-column:1/-1;background:var(--navy-primary);border-radius:8px;
+                border-top:4px solid var(--gold-accent);padding:1.2rem 1.5rem;
+                box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+
+      <!-- Header -->
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1rem;">
+        <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;color:{GOLD};">
+          &#127942; College Activity
+        </span>
+        <div style="display:flex;gap:1rem;align-items:center;">
+          {_tier_badge("Leading", GOLD)}
+          {_tier_badge("Advancing", "#5B9BD5")}
+          {_tier_badge("Inactive", "rgba(255,255,255,0.3)")}
+          {scraped_note}
+        </div>
+      </div>
+
+      <!-- Two-column layout -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+
+        <!-- LEFT: Most Active (Leading) -->
+        <div>
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
+                      color:{GOLD};margin-bottom:0.5rem;">
+            &#127941; Most Active &mdash; Leading Colleges ({len(leading)})
+          </div>
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;">
+              <thead>
+                <tr>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:center;">#</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:left;">College</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:right;">Students</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;">Trans. Rate</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:center;">Criteria</th>
+                </tr>
+              </thead>
+              <tbody style="border-top:1px solid rgba(255,255,255,0.08);">
+                {_leading_rows()}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- RIGHT: Least Active -->
+        <div>
+          <!-- Bottom Advancing -->
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
+                      color:rgba(255,255,255,0.5);margin-bottom:0.5rem;">
+            &#9650; Needs Attention &mdash; Bottom Advancing ({len(advancing_sorted_asc)} total, showing lowest 10)
+          </div>
+          <div style="overflow-x:auto;margin-bottom:1rem;">
+            <table style="width:100%;border-collapse:collapse;">
+              <thead>
+                <tr>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:left;">College</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:right;">Students</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;">Trans. Rate</th>
+                  <th style="font-size:0.6rem;color:rgba(255,255,255,0.35);padding:0.2rem 0.4rem;text-align:center;">Criteria</th>
+                </tr>
+              </thead>
+              <tbody style="border-top:1px solid rgba(255,255,255,0.08);">
+                {_bottom_rows()}
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Inactive -->
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
+                      color:rgba(255,255,255,0.3);margin-bottom:0.4rem;">
+            &#9711; Inactive &mdash; {len(inactive)} Colleges
+          </div>
+          <div style="line-height:1.8;">{inactive_pills}</div>
+        </div>
+
+      </div>
+
+      <!-- Criteria legend -->
+      <div style="margin-top:0.8rem;padding-top:0.6rem;border-top:1px solid rgba(255,255,255,0.06);">
+        ● Criteria met: &nbsp; {legend}
+      </div>
+
+    </div>
+"""
+    return html
+
+
 def read_live_metrics():
     """
     Read live_metrics.json (written by the daily scraper agent).
@@ -4344,9 +4532,10 @@ def main():
     else:
         print("No exhibit data found — skipping exhibit KPIs")
 
-    # Log daily snapshot and render trends card
+    # Log daily snapshot and render trends + activity cards
     kpi_history = log_daily_snapshot(live_data, exhibit_data)
-    trends_card_html = render_kpi_history_card(kpi_history)
+    trends_card_html   = render_kpi_history_card(kpi_history)
+    activity_card_html = render_college_activity_card(live_data)
 
     data = {
         "last_updated": now,
@@ -4587,7 +4776,8 @@ def main():
                     '        </div>\n'
                     '    <div class="kpi-section">\n'
                     + kpi_cards_html
-                    + trends_card_html +
+                    + trends_card_html
+                    + activity_card_html +
                     '    </div>\n'
                     '    </div>\n\n    '
                 )
