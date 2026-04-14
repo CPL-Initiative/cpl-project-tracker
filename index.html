@@ -3393,6 +3393,202 @@
 .sw-rec-line { font-size:0.64rem; color:rgba(255,255,255,0.55); line-height:1.5; padding:1px 0; }
 .sw-rec-course { font-size:0.58rem; color:rgba(201,168,76,0.5); }
 
+
+
+/* ═══ MAP Articulation Analysis Cards ═══ */
+.exhibit-analysis-section {
+    display: none;
+    margin: 1.5rem auto;
+    max-width: 1400px;
+    padding: 0 1rem;
+}
+.exhibit-analysis-section.visible { display: block; }
+.exhibit-section-header {
+    text-align: center;
+    color: #C9A84C;
+    margin-bottom: 1.2rem;
+}
+.exhibit-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 1rem;
+}
+.exhibit-card {
+    background: rgba(10,34,64,0.85);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.exhibit-card-header {
+    padding: 0.8rem 1rem 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.exhibit-card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #C9A84C;
+}
+.exhibit-card-subtitle {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 2px;
+}
+.exhibit-card-body {
+    max-height: 420px;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201,168,76,0.3) transparent;
+}
+.exhibit-card-body::-webkit-scrollbar { width: 6px; height: 6px; }
+.exhibit-card-body::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 3px; }
+.exhibit-card-body::-webkit-scrollbar-track { background: transparent; }
+.exhibit-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.85);
+}
+.exhibit-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.exhibit-table th {
+    background: rgba(10,34,64,0.98);
+    color: #C9A84C;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.45rem 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    white-space: nowrap;
+}
+.exhibit-table td {
+    padding: 0.35rem 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+}
+.exhibit-table tbody tr:hover {
+    background: rgba(201,168,76,0.06);
+}
+.exhibit-cell-name {
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.exhibit-cell-num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+.exhibit-cell-pct {
+    text-align: right;
+    white-space: nowrap;
+    color: rgba(255,255,255,0.6);
+}
+/* Full-width card (statewide adoption) */
+.exhibit-card-full {
+    grid-column: 1 / -1;
+}
+/* College name tags */
+.sw-college-list {
+    line-height: 1.8;
+    max-width: 500px;
+}
+.sw-college {
+    display: inline-block;
+    font-size: 0.62rem;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin: 1px 2px;
+    white-space: nowrap;
+}
+.sw-adopted {
+    background: rgba(42,125,79,0.25);
+    color: #6fcf97;
+    border: 1px solid rgba(42,125,79,0.4);
+}
+.sw-potential {
+    background: rgba(201,168,76,0.12);
+    color: #C9A84C;
+    border: 1px solid rgba(201,168,76,0.25);
+}
+/* Toggle button */
+.exhibit-toggle-btn {
+    display: inline-block;
+    margin: 1.2rem auto;
+    padding: 0.75rem 2.5rem;
+    background: #0A2240;
+    border: 2px solid #1a3a60;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.exhibit-toggle-btn:hover {
+    background: #122d4f;
+    border-color: #2a5a8f;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+/* ═══ Interactive Statewide Card ═══ */
+#statewide-interactive-container { grid-column: 1 / -1; }
+.sw-interactive { background:rgba(10,34,64,0.85); border:1px solid rgba(201,168,76,0.25); border-radius:10px; overflow:hidden; }
+.sw-toolbar { padding:0.8rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.08); }
+.sw-toolbar input[type=text] { flex:1 1 200px; padding:0.4rem 0.6rem; border:1px solid rgba(255,255,255,0.2); border-radius:5px; background:rgba(255,255,255,0.06); color:#fff; font-size:0.78rem; outline:none; }
+.sw-toolbar input[type=text]:focus { border-color:#C9A84C; }
+.sw-toolbar input[type=text]::placeholder { color:rgba(255,255,255,0.35); }
+.sw-filter-group { position:relative; display:inline-block; }
+.sw-filter-btn { padding:0.35rem 0.7rem; border:1px solid rgba(255,255,255,0.2); border-radius:5px; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.8); font-size:0.72rem; cursor:pointer; white-space:nowrap; }
+.sw-filter-btn:hover, .sw-filter-btn.active { border-color:#C9A84C; color:#C9A84C; }
+.sw-filter-dropdown { display:none; position:absolute; top:100%; left:0; z-index:100; min-width:220px; max-height:280px; overflow-y:auto; background:#0e2a4a; border:1px solid rgba(201,168,76,0.3); border-radius:6px; box-shadow:0 6px 20px rgba(0,0,0,0.5); margin-top:4px; }
+.sw-filter-dropdown.open { display:block; }
+.sw-filter-dropdown label { display:flex; align-items:center; gap:0.4rem; padding:0.3rem 0.6rem; font-size:0.7rem; color:rgba(255,255,255,0.8); cursor:pointer; }
+.sw-filter-dropdown label:hover { background:rgba(201,168,76,0.1); }
+.sw-filter-dropdown input[type=checkbox] { accent-color:#C9A84C; }
+.sw-filter-search { width:calc(100% - 1rem); margin:0.4rem 0.5rem; padding:0.3rem 0.5rem; border:1px solid rgba(255,255,255,0.15); border-radius:4px; background:rgba(255,255,255,0.05); color:#fff; font-size:0.68rem; }
+.sw-action-bar { padding:0.5rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.06); }
+.sw-action-btn { padding:0.35rem 0.9rem; border:1px solid rgba(201,168,76,0.4); border-radius:5px; background:rgba(201,168,76,0.1); color:#C9A84C; font-size:0.72rem; font-weight:600; cursor:pointer; transition:all 0.15s; }
+.sw-action-btn:hover { background:rgba(201,168,76,0.25); }
+.sw-action-btn.primary { background:#C9A84C; color:#0A2240; border-color:#C9A84C; }
+.sw-action-btn.primary:hover { background:#d4b35c; }
+.sw-count { font-size:0.7rem; color:rgba(255,255,255,0.5); margin-left:auto; }
+.sw-table-wrap { max-height:600px; overflow:auto; scrollbar-width:thin; scrollbar-color:rgba(201,168,76,0.3) transparent; }
+.sw-table-wrap::-webkit-scrollbar { width:6px; height:6px; }
+.sw-table-wrap::-webkit-scrollbar-thumb { background:rgba(201,168,76,0.3); border-radius:3px; }
+.sw-chk { accent-color:#C9A84C; cursor:pointer; }
+.sw-row-selected { background:rgba(201,168,76,0.08) !important; }
+/* Badges */
+.sw-badge { display:inline-block; font-size:0.58rem; font-weight:700; padding:1px 5px; border-radius:3px; text-transform:uppercase; letter-spacing:0.03em; }
+.sw-badge-ccc { background:rgba(42,125,79,0.25); color:#6fcf97; border:1px solid rgba(42,125,79,0.4); }
+.sw-badge-local { background:rgba(100,149,237,0.15); color:#6495ed; border:1px solid rgba(100,149,237,0.3); }
+/* Credit recs toggle */
+.sw-recs-toggle { cursor:pointer; color:#C9A84C; font-weight:600; }
+.sw-recs-toggle:hover { text-decoration:underline; }
+/* Credit recs panel */
+.sw-recs-panel { background:rgba(0,0,0,0.2); border:1px solid rgba(201,168,76,0.15); border-radius:6px; padding:0.4rem 0.6rem; max-height:200px; overflow-y:auto; }
+.sw-recs-row td { padding:0 !important; border-bottom:none !important; }
+/* Pagination */
+.sw-pagination { display:flex; justify-content:center; align-items:center; gap:4px; padding:0.6rem 1rem; border-top:1px solid rgba(255,255,255,0.06); }
+.sw-page-btn { padding:4px 10px; border:1px solid rgba(255,255,255,0.15); border-radius:4px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.7); font-size:0.68rem; cursor:pointer; }
+.sw-page-btn:hover:not([disabled]) { background:rgba(201,168,76,0.15); border-color:#C9A84C; color:#C9A84C; }
+.sw-page-btn.active { background:rgba(201,168,76,0.25); border-color:#C9A84C; color:#C9A84C; font-weight:700; }
+.sw-page-btn[disabled] { opacity:0.3; cursor:default; }
+/* Show more link */
+.sw-show-more { cursor:pointer; color:#C9A84C; font-size:0.62rem; font-weight:600; }
+.sw-show-more:hover { text-decoration:underline; }
+/* Inline credit recs */
+.sw-credit-recs { margin-top:0.25rem; padding-top:0.2rem; border-top:1px solid rgba(255,255,255,0.05); }
+.sw-rec-line { font-size:0.64rem; color:rgba(255,255,255,0.55); line-height:1.5; padding:1px 0; }
+.sw-rec-course { font-size:0.58rem; color:rgba(201,168,76,0.5); }
+
 </style>
 </head>
 <body>
@@ -3404,6 +3600,7 @@
         <details class="project-description" style="max-width:800px;margin:0.4rem auto 0;cursor:pointer;"><summary style="font-size:0.82rem;color:#9BBCD8;font-weight:600;list-style:none;display:inline-flex;align-items:center;gap:0.3rem;"><span class="desc-arrow" style="font-size:0.7rem;transition:transform 0.2s;">&#9654;</span> Project Description</summary><div style="font-size:0.82rem;color:#ccc;line-height:1.5;margin-top:0.4rem;padding:0.5rem 0.8rem;border-left:2px solid rgba(155,188,216,0.3);text-align:left;">The CPL Initiative is a statewide effort led by the California Community Colleges Chancellor's Office to expand Credit for Prior Learning opportunities for veterans, working adults, and apprentices across all 116 colleges. Aligned with Vision 2030, the initiative builds AI-enhanced infrastructure, faculty-led credit recommendations, student-centered data systems, and strategic partnerships to ensure prior learning is recognized and applied toward degree completion and career advancement. The initiative has served over 43,000 students, transcribed 97,000+ units, and established the foundation for a permanent statewide CPL service.</div></details><style>.project-description[open] .desc-arrow{transform:rotate(90deg);}</style>
         <div style="margin-top:0.5rem;"><a href="#" class="attach-btn" target="_blank" style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.82rem;color:#fff;text-decoration:none;font-weight:600;padding:6px 14px;border:1px solid rgba(255,255,255,0.3);border-radius:4px;background:rgba(255,255,255,0.1);cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files">&#128206; See Attachments</a></div>
         <!-- PROJ-INFO-END -->
+        
         
         
         
@@ -3574,7 +3771,7 @@
       <div style="overflow-x:auto;">
         <table style="width:100%;border-collapse:collapse;">
           <thead><tr><th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:left;">Metric</th><th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:right;">Today</th><th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;white-space:nowrap;">1d</th><th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;white-space:nowrap;">7d</th><th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;white-space:nowrap;">30d</th><th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;white-space:nowrap;">QTD</th><th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;white-space:nowrap;">1yr</th><th style="font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;">30-Day Trend</th></tr></thead>
-          <tbody><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">CPL Students</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">44,347</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">Credit Recs</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">7,290</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">Active Colleges</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">95</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">Est. Savings</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">$281M</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">MAP Exhibits</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">3,036</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">CCC Collaborative</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">55</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">Articulating Colleges</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">82</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">Veteran Star Colleges</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">48</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr></tbody>
+          <tbody><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">CPL Students</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">44,347</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.15rem 0.5rem 0.15rem 1.2rem;font-size:0.68rem;color:rgba(255,255,255,0.5);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.04);">↳ Military</td><td style="padding:0.15rem 0.5rem;font-size:0.68rem;font-weight:600;color:rgba(201,168,76,0.65);text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.04);">  22,843</td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.8rem;border-top:1px solid rgba(255,255,255,0.04);"><svg width="110" height="20"></svg></td></tr><tr><td style="padding:0.15rem 0.5rem 0.15rem 1.2rem;font-size:0.68rem;color:rgba(255,255,255,0.5);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.04);">↳ Workforce / Other</td><td style="padding:0.15rem 0.5rem;font-size:0.68rem;font-weight:600;color:rgba(201,168,76,0.65);text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.04);">  21,575</td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.8rem;border-top:1px solid rgba(255,255,255,0.04);"><svg width="110" height="20"></svg></td></tr><tr><td style="padding:0.15rem 0.5rem 0.15rem 1.2rem;font-size:0.68rem;color:rgba(255,255,255,0.5);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.04);">↳ Apprentice</td><td style="padding:0.15rem 0.5rem;font-size:0.68rem;font-weight:600;color:rgba(201,168,76,0.65);text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.04);">  704</td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.04);"><span style="color:rgba(255,255,255,0.35);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.8rem;border-top:1px solid rgba(255,255,255,0.04);"><svg width="110" height="20"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">Credit Recs</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">7,290</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">Active Colleges</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">95</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">Est. Savings</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">$281M</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">MAP Exhibits</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">3,036</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">CCC Collaborative</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">55</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">Articulating Colleges</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">82</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">Veteran Star Colleges</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;text-align:right;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);">48</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid rgba(255,255,255,0.06);"><span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);"><svg width="110" height="30"></svg></td></tr></tbody>
         </table>
       </div>
     </div>
@@ -8231,6 +8428,8 @@ Cont</td>
     <!-- End Budget Section -->
 
         
+
+                
 
                 
 

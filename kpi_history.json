@@ -2,6 +2,9 @@
   {
     "date": "2026-04-14",
     "students": 44347,
+    "students_military": 22843,
+    "students_workforce": 21575,
+    "students_apprentice": 704,
     "eligible_units": 198884,
     "transcribed_units": 97209,
     "savings_m": 281.2,

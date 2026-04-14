@@ -2061,6 +2061,9 @@ def log_daily_snapshot(live_data, exhibit_data):
         "date":                  today,
         # Scraped live metrics
         "students":              int(raw.get("Students", 0)),
+        "students_military":     int(raw.get("MilitaryStudents", 0)),
+        "students_workforce":    int(raw.get("NonMilitaryStudents", 0)),
+        "students_apprentice":   int(raw.get("AprenticeStudents", 0)),   # API typo preserved
         "eligible_units":        int(raw.get("Units", 0)),
         "transcribed_units":     int(raw.get("TranscribedUnits", 0)),
         "savings_m":             round(raw.get("Savings", 0) / 1_000_000, 1),
@@ -2184,8 +2187,13 @@ def render_kpi_history_card(history):
     def _fmt_int(v):      return f"{v:,}"
     def _fmt_recs(v):     return f"{v:,}"
 
+    def _fmt_sub(v): return f"  {v:,}"   # indented to signal sub-row
+
     METRICS = [
         ("students",              "CPL Students",           _fmt_students, False),
+        ("students_military",     "↳ Military",             _fmt_sub,      False),
+        ("students_workforce",    "↳ Workforce / Other",    _fmt_sub,      False),
+        ("students_apprentice",   "↳ Apprentice",           _fmt_sub,      False),
         ("credit_recs",           "Credit Recs",            _fmt_recs,    False),
         ("active_colleges",       "Active Colleges",        _fmt_int,      True),
         ("savings_m",             "Est. Savings",           _fmt_savings,  False),
@@ -2224,29 +2232,39 @@ def render_kpi_history_card(history):
             continue
         current_str = fmt_fn(current)
 
+        is_sub = label.startswith("↳")
+        row_style    = "border-top:1px solid rgba(255,255,255,0.04);" if is_sub else "border-top:1px solid rgba(255,255,255,0.06);"
+        label_style  = (f"padding:0.15rem 0.5rem 0.15rem 1.2rem;font-size:0.68rem;"
+                        f"color:rgba(255,255,255,0.5);white-space:nowrap;{row_style}") if is_sub else \
+                       (f"padding:0.3rem 0.5rem;font-size:0.75rem;"
+                        f"color:rgba(255,255,255,0.8);white-space:nowrap;{row_style}")
+        value_style  = (f"padding:0.15rem 0.5rem;font-size:0.68rem;font-weight:600;"
+                        f"color:rgba(201,168,76,0.65);text-align:right;white-space:nowrap;{row_style}") if is_sub else \
+                       (f"padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;"
+                        f"color:#C9A84C;text-align:right;white-space:nowrap;{row_style}")
+        cell_style   = f"padding:{'0.15rem' if is_sub else '0.3rem'} 0.5rem;text-align:center;{row_style}"
+        spark_style  = f"padding:{'0.15rem' if is_sub else '0.3rem'} 0.8rem;{row_style}"
+
         # Delta badges for each period
         delta_cells = ""
         for _, days_ago, date_str in PERIODS:
             prev = _history_lookup(history, key, days_ago=days_ago, date_str=date_str)
             badge, _ = _delta_badge(current, prev, abs_format=use_abs)
-            delta_cells += (
-                f'<td style="padding:0.3rem 0.5rem;text-align:center;'
-                f'border-top:1px solid rgba(255,255,255,0.06);">{badge}</td>'
-            )
+            if is_sub:
+                badge = badge.replace("font-size:0.68rem", "font-size:0.62rem")
+            delta_cells += f'<td style="{cell_style}">{badge}</td>'
 
-        # Sparkline
+        # Sparkline (smaller for sub-rows)
         spark_vals = [e.get(key, 0) for e in recent]
-        spark_svg  = _sparkline_svg(spark_vals)
+        spark_color = "rgba(201,168,76,0.5)" if is_sub else "#C9A84C"
+        spark_svg   = _sparkline_svg(spark_vals, height=20 if is_sub else 30, color=spark_color)
 
         rows_html += (
             f'<tr>'
-            f'<td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:rgba(255,255,255,0.8);'
-            f'border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">{label}</td>'
-            f'<td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:#C9A84C;'
-            f'text-align:right;border-top:1px solid rgba(255,255,255,0.06);white-space:nowrap;">'
-            f'{current_str}</td>'
+            f'<td style="{label_style}">{label}</td>'
+            f'<td style="{value_style}">{current_str}</td>'
             f'{delta_cells}'
-            f'<td style="padding:0.3rem 0.8rem;border-top:1px solid rgba(255,255,255,0.06);">'
+            f'<td style="{spark_style}">'
             f'{spark_svg}</td>'
             f'</tr>'
         )
