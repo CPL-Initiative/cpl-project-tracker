@@ -2678,116 +2678,130 @@ def build_exhibit_analysis_tables(exhibit_data):
 
 def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     """
-    For each CCC Collaborative exhibit, identify:
+    For ALL exhibits (CCC Collaborative + Local), identify:
       - Colleges that have already adopted it
-      - Colleges that could adopt it (have matching courses by CID or TOP code)
+      - Colleges that could adopt it (matching programs by MAP TOP code via ProgramsofStudy)
+      - Credit recommendations (course → credit text) for each exhibit
 
-    Uses View_CollegeCourses and TOP_Code_Lookup.xlsx for matching.
+    Uses View_ProgramsofStudy for TOP-code-based potential-adopter matching
+    (ProgramsofStudy carries the MAP integer TOP codes, same as exhibits).
     Returns a sorted list of exhibit dicts, or None.
     """
     from collections import defaultdict
 
-    # ── Load MAP TOP Code → CCC 4-digit code mapping ──
     top_lookup = _load_top_code_lookup()  # MAP code → discipline name
-    # Need MAP code → CCC 4-digit code for course matching
-    map_to_ccc4 = {}
-    for folder in _EXHIBIT_LOCATIONS:
-        path = os.path.join(folder, "TOP_Code_Lookup.xlsx")
-        if os.path.exists(path):
-            try:
-                wb = load_workbook(path, data_only=True)
-                ws = wb["TOP Code Lookup"]
-                for row in ws.iter_rows(min_row=2, max_col=5, values_only=True):
-                    map_code = str(row[0]).strip() if row[0] is not None else ""
-                    ccc_4digit = str(row[3]).strip() if row[3] else ""
-                    if map_code and ccc_4digit:
-                        map_to_ccc4[map_code] = ccc_4digit
-                wb.close()
-            except Exception:
-                pass
+
+    # ── Build MAP TOP code → colleges from ProgramsofStudy ──
+    # ProgramsofStudy uses MAP integer TOP codes (same as exhibits)
+    programs_ds = None
+    for report in all_data:
+        if report.get("viewName") == "View_ProgramsofStudy_APIDataset":
+            programs_ds = report
             break
 
-    # ── Find College Courses dataset ──
-    courses_ds = None
+    top_to_colleges = defaultdict(set)
+    if programs_ds:
+        pcm = {c: i for i, c in enumerate(programs_ds.get("columnName", []))}
+        for row in programs_ds["columnValue"]:
+            college = (row[pcm.get("College", 0)] or "").strip()
+            tc = (row[pcm.get("Top Code", 9)] or "").strip()
+            if college and tc:
+                top_to_colleges[tc].add(college)
+        print(f"  ProgramsofStudy: {len(top_to_colleges)} TOP codes, "
+              f"{len(set(c for cs in top_to_colleges.values() for c in cs))} colleges")
+
+    # ── Also build CID → colleges from View_CollegeCourses for CID-based matching ──
+    cid_to_colleges = defaultdict(set)
     for report in all_data:
         if report.get("viewName") == "View_CollegeCourses_APIDataset":
-            courses_ds = report
+            ccm = {c: i for i, c in enumerate(report.get("columnName", []))}
+            for row in report["columnValue"]:
+                college = (row[ccm.get("College", 0)] or "").strip()
+                cid = (row[ccm.get("CID Number", 1)] or "").strip()
+                if college and cid:
+                    cid_to_colleges[cid].add(college)
             break
-    if not courses_ds:
-        return None
 
-    course_rows = courses_ds["columnValue"]
-    ccm = {c: i for i, c in enumerate(courses_ds.get("columnName", []))}
-
-    # Build CID → colleges and CCC4 TOP → colleges lookups from College Courses
-    cid_to_colleges = defaultdict(set)
-    ccc4_to_colleges = defaultdict(set)
-
-    for row in course_rows:
-        college = (row[ccm.get("College", 0)] or "").strip()
-        cid = (row[ccm.get("CID Number", 1)] or "").strip()
-        top_raw = (row[ccm.get("Top Code", 6)] or "").strip()
-        # Extract 4-digit code from "0948.00: Automotive Technology"
-        ccc4 = top_raw.split(".")[0] if "." in top_raw else ""
-        if college and cid:
-            cid_to_colleges[cid].add(college)
-        if college and ccc4:
-            ccc4_to_colleges[ccc4].add(college)
-
-    # ── Gather CCC Collaborative exhibits ──
+    # ── Gather ALL exhibits (both CCC Collaborative and Local) ──
     i_collab = exhibit_cm.get("Collaborative Type", 7)
     i_eid = exhibit_cm.get("ExhibitID", 1)
     i_title = exhibit_cm.get("Exhibit Title", 2)
     i_artic = exhibit_cm.get("Articulation College", 4)
+    i_course = exhibit_cm.get("Course", 5)
+    i_credit = exhibit_cm.get("Credit Recommendation", 6)
     i_cid = exhibit_cm.get("CID Number", 9)
     i_top = exhibit_cm.get("TOP Code", 8)
     i_cpl = exhibit_cm.get("CPL Type Description", 13)
 
-    ccc_exhibits = defaultdict(lambda: {
+    all_exhibits = defaultdict(lambda: {
         "adopters": set(), "cids": set(), "map_top": "",
-        "title": "", "cpl_type": "",
+        "title": "", "cpl_type": "", "collab_type": "",
+        "credit_recs": [],  # list of {course, credit} dicts
     })
 
     for row in exhibit_rows:
-        if "CCC" not in (row[i_collab] or ""):
-            continue
         eid = (row[i_eid] or "").strip()
-        e = ccc_exhibits[eid]
+        if not eid:
+            continue
+        e = all_exhibits[eid]
         e["title"] = (row[i_title] or "").strip()
+        collab = (row[i_collab] or "").strip()
+        if collab and not e["collab_type"]:
+            e["collab_type"] = collab
         artic = (row[i_artic] or "").strip()
-        if artic: e["adopters"].add(artic)
+        if artic:
+            e["adopters"].add(artic)
         cid = (row[i_cid] or "").strip()
-        if cid: e["cids"].add(cid)
+        if cid:
+            e["cids"].add(cid)
         top = (row[i_top] or "").strip()
-        if top and not e["map_top"]: e["map_top"] = top
+        if top and not e["map_top"]:
+            e["map_top"] = top
         cpl = (row[i_cpl] or "").strip()
-        if cpl and not e["cpl_type"]: e["cpl_type"] = cpl
+        if cpl and not e["cpl_type"]:
+            e["cpl_type"] = cpl
+        # Collect credit recommendations
+        course = (row[i_course] or "").strip()
+        credit = (row[i_credit] or "").strip()
+        if course and credit:
+            rec_key = (course, credit)
+            # Avoid exact duplicates
+            if rec_key not in {(r["course"], r["credit"]) for r in e["credit_recs"]}:
+                e["credit_recs"].append({"course": course, "credit": credit})
 
     # ── Compute potential for each exhibit ──
     results = []
-    for eid, e in ccc_exhibits.items():
+    for eid, e in all_exhibits.items():
         adopters = e["adopters"]
-        ccc4 = map_to_ccc4.get(e["map_top"], "")
+        map_top = e["map_top"]
 
+        # Potential adopters via MAP TOP code (ProgramsofStudy)
+        potential_top = top_to_colleges.get(map_top, set()) if map_top else set()
+
+        # Potential adopters via CID (CollegeCourses)
         potential_cid = set()
         for cid in e["cids"]:
             potential_cid.update(cid_to_colleges.get(cid, set()))
 
-        potential_top = ccc4_to_colleges.get(ccc4, set()) if ccc4 else set()
         new_colleges = (potential_cid | potential_top) - adopters
+        disc = top_lookup.get(map_top, "Not Mapped")
 
-        disc = top_lookup.get(e["map_top"], "Not Mapped")
+        # Classify as Statewide (CCC Collaborative) or Local
+        is_statewide = "CCC" in e["collab_type"]
+        collab_label = "CCC Collaborative" if is_statewide else (e["collab_type"] or "Local")
 
         results.append({
             "exhibit_id": eid,
             "title": e["title"],
             "cpl_type": e["cpl_type"],
             "discipline": disc,
+            "collaborative_type": collab_label,
             "adopters": len(adopters),
             "adopter_names": sorted(adopters),
             "potential": len(new_colleges),
             "potential_names": sorted(new_colleges),
             "total_addressable": len(adopters) + len(new_colleges),
+            "credit_recs": e["credit_recs"],
         })
 
     # Sort: exhibits with most potential first, then by adopters descending
@@ -3126,6 +3140,16 @@ EXHIBIT_ANALYSIS_CSS = """
 .sw-table-wrap::-webkit-scrollbar-thumb { background:rgba(201,168,76,0.3); border-radius:3px; }
 .sw-chk { accent-color:#C9A84C; cursor:pointer; }
 .sw-row-selected { background:rgba(201,168,76,0.08) !important; }
+/* Badges */
+.sw-badge { display:inline-block; font-size:0.58rem; font-weight:700; padding:1px 5px; border-radius:3px; text-transform:uppercase; letter-spacing:0.03em; }
+.sw-badge-ccc { background:rgba(42,125,79,0.25); color:#6fcf97; border:1px solid rgba(42,125,79,0.4); }
+.sw-badge-local { background:rgba(100,149,237,0.15); color:#6495ed; border:1px solid rgba(100,149,237,0.3); }
+/* Credit recs toggle */
+.sw-recs-toggle { cursor:pointer; color:#C9A84C; font-weight:600; }
+.sw-recs-toggle:hover { text-decoration:underline; }
+/* Credit recs panel */
+.sw-recs-panel { background:rgba(0,0,0,0.2); border:1px solid rgba(201,168,76,0.15); border-radius:6px; padding:0.4rem 0.6rem; max-height:200px; overflow-y:auto; }
+.sw-recs-row td { padding:0 !important; border-bottom:none !important; }
 """
 
 
