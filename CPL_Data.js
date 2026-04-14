@@ -16,17 +16,17 @@ window.CPL_DATA = {
   "data_as_of": "April 14, 2026",
   "kpis": {
     "cumulative_students": {
-      "value": "44,254",
+      "value": "44,347",
       "label": "Cumulative CPL Students",
       "sub": "Target: 250,000 by 2030",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "22,756"
+          "value": "22,843"
         },
         {
           "label": "Workforce/Other",
-          "value": "21,569"
+          "value": "21,575"
         },
         {
           "label": "Apprentice",
@@ -51,39 +51,14 @@ window.CPL_DATA = {
         {
           "label": "Apprentice",
           "value": "6k"
-        },
-        {
-          "label": "Applied Credits",
-          "value": "198,884",
-          "note": "posted to student records"
         }
       ],
       "live": true
     },
     "credit_recommendations": {
-      "value": "7,290",
+      "value": "288",
       "label": "Credit Recommendations",
-      "sub": "Source: MAP Custom Reporting Module",
-      "breakdowns": [
-        {
-          "label": "CCC Collaborative",
-          "value": "955",
-          "note": "statewide faculty workgroups"
-        },
-        {
-          "label": "Local",
-          "value": "6,335",
-          "note": "individual college articulations"
-        }
-      ],
-      "live": false,
-      "footnote": [
-        "Standardized Assessment: 2,948",
-        "Industry Certification: 2,548",
-        "Credit By Exam: 1,302",
-        "Portfolio Review: 342",
-        "Military: 109"
-      ]
+      "sub": "281 adopted this year"
     },
     "active_colleges": {
       "value": "95",
@@ -108,11 +83,11 @@ window.CPL_DATA = {
       ],
       "live": true,
       "footnote": [
-        "1. Student Volume ≥ 500",
-        "2. Eligible Units ≥ 3,000",
-        "3. Avg Eligible Units/Student ≥ 5",
-        "4. Transcription Rate ≥ 25%",
-        "5. Avg Transcribed Units/Student ≥ 3"
+        "1. Student Volume >= 500",
+        "2. Eligible Units >= 3,000",
+        "3. Avg Eligible Units/Student >= 5",
+        "4. Transcription Rate >= 25%",
+        "5. Avg Transcribed Units/Student >= 3"
       ]
     },
     "estimated_savings": {
@@ -142,7 +117,7 @@ window.CPL_DATA = {
       "breakdowns": [
         {
           "label": "JST Credits",
-          "value": "22,756 / 30,000"
+          "value": "22,843 / 30,000"
         },
         {
           "label": "Basic Training Credit",
@@ -195,67 +170,7 @@ window.CPL_DATA = {
       ],
       "live": true
     },
-    "_live_updated": "2026-04-14T16:32:43.212Z",
-    "map_exhibits": {
-      "value": "3,036",
-      "label": "MAP Exhibits",
-      "sub": "62 originating colleges",
-      "breakdowns": [
-        {
-          "label": "CCC Collaborative",
-          "value": "116",
-          "note": "statewide exhibits"
-        },
-        {
-          "label": "Local",
-          "value": "2,920",
-          "note": "college-created exhibits"
-        }
-      ]
-    },
-    "ccc_collaborative": {
-      "value": "55",
-      "label": "CCC Collaborative Adoption",
-      "sub": "Colleges adopting statewide exhibits",
-      "breakdowns": [
-        {
-          "label": "Collaborative Exhibits",
-          "value": "116"
-        },
-        {
-          "label": "Collaborative Credit Recs",
-          "value": "955"
-        }
-      ]
-    },
-    "articulation_colleges": {
-      "value": "82",
-      "label": "Articulating Colleges",
-      "sub": "Colleges with MAP exhibits",
-      "breakdowns": [
-        {
-          "label": "Originating Colleges",
-          "value": "62",
-          "note": "created exhibits"
-        },
-        {
-          "label": "Adopting CCC Collaborative",
-          "value": "55",
-          "note": "statewide exhibits"
-        }
-      ]
-    },
-    "_exhibit_updated": "2026-04-14T17:42:21",
-    "_exhibit_source": "CustomReport_2026-04-14-10.42.48.json",
-    "_exhibit_datasets": [
-      "View_ArticulatedCollegeCourses_APIDataset",
-      "View_CreditDistributionByCollege_APIDataset",
-      "View_PointInTime_StudentAggregatedValues_APIDataset",
-      "View_ArticulatedMAPExhibits_APIDataset",
-      "View_CollegeCourses_APIDataset",
-      "View_ProgramsofStudy_APIDataset",
-      "View_StudentAggregatedValues_APIDataset"
-    ]
+    "_live_updated": "2026-04-14T19:55:31.304Z"
   },
   "activity_kpis": [
     {
@@ -2234,7 +2149,7 @@ window.CPL_DATA = {
         "name": "Expand Equitable Access & Boost Student Success",
         "target": "250,000 Californians by 2030",
         "progress": 17,
-        "current": "44,254 cumulative students"
+        "current": "44,347 cumulative students"
       },
       {
         "id": "Goal 2",

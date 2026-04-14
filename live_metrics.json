@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-14T16:32:43.212Z",
+  "scraped_at": "2026-04-14T19:55:31.304Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -16,102 +16,131 @@
     "leading": {
       "count": 13,
       "colleges": [
-        {"college": "Merced College", "students": 3335, "units": 19578, "avgUnits": 5.87, "transcriptionRate": 99.3, "avgTranscribed": 5.83, "criteriaMetCount": 5},
-        {"college": "Los Angeles Pierce College", "students": 1829, "units": 28089, "avgUnits": 15.36, "transcriptionRate": 99.1, "avgTranscribed": 15.22, "criteriaMetCount": 5},
-        {"college": "Moreno Valley College", "students": 1432, "units": 9532.5, "avgUnits": 6.66, "transcriptionRate": 90.1, "avgTranscribed": 6.0, "criteriaMetCount": 5},
-        {"college": "Norco College", "students": 723, "units": 5502.5, "avgUnits": 7.61, "transcriptionRate": 62.5, "avgTranscribed": 4.76, "criteriaMetCount": 5},
-        {"college": "Riverside City College", "students": 669, "units": 3462, "avgUnits": 5.17, "transcriptionRate": 92.7, "avgTranscribed": 4.8, "criteriaMetCount": 5},
-        {"college": "West Los Angeles College", "students": 651, "units": 7155.5, "avgUnits": 10.99, "transcriptionRate": 91.8, "avgTranscribed": 10.09, "criteriaMetCount": 5},
-        {"college": "San Diego City College", "students": 6414, "units": 13749, "avgUnits": 2.14, "transcriptionRate": 64.3, "avgTranscribed": 1.38, "criteriaMetCount": 3},
-        {"college": "San Diego Mesa College", "students": 5507, "units": 14293.5, "avgUnits": 2.6, "transcriptionRate": 64.7, "avgTranscribed": 1.68, "criteriaMetCount": 3},
-        {"college": "San Diego Miramar College", "students": 3133, "units": 10315.7, "avgUnits": 3.29, "transcriptionRate": 52.3, "avgTranscribed": 1.72, "criteriaMetCount": 3},
-        {"college": "Long Beach City College", "students": 778, "units": 5173, "avgUnits": 6.65, "transcriptionRate": 0, "avgTranscribed": 0, "criteriaMetCount": 3},
-        {"college": "Bakersfield College", "students": 548, "units": 7749.5, "avgUnits": 14.14, "transcriptionRate": 6.5, "avgTranscribed": 0.91, "criteriaMetCount": 3},
-        {"college": "Modesto Junior College", "students": 348, "units": 2115.5, "avgUnits": 6.08, "transcriptionRate": 55.4, "avgTranscribed": 3.37, "criteriaMetCount": 3},
-        {"college": "Palo Verde College", "students": 14, "units": 131.25, "avgUnits": 9.38, "transcriptionRate": 79.4, "avgTranscribed": 7.45, "criteriaMetCount": 3}
+        {"college": "Merced College","students": 3335,"units": 19578,"avgUnits": 5.870464767616192,"transcriptionRate": 99.3,"avgTranscribed": 5.828485757121439,"criteriaMetCount": 5},
+        {"college": "Los Angeles Pierce College","students": 1829,"units": 28089,"avgUnits": 15.357572443958448,"transcriptionRate": 99.1,"avgTranscribed": 15.220338983050848,"criteriaMetCount": 5},
+        {"college": "Moreno Valley College","students": 1432,"units": 9532.5,"avgUnits": 6.6567737430167595,"transcriptionRate": 90.1,"avgTranscribed": 5.995810055865922,"criteriaMetCount": 5},
+        {"college": "Norco College","students": 723,"units": 5502.5,"avgUnits": 7.610650069156293,"transcriptionRate": 62.5,"avgTranscribed": 4.755878284923928,"criteriaMetCount": 5},
+        {"college": "Riverside City College","students": 669,"units": 3462,"avgUnits": 5.174887892376682,"transcriptionRate": 92.7,"avgTranscribed": 4.799701046337818,"criteriaMetCount": 5},
+        {"college": "West Los Angeles College","students": 651,"units": 7155.5,"avgUnits": 10.991551459293396,"transcriptionRate": 91.8,"avgTranscribed": 10.09216589861751,"criteriaMetCount": 5},
+        {"college": "San Diego City College","students": 6413,"units": 13733,"avgUnits": 2.141431467331982,"transcriptionRate": 64.4,"avgTranscribed": 1.379073756432247,"criteriaMetCount": 3},
+        {"college": "San Diego Mesa College","students": 5508,"units": 14289.5,"avgUnits": 2.5943173565722586,"transcriptionRate": 64.7,"avgTranscribed": 1.6792846768336964,"criteriaMetCount": 3},
+        {"college": "San Diego Miramar College","students": 3202,"units": 10315.7,"avgUnits": 3.221642723297939,"transcriptionRate": 52.3,"avgTranscribed": 1.6854153653966273,"criteriaMetCount": 3},
+        {"college": "Long Beach City College","students": 778,"units": 5173,"avgUnits": 6.649100257069409,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 3},
+        {"college": "Bakersfield College","students": 549,"units": 7749.5,"avgUnits": 14.115664845173042,"transcriptionRate": 6.5,"avgTranscribed": 0.912568306010929,"criteriaMetCount": 3},
+        {"college": "Modesto Junior College","students": 353,"units": 2115.5,"avgUnits": 5.992917847025495,"transcriptionRate": 55.4,"avgTranscribed": 3.318696883852691,"criteriaMetCount": 3},
+        {"college": "Palo Verde College","students": 14,"units": 131.25,"avgUnits": 9.375,"transcriptionRate": 79.4,"avgTranscribed": 7.446428571428571,"criteriaMetCount": 3}
       ]
     },
-    "advancing": {"count": 82},
+    "advancing": {
+      "count": 82,
+      "colleges": [
+        {"college": "City College of San Francisco","students": 1581,"units": 4596,"avgUnits": 2.9070208728652753,"transcriptionRate": 0.8,"avgTranscribed": 0.024667931688804556,"criteriaMetCount": 2},
+        {"college": "De Anza College","students": 961,"units": 4801.5,"avgUnits": 4.996357960457856,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 2},
+        {"college": "El Camino College","students": 461,"units": 4140,"avgUnits": 8.980477223427332,"transcriptionRate": 0.2,"avgTranscribed": 0.019522776572668113,"criteriaMetCount": 2},
+        {"college": "Santiago Canyon College","students": 420,"units": 12580.5,"avgUnits": 29.95357142857143,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 2},
+        {"college": "San Bernardino Valley College","students": 327,"units": 2678,"avgUnits": 8.18960244648318,"transcriptionRate": 25.6,"avgTranscribed": 2.0978593272171255,"criteriaMetCount": 2},
+        {"college": "College of the Desert","students": 320,"units": 1939.5,"avgUnits": 6.0609375,"transcriptionRate": 41.4,"avgTranscribed": 2.5109375,"criteriaMetCount": 2},
+        {"college": "Chaffey College","students": 2340,"units": 453,"avgUnits": 0.1935897435897436,"transcriptionRate": 1,"avgTranscribed": 0.0019230769230769232,"criteriaMetCount": 1},
+        {"college": "Coastline Community College","students": 896,"units": 1425,"avgUnits": 1.5904017857142858,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Southwestern College","students": 765,"units": 2755,"avgUnits": 3.6013071895424837,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Mt. San Antonio College","students": 734,"units": 2924,"avgUnits": 3.983651226158038,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Cypress College ","students": 622,"units": 2246.5,"avgUnits": 3.6117363344051445,"transcriptionRate": 3.9,"avgTranscribed": 0.13987138263665594,"criteriaMetCount": 1},
+        {"college": "Fullerton College","students": 559,"units": 201,"avgUnits": 0.3595706618962433,"transcriptionRate": 2,"avgTranscribed": 0.007155635062611807,"criteriaMetCount": 1},
+        {"college": "Mt. San Jacinto College","students": 538,"units": 1587,"avgUnits": 2.949814126394052,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Los Angeles Valley College","students": 355,"units": 1750,"avgUnits": 4.929577464788732,"transcriptionRate": 53.7,"avgTranscribed": 2.647887323943662,"criteriaMetCount": 1},
+        {"college": "Cabrillo College","students": 199,"units": 1166.5,"avgUnits": 5.86180904522613,"transcriptionRate": 11.9,"avgTranscribed": 0.6984924623115578,"criteriaMetCount": 1},
+        {"college": "College of the Sequoias","students": 174,"units": 870,"avgUnits": 5,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Shasta College","students": 172,"units": 1041,"avgUnits": 6.0523255813953485,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Clovis Community College","students": 161,"units": 954,"avgUnits": 5.925465838509317,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Los Angeles Mission College","students": 154,"units": 924,"avgUnits": 6,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "San Jose City College ","students": 124,"units": 726,"avgUnits": 5.854838709677419,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Ventura College","students": 123,"units": 617,"avgUnits": 5.016260162601626,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Cerro Coso Community College","students": 119,"units": 595,"avgUnits": 5,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Mission College","students": 116,"units": 696,"avgUnits": 6,"transcriptionRate": 0.9,"avgTranscribed": 0.05172413793103448,"criteriaMetCount": 1},
+        {"college": "Evergreen Valley College","students": 112,"units": 657.5,"avgUnits": 5.870535714285714,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Cuesta College","students": 106,"units": 63,"avgUnits": 0.5943396226415094,"transcriptionRate": 92.9,"avgTranscribed": 0.5518867924528302,"criteriaMetCount": 1},
+        {"college": "Moorpark College","students": 102,"units": 8,"avgUnits": 0.0784313725490196,"transcriptionRate": 50,"avgTranscribed": 0.0392156862745098,"criteriaMetCount": 1},
+        {"college": "Golden West College","students": 99,"units": 588,"avgUnits": 5.9393939393939394,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Solano Community College","students": 76,"units": 456,"avgUnits": 6,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Saddleback College","students": 60,"units": 342,"avgUnits": 5.7,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "West Valley College","students": 51,"units": 306,"avgUnits": 6,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Laney College","students": 49,"units": 288,"avgUnits": 5.877551020408164,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Crafton Hills College","students": 23,"units": 140,"avgUnits": 6.086956521739131,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Las Positas College","students": 23,"units": 122,"avgUnits": 5.304347826086956,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Compton College","students": 21,"units": 128,"avgUnits": 6.095238095238095,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "Berkeley City College","students": 17,"units": 96,"avgUnits": 5.647058823529412,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "College of Alameda","students": 14,"units": 78,"avgUnits": 5.571428571428571,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 1},
+        {"college": "San Joaquin Delta College","students": 478,"units": 1428,"avgUnits": 2.98744769874477,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Santa Rosa Junior College","students": 416,"units": 1660,"avgUnits": 3.9903846153846154,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Santa Ana College","students": 389,"units": 1393.1,"avgUnits": 3.5812339331619536,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Sierra College","students": 340,"units": 1690,"avgUnits": 4.970588235294118,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Victor Valley College","students": 314,"units": 936,"avgUnits": 2.9808917197452227,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Antelope Valley College","students": 255,"units": 1035,"avgUnits": 4.0588235294117645,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Fresno City College","students": 252,"units": 642,"avgUnits": 2.5476190476190474,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "East Los Angeles College","students": 225,"units": 666,"avgUnits": 2.96,"transcriptionRate": 11.3,"avgTranscribed": 0.3333333333333333,"criteriaMetCount": 0},
+        {"college": "Glendale Community College","students": 211,"units": 630,"avgUnits": 2.985781990521327,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Los Medanos College","students": 198,"units": 42,"avgUnits": 0.21212121212121213,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Citrus College","students": 186,"units": 744,"avgUnits": 4,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "College of San Mateo","students": 182,"units": 559,"avgUnits": 3.0714285714285716,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Diablo Valley College","students": 172,"units": 516,"avgUnits": 3,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Cerritos College","students": 165,"units": 513,"avgUnits": 3.109090909090909,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Los Angeles City College","students": 147,"units": 0,"avgUnits": 0,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Lassen College","students": 140,"units": 420,"avgUnits": 3,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Los Angeles Harbor College","students": 137,"units": 402,"avgUnits": 2.934306569343066,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Monterey Peninsula College","students": 136,"units": 4,"avgUnits": 0.029411764705882353,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Oxnard College","students": 134,"units": 528,"avgUnits": 3.9402985074626864,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Allan Hancock College","students": 125,"units": 500,"avgUnits": 4,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Reedley College","students": 112,"units": 296.5,"avgUnits": 2.6473214285714284,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Barstow Community College","students": 106,"units": 318,"avgUnits": 3,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Skyline College","students": 105,"units": 315,"avgUnits": 3,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Pasadena City College","students": 104,"units": 202,"avgUnits": 1.9423076923076923,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Irvine Valley College","students": 99,"units": 288,"avgUnits": 2.909090909090909,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Cuyamaca College","students": 94,"units": 0,"avgUnits": 0,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Santa Barbara City College","students": 89,"units": 0,"avgUnits": 0,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Foothill College","students": 70,"units": 280,"avgUnits": 4,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Los Angeles Trade Technical College","students": 62,"units": 177,"avgUnits": 2.8548387096774195,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Gavilan College","students": 46,"units": 0,"avgUnits": 0,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "American River College","students": 44,"units": 132,"avgUnits": 3,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Napa Valley College","students": 44,"units": 18,"avgUnits": 0.4090909090909091,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Lemoore College","students": 43,"units": 96,"avgUnits": 2.2325581395348837,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Hartnell College","students": 39,"units": 114,"avgUnits": 2.923076923076923,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Madera College","students": 39,"units": 81,"avgUnits": 2.076923076923077,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "College of the Redwoods","students": 32,"units": 96,"avgUnits": 3,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Cañada College","students": 30,"units": 87,"avgUnits": 2.9,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Porterville College","students": 23,"units": 110,"avgUnits": 4.782608695652174,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "College of the Canyons","students": 20,"units": 57,"avgUnits": 2.85,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Columbia College","students": 17,"units": 0,"avgUnits": 0,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Merritt College","students": 15,"units": 66,"avgUnits": 4.4,"transcriptionRate": 9.1,"avgTranscribed": 0.4,"criteriaMetCount": 0},
+        {"college": "Copper Mountain College","students": 14,"units": 39,"avgUnits": 2.7857142857142856,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Taft College","students": 10,"units": 0,"avgUnits": 0,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Butte College","students": 10,"units": 0,"avgUnits": 0,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Mendocino College","students": 8,"units": 21,"avgUnits": 2.625,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0},
+        {"college": "Woodland Community College","students": 8,"units": 17,"avgUnits": 2.125,"transcriptionRate": 0,"avgTranscribed": 0,"criteriaMetCount": 0}
+      ]
+    },
     "inactive": {
       "count": 20,
       "colleges": ["Feather River College","Chabot College","MiraCosta College","Imperial Valley College","Contra Costa College","Rio Hondo College","Grossmont College","Sacramento City College","Orange Coast College","Palomar College","Yuba College","Cosumnes River College","Coalinga College","Lake Tahoe Community College","Los Angeles Southwest College","College of the Siskiyous","Ohlone College","Folsom Lake College","College of Marin","Santa Monica College"]
     }
   },
   "metrics": [
-    {
-      "title": "STUDENTS SERVED",
-      "value": "44,254",
-      "breakdowns": [
-        {"label": "Military", "value": "22,756"},
-        {"label": "Workforce/Other", "value": "21,569"},
-        {"label": "Apprentice", "value": "704"}
-      ]
-    },
-    {
-      "title": "ELIGIBLE UNITS",
-      "value": "199k",
-      "avg": "4.5 avg",
-      "breakdowns": [
-        {"label": "Military", "value": "102k"},
-        {"label": "Workforce/Other", "value": "102k"},
-        {"label": "Apprentice", "value": "6k"}
-      ]
-    },
-    {
-      "title": "TRANSCRIBED UNITS",
-      "value": "97k",
-      "avg": "2.2 avg",
-      "breakdowns": [
-        {"label": "Military", "value": "13k"},
-        {"label": "Workforce/Other", "value": "85k"},
-        {"label": "Apprentice", "value": "6k"}
-      ]
-    },
-    {
-      "title": "SAVINGS",
-      "value": "$281M",
-      "breakdowns": [
-        {"label": "Military", "value": "$144M"},
-        {"label": "Workforce/Other", "value": "$144M"},
-        {"label": "Apprentice", "value": "$9M"}
-      ]
-    },
-    {
-      "title": "20-YEAR IMPACT",
-      "value": "$1.13B",
-      "breakdowns": [
-        {"label": "Military", "value": "$581M"},
-        {"label": "Workforce/Other", "value": "$582M"},
-        {"label": "Apprentice", "value": "$36M"}
-      ]
-    },
-    {
-      "title": "ACTIVE COLLEGES",
-      "value": "95",
-      "breakdowns": [
-        {"label": "Leading Colleges", "value": "13", "note": "meeting at least 3 of 5 criteria"},
-        {"label": "Advancing Colleges", "value": "82", "note": "active, building capacity"},
-        {"label": "Inactive Colleges", "value": "20", "note": "<10 students and 0 units"}
-      ],
-      "footnote": [
-        "1. Student Volume ≥ 500",
-        "2. Eligible Units ≥ 3,000",
-        "3. Avg Eligible Units/Student ≥ 5",
-        "4. Transcription Rate ≥ 25%",
-        "5. Avg Transcribed Units/Student ≥ 3"
-      ]
-    }
+    {"title": "STUDENTS SERVED","value": "44,347","breakdowns": [{"label": "Military","value": "22,843"},{"label": "Workforce/Other","value": "21,575"},{"label": "Apprentice","value": "704"}]},
+    {"title": "ELIGIBLE UNITS","value": "199k","avg": "4.5 avg","breakdowns": [{"label": "Military","value": "102k"},{"label": "Workforce/Other","value": "102k"},{"label": "Apprentice","value": "6k"}]},
+    {"title": "TRANSCRIBED UNITS","value": "97k","avg": "2.2 avg","breakdowns": [{"label": "Military","value": "13k"},{"label": "Workforce/Other","value": "85k"},{"label": "Apprentice","value": "6k"}]},
+    {"title": "SAVINGS","value": "$281M","breakdowns": [{"label": "Military","value": "$144M"},{"label": "Workforce/Other","value": "$144M"},{"label": "Apprentice","value": "$9M"}]},
+    {"title": "20-YEAR IMPACT","value": "$1.13B","breakdowns": [{"label": "Military","value": "$581M"},{"label": "Workforce/Other","value": "$582M"},{"label": "Apprentice","value": "$36M"}]},
+    {"title": "ACTIVE COLLEGES","value": "95","breakdowns": [{"label": "Leading Colleges","value": "13","note": "meeting at least 3 of 5 criteria"},{"label": "Advancing Colleges","value": "82","note": "active, building capacity"},{"label": "Inactive Colleges","value": "20","note": "<10 students and 0 units"}],"footnote": ["1. Student Volume >= 500","2. Eligible Units >= 3,000","3. Avg Eligible Units/Student >= 5","4. Transcription Rate >= 25%","5. Avg Transcribed Units/Student >= 3"]}
   ],
   "raw": {
-    "Students": 44254,
-    "Units": 198904.55,
+    "Students": 44347,
+    "Units": 198884.55,
     "TranscribedUnits": 97209.95,
-    "Savings": 281220634.75,
-    "YearImpact": 1132689225.6,
-    "MilitaryStudents": 22756,
-    "NonMilitaryStudents": 21569,
+    "Savings": 281186034.75,
+    "YearImpact": 1132567885.6,
+    "MilitaryStudents": 22843,
+    "NonMilitaryStudents": 21575,
     "AprenticeStudents": 704,
-    "AverageUnits": 4.49,
-    "TranscribedAverage": 2.2
+    "AverageUnits": 4.484735156831352,
+    "TranscribedAverage": 2.192029900556971
   }
 }
