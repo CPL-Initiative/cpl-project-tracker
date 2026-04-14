@@ -4206,18 +4206,21 @@ def main():
 
         # ── Inject statewide interactive scripts (college_lookup, statewide_data, statewide_interactive) ──
         sw_scripts = [
+            '<script src="docx.min.js"></script>',
             '<script src="college_lookup.js"></script>',
             '<script src="statewide_data.js"></script>',
             '<script src="statewide_interactive.js"></script>',
         ]
+        # Remove any existing statewide script tags first to guarantee correct order
         for sw_tag in sw_scripts:
-            if sw_tag not in html:
-                # Insert before </body>
-                body_end = html.rfind('</body>')
-                if body_end == -1:
-                    body_end = len(html)
-                html = html[:body_end] + '    ' + sw_tag + '\n' + html[body_end:]
-        print("  Ensured statewide interactive script tags present")
+            html = html.replace('    ' + sw_tag + '\n', '')
+        # Insert all in order before </body>
+        body_end = html.rfind('</body>')
+        if body_end == -1:
+            body_end = len(html)
+        block = ''.join('    ' + t + '\n' for t in sw_scripts)
+        html = html[:body_end] + block + html[body_end:]
+        print("  Ensured statewide interactive script tags present (correct order)")
 
         START_MARKER = "<!-- DATA-START"
         END_MARKER   = "<!-- DATA-END -->"
