@@ -2461,6 +2461,484 @@ def merge_exhibit_metrics(kpis, exhibit_data):
     return kpis
 
 
+# ── MAP Exhibit Analysis Tables ─────────────────────────────────────
+
+def _load_top_code_lookup():
+    """Load MAP TOP Code → CCC Discipline mapping from TOP_Code_Lookup.xlsx.
+    Searches the same locations as the exhibit JSON."""
+    for folder in _EXHIBIT_LOCATIONS:
+        path = os.path.join(folder, "TOP_Code_Lookup.xlsx")
+        if os.path.exists(path):
+            break
+    else:
+        return {}
+    try:
+        wb = load_workbook(path, data_only=True)
+        ws = wb["TOP Code Lookup"]
+        lookup = {}
+        for row in ws.iter_rows(min_row=2, max_col=3, values_only=True):
+            code = str(row[0]).strip() if row[0] is not None else ""
+            disc = str(row[2]).strip() if row[2] else "Unknown"
+            if code:
+                lookup[code] = disc
+        wb.close()
+        return lookup
+    except Exception as e:
+        print(f"  WARNING: Could not load TOP_Code_Lookup.xlsx: {e}")
+        return {}
+
+
+def build_exhibit_analysis_tables(exhibit_data):
+    """
+    Compute analysis tables from the combined CustomReport JSON.
+    Uses View_ArticulatedMAPExhibits as the primary data source.
+    Returns a dict of analysis tables ready for dashboard rendering.
+    """
+    if not exhibit_data or not EXHIBIT_FILE:
+        return None
+
+    try:
+        with open(EXHIBIT_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return None
+
+    # Find the ArticulatedMAPExhibits dataset (preferred)
+    ds = None
+    for report in data:
+        if report.get("viewName") == "View_ArticulatedMAPExhibits_APIDataset":
+            ds = report
+            break
+    if not ds:
+        return None
+
+    rows = ds["columnValue"]
+    cm = {c: i for i, c in enumerate(ds.get("columnName", []))}
+    top_lookup = _load_top_code_lookup()
+
+    i_college = cm.get("College", 0)
+    i_exhibit = cm.get("ExhibitID", 1)
+    i_title = cm.get("Exhibit Title", 2)
+    i_artic = cm.get("Articulation College", 4)
+    i_course = cm.get("Course", 5)
+    i_collab = cm.get("Collaborative Type", 7)
+    i_top = cm.get("TOP Code", 8)
+    i_cid = cm.get("CID Number", 9)
+    i_mol = cm.get("CPL Mode of Learning", 11)
+    i_cpl = cm.get("CPL Type Description", 13)
+
+    from collections import defaultdict
+
+    # ── By College ──
+    by_college = defaultdict(lambda: {"recs": 0, "exhibits": set(), "disciplines": set(),
+                                      "ccc": 0, "industry": 0})
+    # ── By Discipline ──
+    by_disc = defaultdict(lambda: {"recs": 0, "exhibits": set(), "courses": set(),
+                                   "colleges": set(), "ccc": 0})
+    # ── By CPL Type ──
+    by_cpl = defaultdict(lambda: {"recs": 0, "exhibits": set(), "colleges": set()})
+    # ── By Mode of Learning ──
+    by_mol = defaultdict(lambda: {"recs": 0, "exhibits": set(), "colleges": set()})
+    # ── Top Exhibits ──
+    by_exhibit_title = defaultdict(lambda: {"recs": 0, "courses": set(), "colleges": set(),
+                                            "cpl_type": "", "disc": ""})
+    # ── Collaborative Analysis ──
+    by_collab = defaultdict(lambda: {"recs": 0, "exhibits": set(), "colleges": set(),
+                                     "disciplines": set()})
+
+    total_recs = len(rows)
+
+    for row in rows:
+        college = (row[i_college] or "").strip()
+        eid = (row[i_exhibit] or "").strip()
+        title = (row[i_title] or "").strip()
+        artic = (row[i_artic] or "").strip()
+        course = (row[i_course] or "").strip()
+        collab = (row[i_collab] or "").strip()
+        top_code = (row[i_top] or "").strip()
+        mol = (row[i_mol] or "").strip() or "Unknown"
+        cpl = (row[i_cpl] or "").strip() or "Other"
+
+        disc = top_lookup.get(top_code, "Not Mapped")
+        is_ccc = "CCC" in collab
+        is_industry = cpl == "Industry Certification"
+
+        # Collaborative category
+        if is_ccc:
+            collab_cat = "CCC Collaborative"
+        elif collab in ("", "Other"):
+            collab_cat = "Local"
+        else:
+            collab_cat = "Industry/Other"
+
+        # By College
+        if artic:
+            c = by_college[artic]
+            c["recs"] += 1
+            c["exhibits"].add(eid)
+            c["disciplines"].add(disc)
+            if is_ccc: c["ccc"] += 1
+            if is_industry: c["industry"] += 1
+
+        # By Discipline
+        d = by_disc[disc]
+        d["recs"] += 1
+        d["exhibits"].add(eid)
+        d["courses"].add(course)
+        d["colleges"].add(artic)
+        if is_ccc: d["ccc"] += 1
+
+        # By CPL Type
+        t = by_cpl[cpl]
+        t["recs"] += 1
+        t["exhibits"].add(eid)
+        t["colleges"].add(artic)
+
+        # By Mode of Learning
+        m = by_mol[mol]
+        m["recs"] += 1
+        m["exhibits"].add(eid)
+        m["colleges"].add(artic)
+
+        # Top Exhibits
+        e = by_exhibit_title[title]
+        e["recs"] += 1
+        e["courses"].add(course)
+        e["colleges"].add(artic)
+        if not e["cpl_type"]: e["cpl_type"] = cpl
+        if not e["disc"] or e["disc"] == "Not Mapped": e["disc"] = disc
+
+        # Collaborative
+        cc = by_collab[collab_cat]
+        cc["recs"] += 1
+        cc["exhibits"].add(eid)
+        cc["colleges"].add(artic)
+        cc["disciplines"].add(disc)
+
+    # ── Serialize to JSON-friendly format ──
+    def pct(n): return round(n / total_recs * 100, 1) if total_recs else 0
+
+    tables = {
+        "by_college": sorted([
+            {"college": k, "credit_recs": v["recs"], "exhibits": len(v["exhibits"]),
+             "disciplines": len(v["disciplines"]), "ccc_collaborative": v["ccc"],
+             "industry_certs": v["industry"], "pct": pct(v["recs"])}
+            for k, v in by_college.items()
+        ], key=lambda x: -x["credit_recs"]),
+
+        "by_discipline": sorted([
+            {"discipline": k, "credit_recs": v["recs"], "exhibits": len(v["exhibits"]),
+             "courses": len(v["courses"]), "colleges": len(v["colleges"]),
+             "ccc_collaborative": v["ccc"], "pct": pct(v["recs"])}
+            for k, v in by_disc.items()
+        ], key=lambda x: -x["credit_recs"]),
+
+        "by_cpl_type": sorted([
+            {"cpl_type": k, "credit_recs": v["recs"], "exhibits": len(v["exhibits"]),
+             "colleges": len(v["colleges"]), "pct": pct(v["recs"])}
+            for k, v in by_cpl.items()
+        ], key=lambda x: -x["credit_recs"]),
+
+        "by_mode_of_learning": sorted([
+            {"mode": k, "credit_recs": v["recs"], "exhibits": len(v["exhibits"]),
+             "colleges": len(v["colleges"]), "pct": pct(v["recs"])}
+            for k, v in by_mol.items()
+        ], key=lambda x: -x["credit_recs"]),
+
+        "top_exhibits": sorted([
+            {"title": k, "credit_recs": v["recs"], "courses": len(v["courses"]),
+             "colleges": len(v["colleges"]), "cpl_type": v["cpl_type"], "discipline": v["disc"]}
+            for k, v in by_exhibit_title.items()
+        ], key=lambda x: -x["credit_recs"])[:50],
+
+        "collaborative_analysis": sorted([
+            {"category": k, "credit_recs": v["recs"], "exhibits": len(v["exhibits"]),
+             "colleges": len(v["colleges"]), "disciplines": len(v["disciplines"]),
+             "pct": pct(v["recs"])}
+            for k, v in by_collab.items()
+        ], key=lambda x: -x["credit_recs"]),
+
+        "total_credit_recs": total_recs,
+        "generated_at": exhibit_data.get("generated_at", ""),
+    }
+
+    print(f"  Built exhibit analysis tables: {len(tables['by_college'])} colleges, "
+          f"{len(tables['by_discipline'])} disciplines, {len(tables['by_cpl_type'])} CPL types, "
+          f"{len(tables['by_mode_of_learning'])} modes, {len(tables['top_exhibits'])} top exhibits")
+
+    return tables
+
+
+def render_exhibit_analysis_html(tables):
+    """
+    Render exhibit analysis tables as scrollable HTML cards.
+    Returns the complete HTML section with toggle button and analysis cards.
+    """
+    if not tables:
+        return ""
+
+    def fmt(n):
+        return f"{n:,}" if isinstance(n, int) else str(n)
+
+    def pct_bar(pct_val):
+        w = min(pct_val, 100)
+        return (f'<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);'
+                f'border-radius:4px;vertical-align:middle;margin-left:6px;">'
+                f'<div style="width:{w}%;height:100%;background:#C9A84C;border-radius:4px;"></div></div>')
+
+    # ── Card builder helper ──
+    def table_card(card_id, title, subtitle, headers, rows_data, row_renderer):
+        header_cells = "".join(f'<th>{h}</th>' for h in headers)
+        body_rows = "".join(row_renderer(r) for r in rows_data)
+        return (
+            f'<div class="exhibit-card" id="{card_id}">\n'
+            f'  <div class="exhibit-card-header">\n'
+            f'    <div class="exhibit-card-title">{title}</div>\n'
+            f'    <div class="exhibit-card-subtitle">{subtitle}</div>\n'
+            f'  </div>\n'
+            f'  <div class="exhibit-card-body">\n'
+            f'    <table class="exhibit-table">\n'
+            f'      <thead><tr>{header_cells}</tr></thead>\n'
+            f'      <tbody>{body_rows}</tbody>\n'
+            f'    </table>\n'
+            f'  </div>\n'
+            f'</div>\n'
+        )
+
+    # ── 1. By College ──
+    college_card = table_card(
+        "exhibit-by-college",
+        "Credit Recommendations by College",
+        f"{len(tables['by_college'])} articulating colleges | {fmt(tables['total_credit_recs'])} total credit recs",
+        ["#", "College", "Credit Recs", "Exhibits", "Disciplines", "CCC Collab", "Industry Certs", "%"],
+        tables["by_college"],
+        lambda r: (f'<tr><td>{tables["by_college"].index(r)+1}</td>'
+                   f'<td class="exhibit-cell-name">{r["college"]}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["credit_recs"])}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["exhibits"])}</td>'
+                   f'<td class="exhibit-cell-num">{r["disciplines"]}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["ccc_collaborative"])}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["industry_certs"])}</td>'
+                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n')
+    )
+
+    # ── 2. By Discipline ──
+    disc_card = table_card(
+        "exhibit-by-discipline",
+        "Credit Recommendations by CCC Discipline",
+        f"{len(tables['by_discipline'])} discipline areas",
+        ["Discipline", "Credit Recs", "Exhibits", "Courses", "Colleges", "CCC Collab", "%"],
+        tables["by_discipline"],
+        lambda r: (f'<tr><td class="exhibit-cell-name">{r["discipline"]}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["credit_recs"])}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["exhibits"])}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["courses"])}</td>'
+                   f'<td class="exhibit-cell-num">{r["colleges"]}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["ccc_collaborative"])}</td>'
+                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n')
+    )
+
+    # ── 3. By CPL Type ──
+    cpl_card = table_card(
+        "exhibit-by-cpl-type",
+        "Credit Recommendations by CPL Type",
+        f"{len(tables['by_cpl_type'])} CPL types",
+        ["CPL Type", "Credit Recs", "Exhibits", "Colleges", "%"],
+        tables["by_cpl_type"],
+        lambda r: (f'<tr><td class="exhibit-cell-name">{r["cpl_type"]}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["credit_recs"])}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["exhibits"])}</td>'
+                   f'<td class="exhibit-cell-num">{r["colleges"]}</td>'
+                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n')
+    )
+
+    # ── 4. By Mode of Learning ──
+    mol_card = table_card(
+        "exhibit-by-mol",
+        "Credit Recommendations by Mode of Learning",
+        f"{len(tables['by_mode_of_learning'])} modes",
+        ["Mode of Learning", "Credit Recs", "Exhibits", "Colleges", "%"],
+        tables["by_mode_of_learning"],
+        lambda r: (f'<tr><td class="exhibit-cell-name">{r["mode"]}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["credit_recs"])}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["exhibits"])}</td>'
+                   f'<td class="exhibit-cell-num">{r["colleges"]}</td>'
+                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n')
+    )
+
+    # ── 5. Collaborative Analysis ──
+    collab_card = table_card(
+        "exhibit-collaborative",
+        "CCC Collaborative vs. Local Exhibits",
+        "Statewide faculty workgroup articulations vs. individual college articulations",
+        ["Category", "Credit Recs", "Exhibits", "Colleges", "Disciplines", "%"],
+        tables["collaborative_analysis"],
+        lambda r: (f'<tr><td class="exhibit-cell-name">{r["category"]}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["credit_recs"])}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["exhibits"])}</td>'
+                   f'<td class="exhibit-cell-num">{r["colleges"]}</td>'
+                   f'<td class="exhibit-cell-num">{r["disciplines"]}</td>'
+                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n')
+    )
+
+    # ── 6. Top Exhibits ──
+    top_card = table_card(
+        "exhibit-top-50",
+        "Top 50 Most-Articulated Exhibits",
+        "Ranked by total credit recommendations across all colleges",
+        ["#", "Exhibit Title", "Credit Recs", "Courses", "Colleges", "CPL Type", "Discipline"],
+        tables["top_exhibits"],
+        lambda r: (f'<tr><td>{tables["top_exhibits"].index(r)+1}</td>'
+                   f'<td class="exhibit-cell-name">{r["title"]}</td>'
+                   f'<td class="exhibit-cell-num">{fmt(r["credit_recs"])}</td>'
+                   f'<td class="exhibit-cell-num">{r["courses"]}</td>'
+                   f'<td class="exhibit-cell-num">{r["colleges"]}</td>'
+                   f'<td>{r["cpl_type"]}</td>'
+                   f'<td>{r["discipline"]}</td></tr>\n')
+    )
+
+    # ── Assemble section ──
+    gen_at = tables.get("generated_at", "")
+    section = (
+        f'<!-- ═══ MAP Exhibit Analysis Section ═══ -->\n'
+        f'<div class="exhibit-analysis-section" id="exhibitAnalysisSection">\n'
+        f'  <div class="exhibit-section-header">\n'
+        f'    <h2 style="margin:0;font-size:1.3rem;">MAP Exhibit Analysis</h2>\n'
+        f'    <div style="font-size:0.75rem;opacity:0.7;margin-top:2px;">'
+        f'Source: MAP Custom Reporting Module | Generated: {gen_at}</div>\n'
+        f'  </div>\n'
+        f'  <div class="exhibit-cards-grid">\n'
+        f'    {collab_card}\n'
+        f'    {cpl_card}\n'
+        f'    {mol_card}\n'
+        f'    {disc_card}\n'
+        f'    {college_card}\n'
+        f'    {top_card}\n'
+        f'  </div>\n'
+        f'</div>\n'
+    )
+
+    return section
+
+
+# ── CSS for exhibit analysis cards ──
+EXHIBIT_ANALYSIS_CSS = """
+/* ═══ MAP Exhibit Analysis Cards ═══ */
+.exhibit-analysis-section {
+    display: none;
+    margin: 1.5rem auto;
+    max-width: 1400px;
+    padding: 0 1rem;
+}
+.exhibit-analysis-section.visible { display: block; }
+.exhibit-section-header {
+    text-align: center;
+    color: #C9A84C;
+    margin-bottom: 1.2rem;
+}
+.exhibit-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 1rem;
+}
+.exhibit-card {
+    background: rgba(10,34,64,0.85);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.exhibit-card-header {
+    padding: 0.8rem 1rem 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.exhibit-card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #C9A84C;
+}
+.exhibit-card-subtitle {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 2px;
+}
+.exhibit-card-body {
+    max-height: 420px;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201,168,76,0.3) transparent;
+}
+.exhibit-card-body::-webkit-scrollbar { width: 6px; height: 6px; }
+.exhibit-card-body::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 3px; }
+.exhibit-card-body::-webkit-scrollbar-track { background: transparent; }
+.exhibit-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.85);
+}
+.exhibit-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.exhibit-table th {
+    background: rgba(10,34,64,0.98);
+    color: #C9A84C;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.45rem 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    white-space: nowrap;
+}
+.exhibit-table td {
+    padding: 0.35rem 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+}
+.exhibit-table tbody tr:hover {
+    background: rgba(201,168,76,0.06);
+}
+.exhibit-cell-name {
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.exhibit-cell-num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+.exhibit-cell-pct {
+    text-align: right;
+    white-space: nowrap;
+    color: rgba(255,255,255,0.6);
+}
+/* Toggle button */
+.exhibit-toggle-btn {
+    display: inline-block;
+    margin: 1rem auto;
+    padding: 0.5rem 1.5rem;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 6px;
+    color: #C9A84C;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+.exhibit-toggle-btn:hover {
+    background: rgba(201,168,76,0.25);
+    border-color: #C9A84C;
+}
+"""
+
+
 def read_workplan_goals(wb):
     """
     Read the 'Annual Workplan Goals' sheet.
@@ -3563,6 +4041,32 @@ def main():
                 )
                 html = html[:kpi_section_start] + new_kpi_section + html[kpi_section_end:]
                 print("  Rendered static KPI cards with breakdowns")
+
+            # ── Inject Exhibit Analysis section (toggle button + scrollable cards) ──
+            exhibit_tables = build_exhibit_analysis_tables(exhibit_data) if exhibit_data else None
+            if exhibit_tables:
+                exhibit_html = render_exhibit_analysis_html(exhibit_tables)
+                # Add toggle button after KPI section, before Filter Bar
+                toggle_btn = (
+                    '\n    <div style="text-align:center;">'
+                    '<button class="exhibit-toggle-btn" onclick="'
+                    "var s=document.getElementById('exhibitAnalysisSection');"
+                    "s.classList.toggle('visible');"
+                    "this.textContent=s.classList.contains('visible')?'Hide Exhibit Analysis':'Show Exhibit Analysis';"
+                    '">Show Exhibit Analysis</button></div>\n\n    '
+                )
+                # Insert toggle + analysis section before the Filter Bar
+                filter_marker = '<!-- Filter Bar -->'
+                filter_pos = html.find(filter_marker)
+                if filter_pos != -1:
+                    html = html[:filter_pos] + toggle_btn + exhibit_html + '\n    ' + html[filter_pos:]
+                    print(f"  Injected exhibit analysis section ({len(exhibit_tables['by_college'])} college cards, "
+                          f"{len(exhibit_tables['top_exhibits'])} top exhibits)")
+
+                # Inject CSS before closing </style> tag
+                style_end = html.find('</style>')
+                if style_end != -1:
+                    html = html[:style_end] + '\n' + EXHIBIT_ANALYSIS_CSS + '\n' + html[style_end:]
 
             # ── Replace the Activity KPI section with fully rendered static HTML ──
             act_section_start = html.find('<div class="activity-kpi-section" id="activityKpiSection">')
