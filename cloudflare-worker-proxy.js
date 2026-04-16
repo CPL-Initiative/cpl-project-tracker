@@ -63,6 +63,68 @@ function fmtDollars(n) {
   return '$' + Math.round(n);
 }
 
+// ── Trigger handler ─────────────────────────────────────────────
+// Calls the GitHub Actions workflow_dispatch API to manually trigger
+// the daily-dashboard.yml workflow.  Requires a GITHUB_TOKEN env var
+// (fine-grained PAT with "Actions: write" on the cpl-project-tracker repo).
+
+async function handleTrigger(url, env, origin) {
+  // Verify shared secret
+  const secret = url.searchParams.get('secret') || '';
+  const expectedSecret = env.SCRAPE_SECRET;
+  if (expectedSecret && secret !== expectedSecret) {
+    return new Response(JSON.stringify({ error: 'Invalid or missing secret' }), {
+      status: 403,
+      headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
+    });
+  }
+
+  const githubToken = env.GITHUB_TOKEN;
+  if (!githubToken) {
+    return new Response(JSON.stringify({ error: 'GITHUB_TOKEN not configured on proxy' }), {
+      status: 500,
+      headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
+    });
+  }
+
+  try {
+    const resp = await fetch(
+      'https://api.github.com/repos/cpl-initiative/cpl-project-tracker/actions/workflows/daily-dashboard.yml/dispatches',
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${githubToken}`,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json',
+          'User-Agent': 'CPL-Dashboard-Trigger/1.0',
+        },
+        body: JSON.stringify({ ref: 'main' }),
+      }
+    );
+
+    if (resp.status === 204) {
+      return new Response(JSON.stringify({ triggered: true, message: 'Workflow dispatched successfully' }), {
+        status: 200,
+        headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
+      });
+    }
+
+    const text = await resp.text();
+    return new Response(JSON.stringify({
+      error: `GitHub API returned ${resp.status}`,
+      detail: text,
+    }), {
+      status: 502,
+      headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
+    });
+  } catch (err) {
+    return new Response(JSON.stringify({ error: `Trigger failed: ${err.message}` }), {
+      status: 502,
+      headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
+    });
+  }
+}
+
 // ── Scrape handler ───────────────────────────────────────────────
 
 async function handleScrape(url, env) {
@@ -296,6 +358,11 @@ export default {
     // ── Scrape endpoint ──
     if (url.pathname === '/scrape' && request.method === 'GET') {
       return handleScrape(url, env);
+    }
+
+    // ── Trigger endpoint ──
+    if (url.pathname === '/trigger' && request.method === 'GET') {
+      return handleTrigger(url, env, origin);
     }
 
     // ── CORS preflight ──

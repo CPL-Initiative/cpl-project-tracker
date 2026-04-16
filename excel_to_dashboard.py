@@ -5108,6 +5108,51 @@ def main():
                 html
             )
 
+            # ── Preserve or inject the Refresh Data button ──
+            # If markers already exist, leave the section untouched.
+            # If they're missing (e.g. starting from a bare template), inject them.
+            REFRESH_START = '<!-- REFRESH-BTN-START -->'
+            REFRESH_END   = '<!-- REFRESH-BTN-END -->'
+            if REFRESH_START not in html:
+                REFRESH_BTN_HTML = '''
+        <!-- REFRESH-BTN-START -->
+        <div style="margin-top:0.65rem;display:flex;flex-direction:column;align-items:center;gap:0.35rem;">
+          <div id="gh-run-status" style="font-size:0.72rem;color:rgba(255,255,255,0.5);min-height:1em;">Checking workflow status\u2026</div>
+          <button id="refresh-data-btn"
+            style="background:rgba(201,168,76,0.12);color:#C9A84C;border:1px solid rgba(201,168,76,0.35);
+                   padding:0.3rem 1.1rem;border-radius:4px;font-size:0.8rem;font-weight:600;
+                   cursor:pointer;transition:all 0.2s;letter-spacing:0.02em;"
+            onmouseover="if(!this.disabled)this.style.background='rgba(201,168,76,0.25)'"
+            onmouseout="if(!this.disabled)this.style.background='rgba(201,168,76,0.12)'"
+            onclick="triggerDashboardRefresh()">
+            \u21bb Refresh Live Data
+          </button>
+        </div>
+        <script>
+        (function() {
+          var WORKER_URL  = 'https://cpl-proxy.slee-548.workers.dev';
+          var SECRET      = 'CPL_SCRAPE_2026';
+          var GH_RUNS_API = 'https://api.github.com/repos/cpl-initiative/cpl-project-tracker/actions/runs?workflow_id=daily-dashboard.yml&per_page=1';
+          function setStatus(msg){var el=document.getElementById('gh-run-status');if(el)el.textContent=msg;}
+          function setBtn(label,disabled){var btn=document.getElementById('refresh-data-btn');if(!btn)return;btn.textContent=label;btn.disabled=disabled;btn.style.opacity=disabled?'0.6':'1';btn.style.cursor=disabled?'not-allowed':'pointer';}
+          function formatRun(run){if(!run)return '\u26aa No recent runs found';var d=new Date(run.updated_at);var ts=d.toLocaleDateString('en-US',{month:'short',day:'numeric'})+' at '+d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true});if(run.status==='in_progress'||run.status==='queued')return '\ud83d\udfe1 Running now \u2014 started '+ts;if(run.conclusion==='success')return '\u2705 Last run: Success ('+ts+')';if(run.conclusion==='failure')return '\u274c Last run: Failed ('+ts+')';if(run.conclusion==='cancelled')return '\u2b55 Last run: Cancelled ('+ts+')';return '\u26aa Last run: '+(run.conclusion||run.status)+' ('+ts+')';}
+          var _polling=false;
+          function fetchStatus(){fetch(GH_RUNS_API,{headers:{'Accept':'application/vnd.github+json'}}).then(function(r){return r.json();}).then(function(d){var run=d.workflow_runs&&d.workflow_runs[0];setStatus(formatRun(run));if(run&&(run.status==='in_progress'||run.status==='queued')){if(!_polling){_polling=true;setTimeout(function(){_polling=false;fetchStatus();},12000);}}else{_polling=false;}}).catch(function(){setStatus('\u26aa Could not fetch workflow status');});}
+          window.triggerDashboardRefresh=function(){var ok=window.confirm('\u26a0\ufe0f  Refresh Live Data\\n\\nThis will rewrite today\\'s dashboard data. The workflow takes 2\u20135 minutes to complete.\\n\\nAfter clicking OK:\\n  \u2022 Wait a few minutes for the run to finish\\n  \u2022 Then press Ctrl+Shift+R (Cmd+Shift+R on Mac) to hard-refresh this page\\n\\nContinue?');if(!ok)return;setBtn('\u23f3 Triggering\u2026',true);setStatus('\ud83d\udfe1 Sending trigger request\u2026');fetch(WORKER_URL+'/trigger?secret='+SECRET).then(function(r){return r.json().then(function(d){return{ok:r.ok,data:d};});}).then(function(res){if(res.ok&&res.data.triggered){setStatus('\ud83d\udfe1 Workflow triggered! Checking status\u2026');setTimeout(function(){setBtn('\u21bb Refresh Live Data',false);fetchStatus();},6000);}else{setStatus('\u274c Trigger failed: '+(res.data.error||'Unknown error'));setBtn('\u21bb Refresh Live Data',false);}}).catch(function(){setStatus('\u274c Could not reach refresh server');setBtn('\u21bb Refresh Live Data',false);});};
+          fetchStatus();
+        })();
+        </script>
+        <!-- REFRESH-BTN-END -->'''
+                # Insert after the last-updated div
+                lu_match = re.search(r'<div class="last-updated">.*?</div>', html)
+                if lu_match:
+                    insert_pos = lu_match.end()
+                    html = html[:insert_pos] + REFRESH_BTN_HTML + html[insert_pos:]
+                    print("  Injected Refresh Data button")
+                else:
+                    print("  WARNING: Could not find last-updated div to inject Refresh button")
+            # else: markers already present — leave untouched
+
             # ── Update footer date ──
             html = re.sub(
                 r'(<span id="footerDate">).*?(</span>)',
