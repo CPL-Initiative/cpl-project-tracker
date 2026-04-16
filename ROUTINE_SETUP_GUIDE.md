@@ -120,7 +120,7 @@ pip install openpyxl
 
 **Environment variables:** (none needed — the Cloudflare Worker secret is in the prompt)
 
-**Network access:** Full (needs to reach the MAP API and Cloudflare Worker)
+**Network access:** Limited — see "Known Limitation: Network Allowlist" below. The Routine cannot reach custom API hosts. Steps 1 and 2 will use fallback data already committed in the repo.
 
 ### Trigger
 Select: **Schedule → Daily**
@@ -137,6 +137,40 @@ Remove all connectors (not needed for this pipeline — it uses direct API calls
 2. On the routine detail page, click **Run now** to test immediately
 3. Watch the session live to verify each step completes
 4. Check https://cpl-initiative.github.io/cpl-project-tracker/ after the run
+
+---
+
+## Known Limitation: Network Allowlist (as of 2026-04-16)
+
+Claude Code Routines (research preview) restrict outbound network access to a
+platform-managed allowlist. There is no UI setting to add custom hosts. As a result,
+the Routine **cannot** reach:
+
+- `mapwebapinew.azurewebsites.net` (MAP Custom Report Builder API)
+- `cpl-proxy.slee-548.workers.dev` (Cloudflare Worker live metrics scraper)
+
+Both calls fail with "Host not in allowlist." The pipeline handles this gracefully —
+Steps 1 and 2 fall back to whatever `CustomReport_latest.json` and `live_metrics.json`
+are already committed in the repo. The Routine still regenerates the dashboard HTML,
+commits, pushes, and deploys to GitHub Pages using that committed data.
+
+### Workaround: Cowork Data Refresh
+
+Since Cowork's Chrome browser **can** reach both APIs, you can periodically refresh
+the data files from a Cowork session and push them to the repo. The next Routine run
+will then pick up the fresh data as its "fallback."
+
+**Manual refresh steps (from Cowork):**
+
+1. Ask Claude to fetch fresh data:
+   - `CustomReport_latest.json` from the MAP API (via `fetch_custom_report.py` or Chrome)
+   - `live_metrics.json` from the Cloudflare Worker
+2. Commit and push both files to the `cpl-project-tracker` repo via GitHub Desktop
+3. The next Routine run at 6 AM uses the freshly committed files
+
+**Future automation:** This refresh could become its own Cowork scheduled task that
+runs before the Routine, or the Routine prompt could be updated if Anthropic adds
+custom network allowlist support.
 
 ---
 
@@ -164,6 +198,17 @@ The original Cowork scheduled task (`cpl-dashboard-scraper`) has been **disabled
 If the Routine is down, you can still run the pipeline manually from Cowork by asking
 Claude to run the pipeline steps. The Chrome-based CustomReport fetch is also still
 available for manual runs.
+
+---
+
+## Optional: Cowork Trigger Task
+
+You can create a Cowork scheduled task that opens claude.ai/code/routines in Chrome
+and clicks "Run now" — giving you a one-click way to trigger the Routine from Cowork
+without navigating to the Routines page yourself.
+
+See `COWORK_TRIGGER_TASK.md` in this folder for the full task prompt and setup instructions.
+Create it from a **fresh Cowork session** (not from within a scheduled task session).
 
 ---
 
