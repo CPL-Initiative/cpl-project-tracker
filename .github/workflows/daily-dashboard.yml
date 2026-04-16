@@ -1,0 +1,85 @@
+name: Daily CPL Dashboard
+
+on:
+  schedule:
+    - cron: '0 14 * * *'   # 6 AM PT (UTC-8) every day
+  workflow_dispatch:         # allow manual trigger from GitHub UI
+
+jobs:
+  update-dashboard:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install openpyxl python-docx requests
+
+      # ── Step 1: Fetch CustomReport JSON ─────────────────────────
+      - name: Fetch CustomReport from MAP API
+        run: |
+          python fetch_custom_report.py --output CustomReport_latest.json \
+            && echo "CUSTOM_REPORT_STATUS=success" >> "$GITHUB_ENV" \
+            || echo "CUSTOM_REPORT_STATUS=fallback" >> "$GITHUB_ENV"
+
+      # ── Step 2: Scrape live metrics ──────────────────────────────
+      - name: Scrape live metrics from Cloudflare Worker
+        env:
+          CPL_SCRAPE_SECRET: ${{ secrets.CPL_SCRAPE_SECRET }}
+        run: |
+          curl -s "https://cpl-proxy.slee-548.workers.dev/scrape?secret=${CPL_SCRAPE_SECRET}" \
+            -o live_metrics_new.json
+          python3 - <<'EOF'
+          import json, shutil, sys
+          try:
+              d = json.load(open('live_metrics_new.json'))
+              assert 'scraped_at' in d and 'metrics' in d and 'raw' in d
+              shutil.move('live_metrics_new.json', 'live_metrics.json')
+              print(f"Live metrics updated: {d['scraped_at']}")
+              open('/tmp/metrics_status', 'w').write('success')
+          except Exception as e:
+              print(f"Scrape failed ({e}) — using existing live_metrics.json")
+              open('/tmp/metrics_status', 'w').write('fallback')
+          EOF
+          echo "LIVE_METRICS_STATUS=$(cat /tmp/metrics_status)" >> "$GITHUB_ENV"
+
+      # ── Step 3: Run pipeline ─────────────────────────────────────
+      - name: Run dashboard pipeline
+        run: python excel_to_dashboard.py
+
+      # ── Step 4: Prepare GitHub Pages entry point ─────────────────
+      - name: Copy dashboard to index.html
+        run: cp CPL_Dashboard.html index.html
+
+      # ── Step 5: Commit and push ───────────────────────────────────
+      - name: Commit and push to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html CPL_Dashboard.html CPL_Data.js \
+                  live_metrics.json kpi_history.json statewide_data.js
+          # Only add CustomReport if it was freshly fetched
+          git add CustomReport_latest.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Daily dashboard update — $(date +%Y-%m-%d)"
+            git push origin main
+          fi
+
+      - name: Summary
+        run: |
+          echo "### CPL Dashboard Update — $(date +%Y-%m-%d)" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Step | Status |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|------|--------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| CustomReport | $CUSTOM_REPORT_STATUS |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Live metrics | $LIVE_METRICS_STATUS |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Dashboard URL | https://cpl-initiative.github.io/cpl-project-tracker/ |" >> "$GITHUB_STEP_SUMMARY"
