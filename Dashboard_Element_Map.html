@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPL Dashboard — Element Source & Algorithm Map</title>
+<style>
+  :root {
+    --navy: #0A2240;
+    --mid-navy: #163A5F;
+    --gold: #C9A84C;
+    --green: #2A7D4F;
+    --blue: #4A90D9;
+    --bg: #f4f5f7;
+    --card-bg: #fff;
+    --code-bg: #f0f2f5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: #333; line-height: 1.5; }
+  .header { background: linear-gradient(135deg, var(--navy) 0%, var(--mid-navy) 100%); color: #fff; padding: 2rem 1.5rem; text-align: center; }
+  .header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .header .sub { font-size: 0.88rem; color: var(--gold); font-weight: 600; }
+  .header .desc { font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 0.3rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+  .controls { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; padding: 1rem; background: #fff; border-bottom: 1px solid #e0e0e0; position: sticky; top: 0; z-index: 100; }
+  .controls button { padding: 0.4rem 0.9rem; border: 1.5px solid #ddd; border-radius: 20px; background: #fff; cursor: pointer; font-size: 0.78rem; font-weight: 600; color: #555; transition: all 0.2s; }
+  .controls button:hover, .controls button.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .controls button.active { box-shadow: 0 2px 6px rgba(10,34,64,0.25); }
+  .legend { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; padding: 0.6rem 1rem; font-size: 0.72rem; color: #666; background: #fafbfc; border-bottom: 1px solid #eee; }
+  .legend span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem; }
+
+  .section { margin-bottom: 2rem; display: none; }
+  .section.visible { display: block; }
+  .section-header { background: linear-gradient(90deg, var(--navy), var(--mid-navy)); color: #fff; padding: 0.8rem 1.2rem; border-radius: 8px 8px 0 0; display: flex; align-items: center; gap: 0.8rem; }
+  .section-header h2 { font-size: 1.05rem; font-weight: 700; }
+  .section-header .badge { background: var(--gold); color: var(--navy); font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+  .section-body { background: #fff; border: 1px solid #e0e0e0; border-top: none; border-radius: 0 0 8px 8px; padding: 1rem; }
+
+  .element { border: 1px solid #e8e8e8; border-radius: 8px; margin-bottom: 0.8rem; overflow: hidden; transition: box-shadow 0.2s; }
+  .element:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .element-header { display: flex; align-items: center; gap: 0.6rem; padding: 0.6rem 0.8rem; background: #fafbfc; cursor: pointer; user-select: none; }
+  .element-header .arrow { font-size: 0.65rem; color: #888; transition: transform 0.2s; width: 12px; }
+  .element.open .element-header .arrow { transform: rotate(90deg); }
+  .element-header .eid { font-weight: 700; color: var(--navy); font-size: 0.82rem; white-space: nowrap; }
+  .element-header .ename { font-size: 0.82rem; color: #444; flex: 1; }
+  .element-header .source-tag { font-size: 0.62rem; font-weight: 600; padding: 2px 6px; border-radius: 4px; white-space: nowrap; }
+  .tag-live { background: #e8f5e9; color: var(--green); }
+  .tag-excel { background: #fff3e0; color: #e65100; }
+  .tag-exhibit { background: #e3f2fd; color: #1565c0; }
+  .tag-computed { background: #f3e5f5; color: #7b1fa2; }
+  .tag-hardcoded { background: #fce4ec; color: #c62828; }
+  .tag-history { background: #e0f7fa; color: #00695c; }
+
+  .element-detail { display: none; padding: 0.8rem; border-top: 1px solid #eee; }
+  .element.open .element-detail { display: block; }
+
+  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  @media (max-width: 700px) { .detail-grid { grid-template-columns: 1fr; } }
+
+  .detail-box { background: var(--code-bg); border-radius: 6px; padding: 0.6rem 0.8rem; }
+  .detail-box h4 { font-size: 0.72rem; text-transform: uppercase; color: #888; font-weight: 700; margin-bottom: 0.3rem; letter-spacing: 0.03em; }
+  .detail-box p, .detail-box code { font-size: 0.78rem; color: #333; }
+  .detail-box code { background: #fff; padding: 1px 5px; border-radius: 3px; font-family: 'SF Mono', Menlo, Monaco, monospace; font-size: 0.73rem; }
+  .detail-box .algo { font-family: 'SF Mono', Menlo, Monaco, monospace; font-size: 0.72rem; background: var(--navy); color: #e0e0e0; padding: 0.4rem 0.6rem; border-radius: 4px; margin-top: 0.3rem; white-space: pre-wrap; word-break: break-all; line-height: 1.5; }
+  .detail-box .algo .kw { color: var(--gold); }
+  .detail-box .algo .fn { color: #7ec8e3; }
+  .detail-box .algo .cm { color: #6a9955; }
+
+  .flow-diagram { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; margin-top: 0.5rem; }
+  .flow-node { padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+  .flow-arrow { color: #999; font-size: 0.7rem; }
+  .fn-source { background: #e3f2fd; color: #1565c0; }
+  .fn-process { background: #f3e5f5; color: #7b1fa2; }
+  .fn-output { background: #e8f5e9; color: var(--green); }
+
+  .excel-ref { display: inline-flex; align-items: center; gap: 0.3rem; background: #fff3e0; color: #e65100; font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-top: 0.3rem; }
+  .full-width { grid-column: 1 / -1; }
+
+  .toc { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; }
+  .toc h3 { font-size: 0.85rem; color: var(--navy); margin-bottom: 0.5rem; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.4rem; }
+  .toc-item { font-size: 0.78rem; padding: 0.3rem 0.5rem; border-radius: 4px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; }
+  .toc-item:hover { background: #f0f4f8; }
+  .toc-item .num { font-weight: 700; color: var(--navy); width: 24px; }
+  .toc-item .name { color: #444; }
+
+  .stats-bar { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .stat-chip { background: #fff; border: 1px solid #e0e0e0; border-radius: 20px; padding: 0.3rem 0.8rem; font-size: 0.75rem; }
+  .stat-chip strong { color: var(--navy); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>CPL Dashboard — Element Source & Algorithm Map</h1>
+  <div class="sub">Every number on the dashboard, where it comes from, and how it's computed</div>
+  <div class="desc">Click any element to expand its source, algorithm, data flow, and the Excel column where it can be adjusted.</div>
+</div>
+
+<div class="controls" id="controls">
+  <button class="active" data-section="all">All Sections</button>
+  <button data-section="headline">Headline KPIs (10)</button>
+  <button data-section="activity">Activity KPIs (19)</button>
+  <button data-section="trends">KPI Trends</button>
+  <button data-section="college">College Activity</button>
+  <button data-section="workplan">Workplan Charts</button>
+  <button data-section="budget">Budget</button>
+  <button data-section="vision">Vision 2030</button>
+  <button data-section="exhibit">Exhibit Analysis</button>
+</div>
+
+<div class="legend">
+  <span><span class="dot" style="background:#2A7D4F;"></span> LIVE — scraped from CCCCO API</span>
+  <span><span class="dot" style="background:#e65100;"></span> EXCEL — from Project List tab</span>
+  <span><span class="dot" style="background:#1565c0;"></span> EXHIBIT — from CustomReport JSON</span>
+  <span><span class="dot" style="background:#7b1fa2;"></span> COMPUTED — pipeline algorithm</span>
+  <span><span class="dot" style="background:#c62828;"></span> HARDCODED — static in Python</span>
+  <span><span class="dot" style="background:#00695c;"></span> HISTORY — from kpi_history.json</span>
+</div>
+
+<div class="container">
+
+<div class="stats-bar">
+  <div class="stat-chip"><strong>60+</strong> dashboard elements mapped</div>
+  <div class="stat-chip"><strong>3</strong> data sources (CCCCO API, Excel, CustomReport JSON)</div>
+  <div class="stat-chip"><strong>8</strong> dashboard sections</div>
+  <div class="stat-chip"><strong>2</strong> new Excel columns: <code>Source & Logic</code> + <code>Algorithm Override</code></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: HEADLINE KPIs -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section visible" data-section="headline">
+  <div class="section-header">
+    <h2>1. Headline KPI Cards</h2>
+    <span class="badge">10 CARDS</span>
+  </div>
+  <div class="section-body">
+
+    <!-- 1. Cumulative Students -->
+    <div class="element" id="el-students">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">KPI-1</span>
+        <span class="ename">Cumulative CPL Students</span>
+        <span class="source-tag tag-live">LIVE</span>
+        <span class="source-tag tag-excel">FALLBACK: Excel</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Primary Source</h4>
+            <p><code>live_metrics.json</code> → <code>raw.Students</code> (scraped from CCCCO API)</p>
+            <div class="flow-diagram">
+              <span class="flow-node fn-source">CCCCO API</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node fn-process">Cloudflare Worker</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node fn-source">live_metrics.json</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node fn-process">merge_live_metrics()</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node fn-output">KPI Card</span>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h4>Fallback Source</h4>
+            <p>Excel → Project <code>3.1</code> → Column R (<code>kpi_metric</code>)</p>
+            <p>Default: <code>42,620</code></p>
+            <div class="excel-ref">📊 Excel: Row 3.1, Col R (kpi_metric)</div>
+          </div>
+          <div class="detail-box">
+            <h4>Algorithm</h4>
+            <div class="algo"><span class="cm"># compute_headline_kpis()</span>
+students = get_metric(<span class="kw">"3.1"</span>, <span class="kw">"42,620"</span>)
+<span class="cm"># Then overwritten by merge_live_metrics():</span>
+kpis[<span class="kw">"cumulative_students"</span>][<span class="kw">"value"</span>] = metric[<span class="kw">"value"</span>]
+<span class="cm"># Value = ALL COLLEGES row, Students field</span></div>
+          </div>
+          <div class="detail-box">
+            <h4>Breakdowns</h4>
+            <p>Injected from <code>live_metrics.json → metrics[0].breakdowns</code>:</p>
+            <p>• <strong>Military</strong> — <code>raw.MilitaryStudents</code></p>
+            <p>• <strong>Workforce</strong> — <code>raw.NonMilitaryStudents</code></p>
+            <p>• <strong>Apprentice</strong> — <code>raw.AprenticeStudents</code> (API typo)</p>
+          </div>
+          <div class="detail-box full-width">
+            <h4>Override / Adjust</h4>
+            <p><strong>New Excel Column AF (Source & Logic):</strong> "LIVE from CCCCO API raw.Students; fallback = Project 3.1 Col R"</p>
+            <p><strong>New Excel Column AG (Algorithm Override):</strong> Leave blank to use live data. Enter a number to override.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Eligible Units -->
+    <div class="element" id="el-units">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">KPI-2</span>
+        <span class="ename">Eligible Units</span>
+        <span class="source-tag tag-live">LIVE</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Primary Source</h4>
+            <p><code>live_metrics.json</code> → <code>raw.Units</code></p>
+            <p>API endpoint: <code>/api/potential-savings</code> → ALL COLLEGES row</p>
+          </div>
+          <div class="detail-box">
+            <h4>Algorithm</h4>
+            <div class="algo"><span class="cm"># merge_live_metrics() — direct pass-through</span>
+kpis[<span class="kw">"eligible_units"</span>] = {
+  <span class="kw">"value"</span>: metric[<span class="kw">"value"</span>],  <span class="cm"># formatted by Worker</span>
+  <span class="kw">"breakdowns"</span>: [Mil, WF, App units]
+}</div>
+          </div>
+          <div class="detail-box">
+            <h4>Breakdowns</h4>
+            <p>• <strong>Military</strong> — <code>raw.MilitaryCredits</code></p>
+            <p>• <strong>Workforce</strong> — <code>raw.NonMilitaryCredits</code></p>
+            <p>• <strong>Apprentice</strong> — <code>raw.ApprenticeshipCredits</code></p>
+            <p>• <strong>Avg per Student</strong> — <code>raw.AverageUnits</code></p>
+          </div>
+          <div class="detail-box">
+            <h4>Fallback</h4>
+            <p>Excel Project <code>3.2</code> Col R: <code>96,449</code></p>
+            <div class="excel-ref">📊 Excel: Row 3.2, Col R</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Transcribed Units -->
+    <div class="element" id="el-transcribed">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">KPI-3</span>
+        <span class="ename">Transcribed Units</span>
+        <span class="source-tag tag-live">LIVE</span>
+        <span class="source-tag tag-exhibit">+ EXHIBIT</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Primary Source</h4>
+            <p><code>live_metrics.json</code> → <code>raw.TranscribedUnits</code></p>
+          </div>
+          <div class="detail-box">
+            <h4>Algorithm</h4>
+            <div class="algo"><span class="cm"># merge_live_metrics() — direct value</span>
+<span class="cm"># merge_exhibit_metrics() adds Applied Credits:</span>
+<span class="kw">if</span> credit_distribution:
+  bds.append({<span class="kw">"label"</span>: <span class="kw">"Applied Credits"</span>,
+    <span class="kw">"value"</span>: cd[<span class="kw">"total_applied_credits"</span>]})</div>
+          </div>
+          <div class="detail-box">
+            <h4>Breakdowns</h4>
+            <p>• <strong>Military</strong> — <code>raw.TranscribedMilitaryUnits</code></p>
+            <p>• <strong>Workforce</strong> — <code>raw.TranscribedNonMilitaryUnits</code></p>
+            <p>• <strong>Apprentice</strong> — <code>raw.TranscribedApprenticeshipUnits</code></p>
+            <p>• <strong>Applied Credits</strong> — from CustomReport credit_distribution (enrichment)</p>
+          </div>
+          <div class="detail-box">
+            <h4>Fallback</h4>
+            <p>Excel Project <code>3.2</code> Col R: same as eligible units</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Credit Recommendations -->
+    <div class="element" id="el-credit-recs">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">KPI-4</span>
+        <span class="ename">Credit Recommendations</span>
+        <span class="source-tag tag-exhibit">EXHIBIT</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Primary Source</h4>
+            <p><code>CustomReport_*.json</code> → <code>View_ArticulatedMAPExhibits_APIDataset</code></p>
+            <p>Parsed by <code>_parse_exhibits()</code> → <code>exhibit_data["total_credit_recs"]</code></p>
+          </div>
+          <div class="detail-box">
+            <h4>Algorithm</h4>
+            <div class="algo"><span class="cm"># _parse_exhibits() counts rows in exhibits dataset</span>
+total_credit_recs = len(exhibit_rows)
+<span class="cm"># merge_exhibit_metrics() replaces KPI:</span>
+kpis[<span class="kw">"credit_recommendations"</span>] = {
+  <span class="kw">"value"</span>: total_credit_recs,
+  <span class="kw">"breakdowns"</span>: [CCC Collaborative, Local]
+}</div>
+          </div>
+          <div class="detail-box">
+            <h4>Breakdowns</h4>
+            <p>• <strong>CCC Collaborative</strong> — exhibits where Collaborative Type = CCC</p>
+            <p>• <strong>Local</strong> — individual college articulations</p>
+            <p>• <strong>Footnote</strong> — Top 5 CPL types by count</p>
+          </div>
+          <div class="detail-box">
+            <h4>Fallback</h4>
+            <p>Excel Project <code>2.1</code> Col R: <code>576</code></p>
+            <div class="excel-ref">📊 Excel: Row 2.1, Col R</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. MAP Exhibits -->
+    <div class="element" id="el-exhibits">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">KPI-5</span>
+        <span class="ename">MAP Exhibits</span>
+        <span class="source-tag tag-exhibit">EXHIBIT</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Primary Source</h4>
+            <p><code>CustomReport_*.json</code> → <code>exhibit_data["unique_exhibits"]</code></p>
+          </div>
+          <div class="detail-box">
+            <h4>Algorithm</h4>
+            <div class="algo"><span class="cm"># _parse_exhibits() counts unique MAP Exhibit Name values</span>
+unique_exhibits = len(set(row[<span class="kw">"MAP Exhibit Name"</span>] <span class="kw">for</span> row <span class="kw">in</span> exhibits))
+<span class="cm"># Breakdowns split CCC Collaborative vs Local</span></div>
+          </div>
+          <div class="detail-box">
+            <h4>Breakdowns</h4>
+            <p>• <strong>CCC Collaborative</strong> — <code>ccc["unique_exhibits"]</code></p>
+            <p>• <strong>Local</strong> — <code>exhibit_data["local"]["unique_exhibits"]</code></p>
+          </div>
+          <div class="detail-box">
+            <h4>Sub-label</h4>
+            <p><code>"{originating_colleges} originating colleges"</code></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. CCC Collaborative Adoption -->
+    <div class="element" id="el-ccc">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">KPI-6</span>
+        <span class="ename">CCC Collaborative Adoption</span>
+        <span class="source-tag tag-exhibit">EXHIBIT</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Source & Algorithm</h4>
+            <div class="algo"><span class="cm"># Colleges adopting statewide exhibits</span>
+value = ccc[<span class="kw">"adopting_colleges"</span>]
+<span class="cm"># Count of unique colleges with Collaborative Type = CCC</span>
+<span class="cm"># from View_ArticulatedMAPExhibits_APIDataset</span></div>
+          </div>
+          <div class="detail-box">
+            <h4>Breakdowns</h4>
+            <p>• <strong>Collaborative Exhibits</strong> — <code>ccc["unique_exhibits"]</code></p>
+            <p>• <strong>Collaborative Credit Recs</strong> — <code>ccc["credit_recs"]</code></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Active Colleges -->
+    <div class="element" id="el-colleges">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">KPI-7</span>
+        <span class="ename">Active Colleges</span>
+        <span class="source-tag tag-live">LIVE</span>
+        <span class="source-tag tag-computed">3-of-5 TIER ALGO</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box full-width">
+            <h4>Source</h4>
+            <p><code>live_metrics.json</code> → computed by Cloudflare Worker from per-college API data</p>
+          </div>
+          <div class="detail-box full-width">
+            <h4>3-of-5 Tier Classification Algorithm</h4>
+            <div class="algo"><span class="cm"># Cloudflare Worker classifies each college (115 total)</span>
+criteria = [
+  Students ≥ 500,          <span class="cm"># Scale of program</span>
+  Units ≥ 3,000,           <span class="cm"># Breadth of credit recommendations</span>
+  AverageUnits ≥ 5,        <span class="cm"># Per-student benefit depth</span>
+  TranscribedUnits/Units ≥ 25%,  <span class="cm"># Back-end follow-through</span>
+  TranscribedAverage ≥ 3   <span class="cm"># Verified per-student benefit</span>
+]
+<span class="kw">Leading</span>  = meets ≥ 3 of 5 criteria
+<span class="kw">Inactive</span> = Students < 10 AND Units = 0
+<span class="kw">Advancing</span> = everything else (active, building)</div>
+          </div>
+          <div class="detail-box">
+            <h4>Breakdowns</h4>
+            <p>• <strong>Leading</strong> — <code>tiers.leading.count</code> (13)</p>
+            <p>• <strong>Advancing</strong> — <code>tiers.advancing.count</code> (82)</p>
+            <p>• <strong>Inactive</strong> — <code>tiers.inactive.count</code> (20)</p>
+            <p>• <strong>Active Total</strong> = Leading + Advancing (95)</p>
+          </div>
+          <div class="detail-box">
+            <h4>Footnote</h4>
+            <p>Auto-generated criteria list from Worker response</p>
+            <div class="excel-ref">📊 Excel Fallback: Row 3.3, Col R</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Articulating Colleges -->
+    <div class="element" id="el-artic">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">KPI-8</span>
+        <span class="ename">Articulating Colleges</span>
+        <span class="source-tag tag-exhibit">EXHIBIT</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Algorithm</h4>
+            <div class="algo"><span class="cm"># merge_exhibit_metrics()</span>
+value = exhibit_data[<span class="kw">"articulation_colleges"</span>]
+<span class="cm"># = count of unique colleges in exhibits dataset</span>
+breakdowns:
+  Originating = exhibit_data[<span class="kw">"originating_colleges"</span>]
+  Adopting CCC = ccc[<span class="kw">"adopting_colleges"</span>]</div>
+          </div>
+          <div class="detail-box">
+            <h4>Source</h4>
+            <p><code>CustomReport_*.json</code> → <code>View_ArticulatedMAPExhibits_APIDataset</code></p>
+            <p>Unique "College" values in exhibit rows</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Estimated Savings -->
+    <div class="element" id="el-savings">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">KPI-9</span>
+        <span class="ename">Estimated Savings</span>
+        <span class="source-tag tag-live">LIVE</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Source</h4>
+            <p><code>live_metrics.json</code> → <code>raw.Savings</code></p>
+            <p>Computed by CCCCO: eligible units × avg credit cost</p>
+          </div>
+          <div class="detail-box">
+            <h4>Algorithm</h4>
+            <div class="algo"><span class="cm"># compute_headline_kpis() sets static default:</span>
+savings = <span class="kw">"$269M"</span>
+<span class="cm"># merge_live_metrics() overwrites with CCCCO value</span>
+<span class="cm"># Breakdowns proportional to Mil/WF/App credit ratios</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Veteran Sprint -->
+    <div class="element" id="el-veteran">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">KPI-10</span>
+        <span class="ename">Veteran Sprint</span>
+        <span class="source-tag tag-excel">EXCEL</span>
+        <span class="source-tag tag-live">+ LIVE INJECT</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Primary Source</h4>
+            <p>Excel Project <code>4.1a</code> Col R — Star Colleges count</p>
+          </div>
+          <div class="detail-box">
+            <h4>Algorithm</h4>
+            <div class="algo"><span class="cm"># compute_headline_kpis()</span>
+value = proj_map[<span class="kw">"4.1a"</span>][<span class="kw">"kpi_metric"</span>]
+<span class="cm"># merge_live_metrics() replaces placeholders:</span>
+{jst_credits} → MilitaryStudents from live data
+{eligible_cpl} → MilitaryCredits from live data
+<span class="cm"># Basic Training Credit = value + " Colleges"</span></div>
+          </div>
+          <div class="detail-box full-width">
+            <h4>Breakdowns (hybrid)</h4>
+            <p>• <strong>JST Credits</strong> — <code>{jst_credits}</code> placeholder → replaced by <code>live_data → cumulative_students → Military breakdown</code></p>
+            <p>• <strong>Basic Training Credit</strong> — <code>4.1a kpi_metric + " Colleges"</code> (Excel)</p>
+            <p>• <strong>Eligible CPL</strong> — <code>{eligible_cpl}</code> placeholder → replaced by <code>live_data → eligible_units → Military breakdown</code></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. 20-Year Impact -->
+    <div class="element" id="el-impact">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">KPI-11</span>
+        <span class="ename">20-Year Impact</span>
+        <span class="source-tag tag-live">LIVE</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Source</h4>
+            <p><code>live_metrics.json</code> → <code>raw.YearImpact</code></p>
+            <p>Computed by CCCCO: 20-year economic impact model (Beacon Economics)</p>
+          </div>
+          <div class="detail-box">
+            <h4>Algorithm</h4>
+            <div class="algo"><span class="cm"># merge_live_metrics() — direct pass-through</span>
+<span class="cm"># Breakdowns proportional to credit ratios</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: ACTIVITY KPIs -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section visible" data-section="activity">
+  <div class="section-header">
+    <h2>2. Activity KPI Cards</h2>
+    <span class="badge">19 CARDS</span>
+  </div>
+  <div class="section-body">
+
+    <div class="detail-box full-width" style="margin-bottom: 1rem;">
+      <h4>Universal Source Pattern for All 19 Activity KPIs</h4>
+      <div class="algo"><span class="cm"># build_activity_kpis() reads from Excel Project List tab:</span>
+metric  = Excel Col R (<span class="kw">kpi_metric</span>)   <span class="cm"># current value</span>
+unit    = Excel Col S (<span class="kw">kpi_unit</span>)     <span class="cm"># label (e.g. "colleges", "units")</span>
+goals   = Excel Cols T-AC            <span class="cm"># 5-year goals & stretch targets</span>
+status  = Excel Col K                <span class="cm"># project status</span>
+pct     = Excel Col L                <span class="cm"># progress % (0-100 or 0.0-1.0)</span>
+notes   = Excel Col P (update), Col AD (workplan)
+<span class="cm"># Special: 4.1 = composite of 4.1a-4.1d (count of sprint projects)</span></div>
+      <div class="flow-diagram">
+        <span class="flow-node fn-source">Excel Project List</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-node fn-process">read_projects()</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-node fn-process">build_activity_kpis()</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-node fn-process">render_activity_kpis_html()</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-node fn-output">Dashboard Cards</span>
+      </div>
+    </div>
+
+    <!-- Activity 1 -->
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">1.1</span>
+        <span class="ename">MAP Platform Development</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Metric</h4><p>Col R value for project 1.1 — platform operational indicator</p></div>
+          <div class="detail-box"><h4>Annual Goal Current</h4><div class="algo">populate_current_metrics: <span class="kw">lambda: 1</span>  <span class="cm"># MAP platform operational = 1</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">1.2</span>
+        <span class="ename">System Integrations</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Metric</h4><p>Col R: count of integrations (e.g., CCCApply, eTranscript)</p></div>
+          <div class="detail-box"><h4>Annual Goal Current</h4><div class="algo">populate_current_metrics: <span class="fn">_pcount</span>(proj_map, <span class="kw">"1.2"</span>)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">1.3</span>
+        <span class="ename">Student Portal</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Metric</h4><p>Col R value for project 1.3</p></div>
+          <div class="detail-box"><h4>Annual Goal Current</h4><div class="algo"><span class="kw">lambda:</span> 1 <span class="kw">if</span> pct ≥ 50 <span class="kw">else</span> 0  <span class="cm"># binary: portal launched?</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">1.4</span>
+        <span class="ename">Credential Registry Integration</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Algorithm</h4><div class="algo">populate_current_metrics: <span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"1.4"</span>)
+<span class="cm"># Reads Col R, strips commas/k suffix, converts to int</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity 2 -->
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">2.1</span>
+        <span class="ename">Credit Recommendations</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Metric</h4><p>Col R: count of credit recommendations created by workgroups</p></div>
+          <div class="detail-box"><h4>Note</h4><p>This is the <em>activity-level</em> card showing Excel value. The <em>headline</em> KPI-4 is overwritten by CustomReport JSON exhibit count.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">2.2</span>
+        <span class="ename">Faculty Workgroups</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Algorithm</h4><div class="algo">populate_current_metrics: <span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"2.2"</span>)
+<span class="cm"># Pathway templates ≈ workgroups (proxy metric)</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">2.3</span>
+        <span class="ename">Industry Partnerships</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Algorithm</h4><div class="algo"><span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"2.3"</span>)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">2.4</span>
+        <span class="ename">AI-Ready Baccalaureate</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+        <span class="source-tag tag-computed">COMPUTED</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Algorithm</h4><div class="algo"><span class="cm"># Links to project 5.1 (AI-Ready California)</span>
+populate_current_metrics:
+  <span class="kw">lambda:</span> 1 <span class="kw">if</span> _ppct(proj_map, <span class="kw">"5.1"</span>) > 0 <span class="kw">else</span> 0</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity 3 -->
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">3.1</span>
+        <span class="ename">Cumulative Students (Activity)</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Note</h4><p>Same project row as headline KPI-1. Activity card shows Excel Col R value; headline KPI is overwritten by live data.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">3.2</span>
+        <span class="ename">Eligible Units (Activity)</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Note</h4><p>Activity card shows Excel Col R. Headline KPI overwritten by live data.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">3.3</span>
+        <span class="ename">Active Colleges (Activity)</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Note</h4><p>Activity card from Excel. Headline KPI overwritten by live tier classification.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">3.4</span>
+        <span class="ename">CPL Savings Analysis</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Algorithm</h4><div class="algo"><span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"3.4"</span>)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">3.5</span>
+        <span class="ename">Success Stories</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Note</h4><p>Annual goal current maps to <code>_pmetric_int(proj_map, "3.5")</code></p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">3.6</span>
+        <span class="ename">Data Reporting</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Algorithm</h4><div class="algo"><span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"3.6"</span>)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity 4 -->
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">4.1</span>
+        <span class="ename">Sprints (Composite: 4.1a-4.1d)</span>
+        <span class="source-tag tag-computed">COMPOSITE</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box full-width">
+            <h4>Composite Algorithm</h4>
+            <div class="algo"><span class="cm"># build_activity_kpis() aggregates sprint sub-projects:</span>
+sprint_ids = [<span class="kw">"4.1a"</span>, <span class="kw">"4.1b"</span>, <span class="kw">"4.1c"</span>, <span class="kw">"4.1d"</span>]
+metric = len(sprint_projects)  <span class="cm"># count of active sprints (currently 4)</span>
+unit = <span class="kw">"active sprints"</span>
+pct = avg(sprint_project.pct <span class="kw">for</span> each sprint)
+<span class="cm"># Components shown inline: 4.1a Veteran Sprint, 4.1b Apprenticeship, etc.</span>
+<span class="cm"># Goals aggregated: sum of 4.1a-d goals per year</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">4.2</span>
+        <span class="ename">Title 5 Regulatory Updates</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+        <span class="source-tag tag-hardcoded">+ HARDCODED</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Algorithm</h4><div class="algo">populate_current_metrics: <span class="kw">lambda: 2</span>
+<span class="cm"># Hardcoded: "2 Title 5 regulatory updates in progress"</span>
+<span class="cm"># Col R for display, hardcoded for annual goal current</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">4.3</span>
+        <span class="ename">Training & Professional Development</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Algorithm</h4><div class="algo"><span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"4.3"</span>)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">4.4</span>
+        <span class="ename">Technical Assistance & College Support</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+        <span class="source-tag tag-computed">PROXY</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Algorithm</h4><div class="algo">populate_current_metrics:
+  <span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"4.3"</span>)  <span class="cm"># ← uses 4.3's metric as proxy</span>
+<span class="cm"># TA & college support ≈ trainings delivered</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">4.5</span>
+        <span class="ename">Research & Evaluation</span>
+        <span class="source-tag tag-excel">EXCEL Col R</span>
+        <span class="source-tag tag-computed">PROXY</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box"><h4>Algorithm</h4><div class="algo">populate_current_metrics:
+  <span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"5.4"</span>)  <span class="cm"># ← uses project 5.4 (RP Group survey)</span></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: KPI TRENDS -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section visible" data-section="trends">
+  <div class="section-header">
+    <h2>3. KPI Trends Card</h2>
+    <span class="badge">16 METRICS TRACKED</span>
+  </div>
+  <div class="section-body">
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">TRENDS</span>
+        <span class="ename">Daily KPI Snapshot & Sparklines</span>
+        <span class="source-tag tag-history">HISTORY</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box full-width">
+            <h4>Source</h4>
+            <p><code>kpi_history.json</code> — appended daily by <code>log_daily_snapshot()</code></p>
+            <div class="flow-diagram">
+              <span class="flow-node fn-source">live_metrics.json</span>
+              <span class="flow-arrow">+</span>
+              <span class="flow-node fn-source">CustomReport JSON</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node fn-process">log_daily_snapshot()</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node fn-source">kpi_history.json</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node fn-process">render_kpi_history_card()</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node fn-output">Trend Card</span>
+            </div>
+          </div>
+          <div class="detail-box">
+            <h4>Metrics Logged Daily</h4>
+            <p>• students, students_military, students_workforce, students_apprentice</p>
+            <p>• eligible_units, transcribed_units</p>
+            <p>• savings_m (Savings / 1M), year_impact_b (YearImpact / 1B)</p>
+            <p>• active_colleges, leading_colleges, star_colleges</p>
+            <p>• credit_recs, map_exhibits, ccc_collaborative, articulating_colleges</p>
+          </div>
+          <div class="detail-box">
+            <h4>Algorithm: Sparkline</h4>
+            <div class="algo"><span class="cm"># _sparkline_svg(): inline SVG polyline</span>
+points = normalize(values, 0→height)
+SVG = polyline + gradient fill + end dot
+<span class="cm"># _delta_badge(): % change from N days ago</span>
+diff = current - previous
+pct = diff / previous × 100
+color = green(▲) or red(▼)</div>
+          </div>
+          <div class="detail-box full-width">
+            <h4>Grouping</h4>
+            <p>Academic quarters: Q1=Jul-Sep, Q2=Oct-Dec, Q3=Jan-Mar, Q4=Apr-Jun</p>
+            <p>Delta badges compare current entry to quarter start, 30 days ago, and 7 days ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: COLLEGE ACTIVITY -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section visible" data-section="college">
+  <div class="section-header">
+    <h2>4. College Activity Card</h2>
+    <span class="badge">PER-COLLEGE</span>
+  </div>
+  <div class="section-body">
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">COLLEGE</span>
+        <span class="ename">Per-College Activity & Military Student Counts</span>
+        <span class="source-tag tag-live">LIVE</span>
+        <span class="source-tag tag-exhibit">EXHIBIT</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Last Activity Per College</h4>
+            <div class="algo"><span class="cm"># _compute_college_last_activity()</span>
+source: View_ArticulatedCollegeCourses_APIDataset
+field: <span class="kw">"Last Submitted On"</span>
+<span class="cm"># Max datetime per college name</span>
+<span class="cm"># Filters out test colleges</span></div>
+          </div>
+          <div class="detail-box">
+            <h4>Military Students Per College</h4>
+            <div class="algo"><span class="cm"># _compute_college_military_students()</span>
+source: View_StudentAggregatedValues_APIDataset
+<span class="cm"># Count distinct students where MilitaryCredits > 0</span>
+<span class="cm"># Filters test colleges and potential students</span></div>
+          </div>
+          <div class="detail-box">
+            <h4>Tier Classification</h4>
+            <p>From <code>live_metrics.json → tiers</code> (Worker-computed, 3-of-5 algorithm)</p>
+          </div>
+          <div class="detail-box">
+            <h4>Render</h4>
+            <p><code>render_college_activity_card()</code> — combines live tiers, last activity dates, and military counts into a sortable card</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: WORKPLAN CHARTS -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section visible" data-section="workplan">
+  <div class="section-header">
+    <h2>5. Workplan Trajectory Charts</h2>
+    <span class="badge">2 CHARTS + TABLE</span>
+  </div>
+  <div class="section-body">
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">CHART-G</span>
+        <span class="ename">Goal Trajectory (250K target)</span>
+        <span class="source-tag tag-live">LIVE</span>
+        <span class="source-tag tag-hardcoded">HARDCODED BASELINES</span>
+        <span class="source-tag tag-excel">EXCEL GOALS</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box full-width">
+            <h4>Algorithm: render_workplan_charts_html()</h4>
+            <div class="algo"><span class="cm"># Baselines (hardcoded — 2024 actuals)</span>
+BASE_MIL = <span class="kw">8,248</span>   BASE_WF = <span class="kw">9,181</span>   BASE_APP = <span class="kw">196</span>
+
+<span class="cm"># Current values (from live data sub-populations)</span>
+mil_now = live → MilitaryStudents (default <span class="kw">21,866</span>)
+wf_now  = live → NonMilitaryStudents (default <span class="kw">21,526</span>)
+app_now = live → AprenticeStudents (default <span class="kw">681</span>)
+
+<span class="cm"># Annual goal/stretch from workplan_goals (Excel Cols T-AC)</span>
+<span class="cm"># Looked up by name containing "military"/"workforce"/"apprentice"</span>
+
+<span class="cm"># build_trajectory(baseline, annual_vals, endpoint):</span>
+<span class="kw">if</span> annual_vals are cumulative (ascending):
+  pts = [(2024, baseline), (2025, midpoint), (2026+i, val)]
+<span class="kw">else</span>:  <span class="cm"># incremental</span>
+  proportional interpolation from baseline → endpoint
+
+<span class="cm"># Actuals (hardcoded for historical years)</span>
+mil_actual = [[2024, 8248], [2025, <span class="kw">18500</span>], [2026, mil_now]]
+wf_actual  = [[2024, 9181], [2025, <span class="kw">19200</span>], [2026, wf_now]]
+app_actual = [[2024, 196],  [2025, <span class="kw">300</span>],   [2026, app_now]]
+
+<span class="cm"># Chart: solid line = actuals, dashed = projection</span>
+<span class="cm"># Target lines at 250K (goal) and 500K (stretch)</span></div>
+          </div>
+          <div class="detail-box">
+            <h4>Adjustable Values</h4>
+            <p>• <strong>Baselines</strong>: Hardcoded in Python (line 1655)</p>
+            <p>• <strong>2025 actuals</strong>: Hardcoded (lines 1710-1713)</p>
+            <p>• <strong>Current values</strong>: From live data sub-populations</p>
+            <p>• <strong>Goal/Stretch endpoints</strong>: From workplan_goals (Excel)</p>
+            <p>• <strong>Targets</strong>: 250K / 500K hardcoded</p>
+          </div>
+          <div class="detail-box">
+            <h4>Proposed Override</h4>
+            <p>New Excel columns can override baselines, historical actuals, and target values. Pipeline reads overrides before building trajectories.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">TABLE</span>
+        <span class="ename">Annual Workplan Goals Table</span>
+        <span class="source-tag tag-excel">EXCEL</span>
+        <span class="source-tag tag-computed">DERIVED</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box full-width">
+            <h4>Algorithm: build_workplan_goals_from_projects()</h4>
+            <div class="algo"><span class="cm"># Derives workplan goals from Project List tab (no separate sheet needed)</span>
+<span class="kw">for</span> each core sub-activity (1.1–4.5):
+  goal_values = [Col T, Col V, Col X, Col Z, Col AB]  <span class="cm"># goals per year</span>
+  stretch_values = [Col U, Col W, Col Y, Col AA, Col AC]
+  current_metric = Col R (kpi_metric)  <span class="cm"># placed in 2025-26 current</span>
+  goal_total = sum(goal_values)
+  stretch_total = sum(stretch_values)
+
+<span class="cm"># Special: 4.1 = aggregate sum of 4.1a-d goals per year</span>
+<span class="cm"># Percentages detected: all(0 < v < 1) → displayed as %</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 6: BUDGET -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section visible" data-section="budget">
+  <div class="section-header">
+    <h2>6. Budget Section</h2>
+    <span class="badge">5 SUB-SECTIONS</span>
+  </div>
+  <div class="section-body">
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">BUD-1</span>
+        <span class="ename">Funding Overview & Grand Total</span>
+        <span class="source-tag tag-excel">EXCEL: Budget Tab</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box full-width">
+            <h4>Source: read_budget_plan()</h4>
+            <div class="algo"><span class="cm"># Excel tab: "20260324 CPL Budget" (or any tab with "budget" in name)</span>
+Funding Sources: rows 6–11, cols B–M
+  B=name, E=source, F–J=yearly budgets, L=total, M=avg
+Subtotals: rows 12–14 (Ops, Special Projects, Local Funding)
+Grand Total: row 15, col L
+<span class="cm"># Stacked bar chart = % of grand total per source</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">BUD-2</span>
+        <span class="ename">Expenditure Summary (by Category & Area)</span>
+        <span class="source-tag tag-excel">EXCEL: Budget Tab</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>By Category</h4>
+            <p>Rows 60–67, Cols B, F–J, L, M</p>
+            <p>Top 8 expense categories with yearly and total values</p>
+          </div>
+          <div class="detail-box">
+            <h4>By Area</h4>
+            <p>Rows 70–72, Cols B, F–J, L</p>
+            <p>All expense areas with yearly and total values</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">BUD-3</span>
+        <span class="ename">Expenditure Detail (Line Items)</span>
+        <span class="source-tag tag-excel">EXCEL: Budget Tab</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box full-width">
+            <h4>Source</h4>
+            <div class="algo"><span class="cm"># Rows 19–52 in Budget tab</span>
+Cols: B=description, C=category, D=type, E=source
+      F–J = yearly budgets (5 years)
+      L = total
+<span class="cm"># Grouped by type: Operations, Special Projects, Local Funding</span>
+<span class="cm"># Displayed as collapsible accordion</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">BUD-4</span>
+        <span class="ename">Personnel Plan</span>
+        <span class="source-tag tag-excel">EXCEL: Budget Tab</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Source</h4>
+            <p>Rows 87–99: B=title, F–J=FTE per year, L=total compensation</p>
+            <p>Row 100: totals (FTE in col F, total comp in col L)</p>
+          </div>
+          <div class="detail-box">
+            <h4>Algorithm</h4>
+            <p>Direct pass-through — no computation. Values from Excel cells.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">BUD-5</span>
+        <span class="ename">Key Factors (FTE, COLA, Indirect, Platform)</span>
+        <span class="source-tag tag-excel">EXCEL: Budget Tab</span>
+        <span class="source-tag tag-computed">AVERAGED</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box full-width">
+            <h4>Algorithm</h4>
+            <div class="algo"><span class="cm"># Rows 75–81 in Budget tab</span>
+factor_rows = {
+  75: <span class="kw">"fte"</span>,
+  76: <span class="kw">"platform_maint"</span>,
+  77: <span class="kw">"platform_dev"</span>,
+  78: <span class="kw">"college_funding"</span>,
+  79: <span class="kw">"colleges_eligible"</span>,
+  80: <span class="kw">"cola_rate"</span>,    <span class="cm"># displayed as %</span>
+  81: <span class="kw">"indirect_rate"</span>  <span class="cm"># displayed as %</span>
+}
+<span class="cm"># Each factor = average of non-zero values across 5 years</span>
+avg = sum(non_zero_vals) / len(non_zero_vals)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 7: VISION 2030 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section visible" data-section="vision">
+  <div class="section-header">
+    <h2>7. Vision 2030 Section</h2>
+    <span class="badge">3 GOALS</span>
+  </div>
+  <div class="section-body">
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">V2030-1</span>
+        <span class="ename">Goal 1: Expand Equitable Access</span>
+        <span class="source-tag tag-computed">COMPUTED</span>
+        <span class="source-tag tag-hardcoded">PARTIAL HARDCODE</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box full-width">
+            <h4>Algorithm</h4>
+            <div class="algo"><span class="cm"># main() → data["vision2030"]["goals"][0]</span>
+current = kpis[<span class="kw">'cumulative_students'</span>][<span class="kw">'value'</span>]  <span class="cm"># dynamic from headline KPI</span>
+target  = <span class="kw">"250,000 Californians by 2030"</span>  <span class="cm"># hardcoded</span>
+progress = <span class="kw">17</span>  <span class="cm"># hardcoded percentage</span>
+<span class="cm"># Progress bar should be: current / 250000 × 100</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">V2030-2</span>
+        <span class="ename">Goal 2: Build Unified System</span>
+        <span class="source-tag tag-hardcoded">HARDCODED</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Values</h4>
+            <div class="algo">progress = <span class="kw">55</span>  <span class="cm"># hardcoded</span>
+current = <span class="kw">"MAP at 116 colleges; Dashboard live; Portal launching"</span></div>
+          </div>
+          <div class="detail-box">
+            <h4>Note</h4>
+            <p>Entirely hardcoded in main(). Not derived from any data source. Would benefit from an Excel override field.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">V2030-3</span>
+        <span class="ename">Goal 3: Sustainable Policies & Resources</span>
+        <span class="source-tag tag-hardcoded">HARDCODED</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box">
+            <h4>Values</h4>
+            <div class="algo">progress = <span class="kw">60</span>  <span class="cm"># hardcoded</span>
+current = <span class="kw">"AB 123 chaptered; $20M allocated; 1,000+ trained"</span></div>
+          </div>
+          <div class="detail-box">
+            <h4>Note</h4>
+            <p>Entirely hardcoded. Would benefit from Excel override.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION 8: EXHIBIT ANALYSIS -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section visible" data-section="exhibit">
+  <div class="section-header">
+    <h2>8. Exhibit Analysis Tables</h2>
+    <span class="badge">6 ANALYSIS VIEWS</span>
+  </div>
+  <div class="section-body">
+
+    <div class="element">
+      <div class="element-header" onclick="toggle(this)">
+        <span class="arrow">&#9654;</span>
+        <span class="eid">EXH</span>
+        <span class="ename">Statewide Exhibit Analysis (6 tables)</span>
+        <span class="source-tag tag-exhibit">EXHIBIT</span>
+        <span class="source-tag tag-computed">COMPUTED</span>
+      </div>
+      <div class="element-detail">
+        <div class="detail-grid">
+          <div class="detail-box full-width">
+            <h4>Source & Algorithm: build_exhibit_analysis_tables()</h4>
+            <div class="algo"><span class="cm"># All from CustomReport_*.json → View_ArticulatedMAPExhibits_APIDataset</span>
+
+<span class="kw">1. By College:</span> group exhibits by Articulation College
+   → count recs, exhibits, disciplines per college
+   → classify CCC Collaborative vs Local vs Industry
+
+<span class="kw">2. By Discipline:</span> TOP Code → CCC Discipline mapping (TOP_Code_Lookup.xlsx)
+   → count recs, exhibits, courses, colleges per discipline
+
+<span class="kw">3. By CPL Type:</span> group by CPL Type Description
+   → count recs, exhibits, colleges per type
+
+<span class="kw">4. By Mode of Learning:</span> group by CPL Mode of Learning
+   → count recs, exhibits, colleges per mode
+
+<span class="kw">5. Top 50 Exhibits:</span> sort by credit rec count DESC, take top 50
+   → show title, recs, courses, colleges, CPL type, discipline
+
+<span class="kw">6. Collaborative Analysis:</span> CCC Collaborative vs Local vs Industry
+   → count recs, exhibits, colleges per collaborative type</div>
+          </div>
+          <div class="detail-box full-width">
+            <h4>Output</h4>
+            <p>Exported to <code>statewide_data.js</code> as <code>window.CPL_STATEWIDE</code></p>
+            <p>Rendered interactively by <code>statewide_interactive.js</code></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<script>
+function toggle(headerEl) {
+  headerEl.closest('.element').classList.toggle('open');
+}
+
+// Section filter
+document.getElementById('controls').addEventListener('click', function(e) {
+  if (e.target.tagName !== 'BUTTON') return;
+  document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+  const sec = e.target.dataset.section;
+  document.querySelectorAll('.section').forEach(s => {
+    s.classList.toggle('visible', sec === 'all' || s.dataset.section === sec);
+  });
+});
+
+// Expand all on double-click section header
+document.querySelectorAll('.section-header').forEach(sh => {
+  sh.addEventListener('dblclick', function() {
+    const body = this.nextElementSibling;
+    const allOpen = [...body.querySelectorAll('.element')].every(e => e.classList.contains('open'));
+    body.querySelectorAll('.element').forEach(e => {
+      if (allOpen) e.classList.remove('open');
+      else e.classList.add('open');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
