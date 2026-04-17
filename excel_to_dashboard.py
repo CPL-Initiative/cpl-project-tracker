@@ -5202,17 +5202,22 @@ def main():
             # ── Inject Refresh Data button below the last-updated div ──
             refresh_btn = (
                 '<div style="text-align:center;margin-top:0.5rem;">'
-                '<button onclick="location.reload()" style="'
+                '<button onclick="if(confirm(\'⚠️ Manual Pipeline Run\\n\\n'
+                'This will re-scrape live data from the MAP CPL Dashboard, '
+                'regenerate all charts and KPIs, and overwrite today\\\'s deployed dashboard.\\n\\n'
+                'The process typically takes 3-5 minutes.\\n\\n'
+                'Continue?\'))'
+                '{window.open(\'https://claude.ai/code/routines\',\'_blank\')}" style="'
                 'background:transparent;color:#C9A84C;border:1px solid #C9A84C;'
                 'padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;'
                 'font-size:0.8rem;font-family:\'Source Sans 3\',Arial,sans-serif;'
                 'transition:all 0.2s;" '
                 'onmouseover="this.style.background=\'#C9A84C\';this.style.color=\'#0A2240\'" '
                 'onmouseout="this.style.background=\'transparent\';this.style.color=\'#C9A84C\'">'
-                '&#x21bb; Refresh Data</button></div>'
+                '&#x21bb; Refresh Today&#39;s Data</button></div>'
             )
             # Remove any existing refresh button first, then insert after last-updated
-            html = re.sub(r'<div style="text-align:center;margin-top:0\.5rem;">.*?Refresh Data.*?</div>', '', html)
+            html = re.sub(r'<div style="text-align:center;margin-top:0\.5rem;">.*?Refresh.*?Data.*?</div>', '', html)
             html = html.replace(
                 '<div class="last-updated">Last Updated: ' + data["last_updated"] + '</div>',
                 '<div class="last-updated">Last Updated: ' + data["last_updated"] + '</div>\n        ' + refresh_btn
