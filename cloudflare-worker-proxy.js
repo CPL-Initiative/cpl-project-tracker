@@ -197,27 +197,34 @@ async function handleScrape(url, env) {
       const tier = classifyCollege(c);
       tiers[tier].push(c.College);
 
-      // Include per-college detail for transparency
-      if (tier !== 'inactive') {
-        const transRate = c.Units > 0 ? (c.TranscribedUnits / c.Units * 100) : 0;
-        tierDetails[tier].push({
-          college: c.College,
-          students: c.Students,
-          units: c.Units,
-          avgUnits: c.AverageUnits,
-          transcriptionRate: Math.round(transRate * 10) / 10,
-          avgTranscribed: c.TranscribedAverage,
-          criteriaMetCount: (c.Students >= 500 ? 1 : 0)
-            + (c.Units >= 3000 ? 1 : 0)
-            + (c.AverageUnits >= 5 ? 1 : 0)
-            + (c.Units > 0 && (c.TranscribedUnits / c.Units) >= 0.25 ? 1 : 0)
-            + (c.TranscribedAverage >= 3 ? 1 : 0),
-        });
-      }
+      // Include per-college detail for all tiers (including inactive)
+      const transRate = c.Units > 0 ? (c.TranscribedUnits / c.Units * 100) : 0;
+      tierDetails[tier].push({
+        college: c.College,
+        students: c.Students,
+        units: c.Units,
+        avgUnits: c.AverageUnits,
+        transcriptionRate: Math.round(transRate * 10) / 10,
+        avgTranscribed: c.TranscribedAverage,
+        criteriaMetCount: (c.Students >= 500 ? 1 : 0)
+          + (c.Units >= 3000 ? 1 : 0)
+          + (c.AverageUnits >= 5 ? 1 : 0)
+          + (c.Units > 0 && (c.TranscribedUnits / c.Units) >= 0.25 ? 1 : 0)
+          + (c.TranscribedAverage >= 3 ? 1 : 0),
+        // Sub-population student counts
+        militaryStudents: c.MilitaryStudents || 0,
+        nonMilitaryStudents: c.NonMilitaryStudents || 0,
+        apprenticeStudents: c.AprenticeStudents || 0,  // note: API typo preserved
+        // Financial metrics
+        savings: c.Savings || 0,
+        yearImpact: c.YearImpact || 0,
+        // Transcribed units (absolute)
+        transcribedUnits: c.TranscribedUnits || 0,
+      });
     }
 
     // Sort tier details by criteria met (desc), then by students (desc)
-    for (const key of ['leading', 'advancing']) {
+    for (const key of ['leading', 'advancing', 'inactive']) {
       tierDetails[key].sort((a, b) => b.criteriaMetCount - a.criteriaMetCount || b.students - a.students);
     }
 
@@ -259,7 +266,7 @@ async function handleScrape(url, env) {
         ],
         leading: { count: tiers.leading.length, colleges: tierDetails.leading },
         advancing: { count: tiers.advancing.length, colleges: tierDetails.advancing },
-        inactive: { count: tiers.inactive.length, colleges: tiers.inactive },
+        inactive: { count: tiers.inactive.length, colleges: tierDetails.inactive },
       },
       metrics,
       raw: {
