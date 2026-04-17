@@ -12,7 +12,7 @@
  *   2. Environment variables:
  *      - ANTHROPIC_API_KEY (encrypted) — for Claude API proxy
  *      - SCRAPE_SECRET (encrypted) — shared secret for the scrape endpoint
- *      - GITHUB_PAT (encrypted) — GitHub Personal Access Token with repo/actions scope
+ *      - GITHUB_TOKEN (encrypted) — GitHub Personal Access Token with repo/actions scope
  *   3. Worker URL: https://cpl-proxy.slee-548.workers.dev
  *
  * SCRAPE ENDPOINT:
@@ -304,9 +304,9 @@ async function handleTrigger(request, env, origin) {
     });
   }
 
-  const pat = env.GITHUB_PAT;
+  const pat = env.GITHUB_TOKEN;
   if (!pat) {
-    return new Response(JSON.stringify({ error: 'GITHUB_PAT not configured on proxy' }), {
+    return new Response(JSON.stringify({ error: 'GITHUB_TOKEN not configured on proxy' }), {
       status: 500,
       headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
     });
