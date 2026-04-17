@@ -455,6 +455,9 @@
         filterBtns.appendChild(btn);
     }
 
+    // Expose openModal globally so College Activity card can call it
+    window.openReportModal = openModal;
+
     // ── Initialize ──
     function init() {
         addReportButton();
