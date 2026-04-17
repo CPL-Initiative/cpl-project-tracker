@@ -16,17 +16,17 @@ window.CPL_DATA = {
   "data_as_of": "April 17, 2026",
   "kpis": {
     "cumulative_students": {
-      "value": "44,653",
+      "value": "44,624",
       "label": "Cumulative CPL Students",
       "sub": "Target: 250,000 by 2030",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "23,070"
+          "value": "23,043"
         },
         {
           "label": "Workforce/Other",
-          "value": "21,654"
+          "value": "21,652"
         },
         {
           "label": "Apprentice",
@@ -54,34 +54,34 @@ window.CPL_DATA = {
         },
         {
           "label": "Applied Credits",
-          "value": "199,900",
+          "value": "199,776",
           "note": "posted to student records"
         }
       ],
       "live": true
     },
     "credit_recommendations": {
-      "value": "7,345",
+      "value": "7,327",
       "label": "Credit Recommendations",
       "sub": "Source: MAP Custom Reporting Module",
       "breakdowns": [
         {
           "label": "CCC Collaborative",
-          "value": "957",
+          "value": "954",
           "note": "statewide faculty workgroups"
         },
         {
           "label": "Local",
-          "value": "6,388",
+          "value": "6,373",
           "note": "individual college articulations"
         }
       ],
       "live": true,
       "footnote": [
         "Standardized Assessment: 2,986",
-        "Industry Certification: 2,558",
-        "Credit By Exam: 1,307",
-        "Portfolio Review: 344",
+        "Industry Certification: 2,547",
+        "Credit By Exam: 1,302",
+        "Portfolio Review: 342",
         "Military: 109"
       ]
     },
@@ -142,7 +142,7 @@ window.CPL_DATA = {
       "breakdowns": [
         {
           "label": "JST Credits",
-          "value": "23,070 / 30,000"
+          "value": "23,043 / 30,000"
         },
         {
           "label": "Basic Training Credit",
@@ -195,9 +195,9 @@ window.CPL_DATA = {
       ],
       "live": true
     },
-    "_live_updated": "2026-04-17T13:17:19.731Z",
+    "_live_updated": "2026-04-16T14:34:57.675Z",
     "map_exhibits": {
-      "value": "3,076",
+      "value": "3,074",
       "label": "MAP Exhibits",
       "sub": "62 originating colleges",
       "breakdowns": [
@@ -208,7 +208,7 @@ window.CPL_DATA = {
         },
         {
           "label": "Local",
-          "value": "2,960",
+          "value": "2,958",
           "note": "college-created exhibits"
         }
       ],
@@ -225,7 +225,7 @@ window.CPL_DATA = {
         },
         {
           "label": "Collaborative Credit Recs",
-          "value": "957"
+          "value": "954"
         }
       ],
       "live": true
@@ -248,8 +248,8 @@ window.CPL_DATA = {
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-04-17T13:16:50",
-    "_exhibit_source": "CustomReport_latest.json",
+    "_exhibit_updated": "2026-04-16T14:10:07",
+    "_exhibit_source": "CustomReport_2026-04-16.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
       "View_ArticulatedCollegeCourses_APIDataset",
@@ -2238,8 +2238,8 @@ window.CPL_DATA = {
         "id": "Goal 1",
         "name": "Expand Equitable Access & Boost Student Success",
         "target": "250,000 Californians by 2030",
-        "progress": 17,
-        "current": "44,653 cumulative students"
+        "progress": 18,
+        "current": "44,624 cumulative students"
       },
       {
         "id": "Goal 2",
@@ -2290,6 +2290,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "50",
       "workplan_notes": "Progress made across eight feature areas with 50+ development tickets completed. Key enhancements include Student Portal, AI-assisted JST parsing, credential matching, and dashboard improvements.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 4
     },
     {
@@ -2324,6 +2325,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "10",
       "workplan_notes": "Credential Engine integration established supporting competency-level alignment with CTDL. Interoperability with eTranscript, Career Passport, and CCCApply is in planning/development phases.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 5
     },
     {
@@ -2358,6 +2360,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "40,000",
       "workplan_notes": "Full AI-enabled Student Portal scheduled for May 2026 production release. Phase 2 (Dec 2026) will integrate Program Pathways Mapper, CVC course search, and resume builder.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 6
     },
     {
@@ -2392,6 +2395,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "1,000",
       "workplan_notes": "No credentials published in registry this period. Full launch not targeted until 2026-27. Standardized credential data schema incorporating TOP and CIP codes is in preparation for the registry pipeline.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 7
     },
     {
@@ -2426,6 +2430,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "2,800",
       "workplan_notes": "288 cumulative statewide credit recommendations with 281 adopted this academic year. 230 currently in progress through college review and adoption workflows. Spanning military, apprenticeship, industry certification, and professional licensure fields.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 8
     },
     {
@@ -2460,6 +2465,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "40",
       "workplan_notes": "11 of 25 target statewide faculty workgroups convened, recommending CPL for credentials and military training across high-demand disciplines. 40 disciplines planned by 2030.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 9
     },
     {
@@ -2494,6 +2500,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "400",
       "workplan_notes": "No validated crosswalks completed yet. Development underway via three parallel approaches (Electrical, Carpentry Apprenticeship, and AI-assisted). Dependent on MAP Exhibit module releasing April 2026.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 10
     },
     {
@@ -2528,6 +2535,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "500",
       "workplan_notes": "Functionality enabling creation of common course crosswalks is a component of the MAP Exhibit module scheduled for April 2026. Development underway but dependent on that release.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 11
     },
     {
@@ -2562,6 +2570,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "380,000",
       "workplan_notes": "43630 cumulative students offered some form of CPL as of 4/7/2026 per the CPL Dashboard. Exceeds the 2025-26 annual target of 40,000. ",
       "kpi_order": null,
+      "override": null,
       "excel_row": 12
     },
     {
@@ -2596,6 +2605,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "360,000",
       "workplan_notes": "22149 cumulative working adults and others offered some form of CPL as of 4/7/2026 per the CPL Dashboard. Exceeds the 2025-26 annual target of 95,000.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 13
     },
     {
@@ -2630,6 +2640,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "100,000",
       "workplan_notes": "21552 cumulative veterans and service members offered some form of CPL as of 4/7/2026 per the CPL Dashboard. Short of the ambitious Veteran Sprint Goal of 30,000 but on track to achieve the target by June 30, 2026.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 14
     },
     {
@@ -2664,6 +2675,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "40,000",
       "workplan_notes": "700 cumulative apprentices and journey workers offered some form of CPL as of 4/7/2026 per the CPL Dashboard. Exceeds the 2025-26 annual target of 500.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 15
     },
     {
@@ -2698,6 +2710,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "1,500,000",
       "workplan_notes": "96,449 transcripted CPL units recorded. Exceeds the 2025-26 annual target of 85,000. Includes military (12,000), non-military (82,000), and apprentice (6,000) units.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 16
     },
     {
@@ -2732,6 +2745,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "140",
       "workplan_notes": "84 colleges meet the active threshold (10+ students and 5+ articulations). 114 of 115 credit colleges and 4 noncredit campuses received $50,000 CPL implementation funding. 53 at implementation stage, 13 showing growth.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 17
     },
     {
@@ -2766,6 +2780,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "0.9",
       "workplan_notes": "Survey tool is not yet deployed. Data collection infrastructure is still under development. The CPL Student Portal launching April 2026 will include the embedded student impact survey for first-ever systematic collection.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 18
     },
     {
@@ -2800,6 +2815,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "250",
       "workplan_notes": "32 student stories published on the My CPL Story section of the MAP website. AI-assisted student story capture tool is in development for June 2026 production release.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 19
     },
     {
@@ -2834,6 +2850,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "24",
       "workplan_notes": "3 institutions recognized as MAP College of the Year: 2023 Moreno Valley College, 2024 San Bernardino Valley College, 2025 Miramar College. CPL Dashboard provides public tracking and recognition data.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 20
     },
     {
@@ -2868,6 +2885,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "30",
       "workplan_notes": "Veteran Sprint: 20,991 JSTs uploaded (62% of ~34,000 target). 75 colleges awarding basic training credit (up from ~15% baseline). 679 unique ACE credit recommendations covered. $163M estimated savings.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 21
     },
     {
@@ -2902,6 +2920,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "10",
       "workplan_notes": "Veteran Sprint: 20,991 JSTs uploaded (62% of ~34,000 target). 75 colleges awarding basic training credit (up from ~15% baseline). 679 unique ACE credit recommendations covered. $163M estimated savings.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 22
     },
     {
@@ -2936,6 +2955,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "10",
       "workplan_notes": "Apprenticeship Sprint: 678 apprentice students documented with 6,000 CPL units. DAS partnership active. Cal-JAC early partner for 14,000 first responder trainees. ~1,000 LAUNCH Network records expected Spring 2026.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 23
     },
     {
@@ -2970,6 +2990,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Statewide Adoption Sprint: 114 of 115 credit colleges plus 4 noncredit campuses received $50K CPL implementation grants. 84 meet active participation threshold. 96 showing some engagement level.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 24
     },
     {
@@ -3004,6 +3025,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "29 Palms Demo: New demonstration project launched. Developing CPL pathways for 42 Military Occupational Specialties (MOS) trained at MCAGCC. Coordinated outreach with Cal VET and military education center underway.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 25
     },
     {
@@ -3038,6 +3060,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "8",
       "workplan_notes": "20+ partners actively working with the CPL Initiative including DAS, CDE, ASCCC, Credential Engine, WestEd, Cal-JAC, CCCF, Futuro Health, Public Works Alliance EMS Corps, and Iron Workers union.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 26
     },
     {
@@ -3072,6 +3095,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "120",
       "workplan_notes": "25 trainings delivered including the 6th Annual CPL Summit and 4 CPL Regional Training Workshops. Over 1,000 staff, faculty, and administrators trained. Individual technical assistance and office hours ongoing.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 27
     },
     {
@@ -3106,6 +3130,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "20",
       "workplan_notes": "AB 123 chaptered establishing first-ever ongoing CPL state funding ($5M ongoing + $15M one-time). Title 5 regulatory updates advanced to reduce residency and access barriers. Draft trailer bill for additional $2M ongoing + $35M one-time under review.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 28
     },
     {
@@ -3140,6 +3165,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "12",
       "workplan_notes": "$50,000 distributed to 114 of 115 credit colleges and 4 noncredit campuses for CPL implementation. $6M one-time fully allocated. 2026 advocacy active for $2M ongoing + $35M one-time appropriation.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 29
     },
     {
@@ -3174,6 +3200,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "AI-Ready California: Proposed $7M two-year demonstration. 4 demo districts identified (RCCD, SDCCD, LACCD, SBCCD). BAS-ASIO curriculum in design. Contingent on funding approval.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 30
     },
     {
@@ -3208,6 +3235,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "AI cert-to-course matching Phase 1 complete covering 117 industry certifications in priority sectors. Phase 2 beta expanding certification pool. Production release planned June 2026.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 31
     },
     {
@@ -3242,6 +3270,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "AI apprenticeship CPL tools Phase 1 in progress with construction and electrician trades at Santiago Canyon College and Norco College. Proof-of-concept pilot funded ($54,764). Phase 2 will scale statewide.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 32
     },
     {
@@ -3276,6 +3305,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Systemwide CPL implementation survey completed 2025. Results informing implementation strategy and targeted assistance.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 33
     },
     {
@@ -3310,6 +3340,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "VRC CPL Module revision: Review and gap analysis complete. Content development phase underway. Final packaging targeted May-June 2026.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 34
     },
     {
@@ -3344,6 +3375,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "WestEd CPL Scope of Work: 6 workstreams active (Credential ID, Course Alignment, NFN Use Case, Student Experience, System Design, Strategic Planning). Skills taxonomy/CTDL work progressing.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 35
     },
     {
@@ -3378,6 +3410,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "MIS and MAP reconciliation procedures and tools to support data integrity and interoperability, scheduled for release at end of 2026. MIS Data Element Dictionary SY domain was revised this academic year.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 36
     },
     {
@@ -3412,6 +3445,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Governor's 2026 budget includes proposed $2M ongoing + $35M one-time. Legislative session runs through September 2026. Monitoring and providing evidence to support advancement.",
       "kpi_order": null,
+      "override": null,
       "excel_row": 37
     },
     {
@@ -3446,6 +3480,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard (cpldashboardcccco.azurewebsites.net)",
       "kpi_order": null,
+      "override": null,
       "excel_row": 38
     },
     {
@@ -3480,6 +3515,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 39
     },
     {
@@ -3514,6 +3550,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 40
     },
     {
@@ -3548,6 +3585,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 41
     },
     {
@@ -3582,6 +3620,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 42
     },
     {
@@ -3616,6 +3655,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 43
     },
     {
@@ -3650,6 +3690,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 44
     },
     {
@@ -3684,6 +3725,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 45
     },
     {
@@ -3718,6 +3760,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 46
     },
     {
@@ -3752,6 +3795,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 47
     },
     {
@@ -3786,6 +3830,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 48
     },
     {
@@ -3820,6 +3865,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 49
     },
     {
@@ -3854,6 +3900,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 50
     },
     {
@@ -3888,6 +3935,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 51
     },
     {
@@ -3922,6 +3970,7 @@ window.CPL_DATA = {
       "kpi_stretch_2930": "",
       "workplan_notes": "Auto-scraped from MAP CPL Dashboard",
       "kpi_order": null,
+      "override": null,
       "excel_row": 52
     }
   ],

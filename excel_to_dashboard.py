@@ -108,6 +108,8 @@ COL_KPI_G2930   = 28   # AB — KPI Goal 29-30 (Vision 2030)
 COL_KPI_S2930   = 29   # AC — KPI Stretch 29-30
 COL_WP_NOTES    = 30   # AD
 COL_KPI_ORDER   = 31   # AE — display order for headline KPI cards (lower = first)
+COL_SOURCE_LOGIC = 32  # AF — Source & Logic documentation (read-only reference)
+COL_OVERRIDE     = 33  # AG — Algorithm Override (user-editable values)
 
 
 def scan_attachments(attachments_dir):
@@ -519,6 +521,7 @@ def read_projects(wb):
         kpi_s2930  = cell_val(ws, r, COL_KPI_S2930, "")
         wp_notes   = cell_val(ws, r, COL_WP_NOTES, "")
         kpi_order  = cell_val(ws, r, COL_KPI_ORDER, None)
+        override   = cell_val(ws, r, COL_OVERRIDE, None)
 
         # ── raw text fields (before substitution) ──
         desc_raw       = str(cell_val(ws, r, COL_DESC, ""))
@@ -562,10 +565,68 @@ def read_projects(wb):
             "kpi_stretch_2930": fmt_number(kpi_s2930) if isinstance(kpi_s2930, (int, float)) else str(kpi_s2930) if kpi_s2930 else "",
             "workplan_notes": substitute_kpi(str(wp_notes), kpi_metric),
             "kpi_order": int(kpi_order) if isinstance(kpi_order, (int, float)) and kpi_order else None,
+            "override": override,
             "excel_row": r,
         })
 
     return projects
+
+
+def read_config_overrides(wb):
+    """
+    Read dashboard configuration overrides from the Project List tab.
+    Scans rows BELOW the last project (after the first empty ID cell)
+    looking for config key-value pairs in Col A (key) and Col AG (value).
+
+    Returns a dict of config_key → value.
+
+    Supported config keys (case-insensitive):
+      BASE_MIL, BASE_WF, BASE_APP         — workplan chart 2024 baselines
+      ACTUAL_2025_MIL, ACTUAL_2025_WF,     — workplan chart 2025 actuals
+      ACTUAL_2025_APP, ACTUAL_2025_TOTAL
+      V2030_G1_PROGRESS, V2030_G2_PROGRESS, V2030_G3_PROGRESS  — Vision 2030 %
+      V2030_G2_CURRENT, V2030_G3_CURRENT   — Vision 2030 status text
+      SAVINGS_DEFAULT                       — estimated savings fallback
+    """
+    ws = wb["Project List"]
+    overrides = {}
+
+    # Skip past project rows (they end at first empty Col A after row 3)
+    config_start = None
+    for r in range(4, ws.max_row + 1):
+        pid = cell_val(ws, r, COL_ID, None)
+        if not pid:
+            config_start = r
+            break
+
+    if config_start is None:
+        return overrides
+
+    # Scan remaining rows for config entries (skip section headers)
+    _skip = {"DASHBOARD CONFIGURATION OVERRIDES", "VALUE"}
+    for r in range(config_start, min(config_start + 50, ws.max_row + 1)):
+        key = cell_val(ws, r, COL_ID, None)
+        val = cell_val(ws, r, COL_OVERRIDE, None)
+        if key and val is not None:
+            k = str(key).strip().upper()
+            if k not in _skip and not k.startswith("──"):
+                overrides[k] = val
+
+    if overrides:
+        print(f"  Config overrides from Col AG: {list(overrides.keys())}")
+
+    return overrides
+
+
+def _override_int(proj_map, pid):
+    """Return the Col AG override for a project as an int, or None if not set."""
+    p = proj_map.get(pid)
+    if p and p.get("override") is not None:
+        try:
+            return int(float(p["override"]))
+        except (ValueError, TypeError):
+            pass
+    return None
 
 
 def read_annual_goals(wb):
@@ -646,28 +707,29 @@ def populate_current_metrics(annual_goals, projects):
     dpop = {p["id"]: p for p in projects if p["id"].startswith("D.")}
 
     # Mapping: annual goal ID → how to compute current metric
-    # Most map to the Project List KPI metric for the matching or related project ID
+    # Most map to the Project List KPI metric for the matching or related project ID.
+    # Col AG overrides take priority when present (checked via _override_int).
     metric_map = {
-        "1.1": lambda: 1,  # MAP platform operational = 1
-        "1.2": lambda: _pcount(proj_map, "1.2"),
-        "1.3": lambda: 1 if _ppct(proj_map, "1.3") >= 50 else 0,
-        "1.4": lambda: _pmetric_int(proj_map, "1.4"),
-        "2.1": lambda: _pmetric_int(proj_map, "2.1"),
-        "2.2": lambda: _pmetric_int(proj_map, "2.2"),  # pathway templates ~ workgroups for now
-        "2.3": lambda: _pmetric_int(proj_map, "2.3"),
-        "2.4": lambda: 1 if _ppct(proj_map, "5.1") > 0 else 0,  # AI-Ready = project 5.1
-        "3.1": lambda: _pmetric_int(proj_map, "3.1"),
-        "3.1.1": lambda: _pmetric_int(dpop, "D.1"),
-        "3.1.2": lambda: _pmetric_int(dpop, "D.2"),
-        "3.1.2b": lambda: _pmetric_int(dpop, "D.3"),
-        "3.2": lambda: _pmetric_int(proj_map, "3.2"),
-        "3.3": lambda: _pmetric_int(proj_map, "3.3"),
-        "3.4": lambda: _pmetric_int(proj_map, "3.5"),  # stories
-        "4.1": lambda: 2,  # Title 5 regulatory updates in progress
-        "4.2": lambda: 5,  # $5M ongoing secured
-        "4.3": lambda: _pmetric_int(proj_map, "4.3"),  # trainings
-        "4.4": lambda: _pmetric_int(proj_map, "4.3"),  # TA & college support ~ trainings delivered
-        "4.5": lambda: _pmetric_int(proj_map, "5.4"),  # research = RP Group survey
+        "1.1": lambda: _override_int(proj_map, "1.1") if _override_int(proj_map, "1.1") is not None else 1,  # MAP platform operational (default 1)
+        "1.2": lambda: _override_int(proj_map, "1.2") if _override_int(proj_map, "1.2") is not None else _pcount(proj_map, "1.2"),
+        "1.3": lambda: _override_int(proj_map, "1.3") if _override_int(proj_map, "1.3") is not None else (1 if _ppct(proj_map, "1.3") >= 50 else 0),
+        "1.4": lambda: _override_int(proj_map, "1.4") if _override_int(proj_map, "1.4") is not None else _pmetric_int(proj_map, "1.4"),
+        "2.1": lambda: _override_int(proj_map, "2.1") if _override_int(proj_map, "2.1") is not None else _pmetric_int(proj_map, "2.1"),
+        "2.2": lambda: _override_int(proj_map, "2.2") if _override_int(proj_map, "2.2") is not None else _pmetric_int(proj_map, "2.2"),
+        "2.3": lambda: _override_int(proj_map, "2.3") if _override_int(proj_map, "2.3") is not None else _pmetric_int(proj_map, "2.3"),
+        "2.4": lambda: _override_int(proj_map, "2.4") if _override_int(proj_map, "2.4") is not None else (1 if _ppct(proj_map, "5.1") > 0 else 0),  # AI-Ready = project 5.1
+        "3.1": lambda: _override_int(proj_map, "3.1") if _override_int(proj_map, "3.1") is not None else _pmetric_int(proj_map, "3.1"),
+        "3.1.1": lambda: _override_int(dpop, "D.1") if _override_int(dpop, "D.1") is not None else _pmetric_int(dpop, "D.1"),
+        "3.1.2": lambda: _override_int(dpop, "D.2") if _override_int(dpop, "D.2") is not None else _pmetric_int(dpop, "D.2"),
+        "3.1.2b": lambda: _override_int(dpop, "D.3") if _override_int(dpop, "D.3") is not None else _pmetric_int(dpop, "D.3"),
+        "3.2": lambda: _override_int(proj_map, "3.2") if _override_int(proj_map, "3.2") is not None else _pmetric_int(proj_map, "3.2"),
+        "3.3": lambda: _override_int(proj_map, "3.3") if _override_int(proj_map, "3.3") is not None else _pmetric_int(proj_map, "3.3"),
+        "3.4": lambda: _override_int(proj_map, "3.5") if _override_int(proj_map, "3.5") is not None else _pmetric_int(proj_map, "3.5"),  # stories
+        "4.1": lambda: _override_int(proj_map, "4.1") if _override_int(proj_map, "4.1") is not None else 2,  # Title 5 updates (default 2)
+        "4.2": lambda: _override_int(proj_map, "4.2") if _override_int(proj_map, "4.2") is not None else 5,  # $5M ongoing (default 5)
+        "4.3": lambda: _override_int(proj_map, "4.3") if _override_int(proj_map, "4.3") is not None else _pmetric_int(proj_map, "4.3"),
+        "4.4": lambda: _override_int(proj_map, "4.4") if _override_int(proj_map, "4.4") is not None else _pmetric_int(proj_map, "4.3"),  # TA ~ trainings
+        "4.5": lambda: _override_int(proj_map, "4.5") if _override_int(proj_map, "4.5") is not None else _pmetric_int(proj_map, "5.4"),  # research ~ RP Group
     }
 
     for row in annual_goals:
@@ -1630,7 +1692,7 @@ def render_projects_grid_html(projects, update_log=None, attachments=None):
     return html
 
 
-def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=None):
+def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=None, config_overrides=None):
     """
     Render two side-by-side canvas-based trend charts:
       Left:  Goal trajectory (250K target)
@@ -1652,7 +1714,11 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
     app_now = parse_int(sub_pops.get("apprentice", 681))
     total_now = parse_int(current_students, mil_now + wf_now + app_now)
 
-    BASE_MIL, BASE_WF, BASE_APP = 8248, 9181, 196
+    # 2024 baselines — read from Col AG config overrides, fallback to original values
+    cfg = config_overrides or {}
+    BASE_MIL = int(cfg.get("BASE_MIL", 8248))
+    BASE_WF  = int(cfg.get("BASE_WF", 9181))
+    BASE_APP = int(cfg.get("BASE_APP", 196))
 
     # ── Look up workplan goal entries by name ──
     mil_wg, wf_wg, app_wg = {}, {}, {}
@@ -1706,11 +1772,15 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
     wf_str_traj = build_trajectory(BASE_WF, wf_str, wf_st)
     app_str_traj = build_trajectory(BASE_APP, app_str, app_st)
 
-    # Actuals up to current year
-    mil_actual = [[2024, BASE_MIL], [2025, 18500], [2026, mil_now]]
-    wf_actual = [[2024, BASE_WF], [2025, 19200], [2026, wf_now]]
-    app_actual = [[2024, BASE_APP], [2025, 300], [2026, app_now]]
-    total_actual = [[2024, BASE_MIL + BASE_WF + BASE_APP], [2025, 38000], [2026, total_now]]
+    # Actuals up to current year — read 2025 values from config overrides if available
+    act_2025_mil   = int(cfg.get("ACTUAL_2025_MIL", 18500))
+    act_2025_wf    = int(cfg.get("ACTUAL_2025_WF", 19200))
+    act_2025_app   = int(cfg.get("ACTUAL_2025_APP", 300))
+    act_2025_total = int(cfg.get("ACTUAL_2025_TOTAL", act_2025_mil + act_2025_wf + act_2025_app))
+    mil_actual = [[2024, BASE_MIL], [2025, act_2025_mil], [2026, mil_now]]
+    wf_actual = [[2024, BASE_WF], [2025, act_2025_wf], [2026, wf_now]]
+    app_actual = [[2024, BASE_APP], [2025, act_2025_app], [2026, app_now]]
+    total_actual = [[2024, BASE_MIL + BASE_WF + BASE_APP], [2025, act_2025_total], [2026, total_now]]
 
     def val_at(series, yr):
         for y, v in series:
@@ -1971,15 +2041,20 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
     return html
 
 
-def compute_headline_kpis(projects, budget):
+def compute_headline_kpis(projects, budget, config_overrides=None):
     """
     Compute the 6 headline KPIs from sub-activity data.
     Falls back to hardcoded values if sub-activity data is missing.
+    Col AG overrides take priority when present.
     """
     proj_map = {p["id"]: p for p in projects}
+    cfg = config_overrides or {}
 
     def get_metric(pid, fallback=""):
+        # Check Col AG override first, then KPI metric, then fallback
         p = proj_map.get(pid)
+        if p and p.get("override") is not None:
+            return str(p["override"])
         return p["kpi_metric"] if p and p["kpi_metric"] else fallback
 
     students   = get_metric("3.1", "42,620")
@@ -1987,9 +2062,8 @@ def compute_headline_kpis(projects, budget):
     recs       = get_metric("2.1", "576")
     colleges   = get_metric("3.3", "84")
 
-    # Estimated savings — derived from eligible units (189,000 * ~$1,424 avg)
-    # Use a static value unless we have a dedicated field
-    savings = "$269M"
+    # Estimated savings — read from config override or use static fallback
+    savings = str(cfg.get("SAVINGS_DEFAULT", "$269M"))
 
     return {
         "cumulative_students": {
@@ -4649,9 +4723,10 @@ def main():
     att_dir = ATTACHMENTS_DIR if os.path.isdir(ATTACHMENTS_DIR) else _LOCAL_ATTACHMENTS
     # Will scan after projects are read (need project list for subfolder creation)
     projects        = read_projects(wb)
+    config_overrides = read_config_overrides(wb)
     update_log      = read_update_log(wb)
     budget          = read_budget_plan(wb)
-    kpis            = compute_headline_kpis(projects, budget)
+    kpis            = compute_headline_kpis(projects, budget, config_overrides)
     activity_kpis   = build_activity_kpis(projects)
 
     # Build workplan goals & annual goals from the Project List tab
@@ -4729,6 +4804,22 @@ def main():
         military_students=college_military_students,
     )
 
+    # ── Vision 2030 progress — derive from live data + config overrides ──
+    # Goal 1: compute from cumulative students / 250,000 target
+    try:
+        _students_raw = str(kpis['cumulative_students']['value']).replace(",", "")
+        _v2030_g1_progress = min(100, round(int(_students_raw) / 250000 * 100))
+    except (ValueError, TypeError, KeyError):
+        _v2030_g1_progress = 17  # safe fallback
+    # Goals 2 & 3: read from config overrides (no live data source)
+    _v2030_g2_progress = int(config_overrides.get("V2030_G2_PROGRESS", 55))
+    _v2030_g3_progress = int(config_overrides.get("V2030_G3_PROGRESS", 60))
+    # Status text: read from config overrides or use defaults
+    _v2030_g2_current = str(config_overrides.get("V2030_G2_CURRENT",
+        "MAP at 116 colleges; Dashboard live; Portal launching"))
+    _v2030_g3_current = str(config_overrides.get("V2030_G3_CURRENT",
+        "AB 123 chaptered; $20M allocated; 1,000+ trained"))
+
     data = {
         "last_updated": now,
         "data_as_of":   now,
@@ -4746,22 +4837,22 @@ def main():
                     "id": "Goal 1",
                     "name": "Expand Equitable Access & Boost Student Success",
                     "target": "250,000 Californians by 2030",
-                    "progress": 17,
+                    "progress": _v2030_g1_progress,
                     "current": f"{kpis['cumulative_students']['value']} cumulative students",
                 },
                 {
                     "id": "Goal 2",
                     "name": "Build Unified, Interoperable, Student-Centered System",
                     "target": "CPL embedded in outreach, onboarding, advising",
-                    "progress": 55,
-                    "current": "MAP at 116 colleges; Dashboard live; Portal launching",
+                    "progress": _v2030_g2_progress,
+                    "current": _v2030_g2_current,
                 },
                 {
                     "id": "Goal 3",
                     "name": "Sustainable Policies, Resources & Professional Learning",
                     "target": "Faculty-driven policies; ongoing PD; scalable tools",
-                    "progress": 60,
-                    "current": "AB 123 chaptered; $20M allocated; 1,000+ trained",
+                    "progress": _v2030_g3_progress,
+                    "current": _v2030_g3_current,
                 },
             ],
         },
@@ -5057,7 +5148,7 @@ def main():
                         sub_pops["workforce"] = bd.get("value", "")
                     elif "apprentice" in lbl:
                         sub_pops["apprentice"] = bd.get("value", "")
-                charts_html = render_workplan_charts_html(current_students, sub_pops, workplan_goals)
+                charts_html = render_workplan_charts_html(current_students, sub_pops, workplan_goals, config_overrides)
 
                 new_proj_section = (
                     '<!-- Projects Grid -->\n'
@@ -5107,51 +5198,6 @@ def main():
                 r'\1Last Updated: ' + data["last_updated"] + r'\2',
                 html
             )
-
-            # ── Preserve or inject the Refresh Data button ──
-            # If markers already exist, leave the section untouched.
-            # If they're missing (e.g. starting from a bare template), inject them.
-            REFRESH_START = '<!-- REFRESH-BTN-START -->'
-            REFRESH_END   = '<!-- REFRESH-BTN-END -->'
-            if REFRESH_START not in html:
-                REFRESH_BTN_HTML = '''
-        <!-- REFRESH-BTN-START -->
-        <div style="margin-top:0.65rem;display:flex;flex-direction:column;align-items:center;gap:0.35rem;">
-          <div id="gh-run-status" style="font-size:0.72rem;color:rgba(255,255,255,0.5);min-height:1em;">Checking workflow status\u2026</div>
-          <button id="refresh-data-btn"
-            style="background:rgba(201,168,76,0.12);color:#C9A84C;border:1px solid rgba(201,168,76,0.35);
-                   padding:0.3rem 1.1rem;border-radius:4px;font-size:0.8rem;font-weight:600;
-                   cursor:pointer;transition:all 0.2s;letter-spacing:0.02em;"
-            onmouseover="if(!this.disabled)this.style.background='rgba(201,168,76,0.25)'"
-            onmouseout="if(!this.disabled)this.style.background='rgba(201,168,76,0.12)'"
-            onclick="triggerDashboardRefresh()">
-            \u21bb Refresh Live Data
-          </button>
-        </div>
-        <script>
-        (function() {
-          var WORKER_URL  = 'https://cpl-proxy.slee-548.workers.dev';
-          var SECRET      = 'CPL_SCRAPE_2026';
-          var GH_RUNS_API = 'https://api.github.com/repos/cpl-initiative/cpl-project-tracker/actions/runs?workflow_id=daily-dashboard.yml&per_page=1';
-          function setStatus(msg){var el=document.getElementById('gh-run-status');if(el)el.textContent=msg;}
-          function setBtn(label,disabled){var btn=document.getElementById('refresh-data-btn');if(!btn)return;btn.textContent=label;btn.disabled=disabled;btn.style.opacity=disabled?'0.6':'1';btn.style.cursor=disabled?'not-allowed':'pointer';}
-          function formatRun(run){if(!run)return '\u26aa No recent runs found';var d=new Date(run.updated_at);var ts=d.toLocaleDateString('en-US',{month:'short',day:'numeric'})+' at '+d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true});if(run.status==='in_progress'||run.status==='queued')return '\ud83d\udfe1 Running now \u2014 started '+ts;if(run.conclusion==='success')return '\u2705 Last run: Success ('+ts+')';if(run.conclusion==='failure')return '\u274c Last run: Failed ('+ts+')';if(run.conclusion==='cancelled')return '\u2b55 Last run: Cancelled ('+ts+')';return '\u26aa Last run: '+(run.conclusion||run.status)+' ('+ts+')';}
-          var _polling=false;
-          function fetchStatus(){fetch(GH_RUNS_API,{headers:{'Accept':'application/vnd.github+json'}}).then(function(r){return r.json();}).then(function(d){var run=d.workflow_runs&&d.workflow_runs[0];setStatus(formatRun(run));if(run&&(run.status==='in_progress'||run.status==='queued')){if(!_polling){_polling=true;setTimeout(function(){_polling=false;fetchStatus();},12000);}}else{_polling=false;}}).catch(function(){setStatus('\u26aa Could not fetch workflow status');});}
-          window.triggerDashboardRefresh=function(){var ok=window.confirm('\u26a0\ufe0f  Refresh Live Data\\n\\nThis will rewrite today\\'s dashboard data. The workflow takes 2\u20135 minutes to complete.\\n\\nAfter clicking OK:\\n  \u2022 Wait a few minutes for the run to finish\\n  \u2022 Then press Ctrl+Shift+R (Cmd+Shift+R on Mac) to hard-refresh this page\\n\\nContinue?');if(!ok)return;setBtn('\u23f3 Triggering\u2026',true);setStatus('\ud83d\udfe1 Sending trigger request\u2026');fetch(WORKER_URL+'/trigger?secret='+SECRET).then(function(r){return r.json().then(function(d){return{ok:r.ok,data:d};});}).then(function(res){if(res.ok&&res.data.triggered){setStatus('\ud83d\udfe1 Workflow triggered! Checking status\u2026');setTimeout(function(){setBtn('\u21bb Refresh Live Data',false);fetchStatus();},6000);}else{setStatus('\u274c Trigger failed: '+(res.data.error||'Unknown error'));setBtn('\u21bb Refresh Live Data',false);}}).catch(function(){setStatus('\u274c Could not reach refresh server');setBtn('\u21bb Refresh Live Data',false);});};
-          fetchStatus();
-        })();
-        </script>
-        <!-- REFRESH-BTN-END -->'''
-                # Insert after the last-updated div
-                lu_match = re.search(r'<div class="last-updated">.*?</div>', html)
-                if lu_match:
-                    insert_pos = lu_match.end()
-                    html = html[:insert_pos] + REFRESH_BTN_HTML + html[insert_pos:]
-                    print("  Injected Refresh Data button")
-                else:
-                    print("  WARNING: Could not find last-updated div to inject Refresh button")
-            # else: markers already present — leave untouched
 
             # ── Update footer date ──
             html = re.sub(
