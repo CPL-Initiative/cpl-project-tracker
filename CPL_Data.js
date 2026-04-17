@@ -16,21 +16,21 @@ window.CPL_DATA = {
   "data_as_of": "April 16, 2026",
   "kpis": {
     "cumulative_students": {
-      "value": "44,381",
+      "value": "44,641",
       "label": "Cumulative CPL Students",
       "sub": "Target: 250,000 by 2030",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "22,859"
+          "value": "23,059"
         },
         {
           "label": "Workforce/Other",
-          "value": "21,593"
+          "value": "21,653"
         },
         {
           "label": "Apprentice",
-          "value": "704"
+          "value": "705"
         }
       ],
       "live": true
@@ -61,13 +61,13 @@ window.CPL_DATA = {
       "live": true
     },
     "credit_recommendations": {
-      "value": "7,344",
+      "value": "7,343",
       "label": "Credit Recommendations",
       "sub": "Source: MAP Custom Reporting Module",
       "breakdowns": [
         {
           "label": "CCC Collaborative",
-          "value": "958",
+          "value": "957",
           "note": "statewide faculty workgroups"
         },
         {
@@ -79,7 +79,7 @@ window.CPL_DATA = {
       "live": true,
       "footnote": [
         "Standardized Assessment: 2,986",
-        "Industry Certification: 2,558",
+        "Industry Certification: 2,557",
         "Credit By Exam: 1,307",
         "Portfolio Review: 343",
         "Military: 109"
@@ -108,25 +108,25 @@ window.CPL_DATA = {
       ],
       "live": true,
       "footnote": [
-        "1. Student Volume >= 500",
-        "2. Eligible Units >= 3,000",
-        "3. Avg Eligible Units/Student >= 5",
-        "4. Transcription Rate >= 25%",
-        "5. Avg Transcribed Units/Student >= 3"
+        "1. Student Volume ≥ 500",
+        "2. Eligible Units ≥ 3,000",
+        "3. Avg Eligible Units/Student ≥ 5",
+        "4. Transcription Rate ≥ 25%",
+        "5. Avg Transcribed Units/Student ≥ 3"
       ]
     },
     "estimated_savings": {
-      "value": "$281M",
+      "value": "$283M",
       "label": "Estimated Savings",
       "sub": "Eligible units, Beacon Economics",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$144M"
+          "value": "$146M"
         },
         {
           "label": "Workforce/Other",
-          "value": "$144M"
+          "value": "$145M"
         },
         {
           "label": "Apprentice",
@@ -142,7 +142,7 @@ window.CPL_DATA = {
       "breakdowns": [
         {
           "label": "JST Credits",
-          "value": "22,859 / 30,000"
+          "value": "23,059 / 30,000"
         },
         {
           "label": "Basic Training Credit",
@@ -150,19 +150,19 @@ window.CPL_DATA = {
         },
         {
           "label": "Eligible CPL",
-          "value": "102k Units"
+          "value": "103k Units"
         }
       ],
       "live": true
     },
     "eligible_units": {
-      "value": "199k",
+      "value": "200k",
       "label": "ELIGIBLE UNITS",
       "sub": "Source: MAP CPL Dashboard",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "102k"
+          "value": "103k"
         },
         {
           "label": "Workforce/Other",
@@ -176,13 +176,13 @@ window.CPL_DATA = {
       "live": true
     },
     "twenty_year_impact": {
-      "value": "$1.13B",
+      "value": "$1.14B",
       "label": "20-YEAR IMPACT",
       "sub": "Source: MAP CPL Dashboard",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$582M"
+          "value": "$586M"
         },
         {
           "label": "Workforce/Other",
@@ -195,7 +195,7 @@ window.CPL_DATA = {
       ],
       "live": true
     },
-    "_live_updated": "2026-04-15T14:24:59.477Z",
+    "_live_updated": "2026-04-16T22:18:00.120Z",
     "map_exhibits": {
       "value": "3,074",
       "label": "MAP Exhibits",
@@ -215,7 +215,7 @@ window.CPL_DATA = {
       "live": true
     },
     "ccc_collaborative": {
-      "value": "56",
+      "value": "55",
       "label": "CCC Collaborative Adoption",
       "sub": "Colleges adopting statewide exhibits",
       "breakdowns": [
@@ -225,7 +225,7 @@ window.CPL_DATA = {
         },
         {
           "label": "Collaborative Credit Recs",
-          "value": "958"
+          "value": "957"
         }
       ],
       "live": true
@@ -242,13 +242,13 @@ window.CPL_DATA = {
         },
         {
           "label": "Adopting CCC Collaborative",
-          "value": "56",
+          "value": "55",
           "note": "statewide exhibits"
         }
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-04-16T20:09:10",
+    "_exhibit_updated": "2026-04-16T22:17:28",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
@@ -2239,7 +2239,7 @@ window.CPL_DATA = {
         "name": "Expand Equitable Access & Boost Student Success",
         "target": "250,000 Californians by 2030",
         "progress": 17,
-        "current": "44,381 cumulative students"
+        "current": "44,641 cumulative students"
       },
       {
         "id": "Goal 2",
