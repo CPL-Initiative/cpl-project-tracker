@@ -5207,7 +5207,7 @@ def main():
                 'regenerate all charts and KPIs, and overwrite today\\\'s deployed dashboard.\\n\\n'
                 'The process typically takes 3-5 minutes.\\n\\n'
                 'Continue?\'))'
-                '{window.open(\'https://claude.ai/code/routines\',\'_blank\')}" style="'
+                '{window.open(\'https://github.com/cpl-initiative/cpl-project-tracker/actions/workflows/daily-dashboard.yml\',\'_blank\')}" style="'
                 'background:transparent;color:#C9A84C;border:1px solid #C9A84C;'
                 'padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;'
                 'font-size:0.8rem;font-family:\'Source Sans 3\',Arial,sans-serif;'
