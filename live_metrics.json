@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-16T22:18:00.120Z",
+  "scraped_at": "2026-04-17T13:17:19.731Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -73,28 +73,28 @@
         {
           "college": "San Diego City College",
           "students": 6415,
-          "units": 13749,
-          "avgUnits": 2.1432579890880747,
+          "units": 13753,
+          "avgUnits": 2.1438815276695244,
           "transcriptionRate": 64.3,
           "avgTranscribed": 1.3786438035853468,
           "criteriaMetCount": 3
         },
         {
           "college": "San Diego Mesa College",
-          "students": 5562,
-          "units": 14501.5,
-          "avgUnits": 2.607245595109673,
-          "transcriptionRate": 63.8,
-          "avgTranscribed": 1.6629809421071557,
+          "students": 5565,
+          "units": 14521.5,
+          "avgUnits": 2.609433962264151,
+          "transcriptionRate": 63.7,
+          "avgTranscribed": 1.662084456424079,
           "criteriaMetCount": 3
         },
         {
           "college": "San Diego Miramar College",
-          "students": 3259,
-          "units": 10811.7,
-          "avgUnits": 3.3174900276158334,
+          "students": 3260,
+          "units": 10819.7,
+          "avgUnits": 3.318926380368098,
           "transcriptionRate": 49.9,
-          "avgTranscribed": 1.655937404111691,
+          "avgTranscribed": 1.655429447852761,
           "criteriaMetCount": 3
         },
         {
@@ -109,19 +109,19 @@
         {
           "college": "Bakersfield College",
           "students": 550,
-          "units": 7749.5,
-          "avgUnits": 14.09,
-          "transcriptionRate": 6.5,
+          "units": 7773.5,
+          "avgUnits": 14.133636363636363,
+          "transcriptionRate": 6.4,
           "avgTranscribed": 0.9109090909090909,
           "criteriaMetCount": 3
         },
         {
           "college": "Modesto Junior College",
-          "students": 353,
-          "units": 2159.5,
-          "avgUnits": 6.11756373937677,
-          "transcriptionRate": 54.2,
-          "avgTranscribed": 3.318696883852691,
+          "students": 354,
+          "units": 2164.5,
+          "avgUnits": 6.114406779661017,
+          "transcriptionRate": 54.1,
+          "avgTranscribed": 3.309322033898305,
           "criteriaMetCount": 3
         },
         {
@@ -149,9 +149,9 @@
         },
         {
           "college": "De Anza College",
-          "students": 961,
-          "units": 4801.5,
-          "avgUnits": 4.996357960457856,
+          "students": 967,
+          "units": 4831.5,
+          "avgUnits": 4.996380558428128,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 2
@@ -303,8 +303,8 @@
         {
           "college": "Clovis Community College",
           "students": 162,
-          "units": 954,
-          "avgUnits": 5.888888888888889,
+          "units": 961,
+          "avgUnits": 5.932098765432099,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1
@@ -474,17 +474,17 @@
         {
           "college": "Santa Rosa Junior College",
           "students": 418,
-          "units": 1660,
-          "avgUnits": 3.971291866028708,
+          "units": 1668,
+          "avgUnits": 3.9904306220095696,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0
         },
         {
           "college": "Santa Ana College",
-          "students": 390,
+          "students": 391,
           "units": 1411.1,
-          "avgUnits": 3.618205128205128,
+          "avgUnits": 3.608951406649616,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0
@@ -510,8 +510,8 @@
         {
           "college": "Fresno City College",
           "students": 261,
-          "units": 632,
-          "avgUnits": 2.421455938697318,
+          "units": 660,
+          "avgUnits": 2.528735632183908,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0
@@ -907,15 +907,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "44,641",
+      "value": "44,653",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "23,059"
+          "value": "23,070"
         },
         {
           "label": "Workforce/Other",
-          "value": "21,653"
+          "value": "21,654"
         },
         {
           "label": "Apprentice",
@@ -1027,15 +1027,15 @@
     }
   ],
   "raw": {
-    "Students": 44641,
-    "Units": 199766.05000000002,
+    "Students": 44653,
+    "Units": 199900.05000000002,
     "TranscribedUnits": 97212.95,
-    "Savings": 282670484.75,
-    "YearImpact": 1137845297.1,
-    "MilitaryStudents": 23059,
-    "NonMilitaryStudents": 21653,
+    "Savings": 282883944.75,
+    "YearImpact": 1138626283.1,
+    "MilitaryStudents": 23070,
+    "NonMilitaryStudents": 21654,
     "AprenticeStudents": 705,
-    "AverageUnits": 4.474945677740195,
-    "TranscribedAverage": 2.1776606706839003
+    "AverageUnits": 4.476744003762345,
+    "TranscribedAverage": 2.17707544845811
   }
 }
