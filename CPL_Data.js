@@ -16,17 +16,17 @@ window.CPL_DATA = {
   "data_as_of": "April 17, 2026",
   "kpis": {
     "cumulative_students": {
-      "value": "44,624",
+      "value": "44,661",
       "label": "Cumulative CPL Students",
       "sub": "Target: 250,000 by 2030",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "23,043"
+          "value": "23,078"
         },
         {
           "label": "Workforce/Other",
-          "value": "21,652"
+          "value": "21,654"
         },
         {
           "label": "Apprentice",
@@ -54,34 +54,34 @@ window.CPL_DATA = {
         },
         {
           "label": "Applied Credits",
-          "value": "199,776",
+          "value": "199,900",
           "note": "posted to student records"
         }
       ],
       "live": true
     },
     "credit_recommendations": {
-      "value": "7,327",
+      "value": "7,344",
       "label": "Credit Recommendations",
       "sub": "Source: MAP Custom Reporting Module",
       "breakdowns": [
         {
           "label": "CCC Collaborative",
-          "value": "954",
+          "value": "956",
           "note": "statewide faculty workgroups"
         },
         {
           "label": "Local",
-          "value": "6,373",
+          "value": "6,388",
           "note": "individual college articulations"
         }
       ],
       "live": true,
       "footnote": [
         "Standardized Assessment: 2,986",
-        "Industry Certification: 2,547",
-        "Credit By Exam: 1,302",
-        "Portfolio Review: 342",
+        "Industry Certification: 2,557",
+        "Credit By Exam: 1,307",
+        "Portfolio Review: 344",
         "Military: 109"
       ]
     },
@@ -142,7 +142,7 @@ window.CPL_DATA = {
       "breakdowns": [
         {
           "label": "JST Credits",
-          "value": "23,043 / 30,000"
+          "value": "23,078 / 30,000"
         },
         {
           "label": "Basic Training Credit",
@@ -195,9 +195,9 @@ window.CPL_DATA = {
       ],
       "live": true
     },
-    "_live_updated": "2026-04-16T14:34:57.675Z",
+    "_live_updated": "2026-04-17T18:47:07.584Z",
     "map_exhibits": {
-      "value": "3,074",
+      "value": "3,076",
       "label": "MAP Exhibits",
       "sub": "62 originating colleges",
       "breakdowns": [
@@ -208,7 +208,7 @@ window.CPL_DATA = {
         },
         {
           "label": "Local",
-          "value": "2,958",
+          "value": "2,960",
           "note": "college-created exhibits"
         }
       ],
@@ -225,7 +225,7 @@ window.CPL_DATA = {
         },
         {
           "label": "Collaborative Credit Recs",
-          "value": "954"
+          "value": "956"
         }
       ],
       "live": true
@@ -248,8 +248,8 @@ window.CPL_DATA = {
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-04-16T14:10:07",
-    "_exhibit_source": "CustomReport_2026-04-16.json",
+    "_exhibit_updated": "2026-04-17T18:46:38",
+    "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
       "View_ArticulatedCollegeCourses_APIDataset",
@@ -2239,7 +2239,7 @@ window.CPL_DATA = {
         "name": "Expand Equitable Access & Boost Student Success",
         "target": "250,000 Californians by 2030",
         "progress": 18,
-        "current": "44,624 cumulative students"
+        "current": "44,661 cumulative students"
       },
       {
         "id": "Goal 2",
