@@ -195,7 +195,7 @@ window.CPL_DATA = {
       ],
       "live": true
     },
-    "_live_updated": "2026-04-19T14:38:19.823Z",
+    "_live_updated": "2026-04-19T19:15:11.687Z",
     "map_exhibits": {
       "value": "3,107",
       "label": "MAP Exhibits",
@@ -248,7 +248,7 @@ window.CPL_DATA = {
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-04-19T14:37:51",
+    "_exhibit_updated": "2026-04-19T19:14:40",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
