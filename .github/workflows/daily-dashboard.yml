@@ -5,6 +5,10 @@ on:
     - cron: '0 14 * * *'   # 6 AM PT (UTC-8) every day
   workflow_dispatch:         # allow manual trigger from GitHub UI
 
+concurrency:
+  group: daily-dashboard
+  cancel-in-progress: false
+
 jobs:
   update-dashboard:
     runs-on: ubuntu-latest
@@ -14,6 +18,9 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -62,6 +69,7 @@ jobs:
       # ── Step 5: Commit and push ───────────────────────────────────
       - name: Commit and push to main
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add index.html CPL_Dashboard.html CPL_Data.js \
@@ -70,10 +78,22 @@ jobs:
           git add CustomReport_latest.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "Daily dashboard update — $(date +%Y-%m-%d)"
-            git push origin main
+            exit 0
           fi
+          git commit -m "Daily dashboard update — $(date +%Y-%m-%d)"
+          # Retry push with rebase on non-fast-forward (handles concurrent pushes to main)
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded on attempt $attempt."
+              exit 0
+            fi
+            echo "Push attempt $attempt failed — rebasing onto origin/main and retrying."
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((attempt * 2))
+          done
+          echo "Push failed after 5 attempts."
+          exit 1
 
       - name: Summary
         run: |
