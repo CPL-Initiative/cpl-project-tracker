@@ -1,7 +1,7 @@
 ---
 name: cpl-dashboard-pipeline
 description: >
-  Technical knowledge and operational procedures for the CPL Initiative Dashboard pipeline — the automated system that scrapes live KPI data from the CCCCO MAP CPL Dashboard, processes it through a Python pipeline with Excel project data, and publishes to GitHub Pages. Use this skill whenever working on the dashboard scraper, Cloudflare Worker proxy, live_metrics.json, excel_to_dashboard.py pipeline, daily scheduled task, KPI card rendering, college tier classification, GitHub Pages deployment, or any debugging of the CPL Project Tracker data flow. Also trigger when the user mentions dashboard not updating, stale data, scrape errors, tier criteria, Active Colleges KPI, or the cpl-proxy worker. This skill is the single source of truth for how every piece of the pipeline connects.
+  Technical knowledge and operational procedures for the CPL Initiative Dashboard pipeline — the automated system that scrapes live KPI data from the CCCCO MAP CPL Dashboard, processes it through a Python pipeline with Excel project data, and publishes to GitHub Pages. Use this skill whenever working on the dashboard scraper, Cloudflare Worker proxy, live_metrics.json, excel_to_dashboard.py pipeline, daily scheduled task, KPI card rendering, college tier classification, GitHub Pages deployment, Refresh Data button, or any debugging of the CPL Project Tracker data flow. Also trigger when the user mentions dashboard not updating, stale data, scrape errors, tier criteria, Active Colleges KPI, cpl-proxy worker, or GitHub Actions workflow. This skill is the single source of truth for how every piece of the pipeline connects.
 ---
 
 # CPL Dashboard Pipeline — Technical Reference
