@@ -130,6 +130,388 @@ COL_SOURCE_LOGIC = 32  # AF — Source & Logic documentation (read-only referenc
 COL_OVERRIDE     = 33  # AG — Algorithm Override (user-editable values)
 
 
+# ── KPI Tunable Parameters & Algorithm Descriptions ─────────────────
+# Default values for parameters that control KPI computation. Overridden
+# by values in the "KPI_Config" sheet of the Excel workbook when present.
+#
+# Where each parameter is ACTUALLY applied varies:
+#   - SAVINGS_DEFAULT       → this file (fallback when live scrape unavailable)
+#   - TIER_*                → cloudflare-worker-proxy.js (tier classification)
+#   - BEACON_PER_UNIT       → CCCCO dashboard (reference only; not recomputed here)
+#   - TWENTY_YEAR_MULTIPLIER → CCCCO dashboard (reference only)
+KPI_PARAMETERS_DEFAULTS = {
+    "SAVINGS_DEFAULT":                       "$269M",
+    "TIER_MIN_STUDENTS":                     500,
+    "TIER_MIN_UNITS":                        3000,
+    "TIER_MIN_AVG_UNITS_PER_STUDENT":        5,
+    "TIER_MIN_TRANSCRIPTION_RATE":           0.25,
+    "TIER_MIN_AVG_TRANSCRIBED_PER_STUDENT":  3,
+    "BEACON_PER_UNIT_SAVINGS":               1420,
+    "TWENTY_YEAR_MULTIPLIER":                4.0,
+}
+
+KPI_PARAMETER_META = {
+    "SAVINGS_DEFAULT":                       ("this file (fallback only)",
+        "Fallback value for Estimated Savings when live scrape unavailable."),
+    "TIER_MIN_STUDENTS":                     ("cloudflare-worker-proxy.js L184",
+        "Min CPL students for one tier criterion (college-level)."),
+    "TIER_MIN_UNITS":                        ("cloudflare-worker-proxy.js L185",
+        "Min CPL eligible units for one tier criterion."),
+    "TIER_MIN_AVG_UNITS_PER_STUDENT":        ("cloudflare-worker-proxy.js L186",
+        "Min average eligible units per student for one tier criterion."),
+    "TIER_MIN_TRANSCRIPTION_RATE":           ("cloudflare-worker-proxy.js L187",
+        "Min TranscribedUnits/Units ratio for one tier criterion (0.25 = 25%)."),
+    "TIER_MIN_AVG_TRANSCRIBED_PER_STUDENT":  ("cloudflare-worker-proxy.js L188",
+        "Min average transcribed units per student for one tier criterion."),
+    "BEACON_PER_UNIT_SAVINGS":               ("CCCCO dashboard (reference)",
+        "Per-unit savings factor (Beacon Economics). CCCCO computes the savings; this value is documentation only."),
+    "TWENTY_YEAR_MULTIPLIER":                ("CCCCO dashboard (reference)",
+        "Multiplier applied by CCCCO to one-year impact for 20-year projection."),
+}
+
+
+def read_kpi_parameters(wb):
+    """Read tunable KPI parameters from the 'KPI_Config' sheet.
+    Falls back to KPI_PARAMETERS_DEFAULTS for any missing entries.
+    Returns a dict of {param: value} with all parameters populated,
+    plus a '_last_modified' dict of {param: last_modified_str}.
+    """
+    params = dict(KPI_PARAMETERS_DEFAULTS)
+    last_modified = {}
+    if "KPI_Config" not in wb.sheetnames:
+        return {**params, "_last_modified": last_modified}
+
+    ws = wb["KPI_Config"]
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        if not row or not row[0]:
+            continue
+        key = str(row[0]).strip()
+        if key not in params:
+            continue
+        val = row[1] if len(row) > 1 else None
+        lm  = row[3] if len(row) > 3 else None
+        if val is not None and val != "":
+            default = KPI_PARAMETERS_DEFAULTS[key]
+            if isinstance(default, int) and not isinstance(default, bool):
+                try: params[key] = int(float(val))
+                except (ValueError, TypeError): pass
+            elif isinstance(default, float):
+                try: params[key] = float(val)
+                except (ValueError, TypeError): pass
+            else:
+                params[key] = str(val)
+        if lm:
+            last_modified[key] = str(lm)[:10] if hasattr(lm, "strftime") else str(lm)
+
+    return {**params, "_last_modified": last_modified}
+
+
+def ensure_kpi_config_sheet(wb):
+    """Create the 'KPI_Config' sheet populated with defaults if it doesn't exist.
+    Returns True if a new sheet was created (caller should save the workbook).
+    """
+    if "KPI_Config" in wb.sheetnames:
+        return False
+    try:
+        from openpyxl.styles import Font, PatternFill, Alignment
+    except ImportError:
+        return False
+
+    ws = wb.create_sheet("KPI_Config")
+    ws.append(["Parameter", "Value", "Description", "Last Modified", "Where Applied"])
+
+    header_font = Font(bold=True, color="FFFFFF", size=11)
+    header_fill = PatternFill(start_color="0A2240", end_color="0A2240", fill_type="solid")
+    for cell in ws[1]:
+        cell.font = header_font
+        cell.fill = header_fill
+        cell.alignment = Alignment(horizontal="left", vertical="center")
+
+    today = _now_pt().strftime("%Y-%m-%d")
+    for key, default_val in KPI_PARAMETERS_DEFAULTS.items():
+        where, desc = KPI_PARAMETER_META.get(key, ("", ""))
+        ws.append([key, default_val, desc, today, where])
+
+    # Column widths
+    widths = {"A": 42, "B": 12, "C": 60, "D": 16, "E": 38}
+    for col, w in widths.items():
+        ws.column_dimensions[col].width = w
+
+    return True
+
+
+# Structured algorithm descriptions for each card shown on the dashboard.
+# Fields support Python format-string interpolation against KPI parameters
+# (e.g. "{TIER_MIN_STUDENTS}" expands to the current configured value).
+# Keep descriptions concise — one or two sentences per field.
+ALGO_DESCRIPTIONS = {
+    # ── Headline KPI cards ──────────────────────────────────────────
+    "cumulative_students": {
+        "source":      "CCCCO MAP CPL Dashboard (live scrape via Cloudflare worker).",
+        "formula":     "Direct value pull of the STUDENTS SERVED metric.",
+        "assumptions": "Breakdowns (Military / Workforce-Other / Apprentice) are reported by CCCCO directly; not recomputed.",
+        "caveats":     "Falls back to the Excel KPI metric on project 3.1 if the live scrape is unavailable.",
+        "last_modified": "2026-04-19",
+    },
+    "eligible_units": {
+        "source":      "CCCCO MAP CPL Dashboard (live scrape).",
+        "formula":     "Direct value pull of the ELIGIBLE UNITS metric.",
+        "assumptions": "Population breakdowns mirror the CCCCO dashboard.",
+        "caveats":     "Falls back to the Excel KPI metric on project 3.2 if the live scrape is unavailable.",
+        "last_modified": "2026-04-19",
+    },
+    "transcripted_units": {
+        "source":      "CCCCO MAP CPL Dashboard (live scrape).",
+        "formula":     "Direct value pull of the TRANSCRIBED UNITS metric. 'Applied Credits' is a secondary number posted to student records.",
+        "assumptions": "Transcribed = credits actually posted to a student record (distinct from 'eligible').",
+        "caveats":     "Population breakdowns are reported directly by CCCCO.",
+        "last_modified": "2026-04-19",
+    },
+    "credit_recommendations": {
+        "source":      "MAP Custom Reporting Module (CustomReport_latest.json → View_ArticulatedMAPExhibits).",
+        "formula":     "Count of articulation rows across all colleges (each row = one college-to-course articulation).",
+        "assumptions": "Each row represents a distinct (Exhibit, College, Course) mapping.",
+        "caveats":     "Known issue: the raw export contains some duplicates, so the CR count can exceed the implied product of exhibits × colleges. The underlying MAP Articulation Analysis section also inherits these duplicates.",
+        "last_modified": "2026-04-19",
+    },
+    "map_exhibits": {
+        "source":      "MAP Custom Reporting Module (View_ArticulatedMAPExhibits).",
+        "formula":     "Distinct count of ExhibitID values across the dataset.",
+        "assumptions": "ExhibitID is the primary key for an exhibit (same exhibit articulated at multiple colleges counts once).",
+        "caveats":     "'Originating colleges' (62) counts colleges that created exhibits, not colleges that adopted them.",
+        "last_modified": "2026-04-19",
+    },
+    "ccc_collaborative": {
+        "source":      "MAP Custom Reporting Module (View_ArticulatedMAPExhibits).",
+        "formula":     "Distinct count of colleges that have adopted at least one exhibit whose Collaborative Type contains 'CCC'.",
+        "assumptions": "Adoption = a row exists where the college articulates a CCC Collaborative exhibit to a local course.",
+        "caveats":     "Counts adopting colleges only, not colleges that created collaborative exhibits.",
+        "last_modified": "2026-04-19",
+    },
+    "active_colleges": {
+        "source":      "CCCCO MAP CPL Dashboard (tier classification computed by the Cloudflare worker).",
+        "formula":     "Leading + Advancing tiers. A college is Leading if it meets ≥3 of 5 criteria, Advancing if 1-2, Inactive otherwise.",
+        "assumptions": "Criteria: Students ≥ {TIER_MIN_STUDENTS}; Units ≥ {TIER_MIN_UNITS}; Avg Units/Student ≥ {TIER_MIN_AVG_UNITS_PER_STUDENT}; Transcription Rate ≥ {TIER_MIN_TRANSCRIPTION_RATE_PCT}; Avg Transcribed/Student ≥ {TIER_MIN_AVG_TRANSCRIBED_PER_STUDENT}.",
+        "caveats":     "Thresholds live in cloudflare-worker-proxy.js (lines 184-188). Editing the KPI_Config sheet updates this description but does NOT automatically redeploy the worker.",
+        "last_modified": "2026-04-19",
+    },
+    "articulation_colleges": {
+        "source":      "MAP Custom Reporting Module (View_ArticulatedMAPExhibits).",
+        "formula":     "Distinct count of colleges appearing in the 'Articulation College' field.",
+        "assumptions": "A college is 'articulating' if it appears as the receiving college on at least one exhibit row.",
+        "caveats":     "'Originating Colleges' (62) = colleges that created exhibits; 'Adopting CCC Collaborative' (55) = subset that adopted statewide exhibits.",
+        "last_modified": "2026-04-19",
+    },
+    "estimated_savings": {
+        "source":      "CCCCO MAP CPL Dashboard (live scrape). Fallback: {SAVINGS_DEFAULT} from KPI_Config sheet.",
+        "formula":     "Live value pull. CCCCO computes savings using the Beacon Economics per-unit factor (≈ ${BEACON_PER_UNIT_SAVINGS}/unit).",
+        "assumptions": "Per-population breakdowns (Military/Workforce/Apprentice) are proportional splits by eligible-unit share, not independent calculations.",
+        "caveats":     "BEACON_PER_UNIT_SAVINGS is a reference value; the actual savings math happens at CCCCO.",
+        "last_modified": "2026-04-19",
+    },
+    "veteran_sprint": {
+        "source":      "Excel project 4.1a KPI metric, augmented with live military data from the CCCCO scrape.",
+        "formula":     "Base count from project 4.1a. JST Credits = military students (from cumulative_students breakdowns). Eligible CPL = military eligible units (from eligible_units breakdowns).",
+        "assumptions": "Goal for JST Credits = 30,000 at Veteran Star Colleges.",
+        "caveats":     "Headline value (e.g. 47) is number of colleges participating, not students served.",
+        "last_modified": "2026-04-19",
+    },
+    "twenty_year_impact": {
+        "source":      "CCCCO MAP CPL Dashboard (live scrape).",
+        "formula":     "Direct pull of the 20-YEAR IMPACT metric. CCCCO applies a {TWENTY_YEAR_MULTIPLIER}x multiplier to one-year impact.",
+        "assumptions": "Beacon Economics long-term earnings model; breakdowns by population are proportional splits.",
+        "caveats":     "The multiplier lives on the CCCCO side — changing TWENTY_YEAR_MULTIPLIER here is for documentation only.",
+        "last_modified": "2026-04-19",
+    },
+
+    # ── KPI Trends card ────────────────────────────────────────────
+    "kpi_trends": {
+        "source":      "kpi_history.json — one snapshot appended per day (idempotent; same-day runs overwrite).",
+        "formula":     "For each metric, render: today's value, deltas at 1d/7d/30d/QTD/1yr, and a 30-day sparkline.",
+        "assumptions": "QTD resets at the start of each academic quarter (Jul/Oct/Jan/Apr). Deltas are % for volumetric metrics and absolute counts for Active Colleges, MAP Exhibits, CCC Collaborative, Articulating Colleges, and Star Colleges.",
+        "caveats":     "A dash (—) means no historical value exists yet for that period; tracking begins the first time the pipeline ran. Sparklines need 2+ snapshots to render.",
+        "last_modified": "2026-04-19",
+    },
+
+    # ── College Activity card ─────────────────────────────────────
+    "college_activity": {
+        "source":      "CCCCO MAP CPL Dashboard via Cloudflare worker — per-college tier classifications.",
+        "formula":     "Same 3-of-5 criteria as Active Colleges. Leading (≥3 met), Advancing (1-2 met), Inactive (<10 students and 0 units). Tiers sorted by criteria met desc, then by students desc.",
+        "assumptions": "Criteria: Students ≥ {TIER_MIN_STUDENTS}; Units ≥ {TIER_MIN_UNITS}; Avg Units/Student ≥ {TIER_MIN_AVG_UNITS_PER_STUDENT}; Transcription Rate ≥ {TIER_MIN_TRANSCRIPTION_RATE_PCT}; Avg Transcribed/Student ≥ {TIER_MIN_AVG_TRANSCRIBED_PER_STUDENT}.",
+        "caveats":     "⭐ indicates MAP Star College status (at least one criterion met). JST column derives from View_StudentAggregatedValues rows where Military Credits > 0.",
+        "last_modified": "2026-04-19",
+    },
+
+    # ── MAP Articulation Analysis detail cards ────────────────────
+    "exhibit-collaborative": {
+        "source":      "View_ArticulatedMAPExhibits (MAP Custom Reporting Module).",
+        "formula":     "Group rows by Collaborative Type. Count distinct exhibits, rows (credit recs), colleges, and disciplines per group.",
+        "assumptions": "Categories: Local (college-specific), CCC Collaborative (statewide faculty workgroup), Industry/Other (anything else).",
+        "caveats":     "An exhibit has exactly one Collaborative Type. '%' is each group's share of total credit recs.",
+        "last_modified": "2026-04-19",
+    },
+    "exhibit-by-cpl-type": {
+        "source":      "View_ArticulatedMAPExhibits.",
+        "formula":     "Group by CPL Type. Count distinct exhibits, rows (credit recs), and colleges per type.",
+        "assumptions": "Six CPL types: Standardized Assessment, Industry Certification, Credit By Exam, Portfolio Review, Military, Other.",
+        "caveats":     "Each exhibit belongs to exactly one CPL type.",
+        "last_modified": "2026-04-19",
+    },
+    "exhibit-by-mol": {
+        "source":      "View_ArticulatedMAPExhibits.",
+        "formula":     "Group by Mode of Learning code (S/I/A/H/N/M/O/G/P/J). Count exhibits, rows, colleges.",
+        "assumptions": "Mode taxonomy defined by CCCCO; each exhibit carries one MoL code.",
+        "caveats":     "Codes with very low counts (e.g. Justice-involved learning) reflect limited adoption, not missing data.",
+        "last_modified": "2026-04-19",
+    },
+    "exhibit-by-discipline": {
+        "source":      "View_ArticulatedMAPExhibits.",
+        "formula":     "Group by CCC Discipline. Count exhibits, rows (credit recs), courses, colleges, and CCC Collaborative adoptions.",
+        "assumptions": "'Not Mapped' = exhibits without a discipline tag.",
+        "caveats":     "~31% of credit recs are Not Mapped — this flags a tagging backlog, not missing articulations.",
+        "last_modified": "2026-04-19",
+    },
+    "exhibit-by-college": {
+        "source":      "View_ArticulatedMAPExhibits.",
+        "formula":     "Group rows by Articulation College. Count credit recs (rows), distinct exhibits, disciplines, CCC Collaborative rows, and Industry Certs.",
+        "assumptions": "Each row represents one college-to-course articulation of one exhibit.",
+        "caveats":     "Credit Recs > Exhibits is expected: one exhibit can articulate to multiple courses at the same college. Known inflation from duplicates in the raw export.",
+        "last_modified": "2026-04-19",
+    },
+    "exhibit-top-50": {
+        "source":      "View_ArticulatedMAPExhibits.",
+        "formula":     "Group rows by ExhibitID, sum credit recommendations across all colleges, sort desc, take top 50.",
+        "assumptions": "Ranking = total articulation count statewide.",
+        "caveats":     "Ties broken by exhibit ID order. Counts reflect raw row counts and can include the known duplicate inflation.",
+        "last_modified": "2026-04-19",
+    },
+
+    # ── Exhibit Adoption & Credit Recommendations (statewide_interactive.js) ──
+    "statewide_adoption": {
+        "source":      "View_ArticulatedMAPExhibits joined with college/district/region lookups from college_lookup.js.",
+        "formula":     "For each statewide (CCC Collaborative) exhibit: count adopting colleges and list potential adopters (colleges that could adopt but haven't yet).",
+        "assumptions": "Potential adopters = colleges in the CCC system not currently articulating this exhibit. Credit recs count each college-course pair separately.",
+        "caveats":     "Interactive filters (CPL Type, Discipline, District, SW Region) narrow results client-side. Exports reflect current filter state.",
+        "last_modified": "2026-04-19",
+    },
+}
+
+
+def render_algo_details(card_id, params=None, container_style=None):
+    """Return a collapsible <details> block with the algorithm description for a card.
+    Returns empty string if no description is defined. Always collapsed by default.
+
+    params: dict of KPI parameter values used for {PLACEHOLDER} interpolation.
+            Defaults to KPI_PARAMETERS_DEFAULTS.
+    container_style: optional inline CSS for the outer <details> element (use to
+                     match the parent card's background if it sits outside a card).
+    """
+    desc = ALGO_DESCRIPTIONS.get(card_id)
+    if not desc:
+        return ""
+
+    p = dict(KPI_PARAMETERS_DEFAULTS)
+    if params:
+        p.update({k: v for k, v in params.items() if not k.startswith("_")})
+    # Derived format helpers
+    try:
+        p["TIER_MIN_TRANSCRIPTION_RATE_PCT"] = f"{float(p['TIER_MIN_TRANSCRIPTION_RATE']) * 100:.0f}%"
+    except (ValueError, TypeError, KeyError):
+        p["TIER_MIN_TRANSCRIPTION_RATE_PCT"] = "25%"
+
+    def _fmt(s):
+        if not isinstance(s, str):
+            return s
+        try:
+            return s.format(**p)
+        except (KeyError, IndexError, ValueError):
+            return s
+
+    rows = []
+    for label, key in (("Source", "source"), ("Formula", "formula"),
+                       ("Assumptions", "assumptions"), ("Caveats", "caveats")):
+        v = desc.get(key)
+        if v:
+            rows.append(
+                f'<div class="algo-row">'
+                f'<span class="algo-label">{label}:</span> '
+                f'<span class="algo-value">{_fmt(v)}</span>'
+                f'</div>'
+            )
+
+    # Use sheet-provided last_modified if present, else fall back to desc
+    lm_sheet = (params or {}).get("_last_modified", {}).get(card_id) if params else None
+    lm = lm_sheet or desc.get("last_modified", "")
+    meta = f'<div class="algo-meta">Description last updated: {lm}</div>' if lm else ""
+
+    style_attr = f' style="{container_style}"' if container_style else ""
+    return (
+        f'<details class="algo-details"{style_attr}>'
+        f'<summary>How this is calculated</summary>'
+        f'<div class="algo-body">'
+        + "".join(rows)
+        + meta
+        + '</div></details>'
+    )
+
+
+ALGO_DETAILS_CSS = """
+/* ═══ Collapsible Algorithm Descriptions ═══ */
+.algo-details {
+    margin-top: 0.6rem;
+    padding-top: 0.4rem;
+    border-top: 1px dashed rgba(255,255,255,0.12);
+    font-size: 0.72rem;
+}
+.algo-details summary {
+    cursor: pointer;
+    color: rgba(255,255,255,0.45);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.6rem;
+    padding: 0.3rem 0;
+    user-select: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+.algo-details summary::-webkit-details-marker { display: none; }
+.algo-details summary::before {
+    content: "▸";
+    display: inline-block;
+    font-size: 0.65rem;
+    transition: transform 0.15s ease;
+    color: rgba(201,168,76,0.7);
+}
+.algo-details[open] summary::before { transform: rotate(90deg); }
+.algo-details summary:hover { color: rgba(201,168,76,0.9); }
+.algo-details[open] summary { color: #C9A84C; }
+.algo-details .algo-body {
+    padding: 0.55rem 0 0.3rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.55;
+}
+.algo-details .algo-row { margin-bottom: 0.35rem; }
+.algo-details .algo-label {
+    font-weight: 700;
+    color: rgba(201,168,76,0.9);
+    margin-right: 0.3rem;
+    text-transform: uppercase;
+    font-size: 0.62rem;
+    letter-spacing: 0.4px;
+}
+.algo-details .algo-value { color: rgba(255,255,255,0.78); }
+.algo-details .algo-meta {
+    margin-top: 0.6rem;
+    font-size: 0.62rem;
+    color: rgba(255,255,255,0.35);
+    font-style: italic;
+}
+"""
+
+
 def scan_attachments(attachments_dir):
     """Scan a local attachments directory with subfolders and return counts.
     Expected structure:
@@ -975,11 +1357,13 @@ def build_activity_kpis(projects):
     return [groups[k] for k in sorted(groups.keys()) if k in groups]
 
 
-def render_kpi_section_html(kpis, kpi_display_order=None):
+def render_kpi_section_html(kpis, kpi_display_order=None, kpi_params=None):
     """
     Generate static HTML for the headline KPI cards section,
     including LIVE badges, subtitles, and population breakdowns.
     kpi_display_order: list of KPI keys in desired display order.
+    kpi_params: tunable parameters from the KPI_Config sheet (used to
+                interpolate placeholders in algo descriptions).
     """
     default_order = ['cumulative_students', 'eligible_units', 'transcripted_units',
                      'credit_recommendations', 'map_exhibits', 'ccc_collaborative',
@@ -1015,6 +1399,8 @@ def render_kpi_section_html(kpis, kpi_display_order=None):
             fn_items = "".join(f'<div class="kpi-fn-item">{item}</div>' for item in kpi["footnote"])
             fn_html = f'<div class="kpi-footnote">{fn_items}</div>'
 
+        algo_html = render_algo_details(key, params=kpi_params)
+
         cards_html += (
             f'        <div class="kpi-card">\n'
             f'            <div class="kpi-number">{kpi["value"]}{live_badge}</div>\n'
@@ -1022,6 +1408,7 @@ def render_kpi_section_html(kpis, kpi_display_order=None):
             f'            {sub_html}\n'
             f'            {bd_html}\n'
             f'            {fn_html}\n'
+            f'            {algo_html}\n'
             f'        </div>\n'
         )
     return cards_html
@@ -2251,7 +2638,7 @@ def _delta_badge(current, previous, abs_format=False):
     return badge, pct
 
 
-def render_kpi_history_card(history):
+def render_kpi_history_card(history, kpi_params=None):
     """Render a full-width KPI Trends card from kpi_history.json data."""
     if not history:
         return ""
@@ -2387,6 +2774,7 @@ def render_kpi_history_card(history):
           <tbody>{rows_html}</tbody>
         </table>
       </div>
+      {render_algo_details("kpi_trends", params=kpi_params)}
     </div>
 """
     return html
@@ -2441,7 +2829,7 @@ def _load_college_activity_template():
 
 
 def render_college_activity_card(live_data, last_activity=None, military_students=None,
-                                 exhibit_tables=None):
+                                 exhibit_tables=None, kpi_params=None):
     """Render the full-width College Activity card — rich single-table layout.
 
     Emits:
@@ -2547,6 +2935,19 @@ def render_college_activity_card(live_data, last_activity=None, military_student
     )
 
     html = template.replace("__AS_OF_DATE__", scraped_at)
+
+    # Inject collapsible algorithm description inside the card, before the
+    # final closing </div>. The template ends with a legend div then the
+    # outer card's </div>, so we insert right before that last boundary.
+    algo_html = render_algo_details("college_activity", params=kpi_params)
+    if algo_html:
+        # Replace the final occurrence of "    </div>" (outer wrapper close)
+        # with algo + same closing div.
+        marker = "      </div>\n\n    </div>"
+        if marker in html:
+            html = html.replace(marker, f"      </div>\n      {algo_html}\n\n    </div>", 1)
+        else:
+            html = html.rstrip() + "\n" + algo_html + "\n"
 
     # Emit the data blob immediately before the external script so it loads first.
     data_script = (
@@ -3472,7 +3873,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     return results
 
 
-def render_exhibit_analysis_html(tables):
+def render_exhibit_analysis_html(tables, kpi_params=None):
     """
     Render exhibit analysis tables as scrollable HTML cards.
     Returns the complete HTML section with toggle button and analysis cards.
@@ -3497,6 +3898,8 @@ def render_exhibit_analysis_html(tables):
             f'  <div class="exhibit-card-footer">{footer}</div>\n'
             if footer else ""
         )
+        algo_html = render_algo_details(card_id, params=kpi_params)
+        algo_block = f'  <div style="padding:0 1rem 0.8rem;">{algo_html}</div>\n' if algo_html else ""
         return (
             f'<div class="exhibit-card" id="{card_id}">\n'
             f'  <div class="exhibit-card-header">\n'
@@ -3510,6 +3913,7 @@ def render_exhibit_analysis_html(tables):
             f'    </table>\n'
             f'  </div>\n'
             + footer_html
+            + algo_block
             + f'</div>\n'
         )
 
@@ -4685,6 +5089,17 @@ def main():
     kpis            = compute_headline_kpis(projects, budget, config_overrides)
     activity_kpis   = build_activity_kpis(projects)
 
+    # ── KPI tunable parameters (from KPI_Config sheet, with defaults) ──
+    # Auto-create the sheet on first run so users have a place to edit
+    # thresholds without touching the codebase.
+    if ensure_kpi_config_sheet(wb):
+        try:
+            wb.save(EXCEL_FILE)
+            print(f"  Created KPI_Config sheet in {os.path.basename(EXCEL_FILE)} with default parameters")
+        except Exception as e:
+            print(f"  Could not save KPI_Config sheet ({e}); using defaults")
+    kpi_params = read_kpi_parameters(wb)
+
     # Build workplan goals & annual goals from the Project List tab
     # (no longer needs the old 'Annual Workplan Goals' sheet)
     workplan_goals, annual_goals = build_workplan_goals_from_projects(projects)
@@ -4751,7 +5166,7 @@ def main():
 
     # Log daily snapshot and render trends + activity cards
     kpi_history = log_daily_snapshot(live_data, exhibit_data)
-    trends_card_html   = render_kpi_history_card(kpi_history)
+    trends_card_html   = render_kpi_history_card(kpi_history, kpi_params=kpi_params)
     college_last_activity    = exhibit_data.get("college_last_activity",    {}) if exhibit_data else {}
     college_military_students = exhibit_data.get("college_military_students", {}) if exhibit_data else {}
 
@@ -4764,6 +5179,7 @@ def main():
         last_activity=college_last_activity,
         military_students=college_military_students,
         exhibit_tables=exhibit_tables,
+        kpi_params=kpi_params,
     )
 
     # ── Vision 2030 progress — derive from live data + config overrides ──
@@ -5011,7 +5427,7 @@ def main():
             kpi_section_start = html.find('<!-- KPI Summary Cards -->')
             kpi_section_end = html.find('<!-- Filter Bar -->')
             if kpi_section_start != -1 and kpi_section_end != -1:
-                kpi_cards_html = render_kpi_section_html(kpis, kpi_display_order)
+                kpi_cards_html = render_kpi_section_html(kpis, kpi_display_order, kpi_params=kpi_params)
                 new_kpi_section = (
                     '<!-- KPI Summary Cards -->\n'
                     '    <div class="kpi-section-wrapper" id="kpiSectionWrapper">\n'
@@ -5032,7 +5448,7 @@ def main():
             # ── Inject Exhibit Analysis section (toggle button + scrollable cards) ──
             # exhibit_tables was built earlier during College Activity rendering
             if exhibit_tables:
-                exhibit_html = render_exhibit_analysis_html(exhibit_tables)
+                exhibit_html = render_exhibit_analysis_html(exhibit_tables, kpi_params=kpi_params)
                 # Add toggle button after KPI section, before Filter Bar
                 toggle_btn = (
                     '\n    <div style="text-align:center;">'
@@ -5062,9 +5478,24 @@ def main():
                         _re.DOTALL,
                     )
                     html = pattern.sub('', html)
+
+                # Also strip any prior copy of ALGO_DETAILS_CSS so it doesn't
+                # accumulate on repeat runs.
+                ALGO_CSS_MARKER = '/* ═══ Collapsible Algorithm Descriptions ═══ */'
+                if ALGO_CSS_MARKER in html:
+                    import re as _re
+                    algo_pattern = _re.compile(
+                        r'\n?/\* ═══ Collapsible Algorithm Descriptions ═══ \*/.*?\.algo-details \.algo-meta \{[^}]*\}\n?',
+                        _re.DOTALL,
+                    )
+                    html = algo_pattern.sub('', html)
+
                 style_end = html.find('</style>')
                 if style_end != -1:
-                    html = html[:style_end] + '\n' + EXHIBIT_ANALYSIS_CSS + '\n' + html[style_end:]
+                    html = (html[:style_end]
+                            + '\n' + EXHIBIT_ANALYSIS_CSS
+                            + '\n' + ALGO_DETAILS_CSS
+                            + '\n' + html[style_end:])
 
             # ── Replace the Activity KPI section with fully rendered static HTML ──
             act_section_start = html.find('<div class="activity-kpi-section" id="activityKpiSection">')
