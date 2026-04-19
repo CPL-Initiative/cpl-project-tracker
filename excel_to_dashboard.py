@@ -5090,7 +5090,18 @@ def main():
                     print(f"  Injected exhibit analysis section ({len(exhibit_tables['by_college'])} college cards, "
                           f"{len(exhibit_tables['top_exhibits'])} top exhibits)")
 
-                # Inject CSS before closing </style> tag
+                # Inject CSS before closing </style> tag (idempotent — strips any
+                # previously injected copies so repeat runs don't accumulate duplicates).
+                EXHIBIT_CSS_MARKER = '/* ═══ MAP Articulation Analysis Cards ═══ */'
+                if EXHIBIT_CSS_MARKER in html:
+                    import re as _re
+                    # The injected block always starts at the MAP marker and ends at
+                    # the final `.sw-rec-course { ... }` rule. Remove every copy.
+                    pattern = _re.compile(
+                        r'\n?/\* ═══ MAP Articulation Analysis Cards ═══ \*/.*?\.sw-rec-course \{[^}]*\}\n?',
+                        _re.DOTALL,
+                    )
+                    html = pattern.sub('', html)
                 style_end = html.find('</style>')
                 if style_end != -1:
                     html = html[:style_end] + '\n' + EXHIBIT_ANALYSIS_CSS + '\n' + html[style_end:]
