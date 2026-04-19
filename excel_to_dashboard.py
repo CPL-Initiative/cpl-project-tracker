@@ -2387,6 +2387,8 @@ def render_college_activity_card(live_data, last_activity=None, military_student
     leading  = tiers.get("leading",  {}).get("colleges", [])
     advancing = tiers.get("advancing", {}).get("colleges", [])
     inactive = tiers.get("inactive", {}).get("colleges", [])
+    # Worker may return inactive as [str, ...] or [{"college": str, ...}, ...]; normalize to names
+    inactive = [c.get("college", "") if isinstance(c, dict) else c for c in inactive]
 
     if not leading and not advancing and not inactive:
         return ""
