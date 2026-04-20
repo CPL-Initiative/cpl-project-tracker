@@ -15,10 +15,28 @@ Open (or refresh) CPL_Dashboard.html in your browser to see updated data.
 """
 
 import json, os, re, sys
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from openpyxl import load_workbook
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# ── Timezone ─────────────────────────────────────────────────────────
+# CPL Initiative is a California project; all displayed dates, daily
+# snapshots, and "last updated" stamps should reflect Pacific Time.
+# The daily GitHub Actions workflow runs in UTC, which was rolling the
+# date forward by a day in the evening PT. Use zoneinfo when available
+# (Python 3.9+) and fall back to a fixed UTC-7 offset otherwise.
+try:
+    from zoneinfo import ZoneInfo
+    _PT = ZoneInfo("America/Los_Angeles")
+except ImportError:
+    _PT = timezone(timedelta(hours=-7))  # PDT fallback; DST lost
+
+def _now_pt():
+    """Return current datetime in Pacific Time, naive (tzinfo stripped).
+    Stripping tzinfo keeps arithmetic compatible with existing naive
+    datetimes elsewhere in the pipeline."""
+    return datetime.now(_PT).replace(tzinfo=None)
 
 # ── Excel source: prefer SharePoint-synced copy, fall back to local ──
 # The SharePoint-synced folder is the single source of truth for the Excel.
@@ -381,7 +399,7 @@ def archive_updates_to_log(excel_path):
     # Read Project List and archive notes from both col P (update) and col V (workplan)
     # Auto-stamp col Q if either P or V changed since last log entry
     ws_pl = wb["Project List"]
-    today_str = datetime.now().strftime("%Y-%m-%d")
+    today_str = _now_pt().strftime("%Y-%m-%d")
     archived = 0
     auto_stamped = 0
     for r in range(4, ws_pl.max_row + 1):
@@ -2127,7 +2145,7 @@ def log_daily_snapshot(live_data, exhibit_data):
     """Append today's metric snapshot to kpi_history.json (idempotent — overwrites same-day entry).
     Returns the full sorted history list.
     """
-    today = datetime.now().strftime("%Y-%m-%d")
+    today = _now_pt().strftime("%Y-%m-%d")
     raw = (live_data or {}).get("raw", {})
     tiers = (live_data or {}).get("tiers", {})
 
@@ -2205,7 +2223,7 @@ def _sparkline_svg(values, width=110, height=30, color="#C9A84C"):
 def _history_lookup(history, key, days_ago=None, date_str=None):
     """Return the value of `key` from `days_ago` days before today, or from a specific date."""
     if date_str is None:
-        target = (datetime.now() - timedelta(days=days_ago)).strftime("%Y-%m-%d")
+        target = (_now_pt() - timedelta(days=days_ago)).strftime("%Y-%m-%d")
     else:
         target = date_str
     candidates = [e for e in history if e.get("date", "") <= target and e.get(key, 0) > 0]
@@ -2240,7 +2258,7 @@ def render_kpi_history_card(history):
 
     today_entry = history[-1]
     today_str   = today_entry.get("date", "")
-    today_dt    = datetime.strptime(today_str, "%Y-%m-%d") if today_str else datetime.now()
+    today_dt    = datetime.strptime(today_str, "%Y-%m-%d") if today_str else _now_pt()
 
     # Academic quarter start date for current quarter
     q_start = _quarter_start(today_dt).strftime("%Y-%m-%d")
@@ -2468,7 +2486,7 @@ def render_college_activity_card(live_data, last_activity=None, military_student
     district_lookup   = _load_college_district_lookup()
     la                = last_activity or {}
     ms                = military_students or {}
-    today_dt          = datetime.now()
+    today_dt          = _now_pt()
 
     # Per-college exhibit counts (from build_exhibit_analysis_tables output)
     by_college = {}
@@ -4678,7 +4696,7 @@ def main():
     attachments = scan_attachments(att_dir)
     print(f"  Attachments: {attachments['total']} files, by activity: {attachments['by_activity']}")
 
-    now             = datetime.now().strftime("%B %d, %Y")
+    now             = _now_pt().strftime("%B %d, %Y")
 
     # ── Build custom KPI display order from column W if present ──
     # Map project IDs to headline KPI keys
