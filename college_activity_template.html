@@ -1,0 +1,251 @@
+    <div style="grid-column:1/-1;background:var(--navy-primary);border-radius:8px;
+                border-top:4px solid var(--gold-accent);padding:1.2rem 1.5rem;
+                box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+
+      <!-- Header -->
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1rem;">
+        <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;color:#C9A84C;">
+          &#127942; College Activity
+        </span>
+        <div style="display:flex;gap:0.8rem;align-items:center;flex-wrap:wrap;">
+          <span style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:#C9A84C;border:1px solid #C9A84C;border-radius:2px;padding:0.04rem 0.25rem;white-space:nowrap;">Leading</span>
+          <span style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:#5B9BD5;border:1px solid #5B9BD5;border-radius:2px;padding:0.04rem 0.25rem;white-space:nowrap;">Advancing</span>
+          <span style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.3);border-radius:2px;padding:0.04rem 0.25rem;white-space:nowrap;">Inactive</span>
+          <span style="font-size:0.64rem;color:rgba(255,255,255,0.28);">As of __AS_OF_DATE__</span>
+        </div>
+      </div>
+
+      <!-- Filter and Control Bar -->
+      <div style="margin-bottom:0.6rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">
+        <input id="collegeSearchBox" type="text" placeholder="Search college..."
+               style="flex:1;min-width:140px;max-width:220px;padding:0.35rem 0.5rem;font-size:0.68rem;
+                      background:#1a2d45;border:1px solid #C9A84C;
+                      border-radius:4px;color:#fff;outline:none;appearance:none;-webkit-appearance:none;" />
+        <select id="caDistrictFilter" style="padding:0.35rem 0.3rem;font-size:0.68rem;max-width:200px;
+                      background:#1a2d45;border:1px solid #C9A84C;
+                      border-radius:4px;color:#fff;outline:none;appearance:none;-webkit-appearance:none;">
+          <option value="">All Districts</option>
+          <option value="Antelope Valley Community College District">Antelope Valley Community College District</option>
+          <option value="Barstow Community College District">Barstow Community College District</option>
+          <option value="Butte-Glenn Community College District">Butte-Glenn Community College District</option>
+          <option value="Cabrillo College District">Cabrillo College District</option>
+          <option value="Cerritos Community College District">Cerritos Community College District</option>
+          <option value="Chabot-Las Positas Community College District">Chabot-Las Positas Community College District</option>
+          <option value="Chaffey Community College District">Chaffey Community College District</option>
+          <option value="Citrus Community College District">Citrus Community College District</option>
+          <option value="Coast Community College District">Coast Community College District</option>
+          <option value="College of the Desert District">College of the Desert District</option>
+          <option value="College of the Redwoods District">College of the Redwoods District</option>
+          <option value="Contra Costa Community College District">Contra Costa Community College District</option>
+          <option value="Copper Mountain College District">Copper Mountain College District</option>
+          <option value="Cuesta College District">Cuesta College District</option>
+          <option value="El Camino Community College District">El Camino Community College District</option>
+          <option value="Feather River Community College District">Feather River Community College District</option>
+          <option value="Foothill-De Anza Community College District">Foothill-De Anza Community College District</option>
+          <option value="Gavilan Joint Community College District">Gavilan Joint Community College District</option>
+          <option value="Glendale Community College District">Glendale Community College District</option>
+          <option value="Grossmont-Cuyamaca Community College District">Grossmont-Cuyamaca Community College District</option>
+          <option value="Hartnell Community College District">Hartnell Community College District</option>
+          <option value="Imperial Community College District">Imperial Community College District</option>
+          <option value="Kern Community College District">Kern Community College District</option>
+          <option value="Lake Tahoe Community College District">Lake Tahoe Community College District</option>
+          <option value="Lassen Community College District">Lassen Community College District</option>
+          <option value="Long Beach Community College District">Long Beach Community College District</option>
+          <option value="Los Angeles Community College District">Los Angeles Community College District</option>
+          <option value="Los Rios Community College District">Los Rios Community College District</option>
+          <option value="Marin Community College District">Marin Community College District</option>
+          <option value="Mendocino-Lake Community College District">Mendocino-Lake Community College District</option>
+          <option value="Merced Community College District">Merced Community College District</option>
+          <option value="MiraCosta Community College District">MiraCosta Community College District</option>
+          <option value="Modesto Junior College District">Modesto Junior College District</option>
+          <option value="Monterey Peninsula College District">Monterey Peninsula College District</option>
+          <option value="Mt. San Antonio Community College District">Mt. San Antonio Community College District</option>
+          <option value="Mt. San Jacinto Community College District">Mt. San Jacinto Community College District</option>
+          <option value="Napa Valley Community College District">Napa Valley Community College District</option>
+          <option value="North Orange County Community College District">North Orange County Community College District</option>
+          <option value="Ohlone Community College District">Ohlone Community College District</option>
+          <option value="Palo Verde Community College District">Palo Verde Community College District</option>
+          <option value="Palomar Community College District">Palomar Community College District</option>
+          <option value="Pasadena Area Community College District">Pasadena Area Community College District</option>
+          <option value="Peralta Community College District">Peralta Community College District</option>
+          <option value="Rancho Santiago Community College District">Rancho Santiago Community College District</option>
+          <option value="Rio Hondo Community College District">Rio Hondo Community College District</option>
+          <option value="Riverside Community College District">Riverside Community College District</option>
+          <option value="Saddleback Valley Unified School District">Saddleback Valley Unified School District</option>
+          <option value="San Bernardino Community College District">San Bernardino Community College District</option>
+          <option value="San Diego Community College District">San Diego Community College District</option>
+          <option value="San Francisco Community College District">San Francisco Community College District</option>
+          <option value="San Joaquin Delta Community College District">San Joaquin Delta Community College District</option>
+          <option value="San Jose-Evergreen Community College District">San Jose-Evergreen Community College District</option>
+          <option value="San Mateo County Community College District">San Mateo County Community College District</option>
+          <option value="Santa Ana Community College District">Santa Ana Community College District</option>
+          <option value="Santa Barbara Community College District">Santa Barbara Community College District</option>
+          <option value="Santa Barbara County Community College District">Santa Barbara County Community College District</option>
+          <option value="Santa Clara County Community College District">Santa Clara County Community College District</option>
+          <option value="Santa Clarita Community College District">Santa Clarita Community College District</option>
+          <option value="Santa Monica Community College District">Santa Monica Community College District</option>
+          <option value="Sequoias Community College District">Sequoias Community College District</option>
+          <option value="Shasta-Tehama-Trinity Joint Community College District">Shasta-Tehama-Trinity Joint Community College District</option>
+          <option value="Sierra Joint Community College District">Sierra Joint Community College District</option>
+          <option value="Siskiyous Joint Community College District">Siskiyous Joint Community College District</option>
+          <option value="Solano Community College District">Solano Community College District</option>
+          <option value="Sonoma County Junior College District">Sonoma County Junior College District</option>
+          <option value="Southwestern Community College District">Southwestern Community College District</option>
+          <option value="State Center Community College District">State Center Community College District</option>
+          <option value="Taft Community College District">Taft Community College District</option>
+          <option value="Tuolumne County Community College District">Tuolumne County Community College District</option>
+          <option value="Ventura County Community College District">Ventura County Community College District</option>
+          <option value="Victor Valley Community College District">Victor Valley Community College District</option>
+          <option value="West Hills Community College District">West Hills Community College District</option>
+          <option value="West Valley-Mission Community College District">West Valley-Mission Community College District</option>
+          <option value="Yuba Community College District">Yuba Community College District</option>
+        </select>
+        <select id="tierFilter" style="padding:0.35rem 0.3rem;font-size:0.68rem;
+                      background:#1a2d45;border:1px solid #C9A84C;
+                      border-radius:4px;color:#fff;outline:none;appearance:none;-webkit-appearance:none;">
+          <option value="">All Tiers</option>
+          <option value="Leading">Leading</option>
+          <option value="Advancing">Advancing</option>
+          <option value="Inactive">Inactive</option>
+        </select>
+        <select id="caDisciplineFilter" style="padding:0.35rem 0.3rem;font-size:0.68rem;max-width:200px;
+                      background:#1a2d45;border:1px solid #C9A84C;
+                      border-radius:4px;color:#fff;outline:none;appearance:none;-webkit-appearance:none;">
+          <option value="">All Disciplines</option>
+          <option value="Agriculture and Natural Resources">Agriculture and Natural Resources</option>
+          <option value="Architecture and Related Technologies">Architecture and Related Technologies</option>
+          <option value="Biological Sciences">Biological Sciences</option>
+          <option value="Business and Management">Business and Management</option>
+          <option value="Commercial Services">Commercial Services</option>
+          <option value="Education">Education</option>
+          <option value="Engineering and Industrial Technologies">Engineering and Industrial Technologies</option>
+          <option value="Environmental Sciences and Technologies">Environmental Sciences and Technologies</option>
+          <option value="Family and Consumer Sciences">Family and Consumer Sciences</option>
+          <option value="Fine and Applied Arts">Fine and Applied Arts</option>
+          <option value="Foreign Languages">Foreign Languages</option>
+          <option value="Health">Health</option>
+          <option value="Humanities (Letters)">Humanities (Letters)</option>
+          <option value="Information Technology">Information Technology</option>
+          <option value="Interdisciplinary Studies">Interdisciplinary Studies</option>
+          <option value="Law">Law</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Media and Communications">Media and Communications</option>
+          <option value="Physical Sciences">Physical Sciences</option>
+          <option value="Psychology">Psychology</option>
+          <option value="Public and Protective Services">Public and Protective Services</option>
+          <option value="Social Sciences">Social Sciences</option>
+        </select>
+        <div style="margin-left:auto;display:flex;gap:0.4rem;align-items:center;">
+          <button id="exportExcelBtn" style="padding:0.3rem 0.5rem;font-size:0.63rem;
+                        background:#C9A84C;color:#000;border:none;border-radius:3px;
+                        cursor:pointer;font-weight:bold;">Excel</button>
+          <button id="exportCSVBtn" style="padding:0.3rem 0.5rem;font-size:0.63rem;
+                        background:#5B9BD5;color:#fff;border:none;border-radius:3px;
+                        cursor:pointer;font-weight:bold;">CSV</button>
+          <button id="exportJSONBtn" style="padding:0.3rem 0.5rem;font-size:0.63rem;
+                        background:#4CAF50;color:#fff;border:none;border-radius:3px;
+                        cursor:pointer;font-weight:bold;">JSON</button>
+          <button id="caCustomReportBtn" style="padding:0.3rem 0.6rem;font-size:0.63rem;
+                        background:linear-gradient(135deg,#C9A84C,#FF9800);color:#000;border:none;border-radius:3px;
+                        cursor:pointer;font-weight:bold;">Custom Report</button>
+        </div>
+      </div>
+
+      <!-- Main Table Container -->
+      <div style="max-height:600px;overflow-y:auto;border:1px solid rgba(255,255,255,0.07);
+                  border-radius:4px;scrollbar-width:thin;
+                  scrollbar-color:rgba(255,255,255,0.2) transparent;">
+        <table id="collegeActivityTable" style="width:100%;border-collapse:collapse;">
+          <thead style="position:sticky;top:0;z-index:10;background:var(--navy-primary);
+                       border-bottom:2px solid rgba(255,255,255,0.1);">
+            <tr>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:center;cursor:pointer;" data-sort="tier">
+                Tier <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:center;">★</th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:left;cursor:pointer;" data-sort="college">
+                College <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:left;cursor:pointer;" data-sort="district">
+                District <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:right;cursor:pointer;" data-sort="students">
+                Students <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:right;cursor:pointer;" data-sort="veterans">
+                Veterans <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:right;cursor:pointer;" data-sort="working_adults">
+                Working <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:right;cursor:pointer;" data-sort="apprentices">
+                Apprentices <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:right;cursor:pointer;" data-sort="eligible_units">
+                Eligible Units <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:right;cursor:pointer;" data-sort="transcribed_units">
+                Transcribed <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:right;cursor:pointer;" data-sort="exhibits">
+                Exhibits <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:right;cursor:pointer;" data-sort="credit_recs">
+                Credit Recs <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:right;cursor:pointer;" data-sort="disciplines">
+                Disciplines <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:right;cursor:pointer;" data-sort="savings">
+                Savings <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:right;cursor:pointer;" data-sort="year_impact">
+                20-Yr Impact <span class="sort-indicator"></span>
+              </th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:center;">Trans. Rate</th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:center;">Criteria</th>
+              <th style="padding:0.3rem 0.3rem;font-size:0.59rem;color:rgba(255,255,255,0.4);
+                        text-align:center;cursor:pointer;" data-sort="last_activity_days">
+                Last Activity <span class="sort-indicator"></span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="collegeTotalsRow" style="border-top:2px solid rgba(255,255,255,0.15);border-bottom:2px solid rgba(255,255,255,0.15);">
+          </tbody>
+          <tbody id="collegeTableBody" style="border-top:1px solid rgba(255,255,255,0.07);">
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Legend -->
+      <div style="margin-top:0.8rem;padding-top:0.6rem;border-top:1px solid rgba(255,255,255,0.06);
+                  display:flex;flex-wrap:wrap;gap:0.2rem 0;">
+        <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">● Criteria met: &nbsp;
+          <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">1. Students≥500</span> &nbsp;·&nbsp; <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">2. Units≥3k</span> &nbsp;·&nbsp; <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">3. Avg≥5</span> &nbsp;·&nbsp; <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">4. Trans≥25%</span> &nbsp;·&nbsp; <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">5. AvgTrans≥3</span>
+        </span>
+        <span style="font-size:0.61rem;">&#11088;</span>
+        <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);margin-left:4px;">MAP Star College (≥1 criterion)</span>
+        <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);margin-left:1rem;">Last Activity: </span>
+        <span style="font-size:0.61rem;color:#4CAF50;">● ≤30d</span>
+        <span style="font-size:0.61rem;color:#FF9800;margin-left:0.3rem;">● 31–90d</span>
+        <span style="font-size:0.61rem;color:#EF5350;margin-left:0.3rem;">● 90+d</span>
+      </div>
+
+    </div>
