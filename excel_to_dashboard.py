@@ -2374,274 +2374,172 @@ def render_kpi_history_card(history):
     return html
 
 
-def render_college_activity_card(live_data, last_activity=None, military_students=None):
-    """Render a full-width College Activity card grouped by tier in descending order of activity.
+_COLLEGE_DISTRICT_LOOKUP = None
+_COLLEGE_ACTIVITY_TEMPLATE = None
 
-    last_activity:      optional {college_name: datetime} — adds color-coded Last MAP Activity column.
-    military_students:  optional {college_name: int}      — adds JST/Veteran student count column.
+
+def _load_college_district_lookup():
+    """Parse college_lookup.js into a {college_name: district} dict (cached).
+    Returns an empty dict if the file is missing or unparseable.
+    """
+    global _COLLEGE_DISTRICT_LOOKUP
+    if _COLLEGE_DISTRICT_LOOKUP is not None:
+        return _COLLEGE_DISTRICT_LOOKUP
+
+    _COLLEGE_DISTRICT_LOOKUP = {}
+    path = os.path.join(SCRIPT_DIR, "college_lookup.js")
+    if not os.path.isfile(path):
+        return _COLLEGE_DISTRICT_LOOKUP
+
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            content = f.read()
+    except IOError:
+        return _COLLEGE_DISTRICT_LOOKUP
+
+    # Match:  "College Name": { district: "District Name", swRegion: "..." }
+    pattern = re.compile(
+        r'"([^"]+)"\s*:\s*\{\s*district\s*:\s*"([^"]+)"',
+        re.MULTILINE,
+    )
+    for college, district in pattern.findall(content):
+        _COLLEGE_DISTRICT_LOOKUP[college] = district
+
+    return _COLLEGE_DISTRICT_LOOKUP
+
+
+def _load_college_activity_template():
+    """Read college_activity_template.html (cached)."""
+    global _COLLEGE_ACTIVITY_TEMPLATE
+    if _COLLEGE_ACTIVITY_TEMPLATE is not None:
+        return _COLLEGE_ACTIVITY_TEMPLATE
+    path = os.path.join(SCRIPT_DIR, "college_activity_template.html")
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            _COLLEGE_ACTIVITY_TEMPLATE = f.read()
+    except IOError:
+        _COLLEGE_ACTIVITY_TEMPLATE = ""
+    return _COLLEGE_ACTIVITY_TEMPLATE
+
+
+def render_college_activity_card(live_data, last_activity=None, military_students=None,
+                                 exhibit_tables=None):
+    """Render the full-width College Activity card — rich single-table layout.
+
+    Emits:
+      - HTML shell (header, filter bar, table, legend) read from
+        college_activity_template.html
+      - <script> block with window.COLLEGE_ACTIVITY_DATA and
+        window.COLLEGE_DISCIPLINE_DETAIL populated from live_data + exhibit_tables
+      - <script src="college_activity.js"></script> to run the interactive logic
+
+    Parameters:
+      live_data:         parsed live_metrics.json (tiers + per-college metrics)
+      last_activity:     {college_name: datetime} from CustomReport
+      military_students: {college_name: int} from CustomReport (used as veterans fallback)
+      exhibit_tables:    output of build_exhibit_analysis_tables() — supplies
+                         per-college exhibit counts and discipline detail
     """
     if not live_data:
         return ""
 
-    tiers    = live_data.get("tiers", {})
-    leading  = tiers.get("leading",  {}).get("colleges", [])
+    tiers     = live_data.get("tiers", {})
+    leading   = tiers.get("leading",   {}).get("colleges", [])
     advancing = tiers.get("advancing", {}).get("colleges", [])
-    inactive = tiers.get("inactive", {}).get("colleges", [])
-    # Worker may return inactive as [str, ...] or [{"college": str, ...}, ...]; normalize to names
-    inactive = [c.get("college", "") if isinstance(c, dict) else c for c in inactive]
+    inactive  = tiers.get("inactive",  {}).get("colleges", [])
+    # Worker may return inactive as [str, ...] or [{"college": str, ...}, ...];
+    # we also accept full dicts with metrics when present.
+    inactive_objs = []
+    for c in inactive:
+        if isinstance(c, dict):
+            inactive_objs.append(c)
+        else:
+            inactive_objs.append({"college": c})
+    inactive = inactive_objs
 
     if not leading and not advancing and not inactive:
         return ""
 
-    scraped_at = live_data.get("scraped_at", "")[:10]
-    today_dt   = datetime.now()
-    la         = last_activity or {}
-    ms         = military_students or {}
-    show_la    = bool(la)
-    show_ms    = bool(ms)
+    template = _load_college_activity_template()
+    if not template:
+        return ""  # Missing template file — fail closed rather than emit the wrong layout
 
-    # ── Shared helpers ──────────────────────────────────────────────
-    CRITERIA_LABELS = ["Students≥500", "Units≥3k", "Avg≥5", "Trans≥25%", "AvgTrans≥3"]
-    GOLD   = "#C9A84C"
-    GREEN  = "#4CAF50"
-    AMBER  = "#FF9800"
-    BLUE   = "#5B9BD5"
-    GRAY   = "rgba(255,255,255,0.3)"
-    RED    = "#EF5350"
+    scraped_at        = live_data.get("scraped_at", "")[:10]
+    district_lookup   = _load_college_district_lookup()
+    la                = last_activity or {}
+    ms                = military_students or {}
+    today_dt          = datetime.now()
 
-    def _dots(n, total=5):
-        return "".join(
-            f'<span style="color:{GOLD};font-size:0.7rem;">●</span>' if i < n
-            else f'<span style="color:{GRAY};font-size:0.7rem;">○</span>'
-            for i in range(total)
-        )
+    # Per-college exhibit counts (from build_exhibit_analysis_tables output)
+    by_college = {}
+    college_discipline_detail = {}
+    if exhibit_tables:
+        for row in exhibit_tables.get("by_college", []):
+            by_college[row["college"]] = {
+                "exhibits":    row.get("exhibits", 0),
+                "credit_recs": row.get("credit_recs", 0),
+                "disciplines": row.get("disciplines", 0),
+            }
+        college_discipline_detail = exhibit_tables.get("college_discipline_detail", {})
 
-    def _tier_badge(label, color):
-        return (f'<span style="font-size:0.6rem;font-weight:700;text-transform:uppercase;'
-                f'letter-spacing:0.4px;color:{color};border:1px solid {color};'
-                f'border-radius:3px;padding:0.05rem 0.3rem;white-space:nowrap;">{label}</span>')
+    def _record(c, tier_name):
+        name = c.get("college", "") if isinstance(c, dict) else str(c)
+        if not isinstance(c, dict):
+            c = {}
+        students    = c.get("students", 0) or 0
+        units       = c.get("units", 0) or 0
+        transcribed = c.get("transcribedUnits", 0) or 0
+        trans_rate  = c.get("transcriptionRate", 0) or 0
+        criteria    = c.get("criteriaMetCount", 0) or 0
+        military    = c.get("militaryStudents", ms.get(name, 0)) or 0
+        non_mil     = c.get("nonMilitaryStudents", 0) or 0
+        apprentice  = c.get("apprenticeStudents", 0) or 0
+        savings     = c.get("savings", 0) or 0
+        year_impact = c.get("yearImpact", 0) or 0
 
-    def _pct_bar(pct, color=GREEN, width=44):
-        filled = min(pct / 100, 1.0) * width
-        return (f'<div style="display:flex;align-items:center;gap:4px;">'
-                f'<div style="width:{width}px;height:5px;background:rgba(255,255,255,0.1);'
-                f'border-radius:3px;overflow:hidden;flex-shrink:0;">'
-                f'<div style="width:{filled:.1f}px;height:100%;background:{color};border-radius:3px;"></div>'
-                f'</div>'
-                f'<span style="font-size:0.67rem;color:rgba(255,255,255,0.7);">{pct:.0f}%</span>'
-                f'</div>')
+        ex = by_college.get(name, {"exhibits": 0, "credit_recs": 0, "disciplines": 0})
 
-    def _star_cell(college_name, criteria_n):
-        """⭐ if criteriaMetCount >= 1 (proxy for MAP Dashboard star status)."""
-        if criteria_n >= 1:
-            return (f'<td style="padding:0.2rem 0.3rem;text-align:center;font-size:0.75rem;" '
-                    f'title="MAP Star College">&#11088;</td>')
-        return '<td style="padding:0.2rem 0.3rem;text-align:center;"></td>'
+        last_dt = la.get(name)
+        last_days = (today_dt - last_dt).days if last_dt else None
 
-    def _jst_cell(college_name):
-        """JST/Military student count."""
-        count = ms.get(college_name, 0)
-        if count:
-            return (f'<td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#7EC8E3;'
-                    f'text-align:right;white-space:nowrap;">{count:,}</td>')
-        return '<td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:rgba(255,255,255,0.2);text-align:right;">—</td>'
+        return {
+            "tier":               tier_name,
+            "college":            name,
+            "district":           district_lookup.get(name, ""),
+            "students":           students,
+            "veterans":           military,
+            "working_adults":     non_mil,
+            "apprentices":        apprentice,
+            "eligible_units":     units,
+            "transcribed_units":  transcribed,
+            "exhibits":           ex["exhibits"],
+            "credit_recs":        ex["credit_recs"],
+            "disciplines":        ex["disciplines"],
+            "savings":            savings,
+            "year_impact":        year_impact,
+            "trans_rate":         trans_rate,
+            "criteria_met":       criteria,
+            "last_activity_days": last_days,
+        }
 
-    def _la_cell(college_name):
-        """Color-coded days-since-last-MAP-submission badge."""
-        dt = la.get(college_name)
-        if dt is None:
-            return (f'<td style="padding:0.2rem 0.3rem;text-align:center;">'
-                    f'<span style="font-size:0.61rem;color:rgba(255,255,255,0.2);">—</span></td>')
-        days = (today_dt - dt).days
-        color = GREEN if days <= 30 else (AMBER if days <= 90 else RED)
-        label = f"{days}d" if days < 365 else f"{days // 365}y {(days % 365) // 30}m"
-        return (f'<td style="padding:0.2rem 0.3rem;text-align:center;white-space:nowrap;">'
-                f'<span style="font-size:0.61rem;color:{color};">●</span>'
-                f'<span style="font-size:0.61rem;color:{color};margin-left:2px;">{label}</span></td>')
-
-    # ── Column header helpers ─────────────────────────────────────
-    def _th(text, align="left", extra=""):
-        return (f'<th style="font-size:0.59rem;color:rgba(255,255,255,0.35);'
-                f'padding:0.2rem 0.3rem;text-align:{align};white-space:nowrap;{extra}">{text}</th>')
-
-    star_th = _th("★", "center") if True else ""         # always shown
-    jst_th  = _th("JST", "right") if show_ms else ""
-    la_th   = _th("Last Activity", "center") if show_la else ""
-
-    # ── Sort orders ───────────────────────────────────────────────
-    # Leading: desc by criteria → students
-    sorted_leading = sorted(leading, key=lambda c: (-c.get("criteriaMetCount", 0), -c.get("students", 0)))
-    # Advancing: desc by criteria → transcription → students  (most active first)
-    sorted_advancing = sorted(advancing,
-        key=lambda c: (-c.get("criteriaMetCount", 0), -c.get("transcriptionRate", 0), -c.get("students", 0)))
-
-    # ── Row builders ─────────────────────────────────────────────
-    def _college_row(c, rank=None, tier="leading"):
-        n  = c.get("criteriaMetCount", 0)
-        tr = c.get("transcriptionRate", 0)
-        if tier == "leading":
-            name_color = "rgba(255,255,255,0.95)"
-            stu_color  = GOLD
-            bar_color  = GREEN if tr >= 50 else (AMBER if tr >= 25 else "rgba(255,255,255,0.25)")
-        else:
-            name_color = "rgba(255,255,255,0.75)"
-            stu_color  = "rgba(255,255,255,0.55)"
-            bar_color  = AMBER if tr > 0 else "rgba(255,255,255,0.12)"
-
-        rank_td = (f'<td style="padding:0.2rem 0.3rem;font-size:0.62rem;'
-                   f'color:rgba(255,255,255,0.35);text-align:center;">{rank}</td>'
-                   if rank is not None else "")
-        jst_td = _jst_cell(c["college"]) if show_ms else ""
-        la_td  = _la_cell(c["college"])  if show_la else ""
-        return (
-            f'<tr>'
-            + rank_td
-            + _star_cell(c["college"], n)
-            + f'<td style="padding:0.2rem 0.3rem;font-size:0.7rem;color:{name_color};">{c["college"]}</td>'
-            + f'<td style="padding:0.2rem 0.3rem;font-size:0.7rem;color:{stu_color};text-align:right;white-space:nowrap;">{c.get("students",0):,}</td>'
-            + jst_td
-            + f'<td style="padding:0.2rem 0.3rem;">{_pct_bar(tr, bar_color)}</td>'
-            + f'<td style="padding:0.2rem 0.3rem;text-align:center;">{_dots(n)}</td>'
-            + la_td
-            + f'</tr>'
-        )
-
-    leading_rows   = "".join(_college_row(c, i+1, "leading")   for i, c in enumerate(sorted_leading))
-    advancing_rows = "".join(_college_row(c, None, "advancing") for c in sorted_advancing)
-
-    # ── Rank col header (only for Leading) ───────────────────────
-    rank_th_leading = _th("#", "center")
-
-    # ── Inactive pills ────────────────────────────────────────────
-    inactive_pills = " ".join(
-        f'<span style="display:inline-block;margin:0.15rem;padding:0.12rem 0.45rem;'
-        f'font-size:0.63rem;border-radius:10px;background:rgba(255,255,255,0.05);'
-        f'color:rgba(255,255,255,0.35);">{name}</span>'
-        for name in sorted(inactive)
+    all_data = (
+        [_record(c, "Leading")   for c in leading] +
+        [_record(c, "Advancing") for c in advancing] +
+        [_record(c, "Inactive")  for c in inactive]
     )
 
-    # ── Criteria + legend ─────────────────────────────────────────
-    legend = " &nbsp;·&nbsp; ".join(
-        f'<span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">{i+1}. {lbl}</span>'
-        for i, lbl in enumerate(CRITERIA_LABELS)
+    html = template.replace("__AS_OF_DATE__", scraped_at)
+
+    # Emit the data blob immediately before the external script so it loads first.
+    data_script = (
+        "    <script>\n"
+        "    window.COLLEGE_ACTIVITY_DATA = " + json.dumps(all_data, ensure_ascii=False) + ";\n"
+        "    window.COLLEGE_DISCIPLINE_DETAIL = " + json.dumps(college_discipline_detail, ensure_ascii=False) + ";\n"
+        "    </script>\n"
+        "    <script src=\"college_activity.js\"></script>\n"
     )
-    la_legend = (
-        '&nbsp;&nbsp;&nbsp;'
-        '<span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">Last Activity: </span>'
-        f'<span style="font-size:0.61rem;color:{GREEN};">● ≤30d</span> '
-        f'<span style="font-size:0.61rem;color:{AMBER};">● 31–90d</span> '
-        f'<span style="font-size:0.61rem;color:{RED};">● 90+d</span> '
-        '<span style="font-size:0.61rem;color:rgba(255,255,255,0.2);">— no data</span>'
-        if show_la else ""
-    )
-    star_legend = ('&nbsp;&nbsp;&nbsp;'
-                   '<span style="font-size:0.61rem;">&#11088;</span>'
-                   '<span style="font-size:0.61rem;color:rgba(255,255,255,0.32);"> MAP Star College (≥1 criterion)</span>'
-                   )
-    jst_legend  = ('&nbsp;&nbsp;&nbsp;'
-                   '<span style="font-size:0.61rem;color:#7EC8E3;">JST</span>'
-                   '<span style="font-size:0.61rem;color:rgba(255,255,255,0.32);"> = Military/JST students</span>'
-                   if show_ms else "")
 
-    scraped_note = f'<span style="font-size:0.64rem;color:rgba(255,255,255,0.28);">As of {scraped_at}</span>' if scraped_at else ""
-
-    html = f"""
-    <div style="grid-column:1/-1;background:var(--navy-primary);border-radius:8px;
-                border-top:4px solid var(--gold-accent);padding:1.2rem 1.5rem;
-                box-shadow:0 2px 6px rgba(0,0,0,0.15);">
-
-      <!-- Header -->
-      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1rem;">
-        <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;color:{GOLD};">
-          &#127942; College Activity
-        </span>
-        <div style="display:flex;gap:0.8rem;align-items:center;flex-wrap:wrap;">
-          {_tier_badge("Leading", GOLD)}
-          {_tier_badge("Advancing", BLUE)}
-          {_tier_badge("Inactive", "rgba(255,255,255,0.3)")}
-          {scraped_note}
-        </div>
-      </div>
-
-      <!-- Two-column layout: Leading | Advancing + Inactive -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;">
-
-        <!-- LEFT: Leading Colleges -->
-        <div>
-          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
-                      color:{GOLD};margin-bottom:0.5rem;display:flex;align-items:center;gap:0.4rem;">
-            {_tier_badge("Leading", GOLD)} &nbsp;{len(sorted_leading)} colleges &mdash; most active
-          </div>
-          <div style="overflow-x:auto;">
-            <table style="width:100%;border-collapse:collapse;">
-              <thead>
-                <tr>
-                  {rank_th_leading}
-                  {star_th}
-                  {_th("College")}
-                  {_th("Students", "right")}
-                  {jst_th}
-                  {_th("Trans. Rate")}
-                  {_th("Criteria", "center")}
-                  {la_th}
-                </tr>
-              </thead>
-              <tbody style="border-top:1px solid rgba(255,255,255,0.07);">
-                {leading_rows}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- RIGHT: Advancing + Inactive -->
-        <div>
-          <!-- Advancing colleges (scrollable, all, desc order) -->
-          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
-                      color:{BLUE};margin-bottom:0.5rem;display:flex;align-items:center;gap:0.4rem;">
-            {_tier_badge("Advancing", BLUE)} &nbsp;{len(sorted_advancing)} colleges &mdash; most to least active
-          </div>
-          <div style="max-height:340px;overflow-y:auto;overflow-x:auto;margin-bottom:1rem;
-                      scrollbar-width:thin;scrollbar-color:rgba(91,155,213,0.3) transparent;">
-            <table style="width:100%;border-collapse:collapse;">
-              <thead style="position:sticky;top:0;z-index:2;">
-                <tr style="background:var(--navy-primary);">
-                  {star_th}
-                  {_th("College")}
-                  {_th("Students", "right")}
-                  {jst_th}
-                  {_th("Trans. Rate")}
-                  {_th("Criteria", "center")}
-                  {la_th}
-                </tr>
-              </thead>
-              <tbody style="border-top:1px solid rgba(255,255,255,0.07);">
-                {advancing_rows}
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Inactive colleges -->
-          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
-                      color:rgba(255,255,255,0.28);margin-bottom:0.4rem;">
-            &#9711; Inactive &mdash; {len(inactive)} Colleges
-          </div>
-          <div style="line-height:1.9;">{inactive_pills}</div>
-        </div>
-
-      </div>
-
-      <!-- Legend row -->
-      <div style="margin-top:0.8rem;padding-top:0.6rem;border-top:1px solid rgba(255,255,255,0.06);
-                  display:flex;flex-wrap:wrap;gap:0.2rem 0;">
-        <span style="font-size:0.61rem;color:rgba(255,255,255,0.32);">● Criteria met: &nbsp; {legend}</span>
-        {star_legend}
-        {jst_legend}
-        {la_legend}
-      </div>
-
-    </div>
-"""
-    return html
+    return html + "\n" + data_script
 
 
 def read_live_metrics():
@@ -2823,31 +2721,54 @@ _TEST_COLLEGES = {"RivTest City College", "MorTest City College", "Nortest City 
                   "RivTest", "MorTest", "Nortest"}
 
 def _compute_college_last_activity(datasets):
-    """Return {college_name: datetime} for the most recent 'Last Submitted On' date
-    per college in View_ArticulatedCollegeCourses_APIDataset.
-    Filters out known test colleges.
-    Returns empty dict if dataset is unavailable.
+    """Return {college_name: datetime} for the most recent student record upload
+    per college. Uses View_StudentAggregatedValues_APIDataset's 'Uploaded Date'
+    column (the newer CustomReport export replaced the old
+    View_ArticulatedCollegeCourses_APIDataset which had 'Last Submitted On').
+    Filters out test and potential-student records.
+    Returns empty dict if the dataset is unavailable.
     """
-    ds = datasets.get("View_ArticulatedCollegeCourses_APIDataset")
+    ds = datasets.get("View_StudentAggregatedValues_APIDataset")
     if not ds:
-        return {}
-
-    rows   = ds["rows"]
-    cm     = ds["col_map"]
-    i_col  = cm.get("College", 0)
-    i_date = cm.get("Last Submitted On", 18)
+        # Backward compatibility: older CustomReport exports used a different dataset
+        ds = datasets.get("View_ArticulatedCollegeCourses_APIDataset")
+        if not ds:
+            return {}
+        rows  = ds["rows"]
+        cm    = ds["col_map"]
+        i_col  = cm.get("College", 0)
+        i_date = cm.get("Last Submitted On", 18)
+        i_pot  = -1
+        i_test = -1
+    else:
+        rows   = ds["rows"]
+        cm     = ds["col_map"]
+        i_col  = cm.get("College", 0)
+        i_date = cm.get("Uploaded Date", 22)
+        i_pot  = cm.get("Potential Student", 18)
+        i_test = cm.get("Test Student", 20)
 
     college_latest = {}  # college_name -> datetime
     for row in rows:
         college = (row[i_col] or "").strip()
         if not college or college in _TEST_COLLEGES:
             continue
+        if i_pot >= 0 and str(row[i_pot]).strip().lower() in ("true", "1", "yes"):
+            continue
+        if i_test >= 0 and str(row[i_test]).strip().lower() in ("true", "1", "yes"):
+            continue
         raw_date = (row[i_date] or "").strip()
         if not raw_date:
             continue
-        try:
-            dt = datetime.strptime(raw_date, "%m/%d/%Y %I:%M:%S %p")
-        except ValueError:
+        # Accept either "M/D/YYYY h:mm:ss AM/PM" (new) or with seconds (old)
+        dt = None
+        for fmt in ("%m/%d/%Y %I:%M:%S %p", "%m/%d/%Y"):
+            try:
+                dt = datetime.strptime(raw_date, fmt)
+                break
+            except ValueError:
+                continue
+        if dt is None:
             continue
         if college not in college_latest or dt > college_latest[college]:
             college_latest[college] = dt
@@ -3254,6 +3175,8 @@ def build_exhibit_analysis_tables(exhibit_data):
     # ── Collaborative Analysis ──
     by_collab = defaultdict(lambda: {"recs": 0, "exhibits": set(), "colleges": set(),
                                      "disciplines": set()})
+    # ── Per-College Per-Discipline Detail (powers the College Activity discipline filter) ──
+    by_college_disc = defaultdict(lambda: defaultdict(lambda: {"recs": 0, "exhibits": set()}))
 
     total_recs = len(rows)
 
@@ -3288,6 +3211,11 @@ def build_exhibit_analysis_tables(exhibit_data):
             c["disciplines"].add(disc)
             if is_ccc: c["ccc"] += 1
             if is_industry: c["industry"] += 1
+
+            # Per-college per-discipline
+            cd = by_college_disc[artic][disc]
+            cd["recs"] += 1
+            cd["exhibits"].add(eid)
 
         # By Discipline
         d = by_disc[disc]
@@ -3366,6 +3294,14 @@ def build_exhibit_analysis_tables(exhibit_data):
              "pct": pct(v["recs"])}
             for k, v in by_collab.items()
         ], key=lambda x: -x["credit_recs"]),
+
+        "college_discipline_detail": {
+            college: {
+                disc: {"recs": d["recs"], "exhibits": len(d["exhibits"])}
+                for disc, d in disc_map.items()
+            }
+            for college, disc_map in by_college_disc.items()
+        },
 
         "total_credit_recs": total_recs,
         "generated_at": exhibit_data.get("generated_at", ""),
@@ -4800,10 +4736,16 @@ def main():
     trends_card_html   = render_kpi_history_card(kpi_history)
     college_last_activity    = exhibit_data.get("college_last_activity",    {}) if exhibit_data else {}
     college_military_students = exhibit_data.get("college_military_students", {}) if exhibit_data else {}
+
+    # Build exhibit tables early — College Activity card needs per-college
+    # exhibit counts and per-college/discipline detail to render correctly.
+    exhibit_tables = build_exhibit_analysis_tables(exhibit_data) if exhibit_data else None
+
     activity_card_html = render_college_activity_card(
         live_data,
         last_activity=college_last_activity,
         military_students=college_military_students,
+        exhibit_tables=exhibit_tables,
     )
 
     # ── Vision 2030 progress — derive from live data + config overrides ──
@@ -4882,7 +4824,7 @@ def main():
         f.write(js_content)
 
     # ── Write statewide exhibit data as separate JS for interactive card ──
-    exhibit_tables = build_exhibit_analysis_tables(exhibit_data) if exhibit_data else None
+    # exhibit_tables was built earlier (above the render_college_activity_card call)
     if exhibit_tables and exhibit_tables.get("statewide_adoption"):
         sw_js_path = os.path.join(SCRIPT_DIR, "statewide_data.js")
         sw_data = {
@@ -5070,7 +5012,7 @@ def main():
                 print("  Rendered static KPI cards with breakdowns")
 
             # ── Inject Exhibit Analysis section (toggle button + scrollable cards) ──
-            exhibit_tables = build_exhibit_analysis_tables(exhibit_data) if exhibit_data else None
+            # exhibit_tables was built earlier during College Activity rendering
             if exhibit_tables:
                 exhibit_html = render_exhibit_analysis_html(exhibit_tables)
                 # Add toggle button after KPI section, before Filter Bar
