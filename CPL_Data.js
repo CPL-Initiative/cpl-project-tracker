@@ -16,13 +16,13 @@ window.CPL_DATA = {
   "data_as_of": "April 20, 2026",
   "kpis": {
     "cumulative_students": {
-      "value": "44,666",
+      "value": "44,671",
       "label": "Cumulative CPL Students",
       "sub": "Target: 250,000 by 2030",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "23,081"
+          "value": "23,086"
         },
         {
           "label": "Workforce/Other",
@@ -54,7 +54,7 @@ window.CPL_DATA = {
         },
         {
           "label": "Applied Credits",
-          "value": "199,965",
+          "value": "199,962",
           "note": "posted to student records"
         }
       ],
@@ -142,7 +142,7 @@ window.CPL_DATA = {
       "breakdowns": [
         {
           "label": "JST Credits",
-          "value": "23,081 / 30,000"
+          "value": "23,086 / 30,000"
         },
         {
           "label": "Basic Training Credit",
@@ -195,7 +195,7 @@ window.CPL_DATA = {
       ],
       "live": true
     },
-    "_live_updated": "2026-04-19T19:15:11.687Z",
+    "_live_updated": "2026-04-20T00:06:16.377Z",
     "map_exhibits": {
       "value": "3,107",
       "label": "MAP Exhibits",
@@ -248,7 +248,7 @@ window.CPL_DATA = {
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-04-19T19:14:40",
+    "_exhibit_updated": "2026-04-20T00:05:44",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
@@ -2238,7 +2238,7 @@ window.CPL_DATA = {
         "name": "Expand Equitable Access & Boost Student Success",
         "target": "250,000 Californians by 2030",
         "progress": 18,
-        "current": "44,666 cumulative students"
+        "current": "44,671 cumulative students"
       },
       {
         "id": "Goal 2",

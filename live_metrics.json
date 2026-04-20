@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-19T19:15:11.687Z",
+  "scraped_at": "2026-04-20T00:06:16.377Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -218,17 +218,17 @@
       "colleges": [
         {
           "college": "City College of San Francisco",
-          "students": 1591,
-          "units": 4242.5,
-          "avgUnits": 2.6665619107479572,
+          "students": 1596,
+          "units": 4240,
+          "avgUnits": 2.656641604010025,
           "transcriptionRate": 0.9,
-          "avgTranscribed": 0.023255813953488372,
+          "avgTranscribed": 0.023182957393483708,
           "criteriaMetCount": 2,
-          "militaryStudents": 989,
+          "militaryStudents": 994,
           "nonMilitaryStudents": 603,
           "apprenticeStudents": 4,
-          "savings": 7335717.5,
-          "yearImpact": 25738718,
+          "savings": 7331392.5,
+          "yearImpact": 25723550.5,
           "transcribedUnits": 37
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "44,666",
+      "value": "44,671",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "23,081"
+          "value": "23,086"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 44666,
-    "Units": 199965.05000000002,
+    "Students": 44671,
+    "Units": 199962.55000000002,
     "TranscribedUnits": 97270.95,
-    "Savings": 282990274.75,
-    "YearImpact": 1139009974.1,
-    "MilitaryStudents": 23081,
+    "Savings": 282985949.75,
+    "YearImpact": 1138994806.6,
+    "MilitaryStudents": 23086,
     "NonMilitaryStudents": 21656,
     "AprenticeStudents": 706,
-    "AverageUnits": 4.476896296959657,
-    "TranscribedAverage": 2.177740339408051
+    "AverageUnits": 4.476339235745786,
+    "TranscribedAverage": 2.1774965861520896
   }
 }
