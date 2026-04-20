@@ -145,7 +145,27 @@
 
     // Pagination
     html += '<div class="sw-pagination" id="sw-pagination"></div>';
-    html += '</div></div>';
+    html += '</div>';
+
+    // ── Collapsible algorithm description (matches the 19 cards rendered by Python) ──
+    html += '<div style="padding:0 1rem 0.8rem;">' +
+      '<details class="algo-details">' +
+        '<summary>How this is calculated</summary>' +
+        '<div class="algo-body">' +
+          '<div class="algo-row"><span class="algo-label">Source:</span> ' +
+            '<span class="algo-value">View_ArticulatedMAPExhibits joined with college/district/region lookups from college_lookup.js.</span></div>' +
+          '<div class="algo-row"><span class="algo-label">Formula:</span> ' +
+            '<span class="algo-value">For each statewide (CCC Collaborative) exhibit: count adopting colleges and list potential adopters (colleges in the same district/region that are eligible but haven&apos;t articulated).</span></div>' +
+          '<div class="algo-row"><span class="algo-label">Assumptions:</span> ' +
+            '<span class="algo-value">Potential adopters = colleges in the CCC system not currently articulating this exhibit. Credit recs count each college-course pair separately.</span></div>' +
+          '<div class="algo-row"><span class="algo-label">Caveats:</span> ' +
+            '<span class="algo-value">Interactive filters (CPL Type, Discipline, District, SW Region) narrow results client-side. Exports reflect current filter state.</span></div>' +
+          '<div class="algo-meta">Description last updated: 2026-04-19</div>' +
+        '</div>' +
+      '</details>' +
+    '</div>';
+
+    html += '</div>';
 
     container.innerHTML = html;
   }
