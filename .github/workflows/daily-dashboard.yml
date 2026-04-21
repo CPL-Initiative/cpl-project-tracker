@@ -2,7 +2,7 @@ name: Daily CPL Dashboard
 
 on:
   schedule:
-    - cron: '0 14 * * *'   # 6 AM PT (UTC-8) every day
+    - cron: '17 10 * * *'   # 2:17 AM PST / 3:17 AM PDT (GitHub uses UTC, no DST)
   workflow_dispatch:         # allow manual trigger from GitHub UI
 
 concurrency:
