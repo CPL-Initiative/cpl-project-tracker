@@ -16,17 +16,17 @@ window.CPL_DATA = {
   "data_as_of": "April 20, 2026",
   "kpis": {
     "cumulative_students": {
-      "value": "44,699",
+      "value": "44,754",
       "label": "Cumulative CPL Students",
       "sub": "Target: 250,000 by 2030",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "23,117"
+          "value": "23,166"
         },
         {
           "label": "Workforce/Other",
-          "value": "21,653"
+          "value": "21,659"
         },
         {
           "label": "Apprentice",
@@ -54,39 +54,39 @@ window.CPL_DATA = {
         },
         {
           "label": "Applied Credits",
-          "value": "200,100",
+          "value": "200,046",
           "note": "posted to student records"
         }
       ],
       "live": true
     },
     "credit_recommendations": {
-      "value": "7,378",
+      "value": "7,767",
       "label": "Credit Recommendations",
       "sub": "Source: MAP Custom Reporting Module",
       "breakdowns": [
         {
           "label": "CCC Collaborative",
-          "value": "956",
+          "value": "1,123",
           "note": "statewide faculty workgroups"
         },
         {
           "label": "Local",
-          "value": "6,422",
+          "value": "6,644",
           "note": "individual college articulations"
         }
       ],
       "live": true,
       "footnote": [
-        "Standardized Assessment: 2,987",
-        "Industry Certification: 2,557",
-        "Credit By Exam: 1,332",
-        "Portfolio Review: 352",
-        "Military: 109"
+        "Standardized Assessment: 3,092",
+        "Industry Certification: 2,769",
+        "Credit By Exam: 1,392",
+        "Portfolio Review: 362",
+        "Military: 111"
       ]
     },
     "active_colleges": {
-      "value": "95",
+      "value": "96",
       "label": "Active Colleges",
       "sub": "of 116 system colleges",
       "breakdowns": [
@@ -97,12 +97,12 @@ window.CPL_DATA = {
         },
         {
           "label": "Advancing Colleges",
-          "value": "82",
+          "value": "83",
           "note": "active, building capacity"
         },
         {
           "label": "Inactive Colleges",
-          "value": "20",
+          "value": "19",
           "note": "<10 students and 0 units"
         }
       ],
@@ -142,7 +142,7 @@ window.CPL_DATA = {
       "breakdowns": [
         {
           "label": "JST Credits",
-          "value": "23,117 / 30,000"
+          "value": "23,166 / 30,000"
         },
         {
           "label": "Basic Training Credit",
@@ -182,7 +182,7 @@ window.CPL_DATA = {
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$588M"
+          "value": "$587M"
         },
         {
           "label": "Workforce/Other",
@@ -195,60 +195,60 @@ window.CPL_DATA = {
       ],
       "live": true
     },
-    "_live_updated": "2026-04-20T15:14:55.369Z",
+    "_live_updated": "2026-04-21T00:23:35.182Z",
     "map_exhibits": {
-      "value": "3,108",
+      "value": "3,154",
       "label": "MAP Exhibits",
-      "sub": "62 originating colleges",
+      "sub": "66 originating colleges",
       "breakdowns": [
         {
           "label": "CCC Collaborative",
-          "value": "116",
+          "value": "118",
           "note": "statewide exhibits"
         },
         {
           "label": "Local",
-          "value": "2,992",
+          "value": "3,036",
           "note": "college-created exhibits"
         }
       ],
       "live": true
     },
     "ccc_collaborative": {
-      "value": "55",
+      "value": "63",
       "label": "CCC Collaborative Adoption",
       "sub": "Colleges adopting statewide exhibits",
       "breakdowns": [
         {
           "label": "Collaborative Exhibits",
-          "value": "116"
+          "value": "118"
         },
         {
           "label": "Collaborative Credit Recs",
-          "value": "956"
+          "value": "1,123"
         }
       ],
       "live": true
     },
     "articulation_colleges": {
-      "value": "83",
+      "value": "89",
       "label": "Articulating Colleges",
       "sub": "Colleges with MAP exhibits",
       "breakdowns": [
         {
           "label": "Originating Colleges",
-          "value": "62",
+          "value": "66",
           "note": "created exhibits"
         },
         {
           "label": "Adopting CCC Collaborative",
-          "value": "55",
+          "value": "63",
           "note": "statewide exhibits"
         }
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-04-20T15:14:25",
+    "_exhibit_updated": "2026-04-21T00:23:04",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
@@ -2238,7 +2238,7 @@ window.CPL_DATA = {
         "name": "Expand Equitable Access & Boost Student Success",
         "target": "250,000 Californians by 2030",
         "progress": 18,
-        "current": "44,699 cumulative students"
+        "current": "44,754 cumulative students"
       },
       {
         "id": "Goal 2",
