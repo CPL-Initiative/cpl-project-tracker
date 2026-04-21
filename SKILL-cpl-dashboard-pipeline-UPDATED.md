@@ -258,7 +258,7 @@ The dashboard includes a Claude-powered report generator:
 5. If index.lock exists, delete it via File Explorer
 
 ### Scrape returning errors
-1. Test directly: `https://cpl-proxy.slee-548.workers.dev/scrape?secret=CPL_SCRAPE_2026`
+1. Test directly: `https://cpl-proxy.slee-548.workers.dev/scrape?secret=<YOUR_SCRAPE_SECRET>`
 2. If "Invalid or missing secret" → check SCRAPE_SECRET in Cloudflare dashboard
 3. If "CPL API returned 502" → CCCCO Dashboard may be down
 4. If "ALL COLLEGES row not found" → API response structure may have changed
