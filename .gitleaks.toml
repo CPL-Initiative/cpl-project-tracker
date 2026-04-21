@@ -1,0 +1,8 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "CCCCO occupation taxonomy false positives"
+paths = [
+  '''CustomReport_latest\.json''',
+]
