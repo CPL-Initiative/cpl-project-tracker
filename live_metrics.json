@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-02T11:10:40.643Z",
+  "scraped_at": "2026-05-03T11:10:14.941Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -48,14 +48,14 @@
         },
         {
           "college": "Moreno Valley College",
-          "students": 1454,
+          "students": 1455,
           "units": 9672.5,
-          "avgUnits": 6.6523383768913344,
+          "avgUnits": 6.647766323024055,
           "transcriptionRate": 90.3,
-          "avgTranscribed": 6.004814305364512,
+          "avgTranscribed": 6.000687285223368,
           "criteriaMetCount": 5,
           "militaryStudents": 894,
-          "nonMilitaryStudents": 576,
+          "nonMilitaryStudents": 577,
           "apprenticeStudents": 0,
           "savings": 15128115,
           "yearImpact": 58869653,
@@ -1757,7 +1757,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "45,195",
+      "value": "45,196",
       "breakdowns": [
         {
           "label": "Military",
@@ -1765,7 +1765,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "21,755"
+          "value": "21,756"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 45195,
+    "Students": 45196,
     "Units": 201269.05000000002,
     "TranscribedUnits": 95622.95,
     "Savings": 287042477.25,
     "YearImpact": 1150373374.1,
     "MilitaryStudents": 23514,
-    "NonMilitaryStudents": 21755,
+    "NonMilitaryStudents": 21756,
     "AprenticeStudents": 730,
-    "AverageUnits": 4.45334771545525,
-    "TranscribedAverage": 2.1157860382785705
+    "AverageUnits": 4.453249181343482,
+    "TranscribedAverage": 2.1157392247101514
   }
 }
