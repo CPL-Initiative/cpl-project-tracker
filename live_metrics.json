@@ -1,10 +1,10 @@
 {
-  "scraped_at": "2026-05-04T12:07:29.781Z",
+  "scraped_at": "2026-05-05T11:42:13.523Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
   "active_college_count": 97,
-  "star_college_count": 49,
+  "star_college_count": 50,
   "tiers": {
     "criteria": [
       "Students >= 500",
@@ -33,48 +33,48 @@
         },
         {
           "college": "Los Angeles Pierce College",
-          "students": 1835,
-          "units": 28176,
-          "avgUnits": 15.354768392370572,
+          "students": 1836,
+          "units": 28179,
+          "avgUnits": 15.348039215686274,
           "transcriptionRate": 98.8,
-          "avgTranscribed": 15.173841961852862,
+          "avgTranscribed": 15.16557734204793,
           "criteriaMetCount": 5,
-          "militaryStudents": 96,
+          "militaryStudents": 97,
           "nonMilitaryStudents": 1739,
           "apprenticeStudents": 173,
-          "savings": 27430425,
-          "yearImpact": 133868502,
+          "savings": 27435615,
+          "yearImpact": 133886703,
           "transcribedUnits": 27844
         },
         {
           "college": "Moreno Valley College",
-          "students": 1455,
-          "units": 9672.5,
-          "avgUnits": 6.647766323024055,
-          "transcriptionRate": 90.3,
-          "avgTranscribed": 6.000687285223368,
+          "students": 1463,
+          "units": 9484.5,
+          "avgUnits": 6.482911825017088,
+          "transcriptionRate": 90.1,
+          "avgTranscribed": 5.841421736158578,
           "criteriaMetCount": 5,
-          "militaryStudents": 894,
-          "nonMilitaryStudents": 577,
+          "militaryStudents": 901,
+          "nonMilitaryStudents": 578,
           "apprenticeStudents": 0,
-          "savings": 15128115,
-          "yearImpact": 58869653,
-          "transcribedUnits": 8731
+          "savings": 14489015,
+          "yearImpact": 56641868,
+          "transcribedUnits": 8546
         },
         {
           "college": "Norco College",
           "students": 729,
-          "units": 5527.5,
-          "avgUnits": 7.582304526748971,
-          "transcriptionRate": 62.2,
-          "avgTranscribed": 4.716735253772291,
+          "units": 5417.5,
+          "avgUnits": 7.431412894375858,
+          "transcriptionRate": 61.6,
+          "avgTranscribed": 4.574074074074074,
           "criteriaMetCount": 5,
           "militaryStudents": 485,
           "nonMilitaryStudents": 250,
           "apprenticeStudents": 93,
-          "savings": 10680260,
-          "yearImpact": 43796383,
-          "transcribedUnits": 3438.5
+          "savings": 10277170,
+          "yearImpact": 42382772,
+          "transcribedUnits": 3334.5
         },
         {
           "college": "Riverside City College",
@@ -87,8 +87,8 @@
           "militaryStudents": 667,
           "nonMilitaryStudents": 20,
           "apprenticeStudents": 0,
-          "savings": 7754940,
-          "yearImpact": 27304066,
+          "savings": 7438350,
+          "yearImpact": 26193805,
           "transcribedUnits": 3439
         },
         {
@@ -139,17 +139,17 @@
         {
           "college": "San Diego Miramar College",
           "students": 3333,
-          "units": 8892.7,
-          "avgUnits": 2.668076807680768,
-          "transcriptionRate": 35.8,
-          "avgTranscribed": 0.9552055205520554,
+          "units": 8879.7,
+          "avgUnits": 2.6641764176417646,
+          "transcriptionRate": 35.7,
+          "avgTranscribed": 0.9522052205220525,
           "criteriaMetCount": 3,
           "militaryStudents": 1421,
           "nonMilitaryStudents": 1916,
           "apprenticeStudents": 14,
-          "savings": 13331178,
-          "yearImpact": 51685405.8,
-          "transcribedUnits": 3183.7000000000007
+          "savings": 13309583,
+          "yearImpact": 51586726.8,
+          "transcribedUnits": 3173.7000000000007
         },
         {
           "college": "De Anza College",
@@ -184,16 +184,16 @@
         {
           "college": "Bakersfield College",
           "students": 551,
-          "units": 7806.5,
-          "avgUnits": 14.167876588021779,
-          "transcriptionRate": 6.4,
+          "units": 8044.5,
+          "avgUnits": 14.599818511796734,
+          "transcriptionRate": 6.2,
           "avgTranscribed": 0.9092558983666061,
           "criteriaMetCount": 3,
           "militaryStudents": 511,
           "nonMilitaryStudents": 47,
           "apprenticeStudents": 0,
-          "savings": 14331655,
-          "yearImpact": 51210466.5,
+          "savings": 14733015,
+          "yearImpact": 52618010.5,
           "transcribedUnits": 501
         },
         {
@@ -234,17 +234,17 @@
         {
           "college": "City College of San Francisco",
           "students": 1626,
-          "units": 5347,
-          "avgUnits": 3.288437884378844,
-          "transcriptionRate": 0.9,
-          "avgTranscribed": 0.02982779827798278,
+          "units": 6082,
+          "avgUnits": 3.740467404674047,
+          "transcriptionRate": 1.1,
+          "avgTranscribed": 0.04089790897908979,
           "criteriaMetCount": 2,
           "militaryStudents": 1025,
           "nonMilitaryStudents": 602,
           "apprenticeStudents": 5,
-          "savings": 9248250,
-          "yearImpact": 32451922,
-          "transcribedUnits": 48.5
+          "savings": 10519800,
+          "yearImpact": 36911167,
+          "transcribedUnits": 66.5
         },
         {
           "college": "El Camino College",
@@ -279,17 +279,17 @@
         {
           "college": "San Bernardino Valley College",
           "students": 353,
-          "units": 2681,
-          "avgUnits": 7.594900849858357,
-          "transcriptionRate": 25.6,
-          "avgTranscribed": 1.9433427762039661,
+          "units": 2562,
+          "avgUnits": 7.257790368271955,
+          "transcriptionRate": 26.6,
+          "avgTranscribed": 1.9320113314447591,
           "criteriaMetCount": 2,
           "militaryStudents": 207,
           "nonMilitaryStudents": 151,
           "apprenticeStudents": 61,
-          "savings": 4397575,
-          "yearImpact": 16460017,
-          "transcribedUnits": 686
+          "savings": 4143265,
+          "yearImpact": 15568168,
+          "transcribedUnits": 682
         },
         {
           "college": "College of the Desert",
@@ -308,32 +308,32 @@
         },
         {
           "college": "Chaffey College",
-          "students": 2419,
-          "units": 904,
-          "avgUnits": 0.37370814386109963,
-          "transcriptionRate": 4,
-          "avgTranscribed": 0.014882182720132286,
+          "students": 2420,
+          "units": 952,
+          "avgUnits": 0.3933884297520661,
+          "transcriptionRate": 3.8,
+          "avgTranscribed": 0.01487603305785124,
           "criteriaMetCount": 1,
           "militaryStudents": 248,
-          "nonMilitaryStudents": 2171,
+          "nonMilitaryStudents": 2172,
           "apprenticeStudents": 1,
-          "savings": 1560135,
-          "yearImpact": 5525286.5,
+          "savings": 1606455,
+          "yearImpact": 5752518.5,
           "transcribedUnits": 36
         },
         {
           "college": "Coastline Community College",
           "students": 896,
-          "units": 1425,
-          "avgUnits": 1.5904017857142858,
+          "units": 1422,
+          "avgUnits": 1.5870535714285714,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
           "militaryStudents": 896,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 2475630,
-          "yearImpact": 8681877,
+          "savings": 2470440,
+          "yearImpact": 8663676,
           "transcribedUnits": 0
         },
         {
@@ -369,17 +369,17 @@
         {
           "college": "Cypress College ",
           "students": 626,
-          "units": 2259.5,
-          "avgUnits": 3.6094249201277955,
-          "transcriptionRate": 3.9,
-          "avgTranscribed": 0.1389776357827476,
+          "units": 2263.5,
+          "avgUnits": 3.615814696485623,
+          "transcriptionRate": 4.2,
+          "avgTranscribed": 0.15175718849840256,
           "criteriaMetCount": 1,
           "militaryStudents": 379,
           "nonMilitaryStudents": 247,
           "apprenticeStudents": 1,
-          "savings": 3050222.5,
-          "yearImpact": 12212094,
-          "transcribedUnits": 87
+          "savings": 3054082.5,
+          "yearImpact": 12231030,
+          "transcribedUnits": 95
         },
         {
           "college": "Fullerton College",
@@ -547,6 +547,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Mission College",
+          "students": 124,
+          "units": 744,
+          "avgUnits": 6,
+          "transcriptionRate": 0.8,
+          "avgTranscribed": 0.04838709677419355,
+          "criteriaMetCount": 1,
+          "militaryStudents": 124,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 1287120,
+          "yearImpact": 4513848,
+          "transcribedUnits": 6
+        },
+        {
           "college": "Cerro Coso Community College",
           "students": 120,
           "units": 600,
@@ -560,21 +575,6 @@
           "savings": 1038000,
           "yearImpact": 3640200,
           "transcribedUnits": 0
-        },
-        {
-          "college": "Mission College",
-          "students": 116,
-          "units": 696,
-          "avgUnits": 6,
-          "transcriptionRate": 0.9,
-          "avgTranscribed": 0.05172413793103448,
-          "criteriaMetCount": 1,
-          "militaryStudents": 116,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 1204080,
-          "yearImpact": 4222632,
-          "transcribedUnits": 6
         },
         {
           "college": "Evergreen Valley College",
@@ -712,21 +712,6 @@
           "transcribedUnits": 0
         },
         {
-          "college": "Compton College",
-          "students": 21,
-          "units": 128,
-          "avgUnits": 6.095238095238095,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 1,
-          "militaryStudents": 21,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 230090,
-          "yearImpact": 806911,
-          "transcribedUnits": 0
-        },
-        {
           "college": "Berkeley City College",
           "students": 17,
           "units": 96,
@@ -773,14 +758,14 @@
         },
         {
           "college": "Santa Ana College",
-          "students": 445,
+          "students": 446,
           "units": 1440.1,
-          "avgUnits": 3.2361797752808985,
+          "avgUnits": 3.2289237668161435,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 332,
-          "nonMilitaryStudents": 112,
+          "nonMilitaryStudents": 113,
           "apprenticeStudents": 5,
           "savings": 2458848,
           "yearImpact": 8802817.8,
@@ -924,16 +909,16 @@
         {
           "college": "College of San Mateo",
           "students": 182,
-          "units": 559,
-          "avgUnits": 3.0714285714285716,
+          "units": 540,
+          "avgUnits": 2.967032967032967,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 182,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 967070,
-          "yearImpact": 3391453,
+          "savings": 934200,
+          "yearImpact": 3276180,
           "transcribedUnits": 0
         },
         {
@@ -1239,16 +1224,16 @@
         {
           "college": "Lemoore College",
           "students": 44,
-          "units": 96,
-          "avgUnits": 2.1818181818181817,
+          "units": 93,
+          "avgUnits": 2.1136363636363638,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 31,
           "nonMilitaryStudents": 14,
           "apprenticeStudents": 1,
-          "savings": 166080,
-          "yearImpact": 582432,
+          "savings": 160890,
+          "yearImpact": 564231,
           "transcribedUnits": 0
         },
         {
@@ -1324,6 +1309,21 @@
           "apprenticeStudents": 0,
           "savings": 190300,
           "yearImpact": 667370,
+          "transcribedUnits": 0
+        },
+        {
+          "college": "Compton College",
+          "students": 21,
+          "units": 101,
+          "avgUnits": 4.809523809523809,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 21,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 179920,
+          "yearImpact": 630968,
           "transcribedUnits": 0
         },
         {
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "45,196",
+      "value": "45,215",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "23,514"
+          "value": "23,530"
         },
         {
           "label": "Workforce/Other",
-          "value": "21,756"
+          "value": "21,759"
         },
         {
           "label": "Apprentice",
@@ -1775,7 +1775,7 @@
     },
     {
       "title": "ELIGIBLE UNITS",
-      "value": "201k",
+      "value": "202k",
       "avg": "4.5 avg",
       "breakdowns": [
         {
@@ -1794,7 +1794,7 @@
     },
     {
       "title": "TRANSCRIBED UNITS",
-      "value": "96k",
+      "value": "95k",
       "avg": "2.1 avg",
       "breakdowns": [
         {
@@ -1821,7 +1821,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "$143M"
+          "value": "$142M"
         },
         {
           "label": "Apprentice",
@@ -1835,11 +1835,11 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$609M"
+          "value": "$607M"
         },
         {
           "label": "Workforce/Other",
-          "value": "$572M"
+          "value": "$571M"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 45196,
-    "Units": 201269.05000000002,
-    "TranscribedUnits": 95622.95,
-    "Savings": 287042477.25,
-    "YearImpact": 1150373374.1,
-    "MilitaryStudents": 23514,
-    "NonMilitaryStudents": 21756,
+    "Students": 45215,
+    "Units": 201863.05000000002,
+    "TranscribedUnits": 95345.95,
+    "Savings": 287125692.25,
+    "YearImpact": 1150725945.1,
+    "MilitaryStudents": 23530,
+    "NonMilitaryStudents": 21759,
     "AprenticeStudents": 730,
-    "AverageUnits": 4.453249181343482,
-    "TranscribedAverage": 2.1157392247101514
+    "AverageUnits": 4.46451509454827,
+    "TranscribedAverage": 2.1087238748203028
   }
 }
