@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-07T12:14:36.053Z",
+  "scraped_at": "2026-05-08T11:48:52.630Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -64,17 +64,17 @@
         {
           "college": "Norco College",
           "students": 729,
-          "units": 5417.5,
-          "avgUnits": 7.431412894375858,
+          "units": 5420.5,
+          "avgUnits": 7.435528120713306,
           "transcriptionRate": 61.6,
-          "avgTranscribed": 4.574074074074074,
+          "avgTranscribed": 4.578189300411522,
           "criteriaMetCount": 5,
           "militaryStudents": 485,
           "nonMilitaryStudents": 250,
           "apprenticeStudents": 93,
-          "savings": 10277170,
-          "yearImpact": 42382772,
-          "transcribedUnits": 3334.5
+          "savings": 10280065,
+          "yearImpact": 42396974,
+          "transcribedUnits": 3337.5
         },
         {
           "college": "Riverside City College",
@@ -213,18 +213,18 @@
         },
         {
           "college": "Palo Verde College",
-          "students": 14,
-          "units": 131.25,
-          "avgUnits": 9.375,
-          "transcriptionRate": 79.4,
-          "avgTranscribed": 7.446428571428571,
+          "students": 15,
+          "units": 150,
+          "avgUnits": 10,
+          "transcriptionRate": 82,
+          "avgTranscribed": 8.2,
           "criteriaMetCount": 3,
           "militaryStudents": 9,
-          "nonMilitaryStudents": 5,
+          "nonMilitaryStudents": 6,
           "apprenticeStudents": 0,
-          "savings": 147311.25,
-          "yearImpact": 657328.5,
-          "transcribedUnits": 104.25
+          "savings": 165405,
+          "yearImpact": 746091,
+          "transcribedUnits": 123
         }
       ]
     },
@@ -278,15 +278,15 @@
         },
         {
           "college": "San Bernardino Valley College",
-          "students": 354,
+          "students": 360,
           "units": 2562,
-          "avgUnits": 7.237288135593221,
+          "avgUnits": 7.116666666666666,
           "transcriptionRate": 26.6,
-          "avgTranscribed": 1.926553672316384,
+          "avgTranscribed": 1.8944444444444444,
           "criteriaMetCount": 2,
           "militaryStudents": 207,
-          "nonMilitaryStudents": 152,
-          "apprenticeStudents": 61,
+          "nonMilitaryStudents": 158,
+          "apprenticeStudents": 67,
           "savings": 4143265,
           "yearImpact": 15568168,
           "transcribedUnits": 682
@@ -743,17 +743,17 @@
         },
         {
           "college": "San Joaquin Delta College",
-          "students": 482,
-          "units": 1440,
-          "avgUnits": 2.987551867219917,
+          "students": 487,
+          "units": 1455,
+          "avgUnits": 2.9876796714579057,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 482,
+          "militaryStudents": 487,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 2491200,
-          "yearImpact": 8736480,
+          "savings": 2517150,
+          "yearImpact": 8827485,
           "transcribedUnits": 0
         },
         {
@@ -1372,6 +1372,21 @@
           "transcribedUnits": 6
         },
         {
+          "college": "Chabot College",
+          "students": 15,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 15,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Copper Mountain College",
           "students": 14,
           "units": 45,
@@ -1384,21 +1399,6 @@
           "apprenticeStudents": 0,
           "savings": 77850,
           "yearImpact": 273015,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Chabot College",
-          "students": 13,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 13,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
           "transcribedUnits": 0
         },
         {
@@ -1757,19 +1757,19 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "45,279",
+      "value": "45,293",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "23,584"
+          "value": "23,591"
         },
         {
           "label": "Workforce/Other",
-          "value": "21,769"
+          "value": "21,776"
         },
         {
           "label": "Apprentice",
-          "value": "730"
+          "value": "736"
         }
       ]
     },
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 45279,
-    "Units": 202334.05000000002,
-    "TranscribedUnits": 95513.95,
-    "Savings": 287709304.75,
-    "YearImpact": 1153148558.1,
-    "MilitaryStudents": 23584,
-    "NonMilitaryStudents": 21769,
-    "AprenticeStudents": 730,
-    "AverageUnits": 4.468606859692131,
-    "TranscribedAverage": 2.1094536098412067
+    "Students": 45293,
+    "Units": 202370.80000000002,
+    "TranscribedUnits": 95535.7,
+    "Savings": 287756243.5,
+    "YearImpact": 1153342527.6,
+    "MilitaryStudents": 23591,
+    "NonMilitaryStudents": 21776,
+    "AprenticeStudents": 736,
+    "AverageUnits": 4.468037003510477,
+    "TranscribedAverage": 2.109281787472678
   }
 }
