@@ -285,13 +285,19 @@
       }
 
       // ── Custom Report integration ──────────────────────────────
+      // The College Activity panel uses a college-specific report generator
+      // (college_report_generator.js). Falls back to the project-level
+      // generator if the college one hasn't loaded.
       if (customReportBtn) {
         customReportBtn.addEventListener('click', () => {
-          if (typeof window.openReportModal === 'function') {
-            window._caFilteredData = filteredData;
+          window._caFilteredData = filteredData;
+          window._caAllData = allData;
+          if (typeof window.openCollegeReportModal === 'function') {
+            window.openCollegeReportModal();
+          } else if (typeof window.openReportModal === 'function') {
             window.openReportModal();
           } else {
-            alert('Custom Report generator not available. Ensure report_generator.js is loaded.');
+            alert('Custom Report generator not available. Ensure college_report_generator.js is loaded.');
           }
         });
       }
