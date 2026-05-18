@@ -328,6 +328,29 @@ Implementation notes (important — keep in sync with the generator):
 - **Tables**: projects, budget_expenditures, personnel, workplan_goals
 - Separate from live metrics scraping; handles project-level data storage.
 
+### 9. EACR Exhibit Identity — current state and future direction
+
+**Current grouping (shipped 2026-05-18):** the Exhibit Adoption & Credit
+Recommendations table groups MAP rows by
+`(Exhibit Title, CPL Type, Collaborative Type)` rather than raw
+`ExhibitID`. This collapses MAP's ID fragmentation (3,451 IDs → 3,274
+cards) but does not yet handle **title drift** — the same credential
+entered under multiple freehand titles by different colleges still
+produces multiple cards.
+
+**Career Cluster filter** uses the `CCC SW Sector` column in
+`TOP_Code_Lookup.xlsx` (CCC Strong Workforce 10-sector framework with
+an "Academic Transfer & General Education" catch-all).
+
+**Future direction — synthetic unified-title layer:** an AI-assisted
+canonicalization layer that assigns each MAP exhibit a unified title,
+issuing agency, and training agency, so all spelling/format variants
+collapse into one card. Design doc:
+[`docs/exhibit_unification_vision.md`](docs/exhibit_unification_vision.md).
+When that lands, the EACR grouping key will become
+`(Unified Title, CPL Type, Collaborative Type)` and a per-exhibit
+`also entered as…` disclosure will surface the raw titles underneath.
+
 ---
 
 ## Troubleshooting
