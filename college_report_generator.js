@@ -252,6 +252,76 @@
         if (el) { el.textContent = msg; el.style.color = color || '#666'; }
     }
 
+    // ── Progress bar (replaces the Generate button while a report is in flight) ──
+    var progressTimer = null;
+
+    function ensureProgressUI() {
+        if (document.getElementById('crpt-progress-css')) return;
+        var css = document.createElement('style');
+        css.id = 'crpt-progress-css';
+        css.textContent =
+            '@keyframes crpt-stripes { from { background-position: 0 0; } to { background-position: 40px 0; } }' +
+            '.crpt-progress-track { width:100%;height:40px;background:#eee;border-radius:6px;overflow:hidden;position:relative;font-family:inherit; }' +
+            '.crpt-progress-fill { position:absolute;top:0;bottom:0;left:0;width:0%;background-color:#C9A84C;' +
+                'background-image:linear-gradient(135deg, rgba(255,255,255,0.28) 25%, transparent 25%, transparent 50%,' +
+                ' rgba(255,255,255,0.28) 50%, rgba(255,255,255,0.28) 75%, transparent 75%);' +
+                'background-size:40px 40px;animation:crpt-stripes 1s linear infinite;transition:width 0.4s ease; }' +
+            '.crpt-progress-label { position:absolute;inset:0;display:flex;align-items:center;justify-content:center;' +
+                'color:#0A2240;font-weight:700;font-size:0.9rem;z-index:1;pointer-events:none; }';
+        document.head.appendChild(css);
+    }
+
+    function showProgress(label) {
+        ensureProgressUI();
+        var btn = document.getElementById('collegeReportGenBtn');
+        if (!btn) return;
+        var bar = document.getElementById('collegeReportGenProgress');
+        if (!bar) {
+            bar = document.createElement('div');
+            bar.id = 'collegeReportGenProgress';
+            bar.className = 'crpt-progress-track';
+            bar.innerHTML = '<div class="crpt-progress-fill"></div><div class="crpt-progress-label"></div>';
+            btn.parentNode.insertBefore(bar, btn);
+        }
+        btn.style.display = 'none';
+        bar.style.display = 'block';
+        setProgress(0, label || 'Starting…');
+    }
+
+    function setProgress(pct, label) {
+        var bar = document.getElementById('collegeReportGenProgress');
+        if (!bar) return;
+        var clamped = Math.min(100, Math.max(0, pct));
+        var fill = bar.querySelector('.crpt-progress-fill');
+        var lbl = bar.querySelector('.crpt-progress-label');
+        if (fill) fill.style.width = clamped + '%';
+        if (lbl) lbl.textContent = Math.round(clamped) + '%' + (label ? ' — ' + label : '');
+    }
+
+    function stopCreep() {
+        if (progressTimer) { clearInterval(progressTimer); progressTimer = null; }
+    }
+
+    // Logarithmic creep from `fromPct` toward `toPct` over ~`tauMs` (asymptotic — never reaches `toPct`).
+    function startCreep(fromPct, toPct, tauMs, label) {
+        stopCreep();
+        var start = Date.now();
+        setProgress(fromPct, label);
+        progressTimer = setInterval(function () {
+            var elapsed = Date.now() - start;
+            var eased = 1 - Math.exp(-elapsed / tauMs);
+            setProgress(fromPct + (toPct - fromPct) * eased, label);
+        }, 250);
+    }
+
+    function hideProgress() {
+        stopCreep();
+        var btn = document.getElementById('collegeReportGenBtn');
+        var bar = document.getElementById('collegeReportGenProgress');
+        if (bar) bar.style.display = 'none';
+        if (btn) btn.style.display = 'block';
+    }
+
     // ── Selection + prompt building ──
     function getSelected() {
         var rows = getRows();
@@ -453,19 +523,30 @@
         if (!PROXY_URL) { setStatus('Report proxy not configured. Contact your administrator.', '#c00'); return; }
 
         var btn = document.getElementById('collegeReportGenBtn');
-        btn.disabled = true; btn.textContent = 'Generating...';
+        btn.disabled = true;
+        showProgress('Computing benchmarks…');
         setStatus('Computing benchmarks across ' + getRows().length + ' colleges...', '#4A90D9');
 
         try {
             var bench = computeBenchmarks();
+            setProgress(8, 'Building prompt…');
             var prompt = buildPrompt(sel, bench);
-            setStatus('Calling Claude — this may take 15-30 seconds for ' + sel.colleges.length + ' colleges...', '#4A90D9');
+            setProgress(15, 'Calling Claude (15-60 seconds)…');
+            setStatus('Calling Claude — this may take 15-60 seconds for ' + sel.colleges.length + ' colleges...', '#4A90D9');
+            // Asymptotic creep from 15% → ~85% during the long Claude call.
+            // tau scales with college count: ~25s for 1 college, ~50s for many.
+            var tauMs = Math.min(60000, 20000 + sel.colleges.length * 4000);
+            startCreep(15, 85, tauMs, 'Calling Claude (15-60 seconds)…');
             var narrative = await callClaude(prompt);
+            stopCreep();
+            setProgress(88, 'Building Word document…');
             setStatus('Building Word document...', '#4A90D9');
             ensureDocxLib(async function () {
                 try {
                     var doc = buildDocx(narrative, sel.audience, sel.colleges);
+                    setProgress(95, 'Packaging .docx…');
                     var blob = await window.docx.Packer.toBlob(doc);
+                    setProgress(99, 'Downloading…');
                     var a = document.createElement('a');
                     a.href = URL.createObjectURL(blob);
                     var dateStr = new Date().toISOString().slice(0, 10);
@@ -474,15 +555,19 @@
                         : 'Selected_Colleges';
                     a.download = slug + '_CPL_Update_' + dateStr + '.docx';
                     document.body.appendChild(a); a.click(); document.body.removeChild(a);
+                    setProgress(100, 'Done');
                     setStatus('Report downloaded.', '#2A7D4F');
+                    setTimeout(hideProgress, 900);
                 } catch (e) {
+                    hideProgress();
                     setStatus('Error building document: ' + e.message, '#c00');
                 }
-                btn.disabled = false; btn.textContent = 'Generate Report';
+                btn.disabled = false;
             });
         } catch (err) {
+            hideProgress();
             setStatus('Error: ' + err.message, '#c00');
-            btn.disabled = false; btn.textContent = 'Generate Report';
+            btn.disabled = false;
         }
     }
 
