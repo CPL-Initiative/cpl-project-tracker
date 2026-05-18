@@ -326,18 +326,33 @@
         if (kb) {
             prompt += '# CPL Knowledge Base (authoritative context)\n\n' + kb + '\n\n---\n\n';
         }
-        prompt += '# College-Level CPL Report Brief\n\n'
+        var isSingle = sel.colleges.length === 1;
+        var titleSpec = isSingle
+            ? 'The Word document is already titled "' + sel.colleges[0].college + ' CPL Update" — do NOT repeat the title in your output. Start directly with the `## Executive Summary` section.'
+            : 'The Word document is already titled "Selected Colleges CPL Update" — do NOT repeat the title in your output. Within the report, use `##` for each per-college subsection titled "[College Name] CPL Update", and start the document with a brief group-level `## Executive Summary`.';
+
+        prompt += '# College-Level CPL Update Brief\n\n'
             + '## Audience\n' + sel.audience.prompt + '\n\n'
             + benchHeader + '\n'
             + '## Selected Colleges (' + sel.colleges.length + ')\n' + collegeBlocks + '\n\n'
             + '## Instructions\n'
-            + 'Write a polished, audience-appropriate report on CPL progress at the selected colleges. Structure it as:\n'
-            + '1. **Executive Summary** (2-3 paragraphs) — what this group of colleges represents within the statewide CPL effort, framed for the audience.\n'
-            + '2. **Outcomes at a Glance** — surface the most striking outcomes across the selected colleges, citing real numbers from the data above. Compare to statewide and tier-level benchmarks.\n'
-            + '3. **College Highlights** — for each selected college (or each grouping if many), write a substantive narrative paragraph: where they stand in the tier system, transcription performance, population mix, and any notable disciplines. Do not pad. If a college is underperforming on a metric, say so plainly and tie it back to CPL framing from the KB.\n'
-            + '4. **Cross-cutting Themes** — patterns visible across selected colleges (e.g., veteran concentration, transcription gaps, discipline strengths).\n'
-            + '5. **Recommended Next Steps** — 3-5 concrete, audience-appropriate actions, grounded in the KB methodology where relevant.\n\n'
-            + 'Use only the numbers provided. Do not invent metrics. Write prose, not bullet lists, except where the structure above explicitly calls for them. Format section headers with `##` markdown. Use `###` for college subheadings. Keep paragraphs concise but substantive. Target 1,500-2,500 words.';
+            + 'Write a concise, accessible **CPL Update** for the selected college(s). The reader is a busy college CEO, trustee, or board member who is always looking for bragging rights to share with constituents. Celebrate what the college has done, equip them with crisp talking points, and frame any gaps as opportunities waiting to be acted upon.\n\n'
+            + '**Tone & framing rules (apply throughout):**\n'
+            + '- CPL is a new endeavor for most California Community Colleges. Be grateful for any activity. Never imply that a college is negligent, behind, or failing.\n'
+            + '- Reframe weaknesses, inactivity, and gaps as *opportunities* — funding and student impact waiting to be unlocked.\n'
+            + '- Because state funding is predicated on specific outcomes, gently equip the reader with awareness of which actions maximize funding and student benefit. Invite, never scold.\n'
+            + '- Eliminate redundancies. Do not restate the same metric in multiple sections.\n\n'
+            + titleSpec + '\n\n'
+            + 'Structure (use `##` for these section headers):\n'
+            + '1. **Executive Summary** — Keep this high-level: 1-2 short paragraphs focused on the college\'s headline achievements and the single biggest opportunity ahead. No metric dump, no tier comparisons here — just the story a CEO would tell.\n'
+            + '2. **Notable Accomplishments** — A bullet list of 3-6 concrete wins, each citing a real number from the data above (students served, units, savings, disciplines covered, veteran/working-adult reach, etc.). These are the bragging-rights bullets.\n'
+            + '3. **Opportunities to Maximize Funding & Student Impact** — Bullets or short paragraphs that turn any gap into an invitation: low transcription rate → "opportunity to convert eligible units into credit on transcripts, unlocking more apportionment"; thin discipline coverage → "room to expand into high-demand disciplines like X"; limited veteran reach → "opportunity to deepen JST/military outreach." Tie each opportunity, where natural, to additional CPL funding or student benefit. Ground recommendations in the KB methodology.\n'
+            + '4. **Next Steps** — 2-4 concrete, audience-appropriate suggestions. Short and actionable.\n\n'
+            + 'Hard constraints:\n'
+            + '- Use only the numbers provided. Do not invent metrics.\n'
+            + '- Target **600-1,000 words total** (shorter is welcome for single colleges with limited data). Brevity is a feature.\n'
+            + '- Use bullets for the Accomplishments and Opportunities sections. Use short paragraphs elsewhere.\n'
+            + '- For multi-college reports, give each college its own `##` "[College Name] CPL Update" subsection but keep the per-college content tight — Executive Summary + Accomplishments + Opportunities only; consolidate Next Steps at the end.';
         return prompt;
     }
 
@@ -361,14 +376,18 @@
     }
 
     // ── .docx builder (matches the project report styling) ──
-    function buildDocx(narrative, audience, collegeCount) {
+    function buildDocx(narrative, audience, colleges) {
         var D = window.docx;
         if (!D) { alert('docx library not loaded'); return null; }
         var children = [];
         var today = new Date().toISOString().slice(0, 10);
+        var collegeCount = colleges.length;
+        var docTitle = (collegeCount === 1)
+            ? colleges[0].college + ' CPL Update'
+            : 'Selected Colleges CPL Update';
 
         children.push(new D.Paragraph({
-            children: [new D.TextRun({ text: 'CPL Initiative — College Custom Report', bold: true, size: 36, color: '0A2240', font: 'Calibri' })],
+            children: [new D.TextRun({ text: docTitle, bold: true, size: 36, color: '0A2240', font: 'Calibri' })],
             spacing: { after: 100 },
         }));
         children.push(new D.Paragraph({
@@ -384,9 +403,21 @@
             spacing: { after: 200 },
         }));
 
+        function buildInlineRuns(text) {
+            var parts = text.split(/(\*\*[^*]+\*\*)/g);
+            return parts.map(function (part) {
+                if (part.startsWith('**') && part.endsWith('**')) {
+                    return new D.TextRun({ text: part.slice(2, -2), bold: true, size: 22, font: 'Calibri' });
+                }
+                return new D.TextRun({ text: part, size: 22, font: 'Calibri' });
+            });
+        }
+
         narrative.split('\n').forEach(function (line) {
             var t = line.trim();
             if (!t) { children.push(new D.Paragraph({ children: [], spacing: { after: 100 } })); return; }
+            // Skip any stray top-level `# Title` heading (the doc already has its own title).
+            if (/^#\s+/.test(t) && !/^#{2,}\s+/.test(t)) { return; }
             if (t.startsWith('## ')) {
                 children.push(new D.Paragraph({
                     children: [new D.TextRun({ text: t.replace(/^##\s*/, ''), bold: true, size: 26, color: '0A2240', font: 'Calibri' })],
@@ -399,14 +430,15 @@
                     spacing: { before: 200, after: 80 },
                 })); return;
             }
-            var parts = t.split(/(\*\*[^*]+\*\*)/g);
-            var runs = parts.map(function (part) {
-                if (part.startsWith('**') && part.endsWith('**')) {
-                    return new D.TextRun({ text: part.slice(2, -2), bold: true, size: 22, font: 'Calibri' });
-                }
-                return new D.TextRun({ text: part, size: 22, font: 'Calibri' });
-            });
-            children.push(new D.Paragraph({ children: runs, spacing: { after: 120 } }));
+            var bulletMatch = t.match(/^[-*]\s+(.+)$/);
+            if (bulletMatch) {
+                children.push(new D.Paragraph({
+                    children: buildInlineRuns(bulletMatch[1]),
+                    bullet: { level: 0 },
+                    spacing: { after: 80 },
+                })); return;
+            }
+            children.push(new D.Paragraph({ children: buildInlineRuns(t), spacing: { after: 120 } }));
         });
 
         return new D.Document({
@@ -432,12 +464,15 @@
             setStatus('Building Word document...', '#4A90D9');
             ensureDocxLib(async function () {
                 try {
-                    var doc = buildDocx(narrative, sel.audience, sel.colleges.length);
+                    var doc = buildDocx(narrative, sel.audience, sel.colleges);
                     var blob = await window.docx.Packer.toBlob(doc);
                     var a = document.createElement('a');
                     a.href = URL.createObjectURL(blob);
                     var dateStr = new Date().toISOString().slice(0, 10);
-                    a.download = 'CPL_College_Report_' + sel.audience.id + '_' + dateStr + '.docx';
+                    var slug = (sel.colleges.length === 1)
+                        ? sel.colleges[0].college.replace(/[^A-Za-z0-9]+/g, '_').replace(/^_|_$/g, '')
+                        : 'Selected_Colleges';
+                    a.download = slug + '_CPL_Update_' + dateStr + '.docx';
                     document.body.appendChild(a); a.click(); document.body.removeChild(a);
                     setStatus('Report downloaded.', '#2A7D4F');
                 } catch (e) {
