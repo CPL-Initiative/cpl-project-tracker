@@ -14,7 +14,7 @@ The script reads from the Excel file in the same folder and overwrites CPL_Data.
 Open (or refresh) CPL_Dashboard.html in your browser to see updated data.
 """
 
-import json, os, re, sys
+import json, os, re, sys, urllib.request
 from datetime import datetime, timedelta, timezone
 from openpyxl import load_workbook
 
@@ -71,6 +71,55 @@ def excel_cell_url(row, col="P"):
     from urllib.parse import quote
     sheet = quote(f"'{EXCEL_SHEET_NAME}'", safe="")
     return f"{SHAREPOINT_EXCEL_URL}&activeCell={sheet}!{col}{row}"
+
+# ── CPL Knowledge Base (public GitHub repo) ──
+# Fetched at pipeline build time and embedded into the dashboard as window.CPL_KB
+# so the College Custom Report generator can ground Claude's commentary in
+# authoritative CPL framing without bundling stale copies in this repo.
+CPL_KB_REPO   = "CPL-Initiative/cpl-knowledge-base"
+CPL_KB_BRANCH = "main"
+# Explicit allowlist of files to embed in the prompt. We avoid the GitHub
+# directory-listing API because unauthenticated requests are aggressively
+# rate-limited (60/hr/IP); raw.githubusercontent.com has a much higher budget.
+# If new KB content is added, append it here.
+CPL_KB_FILES = [
+    "README.md",
+    "glossary.md",
+    "overview/overview.md",
+    "overview/map-platform.md",
+    "overview/ai-ready-california.md",
+    "methodology/three-pillar-initiative-design.md",
+    "methodology/sprint-based-execution.md",
+    "methodology/evidence-first-advocacy.md",
+    "methodology/infrastructure-first-scaling.md",
+    "methodology/knowledge-consolidation.md",
+    "methodology/pattern-scattered-to-systematic.md",
+    "methodology/pattern-ai-as-accelerant-with-faculty-validation.md",
+    "current-status/README.md",
+]
+CPL_KB_MAX_CHARS = 24000   # prompt budget for the embedded KB excerpt
+
+def fetch_cpl_kb(max_chars=CPL_KB_MAX_CHARS):
+    """Return a concatenated string of CPL KB markdown for prompt injection.
+    Best-effort: any fetch failures are logged and skipped so the pipeline never
+    breaks if GitHub is briefly unreachable."""
+    sections = []
+    for path in CPL_KB_FILES:
+        raw_url = f"https://raw.githubusercontent.com/{CPL_KB_REPO}/{CPL_KB_BRANCH}/{path}"
+        try:
+            req = urllib.request.Request(raw_url, headers={"User-Agent": "cpl-dashboard-pipeline"})
+            with urllib.request.urlopen(req, timeout=10) as r:
+                body = r.read().decode("utf-8", errors="replace")
+            sections.append(f"## {path}\n\n{body.strip()}")
+        except Exception as e:
+            print(f"  KB fetch warning ({path}): {e}")
+    if not sections:
+        return ""
+    full = "\n\n---\n\n".join(sections)
+    if len(full) > max_chars:
+        full = full[:max_chars].rsplit("\n", 1)[0] + "\n\n[KB excerpt truncated for prompt size]"
+    return full
+
 HTML_FILE   = os.path.join(SCRIPT_DIR, "CPL_Dashboard.html")
 LIVE_FILE    = os.path.join(SCRIPT_DIR, "live_metrics.json")
 HISTORY_FILE = os.path.join(SCRIPT_DIR, "kpi_history.json")
@@ -5393,12 +5442,34 @@ def main():
             html = html[:att_script_pos] + inject_js + html[att_script_pos:]
             print(f"  Injected attachments URL from Excel config")
 
+        # ── Inject CPL Knowledge Base excerpt for the College Custom Report generator ──
+        try:
+            kb_text = fetch_cpl_kb()
+        except Exception as e:
+            print(f"  KB fetch failed entirely ({e}); proceeding without window.CPL_KB")
+            kb_text = ""
+        # Remove any previously injected CPL_KB script
+        kb_start_marker = "<script>window.CPL_KB="
+        kb_old_pos = html.find(kb_start_marker)
+        if kb_old_pos != -1:
+            kb_old_end = html.find("</script>", kb_old_pos) + len("</script>")
+            html = html[:kb_old_pos] + html[kb_old_end:].lstrip()
+        if kb_text:
+            kb_anchor = '<script src="dashboard_filters.js">'
+            kb_anchor_pos = html.find(kb_anchor)
+            if kb_anchor_pos != -1:
+                kb_json = json.dumps(kb_text)  # safe JS string with proper escaping
+                kb_inject = f"<script>window.CPL_KB={kb_json};</script>\n    "
+                html = html[:kb_anchor_pos] + kb_inject + html[kb_anchor_pos:]
+                print(f"  Injected CPL KB excerpt ({len(kb_text):,} chars) from {CPL_KB_REPO}")
+
         # ── Inject statewide interactive scripts (college_lookup, statewide_data, statewide_interactive) ──
         sw_scripts = [
             '<script src="docx.min.js"></script>',
             '<script src="college_lookup.js"></script>',
             '<script src="statewide_data.js"></script>',
             '<script src="statewide_interactive.js"></script>',
+            '<script src="college_report_generator.js"></script>',
         ]
         # Remove any existing statewide script tags first to guarantee correct order
         for sw_tag in sw_scripts:
