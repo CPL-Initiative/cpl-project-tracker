@@ -52,63 +52,114 @@ become usable. Reports group cleanly by issuing agency.
 | `ICC Fire Inspector 1 Certificate` (one row per articulating course) | **ICC Fire Inspector I** | International Code Council | (issuing agency proctors; college course articulates) |
 | `CompTIA A+` (5+ ExhibitIDs across colleges, slight spelling variants) | **CompTIA A+** | CompTIA | (varies) |
 
-## 4. Open design questions
+## 4. Design decisions (locked in 2026-05-18)
 
-1. **Deterministic vs. LLM-driven mapping.** Pure LLM-per-row is
-   expensive and non-reproducible. A reasonable architecture:
+1. **Architecture — cached LLM-driven classification.**
    - First-pass LLM classification produces a `(unified_title,
      issuing_agency, training_agency, confidence)` tuple for each
      distinct raw title.
-   - Results are cached to a JSON/Excel reference file (the "CPL KB")
-     and committed to the repo.
+   - Results are cached as JSON in the KB and committed to the repo.
    - On future runs, raw titles are first looked up in the cache;
      only previously-unseen titles are sent to the LLM.
    - A periodic full re-classification pass (manually triggered)
      catches drift / improves mappings.
 
-2. **Skill / prompt design.** A dedicated skill should codify:
-   - The vocabulary of unified titles (closed list? open with
-     review?).
-   - Decision rules for borderline cases (e.g. `POST Basic Academy`
-     vs `POST Modular Academy` — same or different unified title?).
-   - Conventions for issuing-agency canonical names (`CompTIA` vs
-     `Computing Technology Industry Association`).
-   - When to refuse / mark as `Needs review`.
+2. **Unified-title vocabulary — OPEN list.** The LLM proposes a
+   canonical name; humans curate the cache by editing the JSON
+   directly. No fixed taxonomy.
 
-3. **Review workflow.** Low-confidence mappings should land in a
-   human-review bucket before they go live. Options: a separate
-   `pending_unified_titles.csv` checked into the repo, or an in-app
-   review tool.
+3. **Confidence handling — ship everything, label it.** Every
+   mapping carries a `confidence` score (0.0–1.0). Low-confidence
+   mappings are NOT quarantined; they're surfaced in the dashboard
+   with a visible indicator so reviewers can spot and curate them
+   in place. No separate pending queue.
 
-4. **KB location.** The unified-title cache + agency lookups belong
-   somewhere all future Claude sessions can find them. Candidates:
-   - A new `kb/` folder at repo root (JSON files, one per entity type).
-   - A skill at `.claude/skills/exhibit-canonicalization/`.
-   - Both: the skill carries the decision rules, the `kb/` folder
-     carries the data.
+4. **KB location — `/kb/` at the repo root.**
+   - `excel_to_dashboard.py` (the primary consumer) is at repo root,
+     so sibling positioning gives clean relative paths.
+   - Discoverable when browsing GitHub; not buried under `.claude/`.
+   - Reusable from outside the canonicalization skill.
 
-5. **Surfacing in the UI.** Once unified titles exist, the EACR
+5. **Skill location — `.claude/skills/exhibit-canonicalization/`.**
+   The skill carries decision rules + prompt template; the KB carries
+   the data. Two separable artifacts in their natural homes.
+
+## 5. Proposed KB file layout
+
+```
+kb/
+├── unified_titles.json     # raw_title → unified_title mapping (many-to-one)
+├── credentials.json        # unified_title → {issuing_agency, training_agency, ...}
+└── README.md               # schema + curation workflow
+```
+
+**`unified_titles.json` schema** (per entry):
+```json
+{
+  "raw_title": "CMPET 315\tGoogle IT Support Professional Certificate Prep Industry Certificate",
+  "unified_title": "Google IT Support Professional Certificate",
+  "confidence": 0.92,
+  "classified_at": "2026-05-19",
+  "classified_by": "claude-opus-4-7",
+  "reviewed_at": null,
+  "reviewed_by": null,
+  "source_exhibit_ids": ["MAPICI-C3IS-1-001"]
+}
+```
+
+**`credentials.json` schema** (keyed by `unified_title`):
+```json
+{
+  "Google IT Support Professional Certificate": {
+    "issuing_agency": "Google / Coursera",
+    "training_agency": null,
+    "confidence_issuer": 0.95,
+    "confidence_trainer": 1.0,
+    "classified_at": "2026-05-19",
+    "reviewed_at": null,
+    "notes": "Self-study certificate; no training agency."
+  }
+}
+```
+
+Two files, not one, because:
+- Issuing/training agencies are properties of the *credential* (one
+  per unified title), not the *raw entry*. Splitting avoids
+  duplicating agency data across every raw-title variant.
+- Re-classifying titles vs. re-classifying agencies become
+  independent operations.
+
+## 6. Remaining open questions
+
+1. **Surfacing in the UI.** Once unified titles exist, the EACR
    grouping key changes from `(Exhibit Title, CPL Type,
    Collaborative Type)` to `(Unified Title, CPL Type,
-   Collaborative Type)`. Raw titles can still be shown beneath
-   the unified title (an "also entered as…" line) so colleges can
-   recognize their own data.
+   Collaborative Type)`. Raw titles can be shown beneath the unified
+   title (an "also entered as…" line) so colleges recognize their
+   own data. Low-confidence rows get a visual marker.
 
-6. **Backwards compatibility with the Career Cluster filter.**
-   Issuing-agency synthesis may suggest cleaner sector mappings
-   than the TOP-derived one currently in `TOP_Code_Lookup.xlsx`.
+2. **Confidence threshold for visual marking.** What threshold
+   warrants a "needs review" pill in the UI? Suggest 0.75 as a
+   starting point.
 
-## 5. Suggested implementation phases
+3. **Backwards compatibility with the Career Cluster filter.**
+   Issuing-agency synthesis may suggest cleaner sector mappings than
+   the TOP-derived one currently in `TOP_Code_Lookup.xlsx`. Decide
+   whether to keep TOP-based clustering, agency-based clustering, or
+   a blend.
+
+## 7. Suggested implementation phases
 
 | Phase | Output | Approx. effort |
 |---|---|---|
-| 1. Skill + prompt | `.claude/skills/exhibit-canonicalization/` with decision rules and prompt template. Dry-run on a 50-row sample. | 1 session |
-| 2. Cache schema | `kb/unified_exhibit_titles.json` (raw_title → unified_title, issuing_agency, training_agency, confidence, last_reviewed). Manual seed for top-50. | 1 session |
-| 3. Pipeline integration | `excel_to_dashboard.py` consults the cache when grouping. New cache entries flagged for review. | 1 session |
-| 4. UI updates | EACR card shows unified title with raw-title disclosure; new filters for issuing agency. | 1 session |
-| 5. Quality loop | Periodic re-classification, low-confidence triage UI. | ongoing |
+| 1. Skill + prompt | `.claude/skills/exhibit-canonicalization/` with decision rules and prompt template. Dry-run on a 50-row sample drawn from the live data. | 1 session |
+| 2. KB seed | `kb/unified_titles.json` + `kb/credentials.json` + `kb/README.md`. Hand-curate top-50 mappings as a quality anchor. | 1 session |
+| 3. Full first-pass classification | Classify every distinct raw title (~5k–10k entries) via the skill, write to KB. | 1 session |
+| 4. Pipeline integration | `excel_to_dashboard.py` consults `kb/unified_titles.json` when grouping; EACR groups by unified title. New unseen titles get classified on the fly. | 1 session |
+| 5. UI updates | EACR card shows unified title, raw titles in a disclosure, confidence badge for low-confidence rows; new filters for issuing agency. | 1 session |
+| 6. Quality loop | Periodic re-classification trigger; reviewer workflow for editing the KB JSONs. | ongoing |
 
-## 6. What's done already (2026-05-18, branch `claude/refine-eacr-table-jIDKn`)
+## 8. What's done already (2026-05-18, branch `claude/refine-eacr-table-jIDKn`)
 
 - EACR grouping moved from raw ExhibitID to `(Title, CPL Type,
   Collaborative Type)`. 3,451 → 3,274 cards.
