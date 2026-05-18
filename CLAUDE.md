@@ -199,6 +199,39 @@ Commits as `github-actions[bot]` with message `Daily dashboard update — YYYY-M
 - **Config**: `window.CPL_REPORT_PROXY_URL` set in HTML before
   `report_generator.js` loads
 
+### 7a. College Activity Custom Report — Output Style Guidance
+
+`college_report_generator.js` produces the "[College Name] CPL Update" Word
+document. The prompt inside `buildPrompt()` enforces a specific tone and
+shape — keep these guarantees if you ever rewrite the prompt:
+
+- **Title**: Single-college reports are titled `<College Name> CPL Update`;
+  multi-college reports default to `Selected Colleges CPL Update`. The docx
+  builder writes the title itself, so the model is instructed NOT to repeat
+  it as a `#` heading.
+- **Audience assumption**: a busy college CEO, trustee, or board member —
+  someone looking for bragging rights to share with constituents.
+- **Tone**: CPL is a new endeavor for most CCCs. Be grateful for any
+  activity. Never imply that a college is negligent, behind, or failing.
+- **Reframe weaknesses as opportunities.** Low transcription rate → "credit
+  waiting to be unlocked." Thin discipline coverage → "room to expand."
+  Funding is predicated on outcomes, so gently equip the reader with
+  awareness of what unlocks more apportionment, but always invitingly.
+- **Structure** (in this order, `##` headings):
+  1. Executive Summary — 1-2 short paragraphs, high-level, achievements +
+     biggest opportunity. No metric dump.
+  2. Notable Accomplishments — bullet list of 3-6 wins, each with a real
+     number.
+  3. Opportunities to Maximize Funding & Student Impact — bullets/short
+     paras reframing gaps as opportunities.
+  4. Next Steps — 2-4 concrete actions.
+- **Length**: target 600-1,000 words. Eliminate redundancies — never
+  restate the same metric in multiple sections.
+- **Filename**: `<College_Slug>_CPL_Update_<YYYY-MM-DD>.docx`.
+
+If you change the prompt, mirror the change here so the guidance and the
+code stay in sync.
+
 ### 8. Supabase Database (Separate System)
 
 - **Project**: `hvuwhnbuahrtptokpqfh.supabase.co`
