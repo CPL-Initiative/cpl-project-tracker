@@ -310,8 +310,8 @@ ALGO_DESCRIPTIONS = {
         "last_modified": "2026-04-19",
     },
     "veteran_sprint": {
-        "source":      "Excel project 4.1a KPI metric, augmented with live military data from the CCCCO scrape.",
-        "formula":     "Base count from project 4.1a. JST Credits = military students (from cumulative_students breakdowns). Eligible CPL = military eligible units (from eligible_units breakdowns).",
+        "source":      "Live CCCCO MAP CPL Dashboard scrape (star_college_count). Augmented with live military data from the same scrape.",
+        "formula":     "Headline = live star_college_count from the CCCCO scrape. JST Credits = military students (from cumulative_students breakdowns). Eligible CPL = military eligible units (from eligible_units breakdowns).",
         "assumptions": "Goal for JST Credits = 30,000 at Veteran Star Colleges.",
         "caveats":     "Headline value (e.g. 47) is number of colleges participating, not students served.",
         "last_modified": "2026-04-19",
@@ -2446,7 +2446,7 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
     return html
 
 
-def compute_headline_kpis(projects, budget, config_overrides=None):
+def compute_headline_kpis(projects, budget, config_overrides=None, live_data=None):
     """
     Compute the 6 headline KPIs from sub-activity data.
     Falls back to hardcoded values if sub-activity data is missing.
@@ -2497,12 +2497,13 @@ def compute_headline_kpis(projects, budget, config_overrides=None):
             "sub": "Eligible units, Beacon Economics"
         },
         "veteran_sprint": (lambda: {
-            "value": next((p["kpi_metric"] for p in projects if p["id"] == "4.1a"), "47"),
+            "value": (lambda v: str(v) if v else "—")(int((live_data or {}).get("star_college_count", 0))),
             "label": "VETERAN SPRINT",
             "sub": "Star Colleges",
             "breakdowns": [
                 {"label": "JST Credits", "value": "{jst_credits} / 30,000"},
-                {"label": "Basic Training Credit", "value": f'{next((p["kpi_metric"] for p in projects if p["id"] == "4.1a"), "47")} Colleges'},
+                {"label": "Basic Training Credit",
+                 "value": (lambda v: f'{v} Colleges' if v else '— Colleges')(int((live_data or {}).get("star_college_count", 0)))},
                 {"label": "Eligible CPL", "value": "{eligible_cpl} Units"},
             ],
         })(),
@@ -4327,7 +4328,7 @@ def read_workplan_goals(wb):
     return activities
 
 
-def build_workplan_goals_from_projects(projects):
+def build_workplan_goals_from_projects(projects, live_data=None):
     """
     Derive the workplan-goals data structure directly from the Project List tab,
     so the 'Annual Workplan Goals' sheet is no longer required.
@@ -4409,7 +4410,8 @@ def build_workplan_goals_from_projects(projects):
                 goal_dict[yr_label] = g_sum
                 stretch_dict[yr_label] = s_sum
                 current_dict[yr_label] = 0
-            current_metric = _parse_num(proj_map.get("4.1a", {}).get("kpi_metric", 0))
+            # Star college count comes from the live CCCCO scrape (single source of truth).
+            current_metric = int((live_data or {}).get("star_college_count", 0))
         else:
             p = proj_map.get(pid)
             if not p:
@@ -5086,7 +5088,10 @@ def main():
     config_overrides = read_config_overrides(wb)
     update_log      = read_update_log(wb)
     budget          = read_budget_plan(wb)
-    kpis            = compute_headline_kpis(projects, budget, config_overrides)
+    # Load live CCCCO scrape early so it can seed star_college_count (single
+    # source of truth for the Veteran Sprint headline + sprint composite).
+    live_data       = read_live_metrics()
+    kpis            = compute_headline_kpis(projects, budget, config_overrides, live_data)
     activity_kpis   = build_activity_kpis(projects)
 
     # ── KPI tunable parameters (from KPI_Config sheet, with defaults) ──
@@ -5102,7 +5107,7 @@ def main():
 
     # Build workplan goals & annual goals from the Project List tab
     # (no longer needs the old 'Annual Workplan Goals' sheet)
-    workplan_goals, annual_goals = build_workplan_goals_from_projects(projects)
+    workplan_goals, annual_goals = build_workplan_goals_from_projects(projects, live_data)
 
     # Auto-create attachment subfolders for new activities/projects
     new_folders = ensure_attachment_subfolders(att_dir, projects)
@@ -5143,8 +5148,9 @@ def main():
     else:
         kpi_display_order = None  # use default
 
-    # Merge live dashboard metrics (population breakdowns) if available
-    live_data = read_live_metrics()
+    # Merge live dashboard metrics (population breakdowns) if available.
+    # live_data was loaded earlier so star_college_count can seed the Veteran
+    # Sprint headline before compute_headline_kpis runs.
     if live_data:
         kpis = merge_live_metrics(kpis, live_data)
         print(f"Merged live metrics from {live_data.get('scraped_at', 'unknown')}")
