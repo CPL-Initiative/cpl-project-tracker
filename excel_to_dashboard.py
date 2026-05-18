@@ -1446,7 +1446,6 @@ def render_kpi_section_html(kpis, kpi_display_order=None, kpi_params=None):
             continue
 
         # ── Standard KPI card rendering ──
-        live_badge = ' <span class="kpi-live-badge">LIVE</span>' if kpi.get("live") else ""
         sub_html = ""
         if kpi.get("sub"):
             sub_html = f'<div class="kpi-sub" style="font-size:0.75rem;opacity:0.85;margin-top:2px;color:#fff;">{kpi["sub"]}</div>'
@@ -1471,7 +1470,7 @@ def render_kpi_section_html(kpis, kpi_display_order=None, kpi_params=None):
 
         cards_html += (
             f'        <div class="kpi-card">\n'
-            f'            <div class="kpi-number">{kpi["value"]}{live_badge}</div>\n'
+            f'            <div class="kpi-number">{kpi["value"]}</div>\n'
             f'            <div class="kpi-label">{kpi["label"]}</div>\n'
             f'            {sub_html}\n'
             f'            {bd_html}\n'
@@ -5184,7 +5183,7 @@ def main():
     attachments = scan_attachments(att_dir)
     print(f"  Attachments: {attachments['total']} files, by activity: {attachments['by_activity']}")
 
-    now             = _now_pt().strftime("%B %d, %Y")
+    now             = _now_pt().strftime("%B %d, %Y at %-I:%M %p PT")
 
     # ── Build custom KPI display order from column W if present ──
     # Map project IDs to headline KPI keys
@@ -5524,11 +5523,22 @@ def main():
             kpi_section_end = html.find('<!-- Filter Bar -->')
             if kpi_section_start != -1 and kpi_section_end != -1:
                 kpi_cards_html = render_kpi_section_html(kpis, kpi_display_order, kpi_params=kpi_params)
+                # Format the live-scrape timestamp as Pacific Time for the section header.
+                kpi_scraped_label = "—"
+                _scraped_iso = (live_data or {}).get("scraped_at", "") if live_data else ""
+                if _scraped_iso:
+                    try:
+                        _dt = datetime.fromisoformat(_scraped_iso.replace("Z", "+00:00"))
+                        _pt = _dt.astimezone(_PT).replace(tzinfo=None)
+                        kpi_scraped_label = _pt.strftime("%b %-d, %Y · %-I:%M %p PT")
+                    except Exception:
+                        kpi_scraped_label = _scraped_iso[:16].replace("T", " ") + " UTC"
                 new_kpi_section = (
                     '<!-- KPI Summary Cards -->\n'
                     '    <div class="kpi-section-wrapper" id="kpiSectionWrapper">\n'
                     '        <div class="kpi-section-header" onclick="(function(){var w=document.getElementById(\'kpiSectionWrapper\');w.classList.toggle(\'collapsed\');})()"> \n'
-                    '            <span class="kpi-section-title">Live KPI Summary</span>\n'
+                    '            <span class="kpi-section-title">KPI Metrics</span>\n'
+                    f'            <span class="kpi-section-updated">Live data refreshed {kpi_scraped_label}</span>\n'
                     '            <span class="kpi-toggle-arrow">&#9650;</span>\n'
                     '        </div>\n'
                     '    <div class="kpi-section">\n'
