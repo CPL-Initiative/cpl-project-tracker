@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-17T11:35:11.000Z",
+  "scraped_at": "2026-05-18T14:02:46.671Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -233,18 +233,18 @@
       "colleges": [
         {
           "college": "City College of San Francisco",
-          "students": 1642,
-          "units": 6082,
-          "avgUnits": 3.7040194884287456,
-          "transcriptionRate": 1.2,
-          "avgTranscribed": 0.045676004872107184,
+          "students": 1643,
+          "units": 6270,
+          "avgUnits": 3.8161898965307364,
+          "transcriptionRate": 1.3,
+          "avgTranscribed": 0.04808277541083384,
           "criteriaMetCount": 2,
           "militaryStudents": 1025,
-          "nonMilitaryStudents": 618,
+          "nonMilitaryStudents": 619,
           "apprenticeStudents": 5,
-          "savings": 10519800,
-          "yearImpact": 36911167,
-          "transcribedUnits": 75
+          "savings": 10845040,
+          "yearImpact": 38051763,
+          "transcribedUnits": 79
         },
         {
           "college": "El Camino College",
@@ -1757,7 +1757,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "45,507",
+      "value": "45,508",
       "breakdowns": [
         {
           "label": "Military",
@@ -1765,7 +1765,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "21,803"
+          "value": "21,804"
         },
         {
           "label": "Apprentice",
@@ -1775,7 +1775,7 @@
     },
     {
       "title": "ELIGIBLE UNITS",
-      "value": "203k",
+      "value": "204k",
       "avg": "4.5 avg",
       "breakdowns": [
         {
@@ -1817,7 +1817,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$153M"
+          "value": "$154M"
         },
         {
           "label": "Workforce/Other",
@@ -1835,7 +1835,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$614M"
+          "value": "$615M"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 45507,
-    "Units": 203356.05000000002,
-    "TranscribedUnits": 95760.95,
-    "Savings": 289513516.25,
-    "YearImpact": 1159647373.5,
+    "Students": 45508,
+    "Units": 203544.05000000002,
+    "TranscribedUnits": 95764.95,
+    "Savings": 289838756.25,
+    "YearImpact": 1160787969.5,
     "MilitaryStudents": 23778,
-    "NonMilitaryStudents": 21803,
+    "NonMilitaryStudents": 21804,
     "AprenticeStudents": 736,
-    "AverageUnits": 4.468676247610258,
-    "TranscribedAverage": 2.104312523348056
+    "AverageUnits": 4.47270919398787,
+    "TranscribedAverage": 2.104354179484926
   }
 }
