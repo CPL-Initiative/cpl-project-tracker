@@ -1360,6 +1360,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 .cpl-analytics-body,
 .activity-kpi-body {
@@ -1368,7 +1377,8 @@
     margin: 0;
 }
 .kpi-section-wrapper.collapsed .cpl-analytics-body,
-.kpi-section-wrapper.collapsed .activity-kpi-body { display: none; }
+.kpi-section-wrapper.collapsed .activity-kpi-body,
+.kpi-section-wrapper.collapsed .workplan-projects-body { display: none; }
 .activity-kpi-body .activity-kpi-section { margin-bottom: 0; }
 .exhibit-cards-grid {
     display: grid;
@@ -1753,8 +1763,14 @@
         
         
         
-        <div class="last-updated">Last Updated: May 18, 2026 at 2:36 PM PT</div>
+        
+        
+        
+        <div class="last-updated">Last Updated: May 18, 2026 at 3:46 PM PT</div>
         <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:#C9A84C;border:1px solid #C9A84C;padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='#C9A84C';this.style.color='#0A2240'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='#C9A84C'}">&#x21bb; Refresh Today&#39;s Data</button></div>
+        
+        
+        
         
         
         
@@ -2577,12 +2593,15 @@
     </div>
 </div>
 
-    <!-- ═══ Workplan Activity Metrics Section ═══ -->
-    <div class="kpi-section-wrapper" id="activityKpiWrapper">
-        <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('activityKpiWrapper');w.classList.toggle('collapsed');})()">
-            <span class="kpi-section-title">Workplan Activity Metrics</span>
+    <!-- ═══ Workplan Activities & Projects Section ═══ -->
+    <div class="kpi-section-wrapper" id="workplanProjectsWrapper">
+        <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('workplanProjectsWrapper');w.classList.toggle('collapsed');})()">
+            <span class="kpi-section-title">Workplan Activities &amp; Projects</span>
             <span class="kpi-toggle-arrow">&#9650;</span>
         </div>
+        <div class="workplan-projects-body">
+
+        <!-- ═══ Workplan Activity Metrics Section ═══ -->
         <div class="activity-kpi-body">
             <div class="activity-kpi-section" id="activityKpiSection">
             <div class="activity-group">
@@ -4079,9 +4098,8 @@
         })();
         </script>
         </div>
-    </div>
 
-    <!-- Filter Bar -->
+        <!-- Filter Bar -->
     <div class="filter-bar">
         <div class="filter-group">
             <label for="filterActivity">Workplan Activity:</label>
@@ -6369,8 +6387,15 @@
 
 
 
+
+
+
         </div>
         <!-- /main-container for Dashboard tab -->
+
+        </div><!-- /.workplan-projects-body -->
+    </div><!-- /#workplanProjectsWrapper -->
+    <!-- ═══ End Workplan Activities & Projects Section ═══ -->
 
         <!-- Teaser cards (auto-generated, do not edit manually) -->
         <div class="tab-teaser-grid">
@@ -7837,7 +7862,7 @@ Cont</td>
         </div>
         <!-- End Annual Workplan Goals -->
 
-                                                                                </div>
+                                                                                                        </div>
         <!-- /main-container for Workplan Goals tab -->
     </div>
     <!-- /tab-workplan-goals -->
@@ -7920,6 +7945,9 @@ Cont</td>
         
         
         
+        
+        
+        
         </div>
         <!-- /main-container for Vision 2030 tab -->
     </div>
@@ -7928,8 +7956,8 @@ Cont</td>
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "May 18, 2026 at 2:36 PM PT",
-  "data_as_of": "May 18, 2026 at 2:36 PM PT",
+  "last_updated": "May 18, 2026 at 3:46 PM PT",
+  "data_as_of": "May 18, 2026 at 3:46 PM PT",
   "kpis": {
     "cumulative_students": {
       "value": "45,508",

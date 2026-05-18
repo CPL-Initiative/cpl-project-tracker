@@ -4290,7 +4290,8 @@ EXHIBIT_ANALYSIS_CSS = """
     margin: 0;
 }
 .kpi-section-wrapper.collapsed .cpl-analytics-body,
-.kpi-section-wrapper.collapsed .activity-kpi-body { display: none; }
+.kpi-section-wrapper.collapsed .activity-kpi-body,
+.kpi-section-wrapper.collapsed .workplan-projects-body { display: none; }
 .activity-kpi-body .activity-kpi-section { margin-bottom: 0; }
 .exhibit-cards-grid {
     display: grid;
@@ -5701,8 +5702,12 @@ def main():
             html = html[:i_start] + inline_block + html[i_end:]
 
             # ── Replace the KPI Summary Cards section with fully rendered static HTML ──
+            # End-anchor is the outer "Workplan Activities & Projects" wrapper marker
+            # (NOT <!-- Filter Bar -->), since Filter Bar now lives INSIDE that wrapper
+            # and using it would wipe the wrapper opening on every run.
+            outer_proj_marker = '<!-- ═══ Workplan Activities & Projects Section ═══ -->'
             kpi_section_start = html.find('<!-- KPI Summary Cards -->')
-            kpi_section_end = html.find('<!-- Filter Bar -->')
+            kpi_section_end = html.find(outer_proj_marker)
             if kpi_section_start != -1 and kpi_section_end != -1:
                 kpi_cards_html = render_kpi_section_html(kpis, kpi_display_order, kpi_params=kpi_params)
                 # Format the live-scrape timestamp as Pacific Time for the section header.
@@ -5741,22 +5746,25 @@ def main():
                 r'<div style="text-align:center;"><button class="exhibit-toggle-btn".*?</button></div>\s*',
                 '', html, flags=_re.DOTALL,
             )
+            # Strip patterns end-anchor on the outer wrapper marker so that
+            # the wrapper opening (and everything inside it) is preserved.
             html = _re.sub(
-                r'<!-- ═══ MAP Articulation Analysis Section ═══ -->.*?(?=<!-- Filter Bar -->)',
+                r'<!-- ═══ MAP Articulation Analysis Section ═══ -->.*?(?=<!-- ═══ Workplan Activities & Projects Section ═══ -->)',
                 '', html, flags=_re.DOTALL,
             )
             html = _re.sub(
-                r'<!-- ═══ CPL Analytics Section ═══ -->.*?(?=<!-- Filter Bar -->)',
+                r'<!-- ═══ CPL Analytics Section ═══ -->.*?(?=<!-- ═══ Workplan Activities & Projects Section ═══ -->)',
                 '', html, flags=_re.DOTALL,
             )
             if exhibit_tables:
                 exhibit_html = render_exhibit_analysis_html(
                     exhibit_tables, kpi_params=kpi_params, xlsx_export_dir="exports",
                 )
-                filter_marker = '<!-- Filter Bar -->'
-                filter_pos = html.find(filter_marker)
-                if filter_pos != -1:
-                    html = html[:filter_pos] + exhibit_html + '\n    ' + html[filter_pos:]
+                # Insert BEFORE the outer wrapper marker so Analytics stays OUTSIDE
+                # the Workplan Activities & Projects wrapper.
+                outer_pos = html.find('<!-- ═══ Workplan Activities & Projects Section ═══ -->')
+                if outer_pos != -1:
+                    html = html[:outer_pos] + exhibit_html + '\n    ' + html[outer_pos:]
                     print(f"  Injected CPL Analytics section ({len(exhibit_tables['by_college'])} college cards, "
                           f"{len(exhibit_tables['top_exhibits'])} top exhibits, "
                           f"6 xlsx exports written to exports/)")
@@ -5831,26 +5839,25 @@ def main():
             workplan_charts_html = render_workplan_charts_html(
                 _current_students, _sub_pops, workplan_goals, config_overrides,
             )
+            # Activity Metrics is now a subsection inside the outer
+            # "Workplan Activities & Projects" wrapper (defined in the static
+            # template), so it no longer has its own kpi-section-wrapper /
+            # header — one collapse toggles activities, filters, and projects
+            # together.
             new_act_section = (
                 '<!-- ═══ Workplan Activity Metrics Section ═══ -->\n'
-                '    <div class="kpi-section-wrapper" id="activityKpiWrapper">\n'
-                '        <div class="kpi-section-header" onclick="(function(){var w=document.getElementById(\'activityKpiWrapper\');w.classList.toggle(\'collapsed\');})()">\n'
-                '            <span class="kpi-section-title">Workplan Activity Metrics</span>\n'
-                '            <span class="kpi-toggle-arrow">&#9650;</span>\n'
-                '        </div>\n'
                 '        <div class="activity-kpi-body">\n'
                 '            <div class="activity-kpi-section" id="activityKpiSection">\n'
                 + act_html +
                 '            </div>\n'
                 + workplan_charts_html +
-                '        </div>\n'
-                '    </div>\n\n    '
+                '        </div>\n\n        '
             )
             filter_marker = '<!-- Filter Bar -->'
             filter_pos = html.find(filter_marker)
             if filter_pos != -1:
                 html = html[:filter_pos] + new_act_section + html[filter_pos:]
-                print(f"  Rendered Workplan Activity Metrics ({sum(len(g['kpis']) for g in activity_kpis)} sub-activities, collapsible, above filter bar)")
+                print(f"  Rendered Workplan Activity Metrics ({sum(len(g['kpis']) for g in activity_kpis)} sub-activities, inside Workplan Activities & Projects)")
 
             # ── Inject the Annual Workplan Goals section before Projects Grid ──
             workplan_goals_html = render_workplan_goals_html(workplan_goals)
