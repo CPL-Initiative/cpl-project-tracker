@@ -3866,21 +3866,32 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     i_top = exhibit_cm.get("TOP Code", 8)
     i_cpl = exhibit_cm.get("CPL Type Description", 13)
 
+    # Group rows by a composite identity, not by ExhibitID alone. MAP frequently
+    # issues separate ExhibitIDs for what is conceptually the same exhibit (e.g.
+    # San Jose's "Google IT Support Professional Certification" appears under
+    # three IDs, one per articulated CIS course). Keying on
+    # (Title, CPL Type, Collaborative Type) collapses those, while preserving
+    # genuinely distinct pathways like Norco IBEW Portfolio Review vs Industry
+    # Certification (different CPL Types stay separate). TOP Code is excluded
+    # from the key because ~295 single-ExhibitID exhibits legitimately span
+    # multiple TOP codes (e.g. Dental Board cert across TOPs 101/89/171).
     all_exhibits = defaultdict(lambda: {
-        "adopters": set(), "cids": set(), "map_top": "",
-        "title": "", "cpl_type": "", "collab_type": "",
+        "eids": set(), "adopters": set(), "cids": set(), "tops": set(),
         "credit_recs": [],  # list of {course, credit} dicts
     })
 
     for row in exhibit_rows:
         eid = (row[i_eid] or "").strip()
-        if not eid:
+        title = (row[i_title] or "").strip()
+        if not eid or not title:
             continue
-        e = all_exhibits[eid]
-        e["title"] = (row[i_title] or "").strip()
-        collab = (row[i_collab] or "").strip()
-        if collab and not e["collab_type"]:
-            e["collab_type"] = collab
+        group_key = (
+            title,
+            (row[i_cpl] or "").strip(),
+            (row[i_collab] or "").strip(),
+        )
+        e = all_exhibits[group_key]
+        e["eids"].add(eid)
         artic = (row[i_artic] or "").strip()
         if artic:
             e["adopters"].add(artic)
@@ -3888,11 +3899,8 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         if cid:
             e["cids"].add(cid)
         top = (row[i_top] or "").strip()
-        if top and not e["map_top"]:
-            e["map_top"] = top
-        cpl = (row[i_cpl] or "").strip()
-        if cpl and not e["cpl_type"]:
-            e["cpl_type"] = cpl
+        if top:
+            e["tops"].add(top)
         # Collect credit recommendations
         course = (row[i_course] or "").strip()
         credit = (row[i_credit] or "").strip()
@@ -3904,12 +3912,19 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
 
     # ── Compute potential for each exhibit ──
     results = []
-    for eid, e in all_exhibits.items():
+    for group_key, e in all_exhibits.items():
+        title, cpl_type, collab_type = group_key
         adopters = e["adopters"]
-        map_top = e["map_top"]
+        # A group may legitimately span multiple TOP codes (e.g. Dental Board
+        # cert across TOPs 101/89/171). Use the first sorted TOP for discipline
+        # display, but union across all TOPs for potential-adopter matching.
+        tops_sorted = sorted(e["tops"])
+        map_top = tops_sorted[0] if tops_sorted else ""
 
-        # Potential adopters via MAP TOP code (ProgramsofStudy)
-        potential_top = top_to_colleges.get(map_top, set()) if map_top else set()
+        # Potential adopters via MAP TOP code (ProgramsofStudy) — union across all TOPs
+        potential_top = set()
+        for t in e["tops"]:
+            potential_top |= top_to_colleges.get(t, set())
 
         # Potential adopters via CID (CollegeCourses)
         potential_cid = set()
@@ -3920,13 +3935,18 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         disc = top_lookup.get(map_top, "Not Mapped")
 
         # Classify as Statewide (CCC Collaborative) or Local
-        is_statewide = "CCC" in e["collab_type"]
-        collab_label = "CCC Collaborative" if is_statewide else (e["collab_type"] or "Local")
+        is_statewide = "CCC" in collab_type
+        collab_label = "CCC Collaborative" if is_statewide else (collab_type or "Local")
+
+        # Stable identifier for the merged group (concatenation of member MAP IDs).
+        # Used by the UI as a row-selection / dedup key.
+        merged_id = "|".join(sorted(e["eids"]))
 
         results.append({
-            "exhibit_id": eid,
-            "title": e["title"],
-            "cpl_type": e["cpl_type"],
+            "exhibit_id": merged_id,
+            "exhibit_ids": sorted(e["eids"]),
+            "title": title,
+            "cpl_type": cpl_type,
             "discipline": disc,
             "collaborative_type": collab_label,
             "adopters": len(adopters),
