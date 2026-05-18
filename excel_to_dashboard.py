@@ -5813,6 +5813,24 @@ def main():
                 '', html, flags=_re.DOTALL,
             )
             act_html = render_activity_kpis_html(activity_kpis, annual_goals, update_log, attachments=attachments)
+            # The "CPL Workplan Progress — Path to 2030" trend chart logically
+            # belongs to this section, so we render it inside the same
+            # collapsible body. It used to sit at the top of Projects Grid,
+            # which meant it kept showing when Workplan Activity collapsed.
+            _current_students = kpis.get("cumulative_students", {}).get("value", "43,321")
+            _bd_list = kpis.get("cumulative_students", {}).get("breakdowns", [])
+            _sub_pops = {}
+            for _bd in _bd_list:
+                _lbl = _bd.get("label", "").lower()
+                if "military" in _lbl:
+                    _sub_pops["military"] = _bd.get("value", "")
+                elif "workforce" in _lbl or "other" in _lbl:
+                    _sub_pops["workforce"] = _bd.get("value", "")
+                elif "apprentice" in _lbl:
+                    _sub_pops["apprentice"] = _bd.get("value", "")
+            workplan_charts_html = render_workplan_charts_html(
+                _current_students, _sub_pops, workplan_goals, config_overrides,
+            )
             new_act_section = (
                 '<!-- ═══ Workplan Activity Metrics Section ═══ -->\n'
                 '    <div class="kpi-section-wrapper" id="activityKpiWrapper">\n'
@@ -5824,6 +5842,7 @@ def main():
                 '            <div class="activity-kpi-section" id="activityKpiSection">\n'
                 + act_html +
                 '            </div>\n'
+                + workplan_charts_html +
                 '        </div>\n'
                 '    </div>\n\n    '
             )
@@ -5869,25 +5888,11 @@ def main():
             if proj_grid_start != -1 and proj_grid_end != -1:
                 proj_cards_html = render_projects_grid_html(projects, update_log, attachments=attachments)
                 project_count = len([p for p in projects if not p["id"].startswith("D.")])
-
-                # Build the Workplan Progress Chart with sub-population trend lines
-                current_students = kpis.get("cumulative_students", {}).get("value", "43,321")
-                # Extract sub-population breakdowns from headline KPIs
-                bd_list = kpis.get("cumulative_students", {}).get("breakdowns", [])
-                sub_pops = {}
-                for bd in bd_list:
-                    lbl = bd.get("label", "").lower()
-                    if "military" in lbl:
-                        sub_pops["military"] = bd.get("value", "")
-                    elif "workforce" in lbl or "other" in lbl:
-                        sub_pops["workforce"] = bd.get("value", "")
-                    elif "apprentice" in lbl:
-                        sub_pops["apprentice"] = bd.get("value", "")
-                charts_html = render_workplan_charts_html(current_students, sub_pops, workplan_goals, config_overrides)
-
+                # Workplan Progress chart now lives inside the Workplan Activity
+                # Metrics section (so it collapses with it). The Projects Grid
+                # is just the project cards now.
                 new_proj_section = (
                     '<!-- Projects Grid -->\n'
-                    + charts_html +
                     '        <h2 style="margin-bottom:1.5rem;">Projects <span id="projectCount" style="font-size:0.9rem;color:#888;">(' + str(project_count) + ')</span></h2>\n'
                     '        <div id="projectsGrid">\n'
                     + proj_cards_html +
@@ -5896,7 +5901,7 @@ def main():
                 )
                 html = html[:proj_grid_start] + new_proj_section + html[proj_grid_end_consumes:]
                 print(f"  Rendered static project cards ({project_count} projects, grouped by Goal)")
-                print("  Rendered Workplan Progress Chart (3 trend lines)")
+                print("  Rendered Workplan Progress Chart inside Workplan Activity Metrics (3 trend lines)")
 
             # ── Teaser cards on the Dashboard tab linking to the other tabs ──
             # Replace the static placeholder; idempotent because the placeholder
