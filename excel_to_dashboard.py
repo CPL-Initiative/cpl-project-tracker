@@ -3325,6 +3325,7 @@ def _parse_exhibits(datasets):
 
         i_college = cm.get("College", 0)
         i_exhibit = cm.get("ExhibitID", 1)
+        i_title = cm.get("Exhibit Title", 2)
         i_artic = cm.get("Articulation College", 4)
         i_collab = cm.get("Collaborative Type", 7)
         i_cpl = cm.get("CPL Type Description", 13)
@@ -3337,14 +3338,28 @@ def _parse_exhibits(datasets):
         ccc_artic_colleges = set()
         cpl_type_counts = {}
 
+        # Grouped-exhibit counts matching the EACR table: keyed on
+        # (Title, CPL Type, Collaborative Type). MAP frequently issues multiple
+        # ExhibitIDs for what is conceptually one exhibit (e.g. San Jose's
+        # Google IT cert across three CIS courses) — counting groups gives a
+        # truer "distinct exhibits" headline.
+        exhibit_groups = set()
+        ccc_exhibit_groups = set()
+
         for row in rows:
             college = (row[i_college] or "").strip()
             exhibit_id = (row[i_exhibit] or "").strip()
+            title = (row[i_title] or "").strip()
             artic_college = (row[i_artic] or "").strip()
             collab_type = (row[i_collab] or "").strip()
             cpl_type = (row[i_cpl] or "").strip()
 
             exhibit_ids.add(exhibit_id)
+            if title and exhibit_id:
+                grp = (title, cpl_type, collab_type)
+                exhibit_groups.add(grp)
+                if "CCC" in collab_type:
+                    ccc_exhibit_groups.add(grp)
             if college:
                 originating_colleges.add(college)
             if artic_college:
@@ -3359,23 +3374,26 @@ def _parse_exhibits(datasets):
                 cpl_type_counts[cpl_type] = cpl_type_counts.get(cpl_type, 0) + 1
 
         local_credit_recs = len(rows) - ccc_credit_recs
-        local_exhibit_ids = exhibit_ids - ccc_exhibit_ids
+        local_exhibit_groups = exhibit_groups - ccc_exhibit_groups
 
         return {
             "total_credit_recs": len(rows),
-            "unique_exhibits": len(exhibit_ids),
+            "unique_exhibits": len(exhibit_groups),
+            "unique_exhibits_raw_ids": len(exhibit_ids),
             "originating_colleges": len(originating_colleges),
             "articulation_colleges": len(articulation_colleges),
             "articulation_college_names": sorted(articulation_colleges),
             "ccc_collaborative": {
                 "credit_recs": ccc_credit_recs,
-                "unique_exhibits": len(ccc_exhibit_ids),
+                "unique_exhibits": len(ccc_exhibit_groups),
+                "unique_exhibits_raw_ids": len(ccc_exhibit_ids),
                 "adopting_colleges": len(ccc_artic_colleges),
                 "college_names": sorted(ccc_artic_colleges),
             },
             "local": {
                 "credit_recs": local_credit_recs,
-                "unique_exhibits": len(local_exhibit_ids),
+                "unique_exhibits": len(local_exhibit_groups),
+                "unique_exhibits_raw_ids": len(exhibit_ids - ccc_exhibit_ids),
             },
             "cpl_type_breakdown": cpl_type_counts,
         }
@@ -3582,7 +3600,11 @@ def merge_exhibit_metrics(kpis, exhibit_data):
 # ── MAP Articulation Analysis Tables ─────────────────────────────────────
 
 def _load_top_code_lookup():
-    """Load MAP TOP Code → CCC Discipline mapping from TOP_Code_Lookup.xlsx.
+    """Load MAP TOP Code → (CCC Discipline, CCC SW Sector) mapping from
+    TOP_Code_Lookup.xlsx. Returns a dict where each value is itself a dict
+    {"discipline": ..., "sector": ...}. Callers that only want the discipline
+    can use the .get(code, {}).get("discipline", "Unknown") pattern, but the
+    convenience wrapper _top_disc() handles the common case.
     Searches the same locations as the exhibit JSON."""
     for folder in _EXHIBIT_LOCATIONS:
         path = os.path.join(folder, "TOP_Code_Lookup.xlsx")
@@ -3594,16 +3616,35 @@ def _load_top_code_lookup():
         wb = load_workbook(path, data_only=True)
         ws = wb["TOP Code Lookup"]
         lookup = {}
-        for row in ws.iter_rows(min_row=2, max_col=3, values_only=True):
+        # Column G (index 6) holds the CCC SW Sector classification.
+        for row in ws.iter_rows(min_row=2, max_col=7, values_only=True):
             code = str(row[0]).strip() if row[0] is not None else ""
             disc = str(row[2]).strip() if row[2] else "Unknown"
+            sector = str(row[6]).strip() if len(row) > 6 and row[6] else ""
             if code:
-                lookup[code] = disc
+                lookup[code] = {"discipline": disc, "sector": sector}
         wb.close()
         return lookup
     except Exception as e:
         print(f"  WARNING: Could not load TOP_Code_Lookup.xlsx: {e}")
         return {}
+
+
+def _top_disc(top_lookup, code, default="Not Mapped"):
+    """Convenience: discipline name for a TOP code from _load_top_code_lookup()."""
+    entry = top_lookup.get(code)
+    if isinstance(entry, dict):
+        return entry.get("discipline") or default
+    # Backwards-compat: an older flat dict shape
+    return entry or default
+
+
+def _top_sector(top_lookup, code, default=""):
+    """Convenience: SW sector name for a TOP code from _load_top_code_lookup()."""
+    entry = top_lookup.get(code)
+    if isinstance(entry, dict):
+        return entry.get("sector") or default
+    return default
 
 
 def build_exhibit_analysis_tables(exhibit_data):
@@ -3679,7 +3720,7 @@ def build_exhibit_analysis_tables(exhibit_data):
         mol = (row[i_mol] or "").strip() or "Unknown"
         cpl = (row[i_cpl] or "").strip() or "Other"
 
-        disc = top_lookup.get(top_code, "Not Mapped")
+        disc = _top_disc(top_lookup, top_code)
         is_ccc = "CCC" in collab
         is_industry = cpl == "Industry Certification"
 
@@ -3866,21 +3907,32 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     i_top = exhibit_cm.get("TOP Code", 8)
     i_cpl = exhibit_cm.get("CPL Type Description", 13)
 
+    # Group rows by a composite identity, not by ExhibitID alone. MAP frequently
+    # issues separate ExhibitIDs for what is conceptually the same exhibit (e.g.
+    # San Jose's "Google IT Support Professional Certification" appears under
+    # three IDs, one per articulated CIS course). Keying on
+    # (Title, CPL Type, Collaborative Type) collapses those, while preserving
+    # genuinely distinct pathways like Norco IBEW Portfolio Review vs Industry
+    # Certification (different CPL Types stay separate). TOP Code is excluded
+    # from the key because ~295 single-ExhibitID exhibits legitimately span
+    # multiple TOP codes (e.g. Dental Board cert across TOPs 101/89/171).
     all_exhibits = defaultdict(lambda: {
-        "adopters": set(), "cids": set(), "map_top": "",
-        "title": "", "cpl_type": "", "collab_type": "",
+        "eids": set(), "adopters": set(), "cids": set(), "tops": set(),
         "credit_recs": [],  # list of {course, credit} dicts
     })
 
     for row in exhibit_rows:
         eid = (row[i_eid] or "").strip()
-        if not eid:
+        title = (row[i_title] or "").strip()
+        if not eid or not title:
             continue
-        e = all_exhibits[eid]
-        e["title"] = (row[i_title] or "").strip()
-        collab = (row[i_collab] or "").strip()
-        if collab and not e["collab_type"]:
-            e["collab_type"] = collab
+        group_key = (
+            title,
+            (row[i_cpl] or "").strip(),
+            (row[i_collab] or "").strip(),
+        )
+        e = all_exhibits[group_key]
+        e["eids"].add(eid)
         artic = (row[i_artic] or "").strip()
         if artic:
             e["adopters"].add(artic)
@@ -3888,11 +3940,8 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         if cid:
             e["cids"].add(cid)
         top = (row[i_top] or "").strip()
-        if top and not e["map_top"]:
-            e["map_top"] = top
-        cpl = (row[i_cpl] or "").strip()
-        if cpl and not e["cpl_type"]:
-            e["cpl_type"] = cpl
+        if top:
+            e["tops"].add(top)
         # Collect credit recommendations
         course = (row[i_course] or "").strip()
         credit = (row[i_credit] or "").strip()
@@ -3904,12 +3953,19 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
 
     # ── Compute potential for each exhibit ──
     results = []
-    for eid, e in all_exhibits.items():
+    for group_key, e in all_exhibits.items():
+        title, cpl_type, collab_type = group_key
         adopters = e["adopters"]
-        map_top = e["map_top"]
+        # A group may legitimately span multiple TOP codes (e.g. Dental Board
+        # cert across TOPs 101/89/171). Use the first sorted TOP for discipline
+        # display, but union across all TOPs for potential-adopter matching.
+        tops_sorted = sorted(e["tops"])
+        map_top = tops_sorted[0] if tops_sorted else ""
 
-        # Potential adopters via MAP TOP code (ProgramsofStudy)
-        potential_top = top_to_colleges.get(map_top, set()) if map_top else set()
+        # Potential adopters via MAP TOP code (ProgramsofStudy) — union across all TOPs
+        potential_top = set()
+        for t in e["tops"]:
+            potential_top |= top_to_colleges.get(t, set())
 
         # Potential adopters via CID (CollegeCourses)
         potential_cid = set()
@@ -3917,17 +3973,33 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             potential_cid.update(cid_to_colleges.get(cid, set()))
 
         new_colleges = (potential_cid | potential_top) - adopters
-        disc = top_lookup.get(map_top, "Not Mapped")
+        disc = _top_disc(top_lookup, map_top)
+
+        # Career Cluster (CCC Strong Workforce sector). Groups that span multiple
+        # TOP codes can in principle resolve to multiple sectors. Pick the most
+        # common; ties broken alphabetically for stability.
+        from collections import Counter as _Counter
+        sector_counts = _Counter(s for s in (_top_sector(top_lookup, t) for t in e["tops"]) if s)
+        if sector_counts:
+            sector = sorted(sector_counts.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
+        else:
+            sector = ""
 
         # Classify as Statewide (CCC Collaborative) or Local
-        is_statewide = "CCC" in e["collab_type"]
-        collab_label = "CCC Collaborative" if is_statewide else (e["collab_type"] or "Local")
+        is_statewide = "CCC" in collab_type
+        collab_label = "CCC Collaborative" if is_statewide else (collab_type or "Local")
+
+        # Stable identifier for the merged group (concatenation of member MAP IDs).
+        # Used by the UI as a row-selection / dedup key.
+        merged_id = "|".join(sorted(e["eids"]))
 
         results.append({
-            "exhibit_id": eid,
-            "title": e["title"],
-            "cpl_type": e["cpl_type"],
+            "exhibit_id": merged_id,
+            "exhibit_ids": sorted(e["eids"]),
+            "title": title,
+            "cpl_type": cpl_type,
             "discipline": disc,
+            "sector": sector,
             "collaborative_type": collab_label,
             "adopters": len(adopters),
             "adopter_names": sorted(adopters),
