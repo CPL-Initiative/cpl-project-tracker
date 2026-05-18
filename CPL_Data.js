@@ -16,21 +16,21 @@ window.CPL_DATA = {
   "data_as_of": "May 18, 2026",
   "kpis": {
     "cumulative_students": {
-      "value": "45,257",
+      "value": "45,508",
       "label": "Cumulative CPL Students",
       "sub": "Target: 250,000 by 2030",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "23,568"
+          "value": "23,778"
         },
         {
           "label": "Workforce/Other",
-          "value": "21,763"
+          "value": "21,804"
         },
         {
           "label": "Apprentice",
-          "value": "730"
+          "value": "736"
         }
       ],
       "live": true
@@ -54,39 +54,39 @@ window.CPL_DATA = {
         },
         {
           "label": "Applied Credits",
-          "value": "202,095",
+          "value": "203,544",
           "note": "posted to student records"
         }
       ],
       "live": true
     },
     "credit_recommendations": {
-      "value": "7,755",
+      "value": "10,760",
       "label": "Credit Recommendations",
       "sub": "Source: MAP Custom Reporting Module",
       "breakdowns": [
         {
           "label": "CCC Collaborative",
-          "value": "1,116",
+          "value": "1,157",
           "note": "statewide faculty workgroups"
         },
         {
           "label": "Local",
-          "value": "6,639",
+          "value": "9,603",
           "note": "individual college articulations"
         }
       ],
       "live": true,
       "footnote": [
-        "Standardized Assessment: 3,127",
-        "Industry Certification: 2,791",
-        "Credit By Exam: 1,330",
-        "Portfolio Review: 360",
-        "Military: 110"
+        "Standardized Assessment: 5,654",
+        "Industry Certification: 3,101",
+        "Credit By Exam: 1,490",
+        "Portfolio Review: 366",
+        "Military: 112"
       ]
     },
     "active_colleges": {
-      "value": "97",
+      "value": "98",
       "label": "Active Colleges",
       "sub": "of 116 system colleges",
       "breakdowns": [
@@ -97,12 +97,12 @@ window.CPL_DATA = {
         },
         {
           "label": "Advancing Colleges",
-          "value": "83",
+          "value": "84",
           "note": "active, building capacity"
         },
         {
           "label": "Inactive Colleges",
-          "value": "18",
+          "value": "17",
           "note": "<10 students and 0 units"
         }
       ],
@@ -116,13 +116,13 @@ window.CPL_DATA = {
       ]
     },
     "estimated_savings": {
-      "value": "$287M",
+      "value": "$290M",
       "label": "Estimated Savings",
       "sub": "Eligible units, Beacon Economics",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$152M"
+          "value": "$154M"
         },
         {
           "label": "Workforce/Other",
@@ -142,7 +142,7 @@ window.CPL_DATA = {
       "breakdowns": [
         {
           "label": "JST Credits",
-          "value": "23,568 / 30,000"
+          "value": "23,778 / 30,000"
         },
         {
           "label": "Basic Training Credit",
@@ -150,23 +150,23 @@ window.CPL_DATA = {
         },
         {
           "label": "Eligible CPL",
-          "value": "107k Units"
+          "value": "108k Units"
         }
       ],
       "live": true
     },
     "eligible_units": {
-      "value": "202k",
+      "value": "204k",
       "label": "ELIGIBLE UNITS",
       "sub": "Source: MAP CPL Dashboard",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "107k"
+          "value": "108k"
         },
         {
           "label": "Workforce/Other",
-          "value": "100k"
+          "value": "101k"
         },
         {
           "label": "Apprentice",
@@ -176,17 +176,17 @@ window.CPL_DATA = {
       "live": true
     },
     "twenty_year_impact": {
-      "value": "$1.15B",
+      "value": "$1.16B",
       "label": "20-YEAR IMPACT",
       "sub": "Source: MAP CPL Dashboard",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$608M"
+          "value": "$615M"
         },
         {
           "label": "Workforce/Other",
-          "value": "$571M"
+          "value": "$573M"
         },
         {
           "label": "Apprentice",
@@ -195,60 +195,60 @@ window.CPL_DATA = {
       ],
       "live": true
     },
-    "_live_updated": "2026-05-06T12:12:47.913Z",
+    "_live_updated": "2026-05-18T14:02:46.671Z",
     "map_exhibits": {
-      "value": "3,226",
+      "value": "3,451",
       "label": "MAP Exhibits",
-      "sub": "66 originating colleges",
+      "sub": "69 originating colleges",
       "breakdowns": [
         {
           "label": "CCC Collaborative",
-          "value": "117",
+          "value": "118",
           "note": "statewide exhibits"
         },
         {
           "label": "Local",
-          "value": "3,109",
+          "value": "3,333",
           "note": "college-created exhibits"
         }
       ],
       "live": true
     },
     "ccc_collaborative": {
-      "value": "63",
+      "value": "62",
       "label": "CCC Collaborative Adoption",
       "sub": "Colleges adopting statewide exhibits",
       "breakdowns": [
         {
           "label": "Collaborative Exhibits",
-          "value": "117"
+          "value": "118"
         },
         {
           "label": "Collaborative Credit Recs",
-          "value": "1,116"
+          "value": "1,157"
         }
       ],
       "live": true
     },
     "articulation_colleges": {
-      "value": "90",
+      "value": "101",
       "label": "Articulating Colleges",
       "sub": "Colleges with MAP exhibits",
       "breakdowns": [
         {
           "label": "Originating Colleges",
-          "value": "66",
+          "value": "69",
           "note": "created exhibits"
         },
         {
           "label": "Adopting CCC Collaborative",
-          "value": "63",
+          "value": "62",
           "note": "statewide exhibits"
         }
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-05-06T12:12:09",
+    "_exhibit_updated": "2026-05-18T14:02:08",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
@@ -2238,7 +2238,7 @@ window.CPL_DATA = {
         "name": "Expand Equitable Access & Boost Student Success",
         "target": "250,000 Californians by 2030",
         "progress": 18,
-        "current": "45,257 cumulative students"
+        "current": "45,508 cumulative students"
       },
       {
         "id": "Goal 2",
