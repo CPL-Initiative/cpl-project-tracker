@@ -20,6 +20,7 @@
   // ── Derive filter option sets ──
   var cplTypes = unique(exhibits.map(function (e) { return e.cpl_type || "Unknown"; }));
   var disciplines = unique(exhibits.map(function (e) { return e.discipline || "Unknown"; }));
+  var sectors = unique(exhibits.map(function (e) { return e.sector || "Unassigned"; }));
   var collabTypes = unique(exhibits.map(function (e) { return e.collaborative_type || "Local"; }));
 
   // Collect all college names across adopters + potential
@@ -43,7 +44,7 @@
   // ── State ──
   var state = {
     search: "",
-    filters: { collabType: [], cplType: [], discipline: [], college: [], district: [], swRegion: [] },
+    filters: { collabType: [], cplType: [], sector: [], discipline: [], college: [], district: [], swRegion: [] },
     selected: {},
     expanded: {},
     page: 0,
@@ -69,6 +70,7 @@
     var f = state.filters;
     if (f.collabType.length && f.collabType.indexOf(e.collaborative_type || "Local") === -1) return false;
     if (f.cplType.length && f.cplType.indexOf(e.cpl_type || "Unknown") === -1) return false;
+    if (f.sector.length && f.sector.indexOf(e.sector || "Unassigned") === -1) return false;
     if (f.discipline.length && f.discipline.indexOf(e.discipline || "Unknown") === -1) return false;
     if (f.college.length || f.district.length || f.swRegion.length) {
       var names = (e.adopter_names || []).concat(e.potential_names || []);
@@ -120,6 +122,7 @@
     html += '<input type="text" id="sw-search" placeholder="Search exhibits, colleges, courses..." />';
     html += buildFilterButton("collabType", "Statewide / Local", collabTypes);
     html += buildFilterButton("cplType", "CPL Type", cplTypes);
+    html += buildFilterButton("sector", "Career Cluster", sectors);
     html += buildFilterButton("discipline", "TOP Code Category", disciplines);
     html += buildFilterButton("college", "College", collegeNames);
     html += buildFilterButton("district", "District", districts);
@@ -399,7 +402,7 @@
         invalidateCache();
         renderRows();
         var btnEl = group.querySelector(".sw-filter-btn");
-        var labels = { collabType: "Statewide / Local", cplType: "CPL Type", discipline: "TOP Code Category", college: "College", district: "District", swRegion: "SW Region" };
+        var labels = { collabType: "Statewide / Local", cplType: "CPL Type", sector: "Career Cluster", discipline: "TOP Code Category", college: "College", district: "District", swRegion: "SW Region" };
         var count = state.filters[filterKey].length;
         btnEl.textContent = labels[filterKey] + (count > 0 ? " (" + count + ")" : "") + " ▾";
         btnEl.classList.toggle("active", count > 0);
