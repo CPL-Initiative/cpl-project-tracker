@@ -5855,8 +5855,17 @@ def main():
                         print(f"  Injected Annual Workplan Goals section ({len(workplan_goals)} activities)")
 
             # ── Replace the Projects Grid with fully rendered static HTML ──
+            # Use <!-- End Projects Grid --> as the inner-boundary marker so
+            # the surrounding tab-pane wrappers (added in Phase D) survive
+            # repeated runs. Fall back to <!-- Budget Section --> on a fresh
+            # template that doesn't yet have the End marker.
             proj_grid_start = html.find('<!-- Projects Grid -->')
-            proj_grid_end = html.find('<!-- Budget Section -->')
+            proj_grid_end = html.find('<!-- End Projects Grid -->')
+            if proj_grid_end != -1:
+                proj_grid_end_consumes = proj_grid_end + len('<!-- End Projects Grid -->')
+            else:
+                proj_grid_end = html.find('<!-- Budget Section -->')
+                proj_grid_end_consumes = proj_grid_end
             if proj_grid_start != -1 and proj_grid_end != -1:
                 proj_cards_html = render_projects_grid_html(projects, update_log, attachments=attachments)
                 project_count = len([p for p in projects if not p["id"].startswith("D.")])
@@ -5882,11 +5891,47 @@ def main():
                     '        <h2 style="margin-bottom:1.5rem;">Projects <span id="projectCount" style="font-size:0.9rem;color:#888;">(' + str(project_count) + ')</span></h2>\n'
                     '        <div id="projectsGrid">\n'
                     + proj_cards_html +
-                    '        </div>\n\n        '
+                    '        </div>\n'
+                    '        <!-- End Projects Grid -->\n'
                 )
-                html = html[:proj_grid_start] + new_proj_section + html[proj_grid_end:]
+                html = html[:proj_grid_start] + new_proj_section + html[proj_grid_end_consumes:]
                 print(f"  Rendered static project cards ({project_count} projects, grouped by Goal)")
                 print("  Rendered Workplan Progress Chart (3 trend lines)")
+
+            # ── Teaser cards on the Dashboard tab linking to the other tabs ──
+            # Replace the static placeholder; idempotent because the placeholder
+            # is wrapped in delimiting comments and stays in the template.
+            teaser_html = (
+                '<!-- Teaser cards (auto-generated, do not edit manually) -->\n'
+                '        <div class="tab-teaser-grid">\n'
+                f'            <div class="tab-teaser-card">\n'
+                f'                <h3>Annual Workplan Goals</h3>\n'
+                f'                <p>Year-by-year targets and stretch goals tracked across {len(workplan_goals)} sub-activities, with current progress and pacing toward 2030.</p>\n'
+                f'                <a class="tab-teaser-link" href="#workplan-goals">View Workplan Goals →</a>\n'
+                f'            </div>\n'
+                f'            <div class="tab-teaser-card">\n'
+                f'                <h3>Budget</h3>\n'
+                f'                <p>CPL 5-year funding plan, expenditure detail, personnel, and category roll-ups including AB 123 and ESS 25-82 allocations.</p>\n'
+                f'                <a class="tab-teaser-link" href="#budget">View Budget →</a>\n'
+                f'            </div>\n'
+                f'            <div class="tab-teaser-card">\n'
+                f'                <h3>Vision 2030 Alignment</h3>\n'
+                f'                <p>CPL Initiative alignment with Vision 2030 Actions 1a &amp; 5, and the three CPL system goals — with live progress against each.</p>\n'
+                f'                <a class="tab-teaser-link" href="#vision-2030">View Vision 2030 →</a>\n'
+                f'            </div>\n'
+                '        </div>\n'
+                '        <!-- End Teaser cards -->\n'
+            )
+            # Replace either the bare placeholder (first run) or an existing teaser block (later runs).
+            import re as _re
+            placeholder_pattern = _re.compile(
+                r'<!-- TEASER_CARDS_PLACEHOLDER[^>]*-->|'
+                r'<!-- Teaser cards \(auto-generated, do not edit manually\) -->.*?<!-- End Teaser cards -->',
+                _re.DOTALL,
+            )
+            html, n_sub = placeholder_pattern.subn(teaser_html.rstrip(), html, count=1)
+            if n_sub:
+                print("  Injected Dashboard tab teaser cards")
 
             # ── Render and inject the Budget section ──
             budget_section_start = html.find('<!-- Budget Section -->')
@@ -5966,32 +6011,42 @@ def main():
                 html
             )
 
-            # ── Inject Annual Workplan Goals table before Vision 2030 ──
+            # ── Inject Annual Workplan Goals table ──
+            # Replace in place between the existing markers so the section
+            # stays inside whatever wrapper it's nested in (since Phase D
+            # that's the workplan-goals tab pane). Falls back to inserting
+            # before Vision 2030 Section only on a fresh template.
             if annual_goals:
                 goals_table_html = render_annual_goals_table_html(annual_goals)
-                # Insert before the Vision 2030 section
-                v2030_insert = html.find('<!-- Vision 2030 Section -->')
-                if v2030_insert == -1:
-                    # If Vision 2030 section is missing, insert before DATA-START
-                    v2030_insert = html.find('<!-- DATA-START')
-                if v2030_insert != -1:
-                    # Remove any existing annual goals table first
-                    ag_start = html.find('<!-- Annual Workplan Goals -->')
-                    ag_end = html.find('<!-- End Annual Workplan Goals -->')
-                    if ag_start != -1 and ag_end != -1:
-                        html = html[:ag_start] + html[ag_end + len('<!-- End Annual Workplan Goals -->'):]
-                        v2030_insert = html.find('<!-- Vision 2030 Section -->')
-                        if v2030_insert == -1:
-                            v2030_insert = html.find('<!-- DATA-START')
-                    wrapped = '<!-- Annual Workplan Goals -->\n' + goals_table_html + '        <!-- End Annual Workplan Goals -->\n\n        '
-                    html = html[:v2030_insert] + wrapped + html[v2030_insert:]
+                ag_start = html.find('<!-- Annual Workplan Goals -->')
+                ag_end = html.find('<!-- End Annual Workplan Goals -->')
+                if ag_start != -1 and ag_end != -1:
+                    wrapped = '<!-- Annual Workplan Goals -->\n' + goals_table_html + '        <!-- End Annual Workplan Goals -->'
+                    html = html[:ag_start] + wrapped + html[ag_end + len('<!-- End Annual Workplan Goals -->'):]
                     print(f"  Rendered Annual Workplan Goals table ({len(annual_goals)} rows)")
+                else:
+                    # Fresh template: insert before Vision 2030 Section
+                    v2030_insert = html.find('<!-- Vision 2030 Section -->')
+                    if v2030_insert == -1:
+                        v2030_insert = html.find('<!-- DATA-START')
+                    if v2030_insert != -1:
+                        wrapped = '<!-- Annual Workplan Goals -->\n' + goals_table_html + '        <!-- End Annual Workplan Goals -->\n\n        '
+                        html = html[:v2030_insert] + wrapped + html[v2030_insert:]
+                        print(f"  Rendered Annual Workplan Goals table ({len(annual_goals)} rows, first-run insert)")
 
             # ── Rebuild the Vision 2030 section with updated goal data ──
+            # End boundary is <!-- End Vision 2030 Section --> (added Phase D)
+            # so the surrounding tab-pane wrappers survive repeat runs.
+            # Falls back to <!-- DATA-START --> on a fresh template.
             v2030_start = html.find('<!-- Vision 2030 Section -->')
-            # Find the DATA-START marker (which may be embedded in the truncated V2030 section)
-            data_start_marker = html.find('<!-- DATA-START')
-            if v2030_start != -1 and data_start_marker != -1:
+            v2030_end = html.find('<!-- End Vision 2030 Section -->')
+            if v2030_end != -1:
+                v2030_end_consumes = v2030_end + len('<!-- End Vision 2030 Section -->')
+            else:
+                v2030_end = html.find('<!-- DATA-START')
+                v2030_end_consumes = v2030_end
+            data_start_marker = v2030_end  # back-compat var name kept for the next block
+            if v2030_start != -1 and v2030_end != -1:
                 # Use live KPI data for progress calculations
                 recs_val = int(str(kpis.get("credit_recommendations", {}).get("value", "576")).replace(",", ""))
                 students_val = int(str(kpis.get("cumulative_students", {}).get("value", "42620")).replace(",", ""))
@@ -6065,7 +6120,9 @@ def main():
         </div>
 
         '''
-                html = html[:v2030_start] + new_v2030 + html[data_start_marker:]
+                # Append the End-marker so future runs can re-locate the boundary.
+                new_v2030 = new_v2030.rstrip() + '\n        <!-- End Vision 2030 Section -->\n        '
+                html = html[:v2030_start] + new_v2030 + html[v2030_end_consumes:]
                 print("  Rebuilt Vision 2030 section with updated CPL Goal data")
 
             # ── Remove the old standalone applyFilters script block if present ──

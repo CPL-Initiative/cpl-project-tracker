@@ -257,6 +257,43 @@ shape — keep these guarantees if you ever rewrite the prompt:
 If you change the prompt, mirror the change here so the guidance and the
 code stay in sync.
 
+### 7b. Top-level Tab Layout (Phase D, 2026-05-18)
+
+The dashboard renders **4 top-level tabs**, navigated via URL hash so they
+are linkable and survive a refresh:
+
+| Tab key (hash) | Display label | Content |
+|----------------|---------------|---------|
+| `dashboard` (default, no hash) | Dashboard | KPI Metrics, CPL Analytics, Workplan Activity Metrics, Filter Bar, Projects Grid, **plus teaser cards** linking to the other three tabs |
+| `workplan-goals` | Annual Workplan Goals | The 5-year goals + stretch + current table |
+| `budget` | Budget | CPL Budget & Expenditure Plan |
+| `vision-2030` | Vision 2030 | Vision 2030 Alignment cards with live progress |
+
+Implementation notes (important — keep in sync with the generator):
+
+- Tab nav, tab panes, and the tab-switch JS live in the **static
+  template** (`CPL_Dashboard.html`), not in the generator. Each tab pane
+  is wrapped with its own `<div class="main-container">` and ends with a
+  `<!-- /tab-<name> -->` close comment.
+- Section boundary markers were added on Phase D so generator
+  replacements stay inside the right pane on repeat runs:
+  `<!-- End Projects Grid -->` and `<!-- End Vision 2030 Section -->`
+  delimit those two sections; Budget and Annual Workplan Goals
+  already had paired `<!-- End ... -->` markers.
+- **Annual Workplan Goals is injected TWICE in main()**
+  (`render_workplan_goals_html` + `render_annual_goals_table_html`).
+  Both code paths now replace **in place** between the AWG markers
+  rather than re-anchoring against `<!-- Vision 2030 Section -->` — if
+  you re-anchor against Vision again, the content ends up in the wrong
+  tab. (See the bug fixed 2026-05-18.)
+- The Dashboard tab carries auto-generated **teaser cards** built in
+  the generator and injected at `<!-- TEASER_CARDS_PLACEHOLDER -->`.
+  The placeholder lives between main-container close and Dashboard
+  pane close, so the cards span full width but stay inside the pane.
+- Tab switching JS sits at the bottom of the template (just before
+  `</body>`) and uses `history.replaceState` for the default tab so the
+  URL stays clean.
+
 ### 8. Supabase Database (Separate System)
 
 - **Project**: `hvuwhnbuahrtptokpqfh.supabase.co`
