@@ -215,6 +215,34 @@ properties to preserve:
   strippers in `main()` near the EXHIBIT_CSS_MARKER block — they're
   what guarantees idempotency across rename events.
 
+### 6b. Workplan Activities & Projects wrapper (Dashboard tab)
+
+The Dashboard tab's Activity Metrics, Filter Bar, and Projects Grid
+all collapse together as **one** unit, under the section title
+**Workplan Activities & Projects**. The Filter Bar applies to both,
+so they share one collapse toggle.
+
+- Outer wrapper id: `#workplanProjectsWrapper` (class
+  `kpi-section-wrapper`); body class is `.workplan-projects-body`.
+  Collapse rule:
+  `.kpi-section-wrapper.collapsed .workplan-projects-body { display: none; }`
+  (lives inside `EXHIBIT_ANALYSIS_CSS` so the daily regen restores it).
+- Wrapper open/close lives in the **static template** between
+  `<!-- ═══ Workplan Activities & Projects Section ═══ -->` and
+  `<!-- ═══ End Workplan Activities & Projects Section ═══ -->`.
+- The injected **Workplan Activity Metrics** subsection has NO inner
+  `kpi-section-wrapper` of its own — the outer wrapper provides the
+  only collapse. If you re-add inner collapse chrome, you'll get
+  nested collapsibles with confusing UX.
+- **Generator anchor change**: KPI Summary Cards replacement, MAP
+  Articulation Analysis strip, and CPL Analytics strip/inject all
+  end-anchor on `<!-- ═══ Workplan Activities & Projects Section ═══ -->`
+  (NOT `<!-- Filter Bar -->`). Filter Bar now lives inside the
+  wrapper; using it as the end-anchor would wipe the wrapper opening
+  every run. The Workplan Activity Metrics strip/inject still uses
+  `<!-- Filter Bar -->` because that subsection sits between the
+  wrapper opening and Filter Bar.
+
 ### 7. Custom Report Generator
 
 - **UI**: Modal with audience picker, metric checkboxes, format selection
