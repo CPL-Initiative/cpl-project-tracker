@@ -274,6 +274,69 @@
             padding: 2rem;
         }
 
+        /* Tab navigation */
+        .cpl-tabs {
+            max-width: 1400px;
+            margin: 1.2rem auto 0;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.4rem;
+            border-bottom: 2px solid #e8e8e8;
+        }
+        .cpl-tab {
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            padding: 0.7rem 1.4rem;
+            font-family: 'Source Sans 3', Arial, sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.15s, border-color 0.15s;
+            margin-bottom: -2px;
+        }
+        .cpl-tab:hover { color: #0A2240; }
+        .cpl-tab.active {
+            color: #0A2240;
+            border-bottom-color: #C9A84C;
+        }
+        .cpl-tab-pane { display: none; }
+        .cpl-tab-pane.active { display: block; }
+
+        /* Teaser cards on the Dashboard tab */
+        .tab-teaser-grid {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+        .tab-teaser-card {
+            background: #ffffff;
+            border: 1px solid #e8e8e8;
+            border-top: 4px solid #C9A84C;
+            border-radius: 8px;
+            padding: 1.1rem 1.3rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .tab-teaser-card h3 { margin: 0; color: #0A2240; font-size: 1.05rem; }
+        .tab-teaser-card p { margin: 0; font-size: 0.82rem; color: #555; line-height: 1.4; flex: 1; }
+        .tab-teaser-link {
+            display: inline-block;
+            margin-top: 0.4rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #C9A84C;
+            text-decoration: none;
+            align-self: flex-start;
+        }
+        .tab-teaser-link:hover { color: #0A2240; }
+
         /* Project Cards Grid */
         .projects-grid {
             display: grid;
@@ -1270,6 +1333,27 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 .cpl-analytics-body,
 .activity-kpi-body {
@@ -1654,7 +1738,14 @@
         
         
         
-        <div class="last-updated">Last Updated: May 18, 2026 at 1:37 PM PT</div>
+        
+        
+        
+        
+        
+        
+        
+        <div class="last-updated">Last Updated: May 18, 2026 at 2:09 PM PT</div>
         <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:#C9A84C;border:1px solid #C9A84C;padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='#C9A84C';this.style.color='#0A2240'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='#C9A84C'}">&#x21bb; Refresh Today&#39;s Data</button></div>
         
         
@@ -1718,8 +1809,25 @@
         
         
         
+        
+        
+        
+        
+        
+        
+        
     </div>
     </div>
+
+    <!-- Tab Navigation -->
+    <nav class="cpl-tabs" role="tablist" aria-label="Dashboard sections">
+        <button class="cpl-tab active" data-tab="dashboard" role="tab" aria-selected="true">Dashboard</button>
+        <button class="cpl-tab" data-tab="workplan-goals" role="tab" aria-selected="false">Annual Workplan Goals</button>
+        <button class="cpl-tab" data-tab="budget" role="tab" aria-selected="false">Budget</button>
+        <button class="cpl-tab" data-tab="vision-2030" role="tab" aria-selected="false">Vision 2030</button>
+    </nav>
+
+    <div class="cpl-tab-pane active" id="tab-dashboard" data-tab="dashboard" role="tabpanel" aria-labelledby="tab-dashboard">
 
     <!-- KPI Summary Cards -->
     <div class="kpi-section-wrapper" id="kpiSectionWrapper">
@@ -6240,6 +6348,43 @@
         </div>
         </div>
         </div>
+        <!-- End Projects Grid -->
+
+
+
+
+
+
+
+
+        </div>
+        <!-- /main-container for Dashboard tab -->
+
+        <!-- Teaser cards (auto-generated, do not edit manually) -->
+        <div class="tab-teaser-grid">
+            <div class="tab-teaser-card">
+                <h3>Annual Workplan Goals</h3>
+                <p>Year-by-year targets and stretch goals tracked across 18 sub-activities, with current progress and pacing toward 2030.</p>
+                <a class="tab-teaser-link" href="#workplan-goals">View Workplan Goals →</a>
+            </div>
+            <div class="tab-teaser-card">
+                <h3>Budget</h3>
+                <p>CPL 5-year funding plan, expenditure detail, personnel, and category roll-ups including AB 123 and ESS 25-82 allocations.</p>
+                <a class="tab-teaser-link" href="#budget">View Budget →</a>
+            </div>
+            <div class="tab-teaser-card">
+                <h3>Vision 2030 Alignment</h3>
+                <p>CPL Initiative alignment with Vision 2030 Actions 1a &amp; 5, and the three CPL system goals — with live progress against each.</p>
+                <a class="tab-teaser-link" href="#vision-2030">View Vision 2030 →</a>
+            </div>
+        </div>
+        <!-- End Teaser cards -->
+
+    </div>
+    <!-- /tab-dashboard -->
+
+    <div class="cpl-tab-pane" id="tab-budget" data-tab="budget" role="tabpanel" aria-labelledby="tab-budget">
+        <div class="main-container">
 
         <!-- Budget Section -->
     <div class="budget-section" style="background-color:#fafafa;padding:2rem;border-radius:8px;margin-bottom:2rem;">
@@ -6851,7 +6996,14 @@ Cont</td>
     </div>
     <!-- End Budget Section -->
 
-        
+        </div>
+        <!-- /main-container for Budget tab -->
+    </div>
+    <!-- /tab-budget -->
+
+    <div class="cpl-tab-pane" id="tab-workplan-goals" data-tab="workplan-goals" role="tabpanel" aria-labelledby="tab-workplan-goals">
+        <div class="main-container">
+
 
                 
 
@@ -7673,6 +7825,14 @@ Cont</td>
         </div>
         <!-- End Annual Workplan Goals -->
 
+                                                                </div>
+        <!-- /main-container for Workplan Goals tab -->
+    </div>
+    <!-- /tab-workplan-goals -->
+
+    <div class="cpl-tab-pane" id="tab-vision-2030" data-tab="vision-2030" role="tabpanel" aria-labelledby="tab-vision-2030">
+        <div class="main-container">
+
         <!-- Vision 2030 Section -->
         <div class="vision-section">
             <h2>Vision 2030 Alignment</h2>
@@ -7738,12 +7898,24 @@ Cont</td>
                 </div>
             </div>
         </div>
+        <!-- End Vision 2030 Section -->
+        
+        
+        
+        
+        
+        
+        
+        </div>
+        <!-- /main-container for Vision 2030 tab -->
+    </div>
+    <!-- /tab-vision-2030 -->
 
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "May 18, 2026 at 1:37 PM PT",
-  "data_as_of": "May 18, 2026 at 1:37 PM PT",
+  "last_updated": "May 18, 2026 at 2:09 PM PT",
+  "data_as_of": "May 18, 2026 at 2:09 PM PT",
   "kpis": {
     "cumulative_students": {
       "value": "45,508",
@@ -12212,6 +12384,41 @@ Cont</td>
 };
     </script>
     <!-- DATA-END -->
+    <script>
+    // Tab navigation with URL-hash routing.
+    (function () {
+        var VALID_TABS = ['dashboard', 'workplan-goals', 'budget', 'vision-2030'];
+        function activate(tabName) {
+            if (!tabName || VALID_TABS.indexOf(tabName) === -1) tabName = 'dashboard';
+            document.querySelectorAll('.cpl-tab').forEach(function (b) {
+                var on = b.getAttribute('data-tab') === tabName;
+                b.classList.toggle('active', on);
+                b.setAttribute('aria-selected', on ? 'true' : 'false');
+            });
+            document.querySelectorAll('.cpl-tab-pane').forEach(function (p) {
+                p.classList.toggle('active', p.getAttribute('data-tab') === tabName);
+            });
+            window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+        }
+        function fromHash() {
+            var h = (location.hash || '').replace(/^#/, '');
+            return h || 'dashboard';
+        }
+        document.querySelectorAll('.cpl-tab').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var t = btn.getAttribute('data-tab');
+                if (t === 'dashboard') {
+                    history.replaceState(null, '', location.pathname + location.search);
+                } else {
+                    location.hash = t;
+                }
+                activate(t);
+            });
+        });
+        window.addEventListener('hashchange', function () { activate(fromHash()); });
+        activate(fromHash());
+    })();
+    </script>
     <script src="docx.min.js"></script>
     <script src="college_lookup.js"></script>
     <script src="statewide_data.js"></script>
