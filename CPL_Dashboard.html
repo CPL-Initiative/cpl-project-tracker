@@ -1349,6 +1349,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 .exhibit-analysis-section {
     display: none;
@@ -1708,8 +1711,10 @@
         
         
         
+        
         <div class="last-updated">Last Updated: May 18, 2026</div>
         <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:#C9A84C;border:1px solid #C9A84C;padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='#C9A84C';this.style.color='#0A2240'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='#C9A84C'}">&#x21bb; Refresh Today&#39;s Data</button></div>
+        
         
         
         
@@ -2638,7 +2643,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">50+ dev tickets completed; 8 feature areas advanced; Student Portal in final dev sprint</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/1.1_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="4" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P4"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="1.1 MAP Platform Development" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/1.1_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P4" target="_blank" rel="noopener" class="update-btn" data-row="4" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P4 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="1.1 MAP Platform Development" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card has-metric">
                 <div class="akpi-header">
@@ -2702,7 +2707,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">Credential Engine integration established; competency-level alignment with CTDL underway</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/1.2_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="5" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P5"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="1.2 System Integration & Interoperability" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/1.2_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P5" target="_blank" rel="noopener" class="update-btn" data-row="5" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P5 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="1.2 System Integration & Interoperability" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card no-metric">
                 <div class="akpi-header">
@@ -2763,7 +2768,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">Full AI-enabled Student Portal in final development sprint; landing page and JST upload tools live</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/1.3_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="6" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P6"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="1.3 CPL Student Portal" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/1.3_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P6" target="_blank" rel="noopener" class="update-btn" data-row="6" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P6 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="1.3 CPL Student Portal" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card no-metric">
                 <div class="akpi-header">
@@ -2824,7 +2829,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">No credentials published yet; full launch not targeted until 2026-27; schema development underway</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/1.4_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="7" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P7"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="1.4 California Credential Registry" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/1.4_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P7" target="_blank" rel="noopener" class="update-btn" data-row="7" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P7 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="1.4 California Credential Registry" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             </div>
             </div>
@@ -2910,7 +2915,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">288 cumulative credit recommendations; 281 adopted this year; 230 in progress through adoption workflow</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/2.1_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="8" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P8"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="2.1 Statewide Credit Recommendations" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/2.1_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P8" target="_blank" rel="noopener" class="update-btn" data-row="8" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P8 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="2.1 Statewide Credit Recommendations" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card has-metric">
                 <div class="akpi-header">
@@ -2972,7 +2977,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">11 workgroups convened spanning high-demand fields; 101 credential exhibits documented</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/2.2_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="9" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P9"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="2.2 Faculty Discipline Workgroups" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/2.2_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P9" target="_blank" rel="noopener" class="update-btn" data-row="9" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P9 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="2.2 Faculty Discipline Workgroups" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card no-metric">
                 <div class="akpi-header">
@@ -3035,7 +3040,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">Three parallel development approaches underway (Electrical, Carpentry, AI-assisted); dependent on MAP Exhibit module April release</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/2.3_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="10" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P10"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="2.3 Common Course Crosswalks" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/2.3_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P10" target="_blank" rel="noopener" class="update-btn" data-row="10" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P10 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="2.3 Common Course Crosswalks" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card no-metric">
                 <div class="akpi-header">
@@ -3096,7 +3101,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">Functionality dependent on MAP Exhibit module; development underway</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/2.4_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="11" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P11"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="2.4 Validated Skills" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/2.4_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P11" target="_blank" rel="noopener" class="update-btn" data-row="11" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P11 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="2.4 Validated Skills" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             </div>
             </div>
@@ -3184,7 +3189,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">42,958 cumulative students with CPL awards; exceeded 2025-26 annual target of 35,000</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/3.1_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="12" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P12"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="3.1 CPL Offers & Awards Tracking" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/3.1_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P12" target="_blank" rel="noopener" class="update-btn" data-row="12" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P12 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="3.1 CPL Offers & Awards Tracking" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card has-metric">
                 <div class="akpi-header">
@@ -3248,7 +3253,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">96,449 transcripted CPL units; exceeds 2025-26 annual target of 85,000</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/3.2_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="16" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P16"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="3.2 CPL Units Transcription" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/3.2_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P16" target="_blank" rel="noopener" class="update-btn" data-row="16" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P16 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="3.2 CPL Units Transcription" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card has-metric">
                 <div class="akpi-header">
@@ -3312,7 +3317,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">84 colleges meet active threshold; 114 received $50K grants; 53 at implementation stage, 13 showing growth</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/3.3_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="17" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P17"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="3.3 Institutional Participation" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/3.3_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P17" target="_blank" rel="noopener" class="update-btn" data-row="17" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P17 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="3.3 Institutional Participation" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card no-metric">
                 <div class="akpi-header">
@@ -3373,7 +3378,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">Survey tool not yet deployed; infrastructure under development; will launch with Student Portal</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/3.4_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="18" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P18"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="3.4 Student Impact Rate Survey" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/3.4_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P18" target="_blank" rel="noopener" class="update-btn" data-row="18" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P18 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="3.4 Student Impact Rate Survey" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card has-metric">
                 <div class="akpi-header">
@@ -3437,7 +3442,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">32 student stories published on My CPL Story; AI-assisted capture tool in development</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/3.5_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="19" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P19"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="3.5 Student Stories" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/3.5_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P19" target="_blank" rel="noopener" class="update-btn" data-row="19" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P19 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="3.5 Student Stories" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card has-metric">
                 <div class="akpi-header">
@@ -3499,7 +3504,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">Three MAP College of Year awards given (2023-2025); CPL Dashboard live with public data</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/3.6_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="20" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P20"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="3.6 College Tracking & Recognition" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/3.6_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P20" target="_blank" rel="noopener" class="update-btn" data-row="20" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P20 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="3.6 College Tracking & Recognition" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             </div>
             </div>
@@ -3584,7 +3589,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-04-08</span> <span style="font-size:0.6rem;font-weight:600;background:#C9A84C;color:#0A2240;padding:0.1rem 0.3rem;border-radius:3px;">Workplan Note</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">Veteran Sprint: 20,991 JSTs uploaded (62% of ~34,000 target). 75 colleges awarding basic training credit (up from ~15% baseline). 679 unique ACE credit recommendations covered. $163M estimated savings.</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/4.1_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="21" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P21"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="4.1 Sprints and Projects" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/4.1_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P21" target="_blank" rel="noopener" class="update-btn" data-row="21" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P21 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="4.1 Sprints and Projects" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card has-metric">
                 <div class="akpi-header">
@@ -3646,7 +3651,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">20+ partners actively engaged including DAS, CDE, ASCCC, Credential Engine, WestEd, Cal-JAC, and others</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/4.2_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="26" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P26"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="4.2 Strategic Partnerships" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/4.2_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P26" target="_blank" rel="noopener" class="update-btn" data-row="26" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P26 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="4.2 Strategic Partnerships" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card has-metric">
                 <div class="akpi-header">
@@ -3708,7 +3713,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">25 trainings delivered incl. 6th Annual CPL Summit and 4 Regional Trainings; 1,000+ staff/faculty/admins trained</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/4.3_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="27" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P27"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="4.3 Technical Assistance & Training" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/4.3_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P27" target="_blank" rel="noopener" class="update-btn" data-row="27" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P27 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="4.3 Technical Assistance & Training" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             </div>
             <div class="goal-subheader" style="margin:1rem 0 0.5rem 0;padding:0.5rem 0.8rem;background:linear-gradient(90deg,#163A5F 0%,#0A2240 100%);border-radius:6px;">
@@ -3779,7 +3784,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">AB 123 chaptered ($5M ongoing + $15M one-time); Title 5 updates advanced; $2M + $35M proposed in Governor's 2026 budget</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/4.4_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="28" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P28"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="4.4 Law & Regulation Review" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/4.4_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P28" target="_blank" rel="noopener" class="update-btn" data-row="28" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P28 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="4.4 Law & Regulation Review" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             <div class="activity-kpi-card has-metric">
                 <div class="akpi-header">
@@ -3841,7 +3846,7 @@
                         <div style="margin-bottom:0.4rem;"><span style="font-size:0.68rem;font-weight:700;color:#0A2240;background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">2026-03-20</span> <span style="font-size:0.6rem;font-weight:600;background:#163A5F;color:#fff;padding:0.1rem 0.3rem;border-radius:3px;">Progress Update</span><div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">$50K distributed to 114 colleges; $6M one-time fully allocated; 2026 advocacy for $2M ongoing + $35M one-time</div></div>
                     </div>
                 </div>
-                <a href="reports/projects/4.5_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="CPL_Initiative_Project_List_v3.xlsx" class="update-btn" data-row="29" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel to update cell P29"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="4.5 Sustainable Funding" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
+                <a href="reports/projects/4.5_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P29" target="_blank" rel="noopener" class="update-btn" data-row="29" data-col="P" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#FFFFFF;background:#C9A84C;" onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'" title="Open Excel for the Web at cell P29 (Project List)"><span style="font-size:0.8rem;">&#9998;</span> Update</a><a href="#" class="attach-btn" data-folder="4.5 Sustainable Funding" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:#163A5F;background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a>
             </div>
             </div>
             </div>
@@ -4105,14 +4110,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P8" target="_blank" rel="noopener"
                     class="update-btn" data-row="8" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P8">
+                    title="Open Excel for the Web at cell P8 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="2.1 Statewide Credit Recommendations"
@@ -4168,14 +4173,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P9" target="_blank" rel="noopener"
                     class="update-btn" data-row="9" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P9">
+                    title="Open Excel for the Web at cell P9 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="2.2 Faculty Discipline Workgroups"
@@ -4233,14 +4238,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P10" target="_blank" rel="noopener"
                     class="update-btn" data-row="10" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P10">
+                    title="Open Excel for the Web at cell P10 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="2.3 Common Course Crosswalks"
@@ -4296,14 +4301,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P11" target="_blank" rel="noopener"
                     class="update-btn" data-row="11" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P11">
+                    title="Open Excel for the Web at cell P11 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="2.4 Validated Skills"
@@ -4358,14 +4363,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P21" target="_blank" rel="noopener"
                     class="update-btn" data-row="21" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P21">
+                    title="Open Excel for the Web at cell P21 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="4.1 Sprints and Projects"
@@ -4420,14 +4425,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P22" target="_blank" rel="noopener"
                     class="update-btn" data-row="22" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P22">
+                    title="Open Excel for the Web at cell P22 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="4.1.1 Veteran Sprint"
@@ -4482,14 +4487,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P23" target="_blank" rel="noopener"
                     class="update-btn" data-row="23" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P23">
+                    title="Open Excel for the Web at cell P23 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="4.1.2 Apprenticeship Sprint"
@@ -4544,14 +4549,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P24" target="_blank" rel="noopener"
                     class="update-btn" data-row="24" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P24">
+                    title="Open Excel for the Web at cell P24 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="4.1.3 Statewide Adoption Sprint"
@@ -4606,14 +4611,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P25" target="_blank" rel="noopener"
                     class="update-btn" data-row="25" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P25">
+                    title="Open Excel for the Web at cell P25 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="4.1.4 29 Palms Marine Corps Base Demo"
@@ -4669,14 +4674,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P26" target="_blank" rel="noopener"
                     class="update-btn" data-row="26" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P26">
+                    title="Open Excel for the Web at cell P26 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="4.2 Strategic Partnerships"
@@ -4732,14 +4737,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P27" target="_blank" rel="noopener"
                     class="update-btn" data-row="27" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P27">
+                    title="Open Excel for the Web at cell P27 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="4.3 Technical Assistance & Training"
@@ -4795,14 +4800,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P30" target="_blank" rel="noopener"
                     class="update-btn" data-row="30" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P30">
+                    title="Open Excel for the Web at cell P30 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="5.1 AI-Ready California Demonstration"
@@ -4858,14 +4863,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P32" target="_blank" rel="noopener"
                     class="update-btn" data-row="32" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P32">
+                    title="Open Excel for the Web at cell P32 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="5.3 AI Apprenticeship CPL Tools"
@@ -4935,14 +4940,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P4" target="_blank" rel="noopener"
                     class="update-btn" data-row="4" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P4">
+                    title="Open Excel for the Web at cell P4 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="1.1 MAP Platform Development"
@@ -5000,14 +5005,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P5" target="_blank" rel="noopener"
                     class="update-btn" data-row="5" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P5">
+                    title="Open Excel for the Web at cell P5 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="1.2 System Integration & Interoperability"
@@ -5063,14 +5068,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P6" target="_blank" rel="noopener"
                     class="update-btn" data-row="6" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P6">
+                    title="Open Excel for the Web at cell P6 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="1.3 CPL Student Portal"
@@ -5126,14 +5131,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P7" target="_blank" rel="noopener"
                     class="update-btn" data-row="7" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P7">
+                    title="Open Excel for the Web at cell P7 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="1.4 California Credential Registry"
@@ -5191,14 +5196,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P12" target="_blank" rel="noopener"
                     class="update-btn" data-row="12" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P12">
+                    title="Open Excel for the Web at cell P12 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="3.1 CPL Offers & Awards Tracking"
@@ -5253,14 +5258,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P13" target="_blank" rel="noopener"
                     class="update-btn" data-row="13" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P13">
+                    title="Open Excel for the Web at cell P13 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="3.1.1 CPL Offers & Awards Tracking"
@@ -5315,14 +5320,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P14" target="_blank" rel="noopener"
                     class="update-btn" data-row="14" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P14">
+                    title="Open Excel for the Web at cell P14 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="3.1.2 CPL Offers & Awards Tracking"
@@ -5377,14 +5382,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P15" target="_blank" rel="noopener"
                     class="update-btn" data-row="15" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P15">
+                    title="Open Excel for the Web at cell P15 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="3.1.2a CPL Offers & Awards Tracking"
@@ -5442,14 +5447,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P16" target="_blank" rel="noopener"
                     class="update-btn" data-row="16" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P16">
+                    title="Open Excel for the Web at cell P16 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="3.2 CPL Units Transcription"
@@ -5507,14 +5512,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P17" target="_blank" rel="noopener"
                     class="update-btn" data-row="17" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P17">
+                    title="Open Excel for the Web at cell P17 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="3.3 Institutional Participation"
@@ -5570,14 +5575,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P18" target="_blank" rel="noopener"
                     class="update-btn" data-row="18" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P18">
+                    title="Open Excel for the Web at cell P18 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="3.4 Student Impact Rate Survey"
@@ -5635,14 +5640,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P19" target="_blank" rel="noopener"
                     class="update-btn" data-row="19" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P19">
+                    title="Open Excel for the Web at cell P19 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="3.5 Student Stories"
@@ -5698,14 +5703,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P20" target="_blank" rel="noopener"
                     class="update-btn" data-row="20" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P20">
+                    title="Open Excel for the Web at cell P20 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="3.6 College Tracking & Recognition"
@@ -5761,14 +5766,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P31" target="_blank" rel="noopener"
                     class="update-btn" data-row="31" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P31">
+                    title="Open Excel for the Web at cell P31 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="5.2 AI Certification-to-Course Matching"
@@ -5824,14 +5829,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P33" target="_blank" rel="noopener"
                     class="update-btn" data-row="33" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P33">
+                    title="Open Excel for the Web at cell P33 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="5.4 RP Group CPL Field Survey"
@@ -5887,14 +5892,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P35" target="_blank" rel="noopener"
                     class="update-btn" data-row="35" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P35">
+                    title="Open Excel for the Web at cell P35 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="5.6 WestEd CPL Scope of Work"
@@ -5950,14 +5955,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P36" target="_blank" rel="noopener"
                     class="update-btn" data-row="36" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P36">
+                    title="Open Excel for the Web at cell P36 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="5.7 MIS Data Reconciliation"
@@ -6025,14 +6030,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P28" target="_blank" rel="noopener"
                     class="update-btn" data-row="28" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P28">
+                    title="Open Excel for the Web at cell P28 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="4.4 Law & Regulation Review"
@@ -6088,14 +6093,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P29" target="_blank" rel="noopener"
                     class="update-btn" data-row="29" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P29">
+                    title="Open Excel for the Web at cell P29 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="4.5 Sustainable Funding"
@@ -6151,14 +6156,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P34" target="_blank" rel="noopener"
                     class="update-btn" data-row="34" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P34">
+                    title="Open Excel for the Web at cell P34 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="5.5 VRC CPL Module Revision"
@@ -6214,14 +6219,14 @@
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H&activeCell=%27Project%20List%27!P37" target="_blank" rel="noopener"
                     class="update-btn" data-row="37" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P37">
+                    title="Open Excel for the Web at cell P37 (Project List)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="5.8 CPL Legislative Advocacy (2026 Session)"
@@ -6848,6 +6853,8 @@ Cont</td>
     <!-- End Budget Section -->
 
         
+
+                
 
                 
 

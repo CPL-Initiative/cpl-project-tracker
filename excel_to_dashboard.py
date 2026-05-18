@@ -52,6 +52,25 @@ SHAREPOINT_EXCEL = os.path.join(
 _LOCAL_EXCEL = os.path.join(SCRIPT_DIR, "CPL_Initiative_Project_List_v3.xlsx")
 EXCEL_FILE = SHAREPOINT_EXCEL if os.path.exists(SHAREPOINT_EXCEL) else _LOCAL_EXCEL
 OUTPUT_FILE = os.path.join(SCRIPT_DIR, "CPL_Data.js")
+
+# SharePoint Excel-for-the-Web URL for the workbook. Used by the "Update"
+# buttons so they deep-link to the exact row/cell instead of just downloading.
+SHAREPOINT_EXCEL_URL = (
+    "https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/"
+    "Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/"
+    "CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx"
+    "?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H"
+)
+EXCEL_SHEET_NAME = "Project List"
+
+def excel_cell_url(row, col="P"):
+    """Build a SharePoint Excel-for-the-Web URL that opens at a specific cell."""
+    if not row:
+        return SHAREPOINT_EXCEL_URL
+    # activeCell uses 'Sheet Name'!Cell form; URL-encode the sheet name.
+    from urllib.parse import quote
+    sheet = quote(f"'{EXCEL_SHEET_NAME}'", safe="")
+    return f"{SHAREPOINT_EXCEL_URL}&activeCell={sheet}!{col}{row}"
 HTML_FILE   = os.path.join(SCRIPT_DIR, "CPL_Dashboard.html")
 LIVE_FILE    = os.path.join(SCRIPT_DIR, "live_metrics.json")
 HISTORY_FILE = os.path.join(SCRIPT_DIR, "kpi_history.json")
@@ -1738,11 +1757,11 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                          f'style="{btn_style}color:#163A5F;background:#fafafa;"'
                          f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'">'
                          f'<span style="font-size:0.8rem;">&#128196;</span> Report</a>'
-                         f'<a href="CPL_Initiative_Project_List_v3.xlsx" '
+                         f'<a href="{excel_cell_url(excel_row)}" target="_blank" rel="noopener" '
                          f'class="update-btn" data-row="{excel_row}" data-col="P" '
                          f'style="{btn_style}color:#FFFFFF;background:#C9A84C;"'
                          f' onmouseover="this.style.background=\'#b89540\'" onmouseout="this.style.background=\'#C9A84C\'"'
-                         f' title="Open Excel to update cell P{excel_row}">'
+                         f' title="Open Excel for the Web at cell P{excel_row} ({EXCEL_SHEET_NAME})">'
                          f'<span style="font-size:0.8rem;">&#9998;</span> Update</a>'
                          f'<a href="#" '
                          f'class="attach-btn" '
@@ -1999,14 +2018,14 @@ def _render_single_project_card(p, update_log=None, attachments=None):
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="{excel_cell_url(p.get('excel_row', 0))}" target="_blank" rel="noopener"
                     class="update-btn" data-row="{p.get('excel_row', 0)}" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P{p.get('excel_row', '')}">
+                    title="Open Excel for the Web at cell P{p.get('excel_row', '')} ({EXCEL_SHEET_NAME})">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="{pid} {p['name']}"
