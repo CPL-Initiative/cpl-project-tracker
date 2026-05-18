@@ -14,7 +14,7 @@ The script reads from the Excel file in the same folder and overwrites CPL_Data.
 Open (or refresh) CPL_Dashboard.html in your browser to see updated data.
 """
 
-import json, os, re, sys
+import json, os, re, sys, urllib.request
 from datetime import datetime, timedelta, timezone
 from openpyxl import load_workbook
 
@@ -52,6 +52,74 @@ SHAREPOINT_EXCEL = os.path.join(
 _LOCAL_EXCEL = os.path.join(SCRIPT_DIR, "CPL_Initiative_Project_List_v3.xlsx")
 EXCEL_FILE = SHAREPOINT_EXCEL if os.path.exists(SHAREPOINT_EXCEL) else _LOCAL_EXCEL
 OUTPUT_FILE = os.path.join(SCRIPT_DIR, "CPL_Data.js")
+
+# SharePoint Excel-for-the-Web URL for the workbook. Used by the "Update"
+# buttons so they deep-link to the exact row/cell instead of just downloading.
+SHAREPOINT_EXCEL_URL = (
+    "https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/"
+    "Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/"
+    "CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx"
+    "?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H"
+)
+EXCEL_SHEET_NAME = "Project List"
+
+def excel_cell_url(row, col="P"):
+    """Build a SharePoint Excel-for-the-Web URL that opens at a specific cell."""
+    if not row:
+        return SHAREPOINT_EXCEL_URL
+    # activeCell uses 'Sheet Name'!Cell form; URL-encode the sheet name.
+    from urllib.parse import quote
+    sheet = quote(f"'{EXCEL_SHEET_NAME}'", safe="")
+    return f"{SHAREPOINT_EXCEL_URL}&activeCell={sheet}!{col}{row}"
+
+# ── CPL Knowledge Base (public GitHub repo) ──
+# Fetched at pipeline build time and embedded into the dashboard as window.CPL_KB
+# so the College Custom Report generator can ground Claude's commentary in
+# authoritative CPL framing without bundling stale copies in this repo.
+CPL_KB_REPO   = "CPL-Initiative/cpl-knowledge-base"
+CPL_KB_BRANCH = "main"
+# Explicit allowlist of files to embed in the prompt. We avoid the GitHub
+# directory-listing API because unauthenticated requests are aggressively
+# rate-limited (60/hr/IP); raw.githubusercontent.com has a much higher budget.
+# If new KB content is added, append it here.
+CPL_KB_FILES = [
+    "README.md",
+    "glossary.md",
+    "overview/overview.md",
+    "overview/map-platform.md",
+    "overview/ai-ready-california.md",
+    "methodology/three-pillar-initiative-design.md",
+    "methodology/sprint-based-execution.md",
+    "methodology/evidence-first-advocacy.md",
+    "methodology/infrastructure-first-scaling.md",
+    "methodology/knowledge-consolidation.md",
+    "methodology/pattern-scattered-to-systematic.md",
+    "methodology/pattern-ai-as-accelerant-with-faculty-validation.md",
+    "current-status/README.md",
+]
+CPL_KB_MAX_CHARS = 24000   # prompt budget for the embedded KB excerpt
+
+def fetch_cpl_kb(max_chars=CPL_KB_MAX_CHARS):
+    """Return a concatenated string of CPL KB markdown for prompt injection.
+    Best-effort: any fetch failures are logged and skipped so the pipeline never
+    breaks if GitHub is briefly unreachable."""
+    sections = []
+    for path in CPL_KB_FILES:
+        raw_url = f"https://raw.githubusercontent.com/{CPL_KB_REPO}/{CPL_KB_BRANCH}/{path}"
+        try:
+            req = urllib.request.Request(raw_url, headers={"User-Agent": "cpl-dashboard-pipeline"})
+            with urllib.request.urlopen(req, timeout=10) as r:
+                body = r.read().decode("utf-8", errors="replace")
+            sections.append(f"## {path}\n\n{body.strip()}")
+        except Exception as e:
+            print(f"  KB fetch warning ({path}): {e}")
+    if not sections:
+        return ""
+    full = "\n\n---\n\n".join(sections)
+    if len(full) > max_chars:
+        full = full[:max_chars].rsplit("\n", 1)[0] + "\n\n[KB excerpt truncated for prompt size]"
+    return full
+
 HTML_FILE   = os.path.join(SCRIPT_DIR, "CPL_Dashboard.html")
 LIVE_FILE    = os.path.join(SCRIPT_DIR, "live_metrics.json")
 HISTORY_FILE = os.path.join(SCRIPT_DIR, "kpi_history.json")
@@ -313,7 +381,7 @@ ALGO_DESCRIPTIONS = {
         "source":      "Live CCCCO MAP CPL Dashboard scrape (star_college_count). Augmented with live military data from the same scrape.",
         "formula":     "Headline = live star_college_count from the CCCCO scrape. JST Credits = military students (from cumulative_students breakdowns). Eligible CPL = military eligible units (from eligible_units breakdowns).",
         "assumptions": "Goal for JST Credits = 30,000 at Veteran Star Colleges.",
-        "caveats":     "Headline value (e.g. 47) is number of colleges participating, not students served.",
+        "caveats":     "Headline value is the number of colleges participating, not students served. Pulled live from the CCCCO MAP CPL Dashboard each pipeline run.",
         "last_modified": "2026-04-19",
     },
     "twenty_year_impact": {
@@ -1738,11 +1806,11 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                          f'style="{btn_style}color:#163A5F;background:#fafafa;"'
                          f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'">'
                          f'<span style="font-size:0.8rem;">&#128196;</span> Report</a>'
-                         f'<a href="CPL_Initiative_Project_List_v3.xlsx" '
+                         f'<a href="{excel_cell_url(excel_row)}" target="_blank" rel="noopener" '
                          f'class="update-btn" data-row="{excel_row}" data-col="P" '
                          f'style="{btn_style}color:#FFFFFF;background:#C9A84C;"'
                          f' onmouseover="this.style.background=\'#b89540\'" onmouseout="this.style.background=\'#C9A84C\'"'
-                         f' title="Open Excel to update cell P{excel_row}">'
+                         f' title="Open Excel for the Web at cell P{excel_row} ({EXCEL_SHEET_NAME})">'
                          f'<span style="font-size:0.8rem;">&#9998;</span> Update</a>'
                          f'<a href="#" '
                          f'class="attach-btn" '
@@ -1999,14 +2067,14 @@ def _render_single_project_card(p, update_log=None, attachments=None):
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="CPL_Initiative_Project_List_v3.xlsx"
+                <a href="{excel_cell_url(p.get('excel_row', 0))}" target="_blank" rel="noopener"
                     class="update-btn" data-row="{p.get('excel_row', 0)}" data-col="P"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel to update cell P{p.get('excel_row', '')}">
+                    title="Open Excel for the Web at cell P{p.get('excel_row', '')} ({EXCEL_SHEET_NAME})">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="{pid} {p['name']}"
@@ -5374,12 +5442,34 @@ def main():
             html = html[:att_script_pos] + inject_js + html[att_script_pos:]
             print(f"  Injected attachments URL from Excel config")
 
+        # ── Inject CPL Knowledge Base excerpt for the College Custom Report generator ──
+        try:
+            kb_text = fetch_cpl_kb()
+        except Exception as e:
+            print(f"  KB fetch failed entirely ({e}); proceeding without window.CPL_KB")
+            kb_text = ""
+        # Remove any previously injected CPL_KB script
+        kb_start_marker = "<script>window.CPL_KB="
+        kb_old_pos = html.find(kb_start_marker)
+        if kb_old_pos != -1:
+            kb_old_end = html.find("</script>", kb_old_pos) + len("</script>")
+            html = html[:kb_old_pos] + html[kb_old_end:].lstrip()
+        if kb_text:
+            kb_anchor = '<script src="dashboard_filters.js">'
+            kb_anchor_pos = html.find(kb_anchor)
+            if kb_anchor_pos != -1:
+                kb_json = json.dumps(kb_text)  # safe JS string with proper escaping
+                kb_inject = f"<script>window.CPL_KB={kb_json};</script>\n    "
+                html = html[:kb_anchor_pos] + kb_inject + html[kb_anchor_pos:]
+                print(f"  Injected CPL KB excerpt ({len(kb_text):,} chars) from {CPL_KB_REPO}")
+
         # ── Inject statewide interactive scripts (college_lookup, statewide_data, statewide_interactive) ──
         sw_scripts = [
             '<script src="docx.min.js"></script>',
             '<script src="college_lookup.js"></script>',
             '<script src="statewide_data.js"></script>',
             '<script src="statewide_interactive.js"></script>',
+            '<script src="college_report_generator.js"></script>',
         ]
         # Remove any existing statewide script tags first to guarantee correct order
         for sw_tag in sw_scripts:
@@ -5814,6 +5904,16 @@ def main():
                 print(f"  Report generation warning: {result.stderr.strip()}")
         except Exception as e:
             print(f"  (Skipping report generation: {e})")
+
+    # Mirror to index.html so GitHub Pages (which serves the repo root)
+    # stays in sync with CPL_Dashboard.html. The daily workflow does the same
+    # cp step, but doing it here too means manual regenerations don't drift.
+    try:
+        import shutil
+        shutil.copyfile(HTML_FILE, os.path.join(SCRIPT_DIR, "index.html"))
+        print("Mirrored CPL_Dashboard.html -> index.html")
+    except Exception as e:
+        print(f"  Warning: could not mirror to index.html ({e})")
 
     print("Done! Refresh CPL_Dashboard.html in your browser to see changes.")
 
