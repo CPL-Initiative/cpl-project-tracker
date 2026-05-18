@@ -1072,119 +1072,14 @@
         }
     
 
-/* ═══ MAP Exhibit Analysis Cards ═══ */
-.exhibit-analysis-section {
-    display: none;
-    margin: 1.5rem auto;
-    max-width: 1400px;
-    padding: 0 1rem;
-}
-.exhibit-analysis-section.visible { display: block; }
-.exhibit-section-header {
-    text-align: center;
-    color: #C9A84C;
-    margin-bottom: 1.2rem;
-}
-.exhibit-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 1rem;
-}
-.exhibit-card {
-    background: rgba(10,34,64,0.85);
-    border: 1px solid rgba(201,168,76,0.25);
-    border-radius: 10px;
-    overflow: hidden;
-}
-.exhibit-card-header {
-    padding: 0.8rem 1rem 0.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.exhibit-card-title {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #C9A84C;
-}
-.exhibit-card-subtitle {
-    font-size: 0.7rem;
-    color: rgba(255,255,255,0.55);
-    margin-top: 2px;
-}
-.exhibit-card-body {
-    max-height: 420px;
-    overflow: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(201,168,76,0.3) transparent;
-}
-.exhibit-card-body::-webkit-scrollbar { width: 6px; height: 6px; }
-.exhibit-card-body::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 3px; }
-.exhibit-card-body::-webkit-scrollbar-track { background: transparent; }
-.exhibit-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.72rem;
-    color: rgba(255,255,255,0.85);
-}
-.exhibit-table thead {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-}
-.exhibit-table th {
-    background: rgba(10,34,64,0.98);
-    color: #C9A84C;
-    font-size: 0.65rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    padding: 0.45rem 0.5rem;
-    text-align: left;
-    border-bottom: 1px solid rgba(201,168,76,0.3);
-    white-space: nowrap;
-}
-.exhibit-table td {
-    padding: 0.35rem 0.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    vertical-align: top;
-}
-.exhibit-table tbody tr:hover {
-    background: rgba(201,168,76,0.06);
-}
-.exhibit-cell-name {
-    max-width: 280px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.exhibit-cell-num {
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-}
-.exhibit-cell-pct {
-    text-align: right;
-    white-space: nowrap;
-    color: rgba(255,255,255,0.6);
-}
-/* Toggle button */
-.exhibit-toggle-btn {
-    display: inline-block;
-    margin: 1rem auto;
-    padding: 0.5rem 1.5rem;
-    background: rgba(201,168,76,0.15);
-    border: 1px solid rgba(201,168,76,0.4);
-    border-radius: 6px;
-    color: #C9A84C;
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-align: center;
-}
-.exhibit-toggle-btn:hover {
-    background: rgba(201,168,76,0.25);
-    border-color: #C9A84C;
-}
+
+
+
+
+
+
+
+
 
 
 
@@ -1367,32 +1262,36 @@
 
 
 /* ═══ MAP Articulation Analysis Cards ═══ */
-.exhibit-analysis-section {
-    display: none;
-    margin: 1.5rem auto;
-    max-width: 1400px;
-    padding: 0 1rem;
+.cpl-analytics-body {
+    background-color: #ffffff;
+    padding: 1.5rem 2rem 2rem;
+    margin: 0;
 }
-.exhibit-analysis-section.visible { display: block; }
-.exhibit-section-header {
-    text-align: center;
-    color: #C9A84C;
-    margin-bottom: 1.2rem;
-}
+.kpi-section-wrapper.collapsed .cpl-analytics-body { display: none; }
 .exhibit-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 .exhibit-card {
-    background: rgba(10,34,64,0.85);
+    background: #0A2240;
     border: 1px solid rgba(201,168,76,0.25);
-    border-radius: 10px;
+    border-top: 4px solid #C9A84C;
+    border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 .exhibit-card-header {
     padding: 0.8rem 1rem 0.5rem;
     border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.exhibit-card-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.6rem;
 }
 .exhibit-card-title {
     font-size: 0.95rem;
@@ -1403,6 +1302,33 @@
     font-size: 0.7rem;
     color: rgba(255,255,255,0.55);
     margin-top: 2px;
+}
+.analytics-export-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: transparent;
+    color: #C9A84C;
+    border: 1px solid rgba(201,168,76,0.5);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+}
+.analytics-export-btn:hover {
+    background: #C9A84C;
+    color: #0A2240;
+}
+.exhibit-total-row td {
+    background: rgba(201,168,76,0.12);
+    color: #C9A84C;
+    font-weight: 700;
+    border-top: 2px solid rgba(201,168,76,0.4);
+    position: sticky;
+    bottom: 0;
 }
 .exhibit-card-body {
     max-height: 420px;
@@ -1493,28 +1419,6 @@
     background: rgba(201,168,76,0.12);
     color: #C9A84C;
     border: 1px solid rgba(201,168,76,0.25);
-}
-/* Toggle button */
-.exhibit-toggle-btn {
-    display: inline-block;
-    margin: 1.2rem auto;
-    padding: 0.75rem 2.5rem;
-    background: #0A2240;
-    border: 2px solid #1a3a60;
-    border-radius: 8px;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-align: center;
-    letter-spacing: 0.02em;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-.exhibit-toggle-btn:hover {
-    background: #122d4f;
-    border-color: #2a5a8f;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 /* ═══ Interactive Statewide Card ═══ */
 #statewide-interactive-container { grid-column: 1 / -1; }
@@ -1732,8 +1636,14 @@
         
         
         
-        <div class="last-updated">Last Updated: May 18, 2026 at 1:25 PM PT</div>
+        
+        
+        
+        <div class="last-updated">Last Updated: May 18, 2026 at 1:33 PM PT</div>
         <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:#C9A84C;border:1px solid #C9A84C;padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='#C9A84C';this.style.color='#0A2240'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='#C9A84C'}">&#x21bb; Refresh Today&#39;s Data</button></div>
+        
+        
+        
         
         
         
@@ -2203,20 +2113,24 @@
     </div>
     </div>
 
-    
-    <div style="text-align:center;"><button class="exhibit-toggle-btn" onclick="var s=document.getElementById('exhibitAnalysisSection');s.classList.toggle('visible');this.textContent=s.classList.contains('visible')?'Hide Detailed Articulation Data':'Show Detailed Articulation Data';">Show Detailed Articulation Data</button></div>
-
-    <!-- ═══ MAP Articulation Analysis Section ═══ -->
-<div class="exhibit-analysis-section" id="exhibitAnalysisSection">
-  <div class="exhibit-section-header">
-    <h2 style="margin:0;font-size:1.3rem;">MAP Articulation Analysis</h2>
-    <div style="font-size:0.75rem;opacity:0.7;margin-top:2px;">Source: MAP Custom Reporting Module | Generated: 2026-05-18T14:02:08</div>
-  </div>
-  <div class="exhibit-cards-grid">
-    <div class="exhibit-card" id="exhibit-collaborative">
+    <!-- ═══ CPL Analytics Section ═══ -->
+<div class="kpi-section-wrapper" id="cplAnalyticsWrapper">
+    <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('cplAnalyticsWrapper');w.classList.toggle('collapsed');})()">
+        <span class="kpi-section-title">CPL Analytics</span>
+        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-05-18T14:02:08</span>
+        <span class="kpi-toggle-arrow">&#9650;</span>
+    </div>
+    <div class="cpl-analytics-body" id="exhibitAnalysisSection">
+        <div class="exhibit-cards-grid">
+            <div class="exhibit-card" id="exhibit-collaborative">
   <div class="exhibit-card-header">
-    <div class="exhibit-card-title">CCC Collaborative vs. Local Exhibits</div>
-    <div class="exhibit-card-subtitle">Statewide faculty workgroup articulations vs. individual college articulations</div>
+    <div class="exhibit-card-title-row">
+      <div>
+        <div class="exhibit-card-title">CCC Collaborative vs. Local Exhibits</div>
+        <div class="exhibit-card-subtitle">Statewide faculty workgroup articulations vs. individual college articulations</div>
+      </div>
+    <a class="analytics-export-btn" href="exports/exhibit-collaborative.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
+    </div>
   </div>
   <div class="exhibit-card-body">
     <table class="exhibit-table">
@@ -2224,16 +2138,22 @@
       <tbody><tr><td class="exhibit-cell-name">Local</td><td class="exhibit-cell-num">9,434</td><td class="exhibit-cell-num">3,299</td><td class="exhibit-cell-num">98</td><td class="exhibit-cell-num">23</td><td class="exhibit-cell-pct">87.7%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:87.7%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
 <tr><td class="exhibit-cell-name">CCC Collaborative</td><td class="exhibit-cell-num">1,157</td><td class="exhibit-cell-num">118</td><td class="exhibit-cell-num">62</td><td class="exhibit-cell-num">8</td><td class="exhibit-cell-pct">10.8%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:10.8%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
 <tr><td class="exhibit-cell-name">Industry/Other</td><td class="exhibit-cell-num">169</td><td class="exhibit-cell-num">34</td><td class="exhibit-cell-num">22</td><td class="exhibit-cell-num">10</td><td class="exhibit-cell-pct">1.6%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:1.6%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
+<tr class="exhibit-total-row"><td class="exhibit-cell-name">Total</td><td class="exhibit-cell-num">10,760</td><td class="exhibit-cell-num">3,451</td><td class="exhibit-cell-num">—</td><td class="exhibit-cell-num">—</td><td class="exhibit-cell-pct">100%</td></tr>
 </tbody>
     </table>
   </div>
   <div style="padding:0 1rem 0.8rem;"><details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">View_ArticulatedMAPExhibits (MAP Custom Reporting Module).</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Group rows by Collaborative Type. Count distinct exhibits, rows (credit recs), colleges, and disciplines per group.</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Categories: Local (college-specific), CCC Collaborative (statewide faculty workgroup), Industry/Other (anything else).</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">An exhibit has exactly one Collaborative Type. '%' is each group's share of total credit recs.</span></div><div class="algo-meta">Description last updated: 2026-04-19</div></div></details></div>
 </div>
 
-    <div class="exhibit-card" id="exhibit-by-cpl-type">
+            <div class="exhibit-card" id="exhibit-by-cpl-type">
   <div class="exhibit-card-header">
-    <div class="exhibit-card-title">Credit Recommendations by CPL Type</div>
-    <div class="exhibit-card-subtitle">6 CPL types</div>
+    <div class="exhibit-card-title-row">
+      <div>
+        <div class="exhibit-card-title">Credit Recommendations by CPL Type</div>
+        <div class="exhibit-card-subtitle">6 CPL types</div>
+      </div>
+    <a class="analytics-export-btn" href="exports/exhibit-by-cpl-type.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
+    </div>
   </div>
   <div class="exhibit-card-body">
     <table class="exhibit-table">
@@ -2244,16 +2164,22 @@
 <tr><td class="exhibit-cell-name">Portfolio Review</td><td class="exhibit-cell-num">366</td><td class="exhibit-cell-num">299</td><td class="exhibit-cell-num">26</td><td class="exhibit-cell-pct">3.4%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:3.4%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
 <tr><td class="exhibit-cell-name">Military</td><td class="exhibit-cell-num">112</td><td class="exhibit-cell-num">52</td><td class="exhibit-cell-num">30</td><td class="exhibit-cell-pct">1.0%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:1.0%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
 <tr><td class="exhibit-cell-name">Other</td><td class="exhibit-cell-num">37</td><td class="exhibit-cell-num">22</td><td class="exhibit-cell-num">7</td><td class="exhibit-cell-pct">0.3%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:0.3%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
+<tr class="exhibit-total-row"><td class="exhibit-cell-name">Total</td><td class="exhibit-cell-num">10,760</td><td class="exhibit-cell-num">3,451</td><td class="exhibit-cell-num">—</td><td class="exhibit-cell-pct">100%</td></tr>
 </tbody>
     </table>
   </div>
   <div style="padding:0 1rem 0.8rem;"><details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">View_ArticulatedMAPExhibits.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Group by CPL Type. Count distinct exhibits, rows (credit recs), and colleges per type.</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Six CPL types: Standardized Assessment, Industry Certification, Credit By Exam, Portfolio Review, Military, Other.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">Each exhibit belongs to exactly one CPL type.</span></div><div class="algo-meta">Description last updated: 2026-04-19</div></div></details></div>
 </div>
 
-    <div class="exhibit-card" id="exhibit-by-mol">
+            <div class="exhibit-card" id="exhibit-by-mol">
   <div class="exhibit-card-header">
-    <div class="exhibit-card-title">Credit Recommendations by Mode of Learning</div>
-    <div class="exhibit-card-subtitle">10 modes</div>
+    <div class="exhibit-card-title-row">
+      <div>
+        <div class="exhibit-card-title">Credit Recommendations by Mode of Learning</div>
+        <div class="exhibit-card-subtitle">10 modes</div>
+      </div>
+    <a class="analytics-export-btn" href="exports/exhibit-by-mol.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
+    </div>
   </div>
   <div class="exhibit-card-body">
     <table class="exhibit-table">
@@ -2268,16 +2194,22 @@
 <tr><td class="exhibit-cell-name">State and federal government training, professional development (G)</td><td class="exhibit-cell-num">33</td><td class="exhibit-cell-num">16</td><td class="exhibit-cell-num">8</td><td class="exhibit-cell-pct">0.3%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:0.3%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
 <tr><td class="exhibit-cell-name">Proprietary or non-accredited learning (P)</td><td class="exhibit-cell-num">25</td><td class="exhibit-cell-num">21</td><td class="exhibit-cell-num">6</td><td class="exhibit-cell-pct">0.2%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:0.2%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
 <tr><td class="exhibit-cell-name">Justice-involved learning (J)</td><td class="exhibit-cell-num">2</td><td class="exhibit-cell-num">1</td><td class="exhibit-cell-num">1</td><td class="exhibit-cell-pct">0.0%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:0.0%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
+<tr class="exhibit-total-row"><td class="exhibit-cell-name">Total</td><td class="exhibit-cell-num">10,760</td><td class="exhibit-cell-num">3,451</td><td class="exhibit-cell-num">—</td><td class="exhibit-cell-pct">100%</td></tr>
 </tbody>
     </table>
   </div>
   <div style="padding:0 1rem 0.8rem;"><details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">View_ArticulatedMAPExhibits.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Group by Mode of Learning code (S/I/A/H/N/M/O/G/P/J). Count exhibits, rows, colleges.</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Mode taxonomy defined by CCCCO; each exhibit carries one MoL code.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">Codes with very low counts (e.g. Justice-involved learning) reflect limited adoption, not missing data.</span></div><div class="algo-meta">Description last updated: 2026-04-19</div></div></details></div>
 </div>
 
-    <div class="exhibit-card" id="exhibit-by-discipline">
+            <div class="exhibit-card" id="exhibit-by-discipline">
   <div class="exhibit-card-header">
-    <div class="exhibit-card-title">Credit Recommendations by CCC Discipline</div>
-    <div class="exhibit-card-subtitle">23 discipline areas</div>
+    <div class="exhibit-card-title-row">
+      <div>
+        <div class="exhibit-card-title">Credit Recommendations by CCC Discipline</div>
+        <div class="exhibit-card-subtitle">23 discipline areas</div>
+      </div>
+    <a class="analytics-export-btn" href="exports/exhibit-by-discipline.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
+    </div>
   </div>
   <div class="exhibit-card-body">
     <table class="exhibit-table">
@@ -2305,16 +2237,22 @@
 <tr><td class="exhibit-cell-name">Architecture and Related Technologies</td><td class="exhibit-cell-num">27</td><td class="exhibit-cell-num">13</td><td class="exhibit-cell-num">25</td><td class="exhibit-cell-num">7</td><td class="exhibit-cell-num">0</td><td class="exhibit-cell-pct">0.3%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:0.3%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
 <tr><td class="exhibit-cell-name">Environmental Sciences and Technologies</td><td class="exhibit-cell-num">24</td><td class="exhibit-cell-num">21</td><td class="exhibit-cell-num">20</td><td class="exhibit-cell-num">14</td><td class="exhibit-cell-num">0</td><td class="exhibit-cell-pct">0.2%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:0.2%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
 <tr><td class="exhibit-cell-name">Law</td><td class="exhibit-cell-num">4</td><td class="exhibit-cell-num">4</td><td class="exhibit-cell-num">4</td><td class="exhibit-cell-num">3</td><td class="exhibit-cell-num">0</td><td class="exhibit-cell-pct">0.0%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:0.0%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
+<tr class="exhibit-total-row"><td class="exhibit-cell-name">Total</td><td class="exhibit-cell-num">10,760</td><td class="exhibit-cell-num">3,749</td><td class="exhibit-cell-num">3,305</td><td class="exhibit-cell-num">—</td><td class="exhibit-cell-num">1,157</td><td class="exhibit-cell-pct">100%</td></tr>
 </tbody>
     </table>
   </div>
   <div style="padding:0 1rem 0.8rem;"><details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">View_ArticulatedMAPExhibits.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Group by CCC Discipline. Count exhibits, rows (credit recs), courses, colleges, and CCC Collaborative adoptions.</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">'Not Mapped' = exhibits without a discipline tag.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">~31% of credit recs are Not Mapped — this flags a tagging backlog, not missing articulations.</span></div><div class="algo-meta">Description last updated: 2026-04-19</div></div></details></div>
 </div>
 
-    <div class="exhibit-card" id="exhibit-by-college">
+            <div class="exhibit-card" id="exhibit-by-college">
   <div class="exhibit-card-header">
-    <div class="exhibit-card-title">Credit Recommendations by College</div>
-    <div class="exhibit-card-subtitle">101 articulating colleges | 10,760 total credit recs</div>
+    <div class="exhibit-card-title-row">
+      <div>
+        <div class="exhibit-card-title">Credit Recommendations by College</div>
+        <div class="exhibit-card-subtitle">101 articulating colleges | 10,760 total credit recs</div>
+      </div>
+    <a class="analytics-export-btn" href="exports/exhibit-by-college.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
+    </div>
   </div>
   <div class="exhibit-card-body">
     <table class="exhibit-table">
@@ -2420,6 +2358,7 @@
 <tr><td>99</td><td class="exhibit-cell-name">Orange Coast College</td><td class="exhibit-cell-num">5</td><td class="exhibit-cell-num">5</td><td class="exhibit-cell-num">1</td><td class="exhibit-cell-num">5</td><td class="exhibit-cell-num">4</td><td class="exhibit-cell-pct">0.0%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:0.0%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
 <tr><td>100</td><td class="exhibit-cell-name">Santa Barbara City College</td><td class="exhibit-cell-num">2</td><td class="exhibit-cell-num">2</td><td class="exhibit-cell-num">1</td><td class="exhibit-cell-num">0</td><td class="exhibit-cell-num">2</td><td class="exhibit-cell-pct">0.0%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:0.0%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
 <tr><td>101</td><td class="exhibit-cell-name">Southwestern College</td><td class="exhibit-cell-num">2</td><td class="exhibit-cell-num">1</td><td class="exhibit-cell-num">2</td><td class="exhibit-cell-num">0</td><td class="exhibit-cell-num">0</td><td class="exhibit-cell-pct">0.0%<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:0.0%;height:100%;background:#C9A84C;border-radius:4px;"></div></div></td></tr>
+<tr class="exhibit-total-row"><td class="">Total</td><td class="exhibit-cell-name">101 colleges</td><td class="exhibit-cell-num">10,683</td><td class="exhibit-cell-num">7,953</td><td class="exhibit-cell-num">—</td><td class="exhibit-cell-num">1,151</td><td class="exhibit-cell-num">3,084</td><td class="exhibit-cell-pct">100%</td></tr>
 </tbody>
     </table>
   </div>
@@ -2427,10 +2366,15 @@
   <div style="padding:0 1rem 0.8rem;"><details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">View_ArticulatedMAPExhibits.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Group rows by Articulation College. Count credit recs (rows), distinct exhibits, disciplines, CCC Collaborative rows, and Industry Certs.</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Each row represents one college-to-course articulation of one exhibit.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">Credit Recs > Exhibits is expected: one exhibit can articulate to multiple courses at the same college. Known inflation from duplicates in the raw export.</span></div><div class="algo-meta">Description last updated: 2026-04-19</div></div></details></div>
 </div>
 
-    <div class="exhibit-card" id="exhibit-top-50">
+            <div class="exhibit-card" id="exhibit-top-50">
   <div class="exhibit-card-header">
-    <div class="exhibit-card-title">Top 50 Most-Articulated Exhibits</div>
-    <div class="exhibit-card-subtitle">Ranked by total credit recommendations across all colleges</div>
+    <div class="exhibit-card-title-row">
+      <div>
+        <div class="exhibit-card-title">Top 50 Most-Articulated Exhibits</div>
+        <div class="exhibit-card-subtitle">Ranked by total credit recommendations across all colleges</div>
+      </div>
+    <a class="analytics-export-btn" href="exports/exhibit-top-50.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
+    </div>
   </div>
   <div class="exhibit-card-body">
     <table class="exhibit-table">
@@ -2491,9 +2435,10 @@
   <div style="padding:0 1rem 0.8rem;"><details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">View_ArticulatedMAPExhibits.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Group rows by ExhibitID, sum credit recommendations across all colleges, sort desc, take top 50.</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Ranking = total articulation count statewide.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">Ties broken by exhibit ID order. Counts reflect raw row counts and can include the known duplicate inflation.</span></div><div class="algo-meta">Description last updated: 2026-04-19</div></div></details></div>
 </div>
 
-  </div>
-  <div id="statewide-interactive-container" style="margin-top:2rem;"></div>
+        </div>
+        <div id="statewide-interactive-container" style="margin-top:2rem;"></div>
 
+    </div>
 </div>
 
     <!-- Filter Bar -->
@@ -7114,6 +7059,12 @@ Cont</td>
 
                 
 
+                
+
+                
+
+                
+
                 <!-- Annual Workplan Goals -->
         <div style="margin:2rem 0;padding:1.5rem;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
             <h2 style="color:#0A2240;margin:0 0 1rem 0;">Annual Workplan Goals</h2>
@@ -7759,8 +7710,8 @@ Cont</td>
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "May 18, 2026 at 1:25 PM PT",
-  "data_as_of": "May 18, 2026 at 1:25 PM PT",
+  "last_updated": "May 18, 2026 at 1:33 PM PT",
+  "data_as_of": "May 18, 2026 at 1:33 PM PT",
   "kpis": {
     "cumulative_students": {
       "value": "45,508",
