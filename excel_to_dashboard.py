@@ -381,7 +381,7 @@ ALGO_DESCRIPTIONS = {
         "source":      "Live CCCCO MAP CPL Dashboard scrape (star_college_count). Augmented with live military data from the same scrape.",
         "formula":     "Headline = live star_college_count from the CCCCO scrape. JST Credits = military students (from cumulative_students breakdowns). Eligible CPL = military eligible units (from eligible_units breakdowns).",
         "assumptions": "Goal for JST Credits = 30,000 at Veteran Star Colleges.",
-        "caveats":     "Headline value (e.g. 47) is number of colleges participating, not students served.",
+        "caveats":     "Headline value is the number of colleges participating, not students served. Pulled live from the CCCCO MAP CPL Dashboard each pipeline run.",
         "last_modified": "2026-04-19",
     },
     "twenty_year_impact": {
