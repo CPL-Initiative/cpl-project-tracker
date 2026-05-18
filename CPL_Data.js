@@ -136,7 +136,7 @@ window.CPL_DATA = {
       "live": true
     },
     "veteran_sprint": {
-      "value": "47",
+      "value": "50",
       "label": "VETERAN SPRINT",
       "sub": "Star Colleges",
       "breakdowns": [
@@ -146,7 +146,7 @@ window.CPL_DATA = {
         },
         {
           "label": "Basic Training Credit",
-          "value": "47 Colleges"
+          "value": "50 Colleges"
         },
         {
           "label": "Eligible CPL",

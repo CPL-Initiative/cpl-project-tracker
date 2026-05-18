@@ -1346,6 +1346,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 .exhibit-analysis-section {
     display: none;
@@ -1704,8 +1707,10 @@
         
         
         
+        
         <div class="last-updated">Last Updated: May 18, 2026</div>
         <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:#C9A84C;border:1px solid #C9A84C;padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='#C9A84C';this.style.color='#0A2240'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='#C9A84C'}">&#x21bb; Refresh Today&#39;s Data</button></div>
+        
         
         
         
@@ -1861,15 +1866,15 @@
             <details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">CCCCO MAP CPL Dashboard (live scrape). Fallback: $269M from KPI_Config sheet.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Live value pull. CCCCO computes savings using the Beacon Economics per-unit factor (≈ $1420/unit).</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Per-population breakdowns (Military/Workforce/Apprentice) are proportional splits by eligible-unit share, not independent calculations.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">BEACON_PER_UNIT_SAVINGS is a reference value; the actual savings math happens at CCCCO.</span></div><div class="algo-meta">Description last updated: 2026-04-19</div></div></details>
         </div>
         <div class="kpi-card">
-            <div class="kpi-number">47 <span class="kpi-live-badge">LIVE</span></div>
+            <div class="kpi-number">50 <span class="kpi-live-badge">LIVE</span></div>
             <div class="kpi-label">VETERAN SPRINT</div>
             <div class="kpi-sub" style="font-size:0.75rem;opacity:0.85;margin-top:2px;color:#fff;">Star Colleges</div>
             <div class="kpi-breakdowns"><div class="kpi-bd-row"><span class="kpi-bd-label">JST Credits</span><span class="kpi-bd-value">23,778 / 30,000</span></div>
-<div class="kpi-bd-row"><span class="kpi-bd-label">Basic Training Credit</span><span class="kpi-bd-value">47 Colleges</span></div>
+<div class="kpi-bd-row"><span class="kpi-bd-label">Basic Training Credit</span><span class="kpi-bd-value">50 Colleges</span></div>
 <div class="kpi-bd-row"><span class="kpi-bd-label">Eligible CPL</span><span class="kpi-bd-value">108k Units</span></div>
 </div>
             
-            <details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">Excel project 4.1a KPI metric, augmented with live military data from the CCCCO scrape.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Base count from project 4.1a. JST Credits = military students (from cumulative_students breakdowns). Eligible CPL = military eligible units (from eligible_units breakdowns).</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Goal for JST Credits = 30,000 at Veteran Star Colleges.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">Headline value (e.g. 47) is number of colleges participating, not students served.</span></div><div class="algo-meta">Description last updated: 2026-04-19</div></div></details>
+            <details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">Live CCCCO MAP CPL Dashboard scrape (star_college_count). Augmented with live military data from the same scrape.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Headline = live star_college_count from the CCCCO scrape. JST Credits = military students (from cumulative_students breakdowns). Eligible CPL = military eligible units (from eligible_units breakdowns).</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Goal for JST Credits = 30,000 at Veteran Star Colleges.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">Headline value (e.g. 47) is number of colleges participating, not students served.</span></div><div class="algo-meta">Description last updated: 2026-04-19</div></div></details>
         </div>
         <div class="kpi-card">
             <div class="kpi-number">$1.16B <span class="kpi-live-badge">LIVE</span></div>
@@ -7060,6 +7065,8 @@ Cont</td>
 
                 
 
+                
+
                 <!-- Annual Workplan Goals -->
         <div style="margin:2rem 0;padding:1.5rem;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
             <h2 style="color:#0A2240;margin:0 0 1rem 0;">Annual Workplan Goals</h2>
@@ -7829,7 +7836,7 @@ Cont</td>
       "live": true
     },
     "veteran_sprint": {
-      "value": "47",
+      "value": "50",
       "label": "VETERAN SPRINT",
       "sub": "Star Colleges",
       "breakdowns": [
@@ -7839,7 +7846,7 @@ Cont</td>
         },
         {
           "label": "Basic Training Credit",
-          "value": "47 Colleges"
+          "value": "50 Colleges"
         },
         {
           "label": "Eligible CPL",
