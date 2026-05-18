@@ -3325,6 +3325,7 @@ def _parse_exhibits(datasets):
 
         i_college = cm.get("College", 0)
         i_exhibit = cm.get("ExhibitID", 1)
+        i_title = cm.get("Exhibit Title", 2)
         i_artic = cm.get("Articulation College", 4)
         i_collab = cm.get("Collaborative Type", 7)
         i_cpl = cm.get("CPL Type Description", 13)
@@ -3337,14 +3338,28 @@ def _parse_exhibits(datasets):
         ccc_artic_colleges = set()
         cpl_type_counts = {}
 
+        # Grouped-exhibit counts matching the EACR table: keyed on
+        # (Title, CPL Type, Collaborative Type). MAP frequently issues multiple
+        # ExhibitIDs for what is conceptually one exhibit (e.g. San Jose's
+        # Google IT cert across three CIS courses) — counting groups gives a
+        # truer "distinct exhibits" headline.
+        exhibit_groups = set()
+        ccc_exhibit_groups = set()
+
         for row in rows:
             college = (row[i_college] or "").strip()
             exhibit_id = (row[i_exhibit] or "").strip()
+            title = (row[i_title] or "").strip()
             artic_college = (row[i_artic] or "").strip()
             collab_type = (row[i_collab] or "").strip()
             cpl_type = (row[i_cpl] or "").strip()
 
             exhibit_ids.add(exhibit_id)
+            if title and exhibit_id:
+                grp = (title, cpl_type, collab_type)
+                exhibit_groups.add(grp)
+                if "CCC" in collab_type:
+                    ccc_exhibit_groups.add(grp)
             if college:
                 originating_colleges.add(college)
             if artic_college:
@@ -3359,23 +3374,26 @@ def _parse_exhibits(datasets):
                 cpl_type_counts[cpl_type] = cpl_type_counts.get(cpl_type, 0) + 1
 
         local_credit_recs = len(rows) - ccc_credit_recs
-        local_exhibit_ids = exhibit_ids - ccc_exhibit_ids
+        local_exhibit_groups = exhibit_groups - ccc_exhibit_groups
 
         return {
             "total_credit_recs": len(rows),
-            "unique_exhibits": len(exhibit_ids),
+            "unique_exhibits": len(exhibit_groups),
+            "unique_exhibits_raw_ids": len(exhibit_ids),
             "originating_colleges": len(originating_colleges),
             "articulation_colleges": len(articulation_colleges),
             "articulation_college_names": sorted(articulation_colleges),
             "ccc_collaborative": {
                 "credit_recs": ccc_credit_recs,
-                "unique_exhibits": len(ccc_exhibit_ids),
+                "unique_exhibits": len(ccc_exhibit_groups),
+                "unique_exhibits_raw_ids": len(ccc_exhibit_ids),
                 "adopting_colleges": len(ccc_artic_colleges),
                 "college_names": sorted(ccc_artic_colleges),
             },
             "local": {
                 "credit_recs": local_credit_recs,
-                "unique_exhibits": len(local_exhibit_ids),
+                "unique_exhibits": len(local_exhibit_groups),
+                "unique_exhibits_raw_ids": len(exhibit_ids - ccc_exhibit_ids),
             },
             "cpl_type_breakdown": cpl_type_counts,
         }
