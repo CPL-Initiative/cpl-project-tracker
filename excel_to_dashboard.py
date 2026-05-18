@@ -3941,10 +3941,49 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     return results
 
 
-def render_exhibit_analysis_html(tables, kpi_params=None):
+def _write_analytics_xlsx_export(card_id, title, headers, rows, output_dir):
+    """Write a single CPL Analytics table to <output_dir>/<card_id>.xlsx.
+    rows is a list of lists (one row per data row); headers is a list of strings.
+    The first sheet row is the headers with the navy fill used by the KPI cards.
     """
-    Render exhibit analysis tables as scrollable HTML cards.
-    Returns the complete HTML section with toggle button and analysis cards.
+    try:
+        from openpyxl import Workbook
+        from openpyxl.styles import Font, PatternFill, Alignment
+    except ImportError:
+        return None
+    os.makedirs(output_dir, exist_ok=True)
+    wb = Workbook()
+    ws = wb.active
+    ws.title = title[:31]  # Excel sheet name limit
+    ws.append(headers)
+    header_font = Font(bold=True, color="C9A84C", size=11)
+    header_fill = PatternFill(start_color="0A2240", end_color="0A2240", fill_type="solid")
+    for cell in ws[1]:
+        cell.font = header_font
+        cell.fill = header_fill
+        cell.alignment = Alignment(horizontal="left", vertical="center")
+    for row in rows:
+        ws.append(row)
+    # Auto-fit column widths (approximate)
+    for col_idx, header in enumerate(headers, start=1):
+        max_len = len(str(header))
+        for row in rows:
+            if col_idx - 1 < len(row):
+                cell_len = len(str(row[col_idx - 1] or ""))
+                if cell_len > max_len:
+                    max_len = cell_len
+        ws.column_dimensions[ws.cell(row=1, column=col_idx).column_letter].width = min(max_len + 3, 60)
+    out_path = os.path.join(output_dir, f"{card_id}.xlsx")
+    wb.save(out_path)
+    return out_path
+
+
+def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
+    """
+    Render exhibit analysis tables as scrollable HTML cards inside a
+    collapsible "CPL Analytics" section that mirrors the KPI Metrics header.
+    Per-table xlsx exports are written to xlsx_export_dir (relative to the
+    dashboard) so the in-card Export buttons link to a real file.
     """
     if not tables:
         return ""
@@ -3959,20 +3998,48 @@ def render_exhibit_analysis_html(tables, kpi_params=None):
                 f'<div style="width:{w}%;height:100%;background:#C9A84C;border-radius:4px;"></div></div>')
 
     # ── Card builder helper ──
-    def table_card(card_id, title, subtitle, headers, rows_data, row_renderer, footer=None):
+    def table_card(card_id, title, subtitle, headers, rows_data, row_renderer,
+                   footer=None, totals_row_html=None, xlsx_rows=None):
+        """xlsx_rows: optional flat list-of-lists used to pre-generate an
+        Excel export at xlsx_export_dir/<card_id>.xlsx. If provided AND
+        xlsx_export_dir is set, a download button is rendered in the header.
+        totals_row_html: optional <tr>...</tr> string appended to <tbody>."""
         header_cells = "".join(f'<th>{h}</th>' for h in headers)
         body_rows = "".join(row_renderer(r) for r in rows_data)
+        if totals_row_html:
+            body_rows += totals_row_html
         footer_html = (
             f'  <div class="exhibit-card-footer">{footer}</div>\n'
             if footer else ""
         )
         algo_html = render_algo_details(card_id, params=kpi_params)
         algo_block = f'  <div style="padding:0 1rem 0.8rem;">{algo_html}</div>\n' if algo_html else ""
+
+        export_btn = ""
+        if xlsx_rows is not None and xlsx_export_dir:
+            xlsx_path = _write_analytics_xlsx_export(
+                card_id, title, headers,
+                xlsx_rows,
+                os.path.join(os.path.dirname(os.path.abspath(__file__)), xlsx_export_dir),
+            )
+            if xlsx_path:
+                rel = f"{xlsx_export_dir.rstrip('/')}/{card_id}.xlsx"
+                export_btn = (
+                    f'    <a class="analytics-export-btn" href="{rel}" download '
+                    f'title="Download as Excel (.xlsx)">'
+                    f'<span style="font-size:0.7rem;">&#11015;</span> Excel</a>\n'
+                )
+
         return (
             f'<div class="exhibit-card" id="{card_id}">\n'
             f'  <div class="exhibit-card-header">\n'
-            f'    <div class="exhibit-card-title">{title}</div>\n'
-            f'    <div class="exhibit-card-subtitle">{subtitle}</div>\n'
+            f'    <div class="exhibit-card-title-row">\n'
+            f'      <div>\n'
+            f'        <div class="exhibit-card-title">{title}</div>\n'
+            f'        <div class="exhibit-card-subtitle">{subtitle}</div>\n'
+            f'      </div>\n'
+            + export_btn +
+            f'    </div>\n'
             f'  </div>\n'
             f'  <div class="exhibit-card-body">\n'
             f'    <table class="exhibit-table">\n'
@@ -3985,8 +4052,19 @@ def render_exhibit_analysis_html(tables, kpi_params=None):
             + f'</div>\n'
         )
 
+    def total_row(cells):
+        """Render a <tr.exhibit-total-row> from a list of (text, css_class) tuples."""
+        tds = "".join(f'<td class="{c}">{t}</td>' for t, c in cells)
+        return f'<tr class="exhibit-total-row">{tds}</tr>\n'
+
     # ── 1. By College ──
     total_recs = tables['total_credit_recs']
+    by_college_totals = {
+        "credit_recs": sum(r["credit_recs"] for r in tables["by_college"]),
+        "exhibits": sum(r["exhibits"] for r in tables["by_college"]),
+        "ccc_collaborative": sum(r["ccc_collaborative"] for r in tables["by_college"]),
+        "industry_certs": sum(r["industry_certs"] for r in tables["by_college"]),
+    }
     college_card = table_card(
         "exhibit-by-college",
         "Credit Recommendations by College",
@@ -4002,9 +4080,32 @@ def render_exhibit_analysis_html(tables, kpi_params=None):
                    f'<td class="exhibit-cell-num">{fmt(r["industry_certs"])}</td>'
                    f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n'),
         footer=f'% = each college\'s share of the {fmt(total_recs)} total credit recommendations statewide',
+        totals_row_html=total_row([
+            ("Total", ""),
+            (f'{len(tables["by_college"])} colleges', "exhibit-cell-name"),
+            (fmt(by_college_totals["credit_recs"]), "exhibit-cell-num"),
+            (fmt(by_college_totals["exhibits"]), "exhibit-cell-num"),
+            ("—", "exhibit-cell-num"),
+            (fmt(by_college_totals["ccc_collaborative"]), "exhibit-cell-num"),
+            (fmt(by_college_totals["industry_certs"]), "exhibit-cell-num"),
+            ("100%", "exhibit-cell-pct"),
+        ]),
+        xlsx_rows=[
+            [i + 1, r["college"], r["credit_recs"], r["exhibits"], r["disciplines"],
+             r["ccc_collaborative"], r["industry_certs"], r["pct"]]
+            for i, r in enumerate(tables["by_college"])
+        ] + [["Total", f'{len(tables["by_college"])} colleges',
+              by_college_totals["credit_recs"], by_college_totals["exhibits"], None,
+              by_college_totals["ccc_collaborative"], by_college_totals["industry_certs"], 100]],
     )
 
     # ── 2. By Discipline ──
+    by_disc_totals = {
+        "credit_recs": sum(r["credit_recs"] for r in tables["by_discipline"]),
+        "exhibits": sum(r["exhibits"] for r in tables["by_discipline"]),
+        "courses": sum(r["courses"] for r in tables["by_discipline"]),
+        "ccc_collaborative": sum(r["ccc_collaborative"] for r in tables["by_discipline"]),
+    }
     disc_card = table_card(
         "exhibit-by-discipline",
         "Credit Recommendations by CCC Discipline",
@@ -4017,10 +4118,29 @@ def render_exhibit_analysis_html(tables, kpi_params=None):
                    f'<td class="exhibit-cell-num">{fmt(r["courses"])}</td>'
                    f'<td class="exhibit-cell-num">{r["colleges"]}</td>'
                    f'<td class="exhibit-cell-num">{fmt(r["ccc_collaborative"])}</td>'
-                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n')
+                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n'),
+        totals_row_html=total_row([
+            ("Total", "exhibit-cell-name"),
+            (fmt(by_disc_totals["credit_recs"]), "exhibit-cell-num"),
+            (fmt(by_disc_totals["exhibits"]), "exhibit-cell-num"),
+            (fmt(by_disc_totals["courses"]), "exhibit-cell-num"),
+            ("—", "exhibit-cell-num"),
+            (fmt(by_disc_totals["ccc_collaborative"]), "exhibit-cell-num"),
+            ("100%", "exhibit-cell-pct"),
+        ]),
+        xlsx_rows=[
+            [r["discipline"], r["credit_recs"], r["exhibits"], r["courses"],
+             r["colleges"], r["ccc_collaborative"], r["pct"]]
+            for r in tables["by_discipline"]
+        ] + [["Total", by_disc_totals["credit_recs"], by_disc_totals["exhibits"],
+              by_disc_totals["courses"], None, by_disc_totals["ccc_collaborative"], 100]],
     )
 
     # ── 3. By CPL Type ──
+    by_cpl_totals = {
+        "credit_recs": sum(r["credit_recs"] for r in tables["by_cpl_type"]),
+        "exhibits": sum(r["exhibits"] for r in tables["by_cpl_type"]),
+    }
     cpl_card = table_card(
         "exhibit-by-cpl-type",
         "Credit Recommendations by CPL Type",
@@ -4031,10 +4151,25 @@ def render_exhibit_analysis_html(tables, kpi_params=None):
                    f'<td class="exhibit-cell-num">{fmt(r["credit_recs"])}</td>'
                    f'<td class="exhibit-cell-num">{fmt(r["exhibits"])}</td>'
                    f'<td class="exhibit-cell-num">{r["colleges"]}</td>'
-                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n')
+                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n'),
+        totals_row_html=total_row([
+            ("Total", "exhibit-cell-name"),
+            (fmt(by_cpl_totals["credit_recs"]), "exhibit-cell-num"),
+            (fmt(by_cpl_totals["exhibits"]), "exhibit-cell-num"),
+            ("—", "exhibit-cell-num"),
+            ("100%", "exhibit-cell-pct"),
+        ]),
+        xlsx_rows=[
+            [r["cpl_type"], r["credit_recs"], r["exhibits"], r["colleges"], r["pct"]]
+            for r in tables["by_cpl_type"]
+        ] + [["Total", by_cpl_totals["credit_recs"], by_cpl_totals["exhibits"], None, 100]],
     )
 
     # ── 4. By Mode of Learning ──
+    by_mol_totals = {
+        "credit_recs": sum(r["credit_recs"] for r in tables["by_mode_of_learning"]),
+        "exhibits": sum(r["exhibits"] for r in tables["by_mode_of_learning"]),
+    }
     mol_card = table_card(
         "exhibit-by-mol",
         "Credit Recommendations by Mode of Learning",
@@ -4045,10 +4180,25 @@ def render_exhibit_analysis_html(tables, kpi_params=None):
                    f'<td class="exhibit-cell-num">{fmt(r["credit_recs"])}</td>'
                    f'<td class="exhibit-cell-num">{fmt(r["exhibits"])}</td>'
                    f'<td class="exhibit-cell-num">{r["colleges"]}</td>'
-                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n')
+                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n'),
+        totals_row_html=total_row([
+            ("Total", "exhibit-cell-name"),
+            (fmt(by_mol_totals["credit_recs"]), "exhibit-cell-num"),
+            (fmt(by_mol_totals["exhibits"]), "exhibit-cell-num"),
+            ("—", "exhibit-cell-num"),
+            ("100%", "exhibit-cell-pct"),
+        ]),
+        xlsx_rows=[
+            [r["mode"], r["credit_recs"], r["exhibits"], r["colleges"], r["pct"]]
+            for r in tables["by_mode_of_learning"]
+        ] + [["Total", by_mol_totals["credit_recs"], by_mol_totals["exhibits"], None, 100]],
     )
 
     # ── 5. Collaborative Analysis ──
+    by_collab_totals = {
+        "credit_recs": sum(r["credit_recs"] for r in tables["collaborative_analysis"]),
+        "exhibits": sum(r["exhibits"] for r in tables["collaborative_analysis"]),
+    }
     collab_card = table_card(
         "exhibit-collaborative",
         "CCC Collaborative vs. Local Exhibits",
@@ -4060,10 +4210,22 @@ def render_exhibit_analysis_html(tables, kpi_params=None):
                    f'<td class="exhibit-cell-num">{fmt(r["exhibits"])}</td>'
                    f'<td class="exhibit-cell-num">{r["colleges"]}</td>'
                    f'<td class="exhibit-cell-num">{r["disciplines"]}</td>'
-                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n')
+                   f'<td class="exhibit-cell-pct">{r["pct"]}%{pct_bar(r["pct"])}</td></tr>\n'),
+        totals_row_html=total_row([
+            ("Total", "exhibit-cell-name"),
+            (fmt(by_collab_totals["credit_recs"]), "exhibit-cell-num"),
+            (fmt(by_collab_totals["exhibits"]), "exhibit-cell-num"),
+            ("—", "exhibit-cell-num"),
+            ("—", "exhibit-cell-num"),
+            ("100%", "exhibit-cell-pct"),
+        ]),
+        xlsx_rows=[
+            [r["category"], r["credit_recs"], r["exhibits"], r["colleges"], r["disciplines"], r["pct"]]
+            for r in tables["collaborative_analysis"]
+        ] + [["Total", by_collab_totals["credit_recs"], by_collab_totals["exhibits"], None, None, 100]],
     )
 
-    # ── 6. Top Exhibits ──
+    # ── 6. Top Exhibits (ranking — no Total row; Excel export included) ──
     top_card = table_card(
         "exhibit-top-50",
         "Top 50 Most-Articulated Exhibits",
@@ -4076,7 +4238,12 @@ def render_exhibit_analysis_html(tables, kpi_params=None):
                    f'<td class="exhibit-cell-num">{r["courses"]}</td>'
                    f'<td class="exhibit-cell-num">{r["colleges"]}</td>'
                    f'<td>{r["cpl_type"]}</td>'
-                   f'<td>{r["discipline"]}</td></tr>\n')
+                   f'<td>{r["discipline"]}</td></tr>\n'),
+        xlsx_rows=[
+            [i + 1, r["title"], r["credit_recs"], r["courses"], r["colleges"],
+             r["cpl_type"], r["discipline"]]
+            for i, r in enumerate(tables["top_exhibits"])
+        ],
     )
 
     # ── 7. Statewide Exhibit Adoption (dynamic — powered by statewide_data.js) ──
@@ -4085,26 +4252,28 @@ def render_exhibit_analysis_html(tables, kpi_params=None):
     if statewide_data:
         statewide_card = '<div id="statewide-interactive-container" style="margin-top:2rem;"></div>\n'
 
-    # ── Assemble section ──
+    # ── Assemble section as a collapsible wrapper that mirrors the KPI Metrics chrome ──
     gen_at = tables.get("generated_at", "")
     section = (
-        f'<!-- ═══ MAP Articulation Analysis Section ═══ -->\n'
-        f'<div class="exhibit-analysis-section" id="exhibitAnalysisSection">\n'
-        f'  <div class="exhibit-section-header">\n'
-        f'    <h2 style="margin:0;font-size:1.3rem;">MAP Articulation Analysis</h2>\n'
-        f'    <div style="font-size:0.75rem;opacity:0.7;margin-top:2px;">'
-        f'Source: MAP Custom Reporting Module | Generated: {gen_at}</div>\n'
-        f'  </div>\n'
-        f'  <div class="exhibit-cards-grid">\n'
-        f'    {collab_card}\n'
-        f'    {cpl_card}\n'
-        f'    {mol_card}\n'
-        f'    {disc_card}\n'
-        f'    {college_card}\n'
-        f'    {top_card}\n'
-        f'  </div>\n'
-        + (f'  {statewide_card}\n' if statewide_card else '')
-        + f'</div>\n'
+        '<!-- ═══ CPL Analytics Section ═══ -->\n'
+        '<div class="kpi-section-wrapper" id="cplAnalyticsWrapper">\n'
+        '    <div class="kpi-section-header" onclick="(function(){var w=document.getElementById(\'cplAnalyticsWrapper\');w.classList.toggle(\'collapsed\');})()">\n'
+        '        <span class="kpi-section-title">CPL Analytics</span>\n'
+        f'        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated {gen_at}</span>\n'
+        '        <span class="kpi-toggle-arrow">&#9650;</span>\n'
+        '    </div>\n'
+        '    <div class="cpl-analytics-body" id="exhibitAnalysisSection">\n'
+        '        <div class="exhibit-cards-grid">\n'
+        f'            {collab_card}\n'
+        f'            {cpl_card}\n'
+        f'            {mol_card}\n'
+        f'            {disc_card}\n'
+        f'            {college_card}\n'
+        f'            {top_card}\n'
+        '        </div>\n'
+        + (f'        {statewide_card}\n' if statewide_card else '')
+        + '    </div>\n'
+        '</div>\n'
     )
 
     return section
@@ -4113,32 +4282,36 @@ def render_exhibit_analysis_html(tables, kpi_params=None):
 # ── CSS for exhibit analysis cards ──
 EXHIBIT_ANALYSIS_CSS = """
 /* ═══ MAP Articulation Analysis Cards ═══ */
-.exhibit-analysis-section {
-    display: none;
-    margin: 1.5rem auto;
-    max-width: 1400px;
-    padding: 0 1rem;
+.cpl-analytics-body {
+    background-color: #ffffff;
+    padding: 1.5rem 2rem 2rem;
+    margin: 0;
 }
-.exhibit-analysis-section.visible { display: block; }
-.exhibit-section-header {
-    text-align: center;
-    color: #C9A84C;
-    margin-bottom: 1.2rem;
-}
+.kpi-section-wrapper.collapsed .cpl-analytics-body { display: none; }
 .exhibit-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 .exhibit-card {
-    background: rgba(10,34,64,0.85);
+    background: #0A2240;
     border: 1px solid rgba(201,168,76,0.25);
-    border-radius: 10px;
+    border-top: 4px solid #C9A84C;
+    border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 .exhibit-card-header {
     padding: 0.8rem 1rem 0.5rem;
     border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.exhibit-card-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.6rem;
 }
 .exhibit-card-title {
     font-size: 0.95rem;
@@ -4149,6 +4322,33 @@ EXHIBIT_ANALYSIS_CSS = """
     font-size: 0.7rem;
     color: rgba(255,255,255,0.55);
     margin-top: 2px;
+}
+.analytics-export-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: transparent;
+    color: #C9A84C;
+    border: 1px solid rgba(201,168,76,0.5);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+}
+.analytics-export-btn:hover {
+    background: #C9A84C;
+    color: #0A2240;
+}
+.exhibit-total-row td {
+    background: rgba(201,168,76,0.12);
+    color: #C9A84C;
+    font-weight: 700;
+    border-top: 2px solid rgba(201,168,76,0.4);
+    position: sticky;
+    bottom: 0;
 }
 .exhibit-card-body {
     max-height: 420px;
@@ -4239,28 +4439,6 @@ EXHIBIT_ANALYSIS_CSS = """
     background: rgba(201,168,76,0.12);
     color: #C9A84C;
     border: 1px solid rgba(201,168,76,0.25);
-}
-/* Toggle button */
-.exhibit-toggle-btn {
-    display: inline-block;
-    margin: 1.2rem auto;
-    padding: 0.75rem 2.5rem;
-    background: #0A2240;
-    border: 2px solid #1a3a60;
-    border-radius: 8px;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-align: center;
-    letter-spacing: 0.02em;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-.exhibit-toggle-btn:hover {
-    background: #122d4f;
-    border-color: #2a5a8f;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 /* ═══ Interactive Statewide Card ═══ */
 #statewide-interactive-container { grid-column: 1 / -1; }
@@ -5551,39 +5729,50 @@ def main():
                 html = html[:kpi_section_start] + new_kpi_section + html[kpi_section_end:]
                 print("  Rendered static KPI cards with breakdowns")
 
-            # ── Inject Exhibit Analysis section (toggle button + scrollable cards) ──
-            # exhibit_tables was built earlier during College Activity rendering
+            # ── Inject CPL Analytics section (collapsible — replaces old toggle button + cards) ──
+            # exhibit_tables was built earlier during College Activity rendering.
+            # Strip any pre-existing copy first so repeat runs don't accumulate.
+            import re as _re
+            html = _re.sub(
+                r'<div style="text-align:center;"><button class="exhibit-toggle-btn".*?</button></div>\s*',
+                '', html, flags=_re.DOTALL,
+            )
+            html = _re.sub(
+                r'<!-- ═══ MAP Articulation Analysis Section ═══ -->.*?(?=<!-- Filter Bar -->)',
+                '', html, flags=_re.DOTALL,
+            )
+            html = _re.sub(
+                r'<!-- ═══ CPL Analytics Section ═══ -->.*?(?=<!-- Filter Bar -->)',
+                '', html, flags=_re.DOTALL,
+            )
             if exhibit_tables:
-                exhibit_html = render_exhibit_analysis_html(exhibit_tables, kpi_params=kpi_params)
-                # Add toggle button after KPI section, before Filter Bar
-                toggle_btn = (
-                    '\n    <div style="text-align:center;">'
-                    '<button class="exhibit-toggle-btn" onclick="'
-                    "var s=document.getElementById('exhibitAnalysisSection');"
-                    "s.classList.toggle('visible');"
-                    "this.textContent=s.classList.contains('visible')?'Hide Detailed Articulation Data':'Show Detailed Articulation Data';"
-                    '">Show Detailed Articulation Data</button></div>\n\n    '
+                exhibit_html = render_exhibit_analysis_html(
+                    exhibit_tables, kpi_params=kpi_params, xlsx_export_dir="exports",
                 )
-                # Insert toggle + analysis section before the Filter Bar
                 filter_marker = '<!-- Filter Bar -->'
                 filter_pos = html.find(filter_marker)
                 if filter_pos != -1:
-                    html = html[:filter_pos] + toggle_btn + exhibit_html + '\n    ' + html[filter_pos:]
-                    print(f"  Injected exhibit analysis section ({len(exhibit_tables['by_college'])} college cards, "
-                          f"{len(exhibit_tables['top_exhibits'])} top exhibits)")
+                    html = html[:filter_pos] + exhibit_html + '\n    ' + html[filter_pos:]
+                    print(f"  Injected CPL Analytics section ({len(exhibit_tables['by_college'])} college cards, "
+                          f"{len(exhibit_tables['top_exhibits'])} top exhibits, "
+                          f"6 xlsx exports written to exports/)")
 
                 # Inject CSS before closing </style> tag (idempotent — strips any
                 # previously injected copies so repeat runs don't accumulate duplicates).
-                EXHIBIT_CSS_MARKER = '/* ═══ MAP Articulation Analysis Cards ═══ */'
-                if EXHIBIT_CSS_MARKER in html:
-                    import re as _re
-                    # The injected block always starts at the MAP marker and ends at
-                    # the final `.sw-rec-course { ... }` rule. Remove every copy.
-                    pattern = _re.compile(
-                        r'\n?/\* ═══ MAP Articulation Analysis Cards ═══ \*/.*?\.sw-rec-course \{[^}]*\}\n?',
-                        _re.DOTALL,
-                    )
-                    html = pattern.sub('', html)
+                # Both the current marker block AND a legacy "MAP Exhibit
+                # Analysis Cards" block (renamed 2026-05-18) need to be
+                # stripped so the static template never accumulates copies.
+                import re as _re
+                pattern = _re.compile(
+                    r'\n?/\* ═══ MAP Articulation Analysis Cards ═══ \*/.*?\.sw-rec-course \{[^}]*\}\n?',
+                    _re.DOTALL,
+                )
+                html = pattern.sub('', html)
+                legacy_pattern = _re.compile(
+                    r'\n?/\* ═══ MAP Exhibit Analysis Cards ═══ \*/.*?\.exhibit-toggle-btn:hover \{[^}]*\}\n?',
+                    _re.DOTALL,
+                )
+                html = legacy_pattern.sub('', html)
 
                 # Also strip any prior copy of ALGO_DETAILS_CSS so it doesn't
                 # accumulate on repeat runs.
