@@ -1,0 +1,875 @@
+[
+  {
+    "raw_title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+    "_family_hint": "POST family",
+    "rows": 123,
+    "exhibit_ids": [
+      "MAPICI-P-BL-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Bakersfield College",
+      "Barstow Community College",
+      "Butte College"
+    ]
+  },
+  {
+    "raw_title": "Peace Officer Standards Training (POST) Basic Academy",
+    "_family_hint": "POST family",
+    "rows": 25,
+    "exhibit_ids": [
+      "MAPICI-POST-1-002"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Butte College",
+      "Moreno Valley College",
+      "Norco College"
+    ]
+  },
+  {
+    "raw_title": "POST - Peace Officer Standards and Training - Basic Academy Certificate",
+    "_family_hint": "POST family",
+    "rows": 23,
+    "exhibit_ids": [
+      "MAPICI-P-PO-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Cabrillo College",
+      "Chaffey College",
+      "Copper Mountain College"
+    ]
+  },
+  {
+    "raw_title": "Correctional Officers: CDCR/CPOST",
+    "_family_hint": "POST family",
+    "rows": 23,
+    "exhibit_ids": [
+      "MAPICI-COC1-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Barstow Community College",
+      "Chaffey College",
+      "Copper Mountain College"
+    ]
+  },
+  {
+    "raw_title": "CA POST Academy SMCCD",
+    "_family_hint": "POST family",
+    "rows": 22,
+    "exhibit_ids": [
+      "MAPICI-CPAS-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "College of San Mateo",
+      "Copper Mountain College",
+      "Fullerton College"
+    ]
+  },
+  {
+    "raw_title": "POST Academy prior Fall 2025",
+    "_family_hint": "POST family",
+    "rows": 19,
+    "exhibit_ids": [
+      "MAPICI-PAPF-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Bakersfield College",
+      "Cabrillo College",
+      "Copper Mountain College"
+    ]
+  },
+  {
+    "raw_title": "POST Academy  effective FALL 2025",
+    "_family_hint": "POST family",
+    "rows": 15,
+    "exhibit_ids": [
+      "MAPICI-PAEF-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Bakersfield College",
+      "Cabrillo College",
+      "Copper Mountain College"
+    ]
+  },
+  {
+    "raw_title": "DEPT of VA POST",
+    "_family_hint": "POST family",
+    "rows": 12,
+    "exhibit_ids": [
+      "MAPICG-DOVP-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Bakersfield College",
+      "Cabrillo College",
+      "Copper Mountain College"
+    ]
+  },
+  {
+    "raw_title": "CompTIA Network+ Certification",
+    "_family_hint": "CompTIA family",
+    "rows": 21,
+    "exhibit_ids": [
+      "MAPICI-CBIC1-1-001",
+      "MAPICI-CCNC-1-001",
+      "MAPICI-CNC-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "CA MAP INITIATIVE COLLEGE",
+      "Chaffey College",
+      "City College of San Francisco"
+    ]
+  },
+  {
+    "raw_title": "CompTIA A+ Certification",
+    "_family_hint": "CompTIA family",
+    "rows": 14,
+    "exhibit_ids": [
+      "MAPICI-CAC1-1-001",
+      "MAPICI-CAC4-1-001",
+      "MAPICS-I8-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Chaffey College",
+      "Clovis Community College",
+      "Compton College"
+    ]
+  },
+  {
+    "raw_title": "CompTIA Security+ Certification",
+    "_family_hint": "CompTIA family",
+    "rows": 13,
+    "exhibit_ids": [
+      "MAPICI-CSC-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Cabrillo College",
+      "Chaffey College",
+      "City College of San Francisco"
+    ]
+  },
+  {
+    "raw_title": "CompTIA Linux+ Certification",
+    "_family_hint": "CompTIA family",
+    "rows": 12,
+    "exhibit_ids": [
+      "MAPICI-CLC-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "American River College",
+      "Clovis Community College",
+      "Contra Costa College"
+    ]
+  },
+  {
+    "raw_title": "CompTIA A+",
+    "_family_hint": "CompTIA family",
+    "rows": 11,
+    "exhibit_ids": [
+      "CPLICI-CA-1-001",
+      "MAPCXI-CA-1-001",
+      "MAPCXI-CA1-1-001",
+      "MAPCXI-CA2-1-001",
+      "MAPICI-CA-1-001",
+      "MAPICI-CA1-1-001",
+      "MAPICI-CA3-1-001",
+      "MAPICI-CA4-1-001",
+      "MAPICI-CA5-1-001"
+    ],
+    "cpl_types": [
+      "Credit By Exam",
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "De Anza College",
+      "Los Angeles Trade Technical College",
+      "West Los Angeles College"
+    ]
+  },
+  {
+    "raw_title": "CompTIA Server+ Certification",
+    "_family_hint": "CompTIA family",
+    "rows": 10,
+    "exhibit_ids": [
+      "MAPICI-CSC1-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "American River College",
+      "Clovis Community College",
+      "Contra Costa College"
+    ]
+  },
+  {
+    "raw_title": "CompTIA PenTest+ Certification",
+    "_family_hint": "CompTIA family",
+    "rows": 6,
+    "exhibit_ids": [
+      "MAPICI-CPC-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Clovis Community College",
+      "De Anza College",
+      "Long Beach City College"
+    ]
+  },
+  {
+    "raw_title": "CompTIA Tech+ Certification",
+    "_family_hint": "CompTIA family",
+    "rows": 5,
+    "exhibit_ids": [
+      "MAPICI-CTC-1-001",
+      "MAPICS-CTC-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Copper Mountain College",
+      "Long Beach City College",
+      "Modesto Junior College"
+    ]
+  },
+  {
+    "raw_title": "Google IT Support Professional Certification",
+    "_family_hint": "Google IT family",
+    "rows": 3,
+    "exhibit_ids": [
+      "MAPICI-CCC5-1-001",
+      "MAPICI-GISP-1-001",
+      "MAPICI-GISP1-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "San Jose City College"
+    ]
+  },
+  {
+    "raw_title": "Google IT Support Professional Certificate",
+    "_family_hint": "Google IT family",
+    "rows": 1,
+    "exhibit_ids": [
+      "MAPICS-GISP-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Modesto Junior College"
+    ]
+  },
+  {
+    "raw_title": "CMPET 315\tGoogle IT Support Professional Certificate Prep Industry Certificate",
+    "_family_hint": "Google IT family",
+    "rows": 1,
+    "exhibit_ids": [
+      "MAPICI-C3IS-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Modesto Junior College"
+    ]
+  },
+  {
+    "raw_title": "Cisco Certified Network Associate (CCNA) Certification",
+    "_family_hint": "Cisco family",
+    "rows": 22,
+    "exhibit_ids": [
+      "MAPICI-CCNA1-1-001",
+      "MAPICI-CCNA2-1-001",
+      "MAPICI-CCNA3-1-001",
+      "MAPICS-CCNA-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "City College of San Francisco",
+      "Clovis Community College",
+      "Hartnell College"
+    ]
+  },
+  {
+    "raw_title": "Cisco CCNA Certification",
+    "_family_hint": "Cisco family",
+    "rows": 4,
+    "exhibit_ids": [
+      "MAPCXI-CCC-1-001",
+      "MAPCXI-CCC1-1-001",
+      "MAPICI-CCC3-1-001",
+      "MAPICI-CCC4-1-001"
+    ],
+    "cpl_types": [
+      "Credit By Exam",
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Los Angeles Trade Technical College"
+    ]
+  },
+  {
+    "raw_title": "CISCO CERTIFIED NETWORK ASSOCIATE",
+    "_family_hint": "Cisco family",
+    "rows": 3,
+    "exhibit_ids": [
+      "MAPICI-CCNA-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Riverside City College"
+    ]
+  },
+  {
+    "raw_title": "Cisco CCNA Certification, Cisco Introduction to Networks (Cisco Network Academy)",
+    "_family_hint": "Cisco family",
+    "rows": 3,
+    "exhibit_ids": [
+      "MAPCXI-CCCC-1-001",
+      "MAPICI-CCCC-1-001",
+      "MAPMM-CCCC-1-001"
+    ],
+    "cpl_types": [
+      "Credit By Exam",
+      "Industry Certification",
+      "Military"
+    ],
+    "articulating_colleges": [
+      "Los Angeles Trade Technical College"
+    ]
+  },
+  {
+    "raw_title": "Cisco Certified CyberOps Associate Certification",
+    "_family_hint": "Cisco family",
+    "rows": 2,
+    "exhibit_ids": [
+      "MAPICI-CCCA-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Merced College",
+      "Santa Ana College"
+    ]
+  },
+  {
+    "raw_title": "ICC Fire Inspector 1 Certificate",
+    "_family_hint": "ICC family",
+    "rows": 10,
+    "exhibit_ids": [
+      "MAPICA-IFI1-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Chabot College",
+      "Chaffey College",
+      "City College of San Francisco"
+    ]
+  },
+  {
+    "raw_title": "AWS Certified Cloud Practitioner Certification",
+    "_family_hint": "AWS welding",
+    "rows": 6,
+    "exhibit_ids": [
+      "MAPICI-ACCP-1-001",
+      "MAPICI-ACCP1-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "City College of San Francisco",
+      "College of the Desert",
+      "Long Beach City College"
+    ]
+  },
+  {
+    "raw_title": "Amazon Web Services (AWS) Certified Cloud Practitioner",
+    "_family_hint": "AWS welding",
+    "rows": 3,
+    "exhibit_ids": [
+      "MAPICI-AWS(-1-001",
+      "MAPICI-AWS(1-1-001",
+      "MAPICI-AWS(2-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "De Anza College"
+    ]
+  },
+  {
+    "raw_title": "Amazon Web Services (AWS) Certified Systems Operations (SYSOps) Administrator",
+    "_family_hint": "AWS welding",
+    "rows": 3,
+    "exhibit_ids": [
+      "MAPICI-AWS(3-1-001",
+      "MAPICI-AWS(4-1-001",
+      "MAPICI-AWS(5-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "De Anza College"
+    ]
+  },
+  {
+    "raw_title": "AWS CLOUD PRACTITIONER",
+    "_family_hint": "AWS welding",
+    "rows": 2,
+    "exhibit_ids": [
+      "MAPICI-ACP1-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Riverside City College"
+    ]
+  },
+  {
+    "raw_title": "Microsoft Certified Azure Administrator - Associate Certification",
+    "_family_hint": "Microsoft / IT",
+    "rows": 4,
+    "exhibit_ids": [
+      "MAPICI-MCAA1-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "City College of San Francisco",
+      "Lake Tahoe Community College",
+      "San Diego City College"
+    ]
+  },
+  {
+    "raw_title": "MICROSOFT OFFICE SPECIALIST EXCEL CERTIFICATION",
+    "_family_hint": "Microsoft / IT",
+    "rows": 3,
+    "exhibit_ids": [
+      "MAPICI-MOSE-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Moreno Valley College",
+      "Norco College",
+      "Riverside City College"
+    ]
+  },
+  {
+    "raw_title": "MICROSOFT OFFICE SPECIALIST EXCEL EXPERT CERTIFICATION",
+    "_family_hint": "Microsoft / IT",
+    "rows": 3,
+    "exhibit_ids": [
+      "MAPICI-MOSE1-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Moreno Valley College",
+      "Norco College",
+      "Riverside City College"
+    ]
+  },
+  {
+    "raw_title": "MICROSOFT OFFICE SPECIALIST OUTLOOK CERTIFICATION",
+    "_family_hint": "Microsoft / IT",
+    "rows": 3,
+    "exhibit_ids": [
+      "MAPICI-MOSO-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Moreno Valley College",
+      "Norco College",
+      "Riverside City College"
+    ]
+  },
+  {
+    "raw_title": "MICROSOFT OFFICE SPECIALIST WORD EXPERT CERTIFICATION",
+    "_family_hint": "Microsoft / IT",
+    "rows": 3,
+    "exhibit_ids": [
+      "MAPICI-MOSW-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Moreno Valley College",
+      "Norco College",
+      "Riverside City College"
+    ]
+  },
+  {
+    "raw_title": "Cal-JAC Firefighter EMT Certificate",
+    "_family_hint": "Healthcare IC",
+    "rows": 33,
+    "exhibit_ids": [
+      "MAPICA-CFEC-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Bakersfield College",
+      "Cabrillo College",
+      "Chaffey College"
+    ]
+  },
+  {
+    "raw_title": "Emergency Medical Technician (EMT)",
+    "_family_hint": "Healthcare IC",
+    "rows": 23,
+    "exhibit_ids": [
+      "MAPICA-EMT(-1-001",
+      "MAPICI-EMT(1-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Antelope Valley College",
+      "Cabrillo College",
+      "Chaffey College"
+    ]
+  },
+  {
+    "raw_title": "Kern County EMT-Paramedic Training Program",
+    "_family_hint": "Healthcare IC",
+    "rows": 8,
+    "exhibit_ids": [
+      "MAPICI-KCET-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Bakersfield College"
+    ]
+  },
+  {
+    "raw_title": "Current EMT Certification or Paramedic License",
+    "_family_hint": "Healthcare IC",
+    "rows": 7,
+    "exhibit_ids": [
+      "MAPICI-CECO-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "San Diego Miramar College"
+    ]
+  },
+  {
+    "raw_title": "Current NREMT certification or State of California EMT license AND current American Heart Association \u2018BLS Provider' certification",
+    "_family_hint": "Healthcare IC",
+    "rows": 2,
+    "exhibit_ids": [
+      "MAPICI-CNRE-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Santa Ana College"
+    ]
+  },
+  {
+    "raw_title": "EMT 1 Module A and B",
+    "_family_hint": "Healthcare IC",
+    "rows": 1,
+    "exhibit_ids": [
+      "MAPICI-E1MA-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": []
+  },
+  {
+    "raw_title": "Certified Nursing Assistant (CNA)",
+    "_family_hint": "Nursing IC",
+    "rows": 1,
+    "exhibit_ids": [
+      "MAPICI-CNA(-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Los Angeles Pierce College"
+    ]
+  },
+  {
+    "raw_title": "ASE CERTIFICATION (A2) A2 \u2013 AUTOMATIC TRANSMISSION/TRANSAXLE",
+    "_family_hint": "Auto/transport IC",
+    "rows": 5,
+    "exhibit_ids": [
+      "MAPICI-AC(A1-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Copper Mountain College",
+      "Los Medanos College",
+      "Riverside City College"
+    ]
+  },
+  {
+    "raw_title": "ASE CERTIFICATION (A5) A5 \u2013 BRAKES",
+    "_family_hint": "Auto/transport IC",
+    "rows": 5,
+    "exhibit_ids": [
+      "MAPICI-AC(A4-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Copper Mountain College",
+      "Los Medanos College",
+      "Merced College"
+    ]
+  },
+  {
+    "raw_title": "Automotive Service Excellence (ASE) L3 Certification",
+    "_family_hint": "Auto/transport IC",
+    "rows": 5,
+    "exhibit_ids": [
+      "MAPICI-ASE(10-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Bakersfield College",
+      "CA MAP INITIATIVE COLLEGE"
+    ]
+  },
+  {
+    "raw_title": "A Center-Based Preschool Child Development Associate (CDA) Credential",
+    "_family_hint": "Auto/transport IC",
+    "rows": 4,
+    "exhibit_ids": [
+      "MAPICI-ACPC-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Saddleback College"
+    ]
+  },
+  {
+    "raw_title": "ASE CERTIFICATION (A1) A1 \u2013 ENGINE REPAIR",
+    "_family_hint": "Auto/transport IC",
+    "rows": 4,
+    "exhibit_ids": [
+      "MAPICI-AC(A-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Copper Mountain College",
+      "Riverside City College"
+    ]
+  },
+  {
+    "raw_title": "OSHA 030 - Federal OSHA Outreach: Construction Industry Safety",
+    "_family_hint": "Construction IC",
+    "rows": 1,
+    "exhibit_ids": [
+      "MAPICI-O0-F-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "San Bernardino Valley College"
+    ]
+  },
+  {
+    "raw_title": "OSHA Outreach for General Industry-30 hour",
+    "_family_hint": "Construction IC",
+    "rows": 1,
+    "exhibit_ids": [
+      "MAPICI-OOFG-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Chaffey College"
+    ]
+  },
+  {
+    "raw_title": "OSHA 035 - Federal OSHA Outreach: General Industry Safety",
+    "_family_hint": "Construction IC",
+    "rows": 1,
+    "exhibit_ids": [
+      "MAPICI-O0-F1-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "San Bernardino Valley College"
+    ]
+  },
+  {
+    "raw_title": "Carpenter\u2019s Training Center CTCNC OSHA",
+    "_family_hint": "Construction IC",
+    "rows": 1,
+    "exhibit_ids": [
+      "MAPICA-CTCC5-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "American River College"
+    ]
+  },
+  {
+    "raw_title": "SFT Fire Inspector 1 Certification",
+    "_family_hint": "Fire IC",
+    "rows": 18,
+    "exhibit_ids": [
+      "MAPICA-SFI13-1-001",
+      "MAPICI-SFI1-1-001",
+      "MAPICI-SFI11-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Chabot College",
+      "Chaffey College",
+      "College of the Desert"
+    ]
+  },
+  {
+    "raw_title": "NFPA Fire Inspector Certification",
+    "_family_hint": "Fire IC",
+    "rows": 10,
+    "exhibit_ids": [
+      "MAPICA-NFIC-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Chabot College",
+      "Chaffey College",
+      "City College of San Francisco"
+    ]
+  },
+  {
+    "raw_title": "Cal-JAC Fire Inspector Certificate",
+    "_family_hint": "Fire IC",
+    "rows": 9,
+    "exhibit_ids": [
+      "MAPICI-CFIC1-1-001",
+      "MAPICI-CFIC2-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification"
+    ],
+    "articulating_colleges": [
+      "Cabrillo College",
+      "Chabot College",
+      "Chaffey College"
+    ]
+  },
+  {
+    "raw_title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 1)",
+    "_family_hint": "IBEW (CPL-split)",
+    "rows": 4,
+    "exhibit_ids": [
+      "MAPICA-IBEW-1-001",
+      "MAPPRA-IBEW1-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification",
+      "Portfolio Review"
+    ],
+    "articulating_colleges": [
+      "Norco College"
+    ]
+  },
+  {
+    "raw_title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 2)",
+    "_family_hint": "IBEW (CPL-split)",
+    "rows": 4,
+    "exhibit_ids": [
+      "MAPICA-IBEW1-1-001",
+      "MAPPRA-IBEW2-1-001"
+    ],
+    "cpl_types": [
+      "Industry Certification",
+      "Portfolio Review"
+    ],
+    "articulating_colleges": [
+      "Norco College"
+    ]
+  }
+]
