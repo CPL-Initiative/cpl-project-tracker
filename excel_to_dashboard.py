@@ -3582,7 +3582,11 @@ def merge_exhibit_metrics(kpis, exhibit_data):
 # ── MAP Articulation Analysis Tables ─────────────────────────────────────
 
 def _load_top_code_lookup():
-    """Load MAP TOP Code → CCC Discipline mapping from TOP_Code_Lookup.xlsx.
+    """Load MAP TOP Code → (CCC Discipline, CCC SW Sector) mapping from
+    TOP_Code_Lookup.xlsx. Returns a dict where each value is itself a dict
+    {"discipline": ..., "sector": ...}. Callers that only want the discipline
+    can use the .get(code, {}).get("discipline", "Unknown") pattern, but the
+    convenience wrapper _top_disc() handles the common case.
     Searches the same locations as the exhibit JSON."""
     for folder in _EXHIBIT_LOCATIONS:
         path = os.path.join(folder, "TOP_Code_Lookup.xlsx")
@@ -3594,16 +3598,35 @@ def _load_top_code_lookup():
         wb = load_workbook(path, data_only=True)
         ws = wb["TOP Code Lookup"]
         lookup = {}
-        for row in ws.iter_rows(min_row=2, max_col=3, values_only=True):
+        # Column G (index 6) holds the CCC SW Sector classification.
+        for row in ws.iter_rows(min_row=2, max_col=7, values_only=True):
             code = str(row[0]).strip() if row[0] is not None else ""
             disc = str(row[2]).strip() if row[2] else "Unknown"
+            sector = str(row[6]).strip() if len(row) > 6 and row[6] else ""
             if code:
-                lookup[code] = disc
+                lookup[code] = {"discipline": disc, "sector": sector}
         wb.close()
         return lookup
     except Exception as e:
         print(f"  WARNING: Could not load TOP_Code_Lookup.xlsx: {e}")
         return {}
+
+
+def _top_disc(top_lookup, code, default="Not Mapped"):
+    """Convenience: discipline name for a TOP code from _load_top_code_lookup()."""
+    entry = top_lookup.get(code)
+    if isinstance(entry, dict):
+        return entry.get("discipline") or default
+    # Backwards-compat: an older flat dict shape
+    return entry or default
+
+
+def _top_sector(top_lookup, code, default=""):
+    """Convenience: SW sector name for a TOP code from _load_top_code_lookup()."""
+    entry = top_lookup.get(code)
+    if isinstance(entry, dict):
+        return entry.get("sector") or default
+    return default
 
 
 def build_exhibit_analysis_tables(exhibit_data):
@@ -3679,7 +3702,7 @@ def build_exhibit_analysis_tables(exhibit_data):
         mol = (row[i_mol] or "").strip() or "Unknown"
         cpl = (row[i_cpl] or "").strip() or "Other"
 
-        disc = top_lookup.get(top_code, "Not Mapped")
+        disc = _top_disc(top_lookup, top_code)
         is_ccc = "CCC" in collab
         is_industry = cpl == "Industry Certification"
 
@@ -3932,7 +3955,17 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             potential_cid.update(cid_to_colleges.get(cid, set()))
 
         new_colleges = (potential_cid | potential_top) - adopters
-        disc = top_lookup.get(map_top, "Not Mapped")
+        disc = _top_disc(top_lookup, map_top)
+
+        # Career Cluster (CCC Strong Workforce sector). Groups that span multiple
+        # TOP codes can in principle resolve to multiple sectors. Pick the most
+        # common; ties broken alphabetically for stability.
+        from collections import Counter as _Counter
+        sector_counts = _Counter(s for s in (_top_sector(top_lookup, t) for t in e["tops"]) if s)
+        if sector_counts:
+            sector = sorted(sector_counts.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
+        else:
+            sector = ""
 
         # Classify as Statewide (CCC Collaborative) or Local
         is_statewide = "CCC" in collab_type
@@ -3948,6 +3981,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             "title": title,
             "cpl_type": cpl_type,
             "discipline": disc,
+            "sector": sector,
             "collaborative_type": collab_label,
             "adopters": len(adopters),
             "adopter_names": sorted(adopters),
