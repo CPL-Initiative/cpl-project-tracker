@@ -1513,7 +1513,8 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
             act_num = ag["id"].split(".")[0]
             ag_by_activity.setdefault(act_num, []).append(ag)
 
-    html = '            <h2>Workplan Activity Metrics</h2>\n'
+    # Title now lives in the collapsible wrapper header — do not emit it here.
+    html = ''
 
     # Activity-level goals for progress bars
     activity_goals = {
@@ -4282,12 +4283,15 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
 # ── CSS for exhibit analysis cards ──
 EXHIBIT_ANALYSIS_CSS = """
 /* ═══ MAP Articulation Analysis Cards ═══ */
-.cpl-analytics-body {
+.cpl-analytics-body,
+.activity-kpi-body {
     background-color: #ffffff;
     padding: 1.5rem 2rem 2rem;
     margin: 0;
 }
-.kpi-section-wrapper.collapsed .cpl-analytics-body { display: none; }
+.kpi-section-wrapper.collapsed .cpl-analytics-body,
+.kpi-section-wrapper.collapsed .activity-kpi-body { display: none; }
+.activity-kpi-body .activity-kpi-section { margin-bottom: 0; }
 .exhibit-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -5792,19 +5796,42 @@ def main():
                             + '\n' + ALGO_DETAILS_CSS
                             + '\n' + html[style_end:])
 
-            # ── Replace the Activity KPI section with fully rendered static HTML ──
-            act_section_start = html.find('<div class="activity-kpi-section" id="activityKpiSection">')
-            act_section_end_tag = '</div>\n\n        <!-- Projects Grid -->'
-            act_section_end = html.find('<!-- Projects Grid -->')
-            if act_section_start != -1 and act_section_end != -1:
-                act_html = render_activity_kpis_html(activity_kpis, annual_goals, update_log, attachments=attachments)
-                new_act_section = (
-                    '<div class="activity-kpi-section" id="activityKpiSection">\n'
-                    + act_html +
-                    '        </div>\n\n        '
-                )
-                html = html[:act_section_start] + new_act_section + html[act_section_end:]
-                print(f"  Rendered static activity KPI cards ({sum(len(g['kpis']) for g in activity_kpis)} sub-activities)")
+            # ── Workplan Activity Metrics: relocate above the Filter Bar and
+            # wrap in the same collapsible chrome used by KPI Metrics. ──
+            # First, remove any existing copy (old position between Filter Bar
+            # and Projects Grid, or a previously-wrapped copy above the Filter
+            # Bar) so the section never duplicates.
+            import re as _re
+            # Strip the legacy in-grid placement.
+            html = _re.sub(
+                r'<div class="activity-kpi-section" id="activityKpiSection">.*?</div>\s*(?=<!-- Projects Grid -->)',
+                '', html, flags=_re.DOTALL,
+            )
+            # Strip any prior wrapped copy (this generator's own previous output).
+            html = _re.sub(
+                r'<!-- ═══ Workplan Activity Metrics Section ═══ -->.*?(?=<!-- Filter Bar -->)',
+                '', html, flags=_re.DOTALL,
+            )
+            act_html = render_activity_kpis_html(activity_kpis, annual_goals, update_log, attachments=attachments)
+            new_act_section = (
+                '<!-- ═══ Workplan Activity Metrics Section ═══ -->\n'
+                '    <div class="kpi-section-wrapper" id="activityKpiWrapper">\n'
+                '        <div class="kpi-section-header" onclick="(function(){var w=document.getElementById(\'activityKpiWrapper\');w.classList.toggle(\'collapsed\');})()">\n'
+                '            <span class="kpi-section-title">Workplan Activity Metrics</span>\n'
+                '            <span class="kpi-toggle-arrow">&#9650;</span>\n'
+                '        </div>\n'
+                '        <div class="activity-kpi-body">\n'
+                '            <div class="activity-kpi-section" id="activityKpiSection">\n'
+                + act_html +
+                '            </div>\n'
+                '        </div>\n'
+                '    </div>\n\n    '
+            )
+            filter_marker = '<!-- Filter Bar -->'
+            filter_pos = html.find(filter_marker)
+            if filter_pos != -1:
+                html = html[:filter_pos] + new_act_section + html[filter_pos:]
+                print(f"  Rendered Workplan Activity Metrics ({sum(len(g['kpis']) for g in activity_kpis)} sub-activities, collapsible, above filter bar)")
 
             # ── Inject the Annual Workplan Goals section before Projects Grid ──
             workplan_goals_html = render_workplan_goals_html(workplan_goals)
