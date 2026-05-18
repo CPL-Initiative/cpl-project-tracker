@@ -5905,6 +5905,16 @@ def main():
         except Exception as e:
             print(f"  (Skipping report generation: {e})")
 
+    # Mirror to index.html so GitHub Pages (which serves the repo root)
+    # stays in sync with CPL_Dashboard.html. The daily workflow does the same
+    # cp step, but doing it here too means manual regenerations don't drift.
+    try:
+        import shutil
+        shutil.copyfile(HTML_FILE, os.path.join(SCRIPT_DIR, "index.html"))
+        print("Mirrored CPL_Dashboard.html -> index.html")
+    except Exception as e:
+        print(f"  Warning: could not mirror to index.html ({e})")
+
     print("Done! Refresh CPL_Dashboard.html in your browser to see changes.")
 
 
