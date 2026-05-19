@@ -48,6 +48,21 @@ These look similar but are distinct credentials. Keep them separate:
 - `POST Basic Academy` (peace officer) vs `CDCR/CPOST` (corrections officer) — different agencies, different roles.
 - `AP Biology` vs `AP Chemistry` — different subject exams.
 - `RN License` vs `LVN License` vs `CNA Certification` — different scopes of practice.
+- `Microsoft Office Specialist — Excel` vs `Microsoft Office Specialist — Excel Expert` — separate exams at different levels, keep split.
+
+**Same credential issued by different bodies → unify, let the issuer field discriminate.**
+Fire Inspector I is certified by ICC, NFPA, California State Fire Training (SFT),
+and Cal-JAC. All four cover the same competency (NFPA 1031 Level I inspector).
+Unified title for all of them: `Fire Inspector I`. The `issuing_agency` field is
+the discriminator — the UI can badge each row with its issuer and let viewers
+filter on it. Apply the same logic to EMT certification (issued by multiple
+state EMS authorities), OSHA Outreach trainers, etc.
+
+The line between "different issuer / same credential" (unify) and "different
+issuer / different credential" (split) is the **scope of competency**, not the
+issuer. POST vs CDCR is a split because peace officer ≠ correctional officer
+— different jobs. ICC vs NFPA Fire Inspector I is a unify because both certify
+the same inspector role.
 
 ### Rule 5 — Generic-bucket titles need a separate marker
 
@@ -57,27 +72,69 @@ Titles like `Credit By Exam at Mesa`, `Credit By Exam at Saddleback College`, `C
 - `confidence_title ≤ 0.6` to invite human review.
 - Note in `_notes` that this is a generic bucket, not a specific credential.
 
-### Rule 6 — Issuing agency is canonical, not as-written
+### Rule 5b — Prerequisite-language titles refer to the cert they describe
 
-Use the short, recognizable canonical name of the issuing body. Examples:
+Some colleges enter exhibits with titles like `Current EMT Certification or
+Paramedic License` or `Current NREMT certification or State of California EMT
+license AND current American Heart Association BLS`. These read as prerequisite
+descriptions, but they're **referring to actual credentials**. Cluster them
+with the corresponding cert's unified title (e.g., `EMT Certification`),
+**not** a separate "prerequisite" bucket. Use a `_notes` entry to capture
+that the source title used prerequisite phrasing. Confidence should be
+0.65–0.80 to flag for review, but the mapping itself unifies with the cert.
 
-- `CompTIA` (not `Computing Technology Industry Association`)
-- `California Commission on POST` (not `POST` alone — there's a federal POST too)
-- `Google` (for vendor certs delivered via Coursera; `training_agency = "Coursera"` is acceptable when distinct)
+The same applies to course-section titles like `EMT 1 Module A and B` — if
+the credential being referenced is identifiable, cluster with that cert.
+
+### Rule 6 — Issuing agency uses the longer recognizable canonical name
+
+Use the **longer, full canonical name with the common abbreviation in
+parentheses** so the field is unambiguous on its own and reads well in tables
+and reports. Examples:
+
+- `Amazon Web Services (AWS)` — not just `AWS`
+- `Computing Technology Industry Association (CompTIA)` — only if the short
+  brand `CompTIA` is genuinely common; CompTIA is well-known enough alone, so
+  `CompTIA` is acceptable. When in doubt, use the longer form.
+- `California Commission on Peace Officer Standards and Training (POST)`
 - `International Code Council (ICC)`
-- `College Board` (for AP exams)
-- `Cisco`
-- `American Welding Society (AWS)` (for welding industry certs)
+- `National Fire Protection Association (NFPA)`
+- `California State Fire Training (SFT)`
+- `California Joint Apprenticeship Committee (Cal-JAC)`
+- `National Institute for Automotive Service Excellence (ASE)`
+- `International Brotherhood of Electrical Workers (IBEW)`
+- `California Emergency Medical Services Authority (EMSA)`
+- `California Department of Public Health (CDPH)`
+- `Council for Professional Recognition` (for CDA credential)
+- `U.S. Occupational Safety and Health Administration (OSHA)`
+- `College Board` — short, no abbreviation
+- `Google` — vendor name; `training_agency = "Coursera"` when distinct
+- `Cisco` — vendor name
 - `American Council on Education (ACE)` — for JST military credit recommendations
-- For credentials issued by a CCC college locally, set `issuing_agency = null` and explain in `_notes`.
+
+For credentials issued by a CCC college locally, set `issuing_agency = null` and explain in `_notes`.
 
 ### Rule 7 — Training agency only if distinct
 
-Most credentials have an issuer but no separate training agency. Set `training_agency = null` for those. Use it only when the training is delivered by a clearly different entity:
+Most credentials have an issuer but no separate training agency. Set
+`training_agency = null` for those. Use it only when the training is delivered
+by a clearly different entity:
 
-- POST Basic Academy: issuer = Cal POST; training_agency = the specific academy (e.g., `Allan Hancock Public Safety Academy`). When the academy varies per row, set `training_agency = "<varies by academy>"`.
-- IBEW apprenticeship: issuer = IBEW; training_agency = `Joint Apprenticeship Training Committee (JATC)` when applicable.
-- JST military credit: issuer = ACE; training_agency = `U.S. Armed Forces` or the specific branch when known.
+- POST Basic Academy: issuer = California Commission on POST;
+  `training_agency = "varies by academy"` (canonical sentinel string — the
+  pipeline treats it as a non-null marker that means
+  "different per articulating college"). When a specific academy is in
+  the raw title, use the specific name instead (e.g.,
+  `San Mateo County Community College District Police Academy`).
+- IBEW apprenticeship: issuer = IBEW;
+  training_agency = `Joint Apprenticeship Training Committee (JATC)`
+  when applicable.
+- JST military credit: issuer = ACE; training_agency = `U.S. Armed Forces`
+  or the specific branch when known.
+
+The canonical sentinel `varies by academy` is intentionally lowercase and
+without brackets — it's a real string value, not a placeholder. The pipeline
+keys on it to render a special "Multiple training providers" badge in the UI.
 
 ### Rule 8 — Confidence scoring
 
@@ -90,6 +147,34 @@ Most credentials have an issuer but no separate training agency. Set `training_a
 | **< 0.40** | Title is uninterpretable from text alone; needs human input or external context. Still ship the row — confidence flags it for review. |
 
 Confidence is per-field. A title can be high-confidence (`POST Basic Academy`, 0.98) while its training agency is low-confidence (`varies by academy`, 0.6).
+
+### Rule 8b — Preserve issuer-assigned numeric codes when present
+
+Some issuers assign numeric codes that are part of the credential's
+identity (OSHA Outreach codes like `030`, `035`; ASE subtest codes like
+`A1`, `A2`, `A5`, `L3`). **Preserve those codes in the unified title**,
+even when two raw titles describe the same underlying curriculum under
+different codes. The codes carry meaning to industry consumers (the
+30-hour General Industry course is a different curriculum from the
+30-hour Construction course) and the credential the worker actually
+holds carries the code.
+
+Examples:
+
+- `OSHA 030 - Federal OSHA Outreach: Construction Industry Safety` →
+  unified_title `OSHA 030 — Construction Industry Outreach (30-hour)`
+- `OSHA 035 - Federal OSHA Outreach: General Industry Safety` →
+  unified_title `OSHA 035 — General Industry Outreach (30-hour)`
+- `OSHA Outreach for General Industry-30 hour` →
+  unified_title `OSHA 30 — General Industry` (no source code, fall
+  back to hour-count form)
+- `ASE CERTIFICATION (A2) A2 – AUTOMATIC TRANSMISSION/TRANSAXLE` →
+  unified_title `ASE A2 — Automatic Transmission/Transaxle`
+
+If two raw titles describe the same curriculum but one has a code and
+one doesn't, keep them as **separate unified titles** — they may
+genuinely differ (one might be the official Outreach version, the
+other a local equivalent).
 
 ### Rule 9 — Never refuse, always classify
 
