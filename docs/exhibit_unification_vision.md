@@ -292,9 +292,12 @@ flagged in `_notes`.
 
 **KB files (see §5 layout):**
 - `common_courses.json` — catalog: `course_id` (CCN-ID/C-ID/M-ID) →
-  `{common_title, id_system, ccn_id, c_id, cross_listing_group, subject,
-  discipline, discipline_provisional, typical_units, confidence,
-  source_college_count, …}`. `cross_listing_group` (`"XL-NNNN"` or null)
+  `{common_title, description, description_source, id_system, ccn_id, c_id,
+  cross_listing_group, subject, discipline, discipline_provisional,
+  typical_units, confidence, source_college_count, …}`. `description` is
+  the consolidated course description (authoritative C-ID text where
+  matched; cross-listed mirrors inherit a sibling's; synthetic M-ID
+  descriptions deferred to Phase 3). `cross_listing_group` (`"XL-NNNN"` or null)
   links the discipline mirrors of a **cross-listed** course (same course
   under two subjects, e.g. `ARCH 50` / `DR 50`) so an articulation to one
   mirror applies to the whole group.
