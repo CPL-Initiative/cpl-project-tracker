@@ -1,193 +1,1202 @@
 {
-  "AP Biology (score 3-5): Cal-GETC Area 5B and 5C": {
-    "unified_title": "AP Biology",
-    "confidence_title": 0.98,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  "\tFTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship": {
+    "unified_title": "Fire Service In-Service Training: Command and Control",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AB10-1-001"
+      "MAPPRA-F3FS1-1-001"
+    ],
+    "_notes": "Local college course exhibit; references fire service command/control internship."
+  },
+  " Advanced Metal Framing": {
+    "unified_title": "Advanced Metal Framing",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRA-AMF-1-001"
+    ],
+    "_notes": "Generic skill area; likely construction/carpentry apprenticeship competency."
+  },
+  " Automotive Services Excellence (A5: Brakes) Certificate": {
+    "unified_title": "ASE A5 � Brakes",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-ASE(6-1-001"
     ],
     "_notes": null
   },
-  "AP Chemistry (score 3-5): Cal-GETC Area 5A and 5C": {
-    "unified_title": "AP Chemistry",
-    "confidence_title": 0.98,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  " CLEP Principles of Management (CSU Semester Units Earned Toward CSU Admission)": {
+    "unified_title": "CLEP Principles of Management",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AC7-1-001"
+      "MAPSAS-CPOM2-1-001"
     ],
     "_notes": null
   },
-  "AP Environmental Science (score 3-5): Cal-GETC Area 5A and 5C": {
-    "unified_title": "AP Environmental Science",
-    "confidence_title": 0.98,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  " CPA � C++ CERTIFIED ASSOCIATE PROGRAMMER": {
+    "unified_title": "C++ Certified Associate Programmer (CPA)",
+    "confidence_title": 0.9,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AES9-1-001"
+      "MAPICI-C�CC2-1-001"
     ],
-    "_notes": null
+    "_notes": "CPA cert issued by C++ Institute (OpenEDG)."
   },
-  "AP Physics 1: Algebra-Based (score 3-5): Cal-GETC Area 5A and 5C": {
-    "unified_title": "AP Physics 1",
-    "confidence_title": 0.96,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  " Framing Ceilings and Soffits": {
+    "unified_title": "Framing Ceilings and Soffits",
+    "confidence_title": 0.65,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AP1A2-1-001"
+      "MAPPRA-FCAS-1-001"
     ],
-    "_notes": "Skill Rule 1: stripped algebra-based/score/area qualifiers; College Board now markets the exam as 'AP Physics 1' alone (Algebra-Based is implicit)."
+    "_notes": "Local college portfolio competency in construction framing."
   },
-  "AP Physics 2: Algebra-Based (score 3-5): Cal-GETC Area 5A and 5C": {
-    "unified_title": "AP Physics 2",
-    "confidence_title": 0.96,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  " PLNT SC 812 - Landscape Installation and Maintenance I": {
+    "unified_title": "Landscape Installation and Maintenance I",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AP2A3-1-001"
+      "MAPCXS-LIAM-1-001"
     ],
-    "_notes": "Skill Rule 1: stripped algebra-based/score/area qualifiers (see AP Physics 1)."
+    "_notes": "Local college course exhibit; stripped course prefix."
   },
-  "AP Physics C: Mechanics (score 3-5): Cal-GETC Area 5A and 5C": {
-    "unified_title": "AP Physics C: Mechanics",
-    "confidence_title": 0.98,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  " S-130 and C-219 and S-230 and S-231 and S-270 Wildland Fire Certifications": {
+    "unified_title": "NWCG Wildland Fire Certifications (S-130/S-230/S-231/S-270)",
+    "confidence_title": 0.8,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-APCM1-1-001"
+      "MAPICI-SACA-1-001"
     ],
-    "_notes": null
+    "_notes": "Bundled NWCG wildland fire training courses."
   },
-  "AP Physics C: Electricity/Magnetism (score 3-5): Cal-GETC Area 5A and 5C": {
-    "unified_title": "AP Physics C: Electricity and Magnetism",
+  " U.S. HOMELAND SECURITY IS-200 Basic Incident Command System (ICS)": {
+    "unified_title": "FEMA IS-200 Basic Incident Command System (ICS)",
     "confidence_title": 0.95,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-APCE3-1-001"
+      "MAPICI-UHSI-1-001"
     ],
-    "_notes": "Normalized 'Electricity/Magnetism' → 'Electricity and Magnetism' (College Board's current canonical phrasing)."
+    "_notes": "FEMA Emergency Management Institute IS-200 course."
   },
-  "AP Psychology (score 3-5): Cal-GETC Area 4": {
-    "unified_title": "AP Psychology",
-    "confidence_title": 0.98,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  "3-Dimensional Computer-Aided Design and Drafting & 3-Dimensional Printing CADD 004 Cx": {
+    "unified_title": "3D CAD and 3D Printing",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AP13-1-001"
+      "MAPCxS-3CDA-1-001"
+    ],
+    "_notes": "Local CADD course; Cx denotes credit by exam."
+  },
+  "3D Animation": {
+    "unified_title": "3D Animation",
+    "confidence_title": 0.6,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICA-3A-1-001",
+      "MAPPRA-3A-1-001"
+    ],
+    "_notes": "Generic skill domain; could be any of several vendor certs (Autodesk, Adobe) or portfolio."
+  },
+  "A Center-Based Preschool Child Development Associate (CDA) Credential": {
+    "unified_title": "Child Development Associate (CDA) Credential",
+    "confidence_title": 0.95,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-ACPC-1-001"
+    ],
+    "_notes": "Center-Based Preschool CDA setting noted; unified with general CDA."
+  },
+  "A S T 025 - Fundamentals of Auto Mechanics ": {
+    "unified_title": "Fundamentals of Auto Mechanics",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-AST0-1-001"
+    ],
+    "_notes": "Local college course; stripped prefix."
+  },
+  "AB MILLER HIGH SCHOOL- Business and Finance": {
+    "unified_title": "AB Miller High School Pathway � Business and Finance",
+    "confidence_title": 0.65,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXH-AMHS2-1-001"
+    ],
+    "_notes": "High school dual-enrollment/pathway exhibit."
+  },
+  "AB MILLER HIGH SCHOOL- Global Business Design": {
+    "unified_title": "AB Miller High School Pathway � Global Business Design",
+    "confidence_title": 0.65,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXH-AMHS1-1-001"
+    ],
+    "_notes": "High school pathway exhibit."
+  },
+  "ACE Computer Applications Military Training on JST": {
+    "unified_title": "JST Military Training � Computer Applications",
+    "confidence_title": 0.85,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPMM-ACAM-1-001"
+    ],
+    "_notes": "ACE-evaluated military credit via Joint Services Transcript."
+  },
+  "ACE Introduction to Programming Military Training on JST": {
+    "unified_title": "JST Military Training � Introduction to Programming",
+    "confidence_title": 0.85,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPMM-AITP-1-001"
+    ],
+    "_notes": "ACE-evaluated military credit via JST."
+  },
+  "ADJU 202\tPrinciples/Procedures of Justice Sysytem - Credit by Exam": {
+    "unified_title": "Principles and Procedures of the Justice System",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2OJ-1-001"
+    ],
+    "_notes": "Local AJ course; CPL Type column carries mechanism."
+  },
+  "ADJU 202\tPrinciples/Procedures of Justice Sysytem - Industry Certification": {
+    "unified_title": "Principles and Procedures of the Justice System",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2OJ-1-001"
+    ],
+    "_notes": "Likely POST-aligned; local college course unified."
+  },
+  "ADJU 202\tPrinciples/Procedures of Justice Sysytem - Portfolio": {
+    "unified_title": "Principles and Procedures of the Justice System",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRA-A2OJ-1-001"
     ],
     "_notes": null
   },
-  "AP European History (score 3-5): Cal-GETC Area 3B or 4": {
-    "unified_title": "AP European History",
-    "confidence_title": 0.98,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  "ADJU 203\tConcepts of Criminal Law - Credit by Exam": {
+    "unified_title": "Concepts of Criminal Law",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AEH4-1-001"
+      "MAPCXS-A2OC-1-001"
     ],
     "_notes": null
   },
-  "AP U.S. History (score 3-5): Cal-GETC Area 3B or 4": {
-    "unified_title": "AP U.S. History",
-    "confidence_title": 0.98,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  "ADJU 203\tConcepts of Criminal Law - Industry Certification": {
+    "unified_title": "Concepts of Criminal Law",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AUH3-1-001"
+      "MAPICI-A2OC-1-001"
+    ],
+    "_notes": "Industry cert path likely POST-credit alignment."
+  },
+  "ADJU 203\tConcepts of Criminal Law - Portfolio": {
+    "unified_title": "Concepts of Criminal Law",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRA-A2OC-1-001"
     ],
     "_notes": null
   },
-  "AP World History: Modern (score 3-5): Cal-GETC Area 3B or 4": {
-    "unified_title": "AP World History: Modern",
-    "confidence_title": 0.97,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  "ADJU 204\tLegal Aspects of Evidence - Credit by Exam": {
+    "unified_title": "Legal Aspects of Evidence",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AWHM4-1-001"
+      "MAPCXS-A2AO-1-001"
     ],
     "_notes": null
   },
-  "AP U.S. Government & Politics (score 3-5): Cal-GETC Area 4": {
-    "unified_title": "AP U.S. Government & Politics",
-    "confidence_title": 0.97,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  "ADJU 204\tLegal Aspects of Evidence - Portfolio": {
+    "unified_title": "Legal Aspects of Evidence",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AUGP-1-001"
+      "MAPPRA-A2AO-1-001"
     ],
     "_notes": null
   },
-  "AP Comparative Government & Politics (score 3-5): Cal-GETC Area 4": {
-    "unified_title": "AP Comparative Government & Politics",
-    "confidence_title": 0.97,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  "ADJU 205\tCommunity Relations - Credit by Exam": {
+    "unified_title": "Community Relations in Criminal Justice",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-ACGP-1-001"
+      "MAPCXS-A2R--1-001"
     ],
     "_notes": null
   },
-  "AP Human Geography (score 3-5): Cal-GETC Area 4": {
-    "unified_title": "AP Human Geography",
-    "confidence_title": 0.98,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  "ADJU 205\tCommunity Relations - Portfolio": {
+    "unified_title": "Community Relations in Criminal Justice",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AHG5-1-001"
+      "MAPPRA-A2R--1-001"
     ],
     "_notes": null
   },
-  "AP Macroeconomics (score 3-5): Cal-GETC Area 4": {
-    "unified_title": "AP Macroeconomics",
-    "confidence_title": 0.98,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  "ADJU 212\tCriminal Investation - Credit by Exam": {
+    "unified_title": "Criminal Investigation",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AM6-1-001"
+      "MAPCXS-A2I--1-001"
+    ],
+    "_notes": "Typo 'Investation' = Investigation."
+  },
+  "ADJU 213\tPatrol Procedure - Credit by Exam": {
+    "unified_title": "Patrol Procedures",
+    "confidence_title": 0.8,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2P--1-001"
     ],
     "_notes": null
   },
-  "AP Microeconomics (score 3-5): Cal-GETC Area 4": {
-    "unified_title": "AP Microeconomics",
-    "confidence_title": 0.98,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
+  "ADJU 213\tPatrol Procedure - Industry Certification": {
+    "unified_title": "Patrol Procedures",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AM9-1-001"
+      "MAPICI-A2P--1-001"
+    ],
+    "_notes": null
+  },
+  "ADJU 213\tPatrol Procedure - Portfolio": {
+    "unified_title": "Patrol Procedures",
+    "confidence_title": 0.8,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRA-A2P--1-001"
+    ],
+    "_notes": null
+  },
+  "ADJU 215\tIntroduction to Firearms - Industry Certificate": {
+    "unified_title": "Introduction to Firearms",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2TF-1-001"
+    ],
+    "_notes": null
+  },
+  "ADJU 216 Advanced Firearms & Range Application - Industry Certification": {
+    "unified_title": "Advanced Firearms and Range Application",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2AF-1-001"
+    ],
+    "_notes": null
+  },
+  "ADJU 217\tSubstance Abuse - Credit by Exam": {
+    "unified_title": "Substance Abuse in Criminal Justice",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2A--1-001"
+    ],
+    "_notes": null
+  },
+  "ADJU 217\tSubstance Abuse - Industry Certificate": {
+    "unified_title": "Substance Abuse in Criminal Justice",
+    "confidence_title": 0.65,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2A--1-001"
+    ],
+    "_notes": null
+  },
+  "ADJU 219\tCorrections Firearms Training - Industry Certificate": {
+    "unified_title": "Corrections Firearms Training",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2FT-1-001"
+    ],
+    "_notes": "May align to CDCR/CPOST training."
+  },
+  "ADJU 222\tProfiling Terrorism": {
+    "unified_title": "Profiling Terrorism",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRA-A2T1-1-001"
+    ],
+    "_notes": null
+  },
+  "ADJU 222\tProfiling Terrorism - Industry Certificate": {
+    "unified_title": "Profiling Terrorism",
+    "confidence_title": 0.65,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2T--1-001"
+    ],
+    "_notes": null
+  },
+  "ADJU 232 - Juvenile Justice Procedures - Credit by Exam ": {
+    "unified_title": "Juvenile Justice Procedures",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2-J-1-001"
+    ],
+    "_notes": null
+  },
+  "ADJU 235\tIntroduction to Corrections - Industry Certificate": {
+    "unified_title": "Introduction to Corrections",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2TC-1-001"
+    ],
+    "_notes": "Often aligned to CDCR academy credit."
+  },
+  "ADJU 243\tDomestic Violence Crisis Intervention - Industry Certificate": {
+    "unified_title": "Domestic Violence Crisis Intervention",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2VC-1-001"
+    ],
+    "_notes": null
+  },
+  "ADJU 310\tCommunications in Criminal Justice - Industry Certificate": {
+    "unified_title": "Communications in Criminal Justice",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A3IC-1-001"
+    ],
+    "_notes": null
+  },
+  "ADJU 310\tCommunications in Criminal Justice - Portfolio": {
+    "unified_title": "Communications in Criminal Justice",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRA-A3IC-1-001"
+    ],
+    "_notes": null
+  },
+  "ADJU201 Introduction to Administration of Justice": {
+    "unified_title": "Introduction to Administration of Justice",
+    "confidence_title": 0.8,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-AITA-1-001"
+    ],
+    "_notes": null
+  },
+  "ADJU234 Introduction to Crime": {
+    "unified_title": "Introduction to Crime and Criminology",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-AITC-1-001"
+    ],
+    "_notes": "Likely a criminology course."
+  },
+  "ADJUS 101 - CA POST Training Record": {
+    "unified_title": "POST Basic Academy",
+    "confidence_title": 0.9,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A1-C-1-001"
+    ],
+    "_notes": "POST Training Record indicates Basic Academy completion."
+  },
+  "ADJUS 102 +": {
+    "unified_title": "Administration of Justice 102",
+    "confidence_title": 0.45,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRS-A1+-1-001"
+    ],
+    "_notes": "Uninterpretable beyond course number; no college context."
+  },
+  "ADJUS 103": {
+    "unified_title": "Administration of Justice 103",
+    "confidence_title": 0.45,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRS-A11-1-001"
+    ],
+    "_notes": "Course number only; no context."
+  },
+  "ADJUS 105": {
+    "unified_title": "Administration of Justice 105",
+    "confidence_title": 0.45,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRS-A12-1-001"
+    ],
+    "_notes": "Course number only; topic unknown."
+  },
+  "ADJUS 106": {
+    "unified_title": "Administration of Justice 106",
+    "confidence_title": 0.45,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRS-A13-1-001"
+    ],
+    "_notes": "Course number only."
+  },
+  "ADM JUS 049": {
+    "unified_title": "Administration of Justice 049",
+    "confidence_title": 0.45,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-AJ0-1-001"
+    ],
+    "_notes": "Course number only; no topic."
+  },
+  "ADM JUS 067 ": {
+    "unified_title": "Administration of Justice 067",
+    "confidence_title": 0.45,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-AJ01-1-001"
+    ],
+    "_notes": "Course number only."
+  },
+  "ADM JUS 075": {
+    "unified_title": "Administration of Justice 075",
+    "confidence_title": 0.45,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-AJ02-1-001"
+    ],
+    "_notes": "Course number only."
+  },
+  "ADM JUS 14 CBE": {
+    "unified_title": "Administration of Justice 14",
+    "confidence_title": 0.45,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-AJ1C1-1-001"
+    ],
+    "_notes": "CBE mechanism stripped; course number only."
+  },
+  "ADM JUS 160 CBE": {
+    "unified_title": "Administration of Justice 160",
+    "confidence_title": 0.45,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-AJ1C2-1-001"
+    ],
+    "_notes": "Course number only."
+  },
+  "AERO 022 - Private Pilot Ground School": {
+    "unified_title": "FAA Private Pilot Ground School",
+    "confidence_title": 0.85,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A0-P-1-001"
+    ],
+    "_notes": null
+  },
+  "AERO 022 - Private Pilot Ground School - FAA Card": {
+    "unified_title": "FAA Private Pilot Certificate",
+    "confidence_title": 0.85,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A0-P1-1-001"
+    ],
+    "_notes": "FAA Card refers to pilot certificate."
+  },
+  "AERO 022 - Private Pilot Ground School - Riverside Flight Academy FAA approved Private Pilot Certification Ground Course": {
+    "unified_title": "FAA Private Pilot Ground School",
+    "confidence_title": 0.85,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A0-P3-1-001"
+    ],
+    "_notes": "FAA-approved ground course delivered by Riverside Flight Academy."
+  },
+  "AERO 022L - Private Pilot Ground School Lab - FAA Card": {
+    "unified_title": "FAA Private Pilot Certificate",
+    "confidence_title": 0.8,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A0-P2-1-001"
+    ],
+    "_notes": "Lab section of private pilot ground school; FAA cardholder."
+  },
+  "AERO 040 - Instrument Ground School - FAA Card Holder": {
+    "unified_title": "FAA Instrument Rating",
+    "confidence_title": 0.85,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A0-I1-1-001"
+    ],
+    "_notes": null
+  },
+  "AERO 040 - Instrument Ground School - Training Log ": {
+    "unified_title": "FAA Instrument Ground School",
+    "confidence_title": 0.8,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A0-I-1-001"
+    ],
+    "_notes": "Training log evidence of instrument ground school."
+  },
+  "AERO 041L - Instrument Pilot Flight Lab - FAA Cardholder": {
+    "unified_title": "FAA Instrument Rating",
+    "confidence_title": 0.85,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A0-I2-1-001"
+    ],
+    "_notes": "Instrument pilot flight lab tied to FAA instrument rating."
+  },
+  "AG 101\tLeadership in Agriculture B - Credit by Exam": {
+    "unified_title": "Leadership in Agriculture",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A1IA-1-001"
+    ],
+    "_notes": null
+  },
+  "AG 101\tLeadership in Agriculture B - Industry Certification": {
+    "unified_title": "Leadership in Agriculture",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A1IA-1-001"
+    ],
+    "_notes": "Possibly FFA-related cert."
+  },
+  "AG 120\tIntroduction to Agriculture Education - Credit by Exam": {
+    "unified_title": "Introduction to Agriculture Education",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A1TA-1-001"
+    ],
+    "_notes": null
+  },
+  "AG 120\tIntroduction to Agriculture Education - Industry Certification": {
+    "unified_title": "Introduction to Agriculture Education",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A1TA-1-001"
+    ],
+    "_notes": null
+  },
+  "AG 130\tAgriculture Education Early Field Experience - Credit by Exam": {
+    "unified_title": "Agriculture Education Early Field Experience",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A1EE-1-001"
+    ],
+    "_notes": null
+  },
+  "AG 130\tAgriculture Education Early Field Experience - Industry Certification": {
+    "unified_title": "Agriculture Education Early Field Experience",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A1EE2-1-001"
+    ],
+    "_notes": null
+  },
+  "AG 200\tSupervision In Agriculture Equipment Operation - Portfolio": {
+    "unified_title": "Supervision in Agriculture Equipment Operation",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRA-A2IA-1-001"
+    ],
+    "_notes": null
+  },
+  "AG 259A\tAgricultural Work Experience - Industry Certificate": {
+    "unified_title": "Agricultural Work Experience",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2WE-1-001"
+    ],
+    "_notes": null
+  },
+  "AG 259D\tAgricultural Work Experience - Portfolio Review": {
+    "unified_title": "Agricultural Work Experience",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRA-A2WE-1-001"
+    ],
+    "_notes": null
+  },
+  "AGEC 210\tElements of Agricultural Economics - Credit by Exam": {
+    "unified_title": "Elements of Agricultural Economics",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2OA-1-001"
+    ],
+    "_notes": null
+  },
+  "AGEC 210\tElements of Agricultural Economics - Portfolio": {
+    "unified_title": "Elements of Agricultural Economics",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRA-A2OA-1-001"
+    ],
+    "_notes": null
+  },
+  "AGEC 220\tIntroduction to Agribusiness Management - Credit by Exam": {
+    "unified_title": "Introduction to Agribusiness Management",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2TA-1-001"
+    ],
+    "_notes": null
+  },
+  "AGEC 225\tAgriculture Computer Applications - Credit by Exam": {
+    "unified_title": "Agriculture Computer Applications",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2CA-1-001"
+    ],
+    "_notes": null
+  },
+  "AGGE 146\tAgriculture, Environment and Society - Credit by Exam": {
+    "unified_title": "Agriculture, Environment and Society",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A1EA-1-001"
+    ],
+    "_notes": null
+  },
+  "AGGE 150\tSustainable Production Systems - Credit by Exam": {
+    "unified_title": "Sustainable Production Systems",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A1PS-1-001"
+    ],
+    "_notes": null
+  },
+  "AGGE 320\tEvaluation of Agricultural Products - Credit by Exam": {
+    "unified_title": "Evaluation of Agricultural Products",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A3OA-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 200\tIntroduction to Mechanical Technology - Credit by Exam": {
+    "unified_title": "Introduction to Agricultural Mechanical Technology",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2TM-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 200\tIntroduction to Mechanical Technology - Industry Certification": {
+    "unified_title": "Introduction to Agricultural Mechanical Technology",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2TM-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 210\tAgricultural Welding - Credit by Exam": {
+    "unified_title": "Agricultural Welding",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2W--1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 210\tAgricultural Welding - Industry Certification": {
+    "unified_title": "Agricultural Welding",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2W--1-001"
+    ],
+    "_notes": "Likely AWS-aligned welding cert."
+  },
+  "AGM 211\tAdvanced Agricultural Welding - Credit by Exam": {
+    "unified_title": "Advanced Agricultural Welding",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2AW-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 211\tAdvanced Agricultural Welding - Industry Certification": {
+    "unified_title": "Advanced Agricultural Welding",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2AW-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 211 Advanced Agricultural Welding - Military": {
+    "unified_title": "Advanced Agricultural Welding",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPMM-A2AA-1-001"
+    ],
+    "_notes": "Military credit pathway via JST/ACE evaluation."
+  },
+  "AGM 212\tMechanical Systems Design & Evaluation 1 - Credit by Exam": {
+    "unified_title": "Agricultural Mechanical Systems Design and Evaluation 1",
+    "confidence_title": 0.72,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2SD-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 213\tMechanical Systems Design & Evaluation 2 - Credit by Exam": {
+    "unified_title": "Agricultural Mechanical Systems Design and Evaluation 2",
+    "confidence_title": 0.72,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2SD1-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 214\tEquipment Service and Safety - Credit by Exam": {
+    "unified_title": "Agricultural Equipment Service and Safety",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2SA-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 214\tEquipment Service and Safety - Industry Certification": {
+    "unified_title": "Agricultural Equipment Service and Safety",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2SA-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 215\tMachinery Management - Credit by Exam": {
+    "unified_title": "Agricultural Machinery Management",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2M--1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 216\tAgriculture Occupational Safety - Credit by Exam": {
+    "unified_title": "Agriculture Occupational Safety",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2OS-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 216\tAgriculture Occupational Safety - Industry Certification": {
+    "unified_title": "Agriculture Occupational Safety",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2OS-1-001"
+    ],
+    "_notes": "Likely OSHA-aligned safety cert."
+  },
+  "AGM 221\tEquipment Diagnosis & Repair - Credit by Exam": {
+    "unified_title": "Agricultural Equipment Diagnosis and Repair",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2D&-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 235\tIrrigation and Drainage": {
+    "unified_title": "Irrigation and Drainage",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2AD-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 235\tIrrigation and Drainage - Credit by Exam": {
+    "unified_title": "Irrigation and Drainage",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2AD-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 236\tAdvanced Irrigation and Drainage - Credit by Exam": {
+    "unified_title": "Advanced Irrigation and Drainage",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2IA-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 237\tIrrigation Wells, Pumps, and Drive Systems - Credit by Exam": {
+    "unified_title": "Irrigation Wells, Pumps, and Drive Systems",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2WP-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 237\tIrrigation Wells, Pumps, and Drive Systems - Industry Certification": {
+    "unified_title": "Irrigation Wells, Pumps, and Drive Systems",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-A2WP-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 238\tIrrigation System Design - Credit by Exam": {
+    "unified_title": "Irrigation System Design",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2SD2-1-001"
+    ],
+    "_notes": null
+  },
+  "AGM 239\tIrrigation System Installation and Maintenance - Credit by Exam": {
+    "unified_title": "Irrigation System Installation and Maintenance",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A2SI-1-001"
     ],
     "_notes": null
   },
@@ -200,6 +1209,18 @@
     "reviewed_by": null,
     "source_exhibit_ids": [
       "MAPSAS-AAH10-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Biology (score 3-5): Cal-GETC Area 5B and 5C": {
+    "unified_title": "AP Biology",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AB10-1-001"
     ],
     "_notes": null
   },
@@ -239,15 +1260,15 @@
     ],
     "_notes": "Judgment call: the 'BC/AB sub score' refers to the AB subscore reported on the BC exam, which demonstrates AB-level competency. Skill Rule 3 (don't split sub-results) applies — unified with AP Calculus AB. Confidence below 0.85 because this could plausibly also be modeled as a separate credential."
   },
-  "AP Statistics (score 3-5): Cal-GETC Area 2": {
-    "unified_title": "AP Statistics",
+  "AP Chemistry (score 3-5): Cal-GETC Area 5A and 5C": {
+    "unified_title": "AP Chemistry",
     "confidence_title": 0.98,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AS6-1-001"
+      "MAPSAS-AC7-1-001"
     ],
     "_notes": null
   },
@@ -260,6 +1281,66 @@
     "reviewed_by": null,
     "source_exhibit_ids": [
       "MAPSAS-ACLC-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Comparative Government & Politics (score 3-5): Cal-GETC Area 4": {
+    "unified_title": "AP Comparative Government & Politics",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ACGP-1-001"
+    ],
+    "_notes": null
+  },
+  "AP English Language/Composition (score 3-5): Cal-GETC Area 1A": {
+    "unified_title": "AP English Language & Composition",
+    "confidence_title": 0.96,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AEL4-1-001"
+    ],
+    "_notes": "Normalized 'Language/Composition' → 'Language & Composition' (College Board's canonical phrasing)."
+  },
+  "AP English Literature/Composition (score 3-5): Cal-GETC Area 1A or 3B": {
+    "unified_title": "AP English Literature & Composition",
+    "confidence_title": 0.96,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AEL5-1-001"
+    ],
+    "_notes": "Normalized 'Literature/Composition' → 'Literature & Composition' (College Board's canonical phrasing)."
+  },
+  "AP Environmental Science (score 3-5): Cal-GETC Area 5A and 5C": {
+    "unified_title": "AP Environmental Science",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AES9-1-001"
+    ],
+    "_notes": null
+  },
+  "AP European History (score 3-5): Cal-GETC Area 3B or 4": {
+    "unified_title": "AP European History",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AEH4-1-001"
     ],
     "_notes": null
   },
@@ -284,6 +1365,18 @@
     "reviewed_by": null,
     "source_exhibit_ids": [
       "MAPSAS-AGLC-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Human Geography (score 3-5): Cal-GETC Area 4": {
+    "unified_title": "AP Human Geography",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AHG5-1-001"
     ],
     "_notes": null
   },
@@ -323,6 +1416,90 @@
     ],
     "_notes": null
   },
+  "AP Macroeconomics (score 3-5): Cal-GETC Area 4": {
+    "unified_title": "AP Macroeconomics",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AM6-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Microeconomics (score 3-5): Cal-GETC Area 4": {
+    "unified_title": "AP Microeconomics",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AM9-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Physics 1: Algebra-Based (score 3-5): Cal-GETC Area 5A and 5C": {
+    "unified_title": "AP Physics 1",
+    "confidence_title": 0.96,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AP1A2-1-001"
+    ],
+    "_notes": "Skill Rule 1: stripped algebra-based/score/area qualifiers; College Board now markets the exam as 'AP Physics 1' alone (Algebra-Based is implicit)."
+  },
+  "AP Physics 2: Algebra-Based (score 3-5): Cal-GETC Area 5A and 5C": {
+    "unified_title": "AP Physics 2",
+    "confidence_title": 0.96,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AP2A3-1-001"
+    ],
+    "_notes": "Skill Rule 1: stripped algebra-based/score/area qualifiers (see AP Physics 1)."
+  },
+  "AP Physics C: Electricity/Magnetism (score 3-5): Cal-GETC Area 5A and 5C": {
+    "unified_title": "AP Physics C: Electricity and Magnetism",
+    "confidence_title": 0.95,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-APCE3-1-001"
+    ],
+    "_notes": "Normalized 'Electricity/Magnetism' → 'Electricity and Magnetism' (College Board's current canonical phrasing)."
+  },
+  "AP Physics C: Mechanics (score 3-5): Cal-GETC Area 5A and 5C": {
+    "unified_title": "AP Physics C: Mechanics",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-APCM1-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Psychology (score 3-5): Cal-GETC Area 4": {
+    "unified_title": "AP Psychology",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AP13-1-001"
+    ],
+    "_notes": null
+  },
   "AP Spanish Language & Culture (score 3-5): Cal-GETC Area 3B": {
     "unified_title": "AP Spanish Language & Culture",
     "confidence_title": 0.98,
@@ -347,29 +1524,89 @@
     ],
     "_notes": null
   },
-  "AP English Language/Composition (score 3-5): Cal-GETC Area 1A": {
-    "unified_title": "AP English Language & Composition",
-    "confidence_title": 0.96,
+  "AP Statistics (score 3-5): Cal-GETC Area 2": {
+    "unified_title": "AP Statistics",
+    "confidence_title": 0.98,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AEL4-1-001"
+      "MAPSAS-AS6-1-001"
     ],
-    "_notes": "Normalized 'Language/Composition' → 'Language & Composition' (College Board's canonical phrasing)."
+    "_notes": null
   },
-  "AP English Literature/Composition (score 3-5): Cal-GETC Area 1A or 3B": {
-    "unified_title": "AP English Literature & Composition",
-    "confidence_title": 0.96,
+  "AP U.S. Government & Politics (score 3-5): Cal-GETC Area 4": {
+    "unified_title": "AP U.S. Government & Politics",
+    "confidence_title": 0.97,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-AEL5-1-001"
+      "MAPSAS-AUGP-1-001"
     ],
-    "_notes": "Normalized 'Literature/Composition' → 'Literature & Composition' (College Board's canonical phrasing)."
+    "_notes": null
+  },
+  "AP U.S. History (score 3-5): Cal-GETC Area 3B or 4": {
+    "unified_title": "AP U.S. History",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AUH3-1-001"
+    ],
+    "_notes": null
+  },
+  "AP World History: Modern (score 3-5): Cal-GETC Area 3B or 4": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AWHM4-1-001"
+    ],
+    "_notes": null
+  },
+  "Credit By Exam San Diego City College": {
+    "unified_title": "Generic Credit by Exam — San Diego City College",
+    "confidence_title": 0.55,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "_notes": "Skill Rule 5: administrative bucket — San Diego City registers multiple CBE awards under one MAP ExhibitID. Not a single credential; flagged for review."
+  },
+  "Credit By Exam at Mesa": {
+    "unified_title": "Generic Credit by Exam — San Diego Mesa College",
+    "confidence_title": 0.5,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "_notes": "Skill Rule 5: administrative bucket. 'Mesa' interpreted as San Diego Mesa College (the only CCC named 'Mesa'). Confidence 0.50 because the abbreviation 'Mesa' is ambiguous on its face."
+  },
+  "Credit By Exam at Saddleback College": {
+    "unified_title": "Generic Credit by Exam — Saddleback College",
+    "confidence_title": 0.55,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "_notes": "Skill Rule 5: administrative bucket — Saddleback registers multiple CBE awards under one MAP ExhibitID. Not a single credential; flagged for review."
   },
   "IB Biology HL (score 5-7): Cal-GETC Area 5B": {
     "unified_title": "IB Biology HL",
@@ -395,39 +1632,27 @@
     ],
     "_notes": null
   },
-  "IB Physics HL (score 5-7): Cal-GETC Area 5A": {
-    "unified_title": "IB Physics HL",
+  "IB Economics HL (score 5-7): Cal-GETC Area 4": {
+    "unified_title": "IB Economics HL",
     "confidence_title": 0.97,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-IPH5-1-001"
+      "MAPSAS-IEH2-1-001"
     ],
     "_notes": null
   },
-  "IB Mathematics: Applications and Interpretation HL (score 5-7): Cal-GETC Area 2 (may not be at all UC)": {
-    "unified_title": "IB Mathematics: Applications and Interpretation HL",
-    "confidence_title": 0.93,
+  "IB Geography HL (score 5-7): Cal-GETC Area 4": {
+    "unified_title": "IB Geography HL",
+    "confidence_title": 0.97,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-IMAA1-1-001"
-    ],
-    "_notes": "Skill Rule 4: this is the post-2019 IB Maths AI course — distinct from IB Mathematics: Analysis and Approaches. Kept separate. UC-applicability caveat stripped from the unified title."
-  },
-  "IB Mathematics: Analysis and Approaches HL (score 5-7): Cal-GETC Area 2": {
-    "unified_title": "IB Mathematics: Analysis and Approaches HL",
-    "confidence_title": 0.95,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
-    "source_exhibit_ids": [
-      "MAPSAS-IMAA-1-001"
+      "MAPSAS-IGH1-1-001"
     ],
     "_notes": null
   },
@@ -443,27 +1668,87 @@
     ],
     "_notes": "Stripped the '(any region)' qualifier — the parenthetical clarifies that any IB History regional variant qualifies, but the credential identity is the same."
   },
-  "IB Geography HL (score 5-7): Cal-GETC Area 4": {
-    "unified_title": "IB Geography HL",
-    "confidence_title": 0.97,
+  "IB Language A: Language and Literature (any language) HL (score 5-7): Cal-GETC Area 3B": {
+    "unified_title": "IB Language A: Language and Literature",
+    "confidence_title": 0.85,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-IGH1-1-001"
+      "MAPSAS-ILAL7-1-001"
+    ],
+    "_notes": "Skill Rule 4: distinct IB DP course from Language A: Literature; the 'any language' (no exclusion) form is the broader articulation pathway."
+  },
+  "IB Language A: Language and Literature (any language, except English) HL (score 5-7): Cal-GETC Area 3B": {
+    "unified_title": "IB Language A: Language and Literature (non-English)",
+    "confidence_title": 0.82,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ILAL5-1-001"
+    ],
+    "_notes": "Skill Rule 4: paired with the all-language variant below — non-English flag preserved because articulation pathway differs."
+  },
+  "IB Language A: Literature (any language) HL (score 5-7): Cal-GETC Area 3B": {
+    "unified_title": "IB Language A: Literature",
+    "confidence_title": 0.85,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ILAL6-1-001"
+    ],
+    "_notes": "Skill Rule 4: 'Language A: Literature' is a distinct IB DP course from 'Language A: Language and Literature'. Kept separate from the '(non-English)' variant because the '(non-English)' wording flags a different articulation pathway."
+  },
+  "IB Language A: Literature (any language, except English) HL (score 5-7): Cal-GETC Area 3B": {
+    "unified_title": "IB Language A: Literature (non-English)",
+    "confidence_title": 0.82,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ILAL4-1-001"
+    ],
+    "_notes": "Skill Rule 4: IB offers Language A: Literature in many languages. The 'except English' variant is materially different from the English variant for articulation, so kept as its own unified title. Renamed parenthetical to '(non-English)' for brevity."
+  },
+  "IB Mathematics: Analysis and Approaches HL (score 5-7): Cal-GETC Area 2": {
+    "unified_title": "IB Mathematics: Analysis and Approaches HL",
+    "confidence_title": 0.95,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-IMAA-1-001"
     ],
     "_notes": null
   },
-  "IB Economics HL (score 5-7): Cal-GETC Area 4": {
-    "unified_title": "IB Economics HL",
+  "IB Mathematics: Applications and Interpretation HL (score 5-7): Cal-GETC Area 2 (may not be at all UC)": {
+    "unified_title": "IB Mathematics: Applications and Interpretation HL",
+    "confidence_title": 0.93,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-IMAA1-1-001"
+    ],
+    "_notes": "Skill Rule 4: this is the post-2019 IB Maths AI course — distinct from IB Mathematics: Analysis and Approaches. Kept separate. UC-applicability caveat stripped from the unified title."
+  },
+  "IB Physics HL (score 5-7): Cal-GETC Area 5A": {
+    "unified_title": "IB Physics HL",
     "confidence_title": 0.97,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [
-      "MAPSAS-IEH2-1-001"
+      "MAPSAS-IPH5-1-001"
     ],
     "_notes": null
   },
@@ -491,54 +1776,6 @@
     ],
     "_notes": null
   },
-  "IB Language A: Literature (any language, except English) HL (score 5-7): Cal-GETC Area 3B": {
-    "unified_title": "IB Language A: Literature (non-English)",
-    "confidence_title": 0.82,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
-    "source_exhibit_ids": [
-      "MAPSAS-ILAL4-1-001"
-    ],
-    "_notes": "Skill Rule 4: IB offers Language A: Literature in many languages. The 'except English' variant is materially different from the English variant for articulation, so kept as its own unified title. Renamed parenthetical to '(non-English)' for brevity."
-  },
-  "IB Language A: Literature (any language) HL (score 5-7): Cal-GETC Area 3B": {
-    "unified_title": "IB Language A: Literature",
-    "confidence_title": 0.85,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
-    "source_exhibit_ids": [
-      "MAPSAS-ILAL6-1-001"
-    ],
-    "_notes": "Skill Rule 4: 'Language A: Literature' is a distinct IB DP course from 'Language A: Language and Literature'. Kept separate from the '(non-English)' variant because the '(non-English)' wording flags a different articulation pathway."
-  },
-  "IB Language A: Language and Literature (any language, except English) HL (score 5-7): Cal-GETC Area 3B": {
-    "unified_title": "IB Language A: Language and Literature (non-English)",
-    "confidence_title": 0.82,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
-    "source_exhibit_ids": [
-      "MAPSAS-ILAL5-1-001"
-    ],
-    "_notes": "Skill Rule 4: paired with the all-language variant below — non-English flag preserved because articulation pathway differs."
-  },
-  "IB Language A: Language and Literature (any language) HL (score 5-7): Cal-GETC Area 3B": {
-    "unified_title": "IB Language A: Language and Literature",
-    "confidence_title": 0.85,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
-    "source_exhibit_ids": [
-      "MAPSAS-ILAL7-1-001"
-    ],
-    "_notes": "Skill Rule 4: distinct IB DP course from Language A: Literature; the 'any language' (no exclusion) form is the broader articulation pathway."
-  },
   "Peace Officer Standards and Training Basic Academy Certificate (POST) ": {
     "unified_title": "POST Basic Academy",
     "confidence_title": 0.97,
@@ -562,41 +1799,5 @@
       "MAPICA-SSFO-1-001"
     ],
     "_notes": "Expanded the 'SFT' acronym into the unified title per Skill Rule 1 (titles should read cleanly without context); issuer captured separately."
-  },
-  "Credit By Exam at Saddleback College": {
-    "unified_title": "Generic Credit by Exam — Saddleback College",
-    "confidence_title": 0.55,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
-    "source_exhibit_ids": [
-      "MAPCBES-CBEA2-1-001"
-    ],
-    "_notes": "Skill Rule 5: administrative bucket — Saddleback registers multiple CBE awards under one MAP ExhibitID. Not a single credential; flagged for review."
-  },
-  "Credit By Exam at Mesa": {
-    "unified_title": "Generic Credit by Exam — San Diego Mesa College",
-    "confidence_title": 0.5,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
-    "source_exhibit_ids": [
-      "MAPCBES-CBEA-1-001"
-    ],
-    "_notes": "Skill Rule 5: administrative bucket. 'Mesa' interpreted as San Diego Mesa College (the only CCC named 'Mesa'). Confidence 0.50 because the abbreviation 'Mesa' is ambiguous on its face."
-  },
-  "Credit By Exam San Diego City College": {
-    "unified_title": "Generic Credit by Exam — San Diego City College",
-    "confidence_title": 0.55,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
-    "source_exhibit_ids": [
-      "MAPCBES-CBES-1-001"
-    ],
-    "_notes": "Skill Rule 5: administrative bucket — San Diego City registers multiple CBE awards under one MAP ExhibitID. Not a single credential; flagged for review."
   }
 }
