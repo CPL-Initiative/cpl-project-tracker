@@ -292,9 +292,12 @@ flagged in `_notes`.
 
 **KB files (see §5 layout):**
 - `common_courses.json` — catalog: `course_id` (CCN-ID/C-ID/M-ID) →
-  `{common_title, id_system, ccn_id, c_id, subject, discipline,
-  discipline_provisional, typical_units, confidence,
-  source_college_count, …}`.
+  `{common_title, id_system, ccn_id, c_id, cross_listing_group, subject,
+  discipline, discipline_provisional, typical_units, confidence,
+  source_college_count, …}`. `cross_listing_group` (`"XL-NNNN"` or null)
+  links the discipline mirrors of a **cross-listed** course (same course
+  under two subjects, e.g. `ARCH 50` / `DR 50`) so an articulation to one
+  mirror applies to the whole group.
 - `course_crosswalk.json` — mapping: local college course → `course_id`
   (many-to-one), keyed by `"<college> :: <course_code> :: <local_title>"`.
 - `reference/` — read-only authorities: `cid_descriptors.json`,
