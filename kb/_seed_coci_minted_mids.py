@@ -1,12 +1,17 @@
 """
 One-shot generator for the Phase B M-ID consolidation seed (STAGING). Emits
-TWO files:
-  kb/coci_minted_courses.json      — catalog: one identity record per M-ID
+THREE files:
+  kb/coci_minted_courses.json      — catalog: one identity record per corroborated M-ID
   kb/coci_minted_memberships.json  — provenance/join: M-ID -> [{subject, course_number}]
+  kb/coci_minted_singletons.json   — uncorroborated single-source M-IDs (own file)
 
-The split keeps the (large) per-college membership lists out of the catalog so
-git revisions of the reviewable identity layer stay small. The memberships file
-is the join table the later articulation phase resolves against MAP data.
+The catalog/memberships split keeps the (large) per-college membership lists out
+of the catalog so git revisions of the reviewable identity layer stay small. The
+memberships file is the join table the later articulation phase resolves against
+MAP data. Singletons live in their own file because they are bulky and
+low-confidence; descriptions are omitted there (volume) and their single member
+is embedded (1:1). M-ID numbers continue per-token across corroborated then
+singleton minting, so the two never collide.
 
 WHAT THIS IS
 Reads the statewide MAP/COCI course list and consolidates "like courses"
@@ -71,6 +76,14 @@ REF = os.path.join(HERE, "reference")
 # membership lists out of the catalog keeps git revisions of the catalog small.
 OUT_CATALOG = os.path.join(HERE, "coci_minted_courses.json")
 OUT_MEMBERS = os.path.join(HERE, "coci_minted_memberships.json")
+# Singletons: titles that occur exactly once (uncorroborated). Each still gets an
+# M-ID so a future like-course / articulation can resolve to it. Kept in their own
+# file because they are bulky and low-confidence; descriptions are intentionally
+# omitted (60k+ rows) to keep the file from ballooning — re-derivable from source
+# on the (subject, course_number) join key. Membership is 1:1, so the single
+# member is embedded rather than split into a separate index.
+OUT_SINGLETONS = os.path.join(HERE, "coci_minted_singletons.json")
+SINGLETON_CONF = 0.5  # uniformly low: single-source, uncorroborated (README rubric 0.40-0.59)
 
 GENERATED_AT = "2026-05-20"
 GENERATED_BY = "claude-opus-4-7 (Phase B M-ID consolidation draft)"
@@ -283,6 +296,30 @@ def main():
             {"subject": m[0], "course_number": m[1]} for m in sorted(members)
         ]
 
+    # Singletons: normalized titles that occur exactly once. Mint an M-ID for each,
+    # continuing the SAME per-token numbering above the corroborated M-IDs so numbers
+    # never collide. The single member is embedded (1:1 — no separate index needed).
+    singleton_titles = {k: v for k, v in by_title.items() if len(v) == 1}
+    singletons = {}
+    for nt in sorted(singleton_titles):
+        (subject, num, title, desc) = singleton_titles[nt][0]
+        subj_token = re.sub(r"\s+", "", subject) or "MISC"
+        next_num[subj_token] = next_num.get(subj_token, 98) + 2
+        course_id = f"M-ID {subj_token} {next_num[subj_token]}"
+        max_num_by_token[subj_token] = next_num[subj_token]
+
+        disc = DISCIPLINE_MAP.get(subj_token) or DISCIPLINE_MAP.get(subject)
+        # Lean record: ONLY the per-row variable fields. Every constant (id_system,
+        # confidence 0.5, corroboration 1, null description/credit_status, provenance,
+        # the shared note, etc.) lives once in the file's _record_defaults header —
+        # otherwise 57k repetitions balloon the file. (subject, course_number) is the
+        # member local course and the articulation join key. discipline is omitted
+        # when unmapped (null).
+        rec = {"common_title": title, "subject": subject, "course_number": num}
+        if disc is not None:
+            rec["discipline"] = disc
+        singletons[course_id] = rec
+
     n_high_conf = sum(1 for v in courses.values() if v["confidence"] >= 0.85)
     n_flagged = sum(1 for v in courses.values() if v["_notes"])
     n_members_total = sum(len(v) for v in memberships.values())
@@ -292,16 +329,18 @@ def main():
         "_status": "STAGING — not merged into curated common_courses.json/course_crosswalk.json.",
         "_method": ("Conservative first cut: exact (case/punctuation-normalized) title match; "
                     "corroborated clusters only (>=%d like courses); generic/admin and "
-                    "code-only titles excluded; representative (modal) title/description; "
-                    "singletons deferred." % MIN_MEMBERS),
+                    "code-only titles excluded; representative (modal) title/description. "
+                    "Singletons (uncorroborated single-source courses) are minted "
+                    "separately in coci_minted_singletons.json." % MIN_MEMBERS),
         "_follow_ons": [
             "variant-merging (fuzzy/synonym titles + subject-code canonicalization)",
             "title/description synthesis (vs representative member)",
-            "singleton minting (confidence-graded)",
             "discipline completion for unmapped subjects",
+            "credit-status join (credit/noncredit/noncredit-enhanced) from forthcoming MAP table",
             "merge into curated common_courses.json + crosswalk MAP articulations (with college)",
         ],
         "_memberships_file": "coci_minted_memberships.json",
+        "_singletons_file": "coci_minted_singletons.json",
         "_generated_by": "kb/_seed_coci_minted_mids.py",
         "_generated_at": GENERATED_AT,
         "count": len(courses),
@@ -325,7 +364,53 @@ def main():
         "memberships": dict(sorted(memberships.items())),
     }
 
-    for path, payload in ((OUT_CATALOG, catalog), (OUT_MEMBERS, members_out)):
+    n_singleton_no_disc = sum(1 for v in singletons.values() if "discipline" not in v)
+    singletons_out = {
+        "_source": SOURCE_DESC,
+        "_status": "STAGING — uncorroborated single-source M-IDs; sibling of coci_minted_courses.json.",
+        "_method": ("Each normalized title occurring exactly once (after the same generic/admin "
+                    "and code-only exclusions as the corroborated catalog) is minted as its own "
+                    "M-ID. Confidence is uniformly low (%.2f) — single-source, uncorroborated. "
+                    "Descriptions omitted by design (volume); re-derivable from source on the "
+                    "(subject, course_number) join key." % SINGLETON_CONF),
+        "_record_schema": ("Each record carries ONLY variable fields: common_title, subject, "
+                           "course_number, and discipline (omitted when unmapped/null). All "
+                           "constant fields are in _record_defaults below — apply them to every "
+                           "record to expand to the full catalog schema. (subject, course_number) "
+                           "is the member local course and the articulation join key."),
+        "_record_defaults": {
+            "id_system": "M-ID",
+            "ccn_id": None,
+            "c_id": None,
+            "description": None,
+            "description_source": "deferred — single-source; re-derive from source on (subject, course_number)",
+            "discipline": None,
+            "discipline_provisional": "= record.subject",
+            "credit_status": None,
+            "typical_units": None,
+            "confidence": SINGLETON_CONF,
+            "corroboration_members": 1,
+            "subject_spread": 1,
+            "source_college_count": 1,
+            "classified_at": GENERATED_AT,
+            "classified_by": GENERATED_BY,
+            "reviewed_at": None,
+            "reviewed_by": None,
+            "_note": ("single-source (uncorroborated); minted to receive future like-course "
+                      "matches. credit_status to be joined from the forthcoming MAP table "
+                      "(credit / noncredit / noncredit enhanced) on (subject, course_number); "
+                      "singletons are expected to skew noncredit."),
+        },
+        "_catalog_file": "coci_minted_courses.json",
+        "_generated_by": "kb/_seed_coci_minted_mids.py",
+        "_generated_at": GENERATED_AT,
+        "count": len(singletons),
+        "count_unmapped_discipline": n_singleton_no_disc,
+        "courses": dict(sorted(singletons.items())),
+    }
+
+    for path, payload in ((OUT_CATALOG, catalog), (OUT_MEMBERS, members_out),
+                          (OUT_SINGLETONS, singletons_out)):
         with open(path, "w", encoding="utf-8") as f:
             json.dump(payload, f, indent=2, ensure_ascii=False)
             f.write("\n")
@@ -335,11 +420,13 @@ def main():
 
     print(f"wrote {OUT_CATALOG}")
     print(f"wrote {OUT_MEMBERS}")
+    print(f"wrote {OUT_SINGLETONS}")
     print(f"  source rows w/o C-ID/CCN: {n_rows}")
     print(f"  excluded — generic shells: {excluded_generic}, code-only titles: {excluded_code}")
-    print(f"  minted M-IDs: {len(courses)} (high-confidence >=0.85: {n_high_conf}, flagged: {n_flagged})")
-    print(f"  member courses consolidated: {n_members_total}")
-    print(f"  highest M-ID number per token (top 8): {top_tokens}")
+    print(f"  corroborated M-IDs: {len(courses)} (high-confidence >=0.85: {n_high_conf}, flagged: {n_flagged})")
+    print(f"  corroborated member courses: {n_members_total}")
+    print(f"  singleton M-IDs: {len(singletons)} (unmapped discipline: {n_singleton_no_disc})")
+    print(f"  highest M-ID number per token (incl. singletons, top 8): {top_tokens}")
     print(f"  tokens overflowing 6 digits (>=100000): {overflow or 'none'}")
 
 
