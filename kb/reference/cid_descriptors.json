@@ -1,0 +1,2977 @@
+{
+  "_source": "CID_approved_descriptors_3.csv (CCCCO, retrieved 2026-05-20)",
+  "_note": "Official C-ID approved course descriptors. descriptor = discipline ID + course number.",
+  "count": 495,
+  "descriptors": [
+    {
+      "descriptor": "ACCT 110",
+      "title": "Financial Accounting",
+      "approval_date": "6/21/2012",
+      "expiration_date": "6/21/2017"
+    },
+    {
+      "descriptor": "ACCT 120",
+      "title": "Managerial Accounting",
+      "approval_date": "6/21/2012",
+      "expiration_date": "6/21/2017"
+    },
+    {
+      "descriptor": "ADS 110 X",
+      "title": "Introduction to Addiction Studies",
+      "approval_date": "1/15/2019",
+      "expiration_date": "1/15/2024"
+    },
+    {
+      "descriptor": "ADS 120 X",
+      "title": "Basic Counseling Skills",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "ADS 130 X",
+      "title": "Group Process and Group Leadership",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "ADS 140 X",
+      "title": "Pharmacology of Alcohol and Other Drugs",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "ADS 150 X",
+      "title": "Prevention, Intervention, and Recovery",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "ADS 160 X",
+      "title": "Law and Ethics",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "ADS 170 X",
+      "title": "Case Management",
+      "approval_date": "6/6/2019",
+      "expiration_date": "6/6/2024"
+    },
+    {
+      "descriptor": "ADS 180 X",
+      "title": "Family and Addiction",
+      "approval_date": "6/6/2019",
+      "expiration_date": "6/6/2024"
+    },
+    {
+      "descriptor": "ADS 190 X",
+      "title": "Co-occurring Disorders",
+      "approval_date": "6/6/2019",
+      "expiration_date": "6/6/2024"
+    },
+    {
+      "descriptor": "ADS 195 X",
+      "title": "Diverse Populations",
+      "approval_date": "6/6/2019",
+      "expiration_date": "6/6/2024"
+    },
+    {
+      "descriptor": "ADS 200 X",
+      "title": "Field Work/Internship in Addiction Studies",
+      "approval_date": "6/6/2019",
+      "expiration_date": "6/6/2024"
+    },
+    {
+      "descriptor": "ADS 210 X",
+      "title": "Addiction Studies Internship Seminar",
+      "approval_date": "6/6/2019",
+      "expiration_date": "6/6/2024"
+    },
+    {
+      "descriptor": "AFS 100",
+      "title": "Introduction to African American Studies",
+      "approval_date": "9/2/2025",
+      "expiration_date": "9/2/2030"
+    },
+    {
+      "descriptor": "AFS 140",
+      "title": "African American History of the U.S. to Reconstruction",
+      "approval_date": "9/2/2025",
+      "expiration_date": "9/2/2030"
+    },
+    {
+      "descriptor": "AFS 141",
+      "title": "African American History of the U.S. since Reconstruction",
+      "approval_date": "9/3/2025",
+      "expiration_date": "9/3/2030"
+    },
+    {
+      "descriptor": "AG-AB 104",
+      "title": "Introduction to Agriculture Business",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-AB 108 108",
+      "title": "Agricultural Computer Applications",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-AB 112",
+      "title": "Agricultural Sales and Communication",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-AB 124",
+      "title": "Agriculture Economics",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-AB 128",
+      "title": "Agricultural Accounting",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-AS 104",
+      "title": "Introduction to Animal Science",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-AS 108 L",
+      "title": "Beef Cattle Science",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-AS 112 L",
+      "title": "Dairy Cattle Industry / Dairy Cattle Science",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-AS 116 L",
+      "title": "Equine Science",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-AS 120 L",
+      "title": "Poultry Science",
+      "approval_date": "8/16/2017",
+      "expiration_date": "8/16/2022"
+    },
+    {
+      "descriptor": "AG-AS 124 L",
+      "title": "Small Ruminant Science (formerly Sheep Science)",
+      "approval_date": "6/29/2017",
+      "expiration_date": "6/29/2022"
+    },
+    {
+      "descriptor": "AG-AS 128 128 L",
+      "title": "Swine Science",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-AS 132 L",
+      "title": "Livestock Feeding and Nutrition",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-AS 136 L",
+      "title": "Animal Health and Sanitation",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-EH 104 L X",
+      "title": "Introduction to Environmental Horticulture - Lab",
+      "approval_date": "1/14/2019",
+      "expiration_date": "1/14/2024"
+    },
+    {
+      "descriptor": "AG-EH 104 X",
+      "title": "Introduction to Environmental Horticulture",
+      "approval_date": "1/14/2019",
+      "expiration_date": "1/14/2024"
+    },
+    {
+      "descriptor": "AG-EH 108 108 L",
+      "title": "Plant Materials and Usage I",
+      "approval_date": "12/20/2018",
+      "expiration_date": "12/20/2023"
+    },
+    {
+      "descriptor": "AG-EH 112 112 L",
+      "title": "Plant Materials and Usage II",
+      "approval_date": "1/10/2019",
+      "expiration_date": "1/10/2024"
+    },
+    {
+      "descriptor": "AG-EH 116 L",
+      "title": "Plant Propagation / Production",
+      "approval_date": "12/20/2018",
+      "expiration_date": "12/20/2023"
+    },
+    {
+      "descriptor": "AG-EH 120 X",
+      "title": "Integrated Pest Management in Environmental Horticulture",
+      "approval_date": "1/14/2019",
+      "expiration_date": "1/14/2024"
+    },
+    {
+      "descriptor": "AG-EH 128 X",
+      "title": "Landscape Maintenance",
+      "approval_date": "1/14/2019",
+      "expiration_date": "1/14/2024"
+    },
+    {
+      "descriptor": "AG-EH 130 000 X",
+      "title": "Introduction to Tree Care and Urban Forestry",
+      "approval_date": "1/14/2019",
+      "expiration_date": "1/14/2024"
+    },
+    {
+      "descriptor": "AG-EH 132 X",
+      "title": "Landscape Construction and Installation",
+      "approval_date": "1/14/2019",
+      "expiration_date": "1/14/2024"
+    },
+    {
+      "descriptor": "AG-EH 144 X",
+      "title": "Landscape Irrigation",
+      "approval_date": "1/14/2019",
+      "expiration_date": "1/14/2024"
+    },
+    {
+      "descriptor": "AG-MA 108 L",
+      "title": "Tractor Operation",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-PS 104 104",
+      "title": "Introduction to Plant Science",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-PS 106 106 L",
+      "title": "Introduction to Plant Science (with Laboratory)",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AG-PS 128 128 L",
+      "title": "Introduction to Soil Science",
+      "approval_date": "5/15/2014",
+      "expiration_date": "5/15/2019"
+    },
+    {
+      "descriptor": "AINA 110",
+      "title": "Introduction to American Indian/Native American Studies",
+      "approval_date": "8/5/2025",
+      "expiration_date": "8/5/2030"
+    },
+    {
+      "descriptor": "AINA 120",
+      "title": "Federal Indian Law and Policy",
+      "approval_date": "9/2/2025",
+      "expiration_date": "9/2/2030"
+    },
+    {
+      "descriptor": "AJ 110",
+      "title": "Introduction to Criminal Justice",
+      "approval_date": "1/8/2011",
+      "expiration_date": "1/8/2016"
+    },
+    {
+      "descriptor": "AJ 120",
+      "title": "Concepts of Criminal Law",
+      "approval_date": "4/29/2011",
+      "expiration_date": "4/29/2016"
+    },
+    {
+      "descriptor": "AJ 122",
+      "title": "Criminal Court Process",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "AJ 124",
+      "title": "Legal Aspects of Evidence",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "AJ 140",
+      "title": "Criminal Investigation",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "AJ 150",
+      "title": "Introduction to Forensics",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "AJ 160",
+      "title": "Community and the Justice System",
+      "approval_date": "10/3/2018",
+      "expiration_date": "10/3/2023"
+    },
+    {
+      "descriptor": "AJ 200",
+      "title": "Introduction to Corrections",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "AJ 220",
+      "title": "Juvenile Procedures",
+      "approval_date": "3/21/2011",
+      "expiration_date": "3/21/2016"
+    },
+    {
+      "descriptor": "ALTF 100 X",
+      "title": "Introduction to Hybrid and Electric Vehicle Technology",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "ANTH 110",
+      "title": "Introduction to Biological Anthropology",
+      "approval_date": "6/15/2012",
+      "expiration_date": "6/15/2017"
+    },
+    {
+      "descriptor": "ANTH 115 L",
+      "title": "Biological Anthropology Laboratory",
+      "approval_date": "7/12/2012",
+      "expiration_date": "7/12/2017"
+    },
+    {
+      "descriptor": "ANTH 120",
+      "title": "Introduction to Cultural Anthropology",
+      "approval_date": "6/20/2012",
+      "expiration_date": "6/20/2017"
+    },
+    {
+      "descriptor": "ANTH 130",
+      "title": "Introduction to Linguistic Anthropology",
+      "approval_date": "12/4/2012",
+      "expiration_date": "12/4/2017"
+    },
+    {
+      "descriptor": "ANTH 150",
+      "title": "Introduction to Archaeology",
+      "approval_date": "6/15/2012",
+      "expiration_date": "6/15/2017"
+    },
+    {
+      "descriptor": "ARTH 100",
+      "title": "Understanding Art",
+      "approval_date": "3/8/2023",
+      "expiration_date": "3/8/2028"
+    },
+    {
+      "descriptor": "ARTH 110",
+      "title": "Survey of Western Art from Prehistory through the Middle Ages",
+      "approval_date": "6/3/2012",
+      "expiration_date": "6/3/2017"
+    },
+    {
+      "descriptor": "ARTH 120",
+      "title": "Survey of Western Art from Renaissance to Contemporary",
+      "approval_date": "6/3/2012",
+      "expiration_date": "6/3/2017"
+    },
+    {
+      "descriptor": "ARTH 130",
+      "title": "Survey of Asian Art",
+      "approval_date": "3/16/2012",
+      "expiration_date": "3/16/2017"
+    },
+    {
+      "descriptor": "ARTH 140",
+      "title": "Arts of Africa, Oceania, and Indigenous North America",
+      "approval_date": "6/1/2012",
+      "expiration_date": "6/1/2017"
+    },
+    {
+      "descriptor": "ARTH 145",
+      "title": "Art of the Ancient Americas",
+      "approval_date": "2/7/2023",
+      "expiration_date": "2/7/2028"
+    },
+    {
+      "descriptor": "ARTH 150",
+      "title": "Survey of Modern Art",
+      "approval_date": "3/16/2012",
+      "expiration_date": "3/16/2017"
+    },
+    {
+      "descriptor": "ARTS 100",
+      "title": "2-D Foundations",
+      "approval_date": "6/1/2011",
+      "expiration_date": "6/1/2016"
+    },
+    {
+      "descriptor": "ARTS 101",
+      "title": "3-D Foundations",
+      "approval_date": "6/1/2011",
+      "expiration_date": "6/1/2016"
+    },
+    {
+      "descriptor": "ARTS 110",
+      "title": "Fundamentals of Drawing",
+      "approval_date": "6/1/2011",
+      "expiration_date": "6/1/2016"
+    },
+    {
+      "descriptor": "ARTS 200",
+      "title": "Figure Drawing",
+      "approval_date": "6/1/2011",
+      "expiration_date": "6/1/2016"
+    },
+    {
+      "descriptor": "ARTS 205",
+      "title": "Intermediate Drawing",
+      "approval_date": "6/1/2011",
+      "expiration_date": "6/1/2016"
+    },
+    {
+      "descriptor": "ARTS 210",
+      "title": "Introduction to Painting",
+      "approval_date": "6/1/2011",
+      "expiration_date": "6/1/2016"
+    },
+    {
+      "descriptor": "ARTS 220",
+      "title": "Introduction to Printmaking (Archived - for reference only)",
+      "approval_date": "5/23/2018",
+      "expiration_date": "5/23/2023"
+    },
+    {
+      "descriptor": "ARTS 230",
+      "title": "Introduction to Ceramics (Archived - for reference only)",
+      "approval_date": "4/2/2018",
+      "expiration_date": "4/2/2023"
+    },
+    {
+      "descriptor": "ARTS 240",
+      "title": "Sculpture (Archived - for reference only)",
+      "approval_date": "4/2/2018",
+      "expiration_date": "4/2/2023"
+    },
+    {
+      "descriptor": "ARTS 250",
+      "title": "Introduction to Digital Art",
+      "approval_date": "6/1/2011",
+      "expiration_date": "6/1/2016"
+    },
+    {
+      "descriptor": "ARTS 260",
+      "title": "Introduction to Photography (Archived - for reference only)",
+      "approval_date": "4/2/2018",
+      "expiration_date": "4/2/2023"
+    },
+    {
+      "descriptor": "ARTS 270",
+      "title": "Color Theory",
+      "approval_date": "6/1/2011",
+      "expiration_date": "6/1/2016"
+    },
+    {
+      "descriptor": "ARTS 280",
+      "title": "Introduction to Crafts (Archived - for reference only)",
+      "approval_date": "4/2/2018",
+      "expiration_date": "4/2/2023"
+    },
+    {
+      "descriptor": "ARTS 281",
+      "title": "Introduction to Jewelry and Metalsmithing (Archived - for reference only)",
+      "approval_date": "5/23/2018",
+      "expiration_date": "5/23/2023"
+    },
+    {
+      "descriptor": "ARTS 282",
+      "title": "Introduction to Fiber Arts (Archived - for reference only)",
+      "approval_date": "4/2/2018",
+      "expiration_date": "4/2/2023"
+    },
+    {
+      "descriptor": "ASAM 100",
+      "title": "Introduction to Asian American Studies",
+      "approval_date": "9/3/2025",
+      "expiration_date": "9/3/2030"
+    },
+    {
+      "descriptor": "ASAM 110",
+      "title": "Asian American Culture: Including Asian American Literature",
+      "approval_date": "9/3/2025",
+      "expiration_date": "9/3/2030"
+    },
+    {
+      "descriptor": "ASAM 120",
+      "title": "Asian American History",
+      "approval_date": "9/3/2025",
+      "expiration_date": "9/3/2030"
+    },
+    {
+      "descriptor": "ASAM 130",
+      "title": "Contemporary Issues: Including Asian Americans & American Ideals and Institutions",
+      "approval_date": "9/3/2025",
+      "expiration_date": "9/3/2030"
+    },
+    {
+      "descriptor": "AUTO 110 X",
+      "title": "Introduction to Automotive Technology",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "AUTO 120 X",
+      "title": "Automatic Transmissions and Transaxles",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "AUTO 130 X",
+      "title": "Automotive Manual Transmissions and Drive Train Systems",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "AUTO 140 X",
+      "title": "Automotive Suspension and Steering Systems",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "AUTO 150 X",
+      "title": "Automotive Braking Systems",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "AUTO 170 X",
+      "title": "Automotive Heating, Ventilation and Air Conditioning",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "BIOL 110 B",
+      "title": "Human Anatomy with Lab",
+      "approval_date": "4/3/2018",
+      "expiration_date": "4/3/2023"
+    },
+    {
+      "descriptor": "BIOL 115 S",
+      "title": "Human Anatomy and Physiology with Lab",
+      "approval_date": "12/11/2018",
+      "expiration_date": "12/11/2023"
+    },
+    {
+      "descriptor": "BIOL 120 B",
+      "title": "Human Physiology with Lab",
+      "approval_date": "8/6/2012",
+      "expiration_date": "8/6/2017"
+    },
+    {
+      "descriptor": "BIOL 130 S",
+      "title": "Organismal Biology, Ecology and Evolution",
+      "approval_date": "12/15/2012",
+      "expiration_date": "12/15/2017"
+    },
+    {
+      "descriptor": "BIOL 135 S",
+      "title": "Biology Sequence for Majors",
+      "approval_date": "10/17/2014",
+      "expiration_date": "10/17/2019"
+    },
+    {
+      "descriptor": "BIOL 140",
+      "title": "Organismal Biology",
+      "approval_date": "1/18/2012",
+      "expiration_date": "1/18/2017"
+    },
+    {
+      "descriptor": "BIOL 150",
+      "title": "Zoology / Animal Diversity and Evolution",
+      "approval_date": "10/17/2014",
+      "expiration_date": "10/17/2019"
+    },
+    {
+      "descriptor": "BIOL 155",
+      "title": "Botany / Plant Diversity and Ecology",
+      "approval_date": "10/17/2014",
+      "expiration_date": "10/17/2019"
+    },
+    {
+      "descriptor": "BIOL 190",
+      "title": "Cell and Molecular Biology",
+      "approval_date": "1/29/2018",
+      "expiration_date": "1/29/2023"
+    },
+    {
+      "descriptor": "BIOT 101 B X",
+      "title": "Introductory Biotechnology with Laboratory",
+      "approval_date": "12/18/2017",
+      "expiration_date": "12/18/2022"
+    },
+    {
+      "descriptor": "BIOT 101 X",
+      "title": "Introductory Biotechnology",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "BIOT 150 X",
+      "title": "Applied Biotechnology with Laboratory",
+      "approval_date": "12/18/2017",
+      "expiration_date": "12/18/2022"
+    },
+    {
+      "descriptor": "BIOT 210 X",
+      "title": "Quality and Regulatory Compliance",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "BIOT 220 X",
+      "title": "Methods in Protein Purification",
+      "approval_date": "12/18/2017",
+      "expiration_date": "12/18/2022"
+    },
+    {
+      "descriptor": "BIOT 230 X",
+      "title": "Methods in Eukaryotic Cell Culture Techniques",
+      "approval_date": "12/18/2017",
+      "expiration_date": "12/18/2022"
+    },
+    {
+      "descriptor": "BSOT 100 X",
+      "title": "Introduction to Business Information Worker",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 105 X",
+      "title": "Computer Literacy",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 106 X",
+      "title": "MS Outlook",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 110 X",
+      "title": "Keyboarding I",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 111 X",
+      "title": "MS Word I",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 112 X",
+      "title": "MS Excel I",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 113 X",
+      "title": "MS Access I",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 114 X",
+      "title": "MS PowerPoint I",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 115 X",
+      "title": "Practical Math for Business and Consumers",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 120 X",
+      "title": "Keyboarding II",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 121 X",
+      "title": "MS Word II",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 122 X",
+      "title": "MS Excel II",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 123 X",
+      "title": "MS Access II",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 124 X",
+      "title": "MS PowerPoint II",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 125 X",
+      "title": "Adobe Acrobat",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 126 X",
+      "title": "Workplace Communication",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 127 X",
+      "title": "Introduction to Accounting",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 130 X",
+      "title": "Keyboarding III",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 131 X",
+      "title": "MS Word III",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 132 X",
+      "title": "MS Excel III",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 133 X",
+      "title": "MS Access III",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BSOT 150 X",
+      "title": "Business Information Professional",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "BUS 110",
+      "title": "Introduction to Business",
+      "approval_date": "12/12/2011",
+      "expiration_date": "12/12/2016"
+    },
+    {
+      "descriptor": "BUS 115",
+      "title": "Business Communication",
+      "approval_date": "12/12/2011",
+      "expiration_date": "12/12/2016"
+    },
+    {
+      "descriptor": "BUS 120",
+      "title": "Legal Environment of Business",
+      "approval_date": "12/12/2011",
+      "expiration_date": "12/12/2016"
+    },
+    {
+      "descriptor": "BUS 125",
+      "title": "Business Law",
+      "approval_date": "12/12/2011",
+      "expiration_date": "12/12/2016"
+    },
+    {
+      "descriptor": "BUS 140",
+      "title": "Business Information Systems, Computer Information Systems",
+      "approval_date": "2/5/2012",
+      "expiration_date": "2/5/2017"
+    },
+    {
+      "descriptor": "CDEV 100",
+      "title": "Child Growth and Development",
+      "approval_date": "4/27/2011",
+      "expiration_date": "4/27/2016"
+    },
+    {
+      "descriptor": "CDEV 110",
+      "title": "Child Family and Community",
+      "approval_date": "4/27/2011",
+      "expiration_date": "4/27/2016"
+    },
+    {
+      "descriptor": "CHEM 100",
+      "title": "Chemistry and Society",
+      "approval_date": "3/30/2011",
+      "expiration_date": "3/30/2016"
+    },
+    {
+      "descriptor": "CHEM 101",
+      "title": "Introduction to Chemistry",
+      "approval_date": "8/7/2013",
+      "expiration_date": "8/7/2018"
+    },
+    {
+      "descriptor": "CHEM 102",
+      "title": "Introduction to Organic and Biochemistry",
+      "approval_date": "8/7/2013",
+      "expiration_date": "8/7/2018"
+    },
+    {
+      "descriptor": "CHEM 105",
+      "title": "Environmental Chemistry",
+      "approval_date": "3/30/2011",
+      "expiration_date": "3/30/2016"
+    },
+    {
+      "descriptor": "CHEM 106 B",
+      "title": "Environmental Chemistry, with Lab",
+      "approval_date": "3/30/2011",
+      "expiration_date": "3/30/2016"
+    },
+    {
+      "descriptor": "CHEM 110",
+      "title": "General Chemistry for Science Majors I, with Lab",
+      "approval_date": "12/8/2012",
+      "expiration_date": "12/8/2017"
+    },
+    {
+      "descriptor": "CHEM 120 S",
+      "title": "General Chemistry for Science Majors Sequence A",
+      "approval_date": "12/8/2012",
+      "expiration_date": "12/8/2017"
+    },
+    {
+      "descriptor": "CHEM 140",
+      "title": "Survey of Chemistry and Physics",
+      "approval_date": "12/21/2012",
+      "expiration_date": "12/21/2017"
+    },
+    {
+      "descriptor": "CHEM 150",
+      "title": "Organic Chemistry for Science Majors I, with Lab",
+      "approval_date": "6/1/2011",
+      "expiration_date": "6/1/2016"
+    },
+    {
+      "descriptor": "CHEM 160 S",
+      "title": "Organic Chemistry for Science Majors Sequence A, with Lab",
+      "approval_date": "6/1/2011",
+      "expiration_date": "6/1/2016"
+    },
+    {
+      "descriptor": "CHS 101",
+      "title": "Introduction to Chicana/o Studies",
+      "approval_date": "6/5/2024",
+      "expiration_date": "6/5/2029"
+    },
+    {
+      "descriptor": "CHS 102",
+      "title": "Chicana/Latina Feminism in Contemporary Society",
+      "approval_date": "6/5/2024",
+      "expiration_date": "6/5/2029"
+    },
+    {
+      "descriptor": "CHS 103",
+      "title": "Chicana/o History: 1848-Present, A Survey",
+      "approval_date": "6/5/2024",
+      "expiration_date": "6/5/2029"
+    },
+    {
+      "descriptor": "CMUS 100 X",
+      "title": "Introduction to Music Technology",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "CMUS 110 X",
+      "title": "Electronic Music I",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "CMUS 120 X",
+      "title": "Live Sound I",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "CMUS 130 X",
+      "title": "Recording I",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "CMUS 140 X",
+      "title": "Music Business",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "CMUS 150 X",
+      "title": "Songwriting",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "COMM 110",
+      "title": "Public Speaking",
+      "approval_date": "12/20/2010",
+      "expiration_date": "12/20/2015"
+    },
+    {
+      "descriptor": "COMM 115",
+      "title": "Survey of Human Communication",
+      "approval_date": "6/10/2015",
+      "expiration_date": "6/10/2020"
+    },
+    {
+      "descriptor": "COMM 120",
+      "title": "Argumentation or Argumentation and Debate",
+      "approval_date": "3/22/2010",
+      "expiration_date": "3/22/2015"
+    },
+    {
+      "descriptor": "COMM 130",
+      "title": "Interpersonal Communication",
+      "approval_date": "4/22/2010",
+      "expiration_date": "4/22/2015"
+    },
+    {
+      "descriptor": "COMM 140",
+      "title": "Small Group Communication",
+      "approval_date": "12/20/2010",
+      "expiration_date": "12/20/2015"
+    },
+    {
+      "descriptor": "COMM 150",
+      "title": "Intercultural Communication",
+      "approval_date": "4/22/2010",
+      "expiration_date": "4/22/2015"
+    },
+    {
+      "descriptor": "COMM 160 B",
+      "title": "Forensics (Speech & Debate)",
+      "approval_date": "4/22/2010",
+      "expiration_date": "4/22/2015"
+    },
+    {
+      "descriptor": "COMM 170",
+      "title": "Oral Interpretation of Literature",
+      "approval_date": "4/22/2010",
+      "expiration_date": "4/22/2015"
+    },
+    {
+      "descriptor": "COMM 180",
+      "title": "Introduction to Communication Studies or Introduction to Communication Theory",
+      "approval_date": "4/22/2010",
+      "expiration_date": "4/22/2015"
+    },
+    {
+      "descriptor": "COMM 190",
+      "title": "Introduction to Persuasion",
+      "approval_date": "12/14/2012",
+      "expiration_date": "12/14/2017"
+    },
+    {
+      "descriptor": "COMP 112",
+      "title": "Introduction to Programming Concepts and Methodologies",
+      "approval_date": "1/19/2012",
+      "expiration_date": "1/19/2017"
+    },
+    {
+      "descriptor": "COMP 122",
+      "title": "Programming Concepts and Methodology I",
+      "approval_date": "5/12/2012",
+      "expiration_date": "5/12/2017"
+    },
+    {
+      "descriptor": "COMP 132",
+      "title": "Programming Concepts and Methodology II",
+      "approval_date": "1/19/2012",
+      "expiration_date": "1/19/2017"
+    },
+    {
+      "descriptor": "COMP 142",
+      "title": "Computer Architecture and Organization",
+      "approval_date": "1/19/2012",
+      "expiration_date": "1/19/2017"
+    },
+    {
+      "descriptor": "COMP 152",
+      "title": "Discrete Structures",
+      "approval_date": "1/19/2012",
+      "expiration_date": "1/19/2017"
+    },
+    {
+      "descriptor": "DENA 100 X",
+      "title": "Dental Office Practice Management",
+      "approval_date": "5/6/2020",
+      "expiration_date": "5/6/2025"
+    },
+    {
+      "descriptor": "DENA 105 X",
+      "title": "Dental Materials",
+      "approval_date": "5/6/2020",
+      "expiration_date": "5/6/2025"
+    },
+    {
+      "descriptor": "DMGR 100 X",
+      "title": "Introduction to Digital Media",
+      "approval_date": "9/19/2019",
+      "expiration_date": "9/19/2024"
+    },
+    {
+      "descriptor": "DMGR 110 X",
+      "title": "Introduction to Digital Design Principles",
+      "approval_date": "11/19/2019",
+      "expiration_date": "11/19/2024"
+    },
+    {
+      "descriptor": "DMGR 120 X",
+      "title": "Introduction to Social Media",
+      "approval_date": "11/19/2019",
+      "expiration_date": "11/19/2024"
+    },
+    {
+      "descriptor": "DMGR 130 X",
+      "title": "Digital Media Business Basics",
+      "approval_date": "11/19/2019",
+      "expiration_date": "11/19/2024"
+    },
+    {
+      "descriptor": "ECE 120",
+      "title": "Principles & Practices of Teaching Young Children",
+      "approval_date": "4/27/2011",
+      "expiration_date": "4/27/2016"
+    },
+    {
+      "descriptor": "ECE 130",
+      "title": "Introduction to Curriculum",
+      "approval_date": "4/27/2011",
+      "expiration_date": "4/27/2016"
+    },
+    {
+      "descriptor": "ECE 200",
+      "title": "Observation and Assessment",
+      "approval_date": "4/27/2011",
+      "expiration_date": "4/27/2016"
+    },
+    {
+      "descriptor": "ECE 210",
+      "title": "Practicum in Early Childhood Education",
+      "approval_date": "4/27/2011",
+      "expiration_date": "4/27/2016"
+    },
+    {
+      "descriptor": "ECE 220",
+      "title": "Health, Safety and Nutrition",
+      "approval_date": "4/27/2011",
+      "expiration_date": "4/27/2016"
+    },
+    {
+      "descriptor": "ECE 230",
+      "title": "Teaching in a Diverse Society",
+      "approval_date": "4/27/2011",
+      "expiration_date": "4/27/2016"
+    },
+    {
+      "descriptor": "ECON 201",
+      "title": "Principles of Microeconomics",
+      "approval_date": "8/7/2012",
+      "expiration_date": "8/7/2017"
+    },
+    {
+      "descriptor": "ECON 202",
+      "title": "Principles of Macroeconomics",
+      "approval_date": "8/7/2012",
+      "expiration_date": "8/7/2017"
+    },
+    {
+      "descriptor": "EDUC 200",
+      "title": "Introduction to Elementary Classroom Teaching",
+      "approval_date": "3/26/2018",
+      "expiration_date": "3/26/2023"
+    },
+    {
+      "descriptor": "EET 100 X",
+      "title": "Basic Electronics (DC)",
+      "approval_date": "5/19/2020",
+      "expiration_date": "5/19/2025"
+    },
+    {
+      "descriptor": "EET 105 X",
+      "title": "Basic Electronics (AC)",
+      "approval_date": "5/19/2020",
+      "expiration_date": "5/19/2025"
+    },
+    {
+      "descriptor": "EET 130 X",
+      "title": "Digital Fundamentals",
+      "approval_date": "5/19/2020",
+      "expiration_date": "5/19/2025"
+    },
+    {
+      "descriptor": "EET 140 X",
+      "title": "Programmable Logic Controllers",
+      "approval_date": "5/19/2020",
+      "expiration_date": "5/19/2025"
+    },
+    {
+      "descriptor": "EET 142 X",
+      "title": "Computer Integrated Manufacturing",
+      "approval_date": "5/19/2020",
+      "expiration_date": "5/19/2025"
+    },
+    {
+      "descriptor": "EET 144 X",
+      "title": "Advanced Programmable Logic Controllers",
+      "approval_date": "5/19/2020",
+      "expiration_date": "5/19/2025"
+    },
+    {
+      "descriptor": "EET 150 X",
+      "title": "Instrumentation and Process Control",
+      "approval_date": "5/19/2020",
+      "expiration_date": "5/19/2025"
+    },
+    {
+      "descriptor": "EET 155 X",
+      "title": "Electric Motors - Controls",
+      "approval_date": "5/19/2020",
+      "expiration_date": "5/19/2025"
+    },
+    {
+      "descriptor": "EMS 100 X",
+      "title": "Paramedic Theory I",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "EMS 101 X",
+      "title": "Paramedic Theory II",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "EMS 102 X",
+      "title": "Paramedic Laboratory I",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "EMS 103 X",
+      "title": "Paramedic Laboratory II",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "EMS 104 X",
+      "title": "Paramedic Clinical Practicum",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "EMS 105 X",
+      "title": "Paramedic Field Internship",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "ENGL 100",
+      "title": "College Composition",
+      "approval_date": "5/4/2018",
+      "expiration_date": "5/4/2023"
+    },
+    {
+      "descriptor": "ENGL 105",
+      "title": "Argumentative Writing and Critical Thinking",
+      "approval_date": "5/14/2018",
+      "expiration_date": "5/14/2023"
+    },
+    {
+      "descriptor": "ENGL 110",
+      "title": "Argumentative Writing and Critical Thinking Through Literature",
+      "approval_date": "4/24/2018",
+      "expiration_date": "4/24/2023"
+    },
+    {
+      "descriptor": "ENGL 120",
+      "title": "Introduction to Literature",
+      "approval_date": "4/5/2018",
+      "expiration_date": "4/5/2023"
+    },
+    {
+      "descriptor": "ENGL 130",
+      "title": "Survey of American Literature 1",
+      "approval_date": "7/23/2012",
+      "expiration_date": "7/23/2017"
+    },
+    {
+      "descriptor": "ENGL 135",
+      "title": "Survey of American Literature 2",
+      "approval_date": "7/23/2012",
+      "expiration_date": "7/23/2017"
+    },
+    {
+      "descriptor": "ENGL 140",
+      "title": "Survey of World Literature 1",
+      "approval_date": "7/23/2012",
+      "expiration_date": "7/23/2017"
+    },
+    {
+      "descriptor": "ENGL 145",
+      "title": "Survey of World Literature 2",
+      "approval_date": "7/23/2012",
+      "expiration_date": "7/23/2017"
+    },
+    {
+      "descriptor": "ENGL 150",
+      "title": "Survey of Literature in English 1",
+      "approval_date": "4/11/2013",
+      "expiration_date": "4/11/2018"
+    },
+    {
+      "descriptor": "ENGL 152",
+      "title": "Survey of Literature in English 2",
+      "approval_date": "4/11/2013",
+      "expiration_date": "4/11/2018"
+    },
+    {
+      "descriptor": "ENGL 155",
+      "title": "Survey of Literature in English 3",
+      "approval_date": "4/11/2013",
+      "expiration_date": "4/11/2018"
+    },
+    {
+      "descriptor": "ENGL 160",
+      "title": "Survey of British Literature 1",
+      "approval_date": "4/5/2018",
+      "expiration_date": "4/5/2023"
+    },
+    {
+      "descriptor": "ENGL 165",
+      "title": "Survey of British Literature 2",
+      "approval_date": "7/23/2012",
+      "expiration_date": "7/23/2017"
+    },
+    {
+      "descriptor": "ENGL 180",
+      "title": "Children’s Literature",
+      "approval_date": "7/23/2012",
+      "expiration_date": "7/23/2017"
+    },
+    {
+      "descriptor": "ENGL 200",
+      "title": "Introduction to Creative Writing",
+      "approval_date": "4/24/2018",
+      "expiration_date": "4/24/2023"
+    },
+    {
+      "descriptor": "ENGR 110",
+      "title": "Introduction to Engineering",
+      "approval_date": "2/22/2014",
+      "expiration_date": "2/22/2019"
+    },
+    {
+      "descriptor": "ENGR 120",
+      "title": "Introduction to Programming Concepts and Methodologies for Engineers",
+      "approval_date": "4/18/2023",
+      "expiration_date": "4/18/2028"
+    },
+    {
+      "descriptor": "ENGR 130",
+      "title": "Statics",
+      "approval_date": "2/25/2014",
+      "expiration_date": "2/25/2019"
+    },
+    {
+      "descriptor": "ENGR 140",
+      "title": "Materials Science and Engineering",
+      "approval_date": "2/16/2023",
+      "expiration_date": "2/16/2028"
+    },
+    {
+      "descriptor": "ENGR 140 B",
+      "title": "Materials Science and Engineering",
+      "approval_date": "3/21/2023",
+      "expiration_date": "3/21/2028"
+    },
+    {
+      "descriptor": "ENGR 140 L",
+      "title": "Materials Science and Engineering Lab",
+      "approval_date": "5/28/2015",
+      "expiration_date": "5/28/2020"
+    },
+    {
+      "descriptor": "ENGR 150",
+      "title": "Engineering Graphics",
+      "approval_date": "6/20/2023",
+      "expiration_date": "6/20/2028"
+    },
+    {
+      "descriptor": "ENGR 180",
+      "title": "Surveying",
+      "approval_date": "2/25/2014",
+      "expiration_date": "2/25/2019"
+    },
+    {
+      "descriptor": "ENGR 220",
+      "title": "Programming and Problem-Solving in MATLAB",
+      "approval_date": "10/31/2022",
+      "expiration_date": "10/31/2027"
+    },
+    {
+      "descriptor": "ENGR 230",
+      "title": "Dynamics",
+      "approval_date": "2/25/2014",
+      "expiration_date": "2/25/2019"
+    },
+    {
+      "descriptor": "ENGR 240",
+      "title": "Strength of Materials",
+      "approval_date": "2/25/2014",
+      "expiration_date": "2/25/2019"
+    },
+    {
+      "descriptor": "ENGR 260",
+      "title": "Circuit Analysis",
+      "approval_date": "2/25/2014",
+      "expiration_date": "2/25/2019"
+    },
+    {
+      "descriptor": "ENGR 260 L",
+      "title": "Circuit Analysis Lab",
+      "approval_date": "2/25/2014",
+      "expiration_date": "2/25/2019"
+    },
+    {
+      "descriptor": "ENVS 100",
+      "title": "Introduction to Environmental Science",
+      "approval_date": "3/29/2017",
+      "expiration_date": "3/29/2022"
+    },
+    {
+      "descriptor": "FIRE 100 X",
+      "title": "Principles of Emergency Services",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "FIRE 110 X",
+      "title": "Fire Prevention",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "FIRE 120 X",
+      "title": "Fire Protection Systems",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "FIRE 130 X",
+      "title": "Building Construction for Fire Protection",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "FIRE 140 X",
+      "title": "Fire Behavior and Combustion",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "FIRE 150 X",
+      "title": "Principles of Fire and Emergency Services Safety and Survival",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "FIRE 160 X",
+      "title": "Firefighting Strategies & Tactics",
+      "approval_date": "11/1/2018",
+      "expiration_date": "11/1/2023"
+    },
+    {
+      "descriptor": "FIRE 200 X",
+      "title": "Human Resource Management for Company Officers",
+      "approval_date": "11/1/2018",
+      "expiration_date": "11/1/2023"
+    },
+    {
+      "descriptor": "FIRE 210 X",
+      "title": "General Administrative Functions for Company Officers",
+      "approval_date": "11/1/2018",
+      "expiration_date": "11/1/2023"
+    },
+    {
+      "descriptor": "FIRE 220 X",
+      "title": "Fire Inspections and Investigations for Company Officers",
+      "approval_date": "11/1/2018",
+      "expiration_date": "11/1/2023"
+    },
+    {
+      "descriptor": "FIRE 230 X",
+      "title": "All Risk Command for Company Officers",
+      "approval_date": "11/1/2018",
+      "expiration_date": "11/1/2023"
+    },
+    {
+      "descriptor": "FIRE 231 X",
+      "title": "Introduction to the Incident Comment System",
+      "approval_date": "11/1/2018",
+      "expiration_date": "11/1/2023"
+    },
+    {
+      "descriptor": "FIRE 232 X",
+      "title": "Hazardous Materials Incident Commander",
+      "approval_date": "11/1/2018",
+      "expiration_date": "11/1/2023"
+    },
+    {
+      "descriptor": "FIRE 240 X",
+      "title": "Wildland Incident Operations for Company officers",
+      "approval_date": "11/1/2018",
+      "expiration_date": "11/1/2023"
+    },
+    {
+      "descriptor": "FIRE 241 X",
+      "title": "Intermediate Fire Behavior",
+      "approval_date": "11/1/2018",
+      "expiration_date": "11/1/2023"
+    },
+    {
+      "descriptor": "FIRE 250 X",
+      "title": "Instructional Methodology",
+      "approval_date": "11/1/2018",
+      "expiration_date": "11/1/2023"
+    },
+    {
+      "descriptor": "FIRE 251 X",
+      "title": "Ethical Leadership",
+      "approval_date": "11/1/2018",
+      "expiration_date": "11/1/2023"
+    },
+    {
+      "descriptor": "FTVE 100",
+      "title": "Introduction to Electronic Media",
+      "approval_date": "4/29/2013",
+      "expiration_date": "4/29/2018"
+    },
+    {
+      "descriptor": "FTVE 105",
+      "title": "Introduction to Media Aesthetics and Cinematic Arts",
+      "approval_date": "4/29/2013",
+      "expiration_date": "4/29/2018"
+    },
+    {
+      "descriptor": "FTVE 110",
+      "title": "Introduction to Media Writing",
+      "approval_date": "4/29/2013",
+      "expiration_date": "4/29/2018"
+    },
+    {
+      "descriptor": "FTVE 115",
+      "title": "Introduction to Screenwriting",
+      "approval_date": "9/15/2021",
+      "expiration_date": "9/15/2026"
+    },
+    {
+      "descriptor": "FTVE 120",
+      "title": "Beginning Audio Production",
+      "approval_date": "4/29/2013",
+      "expiration_date": "4/29/2018"
+    },
+    {
+      "descriptor": "FTVE 125",
+      "title": "Beginning Radio & Podcasting Production",
+      "approval_date": "4/29/2013",
+      "expiration_date": "4/29/2018"
+    },
+    {
+      "descriptor": "FTVE 130",
+      "title": "Beginning Single Camera Production",
+      "approval_date": "4/29/2013",
+      "expiration_date": "4/29/2018"
+    },
+    {
+      "descriptor": "FTVE 135",
+      "title": "Beginning TV Studio Production",
+      "approval_date": "4/29/2013",
+      "expiration_date": "4/29/2018"
+    },
+    {
+      "descriptor": "FTVE 150",
+      "title": "Beginning Motion Picture Production",
+      "approval_date": "4/29/2013",
+      "expiration_date": "4/29/2018"
+    },
+    {
+      "descriptor": "GEOG 110",
+      "title": "Introduction to Physical Geography",
+      "approval_date": "5/2/2012",
+      "expiration_date": "5/2/2017"
+    },
+    {
+      "descriptor": "GEOG 111",
+      "title": "Physical Geography, Laboratory",
+      "approval_date": "5/2/2012",
+      "expiration_date": "5/2/2017"
+    },
+    {
+      "descriptor": "GEOG 115",
+      "title": "Introduction to Physical Geography, with Lab",
+      "approval_date": "5/2/2012",
+      "expiration_date": "5/2/2017"
+    },
+    {
+      "descriptor": "GEOG 120",
+      "title": "Introduction to Human Geography",
+      "approval_date": "5/2/2012",
+      "expiration_date": "5/2/2017"
+    },
+    {
+      "descriptor": "GEOG 125",
+      "title": "World Regional Geography",
+      "approval_date": "5/2/2012",
+      "expiration_date": "5/2/2017"
+    },
+    {
+      "descriptor": "GEOG 130",
+      "title": "Introduction to Weather and Climate",
+      "approval_date": "5/2/2012",
+      "expiration_date": "5/2/2017"
+    },
+    {
+      "descriptor": "GEOG 140",
+      "title": "California Geography",
+      "approval_date": "5/2/2012",
+      "expiration_date": "5/2/2017"
+    },
+    {
+      "descriptor": "GEOG 150",
+      "title": "Map Interpretation and Analysis",
+      "approval_date": "5/2/2012",
+      "expiration_date": "5/2/2017"
+    },
+    {
+      "descriptor": "GEOG 155",
+      "title": "Introduction to Geographic Information Systems and Techniques, with Lab",
+      "approval_date": "5/2/2012",
+      "expiration_date": "5/2/2017"
+    },
+    {
+      "descriptor": "GEOG 160",
+      "title": "Regional Field Studies",
+      "approval_date": "2/23/2023",
+      "expiration_date": "2/23/2028"
+    },
+    {
+      "descriptor": "GEOL 100",
+      "title": "Physical Geology",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GEOL 100 L",
+      "title": "Physical Geology Laboratory",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GEOL 101",
+      "title": "Physical Geology with Lab",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GEOL 110",
+      "title": "Historical Geology",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GEOL 110 L",
+      "title": "Historical Geology Laboratory",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GEOL 111",
+      "title": "Historical Geology with Lab",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GEOL 120",
+      "title": "Earth Science",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GEOL 120 L",
+      "title": "Earth Science Laboratory",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GEOL 121",
+      "title": "Earth Science with Lab",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GEOL 130",
+      "title": "Environmental Geology",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GEOL 130 L",
+      "title": "Environmental Geology Laboratory",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GEOL 131",
+      "title": "Environmental Geology with Lab",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GEOL 200",
+      "title": "Geology of California",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GEOL 280",
+      "title": "Mineralogy",
+      "approval_date": "10/31/2011",
+      "expiration_date": "10/31/2016"
+    },
+    {
+      "descriptor": "GLST 101",
+      "title": "Introduction to Global Studies",
+      "approval_date": "9/24/2015",
+      "expiration_date": "9/24/2020"
+    },
+    {
+      "descriptor": "GLST 102",
+      "title": "Global Issues",
+      "approval_date": "9/24/2015",
+      "expiration_date": "9/24/2020"
+    },
+    {
+      "descriptor": "HIST 130",
+      "title": "United States History to 1877",
+      "approval_date": "3/29/2011",
+      "expiration_date": "3/29/2016"
+    },
+    {
+      "descriptor": "HIST 140",
+      "title": "United States History from 1865",
+      "approval_date": "3/29/2011",
+      "expiration_date": "3/29/2016"
+    },
+    {
+      "descriptor": "HIST 150",
+      "title": "World History to 1500",
+      "approval_date": "3/29/2011",
+      "expiration_date": "3/29/2016"
+    },
+    {
+      "descriptor": "HIST 160",
+      "title": "World History since 1500",
+      "approval_date": "3/29/2011",
+      "expiration_date": "3/29/2016"
+    },
+    {
+      "descriptor": "HIST 170",
+      "title": "Western Civilization I",
+      "approval_date": "3/29/2011",
+      "expiration_date": "3/29/2016"
+    },
+    {
+      "descriptor": "HIST 180",
+      "title": "Western Civilization II",
+      "approval_date": "3/29/2011",
+      "expiration_date": "3/29/2016"
+    },
+    {
+      "descriptor": "HIT 100 X",
+      "title": "Introduction to Health Information Technology",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 102 X",
+      "title": "Legal & Ethical Aspects of Healthcare",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 103 X",
+      "title": "Medical Terminology",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 104 X",
+      "title": "Alternative Healthcare Delivery Settings",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 105 X",
+      "title": "Pathophysiology",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 106 X",
+      "title": "CPT Coding",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 107 X",
+      "title": "Pharmacology",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 108 X",
+      "title": "ICD-10-CM Coding",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 110 X",
+      "title": "ICD-10-PCS Coding",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 111 S",
+      "title": "ICD-10 Coding",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 112 X",
+      "title": "Basic ICD-10-CM/PCS Coding",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 200 X",
+      "title": "Advanced ICD-10-CM/PCS Coding",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 201 S",
+      "title": "Basic and Advanced ICD-10-CM/PCS Coding",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 202 X",
+      "title": "Reimbursement Methodologies",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 204 X",
+      "title": "Quality Improvement",
+      "approval_date": "11/17/2017",
+      "expiration_date": "11/17/2022"
+    },
+    {
+      "descriptor": "HIT 206 X",
+      "title": "Healthcare Statistics",
+      "approval_date": "4/27/2018",
+      "expiration_date": "4/27/2023"
+    },
+    {
+      "descriptor": "HIT 208 X",
+      "title": "Computer Applications/Electronic Health Records",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "HIT 210 X",
+      "title": "Management and Supervision",
+      "approval_date": "11/21/2017",
+      "expiration_date": "11/21/2022"
+    },
+    {
+      "descriptor": "HOSP 100",
+      "title": "Introduction to Hospitality Management",
+      "approval_date": "3/29/2017",
+      "expiration_date": "3/29/2022"
+    },
+    {
+      "descriptor": "HOSP 110",
+      "title": "Sanitation and Safety",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "HOSP 120",
+      "title": "Hospitality Cost Control",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "HOSP 130",
+      "title": "Introduction to Food and Beverage Management",
+      "approval_date": "3/29/2017",
+      "expiration_date": "3/29/2022"
+    },
+    {
+      "descriptor": "HOSP 140",
+      "title": "Introduction to Hotel Management",
+      "approval_date": "3/29/2017",
+      "expiration_date": "3/29/2022"
+    },
+    {
+      "descriptor": "HOSP 150",
+      "title": "Hospitality Law",
+      "approval_date": "11/19/2018",
+      "expiration_date": "11/19/2023"
+    },
+    {
+      "descriptor": "HOSP 160",
+      "title": "Culinary Production and Operations",
+      "approval_date": "3/29/2017",
+      "expiration_date": "3/29/2022"
+    },
+    {
+      "descriptor": "HOSP 160 X",
+      "title": "Culinary Principles",
+      "approval_date": "2/14/2018",
+      "expiration_date": "2/14/2023"
+    },
+    {
+      "descriptor": "HOSP 170 X",
+      "title": "Supervision",
+      "approval_date": "2/14/2018",
+      "expiration_date": "2/14/2023"
+    },
+    {
+      "descriptor": "HOSP 180 X",
+      "title": "Introduction to Baking",
+      "approval_date": "2/14/2018",
+      "expiration_date": "2/14/2023"
+    },
+    {
+      "descriptor": "ITIS 110",
+      "title": "Information & Communication Technology Essentials",
+      "approval_date": "12/1/2014",
+      "expiration_date": "12/1/2019"
+    },
+    {
+      "descriptor": "ITIS 120",
+      "title": "Computer Information Systems, Computer Concepts, Information Technology Concepts",
+      "approval_date": "2/5/2012",
+      "expiration_date": "2/5/2017"
+    },
+    {
+      "descriptor": "ITIS 130",
+      "title": "Introduction to Programming Concepts and Methodologies",
+      "approval_date": "12/1/2014",
+      "expiration_date": "12/1/2019"
+    },
+    {
+      "descriptor": "ITIS 135",
+      "title": "General Course Title: Linux Shell Scripting and Programming",
+      "approval_date": "1/20/2021",
+      "expiration_date": "1/20/2026"
+    },
+    {
+      "descriptor": "ITIS 136",
+      "title": "Python Programming for Cyber Security",
+      "approval_date": "1/20/2021",
+      "expiration_date": "1/20/2026"
+    },
+    {
+      "descriptor": "ITIS 140",
+      "title": "Introduction to Systems Analysis and Design",
+      "approval_date": "12/1/2014",
+      "expiration_date": "12/1/2019"
+    },
+    {
+      "descriptor": "ITIS 145",
+      "title": "IT Project Management",
+      "approval_date": "1/20/2021",
+      "expiration_date": "1/20/2026"
+    },
+    {
+      "descriptor": "ITIS 150",
+      "title": "Computer Network Fundamentals",
+      "approval_date": "12/1/2014",
+      "expiration_date": "12/1/2019"
+    },
+    {
+      "descriptor": "ITIS 151",
+      "title": "Switching, Routing and Wireless Essentials",
+      "approval_date": "12/17/2014",
+      "expiration_date": "12/17/2019"
+    },
+    {
+      "descriptor": "ITIS 152",
+      "title": "Network Security and Automation",
+      "approval_date": "1/1/2021",
+      "expiration_date": "1/1/2026"
+    },
+    {
+      "descriptor": "ITIS 155",
+      "title": "Systems and Network Administration",
+      "approval_date": "12/1/2014",
+      "expiration_date": "12/1/2019"
+    },
+    {
+      "descriptor": "ITIS 160",
+      "title": "Introduction to Information Systems Security",
+      "approval_date": "12/1/2014",
+      "expiration_date": "12/1/2019"
+    },
+    {
+      "descriptor": "ITIS 161",
+      "title": "Cybersecurity Analysis",
+      "approval_date": "1/20/2021",
+      "expiration_date": "1/20/2026"
+    },
+    {
+      "descriptor": "ITIS 164",
+      "title": "Introduction to Cybersecurity: Ethical Hacking",
+      "approval_date": "3/25/2015",
+      "expiration_date": "3/25/2020"
+    },
+    {
+      "descriptor": "ITIS 165",
+      "title": "Digital Forensics Fundamentals",
+      "approval_date": "3/25/2015",
+      "expiration_date": "3/25/2020"
+    },
+    {
+      "descriptor": "ITIS 166",
+      "title": "Cybersecurity Operations – CCNA CyberOps",
+      "approval_date": "1/20/2021",
+      "expiration_date": "1/20/2026"
+    },
+    {
+      "descriptor": "ITIS 167",
+      "title": "Network Security – CCNA-Security",
+      "approval_date": "1/20/2021",
+      "expiration_date": "1/20/2026"
+    },
+    {
+      "descriptor": "ITIS 168",
+      "title": "IoT Security",
+      "approval_date": "9/30/2021",
+      "expiration_date": "9/30/2026"
+    },
+    {
+      "descriptor": "ITIS 170",
+      "title": "Cloud Computing and Virtualization",
+      "approval_date": "9/30/2021",
+      "expiration_date": "9/30/2026"
+    },
+    {
+      "descriptor": "ITIS 171",
+      "title": "Cloud Security Fundamentals",
+      "approval_date": "1/20/2021",
+      "expiration_date": "1/20/2026"
+    },
+    {
+      "descriptor": "ITIS 172",
+      "title": "Cloud Operations and Management",
+      "approval_date": "1/20/2021",
+      "expiration_date": "1/20/2026"
+    },
+    {
+      "descriptor": "ITIS 180",
+      "title": "Introduction to Database Management Systems",
+      "approval_date": "12/1/2014",
+      "expiration_date": "12/1/2019"
+    },
+    {
+      "descriptor": "JOUR 100",
+      "title": "Introduction to Mass Communications",
+      "approval_date": "4/4/2012",
+      "expiration_date": "4/4/2017"
+    },
+    {
+      "descriptor": "JOUR 110",
+      "title": "Introduction to Reporting and Newswriting",
+      "approval_date": "4/4/2012",
+      "expiration_date": "4/4/2017"
+    },
+    {
+      "descriptor": "JOUR 120",
+      "title": "Multimedia Reporting",
+      "approval_date": "4/4/2012",
+      "expiration_date": "4/4/2017"
+    },
+    {
+      "descriptor": "JOUR 130",
+      "title": "Lower Division Student Media Practicum I",
+      "approval_date": "4/4/2012",
+      "expiration_date": "4/4/2017"
+    },
+    {
+      "descriptor": "JOUR 131",
+      "title": "Lower Division Student Media Practicum II",
+      "approval_date": "11/9/2017",
+      "expiration_date": "11/9/2022"
+    },
+    {
+      "descriptor": "JOUR 150",
+      "title": "Introduction to Public Relations",
+      "approval_date": "10/27/2017",
+      "expiration_date": "10/27/2022"
+    },
+    {
+      "descriptor": "JOUR 160",
+      "title": "Introduction to Photojournalism",
+      "approval_date": "4/4/2012",
+      "expiration_date": "4/4/2017"
+    },
+    {
+      "descriptor": "JOUR 170",
+      "title": "Introduction to Visual Communications",
+      "approval_date": "1/8/2018",
+      "expiration_date": "1/8/2023"
+    },
+    {
+      "descriptor": "JOUR 210",
+      "title": "Intermediate Reporting/Newswriting",
+      "approval_date": "1/8/2018",
+      "expiration_date": "1/8/2023"
+    },
+    {
+      "descriptor": "KIN 100",
+      "title": "Introduction to Kinesiology",
+      "approval_date": "6/1/2011",
+      "expiration_date": "6/1/2016"
+    },
+    {
+      "descriptor": "KIN 101",
+      "title": "First Aid, CPR and AED",
+      "approval_date": "6/1/2011",
+      "expiration_date": "6/1/2016"
+    },
+    {
+      "descriptor": "LPPS 110",
+      "title": "Introduction to Law and Society",
+      "approval_date": "12/22/2016",
+      "expiration_date": "12/22/2021"
+    },
+    {
+      "descriptor": "LPPS 120",
+      "title": "Ethical Reasoning/Ethics in Practice",
+      "approval_date": "12/20/2016",
+      "expiration_date": "12/20/2021"
+    },
+    {
+      "descriptor": "MATH 110",
+      "title": "Introduction to Statistics",
+      "approval_date": "10/19/2016",
+      "expiration_date": "10/19/2021"
+    },
+    {
+      "descriptor": "MATH 120",
+      "title": "Mathematical Concepts for Elementary School Teachers - Number Systems",
+      "approval_date": "3/18/2013",
+      "expiration_date": "3/18/2018"
+    },
+    {
+      "descriptor": "MATH 130",
+      "title": "Finite Mathematics",
+      "approval_date": "12/15/2012",
+      "expiration_date": "12/15/2017"
+    },
+    {
+      "descriptor": "MATH 140",
+      "title": "Business Calculus",
+      "approval_date": "12/15/2012",
+      "expiration_date": "12/15/2017"
+    },
+    {
+      "descriptor": "MATH 150",
+      "title": "College Algebra for Liberal Arts",
+      "approval_date": "2/3/2012",
+      "expiration_date": "2/3/2017"
+    },
+    {
+      "descriptor": "MATH 151",
+      "title": "College Algebra for STEM",
+      "approval_date": "2/3/2012",
+      "expiration_date": "2/3/2017"
+    },
+    {
+      "descriptor": "MATH 155",
+      "title": "Precalculus",
+      "approval_date": "4/30/2012",
+      "expiration_date": "4/30/2017"
+    },
+    {
+      "descriptor": "MATH 160",
+      "title": "Discrete Math",
+      "approval_date": "12/15/2012",
+      "expiration_date": "12/15/2017"
+    },
+    {
+      "descriptor": "MATH 210",
+      "title": "Single Variable Calculus I Early Transcendentals",
+      "approval_date": "3/31/2011",
+      "expiration_date": "3/31/2016"
+    },
+    {
+      "descriptor": "MATH 211",
+      "title": "Single Variable Calculus I Late Transcendentals",
+      "approval_date": "3/31/2011",
+      "expiration_date": "3/31/2016"
+    },
+    {
+      "descriptor": "MATH 220",
+      "title": "Single Variable Calculus II Early Transcendentals",
+      "approval_date": "3/31/2011",
+      "expiration_date": "3/31/2016"
+    },
+    {
+      "descriptor": "MATH 221",
+      "title": "Single Variable Calculus II Late Transcendentals",
+      "approval_date": "10/18/2018",
+      "expiration_date": "10/18/2023"
+    },
+    {
+      "descriptor": "MATH 230",
+      "title": "Multivariable Calculus",
+      "approval_date": "3/31/2011",
+      "expiration_date": "3/31/2016"
+    },
+    {
+      "descriptor": "MATH 240",
+      "title": "Ordinary Differential Equations",
+      "approval_date": "3/31/2011",
+      "expiration_date": "3/31/2016"
+    },
+    {
+      "descriptor": "MATH 250",
+      "title": "Introduction to Linear Algebra",
+      "approval_date": "3/31/2011",
+      "expiration_date": "3/31/2016"
+    },
+    {
+      "descriptor": "MATH 260",
+      "title": "Survey of Differential Equations and Linear Algebra",
+      "approval_date": "12/15/2012",
+      "expiration_date": "12/15/2017"
+    },
+    {
+      "descriptor": "MATH 851",
+      "title": "Trigonometry",
+      "approval_date": "12/15/2012",
+      "expiration_date": "12/15/2017"
+    },
+    {
+      "descriptor": "MATH 900 S",
+      "title": "Single Variable Calculus Sequence",
+      "approval_date": "3/31/2011",
+      "expiration_date": "3/31/2016"
+    },
+    {
+      "descriptor": "MATH 910 S",
+      "title": "Differential Equations and Linear Algebra",
+      "approval_date": "12/15/2012",
+      "expiration_date": "12/15/2017"
+    },
+    {
+      "descriptor": "MATH 955",
+      "title": "Precalculus & Trigonometry",
+      "approval_date": "5/22/2013",
+      "expiration_date": "5/22/2018"
+    },
+    {
+      "descriptor": "MIS 110",
+      "title": "Introduction to Music Technology",
+      "approval_date": "1/27/2026",
+      "expiration_date": "1/27/2031"
+    },
+    {
+      "descriptor": "MIS 111",
+      "title": "Digital Music Production",
+      "approval_date": "1/27/2026",
+      "expiration_date": "1/27/2031"
+    },
+    {
+      "descriptor": "MIS 120",
+      "title": "Music Careers and Entrepreneurship",
+      "approval_date": "1/27/2026",
+      "expiration_date": "1/27/2031"
+    },
+    {
+      "descriptor": "MIS 130",
+      "title": "History of American Popular Music",
+      "approval_date": "1/27/2026",
+      "expiration_date": "1/27/2031"
+    },
+    {
+      "descriptor": "MUS 100",
+      "title": "Music Appreciation",
+      "approval_date": "2/1/2012",
+      "expiration_date": "2/1/2017"
+    },
+    {
+      "descriptor": "MUS 105",
+      "title": "Music History I, Antiquity to 1750",
+      "approval_date": "10/27/2017",
+      "expiration_date": "10/27/2022"
+    },
+    {
+      "descriptor": "MUS 106",
+      "title": "Music History II, 1750-Present",
+      "approval_date": "10/27/2017",
+      "expiration_date": "10/27/2022"
+    },
+    {
+      "descriptor": "MUS 110",
+      "title": "Music Fundamentals",
+      "approval_date": "1/25/2018",
+      "expiration_date": "1/25/2023"
+    },
+    {
+      "descriptor": "MUS 120",
+      "title": "Music Theory I",
+      "approval_date": "1/25/2018",
+      "expiration_date": "1/25/2023"
+    },
+    {
+      "descriptor": "MUS 125",
+      "title": "Musicianship I",
+      "approval_date": "1/25/2018",
+      "expiration_date": "1/25/2023"
+    },
+    {
+      "descriptor": "MUS 130",
+      "title": "Music Theory II",
+      "approval_date": "1/25/2018",
+      "expiration_date": "1/25/2023"
+    },
+    {
+      "descriptor": "MUS 135",
+      "title": "Musicianship II",
+      "approval_date": "10/30/2017",
+      "expiration_date": "10/30/2022"
+    },
+    {
+      "descriptor": "MUS 140",
+      "title": "Music Theory III",
+      "approval_date": "10/30/2017",
+      "expiration_date": "10/30/2022"
+    },
+    {
+      "descriptor": "MUS 145",
+      "title": "Musicianship III",
+      "approval_date": "10/30/2017",
+      "expiration_date": "10/30/2022"
+    },
+    {
+      "descriptor": "MUS 150",
+      "title": "Music Theory IV",
+      "approval_date": "10/30/2017",
+      "expiration_date": "10/30/2022"
+    },
+    {
+      "descriptor": "MUS 155",
+      "title": "Musicianship IV",
+      "approval_date": "10/30/2017",
+      "expiration_date": "10/30/2022"
+    },
+    {
+      "descriptor": "MUS 160",
+      "title": "Applied Music",
+      "approval_date": "1/25/2018",
+      "expiration_date": "1/25/2023"
+    },
+    {
+      "descriptor": "MUS 170",
+      "title": "Piano I",
+      "approval_date": "4/23/2018",
+      "expiration_date": "4/23/2023"
+    },
+    {
+      "descriptor": "MUS 171",
+      "title": "Piano II",
+      "approval_date": "4/23/2018",
+      "expiration_date": "4/23/2023"
+    },
+    {
+      "descriptor": "MUS 172",
+      "title": "Piano III",
+      "approval_date": "4/23/2018",
+      "expiration_date": "4/23/2023"
+    },
+    {
+      "descriptor": "MUS 180",
+      "title": "Major Ensemble",
+      "approval_date": "10/27/2017",
+      "expiration_date": "10/27/2022"
+    },
+    {
+      "descriptor": "MUS 185",
+      "title": "Specialized Ensemble",
+      "approval_date": "8/22/2018",
+      "expiration_date": "8/22/2023"
+    },
+    {
+      "descriptor": "NUTR 110",
+      "title": "Introduction to Nutrition Science",
+      "approval_date": "3/31/2014",
+      "expiration_date": "3/31/2019"
+    },
+    {
+      "descriptor": "NUTR 120",
+      "title": "Principles of Foods with Lab",
+      "approval_date": "3/31/2014",
+      "expiration_date": "3/31/2019"
+    },
+    {
+      "descriptor": "PH 100",
+      "title": "Personal Health and Wellness",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 101",
+      "title": "Introduction to Public Health",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 102",
+      "title": "Health and Social Justice",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 103",
+      "title": "Drugs, Health, and Society",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 104",
+      "title": "Cultural Competence in Health and Social Services",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 105",
+      "title": "Introduction to Health and Healthcare Careers",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 106",
+      "title": "Health and Healing Systems",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 107",
+      "title": "Stress Management and Health",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 108",
+      "title": "Investigating Disease Outbreaks and Epidemics",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 109",
+      "title": "Global Health",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 110",
+      "title": "Navigating the U.S. Health Care System, Health Insurance, Public Assistance, and Benefits Programs",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 111",
+      "title": "Techniques and Topics in Health Education",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 112",
+      "title": "Introduction to Epidemiology",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 113",
+      "title": "Social Determinants of Health, Disparities and Equities",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 114",
+      "title": "Statistics for Public Health",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 115",
+      "title": "Assessing and Analyzing Health Information",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PH 116",
+      "title": "Women’s Health",
+      "approval_date": "9/18/2023",
+      "expiration_date": "9/18/2028"
+    },
+    {
+      "descriptor": "PHIL 100",
+      "title": "Introduction to Philosophy",
+      "approval_date": "6/1/2012",
+      "expiration_date": "6/1/2017"
+    },
+    {
+      "descriptor": "PHIL 110",
+      "title": "Introduction to Logic",
+      "approval_date": "12/10/2012",
+      "expiration_date": "12/10/2017"
+    },
+    {
+      "descriptor": "PHIL 120",
+      "title": "Introduction to Ethics",
+      "approval_date": "6/1/2012",
+      "expiration_date": "6/1/2017"
+    },
+    {
+      "descriptor": "PHIL 130",
+      "title": "History of Ancient Philosophy",
+      "approval_date": "6/1/2012",
+      "expiration_date": "6/1/2017"
+    },
+    {
+      "descriptor": "PHIL 140",
+      "title": "History of Modern Philosophy",
+      "approval_date": "6/1/2012",
+      "expiration_date": "6/1/2017"
+    },
+    {
+      "descriptor": "PHIL 210",
+      "title": "Symbolic Logic",
+      "approval_date": "6/1/2012",
+      "expiration_date": "6/1/2017"
+    },
+    {
+      "descriptor": "PHS 100",
+      "title": "Personal Health and Wellness (Archived - for reference only)",
+      "approval_date": "3/31/2015",
+      "expiration_date": "3/31/2020"
+    },
+    {
+      "descriptor": "PHS 101",
+      "title": "Introduction to Public Health (Archived - for reference only)",
+      "approval_date": "3/31/2015",
+      "expiration_date": "3/31/2020"
+    },
+    {
+      "descriptor": "PHS 102",
+      "title": "Health and Social Justice (Archived - for reference only)",
+      "approval_date": "3/31/2015",
+      "expiration_date": "3/31/2020"
+    },
+    {
+      "descriptor": "PHS 103",
+      "title": "Drugs, Health, and Society (Archived - for reference only)",
+      "approval_date": "3/31/2015",
+      "expiration_date": "3/31/2020"
+    },
+    {
+      "descriptor": "PHYS 100 S",
+      "title": "Algebra/Trigonometry-Based Physics: AB",
+      "approval_date": "11/30/2018",
+      "expiration_date": "11/30/2023"
+    },
+    {
+      "descriptor": "PHYS 105",
+      "title": "Algebra/Trigonometry-Based Physics A",
+      "approval_date": "11/30/2018",
+      "expiration_date": "11/30/2023"
+    },
+    {
+      "descriptor": "PHYS 110",
+      "title": "Algebra/Trigonometry-Based Physics B",
+      "approval_date": "11/30/2018",
+      "expiration_date": "11/30/2023"
+    },
+    {
+      "descriptor": "PHYS 140",
+      "title": "Survey of Chemistry and Physics",
+      "approval_date": "5/9/2023",
+      "expiration_date": "5/9/2028"
+    },
+    {
+      "descriptor": "PHYS 200 S",
+      "title": "Calculus-Based Physics for Scientists and Engineers: ABC",
+      "approval_date": "11/30/2018",
+      "expiration_date": "11/30/2023"
+    },
+    {
+      "descriptor": "PHYS 205",
+      "title": "Calculus-Based Physics for Scientists and Engineers: A",
+      "approval_date": "11/30/2018",
+      "expiration_date": "11/30/2023"
+    },
+    {
+      "descriptor": "PHYS 210",
+      "title": "Calculus-Based Physics for Scientists and Engineers: B",
+      "approval_date": "11/30/2018",
+      "expiration_date": "11/30/2023"
+    },
+    {
+      "descriptor": "PHYS 215",
+      "title": "Calculus-Based Physics for Scientists and Engineers: C",
+      "approval_date": "11/30/2018",
+      "expiration_date": "11/30/2023"
+    },
+    {
+      "descriptor": "POLS 110",
+      "title": "Introduction to American Government and Politics",
+      "approval_date": "12/12/2022",
+      "expiration_date": "12/12/2027"
+    },
+    {
+      "descriptor": "POLS 120",
+      "title": "Introduction to Political Theory and Thought",
+      "approval_date": "12/12/2022",
+      "expiration_date": "12/12/2027"
+    },
+    {
+      "descriptor": "POLS 130",
+      "title": "Introduction to Comparative Government and Politics",
+      "approval_date": "12/12/2022",
+      "expiration_date": "12/12/2027"
+    },
+    {
+      "descriptor": "POLS 140",
+      "title": "Introduction to International Relations",
+      "approval_date": "12/12/2022",
+      "expiration_date": "12/12/2027"
+    },
+    {
+      "descriptor": "POLS 150",
+      "title": "Introduction to Political Science",
+      "approval_date": "12/12/2022",
+      "expiration_date": "12/12/2027"
+    },
+    {
+      "descriptor": "POLS 160",
+      "title": "Introduction to Political Science Research Methods",
+      "approval_date": "10/27/2017",
+      "expiration_date": "10/27/2022"
+    },
+    {
+      "descriptor": "POLS 170",
+      "title": "Introduction to the Politics of Race and Gender",
+      "approval_date": "11/1/2022",
+      "expiration_date": "11/1/2027"
+    },
+    {
+      "descriptor": "PSY 110",
+      "title": "Introductory Psychology",
+      "approval_date": "2/9/2011",
+      "expiration_date": "2/9/2016"
+    },
+    {
+      "descriptor": "PSY 115",
+      "title": "Psychology of Personal and Social Adjustment",
+      "approval_date": "12/23/2011",
+      "expiration_date": "12/23/2016"
+    },
+    {
+      "descriptor": "PSY 120",
+      "title": "Introduction to Abnormal Psychology",
+      "approval_date": "2/9/2011",
+      "expiration_date": "2/9/2016"
+    },
+    {
+      "descriptor": "PSY 130",
+      "title": "Introduction to Human Sexuality",
+      "approval_date": "12/23/2011",
+      "expiration_date": "12/23/2016"
+    },
+    {
+      "descriptor": "PSY 150",
+      "title": "Introduction to Biological Psychology",
+      "approval_date": "2/9/2011",
+      "expiration_date": "2/9/2016"
+    },
+    {
+      "descriptor": "PSY 170",
+      "title": "Introduction to Social Psychology",
+      "approval_date": "12/23/2011",
+      "expiration_date": "12/23/2016"
+    },
+    {
+      "descriptor": "PSY 180",
+      "title": "Introduction to Lifespan Psychology",
+      "approval_date": "2/9/2011",
+      "expiration_date": "2/9/2016"
+    },
+    {
+      "descriptor": "PSY 200",
+      "title": "Introduction to Research Methods in Psychology",
+      "approval_date": "2/9/2011",
+      "expiration_date": "2/9/2016"
+    },
+    {
+      "descriptor": "PSY 205 B",
+      "title": "Introduction to Research Methods in Psychology (With Lab)",
+      "approval_date": "2/9/2011",
+      "expiration_date": "2/9/2016"
+    },
+    {
+      "descriptor": "SJS 110",
+      "title": "Introduction to Social Justice",
+      "approval_date": "1/12/2018",
+      "expiration_date": "1/12/2023"
+    },
+    {
+      "descriptor": "SJS 120",
+      "title": "Introduction to Women’s Studies",
+      "approval_date": "1/12/2018",
+      "expiration_date": "1/12/2023"
+    },
+    {
+      "descriptor": "SJS 130",
+      "title": "Introduction to LGBTQ Studies",
+      "approval_date": "1/12/2018",
+      "expiration_date": "1/12/2023"
+    },
+    {
+      "descriptor": "SOCI 110",
+      "title": "Introduction to Sociology",
+      "approval_date": "10/12/2010",
+      "expiration_date": "10/12/2015"
+    },
+    {
+      "descriptor": "SOCI 115",
+      "title": "Social Problems",
+      "approval_date": "10/12/2010",
+      "expiration_date": "10/12/2015"
+    },
+    {
+      "descriptor": "SOCI 120",
+      "title": "Introduction to Research Methods",
+      "approval_date": "10/12/2010",
+      "expiration_date": "10/12/2015"
+    },
+    {
+      "descriptor": "SOCI 125",
+      "title": "Introduction to Statistics in Sociology",
+      "approval_date": "10/12/2010",
+      "expiration_date": "10/12/2015"
+    },
+    {
+      "descriptor": "SOCI 130",
+      "title": "Introduction to Marriage and Family",
+      "approval_date": "9/9/2010",
+      "expiration_date": "9/9/2015"
+    },
+    {
+      "descriptor": "SOCI 140",
+      "title": "Introduction to Gender",
+      "approval_date": "9/9/2010",
+      "expiration_date": "9/9/2015"
+    },
+    {
+      "descriptor": "SOCI 150",
+      "title": "Introduction to Race and Ethnicity",
+      "approval_date": "9/9/2010",
+      "expiration_date": "9/9/2015"
+    },
+    {
+      "descriptor": "SOCI 160",
+      "title": "Introduction to Crime",
+      "approval_date": "9/9/2010",
+      "expiration_date": "9/9/2015"
+    },
+    {
+      "descriptor": "SPAN 100",
+      "title": "Elementary Spanish I",
+      "approval_date": "11/12/2012",
+      "expiration_date": "11/12/2017"
+    },
+    {
+      "descriptor": "SPAN 110",
+      "title": "Elementary Spanish II",
+      "approval_date": "11/12/2012",
+      "expiration_date": "11/12/2017"
+    },
+    {
+      "descriptor": "SPAN 200",
+      "title": "Intermediate Spanish I",
+      "approval_date": "5/30/2012",
+      "expiration_date": "5/30/2017"
+    },
+    {
+      "descriptor": "SPAN 210",
+      "title": "Intermediate Spanish II",
+      "approval_date": "5/30/2012",
+      "expiration_date": "5/30/2017"
+    },
+    {
+      "descriptor": "SPAN 220",
+      "title": "Spanish for Heritage Speakers I",
+      "approval_date": "5/30/2012",
+      "expiration_date": "5/30/2017"
+    },
+    {
+      "descriptor": "SPAN 230",
+      "title": "Spanish for Heritage Speakers II",
+      "approval_date": "5/30/2012",
+      "expiration_date": "5/30/2017"
+    },
+    {
+      "descriptor": "SWHS 110",
+      "title": "Introduction to Social Work and Human Services",
+      "approval_date": "11/6/2017",
+      "expiration_date": "11/6/2022"
+    },
+    {
+      "descriptor": "SWHS 120A",
+      "title": "Social Work and Human Services Seminar (SWHS 120A)",
+      "approval_date": "3/19/2021",
+      "expiration_date": "3/19/2026"
+    },
+    {
+      "descriptor": "SWHS 120B",
+      "title": "Social Work and Human Services Fieldwork (SWHS 120B)",
+      "approval_date": "3/19/2021",
+      "expiration_date": "3/19/2026"
+    },
+    {
+      "descriptor": "THTR 111",
+      "title": "Introduction to Theatre",
+      "approval_date": "5/5/2011",
+      "expiration_date": "5/5/2016"
+    },
+    {
+      "descriptor": "THTR 112",
+      "title": "Theatre Appreciation",
+      "approval_date": "4/13/2012",
+      "expiration_date": "4/13/2017"
+    },
+    {
+      "descriptor": "THTR 113",
+      "title": "Theatre History 1",
+      "approval_date": "5/5/2011",
+      "expiration_date": "5/5/2016"
+    },
+    {
+      "descriptor": "THTR 114",
+      "title": "Script Analysis",
+      "approval_date": "5/5/2011",
+      "expiration_date": "5/5/2016"
+    },
+    {
+      "descriptor": "THTR 151",
+      "title": "Acting I",
+      "approval_date": "3/12/2012",
+      "expiration_date": "3/12/2017"
+    },
+    {
+      "descriptor": "THTR 152",
+      "title": "Acting II",
+      "approval_date": "3/12/2012",
+      "expiration_date": "3/12/2017"
+    },
+    {
+      "descriptor": "THTR 171",
+      "title": "Stagecraft",
+      "approval_date": "3/12/2012",
+      "expiration_date": "3/12/2017"
+    },
+    {
+      "descriptor": "THTR 172",
+      "title": "Introduction to Design or Introduction to Theater Design",
+      "approval_date": "5/5/2011",
+      "expiration_date": "5/5/2016"
+    },
+    {
+      "descriptor": "THTR 173",
+      "title": "Introduction to Stage Lighting or Lighting Design Fundamentals",
+      "approval_date": "5/5/2011",
+      "expiration_date": "5/5/2016"
+    },
+    {
+      "descriptor": "THTR 174",
+      "title": "Introduction to Stage Costume or Fundamentals of Costume Design",
+      "approval_date": "5/5/2011",
+      "expiration_date": "5/5/2016"
+    },
+    {
+      "descriptor": "THTR 175",
+      "title": "Introduction to Stage Makeup or Stage Makeup",
+      "approval_date": "5/5/2011",
+      "expiration_date": "5/5/2016"
+    },
+    {
+      "descriptor": "THTR 191",
+      "title": "Rehearsal and Performance in Production",
+      "approval_date": "3/12/2012",
+      "expiration_date": "3/12/2017"
+    },
+    {
+      "descriptor": "THTR 192",
+      "title": "Technical Theatre in Production",
+      "approval_date": "3/12/2012",
+      "expiration_date": "3/12/2017"
+    },
+    {
+      "descriptor": "WELD 101 X",
+      "title": "Introduction to Shielded Metal Arc Welding (SMAW)",
+      "approval_date": "12/23/2018",
+      "expiration_date": "12/23/2023"
+    },
+    {
+      "descriptor": "WELD 102 X",
+      "title": "Introduction to Gas Metal Arc Welding (GMAW)",
+      "approval_date": "12/23/2018",
+      "expiration_date": "12/23/2023"
+    },
+    {
+      "descriptor": "WELD 103 X",
+      "title": "Introduction to Flux Cored Arc Welding (FCAW)",
+      "approval_date": "12/23/2018",
+      "expiration_date": "12/23/2023"
+    },
+    {
+      "descriptor": "WELD 104 X",
+      "title": "Introduction to Gas Tungsten Arc Welding (GTAW)",
+      "approval_date": "12/23/2018",
+      "expiration_date": "12/23/2023"
+    },
+    {
+      "descriptor": "WELD 110 X",
+      "title": "Printreading and Welding Symbol Interpretation",
+      "approval_date": "12/23/2018",
+      "expiration_date": "12/23/2023"
+    },
+    {
+      "descriptor": "WELD 111 X",
+      "title": "Welding Inspection and Testing Principles",
+      "approval_date": "12/23/2018",
+      "expiration_date": "12/23/2023"
+    },
+    {
+      "descriptor": "WELD 112 X",
+      "title": "Welding Metallurgy",
+      "approval_date": "12/23/2018",
+      "expiration_date": "12/23/2023"
+    },
+    {
+      "descriptor": "WELD 113 X",
+      "title": "Thermal Cutting Processes",
+      "approval_date": "12/23/2018",
+      "expiration_date": "12/23/2023"
+    },
+    {
+      "descriptor": "WELD 114 X",
+      "title": "Introduction to Metal Fabrication",
+      "approval_date": "12/23/2018",
+      "expiration_date": "12/23/2023"
+    },
+    {
+      "descriptor": "WWTR 100 X",
+      "title": "Water and Wastewater Mathematics I",
+      "approval_date": "12/18/2019",
+      "expiration_date": "12/18/2024"
+    },
+    {
+      "descriptor": "WWTR 110 X",
+      "title": "Wastewater Treatment I",
+      "approval_date": "12/18/2019",
+      "expiration_date": "12/18/2024"
+    },
+    {
+      "descriptor": "WWTR 120 X",
+      "title": "Wastewater Treatment II",
+      "approval_date": "12/18/2019",
+      "expiration_date": "12/18/2024"
+    },
+    {
+      "descriptor": "WWTR 130 X",
+      "title": "Water Distribution Operator I",
+      "approval_date": "12/18/2019",
+      "expiration_date": "12/18/2024"
+    },
+    {
+      "descriptor": "WWTR 140 X",
+      "title": "Water Distribution Operator II",
+      "approval_date": "12/18/2019",
+      "expiration_date": "12/18/2024"
+    },
+    {
+      "descriptor": "WWTR 150 X",
+      "title": "Water Treatment I",
+      "approval_date": "12/18/2019",
+      "expiration_date": "12/18/2024"
+    },
+    {
+      "descriptor": "WWTR 160 X",
+      "title": "Water Treatment II",
+      "approval_date": "12/18/2019",
+      "expiration_date": "12/18/2024"
+    }
+  ]
+}

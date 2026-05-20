@@ -1,0 +1,602 @@
+{
+  "AP Biology (score 3-5): Cal-GETC Area 5B and 5C": {
+    "unified_title": "AP Biology",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AB10-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Chemistry (score 3-5): Cal-GETC Area 5A and 5C": {
+    "unified_title": "AP Chemistry",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AC7-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Environmental Science (score 3-5): Cal-GETC Area 5A and 5C": {
+    "unified_title": "AP Environmental Science",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AES9-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Physics 1: Algebra-Based (score 3-5): Cal-GETC Area 5A and 5C": {
+    "unified_title": "AP Physics 1",
+    "confidence_title": 0.96,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AP1A2-1-001"
+    ],
+    "_notes": "Skill Rule 1: stripped algebra-based/score/area qualifiers; College Board now markets the exam as 'AP Physics 1' alone (Algebra-Based is implicit)."
+  },
+  "AP Physics 2: Algebra-Based (score 3-5): Cal-GETC Area 5A and 5C": {
+    "unified_title": "AP Physics 2",
+    "confidence_title": 0.96,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AP2A3-1-001"
+    ],
+    "_notes": "Skill Rule 1: stripped algebra-based/score/area qualifiers (see AP Physics 1)."
+  },
+  "AP Physics C: Mechanics (score 3-5): Cal-GETC Area 5A and 5C": {
+    "unified_title": "AP Physics C: Mechanics",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-APCM1-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Physics C: Electricity/Magnetism (score 3-5): Cal-GETC Area 5A and 5C": {
+    "unified_title": "AP Physics C: Electricity and Magnetism",
+    "confidence_title": 0.95,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-APCE3-1-001"
+    ],
+    "_notes": "Normalized 'Electricity/Magnetism' → 'Electricity and Magnetism' (College Board's current canonical phrasing)."
+  },
+  "AP Psychology (score 3-5): Cal-GETC Area 4": {
+    "unified_title": "AP Psychology",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AP13-1-001"
+    ],
+    "_notes": null
+  },
+  "AP European History (score 3-5): Cal-GETC Area 3B or 4": {
+    "unified_title": "AP European History",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AEH4-1-001"
+    ],
+    "_notes": null
+  },
+  "AP U.S. History (score 3-5): Cal-GETC Area 3B or 4": {
+    "unified_title": "AP U.S. History",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AUH3-1-001"
+    ],
+    "_notes": null
+  },
+  "AP World History: Modern (score 3-5): Cal-GETC Area 3B or 4": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AWHM4-1-001"
+    ],
+    "_notes": null
+  },
+  "AP U.S. Government & Politics (score 3-5): Cal-GETC Area 4": {
+    "unified_title": "AP U.S. Government & Politics",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AUGP-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Comparative Government & Politics (score 3-5): Cal-GETC Area 4": {
+    "unified_title": "AP Comparative Government & Politics",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ACGP-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Human Geography (score 3-5): Cal-GETC Area 4": {
+    "unified_title": "AP Human Geography",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AHG5-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Macroeconomics (score 3-5): Cal-GETC Area 4": {
+    "unified_title": "AP Macroeconomics",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AM6-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Microeconomics (score 3-5): Cal-GETC Area 4": {
+    "unified_title": "AP Microeconomics",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AM9-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Art History (score 3-5): Cal-GETC Area 3A or 3B": {
+    "unified_title": "AP Art History",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AAH10-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Calculus AB (score 3-5): Cal-GETC Area 2": {
+    "unified_title": "AP Calculus AB",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ACA6-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Calculus BC (score 3-5): Cal-GETC Area 2": {
+    "unified_title": "AP Calculus BC",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ACB4-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Calculus BC/ AB sub score (score 3-5): Cal-GETC Area 2": {
+    "unified_title": "AP Calculus AB",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ACBA2-1-001"
+    ],
+    "_notes": "Judgment call: the 'BC/AB sub score' refers to the AB subscore reported on the BC exam, which demonstrates AB-level competency. Skill Rule 3 (don't split sub-results) applies — unified with AP Calculus AB. Confidence below 0.85 because this could plausibly also be modeled as a separate credential."
+  },
+  "AP Statistics (score 3-5): Cal-GETC Area 2": {
+    "unified_title": "AP Statistics",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AS6-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Chinese Language & Culture (score 3-5): Cal-GETC Area 3B": {
+    "unified_title": "AP Chinese Language & Culture",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ACLC-1-001"
+    ],
+    "_notes": null
+  },
+  "AP French Language & Culture (score 3-5): Cal-GETC Area 3B": {
+    "unified_title": "AP French Language & Culture",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AFLC-1-001"
+    ],
+    "_notes": null
+  },
+  "AP German Language & Culture (score 3-5): Cal-GETC Area 3B": {
+    "unified_title": "AP German Language & Culture",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AGLC-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Italian Language & Culture (score 3-5): Cal-GETC Area 3B": {
+    "unified_title": "AP Italian Language & Culture",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AILC-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Japanese Language & Culture (score 3-5): Cal-GETC Area 3B": {
+    "unified_title": "AP Japanese Language & Culture",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AJLC-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Latin (score 3-5): Cal-GETC Area 3B": {
+    "unified_title": "AP Latin",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AL4-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Spanish Language & Culture (score 3-5): Cal-GETC Area 3B": {
+    "unified_title": "AP Spanish Language & Culture",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ASLC-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Spanish Literature & Culture (score 3-5): Cal-GETC Area 3B": {
+    "unified_title": "AP Spanish Literature & Culture",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ASLC1-1-001"
+    ],
+    "_notes": null
+  },
+  "AP English Language/Composition (score 3-5): Cal-GETC Area 1A": {
+    "unified_title": "AP English Language & Composition",
+    "confidence_title": 0.96,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AEL4-1-001"
+    ],
+    "_notes": "Normalized 'Language/Composition' → 'Language & Composition' (College Board's canonical phrasing)."
+  },
+  "AP English Literature/Composition (score 3-5): Cal-GETC Area 1A or 3B": {
+    "unified_title": "AP English Literature & Composition",
+    "confidence_title": 0.96,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AEL5-1-001"
+    ],
+    "_notes": "Normalized 'Literature/Composition' → 'Literature & Composition' (College Board's canonical phrasing)."
+  },
+  "IB Biology HL (score 5-7): Cal-GETC Area 5B": {
+    "unified_title": "IB Biology HL",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-IBH1-1-001"
+    ],
+    "_notes": null
+  },
+  "IB Chemistry HL (score 5-7): Cal-GETC Area 5A": {
+    "unified_title": "IB Chemistry HL",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ICH1-1-001"
+    ],
+    "_notes": null
+  },
+  "IB Physics HL (score 5-7): Cal-GETC Area 5A": {
+    "unified_title": "IB Physics HL",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-IPH5-1-001"
+    ],
+    "_notes": null
+  },
+  "IB Mathematics: Applications and Interpretation HL (score 5-7): Cal-GETC Area 2 (may not be at all UC)": {
+    "unified_title": "IB Mathematics: Applications and Interpretation HL",
+    "confidence_title": 0.93,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-IMAA1-1-001"
+    ],
+    "_notes": "Skill Rule 4: this is the post-2019 IB Maths AI course — distinct from IB Mathematics: Analysis and Approaches. Kept separate. UC-applicability caveat stripped from the unified title."
+  },
+  "IB Mathematics: Analysis and Approaches HL (score 5-7): Cal-GETC Area 2": {
+    "unified_title": "IB Mathematics: Analysis and Approaches HL",
+    "confidence_title": 0.95,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-IMAA-1-001"
+    ],
+    "_notes": null
+  },
+  "IB History (any region) HL (score 5-7): Cal-GETC Area 3B or 4": {
+    "unified_title": "IB History HL",
+    "confidence_title": 0.93,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-IH1-1-001"
+    ],
+    "_notes": "Stripped the '(any region)' qualifier — the parenthetical clarifies that any IB History regional variant qualifies, but the credential identity is the same."
+  },
+  "IB Geography HL (score 5-7): Cal-GETC Area 4": {
+    "unified_title": "IB Geography HL",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-IGH1-1-001"
+    ],
+    "_notes": null
+  },
+  "IB Economics HL (score 5-7): Cal-GETC Area 4": {
+    "unified_title": "IB Economics HL",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-IEH2-1-001"
+    ],
+    "_notes": null
+  },
+  "IB Psychology HL (score 5-7): Cal-GETC Area 4": {
+    "unified_title": "IB Psychology HL",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-IPH2-1-001"
+    ],
+    "_notes": null
+  },
+  "IB Theatre HL (score 5-7): Cal-GETC Area 3A": {
+    "unified_title": "IB Theatre HL",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ITH1-1-001"
+    ],
+    "_notes": null
+  },
+  "IB Language A: Literature (any language, except English) HL (score 5-7): Cal-GETC Area 3B": {
+    "unified_title": "IB Language A: Literature (non-English)",
+    "confidence_title": 0.82,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ILAL4-1-001"
+    ],
+    "_notes": "Skill Rule 4: IB offers Language A: Literature in many languages. The 'except English' variant is materially different from the English variant for articulation, so kept as its own unified title. Renamed parenthetical to '(non-English)' for brevity."
+  },
+  "IB Language A: Literature (any language) HL (score 5-7): Cal-GETC Area 3B": {
+    "unified_title": "IB Language A: Literature",
+    "confidence_title": 0.85,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ILAL6-1-001"
+    ],
+    "_notes": "Skill Rule 4: 'Language A: Literature' is a distinct IB DP course from 'Language A: Language and Literature'. Kept separate from the '(non-English)' variant because the '(non-English)' wording flags a different articulation pathway."
+  },
+  "IB Language A: Language and Literature (any language, except English) HL (score 5-7): Cal-GETC Area 3B": {
+    "unified_title": "IB Language A: Language and Literature (non-English)",
+    "confidence_title": 0.82,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ILAL5-1-001"
+    ],
+    "_notes": "Skill Rule 4: paired with the all-language variant below — non-English flag preserved because articulation pathway differs."
+  },
+  "IB Language A: Language and Literature (any language) HL (score 5-7): Cal-GETC Area 3B": {
+    "unified_title": "IB Language A: Language and Literature",
+    "confidence_title": 0.85,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-ILAL7-1-001"
+    ],
+    "_notes": "Skill Rule 4: distinct IB DP course from Language A: Literature; the 'any language' (no exclusion) form is the broader articulation pathway."
+  },
+  "Peace Officer Standards and Training Basic Academy Certificate (POST) ": {
+    "unified_title": "POST Basic Academy",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-P-BL-1-001"
+    ],
+    "_notes": "Trailing whitespace in raw title is preserved as the cache key but stripped from the unified title."
+  },
+  "SFT State Fire Officer Certification": {
+    "unified_title": "California State Fire Officer Certification",
+    "confidence_title": 0.92,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICA-SSFO-1-001"
+    ],
+    "_notes": "Expanded the 'SFT' acronym into the unified title per Skill Rule 1 (titles should read cleanly without context); issuer captured separately."
+  },
+  "Credit By Exam at Saddleback College": {
+    "unified_title": "Generic Credit by Exam — Saddleback College",
+    "confidence_title": 0.55,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "_notes": "Skill Rule 5: administrative bucket — Saddleback registers multiple CBE awards under one MAP ExhibitID. Not a single credential; flagged for review."
+  },
+  "Credit By Exam at Mesa": {
+    "unified_title": "Generic Credit by Exam — San Diego Mesa College",
+    "confidence_title": 0.5,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "_notes": "Skill Rule 5: administrative bucket. 'Mesa' interpreted as San Diego Mesa College (the only CCC named 'Mesa'). Confidence 0.50 because the abbreviation 'Mesa' is ambiguous on its face."
+  },
+  "Credit By Exam San Diego City College": {
+    "unified_title": "Generic Credit by Exam — San Diego City College",
+    "confidence_title": 0.55,
+    "classified_at": "2026-05-19",
+    "classified_by": "hand-curated seed (Phase 2)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "_notes": "Skill Rule 5: administrative bucket — San Diego City registers multiple CBE awards under one MAP ExhibitID. Not a single credential; flagged for review."
+  }
+}
