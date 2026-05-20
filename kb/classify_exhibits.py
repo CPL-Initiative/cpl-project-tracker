@@ -259,6 +259,7 @@ def main():
 
     try:
         import anthropic
+        import httpx
     except ImportError:
         sys.exit("pip install anthropic  (or run with --dry-run)")
     if not os.environ.get("ANTHROPIC_API_KEY"):
@@ -274,19 +275,38 @@ def main():
                  "articulating_colleges_sample": source[t]["articulating_colleges_sample"]}
                 for t in batch]
         user = json.dumps(rows, ensure_ascii=False)
-        try:
-            with client.messages.stream(
-                model=args.model,
-                max_tokens=32000,
-                thinking=thinking,
-                system=system,
-                output_config={"format": OUTPUT_SCHEMA},
-                messages=[{"role": "user", "content": user}],
-            ) as stream:
-                msg = stream.get_final_message()
-        except anthropic.APIStatusError as e:
-            print(f"  chunk {i}/{len(batches)} FAILED ({e.status_code}); "
-                  f"KB checkpointed, safe to re-run. {e.message}")
+        # Retry on transient failures: network drops (httpx.HTTPError, e.g.
+        # WinError 10054 on managed networks), connection errors, 429, and 5xx.
+        # Auth / bad-request (4xx) are fatal — stop so we don't burn retries.
+        msg = None
+        for attempt in range(5):
+            try:
+                with client.messages.stream(
+                    model=args.model,
+                    max_tokens=32000,
+                    thinking=thinking,
+                    system=system,
+                    output_config={"format": OUTPUT_SCHEMA},
+                    messages=[{"role": "user", "content": user}],
+                ) as stream:
+                    msg = stream.get_final_message()
+                break
+            except anthropic.APIStatusError as e:
+                if e.status_code < 500 and e.status_code != 429:
+                    print(f"  chunk {i}/{len(batches)} FATAL ({e.status_code}); "
+                          f"KB checkpointed, safe to fix & re-run. "
+                          f"{getattr(e, 'message', e)}")
+                    return
+                err = e
+            except (anthropic.APIConnectionError, httpx.HTTPError) as e:
+                err = e
+            wait = 2 ** (attempt + 1)
+            print(f"    chunk {i} transient {type(err).__name__}; "
+                  f"retry {attempt + 1}/4 in {wait}s…")
+            time.sleep(wait)
+        if msg is None:
+            print(f"  chunk {i}/{len(batches)} failed after retries (network?); "
+                  f"KB checkpointed — re-run to resume from here.")
             break
 
         text = next((b.text for b in msg.content if b.type == "text"), "")
