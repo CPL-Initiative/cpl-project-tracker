@@ -1,6 +1,12 @@
 """
-One-shot generator for the Phase B M-ID consolidation seed (STAGING):
-  kb/coci_minted_courses.json
+One-shot generator for the Phase B M-ID consolidation seed (STAGING). Emits
+TWO files:
+  kb/coci_minted_courses.json      — catalog: one identity record per M-ID
+  kb/coci_minted_memberships.json  — provenance/join: M-ID -> [{subject, course_number}]
+
+The split keeps the (large) per-college membership lists out of the catalog so
+git revisions of the reviewable identity layer stay small. The memberships file
+is the join table the later articulation phase resolves against MAP data.
 
 WHAT THIS IS
 Reads the statewide MAP/COCI course list and consolidates "like courses"
@@ -58,7 +64,13 @@ from collections import Counter, defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REF = os.path.join(HERE, "reference")
-OUT = os.path.join(HERE, "coci_minted_courses.json")
+# Two-file split: a lean catalog (one record per M-ID, no inline members) and a
+# separate membership index (M-ID -> [{subject, course_number}]). The catalog is
+# the reviewable identity layer; the memberships file is the provenance record
+# and the join table for the later articulation phase. Keeping the (large)
+# membership lists out of the catalog keeps git revisions of the catalog small.
+OUT_CATALOG = os.path.join(HERE, "coci_minted_courses.json")
+OUT_MEMBERS = os.path.join(HERE, "coci_minted_memberships.json")
 
 GENERATED_AT = "2026-05-20"
 GENERATED_BY = "claude-opus-4-7 (Phase B M-ID consolidation draft)"
@@ -212,7 +224,9 @@ def main():
 
     clusters = {k: v for k, v in by_title.items() if len(v) >= MIN_MEMBERS}
 
-    courses = {}
+    courses = {}      # catalog: course_id -> identity record (no inline members)
+    memberships = {}  # provenance/join: course_id -> [{subject, course_number}]
+    max_num_by_token = {}  # for the numbering-overflow report
     for nt in sorted(clusters):
         members = clusters[nt]
         subj_counts = Counter(m[0] for m in members)
@@ -224,6 +238,7 @@ def main():
         subj_token = re.sub(r"\s+", "", modal_subject) or "MISC"
         next_num[subj_token] = next_num.get(subj_token, 98) + 2
         course_id = f"M-ID {subj_token} {next_num[subj_token]}"
+        max_num_by_token[subj_token] = next_num[subj_token]
 
         title_counts = Counter(m[2] for m in members)
         common_title = title_counts.most_common(1)[0][0]
@@ -260,16 +275,19 @@ def main():
             "classified_by": GENERATED_BY,
             "reviewed_at": None,
             "reviewed_by": None,
-            "members": [
-                {"subject": m[0], "course_number": m[1], "local_title": m[2]}
-                for m in sorted(members)
-            ],
             "_notes": "; ".join(notes) if notes else None,
         }
+        # Lean membership index: subject + number only (the articulation-phase
+        # join key). Title/description live once in the catalog, not repeated here.
+        memberships[course_id] = [
+            {"subject": m[0], "course_number": m[1]} for m in sorted(members)
+        ]
 
     n_high_conf = sum(1 for v in courses.values() if v["confidence"] >= 0.85)
     n_flagged = sum(1 for v in courses.values() if v["_notes"])
-    out = {
+    n_members_total = sum(len(v) for v in memberships.values())
+
+    catalog = {
         "_source": SOURCE_DESC,
         "_status": "STAGING — not merged into curated common_courses.json/course_crosswalk.json.",
         "_method": ("Conservative first cut: exact (case/punctuation-normalized) title match; "
@@ -283,24 +301,46 @@ def main():
             "discipline completion for unmapped subjects",
             "merge into curated common_courses.json + crosswalk MAP articulations (with college)",
         ],
+        "_memberships_file": "coci_minted_memberships.json",
         "_generated_by": "kb/_seed_coci_minted_mids.py",
         "_generated_at": GENERATED_AT,
         "count": len(courses),
         "count_high_confidence": n_high_conf,
         "count_flagged_for_review": n_flagged,
-        "member_courses_consolidated": sum(len(v["members"]) for v in courses.values()),
+        "member_courses_consolidated": n_members_total,
         "courses": dict(sorted(courses.items())),
     }
+    members_out = {
+        "_source": SOURCE_DESC,
+        "_status": "STAGING — provenance / join table for kb/coci_minted_courses.json.",
+        "_about": ("M-ID -> list of member local courses ({subject, course_number}). "
+                   "The (subject, course_number) pair is the join key against MAP "
+                   "articulation data (CustomReport: college + course code). Canonical "
+                   "identity (title/description/discipline) lives in the catalog file."),
+        "_catalog_file": "coci_minted_courses.json",
+        "_generated_by": "kb/_seed_coci_minted_mids.py",
+        "_generated_at": GENERATED_AT,
+        "count": len(memberships),
+        "member_courses_total": n_members_total,
+        "memberships": dict(sorted(memberships.items())),
+    }
 
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+    for path, payload in ((OUT_CATALOG, catalog), (OUT_MEMBERS, members_out)):
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, ensure_ascii=False)
+            f.write("\n")
 
-    print(f"wrote {OUT}")
+    overflow = [(t, n) for t, n in max_num_by_token.items() if n >= 100000]
+    top_tokens = sorted(max_num_by_token.items(), key=lambda kv: kv[1], reverse=True)[:8]
+
+    print(f"wrote {OUT_CATALOG}")
+    print(f"wrote {OUT_MEMBERS}")
     print(f"  source rows w/o C-ID/CCN: {n_rows}")
     print(f"  excluded — generic shells: {excluded_generic}, code-only titles: {excluded_code}")
     print(f"  minted M-IDs: {len(courses)} (high-confidence >=0.85: {n_high_conf}, flagged: {n_flagged})")
-    print(f"  member courses consolidated: {out['member_courses_consolidated']}")
+    print(f"  member courses consolidated: {n_members_total}")
+    print(f"  highest M-ID number per token (top 8): {top_tokens}")
+    print(f"  tokens overflowing 6 digits (>=100000): {overflow or 'none'}")
 
 
 if __name__ == "__main__":
