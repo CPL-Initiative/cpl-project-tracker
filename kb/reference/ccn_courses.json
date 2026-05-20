@@ -1,0 +1,355 @@
+{
+  "_source": "COCI_Summary.xlsx col 'COMMON COURSE NUMBER' (orig col AH), CCCCO, retrieved 2026-05-20",
+  "_note": "Approved AB1111 Common Course Numbered courses. ccn = full descriptor e.g. 'ANTH C1000'.",
+  "count": 58,
+  "courses": [
+    {
+      "ccn": "ANTH C1000",
+      "subject": "ANTH",
+      "number": "C1000",
+      "title": "Introduction to Biological Anthropology with Lab"
+    },
+    {
+      "ccn": "ANTH C1001",
+      "subject": "ANTH",
+      "number": "C1001",
+      "title": "Introduction to Biological Anthropology"
+    },
+    {
+      "ccn": "ANTH C1001H",
+      "subject": "ANTH",
+      "number": "C1001H",
+      "title": "Introduction to Biological Anthropology - Honors"
+    },
+    {
+      "ccn": "ANTH C1001L",
+      "subject": "ANTH",
+      "number": "C1001L",
+      "title": "Biological Anthropology Lab"
+    },
+    {
+      "ccn": "ANTH C1001LH",
+      "subject": "ANTH",
+      "number": "C1001LH",
+      "title": "Biological Anthropology Lab - Honors"
+    },
+    {
+      "ccn": "ARTH C1100",
+      "subject": "ARTH",
+      "number": "C1100",
+      "title": "Survey of Art from Prehistory to the Medieval Era"
+    },
+    {
+      "ccn": "ARTH C1100H",
+      "subject": "ARTH",
+      "number": "C1100H",
+      "title": "Survey of Art from Prehistory to the Medieval Era - Honors"
+    },
+    {
+      "ccn": "ARTH C1200",
+      "subject": "ARTH",
+      "number": "C1200",
+      "title": "Survey of Art from the Renaissance to Contemporary"
+    },
+    {
+      "ccn": "ARTH C1200H",
+      "subject": "ARTH",
+      "number": "C1200H",
+      "title": "Survey of Art from the Renaissance to Contemporary - Honors"
+    },
+    {
+      "ccn": "ASTR C1000",
+      "subject": "ASTR",
+      "number": "C1000",
+      "title": "Introduction to Astronomy with Lab"
+    },
+    {
+      "ccn": "ASTR C1001",
+      "subject": "ASTR",
+      "number": "C1001",
+      "title": "Introduction to Astronomy"
+    },
+    {
+      "ccn": "ASTR C1001H",
+      "subject": "ASTR",
+      "number": "C1001H",
+      "title": "Introduction to Astronomy - Honors"
+    },
+    {
+      "ccn": "ASTR C1001L",
+      "subject": "ASTR",
+      "number": "C1001L",
+      "title": "Introduction to Astronomy Lab"
+    },
+    {
+      "ccn": "BIOL C1000",
+      "subject": "BIOL",
+      "number": "C1000",
+      "title": "Introduction to Biology with Lab"
+    },
+    {
+      "ccn": "BIOL C1000H",
+      "subject": "BIOL",
+      "number": "C1000H",
+      "title": "Introduction to Biology with Lab â€“ Honors"
+    },
+    {
+      "ccn": "BIOL C1001",
+      "subject": "BIOL",
+      "number": "C1001",
+      "title": "Introduction to Biology"
+    },
+    {
+      "ccn": "BIOL C1001H",
+      "subject": "BIOL",
+      "number": "C1001H",
+      "title": "Introduction to Biology - Honors"
+    },
+    {
+      "ccn": "BIOL C1001L",
+      "subject": "BIOL",
+      "number": "C1001L",
+      "title": "Introduction to Biology Lab"
+    },
+    {
+      "ccn": "CDEV C1000",
+      "subject": "CDEV",
+      "number": "C1000",
+      "title": "Child Growth and Development"
+    },
+    {
+      "ccn": "CDEV C1000H",
+      "subject": "CDEV",
+      "number": "C1000H",
+      "title": "Child Growth and Development - Honors"
+    },
+    {
+      "ccn": "COMM C1000",
+      "subject": "COMM",
+      "number": "C1000",
+      "title": "Introduction to Public Speaking"
+    },
+    {
+      "ccn": "COMM C1000H",
+      "subject": "COMM",
+      "number": "C1000H",
+      "title": "Introduction to Public Speaking - Honors"
+    },
+    {
+      "ccn": "COMM C1004",
+      "subject": "COMM",
+      "number": "C1004",
+      "title": "Interpersonal Communication"
+    },
+    {
+      "ccn": "COMM C1004H",
+      "subject": "COMM",
+      "number": "C1004H",
+      "title": "Interpersonal Communication - Honors"
+    },
+    {
+      "ccn": "ECON C2001",
+      "subject": "ECON",
+      "number": "C2001",
+      "title": "Principles of Microeconomics"
+    },
+    {
+      "ccn": "ECON C2001H",
+      "subject": "ECON",
+      "number": "C2001H",
+      "title": "Principles of Microeconomics - Honors"
+    },
+    {
+      "ccn": "ECON C2002",
+      "subject": "ECON",
+      "number": "C2002",
+      "title": "Principles of Macroeconomics"
+    },
+    {
+      "ccn": "ECON C2002H",
+      "subject": "ECON",
+      "number": "C2002H",
+      "title": "Principles of Macroeconomics - Honors"
+    },
+    {
+      "ccn": "ENGL C1000",
+      "subject": "ENGL",
+      "number": "C1000",
+      "title": "Academic Reading and Writing"
+    },
+    {
+      "ccn": "ENGL C1000E",
+      "subject": "ENGL",
+      "number": "C1000E",
+      "title": "Academic Reading and Writing"
+    },
+    {
+      "ccn": "ENGL C1000H",
+      "subject": "ENGL",
+      "number": "C1000H",
+      "title": "Academic Reading and Writing - Honors"
+    },
+    {
+      "ccn": "ENGL C1001",
+      "subject": "ENGL",
+      "number": "C1001",
+      "title": "Critical Thinking and Writing"
+    },
+    {
+      "ccn": "ENGL C1001H",
+      "subject": "ENGL",
+      "number": "C1001H",
+      "title": "Critical Thinking and Writing - Honors"
+    },
+    {
+      "ccn": "ENGL C1002",
+      "subject": "ENGL",
+      "number": "C1002",
+      "title": "Introduction to Literature"
+    },
+    {
+      "ccn": "ENGL C1002H",
+      "subject": "ENGL",
+      "number": "C1002H",
+      "title": "Introduction to Literature - Honors"
+    },
+    {
+      "ccn": "ENGL C1003",
+      "subject": "ENGL",
+      "number": "C1003",
+      "title": "Critical Thinking and Writing through Literature"
+    },
+    {
+      "ccn": "ENGL C1003H",
+      "subject": "ENGL",
+      "number": "C1003H",
+      "title": "Critical Thinking and Writing through Literature - Honors"
+    },
+    {
+      "ccn": "HIST C1001",
+      "subject": "HIST",
+      "number": "C1001",
+      "title": "United States History to 1877"
+    },
+    {
+      "ccn": "HIST C1001H",
+      "subject": "HIST",
+      "number": "C1001H",
+      "title": "United States History to 1877 - Honors"
+    },
+    {
+      "ccn": "HIST C1002",
+      "subject": "HIST",
+      "number": "C1002",
+      "title": "United States History since 1865"
+    },
+    {
+      "ccn": "HIST C1002H",
+      "subject": "HIST",
+      "number": "C1002H",
+      "title": "United States History since 1865 - Honors"
+    },
+    {
+      "ccn": "MATH C2210",
+      "subject": "MATH",
+      "number": "C2210",
+      "title": "Calculus I: Early Transcendentals"
+    },
+    {
+      "ccn": "MATH C2210E",
+      "subject": "MATH",
+      "number": "C2210E",
+      "title": "Calculus I: Early Transcendentals â€“ Embedded Support"
+    },
+    {
+      "ccn": "MATH C2210H",
+      "subject": "MATH",
+      "number": "C2210H",
+      "title": "Calculus I: Early Transcendentals - Honors"
+    },
+    {
+      "ccn": "MATH C2211",
+      "subject": "MATH",
+      "number": "C2211",
+      "title": "Calculus I: Late Transcendentals"
+    },
+    {
+      "ccn": "MATH C2211E",
+      "subject": "MATH",
+      "number": "C2211E",
+      "title": "Calculus I: Late Transcendentals â€“ Embedded Support"
+    },
+    {
+      "ccn": "MATH C2220",
+      "subject": "MATH",
+      "number": "C2220",
+      "title": "Calculus II: Early Transcendentals"
+    },
+    {
+      "ccn": "MATH C2220H",
+      "subject": "MATH",
+      "number": "C2220H",
+      "title": "Calculus II: Early Transcendentals - Honors"
+    },
+    {
+      "ccn": "MATH C2221",
+      "subject": "MATH",
+      "number": "C2221",
+      "title": "Calculus II: Late Transcendentals"
+    },
+    {
+      "ccn": "POLS C1000",
+      "subject": "POLS",
+      "number": "C1000",
+      "title": "American Government and Politics"
+    },
+    {
+      "ccn": "POLS C1000H",
+      "subject": "POLS",
+      "number": "C1000H",
+      "title": "American Government and Politics - Honors"
+    },
+    {
+      "ccn": "PSYC C1000",
+      "subject": "PSYC",
+      "number": "C1000",
+      "title": "Introduction to Psychology"
+    },
+    {
+      "ccn": "PSYC C1000H",
+      "subject": "PSYC",
+      "number": "C1000H",
+      "title": "Introduction to Psychology - Honors"
+    },
+    {
+      "ccn": "SOCI C1000",
+      "subject": "SOCI",
+      "number": "C1000",
+      "title": "Introduction to Sociology"
+    },
+    {
+      "ccn": "SOCI C1000H",
+      "subject": "SOCI",
+      "number": "C1000H",
+      "title": "Introduction to Sociology - Honors"
+    },
+    {
+      "ccn": "STAT C1000",
+      "subject": "STAT",
+      "number": "C1000",
+      "title": "Introduction to Statistics"
+    },
+    {
+      "ccn": "STAT C1000E",
+      "subject": "STAT",
+      "number": "C1000E",
+      "title": "Introduction to Statistics"
+    },
+    {
+      "ccn": "STAT C1000H",
+      "subject": "STAT",
+      "number": "C1000H",
+      "title": "Introduction to Statistics - Honors"
+    }
+  ]
+}
