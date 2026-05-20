@@ -59,11 +59,20 @@ C-ID, re-key it from its M-ID and set `id_system` accordingly.
 
 ## Status
 
-**Phase 2 seed — hand-curated, 50 raw titles.** This is the quality
-anchor against which the Phase 3 full first-pass classification
+**Phase 2 seed — hand-curated, 50 raw titles** (credential layer) plus
+the Cx-seeded course-identity layer (244 common courses). This is the
+quality anchor against which the Phase 3 full first-pass classification
 (~3,200 distinct raw titles) will be evaluated. Not yet wired into
 the daily pipeline; `excel_to_dashboard.py` does not consult these
 files. Pipeline integration is Phase 4.
+
+**Curation pass 1 (2026-05-20, `kb/_curation_01.py`)** — human review of
+the course-identity layer: cleared all 38 flagged entries (4 fuzzy C-ID
+matches confirmed/split, 16 approximate disciplines + 18 single-source
+entries resolved), split the Spanish level ladder (SPAN 100/110/200/210),
+and introduced the `cross_listing_group` field with two seeded groups
+(CAD drafting `XL-0001`, photojournalism `XL-0002`). 246 common courses;
+49 carry `reviewed_at`/`reviewed_by`.
 
 ## Schemas
 
@@ -136,6 +145,7 @@ precedence above). Each value describes one common course:
     "id_system": "C-ID",
     "ccn_id": null,
     "c_id": "ACCT 110",
+    "cross_listing_group": null,
     "subject": "ACCT",
     "discipline": "Business",
     "discipline_provisional": "Accounting",
@@ -167,6 +177,12 @@ precedence above). Each value describes one common course:
 - `id_system` ∈ `{"CCN-ID", "C-ID", "M-ID"}`; `ccn_id` / `c_id` hold the
   official descriptor when matched, else `null`. For an `M-ID` entry both
   are `null` and the key carries the synthetic descriptor.
+- `cross_listing_group` links **cross-listed** courses — the same course
+  offered under two department subjects (e.g. a CAD course listed as both
+  `ARCH 50` and `DR 50`). Each discipline mirror keeps its own
+  `course_id`/discipline but shares a group id (`"XL-NNNN"`), so an
+  articulation to one applies to all. `null` when not cross-listed. See
+  "Cross-listed courses" below.
 - `discipline` is the official **MQ Disciplines List** title
   (`reference/mq_disciplines.json`); `discipline_provisional` keeps the
   pre-MQ label for traceability. When no exact MQ discipline exists, the
@@ -215,6 +231,29 @@ courses that share an identifier. (Same split rationale as
 `course_crosswalk.json[key].course_id`, then read
 `common_courses.json[course_id]` for the canonical title / discipline /
 `id_system`. Group cross-college articulations by `course_id`.
+
+### Cross-listed courses
+
+Some courses are offered under two department subjects at the same college
+(common in Drafting/Architecture, Electricity/Electronics, Journalism/
+Photography). MAP records both local codes (e.g. `ARCH 50` *and* `DR 50`
+for one CAD course). Rather than collapse them, each discipline keeps its
+own `course_id` and the entries share a `cross_listing_group` id
+(`"XL-NNNN"`):
+
+- Each local code routes to its discipline's mirror in
+  `course_crosswalk.json` (e.g. `ARCH 50 → M-ID ARCH 104`,
+  `DR 50 → M-ID DRFT 108`).
+- Both catalog entries carry the same `cross_listing_group`, so the
+  pipeline can union them — an articulation earned on one mirror applies
+  to the whole group.
+- A mirror can be a C-ID/CCN on one side and an M-ID on the other (e.g.
+  Introduction to Photojournalism: `JOUR 160` (C-ID, Journalism) ↔
+  `M-ID PHOT 106` (Photography), group `XL-0002`).
+
+Curation pass 1 seeded two groups (`XL-0001` CAD drafting, `XL-0002`
+photojournalism). Phase 3 should auto-detect candidates: same college +
+same normalized title + same units under different subject prefixes.
 
 ### Relationship to the Cx generic-bucket entries
 

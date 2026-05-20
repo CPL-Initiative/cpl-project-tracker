@@ -878,8 +878,8 @@
     ],
     "classified_at": "2026-05-19",
     "classified_by": "claude-opus-4-7 (Cx common-course draft)",
-    "reviewed_at": null,
-    "reviewed_by": null
+    "reviewed_at": "2026-05-20",
+    "reviewed_by": "samueltlee"
   },
   "Las Positas College :: JAMS 23 :: Multimedia Reporting": {
     "college": "Las Positas College",
@@ -1089,8 +1089,8 @@
     "local_course_title": "Introduction to Photojournalism",
     "units": 3.0,
     "top_code": "17",
-    "course_id": "JOUR 160",
-    "id_system": "C-ID",
+    "course_id": "M-ID PHOT 106",
+    "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
       "Credit by Exam PHTO 72 Introduction to Photojournalism",
@@ -1102,8 +1102,8 @@
     ],
     "classified_at": "2026-05-19",
     "classified_by": "claude-opus-4-7 (Cx common-course draft)",
-    "reviewed_at": null,
-    "reviewed_by": null
+    "reviewed_at": "2026-05-20",
+    "reviewed_by": "samueltlee"
   },
   "Las Positas College :: SPAN 1B :: Elementary Spanish": {
     "college": "Las Positas College",
@@ -1662,8 +1662,8 @@
     ],
     "classified_at": "2026-05-19",
     "classified_by": "claude-opus-4-7 (Cx common-course draft)",
-    "reviewed_at": null,
-    "reviewed_by": null
+    "reviewed_at": "2026-05-20",
+    "reviewed_by": "samueltlee"
   },
   "Saddleback College :: AUTO 100 :: AUTOMOTIVE FUNDAMENTALS": {
     "college": "Saddleback College",
@@ -2011,7 +2011,7 @@
     "local_course_title": "INTRODUCTION TO COMPUTER-AIDED DRAFTING",
     "units": 3.0,
     "top_code": "62",
-    "course_id": "M-ID ARCH 104",
+    "course_id": "M-ID DRFT 108",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -2022,8 +2022,8 @@
     ],
     "classified_at": "2026-05-19",
     "classified_by": "claude-opus-4-7 (Cx common-course draft)",
-    "reviewed_at": null,
-    "reviewed_by": null
+    "reviewed_at": "2026-05-20",
+    "reviewed_by": "samueltlee"
   },
   "Saddleback College :: ET 101 :: SURVEY OF ELECTRONICS": {
     "college": "Saddleback College",
@@ -3271,7 +3271,7 @@
     "local_course_title": "ELEMENTARY SPANISH",
     "units": 5.0,
     "top_code": "83",
-    "course_id": "SPAN 100",
+    "course_id": "SPAN 110",
     "id_system": "C-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -3282,8 +3282,8 @@
     ],
     "classified_at": "2026-05-19",
     "classified_by": "claude-opus-4-7 (Cx common-course draft)",
-    "reviewed_at": null,
-    "reviewed_by": null
+    "reviewed_at": "2026-05-20",
+    "reviewed_by": "samueltlee"
   },
   "Saddleback College :: SPAN 20A :: CIVILIZATION OF SPAIN THROUGH 1898": {
     "college": "Saddleback College",
@@ -3351,7 +3351,7 @@
     "local_course_title": "INTERMEDIATE SPANISH",
     "units": 5.0,
     "top_code": "83",
-    "course_id": "SPAN 200",
+    "course_id": "SPAN 210",
     "id_system": "C-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -3362,8 +3362,8 @@
     ],
     "classified_at": "2026-05-19",
     "classified_by": "claude-opus-4-7 (Cx common-course draft)",
-    "reviewed_at": null,
-    "reviewed_by": null
+    "reviewed_at": "2026-05-20",
+    "reviewed_by": "samueltlee"
   },
   "Saddleback College :: SPS 315 :: LEARNING DEVELOPMENT PRACTICUM": {
     "college": "Saddleback College",
@@ -3737,7 +3737,7 @@
     "local_course_title": "Introduction to Engineering Design",
     "units": 2.0,
     "top_code": "46",
-    "course_id": "ENGR 110",
+    "course_id": "ENGR 150",
     "id_system": "C-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": [
@@ -3748,8 +3748,8 @@
     ],
     "classified_at": "2026-05-19",
     "classified_by": "claude-opus-4-7 (Cx common-course draft)",
-    "reviewed_at": null,
-    "reviewed_by": null
+    "reviewed_at": "2026-05-20",
+    "reviewed_by": "samueltlee"
   },
   "San Diego City College :: INWT 100 :: Computing Fundamentals (A+)": {
     "college": "San Diego City College",
