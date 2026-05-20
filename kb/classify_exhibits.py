@@ -18,6 +18,12 @@ Usage
   # Full pass over every title not already in kb/unified_titles.json:
   ANTHROPIC_API_KEY=... python3 kb/classify_exhibits.py
 
+  # On a managed network / endpoint security that kills streaming connections,
+  # use the async Message Batches API (no streaming, 50% cheaper, resumable):
+  ANTHROPIC_API_KEY=... python3 kb/classify_exhibits.py --batch --limit 100
+  #   submit → poll → write KB. Ctrl+C during polling is safe; re-run --batch
+  #   to resume the same batch (id cached in kb/_batch_state.json).
+
 Options
 -------
   --dry-run            Build everything but make no API calls (no key required).
@@ -53,6 +59,7 @@ SKILL_PATH = os.path.join(ROOT, ".claude", "skills", "exhibit-canonicalization",
 SOURCE = os.path.join(ROOT, "CustomReport_latest.json")
 UNIFIED = os.path.join(HERE, "unified_titles.json")
 CREDS = os.path.join(HERE, "credentials.json")
+BATCH_STATE = os.path.join(HERE, "_batch_state.json")
 TODAY = "2026-05-20"
 
 SYSTEM_SUFFIX = """
@@ -154,6 +161,80 @@ def chunks(seq, n):
         yield seq[i:i + n]
 
 
+def chunk_rows(batch, source):
+    return [{"raw_title": t,
+             "cpl_types": source[t]["cpl_types"],
+             "articulating_colleges_sample": source[t]["articulating_colleges_sample"]}
+            for t in batch]
+
+
+def parse_records(text):
+    return json.loads(text)["classifications"]
+
+
+def run_batch(client, anthropic, args, source, unified, creds, classified_by,
+              system, thinking, batches):
+    """Message Batches API path — async, no streaming, 50% cheaper. Resilient
+    to proxies/endpoint-security that kill long-lived streaming connections."""
+    from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
+    from anthropic.types.messages.batch_create_params import Request
+
+    state = load_json(BATCH_STATE, {})
+    batch_id = state.get("batch_id")
+    if batch_id:
+        print(f"Resuming batch {batch_id} (delete kb/_batch_state.json to start fresh).")
+    else:
+        requests = [
+            Request(
+                custom_id=f"chunk-{i}",
+                params=MessageCreateParamsNonStreaming(
+                    model=args.model, max_tokens=32000, thinking=thinking,
+                    system=system, output_config={"format": OUTPUT_SCHEMA},
+                    messages=[{"role": "user",
+                               "content": json.dumps(chunk_rows(b, source), ensure_ascii=False)}],
+                ),
+            )
+            for i, b in enumerate(batches)
+        ]
+        mb = client.messages.batches.create(requests=requests)
+        batch_id = mb.id
+        save_json(BATCH_STATE, {"batch_id": batch_id})
+        print(f"Submitted batch {batch_id} with {len(requests)} requests. "
+              f"Safe to Ctrl+C now — re-run with --batch to resume polling.")
+
+    while True:
+        b = client.messages.batches.retrieve(batch_id)
+        if b.processing_status == "ended":
+            break
+        rc = b.request_counts
+        print(f"  status={b.processing_status} processing={rc.processing} "
+              f"succeeded={rc.succeeded} errored={rc.errored} (polling every 30s)")
+        time.sleep(30)
+
+    total = 0
+    errored = 0
+    for result in client.messages.batches.results(batch_id):
+        if result.result.type == "succeeded":
+            msg = result.result.message
+            text = next((blk.text for blk in msg.content if blk.type == "text"), "")
+            try:
+                total += merge_results(parse_records(text), source, unified, creds, classified_by)
+            except (json.JSONDecodeError, KeyError, TypeError) as e:
+                errored += 1
+                print(f"  {result.custom_id} parse error: {e}")
+        else:
+            errored += 1
+            print(f"  {result.custom_id}: {result.result.type}")
+
+    unified, creds = sort_kb(unified, creds)
+    save_json(UNIFIED, unified)
+    save_json(CREDS, creds)
+    if os.path.exists(BATCH_STATE):
+        os.remove(BATCH_STATE)
+    print(f"Done. Added {total} titles ({errored} request errors). "
+          f"unified_titles.json now has {len(unified)} entries.")
+
+
 def merge_results(records, source, unified, creds, classified_by):
     """Write classification records into the in-memory KB dicts. Never clobber
     human-reviewed entries."""
@@ -212,6 +293,9 @@ def main():
     ap.add_argument("--model", default="claude-opus-4-7")
     ap.add_argument("--no-thinking", action="store_true",
                     help="Disable adaptive thinking (default: adaptive, 'as needed').")
+    ap.add_argument("--batch", action="store_true",
+                    help="Use the async Message Batches API (no streaming; 50%% cheaper; "
+                         "survives proxies/endpoint-security that kill streaming). Resumable.")
     ap.add_argument("--reclassify", action="store_true")
     args = ap.parse_args()
 
@@ -253,7 +337,8 @@ def main():
         print(f"  to run for real: set ANTHROPIC_API_KEY and drop --dry-run")
         return
 
-    if not todo:
+    resuming_batch = args.batch and os.path.exists(BATCH_STATE)
+    if not todo and not resuming_batch:
         print("Nothing to classify. KB is up to date.")
         return
 
@@ -268,13 +353,14 @@ def main():
     client = anthropic.Anthropic()
     thinking = {"type": "disabled"} if args.no_thinking else {"type": "adaptive"}
 
+    if args.batch:
+        run_batch(client, anthropic, args, source, unified, creds, classified_by,
+                  system, thinking, batches)
+        return
+
     total_added = 0
     for i, batch in enumerate(batches, 1):
-        rows = [{"raw_title": t,
-                 "cpl_types": source[t]["cpl_types"],
-                 "articulating_colleges_sample": source[t]["articulating_colleges_sample"]}
-                for t in batch]
-        user = json.dumps(rows, ensure_ascii=False)
+        user = json.dumps(chunk_rows(batch, source), ensure_ascii=False)
         # Retry on transient failures: network drops (httpx.HTTPError, e.g.
         # WinError 10054 on managed networks), connection errors, 429, and 5xx.
         # Auth / bad-request (4xx) are fatal — stop so we don't burn retries.
