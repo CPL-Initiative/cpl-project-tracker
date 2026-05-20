@@ -74,6 +74,13 @@ and introduced the `cross_listing_group` field with two seeded groups
 (CAD drafting `XL-0001`, photojournalism `XL-0002`). 246 common courses;
 49 carry `reviewed_at`/`reviewed_by`.
 
+**Course descriptions (2026-05-20, `kb/_add_descriptions.py`)** — added
+`description`/`description_source` fields. Populated the 22 C-ID entries
+with authoritative C-ID descriptor text (now carried in
+`reference/cid_descriptors.json`); cross-listed M-ID mirrors inherit their
+C-ID sibling's description (23 total). Synthetic M-ID descriptions are
+deferred to the Phase 3 classification pass.
+
 ## Schemas
 
 ### `unified_titles.json`
@@ -142,6 +149,8 @@ precedence above). Each value describes one common course:
 {
   "ACCT 110": {
     "common_title": "Financial Accounting",
+    "description": "This is the study of accounting as an information system …",
+    "description_source": "C-ID",
     "id_system": "C-ID",
     "ccn_id": null,
     "c_id": "ACCT 110",
@@ -174,6 +183,11 @@ precedence above). Each value describes one common course:
 }
 ```
 
+- `description` is the consolidated course description; `description_source`
+  is its provenance (`"C-ID"`, `"C-ID (cross-listed <id>)"`, or `null`).
+  Populated from the official C-ID descriptor text; cross-listed M-ID
+  mirrors inherit their C-ID sibling's description. CCN and synthetic M-ID
+  descriptions are `null` for now — M-ID synthesis is deferred to Phase 3.
 - `id_system` ∈ `{"CCN-ID", "C-ID", "M-ID"}`; `ccn_id` / `c_id` hold the
   official descriptor when matched, else `null`. For an `M-ID` entry both
   are `null` and the key carries the synthetic descriptor.
