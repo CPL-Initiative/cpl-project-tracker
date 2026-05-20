@@ -114,7 +114,7 @@ OUTPUT_SCHEMA = {
 
 def load_source_titles():
     """raw_title -> {cpl_types, colleges_sample, source_exhibit_ids}."""
-    data = json.load(open(SOURCE))
+    data = json.load(open(SOURCE, encoding="utf-8"))
     ex = data[0]
     ix = {c: i for i, c in enumerate(ex["columnName"])}
     cpl = defaultdict(set)
@@ -137,18 +137,18 @@ def load_source_titles():
 
 def load_json(path, default):
     if os.path.exists(path):
-        return json.load(open(path))
+        return json.load(open(path, encoding="utf-8"))
     return default
 
 
 def save_json(path, obj):
-    with open(path, "w") as f:
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(obj, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
 
 def build_system(model):
-    skill = open(SKILL_PATH).read()
+    skill = open(SKILL_PATH, encoding="utf-8").read()
     return [{
         "type": "text",
         "text": skill + SYSTEM_SUFFIX,
