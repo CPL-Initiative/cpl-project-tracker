@@ -26,6 +26,7 @@ There are **two** layers:
 | `reference/cid_descriptors.json` | Reference | Official C-ID approved course descriptors (495). Read-only authority. | — |
 | `reference/ccn_courses.json` | Reference | Approved AB 1111 Common Course Numbers (58 so far), from COCI. Read-only authority. | — |
 | `reference/mq_disciplines.json` | Reference | Official CCC discipline titles (19th Ed. Minimum Qualifications Disciplines Index). Controlled vocabulary for the `discipline` field. | — |
+| `reference/subject_discipline_map.json` | Reference | Subject-code → MQ discipline lookup used by the M-ID consolidation generator (STAGING draft; 309 unambiguous codes mapped, ambiguous/bucket codes deliberately left null). Built by `_seed_subject_discipline_map.py`. | normalized subject code |
 | `_seed_top50.py` | Credential | One-shot generator for the Phase 2 hand-curated credential seed. **Do not re-run** — would overwrite human edits. Kept for provenance. | — |
 | `_seed_cx_common_courses.py` | Course | One-shot generator for the Phase 2 Cx seed (AI-assisted draft). **Do not re-run** — would overwrite human edits. Kept for provenance. | — |
 

@@ -42,8 +42,11 @@ EXPLICIT FOLLOW-ONS (not done here):
      Psychology" == "General Psychology") and subject-code canonicalization.
   2. Title/description synthesis — mint a clean consolidated title and
      description rather than borrowing a representative member's.
-  3. Singletons — give every remaining course an identity (confidence-graded).
-  4. Discipline completion — map every modal subject to an MQ discipline.
+  3. Singletons — DONE: minted to kb/coci_minted_singletons.json.
+  4. Discipline completion — EXPANDED: disciplines now come from
+     reference/subject_discipline_map.json (309 subject codes). A long tail of
+     ambiguous / college-specific / generic-bucket subjects is deliberately
+     left unmapped (see that file's _deliberately_unmapped) pending review.
   5. Merge into curated kb/common_courses.json + crosswalk MAP articulations
      (CustomReport, which carries the college) through these M-IDs.
 
@@ -108,64 +111,10 @@ STOP_PATTERNS = [
 STOP_RE = re.compile("|".join(STOP_PATTERNS))
 CODE_RE = re.compile(r"^[a-z]{1,6} ?\d{1,4}[a-z]?$")  # title that is just a course code
 
-# Modal-subject -> official MQ discipline (best-effort; unmapped -> null + flag).
-# Reuses the Phase A C-ID/CCN prefixes plus common local subject codes.
-DISCIPLINE_MAP = {
-    "ACCT": "Business", "ACCTG": "Business", "ACCOUNT": "Business",
-    "ADJ": "Administration of Justice", "AJ": "Administration of Justice",
-    "CJ": "Administration of Justice", "ADMJ": "Administration of Justice",
-    "ANTH": "Anthropology", "ANTHRO": "Anthropology",
-    "ARTH": "Art History", "ARTHIST": "Art History",
-    "ART": "Art", "ARTS": "Art",
-    "ASTR": "Astronomy", "ASTRO": "Astronomy", "ASTRON": "Astronomy",
-    "AUTO": "Automotive Technology", "AUT": "Automotive Technology",
-    "BIOL": "Biological Sciences", "BIO": "Biological Sciences", "BIOSC": "Biological Sciences",
-    "BIOT": "Biotechnology",
-    "BUS": "Business", "BUSAD": "Business", "BUSN": "Business", "BADM": "Business",
-    "CDEV": "Child Development/Early Childhood Education",
-    "CHDEV": "Child Development/Early Childhood Education",
-    "CD": "Child Development/Early Childhood Education",
-    "ECE": "Child Development/Early Childhood Education",
-    "CHEM": "Chemistry",
-    "CHS": "Chicano Studies", "CHIC": "Chicano Studies",
-    "COMM": "Communication Studies", "SPCH": "Communication Studies", "SPEECH": "Communication Studies",
-    "COMP": "Computer Science", "CS": "Computer Science", "CSCI": "Computer Science",
-    "CIS": "Computer Information Systems", "CIT": "Computer Information Systems",
-    "ITIS": "Computer Information Systems", "CNIT": "Computer Information Systems",
-    "DANC": "Dance", "DANCE": "Dance",
-    "ECON": "Economics", "EC": "Economics",
-    "EDUC": "Education", "EDU": "Education",
-    "EET": "Electronic Technology", "ELEC": "Electronics", "ELECT": "Electronics",
-    "EMS": "Emergency Medical Technologies", "EMT": "Emergency Medical Technologies",
-    "ENGL": "English", "ENG": "English",
-    "ENGR": "Engineering", "ENGIN": "Engineering",
-    "ESL": "English as a Second Language",
-    "ETHN": "Ethnic Studies", "ETHST": "Ethnic Studies", "ES": "Ethnic Studies",
-    "FIRE": "Fire Technology", "FIRETEC": "Fire Technology", "FT": "Fire Technology",
-    "GEOG": "Geography", "GEO": "Geography",
-    "GEOL": "Earth Science",
-    "HIST": "History", "HIS": "History",
-    "HIT": "Health Information Technology",
-    "JOUR": "Journalism", "JOURN": "Journalism",
-    "KIN": "Kinesiology", "KINE": "Kinesiology", "PE": "Physical Education", "PHED": "Physical Education",
-    "MATH": "Mathematics", "MTH": "Mathematics", "STAT": "Mathematics",
-    "MUS": "Music", "MUSIC": "Music", "MUSI": "Music",
-    "NURS": "Nursing", "NUR": "Nursing", "RN": "Nursing",
-    "NUTR": "Dietetics/Nutritional Science", "NUTRI": "Dietetics/Nutritional Science",
-    "PHIL": "Philosophy", "PHILO": "Philosophy",
-    "PHYS": "Physics/Astronomy", "PHY": "Physics/Astronomy",
-    "POLS": "Political Science", "POLI": "Political Science", "POL": "Political Science",
-    "POLSC": "Political Science", "PLSC": "Political Science", "POSC": "Political Science",
-    "PSYC": "Psychology", "PSY": "Psychology", "PSYCH": "Psychology",
-    "RE": "Real Estate", "REAL": "Real Estate", "RLEST": "Real Estate",
-    "SOC": "Sociology", "SOCI": "Sociology", "SOCIO": "Sociology",
-    "SPAN": "Foreign Languages", "FREN": "Foreign Languages", "GERM": "Foreign Languages",
-    "ITAL": "Foreign Languages", "CHIN": "Foreign Languages", "JAPN": "Foreign Languages",
-    "PHOT": "Photography", "PHOTO": "Photography",
-    "THTR": "Theater Arts", "THEA": "Theater Arts", "THEAT": "Theater Arts", "DRAM": "Drama/Theater Arts",
-    "WELD": "Welding", "WLD": "Welding",
-    "WMST": "Women’s Studies", "WS": "Women’s Studies",
-}
+# Modal-subject -> official MQ discipline lookup is loaded at runtime from
+# reference/subject_discipline_map.json (built by _seed_subject_discipline_map.py).
+# Keys there are normalized; normsubj() applies the same normalization here.
+DISC_MAP_PATH = os.path.join(REF, "subject_discipline_map.json")
 
 
 def is_blank(v):
@@ -184,6 +133,11 @@ def ntitle(t):
     return re.sub(r"\s+", " ", t).strip()
 
 
+def normsubj(s):
+    """Normalize a subject code to the key form used in subject_discipline_map.json."""
+    return re.sub(r"[^A-Z0-9]", "", str(s).upper())
+
+
 def confidence(n_members, n_subjects):
     """Deterministic confidence for an exact-title corroborated cluster."""
     if n_members >= 3 and n_subjects <= 3:
@@ -199,6 +153,7 @@ def main():
     xlsx_path = sys.argv[1]
 
     mq_set = set(json.load(open(os.path.join(REF, "mq_disciplines.json")))["disciplines"])
+    DISCIPLINE_MAP = json.load(open(DISC_MAP_PATH))["map"]
     for s, disc in DISCIPLINE_MAP.items():
         if disc not in mq_set:
             sys.exit(f"BUG: discipline '{disc}' for subject '{s}' not in MQ list")
@@ -258,7 +213,7 @@ def main():
         desc_counts = Counter(m[3] for m in members if m[3])
         description = desc_counts.most_common(1)[0][0] if desc_counts else None
 
-        disc = DISCIPLINE_MAP.get(subj_token) or DISCIPLINE_MAP.get(modal_subject)
+        disc = DISCIPLINE_MAP.get(normsubj(modal_subject))
         conf = confidence(len(members), n_subjects)
 
         notes = []
@@ -308,7 +263,7 @@ def main():
         course_id = f"M-ID {subj_token} {next_num[subj_token]}"
         max_num_by_token[subj_token] = next_num[subj_token]
 
-        disc = DISCIPLINE_MAP.get(subj_token) or DISCIPLINE_MAP.get(subject)
+        disc = DISCIPLINE_MAP.get(normsubj(subject))
         # Lean record: ONLY the per-row variable fields. Every constant (id_system,
         # confidence 0.5, corroboration 1, null description/credit_status, provenance,
         # the shared note, etc.) lives once in the file's _record_defaults header —
@@ -335,7 +290,7 @@ def main():
         "_follow_ons": [
             "variant-merging (fuzzy/synonym titles + subject-code canonicalization)",
             "title/description synthesis (vs representative member)",
-            "discipline completion for unmapped subjects",
+            "discipline completion for the remaining ambiguous/long-tail subjects",
             "credit-status join (credit/noncredit/noncredit-enhanced) from forthcoming MAP table",
             "merge into curated common_courses.json + crosswalk MAP articulations (with college)",
         ],
