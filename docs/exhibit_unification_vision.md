@@ -89,43 +89,113 @@ become usable. Reports group cleanly by issuing agency.
 ```
 kb/
 ├── unified_titles.json     # raw_title → unified_title mapping (many-to-one)
-├── credentials.json        # unified_title → {issuing_agency, training_agency, ...}
+├── credentials.json        # (unified_title, issuing_agency) → {training_agency, ...}
+├── common_courses.json     # course_id → {common_title, id_system, discipline, ...}  (course-identity layer, §10)
+├── course_crosswalk.json   # local college course → course_id (many-to-one)          (course-identity layer, §10)
+├── reference/              # read-only authorities (C-ID, CCN, MQ disciplines)        (§10)
+│   ├── cid_descriptors.json
+│   ├── ccn_courses.json
+│   └── mq_disciplines.json
 └── README.md               # schema + curation workflow
 ```
 
-**`unified_titles.json` schema** (per entry):
+**`unified_titles.json` schema** — top-level object keyed by `raw_title`,
+values per entry:
 ```json
 {
-  "raw_title": "CMPET 315\tGoogle IT Support Professional Certificate Prep Industry Certificate",
-  "unified_title": "Google IT Support Professional Certificate",
-  "confidence": 0.92,
-  "classified_at": "2026-05-19",
-  "classified_by": "claude-opus-4-7",
-  "reviewed_at": null,
-  "reviewed_by": null,
-  "source_exhibit_ids": ["MAPICI-C3IS-1-001"]
-}
-```
-
-**`credentials.json` schema** (keyed by `unified_title`):
-```json
-{
-  "Google IT Support Professional Certificate": {
-    "issuing_agency": "Google / Coursera",
-    "training_agency": null,
-    "confidence_issuer": 0.95,
-    "confidence_trainer": 1.0,
+  "CMPET 315\tGoogle IT Support Professional Certificate Prep Industry Certificate": {
+    "unified_title": "Google IT Support Professional Certificate",
+    "confidence_title": 0.92,
     "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7",
     "reviewed_at": null,
-    "notes": "Self-study certificate; no training agency."
+    "reviewed_by": null,
+    "source_exhibit_ids": ["MAPICI-C3IS-1-001"],
+    "_notes": null
   }
 }
 ```
 
+**`credentials.json` schema** — keyed on the composite
+`(unified_title, issuing_agency)` because the same unified title can be
+issued by multiple distinct bodies (e.g. `Fire Inspector I` is certified
+by ICC, NFPA, California State Fire Training, and Cal-JAC; each row
+needs its own training-agency, confidence, and notes). To preserve a
+clean two-level browse and to handle the `issuing_agency = null` case
+naturally, the JSON nests issuer records *under* the unified title:
+
+```json
+{
+  "Google IT Support Professional Certificate": [
+    {
+      "issuing_agency": "Google",
+      "training_agency": "Coursera",
+      "confidence_issuer": 0.95,
+      "confidence_trainer": 0.90,
+      "classified_at": "2026-05-19",
+      "classified_by": "claude-opus-4-7",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "_notes": "Self-study Coursera professional certificate."
+    }
+  ],
+  "Fire Inspector I": [
+    {
+      "issuing_agency": "International Code Council (ICC)",
+      "training_agency": null,
+      "confidence_issuer": 0.95,
+      "confidence_trainer": 1.0,
+      "classified_at": "2026-05-19",
+      "classified_by": "claude-opus-4-7",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "_notes": "ICC's Fire Inspector I exam covers NFPA 1031 Level I."
+    },
+    {
+      "issuing_agency": "National Fire Protection Association (NFPA)",
+      "training_agency": null,
+      "confidence_issuer": 0.95,
+      "confidence_trainer": 1.0,
+      "classified_at": "2026-05-19",
+      "classified_by": "claude-opus-4-7",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "_notes": "NFPA-issued ProBoard-accredited Fire Inspector I."
+    }
+  ],
+  "Generic Credit by Exam — Saddleback College": [
+    {
+      "issuing_agency": null,
+      "training_agency": null,
+      "confidence_issuer": 0.55,
+      "confidence_trainer": 0.55,
+      "classified_at": "2026-05-19",
+      "classified_by": "claude-opus-4-7",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "_notes": "Administrative bucket used by Saddleback to register multiple CBE awards under one MAP ExhibitID; not a single credential."
+    }
+  ]
+}
+```
+
+Lookup semantics:
+- Pipeline reads `unified_titles.json[raw_title].unified_title` to get
+  the canonical name.
+- Pipeline then reads `credentials.json[unified_title]` and matches the
+  appropriate issuer record (if multiple, by inspecting Articulation
+  College or other row context; default to the highest-confidence
+  record if no signal).
+- The EACR grouping key becomes
+  `(unified_title, issuing_agency, CPL Type, Collaborative Type)` once
+  issuer-level grouping ships — that lets ICC vs NFPA Fire Inspector I
+  appear as separate cards even though they share a unified title.
+
 Two files, not one, because:
 - Issuing/training agencies are properties of the *credential* (one
-  per unified title), not the *raw entry*. Splitting avoids
-  duplicating agency data across every raw-title variant.
+  per `(unified_title, issuing_agency)` tuple), not the *raw entry*.
+  Splitting avoids duplicating agency data across every raw-title
+  variant.
 - Re-classifying titles vs. re-classifying agencies become
   independent operations.
 
@@ -133,10 +203,13 @@ Two files, not one, because:
 
 1. **Surfacing in the UI.** Once unified titles exist, the EACR
    grouping key changes from `(Exhibit Title, CPL Type,
-   Collaborative Type)` to `(Unified Title, CPL Type,
-   Collaborative Type)`. Raw titles can be shown beneath the unified
-   title (an "also entered as…" line) so colleges recognize their
-   own data. Low-confidence rows get a visual marker.
+   Collaborative Type)` to `(Unified Title, Issuing Agency, CPL Type,
+   Collaborative Type)`. The issuer is part of the key so that, e.g.,
+   ICC-issued Fire Inspector I and NFPA-issued Fire Inspector I render
+   as separate, issuer-badged cards even though they share a unified
+   title. Raw titles can be shown beneath each card (an "also entered
+   as…" line) so colleges recognize their own data. Low-confidence
+   rows get a visual marker.
 
 2. **Confidence threshold for visual marking.** What threshold
    warrants a "needs review" pill in the UI? Suggest 0.75 as a
@@ -171,3 +244,87 @@ Two files, not one, because:
 
 This work is the foundation; the unified-title layer described above
 is the next step.
+
+## 9. Schema fix (2026-05-19) — composite credential key
+
+`credentials.json` is keyed on the composite `(unified_title,
+issuing_agency)`, not `unified_title` alone. The same unified title can
+roll up across multiple issuers (Fire Inspector I is certified by ICC,
+NFPA, California State Fire Training, and Cal-JAC; EMT by multiple state
+EMS authorities). Each issuer needs its own training-agency, confidence,
+and notes. See §5 for the nested layout. The EACR grouping key gains
+Issuing Agency accordingly (see §6.1).
+
+## 10. Second synthetic layer — common-course crosswalk (CCN-ID / C-ID / M-ID)
+
+The unified-title layer canonicalizes *credentials*. A parallel layer
+canonicalizes *courses*, because the deeper bottleneck to systemic
+adoption is that **one college's course does not match another's**:
+`(discipline code + number + title + units)` differs college to
+college, and only ~11% of CCC courses carry a C-ID (most carry no
+Common Course Number either). So an articulation one college earns
+cannot propagate to the many colleges teaching the same course.
+
+**Identifier precedence — CCN-ID > C-ID > M-ID.** Each common course
+gets the best available identifier (`id_system` records which):
+
+1. **CCN-ID** — an AB 1111 Common Course Number (e.g. `ANTH C1000`); the
+   statewide, student-facing common-course identity, so it wins. Format:
+   4-letter subject + `C` + 4-digit number, optional `H`/`E`/`L`
+   designators (see `reference/` notes). Authority:
+   `kb/reference/ccn_courses.json` (58 courses so far — Phase II rollout).
+2. **C-ID** — a Course Identification Numbering System descriptor
+   (e.g. `ACCT 110`). Authority: `kb/reference/cid_descriptors.json` (495).
+3. **M-ID** ("MAP-ID") — a synthetic, MAP-originated descriptor that
+   mimics the C-ID shape (`SUBJ NNN`) but is branded `M-ID` so it is never
+   confused with an official C-ID (e.g. `M-ID AUTO 100`). Minted **only**
+   when no CCN or C-ID aligns. It is the fallback crosswalk key that makes
+   articulations systemically adoptable from one college to many. When a
+   course later earns a CCN or C-ID, re-key it and set `id_system`.
+
+**Discipline vocabulary** comes from the official CCC Minimum
+Qualifications Disciplines List (`kb/reference/mq_disciplines.json`, 19th
+Ed.). The catalog's `discipline` field uses MQ titles; the pre-MQ label is
+kept as `discipline_provisional`. Where no exact MQ discipline exists
+(e.g. Accounting → Business; Human Services → Counseling — there is no MQ
+"Human Services" or "Human Resources" discipline), the nearest is used and
+flagged in `_notes`.
+
+**KB files (see §5 layout):**
+- `common_courses.json` — catalog: `course_id` (CCN-ID/C-ID/M-ID) →
+  `{common_title, id_system, ccn_id, c_id, subject, discipline,
+  discipline_provisional, typical_units, confidence,
+  source_college_count, …}`.
+- `course_crosswalk.json` — mapping: local college course → `course_id`
+  (many-to-one), keyed by `"<college> :: <course_code> :: <local_title>"`.
+- `reference/` — read-only authorities: `cid_descriptors.json`,
+  `ccn_courses.json`, `mq_disciplines.json`.
+
+Same two-file split rationale as the credential layer: course-identity
+metadata lives once per `course_id`, not duplicated across every local
+course that shares it.
+
+**Seeded first from Cx (Credit-by-Exam) exhibits** (2026-05-19). "Cx" is
+used in preference to "CBE" to avoid collision with Competency-Based
+Education. The Cx generic buckets (`Credit By Exam at <College>`) are the
+clearest motivation: today they collapse to one opaque EACR card, but
+each underlying course (e.g. `CHIL 291A Child Development Center
+Practicum`) is a real, articulable course. The Phase 2 seed crosswalks
+all 296 local courses behind the Cx exhibits into 243 common courses
+(21 matched to a C-ID, 0 to a CCN, 222 minted as M-ID), with cross-college
+corroboration (Child Development Center Practicum spans 12 local courses
+across 3 colleges; the world-language sequences; Medical Terminology →
+C-ID HIT 103 X; Financial/Managerial Accounting → ACCT 110/120). The seed
+is an AI-assisted draft for human review — exact C-ID matches and
+cross-college clusters get high confidence; fuzzy matches and
+single-college long-tail entries are flagged in `_notes`.
+
+**Forward direction:** once reviewed, the EACR table can explode a Cx
+bucket into its constituent common courses instead of a single
+"Generic Credit by Exam" card, and — more broadly — the `course_id`
+becomes the join key that lets an articulation earned at one college
+surface as a candidate articulation at every college teaching the same
+common course.
+Pipeline integration and UI work are deferred to later phases (this seed
+is the dataset only; `excel_to_dashboard.py` does not yet consult these
+files).

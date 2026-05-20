@@ -1,0 +1,5962 @@
+{
+  "Barstow Community College :: AUTO 53 :: Engine Repair": {
+    "college": "Barstow Community College",
+    "local_course_code": "AUTO 53",
+    "local_course_title": "Engine Repair",
+    "units": 4.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 122",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam AUTO A1 Engine Repair"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Chaffey College :: ARTH 7 :: Arts of Africa, Oceania, and Indigenous North America": {
+    "college": "Chaffey College",
+    "local_course_code": "ARTH 7",
+    "local_course_title": "Arts of Africa, Oceania, and Indigenous North America",
+    "units": 3.0,
+    "top_code": "249",
+    "course_id": "ARTH 140",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Arts of Africa, Oceania, and Indigenous North America"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA17-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Chaffey College :: ARTH 9 :: Art of the Ancient Americas": {
+    "college": "Chaffey College",
+    "local_course_code": "ARTH 9",
+    "local_course_title": "Art of the Ancient Americas",
+    "units": 3.0,
+    "top_code": "249",
+    "course_id": "ARTH 145",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Art of the Ancient Americas"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA18-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Chaffey College :: ASL 2 :: Elementary American Sign Language II": {
+    "college": "Chaffey College",
+    "local_course_code": "ASL 2",
+    "local_course_title": "Elementary American Sign Language II",
+    "units": 4.0,
+    "top_code": "43",
+    "course_id": "M-ID ASL 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Elementary American Sign Language II"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEE9-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Chaffey College :: ASL 21 :: Classifiers/Depicting Verbs": {
+    "college": "Chaffey College",
+    "local_course_code": "ASL 21",
+    "local_course_title": "Classifiers/Depicting Verbs",
+    "units": 2.0,
+    "top_code": "43",
+    "course_id": "M-ID ASL 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Classifiers/Depicting Verbs"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEC1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Chaffey College :: ASL 22 :: Fingerspelling/Numbers": {
+    "college": "Chaffey College",
+    "local_course_code": "ASL 22",
+    "local_course_title": "Fingerspelling/Numbers",
+    "units": 2.0,
+    "top_code": "44",
+    "course_id": "M-ID ASL 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Fingerspelling/Numbers"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEF5-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Chaffey College :: ASTRON 26 :: Stars and Galaxies": {
+    "college": "Chaffey College",
+    "local_course_code": "ASTRON 26",
+    "local_course_title": "Stars and Galaxies",
+    "units": 3.0,
+    "top_code": "177",
+    "course_id": "M-ID ASTR 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Stars and Galaxies"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBES5-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Chaffey College :: ASTRON 27 :: Life in the Universe": {
+    "college": "Chaffey College",
+    "local_course_code": "ASTRON 27",
+    "local_course_title": "Life in the Universe",
+    "units": 3.0,
+    "top_code": "177",
+    "course_id": "M-ID ASTR 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Life in the Universe"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEL-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Chaffey College :: ASTRON 27L :: Life in the Universe Laboratory": {
+    "college": "Chaffey College",
+    "local_course_code": "ASTRON 27L",
+    "local_course_title": "Life in the Universe Laboratory",
+    "units": 1.0,
+    "top_code": "177",
+    "course_id": "M-ID ASTR 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Life in the Universe Laboratory"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEL1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Chaffey College :: ASTRON 35 :: Planets and the Solar System With Lab": {
+    "college": "Chaffey College",
+    "local_course_code": "ASTRON 35",
+    "local_course_title": "Planets and the Solar System With Lab",
+    "units": 4.0,
+    "top_code": "177",
+    "course_id": "M-ID ASTR 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Planets and the Solar System with Lab"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEP7-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Chaffey College :: AUTOTEC 10 :: Service and Repair": {
+    "college": "Chaffey College",
+    "local_course_code": "AUTOTEC 10",
+    "local_course_title": "Service and Repair",
+    "units": 4.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 130",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Service and Repair"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBES6-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Cypress College :: ESL 108 C :: Exploring Culture through Academic Discourse I": {
+    "college": "Cypress College",
+    "local_course_code": "ESL 108 C",
+    "local_course_title": "Exploring Culture through Academic Discourse I",
+    "units": 5.0,
+    "top_code": "151",
+    "course_id": "M-ID ESL 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam (ESL 108C)"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXO-CBE(-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "De Anza College :: ACCT 001A :: Financial Accounting I": {
+    "college": "De Anza College",
+    "local_course_code": "ACCT 001A",
+    "local_course_title": "Financial Accounting I",
+    "units": 5.0,
+    "top_code": "5",
+    "course_id": "ACCT 110",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- ACCT 1A: Financial Accounting I"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA13-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Evergreen Valley College :: AUTO 102 :: Automotive Systems": {
+    "college": "Evergreen Valley College",
+    "local_course_code": "AUTO 102",
+    "local_course_title": "Automotive Systems",
+    "units": 3.5,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 114",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam Auto 102"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA12-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Fullerton College :: PLEG 101 F :: Introduction to Paralegal Studies": {
+    "college": "Fullerton College",
+    "local_course_code": "PLEG 101 F",
+    "local_course_title": "Introduction to Paralegal Studies",
+    "units": 3.0,
+    "top_code": "111",
+    "course_id": "M-ID PARA 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Introduction to Paralegal Studies"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEI4-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Fullerton College :: PLEG 104 F :: Introduction to Legal Research and Terminology": {
+    "college": "Fullerton College",
+    "local_course_code": "PLEG 104 F",
+    "local_course_title": "Introduction to Legal Research and Terminology",
+    "units": 3.0,
+    "top_code": "111",
+    "course_id": "M-ID PARA 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Introduction to Legal Research and Terminology"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEI5-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Glendale Community College :: MOA 182 :: Medical Terminology": {
+    "college": "Glendale Community College",
+    "local_course_code": "MOA 182",
+    "local_course_title": "Medical Terminology",
+    "units": 3.0,
+    "top_code": "310",
+    "course_id": "HIT 103 X",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AJ 54 :: Investigative Reporting": {
+    "college": "Las Positas College",
+    "local_course_code": "AJ 54",
+    "local_course_title": "Investigative Reporting",
+    "units": 3.0,
+    "top_code": "128",
+    "course_id": "M-ID JOUR 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Portfolio AJ 54 Investigative Report Writing"
+    ],
+    "source_exhibit_ids": [
+      "MAPPRP-CBPA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AUTO A1 :: Engine Repair": {
+    "college": "Las Positas College",
+    "local_course_code": "AUTO A1",
+    "local_course_title": "Engine Repair",
+    "units": 4.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 122",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam AUTO A1 Engine Repair"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AUTO A2 :: Automatic Transmission Transaxle": {
+    "college": "Las Positas College",
+    "local_course_code": "AUTO A2",
+    "local_course_title": "Automatic Transmission Transaxle",
+    "units": 4.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam AUTO A2 Automatic Transmissions"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AUTO A3 :: Manual Drive Train and Axles": {
+    "college": "Las Positas College",
+    "local_course_code": "AUTO A3",
+    "local_course_title": "Manual Drive Train and Axles",
+    "units": 4.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 128",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam AUTO A3 Manual Drivetrains"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AUTO A4 :: Suspension and Steering": {
+    "college": "Las Positas College",
+    "local_course_code": "AUTO A4",
+    "local_course_title": "Suspension and Steering",
+    "units": 4.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 134",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam AUTO A4 Suspension and Steering"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA3-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AUTO A5 :: Brakes": {
+    "college": "Las Positas College",
+    "local_course_code": "AUTO A5",
+    "local_course_title": "Brakes",
+    "units": 4.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 116",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam AUTO A5 Brakes"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA4-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AUTO A6 :: Electrical Electronic Systems": {
+    "college": "Las Positas College",
+    "local_course_code": "AUTO A6",
+    "local_course_title": "Electrical Electronic Systems",
+    "units": 5.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 118",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam AUTO A6 Electrical/Electronic Systems"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA5-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AUTO A7 :: Automotive Heating and Air Conditioning": {
+    "college": "Las Positas College",
+    "local_course_code": "AUTO A7",
+    "local_course_title": "Automotive Heating and Air Conditioning",
+    "units": 4.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam AUTO A7 Heating and Air Conditioning"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA6-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AUTO A8 :: Engine Performance": {
+    "college": "Las Positas College",
+    "local_course_code": "AUTO A8",
+    "local_course_title": "Engine Performance",
+    "units": 5.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 120",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam AUTO A8 Engine Performance"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA7-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AUTO A9 :: Light Vehicle Diesel Engines": {
+    "college": "Las Positas College",
+    "local_course_code": "AUTO A9",
+    "local_course_title": "Light Vehicle Diesel Engines",
+    "units": 4.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 126",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam AUTO A9 Light Vehicle Diesel Engine"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA8-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AUTO INTR :: Automotive Service and Introduction": {
+    "college": "Las Positas College",
+    "local_course_code": "AUTO INTR",
+    "local_course_title": "Automotive Service and Introduction",
+    "units": 4.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam AUTO INTR Automotive Service and Introduction"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA9-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AUTO L1 :: Advanced Engine Performance": {
+    "college": "Las Positas College",
+    "local_course_code": "AUTO L1",
+    "local_course_title": "Advanced Engine Performance",
+    "units": 5.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam AUTO L1 Advanced Engine Performance"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA10-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AUTO L3 :: Light Duty Hybrid Electrical Vehicles": {
+    "college": "Las Positas College",
+    "local_course_code": "AUTO L3",
+    "local_course_title": "Light Duty Hybrid Electrical Vehicles",
+    "units": 4.0,
+    "top_code": "165",
+    "course_id": "M-ID AUTO 124",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam AUTO L3 Light Duty Hybrid/Electric Vehicles"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA11-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: AUTO SDR :: Specified Diagnostic and Repair": {
+    "college": "Las Positas College",
+    "local_course_code": "AUTO SDR",
+    "local_course_title": "Specified Diagnostic and Repair",
+    "units": 5.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 132",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Industry Certification AUTO SDR Specified Diagnostic and Repair"
+    ],
+    "source_exhibit_ids": [
+      "MAPICI-CBIC-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: CNT 56 :: MCSA II Networking with Windows Server": {
+    "college": "Las Positas College",
+    "local_course_code": "CNT 56",
+    "local_course_title": "MCSA II Networking with Windows Server",
+    "units": 3.0,
+    "top_code": "35",
+    "course_id": "M-ID CIS 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Industry Recognized Training Networking with Windows Server"
+    ],
+    "source_exhibit_ids": [
+      "MAPICI-CBIR-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: CNT 68 :: Digital Forensics Fundamentals": {
+    "college": "Las Positas College",
+    "local_course_code": "CNT 68",
+    "local_course_title": "Digital Forensics Fundamentals",
+    "units": 3.0,
+    "top_code": "35",
+    "course_id": "ITIS 165",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Industry Training Digital Forensics Fundamentals"
+    ],
+    "source_exhibit_ids": [
+      "MAPICI-CBIT-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: CNT 7401 :: Red Hat Linux Administration I": {
+    "college": "Las Positas College",
+    "local_course_code": "CNT 7401",
+    "local_course_title": "Red Hat Linux Administration I",
+    "units": 3.0,
+    "top_code": "29",
+    "course_id": "M-ID CIS 110",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Industry Certification CNT 7401 Red Hat Linux Administration I"
+    ],
+    "source_exhibit_ids": [
+      "MAPICI-CBIC2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: CS 41 :: Red Hat Linux Administration I": {
+    "college": "Las Positas College",
+    "local_course_code": "CS 41",
+    "local_course_title": "Red Hat Linux Administration I",
+    "units": 3.0,
+    "top_code": "29",
+    "course_id": "M-ID CIS 110",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Industry Recognized Training CS 41 Red Hat Linux Administration I"
+    ],
+    "source_exhibit_ids": [
+      "MAPICI-CBIR1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: ESL 120A :: Intermediate Grammar for Reading and Writing": {
+    "college": "Las Positas College",
+    "local_course_code": "ESL 120A",
+    "local_course_title": "Intermediate Grammar for Reading and Writing",
+    "units": 3.0,
+    "top_code": "151",
+    "course_id": "M-ID ESL 114",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam ESL 120A Intermediate Grammar for Reading and Writing"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEE-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: ESL 120B :: High-Intermediate Grammar for Reading and Writing": {
+    "college": "Las Positas College",
+    "local_course_code": "ESL 120B",
+    "local_course_title": "High-Intermediate Grammar for Reading and Writing",
+    "units": 3.0,
+    "top_code": "151",
+    "course_id": "M-ID ESL 110",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam ESL 120B High-Intermediate Grammar for Reading and Writing"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEE1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: ESL 121A :: Intermediate Reading and Writing": {
+    "college": "Las Positas College",
+    "local_course_code": "ESL 121A",
+    "local_course_title": "Intermediate Reading and Writing",
+    "units": 6.0,
+    "top_code": "151",
+    "course_id": "M-ID ESL 116",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam ESL 121A Intermediate Reading and Writing"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEE2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: ESL 121B :: High-Intermediate Reading and Writing": {
+    "college": "Las Positas College",
+    "local_course_code": "ESL 121B",
+    "local_course_title": "High-Intermediate Reading and Writing",
+    "units": 6.0,
+    "top_code": "151",
+    "course_id": "M-ID ESL 112",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam ESL 121B High-Intermediate Reading and Writing"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEE3-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: ESL 130A :: Beginning Grammar for Reading and Writing": {
+    "college": "Las Positas College",
+    "local_course_code": "ESL 130A",
+    "local_course_title": "Beginning Grammar for Reading and Writing",
+    "units": 3.0,
+    "top_code": "151",
+    "course_id": "M-ID ESL 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam ESL 130A Beginning Grammar for Reading and Writing"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEE4-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: ESL 130B :: High-Beginning Grammar for Reading and Writing": {
+    "college": "Las Positas College",
+    "local_course_code": "ESL 130B",
+    "local_course_title": "High-Beginning Grammar for Reading and Writing",
+    "units": 3.0,
+    "top_code": "151",
+    "course_id": "M-ID ESL 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam ESL 130B High-Beginning Grammar for Reading and Writing"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEE5-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: ESL 131A :: Beginning Reading and Writing": {
+    "college": "Las Positas College",
+    "local_course_code": "ESL 131A",
+    "local_course_title": "Beginning Reading and Writing",
+    "units": 6.0,
+    "top_code": "151",
+    "course_id": "M-ID ESL 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam ESL 131A Beginning Reading and Writing"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEE6-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: ESL 131B :: High-Beginning Reading and Writing": {
+    "college": "Las Positas College",
+    "local_course_code": "ESL 131B",
+    "local_course_title": "High-Beginning Reading and Writing",
+    "units": 6.0,
+    "top_code": "151",
+    "course_id": "M-ID ESL 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam ESL 131B High-Beginning Reading and Writing"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEE7-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: JAMS 12 :: Introduction to Photojournalism": {
+    "college": "Las Positas College",
+    "local_course_code": "JAMS 12",
+    "local_course_title": "Introduction to Photojournalism",
+    "units": 3.0,
+    "top_code": "17",
+    "course_id": "JOUR 160",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam JAMS 12 Introduction to Photojournalism",
+      "Credit by Portfolio JAMS 12 Introduction to Photojournalism"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEJ-1-001",
+      "MAPPRA-CBPJ-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: JAMS 23 :: Multimedia Reporting": {
+    "college": "Las Positas College",
+    "local_course_code": "JAMS 23",
+    "local_course_title": "Multimedia Reporting",
+    "units": 3.0,
+    "top_code": "17",
+    "course_id": "JOUR 120",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Portfolio JAMS 23 Digital Storytelling"
+    ],
+    "source_exhibit_ids": [
+      "MAPPRA-CBPJ1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: MATH 1 :: Calculus I": {
+    "college": "Las Positas College",
+    "local_course_code": "MATH 1",
+    "local_course_title": "Calculus I",
+    "units": 5.0,
+    "top_code": "120",
+    "course_id": "M-ID MATH 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam MATH 1 Calculus I"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEM-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: MATH 2 :: Calculus II": {
+    "college": "Las Positas College",
+    "local_course_code": "MATH 2",
+    "local_course_title": "Calculus II",
+    "units": 5.0,
+    "top_code": "120",
+    "course_id": "M-ID MATH 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam MATH 2 Calculus II"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEM1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: MUS 10A :: Music Theory and Musicianship 3": {
+    "college": "Las Positas College",
+    "local_course_code": "MUS 10A",
+    "local_course_title": "Music Theory and Musicianship 3",
+    "units": 4.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 124",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam MUS 10A Music Theory and Musicianship 3"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEM2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: MUS 19 :: Studies in Music Composition": {
+    "college": "Las Positas College",
+    "local_course_code": "MUS 19",
+    "local_course_title": "Studies in Music Composition",
+    "units": 3.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 128",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Portfolio MUS 19 Music Composition"
+    ],
+    "source_exhibit_ids": [
+      "MAPPRA-CBPM-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: MUS 21A :: Beginning Piano": {
+    "college": "Las Positas College",
+    "local_course_code": "MUS 21A",
+    "local_course_title": "Beginning Piano",
+    "units": 1.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam MUS 21A Beginning Piano"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEM3-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: MUS 21B :: Intermediate Piano": {
+    "college": "Las Positas College",
+    "local_course_code": "MUS 21B",
+    "local_course_title": "Intermediate Piano",
+    "units": 1.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 114",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam MUS 21B Intermediate Piano"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEM5-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: MUS 25 :: Teaching Beginning Piano": {
+    "college": "Las Positas College",
+    "local_course_code": "MUS 25",
+    "local_course_title": "Teaching Beginning Piano",
+    "units": 2.0,
+    "top_code": "73",
+    "course_id": "M-ID MUS 130",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Portfolio MUS 25 Teaching Beginning Piano"
+    ],
+    "source_exhibit_ids": [
+      "MAPPRA-CBPM1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: MUS 27 :: Teaching Intermediate Piano": {
+    "college": "Las Positas College",
+    "local_course_code": "MUS 27",
+    "local_course_title": "Teaching Intermediate Piano",
+    "units": 2.0,
+    "top_code": "73",
+    "course_id": "M-ID MUS 132",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Portfolio MUS 27 Teaching Intermediate Piano"
+    ],
+    "source_exhibit_ids": [
+      "MAPPRA-CBPM3-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: MUS 35 :: Introduction to Music Technology": {
+    "college": "Las Positas College",
+    "local_course_code": "MUS 35",
+    "local_course_title": "Introduction to Music Technology",
+    "units": 3.0,
+    "top_code": "73",
+    "course_id": "CMUS 100 X",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam MUS 35 Introduction to Music Technology",
+      "Credit by Portfolio MUS 35 Introduction to Music Technology"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEM4-1-001",
+      "MAPPRA-CBPM2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: PHTO 72 :: Introduction to Photojournalism": {
+    "college": "Las Positas College",
+    "local_course_code": "PHTO 72",
+    "local_course_title": "Introduction to Photojournalism",
+    "units": 3.0,
+    "top_code": "17",
+    "course_id": "JOUR 160",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam PHTO 72 Introduction to Photojournalism",
+      "Credit by Portfolio PHTO 72 Introduction to Photojournalism"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEP-1-001",
+      "MAPPRA-CBPP-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Las Positas College :: SPAN 1B :: Elementary Spanish": {
+    "college": "Las Positas College",
+    "local_course_code": "SPAN 1B",
+    "local_course_title": "Elementary Spanish",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "SPAN 100",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam SPAN 1B Elementary Spanish"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBES3-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Lemoore College :: CUL 001 :: FUNDAMENTALS OF NUTRITION": {
+    "college": "Lemoore College",
+    "local_course_code": "CUL 001",
+    "local_course_title": "FUNDAMENTALS OF NUTRITION",
+    "units": 3.0,
+    "top_code": "319",
+    "course_id": "M-ID NUTR 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Los Angeles Trade Technical College :: ARC 130 :: History of Architecture I": {
+    "college": "Los Angeles Trade Technical College",
+    "local_course_code": "ARC 130",
+    "local_course_title": "History of Architecture I",
+    "units": 2.0,
+    "top_code": "173",
+    "course_id": "M-ID ARCH 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: History Of Architecture I"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEH-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Madera College :: BT 18 :: Spreadsheet Fundamentals": {
+    "college": "Madera College",
+    "local_course_code": "BT 18",
+    "local_course_title": "Spreadsheet Fundamentals",
+    "units": 2.0,
+    "top_code": "16",
+    "course_id": "M-ID CAOT 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Spreadsheets"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXA-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Madera College :: BT 3 :: Computer Basics": {
+    "college": "Madera College",
+    "local_course_code": "BT 3",
+    "local_course_title": "Computer Basics",
+    "units": 1.5,
+    "top_code": "16",
+    "course_id": "M-ID CAOT 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Computer Basics"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXA-CBEC-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Mendocino College :: HLH 104 :: Medical Terminology": {
+    "college": "Mendocino College",
+    "local_course_code": "HLH 104",
+    "local_course_title": "Medical Terminology",
+    "units": 3.0,
+    "top_code": "310",
+    "course_id": "HIT 103 X",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Moreno Valley College :: SPA 1 :: Spanish 1": {
+    "college": "Moreno Valley College",
+    "local_course_code": "SPA 1",
+    "local_course_title": "Spanish 1",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "M-ID SPAN 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Spanish 1 (SPA-1)"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Moreno Valley College :: SPA 2 :: Spanish 2": {
+    "college": "Moreno Valley College",
+    "local_course_code": "SPA 2",
+    "local_course_title": "Spanish 2",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "M-ID SPAN 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Spanish 2 (SPA-2)"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBES1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Moreno Valley College :: SPA 3 :: Spanish 3": {
+    "college": "Moreno Valley College",
+    "local_course_code": "SPA 3",
+    "local_course_title": "Spanish 3",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "M-ID SPAN 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Spanish 3 (SPA-3)"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBES2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Norco College :: RCCD GE-A RCCD GE Area 3 :: ELEMENTARY SPANISH": {
+    "college": "Norco College",
+    "local_course_code": "RCCD GE-A RCCD GE Area 3",
+    "local_course_title": "ELEMENTARY SPANISH",
+    "units": 5.0,
+    "top_code": "",
+    "course_id": "SPAN 100",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Norco College :: SPA 1 :: Spanish 1": {
+    "college": "Norco College",
+    "local_course_code": "SPA 1",
+    "local_course_title": "Spanish 1",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "M-ID SPAN 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Spanish 1 (SPA-1)"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Norco College :: SPA 2 :: Spanish 2": {
+    "college": "Norco College",
+    "local_course_code": "SPA 2",
+    "local_course_title": "Spanish 2",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "M-ID SPAN 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Spanish 2 (SPA-2)"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBES1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Norco College :: SPA 3 :: Spanish 3": {
+    "college": "Norco College",
+    "local_course_code": "SPA 3",
+    "local_course_title": "Spanish 3",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "M-ID SPAN 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Spanish 3 (SPA-3)"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBES2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Riverside City College :: SPA 1 :: Spanish 1": {
+    "college": "Riverside City College",
+    "local_course_code": "SPA 1",
+    "local_course_title": "Spanish 1",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "M-ID SPAN 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Spanish 1 (SPA-1)"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Riverside City College :: SPA 2 :: Spanish 2": {
+    "college": "Riverside City College",
+    "local_course_code": "SPA 2",
+    "local_course_title": "Spanish 2",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "M-ID SPAN 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Spanish 2 (SPA-2)"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBES1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Riverside City College :: SPA 3 :: Spanish 3": {
+    "college": "Riverside City College",
+    "local_course_code": "SPA 3",
+    "local_course_title": "Spanish 3",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "M-ID SPAN 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam: Spanish 3 (SPA-3)"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBES2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ARAB 2 :: ELEMENTARY ARABIC": {
+    "college": "Saddleback College",
+    "local_course_code": "ARAB 2",
+    "local_course_title": "ELEMENTARY ARABIC",
+    "units": 5.0,
+    "top_code": "87",
+    "course_id": "M-ID ARAB 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ARAB 3 :: INTERMEDIATE ARABIC": {
+    "college": "Saddleback College",
+    "local_course_code": "ARAB 3",
+    "local_course_title": "INTERMEDIATE ARABIC",
+    "units": 5.0,
+    "top_code": "87",
+    "course_id": "M-ID ARAB 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ARCH 10 :: INTRODUCTION TO ARCHITECTURE": {
+    "college": "Saddleback College",
+    "local_course_code": "ARCH 10",
+    "local_course_title": "INTRODUCTION TO ARCHITECTURE",
+    "units": 2.0,
+    "top_code": "173",
+    "course_id": "M-ID ARCH 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ARCH 120 :: REVIT AND BUILDING INFORMATION MANAGEMENT(BIM)": {
+    "college": "Saddleback College",
+    "local_course_code": "ARCH 120",
+    "local_course_title": "REVIT AND BUILDING INFORMATION MANAGEMENT(BIM)",
+    "units": 4.0,
+    "top_code": "173",
+    "course_id": "M-ID ARCH 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ARCH 161 :: BLUEPRINT PLANS AND SPECIFICATION READING": {
+    "college": "Saddleback College",
+    "local_course_code": "ARCH 161",
+    "local_course_title": "BLUEPRINT PLANS AND SPECIFICATION READING",
+    "units": 4.0,
+    "top_code": "201",
+    "course_id": "M-ID BCIT 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ARCH 163 :: INTERNATIONAL BUILDING CODE INSPECTION": {
+    "college": "Saddleback College",
+    "local_course_code": "ARCH 163",
+    "local_course_title": "INTERNATIONAL BUILDING CODE INSPECTION",
+    "units": 4.0,
+    "top_code": "201",
+    "course_id": "M-ID BCIT 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ARCH 164 :: COMBINATION RESIDENTIAL DWELLING INSPECTION": {
+    "college": "Saddleback College",
+    "local_course_code": "ARCH 164",
+    "local_course_title": "COMBINATION RESIDENTIAL DWELLING INSPECTION",
+    "units": 3.0,
+    "top_code": "201",
+    "course_id": "M-ID BCIT 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ARCH 165 :: ELECTRICAL CODE INSPECTION": {
+    "college": "Saddleback College",
+    "local_course_code": "ARCH 165",
+    "local_course_title": "ELECTRICAL CODE INSPECTION",
+    "units": 3.0,
+    "top_code": "201",
+    "course_id": "M-ID BCIT 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ARCH 211 :: CONCRETE INSPECTION": {
+    "college": "Saddleback College",
+    "local_course_code": "ARCH 211",
+    "local_course_title": "CONCRETE INSPECTION",
+    "units": 3.0,
+    "top_code": "201",
+    "course_id": "M-ID BCIT 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ARCH 212 :: PLUMBING CODES - DRAINS, WASTE, VENTS, WATER, AND GAS": {
+    "college": "Saddleback College",
+    "local_course_code": "ARCH 212",
+    "local_course_title": "PLUMBING CODES - DRAINS, WASTE, VENTS, WATER, AND GAS",
+    "units": 3.0,
+    "top_code": "201",
+    "course_id": "M-ID BCIT 112",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ARCH 213 :: MECHANICAL CODE - HEATING, AC, REFRIGERATION, AND DUCTWORK": {
+    "college": "Saddleback College",
+    "local_course_code": "ARCH 213",
+    "local_course_title": "MECHANICAL CODE - HEATING, AC, REFRIGERATION, AND DUCTWORK",
+    "units": 3.0,
+    "top_code": "201",
+    "course_id": "M-ID BCIT 110",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ARCH 50 :: INTRODUCTION TO COMPUTER-AIDED DRAFTING": {
+    "college": "Saddleback College",
+    "local_course_code": "ARCH 50",
+    "local_course_title": "INTRODUCTION TO COMPUTER-AIDED DRAFTING",
+    "units": 3.0,
+    "top_code": "173",
+    "course_id": "M-ID ARCH 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: AUTO 100 :: AUTOMOTIVE FUNDAMENTALS": {
+    "college": "Saddleback College",
+    "local_course_code": "AUTO 100",
+    "local_course_title": "AUTOMOTIVE FUNDAMENTALS",
+    "units": 3.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: AUTO 226 :: AUTOMOTIVE SERVICE CONSULTANT": {
+    "college": "Saddleback College",
+    "local_course_code": "AUTO 226",
+    "local_course_title": "AUTOMOTIVE SERVICE CONSULTANT",
+    "units": 2.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 110",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: AUTO 227 :: AUTOMOTIVE SERVICE MANAGEMENT": {
+    "college": "Saddleback College",
+    "local_course_code": "AUTO 227",
+    "local_course_title": "AUTOMOTIVE SERVICE MANAGEMENT",
+    "units": 3.0,
+    "top_code": "58",
+    "course_id": "M-ID AUTO 112",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: BUS 13 :: Legal Environment and Business Law": {
+    "college": "Saddleback College",
+    "local_course_code": "BUS 13",
+    "local_course_title": "Legal Environment and Business Law",
+    "units": 3.0,
+    "top_code": "7",
+    "course_id": "M-ID BUS 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: CHI 1 :: ELEMENTARY CHINESE": {
+    "college": "Saddleback College",
+    "local_course_code": "CHI 1",
+    "local_course_title": "ELEMENTARY CHINESE",
+    "units": 5.0,
+    "top_code": "85",
+    "course_id": "M-ID CHIN 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: CHI 2 :: ELEMENTARY CHINESE": {
+    "college": "Saddleback College",
+    "local_course_code": "CHI 2",
+    "local_course_title": "ELEMENTARY CHINESE",
+    "units": 5.0,
+    "top_code": "85",
+    "course_id": "M-ID CHIN 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: CHI 3 :: INTERMEDIATE CHINESE": {
+    "college": "Saddleback College",
+    "local_course_code": "CHI 3",
+    "local_course_title": "INTERMEDIATE CHINESE",
+    "units": 5.0,
+    "top_code": "85",
+    "course_id": "M-ID CHIN 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: CIM 121A :: KEYBOARDING FOR COMPUTERS - BEGINNING": {
+    "college": "Saddleback College",
+    "local_course_code": "CIM 121A",
+    "local_course_title": "KEYBOARDING FOR COMPUTERS - BEGINNING",
+    "units": 1.5,
+    "top_code": "394",
+    "course_id": "M-ID CAOT 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: COUN 150 :: HELPING SKILLS FOR INTERPERSONAL RELATIONSHIPS": {
+    "college": "Saddleback College",
+    "local_course_code": "COUN 150",
+    "local_course_title": "HELPING SKILLS FOR INTERPERSONAL RELATIONSHIPS",
+    "units": 3.0,
+    "top_code": "284",
+    "course_id": "M-ID COUN 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: COUN 40 :: COLLEGE AND CAREER SUCCESS": {
+    "college": "Saddleback College",
+    "local_course_code": "COUN 40",
+    "local_course_title": "COLLEGE AND CAREER SUCCESS",
+    "units": 3.0,
+    "top_code": "142",
+    "course_id": "M-ID COUN 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: COUN 51 :: HUMAN RELATIONSHIPS": {
+    "college": "Saddleback College",
+    "local_course_code": "COUN 51",
+    "local_course_title": "HUMAN RELATIONSHIPS",
+    "units": 3.0,
+    "top_code": "284",
+    "course_id": "M-ID COUN 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: COUN 60 :: CAREER EXPLORATION": {
+    "college": "Saddleback College",
+    "local_course_code": "COUN 60",
+    "local_course_title": "CAREER EXPLORATION",
+    "units": 3.0,
+    "top_code": "142",
+    "course_id": "M-ID COUN 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: DR 102 :: MECH DESIGN AND MARKETING PORTFOLIO": {
+    "college": "Saddleback College",
+    "local_course_code": "DR 102",
+    "local_course_title": "MECH DESIGN AND MARKETING PORTFOLIO",
+    "units": 3.0,
+    "top_code": "62",
+    "course_id": "M-ID DRFT 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: DR 120 :: ENGINEERING TECHNOLOGY": {
+    "college": "Saddleback College",
+    "local_course_code": "DR 120",
+    "local_course_title": "ENGINEERING TECHNOLOGY",
+    "units": 3.0,
+    "top_code": "62",
+    "course_id": "M-ID DRFT 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: DR 152 :: ADVANCED COMPUTER-AIDED DESIGN": {
+    "college": "Saddleback College",
+    "local_course_code": "DR 152",
+    "local_course_title": "ADVANCED COMPUTER-AIDED DESIGN",
+    "units": 3.0,
+    "top_code": "62",
+    "course_id": "M-ID DRFT 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: DR 203 :: GREEN & SUSTAINABLE MANUFACTURING DESIGN": {
+    "college": "Saddleback College",
+    "local_course_code": "DR 203",
+    "local_course_title": "GREEN & SUSTAINABLE MANUFACTURING DESIGN",
+    "units": 3.0,
+    "top_code": "62",
+    "course_id": "M-ID DRFT 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: DR 23 :: ENGINEERING GRAPHICS": {
+    "college": "Saddleback College",
+    "local_course_code": "DR 23",
+    "local_course_title": "ENGINEERING GRAPHICS",
+    "units": 3.0,
+    "top_code": "62",
+    "course_id": "ENGR 150",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: DR 50 :: INTRODUCTION TO COMPUTER-AIDED DRAFTING": {
+    "college": "Saddleback College",
+    "local_course_code": "DR 50",
+    "local_course_title": "INTRODUCTION TO COMPUTER-AIDED DRAFTING",
+    "units": 3.0,
+    "top_code": "62",
+    "course_id": "M-ID ARCH 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ET 101 :: SURVEY OF ELECTRONICS": {
+    "college": "Saddleback College",
+    "local_course_code": "ET 101",
+    "local_course_title": "SURVEY OF ELECTRONICS",
+    "units": 3.0,
+    "top_code": "47",
+    "course_id": "M-ID ELEC 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: FN 110 :: FOOD PREPARATION ESSENTIALS": {
+    "college": "Saddleback College",
+    "local_course_code": "FN 110",
+    "local_course_title": "FOOD PREPARATION ESSENTIALS",
+    "units": 3.0,
+    "top_code": "108",
+    "course_id": "M-ID CULN 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: FN 120 :: SUSTAINABLE MEALS": {
+    "college": "Saddleback College",
+    "local_course_code": "FN 120",
+    "local_course_title": "SUSTAINABLE MEALS",
+    "units": 3.0,
+    "top_code": "108",
+    "course_id": "M-ID CULN 118",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: FN 150 :: INTRODUCTION TO HOSPITALITY MANAGEMENT": {
+    "college": "Saddleback College",
+    "local_course_code": "FN 150",
+    "local_course_title": "INTRODUCTION TO HOSPITALITY MANAGEMENT",
+    "units": 3.0,
+    "top_code": "273",
+    "course_id": "HOSP 100",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: FN 205 :: NUTRITION FOR CULINARY PROFESSIONALS": {
+    "college": "Saddleback College",
+    "local_course_code": "FN 205",
+    "local_course_title": "NUTRITION FOR CULINARY PROFESSIONALS",
+    "units": 3.0,
+    "top_code": "108",
+    "course_id": "M-ID NUTR 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: FN 244 :: BAKING FUNDAMENTALS I": {
+    "college": "Saddleback College",
+    "local_course_code": "FN 244",
+    "local_course_title": "BAKING FUNDAMENTALS I",
+    "units": 3.0,
+    "top_code": "108",
+    "course_id": "M-ID CULN 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: FN 246 :: INTRODUCTION TO CULINARY ARTS": {
+    "college": "Saddleback College",
+    "local_course_code": "FN 246",
+    "local_course_title": "INTRODUCTION TO CULINARY ARTS",
+    "units": 3.0,
+    "top_code": "108",
+    "course_id": "M-ID CULN 112",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: FN 261 :: INTERNSHIP": {
+    "college": "Saddleback College",
+    "local_course_code": "FN 261",
+    "local_course_title": "INTERNSHIP",
+    "units": 1.0,
+    "top_code": "108",
+    "course_id": "M-ID CULN 110",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: FN 50 :: FUNDAMENTALS OF NUTRITION": {
+    "college": "Saddleback College",
+    "local_course_code": "FN 50",
+    "local_course_title": "FUNDAMENTALS OF NUTRITION",
+    "units": 3.0,
+    "top_code": "319",
+    "course_id": "M-ID NUTR 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: FR 1 :: ELEMENTARY FRENCH": {
+    "college": "Saddleback College",
+    "local_course_code": "FR 1",
+    "local_course_title": "ELEMENTARY FRENCH",
+    "units": 5.0,
+    "top_code": "81",
+    "course_id": "M-ID FREN 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: FR 2 :: ELEMENTARY FRENCH": {
+    "college": "Saddleback College",
+    "local_course_code": "FR 2",
+    "local_course_title": "ELEMENTARY FRENCH",
+    "units": 5.0,
+    "top_code": "81",
+    "course_id": "M-ID FREN 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: FR 3 :: INTERMEDIATE FRENCH": {
+    "college": "Saddleback College",
+    "local_course_code": "FR 3",
+    "local_course_title": "INTERMEDIATE FRENCH",
+    "units": 5.0,
+    "top_code": "81",
+    "course_id": "M-ID FREN 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: GC 63 :: INTRODUCTION TO SCREEN PRINTING": {
+    "college": "Saddleback College",
+    "local_course_code": "GC 63",
+    "local_course_title": "INTRODUCTION TO SCREEN PRINTING",
+    "units": 3.0,
+    "top_code": "54",
+    "course_id": "M-ID GRA 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: GD 144 :: TYPOGRAPHY": {
+    "college": "Saddleback College",
+    "local_course_code": "GD 144",
+    "local_course_title": "TYPOGRAPHY",
+    "units": 3.0,
+    "top_code": "79",
+    "course_id": "M-ID GRA 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: GD 200 :: PHOTOSHOP SKILLS FOR GRAPHIC DESIGNERS": {
+    "college": "Saddleback College",
+    "local_course_code": "GD 200",
+    "local_course_title": "PHOTOSHOP SKILLS FOR GRAPHIC DESIGNERS",
+    "units": 3.0,
+    "top_code": "79",
+    "course_id": "M-ID GRA 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: GD 210 :: MOTION GRAPHICS": {
+    "college": "Saddleback College",
+    "local_course_code": "GD 210",
+    "local_course_title": "MOTION GRAPHICS",
+    "units": 3.0,
+    "top_code": "79",
+    "course_id": "M-ID GRA 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: GER 1 :: ELEMENTARY GERMAN": {
+    "college": "Saddleback College",
+    "local_course_code": "GER 1",
+    "local_course_title": "ELEMENTARY GERMAN",
+    "units": 5.0,
+    "top_code": "258",
+    "course_id": "M-ID GERM 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: GER 2 :: ELEMENTARY GERMAN": {
+    "college": "Saddleback College",
+    "local_course_code": "GER 2",
+    "local_course_title": "ELEMENTARY GERMAN",
+    "units": 5.0,
+    "top_code": "258",
+    "course_id": "M-ID GERM 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: GER 3 :: INTERMEDIATE GERMAN": {
+    "college": "Saddleback College",
+    "local_course_code": "GER 3",
+    "local_course_title": "INTERMEDIATE GERMAN",
+    "units": 5.0,
+    "top_code": "258",
+    "course_id": "M-ID GERM 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: HEBR 1 :: ELEMENTARY HEBREW": {
+    "college": "Saddleback College",
+    "local_course_code": "HEBR 1",
+    "local_course_title": "ELEMENTARY HEBREW",
+    "units": 5.0,
+    "top_code": "268",
+    "course_id": "M-ID HEBR 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: HORT 10 :: PLANT MATERIALS-ORNAMENTAL": {
+    "college": "Saddleback College",
+    "local_course_code": "HORT 10",
+    "local_course_title": "PLANT MATERIALS-ORNAMENTAL",
+    "units": 3.0,
+    "top_code": "270",
+    "course_id": "M-ID HORT 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: HORT 106 :: LANDSCAPE CAD-FUNDAMENTALS": {
+    "college": "Saddleback College",
+    "local_course_code": "HORT 106",
+    "local_course_title": "LANDSCAPE CAD-FUNDAMENTALS",
+    "units": 3.0,
+    "top_code": "290",
+    "course_id": "M-ID HORT 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: HORT 11 :: PLANT MATERIALS-EDIBLES": {
+    "college": "Saddleback College",
+    "local_course_code": "HORT 11",
+    "local_course_title": "PLANT MATERIALS-EDIBLES",
+    "units": 3.0,
+    "top_code": "270",
+    "course_id": "M-ID HORT 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: HORT 112 :: PLANT PROPAGATION": {
+    "college": "Saddleback College",
+    "local_course_code": "HORT 112",
+    "local_course_title": "PLANT PROPAGATION",
+    "units": 3.0,
+    "top_code": "270",
+    "course_id": "M-ID HORT 110",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: HORT 113 :: SOILS AND FERTILIZERS": {
+    "college": "Saddleback College",
+    "local_course_code": "HORT 113",
+    "local_course_title": "SOILS AND FERTILIZERS",
+    "units": 3.0,
+    "top_code": "270",
+    "course_id": "M-ID HORT 112",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: HORT 116 :: Irrigation Design Fundamentals": {
+    "college": "Saddleback College",
+    "local_course_code": "HORT 116",
+    "local_course_title": "Irrigation Design Fundamentals",
+    "units": 3.0,
+    "top_code": "290",
+    "course_id": "M-ID HORT 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: HORT 120 :: INTEGRATED PEST MANAGEMENT": {
+    "college": "Saddleback College",
+    "local_course_code": "HORT 120",
+    "local_course_title": "INTEGRATED PEST MANAGEMENT",
+    "units": 3.0,
+    "top_code": "270",
+    "course_id": "M-ID HORT 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: HS 101 :: ADDICTION STUDIES COUNSELING SKILLS": {
+    "college": "Saddleback College",
+    "local_course_code": "HS 101",
+    "local_course_title": "ADDICTION STUDIES COUNSELING SKILLS",
+    "units": 3.0,
+    "top_code": "164",
+    "course_id": "M-ID HSER 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: HS 112 :: CONFLICT RESOLUTION AND MEDIATION": {
+    "college": "Saddleback College",
+    "local_course_code": "HS 112",
+    "local_course_title": "CONFLICT RESOLUTION AND MEDIATION",
+    "units": 3.0,
+    "top_code": "127",
+    "course_id": "M-ID HSER 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: HS 140 :: GROUP LEADERSHIP AND GROUP PROCESS": {
+    "college": "Saddleback College",
+    "local_course_code": "HS 140",
+    "local_course_title": "GROUP LEADERSHIP AND GROUP PROCESS",
+    "units": 3.0,
+    "top_code": "127",
+    "course_id": "M-ID HSER 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: HS 150 :: FIELD INSTRUCTION AND SEMINAR II": {
+    "college": "Saddleback College",
+    "local_course_code": "HS 150",
+    "local_course_title": "FIELD INSTRUCTION AND SEMINAR II",
+    "units": 3.5,
+    "top_code": "127",
+    "course_id": "M-ID HSER 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: HS 174 :: CASE ADMINISTRATION, CRISIS INTERVENTION AND REFERRAL": {
+    "college": "Saddleback College",
+    "local_course_code": "HS 174",
+    "local_course_title": "CASE ADMINISTRATION, CRISIS INTERVENTION AND REFERRAL",
+    "units": 3.0,
+    "top_code": "127",
+    "course_id": "M-ID HSER 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ID 110 :: FUNDAMENTALS OF INTERIOR DESIGN": {
+    "college": "Saddleback College",
+    "local_course_code": "ID 110",
+    "local_course_title": "FUNDAMENTALS OF INTERIOR DESIGN",
+    "units": 3.0,
+    "top_code": "282",
+    "course_id": "M-ID INTD 112",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ID 112 :: BEGINNING DRAFTING FOR INTERIORS": {
+    "college": "Saddleback College",
+    "local_course_code": "ID 112",
+    "local_course_title": "BEGINNING DRAFTING FOR INTERIORS",
+    "units": 2.0,
+    "top_code": "282",
+    "course_id": "M-ID INTD 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ID 115 :: CAD FOR INTERIOR DESIGN": {
+    "college": "Saddleback College",
+    "local_course_code": "ID 115",
+    "local_course_title": "CAD FOR INTERIOR DESIGN",
+    "units": 3.0,
+    "top_code": "282",
+    "course_id": "M-ID INTD 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ID 122 :: HISTORY OF INTERIOR ARCHITECTURE AND FURNISHINGS I": {
+    "college": "Saddleback College",
+    "local_course_code": "ID 122",
+    "local_course_title": "HISTORY OF INTERIOR ARCHITECTURE AND FURNISHINGS I",
+    "units": 3.0,
+    "top_code": "282",
+    "course_id": "M-ID INTD 116",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ID 123 :: INTERIOR DESIGN ILLUSTRATION": {
+    "college": "Saddleback College",
+    "local_course_code": "ID 123",
+    "local_course_title": "INTERIOR DESIGN ILLUSTRATION",
+    "units": 3.0,
+    "top_code": "282",
+    "course_id": "M-ID INTD 120",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ID 125 :: HISTORY OF INTERIOR ARCHITECTURE AND FURNISHINGS II": {
+    "college": "Saddleback College",
+    "local_course_code": "ID 125",
+    "local_course_title": "HISTORY OF INTERIOR ARCHITECTURE AND FURNISHINGS II",
+    "units": 3.0,
+    "top_code": "282",
+    "course_id": "M-ID INTD 118",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ID 127 :: FUNDAMENTALS OF LIGHTING": {
+    "college": "Saddleback College",
+    "local_course_code": "ID 127",
+    "local_course_title": "FUNDAMENTALS OF LIGHTING",
+    "units": 3.0,
+    "top_code": "282",
+    "course_id": "M-ID INTD 114",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ID 128 :: BUSINESS AND PROFESSIONAL PRACTICE FOR INTERIOR DESIGN": {
+    "college": "Saddleback College",
+    "local_course_code": "ID 128",
+    "local_course_title": "BUSINESS AND PROFESSIONAL PRACTICE FOR INTERIOR DESIGN",
+    "units": 3.0,
+    "top_code": "282",
+    "course_id": "M-ID INTD 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ID 131 :: DIGITAL VISUALIZATION FOR INTERIOR DESIGN": {
+    "college": "Saddleback College",
+    "local_course_code": "ID 131",
+    "local_course_title": "DIGITAL VISUALIZATION FOR INTERIOR DESIGN",
+    "units": 3.0,
+    "top_code": "282",
+    "course_id": "M-ID INTD 110",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ID 132 :: CODES AND SPECIFICATIONS FOR INTERIOR DESIGN": {
+    "college": "Saddleback College",
+    "local_course_code": "ID 132",
+    "local_course_title": "CODES AND SPECIFICATIONS FOR INTERIOR DESIGN",
+    "units": 3.0,
+    "top_code": "282",
+    "course_id": "M-ID INTD 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ID 133 :: RENDERING AND RAPID VISUALIZATION FOR INTERIOR DESIGN": {
+    "college": "Saddleback College",
+    "local_course_code": "ID 133",
+    "local_course_title": "RENDERING AND RAPID VISUALIZATION FOR INTERIOR DESIGN",
+    "units": 3.0,
+    "top_code": "282",
+    "course_id": "M-ID INTD 122",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ID 134 :: ADVANCED CAD FOR INTERIOR DESIGN": {
+    "college": "Saddleback College",
+    "local_course_code": "ID 134",
+    "local_course_title": "ADVANCED CAD FOR INTERIOR DESIGN",
+    "units": 3.0,
+    "top_code": "282",
+    "course_id": "M-ID INTD 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ITA 1 :: ELEMENTARY ITALIAN": {
+    "college": "Saddleback College",
+    "local_course_code": "ITA 1",
+    "local_course_title": "ELEMENTARY ITALIAN",
+    "units": 5.0,
+    "top_code": "82",
+    "course_id": "M-ID ITAL 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ITA 2 :: ELEMENTARY ITALIAN": {
+    "college": "Saddleback College",
+    "local_course_code": "ITA 2",
+    "local_course_title": "ELEMENTARY ITALIAN",
+    "units": 5.0,
+    "top_code": "82",
+    "course_id": "M-ID ITAL 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: ITA 21 :: INTRODUCTION TO ITALIAN CULTURE": {
+    "college": "Saddleback College",
+    "local_course_code": "ITA 21",
+    "local_course_title": "INTRODUCTION TO ITALIAN CULTURE",
+    "units": 3.0,
+    "top_code": "82",
+    "course_id": "M-ID ITAL 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: JA 1 :: ELEMENTARY JAPANESE": {
+    "college": "Saddleback College",
+    "local_course_code": "JA 1",
+    "local_course_title": "ELEMENTARY JAPANESE",
+    "units": 5.0,
+    "top_code": "86",
+    "course_id": "M-ID JPN 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: JA 2 :: ELEMENTARY JAPANESE": {
+    "college": "Saddleback College",
+    "local_course_code": "JA 2",
+    "local_course_title": "ELEMENTARY JAPANESE",
+    "units": 5.0,
+    "top_code": "86",
+    "course_id": "M-ID JPN 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: JA 3 :: INTERMEDIATE JAPANESE": {
+    "college": "Saddleback College",
+    "local_course_code": "JA 3",
+    "local_course_title": "INTERMEDIATE JAPANESE",
+    "units": 5.0,
+    "top_code": "86",
+    "course_id": "M-ID JPN 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: KOR 1 :: ELEMENTARY KOREAN": {
+    "college": "Saddleback College",
+    "local_course_code": "KOR 1",
+    "local_course_title": "ELEMENTARY KOREAN",
+    "units": 5.0,
+    "top_code": "286",
+    "course_id": "M-ID KOR 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: KOR 2 :: ELEMENTARY KOREAN": {
+    "college": "Saddleback College",
+    "local_course_code": "KOR 2",
+    "local_course_title": "ELEMENTARY KOREAN",
+    "units": 5.0,
+    "top_code": "286",
+    "course_id": "M-ID KOR 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: KOR 3 :: INTERMEDIATE KOREAN": {
+    "college": "Saddleback College",
+    "local_course_code": "KOR 3",
+    "local_course_title": "INTERMEDIATE KOREAN",
+    "units": 5.0,
+    "top_code": "286",
+    "course_id": "M-ID KOR 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: MFG 200 :: INTRODUCTION TO RAPID PROTOTYPING TECHNOLOGY": {
+    "college": "Saddleback College",
+    "local_course_code": "MFG 200",
+    "local_course_title": "INTRODUCTION TO RAPID PROTOTYPING TECHNOLOGY",
+    "units": 3.0,
+    "top_code": "64",
+    "course_id": "M-ID MFG 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: MFG 207 :: CNC COMPUTER NUMERICAL CONTROL PROGRAMMING I": {
+    "college": "Saddleback College",
+    "local_course_code": "MFG 207",
+    "local_course_title": "CNC COMPUTER NUMERICAL CONTROL PROGRAMMING I",
+    "units": 3.0,
+    "top_code": "64",
+    "course_id": "M-ID MFG 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: N 170 :: NURSING PROCESS LAB": {
+    "college": "Saddleback College",
+    "local_course_code": "N 170",
+    "local_course_title": "NURSING PROCESS LAB",
+    "units": 3.0,
+    "top_code": "98",
+    "course_id": "M-ID NURS 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: PORT 1 :: ELEMENTARY PORTUGUESE": {
+    "college": "Saddleback College",
+    "local_course_code": "PORT 1",
+    "local_course_title": "ELEMENTARY PORTUGUESE",
+    "units": 5.0,
+    "top_code": "88",
+    "course_id": "M-ID PORT 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: PORT 2 :: ELEMENTARY PORTUGUESE": {
+    "college": "Saddleback College",
+    "local_course_code": "PORT 2",
+    "local_course_title": "ELEMENTARY PORTUGUESE",
+    "units": 5.0,
+    "top_code": "88",
+    "course_id": "M-ID PORT 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: PRSN 1 :: ELEMENTARY PERSIAN": {
+    "college": "Saddleback College",
+    "local_course_code": "PRSN 1",
+    "local_course_title": "ELEMENTARY PERSIAN",
+    "units": 5.0,
+    "top_code": "332",
+    "course_id": "M-ID PERS 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: PRSN 2 :: ELEMENTARY PERSIAN": {
+    "college": "Saddleback College",
+    "local_course_code": "PRSN 2",
+    "local_course_title": "ELEMENTARY PERSIAN",
+    "units": 5.0,
+    "top_code": "332",
+    "course_id": "M-ID PERS 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: PRSN 3 :: INTERMEDIATE PERSIAN": {
+    "college": "Saddleback College",
+    "local_course_code": "PRSN 3",
+    "local_course_title": "INTERMEDIATE PERSIAN",
+    "units": 5.0,
+    "top_code": "332",
+    "course_id": "M-ID PERS 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: SPAN 1 :: ELEMENTARY SPANISH": {
+    "college": "Saddleback College",
+    "local_course_code": "SPAN 1",
+    "local_course_title": "ELEMENTARY SPANISH",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "SPAN 100",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: SPAN 2 :: ELEMENTARY SPANISH": {
+    "college": "Saddleback College",
+    "local_course_code": "SPAN 2",
+    "local_course_title": "ELEMENTARY SPANISH",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "SPAN 100",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: SPAN 20A :: CIVILIZATION OF SPAIN THROUGH 1898": {
+    "college": "Saddleback College",
+    "local_course_code": "SPAN 20A",
+    "local_course_title": "CIVILIZATION OF SPAIN THROUGH 1898",
+    "units": 3.0,
+    "top_code": "83",
+    "course_id": "M-ID SPAN 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: SPAN 20B :: CIVILIZATION OF SPAIN 1898 TO PRESENT": {
+    "college": "Saddleback College",
+    "local_course_code": "SPAN 20B",
+    "local_course_title": "CIVILIZATION OF SPAIN 1898 TO PRESENT",
+    "units": 3.0,
+    "top_code": "83",
+    "course_id": "M-ID SPAN 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: SPAN 3 :: INTERMEDIATE SPANISH": {
+    "college": "Saddleback College",
+    "local_course_code": "SPAN 3",
+    "local_course_title": "INTERMEDIATE SPANISH",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "SPAN 200",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: SPAN 4 :: INTERMEDIATE SPANISH": {
+    "college": "Saddleback College",
+    "local_course_code": "SPAN 4",
+    "local_course_title": "INTERMEDIATE SPANISH",
+    "units": 5.0,
+    "top_code": "83",
+    "course_id": "SPAN 200",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: SPS 315 :: LEARNING DEVELOPMENT PRACTICUM": {
+    "college": "Saddleback College",
+    "local_course_code": "SPS 315",
+    "local_course_title": "LEARNING DEVELOPMENT PRACTICUM",
+    "units": 1.0,
+    "top_code": "293",
+    "course_id": "M-ID LRNS 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: TOUR 250 :: INTRODUCTION TO THE EXCITING WORLD OF TRAVEL & TOURISM": {
+    "college": "Saddleback College",
+    "local_course_code": "TOUR 250",
+    "local_course_title": "INTRODUCTION TO THE EXCITING WORLD OF TRAVEL & TOURISM",
+    "units": 3.0,
+    "top_code": "406",
+    "course_id": "M-ID HOSP 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Saddleback College :: TOUR 259 :: AIRLINE COMPUTER TRAINING": {
+    "college": "Saddleback College",
+    "local_course_code": "TOUR 259",
+    "local_course_title": "AIRLINE COMPUTER TRAINING",
+    "units": 2.0,
+    "top_code": "406",
+    "course_id": "M-ID HOSP 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Saddleback College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: AIRE 100 :: Basic Refrigeration & AC Theory": {
+    "college": "San Diego City College",
+    "local_course_code": "AIRE 100",
+    "local_course_title": "Basic Refrigeration & AC Theory",
+    "units": 4.0,
+    "top_code": "56",
+    "course_id": "M-ID HVAC 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: AIRE 103 :: Basic Refrigeration & AC Lab": {
+    "college": "San Diego City College",
+    "local_course_code": "AIRE 103",
+    "local_course_title": "Basic Refrigeration & AC Lab",
+    "units": 2.0,
+    "top_code": "56",
+    "course_id": "M-ID HVAC 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: ARTG 125 :: Digital Media": {
+    "college": "San Diego City College",
+    "local_course_code": "ARTG 125",
+    "local_course_title": "Digital Media",
+    "units": 1.5,
+    "top_code": "198",
+    "course_id": "M-ID GRA 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: CBTE 140 :: Beginning Microsoft Excel": {
+    "college": "San Diego City College",
+    "local_course_code": "CBTE 140",
+    "local_course_title": "Beginning Microsoft Excel",
+    "units": 1.5,
+    "top_code": "16",
+    "course_id": "M-ID CAOT 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: CHIL 160 :: Observation and Assessment of Children": {
+    "college": "San Diego City College",
+    "local_course_code": "CHIL 160",
+    "local_course_title": "Observation and Assessment of Children",
+    "units": 2.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: CHIL 161 :: Observations and Issues in Child Development": {
+    "college": "San Diego City College",
+    "local_course_code": "CHIL 161",
+    "local_course_title": "Observations and Issues in Child Development",
+    "units": 2.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: CHIL 176 :: Principles of Infant-Toddler Caregiving": {
+    "college": "San Diego City College",
+    "local_course_code": "CHIL 176",
+    "local_course_title": "Principles of Infant-Toddler Caregiving",
+    "units": 3.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: CHIL 291A :: Child Development Center Practicum": {
+    "college": "San Diego City College",
+    "local_course_code": "CHIL 291A",
+    "local_course_title": "Child Development Center Practicum",
+    "units": 1.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: CHIL 291B :: Child Development Center Practicum": {
+    "college": "San Diego City College",
+    "local_course_code": "CHIL 291B",
+    "local_course_title": "Child Development Center Practicum",
+    "units": 1.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: CHIL 291C :: Child Development Center Practicum": {
+    "college": "San Diego City College",
+    "local_course_code": "CHIL 291C",
+    "local_course_title": "Child Development Center Practicum",
+    "units": 1.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: CHIL 291D :: Child Development Center Practicum": {
+    "college": "San Diego City College",
+    "local_course_code": "CHIL 291D",
+    "local_course_title": "Child Development Center Practicum",
+    "units": 1.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: DRAM 123 :: Beginning Stagecraft": {
+    "college": "San Diego City College",
+    "local_course_code": "DRAM 123",
+    "local_course_title": "Beginning Stagecraft",
+    "units": 2.0,
+    "top_code": "74",
+    "course_id": "M-ID THEA 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: EDUC 200 :: Teaching as a Profession": {
+    "college": "San Diego City College",
+    "local_course_code": "EDUC 200",
+    "local_course_title": "Teaching as a Profession",
+    "units": 2.0,
+    "top_code": "39",
+    "course_id": "M-ID EDUC 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: ELDT 124 :: Basic DC Electronics": {
+    "college": "San Diego City College",
+    "local_course_code": "ELDT 124",
+    "local_course_title": "Basic DC Electronics",
+    "units": 4.0,
+    "top_code": "47",
+    "course_id": "M-ID ELEC 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: ELDT 124L :: Basic DC Laboratory": {
+    "college": "San Diego City College",
+    "local_course_code": "ELDT 124L",
+    "local_course_title": "Basic DC Laboratory",
+    "units": 1.0,
+    "top_code": "47",
+    "course_id": "M-ID ELEC 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: ENGN 130 :: Introduction to Engineering Design": {
+    "college": "San Diego City College",
+    "local_course_code": "ENGN 130",
+    "local_course_title": "Introduction to Engineering Design",
+    "units": 2.0,
+    "top_code": "46",
+    "course_id": "ENGR 110",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: INWT 100 :: Computing Fundamentals (A+)": {
+    "college": "San Diego City College",
+    "local_course_code": "INWT 100",
+    "local_course_title": "Computing Fundamentals (A+)",
+    "units": 3.0,
+    "top_code": "37",
+    "course_id": "M-ID CIS 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: INWT 120 :: Computer Network Fundamentals": {
+    "college": "San Diego City College",
+    "local_course_code": "INWT 120",
+    "local_course_title": "Computer Network Fundamentals",
+    "units": 3.0,
+    "top_code": "35",
+    "course_id": "ITIS 150",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: INWT 120 :: Network Fundamentals (Network+)": {
+    "college": "San Diego City College",
+    "local_course_code": "INWT 120",
+    "local_course_title": "Network Fundamentals (Network+)",
+    "units": 3.0,
+    "top_code": "35",
+    "course_id": "M-ID CIS 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: INWT 140 :: Introduction Information Systems Security": {
+    "college": "San Diego City College",
+    "local_course_code": "INWT 140",
+    "local_course_title": "Introduction Information Systems Security",
+    "units": 3.0,
+    "top_code": "35",
+    "course_id": "ITIS 160",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: INWT 140 :: Security Fundamentals (Security+)": {
+    "college": "San Diego City College",
+    "local_course_code": "INWT 140",
+    "local_course_title": "Security Fundamentals (Security+)",
+    "units": 1.5,
+    "top_code": "35",
+    "course_id": "M-ID CIS 112",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: MACT 140 :: Machine Technology": {
+    "college": "San Diego City College",
+    "local_course_code": "MACT 140",
+    "local_course_title": "Machine Technology",
+    "units": 3.0,
+    "top_code": "65",
+    "course_id": "M-ID MACH 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: MATH 116 :: College and Matrix Algebra": {
+    "college": "San Diego City College",
+    "local_course_code": "MATH 116",
+    "local_course_title": "College and Matrix Algebra",
+    "units": 3.0,
+    "top_code": "120",
+    "course_id": "M-ID MATH 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: MFET 101 :: Introduction to Manufacturing Engineering Technology": {
+    "college": "San Diego City College",
+    "local_course_code": "MFET 101",
+    "local_course_title": "Introduction to Manufacturing Engineering Technology",
+    "units": 3.0,
+    "top_code": "64",
+    "course_id": "M-ID MFG 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: PHOT 143 :: Introduction to Digital Photography": {
+    "college": "San Diego City College",
+    "local_course_code": "PHOT 143",
+    "local_course_title": "Introduction to Digital Photography",
+    "units": 2.0,
+    "top_code": "78",
+    "course_id": "M-ID PHOT 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: PHOT 180 :: Photo Editing: Lightroom": {
+    "college": "San Diego City College",
+    "local_course_code": "PHOT 180",
+    "local_course_title": "Photo Editing: Lightroom",
+    "units": 3.0,
+    "top_code": "78",
+    "course_id": "M-ID PHOT 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: PHOT 243 :: Advanced Digital Photography": {
+    "college": "San Diego City College",
+    "local_course_code": "PHOT 243",
+    "local_course_title": "Advanced Digital Photography",
+    "units": 2.0,
+    "top_code": "78",
+    "course_id": "M-ID PHOT 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: RTVF 124 :: Single Camera Production": {
+    "college": "San Diego City College",
+    "local_course_code": "RTVF 124",
+    "local_course_title": "Single Camera Production",
+    "units": 2.0,
+    "top_code": "19",
+    "course_id": "M-ID FTVE 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: RTVF 146 :: The TV News Field Report": {
+    "college": "San Diego City College",
+    "local_course_code": "RTVF 146",
+    "local_course_title": "The TV News Field Report",
+    "units": 2.0,
+    "top_code": "187",
+    "course_id": "M-ID FTVE 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego City College :: RTVF 153 :: Introduction to Nonlinear Editing": {
+    "college": "San Diego City College",
+    "local_course_code": "RTVF 153",
+    "local_course_title": "Introduction to Nonlinear Editing",
+    "units": 2.0,
+    "top_code": "22",
+    "course_id": "M-ID FTVE 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: ARCH 107 :: Revit": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "ARCH 107",
+    "local_course_title": "Revit",
+    "units": 3.0,
+    "top_code": "173",
+    "course_id": "M-ID ARCH 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CACM 102 :: Sanitation": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CACM 102",
+    "local_course_title": "Sanitation",
+    "units": 2.0,
+    "top_code": "108",
+    "course_id": "M-ID CULN 116",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CACM 103 :: Organization of Food": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CACM 103",
+    "local_course_title": "Organization of Food",
+    "units": 1.0,
+    "top_code": "108",
+    "course_id": "M-ID CULN 114",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CACM 106 :: Theory of Food Principles": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CACM 106",
+    "local_course_title": "Theory of Food Principles",
+    "units": 2.5,
+    "top_code": "108",
+    "course_id": "M-ID CULN 120",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CACM 160 :: Fundamental of Baking Theory": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CACM 160",
+    "local_course_title": "Fundamental of Baking Theory",
+    "units": 3.0,
+    "top_code": "108",
+    "course_id": "M-ID CULN 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CACM 206B :: Garde Manger II": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CACM 206B",
+    "local_course_title": "Garde Manger II",
+    "units": 1.0,
+    "top_code": "108",
+    "course_id": "M-ID CULN 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CACM 212 :: Baking and Pastry": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CACM 212",
+    "local_course_title": "Baking and Pastry",
+    "units": 3.0,
+    "top_code": "108",
+    "course_id": "M-ID CULN 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CBTE 101 :: Basic Computer Keyboarding": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CBTE 101",
+    "local_course_title": "Basic Computer Keyboarding",
+    "units": 1.0,
+    "top_code": "16",
+    "course_id": "M-ID CAOT 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CBTE 140 :: Beginning Microsoft Excel": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CBTE 140",
+    "local_course_title": "Beginning Microsoft Excel",
+    "units": 1.5,
+    "top_code": "16",
+    "course_id": "M-ID CAOT 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CHIL 160 :: Observation and Assessment of Children": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CHIL 160",
+    "local_course_title": "Observation and Assessment of Children",
+    "units": 2.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CHIL 161 :: Observations and Issues in Child Development": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CHIL 161",
+    "local_course_title": "Observations and Issues in Child Development",
+    "units": 2.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CHIL 176 :: Principles of Infant-Toddler Caregiving": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CHIL 176",
+    "local_course_title": "Principles of Infant-Toddler Caregiving",
+    "units": 3.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CHIL 291A :: Child Development Center Practicum": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CHIL 291A",
+    "local_course_title": "Child Development Center Practicum",
+    "units": 1.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CHIL 291B :: Child Development Center Practicum": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CHIL 291B",
+    "local_course_title": "Child Development Center Practicum",
+    "units": 1.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CHIL 291C :: Child Development Center Practicum": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CHIL 291C",
+    "local_course_title": "Child Development Center Practicum",
+    "units": 1.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CHIL 291D :: Child Development Center Practicum": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CHIL 291D",
+    "local_course_title": "Child Development Center Practicum",
+    "units": 1.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CISC 150 :: Introduction to Computer and Information Sciences": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CISC 150",
+    "local_course_title": "Introduction to Computer and Information Sciences",
+    "units": 3.0,
+    "top_code": "28",
+    "course_id": "M-ID CIS 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: CISC 179 :: Python Programming": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "CISC 179",
+    "local_course_title": "Python Programming",
+    "units": 3.0,
+    "top_code": "32",
+    "course_id": "M-ID CIS 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: DRAM 123 :: Beginning Stagecraft": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "DRAM 123",
+    "local_course_title": "Beginning Stagecraft",
+    "units": 2.0,
+    "top_code": "74",
+    "course_id": "M-ID THEA 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: EDUC 200 :: Introduction to Elementary Classroom Teaching": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "EDUC 200",
+    "local_course_title": "Introduction to Elementary Classroom Teaching",
+    "units": 2.0,
+    "top_code": "39",
+    "course_id": "EDUC 200",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: EDUC 200 :: Teaching as a Profession": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "EDUC 200",
+    "local_course_title": "Teaching as a Profession",
+    "units": 2.0,
+    "top_code": "39",
+    "course_id": "M-ID EDUC 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: EDUC 203 :: Introduction to Elementary Classroom Teaching": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "EDUC 203",
+    "local_course_title": "Introduction to Elementary Classroom Teaching",
+    "units": 1.0,
+    "top_code": "39",
+    "course_id": "EDUC 200",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: FASH 130 :: Apparel Construction I": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "FASH 130",
+    "local_course_title": "Apparel Construction I",
+    "units": 3.0,
+    "top_code": "242",
+    "course_id": "M-ID FASH 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: FASH 130L :: Apparel Construction I Laboratory": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "FASH 130L",
+    "local_course_title": "Apparel Construction I Laboratory",
+    "units": 1.0,
+    "top_code": "242",
+    "course_id": "M-ID FASH 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: GISG 104 :: Introduction to Geographic Information Systems and Techniques, with Lab": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "GISG 104",
+    "local_course_title": "Introduction to Geographic Information Systems and Techniques, with Lab",
+    "units": 2.5,
+    "top_code": "137",
+    "course_id": "GEOG 155",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: GISG 110 :: Introduction to Geographic Information Systems and Techniques, with Lab": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "GISG 110",
+    "local_course_title": "Introduction to Geographic Information Systems and Techniques, with Lab",
+    "units": 2.5,
+    "top_code": "137",
+    "course_id": "GEOG 155",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: HOSP 101 :: Introduction to Hospitality & Tourism": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "HOSP 101",
+    "local_course_title": "Introduction to Hospitality & Tourism",
+    "units": 3.0,
+    "top_code": "273",
+    "course_id": "M-ID HOSP 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: MATH 116 :: College and Matrix Algebra": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "MATH 116",
+    "local_course_title": "College and Matrix Algebra",
+    "units": 3.0,
+    "top_code": "120",
+    "course_id": "M-ID MATH 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: MEDA 110 :: Medical Terminology": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "MEDA 110",
+    "local_course_title": "Medical Terminology",
+    "units": 3.0,
+    "top_code": "91",
+    "course_id": "HIT 103 X",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: MEDA 55 :: Fundamentals Human Anatomy and Physiology": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "MEDA 55",
+    "local_course_title": "Fundamentals Human Anatomy and Physiology",
+    "units": 3.0,
+    "top_code": "91",
+    "course_id": "M-ID MEDA 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: MULT 100 :: Introduction to Visual Communication": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "MULT 100",
+    "local_course_title": "Introduction to Visual Communication",
+    "units": 2.0,
+    "top_code": "27",
+    "course_id": "JOUR 170",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: MULT 120 :: Introduction to Video Game Design": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "MULT 120",
+    "local_course_title": "Introduction to Video Game Design",
+    "units": 3.0,
+    "top_code": "22",
+    "course_id": "M-ID MMED 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: MULT 123 :: Digital Video I": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "MULT 123",
+    "local_course_title": "Digital Video I",
+    "units": 3.0,
+    "top_code": "20",
+    "course_id": "M-ID MMED 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: MUSI 124A :: Piano Class I": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "MUSI 124A",
+    "local_course_title": "Piano Class I",
+    "units": 1.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 126",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: MUSI 150A :: Basic Musicianship": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "MUSI 150A",
+    "local_course_title": "Basic Musicianship",
+    "units": 3.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: MUSI 269A :: Ear Training III": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "MUSI 269A",
+    "local_course_title": "Ear Training III",
+    "units": 1.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: NUTR 160 :: Foods for Healthy Lifestyles": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "NUTR 160",
+    "local_course_title": "Foods for Healthy Lifestyles",
+    "units": 3.0,
+    "top_code": "319",
+    "course_id": "M-ID NUTR 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: WEBD 127 :: Creating User-Centered Content": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "WEBD 127",
+    "local_course_title": "Creating User-Centered Content",
+    "units": 2.5,
+    "top_code": "24",
+    "course_id": "M-ID WEB 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: WEBD 152 :: Beginning Web Development: HyperText Markup Language (HTML) and Cascading Style Sheets (CSS)": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "WEBD 152",
+    "local_course_title": "Beginning Web Development: HyperText Markup Language (HTML) and Cascading Style Sheets (CSS)",
+    "units": 2.5,
+    "top_code": "24",
+    "course_id": "M-ID WEB 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: WEBD 164 :: Javascript Fundamentals for Web Development": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "WEBD 164",
+    "local_course_title": "Javascript Fundamentals for Web Development",
+    "units": 2.5,
+    "top_code": "24",
+    "course_id": "M-ID WEB 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Mesa College :: WEBD 169 :: Website Development Using Open Source Content Management Systems": {
+    "college": "San Diego Mesa College",
+    "local_course_code": "WEBD 169",
+    "local_course_title": "Website Development Using Open Source Content Management Systems",
+    "units": 2.5,
+    "top_code": "24",
+    "course_id": "M-ID WEB 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Miramar College :: ARTG 125 :: Digital Media": {
+    "college": "San Diego Miramar College",
+    "local_course_code": "ARTG 125",
+    "local_course_title": "Digital Media",
+    "units": 1.5,
+    "top_code": "649",
+    "course_id": "M-ID GRA 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Miramar College :: CBTE 140 :: Beginning Microsoft Excel": {
+    "college": "San Diego Miramar College",
+    "local_course_code": "CBTE 140",
+    "local_course_title": "Beginning Microsoft Excel",
+    "units": 1.5,
+    "top_code": "16",
+    "course_id": "M-ID CAOT 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Miramar College :: CHIL 160 :: Observation and Assessment of Children": {
+    "college": "San Diego Miramar College",
+    "local_course_code": "CHIL 160",
+    "local_course_title": "Observation and Assessment of Children",
+    "units": 1.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Miramar College :: CHIL 161 :: Observations and Issues in Child Development": {
+    "college": "San Diego Miramar College",
+    "local_course_code": "CHIL 161",
+    "local_course_title": "Observations and Issues in Child Development",
+    "units": 2.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Miramar College :: CHIL 176 :: Principles of Infant-Toddler Caregiving": {
+    "college": "San Diego Miramar College",
+    "local_course_code": "CHIL 176",
+    "local_course_title": "Principles of Infant-Toddler Caregiving",
+    "units": 3.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Miramar College :: CHIL 291A :: Child Development Center Practicum": {
+    "college": "San Diego Miramar College",
+    "local_course_code": "CHIL 291A",
+    "local_course_title": "Child Development Center Practicum",
+    "units": 1.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Miramar College :: CHIL 291B :: Child Development Center Practicum": {
+    "college": "San Diego Miramar College",
+    "local_course_code": "CHIL 291B",
+    "local_course_title": "Child Development Center Practicum",
+    "units": 1.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Miramar College :: CHIL 291C :: Child Development Center Practicum": {
+    "college": "San Diego Miramar College",
+    "local_course_code": "CHIL 291C",
+    "local_course_title": "Child Development Center Practicum",
+    "units": 1.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Miramar College :: CHIL 291D :: Child Development Center Practicum": {
+    "college": "San Diego Miramar College",
+    "local_course_code": "CHIL 291D",
+    "local_course_title": "Child Development Center Practicum",
+    "units": 1.0,
+    "top_code": "106",
+    "course_id": "M-ID ECE 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Miramar College :: EDUC 200 :: Teaching as a Profession": {
+    "college": "San Diego Miramar College",
+    "local_course_code": "EDUC 200",
+    "local_course_title": "Teaching as a Profession",
+    "units": 2.0,
+    "top_code": "108",
+    "course_id": "M-ID EDUC 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College",
+      "Credit By Exam at Mesa"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBEA-1-001",
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "San Diego Miramar College :: MATH 116 :: College and Matrix Algebra": {
+    "college": "San Diego Miramar College",
+    "local_course_code": "MATH 116",
+    "local_course_title": "College and Matrix Algebra",
+    "units": 3.0,
+    "top_code": "120",
+    "course_id": "M-ID MATH 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit By Exam San Diego City College"
+    ],
+    "source_exhibit_ids": [
+      "MAPCBES-CBES-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: ACCT V01A :: Financial Accounting": {
+    "college": "Ventura College",
+    "local_course_code": "ACCT V01A",
+    "local_course_title": "Financial Accounting",
+    "units": 5.0,
+    "top_code": "5",
+    "course_id": "ACCT 110",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Financial Accounting"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEF-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: ACCT V01B :: Managerial Accounting": {
+    "college": "Ventura College",
+    "local_course_code": "ACCT V01B",
+    "local_course_title": "Managerial Accounting",
+    "units": 5.0,
+    "top_code": "5",
+    "course_id": "ACCT 120",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Managerial Accounting"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEM7-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: ACCT V03 :: Introduction to Accounting": {
+    "college": "Ventura College",
+    "local_course_code": "ACCT V03",
+    "local_course_title": "Introduction to Accounting",
+    "units": 3.0,
+    "top_code": "5",
+    "course_id": "BSOT 127 X",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Introduction to Accounting"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEI1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: ANTH V02 :: Cultural Anthropology": {
+    "college": "Ventura College",
+    "local_course_code": "ANTH V02",
+    "local_course_title": "Cultural Anthropology",
+    "units": 3.0,
+    "top_code": "134",
+    "course_id": "M-ID ANTH 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Cultural Anthropology"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEC-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: ANTH V03 :: Introduction to Archaeology": {
+    "college": "Ventura College",
+    "local_course_code": "ANTH V03",
+    "local_course_title": "Introduction to Archaeology",
+    "units": 3.0,
+    "top_code": "134",
+    "course_id": "ANTH 150",
+    "id_system": "C-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Introduction to Archaeology"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEI2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: ANTH V09 :: World Prehistory": {
+    "college": "Ventura College",
+    "local_course_code": "ANTH V09",
+    "local_course_title": "World Prehistory",
+    "units": 3.0,
+    "top_code": "134",
+    "course_id": "M-ID ANTH 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- World Prehistory"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEW-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: ART V01 :: Art Appreciation": {
+    "college": "Ventura College",
+    "local_course_code": "ART V01",
+    "local_course_title": "Art Appreciation",
+    "units": 3.0,
+    "top_code": "249",
+    "course_id": "M-ID ART 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Art appreciation"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA16-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: ART V02B :: Introduction to the History of Western Art II": {
+    "college": "Ventura College",
+    "local_course_code": "ART V02B",
+    "local_course_title": "Introduction to the History of Western Art II",
+    "units": 3.0,
+    "top_code": "249",
+    "course_id": "M-ID ART 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Survey of Art from Prehistory to the Medieval Era"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBES4-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: ASL V01 :: Elementary American Sign Language I": {
+    "college": "Ventura College",
+    "local_course_code": "ASL V01",
+    "local_course_title": "Elementary American Sign Language I",
+    "units": 4.0,
+    "top_code": "43",
+    "course_id": "M-ID ASL 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam-Elementary American Sign Language 1"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEA15-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: CJ V06 :: Criminal Justice Report Writing and Courtroom Procedures": {
+    "college": "Ventura College",
+    "local_course_code": "CJ V06",
+    "local_course_title": "Criminal Justice Report Writing and Courtroom Procedures",
+    "units": 3.0,
+    "top_code": "128",
+    "course_id": "M-ID AJ 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by  Exam-Criminal Justice Report Writing and Courtroom Procedures"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEJ1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: CJ V07 :: Patrol Procedures": {
+    "college": "Ventura College",
+    "local_course_code": "CJ V07",
+    "local_course_title": "Patrol Procedures",
+    "units": 3.0,
+    "top_code": "128",
+    "course_id": "M-ID AJ 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam-Patrol Procedures"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEP1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: DANC V27A :: Street Dance I": {
+    "college": "Ventura College",
+    "local_course_code": "DANC V27A",
+    "local_course_title": "Street Dance I",
+    "units": 2.0,
+    "top_code": "76",
+    "course_id": "M-ID DANC 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam-Street Dance I"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBED1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: DANC V27B :: Street Dance II": {
+    "college": "Ventura College",
+    "local_course_code": "DANC V27B",
+    "local_course_title": "Street Dance II",
+    "units": 2.0,
+    "top_code": "76",
+    "course_id": "M-ID DANC 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam-Street Dance II"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBED2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: DANC V27C :: Street Dance III": {
+    "college": "Ventura College",
+    "local_course_code": "DANC V27C",
+    "local_course_title": "Street Dance III",
+    "units": 2.0,
+    "top_code": "76",
+    "course_id": "M-ID DANC 110",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam-Street Dance III"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBED3-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: DANC V27D :: Street Dance IV": {
+    "college": "Ventura College",
+    "local_course_code": "DANC V27D",
+    "local_course_title": "Street Dance IV",
+    "units": 2.0,
+    "top_code": "76",
+    "course_id": "M-ID DANC 112",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam-Street Dance IV"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBED5-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: DANC V40A :: Mexican Folklorico I": {
+    "college": "Ventura College",
+    "local_course_code": "DANC V40A",
+    "local_course_title": "Mexican Folklorico I",
+    "units": 2.0,
+    "top_code": "76",
+    "course_id": "M-ID DANC 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam-Mexican Folklorico I"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEF2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: DANC V40C :: Mexican Folklorico III": {
+    "college": "Ventura College",
+    "local_course_code": "DANC V40C",
+    "local_course_title": "Mexican Folklorico III",
+    "units": 2.0,
+    "top_code": "76",
+    "course_id": "M-ID DANC 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam - Mexican Folklorico II",
+      "Credit by Exam-Mexican Folklorico III"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBE-2-1-001",
+      "MAPCXS-CBEF3-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: DANC V40D :: Mexican Folklorico IV": {
+    "college": "Ventura College",
+    "local_course_code": "DANC V40D",
+    "local_course_title": "Mexican Folklorico IV",
+    "units": 2.0,
+    "top_code": "76",
+    "course_id": "M-ID DANC 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Mexican Folklorico IV"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEM6-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: DM V11 :: Introduction to Heavy-Duty Diesel Repair": {
+    "college": "Ventura College",
+    "local_course_code": "DM V11",
+    "local_course_title": "Introduction to Heavy-Duty Diesel Repair",
+    "units": 4.0,
+    "top_code": "211",
+    "course_id": "M-ID DSL 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Introduction to Heavy-Duty Diesel Repair"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEI3-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: DM V26 :: Diesel Engines": {
+    "college": "Ventura College",
+    "local_course_code": "DM V26",
+    "local_course_title": "Diesel Engines",
+    "units": 4.0,
+    "top_code": "211",
+    "course_id": "M-ID DSL 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Diesel Engines"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBED6-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: DM V28 :: Diesel Fuel Management Systems": {
+    "college": "Ventura College",
+    "local_course_code": "DM V28",
+    "local_course_title": "Diesel Fuel Management Systems",
+    "units": 4.0,
+    "top_code": "211",
+    "course_id": "M-ID DSL 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Diesel Fuel Management Systems"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEF1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: MATH V90 :: Directed Studies in Mathematics": {
+    "college": "Ventura College",
+    "local_course_code": "MATH V90",
+    "local_course_title": "Directed Studies in Mathematics",
+    "units": 1.0,
+    "top_code": "120",
+    "course_id": "M-ID MATH 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Directed Studies in Mathematics"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBED-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: MUS V13A :: Voice Technique I": {
+    "college": "Ventura College",
+    "local_course_code": "MUS V13A",
+    "local_course_title": "Voice Technique I",
+    "units": 2.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 138",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Voice Technique I"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEV-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: MUS V13B :: Voice Technique II": {
+    "college": "Ventura College",
+    "local_course_code": "MUS V13B",
+    "local_course_title": "Voice Technique II",
+    "units": 2.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 140",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Voice Technique II"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEV1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: MUS V13C :: Voice Development I": {
+    "college": "Ventura College",
+    "local_course_code": "MUS V13C",
+    "local_course_title": "Voice Development I",
+    "units": 2.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 134",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Voice Development I"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEV2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: MUS V13D :: Voice Development II": {
+    "college": "Ventura College",
+    "local_course_code": "MUS V13D",
+    "local_course_title": "Voice Development II",
+    "units": 2.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 136",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Voice Development II"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEV3-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: MUS V24A :: Keyboards I": {
+    "college": "Ventura College",
+    "local_course_code": "MUS V24A",
+    "local_course_title": "Keyboards I",
+    "units": 2.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 116",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Keyboards I"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEK-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: MUS V24B :: Keyboards II": {
+    "college": "Ventura College",
+    "local_course_code": "MUS V24B",
+    "local_course_title": "Keyboards II",
+    "units": 2.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 118",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Keyboards II"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEK1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: MUS V24C :: Keyboards III": {
+    "college": "Ventura College",
+    "local_course_code": "MUS V24C",
+    "local_course_title": "Keyboards III",
+    "units": 2.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 120",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Keyboards III"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEK2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: MUS V24D :: Keyboards IV": {
+    "college": "Ventura College",
+    "local_course_code": "MUS V24D",
+    "local_course_title": "Keyboards IV",
+    "units": 2.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 122",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Keyboards IV"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEK3-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: MUS V36A :: Guitar I": {
+    "college": "Ventura College",
+    "local_course_code": "MUS V36A",
+    "local_course_title": "Guitar I",
+    "units": 2.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Guitar I"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEG-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: MUS V36B :: Guitar II": {
+    "college": "Ventura College",
+    "local_course_code": "MUS V36B",
+    "local_course_title": "Guitar II",
+    "units": 2.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Guitar II"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEG1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: MUS V36C :: Guitar III": {
+    "college": "Ventura College",
+    "local_course_code": "MUS V36C",
+    "local_course_title": "Guitar III",
+    "units": 2.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 110",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Guitar III"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEG2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: MUS V36D :: Guitar IV": {
+    "college": "Ventura College",
+    "local_course_code": "MUS V36D",
+    "local_course_title": "Guitar IV",
+    "units": 2.0,
+    "top_code": "72",
+    "course_id": "M-ID MUS 112",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Guitar IV"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEG3-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: NS V10 :: Foundations of Nursing Practice": {
+    "college": "Ventura College",
+    "local_course_code": "NS V10",
+    "local_course_title": "Foundations of Nursing Practice",
+    "units": 9.0,
+    "top_code": "98",
+    "course_id": "M-ID NURS 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Foundations of Nursing Practice"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEF4-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: NS V20 :: Patient-Centered Care I and Family-Centered Care of Children": {
+    "college": "Ventura College",
+    "local_course_code": "NS V20",
+    "local_course_title": "Patient-Centered Care I and Family-Centered Care of Children",
+    "units": 9.0,
+    "top_code": "98",
+    "course_id": "M-ID NURS 104",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Patient-Centered Care I and Family-Centered Care of Children"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEP2-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: NS V30 :: Patient-Centered Care II and Maternal Newborn and Mental Health Nursing": {
+    "college": "Ventura College",
+    "local_course_code": "NS V30",
+    "local_course_title": "Patient-Centered Care II and Maternal Newborn and Mental Health Nursing",
+    "units": 9.0,
+    "top_code": "98",
+    "course_id": "M-ID NURS 106",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Patient-Centered Care II and Maternal Newborn and Mental Health Nursing"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEP3-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: NS V31 :: Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO": {
+    "college": "Ventura College",
+    "local_course_code": "NS V31",
+    "local_course_title": "Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO",
+    "units": 9.0,
+    "top_code": "98",
+    "course_id": "M-ID NURS 108",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEP4-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: NS V40 :: Patient-Centered Care III and Transition to Professional Practice": {
+    "college": "Ventura College",
+    "local_course_code": "NS V40",
+    "local_course_title": "Patient-Centered Care III and Transition to Professional Practice",
+    "units": 9.0,
+    "top_code": "98",
+    "course_id": "M-ID NURS 110",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Patient-Centered Care III and Transition to Professional Practice"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEP5-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: NS V41 :: Patient-Centered Care III and Transition to Professional Practice: 30-UO": {
+    "college": "Ventura College",
+    "local_course_code": "NS V41",
+    "local_course_title": "Patient-Centered Care III and Transition to Professional Practice: 30-UO",
+    "units": 9.0,
+    "top_code": "98",
+    "course_id": "M-ID NURS 112",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Patient-Centered Care III and Transition to Professional Practice: 30-UO"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEP6-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Ventura College :: POSC N101A :: Orientation for P.O.S.T. Regular and Modular Academy": {
+    "college": "Ventura College",
+    "local_course_code": "POSC N101A",
+    "local_course_title": "Orientation for P.O.S.T. Regular and Modular Academy",
+    "units": 0.0,
+    "top_code": "359",
+    "course_id": "M-ID AJ 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam- Introductory Statistics for the Social and Behavioral Sciences"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBEI-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Woodland Community College :: ACCT 3 :: Computerized Accounting": {
+    "college": "Woodland Community College",
+    "local_course_code": "ACCT 3",
+    "local_course_title": "Computerized Accounting",
+    "units": 3.0,
+    "top_code": "5",
+    "course_id": "M-ID ACCT 100",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam - Computerized Accounting"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBE-1-1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  },
+  "Woodland Community College :: ACCT 50 :: General Accounting": {
+    "college": "Woodland Community College",
+    "local_course_code": "ACCT 50",
+    "local_course_title": "General Accounting",
+    "units": 3.0,
+    "top_code": "5",
+    "course_id": "M-ID ACCT 102",
+    "id_system": "M-ID",
+    "source": "Cx exhibit",
+    "source_exhibit_titles": [
+      "Credit by Exam - General Accounting"
+    ],
+    "source_exhibit_ids": [
+      "MAPCXS-CBE--1-001"
+    ],
+    "classified_at": "2026-05-19",
+    "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+    "reviewed_at": null,
+    "reviewed_by": null
+  }
+}
