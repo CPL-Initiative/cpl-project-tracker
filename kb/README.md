@@ -98,10 +98,19 @@ preserved — they're how MAP serves the data). Per entry:
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": ["MAPSAS-…"],
+    "quality_flag": null,
     "_notes": "Optional. Mandatory when confidence_title < 0.85."
   }
 }
 ```
+
+- `quality_flag` is a triage signal (`null` normally). Currently the only
+  value is `"suspect_course_as_exhibit"` — set by `_flag_hinky_exhibits.py`
+  on the ~200 exhibits typed "Industry Certification" that resolved to **no
+  identifiable issuing agency** (the title is a course, not a credential; a
+  data-entry pattern concentrated at a few colleges, ~half Modesto Junior
+  College). It's a heuristic for later cleanup, not a verdict — a few may be
+  genuine certs we couldn't pin down.
 
 ### `credentials.json`
 
