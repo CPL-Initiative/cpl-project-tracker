@@ -198,9 +198,37 @@
     var exportBtn = el("a", { class: "uc-export", href: data.export_path || "exports/unified_courses.xlsx",
       title: "Download the full set (incl. singletons) as Excel" }, ["↓ Export all to .xlsx"]);
     var auth = el("span", { id: "uc-auth", class: "uc-auth" });
+    var syncBadge = el("span", { id: "uc-sync" });
 
-    [fKind, fSource, fDisc, fCredit, fConf, fArtic, search, flagged, blanksBtn, auth, exportBtn]
+    [fKind, fSource, fDisc, fCredit, fConf, fArtic, search, flagged, blanksBtn, auth, syncBadge, exportBtn]
       .forEach(function (c) { toolbar.appendChild(c); });
+
+    // Curation edits hit Supabase instantly but are only folded into git
+    // (kb/coci_curation.json) by the daily workflow. Count edits in the live
+    // overlay whose discipline differs from what was committed at build time.
+    function pendingSyncCount() {
+      var committed = data.committed_curation || {};
+      var n = 0;
+      rows.forEach(function (r) { if (r._curated && r.disc !== committed[r.id]) n++; });
+      return n;
+    }
+    function renderSyncBadge() {
+      syncBadge.innerHTML = "";
+      syncBadge.removeAttribute("style");
+      var n = pendingSyncCount();
+      if (!n) return;
+      syncBadge.setAttribute("style", "background:#FFF6E0;border:1px solid #C9A84C;color:#7a5c00;" +
+        "padding:3px 8px;border-radius:6px;font-size:.82rem;display:inline-flex;align-items:center;gap:6px;");
+      syncBadge.appendChild(el("span", {
+        title: "Curation is saved to the database instantly, then folded into git once a day (the dashboard rebuilds then)."
+      }, ["⟳ " + n + " edit" + (n === 1 ? "" : "s") + " awaiting daily sync"]));
+      var a = el("a", {
+        href: "https://github.com/cpl-initiative/cpl-project-tracker/actions/workflows/daily-dashboard.yml",
+        target: "_blank", rel: "noopener", class: "uc-auth-link",
+        title: "Sync runs automatically once a day. Click to open the workflow and run it now (requires GitHub repo access)."
+      }, ["Sync now ↗"]);
+      syncBadge.appendChild(a);
+    }
 
     function renderAuth() {
       auth.innerHTML = "";
@@ -440,6 +468,7 @@
       });
       table.appendChild(tb);
       wrap.innerHTML = ""; wrap.appendChild(table);
+      renderSyncBadge();
     }
 
     fKind.onchange = function () { state.kind = this.value; render(); };
