@@ -4051,6 +4051,127 @@ def _write_analytics_xlsx_export(card_id, title, headers, rows, output_dir):
     return out_path
 
 
+def export_unified_courses():
+    """Build the Unified Courses tab data (window.CPL_UNIFIED_COURSES in
+    unified_courses_data.js) + the full xlsx export, from the kb/coci_*.json
+    staging files. Writes an empty global if the KB files are absent so the
+    tab degrades gracefully. STAGING data — does not touch curated KB files."""
+    from datetime import datetime as _dt
+    kdir = os.path.join(SCRIPT_DIR, "kb")
+    out_js = os.path.join(SCRIPT_DIR, "unified_courses_data.js")
+
+    def _load(name):
+        p = os.path.join(kdir, name)
+        return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else None
+
+    cat_doc = _load("coci_minted_courses.json")
+    if not cat_doc:
+        with open(out_js, "w", encoding="utf-8") as f:
+            f.write("/* Unified Courses data unavailable (kb/coci_minted_courses.json missing) */\n"
+                    "window.CPL_UNIFIED_COURSES = {rows: [], colleges: []};\n")
+        print("  Unified Courses: kb files absent — wrote empty global")
+        return
+
+    cat = cat_doc["courses"]
+    sg = (_load("coci_minted_singletons.json") or {}).get("courses", {})
+    clusters = (_load("coci_unified_courses.json") or {}).get("clusters", {})
+    art_doc = _load("coci_articulations.json") or {}
+    art_ident = art_doc.get("identities", {})
+    earned = {}
+    for g in art_doc.get("articulations", []):
+        earned.setdefault(g["course_id"], set()).update(g.get("earned_by_colleges", []))
+
+    colleges, col_idx = [], {}
+
+    def cidx(name):
+        if name not in col_idx:
+            col_idx[name] = len(colleges); colleges.append(name)
+        return col_idx[name]
+
+    def rollup(mids):
+        """(adopted, potential) college name lists rolled up across member M-IDs.
+        adopted = colleges that earned >=1 articulation; potential = offering minus
+        adopted. Empty unless at least one member actually carries an articulation."""
+        off, ad, any_art = set(), set(), False
+        for m in mids:
+            ident = art_ident.get(m)
+            if ident:
+                any_art = True
+                off |= set(ident.get("colleges_offering", []))
+                ad |= set(earned.get(m, set()))
+        return (sorted(ad), sorted(off - ad)) if any_art else ([], [])
+
+    def flags_of(v, use_spread=True):
+        sp = v.get("subject_spread", 1) or 1
+        return {
+            "over_merged": bool(use_spread and sp >= 8),
+            "credit_mixed": bool(v.get("credit_status_mixed")),
+            "top_mixed": bool(v.get("top_code_mixed")),
+            "ncc_mixed": bool(v.get("noncredit_category_mixed")),
+            "reviewed": bool(v.get("reviewed_at")),
+        }
+
+    rows = []
+    for mid, v in cat.items():
+        ad, pot = rollup([mid])
+        rows.append({"kind": "Course", "id": mid, "title": v.get("common_title"),
+                     "disc": v.get("discipline"), "credit": v.get("credit_status"),
+                     "units": v.get("typical_units"), "top": v.get("top_code"),
+                     "subj": [v["subject"]] if v.get("subject") else [],
+                     "members": v.get("corroboration_members"), "conf": v.get("confidence"),
+                     "flags": flags_of(v),
+                     "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
+    for uid, v in clusters.items():
+        ad, pot = rollup(v.get("members", []))
+        rows.append({"kind": "Cluster", "id": uid,
+                     "title": v.get("synthesized_title") or v.get("canonical_title"),
+                     "disc": v.get("discipline"), "credit": v.get("credit_status"),
+                     "units": v.get("typical_units"), "top": v.get("top_code"),
+                     "subj": v.get("subjects", []), "members": v.get("member_count"), "conf": None,
+                     "flags": flags_of(v, use_spread=False),
+                     "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
+
+    payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,
+               "colleges": colleges, "count_inbrowser": len(rows),
+               "count_total": len(cat) + len(sg) + len(clusters),
+               "export_path": "exports/unified_courses.xlsx", "rows": rows}
+    with open(out_js, "w", encoding="utf-8") as f:
+        f.write("/* Unified Courses (COCI identity layer) — auto-generated. AI-assisted STAGING. */\n"
+                "window.CPL_UNIFIED_COURSES = " + json.dumps(payload, ensure_ascii=False) + ";\n")
+    print(f"  Unified Courses: wrote {out_js} ({len(rows)} in-browser rows, {len(colleges)} colleges)")
+
+    # ---- full xlsx export (Course + Cluster + Singleton, incl. college name lists) ----
+    headers = ["Kind", "ID", "Title", "Discipline", "Credit Status", "Units", "TOP Code",
+               "Subject(s)", "Members", "Confidence", "Over-merged", "Credit mixed", "TOP mixed",
+               "Noncredit mixed", "Reviewed", "Adopted (count)", "Adopted colleges",
+               "Potential adoption (count)", "Potential colleges"]
+    xrows = []
+
+    def xrow(kind, cid, title, disc, credit, units, top, subj, members, conf, fl, mids):
+        ad, pot = rollup(mids)
+        xrows.append([kind, cid, title, disc, credit, units, top, "; ".join(subj or []),
+                      members, ("" if conf is None else conf),
+                      *["Y" if fl[k] else "" for k in ("over_merged", "credit_mixed", "top_mixed", "ncc_mixed", "reviewed")],
+                      len(ad), "; ".join(ad), len(pot), "; ".join(pot)])
+
+    for mid, v in cat.items():
+        xrow("Course", mid, v.get("common_title"), v.get("discipline"), v.get("credit_status"),
+             v.get("typical_units"), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
+             v.get("corroboration_members"), v.get("confidence"), flags_of(v), [mid])
+    for sid, v in sg.items():
+        xrow("Singleton", sid, v.get("common_title"), v.get("discipline"), v.get("credit_status"),
+             v.get("typical_units"), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
+             1, v.get("confidence"), flags_of(v), [sid])
+    for uid, v in clusters.items():
+        xrow("Cluster", uid, v.get("synthesized_title") or v.get("canonical_title"), v.get("discipline"),
+             v.get("credit_status"), v.get("typical_units"), v.get("top_code"), v.get("subjects", []),
+             v.get("member_count"), None, flags_of(v, use_spread=False), v.get("members", []))
+
+    _write_analytics_xlsx_export("unified_courses", "Unified Courses", headers, xrows,
+                                 os.path.join(SCRIPT_DIR, "exports"))
+    print(f"  Unified Courses: wrote exports/unified_courses.xlsx ({len(xrows)} rows)")
+
+
 def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
     """
     Render exhibit analysis tables as scrollable HTML cards inside a
@@ -5608,6 +5729,12 @@ def main():
             f.write(sw_js)
         print(f"  Exported statewide data to {sw_js_path} ({len(exhibit_tables['statewide_adoption'])} exhibits)")
 
+    # ── Build the Unified Courses tab data + xlsx export (COCI KB staging layer) ──
+    try:
+        export_unified_courses()
+    except Exception as e:
+        print(f"  Unified Courses export failed ({e}); tab will show empty")
+
     # ── Inject data inline AND render static HTML into the dashboard ──
     if os.path.exists(HTML_FILE):
         with open(HTML_FILE, "r", encoding="utf-8") as f:
@@ -5724,6 +5851,8 @@ def main():
             '<script src="statewide_data.js"></script>',
             '<script src="statewide_interactive.js"></script>',
             '<script src="college_report_generator.js"></script>',
+            '<script src="unified_courses_data.js"></script>',
+            '<script src="unified_courses.js"></script>',
         ]
         # Remove any existing statewide script tags first to guarantee correct order
         for sw_tag in sw_scripts:
