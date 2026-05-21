@@ -59,10 +59,14 @@
     return true;
   }
   function signIn(email) {
-    return fetch(SUPABASE_URL + "/auth/v1/otp", {
+    // GoTrue's REST endpoint takes the redirect as a ?redirect_to= query param
+    // (it ignores a body "options" object — that's the JS client's shape). The
+    // URL must be in the project's allowed Redirect URLs.
+    var redirect = encodeURIComponent(location.origin + location.pathname);
+    return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST",
       headers: { "apikey": SUPABASE_ANON, "Content-Type": "application/json" },
-      body: JSON.stringify({ email: email, options: { email_redirect_to: location.origin + location.pathname } })
+      body: JSON.stringify({ email: email, create_user: true })
     });
   }
   function signOut() { sessionStorage.removeItem("cpl_sb"); }
@@ -142,8 +146,12 @@
           var email = prompt("Reviewer email — we'll send a magic sign-in link:");
           if (!email) return;
           signIn(email.trim()).then(function (r) {
-            alert(r.ok ? "Check your email for the sign-in link, then return here."
-                       : "Sign-in request failed. Confirm your email is an allowed reviewer.");
+            if (r.ok) { alert("Check your email for the sign-in link, then return here. (Request it once — repeated tries hit a send limit.)"); return; }
+            if (r.status === 429) { alert("Too many sign-in emails just now — please wait a few minutes, then request one link."); return; }
+            r.json().then(function (b) {
+              alert("Sign-in request failed (HTTP " + r.status + (b && b.msg ? "): " + b.msg : ")") +
+                    ".\nIf this persists, confirm your email is in allowed_reviewers and that this URL is in the Supabase Redirect URLs.");
+            }).catch(function () { alert("Sign-in request failed (HTTP " + r.status + ")."); });
           }).catch(function () { alert("Network error sending the sign-in link."); });
         };
         auth.appendChild(link);
