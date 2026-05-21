@@ -150,6 +150,25 @@
       body: JSON.stringify(body)
     });
   }
+  // Live curated description for one course (so an edit shows before the daily
+  // git sync bakes it into the detail file). Resolves the latest row or null.
+  function fetchDescription(courseId) {
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=value,reviewer_email,reviewed_at&field=eq.description&course_id=eq." +
+      encodeURIComponent(courseId), { headers: { "apikey": SUPABASE_ANON } })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (a) { return a[0] || null; })
+      .catch(function () { return null; });
+  }
+  function saveDescription(courseId, value, sess) {
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
+        "Content-Type": "application/json", "Prefer": "resolution=merge-duplicates,return=minimal"
+      },
+      body: JSON.stringify({ course_id: courseId, field: "description", value: value, reviewer_email: sess.email })
+    });
+  }
   // Lazy-load the compact all-course search index (only when a curator opens
   // the Generate-unified-course dialog).
   var _ucIndex = null, _ucIndexP = null;
@@ -165,6 +184,22 @@
       document.head.appendChild(s);
     });
     return _ucIndexP;
+  }
+  // Lazy-load the heavy course-description detail file (id -> {d, s}) — only
+  // when a reviewer opens the row-details modal, keeping the main payload lean.
+  var _ucDetails = null, _ucDetailsP = null;
+  function loadDetails() {
+    if (_ucDetails) return Promise.resolve(_ucDetails);
+    if (_ucDetailsP) return _ucDetailsP;
+    _ucDetailsP = new Promise(function (resolve) {
+      if (window.CPL_UC_DETAILS) { _ucDetails = window.CPL_UC_DETAILS; resolve(_ucDetails); return; }
+      var s = document.createElement("script");
+      s.src = "unified_courses_details.js";
+      s.onload = function () { _ucDetails = window.CPL_UC_DETAILS || {}; resolve(_ucDetails); };
+      s.onerror = function () { _ucDetails = {}; resolve(_ucDetails); };
+      document.head.appendChild(s);
+    });
+    return _ucDetailsP;
   }
   function normTitle(t) {
     return (t || "").toLowerCase().replace(/\([^)]*\)/g, " ").replace(/[^a-z0-9 ]+/g, " ")
@@ -361,6 +396,104 @@
           close(); render();
           alert("Consolidated " + ids.length + " courses. The unified course will fully materialize on the next daily sync (or via Sync now).");
         }).catch(function (e) { alert("Could not save consolidation: " + ((e && e.message) || "network error")); });
+      });
+    }
+
+    // ---- row-details modal (ⓘ) — full record + lazy, editable description ----
+    function openDetailModal(r) {
+      var overlay = el("div", { style: "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;" });
+      var box = el("div", { style: "background:#fff;max-width:720px;width:92%;margin:40px 0;border-radius:10px;padding:18px 22px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
+      overlay.appendChild(box);
+      function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
+      overlay.onclick = function (e) { if (e.target === overlay) close(); };
+
+      box.appendChild(el("h3", { style: "margin:0 0 2px;color:#0A2240;" }, [r.title || r.id || ""]));
+      box.appendChild(el("div", { style: "color:#6b7280;font-family:monospace;font-size:.8rem;margin-bottom:12px;" },
+        [r.id + " · " + (r.id_system || "") + " · " + (r.kind || "") + " · " + statusOf(r)]));
+
+      var dl = el("div", { style: "display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline;" });
+      function field(label, value) {
+        if (value == null || value === "" || (Array.isArray(value) && !value.length)) return;
+        dl.appendChild(el("div", { style: "color:#64748b;font-weight:600;white-space:nowrap;" }, [label]));
+        dl.appendChild(el("div", {}, [Array.isArray(value) ? value.join(", ") : String(value)]));
+      }
+      field("Discipline", r.disc);
+      field("Credit", r.credit);
+      field("Units", r.units == null ? "" : r.units);
+      field("TOP code", r.top);
+      field("Subject(s)", r.subj);
+      field("Members", r.members == null ? "" : r.members);
+      field("Confidence", r.conf == null ? "" : r.conf.toFixed(2));
+      field("Adopted", (r.adopted && r.adopted.length) ? r.adopted.length + " — " + names(r.adopted).join(", ") : "");
+      field("Potential adoption", (r.potential && r.potential.length) ? r.potential.length + " — " + names(r.potential).join(", ") : "");
+      if (r.title_variants && r.title_variants.length) field("Title variants", r.title_variants);
+      box.appendChild(dl);
+
+      box.appendChild(el("div", { style: "display:flex;align-items:baseline;justify-content:space-between;margin:16px 0 4px;" }, [
+        el("label", { style: "font-weight:600;color:#0A2240;" }, ["Description"]),
+        el("span", { id: "uc-desc-src", style: "font-size:.78rem;color:#94a3b8;" }, [""])
+      ]));
+      var descWrap = el("div", {});
+      descWrap.appendChild(el("div", { style: "color:#94a3b8;" }, ["Loading description…"]));
+      box.appendChild(descWrap);
+
+      var actions = el("div", { style: "margin-top:16px;display:flex;gap:10px;justify-content:flex-end;" });
+      var closeBtn = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Close"]);
+      closeBtn.onclick = close;
+      actions.appendChild(closeBtn);
+      box.appendChild(actions);
+      document.body.appendChild(overlay);
+
+      function renderDesc(text, source) {
+        descWrap.innerHTML = "";
+        var srcEl = box.querySelector("#uc-desc-src");
+        srcEl.textContent = source ? ("source: " + source) : "";
+        var canEdit = !!(session && !r.locked);
+        if (canEdit) {
+          var ta = el("textarea", { style: "width:100%;min-height:140px;padding:8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;font:inherit;line-height:1.4;" });
+          ta.value = text || "";
+          descWrap.appendChild(ta);
+          var saveRow = el("div", { style: "margin-top:6px;display:flex;align-items:center;gap:10px;" });
+          var save = el("button", { type: "button", style: "padding:6px 12px;border:none;border-radius:6px;background:#0A2240;color:#C9A84C;font-weight:600;cursor:pointer;" }, ["Save description"]);
+          var note = el("span", { style: "font-size:.78rem;color:#94a3b8;" }, []);
+          save.onclick = function () {
+            var val = ta.value.trim();
+            if (!val) { note.textContent = "Description can't be empty."; return; }
+            save.disabled = true; note.textContent = "Saving…";
+            ensureFresh().then(function (sess) {
+              if (!sess || !isValidJwt(sess.access_token)) {
+                signOut(); session = null; renderAuth(); render();
+                note.textContent = "Sign-in expired — please sign in again."; save.disabled = false; return;
+              }
+              saveDescription(r.id, val, sess).then(function (resp) {
+                if (resp.ok) {
+                  if (_ucDetails) _ucDetails[r.id] = { d: val, s: "curated" };
+                  box.querySelector("#uc-desc-src").textContent = "source: curated by " + sess.email + " on " + today();
+                  note.textContent = "Saved. Folds into git on the next daily sync.";
+                  save.disabled = false;
+                } else { note.textContent = "Save failed (status " + resp.status + "). Are you an allowed reviewer?"; save.disabled = false; }
+              }).catch(function (e) {
+                var m = (e && e.message) || "network error";
+                if (/ISO-8859-1|headers/i.test(m)) { signOut(); session = null; renderAuth(); render(); note.textContent = "Session corrupted — signed out. Sign in again."; }
+                else { note.textContent = "Could not save: " + m; }
+                save.disabled = false;
+              });
+            });
+          };
+          saveRow.appendChild(save); saveRow.appendChild(note);
+          descWrap.appendChild(saveRow);
+        } else {
+          descWrap.appendChild(el("div", { style: "white-space:pre-wrap;line-height:1.45;color:" + (text ? "#1f2937" : "#94a3b8") + ";" },
+            [text || (r.locked ? "No description on file (read-only anchor)." : "No description on file yet." + (session ? "" : " Sign in to add one."))]));
+        }
+      }
+
+      Promise.all([loadDetails(), fetchDescription(r.id)]).then(function (res) {
+        var base = (res[0] || {})[r.id] || null;
+        var live = res[1];
+        if (live && live.value != null) renderDesc(live.value, "curated by " + (live.reviewer_email || "reviewer") + (live.reviewed_at ? " on " + live.reviewed_at.slice(0, 10) : ""));
+        else if (base) renderDesc(base.d, base.s);
+        else renderDesc("", "");
       });
     }
 
@@ -658,7 +791,12 @@
       matched.slice(0, MAX_VISIBLE).forEach(function (r) {
         var tr = el("tr");
         tr.appendChild(el("td", {}, [r.kind || ""]));
-        tr.appendChild(el("td", { class: "uc-id" }, [r.id || ""]));
+        var idTd = el("td", { class: "uc-id" });
+        var info = el("a", { href: "#", class: "uc-info", title: "View full record + description" }, ["ⓘ"]);
+        info.onclick = function (e) { e.preventDefault(); openDetailModal(r); };
+        idTd.appendChild(info);
+        idTd.appendChild(document.createTextNode(" " + (r.id || "")));
+        tr.appendChild(idTd);
         tr.appendChild(el("td", {}, [r.title || ""]));
         tr.appendChild(disciplineCell(r));
         tr.appendChild(el("td", {}, [r.credit || "—"]));
