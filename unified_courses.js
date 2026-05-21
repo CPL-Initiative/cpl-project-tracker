@@ -170,10 +170,28 @@
       }).catch(function () { return null; });
     }
 
-    var state = { kind: "", source: "", disc: "", credit: "", conf: "", artic: "", flagged: false, q: "", sort: "subj", dir: 1 };
+    var state = { kind: "", source: "", status: "", disc: "", credit: "", conf: "", artic: "", flagged: false, q: "", sort: "subj", dir: 1 };
     // Course number parsed from the trailing digits of the ID ("M-ID EGDTEK 100" -> 100).
     function courseNum(r) { var m = String(r.id || "").match(/(\d+)\s*$/); return m ? parseInt(m[1], 10) : 0; }
     function subjKey(r) { return (r.subj || []).join("/").toLowerCase(); }
+    // Verified = human-verified (curated, reviewed, or the curated anchor);
+    // Generated = machine-produced, not yet verified.
+    function statusOf(r) {
+      return (r.locked || r._curated || r.reviewed_by || (r.flags && r.flags.reviewed)) ? "Verified" : "Generated";
+    }
+    // "Verify" = accept the row's current (generated) discipline as-is, which
+    // writes it as a curation and promotes the row to Verified. Reuses the
+    // discipline-curation path (no bulk prompt).
+    function verifyRow(r) {
+      if (!session || !r.disc) return;
+      ensureFresh().then(function (sess) {
+        if (!sess) { signOut(); session = null; renderAuth(); render(); alert("Your sign-in expired — please sign in again."); return; }
+        saveDiscipline(r.id, r.disc, sess).then(function (resp) {
+          if (resp.ok) { r._curated = true; r.flags.reviewed = true; r.reviewed_by = sess.email; r.reviewed_at = today(); render(); }
+          else alert("Verify failed (status " + resp.status + "). Are you an allowed reviewer?");
+        }).catch(function (e) { alert("Could not verify: " + ((e && e.message) || "network error")); });
+      });
+    }
 
     // ---- toolbar ----
     function sel(id, label, opts) {
@@ -184,6 +202,7 @@
     }
     var fKind = sel("uc-kind", "All kinds", ["Course", "Cluster"]);
     var fSource = sel("uc-source", "All sources", uniqSorted(rows.map(function (r) { return r.id_system; })));
+    var fStatus = sel("uc-status", "All statuses", ["Verified", "Generated"]);
     var fDisc = sel("uc-disc", "All disciplines", uniqSorted(rows.map(function (r) { return r.disc; })));
     var fCredit = sel("uc-credit", "All credit statuses", uniqSorted(rows.map(function (r) { return r.credit; })));
     var fConf = sel("uc-conf", "Any confidence", ["high (≥0.85)", "medium (0.7–0.84)", "low (<0.7)"]);
@@ -196,11 +215,11 @@
     var blanksCb = el("input", { type: "checkbox", id: "uc-blanks" });
     blanksBtn.appendChild(blanksCb); blanksBtn.appendChild(document.createTextNode(" Blank discipline only"));
     var exportBtn = el("a", { class: "uc-export", href: data.export_path || "exports/unified_courses.xlsx",
-      title: "Download the full set (incl. singletons) as Excel" }, ["↓ Export all to .xlsx"]);
+      title: "Download the full set (incl. stand-alone courses) as Excel" }, ["↓ Export all to .xlsx"]);
     var auth = el("span", { id: "uc-auth", class: "uc-auth" });
     var syncBadge = el("span", { id: "uc-sync" });
 
-    [fKind, fSource, fDisc, fCredit, fConf, fArtic, search, flagged, blanksBtn, auth, syncBadge, exportBtn]
+    [fKind, fSource, fStatus, fDisc, fCredit, fConf, fArtic, search, flagged, blanksBtn, auth, syncBadge, exportBtn]
       .forEach(function (c) { toolbar.appendChild(c); });
 
     // Curation edits hit Supabase instantly but are only folded into git
@@ -261,6 +280,7 @@
     function passes(r) {
       if (state.kind && r.kind !== state.kind) return false;
       if (state.source && r.id_system !== state.source) return false;
+      if (state.status && statusOf(r) !== state.status) return false;
       if (state.disc && r.disc !== state.disc) return false;
       if (state.credit && r.credit !== state.credit) return false;
       if (state.conf && confTier(r.conf) !== state.conf) return false;
@@ -290,11 +310,22 @@
       b(f.top_mixed, "TOP", "mix", "members disagree on TOP code");
       b(f.ncc_mixed, "noncredit", "mix", "members disagree on noncredit category");
       b(r.locked, "anchor", "ok", "curated common-course anchor (" + (r.id_system || "") + ") — read-only");
-      var curated = !r.locked && (r._curated || r.reviewed_by);
-      b(curated, "curated ✓", "ok",
-        "discipline set" + (r.reviewed_by ? " by " + r.reviewed_by : " by a reviewer") +
-        (r.reviewed_at ? " on " + r.reviewed_at : ""));
-      if (!f.reviewed && !curated) b(true, "unreviewed", "muted", "AI draft — not human-reviewed");
+      if (statusOf(r) === "Verified") {
+        out.appendChild(el("span", {
+          class: "uc-badge",
+          style: "background:#dafbe1;border:1px solid #2da44e;color:#116329;font-weight:600;",
+          title: "human-verified" + (r.reviewed_by ? " by " + r.reviewed_by : "") +
+            (r.reviewed_at ? " on " + r.reviewed_at : "") + (r.locked ? " (curated anchor)" : "")
+        }, ["✔ Verified"]));
+      } else {
+        b(true, "Generated", "muted", "machine-generated — not yet human-verified");
+        // Quick "accept the generated discipline" → marks the row Verified.
+        if (session && !r.locked && r.disc) {
+          var vbtn = el("a", { href: "#", class: "uc-auth-link", title: "Accept this discipline and mark Verified" }, [" Verify"]);
+          vbtn.onclick = function (e) { e.preventDefault(); verifyRow(r); };
+          out.appendChild(vbtn);
+        }
+      }
       return out;
     }
 
@@ -433,7 +464,7 @@
         return (av < bv ? -1 : av > bv ? 1 : 0) * state.dir;
       });
       summary.textContent = matched.length.toLocaleString() + " of " + rows.length.toLocaleString() +
-        " in-browser identities" + (data.count_total ? " (· " + data.count_total.toLocaleString() + " total incl. singletons in the export)" : "") +
+        " in-browser identities" + (data.count_total ? " (· " + data.count_total.toLocaleString() + " total incl. stand-alone courses in the export)" : "") +
         (matched.length > MAX_VISIBLE ? " — showing first " + MAX_VISIBLE + "; refine filters or use the export" : "") +
         (session ? " · click a Discipline cell to curate" : "");
 
@@ -473,6 +504,7 @@
 
     fKind.onchange = function () { state.kind = this.value; render(); };
     fSource.onchange = function () { state.source = this.value; render(); };
+    fStatus.onchange = function () { state.status = this.value; render(); };
     fDisc.onchange = function () { state.disc = this.value; render(); };
     fCredit.onchange = function () { state.credit = this.value; render(); };
     fConf.onchange = function () { state.conf = this.value.split(" ")[0]; render(); };

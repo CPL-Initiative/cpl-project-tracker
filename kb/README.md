@@ -27,6 +27,10 @@ There are **two** layers:
 | `reference/ccn_courses.json` | Reference | Approved AB 1111 Common Course Numbers (58 so far), from COCI. Read-only authority. | — |
 | `reference/mq_disciplines.json` | Reference | Official CCC discipline titles (19th Ed. Minimum Qualifications Disciplines Index). Controlled vocabulary for the `discipline` field. | — |
 | `reference/subject_discipline_map.json` | Reference | Subject-code → MQ discipline lookup used by the M-ID consolidation generator (STAGING draft; 309 unambiguous codes mapped, ambiguous/bucket codes deliberately left null). Built by `_seed_subject_discipline_map.py`. | normalized subject code |
+| `discipline_inference.json` | Course | Authored, editable lexicon for filling blank disciplines: `subject_map` (subject → discipline) + `title_keyword` fallback. Applied by `_infer_disciplines.py`. | — |
+| `coci_curation.json` | Course | Human curation overlay synced from Supabase `kb_curation` by `_apply_curation.py`; each entry carries `discipline` + `reviewed_by` + `reviewed_at`. Applied on top of the AI drafts by `excel_to_dashboard.py` (regen-safe). | `course_id` |
+| `_infer_disciplines.py` | Course | **Re-runnable** discipline inference: applies `discipline_inference.json` to the minted/cluster/singleton staging files. Validates targets against `mq_disciplines.json`; skips reviewed/curated; stamps `discipline_source`/`_confidence`/`_inferred_at`. Idempotent — only fills blanks. | — |
+| `_apply_curation.py` | Course | Sync Supabase `kb_curation` → `coci_curation.json` (needs `SUPABASE_SERVICE_KEY`). Run in the daily workflow; safe to run manually. | — |
 | `_seed_top50.py` | Credential | One-shot generator for the Phase 2 hand-curated credential seed. **Do not re-run** — would overwrite human edits. Kept for provenance. | — |
 | `_seed_cx_common_courses.py` | Course | One-shot generator for the Phase 2 Cx seed (AI-assisted draft). **Do not re-run** — would overwrite human edits. Kept for provenance. | — |
 
