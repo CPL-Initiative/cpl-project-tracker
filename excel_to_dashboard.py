@@ -4179,6 +4179,10 @@ def export_unified_courses():
                "colleges": colleges, "mq_disciplines": sorted(mq),
                "count_inbrowser": len(rows),
                "count_total": len(cat) + len(sg) + len(clusters) + curated_n,
+               # What's already folded into git (kb/coci_curation.json at build
+               # time) — the client diffs the live Supabase overlay against this
+               # to count edits still awaiting the daily sync.
+               "committed_curation": {cid: c.get("discipline") for cid, c in curation.items()},
                "export_path": "exports/unified_courses.xlsx", "rows": rows}
     with open(out_js, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses (COCI identity layer) — auto-generated. AI-assisted STAGING. */\n"
