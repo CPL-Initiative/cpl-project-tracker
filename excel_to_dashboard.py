@@ -4252,6 +4252,10 @@ def export_unified_courses():
                # time) — the client diffs the live Supabase overlay against this
                # to count edits still awaiting the daily sync.
                "committed_curation": {cid: c.get("discipline") for cid, c in curation.items()},
+               # Descriptions already folded into git (kb/coci_curation.json) — the
+               # client diffs the live description overlay against this to count
+               # description edits still awaiting the daily sync.
+               "committed_descriptions": {cid: c["description"] for cid, c in curation.items() if c.get("description")},
                "export_path": "exports/unified_courses.xlsx", "rows": rows}
     with open(out_js, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses (COCI identity layer) — auto-generated. AI-assisted STAGING. */\n"
@@ -4306,10 +4310,13 @@ def export_unified_courses():
         if v.get("description") and ccid not in base_desc:
             base_desc[ccid] = {"d": v["description"], "s": v.get("id_system") or "COCI"}
 
-    # Only emit details for ids actually shown as rows; curation wins over the base.
-    row_ids = {r["id"] for r in rows}
+    # Only emit details for ids actually shown as rows; curation wins over the
+    # base. Iterate rows in order (not a set) so output key order is stable.
     details = {}
-    for cid in row_ids:
+    for r in rows:
+        cid = r["id"]
+        if cid in details:
+            continue
         cd = cur_desc_of(cid)
         if cd:
             details[cid] = {"d": cd, "s": "curated"}

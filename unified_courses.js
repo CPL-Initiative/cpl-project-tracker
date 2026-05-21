@@ -150,6 +150,15 @@
       body: JSON.stringify(body)
     });
   }
+  // All live curated descriptions (course_id -> value) — used to count
+  // description edits not yet folded into git for the pending-sync badge.
+  function fetchDescriptionOverlay() {
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,value&field=eq.description",
+      { headers: { "apikey": SUPABASE_ANON } })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (arr) { var m = {}; arr.forEach(function (x) { m[x.course_id] = x.value; }); return m; })
+      .catch(function () { return {}; });
+  }
   // Live curated description for one course (so an edit shows before the daily
   // git sync bakes it into the detail file). Resolves the latest row or null.
   function fetchDescription(courseId) {
@@ -245,6 +254,9 @@
     }
 
     var state = { kind: "", source: "", status: "", disc: "", credit: "", conf: "", artic: "", flagged: false, q: "", sort: "subj", dir: 1 };
+    // Live curated descriptions (course_id -> value), loaded on init + updated on
+    // save; diffed against data.committed_descriptions for the pending-sync count.
+    var descOverlay = {};
     // Course number parsed from the trailing digits of the ID ("M-ID EGDTEK 100" -> 100).
     function courseNum(r) { var m = String(r.id || "").match(/(\d+)\s*$/); return m ? parseInt(m[1], 10) : 0; }
     function subjKey(r) { return (r.subj || []).join("/").toLowerCase(); }
@@ -468,6 +480,7 @@
               saveDescription(r.id, val, sess).then(function (resp) {
                 if (resp.ok) {
                   if (_ucDetails) _ucDetails[r.id] = { d: val, s: "curated" };
+                  descOverlay[r.id] = val; renderSyncBadge();
                   box.querySelector("#uc-desc-src").textContent = "source: curated by " + sess.email + " on " + today();
                   note.textContent = "Saved. Folds into git on the next daily sync.";
                   save.disabled = false;
@@ -533,6 +546,11 @@
       var committed = data.committed_curation || {};
       var n = 0;
       rows.forEach(function (r) { if (r._curated && r.disc !== committed[r.id]) n++; });
+      // description edits not yet folded into git (a separate field per course)
+      var cd = data.committed_descriptions || {};
+      Object.keys(descOverlay).forEach(function (id) {
+        if (descOverlay[id] != null && descOverlay[id] !== cd[id]) n++;
+      });
       return n;
     }
     function renderSyncBadge() {
@@ -847,6 +865,9 @@
       });
       if (changed) render();
     });
+    // Load live curated descriptions so the pending-sync badge counts
+    // description edits not yet folded into git.
+    fetchDescriptionOverlay().then(function (m) { descOverlay = m; renderSyncBadge(); });
   }
 
   // Process an auth redirect hash as early as possible, then init.
