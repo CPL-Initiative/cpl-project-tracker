@@ -4091,6 +4091,12 @@ def export_unified_courses():
         c = curation.get(cid)
         return (c.get("discipline") or base) if c else base
 
+    def reviewed_by_of(cid):
+        return (curation.get(cid) or {}).get("reviewed_by")
+
+    def reviewed_at_of(cid):
+        return ((curation.get(cid) or {}).get("reviewed_at") or "")[:10]
+
     colleges, col_idx = [], {}
 
     def cidx(name):
@@ -4130,6 +4136,7 @@ def export_unified_courses():
                      "subj": [v["subject"]] if v.get("subject") else [],
                      "members": v.get("corroboration_members"), "conf": v.get("confidence"),
                      "flags": flags_of(v, mid),
+                     "reviewed_by": reviewed_by_of(mid), "reviewed_at": reviewed_at_of(mid),
                      "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
     for uid, v in clusters.items():
         ad, pot = rollup(v.get("members", []))
@@ -4139,6 +4146,7 @@ def export_unified_courses():
                      "units": v.get("typical_units"), "top": v.get("top_code"),
                      "subj": v.get("subjects", []), "members": v.get("member_count"), "conf": None,
                      "flags": flags_of(v, uid, use_spread=False),
+                     "reviewed_by": reviewed_by_of(uid), "reviewed_at": reviewed_at_of(uid),
                      "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
 
     mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
@@ -4155,8 +4163,8 @@ def export_unified_courses():
     # ---- full xlsx export (Course + Cluster + Singleton, incl. college name lists) ----
     headers = ["Kind", "ID", "Title", "Discipline", "Credit Status", "Units", "TOP Code",
                "Subject(s)", "Members", "Confidence", "Over-merged", "Credit mixed", "TOP mixed",
-               "Noncredit mixed", "Reviewed", "Adopted (count)", "Adopted colleges",
-               "Potential adoption (count)", "Potential colleges"]
+               "Noncredit mixed", "Reviewed", "Curated by", "Curated on", "Adopted (count)",
+               "Adopted colleges", "Potential adoption (count)", "Potential colleges"]
     xrows = []
 
     def xrow(kind, cid, title, disc, credit, units, top, subj, members, conf, fl, mids):
@@ -4164,6 +4172,7 @@ def export_unified_courses():
         xrows.append([kind, cid, title, disc, credit, units, top, "; ".join(subj or []),
                       members, ("" if conf is None else conf),
                       *["Y" if fl[k] else "" for k in ("over_merged", "credit_mixed", "top_mixed", "ncc_mixed", "reviewed")],
+                      reviewed_by_of(cid) or "", reviewed_at_of(cid),
                       len(ad), "; ".join(ad), len(pot), "; ".join(pot)])
 
     for mid, v in cat.items():

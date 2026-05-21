@@ -29,6 +29,7 @@
     return n;
   }
   function uniqSorted(arr) { return Array.from(new Set(arr.filter(Boolean))).sort(); }
+  function today() { return new Date().toISOString().slice(0, 10); }
 
   // ---- Supabase auth (magic-link implicit flow, no library) ----------------
   function jwtEmail(t) {
@@ -81,10 +82,10 @@
   }
   function signOut() { sessionStorage.removeItem("cpl_sb"); }
   function fetchOverlay() {
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,value&field=eq.discipline",
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,value,reviewer_email,reviewed_at&field=eq.discipline",
       { headers: { "apikey": SUPABASE_ANON } })
       .then(function (r) { return r.ok ? r.json() : []; })
-      .then(function (arr) { var m = {}; arr.forEach(function (x) { m[x.course_id] = x.value; }); return m; })
+      .then(function (arr) { var m = {}; arr.forEach(function (x) { m[x.course_id] = x; }); return m; })
       .catch(function () { return {}; });
   }
   function saveDiscipline(courseId, value, sess) {
@@ -215,8 +216,11 @@
       b(f.credit_mixed, "credit", "mix", "members disagree on credit status");
       b(f.top_mixed, "TOP", "mix", "members disagree on TOP code");
       b(f.ncc_mixed, "noncredit", "mix", "members disagree on noncredit category");
-      b(r._curated, "curated ✓", "ok", "discipline set by a reviewer (pending git sync)");
-      if (!f.reviewed && !r._curated) b(true, "unreviewed", "muted", "AI draft — not human-reviewed");
+      var curated = r._curated || r.reviewed_by;
+      b(curated, "curated ✓", "ok",
+        "discipline set" + (r.reviewed_by ? " by " + r.reviewed_by : " by a reviewer") +
+        (r.reviewed_at ? " on " + r.reviewed_at : ""));
+      if (!f.reviewed && !curated) b(true, "unreviewed", "muted", "AI draft — not human-reviewed");
       return out;
     }
 
@@ -268,6 +272,7 @@
           saveDiscipline(r.id, val, session).then(function (resp) {
             if (resp.ok) {
               r.disc = val; r.flags.reviewed = true; r._curated = true;
+              r.reviewed_by = session.email; r.reviewed_at = today();
               maybeBulkApply(r, val);
             } else { alert("Save failed (status " + resp.status + "). Are you an allowed reviewer?"); showValue(); }
           }).catch(function (err) {
@@ -303,7 +308,10 @@
         if (!ok) { showValue(); render(); return; }
         saveDisciplineBulk(cands.map(function (c) { return c.id; }), val, session).then(function (rb) {
           if (rb.ok) {
-            cands.forEach(function (c) { c.disc = val; c.flags.reviewed = true; c._curated = true; });
+            cands.forEach(function (c) {
+              c.disc = val; c.flags.reviewed = true; c._curated = true;
+              c.reviewed_by = session.email; c.reviewed_at = today();
+            });
           } else {
             alert("Bulk apply failed (status " + rb.status + "). The single course was still saved.");
           }
@@ -386,7 +394,12 @@
     fetchOverlay().then(function (m) {
       var changed = false;
       rows.forEach(function (r) {
-        if (m[r.id] != null) { r.disc = m[r.id]; r.flags.reviewed = true; r._curated = true; changed = true; }
+        var o = m[r.id];
+        if (o && o.value != null) {
+          r.disc = o.value; r.flags.reviewed = true; r._curated = true;
+          r.reviewed_by = o.reviewer_email; r.reviewed_at = (o.reviewed_at || "").slice(0, 10);
+          changed = true;
+        }
       });
       if (changed) render();
     });
