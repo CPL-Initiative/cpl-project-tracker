@@ -548,13 +548,26 @@ mirroring the C-ID anchor, and are usable as ⚇ Unify merge targets.
   {`cid_conflict`:[…]} when members disagree), surfaced as row badges + an
   "Official ID" filter, computed over the *title-consistent* member set. No
   identity change. In-browser counts: 960 single C-ID, 26 CCN, 235 C-ID
-  conflicts (`NULL`/`N/A` sentinels filtered). **Phase B (next):** soft-promote
-  unanimous matches (set `id_system`/`c_id`/`ccn_id`, **keep the stable M-ID
-  key** — don't hard-rekey, it breaks membership/curation/articulation pointers
-  and can collide with the firewalled `common_courses.json` anchor); define
-  merge behavior when the C-ID already exists as an anchor. **Phase C:** split
-  the conflicting M-IDs. Root cause this addresses: the lossy `(subject,number)`
-  membership key (a `CourseControlNumber`-based remint would fix it at source).
+  conflicts (`NULL`/`N/A` sentinels filtered). **Phase B (next — NOT built;
+  scoped, awaiting a go/decision).** Investigation (2026-05-21) found Phase B is
+  really **N:1 consolidation, not per-row labeling**: the 960 C-ID matches
+  collapse to only **264 distinct C-IDs**, with **189 C-IDs claimed by >1 M-ID**
+  (multiple minted M-IDs that share an official C-ID are the *same* course); **90**
+  C-ID matches and **all 26** CCN matches hit an **already-existing anchor** row.
+  So the recommended Phase B is: **group M-IDs that share a clean unanimous
+  official C-ID/CCN into ONE official-identity row** (union their members) and
+  **fold them under the existing C-ID/CCN anchor when one exists** — yielding
+  ~264 C-ID identities + 26 CCN folds. Recommended to do it **inline in the
+  generator** (regen-safe, no KB mutation, no touching the firewalled anchor,
+  reversible — same approach as Phase A; reuse the merge-target synthesis
+  mechanism, keeping underlying M-ID keys so curation/members/articulation
+  pointers survive). Open decision the user has NOT yet made: consolidate-by-ID
+  vs label-only, and inline-generator vs curation-overlay (they paused before
+  deciding). Guardrail: only promote **clean unanimous** matches — never the 235
+  `cid_conflict` rows. **Phase C:** split the conflicting M-IDs (optionally with
+  the description tie-breaker below). Root cause all this addresses: the lossy
+  `(subject,number)` membership key (a `CourseControlNumber`-based remint would
+  fix it at source).
 - Refine + curate the articulation crosswalk — precise title-based
   disambiguation when a `(subject, number)` maps to multiple M-IDs, carry
   confidence/`*_mixed`/over-merge flags onto each record, never emit an adoption
