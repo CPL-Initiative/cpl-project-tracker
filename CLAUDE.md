@@ -195,8 +195,12 @@ Steps:
 6. `cp CPL_Dashboard.html index.html`
 7. Commit + push to `main` (rebase-retry loop for concurrent pushes — see
    commit `679c5ef`). The commit list includes `kb/coci_curation.json`,
-   `unified_courses_data.js`, and `exports/unified_courses.xlsx` so curation +
-   the regenerated Unified Courses dataset/export are captured each day.
+   `unified_courses_data.js`, `unified_courses_index.js`,
+   `unified_courses_details.js`, `unified_courses_standalone.js`,
+   `unified_courses_members.js`, and `exports/unified_courses.xlsx` so curation +
+   the regenerated Unified Courses dataset, lazy files, and export are captured
+   each day. (If you add a new generated `unified_courses_*.js`, add it to this
+   `git add` list or the daily run won't publish it.)
 
 Commits as `github-actions[bot]` with message `Daily dashboard update — YYYY-MM-DD`.
 
@@ -491,12 +495,71 @@ re-runnable (idempotent — only fills blanks, never overwrites reviewed/curated
   are off-limits without explicit confirmation, and no destructive migrations
   without sign-off.
 
-**Frontier / open work:** refine + curate the articulation crosswalk — precise
-title-based disambiguation when a `(subject, number)` maps to multiple M-IDs,
-carry confidence/`*_mixed`/over-merge flags onto each record, and never emit an
-adoption suggestion off a flagged over-merged cluster. Backlog: fuzzy variant
-merging + subject canonicalization, singleton minting, and the
-`suspect_course_as_exhibit` triage (raise the Modesto pattern with the college).
+**Generated artifacts + lazy files (all from `export_unified_courses()`).** The
+tab keeps `unified_courses_data.js` lean by splitting heavy data into files the
+client fetches **only on demand**. All are regenerated daily and MUST be in the
+workflow `git add` list (§6):
+
+| File | Global | Loaded when | Contents |
+|------|--------|-------------|----------|
+| `unified_courses_data.js` | `CPL_UNIFIED_COURSES` | always (script tag) | in-browser rows (~16.4k: Course/Cluster + curated C-ID/CCN/M-ID anchors), `colleges[]`, `mq_disciplines`, `committed_curation`, `committed_descriptions` |
+| `unified_courses_index.js` | `CPL_UC_INDEX` | ⚇ Unify dialog | compact `[id,title,subject,kind]` search index |
+| `unified_courses_details.js` | `CPL_UC_DETAILS` | ⓘ details modal | `id → {d:description, s:source}` (~70k incl. stand-alones; ~34MB, lazy/gzipped) |
+| `unified_courses_standalone.js` | `CPL_UC_STANDALONE` | "Stand-Alone" kind filter | ~57.7k single-college rows (kept out of the main payload) |
+| `unified_courses_members.js` | `CPL_UC_MEMBERS` | row expand caret ▸ | `id → [{c:collegeIdx,n:code,t:title}]` member college courses |
+
+**Raw course source — `kb/reference/coci_course_list.xlsx`** (committed, ~24MB,
+141,738 rows). Cols: College, CourseControlNumber, Subject, Course_Number,
+CourseTitle, UnitValue, CreditType, Non_Credit_Category, TopCode, **CIDNumber**,
+**CatalogDescription**, **CommonCourseNumber**. Read **once** (openpyxl
+read-only, streaming — never cat it) in `export_unified_courses()` and shared by
+the description + member-row builds. If absent, those two artifacts skip
+gracefully.
+
+**Member-college rows + the title-filter (important).** Member rows are a
+**forward join**: each identity → its member `(subject, course_number)` pairs →
+raw college courses. The membership key `(subject, number)` is **globally
+ambiguous** (e.g. "MATH 31" is a different course at every college), so the join
+**re-applies the minting's title check**: a candidate is kept only if its title
+matches the identity's (token-set Jaccard ≥ 0.5; generic/empty titles kept).
+**C-ID / CCN joins are authoritative and trusted** (no title filter — join on
+`CIDNumber`/`CommonCourseNumber`). Clusters/merge targets filter each constituent
+leaf against its own title. The same title-aware candidate set also feeds the raw
+description fallback. (Bug history: without the filter, M-ID A 100 "Undergraduate
+Research Experience" listed every college's MATH 31 — Plane Trig, Precalc, etc.)
+
+**Descriptions.** ⓘ modal shows the full record + an **editable description**.
+Precedence per id: curated (`kb_curation` field **`description`** — added to
+`_apply_curation.py` FIELDS) > existing layer (minted "representative/modal",
+synthesized cluster, C-ID/CCN reference) > **raw `CatalogDescription` fallback**.
+Stand-alones are included so ~54k get a description. The pending-sync badge
+counts description edits too (diffed against `committed_descriptions`).
+
+**Source filter now includes `CCN-ID`** — the 58 AB-1111 Common Course Numbers
+(`kb/reference/ccn_courses.json`) are emitted as locked read-only anchor rows,
+mirroring the C-ID anchor, and are usable as ⚇ Unify merge targets.
+
+**Frontier / open work:**
+
+- **Crosswalk re-key initiative (scoped, not yet built).** Use the raw list's
+  `CIDNumber`/`CommonCourseNumber` to promote minted M-IDs to their real C-ID/CCN
+  identity (precedence CCN > C-ID > M-ID). Data: of 14,754 minted M-IDs, **33**
+  carry a member CCN (all unanimous → clean), **2,391** a single agreed C-ID
+  (clean), **1,740** carry *conflicting* C-IDs (over-merge signal — do NOT
+  auto-promote; feed disambiguation). Agreed phasing: **Phase A** surface matched
+  C-ID/CCN + conflicts as row badges/filters *inline* (no identity change, lowest
+  risk — recommended first PR); **Phase B** soft-promote unanimous matches (set
+  `id_system`/`c_id`/`ccn_id`, **keep the stable M-ID key** — don't hard-rekey,
+  it breaks membership/curation/articulation pointers and can collide with the
+  firewalled `common_courses.json` anchor); **Phase C** split conflicting M-IDs.
+  Root cause this addresses: the lossy `(subject,number)` membership key (a
+  `CourseControlNumber`-based remint would fix it at the source).
+- Refine + curate the articulation crosswalk — precise title-based
+  disambiguation when a `(subject, number)` maps to multiple M-IDs, carry
+  confidence/`*_mixed`/over-merge flags onto each record, never emit an adoption
+  suggestion off a flagged over-merged cluster. Backlog: fuzzy variant merging +
+  subject canonicalization, singleton minting, and the
+  `suspect_course_as_exhibit` triage (raise the Modesto pattern with the college).
 **Discipline completion is in progress** (`kb/discipline_inference.json` +
 `_infer_disciplines.py`): a first conservative pass is in; the long tail
 (~3k minted/cluster + ~21k singletons still blank) is refined by editing the
