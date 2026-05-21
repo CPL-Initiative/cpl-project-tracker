@@ -1,7 +1,18 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": null,
-  "count": 0,
-  "curations": {}
+  "_synced_at": "2026-05-21T19:41:40Z",
+  "count": 2,
+  "curations": {
+    "M-ID BSICSKL 100": {
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit 53412",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-21 19:22:55.870894+00"
+    },
+    "M-ID EGDTEK 100": {
+      "discipline": "Drafting/CADD",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-21 19:21:54.054269+00"
+    }
+  }
 }
