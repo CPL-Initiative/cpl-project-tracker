@@ -269,7 +269,7 @@
       }).catch(function () { return null; });
     }
 
-    var state = { kind: "", source: "", status: "", disc: "", credit: "", conf: "", artic: "", flagged: false, q: "", sort: "subj", dir: 1 };
+    var state = { kind: "", source: "", status: "", disc: "", credit: "", conf: "", artic: "", official: "", flagged: false, q: "", sort: "subj", dir: 1 };
     // Live curated descriptions (course_id -> value), loaded on init + updated on
     // save; diffed against data.committed_descriptions for the pending-sync count.
     var descOverlay = {};
@@ -581,6 +581,7 @@
     var fCredit = sel("uc-credit", "All credit statuses", uniqSorted(rows.map(function (r) { return r.credit; })));
     var fConf = sel("uc-conf", "Any confidence", ["high (≥0.85)", "medium (0.7–0.84)", "low (<0.7)"]);
     var fArtic = sel("uc-artic", "Adoption: any", ["Has earned articulation", "No articulation yet"]);
+    var fOfficial = sel("uc-official", "Official ID: any", ["Has C-ID match", "Has CCN match", "C-ID conflict"]);
     var search = el("input", { id: "uc-search", type: "search", placeholder: "Search title or ID…", class: "uc-filter" });
     var flagged = el("label", { class: "uc-flag-toggle" }, []);
     var flaggedCb = el("input", { type: "checkbox", id: "uc-flagged" });
@@ -593,7 +594,7 @@
     var auth = el("span", { id: "uc-auth", class: "uc-auth" });
     var syncBadge = el("span", { id: "uc-sync" });
 
-    [fKind, fSource, fStatus, fDisc, fCredit, fConf, fArtic, search, flagged, blanksBtn, auth, syncBadge, exportBtn]
+    [fKind, fSource, fStatus, fDisc, fCredit, fConf, fArtic, fOfficial, search, flagged, blanksBtn, auth, syncBadge, exportBtn]
       .forEach(function (c) { toolbar.appendChild(c); });
 
     // Curation edits hit Supabase instantly but are only folded into git
@@ -667,6 +668,10 @@
       var hasArt = (r.adopted && r.adopted.length) || (r.potential && r.potential.length);
       if (state.artic === "Has earned articulation" && !hasArt) return false;
       if (state.artic === "No articulation yet" && hasArt) return false;
+      var mt = r.match || {};
+      if (state.official === "Has C-ID match" && !mt.cid) return false;
+      if (state.official === "Has CCN match" && !mt.ccn) return false;
+      if (state.official === "C-ID conflict" && !mt.cid_conflict) return false;
       if (state.flagged && !rowFlagged(r)) return false;
       if (blanksCb.checked && r.disc) return false;
       if (state.q) {
@@ -690,6 +695,11 @@
       b(f.top_mixed, "TOP", "mix", "members disagree on TOP code");
       b(f.ncc_mixed, "noncredit", "mix", "members disagree on noncredit category");
       b(r.locked, "anchor", "ok", "curated common-course anchor (" + (r.id_system || "") + ") — read-only");
+      // Phase A crosswalk surfacing: official C-ID / CCN carried by member courses.
+      var mt = r.match || {};
+      if (mt.ccn) out.appendChild(el("span", { class: "uc-badge ok", title: "A member college course carries the official Common Course Number " + mt.ccn + " — candidate to promote to CCN-ID." }, ["→ CCN " + mt.ccn]));
+      if (mt.cid) out.appendChild(el("span", { class: "uc-badge ok", title: "A member college course carries the official C-ID " + mt.cid + " — candidate to promote to C-ID." }, ["→ C-ID " + mt.cid]));
+      if (mt.cid_conflict) out.appendChild(el("span", { class: "uc-badge warn", title: "Members carry different official C-IDs (" + mt.cid_conflict.join(", ") + ") — likely over-merged; do not promote." }, ["C-ID conflict"]));
       if (statusOf(r) === "Verified") {
         out.appendChild(el("span", {
           class: "uc-badge",
@@ -941,6 +951,7 @@
       } else { render(); }
     };
     fSource.onchange = function () { state.source = this.value; render(); };
+    fOfficial.onchange = function () { state.official = this.value; render(); };
     fStatus.onchange = function () { state.status = this.value; render(); };
     fDisc.onchange = function () { state.disc = this.value; render(); };
     fCredit.onchange = function () { state.credit = this.value; render(); };
