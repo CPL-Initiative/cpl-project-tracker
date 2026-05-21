@@ -32,8 +32,9 @@ KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 
 # Fields we fold into the overlay. `merge_into` (member course_id → target
 # unified id) + `unified_title` (canonical title on the target) drive the
-# reviewer "Generate unified course" consolidation.
-FIELDS = {"discipline", "merge_into", "unified_title"}
+# reviewer "Generate unified course" consolidation. `description` is the
+# editable course description surfaced in the row-details modal.
+FIELDS = {"discipline", "merge_into", "unified_title", "description"}
 
 
 def fetch_rows():

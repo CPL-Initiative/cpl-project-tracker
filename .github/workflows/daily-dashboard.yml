@@ -90,7 +90,8 @@ jobs:
                   live_metrics.json kpi_history.json statewide_data.js \
                   college_activity.js college_activity_template.html \
                   kb/coci_curation.json unified_courses_data.js \
-                  unified_courses_index.js exports/unified_courses.xlsx
+                  unified_courses_index.js unified_courses_details.js \
+                  exports/unified_courses.xlsx
           # Only add CustomReport if it was freshly fetched
           git add CustomReport_latest.json 2>/dev/null || true
           if git diff --cached --quiet; then
