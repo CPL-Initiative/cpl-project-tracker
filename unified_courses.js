@@ -134,6 +134,45 @@
     });
   }
 
+  // Bulk-write arbitrary curation rows ({course_id, field, value}) — used by
+  // the "Generate unified course" consolidation (merge_into / unified_title /
+  // discipline). RLS checks each row's reviewer_email == the signed-in user.
+  function saveCurations(items, sess) {
+    var body = items.map(function (x) {
+      return { course_id: x.course_id, field: x.field, value: x.value, reviewer_email: sess.email };
+    });
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
+        "Content-Type": "application/json", "Prefer": "resolution=merge-duplicates,return=minimal"
+      },
+      body: JSON.stringify(body)
+    });
+  }
+  // Lazy-load the compact all-course search index (only when a curator opens
+  // the Generate-unified-course dialog).
+  var _ucIndex = null, _ucIndexP = null;
+  function loadIndex() {
+    if (_ucIndex) return Promise.resolve(_ucIndex);
+    if (_ucIndexP) return _ucIndexP;
+    _ucIndexP = new Promise(function (resolve) {
+      if (window.CPL_UC_INDEX) { _ucIndex = window.CPL_UC_INDEX; resolve(_ucIndex); return; }
+      var s = document.createElement("script");
+      s.src = "unified_courses_index.js";
+      s.onload = function () { _ucIndex = window.CPL_UC_INDEX || []; resolve(_ucIndex); };
+      s.onerror = function () { _ucIndex = []; resolve(_ucIndex); };
+      document.head.appendChild(s);
+    });
+    return _ucIndexP;
+  }
+  function normTitle(t) {
+    return (t || "").toLowerCase().replace(/\([^)]*\)/g, " ").replace(/[^a-z0-9 ]+/g, " ")
+      .replace(/\b(i|ii|iii|iv|v|a|b|c|advanced|beginning|intermediate|introduction|introductory|basic|fundamentals|principles|topics)\b/g, " ")
+      .replace(/\s+/g, " ").trim();
+  }
+  function titleTokens(t) { return normTitle(t).split(" ").filter(function (w) { return w.length > 2; }); }
+
   function init() {
     var data = window.CPL_UNIFIED_COURSES;
     var pane = document.getElementById("tab-unified-courses");
@@ -190,6 +229,138 @@
           if (resp.ok) { r._curated = true; r.flags.reviewed = true; r.reviewed_by = sess.email; r.reviewed_at = today(); render(); }
           else alert("Verify failed (status " + resp.status + "). Are you an allowed reviewer?");
         }).catch(function (e) { alert("Could not verify: " + ((e && e.message) || "network error")); });
+      });
+    }
+
+    // ---- Generate unified course (consolidation) ----------------------------
+    function cssEsc(s) { return String(s).replace(/["\\]/g, "\\$&"); }
+    function findCandidates(seed) {
+      var seedNorm = normTitle(seed.title), seedTok = titleTokens(seed.title);
+      var seedSet = {}; seedTok.forEach(function (w) { seedSet[w] = 1; });
+      var sn = seedTok.length, exact = [], near = [];
+      (_ucIndex || []).forEach(function (e) {
+        if (e[0] === seed.id) return;
+        var n = normTitle(e[1]);
+        if (n && n === seedNorm) { exact.push(e); return; }
+        var et = titleTokens(e[1]); if (!et.length || !sn) return;
+        var shared = 0; et.forEach(function (w) { if (seedSet[w]) shared++; });
+        if (!shared) return;
+        var jac = shared / (sn + et.length - shared);
+        if (jac >= 0.5) near.push([jac, e]);
+      });
+      near.sort(function (a, b) { return b[0] - a[0]; });
+      return { exact: exact, near: near.slice(0, 40).map(function (x) { return x[1]; }) };
+    }
+    function openUnifyDialog(seed) {
+      if (!session) return;
+      loadIndex().then(function () {
+        var cand = findCandidates(seed), chosen = {};
+        var overlay = el("div", { style: "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;" });
+        var box = el("div", { style: "background:#fff;max-width:760px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
+        overlay.appendChild(box);
+        function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
+        overlay.onclick = function (e) { if (e.target === overlay) close(); };
+        box.appendChild(el("h3", { style: "margin:0 0 4px;color:#0A2240;" }, ["Generate unified course"]));
+        box.appendChild(el("p", { style: "margin:0 0 12px;color:#6b7280;" },
+          ["Select the courses that are the same as “" + (seed.title || seed.id) + "”. Exact-title matches are pre-checked; review the suggested near matches and search to add others (incl. Stand-Alone)."]));
+        box.appendChild(el("label", { style: "display:block;font-weight:600;margin:8px 0 2px;" }, ["Unified title"]));
+        var titleIn = el("input", { type: "text", value: seed.title || "", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
+        box.appendChild(titleIn);
+        box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" }, ["Discipline (optional)"]));
+        var discSel = el("select", { class: "uc-filter", style: "min-width:280px;" });
+        discSel.appendChild(el("option", { value: "" }, ["— choose —"]));
+        mqList.forEach(function (d) { var o = el("option", { value: d }, [d]); if (d === seed.disc) o.setAttribute("selected", "selected"); discSel.appendChild(o); });
+        box.appendChild(discSel);
+        box.appendChild(el("label", { style: "display:block;font-weight:600;margin:12px 0 4px;" }, ["Members"]));
+        var list = el("div", { style: "max-height:260px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
+        box.appendChild(list);
+        var identSel = el("select", { class: "uc-filter" });
+        function refreshIdentity() {
+          var cur = identSel.value; identSel.innerHTML = "";
+          identSel.appendChild(el("option", { value: "" }, ["Create new unified course"]));
+          Object.keys(chosen).forEach(function (id) {
+            var e = chosen[id];
+            if (e[3] && e[3] !== "Stand-Alone") identSel.appendChild(el("option", { value: id }, ["Merge into existing: " + id + " (" + e[3] + ")"]));
+          });
+          if (cur) identSel.value = cur;
+        }
+        function addRow(entry, checked, isSeed) {
+          if (list.querySelector('[data-id="' + cssEsc(entry[0]) + '"]')) return;
+          var row = el("div", { "data-id": entry[0], style: "display:flex;align-items:center;gap:8px;padding:3px 4px;border-bottom:1px solid #f1f5f9;" });
+          var cb = el("input", { type: "checkbox" }); cb.checked = !!checked; if (isSeed) cb.disabled = true;
+          if (cb.checked) chosen[entry[0]] = entry;
+          cb.onchange = function () { if (cb.checked) chosen[entry[0]] = entry; else delete chosen[entry[0]]; refreshIdentity(); };
+          row.appendChild(cb);
+          row.appendChild(el("span", { style: "flex:1;" }, [entry[1] || entry[0]]));
+          row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;" }, [entry[0] + " · " + (entry[2] || "") + " · " + (entry[3] || "")]));
+          list.appendChild(row);
+        }
+        addRow([seed.id, seed.title, (seed.subj || []).join(";"), seed.kind], true, true);
+        cand.exact.forEach(function (e) { addRow(e, true, false); });
+        if (cand.near.length) {
+          list.appendChild(el("div", { style: "font-size:.78rem;color:#94a3b8;padding:4px;" }, ["— suggested near matches —"]));
+          cand.near.forEach(function (e) { addRow(e, false, false); });
+        }
+        box.appendChild(el("label", { style: "display:block;font-weight:600;margin:12px 0 2px;" }, ["Add more by search"]));
+        var srch = el("input", { type: "search", placeholder: "Search any course title or ID…", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
+        var srchRes = el("div", { style: "max-height:140px;overflow:auto;" });
+        box.appendChild(srch); box.appendChild(srchRes);
+        var st; srch.oninput = function () {
+          clearTimeout(st); var q = this.value.toLowerCase().trim();
+          st = setTimeout(function () {
+            srchRes.innerHTML = ""; if (q.length < 3) return;
+            var hits = 0;
+            for (var i = 0; i < _ucIndex.length && hits < 25; i++) {
+              var e = _ucIndex[i];
+              if (((e[1] || "").toLowerCase().indexOf(q) >= 0) || ((e[0] || "").toLowerCase().indexOf(q) >= 0)) {
+                hits++;
+                var b = el("button", { type: "button", style: "display:block;width:100%;text-align:left;padding:3px 6px;border:none;background:none;cursor:pointer;font-size:.82rem;" },
+                  ["+ " + (e[1] || e[0]) + "  [" + e[0] + " · " + (e[2] || "") + "]"]);
+                (function (en) { b.onclick = function () { addRow(en, true, false); chosen[en[0]] = en; refreshIdentity(); }; })(e);
+                srchRes.appendChild(b);
+              }
+            }
+          }, 200);
+        };
+        box.appendChild(el("label", { style: "display:block;font-weight:600;margin:12px 0 2px;" }, ["Unified identity"]));
+        box.appendChild(identSel);
+        refreshIdentity();
+        var actions = el("div", { style: "margin-top:16px;display:flex;gap:10px;justify-content:flex-end;" });
+        var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Cancel"]);
+        cancel.onclick = close;
+        var go = el("button", { type: "button", style: "padding:7px 14px;border:none;border-radius:6px;background:#0A2240;color:#C9A84C;font-weight:600;cursor:pointer;" }, ["Consolidate"]);
+        go.onclick = function () { doConsolidate(chosen, titleIn.value.trim(), discSel.value, identSel.value, close); };
+        actions.appendChild(cancel); actions.appendChild(go);
+        box.appendChild(actions);
+        document.body.appendChild(overlay);
+        titleIn.focus();
+      });
+    }
+    function doConsolidate(chosen, title, disc, identity, close) {
+      var ids = Object.keys(chosen);
+      if (ids.length < 2) { alert("Select at least two courses to consolidate."); return; }
+      ensureFresh().then(function (sess) {
+        if (!sess) { signOut(); session = null; renderAuth(); render(); alert("Sign-in expired — please sign in again."); return; }
+        var target = identity || ("UC-CUR-" + Date.now().toString(36).toUpperCase());
+        var members = ids.filter(function (id) { return id !== target; });
+        var items = members.map(function (id) { return { course_id: id, field: "merge_into", value: target }; });
+        if (title) items.push({ course_id: target, field: "unified_title", value: title });
+        if (disc) items.push({ course_id: target, field: "discipline", value: disc });
+        saveCurations(items, sess).then(function (resp) {
+          if (!resp.ok) { alert("Consolidation save failed (status " + resp.status + ")."); return; }
+          var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
+          members.forEach(function (id) { if (byId[id]) byId[id]._mergedAway = true; });
+          var subjSet = {}; ids.forEach(function (id) { String(chosen[id][2] || "").split(";").forEach(function (s) { if (s) subjSet[s] = 1; }); });
+          var variants = ids.map(function (id) { return chosen[id][1]; }).filter(Boolean);
+          var urow = byId[target];
+          if (!urow) { urow = { id: target, adopted: [], potential: [], flags: {} }; rows.push(urow); }
+          urow.kind = "Cluster"; urow.title = title || urow.title || variants[0]; urow.disc = disc || urow.disc;
+          urow.subj = Object.keys(subjSet).sort(); urow.members = ids.length; urow.id_system = "Cluster";
+          urow.title_variants = variants; urow._mergedAway = false; urow._curated = true;
+          urow.flags = urow.flags || {}; urow.flags.reviewed = true; urow.reviewed_by = sess.email; urow.reviewed_at = today();
+          close(); render();
+          alert("Consolidated " + ids.length + " courses. The unified course will fully materialize on the next daily sync (or via Sync now).");
+        }).catch(function (e) { alert("Could not save consolidation: " + ((e && e.message) || "network error")); });
       });
     }
 
@@ -278,6 +449,7 @@
     function confTier(c) { if (c == null) return ""; if (c >= 0.85) return "high"; if (c >= 0.7) return "medium"; return "low"; }
     function rowFlagged(r) { var f = r.flags || {}; return !!(f.over_merged || f.credit_mixed || f.top_mixed || f.ncc_mixed); }
     function passes(r) {
+      if (r._mergedAway) return false;
       if (state.kind && r.kind !== state.kind) return false;
       if (state.source && r.id_system !== state.source) return false;
       if (state.status && statusOf(r) !== state.status) return false;
@@ -325,6 +497,11 @@
           vbtn.onclick = function (e) { e.preventDefault(); verifyRow(r); };
           out.appendChild(vbtn);
         }
+      }
+      if (session && !r.locked) {
+        var ubtn = el("a", { href: "#", class: "uc-auth-link", title: "Find matching courses and consolidate into one unified course" }, [" ⚇ Unify"]);
+        ubtn.onclick = function (e) { e.preventDefault(); openUnifyDialog(r); };
+        out.appendChild(ubtn);
       }
       return out;
     }
