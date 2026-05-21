@@ -311,9 +311,12 @@
       b(f.ncc_mixed, "noncredit", "mix", "members disagree on noncredit category");
       b(r.locked, "anchor", "ok", "curated common-course anchor (" + (r.id_system || "") + ") — read-only");
       if (statusOf(r) === "Verified") {
-        b(true, "Verified ✓", "ok",
-          "human-verified" + (r.reviewed_by ? " by " + r.reviewed_by : "") +
-          (r.reviewed_at ? " on " + r.reviewed_at : "") + (r.locked ? " (curated anchor)" : ""));
+        out.appendChild(el("span", {
+          class: "uc-badge",
+          style: "background:#dafbe1;border:1px solid #2da44e;color:#116329;font-weight:600;",
+          title: "human-verified" + (r.reviewed_by ? " by " + r.reviewed_by : "") +
+            (r.reviewed_at ? " on " + r.reviewed_at : "") + (r.locked ? " (curated anchor)" : "")
+        }, ["✔ Verified"]));
       } else {
         b(true, "Generated", "muted", "machine-generated — not yet human-verified");
         // Quick "accept the generated discipline" → marks the row Verified.
