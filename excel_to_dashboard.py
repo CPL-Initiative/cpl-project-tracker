@@ -4081,6 +4081,16 @@ def export_unified_courses():
     for g in art_doc.get("articulations", []):
         earned.setdefault(g["course_id"], set()).update(g.get("earned_by_colleges", []))
 
+    # Human curation overlay (git-canonical, synced from Supabase by
+    # kb/_apply_curation.py). Applied on top of the AI drafts so curation is
+    # regen-safe: a curated discipline overrides a blank, and the row is marked
+    # reviewed so the daily regen never clobbers it.
+    curation = (_load("coci_curation.json") or {}).get("curations", {})
+
+    def disc_of(cid, base):
+        c = curation.get(cid)
+        return (c.get("discipline") or base) if c else base
+
     colleges, col_idx = [], {}
 
     def cidx(name):
@@ -4101,34 +4111,34 @@ def export_unified_courses():
                 ad |= set(earned.get(m, set()))
         return (sorted(ad), sorted(off - ad)) if any_art else ([], [])
 
-    def flags_of(v, use_spread=True):
+    def flags_of(v, cid, use_spread=True):
         sp = v.get("subject_spread", 1) or 1
         return {
             "over_merged": bool(use_spread and sp >= 8),
             "credit_mixed": bool(v.get("credit_status_mixed")),
             "top_mixed": bool(v.get("top_code_mixed")),
             "ncc_mixed": bool(v.get("noncredit_category_mixed")),
-            "reviewed": bool(v.get("reviewed_at")),
+            "reviewed": bool(v.get("reviewed_at") or curation.get(cid)),
         }
 
     rows = []
     for mid, v in cat.items():
         ad, pot = rollup([mid])
         rows.append({"kind": "Course", "id": mid, "title": v.get("common_title"),
-                     "disc": v.get("discipline"), "credit": v.get("credit_status"),
+                     "disc": disc_of(mid, v.get("discipline")), "credit": v.get("credit_status"),
                      "units": v.get("typical_units"), "top": v.get("top_code"),
                      "subj": [v["subject"]] if v.get("subject") else [],
                      "members": v.get("corroboration_members"), "conf": v.get("confidence"),
-                     "flags": flags_of(v),
+                     "flags": flags_of(v, mid),
                      "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
     for uid, v in clusters.items():
         ad, pot = rollup(v.get("members", []))
         rows.append({"kind": "Cluster", "id": uid,
                      "title": v.get("synthesized_title") or v.get("canonical_title"),
-                     "disc": v.get("discipline"), "credit": v.get("credit_status"),
+                     "disc": disc_of(uid, v.get("discipline")), "credit": v.get("credit_status"),
                      "units": v.get("typical_units"), "top": v.get("top_code"),
                      "subj": v.get("subjects", []), "members": v.get("member_count"), "conf": None,
-                     "flags": flags_of(v, use_spread=False),
+                     "flags": flags_of(v, uid, use_spread=False),
                      "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
 
     payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,
@@ -4155,17 +4165,17 @@ def export_unified_courses():
                       len(ad), "; ".join(ad), len(pot), "; ".join(pot)])
 
     for mid, v in cat.items():
-        xrow("Course", mid, v.get("common_title"), v.get("discipline"), v.get("credit_status"),
+        xrow("Course", mid, v.get("common_title"), disc_of(mid, v.get("discipline")), v.get("credit_status"),
              v.get("typical_units"), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
-             v.get("corroboration_members"), v.get("confidence"), flags_of(v), [mid])
+             v.get("corroboration_members"), v.get("confidence"), flags_of(v, mid), [mid])
     for sid, v in sg.items():
-        xrow("Singleton", sid, v.get("common_title"), v.get("discipline"), v.get("credit_status"),
+        xrow("Singleton", sid, v.get("common_title"), disc_of(sid, v.get("discipline")), v.get("credit_status"),
              v.get("typical_units"), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
-             1, v.get("confidence"), flags_of(v), [sid])
+             1, v.get("confidence"), flags_of(v, sid), [sid])
     for uid, v in clusters.items():
-        xrow("Cluster", uid, v.get("synthesized_title") or v.get("canonical_title"), v.get("discipline"),
+        xrow("Cluster", uid, v.get("synthesized_title") or v.get("canonical_title"), disc_of(uid, v.get("discipline")),
              v.get("credit_status"), v.get("typical_units"), v.get("top_code"), v.get("subjects", []),
-             v.get("member_count"), None, flags_of(v, use_spread=False), v.get("members", []))
+             v.get("member_count"), None, flags_of(v, uid, use_spread=False), v.get("members", []))
 
     _write_analytics_xlsx_export("unified_courses", "Unified Courses", headers, xrows,
                                  os.path.join(SCRIPT_DIR, "exports"))
