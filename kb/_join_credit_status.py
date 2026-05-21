@@ -24,7 +24,9 @@ AGGREGATION — an M-ID groups many member courses (and the new file may carry
 several rows per course). We gather every matched row for all of an M-ID's
 members and take the MODAL value: credit_status (+ a `credit_status_mixed` flag
 when members disagree), typical_units (synthetic unit value — best-judgment
-representative), top_code, noncredit_category. Unmatched M-IDs keep null.
+representative), top_code, and noncredit_category. Both top_code and
+noncredit_category vary across colleges, so each also gets a `*_mixed` flag and
+(on the catalog) a `*_distribution` map. Unmatched M-IDs keep null.
 
 Updates in place (additive fields): kb/coci_minted_courses.json and
 kb/coci_minted_singletons.json. memberships, the unified crosswalk, and the
@@ -131,7 +133,12 @@ def aggregate(member_keys, lut):
         # than silently trusting the modal pick.
         "top_code_mixed": len(tc) > 1,
         "top_code_distribution": dict(tc.most_common()) if len(tc) > 1 else None,
+        # Noncredit (CDCP) program category can likewise differ across the
+        # colleges offering a course, so it gets the same modal + spread
+        # treatment. Only populated where a member is offered noncredit.
         "noncredit_category": ncc.most_common(1)[0][0] if ncc else None,
+        "noncredit_category_mixed": len(ncc) > 1,
+        "noncredit_category_distribution": dict(ncc.most_common()) if len(ncc) > 1 else None,
         "_matched": matched,
     }
 
@@ -161,6 +168,8 @@ def main():
             v["top_code_mixed"] = agg["top_code_mixed"]
             v["top_code_distribution"] = agg["top_code_distribution"]
             v["noncredit_category"] = agg["noncredit_category"]
+            v["noncredit_category_mixed"] = agg["noncredit_category_mixed"]
+            v["noncredit_category_distribution"] = agg["noncredit_category_distribution"]
         else:
             dist["(unmatched)"] += 1
             v["credit_status"] = None
@@ -169,6 +178,8 @@ def main():
             v["top_code_mixed"] = False
             v["top_code_distribution"] = None
             v["noncredit_category"] = None
+            v["noncredit_category_mixed"] = False
+            v["noncredit_category_distribution"] = None
 
     # --- singletons (single embedded member; lean schema -> omit null fields) ---
     sg_doc = json.load(open(SINGLETONS))
@@ -178,7 +189,7 @@ def main():
         agg = aggregate([jkey(v["subject"], v["course_number"])], lut)
         for f in ("credit_status", "credit_status_mixed", "typical_units",
                   "top_code", "top_code_mixed", "top_code_distribution",
-                  "noncredit_category"):
+                  "noncredit_category", "noncredit_category_mixed"):
             v.pop(f, None)
         if agg:
             n_matched_sg += 1
@@ -194,6 +205,8 @@ def main():
                 v["top_code_mixed"] = True
             if agg["noncredit_category"]:
                 v["noncredit_category"] = agg["noncredit_category"]
+            if agg["noncredit_category_mixed"]:
+                v["noncredit_category_mixed"] = True
         else:
             sdist["(unmatched)"] += 1
 
@@ -211,6 +224,12 @@ def main():
                           "COCI with discretion and no definitive guidance for ambiguous cases. "
                           "top_code is the modal (plurality) pick; top_code_mixed flags spread; "
                           "the catalog also carries top_code_distribution (code->count) when mixed."),
+        "_noncredit_category_note": ("noncredit_category is the CDCP program type (Short-term "
+                                     "Vocational, ESL, Older Adults, ...) for members offered "
+                                     "noncredit; null when no member is noncredit. It can differ "
+                                     "across colleges, so it gets the same modal + spread treatment "
+                                     "as TOP codes (noncredit_category_mixed / _distribution). A "
+                                     "Credit M-ID may still carry one if some members are noncredit."),
         "catalog_matched": n_matched_cat,
         "catalog_credit_status_distribution": dict(dist),
         "catalog_mixed_status": n_mixed,
@@ -226,6 +245,7 @@ def main():
     sg_doc["_record_defaults"]["top_code"] = None
     sg_doc["_record_defaults"]["top_code_mixed"] = False
     sg_doc["_record_defaults"]["noncredit_category"] = None
+    sg_doc["_record_defaults"]["noncredit_category_mixed"] = False
 
     for path, doc in ((CATALOG, cat_doc), (SINGLETONS, sg_doc)):
         with open(path, "w", encoding="utf-8") as f:
