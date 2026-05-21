@@ -121,9 +121,23 @@ def main():
         process(v, v.get("subjects", []), v.get("synthesized_title") or v.get("canonical_title"))
     dump("coci_unified_courses.json", cdoc)
 
-    print("Discipline inference complete (minted M-IDs + clusters):")
+    # ---- deferred singletons (export-only) -----------------------------------
+    # Sparse records: unset fields fall back to _record_defaults (discipline /
+    # reviewed_at default to null), so process() reads them correctly as blank.
+    before = stats["subject_map"] + stats["title_keyword"]
+    sdoc = load("coci_minted_singletons.json")
+    for cid, v in sdoc["courses"].items():
+        if cid in curated:
+            stats["skip_curated"] += 1
+            continue
+        process(v, [v.get("subject")], v.get("common_title"))
+    dump("coci_minted_singletons.json", sdoc)
+    stats["singletons_filled"] = stats["subject_map"] + stats["title_keyword"] - before
+
+    print("Discipline inference complete (minted M-IDs + clusters + singletons):")
     print(f"  subject_map assigned : {stats['subject_map']}")
     print(f"  title_keyword assigned: {stats['title_keyword']}")
+    print(f"  of which singletons   : {stats['singletons_filled']}")
     print(f"  still blank           : {stats['still_blank']}")
     print(f"  skipped (reviewed)    : {stats['skip_reviewed']}")
     print(f"  skipped (curated)     : {stats['skip_curated']}")
