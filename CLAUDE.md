@@ -541,25 +541,40 @@ mirroring the C-ID anchor, and are usable as ⚇ Unify merge targets.
 
 **Frontier / open work:**
 
-- **Crosswalk re-key initiative (scoped, not yet built).** Use the raw list's
+- **Crosswalk re-key initiative.** Use the raw list's
   `CIDNumber`/`CommonCourseNumber` to promote minted M-IDs to their real C-ID/CCN
-  identity (precedence CCN > C-ID > M-ID). Data: of 14,754 minted M-IDs, **33**
-  carry a member CCN (all unanimous → clean), **2,391** a single agreed C-ID
-  (clean), **1,740** carry *conflicting* C-IDs (over-merge signal — do NOT
-  auto-promote; feed disambiguation). Agreed phasing: **Phase A** surface matched
-  C-ID/CCN + conflicts as row badges/filters *inline* (no identity change, lowest
-  risk — recommended first PR); **Phase B** soft-promote unanimous matches (set
-  `id_system`/`c_id`/`ccn_id`, **keep the stable M-ID key** — don't hard-rekey,
-  it breaks membership/curation/articulation pointers and can collide with the
-  firewalled `common_courses.json` anchor); **Phase C** split conflicting M-IDs.
-  Root cause this addresses: the lossy `(subject,number)` membership key (a
-  `CourseControlNumber`-based remint would fix it at the source).
+  identity (precedence CCN > C-ID > M-ID). **Phase A — DONE (PR #66):** each row
+  carries a `match` field ({`cid`} single agreed C-ID, {`ccn`}, or
+  {`cid_conflict`:[…]} when members disagree), surfaced as row badges + an
+  "Official ID" filter, computed over the *title-consistent* member set. No
+  identity change. In-browser counts: 960 single C-ID, 26 CCN, 235 C-ID
+  conflicts (`NULL`/`N/A` sentinels filtered). **Phase B (next):** soft-promote
+  unanimous matches (set `id_system`/`c_id`/`ccn_id`, **keep the stable M-ID
+  key** — don't hard-rekey, it breaks membership/curation/articulation pointers
+  and can collide with the firewalled `common_courses.json` anchor); define
+  merge behavior when the C-ID already exists as an anchor. **Phase C:** split
+  the conflicting M-IDs. Root cause this addresses: the lossy `(subject,number)`
+  membership key (a `CourseControlNumber`-based remint would fix it at source).
 - Refine + curate the articulation crosswalk — precise title-based
   disambiguation when a `(subject, number)` maps to multiple M-IDs, carry
   confidence/`*_mixed`/over-merge flags onto each record, never emit an adoption
   suggestion off a flagged over-merged cluster. Backlog: fuzzy variant merging +
   subject canonicalization, singleton minting, and the
   `suspect_course_as_exhibit` triage (raise the Modesto pattern with the college).
+- **Description-similarity tie-breaker (Phase C candidate).** The member-row
+  forward join currently keeps a candidate when its title matches the identity
+  (token-set Jaccard ≥ 0.5). Titles are the right *primary* signal, but the
+  borderline band (titles differ enough to fail the threshold yet are the same
+  course, e.g. "Intro to Programming" vs "Programming Fundamentals", or the
+  reverse — same generic title, different course) would benefit from a
+  *secondary* check on `CatalogDescription` similarity (TF-IDF/cosine with
+  boilerplate like "students will…"/prereqs/repeatability stripped). Scope it to
+  the ambiguous middle (~0.3–0.5 title Jaccard), NOT every pair — descriptions
+  share boilerplate that inflates naive similarity, and it's heavier (~450 chars
+  × 141k rows). Prototype + **measure how many member rows flip** before
+  committing. (Motivating case: College of the Desert's MATH 31 genuinely *is*
+  "Undergraduate Research Experience" in STEM — title match already keeps it; the
+  tie-breaker is for the harder cases the title gate can't settle.)
 **Discipline completion is in progress** (`kb/discipline_inference.json` +
 `_infer_disciplines.py`): a first conservative pass is in; the long tail
 (~3k minted/cluster + ~21k singletons still blank) is refined by editing the
