@@ -4188,6 +4188,29 @@ def export_unified_courses():
                      "reviewed_by": v.get("reviewed_by"), "reviewed_at": (v.get("reviewed_at") or "")[:10],
                      "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
 
+    # CCN-ID anchor (AB 1111 Common Course Numbers) — read-only/locked reference
+    # rows from kb/reference/ccn_courses.json, mirroring the curated anchor above.
+    # Gives CCN-ID a Source-filter value and a merge target. Skips any CCN already
+    # present in the staging/anchor sets so a future CCN promotion doesn't double-emit.
+    ccn_doc = _load(os.path.join("reference", "ccn_courses.json")) or {}
+    ccn_courses = ccn_doc.get("courses", [])
+    seen_ids = seen | set(cc.keys()) | set(merge_into) | set(merge_members)
+    ccn_n = 0
+    for c in ccn_courses:
+        ccid = c.get("ccn")
+        if not ccid or ccid in seen_ids:
+            continue
+        ccn_n += 1
+        rows.append({"kind": "Course", "id": ccid, "title": c.get("title"),
+                     "disc": None, "credit": None, "units": None, "top": None,
+                     "subj": [c["subject"]] if c.get("subject") else [],
+                     "members": None, "conf": None,
+                     "id_system": "CCN-ID", "locked": True,
+                     "flags": {"over_merged": False, "credit_mixed": False, "top_mixed": False,
+                               "ncc_mixed": False, "reviewed": True},
+                     "reviewed_by": None, "reviewed_at": "",
+                     "adopted": [], "potential": []})
+
     # Reviewer-consolidated unified courses (from merge_into curations) — one
     # synthesized Verified row per target id, with its members folded in.
     def _member_v(m):
@@ -4221,7 +4244,7 @@ def export_unified_courses():
     payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,
                "colleges": colleges, "mq_disciplines": sorted(mq),
                "count_inbrowser": len(rows),
-               "count_total": len(cat) + len(sg) + len(clusters) + curated_n,
+               "count_total": len(cat) + len(sg) + len(clusters) + curated_n + ccn_n,
                # What's already folded into git (kb/coci_curation.json at build
                # time) — the client diffs the live Supabase overlay against this
                # to count edits still awaiting the daily sync.
@@ -4250,6 +4273,10 @@ def export_unified_courses():
     for ccid, v in cc.items():
         if ccid not in merge_into and ccid not in (set(cat) | set(clusters)):
             idx.append([ccid, v.get("common_title"), v.get("subject"), v.get("id_system") or "Course"])
+    for c in ccn_courses:
+        ccid = c.get("ccn")
+        if ccid and ccid not in seen_ids:
+            idx.append([ccid, c.get("title"), c.get("subject"), "CCN-ID"])
     with open(out_idx, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses search index — id,title,subject,kind. Lazy-loaded by the curation dialog. */\n"
                 "window.CPL_UC_INDEX = " + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n")
