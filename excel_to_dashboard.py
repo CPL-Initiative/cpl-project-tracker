@@ -4355,6 +4355,115 @@ def export_unified_courses():
                 "window.CPL_UC_STANDALONE = " + json.dumps(sa_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
     print(f"  Unified Courses: wrote {out_sa} ({len(sa_rows)} stand-alone rows)")
 
+    # ---- lazy member-college rows (forward join to the raw COCI course list) -
+    # For each displayed identity, list the member college courses that roll up
+    # to it. Forward join (identity -> its declared members -> raw rows) avoids
+    # guessing on ambiguous (subject, number) pairs: an over-merged identity may
+    # surface a course under multiple (already-flagged) cards rather than picking
+    # one. Joined by (subject, course_number) for M-ID/cluster/stand-alone, and
+    # directly on CIDNumber / CommonCourseNumber for the C-ID / CCN anchors.
+    # Emitted to a separate file the tab lazy-loads only when a row is expanded.
+    raw_xlsx = os.path.join(kdir, "reference", "coci_course_list.xlsx")
+    if os.path.exists(raw_xlsx):
+        from openpyxl import load_workbook as _load_wb
+
+        def _nrm(x):
+            return " ".join(str(x).split()).upper() if x is not None else ""
+
+        mcolleges, mcol_idx = [], {}
+
+        def _mc(name):
+            if name not in mcol_idx:
+                mcol_idx[name] = len(mcolleges); mcolleges.append(name)
+            return mcol_idx[name]
+
+        pair_idx, cid_idx, ccn_idx = {}, {}, {}
+        wb = _load_wb(raw_xlsx, read_only=True)
+        ws = wb[wb.sheetnames[0]]
+        rit = ws.iter_rows(values_only=True)
+        next(rit)  # header
+        for row in rit:
+            college, subj, num, title = row[0], row[2], row[3], row[4]
+            cid, ccn = row[9], row[11]
+            if not college:
+                continue
+            code = (f"{subj} {num}".strip() if subj is not None
+                    else (str(num) if num is not None else ""))
+            ent = {"c": _mc(str(college)), "n": code, "t": title or ""}
+            su, nu = _nrm(subj), _nrm(num)
+            if su or nu:
+                pair_idx.setdefault((su, nu), []).append(ent)
+            if cid:
+                cid_idx.setdefault(_nrm(cid), []).append(ent)
+            if ccn and _nrm(ccn) != "NOT APPLICABLE":
+                ccn_idx.setdefault(_nrm(ccn), []).append(ent)
+        wb.close()
+
+        memships = (_load("coci_minted_memberships.json") or {}).get("memberships", {})
+
+        def _pairs_ents(pairs):
+            out = []
+            for p in pairs:
+                out.extend(pair_idx.get((_nrm(p.get("subject")), _nrm(p.get("course_number"))), []))
+            return out
+
+        def _ents_for(mid):
+            """Member entries for one identity id (not a CCN/merge target)."""
+            if mid in memships:
+                return _pairs_ents(memships[mid])
+            sv = sg.get(mid)
+            if sv:
+                return pair_idx.get((_nrm(sv.get("subject")), _nrm(sv.get("course_number"))), [])
+            clv = clusters.get(mid)
+            if clv:
+                out = []
+                for m in clv.get("members", []):
+                    out.extend(_pairs_ents(memships.get(m, [])))
+                return out
+            cv = cc.get(mid)
+            if cv and cv.get("c_id"):
+                return cid_idx.get(_nrm(cv["c_id"]), [])
+            return []
+
+        def _resolve(r):
+            rid, idsys, kind = r["id"], r.get("id_system"), r.get("kind")
+            if rid in merge_members:  # reviewer-consolidated unified course
+                out = _ents_for(rid)
+                for m in merge_members[rid]:
+                    out = out + _ents_for(m)
+                return out
+            if idsys == "CCN-ID":
+                return ccn_idx.get(_nrm(rid), [])
+            if idsys == "C-ID":
+                cv = cc.get(rid, {})
+                return cid_idx.get(_nrm(cv.get("c_id") or rid), [])
+            return _ents_for(rid)
+
+        members = {}
+        for r in rows + sa_rows:
+            ents = _resolve(r)
+            if not ents:
+                continue
+            seen_k, deduped = set(), []
+            for e in ents:
+                k = (e["c"], e["n"], e["t"])
+                if k in seen_k:
+                    continue
+                seen_k.add(k); deduped.append(e)
+            members[r["id"]] = deduped
+
+        out_mem = os.path.join(SCRIPT_DIR, "unified_courses_members.js")
+        mem_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
+                       "colleges": mcolleges, "members": members}
+        with open(out_mem, "w", encoding="utf-8") as f:
+            f.write("/* Unified Courses member-college rows — id -> [{c:collegeIdx, n:code, t:title}]. "
+                    "Lazy-loaded when a row is expanded. colleges[] holds the names. */\n"
+                    "window.CPL_UC_MEMBERS = " + json.dumps(mem_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
+        total = sum(len(v) for v in members.values())
+        print(f"  Unified Courses: wrote {out_mem} ({len(members)} identities, {total} member rows, {len(mcolleges)} colleges)")
+    else:
+        print("  Unified Courses: kb/reference/coci_course_list.xlsx absent — skipped member rows")
+
     # ---- full xlsx export (Course + Cluster + Singleton, incl. college name lists) ----
     headers = ["Kind", "ID", "Title", "Discipline", "Credit Status", "Units", "TOP Code",
                "Subject(s)", "Members", "Confidence", "Over-merged", "Credit mixed", "TOP mixed",

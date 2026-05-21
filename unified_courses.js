@@ -210,6 +210,22 @@
     });
     return _ucDetailsP;
   }
+  // Lazy-load the member-college rows ({colleges, members}) — only the first
+  // time a row is expanded.
+  var _ucMembers = null, _ucMembersP = null;
+  function loadMembers() {
+    if (_ucMembers) return Promise.resolve(_ucMembers);
+    if (_ucMembersP) return _ucMembersP;
+    _ucMembersP = new Promise(function (resolve) {
+      if (window.CPL_UC_MEMBERS) { _ucMembers = window.CPL_UC_MEMBERS; resolve(_ucMembers); return; }
+      var s = document.createElement("script");
+      s.src = "unified_courses_members.js";
+      s.onload = function () { _ucMembers = window.CPL_UC_MEMBERS || { colleges: [], members: {} }; resolve(_ucMembers); };
+      s.onerror = function () { _ucMembers = { colleges: [], members: {} }; resolve(_ucMembers); };
+      document.head.appendChild(s);
+    });
+    return _ucMembersP;
+  }
   function normTitle(t) {
     return (t || "").toLowerCase().replace(/\([^)]*\)/g, " ").replace(/[^a-z0-9 ]+/g, " ")
       .replace(/\b(i|ii|iii|iv|v|a|b|c|advanced|beginning|intermediate|introduction|introductory|basic|fundamentals|principles|topics)\b/g, " ")
@@ -818,6 +834,41 @@
       { key: "potential", label: "Potential Adoption" }, { key: "conf", label: "Conf." }, { key: "flags", label: "Flags" }
     ];
 
+    // Expand/collapse a row to show its member college courses (lazy-loaded).
+    function toggleMembers(tr, r, caret) {
+      var sib = tr.nextElementSibling;
+      if (sib && sib.className === "uc-member-row") { tr.parentNode.removeChild(sib); caret.textContent = "▸"; return; }
+      caret.textContent = "▾";
+      loadMembers().then(function (md) {
+        if (tr.nextElementSibling && tr.nextElementSibling.className === "uc-member-row") return; // already open
+        var list = (md.members || {})[r.id] || [];
+        var cols = md.colleges || [];
+        var cell = el("td", { colspan: String(COLS.length), class: "uc-member-cell" });
+        if (!list.length) {
+          cell.appendChild(el("div", { class: "uc-member-empty" }, ["No member college courses found for this identity."]));
+        } else {
+          cell.appendChild(el("div", { class: "uc-member-count" },
+            [list.length + " member college course" + (list.length === 1 ? "" : "s")]));
+          var mt = el("table", { class: "uc-member-table" });
+          var mh = el("thead"), mhr = el("tr");
+          ["College", "Local code", "Local title"].forEach(function (h) { mhr.appendChild(el("th", {}, [h])); });
+          mh.appendChild(mhr); mt.appendChild(mh);
+          var mb = el("tbody");
+          list.forEach(function (e) {
+            var mr = el("tr");
+            mr.appendChild(el("td", {}, [cols[e.c] || ""]));
+            mr.appendChild(el("td", { class: "uc-id" }, [e.n || ""]));
+            mr.appendChild(el("td", {}, [e.t || ""]));
+            mb.appendChild(mr);
+          });
+          mt.appendChild(mb); cell.appendChild(mt);
+        }
+        var mrow = el("tr", { class: "uc-member-row" }); mrow.appendChild(cell);
+        if (tr.nextSibling) tr.parentNode.insertBefore(mrow, tr.nextSibling);
+        else tr.parentNode.appendChild(mrow);
+      });
+    }
+
     function render() {
       var matched = rows.filter(passes);
       matched.sort(function (a, b) {
@@ -849,7 +900,12 @@
       var tb = el("tbody");
       matched.slice(0, MAX_VISIBLE).forEach(function (r) {
         var tr = el("tr");
-        tr.appendChild(el("td", {}, [r.kind || ""]));
+        var kindTd = el("td", {});
+        var caret = el("a", { href: "#", class: "uc-caret", title: "Show member college courses" }, ["▸"]);
+        caret.onclick = function (e) { e.preventDefault(); toggleMembers(tr, r, caret); };
+        kindTd.appendChild(caret);
+        kindTd.appendChild(document.createTextNode(" " + (r.kind || "")));
+        tr.appendChild(kindTd);
         var idTd = el("td", { class: "uc-id" });
         var info = el("a", { href: "#", class: "uc-info", title: "View full record + description" }, ["ⓘ"]);
         info.onclick = function (e) { e.preventDefault(); openDetailModal(r); };
