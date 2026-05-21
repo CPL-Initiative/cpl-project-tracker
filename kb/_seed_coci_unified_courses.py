@@ -41,6 +41,11 @@ then frequency, then length) with casing/whitespace normalized; the description
 is the most complete member description (None if no member carries one). The raw
 modal title is preserved in canonical_title for traceability.
 
+CREDIT ROLL-UP (included here): each cluster also carries credit_status,
+typical_units, top_code, and noncredit_category rolled up from its member M-IDs
+(modal value), with credit_status_mixed / top_code_mixed / noncredit_category_mixed
+True when members disagree or any member is itself mixed.
+
 EXPLICIT FOLLOW-ONS (not done here):
   - semantic/synonym merging (general~intro~principles; LLM-assisted)
   - roman<->arabic level unification ("Spanish I" == "Spanish 1")
@@ -170,7 +175,52 @@ def load_courses():
         yield cid, v["common_title"], v["subject"], v.get("discipline"), v.get("description")
 
 
+CREDIT_FIELDS = ("credit_status", "credit_status_mixed", "typical_units", "top_code",
+                 "top_code_mixed", "noncredit_category", "noncredit_category_mixed")
+
+
+def load_credit_fields():
+    """cid -> the credit/units/topcode fields joined onto the minted M-IDs."""
+    out = {}
+    for path in (CATALOG, SINGLETONS):
+        for cid, v in json.load(open(path))["courses"].items():
+            out[cid] = {k: v.get(k) for k in CREDIT_FIELDS}
+    return out
+
+
+def aggregate_credit(member_ids, cred):
+    """Roll member-M-ID credit fields up to a cluster: modal value + a *_mixed flag
+    that is True if members DISAGREE or any member is itself mixed."""
+    cs, units, tc, ncc = Counter(), Counter(), Counter(), Counter()
+    cs_m = tc_m = ncc_m = False
+    for m in member_ids:
+        r = cred.get(m)
+        if not r:
+            continue
+        if r.get("credit_status"):
+            cs[r["credit_status"]] += 1
+        if r.get("typical_units") is not None:
+            units[r["typical_units"]] += 1
+        if r.get("top_code"):
+            tc[r["top_code"]] += 1
+        if r.get("noncredit_category"):
+            ncc[r["noncredit_category"]] += 1
+        cs_m = cs_m or bool(r.get("credit_status_mixed"))
+        tc_m = tc_m or bool(r.get("top_code_mixed"))
+        ncc_m = ncc_m or bool(r.get("noncredit_category_mixed"))
+    return {
+        "credit_status": cs.most_common(1)[0][0] if cs else None,
+        "credit_status_mixed": len(cs) > 1 or cs_m,
+        "typical_units": units.most_common(1)[0][0] if units else None,
+        "top_code": tc.most_common(1)[0][0] if tc else None,
+        "top_code_mixed": len(tc) > 1 or tc_m,
+        "noncredit_category": ncc.most_common(1)[0][0] if ncc else None,
+        "noncredit_category_mixed": len(ncc) > 1 or ncc_m,
+    }
+
+
 def main():
+    cred = load_credit_fields()
     groups = defaultdict(list)  # merge key -> [(course_id, common_title, subject, discipline, description)]
     n_total = 0
     for cid, title, subject, disc, desc in load_courses():
@@ -197,6 +247,7 @@ def main():
         n_mids_merged += len(member_ids)
         synth = synth_title(title_counts)
         desc = synth_description([m[4] for m in members])
+        cagg = aggregate_credit(member_ids, cred)
         unified[uid] = {
             "unified_id": uid,
             "synthesized_title": synth,
@@ -207,6 +258,14 @@ def main():
             "discipline": disc,
             "subjects": subjects,
             "cross_subject": len({normsubj(s) for s in subjects}) > 1,
+            # credit fields rolled up from member M-IDs (modal + *_mixed when members disagree)
+            "credit_status": cagg["credit_status"],
+            "credit_status_mixed": cagg["credit_status_mixed"],
+            "typical_units": cagg["typical_units"],
+            "top_code": cagg["top_code"],
+            "top_code_mixed": cagg["top_code_mixed"],
+            "noncredit_category": cagg["noncredit_category"],
+            "noncredit_category_mixed": cagg["noncredit_category_mixed"],
             "member_count": len(member_ids),
             "members": member_ids,
             "title_variants": sorted(title_counts),
@@ -218,6 +277,8 @@ def main():
     n_recased = sum(1 for v in unified.values()
                     if v["synthesized_title"] != v["canonical_title"])
     n_desc = sum(1 for v in unified.values() if v["synthesized_description"])
+    cs_dist = Counter(v["credit_status"] for v in unified.values())
+    n_cs_mixed = sum(1 for v in unified.values() if v["credit_status_mixed"])
     out = {
         "_source": "Derived from kb/coci_minted_courses.json + kb/coci_minted_singletons.json",
         "_status": "STAGING — additive variant-unification crosswalk over the minted M-IDs.",
@@ -233,6 +294,9 @@ def main():
                               "normalized and a tiny abbreviation expansion; the description is the "
                               "most complete member description (none if no member carries one). "
                               "canonical_title keeps the raw modal title for traceability."),
+        "_credit_method": ("credit_status / typical_units / top_code / noncredit_category are "
+                           "rolled up from the cluster's member M-IDs (modal value); the *_mixed "
+                           "flags are True when members disagree or any member is itself mixed."),
         "_follow_ons": [
             "semantic/synonym merging (general~intro~principles; LLM-assisted)",
             "roman<->arabic level unification (Spanish I == Spanish 1)",
@@ -248,6 +312,8 @@ def main():
         "cross_subject_clusters": n_cross,
         "clusters_with_synthesized_description": n_desc,
         "clusters_title_recased_or_normalized": n_recased,
+        "cluster_credit_status_distribution": dict(cs_dist),
+        "clusters_mixed_credit_status": n_cs_mixed,
         "clusters": unified,
     }
     with open(OUT, "w", encoding="utf-8") as f:
@@ -261,6 +327,7 @@ def main():
     print(f"  cross-subject clusters: {n_cross}")
     print(f"  clusters with a synthesized description: {n_desc}")
     print(f"  clusters whose title was re-cased/normalized: {n_recased}")
+    print(f"  cluster credit_status: {dict(cs_dist)} (mixed: {n_cs_mixed})")
 
 
 if __name__ == "__main__":
