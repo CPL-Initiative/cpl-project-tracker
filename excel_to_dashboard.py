@@ -4306,12 +4306,10 @@ def export_unified_courses():
             mcol_idx[name] = len(mcolleges); mcolleges.append(name)
         return mcol_idx[name]
 
-    pair_idx, cid_idx, ccn_idx = {}, {}, {}      # join key -> [member entries]
-    pair_desc, cid_desc, ccn_desc = {}, {}, {}   # join key -> longest CatalogDescription
-
-    def _keep_longest(d, key, text):
-        if text and len(text) > len(d.get(key, "")):
-            d[key] = text
+    # join key -> [ {c, n, t, d} ] (d = CatalogDescription, kept in memory only;
+    # stripped from the members file output). One ent object is shared across the
+    # pair/cid/ccn indexes it belongs to.
+    pair_rows, cid_rows, ccn_rows = {}, {}, {}
 
     if _have_raw:
         from openpyxl import load_workbook as _load_wb
@@ -4326,86 +4324,111 @@ def export_unified_courses():
                 continue
             code = (f"{subj} {num}".strip() if subj is not None
                     else (str(num) if num is not None else ""))
-            ent = {"c": _mc(str(college)), "n": code, "t": title or ""}
+            ent = {"c": _mc(str(college)), "n": code, "t": title or "",
+                   "d": str(desc) if (desc and str(desc).strip()) else ""}
             su, nu = _nrm(subj), _nrm(num)
-            cidn = _nrm(cid) if cid else ""
-            ccnn = _nrm(ccn) if ccn else ""
-            dtxt = str(desc) if (desc and str(desc).strip()) else ""
             if su or nu:
-                pair_idx.setdefault((su, nu), []).append(ent)
-                if dtxt:
-                    _keep_longest(pair_desc, (su, nu), dtxt)
-            if cidn:
-                cid_idx.setdefault(cidn, []).append(ent)
-                if dtxt:
-                    _keep_longest(cid_desc, cidn, dtxt)
+                pair_rows.setdefault((su, nu), []).append(ent)
+            if cid:
+                cid_rows.setdefault(_nrm(cid), []).append(ent)
+            ccnn = _nrm(ccn) if ccn else ""
             if ccnn and ccnn != "NOT APPLICABLE":
-                ccn_idx.setdefault(ccnn, []).append(ent)
-                if dtxt:
-                    _keep_longest(ccn_desc, ccnn, dtxt)
+                ccn_rows.setdefault(ccnn, []).append(ent)
         wb.close()
 
     memships = (_load("coci_minted_memberships.json") or {}).get("memberships", {})
 
-    # Normalized (subject, course_number) pairs that make up one identity id.
-    def _id_pairs(mid):
-        if mid in memships:
-            return [(_nrm(p.get("subject")), _nrm(p.get("course_number"))) for p in memships[mid]]
-        sv = sg.get(mid)
+    # Title-consistency: the (subject, number) membership key is globally
+    # ambiguous (e.g. "MATH 31" is a different course at every college), so the
+    # forward join must re-apply the same title check the minting used — keep a
+    # candidate college course only if its title matches the identity's. C-ID /
+    # CCN joins are authoritative identity keys and are trusted as-is.
+    import re as _re
+    _TITLE_STOP = set("i ii iii iv v a b c advanced beginning intermediate introduction "
+                      "introductory basic fundamentals principles topics the of to and for with in".split())
+
+    def _ttok(t):
+        t = _re.sub(r"[^a-z0-9 ]+", " ", _re.sub(r"\([^)]*\)", " ", str(t or "").lower()))
+        return {w for w in t.split() if w not in _TITLE_STOP and len(w) > 2}
+
+    def _title_ok(a, b):
+        sa, sb = _ttok(a), _ttok(b)
+        if not sa or not sb or sa == sb:
+            return True  # can't judge (generic/empty) -> keep
+        return len(sa & sb) / len(sa | sb) >= 0.5
+
+    def _id_title(i):
+        v = cat.get(i) or sg.get(i)
+        if v:
+            return v.get("common_title")
+        cl = clusters.get(i)
+        if cl:
+            return cl.get("synthesized_title") or cl.get("canonical_title")
+        cv = cc.get(i)
+        return cv.get("common_title") if cv else None
+
+    def _leaf_pairs(i):
+        if i in memships:
+            return [(_nrm(p.get("subject")), _nrm(p.get("course_number"))) for p in memships[i]]
+        sv = sg.get(i)
         if sv:
             return [(_nrm(sv.get("subject")), _nrm(sv.get("course_number")))]
-        clv = clusters.get(mid)
-        if clv:
-            out = []
-            for m in clv.get("members", []):
-                # a cluster member can be a minted M-ID OR a singleton — resolve each.
-                if m in memships:
-                    out += [(_nrm(p.get("subject")), _nrm(p.get("course_number"))) for p in memships[m]]
-                else:
-                    sv2 = sg.get(m)
-                    if sv2:
-                        out.append((_nrm(sv2.get("subject")), _nrm(sv2.get("course_number"))))
-            return out
         return []
 
     def _id_cid(mid):
         cv = cc.get(mid)
         return _nrm(cv["c_id"]) if cv and cv.get("c_id") else ""
 
-    # Member entries (college courses) for a displayed row — forward join.
-    def _row_ents(r):
+    # Candidate college-course ents for a displayed row (title-filtered forward
+    # join). Clusters/merge targets expand to their constituent leaf courses, and
+    # each leaf's (subject, number) rows are filtered against THAT leaf's title.
+    def _row_candidates(r):
         rid, idsys = r["id"], r.get("id_system")
         if idsys == "CCN-ID":
-            return ccn_idx.get(_nrm(rid), [])
+            return ccn_rows.get(_nrm(rid), [])
         if idsys == "C-ID":
-            return cid_idx.get(_id_cid(rid) or _nrm(rid), [])
-        out = []
+            return cid_rows.get(_id_cid(rid) or _nrm(rid), [])
+        leaves = []
+
+        def add_leaf(i):
+            clv = clusters.get(i)
+            if clv:
+                for m in clv.get("members", []):
+                    add_leaf(m)
+            else:
+                leaves.append(i)
+
         for i in [rid] + merge_members.get(rid, []):
-            for p in _id_pairs(i):
-                out += pair_idx.get(p, [])
+            add_leaf(i)
+        out = []
+        for i in leaves:
+            t = _id_title(i)
+            for p in _leaf_pairs(i):
+                for ent in pair_rows.get(p, []):
+                    if _title_ok(t, ent["t"]):
+                        out.append(ent)
             ck = _id_cid(i)
             if ck:
-                out += cid_idx.get(ck, [])
+                out += cid_rows.get(ck, [])  # authoritative — trust without title filter
         return out
 
-    # Representative raw CatalogDescription for a row (longest among members).
+    # Member entries (deduped, description stripped) for a displayed row.
+    def _row_ents(r):
+        seen, out = set(), []
+        for ent in _row_candidates(r):
+            k = (ent["c"], ent["n"], ent["t"])
+            if k in seen:
+                continue
+            seen.add(k); out.append({"c": ent["c"], "n": ent["n"], "t": ent["t"]})
+        return out
+
+    # Representative raw CatalogDescription for a row (longest among candidates).
     def _row_rawdesc(r):
-        rid, idsys = r["id"], r.get("id_system")
-        if idsys == "CCN-ID":
-            return ccn_desc.get(_nrm(rid))
-        if idsys == "C-ID":
-            return cid_desc.get(_id_cid(rid) or _nrm(rid))
         best = None
-        for i in [rid] + merge_members.get(rid, []):
-            for p in _id_pairs(i):
-                d = pair_desc.get(p)
-                if d and (best is None or len(d) > len(best)):
-                    best = d
-            ck = _id_cid(i)
-            if ck:
-                d = cid_desc.get(ck)
-                if d and (best is None or len(d) > len(best)):
-                    best = d
+        for ent in _row_candidates(r):
+            d = ent.get("d")
+            if d and (best is None or len(d) > len(best)):
+                best = d
         return best
 
     # ---- lazy course-description detail file --------------------------------
@@ -4497,15 +4520,8 @@ def export_unified_courses():
         members = {}
         for r in rows + sa_rows:
             ents = _row_ents(r)
-            if not ents:
-                continue
-            seen_k, deduped = set(), []
-            for e in ents:
-                k = (e["c"], e["n"], e["t"])
-                if k in seen_k:
-                    continue
-                seen_k.add(k); deduped.append(e)
-            members[r["id"]] = deduped
+            if ents:
+                members[r["id"]] = ents
 
         out_mem = os.path.join(SCRIPT_DIR, "unified_courses_members.js")
         mem_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
