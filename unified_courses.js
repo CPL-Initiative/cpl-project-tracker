@@ -43,15 +43,39 @@
     return typeof t === "string" &&
       /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(t);
   }
+  // Build + store a session from a GoTrue token response (magic-link hash or a
+  // refresh-token exchange). Keeps the refresh_token so the session can be
+  // silently renewed without sending another magic-link email.
+  function persistToken(tok) {
+    if (!tok || !isValidJwt(tok.access_token)) return null;
+    var s = {
+      access_token: tok.access_token,
+      refresh_token: tok.refresh_token || null,
+      email: jwtEmail(tok.access_token),
+      exp: Date.now() + (parseInt(tok.expires_in || "3600", 10) * 1000)
+    };
+    sessionStorage.setItem("cpl_sb", JSON.stringify(s));
+    return s;
+  }
   function getSession() {
     try {
       var s = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
-      if (s && isValidJwt(s.access_token) && s.exp > Date.now()) return s;
+      // Keep a session whose access token is still fresh OR that carries a
+      // refresh_token we can renew with (so an expired tab self-heals silently).
+      if (s && isValidJwt(s.access_token) && (s.refresh_token || s.exp > Date.now())) return s;
     } catch (e) {}
-    // No valid session — drop any stale/garbled value so the UI shows "Sign
-    // in" again instead of pretending to be signed in and breaking writes.
+    // Otherwise drop any stale/garbled value so the UI shows "Sign in" again
+    // instead of pretending to be signed in and breaking writes.
     sessionStorage.removeItem("cpl_sb");
     return null;
+  }
+  // Exchange a refresh token for a fresh access token — no email involved.
+  function refreshToken(rt) {
+    return fetch(SUPABASE_URL + "/auth/v1/token?grant_type=refresh_token", {
+      method: "POST",
+      headers: { "apikey": SUPABASE_ANON, "Content-Type": "application/json" },
+      body: JSON.stringify({ refresh_token: rt })
+    }).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("refresh " + r.status)); });
   }
   function consumeAuthHash() {
     var h = location.hash || "";
@@ -60,11 +84,7 @@
     h.replace(/^#/, "").split("&").forEach(function (kv) {
       var a = kv.split("="); p[decodeURIComponent(a[0])] = decodeURIComponent(a[1] || "");
     });
-    if (!isValidJwt(p.access_token)) return false;
-    sessionStorage.setItem("cpl_sb", JSON.stringify({
-      access_token: p.access_token, email: jwtEmail(p.access_token),
-      exp: Date.now() + (parseInt(p.expires_in || "3600", 10) * 1000)
-    }));
+    if (!persistToken(p)) return false;
     history.replaceState(null, "", location.pathname + location.search);
     location.hash = "unified-courses";
     return true;
@@ -129,6 +149,26 @@
     var mqList = data.mq_disciplines || [];
     var rows = data.rows;
     var session = getSession();
+    var refreshTimer = null;
+    function tokenFresh(s) { return !!(s && s.exp > Date.now() + 60000); }
+    function scheduleRefresh() {
+      if (refreshTimer) { clearTimeout(refreshTimer); refreshTimer = null; }
+      if (!session || !session.refresh_token) return;
+      refreshTimer = setTimeout(function () { ensureFresh(); }, Math.max(session.exp - Date.now() - 60000, 1000));
+    }
+    // Resolve to a session with a fresh access token, silently renewing via the
+    // refresh token if the current one is near expiry — no magic-link email.
+    // Resolves null if renewal isn't possible (caller then prompts re-sign-in).
+    function ensureFresh() {
+      if (tokenFresh(session)) return Promise.resolve(session);
+      if (!session || !session.refresh_token) return Promise.resolve(null);
+      return refreshToken(session.refresh_token).then(function (tok) {
+        var ns = persistToken(tok);
+        if (!ns) return null;
+        session = ns; renderAuth(); scheduleRefresh();
+        return session;
+      }).catch(function () { return null; });
+    }
 
     var state = { kind: "", disc: "", credit: "", conf: "", artic: "", flagged: false, q: "", sort: "title", dir: 1 };
 
@@ -263,29 +303,36 @@
         s.onchange = function () {
           var val = s.value;
           if (!val) { showValue(); return; }
-          if (!session || !isValidJwt(session.access_token)) {
-            signOut(); session = null; renderAuth(); render();
-            alert("Your sign-in session is no longer valid — please sign in again.");
+          if (!session) {
+            renderAuth(); render();
+            alert("You're not signed in — please sign in to curate.");
             return;
           }
           s.disabled = true;
-          saveDiscipline(r.id, val, session).then(function (resp) {
-            if (resp.ok) {
-              r.disc = val; r.flags.reviewed = true; r._curated = true;
-              r.reviewed_by = session.email; r.reviewed_at = today();
-              maybeBulkApply(r, val);
-            } else { alert("Save failed (status " + resp.status + "). Are you an allowed reviewer?"); showValue(); }
-          }).catch(function (err) {
-            var m = (err && err.message) || "network error";
-            // A corrupted token throws a synchronous header error before the
-            // request leaves the browser — clear it and prompt re-sign-in.
-            if (/ISO-8859-1|headers/i.test(m)) {
+          ensureFresh().then(function (sess) {
+            if (!sess || !isValidJwt(sess.access_token)) {
               signOut(); session = null; renderAuth(); render();
-              alert("Your sign-in session looks corrupted — you've been signed out. Please sign in again.");
-            } else {
-              alert("Could not save: " + m);
-              showValue();
+              alert("Your sign-in session expired and couldn't be renewed — please sign in again.");
+              return;
             }
+            return saveDiscipline(r.id, val, sess).then(function (resp) {
+              if (resp.ok) {
+                r.disc = val; r.flags.reviewed = true; r._curated = true;
+                r.reviewed_by = sess.email; r.reviewed_at = today();
+                maybeBulkApply(r, val);
+              } else { alert("Save failed (status " + resp.status + "). Are you an allowed reviewer?"); showValue(); }
+            }).catch(function (err) {
+              var m = (err && err.message) || "network error";
+              // A corrupted token throws a synchronous header error before the
+              // request leaves the browser — clear it and prompt re-sign-in.
+              if (/ISO-8859-1|headers/i.test(m)) {
+                signOut(); session = null; renderAuth(); render();
+                alert("Your sign-in session looks corrupted — you've been signed out. Please sign in again.");
+              } else {
+                alert("Could not save: " + m);
+                showValue();
+              }
+            });
           });
         };
         s.onblur = function () { setTimeout(function () { if (td.contains(s)) showValue(); }, 150); };
@@ -390,6 +437,10 @@
 
     renderAuth();
     render();
+    // Keep the session alive without new emails: renew now if the loaded token
+    // is already stale, and schedule a renewal shortly before it expires.
+    if (session && !tokenFresh(session)) ensureFresh().then(function () { render(); });
+    scheduleRefresh();
     // Merge any live Supabase curation overlay (so curated values show before git sync)
     fetchOverlay().then(function (m) {
       var changed = false;
