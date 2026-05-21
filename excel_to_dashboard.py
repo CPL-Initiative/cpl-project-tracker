@@ -4097,6 +4097,16 @@ def export_unified_courses():
     def reviewed_at_of(cid):
         return ((curation.get(cid) or {}).get("reviewed_at") or "")[:10]
 
+    # Reviewer consolidations ("Generate unified course"): member course_id →
+    # target unified id, from the curation overlay. Members are folded into a
+    # synthesized Verified unified row keyed by the target id.
+    merge_into, merge_members = {}, {}
+    for _cid, _c in curation.items():
+        _t = _c.get("merge_into")
+        if _t:
+            merge_into[_cid] = _t
+            merge_members.setdefault(_t, []).append(_cid)
+
     colleges, col_idx = [], {}
 
     def cidx(name):
@@ -4129,6 +4139,8 @@ def export_unified_courses():
 
     rows = []
     for mid, v in cat.items():
+        if mid in merge_into or mid in merge_members:
+            continue
         ad, pot = rollup([mid])
         rows.append({"kind": "Course", "id": mid, "title": v.get("common_title"),
                      "disc": disc_of(mid, v.get("discipline")), "credit": v.get("credit_status"),
@@ -4140,6 +4152,8 @@ def export_unified_courses():
                      "reviewed_by": reviewed_by_of(mid), "reviewed_at": reviewed_at_of(mid),
                      "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
     for uid, v in clusters.items():
+        if uid in merge_into or uid in merge_members:
+            continue
         ad, pot = rollup(v.get("members", []))
         rows.append({"kind": "Cluster", "id": uid,
                      "title": v.get("synthesized_title") or v.get("canonical_title"),
@@ -4159,7 +4173,7 @@ def export_unified_courses():
     seen = set(cat.keys()) | set(clusters.keys())
     curated_n = 0
     for ccid, v in cc.items():
-        if ccid in seen:
+        if ccid in seen or ccid in merge_into or ccid in merge_members:
             continue
         curated_n += 1
         ad, pot = rollup([ccid])
@@ -4172,6 +4186,35 @@ def export_unified_courses():
                      "flags": {"over_merged": False, "credit_mixed": False, "top_mixed": False,
                                "ncc_mixed": False, "reviewed": True},
                      "reviewed_by": v.get("reviewed_by"), "reviewed_at": (v.get("reviewed_at") or "")[:10],
+                     "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
+
+    # Reviewer-consolidated unified courses (from merge_into curations) — one
+    # synthesized Verified row per target id, with its members folded in.
+    def _member_v(m):
+        return cat.get(m) or sg.get(m) or cc.get(m) or clusters.get(m) or {}
+
+    def _member_title(m):
+        v = _member_v(m)
+        return v.get("common_title") or v.get("synthesized_title") or v.get("canonical_title")
+
+    for tgt, members in sorted(merge_members.items()):
+        cur = curation.get(tgt, {})
+        # If the target is itself an existing course (merge INTO an M-ID/C-ID),
+        # include it as a member so its title/subject/articulations are folded in.
+        tgt_v = _member_v(tgt)
+        all_members = ([tgt] if tgt_v else []) + list(members)
+        subs = sorted({_member_v(m).get("subject") for m in all_members if _member_v(m).get("subject")})
+        variants = [t for t in (_member_title(m) for m in all_members) if t]
+        ad, pot = rollup(all_members)  # only M-ID members contribute articulations
+        rows.append({"kind": "Cluster", "id": tgt,
+                     "title": cur.get("unified_title") or _member_title(tgt) or (variants[0] if variants else tgt),
+                     "disc": cur.get("discipline") or tgt_v.get("discipline"),
+                     "credit": None, "units": None, "top": None,
+                     "subj": subs, "members": len(all_members), "conf": None,
+                     "id_system": "Cluster", "locked": False, "title_variants": variants,
+                     "flags": {"over_merged": False, "credit_mixed": False, "top_mixed": False,
+                               "ncc_mixed": False, "reviewed": True},
+                     "reviewed_by": cur.get("reviewed_by"), "reviewed_at": (cur.get("reviewed_at") or "")[:10],
                      "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
 
     mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
@@ -4188,6 +4231,29 @@ def export_unified_courses():
         f.write("/* Unified Courses (COCI identity layer) — auto-generated. AI-assisted STAGING. */\n"
                 "window.CPL_UNIFIED_COURSES = " + json.dumps(payload, ensure_ascii=False) + ";\n")
     print(f"  Unified Courses: wrote {out_js} ({len(rows)} in-browser rows, {len(colleges)} colleges)")
+
+    # Compact all-course title index for the "Generate unified course" dialog —
+    # a separate file the tab lazy-loads only when a curator opens that dialog.
+    # Each entry: [id, title, subject, kind]. Excludes already-merged members.
+    out_idx = os.path.join(SCRIPT_DIR, "unified_courses_index.js")
+    idx = []
+    for mid, v in cat.items():
+        if mid not in merge_into:
+            idx.append([mid, v.get("common_title"), v.get("subject"), "Course"])
+    for sid, v in sg.items():
+        if sid not in merge_into:
+            idx.append([sid, v.get("common_title"), v.get("subject"), "Stand-Alone"])
+    for uid, v in clusters.items():
+        if uid not in merge_into:
+            idx.append([uid, v.get("synthesized_title") or v.get("canonical_title"),
+                        ";".join(v.get("subjects", [])), "Cluster"])
+    for ccid, v in cc.items():
+        if ccid not in merge_into and ccid not in (set(cat) | set(clusters)):
+            idx.append([ccid, v.get("common_title"), v.get("subject"), v.get("id_system") or "Course"])
+    with open(out_idx, "w", encoding="utf-8") as f:
+        f.write("/* Unified Courses search index — id,title,subject,kind. Lazy-loaded by the curation dialog. */\n"
+                "window.CPL_UC_INDEX = " + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n")
+    print(f"  Unified Courses: wrote {out_idx} ({len(idx)} index entries)")
 
     # ---- full xlsx export (Course + Cluster + Singleton, incl. college name lists) ----
     headers = ["Kind", "ID", "Title", "Discipline", "Credit Status", "Units", "TOP Code",

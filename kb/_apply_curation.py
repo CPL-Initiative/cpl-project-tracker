@@ -30,8 +30,10 @@ OUT = os.path.join(HERE, "coci_curation.json")
 URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
 KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 
-# Fields we fold into the overlay (discipline-only MVP; extend as curation grows).
-FIELDS = {"discipline"}
+# Fields we fold into the overlay. `merge_into` (member course_id → target
+# unified id) + `unified_title` (canonical title on the target) drive the
+# reviewer "Generate unified course" consolidation.
+FIELDS = {"discipline", "merge_into", "unified_title"}
 
 
 def fetch_rows():
