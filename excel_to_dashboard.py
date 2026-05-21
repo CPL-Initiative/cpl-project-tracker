@@ -4243,24 +4243,9 @@ def export_unified_courses():
                      "reviewed_by": cur.get("reviewed_by"), "reviewed_at": (cur.get("reviewed_at") or "")[:10],
                      "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
 
-    mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
-    payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,
-               "colleges": colleges, "mq_disciplines": sorted(mq),
-               "count_inbrowser": len(rows),
-               "count_total": len(cat) + len(sg) + len(clusters) + curated_n + ccn_n,
-               # What's already folded into git (kb/coci_curation.json at build
-               # time) — the client diffs the live Supabase overlay against this
-               # to count edits still awaiting the daily sync.
-               "committed_curation": {cid: c.get("discipline") for cid, c in curation.items()},
-               # Descriptions already folded into git (kb/coci_curation.json) — the
-               # client diffs the live description overlay against this to count
-               # description edits still awaiting the daily sync.
-               "committed_descriptions": {cid: c["description"] for cid, c in curation.items() if c.get("description")},
-               "export_path": "exports/unified_courses.xlsx", "rows": rows}
-    with open(out_js, "w", encoding="utf-8") as f:
-        f.write("/* Unified Courses (COCI identity layer) — auto-generated. AI-assisted STAGING. */\n"
-                "window.CPL_UNIFIED_COURSES = " + json.dumps(payload, ensure_ascii=False) + ";\n")
-    print(f"  Unified Courses: wrote {out_js} ({len(rows)} in-browser rows, {len(colleges)} colleges)")
+    # NOTE: unified_courses_data.js is written further down, AFTER the raw COCI
+    # list is indexed, so each row can carry its matched official C-ID/CCN
+    # (Phase A crosswalk surfacing). See "write unified_courses_data.js" below.
 
     # Compact all-course title index for the "Generate unified course" dialog —
     # a separate file the tab lazy-loads only when a curator opens that dialog.
@@ -4306,10 +4291,13 @@ def export_unified_courses():
             mcol_idx[name] = len(mcolleges); mcolleges.append(name)
         return mcol_idx[name]
 
-    # join key -> [ {c, n, t, d} ] (d = CatalogDescription, kept in memory only;
-    # stripped from the members file output). One ent object is shared across the
-    # pair/cid/ccn indexes it belongs to.
+    # join key -> [ {c, n, t, d, cid, ccn} ] (d = CatalogDescription, kept in
+    # memory only; stripped from the members file output). One ent object is
+    # shared across the pair/cid/ccn indexes it belongs to.
     pair_rows, cid_rows, ccn_rows = {}, {}, {}
+    # CIDNumber / CommonCourseNumber cells sometimes carry a literal sentinel
+    # instead of being blank — treat these as "no official id".
+    _NULLISH = {"", "NULL", "N/A", "NA", "NONE", "NOT APPLICABLE", "NOT APPLICABLE.", "TBD", "-"}
 
     if _have_raw:
         from openpyxl import load_workbook as _load_wb
@@ -4324,15 +4312,20 @@ def export_unified_courses():
                 continue
             code = (f"{subj} {num}".strip() if subj is not None
                     else (str(num) if num is not None else ""))
-            ent = {"c": _mc(str(college)), "n": code, "t": title or "",
-                   "d": str(desc) if (desc and str(desc).strip()) else ""}
             su, nu = _nrm(subj), _nrm(num)
+            cidn, ccnn = _nrm(cid), _nrm(ccn)
+            if cidn in _NULLISH:
+                cidn = ""
+            if ccnn in _NULLISH:
+                ccnn = ""
+            ent = {"c": _mc(str(college)), "n": code, "t": title or "",
+                   "d": str(desc) if (desc and str(desc).strip()) else "",
+                   "cid": cidn, "ccn": ccnn}
             if su or nu:
                 pair_rows.setdefault((su, nu), []).append(ent)
-            if cid:
-                cid_rows.setdefault(_nrm(cid), []).append(ent)
-            ccnn = _nrm(ccn) if ccn else ""
-            if ccnn and ccnn != "NOT APPLICABLE":
+            if cidn:
+                cid_rows.setdefault(cidn, []).append(ent)
+            if ccnn:
                 ccn_rows.setdefault(ccnn, []).append(ent)
         wb.close()
 
@@ -4431,6 +4424,54 @@ def export_unified_courses():
                 best = d
         return best
 
+    # Phase A crosswalk surfacing: the official C-ID / CCN carried by an
+    # identity's (title-consistent) member courses. Returns a compact dict only
+    # when there's something to show: {"cid": "ACCT 110"} for a single agreed
+    # C-ID, {"cid_conflict": [...]} when members disagree (over-merge signal),
+    # {"ccn": "ANTH C1000"} for a CCN. No identity change — purely informational.
+    def _row_official(r):
+        if r.get("id_system") in ("C-ID", "CCN-ID"):
+            return None  # already an official-ID identity
+        cids, ccns = set(), set()
+        for ent in _row_candidates(r):
+            if ent.get("cid"):
+                cids.add(ent["cid"])
+            if ent.get("ccn"):
+                ccns.add(ent["ccn"])
+        out = {}
+        if len(ccns) == 1:
+            out["ccn"] = next(iter(ccns))
+        if len(cids) == 1:
+            out["cid"] = next(iter(cids))
+        elif len(cids) > 1:
+            out["cid_conflict"] = sorted(cids)
+        return out or None
+
+    # ---- write unified_courses_data.js (deferred so rows carry matched IDs) --
+    if _have_raw:
+        for r in rows:
+            m = _row_official(r)
+            if m:
+                r["match"] = m
+    mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
+    payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,
+               "colleges": colleges, "mq_disciplines": sorted(mq),
+               "count_inbrowser": len(rows),
+               "count_total": len(cat) + len(sg) + len(clusters) + curated_n + ccn_n,
+               # What's already folded into git (kb/coci_curation.json at build
+               # time) — the client diffs the live Supabase overlay against this
+               # to count edits still awaiting the daily sync.
+               "committed_curation": {cid: c.get("discipline") for cid, c in curation.items()},
+               # Descriptions already folded into git (kb/coci_curation.json) — the
+               # client diffs the live description overlay against this to count
+               # description edits still awaiting the daily sync.
+               "committed_descriptions": {cid: c["description"] for cid, c in curation.items() if c.get("description")},
+               "export_path": "exports/unified_courses.xlsx", "rows": rows}
+    with open(out_js, "w", encoding="utf-8") as f:
+        f.write("/* Unified Courses (COCI identity layer) — auto-generated. AI-assisted STAGING. */\n"
+                "window.CPL_UNIFIED_COURSES = " + json.dumps(payload, ensure_ascii=False) + ";\n")
+    print(f"  Unified Courses: wrote {out_js} ({len(rows)} in-browser rows, {len(colleges)} colleges)")
+
     # ---- lazy course-description detail file --------------------------------
     # Descriptions live in a SEPARATE file the tab lazy-loads only when a reviewer
     # opens the row-details modal, keeping unified_courses_data.js lean. Precedence
@@ -4502,6 +4543,11 @@ def export_unified_courses():
                         "flags": flags_of(v, sid),
                         "reviewed_by": reviewed_by_of(sid), "reviewed_at": reviewed_at_of(sid),
                         "adopted": [], "potential": []})
+    if _have_raw:
+        for r in sa_rows:
+            m = _row_official(r)
+            if m:
+                r["match"] = m
     out_sa = os.path.join(SCRIPT_DIR, "unified_courses_standalone.js")
     sa_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "rows": sa_rows}
     with open(out_sa, "w", encoding="utf-8") as f:
