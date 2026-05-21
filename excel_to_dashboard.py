@@ -4141,8 +4141,10 @@ def export_unified_courses():
                      "flags": flags_of(v, uid, use_spread=False),
                      "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
 
+    mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
     payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,
-               "colleges": colleges, "count_inbrowser": len(rows),
+               "colleges": colleges, "mq_disciplines": sorted(mq),
+               "count_inbrowser": len(rows),
                "count_total": len(cat) + len(sg) + len(clusters),
                "export_path": "exports/unified_courses.xlsx", "rows": rows}
     with open(out_js, "w", encoding="utf-8") as f:
