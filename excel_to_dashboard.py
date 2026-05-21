@@ -4329,6 +4329,32 @@ def export_unified_courses():
                 "window.CPL_UC_DETAILS = " + json.dumps(details, ensure_ascii=False, separators=(",", ":")) + ";\n")
     print(f"  Unified Courses: wrote {out_det} ({len(details)} descriptions)")
 
+    # ---- lazy stand-alone (singleton) rows ----------------------------------
+    # The ~57k single-college courses are deliberately kept OUT of the main
+    # payload (it would balloon to tens of MB). They live in their own file the
+    # tab loads only when a reviewer selects the "Stand-Alone" kind filter, so
+    # they become visible + curatable without slowing the default view.
+    sa_rows = []
+    for sid, v in sg.items():
+        if sid in merge_into or sid in merge_members:
+            continue
+        sa_rows.append({"kind": "Stand-Alone", "id": sid, "title": v.get("common_title"),
+                        "disc": disc_of(sid, v.get("discipline")), "credit": v.get("credit_status"),
+                        "units": v.get("typical_units"), "top": v.get("top_code"),
+                        "subj": [v["subject"]] if v.get("subject") else [],
+                        "members": 1, "conf": v.get("confidence"),
+                        "id_system": "M-ID", "locked": False,
+                        "flags": flags_of(v, sid),
+                        "reviewed_by": reviewed_by_of(sid), "reviewed_at": reviewed_at_of(sid),
+                        "adopted": [], "potential": []})
+    out_sa = os.path.join(SCRIPT_DIR, "unified_courses_standalone.js")
+    sa_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "rows": sa_rows}
+    with open(out_sa, "w", encoding="utf-8") as f:
+        f.write("/* Unified Courses stand-alone (single-college) rows — lazy-loaded "
+                "only when the 'Stand-Alone' kind filter is selected. */\n"
+                "window.CPL_UC_STANDALONE = " + json.dumps(sa_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
+    print(f"  Unified Courses: wrote {out_sa} ({len(sa_rows)} stand-alone rows)")
+
     # ---- full xlsx export (Course + Cluster + Singleton, incl. college name lists) ----
     headers = ["Kind", "ID", "Title", "Discipline", "Credit Status", "Units", "TOP Code",
                "Subject(s)", "Members", "Confidence", "Over-merged", "Credit mixed", "TOP mixed",
