@@ -86,14 +86,20 @@ def main():
         return None, None, None
 
     def process(record, subjects, title):
-        if record.get("discipline"):
-            return False
         if record.get("reviewed_at"):
             stats["skip_reviewed"] += 1
             return False
+        has = record.get("discipline")
+        ai = record.get("discipline_source")  # set only by a prior run of this script
+        # Leave original-seed / manual disciplines (have a value but no
+        # discipline_source) untouched. Re-infer our own prior AI guesses so
+        # lexicon refinements propagate; fill blanks.
+        if has and not ai:
+            return False
         disc, source, c = infer([s for s in subjects if s], title)
         if not disc:
-            stats["still_blank"] += 1
+            if not has:
+                stats["still_blank"] += 1
             return False
         record["discipline"] = disc
         record["discipline_source"] = source
