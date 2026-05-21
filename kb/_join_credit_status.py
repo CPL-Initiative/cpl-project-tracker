@@ -126,6 +126,11 @@ def aggregate(member_keys, lut):
         "credit_status_mixed": len(status) > 1,
         "typical_units": units.most_common(1)[0][0] if units else None,
         "top_code": tc.most_common(1)[0][0] if tc else None,
+        # TOP codes vary often for the same course (colleges assign them with
+        # discretion + no definitive guidance), so surface the spread rather
+        # than silently trusting the modal pick.
+        "top_code_mixed": len(tc) > 1,
+        "top_code_distribution": dict(tc.most_common()) if len(tc) > 1 else None,
         "noncredit_category": ncc.most_common(1)[0][0] if ncc else None,
         "_matched": matched,
     }
@@ -153,12 +158,16 @@ def main():
             v["credit_status_mixed"] = agg["credit_status_mixed"]
             v["typical_units"] = agg["typical_units"]
             v["top_code"] = agg["top_code"]
+            v["top_code_mixed"] = agg["top_code_mixed"]
+            v["top_code_distribution"] = agg["top_code_distribution"]
             v["noncredit_category"] = agg["noncredit_category"]
         else:
             dist["(unmatched)"] += 1
             v["credit_status"] = None
             v["credit_status_mixed"] = False
             v["top_code"] = None
+            v["top_code_mixed"] = False
+            v["top_code_distribution"] = None
             v["noncredit_category"] = None
 
     # --- singletons (single embedded member; lean schema -> omit null fields) ---
@@ -168,7 +177,8 @@ def main():
     for cid, v in sg_doc["courses"].items():
         agg = aggregate([jkey(v["subject"], v["course_number"])], lut)
         for f in ("credit_status", "credit_status_mixed", "typical_units",
-                  "top_code", "noncredit_category"):
+                  "top_code", "top_code_mixed", "top_code_distribution",
+                  "noncredit_category"):
             v.pop(f, None)
         if agg:
             n_matched_sg += 1
@@ -180,6 +190,8 @@ def main():
                 v["typical_units"] = agg["typical_units"]
             if agg["top_code"]:
                 v["top_code"] = agg["top_code"]
+            if agg["top_code_mixed"]:
+                v["top_code_mixed"] = True
             if agg["noncredit_category"]:
                 v["noncredit_category"] = agg["noncredit_category"]
         else:
@@ -195,6 +207,10 @@ def main():
                                 "by UnitValue (>0 Credit else Noncredit). typical_units/top_code/"
                                 "noncredit_category are the modal value across matched member "
                                 "rows; credit_status_mixed flags members that disagree."),
+        "_topcode_note": ("TOP codes vary often for the same course — colleges assign them in "
+                          "COCI with discretion and no definitive guidance for ambiguous cases. "
+                          "top_code is the modal (plurality) pick; top_code_mixed flags spread; "
+                          "the catalog also carries top_code_distribution (code->count) when mixed."),
         "catalog_matched": n_matched_cat,
         "catalog_credit_status_distribution": dict(dist),
         "catalog_mixed_status": n_mixed,
@@ -208,6 +224,7 @@ def main():
     sg_doc["_record_defaults"]["credit_status"] = None
     sg_doc["_record_defaults"]["credit_status_mixed"] = False
     sg_doc["_record_defaults"]["top_code"] = None
+    sg_doc["_record_defaults"]["top_code_mixed"] = False
     sg_doc["_record_defaults"]["noncredit_category"] = None
 
     for path, doc in ((CATALOG, cat_doc), (SINGLETONS, sg_doc)):

@@ -345,6 +345,36 @@ produces multiple cards.
 `TOP_Code_Lookup.xlsx` (CCC Strong Workforce 10-sector framework with
 an "Academic Transfer & General Education" catch-all).
 
+**TOP code caveat — they vary for the same course.** Colleges assign TOP
+codes in COCI with discretion and no definitive guidance for ambiguous
+cases, so the *same* course often carries different TOP codes across
+colleges (in practice ~52% of consolidated M-IDs have a mixed TOP code).
+Anything that picks one TOP code for a consolidated course (e.g. the
+`top_code` on a minted M-ID) is choosing a representative, not ground
+truth — prefer the modal (plurality) pick and surface the spread
+(`top_code_mixed` / `top_code_distribution`) rather than trusting a single
+value. For broad grouping, the coarser TOP digits are more stable than the
+full 6-digit code.
+
+**Credit status derivation (CreditType rule).** MAP's course list carries a
+`CreditType` column (the funding type) and a separate `Non_Credit_Category`
+(the CDCP *program* type — Short-term Vocational, ESL, Older Adults, …).
+Credit status is derived from **`CreditType`**, not the program category:
+
+| `CreditType` | credit_status |
+|---|---|
+| `Credit Course` | **Credit** |
+| `Other Noncredit Enhanced Funding` | **Noncredit Enhanced** |
+| `Workforce Preparation Enhanced Funding` | **Noncredit Enhanced** |
+| `Non-Enhanced Funding` | **Noncredit** |
+| blank / unrecognized | by `UnitValue`: **>0 → Credit, else Noncredit** |
+
+`Non_Credit_Category` is kept as descriptive metadata (`noncredit_category`),
+not the funding signal. When members of one M-ID disagree, store the modal
+status and set `credit_status_mixed`. The three system credit statuses are
+**Credit / Noncredit / Noncredit Enhanced**. Implemented in
+`kb/_join_credit_status.py`.
+
 **Future direction — synthetic unified-title layer:** an AI-assisted
 canonicalization layer that assigns each MAP exhibit a unified title,
 issuing agency, and training agency, so all spelling/format variants
