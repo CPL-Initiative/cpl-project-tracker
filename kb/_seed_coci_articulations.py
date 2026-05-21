@@ -56,6 +56,8 @@ OUT = os.path.join(HERE, "coci_articulations.json")
 GENERATED_AT = "2026-05-21"
 GENERATED_BY = "claude-opus-4-7 (articulation crosswalk draft)"
 OVER_MERGE_SPREAD = 8  # subject_spread >= this == flagged possible over-merge (matches minting)
+# Sandbox/demo college — excluded from everything (not a real college).
+EXCLUDE_COLLEGES = {"CA MAP INITIATIVE COLLEGE"}
 
 GE_RE = re.compile(r"GETC|IGETC|\bGE\b|GE AREA|GE GROUP|^CSU|^UC\b|^LOCAL GE|^LACCD GE|^CPL$")
 FILLER = {"to", "of", "the", "a", "an", "and", "for", "in", "with", "on", "at"}
@@ -162,6 +164,8 @@ def main():
     local_titles_by_key = defaultdict(set)
     for r in cc["columnValue"]:
         coll = str(r[cci["College"]]).strip()
+        if coll.upper() in EXCLUDE_COLLEGES:
+            continue
         k = jkey(r[cci["Subject"]], r[cci["Course Number"]])
         t = str(r[cci["Course Title"]]).strip()
         key_colleges[k].add(coll)
@@ -193,8 +197,11 @@ def main():
     for r in art["columnValue"]:
         course = r[aci["Course"]]
         subj, key = parse_course(course)
-        cidn = str(r[aci["CID Number"]]).strip()
         acoll = str(r[aci["Articulation College"]]).strip()
+        if acoll.upper() in EXCLUDE_COLLEGES:   # demo/sandbox articulation — drop
+            res["excluded-sandbox-college"] += 1
+            continue
+        cidn = str(r[aci["CID Number"]]).strip()
         ex_id = str(r[aci["ExhibitID"]]).strip()
         ex_title = str(r[aci["Exhibit Title"]]).strip()
         local = recover_local_title(acoll, key)
