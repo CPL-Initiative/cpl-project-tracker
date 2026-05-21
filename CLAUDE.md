@@ -42,6 +42,9 @@ into the Pipeline Reference below or into dedicated docs.
 - Work on feature branches; open a PR to `main`.
 - Claude sessions: use `claude/<short-description>` branches (the session
   harness handles this automatically).
+- **Always watch PRs.** When a Claude session opens a PR, subscribe to its
+  activity (CI + review comments) and follow through — fixing small/clear
+  issues, asking when ambiguous — until the PR is merged or closed.
 
 ## Deployed site
 
