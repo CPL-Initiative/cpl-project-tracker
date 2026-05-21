@@ -4209,7 +4209,7 @@ def export_unified_courses():
              v.get("typical_units"), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
              v.get("corroboration_members"), v.get("confidence"), flags_of(v, mid), [mid])
     for sid, v in sg.items():
-        xrow("Singleton", sid, v.get("common_title"), disc_of(sid, v.get("discipline")), v.get("credit_status"),
+        xrow("Stand-Alone", sid, v.get("common_title"), disc_of(sid, v.get("discipline")), v.get("credit_status"),
              v.get("typical_units"), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
              1, v.get("confidence"), flags_of(v, sid), [sid])
     for uid, v in clusters.items():
