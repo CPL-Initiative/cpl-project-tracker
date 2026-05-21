@@ -35,11 +35,21 @@
     try { return JSON.parse(atob(t.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))).email || ""; }
     catch (e) { return ""; }
   }
+  // A Supabase access token is a JWT: three base64url segments, ASCII only.
+  // Reject anything else so a truncated/garbled token (e.g. a stray "…") can
+  // never reach a request header and throw the cryptic non-Latin-1 fetch error.
+  function isValidJwt(t) {
+    return typeof t === "string" &&
+      /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(t);
+  }
   function getSession() {
     try {
       var s = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
-      if (s && s.access_token && s.exp > Date.now()) return s;
+      if (s && isValidJwt(s.access_token) && s.exp > Date.now()) return s;
     } catch (e) {}
+    // No valid session — drop any stale/garbled value so the UI shows "Sign
+    // in" again instead of pretending to be signed in and breaking writes.
+    sessionStorage.removeItem("cpl_sb");
     return null;
   }
   function consumeAuthHash() {
@@ -49,7 +59,7 @@
     h.replace(/^#/, "").split("&").forEach(function (kv) {
       var a = kv.split("="); p[decodeURIComponent(a[0])] = decodeURIComponent(a[1] || "");
     });
-    if (!p.access_token) return false;
+    if (!isValidJwt(p.access_token)) return false;
     sessionStorage.setItem("cpl_sb", JSON.stringify({
       access_token: p.access_token, email: jwtEmail(p.access_token),
       exp: Date.now() + (parseInt(p.expires_in || "3600", 10) * 1000)
@@ -221,11 +231,27 @@
         s.onchange = function () {
           var val = s.value;
           if (!val) { showValue(); return; }
+          if (!session || !isValidJwt(session.access_token)) {
+            signOut(); session = null; renderAuth(); render();
+            alert("Your sign-in session is no longer valid — please sign in again.");
+            return;
+          }
           s.disabled = true;
           saveDiscipline(r.id, val, session).then(function (resp) {
             if (resp.ok) { r.disc = val; r.flags.reviewed = true; r._curated = true; showValue(); }
             else { alert("Save failed (status " + resp.status + "). Are you an allowed reviewer?"); showValue(); }
-          }).catch(function () { alert("Network error saving."); showValue(); });
+          }).catch(function (err) {
+            var m = (err && err.message) || "network error";
+            // A corrupted token throws a synchronous header error before the
+            // request leaves the browser — clear it and prompt re-sign-in.
+            if (/ISO-8859-1|headers/i.test(m)) {
+              signOut(); session = null; renderAuth(); render();
+              alert("Your sign-in session looks corrupted — you've been signed out. Please sign in again.");
+            } else {
+              alert("Could not save: " + m);
+              showValue();
+            }
+          });
         };
         s.onblur = function () { setTimeout(function () { if (td.contains(s)) showValue(); }, 150); };
       }
