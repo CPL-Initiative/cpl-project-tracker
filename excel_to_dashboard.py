@@ -4289,12 +4289,130 @@ def export_unified_courses():
                 "window.CPL_UC_INDEX = " + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n")
     print(f"  Unified Courses: wrote {out_idx} ({len(idx)} index entries)")
 
+    # ---- raw COCI course list — read ONCE, feeds descriptions + member rows ---
+    # The per-college course list carries CatalogDescription / CIDNumber /
+    # CommonCourseNumber per local course. We index it for two lazy artifacts:
+    # description fallbacks (below) and the member-college rows (further down).
+    raw_xlsx = os.path.join(kdir, "reference", "coci_course_list.xlsx")
+    _have_raw = os.path.exists(raw_xlsx)
+
+    def _nrm(x):
+        return " ".join(str(x).split()).upper() if x is not None else ""
+
+    mcolleges, mcol_idx = [], {}
+
+    def _mc(name):
+        if name not in mcol_idx:
+            mcol_idx[name] = len(mcolleges); mcolleges.append(name)
+        return mcol_idx[name]
+
+    pair_idx, cid_idx, ccn_idx = {}, {}, {}      # join key -> [member entries]
+    pair_desc, cid_desc, ccn_desc = {}, {}, {}   # join key -> longest CatalogDescription
+
+    def _keep_longest(d, key, text):
+        if text and len(text) > len(d.get(key, "")):
+            d[key] = text
+
+    if _have_raw:
+        from openpyxl import load_workbook as _load_wb
+        wb = _load_wb(raw_xlsx, read_only=True)
+        ws = wb[wb.sheetnames[0]]
+        rit = ws.iter_rows(values_only=True)
+        next(rit)  # header
+        for row in rit:
+            college, subj, num, title = row[0], row[2], row[3], row[4]
+            cid, ccn, desc = row[9], row[11], row[10]
+            if not college:
+                continue
+            code = (f"{subj} {num}".strip() if subj is not None
+                    else (str(num) if num is not None else ""))
+            ent = {"c": _mc(str(college)), "n": code, "t": title or ""}
+            su, nu = _nrm(subj), _nrm(num)
+            cidn = _nrm(cid) if cid else ""
+            ccnn = _nrm(ccn) if ccn else ""
+            dtxt = str(desc) if (desc and str(desc).strip()) else ""
+            if su or nu:
+                pair_idx.setdefault((su, nu), []).append(ent)
+                if dtxt:
+                    _keep_longest(pair_desc, (su, nu), dtxt)
+            if cidn:
+                cid_idx.setdefault(cidn, []).append(ent)
+                if dtxt:
+                    _keep_longest(cid_desc, cidn, dtxt)
+            if ccnn and ccnn != "NOT APPLICABLE":
+                ccn_idx.setdefault(ccnn, []).append(ent)
+                if dtxt:
+                    _keep_longest(ccn_desc, ccnn, dtxt)
+        wb.close()
+
+    memships = (_load("coci_minted_memberships.json") or {}).get("memberships", {})
+
+    # Normalized (subject, course_number) pairs that make up one identity id.
+    def _id_pairs(mid):
+        if mid in memships:
+            return [(_nrm(p.get("subject")), _nrm(p.get("course_number"))) for p in memships[mid]]
+        sv = sg.get(mid)
+        if sv:
+            return [(_nrm(sv.get("subject")), _nrm(sv.get("course_number")))]
+        clv = clusters.get(mid)
+        if clv:
+            out = []
+            for m in clv.get("members", []):
+                # a cluster member can be a minted M-ID OR a singleton — resolve each.
+                if m in memships:
+                    out += [(_nrm(p.get("subject")), _nrm(p.get("course_number"))) for p in memships[m]]
+                else:
+                    sv2 = sg.get(m)
+                    if sv2:
+                        out.append((_nrm(sv2.get("subject")), _nrm(sv2.get("course_number"))))
+            return out
+        return []
+
+    def _id_cid(mid):
+        cv = cc.get(mid)
+        return _nrm(cv["c_id"]) if cv and cv.get("c_id") else ""
+
+    # Member entries (college courses) for a displayed row — forward join.
+    def _row_ents(r):
+        rid, idsys = r["id"], r.get("id_system")
+        if idsys == "CCN-ID":
+            return ccn_idx.get(_nrm(rid), [])
+        if idsys == "C-ID":
+            return cid_idx.get(_id_cid(rid) or _nrm(rid), [])
+        out = []
+        for i in [rid] + merge_members.get(rid, []):
+            for p in _id_pairs(i):
+                out += pair_idx.get(p, [])
+            ck = _id_cid(i)
+            if ck:
+                out += cid_idx.get(ck, [])
+        return out
+
+    # Representative raw CatalogDescription for a row (longest among members).
+    def _row_rawdesc(r):
+        rid, idsys = r["id"], r.get("id_system")
+        if idsys == "CCN-ID":
+            return ccn_desc.get(_nrm(rid))
+        if idsys == "C-ID":
+            return cid_desc.get(_id_cid(rid) or _nrm(rid))
+        best = None
+        for i in [rid] + merge_members.get(rid, []):
+            for p in _id_pairs(i):
+                d = pair_desc.get(p)
+                if d and (best is None or len(d) > len(best)):
+                    best = d
+            ck = _id_cid(i)
+            if ck:
+                d = cid_desc.get(ck)
+                if d and (best is None or len(d) > len(best)):
+                    best = d
+        return best
+
     # ---- lazy course-description detail file --------------------------------
-    # Descriptions already exist across the staging/reference files (minted M-IDs,
-    # synthesized cluster descriptions, C-ID/CCN reference text). They're heavy
-    # (~MBs), so they live in a SEPARATE file the tab lazy-loads only when a
-    # reviewer opens the row-details modal — keeping unified_courses_data.js lean.
-    # A curated description (kb_curation field="description") overrides the base.
+    # Descriptions live in a SEPARATE file the tab lazy-loads only when a reviewer
+    # opens the row-details modal, keeping unified_courses_data.js lean. Precedence
+    # per id: curated (kb_curation) > existing layer (minted/synthesized/C-ID) >
+    # raw CatalogDescription fallback from the per-college list.
     coci_ref = (_load(os.path.join("reference", "coci_courses.json")) or {}).get("courses", {})
     base_desc = {}  # course_id -> {"d": text, "s": source}
     for mid, v in cat.items():
@@ -4310,24 +4428,38 @@ def export_unified_courses():
         if v.get("description") and ccid not in base_desc:
             base_desc[ccid] = {"d": v["description"], "s": v.get("id_system") or "COCI"}
 
-    # Only emit details for ids actually shown as rows; curation wins over the
-    # base. Iterate rows in order (not a set) so output key order is stable.
-    details = {}
-    for r in rows:
+    # Emit details for in-browser rows AND stand-alone courses (so their modal has
+    # a description too). Iterate in stable order so output key order is stable.
+    details, _filled_raw = {}, 0
+
+    def _detail_for(r):
+        nonlocal _filled_raw
         cid = r["id"]
         if cid in details:
-            continue
+            return
         cd = cur_desc_of(cid)
         if cd:
             details[cid] = {"d": cd, "s": "curated"}
         elif cid in base_desc:
             details[cid] = base_desc[cid]
+        else:
+            rd = _row_rawdesc(r)
+            if rd:
+                details[cid] = {"d": rd, "s": "local catalog (COCI)"}
+                _filled_raw += 1
+
+    for r in rows:
+        _detail_for(r)
+    for sid, v in sg.items():
+        if sid in merge_into or sid in merge_members:
+            continue
+        _detail_for({"id": sid, "id_system": "M-ID"})
     out_det = os.path.join(SCRIPT_DIR, "unified_courses_details.js")
     with open(out_det, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses descriptions — id -> {d:description, s:source}. "
                 "Lazy-loaded by the row-details modal. Curated descriptions override the base. */\n"
                 "window.CPL_UC_DETAILS = " + json.dumps(details, ensure_ascii=False, separators=(",", ":")) + ";\n")
-    print(f"  Unified Courses: wrote {out_det} ({len(details)} descriptions)")
+    print(f"  Unified Courses: wrote {out_det} ({len(details)} descriptions, {_filled_raw} filled from raw list)")
 
     # ---- lazy stand-alone (singleton) rows ----------------------------------
     # The ~57k single-college courses are deliberately kept OUT of the main
@@ -4357,91 +4489,14 @@ def export_unified_courses():
 
     # ---- lazy member-college rows (forward join to the raw COCI course list) -
     # For each displayed identity, list the member college courses that roll up
-    # to it. Forward join (identity -> its declared members -> raw rows) avoids
-    # guessing on ambiguous (subject, number) pairs: an over-merged identity may
-    # surface a course under multiple (already-flagged) cards rather than picking
-    # one. Joined by (subject, course_number) for M-ID/cluster/stand-alone, and
-    # directly on CIDNumber / CommonCourseNumber for the C-ID / CCN anchors.
-    # Emitted to a separate file the tab lazy-loads only when a row is expanded.
-    raw_xlsx = os.path.join(kdir, "reference", "coci_course_list.xlsx")
-    if os.path.exists(raw_xlsx):
-        from openpyxl import load_workbook as _load_wb
-
-        def _nrm(x):
-            return " ".join(str(x).split()).upper() if x is not None else ""
-
-        mcolleges, mcol_idx = [], {}
-
-        def _mc(name):
-            if name not in mcol_idx:
-                mcol_idx[name] = len(mcolleges); mcolleges.append(name)
-            return mcol_idx[name]
-
-        pair_idx, cid_idx, ccn_idx = {}, {}, {}
-        wb = _load_wb(raw_xlsx, read_only=True)
-        ws = wb[wb.sheetnames[0]]
-        rit = ws.iter_rows(values_only=True)
-        next(rit)  # header
-        for row in rit:
-            college, subj, num, title = row[0], row[2], row[3], row[4]
-            cid, ccn = row[9], row[11]
-            if not college:
-                continue
-            code = (f"{subj} {num}".strip() if subj is not None
-                    else (str(num) if num is not None else ""))
-            ent = {"c": _mc(str(college)), "n": code, "t": title or ""}
-            su, nu = _nrm(subj), _nrm(num)
-            if su or nu:
-                pair_idx.setdefault((su, nu), []).append(ent)
-            if cid:
-                cid_idx.setdefault(_nrm(cid), []).append(ent)
-            if ccn and _nrm(ccn) != "NOT APPLICABLE":
-                ccn_idx.setdefault(_nrm(ccn), []).append(ent)
-        wb.close()
-
-        memships = (_load("coci_minted_memberships.json") or {}).get("memberships", {})
-
-        def _pairs_ents(pairs):
-            out = []
-            for p in pairs:
-                out.extend(pair_idx.get((_nrm(p.get("subject")), _nrm(p.get("course_number"))), []))
-            return out
-
-        def _ents_for(mid):
-            """Member entries for one identity id (not a CCN/merge target)."""
-            if mid in memships:
-                return _pairs_ents(memships[mid])
-            sv = sg.get(mid)
-            if sv:
-                return pair_idx.get((_nrm(sv.get("subject")), _nrm(sv.get("course_number"))), [])
-            clv = clusters.get(mid)
-            if clv:
-                out = []
-                for m in clv.get("members", []):
-                    out.extend(_pairs_ents(memships.get(m, [])))
-                return out
-            cv = cc.get(mid)
-            if cv and cv.get("c_id"):
-                return cid_idx.get(_nrm(cv["c_id"]), [])
-            return []
-
-        def _resolve(r):
-            rid, idsys, kind = r["id"], r.get("id_system"), r.get("kind")
-            if rid in merge_members:  # reviewer-consolidated unified course
-                out = _ents_for(rid)
-                for m in merge_members[rid]:
-                    out = out + _ents_for(m)
-                return out
-            if idsys == "CCN-ID":
-                return ccn_idx.get(_nrm(rid), [])
-            if idsys == "C-ID":
-                cv = cc.get(rid, {})
-                return cid_idx.get(_nrm(cv.get("c_id") or rid), [])
-            return _ents_for(rid)
-
+    # to it (forward join via _row_ents — see the shared index build above).
+    # Forward-joining avoids guessing on ambiguous (subject, number) pairs: an
+    # over-merged identity may surface a course under multiple (already-flagged)
+    # cards rather than picking one. Lazy-loaded only when a row is expanded.
+    if _have_raw:
         members = {}
         for r in rows + sa_rows:
-            ents = _resolve(r)
+            ents = _row_ents(r)
             if not ents:
                 continue
             seen_k, deduped = set(), []
