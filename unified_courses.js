@@ -257,6 +257,47 @@
     // Live curated descriptions (course_id -> value), loaded on init + updated on
     // save; diffed against data.committed_descriptions for the pending-sync count.
     var descOverlay = {};
+    // Live discipline overlay (course_id -> row), kept so it can also be applied
+    // to stand-alone rows that load lazily after the initial fetch.
+    var liveDiscOverlay = {};
+
+    function applyDiscOverlay(targetRows) {
+      var changed = false;
+      targetRows.forEach(function (r) {
+        var o = liveDiscOverlay[r.id];
+        if (o && o.value != null) {
+          r.disc = o.value; r.flags.reviewed = true; r._curated = true;
+          r.reviewed_by = o.reviewer_email; r.reviewed_at = (o.reviewed_at || "").slice(0, 10);
+          changed = true;
+        }
+      });
+      return changed;
+    }
+
+    // Lazily pull in the ~57k single-college rows the first time the
+    // "Stand-Alone" kind filter is used, then merge them into the dataset.
+    var _standaloneLoaded = false, _standaloneP = null;
+    function loadStandalone() {
+      if (_standaloneLoaded) return Promise.resolve();
+      if (_standaloneP) return _standaloneP;
+      _standaloneP = new Promise(function (resolve) {
+        function done() {
+          var d = window.CPL_UC_STANDALONE;
+          if (d && d.rows && d.rows.length) {
+            applyDiscOverlay(d.rows);          // honor live curation on the new rows
+            Array.prototype.push.apply(rows, d.rows);
+          }
+          _standaloneLoaded = true; resolve();
+        }
+        if (window.CPL_UC_STANDALONE) { done(); return; }
+        var s = document.createElement("script");
+        s.src = "unified_courses_standalone.js";
+        s.onload = done;
+        s.onerror = function () { _standaloneLoaded = true; resolve(); };
+        document.head.appendChild(s);
+      });
+      return _standaloneP;
+    }
     // Course number parsed from the trailing digits of the ID ("M-ID EGDTEK 100" -> 100).
     function courseNum(r) { var m = String(r.id || "").match(/(\d+)\s*$/); return m ? parseInt(m[1], 10) : 0; }
     function subjKey(r) { return (r.subj || []).join("/").toLowerCase(); }
@@ -517,7 +558,7 @@
       opts.forEach(function (o) { s.appendChild(el("option", { value: o }, [o])); });
       return s;
     }
-    var fKind = sel("uc-kind", "All kinds", ["Course", "Cluster"]);
+    var fKind = sel("uc-kind", "All kinds", ["Course", "Cluster", "Stand-Alone"]);
     var fSource = sel("uc-source", "All sources", uniqSorted(rows.map(function (r) { return r.id_system; })));
     var fStatus = sel("uc-status", "All statuses", ["Verified", "Generated"]);
     var fDisc = sel("uc-disc", "All disciplines", uniqSorted(rows.map(function (r) { return r.disc; })));
@@ -835,7 +876,14 @@
       renderSyncBadge();
     }
 
-    fKind.onchange = function () { state.kind = this.value; render(); };
+    fKind.onchange = function () {
+      state.kind = this.value;
+      // Stand-Alone rows are lazy — fetch them on first selection, then render.
+      if (this.value === "Stand-Alone" && !_standaloneLoaded) {
+        summary.textContent = "Loading stand-alone courses…";
+        loadStandalone().then(render);
+      } else { render(); }
+    };
     fSource.onchange = function () { state.source = this.value; render(); };
     fStatus.onchange = function () { state.status = this.value; render(); };
     fDisc.onchange = function () { state.disc = this.value; render(); };
@@ -854,16 +902,8 @@
     scheduleRefresh();
     // Merge any live Supabase curation overlay (so curated values show before git sync)
     fetchOverlay().then(function (m) {
-      var changed = false;
-      rows.forEach(function (r) {
-        var o = m[r.id];
-        if (o && o.value != null) {
-          r.disc = o.value; r.flags.reviewed = true; r._curated = true;
-          r.reviewed_by = o.reviewer_email; r.reviewed_at = (o.reviewed_at || "").slice(0, 10);
-          changed = true;
-        }
-      });
-      if (changed) render();
+      liveDiscOverlay = m;
+      if (applyDiscOverlay(rows)) render();
     });
     // Load live curated descriptions so the pending-sync badge counts
     // description edits not yet folded into git.
