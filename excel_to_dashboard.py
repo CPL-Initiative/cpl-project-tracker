@@ -4135,6 +4135,7 @@ def export_unified_courses():
                      "units": v.get("typical_units"), "top": v.get("top_code"),
                      "subj": [v["subject"]] if v.get("subject") else [],
                      "members": v.get("corroboration_members"), "conf": v.get("confidence"),
+                     "id_system": "M-ID", "locked": False,
                      "flags": flags_of(v, mid),
                      "reviewed_by": reviewed_by_of(mid), "reviewed_at": reviewed_at_of(mid),
                      "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
@@ -4145,15 +4146,39 @@ def export_unified_courses():
                      "disc": disc_of(uid, v.get("discipline")), "credit": v.get("credit_status"),
                      "units": v.get("typical_units"), "top": v.get("top_code"),
                      "subj": v.get("subjects", []), "members": v.get("member_count"), "conf": None,
+                     "title_variants": v.get("title_variants", []),
+                     "id_system": "Cluster", "locked": False,
                      "flags": flags_of(v, uid, use_spread=False),
                      "reviewed_by": reviewed_by_of(uid), "reviewed_at": reviewed_at_of(uid),
+                     "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
+
+    # Curated common-course anchor (C-ID / CCN-ID / M-ID) — shown READ-ONLY:
+    # curation is disabled for these (common_courses.json is firewalled). Also
+    # makes the Source filter meaningful, since the COCI staging is all M-ID.
+    cc = _load("common_courses.json") or {}
+    seen = set(cat.keys()) | set(clusters.keys())
+    curated_n = 0
+    for ccid, v in cc.items():
+        if ccid in seen:
+            continue
+        curated_n += 1
+        ad, pot = rollup([ccid])
+        rows.append({"kind": "Course", "id": ccid, "title": v.get("common_title"),
+                     "disc": v.get("discipline"), "credit": None,
+                     "units": v.get("typical_units"), "top": None,
+                     "subj": [v["subject"]] if v.get("subject") else [],
+                     "members": v.get("source_college_count"), "conf": v.get("confidence"),
+                     "id_system": v.get("id_system"), "locked": True,
+                     "flags": {"over_merged": False, "credit_mixed": False, "top_mixed": False,
+                               "ncc_mixed": False, "reviewed": True},
+                     "reviewed_by": v.get("reviewed_by"), "reviewed_at": (v.get("reviewed_at") or "")[:10],
                      "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
 
     mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
     payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,
                "colleges": colleges, "mq_disciplines": sorted(mq),
                "count_inbrowser": len(rows),
-               "count_total": len(cat) + len(sg) + len(clusters),
+               "count_total": len(cat) + len(sg) + len(clusters) + curated_n,
                "export_path": "exports/unified_courses.xlsx", "rows": rows}
     with open(out_js, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses (COCI identity layer) — auto-generated. AI-assisted STAGING. */\n"

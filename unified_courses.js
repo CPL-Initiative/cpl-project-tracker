@@ -170,7 +170,10 @@
       }).catch(function () { return null; });
     }
 
-    var state = { kind: "", disc: "", credit: "", conf: "", artic: "", flagged: false, q: "", sort: "title", dir: 1 };
+    var state = { kind: "", source: "", disc: "", credit: "", conf: "", artic: "", flagged: false, q: "", sort: "subj", dir: 1 };
+    // Course number parsed from the trailing digits of the ID ("M-ID EGDTEK 100" -> 100).
+    function courseNum(r) { var m = String(r.id || "").match(/(\d+)\s*$/); return m ? parseInt(m[1], 10) : 0; }
+    function subjKey(r) { return (r.subj || []).join("/").toLowerCase(); }
 
     // ---- toolbar ----
     function sel(id, label, opts) {
@@ -180,6 +183,7 @@
       return s;
     }
     var fKind = sel("uc-kind", "All kinds", ["Course", "Cluster"]);
+    var fSource = sel("uc-source", "All sources", uniqSorted(rows.map(function (r) { return r.id_system; })));
     var fDisc = sel("uc-disc", "All disciplines", uniqSorted(rows.map(function (r) { return r.disc; })));
     var fCredit = sel("uc-credit", "All credit statuses", uniqSorted(rows.map(function (r) { return r.credit; })));
     var fConf = sel("uc-conf", "Any confidence", ["high (≥0.85)", "medium (0.7–0.84)", "low (<0.7)"]);
@@ -195,7 +199,7 @@
       title: "Download the full set (incl. singletons) as Excel" }, ["↓ Export all to .xlsx"]);
     var auth = el("span", { id: "uc-auth", class: "uc-auth" });
 
-    [fKind, fDisc, fCredit, fConf, fArtic, search, flagged, blanksBtn, auth, exportBtn]
+    [fKind, fSource, fDisc, fCredit, fConf, fArtic, search, flagged, blanksBtn, auth, exportBtn]
       .forEach(function (c) { toolbar.appendChild(c); });
 
     function renderAuth() {
@@ -228,6 +232,7 @@
     function rowFlagged(r) { var f = r.flags || {}; return !!(f.over_merged || f.credit_mixed || f.top_mixed || f.ncc_mixed); }
     function passes(r) {
       if (state.kind && r.kind !== state.kind) return false;
+      if (state.source && r.id_system !== state.source) return false;
       if (state.disc && r.disc !== state.disc) return false;
       if (state.credit && r.credit !== state.credit) return false;
       if (state.conf && confTier(r.conf) !== state.conf) return false;
@@ -256,7 +261,8 @@
       b(f.credit_mixed, "credit", "mix", "members disagree on credit status");
       b(f.top_mixed, "TOP", "mix", "members disagree on TOP code");
       b(f.ncc_mixed, "noncredit", "mix", "members disagree on noncredit category");
-      var curated = r._curated || r.reviewed_by;
+      b(r.locked, "anchor", "ok", "curated common-course anchor (" + (r.id_system || "") + ") — read-only");
+      var curated = !r.locked && (r._curated || r.reviewed_by);
       b(curated, "curated ✓", "ok",
         "discipline set" + (r.reviewed_by ? " by " + r.reviewed_by : " by a reviewer") +
         (r.reviewed_at ? " on " + r.reviewed_at : ""));
@@ -283,11 +289,14 @@
       function showValue() {
         td.innerHTML = "";
         var v = r.disc || "—";
-        if (session) {
+        if (session && !r.locked) {
           var span = el("span", { class: "uc-disc-edit", title: "Click to set discipline" }, [v]);
           span.onclick = function () { showEditor(); };
           td.appendChild(span);
-        } else { td.appendChild(document.createTextNode(v)); }
+        } else {
+          var node = el("span", r.locked ? { title: "Curated common-course anchor — read-only here" } : {}, [v]);
+          td.appendChild(node);
+        }
       }
       function showEditor() {
         td.innerHTML = "";
@@ -385,6 +394,11 @@
       var matched = rows.filter(passes);
       matched.sort(function (a, b) {
         var k = state.sort, av, bv;
+        if (k === "subj") {  // Subject(s) primary, then numeric course number.
+          var as = subjKey(a), bs = subjKey(b);
+          if (as !== bs) return (as < bs ? -1 : 1) * state.dir;
+          return (courseNum(a) - courseNum(b)) * state.dir;
+        }
         if (k === "adopted" || k === "potential") { av = (a[k] || []).length; bv = (b[k] || []).length; }
         else if (k === "members" || k === "units" || k === "conf") { av = a[k] || 0; bv = b[k] || 0; }
         else { av = (a[k] == null ? "" : String(a[k])).toLowerCase(); bv = (b[k] == null ? "" : String(b[k])).toLowerCase(); }
@@ -414,7 +428,9 @@
         tr.appendChild(el("td", {}, [r.credit || "—"]));
         tr.appendChild(el("td", {}, [r.units == null ? "—" : String(r.units)]));
         tr.appendChild(el("td", {}, [r.top || "—"]));
-        tr.appendChild(el("td", {}, [(r.subj || []).join(", ")]));
+        var subjTitle = (r.title_variants && r.title_variants.length)
+          ? r.title_variants.join("\n") : (r.title || "");
+        tr.appendChild(el("td", { title: subjTitle }, [(r.subj || []).join(", ")]));
         tr.appendChild(el("td", {}, [String(r.members == null ? "" : r.members)]));
         tr.appendChild(el("td", {}, [adoptionCell(r.adopted, "adopted")]));
         tr.appendChild(el("td", {}, [adoptionCell(r.potential, "potential")]));
@@ -427,6 +443,7 @@
     }
 
     fKind.onchange = function () { state.kind = this.value; render(); };
+    fSource.onchange = function () { state.source = this.value; render(); };
     fDisc.onchange = function () { state.disc = this.value; render(); };
     fCredit.onchange = function () { state.credit = this.value; render(); };
     fConf.onchange = function () { state.conf = this.value.split(" ")[0]; render(); };
