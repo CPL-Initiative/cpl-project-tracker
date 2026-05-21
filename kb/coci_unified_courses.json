@@ -770,7 +770,7 @@
       "top_code": "2133.10",
       "top_code_mixed": true,
       "noncredit_category": "Short-term Vocational",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID FAC 108",
@@ -1502,7 +1502,7 @@
       "top_code": "2133.10",
       "top_code_mixed": true,
       "noncredit_category": "Short-term Vocational",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID FFS 116",
@@ -3823,7 +3823,7 @@
       "top_code": "0701.00",
       "top_code_mixed": true,
       "noncredit_category": "Workforce Preparation",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID CIS 658",
@@ -9026,7 +9026,7 @@
       "top_code": "1004.00",
       "top_code_mixed": true,
       "noncredit_category": "Courses for Older Adults",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID MUS 636",
@@ -10817,7 +10817,7 @@
       "top_code": "0511.00",
       "top_code_mixed": true,
       "noncredit_category": "Short-term Vocational",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 3,
       "members": [
         "M-ID RE 130",
@@ -11709,7 +11709,7 @@
       "top_code": "0948.00",
       "top_code_mixed": true,
       "noncredit_category": "Short-term Vocational",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID AUTO 1420",
@@ -16824,7 +16824,7 @@
       "top_code": "0514.00",
       "top_code_mixed": true,
       "noncredit_category": "Workforce Preparation",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID BUS 1492",
@@ -22698,7 +22698,7 @@
       "top_code": "0514.00",
       "top_code_mixed": false,
       "noncredit_category": "Workforce Preparation",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID VOCED 304",
@@ -24346,7 +24346,7 @@
       "top_code": "1507.00",
       "top_code_mixed": true,
       "noncredit_category": "Elementary and Secondary Basic Skills",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID ENGL 1546",
@@ -29032,7 +29032,7 @@
       "top_code": "0506.40",
       "top_code_mixed": true,
       "noncredit_category": "Short-term Vocational",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID BUS 230",
@@ -29092,7 +29092,7 @@
       "top_code": "0502.00",
       "top_code_mixed": true,
       "noncredit_category": "Short-term Vocational",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID BUS 1124",
@@ -29829,7 +29829,7 @@
       "top_code": "4930.90",
       "top_code_mixed": true,
       "noncredit_category": "English as a Second Language (ESL)",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID ESL 1696",
@@ -29951,7 +29951,7 @@
       "top_code": "0511.00",
       "top_code_mixed": true,
       "noncredit_category": "Short-term Vocational",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID RE 164",
@@ -32681,7 +32681,7 @@
       "top_code": "4930.11",
       "top_code_mixed": true,
       "noncredit_category": "Elementary and Secondary Basic Skills",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID BSICSKL 242",
@@ -33910,7 +33910,7 @@
       "top_code": "0837.00",
       "top_code_mixed": true,
       "noncredit_category": "Health & Safety",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID HLTH 128",
@@ -37483,7 +37483,7 @@
       "top_code": "1012.00",
       "top_code_mixed": true,
       "noncredit_category": "Workforce Preparation",
-      "noncredit_category_mixed": false,
+      "noncredit_category_mixed": true,
       "member_count": 2,
       "members": [
         "M-ID PHOT 176",
