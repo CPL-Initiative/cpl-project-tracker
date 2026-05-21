@@ -369,10 +369,15 @@ Credit status is derived from **`CreditType`**, not the program category:
 | `Non-Enhanced Funding` | **Noncredit** |
 | blank / unrecognized | by `UnitValue`: **>0 → Credit, else Noncredit** |
 
-`Non_Credit_Category` is kept as descriptive metadata (`noncredit_category`),
-not the funding signal. When members of one M-ID disagree, store the modal
-status and set `credit_status_mixed`. The three system credit statuses are
-**Credit / Noncredit / Noncredit Enhanced**. Implemented in
+`Non_Credit_Category` is kept as descriptive metadata in **`noncredit_category`**
+(the CDCP program type — Short-term Vocational, ESL, Older Adults, …), not the
+funding signal. It is populated only where a member is offered noncredit (null
+otherwise), and — like TOP codes — it can differ across colleges, so it carries
+`noncredit_category_mixed` + (on the catalog) `noncredit_category_distribution`.
+A Credit-status M-ID may still carry a `noncredit_category` if some member
+colleges offer the course noncredit. When members of one M-ID disagree on credit
+status, store the modal status and set `credit_status_mixed`. The three system
+credit statuses are **Credit / Noncredit / Noncredit Enhanced**. Implemented in
 `kb/_join_credit_status.py`.
 
 **Future direction — synthetic unified-title layer:** an AI-assisted
