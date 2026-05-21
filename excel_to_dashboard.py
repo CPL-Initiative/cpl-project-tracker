@@ -4097,6 +4097,9 @@ def export_unified_courses():
     def reviewed_at_of(cid):
         return ((curation.get(cid) or {}).get("reviewed_at") or "")[:10]
 
+    def cur_desc_of(cid):
+        return (curation.get(cid) or {}).get("description")
+
     # Reviewer consolidations ("Generate unified course"): member course_id →
     # target unified id, from the curation overlay. Members are folded into a
     # synthesized Verified unified row keyed by the target id.
@@ -4249,6 +4252,10 @@ def export_unified_courses():
                # time) — the client diffs the live Supabase overlay against this
                # to count edits still awaiting the daily sync.
                "committed_curation": {cid: c.get("discipline") for cid, c in curation.items()},
+               # Descriptions already folded into git (kb/coci_curation.json) — the
+               # client diffs the live description overlay against this to count
+               # description edits still awaiting the daily sync.
+               "committed_descriptions": {cid: c["description"] for cid, c in curation.items() if c.get("description")},
                "export_path": "exports/unified_courses.xlsx", "rows": rows}
     with open(out_js, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses (COCI identity layer) — auto-generated. AI-assisted STAGING. */\n"
@@ -4281,6 +4288,46 @@ def export_unified_courses():
         f.write("/* Unified Courses search index — id,title,subject,kind. Lazy-loaded by the curation dialog. */\n"
                 "window.CPL_UC_INDEX = " + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n")
     print(f"  Unified Courses: wrote {out_idx} ({len(idx)} index entries)")
+
+    # ---- lazy course-description detail file --------------------------------
+    # Descriptions already exist across the staging/reference files (minted M-IDs,
+    # synthesized cluster descriptions, C-ID/CCN reference text). They're heavy
+    # (~MBs), so they live in a SEPARATE file the tab lazy-loads only when a
+    # reviewer opens the row-details modal — keeping unified_courses_data.js lean.
+    # A curated description (kb_curation field="description") overrides the base.
+    coci_ref = (_load(os.path.join("reference", "coci_courses.json")) or {}).get("courses", {})
+    base_desc = {}  # course_id -> {"d": text, "s": source}
+    for mid, v in cat.items():
+        if v.get("description"):
+            base_desc[mid] = {"d": v["description"], "s": v.get("description_source") or ""}
+    for uid, v in clusters.items():
+        if v.get("synthesized_description"):
+            base_desc[uid] = {"d": v["synthesized_description"], "s": "synthesized"}
+    for ccid, v in cc.items():
+        if v.get("description"):
+            base_desc[ccid] = {"d": v["description"], "s": v.get("description_source") or ""}
+    for ccid, v in coci_ref.items():
+        if v.get("description") and ccid not in base_desc:
+            base_desc[ccid] = {"d": v["description"], "s": v.get("id_system") or "COCI"}
+
+    # Only emit details for ids actually shown as rows; curation wins over the
+    # base. Iterate rows in order (not a set) so output key order is stable.
+    details = {}
+    for r in rows:
+        cid = r["id"]
+        if cid in details:
+            continue
+        cd = cur_desc_of(cid)
+        if cd:
+            details[cid] = {"d": cd, "s": "curated"}
+        elif cid in base_desc:
+            details[cid] = base_desc[cid]
+    out_det = os.path.join(SCRIPT_DIR, "unified_courses_details.js")
+    with open(out_det, "w", encoding="utf-8") as f:
+        f.write("/* Unified Courses descriptions — id -> {d:description, s:source}. "
+                "Lazy-loaded by the row-details modal. Curated descriptions override the base. */\n"
+                "window.CPL_UC_DETAILS = " + json.dumps(details, ensure_ascii=False, separators=(",", ":")) + ";\n")
+    print(f"  Unified Courses: wrote {out_det} ({len(details)} descriptions)")
 
     # ---- full xlsx export (Course + Cluster + Singleton, incl. college name lists) ----
     headers = ["Kind", "ID", "Title", "Discipline", "Credit Status", "Units", "TOP Code",
