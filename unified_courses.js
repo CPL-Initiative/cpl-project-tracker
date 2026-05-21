@@ -97,6 +97,21 @@
       body: JSON.stringify({ course_id: courseId, field: "discipline", value: value, reviewer_email: sess.email })
     });
   }
+  // Bulk upsert: one request writing many course_ids at once. RLS still checks
+  // each row (reviewer_email must equal the signed-in user).
+  function saveDisciplineBulk(courseIds, value, sess) {
+    var body = courseIds.map(function (cid) {
+      return { course_id: cid, field: "discipline", value: value, reviewer_email: sess.email };
+    });
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
+        "Content-Type": "application/json", "Prefer": "resolution=merge-duplicates,return=minimal"
+      },
+      body: JSON.stringify(body)
+    });
+  }
 
   function init() {
     var data = window.CPL_UNIFIED_COURSES;
@@ -205,6 +220,19 @@
       return out;
     }
 
+    // Other currently-loaded rows that are still blank and share a subject
+    // code with `row`. Used for opt-in bulk apply. NB subject codes are not
+    // globally consistent across colleges, so this is offered, never automatic.
+    function sameSubjectBlanks(row) {
+      var subs = row.subj || [];
+      if (!subs.length) return [];
+      var set = {}; subs.forEach(function (sx) { set[sx] = 1; });
+      return rows.filter(function (r2) {
+        if (r2 === row || r2.disc) return false;
+        return (r2.subj || []).some(function (sx) { return set[sx]; });
+      });
+    }
+
     // discipline cell: click-to-edit when signed in
     function disciplineCell(r) {
       var td = el("td", {});
@@ -238,8 +266,10 @@
           }
           s.disabled = true;
           saveDiscipline(r.id, val, session).then(function (resp) {
-            if (resp.ok) { r.disc = val; r.flags.reviewed = true; r._curated = true; showValue(); }
-            else { alert("Save failed (status " + resp.status + "). Are you an allowed reviewer?"); showValue(); }
+            if (resp.ok) {
+              r.disc = val; r.flags.reviewed = true; r._curated = true;
+              maybeBulkApply(r, val);
+            } else { alert("Save failed (status " + resp.status + "). Are you an allowed reviewer?"); showValue(); }
           }).catch(function (err) {
             var m = (err && err.message) || "network error";
             // A corrupted token throws a synchronous header error before the
@@ -254,6 +284,35 @@
           });
         };
         s.onblur = function () { setTimeout(function () { if (td.contains(s)) showValue(); }, 150); };
+      }
+      // After a single-course save, offer to apply the same discipline to the
+      // other currently-blank courses sharing this subject code (opt-in only;
+      // subject codes can mean different things across colleges).
+      function maybeBulkApply(row, val) {
+        var cands = sameSubjectBlanks(row);
+        if (!cands.length) { showValue(); render(); return; }
+        var subjLabel = (row.subj || []).join("/");
+        var sample = cands.slice(0, 8).map(function (c) { return "  • " + (c.title || c.id); }).join("\n");
+        var more = cands.length > 8 ? "\n  …and " + (cands.length - 8) + " more" : "";
+        var ok = window.confirm(
+          "Also apply discipline \"" + val + "\" to " + cands.length +
+          " other blank course" + (cands.length === 1 ? "" : "s") + " with subject \"" + subjLabel + "\"?\n\n" +
+          sample + more + "\n\n" +
+          "Heads up: the same subject code can mean different things at different " +
+          "colleges — cancel if any of these look unrelated.");
+        if (!ok) { showValue(); render(); return; }
+        saveDisciplineBulk(cands.map(function (c) { return c.id; }), val, session).then(function (rb) {
+          if (rb.ok) {
+            cands.forEach(function (c) { c.disc = val; c.flags.reviewed = true; c._curated = true; });
+          } else {
+            alert("Bulk apply failed (status " + rb.status + "). The single course was still saved.");
+          }
+          showValue(); render();
+        }).catch(function (err) {
+          alert("Bulk apply could not complete: " + ((err && err.message) || "network error") +
+                ". The single course was still saved.");
+          showValue(); render();
+        });
       }
       showValue();
       return td;
