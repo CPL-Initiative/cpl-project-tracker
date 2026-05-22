@@ -476,11 +476,14 @@ unmistakably **ours, not official**:
     Noncredit-Enhanced → `9XXX`; everything credit → `1XXX`. Honest with data we
     hold. `0XXX` (non-transferable) and the `1XXX` vs `2XXX` split are deferred
     until transferability/degree-applicability data is sourced/confirmed.
-  - **Subjects — standardize to CCN's 4-letter list.** ⚠ **PREREQUISITE / open
-    input:** we do **not** currently hold the authoritative CCN standardized
-    4-letter subject-abbreviation list. Sourcing it (from ASCCC/CCC Chancellor's
-    Office) is a blocking input for the re-mint; until then minted subjects fall
-    back to the local COCI subject codes.
+  - **Subjects — synthesize a 4-letter map for the M-IDs.** An authoritative
+    CCN 4-letter subject-abbreviation list does **not** appear to exist publicly
+    yet, so the re-mint will **synthetically derive** a 4-letter abbreviation per
+    minted subject from the local COCI subject codes (deterministic, collision-
+    managed, clearly **our** synthetic map — NOT the official CCN list). **C-IDs
+    stay verbatim** (not re-subjected). Revisit if an authoritative list is later
+    sourced. Like the M-numbers, document loudly that these 4-letter subjects are
+    a MAP surrogate, not a CCN claim.
   - The 3 trailing digits need a **stable, deterministic, persisted**
     within-(subject,band) sequence or codes churn each daily regen.
 - Always document loudly: **M-numbers are CCN-aligned surrogate keys, NOT a
@@ -723,7 +726,8 @@ mirroring the C-ID anchor, and are usable as ⚇ Unify merge targets.
   college-course level (unblocks crosswalk Phase C; scope before build). **Now
   also carries the M-ID CCN-aligned renumber** (`SUBJ M####`, see §10) since both
   re-key the minted identity space — do them as one re-key with an old→new alias
-  map. Blocking input: the authoritative CCN 4-letter subject-abbreviation list.
+  map. Subjects: synthesize our own 4-letter map (no authoritative CCN list
+  exists yet; see §10).
   (2) **EACR interactive re-pivot (Approach B above).** (3) **Singleton-only
   worklist follow-up** — consider a `same_college`/blank-disc filter on the
   worklist and extending V2's grouping with a description tie-breaker for the
