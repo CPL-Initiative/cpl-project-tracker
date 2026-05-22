@@ -275,12 +275,18 @@ gets the best available identifier (`id_system` records which):
    `kb/reference/ccn_courses.json` (58 courses so far — Phase II rollout).
 2. **C-ID** — a Course Identification Numbering System descriptor
    (e.g. `ACCT 110`). Authority: `kb/reference/cid_descriptors.json` (495).
-3. **M-ID** ("MAP-ID") — a synthetic, MAP-originated descriptor that
-   mimics the C-ID shape (`SUBJ NNN`) but is branded `M-ID` so it is never
-   confused with an official C-ID (e.g. `M-ID AUTO 100`). Minted **only**
-   when no CCN or C-ID aligns. It is the fallback crosswalk key that makes
-   articulations systemically adoptable from one college to many. When a
-   course later earns a CCN or C-ID, re-key it and set `id_system`.
+3. **M-ID** ("MAP-ID") — a synthetic, MAP-originated descriptor in
+   CCN-shaped 4-character form: corroborated (≥2 colleges) gets
+   `SUBJ M####` all-digit (band digit + 3-digit sequence, e.g.
+   `AUTO M1001`); stand-alone (1 college) gets `SUBJ M####` where the
+   trailing 2 chars are letters (e.g. `AUTO M10AA`). The leading `M`
+   sits where CCN puts `C`, so the key is unmistakably ours and is
+   never confused with an official CCN/C-ID. Minted **only** when no
+   CCN or C-ID aligns. It is the fallback crosswalk key that makes
+   articulations systemically adoptable from one college to many. When
+   a course later earns a CCN or C-ID, re-key it and set `id_system`.
+   (Re-mint 2026-05-22, PR #84; the prior `M-ID SUBJ NNN` format is
+   dead — `kb/remint_out/alias_map.json` carries the old→new alias.)
 
 **Discipline vocabulary** comes from the official CCC Minimum
 Qualifications Disciplines List (`kb/reference/mq_disciplines.json`, 19th

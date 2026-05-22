@@ -39,7 +39,7 @@ into the Pipeline Reference below or into dedicated docs.
    `main` caused the messy commit chain on 2026-04-19.
 
 7. **M-IDs are stable identifiers — don't renumber them casually.** The
-   2026-05-22 CourseControlNumber re-mint (PR #83) was a one-time alignment to
+   2026-05-22 CourseControlNumber re-mint (PR #84) was a one-time alignment to
    CCN-shaped 4-character keys (corroborated `SUBJ M####`, stand-alone
    `SUBJ M<band><d><LL>`). The old `M-ID SUBJ NNN` keys are dead. Future identity
    changes must be additive (incremental, alias-tracked) — never another bulk
@@ -461,7 +461,7 @@ rendering needs `poppler-utils`, absent in some session containers).
   2026/27; Phase III (55) Fall 2027.
 
 **M-ID alignment direction (LANDED 2026-05-22 in the CourseControlNumber re-mint,
-PR #83):**
+PR #84; PR #83 was the dry-run that recorded the decisions):**
 
 Our minted identities (`coci_minted_courses.json`, currently rendered
 `M-ID <SUBJ> <num>`) will adopt a CCN-*structured* surrogate format that is
@@ -741,7 +741,7 @@ mirroring the C-ID anchor, and are usable as ⚇ Unify merge targets.
   semantics + the interactive JS, and over-merge directly affects headline adoption
   numbers); confirm scope before building.
 - **Open threads (next sessions), in priority order:** (1) **`CourseControlNumber`
-  re-mint — LANDED (PR #83, 2026-05-22).** Memberships are re-keyed at the raw
+  re-mint — LANDED (PR #84, 2026-05-22).** Memberships are re-keyed at the raw
   college-course level (each member carries its own `(College, CourseControlNumber,
   C-ID/CCN)`); minted ids re-keyed to CCN-shaped surrogates (`SUBJ M####`
   corroborated / `SUBJ M<band><d><LL>` stand-alone, synthetic 4-letter SUBJ);
