@@ -521,12 +521,23 @@ re-runnable (idempotent — only fills blanks, never overwrites reviewed/curated
   groups (`unified_courses_suggestions.js`, lazy). The generator groups identities
   by a **level-safe title signature** (parentheticals removed, articles dropped,
   roman numerals → digits, tokens sorted — so "Japanese I"/"Japanese 1" group but
-  "Japanese I"/"II" do NOT), **identity-anchored** (every group has ≥1 main M-ID/
-  Cluster identity, excludes `cid_conflict` over-merges, attaches matching orphan
-  singletons), ranked by cohesion (subject + units agreement + size). The curator
-  reviews one group at a time, members pre-checked; **Confirm** reuses the
-  `doConsolidate` path (writes `merge_into`), **Skip** advances. **Never
-  auto-applied.** A **pending-sync indicator** ("⟳ N edits awaiting daily sync") +
+  "Japanese I"/"II" do NOT), ranked by cohesion (subject + units agreement + size).
+  The payload has **two sections, anchored first**: `groups` are
+  **identity-anchored** (every group has ≥1 main M-ID/Cluster identity, excludes
+  `cid_conflict` over-merges, attaches matching orphan singletons) — **Confirm
+  MERGES into that existing identity**. `singleton_groups` (V2, done 2026-05-22)
+  are **singleton-only** — ≥2 single-college Stand-Alone courses sharing a
+  signature but matching NO existing identity (~1,030 groups) — **Confirm MINTS a
+  brand-new unified course** (target left blank → `doConsolidate` generates a
+  `UC-CUR-*` id, all members get `merge_into` it + the unified title). Each
+  singleton group carries a **`same_college`** flag (set by the generator via the
+  title-filtered raw-list join: True when every member resolves to one college →
+  likely intra-college variant ladders / credit-noncredit / language pairs, NOT
+  cross-college duplicates); these are **flagged in the UI** (amber warning) and
+  **ranked last** within the section so genuine cross-college candidates surface
+  first (~869 cross-college vs ~161 same-college at last build). The curator
+  reviews one group at a time, members pre-checked; **Confirm** reuses
+  `doConsolidate`, **Skip** advances. **Never auto-applied.** A **pending-sync indicator** ("⟳ N edits awaiting daily sync") +
   **Sync now** link surface edits not yet in git (diffed against the dataset's
   `committed_curation` snapshot). The **curated common-course anchor**
   (`common_courses.json`, C-ID/CCN/M-ID) is shown **read-only** (an "anchor"
@@ -571,7 +582,7 @@ workflow `git add` list (§6):
 | `unified_courses_standalone.js` | `CPL_UC_STANDALONE` | "Stand-Alone" kind filter | ~57.7k single-college rows (kept out of the main payload) |
 | `unified_courses_members.js` | `CPL_UC_MEMBERS` | row expand caret ▸ | `id → [{c:collegeIdx,n:code,t:title,u:units,p:topcode}]` member college courses + `topmap` (TOP code→title, deduped) |
 | `unified_courses_member_desc.js` | `CPL_UC_MEMBER_DESC` | member "Show descriptions" link | `id → [desc,…]` PARALLEL to `members[id]` (each ≤500 chars) — on-demand, ~51MB so loaded only when a curator opens member descriptions |
-| `unified_courses_suggestions.js` | `CPL_UC_SUGGESTIONS` | ✨ Suggested-merges worklist | `{groups:[{sig,n,score,members:[{id,t,s,u,k,g}]}]}` — identity-anchored same-title merge candidates, ranked by cohesion |
+| `unified_courses_suggestions.js` | `CPL_UC_SUGGESTIONS` | ✨ Suggested-merges worklist | `{groups:[…], singleton_groups:[{sig,n,score,same_college,members:[{id,t,s,u,k,g}]}]}` — `groups` = identity-anchored same-title merges; `singleton_groups` (V2) = singleton-only matches that mint a NEW unified course (`same_college` flags likely intra-college variants). Ranked by cohesion |
 
 **Raw course source — `kb/reference/coci_course_list.xlsx`** (committed, ~24MB,
 141,738 rows). Cols: College, CourseControlNumber, Subject, Course_Number,
@@ -606,17 +617,24 @@ mirroring the C-ID anchor, and are usable as ⚇ Unify merge targets.
 
 **Frontier / open work:**
 
-- **Open threads (next sessions), in priority order:** (1) **Suggested-merge
-  worklist V2** — extend the worklist to the ~1,030 **singleton-only** merge
-  clusters (single-college courses that match each other but no existing
-  identity), reusing the same generator grouping + UI. (2) **Revise the dashboard
+- **Suggested-merge worklist V2 — DONE (2026-05-22).** The ~1,030
+  **singleton-only** merge clusters (single-college courses that match each other
+  but no existing identity) now surface as a second `singleton_groups` section in
+  `unified_courses_suggestions.js`, reusing the same generator grouping + UI;
+  Confirm mints a brand-new `UC-CUR-*` unified course. Same-college groups
+  (~161, likely intra-college variants) are flagged + ranked last. See the
+  "Suggested-merges worklist" bullet above for the full description.
+- **Open threads (next sessions), in priority order:** (1) **Revise the dashboard
   Articulations & Exhibits (EACR / CPL Analytics) tables to use the Unified
   Courses identity layer** — group earned articulations / exhibit credit-recs by
   unified course identity (and eventually unified credential title) instead of
   raw MAP rows, so the same course/credit-rec across colleges collapses (see §9
-  EACR Exhibit Identity + `docs/exhibit_unification_vision.md`). (3) **`CourseControlNumber`
+  EACR Exhibit Identity + `docs/exhibit_unification_vision.md`). (2) **`CourseControlNumber`
   re-mint** — the root-cause fix that re-keys memberships at the raw
   college-course level (unblocks crosswalk Phase C; scope before build).
+  (3) **Singleton-only worklist follow-up** — consider a `same_college`/blank-disc
+  filter on the worklist and extending V2's grouping with a description tie-breaker
+  for the borderline cross-college pairs.
 - **Crosswalk re-key initiative.** Use the raw list's
   `CIDNumber`/`CommonCourseNumber` to promote minted M-IDs to their real C-ID/CCN
   identity (precedence CCN > C-ID > M-ID). **Phase A — DONE (PR #66):** each row

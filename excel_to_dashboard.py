@@ -4554,16 +4554,26 @@ def export_unified_courses():
     print(f"  Unified Courses: wrote {out_idx} ({len(idx)} index entries)")
 
     # ---- suggested-merge worklist (lazy) ------------------------------------
-    # Precompute groups of identities that look like the SAME course, so a
-    # reviewer can confirm merges in one click. Grouping key is a level-SAFE
-    # title signature: parentheticals removed, articles dropped, roman numerals
+    # Precompute groups of courses that look like the SAME course, so a reviewer
+    # can confirm merges in one click. Grouping key is a level-SAFE title
+    # signature: parentheticals removed, articles dropped, roman numerals
     # normalized to digits, remaining tokens sorted — so "Japanese I"/"Japanese 1"
-    # group but "Japanese I" and "Japanese II" do NOT. Identity-anchored: every
-    # group has >=1 main-payload identity (M-ID/Cluster, not locked, not a
-    # cid_conflict over-merge) + >=2 members; orphan singletons that match an
-    # identity's signature are attached. NEVER auto-applied — purely a worklist
-    # surfaced in the tab; the curator confirms each group. (New generated file —
-    # add to the daily workflow git-add list.)
+    # group but "Japanese I" and "Japanese II" do NOT. NEVER auto-applied — purely
+    # a worklist surfaced in the tab; the curator confirms each group. (Generated
+    # file — add to the daily workflow git-add list.)
+    #
+    # Two sections (V2):
+    #  - groups  (identity-anchored) — every group has >=1 main-payload identity
+    #    (M-ID/Cluster, not locked, not a cid_conflict over-merge) + >=2 members;
+    #    orphan singletons whose signature matches an identity are attached.
+    #    Confirming MERGES into that existing identity. Higher value, shown first.
+    #  - singleton_groups (NEW in V2) — signatures with >=2 single-college
+    #    (Stand-Alone) courses that match NO existing identity. Confirming MINTS a
+    #    brand-new unified course from them. Each carries `same_college`: True when
+    #    every member resolves to one college (likely intra-college variant ladders
+    #    / credit-noncredit / language pairs, NOT cross-college duplicates) — these
+    #    are flagged in the UI and ranked last so genuine cross-college candidates
+    #    surface first. (Decision 2026-05-22: include but flag + rank last.)
     from collections import Counter as _Ctr
     _SUG_DROP = {"the", "of", "to", "and", "for", "with", "in", "a", "an", "on", "at", "as"}
     _SUG_ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5",
@@ -4573,6 +4583,14 @@ def export_unified_courses():
         t = re.sub(r"\([^)]*\)", " ", str(t or "").lower())
         t = re.sub(r"[^a-z0-9 ]+", " ", t)
         return " ".join(sorted(_SUG_ROMAN.get(w, w) for w in t.split() if w not in _SUG_DROP))
+
+    def _sug_score(members):
+        # cohesion: subject agreement (modal share) + units agreement + size.
+        subc = _Ctr(x for m in members for x in str(m["s"] or "").split(";") if x)
+        modal = (subc.most_common(1)[0][1] / len(members)) if subc else 0.0
+        us = [m["u"] for m in members if m["u"] is not None]
+        units_ok = (sum(1 for u in us if abs(u - us[0]) < 0.5) / len(members)) if us else 0.0
+        return round(0.5 * modal + 0.3 * units_ok + 0.2 * min(len(members), 10) / 10.0, 3)
 
     sug = {}
     for r in rows:
@@ -4586,35 +4604,72 @@ def export_unified_courses():
         sug.setdefault(s, {"main": [], "sing": []})["main"].append(
             {"id": r["id"], "t": r.get("title"), "s": ";".join(r.get("subj") or []),
              "u": r.get("units"), "k": r.get("id_system")})
+    # Singletons: attach to an anchored signature when one exists; otherwise
+    # bucket by signature as a singleton-only merge candidate (V2).
+    sing_only = {}
     for sid, v in sg.items():
         if sid in merge_into:
             continue
         s = _sug_sig(v.get("common_title"))
+        if not s:
+            continue
+        m = {"id": sid, "t": v.get("common_title"), "s": v.get("subject") or "",
+             "u": v.get("typical_units"), "k": "Stand-Alone", "g": 1}
         g = sug.get(s)
         if g:  # attach only to an existing main-anchored signature
-            g["sing"].append({"id": sid, "t": v.get("common_title"), "s": v.get("subject") or "",
-                              "u": v.get("typical_units"), "k": "Stand-Alone", "g": 1})
+            g["sing"].append(m)
+        else:
+            sing_only.setdefault(s, []).append(m)
 
     sug_groups = []
     for s, g in sug.items():
         members = g["main"] + g["sing"]
         if not g["main"] or len(members) < 2:
             continue
-        subc = _Ctr(x for m in members for x in str(m["s"] or "").split(";") if x)
-        modal = (subc.most_common(1)[0][1] / len(members)) if subc else 0.0
-        us = [m["u"] for m in members if m["u"] is not None]
-        units_ok = (sum(1 for u in us if abs(u - us[0]) < 0.5) / len(members)) if us else 0.0
-        score = round(0.5 * modal + 0.3 * units_ok + 0.2 * min(len(members), 10) / 10.0, 3)
-        sug_groups.append({"sig": s, "n": len(members), "score": score, "members": members})
+        sug_groups.append({"sig": s, "n": len(members), "score": _sug_score(members),
+                           "members": members})
     sug_groups.sort(key=lambda x: -x["score"])
+
+    # Singleton-only groups (>=2 stand-alone members, no anchor). Compute a
+    # same_college flag via the title-filtered forward join to the raw COCI list
+    # (the same join the member-row build uses), so intra-college variant ladders
+    # are flagged and demoted rather than presented as cross-college duplicates.
+    def _sing_colleges(sid):
+        if not _have_raw:
+            return None
+        return {ent["c"] for ent in _row_candidates({"id": sid, "id_system": "M-ID"})}
+
+    singleton_groups = []
+    for s, members in sing_only.items():
+        if len(members) < 2:
+            continue
+        cols = set()
+        for m in members:
+            c = _sing_colleges(m["id"])
+            if c:
+                cols |= c
+        # same_college True only when we positively resolved colleges and they
+        # collapse to one; unknown (raw list absent / no match) -> not flagged.
+        same_college = bool(cols) and len(cols) <= 1
+        singleton_groups.append({"sig": s, "n": len(members), "score": _sug_score(members),
+                                 "same_college": same_college, "members": members})
+    # Cross-college candidates first (by cohesion); flagged same-college last.
+    singleton_groups.sort(key=lambda x: (x["same_college"], -x["score"]))
+
     out_sug = os.path.join(SCRIPT_DIR, "unified_courses_suggestions.js")
+    _sc_flagged = sum(1 for g in singleton_groups if g["same_college"])
     sug_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
-                   "count": len(sug_groups), "groups": sug_groups}
+                   "count": len(sug_groups), "groups": sug_groups,
+                   "singleton_count": len(singleton_groups),
+                   "singleton_groups": singleton_groups}
     with open(out_sug, "w", encoding="utf-8") as f:
-        f.write("/* Unified Courses suggested-merge worklist — lazy-loaded. Identity-anchored "
-                "same-title groups; HUMAN-CONFIRMED in the tab, NEVER auto-applied. */\n"
+        f.write("/* Unified Courses suggested-merge worklist — lazy-loaded. groups = "
+                "identity-anchored same-title merges; singleton_groups = NEW unified "
+                "courses minted from single-college matches (same_college flag = likely "
+                "intra-college variants). HUMAN-CONFIRMED in the tab, NEVER auto-applied. */\n"
                 "window.CPL_UC_SUGGESTIONS = " + json.dumps(sug_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
-    print(f"  Unified Courses: wrote {out_sug} ({len(sug_groups)} suggested-merge groups)")
+    print(f"  Unified Courses: wrote {out_sug} ({len(sug_groups)} anchored + "
+          f"{len(singleton_groups)} singleton-only groups [{_sc_flagged} same-college flagged])")
 
     mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
     payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,
