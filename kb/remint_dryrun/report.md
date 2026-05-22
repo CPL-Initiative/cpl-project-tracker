@@ -22,16 +22,19 @@ that yields more than one distinct new identity is a **1:many split**.
 
 Old M-IDs: 14,754 corroborated + 57,727 singletons.
 New minted identities: 72,481
-(noncredit→9xxx: 10,183; credit→1xxx: 62,298).
+(16,308 corroborated → clean 4-digit
+`M####`; 56,173 singleton → `Ms#####` key.
+noncredit→9xxx: 10,183; credit→1xxx:
+62,298).
 
 ## The 6 curation entries (decision-critical)
 | key | kind | fate | new id(s) | merge_into |
 |---|---|---|---|---|
-| `M-ID AB 100` | M-ID | rename | `AB M10001` | merge_into `UC-CUR-MPG029OM` (M-ID? False) |
-| `M-ID ABDY 100` | M-ID | rename | `ABDY M10001` | merge_into `UC-CUR-MPG029OM` (M-ID? False) |
-| `M-ID ABDY 106` | M-ID | rename | `ABDY M10002` | merge_into `UC-CUR-MPG029OM` (M-ID? False) |
-| `M-ID BSICSKL 100` | M-ID | rename | `BSIC M90001` | — |
-| `M-ID EGDTEK 100` | M-ID | rename | `EGDT M10001` | — |
+| `M-ID AB 100` | M-ID | rename | `AB M1001` | merge_into `UC-CUR-MPG029OM` (M-ID? False) |
+| `M-ID ABDY 100` | M-ID | rename | `ABDY M1001` | merge_into `UC-CUR-MPG029OM` (M-ID? False) |
+| `M-ID ABDY 106` | M-ID | rename | `ABDY Ms100001` | merge_into `UC-CUR-MPG029OM` (M-ID? False) |
+| `M-ID BSICSKL 100` | M-ID | rename | `BSIC M9001` | — |
+| `M-ID EGDTEK 100` | M-ID | rename | `EGDT M1001` | — |
 | `UC-CUR-MPG029OM` | cluster | not an M-ID — key is stable, not re-keyed | — | — |
 
 All five curated **M-ID** keys map **1:1 (rename)** — none split — and every
@@ -40,54 +43,52 @@ All five curated **M-ID** keys map **1:1 (rename)** — none split — and every
 human layer is therefore: rewrite the 5 curation **keys** (git + Supabase),
 leave all `merge_into` values untouched.
 
-## ⚠ Open decision — the credit numbering bucket
-Banding `credit_status` is clean for **noncredit** (→ `9xxx`). But **credit**
-minted identities (62,298 of them) do NOT fit a
-CCN-style 4-digit-per-subject code: a `SUBJ C####` allows only **999** per
-(subject, band), and our minted space blows past that.
+## Numbering scheme (option 1, confirmed)
+CCN's `SUBJ C####` is **4 digits**: the leading digit is the band (level/credit
+meaning), the next 3 are the within-(subject,band) sequence. Our minted tier
+mirrors that:
 
-- max identities in one (subject, band) bucket — **ALL**: 1,928
-- max — **corroborated-only** (drop singletons): 496
-- (subject,band) buckets over 999 — ALL: 6 · corroborated-only: 0
-- top buckets: ART 1=1928, DANC 1=1291, MUS 1=1196, ENGL 1=1191, KIN 1=1179, MATH 1=1087, CIS 1=985, AUTO 1=847, ESL 1=819, HIST 1=750
+- **Corroborated** M-IDs (≥2 colleges) → clean 4-digit `SUBJ M<band><seq:03d>`
+  — leading `9` = noncredit, `1` = credit; 3-digit sequence. Max per
+  (subject,band) = **496** (< 1,000),
+  so it fits with room to spare. Buckets over 999: none.
+  Top buckets: ART 1=496, ENGL 1=350, KIN 1=335, DANC 1=329, MATH 1=306, MUS 1=304, CIS 1=270, ESL 1=268, FIRE 1=222, MUSI 1=209.
+- **Singletons** (1 college) → `SUBJ Ms<band><seq:05d>`. A single-college course
+  is not a "common" course, so it is deliberately kept **off** the clean 4-digit
+  `M####` space and marked `Ms` (minted-singleton). If a second college later
+  joins the title, it promotes to a corroborated `M####`.
 
-This run used an overflow-safe **4-digit** sequence
-(`SUBJ4 M1000…`), which is wider than CCN's 4 digits
-— so the codes are valid + unique but no longer 4-digit-CCN-shaped. **Options to
-confirm before apply:** (a) accept the wider non-4-digit minted number (still
-unmistakably ours via the `M`); (b) give only the 14,754
-**corroborated** M-IDs a formal `M####` and keep singletons on a lighter key;
-(c) drop the per-subject band entirely for credit (only noncredit carries the
-`9` band) and sequence credit globally per subject.
+`9` (noncredit) is the only asserted band; `1` (credit) is a non-semantic bucket
+(no transferability claim — the `M` already disclaims CCN equivalence).
 
 ## Splits to review (first 25 of 2,083)
 | old M-ID | title | new identities |
 |---|---|---|
-| `M-ID AAD 112` | Introduction to Digital Painting | `DART M10056`, `C-ID:ARTS 250` |
-| `M-ID ABE 112` | American Literature | `ABE M90014`, `C-ID:ENGL 130`, `C-ID:ENGL 135` |
-| `M-ID ABE 146` | Microsoft Word I | `BT M10010`, `C-ID:BSOT 111 X` |
-| `M-ID ABT 112` | Introduction to Agriculture Business | `ABT M10014`, `C-ID:AG-AB 104`, `C-ID:AG-AS 104`, `C-ID:AG-PS 104 104` |
-| `M-ID ABT 124` | Plant Science | `AGPS M10011`, `C-ID:AG-EH 108 108 L`, `C-ID:AG-PS 104 104`, `C-ID:AG-PS 106 106 L` |
-| `M-ID ABT 126` | Soil Science | `AG M10103`, `C-ID:AG-PS 128 128 L` |
-| `M-ID ACC 116` | Principles of Accounting I | `ACC M10010`, `C-ID:ACCT 110` |
-| `M-ID ACC 118` | Principles of Accounting II | `ACC M10011`, `C-ID:ACCT 120` |
-| `M-ID ACCT 190` | Financial Accounting | `ACCT M10121`, `C-ID:ACCT 110` |
-| `M-ID ACCT 192` | Financial Accounting - Honors | `ACCT M10125`, `C-ID:ACCT 110` |
-| `M-ID ACCT 194` | Financial Accounting I | `ACCT M10126`, `C-ID:ACCT 110` |
-| `M-ID ACCT 218` | Honors Financial Accounting | `ACCT M10146`, `C-ID:ACCT 110` |
-| `M-ID ACCT 258` | Managerial Accounting | `ACCT M10206`, `C-ID:ACCT 120` |
-| `M-ID ACCT 260` | Managerial Accounting - Honors | `ACCT M10207`, `C-ID:ACCT 120` |
-| `M-ID ACCT 274` | Principles of Accounting-Financial | `VOC M90109`, `C-ID:ACCT 110` |
-| `M-ID ACCT 276` | Principles of Accounting-Managerial | `ACCT M10228`, `C-ID:ACCT 120` |
-| `M-ID ACCTG 122` | Introductory Accounting I | `ACCT M10203`, `C-ID:ACCT 110` |
-| `M-ID ACCTG 124` | Introductory Accounting II | `ACCT M10204`, `C-ID:ACCT 110`, `C-ID:ACCT 120` |
-| `M-ID ACTG 106` | Financial Accounting II | `ACTG M10019`, `C-ID:ACCT 110` |
-| `M-ID AD 100` | Case Management and Documentation | `ADDI M10008`, `C-ID:ADS 170 X` |
-| `M-ID ADDICST 118` | Understanding Addiction and Counseling | `ADDI M10021`, `C-ID:PH 103` |
-| `M-ID ADED 100` | First Aid, CPR, and AED | `EMT M10040`, `C-ID:KIN 101` |
-| `M-ID ADJ 104` | Basic Criminal Investigation | `ADJ M10003`, `C-ID:AJ 140` |
-| `M-ID ADJ 114` | Concepts of Criminal Law | `AJ M10058`, `C-ID:AJ 120` |
-| `M-ID ADJ 118` | Crime Scene Investigation | `LE M10017`, `C-ID:AJ 150` |
+| `M-ID AAD 112` | Introduction to Digital Painting | `DART M1005`, `C-ID:ARTS 250` |
+| `M-ID ABE 112` | American Literature | `ABE M9005`, `C-ID:ENGL 130`, `C-ID:ENGL 135` |
+| `M-ID ABE 146` | Microsoft Word I | `BT M1005`, `C-ID:BSOT 111 X` |
+| `M-ID ABT 112` | Introduction to Agriculture Business | `ABT M1002`, `C-ID:AG-AB 104`, `C-ID:AG-AS 104`, `C-ID:AG-PS 104 104` |
+| `M-ID ABT 124` | Plant Science | `AGPS M1002`, `C-ID:AG-EH 108 108 L`, `C-ID:AG-PS 104 104`, `C-ID:AG-PS 106 106 L` |
+| `M-ID ABT 126` | Soil Science | `AG M1022`, `C-ID:AG-PS 128 128 L` |
+| `M-ID ACC 116` | Principles of Accounting I | `ACC M1004`, `C-ID:ACCT 110` |
+| `M-ID ACC 118` | Principles of Accounting II | `ACC M1005`, `C-ID:ACCT 120` |
+| `M-ID ACCT 190` | Financial Accounting | `ACCT M1047`, `C-ID:ACCT 110` |
+| `M-ID ACCT 192` | Financial Accounting - Honors | `ACCT M1048`, `C-ID:ACCT 110` |
+| `M-ID ACCT 194` | Financial Accounting I | `ACCT M1049`, `C-ID:ACCT 110` |
+| `M-ID ACCT 218` | Honors Financial Accounting | `ACCT M1060`, `C-ID:ACCT 110` |
+| `M-ID ACCT 258` | Managerial Accounting | `ACCT M1082`, `C-ID:ACCT 120` |
+| `M-ID ACCT 260` | Managerial Accounting - Honors | `ACCT M1083`, `C-ID:ACCT 120` |
+| `M-ID ACCT 274` | Principles of Accounting-Financial | `VOC M9008`, `C-ID:ACCT 110` |
+| `M-ID ACCT 276` | Principles of Accounting-Managerial | `ACCT M1092`, `C-ID:ACCT 120` |
+| `M-ID ACCTG 122` | Introductory Accounting I | `ACCT M1080`, `C-ID:ACCT 110` |
+| `M-ID ACCTG 124` | Introductory Accounting II | `ACCT M1081`, `C-ID:ACCT 110`, `C-ID:ACCT 120` |
+| `M-ID ACTG 106` | Financial Accounting II | `ACTG M1003`, `C-ID:ACCT 110` |
+| `M-ID AD 100` | Case Management and Documentation | `ADDI M1003`, `C-ID:ADS 170 X` |
+| `M-ID ADDICST 118` | Understanding Addiction and Counseling | `ADDI M1011`, `C-ID:PH 103` |
+| `M-ID ADED 100` | First Aid, CPR, and AED | `EMT M1015`, `C-ID:KIN 101` |
+| `M-ID ADJ 104` | Basic Criminal Investigation | `ADJ M1001`, `C-ID:AJ 140` |
+| `M-ID ADJ 114` | Concepts of Criminal Law | `AJ M1010`, `C-ID:AJ 120` |
+| `M-ID ADJ 118` | Crime Scene Investigation | `LE M1008`, `C-ID:AJ 150` |
 
 ## How the apply step will treat each layer (per your instruction)
 - **Machine layers** (memberships, `coci_articulations`, minted catalog /
