@@ -593,10 +593,21 @@ mirroring the C-ID anchor, and are usable as ⚇ Unify merge targets.
   rows show a `⛓ N merged` badge (`unified_courses.js`). Regen-safe / no KB
   mutation / reversible. Guardrail honored: only **clean unanimous** matches —
   the 235 `cid_conflict` rows are never touched; a lone M-ID with no anchor
-  keeps just its Phase A badge (no synthetic relabel). **Phase C (next):** split
-  the conflicting M-IDs (optionally with the description tie-breaker below). Root
-  cause all this addresses: the lossy `(subject,number)` membership key (a
-  `CourseControlNumber`-based remint would fix it at source).
+  keeps just its Phase A badge (no synthetic relabel). **Phase C — PARKED
+  (2026-05-22, informed decision).** Splitting the `cid_conflict` / no-official-ID
+  rows is deferred; conflicts stay safely surfaced via the existing "C-ID
+  conflict — do not promote" badge + filter, and Phase B (clean official-ID
+  consolidation) remains the automatic stopping point. **Root cause:** the
+  membership key is `(subject, number)`, which is **lossy** — the same key is a
+  different course across colleges (`ACCT 110` at one, `ACCT 120` at another), so
+  conflicts **cannot be split at the generator level**. It's a key-granularity
+  problem, not a similarity one, so a description tie-breaker can't fix it.
+  **Numbers:** 231 conflicts across 2,274 member pairs; ~60% carry any C-ID,
+  ~32% (718) map to >1 C-ID themselves, only ~29% cleanly extractable. **Real
+  fix (its own project — scope before any build):** a `CourseControlNumber`-
+  grained re-mint that rebuilds memberships at the raw college-course level so
+  each member carries its own C-ID (the per-college COCI course list, which
+  carries the control number, is the likely input). NOT a generator post-pass.
 - Refine + curate the articulation crosswalk — precise title-based
   disambiguation when a `(subject, number)` maps to multiple M-IDs, carry
   confidence/`*_mixed`/over-merge flags onto each record, never emit an adoption

@@ -88,6 +88,15 @@ with authoritative C-ID descriptor text (now carried in
 C-ID sibling's description (23 total). Synthetic M-ID descriptions are
 deferred to the Phase 3 classification pass.
 
+**Backlog — crosswalk Phase C is PARKED (2026-05-22):** splitting the
+`cid_conflict` rows can't be done at the generator level because the
+`(subject, number)` membership key is lossy (same key = different course across
+colleges; ~32% of conflict member-pairs map to >1 C-ID). The real fix is a
+`CourseControlNumber`-grained re-mint of memberships (its own project — scope
+before build). Conflicts stay safely surfaced via the "C-ID conflict" badge;
+Phase B clean consolidation is the automatic stopping point. See CLAUDE.md
+"Crosswalk re-key initiative" for the full diagnosis.
+
 ## Schemas
 
 ### `unified_titles.json`
