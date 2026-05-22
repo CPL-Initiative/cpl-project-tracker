@@ -152,20 +152,28 @@ def main():
         cs = e["credit"].most_common(1)[0][0]
         band = "9" if cs in ("Noncredit", "Noncredit Enhanced") else "1"
         minted_meta[nt] = (s4, cs, band, e["minted_n"] >= 2)
-    # Bucket sizing (informs the numbering-scheme decision). A CCN-style 4-digit
-    # code allows only 999 per (subject, band); measure how far the minted space
-    # blows past that, and how much smaller the corroborated-only space is.
-    bucket_all = Counter((m[0], m[2]) for m in minted_meta.values())
-    bucket_corr = Counter((m[0], m[2]) for m in minted_meta.values() if m[3])
-    max_bucket = max(bucket_all.values()) if bucket_all else 0
-    max_bucket_corr = max(bucket_corr.values()) if bucket_corr else 0
-    seq_width = max(4, len(str(max_bucket)))  # overflow-safe uniform width
-    seq = defaultdict(int)
+    # Numbering scheme (option 1, confirmed 2026-05-22):
+    #   corroborated new clusters (>=2 minted rows) -> clean CCN-width 4-digit
+    #     "<SUBJ4> M<band><seq:03d>": leading digit = band (9 noncredit / 1 credit),
+    #     3-digit within-(subject,band) sequence. Corroborated max bucket = 496 < 1000.
+    #   singletons (1 minted row) -> distinct, deliberately-NOT-CCN-shaped key
+    #     "<SUBJ4> Ms<band><seq:05d>" (the 's' marks single-college; a 1-college
+    #     course is not a "common" course). Kept off the clean M#### space.
+    seq_corr = defaultdict(int)
+    seq_sing = defaultdict(int)
     new_code = {}
+    over_corr = []
     for nt in sorted(minted_meta):
-        s4, cs, band, _corr = minted_meta[nt]
-        seq[(s4, band)] += 1
-        new_code[nt] = f"{s4} M{band}{seq[(s4, band)]:0{seq_width}d}"
+        s4, cs, band, corr = minted_meta[nt]
+        if corr:
+            seq_corr[(s4, band)] += 1
+            n = seq_corr[(s4, band)]
+            if n > 999:
+                over_corr.append((s4, band, n))
+            new_code[nt] = f"{s4} M{band}{n:03d}"
+        else:
+            seq_sing[(s4, band)] += 1
+            new_code[nt] = f"{s4} Ms{band}{seq_sing[(s4, band)]:05d}"
 
     # Classify every old M-ID.
     classes = Counter()
@@ -216,24 +224,23 @@ def main():
             entry["merge_into_is_m_id"] = mi.startswith("M-ID ")
         curation_report[key] = entry
 
-    top_buckets = sorted(bucket_all.items(), key=lambda kv: -kv[1])[:10]
+    new_corr = sum(1 for m in minted_meta.values() if m[3])
+    new_sing = len(minted_meta) - new_corr
+    top_corr = sorted(seq_corr.items(), key=lambda kv: -kv[1])[:10]
     summary = {
         "old_m_ids_total": len(old),
         "corroborated": len(cat),
         "singletons": len(sing),
         "classes": dict(classes),
         "new_minted_identities": len(new_code),
+        "new_minted_corroborated_clean_M####": new_corr,
+        "new_minted_singleton_Ms_key": new_sing,
         "new_minted_noncredit_9xxx": sum(1 for nt in new_code if minted_meta[nt][2] == "9"),
         "new_minted_credit_1xxx": sum(1 for nt in new_code if minted_meta[nt][2] == "1"),
-        "numbering": {
-            "seq_width_used": seq_width,
-            "max_per_subject_band_ALL": max_bucket,
-            "max_per_subject_band_CORROBORATED_only": max_bucket_corr,
-            "ccn_4digit_capacity_per_subject_band": 999,
-            "buckets_over_999_ALL": sum(1 for v in bucket_all.values() if v > 999),
-            "buckets_over_999_CORROBORATED_only": sum(1 for v in bucket_corr.values() if v > 999),
-            "top10_buckets_ALL": [{"subj_band": f"{s} {b}", "n": v} for (s, b), v in top_buckets],
-        },
+        "numbering_scheme": "option 1: corroborated -> '<SUBJ4> M<band><seq:03d>' (clean 4-digit); singleton -> '<SUBJ4> Ms<band><seq:05d>'",
+        "corroborated_max_per_subject_band": max(seq_corr.values()) if seq_corr else 0,
+        "corroborated_buckets_over_999": over_corr,
+        "top10_corroborated_buckets": [{"subj_band": f"{s} {b}", "n": v} for (s, b), v in top_corr],
     }
 
     alias_doc = {
@@ -247,7 +254,6 @@ def main():
         json.dump(alias_doc, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
-    nb = summary["numbering"]
     cur_lines = []
     for k, v in curation_report.items():
         m = v["mapping"]
@@ -283,7 +289,10 @@ that yields more than one distinct new identity is a **1:many split**.
 
 Old M-IDs: {summary['corroborated']:,} corroborated + {summary['singletons']:,} singletons.
 New minted identities: {summary['new_minted_identities']:,}
-(noncredit→9xxx: {summary['new_minted_noncredit_9xxx']:,}; credit→1xxx: {summary['new_minted_credit_1xxx']:,}).
+({summary['new_minted_corroborated_clean_M####']:,} corroborated → clean 4-digit
+`M####`; {summary['new_minted_singleton_Ms_key']:,} singleton → `Ms#####` key.
+noncredit→9xxx: {summary['new_minted_noncredit_9xxx']:,}; credit→1xxx:
+{summary['new_minted_credit_1xxx']:,}).
 
 ## The 6 curation entries (decision-critical)
 | key | kind | fate | new id(s) | merge_into |
@@ -296,25 +305,23 @@ All five curated **M-ID** keys map **1:1 (rename)** — none split — and every
 human layer is therefore: rewrite the 5 curation **keys** (git + Supabase),
 leave all `merge_into` values untouched.
 
-## ⚠ Open decision — the credit numbering bucket
-Banding `credit_status` is clean for **noncredit** (→ `9xxx`). But **credit**
-minted identities ({summary['new_minted_credit_1xxx']:,} of them) do NOT fit a
-CCN-style 4-digit-per-subject code: a `SUBJ C####` allows only **999** per
-(subject, band), and our minted space blows past that.
+## Numbering scheme (option 1, confirmed)
+CCN's `SUBJ C####` is **4 digits**: the leading digit is the band (level/credit
+meaning), the next 3 are the within-(subject,band) sequence. Our minted tier
+mirrors that:
 
-- max identities in one (subject, band) bucket — **ALL**: {nb['max_per_subject_band_ALL']:,}
-- max — **corroborated-only** (drop singletons): {nb['max_per_subject_band_CORROBORATED_only']:,}
-- (subject,band) buckets over 999 — ALL: {nb['buckets_over_999_ALL']} · corroborated-only: {nb['buckets_over_999_CORROBORATED_only']}
-- top buckets: {', '.join(f"{b['subj_band']}={b['n']}" for b in nb['top10_buckets_ALL'])}
+- **Corroborated** M-IDs (≥2 colleges) → clean 4-digit `SUBJ M<band><seq:03d>`
+  — leading `9` = noncredit, `1` = credit; 3-digit sequence. Max per
+  (subject,band) = **{summary['corroborated_max_per_subject_band']}** (< 1,000),
+  so it fits with room to spare. Buckets over 999: {summary['corroborated_buckets_over_999'] or 'none'}.
+  Top buckets: {', '.join(f"{b['subj_band']}={b['n']}" for b in summary['top10_corroborated_buckets'])}.
+- **Singletons** (1 college) → `SUBJ Ms<band><seq:05d>`. A single-college course
+  is not a "common" course, so it is deliberately kept **off** the clean 4-digit
+  `M####` space and marked `Ms` (minted-singleton). If a second college later
+  joins the title, it promotes to a corroborated `M####`.
 
-This run used an overflow-safe **{nb['seq_width_used']}-digit** sequence
-(`SUBJ4 M1{'0'*(nb['seq_width_used']-1)}…`), which is wider than CCN's 4 digits
-— so the codes are valid + unique but no longer 4-digit-CCN-shaped. **Options to
-confirm before apply:** (a) accept the wider non-4-digit minted number (still
-unmistakably ours via the `M`); (b) give only the {summary['corroborated']:,}
-**corroborated** M-IDs a formal `M####` and keep singletons on a lighter key;
-(c) drop the per-subject band entirely for credit (only noncredit carries the
-`9` band) and sequence credit globally per subject.
+`9` (noncredit) is the only asserted band; `1` (credit) is a non-semantic bucket
+(no transferability claim — the `M` already disclaims CCN equivalence).
 
 ## Splits to review (first {len(split_lines)} of {classes.get('split',0):,})
 | old M-ID | title | new identities |
@@ -335,10 +342,10 @@ unmistakably ours via the `M`); (b) give only the {summary['corroborated']:,}
     print("\n=== DISTRIBUTION ===")
     for k in ("rename", "vanish_to_official", "split", "orphan"):
         print(f"  {k:20} {classes.get(k,0):,}")
-    print(f"\nnew minted: {len(new_code):,} (noncredit 9xxx {summary['new_minted_noncredit_9xxx']:,}, "
-          f"credit 1xxx {summary['new_minted_credit_1xxx']:,})")
-    print(f"numbering: width {seq_width}, max/bucket ALL {max_bucket:,}, "
-          f"corroborated-only {max_bucket_corr:,}, buckets>999 ALL {nb['buckets_over_999_ALL']}")
+    print(f"\nnew minted: {len(new_code):,} (corroborated clean M#### {summary['new_minted_corroborated_clean_M####']:,}, "
+          f"singleton Ms##### {summary['new_minted_singleton_Ms_key']:,})")
+    print(f"corroborated max per (subj,band): {summary['corroborated_max_per_subject_band']} "
+          f"(buckets>999: {summary['corroborated_buckets_over_999'] or 'none'})")
     print("\n=== 6 CURATION ENTRIES ===")
     for k, v in curation_report.items():
         m = v["mapping"]
