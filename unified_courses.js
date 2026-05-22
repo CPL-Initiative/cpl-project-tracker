@@ -226,6 +226,22 @@
     });
     return _ucMembersP;
   }
+  // Lazy-load the precomputed suggested-merge worklist — only when the curator
+  // opens it. Identity-anchored same-title groups; human-confirmed, never auto.
+  var _ucSug = null, _ucSugP = null;
+  function loadSuggestions() {
+    if (_ucSug) return Promise.resolve(_ucSug);
+    if (_ucSugP) return _ucSugP;
+    _ucSugP = new Promise(function (resolve) {
+      if (window.CPL_UC_SUGGESTIONS) { _ucSug = window.CPL_UC_SUGGESTIONS; resolve(_ucSug); return; }
+      var s = document.createElement("script");
+      s.src = "unified_courses_suggestions.js";
+      s.onload = function () { _ucSug = window.CPL_UC_SUGGESTIONS || { groups: [] }; resolve(_ucSug); };
+      s.onerror = function () { _ucSug = { groups: [] }; resolve(_ucSug); };
+      document.head.appendChild(s);
+    });
+    return _ucSugP;
+  }
   function normTitle(t) {
     return (t || "").toLowerCase().replace(/\([^)]*\)/g, " ").replace(/[^a-z0-9 ]+/g, " ")
       .replace(/\b(i|ii|iii|iv|v|a|b|c|advanced|beginning|intermediate|introduction|introductory|basic|fundamentals|principles|topics)\b/g, " ")
@@ -493,7 +509,7 @@
         titleIn.focus();
       });
     }
-    function doConsolidate(chosen, title, disc, identity, close) {
+    function doConsolidate(chosen, title, disc, identity, close, quiet) {
       var ids = Object.keys(chosen);
       if (ids.length < 2) { alert("Select at least two courses to consolidate."); return; }
       ensureFresh().then(function (sess) {
@@ -516,8 +532,90 @@
           urow.title_variants = variants; urow._mergedAway = false; urow._curated = true;
           urow.flags = urow.flags || {}; urow.flags.reviewed = true; urow.reviewed_by = sess.email; urow.reviewed_at = today();
           close(); render();
-          alert("Consolidated " + ids.length + " courses. The unified course will fully materialize on the next daily sync (or via Sync now).");
+          if (!quiet) alert("Consolidated " + ids.length + " courses. The unified course will fully materialize on the next daily sync (or via Sync now).");
         }).catch(function (e) { alert("Could not save consolidation: " + ((e && e.message) || "network error")); });
+      });
+    }
+
+    // ---- Suggested-merge worklist -------------------------------------------
+    // A review queue over the precomputed identity-anchored same-title groups.
+    // One group at a time, best-scored first; members pre-checked; Confirm reuses
+    // doConsolidate (writes merge_into); Skip advances. NEVER auto-applies.
+    function openSuggestions() {
+      if (!session) return;
+      var dim = "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;";
+      var boxCss = "background:#fff;max-width:720px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;";
+      var goCss = "padding:7px 14px;border:none;border-radius:6px;background:#0A2240;color:#C9A84C;font-weight:600;cursor:pointer;";
+      var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;";
+      loadSuggestions().then(function (data) {
+        var groups = (data.groups || []);
+        if (!groups.length) { alert("No suggested merges available in this build."); return; }
+        var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
+        var mergedAway = function (id) { return byId[id] && byId[id]._mergedAway; };
+        function liveMembers(g) { return g.members.filter(function (m) { return !mergedAway(m.id); }); }
+        function bestTitle(g) {
+          return g.members.map(function (m) { return m.t || ""; })
+            .sort(function (a, b) { return b.length - a.length; })[0] || g.members[0].id;
+        }
+        var i = 0;
+        var overlay = el("div", { style: dim });
+        var box = el("div", { style: boxCss }); overlay.appendChild(box);
+        function close() { if (overlay.parentNode) document.body.removeChild(overlay); render(); }
+        overlay.onclick = function (e) { if (e.target === overlay) close(); };
+
+        function renderGroup() {
+          box.innerHTML = "";
+          while (i < groups.length && liveMembers(groups[i]).length < 2) i++;
+          if (i >= groups.length) {
+            box.appendChild(el("h3", { style: "margin:0 0 8px;color:#0A2240;" }, ["Suggested merges"]));
+            box.appendChild(el("p", { style: "color:#6b7280;" }, ["End of the worklist — nice work. New suggestions regenerate on the next daily build."]));
+            var d = el("button", { style: goCss }, ["Done"]); d.onclick = close; box.appendChild(d);
+            return;
+          }
+          var g = groups[i], mems = liveMembers(g);
+          box.appendChild(el("h3", { style: "margin:0 0 2px;color:#0A2240;" }, ["Suggested merge " + (i + 1) + " of " + groups.length]));
+          box.appendChild(el("p", { style: "margin:0 0 10px;color:#6b7280;" },
+            ["Same-title candidates (confidence score " + g.score + "). Uncheck any that differ, then Confirm — or Skip. Nothing is applied until you confirm."]));
+          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:6px 0 2px;" }, ["Unified title"]));
+          var titleIn = el("input", { type: "text", value: bestTitle(g), style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
+          box.appendChild(titleIn);
+          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" }, ["Discipline (optional)"]));
+          var discSel = el("select", { class: "uc-filter", style: "min-width:280px;" });
+          discSel.appendChild(el("option", { value: "" }, ["— choose —"]));
+          mqList.forEach(function (d) { discSel.appendChild(el("option", { value: d }, [d])); });
+          box.appendChild(discSel);
+          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 4px;" }, ["Members (" + mems.length + ")"]));
+          var list = el("div", { style: "max-height:240px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
+          var cbs = [];
+          mems.forEach(function (m) {
+            var row = el("div", { style: "display:flex;align-items:center;gap:8px;padding:3px 4px;border-bottom:1px solid #f1f5f9;" });
+            var cb = el("input", { type: "checkbox" }); cb.checked = true;
+            cbs.push({ cb: cb, m: m });
+            row.appendChild(cb);
+            row.appendChild(el("span", { style: "flex:1;" }, [m.t || m.id]));
+            row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;" },
+              [m.id + " · " + (m.s || "") + (m.u != null ? " · " + m.u + "u" : "") + (m.g ? " · Stand-Alone" : "")]));
+            list.appendChild(row);
+          });
+          box.appendChild(list);
+          var actions = el("div", { style: "margin-top:14px;display:flex;gap:10px;justify-content:flex-end;" });
+          var skip = el("button", { style: skipCss }, ["Skip →"]);
+          skip.onclick = function () { i++; renderGroup(); };
+          var go = el("button", { style: goCss }, ["✓ Confirm merge"]);
+          go.onclick = function () {
+            var picked = cbs.filter(function (x) { return x.cb.checked; }).map(function (x) { return x.m; });
+            if (picked.length < 2) { alert("Check at least two members to merge."); return; }
+            var mainPick = picked.filter(function (m) { return m.k !== "Stand-Alone"; });
+            var target = (mainPick[0] || picked[0]).id;  // prefer a real identity as the target
+            var chosen = {};
+            picked.forEach(function (m) { chosen[m.id] = [m.id, m.t, m.s, m.k, m.u]; });
+            doConsolidate(chosen, titleIn.value.trim(), discSel.value, target, function () { i++; renderGroup(); }, true);
+          };
+          actions.appendChild(skip); actions.appendChild(go);
+          box.appendChild(actions);
+        }
+        document.body.appendChild(overlay);
+        renderGroup();
       });
     }
 
@@ -655,8 +753,14 @@
       style: "display:none;cursor:pointer;background:#dafbe1;border:1px solid #2da44e;color:#116329;font-weight:600;border-radius:6px;" },
       ["✓ Verify filtered"]);
     verifyAllBtn.onclick = function () { batchVerify(); };
+    // Suggested-merge worklist (signed-in only; lazy-loads the precomputed groups).
+    var suggestBtn = el("button", { id: "uc-suggest", class: "uc-filter",
+      style: "display:none;cursor:pointer;background:#fff7ed;border:1px solid #fb923c;color:#9a3412;font-weight:600;border-radius:6px;",
+      title: "Review precomputed same-course merge suggestions one at a time — one-click confirm, never auto-applied." },
+      ["✨ Suggested merges"]);
+    suggestBtn.onclick = function () { openSuggestions(); };
 
-    [fKind, fSource, fStatus, fDisc, fCredit, fConf, fArtic, fOfficial, fProv, search, flagged, blanksBtn, verifyAllBtn, auth, syncBadge, exportBtn]
+    [fKind, fSource, fStatus, fDisc, fCredit, fConf, fArtic, fOfficial, fProv, search, flagged, blanksBtn, verifyAllBtn, suggestBtn, auth, syncBadge, exportBtn]
       .forEach(function (c) { toolbar.appendChild(c); });
 
     // Curation edits hit Supabase instantly but are only folded into git
@@ -1001,6 +1105,7 @@
       } else {
         verifyAllBtn.style.display = "none";
       }
+      suggestBtn.style.display = session ? "" : "none";
 
       var table = el("table", { class: "uc-table" });
       var thead = el("thead"), htr = el("tr");
