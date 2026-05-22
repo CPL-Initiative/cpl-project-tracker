@@ -421,11 +421,12 @@ When that lands, the EACR grouping key will become
 
 ### 10. C-ID / CCN numbering conventions (authoritative) + M-ID alignment direction
 
-Source docs (ASCCC, uploaded 2026-05-22): the C-ID/CCN one-pager, the CCN
-structure infographic, the CID/TMC ADT Handbook (F2022), and the TMC
-Development Guidelines (2013). The first two define the **numbering scheme**;
-the latter two cover the descriptor/degree-development process (read on demand
-if the renumber project needs them).
+Source docs (ASCCC, uploaded 2026-05-22; checked in under `docs/reference/`):
+`cid_ccn_2025_overview.pdf` (the C-ID/CCN one-pager + CCN structure
+infographic) defines the **numbering scheme**; `cid_tmc_adt_handbook_f2022.pdf`
+and `tmc_development_guidelines_2013.pdf` cover the descriptor/degree-development
+process (read on demand if the renumber project needs them — note: PDF page
+rendering needs `poppler-utils`, absent in some session containers).
 
 **The two official systems (leave both VERBATIM as listed in COCI — never relabel):**
 
@@ -450,10 +451,11 @@ if the renumber project needs them).
   Rollout: Phase I (6 templates) student-facing Fall 2025; Phase II (24) Fall
   2026/27; Phase III (55) Fall 2027.
 
-**M-ID alignment direction (PROPOSED — design decisions still open, NOT built):**
+**M-ID alignment direction (decided 2026-05-22; NOT yet built — bundled into the
+CourseControlNumber re-mint project):**
 
 Our minted identities (`coci_minted_courses.json`, currently rendered
-`M-ID <SUBJ> <num>`) should adopt a CCN-*structured* surrogate format that is
+`M-ID <SUBJ> <num>`) will adopt a CCN-*structured* surrogate format that is
 unmistakably **ours, not official**:
 
 - **Lead with `M` in the Course-Type-Identifier position** (`SUBJ M####&&`),
@@ -462,19 +464,27 @@ unmistakably **ours, not official**:
   whole point of the prefix: an M-code must never read as an official CCN.
 - **C-IDs and CCNs stay verbatim** (different formats, both authoritative). Only
   the *minted* tier gets the M-scheme.
-- **Banded renumber is its own staged project, not a relabel.** Re-keying the
-  minted identity space ripples into memberships, `coci_articulations.json`
-  `course_id`, curation `merge_into` pointers, dashboard rows, and the
-  Articulations-by-Course card — same blast radius as the parked
-  **CourseControlNumber re-mint**, so the two should be **bundled** (one
-  re-key, not two churns) and carry an **old-M-ID → new-M-ID alias map** so
-  curation/articulation pointers survive. Band only on data we can defend
-  (`credit_status` → `9XXX` noncredit is solid; `0XXX` non-transferable / `1XXX`
-  vs `2XXX` need transferability/degree-applicability data we have not confirmed
-  we hold); the 3 trailing digits need a **stable, deterministic, persisted**
-  within-(subject,band) sequence or codes churn each daily regen. Always
-  document loudly: **M-numbers are CCN-aligned surrogate keys, NOT a claim of
-  CCN equivalence.**
+- **Decisions locked:**
+  - **Sequencing — bundle with the re-mint.** The M-prefix AND the banded
+    renumber ship together inside the **CourseControlNumber re-mint** (NOT a
+    separate relabel pass). Re-keying the minted identity space ripples into
+    memberships, `coci_articulations.json` `course_id`, curation `merge_into`
+    pointers, dashboard rows, and the Articulations-by-Course card — so it's
+    one re-key, not two churns, and must carry an **old-M-ID → new-M-ID alias
+    map** so curation/articulation pointers survive.
+  - **Banding basis — `credit_status` only, initially.** Noncredit /
+    Noncredit-Enhanced → `9XXX`; everything credit → `1XXX`. Honest with data we
+    hold. `0XXX` (non-transferable) and the `1XXX` vs `2XXX` split are deferred
+    until transferability/degree-applicability data is sourced/confirmed.
+  - **Subjects — standardize to CCN's 4-letter list.** ⚠ **PREREQUISITE / open
+    input:** we do **not** currently hold the authoritative CCN standardized
+    4-letter subject-abbreviation list. Sourcing it (from ASCCC/CCC Chancellor's
+    Office) is a blocking input for the re-mint; until then minted subjects fall
+    back to the local COCI subject codes.
+  - The 3 trailing digits need a **stable, deterministic, persisted**
+    within-(subject,band) sequence or codes churn each daily regen.
+- Always document loudly: **M-numbers are CCN-aligned surrogate keys, NOT a
+  claim of CCN equivalence.**
 
 
 ---
@@ -710,7 +720,10 @@ mirroring the C-ID anchor, and are usable as ⚇ Unify merge targets.
   numbers); confirm scope before building.
 - **Open threads (next sessions), in priority order:** (1) **`CourseControlNumber`
   re-mint** — the root-cause fix that re-keys memberships at the raw
-  college-course level (unblocks crosswalk Phase C; scope before build).
+  college-course level (unblocks crosswalk Phase C; scope before build). **Now
+  also carries the M-ID CCN-aligned renumber** (`SUBJ M####`, see §10) since both
+  re-key the minted identity space — do them as one re-key with an old→new alias
+  map. Blocking input: the authoritative CCN 4-letter subject-abbreviation list.
   (2) **EACR interactive re-pivot (Approach B above).** (3) **Singleton-only
   worklist follow-up** — consider a `same_college`/blank-disc filter on the
   worklist and extending V2's grouping with a description tie-breaker for the
