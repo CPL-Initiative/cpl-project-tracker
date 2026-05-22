@@ -38,6 +38,15 @@ into the Pipeline Reference below or into dedicated docs.
    the GitHub Actions workflow is active.** Two schedulers racing to push to
    `main` caused the messy commit chain on 2026-04-19.
 
+7. **M-IDs are stable identifiers — don't renumber them casually.** The
+   2026-05-22 CourseControlNumber re-mint (PR #83) was a one-time alignment to
+   CCN-shaped 4-character keys (corroborated `SUBJ M####`, stand-alone
+   `SUBJ M<band><d><LL>`). The old `M-ID SUBJ NNN` keys are dead. Future identity
+   changes must be additive (incremental, alias-tracked) — never another bulk
+   renumber, because curation, articulation `course_id` pointers, and the live
+   Supabase `kb_curation` table all key on these ids. Authoritative old→new
+   alias: `kb/remint_out/alias_map.json` (committed for rollback).
+
 ## Branch policy
 
 - Work on feature branches; open a PR to `main`.
@@ -451,8 +460,8 @@ rendering needs `poppler-utils`, absent in some session containers).
   Rollout: Phase I (6 templates) student-facing Fall 2025; Phase II (24) Fall
   2026/27; Phase III (55) Fall 2027.
 
-**M-ID alignment direction (decided 2026-05-22; NOT yet built — bundled into the
-CourseControlNumber re-mint project):**
+**M-ID alignment direction (LANDED 2026-05-22 in the CourseControlNumber re-mint,
+PR #83):**
 
 Our minted identities (`coci_minted_courses.json`, currently rendered
 `M-ID <SUBJ> <num>`) will adopt a CCN-*structured* surrogate format that is
@@ -732,12 +741,13 @@ mirroring the C-ID anchor, and are usable as ⚇ Unify merge targets.
   semantics + the interactive JS, and over-merge directly affects headline adoption
   numbers); confirm scope before building.
 - **Open threads (next sessions), in priority order:** (1) **`CourseControlNumber`
-  re-mint** — the root-cause fix that re-keys memberships at the raw
-  college-course level (unblocks crosswalk Phase C; scope before build). **Now
-  also carries the M-ID CCN-aligned renumber** (`SUBJ M####`, see §10) since both
-  re-key the minted identity space — do them as one re-key with an old→new alias
-  map. Subjects: synthesize our own 4-letter map (no authoritative CCN list
-  exists yet; see §10).
+  re-mint — LANDED (PR #83, 2026-05-22).** Memberships are re-keyed at the raw
+  college-course level (each member carries its own `(College, CourseControlNumber,
+  C-ID/CCN)`); minted ids re-keyed to CCN-shaped surrogates (`SUBJ M####`
+  corroborated / `SUBJ M<band><d><LL>` stand-alone, synthetic 4-letter SUBJ);
+  splits captured in `kb/promotions.json`; `export_unified_courses()` consumes
+  the exact joins + promotions-driven Phase A/B. Authoritative alias for
+  rollback: `kb/remint_out/alias_map.json`. **Unblocked**: crosswalk Phase C.
   (2) **EACR interactive re-pivot (Approach B above).** (3) **Singleton-only
   worklist follow-up** — consider a `same_college`/blank-disc filter on the
   worklist and extending V2's grouping with a description tie-breaker for the
