@@ -52,10 +52,16 @@ Every common course gets the **best available** identifier, recorded in
 2. **C-ID** — a **Course Identification Numbering System** descriptor
    (e.g. `ACCT 110`). The established articulation/transfer descriptor.
    Source: `reference/cid_descriptors.json`.
-3. **M-ID** — a synthetic **MAP-originated** descriptor that mimics the
-   C-ID shape (`SUBJ NNN`) but carries the literal `M-ID` prefix so it is
-   never mistaken for an official C-ID (e.g. `M-ID AUTO 100`). Minted
-   **only** when no CCN or C-ID aligns.
+3. **M-ID** — a synthetic **MAP-originated** descriptor in CCN-shaped
+   4-character form: corroborated (≥2 colleges) gets an all-digit
+   `SUBJ M####` (band digit + 3-digit sequence, e.g. `AUTO M1001`);
+   stand-alone (1 college) gets `SUBJ M####` where the trailing 2 chars
+   are letters (band + 1 digit + 2 letters, e.g. `AUTO M10AA`). The
+   leading `M` sits where CCN puts `C`, so the key is unmistakably
+   ours — never read as an official CCN/C-ID. Minted **only** when no
+   CCN or C-ID aligns. Re-mint 2026-05-22 (PR #84); the prior format
+   `M-ID SUBJ NNN` is dead — `kb/remint_out/alias_map.json` is the
+   authoritative old→new.
 
 Why M-ID exists: only **~11%** of CCC courses carry a C-ID, and most carry
 no CCN either. Without a shared key, an articulation a college earns
@@ -194,7 +200,7 @@ precedence above). Each value describes one common course:
     "reviewed_by": null,
     "_notes": "MQ discipline approximate: 'Accounting' has no exact MQ match; mapped to 'Business' — verify."
   },
-  "M-ID AUTO 100": {
+  "AUTO M1001": {
     "common_title": "Engine Repair",
     "id_system": "M-ID",
     "ccn_id": null,
@@ -249,7 +255,7 @@ Each value points one local college course at a `course_id`:
     "local_course_title": "Child Development Center Practicum",
     "units": 1.0,
     "top_code": "106",
-    "course_id": "M-ID ECE 100",
+    "course_id": "ECE M1001",
     "id_system": "M-ID",
     "source": "Cx exhibit",
     "source_exhibit_titles": ["Credit By Exam San Diego City College"],
@@ -283,14 +289,14 @@ own `course_id` and the entries share a `cross_listing_group` id
 (`"XL-NNNN"`):
 
 - Each local code routes to its discipline's mirror in
-  `course_crosswalk.json` (e.g. `ARCH 50 → M-ID ARCH 104`,
-  `DR 50 → M-ID DRFT 108`).
+  `course_crosswalk.json` (e.g. `ARCH 50 → ARCH M1004`,
+  `DR 50 → DRFT M1008`).
 - Both catalog entries carry the same `cross_listing_group`, so the
   pipeline can union them — an articulation earned on one mirror applies
   to the whole group.
 - A mirror can be a C-ID/CCN on one side and an M-ID on the other (e.g.
   Introduction to Photojournalism: `JOUR 160` (C-ID, Journalism) ↔
-  `M-ID PHOT 106` (Photography), group `XL-0002`).
+  `PHOT M1006` (Photography), group `XL-0002`).
 
 Curation pass 1 seeded two groups (`XL-0001` CAD drafting, `XL-0002`
 photojournalism). Phase 3 should auto-detect candidates: same college +
