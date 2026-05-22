@@ -4528,15 +4528,15 @@ def export_unified_courses():
     # a separate file the tab lazy-loads only when a curator opens it. Built from
     # the FINAL row set (post-Phase-B) plus stand-alone singletons, so consumed
     # M-IDs aren't offered as ghost merge targets and the new official-ID
-    # identities are searchable. Each entry: [id, title, subject(s), kind].
+    # identities are searchable. Each entry: [id, title, subject(s), kind, units].
     out_idx = os.path.join(SCRIPT_DIR, "unified_courses_index.js")
     idx = []
     for r in rows:
         k = r.get("id_system") if r.get("id_system") in ("C-ID", "CCN-ID") else r.get("kind")
-        idx.append([r["id"], r.get("title"), ";".join(r.get("subj") or []), k])
+        idx.append([r["id"], r.get("title"), ";".join(r.get("subj") or []), k, r.get("units")])
     for sid, v in sg.items():
         if sid not in merge_into:
-            idx.append([sid, v.get("common_title"), v.get("subject"), "Stand-Alone"])
+            idx.append([sid, v.get("common_title"), v.get("subject"), "Stand-Alone", v.get("typical_units")])
     with open(out_idx, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses search index — id,title,subject,kind. Lazy-loaded by the curation dialog. */\n"
                 "window.CPL_UC_INDEX = " + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n")
