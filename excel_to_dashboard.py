@@ -4158,8 +4158,11 @@ def export_unified_courses():
     staging files. Writes an empty global if the KB files are absent so the
     tab degrades gracefully. STAGING data — does not touch curated KB files."""
     from datetime import datetime as _dt
-    kdir = os.path.join(SCRIPT_DIR, "kb")
-    out_js = os.path.join(SCRIPT_DIR, "unified_courses_data.js")
+    # UC_KB_DIR / UC_OUT_DIR are a test seam (e.g. validating a re-mint preview);
+    # unset in production, so the daily build reads kb/ and writes the repo root.
+    kdir = os.environ.get("UC_KB_DIR") or os.path.join(SCRIPT_DIR, "kb")
+    odir = os.environ.get("UC_OUT_DIR") or SCRIPT_DIR
+    out_js = os.path.join(odir, "unified_courses_data.js")
 
     def _load(name):
         p = os.path.join(kdir, name)
@@ -4387,7 +4390,7 @@ def export_unified_courses():
     # join key -> [ {c, n, t, d, cid, ccn} ] (d = CatalogDescription, kept in
     # memory only; stripped from the members file output). One ent object is
     # shared across the pair/cid/ccn indexes it belongs to.
-    pair_rows, cid_rows, ccn_rows = {}, {}, {}
+    cid_rows, ccn_rows, cn_rows = {}, {}, {}
     top_titles = {}  # TOP code -> program title, deduped (raw TopCode is "code: title")
     # CIDNumber / CommonCourseNumber cells sometimes carry a literal sentinel
     # instead of being blank — treat these as "no official id".
@@ -4402,11 +4405,11 @@ def export_unified_courses():
         for row in rit:
             college, subj, num, title = row[0], row[2], row[3], row[4]
             units, cid, ccn, desc, topc = row[5], row[9], row[11], row[10], row[8]
+            ctrl = _nrm(row[1])  # CourseControlNumber — exact member-join key (re-mint)
             if not college:
                 continue
             code = (f"{subj} {num}".strip() if subj is not None
                     else (str(num) if num is not None else ""))
-            su, nu = _nrm(subj), _nrm(num)
             cidn, ccnn = _nrm(cid), _nrm(ccn)
             if cidn in _NULLISH:
                 cidn = ""
@@ -4424,8 +4427,8 @@ def export_unified_courses():
                    "u": units if isinstance(units, (int, float)) else None,
                    "p": tcode,
                    "cid": cidn, "ccn": ccnn}
-            if su or nu:
-                pair_rows.setdefault((su, nu), []).append(ent)
+            if ctrl:
+                cn_rows.setdefault(ctrl, []).append(ent)
             if cidn:
                 cid_rows.setdefault(cidn, []).append(ent)
             if ccnn:
@@ -4433,57 +4436,19 @@ def export_unified_courses():
         wb.close()
 
     memships = (_load("coci_minted_memberships.json") or {}).get("memberships", {})
+    promotions = (_load("promotions.json") or {}).get("promotions", {})
 
-    # Title-consistency: the (subject, number) membership key is globally
-    # ambiguous (e.g. "MATH 31" is a different course at every college), so the
-    # forward join must re-apply the same title check the minting used — keep a
-    # candidate college course only if its title matches the identity's. C-ID /
-    # CCN joins are authoritative identity keys and are trusted as-is.
-    import re as _re
-    _TITLE_STOP = set("i ii iii iv v a b c advanced beginning intermediate introduction "
-                      "introductory basic fundamentals principles topics the of to and for with in".split())
-
-    def _ttok(t):
-        t = _re.sub(r"[^a-z0-9 ]+", " ", _re.sub(r"\([^)]*\)", " ", str(t or "").lower()))
-        return {w for w in t.split() if w not in _TITLE_STOP and len(w) > 2}
-
-    def _title_ok(a, b):
-        sa, sb = _ttok(a), _ttok(b)
-        if not sa or not sb or sa == sb:
-            return True  # can't judge (generic/empty) -> keep
-        return len(sa & sb) / len(sa | sb) >= 0.5
-
-    def _id_title(i):
-        v = cat.get(i) or sg.get(i)
-        if v:
-            return v.get("common_title")
-        cl = clusters.get(i)
-        if cl:
-            return cl.get("synthesized_title") or cl.get("canonical_title")
-        cv = cc.get(i)
-        return cv.get("common_title") if cv else None
-
-    def _leaf_pairs(i):
-        if i in memships:
-            return [(_nrm(p.get("subject")), _nrm(p.get("course_number"))) for p in memships[i]]
-        sv = sg.get(i)
-        if sv:
-            return [(_nrm(sv.get("subject")), _nrm(sv.get("course_number")))]
-        return []
-
+    # Member-join is now EXACT (the re-mint): each membership member carries its
+    # own College/CourseControlNumber, so a displayed identity's member college
+    # courses are looked up by control number — no (subject, number) ambiguity and
+    # no title-Jaccard filter. C-ID/CCN rows join on the official id.
     def _id_cid(mid):
         cv = cc.get(mid)
         return _nrm(cv["c_id"]) if cv and cv.get("c_id") else ""
 
-    # Candidate college-course ents for a displayed row (title-filtered forward
-    # join). Clusters/merge targets expand to their constituent leaf courses, and
-    # each leaf's (subject, number) rows are filtered against THAT leaf's title.
-    def _row_candidates(r):
-        rid, idsys = r["id"], r.get("id_system")
-        if idsys == "CCN-ID":
-            return ccn_rows.get(_nrm(rid), [])
-        if idsys == "C-ID":
-            return cid_rows.get(_id_cid(rid) or _nrm(rid), [])
+    def _leaf_ids(r):
+        """Constituent minted/singleton identity ids for a displayed row
+        (expands clusters + reviewer merge members)."""
         leaves = []
 
         def add_leaf(i):
@@ -4494,18 +4459,29 @@ def export_unified_courses():
             else:
                 leaves.append(i)
 
-        for i in [rid] + merge_members.get(rid, []):
+        for i in [r["id"]] + merge_members.get(r["id"], []):
             add_leaf(i)
+        return leaves
+
+    def _leaf_cns(i):
+        if i in memships:
+            return [_nrm(p.get("control_number")) for p in memships[i] if p.get("control_number")]
+        sv = sg.get(i)
+        if sv and sv.get("control_number"):
+            return [_nrm(sv["control_number"])]
+        return []
+
+    # Candidate college-course ents for a displayed row — exact control-number join.
+    def _row_candidates(r):
+        rid, idsys = r["id"], r.get("id_system")
+        if idsys == "CCN-ID":
+            return ccn_rows.get(_nrm(rid), [])
+        if idsys == "C-ID":
+            return cid_rows.get(_id_cid(rid) or _nrm(rid), [])
         out = []
-        for i in leaves:
-            t = _id_title(i)
-            for p in _leaf_pairs(i):
-                for ent in pair_rows.get(p, []):
-                    if _title_ok(t, ent["t"]):
-                        out.append(ent)
-            ck = _id_cid(i)
-            if ck:
-                out += cid_rows.get(ck, [])  # authoritative — trust without title filter
+        for i in _leaf_ids(r):
+            for cn in _leaf_cns(i):
+                out += cn_rows.get(cn, [])
         return out
 
     # Member entries (deduped, description stripped) for a displayed row.
@@ -4528,20 +4504,22 @@ def export_unified_courses():
                 best = d
         return best
 
-    # Phase A crosswalk surfacing: the official C-ID / CCN carried by an
-    # identity's (title-consistent) member courses. Returns a compact dict only
-    # when there's something to show: {"cid": "ACCT 110"} for a single agreed
-    # C-ID, {"cid_conflict": [...]} when members disagree (over-merge signal),
-    # {"ccn": "ANTH C1000"} for a CCN. No identity change — purely informational.
+    # Phase A crosswalk surfacing — sourced from the kb promotions manifest
+    # (computed control-number-exact in the re-mint), NOT by scanning member CIDs:
+    # the new memberships are remnant-only and carry none. Aggregates the official
+    # C-ID/CCN target(s) of the row's constituent minted identities: {"cid": "ACCT
+    # 110"} single agreed, {"cid_conflict": [...]} when they disagree (over-merge
+    # signal), {"ccn": "..."} for a CCN. No identity change — purely informational.
     def _row_official(r):
         if r.get("id_system") in ("C-ID", "CCN-ID"):
             return None  # already an official-ID identity
         cids, ccns = set(), set()
-        for ent in _row_candidates(r):
-            if ent.get("cid"):
-                cids.add(ent["cid"])
-            if ent.get("ccn"):
-                ccns.add(ent["ccn"])
+        for i in _leaf_ids(r):
+            for oid in (promotions.get(i, {}).get("official_targets") or {}):
+                if oid.startswith("CCN:"):
+                    ccns.add(oid[4:])
+                elif oid.startswith("C-ID:"):
+                    cids.add(oid[5:])
         out = {}
         if len(ccns) == 1:
             out["ccn"] = next(iter(ccns))
@@ -4641,7 +4619,7 @@ def export_unified_courses():
     # the FINAL row set (post-Phase-B) plus stand-alone singletons, so consumed
     # M-IDs aren't offered as ghost merge targets and the new official-ID
     # identities are searchable. Each entry: [id, title, subject(s), kind, units].
-    out_idx = os.path.join(SCRIPT_DIR, "unified_courses_index.js")
+    out_idx = os.path.join(odir, "unified_courses_index.js")
     idx = []
     for r in rows:
         k = r.get("id_system") if r.get("id_system") in ("C-ID", "CCN-ID") else r.get("kind")
@@ -4757,7 +4735,7 @@ def export_unified_courses():
     # Cross-college candidates first (by cohesion); flagged same-college last.
     singleton_groups.sort(key=lambda x: (x["same_college"], -x["score"]))
 
-    out_sug = os.path.join(SCRIPT_DIR, "unified_courses_suggestions.js")
+    out_sug = os.path.join(odir, "unified_courses_suggestions.js")
     _sc_flagged = sum(1 for g in singleton_groups if g["same_college"])
     sug_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
                    "count": len(sug_groups), "groups": sug_groups,
@@ -4840,7 +4818,7 @@ def export_unified_courses():
         if sid in merge_into or sid in merge_members:
             continue
         _detail_for({"id": sid, "id_system": "M-ID"})
-    out_det = os.path.join(SCRIPT_DIR, "unified_courses_details.js")
+    out_det = os.path.join(odir, "unified_courses_details.js")
     with open(out_det, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses descriptions — id -> {d:description, s:source}. "
                 "Lazy-loaded by the row-details modal. Curated descriptions override the base. */\n"
@@ -4870,7 +4848,7 @@ def export_unified_courses():
             m = _row_official(r)
             if m:
                 r["match"] = m
-    out_sa = os.path.join(SCRIPT_DIR, "unified_courses_standalone.js")
+    out_sa = os.path.join(odir, "unified_courses_standalone.js")
     sa_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "rows": sa_rows}
     with open(out_sa, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses stand-alone (single-college) rows — lazy-loaded "
@@ -4902,7 +4880,7 @@ def export_unified_courses():
             if any(ds):
                 mdesc[r["id"]] = ds
 
-        out_mem = os.path.join(SCRIPT_DIR, "unified_courses_members.js")
+        out_mem = os.path.join(odir, "unified_courses_members.js")
         mem_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
                        "colleges": mcolleges, "members": members, "topmap": top_titles}
         with open(out_mem, "w", encoding="utf-8") as f:
@@ -4913,7 +4891,7 @@ def export_unified_courses():
         total = sum(len(v) for v in members.values())
         print(f"  Unified Courses: wrote {out_mem} ({len(members)} identities, {total} member rows, {len(mcolleges)} colleges)")
 
-        out_md = os.path.join(SCRIPT_DIR, "unified_courses_member_desc.js")
+        out_md = os.path.join(odir, "unified_courses_member_desc.js")
         md_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "desc": mdesc}
         with open(out_md, "w", encoding="utf-8") as f:
             f.write("/* Unified Courses member-course descriptions — id -> [desc,...] PARALLEL to "
@@ -4953,7 +4931,7 @@ def export_unified_courses():
              v.get("member_count"), None, flags_of(v, uid, use_spread=False), v.get("members", []))
 
     _write_analytics_xlsx_export("unified_courses", "Unified Courses", headers, xrows,
-                                 os.path.join(SCRIPT_DIR, "exports"))
+                                 os.path.join(odir, "exports"))
     print(f"  Unified Courses: wrote exports/unified_courses.xlsx ({len(xrows)} rows)")
 
 
