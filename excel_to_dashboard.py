@@ -454,6 +454,14 @@ ALGO_DESCRIPTIONS = {
         "last_modified": "2026-04-19",
     },
 
+    "articulations-by-course": {
+        "source":      "kb/coci_articulations.json — earned MAP articulations (View_ArticulatedMAPExhibits) resolved to the unified course-identity layer.",
+        "formula":     "Group earned articulations by unified course identity (C-ID/CCN when the row carries a CID Number, else a minted M-ID; multi-M-ID rows disambiguated by local Course Title). Per identity: count colleges that earned it, the modal credit recommendation, linked credential(s), and adoption leverage = peer colleges teaching the same identity that have not yet earned the articulation.",
+        "assumptions": "One identity = one common course across colleges. Adoption leverage is a candidate list, not a guarantee — title-consistent membership only.",
+        "caveats":     "GE-area articulations are excluded (routed separately). Adoption leverage is suppressed (shown as flagged) for identities marked over_merged, since the cluster may conflate distinct courses and would yield bogus adoption targets.",
+        "last_modified": "2026-05-22",
+    },
+
     # ── Exhibit Adoption & Credit Recommendations (statewide_interactive.js) ──
     "statewide_adoption": {
         "source":      "View_ArticulatedMAPExhibits joined with college/district/region lookups from college_lookup.js.",
@@ -3842,6 +3850,13 @@ def build_exhibit_analysis_tables(exhibit_data):
     if statewide_adoption:
         tables["statewide_adoption"] = statewide_adoption
 
+    # ── Articulations by Unified Course (course-identity layer) ──
+    # Collapses the same course across colleges into one row via the coci
+    # identity layer; surfaces cross-college adoption leverage.
+    articulations_by_course = _build_articulations_by_course()
+    if articulations_by_course:
+        tables["articulations_by_course"] = articulations_by_course
+
     print(f"  Built exhibit analysis tables: {len(tables['by_college'])} colleges, "
           f"{len(tables['by_discipline'])} disciplines, {len(tables['by_cpl_type'])} CPL types, "
           f"{len(tables['by_mode_of_learning'])} modes, {len(tables['top_exhibits'])} top exhibits"
@@ -4013,6 +4028,92 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     results.sort(key=lambda x: (-x["potential"], -x["adopters"]))
     return results
 
+
+def _build_articulations_by_course():
+    """Group earned MAP articulations by UNIFIED COURSE IDENTITY (the coci
+    course-identity layer) instead of raw MAP rows, so the same course taught at
+    many colleges collapses to one row and cross-college adoption leverage is
+    visible.
+
+    Reads kb/coci_articulations.json — the staging layer that already resolves
+    each earned articulation to a C-ID/CCN/M-ID identity (Course → (subject,
+    number) → C-ID/CCN when the row carries a CID Number, else M-ID, with
+    multi-M-ID rows disambiguated by the local Course Title). Returns a list of
+    per-identity dicts (ranked by adoption leverage), or None if the file is
+    absent.
+
+    Over-merge guardrail: adoption leverage on identities flagged `over_merged`
+    is NOT presented as actionable (the cluster may conflate distinct courses);
+    such rows carry over_merged=True so the renderer can suppress/badge the
+    number rather than suggest a bogus cross-college adoption.
+    """
+    from collections import Counter, defaultdict
+
+    path = os.path.join(SCRIPT_DIR, "kb", "coci_articulations.json")
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            doc = json.load(f)
+    except Exception:
+        return None
+
+    idents = doc.get("identities", {})
+    records = doc.get("articulations", [])
+    if not records:
+        return None
+
+    agg = defaultdict(lambda: {
+        "earned": set(), "creds": Counter(), "credit_recs": Counter(),
+        "titles": Counter(), "leverage": 0, "over_merged": False, "flagged": False,
+    })
+    for r in records:
+        cid = r.get("course_id")
+        if not cid:
+            continue
+        a = agg[cid]
+        a["earned"].update(r.get("earned_by_colleges", []))
+        if r.get("unified_title"):
+            a["creds"][r["unified_title"]] += 1
+        for cr in (r.get("credit_recommendations") or []):
+            a["credit_recs"][cr] += 1
+        for lc in (r.get("local_courses") or []):
+            if lc.get("title"):
+                a["titles"][lc["title"]] += 1
+        a["leverage"] = max(a["leverage"], r.get("adoption_leverage_count", 0) or 0)
+        if r.get("over_merged"):
+            a["over_merged"] = True
+        if r.get("quality_flag"):
+            a["flagged"] = True
+
+    out = []
+    for cid, a in agg.items():
+        ident = idents.get(cid, {})
+        over = a["over_merged"] or bool(ident.get("over_merged"))
+        title = ident.get("title") or (a["titles"].most_common(1)[0][0] if a["titles"] else "")
+        cred = a["creds"].most_common(1)[0][0] if a["creds"] else ""
+        n_cred = len(a["creds"])
+        credit_rec = a["credit_recs"].most_common(1)[0][0] if a["credit_recs"] else ""
+        out.append({
+            "course_id": cid,
+            "id_system": ident.get("identity_system", ""),
+            "title": title,
+            "discipline": ident.get("discipline") or "—",
+            "credit_status": ident.get("credit_status") or "",
+            "colleges_earned": len(a["earned"]),
+            "credit_rec": credit_rec,
+            "credential": cred,
+            "credential_count": n_cred,
+            # Leverage = peer colleges teaching the same identity that have NOT yet
+            # earned this articulation. Zeroed-out for over-merged clusters so the
+            # number is never read as an actionable adoption target.
+            "leverage": 0 if over else a["leverage"],
+            "over_merged": over,
+            "flagged": a["flagged"],
+        })
+    # Clean, high-leverage identities first; over-merged rows sink to the bottom.
+    out.sort(key=lambda x: (x["over_merged"], -x["leverage"], -x["colleges_earned"]))
+    return out
 
 def _write_analytics_xlsx_export(card_id, title, headers, rows, output_dir):
     """Write a single CPL Analytics table to <output_dir>/<card_id>.xlsx.
@@ -5124,7 +5225,59 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
         ],
     )
 
-    # ── 7. Statewide Exhibit Adoption (dynamic — powered by statewide_data.js) ──
+    # ── 7. Articulations by Unified Course (course-identity grouping) ──
+    abc_card = ""
+    abc_all = tables.get("articulations_by_course", [])
+    if abc_all:
+        abc_top = abc_all[:50]
+        n_ident = len(abc_all)
+        n_over = sum(1 for r in abc_all if r["over_merged"])
+        n_multi = sum(1 for r in abc_all if r["colleges_earned"] > 1)
+
+        def _abc_lev(r):
+            if r["over_merged"]:
+                return '<span class="exhibit-cell-num" title="Over-merged cluster — leverage withheld">&#9888; flagged</span>'
+            return f'<span class="exhibit-cell-num">{fmt(r["leverage"])}</span>'
+
+        def _abc_course(r):
+            t = r["title"] or ""
+            sub = f'<div style="font-size:0.72rem;opacity:0.7;">{r["course_id"]} &middot; {r["id_system"]}</div>' if t else f'{r["course_id"]} &middot; {r["id_system"]}'
+            return (f'{t}{sub}' if t else sub)
+
+        def _abc_cred(r):
+            c = r["credential"] or "—"
+            if r["credential_count"] > 1:
+                c += f' <span style="opacity:0.6;">(+{r["credential_count"]-1})</span>'
+            return c
+
+        abc_card = table_card(
+            "articulations-by-course",
+            "Articulations by Unified Course",
+            f"{fmt(n_ident)} unified course identities &middot; {fmt(n_multi)} earned at &gt;1 college &middot; top 50 by adoption leverage",
+            ["#", "Unified Course", "Discipline", "Colleges Earned", "Credit Recommendation", "Credential", "Adoption Leverage"],
+            abc_top,
+            lambda r: (f'<tr><td>{abc_top.index(r)+1}</td>'
+                       f'<td class="exhibit-cell-name">{_abc_course(r)}</td>'
+                       f'<td>{r["discipline"]}</td>'
+                       f'<td class="exhibit-cell-num">{fmt(r["colleges_earned"])}</td>'
+                       f'<td>{r["credit_rec"] or "—"}</td>'
+                       f'<td>{_abc_cred(r)}</td>'
+                       f'<td>{_abc_lev(r)}</td></tr>\n'),
+            footer=(f'Earned articulations grouped by unified course identity. '
+                    f'Adoption leverage = peer colleges teaching the same course that have not yet earned it. '
+                    f'{fmt(n_over)} over-merged identities show leverage as &#9888; flagged (withheld). '
+                    f'Full set ({fmt(n_ident)} identities) in the Excel export.'),
+            xlsx_rows=[
+                [i + 1,
+                 f'{r["title"]} ({r["course_id"]} · {r["id_system"]})' if r["title"] else f'{r["course_id"]} · {r["id_system"]}',
+                 r["discipline"], r["colleges_earned"], r["credit_rec"],
+                 r["credential"] + (f' (+{r["credential_count"]-1})' if r["credential_count"] > 1 else ""),
+                 "over-merged (withheld)" if r["over_merged"] else r["leverage"]]
+                for i, r in enumerate(abc_all)
+            ],
+        )
+
+    # ── 8. Statewide Exhibit Adoption (dynamic — powered by statewide_data.js) ──
     statewide_card = ""
     statewide_data = tables.get("statewide_adoption", [])
     if statewide_data:
@@ -5148,6 +5301,7 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
         f'            {disc_card}\n'
         f'            {college_card}\n'
         f'            {top_card}\n'
+        f'            {abc_card}\n'
         '        </div>\n'
         + (f'        {statewide_card}\n' if statewide_card else '')
         + '    </div>\n'
@@ -6652,7 +6806,8 @@ def main():
                     html = html[:outer_pos] + exhibit_html + '\n    ' + html[outer_pos:]
                     print(f"  Injected CPL Analytics section ({len(exhibit_tables['by_college'])} college cards, "
                           f"{len(exhibit_tables['top_exhibits'])} top exhibits, "
-                          f"6 xlsx exports written to exports/)")
+                          f"{len(exhibit_tables.get('articulations_by_course', []))} unified-course articulation rows, "
+                          f"7 xlsx exports written to exports/)")
 
                 # Inject CSS before closing </style> tag (idempotent — strips any
                 # previously injected copies so repeat runs don't accumulate duplicates).
