@@ -455,8 +455,21 @@ session resuming the build — read it before touching `kb/` or the curation tab
      `mq_disciplines.json`, **skips reviewed/curated entries**, and stamps each
      fill with `discipline_source` (`subject_map`|`title_keyword`),
      `discipline_confidence`, `discipline_inferred_at`. Re-run after editing the
-     lexicon; it only fills entries that are still blank. First pass filled
-     ~1,418 minted+cluster + 3,009 singleton disciplines; long tail remains.
+     lexicon; it only fills entries that are still blank. Passes 1–3 filled the
+     lexicon-tractable courses; the long tail (ambiguous catch-all subject codes)
+     remains.
+   - **Description-aware inference (re-runnable, complementary):**
+     `kb/_infer_disciplines_from_desc.py` mines the course *description* for
+     courses whose title/subject gave no signal (e.g. "Climate Control" →
+     description names HVAC). It uses a **safe, high-precision phrase set** (only
+     terms decisive inside long prose — welding, automotive, dental, CNC,
+     paramedic, …) with **plurality scoring + unique-winner** (ties skipped),
+     since descriptions mention disciplines tangentially. Descriptions come from
+     the in-file `description`/`synthesized_description` for parents and from the
+     generated `unified_courses_details.js` for singletons (skipped if that file
+     is absent → parents-only). Fills are stamped `discipline_source="description"`
+     at confidence **0.5** (the lowest tier — surfaced as `⚙ descr` for reviewer
+     triage). Pass 4 filled ~941 (850 singletons + 91 parents).
 
 **Generators** (`kb/_seed_*.py`, `_join_*.py`, `_curation_*.py`, `_flag_*.py`)
 are one-shot, kept for provenance — curate by editing JSON / via Supabase, not
@@ -487,18 +500,23 @@ re-runnable (idempotent — only fills blanks, never overwrites reviewed/curated
   (`common_courses.json`, C-ID/CCN/M-ID) is shown **read-only** (an "anchor"
   badge; curation disabled — it's firewalled). Filters include **Source**
   (`id_system`), discipline, credit, confidence, adoption, **Generated-by**
-  (discipline provenance — `by subject-code` vs `by title-keyword`),
-  flagged-only, blank-only; default sort is **Subject(s) then course number**.
-  Subject(s) cells hover to show the course title(s) / cluster title variants.
+  (discipline provenance — `by subject-code` / `by title-keyword` /
+  `by description`), flagged-only, blank-only; default sort is **Subject(s)
+  then course number**. Subject(s) cells hover to show the course title(s) /
+  cluster title variants.
 - **Discipline provenance surfacing** (added 2026-05-22). Generated (not-yet-
-  verified) rows whose discipline came from `_infer_disciplines.py` carry a
-  small `⚙ subj-code` / `⚙ title-kw` badge (keyword = warn color, since it's the
-  riskier 0.55-confidence fill) plus the **Generated-by** filter, so a reviewer
-  can blast through the safe `subject_map` fills with **Verify** and scrutinize
-  the keyword ones. The data comes from per-row `dsrc`/`dconf` keys emitted by
+  verified) rows whose discipline was machine-inferred carry a small
+  `⚙ subj-code` / `⚙ title-kw` / `⚙ descr` badge (title-keyword AND description
+  use the warn color, since they're the riskier 0.55/0.5-confidence fills) plus
+  the **Generated-by** filter, so a reviewer can blast through the safe
+  `subject_map` fills with **Verify** and scrutinize the keyword/description
+  ones. The data comes from per-row `dsrc`/`dconf` keys emitted by
   `export_unified_courses()` via the `_add_prov()` helper — emitted **only** on
   non-curated rows that carry a `discipline_source` (blank/manual/anchor rows
-  stay lean, no extra keys). Curated rows render as Verified, so no badge.
+  stay lean, no extra keys). Curated rows render as Verified, so no badge. The
+  three `discipline_source` values are `subject_map` + `title_keyword` (from
+  `kb/_infer_disciplines.py`) and `description` (from
+  `kb/_infer_disciplines_from_desc.py`).
 - Supabase is **live and shared**: only the unified-courses curation tables
   (`kb_curation`, `allowed_reviewers`) are in scope. The
   projects/budget/personnel/workplan tables (§8) and the auth/Redirect-URL config
