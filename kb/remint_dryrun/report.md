@@ -64,15 +64,65 @@ mirrors that:
 `9` (noncredit) is the only asserted band; `1` (credit) is a non-semantic bucket
 (no transferability claim — the `M` already disclaims CCN equivalence).
 
+## C-ID extractor (MUST-FIX) — clean atomic targets
+The raw `CIDNumber` column carried three defects; the extractor (`parse_cids`)
+repairs all three and every emitted target is validated against `CID_RE`:
+
+| defect | example | rows repaired |
+|---|---|---|
+| doubled course-number token | `AG-PS 104 104` → `AG-PS 104` | 98 |
+| several C-IDs in one cell (comma) | `ENGL 110, ENGL 120` → 2 targets | 46 |
+| `000` placeholder number | `MUS 171 000` → `MUS 171` | 5 |
+
+Legit variant suffixes (`L` lab, `X` cross-listed, `S` support, …) are preserved.
+**Malformed C-ID targets remaining: 0.** ✅
+
+## Confirmation (a) — subject canonicalization is intended
+A minted identity's subject is its title cluster's **modal local subject**,
+synthesized to a 4-letter `SUBJ4`. When the same title is taught under different
+local subject codes across colleges, those codes **collapse to one** SUBJ4 — this
+is the cross-college consolidation working as designed, not a bug.
+9,638 minted clusters span >1 local
+subject. Examples (new code · chosen SUBJ4 · modal local subject · other locals
+folded in):
+
+- `NURS M1066` · **NURS** · `NURS` ← 'MEDS', 'ALH', 'MA', 'MEDA', 'OT', 'HS'
+- `MATH M1134` · **MATH** · `MATH` ← 'MATHC', 'MTH', 'NMAT', 'ACAD PR', 'MAT', 'Mathematics (MATH)'
+- `ETHN M1039` · **ETHN** · `ETHN` ← 'ETHNS', 'ETHST', 'ETHS', 'ES', 'ETHNST', 'ESTU'
+- `CIS M1043` · **CIS** · `CIS` ← 'ITIS', 'ICT', 'CSIS', 'VOC', 'CSIT'
+- `RE M1032` · **RE** · `RE` ← 'RLS', 'REST', 'REAL', 'R.E.', 'NC.REAL', 'AIS'
+- `MATH M1065` · **MATH** · `MATH` ← 'MAT', 'Mathematics (MATH)'
+- `CHDE M1003` · **CHDE** · `CHDEV` ← 'PSYC', 'PSYCH', 'CDEV', 'ECE', 'VOC', 'Family and Consumer Studies (FCS)'
+- `PHOT M1057` · **PHOT** · `PHOT` ← 'PHTO', 'PHO', 'AP', 'ARTH', 'PHOTO', 'ART'
+
+Caveat: collapsing local-subject *variants* of the same course (MTH/MAT→MATH,
+MEDS/ALH→NURS) is the intended win. A few folds are looser (e.g. PSYC into CHDEV)
+— that is the **pre-existing title-grouping over-merge**, already carried on the
+identity as `subject_spread` / `over_merged` for reviewer triage; the re-mint
+neither introduces nor worsens it (same title key as today's mint).
+
+## Confirmation (b) — the granularity increase IS the over-merge fix
+The 2,083 **split** clusters are exactly the over-merges the
+old lossy `(subject, number)` join hid: a title that some colleges teach as an
+un-aligned local course AND others teach as an officially-aligned C-ID/CCN course
+used to collapse into ONE M-ID. The re-mint **separates** them — the un-aligned
+members stay as a minted remnant, the aligned members promote to their official
+identity — so remnant + official **coexist** and the total identity count rises.
+This split surfaces **446 distinct
+official C-ID/CCN identities** that were previously buried inside an M-ID. That
+rise in granularity is the intended correction, not a regression. (`vanish=0`
+because every one of these titles still has ≥1 un-aligned member somewhere, so a
+minted remnant always remains.)
+
 ## Splits to review (first 25 of 2,083)
 | old M-ID | title | new identities |
 |---|---|---|
 | `M-ID AAD 112` | Introduction to Digital Painting | `DART M1005`, `C-ID:ARTS 250` |
 | `M-ID ABE 112` | American Literature | `ABE M9005`, `C-ID:ENGL 130`, `C-ID:ENGL 135` |
 | `M-ID ABE 146` | Microsoft Word I | `BT M1005`, `C-ID:BSOT 111 X` |
-| `M-ID ABT 112` | Introduction to Agriculture Business | `ABT M1002`, `C-ID:AG-AB 104`, `C-ID:AG-AS 104`, `C-ID:AG-PS 104 104` |
-| `M-ID ABT 124` | Plant Science | `AGPS M1002`, `C-ID:AG-EH 108 108 L`, `C-ID:AG-PS 104 104`, `C-ID:AG-PS 106 106 L` |
-| `M-ID ABT 126` | Soil Science | `AG M1022`, `C-ID:AG-PS 128 128 L` |
+| `M-ID ABT 112` | Introduction to Agriculture Business | `ABT M1002`, `C-ID:AG-AB 104`, `C-ID:AG-AS 104`, `C-ID:AG-PS 104` |
+| `M-ID ABT 124` | Plant Science | `AGPS M1002`, `C-ID:AG-EH 108 L`, `C-ID:AG-PS 104`, `C-ID:AG-PS 106 L` |
+| `M-ID ABT 126` | Soil Science | `AG M1022`, `C-ID:AG-PS 128 L` |
 | `M-ID ACC 116` | Principles of Accounting I | `ACC M1004`, `C-ID:ACCT 110` |
 | `M-ID ACC 118` | Principles of Accounting II | `ACC M1005`, `C-ID:ACCT 120` |
 | `M-ID ACCT 190` | Financial Accounting | `ACCT M1047`, `C-ID:ACCT 110` |
