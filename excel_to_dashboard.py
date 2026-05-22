@@ -4629,6 +4629,9 @@ def export_unified_courses():
                # client diffs the live description overlay against this to count
                # description edits still awaiting the daily sync.
                "committed_descriptions": {cid: c["description"] for cid, c in curation.items() if c.get("description")},
+               # TOP code -> program title (small, ~400 entries) so the main
+               # list can show the TOP title on hover without the lazy member file.
+               "topmap": top_titles,
                "export_path": "exports/unified_courses.xlsx", "rows": rows}
     with open(out_js, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses (COCI identity layer) — auto-generated. AI-assisted STAGING. */\n"
