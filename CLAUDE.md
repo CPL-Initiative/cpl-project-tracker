@@ -419,6 +419,87 @@ When that lands, the EACR grouping key will become
 `(Unified Title, CPL Type, Collaborative Type)` and a per-exhibit
 `also entered as…` disclosure will surface the raw titles underneath.
 
+### 10. C-ID / CCN numbering conventions (authoritative) + M-ID alignment direction
+
+Source docs (ASCCC, uploaded 2026-05-22; checked in under `docs/reference/`):
+`cid_ccn_2025_overview.pdf` (the C-ID/CCN one-pager + CCN structure
+infographic) defines the **numbering scheme**; `cid_tmc_adt_handbook_f2022.pdf`
+and `tmc_development_guidelines_2013.pdf` cover the descriptor/degree-development
+process (read on demand if the renumber project needs them — note: PDF page
+rendering needs `poppler-utils`, absent in some session containers).
+
+**The two official systems (leave both VERBATIM as listed in COCI — never relabel):**
+
+- **C-ID** (Course Identification Numbering System) — *faculty-driven,
+  descriptor-based, many-to-one*: many local courses map to one C-ID descriptor
+  (the descriptor is the **minimum** content; colleges may add more). Format is
+  `SUBJ ###` (e.g. `COMP 122`, `POLS 110`) — **no `C` prefix on the number.**
+  491 active descriptors; basis for 43 TMCs; ~30k CCC courses aligned.
+- **CCN** (Common Course Numbering, AB 1111) — *student-facing, template-based,
+  one-to-one*: identical template content statewide (extra content goes in an
+  optional "Part 2"). Format `SUBJ C####&&`:
+  - `SUBJ` — standardized **4-letter** subject abbreviation (a system-level
+    standard list; we do NOT yet hold that authoritative list).
+  - `C` — Course Type Identifier = "this is a CCN". **A local course has no `C`.**
+  - `####` — 4-digit number with **banded meaning**: `0XXX` non-transferable ·
+    `1XXX` 100-level · `2XXX` 200-level · `3XXX` 300-level · `4XXX` 400-level ·
+    `9XXX` noncredit. (For CCC only lower-division applies → realistically
+    `0/1/2/9` XXX.)
+  - `&&` — up to **2** Course Speciality Identifiers, no filler when absent:
+    `H` Honors · `L` Lab-only · `S` Support · `E` Embedded Support.
+  - Example: `GEOL C1005H` = Geology · CCN · 100-level · Honors.
+  Rollout: Phase I (6 templates) student-facing Fall 2025; Phase II (24) Fall
+  2026/27; Phase III (55) Fall 2027.
+
+**M-ID alignment direction (decided 2026-05-22; NOT yet built — bundled into the
+CourseControlNumber re-mint project):**
+
+Our minted identities (`coci_minted_courses.json`, currently rendered
+`M-ID <SUBJ> <num>`) will adopt a CCN-*structured* surrogate format that is
+unmistakably **ours, not official**:
+
+- **Lead with `M` in the Course-Type-Identifier position** (`SUBJ M####&&`),
+  exactly paralleling CCN's `C`. The `M` (Minted) signals a synthetic MAP
+  identity and **prevents any collision with a real CCN `C####`**. This is the
+  whole point of the prefix: an M-code must never read as an official CCN.
+- **C-IDs and CCNs stay verbatim** (different formats, both authoritative). Only
+  the *minted* tier gets the M-scheme.
+- **Decisions locked:**
+  - **Sequencing — bundle with the re-mint.** The M-prefix AND the banded
+    renumber ship together inside the **CourseControlNumber re-mint** (NOT a
+    separate relabel pass). Re-keying the minted identity space ripples into
+    memberships, `coci_articulations.json` `course_id`, curation `merge_into`
+    pointers, dashboard rows, and the Articulations-by-Course card — so it's
+    one re-key, not two churns, and must carry an **old-M-ID → new-M-ID alias
+    map** so curation/articulation pointers survive.
+  - **Banding basis — `credit_status` only, initially.** Noncredit /
+    Noncredit-Enhanced → `9XXX`; everything credit → `1XXX`. Honest with data we
+    hold. `0XXX` (non-transferable) and the `1XXX` vs `2XXX` split are deferred
+    until transferability/degree-applicability data is sourced/confirmed.
+  - **Subjects — synthesize a 4-letter map for the M-IDs.** An authoritative
+    CCN 4-letter subject-abbreviation list does **not** appear to exist publicly
+    yet, so the re-mint will **synthetically derive** a 4-letter abbreviation per
+    minted subject from the local COCI subject codes (deterministic, collision-
+    managed, clearly **our** synthetic map — NOT the official CCN list). **C-IDs
+    stay verbatim** (not re-subjected). Revisit if an authoritative list is later
+    sourced. Like the M-numbers, document loudly that these 4-letter subjects are
+    a MAP surrogate, not a CCN claim.
+  - **Numbering format (confirmed 2026-05-22 via the dry-run, PR #83):**
+    CCN's `SUBJ C####` is 4 digits = leading **band** digit + 3-digit sequence.
+    Mirror it: **corroborated** M-IDs (≥2 colleges) → clean 4-digit
+    `SUBJ M<band><seq:03d>` (`9`=noncredit, `1`=credit; corroborated max per
+    (subject,band) is 496 → fits with room). **Stand-alones** (1 college) →
+    `SUBJ M<band><d><LL>` — band + 1 sequence digit + **2 letters** (same 4-char
+    width; the trailing letters expand capacity to 10·26·26 = **6,760** per
+    (subject,band) vs a max stand-alone bucket of 1,432, and signal "stand-alone"
+    since corroborated codes are all-digit). It promotes to a corroborated
+    `M####` if a second college later joins the title. The within-(subject,band)
+    sequence must be **stable, deterministic, persisted** (sorted by normalized
+    title) or codes churn each daily regen.
+- Always document loudly: **M-numbers are CCN-aligned surrogate keys, NOT a
+  claim of CCN equivalence.**
+
+
 ---
 
 ## Knowledge Base & Unified Courses Curation — Build Status
@@ -652,7 +733,11 @@ mirroring the C-ID anchor, and are usable as ⚇ Unify merge targets.
   numbers); confirm scope before building.
 - **Open threads (next sessions), in priority order:** (1) **`CourseControlNumber`
   re-mint** — the root-cause fix that re-keys memberships at the raw
-  college-course level (unblocks crosswalk Phase C; scope before build).
+  college-course level (unblocks crosswalk Phase C; scope before build). **Now
+  also carries the M-ID CCN-aligned renumber** (`SUBJ M####`, see §10) since both
+  re-key the minted identity space — do them as one re-key with an old→new alias
+  map. Subjects: synthesize our own 4-letter map (no authoritative CCN list
+  exists yet; see §10).
   (2) **EACR interactive re-pivot (Approach B above).** (3) **Singleton-only
   worklist follow-up** — consider a `same_college`/blank-disc filter on the
   worklist and extending V2's grouping with a description tie-breaker for the
