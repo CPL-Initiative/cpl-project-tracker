@@ -503,7 +503,17 @@ re-runnable (idempotent — only fills blanks, never overwrites reviewed/curated
   The **⚇ Unify** candidate ranking factors **subject + units** agreement, not
   title alone (title-token Jaccard ≥ 0.5 gates inclusion; same-subject +0.15 and
   same-units +0.10 reorder to the top — `unified_courses_index.js` now carries
-  units as a 5th field). A **pending-sync indicator** ("⟳ N edits awaiting daily sync") +
+  units as a 5th field). **Suggested-merges worklist** — a **"✨ Suggested
+  merges"** toolbar button opens a review queue over precomputed same-course
+  groups (`unified_courses_suggestions.js`, lazy). The generator groups identities
+  by a **level-safe title signature** (parentheticals removed, articles dropped,
+  roman numerals → digits, tokens sorted — so "Japanese I"/"Japanese 1" group but
+  "Japanese I"/"II" do NOT), **identity-anchored** (every group has ≥1 main M-ID/
+  Cluster identity, excludes `cid_conflict` over-merges, attaches matching orphan
+  singletons), ranked by cohesion (subject + units agreement + size). The curator
+  reviews one group at a time, members pre-checked; **Confirm** reuses the
+  `doConsolidate` path (writes `merge_into`), **Skip** advances. **Never
+  auto-applied.** A **pending-sync indicator** ("⟳ N edits awaiting daily sync") +
   **Sync now** link surface edits not yet in git (diffed against the dataset's
   `committed_curation` snapshot). The **curated common-course anchor**
   (`common_courses.json`, C-ID/CCN/M-ID) is shown **read-only** (an "anchor"
@@ -544,6 +554,7 @@ workflow `git add` list (§6):
 | `unified_courses_details.js` | `CPL_UC_DETAILS` | ⓘ details modal | `id → {d:description, s:source}` (~70k incl. stand-alones; ~34MB, lazy/gzipped) |
 | `unified_courses_standalone.js` | `CPL_UC_STANDALONE` | "Stand-Alone" kind filter | ~57.7k single-college rows (kept out of the main payload) |
 | `unified_courses_members.js` | `CPL_UC_MEMBERS` | row expand caret ▸ | `id → [{c:collegeIdx,n:code,t:title}]` member college courses |
+| `unified_courses_suggestions.js` | `CPL_UC_SUGGESTIONS` | ✨ Suggested-merges worklist | `{groups:[{sig,n,score,members:[{id,t,s,u,k,g}]}]}` — identity-anchored same-title merge candidates, ranked by cohesion |
 
 **Raw course source — `kb/reference/coci_course_list.xlsx`** (committed, ~24MB,
 141,738 rows). Cols: College, CourseControlNumber, Subject, Course_Number,
