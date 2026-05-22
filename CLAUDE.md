@@ -45,7 +45,9 @@ into the Pipeline Reference below or into dedicated docs.
    changes must be additive (incremental, alias-tracked) — never another bulk
    renumber, because curation, articulation `course_id` pointers, and the live
    Supabase `kb_curation` table all key on these ids. Authoritative old→new
-   alias: `kb/remint_out/alias_map.json` (committed for rollback).
+   alias: `kb/remint_out/alias_map.json` (committed for rollback). Full
+   decisions + validation methodology + rollback notes:
+   [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
 
 ## Branch policy
 
