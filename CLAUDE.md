@@ -419,6 +419,64 @@ When that lands, the EACR grouping key will become
 `(Unified Title, CPL Type, Collaborative Type)` and a per-exhibit
 `also entered as…` disclosure will surface the raw titles underneath.
 
+### 10. C-ID / CCN numbering conventions (authoritative) + M-ID alignment direction
+
+Source docs (ASCCC, uploaded 2026-05-22): the C-ID/CCN one-pager, the CCN
+structure infographic, the CID/TMC ADT Handbook (F2022), and the TMC
+Development Guidelines (2013). The first two define the **numbering scheme**;
+the latter two cover the descriptor/degree-development process (read on demand
+if the renumber project needs them).
+
+**The two official systems (leave both VERBATIM as listed in COCI — never relabel):**
+
+- **C-ID** (Course Identification Numbering System) — *faculty-driven,
+  descriptor-based, many-to-one*: many local courses map to one C-ID descriptor
+  (the descriptor is the **minimum** content; colleges may add more). Format is
+  `SUBJ ###` (e.g. `COMP 122`, `POLS 110`) — **no `C` prefix on the number.**
+  491 active descriptors; basis for 43 TMCs; ~30k CCC courses aligned.
+- **CCN** (Common Course Numbering, AB 1111) — *student-facing, template-based,
+  one-to-one*: identical template content statewide (extra content goes in an
+  optional "Part 2"). Format `SUBJ C####&&`:
+  - `SUBJ` — standardized **4-letter** subject abbreviation (a system-level
+    standard list; we do NOT yet hold that authoritative list).
+  - `C` — Course Type Identifier = "this is a CCN". **A local course has no `C`.**
+  - `####` — 4-digit number with **banded meaning**: `0XXX` non-transferable ·
+    `1XXX` 100-level · `2XXX` 200-level · `3XXX` 300-level · `4XXX` 400-level ·
+    `9XXX` noncredit. (For CCC only lower-division applies → realistically
+    `0/1/2/9` XXX.)
+  - `&&` — up to **2** Course Speciality Identifiers, no filler when absent:
+    `H` Honors · `L` Lab-only · `S` Support · `E` Embedded Support.
+  - Example: `GEOL C1005H` = Geology · CCN · 100-level · Honors.
+  Rollout: Phase I (6 templates) student-facing Fall 2025; Phase II (24) Fall
+  2026/27; Phase III (55) Fall 2027.
+
+**M-ID alignment direction (PROPOSED — design decisions still open, NOT built):**
+
+Our minted identities (`coci_minted_courses.json`, currently rendered
+`M-ID <SUBJ> <num>`) should adopt a CCN-*structured* surrogate format that is
+unmistakably **ours, not official**:
+
+- **Lead with `M` in the Course-Type-Identifier position** (`SUBJ M####&&`),
+  exactly paralleling CCN's `C`. The `M` (Minted) signals a synthetic MAP
+  identity and **prevents any collision with a real CCN `C####`**. This is the
+  whole point of the prefix: an M-code must never read as an official CCN.
+- **C-IDs and CCNs stay verbatim** (different formats, both authoritative). Only
+  the *minted* tier gets the M-scheme.
+- **Banded renumber is its own staged project, not a relabel.** Re-keying the
+  minted identity space ripples into memberships, `coci_articulations.json`
+  `course_id`, curation `merge_into` pointers, dashboard rows, and the
+  Articulations-by-Course card — same blast radius as the parked
+  **CourseControlNumber re-mint**, so the two should be **bundled** (one
+  re-key, not two churns) and carry an **old-M-ID → new-M-ID alias map** so
+  curation/articulation pointers survive. Band only on data we can defend
+  (`credit_status` → `9XXX` noncredit is solid; `0XXX` non-transferable / `1XXX`
+  vs `2XXX` need transferability/degree-applicability data we have not confirmed
+  we hold); the 3 trailing digits need a **stable, deterministic, persisted**
+  within-(subject,band) sequence or codes churn each daily regen. Always
+  document loudly: **M-numbers are CCN-aligned surrogate keys, NOT a claim of
+  CCN equivalence.**
+
+
 ---
 
 ## Knowledge Base & Unified Courses Curation — Build Status
