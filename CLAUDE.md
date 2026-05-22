@@ -488,12 +488,14 @@ unmistakably **ours, not official**:
     CCN's `SUBJ C####` is 4 digits = leading **band** digit + 3-digit sequence.
     Mirror it: **corroborated** M-IDs (≥2 colleges) → clean 4-digit
     `SUBJ M<band><seq:03d>` (`9`=noncredit, `1`=credit; corroborated max per
-    (subject,band) is 496 → fits with room). **Singletons** (1 college) → a
-    deliberately-not-CCN-shaped `SUBJ Ms<band><seq:05d>` (the `s` marks
-    single-college; not a "common" course) kept off the clean `M####` space; it
-    promotes to `M####` if a second college later joins the title. The
-    within-(subject,band) sequence must be **stable, deterministic, persisted**
-    (sorted by normalized title) or codes churn each daily regen.
+    (subject,band) is 496 → fits with room). **Stand-alones** (1 college) →
+    `SUBJ M<band><d><LL>` — band + 1 sequence digit + **2 letters** (same 4-char
+    width; the trailing letters expand capacity to 10·26·26 = **6,760** per
+    (subject,band) vs a max stand-alone bucket of 1,432, and signal "stand-alone"
+    since corroborated codes are all-digit). It promotes to a corroborated
+    `M####` if a second college later joins the title. The within-(subject,band)
+    sequence must be **stable, deterministic, persisted** (sorted by normalized
+    title) or codes churn each daily regen.
 - Always document loudly: **M-numbers are CCN-aligned surrogate keys, NOT a
   claim of CCN equivalence.**
 

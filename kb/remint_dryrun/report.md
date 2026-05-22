@@ -22,8 +22,8 @@ that yields more than one distinct new identity is a **1:many split**.
 
 Old M-IDs: 14,754 corroborated + 57,727 singletons.
 New minted identities: 72,481
-(16,308 corroborated → clean 4-digit
-`M####`; 56,173 singleton → `Ms#####` key.
+(16,308 corroborated → all-digit
+`M####`; 56,173 stand-alone → `M<band><d><LL>`.
 noncredit→9xxx: 10,183; credit→1xxx:
 62,298).
 
@@ -32,7 +32,7 @@ noncredit→9xxx: 10,183; credit→1xxx:
 |---|---|---|---|---|
 | `M-ID AB 100` | M-ID | rename | `AB M1001` | merge_into `UC-CUR-MPG029OM` (M-ID? False) |
 | `M-ID ABDY 100` | M-ID | rename | `ABDY M1001` | merge_into `UC-CUR-MPG029OM` (M-ID? False) |
-| `M-ID ABDY 106` | M-ID | rename | `ABDY Ms100001` | merge_into `UC-CUR-MPG029OM` (M-ID? False) |
+| `M-ID ABDY 106` | M-ID | rename | `ABDY M10AA` | merge_into `UC-CUR-MPG029OM` (M-ID? False) |
 | `M-ID BSICSKL 100` | M-ID | rename | `BSIC M9001` | — |
 | `M-ID EGDTEK 100` | M-ID | rename | `EGDT M1001` | — |
 | `UC-CUR-MPG029OM` | cluster | not an M-ID — key is stable, not re-keyed | — | — |
@@ -53,10 +53,13 @@ mirrors that:
   (subject,band) = **496** (< 1,000),
   so it fits with room to spare. Buckets over 999: none.
   Top buckets: ART 1=496, ENGL 1=350, KIN 1=335, DANC 1=329, MATH 1=306, MUS 1=304, CIS 1=270, ESL 1=268, FIRE 1=222, MUSI 1=209.
-- **Singletons** (1 college) → `SUBJ Ms<band><seq:05d>`. A single-college course
-  is not a "common" course, so it is deliberately kept **off** the clean 4-digit
-  `M####` space and marked `Ms` (minted-singleton). If a second college later
-  joins the title, it promotes to a corroborated `M####`.
+- **Stand-alones** (1 college) → `SUBJ M<band><d><LL>` — band + 1 sequence digit
+  + **2 letters**. Same 4-char width, but the trailing letters expand capacity to
+  **6,760** per (subject,band) vs a
+  max stand-alone bucket of **1,432**
+  (~4.7× headroom; buckets over capacity: none).
+  The 2 trailing letters are the tell — corroborated codes are all-digit. If a
+  second college later joins the title it promotes to a corroborated `M####`.
 
 `9` (noncredit) is the only asserted band; `1` (credit) is a non-semantic bucket
 (no transferability claim — the `M` already disclaims CCN equivalence).
