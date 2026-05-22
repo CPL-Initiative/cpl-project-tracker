@@ -470,6 +470,19 @@ session resuming the build — read it before touching `kb/` or the curation tab
      is absent → parents-only). Fills are stamped `discipline_source="description"`
      at confidence **0.5** (the lowest tier — surfaced as `⚙ descr` for reviewer
      triage). Pass 4 filled ~941 (850 singletons + 91 parents).
+   - **TOP-aware inference (re-runnable, highest-yield):**
+     `kb/_infer_disciplines_from_top.py` maps each blank course's `top_code` to an
+     MQ discipline via the authored `kb/top_discipline_map.json` (the 6-digit MAP
+     TOP program title is a curated category that often names the discipline:
+     "0948.00" → Automotive Technology, "1230.10" → Registered Nursing → Nursing).
+     **Guardrail:** colleges vary in TOP assignment, so it's an intent signal, not
+     ground truth — fills at **confidence 0.5**, `discipline_source="top_code"`
+     (surfaced as `⚙ TOP`), reviewer-verifiable. The coarse catch-all codes
+     (`4930.xx` Interdisciplinary/Basic-Skills/Guidance, the `*99.00 Other` and
+     `* General` buckets) are **deliberately omitted** from the map so they stay
+     blank rather than get a misleading lump-discipline (only ESL `4930.86/.87`
+     are mapped). Pass 5 filled **~10,344** (the biggest pass — every staging
+     course carries a top_code; blanks 17,537 → ~7,193). Edit the map + re-run.
 
 **Generators** (`kb/_seed_*.py`, `_join_*.py`, `_curation_*.py`, `_flag_*.py`)
 are one-shot, kept for provenance — curate by editing JSON / via Supabase, not
@@ -533,9 +546,12 @@ re-runnable (idempotent — only fills blanks, never overwrites reviewed/curated
   `export_unified_courses()` via the `_add_prov()` helper — emitted **only** on
   non-curated rows that carry a `discipline_source` (blank/manual/anchor rows
   stay lean, no extra keys). Curated rows render as Verified, so no badge. The
-  three `discipline_source` values are `subject_map` + `title_keyword` (from
-  `kb/_infer_disciplines.py`) and `description` (from
-  `kb/_infer_disciplines_from_desc.py`).
+  four `discipline_source` values are `subject_map` + `title_keyword` (from
+  `kb/_infer_disciplines.py`), `description` (from
+  `kb/_infer_disciplines_from_desc.py`), and `top_code` (from
+  `kb/_infer_disciplines_from_top.py`) — the Generated-by filter has a matching
+  option for each (`by subject-code` / `by title-keyword` / `by description` /
+  `by TOP code`); only `subject_map` renders ok-colored, the rest warn.
 - Supabase is **live and shared**: only the unified-courses curation tables
   (`kb_curation`, `allowed_reviewers`) are in scope. The
   projects/budget/personnel/workplan tables (§8) and the auth/Redirect-URL config
