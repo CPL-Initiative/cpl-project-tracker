@@ -1396,6 +1396,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 .cpl-analytics-body,
 .activity-kpi-body {
@@ -1802,8 +1805,10 @@
         
         
         
-        <div class="last-updated">Last Updated: May 22, 2026 at 5:37 AM PT</div>
+        
+        <div class="last-updated">Last Updated: May 22, 2026 at 4:31 PM PT</div>
         <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:#C9A84C;border:1px solid #C9A84C;padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='#C9A84C';this.style.color='#0A2240'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='#C9A84C'}">&#x21bb; Refresh Today&#39;s Data</button></div>
+        
         
         
         
@@ -2632,6 +2637,76 @@
     </table>
   </div>
   <div style="padding:0 1rem 0.8rem;"><details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">View_ArticulatedMAPExhibits.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Group rows by ExhibitID, sum credit recommendations across all colleges, sort desc, take top 50.</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Ranking = total articulation count statewide.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">Ties broken by exhibit ID order. Counts reflect raw row counts and can include the known duplicate inflation.</span></div><div class="algo-meta">Description last updated: 2026-04-19</div></div></details></div>
+</div>
+
+            <div class="exhibit-card" id="articulations-by-course">
+  <div class="exhibit-card-header">
+    <div class="exhibit-card-title-row">
+      <div>
+        <div class="exhibit-card-title">Articulations by Unified Course</div>
+        <div class="exhibit-card-subtitle">2,355 unified course identities &middot; 355 earned at &gt;1 college &middot; top 50 by adoption leverage</div>
+      </div>
+    <a class="analytics-export-btn" href="exports/articulations-by-course.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
+    </div>
+  </div>
+  <div class="exhibit-card-body">
+    <table class="exhibit-table">
+      <thead><tr><th>#</th><th>Unified Course</th><th>Discipline</th><th>Colleges Earned</th><th>Credit Recommendation</th><th>Credential</th><th>Adoption Leverage</th></tr></thead>
+      <tbody><tr><td>1</td><td class="exhibit-cell-name">Introduction to Statistics<div style="font-size:0.72rem;opacity:0.7;">MATH 110 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">10</td><td>4 hours in Introduction to Statistics</td><td>AP Statistics <span style="opacity:0.6;">(+4)</span></td><td><span class="exhibit-cell-num">84</span></td></tr>
+<tr><td>2</td><td class="exhibit-cell-name">Academic Reading and Writing<div style="font-size:0.72rem;opacity:0.7;">ENGL 100 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">14</td><td>4 hours in Academic Reading and Writing</td><td>AP English Language and Composition <span style="opacity:0.6;">(+5)</span></td><td><span class="exhibit-cell-num">79</span></td></tr>
+<tr><td>3</td><td class="exhibit-cell-name">Introduction to Psychology<div style="font-size:0.72rem;opacity:0.7;">PSY 110 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">13</td><td>3 hours in Introduction to Psychology</td><td>AP Psychology <span style="opacity:0.6;">(+5)</span></td><td><span class="exhibit-cell-num">77</span></td></tr>
+<tr><td>4</td><td class="exhibit-cell-name">Principles of Macroeconomics<div style="font-size:0.72rem;opacity:0.7;">ECON 202 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">8</td><td>3 hours in Principles of Macroeconomics</td><td>AP Macroeconomics <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">75</span></td></tr>
+<tr><td>5</td><td class="exhibit-cell-name">Water Treatment I<div style="font-size:0.72rem;opacity:0.7;">NULL &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">2</td><td>4 hours in Cisco Networking 1</td><td>Cisco Networking Academy — Networking Essentials</td><td><span class="exhibit-cell-num">75</span></td></tr>
+<tr><td>6</td><td class="exhibit-cell-name">American Government and Politics<div style="font-size:0.72rem;opacity:0.7;">POLS 110 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">7</td><td>3 hours in American Government and Politics</td><td>AP United States Government and Politics <span style="opacity:0.6;">(+2)</span></td><td><span class="exhibit-cell-num">73</span></td></tr>
+<tr><td>7</td><td class="exhibit-cell-name">Introduction to Public Speaking<div style="font-size:0.72rem;opacity:0.7;">COMM 110 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">1</td><td>3 hours in Introduction to Public Speaking</td><td>Fundamentals of Public Speaking <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">73</span></td></tr>
+<tr><td>8</td><td class="exhibit-cell-name">Financial Accounting<div style="font-size:0.72rem;opacity:0.7;">ACCT 110 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">3</td><td>5 hours in Financial Accounting I</td><td>Financial Accounting</td><td><span class="exhibit-cell-num">72</span></td></tr>
+<tr><td>9</td><td class="exhibit-cell-name">Principles of Microeconomics<div style="font-size:0.72rem;opacity:0.7;">ECON 201 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">8</td><td>3 hours in Principles of Microeconomics</td><td>AP Microeconomics <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">71</span></td></tr>
+<tr><td>10</td><td class="exhibit-cell-name">Managerial Accounting<div style="font-size:0.72rem;opacity:0.7;">ACCT 120 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">2</td><td>5 hours in Managerial Accounting</td><td>Managerial Accounting</td><td><span class="exhibit-cell-num">71</span></td></tr>
+<tr><td>11</td><td class="exhibit-cell-name">Interpersonal Communication<div style="font-size:0.72rem;opacity:0.7;">COMM 130 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">1</td><td>3 hours in Interpersonal Communication</td><td>Interpersonal Communication (JST Military Credit)</td><td><span class="exhibit-cell-num">70</span></td></tr>
+<tr><td>12</td><td class="exhibit-cell-name">History of the United States to 1877<div style="font-size:0.72rem;opacity:0.7;">HIST 130 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">7</td><td>3 hours in History of the United States to 1877</td><td>AP United States History <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">68</span></td></tr>
+<tr><td>13</td><td class="exhibit-cell-name">General Chemistry I<div style="font-size:0.72rem;opacity:0.7;">CHEM 110 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">1</td><td>5 hours in General Chemistry I</td><td>AP Chemistry</td><td><span class="exhibit-cell-num">68</span></td></tr>
+<tr><td>14</td><td class="exhibit-cell-name">Introduction to the Criminal Justice System<div style="font-size:0.72rem;opacity:0.7;">AJ 110 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">20</td><td>3 hours in Introduction to the Criminal Justice System</td><td>POST Basic Academy <span style="opacity:0.6;">(+6)</span></td><td><span class="exhibit-cell-num">67</span></td></tr>
+<tr><td>15</td><td class="exhibit-cell-name">General Chemistry, II<div style="font-size:0.72rem;opacity:0.7;">CHEM 120 S &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">1</td><td>5 hours in General Chemistry, I</td><td>AP Chemistry</td><td><span class="exhibit-cell-num">67</span></td></tr>
+<tr><td>16</td><td class="exhibit-cell-name">United States History since 1865<div style="font-size:0.72rem;opacity:0.7;">HIST 140 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">6</td><td>3 hours in United States History since 1865</td><td>AP United States History <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">66</span></td></tr>
+<tr><td>17</td><td class="exhibit-cell-name">World History 1<div style="font-size:0.72rem;opacity:0.7;">HIST 150 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">5</td><td>3 hours in World History 1</td><td>AP World History: Modern <span style="opacity:0.6;">(+2)</span></td><td><span class="exhibit-cell-num">66</span></td></tr>
+<tr><td>18</td><td class="exhibit-cell-name">Calculus Third Course<div style="font-size:0.72rem;opacity:0.7;">MATH 230 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">3</td><td>4 hours in Calculus Third Course</td><td>Multivariable Calculus <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">66</span></td></tr>
+<tr><td>19</td><td class="exhibit-cell-name">Human Anatomy<div style="font-size:0.72rem;opacity:0.7;">BIOL 110 B &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">2</td><td>4 hours in Human Anatomy</td><td>Human Anatomy</td><td><span class="exhibit-cell-num">66</span></td></tr>
+<tr><td>20</td><td class="exhibit-cell-name">Music Appreciation<div style="font-size:0.72rem;opacity:0.7;">MUS 100 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">1</td><td>3 hours in Music Appreciation</td><td>Music Appreciation</td><td><span class="exhibit-cell-num">66</span></td></tr>
+<tr><td>21</td><td class="exhibit-cell-name">Introduction to Business<div style="font-size:0.72rem;opacity:0.7;">BUS 110 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">3</td><td>3 hours in Introduction to Business</td><td>Introduction to Business <span style="opacity:0.6;">(+3)</span></td><td><span class="exhibit-cell-num">65</span></td></tr>
+<tr><td>22</td><td class="exhibit-cell-name">Cultural Anthropology<div style="font-size:0.72rem;opacity:0.7;">ANTH 120 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">2</td><td>3 hours in Cultural Anthropology</td><td>Cultural Anthropology</td><td><span class="exhibit-cell-num">65</span></td></tr>
+<tr><td>23</td><td class="exhibit-cell-name">Modern Comparative Governments<div style="font-size:0.72rem;opacity:0.7;">POLS 130 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">4</td><td>3 hours in Modern Comparative Governments</td><td>AP Comparative Government and Politics</td><td><span class="exhibit-cell-num">62</span></td></tr>
+<tr><td>24</td><td class="exhibit-cell-name">Beginning Drawing<div style="font-size:0.72rem;opacity:0.7;">ARTS 110 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">6</td><td>3 hours in Beginning Drawing</td><td>AP Art and Design: Drawing <span style="opacity:0.6;">(+2)</span></td><td><span class="exhibit-cell-num">61</span></td></tr>
+<tr><td>25</td><td class="exhibit-cell-name">Developmental Psychology<div style="font-size:0.72rem;opacity:0.7;">PSY 180 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">2</td><td>3 hours in Developmental Psychology</td><td>Developmental Psychology <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">61</span></td></tr>
+<tr><td>26</td><td class="exhibit-cell-name">Introductory Human Physiology<div style="font-size:0.72rem;opacity:0.7;">BIOL 120 B &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">1</td><td>4 hours in Introductory Human Physiology</td><td>Introductory Human Physiology</td><td><span class="exhibit-cell-num">61</span></td></tr>
+<tr><td>27</td><td class="exhibit-cell-name">Introduction to Theatre<div style="font-size:0.72rem;opacity:0.7;">THTR 111 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">1</td><td>3 hours in Arts</td><td>IB Theatre HL</td><td><span class="exhibit-cell-num">61</span></td></tr>
+<tr><td>28</td><td class="exhibit-cell-name">Legal Aspects of Evidence<div style="font-size:0.72rem;opacity:0.7;">AJ 124 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">17</td><td>3 hours in Legal Aspects of Evidence</td><td>POST Basic Academy <span style="opacity:0.6;">(+4)</span></td><td><span class="exhibit-cell-num">59</span></td></tr>
+<tr><td>29</td><td class="exhibit-cell-name">Appreciation of Literature<div style="font-size:0.72rem;opacity:0.7;">ENGL 120 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">3</td><td>3 hours in Appreciation of Literature</td><td>AP English Literature and Composition <span style="opacity:0.6;">(+2)</span></td><td><span class="exhibit-cell-num">59</span></td></tr>
+<tr><td>30</td><td class="exhibit-cell-name">Intermediate Algebra<div style="font-size:0.72rem;opacity:0.7;">MATH M1134 &middot; M-ID</div></td><td>Mathematics</td><td class="exhibit-cell-num">1</td><td>4 hours in Intermediate Algebra</td><td>Generic Credit by Exam — San Bernardino Valley College (MATH 095)</td><td><span class="exhibit-cell-num">59</span></td></tr>
+<tr><td>31</td><td class="exhibit-cell-name">Concepts of Criminal Law<div style="font-size:0.72rem;opacity:0.7;">AJ 120 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">19</td><td>3 hours in Criminal Law</td><td>POST Basic Academy <span style="opacity:0.6;">(+5)</span></td><td><span class="exhibit-cell-num">58</span></td></tr>
+<tr><td>32</td><td class="exhibit-cell-name">2D Design<div style="font-size:0.72rem;opacity:0.7;">ARTS 100 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">5</td><td>3 hours in 2D Design</td><td>AP 2-D Art and Design <span style="opacity:0.6;">(+3)</span></td><td><span class="exhibit-cell-num">58</span></td></tr>
+<tr><td>33</td><td class="exhibit-cell-name">3D Design<div style="font-size:0.72rem;opacity:0.7;">ARTS 101 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">3</td><td>3 hours in 3D Design</td><td>AP Art and Design: 3-D Design</td><td><span class="exhibit-cell-num">58</span></td></tr>
+<tr><td>34</td><td class="exhibit-cell-name">CHILD, FAMILY, AND COMMUNITY<div style="font-size:0.72rem;opacity:0.7;">CDEV 110 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">1</td><td>3 hours in CHILD, FAMILY, AND COMMUNITY</td><td>Child Development Associate (CDA) Credential</td><td><span class="exhibit-cell-num">58</span></td></tr>
+<tr><td>35</td><td class="exhibit-cell-name">Ordinary Differential Equations<div style="font-size:0.72rem;opacity:0.7;">MATH 240 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">1</td><td>3 hours in Ordinary Differential Equations</td><td>Ordinary Differential Equations <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">58</span></td></tr>
+<tr><td>36</td><td class="exhibit-cell-name">Introduction to Kinesiology<div style="font-size:0.72rem;opacity:0.7;">KIN 100 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">1</td><td>3 hours in Introduction to Kinesiology</td><td>Introduction to Kinesiology</td><td><span class="exhibit-cell-num">57</span></td></tr>
+<tr><td>37</td><td class="exhibit-cell-name">Community Relations<div style="font-size:0.72rem;opacity:0.7;">AJ 160 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">21</td><td>3 hours in Community Relations</td><td>POST Basic Academy <span style="opacity:0.6;">(+6)</span></td><td><span class="exhibit-cell-num">56</span></td></tr>
+<tr><td>38</td><td class="exhibit-cell-name">Criminal Investigation<div style="font-size:0.72rem;opacity:0.7;">AJ 140 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">20</td><td>3 hours in Criminal Investigation</td><td>POST Basic Academy <span style="opacity:0.6;">(+6)</span></td><td><span class="exhibit-cell-num">56</span></td></tr>
+<tr><td>39</td><td class="exhibit-cell-name">World History 2<div style="font-size:0.72rem;opacity:0.7;">HIST 160 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">7</td><td>3 hours in World History 2</td><td>AP World History: Modern <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">56</span></td></tr>
+<tr><td>40</td><td class="exhibit-cell-name">College Algebra<div style="font-size:0.72rem;opacity:0.7;">MATH M1065 &middot; M-ID</div></td><td>Mathematics</td><td class="exhibit-cell-num">6</td><td>3 hours in College Algebra</td><td>College Algebra <span style="opacity:0.6;">(+2)</span></td><td><span class="exhibit-cell-num">56</span></td></tr>
+<tr><td>41</td><td class="exhibit-cell-name">Problem Solving and Programming 1<div style="font-size:0.72rem;opacity:0.7;">COMP 122 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">5</td><td>3 hours in Problem Solving and Programming 1</td><td>AP Computer Science A <span style="opacity:0.6;">(+5)</span></td><td><span class="exhibit-cell-num">56</span></td></tr>
+<tr><td>42</td><td class="exhibit-cell-name">Introduction to Archaeology<div style="font-size:0.72rem;opacity:0.7;">ANTH 150 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">2</td><td>3 hours in Introduction to Archaeology</td><td>Introduction to Archaeology <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">56</span></td></tr>
+<tr><td>43</td><td class="exhibit-cell-name">Cultural Geography<div style="font-size:0.72rem;opacity:0.7;">GEOG 120 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">7</td><td>3 hours in Cultural Geography</td><td>AP Human Geography <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">55</span></td></tr>
+<tr><td>44</td><td class="exhibit-cell-name">Introductory College Chemistry<div style="font-size:0.72rem;opacity:0.7;">CHEM 101 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">6</td><td>4 hours in Introductory College Chemistry</td><td>AP Chemistry <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">55</span></td></tr>
+<tr><td>45</td><td class="exhibit-cell-name">Painting 1 (in Oil)<div style="font-size:0.72rem;opacity:0.7;">ARTS 210 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">1</td><td>3 hours in Painting 1 (in Oil)</td><td>Painting 1 (Oil)</td><td><span class="exhibit-cell-num">55</span></td></tr>
+<tr><td>46</td><td class="exhibit-cell-name">Child Growth and Development (DS1)<div style="font-size:0.72rem;opacity:0.7;">CDEV 100 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">4</td><td>3 hours in Child Growth and Development (DS1)</td><td>Intermediate Child Development <span style="opacity:0.6;">(+3)</span></td><td><span class="exhibit-cell-num">54</span></td></tr>
+<tr><td>47</td><td class="exhibit-cell-name">Calculus for Business<div style="font-size:0.72rem;opacity:0.7;">MATH 140 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">1</td><td>3 hours in Calculus for Business & Social Sciences</td><td>Calculus for Business and Social Sciences</td><td><span class="exhibit-cell-num">54</span></td></tr>
+<tr><td>48</td><td class="exhibit-cell-name">Political Theory<div style="font-size:0.72rem;opacity:0.7;">POLS 120 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">1</td><td>3 hours in Political Theory</td><td>Political Theory</td><td><span class="exhibit-cell-num">54</span></td></tr>
+<tr><td>49</td><td class="exhibit-cell-name">Calculus Second Course<div style="font-size:0.72rem;opacity:0.7;">MATH 220 &middot; C-ID</div></td><td>—</td><td class="exhibit-cell-num">7</td><td>4 hours in Calculus Second Course</td><td>AP Calculus BC <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">53</span></td></tr>
+<tr><td>50</td><td class="exhibit-cell-name">Trigonometry<div style="font-size:0.72rem;opacity:0.7;">MATH M1299 &middot; M-ID</div></td><td>Mathematics</td><td class="exhibit-cell-num">3</td><td>4 hours in Trigonometry</td><td>Trigonometry <span style="opacity:0.6;">(+1)</span></td><td><span class="exhibit-cell-num">53</span></td></tr>
+</tbody>
+    </table>
+  </div>
+  <div class="exhibit-card-footer">Earned articulations grouped by unified course identity. Adoption leverage = peer colleges teaching the same course that have not yet earned it. 108 over-merged identities show leverage as &#9888; flagged (withheld). Full set (2,355 identities) in the Excel export.</div>
+  <div style="padding:0 1rem 0.8rem;"><details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">kb/coci_articulations.json — earned MAP articulations (View_ArticulatedMAPExhibits) resolved to the unified course-identity layer.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Group earned articulations by unified course identity (C-ID/CCN when the row carries a CID Number, else a minted M-ID; multi-M-ID rows disambiguated by local Course Title). Per identity: count colleges that earned it, the modal credit recommendation, linked credential(s), and adoption leverage = peer colleges teaching the same identity that have not yet earned the articulation.</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">One identity = one common course across colleges. Adoption leverage is a candidate list, not a guarantee — title-consistent membership only.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">GE-area articulations are excluded (routed separately). Adoption leverage is suppressed (shown as flagged) for identities marked over_merged, since the cluster may conflate distinct courses and would yield bogus adoption targets.</span></div><div class="algo-meta">Description last updated: 2026-05-22</div></div></details></div>
 </div>
 
         </div>
@@ -6446,6 +6521,7 @@
 
 
 
+
         </div>
         <!-- /main-container for Dashboard tab -->
 
@@ -7918,7 +7994,7 @@ Cont</td>
         </div>
         <!-- End Annual Workplan Goals -->
 
-                                                                                                                                                                                </div>
+                                                                                                                                                                                        </div>
         <!-- /main-container for Workplan Goals tab -->
     </div>
     <!-- /tab-workplan-goals -->
@@ -8013,6 +8089,7 @@ Cont</td>
         
         
         
+        
         </div>
         <!-- /main-container for Vision 2030 tab -->
     </div>
@@ -8076,8 +8153,8 @@ Cont</td>
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "May 22, 2026 at 5:37 AM PT",
-  "data_as_of": "May 22, 2026 at 5:37 AM PT",
+  "last_updated": "May 22, 2026 at 4:31 PM PT",
+  "data_as_of": "May 22, 2026 at 4:31 PM PT",
   "kpis": {
     "cumulative_students": {
       "value": "45,802",
