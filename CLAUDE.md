@@ -484,8 +484,16 @@ unmistakably **ours, not official**:
     stay verbatim** (not re-subjected). Revisit if an authoritative list is later
     sourced. Like the M-numbers, document loudly that these 4-letter subjects are
     a MAP surrogate, not a CCN claim.
-  - The 3 trailing digits need a **stable, deterministic, persisted**
-    within-(subject,band) sequence or codes churn each daily regen.
+  - **Numbering format (confirmed 2026-05-22 via the dry-run, PR #83):**
+    CCN's `SUBJ C####` is 4 digits = leading **band** digit + 3-digit sequence.
+    Mirror it: **corroborated** M-IDs (≥2 colleges) → clean 4-digit
+    `SUBJ M<band><seq:03d>` (`9`=noncredit, `1`=credit; corroborated max per
+    (subject,band) is 496 → fits with room). **Singletons** (1 college) → a
+    deliberately-not-CCN-shaped `SUBJ Ms<band><seq:05d>` (the `s` marks
+    single-college; not a "common" course) kept off the clean `M####` space; it
+    promotes to `M####` if a second college later joins the title. The
+    within-(subject,band) sequence must be **stable, deterministic, persisted**
+    (sorted by normalized title) or codes churn each daily regen.
 - Always document loudly: **M-numbers are CCN-aligned surrogate keys, NOT a
   claim of CCN equivalence.**
 
