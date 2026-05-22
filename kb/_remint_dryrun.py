@@ -288,6 +288,10 @@ def main():
             entry["merge_into_is_m_id"] = mi.startswith("M-ID ")
         curation_report[key] = entry
 
+    n_cur = len(curation_report)
+    n_cur_mid = sum(1 for v in curation_report.values() if v["is_m_id"])
+    n_cur_split = sum(1 for v in curation_report.values()
+                      if v["mapping"].get("class") == "split")
     new_corr = sum(1 for m in minted_meta.values() if m[3])
     new_sing = len(minted_meta) - new_corr
     top_corr = sorted(seq_corr.items(), key=lambda kv: -kv[1])[:10]
@@ -389,16 +393,17 @@ New minted identities: {summary['new_minted_identities']:,}
 noncredit→9xxx: {summary['new_minted_noncredit_9xxx']:,}; credit→1xxx:
 {summary['new_minted_credit_1xxx']:,}).
 
-## The 6 curation entries (decision-critical)
+## The {n_cur} curation entries (decision-critical)
 | key | kind | fate | new id(s) | merge_into |
 |---|---|---|---|---|
 {chr(10).join(cur_lines)}
 
-All five curated **M-ID** keys map **1:1 (rename)** — none split — and every
-`merge_into` points at the curator-minted `UC-CUR-MPG029OM` cluster, which is
-**not** an M-ID, so no `merge_into` value needs rewriting. The re-key of the
-human layer is therefore: rewrite the 5 curation **keys** (git + Supabase),
-leave all `merge_into` values untouched.
+All {n_cur_mid} curated **M-ID** keys map **1:1 (rename)** — {n_cur_split} split —
+and every `merge_into` points at the curator-minted `UC-CUR-MPG029OM` cluster,
+which is **not** an M-ID, so no `merge_into` value needs rewriting. The re-key of
+the human layer is therefore: rewrite the {n_cur_mid} curation **keys** (git +
+Supabase), leave all `merge_into` values untouched. (Reconciled to the live
+Supabase table 2026-05-22: git was stale by one entry, `M-ID AELE 100`.)
 
 ## Numbering scheme (option 1, confirmed)
 CCN's `SUBJ C####` is **4 digits**: the leading digit is the band (level/credit
@@ -488,7 +493,7 @@ minted remnant always remains.)
     print(f"corroborated max/bucket: {summary['corroborated_max_per_subject_band']} (>999: {summary['corroborated_buckets_over_999'] or 'none'}); "
           f"stand-alone max/bucket: {summary['standalone_max_per_subject_band']} / cap {summary['standalone_capacity_per_subject_band']:,} "
           f"(over: {summary['standalone_buckets_over_capacity'] or 'none'})")
-    print("\n=== 6 CURATION ENTRIES ===")
+    print(f"\n=== {n_cur} CURATION ENTRIES ({n_cur_mid} M-ID keys, {n_cur_split} split) ===")
     for k, v in curation_report.items():
         m = v["mapping"]
         print(f"  {k}: {m.get('class')} -> {m.get('new', [m.get('class')])}")
