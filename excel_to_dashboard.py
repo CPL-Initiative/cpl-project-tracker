@@ -4262,32 +4262,9 @@ def export_unified_courses():
     # list is indexed, so each row can carry its matched official C-ID/CCN
     # (Phase A crosswalk surfacing). See "write unified_courses_data.js" below.
 
-    # Compact all-course title index for the "Generate unified course" dialog —
-    # a separate file the tab lazy-loads only when a curator opens that dialog.
-    # Each entry: [id, title, subject, kind]. Excludes already-merged members.
-    out_idx = os.path.join(SCRIPT_DIR, "unified_courses_index.js")
-    idx = []
-    for mid, v in cat.items():
-        if mid not in merge_into:
-            idx.append([mid, v.get("common_title"), v.get("subject"), "Course"])
-    for sid, v in sg.items():
-        if sid not in merge_into:
-            idx.append([sid, v.get("common_title"), v.get("subject"), "Stand-Alone"])
-    for uid, v in clusters.items():
-        if uid not in merge_into:
-            idx.append([uid, v.get("synthesized_title") or v.get("canonical_title"),
-                        ";".join(v.get("subjects", [])), "Cluster"])
-    for ccid, v in cc.items():
-        if ccid not in merge_into and ccid not in (set(cat) | set(clusters)):
-            idx.append([ccid, v.get("common_title"), v.get("subject"), v.get("id_system") or "Course"])
-    for c in ccn_courses:
-        ccid = c.get("ccn")
-        if ccid and ccid not in seen_ids:
-            idx.append([ccid, c.get("title"), c.get("subject"), "CCN-ID"])
-    with open(out_idx, "w", encoding="utf-8") as f:
-        f.write("/* Unified Courses search index — id,title,subject,kind. Lazy-loaded by the curation dialog. */\n"
-                "window.CPL_UC_INDEX = " + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n")
-    print(f"  Unified Courses: wrote {out_idx} ({len(idx)} index entries)")
+    # NOTE: the "Generate unified course" search index (unified_courses_index.js)
+    # is written further down, AFTER Phase B consolidation, so it reflects the
+    # final identity set (consumed M-IDs dropped, official-ID rows added).
 
     # ---- raw COCI course list — read ONCE, feeds descriptions + member rows ---
     # The per-college course list carries CatalogDescription / CIDNumber /
@@ -4468,6 +4445,103 @@ def export_unified_courses():
             m = _row_official(r)
             if m:
                 r["match"] = m
+
+    # ---- Phase B: consolidate-by-official-ID (inline, regen-safe) ------------
+    # Decision 2026-05-22: group every minted/cluster row whose title-consistent
+    # members agree on ONE official C-ID or CCN into a single official-identity
+    # row — folding under an existing anchor when one exists, else synthesizing
+    # the official row. Collapses the N:1 fragmentation (many minted M-IDs that
+    # are really the same C-ID course). NEVER touches cid_conflict rows. No KB
+    # mutation: the consolidation is recomputed each run and the underlying M-ID
+    # keys are recorded on the row (`consolidated_from`) + registered in
+    # merge_into/merge_members so the lazy member/detail joins fold correctly and
+    # curation/articulation pointers survive. Only acts when it changes something
+    # (an anchor to fold into, or >1 M-ID claiming one id); a lone M-ID with no
+    # anchor keeps just its Phase A badge.
+    if _have_raw:
+        anchor_by_id = {r["id"]: r for r in rows
+                        if r.get("locked") and r.get("id_system") in ("C-ID", "CCN-ID")}
+        groups = {}
+        for r in rows:
+            if r.get("locked") or r.get("id_system") not in ("M-ID", "Cluster"):
+                continue
+            m = r.get("match") or {}
+            if m.get("ccn"):
+                oid, osys = m["ccn"], "CCN-ID"
+            elif m.get("cid") and not m.get("cid_conflict"):
+                oid, osys = m["cid"], "C-ID"
+            else:
+                continue
+            groups.setdefault(oid, {"sys": osys, "members": []})["members"].append(r)
+
+        consumed, synthesized, folds = set(), [], 0
+        for oid, g in groups.items():
+            mems = g["members"]
+            anchor = anchor_by_id.get(oid)
+            if not anchor and len(mems) < 2:
+                continue
+            if anchor:
+                folds += 1
+            mem_ids = [r["id"] for r in mems]
+            for mid_ in mem_ids:
+                consumed.add(mid_)
+                merge_into[mid_] = oid
+                merge_members.setdefault(oid, []).append(mid_)
+            ad, pot = rollup(mem_ids)
+            subj = sorted({s for r in mems for s in (r.get("subj") or [])}
+                          | set((anchor or {}).get("subj") or []))
+            variants = sorted({r.get("title") for r in mems if r.get("title")})
+            dc = {}
+            for r in mems:
+                if r.get("disc"):
+                    dc[r["disc"]] = dc.get(r["disc"], 0) + 1
+            modal_disc = max(dc, key=dc.get) if dc else None
+            target = anchor or {
+                "kind": "Course", "id": oid, "id_system": g["sys"], "locked": False,
+                "credit": None, "units": None, "top": None, "conf": None,
+                "flags": {"over_merged": False, "credit_mixed": False,
+                          "top_mixed": False, "ncc_mixed": False, "reviewed": False},
+                "reviewed_by": None, "reviewed_at": "",
+            }
+            target["consolidated_from"] = mem_ids
+            target["subj"] = subj
+            target["members"] = len(mem_ids) + (1 if anchor else 0)
+            tv = sorted(set(target.get("title_variants") or []) | set(variants))
+            if tv:
+                target["title_variants"] = tv
+            if not target.get("title"):
+                target["title"] = variants[0] if variants else oid
+            if not target.get("disc") and modal_disc:
+                target["disc"] = modal_disc
+            target["adopted"] = sorted(set(target.get("adopted") or []) | {cidx(c) for c in ad})
+            target["potential"] = sorted(set(target.get("potential") or []) | {cidx(c) for c in pot})
+            target.pop("match", None)  # it IS the official id now
+            if not anchor:
+                synthesized.append(target)
+        if consumed:
+            rows = [r for r in rows if r["id"] not in consumed]
+            rows.extend(synthesized)
+            print(f"  Unified Courses: Phase B consolidated {len(consumed)} M-IDs into "
+                  f"{len(synthesized)} new official-ID rows + {folds} anchor folds")
+
+    # Compact all-course title index for the "Generate unified course" dialog —
+    # a separate file the tab lazy-loads only when a curator opens it. Built from
+    # the FINAL row set (post-Phase-B) plus stand-alone singletons, so consumed
+    # M-IDs aren't offered as ghost merge targets and the new official-ID
+    # identities are searchable. Each entry: [id, title, subject(s), kind].
+    out_idx = os.path.join(SCRIPT_DIR, "unified_courses_index.js")
+    idx = []
+    for r in rows:
+        k = r.get("id_system") if r.get("id_system") in ("C-ID", "CCN-ID") else r.get("kind")
+        idx.append([r["id"], r.get("title"), ";".join(r.get("subj") or []), k])
+    for sid, v in sg.items():
+        if sid not in merge_into:
+            idx.append([sid, v.get("common_title"), v.get("subject"), "Stand-Alone"])
+    with open(out_idx, "w", encoding="utf-8") as f:
+        f.write("/* Unified Courses search index — id,title,subject,kind. Lazy-loaded by the curation dialog. */\n"
+                "window.CPL_UC_INDEX = " + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n")
+    print(f"  Unified Courses: wrote {out_idx} ({len(idx)} index entries)")
+
     mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
     payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,
                "colleges": colleges, "mq_disciplines": sorted(mq),
