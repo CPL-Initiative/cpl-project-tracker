@@ -494,7 +494,16 @@ re-runnable (idempotent — only fills blanks, never overwrites reviewed/curated
   it (MQ vocabulary); after a save, an **opt-in subject-code bulk apply** offers
   to fill other *blank* same-subject courses (never overwrites; warns that
   subject codes vary by college). Edits write to `kb_curation` and show live via
-  an overlay. A **pending-sync indicator** ("⟳ N edits awaiting daily sync") +
+  an overlay. **Batch-verify** — a toolbar **"✓ Verify N filtered"** button
+  accepts the machine-inferred discipline AS-IS for every currently-filtered
+  Generated row that has a discipline (chunked bulk upsert; excludes blanks /
+  locked anchors / already-Verified; the confirm surfaces the lower-confidence
+  title-keyword/description share so the curator can narrow to "by subject-code"
+  first). It clears the Generated backlog in bulk rather than one Verify per row.
+  The **⚇ Unify** candidate ranking factors **subject + units** agreement, not
+  title alone (title-token Jaccard ≥ 0.5 gates inclusion; same-subject +0.15 and
+  same-units +0.10 reorder to the top — `unified_courses_index.js` now carries
+  units as a 5th field). A **pending-sync indicator** ("⟳ N edits awaiting daily sync") +
   **Sync now** link surface edits not yet in git (diffed against the dataset's
   `committed_curation` snapshot). The **curated common-course anchor**
   (`common_courses.json`, C-ID/CCN/M-ID) is shown **read-only** (an "anchor"
@@ -531,7 +540,7 @@ workflow `git add` list (§6):
 | File | Global | Loaded when | Contents |
 |------|--------|-------------|----------|
 | `unified_courses_data.js` | `CPL_UNIFIED_COURSES` | always (script tag) | in-browser rows (~16.4k: Course/Cluster + curated C-ID/CCN/M-ID anchors), `colleges[]`, `mq_disciplines`, `committed_curation`, `committed_descriptions` |
-| `unified_courses_index.js` | `CPL_UC_INDEX` | ⚇ Unify dialog | compact `[id,title,subject,kind]` search index |
+| `unified_courses_index.js` | `CPL_UC_INDEX` | ⚇ Unify dialog | compact `[id,title,subject,kind,units]` search index (units feeds the subject/units-aware ranking) |
 | `unified_courses_details.js` | `CPL_UC_DETAILS` | ⓘ details modal | `id → {d:description, s:source}` (~70k incl. stand-alones; ~34MB, lazy/gzipped) |
 | `unified_courses_standalone.js` | `CPL_UC_STANDALONE` | "Stand-Alone" kind filter | ~57.7k single-college rows (kept out of the main payload) |
 | `unified_courses_members.js` | `CPL_UC_MEMBERS` | row expand caret ▸ | `id → [{c:collegeIdx,n:code,t:title}]` member college courses |
