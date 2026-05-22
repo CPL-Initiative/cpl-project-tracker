@@ -242,6 +242,22 @@
     });
     return _ucSugP;
   }
+  // Lazy-load member-course descriptions (id -> [desc,...] parallel to members)
+  // — heavy (~tens of MB), so only fetched when a curator opens descriptions.
+  var _ucMemDesc = null, _ucMemDescP = null;
+  function loadMemberDesc() {
+    if (_ucMemDesc) return Promise.resolve(_ucMemDesc);
+    if (_ucMemDescP) return _ucMemDescP;
+    _ucMemDescP = new Promise(function (resolve) {
+      if (window.CPL_UC_MEMBER_DESC) { _ucMemDesc = window.CPL_UC_MEMBER_DESC.desc || {}; resolve(_ucMemDesc); return; }
+      var s = document.createElement("script");
+      s.src = "unified_courses_member_desc.js";
+      s.onload = function () { _ucMemDesc = (window.CPL_UC_MEMBER_DESC || {}).desc || {}; resolve(_ucMemDesc); };
+      s.onerror = function () { _ucMemDesc = {}; resolve(_ucMemDesc); };
+      document.head.appendChild(s);
+    });
+    return _ucMemDescP;
+  }
   function normTitle(t) {
     return (t || "").toLowerCase().replace(/\([^)]*\)/g, " ").replace(/[^a-z0-9 ]+/g, " ")
       .replace(/\b(i|ii|iii|iv|v|a|b|c|advanced|beginning|intermediate|introduction|introductory|basic|fundamentals|principles|topics)\b/g, " ")
@@ -1047,15 +1063,20 @@
         if (tr.nextElementSibling && tr.nextElementSibling.className === "uc-member-row") return; // already open
         var list = (md.members || {})[r.id] || [];
         var cols = md.colleges || [];
+        var topmap = md.topmap || {};
         var cell = el("td", { colspan: String(COLS.length), class: "uc-member-cell" });
         if (!list.length) {
           cell.appendChild(el("div", { class: "uc-member-empty" }, ["No member college courses found for this identity."]));
         } else {
-          cell.appendChild(el("div", { class: "uc-member-count" },
-            [list.length + " member college course" + (list.length === 1 ? "" : "s")]));
+          var countDiv = el("div", { class: "uc-member-count" },
+            [list.length + " member college course" + (list.length === 1 ? "" : "s") + " · "]);
+          // On-demand descriptions: loads the heavy member-desc file only on click.
+          var descLink = el("a", { href: "#", class: "uc-auth-link", title: "Load and show each member course's catalog description (helps judge discipline)" }, ["Show descriptions"]);
+          countDiv.appendChild(descLink);
+          cell.appendChild(countDiv);
           var mt = el("table", { class: "uc-member-table" });
           var mh = el("thead"), mhr = el("tr");
-          ["College", "Local code", "Local title"].forEach(function (h) { mhr.appendChild(el("th", {}, [h])); });
+          ["College", "Local code", "Local title", "Units", "TOP (code: title)"].forEach(function (h) { mhr.appendChild(el("th", {}, [h])); });
           mh.appendChild(mhr); mt.appendChild(mh);
           var mb = el("tbody");
           list.forEach(function (e) {
@@ -1063,9 +1084,30 @@
             mr.appendChild(el("td", {}, [cols[e.c] || ""]));
             mr.appendChild(el("td", { class: "uc-id" }, [e.n || ""]));
             mr.appendChild(el("td", {}, [e.t || ""]));
+            mr.appendChild(el("td", {}, [e.u != null ? String(e.u) : ""]));
+            mr.appendChild(el("td", { style: "font-size:.82rem;color:#475569;" },
+              [e.p ? (e.p + (topmap[e.p] ? ": " + topmap[e.p] : "")) : ""]));
             mb.appendChild(mr);
           });
           mt.appendChild(mb); cell.appendChild(mt);
+          descLink.onclick = function (ev) {
+            ev.preventDefault();
+            descLink.textContent = "Loading descriptions…";
+            loadMemberDesc().then(function (md) {
+              var ds = md[r.id] || [];
+              var bodyRows = mb.querySelectorAll("tr");
+              list.forEach(function (e, idx) {
+                var tr2 = bodyRows[idx]; if (!tr2 || tr2._descAdded) return;
+                var td = el("td", { colspan: "5", class: "uc-member-desc", style: "font-size:.8rem;color:#64748b;padding:2px 8px 8px 28px;" },
+                  [ds[idx] || "—"]);
+                var dr = el("tr"); dr.appendChild(td);
+                if (tr2.nextSibling) tr2.parentNode.insertBefore(dr, tr2.nextSibling); else tr2.parentNode.appendChild(dr);
+                tr2._descAdded = true;
+              });
+              descLink.textContent = "Descriptions shown";
+              descLink.onclick = function (e2) { e2.preventDefault(); };
+            });
+          };
         }
         var mrow = el("tr", { class: "uc-member-row" }); mrow.appendChild(cell);
         if (tr.nextSibling) tr.parentNode.insertBefore(mrow, tr.nextSibling);

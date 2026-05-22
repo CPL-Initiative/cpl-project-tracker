@@ -4287,6 +4287,7 @@ def export_unified_courses():
     # memory only; stripped from the members file output). One ent object is
     # shared across the pair/cid/ccn indexes it belongs to.
     pair_rows, cid_rows, ccn_rows = {}, {}, {}
+    top_titles = {}  # TOP code -> program title, deduped (raw TopCode is "code: title")
     # CIDNumber / CommonCourseNumber cells sometimes carry a literal sentinel
     # instead of being blank — treat these as "no official id".
     _NULLISH = {"", "NULL", "N/A", "NA", "NONE", "NOT APPLICABLE", "NOT APPLICABLE.", "TBD", "-"}
@@ -4299,7 +4300,7 @@ def export_unified_courses():
         next(rit)  # header
         for row in rit:
             college, subj, num, title = row[0], row[2], row[3], row[4]
-            cid, ccn, desc = row[9], row[11], row[10]
+            units, cid, ccn, desc, topc = row[5], row[9], row[11], row[10], row[8]
             if not college:
                 continue
             code = (f"{subj} {num}".strip() if subj is not None
@@ -4310,8 +4311,17 @@ def export_unified_courses():
                 cidn = ""
             if ccnn in _NULLISH:
                 ccnn = ""
+            tcode = ""
+            if topc and str(topc).strip():
+                ts = str(topc).strip()
+                tcode, _, ttitle = ts.partition(":")
+                tcode = tcode.strip()
+                if tcode and ttitle.strip():
+                    top_titles.setdefault(tcode, ttitle.strip())
             ent = {"c": _mc(str(college)), "n": code, "t": title or "",
                    "d": str(desc) if (desc and str(desc).strip()) else "",
+                   "u": units if isinstance(units, (int, float)) else None,
+                   "p": tcode,
                    "cid": cidn, "ccn": ccnn}
             if su or nu:
                 pair_rows.setdefault((su, nu), []).append(ent)
@@ -4404,7 +4414,8 @@ def export_unified_courses():
             k = (ent["c"], ent["n"], ent["t"])
             if k in seen:
                 continue
-            seen.add(k); out.append({"c": ent["c"], "n": ent["n"], "t": ent["t"]})
+            seen.add(k); out.append({"c": ent["c"], "n": ent["n"], "t": ent["t"],
+                                     "u": ent.get("u"), "p": ent.get("p") or "", "d": ent.get("d") or ""})
         return out
 
     # Representative raw CatalogDescription for a row (longest among candidates).
@@ -4715,21 +4726,42 @@ def export_unified_courses():
     # over-merged identity may surface a course under multiple (already-flagged)
     # cards rather than picking one. Lazy-loaded only when a row is expanded.
     if _have_raw:
-        members = {}
+        # members.js stays lean: per member college course we keep code/title +
+        # units (u) + the self-describing TOP code (p, e.g. "0949.00: Automotive
+        # Collision Repair"). The CatalogDescription is heavy (~56MB across all
+        # member rows) so it is split into a SEPARATE on-demand file the tab loads
+        # only when a curator asks to see member descriptions. mdesc[id] is a list
+        # PARALLEL to members[id] (same order), each truncated to 500 chars.
+        members, mdesc = {}, {}
         for r in rows + sa_rows:
             ents = _row_ents(r)
-            if ents:
-                members[r["id"]] = ents
+            if not ents:
+                continue
+            members[r["id"]] = [{"c": e["c"], "n": e["n"], "t": e["t"],
+                                 "u": e.get("u"), "p": e.get("p") or ""} for e in ents]
+            ds = [(e.get("d") or "")[:500] for e in ents]
+            if any(ds):
+                mdesc[r["id"]] = ds
 
         out_mem = os.path.join(SCRIPT_DIR, "unified_courses_members.js")
         mem_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
-                       "colleges": mcolleges, "members": members}
+                       "colleges": mcolleges, "members": members, "topmap": top_titles}
         with open(out_mem, "w", encoding="utf-8") as f:
-            f.write("/* Unified Courses member-college rows — id -> [{c:collegeIdx, n:code, t:title}]. "
-                    "Lazy-loaded when a row is expanded. colleges[] holds the names. */\n"
+            f.write("/* Unified Courses member-college rows — id -> [{c:collegeIdx, n:code, t:title, u:units, p:topcode}]. "
+                    "topmap maps a TOP code -> program title. Lazy-loaded when a row is expanded. "
+                    "colleges[] holds the names. Descriptions are in unified_courses_member_desc.js. */\n"
                     "window.CPL_UC_MEMBERS = " + json.dumps(mem_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
         total = sum(len(v) for v in members.values())
         print(f"  Unified Courses: wrote {out_mem} ({len(members)} identities, {total} member rows, {len(mcolleges)} colleges)")
+
+        out_md = os.path.join(SCRIPT_DIR, "unified_courses_member_desc.js")
+        md_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "desc": mdesc}
+        with open(out_md, "w", encoding="utf-8") as f:
+            f.write("/* Unified Courses member-course descriptions — id -> [desc,...] PARALLEL to "
+                    "unified_courses_members.js members[id] (each truncated to 500 chars). On-demand: "
+                    "loaded only when a curator opens member descriptions. */\n"
+                    "window.CPL_UC_MEMBER_DESC = " + json.dumps(md_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
+        print(f"  Unified Courses: wrote {out_md} ({len(mdesc)} identities with member descriptions)")
     else:
         print("  Unified Courses: kb/reference/coci_course_list.xlsx absent — skipped member rows")
 
