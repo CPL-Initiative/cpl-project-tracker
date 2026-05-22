@@ -703,6 +703,14 @@
       b(f.top_mixed, "TOP", "mix", "members disagree on TOP code");
       b(f.ncc_mixed, "noncredit", "mix", "members disagree on noncredit category");
       b(r.locked, "anchor", "ok", "curated common-course anchor (" + (r.id_system || "") + ") — read-only");
+      if (r.consolidated_from && r.consolidated_from.length) {
+        out.appendChild(el("span", {
+          class: "uc-badge ok", style: "background:#ddf4ff;border:1px solid #54aeff;color:#0969da;",
+          title: "Official-ID consolidation: " + r.consolidated_from.length +
+            " minted M-IDs that share this " + (r.id_system || "official") +
+            " were merged into one identity (" + r.consolidated_from.join(", ") + ")."
+        }, ["⛓ " + r.consolidated_from.length + " merged"]));
+      }
       // Phase A crosswalk surfacing: official C-ID / CCN carried by member courses.
       var mt = r.match || {};
       if (mt.ccn) out.appendChild(el("span", { class: "uc-badge ok", title: "A member college course carries the official Common Course Number " + mt.ccn + " — candidate to promote to CCN-ID." }, ["→ CCN " + mt.ccn]));
