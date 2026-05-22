@@ -227,7 +227,7 @@
     return _ucMembersP;
   }
   // Lazy-load the precomputed suggested-merge worklist — only when the curator
-  // opens it. Identity-anchored same-title groups; human-confirmed, never auto.
+  // opens it. Anchored same-title groups + singleton-only groups; human-confirmed, never auto.
   var _ucSug = null, _ucSugP = null;
   function loadSuggestions() {
     if (_ucSug) return Promise.resolve(_ucSug);
@@ -555,9 +555,16 @@
     }
 
     // ---- Suggested-merge worklist -------------------------------------------
-    // A review queue over the precomputed identity-anchored same-title groups.
-    // One group at a time, best-scored first; members pre-checked; Confirm reuses
-    // doConsolidate (writes merge_into); Skip advances. NEVER auto-applies.
+    // A review queue over the precomputed same-title groups. One group at a time,
+    // members pre-checked; Confirm reuses doConsolidate; Skip advances. NEVER
+    // auto-applies. Two sections, anchored first:
+    //   1. Identity-anchored groups (kind "anchored") — Confirm MERGES into the
+    //      existing M-ID/Cluster identity (a real member is the target).
+    //   2. Singleton-only groups (kind "singleton", V2) — single-college courses
+    //      that match no existing identity; Confirm MINTS a brand-new unified
+    //      course (target left blank so doConsolidate generates a UC-CUR id).
+    //      same_college groups are flagged (likely intra-college variants) and the
+    //      generator already ranks them last within the section.
     function openSuggestions() {
       if (!session) return;
       var dim = "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;";
@@ -565,8 +572,11 @@
       var goCss = "padding:7px 14px;border:none;border-radius:6px;background:#0A2240;color:#C9A84C;font-weight:600;cursor:pointer;";
       var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;";
       loadSuggestions().then(function (data) {
-        var groups = (data.groups || []);
+        var anchored = (data.groups || []).map(function (g) { g._kind = "anchored"; return g; });
+        var singles = (data.singleton_groups || []).map(function (g) { g._kind = "singleton"; return g; });
+        var groups = anchored.concat(singles);
         if (!groups.length) { alert("No suggested merges available in this build."); return; }
+        var nAnchored = anchored.length;
         var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
         var mergedAway = function (id) { return byId[id] && byId[id]._mergedAway; };
         function liveMembers(g) { return g.members.filter(function (m) { return !mergedAway(m.id); }); }
@@ -589,10 +599,24 @@
             var d = el("button", { style: goCss }, ["Done"]); d.onclick = close; box.appendChild(d);
             return;
           }
-          var g = groups[i], mems = liveMembers(g);
+          var g = groups[i], mems = liveMembers(g), isSingleton = g._kind === "singleton";
           box.appendChild(el("h3", { style: "margin:0 0 2px;color:#0A2240;" }, ["Suggested merge " + (i + 1) + " of " + groups.length]));
+          // Section badge so the curator knows whether this merges into an
+          // existing identity or mints a brand-new unified course.
+          var badge = isSingleton
+            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#ede9fe;color:#5b21b6;margin:0 0 8px;" },
+                ["✨ New unified course · stand-alone matches (" + (i - nAnchored + 1) + " of " + (groups.length - nAnchored) + ")"])
+            : el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#e0f2fe;color:#075985;margin:0 0 8px;" },
+                ["⛓ Merge into existing identity"]);
+          box.appendChild(badge);
           box.appendChild(el("p", { style: "margin:0 0 10px;color:#6b7280;" },
-            ["Same-title candidates (confidence score " + g.score + "). Uncheck any that differ, then Confirm — or Skip. Nothing is applied until you confirm."]));
+            [isSingleton
+              ? "Single-college courses that share a title but match no existing identity (confidence score " + g.score + "). Confirming creates a NEW unified course from the checked members. Uncheck any that differ — or Skip."
+              : "Same-title candidates (confidence score " + g.score + "). Uncheck any that differ, then Confirm — or Skip. Nothing is applied until you confirm."]));
+          if (isSingleton && g.same_college) {
+            box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
+              ["⚠ All members appear to be from the same college — these are often course variants (levels, credit/noncredit, language versions), not cross-college duplicates. Review carefully before confirming."]));
+          }
           box.appendChild(el("label", { style: "display:block;font-weight:600;margin:6px 0 2px;" }, ["Unified title"]));
           var titleIn = el("input", { type: "text", value: bestTitle(g), style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
           box.appendChild(titleIn);
@@ -618,12 +642,14 @@
           var actions = el("div", { style: "margin-top:14px;display:flex;gap:10px;justify-content:flex-end;" });
           var skip = el("button", { style: skipCss }, ["Skip →"]);
           skip.onclick = function () { i++; renderGroup(); };
-          var go = el("button", { style: goCss }, ["✓ Confirm merge"]);
+          var go = el("button", { style: goCss }, [isSingleton ? "✓ Create unified course" : "✓ Confirm merge"]);
           go.onclick = function () {
             var picked = cbs.filter(function (x) { return x.cb.checked; }).map(function (x) { return x.m; });
             if (picked.length < 2) { alert("Check at least two members to merge."); return; }
             var mainPick = picked.filter(function (m) { return m.k !== "Stand-Alone"; });
-            var target = (mainPick[0] || picked[0]).id;  // prefer a real identity as the target
+            // Anchored: merge into the existing identity. Singleton-only: leave the
+            // target blank so doConsolidate mints a brand-new UC-CUR id.
+            var target = mainPick.length ? mainPick[0].id : "";
             var chosen = {};
             picked.forEach(function (m) { chosen[m.id] = [m.id, m.t, m.s, m.k, m.u]; });
             doConsolidate(chosen, titleIn.value.trim(), discSel.value, target, function () { i++; renderGroup(); }, true);
@@ -773,7 +799,7 @@
     // Suggested-merge worklist (signed-in only; lazy-loads the precomputed groups).
     var suggestBtn = el("button", { id: "uc-suggest", class: "uc-filter",
       style: "display:none;cursor:pointer;background:#fff7ed;border:1px solid #fb923c;color:#9a3412;font-weight:600;border-radius:6px;",
-      title: "Review precomputed same-course merge suggestions one at a time — one-click confirm, never auto-applied." },
+      title: "Review precomputed same-course merge suggestions one at a time: merge into an existing identity, or mint a new unified course from single-college matches — one-click confirm, never auto-applied." },
       ["✨ Suggested merges"]);
     suggestBtn.onclick = function () { openSuggestions(); };
 
