@@ -606,6 +606,17 @@ mirroring the C-ID anchor, and are usable as ⚇ Unify merge targets.
 
 **Frontier / open work:**
 
+- **Open threads (next sessions), in priority order:** (1) **Suggested-merge
+  worklist V2** — extend the worklist to the ~1,030 **singleton-only** merge
+  clusters (single-college courses that match each other but no existing
+  identity), reusing the same generator grouping + UI. (2) **Revise the dashboard
+  Articulations & Exhibits (EACR / CPL Analytics) tables to use the Unified
+  Courses identity layer** — group earned articulations / exhibit credit-recs by
+  unified course identity (and eventually unified credential title) instead of
+  raw MAP rows, so the same course/credit-rec across colleges collapses (see §9
+  EACR Exhibit Identity + `docs/exhibit_unification_vision.md`). (3) **`CourseControlNumber`
+  re-mint** — the root-cause fix that re-keys memberships at the raw
+  college-course level (unblocks crosswalk Phase C; scope before build).
 - **Crosswalk re-key initiative.** Use the raw list's
   `CIDNumber`/`CommonCourseNumber` to promote minted M-IDs to their real C-ID/CCN
   identity (precedence CCN > C-ID > M-ID). **Phase A — DONE (PR #66):** each row
@@ -665,10 +676,19 @@ mirroring the C-ID anchor, and are usable as ⚇ Unify merge targets.
   committing. (Motivating case: College of the Desert's MATH 31 genuinely *is*
   "Undergraduate Research Experience" in STEM — title match already keeps it; the
   tie-breaker is for the harder cases the title gate can't settle.)
-**Discipline completion is in progress** (`kb/discipline_inference.json` +
-`_infer_disciplines.py`): a first conservative pass is in; the long tail
-(~3k minted/cluster + ~21k singletons still blank) is refined by editing the
-lexicon and re-running, plus reviewer curation in the tab.
+**Discipline completion — 5 inference passes done (2026-05-22).** Blank
+disciplines went from **21,656 → ~7,193** (~67% filled) across: lexicon passes
+1–3 (`discipline_inference.json` + `_infer_disciplines.py` — subject_map +
+title_keyword), the description pass (`_infer_disciplines_from_desc.py`), and
+the highest-yield TOP-aware pass (`_infer_disciplines_from_top.py` +
+`top_discipline_map.json`, ~10.3k fills). Each fill is a confidence-tiered,
+reviewer-verifiable draft (`discipline_source` ∈
+`subject_map`/`title_keyword`/`description`/`top_code`; surfaced via the
+Generated-by filter + `⚙` badges + **batch-verify**). **The remaining ~7,193
+are mostly the genuinely-ambiguous `4930.xx` academic catch-all** (deliberately
+not auto-filled) — best closed by **reviewer curation in the tab** (now
+well-tooled), not more heuristics. Re-run any pass after editing its
+lexicon/map; all skip reviewed/curated and only fill blanks.
 
 **Guardrails when resuming:**
 - The `coci_*.json` files are large (tens of MB). **Never read/cat them into the
