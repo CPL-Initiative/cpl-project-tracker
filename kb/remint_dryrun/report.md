@@ -27,21 +27,23 @@ New minted identities: 72,481
 noncredit→9xxx: 10,183; credit→1xxx:
 62,298).
 
-## The 6 curation entries (decision-critical)
+## The 7 curation entries (decision-critical)
 | key | kind | fate | new id(s) | merge_into |
 |---|---|---|---|---|
 | `M-ID AB 100` | M-ID | rename | `AB M1001` | merge_into `UC-CUR-MPG029OM` (M-ID? False) |
 | `M-ID ABDY 100` | M-ID | rename | `ABDY M1001` | merge_into `UC-CUR-MPG029OM` (M-ID? False) |
 | `M-ID ABDY 106` | M-ID | rename | `ABDY M10AA` | merge_into `UC-CUR-MPG029OM` (M-ID? False) |
+| `M-ID AELE 100` | M-ID | rename | `ELET M1001` | — |
 | `M-ID BSICSKL 100` | M-ID | rename | `BSIC M9001` | — |
 | `M-ID EGDTEK 100` | M-ID | rename | `EGDT M1001` | — |
 | `UC-CUR-MPG029OM` | cluster | not an M-ID — key is stable, not re-keyed | — | — |
 
-All five curated **M-ID** keys map **1:1 (rename)** — none split — and every
-`merge_into` points at the curator-minted `UC-CUR-MPG029OM` cluster, which is
-**not** an M-ID, so no `merge_into` value needs rewriting. The re-key of the
-human layer is therefore: rewrite the 5 curation **keys** (git + Supabase),
-leave all `merge_into` values untouched.
+All 6 curated **M-ID** keys map **1:1 (rename)** — 0 split —
+and every `merge_into` points at the curator-minted `UC-CUR-MPG029OM` cluster,
+which is **not** an M-ID, so no `merge_into` value needs rewriting. The re-key of
+the human layer is therefore: rewrite the 6 curation **keys** (git +
+Supabase), leave all `merge_into` values untouched. (Reconciled to the live
+Supabase table 2026-05-22: git was stale by one entry, `M-ID AELE 100`.)
 
 ## Numbering scheme (option 1, confirmed)
 CCN's `SUBJ C####` is **4 digits**: the leading digit is the band (level/credit
