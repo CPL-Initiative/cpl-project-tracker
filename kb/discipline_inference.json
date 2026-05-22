@@ -2,7 +2,7 @@
   "_about": "Authored lexicon for inferring a discipline on blank-discipline COCI staging courses. Applied by kb/_infer_disciplines.py over coci_minted_courses.json + coci_unified_courses.json. Every target discipline MUST be an exact string from reference/mq_disciplines.json (the apply script validates and refuses unknown targets). Assignments are written with discipline_source + discipline_confidence and are NEVER applied to entries that are human-reviewed (reviewed_at set) or present in coci_curation.json. STAGING + flagged-for-review — not ground truth. Edit this file and re-run the script to refine.",
   "_authored_by": "claude-opus-4-7 (discipline inference draft)",
   "_authored_at": "2026-05-22",
-  "_revision_notes": "2026-05-22 pass 2: parent-first refinement. Added clean subject codes + cross-cutting title_keywords (foreign languages, music, electronics, drafting/CAD, culinary, AI, aviation, mortuary, HVAC, horticulture, solar, recreation). Keywords sidestep the fragmented/dirty subject codes (e.g. 'CUL ART', 'ELECTRN') by matching on title.",
+  "_revision_notes": "2026-05-22 pass 2: parent-first refinement. Added clean subject codes + cross-cutting title_keywords (foreign languages, music, electronics, drafting/CAD, culinary, AI, aviation, mortuary, HVAC, horticulture, solar, recreation). Keywords sidestep the fragmented/dirty subject codes (e.g. 'CUL ART', 'ELECTRN') by matching on title. 2026-05-22 pass 3: discipline-tail extension. Added 7 subject codes (ATHPE/ANAT/AGPS/PLS/AGRI/AODS/SWHS) + cross-cutting keywords (intercollegiate, yoga/pilates, anatomy/physiology, viticulture, addiction/substance-abuse, social-work/human-services, medical terminology, nutrition, film/cinema, sign language, court reporting, surgical, dental, machining, robotics, cybersecurity, floral, forestry, paramedic/EMS). Dropped 'ceramics' (studio art, not the industrial Ceramic Technology MQ discipline).",
   "_confidence": { "subject_map": 0.8, "title_keyword": 0.55 },
   "_policy": "subject_map: assign a discipline to ALL blank courses under a subject code whose sampled member titles are unambiguously one discipline (codes with mixed titles are deliberately omitted). title_keyword: lower-precision fallback for courses still blank after subject_map, matched on whole-word title tokens; kept to terms that are unambiguous on their own.",
   "subject_map": {
@@ -133,7 +133,14 @@
     "AGEH": "Ornamental Horticulture",
     "DMA": "Multimedia",
     "CSFM": "Fire Technology",
-    "AET": "Environmental Technologies"
+    "AET": "Environmental Technologies",
+    "ATHPE": "Physical Education",
+    "ANAT": "Biological Sciences",
+    "AGPS": "Agricultural Production",
+    "PLS": "Agricultural Production",
+    "AGRI": "Agriculture",
+    "AODS": "Counseling",
+    "SWHS": "Counseling"
   },
   "title_keywords": [
     { "any": ["older adults"], "discipline": "Older Adults: Noncredit" },
@@ -195,6 +202,25 @@
     { "any": ["baking", "cake decorating", "charcuterie", "catering"], "discipline": "Culinary Arts/Food Technology" },
     { "any": ["piano", "musicianship", "music theory", "music history", "music appreciation", "jazz", "choir", "orchestra"], "discipline": "Music" },
     { "any": ["adapted physical", "adaptive physical"], "discipline": "Physical Education" },
-    { "any": ["recreation", "leisure"], "discipline": "Recreation Administration" }
+    { "any": ["recreation", "leisure"], "discipline": "Recreation Administration" },
+    { "any": ["intercollegiate"], "discipline": "Physical Education" },
+    { "any": ["yoga", "pilates"], "discipline": "Physical Education" },
+    { "any": ["anatomy", "physiology"], "discipline": "Biological Sciences" },
+    { "any": ["viticulture", "enology", "viniculture"], "discipline": "Agricultural Production" },
+    { "any": ["addiction", "substance abuse", "chemical dependency", "alcohol and other drug", "alcohol and drug"], "discipline": "Counseling" },
+    { "any": ["social work", "human services"], "discipline": "Counseling" },
+    { "any": ["medical terminology"], "discipline": "Health Care Ancillaries" },
+    { "any": ["nutrition"], "discipline": "Nutritional Science/Dietetics" },
+    { "any": ["film studies", "filmmaking", "cinema"], "discipline": "Film and Media Studies" },
+    { "any": ["sign language", "american sign"], "discipline": "Sign Language, American" },
+    { "any": ["court reporting"], "discipline": "Court Reporting" },
+    { "any": ["surgical"], "discipline": "Surgical Technology" },
+    { "any": ["dental"], "discipline": "Dental Technology" },
+    { "any": ["machining", "machinist", "lathe", "milling"], "discipline": "Machine Tool Technology" },
+    { "any": ["robotics"], "discipline": "Robotics" },
+    { "any": ["cybersecurity", "cyber security"], "discipline": "Computer Information Systems" },
+    { "any": ["floral", "floristry"], "discipline": "Ornamental Horticulture" },
+    { "any": ["forestry"], "discipline": "Forestry/Natural Resources" },
+    { "any": ["paramedic", "emergency medical"], "discipline": "Emergency Medical Technologies" }
   ]
 }
