@@ -4,35 +4,35 @@
   "_synced_at": "2026-05-22T22:31:02Z",
   "count": 7,
   "curations": {
-    "M-ID AB 100": {
+    "AB M1001": {
       "merge_into": "UC-CUR-MPG029OM",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T21:25:33.462587+00:00"
     },
-    "M-ID ABDY 100": {
+    "ABDY M1001": {
       "merge_into": "UC-CUR-MPG029OM",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T21:25:33.462587+00:00"
     },
-    "M-ID ABDY 106": {
+    "ABDY M10AA": {
       "merge_into": "UC-CUR-MPG029OM",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T21:25:33.462587+00:00"
     },
-    "M-ID AELE 100": {
-      "discipline": "Electricity",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-22T16:42:00.670793+00:00"
-    },
-    "M-ID BSICSKL 100": {
+    "BSIC M9001": {
       "discipline": "Interdisciplinary-Basic Skills: Noncredit 53412",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T19:22:55.870894+00:00"
     },
-    "M-ID EGDTEK 100": {
+    "EGDT M1001": {
       "discipline": "Drafting/CADD",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T19:21:54.054269+00:00"
+    },
+    "ELET M1001": {
+      "discipline": "Electricity",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-22T16:42:00.670793+00:00"
     },
     "UC-CUR-MPG029OM": {
       "discipline": "Auto Body Technology",
@@ -40,5 +40,6 @@
       "reviewed_at": "2026-05-21T21:25:33.462587+00:00",
       "unified_title": "Advanced Auto Body Collision and Damage Repair"
     }
-  }
+  },
+  "_notes": "Keys re-keyed by the 2026-05-22 CourseControlNumber re-mint (kb/remint_out/alias_map.json)."
 }
