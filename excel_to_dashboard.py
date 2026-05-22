@@ -4542,6 +4542,69 @@ def export_unified_courses():
                 "window.CPL_UC_INDEX = " + json.dumps(idx, ensure_ascii=False, separators=(",", ":")) + ";\n")
     print(f"  Unified Courses: wrote {out_idx} ({len(idx)} index entries)")
 
+    # ---- suggested-merge worklist (lazy) ------------------------------------
+    # Precompute groups of identities that look like the SAME course, so a
+    # reviewer can confirm merges in one click. Grouping key is a level-SAFE
+    # title signature: parentheticals removed, articles dropped, roman numerals
+    # normalized to digits, remaining tokens sorted — so "Japanese I"/"Japanese 1"
+    # group but "Japanese I" and "Japanese II" do NOT. Identity-anchored: every
+    # group has >=1 main-payload identity (M-ID/Cluster, not locked, not a
+    # cid_conflict over-merge) + >=2 members; orphan singletons that match an
+    # identity's signature are attached. NEVER auto-applied — purely a worklist
+    # surfaced in the tab; the curator confirms each group. (New generated file —
+    # add to the daily workflow git-add list.)
+    from collections import Counter as _Ctr
+    _SUG_DROP = {"the", "of", "to", "and", "for", "with", "in", "a", "an", "on", "at", "as"}
+    _SUG_ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5",
+                  "vi": "6", "vii": "7", "viii": "8", "ix": "9", "x": "10"}
+
+    def _sug_sig(t):
+        t = re.sub(r"\([^)]*\)", " ", str(t or "").lower())
+        t = re.sub(r"[^a-z0-9 ]+", " ", t)
+        return " ".join(sorted(_SUG_ROMAN.get(w, w) for w in t.split() if w not in _SUG_DROP))
+
+    sug = {}
+    for r in rows:
+        if r.get("locked") or r.get("id_system") not in ("M-ID", "Cluster"):
+            continue
+        if (r.get("match") or {}).get("cid_conflict"):
+            continue
+        s = _sug_sig(r.get("title"))
+        if not s:
+            continue
+        sug.setdefault(s, {"main": [], "sing": []})["main"].append(
+            {"id": r["id"], "t": r.get("title"), "s": ";".join(r.get("subj") or []),
+             "u": r.get("units"), "k": r.get("id_system")})
+    for sid, v in sg.items():
+        if sid in merge_into:
+            continue
+        s = _sug_sig(v.get("common_title"))
+        g = sug.get(s)
+        if g:  # attach only to an existing main-anchored signature
+            g["sing"].append({"id": sid, "t": v.get("common_title"), "s": v.get("subject") or "",
+                              "u": v.get("typical_units"), "k": "Stand-Alone", "g": 1})
+
+    sug_groups = []
+    for s, g in sug.items():
+        members = g["main"] + g["sing"]
+        if not g["main"] or len(members) < 2:
+            continue
+        subc = _Ctr(x for m in members for x in str(m["s"] or "").split(";") if x)
+        modal = (subc.most_common(1)[0][1] / len(members)) if subc else 0.0
+        us = [m["u"] for m in members if m["u"] is not None]
+        units_ok = (sum(1 for u in us if abs(u - us[0]) < 0.5) / len(members)) if us else 0.0
+        score = round(0.5 * modal + 0.3 * units_ok + 0.2 * min(len(members), 10) / 10.0, 3)
+        sug_groups.append({"sig": s, "n": len(members), "score": score, "members": members})
+    sug_groups.sort(key=lambda x: -x["score"])
+    out_sug = os.path.join(SCRIPT_DIR, "unified_courses_suggestions.js")
+    sug_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
+                   "count": len(sug_groups), "groups": sug_groups}
+    with open(out_sug, "w", encoding="utf-8") as f:
+        f.write("/* Unified Courses suggested-merge worklist — lazy-loaded. Identity-anchored "
+                "same-title groups; HUMAN-CONFIRMED in the tab, NEVER auto-applied. */\n"
+                "window.CPL_UC_SUGGESTIONS = " + json.dumps(sug_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
+    print(f"  Unified Courses: wrote {out_sug} ({len(sug_groups)} suggested-merge groups)")
+
     mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
     payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,
                "colleges": colleges, "mq_disciplines": sorted(mq),

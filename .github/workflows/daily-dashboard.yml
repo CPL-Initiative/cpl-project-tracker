@@ -92,6 +92,7 @@ jobs:
                   kb/coci_curation.json unified_courses_data.js \
                   unified_courses_index.js unified_courses_details.js \
                   unified_courses_standalone.js unified_courses_members.js \
+                  unified_courses_suggestions.js \
                   exports/unified_courses.xlsx
           # Only add CustomReport if it was freshly fetched
           git add CustomReport_latest.json 2>/dev/null || true
