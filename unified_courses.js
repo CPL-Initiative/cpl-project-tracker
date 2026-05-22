@@ -278,6 +278,7 @@
     }
     var colleges = data.colleges || [];
     var mqList = data.mq_disciplines || [];
+    var topMap = data.topmap || {};
     var rows = data.rows;
     var session = getSession();
     var refreshTimer = null;
@@ -656,7 +657,7 @@
       field("Discipline", r.disc);
       field("Credit", r.credit);
       field("Units", r.units == null ? "" : r.units);
-      field("TOP code", r.top);
+      field("TOP code", r.top && topMap[r.top] ? r.top + ": " + topMap[r.top] : r.top);
       field("Subject(s)", r.subj);
       field("Members", r.members == null ? "" : r.members);
       field("Confidence", r.conf == null ? "" : r.conf.toFixed(2));
@@ -1181,7 +1182,7 @@
         tr.appendChild(disciplineCell(r));
         tr.appendChild(el("td", {}, [r.credit || "—"]));
         tr.appendChild(el("td", {}, [r.units == null ? "—" : String(r.units)]));
-        tr.appendChild(el("td", {}, [r.top || "—"]));
+        tr.appendChild(el("td", (r.top && topMap[r.top]) ? { title: topMap[r.top], style: "cursor:help;" } : {}, [r.top || "—"]));
         var subjTitle = (r.title_variants && r.title_variants.length)
           ? r.title_variants.join("\n") : (r.title || "");
         tr.appendChild(el("td", { title: subjTitle }, [(r.subj || []).join(", ")]));
