@@ -61,7 +61,8 @@ Every common course gets the **best available** identifier, recorded in
    ours — never read as an official CCN/C-ID. Minted **only** when no
    CCN or C-ID aligns. Re-mint 2026-05-22 (PR #84); the prior format
    `M-ID SUBJ NNN` is dead — `kb/remint_out/alias_map.json` is the
-   authoritative old→new.
+   authoritative old→new. Full decisions / validation / lessons:
+   [`docs/coursecontrolnumber_remint.md`](../docs/coursecontrolnumber_remint.md).
 
 Why M-ID exists: only **~11%** of CCC courses carry a C-ID, and most carry
 no CCN either. Without a shared key, an articulation a college earns
