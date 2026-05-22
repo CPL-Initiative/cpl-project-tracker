@@ -4097,6 +4097,21 @@ def export_unified_courses():
     def reviewed_at_of(cid):
         return ((curation.get(cid) or {}).get("reviewed_at") or "")[:10]
 
+    def _add_prov(row, cid, v):
+        # Surface how a Generated discipline was inferred (subject_map vs
+        # title_keyword) so reviewers can triage the riskier keyword fills.
+        # Skip curated entries (human discipline, not an AI draft); the tab
+        # renders those as Verified anyway. Lean: only emit when an AI source
+        # exists, so blank/manual/anchor rows carry no extra keys.
+        if not curation.get(cid):
+            src = v.get("discipline_source")
+            if src:
+                row["dsrc"] = src
+                conf = v.get("discipline_confidence")
+                if conf is not None:
+                    row["dconf"] = conf
+        return row
+
     def cur_desc_of(cid):
         return (curation.get(cid) or {}).get("description")
 
@@ -4145,7 +4160,7 @@ def export_unified_courses():
         if mid in merge_into or mid in merge_members:
             continue
         ad, pot = rollup([mid])
-        rows.append({"kind": "Course", "id": mid, "title": v.get("common_title"),
+        rows.append(_add_prov({"kind": "Course", "id": mid, "title": v.get("common_title"),
                      "disc": disc_of(mid, v.get("discipline")), "credit": v.get("credit_status"),
                      "units": v.get("typical_units"), "top": v.get("top_code"),
                      "subj": [v["subject"]] if v.get("subject") else [],
@@ -4153,12 +4168,12 @@ def export_unified_courses():
                      "id_system": "M-ID", "locked": False,
                      "flags": flags_of(v, mid),
                      "reviewed_by": reviewed_by_of(mid), "reviewed_at": reviewed_at_of(mid),
-                     "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
+                     "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]}, mid, v))
     for uid, v in clusters.items():
         if uid in merge_into or uid in merge_members:
             continue
         ad, pot = rollup(v.get("members", []))
-        rows.append({"kind": "Cluster", "id": uid,
+        rows.append(_add_prov({"kind": "Cluster", "id": uid,
                      "title": v.get("synthesized_title") or v.get("canonical_title"),
                      "disc": disc_of(uid, v.get("discipline")), "credit": v.get("credit_status"),
                      "units": v.get("typical_units"), "top": v.get("top_code"),
@@ -4167,7 +4182,7 @@ def export_unified_courses():
                      "id_system": "Cluster", "locked": False,
                      "flags": flags_of(v, uid, use_spread=False),
                      "reviewed_by": reviewed_by_of(uid), "reviewed_at": reviewed_at_of(uid),
-                     "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
+                     "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]}, uid, v))
 
     # Curated common-course anchor (C-ID / CCN-ID / M-ID) — shown READ-ONLY:
     # curation is disabled for these (common_courses.json is firewalled). Also
@@ -4534,7 +4549,7 @@ def export_unified_courses():
     for sid, v in sg.items():
         if sid in merge_into or sid in merge_members:
             continue
-        sa_rows.append({"kind": "Stand-Alone", "id": sid, "title": v.get("common_title"),
+        sa_rows.append(_add_prov({"kind": "Stand-Alone", "id": sid, "title": v.get("common_title"),
                         "disc": disc_of(sid, v.get("discipline")), "credit": v.get("credit_status"),
                         "units": v.get("typical_units"), "top": v.get("top_code"),
                         "subj": [v["subject"]] if v.get("subject") else [],
@@ -4542,7 +4557,7 @@ def export_unified_courses():
                         "id_system": "M-ID", "locked": False,
                         "flags": flags_of(v, sid),
                         "reviewed_by": reviewed_by_of(sid), "reviewed_at": reviewed_at_of(sid),
-                        "adopted": [], "potential": []})
+                        "adopted": [], "potential": []}, sid, v))
     if _have_raw:
         for r in sa_rows:
             m = _row_official(r)

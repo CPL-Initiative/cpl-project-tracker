@@ -486,9 +486,19 @@ re-runnable (idempotent — only fills blanks, never overwrites reviewed/curated
   `committed_curation` snapshot). The **curated common-course anchor**
   (`common_courses.json`, C-ID/CCN/M-ID) is shown **read-only** (an "anchor"
   badge; curation disabled — it's firewalled). Filters include **Source**
-  (`id_system`), discipline, credit, confidence, adoption, flagged-only, blank-
-  only; default sort is **Subject(s) then course number**. Subject(s) cells
-  hover to show the course title(s) / cluster title variants.
+  (`id_system`), discipline, credit, confidence, adoption, **Generated-by**
+  (discipline provenance — `by subject-code` vs `by title-keyword`),
+  flagged-only, blank-only; default sort is **Subject(s) then course number**.
+  Subject(s) cells hover to show the course title(s) / cluster title variants.
+- **Discipline provenance surfacing** (added 2026-05-22). Generated (not-yet-
+  verified) rows whose discipline came from `_infer_disciplines.py` carry a
+  small `⚙ subj-code` / `⚙ title-kw` badge (keyword = warn color, since it's the
+  riskier 0.55-confidence fill) plus the **Generated-by** filter, so a reviewer
+  can blast through the safe `subject_map` fills with **Verify** and scrutinize
+  the keyword ones. The data comes from per-row `dsrc`/`dconf` keys emitted by
+  `export_unified_courses()` via the `_add_prov()` helper — emitted **only** on
+  non-curated rows that carry a `discipline_source` (blank/manual/anchor rows
+  stay lean, no extra keys). Curated rows render as Verified, so no badge.
 - Supabase is **live and shared**: only the unified-courses curation tables
   (`kb_curation`, `allowed_reviewers`) are in scope. The
   projects/budget/personnel/workplan tables (§8) and the auth/Redirect-URL config
