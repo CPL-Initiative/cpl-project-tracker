@@ -967,15 +967,16 @@ Read-only auditor over every M-ID + Cluster. Per row, produces a Trust Card:
   missing / conflicting / not_yet_captured.
 - **Readiness tiers:** ready (≥0.85) / needs_review (≥0.65) /
   needs_repair (≥0.40) / not_ready.
-- **Rule tags + counts (2026-05-23, after Phase 1c 5-rule wave + SISTER_PAIRS suppression):**
+- **Rule tags + counts (2026-05-23, after Phase 1c 6-rule wave incl. Phase 1e diagnostic):**
   - `seed_untouched_discipline` (11,158) — Phase B subject_map draft never reviewed (Phase 1a)
+  - `subject_collision_signal` (7,203) — M-ID's SUBJ4 ≠ modal SUBJ4 for its discipline; Phase 1e re-mint target (cleanup receipt: should fall to 0 post-apply)
   - `top_discipline_disagreement` (857, was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
   - `blank_description` (1,733) — Phase 1a
   - `blank_discipline` (1,266) — Phase 1a
   - `discipline_title_mismatch` (742) — title shares 0 tokens with assigned discipline AND ≥2 with some other; refines the seed bucket (Phase 1c)
   - `description_discipline_disagreement` (78) — description's safe-phrase set (mirror of `_infer_disciplines_from_desc.py`) points elsewhere with ≥2 mentions (Phase 1c)
   - `generic_title_concrete_discipline` (44) — title is course-format generic (SkillsUSA / Internship / Capstone…); can't justify a specific discipline (Phase 1c)
-  - `mid_id_off_scheme` (27) — single-letter SUBJ re-mint artifact (Phase 1a)
+  - `mid_id_off_scheme` (27) — single-letter SUBJ re-mint artifact (Phase 1a; subset of subject_collision_signal — both fall to 0 post Phase 1e)
   - `cluster_blanks_when_aggregatable` (1) — Phase 1a
   - `cluster_id_off_scheme` (1) — Phase 1a
   - `uc_cur_ripe_for_promotion` (1) — Phase 1a
@@ -1005,10 +1006,12 @@ repo root: `python3 kb/_row_audit.py`.
 | 1b (1/2) | Cluster row member-aggregation in renderer (fixes UC-CUR-MPG029OM blanks) | **DONE** 2026-05-23 |
 | 1b (2/2) | UCL "⚠ hinky" chip + audit-status toolbar indicator + daily auditor cron | **DONE** 2026-05-23 |
 | 1b (3/3) | Curate-write Repair-from-members action (Supabase schema migration + fresh-read + cron-window) | parked (low immediate value — 1 cluster; build when ≥5 clusters exist) |
-| 1c | More audit rules — **5 of 9 landed 2026-05-23:** `discipline_title_mismatch`, `generic_title_concrete_discipline`, `top_discipline_disagreement` (+ SISTER_PAIRS suppression), `description_discipline_disagreement`. **Still queued:** `subject_collision_signal` (next — surfaces SUBJ4 outliers within a discipline cluster; the diagnostic for the §11.5 re-mint), `unit_anomaly`, `merge_into_orphan`, `cluster_title_drift` (low yield until more clusters mint) | in progress |
+| 1c | More audit rules — **6 of 9 landed 2026-05-23:** `discipline_title_mismatch`, `generic_title_concrete_discipline`, `top_discipline_disagreement` (+ SISTER_PAIRS suppression), `description_discipline_disagreement`, `subject_collision_signal` (Phase 1e diagnostic — **7,203 flags pre-re-mint**, target 0 post-re-mint). **Still queued:** `unit_anomaly`, `merge_into_orphan`, `cluster_title_drift` (low yield until more clusters mint) | in progress |
 | 1c-UX | Score-with-tag-penalty + chip-with-score + severity color grade + breakdown hover + UCL Triage filter + .uc-flags-cell nowrap + Adoptable rename | **DONE** 2026-05-23 |
 | 1d | UI rename "Unified Courses" → "Common Course Reference" (CCR); URL hash + filenames preserved | **DONE** 2026-05-23 (PR #87) |
-| **1e** | **SUBJ4 canonicalization re-mint** — build `kb/discipline_canonical_subj4.json` (curator-edited map; default = data-modal SUBJ4 per discipline, override-able); fold same-discipline SUBJ4 variants (10 for Sign Language American alone) + the 27 single-letter SUBJ outliers; runs under the [`re-mint playbook`](docs/coursecontrolnumber_remint.md) — dry-run + alias map + Supabase fresh-read + atomic land + cron-window. The first re-mint in the new "Rule 7 staging-phase" framing. | **NEXT SESSION** (Bruh Max / session 5) |
+| **1e-5a** | SUBJ4-canonicalization Session 5a — seed + curator tab + audit rule. `kb/_seed_canonical_subj4.py` produces `kb/discipline_canonical_subj4.json` (144 disciplines: 44 pre-seeded with 4-letter data-modal, 100 needs_review). New top-level **Canonical SUBJ4** tab in the dashboard (auth-gated CRUD; writes to Supabase `kb_curation` with synthesized `_CANON_SUBJ4::<discipline>` namespace, no schema migration). `kb/_apply_canonical_subj4.py` sync wired into the daily cron. | **DONE** 2026-05-23 (PR #89, Bruh Quad) |
+| **1e-5b** | SUBJ4-canonicalization Session 5b — measure-first dry-run. `kb/_subj4_dryrun.py` is re-runnable, walks both `coci_minted_courses.json` + `coci_minted_singletons.json`, applies the curation overlay, classifies every M-ID's fate, reallocates new course_ids deterministically by `(normalized_title, old_id)`, validates 4 gates, surfaces curated-collision decision points, counts downstream apply scope (memberships + articulations + cluster refs). Artifacts at `kb/subj4_dryrun/{report.md, alias_map.json, blocked.json, collisions.json}`. Apply gate signal becomes the green light for 5c. Bonus: regen-safe seed generator preserves curator-reviewed entries; caught singleton-only discipline (`Upholstering`) missing from initial seed. | **DONE** 2026-05-23 (Bruh Quad) |
+| **1e-5c** | SUBJ4-canonicalization Session 5c — atomic apply. `kb/_subj4_apply.py` re-keys `coci_minted_*.json` + `coci_articulations.json` + `coci_unified_courses.json` + `kb/coci_curation.json` + live Supabase `kb_curation.course_id`, all within one 10:17 UTC cron window. Gates on dry-run reporting "READY FOR APPLY" + curated-collision decisions confirmed + Supabase fresh-read. Validation: `subject_collision_signal` re-fires zero — the cleanup receipt. | **NEXT** (Bruh Quad — pending canonical map completion by curator) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 3 | EACR interactive re-pivot to course-identity grouping (Approach B per §9) | parked (architecturally significant) |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
