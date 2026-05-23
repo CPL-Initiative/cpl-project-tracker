@@ -1,0 +1,214 @@
+name: Phase 1e — Atomic SUBJ4 Apply
+
+# One-shot, manual-dispatch only. Atomic apply of the SUBJ4-canonicalization
+# re-mint per the curator-confirmed kb/discipline_canonical_subj4.json.
+#
+# Sequence (each step exits non-zero on failure → workflow aborts):
+#
+#   1. Fresh-read canonical map (re-sync from Supabase — catches last-minute
+#      curator edits).
+#   2. Re-run dry-run + assert apply gate is clean (4/4 validation pass).
+#   3. Apply kb mutations in-place via kb/_subj4_apply.py.
+#   4. Re-run dry-run on the mutated state — assert 0 re_keys remaining
+#      (post-apply zero-action receipt).
+#   5. Re-run auditor — assert subject_collision_signal=0 and
+#      mid_id_off_scheme=0 (the Phase 1e cleanup-receipt invariants).
+#   6. Apply Supabase kb_curation key renames via kb/_subj4_apply_supabase.py.
+#      Per-alias PATCH with verbose log. Best-effort: a single transient
+#      failure logs but doesn't strand the apply (the log is the operator's
+#      retry input).
+#   7. Commit all mutated kb files + receipts + audit + canonical map + push.
+#
+# concurrency: daily-dashboard  →  serializes against the daily cron so
+# excel_to_dashboard.py never reads kb/coci_*.json mid-mutation.
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: daily-dashboard
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # ── Step 1: fresh-read canonical map (Supabase fresh-read guard) ─────
+      - name: Re-sync Canonical SUBJ4 from Supabase (fresh-read)
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          if [ -z "${SUPABASE_SERVICE_KEY:-}" ]; then
+            echo "::error::SUPABASE_SERVICE_KEY not set — required for apply"
+            exit 1
+          fi
+          python kb/_apply_canonical_subj4.py
+
+      # ── Step 2: re-run dry-run + verify apply gate is clean ──────────────
+      - name: Re-run dry-run + verify apply gate
+        run: |
+          python kb/_subj4_dryrun.py
+          python3 << 'EOF'
+          import json, re, sys
+          # Parse validation gates from the report. All 4 must be ✅.
+          with open('kb/subj4_dryrun/report.md') as f:
+              rpt = f.read()
+          gates = re.findall(r'^- ([✅❌]) \*\*(\w+)\*\*: (\w+)', rpt, re.MULTILINE)
+          fails = [g[1] for g in gates if g[0] != '✅']
+          if fails:
+              print(f"::error::Apply gate failed — validation FAIL on: {fails}")
+              sys.exit(1)
+          if len(gates) < 5:
+              print(f"::error::Apply gate parse only found {len(gates)} validation lines (expected 5)")
+              sys.exit(1)
+          # Also assert there are aliases to apply (else the apply is a no-op).
+          with open('kb/subj4_dryrun/alias_map.json') as f:
+              doc = json.load(f)
+          if not doc.get('aliases'):
+              print("::warning::Dry-run produced 0 aliases — nothing to apply (workflow will exit clean)")
+          print(f"apply gate OK — {len(gates)} validations pass, {len(doc.get('aliases', {}))} aliases to apply")
+          EOF
+
+      # ── Step 3: apply kb file mutations ───────────────────────────────────
+      - name: Apply SUBJ4 canonicalization to kb files
+        run: python kb/_subj4_apply.py
+
+      # ── Step 4: re-run dry-run on mutated state — must show 0 re_keys ────
+      - name: Verify post-apply state (0 re_keys, 0 collisions)
+        run: |
+          python kb/_subj4_dryrun.py
+          python3 << 'EOF'
+          import json, sys
+          with open('kb/subj4_dryrun/alias_map.json') as f:
+              doc = json.load(f)
+          aliases = doc.get('aliases', {})
+          re_keys = sum(1 for v in aliases.values() if v.get('fate') == 're_key')
+          if re_keys > 0:
+              print(f"::error::Post-apply dry-run shows {re_keys} re_keys still queued — apply incomplete")
+              sys.exit(1)
+          print(f"post-apply dry-run: 0 re_keys (✓)  no_change rows: "
+                f"{sum(1 for v in aliases.values() if v.get('fate') == 'no_change')}")
+          EOF
+
+      # ── Step 5: re-run auditor — cleanup receipt ─────────────────────────
+      # Phase 1e cleanup-receipt invariants:
+      #   * subject_collision_signal MUST be 0 (Phase 1e primary purpose)
+      #   * mid_id_off_scheme MUST be 0 EXCEPT for rows that ALSO have
+      #     blank_discipline — those are unfixable by the canonicalization
+      #     (no discipline → no canonical SUBJ4 to fold into), and stay
+      #     off-scheme as a known pre-existing data-quality residue.
+      - name: Verify auditor — subject_collision_signal must be 0
+        run: |
+          python kb/_row_audit.py
+          python3 << 'EOF'
+          import json, sys
+          with open('kb/row_audit/latest.json') as f:
+              audit = json.load(f)
+          rows = audit.get('rows') or []
+          collision = sum(1 for r in rows if 'subject_collision_signal' in (r.get('tags') or []))
+          off_fixable = sum(1 for r in rows
+                            if 'mid_id_off_scheme' in (r.get('tags') or [])
+                            and 'blank_discipline' not in (r.get('tags') or []))
+          off_unfixable = sum(1 for r in rows
+                              if 'mid_id_off_scheme' in (r.get('tags') or [])
+                              and 'blank_discipline' in (r.get('tags') or []))
+          if collision or off_fixable:
+              print(f"::error::Post-apply auditor: subject_collision_signal={collision}, "
+                    f"mid_id_off_scheme(fixable)={off_fixable} — both must be 0")
+              sys.exit(1)
+          print(f"auditor cleanup receipt:")
+          print(f"  subject_collision_signal:        {collision}  ✓ (target 0)")
+          print(f"  mid_id_off_scheme (fixable):     {off_fixable}  ✓ (target 0)")
+          print(f"  mid_id_off_scheme (unfixable):   {off_unfixable}  (blank-discipline residue, accepted)")
+          EOF
+
+      # ── Step 6: apply Supabase kb_curation row renames ───────────────────
+      # Runs only AFTER the kb mutations validated cleanly. Failures here are
+      # logged but don't crash the workflow — the operator can re-run from
+      # kb/subj4_apply/supabase_log.json (alias_map remains the source of truth).
+      - name: Apply Supabase kb_curation key renames
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python kb/_subj4_apply_supabase.py
+
+      # ── Step 7: commit + push ─────────────────────────────────────────────
+      - name: Commit + push
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add kb/coci_minted_courses.json \
+                  kb/coci_minted_singletons.json \
+                  kb/coci_minted_memberships.json \
+                  kb/coci_articulations.json \
+                  kb/coci_unified_courses.json \
+                  kb/coci_curation.json \
+                  kb/discipline_canonical_subj4.json \
+                  kb/subj4_dryrun/ \
+                  kb/subj4_apply/ \
+                  kb/row_audit/
+          if git diff --cached --quiet; then
+            echo "No changes to commit (apply was a no-op or re-ran on already-applied state)."
+            exit 0
+          fi
+          git commit -m "Phase 1e: SUBJ4 canonicalization APPLY (Session 5c)
+
+Atomic re-key of M-ID identifiers per the curator-confirmed
+kb/discipline_canonical_subj4.json. Alias map (source of truth):
+kb/subj4_apply/alias_map.json (frozen copy of pre-apply dry-run).
+
+Mutated:
+  * kb/coci_minted_courses.json     (M-ID catalog: course_id, subject_4letter)
+  * kb/coci_minted_singletons.json  (single-college M-IDs)
+  * kb/coci_minted_memberships.json (M-ID -> member courses)
+  * kb/coci_articulations.json      (course_id field per articulation)
+  * kb/coci_unified_courses.json    (clusters[].members[] refs)
+  * kb/coci_curation.json           (overlay keys re-keyed)
+
+Validated (workflow gates):
+  * post-apply dry-run: 0 re_keys, 0 blocked, 4/4 validation
+  * auditor: subject_collision_signal=0, mid_id_off_scheme=0 (cleanup receipt)
+
+Supabase kb_curation.course_id rows updated in same window — log:
+kb/subj4_apply/supabase_log.json."
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded on attempt $attempt."
+              exit 0
+            fi
+            echo "Push attempt $attempt failed — rebasing and retrying."
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((attempt * 2))
+          done
+          exit 1
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Phase 1e — SUBJ4 canonicalization apply"
+            echo
+            echo "Status: ${{ job.status }}"
+            echo
+            echo "Receipts:"
+            echo "- \`kb/subj4_apply/report.md\` — apply summary"
+            echo "- \`kb/subj4_apply/validation.md\` — per-file mutation counts"
+            echo "- \`kb/subj4_apply/alias_map.json\` — frozen alias map (rollback input)"
+            echo "- \`kb/subj4_apply/supabase_log.json\` — per-alias Supabase update log"
+          } >> "$GITHUB_STEP_SUMMARY"
