@@ -1,0 +1,974 @@
+{
+  "_about": "Per-alias Supabase kb_curation.course_id rename log. 'rows_affected' > 0 means a curated row was actually re-keyed; 0 means the alias's old_id had no live curation entry (common \u2014 most M-IDs don't have curation rows).",
+  "_applied_at": "2026-05-23T19:22:17Z",
+  "totals": {
+    "ok": 2,
+    "fail": 0,
+    "skipped_no_change": 158,
+    "skipped_no_curated_row": 65151,
+    "rows_affected": 2,
+    "aliases_total": 65311
+  },
+  "log": [
+    {
+      "old": "AGEQ M10AC",
+      "new": "AGEQ M10AC",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ANTH M1080",
+      "new": "ANTH M1080",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ANTH M90AA",
+      "new": "ANTH M90AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ARCH M1065",
+      "new": "ARCH M1065",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ARCH M1086",
+      "new": "ARCH M1086",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ARCH M10CA",
+      "new": "ARCH M10CA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ARCH M10FF",
+      "new": "ARCH M10FF",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ARCH M10LU",
+      "new": "ARCH M10LU",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ARCH M9001",
+      "new": "ARCH M9001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ARCH M9002",
+      "new": "ARCH M9002",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ARTD M1001",
+      "new": "ARTD M1001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ARTD M1002",
+      "new": "ARTD M1002",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ARTD M1003",
+      "new": "ARTD M1003",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ARTD M1004",
+      "new": "ARTD M1004",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ARTD M10AD",
+      "new": "ARTD M10AD",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "AUTO M1003",
+      "new": "AUTO M1003",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "AUTO M1072",
+      "new": "AUTO M1072",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "AUTO M10TJ",
+      "new": "AUTO M10TJ",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "BIOL M9001",
+      "new": "BIOL M9001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "BIOT M1001",
+      "new": "BIOT M1001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "BSIC M1001",
+      "new": "BSIC M1001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "BSIC M1002",
+      "new": "BSIC M1002",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "BSIC M10AA",
+      "new": "BSIC M10AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "BSIC M9001",
+      "new": "BSIC M9001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "BSIC M9002",
+      "new": "BSIC M9002",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "BSIC M9011",
+      "new": "BSIC M9011",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "BSIC M9024",
+      "new": "BSIC M9024",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CHEM M1047",
+      "new": "CHEM M1047",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CHEM M90AC",
+      "new": "CHEM M90AC",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CHEM M90AD",
+      "new": "CHEM M90AD",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CHEM M90AF",
+      "new": "CHEM M90AF",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "COMM M10BH",
+      "new": "COMM M10BH",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "COMM M10DO",
+      "new": "COMM M10DO",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "COMM M9001",
+      "new": "COMM M9001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "COMM M9013",
+      "new": "COMM M9013",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "COSM M1009",
+      "new": "COSM M1009",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "COSM M90AW",
+      "new": "COSM M90AW",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CTRP M1001",
+      "new": "CTRP M1001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CTRP M10AA",
+      "new": "CTRP M10AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CTRP M10AB",
+      "new": "CTRP M10AB",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CTRP M10AC",
+      "new": "CTRP M10AC",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CTRP M10AD",
+      "new": "CTRP M10AD",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CTRP M10AE",
+      "new": "CTRP M10AE",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CTRP M10AF",
+      "new": "CTRP M10AF",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CTRP M10AG",
+      "new": "CTRP M10AG",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CTRP M10AH",
+      "new": "CTRP M10AH",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "CTRP M10AM",
+      "new": "CTRP M10AM",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "DANC M90AA",
+      "new": "DANC M90AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "DENT M90AE",
+      "new": "DENT M90AE",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "DRAM M10CS",
+      "new": "DRAM M10CS",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "DRAM M10FG",
+      "new": "DRAM M10FG",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "DRAM M9001",
+      "new": "DRAM M9001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "DSPS M1001",
+      "new": "DSPS M1001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "DSPS M1002",
+      "new": "DSPS M1002",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "DSPS M10AH",
+      "new": "DSPS M10AH",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "DSPS M9001",
+      "new": "DSPS M9001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "DSPS M9027",
+      "new": "DSPS M9027",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "DSPS M9049",
+      "new": "DSPS M9049",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ECON M1033",
+      "new": "ECON M1033",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ECON M10BL",
+      "new": "ECON M10BL",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ECON M10BM",
+      "new": "ECON M10BM",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "EDUC M10DM",
+      "new": "EDUC M10DM",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "EDUC M9003",
+      "new": "EDUC M9003",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "EDUC M90AA",
+      "new": "EDUC M90AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "EGDT M1001",
+      "new": "DRAF M1002",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old": "ELCT M10BP",
+      "new": "ELCT M10BP",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ELET M1001",
+      "new": "ELEC M1028",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old": "ENGL M11CU",
+      "new": "ENGL M11CU",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGR M1002",
+      "new": "ENGR M1002",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGR M1009",
+      "new": "ENGR M1009",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGR M1051",
+      "new": "ENGR M1051",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGR M1052",
+      "new": "ENGR M1052",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGR M1079",
+      "new": "ENGR M1079",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGR M10HS",
+      "new": "ENGR M10HS",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGR M90AA",
+      "new": "ENGR M90AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGR M90AB",
+      "new": "ENGR M90AB",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGR M90AC",
+      "new": "ENGR M90AC",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGT M10BS",
+      "new": "ENGT M10BS",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGT M10CS",
+      "new": "ENGT M10CS",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGT M10CT",
+      "new": "ENGT M10CT",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGT M10DB",
+      "new": "ENGT M10DB",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGT M10DC",
+      "new": "ENGT M10DC",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENGT M10DG",
+      "new": "ENGT M10DG",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ENTR M10AB",
+      "new": "ENTR M10AB",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "ESLN M1001",
+      "new": "ESLN M1001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "FASH M1001",
+      "new": "FASH M1001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "FASH M10DR",
+      "new": "FASH M10DR",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "FIRE M1106",
+      "new": "FIRE M1106",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "GEOG M1062",
+      "new": "GEOG M1062",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "GEOG M10EE",
+      "new": "GEOG M10EE",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "GEOL M1016",
+      "new": "GEOL M1016",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "GEOL M10AA",
+      "new": "GEOL M10AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "GEOL M10BK",
+      "new": "GEOL M10BK",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "HIST M1157",
+      "new": "HIST M1157",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "HIST M90AA",
+      "new": "HIST M90AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "HIST M90AB",
+      "new": "HIST M90AB",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "HIST M90AC",
+      "new": "HIST M90AC",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "HLTH M9010",
+      "new": "HLTH M9010",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "HMDT M1001",
+      "new": "HMDT M1001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "HMDT M10AA",
+      "new": "HMDT M10AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "HORT M1001",
+      "new": "HORT M1001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "HORT M10AI",
+      "new": "HORT M10AI",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "HORT M10HT",
+      "new": "HORT M10HT",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "HVAC M90AC",
+      "new": "HVAC M90AC",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "INTD M1001",
+      "new": "INTD M1001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "JOUR M10EZ",
+      "new": "JOUR M10EZ",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "JOUR M10FK",
+      "new": "JOUR M10FK",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "LIBR M90AA",
+      "new": "LIBR M90AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "LIBT M1001",
+      "new": "LIBT M1001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "LIBT M1002",
+      "new": "LIBT M1002",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "LIBT M10AL",
+      "new": "LIBT M10AL",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "MAKR M1003",
+      "new": "MAKR M1003",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "MAKR M10AA",
+      "new": "MAKR M10AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "MAKR M10AH",
+      "new": "MAKR M10AH",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "MAKR M10AS",
+      "new": "MAKR M10AS",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "MAKR M90AA",
+      "new": "MAKR M90AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "MAKR M90AB",
+      "new": "MAKR M90AB",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "MAKR M90AC",
+      "new": "MAKR M90AC",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "MAKR M90AD",
+      "new": "MAKR M90AD",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "MATH M10JB",
+      "new": "MATH M10JB",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "MATH M9003",
+      "new": "MATH M9003",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "MATH M90DE",
+      "new": "MATH M90DE",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "OTEC M10AA",
+      "new": "OTEC M10AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PARN M90AF",
+      "new": "PARN M90AF",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PARN M90AN",
+      "new": "PARN M90AN",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PARN M90AS",
+      "new": "PARN M90AS",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PHIL M10DT",
+      "new": "PHIL M10DT",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PHIL M10EQ",
+      "new": "PHIL M10EQ",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PHIL M10HR",
+      "new": "PHIL M10HR",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PHIL M1107",
+      "new": "PHIL M1107",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PHOT M1001",
+      "new": "PHOT M1001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PHOT M1006",
+      "new": "PHOT M1006",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PHOT M9001",
+      "new": "PHOT M9001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PHOT M9002",
+      "new": "PHOT M9002",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PLMB M10AM",
+      "new": "PLMB M10AM",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "POSC M1002",
+      "new": "POSC M1002",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "POSC M9001",
+      "new": "POSC M9001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PSYC M1013",
+      "new": "PSYC M1013",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PSYC M1029",
+      "new": "PSYC M1029",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PSYC M1048",
+      "new": "PSYC M1048",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PSYC M1073",
+      "new": "PSYC M1073",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PSYC M1081",
+      "new": "PSYC M1081",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "PSYC M10GT",
+      "new": "PSYC M10GT",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "RADT M90AA",
+      "new": "RADT M90AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "RADT M90AB",
+      "new": "RADT M90AB",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "READ M1010",
+      "new": "READ M1010",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "READ M10BL",
+      "new": "READ M10BL",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "READ M9001",
+      "new": "READ M9001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "RMGT M10AA",
+      "new": "RMGT M10AA",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "SLPA M1003",
+      "new": "SLPA M1003",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "SLPA M10AX",
+      "new": "SLPA M10AX",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "SOCS M1001",
+      "new": "SOCS M1001",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "STMF M1014",
+      "new": "STMF M1014",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "STMF M10AW",
+      "new": "STMF M10AW",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "STMF M10AX",
+      "new": "STMF M10AX",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "SURG M1003",
+      "new": "SURG M1003",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "SURG M1004",
+      "new": "SURG M1004",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "VETT M10BO",
+      "new": "VETT M10BO",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "VOCE M1002",
+      "new": "VOCE M1002",
+      "status": "skip",
+      "reason": "no_change"
+    },
+    {
+      "old": "WELD M10BF",
+      "new": "WELD M10BF",
+      "status": "skip",
+      "reason": "no_change"
+    }
+  ]
+}
