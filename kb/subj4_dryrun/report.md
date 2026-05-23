@@ -16,16 +16,15 @@ artifacts:
 
 - Canonical map: **144 / 144** disciplines reviewed; **0** still need a 4-letter canonical SUBJ4.
 - M-IDs total: **72481** (corroborated catalog: 16308, singletons: 56173)
-  - **46123** would re-key to new SUBJ4 (minted 10432, singletons 35691)
-  - **19188** already on canonical SUBJ4 (no change) (minted 4610, singletons 14578)
+  - **46124** would re-key to new SUBJ4 (minted 10436, singletons 35688)
+  - **19187** already on canonical SUBJ4 (no change) (minted 4606, singletons 14581)
   - **0** blocked on missing canonical (minted 0, singletons 0)
   - 7170 skipped (no discipline)
-- Sequence-reallocation buckets: **435** new (SUBJ4, band, kind) buckets contain ≥2 old M-IDs.
+- Sequence-reallocation buckets: **437** new (SUBJ4, band, kind) buckets contain ≥2 old M-IDs.
 
 ## Apply gate (5c readiness)
 
 **🟡 NOT READY for apply** — open items:
-  - validation failure: `no_seq_overflow`
   - 1 bucket(s) contain ≥2 curated M-IDs — operator decision required
 
 ## Curation impact
@@ -55,7 +54,7 @@ These buckets contain ≥2 curated M-IDs whose old keys all rename into the same
 
 | discipline | canonical | n M-IDs | re-key | no-change | blocked | reviewed? |
 |---|---|---:|---:|---:|---:|:---:|
-| Physical Education | `KINE` | 3335 | 3323 | 12 | 0 | ✓ |
+| Physical Education | `PHYS` | 3335 | 3324 | 11 | 0 | ✓ |
 | English as a Second Language | `ESOL` | 2316 | 2246 | 70 | 0 | ✓ |
 | Computer Information Systems | `CISC` | 2232 | 2183 | 49 | 0 | ✓ |
 | Art | `ARTS` | 2252 | 2161 | 91 | 0 | ✓ |
@@ -86,20 +85,19 @@ These buckets contain ≥2 curated M-IDs whose old keys all rename into the same
 - ✅ **all_new_subj4_are_4letter**: pass
 - ✅ **one_subj4_per_discipline**: pass
 - ✅ **new_course_ids_unique**: pass
-- ❌ **no_seq_overflow**: FAIL
-  - corroborated overflow: [('KINE M1* (corroborated)', 1000), ('KINE M1* (corroborated)', 1000), ('KINE M1* (corroborated)', 1000), ('KINE M1* (corroborated)', 1000), ('KINE M1* (corroborated)', 1000)]
+- ✅ **no_seq_overflow**: pass
 
 ## Sequence-collision summary
 
-435 new buckets contain ≥2 old M-IDs. Top 10 by collision count:
+437 new buckets contain ≥2 old M-IDs. Top 10 by collision count:
 
 | new bucket | colliding M-IDs |
 |---|---:|
-| `KINE M1* (standalone)` | 3999 |
+| `PHYS M1* (standalone)` | 2746 |
 | `CISC M1* (standalone)` | 2040 |
 | `MUSI M1* (standalone)` | 1831 |
 | `ARTS M1* (standalone)` | 1526 |
-| `KINE M1* (corroborated)` | 1410 |
+| `KINE M1* (standalone)` | 1481 |
 | `DANC M1* (standalone)` | 1226 |
 | `CRIM M1* (standalone)` | 1197 |
 | `NRSR M1* (standalone)` | 1156 |
@@ -140,9 +138,9 @@ Beyond `coci_minted_courses.json` + `coci_minted_singletons.json`, the apply ste
 
 | file | records re-keyed |
 |---|---:|
-| `kb/coci_minted_memberships.json` | 14631 |
-| `kb/coci_articulations.json` (articulations[]) | 3750 |
-| `kb/coci_unified_courses.json` (clusters[].members) | 1351 clusters, 2824 member refs |
+| `kb/coci_minted_memberships.json` | 15042 |
+| `kb/coci_articulations.json` (articulations[]) | 3759 |
+| `kb/coci_unified_courses.json` (clusters[].members) | 1366 clusters, 2874 member refs |
 | `kb/coci_curation.json` (key rename) | 5 |
 
 ## How to proceed

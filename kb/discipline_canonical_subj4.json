@@ -4563,7 +4563,7 @@
       "_notes": null
     },
     "Physical Education": {
-      "canonical_subj4": "KINE",
+      "canonical_subj4": "PHYS",
       "source": "curator_override",
       "data_modal": "PE",
       "data_modal_is_4letter": false,
@@ -5634,6 +5634,6 @@
       "_notes": null
     }
   },
-  "_synced_at": "2026-05-23T18:17:03Z",
+  "_synced_at": "2026-05-23T18:43:23Z",
   "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
 }
