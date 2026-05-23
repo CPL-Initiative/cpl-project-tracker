@@ -68,6 +68,12 @@ jobs:
         run: |
           if [ -n "${SUPABASE_SERVICE_KEY:-}" ]; then
             python kb/_apply_curation.py
+            # Phase 1e: fold Canonical SUBJ4 curator edits (synthesized
+            # _CANON_SUBJ4::<discipline> keys) into kb/discipline_canonical_subj4.json.
+            # Skipped gracefully if the seed file doesn't exist yet.
+            if [ -f kb/discipline_canonical_subj4.json ]; then
+              python kb/_apply_canonical_subj4.py || echo "Canonical SUBJ4 sync failed — non-fatal"
+            fi
           else
             echo "SUPABASE_SERVICE_KEY not set — skipping curation sync."
           fi
@@ -104,6 +110,8 @@ jobs:
                   unified_courses_suggestions.js \
                   kb/row_audit/latest.json kb/row_audit/*.md \
                   exports/unified_courses.xlsx
+          # Phase 1e canonical SUBJ4 seed + curator-edit overlay (added 5a)
+          git add kb/discipline_canonical_subj4.json 2>/dev/null || true
           # Only add CustomReport if it was freshly fetched
           git add CustomReport_latest.json 2>/dev/null || true
           if git diff --cached --quiet; then

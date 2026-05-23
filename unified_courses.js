@@ -284,6 +284,7 @@
     generic_title_concrete_discipline: "Title is course-format generic (Internship / Capstone / SkillsUSA…) — can't justify a specific discipline",
     top_discipline_disagreement:      "TOP code maps to a different discipline than the one assigned",
     description_discipline_disagreement: "Course description's safe-phrase set points to a different discipline (≥2 mentions)",
+    subject_collision_signal:         "SUBJ4 differs from the modal SUBJ4 for this discipline — Phase 1e re-mint will canonicalize",
   };
   // Mirror of kb/_row_audit.py's TAG_PENALTY_ON_DISCIPLINE — kept in sync
   // manually. If you change penalties there, change them here too. Used to
@@ -895,6 +896,7 @@
       "TOP mismatch",
       "Description mismatch",
       "Generic title (can't justify discipline)",
+      "Subject collision (Phase 1e re-mint target)",
       "Seed untouched (never reviewed)",
       "Cluster issues",
     ]);
@@ -906,6 +908,7 @@
       "TOP mismatch":                         function (c) { return c.tags.indexOf("top_discipline_disagreement") >= 0; },
       "Description mismatch":                 function (c) { return c.tags.indexOf("description_discipline_disagreement") >= 0; },
       "Generic title (can't justify discipline)": function (c) { return c.tags.indexOf("generic_title_concrete_discipline") >= 0; },
+      "Subject collision (Phase 1e re-mint target)": function (c) { return c.tags.indexOf("subject_collision_signal") >= 0; },
       "Seed untouched (never reviewed)":      function (c) { return c.tags.indexOf("seed_untouched_discipline") >= 0; },
       "Cluster issues":                       function (c) { return c.tags.some(function (t) { return t.indexOf("cluster_") === 0 || t === "uc_cur_ripe_for_promotion"; }); },
     };

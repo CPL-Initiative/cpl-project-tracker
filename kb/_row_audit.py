@@ -494,7 +494,8 @@ def _compute_scores(faculty_fields, mc_fields, tags=None):
 
 # ─── tag generators ─────────────────────────────────────────────────────────
 
-def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None, top_disc=None):
+def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None, top_disc=None,
+                  disc_to_modal_subj4=None):
     tags = []
     if faculty_fields["discipline"]["state"] == "seed-untouched":
         tags.append("seed_untouched_discipline")
@@ -506,6 +507,21 @@ def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None, top_disc
         tags.append("subject_spread_high_low_confidence")
     if not id_in_scheme(rec.get("course_id", ""), "M-ID"):
         tags.append("mid_id_off_scheme")
+    # subject_collision_signal — within id_system="M-ID", the row's SUBJ4
+    # is not the modal SUBJ4 for its discipline. Diagnostic for Phase 1e:
+    # the 2026-05-22 re-mint synthesized SUBJ4 from each M-ID's modal local
+    # college subject code, so the same discipline can end up with many
+    # SUBJ4 variants across colleges (the canonical user-cited example:
+    # 92 "Sign Language, American" M-IDs spread across 10 SUBJ4 codes —
+    # ASL/AMSL/DEAF/SIGN/INT/INTR/ACCS/MULT/SL/SNLA). Rule 7 (revised) says
+    # within id_system == "M-ID" all rows sharing a discipline share a
+    # SUBJ4. Calibration target: ~7,200 pre-re-mint → 0 post-re-mint
+    # (the cleanup receipt). NB: the suggested-fix target is the data-modal
+    # SUBJ4 — once kb/discipline_canonical_subj4.json is curator-locked,
+    # _classify_subject_collision can switch to read that file instead.
+    if disc_to_modal_subj4 is not None:
+        if _classify_subject_collision(rec, disc_to_modal_subj4):
+            tags.append("subject_collision_signal")
     # discipline_title_mismatch — title shares ZERO tokens with the assigned
     # discipline's bag AND ≥2 tokens with some other discipline's bag. The
     # bag is bootstrapped from rows where discipline_source == "subject_map"
@@ -537,6 +553,54 @@ def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None, top_disc
     if _classify_description_discipline_disagreement(rec, DESC_RULES):
         tags.append("description_discipline_disagreement")
     return tags
+
+
+def _build_disc_to_modal_subj4(courses):
+    """Per-discipline modal SUBJ4 across M-ID rows.
+
+    Returns {discipline: modal_subj4} for disciplines whose M-IDs span ≥2
+    distinct SUBJ4 codes (the only ones where the collision rule can fire).
+    Disciplines with a single SUBJ4 are omitted — no collision possible.
+    Ties broken by lexical order (the canonical SUBJ4 will likely be
+    curator-confirmed in kb/discipline_canonical_subj4.json before the
+    Phase 1e re-mint applies; this map is the SEED basis only).
+    """
+    per_disc = defaultdict(Counter)
+    for rec in courses.values():
+        if rec.get("id_system") != "M-ID":
+            continue
+        d = rec.get("discipline")
+        s4 = rec.get("subject_4letter") or ""
+        if not d or not s4:
+            continue
+        per_disc[d][s4] += 1
+    out = {}
+    for d, cnt in per_disc.items():
+        if len(cnt) <= 1:
+            continue
+        # Counter.most_common is stable on counts; sort by (-count, key) for
+        # deterministic tie-break across runs and environments.
+        items = sorted(cnt.items(), key=lambda kv: (-kv[1], kv[0]))
+        out[d] = items[0][0]
+    return out
+
+
+def _classify_subject_collision(rec, disc_to_modal_subj4):
+    """Fire when the M-ID's SUBJ4 isn't the modal SUBJ4 for its discipline.
+
+    Diagnostic for Phase 1e (SUBJ4-canonicalization re-mint). Returns True
+    when the row's discipline has a known modal AND the row's SUBJ4 differs.
+    """
+    if rec.get("id_system") != "M-ID":
+        return False
+    disc = rec.get("discipline")
+    s4 = rec.get("subject_4letter") or ""
+    if not disc or not s4:
+        return False
+    modal = disc_to_modal_subj4.get(disc)
+    if modal is None:
+        return False
+    return s4 != modal
 
 
 def _build_disc_bag(courses, lex):
@@ -861,6 +925,8 @@ def main():
                     if v is not None and not k.startswith("4930.")}
     except FileNotFoundError:
         top_disc = {}
+    # Per-discipline modal SUBJ4 for the subject_collision_signal rule (Phase 1e).
+    disc_to_modal_subj4 = _build_disc_to_modal_subj4(courses)
 
     # Build cluster targets from merge_into.
     cluster_members = defaultdict(list)  # cluster_id -> [member_id, ...]
@@ -893,7 +959,8 @@ def main():
         # of all states-equal rows getting the same score regardless of how
         # much evidence accumulated against them).
         tags = _tags_for_mid(rec, faculty, disc_bag=disc_bag,
-                             subject_map=subject_map, top_disc=top_disc)
+                             subject_map=subject_map, top_disc=top_disc,
+                             disc_to_modal_subj4=disc_to_modal_subj4)
         mc = {}
         f_score, m_score = _compute_scores(faculty, _virtual_mc(mc), tags=tags)
         card = {
@@ -1015,6 +1082,7 @@ def _write_outputs(cards):
             "subject_spread_high_low_confidence", "mid_id_off_scheme",
             "discipline_title_mismatch", "generic_title_concrete_discipline",
             "top_discipline_disagreement", "description_discipline_disagreement",
+            "subject_collision_signal",
             "cluster_blanks_when_aggregatable", "cluster_members_too_sparse",
             "cluster_id_off_scheme", "uc_cur_ripe_for_promotion",
             "cluster_member_unresolved",
