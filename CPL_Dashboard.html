@@ -1402,6 +1402,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 .cpl-analytics-body,
 .activity-kpi-body {
@@ -1810,8 +1813,10 @@
         
         
         
-        <div class="last-updated">Last Updated: May 23, 2026 at 4:38 AM PT</div>
+        
+        <div class="last-updated">Last Updated: May 23, 2026 at 9:50 AM PT</div>
         <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:#C9A84C;border:1px solid #C9A84C;padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='#C9A84C';this.style.color='#0A2240'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='#C9A84C'}">&#x21bb; Refresh Today&#39;s Data</button></div>
+        
         
         
         
@@ -1907,6 +1912,7 @@
         <button class="cpl-tab" data-tab="budget" role="tab" aria-selected="false">Budget</button>
         <button class="cpl-tab" data-tab="vision-2030" role="tab" aria-selected="false">Vision 2030</button>
         <button class="cpl-tab" data-tab="unified-courses" role="tab" aria-selected="false">Common Course Reference</button>
+        <button class="cpl-tab" data-tab="canonical-subj4" role="tab" aria-selected="false">Canonical SUBJ4</button>
     </nav>
 
     <div class="cpl-tab-pane active" id="tab-dashboard" data-tab="dashboard" role="tabpanel" aria-labelledby="tab-dashboard">
@@ -6528,6 +6534,7 @@
 
 
 
+
         </div>
         <!-- /main-container for Dashboard tab -->
 
@@ -8000,7 +8007,7 @@ Cont</td>
         </div>
         <!-- End Annual Workplan Goals -->
 
-                                                                                                                                                                                                </div>
+                                                                                                                                                                                                        </div>
         <!-- /main-container for Workplan Goals tab -->
     </div>
     <!-- /tab-workplan-goals -->
@@ -8097,6 +8104,7 @@ Cont</td>
         
         
         
+        
         </div>
         <!-- /main-container for Vision 2030 tab -->
     </div>
@@ -8159,11 +8167,62 @@ Cont</td>
     </div>
     <!-- /tab-unified-courses -->
 
+    <div class="cpl-tab-pane" id="tab-canonical-subj4" data-tab="canonical-subj4" role="tabpanel" aria-labelledby="tab-canonical-subj4">
+        <div class="main-container">
+        <style>
+            #tab-canonical-subj4 .cs-banner { background:#FFF6E0; border:1px solid #C9A84C; color:#7a5c00; padding:10px 14px; border-radius:8px; font-size:.9rem; margin-bottom:14px; }
+            #tab-canonical-subj4 h2 { margin-bottom:4px; }
+            #tab-canonical-subj4 .cs-sub { font-weight:400; color:#6b7280; font-size:1rem; }
+            #tab-canonical-subj4 .cs-intro { color:#4b5563; margin:0 0 14px; max-width:75ch; }
+            #tab-canonical-subj4 .cs-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px; }
+            #tab-canonical-subj4 .cs-filter { padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; font-size:.85rem; background:#fff; }
+            #tab-canonical-subj4 input.cs-filter { min-width:200px; }
+            #tab-canonical-subj4 .cs-summary { color:#374151; font-size:.85rem; margin-bottom:8px; }
+            #tab-canonical-subj4 .cs-table-wrap { overflow:auto; max-height:75vh; border:1px solid #e5e7eb; border-radius:8px; }
+            #tab-canonical-subj4 table.cs-table { border-collapse:collapse; width:100%; font-size:.85rem; }
+            #tab-canonical-subj4 .cs-table th { position:sticky; top:0; background:#0A2240; color:#C9A84C; text-align:left; padding:8px 10px; white-space:nowrap; z-index:1; }
+            #tab-canonical-subj4 .cs-table td { padding:8px 10px; border-top:1px solid #eef2f7; vertical-align:top; }
+            #tab-canonical-subj4 .cs-table tr:hover td { background:#f8fafc; }
+            #tab-canonical-subj4 .cs-disc { font-weight:600; color:#0A2240; max-width:24ch; }
+            #tab-canonical-subj4 .cs-mono { font-family:ui-monospace,Menlo,monospace; }
+            #tab-canonical-subj4 .cs-variants { color:#475569; font-size:.78rem; max-width:42ch; }
+            #tab-canonical-subj4 .cs-variants .cs-var-modal { font-weight:700; color:#0A2240; }
+            #tab-canonical-subj4 .cs-variants .cs-var-other { color:#64748b; }
+            #tab-canonical-subj4 input.cs-canon { font-family:ui-monospace,Menlo,monospace; text-transform:uppercase; width:6ch; padding:5px 7px; border:1px solid #cbd5e1; border-radius:5px; font-size:.95rem; letter-spacing:1px; }
+            #tab-canonical-subj4 input.cs-canon.cs-invalid { border-color:#dc2626; background:#fef2f2; }
+            #tab-canonical-subj4 input.cs-canon.cs-saved { border-color:#16a34a; background:#f0fdf4; }
+            #tab-canonical-subj4 textarea.cs-notes { width:30ch; min-height:34px; resize:vertical; font-size:.78rem; padding:4px 6px; border:1px solid #cbd5e1; border-radius:5px; }
+            #tab-canonical-subj4 .cs-badge { display:inline-block; font-size:.7rem; padding:2px 7px; border-radius:10px; }
+            #tab-canonical-subj4 .cs-badge.warn { background:#fee2e2; color:#991b1b; }
+            #tab-canonical-subj4 .cs-badge.mix { background:#fef3c7; color:#92400e; }
+            #tab-canonical-subj4 .cs-badge.ok { background:#dcfce7; color:#166534; }
+            #tab-canonical-subj4 .cs-badge.muted { background:#eef2f7; color:#64748b; }
+            #tab-canonical-subj4 .cs-auth { font-size:.85rem; color:#374151; margin-left:auto; }
+            #tab-canonical-subj4 .cs-auth-link { color:#0A2240; font-weight:600; text-decoration:underline; cursor:pointer; }
+            #tab-canonical-subj4 .cs-auth-on { color:#166534; font-weight:600; }
+            #tab-canonical-subj4 .cs-toast { position:fixed; right:18px; bottom:18px; background:#0A2240; color:#fff; padding:10px 14px; border-radius:8px; font-size:.85rem; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:1000; opacity:0; transition:opacity 0.2s; pointer-events:none; }
+            #tab-canonical-subj4 .cs-toast.show { opacity:1; }
+            #tab-canonical-subj4 .cs-toast.err { background:#991b1b; }
+            #tab-canonical-subj4 .cs-reviewed { color:#6b7280; font-size:.75rem; white-space:nowrap; }
+            #tab-canonical-subj4 .cs-help { display:inline-block; color:#64748b; font-size:.72rem; padding:1px 6px; border:1px solid #e5e7eb; border-radius:10px; cursor:help; }
+        </style>
+        <div class="cs-banner">⚠️ <strong>Phase 1e re-mint workspace</strong> — Confirm a 4-letter canonical SUBJ4 per discipline. Used to fold same-discipline SUBJ4 variants in the next M-ID re-mint (kb/_subj4_dryrun.py → kb/_subj4_apply.py). See <a href="https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/coursecontrolnumber_remint.md">the re-mint playbook</a>.</div>
+        <h2>Canonical SUBJ4 <span class="cs-sub">— curator-confirmed 4-letter subject code per M-ID discipline</span></h2>
+        <p class="cs-intro">The 2026-05-22 re-mint synthesized each M-ID's SUBJ4 from its modal local college subject code, so the same discipline can spread across many SUBJ4 codes (e.g. "Sign Language, American" has 10 variants). Phase 1e folds these to one canonical SUBJ4 per discipline. Confirm or override the data-modal proposal below. <strong>Every canonical SUBJ4 must be exactly 4 letters (A–Z).</strong></p>
+        <div id="cs-toolbar" class="cs-toolbar"></div>
+        <div id="cs-summary" class="cs-summary"></div>
+        <div id="cs-table-wrap" class="cs-table-wrap"></div>
+        <div id="cs-toast" class="cs-toast"></div>
+        </div>
+        <!-- /main-container for Canonical SUBJ4 tab -->
+    </div>
+    <!-- /tab-canonical-subj4 -->
+
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "May 23, 2026 at 4:38 AM PT",
-  "data_as_of": "May 23, 2026 at 4:38 AM PT",
+  "last_updated": "May 23, 2026 at 9:50 AM PT",
+  "data_as_of": "May 23, 2026 at 9:50 AM PT",
   "kpis": {
     "cumulative_students": {
       "value": "45,836",
@@ -12635,7 +12694,7 @@ Cont</td>
     <script>
     // Tab navigation with URL-hash routing.
     (function () {
-        var VALID_TABS = ['dashboard', 'workplan-goals', 'budget', 'vision-2030', 'unified-courses'];
+        var VALID_TABS = ['dashboard', 'workplan-goals', 'budget', 'vision-2030', 'unified-courses', 'canonical-subj4'];
         function activate(tabName) {
             if (!tabName || VALID_TABS.indexOf(tabName) === -1) tabName = 'dashboard';
             document.querySelectorAll('.cpl-tab').forEach(function (b) {
@@ -12667,6 +12726,7 @@ Cont</td>
         activate(fromHash());
     })();
     </script>
+    <script src="canonical_subj4.js"></script>
     <script src="docx.min.js"></script>
     <script src="college_lookup.js"></script>
     <script src="statewide_data.js"></script>
