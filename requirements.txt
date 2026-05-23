@@ -1,0 +1,11 @@
+# Python runtime deps for the daily dashboard pipeline + kb scripts.
+# Pinned so the GH Actions cron has reproducible builds and Dependabot
+# (configured in .github/dependabot.yml) has explicit versions to bump.
+#
+# Matches what was previously installed inline by daily-dashboard.yml's
+# `pip install openpyxl python-docx requests` line. If a pin breaks the
+# daily cron, fix the pin here rather than bypassing it — that's the
+# whole point of pinning.
+openpyxl==3.1.5
+python-docx==1.1.2
+requests==2.32.3
