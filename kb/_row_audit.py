@@ -55,6 +55,27 @@ import re
 from collections import Counter, defaultdict
 from datetime import date, datetime, timezone
 
+# ─── token vocabulary for the discipline_title_mismatch rule ───────────────
+# STOP: common English words that don't carry discipline signal.
+# GENERIC: course-catalog scaffolding terms ("introduction", "advanced", etc.)
+# that appear across every discipline and would dilute the bag.
+TITLE_STOP = {"and","the","for","with","into","from","this","that","such","very","both",
+              "your","you","but","are","was","not","new","old","one","two","its","any",
+              "all","may","can","per","via","off","out","over","under","when","how","why",
+              "iii","using","use","upon","than","then"}
+TITLE_GENERIC = {"introduction","intermediate","advanced","fundamentals","principles",
+                 "applications","methods","basic","general","seminar","internship",
+                 "capstone","topics","independent","study","theory","practice","skills",
+                 "workshop","cooperative","work","experience","honors","supervision",
+                 "management","project","laboratory","beginning","preparation","prep"}
+
+def _title_tokens(s):
+    """Lowercase tokens ≥3 chars, with stop-words filtered."""
+    if not s:
+        return set()
+    return {w for w in re.findall(r"[a-z]+", s.lower())
+            if len(w) >= 3 and w not in TITLE_STOP}
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "row_audit")
 TODAY = date.today().isoformat()
@@ -391,7 +412,7 @@ def _compute_scores(faculty_fields, mc_fields):
 
 # ─── tag generators ─────────────────────────────────────────────────────────
 
-def _tags_for_mid(rec, faculty_fields):
+def _tags_for_mid(rec, faculty_fields, disc_bag=None):
     tags = []
     if faculty_fields["discipline"]["state"] == "seed-untouched":
         tags.append("seed_untouched_discipline")
@@ -403,7 +424,105 @@ def _tags_for_mid(rec, faculty_fields):
         tags.append("subject_spread_high_low_confidence")
     if not id_in_scheme(rec.get("course_id", ""), "M-ID"):
         tags.append("mid_id_off_scheme")
+    # discipline_title_mismatch — title shares ZERO tokens with the assigned
+    # discipline's bag AND ≥2 tokens with some other discipline's bag. The
+    # bag is bootstrapped from rows where discipline_source == "subject_map"
+    # (the trust anchor — assigned because the lexicon's subject_map
+    # unambiguously maps the subject code to that discipline). Phase B
+    # seed-untouched rows are the target population, NOT the bootstrap set,
+    # so the rule isn't self-circular. See _build_disc_bag() for the
+    # construction; calibration: ~742 first-pass flags, leverage-ranked.
+    if disc_bag is not None:
+        alt = _classify_title_mismatch(rec, disc_bag)
+        if alt:
+            tags.append("discipline_title_mismatch")
     return tags
+
+
+def _build_disc_bag(courses, lex):
+    """Per-discipline token bag, bootstrapped from subject_map-sourced rows
+    only (the trust anchor) + lexicon title_keywords + discipline-name tokens.
+
+    Returns {discipline: set(tokens)}. Disciplines with no subject_map
+    coverage and no lexicon entries still get a bag containing their own
+    name tokens (so the rule can at least check name-overlap).
+    """
+    disc_titles = defaultdict(list)
+    for cid, rec in courses.items():
+        if rec.get("discipline_source") != "subject_map":
+            continue
+        if (rec.get("corroboration_members") or 0) < 2:
+            continue
+        d = rec.get("discipline")
+        t = rec.get("common_title")
+        if not d or not t:
+            continue
+        disc_titles[d].append(t)
+    bag = {}
+    for d, titles in disc_titles.items():
+        b = _title_tokens(d)
+        for t in titles:
+            b.update(_title_tokens(t))
+        b -= TITLE_GENERIC
+        bag[d] = b
+    # Augment with lexicon title_keywords (catches disciplines with no
+    # subject_map coverage but explicit keyword rules).
+    for entry in (lex or {}).get("title_keywords", []):
+        d = entry.get("discipline")
+        if not d:
+            continue
+        s = bag.setdefault(d, _title_tokens(d))
+        for t in entry.get("any", []):
+            s.update(_title_tokens(t))
+    for d in (lex or {}).get("subject_map", {}).values():
+        if d not in bag:
+            bag[d] = _title_tokens(d)
+    return bag
+
+
+def _classify_title_mismatch(rec, disc_bag):
+    """Return suggested-alt discipline name if the row's title strongly
+    suggests a discipline other than the one assigned, else None.
+
+    Guards:
+      * skip if assigned discipline not in our bag (no signal to compare)
+      * skip if corroboration_members < 2 (singletons too noisy)
+      * skip if subject_spread >= 8 (over-merged — own rule)
+      * skip if top_code is 4930.* (ESL/basic-skills catch-all)
+      * skip if title has < 2 content tokens
+      * skip if title has no distinctive (non-generic) tokens
+    Fire iff:
+      * title ∩ assigned_disc_bag == ∅
+      * AND ∃ other discipline whose bag has ≥ 2 title tokens (strong signal)
+    """
+    disc = rec.get("discipline")
+    if not disc or disc not in disc_bag:
+        return None
+    if (rec.get("corroboration_members") or 0) < 2:
+        return None
+    if (rec.get("subject_spread") or 0) >= 8:
+        return None
+    if (rec.get("top_code") or "").startswith("4930."):
+        return None
+    title = rec.get("common_title") or ""
+    t = _title_tokens(title)
+    if len(t) < 2:
+        return None
+    distinctive = t - TITLE_GENERIC
+    if not distinctive:
+        return None
+    if t & disc_bag[disc]:
+        return None  # assigned discipline has positive support — not a mismatch
+    best_alt, best_n = None, 0
+    for d, b in disc_bag.items():
+        if d == disc:
+            continue
+        n = len(t & b)
+        if n > best_n:
+            best_alt, best_n = d, n
+    if best_n < 2:
+        return None
+    return best_alt
 
 
 def _tags_for_cluster(cluster_id, faculty_fields, members_resolved,
@@ -441,6 +560,13 @@ def main():
     singletons = load("coci_minted_singletons.json")["courses"]
     curation_blob = load("coci_curation.json")
     curation = curation_blob.get("curations", {}) or {}
+    # Lexicon used for the discipline_title_mismatch rule's bag construction.
+    # Missing/empty lexicon → rule falls back to just the discipline name tokens.
+    try:
+        lex = load("discipline_inference.json")
+    except FileNotFoundError:
+        lex = {}
+    disc_bag = _build_disc_bag(courses, lex)
 
     # Build cluster targets from merge_into.
     cluster_members = defaultdict(list)  # cluster_id -> [member_id, ...]
@@ -469,7 +595,7 @@ def main():
         # a non-default state for any row, inline ONLY that field here.
         mc = {}
         f_score, m_score = _compute_scores(faculty, _virtual_mc(mc))
-        tags = _tags_for_mid(rec, faculty)
+        tags = _tags_for_mid(rec, faculty, disc_bag=disc_bag)
         card = {
             "row_id": course_id,
             "row_kind": "Course",
@@ -587,6 +713,7 @@ def _write_outputs(cards):
         "_rules_active": [
             "seed_untouched_discipline", "blank_discipline", "blank_description",
             "subject_spread_high_low_confidence", "mid_id_off_scheme",
+            "discipline_title_mismatch",
             "cluster_blanks_when_aggregatable", "cluster_members_too_sparse",
             "cluster_id_off_scheme", "uc_cur_ripe_for_promotion",
             "cluster_member_unresolved",

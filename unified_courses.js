@@ -280,6 +280,7 @@
     blank_description:                "Description missing",
     subject_spread_high_low_confidence: "Possible over-merge (spread ≥ 8, low confidence)",
     mid_id_off_scheme:                "M-ID ID off-scheme (likely single-letter SUBJ re-mint artifact)",
+    discipline_title_mismatch:        "Title doesn't match assigned discipline — likely misassigned",
   };
   function auditTagsTip(card) {
     var tags = card.tags || [];
