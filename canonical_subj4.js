@@ -401,6 +401,17 @@
     setTimeout(function () { t.className = "cs-toast" + (isErr ? " err" : ""); }, 2600);
   }
 
+  // Toolbar build — call ONCE at init. Subsequent state changes (filter
+  // selection, search input, sort) don't re-call this; they only re-render
+  // the table body via render(). This prevents the search input from being
+  // recreated on every keystroke (which would steal focus, the bug behind
+  // the curator's "stops typing after one character" report).
+  //
+  // The toolbar's <select>/input elements naturally stay in sync with
+  // state because their values are USER-driven (onchange/oninput updates
+  // state.* directly). Only the auth widget changes asynchronously
+  // (sign-in/sign-out), so it gets its own renderAuth() that updates the
+  // cs-auth span without touching the rest of the toolbar.
   function renderToolbar() {
     var tb = document.getElementById("cs-toolbar");
     if (!tb) return;
@@ -478,13 +489,23 @@
     // dropdown is handled by the browser, so there's no race with our state.
     search.oninput = function () { state.search = this.value.toLowerCase(); render(); };
     tb.appendChild(search);
-    // Auth widget
-    var auth = el("span", { id: "cs-auth", class: "cs-auth" });
+    // Auth widget — populated by renderAuth() so async sign-in/out flows
+    // don't have to rebuild the whole toolbar (and clobber search focus).
+    tb.appendChild(el("span", { id: "cs-auth", class: "cs-auth" }));
+    renderAuth();
+  }
+
+  // Re-render only the auth widget. Called from sign-in/out paths and from
+  // init(). Safe to call repeatedly — touches no other toolbar element.
+  function renderAuth() {
+    var auth = document.getElementById("cs-auth");
+    if (!auth) return;
+    auth.innerHTML = "";
     if (state.sess) {
       auth.appendChild(el("span", { class: "cs-auth-on" }, ["✓ " + state.sess.email]));
       auth.appendChild(document.createTextNode("  "));
       var out = el("a", { class: "cs-auth-link", href: "#" }, ["sign out"]);
-      out.onclick = function (e) { e.preventDefault(); signOut(); state.sess = null; render(); };
+      out.onclick = function (e) { e.preventDefault(); signOut(); state.sess = null; renderAuth(); render(); };
       auth.appendChild(out);
     } else {
       var inn = el("a", { class: "cs-auth-link", href: "#" }, ["sign in to edit"]);
@@ -502,7 +523,6 @@
       auth.appendChild(inn);
       auth.appendChild(el("span", { class: "cs-auth-tag" }, ["(CCCCO MAP only)"]));
     }
-    tb.appendChild(auth);
   }
 
   function passesFilter(entry) {
@@ -531,9 +551,11 @@
       + (counts.invalid ? " · <span style='color:#991b1b'>" + counts.invalid + " invalid</span>" : "");
   }
 
+  // Re-render the table body + summary. Does NOT touch the toolbar — that's
+  // built once at init by renderToolbar(). Called on every filter / search /
+  // sort / group / collapsedCats change.
   function render() {
     if (!state.seed) return;
-    renderToolbar();
 
     var allRows = Object.keys(state.seed.disciplines).map(function (d) {
       var entry = applyOverlay(state.seed.disciplines[d], state.overlay[d]);
@@ -553,18 +575,48 @@
     var wrap = document.getElementById("cs-table-wrap");
     if (!wrap) return;
     wrap.innerHTML = "";
+
+    // Collapse-all / Expand-all twisty — visible only when grouping is on.
+    // The "wedge" the curator referred to is a disclosure triangle / twisty.
+    // Toggle behavior: if ANY category is currently expanded, the button
+    // collapses everything; if all are collapsed, it expands everything.
+    if (state.grouped) {
+      var allCats = {};
+      Object.keys(state.seed.disciplines).forEach(function (d) {
+        var k = state.seed.disciplines[d].top_category_2digit || "~~";
+        allCats[k] = true;
+      });
+      var allCatKeys = Object.keys(allCats);
+      var anyExpanded = allCatKeys.some(function (k) { return !state.collapsedCats[k]; });
+      var twisty = el("button", {
+        class: "cs-collapse-all", type: "button",
+        title: anyExpanded ? "Collapse every TOP category" : "Expand every TOP category",
+      }, [(anyExpanded ? "▼ Collapse all" : "▶ Expand all")]);
+      twisty.onclick = function () {
+        var collapseEverything = anyExpanded;
+        state.collapsedCats = {};
+        if (collapseEverything) {
+          allCatKeys.forEach(function (k) { state.collapsedCats[k] = true; });
+        }
+        render();
+      };
+      wrap.appendChild(twisty);
+    }
+
     var table = el("table", { class: "cs-table" });
     // Sortable column headers — click to set/flip sort. Indicator shows
-    // current state (▲ asc / ▼ desc / ↕ inactive).
+    // current state (▲ asc / ▼ desc / ↕ inactive). CIP sits next to TOP
+    // per the curator's preference — they read as a paired "taxonomy"
+    // block, with CTE following as the derived designation.
     var COLS = [
       { key: "discipline",       label: "Discipline" },
-      { key: "total_mids",       label: "MIDs",      title: "Number of cross-college course identities (MIDs) in this discipline." },
-      { key: "variants_count",   label: "Variants",  title: "Different 4-letter subject codes colleges currently use for this discipline. Click the chip to see all + any matching CIDs/CCNs." },
-      { key: "data_modal",       label: "Most-used today", title: "The most-used code across colleges today. If shorter than 4 letters, pick a 4-letter expansion in the Canonical column." },
-      { key: "canonical_subj4",  label: "Canonical *", title: "Required: exactly 4 uppercase letters (A–Z)." },
+      { key: "total_mids",       label: "MIDs",      title: "MIDs = Minted ID, the synthetic identifier for a single common course taught across one or more colleges. This number is how many distinct common courses fall under this discipline." },
+      { key: "variants_count",   label: "Variants",  title: "Different 4-letter subject codes colleges currently use for this discipline. Click 'Show all' to see every code + any matching CIDs/CCNs." },
+      { key: "data_modal",       label: "Most-used locally", title: "The most-used local college subject code across colleges. If shorter than 4 letters, pick a 4-letter expansion in the Common SUBJ column." },
+      { key: "canonical_subj4",  label: "Common SUBJ *", title: "Required: exactly 4 uppercase letters (A–Z). The single shared subject code chosen for this discipline." },
       { key: "top_4digit",       label: "TOP",       title: "Modal TOP 4-digit category for this discipline (from the 2023 CCC Taxonomy of Programs Manual). Hover the cell for the 6-digit code + program title." },
-      { key: "cte",              label: "CTE",       title: "Career Technical Education designation per the 2023 TOP Manual (asterisk-marked codes). 'all' = every MID is CTE; 'most' / 'mixed' / 'none' summarize the share." },
       { key: null,               label: "CIP",       title: "CIP (Classification of Instructional Programs) — placeholder. The CCCCO is transitioning from TOP to CIP; column will populate when the mapping finalizes." },
+      { key: "cte",              label: "CTE",       title: "Career Technical Education designation per the 2023 TOP Manual (asterisk-marked codes). 'all' = every MID is CTE; 'most' / 'mixed' / 'none' summarize the share." },
       { key: "status",           label: "Status" },
       { key: null,               label: "Notes" },
       { key: "reviewed_by",      label: "Reviewed" },
@@ -689,24 +741,40 @@
     input.onkeydown = function (e) { if (e.key === "Enter") input.blur(); };
     var tdCanon = el("td", null, [input]);
     // CID / CCN match badges — count official identifiers whose subject
-    // equals the canonical SUBJ4 (or, if no canonical set yet, falls back
-    // to the data modal so the curator still sees what's out there).
-    // Click goes nowhere — full list lives in the variants modal.
+    // equals the canonical SUBJ4 (or, if no canonical set yet, the data
+    // modal). Hover tooltip lists the actual identifiers + titles (capped
+    // for legibility); click opens the full list in the variants modal.
     var matchSubj = entry.canonical_subj4 || entry.data_modal;
+    function _badgeTip(hits, kind) {
+      // First 6 identifiers + their titles in the tooltip; the variants
+      // modal carries the full list.
+      var lines = [kind + " descriptors that use subject " + matchSubj + " (click to see all):"];
+      hits.slice(0, 6).forEach(function (h) {
+        lines.push("  " + h.id + (h.title ? " — " + h.title : ""));
+      });
+      if (hits.length > 6) lines.push("  …+" + (hits.length - 6) + " more");
+      return lines.join("\n");
+    }
     if (matchSubj) {
-      var nCid = (state.cidBySubj[matchSubj] || []).length;
-      var nCcn = (state.ccnBySubj[matchSubj] || []).length;
-      if (nCid > 0) {
-        tdCanon.appendChild(el("span", {
+      var cidHits = state.cidBySubj[matchSubj] || [];
+      var ccnHits = state.ccnBySubj[matchSubj] || [];
+      if (cidHits.length > 0) {
+        var cidBadge = el("span", {
           class: "cs-id-badge cid",
-          title: nCid + " CID descriptor" + (nCid === 1 ? "" : "s") + " use subject " + matchSubj,
-        }, ["CID·" + nCid]));
+          title: _badgeTip(cidHits, "CID"),
+          style: "cursor:pointer",
+        }, ["CID·" + cidHits.length]);
+        cidBadge.onclick = function (e) { e.stopPropagation(); openVariantsModal(entry); };
+        tdCanon.appendChild(cidBadge);
       }
-      if (nCcn > 0) {
-        tdCanon.appendChild(el("span", {
+      if (ccnHits.length > 0) {
+        var ccnBadge = el("span", {
           class: "cs-id-badge ccn",
-          title: nCcn + " CCN" + (nCcn === 1 ? "" : "s") + " use subject " + matchSubj,
-        }, ["CCN·" + nCcn]));
+          title: _badgeTip(ccnHits, "CCN"),
+          style: "cursor:pointer",
+        }, ["CCN·" + ccnHits.length]);
+        ccnBadge.onclick = function (e) { e.stopPropagation(); openVariantsModal(entry); };
+        tdCanon.appendChild(ccnBadge);
       }
     }
     tr.appendChild(tdCanon);
@@ -723,6 +791,11 @@
       tdTop.appendChild(document.createTextNode("—"));
     }
     tr.appendChild(tdTop);
+
+    // CIP placeholder column — sits next to TOP (paired taxonomy block).
+    // CCCCO is transitioning from TOP to CIP; column will populate when the
+    // mapping finalizes. Always blank today.
+    tr.appendChild(el("td", { class: "cs-mono", style: "color:#9ca3af", title: "CIP code — placeholder. The CCCCO is transitioning from TOP to CIP; column will populate when the mapping finalizes." }, ["—"]));
 
     // CTE cell — show the flag as a badge with color reflecting the share
     var tdCte = el("td");
@@ -743,10 +816,6 @@
       tdCte.appendChild(el("span", { class: "cs-badge muted", title: "No CTE-designated TOP codes in this discipline." }, ["—"]));
     }
     tr.appendChild(tdCte);
-
-    // CIP placeholder column — CCCCO is transitioning from TOP to CIP; column
-    // exists to reassure users that we're planning for it. Always blank today.
-    tr.appendChild(el("td", { class: "cs-mono", style: "color:#9ca3af", title: "CIP code — placeholder. The CCCCO is transitioning from TOP to CIP; column will populate when the mapping finalizes." }, ["—"]));
 
     var st = status(entry);
     tr.appendChild(el("td", null, [el("span", { class: "cs-badge " + st.cls }, [st.label])]));
@@ -856,6 +925,9 @@
       state.overlay = parts[1];
       state.cidBySubj = parts[2].cidBySubj || {};
       state.ccnBySubj = parts[2].ccnBySubj || {};
+      // Toolbar is built once at init. Subsequent state changes only
+      // re-render the table (render()); the search input keeps focus.
+      renderToolbar();
       render();
     });
   }
