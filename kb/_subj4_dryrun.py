@@ -39,6 +39,8 @@ CURATION = os.path.join(HERE, "coci_curation.json")
 MEMBERSHIPS = os.path.join(HERE, "coci_minted_memberships.json")
 ARTICULATIONS = os.path.join(HERE, "coci_articulations.json")
 UNIFIED_COURSES = os.path.join(HERE, "coci_unified_courses.json")
+CCN_REF = os.path.join(HERE, "reference", "ccn_courses.json")
+CID_REF = os.path.join(HERE, "reference", "cid_descriptors.json")
 OUT_DIR = os.path.join(HERE, "subj4_dryrun")
 
 SUBJ4_RE = re.compile(r"^[A-Z]{4}$")
@@ -70,6 +72,64 @@ def standalone_code(n: int) -> str:
     d, r = divmod(n, 26 * 26)
     l1, l2 = divmod(r, 26)
     return f"{d}{LETTERS[l1]}{LETTERS[l2]}"
+
+
+def load_id_reservations():
+    """Per-(SUBJ4, band) set of sequence numbers reserved by C-IDs and CCNs.
+
+    The M-ID corroborated format `SUBJ M<band><seq:03d>` shares structure with
+    CCN's `SUBJ C<band><seq:03d>` (only the prefix letter differs). To keep
+    M-ID sequence numbers from visually colliding with — or being mistaken
+    for — existing CCN/C-ID identifiers in the same SUBJ4 namespace, the
+    allocator skips any seq already taken by:
+
+      * CCN: parse `C<band><seq3>` (e.g. `BIOL C1001` → reserve seq 001 in band 1).
+      * C-ID: parse `<band><seq2>` (3-digit number; leading digit = level/band by
+        convention; e.g. `BIOL 110` → reserve seq 010 in band 1).
+
+    C-IDs with hyphenated subjects (`AG-PS 104`) are skipped — they don't share
+    a SUBJ4 with any M-ID. Specialty/suffix letters on CCN/C-ID identifiers
+    (`C1001H`, `110L`) don't affect the sequence reservation — only the digits.
+
+    Returns: {(subj4, band): set(reserved_seq_ints)}
+    """
+    reservations = defaultdict(set)
+
+    # CCN courses
+    if os.path.exists(CCN_REF):
+        with open(CCN_REF, encoding="utf-8") as f:
+            ccns = json.load(f).get("courses", [])
+        ccn_re = re.compile(r"^C(\d)(\d{3})")
+        for c in ccns:
+            subj = c.get("subject") or ""
+            num = c.get("number") or ""
+            if not SUBJ4_RE.match(subj):
+                continue
+            m = ccn_re.match(num)
+            if not m:
+                continue
+            band, seq = m.group(1), int(m.group(2))
+            reservations[(subj, band)].add(seq)
+
+    # C-ID descriptors. Only single-subject form (skip hyphenated like AG-PS 104).
+    if os.path.exists(CID_REF):
+        with open(CID_REF, encoding="utf-8") as f:
+            cids = json.load(f).get("descriptors", [])
+        cid_re = re.compile(r"^([A-Z]+)\s+(\d)(\d{2})([A-Z]*)$")
+        for d in cids:
+            desc = (d.get("descriptor") or "").strip()
+            m = cid_re.match(desc)
+            if not m:
+                continue
+            subj, band, seq2, _suff = m.groups()
+            if not SUBJ4_RE.match(subj):
+                # Hyphenated subjects (AG-PS) and other non-4-letter subjects
+                # don't share a SUBJ4 with M-IDs, so they can't collide.
+                continue
+            # Pad seq2 to seq3 with leading 0 (C-ID 110 → seq=010 in band=1).
+            reservations[(subj, band)].add(int(seq2))
+
+    return dict(reservations)
 
 
 def parse_old(course_id: str):
@@ -193,32 +253,50 @@ def main():
         bucket = (r["new_subj4"], r["old_band"], r["kind"])
         by_bucket[bucket].append(r)
 
+    # CCN/C-ID reservation: per (SUBJ4, band), skip seqs already taken by
+    # an official identifier so M-ID `BIOL M1001` never collides with CCN
+    # `BIOL C1001` or with the seq embedded in C-ID `BIOL 100`. Built once
+    # from kb/reference/{ccn_courses,cid_descriptors}.json. C-IDs with
+    # hyphenated subjects (AG-PS) are skipped since they don't share a SUBJ4
+    # with any M-ID. Standalones (`SUBJ M<band><digit><LL>`) don't need
+    # reservations — their letter suffix is structurally distinct from CCN/C-ID.
+    id_reservations = load_id_reservations()
     overflow_corr = []
     overflow_sing = []
     collisions = {}  # bucket_str -> list of rows landing in same bucket (≥2 == collision)
+    reservation_skip_log = []  # (bucket_str, skipped_seq) for the report
     for bucket, brows in by_bucket.items():
         s4, band, kind = bucket
         brows.sort(key=lambda r: (r["norm_title"], r["old_id"]))
         bucket_str = f"{s4} M{band}* ({kind})"
         if len(brows) >= 2:
             collisions[bucket_str] = []
-        for i, r in enumerate(brows):
-            if kind == "corroborated":
-                if i >= 1000:
-                    overflow_corr.append((bucket_str, i))
+        if kind == "corroborated":
+            reserved = id_reservations.get((s4, band), set())
+            seq = 1  # 1-based corroborated sequence (M<band>001 is first)
+            for r in brows:
+                # Walk past any seq reserved by CCN/C-ID in this (SUBJ4, band).
+                while seq in reserved:
+                    reservation_skip_log.append((bucket_str, seq))
+                    seq += 1
+                if seq > 999:
+                    overflow_corr.append((bucket_str, seq))
                     r["new_id"] = None
-                    continue
-                r["new_id"] = f"{s4} M{band}{i:03d}" if i >= 1 else f"{s4} M{band}001"
-                # Actually: 0-based index i → display as i+1? Or 0-padded i?
-                # The 2026-05-22 re-mint used 1-based (M1001 = first). Mirror that.
-                r["new_id"] = f"{s4} M{band}{(i+1):03d}"
-            elif kind == "standalone":
+                else:
+                    r["new_id"] = f"{s4} M{band}{seq:03d}"
+                    seq += 1
+        elif kind == "standalone":
+            # Standalones use `M<band><digit><LL>` — letter suffix structurally
+            # distinct from CCN/C-ID, no reservation needed. Capacity = 10·26·26.
+            for i, r in enumerate(brows):
                 if i >= 10 * 26 * 26:
                     overflow_sing.append((bucket_str, i))
                     r["new_id"] = None
                     continue
                 r["new_id"] = f"{s4} M{band}{standalone_code(i)}"
-            if len(brows) >= 2:
+        # Record the bucket members (post-allocation) when ≥2 collided.
+        if len(brows) >= 2:
+            for r in brows:
                 collisions[bucket_str].append({
                     "old_id": r["old_id"],
                     "new_id": r.get("new_id"),
@@ -419,6 +497,7 @@ def main():
         curated_collisions=curated_collisions, disc_summary=disc_summary,
         overflow_corr=overflow_corr, overflow_sing=overflow_sing,
         source_split=source_split, downstream=downstream,
+        id_reservations=id_reservations, reservation_skip_log=reservation_skip_log,
     )
     with open(os.path.join(OUT_DIR, "report.md"), "w", encoding="utf-8") as f:
         f.write(report)
@@ -445,7 +524,7 @@ def main():
 def _render_report(*, today, canon_doc, rows, fate_counts, alias_map, collisions,
                    blocked_by_disc, validation, curation_impact, curated_collisions,
                    disc_summary, overflow_corr, overflow_sing, source_split,
-                   downstream) -> str:
+                   downstream, id_reservations, reservation_skip_log) -> str:
     cm_counts = canon_doc.get("_counts") or {}
     pct_complete = ((cm_counts.get("seeded_default", 0)
                      + (cm_counts.get("total_disciplines", 0) - cm_counts.get("needs_review", 0))
@@ -594,6 +673,48 @@ def _render_report(*, today, canon_doc, rows, fate_counts, alias_map, collisions
     lines.append("")
 
     # Downstream apply scope (what 5c will need to re-key beyond minted/singletons)
+    # CCN / C-ID reservation impact
+    lines.append("## CCN / C-ID sequence reservations\n")
+    lines.append("The M-ID corroborated format `SUBJ M<band><seq:03d>` shares structure with "
+                 "CCN's `SUBJ C<band><seq:03d>` (only the prefix letter differs), and with the "
+                 "embedded sequence of C-ID `SUBJ <band><seq2>`. To prevent visual/sequence "
+                 "collisions, the allocator skips any seq already taken by a CCN/C-ID in the "
+                 "same `(SUBJ4, band)` bucket. Source: `kb/reference/ccn_courses.json` + "
+                 "`kb/reference/cid_descriptors.json`.\n")
+    if id_reservations:
+        # Total reservation footprint
+        total_reserved = sum(len(s) for s in id_reservations.values())
+        impacted = sum(1 for k in id_reservations if any(r["new_subj4"] == k[0] and r["old_band"] == k[1]
+                                                          and r["kind"] == "corroborated"
+                                                          for r in rows
+                                                          if r["fate"] in ("re_key", "no_change")))
+        lines.append(f"- Total reserved seqs across all (SUBJ4, band): **{total_reserved}**")
+        lines.append(f"- (SUBJ4, band) buckets with at least one M-ID landing in them: **{impacted}**")
+        lines.append(f"- Actual seq skips during this dry-run allocation: **{len(reservation_skip_log)}** "
+                     f"(allocator walked past these to the next free seq)")
+        # Top-5 buckets by reservation count (impacts capacity)
+        top = sorted(id_reservations.items(), key=lambda kv: -len(kv[1]))[:5]
+        if top:
+            lines.append("\nBuckets with most reservations (these eat into the 999-seq capacity):\n")
+            lines.append("| (SUBJ4, band) | reserved seqs |")
+            lines.append("|---|---|")
+            for (s, b), seqs in top:
+                shown = sorted(seqs)[:8]
+                more = "" if len(seqs) <= 8 else f" (+ {len(seqs) - 8} more)"
+                lines.append(f"| `{s}` band `{b}` | {', '.join(f'{x:03d}' for x in shown)}{more} |")
+        # Top-5 skips during this run
+        if reservation_skip_log:
+            skip_by_bucket = Counter(b for b, _ in reservation_skip_log)
+            top_skips = skip_by_bucket.most_common(5)
+            lines.append("\nBuckets where the allocator actually skipped seqs this run:\n")
+            lines.append("| new bucket | seqs skipped |")
+            lines.append("|---|---:|")
+            for b, n in top_skips:
+                lines.append(f"| `{b}` | {n} |")
+    else:
+        lines.append("- (no CCN/C-ID reference data found; sequence allocator ran without reservations)")
+    lines.append("")
+
     lines.append("## Downstream apply scope\n")
     lines.append("Beyond `coci_minted_courses.json` + `coci_minted_singletons.json`, the apply "
                  "step (5c) re-keys references in three downstream files. The numbers below count "
