@@ -38,7 +38,7 @@
     { id: "4",      title: "SLO ingestion (unlocks MC scoring)",         status: "parked", when: "" },
     { id: "5",      title: "CTE classifier (CIDx lane)",                 status: "parked", when: "" },
     { id: "6",      title: "CIDx submission automation",                 status: "parked", when: "" },
-    { id: "7",      title: "M-ID → CID substitution",                    status: "parked", when: "" },
+    { id: "7",      title: "MID → CID substitution",                     status: "parked", when: "" },
   ];
 
   // ─── helpers ──────────────────────────────────────────────────────────────
@@ -122,7 +122,7 @@
       "  S1[\"Curator-Verified<br/>(in CCR tab)\"]",
       "  S2[\"MC-ready<br/>SLOs + content outline<br/><i>0 today — Phase 4</i>\"]",
       "  S3[\"Submitted to ASCCC<br/><i>0 — Phase 6</i>\"]",
-      "  S4{\"Approved as<br/>C-ID / CIDx?\"}",
+      "  S4{\"Approved as<br/>CID / CIDx?\"}",
       "  S5[\"Re-keyed to official ID<br/><b>" + fmt(officialIds) + "</b> live anchors\"]",
       "  S6[\"Blank-discipline<br/>backlog<br/><b>" + fmt(blank) + "</b> rows\"]",
       "  S0 --> S1",
@@ -202,7 +202,7 @@
   // shown as supporting context.
   var CLEANUP_RECEIPT_RULES = [
     { tag: "subject_collision_signal", label: "Subject collision (Phase 1e)",      target: 0 },
-    { tag: "mid_id_off_scheme",        label: "M-ID off-scheme",                    target: 0, tolerate_blank_discipline: true },
+    { tag: "mid_id_off_scheme",        label: "MID off-scheme",                     target: 0, tolerate_blank_discipline: true },
   ];
   var SUPPORTING_RULES = [
     { tag: "blank_discipline",                   label: "Blank discipline (curator backlog)" },
@@ -292,7 +292,7 @@
     // Footer with timestamp + total
     if (status) {
       var when = audit._generated_at || "(no _generated_at field)";
-      status.textContent = "Last auditor run: " + when + " · " + fmt(counts._total) + " M-ID/Cluster rows · " + fmt(counts._totalFlagged) + " with ≥1 flag";
+      status.textContent = "Last auditor run: " + when + " · " + fmt(counts._total) + " MID/Cluster rows · " + fmt(counts._totalFlagged) + " with ≥1 flag";
     }
     return counts;
   }

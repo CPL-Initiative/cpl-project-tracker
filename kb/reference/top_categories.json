@@ -1,0 +1,2367 @@
+{
+  "_about": "CCC Taxonomy of Programs (TOP) codes from the 7th Edition Manual (2023). Each 6-digit code carries its 2-digit category chapter + 4-digit subcategory + CTE designation (Career Technical Education). Asterisk-marked codes in the source manual are CTE-designated.",
+  "_source": "California Community Colleges 2023 Taxonomy of Programs Manual, 7th Edition",
+  "_extracted_at": "2026-05-23",
+  "_counts": {
+    "categories_2digit": 24,
+    "codes_6digit": 380,
+    "cte_designated": 236,
+    "non_cte": 144
+  },
+  "categories_2digit": {
+    "01": {
+      "title": "Agriculture and Natural Resources"
+    },
+    "02": {
+      "title": "Architecture and Related Technologies"
+    },
+    "03": {
+      "title": "Environmental Sciences and Technologies"
+    },
+    "04": {
+      "title": "Biological Sciences"
+    },
+    "05": {
+      "title": "Business and Management"
+    },
+    "06": {
+      "title": "Media and Communications"
+    },
+    "07": {
+      "title": "Information Technology"
+    },
+    "08": {
+      "title": "Education"
+    },
+    "09": {
+      "title": "Engineering and Industrial Technologies"
+    },
+    "10": {
+      "title": "Fine and Applied Arts"
+    },
+    "11": {
+      "title": "Foreign Language"
+    },
+    "12": {
+      "title": "Health"
+    },
+    "13": {
+      "title": "Family and Consumer Sciences"
+    },
+    "14": {
+      "title": "Law"
+    },
+    "15": {
+      "title": "Humanities (Letters)"
+    },
+    "16": {
+      "title": "Library Science"
+    },
+    "17": {
+      "title": "Mathematics"
+    },
+    "18": {
+      "title": "Military Studies"
+    },
+    "19": {
+      "title": "Physical Sciences"
+    },
+    "20": {
+      "title": "Psychology"
+    },
+    "21": {
+      "title": "Public and Protective Services"
+    },
+    "22": {
+      "title": "Social Sciences"
+    },
+    "30": {
+      "title": "Commercial Services"
+    },
+    "49": {
+      "title": "Interdisciplinary Studies"
+    }
+  },
+  "codes": {
+    "0102.00": {
+      "title": "Animal Science",
+      "category_2digit": "01",
+      "category_4digit": "0102",
+      "cte": true
+    },
+    "0102.10": {
+      "title": "Veterinary Technician (Licensed)",
+      "category_2digit": "01",
+      "category_4digit": "0102",
+      "cte": true
+    },
+    "0102.20": {
+      "title": "Artificial Inseminator (Licensed)",
+      "category_2digit": "01",
+      "category_4digit": "0102",
+      "cte": true
+    },
+    "0102.30": {
+      "title": "Dairy Science",
+      "category_2digit": "01",
+      "category_4digit": "0102",
+      "cte": true
+    },
+    "0102.40": {
+      "title": "Equine Science",
+      "category_2digit": "01",
+      "category_4digit": "0102",
+      "cte": true
+    },
+    "0103.00": {
+      "title": "Plant Science",
+      "category_2digit": "01",
+      "category_4digit": "0103",
+      "cte": true
+    },
+    "0103.10": {
+      "title": "Agricultural Pest Control Advisor and Operator (Licensed)",
+      "category_2digit": "01",
+      "category_4digit": "0103",
+      "cte": true
+    },
+    "0104.00": {
+      "title": "Viticulture, Enology, and Wine Business",
+      "category_2digit": "01",
+      "category_4digit": "0104",
+      "cte": true
+    },
+    "0109.00": {
+      "title": "Horticulture",
+      "category_2digit": "01",
+      "category_4digit": "0109",
+      "cte": true
+    },
+    "0109.10": {
+      "title": "Landscape Design and Maintenance",
+      "category_2digit": "01",
+      "category_4digit": "0109",
+      "cte": true
+    },
+    "0109.20": {
+      "title": "Floriculture/Floristry",
+      "category_2digit": "01",
+      "category_4digit": "0109",
+      "cte": true
+    },
+    "0109.30": {
+      "title": "Nursery Technology",
+      "category_2digit": "01",
+      "category_4digit": "0109",
+      "cte": true
+    },
+    "0109.40": {
+      "title": "Turfgrass Technology",
+      "category_2digit": "01",
+      "category_4digit": "0109",
+      "cte": true
+    },
+    "0112.00": {
+      "title": "Agriculture Business, Sales, and Service",
+      "category_2digit": "01",
+      "category_4digit": "0112",
+      "cte": true
+    },
+    "0113.00": {
+      "title": "Food Processing and Related Technologies",
+      "category_2digit": "01",
+      "category_4digit": "0113",
+      "cte": true
+    },
+    "0114.00": {
+      "title": "Forestry",
+      "category_2digit": "01",
+      "category_4digit": "0114",
+      "cte": true
+    },
+    "0115.00": {
+      "title": "Natural Resources",
+      "category_2digit": "01",
+      "category_4digit": "0115",
+      "cte": true
+    },
+    "0115.10": {
+      "title": "Parks and Outdoor Recreation",
+      "category_2digit": "01",
+      "category_4digit": "0115",
+      "cte": true
+    },
+    "0115.20": {
+      "title": "Wildlife and Fisheries",
+      "category_2digit": "01",
+      "category_4digit": "0115",
+      "cte": true
+    },
+    "0116.00": {
+      "title": "Agricultural Power Equipment Technology",
+      "category_2digit": "01",
+      "category_4digit": "0116",
+      "cte": true
+    },
+    "0199.00": {
+      "title": "Other Agriculture and Natural Resources",
+      "category_2digit": "01",
+      "category_4digit": "0199",
+      "cte": true
+    },
+    "0201.00": {
+      "title": "Architecture and Architectural Technology",
+      "category_2digit": "02",
+      "category_4digit": "0201",
+      "cte": true
+    },
+    "0201.10": {
+      "title": "Landscape Architecture (transfer)",
+      "category_2digit": "02",
+      "category_4digit": "0201",
+      "cte": false
+    },
+    "0299.00": {
+      "title": "Other Architecture and Environmental Design",
+      "category_2digit": "02",
+      "category_4digit": "0299",
+      "cte": true
+    },
+    "0301.00": {
+      "title": "Environmental Science",
+      "category_2digit": "03",
+      "category_4digit": "0301",
+      "cte": false
+    },
+    "0302.00": {
+      "title": "Environmental Studies",
+      "category_2digit": "03",
+      "category_4digit": "0302",
+      "cte": false
+    },
+    "0303.00": {
+      "title": "Environmental Technology",
+      "category_2digit": "03",
+      "category_4digit": "0303",
+      "cte": true
+    },
+    "0399.00": {
+      "title": "Environmental Sciences and Technologies, Other",
+      "category_2digit": "03",
+      "category_4digit": "0399",
+      "cte": false
+    },
+    "0401.00": {
+      "title": "Biology, General",
+      "category_2digit": "04",
+      "category_4digit": "0401",
+      "cte": false
+    },
+    "0402.00": {
+      "title": "Botany, General",
+      "category_2digit": "04",
+      "category_4digit": "0402",
+      "cte": false
+    },
+    "0403.00": {
+      "title": "Microbiology",
+      "category_2digit": "04",
+      "category_4digit": "0403",
+      "cte": false
+    },
+    "0407.00": {
+      "title": "Zoology, General",
+      "category_2digit": "04",
+      "category_4digit": "0407",
+      "cte": false
+    },
+    "0408.00": {
+      "title": "Natural History",
+      "category_2digit": "04",
+      "category_4digit": "0408",
+      "cte": false
+    },
+    "0410.00": {
+      "title": "Anatomy and Physiology",
+      "category_2digit": "04",
+      "category_4digit": "0410",
+      "cte": false
+    },
+    "0430.00": {
+      "title": "Biotechnology and Biomedical Technology",
+      "category_2digit": "04",
+      "category_4digit": "0430",
+      "cte": true
+    },
+    "0499.00": {
+      "title": "Other Biological Sciences Specify",
+      "category_2digit": "04",
+      "category_4digit": "0499",
+      "cte": false
+    },
+    "0501.00": {
+      "title": "Business and Commerce, General",
+      "category_2digit": "05",
+      "category_4digit": "0501",
+      "cte": true
+    },
+    "0502.00": {
+      "title": "Accounting",
+      "category_2digit": "05",
+      "category_4digit": "0502",
+      "cte": true
+    },
+    "0502.10": {
+      "title": "Tax Studies",
+      "category_2digit": "05",
+      "category_4digit": "0502",
+      "cte": true
+    },
+    "0504.00": {
+      "title": "Banking and Finance",
+      "category_2digit": "05",
+      "category_4digit": "0504",
+      "cte": true
+    },
+    "0505.00": {
+      "title": "Business Administration",
+      "category_2digit": "05",
+      "category_4digit": "0505",
+      "cte": true
+    },
+    "0506.00": {
+      "title": "Business Management",
+      "category_2digit": "05",
+      "category_4digit": "0506",
+      "cte": true
+    },
+    "0506.30": {
+      "title": "Management Development and Supervision",
+      "category_2digit": "05",
+      "category_4digit": "0506",
+      "cte": true
+    },
+    "0509.10": {
+      "title": "Advertising",
+      "category_2digit": "05",
+      "category_4digit": "0509",
+      "cte": true
+    },
+    "0509.20": {
+      "title": "Purchasing",
+      "category_2digit": "05",
+      "category_4digit": "0509",
+      "cte": true
+    },
+    "0509.40": {
+      "title": "Sales and Salesmanship",
+      "category_2digit": "05",
+      "category_4digit": "0509",
+      "cte": true
+    },
+    "0509.60": {
+      "title": "Display",
+      "category_2digit": "05",
+      "category_4digit": "0509",
+      "cte": true
+    },
+    "0509.70": {
+      "title": "E-Commerce (business emphasis)",
+      "category_2digit": "05",
+      "category_4digit": "0509",
+      "cte": true
+    },
+    "0510.00": {
+      "title": "Logistics and Materials Transportation",
+      "category_2digit": "05",
+      "category_4digit": "0510",
+      "cte": true
+    },
+    "0511.00": {
+      "title": "Real Estate",
+      "category_2digit": "05",
+      "category_4digit": "0511",
+      "cte": true
+    },
+    "0511.10": {
+      "title": "Escrow",
+      "category_2digit": "05",
+      "category_4digit": "0511",
+      "cte": true
+    },
+    "0512.00": {
+      "title": "Insurance",
+      "category_2digit": "05",
+      "category_4digit": "0512",
+      "cte": true
+    },
+    "0514.00": {
+      "title": "Office Technology/Office Computer Applications",
+      "category_2digit": "05",
+      "category_4digit": "0514",
+      "cte": true
+    },
+    "0514.10": {
+      "title": "Legal Office Technology",
+      "category_2digit": "05",
+      "category_4digit": "0514",
+      "cte": true
+    },
+    "0514.20": {
+      "title": "Medical Office Technology",
+      "category_2digit": "05",
+      "category_4digit": "0514",
+      "cte": true
+    },
+    "0514.30": {
+      "title": "Court Reporting",
+      "category_2digit": "05",
+      "category_4digit": "0514",
+      "cte": true
+    },
+    "0516.00": {
+      "title": "Labor and Industrial Relations",
+      "category_2digit": "05",
+      "category_4digit": "0516",
+      "cte": true
+    },
+    "0518.00": {
+      "title": "Customer Service",
+      "category_2digit": "05",
+      "category_4digit": "0518",
+      "cte": true
+    },
+    "0599.00": {
+      "title": "Other Business and Management",
+      "category_2digit": "05",
+      "category_4digit": "0599",
+      "cte": true
+    },
+    "0601.00": {
+      "title": "Media and Communications, General",
+      "category_2digit": "06",
+      "category_4digit": "0601",
+      "cte": false
+    },
+    "0602.00": {
+      "title": "Journalism",
+      "category_2digit": "06",
+      "category_4digit": "0602",
+      "cte": true
+    },
+    "0604.00": {
+      "title": "Radio and Television",
+      "category_2digit": "06",
+      "category_4digit": "0604",
+      "cte": true
+    },
+    "0604.10": {
+      "title": "Radio",
+      "category_2digit": "06",
+      "category_4digit": "0604",
+      "cte": true
+    },
+    "0604.20": {
+      "title": "Television (including combined TV/film/video)",
+      "category_2digit": "06",
+      "category_4digit": "0604",
+      "cte": true
+    },
+    "0604.30": {
+      "title": "Broadcast Journalism",
+      "category_2digit": "06",
+      "category_4digit": "0604",
+      "cte": true
+    },
+    "0606.00": {
+      "title": "Public Relations",
+      "category_2digit": "06",
+      "category_4digit": "0606",
+      "cte": true
+    },
+    "0607.00": {
+      "title": "Technical Communication",
+      "category_2digit": "06",
+      "category_4digit": "0607",
+      "cte": true
+    },
+    "0610.00": {
+      "title": "Mass Communications",
+      "category_2digit": "06",
+      "category_4digit": "0610",
+      "cte": true
+    },
+    "0612.00": {
+      "title": "Film Studies (including combined film/video)",
+      "category_2digit": "06",
+      "category_4digit": "0612",
+      "cte": false
+    },
+    "0612.20": {
+      "title": "Film Production",
+      "category_2digit": "06",
+      "category_4digit": "0612",
+      "cte": true
+    },
+    "0614.00": {
+      "title": "Digital Media",
+      "category_2digit": "06",
+      "category_4digit": "0614",
+      "cte": true
+    },
+    "0614.10": {
+      "title": "Multimedia",
+      "category_2digit": "06",
+      "category_4digit": "0614",
+      "cte": true
+    },
+    "0614.20": {
+      "title": "Electronic Game Design",
+      "category_2digit": "06",
+      "category_4digit": "0614",
+      "cte": true
+    },
+    "0614.30": {
+      "title": "Website Design and Development",
+      "category_2digit": "06",
+      "category_4digit": "0614",
+      "cte": true
+    },
+    "0614.40": {
+      "title": "Animation",
+      "category_2digit": "06",
+      "category_4digit": "0614",
+      "cte": true
+    },
+    "0614.50": {
+      "title": "Desktop Publishing",
+      "category_2digit": "06",
+      "category_4digit": "0614",
+      "cte": true
+    },
+    "0614.60": {
+      "title": "Computer Graphics and Digital Imagery",
+      "category_2digit": "06",
+      "category_4digit": "0614",
+      "cte": true
+    },
+    "0699.00": {
+      "title": "Other Media and Communications",
+      "category_2digit": "06",
+      "category_4digit": "0699",
+      "cte": true
+    },
+    "0701.00": {
+      "title": "Information Technology, General",
+      "category_2digit": "07",
+      "category_4digit": "0701",
+      "cte": true
+    },
+    "0702.00": {
+      "title": "Computer Information Systems",
+      "category_2digit": "07",
+      "category_4digit": "0702",
+      "cte": true
+    },
+    "0702.10": {
+      "title": "Software Applications",
+      "category_2digit": "07",
+      "category_4digit": "0702",
+      "cte": true
+    },
+    "0707.00": {
+      "title": "Computer Software Development",
+      "category_2digit": "07",
+      "category_4digit": "0707",
+      "cte": true
+    },
+    "0707.10": {
+      "title": "Computer Programming",
+      "category_2digit": "07",
+      "category_4digit": "0707",
+      "cte": true
+    },
+    "0707.20": {
+      "title": "Database Design and Administration",
+      "category_2digit": "07",
+      "category_4digit": "0707",
+      "cte": true
+    },
+    "0707.30": {
+      "title": "Computer Systems Analysis",
+      "category_2digit": "07",
+      "category_4digit": "0707",
+      "cte": true
+    },
+    "0708.00": {
+      "title": "Computer Infrastructure and Support",
+      "category_2digit": "07",
+      "category_4digit": "0708",
+      "cte": true
+    },
+    "0708.10": {
+      "title": "Computer Networking",
+      "category_2digit": "07",
+      "category_4digit": "0708",
+      "cte": true
+    },
+    "0708.20": {
+      "title": "Computer Support",
+      "category_2digit": "07",
+      "category_4digit": "0708",
+      "cte": true
+    },
+    "0709.00": {
+      "title": "World Wide Web Administration",
+      "category_2digit": "07",
+      "category_4digit": "0709",
+      "cte": true
+    },
+    "0709.10": {
+      "title": "E-Commerce (technology emphasis)",
+      "category_2digit": "07",
+      "category_4digit": "0709",
+      "cte": true
+    },
+    "0799.00": {
+      "title": "Other Information Technology",
+      "category_2digit": "07",
+      "category_4digit": "0799",
+      "cte": true
+    },
+    "0801.00": {
+      "title": "Education, General (Pre-Professional) (Transfer)",
+      "category_2digit": "08",
+      "category_4digit": "0801",
+      "cte": false
+    },
+    "0802.00": {
+      "title": "Educational Aide (Teacher Assistant)",
+      "category_2digit": "08",
+      "category_4digit": "0802",
+      "cte": true
+    },
+    "0802.10": {
+      "title": "Educational Aide (Teacher Assistant), Bilingual",
+      "category_2digit": "08",
+      "category_4digit": "0802",
+      "cte": true
+    },
+    "0809.00": {
+      "title": "Special Education",
+      "category_2digit": "08",
+      "category_4digit": "0809",
+      "cte": true
+    },
+    "0835.00": {
+      "title": "Physical Education",
+      "category_2digit": "08",
+      "category_4digit": "0835",
+      "cte": false
+    },
+    "0835.10": {
+      "title": "Physical Fitness and Body Movement",
+      "category_2digit": "08",
+      "category_4digit": "0835",
+      "cte": false
+    },
+    "0835.20": {
+      "title": "Fitness Trainer",
+      "category_2digit": "08",
+      "category_4digit": "0835",
+      "cte": true
+    },
+    "0835.70": {
+      "title": "Aquatics and Lifesaving",
+      "category_2digit": "08",
+      "category_4digit": "0835",
+      "cte": true
+    },
+    "0835.80": {
+      "title": "Adapted Physical Education",
+      "category_2digit": "08",
+      "category_4digit": "0835",
+      "cte": false
+    },
+    "0836.00": {
+      "title": "Recreation",
+      "category_2digit": "08",
+      "category_4digit": "0836",
+      "cte": false
+    },
+    "0836.10": {
+      "title": "Recreation Assistant",
+      "category_2digit": "08",
+      "category_4digit": "0836",
+      "cte": true
+    },
+    "0837.00": {
+      "title": "Health Education",
+      "category_2digit": "08",
+      "category_4digit": "0837",
+      "cte": false
+    },
+    "0850.00": {
+      "title": "Sign Language",
+      "category_2digit": "08",
+      "category_4digit": "0850",
+      "cte": false
+    },
+    "0850.10": {
+      "title": "Sign Language Interpreting",
+      "category_2digit": "08",
+      "category_4digit": "0850",
+      "cte": true
+    },
+    "0860.00": {
+      "title": "Educational Technology",
+      "category_2digit": "08",
+      "category_4digit": "0860",
+      "cte": true
+    },
+    "0899.00": {
+      "title": "Other Education",
+      "category_2digit": "08",
+      "category_4digit": "0899",
+      "cte": true
+    },
+    "0901.00": {
+      "title": "Engineering, General (requires Calculus) (Transfer)",
+      "category_2digit": "09",
+      "category_4digit": "0901",
+      "cte": false
+    },
+    "0924.00": {
+      "title": "Engineering Technology, General (requires Trigonometry)",
+      "category_2digit": "09",
+      "category_4digit": "0924",
+      "cte": true
+    },
+    "0934.00": {
+      "title": "Electronics and Electric Technology",
+      "category_2digit": "09",
+      "category_4digit": "0934",
+      "cte": true
+    },
+    "0934.10": {
+      "title": "Computer Electronics",
+      "category_2digit": "09",
+      "category_4digit": "0934",
+      "cte": true
+    },
+    "0934.20": {
+      "title": "Industrial Electronics",
+      "category_2digit": "09",
+      "category_4digit": "0934",
+      "cte": true
+    },
+    "0934.30": {
+      "title": "Telecommunications Technology",
+      "category_2digit": "09",
+      "category_4digit": "0934",
+      "cte": true
+    },
+    "0934.40": {
+      "title": "Electrical Systems and Power Transmission",
+      "category_2digit": "09",
+      "category_4digit": "0934",
+      "cte": false
+    },
+    "0934.60": {
+      "title": "Biomedical Instrumentation",
+      "category_2digit": "09",
+      "category_4digit": "0934",
+      "cte": true
+    },
+    "0934.70": {
+      "title": "Electron Microscopy",
+      "category_2digit": "09",
+      "category_4digit": "0934",
+      "cte": true
+    },
+    "0934.80": {
+      "title": "Laser and Optical Technology",
+      "category_2digit": "09",
+      "category_4digit": "0934",
+      "cte": true
+    },
+    "0935.00": {
+      "title": "Electro-Mechanical Technology",
+      "category_2digit": "09",
+      "category_4digit": "0935",
+      "cte": true
+    },
+    "0935.10": {
+      "title": "Appliance Repair",
+      "category_2digit": "09",
+      "category_4digit": "0935",
+      "cte": false
+    },
+    "0936.00": {
+      "title": "Printing and Lithography",
+      "category_2digit": "09",
+      "category_4digit": "0936",
+      "cte": true
+    },
+    "0943.00": {
+      "title": "Instrumentation Technology",
+      "category_2digit": "09",
+      "category_4digit": "0943",
+      "cte": true
+    },
+    "0943.30": {
+      "title": "Vacuum Technology",
+      "category_2digit": "09",
+      "category_4digit": "0943",
+      "cte": false
+    },
+    "0945.00": {
+      "title": "Industrial Systems Technology and Maintenance",
+      "category_2digit": "09",
+      "category_4digit": "0945",
+      "cte": true
+    },
+    "0946.00": {
+      "title": "Environmental Control Technology (HVAC)",
+      "category_2digit": "09",
+      "category_4digit": "0946",
+      "cte": true
+    },
+    "0946.10": {
+      "title": "Energy Systems Technology",
+      "category_2digit": "09",
+      "category_4digit": "0946",
+      "cte": true
+    },
+    "0947.00": {
+      "title": "Diesel Technology",
+      "category_2digit": "09",
+      "category_4digit": "0947",
+      "cte": true
+    },
+    "0947.20": {
+      "title": "Heavy Equipment Maintenance",
+      "category_2digit": "09",
+      "category_4digit": "0947",
+      "cte": false
+    },
+    "0947.30": {
+      "title": "Heavy Equipment Operation",
+      "category_2digit": "09",
+      "category_4digit": "0947",
+      "cte": false
+    },
+    "0947.40": {
+      "title": "Railroad and Light Rail Operations",
+      "category_2digit": "09",
+      "category_4digit": "0947",
+      "cte": false
+    },
+    "0947.50": {
+      "title": "Truck and Bus Driving",
+      "category_2digit": "09",
+      "category_4digit": "0947",
+      "cte": false
+    },
+    "0948.00": {
+      "title": "Automotive Technology",
+      "category_2digit": "09",
+      "category_4digit": "0948",
+      "cte": true
+    },
+    "0948.30": {
+      "title": "Motorcycle, Outboard, and Small Engine Repair",
+      "category_2digit": "09",
+      "category_4digit": "0948",
+      "cte": false
+    },
+    "0949.00": {
+      "title": "Automotive Collision Repair",
+      "category_2digit": "09",
+      "category_4digit": "0949",
+      "cte": true
+    },
+    "0949.10": {
+      "title": "Upholstery Repair–Automotive",
+      "category_2digit": "09",
+      "category_4digit": "0949",
+      "cte": false
+    },
+    "0950.00": {
+      "title": "Aeronautical and Aviation Technology",
+      "category_2digit": "09",
+      "category_4digit": "0950",
+      "cte": true
+    },
+    "0950.10": {
+      "title": "Aviation Airframe Mechanics",
+      "category_2digit": "09",
+      "category_4digit": "0950",
+      "cte": false
+    },
+    "0950.20": {
+      "title": "Aviation Powerplant Mechanics",
+      "category_2digit": "09",
+      "category_4digit": "0950",
+      "cte": false
+    },
+    "0950.40": {
+      "title": "Aircraft Electronics (Avionics)",
+      "category_2digit": "09",
+      "category_4digit": "0950",
+      "cte": false
+    },
+    "0950.50": {
+      "title": "Aircraft Fabrication",
+      "category_2digit": "09",
+      "category_4digit": "0950",
+      "cte": false
+    },
+    "0952.00": {
+      "title": "Construction Crafts Technology",
+      "category_2digit": "09",
+      "category_4digit": "0952",
+      "cte": true
+    },
+    "0952.10": {
+      "title": "Carpentry",
+      "category_2digit": "09",
+      "category_4digit": "0952",
+      "cte": false
+    },
+    "0952.20": {
+      "title": "Electrical",
+      "category_2digit": "09",
+      "category_4digit": "0952",
+      "cte": false
+    },
+    "0952.30": {
+      "title": "Plumbing, Pipefitting, and Steamfitting",
+      "category_2digit": "09",
+      "category_4digit": "0952",
+      "cte": false
+    },
+    "0952.40": {
+      "title": "Glazing",
+      "category_2digit": "09",
+      "category_4digit": "0952",
+      "cte": false
+    },
+    "0952.50": {
+      "title": "Mill and Cabinet Work",
+      "category_2digit": "09",
+      "category_4digit": "0952",
+      "cte": false
+    },
+    "0952.60": {
+      "title": "Masonry, Tile, Cement, and Lath and Plaster",
+      "category_2digit": "09",
+      "category_4digit": "0952",
+      "cte": false
+    },
+    "0952.70": {
+      "title": "Painting, Decorating, and Flooring",
+      "category_2digit": "09",
+      "category_4digit": "0952",
+      "cte": false
+    },
+    "0952.80": {
+      "title": "Drywall and Insulation",
+      "category_2digit": "09",
+      "category_4digit": "0952",
+      "cte": false
+    },
+    "0952.90": {
+      "title": "Roofing",
+      "category_2digit": "09",
+      "category_4digit": "0952",
+      "cte": true
+    },
+    "0953.00": {
+      "title": "Drafting Technology",
+      "category_2digit": "09",
+      "category_4digit": "0953",
+      "cte": true
+    },
+    "0953.10": {
+      "title": "Architectural Drafting",
+      "category_2digit": "09",
+      "category_4digit": "0953",
+      "cte": true
+    },
+    "0953.20": {
+      "title": "Civil Drafting",
+      "category_2digit": "09",
+      "category_4digit": "0953",
+      "cte": true
+    },
+    "0953.40": {
+      "title": "Mechanical Drafting",
+      "category_2digit": "09",
+      "category_4digit": "0953",
+      "cte": true
+    },
+    "0954.00": {
+      "title": "Chemical Technology",
+      "category_2digit": "09",
+      "category_4digit": "0954",
+      "cte": true
+    },
+    "0954.20": {
+      "title": "Plastics and Composites",
+      "category_2digit": "09",
+      "category_4digit": "0954",
+      "cte": true
+    },
+    "0954.30": {
+      "title": "Petroleum Technology",
+      "category_2digit": "09",
+      "category_4digit": "0954",
+      "cte": true
+    },
+    "0955.00": {
+      "title": "Laboratory Science Technology",
+      "category_2digit": "09",
+      "category_4digit": "0955",
+      "cte": true
+    },
+    "0956.00": {
+      "title": "Manufacturing and Industrial Technology",
+      "category_2digit": "09",
+      "category_4digit": "0956",
+      "cte": true
+    },
+    "0956.30": {
+      "title": "Machining and Machine Tools",
+      "category_2digit": "09",
+      "category_4digit": "0956",
+      "cte": true
+    },
+    "0956.40": {
+      "title": "Sheet Metal and Structural Metal",
+      "category_2digit": "09",
+      "category_4digit": "0956",
+      "cte": true
+    },
+    "0956.50": {
+      "title": "Welding Technology",
+      "category_2digit": "09",
+      "category_4digit": "0956",
+      "cte": true
+    },
+    "0956.70": {
+      "title": "Industrial and Occupational Safety and Health",
+      "category_2digit": "09",
+      "category_4digit": "0956",
+      "cte": true
+    },
+    "0956.80": {
+      "title": "Industrial Quality Control",
+      "category_2digit": "09",
+      "category_4digit": "0956",
+      "cte": true
+    },
+    "0957.00": {
+      "title": "Civil and Construction Management Technology",
+      "category_2digit": "09",
+      "category_4digit": "0957",
+      "cte": true
+    },
+    "0957.20": {
+      "title": "Construction Inspection",
+      "category_2digit": "09",
+      "category_4digit": "0957",
+      "cte": true
+    },
+    "0957.30": {
+      "title": "Surveying",
+      "category_2digit": "09",
+      "category_4digit": "0957",
+      "cte": true
+    },
+    "0958.00": {
+      "title": "Water and Wastewater Technology",
+      "category_2digit": "09",
+      "category_4digit": "0958",
+      "cte": true
+    },
+    "0959.00": {
+      "title": "Marine Technology",
+      "category_2digit": "09",
+      "category_4digit": "0959",
+      "cte": true
+    },
+    "0959.10": {
+      "title": "Diving and Underwater Safety",
+      "category_2digit": "09",
+      "category_4digit": "0959",
+      "cte": true
+    },
+    "0961.00": {
+      "title": "Optics",
+      "category_2digit": "09",
+      "category_4digit": "0961",
+      "cte": true
+    },
+    "0962.00": {
+      "title": "Musical Instrument Repair",
+      "category_2digit": "09",
+      "category_4digit": "0962",
+      "cte": true
+    },
+    "0999.00": {
+      "title": "Other Engineering and Related Industrial Technologies",
+      "category_2digit": "09",
+      "category_4digit": "0999",
+      "cte": true
+    },
+    "1001.00": {
+      "title": "Fine Arts, General",
+      "category_2digit": "10",
+      "category_4digit": "1001",
+      "cte": false
+    },
+    "1002.00": {
+      "title": "Art (Painting, Drawing, and Sculpture)",
+      "category_2digit": "10",
+      "category_4digit": "1002",
+      "cte": false
+    },
+    "1005.00": {
+      "title": "Commercial Music",
+      "category_2digit": "10",
+      "category_4digit": "1005",
+      "cte": true
+    },
+    "1006.00": {
+      "title": "Technical Theater",
+      "category_2digit": "10",
+      "category_4digit": "1006",
+      "cte": true
+    },
+    "1007.00": {
+      "title": "Dramatic Arts",
+      "category_2digit": "10",
+      "category_4digit": "1007",
+      "cte": false
+    },
+    "1008.00": {
+      "title": "Dance",
+      "category_2digit": "10",
+      "category_4digit": "1008",
+      "cte": false
+    },
+    "1008.10": {
+      "title": "Commercial Dance",
+      "category_2digit": "10",
+      "category_4digit": "1008",
+      "cte": true
+    },
+    "1009.00": {
+      "title": "Applied Design",
+      "category_2digit": "10",
+      "category_4digit": "1009",
+      "cte": true
+    },
+    "1009.10": {
+      "title": "Jewelry",
+      "category_2digit": "10",
+      "category_4digit": "1009",
+      "cte": false
+    },
+    "1011.00": {
+      "title": "Photography",
+      "category_2digit": "10",
+      "category_4digit": "1011",
+      "cte": false
+    },
+    "1012.00": {
+      "title": "Applied Photography",
+      "category_2digit": "10",
+      "category_4digit": "1012",
+      "cte": true
+    },
+    "1013.00": {
+      "title": "Commercial Art",
+      "category_2digit": "10",
+      "category_4digit": "1013",
+      "cte": true
+    },
+    "1030.00": {
+      "title": "Graphic Art and Design",
+      "category_2digit": "10",
+      "category_4digit": "1030",
+      "cte": true
+    },
+    "1099.00": {
+      "title": "Other Fine and Applied Arts",
+      "category_2digit": "10",
+      "category_4digit": "1099",
+      "cte": true
+    },
+    "1101.00": {
+      "title": "Foreign Languages, General",
+      "category_2digit": "11",
+      "category_4digit": "1101",
+      "cte": false
+    },
+    "1102.00": {
+      "title": "French",
+      "category_2digit": "11",
+      "category_4digit": "1102",
+      "cte": false
+    },
+    "1103.00": {
+      "title": "German",
+      "category_2digit": "11",
+      "category_4digit": "1103",
+      "cte": false
+    },
+    "1104.00": {
+      "title": "Italian",
+      "category_2digit": "11",
+      "category_4digit": "1104",
+      "cte": false
+    },
+    "1105.00": {
+      "title": "Spanish",
+      "category_2digit": "11",
+      "category_4digit": "1105",
+      "cte": false
+    },
+    "1106.00": {
+      "title": "Russian",
+      "category_2digit": "11",
+      "category_4digit": "1106",
+      "cte": false
+    },
+    "1107.00": {
+      "title": "Chinese",
+      "category_2digit": "11",
+      "category_4digit": "1107",
+      "cte": false
+    },
+    "1108.00": {
+      "title": "Japanese",
+      "category_2digit": "11",
+      "category_4digit": "1108",
+      "cte": false
+    },
+    "1109.00": {
+      "title": "Latin",
+      "category_2digit": "11",
+      "category_4digit": "1109",
+      "cte": false
+    },
+    "1110.00": {
+      "title": "Greek",
+      "category_2digit": "11",
+      "category_4digit": "1110",
+      "cte": false
+    },
+    "1111.00": {
+      "title": "Hebrew",
+      "category_2digit": "11",
+      "category_4digit": "1111",
+      "cte": false
+    },
+    "1112.00": {
+      "title": "Arabic",
+      "category_2digit": "11",
+      "category_4digit": "1112",
+      "cte": false
+    },
+    "1116.00": {
+      "title": "African Languages (Non-Semitic)",
+      "category_2digit": "11",
+      "category_4digit": "1116",
+      "cte": false
+    },
+    "1117.00": {
+      "title": "Asian, South Asian, and Pacific Islands (Chinese and Japanese excluded)",
+      "category_2digit": "11",
+      "category_4digit": "1117",
+      "cte": false
+    },
+    "1117.10": {
+      "title": "Filipino (Tagalog)",
+      "category_2digit": "11",
+      "category_4digit": "1117",
+      "cte": false
+    },
+    "1199.00": {
+      "title": "Other Foreign Languages",
+      "category_2digit": "11",
+      "category_4digit": "1199",
+      "cte": false
+    },
+    "1201.00": {
+      "title": "Health Occupations, General",
+      "category_2digit": "12",
+      "category_4digit": "1201",
+      "cte": true
+    },
+    "1202.00": {
+      "title": "Hospital and Health Care Administration",
+      "category_2digit": "12",
+      "category_4digit": "1202",
+      "cte": true
+    },
+    "1205.00": {
+      "title": "Medical Laboratory Technology",
+      "category_2digit": "12",
+      "category_4digit": "1205",
+      "cte": true
+    },
+    "1205.10": {
+      "title": "Phlebotomy",
+      "category_2digit": "12",
+      "category_4digit": "1205",
+      "cte": true
+    },
+    "1206.00": {
+      "title": "Physicians Assistant",
+      "category_2digit": "12",
+      "category_4digit": "1206",
+      "cte": true
+    },
+    "1208.00": {
+      "title": "Medical Assisting",
+      "category_2digit": "12",
+      "category_4digit": "1208",
+      "cte": true
+    },
+    "1208.10": {
+      "title": "Clinical Medical Assisting",
+      "category_2digit": "12",
+      "category_4digit": "1208",
+      "cte": true
+    },
+    "1208.20": {
+      "title": "Administrative Medical Assisting",
+      "category_2digit": "12",
+      "category_4digit": "1208",
+      "cte": true
+    },
+    "1208.30": {
+      "title": "Health Facility Unit Coordinator",
+      "category_2digit": "12",
+      "category_4digit": "1208",
+      "cte": true
+    },
+    "1209.00": {
+      "title": "Hospital Central Service Technician",
+      "category_2digit": "12",
+      "category_4digit": "1209",
+      "cte": true
+    },
+    "1210.00": {
+      "title": "Respiratory Care/Therapy",
+      "category_2digit": "12",
+      "category_4digit": "1210",
+      "cte": true
+    },
+    "1211.00": {
+      "title": "Polysomnography",
+      "category_2digit": "12",
+      "category_4digit": "1211",
+      "cte": true
+    },
+    "1212.00": {
+      "title": "Electro-Neurodiagnostic Technology",
+      "category_2digit": "12",
+      "category_4digit": "1212",
+      "cte": true
+    },
+    "1213.00": {
+      "title": "Cardiovascular Technician",
+      "category_2digit": "12",
+      "category_4digit": "1213",
+      "cte": true
+    },
+    "1214.00": {
+      "title": "Orthopedic Assistant",
+      "category_2digit": "12",
+      "category_4digit": "1214",
+      "cte": true
+    },
+    "1215.00": {
+      "title": "Electrocardiography",
+      "category_2digit": "12",
+      "category_4digit": "1215",
+      "cte": true
+    },
+    "1217.00": {
+      "title": "Surgical Technician",
+      "category_2digit": "12",
+      "category_4digit": "1217",
+      "cte": true
+    },
+    "1218.00": {
+      "title": "Occupational Therapy Technology",
+      "category_2digit": "12",
+      "category_4digit": "1218",
+      "cte": true
+    },
+    "1219.00": {
+      "title": "Optical Technology",
+      "category_2digit": "12",
+      "category_4digit": "1219",
+      "cte": true
+    },
+    "1220.00": {
+      "title": "Speech-Language Pathology and Audiology",
+      "category_2digit": "12",
+      "category_4digit": "1220",
+      "cte": true
+    },
+    "1221.00": {
+      "title": "Pharmacy Technology",
+      "category_2digit": "12",
+      "category_4digit": "1221",
+      "cte": true
+    },
+    "1222.00": {
+      "title": "Physical Therapist Assistant",
+      "category_2digit": "12",
+      "category_4digit": "1222",
+      "cte": true
+    },
+    "1223.00": {
+      "title": "Health Information Technology",
+      "category_2digit": "12",
+      "category_4digit": "1223",
+      "cte": true
+    },
+    "1223.10": {
+      "title": "Health Information Coding",
+      "category_2digit": "12",
+      "category_4digit": "1223",
+      "cte": true
+    },
+    "1224.00": {
+      "title": "School Health Clerk",
+      "category_2digit": "12",
+      "category_4digit": "1224",
+      "cte": true
+    },
+    "1225.00": {
+      "title": "Radiologic Technology",
+      "category_2digit": "12",
+      "category_4digit": "1225",
+      "cte": true
+    },
+    "1226.00": {
+      "title": "Radiation Therapy Technician",
+      "category_2digit": "12",
+      "category_4digit": "1226",
+      "cte": true
+    },
+    "1227.00": {
+      "title": "Diagnostic Medical Sonography",
+      "category_2digit": "12",
+      "category_4digit": "1227",
+      "cte": true
+    },
+    "1228.00": {
+      "title": "Athletic Training and Sports Medicine",
+      "category_2digit": "12",
+      "category_4digit": "1228",
+      "cte": true
+    },
+    "1230.00": {
+      "title": "Nursing",
+      "category_2digit": "12",
+      "category_4digit": "1230",
+      "cte": true
+    },
+    "1230.10": {
+      "title": "Registered Nursing",
+      "category_2digit": "12",
+      "category_4digit": "1230",
+      "cte": true
+    },
+    "1230.20": {
+      "title": "Licensed Vocational Nursing",
+      "category_2digit": "12",
+      "category_4digit": "1230",
+      "cte": true
+    },
+    "1230.30": {
+      "title": "Certified Nurse Assistant",
+      "category_2digit": "12",
+      "category_4digit": "1230",
+      "cte": true
+    },
+    "1230.80": {
+      "title": "Home Health Aide",
+      "category_2digit": "12",
+      "category_4digit": "1230",
+      "cte": true
+    },
+    "1239.00": {
+      "title": "Psychiatric Technician",
+      "category_2digit": "12",
+      "category_4digit": "1239",
+      "cte": true
+    },
+    "1240.00": {
+      "title": "Dental Occupations",
+      "category_2digit": "12",
+      "category_4digit": "1240",
+      "cte": true
+    },
+    "1240.10": {
+      "title": "Dental Assistant",
+      "category_2digit": "12",
+      "category_4digit": "1240",
+      "cte": true
+    },
+    "1240.20": {
+      "title": "Dental Hygienist",
+      "category_2digit": "12",
+      "category_4digit": "1240",
+      "cte": true
+    },
+    "1240.30": {
+      "title": "Dental Laboratory Technician",
+      "category_2digit": "12",
+      "category_4digit": "1240",
+      "cte": true
+    },
+    "1250.00": {
+      "title": "Emergency Medical Services",
+      "category_2digit": "12",
+      "category_4digit": "1250",
+      "cte": true
+    },
+    "1251.00": {
+      "title": "Paramedic",
+      "category_2digit": "12",
+      "category_4digit": "1251",
+      "cte": true
+    },
+    "1255.00": {
+      "title": "Mortuary Science",
+      "category_2digit": "12",
+      "category_4digit": "1255",
+      "cte": true
+    },
+    "1260.00": {
+      "title": "Health Professions, Transfer Core Curriculum",
+      "category_2digit": "12",
+      "category_4digit": "1260",
+      "cte": true
+    },
+    "1261.00": {
+      "title": "Community Health Care Worker",
+      "category_2digit": "12",
+      "category_4digit": "1261",
+      "cte": true
+    },
+    "1262.00": {
+      "title": "Massage Therapy",
+      "category_2digit": "12",
+      "category_4digit": "1262",
+      "cte": true
+    },
+    "1270.00": {
+      "title": "Kinesiology",
+      "category_2digit": "12",
+      "category_4digit": "1270",
+      "cte": false
+    },
+    "1299.00": {
+      "title": "Other Health Occupations",
+      "category_2digit": "12",
+      "category_4digit": "1299",
+      "cte": true
+    },
+    "1301.00": {
+      "title": "Family and Consumer Sciences, General",
+      "category_2digit": "13",
+      "category_4digit": "1301",
+      "cte": false
+    },
+    "1301.10": {
+      "title": "Consumer Services",
+      "category_2digit": "13",
+      "category_4digit": "1301",
+      "cte": true
+    },
+    "1302.00": {
+      "title": "Interior Design and Merchandising",
+      "category_2digit": "13",
+      "category_4digit": "1302",
+      "cte": true
+    },
+    "1303.00": {
+      "title": "Fashion",
+      "category_2digit": "13",
+      "category_4digit": "1303",
+      "cte": true
+    },
+    "1303.10": {
+      "title": "Fashion Design",
+      "category_2digit": "13",
+      "category_4digit": "1303",
+      "cte": true
+    },
+    "1303.20": {
+      "title": "Fashion Merchandising",
+      "category_2digit": "13",
+      "category_4digit": "1303",
+      "cte": true
+    },
+    "1303.30": {
+      "title": "Fashion Production",
+      "category_2digit": "13",
+      "category_4digit": "1303",
+      "cte": true
+    },
+    "1305.00": {
+      "title": "Child Development/Early Care and Education",
+      "category_2digit": "13",
+      "category_4digit": "1305",
+      "cte": true
+    },
+    "1305.20": {
+      "title": "Children with Special Needs",
+      "category_2digit": "13",
+      "category_4digit": "1305",
+      "cte": true
+    },
+    "1305.40": {
+      "title": "Preschool Age Children",
+      "category_2digit": "13",
+      "category_4digit": "1305",
+      "cte": true
+    },
+    "1305.50": {
+      "title": "The School Age Child",
+      "category_2digit": "13",
+      "category_4digit": "1305",
+      "cte": true
+    },
+    "1305.60": {
+      "title": "Parenting and Family Education",
+      "category_2digit": "13",
+      "category_4digit": "1305",
+      "cte": true
+    },
+    "1305.70": {
+      "title": "Foster and Kinship Care",
+      "category_2digit": "13",
+      "category_4digit": "1305",
+      "cte": true
+    },
+    "1305.80": {
+      "title": "Child Development Administration and Management",
+      "category_2digit": "13",
+      "category_4digit": "1305",
+      "cte": true
+    },
+    "1305.90": {
+      "title": "Infants and Toddlers",
+      "category_2digit": "13",
+      "category_4digit": "1305",
+      "cte": true
+    },
+    "1306.00": {
+      "title": "Nutrition, Foods, and Culinary Arts",
+      "category_2digit": "13",
+      "category_4digit": "1306",
+      "cte": true
+    },
+    "1306.20": {
+      "title": "Dietetic Services and Management",
+      "category_2digit": "13",
+      "category_4digit": "1306",
+      "cte": true
+    },
+    "1306.30": {
+      "title": "Culinary Arts",
+      "category_2digit": "13",
+      "category_4digit": "1306",
+      "cte": true
+    },
+    "1306.60": {
+      "title": "Dietetic Technology",
+      "category_2digit": "13",
+      "category_4digit": "1306",
+      "cte": true
+    },
+    "1307.00": {
+      "title": "Hospitality",
+      "category_2digit": "13",
+      "category_4digit": "1307",
+      "cte": true
+    },
+    "1307.10": {
+      "title": "Restaurant and Food Services and Management",
+      "category_2digit": "13",
+      "category_4digit": "1307",
+      "cte": true
+    },
+    "1307.20": {
+      "title": "Lodging Management",
+      "category_2digit": "13",
+      "category_4digit": "1307",
+      "cte": true
+    },
+    "1307.30": {
+      "title": "Resort and Club Management",
+      "category_2digit": "13",
+      "category_4digit": "1307",
+      "cte": true
+    },
+    "1308.00": {
+      "title": "Family Studies",
+      "category_2digit": "13",
+      "category_4digit": "1308",
+      "cte": true
+    },
+    "1309.00": {
+      "title": "Gerontology",
+      "category_2digit": "13",
+      "category_4digit": "1309",
+      "cte": true
+    },
+    "1401.00": {
+      "title": "Law, General",
+      "category_2digit": "14",
+      "category_4digit": "1401",
+      "cte": false
+    },
+    "1402.00": {
+      "title": "Paralegal",
+      "category_2digit": "14",
+      "category_4digit": "1402",
+      "cte": true
+    },
+    "1499.00": {
+      "title": "Other Law",
+      "category_2digit": "14",
+      "category_4digit": "1499",
+      "cte": false
+    },
+    "1501.00": {
+      "title": "English",
+      "category_2digit": "15",
+      "category_4digit": "1501",
+      "cte": false
+    },
+    "1501.10": {
+      "title": "Linguistics",
+      "category_2digit": "15",
+      "category_4digit": "1501",
+      "cte": false
+    },
+    "1502.00": {
+      "title": "Language Arts",
+      "category_2digit": "15",
+      "category_4digit": "1502",
+      "cte": false
+    },
+    "1503.00": {
+      "title": "Comparative Literature",
+      "category_2digit": "15",
+      "category_4digit": "1503",
+      "cte": false
+    },
+    "1504.00": {
+      "title": "Classics",
+      "category_2digit": "15",
+      "category_4digit": "1504",
+      "cte": false
+    },
+    "1506.00": {
+      "title": "Speech Communication",
+      "category_2digit": "15",
+      "category_4digit": "1506",
+      "cte": false
+    },
+    "1507.00": {
+      "title": "Creative Writing",
+      "category_2digit": "15",
+      "category_4digit": "1507",
+      "cte": false
+    },
+    "1509.00": {
+      "title": "Philosophy",
+      "category_2digit": "15",
+      "category_4digit": "1509",
+      "cte": false
+    },
+    "1510.00": {
+      "title": "Religious Studies (Theological professions excluded)",
+      "category_2digit": "15",
+      "category_4digit": "1510",
+      "cte": false
+    },
+    "1599.00": {
+      "title": "Other Humanities",
+      "category_2digit": "15",
+      "category_4digit": "1599",
+      "cte": false
+    },
+    "1601.00": {
+      "title": "Library Science, General",
+      "category_2digit": "16",
+      "category_4digit": "1601",
+      "cte": false
+    },
+    "1602.00": {
+      "title": "Library Technician (Aide)",
+      "category_2digit": "16",
+      "category_4digit": "1602",
+      "cte": true
+    },
+    "1699.00": {
+      "title": "Other Library Science",
+      "category_2digit": "16",
+      "category_4digit": "1699",
+      "cte": false
+    },
+    "1701.00": {
+      "title": "Mathematics, General",
+      "category_2digit": "17",
+      "category_4digit": "1701",
+      "cte": false
+    },
+    "1702.00": {
+      "title": "Mathematics Skills",
+      "category_2digit": "17",
+      "category_4digit": "1702",
+      "cte": false
+    },
+    "1799.00": {
+      "title": "Other Mathematics",
+      "category_2digit": "17",
+      "category_4digit": "1799",
+      "cte": false
+    },
+    "1801.00": {
+      "title": "Military Science",
+      "category_2digit": "18",
+      "category_4digit": "1801",
+      "cte": false
+    },
+    "1899.00": {
+      "title": "Other Military Studies",
+      "category_2digit": "18",
+      "category_4digit": "1899",
+      "cte": false
+    },
+    "1901.00": {
+      "title": "Physical Sciences, General",
+      "category_2digit": "19",
+      "category_4digit": "1901",
+      "cte": false
+    },
+    "1902.00": {
+      "title": "Physics, General",
+      "category_2digit": "19",
+      "category_4digit": "1902",
+      "cte": false
+    },
+    "1905.00": {
+      "title": "Chemistry, General",
+      "category_2digit": "19",
+      "category_4digit": "1905",
+      "cte": false
+    },
+    "1911.00": {
+      "title": "Astronomy",
+      "category_2digit": "19",
+      "category_4digit": "1911",
+      "cte": false
+    },
+    "1914.00": {
+      "title": "Geology",
+      "category_2digit": "19",
+      "category_4digit": "1914",
+      "cte": false
+    },
+    "1919.00": {
+      "title": "Oceanography",
+      "category_2digit": "19",
+      "category_4digit": "1919",
+      "cte": false
+    },
+    "1920.00": {
+      "title": "Ocean Technology",
+      "category_2digit": "19",
+      "category_4digit": "1920",
+      "cte": true
+    },
+    "1930.00": {
+      "title": "Earth Science",
+      "category_2digit": "19",
+      "category_4digit": "1930",
+      "cte": false
+    },
+    "1999.00": {
+      "title": "Other Physical Sciences",
+      "category_2digit": "19",
+      "category_4digit": "1999",
+      "cte": false
+    },
+    "2001.00": {
+      "title": "Psychology, General",
+      "category_2digit": "20",
+      "category_4digit": "2001",
+      "cte": false
+    },
+    "2003.00": {
+      "title": "Behavioral Science",
+      "category_2digit": "20",
+      "category_4digit": "2003",
+      "cte": false
+    },
+    "2099.00": {
+      "title": "Other Psychology",
+      "category_2digit": "20",
+      "category_4digit": "2099",
+      "cte": false
+    },
+    "2102.00": {
+      "title": "Public Administration",
+      "category_2digit": "21",
+      "category_4digit": "2102",
+      "cte": true
+    },
+    "2102.10": {
+      "title": "Public Works",
+      "category_2digit": "21",
+      "category_4digit": "2102",
+      "cte": true
+    },
+    "2104.00": {
+      "title": "Human Services",
+      "category_2digit": "21",
+      "category_4digit": "2104",
+      "cte": true
+    },
+    "2104.40": {
+      "title": "Alcohol and Controlled Substances",
+      "category_2digit": "21",
+      "category_4digit": "2104",
+      "cte": true
+    },
+    "2104.50": {
+      "title": "Disability Services",
+      "category_2digit": "21",
+      "category_4digit": "2104",
+      "cte": true
+    },
+    "2105.00": {
+      "title": "Administration of Justice",
+      "category_2digit": "21",
+      "category_4digit": "2105",
+      "cte": true
+    },
+    "2105.10": {
+      "title": "Corrections",
+      "category_2digit": "21",
+      "category_4digit": "2105",
+      "cte": true
+    },
+    "2105.20": {
+      "title": "Probation and Parole",
+      "category_2digit": "21",
+      "category_4digit": "2105",
+      "cte": true
+    },
+    "2105.30": {
+      "title": "Industrial and Transportation Security",
+      "category_2digit": "21",
+      "category_4digit": "2105",
+      "cte": true
+    },
+    "2105.40": {
+      "title": "Forensics, Evidence, and Investigation",
+      "category_2digit": "21",
+      "category_4digit": "2105",
+      "cte": true
+    },
+    "2105.50": {
+      "title": "Police Academy",
+      "category_2digit": "21",
+      "category_4digit": "2105",
+      "cte": true
+    },
+    "2133.00": {
+      "title": "Fire Technology",
+      "category_2digit": "21",
+      "category_4digit": "2133",
+      "cte": true
+    },
+    "2133.10": {
+      "title": "Wildland Fire Technology",
+      "category_2digit": "21",
+      "category_4digit": "2133",
+      "cte": true
+    },
+    "2133.50": {
+      "title": "Fire Academy",
+      "category_2digit": "21",
+      "category_4digit": "2133",
+      "cte": true
+    },
+    "2140.00": {
+      "title": "Legal and Community Interpretation",
+      "category_2digit": "21",
+      "category_4digit": "2140",
+      "cte": true
+    },
+    "2199.00": {
+      "title": "Other Public and Protective Services",
+      "category_2digit": "21",
+      "category_4digit": "2199",
+      "cte": true
+    },
+    "2201.00": {
+      "title": "Social Sciences, General",
+      "category_2digit": "22",
+      "category_4digit": "2201",
+      "cte": false
+    },
+    "2201.10": {
+      "title": "Women's Studies",
+      "category_2digit": "22",
+      "category_4digit": "2201",
+      "cte": false
+    },
+    "2201.20": {
+      "title": "American Studies",
+      "category_2digit": "22",
+      "category_4digit": "2201",
+      "cte": false
+    },
+    "2201.30": {
+      "title": "Social Justice Studies: General",
+      "category_2digit": "22",
+      "category_4digit": "2201",
+      "cte": false
+    },
+    "2201.40": {
+      "title": "Social Justice Studies: LGTBQ",
+      "category_2digit": "22",
+      "category_4digit": "2201",
+      "cte": false
+    },
+    "2201.50": {
+      "title": "Social Justice Studies: Ethnic Studies",
+      "category_2digit": "22",
+      "category_4digit": "2201",
+      "cte": false
+    },
+    "2201.60": {
+      "title": "Social Justice Studies: Chicano Studies",
+      "category_2digit": "22",
+      "category_4digit": "2201",
+      "cte": false
+    },
+    "2201.70": {
+      "title": "Social Justice Studies: Gender Studies",
+      "category_2digit": "22",
+      "category_4digit": "2201",
+      "cte": false
+    },
+    "2201.80": {
+      "title": "Social Justice Studies: African American",
+      "category_2digit": "22",
+      "category_4digit": "2201",
+      "cte": false
+    },
+    "2201.90": {
+      "title": "Social Justice Studies: Asian American",
+      "category_2digit": "22",
+      "category_4digit": "2201",
+      "cte": false
+    },
+    "2201.91": {
+      "title": "Social Justice Studies: Native American",
+      "category_2digit": "22",
+      "category_4digit": "2201",
+      "cte": false
+    },
+    "2202.00": {
+      "title": "Anthropology",
+      "category_2digit": "22",
+      "category_4digit": "2202",
+      "cte": false
+    },
+    "2202.20": {
+      "title": "Archaeology",
+      "category_2digit": "22",
+      "category_4digit": "2202",
+      "cte": false
+    },
+    "2203.00": {
+      "title": "Ethnic Studies",
+      "category_2digit": "22",
+      "category_4digit": "2203",
+      "cte": false
+    },
+    "2204.00": {
+      "title": "Economics",
+      "category_2digit": "22",
+      "category_4digit": "2204",
+      "cte": false
+    },
+    "2205.00": {
+      "title": "History",
+      "category_2digit": "22",
+      "category_4digit": "2205",
+      "cte": false
+    },
+    "2206.00": {
+      "title": "Geography",
+      "category_2digit": "22",
+      "category_4digit": "2206",
+      "cte": false
+    },
+    "2206.10": {
+      "title": "Geographic Information Systems",
+      "category_2digit": "22",
+      "category_4digit": "2206",
+      "cte": true
+    },
+    "2207.00": {
+      "title": "Political Science",
+      "category_2digit": "22",
+      "category_4digit": "2207",
+      "cte": false
+    },
+    "2207.10": {
+      "title": "Student Government 2208.00 – Sociology",
+      "category_2digit": "22",
+      "category_4digit": "2207",
+      "cte": false
+    },
+    "2210.00": {
+      "title": "International Studies",
+      "category_2digit": "22",
+      "category_4digit": "2210",
+      "cte": false
+    },
+    "2210.10": {
+      "title": "Area Studies",
+      "category_2digit": "22",
+      "category_4digit": "2210",
+      "cte": false
+    },
+    "2210.20": {
+      "title": "Global Studies",
+      "category_2digit": "22",
+      "category_4digit": "2210",
+      "cte": false
+    },
+    "2299.00": {
+      "title": "Other Social Sciences",
+      "category_2digit": "22",
+      "category_4digit": "2299",
+      "cte": false
+    },
+    "3005.00": {
+      "title": "Custodial Services",
+      "category_2digit": "30",
+      "category_4digit": "3005",
+      "cte": true
+    },
+    "3007.00": {
+      "title": "Cosmetology and Barbering",
+      "category_2digit": "30",
+      "category_4digit": "3007",
+      "cte": true
+    },
+    "3008.00": {
+      "title": "Dry Cleaning",
+      "category_2digit": "30",
+      "category_4digit": "3008",
+      "cte": true
+    },
+    "3009.00": {
+      "title": "Travel Services and Tourism",
+      "category_2digit": "30",
+      "category_4digit": "3009",
+      "cte": true
+    },
+    "3020.00": {
+      "title": "Aviation and Airport Management and Services",
+      "category_2digit": "30",
+      "category_4digit": "3020",
+      "cte": true
+    },
+    "3020.10": {
+      "title": "Aviation and Airport Management",
+      "category_2digit": "30",
+      "category_4digit": "3020",
+      "cte": true
+    },
+    "3099.00": {
+      "title": "Other Commercial Services",
+      "category_2digit": "30",
+      "category_4digit": "3099",
+      "cte": true
+    },
+    "4901.00": {
+      "title": "Liberal Arts and Sciences, General (Program Only)",
+      "category_2digit": "49",
+      "category_4digit": "4901",
+      "cte": false
+    },
+    "4901.10": {
+      "title": "Transfer Studies (Program Only)",
+      "category_2digit": "49",
+      "category_4digit": "4901",
+      "cte": false
+    },
+    "4902.00": {
+      "title": "Biological and Physical Sciences (and Mathematics) (Program Only)",
+      "category_2digit": "49",
+      "category_4digit": "4902",
+      "cte": false
+    },
+    "4903.00": {
+      "title": "Humanities (Program Only)",
+      "category_2digit": "49",
+      "category_4digit": "4903",
+      "cte": false
+    },
+    "4903.10": {
+      "title": "Humanities and Fine Arts (Program Only)",
+      "category_2digit": "49",
+      "category_4digit": "4903",
+      "cte": false
+    },
+    "4903.30": {
+      "title": "Humanities and Social Sciences (Program Only)",
+      "category_2digit": "49",
+      "category_4digit": "4903",
+      "cte": false
+    },
+    "4930.09": {
+      "title": "Supervised Tutoring",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.10": {
+      "title": "Career Guidance and Orientation",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.11": {
+      "title": "Interpersonal Skills",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.12": {
+      "title": "Job Seeking/Changing Skills",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.13": {
+      "title": "Academic Guidance",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.14": {
+      "title": "Study Skills",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.30": {
+      "title": "Learning Skills, Disabled",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.31": {
+      "title": "Living Skills, Disabled .",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.32": {
+      "title": "Learning Skills, Learning Disabled",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.33": {
+      "title": "Learning Skills, Speech Impaired",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.60": {
+      "title": "Elementary Education (Grades 1-8)",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.62": {
+      "title": "Secondary Education (Grades 9-12) and G.E.D.",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.72": {
+      "title": "Leadership Skills Development",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.84": {
+      "title": "English as a Second Language–Writing",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.85": {
+      "title": "English as a Second Language–Reading",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.86": {
+      "title": "English as a Second Language–Speaking/Listening",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.87": {
+      "title": "English as a Second Language–Integrated2",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4930.90": {
+      "title": "Citizenship (and ESL Civics)",
+      "category_2digit": "49",
+      "category_4digit": "4930",
+      "cte": false
+    },
+    "4931.00": {
+      "title": "Vocational ESL",
+      "category_2digit": "49",
+      "category_4digit": "4931",
+      "cte": true
+    },
+    "4999.00": {
+      "title": "Other Interdisciplinary Studies",
+      "category_2digit": "49",
+      "category_4digit": "4999",
+      "cte": false
+    }
+  }
+}
