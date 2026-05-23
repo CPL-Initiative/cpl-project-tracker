@@ -87,7 +87,7 @@ These buckets contain ≥2 curated M-IDs whose old keys all rename into the same
 - ✅ **one_subj4_per_discipline**: pass
 - ✅ **new_course_ids_unique**: pass
 - ❌ **no_seq_overflow**: FAIL
-  - corroborated overflow: [('KINE M1* (corroborated)', 1000), ('KINE M1* (corroborated)', 1001), ('KINE M1* (corroborated)', 1002), ('KINE M1* (corroborated)', 1003), ('KINE M1* (corroborated)', 1004)]
+  - corroborated overflow: [('KINE M1* (corroborated)', 1000), ('KINE M1* (corroborated)', 1000), ('KINE M1* (corroborated)', 1000), ('KINE M1* (corroborated)', 1000), ('KINE M1* (corroborated)', 1000)]
 
 ## Sequence-collision summary
 
@@ -99,12 +99,40 @@ These buckets contain ≥2 curated M-IDs whose old keys all rename into the same
 | `CISC M1* (standalone)` | 2040 |
 | `MUSI M1* (standalone)` | 1831 |
 | `ARTS M1* (standalone)` | 1526 |
+| `KINE M1* (corroborated)` | 1410 |
 | `DANC M1* (standalone)` | 1226 |
 | `CRIM M1* (standalone)` | 1197 |
 | `NRSR M1* (standalone)` | 1156 |
 | `THEA M1* (standalone)` | 1133 |
 | `FIRE M1* (standalone)` | 1082 |
-| `AUTO M1* (standalone)` | 1068 |
+
+## CCN / C-ID sequence reservations
+
+The M-ID corroborated format `SUBJ M<band><seq:03d>` shares structure with CCN's `SUBJ C<band><seq:03d>` (only the prefix letter differs), and with the embedded sequence of C-ID `SUBJ <band><seq2>`. To prevent visual/sequence collisions, the allocator skips any seq already taken by a CCN/C-ID in the same `(SUBJ4, band)` bucket. Source: `kb/reference/ccn_courses.json` + `kb/reference/cid_descriptors.json`.
+
+- Total reserved seqs across all (SUBJ4, band): **258**
+- (SUBJ4, band) buckets with at least one M-ID landing in them: **20**
+- Actual seq skips during this dry-run allocation: **110** (allocator walked past these to the next free seq)
+
+Buckets with most reservations (these eat into the 999-seq capacity):
+
+| (SUBJ4, band) | reserved seqs |
+|---|---|
+| `ITIS` band `1` | 010, 020, 030, 035, 036, 040, 045, 050 (+ 14 more) |
+| `ENGL` band `1` | 000, 001, 002, 003, 005, 010, 020, 030 (+ 9 more) |
+| `THTR` band `1` | 011, 012, 013, 014, 051, 052, 071, 072 (+ 5 more) |
+| `MATH` band `2` | 010, 011, 020, 021, 030, 040, 050, 060 (+ 4 more) |
+| `ARTS` band `2` | 000, 005, 010, 020, 030, 040, 050, 060 (+ 4 more) |
+
+Buckets where the allocator actually skipped seqs this run:
+
+| new bucket | seqs skipped |
+|---|---:|
+| `ENGL M1* (corroborated)` | 16 |
+| `COMM M1* (corroborated)` | 10 |
+| `GEOG M1* (corroborated)` | 10 |
+| `MATH M1* (corroborated)` | 8 |
+| `SOCI M1* (corroborated)` | 8 |
 
 ## Downstream apply scope
 
@@ -112,7 +140,7 @@ Beyond `coci_minted_courses.json` + `coci_minted_singletons.json`, the apply ste
 
 | file | records re-keyed |
 |---|---:|
-| `kb/coci_minted_memberships.json` | 14632 |
+| `kb/coci_minted_memberships.json` | 14631 |
 | `kb/coci_articulations.json` (articulations[]) | 3750 |
 | `kb/coci_unified_courses.json` (clusters[].members) | 1351 clusters, 2824 member refs |
 | `kb/coci_curation.json` (key rename) | 5 |
