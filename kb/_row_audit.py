@@ -69,6 +69,41 @@ TITLE_GENERIC = {"introduction","intermediate","advanced","fundamentals","princi
                  "workshop","cooperative","work","experience","honors","supervision",
                  "management","project","laboratory","beginning","preparation","prep"}
 
+# Stricter set for the generic_title_concrete_discipline rule — ONLY tokens
+# that carry zero discipline signal even in isolation (course format /
+# scaffolding / competition labels / sequence indicators). Pruned from
+# TITLE_GENERIC: management, supervision, principles, methods, theory,
+# practice, skills, work, applications, general — these CAN be substantive
+# in context ("Principles of Management" is genuine Business content;
+# flagging would be a false positive).
+STRICT_GENERIC_TITLE = {
+    "introduction", "intermediate", "advanced", "fundamentals", "basic",
+    "seminar", "internship", "externship", "capstone", "topics",
+    "independent", "study", "studies", "workshop", "cooperative",
+    "experience", "honors", "project", "laboratory", "lab", "lecture",
+    "beginning", "preparation", "prep", "practicum", "portfolio",
+    "certification", "directed", "selected", "special", "field",
+    "clinical", "clinic", "orientation", "overview", "review",
+    "exam", "examination",
+    # competition / club programs (zero discipline signal alone)
+    "skillsusa", "deca", "fbla",
+    # sequence indicators
+    "first", "second", "third", "fourth", "fifth",
+}
+
+# Disciplines that are themselves "generic catch-all" — assigning a generic
+# title to a generic discipline isn't a misassignment. Skip these as the
+# `disc` of generic_title_concrete_discipline.
+GENERIC_DISCIPLINES = {
+    "Interdisciplinary Studies",
+    "Interdisciplinary-General Education",
+    "Interdisciplinary-Basic Skills: Noncredit 53412",
+    "Interdisciplinary-Liberal Arts and Sciences",
+    "Other",
+    "Cooperative Work Experience",
+    "Older Adults: Noncredit",
+}
+
 def _title_tokens(s):
     """Lowercase tokens ≥3 chars, with stop-words filtered."""
     if not s:
@@ -412,7 +447,7 @@ def _compute_scores(faculty_fields, mc_fields):
 
 # ─── tag generators ─────────────────────────────────────────────────────────
 
-def _tags_for_mid(rec, faculty_fields, disc_bag=None):
+def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None):
     tags = []
     if faculty_fields["discipline"]["state"] == "seed-untouched":
         tags.append("seed_untouched_discipline")
@@ -433,9 +468,14 @@ def _tags_for_mid(rec, faculty_fields, disc_bag=None):
     # so the rule isn't self-circular. See _build_disc_bag() for the
     # construction; calibration: ~742 first-pass flags, leverage-ranked.
     if disc_bag is not None:
-        alt = _classify_title_mismatch(rec, disc_bag)
-        if alt:
+        if _classify_title_mismatch(rec, disc_bag):
             tags.append("discipline_title_mismatch")
+    # generic_title_concrete_discipline — title is entirely course-format
+    # scaffolding (SkillsUSA, Internship, Capstone, Clinical Experience, …)
+    # but the assigned discipline is specific. Title alone can't justify
+    # the discipline. Calibration: 44 first-pass flags, leverage-ranked.
+    if _classify_generic_title_concrete_discipline(rec, subject_map):
+        tags.append("generic_title_concrete_discipline")
     return tags
 
 
@@ -478,6 +518,46 @@ def _build_disc_bag(courses, lex):
         if d not in bag:
             bag[d] = _title_tokens(d)
     return bag
+
+
+def _classify_generic_title_concrete_discipline(rec, subject_map):
+    """Return True if the title is entirely composed of STRICT_GENERIC_TITLE
+    tokens (course-format scaffolding with zero discipline signal) but the
+    assigned discipline is SPECIFIC. Typical fix: blank the discipline so
+    the curator can decide — the title can't justify a discipline.
+
+    Guards:
+      * skip Verified / curated (caller's responsibility — already filtered)
+      * skip blank discipline (different rule covers it)
+      * skip if assigned discipline is itself a generic catch-all
+      * skip singletons (corroboration_members < 2)
+      * skip if the row's subject is in the lexicon's subject_map and maps
+        to the assigned discipline (positive subject-code evidence — the
+        assignment is corroborated even with a generic title)
+      * skip if the title has no tokens (e.g. punctuation-only)
+
+    Example flag: AB M1012 "SkillsUSA" assigned to Auto Body Technology.
+    SkillsUSA is a competition program label; doesn't say which discipline.
+    """
+    disc = rec.get("discipline")
+    title = rec.get("common_title") or ""
+    if not disc or not title:
+        return False
+    if disc in GENERIC_DISCIPLINES:
+        return False
+    if (rec.get("corroboration_members") or 0) < 2:
+        return False
+    t = _title_tokens(title)
+    if not t:
+        return False
+    if not (t <= STRICT_GENERIC_TITLE):
+        return False
+    # subject_map corroboration guard — if subject unambiguously maps to
+    # this discipline per the lexicon, the title-generic-ness is moot.
+    subj = rec.get("subject") or ""
+    if subject_map and subject_map.get(subj) == disc:
+        return False
+    return True
 
 
 def _classify_title_mismatch(rec, disc_bag):
@@ -567,6 +647,7 @@ def main():
     except FileNotFoundError:
         lex = {}
     disc_bag = _build_disc_bag(courses, lex)
+    subject_map = (lex or {}).get("subject_map", {})
 
     # Build cluster targets from merge_into.
     cluster_members = defaultdict(list)  # cluster_id -> [member_id, ...]
@@ -595,7 +676,7 @@ def main():
         # a non-default state for any row, inline ONLY that field here.
         mc = {}
         f_score, m_score = _compute_scores(faculty, _virtual_mc(mc))
-        tags = _tags_for_mid(rec, faculty, disc_bag=disc_bag)
+        tags = _tags_for_mid(rec, faculty, disc_bag=disc_bag, subject_map=subject_map)
         card = {
             "row_id": course_id,
             "row_kind": "Course",
@@ -713,7 +794,7 @@ def _write_outputs(cards):
         "_rules_active": [
             "seed_untouched_discipline", "blank_discipline", "blank_description",
             "subject_spread_high_low_confidence", "mid_id_off_scheme",
-            "discipline_title_mismatch",
+            "discipline_title_mismatch", "generic_title_concrete_discipline",
             "cluster_blanks_when_aggregatable", "cluster_members_too_sparse",
             "cluster_id_off_scheme", "uc_cur_ripe_for_promotion",
             "cluster_member_unresolved",
