@@ -1,0 +1,114 @@
+name: Phase 1e — Sync Canonical SUBJ4 + Dry-Run
+
+# One-shot, manual-dispatch only. Pulls curator edits from Supabase
+# kb_curation (rows with course_id like '_CANON_SUBJ4::%') into
+# kb/discipline_canonical_subj4.json, re-runs the dry-run, commits both
+# the synced canonical map and the refreshed kb/subj4_dryrun/* artifacts
+# to main. Intended to be triggered when curators have edited the
+# Canonical SUBJ4 tab and we need the apply-gate signal refreshed.
+#
+# This workflow exists separately from daily-dashboard.yml (intentionally
+# simplified to not run curation overlay syncs daily). Delete this file
+# after Session 5c lands if the simplified daily cron is the desired
+# steady state.
+#
+# ── SAFETY: curator edits can never be overwritten ────────────────────
+#
+# This workflow runs ONLY `_apply_canonical_subj4.py`, which is a
+# Supabase → JSON one-way pull. The script's invariants:
+#
+#   * Supabase `kb_curation` (course_id like '_CANON_SUBJ4::*') IS the
+#     source of truth for curator decisions. The JSON is a snapshot.
+#   * Disciplines NOT present in Supabase are untouched in the JSON —
+#     the script iterates over Supabase rows, not JSON entries. So a
+#     manually-edited JSON entry that isn't in Supabase survives.
+#   * Disciplines IN Supabase overwrite the JSON entry — but since
+#     Supabase carries the latest curator edit, "overwriting" the JSON
+#     means "synchronizing it to the latest curator state," not
+#     clobbering.
+#   * Invalid SUBJ4 values (anything not [A-Z]{4}) are REJECTED, not
+#     applied, so a malformed edit doesn't corrupt the JSON.
+#
+# Separately, `_seed_canonical_subj4.py` (NOT run by this workflow) is
+# regen-safe: it preserves any entry with a non-null `reviewed_at` when
+# re-generating the variant-distribution snapshot.
+#
+# The simplified daily-dashboard.yml does not run any sync, so the daily
+# cron cannot touch kb/discipline_canonical_subj4.json at all.
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: phase-1e-sync
+  cancel-in-progress: false
+
+jobs:
+  sync-and-dryrun:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # No third-party deps required — _apply_canonical_subj4.py + _subj4_dryrun.py
+      # use only the Python stdlib.
+
+      - name: Sync Canonical SUBJ4 curator edits (Supabase → JSON)
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          if [ -z "${SUPABASE_SERVICE_KEY:-}" ]; then
+            echo "::error::SUPABASE_SERVICE_KEY secret not set — cannot sync."
+            exit 1
+          fi
+          python kb/_apply_canonical_subj4.py
+
+      - name: Run SUBJ4 canonicalization dry-run
+        run: python kb/_subj4_dryrun.py
+
+      - name: Commit synced canonical map + refreshed dry-run artifacts
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add kb/discipline_canonical_subj4.json kb/subj4_dryrun/
+          if git diff --cached --quiet; then
+            echo "No changes to commit (canonical map matches Supabase + dry-run output stable)."
+            exit 0
+          fi
+          git commit -m "Phase 1e: sync Canonical SUBJ4 curator edits + refresh dry-run
+
+          Pulled curator edits from Supabase kb_curation (_CANON_SUBJ4::* rows)
+          into kb/discipline_canonical_subj4.json and re-ran the dry-run.
+          Triggered via workflow_dispatch — Session 5c gating signal."
+          # Retry push with rebase on non-fast-forward (handles concurrent pushes).
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded on attempt $attempt."
+              break
+            fi
+            echo "Push attempt $attempt failed — rebasing and retrying."
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((attempt * 2))
+          done
+
+      - name: Summary
+        run: |
+          {
+            echo "### Phase 1e — Canonical SUBJ4 sync + dry-run"
+            echo
+            echo "Curator edits pulled from Supabase and dry-run refreshed."
+            echo "Open \`kb/subj4_dryrun/report.md\` on \`main\` for the apply-gate signal."
+          } >> "$GITHUB_STEP_SUMMARY"
