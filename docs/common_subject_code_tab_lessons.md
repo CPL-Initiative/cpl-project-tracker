@@ -302,6 +302,107 @@ nullable and ignored by all consumer code that doesn't know about
 them, so a partial rollback (revert code but leave columns in place)
 also works.
 
+## 2026-05-23 (later) — PRs E + F shipped + security baseline staged
+
+PRs E (local-variants data refresh) and F (column centering prototype)
+landed in the same session as A–D. Plus all three stages of the
+Dependabot baseline merged.
+
+### PR E (#109) — local-variants pipeline
+
+The Variants column was showing the MID-aggregated SUBJ4 distribution,
+which post-Phase-1e-apply is uniform (every MID in a discipline carries
+the canonical SUBJ4). Replaced with raw college subject codes sourced
+from `kb/coci_minted_memberships.json` (corroborated MIDs' member.subject)
+and `kb/coci_minted_singletons.json` (each singleton's own subject).
+
+Pipeline change in `kb/_seed_canonical_subj4.py`:
+- New `local_subject_variants` field per discipline — top-40 raw codes
+  + counts (truncation flag for transparency)
+- `local_subject_total` for the full-aggregate denominator
+- `data_modal` / `data_modal_is_4letter` / `data_modal_share` now
+  computed from LOCAL variants (the "Most-used locally" column reflects
+  real local usage instead of the post-canonicalization uniform aggregate)
+- `variants_observed` kept as audit-trail (future re-mint replay
+  sanity-check), just no longer rendered in the UI
+
+UI change in `canonical_subj4.js`:
+- New `variantsFor(entry)` helper — prefers `local_subject_variants`,
+  falls back to `variants_observed` for older seed files
+- Variants cell + modal + sort getter + rekey-impact calc all switched
+
+**Before / after examples:**
+- Sign Language American: `{SLNA: 92}` → ASL(423), SIGN(97), DEAF(74),
+  AMSL(38), SL(23), "A S L"(17), DFST(17), SLAN(13), …
+- Auto Body Technology: `{AUTB: 196}` → AB(77), APPR(69), ACRP(48),
+  ABDY(13), ABOD(8), AUTOBODY(8), AUB(7), …
+- Physical Education: `{PHYS: …}` → PE(1047), ATHL(501), KINA(226),
+  ATH(214), ES/A(165), KIN(165), PEAC(159), EXSC(153), … (+151 more)
+
+**Side benefit:** CID/CCN match badges in the variants modal now check
+against ALL local codes (BI, BIO, BIOL all separately), not just the
+MID-aggregated SUBJ4 — richer matches.
+
+### PR F (#110) — column centering prototype
+
+6 lines of CSS scoped to `#tab-canonical-subj4`:
+```css
+.cs-table th, .cs-table td { text-align:center; vertical-align:middle; }
+.cs-table th:first-child, .cs-table td:first-child { text-align:left; }
+.cs-table td:has(textarea) { text-align:left; }
+```
+
+The `:has(textarea)` selector keeps the Notes cell left-aligned so the
+textarea sits flush rather than oddly centered. Supported in all modern
+browsers (Chrome 105+, Firefox 121+, Safari 15.4+ — all 2022+).
+
+**Per the agreed plan**, this is the PROTOTYPE. Global sweep (CSC-G on
+the roadmap) gated on curator eyeball of the CSC-F prototype before
+applying to CCR, KPI cards, projects grid, exhibit analysis tables with
+per-table opt-outs for tables with asymmetric column intent.
+
+### Security baseline — all 3 stages merged
+
+Stages flowed cleanly:
+- **Stage 1** (#105 python-docx, #106 requests): merged after rebase
+- **Stage 2** (#102 actions/checkout v4→v6, #104 actions/setup-python
+  v5→v6): merged together as workflow-runtime infra
+- **Stage 3** (#103 github/codeql-action v3→v4): merged last; CodeQL v4
+  successfully analyzed our code on its own PR — strongest signal
+
+The TruffleHog flag issue from the first CI runs (we fixed across two
+attempts: gitleaks-action license → TruffleHog, then `--only-verified`
+→ `--results=verified,unknown`) hasn't recurred. PR E + PR F both
+passed the new scan cleanly.
+
+### Lesson: idempotent rebase + Dependabot
+
+When two Dependabot PRs touch the same manifest (`requirements.txt`),
+the second one needs a rebase after the first merges. Solution:
+comment `@dependabot rebase` on the second PR — Dependabot regenerates
+the diff on top of the new manifest state, CI re-runs, then it merges
+cleanly. The whole flow is hands-off after the comment.
+
+### Lesson: stateful-input render refactor pays multiple ways
+
+The PR D refactor (toolbar built once, body re-renders on state change)
+was framed as a search-focus bug fix, but it also makes the tab
+faster (no element churn per keystroke) and sets a pattern for future
+tabs. Any tab with editable inputs + filter state should follow the
+same separation.
+
+### Next session — exhibit-canonicalization revisit
+
+User flagged a pivot to the credential-identity layer (`kb/unified_titles.json`
++ `kb/credentials.json` per `kb/README.md`). The CSC tab work shipped
+infrastructure (validate workflow + Supabase schema for two-stage
+curation + local-variants aggregation pattern + reusable curator-tab
+shell) that may inform the exhibit layer's evolution.
+
+Likely first task: audit `.claude/skills/exhibit-canonicalization/SKILL.md`
++ `docs/exhibit_unification_vision.md` against what's now live, find
+the gaps + propose a scoped plan.
+
 ---
 
 **See also:** [`CLAUDE.md §11`](../CLAUDE.md) for the M-ID lifecycle
