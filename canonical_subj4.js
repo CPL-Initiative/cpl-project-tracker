@@ -24,6 +24,10 @@
   var FIELD_CANON = "canonical_subj4";
   var FIELD_NOTES = "canonical_subj4_notes";
   var SUBJ4_RE = /^[A-Z]{4}$/;
+  // Two-stage curation: a row goes review (reviewed_at) -> validate
+  // (validated_at). The validate stage is gated on the row being reviewed.
+  var FIELD_VALIDATED_AT = "validated_at";
+  var FIELD_VALIDATED_BY = "validated_by";
 
   function el(tag, attrs, kids) {
     var n = document.createElement(tag);
@@ -102,6 +106,28 @@
     });
   }
 
+  // Two-stage curation: PATCH the canonical_subj4 row for this discipline to
+  // stamp validated_at = now() and validated_by = signed-in user. The
+  // validate stage is meaningful at the DISCIPLINE level, not per-field, but
+  // we attach it to the canonical_subj4 row as the "primary" curation row.
+  // kb/_apply_canonical_subj4.py reads validated_at across all rows and takes
+  // the MAX, so any row carrying validated_at is enough to mark the
+  // discipline validated.
+  function saveValidate(discipline, sess) {
+    var qs = "course_id=eq." + encodeURIComponent(KEY_PREFIX + discipline)
+           + "&field=eq." + encodeURIComponent(FIELD_CANON);
+    var nowIso = new Date().toISOString();
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?" + qs, {
+      method: "PATCH",
+      headers: {
+        "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
+        "Content-Type": "application/json",
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify({ validated_at: nowIso, validated_by: sess.email })
+    });
+  }
+
   // ─── data ──────────────────────────────────────────────────────────────────
   // Fetch the seed file at runtime. Lives under kb/ in the repo and is served
   // by GH Pages as a sibling URL. Falls back to an empty state on 404 so a
@@ -150,7 +176,8 @@
   }
 
   // Merge an overlay record onto a seed entry. Overlay wins; reviewed_by / _at
-  // are surfaced from the overlay so a fresh save bumps them on screen.
+  // and validated_by / _at are surfaced from the overlay so a fresh save bumps
+  // them on screen.
   function applyOverlay(entry, ov) {
     if (!ov) return entry;
     var merged = Object.assign({}, entry);
@@ -164,11 +191,25 @@
       merged.reviewed_by = ov.reviewed_by;
       merged.needs_review = false;
     }
+    if (ov.validated_at) {
+      merged.validated_at = ov.validated_at;
+      merged.validated_by = ov.validated_by;
+    }
     return merged;
   }
 
+  // Status state machine — two-stage:
+  //   needs review  → curator hasn't set a canonical
+  //   pre-seeded    → canonical was auto-seeded from data-modal (4-letter modal)
+  //   reviewed      → curator explicitly set canonical (Supabase reviewed_at)
+  //   validated     → faculty validator confirmed (Supabase validated_at)
+  //   invalid       → saved canonical isn't 4 letters
   function status(entry) {
     var c = entry.canonical_subj4;
+    if (entry.validated_at) {
+      if (!c || !SUBJ4_RE.test(c)) return { label: "invalid", cls: "warn" };
+      return { label: "validated", cls: "ok" };
+    }
     if (entry.reviewed_at) {
       if (!c || !SUBJ4_RE.test(c)) return { label: "invalid", cls: "warn" };
       return { label: "reviewed", cls: "ok" };
@@ -207,7 +248,7 @@
     // the modal opener.
     var btn = el("button", {
       class: "cs-var-show", type: "button",
-      title: "Show all variants for this discipline (including any matching C-IDs/CCNs)",
+      title: "Show all variants for this discipline (including any matching CIDs/CCNs)",
     }, [hidden > 0 ? "Show all (" + pairs.length + ") →" : "Show details →"]);
     btn.onclick = function () { openVariantsModal(entry); };
     td.appendChild(document.createTextNode(" "));
@@ -230,7 +271,7 @@
 
     body.innerHTML = "";
     body.appendChild(el("p", { class: "cs-modal-meta" }, [
-      String(entry.total_mids || 0) + " M-IDs across " + variants.length + " distinct codes. " +
+      String(entry.total_mids || 0) + " MIDs across " + variants.length + " distinct codes. " +
       "Bold yellow = the most-used code today; green = curator-confirmed canonical."
     ]));
 
@@ -243,7 +284,7 @@
       var cls = "cs-var-chip" + (isCanon ? " canonical" : isModal ? " modal" : "");
       var chip = el("div", { class: cls });
       chip.appendChild(el("span", { class: "cs-var-code" }, [p[0]]));
-      chip.appendChild(document.createTextNode(" · " + p[1] + " M-IDs"));
+      chip.appendChild(document.createTextNode(" · " + p[1] + " MIDs"));
       if (isCanon) chip.appendChild(el("span", { class: "cs-var-flag" }, ["canonical"]));
       else if (isModal) chip.appendChild(el("span", { class: "cs-var-flag" }, ["most-used"]));
       grid.appendChild(chip);
@@ -263,7 +304,7 @@
     });
 
     if (cidHits.length) {
-      body.appendChild(el("h5", null, ["C-IDs that share one of these subjects (" + cidHits.length + ")"]));
+      body.appendChild(el("h5", null, ["CIDs that share one of these subjects (" + cidHits.length + ")"]));
       var cidGrid = el("div", { class: "cs-var-grid" });
       cidHits.sort(function (a, b) { return a.id.localeCompare(b.id); }).forEach(function (h) {
         var chip = el("div", { class: "cs-var-chip", title: h.title });
@@ -287,7 +328,7 @@
     if (!cidHits.length && !ccnHits.length) {
       body.appendChild(el("h5", null, ["Official identifiers"]));
       body.appendChild(el("p", { class: "cs-modal-meta" }, [
-        "No C-IDs or CCNs share any of the subject codes above. (Either this discipline has no official identifiers yet, or it uses different subject codes than the official systems.)"
+        "No CIDs or CCNs share any of the subject codes above. (Either this discipline has no official identifiers yet, or it uses different subject codes than the official systems.)"
       ]));
     }
 
@@ -309,18 +350,24 @@
     cidBySubj: {},
     ccnBySubj: {},
     filter: "all",
+    topFilter: "all",            // TOP 2-digit category filter; "all" = no filter
+    grouped: true,               // Group rows under TOP 2-digit category headers
+    collapsedCats: {},           // {top_cat_2digit: bool} — collapsed category groups
     search: "",
     // Sort: default is re-key impact (descending). Curator clicks a sortable
     // header to override. Click again to flip direction. Clicking another
-    // header switches the active column.
+    // header switches the active column. When grouped, sort applies WITHIN
+    // each category group.
     sort: { key: "_impact", dir: "desc" },
     sess: null,
   };
 
   // Sortable column descriptors: key = sort key on the row object, getter =
-  // value extractor. Status uses an ordering enum so "reviewed" sorts above
-  // "pre-seeded" above "needs review" above "invalid" by default.
-  var STATUS_ORDER = { "reviewed": 0, "pre-seeded": 1, "needs review": 2, "invalid": 3 };
+  // value extractor. Status uses an ordering enum so "validated" sorts above
+  // "reviewed" above "pre-seeded" above "needs review" above "invalid" by
+  // default.
+  var STATUS_ORDER = { "validated": 0, "reviewed": 1, "pre-seeded": 2, "needs review": 3, "invalid": 4 };
+  var CTE_ORDER = { "all": 0, "most": 1, "mixed": 2, "none": 3 };
   var SORT_GETTERS = {
     discipline: function (e) { return (e.discipline || "").toLowerCase(); },
     total_mids: function (e) { return e.total_mids || 0; },
@@ -328,6 +375,8 @@
     data_modal: function (e) { return (e.data_modal || "").toLowerCase(); },
     canonical_subj4: function (e) { return (e.canonical_subj4 || "~").toLowerCase(); }, // ~ sorts blanks last
     status: function (e) { return STATUS_ORDER[status(e).label] || 99; },
+    top_4digit: function (e) { return e.top_modal_4digit || "~"; },
+    cte: function (e) { return CTE_ORDER[e.cte_flag] || 99; },
     reviewed_by: function (e) { return (e.reviewed_by || "~").toLowerCase(); },
     _impact: function (e) { return e._impact || 0; },
   };
@@ -362,7 +411,8 @@
       ["all", "All disciplines"],
       ["needs_review", "Needs curator review"],
       ["pre_seeded", "Pre-seeded (data-modal already 4-letter)"],
-      ["reviewed", "Reviewed"],
+      ["reviewed", "Reviewed (awaiting validation)"],
+      ["validated", "Validated (faculty-confirmed)"],
       ["invalid", "Invalid (saved value not 4 letters)"],
     ].forEach(function (opt) {
       var o = el("option", { value: opt[0] }, [opt[1]]);
@@ -371,6 +421,39 @@
     });
     sel.onchange = function () { state.filter = this.value; render(); };
     tb.appendChild(sel);
+
+    // TOP category filter — 2-digit code dropdown. Populates from seed's
+    // distinct top_category_2digit values so we don't list categories that
+    // have no disciplines in this dataset.
+    if (state.seed) {
+      var cats = {};
+      Object.keys(state.seed.disciplines || {}).forEach(function (d) {
+        var e = state.seed.disciplines[d];
+        if (e.top_category_2digit) {
+          cats[e.top_category_2digit] = e.top_category_title || e.top_category_2digit;
+        }
+      });
+      var topSel = el("select", { class: "cs-filter", id: "cs-top-filter", title: "Filter by TOP 2-digit category" });
+      topSel.appendChild(el("option", { value: "all" }, ["TOP: any"]));
+      Object.keys(cats).sort().forEach(function (k) {
+        var o = el("option", { value: k }, [k + " — " + cats[k]]);
+        if (k === state.topFilter) o.selected = true;
+        topSel.appendChild(o);
+      });
+      topSel.onchange = function () { state.topFilter = this.value; render(); };
+      tb.appendChild(topSel);
+    }
+
+    // Group toggle — when on, rows render under collapsible 2-digit TOP
+    // category headers. When off, the table is flat (sort + filter only).
+    var groupLabel = el("label", { class: "cs-flag-toggle", title: "Group rows under TOP category headers" });
+    var groupCb = el("input", { type: "checkbox", id: "cs-group" });
+    groupCb.checked = !!state.grouped;
+    groupCb.onchange = function () { state.grouped = this.checked; render(); };
+    groupLabel.appendChild(groupCb);
+    groupLabel.appendChild(document.createTextNode(" Group by TOP"));
+    tb.appendChild(groupLabel);
+
     // Search — typeahead via native <datalist>. Browser shows a dropdown of
     // matching disciplines as the curator types; picking one (or typing a
     // full match) filters the table to just rows containing the term.
@@ -427,7 +510,9 @@
     if (state.filter === "needs_review" && s.label !== "needs review") return false;
     if (state.filter === "pre_seeded" && s.label !== "pre-seeded") return false;
     if (state.filter === "reviewed" && s.label !== "reviewed") return false;
+    if (state.filter === "validated" && s.label !== "validated") return false;
     if (state.filter === "invalid" && s.label !== "invalid") return false;
+    if (state.topFilter !== "all" && entry.top_category_2digit !== state.topFilter) return false;
     return true;
   }
 
@@ -473,13 +558,17 @@
     // current state (▲ asc / ▼ desc / ↕ inactive).
     var COLS = [
       { key: "discipline",       label: "Discipline" },
-      { key: "total_mids",       label: "M-IDs",     title: "Number of cross-college course identities in this discipline." },
-      { key: "variants_count",   label: "Variants",  title: "Different 4-letter subject codes colleges currently use for this discipline. Click the chip to see all + any matching C-IDs/CCNs." },
+      { key: "total_mids",       label: "MIDs",      title: "Number of cross-college course identities (MIDs) in this discipline." },
+      { key: "variants_count",   label: "Variants",  title: "Different 4-letter subject codes colleges currently use for this discipline. Click the chip to see all + any matching CIDs/CCNs." },
       { key: "data_modal",       label: "Most-used today", title: "The most-used code across colleges today. If shorter than 4 letters, pick a 4-letter expansion in the Canonical column." },
       { key: "canonical_subj4",  label: "Canonical *", title: "Required: exactly 4 uppercase letters (A–Z)." },
+      { key: "top_4digit",       label: "TOP",       title: "Modal TOP 4-digit category for this discipline (from the 2023 CCC Taxonomy of Programs Manual). Hover the cell for the 6-digit code + program title." },
+      { key: "cte",              label: "CTE",       title: "Career Technical Education designation per the 2023 TOP Manual (asterisk-marked codes). 'all' = every MID is CTE; 'most' / 'mixed' / 'none' summarize the share." },
+      { key: null,               label: "CIP",       title: "CIP (Classification of Instructional Programs) — placeholder. The CCCCO is transitioning from TOP to CIP; column will populate when the mapping finalizes." },
       { key: "status",           label: "Status" },
       { key: null,               label: "Notes" },
       { key: "reviewed_by",      label: "Reviewed" },
+      { key: null,               label: "Validate", title: "Faculty validators confirm a reviewed row by clicking the button. Same allowed reviewers can validate; validation marks the row faculty-approved." },
     ];
     var headerRow = el("tr");
     COLS.forEach(function (col) {
@@ -508,7 +597,39 @@
     var thead = el("thead", null, [headerRow]);
     table.appendChild(thead);
     var tbody = el("tbody");
-    filtered.forEach(function (e) { tbody.appendChild(rowFor(e)); });
+    var colCount = COLS.length;
+    if (state.grouped) {
+      // Group by TOP 2-digit category, ordered by code (01, 02, …). Rows
+      // without a top_category_2digit go under a "Uncategorized" group last.
+      var groups = {};
+      filtered.forEach(function (e) {
+        var k = e.top_category_2digit || "~~";
+        (groups[k] = groups[k] || []).push(e);
+      });
+      var keys = Object.keys(groups).sort();
+      keys.forEach(function (k) {
+        var rows = groups[k];
+        var title = k === "~~" ? "(Uncategorized)" :
+          (k + " — " + (rows[0].top_category_title || "TOP " + k));
+        var collapsed = !!state.collapsedCats[k];
+        var hr = el("tr", { class: "cs-cat-header" + (collapsed ? " collapsed" : "") });
+        var td = el("td", { colspan: String(colCount) });
+        td.innerHTML = (collapsed ? "▶ " : "▼ ") +
+          "<strong>" + title + "</strong> " +
+          "<span style='color:#6b7280;font-weight:400'>· " + rows.length + " discipline" + (rows.length === 1 ? "" : "s") + "</span>";
+        td.style.cursor = "pointer";
+        (function (key) {
+          td.onclick = function () { state.collapsedCats[key] = !state.collapsedCats[key]; render(); };
+        })(k);
+        hr.appendChild(td);
+        tbody.appendChild(hr);
+        if (!collapsed) {
+          rows.forEach(function (e) { tbody.appendChild(rowFor(e)); });
+        }
+      });
+    } else {
+      filtered.forEach(function (e) { tbody.appendChild(rowFor(e)); });
+    }
     table.appendChild(tbody);
     wrap.appendChild(table);
   }
@@ -567,7 +688,7 @@
     };
     input.onkeydown = function (e) { if (e.key === "Enter") input.blur(); };
     var tdCanon = el("td", null, [input]);
-    // C-ID / CCN match badges — count official identifiers whose subject
+    // CID / CCN match badges — count official identifiers whose subject
     // equals the canonical SUBJ4 (or, if no canonical set yet, falls back
     // to the data modal so the curator still sees what's out there).
     // Click goes nowhere — full list lives in the variants modal.
@@ -578,8 +699,8 @@
       if (nCid > 0) {
         tdCanon.appendChild(el("span", {
           class: "cs-id-badge cid",
-          title: nCid + " C-ID descriptor" + (nCid === 1 ? "" : "s") + " use subject " + matchSubj,
-        }, ["C-ID·" + nCid]));
+          title: nCid + " CID descriptor" + (nCid === 1 ? "" : "s") + " use subject " + matchSubj,
+        }, ["CID·" + nCid]));
       }
       if (nCcn > 0) {
         tdCanon.appendChild(el("span", {
@@ -589,6 +710,43 @@
       }
     }
     tr.appendChild(tdCanon);
+
+    // TOP cell — 4-digit modal code; tooltip shows the 6-digit code + program title
+    var tdTop = el("td", { class: "cs-mono" });
+    if (entry.top_modal_4digit) {
+      var topText = entry.top_modal_4digit;
+      var topTip = entry.top_modal_6digit
+        ? (entry.top_modal_6digit + " — " + (entry.top_modal_title || ""))
+        : "";
+      tdTop.appendChild(el("span", { title: topTip }, [topText]));
+    } else {
+      tdTop.appendChild(document.createTextNode("—"));
+    }
+    tr.appendChild(tdTop);
+
+    // CTE cell — show the flag as a badge with color reflecting the share
+    var tdCte = el("td");
+    if (entry.cte_flag && entry.cte_flag !== "none") {
+      var cls = entry.cte_flag === "all" ? "ok"
+              : entry.cte_flag === "most" ? "ok"
+              : entry.cte_flag === "mixed" ? "mix" : "muted";
+      var share = Math.round((entry.cte_share || 0) * 100);
+      var label = entry.cte_flag === "all" ? "Y (all)"
+                : entry.cte_flag === "most" ? "Y (" + share + "%)"
+                : "mixed (" + share + "%)";
+      tdCte.appendChild(el("span", {
+        class: "cs-badge " + cls,
+        title: "CTE-designated MIDs: " + share + "% (" + (entry.cte_known_n || 0) + " of " +
+               ((entry.cte_known_n || 0) + (entry.cte_unknown_n || 0)) + " with known TOP). Source: 2023 CCC TOP Manual.",
+      }, [label]));
+    } else {
+      tdCte.appendChild(el("span", { class: "cs-badge muted", title: "No CTE-designated TOP codes in this discipline." }, ["—"]));
+    }
+    tr.appendChild(tdCte);
+
+    // CIP placeholder column — CCCCO is transitioning from TOP to CIP; column
+    // exists to reassure users that we're planning for it. Always blank today.
+    tr.appendChild(el("td", { class: "cs-mono", style: "color:#9ca3af", title: "CIP code — placeholder. The CCCCO is transitioning from TOP to CIP; column will populate when the mapping finalizes." }, ["—"]));
 
     var st = status(entry);
     tr.appendChild(el("td", null, [el("span", { class: "cs-badge " + st.cls }, [st.label])]));
@@ -616,12 +774,50 @@
     tr.appendChild(el("td", null, [ta]));
 
     var rev = el("td", { class: "cs-reviewed" });
-    if (entry.reviewed_at && entry.reviewed_by) {
+    if (entry.validated_at && entry.validated_by) {
+      // Two-line: validator (top) + reviewer (bottom) when both exist.
+      rev.innerHTML = "✓ <strong>" + (entry.validated_by || "").split("@")[0] + "</strong> · " + entry.validated_at.slice(0, 10);
+      if (entry.reviewed_by && entry.reviewed_at) {
+        rev.innerHTML += "<br><span style='color:#9ca3af;font-size:.7rem'>rev. " +
+          (entry.reviewed_by || "").split("@")[0] + " · " + entry.reviewed_at.slice(0, 10) + "</span>";
+      }
+    } else if (entry.reviewed_at && entry.reviewed_by) {
       rev.textContent = (entry.reviewed_by || "").split("@")[0] + " · " + entry.reviewed_at.slice(0, 10);
     } else {
       rev.textContent = "—";
     }
     tr.appendChild(rev);
+
+    // Validate cell — button enabled only when row is reviewed (not yet
+    // validated) AND the curator is signed in. Same allowed_reviewers can
+    // validate (per the schema migration's RLS policy).
+    var tdValidate = el("td");
+    var st2 = status(entry);
+    if (st2.label === "validated") {
+      tdValidate.appendChild(el("span", { class: "cs-badge ok", title: "Validated " + (entry.validated_at || "").slice(0, 10) + " by " + (entry.validated_by || "") }, ["✓ validated"]));
+    } else if (st2.label === "reviewed" && state.sess) {
+      var vb = el("button", { type: "button", class: "cs-validate-btn", title: "Mark this row faculty-validated" }, ["Validate"]);
+      vb.onclick = function () {
+        if (!confirm("Validate " + entry.discipline + "?\n\nThis marks the row faculty-confirmed. Same allowed-reviewers can validate.")) return;
+        vb.disabled = true;
+        vb.textContent = "Validating…";
+        saveValidate(entry.discipline, state.sess)
+          .then(function (r) {
+            if (!r.ok) { vb.disabled = false; vb.textContent = "Validate"; toast("Validate failed (" + r.status + ")", true); return; }
+            var rec = state.overlay[entry.discipline] = state.overlay[entry.discipline] || {};
+            rec.validated_at = new Date().toISOString();
+            rec.validated_by = state.sess.email;
+            toast("Validated · " + entry.discipline);
+            render();
+          })
+          .catch(function () { vb.disabled = false; vb.textContent = "Validate"; toast("Validate failed (network)", true); });
+      };
+      tdValidate.appendChild(vb);
+    } else {
+      tdValidate.appendChild(el("span", { class: "cs-muted-dash", title: st2.label === "validated" ? "" : "Validation is only available for reviewed rows." }, ["—"]));
+    }
+    tr.appendChild(tdValidate);
+
     return tr;
   }
 

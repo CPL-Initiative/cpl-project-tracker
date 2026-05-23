@@ -8189,7 +8189,7 @@ Cont</td>
             #tab-canonical-subj4 .cs-variants { color:#475569; font-size:.78rem; max-width:42ch; }
             #tab-canonical-subj4 .cs-variants .cs-var-modal { font-weight:700; color:#0A2240; }
             #tab-canonical-subj4 .cs-variants .cs-var-other { color:#64748b; }
-            #tab-canonical-subj4 input.cs-canon { font-family:ui-monospace,Menlo,monospace; text-transform:uppercase; width:5.5ch; padding:4px 6px; border:1px solid #cbd5e1; border-radius:5px; font-size:.85rem; letter-spacing:0.5px; }
+            #tab-canonical-subj4 input.cs-canon { font-family:ui-monospace,Menlo,monospace; text-transform:uppercase; width:7ch; padding:3px 6px; border:1px solid #cbd5e1; border-radius:5px; font-size:.78rem; letter-spacing:0.25px; }
             #tab-canonical-subj4 input.cs-canon.cs-invalid { border-color:#dc2626; background:#fef2f2; }
             #tab-canonical-subj4 input.cs-canon.cs-saved { border-color:#16a34a; background:#f0fdf4; }
             #tab-canonical-subj4 textarea.cs-notes { width:30ch; min-height:34px; resize:vertical; font-size:.78rem; padding:4px 6px; border:1px solid #cbd5e1; border-radius:5px; }
@@ -8248,6 +8248,17 @@ Cont</td>
             #tab-canonical-subj4 .cs-sort-indicator.active { opacity:1; color:#C9A84C; }
             /* Wider search box */
             #tab-canonical-subj4 input.cs-search-wide { min-width:280px; }
+            /* TOP category headers (when grouping is on) */
+            #tab-canonical-subj4 tr.cs-cat-header td { background:#F1F5F9; color:#0A2240; padding:8px 12px; font-size:.85rem; border-top:2px solid #94A3B8; }
+            #tab-canonical-subj4 tr.cs-cat-header:hover td { background:#E2E8F0; }
+            #tab-canonical-subj4 tr.cs-cat-header.collapsed td { background:#F8FAFC; border-bottom:1px solid #cbd5e1; }
+            /* Validate button */
+            #tab-canonical-subj4 button.cs-validate-btn { background:#0A2240; color:#fff; border:none; padding:4px 12px; border-radius:5px; font-size:.78rem; cursor:pointer; font-weight:600; }
+            #tab-canonical-subj4 button.cs-validate-btn:hover:not(:disabled) { background:#0d2c52; }
+            #tab-canonical-subj4 button.cs-validate-btn:disabled { background:#9ca3af; cursor:not-allowed; }
+            #tab-canonical-subj4 .cs-muted-dash { color:#cbd5e1; font-size:.85rem; }
+            /* Group-by toggle inline flag */
+            #tab-canonical-subj4 .cs-flag-toggle { display:inline-flex; align-items:center; gap:4px; font-size:.85rem; color:#374151; padding:0 6px; }
         </style>
         <h2>Common Subject Code <span class="cs-stamp draft">Development Draft</span> <span class="cs-stamp">curator-edited</span><br><span class="cs-sub">— one shared 4-letter abbreviation per discipline</span></h2>
         <p class="cs-intro"><strong>This is a development draft — nothing here is final.</strong> Different colleges abbreviate the same discipline different ways. Sign Language American shows up across 10 different codes (ASL, AMSL, DEAF, SIGN, …); Physical Education across 71. This page picks <strong>one 4-letter code per discipline</strong> so the dashboard uses a single, consistent label everywhere. Click the <strong>Canonical</strong> cell on a row to set or change a code, add notes if you'd like, then a faculty validator confirms when you're done.</p>
