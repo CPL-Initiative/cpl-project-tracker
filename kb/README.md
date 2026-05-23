@@ -35,6 +35,10 @@ There are **two** layers:
 | `_infer_disciplines_from_top.py` | Course | **Re-runnable** TOP-aware discipline inference (highest-yield): maps each blank course's `top_code` → MQ discipline via `top_discipline_map.json`. Stamps `discipline_source="top_code"` at confidence 0.5. Skips reviewed/curated + the coarse catch-all TOP codes (omitted from the map); fills blanks only. | — |
 | `top_discipline_map.json` | Course | Authored TOP code → MQ discipline map for the pass above. Only codes whose TOP program title pins ONE MQ discipline; coarse `4930.xx` / `*99 Other` / `* General` buckets deliberately omitted. Validated against `mq_disciplines.json`. | TOP code |
 | `_apply_curation.py` | Course | Sync Supabase `kb_curation` → `coci_curation.json` (needs `SUPABASE_SERVICE_KEY`). Run in the daily workflow; safe to run manually. | — |
+| `discipline_canonical_subj4.json` | Course | **Phase 1e** — curator-confirmed canonical 4-letter SUBJ4 per M-ID discipline. Consumed by the SUBJ4-canonicalization re-mint to fold same-discipline SUBJ4 variants (e.g. ASL/AMSL/DEAF/SIGN/… → one canonical). Edited via the dashboard's **Canonical SUBJ4** tab (writes to Supabase `kb_curation` with synthesized `_CANON_SUBJ4::<discipline>` namespace). | discipline |
+| `_seed_canonical_subj4.py` | Course | **Re-runnable, regen-safe.** Generates `discipline_canonical_subj4.json` by counting SUBJ4 variants per discipline across both `coci_minted_courses.json` + `coci_minted_singletons.json`. Preserves curator-reviewed entries on re-run; only the data-driven fields refresh. | — |
+| `_apply_canonical_subj4.py` | Course | Sync Supabase `_CANON_SUBJ4::*` rows → `discipline_canonical_subj4.json`. Mirrors `_apply_curation.py` pattern; runs in the daily workflow after the main curation sync. Validates 4-letter SUBJ4 before applying. | — |
+| `_subj4_dryrun.py` | Course | **Phase 1e measure-first dry-run.** Re-runnable. Reads the curator-confirmed canonical map, classifies every M-ID's fate, reallocates new course_ids deterministically by `(normalized_title, old_id)`, validates 4 gates, surfaces curated-collision decision points, counts downstream apply scope. Writes `kb/subj4_dryrun/{report.md, alias_map.json, blocked.json, collisions.json}`. Apply-gate signal is the green light for Session 5c. | — |
 | `_seed_top50.py` | Credential | One-shot generator for the Phase 2 hand-curated credential seed. **Do not re-run** — would overwrite human edits. Kept for provenance. | — |
 | `_seed_cx_common_courses.py` | Course | One-shot generator for the Phase 2 Cx seed (AI-assisted draft). **Do not re-run** — would overwrite human edits. Kept for provenance. | — |
 
@@ -117,12 +121,14 @@ never mutates; suggested-fix payloads on aggregable Cluster fields are
 shaped for `_apply_curation.py` to consume in Phase 1b. Run from repo root:
 `python3 kb/_row_audit.py`.
 
-**Active rule set (Phase 1a + 1c, 11 rules):** `seed_untouched_discipline`,
+**Active rule set (Phase 1a + 1c, 12 rules):** `seed_untouched_discipline`,
 `blank_discipline`, `blank_description`, `subject_spread_high_low_confidence`,
 `mid_id_off_scheme`, `discipline_title_mismatch`,
 `generic_title_concrete_discipline`, `top_discipline_disagreement` (with
 SISTER_PAIRS suppression for synonymous-discipline pairs),
-`description_discipline_disagreement`, `cluster_blanks_when_aggregatable`,
+`description_discipline_disagreement`, **`subject_collision_signal`** (Phase 1e
+diagnostic — fires when an M-ID's SUBJ4 ≠ the modal SUBJ4 for its discipline;
+7,203 flags pre-re-mint, target 0 post-re-mint), `cluster_blanks_when_aggregatable`,
 `cluster_id_off_scheme`, `uc_cur_ripe_for_promotion`. The score incorporates
 per-tag penalties (`TAG_PENALTY_ON_DISCIPLINE`) on discipline-related tags so
 multi-signal misassignments score lower than single-signal ones.
@@ -141,6 +147,17 @@ GitHub Actions cron re-runs the auditor and commits the refreshed
 
 **Full decisions / calibration / lessons-learned**:
 [`docs/unified_courses_audit_lessons.md`](../docs/unified_courses_audit_lessons.md).
+
+**SUBJ4-canonicalization re-mint (Phase 1e, in progress 2026-05-23)** — first
+re-mint under the revised Rule 7 staging-phase framing. Folds same-discipline
+SUBJ4 variants (the 2026-05-22 re-mint synthesized SUBJ4 from each M-ID's
+modal local college subject code; the same discipline can therefore spread
+across many SUBJ4 codes — canonical example: 92 "Sign Language, American"
+M-IDs across 10 variants). Sessions 5a (seed + curator tab + audit rule —
+DONE, PR #89) and 5b (measure-first dry-run — DONE) shipped; Session 5c
+(atomic apply) is gated on the curator filling out the canonical map and the
+dry-run reporting "READY FOR APPLY." Full decisions / decisions / lessons:
+[`docs/subj4_canonicalization_remint_lessons.md`](../docs/subj4_canonicalization_remint_lessons.md).
 
 ## Schemas
 
