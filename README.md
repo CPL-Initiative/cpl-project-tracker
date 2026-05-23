@@ -22,7 +22,7 @@ The whole ecosystem, end-to-end:
 
 1. **The public dashboard** (GitHub Pages) — KPI cards, project cards, CPL
    Analytics, Workplan Activities & Projects, Annual Goals, Budget, Vision
-   2030, and a per-college Unified Courses curation tab.
+   2030, and a per-college Common Course Reference curation tab.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,
    then `excel_to_dashboard.py` regenerates the dashboard HTML, exports the
@@ -34,7 +34,10 @@ The whole ecosystem, end-to-end:
    unified course identities using a CCN-aligned surrogate scheme
    (CCN-ID > C-ID > M-ID), with a Phase B fold that consolidates M-IDs
    under official C-ID/CCN anchors when the underlying members agree.
-4. **The Unified Courses curation tab** — authenticated reviewers (Supabase
+4. **The Common Course Reference curation tab** (formerly "Unified Courses" —
+   renamed to avoid UC/University-of-California confusion and to signal that
+   the tab is a *reference faculty consult*, not an authority replacing them) —
+   authenticated reviewers (Supabase
    magic-link auth) curate disciplines, merge variants, and verify
    inferred values. Edits write to a live Supabase table and overlay the
    git-tracked KB.
