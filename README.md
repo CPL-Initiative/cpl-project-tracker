@@ -22,8 +22,10 @@ The whole ecosystem, end-to-end:
 
 1. **The public dashboard** (GitHub Pages) — KPI cards, project cards, CPL
    Analytics, Workplan Activities & Projects, Annual Goals, Budget, Vision
-   2030, a per-college Common Course Reference curation tab, and a focused
-   **Canonical SUBJ4** curator tab for the in-progress Phase 1e re-mint.
+   2030, a per-college **Common Course Reference** curation tab, a
+   **Common Subject Code** tab (faculty-facing per-discipline curation with
+   validate workflow + TOP/CTE/CIP columns + collapsible category groupings),
+   and a **Pipeline** progress board.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,
    then `excel_to_dashboard.py` regenerates the dashboard HTML, exports the
@@ -200,6 +202,9 @@ with openpyxl read-only — never `cat` it.
   lessons (the second re-mint, first under the revised Rule 7 staging
   framing; **complete 2026-05-23** — 65k aliases applied, cleanup receipt
   zero).
+- **`docs/common_subject_code_tab_lessons.md`** — Common Subject Code tab
+  evolution (the four-PR series A → D, 2026-05-23). UX patterns, validate
+  workflow design, TOP/CTE/CIP column rationale, render-refactor lessons.
 - **`docs/exhibit_unification_vision.md`** — the credential-layer
   canonicalization design (synthetic unified-title layer over MAP's freehand
   exhibit titles).
@@ -213,6 +218,11 @@ with openpyxl read-only — never `cat` it.
 - The daily GitHub Actions cron pushes to `main` — coordinate around the
   10:17 UTC window for any shared-system change (Supabase, alias maps).
 - Never force-push `main` (GitHub Pages serves from it).
+- **Every PR runs three security scans** (added 2026-05-23): Dependabot
+  (pip + github-actions, weekly bumps), CodeQL (Python + JavaScript SAST,
+  every push + PR + weekly), and TruffleHog (secret detection with
+  live-verification). Findings show up under **Security → Code scanning
+  alerts**. Dependabot opens PRs you can merge after CI greens.
 - M-IDs are in **staging-cleanup phase** (per CLAUDE.md Rule 7, revised
   2026-05-23). Re-mints are permitted in service of cleanup but must follow
   [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md)
