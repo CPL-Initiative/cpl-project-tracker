@@ -14,18 +14,19 @@ artifacts:
 
 ## TL;DR
 
-- Canonical map: **44 / 144** disciplines reviewed; **100** still need a 4-letter canonical SUBJ4.
+- Canonical map: **144 / 144** disciplines reviewed; **0** still need a 4-letter canonical SUBJ4.
 - M-IDs total: **72481** (corroborated catalog: 16308, singletons: 56173)
-  - **3243** would re-key to new SUBJ4 (minted 747, singletons 2496)
-  - **12908** already on canonical SUBJ4 (no change) (minted 3165, singletons 9743)
-  - **49160** blocked on missing canonical (minted 11130, singletons 38030)
+  - **46123** would re-key to new SUBJ4 (minted 10432, singletons 35691)
+  - **19188** already on canonical SUBJ4 (no change) (minted 4610, singletons 14578)
+  - **0** blocked on missing canonical (minted 0, singletons 0)
   - 7170 skipped (no discipline)
-- Sequence-reallocation buckets: **126** new (SUBJ4, band, kind) buckets contain ≥2 old M-IDs.
+- Sequence-reallocation buckets: **435** new (SUBJ4, band, kind) buckets contain ≥2 old M-IDs.
 
 ## Apply gate (5c readiness)
 
 **🟡 NOT READY for apply** — open items:
-  - 100 disciplines need a curator-confirmed canonical SUBJ4 (fill via the Canonical SUBJ4 tab and re-run this dry-run)
+  - validation failure: `no_seq_overflow`
+  - 1 bucket(s) contain ≥2 curated M-IDs — operator decision required
 
 ## Curation impact
 
@@ -33,102 +34,77 @@ artifacts:
 
 | old_id | fate | new_id | discipline | old → new SUBJ4 |
 |---|---|---|---|---|
-| `AB M1001` | blocked_on_curator | `—` | Auto Body Technology | AB → — |
-| `ABDY M1001` | blocked_on_curator | `—` | Auto Body Technology | ABDY → — |
-| `ABDY M10AA` | blocked_on_curator | `—` | Auto Body Technology | ABDY → — |
+| `AB M1001` | re_key | `AUTB M1002` | Auto Body Technology | AB → AUTB |
+| `ABDY M1001` | re_key | `AUTB M1003` | Auto Body Technology | ABDY → AUTB |
+| `ABDY M10AA` | re_key | `AUTB M10BN` | Auto Body Technology | ABDY → AUTB |
 | `BSIC M9001` | no_change | `BSIC M9001` | Interdisciplinary-Basic Skills: Noncredit 53412 | BSIC → BSIC |
-| `EGDT M1001` | blocked_on_curator | `—` | Drafting/CADD | EGDT → — |
-| `ELET M1001` | blocked_on_curator | `—` | Electricity | ELET → — |
+| `EGDT M1001` | re_key | `DRAF M1002` | Drafting/CADD | EGDT → DRAF |
+| `ELET M1001` | re_key | `ELEC M1028` | Electricity | ELET → ELEC |
 | `UC-CUR-MPG029OM` | cluster_skipped | `—` | — | — → — |
+
+### Curated-M-ID collisions (operator decision points)
+
+These buckets contain ≥2 curated M-IDs whose old keys all rename into the same canonical bucket. The dry-run assigns sequence numbers by (normalized_title, old_id); the operator approves at apply.
+
+**Bucket `AUTB M1* (corroborated)`:**
+- `AB M1001` → `AUTB M1002` · Advanced Auto Body Collision and Damage Repair
+- `ABDY M1001` → `AUTB M1003` · Advanced Auto Collision Repair
 
 
 ## Top 25 disciplines by re-key impact
 
 | discipline | canonical | n M-IDs | re-key | no-change | blocked | reviewed? |
 |---|---|---:|---:|---:|---:|:---:|
+| Physical Education | `KINE` | 3335 | 3323 | 12 | 0 | ✓ |
+| English as a Second Language | `ESOL` | 2316 | 2246 | 70 | 0 | ✓ |
+| Computer Information Systems | `CISC` | 2232 | 2183 | 49 | 0 | ✓ |
+| Art | `ARTS` | 2252 | 2161 | 91 | 0 | ✓ |
+| Music | `MUSI` | 2634 | 1942 | 692 | 0 | ✓ |
+| Kinesiology | `KINE` | 2201 | 1895 | 306 | 0 | ✓ |
+| Business | `BUSI` | 1694 | 1677 | 17 | 0 | ✓ |
+| Administration of Justice | `CRIM` | 1568 | 1541 | 27 | 0 | ✓ |
+| Foreign Languages | `FLNG` | 1453 | 1452 | 1 | 0 | ✓ |
+| Nursing | `NRSR` | 1440 | 1431 | 9 | 0 | ✓ |
+| Child Development/Early Childhood Education | `ECED` | 1370 | 1353 | 17 | 0 | ✓ |
+| Office Technologies | `OTEC` | 1034 | 1011 | 23 | 0 | ✓ |
+| Culinary Arts/Food Technology | `CULN` | 973 | 919 | 54 | 0 | ✓ |
+| Fire Technology | `FIRE` | 1546 | 903 | 643 | 0 | ✓ |
+| Multimedia | `MULT` | 903 | 859 | 44 | 0 | ✓ |
+| Theater Arts | `THEA` | 1453 | 845 | 608 | 0 | ✓ |
+| Computer Science | `CISC` | 715 | 714 | 1 | 0 | ✓ |
+| Construction Technology | `CNST` | 788 | 698 | 90 | 0 | ✓ |
+| Ethnic Studies | `ETHS` | 794 | 685 | 109 | 0 | ✓ |
 | Automotive Technology | `AUTO` | 1493 | 592 | 901 | 0 | ✓ |
-| Dance | `DANC` | 1667 | 405 | 1262 | 0 | ✓ |
-| English | `ENGL` | 1579 | 320 | 1259 | 0 | ✓ |
-| Welding | `WELD` | 810 | 317 | 493 | 0 | ✓ |
-| Mathematics | `MATH` | 1542 | 287 | 1255 | 0 | ✓ |
-| Cosmetology | `COSM` | 407 | 153 | 254 | 0 | ✓ |
-| Vocational | `VOCE` | 543 | 130 | 413 | 0 | ✓ |
-| Fashion and Related Technologies | `FASH` | 681 | 120 | 561 | 0 | ✓ |
-| Photography | `PHOT` | 621 | 109 | 512 | 0 | ✓ |
-| Psychology | `PSYC` | 415 | 93 | 322 | 0 | ✓ |
-| Geography | `GEOG` | 299 | 91 | 208 | 0 | ✓ |
-| Journalism | `JOUR` | 340 | 75 | 265 | 0 | ✓ |
-| Communication Studies | `COMM` | 334 | 74 | 260 | 0 | ✓ |
-| Earth Science | `GEOL` | 315 | 66 | 249 | 0 | ✓ |
-| History | `HIST` | 809 | 62 | 747 | 0 | ✓ |
-| Architecture | `ARCH` | 559 | 51 | 508 | 0 | ✓ |
-| Electronic Technology | `ELCT` | 140 | 46 | 94 | 0 | ✓ |
-| Court Reporting | `CTRP` | 101 | 33 | 68 | 0 | ✓ |
-| Art History | `ARTH` | 124 | 31 | 93 | 0 | ✓ |
-| Education | `EDUC` | 181 | 24 | 157 | 0 | ✓ |
-| Industrial Relations | `LABR` | 62 | 23 | 39 | 0 | ✓ |
-| Physics/Astronomy | `PHYS` | 243 | 22 | 221 | 0 | ✓ |
-| Anthropology | `ANTH` | 380 | 19 | 361 | 0 | ✓ |
-| Philosophy | `PHIL` | 335 | 19 | 316 | 0 | ✓ |
-| Engineering | `ENGR` | 292 | 18 | 274 | 0 | ✓ |
+| Environmental Technologies | `ESCI` | 578 | 578 | 0 | 0 | ✓ |
+| Air Conditioning, Refrigeration, Heating | `HVAC` | 672 | 555 | 117 | 0 | ✓ |
+| Emergency Medical Technologies | `EMST` | 553 | 553 | 0 | 0 | ✓ |
+| Agriculture | `AGRI` | 548 | 522 | 26 | 0 | ✓ |
+| Counseling | `COUN` | 823 | 504 | 319 | 0 | ✓ |
 
 ## Validation
 
 - ✅ **all_new_subj4_are_4letter**: pass
 - ✅ **one_subj4_per_discipline**: pass
 - ✅ **new_course_ids_unique**: pass
-- ✅ **no_seq_overflow**: pass
-
-## Blocked on curator — top disciplines
-
-These disciplines have ≥1 M-ID waiting on a canonical SUBJ4. Fill in the Canonical SUBJ4 tab.
-
-| discipline | n blocked M-IDs | data-modal | sample old SUBJ4s |
-|---|---:|---|---|
-| Physical Education | 3335 | `PE` | `ACS`, `ADAP`, `ADPE`, `AE`, `APE`, `AQUA` |
-| Music | 2634 | `MUS` | `AHSD`, `AMUS`, `AUD`, `CMUS`, `CRMO`, `DANC` |
-| English as a Second Language | 2316 | `ESL` | `ABE`, `ABEN`, `ACCS`, `ACE`, `AENG`, `AESL` |
-| Art | 2252 | `ART` | `AHS`, `ART`, `ARTA`, `ARTB`, `ARTC`, `ARTF` |
-| Computer Information Systems | 2232 | `CIS` | `ADED`, `ARTD`, `ARTN`, `BANK`, `BCIS`, `BUSE` |
-| Kinesiology | 2201 | `KIN` | `EXSC`, `KIN`, `KINA`, `KINE`, `KINF`, `KINM` |
-| Business | 1694 | `BUS` | `ACC`, `ACCT`, `ACTG`, `ACTV`, `ADED`, `AGBS` |
-| Administration of Justice | 1568 | `AJ` | `ACAD`, `ADJ`, `ADJU`, `ADMI`, `ADMJ`, `AJ` |
-| Fire Technology | 1546 | `FIRE` | `CSFM`, `CWEE`, `ENVR`, `FAC`, `FFS`, `FFT` |
-| Foreign Languages | 1453 | `SPAN` | `ABE`, `AFRS`, `AHSD`, `ARA`, `ARAB`, `ARB` |
-| Theater Arts | 1453 | `THEA` | `BCST`, `DRMA`, `ETHE`, `ETT`, `F`, `FTMA` |
-| Nursing | 1440 | `NURS` | `ADN`, `AGHE`, `AHLT`, `ANUR`, `CHE`, `CNA` |
-| Child Development/Early Childhood Education | 1370 | `ECE` | `ADED`, `CD`, `CDE`, `CDEC`, `CDES`, `CDEV` |
-| Office Technologies | 1034 | `BOT` | `ADAP`, `ALTW`, `BC`, `BCA`, `BCIS`, `BCM` |
-| Biological Sciences | 999 | `BIOL` | `ABE`, `AGHE`, `AGNG`, `AGVE`, `AHSD`, `ALCO` |
-| Culinary Arts/Food Technology | 973 | `CUL` | `AEFN`, `BAK`, `BAKE`, `CA`, `CACM`, `CAHM` |
-| Multimedia | 903 | `DM` | `AAD`, `ANIM`, `APTE`, `ART`, `ARTA`, `ARTD` |
-| Counseling | 823 | `COUN` | `AD`, `ADC`, `ADCT`, `ADDI`, `ADHS`, `ADS` |
-| Ethnic Studies | 794 | `ES` | `AAPI`, `AFAM`, `AFRA`, `AFRO`, `AFRS`, `AMIN` |
-| Construction Technology | 788 | `CONS` | `ACA`, `ACPL`, `ACT`, `ADED`, `APAC`, `APC` |
-| Computer Science | 715 | `CS` | `AVI`, `CA`, `CBIS`, `CIS`, `CISC`, `CISG` |
-| Air Conditioning, Refrigeration, Heating | 672 | `HVAC` | `AAT`, `AC`, `ACAR`, `ACR`, `ACRT`, `ACRV` |
-| Environmental Technologies | 578 | `ENVS` | `AEL`, `AET`, `AIRE`, `AMW`, `APEL`, `APIW` |
-| Dental Technology | 578 | `DH` | `AHS`, `BCOT`, `BIOS`, `CHE`, `DA`, `DAST` |
-| Emergency Medical Technologies | 553 | `EMS` | `AHLT`, `ALDH`, `CALJ`, `COMP`, `CPR`, `EMC` |
-
-_…and 75 more disciplines — see `blocked.json`._
+- ❌ **no_seq_overflow**: FAIL
+  - corroborated overflow: [('KINE M1* (corroborated)', 1000), ('KINE M1* (corroborated)', 1001), ('KINE M1* (corroborated)', 1002), ('KINE M1* (corroborated)', 1003), ('KINE M1* (corroborated)', 1004)]
 
 ## Sequence-collision summary
 
-126 new buckets contain ≥2 old M-IDs. Top 10 by collision count:
+435 new buckets contain ≥2 old M-IDs. Top 10 by collision count:
 
 | new bucket | colliding M-IDs |
 |---|---:|
+| `KINE M1* (standalone)` | 3999 |
+| `CISC M1* (standalone)` | 2040 |
+| `MUSI M1* (standalone)` | 1831 |
+| `ARTS M1* (standalone)` | 1526 |
 | `DANC M1* (standalone)` | 1226 |
+| `CRIM M1* (standalone)` | 1197 |
+| `NRSR M1* (standalone)` | 1156 |
+| `THEA M1* (standalone)` | 1133 |
+| `FIRE M1* (standalone)` | 1082 |
 | `AUTO M1* (standalone)` | 1068 |
-| `ENGL M1* (standalone)` | 989 |
-| `MATH M1* (standalone)` | 893 |
-| `WELD M1* (standalone)` | 643 |
-| `HIST M1* (standalone)` | 598 |
-| `FASH M1* (standalone)` | 494 |
-| `VOCE M9* (standalone)` | 461 |
-| `PHOT M1* (standalone)` | 450 |
-| `DANC M1* (corroborated)` | 422 |
 
 ## Downstream apply scope
 
@@ -136,10 +112,10 @@ Beyond `coci_minted_courses.json` + `coci_minted_singletons.json`, the apply ste
 
 | file | records re-keyed |
 |---|---:|
-| `kb/coci_minted_memberships.json` | 3912 |
-| `kb/coci_articulations.json` (articulations[]) | 943 |
-| `kb/coci_unified_courses.json` (clusters[].members) | 513 clusters, 1109 member refs |
-| `kb/coci_curation.json` (key rename) | 0 |
+| `kb/coci_minted_memberships.json` | 14632 |
+| `kb/coci_articulations.json` (articulations[]) | 3750 |
+| `kb/coci_unified_courses.json` (clusters[].members) | 1351 clusters, 2824 member refs |
+| `kb/coci_curation.json` (key rename) | 5 |
 
 ## How to proceed
 
