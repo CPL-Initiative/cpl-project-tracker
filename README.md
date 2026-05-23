@@ -22,7 +22,8 @@ The whole ecosystem, end-to-end:
 
 1. **The public dashboard** (GitHub Pages) — KPI cards, project cards, CPL
    Analytics, Workplan Activities & Projects, Annual Goals, Budget, Vision
-   2030, and a per-college Common Course Reference curation tab.
+   2030, a per-college Common Course Reference curation tab, and a focused
+   **Canonical SUBJ4** curator tab for the in-progress Phase 1e re-mint.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,
    then `excel_to_dashboard.py` regenerates the dashboard HTML, exports the
@@ -195,6 +196,9 @@ with openpyxl read-only — never `cat` it.
 - **`docs/coursecontrolnumber_remint.md`** — the playbook for safely
   re-keying shared-system identifiers (used for the 2026-05-22 re-mint;
   any future identifier re-key should follow the same pattern).
+- **`docs/subj4_canonicalization_remint_lessons.md`** — Phase 1e decisions +
+  lessons (the second re-mint, first under the revised Rule 7 staging
+  framing; in progress).
 - **`docs/exhibit_unification_vision.md`** — the credential-layer
   canonicalization design (synthetic unified-title layer over MAP's freehand
   exhibit titles).
@@ -208,9 +212,12 @@ with openpyxl read-only — never `cat` it.
 - The daily GitHub Actions cron pushes to `main` — coordinate around the
   10:17 UTC window for any shared-system change (Supabase, alias maps).
 - Never force-push `main` (GitHub Pages serves from it).
-- M-IDs are stable identifiers. Renumbering is governed by
+- M-IDs are in **staging-cleanup phase** (per CLAUDE.md Rule 7, revised
+  2026-05-23). Re-mints are permitted in service of cleanup but must follow
   [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md)
-  — never another bulk renumber outside that playbook.
+  — dry-run + alias map + Supabase fresh-read + atomic land + cron-window.
+  Once the M-ID layer is faculty-published, Rule 7 re-locks to "stable
+  identifiers, no renumbering."
 
 ---
 
