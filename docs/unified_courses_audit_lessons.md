@@ -320,6 +320,83 @@ system" / "machine-inferred" toward "drawn together for faculty review"
 authority, the system as the instrument. Not done yet — flag for next
 session.
 
+## Rule 7 revision (post-PR-#87): staging-cleanup phase
+
+After PR #87 merged, the user flagged a sanity-check issue: the
+**Common Course Reference** tab shows 92 M-IDs all sharing
+`discipline == "Sign Language, American"` but spread across 10
+different SUBJ4 codes (ASL/AMSL/DEAF/SIGN/INT/INTR/ACCS/MULT/SL/SNLA).
+Plus the 27 single-letter SUBJ outliers from the auditor's
+`mid_id_off_scheme` tag.
+
+### Root cause
+
+The 2026-05-22 re-mint synthesized SUBJ4 from each M-ID's **modal
+local college subject code**, not from the discipline. Different
+colleges use different local subjects for the same discipline. Per
+CLAUDE.md §10, this was a *documented* limitation, accepted because
+"no authoritative CCN 4-letter subject list exists." The logic isn't
+wrong — it's working as documented. The documented behavior produces
+the splits.
+
+### Decision: Rule 7 was over-locked
+
+Rule 7 used to say "M-IDs are stable identifiers — don't renumber
+them casually." The user pointed out: we're not at the
+*faculty-published* stage yet. M-ID file headers say "AI-assisted
+STAGING." The whole point of the auditor + the curation tab is to
+**clean up before faculty see it**. Re-mints in the staging phase
+are exactly the right move.
+
+Reframed Rule 7 (this session, committed on
+`claude/rule-7-staging-phase`): re-mints **permitted under the
+playbook** ([`docs/coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md))
+until faculty publication. The "never bulk renumber" prohibition was
+defensive against accidental re-keys; for principled cleanup re-mints
+that follow the playbook (dry-run + alias map + Supabase fresh-read
++ atomic land + cron-window), the playbook is the gate, not the
+rule.
+
+### M-ID structural invariants (new, also in Rule 7)
+
+Enforced at every re-mint:
+
+1. SUBJ portion is **exactly 4 letters** (folds the 27
+   single-letter SUBJ artifacts).
+2. Within `id_system == "M-ID"`, **all rows sharing a discipline
+   share a SUBJ4** (collapses the 10 SUBJ4 variants per Sign
+   Language American).
+3. C-IDs and CCN-IDs preserve their official format — external
+   authorities, never re-key.
+4. New M-IDs consult `kb/discipline_canonical_subj4.json` (TBD —
+   created in the next re-mint project) for canonical SUBJ4 per
+   discipline.
+
+### Next session (Bruh Max / session 5)
+
+Phase 1e: the SUBJ4-canonicalization re-mint. Build the canonical
+map, dry-run the changes, apply under the playbook. First re-mint
+in the new staging-phase framing. Scope is roughly:
+
+1. **`kb/discipline_canonical_subj4.json`** — seed from data-modal
+   per discipline; surface as a doc or simple tab for curator
+   review; expect ~10-15 cases where the data-modal isn't the
+   curator's preferred choice.
+2. **Dry-run** (`kb/_subj4_dryrun.py`) — produce the diff
+   (M-IDs whose SUBJ4 changes), the alias map, the splits/merges
+   report, the second-pass validation (every discipline now has
+   exactly one SUBJ4; every SUBJ is exactly 4 chars).
+3. **Apply** (reusing `_remint_apply.py` patterns) — atomic re-key
+   of `coci_minted_*.json` + `coci_articulations.json` +
+   `kb/coci_curation.json` + live Supabase `kb_curation.course_id`
+   update, all within one 10:17 UTC window.
+
+Estimated 2-3 sessions; step 1 (the canonical map) is the longest
+because it's curator-decision-heavy.
+
+After the re-mint, the `subject_collision_signal` audit rule (Phase
+1c queued) should fire zero flags — that's the cleanup receipt.
+
 ## What's deferred (open follow-ups)
 
 1. **Phase 1b (3/3) — Repair-from-members curate action.** Touches
