@@ -1347,7 +1347,7 @@
       var tb = el("tbody");
       matched.slice(0, MAX_VISIBLE).forEach(function (r) {
         var tr = el("tr");
-        var kindTd = el("td", {});
+        var kindTd = el("td", { class: "uc-kind-cell" });
         var caret = el("a", { href: "#", class: "uc-caret", title: "Show member college courses" }, ["▸"]);
         caret.onclick = function (e) { e.preventDefault(); toggleMembers(tr, r, caret); };
         kindTd.appendChild(caret);
