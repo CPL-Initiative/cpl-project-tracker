@@ -228,6 +228,7 @@
           .catch(function () { toast("Sign-in request failed", true); });
       };
       auth.appendChild(inn);
+      auth.appendChild(el("span", { class: "cs-auth-tag" }, ["(CCCCO MAP only)"]));
     }
     tb.appendChild(auth);
   }
@@ -281,10 +282,10 @@
     var table = el("table", { class: "cs-table" });
     var thead = el("thead", null, [el("tr", null, [
       el("th", null, ["Discipline"]),
-      el("th", null, ["M-IDs"]),
-      el("th", null, ["Variants observed (subj·n)"]),
-      el("th", null, ["Data modal"]),
-      el("th", { title: "4 uppercase letters [A-Z]^4. Required for the re-mint." }, ["Canonical SUBJ4 *"]),
+      el("th", { title: "Number of cross-college course identities in this discipline." }, ["M-IDs"]),
+      el("th", { title: "Different 4-letter subject codes colleges currently use for this discipline, with how many M-IDs use each." }, ["Variants observed (code·n)"]),
+      el("th", { title: "The most-used code across colleges today. If shorter than 4 letters, pick a 4-letter expansion in the Canonical column." }, ["Most-used today"]),
+      el("th", { title: "Required: exactly 4 uppercase letters (A–Z)." }, ["Canonical *"]),
       el("th", null, ["Status"]),
       el("th", null, ["Notes"]),
       el("th", null, ["Reviewed"]),
@@ -302,8 +303,20 @@
     tr.appendChild(el("td", { class: "cs-mono" }, [String(entry.total_mids || 0)]));
     var tdVars = el("td", { class: "cs-variants", html: variantsHtml(entry) });
     tr.appendChild(tdVars);
-    tr.appendChild(el("td", { class: "cs-mono" },
-      [entry.data_modal + (entry.data_modal_is_4letter ? "" : " (not 4)")]));
+    // Data-modal cell — show the most-common code colleges use today, with
+    // an obvious flag when it isn't 4 letters (so a curator knows they need
+    // to pick an expansion rather than just confirm).
+    var tdModal = el("td", { class: "cs-mono" });
+    tdModal.appendChild(document.createTextNode(entry.data_modal || "—"));
+    if (entry.data_modal && !entry.data_modal_is_4letter) {
+      var warn = el("span", {
+        class: "cs-badge warn",
+        title: "Data modal is shorter than 4 letters — pick a 4-letter expansion.",
+      }, ["⚠ needs 4-letter"]);
+      warn.style.marginLeft = "6px";
+      tdModal.appendChild(warn);
+    }
+    tr.appendChild(tdModal);
 
     // Canonical SUBJ4 input
     var input = el("input", {
@@ -375,9 +388,25 @@
     return tr;
   }
 
+  // Guidelines modal — wire the open/close on the curator-facing button.
+  // Light-weight focus-trap-less modal; click-outside or × closes it.
+  function wireGuidelinesModal() {
+    var btn = document.getElementById("cs-guidelines-btn");
+    var bg = document.getElementById("cs-guidelines-modal");
+    if (!btn || !bg) return;
+    var close = bg.querySelector(".cs-modal-close");
+    function open() { bg.classList.add("show"); document.addEventListener("keydown", esc); }
+    function shut() { bg.classList.remove("show"); document.removeEventListener("keydown", esc); }
+    function esc(e) { if (e.key === "Escape") shut(); }
+    btn.addEventListener("click", open);
+    close && close.addEventListener("click", shut);
+    bg.addEventListener("click", function (e) { if (e.target === bg) shut(); });
+  }
+
   function init() {
     if (!document.getElementById("tab-canonical-subj4")) return;
     state.sess = getSession();
+    wireGuidelinesModal();
     Promise.all([fetchSeed(), fetchOverlay()]).then(function (parts) {
       state.seed = parts[0];
       state.overlay = parts[1];
