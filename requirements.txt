@@ -7,5 +7,5 @@
 # daily cron, fix the pin here rather than bypassing it — that's the
 # whole point of pinning.
 openpyxl==3.1.5
-python-docx==1.1.2
+python-docx==1.2.0
 requests==2.32.3
