@@ -76,6 +76,14 @@ jobs:
       - name: Run dashboard pipeline
         run: python excel_to_dashboard.py
 
+      # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
+      # Read-only over kb/coci_*.json; writes kb/row_audit/{latest.json,
+      # <date>.md} that the UCL "⚠ hinky" badge consumes. See CLAUDE.md §11.
+      # Failure is non-fatal (auditor output is a UI enhancement, not load-
+      # bearing for the dashboard itself).
+      - name: Run row Trust-Card auditor
+        run: python3 kb/_row_audit.py || echo "Auditor failed — UCL hinky chips will use prior latest.json"
+
       # ── Step 5: Prepare GitHub Pages entry point ─────────────────
       - name: Copy dashboard to index.html
         run: cp CPL_Dashboard.html index.html
@@ -94,6 +102,7 @@ jobs:
                   unified_courses_standalone.js unified_courses_members.js \
                   unified_courses_member_desc.js \
                   unified_courses_suggestions.js \
+                  kb/row_audit/latest.json kb/row_audit/*.md \
                   exports/unified_courses.xlsx
           # Only add CustomReport if it was freshly fetched
           git add CustomReport_latest.json 2>/dev/null || true
