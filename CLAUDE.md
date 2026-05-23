@@ -49,6 +49,21 @@ into the Pipeline Reference below or into dedicated docs.
    decisions + validation methodology + rollback notes:
    [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
 
+8. **Document at context checkpoints.** Roughly every ~100K tokens of context
+   consumed in a session (heuristic — Claude Code doesn't expose an exact
+   counter; use proxies: long conversations with many tool calls, large file
+   reads, multi-phase strategic work), pause and update:
+   - **`CLAUDE.md`** (project memory + rules + roadmap)
+   - **`kb/README.md`** (when KB structure, generators, or audit artifacts change)
+   - **`docs/`** (lessons-learned and decision docs the user syncs to Obsidian)
+   - **`README.md`** (root project README — kept current for first-time visitors)
+
+   Capture: (a) what's been learned this session, (b) current state of the
+   work, (c) strategic roadmap, (d) next concrete step. Better to checkpoint
+   slightly early than slightly late — sessions can end abruptly and what's
+   not in a markdown file is effectively lost. See §11 for the auditor's
+   roadmap as a worked example of (b)+(c)+(d).
+
 ## Branch policy
 
 - Work on feature branches; open a PR to `main`.
@@ -833,6 +848,112 @@ lexicon/map; all skip reviewed/curated and only fill blanks.
   context overflow. Inspect via scripts that print counts/samples only.
 - Staging only; don't touch the curated anchor or Supabase auth/other tables
   without confirmation. Feature branch + PR; don't push to `main`.
+
+---
+
+## 11. M-ID Lifecycle, Model Curriculum (MC), and the CID/CIDx Pathway
+
+M-IDs are not just identity surrogates — they're staging points in a strategic
+pipeline toward ASCCC C-ID approval. The dual-score auditor at
+`kb/_row_audit.py` and any future curation work depend on this framing.
+
+### The pipeline
+
+```
+seed-untouched M-ID (Phase B draft from _seed_coci_minted_mids.py)
+  → curator-Verified M-ID (faculty trust signal — UCL Verify in Supabase)
+  → MC-ready M-ID (MC slots populated: SLOs, content outline, methods, …)
+  → submitted to ASCCC for C-ID / CIDx approval
+  → APPROVED → M-ID substituted out for new CID in the Unified Course catalog
+              (alias-tracked via the same Rule 7 / re-mint playbook)
+```
+
+The auditor identifies M-IDs at each stage and what gates them from the next;
+it never drives the substitution itself. Approval is a re-key — the M-ID
+disappears from the catalog, the new CID anchor takes its place, and the
+old→new alias is preserved in the same manner as the 2026-05-22 re-mint.
+
+### CID vs CIDx — pick your pathway
+
+| Pathway | Approval body | Speed | Notes |
+|---|---|---|---|
+| **CID** (general C-ID)  | CIAC (CCC + CSU + UC intersegmental) | Slow, hard | UC defaults often dominate and kill candidates |
+| **CIDx** (CTE C-ID)     | ASCCC C-ID team only | Fast, easy | Intersegmental agreement not required |
+
+Eventual automation target = **CIDx submission flow** (CTE only). Every M-ID is
+*theoretically* eligible to submit (faculty discretion is the gate, not a CTE
+flag); the CID-vs-CIDx lane is decided at submission time. The COCI extract
+carries a CTE field that will be wired in when the CIDx workflow lands —
+deferred for now.
+
+### MC, NOT TMC — the terminology landmine
+
+For M-IDs we say **MC** (Model Curriculum). NOT **TMC** (Transfer Model
+Curriculum). The distinction is strategic:
+
+- **TMC** implies **transferability** — which requires intersegmental
+  agreement (CIAC), which is the hard/slow lane M-IDs were designed to avoid.
+- **MC** is the curriculum package without the transferability claim — the
+  bar is lower; faculty + AOs review CPL articulation adoption without the
+  angst of UC defaults killing the course.
+
+M-IDs are CPL articulation-adoption signals, full stop. They are NOT a
+transferability claim. **Do not reintroduce TMC framing for M-IDs.**
+
+`transferability` and `degree_applicability` are deliberately EXCLUDED from
+the `MC_NOT_YET_CAPTURED` slot list in `kb/_row_audit.py`. Adding them back
+would reintroduce the UC-defaults trap and undo the angst-removal benefit.
+
+### The Trust-Card auditor — `kb/_row_audit.py`
+
+Read-only auditor over every M-ID + Cluster. Per row, produces a Trust Card:
+
+- **`faculty_trust_score`** ∈ [0,1] — is the row trustworthy enough that a
+  discipline faculty member should rely on it to ratify a cross-college
+  articulation? Weighted across faculty_fields: discipline (0.30),
+  credit_status (0.20), typical_units (0.20), description (0.15),
+  top_code (0.10), confidence (0.05).
+- **`mc_ready_score`** ∈ [0,1] — is the row a viable MC submission? Sums
+  faculty_fields (70% share) + MC slots (30% share, currently all
+  `not_yet_captured`). Every row sits well below mc_ready until SLOs land —
+  that's the strategic message: MC-readiness is the destination, not the
+  current state.
+- **Field states:** real / aggregated-unanimous / aggregated-modal /
+  aggregated-varied / inferred / curated / seed-untouched / off-scheme /
+  missing / conflicting / not_yet_captured.
+- **Readiness tiers:** ready (≥0.85) / needs_review (≥0.65) /
+  needs_repair (≥0.40) / not_ready.
+- **Rule tags (first run, 2026-05-23):** `seed_untouched_discipline` (11,158),
+  `blank_description` (1,733), `blank_discipline` (1,266), `mid_id_off_scheme`
+  (27, single-letter SUBJ re-mint artifact), `cluster_blanks_when_aggregatable`
+  (1), `cluster_id_off_scheme` (1), `uc_cur_ripe_for_promotion` (1).
+
+**Outputs:**
+- `kb/row_audit/latest.json` — slim per-row summaries + full Cluster cards (~2 MB, committed)
+- `kb/row_audit/<date>.md` — human report with top-50 cleanup queue (~7 KB, committed)
+- `kb/row_audit/<date>.full.json` — full per-row breakdown (~12 MB, gitignored)
+
+Re-runnable, never mutates. Suggested-fix payloads on aggregable Cluster
+fields are shaped for `_apply_curation.py` to consume in Phase 1b. Run from
+repo root: `python3 kb/_row_audit.py`.
+
+### Roadmap
+
+| Phase | What | Status |
+|---|---|---|
+| 1a | Trust-Card auditor (read-only) | **DONE** 2026-05-23 |
+| 1b | UCL UI "Repair from members" curate action + "⚠ hinky" badge on flagged rows; Supabase fresh-read + cron-window discipline | next |
+| 1c+ | More audit rules: `discipline_title_mismatch`, `top_discipline_disagreement`, `description_discipline_disagreement`, `subject_collision_signal`, `generic_title_concrete_discipline`, `unit_anomaly`, `merge_into_orphan`, `cluster_title_drift` | queued |
+| 2 | Articulations by Unified Course — interactive view + curation | parked |
+| 3 | EACR interactive re-pivot to course-identity grouping (Approach B per §9) | parked (architecturally significant) |
+| 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
+| 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
+| 6 | CIDx submission automation (the eventual goal) | parked (the destination) |
+| 7 | M-ID → CID substitution workflow on approval | parked (governed by Rule 7) |
+
+The auditor is the foundational instrument for the whole pipeline: every phase
+upstream of CIDx submission produces a higher trust score and graduates rows
+from one readiness tier to the next.
 
 ---
 

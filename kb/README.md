@@ -106,6 +106,20 @@ before build). Conflicts stay safely surfaced via the "C-ID conflict" badge;
 Phase B clean consolidation is the automatic stopping point. See CLAUDE.md
 "Crosswalk re-key initiative" for the full diagnosis.
 
+**Row Trust-Card auditor (2026-05-23, `kb/_row_audit.py`)** — read-only
+auditor over every M-ID + Cluster, producing per-row Trust Cards with two
+scores: `faculty_trust_score` (today's cross-college articulation adoption
+bar) and `mc_ready_score` (the ASCCC Model Curriculum submission destination
+— see CLAUDE.md §11 for the lifecycle + MC-vs-TMC framing). Outputs
+`kb/row_audit/latest.json` (~2 MB, committed) + `<date>.md` (human report,
+~7 KB, committed) + `<date>.full.json` (~12 MB, gitignored). Re-runnable,
+never mutates; suggested-fix payloads on aggregable Cluster fields are
+shaped for `_apply_curation.py` to consume in Phase 1b. Run from repo root:
+`python3 kb/_row_audit.py`. **Important:** we say **MC** (Model Curriculum),
+not **TMC** (Transfer Model Curriculum) — M-IDs do NOT claim transferability,
+which keeps the bar lower and avoids the UC-defaults trap; see CLAUDE.md §11
+for why this matters.
+
 ## Schemas
 
 ### `unified_titles.json`
