@@ -8223,6 +8223,31 @@ Cont</td>
             #tab-canonical-subj4 .cs-modal .cs-modal-close { float:right; background:none; border:none; font-size:1.4rem; cursor:pointer; color:#6b7280; line-height:1; padding:0 4px; }
             #tab-canonical-subj4 .cs-modal .cs-modal-close:hover { color:#0A2240; }
             #tab-canonical-subj4 .cs-modal code { background:#f3f4f6; padding:1px 5px; border-radius:3px; font-size:.88em; }
+            /* Variants column + modal */
+            #tab-canonical-subj4 .cs-var-show { color:#0A2240; cursor:pointer; font-size:.78rem; padding:1px 6px; border:1px solid #cbd5e1; border-radius:10px; background:#fff; margin-left:6px; vertical-align:middle; }
+            #tab-canonical-subj4 .cs-var-show:hover { background:#eef6ff; border-color:#0A2240; }
+            #tab-canonical-subj4 .cs-var-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); gap:6px; margin:8px 0 14px; }
+            #tab-canonical-subj4 .cs-var-chip { background:#f8fafc; border:1px solid #e5e7eb; border-radius:6px; padding:5px 8px; font-size:.82rem; }
+            #tab-canonical-subj4 .cs-var-chip .cs-var-code { font-family:ui-monospace,Menlo,monospace; font-weight:600; color:#0A2240; }
+            #tab-canonical-subj4 .cs-var-chip.modal { background:#FEF3C7; border-color:#F59E0B; }
+            #tab-canonical-subj4 .cs-var-chip.canonical { background:#DCFCE7; border-color:#16A34A; }
+            #tab-canonical-subj4 .cs-var-chip .cs-var-flag { display:block; font-size:.65rem; color:#6b7280; margin-top:2px; }
+            #tab-canonical-subj4 .cs-var-chip.modal .cs-var-flag { color:#92400e; font-weight:600; }
+            #tab-canonical-subj4 .cs-var-chip.canonical .cs-var-flag { color:#166534; font-weight:600; }
+            #tab-canonical-subj4 .cs-modal h5 { margin:12px 0 4px; color:#0A2240; font-size:.92rem; }
+            #tab-canonical-subj4 .cs-modal .cs-modal-meta { color:#6b7280; font-size:.8rem; }
+            /* C-ID / CCN match badges */
+            #tab-canonical-subj4 .cs-id-badge { display:inline-block; font-size:.68rem; padding:1px 6px; border-radius:10px; margin-left:4px; font-family:ui-monospace,Menlo,monospace; cursor:default; vertical-align:middle; }
+            #tab-canonical-subj4 .cs-id-badge.cid { background:#e0e7ff; color:#3730a3; border:1px solid #c7d2fe; }
+            #tab-canonical-subj4 .cs-id-badge.ccn { background:#cffafe; color:#155e75; border:1px solid #a5f3fc; }
+            #tab-canonical-subj4 .cs-id-badge.match-no { opacity:0.55; text-decoration:line-through; }
+            /* Sortable column headers */
+            #tab-canonical-subj4 .cs-table th.sortable { cursor:pointer; user-select:none; }
+            #tab-canonical-subj4 .cs-table th.sortable:hover { background:#0d2c52; }
+            #tab-canonical-subj4 .cs-sort-indicator { font-size:.7rem; opacity:0.55; margin-left:4px; }
+            #tab-canonical-subj4 .cs-sort-indicator.active { opacity:1; color:#C9A84C; }
+            /* Wider search box */
+            #tab-canonical-subj4 input.cs-search-wide { min-width:280px; }
         </style>
         <h2>Common Subject Code <span class="cs-stamp draft">Development Draft</span> <span class="cs-stamp">curator-edited</span><br><span class="cs-sub">— one shared 4-letter abbreviation per discipline</span></h2>
         <p class="cs-intro"><strong>This is a development draft — nothing here is final.</strong> Different colleges abbreviate the same discipline different ways. Sign Language American shows up across 10 different codes (ASL, AMSL, DEAF, SIGN, …); Physical Education across 71. This page picks <strong>one 4-letter code per discipline</strong> so the dashboard uses a single, consistent label everywhere. Click the <strong>Canonical</strong> cell on a row to set or change a code, add notes if you'd like, then a faculty validator confirms when you're done.</p>
@@ -8233,6 +8258,15 @@ Cont</td>
         <div id="cs-summary" class="cs-summary"></div>
         <div id="cs-table-wrap" class="cs-table-wrap"></div>
         <div id="cs-toast" class="cs-toast"></div>
+
+        <!-- Variants popup — populated by canonical_subj4.js when the curator clicks the "show all" chip -->
+        <div id="cs-variants-modal" class="cs-modal-bg" role="dialog" aria-modal="true" aria-labelledby="cs-variants-title">
+            <div class="cs-modal">
+                <button class="cs-modal-close" type="button" aria-label="Close">&times;</button>
+                <h3 id="cs-variants-title">Variants</h3>
+                <div id="cs-variants-body"></div>
+            </div>
+        </div>
 
         <!-- Guidelines modal -->
         <div id="cs-guidelines-modal" class="cs-modal-bg" role="dialog" aria-modal="true" aria-labelledby="cs-guidelines-title">
