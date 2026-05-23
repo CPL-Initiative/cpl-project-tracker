@@ -266,6 +266,60 @@ UI lesson: when a column header is long, the *column itself* widens to
 fit. Shrinking the header (semantically equivalent shorter label) often
 frees more space than fighting the layout with CSS.
 
+## Tab rename: "Unified Courses" → "Common Course Reference"
+
+Late in session 4 the user flagged that **"Unified Courses" is being
+confused with University of California** (UC) — a real risk given the
+audience is CCC faculty + administrators who use "UC" daily for the
+4-year segment.
+
+Deeper concern: in CCC, **faculty hold primacy on all curricular matters**,
+and there's well-documented sensitivity to AI being seen as making
+curriculum decisions for them. "Unified Courses" reads in passive voice
+— *the system has unified your courses* — which subtly positions the
+machine as actor.
+
+Rename to **"Common Course Reference"** (CCR) addresses both:
+
+- **"Common"** echoes "Common Course Numbering" (AB 1111) — CCC's own
+  statewide vocabulary. Faculty trust this term.
+- **"Reference"** is the load-bearing word. A reference doesn't make
+  decisions — it surfaces information faculty consult to make their
+  own decisions. Same posture as a dictionary, glossary, directory.
+- No "AI / smart / intelligent / unified / inferred" language in the
+  visible name.
+- No UC confusion. CCR is unclaimed in CCC's common acronym space.
+
+### Scope of the rename (deliberate boundaries)
+
+**Renamed (user-facing UI only):**
+- Dashboard tab button label
+- H2 heading + subtitle ("a cross-college course identity reference for
+  faculty review")
+- README user-facing descriptions
+
+**NOT renamed (internal — preserves bookmarks + the file ecosystem):**
+- URL hash: stayed `#unified-courses` (changing breaks saved links)
+- File names: `unified_courses_*.js`, `unified_courses.js`,
+  `unified_courses_audit_lessons.md`, `kb/coci_minted_courses.json`
+- JS globals: `window.CPL_UNIFIED_COURSES`, `window.CPL_UC_*`
+- Python identifier `export_unified_courses()`, function comments
+- Console-log strings during the cron
+
+**Rationale**: Internal identifiers are stable contracts that
+consumers depend on. The cost of renaming them (touching the daily cron's
+git-add list, all lazy-load logic, every cross-reference) is high; the
+benefit is zero (nobody outside the dev loop sees these). The UI rename
+delivers the user value with surgical scope.
+
+### Microcopy follow-on (deferred)
+
+Worth a future pass: soften any UI copy that says "consolidated by the
+system" / "machine-inferred" toward "drawn together for faculty review"
+/ "suggested for faculty review." Faculty want to see themselves as the
+authority, the system as the instrument. Not done yet — flag for next
+session.
+
 ## What's deferred (open follow-ups)
 
 1. **Phase 1b (3/3) — Repair-from-members curate action.** Touches
