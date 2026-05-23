@@ -46,8 +46,10 @@ SUBJ4_RE = re.compile(r"^[A-Z]{4}$")
 
 def fetch_rows():
     # PostgREST `like` filter with %-suffix to scope to our namespace.
+    # Pull validated_* columns too — they were added in the 2026-05-23 schema
+    # migration for two-stage curation (review -> validate).
     qs = urllib.parse.urlencode({
-        "select": "course_id,field,value,reviewer_email,reviewed_at",
+        "select": "course_id,field,value,reviewer_email,reviewed_at,validated_at,validated_by",
         "course_id": f"like.{KEY_PREFIX}%",
     })
     endpoint = f"{URL}/rest/v1/kb_curation?{qs}"
@@ -64,7 +66,9 @@ def main():
         sys.exit(f"Missing {SEED_PATH} — run kb/_seed_canonical_subj4.py first.")
 
     rows = fetch_rows()
-    # Group rows by discipline: latest reviewer/timestamp across fields wins.
+    # Group rows by discipline: latest timestamp across fields wins for each
+    # of (reviewed_at, validated_at). Two-stage curation: a row can be
+    # reviewed by curator A and validated later by curator B.
     by_disc: dict[str, dict] = {}
     for r in rows:
         cid = r.get("course_id") or ""
@@ -79,6 +83,12 @@ def main():
         if (r.get("reviewed_at") or "") >= rec.get("reviewed_at", ""):
             rec["reviewed_by"] = r.get("reviewer_email")
             rec["reviewed_at"] = r.get("reviewed_at")
+        # Validated_at: tracked independently from reviewed_at since a
+        # different curator may validate after the initial review.
+        v_at = r.get("validated_at")
+        if v_at and v_at >= rec.get("validated_at", ""):
+            rec["validated_at"] = v_at
+            rec["validated_by"] = r.get("validated_by")
 
     with open(SEED_PATH, "r", encoding="utf-8") as f:
         seed = json.load(f)
@@ -111,6 +121,11 @@ def main():
             # the row is reviewed yet — the canonical is required for review.
             if entry.get("canonical_subj4"):
                 entry["needs_review"] = False
+        # Two-stage curation: validated_at/validated_by track the faculty
+        # validation step independently from the initial reviewed_at edit.
+        if rec.get("validated_at"):
+            entry["validated_at"] = rec["validated_at"]
+            entry["validated_by"] = rec.get("validated_by")
         applied += 1
 
     # Refresh counts.
