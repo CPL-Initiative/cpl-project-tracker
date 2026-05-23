@@ -42,7 +42,13 @@ The whole ecosystem, end-to-end:
    Trust Card for every M-ID + Cluster with a `faculty_trust_score` (the
    bar for cross-college articulation adoption) and an `mc_ready_score`
    (the destination — Model Curriculum readiness for ASCCC C-ID
-   submission). See `CLAUDE.md §11` for the strategic pipeline.
+   submission). 11 active rules cross-validate discipline assignments
+   against title, TOP code, description, and member aggregation. The
+   UCL surfaces findings as a "⚠ N · 0.XX" chip color-graded by severity,
+   with a `Triage:` filter to carve the cleanup queue (8 modes including
+   "3+ findings" for the high-confidence misassignment subset). Full
+   decisions + lessons: [`docs/unified_courses_audit_lessons.md`](docs/unified_courses_audit_lessons.md).
+   See `CLAUDE.md §11` for the M-ID → CIDx pipeline framing.
 6. **Custom Word reports** — a per-college "[College Name] CPL Update"
    .docx generated on demand via a Claude API proxy (also a Cloudflare
    Worker endpoint), suitable for board / trustee distribution.
