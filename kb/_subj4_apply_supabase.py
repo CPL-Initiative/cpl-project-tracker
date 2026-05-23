@@ -38,6 +38,41 @@ URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co")
 KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 
 
+def fetch_curated_course_ids() -> set[str]:
+    """Pull the SET of course_id values currently in public.kb_curation.
+
+    The alias_map contains every M-ID in the catalog (~13k re-key aliases),
+    but only a handful actually have curation rows (today: 7 entries — see
+    coci_curation.json). Issuing a PATCH per alias would mean ~13k network
+    round-trips, most of which affect zero rows. Pre-fetching the curated
+    set lets us skip 99.95% of the work and only PATCH aliases that will
+    actually touch a row.
+
+    Uses a single SELECT with no filter on field so we capture every
+    course_id with any curation row (discipline, merge_into, unified_title,
+    description, canonical_subj4_*, …) — re-keying a course_id at any of
+    those is necessary for the (course_id, field) primary key to stay
+    consistent.
+
+    PostgREST default page size is 1000 rows; this table is small (<100)
+    so a single fetch suffices. If kb_curation ever grows past 1000 rows
+    the result will be silently truncated — add a Range header for paging
+    if that becomes the case.
+    """
+    qs = urllib.parse.urlencode({"select": "course_id"})
+    req = urllib.request.Request(
+        f"{URL}/rest/v1/kb_curation?{qs}",
+        headers={
+            "apikey": KEY,
+            "Authorization": f"Bearer {KEY}",
+            "Accept": "application/json",
+        },
+    )
+    with urllib.request.urlopen(req, timeout=30) as r:
+        rows = json.load(r)
+    return {row["course_id"] for row in rows if row.get("course_id")}
+
+
 def patch_one(old_id: str, new_id: str) -> dict:
     """Issue a PATCH on kb_curation WHERE course_id = old_id, setting
     course_id = new_id. PostgREST returns the affected rows in the body
@@ -75,15 +110,32 @@ def main():
         sys.exit(f"No aliases in {ALIAS_PATH}.")
 
     print(f"[subj4_apply_supabase] {datetime.now(timezone.utc).isoformat()}")
-    print(f"  aliases to PATCH: {len(aliases)}")
+    print(f"  aliases in alias_map: {len(aliases)}")
+
+    # Pre-fetch the set of course_ids that actually exist in kb_curation.
+    # Only those need PATCH calls — the rest are no-ops (PATCH affects 0 rows).
+    # Without this, the workflow's Supabase step fans out ~13k network
+    # round-trips for ~7 actual updates and takes 20-60 minutes. Caught
+    # 2026-05-23 when the apply workflow ran 5+ minutes on this step before
+    # being cancelled.
+    try:
+        curated_ids = fetch_curated_course_ids()
+        print(f"  curated rows in Supabase: {len(curated_ids)}")
+    except Exception as e:
+        print(f"  ::warning::pre-fetch failed ({e}); falling back to fan-out (slow)")
+        curated_ids = None
 
     log = []
-    ok = fail = skipped = touched = 0
+    ok = fail = skipped = no_curated_row = touched = 0
     for old_id, rec in aliases.items():
         new_id = rec["new_id"]
         if new_id == old_id:
             skipped += 1
             log.append({"old": old_id, "new": new_id, "status": "skip", "reason": "no_change"})
+            continue
+        if curated_ids is not None and old_id not in curated_ids:
+            # Pre-filter skip: alias has no live curation row, PATCH would be a no-op.
+            no_curated_row += 1
             continue
         result = patch_one(old_id, new_id)
         log.append(result)
@@ -104,12 +156,14 @@ def main():
                        "(common — most M-IDs don't have curation rows)."),
             "_applied_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "totals": {"ok": ok, "fail": fail, "skipped_no_change": skipped,
+                        "skipped_no_curated_row": no_curated_row,
                         "rows_affected": touched, "aliases_total": len(aliases)},
             "log": log,
         }, f, indent=2)
         f.write("\n")
 
     print(f"  ok={ok} fail={fail} skipped(no_change)={skipped} "
+          f"skipped(no_curated_row)={no_curated_row} "
           f"(rows actually re-keyed in Supabase: {touched})")
     print(f"  log: {LOG_PATH}")
     if fail > 0:
