@@ -24,8 +24,10 @@ The whole ecosystem, end-to-end:
    Analytics, Workplan Activities & Projects, Annual Goals, Budget, Vision
    2030, a per-college **Common Course Reference** curation tab, a
    **Common Subject Code** tab (faculty-facing per-discipline curation with
-   validate workflow + TOP/CTE/CIP columns + collapsible category groupings),
-   and a **Pipeline** progress board.
+   validate workflow + TOP/CTE/CIP columns + collapsible category groupings;
+   Variants column shows the raw local college subject codes colleges
+   actually use, sourced from `kb/coci_minted_memberships.json`), and a
+   **Pipeline** progress board.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,
    then `excel_to_dashboard.py` regenerates the dashboard HTML, exports the
