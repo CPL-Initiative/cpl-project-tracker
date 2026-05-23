@@ -6,13 +6,13 @@
   "_counts": {
     "total_disciplines": 144,
     "multi_subj4_disciplines": 135,
-    "needs_review": 100,
-    "seeded_default": 44
+    "needs_review": 0,
+    "seeded_default": 144
   },
   "disciplines": {
     "Administration of Justice": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "CRIM",
+      "source": "curator_override",
       "data_modal": "AJ",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.246,
@@ -75,14 +75,14 @@
         "NR": 1
       },
       "total_mids": 1568,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:28:23.940982+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Agricultural Production": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "AGPR",
+      "source": "curator_override",
       "data_modal": "VEN",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.164,
@@ -113,14 +113,14 @@
         "OH": 1
       },
       "total_mids": 214,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:38:05.781136+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Agriculture": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "AGRI",
+      "source": "curator_override",
       "data_modal": "AG",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.248,
@@ -167,14 +167,14 @@
         "SUAG": 1
       },
       "total_mids": 548,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:32:06.648967+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Air Conditioning, Refrigeration, Heating": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "HVAC",
+      "source": "curator_override",
       "data_modal": "HVAC",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.174,
@@ -241,9 +241,9 @@
         "ZEVT": 1
       },
       "total_mids": 672,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:30:33.886856+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Anthropology": {
@@ -298,8 +298,8 @@
       "_notes": null
     },
     "Art": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ARTS",
+      "source": "curator_override",
       "data_modal": "ART",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.886,
@@ -356,9 +356,9 @@
         "WOOD": 1
       },
       "total_mids": 2252,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:27:45.734358+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Art History": {
@@ -380,8 +380,8 @@
       "_notes": null
     },
     "Artificial Intelligence": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "CSAI",
+      "source": "curator_override",
       "data_modal": "AI",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.171,
@@ -413,9 +413,9 @@
         "STV": 1
       },
       "total_mids": 41,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:47:23.794015+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Astronomy": {
@@ -435,8 +435,8 @@
       "_notes": null
     },
     "Auto Body Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "AUTB",
+      "source": "curator_override",
       "data_modal": "AB",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.332,
@@ -456,9 +456,9 @@
         "MECT": 1
       },
       "total_mids": 196,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:53:04.184321+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Automotive Technology": {
@@ -516,8 +516,8 @@
       "_notes": null
     },
     "Aviation": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "AVIA",
+      "source": "curator_override",
       "data_modal": "AERO",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.189,
@@ -556,14 +556,14 @@
         "NGEO": 1
       },
       "total_mids": 475,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:34:02.511306+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Barbering": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "COSM",
+      "source": "curator_override",
       "data_modal": "BARB",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.476,
@@ -574,14 +574,14 @@
         "ESTI": 1
       },
       "total_mids": 21,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:57:51.131776+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Biological Sciences": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "BIOL",
+      "source": "curator_override",
       "data_modal": "BIOL",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.596,
@@ -666,14 +666,14 @@
         "VT": 1
       },
       "total_mids": 999,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:28:57.932187+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Biotechnology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "BIOT",
+      "source": "curator_override",
       "data_modal": "BIOT",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.582,
@@ -682,14 +682,14 @@
         "BTEC": 51
       },
       "total_mids": 122,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:56:25.740683+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Broadcasting Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "BCST",
+      "source": "curator_override",
       "data_modal": "BRDC",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.133,
@@ -727,14 +727,14 @@
         "VDMA": 1
       },
       "total_mids": 293,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:35:59.41225+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Building Codes and Regulations": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "CNSR",
+      "source": "curator_override",
       "data_modal": "BIT",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.789,
@@ -745,14 +745,14 @@
         "IT": 1
       },
       "total_mids": 71,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:56:19.704569+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Business": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "BUSI",
+      "source": "curator_override",
       "data_modal": "BUS",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.468,
@@ -857,14 +857,14 @@
         "WKFS": 1
       },
       "total_mids": 1694,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:25:34.266541+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Cabinet Making": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "CNSC",
+      "source": "curator_override",
       "data_modal": "AMW",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.25,
@@ -880,14 +880,14 @@
         "WOOD": 1
       },
       "total_mids": 64,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:49:39.24417+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Carpentry": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "CARP",
+      "source": "curator_override",
       "data_modal": "CARP",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.196,
@@ -920,9 +920,9 @@
         "WORK": 1
       },
       "total_mids": 148,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:41:25.516072+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Chemistry": {
@@ -959,8 +959,8 @@
       "_notes": null
     },
     "Child Development/Early Childhood Education": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ECED",
+      "source": "curator_override",
       "data_modal": "ECE",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.241,
@@ -1026,9 +1026,9 @@
         "VBUS": 1
       },
       "total_mids": 1370,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:28:50.721584+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Commercial Art": {
@@ -1049,8 +1049,8 @@
       "_notes": null
     },
     "Commercial Music": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "MUSC",
+      "source": "curator_override",
       "data_modal": "MUSM",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.18,
@@ -1077,9 +1077,9 @@
         "TV": 1
       },
       "total_mids": 172,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:42:21.195087+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Communication Studies": {
@@ -1105,8 +1105,8 @@
       "_notes": null
     },
     "Computer Information Systems": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "CISC",
+      "source": "curator_override",
       "data_modal": "CIS",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.478,
@@ -1219,14 +1219,14 @@
         "WORK": 1
       },
       "total_mids": 2232,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:25:14.419498+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Computer Science": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "CISC",
+      "source": "curator_override",
       "data_modal": "CS",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.572,
@@ -1271,14 +1271,14 @@
         "MLAT": 1
       },
       "total_mids": 715,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:31:34.900799+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Construction Management": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "CNSM",
+      "source": "curator_override",
       "data_modal": "CM",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.106,
@@ -1310,14 +1310,14 @@
         "CTPW": 1
       },
       "total_mids": 188,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:39:05.103769+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Construction Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "CNST",
+      "source": "curator_override",
       "data_modal": "CONS",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.184,
@@ -1373,9 +1373,9 @@
         "WMT": 1
       },
       "total_mids": 788,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:30:49.275859+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Cosmetology": {
@@ -1402,8 +1402,8 @@
       "_notes": null
     },
     "Counseling": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "COUN",
+      "source": "curator_override",
       "data_modal": "COUN",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.388,
@@ -1473,9 +1473,9 @@
         "SPED": 1
       },
       "total_mids": 823,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:29:53.316901+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Court Reporting": {
@@ -1497,8 +1497,8 @@
       "_notes": null
     },
     "Culinary Arts/Food Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "CULN",
+      "source": "curator_override",
       "data_modal": "CUL",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.194,
@@ -1570,9 +1570,9 @@
         "VWT": 1
       },
       "total_mids": 973,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:29:47.489016+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Dance": {
@@ -1615,8 +1615,8 @@
       "_notes": null
     },
     "Dental Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "DENT",
+      "source": "curator_override",
       "data_modal": "DH",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.356,
@@ -1654,14 +1654,14 @@
         "VNRS": 1
       },
       "total_mids": 578,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:33:22.550145+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Diagnostic Medical Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "RADT",
+      "source": "curator_override",
       "data_modal": "DMS",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.75,
@@ -1680,14 +1680,14 @@
         "RADS": 1
       },
       "total_mids": 116,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:45:47.023688+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Diesel Mechanics": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "AUTD",
+      "source": "curator_override",
       "data_modal": "DIES",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.247,
@@ -1724,14 +1724,14 @@
         "OENG": 1
       },
       "total_mids": 190,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:37:12.925107+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Dietetics/Nutritional Science": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "NUTR",
+      "source": "curator_override",
       "data_modal": "FN",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.613,
@@ -1746,9 +1746,9 @@
         "NF": 1
       },
       "total_mids": 310,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:42:53.22508+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Digital Fabrication Technician": {
@@ -1789,8 +1789,8 @@
       "_notes": null
     },
     "Drafting/CADD": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "DRAF",
+      "source": "curator_override",
       "data_modal": "CADD",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.136,
@@ -1867,9 +1867,9 @@
         "WT": 1
       },
       "total_mids": 376,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:31:44.70566+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Drama/Theater Arts": {
@@ -1958,8 +1958,8 @@
       "_notes": null
     },
     "Electricity": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ELEC",
+      "source": "curator_override",
       "data_modal": "AED",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.315,
@@ -2007,9 +2007,9 @@
         "WORK": 1
       },
       "total_mids": 410,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:33:46.815453+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Electromechanical Technology": {
@@ -2053,8 +2053,8 @@
       "_notes": null
     },
     "Electronics": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ELEC",
+      "source": "curator_override",
       "data_modal": "ELEC",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.467,
@@ -2119,14 +2119,14 @@
         "VOC": 1
       },
       "total_mids": 512,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:31:14.808596+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Emergency Medical Technologies": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "EMST",
+      "source": "curator_override",
       "data_modal": "EMS",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.315,
@@ -2192,9 +2192,9 @@
         "WLD": 1
       },
       "total_mids": 553,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:31:06.57865+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Engineering": {
@@ -2218,8 +2218,8 @@
       "_notes": null
     },
     "Engineering Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ENGT",
+      "source": "curator_override",
       "data_modal": "ENGT",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.427,
@@ -2234,9 +2234,9 @@
         "PMET": 1
       },
       "total_mids": 157,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:46:24.54726+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "English": {
@@ -2312,8 +2312,8 @@
       "_notes": null
     },
     "English as a Second Language": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ESOL",
+      "source": "curator_override",
       "data_modal": "ESL",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.571,
@@ -2362,9 +2362,9 @@
         "READ": 1
       },
       "total_mids": 2316,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:28:10.012084+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "English as a Second Language Noncredit 53412": {
@@ -2384,8 +2384,8 @@
       "_notes": null
     },
     "Environmental Technologies": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ESCI",
+      "source": "curator_override",
       "data_modal": "ENVS",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.119,
@@ -2472,9 +2472,9 @@
         "VOC": 1
       },
       "total_mids": 578,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:30:08.319045+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Equine Science": {
@@ -2497,8 +2497,8 @@
       "_notes": null
     },
     "Ethnic Studies": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ETHS",
+      "source": "curator_override",
       "data_modal": "ES",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.227,
@@ -2561,9 +2561,9 @@
         "SUST": 1
       },
       "total_mids": 794,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:30:17.346393+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Fashion and Related Technologies": {
@@ -2607,8 +2607,8 @@
       "_notes": null
     },
     "Film and Media Studies": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "FIMS",
+      "source": "curator_override",
       "data_modal": "FILM",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.385,
@@ -2644,14 +2644,14 @@
         "WGST": 1
       },
       "total_mids": 499,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:34:59.258685+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Fire Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "FIRE",
+      "source": "curator_override",
       "data_modal": "FIRE",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.416,
@@ -2701,14 +2701,14 @@
         "WORK": 1
       },
       "total_mids": 1546,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:29:31.835249+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Foreign Languages": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "FLNG",
+      "source": "curator_override",
       "data_modal": "SPAN",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.268,
@@ -2800,14 +2800,14 @@
         "VOCE": 1
       },
       "total_mids": 1453,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:26:10.27766+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Forestry/Natural Resources": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ENVR",
+      "source": "curator_override",
       "data_modal": "FOR",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.27,
@@ -2832,14 +2832,14 @@
         "SPEC": 1
       },
       "total_mids": 152,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:52:37.982784+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Furniture Making": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "CSTF",
+      "source": "curator_override",
       "data_modal": "CFT",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.508,
@@ -2849,9 +2849,9 @@
         "WOOD": 1
       },
       "total_mids": 120,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:56:04.372528+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Geography": {
@@ -2893,8 +2893,8 @@
       "_notes": null
     },
     "Gerontology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "GERO",
+      "source": "curator_override",
       "data_modal": "GERO",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.351,
@@ -2914,14 +2914,14 @@
         "OLAD": 1
       },
       "total_mids": 57,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:48:31.172612+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Graphic Arts": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "GRAF",
+      "source": "curator_override",
       "data_modal": "ADM",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.109,
@@ -2967,14 +2967,14 @@
         "WORK": 1
       },
       "total_mids": 294,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:35:11.069503+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Gunsmithing": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "GSMI",
+      "source": "curator_override",
       "data_modal": "GSS",
       "data_modal_is_4letter": false,
       "data_modal_share": 1.0,
@@ -2982,14 +2982,14 @@
         "GSS": 114
       },
       "total_mids": 114,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:58:37.951808+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Health": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "HLTH",
+      "source": "curator_override",
       "data_modal": "HLTH",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.365,
@@ -3044,14 +3044,14 @@
         "WORK": 1
       },
       "total_mids": 496,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:31:53.589766+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Health Care Ancillaries": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "HLTH",
+      "source": "curator_override",
       "data_modal": "MA",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.199,
@@ -3110,14 +3110,14 @@
         "VONU": 1
       },
       "total_mids": 408,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:32:16.25063+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Health Information Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "HEIT",
+      "source": "curator_override",
       "data_modal": "HIT",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.49,
@@ -3136,9 +3136,9 @@
         "ITIS": 1
       },
       "total_mids": 157,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:43:48.932113+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Heavy Duty Equipment Mechanics": {
@@ -3178,8 +3178,8 @@
       "_notes": null
     },
     "Humanities": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "HUMA",
+      "source": "curator_override",
       "data_modal": "HUM",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.592,
@@ -3190,14 +3190,14 @@
         "WMNS": 1
       },
       "total_mids": 260,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:48:15.625302+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Industrial Maintenance": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "IMNT",
+      "source": "curator_override",
       "data_modal": "IMMT",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.164,
@@ -3232,9 +3232,9 @@
         "TECH": 1
       },
       "total_mids": 134,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:42:04.595548+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Industrial Relations": {
@@ -3258,8 +3258,8 @@
       "_notes": null
     },
     "Industrial Safety": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "OSHA",
+      "source": "curator_override",
       "data_modal": "OSH",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.355,
@@ -3288,14 +3288,14 @@
         "WORK": 1
       },
       "total_mids": 76,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:44:01.345332+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Instructional Design/Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "INDT",
+      "source": "curator_override",
       "data_modal": "LINC",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.58,
@@ -3310,9 +3310,9 @@
         "EDTC": 1
       },
       "total_mids": 143,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:47:08.814394+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Interdisciplinary-Basic Skills: Noncredit 53412": {
@@ -3331,8 +3331,8 @@
       "_notes": null
     },
     "Interior Design": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "INTD",
+      "source": "curator_override",
       "data_modal": "ID",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.429,
@@ -3353,9 +3353,9 @@
         "NCAR": 1
       },
       "total_mids": 247,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:51:26.522553+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Journalism": {
@@ -3395,8 +3395,8 @@
       "_notes": null
     },
     "Kinesiology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "KINE",
+      "source": "curator_override",
       "data_modal": "KIN",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.532,
@@ -3434,14 +3434,14 @@
         "WLD": 1
       },
       "total_mids": 2201,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:29:23.088926+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Law": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "LEGL",
+      "source": "curator_override",
       "data_modal": "LAW",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.869,
@@ -3458,14 +3458,14 @@
         "POLS": 1
       },
       "total_mids": 99,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:47:43.247575+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Learning Assistance or Learning Skills": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "LSKL",
+      "source": "curator_override",
       "data_modal": "GUID",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.457,
@@ -3478,14 +3478,14 @@
         "STDV": 1
       },
       "total_mids": 105,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:49:06.301874+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Legal Assisting": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "PLGL",
+      "source": "curator_override",
       "data_modal": "PARA",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.359,
@@ -3509,14 +3509,14 @@
         "POLS": 1
       },
       "total_mids": 259,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:39:26.978094+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Library Science": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "LIBR",
+      "source": "curator_override",
       "data_modal": "LIBR",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.518,
@@ -3527,14 +3527,14 @@
         "VOCE": 1
       },
       "total_mids": 139,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:49:57.689092+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Library Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "LIBT",
+      "source": "curator_override",
       "data_modal": "LIBT",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.51,
@@ -3547,14 +3547,14 @@
         "LIBS": 1
       },
       "total_mids": 49,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:55:39.875142+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Licensed Vocational Nursing": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "NRSV",
+      "source": "curator_override",
       "data_modal": "VN",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.455,
@@ -3574,14 +3574,14 @@
         "AHLT": 1
       },
       "total_mids": 123,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:45:03.628658+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Machine Tool Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "MACH",
+      "source": "curator_override",
       "data_modal": "MACH",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.418,
@@ -3620,14 +3620,14 @@
         "WLDT": 1
       },
       "total_mids": 349,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:35:25.38699+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Management": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "MGMT",
+      "source": "curator_override",
       "data_modal": "MGMT",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.491,
@@ -3655,14 +3655,14 @@
         "PHIL": 1
       },
       "total_mids": 165,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:42:15.95861+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Manufacturing Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "MANU",
+      "source": "curator_override",
       "data_modal": "MFGT",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.177,
@@ -3720,14 +3720,14 @@
         "SCA": 1
       },
       "total_mids": 355,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:33:16.743933+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Marketing": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "MRKT",
+      "source": "curator_override",
       "data_modal": "MKT",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.318,
@@ -3747,14 +3747,14 @@
         "GNBU": 1
       },
       "total_mids": 85,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:46:44.255341+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Masonry": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "CNMA",
+      "source": "curator_override",
       "data_modal": "AOE",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.2,
@@ -3766,9 +3766,9 @@
         "OENG": 1
       },
       "total_mids": 5,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:58:24.828778+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Mathematics": {
@@ -3825,8 +3825,8 @@
       "_notes": null
     },
     "Media Production": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "FIMP",
+      "source": "curator_override",
       "data_modal": "MEDI",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.414,
@@ -3854,14 +3854,14 @@
         "TART": 1
       },
       "total_mids": 191,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:39:58.022414+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Mortuary Science": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "MORT",
+      "source": "curator_override",
       "data_modal": "MORT",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.472,
@@ -3872,14 +3872,14 @@
         "HS": 1
       },
       "total_mids": 36,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:57:22.3899+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Multimedia": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "MULT",
+      "source": "curator_override",
       "data_modal": "DM",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.1,
@@ -3966,14 +3966,14 @@
         "RTVF": 1
       },
       "total_mids": 903,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:29:14.592009+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Music": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "MUSI",
+      "source": "curator_override",
       "data_modal": "MUS",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.492,
@@ -4025,14 +4025,14 @@
         "TA": 1
       },
       "total_mids": 2634,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:26:48.719829+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Native American/American Indian Studies": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ETHA",
+      "source": "curator_override",
       "data_modal": "AIS",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.961,
@@ -4042,14 +4042,14 @@
         "MB": 1
       },
       "total_mids": 51,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:57:42.473471+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Nursing": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "NRSR",
+      "source": "curator_override",
       "data_modal": "NURS",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.438,
@@ -4120,14 +4120,14 @@
         "VOC": 1
       },
       "total_mids": 1440,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:28:17.199206+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Nutritional Science/Dietetics": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "NUTR",
+      "source": "curator_override",
       "data_modal": "NF",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.095,
@@ -4196,14 +4196,14 @@
         "WELL": 1
       },
       "total_mids": 95,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:36:48.624361+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Occupational Therapy Assisting": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "OCTA",
+      "source": "curator_override",
       "data_modal": "OTA",
       "data_modal_is_4letter": false,
       "data_modal_share": 1.0,
@@ -4211,14 +4211,14 @@
         "OTA": 73
       },
       "total_mids": 73,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:58:49.930554+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Office Technologies": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "OTEC",
+      "source": "curator_override",
       "data_modal": "BOT",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.094,
@@ -4335,14 +4335,14 @@
         "WFPR": 1
       },
       "total_mids": 1034,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:27:17.864983+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Older Adults: Noncredit": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "OLAD",
+      "source": "curator_override",
       "data_modal": "CRAO",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.166,
@@ -4400,14 +4400,14 @@
         "THEA": 1
       },
       "total_mids": 386,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:33:02.439501+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Ornamental Horticulture": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "HORT",
+      "source": "curator_override",
       "data_modal": "HORT",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.464,
@@ -4446,9 +4446,9 @@
         "WORK": 1
       },
       "total_mids": 548,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:33:34.923931+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Parent Education: Noncredit": {
@@ -4467,8 +4467,8 @@
       "_notes": null
     },
     "Pharmacy Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "PHMT",
+      "source": "curator_override",
       "data_modal": "PHT",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.349,
@@ -4484,9 +4484,9 @@
         "HEAL": 1
       },
       "total_mids": 109,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:48:06.491422+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Philosophy": {
@@ -4563,8 +4563,8 @@
       "_notes": null
     },
     "Physical Education": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "KINE",
+      "source": "curator_override",
       "data_modal": "PE",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.199,
@@ -4692,14 +4692,14 @@
         "SPO": 1
       },
       "total_mids": 3335,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:24:18.704124+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Physical Sciences": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "PHYS",
+      "source": "curator_override",
       "data_modal": "PHSC",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.357,
@@ -4723,14 +4723,14 @@
         "STEM": 1
       },
       "total_mids": 70,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:46:17.384436+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Physical Therapy Assisting": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "PTAS",
+      "source": "curator_override",
       "data_modal": "PTA",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.975,
@@ -4739,9 +4739,9 @@
         "RADT": 3
       },
       "total_mids": 119,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:57:16.749409+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Physics/Astronomy": {
@@ -4762,8 +4762,8 @@
       "_notes": null
     },
     "Plumbing": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "PLMB",
+      "source": "curator_override",
       "data_modal": "PLUM",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.385,
@@ -4802,14 +4802,14 @@
         "WORK": 1
       },
       "total_mids": 148,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:38:15.533144+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Political Science": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "POSC",
+      "source": "curator_override",
       "data_modal": "POLS",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.577,
@@ -4835,14 +4835,14 @@
         "ST": 1
       },
       "total_mids": 284,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:37:29.151508+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Psychiatric Technician": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "NURP",
+      "source": "curator_override",
       "data_modal": "PT",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.306,
@@ -4857,9 +4857,9 @@
         "VNPT": 1
       },
       "total_mids": 49,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:53:28.324889+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Psychology": {
@@ -4919,8 +4919,8 @@
       "_notes": null
     },
     "Radiological Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "RADT",
+      "source": "curator_override",
       "data_modal": "RADT",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.43,
@@ -4942,14 +4942,14 @@
         "VN": 1
       },
       "total_mids": 458,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:36:43.649444+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Reading": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "READ",
+      "source": "curator_override",
       "data_modal": "READ",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.534,
@@ -4980,14 +4980,14 @@
         "TEAS": 1
       },
       "total_mids": 133,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:51:57.472434+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Real Estate": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "REAL",
+      "source": "curator_override",
       "data_modal": "RE",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.61,
@@ -5010,14 +5010,14 @@
         "REST": 1
       },
       "total_mids": 195,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:52:02.549916+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Recreation Administration": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "RECR",
+      "source": "curator_override",
       "data_modal": "REC",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.449,
@@ -5036,14 +5036,14 @@
         "NRES": 1
       },
       "total_mids": 49,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:48:36.298308+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Registered Veterinary Technician": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "VETT",
+      "source": "curator_override",
       "data_modal": "VT",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.419,
@@ -5059,14 +5059,14 @@
         "INDI": 1
       },
       "total_mids": 93,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:48:25.006458+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Respiratory Technologies": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "RSPT",
+      "source": "curator_override",
       "data_modal": "RESP",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.294,
@@ -5098,14 +5098,14 @@
         "PHTA": 1
       },
       "total_mids": 402,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:35:48.535384+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Restaurant Management": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "RMGT",
+      "source": "curator_override",
       "data_modal": "RMGT",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.192,
@@ -5131,14 +5131,14 @@
         "NF": 1
       },
       "total_mids": 73,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:45:12.436282+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Robotics": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ROBO",
+      "source": "curator_override",
       "data_modal": "ENGE",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.115,
@@ -5176,14 +5176,14 @@
         "WT": 1
       },
       "total_mids": 52,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:44:29.523128+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Sign Language, American": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "SLNA",
+      "source": "curator_override",
       "data_modal": "ASL",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.514,
@@ -5210,14 +5210,14 @@
         "WORK": 1
       },
       "total_mids": 364,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:36:32.413044+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Sign Language/ English Interpreting": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "SLNG",
+      "source": "curator_override",
       "data_modal": "INT",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.393,
@@ -5231,14 +5231,14 @@
         "SPEC": 1
       },
       "total_mids": 61,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:50:36.925203+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Small Business Development": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ENTR",
+      "source": "curator_override",
       "data_modal": "ENTR",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.347,
@@ -5266,14 +5266,14 @@
         "VBUS": 1
       },
       "total_mids": 124,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:52:51.634508+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Social Science": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "SOCS",
+      "source": "curator_override",
       "data_modal": "SOCS",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.254,
@@ -5297,14 +5297,14 @@
         "SSC": 1
       },
       "total_mids": 59,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:47:34.80299+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Sociology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "SOCI",
+      "source": "curator_override",
       "data_modal": "SOC",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.763,
@@ -5321,9 +5321,9 @@
         "WSTS": 1
       },
       "total_mids": 241,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:43:03.388823+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Speech Language Pathology": {
@@ -5342,8 +5342,8 @@
       "_notes": null
     },
     "Stagecraft": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "THES",
+      "source": "curator_override",
       "data_modal": "TECT",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.202,
@@ -5369,9 +5369,9 @@
         "TVR": 1
       },
       "total_mids": 104,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:43:39.508551+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Steamfitting": {
@@ -5390,8 +5390,8 @@
       "_notes": null
     },
     "Surgical Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "SURG",
+      "source": "curator_override",
       "data_modal": "SURG",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.421,
@@ -5412,14 +5412,14 @@
         "VONU": 1
       },
       "total_mids": 38,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:49:52.341952+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Theater Arts": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "THEA",
+      "source": "curator_override",
       "data_modal": "THEA",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.418,
@@ -5457,14 +5457,14 @@
         "TAFI": 1
       },
       "total_mids": 1453,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:30:24.603209+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Transportation": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "TRNS",
+      "source": "curator_override",
       "data_modal": "TRN",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.466,
@@ -5485,9 +5485,9 @@
         "TRAN": 1
       },
       "total_mids": 118,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:44:37.279441+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Upholstering": {
@@ -5596,8 +5596,8 @@
       "_notes": null
     },
     "Women’s Studies": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "WMST",
+      "source": "curator_override",
       "data_modal": "WS",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.722,
@@ -5607,9 +5607,9 @@
         "WTRS": 2
       },
       "total_mids": 18,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-05-23T17:58:00.204681+00:00",
+      "reviewed_by": "map@rccd.edu",
       "_notes": null
     },
     "Work Experience Instructors": {
@@ -5633,5 +5633,7 @@
       "reviewed_by": null,
       "_notes": null
     }
-  }
+  },
+  "_synced_at": "2026-05-23T18:17:03Z",
+  "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
 }
