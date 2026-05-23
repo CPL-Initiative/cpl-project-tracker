@@ -218,11 +218,25 @@
     return { label: "needs review", cls: "mix" };
   }
 
-  // Re-key impact = total_mids * (variants_observed.length - 1). Disciplines
-  // with the highest spread x size go first so the curator works the most
-  // impactful entries before the long tail.
+  // Variants source — prefer `local_subject_variants` (raw college subject
+  // codes per discipline; what colleges actually call this discipline's
+  // courses) over `variants_observed` (the older MID-aggregated SUBJ4
+  // distribution, which post-Phase-1e-apply is degenerate). Falls back to
+  // variants_observed for any discipline that doesn't yet carry the local
+  // aggregate (older seed files).
+  function variantsFor(entry) {
+    if (entry.local_subject_variants && Object.keys(entry.local_subject_variants).length) {
+      return entry.local_subject_variants;
+    }
+    return entry.variants_observed || {};
+  }
+
+  // Re-key impact = total_mids * (variants count - 1). Disciplines with the
+  // highest spread × size go first so the curator works the most impactful
+  // entries before the long tail.
   function rekeyImpact(entry) {
-    var nVars = entry.variants_observed ? Object.keys(entry.variants_observed).length : 1;
+    var v = variantsFor(entry);
+    var nVars = Object.keys(v).length || 1;
     return (entry.total_mids || 0) * Math.max(0, nVars - 1);
   }
 
@@ -232,10 +246,11 @@
   // sees the full official-id landscape next to the local-code landscape.
   function variantsCell(entry) {
     var td = el("td", { class: "cs-variants" });
-    if (!entry.variants_observed) return td;
+    var vsrc = variantsFor(entry);
+    if (!Object.keys(vsrc).length) return td;
     var modal = entry.data_modal;
-    var pairs = Object.keys(entry.variants_observed).map(function (k) {
-      return [k, entry.variants_observed[k]];
+    var pairs = Object.keys(vsrc).map(function (k) {
+      return [k, vsrc[k]];
     }).sort(function (a, b) { return b[1] - a[1] || a[0].localeCompare(b[0]); });
     var visible = pairs.slice(0, 5);
     var hidden = pairs.length - visible.length;
@@ -265,18 +280,22 @@
 
     var modal = entry.data_modal;
     var canon = entry.canonical_subj4;
-    var variants = Object.keys(entry.variants_observed || {})
-      .map(function (k) { return [k, entry.variants_observed[k]]; })
+    var vsrcM = variantsFor(entry);
+    var variants = Object.keys(vsrcM)
+      .map(function (k) { return [k, vsrcM[k]]; })
       .sort(function (a, b) { return b[1] - a[1] || a[0].localeCompare(b[0]); });
 
     body.innerHTML = "";
+    var totalCourses = entry.local_subject_total || entry.total_mids || 0;
+    var moreTrunc = entry.local_subject_variants_truncated || 0;
+    var truncNote = moreTrunc > 0 ? " (+" + moreTrunc + " more codes truncated from this list)" : "";
     body.appendChild(el("p", { class: "cs-modal-meta" }, [
-      String(entry.total_mids || 0) + " MIDs across " + variants.length + " distinct codes. " +
-      "Bold yellow = the most-used code today; green = curator-confirmed canonical."
+      String(totalCourses) + " local college courses across " + variants.length + " distinct subject codes" + truncNote + ". " +
+      "Bold yellow = the most-used code locally; green = curator-confirmed Common SUBJ."
     ]));
 
     // Section 1: local college variants
-    body.appendChild(el("h5", null, ["Local college subject codes (in this dataset)"]));
+    body.appendChild(el("h5", null, ["Local college subject codes (what colleges actually use)"]));
     var grid = el("div", { class: "cs-var-grid" });
     variants.forEach(function (p) {
       var isModal = p[0] === modal;
@@ -371,7 +390,7 @@
   var SORT_GETTERS = {
     discipline: function (e) { return (e.discipline || "").toLowerCase(); },
     total_mids: function (e) { return e.total_mids || 0; },
-    variants_count: function (e) { return e.variants_observed ? Object.keys(e.variants_observed).length : 0; },
+    variants_count: function (e) { return Object.keys(variantsFor(e)).length; },
     data_modal: function (e) { return (e.data_modal || "").toLowerCase(); },
     canonical_subj4: function (e) { return (e.canonical_subj4 || "~").toLowerCase(); }, // ~ sorts blanks last
     status: function (e) { return STATUS_ORDER[status(e).label] || 99; },
