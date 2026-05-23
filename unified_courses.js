@@ -283,6 +283,7 @@
     discipline_title_mismatch:        "Title doesn't match assigned discipline — likely misassigned",
     generic_title_concrete_discipline: "Title is course-format generic (Internship / Capstone / SkillsUSA…) — can't justify a specific discipline",
     top_discipline_disagreement:      "TOP code maps to a different discipline than the one assigned",
+    description_discipline_disagreement: "Course description's safe-phrase set points to a different discipline (≥2 mentions)",
   };
   function auditTagsTip(card) {
     var tags = card.tags || [];
