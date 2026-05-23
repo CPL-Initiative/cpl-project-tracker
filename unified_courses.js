@@ -242,6 +242,64 @@
     });
     return _ucSugP;
   }
+  // Lazy-load row Trust-Card audit findings (kb/row_audit/latest.json) →
+  // indexes by row id so flagBadges() can render a "⚠ hinky" chip on rows
+  // the auditor flagged. Eagerly kicked off at tab init so the chips appear
+  // shortly after first paint without blocking it. Data shape per row:
+  //   {id, k, lev, fts, mcs, fr, mcr, tags, [title, faculty_fields, members, suggested_fix]}
+  // Only rows with at least one tag are indexed (no-tag rows = no chip).
+  // See CLAUDE.md §11 for the strategic context.
+  var _ucAudit = null, _ucAuditP = null;
+  function loadAudit() {
+    if (_ucAudit) return Promise.resolve(_ucAudit);
+    if (_ucAuditP) return _ucAuditP;
+    _ucAuditP = fetch("kb/row_audit/latest.json")
+      .then(function (r) { return r.ok ? r.json() : { rows: [] }; })
+      .then(function (d) {
+        var idx = {};
+        (d.rows || []).forEach(function (row) {
+          if (row.tags && row.tags.length) idx[row.id] = row;
+        });
+        _ucAudit = { idx: idx, generated_at: d._generated_at || null };
+        renderAuditStatusBadge();
+        return _ucAudit;
+      })
+      .catch(function () { _ucAudit = { idx: {}, generated_at: null }; return _ucAudit; });
+    return _ucAuditP;
+  }
+  // Human-readable labels for the audit tag taxonomy (see kb/_row_audit.py).
+  // Used in the chip tooltip so curators see what the chip is flagging.
+  var AUDIT_TAG_LABELS = {
+    cluster_blanks_when_aggregatable: "Cluster fields aggregable from members but not curated",
+    cluster_members_too_sparse:       "Cluster members lack data to aggregate",
+    cluster_id_off_scheme:            "Cluster ID off-scheme (UC-CUR-*) — promotion candidate",
+    cluster_member_unresolved:        "Cluster has unresolvable member ids",
+    uc_cur_ripe_for_promotion:        "Ripe for promotion from UC-CUR-* to a proper M-ID",
+    seed_untouched_discipline:        "Discipline set by Phase B seed and never reviewed",
+    blank_discipline:                 "Discipline missing",
+    blank_description:                "Description missing",
+    subject_spread_high_low_confidence: "Possible over-merge (spread ≥ 8, low confidence)",
+    mid_id_off_scheme:                "M-ID ID off-scheme (likely single-letter SUBJ re-mint artifact)",
+  };
+  function auditTagsTip(card) {
+    var tags = card.tags || [];
+    var lines = tags.map(function (t) { return "• " + (AUDIT_TAG_LABELS[t] || t); });
+    if (card.fts != null) lines.unshift("faculty_trust_score: " + card.fts.toFixed(2));
+    lines.unshift("Auditor findings (kb/_row_audit.py):");
+    return lines.join("\n");
+  }
+  // Render a small "audit loaded — N flagged of M" indicator near the
+  // filter bar so curators know the audit overlay is live.
+  function renderAuditStatusBadge() {
+    var host = document.getElementById("uc-audit-status");
+    if (!host || !_ucAudit) return;
+    var n = Object.keys(_ucAudit.idx || {}).length;
+    var when = (_ucAudit.generated_at || "").slice(0, 10);
+    host.textContent = n ? ("⚠ " + n + " row" + (n === 1 ? "" : "s") + " flagged" +
+                            (when ? " (audit " + when + ")" : "")) : "";
+    host.title = "Trust-Card auditor findings overlaid from kb/row_audit/latest.json. "
+               + "Hover a row's ⚠ chip in Flags to see what's flagged.";
+  }
   // Lazy-load member-course descriptions (id -> [desc,...] parallel to members)
   // — heavy (~tens of MB), so only fetched when a curator opens descriptions.
   var _ucMemDesc = null, _ucMemDescP = null;
@@ -790,6 +848,10 @@
       title: "Download the full set (incl. stand-alone courses) as Excel" }, ["↓ Export all to .xlsx"]);
     var auth = el("span", { id: "uc-auth", class: "uc-auth" });
     var syncBadge = el("span", { id: "uc-sync" });
+    // Trust-Card auditor status — populated by renderAuditStatusBadge() once
+    // loadAudit() resolves. Empty until then, so layout doesn't jiggle.
+    var auditStatus = el("span", { id: "uc-audit-status", class: "uc-audit-status",
+      style: "color:#9a6700;font-size:0.85em;margin-left:8px;" });
     // Batch-verify the currently-filtered Generated rows (shown only when signed
     // in and there's something to verify; label/visibility updated in render()).
     var verifyAllBtn = el("button", { id: "uc-verify-all", class: "uc-filter",
@@ -803,7 +865,7 @@
       ["✨ Suggested merges"]);
     suggestBtn.onclick = function () { openSuggestions(); };
 
-    [fKind, fSource, fStatus, fDisc, fCredit, fConf, fArtic, fOfficial, fProv, search, flagged, blanksBtn, verifyAllBtn, suggestBtn, auth, syncBadge, exportBtn]
+    [fKind, fSource, fStatus, fDisc, fCredit, fConf, fArtic, fOfficial, fProv, search, flagged, blanksBtn, verifyAllBtn, suggestBtn, auth, syncBadge, auditStatus, exportBtn]
       .forEach(function (c) { toolbar.appendChild(c); });
 
     // Curation edits hit Supabase instantly but are only folded into git
@@ -910,6 +972,14 @@
       b(f.top_mixed, "TOP", "mix", "members disagree on TOP code");
       b(f.ncc_mixed, "noncredit", "mix", "members disagree on noncredit category");
       b(r.locked, "anchor", "ok", "curated common-course anchor (" + (r.id_system || "") + ") — read-only");
+      // Trust-Card auditor overlay (lazy — only present after loadAudit() resolves).
+      // Renders a "⚠ hinky" chip on rows the auditor flagged so the curator sees
+      // them at a glance. Tooltip lists tag labels + faculty_trust_score.
+      var auditCard = _ucAudit && _ucAudit.idx[r.id];
+      if (auditCard) {
+        out.appendChild(el("span", { class: "uc-badge warn", title: auditTagsTip(auditCard) },
+                            ["⚠ " + auditCard.tags.length]));
+      }
       if (r.consolidated_from && r.consolidated_from.length) {
         out.appendChild(el("span", {
           class: "uc-badge ok", style: "background:#ddf4ff;border:1px solid #54aeff;color:#0969da;",
@@ -1258,6 +1328,9 @@
     // Load live curated descriptions so the pending-sync badge counts
     // description edits not yet folded into git.
     fetchDescriptionOverlay().then(function (m) { descOverlay = m; renderSyncBadge(); });
+    // Eagerly load the Trust-Card auditor overlay so "⚠ hinky" chips appear
+    // shortly after first paint. Failure is silent (chips just won't show).
+    loadAudit().then(function () { render(); });
   }
 
   // Process an auth redirect hash as early as possible, then init.
