@@ -447,7 +447,7 @@ def _compute_scores(faculty_fields, mc_fields):
 
 # ─── tag generators ─────────────────────────────────────────────────────────
 
-def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None):
+def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None, top_disc=None):
     tags = []
     if faculty_fields["discipline"]["state"] == "seed-untouched":
         tags.append("seed_untouched_discipline")
@@ -476,6 +476,13 @@ def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None):
     # the discipline. Calibration: 44 first-pass flags, leverage-ranked.
     if _classify_generic_title_concrete_discipline(rec, subject_map):
         tags.append("generic_title_concrete_discipline")
+    # top_discipline_disagreement — row's TOP code (per top_discipline_map.json)
+    # maps to a different discipline than the assigned one. Cross-validation
+    # signal; sister-discipline noise expected (Kinesiology vs PE etc.).
+    # Calibration: 2,201 first-pass flags at m≥2 (379 at m≥5).
+    if top_disc is not None:
+        if _classify_top_discipline_disagreement(rec, top_disc):
+            tags.append("top_discipline_disagreement")
     return tags
 
 
@@ -518,6 +525,42 @@ def _build_disc_bag(courses, lex):
         if d not in bag:
             bag[d] = _title_tokens(d)
     return bag
+
+
+def _classify_top_discipline_disagreement(rec, top_disc):
+    """Return alt-discipline if the row's TOP code maps to a different
+    discipline than the assigned one. CLAUDE.md notes TOP codes 'vary by
+    college so they're an intent signal, not ground truth' — but a
+    direct disagreement is still worth flagging for curator review.
+
+    Known noise pattern (NOT currently suppressed — let the curator decide
+    which pairs are sister disciplines for their catalog):
+      * Kinesiology ↔ Physical Education (modern vs traditional naming)
+      * Business ↔ {Marketing, Office Technologies, Management}
+      * Art ↔ {Graphic Arts, Multimedia, Photography}
+      * Computer Information Systems ↔ Office Technologies (for MS apps)
+      * Nursing ↔ Licensed Vocational Nursing
+    If these become persistent noise, add a SISTER_PAIRS suppression set
+    of frozenset({A, B}) pairs and skip when {disc, top_disc} matches one.
+
+    Calibration: ~2,201 flags at m≥2; leverage-ranking surfaces the
+    actionable ones (DH M1039 "Pharmacology" → Dental Tech vs TOP→Nursing
+    correct; CIS Microsoft Excel → CIS vs TOP→Office Tech is a curator
+    judgment call).
+
+    Returns the TOP-implied discipline if the rule fires; None otherwise.
+    """
+    disc = rec.get("discipline")
+    if not disc:
+        return None
+    if (rec.get("corroboration_members") or 0) < 2:
+        return None
+    top = rec.get("top_code")
+    if not top or top not in top_disc:
+        return None
+    if top_disc[top] == disc:
+        return None
+    return top_disc[top]
 
 
 def _classify_generic_title_concrete_discipline(rec, subject_map):
@@ -648,6 +691,15 @@ def main():
         lex = {}
     disc_bag = _build_disc_bag(courses, lex)
     subject_map = (lex or {}).get("subject_map", {})
+    # TOP code → discipline lookup for the top_discipline_disagreement rule.
+    # Drop None entries (deliberately-blank catch-all codes per CLAUDE.md §10)
+    # and the 4930.* ESL/basic-skills bucket.
+    try:
+        _top_blob = load("top_discipline_map.json")
+        top_disc = {k: v for k, v in (_top_blob.get("map") or {}).items()
+                    if v is not None and not k.startswith("4930.")}
+    except FileNotFoundError:
+        top_disc = {}
 
     # Build cluster targets from merge_into.
     cluster_members = defaultdict(list)  # cluster_id -> [member_id, ...]
@@ -676,7 +728,8 @@ def main():
         # a non-default state for any row, inline ONLY that field here.
         mc = {}
         f_score, m_score = _compute_scores(faculty, _virtual_mc(mc))
-        tags = _tags_for_mid(rec, faculty, disc_bag=disc_bag, subject_map=subject_map)
+        tags = _tags_for_mid(rec, faculty, disc_bag=disc_bag,
+                             subject_map=subject_map, top_disc=top_disc)
         card = {
             "row_id": course_id,
             "row_kind": "Course",
@@ -795,6 +848,7 @@ def _write_outputs(cards):
             "seed_untouched_discipline", "blank_discipline", "blank_description",
             "subject_spread_high_low_confidence", "mid_id_off_scheme",
             "discipline_title_mismatch", "generic_title_concrete_discipline",
+            "top_discipline_disagreement",
             "cluster_blanks_when_aggregatable", "cluster_members_too_sparse",
             "cluster_id_off_scheme", "uc_cur_ripe_for_promotion",
             "cluster_member_unresolved",
