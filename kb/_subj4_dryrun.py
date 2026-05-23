@@ -253,6 +253,36 @@ def main():
         bucket = (r["new_subj4"], r["old_band"], r["kind"])
         by_bucket[bucket].append(r)
 
+    # ── Pass 2a: pre-reserve untouched-row suffixes ─────────────────────────
+    # Rows in non-allocating fates (skip_no_discipline / skip_unknown_disc /
+    # blocked_on_curator / skip_offscheme_id / invalid_canonical) KEEP their
+    # existing old_id post-apply. If their (old_subj4, old_band, kind) overlaps
+    # with a re-key target bucket, the allocator must reserve their suffix or
+    # the apply will silently overwrite them. Caught 2026-05-23 when 386 rows
+    # vanished during local apply-test (98 minted + 288 singleton) — most are
+    # skip_no_discipline rows whose existing keys happened to match the early
+    # M1001-style sequences the allocator was about to assign.
+    untouched_corr_seqs = defaultdict(set)        # (s4, band) -> set of int seqs
+    untouched_sing_suffixes = defaultdict(set)    # (s4, band) -> set of 3-char strings
+    UNTOUCHED_FATES = {"skip_no_discipline", "skip_unknown_disc",
+                       "blocked_on_curator", "skip_offscheme_id",
+                       "invalid_canonical"}
+    for r in rows:
+        if r["fate"] not in UNTOUCHED_FATES:
+            continue
+        s4 = r["old_subj4"]
+        band = r["old_band"]
+        kind = r["kind"]
+        suffix = r["old_suffix"] or ""
+        if not (s4 and band and SUBJ4_RE.match(s4)):
+            # Untouched off-scheme rows (e.g. single-letter SUBJ4 like `A M1001`)
+            # can't collide with a 4-letter canonical SUBJ4 bucket.
+            continue
+        if kind == "corroborated" and suffix.isdigit():
+            untouched_corr_seqs[(s4, band)].add(int(suffix))
+        elif kind == "standalone" and re.match(r"^\d[A-Z]{2}$", suffix):
+            untouched_sing_suffixes[(s4, band)].add(suffix)
+
     # CCN/C-ID reservation: per (SUBJ4, band), skip seqs already taken by
     # an official identifier so M-ID `BIOL M1001` never collides with CCN
     # `BIOL C1001` or with the seq embedded in C-ID `BIOL 100`. Built once
@@ -272,10 +302,13 @@ def main():
         if len(brows) >= 2:
             collisions[bucket_str] = []
         if kind == "corroborated":
-            reserved = id_reservations.get((s4, band), set())
+            # Reserved seqs = CCN/C-ID identifiers in (s4, band) UNION untouched
+            # rows already occupying those seqs (the post-apply state must
+            # leave those rows untouched). Apply caught this 2026-05-23.
+            reserved = set(id_reservations.get((s4, band), set()))
+            reserved |= untouched_corr_seqs.get((s4, band), set())
             seq = 1  # 1-based corroborated sequence (M<band>001 is first)
             for r in brows:
-                # Walk past any seq reserved by CCN/C-ID in this (SUBJ4, band).
                 while seq in reserved:
                     reservation_skip_log.append((bucket_str, seq))
                     seq += 1
@@ -287,13 +320,21 @@ def main():
                     seq += 1
         elif kind == "standalone":
             # Standalones use `M<band><digit><LL>` — letter suffix structurally
-            # distinct from CCN/C-ID, no reservation needed. Capacity = 10·26·26.
-            for i, r in enumerate(brows):
-                if i >= 10 * 26 * 26:
-                    overflow_sing.append((bucket_str, i))
+            # distinct from CCN/C-ID, no CCN/C-ID reservation needed. Untouched
+            # standalone rows in the bucket still reserve their slot.
+            reserved_suffixes = untouched_sing_suffixes.get((s4, band), set())
+            idx = 0
+            for r in brows:
+                while standalone_code(idx) in reserved_suffixes:
+                    reservation_skip_log.append((bucket_str, standalone_code(idx)))
+                    idx += 1
+                if idx >= 10 * 26 * 26:
+                    overflow_sing.append((bucket_str, idx))
                     r["new_id"] = None
+                    idx += 1
                     continue
-                r["new_id"] = f"{s4} M{band}{standalone_code(i)}"
+                r["new_id"] = f"{s4} M{band}{standalone_code(idx)}"
+                idx += 1
         # Record the bucket members (post-allocation) when ≥2 collided.
         if len(brows) >= 2:
             for r in brows:
@@ -342,11 +383,23 @@ def main():
         "pass": not disc_violations,
         "violations": disc_violations,
     }
-    # V3: new course_ids unique
+    # V3: new course_ids unique among allocated rows
     new_id_counts = Counter(r["new_id"] for r in rows if r.get("new_id"))
     dups = {nid: n for nid, n in new_id_counts.items() if n > 1}
     validation["new_course_ids_unique"] = {"pass": not dups, "duplicates": dups}
-    # V4: no overflows
+    # V4: new course_ids disjoint from old_ids of untouched rows. Without this,
+    # a re-key new_id like `AGRI M1001` would silently overwrite an untouched
+    # `AGRI M1001` no-discipline row at apply time. Caught 2026-05-23 (386
+    # rows vanished during local apply-test before this gate landed).
+    new_id_set = {r["new_id"] for r in rows if r.get("new_id")}
+    untouched_old_ids = {r["old_id"] for r in rows if r["fate"] in UNTOUCHED_FATES}
+    collisions_v4 = sorted(new_id_set & untouched_old_ids)
+    validation["new_id_disjoint_from_untouched"] = {
+        "pass": not collisions_v4,
+        "collisions_count": len(collisions_v4),
+        "examples": collisions_v4[:10],
+    }
+    # V5: no overflows
     validation["no_seq_overflow"] = {
         "pass": not overflow_corr and not overflow_sing,
         "corroborated_overflow": overflow_corr,
@@ -638,6 +691,10 @@ def _render_report(*, today, canon_doc, rows, fate_counts, alias_map, collisions
             elif vk == "new_course_ids_unique":
                 for nid, n in sorted(vv['duplicates'].items())[:10]:
                     lines.append(f"  - `{nid}` × {n}")
+            elif vk == "new_id_disjoint_from_untouched":
+                lines.append(f"  - {vv['collisions_count']} new_id(s) collide with untouched rows' existing keys:")
+                for nid in vv['examples']:
+                    lines.append(f"    - `{nid}`")
             elif vk == "no_seq_overflow":
                 if vv['corroborated_overflow']:
                     lines.append(f"  - corroborated overflow: {vv['corroborated_overflow'][:5]}")
