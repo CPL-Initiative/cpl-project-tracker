@@ -4342,22 +4342,67 @@ def export_unified_courses():
         v = _member_v(m)
         return v.get("common_title") or v.get("synthesized_title") or v.get("canonical_title")
 
+    # ── Cluster field aggregation (formerly hardcoded to None — caused
+    # UC-CUR-MPG029OM to show "—/—/—/—" for Credit/Units/TOP/Conf even though
+    # all 3 members carried unanimous Credit + TOP 0949.00). Walk members,
+    # aggregate per field: unanimous → that value; modal (≥⅔ agree) → that
+    # value + mixed flag; varied → None. Confidence synthesized as
+    # mean(member_conf) ÷ coherence_factor. Curation overrides win if set.
+    # See kb/_row_audit.py for the audit-side mirror; this is the
+    # render-side. Phase 1b — first half (rendering fix).
+    def _agg_unanimous(values):
+        """Return (value, mixed_flag) — value if all non-null agree, else (None|modal, True)."""
+        vals = [v for v in values if v is not None]
+        if not vals:
+            return None, False
+        from collections import Counter as _C
+        c = _C(vals)
+        top_val, top_n = c.most_common(1)[0]
+        if len(c) == 1:
+            return top_val, False
+        if top_n / len(vals) >= 0.67:
+            return top_val, True
+        return None, True  # truly varied — withhold a single value
+
+    def _synth_cluster_conf(member_recs):
+        confs = [r.get("confidence") for r in member_recs if r.get("confidence") is not None]
+        if not confs:
+            return None
+        mean = sum(confs) / len(confs)
+        credits = [r.get("credit_status") for r in member_recs if r.get("credit_status")]
+        tops    = [r.get("top_code") for r in member_recs if r.get("top_code")]
+        coherent = (len(set(credits)) <= 1) and (len(set(tops)) <= 1)
+        factor = 0.85 if coherent else 0.70
+        return round(min(1.0, mean / max(factor, 0.01)), 3)
+
     for tgt, members in sorted(merge_members.items()):
         cur = curation.get(tgt, {})
         # If the target is itself an existing course (merge INTO an M-ID/C-ID),
         # include it as a member so its title/subject/articulations are folded in.
         tgt_v = _member_v(tgt)
         all_members = ([tgt] if tgt_v else []) + list(members)
-        subs = sorted({_member_v(m).get("subject") for m in all_members if _member_v(m).get("subject")})
+        member_recs = [_member_v(m) for m in all_members]
+        subs = sorted({mv.get("subject") for mv in member_recs if mv.get("subject")})
         variants = [t for t in (_member_title(m) for m in all_members) if t]
         ad, pot = rollup(all_members)  # only M-ID members contribute articulations
+
+        c_credit, credit_mixed = _agg_unanimous([mv.get("credit_status") for mv in member_recs])
+        c_top,    top_mixed    = _agg_unanimous([mv.get("top_code")      for mv in member_recs])
+        c_units,  _units_mixed = _agg_unanimous([mv.get("typical_units") for mv in member_recs])
+        c_conf                 = _synth_cluster_conf(member_recs)
+
         rows.append({"kind": "Cluster", "id": tgt,
                      "title": cur.get("unified_title") or _member_title(tgt) or (variants[0] if variants else tgt),
                      "disc": cur.get("discipline") or tgt_v.get("discipline"),
-                     "credit": None, "units": None, "top": None,
-                     "subj": subs, "members": len(all_members), "conf": None,
+                     "credit": cur.get("credit_status") or c_credit,
+                     "units":  cur.get("typical_units") if cur.get("typical_units") is not None else c_units,
+                     "top":    cur.get("top_code")      or c_top,
+                     "subj": subs, "members": len(all_members),
+                     "conf": cur.get("confidence_override") if cur.get("confidence_override") is not None else c_conf,
                      "id_system": "Cluster", "locked": False, "title_variants": variants,
-                     "flags": {"over_merged": False, "credit_mixed": False, "top_mixed": False,
+                     "flags": {"over_merged": False,
+                               "credit_mixed": credit_mixed and not cur.get("credit_status"),
+                               "top_mixed":    top_mixed    and not cur.get("top_code"),
                                "ncc_mixed": False, "reviewed": True},
                      "reviewed_by": cur.get("reviewed_by"), "reviewed_at": (cur.get("reviewed_at") or "")[:10],
                      "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
@@ -4906,7 +4951,7 @@ def export_unified_courses():
     headers = ["Kind", "ID", "Title", "Discipline", "Credit Status", "Units", "TOP Code",
                "Subject(s)", "Members", "Confidence", "Over-merged", "Credit mixed", "TOP mixed",
                "Noncredit mixed", "Reviewed", "Curated by", "Curated on", "Adopted (count)",
-               "Adopted colleges", "Potential adoption (count)", "Potential colleges"]
+               "Adopted colleges", "Adoptable (count)", "Adoptable colleges"]
     xrows = []
 
     def xrow(kind, cid, title, disc, credit, units, top, subj, members, conf, fl, mids):

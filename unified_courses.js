@@ -242,6 +242,108 @@
     });
     return _ucSugP;
   }
+  // Lazy-load row Trust-Card audit findings (kb/row_audit/latest.json) →
+  // indexes by row id so flagBadges() can render a "⚠ hinky" chip on rows
+  // the auditor flagged. Eagerly kicked off at tab init so the chips appear
+  // shortly after first paint without blocking it. Data shape per row:
+  //   {id, k, lev, fts, mcs, fr, mcr, tags, [title, faculty_fields, members, suggested_fix]}
+  // Only rows with at least one tag are indexed (no-tag rows = no chip).
+  // See CLAUDE.md §11 for the strategic context.
+  var _ucAudit = null, _ucAuditP = null;
+  function loadAudit() {
+    if (_ucAudit) return Promise.resolve(_ucAudit);
+    if (_ucAuditP) return _ucAuditP;
+    _ucAuditP = fetch("kb/row_audit/latest.json")
+      .then(function (r) { return r.ok ? r.json() : { rows: [] }; })
+      .then(function (d) {
+        var idx = {};
+        (d.rows || []).forEach(function (row) {
+          if (row.tags && row.tags.length) idx[row.id] = row;
+        });
+        _ucAudit = { idx: idx, generated_at: d._generated_at || null };
+        renderAuditStatusBadge();
+        return _ucAudit;
+      })
+      .catch(function () { _ucAudit = { idx: {}, generated_at: null }; return _ucAudit; });
+    return _ucAuditP;
+  }
+  // Human-readable labels for the audit tag taxonomy (see kb/_row_audit.py).
+  // Used in the chip tooltip so curators see what the chip is flagging.
+  var AUDIT_TAG_LABELS = {
+    cluster_blanks_when_aggregatable: "Cluster fields aggregable from members but not curated",
+    cluster_members_too_sparse:       "Cluster members lack data to aggregate",
+    cluster_id_off_scheme:            "Cluster ID off-scheme (UC-CUR-*) — promotion candidate",
+    cluster_member_unresolved:        "Cluster has unresolvable member ids",
+    uc_cur_ripe_for_promotion:        "Ripe for promotion from UC-CUR-* to a proper M-ID",
+    seed_untouched_discipline:        "Discipline set by Phase B seed and never reviewed",
+    blank_discipline:                 "Discipline missing",
+    blank_description:                "Description missing",
+    subject_spread_high_low_confidence: "Possible over-merge (spread ≥ 8, low confidence)",
+    mid_id_off_scheme:                "M-ID ID off-scheme (likely single-letter SUBJ re-mint artifact)",
+    discipline_title_mismatch:        "Title doesn't match assigned discipline — likely misassigned",
+    generic_title_concrete_discipline: "Title is course-format generic (Internship / Capstone / SkillsUSA…) — can't justify a specific discipline",
+    top_discipline_disagreement:      "TOP code maps to a different discipline than the one assigned",
+    description_discipline_disagreement: "Course description's safe-phrase set points to a different discipline (≥2 mentions)",
+  };
+  // Mirror of kb/_row_audit.py's TAG_PENALTY_ON_DISCIPLINE — kept in sync
+  // manually. If you change penalties there, change them here too. Used to
+  // build a tag-derived score breakdown for the hover tooltip without
+  // needing to serialize per-field state into latest.json.
+  var TAG_PENALTY_ON_DISCIPLINE = {
+    "discipline_title_mismatch":           0.20,
+    "top_discipline_disagreement":         0.15,
+    "description_discipline_disagreement": 0.15,
+    "generic_title_concrete_discipline":   0.20,
+  };
+  function auditTagsTip(card) {
+    var tags = card.tags || [];
+    var lines = ["Auditor findings (kb/_row_audit.py):"];
+    if (card.fts != null) {
+      // Breakdown: aggregate discipline-field penalties from tags. Other
+      // fields aren't penalized by tags (today), so a one-line summary
+      // suffices: "discipline penalized −X (N signals: …) · other fields ok".
+      var discPenalty = 0;
+      var discSignals = [];
+      tags.forEach(function (t) {
+        var p = TAG_PENALTY_ON_DISCIPLINE[t];
+        if (p) { discPenalty += p; discSignals.push(t); }
+      });
+      lines.push("faculty_trust_score: " + card.fts.toFixed(2)
+                 + (card.mcs != null ? "   mc_ready_score: " + card.mcs.toFixed(2) : ""));
+      if (discPenalty > 0) {
+        lines.push("discipline penalized −" + discPenalty.toFixed(2) + " ("
+                   + discSignals.length + " signal" + (discSignals.length === 1 ? "" : "s") + ")");
+      } else if (tags.indexOf("seed_untouched_discipline") >= 0 || tags.indexOf("blank_discipline") >= 0) {
+        lines.push("discipline state lowers score (no per-tag penalty)");
+      } else {
+        lines.push("discipline contribution unchanged by tags");
+      }
+    }
+    lines.push("—");
+    lines = lines.concat(tags.map(function (t) { return "• " + (AUDIT_TAG_LABELS[t] || t); }));
+    return lines.join("\n");
+  }
+  // Severity colour for the ⚠ chip — mapped from faculty_trust_score so the
+  // worst rows pop visually without reading numbers. Buckets match the
+  // readiness tiers in kb/_row_audit.py (READINESS_TIERS).
+  function auditChipCls(score) {
+    if (score == null) return "warn";
+    if (score < 0.40) return "warn";   // red — needs_repair / not_ready
+    if (score < 0.65) return "mix";    // amber — needs_review
+    return "muted";                    // gray — ready (just informational)
+  }
+  // Render a small "audit loaded — N flagged of M" indicator near the
+  // filter bar so curators know the audit overlay is live.
+  function renderAuditStatusBadge() {
+    var host = document.getElementById("uc-audit-status");
+    if (!host || !_ucAudit) return;
+    var n = Object.keys(_ucAudit.idx || {}).length;
+    var when = (_ucAudit.generated_at || "").slice(0, 10);
+    host.textContent = n ? ("⚠ " + n + " row" + (n === 1 ? "" : "s") + " flagged" +
+                            (when ? " (audit " + when + ")" : "")) : "";
+    host.title = "Trust-Card auditor findings overlaid from kb/row_audit/latest.json. "
+               + "Hover a row's ⚠ chip in Flags to see what's flagged.";
+  }
   // Lazy-load member-course descriptions (id -> [desc,...] parallel to members)
   // — heavy (~tens of MB), so only fetched when a curator opens descriptions.
   var _ucMemDesc = null, _ucMemDescP = null;
@@ -302,7 +404,7 @@
       }).catch(function () { return null; });
     }
 
-    var state = { kind: "", source: "", status: "", disc: "", credit: "", conf: "", artic: "", official: "", prov: "", flagged: false, q: "", sort: "subj", dir: 1 };
+    var state = { kind: "", source: "", status: "", disc: "", credit: "", conf: "", artic: "", official: "", prov: "", triage: "", flagged: false, q: "", sort: "subj", dir: 1 };
     // Live curated descriptions (course_id -> value), loaded on init + updated on
     // save; diffed against data.committed_descriptions for the pending-sync count.
     var descOverlay = {};
@@ -688,7 +790,7 @@
       field("Members", r.members == null ? "" : r.members);
       field("Confidence", r.conf == null ? "" : r.conf.toFixed(2));
       field("Adopted", (r.adopted && r.adopted.length) ? r.adopted.length + " — " + names(r.adopted).join(", ") : "");
-      field("Potential adoption", (r.potential && r.potential.length) ? r.potential.length + " — " + names(r.potential).join(", ") : "");
+      field("Adoptable (potential)", (r.potential && r.potential.length) ? r.potential.length + " — " + names(r.potential).join(", ") : "");
       if (r.title_variants && r.title_variants.length) field("Title variants", r.title_variants);
       box.appendChild(dl);
 
@@ -779,6 +881,34 @@
     // Triage the machine-inferred disciplines by how they were inferred:
     // subject-code map (higher confidence) vs title keyword (riskier).
     var fProv = sel("uc-prov", "Generated by: any", ["by subject-code", "by title-keyword", "by description", "by TOP code"]);
+    // Audit-finding triage filter — backed by kb/row_audit/latest.json
+    // (loaded by loadAudit()). Lets the curator carve the cleanup queue:
+    // "Any audit flag" surfaces every row with ≥1 finding; "3+ findings"
+    // is the high-confidence subset (all three of title/TOP/description
+    // disagree, plus seed-untouched). Per-tag options match the named
+    // rules so a curator working a specific cleanup pass (e.g.
+    // discipline_title_mismatch) can scope to just that subset.
+    var fTriage = sel("uc-triage", "Triage: any", [
+      "Any audit flag",
+      "3+ findings",
+      "Title mismatch (likely misassigned)",
+      "TOP mismatch",
+      "Description mismatch",
+      "Generic title (can't justify discipline)",
+      "Seed untouched (never reviewed)",
+      "Cluster issues",
+    ]);
+    // Map filter labels → predicate over an audit card (auditIndex[r.id]).
+    var TRIAGE_PRED = {
+      "Any audit flag":                       function (c) { return c.tags && c.tags.length > 0; },
+      "3+ findings":                          function (c) { return c.tags && c.tags.length >= 3; },
+      "Title mismatch (likely misassigned)":  function (c) { return c.tags.indexOf("discipline_title_mismatch") >= 0; },
+      "TOP mismatch":                         function (c) { return c.tags.indexOf("top_discipline_disagreement") >= 0; },
+      "Description mismatch":                 function (c) { return c.tags.indexOf("description_discipline_disagreement") >= 0; },
+      "Generic title (can't justify discipline)": function (c) { return c.tags.indexOf("generic_title_concrete_discipline") >= 0; },
+      "Seed untouched (never reviewed)":      function (c) { return c.tags.indexOf("seed_untouched_discipline") >= 0; },
+      "Cluster issues":                       function (c) { return c.tags.some(function (t) { return t.indexOf("cluster_") === 0 || t === "uc_cur_ripe_for_promotion"; }); },
+    };
     var search = el("input", { id: "uc-search", type: "search", placeholder: "Search title or ID…", class: "uc-filter" });
     var flagged = el("label", { class: "uc-flag-toggle" }, []);
     var flaggedCb = el("input", { type: "checkbox", id: "uc-flagged" });
@@ -790,6 +920,10 @@
       title: "Download the full set (incl. stand-alone courses) as Excel" }, ["↓ Export all to .xlsx"]);
     var auth = el("span", { id: "uc-auth", class: "uc-auth" });
     var syncBadge = el("span", { id: "uc-sync" });
+    // Trust-Card auditor status — populated by renderAuditStatusBadge() once
+    // loadAudit() resolves. Empty until then, so layout doesn't jiggle.
+    var auditStatus = el("span", { id: "uc-audit-status", class: "uc-audit-status",
+      style: "color:#9a6700;font-size:0.85em;margin-left:8px;" });
     // Batch-verify the currently-filtered Generated rows (shown only when signed
     // in and there's something to verify; label/visibility updated in render()).
     var verifyAllBtn = el("button", { id: "uc-verify-all", class: "uc-filter",
@@ -803,7 +937,7 @@
       ["✨ Suggested merges"]);
     suggestBtn.onclick = function () { openSuggestions(); };
 
-    [fKind, fSource, fStatus, fDisc, fCredit, fConf, fArtic, fOfficial, fProv, search, flagged, blanksBtn, verifyAllBtn, suggestBtn, auth, syncBadge, exportBtn]
+    [fKind, fSource, fStatus, fDisc, fCredit, fConf, fArtic, fOfficial, fProv, fTriage, search, flagged, blanksBtn, verifyAllBtn, suggestBtn, auth, syncBadge, auditStatus, exportBtn]
       .forEach(function (c) { toolbar.appendChild(c); });
 
     // Curation edits hit Supabase instantly but are only folded into git
@@ -888,6 +1022,15 @@
         if (r.dsrc !== wantSrc) return false;
       }
       if (state.flagged && !rowFlagged(r)) return false;
+      // Audit triage filter — backed by loadAudit()'s auditIndex.
+      // If the audit overlay hasn't loaded yet, the filter silently
+      // matches nothing (so the curator doesn't see a stale view).
+      if (state.triage) {
+        var card = _ucAudit && _ucAudit.idx[r.id];
+        if (!card) return false;
+        var pred = TRIAGE_PRED[state.triage];
+        if (pred && !pred(card)) return false;
+      }
       if (blanksCb.checked && r.disc) return false;
       if (state.q) {
         var q = state.q.toLowerCase();
@@ -910,6 +1053,18 @@
       b(f.top_mixed, "TOP", "mix", "members disagree on TOP code");
       b(f.ncc_mixed, "noncredit", "mix", "members disagree on noncredit category");
       b(r.locked, "anchor", "ok", "curated common-course anchor (" + (r.id_system || "") + ") — read-only");
+      // Trust-Card auditor overlay (lazy — only present after loadAudit() resolves).
+      // Renders a "⚠ N · 0.XX" chip on rows the auditor flagged so the curator sees
+      // tag count + faculty_trust_score at a glance. Chip color grades by score
+      // severity (warn=red <0.40, mix=amber 0.40-0.65, muted=gray ≥0.65). The
+      // hover tooltip surfaces the score breakdown — see auditTagsTip().
+      var auditCard = _ucAudit && _ucAudit.idx[r.id];
+      if (auditCard) {
+        var chipText = "⚠ " + auditCard.tags.length
+                     + (auditCard.fts != null ? " · " + auditCard.fts.toFixed(2) : "");
+        out.appendChild(el("span", { class: "uc-badge " + auditChipCls(auditCard.fts),
+                                     title: auditTagsTip(auditCard) }, [chipText]));
+      }
       if (r.consolidated_from && r.consolidated_from.length) {
         out.appendChild(el("span", {
           class: "uc-badge ok", style: "background:#ddf4ff;border:1px solid #54aeff;color:#0969da;",
@@ -1082,7 +1237,7 @@
       { key: "disc", label: "Discipline" }, { key: "credit", label: "Credit" },
       { key: "units", label: "Units" }, { key: "top", label: "TOP" }, { key: "subj", label: "Subject(s)" },
       { key: "members", label: "Members" }, { key: "adopted", label: "Adopted" },
-      { key: "potential", label: "Potential Adoption" }, { key: "conf", label: "Conf." }, { key: "flags", label: "Flags" }
+      { key: "potential", label: "Adoptable" }, { key: "conf", label: "Conf." }, { key: "flags", label: "Flags" }
     ];
 
     // Expand/collapse a row to show its member college courses (lazy-loaded).
@@ -1192,7 +1347,7 @@
       var tb = el("tbody");
       matched.slice(0, MAX_VISIBLE).forEach(function (r) {
         var tr = el("tr");
-        var kindTd = el("td", {});
+        var kindTd = el("td", { class: "uc-kind-cell" });
         var caret = el("a", { href: "#", class: "uc-caret", title: "Show member college courses" }, ["▸"]);
         caret.onclick = function (e) { e.preventDefault(); toggleMembers(tr, r, caret); };
         kindTd.appendChild(caret);
@@ -1216,7 +1371,7 @@
         tr.appendChild(el("td", {}, [adoptionCell(r.adopted, "adopted")]));
         tr.appendChild(el("td", {}, [adoptionCell(r.potential, "potential")]));
         tr.appendChild(el("td", {}, [r.conf == null ? "—" : r.conf.toFixed(2)]));
-        tr.appendChild(el("td", {}, [flagBadges(r)]));
+        tr.appendChild(el("td", { class: "uc-flags-cell" }, [flagBadges(r)]));
         tb.appendChild(tr);
       });
       table.appendChild(tb);
@@ -1235,6 +1390,7 @@
     fSource.onchange = function () { state.source = this.value; render(); };
     fOfficial.onchange = function () { state.official = this.value; render(); };
     fProv.onchange = function () { state.prov = this.value; render(); };
+    fTriage.onchange = function () { state.triage = this.value; render(); };
     fStatus.onchange = function () { state.status = this.value; render(); };
     fDisc.onchange = function () { state.disc = this.value; render(); };
     fCredit.onchange = function () { state.credit = this.value; render(); };
@@ -1258,6 +1414,9 @@
     // Load live curated descriptions so the pending-sync badge counts
     // description edits not yet folded into git.
     fetchDescriptionOverlay().then(function (m) { descOverlay = m; renderSyncBadge(); });
+    // Eagerly load the Trust-Card auditor overlay so "⚠ hinky" chips appear
+    // shortly after first paint. Failure is silent (chips just won't show).
+    loadAudit().then(function () { render(); });
   }
 
   // Process an auth redirect hash as early as possible, then init.
