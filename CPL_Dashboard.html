@@ -1912,7 +1912,7 @@
         <button class="cpl-tab" data-tab="budget" role="tab" aria-selected="false">Budget</button>
         <button class="cpl-tab" data-tab="vision-2030" role="tab" aria-selected="false">Vision 2030</button>
         <button class="cpl-tab" data-tab="unified-courses" role="tab" aria-selected="false">Common Course Reference</button>
-        <button class="cpl-tab" data-tab="canonical-subj4" role="tab" aria-selected="false">Canonical SUBJ4</button>
+        <button class="cpl-tab" data-tab="canonical-subj4" role="tab" aria-selected="false">Common Subject Code</button>
         <button class="cpl-tab" data-tab="pipeline" role="tab" aria-selected="false">Pipeline</button>
     </nav>
 
@@ -8189,7 +8189,7 @@ Cont</td>
             #tab-canonical-subj4 .cs-variants { color:#475569; font-size:.78rem; max-width:42ch; }
             #tab-canonical-subj4 .cs-variants .cs-var-modal { font-weight:700; color:#0A2240; }
             #tab-canonical-subj4 .cs-variants .cs-var-other { color:#64748b; }
-            #tab-canonical-subj4 input.cs-canon { font-family:ui-monospace,Menlo,monospace; text-transform:uppercase; width:6ch; padding:5px 7px; border:1px solid #cbd5e1; border-radius:5px; font-size:.95rem; letter-spacing:1px; }
+            #tab-canonical-subj4 input.cs-canon { font-family:ui-monospace,Menlo,monospace; text-transform:uppercase; width:5.5ch; padding:4px 6px; border:1px solid #cbd5e1; border-radius:5px; font-size:.85rem; letter-spacing:0.5px; }
             #tab-canonical-subj4 input.cs-canon.cs-invalid { border-color:#dc2626; background:#fef2f2; }
             #tab-canonical-subj4 input.cs-canon.cs-saved { border-color:#16a34a; background:#f0fdf4; }
             #tab-canonical-subj4 textarea.cs-notes { width:30ch; min-height:34px; resize:vertical; font-size:.78rem; padding:4px 6px; border:1px solid #cbd5e1; border-radius:5px; }
@@ -8206,14 +8206,64 @@ Cont</td>
             #tab-canonical-subj4 .cs-toast.err { background:#991b1b; }
             #tab-canonical-subj4 .cs-reviewed { color:#6b7280; font-size:.75rem; white-space:nowrap; }
             #tab-canonical-subj4 .cs-help { display:inline-block; color:#64748b; font-size:.72rem; padding:1px 6px; border:1px solid #e5e7eb; border-radius:10px; cursor:help; }
+            #tab-canonical-subj4 .cs-stamp { display:inline-block; font-size:.7rem; color:#6b7280; padding:2px 8px; border:1px solid #e5e7eb; border-radius:10px; margin-left:8px; vertical-align:middle; font-weight:400; }
+            #tab-canonical-subj4 .cs-stamp.draft { color:#92400e; background:#FEF3C7; border-color:#F59E0B; font-weight:600; }
+            #tab-canonical-subj4 .cs-guidelines-btn { background:#0A2240; color:#fff; border:none; padding:7px 14px; border-radius:6px; font-size:.85rem; cursor:pointer; font-weight:600; }
+            #tab-canonical-subj4 .cs-guidelines-btn:hover { background:#0d2c52; }
+            #tab-canonical-subj4 .cs-auth-tag { display:block; font-size:.7rem; color:#9ca3af; margin-top:2px; }
+            /* Guidelines modal */
+            #tab-canonical-subj4 .cs-modal-bg { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.4); z-index:1000; align-items:flex-start; justify-content:center; padding-top:6vh; }
+            #tab-canonical-subj4 .cs-modal-bg.show { display:flex; }
+            #tab-canonical-subj4 .cs-modal { background:#fff; max-width:680px; width:92%; max-height:80vh; overflow:auto; border-radius:10px; padding:24px 28px; box-shadow:0 10px 40px rgba(0,0,0,0.25); }
+            #tab-canonical-subj4 .cs-modal h3 { margin:0 0 12px; color:#0A2240; }
+            #tab-canonical-subj4 .cs-modal h4 { margin:16px 0 6px; color:#0A2240; font-size:1rem; }
+            #tab-canonical-subj4 .cs-modal p { color:#374151; line-height:1.5; margin:6px 0 10px; }
+            #tab-canonical-subj4 .cs-modal ul { color:#374151; line-height:1.55; margin:4px 0 10px; padding-left:22px; }
+            #tab-canonical-subj4 .cs-modal li { margin:3px 0; }
+            #tab-canonical-subj4 .cs-modal .cs-modal-close { float:right; background:none; border:none; font-size:1.4rem; cursor:pointer; color:#6b7280; line-height:1; padding:0 4px; }
+            #tab-canonical-subj4 .cs-modal .cs-modal-close:hover { color:#0A2240; }
+            #tab-canonical-subj4 .cs-modal code { background:#f3f4f6; padding:1px 5px; border-radius:3px; font-size:.88em; }
         </style>
-        <div class="cs-banner">⚠️ <strong>Phase 1e re-mint workspace</strong> — Confirm a 4-letter canonical SUBJ4 per discipline. Used to fold same-discipline SUBJ4 variants in the next M-ID re-mint (kb/_subj4_dryrun.py → kb/_subj4_apply.py). See <a href="https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/coursecontrolnumber_remint.md">the re-mint playbook</a>.</div>
-        <h2>Canonical SUBJ4 <span class="cs-sub">— curator-confirmed 4-letter subject code per M-ID discipline</span></h2>
-        <p class="cs-intro">The 2026-05-22 re-mint synthesized each M-ID's SUBJ4 from its modal local college subject code, so the same discipline can spread across many SUBJ4 codes (e.g. "Sign Language, American" has 10 variants). Phase 1e folds these to one canonical SUBJ4 per discipline. Confirm or override the data-modal proposal below. <strong>Every canonical SUBJ4 must be exactly 4 letters (A–Z).</strong></p>
+        <h2>Common Subject Code <span class="cs-stamp draft">Development Draft</span> <span class="cs-stamp">curator-edited</span><br><span class="cs-sub">— one shared 4-letter abbreviation per discipline</span></h2>
+        <p class="cs-intro"><strong>This is a development draft — nothing here is final.</strong> Different colleges abbreviate the same discipline different ways. Sign Language American shows up across 10 different codes (ASL, AMSL, DEAF, SIGN, …); Physical Education across 71. This page picks <strong>one 4-letter code per discipline</strong> so the dashboard uses a single, consistent label everywhere. Click the <strong>Canonical</strong> cell on a row to set or change a code, add notes if you'd like, then a faculty validator confirms when you're done.</p>
+        <div style="margin-bottom:14px;">
+            <button id="cs-guidelines-btn" class="cs-guidelines-btn" type="button">📘 Curation guidelines</button>
+        </div>
         <div id="cs-toolbar" class="cs-toolbar"></div>
         <div id="cs-summary" class="cs-summary"></div>
         <div id="cs-table-wrap" class="cs-table-wrap"></div>
         <div id="cs-toast" class="cs-toast"></div>
+
+        <!-- Guidelines modal -->
+        <div id="cs-guidelines-modal" class="cs-modal-bg" role="dialog" aria-modal="true" aria-labelledby="cs-guidelines-title">
+            <div class="cs-modal">
+                <button class="cs-modal-close" type="button" aria-label="Close">&times;</button>
+                <h3 id="cs-guidelines-title">Curation guidelines</h3>
+                <p>This page is curator-edited. Here's the simple logic for picking a Common Subject Code.</p>
+
+                <h4>1. Why 4 letters?</h4>
+                <p>We follow the same shape as California's Common Course Number (CCN) format: a 4-letter subject + a number. Choosing 4 letters keeps our codes visually consistent with the CCN family that's rolling out statewide, even though our codes are clearly marked as ours (we use an <code>M</code> prefix instead of CCN's <code>C</code>).</p>
+
+                <h4>2. How were the suggestions chosen?</h4>
+                <p>For each discipline, we counted up how many of the local college subject codes match each 4-letter pattern and proposed the most common one as the default. If that "most common" code is shorter than 4 letters (PE, KIN, BUS, etc.), the row stays blank — a curator needs to pick a 4-letter expansion.</p>
+
+                <h4>3. Choosing a code</h4>
+                <ul>
+                    <li>Prefer an established abbreviation faculty already recognize (e.g. <code>BIOL</code>, <code>MATH</code>, <code>ENGL</code>).</li>
+                    <li>If multiple short codes are common, pick one that reads naturally (<code>PHYE</code> for Physical Education, <code>BUSI</code> for Business).</li>
+                    <li>Use the <strong>Variants</strong> column to see how colleges currently code the discipline — those numbers reflect real usage.</li>
+                    <li>The <strong>Notes</strong> field is for explaining a non-obvious choice (e.g. "ASL is the established 3-letter abbreviation; expanded to ASLN to fit the 4-letter rule.").</li>
+                </ul>
+
+                <h4>4. Validating</h4>
+                <p>Once you've set a code, the row shows <em>pre-seeded</em> or <em>reviewed</em>. A second faculty reviewer can <strong>validate</strong> it (coming soon) to mark the row as faculty-approved. Both roles are restricted to allowed CCCCO MAP reviewers.</p>
+
+                <h4>5. The 4-letter rule</h4>
+                <p>Every canonical code must be exactly 4 letters A–Z. The system will reject blanks, lowercase, numbers, and any other length.</p>
+
+                <p style="color:#6b7280;font-size:.85rem;margin-top:16px;">Questions? Reach out via the MAP team.</p>
+            </div>
+        </div>
         </div>
         <!-- /main-container for Canonical SUBJ4 tab -->
     </div>
