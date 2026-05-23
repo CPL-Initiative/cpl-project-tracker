@@ -923,10 +923,17 @@ Read-only auditor over every M-ID + Cluster. Per row, produces a Trust Card:
   missing / conflicting / not_yet_captured.
 - **Readiness tiers:** ready (≥0.85) / needs_review (≥0.65) /
   needs_repair (≥0.40) / not_ready.
-- **Rule tags (first run, 2026-05-23):** `seed_untouched_discipline` (11,158),
-  `blank_description` (1,733), `blank_discipline` (1,266), `mid_id_off_scheme`
-  (27, single-letter SUBJ re-mint artifact), `cluster_blanks_when_aggregatable`
-  (1), `cluster_id_off_scheme` (1), `uc_cur_ripe_for_promotion` (1).
+- **Rule tags + counts (2026-05-23, after Phase 1c 3-rule wave):**
+  - `seed_untouched_discipline` (11,158) — Phase B subject_map draft never reviewed
+  - `top_discipline_disagreement` (2,201, Phase 1c) — TOP code maps to a different discipline than assigned (sister-discipline noise expected; SISTER_PAIRS suppression deferred)
+  - `blank_description` (1,733)
+  - `blank_discipline` (1,266)
+  - `discipline_title_mismatch` (742, Phase 1c) — title shares 0 tokens with assigned discipline AND ≥2 with some other; refines the seed bucket
+  - `generic_title_concrete_discipline` (44, Phase 1c) — title is course-format generic (SkillsUSA / Internship / Capstone…); can't justify a specific discipline
+  - `mid_id_off_scheme` (27) — single-letter SUBJ re-mint artifact
+  - `cluster_blanks_when_aggregatable` (1)
+  - `cluster_id_off_scheme` (1)
+  - `uc_cur_ripe_for_promotion` (1)
 
 **Outputs:**
 - `kb/row_audit/latest.json` — slim per-row summaries + full Cluster cards (~2 MB, committed)
@@ -942,8 +949,10 @@ repo root: `python3 kb/_row_audit.py`.
 | Phase | What | Status |
 |---|---|---|
 | 1a | Trust-Card auditor (read-only) | **DONE** 2026-05-23 |
-| 1b | UCL UI "Repair from members" curate action + "⚠ hinky" badge on flagged rows; Supabase fresh-read + cron-window discipline | next |
-| 1c+ | More audit rules: `discipline_title_mismatch`, `top_discipline_disagreement`, `description_discipline_disagreement`, `subject_collision_signal`, `generic_title_concrete_discipline`, `unit_anomaly`, `merge_into_orphan`, `cluster_title_drift` | queued |
+| 1b (1/2) | Cluster row member-aggregation in renderer (fixes UC-CUR-MPG029OM blanks) | **DONE** 2026-05-23 |
+| 1b (2/2) | UCL "⚠ hinky" badge + audit-status toolbar indicator + daily auditor cron | **DONE** 2026-05-23 |
+| 1b (3/3) | Curate-write Repair-from-members action (Supabase schema migration + fresh-read + cron-window) | parked (low immediate value — 1 cluster; build when ≥5 clusters exist) |
+| 1c | More audit rules — **3 of 9 landed 2026-05-23:** `discipline_title_mismatch`, `generic_title_concrete_discipline`, `top_discipline_disagreement`. **Still queued:** `description_discipline_disagreement`, `subject_collision_signal`, `unit_anomaly`, `merge_into_orphan`, `cluster_title_drift`, optional sister-pairs suppression for top_discipline_disagreement | in progress |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 3 | EACR interactive re-pivot to course-identity grouping (Approach B per §9) | parked (architecturally significant) |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
