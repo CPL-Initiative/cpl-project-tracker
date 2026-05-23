@@ -3,9 +3,17 @@ Row-level Trust-Card auditor for the Unified Courses tab (UCL).
 
 Purpose
 -------
-Every M-ID (and every curator-formed Cluster) is a draft Transfer Model
-Curriculum (TMC) in waiting. Before a row is put in front of discipline faculty
-for adoption-of-a-cross-college-articulation review, the data on the row needs
+Every M-ID (and every curator-formed Cluster) is a draft Model Curriculum
+(MC) in waiting. We deliberately say MC, NOT TMC: Transfer Model Curriculum
+implies intersegmental transferability (CCC/CSU/UC agreement via CIAC), and
+M-IDs are intentionally NOT a transferability claim — they're CPL articulation
+adoption signals, which keeps the bar lower and takes the angst out of
+faculty/AO review. Approved MCs become CIDs (or CIDx for CTE) via ASCCC
+submission, at which point the M-ID is substituted out for its new CID in
+the Unified Course catalog (alias-tracked, same Rule 7 / re-mint playbook).
+
+Before a row is put in front of discipline faculty for
+adoption-of-a-cross-college-articulation review, the data on the row needs
 to be either real, transparently aggregated, or transparently synthetic. The
 auditor walks every M-ID + Cluster, classifies each field, and writes a
 per-row Trust Card with two scores:
@@ -13,12 +21,14 @@ per-row Trust Card with two scores:
   * faculty_trust_score — is the row trustworthy enough that a discipline
     faculty member should rely on it to ratify a cross-college articulation
     decision their colleagues already made?
-  * tmc_ready_score    — is the row complete enough that it could be drafted
-    into a Transfer Model Curriculum and submitted to ASCCC C-ID? (Includes
-    forward-compat TMC fields like SLOs / content outline / methods of
+  * mc_ready_score     — is the row complete enough that it could be
+    drafted into a Model Curriculum package and submitted to ASCCC? (Includes
+    forward-compat MC fields like SLOs / content outline / methods of
     evaluation, all initially `not_yet_captured` — every row starts well
-    below the tmc_ready bar until SLO ingestion lands. That's the strategic
-    message: TMC-readiness is the destination, not the current state.)
+    below the mc_ready bar until SLO ingestion lands. That's the strategic
+    message: MC-readiness is the destination, not the current state. NB:
+    transferability and degree-applicability are intentionally excluded from
+    the MC slot list — those belong to TMC, which is out of scope for M-IDs.)
 
 Output
 ------
@@ -69,10 +79,15 @@ FACULTY_WEIGHTS = {
     "confidence":    0.05,
 }
 
-# TMC fields the data model doesn't yet capture. Listed so the audit reflects
+# MC fields the data model doesn't yet capture. Listed so the audit reflects
 # the gap from day one (forward-compat per user decision). When any of these
-# graduate to real data, change `state` and add weights to TMC_WEIGHTS.
-TMC_NOT_YET_CAPTURED = [
+# graduate to real data, change `state` and add weights to MC_WEIGHTS.
+#
+# Intentionally EXCLUDED: `transferability`, `degree_applicability`. M-IDs
+# don't claim transferability (that's TMC territory, requiring CIAC
+# intersegmental approval). Including them in MC scoring would muddy the
+# waters and reintroduce the UC-defaults trap M-IDs were designed to avoid.
+MC_NOT_YET_CAPTURED = [
     "slos",                  # Student Learning Outcomes
     "course_objectives",
     "content_outline",
@@ -86,15 +101,13 @@ TMC_NOT_YET_CAPTURED = [
     "lab_hours",
     "outside_of_class_hours",
     "sample_textbooks",
-    "transferability",       # CSU/UC; today partially implicit in band
-    "degree_applicability",
 ]
 
-# tmc_ready_score weights faculty_fields heavy + tmc_fields light. With every
-# tmc field currently scoring 0 (not_yet_captured), no row can hit tmc_ready
+# mc_ready_score weights faculty_fields heavy + mc_fields light. With every
+# mc field currently scoring 0 (not_yet_captured), no row can hit mc_ready
 # until SLOs land — which is correct. Weights sum to 1.0.
-TMC_WEIGHTS_FACULTY_SHARE = 0.70
-TMC_WEIGHTS_TMC_SHARE     = 0.30  # spread evenly across TMC_NOT_YET_CAPTURED
+MC_WEIGHTS_FACULTY_SHARE = 0.70
+MC_WEIGHTS_MC_SHARE      = 0.30  # spread evenly across MC_NOT_YET_CAPTURED
 
 # Per-field-state score (how much of the field's weight the row earns). The
 # state taxonomy doubles as the trust-card vocabulary the UI can render later.
@@ -110,7 +123,7 @@ STATE_SCORE = {
     "off-scheme":            0.00,  # ID family doesn't follow CCN-aligned scheme
     "missing":               0.00,  # null with no synthesizable basis
     "conflicting":           0.00,  # members carry contradictory authorities
-    "not_yet_captured":      0.00,  # TMC field the data model doesn't hold yet
+    "not_yet_captured":      0.00,  # MC field the data model doesn't hold yet
 }
 
 READINESS_TIERS = [  # (lower_bound, label) — order matters
@@ -353,27 +366,27 @@ def _score(fields_with_weights):
     return round(total_s / total_w, 3) if total_w else 0.0
 
 
-def _virtual_tmc(per_row_overrides):
-    """Default every TMC slot to not_yet_captured; per-row overrides win.
+def _virtual_mc(per_row_overrides):
+    """Default every MC slot to not_yet_captured; per-row overrides win.
 
-    Lets scoring stay correct without inlining 15 identical fields per row in
+    Lets scoring stay correct without inlining 13 identical fields per row in
     the output JSON (the overhead would 4× the file size for no information).
     """
-    base = {k: {"state": "not_yet_captured"} for k in TMC_NOT_YET_CAPTURED}
+    base = {k: {"state": "not_yet_captured"} for k in MC_NOT_YET_CAPTURED}
     base.update(per_row_overrides or {})
     return base
 
 
-def _compute_scores(faculty_fields, tmc_fields):
+def _compute_scores(faculty_fields, mc_fields):
     fw = [(faculty_fields.get(k), w) for k, w in FACULTY_WEIGHTS.items()]
     faculty_score = _score(fw)
-    # TMC: faculty share (using same per-field scores) + TMC share (avg of TMC fields).
-    tmc_field_weight = TMC_WEIGHTS_TMC_SHARE / max(len(TMC_NOT_YET_CAPTURED), 1)
-    tmc_fw = [(faculty_fields.get(k), w * TMC_WEIGHTS_FACULTY_SHARE)
-              for k, w in FACULTY_WEIGHTS.items()]
-    tmc_fw += [(tmc_fields.get(k), tmc_field_weight) for k in TMC_NOT_YET_CAPTURED]
-    tmc_score = _score(tmc_fw)
-    return faculty_score, tmc_score
+    # MC: faculty share (using same per-field scores) + MC share (avg of MC fields).
+    mc_field_weight = MC_WEIGHTS_MC_SHARE / max(len(MC_NOT_YET_CAPTURED), 1)
+    mc_fw = [(faculty_fields.get(k), w * MC_WEIGHTS_FACULTY_SHARE)
+             for k, w in FACULTY_WEIGHTS.items()]
+    mc_fw += [(mc_fields.get(k), mc_field_weight) for k in MC_NOT_YET_CAPTURED]
+    mc_score = _score(mc_fw)
+    return faculty_score, mc_score
 
 
 # ─── tag generators ─────────────────────────────────────────────────────────
@@ -450,12 +463,12 @@ def main():
             "description":   _classify_mid_description(rec),
         }
         _apply_curation_overlay(None, faculty, cur)
-        # All TMC fields are not_yet_captured for every row right now (SLO
+        # All MC fields are not_yet_captured for every row right now (SLO
         # ingestion deferred), so we don't inline that block per-row — it's
-        # listed once in the metadata header. When any TMC field graduates to
+        # listed once in the metadata header. When any MC field graduates to
         # a non-default state for any row, inline ONLY that field here.
-        tmc = {}
-        f_score, t_score = _compute_scores(faculty, _virtual_tmc(tmc))
+        mc = {}
+        f_score, m_score = _compute_scores(faculty, _virtual_mc(mc))
         tags = _tags_for_mid(rec, faculty)
         card = {
             "row_id": course_id,
@@ -470,16 +483,16 @@ def main():
             },
             "faculty_fields": faculty,
             "faculty_trust_score": f_score,
-            "tmc_ready_score":     t_score,
+            "mc_ready_score":      m_score,
             "faculty_readiness":   tier_of(f_score),
-            "tmc_readiness":       tier_of(t_score),
+            "mc_readiness":        tier_of(m_score),
             "tags": tags,
         }
         if cur:
             card["reviewed_by"] = cur.get("reviewed_by")
             card["reviewed_at"] = cur.get("reviewed_at")
-        if tmc:
-            card["tmc_fields"] = tmc
+        if mc:
+            card["mc_fields"] = mc
         cards.append(card)
 
     # ── Clusters ──────────────────────────────────────────────────────
@@ -499,8 +512,8 @@ def main():
                 agg_fields["discipline"]["spread"] = disc_spread
 
         colleges = _cluster_member_colleges(members, courses, singletons)
-        tmc = {}
-        f_score, t_score = _compute_scores(agg_fields, _virtual_tmc(tmc))
+        mc = {}
+        f_score, m_score = _compute_scores(agg_fields, _virtual_mc(mc))
         tags = _tags_for_cluster(cluster_id, agg_fields, n_resolved, n_dropped, colleges)
         card = {
             "row_id": cluster_id,
@@ -515,16 +528,16 @@ def main():
             "members": members,
             "faculty_fields": agg_fields,
             "faculty_trust_score": f_score,
-            "tmc_ready_score":     t_score,
+            "mc_ready_score":      m_score,
             "faculty_readiness":   tier_of(f_score),
-            "tmc_readiness":       tier_of(t_score),
+            "mc_readiness":        tier_of(m_score),
             "tags": tags,
             "reviewed_by": cur.get("reviewed_by"),
             "reviewed_at": cur.get("reviewed_at"),
             "suggested_fix": _build_cluster_fix(cluster_id, agg_fields),
         }
-        if tmc:
-            card["tmc_fields"] = tmc
+        if mc:
+            card["mc_fields"] = mc
         cards.append(card)
 
     # ── outputs ───────────────────────────────────────────────────────
@@ -580,16 +593,22 @@ def _write_outputs(cards):
         ],
         "_field_state_score": STATE_SCORE,
         "_faculty_weights": FACULTY_WEIGHTS,
-        "_tmc_not_yet_captured": TMC_NOT_YET_CAPTURED,
+        "_mc_not_yet_captured": MC_NOT_YET_CAPTURED,
+        "_mc_excludes": ["transferability", "degree_applicability"],
+        "_mc_excludes_note": "M-IDs intentionally do not claim transferability "
+                             "(that's TMC territory, requiring CIAC intersegmental "
+                             "approval). Including these in MC scoring would muddy "
+                             "the waters and reintroduce the UC-defaults trap "
+                             "M-IDs were designed to avoid.",
         "_readiness_tiers": READINESS_TIERS,
         "_summary_schema": {
             "id":   "row_id",
             "k":    "row_kind ('C'=Course, 'X'=Cluster)",
             "lev":  "leverage.members",
             "fts":  "faculty_trust_score",
-            "tms":  "tmc_ready_score",
+            "mcs":  "mc_ready_score (Model Curriculum readiness)",
             "fr":   "faculty_readiness tier",
-            "tr":   "tmc_readiness tier",
+            "mcr":  "mc_readiness tier",
             "tags": "rule tags fired on this row",
         },
     }
@@ -600,9 +619,9 @@ def _write_outputs(cards):
             "k":    "C" if c["row_kind"] == "Course" else "X",
             "lev":  c["leverage"].get("members", 0),
             "fts":  c["faculty_trust_score"],
-            "tms":  c["tmc_ready_score"],
+            "mcs":  c["mc_ready_score"],
             "fr":   c["faculty_readiness"],
-            "tr":   c["tmc_readiness"],
+            "mcr":  c["mc_readiness"],
             "tags": c["tags"],
         }
         # Clusters: also inline the full breakdown — there are only a handful,
@@ -640,7 +659,7 @@ def _write_outputs(cards):
           f"({s['by_kind'].get('Course', 0)} M-IDs, "
           f"{s['by_kind'].get('Cluster', 0)} clusters)")
     print(f"           faculty readiness: {dict(s['faculty_readiness'])}")
-    print(f"           tmc readiness:     {dict(s['tmc_readiness'])}")
+    print(f"           mc readiness:      {dict(s['mc_readiness'])}")
     print(f"           top tag counts:    {dict(s['tag_counts'].most_common(10))}")
     print(f"           wrote: {latest_path}  ({os.path.getsize(latest_path)//1024} KB)")
     print(f"           wrote: {md_path}      ({os.path.getsize(md_path)//1024} KB)")
@@ -650,13 +669,13 @@ def _write_outputs(cards):
 def _stats(cards):
     by_kind = Counter(c["row_kind"] for c in cards)
     faculty_readiness = Counter(c["faculty_readiness"] for c in cards)
-    tmc_readiness = Counter(c["tmc_readiness"] for c in cards)
+    mc_readiness = Counter(c["mc_readiness"] for c in cards)
     tag_counts = Counter(t for c in cards for t in c["tags"])
     return {
         "total_cards": len(cards),
         "by_kind": by_kind,
         "faculty_readiness": faculty_readiness,
-        "tmc_readiness": tmc_readiness,
+        "mc_readiness": mc_readiness,
         "tag_counts": tag_counts,
     }
 
@@ -681,15 +700,21 @@ def _render_md(payload):
         pct = (100.0 * n / s["total_cards"]) if s["total_cards"] else 0
         lines.append(f"| {tier} | {n} | {pct:.1f}% |")
     lines.append("")
-    lines.append("## TMC readiness distribution")
+    lines.append("## MC (Model Curriculum) readiness distribution")
     lines.append("")
-    lines.append("All rows currently sit well below TMC-ready until SLO ingestion lands "
-                 "(every TMC field is `not_yet_captured`, scoring 0).")
+    lines.append("MC = Model Curriculum (the ASCCC C-ID / CIDx submission package). "
+                 "We deliberately say MC, not TMC — Transfer Model Curriculum implies "
+                 "intersegmental transferability, which M-IDs do NOT claim. "
+                 "Transferability and degree-applicability are intentionally excluded "
+                 "from MC scoring.")
+    lines.append("")
+    lines.append("All rows currently sit well below mc_ready until SLO ingestion lands "
+                 "(every MC field is `not_yet_captured`, scoring 0).")
     lines.append("")
     lines.append("| tier | count | % |")
     lines.append("|---|---:|---:|")
     for tier in ("ready", "needs_review", "needs_repair", "not_ready"):
-        n = s["tmc_readiness"].get(tier, 0)
+        n = s["mc_readiness"].get(tier, 0)
         pct = (100.0 * n / s["total_cards"]) if s["total_cards"] else 0
         lines.append(f"| {tier} | {n} | {pct:.1f}% |")
     lines.append("")
