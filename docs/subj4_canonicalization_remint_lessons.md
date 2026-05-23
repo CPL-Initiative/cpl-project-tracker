@@ -2,9 +2,9 @@
 title: SUBJ4 Canonicalization Re-Mint — Decisions & Lessons (Phase 1e)
 date: 2026-05-23
 session: 5 (Bruh Quad)
-phases: [5a (seed + curator tab + audit rule), 5b (dry-run)]
-status: in progress — 5c (apply) pending curator completion of the canonical map
-tags: [remint, phase-1e, subj4-canonicalization, m-id, curator-tab, dry-run, rule-7-staging]
+phases: [5a (seed + curator tab + audit rule), 5b (dry-run), 5c (atomic apply)]
+status: COMPLETE — apply landed 2026-05-23 in commit `5406055`; cleanup-receipt invariants satisfied
+tags: [remint, phase-1e, subj4-canonicalization, m-id, curator-tab, dry-run, apply, rule-7-staging]
 artifacts:
   - kb/_row_audit.py
   - kb/_seed_canonical_subj4.py
@@ -350,17 +350,132 @@ If rollback is needed AFTER the cron has consumed new-key state into a daily
 commit, a fresh "un-canonicalize" generator is cleaner than a revert (same
 pattern as the 2026-05-22 re-mint's playbook).
 
-## What's deferred (next checkpoints)
+## Session 5c — the atomic apply (LANDED 2026-05-23, commit `5406055`)
 
-- **Session 5c — the atomic apply.** Builds `kb/_subj4_apply.py` (reusing
-  `_remint_apply.py` patterns) and the article-level / cluster-level
-  re-keyers. Lands producer + consumer + curation overlay re-key + Supabase
-  live `kb_curation.course_id` update in one commit, within one 10:17 UTC
-  cron window. Gates on the dry-run reporting "READY FOR APPLY."
-- **Operator-decision artifact** at apply time — a brief "apply log" markdown
-  capturing which sort order was picked for each curated-collision bucket,
-  total re-keys, validation pass, Supabase row counts before/after. Mirrors
-  the 2026-05-22 `VALIDATION_1c.md`.
+### Final numbers
+
+| layer | result |
+|---|---|
+| `kb/coci_minted_courses.json` | 14,971 re-keyed, 71 no-change, 1,266 untouched |
+| `kb/coci_minted_singletons.json` | 50,182 re-keyed, 87 no-change, 5,904 untouched |
+| `kb/coci_minted_memberships.json` | 14,971 keys re-keyed |
+| `kb/coci_articulations.json` | 3,750 records re-keyed |
+| `kb/coci_unified_courses.json` | 2,868 member refs across 1,366 clusters |
+| `kb/coci_curation.json` | 5 keys re-keyed, 1 no-change (BSIC), 1 cluster untouched |
+| Supabase `kb_curation` | 5 rows renamed (3 from a cancelled-run partial + 2 from the successful run; idempotent — same end state) |
+| **`subject_collision_signal`** auditor tag | **7,203 → 0** ✓ (cleanup receipt) |
+| `mid_id_off_scheme` auditor tag | 27 → 2 (residue: `F M1002` + `N M9001`; both blank-discipline, unfixable) |
+
+### The three bugs caught + fixed mid-stream
+
+5c shipped on its fourth attempt. Three real bugs surfaced — each is a
+reusable lesson for the next re-mint.
+
+**Bug 1: 386-row silent overwrite (caught locally during apply-test).**
+
+The dry-run's allocator wasn't reserving sequence numbers occupied by
+**untouched** rows (rows with no discipline → no canonical → not in the alias
+map but their existing keys persist post-apply). When the allocator assigned
+`AGRI M1001` to a re-keyed row, the apply silently overwrote an existing
+no-discipline `AGRI M1001` row. Net: 98 minted + 288 singleton = **386 rows
+vanished** during local apply-test.
+
+Fix:
+- Pre-reserve untouched-row suffixes per `(SUBJ4, band, kind)` bucket alongside
+  the CCN/C-ID reservations.
+- Added **V4 validation gate**: `new_id_disjoint_from_untouched` — fails if any
+  allocator-assigned new_id collides with an untouched row's existing key.
+  Surfaced in the report and gated by the workflow.
+- Apply script hard-aborts on any in-flight key collision (belt-and-suspenders).
+
+**Lesson:** when partitioning a namespace, every existing occupant of the
+namespace must be in the reservation set, not just the partition being
+re-allocated. The "untouched" rows are still occupants.
+
+**Bug 2: YAML scanner error from unindented continuation lines (caught after merge, when GitHub couldn't dispatch the workflow).**
+
+The apply workflow had a `git commit -m "Phase 1e: ..."` with a multi-line
+message. Continuation lines were at column 0 (no indentation), which
+**terminates a YAML `run: |` block scalar**. GitHub couldn't parse the
+workflow file and fell back to showing it by file path in the Actions UI;
+the workflow's `name:` field never resolved. User couldn't dispatch it.
+
+Fix: switch to multiple `-m` flags (one per paragraph). Avoids:
+- The block-scalar termination trap (every line stays inside the YAML scalar).
+- The heredoc-in-YAML leading-whitespace trap (heredoc preserves YAML indent in
+  the commit message body).
+
+**Lesson:** for multi-paragraph commit messages inside a YAML `run: |` block,
+always use multiple `-m` flags rather than a multi-line string or heredoc.
+
+**Bug 3: Supabase fan-out (caught when the apply workflow ran 5+ minutes on the Supabase step).**
+
+The Supabase row-rename step was issuing **one PATCH per alias** (~13k network
+round-trips) even though only ~7 aliases actually had live curation rows.
+At 100-300ms per request the step took 20-60+ minutes.
+
+Fix: pre-fetch the set of `course_id` values that exist in `kb_curation` via
+a single SELECT, then pre-filter the alias loop to only PATCH aliases whose
+old_id is in that set. Falls back to fan-out if the pre-fetch fails (so the
+script stays correct under degraded network).
+
+**Lesson:** before fanning out N "filter by primary-key" mutations across a
+network boundary, pre-fetch the set of primary-key values that actually
+match. Even a tiny SELECT beats N × no-op PATCH.
+
+### Happy-idempotency wrinkle
+
+Run #3 of the apply workflow was cancelled mid-Supabase-step. It had partially
+PATCHed the AUTB triple (`AB M1001`, `ABDY M1001`, `ABDY M10AA`) before the
+cancel. When run #4 started after the perf fix landed:
+
+- The pre-fetch of curated `course_id`s no longer included the AB/ABDY old
+  ids (they'd been renamed to AUTB by run #3's partial work).
+- The pre-filter correctly skipped those aliases (no live curation row to
+  PATCH).
+- Run #4's Supabase step renamed only the 2 remaining curated entries
+  (`EGDT M1001` → `DRAF M1002`, `ELET M1001` → `ELEC M1028`).
+
+**Net: Supabase reached the correct end state with 5 total renames across
+two runs.** No drift, no double-write, no operator intervention. The
+idempotency invariant baked into the script (always-match-old-id + skip-if-
+already-renamed) handled the partial-cancellation gracefully.
+
+**Lesson:** designing scripts to be primary-key-idempotent (where re-running
+on already-applied state is a no-op rather than an error) lets partial runs
++ retries reach the correct end state without manual reconciliation. The
+"verbose per-record log" design is what made it auditable after the fact.
+
+### What's deferred (post-5c)
+
+- **Session 5d — M-ID → MID / C-ID → CID rename.** Cosmetic; touches
+  `id_system` field values in 3 JSON files (~16,850 rows) + 25+ code/doc
+  references + UI labels. Doesn't change identifier formats. Standalone PR,
+  the next concrete step for Bruh Quad / a follow-on session.
+- **MC slot fields (Phase 4 of the §11 roadmap).** Unlocks
+  `mc_ready_score` getting traction once SLO ingestion lands.
+
+## Patterns to reuse (additions from 5c)
+
+- **The "five-gate" dry-run pattern.** Each gate is a single boolean assertion
+  the operator can read at-a-glance; failures surface specific examples. The
+  V4 gate (`new_id_disjoint_from_untouched`) was a direct response to the
+  386-row bug — it ensures the same class of bug never recurs silently.
+- **Manual-dispatch + concurrency-group serialization for write-side
+  workflows.** Both `phase-1e-sync.yml` and `phase-1e-apply.yml` use
+  `concurrency.group: daily-dashboard` so they can't race the daily cron.
+- **Pre-flight Supabase reads (and pre-filter against the result).** Always
+  beats a fan-out of N filtered PATCHes. The pre-fetch is also a cheap
+  diagnostic: "if curated_ids is empty, something's wrong with the database
+  connection, abort early."
+- **Per-alias verbose log as the receipt.** When something goes sideways
+  mid-apply, the log + the alias_map are the operator's two retry inputs.
+  Every fate (ok / fail / skipped-no-change / skipped-no-curated-row) gets
+  recorded so post-hoc reconciliation is mechanical, not detective work.
+- **Always test the apply end-to-end locally before opening the PR.** The
+  386-row collision bug wasn't theoretical — it manifested on the first
+  local apply-test. The git-restore-after-test pattern (run the apply, verify
+  outputs, `git restore` to revert) makes this cheap and routine.
 
 ---
 
