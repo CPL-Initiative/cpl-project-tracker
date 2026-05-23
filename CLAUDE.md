@@ -52,17 +52,28 @@ into the Pipeline Reference below or into dedicated docs.
 8. **Document at context checkpoints.** Roughly every ~100K tokens of context
    consumed in a session (heuristic — Claude Code doesn't expose an exact
    counter; use proxies: long conversations with many tool calls, large file
-   reads, multi-phase strategic work), pause and update:
-   - **`CLAUDE.md`** (project memory + rules + roadmap)
-   - **`kb/README.md`** (when KB structure, generators, or audit artifacts change)
-   - **`docs/`** (lessons-learned and decision docs the user syncs to Obsidian)
-   - **`README.md`** (root project README — kept current for first-time visitors)
+   reads, multi-phase strategic work), pause and update **every** artifact below
+   — none are optional, all sync to the user's Obsidian via the repo:
+   - **`CLAUDE.md`** — project memory + rules + roadmap + §11 (lifecycle,
+     tag inventory, etc.). Refresh tag counts + roadmap-table status.
+   - **`kb/README.md`** — when KB structure, generators, or audit artifacts
+     change.
+   - **`README.md`** — root project README. Kept current for first-time visitors.
+   - **`docs/<topic>_lessons.md`** — **lessons doc REQUIRED on every checkpoint.**
+     Create one on the first checkpoint for a workstream (e.g.
+     `docs/unified_courses_audit_lessons.md`), then APPEND a dated section on
+     every subsequent checkpoint capturing: what's been learned since the last
+     checkpoint, current state, strategic roadmap, and next concrete step.
+     Use the Obsidian frontmatter format that
+     [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md)
+     established (title / date / tags / artifacts / related front-matter).
 
-   Capture: (a) what's been learned this session, (b) current state of the
-   work, (c) strategic roadmap, (d) next concrete step. Better to checkpoint
-   slightly early than slightly late — sessions can end abruptly and what's
-   not in a markdown file is effectively lost. See §11 for the auditor's
-   roadmap as a worked example of (b)+(c)+(d).
+   Capture in each: (a) what's been learned this checkpoint, (b) current
+   state of the work, (c) strategic roadmap, (d) next concrete step.
+   Better to checkpoint slightly early than slightly late — sessions can
+   end abruptly and what's not in a markdown file is effectively lost. The
+   user can trigger a checkpoint at any time with the **`/checkpoint`**
+   slash command (`.claude/commands/checkpoint.md`).
 
 ## Branch policy
 
@@ -923,17 +934,26 @@ Read-only auditor over every M-ID + Cluster. Per row, produces a Trust Card:
   missing / conflicting / not_yet_captured.
 - **Readiness tiers:** ready (≥0.85) / needs_review (≥0.65) /
   needs_repair (≥0.40) / not_ready.
-- **Rule tags + counts (2026-05-23, after Phase 1c 3-rule wave):**
-  - `seed_untouched_discipline` (11,158) — Phase B subject_map draft never reviewed
-  - `top_discipline_disagreement` (2,201, Phase 1c) — TOP code maps to a different discipline than assigned (sister-discipline noise expected; SISTER_PAIRS suppression deferred)
-  - `blank_description` (1,733)
-  - `blank_discipline` (1,266)
-  - `discipline_title_mismatch` (742, Phase 1c) — title shares 0 tokens with assigned discipline AND ≥2 with some other; refines the seed bucket
-  - `generic_title_concrete_discipline` (44, Phase 1c) — title is course-format generic (SkillsUSA / Internship / Capstone…); can't justify a specific discipline
-  - `mid_id_off_scheme` (27) — single-letter SUBJ re-mint artifact
-  - `cluster_blanks_when_aggregatable` (1)
-  - `cluster_id_off_scheme` (1)
-  - `uc_cur_ripe_for_promotion` (1)
+- **Rule tags + counts (2026-05-23, after Phase 1c 5-rule wave + SISTER_PAIRS suppression):**
+  - `seed_untouched_discipline` (11,158) — Phase B subject_map draft never reviewed (Phase 1a)
+  - `top_discipline_disagreement` (857, was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
+  - `blank_description` (1,733) — Phase 1a
+  - `blank_discipline` (1,266) — Phase 1a
+  - `discipline_title_mismatch` (742) — title shares 0 tokens with assigned discipline AND ≥2 with some other; refines the seed bucket (Phase 1c)
+  - `description_discipline_disagreement` (78) — description's safe-phrase set (mirror of `_infer_disciplines_from_desc.py`) points elsewhere with ≥2 mentions (Phase 1c)
+  - `generic_title_concrete_discipline` (44) — title is course-format generic (SkillsUSA / Internship / Capstone…); can't justify a specific discipline (Phase 1c)
+  - `mid_id_off_scheme` (27) — single-letter SUBJ re-mint artifact (Phase 1a)
+  - `cluster_blanks_when_aggregatable` (1) — Phase 1a
+  - `cluster_id_off_scheme` (1) — Phase 1a
+  - `uc_cur_ripe_for_promotion` (1) — Phase 1a
+
+- **Score now incorporates per-tag penalties (`TAG_PENALTY_ON_DISCIPLINE`).** Each discipline cross-validation tag deducts from the discipline field's per-field score before the weighted mean (floored at 0). Tags compound: a row firing 3 discipline rules drops materially below a row firing 1, even with the same field states. Penalties: `discipline_title_mismatch` −0.20, `top_discipline_disagreement` −0.15, `description_discipline_disagreement` −0.15, `generic_title_concrete_discipline` −0.20. Mirrored client-side in `unified_courses.js` for the breakdown tooltip — keep the two in sync.
+
+- **UCL chip + filter wiring (Phase 1b + 1c UX):**
+  - Per-row chip: `⚠ N · 0.XX` (tag count + faculty_trust_score), color-graded by score severity — `warn`/red <0.40, `mix`/amber 0.40-0.65, `muted`/gray ≥0.65 (matches `READINESS_TIERS`).
+  - Hover tooltip: tag-derived score breakdown (e.g. *"discipline penalized −0.35 (2 signals)"* + per-tag labels). Computed client-side from the summary — no per-field state inlined into `latest.json`.
+  - Toolbar `Triage:` dropdown with 8 modes: *Any audit flag*, *3+ findings* (high-confidence misassignment subset — ~246 rows), *Title mismatch*, *TOP mismatch*, *Description mismatch*, *Generic title*, *Seed untouched*, *Cluster issues*.
+  - Toolbar `⚠ N rows flagged (audit YYYY-MM-DD)` indicator — live confirmation that the audit overlay is loaded.
 
 **Outputs:**
 - `kb/row_audit/latest.json` — slim per-row summaries + full Cluster cards (~2 MB, committed)
@@ -950,9 +970,10 @@ repo root: `python3 kb/_row_audit.py`.
 |---|---|---|
 | 1a | Trust-Card auditor (read-only) | **DONE** 2026-05-23 |
 | 1b (1/2) | Cluster row member-aggregation in renderer (fixes UC-CUR-MPG029OM blanks) | **DONE** 2026-05-23 |
-| 1b (2/2) | UCL "⚠ hinky" badge + audit-status toolbar indicator + daily auditor cron | **DONE** 2026-05-23 |
+| 1b (2/2) | UCL "⚠ hinky" chip + audit-status toolbar indicator + daily auditor cron | **DONE** 2026-05-23 |
 | 1b (3/3) | Curate-write Repair-from-members action (Supabase schema migration + fresh-read + cron-window) | parked (low immediate value — 1 cluster; build when ≥5 clusters exist) |
-| 1c | More audit rules — **3 of 9 landed 2026-05-23:** `discipline_title_mismatch`, `generic_title_concrete_discipline`, `top_discipline_disagreement`. **Still queued:** `description_discipline_disagreement`, `subject_collision_signal`, `unit_anomaly`, `merge_into_orphan`, `cluster_title_drift`, optional sister-pairs suppression for top_discipline_disagreement | in progress |
+| 1c | More audit rules — **5 of 9 landed 2026-05-23:** `discipline_title_mismatch`, `generic_title_concrete_discipline`, `top_discipline_disagreement` (+ SISTER_PAIRS suppression), `description_discipline_disagreement`. **Still queued:** `subject_collision_signal`, `unit_anomaly`, `merge_into_orphan`, `cluster_title_drift` (low yield until more clusters mint) | in progress |
+| 1c-UX | Score-with-tag-penalty + chip-with-score + severity color grade + breakdown hover + UCL Triage filter + .uc-flags-cell nowrap + Adoptable rename | **DONE** 2026-05-23 |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 3 | EACR interactive re-pivot to course-identity grouping (Approach B per §9) | parked (architecturally significant) |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |

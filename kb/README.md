@@ -115,10 +115,32 @@ bar) and `mc_ready_score` (the ASCCC Model Curriculum submission destination
 ~7 KB, committed) + `<date>.full.json` (~12 MB, gitignored). Re-runnable,
 never mutates; suggested-fix payloads on aggregable Cluster fields are
 shaped for `_apply_curation.py` to consume in Phase 1b. Run from repo root:
-`python3 kb/_row_audit.py`. **Important:** we say **MC** (Model Curriculum),
-not **TMC** (Transfer Model Curriculum) — M-IDs do NOT claim transferability,
-which keeps the bar lower and avoids the UC-defaults trap; see CLAUDE.md §11
-for why this matters.
+`python3 kb/_row_audit.py`.
+
+**Active rule set (Phase 1a + 1c, 11 rules):** `seed_untouched_discipline`,
+`blank_discipline`, `blank_description`, `subject_spread_high_low_confidence`,
+`mid_id_off_scheme`, `discipline_title_mismatch`,
+`generic_title_concrete_discipline`, `top_discipline_disagreement` (with
+SISTER_PAIRS suppression for synonymous-discipline pairs),
+`description_discipline_disagreement`, `cluster_blanks_when_aggregatable`,
+`cluster_id_off_scheme`, `uc_cur_ripe_for_promotion`. The score incorporates
+per-tag penalties (`TAG_PENALTY_ON_DISCIPLINE`) on discipline-related tags so
+multi-signal misassignments score lower than single-signal ones.
+
+**Important:** we say **MC** (Model Curriculum), not **TMC** (Transfer Model
+Curriculum) — M-IDs do NOT claim transferability, which keeps the bar lower
+and avoids the UC-defaults trap; see CLAUDE.md §11 for why this matters.
+
+**Surfaces in the UCL:** per-row "⚠ N · 0.XX" chip in the Flags column (tag
+count + faculty_trust_score), color-graded by severity (red <0.40 / amber
+0.40-0.65 / gray ≥0.65). Toolbar `Triage:` dropdown with 8 modes carves the
+cleanup queue, plus a live "⚠ N rows flagged (audit YYYY-MM-DD)" status
+indicator. Hover the chip for the tag-derived score breakdown. The daily
+GitHub Actions cron re-runs the auditor and commits the refreshed
+`kb/row_audit/latest.json` so the UCL stays current.
+
+**Full decisions / calibration / lessons-learned**:
+[`docs/unified_courses_audit_lessons.md`](../docs/unified_courses_audit_lessons.md).
 
 ## Schemas
 
