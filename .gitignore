@@ -14,3 +14,7 @@ kb/remint_out/coci_minted_memberships.json
 kb/remint_out/coci_minted_singletons.json
 kb/remint_out/coci_articulations.json
 kb/remint_out/coci_unified_courses.json
+
+# Row audit: full per-row breakdown is local-only for debugging; latest.json
+# (slim summary + full cluster cards) and <date>.md are the gitted artifacts.
+kb/row_audit/*.full.json
