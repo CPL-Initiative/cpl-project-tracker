@@ -166,26 +166,16 @@ jobs:
             echo "No changes to commit (apply was a no-op or re-ran on already-applied state)."
             exit 0
           fi
-          git commit -m "Phase 1e: SUBJ4 canonicalization APPLY (Session 5c)
-
-Atomic re-key of M-ID identifiers per the curator-confirmed
-kb/discipline_canonical_subj4.json. Alias map (source of truth):
-kb/subj4_apply/alias_map.json (frozen copy of pre-apply dry-run).
-
-Mutated:
-  * kb/coci_minted_courses.json     (M-ID catalog: course_id, subject_4letter)
-  * kb/coci_minted_singletons.json  (single-college M-IDs)
-  * kb/coci_minted_memberships.json (M-ID -> member courses)
-  * kb/coci_articulations.json      (course_id field per articulation)
-  * kb/coci_unified_courses.json    (clusters[].members[] refs)
-  * kb/coci_curation.json           (overlay keys re-keyed)
-
-Validated (workflow gates):
-  * post-apply dry-run: 0 re_keys, 0 blocked, 4/4 validation
-  * auditor: subject_collision_signal=0, mid_id_off_scheme=0 (cleanup receipt)
-
-Supabase kb_curation.course_id rows updated in same window — log:
-kb/subj4_apply/supabase_log.json."
+          # Use multiple -m flags (each becomes a paragraph). Avoids the
+          # YAML-block-scalar termination trap from putting an unindented
+          # multi-line string inside `run: |` — caught 2026-05-23 when GitHub
+          # couldn't parse this workflow and showed it by file path instead.
+          git commit \
+            -m "Phase 1e: SUBJ4 canonicalization APPLY (Session 5c)" \
+            -m "Atomic re-key of M-ID identifiers per the curator-confirmed kb/discipline_canonical_subj4.json. Alias map (source of truth): kb/subj4_apply/alias_map.json." \
+            -m "Mutated kb files: coci_minted_courses.json, coci_minted_singletons.json, coci_minted_memberships.json, coci_articulations.json, coci_unified_courses.json, coci_curation.json." \
+            -m "Validated (workflow gates): post-apply dry-run reports 0 re_keys and 5/5 validation pass; auditor reports subject_collision_signal=0; mid_id_off_scheme residue is unfixable blank-discipline rows only." \
+            -m "Supabase kb_curation.course_id rows updated in same window — log: kb/subj4_apply/supabase_log.json."
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then
               echo "Push succeeded on attempt $attempt."
