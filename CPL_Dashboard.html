@@ -8181,9 +8181,21 @@ Cont</td>
             #tab-canonical-subj4 .cs-summary { color:#374151; font-size:.85rem; margin-bottom:8px; }
             #tab-canonical-subj4 .cs-table-wrap { overflow:auto; max-height:75vh; border:1px solid #e5e7eb; border-radius:8px; }
             #tab-canonical-subj4 table.cs-table { border-collapse:collapse; width:100%; font-size:.85rem; }
-            #tab-canonical-subj4 .cs-table th { position:sticky; top:0; background:#0A2240; color:#C9A84C; text-align:left; padding:8px 10px; white-space:nowrap; z-index:1; }
-            #tab-canonical-subj4 .cs-table td { padding:8px 10px; border-top:1px solid #eef2f7; vertical-align:top; }
+            #tab-canonical-subj4 .cs-table th { position:sticky; top:0; background:#0A2240; color:#C9A84C; text-align:center; vertical-align:middle; padding:8px 10px; white-space:nowrap; z-index:1; }
+            #tab-canonical-subj4 .cs-table td { padding:8px 10px; border-top:1px solid #eef2f7; text-align:center; vertical-align:middle; }
             #tab-canonical-subj4 .cs-table tr:hover td { background:#f8fafc; }
+            /* First column (Discipline) — left-aligned. Reading flow +
+               multi-line discipline names benefit from natural left-read;
+               centering would make them harder to scan. This is the
+               "all columns centered EXCEPT first" rule the curator asked for. */
+            #tab-canonical-subj4 .cs-table th:first-child,
+            #tab-canonical-subj4 .cs-table td:first-child { text-align:left; }
+            /* Notes textarea cell — left-align its container so the textarea
+               sits flush rather than oddly centered. (Text inputs read better
+               left-aligned even when other cells are centered.) Targeted by
+               its inline textarea child via :has() — supported in all
+               modern browsers. */
+            #tab-canonical-subj4 .cs-table td:has(textarea) { text-align:left; }
             #tab-canonical-subj4 .cs-disc { font-weight:600; color:#0A2240; max-width:24ch; }
             #tab-canonical-subj4 .cs-mono { font-family:ui-monospace,Menlo,monospace; }
             #tab-canonical-subj4 .cs-variants { color:#475569; font-size:.78rem; max-width:42ch; }
