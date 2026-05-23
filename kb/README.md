@@ -38,7 +38,9 @@ There are **two** layers:
 | `discipline_canonical_subj4.json` | Course | **Phase 1e** — curator-confirmed canonical 4-letter SUBJ4 per M-ID discipline. Consumed by the SUBJ4-canonicalization re-mint to fold same-discipline SUBJ4 variants (e.g. ASL/AMSL/DEAF/SIGN/… → one canonical). Edited via the dashboard's **Canonical SUBJ4** tab (writes to Supabase `kb_curation` with synthesized `_CANON_SUBJ4::<discipline>` namespace). | discipline |
 | `_seed_canonical_subj4.py` | Course | **Re-runnable, regen-safe.** Generates `discipline_canonical_subj4.json` by counting SUBJ4 variants per discipline across both `coci_minted_courses.json` + `coci_minted_singletons.json`. Preserves curator-reviewed entries on re-run; only the data-driven fields refresh. | — |
 | `_apply_canonical_subj4.py` | Course | Sync Supabase `_CANON_SUBJ4::*` rows → `discipline_canonical_subj4.json`. Mirrors `_apply_curation.py` pattern; runs in the daily workflow after the main curation sync. Validates 4-letter SUBJ4 before applying. | — |
-| `_subj4_dryrun.py` | Course | **Phase 1e measure-first dry-run.** Re-runnable. Reads the curator-confirmed canonical map, classifies every M-ID's fate, reallocates new course_ids deterministically by `(normalized_title, old_id)`, validates 4 gates, surfaces curated-collision decision points, counts downstream apply scope. Writes `kb/subj4_dryrun/{report.md, alias_map.json, blocked.json, collisions.json}`. Apply-gate signal is the green light for Session 5c. | — |
+| `_subj4_dryrun.py` | Course | **Phase 1e measure-first dry-run.** Re-runnable. Reads the curator-confirmed canonical map, classifies every M-ID's fate, reallocates new course_ids deterministically by `(normalized_title, old_id)`, validates **5 gates** (including V4 `new_id_disjoint_from_untouched`, added 2026-05-23 after a 386-row silent-overwrite bug), surfaces curated-collision decision points, counts downstream apply scope, reserves CCN/C-ID sequence numbers + untouched-row suffixes. Writes `kb/subj4_dryrun/{report.md, alias_map.json, blocked.json, collisions.json}`. | — |
+| `_subj4_apply.py` | Course | **Phase 1e atomic apply.** Consumes `kb/subj4_dryrun/alias_map.json`. Mutates `coci_minted_courses.json`, `coci_minted_singletons.json`, `coci_minted_memberships.json`, `coci_articulations.json`, `coci_unified_courses.json`, `coci_curation.json` in place; defensive abort on key collision; idempotent. Writes audit receipts to `kb/subj4_apply/{report.md, validation.md, alias_map.json}`. | — |
+| `_subj4_apply_supabase.py` | Course | **Phase 1e Supabase row renames.** Pre-fetches the curated `course_id` set (so we only PATCH the ~7 aliases with live rows instead of fanning out 13k network calls — caught 2026-05-23). Best-effort per record with verbose log at `kb/subj4_apply/supabase_log.json`. | — |
 | `_seed_top50.py` | Credential | One-shot generator for the Phase 2 hand-curated credential seed. **Do not re-run** — would overwrite human edits. Kept for provenance. | — |
 | `_seed_cx_common_courses.py` | Course | One-shot generator for the Phase 2 Cx seed (AI-assisted draft). **Do not re-run** — would overwrite human edits. Kept for provenance. | — |
 
@@ -148,16 +150,18 @@ GitHub Actions cron re-runs the auditor and commits the refreshed
 **Full decisions / calibration / lessons-learned**:
 [`docs/unified_courses_audit_lessons.md`](../docs/unified_courses_audit_lessons.md).
 
-**SUBJ4-canonicalization re-mint (Phase 1e, in progress 2026-05-23)** — first
-re-mint under the revised Rule 7 staging-phase framing. Folds same-discipline
+**SUBJ4-canonicalization re-mint (Phase 1e, COMPLETE 2026-05-23)** — first
+re-mint under the revised Rule 7 staging-phase framing. Folded same-discipline
 SUBJ4 variants (the 2026-05-22 re-mint synthesized SUBJ4 from each M-ID's
-modal local college subject code; the same discipline can therefore spread
+modal local college subject code; the same discipline could therefore spread
 across many SUBJ4 codes — canonical example: 92 "Sign Language, American"
-M-IDs across 10 variants). Sessions 5a (seed + curator tab + audit rule —
-DONE, PR #89) and 5b (measure-first dry-run — DONE) shipped; Session 5c
-(atomic apply) is gated on the curator filling out the canonical map and the
-dry-run reporting "READY FOR APPLY." Full decisions / decisions / lessons:
-[`docs/subj4_canonicalization_remint_lessons.md`](../docs/subj4_canonicalization_remint_lessons.md).
+M-IDs across 10 variants → 1 canonical). Sessions 5a (PR #89), 5b (PR #90),
+5c (PR #93 + #94 + #95; apply commit `5406055`) all shipped. Cleanup-receipt
+invariant: `subject_collision_signal` auditor rule fires **0 times** post-apply
+(down from 7,203 pre-apply). 14,971 minted + 50,182 singleton M-IDs re-keyed;
+all downstream references (memberships, articulations, clusters, curation
+overlay, live Supabase) updated in lockstep. Full decisions / bugs caught /
+lessons: [`docs/subj4_canonicalization_remint_lessons.md`](../docs/subj4_canonicalization_remint_lessons.md).
 
 ## Schemas
 

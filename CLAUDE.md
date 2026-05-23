@@ -967,19 +967,17 @@ Read-only auditor over every M-ID + Cluster. Per row, produces a Trust Card:
   missing / conflicting / not_yet_captured.
 - **Readiness tiers:** ready (≥0.85) / needs_review (≥0.65) /
   needs_repair (≥0.40) / not_ready.
-- **Rule tags + counts (2026-05-23, after Phase 1c 6-rule wave incl. Phase 1e diagnostic):**
+- **Rule tags + counts (2026-05-23, post Phase 1e apply landed in commit `5406055`):**
   - `seed_untouched_discipline` (11,158) — Phase B subject_map draft never reviewed (Phase 1a)
-  - `subject_collision_signal` (7,203) — M-ID's SUBJ4 ≠ modal SUBJ4 for its discipline; Phase 1e re-mint target (cleanup receipt: should fall to 0 post-apply)
+  - `subject_collision_signal` (**0** ✓) — Phase 1e cleanup receipt: every M-ID with a discipline now shares the canonical SUBJ4 (down from 7,203 pre-apply)
   - `top_discipline_disagreement` (857, was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
   - `blank_description` (1,733) — Phase 1a
   - `blank_discipline` (1,266) — Phase 1a
-  - `discipline_title_mismatch` (742) — title shares 0 tokens with assigned discipline AND ≥2 with some other; refines the seed bucket (Phase 1c)
-  - `description_discipline_disagreement` (78) — description's safe-phrase set (mirror of `_infer_disciplines_from_desc.py`) points elsewhere with ≥2 mentions (Phase 1c)
-  - `generic_title_concrete_discipline` (44) — title is course-format generic (SkillsUSA / Internship / Capstone…); can't justify a specific discipline (Phase 1c)
-  - `mid_id_off_scheme` (27) — single-letter SUBJ re-mint artifact (Phase 1a; subset of subject_collision_signal — both fall to 0 post Phase 1e)
-  - `cluster_blanks_when_aggregatable` (1) — Phase 1a
-  - `cluster_id_off_scheme` (1) — Phase 1a
-  - `uc_cur_ripe_for_promotion` (1) — Phase 1a
+  - `discipline_title_mismatch` (742) — title shares 0 tokens with assigned discipline AND ≥2 with some other (Phase 1c)
+  - `description_discipline_disagreement` (78) — description's safe-phrase set points elsewhere with ≥2 mentions (Phase 1c)
+  - `generic_title_concrete_discipline` (44) — title is course-format generic; can't justify a specific discipline (Phase 1c)
+  - `mid_id_off_scheme` (**2** — `F M1002` + `N M9001`, both blank-discipline; unfixable residue) — was 27 pre-apply
+  - `cluster_blanks_when_aggregatable` (1), `cluster_id_off_scheme` (1), `uc_cur_ripe_for_promotion` (1) — Phase 1a
 
 - **Score now incorporates per-tag penalties (`TAG_PENALTY_ON_DISCIPLINE`).** Each discipline cross-validation tag deducts from the discipline field's per-field score before the weighted mean (floored at 0). Tags compound: a row firing 3 discipline rules drops materially below a row firing 1, even with the same field states. Penalties: `discipline_title_mismatch` −0.20, `top_discipline_disagreement` −0.15, `description_discipline_disagreement` −0.15, `generic_title_concrete_discipline` −0.20. Mirrored client-side in `unified_courses.js` for the breakdown tooltip — keep the two in sync.
 
@@ -1011,7 +1009,8 @@ repo root: `python3 kb/_row_audit.py`.
 | 1d | UI rename "Unified Courses" → "Common Course Reference" (CCR); URL hash + filenames preserved | **DONE** 2026-05-23 (PR #87) |
 | **1e-5a** | SUBJ4-canonicalization Session 5a — seed + curator tab + audit rule. `kb/_seed_canonical_subj4.py` produces `kb/discipline_canonical_subj4.json` (144 disciplines: 44 pre-seeded with 4-letter data-modal, 100 needs_review). New top-level **Canonical SUBJ4** tab in the dashboard (auth-gated CRUD; writes to Supabase `kb_curation` with synthesized `_CANON_SUBJ4::<discipline>` namespace, no schema migration). `kb/_apply_canonical_subj4.py` sync wired into the daily cron. | **DONE** 2026-05-23 (PR #89, Bruh Quad) |
 | **1e-5b** | SUBJ4-canonicalization Session 5b — measure-first dry-run. `kb/_subj4_dryrun.py` is re-runnable, walks both `coci_minted_courses.json` + `coci_minted_singletons.json`, applies the curation overlay, classifies every M-ID's fate, reallocates new course_ids deterministically by `(normalized_title, old_id)`, validates 4 gates, surfaces curated-collision decision points, counts downstream apply scope (memberships + articulations + cluster refs). Artifacts at `kb/subj4_dryrun/{report.md, alias_map.json, blocked.json, collisions.json}`. Apply gate signal becomes the green light for 5c. Bonus: regen-safe seed generator preserves curator-reviewed entries; caught singleton-only discipline (`Upholstering`) missing from initial seed. | **DONE** 2026-05-23 (Bruh Quad) |
-| **1e-5c** | SUBJ4-canonicalization Session 5c — atomic apply. `kb/_subj4_apply.py` re-keys `coci_minted_*.json` + `coci_articulations.json` + `coci_unified_courses.json` + `kb/coci_curation.json` + live Supabase `kb_curation.course_id`, all within one 10:17 UTC cron window. Gates on dry-run reporting "READY FOR APPLY" + curated-collision decisions confirmed + Supabase fresh-read. Validation: `subject_collision_signal` re-fires zero — the cleanup receipt. | **NEXT** (Bruh Quad — pending canonical map completion by curator) |
+| **1e-5c** | SUBJ4-canonicalization Session 5c — atomic apply. `kb/_subj4_apply.py` re-keyed 14,971 minted + 50,182 singleton M-IDs + 14,971 memberships + 3,750 articulations + 2,868 cluster member refs + 5 curation entries; `kb/_subj4_apply_supabase.py` PATCHed the live `kb_curation` rows. Orchestrated by `.github/workflows/phase-1e-apply.yml` (manual-dispatch, concurrency group `daily-dashboard`). Cleanup receipt: `subject_collision_signal` = 0 ✓; `mid_id_off_scheme` = 2 unfixable blank-discipline rows. Three bugs caught + fixed mid-stream: 386-row silent overwrite (added V4 `new_id_disjoint_from_untouched` gate), YAML scanner error on multi-line `-m` (switched to multiple `-m` flags), Supabase fan-out (13k PATCHes → ~7 via pre-fetch of curated set). | **DONE** 2026-05-23 (PRs #93/#94/#95; apply commit `5406055`) |
+| 1e-5d | M-ID → MID, C-ID → CID label rename (cosmetic; no identifier format change). Touches `id_system` field values in 3 JSON files (~16,850 rows) + 25+ code/doc references + UI labels. Standalone PR after 5c lands so the apply isn't bundled with a label change. | queued (Bruh Quad / next session) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 3 | EACR interactive re-pivot to course-identity grouping (Approach B per §9) | parked (architecturally significant) |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |

@@ -198,7 +198,8 @@ with openpyxl read-only — never `cat` it.
   any future identifier re-key should follow the same pattern).
 - **`docs/subj4_canonicalization_remint_lessons.md`** — Phase 1e decisions +
   lessons (the second re-mint, first under the revised Rule 7 staging
-  framing; in progress).
+  framing; **complete 2026-05-23** — 65k aliases applied, cleanup receipt
+  zero).
 - **`docs/exhibit_unification_vision.md`** — the credential-layer
   canonicalization design (synthetic unified-title layer over MAP's freehand
   exhibit titles).
