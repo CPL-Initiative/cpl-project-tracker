@@ -100,6 +100,18 @@ into the Pipeline Reference below or into dedicated docs.
      Use the Obsidian frontmatter format that
      [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md)
      established (title / date / tags / artifacts / related front-matter).
+   - **`docs/session_<N+1>_handoff.md`** — at SESSION END (not every
+     checkpoint), once everything for the current session has shipped + the
+     final checkpoint is committed, write a "fattyfat prompt" for the next
+     session. The prompt is in second person ("You are Session N+1"),
+     paste-able into the next session's first message, and covers: what
+     shipped, docs to read in order, the priority workstream(s), carryover
+     items + status, patterns that worked, safety patterns to honor, and a
+     moniker suggestion with an open door for the next session to claim its
+     own. Reference example: [`docs/session_6_handoff.md`](docs/session_6_handoff.md)
+     (Bruh Quad → Session 6, the first instance of this practice). Keep
+     it long enough to be useful (~4500 chars / 170 lines is the sweet
+     spot) — the next session is starting cold.
 
    Capture in each: (a) what's been learned this checkpoint, (b) current
    state of the work, (c) strategic roadmap, (d) next concrete step.
