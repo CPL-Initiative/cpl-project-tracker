@@ -1,0 +1,53 @@
+name: "CodeQL"
+
+# Static analysis for Python + JavaScript. Runs on every PR to main (catches
+# regressions before merge) + every push to main (catches drift) + weekly
+# (catches new query rules + currency from CodeQL itself). Free for public
+# repos. Findings show up in the repo's Security tab.
+#
+# This repo has a small surface — Python pipeline scripts + browser JS for
+# the dashboard tabs — so the default query suite is plenty. If a category
+# gets noisy we can switch to a custom config.yml.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Monday 06:00 UTC. Off-cycle from the daily cron (10:17 UTC) so they
+    # don't compete for runners.
+    - cron: '0 6 * * 1'
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: python
+            build-mode: none
+          - language: javascript
+            build-mode: none
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}"
