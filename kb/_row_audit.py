@@ -483,6 +483,12 @@ def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None, top_disc
     if top_disc is not None:
         if _classify_top_discipline_disagreement(rec, top_disc):
             tags.append("top_discipline_disagreement")
+    # description_discipline_disagreement — description has ≥2 phrase matches
+    # against a single discipline's SAFE_PHRASES list AND that discipline
+    # differs from the assigned. Third cross-validation signal (after title
+    # + TOP). Calibration: 78 first-pass flags. See DESC_RULES below.
+    if _classify_description_discipline_disagreement(rec, DESC_RULES):
+        tags.append("description_discipline_disagreement")
     return tags
 
 
@@ -525,6 +531,87 @@ def _build_disc_bag(courses, lex):
         if d not in bag:
             bag[d] = _title_tokens(d)
     return bag
+
+
+def _classify_description_discipline_disagreement(rec, desc_rules):
+    """Return desc-implied discipline if the row's description has ≥2
+    matches against a single discipline's safe-phrase list AND that
+    discipline ≠ the assigned one. Mirrors kb/_infer_disciplines_from_desc.py
+    (SAFE_PHRASES + plurality/unique-winner), but raises the bar to ≥2
+    total mentions so a single 'dental' word in a Philosophy Ethics
+    description doesn't flag it as Dental Technology.
+
+    Calibration: 78 flags at m≥2 (down from 192 with ≥1-mention V1 — the
+    single-mention threshold produced too many false positives like
+    "Ethics" → Dental, "Anatomy and Physiology" → EMT).
+
+    desc_rules = [(compiled_regex, discipline), ...] — built once at
+    audit start.
+    """
+    disc = rec.get("discipline")
+    desc = rec.get("description")
+    if not disc or not desc:
+        return None
+    if (rec.get("corroboration_members") or 0) < 2:
+        return None
+    hits = Counter()
+    for pat, d in desc_rules:
+        n = len(pat.findall(desc))
+        if n:
+            hits[d] += n
+    if not hits:
+        return None
+    top = hits.most_common(2)
+    if top[0][1] < 2:  # require ≥2 mentions of winning discipline
+        return None
+    if len(top) >= 2 and top[0][1] == top[1][1]:
+        return None  # tie → skip
+    if top[0][0] == disc:
+        return None
+    return top[0][0]
+
+
+# SAFE_PHRASES: inlined copy of kb/_infer_disciplines_from_desc.py's set.
+# Kept in sync manually — single source of truth lives in the inference
+# script; if you edit there, mirror here (and re-validate against
+# mq_disciplines.json).
+_DESC_SAFE_PHRASES = [
+    (["welding","gas tungsten arc","gas metal arc","shielded metal arc",
+      "nondestructive testing","non-destructive testing"], "Welding"),
+    (["automotive"], "Automotive Technology"),
+    (["dental"], "Dental Technology"),
+    (["phlebotomy"], "Health Care Ancillaries"),
+    (["cosmetology"], "Cosmetology"),
+    (["barbering"], "Barbering"),
+    (["heating, ventilation","hvac","refrigeration"],
+     "Air Conditioning, Refrigeration, Heating"),
+    (["paramedic","emergency medical technician","basic life support",
+      "advanced cardiac life support"], "Emergency Medical Technologies"),
+    (["surgical technolog","operating room"], "Surgical Technology"),
+    (["computer numerical control","cnc machin"], "Machine Tool Technology"),
+    (["industrial robot","robotics"], "Robotics"),
+    (["cybersecurity","cyber security","penetration testing"],
+     "Computer Information Systems"),
+    (["court reporting","stenograph"], "Court Reporting"),
+    (["embalming","funeral service","funeral director","mortuary"],
+     "Mortuary Science"),
+    (["viticulture","enology"], "Agricultural Production"),
+    (["solidworks","autocad","computer-aided drafting","computer aided drafting"],
+     "Drafting/CADD"),
+    (["photovoltaic"], "Environmental Technologies"),
+    (["radiographic","fluoroscopy"], "Radiological Technology"),
+    (["veterinary"], "Registered Veterinary Technician"),
+    (["aircraft","airframe","flight instructor","private pilot"], "Aviation"),
+    (["sonograph","ultrasound"], "Diagnostic Medical Technology"),
+    (["upholster"], "Upholstering"),
+    (["locksmith"], "Locksmithing"),
+    (["gunsmith"], "Gunsmithing"),
+    (["floral design"], "Ornamental Horticulture"),
+    (["sign language interpret","american sign language"], "Sign Language, American"),
+    (["pharmacy technician"], "Pharmacy Technology"),
+]
+DESC_RULES = [(re.compile(r"\b(?:" + "|".join(re.escape(t) for t in terms) + r")\b", re.I), d)
+              for terms, d in _DESC_SAFE_PHRASES]
 
 
 def _classify_top_discipline_disagreement(rec, top_disc):
@@ -848,7 +935,7 @@ def _write_outputs(cards):
             "seed_untouched_discipline", "blank_discipline", "blank_description",
             "subject_spread_high_low_confidence", "mid_id_off_scheme",
             "discipline_title_mismatch", "generic_title_concrete_discipline",
-            "top_discipline_disagreement",
+            "top_discipline_disagreement", "description_discipline_disagreement",
             "cluster_blanks_when_aggregatable", "cluster_members_too_sparse",
             "cluster_id_off_scheme", "uc_cur_ripe_for_promotion",
             "cluster_member_unresolved",
