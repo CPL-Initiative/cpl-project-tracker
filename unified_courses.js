@@ -281,6 +281,7 @@
     subject_spread_high_low_confidence: "Possible over-merge (spread ≥ 8, low confidence)",
     mid_id_off_scheme:                "M-ID ID off-scheme (likely single-letter SUBJ re-mint artifact)",
     discipline_title_mismatch:        "Title doesn't match assigned discipline — likely misassigned",
+    generic_title_concrete_discipline: "Title is course-format generic (Internship / Capstone / SkillsUSA…) — can't justify a specific discipline",
   };
   function auditTagsTip(card) {
     var tags = card.tags || [];
