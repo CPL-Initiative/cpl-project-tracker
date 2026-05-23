@@ -32,6 +32,7 @@ from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 COURSES = os.path.join(HERE, "coci_minted_courses.json")
+SINGLETONS = os.path.join(HERE, "coci_minted_singletons.json")
 OUT = os.path.join(HERE, "discipline_canonical_subj4.json")
 SUBJ4_RE = re.compile(r"^[A-Z]{4}$")
 
@@ -40,8 +41,12 @@ def main():
     with open(COURSES, "r", encoding="utf-8") as f:
         data = json.load(f)
     courses = data["courses"]
+    with open(SINGLETONS, "r", encoding="utf-8") as f:
+        singletons = json.load(f)["courses"]
 
-    # Per-discipline SUBJ4 distribution across M-IDs only.
+    # Per-discipline SUBJ4 distribution across all M-ID rows (minted + singletons).
+    # Both files share the M-ID id family and need one canonical SUBJ4 per
+    # discipline; walking only minted misses singleton-only disciplines.
     per_disc = defaultdict(Counter)
     for rec in courses.values():
         if rec.get("id_system") != "M-ID":
@@ -51,6 +56,27 @@ def main():
         if not d or not s4:
             continue
         per_disc[d][s4] += 1
+    for rec in singletons.values():
+        # singletons file has no id_system field; every row is an M-ID by construction.
+        d = rec.get("discipline")
+        s4 = rec.get("subject_4letter") or ""
+        if not d or not s4:
+            continue
+        per_disc[d][s4] += 1
+
+    # Preserve curator-reviewed entries from an existing seed file so re-running
+    # this generator after the canonical map has been edited doesn't wipe human
+    # work. A "reviewed" entry is one whose reviewed_at is non-null.
+    existing_reviewed = {}
+    if os.path.exists(OUT):
+        try:
+            with open(OUT, "r", encoding="utf-8") as f:
+                prev = json.load(f)
+            for d, e in (prev.get("disciplines") or {}).items():
+                if (e or {}).get("reviewed_at"):
+                    existing_reviewed[d] = e
+        except (OSError, json.JSONDecodeError):
+            pass
 
     today = date.today().isoformat()
     disciplines = {}
@@ -85,6 +111,17 @@ def main():
             "reviewed_by": None,
             "_notes": None,
         }
+        # Curator decisions win: preserve canonical_subj4 / source / _notes /
+        # reviewed_{at,by} from the existing file, but refresh the data-driven
+        # fields (variants_observed, total_mids, data_modal, etc.) so the audit
+        # trail reflects the latest snapshot.
+        prev = existing_reviewed.get(d)
+        if prev:
+            for k in ("canonical_subj4", "source", "_notes", "reviewed_at", "reviewed_by"):
+                if k in prev:
+                    entry[k] = prev[k]
+            if prev.get("canonical_subj4"):
+                entry["needs_review"] = False
         disciplines[d] = entry
 
     needs_review_count = sum(1 for e in disciplines.values() if e["needs_review"])
