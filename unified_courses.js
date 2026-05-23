@@ -790,7 +790,7 @@
       field("Members", r.members == null ? "" : r.members);
       field("Confidence", r.conf == null ? "" : r.conf.toFixed(2));
       field("Adopted", (r.adopted && r.adopted.length) ? r.adopted.length + " — " + names(r.adopted).join(", ") : "");
-      field("Potential adoption", (r.potential && r.potential.length) ? r.potential.length + " — " + names(r.potential).join(", ") : "");
+      field("Adoptable (potential)", (r.potential && r.potential.length) ? r.potential.length + " — " + names(r.potential).join(", ") : "");
       if (r.title_variants && r.title_variants.length) field("Title variants", r.title_variants);
       box.appendChild(dl);
 
@@ -1237,7 +1237,7 @@
       { key: "disc", label: "Discipline" }, { key: "credit", label: "Credit" },
       { key: "units", label: "Units" }, { key: "top", label: "TOP" }, { key: "subj", label: "Subject(s)" },
       { key: "members", label: "Members" }, { key: "adopted", label: "Adopted" },
-      { key: "potential", label: "Potential Adoption" }, { key: "conf", label: "Conf." }, { key: "flags", label: "Flags" }
+      { key: "potential", label: "Adoptable" }, { key: "conf", label: "Conf." }, { key: "flags", label: "Flags" }
     ];
 
     // Expand/collapse a row to show its member college courses (lazy-loaded).
@@ -1371,7 +1371,7 @@
         tr.appendChild(el("td", {}, [adoptionCell(r.adopted, "adopted")]));
         tr.appendChild(el("td", {}, [adoptionCell(r.potential, "potential")]));
         tr.appendChild(el("td", {}, [r.conf == null ? "—" : r.conf.toFixed(2)]));
-        tr.appendChild(el("td", {}, [flagBadges(r)]));
+        tr.appendChild(el("td", { class: "uc-flags-cell" }, [flagBadges(r)]));
         tb.appendChild(tr);
       });
       table.appendChild(tb);

@@ -4951,7 +4951,7 @@ def export_unified_courses():
     headers = ["Kind", "ID", "Title", "Discipline", "Credit Status", "Units", "TOP Code",
                "Subject(s)", "Members", "Confidence", "Over-merged", "Credit mixed", "TOP mixed",
                "Noncredit mixed", "Reviewed", "Curated by", "Curated on", "Adopted (count)",
-               "Adopted colleges", "Potential adoption (count)", "Potential colleges"]
+               "Adopted colleges", "Adoptable (count)", "Adoptable colleges"]
     xrows = []
 
     def xrow(kind, cid, title, disc, credit, units, top, subj, members, conf, fl, mids):
