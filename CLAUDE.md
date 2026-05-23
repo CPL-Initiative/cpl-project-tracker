@@ -38,15 +38,48 @@ into the Pipeline Reference below or into dedicated docs.
    the GitHub Actions workflow is active.** Two schedulers racing to push to
    `main` caused the messy commit chain on 2026-04-19.
 
-7. **M-IDs are stable identifiers — don't renumber them casually.** The
-   2026-05-22 CourseControlNumber re-mint (PR #84) was a one-time alignment to
-   CCN-shaped 4-character keys (corroborated `SUBJ M####`, stand-alone
-   `SUBJ M<band><d><LL>`). The old `M-ID SUBJ NNN` keys are dead. Future identity
-   changes must be additive (incremental, alias-tracked) — never another bulk
-   renumber, because curation, articulation `course_id` pointers, and the live
-   Supabase `kb_curation` table all key on these ids. Authoritative old→new
-   alias: `kb/remint_out/alias_map.json` (committed for rollback). Full
-   decisions + validation methodology + rollback notes:
+7. **M-IDs are in staging-cleanup phase — re-mints permitted under the
+   playbook.** The M-ID identity layer is "AI-assisted STAGING" (per the
+   data-file headers), **not yet faculty-published**. Re-mints in service
+   of cleanup are welcome, but they must follow
+   [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md):
+   dry-run first, alias map committed, Supabase `kb_curation` fresh-read at
+   write-time, articulations re-keyed, atomic land within one cron window
+   (10:17 UTC). The "never bulk renumber" framing that previously lived
+   here was **defensive** (against accidental re-keys); it's been relaxed
+   for the staging phase. **Never re-mint casually** — the playbook is
+   mandatory. Once we explicitly declare the M-ID layer
+   **faculty-published**, this rule re-locks to "stable identifiers, no
+   renumbering." Until then, principled re-mints are part of the cleanup
+   loop.
+
+   **M-ID structural invariants** (enforced at every re-mint; deviations
+   become audit findings):
+   - SUBJ portion is exactly **4 letters**. The 27 single-letter SUBJ
+     artifacts the auditor flags as `mid_id_off_scheme` (`A M1001`,
+     `F M1001`, etc.) get folded into proper 4-char SUBJ at the next
+     re-mint.
+   - Within `id_system == "M-ID"`, **all rows sharing a `discipline`
+     share a SUBJ4.** The 10 SUBJ4 variants for `discipline ==
+     "Sign Language, American"` (ASL/AMSL/DEAF/SIGN/INT/INTR/ACCS/MULT/
+     SL/SNLA) collapse to a single canonical SUBJ4 at re-mint. The
+     `subject_collision_signal` rule (Phase 1c queued) surfaces these
+     so curators can confirm the canonical choice before re-mint.
+   - **C-IDs and CCN-IDs preserve their official format** — they're
+     external authorities with variable lengths (`ANTH 100`, `AG-PS 104`,
+     `ANTH C1000`). Never re-key.
+   - New M-IDs minted by `_seed_coci_minted_mids.py` (or curator
+     consolidation via the Suggested-merges worklist) consult
+     `kb/discipline_canonical_subj4.json` (TBD — created in the next
+     re-mint project) for the canonical SUBJ4 per discipline.
+
+   Authoritative old→new aliases for every re-mint live at
+   `kb/remint_out/<date>/alias_map.json`. Rollback notes per the playbook.
+
+   The 2026-05-22 `CourseControlNumber` re-mint (PR #84) was the first
+   instance of this playbook in production. Old `M-ID SUBJ NNN` keys are
+   dead — those aliases preserved in `kb/remint_out/alias_map.json`. Full
+   decisions + validation methodology:
    [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
 
 8. **Document at context checkpoints.** Roughly every ~100K tokens of context
@@ -972,14 +1005,16 @@ repo root: `python3 kb/_row_audit.py`.
 | 1b (1/2) | Cluster row member-aggregation in renderer (fixes UC-CUR-MPG029OM blanks) | **DONE** 2026-05-23 |
 | 1b (2/2) | UCL "⚠ hinky" chip + audit-status toolbar indicator + daily auditor cron | **DONE** 2026-05-23 |
 | 1b (3/3) | Curate-write Repair-from-members action (Supabase schema migration + fresh-read + cron-window) | parked (low immediate value — 1 cluster; build when ≥5 clusters exist) |
-| 1c | More audit rules — **5 of 9 landed 2026-05-23:** `discipline_title_mismatch`, `generic_title_concrete_discipline`, `top_discipline_disagreement` (+ SISTER_PAIRS suppression), `description_discipline_disagreement`. **Still queued:** `subject_collision_signal`, `unit_anomaly`, `merge_into_orphan`, `cluster_title_drift` (low yield until more clusters mint) | in progress |
+| 1c | More audit rules — **5 of 9 landed 2026-05-23:** `discipline_title_mismatch`, `generic_title_concrete_discipline`, `top_discipline_disagreement` (+ SISTER_PAIRS suppression), `description_discipline_disagreement`. **Still queued:** `subject_collision_signal` (next — surfaces SUBJ4 outliers within a discipline cluster; the diagnostic for the §11.5 re-mint), `unit_anomaly`, `merge_into_orphan`, `cluster_title_drift` (low yield until more clusters mint) | in progress |
 | 1c-UX | Score-with-tag-penalty + chip-with-score + severity color grade + breakdown hover + UCL Triage filter + .uc-flags-cell nowrap + Adoptable rename | **DONE** 2026-05-23 |
+| 1d | UI rename "Unified Courses" → "Common Course Reference" (CCR); URL hash + filenames preserved | **DONE** 2026-05-23 (PR #87) |
+| **1e** | **SUBJ4 canonicalization re-mint** — build `kb/discipline_canonical_subj4.json` (curator-edited map; default = data-modal SUBJ4 per discipline, override-able); fold same-discipline SUBJ4 variants (10 for Sign Language American alone) + the 27 single-letter SUBJ outliers; runs under the [`re-mint playbook`](docs/coursecontrolnumber_remint.md) — dry-run + alias map + Supabase fresh-read + atomic land + cron-window. The first re-mint in the new "Rule 7 staging-phase" framing. | **NEXT SESSION** (Bruh Max / session 5) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 3 | EACR interactive re-pivot to course-identity grouping (Approach B per §9) | parked (architecturally significant) |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
 | 6 | CIDx submission automation (the eventual goal) | parked (the destination) |
-| 7 | M-ID → CID substitution workflow on approval | parked (governed by Rule 7) |
+| 7 | M-ID → CID substitution workflow on approval | parked (governed by Rule 7 once re-locked at faculty publication) |
 
 The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
