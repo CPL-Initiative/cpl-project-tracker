@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-22T12:37:03.489Z",
+  "scraped_at": "2026-05-23T11:38:32.653Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -428,13 +428,13 @@
         },
         {
           "college": "Cabrillo College",
-          "students": 203,
+          "students": 204,
           "units": 1160.5,
-          "avgUnits": 5.716748768472907,
+          "avgUnits": 5.688725490196078,
           "transcriptionRate": 12,
-          "avgTranscribed": 0.6847290640394089,
+          "avgTranscribed": 0.6813725490196079,
           "criteriaMetCount": 1,
-          "militaryStudents": 174,
+          "militaryStudents": 175,
           "nonMilitaryStudents": 32,
           "apprenticeStudents": 5,
           "savings": 2673332.5,
@@ -773,13 +773,13 @@
         },
         {
           "college": "Santa Rosa Junior College",
-          "students": 424,
+          "students": 425,
           "units": 1692,
-          "avgUnits": 3.990566037735849,
+          "avgUnits": 3.981176470588235,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 424,
+          "militaryStudents": 425,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 2927160,
@@ -788,13 +788,13 @@
         },
         {
           "college": "Fresno City College",
-          "students": 350,
+          "students": 351,
           "units": 834,
-          "avgUnits": 2.382857142857143,
+          "avgUnits": 2.376068376068376,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 349,
+          "militaryStudents": 350,
           "nonMilitaryStudents": 1,
           "apprenticeStudents": 0,
           "savings": 1442820,
@@ -1222,6 +1222,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Copper Mountain College",
+          "students": 45,
+          "units": 45,
+          "avgUnits": 1,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 44,
+          "nonMilitaryStudents": 1,
+          "apprenticeStudents": 0,
+          "savings": 77850,
+          "yearImpact": 273015,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Napa Valley College",
           "students": 45,
           "units": 21,
@@ -1267,6 +1282,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Sacramento City College",
+          "students": 34,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 34,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
           "college": "College of the Redwoods",
           "students": 33,
           "units": 99,
@@ -1279,21 +1309,6 @@
           "apprenticeStudents": 0,
           "savings": 171270,
           "yearImpact": 600633,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Sacramento City College",
-          "students": 33,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 33,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
           "transcribedUnits": 0
         },
         {
@@ -1385,21 +1400,6 @@
           "savings": 109590,
           "yearImpact": 392424,
           "transcribedUnits": 6
-        },
-        {
-          "college": "Copper Mountain College",
-          "students": 15,
-          "units": 45,
-          "avgUnits": 3,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 14,
-          "nonMilitaryStudents": 1,
-          "apprenticeStudents": 0,
-          "savings": 77850,
-          "yearImpact": 273015,
-          "transcribedUnits": 0
         },
         {
           "college": "Chabot College",
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "45,802",
+      "value": "45,836",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "23,936"
+          "value": "23,970"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 45802,
+    "Students": 45836,
     "Units": 204347.65000000002,
     "TranscribedUnits": 95771.45,
     "Savings": 291039930.25,
     "YearImpact": 1165526294.9,
-    "MilitaryStudents": 23936,
+    "MilitaryStudents": 23970,
     "NonMilitaryStudents": 21941,
     "AprenticeStudents": 739,
-    "AverageUnits": 4.4615442557093585,
-    "TranscribedAverage": 2.0909883847866904
+    "AverageUnits": 4.458234793612008,
+    "TranscribedAverage": 2.0894373418273844
   }
 }
