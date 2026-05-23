@@ -8259,9 +8259,18 @@ Cont</td>
             #tab-canonical-subj4 .cs-muted-dash { color:#cbd5e1; font-size:.85rem; }
             /* Group-by toggle inline flag */
             #tab-canonical-subj4 .cs-flag-toggle { display:inline-flex; align-items:center; gap:4px; font-size:.85rem; color:#374151; padding:0 6px; }
+            /* Collapse-all twisty (shown above the table when grouping is on) */
+            #tab-canonical-subj4 .cs-collapse-all { background:#fff; border:1px solid #cbd5e1; color:#0A2240; padding:5px 10px; border-radius:5px; font-size:.78rem; cursor:pointer; margin:0 0 8px; font-weight:600; }
+            #tab-canonical-subj4 .cs-collapse-all:hover { background:#eef6ff; border-color:#0A2240; }
+            /* Top callout — clarifies scope (CPL crosswalk only) + source of discipline list */
+            #tab-canonical-subj4 .cs-scope-note { background:#F0F9FF; border:1px solid #BAE6FD; border-radius:8px; padding:10px 14px; margin:0 0 14px; font-size:.85rem; color:#0c4a6e; }
+            #tab-canonical-subj4 .cs-scope-note strong { color:#075985; }
         </style>
         <h2>Common Subject Code <span class="cs-stamp draft">Development Draft</span> <span class="cs-stamp">curator-edited</span><br><span class="cs-sub">— one shared 4-letter abbreviation per discipline</span></h2>
-        <p class="cs-intro"><strong>This is a development draft — nothing here is final.</strong> Different colleges abbreviate the same discipline different ways. Sign Language American shows up across 10 different codes (ASL, AMSL, DEAF, SIGN, …); Physical Education across 71. This page picks <strong>one 4-letter code per discipline</strong> so the dashboard uses a single, consistent label everywhere. Click the <strong>Canonical</strong> cell on a row to set or change a code, add notes if you'd like, then a faculty validator confirms when you're done.</p>
+        <p class="cs-intro"><strong>This is a development draft — nothing here is final.</strong> Different colleges abbreviate the same discipline different ways. Sign Language American shows up across 10 different codes (ASL, AMSL, DEAF, SIGN, …); Physical Education across 71. This page picks <strong>one 4-letter code per discipline</strong> so the dashboard uses a single, consistent label everywhere. Click the <strong>Common SUBJ</strong> cell on a row to set or change a code, add notes if you'd like, then a faculty validator confirms when you're done.</p>
+        <div class="cs-scope-note">
+            <strong>Scope.</strong> Common Subject Codes are used <strong>for CPL crosswalk purposes only</strong> — they let colleges find and adopt each other's articulation decisions without getting tangled in subject-code variations. They are not a claim of equivalence with CCN, CID, or any official credentialing system. <strong>Discipline names</strong> on this page come directly from the <a href="https://www.cccco.edu/-/media/CCCCO-Website/Files/Educational-Services-and-Support/Curriculum/MQ-Handbook" target="_blank" rel="noopener">CCC 2025-26 Minimum Qualifications Handbook</a> — the authoritative source for who's qualified to teach what in California Community Colleges.
+        </div>
         <div style="margin-bottom:14px;">
             <button id="cs-guidelines-btn" class="cs-guidelines-btn" type="button">📘 Curation guidelines</button>
         </div>
@@ -8301,10 +8310,10 @@ Cont</td>
                 </ul>
 
                 <h4>4. Validating</h4>
-                <p>Once you've set a code, the row shows <em>pre-seeded</em> or <em>reviewed</em>. A second faculty reviewer can <strong>validate</strong> it (coming soon) to mark the row as faculty-approved. Both roles are restricted to allowed CCCCO MAP reviewers.</p>
+                <p>Once you've set a code, the row shows <em>pre-seeded</em> or <em>reviewed</em>. A second faculty reviewer can click <strong>Validate</strong> to mark the row as faculty-approved. Both roles are restricted to allowed CCCCO MAP reviewers.</p>
 
                 <h4>5. The 4-letter rule</h4>
-                <p>Every canonical code must be exactly 4 letters A–Z. The system will reject blanks, lowercase, numbers, and any other length.</p>
+                <p>Every Common SUBJ code must be exactly 4 letters A–Z. The system will reject blanks, lowercase, numbers, and any other length.</p>
 
                 <p style="color:#6b7280;font-size:.85rem;margin-top:16px;">Questions? Reach out via the MAP team.</p>
             </div>
