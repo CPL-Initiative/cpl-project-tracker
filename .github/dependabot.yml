@@ -1,0 +1,36 @@
+# Dependabot config — opens PRs for outdated dependencies + GitHub Action
+# versions so a CVE in a transitive dep doesn't sit unnoticed.
+#
+# Scope is small for this repo (3 Python deps, a handful of pinned actions).
+# Weekly cadence keeps the noise low; PRs run the daily-cron-style CI before
+# merge so any breaking bump shows up loudly.
+
+version: 2
+updates:
+  # Python dependencies pinned in requirements.txt (consumed by the daily
+  # dashboard cron + kb scripts).
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "python"
+    commit-message:
+      prefix: "deps(pip)"
+
+  # GitHub Actions versions pinned in .github/workflows/*.yml (actions/checkout,
+  # actions/setup-python, github/codeql-action, gitleaks-action, etc.).
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "deps(actions)"

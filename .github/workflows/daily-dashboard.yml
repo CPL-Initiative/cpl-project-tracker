@@ -28,7 +28,9 @@ jobs:
           python-version: '3.11'
 
       - name: Install Python dependencies
-        run: pip install openpyxl python-docx requests
+        # Pinned in requirements.txt; Dependabot proposes bumps via
+        # .github/dependabot.yml. Run a PR's CI before merging a bump.
+        run: pip install -r requirements.txt
 
       # ── Step 1: Fetch CustomReport JSON ─────────────────────────
       - name: Fetch CustomReport from MAP API

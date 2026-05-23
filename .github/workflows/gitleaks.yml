@@ -1,0 +1,33 @@
+name: "Gitleaks"
+
+# Pre-merge secret-detection scan. Catches accidentally-committed credentials
+# (Supabase service key, Cloudflare worker secrets, anything matching common
+# secret patterns) before they land on main.
+#
+# Note: the Supabase ANON key embedded in unified_courses.js + canonical_subj4.js
+# + pipeline.js is PUBLIC by design (Row-Level Security gates writes). If
+# Gitleaks flags it we can add it to a .gitleaks.toml allowlist; the current
+# default config typically distinguishes JWT-shaped anon keys from secrets,
+# but if it doesn't, the allowlist is the right fix.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so PR diffs scan correctly
+
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
