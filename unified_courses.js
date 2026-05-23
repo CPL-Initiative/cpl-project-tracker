@@ -285,12 +285,52 @@
     top_discipline_disagreement:      "TOP code maps to a different discipline than the one assigned",
     description_discipline_disagreement: "Course description's safe-phrase set points to a different discipline (≥2 mentions)",
   };
+  // Mirror of kb/_row_audit.py's TAG_PENALTY_ON_DISCIPLINE — kept in sync
+  // manually. If you change penalties there, change them here too. Used to
+  // build a tag-derived score breakdown for the hover tooltip without
+  // needing to serialize per-field state into latest.json.
+  var TAG_PENALTY_ON_DISCIPLINE = {
+    "discipline_title_mismatch":           0.20,
+    "top_discipline_disagreement":         0.15,
+    "description_discipline_disagreement": 0.15,
+    "generic_title_concrete_discipline":   0.20,
+  };
   function auditTagsTip(card) {
     var tags = card.tags || [];
-    var lines = tags.map(function (t) { return "• " + (AUDIT_TAG_LABELS[t] || t); });
-    if (card.fts != null) lines.unshift("faculty_trust_score: " + card.fts.toFixed(2));
-    lines.unshift("Auditor findings (kb/_row_audit.py):");
+    var lines = ["Auditor findings (kb/_row_audit.py):"];
+    if (card.fts != null) {
+      // Breakdown: aggregate discipline-field penalties from tags. Other
+      // fields aren't penalized by tags (today), so a one-line summary
+      // suffices: "discipline penalized −X (N signals: …) · other fields ok".
+      var discPenalty = 0;
+      var discSignals = [];
+      tags.forEach(function (t) {
+        var p = TAG_PENALTY_ON_DISCIPLINE[t];
+        if (p) { discPenalty += p; discSignals.push(t); }
+      });
+      lines.push("faculty_trust_score: " + card.fts.toFixed(2)
+                 + (card.mcs != null ? "   mc_ready_score: " + card.mcs.toFixed(2) : ""));
+      if (discPenalty > 0) {
+        lines.push("discipline penalized −" + discPenalty.toFixed(2) + " ("
+                   + discSignals.length + " signal" + (discSignals.length === 1 ? "" : "s") + ")");
+      } else if (tags.indexOf("seed_untouched_discipline") >= 0 || tags.indexOf("blank_discipline") >= 0) {
+        lines.push("discipline state lowers score (no per-tag penalty)");
+      } else {
+        lines.push("discipline contribution unchanged by tags");
+      }
+    }
+    lines.push("—");
+    lines = lines.concat(tags.map(function (t) { return "• " + (AUDIT_TAG_LABELS[t] || t); }));
     return lines.join("\n");
+  }
+  // Severity colour for the ⚠ chip — mapped from faculty_trust_score so the
+  // worst rows pop visually without reading numbers. Buckets match the
+  // readiness tiers in kb/_row_audit.py (READINESS_TIERS).
+  function auditChipCls(score) {
+    if (score == null) return "warn";
+    if (score < 0.40) return "warn";   // red — needs_repair / not_ready
+    if (score < 0.65) return "mix";    // amber — needs_review
+    return "muted";                    // gray — ready (just informational)
   }
   // Render a small "audit loaded — N flagged of M" indicator near the
   // filter bar so curators know the audit overlay is live.
@@ -1014,12 +1054,16 @@
       b(f.ncc_mixed, "noncredit", "mix", "members disagree on noncredit category");
       b(r.locked, "anchor", "ok", "curated common-course anchor (" + (r.id_system || "") + ") — read-only");
       // Trust-Card auditor overlay (lazy — only present after loadAudit() resolves).
-      // Renders a "⚠ hinky" chip on rows the auditor flagged so the curator sees
-      // them at a glance. Tooltip lists tag labels + faculty_trust_score.
+      // Renders a "⚠ N · 0.XX" chip on rows the auditor flagged so the curator sees
+      // tag count + faculty_trust_score at a glance. Chip color grades by score
+      // severity (warn=red <0.40, mix=amber 0.40-0.65, muted=gray ≥0.65). The
+      // hover tooltip surfaces the score breakdown — see auditTagsTip().
       var auditCard = _ucAudit && _ucAudit.idx[r.id];
       if (auditCard) {
-        out.appendChild(el("span", { class: "uc-badge warn", title: auditTagsTip(auditCard) },
-                            ["⚠ " + auditCard.tags.length]));
+        var chipText = "⚠ " + auditCard.tags.length
+                     + (auditCard.fts != null ? " · " + auditCard.fts.toFixed(2) : "");
+        out.appendChild(el("span", { class: "uc-badge " + auditChipCls(auditCard.fts),
+                                     title: auditTagsTip(auditCard) }, [chipText]));
       }
       if (r.consolidated_from && r.consolidated_from.length) {
         out.appendChild(el("span", {

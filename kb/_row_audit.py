@@ -165,6 +165,25 @@ MC_NOT_YET_CAPTURED = [
 MC_WEIGHTS_FACULTY_SHARE = 0.70
 MC_WEIGHTS_MC_SHARE      = 0.30  # spread evenly across MC_NOT_YET_CAPTURED
 
+# Per-tag penalties on the relevant field's per-field score. Each tag is
+# independent evidence (e.g. title-mismatch is one signal, TOP-disagreement
+# is another, description-disagreement is a third), so multiple tags firing
+# on the same field compound. Subtracted from STATE_SCORE before the field's
+# weighted contribution to faculty_trust_score; floored at 0.
+#
+# Calibration intent: a row with all three discipline cross-validation
+# signals firing + seed_untouched should approach 0 on the discipline
+# field, propagating to a low overall faculty_trust_score. A row with
+# zero audit tags keeps its state-score unchanged.
+TAG_PENALTY_ON_DISCIPLINE = {
+    "discipline_title_mismatch":           0.20,
+    "top_discipline_disagreement":         0.15,
+    "description_discipline_disagreement": 0.15,
+    "generic_title_concrete_discipline":   0.20,
+    "seed_untouched_discipline":           0.00,  # already captured by state-score
+    "blank_discipline":                    0.00,  # already captured by state-score
+}
+
 # Per-field-state score (how much of the field's weight the row earns). The
 # state taxonomy doubles as the trust-card vocabulary the UI can render later.
 STATE_SCORE = {
@@ -412,13 +431,29 @@ def _cluster_member_colleges(members_ids, courses, singletons):
 
 # ─── score + readiness ──────────────────────────────────────────────────────
 
-def _score(fields_with_weights):
-    """Compute weighted mean of field-state scores."""
+def _score(fields_with_weights, per_field_penalty=None):
+    """Compute weighted mean of field-state scores, optionally subtracting
+    per-field tag penalties (floored at 0 to prevent negative contributions).
+
+    `fields_with_weights` is a list of (field_key, field_dict, weight) when
+    penalties are in play (key needed to look up the field's penalty), or
+    (field_dict, weight) pairs when not. The dual signature keeps backward
+    compat with the simpler MC-share computation that has no per-field
+    penalty notion.
+    """
     total_w, total_s = 0.0, 0.0
-    for field, weight in fields_with_weights:
+    for entry in fields_with_weights:
+        if len(entry) == 3:
+            key, field, weight = entry
+        else:
+            field, weight = entry
+            key = None
         state = (field or {}).get("state", "missing")
+        per_field_score = STATE_SCORE.get(state, 0.0)
+        if per_field_penalty and key:
+            per_field_score = max(0.0, per_field_score - per_field_penalty.get(key, 0.0))
         total_w += weight
-        total_s += weight * STATE_SCORE.get(state, 0.0)
+        total_s += weight * per_field_score
     return round(total_s / total_w, 3) if total_w else 0.0
 
 
@@ -433,15 +468,27 @@ def _virtual_mc(per_row_overrides):
     return base
 
 
-def _compute_scores(faculty_fields, mc_fields):
-    fw = [(faculty_fields.get(k), w) for k, w in FACULTY_WEIGHTS.items()]
-    faculty_score = _score(fw)
-    # MC: faculty share (using same per-field scores) + MC share (avg of MC fields).
+def _compute_scores(faculty_fields, mc_fields, tags=None):
+    """Compute faculty_trust_score + mc_ready_score with per-tag penalties.
+
+    Tags that point at a specific field (discipline-related) apply a small
+    penalty to that field's per-field score before it contributes to the
+    weighted mean. See TAG_PENALTY_ON_DISCIPLINE. The result is that a row
+    with multiple discipline cross-validation signals firing has a
+    materially lower faculty_trust_score than a row with the same field
+    states but no audit tags.
+    """
+    # Aggregate per-field penalties from tags.
+    disc_penalty = sum(TAG_PENALTY_ON_DISCIPLINE.get(t, 0.0) for t in (tags or []))
+    per_field_penalty = {"discipline": disc_penalty} if disc_penalty else None
+    fw = [(k, faculty_fields.get(k), w) for k, w in FACULTY_WEIGHTS.items()]
+    faculty_score = _score(fw, per_field_penalty=per_field_penalty)
+    # MC: faculty share (using same per-field scores + penalties) + MC share.
     mc_field_weight = MC_WEIGHTS_MC_SHARE / max(len(MC_NOT_YET_CAPTURED), 1)
-    mc_fw = [(faculty_fields.get(k), w * MC_WEIGHTS_FACULTY_SHARE)
+    mc_fw = [(k, faculty_fields.get(k), w * MC_WEIGHTS_FACULTY_SHARE)
              for k, w in FACULTY_WEIGHTS.items()]
-    mc_fw += [(mc_fields.get(k), mc_field_weight) for k in MC_NOT_YET_CAPTURED]
-    mc_score = _score(mc_fw)
+    mc_fw += [(k, mc_fields.get(k), mc_field_weight) for k in MC_NOT_YET_CAPTURED]
+    mc_score = _score(mc_fw, per_field_penalty=per_field_penalty)
     return faculty_score, mc_score
 
 
@@ -840,10 +887,15 @@ def main():
         # ingestion deferred), so we don't inline that block per-row — it's
         # listed once in the metadata header. When any MC field graduates to
         # a non-default state for any row, inline ONLY that field here.
-        mc = {}
-        f_score, m_score = _compute_scores(faculty, _virtual_mc(mc))
+        # Compute tags FIRST so per-tag penalties can be folded into the score.
+        # See TAG_PENALTY_ON_DISCIPLINE — multiple discipline cross-validation
+        # signals firing on one row depress its faculty_trust_score (instead
+        # of all states-equal rows getting the same score regardless of how
+        # much evidence accumulated against them).
         tags = _tags_for_mid(rec, faculty, disc_bag=disc_bag,
                              subject_map=subject_map, top_disc=top_disc)
+        mc = {}
+        f_score, m_score = _compute_scores(faculty, _virtual_mc(mc), tags=tags)
         card = {
             "row_id": course_id,
             "row_kind": "Course",
@@ -886,9 +938,9 @@ def main():
                 agg_fields["discipline"]["spread"] = disc_spread
 
         colleges = _cluster_member_colleges(members, courses, singletons)
-        mc = {}
-        f_score, m_score = _compute_scores(agg_fields, _virtual_mc(mc))
         tags = _tags_for_cluster(cluster_id, agg_fields, n_resolved, n_dropped, colleges)
+        mc = {}
+        f_score, m_score = _compute_scores(agg_fields, _virtual_mc(mc), tags=tags)
         card = {
             "row_id": cluster_id,
             "row_kind": "Cluster",
