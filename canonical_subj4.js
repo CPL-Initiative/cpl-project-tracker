@@ -112,6 +112,43 @@
       .catch(function () { return { disciplines: {}, _counts: {} }; });
   }
 
+  // Load C-ID and CCN reference data. Used to:
+  //   (a) Show C-ID / CCN match badges per row (count + visual indicator of
+  //       whether the canonical SUBJ4 matches the official identifier's
+  //       subject).
+  //   (b) List C-IDs / CCNs that share a SUBJ4 inside the variants modal so
+  //       the curator can see if a canonical choice will line up with an
+  //       existing official identifier.
+  // Builds an index { SUBJ -> [{identifier, title}, ...] }. C-ID descriptors
+  // with hyphenated subjects (AG-PS) are kept under their full subject
+  // string — they won't match a 4-letter SUBJ but show up if needed.
+  function fetchCidCcn() {
+    return Promise.all([
+      fetch("kb/reference/cid_descriptors.json", { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : { descriptors: [] }; })
+        .catch(function () { return { descriptors: [] }; }),
+      fetch("kb/reference/ccn_courses.json", { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : { courses: [] }; })
+        .catch(function () { return { courses: [] }; }),
+    ]).then(function (parts) {
+      var cidBySubj = {};
+      var ccnBySubj = {};
+      (parts[0].descriptors || []).forEach(function (d) {
+        var desc = (d.descriptor || "").trim();
+        var m = desc.match(/^([A-Z]+(?:-[A-Z]+)?)\s+(\d+[A-Z]*)$/);
+        if (!m) return;
+        var subj = m[1];
+        (cidBySubj[subj] = cidBySubj[subj] || []).push({ id: desc, title: d.title || "" });
+      });
+      (parts[1].courses || []).forEach(function (c) {
+        var subj = c.subject || "";
+        if (!subj) return;
+        (ccnBySubj[subj] = ccnBySubj[subj] || []).push({ id: c.ccn || (subj + " " + c.number), title: c.title || "" });
+      });
+      return { cidBySubj: cidBySubj, ccnBySubj: ccnBySubj };
+    });
+  }
+
   // Merge an overlay record onto a seed entry. Overlay wins; reviewed_by / _at
   // are surfaced from the overlay so a fresh save bumps them on screen.
   function applyOverlay(entry, ov) {
@@ -148,31 +185,164 @@
     return (entry.total_mids || 0) * Math.max(0, nVars - 1);
   }
 
-  function variantsHtml(entry) {
-    if (!entry.variants_observed) return "";
+  // Build the inline variants summary — show top 5 + a "show all (n)" chip
+  // that opens the variants modal. Modal listing always includes any C-IDs
+  // and CCNs that share a SUBJ4 with the variants observed, so a curator
+  // sees the full official-id landscape next to the local-code landscape.
+  function variantsCell(entry) {
+    var td = el("td", { class: "cs-variants" });
+    if (!entry.variants_observed) return td;
     var modal = entry.data_modal;
     var pairs = Object.keys(entry.variants_observed).map(function (k) {
       return [k, entry.variants_observed[k]];
     }).sort(function (a, b) { return b[1] - a[1] || a[0].localeCompare(b[0]); });
-    // Render top 8 inline; collapse the rest into "+N more".
-    var visible = pairs.slice(0, 8);
+    var visible = pairs.slice(0, 5);
     var hidden = pairs.length - visible.length;
     var parts = visible.map(function (p) {
       var cls = (p[0] === modal) ? "cs-var-modal" : "cs-var-other";
       return '<span class="' + cls + '">' + p[0] + "·" + p[1] + "</span>";
     });
-    if (hidden > 0) parts.push('<span class="cs-var-other">+' + hidden + " more</span>");
-    return parts.join(" ");
+    td.innerHTML = parts.join(" ");
+    // Show-all chip — appended as a clickable button so it can dispatch to
+    // the modal opener.
+    var btn = el("button", {
+      class: "cs-var-show", type: "button",
+      title: "Show all variants for this discipline (including any matching C-IDs/CCNs)",
+    }, [hidden > 0 ? "Show all (" + pairs.length + ") →" : "Show details →"]);
+    btn.onclick = function () { openVariantsModal(entry); };
+    td.appendChild(document.createTextNode(" "));
+    td.appendChild(btn);
+    return td;
+  }
+
+  function openVariantsModal(entry) {
+    var bg = document.getElementById("cs-variants-modal");
+    var body = document.getElementById("cs-variants-body");
+    var title = document.getElementById("cs-variants-title");
+    if (!bg || !body) return;
+    title.textContent = "Variants for " + entry.discipline;
+
+    var modal = entry.data_modal;
+    var canon = entry.canonical_subj4;
+    var variants = Object.keys(entry.variants_observed || {})
+      .map(function (k) { return [k, entry.variants_observed[k]]; })
+      .sort(function (a, b) { return b[1] - a[1] || a[0].localeCompare(b[0]); });
+
+    body.innerHTML = "";
+    body.appendChild(el("p", { class: "cs-modal-meta" }, [
+      String(entry.total_mids || 0) + " M-IDs across " + variants.length + " distinct codes. " +
+      "Bold yellow = the most-used code today; green = curator-confirmed canonical."
+    ]));
+
+    // Section 1: local college variants
+    body.appendChild(el("h5", null, ["Local college subject codes (in this dataset)"]));
+    var grid = el("div", { class: "cs-var-grid" });
+    variants.forEach(function (p) {
+      var isModal = p[0] === modal;
+      var isCanon = p[0] === canon;
+      var cls = "cs-var-chip" + (isCanon ? " canonical" : isModal ? " modal" : "");
+      var chip = el("div", { class: cls });
+      chip.appendChild(el("span", { class: "cs-var-code" }, [p[0]]));
+      chip.appendChild(document.createTextNode(" · " + p[1] + " M-IDs"));
+      if (isCanon) chip.appendChild(el("span", { class: "cs-var-flag" }, ["canonical"]));
+      else if (isModal) chip.appendChild(el("span", { class: "cs-var-flag" }, ["most-used"]));
+      grid.appendChild(chip);
+    });
+    body.appendChild(grid);
+
+    // Section 2: C-IDs that share a SUBJ4 with this discipline (canonical or
+    // any local variant). Helps the curator see what official identifiers
+    // line up with their choice.
+    var allSubjs = new Set(variants.map(function (p) { return p[0]; }));
+    if (canon) allSubjs.add(canon);
+    var cidHits = [];
+    var ccnHits = [];
+    allSubjs.forEach(function (s) {
+      (state.cidBySubj[s] || []).forEach(function (h) { cidHits.push(Object.assign({ subject: s }, h)); });
+      (state.ccnBySubj[s] || []).forEach(function (h) { ccnHits.push(Object.assign({ subject: s }, h)); });
+    });
+
+    if (cidHits.length) {
+      body.appendChild(el("h5", null, ["C-IDs that share one of these subjects (" + cidHits.length + ")"]));
+      var cidGrid = el("div", { class: "cs-var-grid" });
+      cidHits.sort(function (a, b) { return a.id.localeCompare(b.id); }).forEach(function (h) {
+        var chip = el("div", { class: "cs-var-chip", title: h.title });
+        chip.appendChild(el("span", { class: "cs-var-code" }, [h.id]));
+        if (h.title) chip.appendChild(el("span", { class: "cs-var-flag" }, [h.title.length > 28 ? h.title.slice(0, 28) + "…" : h.title]));
+        cidGrid.appendChild(chip);
+      });
+      body.appendChild(cidGrid);
+    }
+    if (ccnHits.length) {
+      body.appendChild(el("h5", null, ["CCNs that share one of these subjects (" + ccnHits.length + ")"]));
+      var ccnGrid = el("div", { class: "cs-var-grid" });
+      ccnHits.sort(function (a, b) { return a.id.localeCompare(b.id); }).forEach(function (h) {
+        var chip = el("div", { class: "cs-var-chip", title: h.title });
+        chip.appendChild(el("span", { class: "cs-var-code" }, [h.id]));
+        if (h.title) chip.appendChild(el("span", { class: "cs-var-flag" }, [h.title.length > 28 ? h.title.slice(0, 28) + "…" : h.title]));
+        ccnGrid.appendChild(chip);
+      });
+      body.appendChild(ccnGrid);
+    }
+    if (!cidHits.length && !ccnHits.length) {
+      body.appendChild(el("h5", null, ["Official identifiers"]));
+      body.appendChild(el("p", { class: "cs-modal-meta" }, [
+        "No C-IDs or CCNs share any of the subject codes above. (Either this discipline has no official identifiers yet, or it uses different subject codes than the official systems.)"
+      ]));
+    }
+
+    bg.classList.add("show");
+    document.addEventListener("keydown", _variantsModalEsc);
+  }
+  function _variantsModalEsc(e) {
+    if (e.key === "Escape") {
+      var bg = document.getElementById("cs-variants-modal");
+      if (bg) bg.classList.remove("show");
+      document.removeEventListener("keydown", _variantsModalEsc);
+    }
   }
 
   // ─── render ────────────────────────────────────────────────────────────────
   var state = {
     seed: null,
     overlay: {},
+    cidBySubj: {},
+    ccnBySubj: {},
     filter: "all",
     search: "",
+    // Sort: default is re-key impact (descending). Curator clicks a sortable
+    // header to override. Click again to flip direction. Clicking another
+    // header switches the active column.
+    sort: { key: "_impact", dir: "desc" },
     sess: null,
   };
+
+  // Sortable column descriptors: key = sort key on the row object, getter =
+  // value extractor. Status uses an ordering enum so "reviewed" sorts above
+  // "pre-seeded" above "needs review" above "invalid" by default.
+  var STATUS_ORDER = { "reviewed": 0, "pre-seeded": 1, "needs review": 2, "invalid": 3 };
+  var SORT_GETTERS = {
+    discipline: function (e) { return (e.discipline || "").toLowerCase(); },
+    total_mids: function (e) { return e.total_mids || 0; },
+    variants_count: function (e) { return e.variants_observed ? Object.keys(e.variants_observed).length : 0; },
+    data_modal: function (e) { return (e.data_modal || "").toLowerCase(); },
+    canonical_subj4: function (e) { return (e.canonical_subj4 || "~").toLowerCase(); }, // ~ sorts blanks last
+    status: function (e) { return STATUS_ORDER[status(e).label] || 99; },
+    reviewed_by: function (e) { return (e.reviewed_by || "~").toLowerCase(); },
+    _impact: function (e) { return e._impact || 0; },
+  };
+  function sortRows(rows) {
+    var key = state.sort.key, dir = state.sort.dir;
+    var get = SORT_GETTERS[key] || SORT_GETTERS._impact;
+    var sign = dir === "asc" ? 1 : -1;
+    return rows.slice().sort(function (a, b) {
+      var va = get(a), vb = get(b);
+      if (va < vb) return -sign;
+      if (va > vb) return sign;
+      // tiebreaker: discipline alpha asc (stable, readable)
+      return (a.discipline || "").localeCompare(b.discipline || "");
+    });
+  }
 
   function toast(msg, isErr) {
     var t = document.getElementById("cs-toast");
@@ -201,9 +371,28 @@
     });
     sel.onchange = function () { state.filter = this.value; render(); };
     tb.appendChild(sel);
-    // Search
-    var search = el("input", { class: "cs-filter", id: "cs-search", type: "search", placeholder: "Search discipline…" });
+    // Search — typeahead via native <datalist>. Browser shows a dropdown of
+    // matching disciplines as the curator types; picking one (or typing a
+    // full match) filters the table to just rows containing the term.
+    // Width widened to ~280px so longer discipline names are readable.
+    var datalistId = "cs-discipline-list";
+    if (!document.getElementById(datalistId) && state.seed) {
+      var dl = document.createElement("datalist");
+      dl.id = datalistId;
+      Object.keys(state.seed.disciplines || {}).sort().forEach(function (d) {
+        dl.appendChild(el("option", { value: d }));
+      });
+      tb.appendChild(dl);
+    }
+    var search = el("input", {
+      class: "cs-filter cs-search-wide", id: "cs-search", type: "search",
+      placeholder: "Search discipline (start typing for suggestions)…",
+      list: datalistId,
+      autocomplete: "off",
+    });
     search.value = state.search;
+    // Re-render on input so the table filters incrementally; the datalist
+    // dropdown is handled by the browser, so there's no race with our state.
     search.oninput = function () { state.search = this.value.toLowerCase(); render(); };
     tb.appendChild(search);
     // Auth widget
@@ -272,7 +461,7 @@
       if (state.search && e.discipline.toLowerCase().indexOf(state.search) < 0) return false;
       return passesFilter(e);
     });
-    filtered.sort(function (a, b) { return b._impact - a._impact || a.discipline.localeCompare(b.discipline); });
+    filtered = sortRows(filtered);
 
     renderSummary(allRows);
 
@@ -280,16 +469,43 @@
     if (!wrap) return;
     wrap.innerHTML = "";
     var table = el("table", { class: "cs-table" });
-    var thead = el("thead", null, [el("tr", null, [
-      el("th", null, ["Discipline"]),
-      el("th", { title: "Number of cross-college course identities in this discipline." }, ["M-IDs"]),
-      el("th", { title: "Different 4-letter subject codes colleges currently use for this discipline, with how many M-IDs use each." }, ["Variants observed (code·n)"]),
-      el("th", { title: "The most-used code across colleges today. If shorter than 4 letters, pick a 4-letter expansion in the Canonical column." }, ["Most-used today"]),
-      el("th", { title: "Required: exactly 4 uppercase letters (A–Z)." }, ["Canonical *"]),
-      el("th", null, ["Status"]),
-      el("th", null, ["Notes"]),
-      el("th", null, ["Reviewed"]),
-    ])]);
+    // Sortable column headers — click to set/flip sort. Indicator shows
+    // current state (▲ asc / ▼ desc / ↕ inactive).
+    var COLS = [
+      { key: "discipline",       label: "Discipline" },
+      { key: "total_mids",       label: "M-IDs",     title: "Number of cross-college course identities in this discipline." },
+      { key: "variants_count",   label: "Variants",  title: "Different 4-letter subject codes colleges currently use for this discipline. Click the chip to see all + any matching C-IDs/CCNs." },
+      { key: "data_modal",       label: "Most-used today", title: "The most-used code across colleges today. If shorter than 4 letters, pick a 4-letter expansion in the Canonical column." },
+      { key: "canonical_subj4",  label: "Canonical *", title: "Required: exactly 4 uppercase letters (A–Z)." },
+      { key: "status",           label: "Status" },
+      { key: null,               label: "Notes" },
+      { key: "reviewed_by",      label: "Reviewed" },
+    ];
+    var headerRow = el("tr");
+    COLS.forEach(function (col) {
+      var attrs = col.title ? { title: col.title } : null;
+      var children = [col.label];
+      if (col.key) {
+        var active = state.sort.key === col.key;
+        var indicator = !active ? "↕" : (state.sort.dir === "asc" ? "▲" : "▼");
+        children.push(el("span", {
+          class: "cs-sort-indicator" + (active ? " active" : ""),
+        }, [indicator]));
+      }
+      var th = el("th", attrs, children);
+      if (col.key) {
+        th.classList.add("sortable");
+        (function (k) {
+          th.onclick = function () {
+            if (state.sort.key === k) state.sort.dir = state.sort.dir === "asc" ? "desc" : "asc";
+            else { state.sort.key = k; state.sort.dir = k === "discipline" ? "asc" : "desc"; }
+            render();
+          };
+        })(col.key);
+      }
+      headerRow.appendChild(th);
+    });
+    var thead = el("thead", null, [headerRow]);
     table.appendChild(thead);
     var tbody = el("tbody");
     filtered.forEach(function (e) { tbody.appendChild(rowFor(e)); });
@@ -301,8 +517,7 @@
     var tr = el("tr");
     tr.appendChild(el("td", { class: "cs-disc" }, [entry.discipline]));
     tr.appendChild(el("td", { class: "cs-mono" }, [String(entry.total_mids || 0)]));
-    var tdVars = el("td", { class: "cs-variants", html: variantsHtml(entry) });
-    tr.appendChild(tdVars);
+    tr.appendChild(variantsCell(entry));
     // Data-modal cell — show the most-common code colleges use today, with
     // an obvious flag when it isn't 4 letters (so a curator knows they need
     // to pick an expansion rather than just confirm).
@@ -351,7 +566,29 @@
         .catch(function () { toast("Save failed (network)", true); });
     };
     input.onkeydown = function (e) { if (e.key === "Enter") input.blur(); };
-    tr.appendChild(el("td", null, [input]));
+    var tdCanon = el("td", null, [input]);
+    // C-ID / CCN match badges — count official identifiers whose subject
+    // equals the canonical SUBJ4 (or, if no canonical set yet, falls back
+    // to the data modal so the curator still sees what's out there).
+    // Click goes nowhere — full list lives in the variants modal.
+    var matchSubj = entry.canonical_subj4 || entry.data_modal;
+    if (matchSubj) {
+      var nCid = (state.cidBySubj[matchSubj] || []).length;
+      var nCcn = (state.ccnBySubj[matchSubj] || []).length;
+      if (nCid > 0) {
+        tdCanon.appendChild(el("span", {
+          class: "cs-id-badge cid",
+          title: nCid + " C-ID descriptor" + (nCid === 1 ? "" : "s") + " use subject " + matchSubj,
+        }, ["C-ID·" + nCid]));
+      }
+      if (nCcn > 0) {
+        tdCanon.appendChild(el("span", {
+          class: "cs-id-badge ccn",
+          title: nCcn + " CCN" + (nCcn === 1 ? "" : "s") + " use subject " + matchSubj,
+        }, ["CCN·" + nCcn]));
+      }
+    }
+    tr.appendChild(tdCanon);
 
     var st = status(entry);
     tr.appendChild(el("td", null, [el("span", { class: "cs-badge " + st.cls }, [st.label])]));
@@ -403,13 +640,26 @@
     bg.addEventListener("click", function (e) { if (e.target === bg) shut(); });
   }
 
+  // Variants modal — close handlers (the opener lives inline in variantsCell).
+  function wireVariantsModal() {
+    var bg = document.getElementById("cs-variants-modal");
+    if (!bg) return;
+    var close = bg.querySelector(".cs-modal-close");
+    function shut() { bg.classList.remove("show"); document.removeEventListener("keydown", _variantsModalEsc); }
+    close && close.addEventListener("click", shut);
+    bg.addEventListener("click", function (e) { if (e.target === bg) shut(); });
+  }
+
   function init() {
     if (!document.getElementById("tab-canonical-subj4")) return;
     state.sess = getSession();
     wireGuidelinesModal();
-    Promise.all([fetchSeed(), fetchOverlay()]).then(function (parts) {
+    wireVariantsModal();
+    Promise.all([fetchSeed(), fetchOverlay(), fetchCidCcn()]).then(function (parts) {
       state.seed = parts[0];
       state.overlay = parts[1];
+      state.cidBySubj = parts[2].cidBySubj || {};
+      state.ccnBySubj = parts[2].ccnBySubj || {};
       render();
     });
   }
