@@ -614,26 +614,51 @@ DESC_RULES = [(re.compile(r"\b(?:" + "|".join(re.escape(t) for t in terms) + r")
               for terms, d in _DESC_SAFE_PHRASES]
 
 
+# Sister-discipline pairs — disciplines that are essentially synonymous or
+# one is a specialization of the other. When the TOP code and the assigned
+# discipline disagree but the disagreement is within a sister pair, suppress
+# the flag (the curator's choice between them is stylistic, not a
+# misassignment). Data-driven: identified from the top-25 disagreement
+# pairs by row count. The pairs are stored as frozensets so the lookup is
+# order-independent. Edit this set as curators identify more synonyms.
+SISTER_PAIRS = {
+    frozenset({"Kinesiology", "Physical Education"}),                  # 554 rows
+    frozenset({"Computer Information Systems", "Computer Science"}),   #  95
+    frozenset({"Carpentry", "Construction Technology"}),               #  75
+    frozenset({"Commercial Music", "Music"}),                          #  70
+    frozenset({"Stagecraft", "Theater Arts"}),                         #  63
+    frozenset({"Business", "Office Technologies"}),                    #  41
+    frozenset({"Construction Management", "Construction Technology"}), #  40
+    frozenset({"Drama/Theater Arts", "Theater Arts"}),                 #  40
+    frozenset({"Art", "Graphic Arts"}),                                #  37
+    frozenset({"Culinary Arts/Food Technology",
+               "Dietetics/Nutritional Science"}),                      #  36
+    frozenset({"Law", "Legal Assisting"}),                             #  36
+    frozenset({"Business", "Small Business Development"}),             #  34
+    frozenset({"Film and Media Studies", "Media Production"}),         #  32
+    frozenset({"Art", "Multimedia"}),                                  #  31
+    frozenset({"Chicano Studies", "Ethnic Studies"}),                  #  31
+    frozenset({"Computer Information Systems", "Office Technologies"}), # 25
+    frozenset({"Sign Language, American",
+               "Sign Language/ English Interpreting"}),                #  25
+    frozenset({"Licensed Vocational Nursing", "Nursing"}),             #  24
+    frozenset({"Graphic Arts", "Multimedia"}),                         #  20
+    frozenset({"Business", "Management"}),                             #  18
+    frozenset({"Business", "Marketing"}),                              #  17
+}
+
+
 def _classify_top_discipline_disagreement(rec, top_disc):
     """Return alt-discipline if the row's TOP code maps to a different
-    discipline than the assigned one. CLAUDE.md notes TOP codes 'vary by
-    college so they're an intent signal, not ground truth' — but a
-    direct disagreement is still worth flagging for curator review.
+    discipline than the assigned one AND the pair isn't in SISTER_PAIRS.
+    CLAUDE.md notes TOP codes 'vary by college so they're an intent signal,
+    not ground truth' — and many disagreements are between synonymous /
+    specialist-generalist disciplines (Kinesiology vs PE, Art vs Graphic
+    Arts), so the SISTER_PAIRS suppression cuts ~1,100 rows of noise.
 
-    Known noise pattern (NOT currently suppressed — let the curator decide
-    which pairs are sister disciplines for their catalog):
-      * Kinesiology ↔ Physical Education (modern vs traditional naming)
-      * Business ↔ {Marketing, Office Technologies, Management}
-      * Art ↔ {Graphic Arts, Multimedia, Photography}
-      * Computer Information Systems ↔ Office Technologies (for MS apps)
-      * Nursing ↔ Licensed Vocational Nursing
-    If these become persistent noise, add a SISTER_PAIRS suppression set
-    of frozenset({A, B}) pairs and skip when {disc, top_disc} matches one.
-
-    Calibration: ~2,201 flags at m≥2; leverage-ranking surfaces the
-    actionable ones (DH M1039 "Pharmacology" → Dental Tech vs TOP→Nursing
-    correct; CIS Microsoft Excel → CIS vs TOP→Office Tech is a curator
-    judgment call).
+    Calibration history:
+      V1 no SISTER_PAIRS → 2,201 flags (550+ were Kinesiology↔PE alone)
+      V2 with SISTER_PAIRS → ~1,100 flags (more actionable)
 
     Returns the TOP-implied discipline if the rule fires; None otherwise.
     """
@@ -646,6 +671,8 @@ def _classify_top_discipline_disagreement(rec, top_disc):
     if not top or top not in top_disc:
         return None
     if top_disc[top] == disc:
+        return None
+    if frozenset({disc, top_disc[top]}) in SISTER_PAIRS:
         return None
     return top_disc[top]
 
