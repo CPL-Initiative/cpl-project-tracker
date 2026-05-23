@@ -1913,6 +1913,7 @@
         <button class="cpl-tab" data-tab="vision-2030" role="tab" aria-selected="false">Vision 2030</button>
         <button class="cpl-tab" data-tab="unified-courses" role="tab" aria-selected="false">Common Course Reference</button>
         <button class="cpl-tab" data-tab="canonical-subj4" role="tab" aria-selected="false">Canonical SUBJ4</button>
+        <button class="cpl-tab" data-tab="pipeline" role="tab" aria-selected="false">Pipeline</button>
     </nav>
 
     <div class="cpl-tab-pane active" id="tab-dashboard" data-tab="dashboard" role="tabpanel" aria-labelledby="tab-dashboard">
@@ -8218,6 +8219,85 @@ Cont</td>
     </div>
     <!-- /tab-canonical-subj4 -->
 
+    <div class="cpl-tab-pane" id="tab-pipeline" data-tab="pipeline" role="tabpanel" aria-labelledby="tab-pipeline">
+        <div class="main-container">
+        <style>
+            #tab-pipeline h2 { margin-bottom:4px; }
+            #tab-pipeline .pl-sub { font-weight:400; color:#6b7280; font-size:1rem; }
+            #tab-pipeline .pl-intro { color:#4b5563; margin:0 0 18px; max-width:75ch; }
+            #tab-pipeline .pl-section { margin:24px 0 32px; }
+            #tab-pipeline .pl-section h3 { margin-bottom:4px; color:#0A2240; font-size:1.1rem; }
+            #tab-pipeline .pl-section-sub { color:#6b7280; font-size:.88rem; margin:0 0 12px; }
+            #tab-pipeline .pl-card { background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:18px 20px; }
+            #tab-pipeline .pl-mermaid { background:#fff; overflow:auto; }
+            #tab-pipeline .pl-mermaid .mermaid { font-family:inherit; min-width:600px; }
+            #tab-pipeline .pl-status { color:#6b7280; font-size:.78rem; margin-top:6px; font-style:italic; }
+            #tab-pipeline .pl-receipt { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:10px; }
+            #tab-pipeline .pl-stat { background:#fff; border:1px solid #e5e7eb; border-radius:8px; padding:14px 16px; }
+            #tab-pipeline .pl-stat .pl-stat-label { font-size:.78rem; color:#64748b; text-transform:uppercase; letter-spacing:0.5px; }
+            #tab-pipeline .pl-stat .pl-stat-value { font-size:1.6rem; font-weight:700; color:#0A2240; margin-top:4px; font-family:ui-monospace,Menlo,monospace; }
+            #tab-pipeline .pl-stat .pl-stat-delta { font-size:.78rem; color:#6b7280; margin-top:2px; }
+            #tab-pipeline .pl-stat.ok .pl-stat-value { color:#166534; }
+            #tab-pipeline .pl-stat.warn .pl-stat-value { color:#92400e; }
+            #tab-pipeline .pl-stat.err .pl-stat-value { color:#991b1b; }
+            #tab-pipeline .pl-receipt-badge { display:inline-block; font-size:.7rem; padding:2px 8px; border-radius:10px; background:#dcfce7; color:#166534; margin-left:6px; vertical-align:middle; }
+            #tab-pipeline .pl-roadmap { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:10px; margin-top:10px; }
+            #tab-pipeline .pl-phase { background:#fff; border:1px solid #e5e7eb; border-radius:8px; padding:10px 12px; font-size:.82rem; }
+            #tab-pipeline .pl-phase .pl-phase-id { font-weight:700; color:#0A2240; font-family:ui-monospace,Menlo,monospace; }
+            #tab-pipeline .pl-phase .pl-phase-title { color:#374151; margin:4px 0; }
+            #tab-pipeline .pl-phase .pl-phase-status { font-size:.7rem; padding:2px 7px; border-radius:10px; }
+            #tab-pipeline .pl-phase.done { border-left:4px solid #16a34a; }
+            #tab-pipeline .pl-phase.done .pl-phase-status { background:#dcfce7; color:#166534; }
+            #tab-pipeline .pl-phase.active { border-left:4px solid #C9A84C; background:#FFFBEC; }
+            #tab-pipeline .pl-phase.active .pl-phase-status { background:#FEF3C7; color:#92400E; }
+            #tab-pipeline .pl-phase.parked { border-left:4px solid #cbd5e1; color:#64748b; }
+            #tab-pipeline .pl-phase.parked .pl-phase-status { background:#eef2f7; color:#64748b; }
+            #tab-pipeline .pl-loading { color:#9ca3af; font-style:italic; padding:20px; text-align:center; }
+            #tab-pipeline .pl-footer { margin-top:24px; color:#6b7280; font-size:.78rem; text-align:center; }
+            #tab-pipeline .pl-footer a { color:#0A2240; text-decoration:none; border-bottom:1px dotted #94a3b8; }
+        </style>
+
+        <h2>Pipeline <span class="pl-sub">— M-ID lifecycle, audit health, and phase progress</span></h2>
+        <p class="pl-intro">A progress board for the Common Course Reference identity work. Tracks (1) where each M-ID currently sits in the staging → MC-submission → CIDx-approval pipeline, (2) the auditor's cleanup-receipt invariants for the most recent re-mint, and (3) status across the multi-phase roadmap.</p>
+
+        <!-- Section 1: Phase roadmap -->
+        <div class="pl-section">
+            <h3>Phase roadmap</h3>
+            <p class="pl-section-sub">From CLAUDE.md §11 — the M-ID → CIDx pipeline. Each phase advances trust in a row's data without claiming transferability (M-IDs are MC, not TMC).</p>
+            <div id="pl-roadmap" class="pl-roadmap pl-loading">loading…</div>
+        </div>
+
+        <!-- Section 2: M-ID lifecycle pipeline -->
+        <div class="pl-section">
+            <h3>M-ID lifecycle</h3>
+            <p class="pl-section-sub">How a synthetic course identity matures from a Phase-B seed into an ASCCC-approved C-ID. Counts pulled from the latest auditor run.</p>
+            <div id="pl-lifecycle" class="pl-card pl-mermaid pl-loading">loading…</div>
+            <div id="pl-lifecycle-status" class="pl-status"></div>
+        </div>
+
+        <!-- Section 3: Auditor cleanup-receipt -->
+        <div class="pl-section">
+            <h3>Auditor cleanup-receipt invariants</h3>
+            <p class="pl-section-sub">Live tag counts from <code>kb/row_audit/latest.json</code>. The <strong>cleanup-receipt invariants</strong> (top row) are the audit rules that should fall to zero at the end of a re-mint cycle.</p>
+            <div id="pl-receipt" class="pl-receipt pl-loading">loading…</div>
+            <div id="pl-receipt-status" class="pl-status"></div>
+        </div>
+
+        <!-- Section 4: Most recent re-mint workflow (Phase 1e) -->
+        <div class="pl-section">
+            <h3>Most recent re-mint — Phase 1e (SUBJ4 canonicalization)</h3>
+            <p class="pl-section-sub">The atomic apply that folded 65,311 M-ID identifiers onto curator-confirmed canonical SUBJ4s. <strong>Shipped 2026-05-23</strong> in commit <code>5406055</code>. <code>subject_collision_signal</code> auditor flags fell <strong>7,203 → 0</strong>.</p>
+            <div id="pl-workflow" class="pl-card pl-mermaid pl-loading">loading…</div>
+        </div>
+
+        <div class="pl-footer">
+            Diagrams rendered via <a href="https://mermaid.js.org/" target="_blank" rel="noopener">Mermaid</a>. Tab loads the library on first activation. Source: <a href="https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/pipeline.js" target="_blank" rel="noopener">pipeline.js</a>.
+        </div>
+        </div>
+        <!-- /main-container for Pipeline tab -->
+    </div>
+    <!-- /tab-pipeline -->
+
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
@@ -12694,7 +12774,7 @@ Cont</td>
     <script>
     // Tab navigation with URL-hash routing.
     (function () {
-        var VALID_TABS = ['dashboard', 'workplan-goals', 'budget', 'vision-2030', 'unified-courses', 'canonical-subj4'];
+        var VALID_TABS = ['dashboard', 'workplan-goals', 'budget', 'vision-2030', 'unified-courses', 'canonical-subj4', 'pipeline'];
         function activate(tabName) {
             if (!tabName || VALID_TABS.indexOf(tabName) === -1) tabName = 'dashboard';
             document.querySelectorAll('.cpl-tab').forEach(function (b) {
@@ -12727,6 +12807,7 @@ Cont</td>
     })();
     </script>
     <script src="canonical_subj4.js"></script>
+    <script src="pipeline.js"></script>
     <script src="docx.min.js"></script>
     <script src="college_lookup.js"></script>
     <script src="statewide_data.js"></script>
