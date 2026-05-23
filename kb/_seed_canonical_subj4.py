@@ -33,6 +33,7 @@ from datetime import date
 HERE = os.path.dirname(os.path.abspath(__file__))
 COURSES = os.path.join(HERE, "coci_minted_courses.json")
 SINGLETONS = os.path.join(HERE, "coci_minted_singletons.json")
+MEMBERSHIPS = os.path.join(HERE, "coci_minted_memberships.json")
 TOP_REF = os.path.join(HERE, "reference", "top_categories.json")
 OUT = os.path.join(HERE, "discipline_canonical_subj4.json")
 SUBJ4_RE = re.compile(r"^[A-Z]{4}$")
@@ -72,6 +73,19 @@ def main():
         singletons = json.load(f)["courses"]
     top_codes_ref, top_cats_ref = _load_top_ref()
 
+    # Memberships: each minted M-ID -> list of {college, subject, course_number, ...}
+    # The raw `subject` is the LOCAL college subject code — what a college
+    # actually uses in their catalog. We aggregate these per discipline (via
+    # the M-ID's discipline) to populate local_subject_variants, which feeds
+    # the "Most-used locally" column + Variants modal in the curator tab.
+    # Without this aggregate, the Variants column would just show the
+    # canonical SUBJ4 (post-Phase-1e apply, every M-ID's subject_4letter is
+    # the canonical) — uninformative for "what are colleges actually using?"
+    memberships = {}
+    if os.path.exists(MEMBERSHIPS):
+        with open(MEMBERSHIPS, "r", encoding="utf-8") as f:
+            memberships = json.load(f).get("memberships", {}) or {}
+
     # Per-discipline SUBJ4 distribution across all M-ID rows (minted + singletons).
     # Both files share the M-ID id family and need one canonical SUBJ4 per
     # discipline; walking only minted misses singleton-only disciplines.
@@ -81,6 +95,23 @@ def main():
     per_disc_topcode = defaultdict(Counter)       # discipline -> Counter of 6-digit TOP codes
     per_disc_top4digit = defaultdict(Counter)     # discipline -> Counter of 4-digit TOP prefixes
     per_disc_cte_counts = defaultdict(lambda: {"cte": 0, "non_cte": 0, "unknown": 0})
+    # NEW: raw local college subject codes per discipline. For corroborated
+    # M-IDs, this comes from each member's `subject` field in memberships.
+    # For singletons, the singleton itself IS the only "member" so we use its
+    # own `subject` field. Result: each discipline's local_subject_variants
+    # is a Counter of raw college subject codes (e.g. {"BIOL": 234, "BIO": 35,
+    # "BI": 12, ...}) — i.e. what colleges actually call this discipline's
+    # courses today.
+    per_disc_local = defaultdict(Counter)
+
+    def _norm_subject(s):
+        """Normalize a raw college subject for grouping — strip + upper.
+        Preserves variation (BI vs BIO vs BIOL); we WANT to see these as
+        distinct because they signal real local college usage differences."""
+        if not s:
+            return None
+        s = s.strip().upper()
+        return s or None
 
     def _ingest(rec, src):
         if src == "minted" and rec.get("id_system") != "M-ID":
@@ -103,10 +134,27 @@ def main():
         else:
             per_disc_cte_counts[d]["unknown"] += 1
 
-    for rec in courses.values():
+    for course_id, rec in courses.items():
         _ingest(rec, "minted")
+        # Aggregate each minted M-ID's member raw subject codes by the M-ID's
+        # discipline. memberships[course_id] is the list of (college, subject,
+        # course_number, ...) per member college.
+        if rec.get("id_system") == "M-ID":
+            d = rec.get("discipline")
+            if d:
+                for m in memberships.get(course_id, []) or []:
+                    s = _norm_subject(m.get("subject"))
+                    if s:
+                        per_disc_local[d][s] += 1
     for rec in singletons.values():
         _ingest(rec, "singleton")
+        # A singleton is single-college by construction; its `subject` IS the
+        # local college subject code.
+        d = rec.get("discipline")
+        if d:
+            s = _norm_subject(rec.get("subject"))
+            if s:
+                per_disc_local[d][s] += 1
 
     # Preserve curator-reviewed entries from an existing seed file so re-running
     # this generator after the canonical map has been edited doesn't wipe human
@@ -126,23 +174,36 @@ def main():
     today = date.today().isoformat()
     disciplines = {}
     for d, cnt in per_disc_subj4.items():
-        items = sorted(cnt.items(), key=lambda kv: (-kv[1], kv[0]))
-        data_modal = items[0][0]
-        total = sum(cnt.values())
+        # Build the LOCAL variant distribution + LOCAL data-modal first; that's
+        # what "Most-used locally" should reflect. Falls back to the MID-
+        # aggregated subj4 distribution if no memberships data is available.
+        local_cnt = per_disc_local.get(d) or cnt
+        local_items = sorted(local_cnt.items(), key=lambda kv: (-kv[1], kv[0]))
+        data_modal = local_items[0][0] if local_items else ""
+        modal_share = (local_items[0][1] / sum(local_cnt.values())) if local_items else 0.0
         modal_is_4 = bool(SUBJ4_RE.match(data_modal))
-        # When the data-modal is itself 4 letters AND comprises a strong
-        # majority, default canonical = data-modal and pre-mark reviewed (still
-        # editable by a curator). Otherwise the canonical is blank and the
-        # entry needs explicit curator action.
-        modal_share = items[0][1] / total
-        seed_default = modal_is_4 and modal_share >= 0.6 and len(cnt) >= 1
+
+        # MID-aggregated SUBJ4 distribution — kept as an audit-trail field
+        # (variants_observed) for re-mint replay sanity checks. Not displayed
+        # in the UI anymore (post-Phase-1e apply, it's degenerate).
+        items = sorted(cnt.items(), key=lambda kv: (-kv[1], kv[0]))
+        total = sum(cnt.values())
+
+        # When the LOCAL data-modal is 4-letter AND a strong majority, default
+        # canonical = data-modal and pre-mark reviewed (still editable). Else
+        # the canonical is blank and the entry needs explicit curator action.
+        seed_default = modal_is_4 and modal_share >= 0.6 and len(local_cnt) >= 1
         canonical = data_modal if seed_default else None
         source = "data_modal" if seed_default else None
         needs_review = not seed_default
-        # Variants_observed: frozen at seed time so re-runs of _apply (after
-        # curator edits) can sanity-check that the underlying data hasn't
-        # drifted in a way that invalidates the curator's choice.
+        # variants_observed: MID-aggregated (audit trail). Frozen at seed time.
         variants = {s: n for s, n in items}
+        # local_subject_variants: raw college subject codes per discipline.
+        # The Variants column + modal display THIS. Capped to top-40 entries
+        # to keep the seed file readable; full distribution lives in the
+        # _local_subject_variants_total counter for transparency.
+        local_variants = {s: n for s, n in local_items[:40]}
+        local_variants_more = max(0, len(local_items) - 40)
 
         # TOP / CTE aggregates. Modal 6-digit TOP code wins; pull its 4-digit
         # prefix + 2-digit category for grouping in the UI. CTE share is the
@@ -168,8 +229,18 @@ def main():
             "data_modal": data_modal,
             "data_modal_is_4letter": modal_is_4,
             "data_modal_share": round(modal_share, 3),
+            # Audit-trail: MID-aggregated SUBJ4 distribution (post-apply
+            # this is degenerate — all MIDs in a discipline share the canonical).
+            # Kept for re-mint replay sanity-checks.
             "variants_observed": variants,
             "total_mids": total,
+            # Live: raw local college subject codes per discipline. This is
+            # what the curator tab's Variants column + modal display. Sourced
+            # from kb/coci_minted_memberships.json (corroborated MIDs) +
+            # kb/coci_minted_singletons.json (single-college MIDs).
+            "local_subject_variants": local_variants,
+            "local_subject_variants_truncated": local_variants_more,
+            "local_subject_total": sum(local_cnt.values()),
             # TOP / category aggregates (per the 2023 CCC Taxonomy of Programs Manual)
             "top_modal_6digit": top_modal_6d,
             "top_modal_4digit": top_modal_4d,
