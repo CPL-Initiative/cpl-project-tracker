@@ -27,9 +27,11 @@
 
   function el(tag, attrs, kids) {
     var n = document.createElement(tag);
+    // NB: deliberately no `html` shortcut here (innerHTML = attrs[k]) — keeps
+    // CodeQL's js/xss rule happy and the helper boring. All callers compose
+    // structure via createElement + textContent.
     if (attrs) Object.keys(attrs).forEach(function (k) {
       if (k === "class") n.className = attrs[k];
-      else if (k === "html") n.innerHTML = attrs[k];
       else if (k === "title") n.title = attrs[k];
       else n.setAttribute(k, attrs[k]);
     });
@@ -37,6 +39,10 @@
       n.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
     });
     return n;
+  }
+
+  function clearNode(n) {
+    while (n.firstChild) n.removeChild(n.firstChild);
   }
 
   // ─── Supabase auth — shares the cpl_sb session with unified_courses.js ────
@@ -309,7 +315,7 @@
   function renderToolbar() {
     var tb = document.getElementById("cr-toolbar");
     if (!tb) return;
-    tb.innerHTML = "";
+    clearNode(tb);
 
     var bandSel = el("select", { class: "cr-filter", id: "cr-band-filter" });
     [
@@ -420,7 +426,7 @@
   function renderAuth() {
     var auth = document.getElementById("cr-auth");
     if (!auth) return;
-    auth.innerHTML = "";
+    clearNode(auth);
     if (state.sess) {
       auth.appendChild(el("span", { class: "cr-auth-on" }, ["✓ " + state.sess.email]));
       auth.appendChild(document.createTextNode("  "));
@@ -452,10 +458,12 @@
     if (!sum) return;
     var revCount = 0;
     rows.forEach(function (r) { if (r.curator_reviewed_at) revCount += 1; });
-    sum.innerHTML = "<strong>" + filtered.length + "</strong> of "
-      + rows.length + " unified titles shown · "
-      + "<strong>" + revCount + "</strong> initiated · "
-      + "audit baseline: " + (state.audit ? state.audit._generated_at.slice(0, 10) : "—");
+    clearNode(sum);
+    sum.appendChild(el("strong", null, [String(filtered.length)]));
+    sum.appendChild(document.createTextNode(" of " + rows.length + " unified titles shown · "));
+    sum.appendChild(el("strong", null, [String(revCount)]));
+    sum.appendChild(document.createTextNode(" initiated · audit baseline: "
+      + (state.audit ? state.audit._generated_at.slice(0, 10) : "—")));
   }
 
   function render() {
@@ -465,7 +473,7 @@
 
     var wrap = document.getElementById("cr-table-wrap");
     if (!wrap) return;
-    wrap.innerHTML = "";
+    clearNode(wrap);
 
     var table = el("table", { class: "cr-table" });
     var COLS = [
@@ -581,9 +589,10 @@
 
     var revTd = el("td", { class: "cr-rev-cell" });
     if (r.curator_reviewed_at) {
-      revTd.innerHTML = "<span class='cr-rev-on'>✓ "
-        + (r.curator_reviewed_by || "").split("@")[0] + " · "
-        + r.curator_reviewed_at.slice(0, 10) + "</span>";
+      var who = (r.curator_reviewed_by || "").split("@")[0];
+      var when = r.curator_reviewed_at.slice(0, 10);
+      revTd.appendChild(el("span", { class: "cr-rev-on" },
+        ["✓ " + who + " · " + when]));
     }
     tr.appendChild(revTd);
 
