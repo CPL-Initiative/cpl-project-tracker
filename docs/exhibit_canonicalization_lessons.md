@@ -292,3 +292,71 @@ narrowest possible action set: a single button on each existing EACR
 card that writes a stale/dup flag to Supabase. No credit-rec overrides,
 no approval status, no notes. Lives ON the EACR cards (no new tab).
 Auth piggybacks on the unified_courses session.
+
+---
+
+## 2026-05-24 (later, Bruh Hex) — PR-D shipped: EACR-card stale/dup flag
+
+Small in-place addition to the existing EACR table
+(`statewide_interactive.js`, now 663 lines, +132). Per-row `<select>`
+with three options: — (no flag) / 🚩 stale / 🚩 dup. Anonymous viewers
+see flagged rows with a read-only 🚩 badge so the curator's annotation
+is publicly visible; the select itself only appears for signed-in
+reviewers.
+
+**Curation key namespace:** `_EACR_FLAG::<exhibit_card_key>` where the
+card key is `e.exhibit_id || e.title` (the same key the existing row
+selection / pagination state uses). Field = `flag`, value = `"stale" |
+"duplicate" | ""`. Standard kb_curation upsert via
+`Prefer: resolution=merge-duplicates`.
+
+**Auth:** piggybacks on the unified_courses.js session
+(sessionStorage `cpl_sb`). No new sign-in UI on the EACR table — by
+design, since the same allowed-reviewers list gates Common Course
+Reference + Credential Reference; once the curator is signed in there,
+the flag column lights up automatically.
+
+**UX details preserved from the user's narrow-scope direction:**
+
+- Stale/dup ONLY. No credit-rec overrides, no approval status enum, no
+  notes. (User explicitly said: "I don't want to override CRs; do want
+  to flag stale or dup cards.")
+- New column added as the 10th column at the table's right edge
+  (width: 78px) so it doesn't disturb the existing layout.
+- Tooltip on each select carries the audit trail ("Flagged stale by
+  user · on YYYY-MM-DD").
+- On change, the cell is disabled while the Supabase POST is in flight
+  + the value reverts on failure. No full re-render — just the title
+  attribute updates in place.
+
+**Init flow:** the table builds + first-renders synchronously without
+waiting for Supabase, so anonymous viewers see results immediately. The
+flag overlay loads asynchronously and triggers a re-render when it
+lands. This keeps perceived load time identical to before.
+
+**Open thread (parked):** an `_apply_eacr_flag.py` sync script that bakes
+the kb_curation flags into a generated artifact (analog of
+`_apply_canonical_subj4.py`) — so curator flags can drive downstream
+filtering / hiding in the dashboard's exhibit-analysis cards. Deferred
+because the MVP shows the badge inline on the EACR table and that's the
+80% case. Build it when flag-driven downstream behaviour is needed.
+
+## Next concrete step (2026-05-24, post PR-D)
+
+Open threads in priority order:
+
+1. **PR-C (EACR Phase 4 re-pivot)** — still architecturally significant;
+   scope-first session before any build. Affects headline EACR adoption
+   numbers.
+2. **Re-classify the 194 unclassified-in-MAP titles** — requires
+   `ANTHROPIC_API_KEY` in the session env or local run of
+   `kb/classify_exhibits.py`.
+3. **PR-B2 — edit-override curation** on the Credential Reference tab
+   (unified_title rename, issuing_agency / training_agency override,
+   quality_flag toggle). Currently the tab is initiated-only; full
+   override is the natural follow-up.
+4. **`kb/_apply_credential_review.py`** — sync script for credential-
+   layer curation (bakes Supabase reviews into `unified_titles.json` /
+   `credentials.json`). Pairs with PR-B2.
+5. **`kb/_apply_eacr_flag.py`** — same shape, for the EACR-card flag
+   namespace. Pair with downstream consumption.

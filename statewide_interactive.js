@@ -17,6 +17,70 @@
 
   var PAGE_SIZE = 50;
 
+  // ── Supabase config (shared with the credential / common-course tabs) ──
+  // Edits to the EACR card-level flag write to kb_curation under the
+  // synthesized namespace `_EACR_FLAG::<exhibit_card_key>`. Auth piggybacks
+  // on the unified_courses.js session (sessionStorage `cpl_sb`); curators
+  // sign in via that tab once and the flag select lights up here.
+  var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
+  var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+  var FLAG_KEY_PREFIX = "_EACR_FLAG::";
+  var FLAG_FIELD = "flag";
+
+  function isValidJwt(t) {
+    return typeof t === "string"
+      && /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(t);
+  }
+  function getSession() {
+    try {
+      var s = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
+      if (s && isValidJwt(s.access_token)
+          && (s.refresh_token || s.exp > Date.now())) return s;
+    } catch (e) {}
+    return null;
+  }
+  function fetchFlagOverlay() {
+    var url = SUPABASE_URL + "/rest/v1/kb_curation"
+      + "?select=course_id,field,value,reviewer_email,reviewed_at"
+      + "&course_id=like." + encodeURIComponent(FLAG_KEY_PREFIX) + "%25";
+    return fetch(url, { headers: { "apikey": SUPABASE_ANON } })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (arr) {
+        var m = {};
+        arr.forEach(function (row) {
+          var eid = (row.course_id || "").slice(FLAG_KEY_PREFIX.length);
+          if (!eid) return;
+          if (row.field === FLAG_FIELD) {
+            m[eid] = {
+              flag: row.value || "",
+              reviewed_by: row.reviewer_email || "",
+              reviewed_at: row.reviewed_at || "",
+            };
+          }
+        });
+        return m;
+      })
+      .catch(function () { return {}; });
+  }
+  function saveFlag(eid, flagValue, sess) {
+    var body = {
+      course_id: FLAG_KEY_PREFIX + eid,
+      field: FLAG_FIELD,
+      value: flagValue,
+      reviewer_email: sess.email
+    };
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON,
+        "Authorization": "Bearer " + sess.access_token,
+        "Content-Type": "application/json",
+        "Prefer": "resolution=merge-duplicates,return=minimal"
+      },
+      body: JSON.stringify(body)
+    });
+  }
+
   // ── Derive filter option sets ──
   var cplTypes = unique(exhibits.map(function (e) { return e.cpl_type || "Unknown"; }));
   var disciplines = unique(exhibits.map(function (e) { return e.discipline || "Unknown"; }));
@@ -47,6 +111,8 @@
     filters: { collabType: [], cplType: [], sector: [], discipline: [], college: [], district: [], swRegion: [] },
     selected: {},
     expanded: {},
+    flags: {},   // eid → { flag: "stale" | "duplicate" | "", reviewed_by, reviewed_at }
+    sess: null,  // Supabase session (read once at init); curator sign-in is in another tab
     page: 0,
     filteredCache: null
   };
@@ -144,6 +210,7 @@
       '<th>Exhibit &amp; Credit Recommendations</th><th>Type</th><th>CPL Type</th><th>Discipline</th>' +
       '<th>Adopted</th><th>Potential</th>' +
       '<th>Colleges Adopted</th><th>Colleges — Potential Adopters</th>' +
+      '<th style="width:78px;" title="Curator flag — sign in via the Common Course Reference or Credential Reference tab to flag stale or duplicate cards.">Flag</th>' +
       '</tr></thead><tbody id="sw-tbody"></tbody></table>';
 
     // Pagination
@@ -251,6 +318,29 @@
         }).join("") + '</div>';
       }
 
+      // Curator flag cell — small select (or read-only badge if not signed in).
+      // No flag for anonymous viewers; flagged rows still show the badge so
+      // everyone sees the curator's annotation.
+      var currentFlag = (state.flags[eid] || {}).flag || "";
+      var flagBy     = (state.flags[eid] || {}).reviewed_by || "";
+      var flagAt     = (state.flags[eid] || {}).reviewed_at || "";
+      var flagTitle  = currentFlag
+        ? "Flagged " + currentFlag + (flagBy ? " by " + flagBy.split("@")[0] : "")
+          + (flagAt ? " on " + flagAt.slice(0, 10) : "")
+        : "Not flagged";
+      var flagCell;
+      if (state.sess) {
+        flagCell = '<select class="sw-flag-select" data-eid="' + escAttr(eid) + '" title="' + escAttr(flagTitle) + '">'
+          + '<option value=""'           + (currentFlag === ""          ? ' selected' : '') + '>—</option>'
+          + '<option value="stale"'      + (currentFlag === "stale"     ? ' selected' : '') + '>🚩 stale</option>'
+          + '<option value="duplicate"'  + (currentFlag === "duplicate" ? ' selected' : '') + '>🚩 dup</option>'
+          + '</select>';
+      } else if (currentFlag) {
+        flagCell = '<span class="sw-flag-readonly" title="' + escAttr(flagTitle) + '">🚩 ' + esc(currentFlag) + '</span>';
+      } else {
+        flagCell = '<span class="sw-flag-none" title="Sign in via the Common Course Reference tab to flag cards.">—</span>';
+      }
+
       rows.push('<tr class="' + (state.selected[eid] ? 'sw-row-selected' : '') + '" data-eid="' + escAttr(eid) + '">' +
         '<td><input type="checkbox" class="sw-chk sw-row-chk"' + checked + ' /></td>' +
         '<td style="max-width:350px;"><div class="exhibit-cell-name">' + esc(e.title) + '</div>' + recsHtml + '</td>' +
@@ -260,7 +350,8 @@
         '<td class="exhibit-cell-num">' + (e.adopters || 0) + '</td>' +
         '<td class="exhibit-cell-num" style="color:#C9A84C;font-weight:600;">' + (e.potential || 0) + '</td>' +
         '<td class="sw-college-list">' + adopterTags + '</td>' +
-        '<td class="sw-college-list">' + potentialTags + '</td></tr>');
+        '<td class="sw-college-list">' + potentialTags + '</td>' +
+        '<td class="sw-flag-cell">' + flagCell + '</td></tr>');
     });
 
     tbody.innerHTML = rows.join("");
@@ -321,6 +412,38 @@
         }, 300);
       });
     }
+
+    // Curator flag select → save to Supabase + update local state.
+    container.addEventListener("change", function (ev) {
+      var sel = ev.target.closest(".sw-flag-select");
+      if (!sel || !state.sess) return;
+      var eid = sel.getAttribute("data-eid");
+      var newFlag = sel.value;
+      var prev = state.flags[eid] || {};
+      sel.disabled = true;
+      saveFlag(eid, newFlag, state.sess)
+        .then(function (resp) {
+          sel.disabled = false;
+          if (!resp.ok) {
+            // Revert on failure.
+            sel.value = prev.flag || "";
+            return;
+          }
+          state.flags[eid] = {
+            flag: newFlag,
+            reviewed_by: state.sess.email,
+            reviewed_at: new Date().toISOString(),
+          };
+          // Update tooltip in place; full re-render isn't needed for one
+          // cell change.
+          var newTitle = newFlag
+            ? "Flagged " + newFlag + " by " + state.sess.email.split("@")[0]
+              + " on " + new Date().toISOString().slice(0, 10)
+            : "Not flagged";
+          sel.title = newTitle;
+        })
+        .catch(function () { sel.disabled = false; sel.value = prev.flag || ""; });
+    });
 
     container.addEventListener("click", function (ev) {
       // Show more potential colleges
@@ -525,7 +648,16 @@
   }
 
   // ── Init ──
+  // Build the card chrome first so the table is visible immediately; the
+  // Supabase flag overlay loads in the background and triggers a re-render
+  // when it lands. Anonymous viewers see the table fully without waiting.
+  state.sess = getSession();
   buildCard();
   renderRows();
   bindEvents();
+  fetchFlagOverlay().then(function (m) {
+    state.flags = m || {};
+    // Re-render so existing flags surface on first paint after the fetch.
+    renderRows();
+  });
 })();

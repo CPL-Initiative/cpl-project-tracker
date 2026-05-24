@@ -1619,6 +1619,16 @@
 .sw-rec-line { font-size:0.64rem; color:rgba(255,255,255,0.55); line-height:1.5; padding:1px 0; }
 .sw-rec-course { font-size:0.58rem; color:rgba(201,168,76,0.5); }
 
+/* Curator flag column — small select for signed-in reviewers; readonly
+   badge for anonymous viewers when a flag is set. Keep the cell narrow
+   so the flag column doesn't elbow the data columns. */
+.sw-flag-cell { white-space:nowrap; }
+.sw-flag-select { padding:1px 3px; border:1px solid rgba(255,255,255,0.18); border-radius:4px; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.85); font-size:0.65rem; cursor:pointer; max-width:74px; }
+.sw-flag-select:hover { border-color:#C9A84C; }
+.sw-flag-select:disabled { opacity:0.5; cursor:wait; }
+.sw-flag-readonly { font-size:0.62rem; color:#fca5a5; background:rgba(220,38,38,0.18); border:1px solid rgba(220,38,38,0.35); padding:1px 6px; border-radius:10px; }
+.sw-flag-none { color:rgba(255,255,255,0.22); }
+
 
 /* ═══ Collapsible Algorithm Descriptions ═══ */
 .algo-details {
