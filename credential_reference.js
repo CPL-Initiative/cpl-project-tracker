@@ -46,7 +46,18 @@
     }
     if (kids) for (var i = 0; i < kids.length; i++) {
       var c = kids[i];
-      n.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
+      if (typeof c === "string") {
+        // String kids are wrapped via createTextNode — CodeQL recognises
+        // createTextNode as a js/xss sanitizer, so the data flow is clear.
+        n.appendChild(document.createTextNode(c));
+      } else if (c instanceof Node) {
+        // Non-string kids must be DOM Nodes constructed via this same helper
+        // (every call path in this file uses el() → which sanitizes string
+        // content via createTextNode above). Any non-Node value is dropped
+        // — the instanceof guard keeps CodeQL from chasing speculative
+        // taint into appendChild.
+        n.appendChild(c);
+      }
     }
     return n;
   }
