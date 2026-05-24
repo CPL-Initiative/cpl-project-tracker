@@ -1913,6 +1913,7 @@
         <button class="cpl-tab" data-tab="vision-2030" role="tab" aria-selected="false">Vision 2030</button>
         <button class="cpl-tab" data-tab="unified-courses" role="tab" aria-selected="false">Common Course Reference</button>
         <button class="cpl-tab" data-tab="canonical-subj4" role="tab" aria-selected="false">Common Subject Code</button>
+        <button class="cpl-tab" data-tab="credential-reference" role="tab" aria-selected="false">Credential Reference</button>
         <button class="cpl-tab" data-tab="pipeline" role="tab" aria-selected="false">Pipeline</button>
     </nav>
 
@@ -8335,6 +8336,101 @@ Cont</td>
     </div>
     <!-- /tab-canonical-subj4 -->
 
+    <div class="cpl-tab-pane" id="tab-credential-reference" data-tab="credential-reference" role="tabpanel" aria-labelledby="tab-credential-reference">
+        <div class="main-container">
+        <style>
+            #tab-credential-reference h2 { margin-bottom:4px; }
+            #tab-credential-reference .cr-sub { font-weight:400; color:#6b7280; font-size:1rem; }
+            #tab-credential-reference .cr-intro { color:#4b5563; margin:0 0 14px; max-width:75ch; }
+            #tab-credential-reference .cr-stamp { display:inline-block; font-size:.7rem; color:#92400e; background:#FEF3C7; border:1px solid #F59E0B; padding:2px 8px; border-radius:10px; margin-left:8px; vertical-align:middle; font-weight:600; }
+            #tab-credential-reference .cr-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px; }
+            #tab-credential-reference .cr-filter { padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; font-size:.85rem; background:#fff; }
+            #tab-credential-reference input.cr-filter { min-width:200px; }
+            #tab-credential-reference .cr-search-wide { min-width:260px; }
+            #tab-credential-reference .cr-flag-toggle { font-size:.85rem; color:#374151; cursor:pointer; user-select:none; padding:6px 4px; }
+            #tab-credential-reference .cr-summary { color:#374151; font-size:.85rem; margin-bottom:8px; }
+            #tab-credential-reference .cr-table-wrap { overflow:auto; max-height:75vh; border:1px solid #e5e7eb; border-radius:8px; }
+            #tab-credential-reference table.cr-table { border-collapse:collapse; width:100%; font-size:.85rem; }
+            #tab-credential-reference .cr-table th { position:sticky; top:0; background:#0A2240; color:#C9A84C; text-align:center; vertical-align:middle; padding:8px 10px; white-space:nowrap; z-index:1; }
+            #tab-credential-reference .cr-table th.sortable { cursor:pointer; }
+            #tab-credential-reference .cr-table th.sortable:hover { background:#0d2c52; }
+            #tab-credential-reference .cr-table td { padding:8px 10px; border-top:1px solid #eef2f7; text-align:center; vertical-align:middle; }
+            #tab-credential-reference .cr-table tr:hover td { background:#f8fafc; }
+            #tab-credential-reference .cr-table th:first-child,
+            #tab-credential-reference .cr-table td:first-child { text-align:left; }
+            #tab-credential-reference .cr-table tr.cr-expanded:hover td { background:#fff; }
+            #tab-credential-reference .cr-sort-indicator { color:#94a3b8; font-size:.75rem; margin-left:4px; }
+            #tab-credential-reference .cr-sort-indicator.active { color:#C9A84C; }
+            #tab-credential-reference .cr-title-cell { max-width:32ch; }
+            #tab-credential-reference .cr-title-toggle { background:none; border:none; padding:0; color:#0A2240; font-weight:600; font-size:.9rem; cursor:pointer; text-align:left; }
+            #tab-credential-reference .cr-title-toggle:hover { text-decoration:underline; }
+            #tab-credential-reference .cr-issuer-cell { max-width:32ch; color:#374151; }
+            #tab-credential-reference .cr-null { color:#94a3b8; font-style:italic; }
+            #tab-credential-reference .cr-conf-cell { font-family:ui-monospace,Menlo,monospace; font-weight:500; }
+            #tab-credential-reference .cr-conf-high { color:#166534; }
+            #tab-credential-reference .cr-conf-ok   { color:#0A2240; }
+            #tab-credential-reference .cr-conf-mid  { color:#92400e; }
+            #tab-credential-reference .cr-conf-low  { color:#b45309; }
+            #tab-credential-reference .cr-conf-min  { color:#991b1b; font-weight:600; }
+            #tab-credential-reference .cr-audit-chip { display:inline-block; font-size:.72rem; padding:2px 7px; border-radius:10px; font-weight:600; cursor:help; }
+            #tab-credential-reference .cr-audit-chip.warn  { background:#fee2e2; color:#991b1b; }
+            #tab-credential-reference .cr-audit-chip.mix   { background:#fef3c7; color:#92400e; }
+            #tab-credential-reference .cr-audit-chip.muted { background:#eef2f7; color:#64748b; }
+            #tab-credential-reference .cr-flag-cell { font-size:.78rem; }
+            #tab-credential-reference .cr-flag-badge { display:inline-block; background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:10px; font-size:.7rem; }
+            #tab-credential-reference .cr-rev-on { color:#166534; font-weight:600; font-size:.75rem; white-space:nowrap; }
+            #tab-credential-reference .cr-action-btn { background:#0A2240; color:#fff; border:none; padding:5px 11px; border-radius:5px; font-size:.78rem; cursor:pointer; }
+            #tab-credential-reference .cr-action-btn:hover { background:#0d2c52; }
+            #tab-credential-reference .cr-action-btn:disabled { background:#cbd5e1; cursor:wait; }
+            #tab-credential-reference .cr-action-noop { color:#94a3b8; }
+            #tab-credential-reference .cr-auth { font-size:.85rem; color:#374151; margin-left:auto; }
+            #tab-credential-reference .cr-auth-link { color:#0A2240; font-weight:600; text-decoration:underline; cursor:pointer; }
+            #tab-credential-reference .cr-auth-on   { color:#166534; font-weight:600; }
+            #tab-credential-reference .cr-auth-tag  { display:block; font-size:.7rem; color:#9ca3af; margin-top:2px; }
+            #tab-credential-reference .cr-empty { color:#6b7280; font-style:italic; padding:16px; text-align:center !important; }
+            /* Expanded row body */
+            #tab-credential-reference .cr-expanded td { background:#fafbfc; padding:0; }
+            #tab-credential-reference .cr-expanded-body { padding:12px 18px 16px; }
+            #tab-credential-reference .cr-expanded-body h5 { margin:8px 0 4px; color:#0A2240; font-size:.85rem; }
+            #tab-credential-reference .cr-variants-list { list-style:none; margin:0; padding:0; }
+            #tab-credential-reference .cr-variants-list li { padding:3px 0; font-size:.85rem; }
+            #tab-credential-reference .cr-variant-conf { display:inline-block; min-width:3.5ch; font-family:ui-monospace,Menlo,monospace; font-size:.75rem; margin-right:4px; }
+            #tab-credential-reference .cr-variant-code { background:#f3f4f6; padding:1px 5px; border-radius:3px; font-size:.82rem; color:#374151; }
+            #tab-credential-reference .cr-variant-notes { color:#6b7280; font-size:.78rem; margin:2px 0 0 4ch; }
+            #tab-credential-reference .cr-cred-record { padding:4px 0; font-size:.85rem; color:#374151; }
+            #tab-credential-reference .cr-cred-notes { color:#6b7280; font-size:.78rem; font-style:italic; margin-top:2px; }
+            #tab-credential-reference .cr-audit-list { margin:4px 0 0; padding-left:22px; font-size:.82rem; color:#374151; }
+            /* Toast */
+            #tab-credential-reference ~ .cr-toast,
+            .cr-toast { position:fixed; right:18px; bottom:18px; background:#0A2240; color:#fff; padding:10px 14px; border-radius:8px; font-size:.85rem; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:1000; opacity:0; transition:opacity 0.2s; pointer-events:none; }
+            .cr-toast.show { opacity:1; }
+            .cr-toast.err { background:#991b1b; }
+        </style>
+
+        <h2>Credential Reference
+            <span class="cr-stamp">Development Draft</span>
+        </h2>
+        <p class="cr-sub">Curator surface for the credential-identity layer (kb/unified_titles.json + kb/credentials.json).</p>
+        <p class="cr-intro">
+            Each row is a unified credential identity collapsed from many freehand MAP exhibit titles
+            (e.g. <em>EMT Certification</em> unifies 31 raw title variants). The AI-classified
+            <strong>unified_title</strong>, <strong>issuing_agency</strong>, and confidence scores come
+            from the <a href="https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/.claude/skills/exhibit-canonicalization/SKILL.md">exhibit-canonicalization skill</a>.
+            <strong>Mark initiated</strong> records that you've reviewed the classification — it doesn't change the
+            underlying data; the daily generator picks the curated state up via the Supabase overlay.
+            Audit chips (⚠) show how many audit rules fire on a row's raw variants — hover to see the
+            specific tags. Edits gated on the allowed-reviewers list; sign-in is shared with the Common
+            Course Reference tab.
+        </p>
+
+        <div id="cr-toolbar" class="cr-toolbar"></div>
+        <div id="cr-summary" class="cr-summary"></div>
+        <div id="cr-table-wrap" class="cr-table-wrap"></div>
+        </div>
+        <!-- /main-container for Credential Reference tab -->
+    </div>
+    <!-- /tab-credential-reference -->
+
     <div class="cpl-tab-pane" id="tab-pipeline" data-tab="pipeline" role="tabpanel" aria-labelledby="tab-pipeline">
         <div class="main-container">
         <style>
@@ -12923,6 +13019,7 @@ Cont</td>
     })();
     </script>
     <script src="canonical_subj4.js"></script>
+    <script src="credential_reference.js"></script>
     <script src="pipeline.js"></script>
     <script src="docx.min.js"></script>
     <script src="college_lookup.js"></script>

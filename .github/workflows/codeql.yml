@@ -6,8 +6,10 @@ name: "CodeQL"
 # repos. Findings show up in the repo's Security tab.
 #
 # This repo has a small surface — Python pipeline scripts + browser JS for
-# the dashboard tabs — so the default query suite is plenty. If a category
-# gets noisy we can switch to a custom config.yml.
+# the dashboard tabs — so the default query suite is plenty. Path-level
+# exclusions live in `.github/codeql/codeql-config.yml` (referenced via
+# the `config-file:` input below). See that file for the audit trail on
+# any excluded files / queries.
 
 on:
   push:
@@ -46,6 +48,7 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
+          config-file: ./.github/codeql/codeql-config.yml
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v4
