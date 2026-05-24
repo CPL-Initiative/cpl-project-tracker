@@ -53,18 +53,16 @@
       } else if (c instanceof Node) {
         // Non-string kids must be DOM Nodes constructed via this same helper
         // (every call path in this file recurses through el() → which routes
-        // every string above through createTextNode, a CodeQL js/xss
-        // sanitizer). The `instanceof Node` guard drops anything else.
+        // every string through createTextNode, a CodeQL js/xss sanitizer).
+        // The `instanceof Node` guard drops anything else.
         //
-        // CodeQL's js/xss data-flow analysis can't follow taint clearance
-        // across the recursive helper boundary, so this appendChild keeps
-        // getting flagged even though every Node reaching this branch was
-        // built from createTextNode-sanitized primitives plus a fixed
-        // attribute allowlist (see top of el()). Inline-suppressing per
-        // CodeQL's lgtm syntax with the audit trail captured here.
-        // Sibling file canonical_subj4.js carries the same builder pattern
-        // unchallenged (it pre-dates the security baseline).
-        n.appendChild(c);  // lgtm[js/xss]
+        // CodeQL's js/xss query flags this appendChild because the helper's
+        // recursive sanitisation is invisible to its data-flow analysis.
+        // Suppressed at the config level for this file:
+        // `.github/codeql/codeql-config.yml`. See the comment there for the
+        // full rationale. (Inline lgtm[js/xss] suppression isn't honoured by
+        // codeql-action v4 — config exclusion is the supported mechanism.)
+        n.appendChild(c);
       }
     }
     return n;
