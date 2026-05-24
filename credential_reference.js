@@ -25,19 +25,29 @@
   var KEY_PREFIX = "_CREDENTIAL_REVIEW::";
   var FIELD_MARKER = "reviewed_marker";
 
+  // Allowlist-driven element builder. CodeQL's js/xss query flags dynamic
+  // setAttribute(k, v) where the attribute name can be anything attacker-
+  // controlled (e.g. "onclick"), so the helper uses property assignment for
+  // every attribute we actually pass. The 10 keys below cover every call
+  // site in this file; anything else is a programmer error and is ignored.
   function el(tag, attrs, kids) {
     var n = document.createElement(tag);
-    // NB: deliberately no `html` shortcut here (innerHTML = attrs[k]) — keeps
-    // CodeQL's js/xss rule happy and the helper boring. All callers compose
-    // structure via createElement + textContent.
-    if (attrs) Object.keys(attrs).forEach(function (k) {
-      if (k === "class") n.className = attrs[k];
-      else if (k === "title") n.title = attrs[k];
-      else n.setAttribute(k, attrs[k]);
-    });
-    (kids || []).forEach(function (c) {
+    if (attrs) {
+      if (attrs["class"] != null) n.className = String(attrs["class"]);
+      if (attrs.id != null) n.id = String(attrs.id);
+      if (attrs.title != null) n.title = String(attrs.title);
+      if (attrs.type != null) n.type = String(attrs.type);
+      if (attrs.value != null) n.value = String(attrs.value);
+      if (attrs.placeholder != null) n.placeholder = String(attrs.placeholder);
+      if (attrs.autocomplete != null) n.autocomplete = String(attrs.autocomplete);
+      if (attrs.href != null) n.href = String(attrs.href);
+      if (attrs.list != null) n.setAttribute("list", String(attrs.list));
+      if (attrs.colspan != null) n.colSpan = parseInt(attrs.colspan, 10) || 1;
+    }
+    if (kids) for (var i = 0; i < kids.length; i++) {
+      var c = kids[i];
       n.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
-    });
+    }
     return n;
   }
 
