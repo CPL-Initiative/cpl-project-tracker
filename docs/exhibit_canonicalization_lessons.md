@@ -205,3 +205,90 @@ surface, pipeline only partially consuming. Patterns that worked there:
 Land PR-A (this checkpoint), then start PR-B — the **Credential
 Reference** tab, read-only MVP first. The auditor surfaces the queue;
 the tab gives a curator a place to work it.
+
+---
+
+## 2026-05-24 (later, Bruh Hex) — PR-B shipped: Credential Reference tab
+
+The curator surface for the credential-identity layer landed
+(`credential_reference.js`, ~750 lines). Modeled tightly on
+`canonical_subj4.js` — same Supabase auth pattern, same synthesized-key
+namespace pattern, same toolbar/body separation. New URL hash
+`#credential-reference`.
+
+**What shipped:**
+
+- New top-level tab "Credential Reference" between "Common Subject Code"
+  and "Pipeline" in the nav. CSS scoped to `#tab-credential-reference`
+  with a `cr-*` class prefix (parallel to CSC's `cs-*`).
+- Row grain: one per `unified_title` (1,969 rows). Shows the AI-classified
+  identity + raw-variant count + primary issuer + modal title confidence
+  + issuer confidence + audit-tag chip + quality_flag + curator-reviewed
+  state.
+- Click a row to expand → raw_title list (with per-variant confidence +
+  classification notes), credential record(s) (issuer + trainer with
+  confidences), audit-rule rollup.
+- Filters: confidence band (5 options), issuing-agency typeahead via
+  `<datalist>` over 126 issuers (with a `(none)` option for the 1,111
+  null-issuer local exhibits), audit-tag triage dropdown (auto-populated
+  from `state.audit._rules_active` if the audit overlay loaded, else
+  scans the data), quality-flag-only checkbox, free-text search across
+  unified_title / raw_title / issuer.
+- Curation action: **Mark initiated** — auth-gated button per row,
+  writes to Supabase `kb_curation` with `course_id` =
+  `_CREDENTIAL_REVIEW::<unified_title>`, field = `reviewed_marker`,
+  value = `1`. The row's `reviewed_at` + `reviewer_email` carry the
+  audit trail. Tab shows the live overlay state with a green "✓ user · date"
+  stamp.
+- Sortable columns: unified_title, raw_count, primary_issuer,
+  conf_modal, conf_issuer, audit_tag_total, flag_label, reviewed state.
+- Audit-tag chips color-graded by underlying confidence band
+  (warn/mix/muted) — visual mirror of the CSC tab's hinky chips.
+
+**Decisions made during the build:**
+
+- **Runtime fetch, not generated payload.** Fetches `kb/unified_titles.json`
+  (1.4 MB), `kb/credentials.json` (817 KB), and `kb/exhibit_audit/latest.json`
+  (1.2 MB) on tab init. Heavy but acceptable for MVP — matches the CSC tab's
+  fetch pattern. If perf bites, generate a baked-down `credential_reference_data.js`
+  via `excel_to_dashboard.py`.
+- **No JSON sync script.** MVP edits live in Supabase + the live overlay
+  only; `kb/_apply_credential_review.py` is deferred. Means the audit's
+  "0 titles reviewed" count never updates from Supabase until that script
+  ships — auditor will eventually get a `--include-supabase-overlay` flag
+  or a sync script will materialize curator edits into `unified_titles.json` /
+  `credentials.json`. Either is a follow-up PR; not blocking.
+- **Curation key namespace.** Used `_CREDENTIAL_REVIEW::<unified_title>` +
+  field `reviewed_marker`. The existing `_apply_curation.py` whitelist
+  (discipline / merge_into / unified_title / description) ignores this
+  namespace, so no risk of cross-contamination with the course-identity
+  layer's curation. Mirrors the CSC tab's `_CANON_SUBJ4::` pattern.
+- **"Mark initiated" semantics.** The button records curator
+  acknowledgment without changing the underlying classification. Full
+  override curation (edit unified_title / issuer / trainer / flag toggle)
+  is PR-B2 follow-up — keeps MVP scope tight.
+
+**Surface area inspection:**
+
+- `credential_reference.js` 753 lines, ~29 KB
+- `CPL_Dashboard.html` + `index.html` gain ~100 lines each (tab nav button,
+  pane chrome, CSS block, intro copy, script tag). Mirrored via `cp`
+  per Rule 4.
+- No daily-cron yaml changes. No `excel_to_dashboard.py` changes.
+
+**Open thread:** the EACR table is still the credential layer's primary
+end consumer (PR-C re-pivot, deferred). The Credential Reference tab
+shipped today curates the dataset upstream of that re-pivot; once PR-C
+lands, every "Mark initiated" sign-off on the credential layer raises
+quality of an EACR card downstream. PR-D (EACR-card stale/dup flag —
+NEW, scoped this session: tiny in-place button on existing EACR cards,
+no new tab, no CR overrides per user preference) is the next concrete
+step.
+
+## Next concrete step (2026-05-24, post PR-B)
+
+Start **PR-D** — the EACR-card stale/dup flag. User-scoped to the
+narrowest possible action set: a single button on each existing EACR
+card that writes a stale/dup flag to Supabase. No credit-rec overrides,
+no approval status, no notes. Lives ON the EACR cards (no new tab).
+Auth piggybacks on the unified_courses session.
