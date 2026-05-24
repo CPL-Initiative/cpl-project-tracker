@@ -150,6 +150,19 @@ GitHub Actions cron re-runs the auditor and commits the refreshed
 **Full decisions / calibration / lessons-learned**:
 [`docs/unified_courses_audit_lessons.md`](../docs/unified_courses_audit_lessons.md).
 
+**Credential-layer auditor (2026-05-24, `kb/_audit_exhibits.py`)** — sister
+read-only auditor over `kb/unified_titles.json` + `kb/credentials.json` (the
+credential-identity layer). Walks every raw_title + credential record,
+fires confidence-band tags + drift signals (`unclassified_in_map`,
+`stale_kb_entry`) + an `agency_name_collision_signal` rule (issuer names
+whose token sets are proper subsets of another). Outputs to
+`kb/exhibit_audit/{latest.json, <date>.md, <date>.full.json}` (full
+breakdown gitignored, same pattern). Baseline run 2026-05-24: 3,217 raw →
+1,969 unified (61.2% compression), 0 titles reviewed, 194 unclassified-in-MAP
+backlog, 211 agency-collision candidates, 200 `suspect_course_as_exhibit`.
+Full decisions / lessons:
+[`docs/exhibit_canonicalization_lessons.md`](../docs/exhibit_canonicalization_lessons.md).
+
 **SUBJ4-canonicalization re-mint (Phase 1e, COMPLETE 2026-05-23)** — first
 re-mint under the revised Rule 7 staging-phase framing. Folded same-discipline
 SUBJ4 variants (the 2026-05-22 re-mint synthesized SUBJ4 from each M-ID's
