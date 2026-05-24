@@ -1,0 +1,207 @@
+---
+title: Exhibit Canonicalization — Decisions & Lessons (credential-identity layer)
+date: 2026-05-24
+session: 6 (Bruh Hex)
+status: ACTIVE — Phase 4/5/6 of the vision doc not yet shipped; PR-A (audit) landing this session
+tags: [exhibit-canonicalization, credential-identity, audit, kb, eacr]
+artifacts:
+  - kb/unified_titles.json
+  - kb/credentials.json
+  - kb/_audit_exhibits.py
+  - kb/classify_exhibits.py
+  - kb/_flag_hinky_exhibits.py
+  - kb/_curation_credentials_01.py
+  - .claude/skills/exhibit-canonicalization/SKILL.md
+  - docs/exhibit_unification_vision.md
+  - kb/exhibit_audit/{latest.json, <date>.md}
+related:
+  - CLAUDE.md §9 (EACR Exhibit Identity — current state, future direction)
+  - kb/README.md (KB schemas + identifier precedence)
+  - docs/subj4_canonicalization_remint_lessons.md (the course-identity sibling layer)
+  - docs/unified_courses_audit_lessons.md (the kb/_row_audit.py pattern this auditor mirrors)
+prs: [TBD — PR-A in flight, PR-B queued, PR-C deferred]
+---
+
+# Exhibit Canonicalization — Credential-Identity Layer
+
+This is the lessons doc for the **credential-identity** workstream — the
+synthetic layer above MAP's freehand exhibit titles that collapses title
+drift into unified credential names. Sister workstream:
+[`docs/subj4_canonicalization_remint_lessons.md`](subj4_canonicalization_remint_lessons.md)
+covers the **course-identity** layer (M-IDs, C-IDs, CCN-IDs); this one
+covers credentials (Industry Cert / AP / POST / IBEW apprenticeship /
+JST / Cx generic buckets / …).
+
+Design doc (the why): [`docs/exhibit_unification_vision.md`](exhibit_unification_vision.md).
+Operational rules: [`.claude/skills/exhibit-canonicalization/SKILL.md`](../.claude/skills/exhibit-canonicalization/SKILL.md).
+
+## What this is
+
+Each raw MAP exhibit title (`View_ArticulatedMAPExhibits_APIDataset`) gets
+classified into three synthetic fields with per-field confidence:
+
+| Field | Storage | Curated key |
+|---|---|---|
+| `unified_title` | `kb/unified_titles.json` | `raw_title` |
+| `issuing_agency` + `training_agency` | `kb/credentials.json` | `unified_title` → list of issuer records |
+
+The classifier is `kb/classify_exhibits.py` (Phase 3 batch) — sends each
+distinct raw title to Claude with the skill's decision rules as the system
+prompt, caches the result, never re-classifies a row whose `reviewed_at`
+is set. Quality flagger `kb/_flag_hinky_exhibits.py` adds
+`quality_flag: "suspect_course_as_exhibit"` to the ~200 Modesto-JC-pattern
+data-entry artifacts where colleges typed "Industry Certification" for
+something that's actually a course with no associated credential.
+
+## 2026-05-24 baseline audit (the work shipped this checkpoint)
+
+`kb/_audit_exhibits.py` — re-runnable read-only auditor, modeled on
+`kb/_row_audit.py`. Walks the credential layer, surfaces what's stale,
+low-confidence, or suspect. Outputs to `kb/exhibit_audit/{latest.json,
+<date>.md, <date>.full.json}` (the full breakdown is gitignored, same
+pattern as row_audit).
+
+**Headline numbers (2026-05-24):**
+
+| Metric | Value |
+|---|---|
+| Raw titles classified | 3,217 |
+| Distinct unified titles | 1,969 (61.2% compression) |
+| Singleton unified titles (1 raw → 1 unified) | 1,575 (low compression value) |
+| Credential records | 1,991 across 126 distinct issuers |
+| Titles `reviewed_at` set | **0** ⚠ |
+| Credentials `reviewed_at` set | 16 |
+| Unclassified raw titles in current MAP | **194** (re-classification backlog) |
+| Stale KB entries (no longer in MAP) | 155 |
+| `suspect_course_as_exhibit` flags | 200 |
+| `agency_name_collision_signal` (canonicalization opportunity) | 211 |
+
+**Title confidence distribution:**
+
+| band | count | % |
+|---|---:|---:|
+| 0.95–1.00 | 836 | 26.0% |
+| 0.80–0.94 | 1246 | 38.7% |
+| 0.60–0.79 | 882 | 27.4% (review queue) |
+| 0.40–0.59 | 220 | 6.8% (high-priority triage) |
+| <0.40 | 33 | 1.0% (lowest — usually course-code-as-title artifacts) |
+
+**Active audit rules:**
+
+- `low_confidence_title` / `very_low_confidence_title` — confidence_title
+  in the 0.60–0.79 / 0.40–0.59 bands respectively.
+- `low_confidence_issuer` / `very_low_confidence_issuer` — same for
+  `confidence_issuer`.
+- `low_confidence_trainer` / `very_low_confidence_trainer` — same for
+  `confidence_trainer` (fired only when `training_agency` is non-null).
+- `agency_name_collision_signal` — issuer-name pairs where one's token set
+  is a proper subset/superset of another. Often catches the same agency
+  under two spellings (e.g. `Google` vs `Google LLC`) AND genuinely
+  different orgs with overlapping name patterns (e.g. American Council on
+  **Exercise** (ACE) vs American Council on **Education** (ACE) —
+  different orgs, same abbreviation; surfacing both is desired so a
+  curator can verify before any consolidation).
+- `suspect_course_as_exhibit` — pass-through from `_flag_hinky_exhibits.py`.
+- `blank_unified_title` — sanity-check; should always be 0.
+- `unclassified_in_map` — raw title exists in current MAP but not in KB.
+- `stale_kb_entry` — KB entry no longer in current MAP data (low priority).
+
+A `null_issuer_with_high_confidence` rule was scoped and then **dropped**
+because it fired on 626 records — 99% of which are legitimate
+local-college Cx / portfolio buckets where null issuer is semantically
+correct, not a data quirk. The classifier confidently marks them null;
+that's by design. Lesson: audit rules need to be calibrated against the
+actual data shape, not the abstract idea of "what could go wrong" — a
+600+ noise-tag count drowns the actionable signals.
+
+## Current state — what's done, what's not
+
+| Vision-doc phase | Status |
+|---|---|
+| 1. Skill + prompt | DONE (2026-05-18) |
+| 2. KB seed (50 hand-curated) | DONE (2026-05-19) |
+| 3. Full first-pass classification (3,217 titles) | DONE (2026-05-20) |
+| **3.1 Audit baseline** | **DONE (2026-05-24, this checkpoint — PR-A)** |
+| 4. Pipeline integration — EACR groups by unified title | **NOT DONE** (architecturally significant; deferred — see roadmap below) |
+| 5. UI — curator-facing surface (Credential Reference tab) | **NOT DONE** (PR-B, queued for this session) |
+| 6. Quality loop — review workflow / periodic re-classification | **PARTIAL** — the classifier supports `--reclassify` and never overwrites `reviewed_at` rows; no UI yet for marking rows reviewed |
+
+**Pipeline coupling today.** `excel_to_dashboard.py` does NOT read
+`unified_titles.json` directly when building the EACR table — that table
+still groups by `(raw title, CPL Type, Collaborative Type)` per
+`_build_statewide_adoption()` (~line 3944). The unified-title field is
+consumed indirectly via `kb/coci_articulations.json` (Phase 3 of the
+course-identity workstream inlines the unified_title there), which feeds
+the "Articulations by Unified Course" CPL Analytics card. So we get the
+benefit of unified-title grouping in *one* card today, but the headline
+EACR cards still suffer from title drift.
+
+**Daily-cron coupling: none.** `kb/unified_titles.json` and
+`kb/credentials.json` are committed static artifacts. The classifier is
+not on the daily schedule; new raw titles flowing in from MAP land in the
+audit's `unclassified_in_map` queue until the classifier is run.
+
+## Strategic roadmap (Session 6 → next)
+
+| Phase | What | When |
+|---|---|---|
+| **PR-A** | Audit baseline + this lessons doc + .gitignore + classifier re-run on the 194 unclassified-in-MAP titles | **In flight (this checkpoint)** |
+| **PR-B** | **Credential Reference tab** (working title) — top-level dashboard tab modeled on the CSC tab. Read-only MVP first: list every unified_title with raw-variant count, issuer, confidence band, quality_flag, "also entered as…" disclosure. Filters: confidence band, issuer, flagged-only, blank-only. Allowed-reviewers auth + synthesized `kb_curation` namespace (`_UNIFIED_TITLE::<raw_title>` / `_CREDENTIAL::<unified_title>::<issuing_agency>`) so no new Supabase tables are needed. Two-stage curation workflow (initiated → validated) added if the MVP lands clean. | Queued — Session 6 |
+| **PR-C — DEFERRED** | **EACR Phase 4 re-pivot** — change `_build_statewide_adoption()` grouping key from raw title to unified title (and probably to `(unified_title, issuing_agency, …)` per vision doc §6.1). **Architecturally significant** (changes headline EACR adoption numbers; 3,274 cards → ~2,000 est.). Treated like the course-identity "Approach B" (CLAUDE.md §9) — scope before any build. Probably its own session. | Deferred |
+| Phase 6 | Quality loop — make classifier runs cron-scheduled OR add a "reclassify-on-demand" button to the curator tab (reviewer-gated). Add `validated_at` two-stage curation per the CSC tab pattern. | Parked |
+
+## Patterns to reuse from sibling workstreams
+
+The credential layer arrives at this milestone roughly where the
+course-identity layer was pre Session 5 — data laid down, no curator
+surface, pipeline only partially consuming. Patterns that worked there:
+
+1. **Curator tab UX shell.** `canonical_subj4.js` + the new `cs-*` CSS
+   namespace + the toolbar/body separation (toolbar built once, body
+   re-renders) gives a clean template. The Credential Reference tab
+   should reuse the same pattern — filter dropdown, native-datalist
+   typeahead, sortable columns, Variants modal.
+2. **Synthesized key namespaces in `kb_curation`** (no DDL needed). The
+   CSC tab uses `_CANON_SUBJ4::<discipline>`; mirror it with
+   `_UNIFIED_TITLE::<raw_title>` for unified-title overrides and
+   `_CREDENTIAL::<unified_title>::<issuing_agency>` for issuer/trainer
+   edits. Both go into the existing `kb_curation` Supabase table.
+3. **Two-stage curation (initiated → validated).** Same column shape as
+   the CSC tab (`reviewed_at` / `reviewed_by` for stage 1,
+   `validated_at` / `validated_by` for stage 2, both gated on the
+   allowed-reviewers list). Now that the CSC tab's UI label is
+   **"Initiated"** (not "Reviewed") — PR #112, this checkpoint — the
+   Credential Reference tab should ship with the same vocabulary from
+   day one.
+4. **`⚙` provenance badges + `⚠ N` audit chips.** CCR rows carry both;
+   Credential Reference rows should too — `⚠ N` showing the audit tag
+   count, `⚙` showing the confidence-band signal.
+5. **Pending-sync indicator.** The CCR tab's "⟳ N edits awaiting daily
+   sync" indicator (diffed against `committed_curation`) is a curator
+   trust pattern. Apply it here once the curator-write path exists.
+
+## Risk hot-spots when picking up
+
+- **PR-C (EACR re-pivot) changes adoption numbers.** Treat like Approach
+  B in CLAUDE.md §9. Scope-first session before any build.
+- **`kb/coci_articulations.json` already inlines `unified_title`.** Any
+  unified-title rename (e.g. consolidating "EMT Certification" variants)
+  ripples there. If we ever do a credential-layer re-mint, the same
+  re-mint playbook (`docs/coursecontrolnumber_remint.md`) discipline
+  applies: dry-run first, alias map committed, fresh-read at write-time,
+  atomic land within one cron window.
+- **Modesto JC `suspect_course_as_exhibit` (200 rows)** needs college
+  outreach to resolve, not data work. Surface them in the curator tab so
+  a reviewer can mark "yes this is a course, not a credential" and the
+  EACR can downstream-filter or visually flag those cards.
+- **194 unclassified-in-MAP titles** — re-running the classifier requires
+  an `ANTHROPIC_API_KEY`. Estimated ~$1–3 with cache (system prompt
+  cached after first chunk). Either set the env var in the Claude Code
+  on the web env-vars panel and re-run via web session, or run
+  `python3 kb/classify_exhibits.py` locally.
+
+## Next concrete step
+
+Land PR-A (this checkpoint), then start PR-B — the **Credential
+Reference** tab, read-only MVP first. The auditor surfaces the queue;
+the tab gives a curator a place to work it.
