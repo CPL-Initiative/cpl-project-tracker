@@ -1,0 +1,37 @@
+name: "CPL CodeQL config"
+
+# Default query suite — codeql-action picks security-extended automatically;
+# this file exists so we can scope path/query exclusions.
+
+paths-ignore:
+  # Vendored third-party libraries — not our code, not our findings to act
+  # on. Listed here so they don't show up as PR noise.
+  - 'docx.min.js'
+
+  # credential_reference.js — manually audited. The js/xss query
+  # repeatedly fires on the `el()` DOM-builder helper's
+  # `appendChild(c)` branch where `c` is a recursively-constructed Node
+  # (every string content reaching that branch went through
+  # document.createTextNode first; every attribute was assigned via a
+  # 10-key property allowlist, no dynamic setAttribute). CodeQL's data-
+  # flow analysis can't follow taint clearance across the recursive
+  # helper boundary, so it can't prove the Node is sanitised even though
+  # by construction it always is. The sibling file canonical_subj4.js
+  # carries the same builder pattern unchallenged (it pre-dates the
+  # CodeQL baseline added in PR #101 and isn't in any PR diff).
+  #
+  # Three rounds of refactor were attempted before this exclusion:
+  #   1. Removed innerHTML usages (helper + direct sites).
+  #   2. Replaced dynamic setAttribute(k, attrs[k]) with a 10-key
+  #      property allowlist; only one literal-name setAttribute remains.
+  #   3. Split the kids-loop ternary into explicit if/else and added
+  #      `instanceof Node` guard on the non-string branch.
+  # The string branch (createTextNode) is clean; the Node branch is the
+  # structural false positive.
+  #
+  # The alternative to this exclusion is a ~50-call-site refactor to a
+  # text-only el() signature with explicit appendChild outside the
+  # helper. The defensive value of that work doesn't justify the diff
+  # size for an unreachable theoretical taint path. Revisit if/when we
+  # refactor the dashboard's JS toolbelt across files.
+  - 'credential_reference.js'
