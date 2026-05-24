@@ -201,7 +201,7 @@
   // Status state machine — two-stage:
   //   needs review  → curator hasn't set a canonical
   //   pre-seeded    → canonical was auto-seeded from data-modal (4-letter modal)
-  //   reviewed      → curator explicitly set canonical (Supabase reviewed_at)
+  //   initiated     → curator explicitly set canonical (Supabase reviewed_at)
   //   validated     → faculty validator confirmed (Supabase validated_at)
   //   invalid       → saved canonical isn't 4 letters
   function status(entry) {
@@ -212,7 +212,7 @@
     }
     if (entry.reviewed_at) {
       if (!c || !SUBJ4_RE.test(c)) return { label: "invalid", cls: "warn" };
-      return { label: "reviewed", cls: "ok" };
+      return { label: "initiated", cls: "ok" };
     }
     if (c && SUBJ4_RE.test(c)) return { label: "pre-seeded", cls: "muted" };
     return { label: "needs review", cls: "mix" };
@@ -383,9 +383,9 @@
 
   // Sortable column descriptors: key = sort key on the row object, getter =
   // value extractor. Status uses an ordering enum so "validated" sorts above
-  // "reviewed" above "pre-seeded" above "needs review" above "invalid" by
+  // "initiated" above "pre-seeded" above "needs review" above "invalid" by
   // default.
-  var STATUS_ORDER = { "validated": 0, "reviewed": 1, "pre-seeded": 2, "needs review": 3, "invalid": 4 };
+  var STATUS_ORDER = { "validated": 0, "initiated": 1, "pre-seeded": 2, "needs review": 3, "invalid": 4 };
   var CTE_ORDER = { "all": 0, "most": 1, "mixed": 2, "none": 3 };
   var SORT_GETTERS = {
     discipline: function (e) { return (e.discipline || "").toLowerCase(); },
@@ -441,7 +441,7 @@
       ["all", "All disciplines"],
       ["needs_review", "Needs curator review"],
       ["pre_seeded", "Pre-seeded (data-modal already 4-letter)"],
-      ["reviewed", "Reviewed (awaiting validation)"],
+      ["reviewed", "Initiated (awaiting validation)"],
       ["validated", "Validated (faculty-confirmed)"],
       ["invalid", "Invalid (saved value not 4 letters)"],
     ].forEach(function (opt) {
@@ -548,7 +548,7 @@
     var s = status(entry);
     if (state.filter === "needs_review" && s.label !== "needs review") return false;
     if (state.filter === "pre_seeded" && s.label !== "pre-seeded") return false;
-    if (state.filter === "reviewed" && s.label !== "reviewed") return false;
+    if (state.filter === "reviewed" && s.label !== "initiated") return false;
     if (state.filter === "validated" && s.label !== "validated") return false;
     if (state.filter === "invalid" && s.label !== "invalid") return false;
     if (state.topFilter !== "all" && entry.top_category_2digit !== state.topFilter) return false;
@@ -558,13 +558,13 @@
   function renderSummary(rows) {
     var sum = document.getElementById("cs-summary");
     if (!sum) return;
-    var counts = { reviewed: 0, "needs review": 0, "pre-seeded": 0, invalid: 0 };
+    var counts = { initiated: 0, "needs review": 0, "pre-seeded": 0, invalid: 0 };
     rows.forEach(function (e) {
       var s = status(e);
       counts[s.label] = (counts[s.label] || 0) + 1;
     });
     sum.innerHTML = "<strong>" + rows.length + "</strong> disciplines · "
-      + counts.reviewed + " reviewed · "
+      + counts.initiated + " initiated · "
       + counts["pre-seeded"] + " pre-seeded · "
       + counts["needs review"] + " need review"
       + (counts.invalid ? " · <span style='color:#991b1b'>" + counts.invalid + " invalid</span>" : "");
@@ -883,7 +883,7 @@
     var st2 = status(entry);
     if (st2.label === "validated") {
       tdValidate.appendChild(el("span", { class: "cs-badge ok", title: "Validated " + (entry.validated_at || "").slice(0, 10) + " by " + (entry.validated_by || "") }, ["✓ validated"]));
-    } else if (st2.label === "reviewed" && state.sess) {
+    } else if (st2.label === "initiated" && state.sess) {
       var vb = el("button", { type: "button", class: "cs-validate-btn", title: "Mark this row faculty-validated" }, ["Validate"]);
       vb.onclick = function () {
         if (!confirm("Validate " + entry.discipline + "?\n\nThis marks the row faculty-confirmed. Same allowed-reviewers can validate.")) return;
