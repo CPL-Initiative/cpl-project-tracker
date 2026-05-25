@@ -8453,6 +8453,32 @@ Cont</td>
             #tab-credential-reference .cr-cred-record { padding:4px 0; font-size:.85rem; color:#374151; }
             #tab-credential-reference .cr-cred-notes { color:#6b7280; font-size:.78rem; font-style:italic; margin-top:2px; }
             #tab-credential-reference .cr-audit-list { margin:4px 0 0; padding-left:22px; font-size:.82rem; color:#374151; }
+            /* Scope (Local / Statewide) badge — PR-1 addition */
+            #tab-credential-reference .cr-scope-cell { white-space:nowrap; }
+            #tab-credential-reference .cr-scope-badge { display:inline-block; padding:2px 7px; border-radius:10px; font-size:.7rem; font-weight:600; }
+            #tab-credential-reference .cr-scope-state { background:#dbeafe; color:#1e40af; border:1px solid #93c5fd; }
+            #tab-credential-reference .cr-scope-local { background:#f3f4f6; color:#4b5563; border:1px solid #d1d5db; }
+            /* Discipline column */
+            #tab-credential-reference .cr-disc-cell { font-size:.82rem; color:#374151; max-width:24ch; }
+            /* Articulations table inside the expanded body */
+            #tab-credential-reference .cr-arts-table { border-collapse:collapse; width:100%; font-size:.82rem; margin:4px 0 14px; background:#fff; border:1px solid #e5e7eb; border-radius:6px; overflow:hidden; }
+            #tab-credential-reference .cr-arts-table th { background:#f8fafc; color:#374151; font-weight:600; padding:6px 10px; text-align:left; border-bottom:1px solid #e5e7eb; font-size:.78rem; }
+            #tab-credential-reference .cr-arts-table td { padding:6px 10px; vertical-align:top; border-top:1px solid #eef2f7; }
+            #tab-credential-reference .cr-art-first td { border-top:2px solid #cbd5e1; }
+            #tab-credential-reference .cr-art-ident { background:#fafbfc; min-width:22ch; max-width:32ch; }
+            #tab-credential-reference .cr-art-ident.cr-sys-ccnid  { background:#ecfdf5; border-left:3px solid #16a34a; }
+            #tab-credential-reference .cr-art-ident.cr-sys-cid    { background:#eff6ff; border-left:3px solid #2563eb; }
+            #tab-credential-reference .cr-art-ident.cr-sys-mid    { background:#fefce8; border-left:3px solid #d4b146; }
+            #tab-credential-reference .cr-art-ident.cr-sys-cluster{ background:#faf5ff; border-left:3px solid #9333ea; }
+            #tab-credential-reference .cr-id-sys { display:inline-block; font-size:.66rem; padding:1px 5px; border-radius:4px; background:#0A2240; color:#fff; font-weight:600; vertical-align:middle; }
+            #tab-credential-reference .cr-id-code { font-family:ui-monospace,Menlo,monospace; font-weight:600; color:#0A2240; margin-left:4px; }
+            #tab-credential-reference .cr-id-title { color:#1f2937; font-size:.8rem; margin-top:3px; }
+            #tab-credential-reference .cr-id-meta { color:#6b7280; font-size:.72rem; margin-top:2px; }
+            #tab-credential-reference .cr-art-local { min-width:18ch; }
+            #tab-credential-reference .cr-lc-code { font-family:ui-monospace,Menlo,monospace; font-weight:600; color:#0A2240; }
+            #tab-credential-reference .cr-lc-title { color:#374151; }
+            #tab-credential-reference .cr-art-colleges { color:#4b5563; font-size:.78rem; }
+            #tab-credential-reference .cr-empty-note { color:#6b7280; font-size:.82rem; font-style:italic; margin:4px 0 12px; }
             /* Toast */
             #tab-credential-reference ~ .cr-toast,
             .cr-toast { position:fixed; right:18px; bottom:18px; background:#0A2240; color:#fff; padding:10px 14px; border-radius:8px; font-size:.85rem; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:1000; opacity:0; transition:opacity 0.2s; pointer-events:none; }
@@ -13072,6 +13098,7 @@ Cont</td>
     })();
     </script>
     <script src="canonical_subj4.js"></script>
+    <script src="credential_reference_data.js"></script>
     <script src="credential_reference.js"></script>
     <script src="pipeline.js"></script>
     <script src="docx.min.js"></script>

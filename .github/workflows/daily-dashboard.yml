@@ -110,6 +110,7 @@ jobs:
                   unified_courses_standalone.js unified_courses_members.js \
                   unified_courses_member_desc.js \
                   unified_courses_suggestions.js \
+                  credential_reference_data.js \
                   kb/row_audit/latest.json kb/row_audit/*.md \
                   exports/unified_courses.xlsx
           # Phase 1e canonical SUBJ4 seed + curator-edit overlay (added 5a)
