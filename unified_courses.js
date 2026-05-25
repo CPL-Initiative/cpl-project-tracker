@@ -86,7 +86,17 @@
     });
     if (!persistToken(p)) return false;
     history.replaceState(null, "", location.pathname + location.search);
-    location.hash = "unified-courses";
+    // Return the user to whichever curator tab kicked off the sign-in —
+    // each tab's signIn() stashes its name in sessionStorage.cpl_sb_return_tab
+    // before sending the magic-link request. Default back to the Common
+    // Course Reference tab if nobody stashed (older code paths, manual
+    // testing).
+    var returnTab = "unified-courses";
+    try {
+      var stashed = sessionStorage.getItem("cpl_sb_return_tab");
+      if (stashed) { returnTab = stashed; sessionStorage.removeItem("cpl_sb_return_tab"); }
+    } catch (e) {}
+    location.hash = returnTab;
     return true;
   }
   function signIn(email) {
