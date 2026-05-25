@@ -4335,6 +4335,19 @@ def export_credential_reference():
         })
 
     rows.sort(key=lambda r: r["ut"].lower())
+
+    # PR-3 grouping: include a 2-digit-TOP → category title map so the
+    # Credential Reference tab can show "TOP 12 — Health" instead of just
+    # "12" when grouping. Lifted from kb/discipline_canonical_subj4.json
+    # (the same source the CSC tab uses for its TOP categories).
+    top_categories = {}
+    disc_seed = _load("discipline_canonical_subj4.json") or {}
+    for _disc, _rec in (disc_seed.get("disciplines") or {}).items():
+        k = _rec.get("top_category_2digit")
+        t = _rec.get("top_category_title")
+        if k and t and k not in top_categories:
+            top_categories[k] = t
+
     payload = {
         "_generated_at": _dt.now(_tz.utc).isoformat(timespec="seconds"),
         "_generated_by": "excel_to_dashboard.py:export_credential_reference()",
@@ -4344,6 +4357,7 @@ def export_credential_reference():
             "total_articulation_lines": sum(r["n_articulation_lines"] for r in rows),
             "statewide_titles": sum(1 for r in rows if r["statewide"]),
         },
+        "top_categories": top_categories,
         "unified_titles": rows,
     }
     with open(out_js, "w", encoding="utf-8") as f:
