@@ -86,6 +86,12 @@
     return null;
   }
   function signIn(email) {
+    // Stash the current tab so the master auth-fragment handler in
+    // unified_courses.js (consumeAuthHash) can restore us here after the
+    // magic-link round-trip. Without this, sign-in completes successfully
+    // but the user is bounced to the Common Course Reference tab and the
+    // sign-in feels like it "didn't complete."
+    try { sessionStorage.setItem("cpl_sb_return_tab", "credential-reference"); } catch (e) {}
     var redirect = encodeURIComponent(location.origin + location.pathname);
     return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST",
