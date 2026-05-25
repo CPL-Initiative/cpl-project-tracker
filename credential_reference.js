@@ -393,7 +393,28 @@
     // clicks "use a different email".
     pendingSignInEmail: null,
     pendingSignInError: null,
+    // PR-2: bulk-select state for the "Mark N initiated" workflow. Keys are
+    // unified_title strings (selected = true). Only non-already-initiated
+    // rows can be selected; selection is cleared after each successful
+    // bulk save.
+    selected: {},
+    bulkSaving: false,    // true while a batch save is in flight (UI lock)
+    bulkProgress: null,   // {done, total} during a save
   };
+
+  // Helpers for selection bookkeeping
+  function selectionEligible(r) {
+    // A row is eligible for "Mark initiated" only if not already initiated.
+    // Treats the curator overlay AND any future server-side reviewed_at the
+    // same way.
+    return !r.curator_reviewed_at;
+  }
+  function selectedRows() {
+    return state.rows.filter(function (r) {
+      return state.selected[r.unified_title] && selectionEligible(r);
+    });
+  }
+  function selectedCount() { return selectedRows().length; }
 
   // ─── rendering ──────────────────────────────────────────────────────────
 
@@ -502,10 +523,102 @@
     };
     tb.appendChild(search);
 
+    // Bulk-action button — refreshed in place by renderBulkAction() so the
+    // toolbar doesn't rebuild on every selection change (preserves focus +
+    // dropdown state).
+    tb.appendChild(el("span", { id: "cr-bulk", class: "cr-bulk" }));
+    renderBulkAction();
+
     // Auth widget — separate so renderAuth() can refresh in place
     // without rebuilding the toolbar (keeps search focus).
     tb.appendChild(el("span", { id: "cr-auth", class: "cr-auth" }));
     renderAuth();
+  }
+
+  // Refresh ONLY the bulk-action widget. Called from render() after any
+  // state.selected mutation, so the toolbar doesn't have to rebuild end-to-end.
+  function renderBulkAction() {
+    var slot = document.getElementById("cr-bulk");
+    if (!slot) return;
+    clearNode(slot);
+    if (!state.sess) return;  // anonymous viewers see nothing here
+    if (state.bulkSaving && state.bulkProgress) {
+      var p = state.bulkProgress;
+      slot.appendChild(el("span", { class: "cr-bulk-progress" },
+        ["Saving " + p.done + " of " + p.total + "…"]));
+      return;
+    }
+    var n = selectedCount();
+    if (n === 0) return;
+    var btn = el("button", {
+      type: "button", class: "cr-bulk-btn",
+      title: "Mark all selected credentials as initiated (curator-acknowledged classification)."
+    }, ["✓ Mark " + n + " initiated"]);
+    btn.onclick = function () { bulkMarkInitiated(); };
+    slot.appendChild(btn);
+    var clearLink = el("a", { class: "cr-bulk-clear", href: "#",
+      title: "Clear the current selection" }, ["clear"]);
+    clearLink.onclick = function (e) {
+      e.preventDefault();
+      state.selected = {};
+      render();
+    };
+    slot.appendChild(document.createTextNode(" · "));
+    slot.appendChild(clearLink);
+  }
+
+  // Sequential batch save — saveInitiated() per row, one at a time. Sequential
+  // (not Promise.all) keeps us under Supabase's per-second rate limit, surfaces
+  // any failures cleanly, and lets the curator see progress. Most batches are
+  // 5–50 rows so the wall-clock is fine.
+  function bulkMarkInitiated() {
+    var rows = selectedRows();
+    if (!rows.length || !state.sess || state.bulkSaving) return;
+    if (!confirm("Mark " + rows.length + " credential" + (rows.length === 1 ? "" : "s")
+        + " as initiated?\n\nThis records that you've reviewed the AI "
+        + "classification + issuer attribution for each row. It doesn't change "
+        + "the underlying data.")) return;
+    state.bulkSaving = true;
+    state.bulkProgress = { done: 0, total: rows.length };
+    render();
+    var ok = 0, fail = 0;
+    function next(i) {
+      if (i >= rows.length) {
+        state.bulkSaving = false;
+        state.bulkProgress = null;
+        state.selected = {};
+        toast(
+          "Initiated " + ok + (fail ? " · " + fail + " failed" : ""),
+          fail > 0
+        );
+        render();
+        return;
+      }
+      var r = rows[i];
+      saveInitiated(r.unified_title, state.sess)
+        .then(function (resp) {
+          if (resp.ok) {
+            ok += 1;
+            r.curator_reviewed_at = new Date().toISOString();
+            r.curator_reviewed_by = state.sess.email;
+            state.overlay[r.unified_title] = {
+              reviewed_at: r.curator_reviewed_at,
+              reviewed_by: r.curator_reviewed_by,
+            };
+          } else {
+            fail += 1;
+          }
+        })
+        .catch(function () { fail += 1; })
+        .then(function () {
+          state.bulkProgress = { done: i + 1, total: rows.length };
+          // Re-render only the bulk widget for the in-flight progress text —
+          // full table re-render would be expensive per row.
+          renderBulkAction();
+          next(i + 1);
+        });
+    }
+    next(0);
   }
 
   function renderAuth() {
@@ -617,6 +730,7 @@
     var filtered = state.rows.filter(function (r) { return passesFilter(r, state); });
     filtered = sortRows(filtered, state.sort);
     renderSummary(state.rows, filtered);
+    renderBulkAction();
 
     var wrap = document.getElementById("cr-table-wrap");
     if (!wrap) return;
@@ -624,6 +738,7 @@
 
     var table = el("table", { class: "cr-table" });
     var COLS = [
+      { key: null,              label: "" },  // checkbox column — header rendered separately below
       { key: "unified_title",   label: "Unified Title" },
       { key: "raw_count",       label: "Variants",
         title: "Number of distinct raw MAP titles collapsed under this unified title." },
@@ -643,7 +758,36 @@
     ];
 
     var headerRow = el("tr");
-    COLS.forEach(function (col) {
+    COLS.forEach(function (col, idx) {
+      // First column (idx 0) is the bulk-select checkbox. Header renders a
+      // "select all visible" checkbox that toggles every eligible row in the
+      // current filtered view (NOT the full dataset).
+      if (idx === 0) {
+        var thChk = el("th", { class: "cr-chk-cell" });
+        if (state.sess) {
+          var visibleEligible = filtered.filter(selectionEligible);
+          var allSelected = visibleEligible.length > 0
+            && visibleEligible.every(function (r) { return state.selected[r.unified_title]; });
+          var someSelected = !allSelected
+            && visibleEligible.some(function (r) { return state.selected[r.unified_title]; });
+          var headChk = el("input", { type: "checkbox", id: "cr-select-all",
+            title: "Select all eligible rows in the current filter view" });
+          headChk.checked = allSelected;
+          headChk.indeterminate = someSelected;
+          headChk.disabled = !!state.bulkSaving;
+          headChk.onchange = function () {
+            if (allSelected) {
+              visibleEligible.forEach(function (r) { delete state.selected[r.unified_title]; });
+            } else {
+              visibleEligible.forEach(function (r) { state.selected[r.unified_title] = true; });
+            }
+            render();
+          };
+          thChk.appendChild(headChk);
+        }
+        headerRow.appendChild(thChk);
+        return;
+      }
       var attrs = col.title ? { title: col.title } : null;
       var children = [col.label];
       if (col.key) {
@@ -693,6 +837,28 @@
 
   function renderRow(r) {
     var tr = el("tr", { class: "cr-row" });
+
+    // Per-row checkbox (auth-gated). Disabled for already-initiated rows AND
+    // while a bulk save is in flight (so the UI is locked during the batch).
+    var chkTd = el("td", { class: "cr-chk-cell" });
+    if (state.sess) {
+      var elig = selectionEligible(r);
+      var chk = el("input", {
+        type: "checkbox", class: "cr-row-chk",
+        title: elig ? "Select for bulk action" : "Already initiated — not eligible for bulk action",
+      });
+      chk.checked = !!state.selected[r.unified_title];
+      chk.disabled = !elig || !!state.bulkSaving;
+      chk.onchange = function () {
+        if (chk.checked) state.selected[r.unified_title] = true;
+        else delete state.selected[r.unified_title];
+        // Re-render to refresh the header indeterminate state + toolbar count.
+        render();
+      };
+      chkTd.appendChild(chk);
+    }
+    tr.appendChild(chkTd);
+
     // Unified title — clickable to expand.
     var titleTd = el("td", { class: "cr-title-cell" });
     var caret = state.expanded[r.unified_title] ? "▾" : "▸";
