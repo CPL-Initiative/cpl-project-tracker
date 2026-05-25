@@ -400,7 +400,37 @@
     selected: {},
     bulkSaving: false,    // true while a batch save is in flight (UI lock)
     bulkProgress: null,   // {done, total} during a save
+    // PR-3: row grouping. "none" / "top" / "disc". Collapsed groups remember
+    // their state across renders so toggling a filter doesn't re-expand
+    // everything the curator just collapsed.
+    groupBy: "none",
+    collapsedGroups: {},
+    topCategories: {},   // 2-digit → title (loaded from baked payload)
   };
+
+  // Group key for a row given the current state.groupBy mode.
+  function groupKeyOf(r) {
+    if (state.groupBy === "top") {
+      var t = (r.top_modal || "").slice(0, 2);
+      return t || "~~";
+    }
+    if (state.groupBy === "disc") {
+      return r.disc_modal || "~~";
+    }
+    return null;
+  }
+  // Display label for a group key.
+  function groupLabelOf(key) {
+    if (state.groupBy === "top") {
+      if (key === "~~") return "(No TOP category)";
+      var title = state.topCategories[key];
+      return title ? ("TOP " + key + " — " + title) : ("TOP " + key);
+    }
+    if (state.groupBy === "disc") {
+      return key === "~~" ? "(No discipline)" : key;
+    }
+    return "";
+  }
 
   // Helpers for selection bookkeeping
   function selectionEligible(r) {
@@ -497,6 +527,28 @@
     });
     tagSel.onchange = function () { state.tagFilter = this.value; render(); };
     tb.appendChild(tagSel);
+
+    // PR-3: group-by dropdown.
+    var groupSel = el("select", { class: "cr-filter", id: "cr-group-by",
+      title: "Group rows under collapsible TOP category or MQ discipline headers." });
+    [
+      ["none", "Group: none"],
+      ["top",  "Group: TOP category"],
+      ["disc", "Group: Discipline"],
+    ].forEach(function (opt) {
+      var o = el("option", { value: opt[0] }, [opt[1]]);
+      if (opt[0] === state.groupBy) o.selected = true;
+      groupSel.appendChild(o);
+    });
+    groupSel.onchange = function () {
+      state.groupBy = this.value;
+      // Don't carry collapsed-state across grouping modes — the keys are
+      // namespaced by mode (e.g. "top:12" vs "disc:Health") to avoid clashes.
+      // Reset to "all expanded" on mode change for predictability.
+      state.collapsedGroups = {};
+      render();
+    };
+    tb.appendChild(groupSel);
 
     // Quality-flag-only checkbox.
     var flagLabel = el("label", {
@@ -823,11 +875,61 @@
         ["No rows match the current filters."]);
       tr.appendChild(td);
       tbody.appendChild(tr);
-    } else {
+    } else if (state.groupBy === "none") {
       filtered.forEach(function (r) {
         tbody.appendChild(renderRow(r));
         if (state.expanded[r.unified_title]) {
           tbody.appendChild(renderExpandedRow(r, COLS.length));
+        }
+      });
+    } else {
+      // Grouped render — bucket the filtered rows by the active group key
+      // (already filtered + sorted) and emit a collapsible header before each
+      // group's rows.
+      var groups = {};
+      var groupOrder = [];
+      filtered.forEach(function (r) {
+        var k = groupKeyOf(r);
+        if (!(k in groups)) { groups[k] = []; groupOrder.push(k); }
+        groups[k].push(r);
+      });
+      // Sort group order: by label (with the empty/no-X bucket last).
+      groupOrder.sort(function (a, b) {
+        if (a === "~~" && b !== "~~") return 1;
+        if (b === "~~" && a !== "~~") return -1;
+        return groupLabelOf(a).localeCompare(groupLabelOf(b));
+      });
+      groupOrder.forEach(function (k) {
+        var rowsInGroup = groups[k];
+        var collKey = state.groupBy + ":" + k;
+        var collapsed = !!state.collapsedGroups[collKey];
+        // Header row — single cell colspan'd across the full table width.
+        var hdrTr = el("tr", { class: "cr-group-hdr" });
+        var hdrTd = el("td", { colspan: String(COLS.length) });
+        var twisty = collapsed ? "▶" : "▼";
+        var btn = el("button", { type: "button", class: "cr-group-toggle",
+          title: collapsed ? "Expand group" : "Collapse group" });
+        btn.appendChild(el("span", { class: "cr-group-twisty" }, [twisty]));
+        btn.appendChild(document.createTextNode(" "));
+        btn.appendChild(el("span", { class: "cr-group-label" }, [groupLabelOf(k)]));
+        btn.appendChild(document.createTextNode(" "));
+        btn.appendChild(el("span", { class: "cr-group-count" },
+          ["(" + rowsInGroup.length + ")"]));
+        btn.onclick = function () {
+          if (state.collapsedGroups[collKey]) delete state.collapsedGroups[collKey];
+          else state.collapsedGroups[collKey] = true;
+          render();
+        };
+        hdrTd.appendChild(btn);
+        hdrTr.appendChild(hdrTd);
+        tbody.appendChild(hdrTr);
+        if (!collapsed) {
+          rowsInGroup.forEach(function (r) {
+            tbody.appendChild(renderRow(r));
+            if (state.expanded[r.unified_title]) {
+              tbody.appendChild(renderExpandedRow(r, COLS.length));
+            }
+          });
         }
       });
     }
@@ -1191,6 +1293,7 @@
         );
         state.overlay = overlay;
         state.bakedAt = baked._generated_at;
+        state.topCategories = baked.top_categories || {};
         renderToolbar();
         render();
       });
