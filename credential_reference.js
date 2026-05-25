@@ -527,9 +527,20 @@
           if (r.ok) {
             state.pendingSignInEmail = email;
             state.pendingSignInError = null;
+          } else if (r.status === 429) {
+            // Supabase rate-limits OTP sends per email/IP. Most common cause
+            // of a sign-in failure during testing; misclassifying it as a
+            // permission error sends curators down a rabbit hole.
+            state.pendingSignInError = "Too many sign-in emails just now — "
+              + "please wait a few minutes, then request one link.";
+            state.pendingSignInEmail = null;
+          } else if (r.status === 400 || r.status === 422) {
+            state.pendingSignInError = "Server rejected the request (HTTP "
+              + r.status + "). Confirm the email is in the allowed-reviewers list.";
+            state.pendingSignInEmail = null;
           } else {
-            state.pendingSignInError = "Server returned " + r.status
-              + ". Confirm the email is in the allowed-reviewers list and try again.";
+            state.pendingSignInError = "Server returned HTTP " + r.status
+              + ". Try again in a moment, or contact the MAP team if it persists.";
             state.pendingSignInEmail = null;
           }
           renderAuth();
