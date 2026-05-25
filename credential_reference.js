@@ -145,6 +145,42 @@
 
   // ─── data loading ───────────────────────────────────────────────────────
 
+  // Adapter — converts a row from the baked payload (window.CPL_CREDENTIAL_REFERENCE)
+  // to the row shape the renderer expects. Same shape as buildRows() output below
+  // so render code is unified across both paths (baked vs runtime fetch).
+  function adaptBakedRow(b) {
+    var tags = b.audit_tags || {};
+    return {
+      unified_title: b.ut,
+      raw_count: b.raw_count || 0,
+      primary_issuer: b.issuer || null,
+      primary_trainer: b.trainer || null,
+      conf_modal: b.conf_title || 0,
+      conf_issuer: b.conf_issuer || 0,
+      conf_min: b.conf_title || 0,  // baked payload only carries modal
+      conf_max: b.conf_title || 0,
+      quality_flag: b.quality_flag || null,
+      has_quality_flag: !!b.quality_flag,
+      flag_label: b.quality_flag || null,
+      quality_flags: b.quality_flag ? [b.quality_flag] : [],
+      audit_tags: tags,
+      audit_tag_total: b.audit_tag_total || 0,
+      audit_tag_kinds: Object.keys(tags).length,
+      // New from baked — common-course join + discipline + scope badge:
+      disc_modal: b.disc_modal || "",
+      top_modal: b.top_modal || "",
+      statewide: !!b.statewide,
+      articulations: b.articulations || [],
+      n_articulation_lines: b.n_articulation_lines || 0,
+      // The legacy raw_variants list is NOT included in baked (saves payload size);
+      // the expanded body uses `articulations` instead. raw_count is still surfaced.
+      raw_variants: null,
+      credentials: null,
+      issuer_count: b.issuer ? 1 : 0,
+      confidences: [],
+    };
+  }
+
   function fetchKb() {
     return Promise.all([
       fetch("kb/unified_titles.json", { cache: "no-store" })
@@ -236,6 +272,13 @@
       row.audit_tag_total = Object.keys(row.audit_tags)
         .reduce(function (s, k) { return s + row.audit_tags[k]; }, 0);
       row.audit_tag_kinds = Object.keys(row.audit_tags).length;
+      // Fallback path doesn't carry the common-course join — surface empty
+      // defaults so the render code can rely on the fields being present.
+      row.disc_modal = "";
+      row.top_modal = "";
+      row.statewide = false;
+      row.articulations = [];
+      row.n_articulation_lines = 0;
     });
 
     return Object.keys(byUnified)
@@ -311,6 +354,8 @@
     var getters = {
       unified_title:   function (r) { return r.unified_title.toLowerCase(); },
       raw_count:       function (r) { return r.raw_count; },
+      statewide:       function (r) { return r.statewide ? 1 : 0; },
+      disc_modal:      function (r) { return (r.disc_modal || "~").toLowerCase(); },
       primary_issuer:  function (r) { return (r.primary_issuer || "~").toLowerCase(); },
       conf_modal:      function (r) { return r.conf_modal; },
       conf_issuer:     function (r) { return r.conf_issuer; },
@@ -582,6 +627,10 @@
       { key: "unified_title",   label: "Unified Title" },
       { key: "raw_count",       label: "Variants",
         title: "Number of distinct raw MAP titles collapsed under this unified title." },
+      { key: "statewide",       label: "Scope",
+        title: "🏛 Statewide if any articulation is CCC Collaborative; 🏠 Local otherwise. — = no articulations resolved." },
+      { key: "disc_modal",      label: "Discipline",
+        title: "Predominant MQ discipline across this credential's articulated common courses." },
       { key: "primary_issuer",  label: "Issuing Agency" },
       { key: "conf_modal",      label: "Confidence (title)",
         title: "Modal confidence across the raw variants." },
@@ -659,6 +708,32 @@
     tr.appendChild(titleTd);
 
     tr.appendChild(el("td", null, [String(r.raw_count)]));
+
+    // Scope badge — Statewide vs Local, computed from any articulation's
+    // collaborative_type ("CCC" / "CCC Collaborative" → statewide).
+    var scopeTd = el("td", { class: "cr-scope-cell" });
+    if (r.articulations && r.articulations.length) {
+      scopeTd.appendChild(r.statewide
+        ? el("span", { class: "cr-scope-badge cr-scope-state",
+                       title: "At least one articulation is CCC Collaborative" },
+             ["🏛 Statewide"])
+        : el("span", { class: "cr-scope-badge cr-scope-local",
+                       title: "All articulations are local (no CCC Collaborative)" },
+             ["🏠 Local"]));
+    } else {
+      scopeTd.appendChild(el("span", { class: "cr-null",
+        title: "No common-course articulations resolved for this credential" }, ["—"]));
+    }
+    tr.appendChild(scopeTd);
+
+    // Discipline column — modal MQ discipline across this credential's
+    // articulations (blank if no articulations).
+    var discTd = el("td", { class: "cr-disc-cell" });
+    discTd.appendChild(r.disc_modal
+      ? document.createTextNode(r.disc_modal)
+      : el("span", { class: "cr-null" }, ["—"]));
+    tr.appendChild(discTd);
+
     tr.appendChild(el("td", { class: "cr-issuer-cell" },
       [r.primary_issuer || el("span", { class: "cr-null" }, ["(none — local)"])]));
 
@@ -747,36 +822,114 @@
     var td = el("td", { colspan: String(colSpan) });
     var div = el("div", { class: "cr-expanded-body" });
 
-    // Raw variants list.
-    div.appendChild(el("h5", null, [
-      "Raw MAP titles unified under this credential (" + r.raw_count + ")"
-    ]));
-    var ul = el("ul", { class: "cr-variants-list" });
-    r.raw_variants
-      .slice()
-      .sort(function (a, b) { return a.confidence - b.confidence; })
-      .forEach(function (v) {
-        var li = el("li");
-        li.appendChild(el("span", {
-          class: "cr-variant-conf " + _bandCls(v.confidence)
-        }, [v.confidence.toFixed(2)]));
-        li.appendChild(document.createTextNode(" "));
-        li.appendChild(el("code", { class: "cr-variant-code" }, [v.raw_title]));
-        if (v.quality_flag) {
-          li.appendChild(document.createTextNode(" "));
-          li.appendChild(el("span", {
-            class: "cr-flag-badge", title: v.quality_flag
-          }, [v.quality_flag.replace(/_/g, " ")]));
-        }
-        if (v._notes) {
-          li.appendChild(el("div", { class: "cr-variant-notes" }, [v._notes]));
-        }
-        ul.appendChild(li);
+    // ── Common-course identities articulating to this credential ──
+    // Render a table per identity: identity badge on the left, local
+    // college course rows on the right. CCN-ID / C-ID anchors first, then
+    // M-ID / Cluster surrogates.
+    if (r.articulations && r.articulations.length) {
+      var n_lines = r.n_articulation_lines || 0;
+      div.appendChild(el("h5", null, [
+        "Common-course identities articulating to this credential "
+        + "(" + r.articulations.length + " "
+        + (r.articulations.length === 1 ? "identity" : "identities")
+        + " · " + n_lines + " local-course line" + (n_lines === 1 ? "" : "s") + ")"
+      ]));
+      var tbl = el("table", { class: "cr-arts-table" });
+      var thead = el("thead", null, [el("tr", null, [
+        el("th", null, ["Common Course (CCR)"]),
+        el("th", null, ["Local Course"]),
+        el("th", null, ["Earning College(s)"]),
+      ])]);
+      tbl.appendChild(thead);
+      var tbody2 = el("tbody");
+      r.articulations.forEach(function (a) {
+        var sysCls = "cr-sys-" + (a.sys || "mid").toLowerCase().replace(/[^a-z]/g, "");
+        // First row of each identity carries the rowspan'd identity cell.
+        var nLocal = Math.max(1, (a.local || []).length);
+        var locals = a.local && a.local.length ? a.local : [{ subj: "", num: "", t: "", colleges: [] }];
+        locals.forEach(function (lc, idx) {
+          var row = el("tr", { class: "cr-art-row" + (idx === 0 ? " cr-art-first" : "") });
+          if (idx === 0) {
+            var idCell = el("td", { class: "cr-art-ident " + sysCls,
+              rowspan: nLocal > 1 ? String(nLocal) : "1" });
+            idCell.appendChild(el("span", { class: "cr-id-sys" }, [a.sys || "?"]));
+            idCell.appendChild(document.createTextNode(" "));
+            idCell.appendChild(el("code", { class: "cr-id-code" }, [a.cid || "—"]));
+            if (a.title) {
+              idCell.appendChild(el("div", { class: "cr-id-title" }, [a.title]));
+            }
+            var metaParts = [];
+            if (a.disc) metaParts.push(a.disc);
+            if (a.top)  metaParts.push("TOP " + a.top);
+            if (metaParts.length) {
+              idCell.appendChild(el("div", { class: "cr-id-meta" }, [metaParts.join(" · ")]));
+            }
+            row.appendChild(idCell);
+          }
+          var lcCell = el("td", { class: "cr-art-local" });
+          if (lc.subj || lc.num || lc.t) {
+            lcCell.appendChild(el("span", { class: "cr-lc-code" },
+              [(lc.subj || "") + " " + (lc.num || "")]));
+            if (lc.t) {
+              lcCell.appendChild(document.createTextNode(" "));
+              lcCell.appendChild(el("span", { class: "cr-lc-title" }, [lc.t]));
+            }
+          } else {
+            lcCell.appendChild(el("span", { class: "cr-null" }, ["—"]));
+          }
+          row.appendChild(lcCell);
+          var colCell = el("td", { class: "cr-art-colleges" },
+            [(lc.colleges || []).join(", ") || "—"]);
+          row.appendChild(colCell);
+          tbody2.appendChild(row);
+        });
       });
-    div.appendChild(ul);
+      tbl.appendChild(tbody2);
+      div.appendChild(tbl);
+    } else {
+      div.appendChild(el("h5", null, ["No common-course articulations resolved"]));
+      div.appendChild(el("p", { class: "cr-empty-note" }, [
+        "This credential identity isn't tied to any common course in the COCI "
+        + "articulation crosswalk. Could be a credential that articulates only "
+        + "to local courses (no M-ID minted), or one outside the current MAP "
+        + "exhibit-articulation dataset."
+      ]));
+    }
 
-    // Credential record(s).
-    if (r.credentials.length) {
+    // ── Raw MAP titles unified under this credential (legacy fallback only)
+    // The baked payload doesn't carry the per-variant list; we just show the
+    // count, since the audit + curation work at the unified-title level.
+    if (r.raw_variants && r.raw_variants.length) {
+      div.appendChild(el("h5", null, [
+        "Raw MAP titles (" + r.raw_count + ")"
+      ]));
+      var ul = el("ul", { class: "cr-variants-list" });
+      r.raw_variants
+        .slice()
+        .sort(function (a, b) { return a.confidence - b.confidence; })
+        .forEach(function (v) {
+          var li = el("li");
+          li.appendChild(el("span", {
+            class: "cr-variant-conf " + _bandCls(v.confidence)
+          }, [v.confidence.toFixed(2)]));
+          li.appendChild(document.createTextNode(" "));
+          li.appendChild(el("code", { class: "cr-variant-code" }, [v.raw_title]));
+          if (v.quality_flag) {
+            li.appendChild(document.createTextNode(" "));
+            li.appendChild(el("span", {
+              class: "cr-flag-badge", title: v.quality_flag
+            }, [v.quality_flag.replace(/_/g, " ")]));
+          }
+          if (v._notes) {
+            li.appendChild(el("div", { class: "cr-variant-notes" }, [v._notes]));
+          }
+          ul.appendChild(li);
+        });
+      div.appendChild(ul);
+    }
+
+    // ── Credential record(s) (issuer / trainer / confidence) ──
+    if (r.credentials && r.credentials.length) {
       div.appendChild(el("h5", null, [
         "Credential record" + (r.credentials.length > 1 ? "s" : "")
         + " (issuer / trainer attribution)"
@@ -785,12 +938,12 @@
         var d = el("div", { class: "cr-cred-record" });
         d.appendChild(el("div", null, [
           "Issuer: " + (c.issuing_agency || "(none)")
-          + " · confidence " + c.confidence_issuer.toFixed(2)
+          + " · confidence " + (c.confidence_issuer || 0).toFixed(2)
         ]));
         if (c.training_agency) {
           d.appendChild(el("div", null, [
             "Trainer: " + c.training_agency
-            + " · confidence " + c.confidence_trainer.toFixed(2)
+            + " · confidence " + (c.confidence_trainer || 0).toFixed(2)
           ]));
         }
         if (c._notes) {
@@ -798,9 +951,21 @@
         }
         div.appendChild(d);
       });
+    } else if (r.primary_issuer || r.primary_trainer) {
+      // Baked payload shape — surface what we have at the row level.
+      div.appendChild(el("h5", null, ["Credential record"]));
+      var d2 = el("div", { class: "cr-cred-record" });
+      d2.appendChild(el("div", null, [
+        "Issuer: " + (r.primary_issuer || "(none)")
+        + " · confidence " + (r.conf_issuer || 0).toFixed(2)
+      ]));
+      if (r.primary_trainer) {
+        d2.appendChild(el("div", null, ["Trainer: " + r.primary_trainer]));
+      }
+      div.appendChild(d2);
     }
 
-    // Audit tag rollup.
+    // ── Audit tag rollup ──
     if (r.audit_tag_total) {
       div.appendChild(el("h5", null, ["Audit signals"]));
       var ul2 = el("ul", { class: "cr-audit-list" });
@@ -843,6 +1008,31 @@
   function init() {
     if (!document.getElementById("tab-credential-reference")) return;
     state.sess = getSession();
+
+    // Prefer the baked payload (window.CPL_CREDENTIAL_REFERENCE from
+    // credential_reference_data.js, generated by excel_to_dashboard.py).
+    // Lean (~1.5 MB), pre-joined with the common-course identity layer +
+    // audit-tag rollup. Falls back to runtime fetch of kb/*.json if the
+    // baked file hasn't been generated yet — keeps local dev workflows
+    // working without a full generator run.
+    var baked = window.CPL_CREDENTIAL_REFERENCE;
+    if (baked && Array.isArray(baked.unified_titles)) {
+      fetchOverlay().then(function (overlay) {
+        state.audit = null;  // baked payload carries pre-rolled audit_tags per row; no overlay needed
+        state.rows = applyOverlay(
+          baked.unified_titles.map(adaptBakedRow),
+          overlay
+        );
+        state.overlay = overlay;
+        state.bakedAt = baked._generated_at;
+        renderToolbar();
+        render();
+      });
+      return;
+    }
+
+    // Fallback: runtime fetch of kb/*.json (slower; only used when the
+    // baked file is absent — e.g. early local dev before first cron run).
     Promise.all([fetchKb(), fetchOverlay()]).then(function (parts) {
       var kb = parts[0];
       state.audit = kb.audit;

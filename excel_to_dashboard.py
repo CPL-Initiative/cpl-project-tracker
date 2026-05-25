@@ -4152,6 +4152,211 @@ def _write_analytics_xlsx_export(card_id, title, headers, rows, output_dir):
     return out_path
 
 
+def export_credential_reference():
+    """Build credential_reference_data.js — the lean payload consumed by the
+    Credential Reference tab. Joins the credential-identity layer
+    (kb/unified_titles.json + credentials.json) with the course-identity
+    layer (coci_articulations.json + the minted/unified/singleton catalogs)
+    so curators see, per credential identity:
+
+      - the canonical credential name (unified_title) + issuer + trainer
+      - the predominant discipline + TOP code across articulations
+      - whether ANY articulation is CCC Collaborative (statewide badge)
+      - per common-course identity (CCN-ID/C-ID/M-ID/Cluster) that articulates
+        to this credential: identity + title + discipline + the local college
+        course rows (subject/number/title) and earning colleges
+
+    Replaces the tab's previous runtime fetch of unified_titles.json +
+    coci_articulations.json (~3MB+); the baked payload is ~300-500KB and
+    pre-joined so the tab is responsive on load.
+    """
+    from collections import Counter, defaultdict
+    from datetime import datetime as _dt
+    from datetime import timezone as _tz
+
+    kdir = os.environ.get("UC_KB_DIR") or os.path.join(SCRIPT_DIR, "kb")
+    odir = os.environ.get("UC_OUT_DIR") or SCRIPT_DIR
+    out_js = os.path.join(odir, "credential_reference_data.js")
+
+    def _load(name):
+        p = os.path.join(kdir, name)
+        return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else None
+
+    ut_doc = _load("unified_titles.json")
+    cred_doc = _load("credentials.json")
+    if not ut_doc or not cred_doc:
+        with open(out_js, "w", encoding="utf-8") as f:
+            f.write("/* credential-identity KB files missing */\n"
+                    "window.CPL_CREDENTIAL_REFERENCE = {unified_titles: []};\n")
+        print("  Credential Reference: kb files absent — wrote empty global")
+        return
+
+    art_doc = _load("coci_articulations.json") or {}
+    identities = art_doc.get("identities", {}) or {}
+    articulations = art_doc.get("articulations", []) or []
+
+    # Build a discipline/top/title lookup per course_id. identities[cid] is the
+    # primary source but is sometimes empty ({}), so cascade to the broader
+    # catalogs (minted_courses → singletons → unified_courses clusters).
+    course_meta = {}
+    for cid, rec in identities.items():
+        if rec:
+            course_meta[cid] = {
+                "title": rec.get("title", "") or "",
+                "discipline": rec.get("discipline", "") or "",
+                "top": rec.get("top_code", "") or "",
+                "sys": rec.get("identity_system", "") or "",
+            }
+    for name, top_key in (
+        ("coci_minted_courses.json", "courses"),
+        ("coci_minted_singletons.json", "courses"),
+        ("coci_unified_courses.json", "clusters"),
+    ):
+        doc = _load(name) or {}
+        for cid, rec in (doc.get(top_key) or {}).items():
+            if cid in course_meta:
+                continue
+            course_meta[cid] = {
+                "title": rec.get("common_title") or rec.get("title") or rec.get("unified_title") or "",
+                "discipline": rec.get("discipline", "") or "",
+                "top": rec.get("top_code", "") or "",
+                "sys": rec.get("id_system") or rec.get("identity_system")
+                       or ("Cluster" if top_key == "clusters" else "M-ID"),
+            }
+        del doc  # free the 28MB minted_courses promptly
+
+    # Pre-aggregate raw-variant info from unified_titles.json
+    raw_count_by_ut = Counter()
+    quality_by_ut = {}
+    confs_by_ut = defaultdict(list)
+    raw_to_ut = {}  # raw_title → unified_title (for audit-tag rollup)
+    for raw_title, ent in ut_doc.items():
+        ut = ent.get("unified_title") or "(blank)"
+        raw_count_by_ut[ut] += 1
+        raw_to_ut[raw_title] = ut
+        if ent.get("quality_flag"):
+            quality_by_ut[ut] = ent["quality_flag"]
+        confs_by_ut[ut].append(ent.get("confidence_title", 0))
+
+    # Pre-aggregate audit-tag counts per unified_title — sum across raw variants.
+    # Falls back to {} if the audit file isn't generated yet (first-run / clean repo).
+    audit_doc = _load(os.path.join("exhibit_audit", "latest.json")) or {}
+    audit_tags_by_ut = defaultdict(lambda: Counter())
+    for c in (audit_doc.get("title_cards") or []):
+        ut = raw_to_ut.get(c.get("raw_title"))
+        if not ut:
+            continue
+        for t in (c.get("tags") or []):
+            audit_tags_by_ut[ut][t] += 1
+
+    # Group articulations by credential
+    art_by_ut = defaultdict(list)
+    for a in articulations:
+        ut = a.get("unified_title")
+        if ut:
+            art_by_ut[ut].append(a)
+
+    rows = []
+    for ut, _n in raw_count_by_ut.items():
+        creds = cred_doc.get(ut, [])
+        primary = creds[0] if creds else {}
+        confs = confs_by_ut[ut]
+        rc = Counter(round(c, 2) for c in confs)
+        conf_modal = rc.most_common(1)[0][0] if rc else 0
+
+        ut_arts = art_by_ut.get(ut, [])
+        disc_counter, top_counter = Counter(), Counter()
+        statewide = False
+        by_cid = defaultdict(list)
+        for a in ut_arts:
+            cid = a.get("course_id")
+            if not cid:
+                continue
+            by_cid[cid].append(a)
+            # coci_articulations.json normalises MAP's "CCC Collaborative" to
+            # "CCC". Match either form so the badge survives a future kb-pipeline
+            # change that re-introduces the long form.
+            ct = a.get("collaborative_type") or ""
+            if ct == "CCC" or ct == "CCC Collaborative":
+                statewide = True
+            m = course_meta.get(cid) or {}
+            if m.get("discipline"):
+                disc_counter[m["discipline"]] += 1
+            if m.get("top"):
+                top_counter[m["top"]] += 1
+
+        disc_modal = disc_counter.most_common(1)[0][0] if disc_counter else ""
+        top_modal = top_counter.most_common(1)[0][0] if top_counter else ""
+
+        articulations_out = []
+        for cid, recs in by_cid.items():
+            m = course_meta.get(cid) or {}
+            # Collapse all local_courses across recs; track colleges per local-course pair.
+            local_set = {}
+            for r in recs:
+                cols = r.get("earned_by_colleges", []) or []
+                for lc in (r.get("local_courses") or []):
+                    key = (lc.get("subject", ""), lc.get("number", ""), lc.get("title", ""))
+                    if key not in local_set:
+                        local_set[key] = set()
+                    local_set[key].update(cols)
+            local_list = [
+                {"subj": s, "num": n, "t": t, "colleges": sorted(cs)}
+                for (s, n, t), cs in sorted(local_set.items())
+            ]
+            articulations_out.append({
+                "cid": cid,
+                "sys": m.get("sys", ""),
+                "title": m.get("title", ""),
+                "disc": m.get("discipline", ""),
+                "top": m.get("top", ""),
+                "local": local_list,
+            })
+        # Order common-course identities: official first (CCN-ID, C-ID), then M-ID / Cluster.
+        sys_order = {"CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Cluster": 3}
+        articulations_out.sort(key=lambda x: (sys_order.get(x["sys"], 9), x["cid"]))
+
+        audit_tags = dict(audit_tags_by_ut.get(ut, {}))
+        rows.append({
+            "ut": ut,
+            "raw_count": raw_count_by_ut[ut],
+            "issuer": primary.get("issuing_agency"),
+            "trainer": primary.get("training_agency"),
+            "conf_title": conf_modal,
+            "conf_issuer": primary.get("confidence_issuer", 0),
+            "quality_flag": quality_by_ut.get(ut),
+            "disc_modal": disc_modal,
+            "top_modal": top_modal,
+            "statewide": statewide,
+            "audit_tags": audit_tags,
+            "audit_tag_total": sum(audit_tags.values()),
+            "articulations": articulations_out,
+            "n_articulation_lines": sum(len(a["local"]) for a in articulations_out),
+        })
+
+    rows.sort(key=lambda r: r["ut"].lower())
+    payload = {
+        "_generated_at": _dt.now(_tz.utc).isoformat(timespec="seconds"),
+        "_generated_by": "excel_to_dashboard.py:export_credential_reference()",
+        "_stats": {
+            "unified_titles": len(rows),
+            "articulated_titles": sum(1 for r in rows if r["articulations"]),
+            "total_articulation_lines": sum(r["n_articulation_lines"] for r in rows),
+            "statewide_titles": sum(1 for r in rows if r["statewide"]),
+        },
+        "unified_titles": rows,
+    }
+    with open(out_js, "w", encoding="utf-8") as f:
+        f.write("window.CPL_CREDENTIAL_REFERENCE = ")
+        json.dump(payload, f, ensure_ascii=False, separators=(",", ":"))
+        f.write(";\n")
+    sz = os.path.getsize(out_js)
+    s = payload["_stats"]
+    print(f"  Credential Reference: wrote {sz//1024} KB "
+          f"({s['unified_titles']} unified titles · {s['articulated_titles']} articulated · "
+          f"{s['total_articulation_lines']} local-course lines · {s['statewide_titles']} statewide)")
+
+
 def export_unified_courses():
     """Build the Unified Courses tab data (window.CPL_UNIFIED_COURSES in
     unified_courses_data.js) + the full xlsx export, from the kb/coci_*.json
@@ -6595,6 +6800,13 @@ def main():
         export_unified_courses()
     except Exception as e:
         print(f"  Unified Courses export failed ({e}); tab will show empty")
+
+    # ── Build the Credential Reference tab data (credential-identity layer +
+    #    common-course join). Lean payload consumed by credential_reference.js. ──
+    try:
+        export_credential_reference()
+    except Exception as e:
+        print(f"  Credential Reference export failed ({e}); tab will fall back to runtime fetch")
 
     # ── Inject data inline AND render static HTML into the dashboard ──
     if os.path.exists(HTML_FILE):
