@@ -383,6 +383,10 @@
     // header switches the active column. When grouped, sort applies WITHIN
     // each category group.
     sort: { key: "_impact", dir: "desc" },
+    // Sign-in feedback lives in the auth widget (no corner toast). See
+    // PR #119 / docs/exhibit_canonicalization_lessons.md for context.
+    pendingSignInEmail: null,
+    pendingSignInError: null,
     sess: null,
   };
 
@@ -525,28 +529,79 @@
     var auth = document.getElementById("cs-auth");
     if (!auth) return;
     auth.innerHTML = "";
+
+    // Signed in
     if (state.sess) {
       auth.appendChild(el("span", { class: "cs-auth-on" }, ["✓ " + state.sess.email]));
       auth.appendChild(document.createTextNode("  "));
       var out = el("a", { class: "cs-auth-link", href: "#" }, ["sign out"]);
       out.onclick = function (e) { e.preventDefault(); signOut(); state.sess = null; renderAuth(); render(); };
       auth.appendChild(out);
-    } else {
-      var inn = el("a", { class: "cs-auth-link", href: "#" }, ["sign in to edit"]);
-      inn.onclick = function (e) {
-        e.preventDefault();
-        var email = prompt("Email (must be an allowed reviewer):");
-        if (!email) return;
-        signIn(email)
-          .then(function (r) {
-            if (r.ok) toast("Magic link sent — check your email");
-            else toast("Sign-in failed (" + r.status + ")", true);
-          })
-          .catch(function () { toast("Sign-in request failed", true); });
-      };
-      auth.appendChild(inn);
-      auth.appendChild(el("span", { class: "cs-auth-tag" }, ["(CCCCO MAP only)"]));
+      return;
     }
+
+    // Sign-in error
+    if (state.pendingSignInError) {
+      var errPanel = el("div", { class: "cs-auth-panel cs-auth-panel-err" });
+      errPanel.appendChild(el("strong", null, ["✗ Sign-in failed"]));
+      errPanel.appendChild(el("div", { class: "cs-auth-panel-detail" }, [state.pendingSignInError]));
+      var retry = el("a", { class: "cs-auth-link", href: "#" }, ["try again"]);
+      retry.onclick = function (e) {
+        e.preventDefault();
+        state.pendingSignInError = null;
+        renderAuth();
+      };
+      errPanel.appendChild(retry);
+      auth.appendChild(errPanel);
+      return;
+    }
+
+    // Magic link sent — inline confirmation panel
+    if (state.pendingSignInEmail) {
+      var panel = el("div", { class: "cs-auth-panel cs-auth-panel-ok" });
+      panel.appendChild(el("strong", null, ["✉ Magic link sent"]));
+      panel.appendChild(el("div", { class: "cs-auth-panel-detail" },
+        ["Check the inbox for ", state.pendingSignInEmail,
+         " and click the link to complete sign-in. You'll land back on this tab signed in."]));
+      var diff = el("a", { class: "cs-auth-link", href: "#" }, ["use a different email"]);
+      diff.onclick = function (e) {
+        e.preventDefault();
+        state.pendingSignInEmail = null;
+        renderAuth();
+      };
+      panel.appendChild(diff);
+      auth.appendChild(panel);
+      return;
+    }
+
+    // Default: show sign-in link
+    var inn = el("a", { class: "cs-auth-link", href: "#" }, ["sign in to edit"]);
+    inn.onclick = function (e) {
+      e.preventDefault();
+      var email = prompt("Email (must be an allowed reviewer):");
+      if (!email) return;
+      email = email.trim();
+      if (!email) return;
+      signIn(email)
+        .then(function (r) {
+          if (r.ok) {
+            state.pendingSignInEmail = email;
+            state.pendingSignInError = null;
+          } else {
+            state.pendingSignInError = "Server returned " + r.status
+              + ". Confirm the email is in the allowed-reviewers list and try again.";
+            state.pendingSignInEmail = null;
+          }
+          renderAuth();
+        })
+        .catch(function () {
+          state.pendingSignInError = "Couldn't reach the auth server. Check your connection and try again.";
+          state.pendingSignInEmail = null;
+          renderAuth();
+        });
+    };
+    auth.appendChild(inn);
+    auth.appendChild(el("span", { class: "cs-auth-tag" }, ["(CCCCO MAP only)"]));
   }
 
   function passesFilter(entry) {

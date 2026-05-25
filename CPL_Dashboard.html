@@ -8179,6 +8179,15 @@ Cont</td>
             #tab-unified-courses .uc-auth { font-size:.82rem; color:#374151; margin-left:6px; }
             #tab-unified-courses .uc-auth-link { color:#0A2240; font-weight:600; text-decoration:underline; cursor:pointer; font-size:.68rem; }
             #tab-unified-courses .uc-auth-on { color:#166534; font-weight:600; }
+            /* Sign-in feedback panel — inline replacement for alert() */
+            #tab-unified-courses .uc-auth-panel { display:inline-block; padding:8px 12px; border-radius:6px; max-width:420px; font-size:.78rem; line-height:1.5; vertical-align:top; text-align:left; }
+            #tab-unified-courses .uc-auth-panel strong { display:block; font-size:.88rem; margin-bottom:3px; }
+            #tab-unified-courses .uc-auth-panel-detail { opacity:.9; margin-bottom:5px; }
+            #tab-unified-courses .uc-auth-panel .uc-auth-link { font-size:.73rem; }
+            #tab-unified-courses .uc-auth-panel-ok  { background:#ecfdf5; border:1px solid #34d399; color:#065f46; }
+            #tab-unified-courses .uc-auth-panel-ok strong { color:#065f46; }
+            #tab-unified-courses .uc-auth-panel-err { background:#fef2f2; border:1px solid #fca5a5; color:#991b1b; }
+            #tab-unified-courses .uc-auth-panel-err strong { color:#991b1b; }
             #tab-unified-courses .uc-disc-edit { border-bottom:1px dashed #94a3b8; cursor:pointer; }
             #tab-unified-courses .uc-disc-edit:hover { background:#eef6ff; }
         </style>
@@ -8248,6 +8257,15 @@ Cont</td>
             #tab-canonical-subj4 .cs-guidelines-btn { background:#0A2240; color:#fff; border:none; padding:7px 14px; border-radius:6px; font-size:.85rem; cursor:pointer; font-weight:600; }
             #tab-canonical-subj4 .cs-guidelines-btn:hover { background:#0d2c52; }
             #tab-canonical-subj4 .cs-auth-tag { display:block; font-size:.7rem; color:#9ca3af; margin-top:2px; }
+            /* Sign-in feedback panel — inline replacement for the corner toast */
+            #tab-canonical-subj4 .cs-auth-panel { display:inline-block; padding:8px 12px; border-radius:6px; max-width:420px; font-size:.78rem; line-height:1.5; vertical-align:top; text-align:left; }
+            #tab-canonical-subj4 .cs-auth-panel strong { display:block; font-size:.88rem; margin-bottom:3px; }
+            #tab-canonical-subj4 .cs-auth-panel-detail { opacity:.9; margin-bottom:5px; }
+            #tab-canonical-subj4 .cs-auth-panel .cs-auth-link { font-size:.73rem; }
+            #tab-canonical-subj4 .cs-auth-panel-ok  { background:#ecfdf5; border:1px solid #34d399; color:#065f46; }
+            #tab-canonical-subj4 .cs-auth-panel-ok strong { color:#065f46; }
+            #tab-canonical-subj4 .cs-auth-panel-err { background:#fef2f2; border:1px solid #fca5a5; color:#991b1b; }
+            #tab-canonical-subj4 .cs-auth-panel-err strong { color:#991b1b; }
             /* Guidelines modal */
             #tab-canonical-subj4 .cs-modal-bg { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.4); z-index:1000; align-items:flex-start; justify-content:center; padding-top:6vh; }
             #tab-canonical-subj4 .cs-modal-bg.show { display:flex; }
@@ -8411,6 +8429,17 @@ Cont</td>
             #tab-credential-reference .cr-auth-link { color:#0A2240; font-weight:600; text-decoration:underline; cursor:pointer; }
             #tab-credential-reference .cr-auth-on   { color:#166534; font-weight:600; }
             #tab-credential-reference .cr-auth-tag  { display:block; font-size:.7rem; color:#9ca3af; margin-top:2px; }
+            /* Sign-in feedback panel — replaces the corner toast for sign-in flow.
+               Lives in-place where the "sign in to edit" link used to be so curators
+               can't miss the "Magic link sent" / error confirmation. */
+            #tab-credential-reference .cr-auth-panel { display:inline-block; padding:8px 12px; border-radius:6px; max-width:420px; font-size:.78rem; line-height:1.5; vertical-align:top; text-align:left; }
+            #tab-credential-reference .cr-auth-panel strong { display:block; font-size:.88rem; margin-bottom:3px; }
+            #tab-credential-reference .cr-auth-panel-detail { opacity:.9; margin-bottom:5px; }
+            #tab-credential-reference .cr-auth-panel .cr-auth-link { font-size:.73rem; }
+            #tab-credential-reference .cr-auth-panel-ok  { background:#ecfdf5; border:1px solid #34d399; color:#065f46; }
+            #tab-credential-reference .cr-auth-panel-ok strong { color:#065f46; }
+            #tab-credential-reference .cr-auth-panel-err { background:#fef2f2; border:1px solid #fca5a5; color:#991b1b; }
+            #tab-credential-reference .cr-auth-panel-err strong { color:#991b1b; }
             #tab-credential-reference .cr-empty { color:#6b7280; font-style:italic; padding:16px; text-align:center !important; }
             /* Expanded row body */
             #tab-credential-reference .cr-expanded td { background:#fafbfc; padding:0; }

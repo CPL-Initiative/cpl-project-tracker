@@ -394,6 +394,12 @@
     var topMap = data.topmap || {};
     var rows = data.rows;
     var session = getSession();
+    // Sign-in feedback lives in the auth widget (no alert() / corner toast).
+    // pendingSignInEmail = email after a successful OTP request;
+    // pendingSignInError = msg after a failure. Cleared on successful sign-in
+    // (session populated) or when the user clicks "use a different email".
+    var pendingSignInEmail = null;
+    var pendingSignInError = null;
     var refreshTimer = null;
     function tokenFresh(s) { return !!(s && s.exp > Date.now() + 60000); }
     function scheduleRefresh() {
@@ -987,28 +993,89 @@
 
     function renderAuth() {
       auth.innerHTML = "";
+
+      // Signed in
       if (session) {
         auth.appendChild(el("span", { class: "uc-auth-on" }, ["✎ Curating as " + session.email + " "]));
         var out = el("a", { href: "#", class: "uc-auth-link" }, ["Sign out"]);
         out.onclick = function (e) { e.preventDefault(); signOut(); session = null; renderAuth(); render(); };
         auth.appendChild(out);
-      } else {
-        var link = el("a", { href: "#", class: "uc-auth-link" }, ["Sign in to curate"]);
-        link.onclick = function (e) {
-          e.preventDefault();
-          var email = prompt("Reviewer email — we'll send a magic sign-in link:");
-          if (!email) return;
-          signIn(email.trim()).then(function (r) {
-            if (r.ok) { alert("Check your email for the sign-in link, then return here. (Request it once — repeated tries hit a send limit.)"); return; }
-            if (r.status === 429) { alert("Too many sign-in emails just now — please wait a few minutes, then request one link."); return; }
-            r.json().then(function (b) {
-              alert("Sign-in request failed (HTTP " + r.status + (b && b.msg ? "): " + b.msg : ")") +
-                    ".\nIf this persists, confirm your email is in allowed_reviewers and that this URL is in the Supabase Redirect URLs.");
-            }).catch(function () { alert("Sign-in request failed (HTTP " + r.status + ")."); });
-          }).catch(function () { alert("Network error sending the sign-in link."); });
-        };
-        auth.appendChild(link);
+        return;
       }
+
+      // Sign-in error
+      if (pendingSignInError) {
+        var errPanel = el("div", { class: "uc-auth-panel uc-auth-panel-err" });
+        errPanel.appendChild(el("strong", null, ["✗ Sign-in failed"]));
+        errPanel.appendChild(el("div", { class: "uc-auth-panel-detail" }, [pendingSignInError]));
+        var retry = el("a", { href: "#", class: "uc-auth-link" }, ["try again"]);
+        retry.onclick = function (e) {
+          e.preventDefault();
+          pendingSignInError = null;
+          renderAuth();
+        };
+        errPanel.appendChild(retry);
+        auth.appendChild(errPanel);
+        return;
+      }
+
+      // Magic link sent — inline confirmation panel
+      if (pendingSignInEmail) {
+        var panel = el("div", { class: "uc-auth-panel uc-auth-panel-ok" });
+        panel.appendChild(el("strong", null, ["✉ Magic link sent"]));
+        panel.appendChild(el("div", { class: "uc-auth-panel-detail" },
+          ["Check the inbox for ", pendingSignInEmail,
+           " and click the link to complete sign-in. You'll land back on this tab signed in."]));
+        var diff = el("a", { href: "#", class: "uc-auth-link" }, ["use a different email"]);
+        diff.onclick = function (e) {
+          e.preventDefault();
+          pendingSignInEmail = null;
+          renderAuth();
+        };
+        panel.appendChild(diff);
+        auth.appendChild(panel);
+        return;
+      }
+
+      // Default: show sign-in link
+      var link = el("a", { href: "#", class: "uc-auth-link" }, ["Sign in to curate"]);
+      link.onclick = function (e) {
+        e.preventDefault();
+        var email = prompt("Reviewer email — we'll send a magic sign-in link:");
+        if (!email) return;
+        email = email.trim();
+        if (!email) return;
+        signIn(email).then(function (r) {
+          if (r.ok) {
+            pendingSignInEmail = email;
+            pendingSignInError = null;
+            renderAuth();
+            return;
+          }
+          if (r.status === 429) {
+            pendingSignInError = "Too many sign-in emails just now — please wait a few minutes, then request one link.";
+            pendingSignInEmail = null;
+            renderAuth();
+            return;
+          }
+          r.json().then(function (b) {
+            pendingSignInError = "Server returned HTTP " + r.status
+              + (b && b.msg ? " — " + b.msg : "")
+              + ". Confirm your email is in allowed_reviewers and that this URL is in the Supabase Redirect URLs.";
+            pendingSignInEmail = null;
+            renderAuth();
+          }).catch(function () {
+            pendingSignInError = "Server returned HTTP " + r.status + ". Try again.";
+            pendingSignInEmail = null;
+            renderAuth();
+          });
+        }).catch(function () {
+          pendingSignInError = "Couldn't reach the auth server. Check your connection and try again.";
+          pendingSignInEmail = null;
+          renderAuth();
+        });
+      };
+      auth.appendChild(link);
     }
 
     function confTier(c) { if (c == null) return ""; if (c >= 0.85) return "high"; if (c >= 0.7) return "medium"; return "low"; }
