@@ -3347,24 +3347,31 @@ def _parse_exhibits(datasets):
         cpl_type_counts = {}
 
         # Grouped-exhibit counts matching the EACR table: keyed on
-        # (Title, CPL Type, Collaborative Type). MAP frequently issues multiple
-        # ExhibitIDs for what is conceptually one exhibit (e.g. San Jose's
-        # Google IT cert across three CIS courses) — counting groups gives a
-        # truer "distinct exhibits" headline.
+        # (unified_title, issuing_agency, CPL Type, Collaborative Type) once the
+        # credential identity layer (kb/unified_titles.json + kb/credentials.json)
+        # is consulted. MAP frequently issues multiple ExhibitIDs for what is
+        # conceptually one exhibit AND colleges enter the same credential under
+        # several freehand titles — both forms of fragmentation collapse here.
+        # See docs/exhibit_unification_vision.md §6.1; was previously keyed on
+        # (raw title, CPL Type, Collab Type) before the EACR Phase 4 re-pivot.
+        unified_lookup, issuer_pick = _load_credential_kb()
         exhibit_groups = set()
         ccc_exhibit_groups = set()
 
         for row in rows:
             college = (row[i_college] or "").strip()
             exhibit_id = (row[i_exhibit] or "").strip()
-            title = (row[i_title] or "").strip()
+            raw_title = row[i_title] or ""
+            title = raw_title.strip()
             artic_college = (row[i_artic] or "").strip()
             collab_type = (row[i_collab] or "").strip()
             cpl_type = (row[i_cpl] or "").strip()
 
             exhibit_ids.add(exhibit_id)
             if title and exhibit_id:
-                grp = (title, cpl_type, collab_type)
+                ident = _classify_exhibit(raw_title, unified_lookup, issuer_pick)
+                grp = (ident["unified_title"], ident["issuing_agency"],
+                       cpl_type, collab_type)
                 exhibit_groups.add(grp)
                 if "CCC" in collab_type:
                     ccc_exhibit_groups.add(grp)
@@ -3655,6 +3662,136 @@ def _top_sector(top_lookup, code, default=""):
     return default
 
 
+# ── Credential identity layer (kb/unified_titles.json + kb/credentials.json) ──
+# Loaded once per pipeline run and shared by _parse_exhibits() (MAP Exhibits
+# KPI) + _build_statewide_adoption() (EACR table) so both group exhibits on
+# the same key. See docs/exhibit_unification_vision.md §6.1.
+_CREDENTIAL_KB_CACHE = None
+
+
+def _load_credential_kb():
+    """Return (unified_lookup, issuer_pick).
+
+    unified_lookup: raw_title → {unified_title, confidence_title, quality_flag, …}
+                    Keyed by both the exact KB key (un-stripped, as the classifier
+                    stored it) AND the stripped variant — the EACR generators
+                    historically `.strip()` raw titles, so the stripped key
+                    catches whitespace-variant cache hits the classifier
+                    persisted under their raw MAP form.
+    issuer_pick:    unified_title → highest-confidence credential record.
+                    Vision §6.1's per-row issuer disambiguation (ICC vs NFPA
+                    Fire Inspector I) requires row-level context not present
+                    in MAP today; until then, the deterministic-pick keeps
+                    all raw rows for a unified_title on the same card.
+    """
+    global _CREDENTIAL_KB_CACHE
+    if _CREDENTIAL_KB_CACHE is not None:
+        return _CREDENTIAL_KB_CACHE
+
+    ut_path = os.path.join(SCRIPT_DIR, "kb", "unified_titles.json")
+    cr_path = os.path.join(SCRIPT_DIR, "kb", "credentials.json")
+    if not (os.path.exists(ut_path) and os.path.exists(cr_path)):
+        print("  WARNING: kb/unified_titles.json or kb/credentials.json missing; "
+              "EACR will fall back to raw-title grouping.")
+        _CREDENTIAL_KB_CACHE = ({}, {})
+        return _CREDENTIAL_KB_CACHE
+
+    try:
+        with open(ut_path, encoding="utf-8") as f:
+            ut_raw = json.load(f)
+        with open(cr_path, encoding="utf-8") as f:
+            cr_raw = json.load(f)
+    except Exception as e:
+        print(f"  WARNING: failed to load credential KB: {e}")
+        _CREDENTIAL_KB_CACHE = ({}, {})
+        return _CREDENTIAL_KB_CACHE
+
+    unified_lookup = {}
+    for raw_key, entry in ut_raw.items():
+        unified_lookup[raw_key] = entry
+        stripped = raw_key.strip()
+        if stripped and stripped != raw_key and stripped not in unified_lookup:
+            unified_lookup[stripped] = entry
+
+    issuer_pick = {}
+    for ut, records in cr_raw.items():
+        if not records:
+            continue
+        best = sorted(
+            records,
+            key=lambda r: (-(r.get("confidence_issuer") or 0.0),
+                           r.get("issuing_agency") or ""),
+        )[0]
+        issuer_pick[ut] = best
+
+    print(f"  Credential KB loaded: {len(ut_raw):,} raw→unified entries, "
+          f"{len(cr_raw):,} unified→issuer entries")
+    _CREDENTIAL_KB_CACHE = (unified_lookup, issuer_pick)
+    return _CREDENTIAL_KB_CACHE
+
+
+def _classify_exhibit(raw_title, unified_lookup=None, issuer_pick=None):
+    """Return a dict describing this raw_title's place in the credential layer.
+
+    Returned keys:
+      unified_title, issuing_agency, training_agency,
+      confidence_title, confidence_issuer, quality_flag, is_classified.
+
+    For unclassified raw titles (no KB entry), `unified_title` falls back to
+    `raw_title.strip()` so the row still has a group key — this preserves
+    EACR coverage even before the classifier has seen a title.
+    """
+    if unified_lookup is None or issuer_pick is None:
+        unified_lookup, issuer_pick = _load_credential_kb()
+
+    # Exact match (preserves whitespace as classifier stored it) → stripped fallback.
+    entry = unified_lookup.get(raw_title)
+    if entry is None:
+        stripped = (raw_title or "").strip()
+        if stripped:
+            entry = unified_lookup.get(stripped)
+
+    if entry is None:
+        # Unclassified — keep raw title (stripped) as the group key.
+        return {
+            "unified_title": (raw_title or "").strip(),
+            "issuing_agency": "",
+            "training_agency": "",
+            "confidence_title": 0.0,
+            "confidence_issuer": 0.0,
+            "quality_flag": "",
+            "is_classified": False,
+        }
+
+    ut = entry.get("unified_title") or (raw_title or "").strip()
+    conf_t = float(entry.get("confidence_title") or 0.0)
+    qflag = entry.get("quality_flag") or ""
+
+    issuer_rec = issuer_pick.get(ut)
+    if issuer_rec:
+        return {
+            "unified_title": ut,
+            "issuing_agency": issuer_rec.get("issuing_agency") or "",
+            "training_agency": issuer_rec.get("training_agency") or "",
+            "confidence_title": conf_t,
+            "confidence_issuer": float(issuer_rec.get("confidence_issuer") or 0.0),
+            "quality_flag": qflag,
+            "is_classified": True,
+        }
+
+    # KB has unified_title but no credentials.json record yet.
+    return {
+        "unified_title": ut,
+        "issuing_agency": "",
+        "training_agency": "",
+        "confidence_title": conf_t,
+        "confidence_issuer": 0.0,
+        "quality_flag": qflag,
+        "is_classified": True,
+    }
+
+
+
 def build_exhibit_analysis_tables(exhibit_data):
     """
     Compute analysis tables from the combined CustomReport JSON.
@@ -3922,32 +4059,68 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     i_top = exhibit_cm.get("TOP Code", 8)
     i_cpl = exhibit_cm.get("CPL Type Description", 13)
 
-    # Group rows by a composite identity, not by ExhibitID alone. MAP frequently
-    # issues separate ExhibitIDs for what is conceptually the same exhibit (e.g.
-    # San Jose's "Google IT Support Professional Certification" appears under
-    # three IDs, one per articulated CIS course). Keying on
-    # (Title, CPL Type, Collaborative Type) collapses those, while preserving
-    # genuinely distinct pathways like Norco IBEW Portfolio Review vs Industry
-    # Certification (different CPL Types stay separate). TOP Code is excluded
-    # from the key because ~295 single-ExhibitID exhibits legitimately span
-    # multiple TOP codes (e.g. Dental Board cert across TOPs 101/89/171).
+    # ── EACR Phase 4 re-pivot (2026-05-26): group on the credential identity ──
+    # Group key is (unified_title, issuing_agency, CPL Type, Collaborative Type)
+    # for raw titles classified into the credential layer; for unclassified
+    # raw titles, we keep the stripped raw title as the unified key so coverage
+    # is preserved. This collapses two forms of fragmentation at once:
+    #   1. ID fragmentation — MAP issues separate ExhibitIDs per articulated
+    #      course (was previously handled by the raw-title grouping).
+    #   2. Title drift — colleges enter the same credential under multiple
+    #      freehand titles ("Google IT Support Professional Certification" vs
+    #      "Google IT Support Professional Certificate" vs "CMPET 315 …").
+    # See docs/exhibit_unification_vision.md §6.1 + kb/eacr_dryrun/report.md
+    # (the PR-C0 measurement that estimated 3,345 → ~2,406 cards). TOP Code is
+    # excluded from the key because ~295 single-credential exhibits legitimately
+    # span multiple TOP codes (Dental Board cert across TOPs 101/89/171).
+    unified_lookup, issuer_pick = _load_credential_kb()
+
     all_exhibits = defaultdict(lambda: {
-        "eids": set(), "adopters": set(), "cids": set(), "tops": set(),
-        "credit_recs": [],  # list of {course, credit} dicts
+        "eids": set(),
+        "adopters": set(),
+        "cids": set(),
+        "tops": set(),
+        "raw_titles": set(),  # for the consumer's "also entered as…" disclosure
+        "confidence_titles": [],  # per-row for modal
+        "quality_flags": set(),  # any constituent flag rolls up
+        "credit_recs": [],  # list of {course, credit} dicts (deduped)
+        "training_agency": "",  # set on first classified row
+        "confidence_issuer": 0.0,
+        "is_classified": False,
     })
 
     for row in exhibit_rows:
         eid = (row[i_eid] or "").strip()
-        title = (row[i_title] or "").strip()
+        raw_title = row[i_title] or ""
+        title = raw_title.strip()
         if not eid or not title:
             continue
+        cpl = (row[i_cpl] or "").strip()
+        collab = (row[i_collab] or "").strip()
+
+        ident = _classify_exhibit(raw_title, unified_lookup, issuer_pick)
         group_key = (
-            title,
-            (row[i_cpl] or "").strip(),
-            (row[i_collab] or "").strip(),
+            ident["unified_title"],
+            ident["issuing_agency"],
+            cpl,
+            collab,
         )
         e = all_exhibits[group_key]
         e["eids"].add(eid)
+        e["raw_titles"].add(title)
+        if ident["confidence_title"]:
+            e["confidence_titles"].append(ident["confidence_title"])
+        if ident["quality_flag"]:
+            e["quality_flags"].add(ident["quality_flag"])
+        if ident["is_classified"]:
+            e["is_classified"] = True
+            # First classified row sets training_agency + confidence_issuer
+            # (all rows for the same group resolve to the same issuer record).
+            if not e["training_agency"]:
+                e["training_agency"] = ident["training_agency"]
+            if not e["confidence_issuer"]:
+                e["confidence_issuer"] = ident["confidence_issuer"]
+
         artic = (row[i_artic] or "").strip()
         if artic:
             e["adopters"].add(artic)
@@ -3957,23 +4130,20 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         top = (row[i_top] or "").strip()
         if top:
             e["tops"].add(top)
-        # Collect credit recommendations
+        # Collect credit recommendations (dedup across constituent raw rows).
         course = (row[i_course] or "").strip()
         credit = (row[i_credit] or "").strip()
         if course and credit:
             rec_key = (course, credit)
-            # Avoid exact duplicates
             if rec_key not in {(r["course"], r["credit"]) for r in e["credit_recs"]}:
                 e["credit_recs"].append({"course": course, "credit": credit})
 
-    # ── Compute potential for each exhibit ──
+    # ── Compute potential + assemble output rows ──
+    from collections import Counter as _Counter
     results = []
     for group_key, e in all_exhibits.items():
-        title, cpl_type, collab_type = group_key
+        unified_title, issuing_agency, cpl_type, collab_type = group_key
         adopters = e["adopters"]
-        # A group may legitimately span multiple TOP codes (e.g. Dental Board
-        # cert across TOPs 101/89/171). Use the first sorted TOP for discipline
-        # display, but union across all TOPs for potential-adopter matching.
         tops_sorted = sorted(e["tops"])
         map_top = tops_sorted[0] if tops_sorted else ""
 
@@ -3993,7 +4163,6 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         # Career Cluster (CCC Strong Workforce sector). Groups that span multiple
         # TOP codes can in principle resolve to multiple sectors. Pick the most
         # common; ties broken alphabetically for stability.
-        from collections import Counter as _Counter
         sector_counts = _Counter(s for s in (_top_sector(top_lookup, t) for t in e["tops"]) if s)
         if sector_counts:
             sector = sorted(sector_counts.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
@@ -4005,13 +4174,34 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         collab_label = "CCC Collaborative" if is_statewide else (collab_type or "Local")
 
         # Stable identifier for the merged group (concatenation of member MAP IDs).
-        # Used by the UI as a row-selection / dedup key.
+        # Used by the UI as a row-selection / dedup key. Post Phase 4 the merged_id
+        # may be larger than before (more raw exhibit IDs fold per card) — PR-D's
+        # _EACR_FLAG keys keyed against the old merged_id are mapped via
+        # kb/eacr_dryrun/alias_map.json (migration runs at PR-C2 land).
         merged_id = "|".join(sorted(e["eids"]))
+
+        # Card "title" surfaces the unified credential name; raw_titles[] is the
+        # underlying spelling-variant list for the "also entered as…" disclosure
+        # PR-C2 will surface in the UI. For unclassified groups the unified_title
+        # equals the (stripped) raw title, so the title field stays meaningful.
+        conf_t_modal = (
+            max(set(e["confidence_titles"]), key=e["confidence_titles"].count)
+            if e["confidence_titles"] else 0.0
+        )
+        quality_flag = sorted(e["quality_flags"])[0] if e["quality_flags"] else ""
 
         results.append({
             "exhibit_id": merged_id,
             "exhibit_ids": sorted(e["eids"]),
-            "title": title,
+            "title": unified_title,
+            "unified_title": unified_title,
+            "is_classified": e["is_classified"],
+            "issuing_agency": issuing_agency,
+            "training_agency": e["training_agency"],
+            "confidence_title": conf_t_modal,
+            "confidence_issuer": e["confidence_issuer"],
+            "quality_flag": quality_flag,
+            "raw_titles": sorted(e["raw_titles"]),
             "cpl_type": cpl_type,
             "discipline": disc,
             "sector": sector,
