@@ -1002,6 +1002,26 @@
     bg.addEventListener("click", function (e) { if (e.target === bg) shut(); });
   }
 
+  // Quickstart-C hint consumer. Pre-pops the status / TOP / search filters
+  // from a routing hint stashed by quickstart.js. Unknown keys are silently
+  // dropped; valid hints set state + sync the matching toolbar input.
+  var QS_TAB = "canonical-subj4";
+  var QS_STATUS = { needs_review: 1, pre_seeded: 1, reviewed: 1, validated: 1, invalid: 1 };
+  function applyQsHint(hint) {
+    if (!hint || typeof hint !== "object") return false;
+    var any = false;
+    if (typeof hint.status === "string" && QS_STATUS[hint.status]) {
+      state.filter = hint.status; any = true;
+    }
+    if (typeof hint.top_2digit === "string" && /^\d{2}$/.test(hint.top_2digit)) {
+      state.topFilter = hint.top_2digit; any = true;
+    }
+    if (typeof hint.search === "string" && hint.search) {
+      state.search = hint.search.toLowerCase(); any = true;
+    }
+    return any;
+  }
+
   function init() {
     if (!document.getElementById("tab-canonical-subj4")) return;
     state.sess = getSession();
@@ -1012,10 +1032,19 @@
       state.overlay = parts[1];
       state.cidBySubj = parts[2].cidBySubj || {};
       state.ccnBySubj = parts[2].ccnBySubj || {};
+      // Apply any pending quickstart hint stashed before init (refresh case).
+      if (window.CPL_QS) applyQsHint(window.CPL_QS.consume(QS_TAB));
       // Toolbar is built once at init. Subsequent state changes only
       // re-render the table (render()); the search input keeps focus.
       renderToolbar();
       render();
+    });
+    // Subscribe to runtime hints (quickstart fires after the tab is already
+    // mounted — most common path). Rebuild the toolbar so the hinted filter
+    // is visible in the dropdown chrome too.
+    window.addEventListener("cpl-qs-hint", function (e) {
+      if (!e || !e.detail || e.detail.tab !== QS_TAB) return;
+      if (applyQsHint(e.detail.hint)) { renderToolbar(); render(); }
     });
   }
 
