@@ -127,6 +127,20 @@ def main():
     today_card_count = len(today_keys)
     print(f"\nToday's EACR cards (raw title grouping): {today_card_count:,}")
 
+    # ── Build the same exact→stripped lookup the generator uses ──
+    # kb/unified_titles.json keys preserve the raw MAP whitespace (the classifier
+    # never .strip()s before saving). Most EACR call sites .strip() the raw_title
+    # before lookup, so we mirror the generator's behaviour: try exact match
+    # first, then fall back to the stripped variant. Without this fallback the
+    # dry-run over-reports unclassified raw titles (the 194 vs 58 discrepancy
+    # caught on 2026-05-26 — see PR description for #127).
+    unified_lookup = {}
+    for raw_key, entry in unified_titles.items():
+        unified_lookup[raw_key] = entry
+        stripped = raw_key.strip()
+        if stripped and stripped != raw_key and stripped not in unified_lookup:
+            unified_lookup[stripped] = entry
+
     # ── PASS 2: proposed grouping (unified_title, issuing_agency, CPL, Collab) ──
     # For raw titles missing from unified_titles.json, keep raw-title grouping
     # (preserves coverage). For raw titles whose unified_title has no credentials
@@ -162,8 +176,8 @@ def main():
         artic = (row[i_artic] or "").strip()
         top = (row[i_top] or "").strip()
 
-        # KB lookup
-        ut_entry = unified_titles.get(raw_title)
+        # KB lookup — exact (matches classifier's un-stripped storage) then stripped
+        ut_entry = unified_lookup.get(row[i_title] or "") or unified_lookup.get(raw_title)
         if ut_entry:
             unified_title = ut_entry.get("unified_title") or raw_title
             conf_title = ut_entry.get("confidence_title") or 0.0
