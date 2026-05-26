@@ -368,6 +368,52 @@
         .qs-status-pending { color: #666; }
         .qs-status-ok { color: #1f7a3a; font-style: normal; font-weight: 600; }
         .qs-status-error { color: #c92121; font-style: normal; font-weight: 600; }
+        /* Typeahead suggestion dropdown — surfaces matching CPL projects
+           and dashboard tabs as the user types ≥2 chars. Clicking a
+           suggestion bypasses the AI router (which is slower + less
+           specific) and jumps the user directly to the named item. */
+        .qs-suggest {
+            position: relative;
+        }
+        .qs-suggest-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #d0d0d0;
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            z-index: 100;
+            max-height: 280px;
+            overflow-y: auto;
+            display: none;
+        }
+        .qs-suggest-list.qs-open { display: block; }
+        .qs-suggest-item {
+            padding: 0.4rem 0.7rem;
+            cursor: pointer;
+            font-size: 0.88rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+        .qs-suggest-item:hover,
+        .qs-suggest-item.qs-active {
+            background: #f4f1e3;
+        }
+        .qs-suggest-name { color: #0A2240; }
+        .qs-suggest-meta { color: #888; font-size: 0.78rem; white-space: nowrap; }
+        /* Brief highlight on the card the user navigated to via typeahead. */
+        @keyframes qsCardFlash {
+            0%   { box-shadow: 0 0 0 3px rgba(201,168,76,0.85); }
+            100% { box-shadow: 0 0 0 0   rgba(201,168,76,0); }
+        }
+        .project-card.qs-flash {
+            animation: qsCardFlash 1.6s ease-out;
+        }
         /* Pulse the active tab button when the quick-start chat routes you to
            the tab you're already on (otherwise the hash-set is a silent no-op
            and the user sees no feedback). */

@@ -52,12 +52,18 @@
   // the only thing to be careful about.
   var HINT_VOCAB = {
     'dashboard': {
+      // Direct-jump to a specific project card. Use this when the user
+      // names a project (e.g. "Apprenticeship Sprint", "MAP Platform
+      // Development") — must be an EXACT project name from CPL_DATA.
+      // Bypasses the search filter, scrolls to + briefly highlights the
+      // matching card. Preferred over `search` when the user is asking
+      // for ONE specific project.
+      scroll_to: '<exact project name, e.g. "Apprenticeship Sprint">',
       // Free-text search against the projects grid (matches project titles +
-      // activity names). Use this when the user names a specific CPL project
-      // or initiative — e.g. "apprenticeship initiative", "AI in CPL",
-      // "MAP optimization" — so the destination tab opens with the search
-      // box pre-populated and the grid filtered.
-      search: '<free-form search string, e.g. "apprenticeship", "AI", "Veterans">',
+      // activity names). Use this when the user describes a THEME rather
+      // than a specific project — e.g. "AI work" or "Veterans-related
+      // projects" — so the grid filters but doesn't single out one card.
+      search: '<free-form search string, e.g. "AI", "Veterans">',
       // Optional category filters. Use these when the user names a workplan
       // structure (e.g. "show me Activity 3" or "Goal 2 projects").
       activity: ['Activity 1', 'Activity 2', 'Activity 3', 'Activity 4', 'Activity 5'],
@@ -150,7 +156,7 @@
       buildHintVocabBlock(),
       '',
       'Examples:',
-      '  "apprenticeship initiative" → {"tab":"dashboard","filter_hint":{"search":"apprenticeship"},"message":"Opening Dashboard filtered to the apprenticeship initiative."}',
+      '  "apprenticeship sprint" → {"tab":"dashboard","filter_hint":{"scroll_to":"Apprenticeship Sprint"},"message":"Jumping to the Apprenticeship Sprint project."}',
       '  "show me Activity 3 projects" → {"tab":"dashboard","filter_hint":{"activity":"Activity 3"},"message":"Opening Dashboard filtered to Activity 3."}',
       '  "AI in CPL" → {"tab":"dashboard","filter_hint":{"search":"AI"},"message":"Opening Dashboard filtered to AI-related projects."}',
       '  "review unclassified credentials" → {"tab":"credential-reference","filter_hint":{"audit_tag":"unclassified_in_map"},"message":"Opening Credential Reference with the unclassified-in-MAP queue."}',
@@ -274,6 +280,53 @@
     return n;
   }
 
+  // Build the typeahead directory from CPL_DATA — list of {kind, label, meta, hint}.
+  // hint is what we pass to navigateTo(): {tab: <hash>, filter_hint?: {...}}.
+  // Projects: kind='project', dashboard tab + scroll_to filter_hint (Part 2).
+  // Tabs:    kind='tab', no filter_hint, just direct navigation.
+  function buildSuggestionDirectory() {
+    var entries = [];
+    var projects = (window.CPL_DATA && window.CPL_DATA.projects) || [];
+    projects.forEach(function (p) {
+      if (!p || !p.name) return;
+      entries.push({
+        kind: 'project',
+        label: p.name,
+        meta: p.activity ? String(p.activity).replace(/^Activity\s+/i, 'A') : '',
+        hint: {tab: 'dashboard', filter_hint: {scroll_to: p.name}},
+        // Searchable text includes id (e.g. "4.1.2") so curators can find by code.
+        searchable: ((p.id || '') + ' ' + p.name + ' ' + (p.activity || '')).toLowerCase(),
+      });
+    });
+    // Surface the tabs themselves too — typing "budget" or "letters" should
+    // suggest the destination tab as a quick-jump option.
+    TABS.forEach(function (t) {
+      entries.push({
+        kind: 'tab',
+        label: t.label,
+        meta: 'Tab',
+        hint: {tab: t.hash},
+        searchable: (t.hash + ' ' + t.label + ' ' + (t.desc || '')).toLowerCase(),
+      });
+    });
+    return entries;
+  }
+
+  function matchSuggestions(directory, q, limit) {
+    if (!q || q.length < 2) return [];
+    var needle = q.toLowerCase();
+    // Project/tab name prefix-match beats contains-match, so a typo like
+    // "appren" surfaces "Apprenticeship Sprint" above projects that merely
+    // mention apprentices in their description.
+    var prefix = [], contains = [];
+    directory.forEach(function (e) {
+      var labelLower = e.label.toLowerCase();
+      if (labelLower.indexOf(needle) === 0) prefix.push(e);
+      else if (e.searchable.indexOf(needle) !== -1) contains.push(e);
+    });
+    return prefix.concat(contains).slice(0, limit || 6);
+  }
+
   function buildWidget() {
     var wrap = el('div', {id: 'qs-chat', className: 'qs-chat'});
 
@@ -281,25 +334,82 @@
     wrap.appendChild(label);
 
     var row = el('div', {className: 'qs-row'});
+    var inputBox = el('div', {className: 'qs-suggest', style: {flex: '1 1 auto', minWidth: '0', position: 'relative'}});
     var input = el('input', {
       type: 'text',
       id: 'qs-input',
       className: 'qs-input',
-      placeholder: 'e.g. review credentials, check our discipline coverage, jump to budget…',
+      placeholder: 'e.g. apprenticeship sprint, budget, review credentials…',
       autocomplete: 'off',
       maxlength: '500',
     });
+    var suggestList = el('div', {id: 'qs-suggest-list', className: 'qs-suggest-list', role: 'listbox'});
+    inputBox.appendChild(input);
+    inputBox.appendChild(suggestList);
     var btn = el('button', {
       type: 'button',
       className: 'qs-go',
       'aria-label': 'Go',
     }, 'Go →');
-    row.appendChild(input);
+    row.appendChild(inputBox);
     row.appendChild(btn);
     wrap.appendChild(row);
 
     var status = el('div', {className: 'qs-status', id: 'qs-status', 'aria-live': 'polite'});
     wrap.appendChild(status);
+
+    // Suggestion-dropdown state — directory + selected-index for keyboard nav.
+    var directory = buildSuggestionDirectory();
+    var activeSuggestions = [];
+    var activeIdx = -1;
+
+    function closeSuggest() {
+      suggestList.classList.remove('qs-open');
+      suggestList.innerHTML = '';
+      activeSuggestions = [];
+      activeIdx = -1;
+    }
+    function refreshSuggest() {
+      var q = (input.value || '').trim();
+      activeSuggestions = matchSuggestions(directory, q, 6);
+      if (!activeSuggestions.length) { closeSuggest(); return; }
+      suggestList.innerHTML = '';
+      activeSuggestions.forEach(function (s, i) {
+        var item = el('div', {className: 'qs-suggest-item', role: 'option', 'data-idx': String(i)});
+        item.appendChild(el('span', {className: 'qs-suggest-name'}, s.label));
+        if (s.meta) item.appendChild(el('span', {className: 'qs-suggest-meta'}, s.meta));
+        item.addEventListener('mousedown', function (ev) {
+          // mousedown not click — click fires after blur, which would close
+          // the dropdown before the handler runs.
+          ev.preventDefault();
+          pick(i);
+        });
+        suggestList.appendChild(item);
+      });
+      activeIdx = -1;
+      suggestList.classList.add('qs-open');
+    }
+    function setActive(idx) {
+      var items = suggestList.querySelectorAll('.qs-suggest-item');
+      items.forEach(function (it, i) { it.classList.toggle('qs-active', i === idx); });
+      activeIdx = idx;
+      if (idx >= 0 && items[idx]) items[idx].scrollIntoView({block: 'nearest'});
+    }
+    function pick(i) {
+      var s = activeSuggestions[i];
+      if (!s) return;
+      closeSuggest();
+      input.value = s.label;
+      try { sessionStorage.setItem(STORAGE_KEY, s.label); } catch (e) { /* ignore */ }
+      setStatus('Jumping to ' + s.label + '…', 'ok');
+      // Direct-jump — bypass the AI router. The router is for fuzzy intent;
+      // suggestions are exact picks.
+      setTimeout(function () {
+        if (s.hint.filter_hint) stashAndDispatch(s.hint.tab, s.hint.filter_hint);
+        navigateTo(s.hint.tab);
+        input.focus();
+      }, 200);
+    }
 
     // Last-typed memory (just to spare the next visit)
     var last = '';
@@ -338,8 +448,37 @@
       }
     }
 
+    input.addEventListener('input', refreshSuggest);
+    input.addEventListener('focus', refreshSuggest);
+    input.addEventListener('blur', function () {
+      // Delay so a mousedown on a suggestion fires before the list closes.
+      setTimeout(closeSuggest, 150);
+    });
+
     btn.addEventListener('click', submit);
     input.addEventListener('keydown', function (ev) {
+      // Keyboard navigation through the suggestion dropdown.
+      if (suggestList.classList.contains('qs-open') && activeSuggestions.length) {
+        if (ev.key === 'ArrowDown') {
+          ev.preventDefault();
+          setActive((activeIdx + 1) % activeSuggestions.length);
+          return;
+        }
+        if (ev.key === 'ArrowUp') {
+          ev.preventDefault();
+          setActive(activeIdx <= 0 ? activeSuggestions.length - 1 : activeIdx - 1);
+          return;
+        }
+        if (ev.key === 'Escape') {
+          closeSuggest();
+          return;
+        }
+        if (ev.key === 'Enter' && activeIdx >= 0) {
+          ev.preventDefault();
+          pick(activeIdx);
+          return;
+        }
+      }
       if (ev.key === 'Enter') { ev.preventDefault(); submit(); }
     });
 
