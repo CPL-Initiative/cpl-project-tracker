@@ -257,6 +257,34 @@ function resetFilters() {
                 }
             }
         }
+        // scroll_to: exact-match navigation to a specific project card by
+        // project name (the .project-name text). Bypasses the filter — the
+        // user picked a specific project from the typeahead, we know
+        // exactly which card they want. Scrolls, flashes, no filter churn.
+        if (typeof hint.scroll_to === 'string' && hint.scroll_to.trim()) {
+            var target = hint.scroll_to.trim().toLowerCase();
+            var cards = document.querySelectorAll('#tab-dashboard .project-card');
+            var hit = null;
+            for (var ci = 0; ci < cards.length; ci++) {
+                var nm = cards[ci].querySelector('.project-name');
+                if (nm && nm.textContent.trim().toLowerCase() === target) { hit = cards[ci]; break; }
+            }
+            if (hit) {
+                // Defer one frame so any pane-switch / layout settles first.
+                setTimeout(function () {
+                    hit.scrollIntoView({behavior: 'smooth', block: 'center'});
+                    hit.classList.remove('qs-flash');
+                    void hit.offsetWidth; // force reflow to restart the animation
+                    hit.classList.add('qs-flash');
+                    setTimeout(function () { hit.classList.remove('qs-flash'); }, 1700);
+                }, 80);
+                return; // scroll_to is the whole behavior; no filter mutations
+            }
+            // Card not found — fall through to plain search-filter as a fallback
+            // so the user still sees something rather than a silent no-op.
+            var sbFall = document.getElementById('searchBox');
+            if (sbFall) { sbFall.value = hint.scroll_to.trim(); changed = true; }
+        }
         if (typeof hint.search === 'string' && hint.search.trim()) {
             var sbEl = document.getElementById('searchBox');
             if (sbEl) { sbEl.value = hint.search.trim(); changed = true; }
