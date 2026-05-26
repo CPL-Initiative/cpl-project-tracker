@@ -1,0 +1,370 @@
+{
+  "_meta": {
+    "generated_at": "2026-05-26",
+    "purpose": "unified_titles with 2+ issuing_agency records — each becomes a separate EACR card per vision §6.1.",
+    "active_multi_issuer_count": 19,
+    "additional_cards_introduced": 22
+  },
+  "cases": [
+    {
+      "unified_title": "Advanced Agricultural Welding",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 0.7,
+          "_notes": null
+        },
+        {
+          "issuing_agency": "American Council on Education (ACE)",
+          "training_agency": "U.S. Armed Forces",
+          "confidence_issuer": 0.8,
+          "_notes": "Military credit pathway via JST/ACE evaluation."
+        }
+      ]
+    },
+    {
+      "unified_title": "Building Construction for Fire Protection",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 0.5,
+          "_notes": "FESHE core."
+        },
+        {
+          "issuing_agency": "California State Fire Training (SFT)",
+          "training_agency": null,
+          "confidence_issuer": 0.75,
+          "_notes": "Same fire protection course taught at SFT levels."
+        }
+      ]
+    },
+    {
+      "unified_title": "CDCR Corrections Officer Academy",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": "California Department of Corrections and Rehabilitation (CDCR)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "_notes": null
+        },
+        {
+          "issuing_agency": "California Department of Corrections and Rehabilitation (CDCR) / Corrections Standards Authority (CPOST)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "_notes": "CDCR/CPOST apprenticeship; same correctional officer credential."
+        }
+      ]
+    },
+    {
+      "unified_title": "Certified Payroll Professional (CPP)",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": "American Payroll Association (PayrollOrg)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "_notes": null
+        },
+        {
+          "issuing_agency": "PayrollOrg",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "_notes": "Formerly American Payroll Association."
+        }
+      ]
+    },
+    {
+      "unified_title": "EMT Certification",
+      "issuer_count": 3,
+      "issuers": [
+        {
+          "issuing_agency": "California Emergency Medical Services Authority (EMSA)",
+          "training_agency": null,
+          "confidence_issuer": 0.7,
+          "_notes": "Prerequisite-language title combining EMT + BLS; cluster primarily with EMT (Rule 5b)."
+        },
+        {
+          "issuing_agency": "American Council on Education (ACE)",
+          "training_agency": "U.S. Armed Forces",
+          "confidence_issuer": 0.75,
+          "_notes": "Military JST pathway."
+        },
+        {
+          "issuing_agency": "National Registry of Emergency Medical Technicians (NREMT)",
+          "training_agency": null,
+          "confidence_issuer": 0.97,
+          "_notes": null
+        }
+      ]
+    },
+    {
+      "unified_title": "Fire Inspector I",
+      "issuer_count": 4,
+      "issuers": [
+        {
+          "issuing_agency": "National Fire Protection Association (NFPA)",
+          "training_agency": null,
+          "confidence_issuer": 0.85,
+          "_notes": "Level unspecified; default to Inspector I."
+        },
+        {
+          "issuing_agency": "International Code Council (ICC)",
+          "training_agency": null,
+          "confidence_issuer": 0.97,
+          "_notes": "ICC issuer per Rule 4 — Fire Inspector I unified across issuers."
+        },
+        {
+          "issuing_agency": "California State Fire Training (SFT)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "_notes": "Unified with ICC/NFPA Fire Inspector I per Rule 4."
+        },
+        {
+          "issuing_agency": "California Joint Apprenticeship Committee (Cal-JAC)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "_notes": "Unify across issuers per Rule 4."
+        }
+      ]
+    },
+    {
+      "unified_title": "Fire Instructor 1",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": "California State Fire Training (SFT)",
+          "training_agency": "California Department of Forestry and Fire Protection (CAL FIRE)",
+          "confidence_issuer": 0.75,
+          "_notes": null
+        },
+        {
+          "issuing_agency": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+          "training_agency": null,
+          "confidence_issuer": 0.85,
+          "_notes": "NFPA 1041 Instructor 1 issued via IFSAC or Pro Board."
+        }
+      ]
+    },
+    {
+      "unified_title": "First Responder with Healthcare Provider CPR",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 0.7,
+          "_notes": "Local EMS 350; CPR aligned with AHA Healthcare Provider."
+        },
+        {
+          "issuing_agency": "American Heart Association (AHA)",
+          "training_agency": null,
+          "confidence_issuer": 0.7,
+          "_notes": "Industry cert pathway likely AHA BLS Healthcare Provider."
+        }
+      ]
+    },
+    {
+      "unified_title": "Fundamental Payroll Certification (FPC)",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": "American Payroll Association (APA)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "_notes": null
+        },
+        {
+          "issuing_agency": "PayrollOrg",
+          "training_agency": "PayrollOrg",
+          "confidence_issuer": 0.95,
+          "_notes": "Boot camp is training; underlying credential is FPC."
+        }
+      ]
+    },
+    {
+      "unified_title": "Human Anatomy",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 0.7,
+          "_notes": "Generic subject title; likely local exhibit."
+        },
+        {
+          "issuing_agency": "American Council on Education (ACE)",
+          "training_agency": "U.S. Armed Forces",
+          "confidence_issuer": 0.75,
+          "_notes": "Military pathway — assumes JST/ACE-recommended military training maps to this anatomy course."
+        }
+      ]
+    },
+    {
+      "unified_title": "IB Mathematics HL",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": "International Baccalaureate (IB)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "_notes": "Version qualifier stripped per Rule 3."
+        },
+        {
+          "issuing_agency": "International Baccalaureate Organization (IBO)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "_notes": "Legacy IB Math HL (pre-2021 curriculum split)."
+        }
+      ]
+    },
+    {
+      "unified_title": "IB Mathematics: Analysis and Approaches HL",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": "International Baccalaureate Organization (IBO)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "_notes": "Score qualifier stripped."
+        },
+        {
+          "issuing_agency": "International Baccalaureate (IB)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "_notes": "Score qualifier stripped per Rule 1."
+        }
+      ]
+    },
+    {
+      "unified_title": "IB Mathematics: Applications and Interpretation HL",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": "International Baccalaureate Organization (IBO)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "_notes": "Score qualifier stripped."
+        },
+        {
+          "issuing_agency": "International Baccalaureate (IB)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "_notes": "Score qualifier stripped."
+        }
+      ]
+    },
+    {
+      "unified_title": "IB Physics HL",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": "International Baccalaureate Organization (IBO)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "_notes": null
+        },
+        {
+          "issuing_agency": "International Baccalaureate (IB)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "_notes": "Score qualifier stripped."
+        }
+      ]
+    },
+    {
+      "unified_title": "IB Psychology HL",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": "International Baccalaureate Organization (IBO)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "_notes": "Score qualifier stripped."
+        },
+        {
+          "issuing_agency": "International Baccalaureate (IB)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "_notes": "Score qualifier stripped."
+        }
+      ]
+    },
+    {
+      "unified_title": "IB Theatre HL",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": "International Baccalaureate Organization (IBO)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "_notes": null
+        },
+        {
+          "issuing_agency": "International Baccalaureate (IB)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "_notes": "Score qualifier stripped."
+        }
+      ]
+    },
+    {
+      "unified_title": "Legal Aspects of Real Estate",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "_notes": "Local real estate course; CBE mechanism stripped."
+        },
+        {
+          "issuing_agency": "California Department of Real Estate (DRE)",
+          "training_agency": null,
+          "confidence_issuer": 0.7,
+          "_notes": null
+        }
+      ]
+    },
+    {
+      "unified_title": "Medical Terminology",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 0.6,
+          "_notes": "Industry Cert path implies an external medical terminology certification (AMCA/NHA possible); kept generic."
+        },
+        {
+          "issuing_agency": "California Board of Vocational Nursing and Psychiatric Technicians (BVNPT)",
+          "training_agency": null,
+          "confidence_issuer": 0.7,
+          "_notes": "LVN licensure pathway."
+        }
+      ]
+    },
+    {
+      "unified_title": "Real Estate Principles",
+      "issuer_count": 2,
+      "issuers": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "_notes": null
+        },
+        {
+          "issuing_agency": "California Department of Real Estate (DRE)",
+          "training_agency": null,
+          "confidence_issuer": 0.7,
+          "_notes": null
+        }
+      ]
+    }
+  ]
+}
