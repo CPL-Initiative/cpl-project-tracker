@@ -86,6 +86,11 @@
   var disciplines = unique(exhibits.map(function (e) { return e.discipline || "Unknown"; }));
   var sectors = unique(exhibits.map(function (e) { return e.sector || "Unassigned"; }));
   var collabTypes = unique(exhibits.map(function (e) { return e.collaborative_type || "Local"; }));
+  // Issuing agencies — only collect non-empty (cards without an issuer skip the filter).
+  // Added by EACR Phase 4 PR-C2 once the generator started emitting e.issuing_agency.
+  var issuers = unique(exhibits.map(function (e) { return e.issuing_agency || ""; }).filter(Boolean));
+  // Vision §6.2 — cards with modal confidence_title below this threshold get a "needs review" badge.
+  var CONFIDENCE_THRESHOLD = 0.75;
 
   // Collect all college names across adopters + potential
   var allColleges = {};
@@ -108,7 +113,7 @@
   // ── State ──
   var state = {
     search: "",
-    filters: { collabType: [], cplType: [], sector: [], discipline: [], college: [], district: [], swRegion: [] },
+    filters: { collabType: [], cplType: [], sector: [], discipline: [], issuer: [], college: [], district: [], swRegion: [] },
     selected: {},
     expanded: {},
     flags: {},   // eid → { flag: "stale" | "duplicate" | "", reviewed_by, reviewed_at }
@@ -138,6 +143,7 @@
     if (f.cplType.length && f.cplType.indexOf(e.cpl_type || "Unknown") === -1) return false;
     if (f.sector.length && f.sector.indexOf(e.sector || "Unassigned") === -1) return false;
     if (f.discipline.length && f.discipline.indexOf(e.discipline || "Unknown") === -1) return false;
+    if (f.issuer.length && f.issuer.indexOf(e.issuing_agency || "") === -1) return false;
     if (f.college.length || f.district.length || f.swRegion.length) {
       var names = (e.adopter_names || []).concat(e.potential_names || []);
       if (!names.some(collegeMatchesFilters)) return false;
@@ -145,7 +151,9 @@
     if (state.search) {
       var q = state.search.toLowerCase();
       var hay = (e.title || "") + " " + (e.cpl_type || "") + " " + (e.discipline || "") + " " +
-        (e.collaborative_type || "") + " " + (e.adopter_names || []).join(" ") + " " +
+        (e.collaborative_type || "") + " " + (e.issuing_agency || "") + " " +
+        (e.raw_titles || []).join(" ") + " " +
+        (e.adopter_names || []).join(" ") + " " +
         (e.potential_names || []).join(" ");
       if (hay.toLowerCase().indexOf(q) === -1) return false;
     }
@@ -190,6 +198,7 @@
     html += buildFilterButton("cplType", "CPL Type", cplTypes);
     html += buildFilterButton("sector", "Career Cluster", sectors);
     html += buildFilterButton("discipline", "TOP Code Category", disciplines);
+    if (issuers.length) html += buildFilterButton("issuer", "Issuing Agency", issuers);
     html += buildFilterButton("college", "College", collegeNames);
     html += buildFilterButton("district", "District", districts);
     html += buildFilterButton("swRegion", "SW Region", swRegions);
@@ -341,9 +350,35 @@
         flagCell = '<span class="sw-flag-none" title="Sign in via the Common Course Reference tab to flag cards.">—</span>';
       }
 
+      // Title cell — PR-C2 layout: unified_title + issuer subtitle + confidence/quality badges
+      // + "Also entered as N variants" disclosure when ≥2 raw titles fold into this card.
+      var titleBits = '<div class="exhibit-cell-name">' + esc(e.title) + '</div>';
+      var badgeBits = '';
+      if (e.is_classified === false) {
+        // Raw-fallback card — no KB classification at all. Surface for curator triage.
+        badgeBits += '<span class="sw-conf-badge sw-conf-low" title="Raw exhibit title — no entry in the credential KB yet.">unclassified</span>';
+      } else if ((e.confidence_title || 0) > 0 && (e.confidence_title || 0) < CONFIDENCE_THRESHOLD) {
+        badgeBits += '<span class="sw-conf-badge" title="Modal title confidence ' + (e.confidence_title || 0).toFixed(2) + ' (threshold ' + CONFIDENCE_THRESHOLD.toFixed(2) + ' per vision §6.2).">needs review · ' + (e.confidence_title || 0).toFixed(2) + '</span>';
+      }
+      if (e.quality_flag === "suspect_course_as_exhibit") {
+        badgeBits += '<span class="sw-quality-badge" title="At least one raw row was typed Industry Certification but appears to be a course with no associated credential (data-entry artifact).">⚠ course-as-exhibit</span>';
+      }
+      if (badgeBits) titleBits += '<div class="sw-title-badges">' + badgeBits + '</div>';
+      if (e.issuing_agency) {
+        titleBits += '<div class="sw-issuer-subtitle">' + esc(e.issuing_agency) +
+          (e.training_agency ? ' · trainer: ' + esc(e.training_agency) : '') + '</div>';
+      }
+      var rawTitles = e.raw_titles || [];
+      if (rawTitles.length >= 2) {
+        titleBits += '<details class="sw-also-entered"><summary>Also entered as ' + (rawTitles.length) + ' variants</summary>' +
+          '<ul class="sw-raw-titles">' +
+          rawTitles.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') +
+          '</ul></details>';
+      }
+
       rows.push('<tr class="' + (state.selected[eid] ? 'sw-row-selected' : '') + '" data-eid="' + escAttr(eid) + '">' +
         '<td><input type="checkbox" class="sw-chk sw-row-chk"' + checked + ' /></td>' +
-        '<td style="max-width:350px;"><div class="exhibit-cell-name">' + esc(e.title) + '</div>' + recsHtml + '</td>' +
+        '<td style="max-width:350px;">' + titleBits + recsHtml + '</td>' +
         '<td>' + typeBadge + '</td>' +
         '<td>' + esc(e.cpl_type || "") + '</td>' +
         '<td>' + esc(e.discipline || "") + '</td>' +

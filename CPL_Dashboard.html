@@ -1501,6 +1501,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 .cpl-analytics-body,
 .activity-kpi-body {
@@ -1626,6 +1629,84 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-weight: 600;
+}
+/* EACR Phase 4 PR-C2 — supporting elements around the unified-title card name. */
+.sw-issuer-subtitle {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 1px;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 280px;
+}
+.sw-title-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 2px;
+}
+.sw-conf-badge, .sw-quality-badge {
+    display: inline-block;
+    font-size: 0.58rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+}
+.sw-conf-badge {
+    background: rgba(201,168,76,0.18);
+    color: #C9A84C;
+    border: 1px solid rgba(201,168,76,0.4);
+}
+.sw-conf-low {
+    background: rgba(201,80,80,0.18);
+    color: #e8a3a3;
+    border-color: rgba(201,80,80,0.4);
+}
+.sw-quality-badge {
+    background: rgba(201,80,80,0.15);
+    color: #e8a3a3;
+    border: 1px solid rgba(201,80,80,0.3);
+}
+.sw-also-entered {
+    margin-top: 3px;
+}
+.sw-also-entered > summary {
+    font-size: 0.7rem;
+    color: rgba(155,188,216,0.85);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+.sw-also-entered > summary::before {
+    content: "▸ ";
+    font-size: 0.65rem;
+    transition: transform 0.15s;
+    display: inline-block;
+}
+.sw-also-entered[open] > summary::before {
+    transform: rotate(90deg);
+}
+.sw-also-entered > summary:hover {
+    color: #C9A84C;
+}
+.sw-raw-titles {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0 0 0 14px;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.6);
+}
+.sw-raw-titles li {
+    padding: 1px 0;
+    border-left: 1px solid rgba(155,188,216,0.2);
+    padding-left: 6px;
+    margin-left: -8px;
+    white-space: normal;
+    line-height: 1.35;
 }
 .exhibit-cell-num {
     text-align: right;
@@ -1914,8 +1995,10 @@
         
         
         
-        <div class="last-updated">Last Updated: May 26, 2026 at 8:03 AM PT</div>
+        
+        <div class="last-updated">Last Updated: May 26, 2026 at 8:29 AM PT</div>
         <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:#C9A84C;border:1px solid #C9A84C;padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='#C9A84C';this.style.color='#0A2240'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='#C9A84C'}">&#x21bb; Refresh Today&#39;s Data</button></div>
+        
         
         
         
@@ -6646,6 +6729,7 @@
 
 
 
+
         </div>
         <!-- /main-container for Dashboard tab -->
 
@@ -8118,7 +8202,7 @@ Cont</td>
         </div>
         <!-- End Annual Workplan Goals -->
 
-                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                </div>
         <!-- /main-container for Workplan Goals tab -->
     </div>
     <!-- /tab-workplan-goals -->
@@ -8192,6 +8276,7 @@ Cont</td>
             </div>
         </div>
         <!-- End Vision 2030 Section -->
+        
         
         
         
@@ -8697,8 +8782,8 @@ Cont</td>
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "May 26, 2026 at 8:03 AM PT",
-  "data_as_of": "May 26, 2026 at 8:03 AM PT",
+  "last_updated": "May 26, 2026 at 8:29 AM PT",
+  "data_as_of": "May 26, 2026 at 8:29 AM PT",
   "kpis": {
     "cumulative_students": {
       "value": "45,838",
