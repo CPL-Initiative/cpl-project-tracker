@@ -16,7 +16,7 @@
   'use strict';
 
   // ── Config ──
-  var MODEL = 'claude-sonnet-4-5-20250929'; // same as report_generator.js
+  var MODEL = 'claude-haiku-4-5-20251001'; // routing is 1-of-8 classification, Haiku is plenty
   var MAX_TOKENS = 256;                     // routing JSON is small
   var PROXY_URL = window.CPL_REPORT_PROXY_URL || '';
   var STORAGE_KEY = 'cpl_quickstart_last';  // last user input (for /reuse niceties)
@@ -182,7 +182,7 @@
         setStatus(routed.message || ('Going to ' + routed.tab + '…'), 'ok');
         // Brief pause so the user sees the confirmation before the tab swaps.
         setTimeout(function () {
-          location.hash = routed.tab;
+          navigateTo(routed.tab);
           btn.disabled = false; input.disabled = false;
           input.focus();
         }, 350);
@@ -198,6 +198,29 @@
     });
 
     return wrap;
+  }
+
+  // Navigate to a tab. If the user is already on that tab, setting
+  // location.hash to the same value is a no-op (no hashchange event fires),
+  // so the user gets no visual feedback. Anchor the eye with a scroll-to-top
+  // + a brief pulse on the matching nav button instead.
+  function navigateTo(tabHash) {
+    var current = (location.hash || '').replace(/^#/, '');
+    if (current === tabHash) {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+      var navBtn = document.querySelector('nav.cpl-tabs button[data-tab="' + tabHash + '"]');
+      if (navBtn) {
+        navBtn.classList.remove('qs-pulse');     // restart animation if already mid-pulse
+        void navBtn.offsetWidth;                 // force reflow
+        navBtn.classList.add('qs-pulse');
+        setTimeout(function () { navBtn.classList.remove('qs-pulse'); }, 1100);
+      }
+    } else {
+      location.hash = tabHash;
+      // Also scroll to top so the user lands on the section header, not where
+      // they were scrolled on the previous tab.
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
   }
 
   function mount() {
