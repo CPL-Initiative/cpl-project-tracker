@@ -124,7 +124,7 @@ def fetch_old_flags():
     status, body = supabase_request(
         "GET", "/kb_curation",
         params={
-            "select": "course_id,field,value,reviewed_by,reviewed_at",
+            "select": "course_id,field,value,reviewer_email,reviewed_at",
             "course_id": f"like.{urllib.parse.quote(FLAG_PREFIX)}%",
             "field": "eq.flag",
         },
@@ -183,7 +183,7 @@ def main():
         new_key, via = map_old_to_new(old_key, by_merged_id, by_title)
         if new_key is None:
             unmatched.append({"old_key": old_key, "value": row.get("value"),
-                              "reviewed_by": row.get("reviewed_by")})
+                              "reviewer_email": row.get("reviewer_email")})
             continue
         plans.append({
             "old_key": old_key,
@@ -216,14 +216,14 @@ def main():
     if unmatched:
         print("\nFirst 5 unmatched flag keys (the raw card no longer exists in current MAP data):")
         for u in unmatched[:5]:
-            print(f"  - {u['old_key'][:100]!r}  ({u['value']}, by {u.get('reviewed_by')})")
+            print(f"  - {u['old_key'][:100]!r}  ({u['value']}, by {u.get('reviewer_email')})")
 
     if conflicts:
         print("\n*** CONFLICTS — re-mint playbook says HALT here ***")
         for c in conflicts[:10]:
             print(f"  new_key: {c['new_key'][:80]}…")
             for m in c["members"]:
-                print(f"     ← {m['old_key'][:60]!r}  flag={m['flag_value']!r}  by={(m['row'].get('reviewed_by') or '')}")
+                print(f"     ← {m['old_key'][:60]!r}  flag={m['flag_value']!r}  by={(m['row'].get('reviewer_email') or '')}")
         if not args.dry_run:
             raise SystemExit(
                 "\nABORTING — resolve flag-value conflicts manually before re-running.\n"
@@ -251,7 +251,7 @@ def main():
             "course_id": new_full,
             "field": "flag",
             "value": p["flag_value"],
-            "reviewed_by": row.get("reviewed_by"),
+            "reviewer_email": row.get("reviewer_email"),
             "reviewed_at": row.get("reviewed_at") or datetime.utcnow().isoformat(),
         }
         status, body = supabase_request(
