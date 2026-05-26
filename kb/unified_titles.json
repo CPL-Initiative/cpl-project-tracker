@@ -4511,6 +4511,20 @@
     "quality_flag": null,
     "_notes": null
   },
+  "AP Exam Calculus AB (Score 3-5) ": {
+    "unified_title": "AP Calculus AB",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AECA3-1-001",
+      "MAPSAS-AECA4-1-001",
+      "MAPSAS-AECA5-1-001"
+    ],
+    "_notes": null
+  },
   "AP Exam Calculus BC": {
     "unified_title": "AP Calculus BC",
     "confidence_title": 0.98,
@@ -4537,6 +4551,31 @@
     "quality_flag": null,
     "_notes": null
   },
+  "AP Exam Calculus BC (Score 3-5) ": {
+    "unified_title": "AP Calculus BC",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AECB3-1-001",
+      "MAPSAS-AECB5-1-001"
+    ],
+    "_notes": null
+  },
+  "AP Exam Calculus BC/AB Sub-score (Score 3-5)": {
+    "unified_title": "AP Calculus BC",
+    "confidence_title": 0.82,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AECB4-1-001"
+    ],
+    "_notes": "Refers to the AB subscore reported on the BC exam; unified with AP Calculus BC."
+  },
   "AP Exam Chemistry (Score 3-5)": {
     "unified_title": "AP Chemistry",
     "confidence_title": 0.98,
@@ -4548,6 +4587,18 @@
       "MAPSAS-AC4-1-001"
     ],
     "quality_flag": null,
+    "_notes": null
+  },
+  "AP Exam Chemistry (Score 3-5) ": {
+    "unified_title": "AP Chemistry",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AEC(-1-001"
+    ],
     "_notes": null
   },
   "AP Exam Comparative Government and Politics (Score 3-5)": {
@@ -4862,6 +4913,18 @@
     "quality_flag": null,
     "_notes": null
   },
+  "AP Exam Physics C: Electricity and Magnetism (Score 4-5)": {
+    "unified_title": "AP Physics C: Electricity and Magnetism",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AEPC4-1-001"
+    ],
+    "_notes": null
+  },
   "AP Exam Physics C: Electricity and Magnetism Score of 3": {
     "unified_title": "AP Physics C: Electricity and Magnetism",
     "confidence_title": 0.98,
@@ -4888,6 +4951,18 @@
     "quality_flag": null,
     "_notes": null
   },
+  "AP Exam Physics C: Mechanics (Score 4-5)": {
+    "unified_title": "AP Physics C: Mechanics",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AEPC5-1-001"
+    ],
+    "_notes": null
+  },
   "AP Exam Physics C: Mechanics Score of 3": {
     "unified_title": "AP Physics C: Mechanics",
     "confidence_title": 0.98,
@@ -4912,6 +4987,18 @@
       "MAPSAS-AEPC3-1-001"
     ],
     "quality_flag": null,
+    "_notes": null
+  },
+  "AP Exam Precalculus (Score 3-5)": {
+    "unified_title": "AP Precalculus",
+    "confidence_title": 0.97,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AEP6-1-001"
+    ],
     "_notes": null
   },
   "AP Exam Psychology": {
@@ -4992,6 +5079,18 @@
     "quality_flag": null,
     "_notes": null
   },
+  "AP Exam Statistics (Score 3-5)": {
+    "unified_title": "AP Statistics",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AES12-1-001"
+    ],
+    "_notes": null
+  },
   "AP Exam United States Government and Politics": {
     "unified_title": "AP United States Government and Politics",
     "confidence_title": 0.98,
@@ -5043,6 +5142,18 @@
     ],
     "quality_flag": null,
     "_notes": "Rule 3: cohort/version variants collapse to one unified title."
+  },
+  "AP Exam World History: Modern (prior to Fall 2025) (Score 3-5)": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 0.96,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPSAS-AEWH6-1-001"
+    ],
+    "_notes": "Rule 3: version-cohort variants unified."
   },
   "AP Exam: Art History": {
     "unified_title": "AP Art History",
@@ -6693,14 +6804,13 @@
   },
   "AP Physics 1\tNatural Sciences - 4\tCredit for PHYS 2A ": {
     "unified_title": "AP Physics 1",
-    "confidence_title": 0.85,
+    "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
     "reviewed_at": null,
     "reviewed_by": null,
     "source_exhibit_ids": [],
-    "quality_flag": null,
-    "_notes": "Source title contained tab-separated articulation-area noise; stripped to core credential."
+    "_notes": "Stripped articulation-area and local course-credit suffixes."
   },
   "AP Physics 1 (Score of 3-5)": {
     "unified_title": "AP Physics 1",
@@ -9184,6 +9294,54 @@
     "quality_flag": "suspect_course_as_exhibit",
     "_notes": "Generic course-code title."
   },
+  "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam": {
+    "unified_title": "Automotive Electrical Schematic Diagnosis",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A6ES-1-001"
+    ],
+    "_notes": "Local De Anza college course; no external issuer."
+  },
+  "AUTO 60B: Automotive Electronics - Credit By Exam": {
+    "unified_title": "Automotive Electronics",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A6AE-1-001"
+    ],
+    "_notes": "Local De Anza college course."
+  },
+  "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam": {
+    "unified_title": "Automotive Suspension, Steering and Alignment",
+    "confidence_title": 0.78,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A6AS-1-001"
+    ],
+    "_notes": "Local De Anza college course."
+  },
+  "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam": {
+    "unified_title": "Wheel Alignment, Chassis Dynamics, and ADAS",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-A6WA-1-001"
+    ],
+    "_notes": "Local De Anza college course."
+  },
   "AWS CLOUD PRACTITIONER": {
     "unified_title": "AWS Certified Cloud Practitioner",
     "confidence_title": 0.97,
@@ -10454,6 +10612,18 @@
     "quality_flag": null,
     "_notes": "Local college art history course."
   },
+  "Artificial Intelligence: Prompt Engineering and AI Systems": {
+    "unified_title": "Artificial Intelligence: Prompt Engineering and AI Systems",
+    "confidence_title": 0.75,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-AIPE-1-001"
+    ],
+    "_notes": "Local Chaffey college course offered via CBE; no external issuer indicated."
+  },
   "Arts of Africa, Oceania, and Indigenous North America": {
     "unified_title": "Arts of Africa, Oceania, and Indigenous North America",
     "confidence_title": 0.85,
@@ -10675,6 +10845,30 @@
     ],
     "quality_flag": null,
     "_notes": "'ACE' is a typo for ASE; L1 is the advanced engine performance specialist test."
+  },
+  "Auto Service Excellence A6": {
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
+    "confidence_title": 0.92,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-ASEA3-1-001"
+    ],
+    "_notes": "A6 is the standard ASE Electrical/Electronic Systems subtest."
+  },
+  "Auto Service Excellence Master Auto Technician": {
+    "unified_title": "ASE Master Automobile Technician",
+    "confidence_title": 0.95,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-ASEM-1-001"
+    ],
+    "_notes": null
   },
   "Autodesk Certification for AutoCAD for Design and Drafting": {
     "unified_title": "Autodesk Certified User/Professional — AutoCAD",
@@ -12186,6 +12380,18 @@
     ],
     "quality_flag": null,
     "_notes": "Local course CBE."
+  },
+  "Basic Pharmacology": {
+    "unified_title": "Basic Pharmacology",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-BP-1-001"
+    ],
+    "_notes": "Local Chaffey course; generic title."
   },
   "Basic Power Saw Safety": {
     "unified_title": "Basic Power Saw Safety",
@@ -15912,6 +16118,18 @@
     "quality_flag": null,
     "_notes": "Military CPL type implies JST/ACE recommendation."
   },
+  "COMM C1000 Portfolio Review": {
+    "unified_title": "Public Speaking (COMM C1000)",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRO-CCPR-1-001"
+    ],
+    "_notes": "COMM C1000 is the Cal-GETC public speaking course; local college credential via portfolio."
+  },
   "COMPTIA A+ Certification": {
     "unified_title": "CompTIA A+",
     "confidence_title": 0.98,
@@ -18983,6 +19201,30 @@
     "quality_flag": null,
     "_notes": null
   },
+  "Certified Bloodstain Pattern Analyst (CBPA) Certification": {
+    "unified_title": "Certified Bloodstain Pattern Analyst (CBPA)",
+    "confidence_title": 0.9,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-CBPA-1-001"
+    ],
+    "_notes": "IAI is the standard issuer of CBPA certification."
+  },
+  "Certified Crime Scene Investigator (CCSI) Certification": {
+    "unified_title": "Certified Crime Scene Investigator (CCSI)",
+    "confidence_title": 0.9,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-CCSI-1-001"
+    ],
+    "_notes": "IAI Crime Scene Certification Board issues CCSI."
+  },
   "Certified Ethical Hacker  CS 005 Cx": {
     "unified_title": "Certified Ethical Hacker (CEH)",
     "confidence_title": 0.9,
@@ -19007,6 +19249,42 @@
       "MAPICS-CEHC-1-001"
     ],
     "quality_flag": null,
+    "_notes": null
+  },
+  "Certified Footwear Examiner (CFE) Certification": {
+    "unified_title": "Certified Footwear Examiner (CFE)",
+    "confidence_title": 0.9,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-CFE(-1-001"
+    ],
+    "_notes": null
+  },
+  "Certified Forensic Photographer (CFP) Certification": {
+    "unified_title": "Certified Forensic Photographer (CFP)",
+    "confidence_title": 0.9,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-CFP(-1-001"
+    ],
+    "_notes": null
+  },
+  "Certified Latent Print Examiner (CLPE) Certification": {
+    "unified_title": "Certified Latent Print Examiner (CLPE)",
+    "confidence_title": 0.92,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-CLPE-1-001"
+    ],
     "_notes": null
   },
   "Certified Nursing Assistant (CNA)": {
@@ -19449,6 +19727,18 @@
     ],
     "quality_flag": null,
     "_notes": "Local ADJ course; multi-college CBE."
+  },
+  "Community and the Justice System": {
+    "unified_title": "Community and the Justice System",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-CATJ1-1-001"
+    ],
+    "_notes": "Local Chaffey administration-of-justice course."
   },
   "Community and the Justice System (AJ 160 C)": {
     "unified_title": "Administration of Justice — Community and the Justice System",
@@ -20316,6 +20606,18 @@
     ],
     "quality_flag": null,
     "_notes": "Local art history course."
+  },
+  "Cooperative Education: Nursing A.D.N.": {
+    "unified_title": "Cooperative Education: Nursing (ADN)",
+    "confidence_title": 0.65,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-CENA-1-001"
+    ],
+    "_notes": "Local cooperative-education course offered via CBE."
   },
   "Correctional Interviewing and Counseling": {
     "unified_title": "Correctional Interviewing and Counseling",
@@ -21955,6 +22257,42 @@
     "quality_flag": null,
     "_notes": "Aviation CRM; local portfolio review."
   },
+  "Crime Scene Management and Forensic Evidence": {
+    "unified_title": "Crime Scene Management and Forensic Evidence",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-CSMA-1-001"
+    ],
+    "_notes": "Local Chaffey AJ course."
+  },
+  "Crime and Delinquency": {
+    "unified_title": "Crime and Delinquency",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-CAD-1-001"
+    ],
+    "_notes": "Local Chaffey AJ course."
+  },
+  "Criminal Court Process": {
+    "unified_title": "Criminal Court Process",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-CCP-1-001"
+    ],
+    "_notes": "Local Chaffey AJ course."
+  },
   "Criminal Evidence ADJ 4 Cx": {
     "unified_title": "Criminal Evidence",
     "confidence_title": 0.85,
@@ -21967,6 +22305,18 @@
     ],
     "quality_flag": null,
     "_notes": null
+  },
+  "Criminal Investigation": {
+    "unified_title": "Criminal Investigation",
+    "confidence_title": 0.72,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-CI1-1-001"
+    ],
+    "_notes": "Local Chaffey AJ course."
   },
   "Criminal Investigations ADJ 13 Cx": {
     "unified_title": "Criminal Investigations",
@@ -23254,6 +23604,18 @@
     ],
     "quality_flag": null,
     "_notes": "Local PSY 003 course via CBE."
+  },
+  "Digital Forensics Fundamentals": {
+    "unified_title": "Digital Forensics Fundamentals",
+    "confidence_title": 0.72,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-DFF-1-001"
+    ],
+    "_notes": "Local Chaffey course."
   },
   "Digital Illustration with Adobe- Credit by Exam ": {
     "unified_title": "Digital Illustration with Adobe",
@@ -29448,6 +29810,18 @@
     "quality_flag": null,
     "_notes": null
   },
+  "Human Resource Management": {
+    "unified_title": "Human Resource Management",
+    "confidence_title": 0.72,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-HRM-1-001"
+    ],
+    "_notes": "Local Chaffey course."
+  },
   "Human Sexuality PSY 012 Cx": {
     "unified_title": "Human Sexuality",
     "confidence_title": 0.85,
@@ -31329,6 +31703,30 @@
     "quality_flag": null,
     "_notes": "Course code stripped; local Cypress College course."
   },
+  "IW- Architectural II": {
+    "unified_title": "Ironworker Architectural II",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXA-IAI-1-001"
+    ],
+    "_notes": "IW likely refers to Ironworker apprenticeship coursework articulated through Cerritos."
+  },
+  "IW- Architectural III": {
+    "unified_title": "Ironworker Architectural III",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXA-IAI1-1-001"
+    ],
+    "_notes": "Ironworker apprenticeship coursework."
+  },
   "IW- Detailing ": {
     "unified_title": "Ironworker Apprenticeship — Detailing",
     "confidence_title": 0.75,
@@ -31407,6 +31805,30 @@
     "quality_flag": null,
     "_notes": "Ironworker apprenticeship module."
   },
+  "IW- Structural Precast Concrete": {
+    "unified_title": "Ironworker Structural Precast Concrete",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXA-ISPC-1-001"
+    ],
+    "_notes": "Ironworker apprenticeship coursework."
+  },
+  "IW- Structural Steel II": {
+    "unified_title": "Ironworker Structural Steel II",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXA-ISSI-1-001"
+    ],
+    "_notes": "Ironworker apprenticeship coursework."
+  },
   "IW- Welding I": {
     "unified_title": "Ironworker Apprenticeship — Welding I",
     "confidence_title": 0.78,
@@ -31432,6 +31854,18 @@
     ],
     "quality_flag": null,
     "_notes": "Ironworker apprenticeship module."
+  },
+  "IW- Welding III": {
+    "unified_title": "Ironworker Welding III",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXA-IWI1-1-001"
+    ],
+    "_notes": "Ironworker apprenticeship coursework."
   },
   "IW-Cranes": {
     "unified_title": "Ironworker Apprenticeship — Cranes",
@@ -31562,6 +31996,18 @@
     ],
     "quality_flag": null,
     "_notes": "Title names only the issuing LEMSA; assumed EMT cert per Rule 5b. Low confidence — credential ambiguous."
+  },
+  "Inspection Portfolio Spring 2026 #1": {
+    "unified_title": "Generic Portfolio Review — San Bernardino Valley College (Inspection)",
+    "confidence_title": 0.45,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRI-IPS2-1-001"
+    ],
+    "_notes": "Rule 5 generic-bucket portfolio entry; not a specific named credential."
   },
   "Intermediate 3D Animation": {
     "unified_title": "Intermediate 3D Animation",
@@ -32432,6 +32878,18 @@
     "quality_flag": null,
     "_notes": "Local college course CBE."
   },
+  "Introduction to Computer Information Systems": {
+    "unified_title": "Introduction to Computer Information Systems",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-ITCI1-1-001"
+    ],
+    "_notes": "Local Chaffey course."
+  },
   "Introduction to Computer Networks": {
     "unified_title": "Introduction to Computer Networks",
     "confidence_title": 0.9,
@@ -32444,6 +32902,18 @@
     ],
     "quality_flag": null,
     "_notes": "Local college course CBE."
+  },
+  "Introduction to Computer Programming": {
+    "unified_title": "Introduction to Computer Programming",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-ITCP-1-001"
+    ],
+    "_notes": "Local Chaffey course."
   },
   "Introduction to Computer Science CS 073 Cx": {
     "unified_title": "Introduction to Computer Science",
@@ -32561,6 +33031,18 @@
     ],
     "quality_flag": "suspect_course_as_exhibit",
     "_notes": "Local Cabrillo course mapped to industry cert pathway."
+  },
+  "Introduction to Energy Surveying": {
+    "unified_title": "Introduction to Energy Surveying",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXA-ITES-1-001"
+    ],
+    "_notes": "Local Cerritos course."
   },
   "Introduction to Environmental Science ENV 001 Cx": {
     "unified_title": "Introduction to Environmental Science",
@@ -32889,6 +33371,18 @@
     ],
     "quality_flag": null,
     "_notes": "Local AJ course."
+  },
+  "Introduction to the Linux Operating System": {
+    "unified_title": "Introduction to the Linux Operating System",
+    "confidence_title": 0.72,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-ITTL-1-001"
+    ],
+    "_notes": "Local Chaffey course."
   },
   "Introductory Berry Production (1)": {
     "unified_title": "Introductory Berry Production",
@@ -33241,6 +33735,18 @@
     ],
     "quality_flag": null,
     "_notes": "Code stripped."
+  },
+  "Juvenile Procedures": {
+    "unified_title": "Juvenile Procedures",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-JP-1-001"
+    ],
+    "_notes": "Local Chaffey AJ course."
   },
   "KIN106 Care and Prevention of Athletic Injuries": {
     "unified_title": "Care and Prevention of Athletic Injuries",
@@ -33657,6 +34163,18 @@
     ],
     "quality_flag": null,
     "_notes": "Local fire/EMS course."
+  },
+  "Legal Aspects of Evidence": {
+    "unified_title": "Legal Aspects of Evidence",
+    "confidence_title": 0.72,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-LAOE1-1-001"
+    ],
+    "_notes": "Local Chaffey AJ course."
   },
   "Legal Aspects of Real Estate REAL 084 Cx": {
     "unified_title": "Legal Aspects of Real Estate",
@@ -35040,6 +35558,18 @@
     "quality_flag": null,
     "_notes": null
   },
+  "Metal Building Erection I / Foreman Training": {
+    "unified_title": "Metal Building Erection I / Foreman Training",
+    "confidence_title": 0.6,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXA-MBEI-1-001"
+    ],
+    "_notes": "Likely Ironworker apprenticeship coursework at Cerritos."
+  },
   "Metal Pan and Security Systems": {
     "unified_title": "Metal Pan and Security Systems",
     "confidence_title": 0.55,
@@ -35078,6 +35608,18 @@
     ],
     "quality_flag": null,
     "_notes": "Local course aligned to CompTIA A+ training."
+  },
+  "Microsoft Azure Administrator": {
+    "unified_title": "Microsoft Certified: Azure Administrator Associate",
+    "confidence_title": 0.85,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-MAA1-1-001"
+    ],
+    "_notes": "Standard Microsoft Azure Administrator (AZ-104) credential."
   },
   "Microsoft Certifed Solutions Associate (MCSA) Windows Server": {
     "unified_title": "Microsoft Certified Solutions Associate (MCSA) — Windows Server",
@@ -36104,6 +36646,18 @@
     ],
     "quality_flag": null,
     "_notes": "Local college nursing course CBE; not a recognized external credential."
+  },
+  "Nursing Process 2": {
+    "unified_title": "Nursing Process 2",
+    "confidence_title": 0.65,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-NP2-1-001"
+    ],
+    "_notes": "Local Chaffey nursing course."
   },
   "Nursing Process 3": {
     "unified_title": "Nursing Process 3",
@@ -37227,6 +37781,18 @@
     "quality_flag": null,
     "_notes": "Local construction course CBE."
   },
+  "Pathophysiology for Nursing": {
+    "unified_title": "Pathophysiology for Nursing",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-PFN-1-001"
+    ],
+    "_notes": "Local Chaffey nursing course."
+  },
   "Patient Care in Imaging Technology": {
     "unified_title": "Patient Care in Imaging Technology",
     "confidence_title": 0.5,
@@ -37343,6 +37909,18 @@
     ],
     "quality_flag": null,
     "_notes": null
+  },
+  "Peace Officer Standards and Training Basic Academy Certificate (POST)": {
+    "unified_title": "POST Basic Academy",
+    "confidence_title": 0.98,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-POST1-1-001"
+    ],
+    "_notes": "Training delivered by various POST-certified academies."
   },
   "Peace Officer Standards and Training Basic Academy Certificate (POST) ": {
     "unified_title": "POST Basic Academy",
@@ -38393,6 +38971,30 @@
     ],
     "quality_flag": null,
     "_notes": null
+  },
+  "REALES 1, Real Estate Principles": {
+    "unified_title": "Real Estate Principles",
+    "confidence_title": 0.8,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-R1RE-1-001"
+    ],
+    "_notes": "Real Estate Principles is a DRE-required salesperson licensing course; articulated locally."
+  },
+  "REALES 3, Real Estate Practice ": {
+    "unified_title": "Real Estate Practice",
+    "confidence_title": 0.8,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPICI-R3RE-1-001"
+    ],
+    "_notes": "DRE-required salesperson licensing course."
   },
   "RLES 380\tReal Estate Principles - Industry Certification": {
     "unified_title": "Real Estate Principles",
@@ -39971,6 +40573,18 @@
     "quality_flag": null,
     "_notes": null
   },
+  "Social Equity and the Criminal Justice System": {
+    "unified_title": "Social Equity and the Criminal Justice System",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-SEAT-1-001"
+    ],
+    "_notes": "Local Chaffey AJ course."
+  },
   "Social Media, Self-Promotion": {
     "unified_title": "Social Media and Self-Promotion",
     "confidence_title": 0.6,
@@ -40387,6 +41001,30 @@
     ],
     "quality_flag": null,
     "_notes": "CPL Type 'Military' implies JST credit recommendation."
+  },
+  "Structural Arch Orn I": {
+    "unified_title": "Ironworker Structural, Architectural and Ornamental I",
+    "confidence_title": 0.6,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXA-SAOI-1-001"
+    ],
+    "_notes": "Ironworker apprenticeship trade designation (Structural/Architectural/Ornamental)."
+  },
+  "Structural Steel I": {
+    "unified_title": "Ironworker Structural Steel I",
+    "confidence_title": 0.65,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXA-SSI-1-001"
+    ],
+    "_notes": "Ironworker apprenticeship coursework at Cerritos."
   },
   "Studio Portrait Photography": {
     "unified_title": "Studio Portrait Photography",
@@ -40831,6 +41469,18 @@
     ],
     "quality_flag": null,
     "_notes": "Lab companion course."
+  },
+  "Transportation Management": {
+    "unified_title": "Transportation Management",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-TM2-1-001"
+    ],
+    "_notes": "Local Chaffey course."
   },
   "Transportation Security Administration (HLS-1) ": {
     "unified_title": "Transportation Security Administration Training (HLS-1)",
@@ -41586,6 +42236,18 @@
     "quality_flag": null,
     "_notes": "Generic CBE for Vietnamese language proficiency."
   },
+  "Violence in America": {
+    "unified_title": "Violence in America",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-VIA-1-001"
+    ],
+    "_notes": "Local Chaffey course."
+  },
   "Visual Basic Programming I CS 086 Cx": {
     "unified_title": "Visual Basic Programming I",
     "confidence_title": 0.9,
@@ -41859,6 +42521,18 @@
     "quality_flag": null,
     "_notes": null
   },
+  "Water Supply Technology Portfolio Student 1": {
+    "unified_title": "Generic Portfolio Review — San Bernardino Valley College (Water Supply Technology)",
+    "confidence_title": 0.45,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPPRI-WSTP-1-001"
+    ],
+    "_notes": "Rule 5 generic-bucket portfolio entry."
+  },
   "Water Treatment Facilities": {
     "unified_title": "Water Treatment Facilities",
     "confidence_title": 0.65,
@@ -41884,6 +42558,18 @@
     ],
     "quality_flag": null,
     "_notes": null
+  },
+  "Web Page Development and Publishing": {
+    "unified_title": "Web Page Development and Publishing",
+    "confidence_title": 0.7,
+    "classified_at": "2026-05-20",
+    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+    "reviewed_at": null,
+    "reviewed_by": null,
+    "source_exhibit_ids": [
+      "MAPCXS-WPDA-1-001"
+    ],
+    "_notes": "Local Chaffey course."
   },
   "Web Publishing I CIS 082C Cx": {
     "unified_title": "Web Publishing I",
