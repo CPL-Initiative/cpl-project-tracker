@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Letter Campaign</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .block-row { margin-bottom: 14px; }
+    .block-row label { display:block; font-weight:600; font-size:0.9rem; margin-bottom:4px; }
+    .block-row .hint { font-size:0.82rem; color:var(--map-muted); margin-bottom:5px; }
+    .block-row textarea, .block-row input[type=text] {
+      width:100%; padding:10px 12px; font:inherit;
+      border:1px solid var(--map-border); border-radius:4px;
+      box-sizing:border-box;
+    }
+    .block-row textarea { min-height: 100px; font-size:0.9rem; }
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .extracted-para {
+      padding: 10px 12px;
+      border: 1px solid var(--map-border);
+      border-radius: 4px;
+      margin-bottom: 8px;
+      background: #fafbfc;
+      font-size: 0.88rem;
+    }
+    .extracted-para .actions { margin-top: 6px; display:flex; gap:6px; flex-wrap:wrap; }
+    .extracted-para button {
+      padding: 3px 10px;
+      font-size: 0.8rem;
+      border: 1px solid var(--map-border);
+      background: white;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .extracted-para button:hover { background: var(--map-bg); }
+  </style>
+</head>
+<body>
+
+<header class="brand">
+  <div>
+    <h1>New Letter Campaign</h1>
+    <div class="sub">Add a new curatable letter — upload a DOCX or type each block</div>
+  </div>
+  <div>
+    <a href="./curator.html" class="btn btn-secondary" style="padding:6px 14px;font-size:0.9rem">← Back to curator</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="card">
+    <h2>1 · Campaign details</h2>
+    <div class="grid-2">
+      <div class="block-row">
+        <label for="name">Display name</label>
+        <div class="hint">Human-readable, e.g. "FY 2027 Budget — Regional Consortia"</div>
+        <input type="text" id="name">
+      </div>
+      <div class="block-row">
+        <label for="slug">URL slug</label>
+        <div class="hint">Lowercase, hyphens only. Auto-generated from the name.</div>
+        <input type="text" id="slug">
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="block-row">
+        <label for="letter_type">Letter type</label>
+        <div class="hint">Which DOCX skeleton to use (date / addressees / signature scaffolding).</div>
+        <select id="letter_type" style="width:100%;padding:10px 12px;font:inherit;border:1px solid var(--map-border);border-radius:4px">
+          <option value="rc">Regional Consortium (we/our region)</option>
+          <option value="college">College / Institution (I/my institution)</option>
+        </select>
+      </div>
+      <div class="block-row">
+        <label for="ask_amount">Funding ask (display string)</label>
+        <div class="hint">e.g. "$37M ($2M ongoing + $35M one-time)"</div>
+        <input type="text" id="ask_amount" value="$37M ($2M ongoing + $35M one-time)">
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="block-row">
+        <label for="subject_line">Subject line</label>
+        <input type="text" id="subject_line" value="SUPPORT CREDIT FOR PRIOR LEARNING FUNDING">
+      </div>
+      <div class="block-row">
+        <label for="deadline">Deadline (optional)</label>
+        <input type="text" id="deadline" placeholder="YYYY-MM-DD">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>2 · Letter content</h2>
+    <p class="muted">Either upload a Word DOCX to extract paragraphs from, or type the content of each block directly below. Tokens like <code>{{ORG_NAME}}</code>, <code>{{SW_STUDENTS}}</code>, etc. work the same way they do in the existing campaigns.</p>
+
+    <div class="block-row">
+      <label>Upload a DOCX (optional)</label>
+      <div class="hint">Reads <code>word/document.xml</code> client-side and lists every paragraph below. Click "→ opening" / "→ rationale" / etc. to drop a paragraph into the matching block.</div>
+      <input type="file" id="docx-file" accept=".docx">
+    </div>
+
+    <div id="extracted-list"></div>
+
+    <h3 style="margin-top:24px;color:var(--map-blue)">Block content</h3>
+    <p class="muted" style="font-size:0.88rem">Leave any block empty to fall back to a default placeholder. Required for a usable letter: opening, rationale, stats, example, ask, cta. RC letters skip <code>institution</code>; college letters include it.</p>
+
+    <div class="block-row">
+      <label for="b-signer_name">Signer name <span class="muted">(inline value)</span></label>
+      <input type="text" id="b-signer_name" placeholder="[Signer Name]">
+    </div>
+    <div class="block-row">
+      <label for="b-signer_title">Signer title <span class="muted">(inline value)</span></label>
+      <input type="text" id="b-signer_title" placeholder="[Signer Title]">
+    </div>
+    <div class="block-row">
+      <label for="b-opening">opening</label>
+      <textarea id="b-opening"></textarea>
+    </div>
+    <div class="block-row">
+      <label for="b-rationale">rationale</label>
+      <textarea id="b-rationale"></textarea>
+    </div>
+    <div class="block-row">
+      <label for="b-stats">stats <span class="muted">(usually mostly tokens like {{SW_STUDENTS}})</span></label>
+      <textarea id="b-stats"></textarea>
+    </div>
+    <div class="block-row" id="institution-row">
+      <label for="b-institution">institution <span class="muted">(college type only)</span></label>
+      <textarea id="b-institution"></textarea>
+    </div>
+    <div class="block-row">
+      <label for="b-example">example</label>
+      <textarea id="b-example"></textarea>
+    </div>
+    <div class="block-row">
+      <label for="b-ask">ask</label>
+      <textarea id="b-ask"></textarea>
+    </div>
+    <div class="block-row">
+      <label for="b-cta">cta</label>
+      <textarea id="b-cta"></textarea>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>3 · Submit</h2>
+    <div class="grid-2">
+      <div class="block-row">
+        <label for="passcode">Curator passcode</label>
+        <input type="password" id="passcode" placeholder="curator passcode">
+      </div>
+      <div class="block-row" style="align-self:end">
+        <button class="btn btn-primary" id="submit-btn" style="width:100%;padding:12px 16px">Create campaign</button>
+      </div>
+    </div>
+    <div id="result" style="margin-top:10px"></div>
+  </div>
+
+</main>
+
+<footer class="foot">CPL Project Tracker • Letter curator</footer>
+
+<script type="module">
+import JSZip from "https://esm.sh/jszip@3.10.1";
+import { CURATOR_URL, SUPABASE_ANON } from "./config.js";
+
+const $ = (id) => document.getElementById(id);
+const BLOCK_KEYS = ["opening","rationale","stats","institution","example","ask","cta"];
+
+function slugify(s) {
+  return (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
+}
+$("name").addEventListener("input", (e) => {
+  if (!$("slug").dataset.touched) $("slug").value = slugify(e.target.value);
+});
+$("slug").addEventListener("input", (e) => { e.target.dataset.touched = "1"; });
+
+function refreshInstitutionVisibility() {
+  $("institution-row").style.display = $("letter_type").value === "college" ? "" : "none";
+}
+$("letter_type").addEventListener("change", refreshInstitutionVisibility);
+refreshInstitutionVisibility();
+
+// ---------- DOCX paragraph extraction (client-side) ----------
+async function extractParagraphs(file) {
+  const zip = await JSZip.loadAsync(file);
+  const xml = await zip.file("word/document.xml")?.async("string");
+  if (!xml) throw new Error("This DOCX has no word/document.xml — not a valid Word file?");
+  const W = "http://schemas.openxmlformats.org/wordprocessingml/2006/main";
+  const doc = new DOMParser().parseFromString(xml, "application/xml");
+  const out = [];
+  for (const p of doc.getElementsByTagNameNS(W, "p")) {
+    const txt = Array.from(p.getElementsByTagNameNS(W, "t")).map((t) => t.textContent).join("");
+    if (txt.trim()) out.push(txt.trim());
+  }
+  return out;
+}
+
+$("docx-file").addEventListener("change", async (e) => {
+  const file = e.target.files?.[0];
+  if (!file) return;
+  $("extracted-list").innerHTML = `<p class="muted">Extracting…</p>`;
+  try {
+    const paragraphs = await extractParagraphs(file);
+    if (!paragraphs.length) {
+      $("extracted-list").innerHTML = `<div class="status-banner info">No paragraphs found in this DOCX.</div>`;
+      return;
+    }
+    $("extracted-list").innerHTML =
+      `<p class="muted" style="margin-top:14px">Click a button to drop a paragraph into the matching block below. Skip headers/addressees/signature lines — those come from the template scaffolding.</p>` +
+      paragraphs.map((text, i) => `
+        <div class="extracted-para">
+          <div>${text.replace(/[&<>]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}</div>
+          <div class="actions">
+            ${BLOCK_KEYS.map((k) => `<button data-target="${k}" data-idx="${i}">→ ${k}</button>`).join("")}
+          </div>
+        </div>
+      `).join("");
+    document.querySelectorAll(".extracted-para button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = btn.dataset.target;
+        const idx = parseInt(btn.dataset.idx);
+        const cur = $(`b-${target}`).value;
+        $(`b-${target}`).value = cur ? (cur + "\n\n" + paragraphs[idx]) : paragraphs[idx];
+      });
+    });
+  } catch (err) {
+    $("extracted-list").innerHTML = `<div class="status-banner error">${String(err?.message ?? err)}</div>`;
+  }
+});
+
+// ---------- submit ----------
+$("submit-btn").addEventListener("click", async () => {
+  const passcode = $("passcode").value.trim();
+  if (!passcode) { alert("Enter your curator passcode."); return; }
+
+  const letterType = $("letter_type").value;
+  const blocks = [];
+  // signer is statewide scope (only used in statewide mode)
+  for (const k of ["signer_name","signer_title"]) {
+    const v = $(`b-${k}`).value.trim();
+    if (v) blocks.push({ block_key: k, scope: "statewide", content: v });
+  }
+  // paragraph blocks default to scope=all so every mode picks them up
+  for (const k of BLOCK_KEYS) {
+    if (k === "institution" && letterType !== "college") continue;
+    const v = $(`b-${k}`).value.trim();
+    if (v) blocks.push({ block_key: k, scope: "all", content: v });
+  }
+
+  const payload = {
+    name:         $("name").value.trim(),
+    slug:         $("slug").value.trim() || slugify($("name").value),
+    letter_type:  letterType,
+    subject_line: $("subject_line").value.trim() || "SUPPORT CREDIT FOR PRIOR LEARNING FUNDING",
+    ask_amount:   $("ask_amount").value.trim(),
+    deadline:     $("deadline").value.trim() || null,
+    blocks,
+  };
+
+  const btn = $("submit-btn");
+  btn.disabled = true; btn.textContent = "Creating…";
+  try {
+    const res = await fetch(CURATOR_URL, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_ANON,
+        Authorization: `Bearer ${passcode}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+    const j = await res.json();
+    if (!res.ok) {
+      $("result").innerHTML = `<div class="status-banner error">${j.error ?? "Creation failed"}</div>`;
+    } else {
+      $("result").innerHTML = `
+        <div class="status-banner success">
+          Created campaign <strong>${j.campaign.slug}</strong>.
+          <a href="./curator.html?campaign=${encodeURIComponent(j.campaign.slug)}">Open it in the curator →</a>
+        </div>`;
+    }
+  } catch (e) {
+    $("result").innerHTML = `<div class="status-banner error">${String(e?.message ?? e)}</div>`;
+  } finally {
+    btn.disabled = false; btn.textContent = "Create campaign";
+  }
+});
+</script>
+</body>
+</html>
