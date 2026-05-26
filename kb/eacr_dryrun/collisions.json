@@ -361,8 +361,8 @@
         {
           "issuing_agency": "California Department of Real Estate (DRE)",
           "training_agency": null,
-          "confidence_issuer": 0.7,
-          "_notes": null
+          "confidence_issuer": 0.75,
+          "_notes": "Real Estate Principles is a DRE-required salesperson licensing course; articulated locally."
         }
       ]
     }

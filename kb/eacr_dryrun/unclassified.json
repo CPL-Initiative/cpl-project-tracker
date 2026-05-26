@@ -2,14 +2,10 @@
   "_meta": {
     "generated_at": "2026-05-26",
     "purpose": "Raw MAP titles with no entry in kb/unified_titles.json. PR-C1 generator falls back to raw-title grouping for these so coverage is preserved; they're the re-classification backlog.",
-    "count": 194,
-    "rows_affected": 600
+    "count": 141,
+    "rows_affected": 405
   },
   "titles": [
-    {
-      "raw_title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
-      "row_count": 130
-    },
     {
       "raw_title": "Firefighter 1 Certification",
       "row_count": 46
@@ -79,15 +75,7 @@
       "row_count": 4
     },
     {
-      "raw_title": "AP Exam Calculus BC/AB Sub-score (Score 3-5)",
-      "row_count": 3
-    },
-    {
       "raw_title": "AP Exam Physics C: Electricity and Magnetism Score of 4 or 5",
-      "row_count": 3
-    },
-    {
-      "raw_title": "AP Exam Statistics (Score 3-5)",
       "row_count": 3
     },
     {
@@ -115,10 +103,6 @@
       "row_count": 3
     },
     {
-      "raw_title": "Inspection Portfolio Spring 2026 #1",
-      "row_count": 3
-    },
-    {
       "raw_title": "LA CITY (FCAW) D1.1 STRUCTURAL WELDING CERTIFICATION SEMI-AUTOMATIC",
       "row_count": 3
     },
@@ -143,31 +127,11 @@
       "row_count": 3
     },
     {
-      "raw_title": "Water Supply Technology Portfolio Student 1",
-      "row_count": 3
-    },
-    {
       "raw_title": "AP - Psychology",
       "row_count": 2
     },
     {
       "raw_title": "AP Exam Physics 2: Algebra-Based (Score of 3)",
-      "row_count": 2
-    },
-    {
-      "raw_title": "AP Exam Physics C: Electricity and Magnetism (Score 4-5)",
-      "row_count": 2
-    },
-    {
-      "raw_title": "AP Exam Physics C: Mechanics (Score 4-5)",
-      "row_count": 2
-    },
-    {
-      "raw_title": "AP Exam Precalculus (Score 3-5)",
-      "row_count": 2
-    },
-    {
-      "raw_title": "AP Exam World History: Modern (prior to Fall 2025) (Score 3-5)",
       "row_count": 2
     },
     {
@@ -196,10 +160,6 @@
     },
     {
       "raw_title": "CPP – C++ CERTIFIED PROFESSIONAL PROGRAMMER",
-      "row_count": 2
-    },
-    {
-      "raw_title": "Certified Crime Scene Investigator (CCSI) Certification",
       "row_count": 2
     },
     {
@@ -303,22 +263,6 @@
       "row_count": 1
     },
     {
-      "raw_title": "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam",
-      "row_count": 1
-    },
-    {
-      "raw_title": "AUTO 60B: Automotive Electronics - Credit By Exam",
-      "row_count": 1
-    },
-    {
-      "raw_title": "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam",
-      "row_count": 1
-    },
-    {
-      "raw_title": "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam",
-      "row_count": 1
-    },
-    {
       "raw_title": "Adobe Photoshop Certified Professional",
       "row_count": 1
     },
@@ -328,18 +272,6 @@
     },
     {
       "raw_title": "American National Standard Institute (ANSI) Food Manager Certificate",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Artificial Intelligence: Prompt Engineering and AI Systems",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Auto Service Excellence A6",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Auto Service Excellence Master Auto Technician",
       "row_count": 1
     },
     {
@@ -356,10 +288,6 @@
     },
     {
       "raw_title": "BUSAD 210 Business Communication - Military Training",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Basic Pharmacology",
       "row_count": 1
     },
     {
@@ -391,10 +319,6 @@
       "row_count": 1
     },
     {
-      "raw_title": "COMM C1000 Portfolio Review",
-      "row_count": 1
-    },
-    {
       "raw_title": "CUL ART 041",
       "row_count": 1
     },
@@ -411,22 +335,6 @@
       "row_count": 1
     },
     {
-      "raw_title": "Certified Bloodstain Pattern Analyst (CBPA) Certification",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Certified Footwear Examiner (CFE) Certification",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Certified Forensic Photographer (CFP) Certification",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Certified Latent Print Examiner (CLPE) Certification",
-      "row_count": 1
-    },
-    {
       "raw_title": "Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2",
       "row_count": 1
     },
@@ -439,14 +347,6 @@
       "row_count": 1
     },
     {
-      "raw_title": "Community and the Justice System",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Cooperative Education: Nursing A.D.N.",
-      "row_count": 1
-    },
-    {
       "raw_title": "Credit by Exam- Introduction to Legal Research and Terminology",
       "row_count": 1
     },
@@ -455,27 +355,7 @@
       "row_count": 1
     },
     {
-      "raw_title": "Crime Scene Management and Forensic Evidence",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Crime and Delinquency",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Criminal Court Process",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Criminal Investigation",
-      "row_count": 1
-    },
-    {
       "raw_title": "DANCETQ 141 - Modern Dance Techniques I",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Digital Forensics Fundamentals",
       "row_count": 1
     },
     {
@@ -527,10 +407,6 @@
       "row_count": 1
     },
     {
-      "raw_title": "Human Resource Management",
-      "row_count": 1
-    },
-    {
       "raw_title": "ICS 100, IS 700, L-180, L-280, S-130, S-190, S-215 Wildland Fire Certifications",
       "row_count": 1
     },
@@ -551,55 +427,11 @@
       "row_count": 1
     },
     {
-      "raw_title": "IW- Architectural II",
-      "row_count": 1
-    },
-    {
-      "raw_title": "IW- Architectural III",
-      "row_count": 1
-    },
-    {
       "raw_title": "IW- Detailing",
       "row_count": 1
     },
     {
-      "raw_title": "IW- Structural Precast Concrete",
-      "row_count": 1
-    },
-    {
-      "raw_title": "IW- Structural Steel II",
-      "row_count": 1
-    },
-    {
-      "raw_title": "IW- Welding III",
-      "row_count": 1
-    },
-    {
       "raw_title": "Intro to Entrepreneurship High School to College Articulatio",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Introduction to Computer Information Systems",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Introduction to Computer Programming",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Introduction to Energy Surveying",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Introduction to the Linux Operating System",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Juvenile Procedures",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Legal Aspects of Evidence",
       "row_count": 1
     },
     {
@@ -635,14 +467,6 @@
       "row_count": 1
     },
     {
-      "raw_title": "Metal Building Erection I / Foreman Training",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Microsoft Azure Administrator",
-      "row_count": 1
-    },
-    {
       "raw_title": "Music Skills II - Credit by Exam",
       "row_count": 1
     },
@@ -659,10 +483,6 @@
       "row_count": 1
     },
     {
-      "raw_title": "Nursing Process 2",
-      "row_count": 1
-    },
-    {
       "raw_title": "OFADM 256 (change to BIT 250) Introduction to Microsoft Word - Military Training",
       "row_count": 1
     },
@@ -676,10 +496,6 @@
     },
     {
       "raw_title": "PLNT SC 827 - Sustainable Gardening for Landscapes",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Pathophysiology for Nursing",
       "row_count": 1
     },
     {
@@ -707,10 +523,6 @@
       "row_count": 1
     },
     {
-      "raw_title": "REALES 1, Real Estate Principles",
-      "row_count": 1
-    },
-    {
       "raw_title": "REALES 3, Real Estate Practice",
       "row_count": 1
     },
@@ -735,27 +547,11 @@
       "row_count": 1
     },
     {
-      "raw_title": "Social Equity and the Criminal Justice System",
-      "row_count": 1
-    },
-    {
       "raw_title": "Spanish I",
       "row_count": 1
     },
     {
       "raw_title": "Spanish II",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Structural Arch Orn I",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Structural Steel I",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Transportation Management",
       "row_count": 1
     },
     {
@@ -767,19 +563,11 @@
       "row_count": 1
     },
     {
-      "raw_title": "Violence in America",
-      "row_count": 1
-    },
-    {
       "raw_title": "WELD 045 CBE",
       "row_count": 1
     },
     {
       "raw_title": "WST 034 -  Introduction to Water Resource Management - Portfolio Review",
-      "row_count": 1
-    },
-    {
-      "raw_title": "Web Page Development and Publishing",
       "row_count": 1
     }
   ]
