@@ -405,6 +405,39 @@ the gaps + propose a scoped plan.
 
 ---
 
+## 2026-05-26 — CSC-G landed (Sexy Dexy)
+
+The global column-centering sweep promised in CSC-F's prototype shipped
+in PR #139.
+
+**What got centered:** Common Course Reference table (`.uc-table`) —
+mirrors the CSC-F rule (`th`/`td` `text-align: center; vertical-align:
+middle`) with explicit `text-align: left` opt-outs for columns 1 (Kind),
+3 (Title), 4 (Discipline). The 9 remaining columns (ID, Credit, Units,
+TOP, Subject(s), Members, Adopted, Adoptable, Conf., Flags) are short
+categorical/numeric values that read better centered.
+
+**What didn't get centered:** KPI cards and the Projects Grid aren't
+tables — natural opt-outs, no change needed. The Exhibit Analysis
+tables (`.exhibit-table`) have **mixed column intent** — some columns
+class-tagged `.exhibit-cell-num` / `.exhibit-cell-pct` are right-aligned
+for math comparison; others are plain `<td>` text (CPL Type, Discipline,
+the rank "#" column). A blanket `th { text-align: right }` would align
+the numeric headers with their data but misalign the plain-text columns;
+a blanket centering would the inverse. Tried the right-align approach
+mid-PR, caught the mismatch on the Top-50 ranking table, reverted. The
+right fix is per-column `th` classes in the generator — a future sweep
+if we want it.
+
+**Lesson:** when applying a "uniform" rule across multiple tables, audit
+whether each table's body cells actually share alignment intent. Mixed
+intent (numbers right + text left + name left in one row) means CSS
+selectors that target the whole `th` band will pick a wrong side for
+some columns. Either get per-column markup or leave the mixed-intent
+tables alone — don't blanket-rule them.
+
+---
+
 **See also:** [`CLAUDE.md §11`](../CLAUDE.md) for the M-ID lifecycle
 + MC vs TMC framing + roadmap;
 [`docs/subj4_canonicalization_remint_lessons.md`](subj4_canonicalization_remint_lessons.md)

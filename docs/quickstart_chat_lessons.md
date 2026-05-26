@@ -212,3 +212,49 @@ of CLAUDE.md §11 (PR-Sidebar-A, the `_apply_credential_review.py` sync
 script, Excel→Supabase Phase 1 scoping, or CSC-G column-centering
 sweep — all of which have higher priority than further chat polish at
 this time).
+
+---
+
+## 2026-05-26 — Dashboard hint wiring + Letters route (Sexy Dexy)
+
+Bug report from the curator: typing "apprenticeship initiative" routed
+to the Dashboard tab correctly but landed on the unfiltered projects
+grid. Diagnosis: PR #135 (Quickstart-C) shipped the filter-hint
+architecture but only wired three tabs (`credential-reference`,
+`unified-courses`, `canonical-subj4`). The Dashboard had no entry in
+`HINT_VOCAB`, so the system prompt never told the model it COULD emit
+a `filter_hint` for Dashboard prompts; even if the model had
+hallucinated one, no consumer existed.
+
+**PR #141 fixes:**
+- `quickstart.js` — new `dashboard` entry in `HINT_VOCAB` with `search`
+  free-text + structured `activity`/`goal`/`status` enums. Three new
+  in-prompt examples (apprenticeship, Activity 3, AI in CPL). Dashboard
+  description in `TABS` now explicitly lists named CPL initiatives to
+  help the model recognize them. Plus the regression fix: missing
+  `letters` tab in `TABS` (added in PR #136 but never registered with
+  the router).
+- `dashboard_filters.js` — new `applyQuickstartHint()` consumer with
+  both paths: `window.CPL_QS.consume('dashboard')` at script-load (for
+  cold-load / deep-link scenarios) and a `cpl-qs-hint` event listener
+  (for live-route scenarios where Dashboard is already the active
+  tab). Pre-pops `searchBox` + the 4 filter `<select>`s by
+  case-insensitive contains match (so `"Apprenticeship"` finds
+  "Apprenticeship Sprint" without exact-string fragility), then calls
+  `applyFilters()` once.
+
+**End-to-end:** "apprenticeship initiative" → `{tab: "dashboard",
+filter_hint: {search: "apprenticeship"}}` → Dashboard opens with
+searchBox="apprenticeship" and grid filtered.
+
+**Lesson recorded:** the filter-hint architecture from PR #135 was
+correct, but tabs HAVE to opt into the vocabulary AND ship a consumer.
+Adding a new tab to `TABS` is the bare minimum to route there; adding
+to `HINT_VOCAB` + writing an `applyQuickstartHint()` is the second
+step to make Tier B work. Future tab additions should remember both.
+
+**Strategic next step:** Tier C (multi-turn) is still the deferred
+path. Curator usage didn't signal demand in the brief gap between PR
+#135 and PR #141, so the cost-benefit lean against it stands. Re-check
+in a few weeks of dashboard logs (Cloudflare Worker access logs +
+informal curator feedback).

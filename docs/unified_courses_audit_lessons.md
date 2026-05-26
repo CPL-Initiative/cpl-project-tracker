@@ -456,6 +456,75 @@ rows score slightly higher than they should.
 
 ---
 
+## 2026-05-26 — `unit_anomaly` rule + per-field penalty generalization (Sexy Dexy)
+
+Seventh audit rule landed (PR #140). First **member-level**
+cross-validation (vs M-ID-record-level rules that just read aggregated
+fields), and first **non-discipline** penalty.
+
+**The pivot.** Initial framing: "flag M-IDs whose `typical_units`
+disagrees with the modal member-unit value." Wrote the code, ran the
+auditor, got 2,101 flags. Spot-checked 3 — all looked like 50/50 ties
+in 2-member M-IDs where my tie-breaking picked the smaller value and
+flagged `typical_units` as wrong. Tightened the tie semantics (accept
+typical if it's ANY of the tied modal values), got 0 flags. Then
+surveyed the data: **16,308 of 16,308 M-IDs have typical_units equal
+to one of the modal member values.** The seed script at mint time
+already picks the modal — there is no "seed picked wrong" signal
+because the seed's algorithm IS modal-pick. The originally-intended
+rule was structurally impossible.
+
+**Re-pivoted.** The meaningful signal isn't "wrong pick" — it's
+**variance**. When `typical_units` represents fewer than half of
+member colleges, the seed picked a minority view because the M-ID
+clusters colleges with substantially-varying unit values. That implies
+possible over-merge: members may not actually be the same course at
+different unit loads. Rewrote `_classify_unit_anomaly` around variance:
+fires when the count of members at `typical_units` falls short of strict
+majority. Lands at **4,385 flags** — mid-band signal (between
+top_discipline_disagreement at 857 and blank_description at 1,733).
+71% are 2-member splits like `[3.0, 0.0]` — credit + noncredit drift
+in the same M-ID, the real over-merge cases.
+
+**Lesson: survey the data before committing to the rule.** I burned ~3
+iterations on tie semantics before stepping back and counting how
+often typical disagreed with modal at all. The 16,308/16,308 result
+would have killed the rule on the first commit if I'd run the survey
+up front. Cheap to do; expensive to skip. Adding to the auditor's
+build-time checklist: every new rule should print a "would-fire-on-N
+rows" sanity check before its penalty constants are baked in.
+
+**Generalized the penalty mechanism.** `TAG_PENALTY_ON_DISCIPLINE` was
+the only per-field penalty map; added `TAG_PENALTY_ON_UNITS` in
+parallel, with `_compute_scores` summing both into the shared
+`per_field_penalty` dict. The `_score()` helper already supported
+per-field penalties (`per_field_penalty={"discipline": x,
+"typical_units": y}`) — the discipline-only naming convention was the
+constraint. Future per-field penalty maps (TOP, credit_status,
+description) follow the same pattern with no further refactor.
+
+**Client mirror.** `unified_courses.js` carries a parallel
+`TAG_PENALTY_ON_UNITS` constant + a units-aware `auditTagsTip` that
+emits an extra "typical_units penalized −X" line when relevant. Triage
+filter dropdown gets a new entry "Unit anomaly (high member-unit
+variance)" — the predicate just `indexOf("unit_anomaly") >= 0`. Triage
+options stay flat (no nested groupings yet); the dropdown is at 10
+options now, still navigable but getting close to where a categorized
+picker would help.
+
+**Strategic — what this unlocks.** Now that per-field penalty
+generalization exists, queued rules can land more cheaply:
+`unit_anomaly` was both the rule AND the refactor; the next rule is
+just data. Cluster-related rules (`merge_into_orphan`,
+`cluster_title_drift`) still wait for more clusters to mint — low
+yield until then. The bigger lever is **a cohort-quality classifier**
+on member colleges: when a 2-member [3.0, 0.0] split fires, can we
+suggest WHICH member is the over-merge? The 0.0 (likely noncredit) is
+the natural suspect, but a curator-facing "candidate to split off"
+badge would speed triage materially.
+
+---
+
 **See also:** [`CLAUDE.md §11`](../CLAUDE.md) for the M-ID lifecycle +
 MC vs TMC framing + roadmap table; [`kb/_row_audit.py`](../kb/_row_audit.py)
 for the implementation; [`unified_courses.js`](../unified_courses.js) for
