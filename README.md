@@ -21,12 +21,21 @@ college's articulation decision to the rest of the system.
 The whole ecosystem, end-to-end:
 
 1. **The public dashboard** (GitHub Pages) — KPI cards, project cards, CPL
-   Analytics, Workplan Activities & Projects, Annual Goals, Budget, Vision
-   2030, a per-college **Common Course Reference** curation tab, a
-   **Common Subject Code** tab (faculty-facing per-discipline curation with
-   validate workflow + TOP/CTE/CIP columns + collapsible category groupings;
-   Variants column shows the raw local college subject codes colleges
-   actually use, sourced from `kb/coci_minted_memberships.json`), and a
+   Analytics (including an **Exhibit Adoption & Credit Recommendations**
+   table that groups cards by unified credential identity: each card shows
+   the canonical title in bold + issuing-agency subtitle, a confidence /
+   quality-flag badge when the underlying classification is shaky, and an
+   "Also entered as N variants" disclosure that exposes every raw MAP
+   title folded into the card — 28% collapse vs raw IDs as of 2026-05-26),
+   Workplan Activities & Projects, Annual Goals, Budget, Vision 2030, a
+   per-college **Common Course Reference** curation tab, a **Common Subject
+   Code** tab (faculty-facing per-discipline curation with validate workflow
+   + TOP/CTE/CIP columns + collapsible category groupings; Variants column
+   shows the raw local college subject codes colleges actually use, sourced
+   from `kb/coci_minted_memberships.json`), a **Credential Reference** tab
+   (sister to CCR, edit-override curation pending in Session 9), a
+   **quick-start natural-language tab routing** widget on the first screen
+   (Claude API classifies your prompt to one of the 8 tabs), and a
    **Pipeline** progress board.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,
