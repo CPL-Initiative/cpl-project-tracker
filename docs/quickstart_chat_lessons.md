@@ -258,3 +258,81 @@ path. Curator usage didn't signal demand in the brief gap between PR
 #135 and PR #141, so the cost-benefit lean against it stands. Re-check
 in a few weeks of dashboard logs (Cloudflare Worker access logs +
 informal curator feedback).
+
+---
+
+## 2026-05-26 — Typeahead + scroll-to-card (Sexy Dexy, PR #144)
+
+User feedback after PR #141 landed: "Quick Start doesn't yet offer
+options on where to jump to based on entries. I want to see a list of
+activities or projects I could jump to like Activity 3.1
+Apprenticeship Sprint... and when I type apprenticeship sprint, it
+filters for unexpected items, and I have to collapse all the
+sections to get down to them."
+
+**Two distinct UX gaps**, one PR:
+
+### Part 1 — Typeahead suggestion dropdown
+
+Pre-PR-#144, the Quick-Start was a black-box prompt: type, hit Go,
+wait for Claude to route. Curators couldn't see what they could jump
+to until they'd already guessed.
+
+**Fix.** On mount, `quickstart.js` builds a search directory from
+`window.CPL_DATA.projects` (49 projects, each with `id`, `name`,
+`activity`) + the existing `TABS` list (9 tabs). As the user types ≥2
+chars, up to 6 matches appear in a small dropdown:
+- **Name prefix-match beats contains-match.** Typing "appren" puts
+  "Apprenticeship Sprint" at the top of the dropdown even though
+  many projects mention apprentices in descriptions. This is the
+  whole reason the typeahead works as a "did you mean THIS specific
+  project?" surface.
+- Project IDs are searchable too (`searchable` field concatenates
+  id + name + activity, lowercased), so curators can find by code.
+- Mouse, arrow-keys (`ArrowDown`/`ArrowUp` cycling, `Escape` to
+  close, `Enter` to pick) all wired.
+- `blur` close is delayed 150ms so `mousedown` on a suggestion
+  fires before the dropdown closes.
+
+### Part 2 — `scroll_to` filter_hint (direct-jump)
+
+Pre-PR-#144, picking "apprenticeship sprint" via the AI router
+emitted `{filter_hint: {search: "apprenticeship"}}` which populated
+the searchBox. That filter matched FOUR cards (3.1, 3.1.2a, 5.3,
+4.1.2 all mention apprenticeship), and the activity-group sections
+all expanded. Curator had to scroll/collapse to find the actual
+project they wanted.
+
+**Fix.** New `scroll_to` key in `HINT_VOCAB.dashboard`. When emitted,
+`dashboard_filters.js` finds the `.project-card` whose `.project-name`
+text matches exactly, scrolls it into view (centered), and flashes a
+1.6s `box-shadow` animation (`.qs-flash` class, `@keyframes
+qsCardFlash` in static template CSS). Skips the search/filter
+mutations entirely — the named card IS the whole behavior.
+
+Picking a suggestion BYPASSES the AI router and emits `scroll_to`
+directly (faster + more specific — the user already told us exactly
+what they want, no need for a Haiku round-trip). Free-form prompts
+still go through the AI; the router's `HINT_VOCAB` advertises
+`scroll_to` so the model can emit it for free-form prompts that name
+a project.
+
+**Timing pattern.** `pick()` defers stashAndDispatch + navigateTo by
+200ms (so the user sees the status confirmation first). Inside
+`applyQuickstartHint`, the scrollIntoView is wrapped in another
+80ms setTimeout so the hash-router pane swap has time to settle
+before the card is targeted. Total: ~280ms from click to scroll —
+feels instant but gives the layout engine breathing room.
+
+**Lesson — typeahead changes the cost structure.** Before #144, every
+QS submission was a ~1-2s Haiku round-trip. After #144, the most
+common queries (named projects, tab jumps) bypass the AI entirely.
+Free-form prompts still benefit from the LLM, but the typeahead
+covers the high-frequency cases. Curator latency improved
+materially without changing the AI infrastructure.
+
+**Strategic next step.** Tier C (multi-turn) is still deferred. The
+typeahead handles "I know what I want" cases; the AI handles "I
+described a vibe"; multi-turn would handle "I'm not sure, let's
+narrow it down" — a workflow we don't have evidence curators are
+hitting. Re-check in a few weeks.

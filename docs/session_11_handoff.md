@@ -70,20 +70,52 @@ Start by reading, in order:
      intent and were left as-is. Future scope if anyone wants per-
      column th classes.
 
-GOAL — the user's call, but here are 5 worthy lanes:
+GOAL — the user's call. **PR-Sidebar-A is the explicit Session 11
+priority** the user flagged at the end of Session 10. Punted only
+because of scope (~60-90 min) and tonight's session was already
+heavy. Lead off with it.
 
-═══ A. Apprenticeship consolidation follow-on ═══
+═══ ★ LEAD-OFF: PR-Sidebar-A ═══
 
-PR #142 renamed 3.1.2a to "CPL Offers & Awards Tracking — Apprentice
-Cohort" to fix the duplicate-card confusion in the projects grid.
-The deeper conversation (consolidate overlapping projects INTO 4.1.2
-Apprenticeship Sprint) is still open. Candidates:
-  - 3.1.2a — could become a child of 4.1.2 instead of a sibling of 3.1
-  - 5.3 (AI Apprenticeship CPL Tools) — could cross-link to 4.1.2
-The user picked "rename only" for the first move. Future move would
-be either folding (lose KPI series — they'd need to re-home) or
-adding a "related projects" link field to project cards (generator
-change).
+Replace top tab nav with a fixed left rail sidebar. Detailed scope
+in CLAUDE.md §11 row and in docs/session_10_handoff.md section 2.
+Key spec:
+  - CSS Grid layout (`grid-template-columns: 220px 1fr`)
+  - 9 tabs as rail items (Dashboard, Workplan Goals, Budget,
+    Vision 2030, CCR, CSC, Credential Reference, Pipeline, Letters)
+  - Sign-in widget moves into the rail footer
+  - Hamburger toggle for narrow screens
+  - URL-hash routing unchanged (sidebar wires up the same activate())
+  - Quickstart widget gets a new home — probably stays above the
+    main content area but the layout grid needs to accommodate it
+  - Letters tab iframe sizing may need adjustment (currently 100%
+    width inside main-container — the narrower main column after
+    rail-takes-220px means the iframe may want different sizing)
+  - Active-tab pulse animation (.qs-pulse) needs the keyframes
+    updated to target the rail item instead of the top button
+
+Worth considering: extracting the inline tab-router into tabs.js
+that derives VALID_TABS from the rendered nav. Out of scope for
+core ask but a natural alongside (closes the 5-touch-points trap
+that caused PR #117 and PR #118 hotfixes; aligns with Quickstart-C's
+reality that tabs init once at page load).
+
+═══ A. Apprenticeship consolidation follow-on (mostly closed) ═══
+
+PR #142 + #145 disambiguated the 3.1 cohort family (all four cards
+now have cohort-specific suffixes). Sexy Dexy audited the full
+projects list for further consolidation targets; results:
+  - D.* rows (15) — already hidden from projects grid via three
+    existing filters in excel_to_dashboard.py (lines 2112, 7454,
+    7524). No action needed.
+  - 4.1 "Sprints and Projects" umbrella — flagged as a fold
+    candidate (its scope restates Activity 4; its KPI is a roll-up
+    of 4.1.1-4.1.4 children). Park unless user surfaces it.
+  - 2.1 + 2.2 in Activity 2 — borderline overlap (workgroups +
+    credit recs) but each has distinct KPI series. Lean keep.
+The "consolidate INTO 4.1.2 Apprenticeship Sprint" deeper move is
+still open if curator usage suggests it — requires a "related
+projects" cross-link field (generator change).
 
 ═══ B. Letter Curator follow-on ═══
 
