@@ -1504,6 +1504,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 .cpl-analytics-body,
 .activity-kpi-body {
@@ -1996,8 +1999,10 @@
         
         
         
-        <div class="last-updated">Last Updated: May 26, 2026 at 8:29 AM PT</div>
+        
+        <div class="last-updated">Last Updated: May 26, 2026 at 10:24 AM PT</div>
         <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:#C9A84C;border:1px solid #C9A84C;padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='#C9A84C';this.style.color='#0A2240'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='#C9A84C'}">&#x21bb; Refresh Today&#39;s Data</button></div>
+        
         
         
         
@@ -6730,6 +6735,7 @@
 
 
 
+
         </div>
         <!-- /main-container for Dashboard tab -->
 
@@ -8202,7 +8208,7 @@ Cont</td>
         </div>
         <!-- End Annual Workplan Goals -->
 
-                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                        </div>
         <!-- /main-container for Workplan Goals tab -->
     </div>
     <!-- /tab-workplan-goals -->
@@ -8276,6 +8282,7 @@ Cont</td>
             </div>
         </div>
         <!-- End Vision 2030 Section -->
+        
         
         
         
@@ -8619,6 +8626,33 @@ Cont</td>
             #tab-credential-reference .cr-expanded td { background:#fafbfc; padding:0; }
             #tab-credential-reference .cr-expanded-body { padding:12px 18px 16px; }
             #tab-credential-reference .cr-expanded-body h5 { margin:8px 0 4px; color:#0A2240; font-size:.85rem; }
+            /* PR-4 — curation panel inside the expanded body. Top of body so
+               edit affordances are immediately visible after expanding a row. */
+            #tab-credential-reference .cr-curation-panel { background:#fff; border:1px solid #c7d2e0; border-left:4px solid #0A2240; border-radius:6px; padding:10px 14px; margin:4px 0 14px; }
+            #tab-credential-reference .cr-curation-h { margin:0 0 6px !important; color:#0A2240 !important; font-size:.85rem !important; }
+            #tab-credential-reference .cr-curation-note { color:#6b7280; font-size:.78rem; font-style:italic; margin:4px 0 0; }
+            #tab-credential-reference .cr-curation-readonly { list-style:none; margin:8px 0 0; padding:0; font-size:.78rem; color:#374151; }
+            #tab-credential-reference .cr-curation-readonly li { padding:2px 0; }
+            #tab-credential-reference .cr-curation-tbl { border-collapse:collapse; margin-top:4px; font-size:.82rem; }
+            #tab-credential-reference .cr-curation-tbl th { text-align:right; padding:5px 10px 5px 0; color:#475569; font-weight:600; vertical-align:top; white-space:nowrap; width:130px; }
+            #tab-credential-reference .cr-curation-tbl td { padding:5px 0; vertical-align:top; }
+            #tab-credential-reference .cr-curation-row.cr-curation-overridden th { color:#0A2240; }
+            #tab-credential-reference .cr-curation-display { color:#1f2937; }
+            #tab-credential-reference .cr-curation-display .cr-null { color:#9ca3af; font-style:italic; }
+            #tab-credential-reference .cr-curation-input { font-size:.85rem; padding:3px 6px; border:1px solid #9ca3af; border-radius:4px; min-width:280px; margin-right:6px; }
+            #tab-credential-reference select.cr-curation-input { min-width:auto; }
+            #tab-credential-reference .cr-curation-edit, #tab-credential-reference .cr-curation-clear, #tab-credential-reference .cr-curation-save, #tab-credential-reference .cr-curation-cancel { font-size:.7rem; padding:2px 7px; margin-left:6px; border:1px solid transparent; border-radius:4px; cursor:pointer; background:transparent; color:#0A2240; }
+            #tab-credential-reference .cr-curation-edit:hover { background:#eef2f7; }
+            #tab-credential-reference .cr-curation-clear { color:#991b1b; }
+            #tab-credential-reference .cr-curation-clear:hover { background:#fee2e2; }
+            #tab-credential-reference .cr-curation-save { background:#166534; color:#fff; border-color:#166534; }
+            #tab-credential-reference .cr-curation-save:hover { background:#14532d; }
+            #tab-credential-reference .cr-curation-cancel { color:#6b7280; }
+            #tab-credential-reference .cr-curation-cancel:hover { background:#eef2f7; }
+            #tab-credential-reference .cr-curation-saving { color:#6b7280; font-style:italic; font-size:.78rem; }
+            #tab-credential-reference .cr-curation-meta { color:#475569; font-size:.72rem; margin-top:3px; font-style:italic; }
+            #tab-credential-reference .cr-curation-hint { color:#9ca3af; font-size:.7rem; margin-top:2px; font-style:italic; max-width:480px; }
+            #tab-credential-reference .cr-override-marker { color:#0A2240; font-weight:600; cursor:help; }
             #tab-credential-reference .cr-variants-list { list-style:none; margin:0; padding:0; }
             #tab-credential-reference .cr-variants-list li { padding:3px 0; font-size:.85rem; }
             #tab-credential-reference .cr-variant-conf { display:inline-block; min-width:3.5ch; font-family:ui-monospace,Menlo,monospace; font-size:.75rem; margin-right:4px; }
@@ -8782,8 +8816,8 @@ Cont</td>
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "May 26, 2026 at 8:29 AM PT",
-  "data_as_of": "May 26, 2026 at 8:29 AM PT",
+  "last_updated": "May 26, 2026 at 10:24 AM PT",
+  "data_as_of": "May 26, 2026 at 10:24 AM PT",
   "kpis": {
     "cumulative_students": {
       "value": "45,838",

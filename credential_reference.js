@@ -24,6 +24,18 @@
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
   var KEY_PREFIX = "_CREDENTIAL_REVIEW::";
   var FIELD_MARKER = "reviewed_marker";
+  // PR-4 — per-field override columns. Each one is a separate row in
+  // kb_curation under the same KEY_PREFIX::<unified_title>, keyed by `field`.
+  // The composite PK is (course_id, field), so a row per field stacks cleanly.
+  // Display rule: override wins; original kept on r.original_* for tooltip.
+  // unified_title_override is DISPLAY-ONLY — the original unified_title remains
+  // the KB key (and the articulation join target). A future PR-5 will promote
+  // overrides into real KB renames with an alias map + sync script.
+  var FIELD_UTITLE_OVERRIDE  = "unified_title_override";
+  var FIELD_ISSUER_OVERRIDE  = "issuing_agency_override";
+  var FIELD_TRAINER_OVERRIDE = "training_agency_override";
+  var FIELD_QFLAG_OVERRIDE   = "quality_flag_override";
+  var QFLAG_OPTIONS = ["", "suspect_course_as_exhibit", "not_a_credential", "duplicate_of_other"];
 
   // Allowlist-driven element builder. CodeQL's js/xss query flags dynamic
   // setAttribute(k, v) where the attribute name can be anything attacker-
@@ -117,6 +129,22 @@
           if (row.field === FIELD_MARKER) {
             rec.reviewed_at = row.reviewed_at;
             rec.reviewed_by = row.reviewer_email;
+          } else if (row.field === FIELD_UTITLE_OVERRIDE) {
+            rec.utitle_override   = row.value || "";
+            rec.utitle_overridden_by = row.reviewer_email;
+            rec.utitle_overridden_at = row.reviewed_at;
+          } else if (row.field === FIELD_ISSUER_OVERRIDE) {
+            rec.issuer_override = row.value || "";
+            rec.issuer_overridden_by = row.reviewer_email;
+            rec.issuer_overridden_at = row.reviewed_at;
+          } else if (row.field === FIELD_TRAINER_OVERRIDE) {
+            rec.trainer_override = row.value || "";
+            rec.trainer_overridden_by = row.reviewer_email;
+            rec.trainer_overridden_at = row.reviewed_at;
+          } else if (row.field === FIELD_QFLAG_OVERRIDE) {
+            rec.qflag_override = row.value || "";
+            rec.qflag_overridden_by = row.reviewer_email;
+            rec.qflag_overridden_at = row.reviewed_at;
           }
         });
         return m;
@@ -140,6 +168,42 @@
         "Prefer": "resolution=merge-duplicates,return=minimal"
       },
       body: JSON.stringify(body)
+    });
+  }
+
+  // PR-4 — generic save for any per-field override. Uses the same
+  // _CREDENTIAL_REVIEW::<unified_title> namespace with `field` discriminating.
+  // `value` is a string; "" is meaningful (it overrides the original to empty —
+  // useful for clearing an inferred issuer that's wrong). Use clearOverride()
+  // to remove an override entirely (DELETE the row so the original shows again).
+  function saveOverride(unifiedTitle, field, value, sess) {
+    var body = {
+      course_id: KEY_PREFIX + unifiedTitle,
+      field: field,
+      value: value,
+      reviewer_email: sess.email
+    };
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON,
+        "Authorization": "Bearer " + sess.access_token,
+        "Content-Type": "application/json",
+        "Prefer": "resolution=merge-duplicates,return=minimal"
+      },
+      body: JSON.stringify(body)
+    });
+  }
+  function clearOverride(unifiedTitle, field, sess) {
+    var url = SUPABASE_URL + "/rest/v1/kb_curation"
+      + "?course_id=eq." + encodeURIComponent(KEY_PREFIX + unifiedTitle)
+      + "&field=eq." + encodeURIComponent(field);
+    return fetch(url, {
+      method: "DELETE",
+      headers: {
+        "apikey": SUPABASE_ANON,
+        "Authorization": "Bearer " + sess.access_token
+      }
     });
   }
 
@@ -303,9 +367,38 @@
   function applyOverlay(rows, overlay) {
     rows.forEach(function (r) {
       var ov = overlay[r.unified_title];
-      if (ov && ov.reviewed_at) {
+      if (!ov) return;
+      if (ov.reviewed_at) {
         r.curator_reviewed_at = ov.reviewed_at;
         r.curator_reviewed_by = ov.reviewed_by;
+      }
+      // PR-4 — per-field overrides. r.unified_title stays the IDENTITY key
+      // (the articulation join target); r.display_title is the renderable
+      // label. The original primary_* values are preserved on r.original_*
+      // for the curation panel's "originally: X" hint.
+      if (ov.utitle_override !== undefined && ov.utitle_override !== "") {
+        r.original_display_title = r.display_title || r.unified_title;
+        r.display_title = ov.utitle_override;
+        r.utitle_overridden_by = ov.utitle_overridden_by;
+        r.utitle_overridden_at = ov.utitle_overridden_at;
+      }
+      if (ov.issuer_override !== undefined) {
+        r.original_primary_issuer = r.primary_issuer;
+        r.primary_issuer = ov.issuer_override || null;
+        r.issuer_overridden_by = ov.issuer_overridden_by;
+        r.issuer_overridden_at = ov.issuer_overridden_at;
+      }
+      if (ov.trainer_override !== undefined) {
+        r.original_primary_trainer = r.primary_trainer;
+        r.primary_trainer = ov.trainer_override || null;
+        r.trainer_overridden_by = ov.trainer_overridden_by;
+        r.trainer_overridden_at = ov.trainer_overridden_at;
+      }
+      if (ov.qflag_override !== undefined) {
+        r.original_flag_label = r.flag_label;
+        r.flag_label = ov.qflag_override || null;
+        r.qflag_overridden_by = ov.qflag_overridden_by;
+        r.qflag_overridden_at = ov.qflag_overridden_at;
       }
     });
     return rows;
@@ -406,6 +499,9 @@
     groupBy: "none",
     collapsedGroups: {},
     topCategories: {},   // 2-digit → title (loaded from baked payload)
+    // PR-4: per-row, per-field edit-mode tracker for the curation panel.
+    // shape: { "unified_title": { "field_name": "display" | "edit" | "saving" } }
+    curationEditing: {},
   };
 
   // Group key for a row given the current state.groupBy mode.
@@ -964,15 +1060,24 @@
     // Unified title — clickable to expand.
     var titleTd = el("td", { class: "cr-title-cell" });
     var caret = state.expanded[r.unified_title] ? "▾" : "▸";
+    var displayLabel = r.display_title || r.unified_title;
     var titleBtn = el("button", {
       type: "button", class: "cr-title-toggle",
-      title: "Show raw-title variants + credential record(s)"
-    }, [caret + " " + r.unified_title]);
+      title: r.utitle_overridden_at
+        ? "Curated label · originally: " + r.unified_title
+          + " · expand for raw variants + curation panel"
+        : "Show raw-title variants + curation panel + credential record(s)"
+    }, [caret + " " + displayLabel]);
     titleBtn.onclick = function () {
       state.expanded[r.unified_title] = !state.expanded[r.unified_title];
       render();
     };
     titleTd.appendChild(titleBtn);
+    if (r.utitle_overridden_at) {
+      titleTd.appendChild(el("span", { class: "cr-override-marker",
+        title: "Display label curated · originally: " + r.unified_title
+      }, [" ✎"]));
+    }
     tr.appendChild(titleTd);
 
     tr.appendChild(el("td", null, [String(r.raw_count)]));
@@ -1002,8 +1107,17 @@
       : el("span", { class: "cr-null" }, ["—"]));
     tr.appendChild(discTd);
 
-    tr.appendChild(el("td", { class: "cr-issuer-cell" },
-      [r.primary_issuer || el("span", { class: "cr-null" }, ["(none — local)"])]));
+    var issuerTd = el("td", { class: "cr-issuer-cell" });
+    issuerTd.appendChild(r.primary_issuer
+      ? document.createTextNode(r.primary_issuer)
+      : el("span", { class: "cr-null" }, ["(none — local)"]));
+    if (r.issuer_overridden_at) {
+      issuerTd.appendChild(el("span", { class: "cr-override-marker",
+        title: "Issuing agency curated · originally: " +
+               (r.original_primary_issuer || "(none)")
+      }, [" ✎"]));
+    }
+    tr.appendChild(issuerTd);
 
     tr.appendChild(el("td", { class: "cr-conf-cell " + _bandCls(r.conf_modal) },
       [r.conf_modal.toFixed(2)]));
@@ -1029,6 +1143,12 @@
       flagTd.appendChild(el("span", {
         class: "cr-flag-badge", title: r.flag_label
       }, [r.flag_label.replace(/_/g, " ")]));
+    }
+    if (r.qflag_overridden_at) {
+      flagTd.appendChild(el("span", { class: "cr-override-marker",
+        title: "Quality flag curated · originally: " +
+               (r.original_flag_label || "(none)")
+      }, [" ✎"]));
     }
     tr.appendChild(flagTd);
 
@@ -1085,10 +1205,368 @@
     return tr;
   }
 
+  // PR-4 — curation panel rendered at the top of each expanded row.
+  // For signed-in reviewers, lets them override display_title /
+  // issuing_agency / training_agency / quality_flag. Each row in the panel:
+  //   <label>      <value-or-input>   [edit | clear]
+  // Click the value to edit it (becomes an inline input/select). Enter or
+  // blur saves; Escape cancels. Clear (×) only appears when overridden.
+  // For anonymous viewers, surfaces the current curated state read-only.
+  function renderCurationPanel(r) {
+    var panel = el("div", { class: "cr-curation-panel" });
+    panel.appendChild(el("h5", { class: "cr-curation-h" }, ["Curation"]));
+
+    if (!state.sess) {
+      panel.appendChild(el("p", { class: "cr-curation-note" }, [
+        "Sign in via the toolbar to edit display title, issuing agency, training agency, or quality flag."
+      ]));
+      // Still surface any existing overrides as read-only badges so anonymous
+      // viewers see what curators have decided.
+      if (r.utitle_overridden_at || r.issuer_overridden_at ||
+          r.trainer_overridden_at || r.qflag_overridden_at) {
+        var ul = el("ul", { class: "cr-curation-readonly" });
+        if (r.utitle_overridden_at) {
+          ul.appendChild(el("li", null, [
+            "Display title: ", el("b", null, [r.display_title]),
+            " (curated · originally: " + r.unified_title + ")"
+          ]));
+        }
+        if (r.issuer_overridden_at) {
+          ul.appendChild(el("li", null, [
+            "Issuing agency: ", el("b", null, [r.primary_issuer || "(cleared)"]),
+            " (curated · originally: " + (r.original_primary_issuer || "(none)") + ")"
+          ]));
+        }
+        if (r.trainer_overridden_at) {
+          ul.appendChild(el("li", null, [
+            "Training agency: ", el("b", null, [r.primary_trainer || "(cleared)"]),
+            " (curated · originally: " + (r.original_primary_trainer || "(none)") + ")"
+          ]));
+        }
+        if (r.qflag_overridden_at) {
+          ul.appendChild(el("li", null, [
+            "Quality flag: ", el("b", null, [r.flag_label || "(cleared)"]),
+            " (curated · originally: " + (r.original_flag_label || "(none)") + ")"
+          ]));
+        }
+        panel.appendChild(ul);
+      }
+      return panel;
+    }
+
+    // Signed-in — render 4 editable fields.
+    var tbl = el("table", { class: "cr-curation-tbl" });
+    var tbody = el("tbody");
+
+    tbody.appendChild(renderCurationFieldRow({
+      r: r,
+      label: "Display title",
+      field: FIELD_UTITLE_OVERRIDE,
+      kind: "text",
+      currentValue: r.display_title || r.unified_title,
+      originalValue: r.unified_title,
+      isOverridden: !!r.utitle_overridden_at,
+      overriddenBy: r.utitle_overridden_by,
+      overriddenAt: r.utitle_overridden_at,
+      hint: "Rename is DISPLAY-ONLY. KB key + articulation joins stay on the original. A future Cred-Ref PR-5 will promote overrides into real KB renames with an alias map.",
+    }));
+
+    tbody.appendChild(renderCurationFieldRow({
+      r: r,
+      label: "Issuing agency",
+      field: FIELD_ISSUER_OVERRIDE,
+      kind: "text",
+      datalistId: "cr-issuer-list",   // re-use the existing toolbar datalist
+      currentValue: r.primary_issuer || "",
+      originalValue: r.original_primary_issuer || r.primary_issuer || "",
+      isOverridden: !!r.issuer_overridden_at,
+      overriddenBy: r.issuer_overridden_by,
+      overriddenAt: r.issuer_overridden_at,
+      hint: "Override the inferred issuer. Save \"\" (empty) to mark a credential as having no formal issuer (local exhibit, portfolio).",
+    }));
+
+    tbody.appendChild(renderCurationFieldRow({
+      r: r,
+      label: "Training agency",
+      field: FIELD_TRAINER_OVERRIDE,
+      kind: "text",
+      currentValue: r.primary_trainer || "",
+      originalValue: r.original_primary_trainer || r.primary_trainer || "",
+      isOverridden: !!r.trainer_overridden_at,
+      overriddenBy: r.trainer_overridden_by,
+      overriddenAt: r.trainer_overridden_at,
+      hint: "Override the inferred trainer (when distinct from the issuer).",
+    }));
+
+    tbody.appendChild(renderCurationFieldRow({
+      r: r,
+      label: "Quality flag",
+      field: FIELD_QFLAG_OVERRIDE,
+      kind: "select",
+      options: QFLAG_OPTIONS,
+      currentValue: r.flag_label || "",
+      originalValue: r.original_flag_label || r.flag_label || "",
+      isOverridden: !!r.qflag_overridden_at,
+      overriddenBy: r.qflag_overridden_by,
+      overriddenAt: r.qflag_overridden_at,
+      hint: "Set a quality flag (e.g. suspect_course_as_exhibit) or clear an inferred one. Used by the Credential Reference audit to triage data-entry artifacts.",
+    }));
+
+    tbl.appendChild(tbody);
+    panel.appendChild(tbl);
+    return panel;
+  }
+
+  // Renders one row of the curation table. Each row goes through three states:
+  //   1. display: show the value as text + an "edit" button
+  //   2. edit: show an input/select + Save/Cancel buttons
+  //   3. saving: show a spinner placeholder
+  // Per-row state lives in state.curationEditing[r.unified_title][field].
+  function renderCurationFieldRow(opts) {
+    var r = opts.r;
+    var rec = state.curationEditing[r.unified_title] || {};
+    var mode = rec[opts.field] || "display";  // "display" | "edit" | "saving"
+
+    var tr = el("tr", { class: "cr-curation-row" + (opts.isOverridden ? " cr-curation-overridden" : "") });
+    tr.appendChild(el("th", { class: "cr-curation-label" }, [
+      opts.label, opts.isOverridden ? el("span", { class: "cr-override-marker",
+        title: "Curated"
+      }, [" ✎"]) : ""
+    ]));
+
+    var valTd = el("td", { class: "cr-curation-value" });
+
+    if (mode === "saving") {
+      valTd.appendChild(el("span", { class: "cr-curation-saving" }, ["saving…"]));
+    } else if (mode === "edit") {
+      var input;
+      if (opts.kind === "select") {
+        input = el("select", { class: "cr-curation-input" });
+        opts.options.forEach(function (v) {
+          var o = el("option", { value: v }, [v === "" ? "(none)" : v]);
+          if (v === (opts.currentValue || "")) o.selected = true;
+          input.appendChild(o);
+        });
+      } else {
+        input = el("input", {
+          class: "cr-curation-input",
+          type: "text",
+          value: opts.currentValue || "",
+          autocomplete: "off"
+        });
+        if (opts.datalistId) input.setAttribute("list", opts.datalistId);
+      }
+      valTd.appendChild(input);
+
+      var saveBtn = el("button", {
+        type: "button", class: "cr-curation-save"
+      }, ["Save"]);
+      var cancelBtn = el("button", {
+        type: "button", class: "cr-curation-cancel"
+      }, ["Cancel"]);
+      valTd.appendChild(saveBtn);
+      valTd.appendChild(cancelBtn);
+
+      var doSave = function () {
+        var newVal = input.value;
+        // No-op guard — original value, no override existed → nothing to save.
+        if (!opts.isOverridden && newVal === opts.originalValue) {
+          rec[opts.field] = "display";
+          state.curationEditing[r.unified_title] = rec;
+          render();
+          return;
+        }
+        rec[opts.field] = "saving";
+        state.curationEditing[r.unified_title] = rec;
+        render();
+        // If new value equals the original AND we have an existing override,
+        // treat Save-as-original as a Clear — DELETE the override row.
+        var op = (opts.isOverridden && newVal === opts.originalValue)
+          ? clearOverride(r.unified_title, opts.field, state.sess)
+          : saveOverride(r.unified_title, opts.field, newVal, state.sess);
+        op.then(function (resp) {
+          if (!resp || !resp.ok) throw new Error("HTTP " + (resp && resp.status));
+          // Update overlay + row state locally so the UI is immediately consistent.
+          var ov = state.overlay[r.unified_title] || {};
+          if (opts.isOverridden && newVal === opts.originalValue) {
+            // Clear path
+            applyOverrideClear(r, opts.field);
+            delete ov[overlayKeyFor(opts.field)];
+            delete ov[overlayMetaKeyFor(opts.field, "by")];
+            delete ov[overlayMetaKeyFor(opts.field, "at")];
+          } else {
+            applyOverrideLocally(r, opts.field, newVal);
+            ov[overlayKeyFor(opts.field)] = newVal;
+            ov[overlayMetaKeyFor(opts.field, "by")] = state.sess.email;
+            ov[overlayMetaKeyFor(opts.field, "at")] = new Date().toISOString();
+          }
+          state.overlay[r.unified_title] = ov;
+          rec[opts.field] = "display";
+          state.curationEditing[r.unified_title] = rec;
+          render();
+        }).catch(function (e) {
+          alert("Save failed: " + (e && e.message ? e.message : e));
+          rec[opts.field] = "edit";
+          state.curationEditing[r.unified_title] = rec;
+          render();
+        });
+      };
+      var doCancel = function () {
+        rec[opts.field] = "display";
+        state.curationEditing[r.unified_title] = rec;
+        render();
+      };
+
+      saveBtn.onclick = doSave;
+      cancelBtn.onclick = doCancel;
+      input.onkeydown = function (e) {
+        if (e.key === "Enter") { e.preventDefault(); doSave(); }
+        else if (e.key === "Escape") { e.preventDefault(); doCancel(); }
+      };
+      // Auto-focus the input when entering edit mode.
+      setTimeout(function () { input.focus(); if (input.select) input.select(); }, 0);
+    } else {
+      // display mode
+      var span = el("span", { class: "cr-curation-display" }, [
+        opts.currentValue
+          ? document.createTextNode(opts.currentValue)
+          : el("span", { class: "cr-null" }, ["(none)"])
+      ]);
+      valTd.appendChild(span);
+
+      var editBtn = el("button", {
+        type: "button", class: "cr-curation-edit",
+        title: "Edit · " + (opts.hint || "")
+      }, ["edit"]);
+      editBtn.onclick = function () {
+        rec[opts.field] = "edit";
+        state.curationEditing[r.unified_title] = rec;
+        render();
+      };
+      valTd.appendChild(editBtn);
+
+      if (opts.isOverridden) {
+        var clearBtn = el("button", {
+          type: "button", class: "cr-curation-clear",
+          title: "Clear override — restore original: \"" + (opts.originalValue || "(none)") + "\""
+        }, ["× clear"]);
+        clearBtn.onclick = function () {
+          if (!confirm("Clear this override and restore the original value (\""
+                       + (opts.originalValue || "(none)") + "\")?")) return;
+          rec[opts.field] = "saving";
+          state.curationEditing[r.unified_title] = rec;
+          render();
+          clearOverride(r.unified_title, opts.field, state.sess)
+            .then(function (resp) {
+              if (!resp || !resp.ok) throw new Error("HTTP " + (resp && resp.status));
+              applyOverrideClear(r, opts.field);
+              var ov = state.overlay[r.unified_title] || {};
+              delete ov[overlayKeyFor(opts.field)];
+              delete ov[overlayMetaKeyFor(opts.field, "by")];
+              delete ov[overlayMetaKeyFor(opts.field, "at")];
+              state.overlay[r.unified_title] = ov;
+              rec[opts.field] = "display";
+              state.curationEditing[r.unified_title] = rec;
+              render();
+            }).catch(function (e) {
+              alert("Clear failed: " + (e && e.message ? e.message : e));
+              rec[opts.field] = "display";
+              state.curationEditing[r.unified_title] = rec;
+              render();
+            });
+        };
+        valTd.appendChild(clearBtn);
+      }
+    }
+
+    if (opts.isOverridden && opts.overriddenBy) {
+      valTd.appendChild(el("div", { class: "cr-curation-meta" }, [
+        "curated by " + opts.overriddenBy.split("@")[0]
+          + (opts.overriddenAt ? " on " + opts.overriddenAt.slice(0, 10) : "")
+          + " · originally: \"" + (opts.originalValue || "(none)") + "\""
+      ]));
+    } else if (opts.hint) {
+      valTd.appendChild(el("div", { class: "cr-curation-hint" }, [opts.hint]));
+    }
+
+    tr.appendChild(valTd);
+    return tr;
+  }
+
+  // Helpers — applyOverlay() walks all overlay rows at fetch time.
+  // applyOverrideLocally / applyOverrideClear apply ONE field for ONE row,
+  // mirroring applyOverlay's per-field logic so live edits don't require a
+  // full overlay re-fetch.
+  function overlayKeyFor(field) {
+    if (field === FIELD_UTITLE_OVERRIDE)  return "utitle_override";
+    if (field === FIELD_ISSUER_OVERRIDE)  return "issuer_override";
+    if (field === FIELD_TRAINER_OVERRIDE) return "trainer_override";
+    if (field === FIELD_QFLAG_OVERRIDE)   return "qflag_override";
+    return null;
+  }
+  function overlayMetaKeyFor(field, suffix) {
+    var prefix = overlayKeyFor(field).replace("_override", "");
+    return prefix + "_overridden_" + suffix;
+  }
+  function applyOverrideLocally(r, field, value) {
+    var nowIso = new Date().toISOString();
+    var email  = state.sess.email;
+    if (field === FIELD_UTITLE_OVERRIDE) {
+      r.display_title = value;
+      r.utitle_overridden_by = email;
+      r.utitle_overridden_at = nowIso;
+    } else if (field === FIELD_ISSUER_OVERRIDE) {
+      if (r.original_primary_issuer === undefined) r.original_primary_issuer = r.primary_issuer;
+      r.primary_issuer = value || null;
+      r.issuer_overridden_by = email;
+      r.issuer_overridden_at = nowIso;
+    } else if (field === FIELD_TRAINER_OVERRIDE) {
+      if (r.original_primary_trainer === undefined) r.original_primary_trainer = r.primary_trainer;
+      r.primary_trainer = value || null;
+      r.trainer_overridden_by = email;
+      r.trainer_overridden_at = nowIso;
+    } else if (field === FIELD_QFLAG_OVERRIDE) {
+      if (r.original_flag_label === undefined) r.original_flag_label = r.flag_label;
+      r.flag_label = value || null;
+      r.qflag_overridden_by = email;
+      r.qflag_overridden_at = nowIso;
+    }
+  }
+  function applyOverrideClear(r, field) {
+    if (field === FIELD_UTITLE_OVERRIDE) {
+      r.display_title = r.original_display_title || r.unified_title;
+      delete r.utitle_overridden_by;
+      delete r.utitle_overridden_at;
+    } else if (field === FIELD_ISSUER_OVERRIDE) {
+      if (r.original_primary_issuer !== undefined) {
+        r.primary_issuer = r.original_primary_issuer;
+        delete r.original_primary_issuer;
+      }
+      delete r.issuer_overridden_by;
+      delete r.issuer_overridden_at;
+    } else if (field === FIELD_TRAINER_OVERRIDE) {
+      if (r.original_primary_trainer !== undefined) {
+        r.primary_trainer = r.original_primary_trainer;
+        delete r.original_primary_trainer;
+      }
+      delete r.trainer_overridden_by;
+      delete r.trainer_overridden_at;
+    } else if (field === FIELD_QFLAG_OVERRIDE) {
+      if (r.original_flag_label !== undefined) {
+        r.flag_label = r.original_flag_label;
+        delete r.original_flag_label;
+      }
+      delete r.qflag_overridden_by;
+      delete r.qflag_overridden_at;
+    }
+  }
+
   function renderExpandedRow(r, colSpan) {
-    var tr = el("tr", { class: "cr-expanded" });
-    var td = el("td", { colspan: String(colSpan) });
-    var div = el("div", { class: "cr-expanded-body" });
+    // Lets a signed-in reviewer edit 4 fields: display title, issuing agency,
+    // training agency, quality flag. Display-override pattern: the original
+    // KB key (r.unified_title) is immutable; overrides change the rendered
+    // label only. Future PR-5 will promote overrides into real KB renames.
+    div.appendChild(renderCurationPanel(r));
 
     // ── Common-course identities articulating to this credential ──
     // Render a table per identity: identity badge on the left, local
