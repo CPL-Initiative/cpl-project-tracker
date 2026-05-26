@@ -1480,6 +1480,110 @@
     blanksCb.onchange = function () { render(); };
     var t; search.oninput = function () { clearTimeout(t); var v = this.value; t = setTimeout(function () { state.q = v; render(); }, 180); };
 
+    // Quickstart-C hint consumer. The toolbar selects are built once at init
+    // (kept across renders for focus stability), so applyQsHint syncs both the
+    // module-private state AND each DOM <select>.value / checkbox.checked so
+    // the chrome matches. Unknown keys / out-of-vocab values dropped silently.
+    var QS_TAB = "unified-courses";
+    var QS_KIND = { "Course": 1, "Cluster": 1, "Stand-Alone": 1 };
+    var QS_SOURCE = { "C-ID": 1, "CCN-ID": 1, "M-ID": 1, "Cluster": 1 };
+    var QS_STATUS = { "Verified": 1, "Generated": 1 };
+    var QS_CREDIT = { "Credit": 1, "Noncredit": 1, "Noncredit Enhanced": 1 };
+    var QS_CONF = { "high": "high (≥0.85)", "medium": "medium (0.7–0.84)", "low": "low (<0.7)" };
+    var QS_ARTIC = { "Has earned articulation": 1, "No articulation yet": 1 };
+    var QS_OFFICIAL = { "Has CID match": 1, "Has CCN match": 1, "CID conflict": 1 };
+    var QS_PROV_LABELS = {
+      "by subject-code": "subject_map",
+      "by title-keyword": "title_keyword",
+      "by description": "description",
+      "by TOP code": "top_code",
+    };
+    var QS_TRIAGE = {
+      "Any audit flag": 1, "3+ findings": 1,
+      "Title mismatch (likely misassigned)": 1, "TOP mismatch": 1,
+      "Description mismatch": 1, "Generic title (can't justify discipline)": 1,
+      "Subject collision (Phase 1e re-mint target)": 1,
+      "Seed untouched (never reviewed)": 1, "Cluster issues": 1,
+    };
+    function setSel(id, val) {
+      var n = document.getElementById(id);
+      if (n) n.value = val;
+    }
+    function setChk(id, on) {
+      var n = document.getElementById(id);
+      if (n) n.checked = !!on;
+    }
+    function applyQsHint(hint) {
+      if (!hint || typeof hint !== "object") return false;
+      var any = false;
+      if (typeof hint.kind === "string" && QS_KIND[hint.kind]) {
+        state.kind = hint.kind; setSel("uc-kind", hint.kind);
+        // Stand-Alone is lazy — mirror the dropdown's lazy-load behavior.
+        if (hint.kind === "Stand-Alone" && !_standaloneLoaded) {
+          summary.textContent = "Loading stand-alone courses…";
+          loadStandalone().then(render);
+        }
+        any = true;
+      }
+      if (typeof hint.source === "string" && QS_SOURCE[hint.source]) {
+        state.source = hint.source; setSel("uc-source", hint.source); any = true;
+      }
+      if (typeof hint.status === "string" && QS_STATUS[hint.status]) {
+        state.status = hint.status; setSel("uc-status", hint.status); any = true;
+      }
+      if (typeof hint.credit === "string" && QS_CREDIT[hint.credit]) {
+        state.credit = hint.credit; setSel("uc-credit", hint.credit); any = true;
+      }
+      if (typeof hint.conf === "string" && QS_CONF[hint.conf]) {
+        state.conf = hint.conf; setSel("uc-conf", QS_CONF[hint.conf]); any = true;
+      }
+      if (typeof hint.artic === "string" && QS_ARTIC[hint.artic]) {
+        state.artic = hint.artic; setSel("uc-artic", hint.artic); any = true;
+      }
+      if (typeof hint.official === "string" && QS_OFFICIAL[hint.official]) {
+        state.official = hint.official; setSel("uc-official", hint.official); any = true;
+      }
+      if (typeof hint.prov === "string" && QS_PROV_LABELS[hint.prov]) {
+        // state.prov stores the dropdown label ("by title-keyword"); passes()
+        // re-translates to the dsrc enum. Keep this consistent with onchange.
+        state.prov = hint.prov; setSel("uc-prov", hint.prov); any = true;
+      }
+      if (typeof hint.triage === "string" && QS_TRIAGE[hint.triage]) {
+        state.triage = hint.triage; setSel("uc-triage", hint.triage); any = true;
+      }
+      if (typeof hint.disc === "string" && hint.disc) {
+        // Free-form against the discipline list — silently accepted; passes()
+        // simply matches nothing if the discipline isn't in the dataset.
+        state.disc = hint.disc; setSel("uc-disc", hint.disc); any = true;
+      }
+      if (hint.flagged_only === true) {
+        state.flagged = true; setChk("uc-flagged", true); any = true;
+      }
+      if (hint.blanks_only === true) {
+        setChk("uc-blanks", true); any = true;
+      }
+      if (typeof hint.search === "string" && hint.search) {
+        state.q = hint.search;
+        var s = document.getElementById("uc-search");
+        if (s) s.value = hint.search;
+        any = true;
+      }
+      return any;
+    }
+    // Apply a hint stashed BEFORE init (refresh on a deep-linked tab).
+    if (window.CPL_QS) {
+      var pending = window.CPL_QS.consume(QS_TAB);
+      if (pending) {
+        // Defer until after the first render so the toolbar DOM exists.
+        setTimeout(function () { if (applyQsHint(pending)) render(); }, 0);
+      }
+    }
+    // Subscribe to runtime hints (already-mounted case — common path).
+    window.addEventListener("cpl-qs-hint", function (e) {
+      if (!e || !e.detail || e.detail.tab !== QS_TAB) return;
+      if (applyQsHint(e.detail.hint)) render();
+    });
+
     renderAuth();
     render();
     // Keep the session alive without new emails: renew now if the loaded token
