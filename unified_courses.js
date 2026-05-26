@@ -295,16 +295,21 @@
     top_discipline_disagreement:      "TOP code maps to a different discipline than the one assigned",
     description_discipline_disagreement: "Course description's safe-phrase set points to a different discipline (≥2 mentions)",
     subject_collision_signal:         "SUBJ4 differs from the modal SUBJ4 for this discipline — Phase 1e re-mint will canonicalize",
+    unit_anomaly:                     "typical_units represents <50% of member colleges — high unit variance, possible over-merge across different unit-load variants",
   };
-  // Mirror of kb/_row_audit.py's TAG_PENALTY_ON_DISCIPLINE — kept in sync
-  // manually. If you change penalties there, change them here too. Used to
-  // build a tag-derived score breakdown for the hover tooltip without
-  // needing to serialize per-field state into latest.json.
+  // Mirror of kb/_row_audit.py's TAG_PENALTY_ON_DISCIPLINE +
+  // TAG_PENALTY_ON_UNITS — kept in sync manually. If you change penalties
+  // there, change them here too. Used to build a tag-derived score
+  // breakdown for the hover tooltip without needing to serialize per-field
+  // state into latest.json.
   var TAG_PENALTY_ON_DISCIPLINE = {
     "discipline_title_mismatch":           0.20,
     "top_discipline_disagreement":         0.15,
     "description_discipline_disagreement": 0.15,
     "generic_title_concrete_discipline":   0.20,
+  };
+  var TAG_PENALTY_ON_UNITS = {
+    "unit_anomaly": 0.20,
   };
   function auditTagsTip(card) {
     var tags = card.tags || [];
@@ -313,11 +318,13 @@
       // Breakdown: aggregate discipline-field penalties from tags. Other
       // fields aren't penalized by tags (today), so a one-line summary
       // suffices: "discipline penalized −X (N signals: …) · other fields ok".
-      var discPenalty = 0;
-      var discSignals = [];
+      var discPenalty = 0, unitsPenalty = 0;
+      var discSignals = [], unitsSignals = [];
       tags.forEach(function (t) {
-        var p = TAG_PENALTY_ON_DISCIPLINE[t];
-        if (p) { discPenalty += p; discSignals.push(t); }
+        var pd = TAG_PENALTY_ON_DISCIPLINE[t];
+        if (pd) { discPenalty += pd; discSignals.push(t); }
+        var pu = TAG_PENALTY_ON_UNITS[t];
+        if (pu) { unitsPenalty += pu; unitsSignals.push(t); }
       });
       lines.push("faculty_trust_score: " + card.fts.toFixed(2)
                  + (card.mcs != null ? "   mc_ready_score: " + card.mcs.toFixed(2) : ""));
@@ -328,6 +335,10 @@
         lines.push("discipline state lowers score (no per-tag penalty)");
       } else {
         lines.push("discipline contribution unchanged by tags");
+      }
+      if (unitsPenalty > 0) {
+        lines.push("typical_units penalized −" + unitsPenalty.toFixed(2) + " ("
+                   + unitsSignals.length + " signal" + (unitsSignals.length === 1 ? "" : "s") + ")");
       }
     }
     lines.push("—");
@@ -912,6 +923,7 @@
       "TOP mismatch",
       "Description mismatch",
       "Generic title (can't justify discipline)",
+      "Unit anomaly (high member-unit variance)",
       "Subject collision (Phase 1e re-mint target)",
       "Seed untouched (never reviewed)",
       "Cluster issues",
@@ -924,6 +936,7 @@
       "TOP mismatch":                         function (c) { return c.tags.indexOf("top_discipline_disagreement") >= 0; },
       "Description mismatch":                 function (c) { return c.tags.indexOf("description_discipline_disagreement") >= 0; },
       "Generic title (can't justify discipline)": function (c) { return c.tags.indexOf("generic_title_concrete_discipline") >= 0; },
+      "Unit anomaly (high member-unit variance)": function (c) { return c.tags.indexOf("unit_anomaly") >= 0; },
       "Subject collision (Phase 1e re-mint target)": function (c) { return c.tags.indexOf("subject_collision_signal") >= 0; },
       "Seed untouched (never reviewed)":      function (c) { return c.tags.indexOf("seed_untouched_discipline") >= 0; },
       "Cluster issues":                       function (c) { return c.tags.some(function (t) { return t.indexOf("cluster_") === 0 || t === "uc_cur_ripe_for_promotion"; }); },

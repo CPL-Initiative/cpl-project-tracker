@@ -184,6 +184,15 @@ TAG_PENALTY_ON_DISCIPLINE = {
     "blank_discipline":                    0.00,  # already captured by state-score
 }
 
+TAG_PENALTY_ON_UNITS = {
+    # An M-ID's typical_units is the seed's representative pick. unit_anomaly
+    # fires when member colleges' modal unit value clearly disagrees with that
+    # pick — the seed chose 3.0 but most members offer the course at 4.0, for
+    # instance. Mid-strength penalty: enough to drop the row's faculty_trust
+    # below "ready" but not enough to dominate the score on its own.
+    "unit_anomaly": 0.20,
+}
+
 # Per-field-state score (how much of the field's weight the row earns). The
 # state taxonomy doubles as the trust-card vocabulary the UI can render later.
 STATE_SCORE = {
@@ -471,16 +480,21 @@ def _virtual_mc(per_row_overrides):
 def _compute_scores(faculty_fields, mc_fields, tags=None):
     """Compute faculty_trust_score + mc_ready_score with per-tag penalties.
 
-    Tags that point at a specific field (discipline-related) apply a small
-    penalty to that field's per-field score before it contributes to the
-    weighted mean. See TAG_PENALTY_ON_DISCIPLINE. The result is that a row
-    with multiple discipline cross-validation signals firing has a
+    Tags that point at a specific field apply a small penalty to that
+    field's per-field score before it contributes to the weighted mean.
+    See TAG_PENALTY_ON_DISCIPLINE and TAG_PENALTY_ON_UNITS. The result is
+    that a row with multiple cross-validation signals firing has a
     materially lower faculty_trust_score than a row with the same field
     states but no audit tags.
     """
     # Aggregate per-field penalties from tags.
-    disc_penalty = sum(TAG_PENALTY_ON_DISCIPLINE.get(t, 0.0) for t in (tags or []))
-    per_field_penalty = {"discipline": disc_penalty} if disc_penalty else None
+    tags = tags or []
+    disc_penalty  = sum(TAG_PENALTY_ON_DISCIPLINE.get(t, 0.0) for t in tags)
+    units_penalty = sum(TAG_PENALTY_ON_UNITS.get(t, 0.0) for t in tags)
+    per_field_penalty = {}
+    if disc_penalty:  per_field_penalty["discipline"]    = disc_penalty
+    if units_penalty: per_field_penalty["typical_units"] = units_penalty
+    per_field_penalty = per_field_penalty or None
     fw = [(k, faculty_fields.get(k), w) for k, w in FACULTY_WEIGHTS.items()]
     faculty_score = _score(fw, per_field_penalty=per_field_penalty)
     # MC: faculty share (using same per-field scores + penalties) + MC share.
@@ -495,7 +509,7 @@ def _compute_scores(faculty_fields, mc_fields, tags=None):
 # ─── tag generators ─────────────────────────────────────────────────────────
 
 def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None, top_disc=None,
-                  disc_to_modal_subj4=None):
+                  disc_to_modal_subj4=None, mid_unit_modal=None):
     tags = []
     if faculty_fields["discipline"]["state"] == "seed-untouched":
         tags.append("seed_untouched_discipline")
@@ -552,7 +566,78 @@ def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None, top_disc
     # + TOP). Calibration: 78 first-pass flags. See DESC_RULES below.
     if _classify_description_discipline_disagreement(rec, DESC_RULES):
         tags.append("description_discipline_disagreement")
+    # unit_anomaly — typical_units (the seed's representative pick) clearly
+    # disagrees with the modal unit value across member colleges. Member-
+    # level cross-validation; flags M-IDs where the seed picked the minority
+    # number of units. Conservative guards (≥50% modal share, ≥0.5 gap).
+    if mid_unit_modal is not None:
+        if _classify_unit_anomaly(rec, mid_unit_modal):
+            tags.append("unit_anomaly")
     return tags
+
+
+def _build_mid_unit_modal(memberships):
+    """Build {course_id: (typ_count, total_members)} from the memberships
+    file: how many member colleges offer the course at each unit value,
+    used by the unit_anomaly rule.
+
+    Stored as the raw distribution (Counter-ish dict) keyed by float unit
+    value, since the classifier looks up `typical_units` specifically.
+    Only M-IDs with ≥2 valid (non-null) member units are included —
+    single-member rows can't have variance.
+    """
+    out = {}
+    for mid, members in (memberships or {}).items():
+        vals = [m.get("units") for m in (members or [])
+                if isinstance(m.get("units"), (int, float)) and m.get("units") is not None]
+        if len(vals) < 2:
+            continue
+        counts = defaultdict(int)
+        for v in vals:
+            counts[float(v)] += 1
+        out[mid] = (dict(counts), len(vals))
+    return out
+
+
+def _classify_unit_anomaly(rec, mid_unit_modal):
+    """True when the M-ID's typical_units represents fewer than half of
+    member colleges — i.e., the seed's representative pick is a minority
+    view because the M-ID groups colleges with substantially varying unit
+    values.
+
+    Surveying the data: every M-ID's typical_units IS the modal pick (the
+    seed script at mint time was already optimal), so a "disagrees with
+    modal" rule never fires. The meaningful signal is *variance* — when a
+    consolidated course has members spread across many unit values, the
+    typical_units is a representative pick of a noisy distribution rather
+    than a clean consensus. Curators should review such M-IDs to confirm
+    the cluster genuinely IS the same course (not over-merged across
+    actually-different unit-load variants).
+
+    Guards (conservative — keep false-positive rate low):
+      - typical_units must be set
+      - member distribution must exist (≥2 valid member units)
+      - the count of members at typical_units must be < 50% of total. So
+        a 2-member [3,4] split fires (1/2 = 50% does not count as ≥50%),
+        a 3-member [3,3,4] does NOT fire (2/3 > 50%), and a 4-member
+        [3,3,4,4] fires (2/4 = exactly 50%, not strict majority).
+      - bucket lookup uses a 0.5-unit tolerance so 3.0 and 3.0 from
+        different sources match cleanly (no floating-point noise).
+    """
+    typ = rec.get("typical_units")
+    if typ is None:
+        return False
+    info = (mid_unit_modal or {}).get(rec.get("course_id"))
+    if not info:
+        return False
+    counts, total = info
+    typ_f = float(typ)
+    # Sum counts at any unit value within 0.5 of typical_units (treats
+    # 3.0 == 3.0 cleanly across float reps; legitimate 0.5-unit lab gaps
+    # are still distinguished).
+    typ_share = sum(n for v, n in counts.items() if abs(typ_f - v) < 0.5)
+    # Strict majority: typ_share must EXCEED half of total. <= half fires.
+    return typ_share * 2 <= total
 
 
 def _build_disc_to_modal_subj4(courses):
@@ -928,6 +1013,15 @@ def main():
     # Per-discipline modal SUBJ4 for the subject_collision_signal rule (Phase 1e).
     disc_to_modal_subj4 = _build_disc_to_modal_subj4(courses)
 
+    # Per-M-ID modal member-unit value for the unit_anomaly rule. Loaded
+    # from the memberships file; skips gracefully when the file is absent
+    # (rule simply doesn't fire — no false-positive surface).
+    try:
+        memberships = (load("coci_minted_memberships.json") or {}).get("memberships") or {}
+    except FileNotFoundError:
+        memberships = {}
+    mid_unit_modal = _build_mid_unit_modal(memberships)
+
     # Build cluster targets from merge_into.
     cluster_members = defaultdict(list)  # cluster_id -> [member_id, ...]
     for mid, c in curation.items():
@@ -960,7 +1054,8 @@ def main():
         # much evidence accumulated against them).
         tags = _tags_for_mid(rec, faculty, disc_bag=disc_bag,
                              subject_map=subject_map, top_disc=top_disc,
-                             disc_to_modal_subj4=disc_to_modal_subj4)
+                             disc_to_modal_subj4=disc_to_modal_subj4,
+                             mid_unit_modal=mid_unit_modal)
         mc = {}
         f_score, m_score = _compute_scores(faculty, _virtual_mc(mc), tags=tags)
         card = {
