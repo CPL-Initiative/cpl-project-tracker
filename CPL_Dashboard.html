@@ -368,6 +368,15 @@
         .qs-status-pending { color: #666; }
         .qs-status-ok { color: #1f7a3a; font-style: normal; font-weight: 600; }
         .qs-status-error { color: #c92121; font-style: normal; font-weight: 600; }
+        /* Pulse the active tab button when the quick-start chat routes you to
+           the tab you're already on (otherwise the hash-set is a silent no-op
+           and the user sees no feedback). */
+        @keyframes qsPulse {
+            0%   { background: transparent; box-shadow: 0 0 0 0 rgba(201,168,76,0.55); }
+            30%  { background: rgba(201,168,76,0.18); box-shadow: 0 0 0 6px rgba(201,168,76,0.0); }
+            100% { background: transparent; box-shadow: 0 0 0 0 rgba(201,168,76,0); }
+        }
+        .cpl-tab.qs-pulse { animation: qsPulse 1.0s ease-out; }
 
         /* Teaser cards on the Dashboard tab */
         .tab-teaser-grid {
