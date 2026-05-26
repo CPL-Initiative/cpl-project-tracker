@@ -2107,6 +2107,7 @@
         <button class="cpl-tab" data-tab="canonical-subj4" role="tab" aria-selected="false">Common Subject Code</button>
         <button class="cpl-tab" data-tab="credential-reference" role="tab" aria-selected="false">Credential Reference</button>
         <button class="cpl-tab" data-tab="pipeline" role="tab" aria-selected="false">Pipeline</button>
+        <button class="cpl-tab" data-tab="letters" role="tab" aria-selected="false">Letters</button>
     </nav>
 
     <div class="cpl-tab-pane active" id="tab-dashboard" data-tab="dashboard" role="tabpanel" aria-labelledby="tab-dashboard">
@@ -8813,6 +8814,29 @@ Cont</td>
     </div>
     <!-- /tab-pipeline -->
 
+    <!-- ═══ Letters Tab (Budget Support Letter Curator) ═══ -->
+    <div class="cpl-tab-pane" id="tab-letters" data-tab="letters" role="tabpanel" aria-labelledby="tab-letters">
+        <div class="main-container">
+            <div style="margin: 16px 0 12px 0;">
+                <h2 style="margin: 0 0 6px 0; color: #0A2240;">CPL Budget Support Letters</h2>
+                <p style="margin: 0 0 14px 0; color: #5a6478; max-width: 880px;">
+                    Curator surface for the May 2026 Revise RC support-letter campaign. Edits the shared letter
+                    blocks (statewide, joint, individual) that <code>generate-letter</code> assembles into per-invitee
+                    DOCX downloads. Read-only by default; a curator passcode unlocks edits. New letter campaigns
+                    can be drafted at
+                    <a href="budget-support/web/new-letter.html" target="_blank" rel="noopener">+ New Letter</a>.
+                </p>
+            </div>
+            <iframe
+                src="budget-support/web/curator.html"
+                title="Letter Curator"
+                style="width: 100%; height: 1400px; border: 1px solid #d8dde6; border-radius: 6px; background: #f4f6fa;"
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+    <!-- /tab-letters -->
+
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
@@ -13289,7 +13313,7 @@ Cont</td>
     <script>
     // Tab navigation with URL-hash routing.
     (function () {
-        var VALID_TABS = ['dashboard', 'workplan-goals', 'budget', 'vision-2030', 'unified-courses', 'canonical-subj4', 'credential-reference', 'pipeline'];
+        var VALID_TABS = ['dashboard', 'workplan-goals', 'budget', 'vision-2030', 'unified-courses', 'canonical-subj4', 'credential-reference', 'pipeline', 'letters'];
         function activate(tabName) {
             if (!tabName || VALID_TABS.indexOf(tabName) === -1) tabName = 'dashboard';
             document.querySelectorAll('.cpl-tab').forEach(function (b) {

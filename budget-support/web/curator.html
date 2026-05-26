@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Letter Curator</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .block-editor { margin-bottom: 18px; }
+    .block-editor textarea {
+      width: 100%;
+      min-height: 140px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.88rem;
+      padding: 10px;
+      border: 1px solid var(--map-border);
+      border-radius: 4px;
+      resize: vertical;
+    }
+    .block-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+    .block-meta h3 {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--map-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .block-meta .scope-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      background: #eef2f8;
+      color: var(--map-blue);
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+    .block-meta .scope-tag.statewide { background: #fff3d1; color: #8b5e00; }
+    .block-meta .scope-tag.joint     { background: #e7f4ea; color: #2f7a3f; }
+    .block-meta .scope-tag.individual { background: #f3eaf7; color: #6b3091; }
+    .block-actions { margin-top: 6px; display: flex; gap: 8px; }
+    .changed { border-left: 4px solid var(--map-gold); padding-left: 8px; }
+    .helptext {
+      background: #fffbea;
+      border: 1px solid #f0d97d;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+    }
+    .helptext code { background: white; padding: 1px 5px; border-radius: 3px; font-size: 0.85rem; }
+    .scope-group { margin-bottom: 28px; }
+    .scope-group > h2 { border-bottom: 1px solid var(--map-border); padding-bottom: 6px; }
+    select { font: inherit; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--map-border); }
+  </style>
+</head>
+<body>
+
+<header class="brand">
+  <div>
+    <h1>Letter Curator</h1>
+    <div class="sub">Edit paragraph blocks for the CPL budget-support campaigns</div>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <select id="campaign-select"><option>Loading…</option></select>
+    <a href="./new-letter.html" class="btn btn-secondary" style="padding:6px 14px;font-size:0.9rem">+ New Letter</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="helptext">
+    <strong>How this works:</strong>
+    Each paragraph of the letter is a <code>block</code>. Blocks have a
+    <code>scope</code> — <code>all</code> applies to every mode; <code>statewide</code>,
+    <code>joint</code>, and <code>individual</code> override <code>all</code> for that mode.
+    Tokens like <code>{{ORG_NAME}}</code>, <code>{{SW_STUDENTS}}</code>, and
+    <code>{{SW_TOTAL_COLLEGES}}</code> are expanded at letter-generation time from the
+    invitee record + live dashboard JSON.
+    Every save snapshots the previous version to <code>letter_block_history</code>.
+    <br><br>
+    <a href="#" id="download-current" target="_blank">Preview current letter as DOCX →</a>
+    &nbsp;&nbsp;
+    <a href="#" id="download-statewide" target="_blank">Preview statewide letter as DOCX →</a>
+  </div>
+
+  <div id="auth-banner" class="status-banner info" style="display:none">
+    <strong>Read-only.</strong> Paste your curator passcode to enable edits.
+    <input type="password" id="passcode" placeholder="curator passcode" style="margin-left:8px;padding:6px 8px;border-radius:4px;border:1px solid var(--map-border);width:240px">
+    <button class="btn btn-primary" id="auth-btn" style="padding:6px 14px;margin-left:6px">Unlock</button>
+  </div>
+
+  <div id="blocks-container">
+    <p class="muted">Loading blocks…</p>
+  </div>
+
+</main>
+
+<footer class="foot">CPL Project Tracker • Letter curator</footer>
+
+<script type="module">
+import { CURATOR_URL, GENERATE_LETTER_URL, SUPABASE_ANON } from "./config.js";
+
+const $ = (id) => document.getElementById(id);
+let CAMPAIGN = "may-2026-revise-rc";
+let PASSCODE = sessionStorage.getItem("curator_pass") || "";
+let BLOCKS = []; // current loaded blocks
+
+function escape(s) { return String(s ?? "").replace(/[&<>]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+
+// All edge-function calls need the publishable key for Supabase's gateway,
+// even when verify_jwt is off. Write calls additionally need the curator
+// passcode in Authorization.
+function apiHeaders(write = false) {
+  const h = { apikey: SUPABASE_ANON };
+  if (write && PASSCODE) h["Authorization"] = `Bearer ${PASSCODE}`;
+  return h;
+}
+
+// DOCX downloads bypass the gateway via a JS fetch (so we can attach the
+// apikey header), then trigger a Save-As via a blob URL.
+async function downloadDocx(url, filename) {
+  const res = await fetch(url, { headers: { apikey: SUPABASE_ANON }});
+  if (!res.ok) {
+    alert(`Download failed (HTTP ${res.status}): ${await res.text()}`);
+    return;
+  }
+  const blob = await res.blob();
+  const blobUrl = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = blobUrl; a.download = filename; document.body.appendChild(a);
+  a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+}
+
+async function loadCampaigns() {
+  try {
+    const res = await fetch(`${CURATOR_URL}?list=campaigns`, { headers: apiHeaders() });
+    const j = await res.json();
+    if (!res.ok) throw new Error(j.error ?? "list failed");
+    const opts = (j.campaigns ?? []).filter((c) => c.active).map((c) =>
+      `<option value="${c.slug}">${escape(c.name)} (${c.letter_type})</option>`
+    ).join("");
+    $("campaign-select").innerHTML = opts || `<option value="">(no campaigns)</option>`;
+    // Preserve selection if URL has ?campaign=, otherwise use the first
+    const wanted = new URLSearchParams(location.search).get("campaign");
+    if (wanted) $("campaign-select").value = wanted;
+    CAMPAIGN = $("campaign-select").value;
+  } catch (e) {
+    $("campaign-select").innerHTML = `<option>load error: ${escape(String(e?.message ?? e))}</option>`;
+  }
+}
+
+async function loadBlocks() {
+  if (!CAMPAIGN) { $("blocks-container").innerHTML = `<p class="muted">No campaign selected.</p>`; return; }
+  $("blocks-container").innerHTML = `<p class="muted">Loading…</p>`;
+  try {
+    const res = await fetch(`${CURATOR_URL}?campaign=${encodeURIComponent(CAMPAIGN)}`, { headers: apiHeaders() });
+    const text = await res.text();
+    let j; try { j = JSON.parse(text); } catch { j = { error: text }; }
+    if (!res.ok) {
+      $("blocks-container").innerHTML = `<div class="status-banner error">HTTP ${res.status}: ${escape(j.error ?? text)}</div>`;
+      return;
+    }
+    BLOCKS = j.blocks ?? [];
+    render();
+  } catch (e) {
+    $("blocks-container").innerHTML = `<div class="status-banner error">${escape(String(e?.message ?? e))}</div>`;
+  }
+}
+
+function render() {
+  // Group by scope, then sort blocks within each scope by a fixed order.
+  // signer_name + signer_title appear at the top since they're the most
+  // commonly tweaked fields and are short single-line values.
+  const ORDER = ["signer_name","signer_title","opening","rationale","stats","institution","example","ask","cta"];
+  const byScope = {};
+  for (const b of BLOCKS) {
+    (byScope[b.scope] = byScope[b.scope] || []).push(b);
+  }
+  for (const sc in byScope) {
+    byScope[sc].sort((a,b) => ORDER.indexOf(a.block_key) - ORDER.indexOf(b.block_key));
+  }
+  const scopes = ["all","statewide","joint","individual"].filter((s) => byScope[s]);
+
+  $("blocks-container").innerHTML = scopes.map((scope) => `
+    <div class="scope-group">
+      <h2>Scope: <code>${scope}</code></h2>
+      ${byScope[scope].map((b) => {
+        const isShort = b.block_key === "signer_name" || b.block_key === "signer_title";
+        const field = isShort
+          ? `<input type="text" value="${escape(b.content)}" style="width:100%;padding:10px 12px;font:inherit;border:1px solid var(--map-border);border-radius:4px">`
+          : `<textarea>${escape(b.content)}</textarea>`;
+        return `
+        <div class="block-editor" data-key="${b.block_key}" data-scope="${b.scope}">
+          <div class="block-meta">
+            <h3>${b.block_key}<span class="scope-tag ${b.scope}">${b.scope}</span></h3>
+            <span class="muted" style="font-size:0.8rem">updated ${new Date(b.updated_at).toLocaleString()}</span>
+          </div>
+          ${field}
+          <div class="block-actions">
+            <button class="btn btn-primary save-btn" data-key="${b.block_key}" data-scope="${b.scope}" disabled>Save</button>
+            ${b.scope !== "all" ? `<button class="btn btn-danger reset-btn" data-key="${b.block_key}" data-scope="${b.scope}">Reset to default (scope=all)</button>` : ""}
+            <button class="btn btn-secondary history-btn" data-key="${b.block_key}" data-scope="${b.scope}">History</button>
+          </div>
+        </div>
+      `;}).join("")}
+    </div>
+  `).join("");
+
+  // Wire up text inputs to enable Save button when changed
+  document.querySelectorAll(".block-editor").forEach((ed) => {
+    const ta = ed.querySelector("textarea, input[type=text]");
+    if (!ta) return;
+    const orig = ta.value;
+    const saveBtn = ed.querySelector(".save-btn");
+    ta.addEventListener("input", () => {
+      const changed = ta.value !== orig;
+      saveBtn.disabled = !changed;
+      ed.classList.toggle("changed", changed);
+    });
+    saveBtn.addEventListener("click", () => save(saveBtn.dataset.key, saveBtn.dataset.scope, ta.value));
+  });
+  document.querySelectorAll(".reset-btn").forEach((b) =>
+    b.addEventListener("click", () => reset(b.dataset.key, b.dataset.scope)));
+  document.querySelectorAll(".history-btn").forEach((b) =>
+    b.addEventListener("click", () => showHistory(b.dataset.key, b.dataset.scope)));
+
+  showAuthBanner();
+}
+
+function showAuthBanner() {
+  $("auth-banner").style.display = PASSCODE ? "none" : "block";
+  document.querySelectorAll(".save-btn, .reset-btn").forEach((b) => {
+    if (!PASSCODE) b.title = "Enter curator passcode to enable";
+  });
+}
+
+async function save(blockKey, scope, content) {
+  if (!PASSCODE) { alert("Enter curator passcode first."); return; }
+  const res = await fetch(CURATOR_URL, {
+    method: "PUT",
+    headers: { ...apiHeaders(true), "Content-Type": "application/json" },
+    body: JSON.stringify({ campaign_slug: CAMPAIGN, block_key: blockKey, scope, content, updated_by: "curator-ui" }),
+  });
+  const j = await res.json();
+  if (!res.ok) { alert("Save failed: " + j.error); return; }
+  await loadBlocks();
+}
+
+async function reset(blockKey, scope) {
+  if (!PASSCODE) { alert("Enter curator passcode first."); return; }
+  if (!confirm(`Delete the ${scope}-scope override for "${blockKey}"? The letter will fall back to the scope=all content.`)) return;
+  const res = await fetch(CURATOR_URL, {
+    method: "DELETE",
+    headers: { ...apiHeaders(true), "Content-Type": "application/json" },
+    body: JSON.stringify({ campaign_slug: CAMPAIGN, block_key: blockKey, scope }),
+  });
+  const j = await res.json();
+  if (!res.ok) { alert("Reset failed: " + j.error); return; }
+  await loadBlocks();
+}
+
+async function showHistory(blockKey, scope) {
+  const res = await fetch(
+    `${CURATOR_URL}?campaign=${encodeURIComponent(CAMPAIGN)}&block_key=${encodeURIComponent(blockKey)}&scope=${encodeURIComponent(scope)}&history`,
+    { headers: apiHeaders() }
+  );
+  const j = await res.json();
+  const lines = (j.history ?? []).map((h) =>
+    `--- archived ${new Date(h.archived_at).toLocaleString()} ` +
+    `(was updated by ${h.updated_by ?? "?"} at ${new Date(h.updated_at).toLocaleString()}) ---\n${h.content}\n`
+  );
+  alert(lines.length ? lines.join("\n\n") : "No prior versions.");
+}
+
+$("auth-btn").addEventListener("click", () => {
+  PASSCODE = $("passcode").value.trim();
+  if (PASSCODE) sessionStorage.setItem("curator_pass", PASSCODE);
+  loadBlocks();
+});
+
+function updateDownloadLinks() {
+  $("download-current").onclick = (e) => {
+    e.preventDefault();
+    downloadDocx(`${GENERATE_LETTER_URL}?mode=preview&campaign=${encodeURIComponent(CAMPAIGN)}`,
+                 `CPL_${CAMPAIGN}_preview.docx`);
+  };
+  $("download-statewide").onclick = (e) => {
+    e.preventDefault();
+    downloadDocx(`${GENERATE_LETTER_URL}?mode=statewide&campaign=${encodeURIComponent(CAMPAIGN)}`,
+                 `CPL_${CAMPAIGN}_statewide.docx`);
+  };
+}
+
+updateDownloadLinks();
+(async () => {
+  await loadCampaigns();
+  // Wire campaign-select after the options are populated.
+  $("campaign-select").addEventListener("change", (e) => {
+    CAMPAIGN = e.target.value;
+    updateDownloadLinks();
+    loadBlocks();
+  });
+  await loadBlocks();
+})();
+</script>
+</body>
+</html>
