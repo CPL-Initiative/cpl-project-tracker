@@ -5870,6 +5870,84 @@ EXHIBIT_ANALYSIS_CSS = """
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-weight: 600;
+}
+/* EACR Phase 4 PR-C2 — supporting elements around the unified-title card name. */
+.sw-issuer-subtitle {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 1px;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 280px;
+}
+.sw-title-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 2px;
+}
+.sw-conf-badge, .sw-quality-badge {
+    display: inline-block;
+    font-size: 0.58rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+}
+.sw-conf-badge {
+    background: rgba(201,168,76,0.18);
+    color: #C9A84C;
+    border: 1px solid rgba(201,168,76,0.4);
+}
+.sw-conf-low {
+    background: rgba(201,80,80,0.18);
+    color: #e8a3a3;
+    border-color: rgba(201,80,80,0.4);
+}
+.sw-quality-badge {
+    background: rgba(201,80,80,0.15);
+    color: #e8a3a3;
+    border: 1px solid rgba(201,80,80,0.3);
+}
+.sw-also-entered {
+    margin-top: 3px;
+}
+.sw-also-entered > summary {
+    font-size: 0.7rem;
+    color: rgba(155,188,216,0.85);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+.sw-also-entered > summary::before {
+    content: "▸ ";
+    font-size: 0.65rem;
+    transition: transform 0.15s;
+    display: inline-block;
+}
+.sw-also-entered[open] > summary::before {
+    transform: rotate(90deg);
+}
+.sw-also-entered > summary:hover {
+    color: #C9A84C;
+}
+.sw-raw-titles {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0 0 0 14px;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.6);
+}
+.sw-raw-titles li {
+    padding: 1px 0;
+    border-left: 1px solid rgba(155,188,216,0.2);
+    padding-left: 6px;
+    margin-left: -8px;
+    white-space: normal;
+    line-height: 1.35;
 }
 .exhibit-cell-num {
     text-align: right;
