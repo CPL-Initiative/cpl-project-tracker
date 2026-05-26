@@ -238,6 +238,46 @@ function resetFilters() {
     var resetBtn = document.getElementById('resetBtn');
     if (resetBtn) resetBtn.addEventListener('click', resetFilters);
 
+    // Quick-start filter_hint consumer. The Dashboard tab is always mounted
+    // (it's the default), so we both pull any stashed hint at script-load
+    // AND listen for live route events (when the user submits the chat
+    // while already on Dashboard, no hashchange fires).
+    function applyQuickstartHint(hint) {
+        if (!hint || typeof hint !== 'object') return;
+        var changed = false;
+        function setSelectByContains(id, needle) {
+            var sel = document.getElementById(id);
+            if (!sel || !needle) return;
+            var needleNorm = String(needle).toLowerCase();
+            for (var i = 0; i < sel.options.length; i++) {
+                if (sel.options[i].value.toLowerCase().indexOf(needleNorm) !== -1) {
+                    sel.value = sel.options[i].value;
+                    changed = true;
+                    return;
+                }
+            }
+        }
+        if (typeof hint.search === 'string' && hint.search.trim()) {
+            var sbEl = document.getElementById('searchBox');
+            if (sbEl) { sbEl.value = hint.search.trim(); changed = true; }
+        }
+        if (hint.activity) setSelectByContains('filterActivity', hint.activity);
+        if (hint.goal)     setSelectByContains('filterGoal',     hint.goal);
+        if (hint.status)   setSelectByContains('filterStatus',   hint.status);
+        if (hint.lead)     setSelectByContains('filterLead',     hint.lead);
+        if (changed) applyFilters();
+    }
+    // Cold-load path — a hint stashed in sessionStorage from a previous
+    // quickstart submit gets consumed once.
+    if (window.CPL_QS && typeof window.CPL_QS.consume === 'function') {
+        applyQuickstartHint(window.CPL_QS.consume('dashboard'));
+    }
+    // Live path — the user submits the chat with Dashboard already active.
+    window.addEventListener('cpl-qs-hint', function (ev) {
+        var d = ev && ev.detail;
+        if (d && d.tab === 'dashboard') applyQuickstartHint(d.hint);
+    });
+
     // Inject Master Report + Update buttons next to filter buttons
     var filterBtns = document.querySelector('.filter-buttons');
     if (filterBtns) {

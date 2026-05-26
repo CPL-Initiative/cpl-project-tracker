@@ -30,7 +30,7 @@
 
   // Tabs known to the router — keep in sync with VALID_TABS in CPL_Dashboard.html (~line 13091).
   var TABS = [
-    {hash: 'dashboard',            label: 'Dashboard',                desc: 'KPI overview, projects grid, activity metrics'},
+    {hash: 'dashboard',            label: 'Dashboard',                desc: 'KPI overview, CPL projects grid (named projects + initiatives like Apprenticeship, AI in CPL, etc.), workplan activities. Use filter_hint.search to surface specific projects/initiatives.'},
     {hash: 'workplan-goals',       label: 'Annual Workplan Goals',    desc: 'Five-year CPL goals with annual progress'},
     {hash: 'budget',               label: 'Budget',                   desc: 'CPL budget and expenditure plan'},
     {hash: 'vision-2030',          label: 'Vision 2030',              desc: 'Alignment cards showing CPL contribution to Vision 2030'},
@@ -38,6 +38,7 @@
     {hash: 'canonical-subj4',      label: 'Common Subject Code',      desc: 'Curate the 4-letter subject code per MQ discipline'},
     {hash: 'credential-reference', label: 'Credential Reference',     desc: 'Curate credential identities — unified credential names, issuing agencies'},
     {hash: 'pipeline',             label: 'Pipeline',                 desc: 'Data pipeline reference / methodology'},
+    {hash: 'letters',              label: 'Letters',                  desc: 'Budget support letter curator — edits campaign letter blocks (passcode-gated)'},
   ];
 
   var VALID_HASHES = TABS.map(function (t) { return t.hash; });
@@ -50,6 +51,19 @@
   // unknown keys/values, so adding entries here is safe; removing them is
   // the only thing to be careful about.
   var HINT_VOCAB = {
+    'dashboard': {
+      // Free-text search against the projects grid (matches project titles +
+      // activity names). Use this when the user names a specific CPL project
+      // or initiative — e.g. "apprenticeship initiative", "AI in CPL",
+      // "MAP optimization" — so the destination tab opens with the search
+      // box pre-populated and the grid filtered.
+      search: '<free-form search string, e.g. "apprenticeship", "AI", "Veterans">',
+      // Optional category filters. Use these when the user names a workplan
+      // structure (e.g. "show me Activity 3" or "Goal 2 projects").
+      activity: ['Activity 1', 'Activity 2', 'Activity 3', 'Activity 4', 'Activity 5'],
+      goal:     ['Goal 1', 'Goal 2', 'Goal 3', 'Goal 4', 'Goal 5'],
+      status:   ['Complete', 'In Progress', 'Not Started', 'On Hold'],
+    },
     'credential-reference': {
       audit_tag: [
         'low_confidence_title', 'very_low_confidence_title',
@@ -131,16 +145,20 @@
       'If the user asks about courses, course identities, C-ID / M-ID / CCN → "unified-courses".',
       'If the user asks about discipline codes or subject abbreviations → "canonical-subj4".',
       '',
-      'filter_hint vocabulary — only these keys are recognized, and only the listed values per key. Use the EXACT strings shown; multiple keys may be combined in one object. Other tabs (dashboard / workplan-goals / budget / vision-2030 / pipeline) accept no filter_hint — omit it.',
+      'filter_hint vocabulary — only these keys are recognized, and only the listed values per key. Use the EXACT strings shown; multiple keys may be combined in one object. Other tabs (workplan-goals / budget / vision-2030 / pipeline / letters) accept no filter_hint — omit it.',
       '',
       buildHintVocabBlock(),
       '',
       'Examples:',
+      '  "apprenticeship initiative" → {"tab":"dashboard","filter_hint":{"search":"apprenticeship"},"message":"Opening Dashboard filtered to the apprenticeship initiative."}',
+      '  "show me Activity 3 projects" → {"tab":"dashboard","filter_hint":{"activity":"Activity 3"},"message":"Opening Dashboard filtered to Activity 3."}',
+      '  "AI in CPL" → {"tab":"dashboard","filter_hint":{"search":"AI"},"message":"Opening Dashboard filtered to AI-related projects."}',
       '  "review unclassified credentials" → {"tab":"credential-reference","filter_hint":{"audit_tag":"unclassified_in_map"},"message":"Opening Credential Reference with the unclassified-in-MAP queue."}',
       '  "find Adobe credentials" → {"tab":"credential-reference","filter_hint":{"search":"Adobe"},"message":"Opening Credential Reference filtered to Adobe."}',
       '  "title-keyword Generated rows in CCR" → {"tab":"unified-courses","filter_hint":{"status":"Generated","prov":"by title-keyword"},"message":"Opening the Common Course Reference with title-keyword Generated rows."}',
       '  "subjects needing review" → {"tab":"canonical-subj4","filter_hint":{"status":"needs_review"},"message":"Opening Common Subject Code filtered to needs-review."}',
       '  "show me the budget" → {"tab":"budget","message":"Opening the Budget tab."}',
+      '  "draft a support letter" → {"tab":"letters","message":"Opening the Letters tab."}',
       '',
       'Only include filter_hint when the user clearly indicates a specific filter intent. When in doubt, omit it.',
       'Respond with the JSON object only — no preamble, no code fences.',
