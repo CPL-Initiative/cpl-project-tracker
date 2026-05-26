@@ -8334,8 +8334,17 @@ Cont</td>
             #tab-unified-courses .uc-summary { color:#6b7280; font-size:.82rem; margin-bottom:8px; }
             #tab-unified-courses .uc-table-wrap { overflow:auto; max-height:70vh; border:1px solid #e5e7eb; border-radius:8px; }
             #tab-unified-courses table.uc-table { border-collapse:collapse; width:100%; font-size:.82rem; }
-            #tab-unified-courses .uc-table th { position:sticky; top:0; background:#0A2240; color:#C9A84C; text-align:left; padding:8px 10px; white-space:nowrap; z-index:1; }
-            #tab-unified-courses .uc-table td { padding:6px 10px; border-top:1px solid #eef2f7; vertical-align:middle; }
+            #tab-unified-courses .uc-table th { position:sticky; top:0; background:#0A2240; color:#C9A84C; text-align:center; vertical-align:middle; padding:8px 10px; white-space:nowrap; z-index:1; }
+            #tab-unified-courses .uc-table td { padding:6px 10px; border-top:1px solid #eef2f7; text-align:center; vertical-align:middle; }
+            /* CSC-G: center-except-first per CSC-F prototype, with per-column
+               opt-outs for the long-text identifier columns (Title col 3,
+               Discipline col 4) where natural left-read beats centering. */
+            #tab-unified-courses .uc-table th:first-child,
+            #tab-unified-courses .uc-table td:first-child,
+            #tab-unified-courses .uc-table th:nth-child(3),
+            #tab-unified-courses .uc-table td:nth-child(3),
+            #tab-unified-courses .uc-table th:nth-child(4),
+            #tab-unified-courses .uc-table td:nth-child(4) { text-align:left; }
             #tab-unified-courses .uc-table td.uc-kind-cell { white-space:nowrap; }
             #tab-unified-courses .uc-table tr:hover td { background:#f8fafc; }
             #tab-unified-courses .uc-id { font-family:ui-monospace,Menlo,monospace; white-space:nowrap; color:#334155; }
