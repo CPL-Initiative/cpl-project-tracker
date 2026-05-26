@@ -1,14 +1,21 @@
 /*
- * CPL Dashboard — Quick-start chat (Tier A: routing only)
+ * CPL Dashboard — Quick-start chat (Tier A routing + Tier B filter hints)
  *
  * Lightweight banner at the top of every tab: "What are you working on today?"
  * Sends the user's prompt to Claude via the existing Cloudflare Worker proxy
- * (window.CPL_REPORT_PROXY_URL), gets back a structured JSON {tab, message},
- * and sets location.hash so the existing tab-router (CPL_Dashboard.html ~13091)
- * navigates the user to the right pane.
+ * (window.CPL_REPORT_PROXY_URL), gets back a structured JSON {tab, message,
+ * filter_hint?}, and:
+ *   1. stashes filter_hint into sessionStorage[`cpl_qs_hint_<tab>`] AND
+ *      dispatches a `cpl-qs-hint` window event (already-mounted tabs react
+ *      immediately; the sessionStorage copy survives the hashchange in case
+ *      the destination tab's listener is installed late);
+ *   2. sets location.hash so the existing tab-router (CPL_Dashboard.html ~13291)
+ *      navigates the user to the right pane.
  *
- * No filters applied (yet) — promoting to tier B will read a `filter_hint` key
- * from the same response and drop it into sessionStorage for the target tab.
+ * filter_hint vocabulary is enumerated in the system prompt so the model
+ * emits the exact enum strings the target tabs accept (avoids mismatch).
+ * Each target tab does its own applyHint() — see HINT_VOCAB below for the
+ * authoritative key/value list.
  *
  * Sidebar/tabs stay intact; this is a quick-start affordance, not a replacement.
  */
@@ -35,6 +42,74 @@
 
   var VALID_HASHES = TABS.map(function (t) { return t.hash; });
 
+  // ── Filter-hint vocabulary ──
+  // For each tab that supports a filter pre-pop, lists the valid hint keys
+  // and the EXACT enum strings the tab's applyHint() accepts. The system
+  // prompt enumerates these to the model so it doesn't hallucinate values
+  // (e.g. "unclassified" vs "unclassified_in_map"). Tabs silently ignore
+  // unknown keys/values, so adding entries here is safe; removing them is
+  // the only thing to be careful about.
+  var HINT_VOCAB = {
+    'credential-reference': {
+      audit_tag: [
+        'low_confidence_title', 'very_low_confidence_title',
+        'low_confidence_issuer', 'very_low_confidence_issuer',
+        'low_confidence_trainer', 'very_low_confidence_trainer',
+        'agency_name_collision_signal', 'suspect_course_as_exhibit',
+        'blank_unified_title', 'unclassified_in_map', 'stale_kb_entry',
+      ],
+      confidence_band: ['0.95-1.00', '0.80-0.94', '0.60-0.79', '0.40-0.59', '<0.40'],
+      issuer: '<free-form issuer name, exact match in the dataset>',
+      quality_flag_only: [true],
+      search: '<free-form search string>',
+    },
+    'unified-courses': {
+      kind: ['Course', 'Cluster', 'Stand-Alone'],
+      source: ['C-ID', 'CCN-ID', 'M-ID', 'Cluster'],
+      status: ['Verified', 'Generated'],
+      credit: ['Credit', 'Noncredit', 'Noncredit Enhanced'],
+      conf: ['high', 'medium', 'low'],
+      artic: ['Has earned articulation', 'No articulation yet'],
+      official: ['Has CID match', 'Has CCN match', 'CID conflict'],
+      prov: ['by subject-code', 'by title-keyword', 'by description', 'by TOP code'],
+      triage: [
+        'Any audit flag', '3+ findings',
+        'Title mismatch (likely misassigned)', 'TOP mismatch',
+        'Description mismatch', "Generic title (can't justify discipline)",
+        'Subject collision (Phase 1e re-mint target)',
+        'Seed untouched (never reviewed)', 'Cluster issues',
+      ],
+      flagged_only: [true],
+      blanks_only: [true],
+      disc: '<free-form MQ discipline name, exact match>',
+      search: '<free-form search string>',
+    },
+    'canonical-subj4': {
+      status: ['needs_review', 'pre_seeded', 'reviewed', 'validated', 'invalid'],
+      top_2digit: '<2-digit TOP category code, e.g. "12">',
+      search: '<free-form search string>',
+    },
+  };
+
+  function buildHintVocabBlock() {
+    var lines = [];
+    Object.keys(HINT_VOCAB).forEach(function (tab) {
+      lines.push('  ' + tab + ':');
+      var vocab = HINT_VOCAB[tab];
+      Object.keys(vocab).forEach(function (key) {
+        var v = vocab[key];
+        var rendered;
+        if (Array.isArray(v)) {
+          rendered = v.map(function (x) { return JSON.stringify(x); }).join(' | ');
+        } else {
+          rendered = v;
+        }
+        lines.push('    ' + key + ': ' + rendered);
+      });
+    });
+    return lines.join('\n');
+  }
+
   function buildSystemPrompt() {
     var tabLines = TABS.map(function (t) {
       return '- ' + t.hash + ': ' + t.label + ' — ' + t.desc;
@@ -48,12 +123,26 @@
       'When the user describes what they want to do today, output ONLY a JSON object with these keys:',
       '  "tab": one of the hash values above (REQUIRED)',
       '  "message": a friendly one-sentence confirmation (REQUIRED, ≤25 words)',
+      '  "filter_hint": an object with one or more pre-pop filter values for the destination tab (OPTIONAL; omit if not relevant)',
       '',
       'If the user\'s intent is ambiguous, pick the closest match and make the message briefly explain why.',
       'If the user just asks a general question or wants to explore, route to "dashboard".',
       'If the user asks about credentials, certifications, exhibits, or industry certs → "credential-reference".',
       'If the user asks about courses, course identities, C-ID / M-ID / CCN → "unified-courses".',
       'If the user asks about discipline codes or subject abbreviations → "canonical-subj4".',
+      '',
+      'filter_hint vocabulary — only these keys are recognized, and only the listed values per key. Use the EXACT strings shown; multiple keys may be combined in one object. Other tabs (dashboard / workplan-goals / budget / vision-2030 / pipeline) accept no filter_hint — omit it.',
+      '',
+      buildHintVocabBlock(),
+      '',
+      'Examples:',
+      '  "review unclassified credentials" → {"tab":"credential-reference","filter_hint":{"audit_tag":"unclassified_in_map"},"message":"Opening Credential Reference with the unclassified-in-MAP queue."}',
+      '  "find Adobe credentials" → {"tab":"credential-reference","filter_hint":{"search":"Adobe"},"message":"Opening Credential Reference filtered to Adobe."}',
+      '  "title-keyword Generated rows in CCR" → {"tab":"unified-courses","filter_hint":{"status":"Generated","prov":"by title-keyword"},"message":"Opening the Common Course Reference with title-keyword Generated rows."}',
+      '  "subjects needing review" → {"tab":"canonical-subj4","filter_hint":{"status":"needs_review"},"message":"Opening Common Subject Code filtered to needs-review."}',
+      '  "show me the budget" → {"tab":"budget","message":"Opening the Budget tab."}',
+      '',
+      'Only include filter_hint when the user clearly indicates a specific filter intent. When in doubt, omit it.',
       'Respond with the JSON object only — no preamble, no code fences.',
     ].join('\n');
   }
@@ -70,6 +159,35 @@
     }
     return null;
   }
+
+  // ── Hint plumbing ──
+  // Tabs read their hint at init via window.CPL_QS.consume(tabHash) AND
+  // subscribe to the 'cpl-qs-hint' window event so a re-route after they're
+  // already mounted still pre-pops filters. consume() is one-shot — clearing
+  // sessionStorage means a refresh doesn't keep re-applying a stale hint.
+  function stashAndDispatch(tab, hint) {
+    if (!hint || typeof hint !== 'object') return;
+    try { sessionStorage.setItem('cpl_qs_hint_' + tab, JSON.stringify(hint)); }
+    catch (e) { /* private mode — event still fires */ }
+    try {
+      window.dispatchEvent(new CustomEvent('cpl-qs-hint', { detail: { tab: tab, hint: hint } }));
+    } catch (e) { /* CustomEvent unavailable — extremely old browser; skip */ }
+  }
+  function consumeHint(tab) {
+    var k = 'cpl_qs_hint_' + tab;
+    try {
+      var raw = sessionStorage.getItem(k);
+      if (!raw) return null;
+      sessionStorage.removeItem(k);
+      return JSON.parse(raw);
+    } catch (e) { return null; }
+  }
+  window.CPL_QS = {
+    consume: consumeHint,
+    // Exposed for tab-internal applyHint() functions that want to validate
+    // hint keys/values against the same vocabulary the router was told about.
+    vocab: HINT_VOCAB,
+  };
 
   async function askClaude(userPrompt) {
     if (!PROXY_URL) {
@@ -104,7 +222,12 @@
     if (VALID_HASHES.indexOf(parsed.tab) === -1) {
       throw new Error('Routing returned unknown tab: ' + parsed.tab);
     }
-    return parsed; // {tab, message}
+    // filter_hint is optional. If present and not a plain object, drop it
+    // (don't fail the route — the tab still opens; just no pre-pop).
+    if (parsed.filter_hint && (typeof parsed.filter_hint !== 'object' || Array.isArray(parsed.filter_hint))) {
+      parsed.filter_hint = null;
+    }
+    return parsed; // {tab, message, filter_hint?}
   }
 
   // ── DOM ──
@@ -182,6 +305,11 @@
         setStatus(routed.message || ('Going to ' + routed.tab + '…'), 'ok');
         // Brief pause so the user sees the confirmation before the tab swaps.
         setTimeout(function () {
+          // Stash + dispatch the filter hint BEFORE navigating, so the
+          // destination tab can apply it whether it picks up via the event
+          // (already-mounted case) or consumes the sessionStorage value
+          // (cold-load case after a refresh on a deep link).
+          if (routed.filter_hint) stashAndDispatch(routed.tab, routed.filter_hint);
           navigateTo(routed.tab);
           btn.disabled = false; input.disabled = false;
           input.focus();
