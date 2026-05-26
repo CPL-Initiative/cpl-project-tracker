@@ -441,3 +441,147 @@ inline tab JS into a `tabs.js` module that derives `VALID_TABS` from
 the `data-tab` attributes on the rendered nav buttons (single source
 of truth — no whitelist to maintain). Same shape for `consumeAuthHash`
 to use the same derived list. Out of scope for these hotfixes.
+
+---
+
+## 2026-05-25 (Bruh Hept, late session) — Cred-Ref PR-1/2/3 + sign-in UX overhaul
+
+Bruh Hept's run on the Credential Reference workstream. Started with two
+deployed-site bugs the curator reported the morning of 2026-05-25, then
+shipped three substantive PRs against the four-PR plan handed forward
+from Bruh Hex.
+
+### Hotfixes shipped (4 PRs)
+
+**PR #117 — `VALID_TABS` whitelist coupling.** The curator reported "the
+new Credential Reference seems to be a copy of the dashboard main."
+Root cause: PR-B added the tab nav button + pane + script tag, but the
+inline tab-router whitelist (`CPL_Dashboard.html` line 13013, `var
+VALID_TABS = [...]`) wasn't updated. Clicking the tab ran
+`activate('credential-reference')` → `indexOf === -1` → `tabName =
+'dashboard'` (fallback) → dashboard pane activated. From the curator's
+view, the tab "didn't work" — it WAS the dashboard. One-line fix.
+
+**PR #118 — Magic-link return-tab restore.** Sign-in flow completed
+successfully in Supabase but the curator saw "doesn't complete the
+process" — they signed in from Credential Reference, clicked the magic
+link in their email, and landed on the Common Course Reference tab
+instead. Root cause: `unified_courses.js`'s `consumeAuthHash()` (the
+master magic-link callback handler) hardcoded `location.hash =
+"unified-courses"` after persisting the session. Fix: each tab's
+`signIn()` stashes its identifier in `sessionStorage.cpl_sb_return_tab`
+before the OTP request; `consumeAuthHash()` reads it back and uses it
+for the redirect hash, defaulting to `"unified-courses"` when absent.
+Same fix applied to canonical_subj4.js (CSC tab had the same bug
+unreported).
+
+**PR #119 — Inline sign-in feedback panel.** Curator reported "magic
+link arrives but I don't see a splash that the email was sent."
+Root cause: the corner-toast feedback was easy to miss right after the
+prompt() dialog closed (3-second auto-fade, bottom-right). Replaced
+across all three curator tabs (credential_reference, canonical_subj4,
+unified_courses — the last had been using JS `alert()`, loud but
+clunky). New shape: prominent green inline panel **right where the
+"sign in to edit" link used to be**, with "✉ Magic link sent to
+{email}" + a "use a different email" link. Red error variant for
+failures with a "try again" link. Per-tab `pendingSignInEmail` /
+`pendingSignInError` state.
+
+**PR #120 — 429-aware error mapping.** Curator hit a Supabase rate
+limit during testing iterations and got the misleading message "Server
+returned 429. Confirm the email is in the allowed-reviewers list" —
+the email IS in the list; 429 means rate-limited, period. Added
+explicit 429 + 400/422 branches in credential_reference.js and
+canonical_subj4.js (`unified_courses.js` already had the 429 branch
+from an earlier session — Bruh Quad? — and it had never been mirrored).
+Now message-maps to the actual fault.
+
+### The 5-touch-points lesson
+
+These four hotfixes share a theme: **adding a new top-level tab requires
+touching FIVE places, not the three that look obvious.** The doc now
+captures the full list:
+
+  1. Nav button (`<button class="cpl-tab" data-tab="…">`)
+  2. Pane element (`<div class="cpl-tab-pane" id="tab-…">`)
+  3. Script tag (`<script src="…js">`)
+  4. **`VALID_TABS` whitelist** (line 13013 of `CPL_Dashboard.html`) ← easy miss
+  5. **Magic-link return-tab stash** in the tab's `signIn()` ← easy miss
+
+Items 4 and 5 fail loudly only when a curator exercises the deployed
+flow. There's no PR-time test that catches either. A `tabs.js` module
+that derives `VALID_TABS` from rendered nav buttons + exposes a helper
+for sign-in's return-tab registration would close this trap; out of
+scope here, queued for whichever session takes on the sidebar refactor.
+
+### The bigger refactor question
+
+Hept also debugged a curator email typo (`map@rccd.edu` → `mar@rccd.edu`)
+that created a phantom Supabase user account; Microsoft Outlook ATP /
+Safe Links pre-fetching the magic link before the curator could click
+it was a secondary issue flagged for future attention (workarounds:
+6-digit OTP code mode, or RCCD IT whitelist on `mail.app.supabase.io`).
+
+### Credential Reference PRs (3 of 4 shipped)
+
+**PR #121 — Cred-Ref PR-1: common-course join + Scope badge + Discipline
+column.** The big one. New `export_credential_reference()` in
+`excel_to_dashboard.py` joins `kb/unified_titles.json` + `credentials.json`
+with `kb/coci_articulations.json` + the minted/unified/singleton
+catalogs. Emits `credential_reference_data.js` (~1.5 MB lean, pre-joined +
+audit-tag rollup + `top_categories` map). Tab loads the baked global
+synchronously; runtime fetch of `kb/*.json` kept as fallback for local
+dev. Adds per-row Scope badge (🏛 Statewide if any articulation is CCC /
+CCC Collaborative; 🏠 Local otherwise; — if no articulations resolved)
+and Discipline column (modal MQ discipline across articulations).
+Expanded body leads with a per-identity table — color-coded by
+id_system (green CCN-ID / blue C-ID / yellow M-ID / purple Cluster),
+identity cell rowspan'd when one identity has multiple local-course
+rows. Stats: **1,969 unified titles · 1,726 articulated · 4,324 local-
+course lines · 90 statewide · 1,106 audit-flagged**.
+
+**PR #122 — Cred-Ref PR-2: select-all + bulk Mark initiated.** New
+first-column per-row checkbox (disabled when already initiated or
+during a save); header "select all visible eligible" (filtered-view-
+scoped, never the full 1,969); indeterminate state on partial
+selection. Toolbar widget shows green "✓ Mark N initiated" button +
+clear link when N > 0; swaps to yellow "Saving X of N…" during the
+sequential Supabase save. Per-row UI flips ✓ as each save completes
+(not at end). Confirm dialog before kickoff; final toast reports
+ok/failed counts.
+
+**PR #123 — Cred-Ref PR-3: TOP / Discipline grouping.** Toolbar "Group
+by:" dropdown (none / TOP category / Discipline). TOP mode buckets by
+2-digit TOP code with `TOP 12 — Health` headers (using the 22-entry
+`top_categories` map sourced from `kb/discipline_canonical_subj4.json`,
+the same source the CSC tab uses). Discipline mode buckets by MQ
+discipline. Group headers are colspan'd table rows with ▶/▼ twisty;
+click to toggle. Empty buckets ("(No TOP category)" / "(No discipline)")
+sink to the bottom. `state.collapsedGroups` keyed by `mode:key` to
+avoid clashes across mode switches; resets on mode change for
+predictability.
+
+### Architectural decisions taken this session (still queued)
+
+- **Excel → Supabase migration** (CLAUDE.md §11 new rows): finishing PR-4
+  first, then Phase 1 starts in a separate session with **Workplan Goals
+  tab as the proof-of-concept end-to-end** (Excel file's smallest tab; the
+  `workplan_goals` table already exists in Supabase per §8). Phase 2-4 do
+  Dashboard / Budget / Vision 2030 / Personnel in subsequent PRs.
+- **Sidebar navigation** (CLAUDE.md §11 PR-Sidebar-A + B): replaces top
+  tab nav entirely; left rail with all tabs; sign-in widget moves into
+  sidebar footer. Per-tab section TOC (PR-B) limited to Dashboard +
+  Pipeline (tabs with real sub-sections). Queued after Cred-Ref PR-4.
+- **Bigger refactor (parked)**: the `tabs.js` module that would close the
+  5-touch-points trap. Worth doing alongside or right after the sidebar
+  work, since the sidebar already restructures tab navigation.
+
+### Next concrete step (2026-05-25, post-Session-7 checkpoint)
+
+Land **Cred-Ref PR-4** — the edit-override curation. `unified_title`
+rename, `issuing_agency` override, `training_agency` override,
+`quality_flag` toggle. **Risk hot-spot:** any `unified_title` rename
+ripples into `kb/coci_articulations.json` (which inlines the field) —
+re-mint playbook discipline applies (alias map at write-time,
+`kb/_apply_credential_review.py` sync script for the daily cron,
+atomic land within one 10:17 UTC cron window).
