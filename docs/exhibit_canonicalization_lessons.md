@@ -585,3 +585,141 @@ ripples into `kb/coci_articulations.json` (which inlines the field) —
 re-mint playbook discipline applies (alias map at write-time,
 `kb/_apply_credential_review.py` sync script for the daily cron,
 atomic land within one 10:17 UTC cron window).
+
+---
+
+## Session 8 — 2026-05-26, Octaman
+
+### What shipped this session (8 PRs, ~1 working session)
+
+| PR | What |
+|---|---|
+| #125 | EACR Phase 4 dry-run + alias map (PR-C0). `kb/_eacr_dryrun.py` projects every raw MAP row onto the post-pivot `(unified_title, issuing_agency, CPL Type, Collaborative Type)` key. Output: 3,217 raw IDs → 2,351 cards (27% collapse); 173 cards fold ≥2 raw IDs; 13 fold ≥5. Alias map written for downstream re-key. |
+| #126 | Disable CodeQL PR trigger (push + weekly cron only). Killed CodeQL fatigue on PRs that touch innocent DOM-builders the analyzer keeps flagging as `js/xss`. |
+| #127 | Re-classify 58 raw titles flagged `unclassified_in_map_only` in PR-A's audit. Cleared the auditor's `unclassified_in_map_only` queue to zero (was 58, now 0). |
+| #128 | EACR Phase 4 producer re-pivot (PR-C1). `_build_statewide_adoption()` grouping key changed from `(raw_title, cpl_type, collab_type)` → `(unified_title, issuing_agency, cpl_type, collab_type)`. 3,274 cards → 2,351 cards; new fields on every card: `unified_title`, `issuing_agency`, `training_agency`, `confidence_title`, `confidence_issuer`, `quality_flag`, `raw_titles[]`. Generator-side strip pattern added so repeat runs don't accumulate. |
+| #129 | Quick-start chat (Tier A) — natural-language tab routing on the dashboard's first screen. Cloudflare Worker proxy + JSON-mode router prompt; 1-of-8 classification. `quickstart.js` new file. |
+| #130 | Quick-start chat polish — swap model `claude-sonnet-4-5` → `claude-haiku-4-5-20251001` (4-6s → 1-2s round-trip), and a `navigateTo()` that pulses + scroll-to-tops when the destination is the active tab (the silent-no-op trap of `location.hash = current`). |
+| #131 | EACR Phase 4 consumer redesign (PR-C2). Card title now shows unified_title in bold + issuer subtitle in muted italic. New "Also entered as N variants" disclosure (310 cards have ≥2 raw variants; top fold = `AP World History: Modern / College Board` with 26 variants). Confidence badge ("needs review · 0.NN" at threshold 0.75). Quality-flag badge ("⚠ course-as-exhibit" on 193 cards). New Issuing Agency filter button. Migration script `kb/_eacr_flag_migrate.py` added for `_EACR_FLAG::*` curator-flag re-key. |
+| #132 | Hotfix to migration script — column name was `reviewed_by` (the in-memory JS object property), not `reviewer_email` (the actual Supabase column). PR-D's `fetchFlagOverlay()` aliases the column to the property; I read the rendering code and assumed the property name was the column name. Caught by Sam's first dry-run. |
+
+**Migration outcome:** Sam ran the dry-run after PR #132 merged — **zero existing flags**. The migration is a no-op for current state (PR-D shipped only 2 days ago; no one had flagged anything during the brief window). The script stays in the repo as future-proofing for any similar re-pivot.
+
+### EACR Phase 4 — actually finished now
+
+The "Approach B" re-pivot that's been parked in CLAUDE.md §9 since
+Session 6 is end-to-end shipped:
+
+  - PR-C0 (#125): dry-run + alias map (de-risk the producer change)
+  - PR-C0b (#127): close the unclassified gap before pivoting
+  - PR-C1 (#128): producer (`_build_statewide_adoption()` re-pivot)
+  - PR-C2 (#131): consumer (table renders unified cards)
+  - PR-C2 migration (#132 + dry-run): re-key existing flags (no-op)
+
+**Headline numbers:** 3,274 EACR cards → 2,351 cards (28% collapse).
+The 310 cards that fold ≥2 raw variants are exactly the title-drift
+duplicates the vision doc has been calling out for months. AP credits
+collapse hardest — every College-Board AP exam is now one card per
+exam with all variant spellings folded.
+
+### Lessons learned
+
+**1. The column-name vs object-property trap.** PR-D's
+`fetchFlagOverlay()` queries `reviewer_email` from Supabase but
+aliases it to a `reviewed_by` *key* on the in-memory JS object the
+rest of the code consumes. When writing the migration script in PR-C2
+I read the rendering code (`state.flags[eid].reviewed_by`) and
+assumed `reviewed_by` was the column name. PostgreSQL caught it
+cleanly ("Perhaps you meant `reviewed_at`?") and the fix was 5
+character-substitutions. **Future move:** when writing any Supabase
+client code, consult `kb_curation` schema via Supabase MCP
+`list_tables` BEFORE writing — don't infer columns from consumer code.
+
+**2. The generator-side strip pattern keeps paying off.** PR-C1 added
+a new strip block (`# strip prior PR-C1 emit so repeat runs don't
+accumulate`) following the EXHIBIT_CSS_MARKER precedent. Idempotency
+is a first-class concern for this pipeline (Rule 2) and every
+generator-injected block needs its own strip clause. Eight months in
+and the pattern is fully internalized; new contributors should learn
+it from the existing examples (line ~5093 of `excel_to_dashboard.py`).
+
+**3. Migration script as future-proofing, not always action.**
+PR-C2's `kb/_eacr_flag_migrate.py` was written assuming flags
+existed; the dry-run revealed zero. The right move was NOT to skip
+the script — the script is the *plan*, and the zero-row outcome is
+the *confirmation* that the plan didn't need to fire. Architectural
+correctness > immediate utility. The script stays in the repo for
+any future re-pivot.
+
+**4. Multi-PR architectural arc cadence.** Today's EACR arc landed in
+five PRs across one session: dry-run → cleanup → producer → consumer
+→ migration. The dry-run-first discipline (PR-C0 before PR-C1) is
+worth the extra PR — Sam reviewed the projected collapse numbers
+BEFORE the producer changed, which is the same discipline the
+CourseControlNumber re-mint used (PR #83 dry-run before PR #84
+land). **Pattern to keep:** any architectural pivot that re-keys
+identities ships in two PRs minimum: dry-run + alias map first,
+then atomic land using the alias map.
+
+**5. Side workstreams don't have to be one-shot.** The quick-start
+chat shipped in two iterations (PR #129 Tier A producer + PR #130
+polish for latency + already-on-tab visual feedback). Shipping the
+minimal viable version first and iterating on real user feedback
+beats trying to nail everything in one PR. The "already-on-tab
+no-op" was an issue Sam wouldn't have caught in the spec doc — only
+hands-on use surfaced it ("apprenticeship initiative" routed to
+Dashboard, where he already was, and nothing visibly changed).
+
+### Side workstream: Quick-start chat (PRs #129/#130)
+
+A new UI affordance on the dashboard's first screen — a single text
+input that the user types natural language into, the Claude API
+classifies which tab the user wants, and the dashboard navigates
+there. Tier A (this session) does pure routing (one of 8 tabs).
+**Tier B (deferred):** filter-hint hand-off — prompt like "review
+unclassified credentials" → `{tab: "credential-reference",
+filter_hint: "audit_tag=unclassified"}` → the Credential Reference
+tab consumes the hint and pre-populates the filter. **Architecture
+already in place** to support Tier B: the router response already
+returns JSON, just needs a `filter_hint` field + sessionStorage
+hand-off + each tab consumes the hint on init.
+
+Lessons from this side workstream:
+- **Haiku 4.5 is right for routing tasks.** Sonnet was overkill for
+  a 1-of-8 classification with a tight system prompt; Haiku cut
+  latency 3-4× with no quality regression.
+- **Hash-router silent no-op.** Setting `location.hash` to the
+  current hash fires no `hashchange` event, so the user gets no
+  feedback. Always provide an alternate visual signal (scroll,
+  pulse) when the destination matches current state.
+
+### Strategic roadmap (post-Session-8)
+
+| Workstream | Status |
+|---|---|
+| EACR Phase 4 re-pivot (Approach B) | ✅ end-to-end shipped this session |
+| Quick-start Tier A (routing) | ✅ shipped #129 + #130 |
+| Quick-start Tier B (filter-hint hand-off) | queued — 3-4 hr, low risk |
+| Cred-Ref PR-4 (edit-override curation) | **queued — Session 9, was Session 7's plan, bumped behind EACR** |
+| Sidebar PR-A/B (left rail + section TOC) | queued behind PR-4 |
+| Excel→Supabase Phase 1 (Workplan POC) | queued — separate multi-session arc |
+| EACR Phase 5 (audit-driven re-classify loop) | not yet scoped — Hept's exhibit audit can now drive PR-D flag → curator re-classify → daily cron consumer refresh |
+
+### Next concrete step (2026-05-26, post-Session-8 checkpoint)
+
+**Cred-Ref PR-4** — the edit-override curation queued in Session 7's
+handoff and bumped this session. Single PR: click any of
+`unified_title`, `issuing_agency`, `training_agency`, `quality_flag`
+on a Credential Reference row to edit inline; save to Supabase via
+`_CREDENTIAL_REVIEW::<unified_title>` namespace with per-field
+column. **Risk hot-spot:** `unified_title` rename ripples into
+`kb/coci_articulations.json` (which inlines the field) — re-mint
+playbook discipline applies (alias map at write-time, daily-cron
+sync via `kb/_apply_credential_review.py`, atomic land within one
+10:17 UTC cron window). Time: 3-4 hr.
+
+After PR-4 lands: **Quick-start Tier B** (filter-hint hand-off) is
+the natural quick win — it ties the chat to the curator workflow PR-4
+just shipped ("review unclassified credentials" → pre-populated audit
+filter on Credential Reference).
+
