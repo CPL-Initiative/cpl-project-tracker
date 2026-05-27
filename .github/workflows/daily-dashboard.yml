@@ -76,6 +76,13 @@ jobs:
             if [ -f kb/discipline_canonical_subj4.json ]; then
               python kb/_apply_canonical_subj4.py || echo "Canonical SUBJ4 sync failed — non-fatal"
             fi
+            # Cred-Ref PR-5a: fold credential-review curator edits
+            # (_CREDENTIAL_REVIEW::<unified_title> rows) into the git-canonical
+            # overlay at kb/credential_review_overlay.json. The dashboard reads
+            # Supabase live; this script keeps the overlay in git for audit +
+            # non-dashboard consumers. unified_title renames are RECORDED but
+            # not applied — see Cred-Ref PR-5b for rename promotion.
+            python kb/_apply_credential_review.py || echo "Credential review sync failed — non-fatal"
           else
             echo "SUPABASE_SERVICE_KEY not set — skipping curation sync."
           fi
@@ -115,6 +122,8 @@ jobs:
                   exports/unified_courses.xlsx
           # Phase 1e canonical SUBJ4 seed + curator-edit overlay (added 5a)
           git add kb/discipline_canonical_subj4.json 2>/dev/null || true
+          # Cred-Ref PR-5a: credential-review curator-edit overlay
+          git add kb/credential_review_overlay.json 2>/dev/null || true
           # Only add CustomReport if it was freshly fetched
           git add CustomReport_latest.json 2>/dev/null || true
           if git diff --cached --quiet; then
