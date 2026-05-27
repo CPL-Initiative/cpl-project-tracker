@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-05-27
+updated: 2026-05-27 (checkpoint pt 2 — Session 11)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -38,6 +38,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
 | [ADR — Obsidian sync via vault-side clone (not edge function)](kb-notes/adr-obsidian-vault-via-clone.md) | adr | candidate | 2026-05-27 | 2026-05-27 |
+| [Methodology — Two-mode sync (safe Mode A vs identity-touching Mode B)](kb-notes/methodology-two-mode-sync.md) | methodology | candidate | 2026-05-27 | 2026-05-27 |
+| [Methodology — Derive whitelists from rendered DOM, not hardcoded lists](kb-notes/methodology-derive-from-dom.md) | methodology | candidate | 2026-05-27 | 2026-05-27 |
 
 ---
 
@@ -47,12 +49,13 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 
 | File | Workstream | Last touched |
 |---|---|---|
-| [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 | Session 10 |
+| [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G | Session 11 |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
-| [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR | Session 8 |
+| [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR / Cred-Ref sync | Session 11 |
 | [`exhibit_unification_vision.md`](exhibit_unification_vision.md) | Credential design doc | retrospective |
 | [`letter_curator_handoff.md`](letter_curator_handoff.md) | Letter Curator workstream | Session 10 |
 | [`quickstart_chat_lessons.md`](quickstart_chat_lessons.md) | Quick-start chat | Session 10 |
+| [`sidebar_lessons.md`](sidebar_lessons.md) | Sidebar / tabs.js router | Session 11 (NEW) |
 | [`subj4_canonicalization_remint_lessons.md`](subj4_canonicalization_remint_lessons.md) | Phase 1e re-mint | Session 5 |
 | [`unified_courses_audit_lessons.md`](unified_courses_audit_lessons.md) | Trust-Card auditor | Session 10 |
 
@@ -67,6 +70,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 7 → 8 | Octaman | [`session_8_handoff.md`](session_8_handoff.md) |
 | 9 → 10 | Sexy Dexy | [`session_10_handoff.md`](session_10_handoff.md) |
 | 10 → 11 | Bruh El | [`session_11_handoff.md`](session_11_handoff.md) |
+| 11 → 12 | — | _(authored at session END, not at checkpoint)_ |
 
 ---
 
