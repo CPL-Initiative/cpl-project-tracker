@@ -3,7 +3,7 @@ title: Methodology — Derive whitelists from rendered DOM, not hardcoded lists
 created: 2026-05-27
 updated: 2026-05-27
 tags: [methodology, ui, javascript, navigation, refactoring, obsidian-target]
-kb-status: candidate
+kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"
@@ -136,7 +136,6 @@ Items 4 (whitelist) and 5 (return-tab default) became automatic.
 
 ---
 
-*Promotion note (delete on promotion): Durable — applies any time markup
-duplicates state. Reusable — every dashboard project hits this. Distilled
-— one pattern, one rule. Self-contained — the implementation pattern is
-right there inline.*
+*Authoring check: durable (applies any time markup duplicates state),
+reusable (every dashboard project hits this), distilled (one pattern,
+one rule), self-contained (implementation pattern inline).*
