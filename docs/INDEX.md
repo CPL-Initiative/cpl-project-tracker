@@ -59,7 +59,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`quickstart_chat_lessons.md`](quickstart_chat_lessons.md) | Quick-start chat | Session 10 |
 | [`sidebar_lessons.md`](sidebar_lessons.md) | Sidebar / tabs.js router | Session 11 |
 | [`subj4_canonicalization_remint_lessons.md`](subj4_canonicalization_remint_lessons.md) | Phase 1e re-mint | Session 5 |
-| [`unified_courses_audit_lessons.md`](unified_courses_audit_lessons.md) | Trust-Card auditor | Session 10 |
+| [`unified_courses_audit_lessons.md`](unified_courses_audit_lessons.md) | Trust-Card auditor | Session 12 (`merge_into_orphan`) |
 | [`vault_sync_lessons.md`](vault_sync_lessons.md) | Vault auto-sync (Windows Task Scheduler) | Session 11 (NEW) |
 
 ---

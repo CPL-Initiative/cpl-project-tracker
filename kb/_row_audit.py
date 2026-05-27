@@ -193,6 +193,10 @@ TAG_PENALTY_ON_UNITS = {
     "unit_anomaly": 0.20,
 }
 
+# `merge_into_orphan` carries no per-field penalty — it's a curation-pointer
+# data-integrity signal, not evidence against any specific faculty field. The
+# tag itself surfaces in the chip / triage; readiness scoring is unaffected.
+
 # Per-field-state score (how much of the field's weight the row earns). The
 # state taxonomy doubles as the trust-card vocabulary the UI can render later.
 STATE_SCORE = {
@@ -913,6 +917,55 @@ def _classify_generic_title_concrete_discipline(rec, subject_map):
     return True
 
 
+def _classify_merge_into_orphan(merge_into, source_id, courses, singletons):
+    """True when a curation `merge_into` target can't be resolved to any
+    known identity in the staging KB.
+
+    A target is RESOLVABLE when it's:
+      * an existing M-ID key in `courses`, OR
+      * an existing singleton key in `singletons`, OR
+      * a `UC-CUR-*` synthetic cluster id — these are self-defining by
+        construction (pointing to one IS what makes it a cluster), so we
+        trust the prefix even when only one entry currently points there.
+
+    Skips self-pointers (`merge_into == source_id`) — that's a cycle bug,
+    different rule. Skips C-ID/CCN reference anchors (not loaded by the
+    auditor; a typo'd official-id target is rare enough to defer until we
+    pull those catalogs in).
+
+    Calibration: current data has 0 orphans (the 3 live `merge_into`
+    pointers all target `UC-CUR-MPG029OM`). The rule is preventive
+    infrastructure — when a future re-mint leaves a dangling pointer, or
+    a hand-edit misspells a target id, the next audit run catches it.
+    """
+    if not merge_into:
+        return False
+    if merge_into == source_id:
+        return False
+    if merge_into in courses:
+        return False
+    if merge_into in singletons:
+        return False
+    if merge_into.startswith("UC-CUR-"):
+        return False
+    return True
+
+
+def _curation_orphan_tags(cur, source_id, courses, singletons):
+    """Tags derived from the curation entry (not the record). Kept separate
+    from `_tags_for_mid` / `_tags_for_cluster` because curation-based rules
+    apply uniformly across both row kinds — clusters can also carry their
+    own `merge_into` (cluster-chain) curation entry that needs the same
+    integrity check.
+    """
+    tags = []
+    if cur:
+        mi = cur.get("merge_into")
+        if mi and _classify_merge_into_orphan(mi, source_id, courses, singletons):
+            tags.append("merge_into_orphan")
+    return tags
+
+
 def _classify_title_mismatch(rec, disc_bag):
     """Return suggested-alt discipline name if the row's title strongly
     suggests a discipline other than the one assigned, else None.
@@ -1056,6 +1109,7 @@ def main():
                              subject_map=subject_map, top_disc=top_disc,
                              disc_to_modal_subj4=disc_to_modal_subj4,
                              mid_unit_modal=mid_unit_modal)
+        tags += _curation_orphan_tags(cur, course_id, courses, singletons)
         mc = {}
         f_score, m_score = _compute_scores(faculty, _virtual_mc(mc), tags=tags)
         card = {
@@ -1101,6 +1155,7 @@ def main():
 
         colleges = _cluster_member_colleges(members, courses, singletons)
         tags = _tags_for_cluster(cluster_id, agg_fields, n_resolved, n_dropped, colleges)
+        tags += _curation_orphan_tags(cur, cluster_id, courses, singletons)
         mc = {}
         f_score, m_score = _compute_scores(agg_fields, _virtual_mc(mc), tags=tags)
         card = {
@@ -1177,7 +1232,8 @@ def _write_outputs(cards):
             "subject_spread_high_low_confidence", "mid_id_off_scheme",
             "discipline_title_mismatch", "generic_title_concrete_discipline",
             "top_discipline_disagreement", "description_discipline_disagreement",
-            "subject_collision_signal",
+            "subject_collision_signal", "unit_anomaly",
+            "merge_into_orphan",
             "cluster_blanks_when_aggregatable", "cluster_members_too_sparse",
             "cluster_id_off_scheme", "uc_cur_ripe_for_promotion",
             "cluster_member_unresolved",
