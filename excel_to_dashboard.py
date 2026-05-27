@@ -4381,6 +4381,17 @@ def export_credential_reference():
         print("  Credential Reference: kb files absent — wrote empty global")
         return
 
+    # Curator overrides from Supabase (synced daily via
+    # kb/_apply_credential_review.py into kb/credential_review_overlay.json).
+    # When a row has an override, the override value is baked into the row's
+    # visible field AND the original AI baseline is preserved on a parallel
+    # _original_* field, so the dashboard's runtime applyOverlay() can show
+    # the "originally: X" hint correctly. unified_title_override is
+    # recorded in the overlay but NOT applied here (display-only by PR-4
+    # design; rename promotion is Cred-Ref PR-5b's job).
+    review_doc = _load("credential_review_overlay.json") or {}
+    review_overrides = (review_doc.get("overrides") or {})
+
     art_doc = _load("coci_articulations.json") or {}
     identities = art_doc.get("identities", {}) or {}
     articulations = art_doc.get("articulations", []) or []
@@ -4507,14 +4518,17 @@ def export_credential_reference():
         articulations_out.sort(key=lambda x: (sys_order.get(x["sys"], 9), x["cid"]))
 
         audit_tags = dict(audit_tags_by_ut.get(ut, {}))
-        rows.append({
+        issuer_val = primary.get("issuing_agency")
+        trainer_val = primary.get("training_agency")
+        qflag_val = quality_by_ut.get(ut)
+        row = {
             "ut": ut,
             "raw_count": raw_count_by_ut[ut],
-            "issuer": primary.get("issuing_agency"),
-            "trainer": primary.get("training_agency"),
+            "issuer": issuer_val,
+            "trainer": trainer_val,
             "conf_title": conf_modal,
             "conf_issuer": primary.get("confidence_issuer", 0),
-            "quality_flag": quality_by_ut.get(ut),
+            "quality_flag": qflag_val,
             "disc_modal": disc_modal,
             "top_modal": top_modal,
             "statewide": statewide,
@@ -4522,7 +4536,26 @@ def export_credential_reference():
             "audit_tag_total": sum(audit_tags.values()),
             "articulations": articulations_out,
             "n_articulation_lines": sum(len(a["local"]) for a in articulations_out),
-        })
+        }
+        # Apply curator overrides (Mode A: non-identity fields only). When a
+        # field is overridden, the AI baseline gets preserved on _original_*
+        # so the runtime applyOverlay() can show the "originally: X" hint.
+        ov = review_overrides.get(ut)
+        if ov:
+            if "issuing_agency_override" in ov:
+                row["_original_issuer"] = issuer_val
+                row["issuer"] = ov["issuing_agency_override"] or None
+            if "training_agency_override" in ov:
+                row["_original_trainer"] = trainer_val
+                row["trainer"] = ov["training_agency_override"] or None
+            if "quality_flag_override" in ov:
+                row["_original_quality_flag"] = qflag_val
+                row["quality_flag"] = ov["quality_flag_override"] or None
+            if ov.get("reviewed_by"):
+                row["curated_by"] = ov["reviewed_by"]
+            if ov.get("reviewed_at"):
+                row["curated_at"] = ov["reviewed_at"]
+        rows.append(row)
 
     rows.sort(key=lambda r: r["ut"].lower())
 
