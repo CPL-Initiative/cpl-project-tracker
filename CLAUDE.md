@@ -128,6 +128,24 @@ into the Pipeline Reference below or into dedicated docs.
 - **Always watch PRs.** When a Claude session opens a PR, subscribe to its
   activity (CI + review comments) and follow through — fixing small/clear
   issues, asking when ambiguous — until the PR is merged or closed.
+- **Auto-merge authorization (added Session 11, 2026-05-27).** Claude
+  sessions are authorized to merge PRs they opened, with these gates:
+  - **CI must be green** — every required check passing (TruffleHog, plus
+    any push-only checks like CodeQL when they apply).
+  - **No unresolved review comments or change-requests.** If a reviewer
+    asks for changes, fix or ask before re-merging.
+  - **Method: squash and merge** — collapses to one commit on `main` with
+    the PR title + body. Matches the existing `Merge pull request #N`
+    history pattern.
+  - **Delete the feature branch on merge.**
+  - **Confirm before merging for architecturally significant PRs** —
+    re-mints (per `docs/coursecontrolnumber_remint.md`), schema migrations,
+    Excel→Supabase phases, or anything that mutates shared state across
+    repos. The auto-merge lane is for UI/UX, generator changes, doc
+    updates, audit-rule additions, sync scripts, and the like.
+  - **Never force-push `main`** (Rule 5 — Pages serves from it).
+  - Use `mcp__github__merge_pull_request` with `merge_method: "squash"`
+    and `delete_branch: true`.
 
 ## Deployed site
 
