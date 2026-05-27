@@ -214,7 +214,7 @@
   // so render code is unified across both paths (baked vs runtime fetch).
   function adaptBakedRow(b) {
     var tags = b.audit_tags || {};
-    return {
+    var r = {
       unified_title: b.ut,
       raw_count: b.raw_count || 0,
       primary_issuer: b.issuer || null,
@@ -243,6 +243,16 @@
       issuer_count: b.issuer ? 1 : 0,
       confidences: [],
     };
+    // PR-5a follow-up: surface baked curator overrides so applyOverlay() can
+    // tell apart "AI baseline" from "curator override" and render the
+    // originally:X hint correctly. The presence of an _original_* field
+    // signals "the visible value is a baked override; baseline lives here."
+    if (b._original_issuer !== undefined) r._original_primary_issuer = b._original_issuer;
+    if (b._original_trainer !== undefined) r._original_primary_trainer = b._original_trainer;
+    if (b._original_quality_flag !== undefined) r._original_flag_label = b._original_quality_flag;
+    if (b.curated_by) r.curator_reviewed_by = b.curated_by;
+    if (b.curated_at) r.curator_reviewed_at = b.curated_at;
+    return r;
   }
 
   function fetchKb() {
@@ -365,40 +375,75 @@
   }
 
   function applyOverlay(rows, overlay) {
+    // PR-5a follow-up — bake-aware overlay application.
+    //
+    // The baked payload now carries curator overrides directly (so non-
+    // dashboard consumers + cold-start renders see the curator-truth). When
+    // a field was baked-overridden, the row carries _original_<field> with
+    // the AI baseline. Three cases per field:
+    //   (a) Live overlay has an override → that wins; baseline (preferring
+    //       the baked _original_ over the visible value) becomes original_*.
+    //   (b) No live override but a baked _original_ exists → curator cleared
+    //       the override in Supabase between the daily-sync bake and now;
+    //       revert to baseline so the dashboard doesn't show stale data.
+    //   (c) Neither → no-op.
+    // Note: the loop visits EVERY row (no early-return on missing overlay
+    // entry), because case (b) can fire even when ov is empty.
     rows.forEach(function (r) {
-      var ov = overlay[r.unified_title];
-      if (!ov) return;
+      var ov = overlay[r.unified_title] || {};
       if (ov.reviewed_at) {
         r.curator_reviewed_at = ov.reviewed_at;
         r.curator_reviewed_by = ov.reviewed_by;
       }
-      // PR-4 — per-field overrides. r.unified_title stays the IDENTITY key
-      // (the articulation join target); r.display_title is the renderable
-      // label. The original primary_* values are preserved on r.original_*
-      // for the curation panel's "originally: X" hint.
+      // utitle_override — display-only, identity stays. Same bake-aware
+      // pattern as the other fields.
+      var utitle_baseline = (r._original_display_title !== undefined)
+        ? r._original_display_title
+        : (r.display_title || r.unified_title);
       if (ov.utitle_override !== undefined && ov.utitle_override !== "") {
-        r.original_display_title = r.display_title || r.unified_title;
+        r.original_display_title = utitle_baseline;
         r.display_title = ov.utitle_override;
         r.utitle_overridden_by = ov.utitle_overridden_by;
         r.utitle_overridden_at = ov.utitle_overridden_at;
+      } else if (r._original_display_title !== undefined) {
+        r.display_title = r._original_display_title;
+        delete r.original_display_title;
       }
+      // issuer_override
+      var issuer_baseline = (r._original_primary_issuer !== undefined)
+        ? r._original_primary_issuer : r.primary_issuer;
       if (ov.issuer_override !== undefined) {
-        r.original_primary_issuer = r.primary_issuer;
+        r.original_primary_issuer = issuer_baseline;
         r.primary_issuer = ov.issuer_override || null;
         r.issuer_overridden_by = ov.issuer_overridden_by;
         r.issuer_overridden_at = ov.issuer_overridden_at;
+      } else if (r._original_primary_issuer !== undefined) {
+        r.primary_issuer = r._original_primary_issuer;
+        delete r.original_primary_issuer;
       }
+      // trainer_override
+      var trainer_baseline = (r._original_primary_trainer !== undefined)
+        ? r._original_primary_trainer : r.primary_trainer;
       if (ov.trainer_override !== undefined) {
-        r.original_primary_trainer = r.primary_trainer;
+        r.original_primary_trainer = trainer_baseline;
         r.primary_trainer = ov.trainer_override || null;
         r.trainer_overridden_by = ov.trainer_overridden_by;
         r.trainer_overridden_at = ov.trainer_overridden_at;
+      } else if (r._original_primary_trainer !== undefined) {
+        r.primary_trainer = r._original_primary_trainer;
+        delete r.original_primary_trainer;
       }
+      // qflag_override
+      var qflag_baseline = (r._original_flag_label !== undefined)
+        ? r._original_flag_label : r.flag_label;
       if (ov.qflag_override !== undefined) {
-        r.original_flag_label = r.flag_label;
+        r.original_flag_label = qflag_baseline;
         r.flag_label = ov.qflag_override || null;
         r.qflag_overridden_by = ov.qflag_overridden_by;
         r.qflag_overridden_at = ov.qflag_overridden_at;
+      } else if (r._original_flag_label !== undefined) {
+        r.flag_label = r._original_flag_label;
+        delete r.original_flag_label;
       }
     });
     return rows;
