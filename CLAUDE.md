@@ -145,8 +145,16 @@ into the Pipeline Reference below or into dedicated docs.
 - **Always watch PRs.** When a Claude session opens a PR, subscribe to its
   activity (CI + review comments) and follow through — fixing small/clear
   issues, asking when ambiguous — until the PR is merged or closed.
-- **Auto-merge authorization (added Session 11, 2026-05-27).** Claude
-  sessions are authorized to merge PRs they opened, with these gates:
+- **Auto-merge authorization (added Session 11, 2026-05-27; broadened
+  Session 12, 2026-05-27 — Bruh Dec).** Claude sessions are authorized
+  to merge **every** PR they open in this project once the universal
+  gates below are met. The "confirm-before-merging for architecturally
+  significant PRs" carve-out was removed: the real safety mechanisms
+  for re-mints / schema migrations / Excel→Supabase phases are inside
+  the workstream itself (pre-merge dry-run review, in-script V1–V4
+  apply gates, `workflow_dispatch` manual triggers on the apply
+  workflow), not at the PR-merge button. Merging an apply-script PR
+  doesn't auto-run the apply.
   - **CI must be green** — every required check passing (TruffleHog, plus
     any push-only checks like CodeQL when they apply).
   - **No unresolved review comments or change-requests.** If a reviewer
@@ -155,14 +163,11 @@ into the Pipeline Reference below or into dedicated docs.
     the PR title + body. Matches the existing `Merge pull request #N`
     history pattern.
   - **Delete the feature branch on merge.**
-  - **Confirm before merging for architecturally significant PRs** —
-    re-mints (per `docs/coursecontrolnumber_remint.md`), schema migrations,
-    Excel→Supabase phases, or anything that mutates shared state across
-    repos. The auto-merge lane is for UI/UX, generator changes, doc
-    updates, audit-rule additions, sync scripts, and the like.
   - **Never force-push `main`** (Rule 5 — Pages serves from it).
-  - Use `mcp__github__merge_pull_request` with `merge_method: "squash"`
-    and `delete_branch: true`.
+  - Use `mcp__github__merge_pull_request` with `merge_method: "squash"`.
+  - The session-end handoff still notes any architecturally-significant
+    PR that landed so the next session has context, even though no
+    pre-merge pause happened.
 
 ## Deployed site
 
@@ -1141,6 +1146,10 @@ repo root: `python3 kb/_row_audit.py`.
 | **Vault auto-sync** | `scripts/sync-vault-clones.ps1` + Windows Task Scheduler entry keep the in-vault clones of `cpl-project-tracker` + `cpl-knowledge-base` fresh on a scheduled fast-forward pull. Strictly safe: never auto-merges, skips uncommitted/diverged repos, logs to `.vault-sync.log`. Checkpoint commits flow into Sam's Obsidian without manual `git pull`. **Retired** the `kb-status: candidate` middle state — sessions now author KB notes at `published` quality directly (no review queue). | **DONE 2026-05-27** (PR #154, Bruh El) |
 | **Sync-script ASCII hotfix** | PowerShell 5.1 reads `.ps1` files as Windows-1252 by default; my em dashes (U+2014) decoded as garbage and broke string parsing at the first log message. Replaced 11 em dashes with ASCII `--`. Lesson: Windows-PowerShell-targeted scripts must be pure-ASCII or carry a UTF-8 BOM. | **DONE 2026-05-27** (PR #155, Bruh El) |
 | **Task Scheduler companion** | `scripts/setup-task-scheduler.ps1` — single-paste registration of the "CPL Vault Sync" task; idempotent, `-CadenceMinutes`/`-Remove` switches, elevation check. Playbook updated with Option A (script) + Option B (GUI). Documents the `[TimeSpan]::MaxValue` gotcha that bit Sam's first attempt at the inline registration block. | **DONE 2026-05-27** (PR #156, Bruh El) |
+| **Auditor `merge_into_orphan`** | Eighth audit rule, first **curation-pointer** rule. Fires when a curation `merge_into` target can't be resolved to any known identity (M-ID ∪ singleton ∪ `UC-CUR-*`). New `_curation_orphan_tags()` helper runs symmetrically over M-ID + Cluster loops so future curation-edge rules (cycle detection, source↔target title drift) plug in without touching record-derived tag code. No per-field penalty — data-integrity signal, not field-quality evidence. Calibration: 0 flags on current data (all 3 live pointers cleanly target `UC-CUR-MPG029OM`); preventive infrastructure for the next re-mint. | **DONE 2026-05-27** (PR #157, Bruh Dec) |
+| **Cred-Ref PR-5b/0** | Mode B prep — bake `_original_ut` siblings into `credential_reference_data.js` so `unified_title_override` works as a Mode-A *display* override (mirrors PR-5a follow-up's pattern for issuer/trainer/quality_flag). Adds `kb/_cred_rename_dryrun.py` (re-runnable, reads `kb/credential_review_overlay.json`, projects each override onto post-rename state, writes `kb/cred_rename_dryrun/{report.md, alias_map.json, collisions.json}`). Daily workflow runs the dry-run as a report-only step. Zero source mutation. Calibration: 0 overrides today; infrastructure populates the moment a curator enters a rename. | scoped 2026-05-27 (Bruh Dec); code pending |
+| **Cred-Ref PR-5b/1** | Mode B apply — three apply scripts (`_cred_rename_apply.py`, `_cred_rename_apply_articulations.py`, `_cred_rename_apply_supabase.py`) re-key `kb/credentials.json` (key change), update `kb/unified_titles.json` + `kb/coci_articulations.json` (value changes), PATCH new `_CREDENTIAL_REVIEW::<NEW>` rows in Supabase. Manual `workflow_dispatch` trigger, shares `concurrency: daily-dashboard` lock. V1–V4 apply gates mirroring `_subj4_apply.py`. Alias map committed at `kb/cred_rename_out/<date>/alias_map.json`. Collision policy: **reject + decision-queue** (no auto-merge, no auto-disambiguate). | scoped 2026-05-27 (Bruh Dec); blocked on PR-5b/0 |
+| **Cred-Ref PR-5b/2** | Collision-resolution UX in the Credential Reference tab — "Confirm merge" affordance when a rename target collides with an existing credential key. Deferred until a curator actually hits a collision (zero today). | deferred (zero demand) |
 | **Excel→Supabase Phase 1** | Migrate Workplan Goals tab from `CPL_Initiative_Project_List_v3.xlsx` reads to Supabase `workplan_goals` table reads (proof-of-concept). `excel_to_dashboard.py` reads from Supabase via service-role key (already a secret per §6); inline editor on the tab with curator overlay (same pattern as the credential/CCR/CSC tabs). One-time data import from Excel → Supabase. Validates the architecture before the larger Dashboard / Budget / Vision 2030 migrations in Phases 2-4. | queued — separate session |
 | **Excel→Supabase Phase 2-4** | Migrate remaining Excel-driven tabs (Dashboard project cards, Budget, Vision 2030, Personnel). Per-tab inline editors. Excel file retires once Phase 4 cuts over; periodic Supabase→xlsx export retained as backup. | parked (own multi-session workstream) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
