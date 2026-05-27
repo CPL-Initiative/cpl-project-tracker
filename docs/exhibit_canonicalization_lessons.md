@@ -1,9 +1,10 @@
 ---
 title: Exhibit Canonicalization — Decisions & Lessons (credential-identity layer)
 date: 2026-05-24
-session: 6 (Bruh Hex)
-status: ACTIVE — Phase 4/5/6 of the vision doc not yet shipped; PR-A (audit) landing this session
-tags: [exhibit-canonicalization, credential-identity, audit, kb, eacr]
+last_updated: 2026-05-27
+session: 6 (Bruh Hex), updated through 8 (Octaman), 10 (Sexy Dexy), 11 (Bruh El), 12 (Bruh Dec — PR-5b scoping)
+status: ACTIVE — Cred-Ref PR-5b scoped this session (Bruh Dec); 3-PR split locked; PR-5b/0 code pending
+tags: [exhibit-canonicalization, credential-identity, audit, kb, eacr, rename-promotion]
 artifacts:
   - kb/unified_titles.json
   - kb/credentials.json
@@ -816,3 +817,147 @@ When Sam decides Cred-Ref PR-5b is worth doing (curator usage signals
 demand for real renames vs display-only), scope it as its own session with
 a dry-run-first plan, alias-map output, atomic land within one cron window.
 Per `docs/coursecontrolnumber_remint.md`.
+
+---
+
+## 2026-05-27 — Cred-Ref PR-5b scoping (Bruh Dec)
+
+Scoped the rename-promotion work as a 3-PR sequence. No code written
+this checkpoint — just the inventory + design decisions, locked via
+AskUserQuestion so the next session has unambiguous direction.
+
+### Surface area (what a unified_title rename touches)
+
+Three source-of-truth files + Supabase + (downstream) two baked JS
+payloads. The structural hot-spot: `kb/credentials.json` is keyed by
+`unified_title`, so a rename is a **dict-key rewrite**, not a value
+edit:
+
+| File | Where the title lives | Change shape |
+|---|---|---|
+| `kb/unified_titles.json` | `entry.unified_title` value | value rewrite |
+| `kb/credentials.json` | dict KEY at `credentials[unified_title]` | **key rewrite** |
+| `kb/coci_articulations.json` | `articulation.unified_title` value | value rewrite |
+| Supabase `kb_curation` | `course_id = _CREDENTIAL_REVIEW::<unified_title>` | row re-key (PATCH new, drop old) |
+| `credential_reference_data.js`, `statewide_data.js` | baked | auto-regen daily |
+
+### Architectural principle locked (Sam's clarifying question)
+
+**Supersede, don't mutate, at the synthetic identity layer.** The
+rename only touches the synthetic *unified* layer; raw college-authored
+exhibit titles in `unified_titles.json` dict KEYS are immutable forever.
+Three reasons (worth stating because the principle generalizes beyond
+PR-5b):
+
+1. **MAP owns the raw layer.** Colleges authored those raw titles
+   through the CCCCO MAP authoring flow. We read them via the daily
+   scrape. They're historical record of "what this college typed at
+   scrape time." Mutating our copy would lie about that record AND get
+   overwritten on the next scrape.
+
+2. **The unified layer is the mutable one BY DESIGN.** That's its whole
+   job: a synthetic, curator-evolvable canonical name that absorbs raw
+   variants. Renaming the unified title is "we got the canonical wrong;
+   here's a better one." Renaming a raw title would be "this college
+   didn't really type what they typed" — a credibility-free claim.
+
+3. **Provenance compounds, doesn't replace.** Today the Credential
+   Reference tab shows raw_variants under each unified credential
+   (PR-5a's raw_count). PR-5b/0 adds `_original_ut` for the
+   unified-name history. A future second rename should extend the chain
+   (`_original_ut_history: [...]`), not flatten it. Compounding
+   provenance preserves the audit trail end-to-end: raw → unified v1
+   → v2 → v3.
+
+The principle was lifted into its own KB note —
+`docs/kb-notes/adr-supersede-dont-mutate-synthetic-layer.md` — because
+it applies cross-domain (M-ID → CID promotion follows the same
+pattern; raw → unified credential rename follows it; future synthetic
+layers will follow it).
+
+### Three-PR split (locked via AskUserQuestion)
+
+| PR | Scope | Risk |
+|---|---|---|
+| **PR-5b/0** | Bake `_original_ut` into `credential_reference_data.js` (display-override pattern matching PR-5a follow-up) + standing `_cred_rename_dryrun.py` report wired into daily cron | ~zero (additive, no mutation) |
+| **PR-5b/1** | Three apply scripts (credentials, articulations, supabase) + manual-trigger workflow. V1–V4 apply gates mirroring `_subj4_apply.py`. Alias map at `kb/cred_rename_out/<date>/alias_map.json` | medium (re-mint class) |
+| **PR-5b/2** | "Confirm merge" affordance in the Credential Reference tab for collision resolution | deferred until a curator hits a collision (zero today) |
+
+### Three design decisions locked (Sam picked all 3 recommendations)
+
+1. **PR split**: Three PRs. PR-5b/0 first because it's display-only +
+   observability with no rename application — the first real Mode-B
+   apply (in PR-5b/1) then fires with a curator + Sam in the loop on
+   whatever rename queue exists, not as a backlog surprise.
+
+2. **Collision policy**: **Reject + decision queue.** When a rename
+   target collides with an existing credential key, the dry-run flags
+   it in `collisions.json` and the apply refuses to touch the colliding
+   pair. Curator either picks a non-colliding target or explicitly
+   confirms a merge via a future PR-5b/2 UX. Auto-merge loses
+   provenance; auto-disambiguate produces titles the curator didn't
+   ask for. Reject is the only policy that preserves both safety AND
+   curator control.
+
+3. **Apply trigger**: **Manual `workflow_dispatch`.** Daily cron runs
+   the dry-run report so the queue stays visible; apply fires only on
+   explicit human trigger. Matches the re-mint playbook spirit; avoids
+   the auto-apply trap that Phase 1e's V4 gate caught a 386-row silent
+   overwrite in.
+
+### Open question (parked for PR-5b/1 design)
+
+When apply re-keys Supabase from `_CREDENTIAL_REVIEW::<OLD>` to
+`_CREDENTIAL_REVIEW::<NEW>`, do we **drop** the old row (clean) or
+**mark it `superseded_by: <NEW>`** (audit trail)? Sam paused on this
+mid-scoping; revisit when PR-5b/1 starts. Argument for supersede: same
+principle as supersede-don't-mutate at the JSON layer — preserves the
+record of what the curator originally typed before they refined the
+name. Argument for drop: the alias map at
+`kb/cred_rename_out/<date>/alias_map.json` already preserves the
+old→new mapping, so Supabase doesn't need to also carry it.
+
+### Lessons
+
+**Scope before code on architecturally significant work — even when
+you think you know what to build.** I had a plausible 1-PR plan in my
+head after the surface-area research; surfacing the split + collision
+policy + trigger choice via AskUserQuestion turned up a cleaner
+3-stage shape than what I'd have just coded. Bruh El flagged this
+exact pattern in the Session 12 handoff: "Bring the user a scoped plan
+BEFORE writing code for anything architecturally significant." +1.
+
+**Surface area research before scope discussion.** Spawned an Explore
+agent to do the inventory (file paths, key shapes, daily-cron
+sequence, re-mint playbook translation, risk hot-spots). Came back
+with a 600-word structured report I synthesized into the design
+options. The agent did one read; I'd have done five. Reuse the
+pattern for any architecturally significant scoping going forward.
+
+**Sam asks the question that crystallizes the principle.** Mid-scope,
+his "does this actually touch the original exhibit name or just
+supersede it?" question turned a tactical implementation detail into
+the architectural invariant that now governs the whole synthetic
+identity layer (and got its own KB note). Trust the user's pause-and-
+probe instinct; if a quick yes/no answer feels obvious, articulate the
+PRINCIPLE behind it, not just the answer.
+
+### Strategic roadmap (updated)
+
+| What's next | Status |
+|---|---|
+| **PR-5b/0** — display-override bake + standing dry-run report | scoped (Bruh Dec); next concrete code |
+| PR-5b/1 — apply infra + manual-trigger workflow | scoped; blocked on PR-5b/0 |
+| PR-5b/2 — collision-resolution UX | deferred (zero demand today) |
+| EACR card regrouping by issuer override (PR-C0/C1/C2 cards group by `(unified_title, issuing_agency, …)`, so an issuer override should regroup) | parked (deeper side effects; needs scoping) |
+| Description-similarity tie-breaker for borderline title matches | parked |
+
+### Next concrete step
+
+Ship **PR-5b/0**: bake `_original_ut` siblings into
+`credential_reference_data.js`, extend `credential_reference.js`'s
+`applyOverlay()` to render the unified_title display-override + the
+"originally:" disclosure, create `kb/_cred_rename_dryrun.py`, wire it
+into the daily cron as a report-only step. Zero source mutation. ~30
+lines of bake + ~150 lines of dry-run + 1 workflow step. Reversible
+in one revert if anything regresses.
