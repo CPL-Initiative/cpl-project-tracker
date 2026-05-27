@@ -424,6 +424,142 @@
         }
         .cpl-tab.qs-pulse { animation: qsPulse 1.0s ease-out; }
 
+        /* Sidebar layout (PR-Sidebar-A) — fixed left rail, main column right.
+           Overrides the horizontal .cpl-tabs styles defined above when the nav
+           lives inside .cpl-sidebar. Below 900px the rail becomes a hamburger-
+           triggered slide-over so mobile users still get to the curator tabs. */
+        .cpl-layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            align-items: start;
+        }
+        .cpl-sidebar {
+            background: #f7f5ee;
+            border-right: 1px solid #e0d8c0;
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            top: 0;
+            align-self: stretch;
+            min-height: 100vh;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+        .cpl-sidebar-brand {
+            padding: 0.85rem 1rem 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #0A2240;
+            background: rgba(201,168,76,0.10);
+            border-bottom: 1px solid rgba(10,34,64,0.08);
+            letter-spacing: 0.01em;
+        }
+        .cpl-sidebar-brand a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+        .cpl-sidebar-brand a:hover { color: #C9A84C; }
+        .cpl-sidebar .cpl-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-bottom: none;
+            max-width: none;
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+        .cpl-sidebar .cpl-tab {
+            border: none;
+            border-left: 3px solid transparent;
+            border-radius: 0;
+            text-align: left;
+            padding: 0.55rem 0.9rem 0.55rem 0.85rem;
+            margin-bottom: 0;
+            color: #444;
+            font-size: 0.86rem;
+            font-weight: 600;
+            line-height: 1.25;
+            transition: background 0.12s, color 0.12s, border-left-color 0.12s;
+        }
+        .cpl-sidebar .cpl-tab:hover {
+            background: rgba(201,168,76,0.10);
+            color: #0A2240;
+        }
+        .cpl-sidebar .cpl-tab.active {
+            border-left-color: #C9A84C;
+            background: rgba(201,168,76,0.16);
+            color: #0A2240;
+        }
+        .cpl-sidebar-footer {
+            margin-top: auto;
+            padding: 0.75rem 0.9rem 0.95rem;
+            border-top: 1px solid rgba(10,34,64,0.08);
+            font-size: 0.78rem;
+            color: #5a6478;
+            background: rgba(10,34,64,0.02);
+        }
+        .cpl-rail-auth-on { color: #1f7a3a; font-weight: 700; font-size: 0.8rem; }
+        .cpl-rail-auth-off { color: #888; font-style: italic; font-size: 0.8rem; }
+        .cpl-rail-auth-email {
+            display: block;
+            font-size: 0.7rem;
+            color: #5a6478;
+            font-weight: 400;
+            font-style: normal;
+            margin-top: 2px;
+            word-break: break-all;
+            line-height: 1.25;
+        }
+        .cpl-main {
+            min-width: 0; /* prevent long-content blowout of the grid column */
+        }
+        /* Hamburger — only visible when the rail is hidden (≤900px). */
+        .cpl-hamburger {
+            display: none;
+            position: fixed;
+            top: 0.55rem;
+            left: 0.6rem;
+            z-index: 201;
+            background: #0A2240;
+            color: #fff;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            line-height: 1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+        .cpl-hamburger:hover { background: #C9A84C; color: #0A2240; }
+        @media (max-width: 900px) {
+            .cpl-layout { grid-template-columns: 1fr; }
+            .cpl-sidebar {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 240px;
+                max-height: 100vh;
+                transform: translateX(-100%);
+                transition: transform 0.2s ease;
+                z-index: 200;
+                box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+            }
+            body.cpl-rail-open .cpl-sidebar { transform: translateX(0); }
+            body.cpl-rail-open::before {
+                content: "";
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.35);
+                z-index: 199;
+            }
+            .cpl-hamburger { display: block; }
+            /* Keep the header h1 clear of the hamburger button. */
+            .header h1 { padding: 0 2.5rem; }
+        }
+
         /* Teaser cards on the Dashboard tab */
         .tab-teaser-grid {
             max-width: 1400px;
@@ -1556,6 +1692,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 .cpl-analytics-body,
 .activity-kpi-body {
@@ -2050,8 +2189,10 @@
         
         
         
-        <div class="last-updated">Last Updated: May 27, 2026 at 6:51 AM PT</div>
+        
+        <div class="last-updated">Last Updated: May 27, 2026 at 7:31 AM PT</div>
         <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:#C9A84C;border:1px solid #C9A84C;padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='#C9A84C';this.style.color='#0A2240'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='#C9A84C'}">&#x21bb; Refresh Today&#39;s Data</button></div>
+        
         
         
         
@@ -2148,18 +2289,35 @@
     </div>
     </div>
 
-    <!-- Tab Navigation -->
-    <nav class="cpl-tabs" role="tablist" aria-label="Dashboard sections">
-        <button class="cpl-tab active" data-tab="dashboard" role="tab" aria-selected="true">Dashboard</button>
-        <button class="cpl-tab" data-tab="workplan-goals" role="tab" aria-selected="false">Annual Workplan Goals</button>
-        <button class="cpl-tab" data-tab="budget" role="tab" aria-selected="false">Budget</button>
-        <button class="cpl-tab" data-tab="vision-2030" role="tab" aria-selected="false">Vision 2030</button>
-        <button class="cpl-tab" data-tab="unified-courses" role="tab" aria-selected="false">Common Course Reference</button>
-        <button class="cpl-tab" data-tab="canonical-subj4" role="tab" aria-selected="false">Common Subject Code</button>
-        <button class="cpl-tab" data-tab="credential-reference" role="tab" aria-selected="false">Credential Reference</button>
-        <button class="cpl-tab" data-tab="pipeline" role="tab" aria-selected="false">Pipeline</button>
-        <button class="cpl-tab" data-tab="letters" role="tab" aria-selected="false">Letters</button>
-    </nav>
+    <!-- Hamburger toggle (visible only ≤900px; wired by tabs.js) -->
+    <button id="cpl-hamburger" class="cpl-hamburger" type="button"
+            aria-label="Toggle navigation" aria-controls="cpl-sidebar">&#9776;</button>
+
+    <!-- ═══ Sidebar layout (PR-Sidebar-A) ═══
+         Left rail = navigation + auth status. Main column = active tab pane.
+         tabs.js derives VALID_TABS from the rendered .cpl-tab buttons, so a
+         new tab is purely: drop a nav button + drop a pane + ship a script. -->
+    <div class="cpl-layout">
+    <aside id="cpl-sidebar" class="cpl-sidebar" aria-label="Primary navigation">
+        <div class="cpl-sidebar-brand">
+            <a href="#" data-tab="dashboard">CPL Project Tracker</a>
+        </div>
+        <nav class="cpl-tabs" role="tablist" aria-label="Dashboard sections">
+            <button class="cpl-tab active" data-tab="dashboard" role="tab" aria-selected="true">Dashboard</button>
+            <button class="cpl-tab" data-tab="workplan-goals" role="tab" aria-selected="false">Annual Workplan Goals</button>
+            <button class="cpl-tab" data-tab="budget" role="tab" aria-selected="false">Budget</button>
+            <button class="cpl-tab" data-tab="vision-2030" role="tab" aria-selected="false">Vision 2030</button>
+            <button class="cpl-tab" data-tab="unified-courses" role="tab" aria-selected="false">Common Course Reference</button>
+            <button class="cpl-tab" data-tab="canonical-subj4" role="tab" aria-selected="false">Common Subject Code</button>
+            <button class="cpl-tab" data-tab="credential-reference" role="tab" aria-selected="false">Credential Reference</button>
+            <button class="cpl-tab" data-tab="pipeline" role="tab" aria-selected="false">Pipeline</button>
+            <button class="cpl-tab" data-tab="letters" role="tab" aria-selected="false">Letters</button>
+        </nav>
+        <div class="cpl-sidebar-footer">
+            <div id="cpl-rail-auth"></div>
+        </div>
+    </aside>
+    <main class="cpl-main">
 
     <div class="cpl-tab-pane active" id="tab-dashboard" data-tab="dashboard" role="tabpanel" aria-labelledby="tab-dashboard">
 
@@ -6789,6 +6947,7 @@
 
 
 
+
         </div>
         <!-- /main-container for Dashboard tab -->
 
@@ -8261,7 +8420,7 @@ Cont</td>
         </div>
         <!-- End Annual Workplan Goals -->
 
-                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                        </div>
         <!-- /main-container for Workplan Goals tab -->
     </div>
     <!-- /tab-workplan-goals -->
@@ -8335,6 +8494,7 @@ Cont</td>
             </div>
         </div>
         <!-- End Vision 2030 Section -->
+        
         
         
         
@@ -8899,11 +9059,15 @@ Cont</td>
     </div>
     <!-- /tab-letters -->
 
+    </main>
+    </div>
+    <!-- ═══ End Sidebar layout ═══ -->
+
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "May 27, 2026 at 6:51 AM PT",
-  "data_as_of": "May 27, 2026 at 6:51 AM PT",
+  "last_updated": "May 27, 2026 at 7:31 AM PT",
+  "data_as_of": "May 27, 2026 at 7:31 AM PT",
   "kpis": {
     "cumulative_students": {
       "value": "45,915",
@@ -13372,41 +13536,8 @@ Cont</td>
 };
     </script>
     <!-- DATA-END -->
-    <script>
-    // Tab navigation with URL-hash routing.
-    (function () {
-        var VALID_TABS = ['dashboard', 'workplan-goals', 'budget', 'vision-2030', 'unified-courses', 'canonical-subj4', 'credential-reference', 'pipeline', 'letters'];
-        function activate(tabName) {
-            if (!tabName || VALID_TABS.indexOf(tabName) === -1) tabName = 'dashboard';
-            document.querySelectorAll('.cpl-tab').forEach(function (b) {
-                var on = b.getAttribute('data-tab') === tabName;
-                b.classList.toggle('active', on);
-                b.setAttribute('aria-selected', on ? 'true' : 'false');
-            });
-            document.querySelectorAll('.cpl-tab-pane').forEach(function (p) {
-                p.classList.toggle('active', p.getAttribute('data-tab') === tabName);
-            });
-            window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
-        }
-        function fromHash() {
-            var h = (location.hash || '').replace(/^#/, '');
-            return h || 'dashboard';
-        }
-        document.querySelectorAll('.cpl-tab').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var t = btn.getAttribute('data-tab');
-                if (t === 'dashboard') {
-                    history.replaceState(null, '', location.pathname + location.search);
-                } else {
-                    location.hash = t;
-                }
-                activate(t);
-            });
-        });
-        window.addEventListener('hashchange', function () { activate(fromHash()); });
-        activate(fromHash());
-    })();
-    </script>
+    <!-- Tab router + rail auth badge + hamburger toggle (PR-Sidebar-A) -->
+    <script src="tabs.js"></script>
     <script src="canonical_subj4.js"></script>
     <script src="credential_reference_data.js"></script>
     <script src="credential_reference.js"></script>

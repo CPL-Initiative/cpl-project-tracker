@@ -509,16 +509,23 @@
   }
 
   function mount() {
-    // Insert between the page header and the nav-tabs row.
-    var nav = document.querySelector('nav.cpl-tabs');
-    if (!nav || !nav.parentNode) {
-      console.warn('[quickstart] nav.cpl-tabs not found; skipping mount');
+    if (document.getElementById('qs-chat')) return; // idempotent
+    var widget = buildWidget();
+    // PR-Sidebar-A: nav is now inside <aside class="cpl-sidebar">. Mount the
+    // quickstart chat above the first tab pane in the main column so it spans
+    // the right pane only (not the rail). Fallback to inserting before the nav
+    // for older layouts.
+    var main = document.querySelector('main.cpl-main');
+    if (main) {
+      main.insertBefore(widget, main.firstChild);
       return;
     }
-    var existing = document.getElementById('qs-chat');
-    if (existing) return; // idempotent
-    var widget = buildWidget();
-    nav.parentNode.insertBefore(widget, nav);
+    var nav = document.querySelector('nav.cpl-tabs');
+    if (nav && nav.parentNode) {
+      nav.parentNode.insertBefore(widget, nav);
+      return;
+    }
+    console.warn('[quickstart] no mount target (main.cpl-main / nav.cpl-tabs)');
   }
 
   if (document.readyState === 'loading') {
