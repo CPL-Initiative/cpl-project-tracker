@@ -20,14 +20,17 @@
   function validTabs() {
     return navButtons().map(function (b) { return b.getAttribute('data-tab'); });
   }
-  function fromHash() {
+  function parseHash() {
     var h = (location.hash || '').replace(/^#/, '');
-    // Strip any sub-path (e.g. "#dashboard/section") — sidebar-B will use this.
-    var tab = h.split('/')[0];
-    var valid = validTabs();
-    return (tab && valid.indexOf(tab) !== -1) ? tab : (valid[0] || 'dashboard');
+    var parts = h.split('/');
+    return { tab: parts[0] || '', section: parts[1] || '' };
   }
-  function activate(tabName) {
+  function fromHash() {
+    var p = parseHash();
+    var valid = validTabs();
+    return (p.tab && valid.indexOf(p.tab) !== -1) ? p.tab : (valid[0] || 'dashboard');
+  }
+  function activate(tabName, opts) {
     var valid = validTabs();
     if (!tabName || valid.indexOf(tabName) === -1) tabName = valid[0] || 'dashboard';
     navButtons().forEach(function (b) {
@@ -35,22 +38,125 @@
       b.classList.toggle('active', on);
       b.setAttribute('aria-selected', on ? 'true' : 'false');
     });
+    var activePane = null;
     document.querySelectorAll('.cpl-tab-pane').forEach(function (p) {
-      p.classList.toggle('active', p.getAttribute('data-tab') === tabName);
+      var on = p.getAttribute('data-tab') === tabName;
+      p.classList.toggle('active', on);
+      if (on) activePane = p;
     });
-    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    // Render the section TOC under the active rail item BEFORE the scroll
+    // happens, so the TOC click handlers are wired by the time a sub-section
+    // hash lands here.
+    renderSectionToc(activePane, tabName);
+    // Section scroll: if the hash carries a section slug AND the pane
+    // declares it, scroll to that section instead of jumping to top.
+    var sectionSlug = (opts && opts.section) || '';
+    var sectionEl = sectionSlug ? sectionElementBySlug(activePane, sectionSlug) : null;
+    if (sectionEl) {
+      // Defer one frame so the pane's display:block has applied + layout has
+      // settled before we measure scroll offsets.
+      requestAnimationFrame(function () { sectionEl.scrollIntoView({ behavior: 'instant' in window ? 'instant' : 'auto', block: 'start' }); });
+      setActiveTocItem(sectionSlug);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    }
+    setupScrollSpy(activePane);
     // Mobile: close the slide-over after picking a tab.
     closeRail();
     // Refresh auth badge — sign-in state may have changed since last render.
     renderRailAuth();
   }
-  function navigate(tabName) {
-    if (tabName === 'dashboard') {
-      history.replaceState(null, '', location.pathname + location.search);
-    } else {
-      location.hash = tabName;
+  function navigate(tabName, sectionSlug) {
+    var hash = (tabName === 'dashboard' && !sectionSlug)
+      ? '' : ('#' + tabName + (sectionSlug ? '/' + sectionSlug : ''));
+    if (hash) location.hash = hash;
+    else history.replaceState(null, '', location.pathname + location.search);
+    activate(tabName, { section: sectionSlug || '' });
+  }
+
+  // -- Section TOC + scroll-spy (PR-Sidebar-B) --------------------------
+  // Each tab pane optionally declares its sub-sections via a JSON
+  // data-sections attribute: [{"slug","id","label"}, …]. When the tab is
+  // active, those sections render as a nested <ul> under the active rail
+  // item; clicking a TOC item smooth-scrolls + updates the URL hash to
+  // "#<tab>/<slug>"; an IntersectionObserver highlights whichever section
+  // is currently in view.
+  var _scrollSpyObserver = null;
+  function readSections(pane) {
+    if (!pane) return [];
+    var raw = pane.getAttribute('data-sections');
+    if (!raw) return [];
+    try { return JSON.parse(raw) || []; } catch (e) { return []; }
+  }
+  function sectionElementBySlug(pane, slug) {
+    var defs = readSections(pane);
+    for (var i = 0; i < defs.length; i++) {
+      if (defs[i].slug === slug) {
+        return document.getElementById(defs[i].id);
+      }
     }
-    activate(tabName);
+    return null;
+  }
+  function renderSectionToc(pane, tabName) {
+    // Tear down any TOC from the previously-active tab.
+    document.querySelectorAll('.cpl-sidebar-toc').forEach(function (el) { el.remove(); });
+    var defs = readSections(pane);
+    if (!defs.length) return;
+    var navBtn = document.querySelector('nav.cpl-tabs .cpl-tab[data-tab="' + tabName + '"]');
+    if (!navBtn) return;
+    var ul = document.createElement('ul');
+    ul.className = 'cpl-sidebar-toc';
+    defs.forEach(function (def) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + tabName + '/' + def.slug;
+      a.textContent = def.label;
+      a.setAttribute('data-section-slug', def.slug);
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        navigate(tabName, def.slug);
+      });
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+    // Insert AFTER the active rail button so the TOC nests visually under it.
+    navBtn.parentNode.insertBefore(ul, navBtn.nextSibling);
+  }
+  function setActiveTocItem(slug) {
+    document.querySelectorAll('.cpl-sidebar-toc a').forEach(function (a) {
+      a.classList.toggle('active', a.getAttribute('data-section-slug') === slug);
+    });
+  }
+  function setupScrollSpy(pane) {
+    if (_scrollSpyObserver) { _scrollSpyObserver.disconnect(); _scrollSpyObserver = null; }
+    if (!('IntersectionObserver' in window)) return;
+    var defs = readSections(pane);
+    if (!defs.length) return;
+    var slugByEl = {};
+    var elements = [];
+    defs.forEach(function (def) {
+      var el = document.getElementById(def.id);
+      if (el) { slugByEl[def.id] = def.slug; elements.push(el); }
+    });
+    if (!elements.length) return;
+    // rootMargin biases the "active" band toward the top of the viewport
+    // (header at ≈0, want the section currently being read, not the next one
+    // peeking in at the bottom).
+    var visible = {};
+    _scrollSpyObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        visible[entry.target.id] = entry.isIntersecting;
+      });
+      // Pick the topmost visible section as active.
+      var bestEl = null, bestTop = Infinity;
+      elements.forEach(function (el) {
+        if (!visible[el.id]) return;
+        var top = el.getBoundingClientRect().top;
+        if (top < bestTop) { bestTop = top; bestEl = el; }
+      });
+      if (bestEl) setActiveTocItem(slugByEl[bestEl.id]);
+    }, { rootMargin: '-80px 0px -55% 0px', threshold: 0 });
+    elements.forEach(function (el) { _scrollSpyObserver.observe(el); });
   }
 
   // -- Rail auth badge --------------------------------------------------
@@ -131,14 +237,18 @@
         navigate(a.getAttribute('data-tab'));
       });
     });
-    window.addEventListener('hashchange', function () { activate(fromHash()); });
+    window.addEventListener('hashchange', function () {
+      var p = parseHash();
+      activate(fromHash(), { section: p.section });
+    });
     window.addEventListener('storage', function (e) {
       if (!e.key || e.key === 'cpl_sb') renderRailAuth();
     });
     window.addEventListener('focus', renderRailAuth);
     window.addEventListener('cpl-auth-change', renderRailAuth);
     wireHamburger();
-    activate(fromHash());
+    var p0 = parseHash();
+    activate(fromHash(), { section: p0.section });
     renderRailAuth();
   }
 
