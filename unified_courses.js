@@ -296,6 +296,7 @@
     description_discipline_disagreement: "Course description's safe-phrase set points to a different discipline (≥2 mentions)",
     subject_collision_signal:         "SUBJ4 differs from the modal SUBJ4 for this discipline — Phase 1e re-mint will canonicalize",
     unit_anomaly:                     "typical_units represents <50% of member colleges — high unit variance, possible over-merge across different unit-load variants",
+    merge_into_orphan:                "Curation merge_into target doesn't exist — pointer is dangling (data-integrity bug)",
   };
   // Mirror of kb/_row_audit.py's TAG_PENALTY_ON_DISCIPLINE +
   // TAG_PENALTY_ON_UNITS — kept in sync manually. If you change penalties
@@ -926,6 +927,7 @@
       "Unit anomaly (high member-unit variance)",
       "Subject collision (Phase 1e re-mint target)",
       "Seed untouched (never reviewed)",
+      "Orphan merge target (dangling pointer)",
       "Cluster issues",
     ]);
     // Map filter labels → predicate over an audit card (auditIndex[r.id]).
@@ -939,6 +941,7 @@
       "Unit anomaly (high member-unit variance)": function (c) { return c.tags.indexOf("unit_anomaly") >= 0; },
       "Subject collision (Phase 1e re-mint target)": function (c) { return c.tags.indexOf("subject_collision_signal") >= 0; },
       "Seed untouched (never reviewed)":      function (c) { return c.tags.indexOf("seed_untouched_discipline") >= 0; },
+      "Orphan merge target (dangling pointer)": function (c) { return c.tags.indexOf("merge_into_orphan") >= 0; },
       "Cluster issues":                       function (c) { return c.tags.some(function (t) { return t.indexOf("cluster_") === 0 || t === "uc_cur_ripe_for_promotion"; }); },
     };
     var search = el("input", { id: "uc-search", type: "search", placeholder: "Search title or ID…", class: "uc-filter" });

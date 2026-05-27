@@ -1,8 +1,9 @@
 ---
 title: Unified Courses Trust-Card Auditor — Decisions & Lessons
 date: 2026-05-23
-session: 4 (Bruh Prime)
-phases: [1a, 1b/1, 1b/2, 1c (5 of 9), 1c-UX]
+last_updated: 2026-05-27
+session: 4 (Bruh Prime), updated across sessions 7 (Sexy Dexy, unit_anomaly) and 12 (Bruh Dec, merge_into_orphan)
+phases: [1a, 1b/1, 1b/2, 1c (8 of 9), 1c-UX]
 tags: [auditor, unified-courses, m-id, mc, cidx, trust-score, calibration, decisions, knowledge-base]
 artifacts:
   - kb/_row_audit.py
@@ -522,6 +523,79 @@ on member colleges: when a 2-member [3.0, 0.0] split fires, can we
 suggest WHICH member is the over-merge? The 0.0 (likely noncredit) is
 the natural suspect, but a curator-facing "candidate to split off"
 badge would speed triage materially.
+
+## 2026-05-27 — `merge_into_orphan` rule (Bruh Dec)
+
+Eighth audit rule landed. First **curation-pointer** rule (not derived
+from the row's own faculty fields or member aggregates — derived from
+the curation overlay's `merge_into` edge). Fires when a curation
+entry's target doesn't resolve to anything the auditor recognizes.
+
+**The framing.** Bruh El left this in the menu as "small PR; cost a
+half-hour. The rule type that's been queued for a while because no
+session committed the time." Right call to ship it as a warm-up — the
+per-field penalty generalization from `unit_anomaly` already paved the
+implementation path, so the rule itself was about 30 lines of
+classifier + 4 lines of wiring. Most of the time went to the survey
+(what counts as a valid target?), the docs (CLAUDE.md tag inventory +
+phase roadmap), and the UI mirror (chip label + triage option).
+
+**Survey first.** Per the `unit_anomaly` lesson — every new rule
+should print "would-fire-on-N rows" before its constants bake in.
+Current data: 7 curation entries, 3 carry `merge_into`, all 3 point
+to `UC-CUR-MPG029OM`. Zero orphans today. Confirmed the rule is
+**preventive infrastructure**, not a cleanup pass.
+
+**Valid-target definition.** A `merge_into` target is RESOLVABLE iff:
+- It's a key in `coci_minted_courses.json` (M-ID exists), OR
+- It's a key in `coci_minted_singletons.json` (singleton exists), OR
+- It starts with `UC-CUR-` (synthetic cluster id; self-defining by
+  construction — pointing to a UC-CUR-* IS what makes it a cluster).
+
+Skipped: self-pointers (cycle bug, different rule); C-ID / CCN
+reference anchors (not loaded by the auditor; a typo'd official-id
+target is rare enough to defer until we wire those catalogs in).
+
+**Tag attaches symmetrically.** The same `_curation_orphan_tags()`
+helper runs in both the M-ID loop and the Cluster loop in `main()`.
+Clusters can chain (their own curation entry with its own
+`merge_into`), so an orphan on a cluster row catches a broken
+cluster-chain. End-to-end test with two synthetic orphans (one on an
+M-ID, one on a cluster) confirmed both fire.
+
+**No per-field penalty.** Unlike `discipline_*` rules (penalize
+`discipline`) and `unit_anomaly` (penalizes `typical_units`),
+`merge_into_orphan` is a curation-pointer integrity signal that
+doesn't reflect on any specific faculty field. The tag surfaces in
+the chip + triage; readiness scoring is unaffected. Documented inline
+near the `TAG_PENALTY_ON_UNITS` block so future maintainers don't
+look for a penalty entry that intentionally isn't there.
+
+**UI mirror.** `unified_courses.js` got three updates: the
+`AUDIT_TAG_LABELS` entry, the new Triage option ("Orphan merge target
+(dangling pointer)"), and the matching `TRIAGE_PRED` predicate. No
+penalty mirror needed (rule has no per-field penalty); `auditTagsTip`
+already lists every tag's label in its `—` section, so the chip
+tooltip is self-explanatory.
+
+**What this leaves open.** `cluster_title_drift` is the last queued
+Phase 1c rule. Diagnostic value is low until more clusters mint — at
+1 cluster, there's nothing to detect drift against. Picking it up
+won't pay off until cluster count crosses ~5–10. The bigger lever
+remains the cohort-quality classifier teased in the `unit_anomaly`
+section: when a 2-member [3.0, 0.0] unit split fires, suggest WHICH
+member is the over-merge so curators can split it off in one click.
+
+**Mini-lesson on curation-pointer rules.** Until this rule, every
+auditor signal was derived from the row's own data (its discipline,
+its description, its TOP code, its member units). `merge_into_orphan`
+is the first signal derived from the row's **relationships** — its
+curation-overlay pointer to another row. The `_curation_orphan_tags`
+helper is a clean separation: record-derived tags stay in
+`_tags_for_mid` / `_tags_for_cluster`; curation-derived tags grow in
+the new helper. Future curation-pointer rules (e.g. cycle detection,
+title-drift between source and merge_into target) plug into the same
+helper without touching record-tag code.
 
 ---
 
