@@ -1,0 +1,149 @@
+name: Cred-Ref PR-5b/1 — Credential Rename Apply
+
+# Manual-dispatch only. Applies the credential-title renames queued in
+# kb/credential_review_overlay.json to the three source-of-truth files
+# (credentials.json, unified_titles.json, coci_articulations.json) +
+# migrates the matching Supabase kb_curation rows.
+#
+# Sequence:
+#   1. Fresh-sync the credential-review overlay from Supabase (catches
+#      curator edits since the last daily cron's sync).
+#   2. Re-run dry-run on the fresh overlay (refreshes alias_map.json
+#      against current credentials.json state — catches drift since the
+#      last cron's dry-run).
+#   3. Apply JSON renames via kb/_cred_rename_apply.py. Refuses to run
+#      if dry-run reported apply_safe=false; V4 gate (articulation count
+#      before/after) baked into the script.
+#   4. Apply Supabase row migration via kb/_cred_rename_apply_supabase.py.
+#      DELETEs fulfilled unified_title_override rows; PATCHes other
+#      override rows' course_id to the new identity.
+#   5. Commit + push the mutated kb files + frozen alias_map snapshot.
+#
+# Going light vs Phase 1e: this workflow has 5 steps, not 7 — no
+# post-apply re-dry-run (V4 in-apply already validates), no auditor
+# cleanup-receipt re-run (no rename-outcome invariant exists). Trust the
+# in-script V1–V4 gates.
+#
+# concurrency: daily-dashboard  →  serializes against the daily cron so
+# excel_to_dashboard.py never reads the three kb files mid-mutation.
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: daily-dashboard
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      # ── Step 1: fresh-sync overlay from Supabase ──────────────────
+      - name: Fresh-sync credential-review overlay
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          if [ -z "${SUPABASE_SERVICE_KEY:-}" ]; then
+            echo "::error::SUPABASE_SERVICE_KEY not set — required for apply"
+            exit 1
+          fi
+          python kb/_apply_credential_review.py
+
+      # ── Step 2: re-run dry-run (refreshes alias_map vs current state) ─
+      - name: Re-run dry-run + verify apply_safe
+        run: |
+          python kb/_cred_rename_dryrun.py
+          python3 << 'EOF'
+          import json, sys
+          with open('kb/cred_rename_dryrun/alias_map.json') as f:
+              doc = json.load(f)
+          summary = doc.get('summary') or {}
+          if not summary.get('apply_safe'):
+              print(f"::error::Dry-run reports apply_safe=false. "
+                    f"v1={summary.get('v1_intra_batch_collisions_pass')} "
+                    f"v2={summary.get('v2_source_exists_pass')} "
+                    f"v3={summary.get('v3_target_collision_free_pass')} "
+                    f"collisions={summary.get('collisions')}")
+              sys.exit(1)
+          n = len(doc.get('renames') or {})
+          if n == 0:
+              print("::warning::Dry-run produced 0 renames — apply is a no-op")
+          print(f"apply gate OK — {n} renames to apply")
+          EOF
+
+      # ── Step 3: apply JSON file mutations ─────────────────────────
+      - name: Apply credential renames to kb files
+        run: python kb/_cred_rename_apply.py
+
+      # ── Step 4: apply Supabase row migration ──────────────────────
+      # Best-effort: a single transient Supabase error doesn't strand
+      # the apply (the kb files have already landed; the operator can
+      # re-run kb/_cred_rename_apply_supabase.py manually). The supabase_log.json
+      # under kb/cred_rename_out/<date>/ is the retry input.
+      - name: Apply Supabase kb_curation row migration
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python kb/_cred_rename_apply_supabase.py
+
+      # ── Step 5: commit + push ─────────────────────────────────────
+      - name: Commit + push
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add kb/credentials.json \
+                  kb/unified_titles.json \
+                  kb/coci_articulations.json \
+                  kb/credential_review_overlay.json \
+                  kb/cred_rename_dryrun/ \
+                  kb/cred_rename_out/
+          if git diff --cached --quiet; then
+            echo "No changes to commit (apply was a no-op or re-ran on already-applied state)."
+            exit 0
+          fi
+          git commit \
+            -m "Cred-Ref PR-5b/1: credential rename APPLY (Mode B)" \
+            -m "Atomic re-key of unified credentials per kb/credential_review_overlay.json. Alias map (rollback basis): kb/cred_rename_out/<date>/alias_map.json." \
+            -m "Mutated kb files: credentials.json (key rewrite), unified_titles.json (value rewrite), coci_articulations.json (value rewrite). Raw college-authored titles in unified_titles.json dict KEYS stay immutable per the supersede-don't-mutate ADR." \
+            -m "Validated (in-apply gates): V1 dry-run reported apply_safe=true; V3 no drift collisions at apply time; V4 articulation cardinality preserved (rename, not delete)." \
+            -m "Supabase kb_curation rows migrated in same window — log: kb/cred_rename_out/<date>/supabase_log.json. unified_title_override rows DELETEd (fulfilled); other override rows PATCHed to new course_id."
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded on attempt $attempt."
+              exit 0
+            fi
+            echo "Push attempt $attempt failed — rebasing and retrying."
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((attempt * 2))
+          done
+          exit 1
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Cred-Ref PR-5b/1 — credential rename apply"
+            echo
+            echo "Status: ${{ job.status }}"
+            echo
+            echo "Receipts (committed under kb/cred_rename_out/<date>/):"
+            echo "- \`alias_map.json\` — frozen alias map (rollback input)"
+            echo "- \`validation.md\` — per-file mutation counts"
+            echo "- \`supabase_log.json\` — per-row Supabase migration log"
+          } >> "$GITHUB_STEP_SUMMARY"
