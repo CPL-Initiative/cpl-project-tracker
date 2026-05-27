@@ -100,6 +100,23 @@ into the Pipeline Reference below or into dedicated docs.
      Use the Obsidian frontmatter format that
      [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md)
      established (title / date / tags / artifacts / related front-matter).
+   - **`docs/kb-notes/<topic>.md`** — **KB-candidate lane (added Session 11,
+     2026-05-27).** At every checkpoint, ask: did this run produce a learning
+     that's durable, reusable, distilled, and self-contained? If yes → author
+     a standalone note in `docs/kb-notes/` using
+     [`docs/kb-notes/_template.md`](docs/kb-notes/_template.md) with
+     `kb-status: candidate`. Five types: `methodology` (reusable patterns),
+     `reference` (external-source distillations), `adr` (architecture
+     decisions), `glossary` (lookup cards), `playbook` (procedures). Lessons
+     docs are the workstream scratchpad; KB notes are the **distilled, durable
+     output** intended for Obsidian-vault first-class indexing. Promotion
+     workflow + tag taxonomy in [`docs/kb-notes/README.md`](docs/kb-notes/README.md).
+     The checkpoint commit body lists any new candidates added this run so Sam
+     sees the review queue.
+   - **`docs/INDEX.md`** — auto-maintained landing page for the project's docs
+     surface. Refresh at every checkpoint: new KB notes, lessons docs, session
+     handoffs all get table rows. Obsidian renders this as the vault-side
+     entry point for `cpl-project-tracker/`.
    - **`docs/session_<N+1>_handoff.md`** — at SESSION END (not every
      checkpoint), once everything for the current session has shipped + the
      final checkpoint is committed, write a "fattyfat prompt" for the next
@@ -150,6 +167,33 @@ into the Pipeline Reference below or into dedicated docs.
 ## Deployed site
 
 https://cpl-initiative.github.io/cpl-project-tracker/
+
+## Obsidian vault wiring (added Session 11, 2026-05-27)
+
+Sam's Obsidian vault lives at
+`C:\Users\samuel.lee\Documents\Claude\Projects\CPLBrain\` (where `.obsidian/`
+configures it). This repo is cloned **into the vault** at
+`CPLBrain\COG-second-brain\cpl-project-tracker\` so Obsidian indexes every
+`.md` file the session writes.
+
+Three doc lanes in this repo, by lifecycle (see
+[`docs/INDEX.md`](docs/INDEX.md) for the landing page):
+
+| Lane | Path | Purpose |
+|---|---|---|
+| **KB notes** | `docs/kb-notes/<topic>.md` | Distilled, durable, reusable knowledge with `kb-status: candidate|promoted|archived|internal`. **THE Obsidian-target lane.** |
+| **Lessons (WIP)** | `docs/<workstream>_lessons.md` | Workstream scratchpads, append a dated section every checkpoint. |
+| **Session handoffs** | `docs/session_<N>_handoff.md` | "Fattyfat" capsules for the next session. |
+
+The KB-notes lane is **proactive**: when a session learns something durable, a
+new note lands in `docs/kb-notes/` with `kb-status: candidate`. The checkpoint
+commit body lists new candidates so Sam sees the review queue. Promotion is
+manual (edit the frontmatter to `promoted`); a future bridge to the
+cpl-knowledge-base repo will lift promoted notes into the broader public KB.
+
+Vault-side hygiene: heavy non-markdown paths (`kb/coci_*.json`,
+`unified_courses_*.js`, `kb/row_audit/`, etc.) are excluded in Obsidian's
+**Files & Links → Excluded files** so the graph stays clean.
 
 ---
 
