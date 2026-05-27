@@ -250,6 +250,15 @@
     if (b._original_issuer !== undefined) r._original_primary_issuer = b._original_issuer;
     if (b._original_trainer !== undefined) r._original_primary_trainer = b._original_trainer;
     if (b._original_quality_flag !== undefined) r._original_flag_label = b._original_quality_flag;
+    // PR-5b/0 — Mode-A display override for unified_title. The baked
+    // `display_title` carries the curator's preferred label so cold-start
+    // renders show curator-truth before fetchOverlay() resolves; the baked
+    // `_original_display_title` is the baseline (== r.unified_title), used by
+    // applyOverlay's case (b) when the curator clears the override between
+    // the daily sync bake and the runtime fetch. `r.unified_title` STAYS as
+    // the original (overlay key + identity).
+    if (b.display_title !== undefined) r.display_title = b.display_title;
+    if (b._original_display_title !== undefined) r._original_display_title = b._original_display_title;
     if (b.curated_by) r.curator_reviewed_by = b.curated_by;
     if (b.curated_at) r.curator_reviewed_at = b.curated_at;
     return r;
