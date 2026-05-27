@@ -41,6 +41,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Two-mode sync (safe Mode A vs identity-touching Mode B)](kb-notes/methodology-two-mode-sync.md) | methodology | published | 2026-05-27 | 2026-05-27 |
 | [Methodology — Derive whitelists from rendered DOM, not hardcoded lists](kb-notes/methodology-derive-from-dom.md) | methodology | published | 2026-05-27 | 2026-05-27 |
 | [Playbook — Auto-sync vault-side repo clones via Windows Task Scheduler](kb-notes/playbook-vault-sync-setup.md) | playbook | published | 2026-05-27 | 2026-05-27 |
+| [Reference — Windows PowerShell scripting gotchas (PS 5.1 + Task Scheduler)](kb-notes/reference-windows-powershell-gotchas.md) | reference | published | 2026-05-27 | 2026-05-27 |
 
 ---
 
@@ -56,9 +57,10 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`exhibit_unification_vision.md`](exhibit_unification_vision.md) | Credential design doc | retrospective |
 | [`letter_curator_handoff.md`](letter_curator_handoff.md) | Letter Curator workstream | Session 10 |
 | [`quickstart_chat_lessons.md`](quickstart_chat_lessons.md) | Quick-start chat | Session 10 |
-| [`sidebar_lessons.md`](sidebar_lessons.md) | Sidebar / tabs.js router | Session 11 (NEW) |
+| [`sidebar_lessons.md`](sidebar_lessons.md) | Sidebar / tabs.js router | Session 11 |
 | [`subj4_canonicalization_remint_lessons.md`](subj4_canonicalization_remint_lessons.md) | Phase 1e re-mint | Session 5 |
 | [`unified_courses_audit_lessons.md`](unified_courses_audit_lessons.md) | Trust-Card auditor | Session 10 |
+| [`vault_sync_lessons.md`](vault_sync_lessons.md) | Vault auto-sync (Windows Task Scheduler) | Session 11 (NEW) |
 
 ---
 
@@ -71,7 +73,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 7 → 8 | Octaman | [`session_8_handoff.md`](session_8_handoff.md) |
 | 9 → 10 | Sexy Dexy | [`session_10_handoff.md`](session_10_handoff.md) |
 | 10 → 11 | Bruh El | [`session_11_handoff.md`](session_11_handoff.md) |
-| 11 → 12 | — | _(authored at session END, not at checkpoint)_ |
+| 11 → 12 | Bruh El (handoff) | [`session_12_handoff.md`](session_12_handoff.md) |
 
 ---
 
