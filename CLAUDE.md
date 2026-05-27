@@ -181,15 +181,22 @@ Three doc lanes in this repo, by lifecycle (see
 
 | Lane | Path | Purpose |
 |---|---|---|
-| **KB notes** | `docs/kb-notes/<topic>.md` | Distilled, durable, reusable knowledge with `kb-status: candidate|promoted|archived|internal`. **THE Obsidian-target lane.** |
+| **KB notes** | `docs/kb-notes/<topic>.md` | Distilled, durable, reusable knowledge with `kb-status: published|archived|internal` (the `candidate` middle state was retired Session 11). **THE Obsidian-target lane.** |
 | **Lessons (WIP)** | `docs/<workstream>_lessons.md` | Workstream scratchpads, append a dated section every checkpoint. |
 | **Session handoffs** | `docs/session_<N>_handoff.md` | "Fattyfat" capsules for the next session. |
 
-The KB-notes lane is **proactive**: when a session learns something durable, a
-new note lands in `docs/kb-notes/` with `kb-status: candidate`. The checkpoint
-commit body lists new candidates so Sam sees the review queue. Promotion is
-manual (edit the frontmatter to `promoted`); a future bridge to the
-cpl-knowledge-base repo will lift promoted notes into the broader public KB.
+The KB-notes lane is **proactive + auto-flowing**: when a session learns
+something durable, a new note lands in `docs/kb-notes/` with `kb-status:
+published` (no review-queue middle state — sessions author at final
+quality). The checkpoint commit body lists new notes for the audit trail.
+
+**Vault auto-sync (added Session 11, 2026-05-27):** `scripts/sync-vault-clones.ps1`
+runs on Sam's Windows Task Scheduler every 5–15 minutes, fast-forward-pulling
+`cpl-project-tracker` + `cpl-knowledge-base` from origin. KB notes (and every
+other repo doc) appear in Obsidian automatically. The script is strictly
+safe: never auto-merges, skips repos with uncommitted work, logs to
+`.vault-sync.log`. Setup walkthrough:
+[`docs/kb-notes/playbook-vault-sync-setup.md`](docs/kb-notes/playbook-vault-sync-setup.md).
 
 Vault-side hygiene: heavy non-markdown paths (`kb/coci_*.json`,
 `unified_courses_*.js`, `kb/row_audit/`, etc.) are excluded in Obsidian's

@@ -37,9 +37,10 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
-| [ADR — Obsidian sync via vault-side clone (not edge function)](kb-notes/adr-obsidian-vault-via-clone.md) | adr | candidate | 2026-05-27 | 2026-05-27 |
-| [Methodology — Two-mode sync (safe Mode A vs identity-touching Mode B)](kb-notes/methodology-two-mode-sync.md) | methodology | candidate | 2026-05-27 | 2026-05-27 |
-| [Methodology — Derive whitelists from rendered DOM, not hardcoded lists](kb-notes/methodology-derive-from-dom.md) | methodology | candidate | 2026-05-27 | 2026-05-27 |
+| [ADR — Obsidian sync via vault-side clone (not edge function)](kb-notes/adr-obsidian-vault-via-clone.md) | adr | published | 2026-05-27 | 2026-05-27 |
+| [Methodology — Two-mode sync (safe Mode A vs identity-touching Mode B)](kb-notes/methodology-two-mode-sync.md) | methodology | published | 2026-05-27 | 2026-05-27 |
+| [Methodology — Derive whitelists from rendered DOM, not hardcoded lists](kb-notes/methodology-derive-from-dom.md) | methodology | published | 2026-05-27 | 2026-05-27 |
+| [Playbook — Auto-sync vault-side repo clones via Windows Task Scheduler](kb-notes/playbook-vault-sync-setup.md) | playbook | published | 2026-05-27 | 2026-05-27 |
 
 ---
 
