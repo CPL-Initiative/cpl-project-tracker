@@ -99,6 +99,16 @@ jobs:
       - name: Run row Trust-Card auditor
         run: python3 kb/_row_audit.py || echo "Auditor failed — UCL hinky chips will use prior latest.json"
 
+      # ── Step 4c: Cred-Ref PR-5b/0 — credential rename dry-run ─────
+      # Read-only over kb/credential_review_overlay.json (synced from Supabase
+      # at step 3); writes kb/cred_rename_dryrun/{report.md, alias_map.json,
+      # collisions.json}. Mode B preview — projects unified_title_override
+      # curator entries onto the post-rename state, surfaces collisions +
+      # apply-gate status. Does NOT apply renames; apply is Cred-Ref PR-5b/1,
+      # manual workflow_dispatch only. Failure is non-fatal.
+      - name: Run credential rename dry-run
+        run: python3 kb/_cred_rename_dryrun.py || echo "Credential rename dry-run failed — non-fatal"
+
       # ── Step 5: Prepare GitHub Pages entry point ─────────────────
       - name: Copy dashboard to index.html
         run: cp CPL_Dashboard.html index.html
@@ -124,6 +134,10 @@ jobs:
           git add kb/discipline_canonical_subj4.json 2>/dev/null || true
           # Cred-Ref PR-5a: credential-review curator-edit overlay
           git add kb/credential_review_overlay.json 2>/dev/null || true
+          # Cred-Ref PR-5b/0: credential rename dry-run artifacts (Mode B preview)
+          git add kb/cred_rename_dryrun/report.md \
+                  kb/cred_rename_dryrun/alias_map.json \
+                  kb/cred_rename_dryrun/collisions.json 2>/dev/null || true
           # Only add CustomReport if it was freshly fetched
           git add CustomReport_latest.json 2>/dev/null || true
           if git diff --cached --quiet; then

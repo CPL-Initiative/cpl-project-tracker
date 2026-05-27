@@ -961,3 +961,114 @@ Ship **PR-5b/0**: bake `_original_ut` siblings into
 into the daily cron as a report-only step. Zero source mutation. ~30
 lines of bake + ~150 lines of dry-run + 1 workflow step. Reversible
 in one revert if anything regresses.
+
+## 2026-05-27 (afternoon) — Cred-Ref PR-5b/0 shipped (Bruh Dec)
+
+PR-5b/0 landed within the same checkpoint window as the scoping. Both
+pieces of the plan in one PR: the display-override bake + the standing
+dry-run report. Zero source mutation; the moment a curator enters a
+rename in Supabase, both pieces fire — the dashboard renders the
+curator's preferred label immediately, the daily cron reports what a
+future apply would touch.
+
+### What landed
+
+**Bake (excel_to_dashboard.py:export_credential_reference, ~7 lines).**
+When the overlay carries a non-empty `unified_title_override`, the
+baked row picks up `display_title = <override>` + `_original_display_title
+= <ut>`. The `ut` field STAYS as the original — that's the overlay
+lookup key (Supabase rows are keyed by `_CREDENTIAL_REVIEW::<original>`,
+and `applyOverlay` does `overlay[r.unified_title]`). The pattern is
+**asymmetric to the other 3 overrides:** issuer/trainer/quality_flag
+all OVERWRITE the visible field in the bake because their overlay key
+(unified_title) is independent. For unified_title itself, the overlay
+KEY IS the field being overridden — overwriting `ut` would break the
+lookup. So `display_title` carries the override and `ut` stays put.
+This is exactly the supersede-don't-mutate principle (ADR) applied at
+the bake layer.
+
+**Row builder (credential_reference.js:adaptBakedRow, ~3 lines).**
+Surface `b.display_title` → `r.display_title` and
+`b._original_display_title` → `r._original_display_title` onto the
+runtime row. The existing `applyOverlay()` from PR-5a follow-up
+(case-A/B/C bake-aware logic) was already wired for `utitle_override`
++ `display_title` + `_original_display_title` — I just had to make the
+baked payload populate them. Existing render code at line 1108 already
+uses `r.display_title || r.unified_title`, so the cold-render-before-
+fetchOverlay path works immediately.
+
+**Dry-run script (kb/_cred_rename_dryrun.py, ~250 lines).** Re-runnable,
+read-only over `kb/credential_review_overlay.json` (synced from Supabase
+by `_apply_credential_review.py`). For each override:
+- Classifies as `clean` / `collision` / `skipped` (no-op) /
+  `no_credential_record` (warning)
+- Runs three gates:
+  - **V1**: no two renames in the batch target the same new name
+  - **V2**: every old name resolves to either credentials.json OR
+    unified_titles.json
+  - **V3**: every clean target is collision-free against credentials.json
+- Writes `kb/cred_rename_dryrun/{report.md, alias_map.json, collisions.json}`
+- Emits a console summary with PASS/FAIL per gate + `apply_safe` flag
+
+Verified with synthetic injection across all four paths (clean, collision,
+intra-batch collision, no-op). Calibration on real data: 0 overrides,
+clean exit, alias_map empty, no collisions. Infrastructure ready.
+
+**Daily workflow (.github/workflows/daily-dashboard.yml, Step 4c).**
+Added between the auditor (4b) and `cp CPL_Dashboard.html index.html`
+(5). Non-fatal — the dry-run is observability, not load-bearing.
+Three artifacts get `git add`ed alongside the auditor's output. They
+flow to vault auto-sync, so Sam sees the daily rename report in
+Obsidian without manual `git pull`.
+
+### Lessons
+
+**The hardest part was already done.** The JS side already had full
+`utitle_override` wiring (Lines 31, 34, 117-145, 377-411, 1108, 1546-
+1581) from PR-4's PR-5a follow-up. The bake was the only missing link.
+Surveying the existing code before writing new code saved an hour of
+re-implementing what was already there. **Pattern: read the consumer
+side first, then design the producer to fit it, not vice versa.**
+
+**Asymmetric override pattern caught.** For issuer/trainer/quality_flag,
+the bake overwrites the visible field. For unified_title, the bake
+adds a sibling field (`display_title`) and leaves `ut` alone. The
+difference: whether the field being overridden IS the overlay lookup
+key. Documented inline in the bake code so future readers don't
+"normalize" the pattern by overwriting `ut` and silently breaking
+overlay lookups.
+
+**V1/V2/V3 gates worth the up-front cost.** PR-5b/0 doesn't apply
+anything, so technically the gates are unnecessary today. But they
+get exercised on every daily-cron run, so by the time PR-5b/1 needs
+them, they're battle-tested against real overlay state. Plus the
+report.md already shows curators "what would happen if you apply
+now" — useful at the moment they enter a rename, not later.
+
+**Dry-run patterns are converging.** This is the third dry-run script
+in the project (`_remint_dryrun.py`, `_subj4_dryrun.py`,
+`_eacr_dryrun.py`, now `_cred_rename_dryrun.py`). The shared shape:
+read sources → project post-state → write `<dryrun-dir>/{report.md,
+alias_map.json, …}`. Eventually worth a `kb/_dryrun_lib.py` if a 5th
+shows up; not now (premature abstraction).
+
+### Strategic roadmap (updated)
+
+| What's next | Status |
+|---|---|
+| **PR-5b/1** — apply infra + manual workflow_dispatch | scoped; unblocked by PR-5b/0; needs PR-5b/1 design pass (Supabase row drop vs supersede decision still open) |
+| PR-5b/2 — collision-resolution UX in the tab | deferred (zero collisions today) |
+| EACR card regrouping by issuer override | parked (deeper side effects) |
+| Description-similarity tie-breaker | parked |
+
+### Next concrete step
+
+When ready, scope PR-5b/1: the three apply scripts (`_cred_rename_apply.py`,
+`_cred_rename_apply_articulations.py`, `_cred_rename_apply_supabase.py`)
++ `.github/workflows/cred-rename-apply.yml` manual-trigger workflow.
+Open question to resolve first: when Supabase re-keys
+`_CREDENTIAL_REVIEW::<OLD>` → `<NEW>`, drop the old row or mark
+`superseded_by: <NEW>`? The alias map preserves the mapping either way
+(at `kb/cred_rename_out/<date>/alias_map.json`); supersede preserves
+the Supabase-side audit trail too. Light scoping conversation before
+code.
