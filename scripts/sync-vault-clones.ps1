@@ -6,7 +6,7 @@
 # git pull.
 #
 # Targets (relative to $env:USERPROFILE\Documents\Claude\Projects\CPLBrain\COG-second-brain\):
-#   cpl-project-tracker/       (this repo — main KB content lane)
+#   cpl-project-tracker/       (this repo -- main KB content lane)
 #   cpl-knowledge-base/        (public KB)
 #
 # Behavior:
@@ -49,11 +49,11 @@ if (-not (Test-Path $vaultRoot)) {
 foreach ($repo in $repos) {
     $path = Join-Path $vaultRoot $repo
     if (-not (Test-Path $path)) {
-        Log "[$repo] SKIP — directory not present at $path"
+        Log "[$repo] SKIP -- directory not present at $path"
         continue
     }
     if (-not (Test-Path (Join-Path $path ".git"))) {
-        Log "[$repo] SKIP — not a git repository"
+        Log "[$repo] SKIP -- not a git repository"
         continue
     }
 
@@ -63,26 +63,26 @@ foreach ($repo in $repos) {
         # local edits or unfinished commits).
         $porcelain = git status --porcelain 2>$null
         if ($LASTEXITCODE -ne 0) {
-            Log "[$repo] ERROR — git status failed; skipping"
+            Log "[$repo] ERROR -- git status failed; skipping"
             continue
         }
         if ($porcelain) {
             $nLines = ($porcelain -split "`n").Count
-            Log "[$repo] SKIP — $nLines uncommitted change(s); finish those first"
+            Log "[$repo] SKIP -- $nLines uncommitted change(s); finish those first"
             continue
         }
 
         # Quiet fetch.
         git fetch origin main --quiet 2>$null
         if ($LASTEXITCODE -ne 0) {
-            Log "[$repo] ERROR — git fetch failed (network or auth)"
+            Log "[$repo] ERROR -- git fetch failed (network or auth)"
             continue
         }
 
         # Compute ahead/behind against origin/main.
         $rev = git rev-list --left-right --count "HEAD...origin/main" 2>$null
         if ($LASTEXITCODE -ne 0 -or -not $rev) {
-            Log "[$repo] ERROR — could not compute ahead/behind"
+            Log "[$repo] ERROR -- could not compute ahead/behind"
             continue
         }
         $parts = $rev -split '\s+'
@@ -90,26 +90,26 @@ foreach ($repo in $repos) {
         $behind = [int]$parts[1]
 
         if ($behind -eq 0) {
-            # Up-to-date — quiet success.
+            # Up-to-date -- quiet success.
             # (Uncomment next line if you prefer a heartbeat in the log.)
             # Log "[$repo] up-to-date"
             continue
         }
         if ($ahead -gt 0) {
-            Log "[$repo] DIVERGED — $ahead ahead, $behind behind; manual merge needed"
+            Log "[$repo] DIVERGED -- $ahead ahead, $behind behind; manual merge needed"
             continue
         }
 
         # Fast-forward only.
         git pull --ff-only origin main --quiet 2>$null
         if ($LASTEXITCODE -ne 0) {
-            Log "[$repo] ERROR — fast-forward pull failed"
+            Log "[$repo] ERROR -- fast-forward pull failed"
             continue
         }
         Log "[$repo] pulled $behind commit(s) from origin/main"
     }
     catch {
-        Log "[$repo] EXCEPTION — $($_.Exception.Message)"
+        Log "[$repo] EXCEPTION -- $($_.Exception.Message)"
     }
     finally {
         Pop-Location
