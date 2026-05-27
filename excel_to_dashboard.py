@@ -4551,6 +4551,15 @@ def export_credential_reference():
             if "quality_flag_override" in ov:
                 row["_original_quality_flag"] = qflag_val
                 row["quality_flag"] = ov["quality_flag_override"] or None
+            # PR-5b/0 — Mode-A display override for unified_title. IMPORTANT:
+            # `ut` stays as the original (it's the overlay key — Supabase rows
+            # are keyed by `_CREDENTIAL_REVIEW::<original>`, and the JS-side
+            # `overlay[r.unified_title]` lookup needs the original to find
+            # the override). Only the display field changes. Mode B (actual
+            # rename of the source JSONs + key) is Cred-Ref PR-5b/1.
+            if ov.get("unified_title_override"):
+                row["_original_display_title"] = ut
+                row["display_title"] = ov["unified_title_override"]
             if ov.get("reviewed_by"):
                 row["curated_by"] = ov["reviewed_by"]
             if ov.get("reviewed_at"):
