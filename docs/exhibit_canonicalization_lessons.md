@@ -723,3 +723,96 @@ the natural quick win — it ties the chat to the curator workflow PR-4
 just shipped ("review unclassified credentials" → pre-populated audit
 filter on Credential Reference).
 
+
+---
+
+## 2026-05-27 — Session 11 (Bruh El): Cred-Ref-5a sync + bake-aware overlay
+
+### What shipped
+
+**PR #150** — `kb/_apply_credential_review.py` sync script. Mode A scope:
+non-identity overrides (`issuing_agency_override`, `training_agency_override`,
+`quality_flag_override`, `reviewed_marker`) fold into a git-canonical
+`kb/credential_review_overlay.json`, mirroring the `_apply_curation.py`
+pattern. Wired into daily workflow step 3 + step 6 commit. `unified_title_override`
+is recorded but NOT applied (Mode B / future PR-5b is the full re-mint
+playbook with alias-map + articulation re-key).
+
+**PR #152 (follow-up)** — bake-aware overlay. The deferred half of #150.
+`excel_to_dashboard.py:export_credential_reference()` now loads the overlay
+file and bakes overrides into `credential_reference_data.js`, preserving
+the AI baseline on parallel `_original_<field>` siblings. `applyOverlay()`
+rewritten to handle three cases per field:
+  - (a) Live overlay has override → wins; baseline (preferring baked
+    `_original_` over visible value) becomes `original_*` for the
+    "originally: X" hint.
+  - (b) No live override but baked `_original_` exists → curator cleared
+    the override between sync and now; revert to baseline.
+  - (c) Neither → no-op.
+
+### Lessons learned
+
+**1. Mode A / Mode B split — the discipline that lets a sync script ship safely.**
+Cred-Ref PR-4 deferred ALL of `_apply_credential_review.py` to "PR-5", with
+both parts entangled. Splitting into Mode A (safe non-identity edits, daily-
+cron-safe, no playbook needed) and Mode B (identity rename, re-mint playbook
+mandatory, atomic-window required) let Mode A ship today while Mode B stays
+parked for a separately-scoped session. **Generalizable pattern**: any
+curator-overlay → JSON sync should classify each field as "identity-touching"
+or "decoration-only" and ship the decoration sync first.
+
+**2. Bake-aware overlay needs to handle clear-after-bake, not just apply-on-top.**
+First-draft `applyOverlay()` just captured `r.original_primary_issuer = r.primary_issuer`
+before overwriting — which was correct when the baseline was always the AI
+value. After baking overrides, `r.primary_issuer` IS the override at
+applyOverlay-time, so the captured "original" became the override itself
+(wrong tooltip). Two fixes needed:
+  - Case (a): read baseline from `r._original_*` if present, else current value.
+  - Case (b): when no live override exists but `r._original_*` is set, the
+    curator cleared between sync and now — revert visible value to baseline.
+
+Without case (b), a curator clearing an override would see it stuck until
+the next 10:17 UTC sync. Subtle bug. The clear-then-reload test surfaces it.
+
+**3. The early-return-on-empty-overlay trap.**
+Previous `applyOverlay()` started with `if (!ov) return` — fine when overlay
+was the only source of truth. After baking, that early-return prevents case
+(b) from firing (which is exactly the case where `ov` is empty). New version
+visits every row regardless and checks per-field. Generalizable: **when
+adding a new data source to a function, audit early-returns; they may have
+been valid before the new source existed.**
+
+**4. Backwards-compat with the runtime-fetch path is free if you check for
+`_original_*` presence.**
+The dashboard has two row-build paths: baked (with bake-aware metadata) and
+runtime fetch (no metadata). The "look for `_original_*`, else fall through"
+pattern means runtime-fetched rows behave identically to pre-bake-aware
+applyOverlay. No conditional code paths for "are we coming from baked?";
+the presence of the metadata IS the signal.
+
+**5. Smoke test with mock rows beats deploying-and-praying.**
+For the sync script, mocked Supabase rows (5 lines of Python) confirmed:
+- Prefix filter correctly drops non-`_CREDENTIAL_REVIEW::*` rows
+- Unknown-field filter drops `bogus_field`
+- Rename overrides counted separately for the print summary
+- Latest reviewer/timestamp wins on a unified_title with multiple rows
+
+For the bake-aware overlay, mocked overlay JSON + handwritten payload row +
+running the per-field logic in Python (not even JS) verified the
+`_original_` capture. Crucial caveat: the JS implementation still needs
+real browser verification post-merge.
+
+### Strategic roadmap
+
+| What's next | Status |
+|---|---|
+| Cred-Ref PR-5b (rename promotion) — `unified_title_override` → actual rename + alias map + articulation re-key + atomic Supabase clear | parked (its own session; re-mint playbook mandatory) |
+| EACR card regrouping by issuer override (PR-C0/C1/C2 cards group by `(unified_title, issuing_agency, …)`, so an issuer override should regroup) | parked (deeper side effects; needs scoping) |
+| Description-similarity tie-breaker for borderline title matches (the open thread from §9) | parked |
+
+### Next concrete step
+
+When Sam decides Cred-Ref PR-5b is worth doing (curator usage signals
+demand for real renames vs display-only), scope it as its own session with
+a dry-run-first plan, alias-map output, atomic land within one cron window.
+Per `docs/coursecontrolnumber_remint.md`.

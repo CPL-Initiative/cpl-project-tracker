@@ -5447,8 +5447,17 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
         """xlsx_rows: optional flat list-of-lists used to pre-generate an
         Excel export at xlsx_export_dir/<card_id>.xlsx. If provided AND
         xlsx_export_dir is set, a download button is rendered in the header.
-        totals_row_html: optional <tr>...</tr> string appended to <tbody>."""
-        header_cells = "".join(f'<th>{h}</th>' for h in headers)
+        totals_row_html: optional <tr>...</tr> string appended to <tbody>.
+        headers: list of either plain strings (no class — default left-align)
+        OR (text, kind) tuples where kind is "num"/"pct"/"name". The kind
+        attaches an exhibit-th-<kind> class so the header aligns with its
+        data cells (see CSC-G phase 2)."""
+        def _th(h):
+            if isinstance(h, tuple):
+                text, kind = h
+                return f'<th class="exhibit-th-{kind}">{text}</th>'
+            return f'<th>{h}</th>'
+        header_cells = "".join(_th(h) for h in headers)
         body_rows = "".join(row_renderer(r) for r in rows_data)
         if totals_row_html:
             body_rows += totals_row_html
@@ -5461,8 +5470,11 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
 
         export_btn = ""
         if xlsx_rows is not None and xlsx_export_dir:
+            # xlsx expects plain-string headers; strip the optional (text, kind)
+            # alignment hints used by the HTML renderer above.
+            xlsx_headers = [h[0] if isinstance(h, tuple) else h for h in headers]
             xlsx_path = _write_analytics_xlsx_export(
-                card_id, title, headers,
+                card_id, title, xlsx_headers,
                 xlsx_rows,
                 os.path.join(os.path.dirname(os.path.abspath(__file__)), xlsx_export_dir),
             )
@@ -5513,7 +5525,8 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
         "exhibit-by-college",
         "Credit Recommendations by College",
         f"{len(tables['by_college'])} articulating colleges | {fmt(total_recs)} total credit recs",
-        ["#", "College", "Credit Recs", "Exhibits", "Disciplines", "CCC Collab", "Industry Certs", "%"],
+        ["#", ("College", "name"), ("Credit Recs", "num"), ("Exhibits", "num"),
+         ("Disciplines", "num"), ("CCC Collab", "num"), ("Industry Certs", "num"), ("%", "pct")],
         tables["by_college"],
         lambda r: (f'<tr><td>{tables["by_college"].index(r)+1}</td>'
                    f'<td class="exhibit-cell-name">{r["college"]}</td>'
@@ -5554,7 +5567,8 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
         "exhibit-by-discipline",
         "Credit Recommendations by CCC Discipline",
         f"{len(tables['by_discipline'])} discipline areas",
-        ["Discipline", "Credit Recs", "Exhibits", "Courses", "Colleges", "CCC Collab", "%"],
+        [("Discipline", "name"), ("Credit Recs", "num"), ("Exhibits", "num"),
+         ("Courses", "num"), ("Colleges", "num"), ("CCC Collab", "num"), ("%", "pct")],
         tables["by_discipline"],
         lambda r: (f'<tr><td class="exhibit-cell-name">{r["discipline"]}</td>'
                    f'<td class="exhibit-cell-num">{fmt(r["credit_recs"])}</td>'
@@ -5589,7 +5603,8 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
         "exhibit-by-cpl-type",
         "Credit Recommendations by CPL Type",
         f"{len(tables['by_cpl_type'])} CPL types",
-        ["CPL Type", "Credit Recs", "Exhibits", "Colleges", "%"],
+        [("CPL Type", "name"), ("Credit Recs", "num"), ("Exhibits", "num"),
+         ("Colleges", "num"), ("%", "pct")],
         tables["by_cpl_type"],
         lambda r: (f'<tr><td class="exhibit-cell-name">{r["cpl_type"]}</td>'
                    f'<td class="exhibit-cell-num">{fmt(r["credit_recs"])}</td>'
@@ -5618,7 +5633,8 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
         "exhibit-by-mol",
         "Credit Recommendations by Mode of Learning",
         f"{len(tables['by_mode_of_learning'])} modes",
-        ["Mode of Learning", "Credit Recs", "Exhibits", "Colleges", "%"],
+        [("Mode of Learning", "name"), ("Credit Recs", "num"), ("Exhibits", "num"),
+         ("Colleges", "num"), ("%", "pct")],
         tables["by_mode_of_learning"],
         lambda r: (f'<tr><td class="exhibit-cell-name">{r["mode"]}</td>'
                    f'<td class="exhibit-cell-num">{fmt(r["credit_recs"])}</td>'
@@ -5647,7 +5663,8 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
         "exhibit-collaborative",
         "CCC Collaborative vs. Local Exhibits",
         "Statewide faculty workgroup articulations vs. individual college articulations",
-        ["Category", "Credit Recs", "Exhibits", "Colleges", "Disciplines", "%"],
+        [("Category", "name"), ("Credit Recs", "num"), ("Exhibits", "num"),
+         ("Colleges", "num"), ("Disciplines", "num"), ("%", "pct")],
         tables["collaborative_analysis"],
         lambda r: (f'<tr><td class="exhibit-cell-name">{r["category"]}</td>'
                    f'<td class="exhibit-cell-num">{fmt(r["credit_recs"])}</td>'
@@ -5674,7 +5691,8 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
         "exhibit-top-50",
         "Top 50 Most-Articulated Exhibits",
         "Ranked by total credit recommendations across all colleges",
-        ["#", "Exhibit Title", "Credit Recs", "Courses", "Colleges", "CPL Type", "Discipline"],
+        ["#", ("Exhibit Title", "name"), ("Credit Recs", "num"), ("Courses", "num"),
+         ("Colleges", "num"), "CPL Type", "Discipline"],
         tables["top_exhibits"],
         lambda r: (f'<tr><td>{tables["top_exhibits"].index(r)+1}</td>'
                    f'<td class="exhibit-cell-name">{r["title"]}</td>'
@@ -5719,7 +5737,8 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
             "articulations-by-course",
             "Articulations by Unified Course",
             f"{fmt(n_ident)} unified course identities &middot; {fmt(n_multi)} earned at &gt;1 college &middot; top 50 by adoption leverage",
-            ["#", "Unified Course", "Discipline", "Colleges Earned", "Credit Recommendation", "Credential", "Adoption Leverage"],
+            ["#", ("Unified Course", "name"), "Discipline", ("Colleges Earned", "num"),
+             "Credit Recommendation", "Credential", ("Adoption Leverage", "num")],
             abc_top,
             lambda r: (f'<tr><td>{abc_top.index(r)+1}</td>'
                        f'<td class="exhibit-cell-name">{_abc_course(r)}</td>'
@@ -5890,6 +5909,12 @@ EXHIBIT_ANALYSIS_CSS = """
     border-bottom: 1px solid rgba(201,168,76,0.3);
     white-space: nowrap;
 }
+/* CSC-G phase 2 — per-column header alignment so numeric / percent headers
+   anchor with their data cells in the ranking + breakdown tables. Mirrors
+   the .exhibit-cell-num / .exhibit-cell-pct conventions used on <td>. */
+.exhibit-table th.exhibit-th-num { text-align: right; }
+.exhibit-table th.exhibit-th-pct { text-align: right; }
+.exhibit-table th.exhibit-th-name { text-align: left; }
 .exhibit-table td {
     padding: 0.35rem 0.5rem;
     border-bottom: 1px solid rgba(255,255,255,0.04);
