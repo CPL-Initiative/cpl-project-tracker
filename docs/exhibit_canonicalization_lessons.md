@@ -1072,3 +1072,116 @@ Open question to resolve first: when Supabase re-keys
 (at `kb/cred_rename_out/<date>/alias_map.json`); supersede preserves
 the Supabase-side audit trail too. Light scoping conversation before
 code.
+
+## 2026-05-27 (evening) — Cred-Ref PR-5b/1 shipped (Bruh Dec)
+
+PR-5b/1 closes Mode B. With this PR, a curator can enter a unified_title
+rename in the Credential Reference tab, watch the daily dry-run report
+queue it up (PR-5b/0), and then trigger `cred-rename-apply.yml` to land
+the rename atomically across `credentials.json` + `unified_titles.json`
++ `coci_articulations.json` + Supabase `kb_curation`.
+
+### What landed
+
+**`kb/_cred_rename_apply.py` (~225 lines).** Consumes
+`kb/cred_rename_dryrun/alias_map.json`, applies the three JSON updates,
+writes a frozen snapshot at `kb/cred_rename_out/<YYYY-MM-DD>/{alias_map.json,
+validation.md}`. Four gates baked in:
+- **V1**: reads the dry-run's `apply_safe` flag from the alias_map summary;
+  refuses to run if false. (Dry-run already ran V1/V2/V3 — this is the
+  re-check at apply time so a stale alias_map can't bypass.)
+- **V2**: per-rename check that the source unified_title exists in
+  credentials.json (else: counts as "already applied" or "not found").
+- **V3 drift re-check**: if credentials.json gained a key matching a
+  proposed rename target since the dry-run, abort. Catches the window
+  between dry-run and apply where a separate curator could land a
+  conflicting credential.
+- **V4 cardinality preservation**: per-rename, counts articulation records
+  referencing old + new BEFORE, counts new AFTER, asserts
+  `post[new] == pre[old] + pre[new]`. Catches a delete-disguised-as-rename
+  (a structural bug that wouldn't show in V1/V2/V3).
+
+The supersede-don't-mutate ADR governed key design choices:
+- `unified_titles.json` dict KEYS (raw college-authored strings) NEVER
+  touched — only the `unified_title` VALUE on each entry rewrites
+- Atomic writes (.tmp + rename) so a crash mid-write leaves no half-written
+  state
+- The alias_map snapshot at `kb/cred_rename_out/<date>/` is the canonical
+  audit trail — explicitly designed as the rollback input
+
+**`kb/_cred_rename_apply_supabase.py` (~180 lines).** Migrates the
+matching `_CREDENTIAL_REVIEW::*` rows in `kb_curation`:
+- DELETE rows where field=`unified_title_override` (the override is
+  fulfilled — keeping it would re-fire the next dry-run as a self-pointer)
+- PATCH other override rows (issuer/trainer/quality_flag/reviewed_marker)
+  from `_CREDENTIAL_REVIEW::<OLD>` → `_CREDENTIAL_REVIEW::<NEW>` so
+  curator intent on the credential's OTHER fields travels with the new
+  identity
+- Per-field rather than per-course_id PATCH so primary-key conflicts
+  (if curator set overrides on BOTH old and new pre-apply) fail per-field
+  and get logged rather than aborting the whole run
+
+Pre-fetches existing course_ids to skip aliases with no rows in Supabase
+(idempotency on re-runs). Per-row log at `kb/cred_rename_out/<date>/supabase_log.json`
+is the operator's retry input.
+
+**`.github/workflows/cred-rename-apply.yml` (~110 lines).** Five steps:
+fresh-sync overlay → re-run dry-run → JSON apply → Supabase apply →
+commit. `workflow_dispatch` only; `concurrency: daily-dashboard` shares
+the lock with the daily cron so `excel_to_dashboard.py` never reads
+kb files mid-mutation.
+
+### Lessons
+
+**Light beats heavy when the invariants are smaller.** Phase 1e's
+workflow had 7 steps, ~200 lines, including a post-apply re-run of the
+dry-run and a post-apply auditor re-run. Both made sense at 13k aliases
++ cleanup-receipt invariants (`subject_collision_signal=0`,
+`mid_id_off_scheme=0`) that the auditor enforced. For credential rename,
+there are NO equivalent invariants — there's no rule in `_row_audit.py`
+that fires on rename outcomes. So the post-apply re-checks would be
+ceremony, not safety. Cut them; trust the in-script V1–V4 gates. 5
+steps, ~110 lines.
+
+**V4 is the gate that mattered.** V1/V2/V3 came from the dry-run; V4
+(articulation cardinality) is unique to the apply step and catches the
+class of bug that V1/V2/V3 can't see: a logic error in the apply script
+that DELETES articulation records instead of renaming them. The per-rename
+expected-vs-actual count is cheap (Counter is O(N) over articulations)
+and the failure mode is loud. Worth keeping even in a "light" workflow.
+
+**Per-field Supabase PATCH instead of per-course_id.** The (course_id,
+field) primary key on kb_curation means a per-course_id PATCH-all would
+fail with a constraint violation if curator pre-set overrides on BOTH
+the old and new unified_title (rare but possible). Per-field PATCH lets
+each field's outcome get logged independently — partial-success rather
+than all-or-nothing. The supabase_log.json captures which fields landed
+and which didn't.
+
+**End-to-end synthetic test caught the V4 math early.** Wrote a quick
+shell test that picked a real credential with ≥1 articulation, monkey-
+patched the apply script to use a scratch dir, ran apply, verified
+mutations + idempotency + V4 cardinality on second run. Confirmed
+"already_applied" + "rekeyed=0" path works. ~30 lines of test, ~2
+minutes to write, caught nothing this time — but the structure is now
+in the lessons doc for future re-mint-class apply scripts.
+
+### Strategic roadmap (updated)
+
+| What's next | Status |
+|---|---|
+| **PR-5b/2** — collision-resolution UX in the tab | deferred (0 collisions today) |
+| EACR card regrouping by issuer override | parked (deeper side effects) |
+| Description-similarity tie-breaker | parked |
+
+### Next concrete step
+
+Mode B is feature-complete. Two operational follow-ups parked unless
+demand surfaces:
+1. **PR-5b/2** — only ships when a curator actually hits a collision
+   (target name already exists in credentials.json). Today: 0 collisions.
+2. **Supabase `_superseded_by` audit row** — could be added later if
+   curator-side Supabase history becomes valuable. Today: alias_map
+   snapshot is the canonical audit trail.
+
+Cred-Ref workstream is in maintenance mode unless curators flag a gap.
