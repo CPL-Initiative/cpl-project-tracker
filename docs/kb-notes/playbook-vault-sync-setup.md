@@ -79,12 +79,43 @@ You should see one timestamped line per repo (or nothing if already up-to-date).
 
 ### Step 3 — Create the scheduled task
 
-Open **Task Scheduler** (`Win+R` → `taskschd.msc`).
+Two paths. Pick whichever fits your taste; both produce the same task.
+
+#### Step 3 — Option A (fast, recommended): run the companion script
+
+The repo ships a `setup-task-scheduler.ps1` companion that creates the
+scheduled task in one shot. **Open an elevated PowerShell** (Right-click
+PowerShell → "Run as Administrator") and run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\Documents\Claude\Projects\CPLBrain\COG-second-brain\cpl-project-tracker\scripts\setup-task-scheduler.ps1"
+```
+
+That's it. Defaults to a 15-minute cadence. To use a different cadence
+(e.g. every 5 min during active-session days):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "...\scripts\setup-task-scheduler.ps1" -CadenceMinutes 5
+```
+
+The script is idempotent — re-running with a new cadence updates the
+existing task. To remove the task entirely:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "...\scripts\setup-task-scheduler.ps1" -Remove
+```
+
+Skip to **Step 4 — Verify** below.
+
+#### Step 3 — Option B (visual): Task Scheduler GUI
+
+If you prefer to see each setting as it's configured, open **Task
+Scheduler** (`Win+R` → `taskschd.msc`):
 
 1. **Action → Create Task** (NOT "Create Basic Task" — we want the full editor).
 2. **General tab**:
    - **Name**: `CPL Vault Sync`
-   - **Description**: Pulls cpl-project-tracker + cpl-knowledge-base from origin every N minutes so Obsidian picks up checkpoint commits automatically.
+   - **Description**: Pulls cpl-project-tracker + cpl-knowledge-base from origin every 15 minutes so Obsidian picks up checkpoint commits automatically.
    - **Security options**: "Run only when user is logged on" (simplest; no password prompt). If you want it to run when locked, switch to "Run whether user is logged on or not" — you'll be asked for your password.
 3. **Triggers tab → New**:
    - **Begin the task**: "At log on" (so it starts when you sign in) AND/OR "On a schedule" with "Daily / Repeat task every: 15 minutes / for a duration of: 1 day"
@@ -92,7 +123,7 @@ Open **Task Scheduler** (`Win+R` → `taskschd.msc`).
 4. **Actions tab → New**:
    - **Action**: Start a program
    - **Program/script**: `powershell.exe`
-   - **Add arguments**: `-ExecutionPolicy Bypass -WindowStyle Hidden -File "%USERPROFILE%\Documents\Claude\Projects\CPLBrain\COG-second-brain\cpl-project-tracker\scripts\sync-vault-clones.ps1"`
+   - **Add arguments**: `-ExecutionPolicy Bypass -WindowStyle Hidden -NoProfile -File "%USERPROFILE%\Documents\Claude\Projects\CPLBrain\COG-second-brain\cpl-project-tracker\scripts\sync-vault-clones.ps1"`
 5. **Conditions tab**:
    - **Power**: Uncheck "Start the task only if the computer is on AC power" (unless you want laptop-on-battery to skip)
    - **Network**: Check "Start only if the following network connection is available: Any connection"
@@ -105,8 +136,32 @@ Open **Task Scheduler** (`Win+R` → `taskschd.msc`).
 
 ### Step 4 — Verify the task fires
 
-Right-click the task in Task Scheduler → **Run**. Wait a few seconds, then
-check the log file. You should see a timestamped entry from the manual run.
+```powershell
+Get-ScheduledTaskInfo -TaskName "CPL Vault Sync" | Format-List LastRunTime, LastTaskResult, NextRunTime
+```
+
+You're looking for:
+- `LastTaskResult: 0` — Win32 exit code 0 = success.
+- `NextRunTime` — the cadence interval from now (e.g. ~15 min).
+
+Fire on demand to test:
+
+```powershell
+Start-ScheduledTask -TaskName "CPL Vault Sync"
+Start-Sleep -Seconds 4
+Get-Content "$env:USERPROFILE\Documents\Claude\Projects\CPLBrain\COG-second-brain\.vault-sync.log" -Tail 5
+```
+
+The log tail confirms it ran (or stays silent if everything was already up-to-date — that's the script's "quiet on success" design).
+
+### Known gotcha: `[TimeSpan]::MaxValue` in RepetitionDuration
+
+If you write your own `Register-ScheduledTask` block, **do NOT use
+`[TimeSpan]::MaxValue` for `RepetitionDuration`** — it serializes to a
+value Task Scheduler rejects (`The task XML contains a value which is
+incorrectly formatted or out of range`). Use a finite-but-large value
+like `(New-TimeSpan -Days 9999)`. The companion script handles this
+correctly.
 
 ## Cadence recommendations
 
@@ -170,4 +225,6 @@ was**. The script's worst-case behavior is "do nothing, log a warning."
 - `[[docs/kb-notes/adr-obsidian-vault-via-clone]]` — why the vault-side
   clone pattern exists at all.
 - `[[CLAUDE]]` "Obsidian vault wiring" section — canonical paths + lane model.
-- `scripts/sync-vault-clones.ps1` — the script itself.
+- `scripts/sync-vault-clones.ps1` — the pull script itself.
+- `scripts/setup-task-scheduler.ps1` — companion that registers the
+  scheduled task (Option A of Step 3 above).
