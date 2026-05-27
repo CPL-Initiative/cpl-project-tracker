@@ -442,3 +442,74 @@ tables alone — don't blanket-rule them.
 + MC vs TMC framing + roadmap;
 [`docs/subj4_canonicalization_remint_lessons.md`](subj4_canonicalization_remint_lessons.md)
 for the data-pipeline foundation the CSC tab edits.
+
+---
+
+## 2026-05-27 — Session 11 (Bruh El): CSC-G phase 2 (exhibit-table headers)
+
+### What shipped
+
+**PR #153** — exhibit-table per-column header alignment. CSC-G phase 1
+(Session 5/Sexy Dexy) applied H+V column centering to `.uc-table`
+(CCR). Phase 1 deliberately punted exhibit-table because its columns
+have mixed intent: some right-aligned (`exhibit-cell-num`,
+`exhibit-cell-pct`), some left-aligned (`exhibit-cell-name`), and a
+blanket center would misalign the ranking tables (Top-50, by-Course).
+Phase 2 introduces per-column `<th>` classes so headers align with
+their data cells.
+
+Implementation:
+- `table_card()` headers parameter accepts `(text, kind)` tuples
+  alongside plain strings. kind ∈ "num"/"pct"/"name" attaches
+  `exhibit-th-{kind}` class.
+- All 7 exhibit-analysis emissions updated to tag numeric/percent/name
+  columns (By College / Discipline / CPL Type / MoL / Collaborative /
+  Top-50 / Articulations-by-Course).
+- CSS rules added to `EXHIBIT_ANALYSIS_CSS`:
+  - `th.exhibit-th-num { text-align: right; }`
+  - `th.exhibit-th-pct { text-align: right; }`
+  - `th.exhibit-th-name { text-align: left; }`
+- xlsx exporter strips tuples back to plain strings at the export
+  boundary (openpyxl can't serialize tuples).
+
+### Lessons learned
+
+**1. Per-column intent beats global alignment rules.**
+The CSC-G phase 1 row-centering rule worked on `.uc-table` because
+every column there has roughly the same intent (uniform short-text
+cells). Exhibit-tables mix numeric/percent (right-anchored) with
+identifier/category (left-anchored). A blanket center misaligns one
+or the other. The data-side classes (`exhibit-cell-num`) already
+encoded per-column intent; the fix was to extend the same convention
+to `<th>` with mirror classes.
+
+**2. Backwards-compat via "tuples-or-strings" parameter.**
+The headers parameter went from `list[str]` to `list[str | tuple[str, str]]`.
+Existing strings keep working unchanged; new tuples carry the alignment
+hint. Minimal blast radius — only 7 call sites needed updating, no
+other consumer of `headers` had to change.
+
+**3. xlsx export boundary as a normalization point.**
+The xlsx exporter passes headers directly to openpyxl, which can't
+serialize tuples. Two ways to fix: (a) change all 7 callers to pass
+tuples to HTML but strings to xlsx_rows; (b) normalize at the export
+boundary. (b) is one line, callers stay clean.
+
+**4. Restore daily-regen noise before committing.**
+Running `python excel_to_dashboard.py` to test mutates ~15 generated
+files (CPL_Data.js, unified_courses_*.js, exports/*.xlsx, etc).
+Committing those would just churn — the daily cron regenerates them.
+`git restore <list-of-regen-files>` keeps the PR diff to the actual
+source change (one file in this case).
+
+### Strategic roadmap
+
+| What's next | Status |
+|---|---|
+| Other tables with mixed-intent columns that could use the same pattern (none today; CSC + exhibit-analysis cover the field) | parked unless surfaced |
+| Variant headers (sortable indicators on `<th>` → could compose with kind classes) | parked |
+
+### Next concrete step
+
+CSC-G family is feature-complete. Future per-column header conventions
+would extend the same tuple+CSS pattern.
