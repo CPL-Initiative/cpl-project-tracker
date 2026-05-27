@@ -3,7 +3,7 @@ title: <Note title in sentence case>
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 tags: [methodology|reference|adr|glossary|playbook, <topic-tag>, <topic-tag>]
-kb-status: candidate
+kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"
@@ -44,5 +44,6 @@ beyond.
 
 ---
 
-*Promotion note (delete on promotion): Why this crosses the durability /
-reusability / distillation / self-contained bar.*
+*Authoring check: durable (still true a year out), reusable (peer
+sessions/projects benefit), distilled (one concept), self-contained
+(frontmatter + opener tell a stranger the claim).*

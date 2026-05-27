@@ -3,7 +3,7 @@ title: ADR — Obsidian sync via vault-side clone (not edge function)
 created: 2026-05-27
 updated: 2026-05-27
 tags: [adr, obsidian-target, vault-wiring, knowledge-base]
-kb-status: candidate
+kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"
@@ -66,11 +66,10 @@ session-authored docs. Two architectural options on the table:
    campaign content, or trip RLS, or require schema migration on a
    sensitive shared resource. The clone has none of that risk.
 
-5. **Promotion-to-cpl-knowledge-base remains a future option.** When a
-   `kb-status: candidate` note matures to `promoted`, a future bridge can
-   lift it into the cpl-knowledge-base structure (manual cp, or eventually
-   automated). The vault-side clone doesn't preclude this; it's a strictly
-   wider foundation.
+5. **Promotion-to-cpl-knowledge-base remains a future option.** A future
+   bridge can lift `published` KB notes into the cpl-knowledge-base
+   structure (manual cp, or eventually automated). The vault-side clone
+   doesn't preclude this; it's a strictly wider foundation.
 
 ## How we got here
 
@@ -108,8 +107,7 @@ session-authored docs. Two architectural options on the table:
 
 ---
 
-*Promotion note (delete on promotion): Durable — vault-wiring won't change
-on a per-workstream basis. Reusable — future sessions, peer projects, or
-anyone setting up a similar Claude-Code-+-Obsidian workflow benefits.
-Distilled — one decision, one rationale. Self-contained — frontmatter +
-opening sentence give the full claim to a stranger.*
+*Authoring check: durable (vault-wiring won't change on a per-workstream
+basis), reusable (future sessions, peer projects, anyone setting up a
+similar Claude-Code-+-Obsidian workflow), distilled (one decision, one
+rationale), self-contained.*

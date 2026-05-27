@@ -3,7 +3,7 @@ title: Methodology — Two-mode sync (safe Mode A vs identity-touching Mode B)
 created: 2026-05-27
 updated: 2026-05-27
 tags: [methodology, supabase, sync, re-mint, knowledge-base, cred-ref, unified-courses]
-kb-status: candidate
+kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"
@@ -123,9 +123,6 @@ The pattern has prior art in the repo:
 
 ---
 
-*Promotion note (delete on promotion): Durable — the split between
-identity-touching and decoration-only operations is a permanent shape of
-curator-overlay work, not a per-workstream concern. Reusable — Cred-Ref,
-CSC tab, and Common Course Reference all face this question; future
-workstreams will too. Distilled — one concept (the Mode A/B split).
-Self-contained — frontmatter + claim sentence give the full pattern.*
+*Authoring check: durable across re-mints, reusable across curator
+workstreams (Cred-Ref, CSC tab, CCR all face this question), distilled
+to one concept (the Mode A/B split), self-contained.*
