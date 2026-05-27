@@ -65,10 +65,16 @@ artifacts:
 
 ### `kb-status` values
 
-- **`candidate`** — I authored it; Sam should review for promotion.
-- **`promoted`** — Sam has confirmed it's KB-worthy. Stays in this repo but tagged "ready for the broader KB" — when the cpl-knowledge-base bridge ships, these will be the first lifts.
+- **`published`** — default for new notes. Authored to KB-quality at the time
+  of writing; no separate review step required. The vault auto-sync brings
+  these into Obsidian on the next pull (per
+  [`playbook-vault-sync-setup.md`](playbook-vault-sync-setup.md)).
 - **`archived`** — superseded by a newer note. Keep for git history, don't backlink.
-- **`internal`** — useful but not for promotion (e.g. this README).
+- **`internal`** — useful but not for the broader KB (e.g. this README, vault-internal meta).
+
+The `candidate` middle state was retired 2026-05-27, Session 11 — Sam
+empowered sessions to author at final quality without a review gate. Old
+candidate notes can be re-tagged `published` directly.
 
 ## When to author a KB note
 
@@ -91,16 +97,23 @@ Examples of good KB notes (none authored yet — these are templates):
 Per `CLAUDE.md` Rule 8 and `.claude/commands/checkpoint.md`, every checkpoint
 asks: "what did I learn this run that crosses the durability bar?" Each
 crossing learning becomes a new note (or appends to an existing one), with
-`kb-status: candidate`. The checkpoint commit message lists new candidates so
-Sam sees what's pending review.
+`kb-status: published`. The checkpoint commit body lists new notes so the
+audit trail is clear.
 
-## Promotion workflow (when Sam reviews)
+## Vault-side flow
 
-Sam reviews a `candidate` note in Obsidian. Three outcomes:
+The vault-auto-sync ([`playbook-vault-sync-setup.md`](playbook-vault-sync-setup.md))
+keeps `cpl-project-tracker` fresh in Sam's Obsidian vault on a scheduled
+pull. New KB notes appear in the vault automatically — no manual `git pull`
+needed.
 
-1. **Promote** — change `kb-status: candidate → promoted` in the frontmatter, save. (Later, an automated bridge will lift these into the cpl-knowledge-base repo. Until that ships, "promoted" is a tag, not a transfer.)
-2. **Edit + promote** — same as 1 but with revisions.
-3. **Reject** — change `kb-status: candidate → archived`, optionally note why in the body. Don't delete (git history matters).
+If a note ever needs to be retired:
+1. Edit `kb-status: published → archived` in Obsidian (or via this repo).
+2. Optionally add a one-line note in the body about why.
+3. Don't delete the file — git history matters.
+
+Notes never need an explicit promotion step. They land published and stay
+that way unless archived.
 
 ## Vault-side conventions
 
@@ -108,7 +121,7 @@ Inside Obsidian, this folder appears as
 `CPLBrain/COG-second-brain/cpl-project-tracker/docs/kb-notes/`.
 
 Recommended vault-side filters:
-- A saved search `kb-status: candidate` surfaces the pending-review queue.
+- A saved search `kb-status: published` surfaces every active KB note.
 - A graph view filter on `tag:methodology OR tag:reference OR tag:adr` shows the durable knowledge layer.
 - Backlinks via `related: [[…]]` connect KB notes into the broader vault graph.
 
