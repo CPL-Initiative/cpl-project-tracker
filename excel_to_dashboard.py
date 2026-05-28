@@ -1358,10 +1358,17 @@ def render_annual_goals_table_html(annual_goals):
     return html
 
 
-def build_activity_kpis(projects):
+def build_activity_kpis(projects, activities=None):
     """
     Build 19 activity-level KPI cards from the core sub-activities (1.1-4.5).
-    Groups them by Activity 1-4 for the dashboard.
+    Groups them by Activity 1-5 for the dashboard.
+
+    PR-C follow-up (2026-05-28): `activities` (new, optional) is the list
+    returned by `build_workplan_goals_from_supabase()`. When provided, the
+    Activity group labels source from the Supabase Activity row names —
+    same pattern as `render_workplan_goals_html`. The hardcoded dict
+    survives as a fallback (now including Activity 5 — previously the
+    dict was missing it, which silently dropped the Activity 5 KPI group).
     """
     # Core sub-activity IDs in order (19 Workplan sub-activities)
     # Note: 4.1 is represented by 4.1a-4.1d in the project list (sprint components)
@@ -1376,12 +1383,26 @@ def build_activity_kpis(projects):
     # Sub-IDs that compose 4.1
     sprint_ids = ["4.1a", "4.1b", "4.1c", "4.1d"]
 
-    activity_labels = {
+    # Defensive fallback labels. Used when the Supabase Activity row for the
+    # given activity_id is missing. Now covers Activity 5 (previously absent
+    # — caused Activity 5 KPI cards to render with the literal "Activity 5"
+    # label instead of the proper name).
+    activity_labels_fallback = {
         "1": "Activity 1: Build AI-Enhanced CPL Infrastructure",
         "2": "Activity 2: Faculty Workgroups & Credit Recommendations",
         "3": "Activity 3: Build CPL Data Infrastructure",
         "4": "Activity 4: Sprints, Projects, Partnerships & Scale",
+        "5": "Activity 5: Strategic Initiatives & Special Projects",
     }
+    # Live labels from Supabase Activity rows when available
+    sb_activity_labels = {a["id"]: a["name"] for a in (activities or [])}
+
+    def _act_label(act_num):
+        return (
+            sb_activity_labels.get(act_num)
+            or activity_labels_fallback.get(act_num)
+            or f"Activity {act_num}"
+        )
 
     # Build a lookup by project ID
     proj_map = {p["id"]: p for p in projects}
@@ -1437,7 +1458,7 @@ def build_activity_kpis(projects):
         if act_num not in groups:
             groups[act_num] = {
                 "activity_id": f"Activity {act_num}",
-                "activity_name": activity_labels.get(act_num, f"Activity {act_num}"),
+                "activity_name": _act_label(act_num),
                 "kpis": [],
             }
         entry = {
@@ -7162,7 +7183,25 @@ def main():
     # source of truth for the Veteran Sprint headline + sprint composite).
     live_data       = read_live_metrics()
     kpis            = compute_headline_kpis(projects, budget, config_overrides, live_data)
-    activity_kpis   = build_activity_kpis(projects)
+
+    # Build workplan goals & annual goals from Supabase (Phase 1 source-of-truth,
+    # PR-4). Snapshot fallback at kb/workplan_goals_snapshot.json covers
+    # Supabase outages; subtle "as of YYYY-MM-DD" stamp in the rendered tab
+    # signals staleness. kpi_metric for the "Current" column still comes from
+    # Excel until Phase 2 migrates project metadata.
+    # Loaded BEFORE build_activity_kpis so the Activity Metrics KPI cards can
+    # use Supabase Activity row labels (vs the hardcoded fallback dict).
+    try:
+        from kb._load_workplan_goals import load_workplan_goals_full as _load_wpg_full
+    except ImportError:
+        sys.path.insert(0, os.path.join(os.path.dirname(__file__), "kb"))
+        from _load_workplan_goals import load_workplan_goals_full as _load_wpg_full
+    wpg_rows, wpg_assocs, wpg_fetched_at, wpg_source = _load_wpg_full()
+    activities, workplan_goals, annual_goals = build_workplan_goals_from_supabase(
+        wpg_rows, wpg_assocs, projects, live_data
+    )
+
+    activity_kpis   = build_activity_kpis(projects, activities=activities)
 
     # ── KPI tunable parameters (from KPI_Config sheet, with defaults) ──
     # Auto-create the sheet on first run so users have a place to edit
@@ -7174,21 +7213,6 @@ def main():
         except Exception as e:
             print(f"  Could not save KPI_Config sheet ({e}); using defaults")
     kpi_params = read_kpi_parameters(wb)
-
-    # Build workplan goals & annual goals from Supabase (Phase 1 source-of-truth,
-    # PR-4). Snapshot fallback at kb/workplan_goals_snapshot.json covers
-    # Supabase outages; subtle "as of YYYY-MM-DD" stamp in the rendered tab
-    # signals staleness. kpi_metric for the "Current" column still comes from
-    # Excel until Phase 2 migrates project metadata.
-    try:
-        from kb._load_workplan_goals import load_workplan_goals_full as _load_wpg_full
-    except ImportError:
-        sys.path.insert(0, os.path.join(os.path.dirname(__file__), "kb"))
-        from _load_workplan_goals import load_workplan_goals_full as _load_wpg_full
-    wpg_rows, wpg_assocs, wpg_fetched_at, wpg_source = _load_wpg_full()
-    activities, workplan_goals, annual_goals = build_workplan_goals_from_supabase(
-        wpg_rows, wpg_assocs, projects, live_data
-    )
 
     # Auto-create attachment subfolders for new activities/projects
     new_folders = ensure_attachment_subfolders(att_dir, projects)
