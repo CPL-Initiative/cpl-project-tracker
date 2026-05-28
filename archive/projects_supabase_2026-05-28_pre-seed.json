@@ -1,0 +1,6 @@
+{
+  "_fetched_at": "2026-05-28",
+  "_source": "Supabase public.projects (project hvuwhnbuahrtptokpqfh / 'Work Plan') via MCP execute_sql",
+  "_note": "Pre-seed snapshot for Phase 2 PR-1. The projects table is empty (0 rows) before the Phase 2 seed; committed for forensic continuity, mirroring Phase 1's archive/workplan_goals_supabase_*_pre-seed.json.",
+  "rows": []
+}
