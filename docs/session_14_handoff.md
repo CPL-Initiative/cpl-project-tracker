@@ -60,6 +60,12 @@ Start by reading, in order:
      this template; the same shape applies to projects/budget/personnel/
      vision-2030 when you tackle them.
 
+  4b. docs/kb-notes/methodology-snapshot-with-stamp-fallback.md — the
+     resilience pattern PR-4 shipped. Every Phase 2-4 generator that
+     reads a Supabase table needs this. Three-state chain: fresh fetch
+     writes snapshot; live failure falls back to snapshot + subtle "as
+     of YYYY-MM-DD" stamp; both fail → loud RuntimeError.
+
   5. docs/INDEX.md — auto-maintained landing page. 7 KB notes,
      10 lessons docs (excel_to_supabase added Session 13), 8 session
      handoffs.
@@ -253,10 +259,18 @@ When opening Session 14:
 | #167 | Phase 1 PR-6 — retire dead build_workplan_goals_from_projects |
 | #168 | Phase 1 PR-5 — inline editor (per-cell edit + magic-link auth) |
 | (migration) | workplan_goals_rls_tighten_to_allowed_reviewers |
+| #169 | Rule 8 session-end handoff (this PR) |
 
 Plus the seed-apply workflow_dispatch (Sam clicked the button, V4 green
 on first attempt) and the first daily cron run that exercised the new
 Supabase-driven generator path.
+
+**New KB notes** (Obsidian-target, durable knowledge):
+
+- `playbook-measure-first-supabase-migration` — the 5-step shape for
+  Supabase migrations, distilled from Phase 1 (checkpoint 1)
+- `methodology-snapshot-with-stamp-fallback` — the resilience pattern
+  for live-data dependencies in the daily generator (session-end)
 
 ## What Session 13 explicitly did NOT decide (Session 14's call)
 
