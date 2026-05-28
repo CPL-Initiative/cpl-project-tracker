@@ -6200,152 +6200,6 @@ def read_workplan_goals(wb):
     return activities
 
 
-def build_workplan_goals_from_projects(projects, live_data=None):
-    """
-    Derive the workplan-goals data structure directly from the Project List tab,
-    so the 'Annual Workplan Goals' sheet is no longer required.
-
-    Each project row already carries columns:
-        kpi_goal_2526, kpi_stretch_2526, kpi_goal_2627, …, kpi_goal_2930, kpi_stretch_2930
-
-    Returns two things as a tuple:
-        workplan_goals – list of dicts compatible with render_workplan_goals_html()
-        annual_goals   – list of dicts compatible with render_annual_goals_table_html()
-    """
-    import re as _re
-
-    year_keys = [
-        ("2025-26", "kpi_goal_2526", "kpi_stretch_2526"),
-        ("2026-27", "kpi_goal_2627", "kpi_stretch_2627"),
-        ("2027-28", "kpi_goal_2728", "kpi_stretch_2728"),
-        ("2028-29", "kpi_goal_2829", "kpi_stretch_2829"),
-        ("2029-30", "kpi_goal_2930", "kpi_stretch_2930"),
-    ]
-
-    # Core sub-activity IDs (same as build_activity_kpis)
-    core_ids = [
-        "1.1", "1.2", "1.3", "1.4",
-        "2.1", "2.2", "2.3", "2.4",
-        "3.1", "3.2", "3.3", "3.4", "3.5", "3.6",
-        "4.1",  # aggregated from 4.1a-4.1d
-        "4.2", "4.3", "4.4", "4.5",
-    ]
-    sprint_ids = ["4.1a", "4.1b", "4.1c", "4.1d"]
-
-    activity_labels = {
-        "1": "Activity 1: Build AI-Enhanced CPL Infrastructure",
-        "2": "Activity 2: Faculty Workgroups & Credit Recommendations",
-        "3": "Activity 3: Build CPL Data Infrastructure",
-        "4": "Activity 4: Sprints, Projects, Partnerships & Scale",
-    }
-
-    proj_map = {p["id"]: p for p in projects}
-
-    def _parse_num(val):
-        """Parse a formatted number string back to a float."""
-        if val is None or val == "":
-            return 0
-        if isinstance(val, (int, float)):
-            return float(val)
-        s = str(val).strip().replace(",", "").replace("+", "")
-        if s.lower().endswith("k"):
-            try:
-                return float(s[:-1]) * 1000
-            except ValueError:
-                return 0
-        try:
-            return float(s)
-        except ValueError:
-            return 0
-
-    # ── Build per-sub-activity rows ──
-    workplan_goals = []   # for render_workplan_goals_html
-    annual_goals = []     # for render_annual_goals_table_html
-
-    for pid in core_ids:
-        # For 4.1, aggregate sprint sub-projects
-        if pid == "4.1":
-            sprint_projs = [proj_map[sid] for sid in sprint_ids if sid in proj_map]
-            if not sprint_projs:
-                continue
-            name = "Sprints (Veteran, Apprenticeship, Adoption, 29 Palms)"
-            goal_values = []
-            stretch_values = []
-            goal_dict = {}
-            stretch_dict = {}
-            current_dict = {}
-            for yr_label, g_key, s_key in year_keys:
-                g_sum = sum(_parse_num(sp.get(g_key, 0)) for sp in sprint_projs)
-                s_sum = sum(_parse_num(sp.get(s_key, 0)) for sp in sprint_projs)
-                goal_values.append(g_sum)
-                stretch_values.append(s_sum)
-                goal_dict[yr_label] = g_sum
-                stretch_dict[yr_label] = s_sum
-                current_dict[yr_label] = 0
-            # Star college count comes from the live CCCCO scrape (single source of truth).
-            current_metric = int((live_data or {}).get("star_college_count", 0))
-        else:
-            p = proj_map.get(pid)
-            if not p:
-                continue
-            name = p["name"]
-            goal_values = []
-            stretch_values = []
-            goal_dict = {}
-            stretch_dict = {}
-            current_dict = {}
-            for yr_label, g_key, s_key in year_keys:
-                g_val = _parse_num(p.get(g_key, 0))
-                s_val = _parse_num(p.get(s_key, 0))
-                goal_values.append(g_val)
-                stretch_values.append(s_val)
-                goal_dict[yr_label] = g_val
-                stretch_dict[yr_label] = s_val
-                current_dict[yr_label] = 0
-            current_metric = _parse_num(p.get("kpi_metric", 0))
-
-        goal_total = sum(goal_values)
-        stretch_total = sum(stretch_values)
-
-        # Populate current 2025-26 with actual KPI metric
-        current_dict["2025-26"] = current_metric
-        current_dict["total"] = current_metric
-
-        # Determine activity group
-        act_num = pid.split(".")[0]
-        act_label = activity_labels.get(act_num, f"Activity {act_num}")
-
-        # Check if values are percentages
-        is_pct = all(0 < v < 1 for v in goal_values if v)
-
-        # workplan_goals format (for render_workplan_goals_html)
-        workplan_goals.append({
-            "id": pid,
-            "name": name,
-            "is_percentage": is_pct,
-            "years": ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"],
-            "goal": goal_values,
-            "goal_total": goal_total,
-            "stretch": stretch_values if stretch_values else [0] * 5,
-            "stretch_total": stretch_total,
-        })
-
-        # annual_goals format (for render_annual_goals_table_html)
-        goal_dict["total"] = goal_total
-        stretch_dict["total"] = stretch_total
-        annual_goals.append({
-            "id": pid,
-            "name": name,
-            "activity": act_label,
-            "goal": goal_dict,
-            "current": current_dict,
-            "stretch": stretch_dict,
-        })
-
-    print(f"  Built {len(workplan_goals)} workplan goal rows from Project List")
-    return workplan_goals, annual_goals
-
-
 def _natural_activity_sort_key(activity_id: str):
     """Natural sort key: '3.1.10' > '3.1.2', '3.1.2a' > '3.1.2'."""
     parts = []
@@ -6359,19 +6213,17 @@ def _natural_activity_sort_key(activity_id: str):
 def build_workplan_goals_from_supabase(supabase_rows, projects, live_data=None):
     """
     Build the workplan-goals + annual-goals dashboard structures from the
-    Supabase public.workplan_goals table (Phase 1 source-of-truth). Replaces
-    build_workplan_goals_from_projects() once the seed has landed and PR-4
-    flips the read path.
+    Supabase public.workplan_goals table (Phase 1 source-of-truth).
 
     Activity set is data-driven (A+: whatever Supabase contains, naturally
-    sorted). The renderer's old hardcoded core_ids list is retired.
+    sorted). Replaces the Excel-driven build path that PR-6 retired.
 
     `projects` is still used to look up Excel `kpi_metric` per activity for
     the "Current" column in annual_goals (Phase 2 migrates project metadata
     to Supabase; until then, kpi_metric stays Excel-sourced).
 
-    Returns (workplan_goals, annual_goals) — same shape as
-    build_workplan_goals_from_projects so the render functions don't change.
+    Returns (workplan_goals, annual_goals) — the two structures consumed by
+    render_workplan_goals_html and render_annual_goals_table_html.
     """
     year_keys = [
         ("2025-26", "yr_2025_26"),
