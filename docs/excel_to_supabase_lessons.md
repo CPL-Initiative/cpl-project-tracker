@@ -397,3 +397,132 @@ fallback; the live label/ladder source becomes the Activity rows in
 Supabase. Project rows surface their `Contributes to: Activity N`
 chips via the new associations table.
 
+## 2026-05-28 — Session 14 (Bruh Sonnet), PR-B landed
+
+### What shipped
+
+**PR-B: First-class Activities section + Project chips.** Renderer +
+generator update on the Workplan Goals tab. The hardcoded
+`activity_labels` dict in `build_workplan_goals_from_supabase()` is
+retired as the LIVE source — Activity labels + ladders now flow
+from the Supabase `kind='activity'` rows PR-A pre-seeded. The dict
+survives as a defensive fallback when Supabase is missing a row.
+
+Decisions Sam locked at the top of PR-B (`AskUserQuestion` × 3):
+
+  - **Layout:** "Conservative + chips" — add a dedicated **Activities**
+    table above the existing per-Activity project tables, KEEP the
+    project grouping, surface "Contributes to: Activity N" chips on
+    each project row. Lowest visual disruption; no regressions on the
+    "at-a-glance grouping by Activity" reading experience.
+  - **Zero ladders:** always show, even when zero. Activity ladders
+    render with 0s in every cell; curators can click any cell and
+    fill it via the existing editor. Uniform UX with project rows.
+    No state-machine to add later.
+  - **Chips:** always render. Even though today's data is 1-to-1
+    (every project → exactly one Activity, set by the PR-A prefix
+    backfill), the chip line renders so the UI is future-proof for
+    N-to-N. Visual repetition (the chip says "Activity 3" inside the
+    "Activity 3" group header table) is the cost; consistency is the
+    payoff.
+
+### Generator shape
+
+`build_workplan_goals_from_supabase(supabase_rows, associations,
+projects, live_data=None)` now returns
+`(activities, workplan_goals, annual_goals)`:
+
+  - `activities` — 5 entries (id=`"1"`…`"5"`) with `kind="activity"`
+    and the same GOAL/STRETCH ladder shape as project entries.
+  - `workplan_goals` — the 27 project entries, each carrying
+    `activity_ids: ["3"]` (sourced from associations; falls back to
+    the project_id leading digit when an association row is missing).
+  - `annual_goals` — the comprehensive table data, unchanged in
+    structure but now also carrying `activity_ids` so the same
+    chips can surface there.
+
+Internal helper `_render_ladder_rows(entry, bg, kind, name_col_content)`
+factors out the GOAL/STRETCH two-row pattern used in both the
+Activities table and each Projects table. `name_col_content` is
+HTML so a Project row can embed its chip line below the name.
+
+### Editor (`workplan_goals.js`)
+
+Optional `data-kind` discriminator on editable cells. When present,
+the editor's PATCH query string includes `&kind=eq.{kind}` so an
+Activity-cell edit can never cross into a Project row. The
+optimistic-paint querySelectorAll also scopes by `data-kind`.
+
+Backwards-compatible: pre-PR-B cells without `data-kind` work as
+before (the unscoped PATCH is still safe today because Activity ids
+`"1"`–`"5"` and project ids `"1.1"`, `"1.2"`, … are disjoint).
+
+### Receipts
+
+Smoke test from the snapshot (no Supabase service key needed):
+
+  - `activities=5` · `workplan_goals=27` (projects) · `annual_goals=27`
+  - `27` chips rendered (one per project, since 1-to-1 today)
+  - `60` `data-kind="activity"` attrs (5 activities × 12 editable
+    cells per ladder) · `324` `data-kind="project"` attrs (27 × 12)
+  - HTML tag balance: 6 tables · 70 tr · 480 td · all open/close
+    counts equal
+
+### Lessons
+
+**14. The `<td rowspan="2">` name cell is a flexible slot.** PR-B
+needed to add a chip line below the project name without breaking
+the GOAL/STRETCH row layout. Treating the name column as an HTML
+slot (a `name_col_content` parameter into the helper) instead of a
+plain string let the chip row sit naturally inside the rowspan'd
+cell. The chip CSS uses `display:inline-block` so the rendering is
+identical regardless of whether the project has 1 or N chips.
+
+**15. Data-attribute discriminators ride invisibly through the
+backwards-compat door.** Adding `data-kind` to editable cells in
+PR-B doesn't require a breaking change in the editor — the new
+attribute is consulted optionally, and pre-PR-B cells fall through
+to the existing unscoped PATCH. This is the same shape Bruh Dec
+used for `_original_*` overlay siblings in PR-5a; the pattern
+generalizes to any "carry the new info alongside but keep working
+without it" scenario.
+
+**16. Defensive fallbacks for non-existent rows pay dividends.** The
+`activity_ids: [aid.split(".")[0]]` fallback in the build function
+isn't theoretical — it covers the case where a curator manually
+deletes an association row (or a future re-mint changes the
+project_id prefix). The rendering still produces a sensible chip
+without an exception. Same shape as the snapshot-fallback chain
+PR-4 established: the live path is preferred; the fallback gives a
+quieter degraded behavior.
+
+### Current state at end of PR-B
+
+  - ✅ Activities section renders at the top of the tab (5 rows,
+    editable, currently zeroed)
+  - ✅ Per-Activity project tables keep the at-a-glance grouping
+  - ✅ Group header labels source from Supabase (hardcoded dict is
+    fallback)
+  - ✅ Every project row carries a "Contributes to: Activity N" chip
+  - ✅ Editor scopes PATCHes by `data-kind` when present
+  - ⏳ **PR-C (next):** editor + add-flow modal. New rows for both
+    Activities and Projects; for Projects, multi-select of associated
+    Activities. Reuses `workplan_goals.js`'s magic-link auth.
+  - ⏳ **PR-D (optional):** split into own tab if Sam wants
+    a less dense top page.
+
+### Open follow-up (low-priority)
+
+  - `build_activity_kpis()` (line 1343 of `excel_to_dashboard.py`) has
+    its OWN hardcoded `activity_labels` dict — missing Activity 5,
+    feeds the KPI cards in the Workplan Activity Metrics section.
+    Outside PR-B's scope (different section), but the same Supabase-
+    sourced label pattern should apply when that section gets touched.
+
+### Next concrete step
+
+PR-C. The editor add-flow modal. Activity/Project radio + ladder
+fields + (for Project) multi-select of associated Activities.
+Bundled in the same `workplan_goals.js` editor; reuses the
+existing magic-link auth + the new `data-kind` scoping.
+

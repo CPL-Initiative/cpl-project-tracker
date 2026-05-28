@@ -73,12 +73,20 @@
 
   // ─── Save ────────────────────────────────────────────────────────────────
   /**
-   * PATCH a single year-column on a (activity_id, row_type) row.
+   * PATCH a single year-column on a (activity_id, row_type [, kind]) row.
    * Also recomputes + sends the new `total` so the DB stays consistent.
+   *
+   * PR-B: `kind` is optional. When the edited cell carries a `data-kind`
+   * attribute (PR-B onward — "project" or "activity"), it's added to the
+   * filter so the PATCH never crosses the kind boundary. Pre-PR-B cells
+   * have no data-kind and work as before (no kind filter); activity_ids
+   * for activities ("1"-"5") and projects ("1.1", "1.2", ...) are
+   * disjoint today so the unscoped PATCH is still safe.
    */
-  function saveCell(activity_id, row_type, year_key, value, new_total, sess) {
+  function saveCell(activity_id, row_type, year_key, value, new_total, sess, kind) {
     var qs = "activity_id=eq." + encodeURIComponent(activity_id)
            + "&row_type=eq." + encodeURIComponent(row_type);
+    if (kind) qs += "&kind=eq." + encodeURIComponent(kind);
     var body = {};
     body[year_key] = value;
     body.total = new_total;
@@ -220,6 +228,11 @@
     var year_key = cell.getAttribute("data-yr-key");
     var year_label = cell.getAttribute("data-yr");
     var isPct = cell.getAttribute("data-pct") === "1";
+    // PR-B: optional kind discriminator. When absent (pre-PR-B cells), the
+    // save path falls through to the unscoped PATCH, which is still safe
+    // because Activity ids ("1"-"5") and project ids ("1.1", "1.2", …) are
+    // disjoint.
+    var kind = cell.getAttribute("data-kind") || "";
     if (!activity_id || !row_type || !year_key) return;
 
     var oldText = cell.textContent;
@@ -255,18 +268,21 @@
         return;
       }
       // Optimistic UI: paint all matching cells, mark as saving.
+      // PR-B: when this cell carries a data-kind, scope the selectors so
+      // an Activity edit can't paint a Project row (or vice-versa).
+      var kindSel = kind ? '[data-kind="' + kind + '"]' : "";
       var matching = document.querySelectorAll(
-        '[data-aid="' + activity_id + '"][data-rt="' + row_type + '"][data-yr-key="' + year_key + '"]'
+        '[data-aid="' + activity_id + '"]' + kindSel + '[data-rt="' + row_type + '"][data-yr-key="' + year_key + '"]'
       );
       var totalCells = document.querySelectorAll(
-        '[data-aid="' + activity_id + '"][data-rt="' + row_type + '"][data-total="1"]'
+        '[data-aid="' + activity_id + '"]' + kindSel + '[data-rt="' + row_type + '"][data-total="1"]'
       );
 
       // Compute the new row total by summing current data-val on every year
       // cell of this (aid, rt) row, substituting the new value for the
       // edited year_key. Picks one DOM region's cells (the first table).
       var rowYearCells = document.querySelectorAll(
-        '[data-aid="' + activity_id + '"][data-rt="' + row_type + '"][data-yr-key]'
+        '[data-aid="' + activity_id + '"]' + kindSel + '[data-rt="' + row_type + '"][data-yr-key]'
       );
       var seenYearKeys = {};
       var newTotal = 0;
@@ -291,7 +307,7 @@
       });
       cell.classList.remove("wpg-editing");
 
-      saveCell(activity_id, row_type, year_key, newNum, newTotal, state.sess)
+      saveCell(activity_id, row_type, year_key, newNum, newTotal, state.sess, kind)
         .then(function (r) {
           var ok = r.ok;
           var paintClass = ok ? "wpg-saved" : "wpg-error";

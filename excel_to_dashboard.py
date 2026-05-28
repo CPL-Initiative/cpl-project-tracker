@@ -1290,9 +1290,25 @@ def render_annual_goals_table_html(annual_goals):
             is_first = rtype == "Goal"
             name_cell = ""
             if is_first:
+                # PR-B: surface "Contributes to: Activity N" chips on the
+                # row name, mirroring the grouped Workplan Goals section.
+                chips_html = ""
+                for assoc_id in row.get("activity_ids", []):
+                    chips_html += (
+                        f'<span class="wpg-act-chip" '
+                        f'style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;'
+                        f'background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;'
+                        f'font-weight:600;">Activity {assoc_id}</span>'
+                    )
+                chip_line = ""
+                if chips_html:
+                    chip_line = (
+                        f'<div style="font-size:0.65rem;color:#888;font-weight:400;'
+                        f'margin-top:0.15rem;">{chips_html}</div>'
+                    )
                 name_cell = (f'<td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;'
                              f'vertical-align:top;font-weight:600;background:#fff;">'
-                             f'<span style="color:#888;font-size:0.75rem;">{row["id"]}</span> {row["name"]}</td>')
+                             f'<span style="color:#888;font-size:0.75rem;">{row["id"]}</span> {row["name"]}{chip_line}</td>')
 
             html += f'                    <tr style="{style}">\n'
             html += f'                        {name_cell}\n'
@@ -1317,8 +1333,10 @@ def render_annual_goals_table_html(annual_goals):
                 yr_style = "font-weight:700;" if yr == "2025-26" and rtype == "Current" and v else ""
                 data_attrs = ""
                 if editable:
+                    # PR-B: data-kind="project" so the editor's PATCH scopes
+                    # away from the new kind='activity' rows.
                     data_attrs = (
-                        f' data-editable="1" data-aid="{row["id"]}" data-rt="{rt_attr}" '
+                        f' data-editable="1" data-aid="{row["id"]}" data-kind="project" data-rt="{rt_attr}" '
                         f'data-yr="{yr}" data-yr-key="{year_keys_map[yr]}" data-val="{v if v else 0}"'
                     )
                 html += (f'                        <td{data_attrs} style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;{yr_style}">'
@@ -1329,7 +1347,7 @@ def render_annual_goals_table_html(annual_goals):
             total_attrs = ""
             if editable:
                 total_attrs = (
-                    f' data-aid="{row["id"]}" data-rt="{rt_attr}" data-total="1" '
+                    f' data-aid="{row["id"]}" data-kind="project" data-rt="{rt_attr}" data-total="1" '
                     f'data-val="{total if total else 0}"'
                 )
             html += (f'                        <td{total_attrs} style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">'
@@ -1859,11 +1877,26 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
     return html
 
 
-def render_workplan_goals_html(workplan_goals, data_source_stamp=None):
+def render_workplan_goals_html(
+    workplan_goals, data_source_stamp=None, activities=None
+):
     """
     Render the Annual Workplan Goals as a dashboard section with
     grouped tables showing year-by-year goals and stretch goals.
-    Activities are grouped by their primary number (1.x, 2.x, 3.x, 4.x, 5.x).
+    Projects are grouped by their primary number (1.x, 2.x, 3.x, 4.x, 5.x).
+
+    PR-B (Activity↔Project model, first-class Activities):
+      * `activities` (new) — list of 5 Activity entries from Supabase
+        (kind='activity'). Rendered as a dedicated "Activities" section
+        at the top. Ladders show even when zero (curator-editable).
+      * Each project row now carries a "Contributes to: Activity N" chip
+        below its name, sourced from `workplan_goals[*]['activity_ids']`.
+      * Group header labels source from `activities` (Supabase); the
+        hardcoded fallback dict survives for the defensive missing case.
+
+    `workplan_goals` carries the Project rows; `activities` carries the
+    Activity rows. Both lists are produced by
+    `build_workplan_goals_from_supabase()`.
 
     data_source_stamp: optional "YYYY-MM-DD" string. When provided, a subtle
     "Data as of YYYY-MM-DD" line appears under the section description so
@@ -1873,40 +1906,117 @@ def render_workplan_goals_html(workplan_goals, data_source_stamp=None):
     if not workplan_goals:
         return ""
 
-    activity_group_labels = {
+    activities = activities or []
+
+    # Hardcoded fallback labels (used only when Supabase Activity rows are
+    # missing — defensive after PR-A pre-seeded all 5).
+    activity_group_labels_fallback = {
         "1": "Activity 1: Build AI-Enhanced CPL Infrastructure",
         "2": "Activity 2: Faculty Workgroups & Credit Recommendations",
         "3": "Activity 3: Build CPL Data Infrastructure",
         "4": "Activity 4: Sprints, Projects, Partnerships & Scale",
         "5": "Activity 5: Strategic Initiatives & Special Projects",
     }
+    # Live labels from Supabase
+    sb_activity_labels = {a["id"]: a["name"] for a in activities}
 
-    # Group by activity number
+    def _act_label(act_num):
+        return (
+            sb_activity_labels.get(act_num)
+            or activity_group_labels_fallback.get(act_num)
+            or f"Activity {act_num}"
+        )
+
+    # Group projects by activity number
     groups = {}
     for act in workplan_goals:
         grp = act["id"].split(".")[0]
         groups.setdefault(grp, []).append(act)
 
-    stamp_html = ""
-    if data_source_stamp:
-        stamp_html = (
-            f'<p style="color:#888;font-size:0.75rem;margin:-0.75rem 0 1.25rem 0;">'
-            f'Data as of {data_source_stamp}'
-            f'</p>'
+    year_key_list = [
+        "yr_2025_26", "yr_2026_27", "yr_2027_28", "yr_2028_29", "yr_2029_30"
+    ]
+    year_label_list = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
+
+    def fmt_val(v, pct=False):
+        if pct and isinstance(v, (int, float)):
+            return f"{int(v * 100)}%"
+        if isinstance(v, (int, float)):
+            if float(v) == int(v):
+                return f"{int(v):,}"
+            return f"{v:,.1f}"
+        return str(v) if v else "—"
+
+    def _render_ladder_rows(entry, bg, kind, name_col_content):
+        """
+        Render the two-row GOAL + STRETCH ladder for either an Activity
+        or a Project entry. `name_col_content` is the HTML for the
+        first cell (rowspan=2). `kind` flows through to `data-kind`
+        so the editor can scope its PATCH filter.
+        """
+        is_pct = entry.get("is_percentage", False)
+        pct_attr = ' data-pct="1"' if is_pct else ''
+        aid = entry["id"]
+        kind_attr = f' data-kind="{kind}"'
+
+        rows = ""
+        # GOAL row
+        rows += f'                    <tr style="background:{bg};">\n'
+        rows += (
+            f'                        <td rowspan="2" style="padding:0.5rem 0.7rem;'
+            f'border-bottom:1px solid #eee;vertical-align:top;font-weight:600;'
+            f'color:#0A2240;">{name_col_content}</td>\n'
         )
-    html = f'''        <div class="workplan-goals-section" style="margin:2.5rem 0;">
-            <h2 style="color:#0A2240;margin-bottom:0.5rem;">Annual Workplan Goals & Stretch Targets</h2>
-            <p style="color:#666;font-size:0.85rem;margin-bottom:1.5rem;">Five-year trajectory from the CCCCO CPL Workplan — Goal and Stretch targets per activity per year.</p>
-            {stamp_html}
-'''
+        rows += (
+            f'                        <td style="text-align:center;padding:0.3rem 0.4rem;'
+            f'color:#163A5F;font-weight:600;font-size:0.72rem;">GOAL</td>\n'
+        )
+        for v, yk, yl in zip(entry["goal"], year_key_list, year_label_list):
+            rows += (
+                f'                        <td data-editable="1" data-aid="{aid}"'
+                f'{kind_attr} data-rt="GOAL" data-yr="{yl}" data-yr-key="{yk}" '
+                f'data-val="{v}"{pct_attr} '
+                f'style="text-align:right;padding:0.3rem 0.4rem;">'
+                f'{fmt_val(v, is_pct)}</td>\n'
+            )
+        rows += (
+            f'                        <td data-aid="{aid}"{kind_attr} data-rt="GOAL" '
+            f'data-total="1" data-val="{entry["goal_total"]}"{pct_attr} '
+            f'style="text-align:right;padding:0.3rem 0.7rem;font-weight:700;'
+            f'color:#0A2240;">{fmt_val(entry["goal_total"], is_pct)}</td>\n'
+        )
+        rows += '                    </tr>\n'
 
-    for grp_num in sorted(groups.keys()):
-        acts = groups[grp_num]
-        grp_label = activity_group_labels.get(grp_num, f"Activity {grp_num}")
+        # STRETCH row
+        rows += f'                    <tr style="background:{bg};">\n'
+        rows += (
+            f'                        <td style="text-align:center;padding:0.3rem 0.4rem;'
+            f'border-bottom:1px solid #eee;color:#C9A84C;font-weight:600;'
+            f'font-size:0.72rem;">STRETCH</td>\n'
+        )
+        for v, yk, yl in zip(entry["stretch"], year_key_list, year_label_list):
+            rows += (
+                f'                        <td data-editable="1" data-aid="{aid}"'
+                f'{kind_attr} data-rt="STRETCH" data-yr="{yl}" data-yr-key="{yk}" '
+                f'data-val="{v}"{pct_attr} '
+                f'style="text-align:right;padding:0.3rem 0.4rem;'
+                f'border-bottom:1px solid #eee;color:#C9A84C;">'
+                f'{fmt_val(v, is_pct)}</td>\n'
+            )
+        rows += (
+            f'                        <td data-aid="{aid}"{kind_attr} data-rt="STRETCH" '
+            f'data-total="1" data-val="{entry["stretch_total"]}"{pct_attr} '
+            f'style="text-align:right;padding:0.3rem 0.7rem;'
+            f'border-bottom:1px solid #eee;font-weight:700;color:#C9A84C;">'
+            f'{fmt_val(entry["stretch_total"], is_pct)}</td>\n'
+        )
+        rows += '                    </tr>\n'
+        return rows
 
-        html += f'''            <div style="margin-bottom:2rem;">
+    def _table_open(header_label):
+        return f'''            <div style="margin-bottom:2rem;">
             <div style="background:linear-gradient(135deg,#163A5F 0%,#0A2240 100%);border-radius:8px 8px 0 0;padding:0.6rem 1rem;">
-                <span style="color:#C9A84C;font-weight:700;font-size:0.9rem;">{grp_label}</span>
+                <span style="color:#C9A84C;font-weight:700;font-size:0.9rem;">{header_label}</span>
             </div>
             <div style="overflow-x:auto;">
             <table style="width:100%;border-collapse:collapse;font-size:0.8rem;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:0 0 8px 8px;table-layout:fixed;">
@@ -1934,56 +2044,74 @@ def render_workplan_goals_html(workplan_goals, data_source_stamp=None):
                 </thead>
                 <tbody>
 '''
-        for i, act in enumerate(acts):
-            is_pct = act.get("is_percentage", False)
-            bg = "#fff" if i % 2 == 0 else "#fafbfc"
 
-            def fmt_val(v, pct=False):
-                if pct and isinstance(v, (int, float)):
-                    return f"{int(v * 100)}%"
-                if isinstance(v, (int, float)):
-                    if float(v) == int(v):
-                        return f"{int(v):,}"
-                    return f"{v:,.1f}"
-                return str(v) if v else "—"
-
-            aid = act["id"]
-            year_keys = ["yr_2025_26", "yr_2026_27", "yr_2027_28", "yr_2028_29", "yr_2029_30"]
-            year_labels = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
-            pct_attr = ' data-pct="1"' if is_pct else ''
-
-            # GOAL row
-            html += f'''                    <tr style="background:{bg};">
-                        <td rowspan="2" style="padding:0.5rem 0.7rem;border-bottom:1px solid #eee;vertical-align:top;font-weight:600;color:#0A2240;">{aid} {act["name"]}</td>
-                        <td style="text-align:center;padding:0.3rem 0.4rem;color:#163A5F;font-weight:600;font-size:0.72rem;">GOAL</td>
-'''
-            for v, yk, yl in zip(act["goal"], year_keys, year_labels):
-                html += (f'                        <td data-editable="1" data-aid="{aid}" data-rt="GOAL" '
-                         f'data-yr="{yl}" data-yr-key="{yk}" data-val="{v}"{pct_attr} '
-                         f'style="text-align:right;padding:0.3rem 0.4rem;">{fmt_val(v, is_pct)}</td>\n')
-            html += (f'                        <td data-aid="{aid}" data-rt="GOAL" data-total="1" '
-                     f'data-val="{act["goal_total"]}"{pct_attr} '
-                     f'style="text-align:right;padding:0.3rem 0.7rem;font-weight:700;color:#0A2240;">{fmt_val(act["goal_total"], is_pct)}</td>\n')
-            html += '                    </tr>\n'
-
-            # STRETCH row
-            html += f'''                    <tr style="background:{bg};">
-                        <td style="text-align:center;padding:0.3rem 0.4rem;border-bottom:1px solid #eee;color:#C9A84C;font-weight:600;font-size:0.72rem;">STRETCH</td>
-'''
-            for v, yk, yl in zip(act["stretch"], year_keys, year_labels):
-                html += (f'                        <td data-editable="1" data-aid="{aid}" data-rt="STRETCH" '
-                         f'data-yr="{yl}" data-yr-key="{yk}" data-val="{v}"{pct_attr} '
-                         f'style="text-align:right;padding:0.3rem 0.4rem;border-bottom:1px solid #eee;color:#C9A84C;">{fmt_val(v, is_pct)}</td>\n')
-            html += (f'                        <td data-aid="{aid}" data-rt="STRETCH" data-total="1" '
-                     f'data-val="{act["stretch_total"]}"{pct_attr} '
-                     f'style="text-align:right;padding:0.3rem 0.7rem;border-bottom:1px solid #eee;font-weight:700;color:#C9A84C;">{fmt_val(act["stretch_total"], is_pct)}</td>\n')
-            html += '                    </tr>\n'
-
-        html += '''                </tbody>
+    def _table_close():
+        return '''                </tbody>
             </table>
             </div>
             </div>
 '''
+
+    stamp_html = ""
+    if data_source_stamp:
+        stamp_html = (
+            f'<p style="color:#888;font-size:0.75rem;margin:-0.75rem 0 1.25rem 0;">'
+            f'Data as of {data_source_stamp}'
+            f'</p>'
+        )
+    html = f'''        <div class="workplan-goals-section" style="margin:2.5rem 0;">
+            <h2 style="color:#0A2240;margin-bottom:0.5rem;">Annual Workplan Goals & Stretch Targets</h2>
+            <p style="color:#666;font-size:0.85rem;margin-bottom:1.5rem;">Five-year trajectory from the CCCCO CPL Workplan — Goal and Stretch targets per activity per year.</p>
+            {stamp_html}
+'''
+
+    # ── Activities section (PR-B) — top-level aggregate ladders ───────────
+    if activities:
+        html += _table_open(
+            "Activities — Top-Level Aggregate Targets "
+            "<span style='font-weight:400;color:#cfd6e0;font-size:0.78rem;'>(curator-managed; ladders default to 0 until set)</span>"
+        )
+        for i, act in enumerate(activities):
+            bg = "#fff" if i % 2 == 0 else "#fafbfc"
+            # Activity names already start with "Activity N:" — don't double the prefix
+            name_content = act["name"]
+            html += _render_ladder_rows(act, bg, "activity", name_content)
+        html += _table_close()
+
+    # ── Projects section — per-Activity tables, sub-grouped + chips ───────
+    for grp_num in sorted(groups.keys()):
+        acts = groups[grp_num]
+        grp_label = _act_label(grp_num)
+
+        html += _table_open(grp_label)
+        for i, p in enumerate(acts):
+            bg = "#fff" if i % 2 == 0 else "#fafbfc"
+            # PR-B: "Contributes to: Activity N" chips. Always render
+            # (locked at scoping time). Maps each association to the
+            # Supabase label when available so renames flow through.
+            chips_html = ""
+            for assoc_id in p.get("activity_ids", []):
+                # Use the short "Activity N" label inside the chip — the
+                # full Supabase name (which can be long) is the hover.
+                short = f"Activity {assoc_id}"
+                full = sb_activity_labels.get(assoc_id) or short
+                chips_html += (
+                    f'<span class="wpg-act-chip" title="{full}" '
+                    f'style="display:inline-block;margin:0 0.25rem 0 0;padding:0.05rem 0.4rem;'
+                    f'background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.7rem;'
+                    f'font-weight:600;">{short}</span>'
+                )
+            chip_line = ""
+            if chips_html:
+                chip_line = (
+                    f'<div style="font-size:0.72rem;color:#666;font-weight:400;'
+                    f'margin-top:0.2rem;">'
+                    f'<span style="color:#888;">Contributes to:</span> '
+                    f'{chips_html}</div>'
+                )
+            name_content = f'{p["id"]} {p["name"]}{chip_line}'
+            html += _render_ladder_rows(p, bg, "project", name_content)
+        html += _table_close()
 
     html += '        </div>\n'
     return html
@@ -6244,20 +6372,29 @@ def _natural_activity_sort_key(activity_id: str):
     return parts
 
 
-def build_workplan_goals_from_supabase(supabase_rows, projects, live_data=None):
+def build_workplan_goals_from_supabase(
+    supabase_rows, associations, projects, live_data=None
+):
     """
-    Build the workplan-goals + annual-goals dashboard structures from the
-    Supabase public.workplan_goals table (Phase 1 source-of-truth).
+    Build the workplan-goals dashboard structures from the Supabase
+    public.workplan_goals table (Phase 1 source-of-truth) + the
+    public.workplan_activity_associations table (PR-A N-to-N).
 
-    Activity set is data-driven (A+: whatever Supabase contains, naturally
-    sorted). Replaces the Excel-driven build path that PR-6 retired.
+    PR-B (Activity↔Project model, first-class Activities):
+      * Activity rows (kind='activity') are returned as their own list +
+        rendered as a top section with editable ladders. Curator-managed,
+        currently zeroed by default.
+      * Each project row carries `activity_ids: ['1']` (the Activities it
+        contributes to), sourced from the associations table.
+      * The hardcoded `activity_labels` dict survives as a fallback —
+        looked up only when an Activity row is missing from Supabase
+        (defensive; shouldn't happen post-PR-A).
 
     `projects` is still used to look up Excel `kpi_metric` per activity for
     the "Current" column in annual_goals (Phase 2 migrates project metadata
     to Supabase; until then, kpi_metric stays Excel-sourced).
 
-    Returns (workplan_goals, annual_goals) — the two structures consumed by
-    render_workplan_goals_html and render_annual_goals_table_html.
+    Returns (activities, workplan_goals, annual_goals).
     """
     year_keys = [
         ("2025-26", "yr_2025_26"),
@@ -6267,6 +6404,8 @@ def build_workplan_goals_from_supabase(supabase_rows, projects, live_data=None):
         ("2029-30", "yr_2029_30"),
     ]
 
+    # Hardcoded fallback labels (used only when the Activity row is missing
+    # from Supabase — defensive after PR-A pre-seeded all 5).
     activity_labels = {
         "1": "Activity 1: Build AI-Enhanced CPL Infrastructure",
         "2": "Activity 2: Faculty Workgroups & Credit Recommendations",
@@ -6277,45 +6416,90 @@ def build_workplan_goals_from_supabase(supabase_rows, projects, live_data=None):
 
     proj_map = {p["id"]: p for p in projects}
 
-    # Group Supabase rows by activity_id → {"name": str, "GOAL": row, "STRETCH": row}
-    # PR-A: scope to kind='project' rows. The 5 kind='activity' rows are
-    # curator-managed top-level Activities; PR-B will render them as their
-    # own section, but until then we keep the projects-grouped-under-hardcoded-
-    # activity-labels rendering. Rows without an explicit kind default to
-    # 'project' so pre-PR-A snapshots still render correctly.
-    by_aid: dict[str, dict] = {}
+    # ── Phase 1: build the (activity_id, kind) → bucket map ────────────────
+    # PR-B: track 'project' and 'activity' rows separately.
+    # Rows without explicit kind default to 'project' so pre-PR-A snapshots
+    # still render correctly under the snapshot-fallback path.
+    proj_by_aid: dict[str, dict] = {}
+    act_by_aid: dict[str, dict] = {}
     for row in supabase_rows:
         aid = row.get("activity_id")
         if not aid:
             continue
-        if (row.get("kind") or "project") != "project":
-            continue
-        bucket = by_aid.setdefault(aid, {"name": row.get("name") or ""})
+        kind = row.get("kind") or "project"
+        target = act_by_aid if kind == "activity" else proj_by_aid
+        bucket = target.setdefault(aid, {"name": row.get("name") or ""})
         bucket[row["row_type"]] = row
         if not bucket["name"]:
             bucket["name"] = row.get("name") or ""
 
+    # ── Phase 2: associations index: project_id → sorted list of activity_ids ──
+    assoc_by_project: dict[str, list[str]] = {}
+    for a in associations or []:
+        pid = a.get("project_id")
+        aid = a.get("activity_id")
+        if not pid or not aid:
+            continue
+        assoc_by_project.setdefault(pid, []).append(aid)
+    for pid, aids in assoc_by_project.items():
+        # De-dup + natural sort (numeric chars on Activity ids "1"-"5")
+        assoc_by_project[pid] = sorted(set(aids), key=_natural_activity_sort_key)
+
+    def _num(v):
+        try:
+            return float(v) if v is not None else 0.0
+        except (TypeError, ValueError):
+            return 0.0
+
+    def _build_entry(aid: str, data: dict, kind: str) -> dict:
+        goal_row = data.get("GOAL") or {}
+        stretch_row = data.get("STRETCH") or {}
+        goal_values = [_num(goal_row.get(k)) for _label, k in year_keys]
+        stretch_values = [_num(stretch_row.get(k)) for _label, k in year_keys]
+        goal_total = sum(goal_values)
+        stretch_total = sum(stretch_values)
+        is_pct = bool(goal_values) and all(0 < v < 1 for v in goal_values if v)
+        return {
+            "id": aid,
+            "name": data["name"],
+            "kind": kind,
+            "is_percentage": is_pct,
+            "years": [label for label, _k in year_keys],
+            "goal": goal_values,
+            "goal_total": goal_total,
+            "stretch": stretch_values if stretch_values else [0] * 5,
+            "stretch_total": stretch_total,
+        }
+
+    # ── Phase 3: build Activities list (sorted by id) ─────────────────────
+    activities = []
+    for aid in sorted(act_by_aid.keys(), key=_natural_activity_sort_key):
+        entry = _build_entry(aid, act_by_aid[aid], "activity")
+        activities.append(entry)
+
+    # ── Phase 4: build Projects list + annual_goals (sorted by id) ─────────
     workplan_goals = []
     annual_goals = []
-
-    for aid in sorted(by_aid.keys(), key=_natural_activity_sort_key):
-        data = by_aid[aid]
+    for aid in sorted(proj_by_aid.keys(), key=_natural_activity_sort_key):
+        data = proj_by_aid[aid]
         goal_row = data.get("GOAL") or {}
         stretch_row = data.get("STRETCH") or {}
         if not goal_row and not stretch_row:
             continue  # Defensive — every activity should have both row_types
 
-        def _num(v):
-            try:
-                return float(v) if v is not None else 0.0
-            except (TypeError, ValueError):
-                return 0.0
+        entry = _build_entry(aid, data, "project")
+        # PR-B: enrich with the associations this project contributes to
+        entry["activity_ids"] = assoc_by_project.get(aid, [])
+        # Fall back to the prefix rule if the project has no association row
+        # (defensive — every project gets backfilled in PR-A, but if a curator
+        # manually deletes the association we still render a sensible chip).
+        if not entry["activity_ids"]:
+            entry["activity_ids"] = [aid.split(".")[0]]
+        workplan_goals.append(entry)
 
-        goal_values = [_num(goal_row.get(k)) for _label, k in year_keys]
-        stretch_values = [_num(stretch_row.get(k)) for _label, k in year_keys]
-        goal_total = sum(goal_values)
-        stretch_total = sum(stretch_values)
-
+        # ── annual_goals row (the comprehensive table) ──
+        goal_values = entry["goal"]
+        stretch_values = entry["stretch"]
         goal_dict = {label: v for (label, _k), v in zip(year_keys, goal_values)}
         stretch_dict = {label: v for (label, _k), v in zip(year_keys, stretch_values)}
         current_dict = {label: 0 for label, _k in year_keys}
@@ -6330,37 +6514,34 @@ def build_workplan_goals_from_supabase(supabase_rows, projects, live_data=None):
         current_dict["2025-26"] = current_metric
         current_dict["total"] = current_metric
 
-        # Activity group label
-        act_num = aid.split(".")[0]
-        act_label = activity_labels.get(act_num, f"Activity {act_num}")
+        # PR-B: Activity group label sources from Supabase activities;
+        # falls back to the hardcoded dict, then to "Activity N".
+        primary_act = entry["activity_ids"][0]
+        sb_activity = act_by_aid.get(primary_act, {})
+        act_label = (
+            sb_activity.get("name")
+            or activity_labels.get(primary_act)
+            or f"Activity {primary_act}"
+        )
 
-        # Percentage detection: all non-zero values in (0,1)
-        is_pct = bool(goal_values) and all(0 < v < 1 for v in goal_values if v)
-
-        workplan_goals.append({
-            "id": aid,
-            "name": data["name"],
-            "is_percentage": is_pct,
-            "years": [label for label, _k in year_keys],
-            "goal": goal_values,
-            "goal_total": goal_total,
-            "stretch": stretch_values if stretch_values else [0] * 5,
-            "stretch_total": stretch_total,
-        })
-
-        goal_dict["total"] = goal_total
-        stretch_dict["total"] = stretch_total
+        goal_dict["total"] = entry["goal_total"]
+        stretch_dict["total"] = entry["stretch_total"]
         annual_goals.append({
             "id": aid,
             "name": data["name"],
             "activity": act_label,
+            "activity_ids": entry["activity_ids"],
             "goal": goal_dict,
             "current": current_dict,
             "stretch": stretch_dict,
         })
 
-    print(f"  Built {len(workplan_goals)} workplan goal rows from Supabase")
-    return workplan_goals, annual_goals
+    print(
+        f"  Built {len(activities)} activities + {len(workplan_goals)} "
+        f"project goal rows from Supabase "
+        f"({sum(len(p['activity_ids']) for p in workplan_goals)} associations)"
+    )
+    return activities, workplan_goals, annual_goals
 
 
 def read_budget_plan(wb):
@@ -7000,13 +7181,13 @@ def main():
     # signals staleness. kpi_metric for the "Current" column still comes from
     # Excel until Phase 2 migrates project metadata.
     try:
-        from kb._load_workplan_goals import load_workplan_goals as _load_wpg
+        from kb._load_workplan_goals import load_workplan_goals_full as _load_wpg_full
     except ImportError:
         sys.path.insert(0, os.path.join(os.path.dirname(__file__), "kb"))
-        from _load_workplan_goals import load_workplan_goals as _load_wpg
-    wpg_rows, wpg_fetched_at, wpg_source = _load_wpg()
-    workplan_goals, annual_goals = build_workplan_goals_from_supabase(
-        wpg_rows, projects, live_data
+        from _load_workplan_goals import load_workplan_goals_full as _load_wpg_full
+    wpg_rows, wpg_assocs, wpg_fetched_at, wpg_source = _load_wpg_full()
+    activities, workplan_goals, annual_goals = build_workplan_goals_from_supabase(
+        wpg_rows, wpg_assocs, projects, live_data
     )
 
     # Auto-create attachment subfolders for new activities/projects
@@ -7527,7 +7708,9 @@ def main():
 
             # ── Inject the Annual Workplan Goals section before Projects Grid ──
             workplan_goals_html = render_workplan_goals_html(
-                workplan_goals, data_source_stamp=wpg_fetched_at
+                workplan_goals,
+                data_source_stamp=wpg_fetched_at,
+                activities=activities,
             )
             if workplan_goals_html:
                 # Insert before the Projects Grid marker
