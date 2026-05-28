@@ -16,6 +16,13 @@ What it checks:
   * Coverage      — every A+-derived activity has both a GOAL and a STRETCH row in Supabase
   * Value parity  — for overlapping (activity_id, row_type), every year column matches
   * Orphans       — Supabase rows whose activity_id is not in A+-derived set
+  * Associations  — PR-A: every workplan_activity_associations row resolves to
+                    a real kind='activity' AND a real kind='project' row, and
+                    every project has at least one association
+
+PR-A note: the Excel-vs-Supabase comparison is scoped to `kind='project'`
+rows. The 5 `kind='activity'` rows in workplan_goals are curator-managed and
+do not appear in Excel A+ derivation — they're excluded from the diff.
 
 Auth:
   * SUPABASE_URL          (default https://hvuwhnbuahrtptokpqfh.supabase.co)
@@ -90,17 +97,13 @@ def parse_num(val) -> float:
         return 0.0
 
 
-def fetch_supabase_rows() -> list[dict]:
+def _fetch_path(path: str) -> list[dict]:
     if not SUPABASE_KEY:
         sys.exit(
             "Set SUPABASE_SERVICE_KEY in the env, or pass --supabase-json PATH"
             " to read rows from a file."
         )
-    endpoint = (
-        f"{SUPABASE_URL}/rest/v1/workplan_goals"
-        "?select=activity_id,name,row_type,"
-        "yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total"
-    )
+    endpoint = f"{SUPABASE_URL}/rest/v1/{path}"
     req = urllib.request.Request(
         endpoint,
         headers={
@@ -113,8 +116,38 @@ def fetch_supabase_rows() -> list[dict]:
         return json.load(r)
 
 
+def fetch_supabase_rows() -> list[dict]:
+    return _fetch_path(
+        "workplan_goals"
+        "?select=activity_id,name,row_type,kind,"
+        "yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total"
+    )
+
+
+def fetch_associations() -> list[dict]:
+    return _fetch_path(
+        "workplan_activity_associations?select=project_id,activity_id"
+    )
+
+
 def read_supabase_json(path: Path) -> list[dict]:
-    return json.loads(path.read_text(encoding="utf-8"))
+    """
+    Accept either a flat list[dict] (legacy validator input) or a snapshot-
+    shaped dict {"rows": [...], "associations": [...]}. Returns the rows.
+    Use `read_associations_json()` for the associations sidecar.
+    """
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if isinstance(data, dict):
+        return data.get("rows") or []
+    return data
+
+
+def read_associations_json(path: Path) -> list[dict]:
+    """Read associations from a snapshot file (returns [] if not present)."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if isinstance(data, dict):
+        return data.get("associations") or []
+    return []
 
 
 def derive_excel_workplan_goals() -> dict[str, dict[str, dict[str, float]]]:
@@ -153,9 +186,18 @@ def derive_excel_workplan_goals() -> dict[str, dict[str, dict[str, float]]]:
 
 
 def reshape_supabase(rows: list[dict]) -> dict[str, dict[str, dict[str, float]]]:
-    """{activity_id: {"name": ..., "GOAL": {yr_key: val}, "STRETCH": {yr_key: val}}}"""
+    """
+    {activity_id: {"name": ..., "GOAL": {yr_key: val}, "STRETCH": {yr_key: val}}}
+
+    Scopes to `kind='project'` rows (the Excel-A+ comparison is project-vs-project).
+    Activity rows (kind='activity') are skipped — they're curator-managed and
+    don't appear in Excel A+. Rows without a kind field default to 'project'
+    so pre-PR-A snapshots still validate correctly.
+    """
     out: dict[str, dict] = {}
     for row in rows:
+        if (row.get("kind") or "project") != "project":
+            continue
         aid = row["activity_id"]
         rt = row["row_type"]
         bucket = out.setdefault(aid, {"name": row.get("name", "")})
@@ -163,6 +205,36 @@ def reshape_supabase(rows: list[dict]) -> dict[str, dict[str, dict[str, float]]]
         if not bucket.get("name"):
             bucket["name"] = row.get("name", "")
     return out
+
+
+def validate_associations(
+    rows: list[dict], assocs: list[dict]
+) -> tuple[list[dict], list[dict], list[dict]]:
+    """
+    Returns (orphan_activity, orphan_project, projects_without_assoc).
+    Application-enforced FK shape (no DB FK per the PR-A design): every
+    association row must resolve to an existing activity-kind row AND a
+    project-kind row in workplan_goals.
+    """
+    activity_ids = {
+        r["activity_id"] for r in rows
+        if (r.get("kind") or "project") == "activity"
+    }
+    project_ids = {
+        r["activity_id"] for r in rows
+        if (r.get("kind") or "project") == "project"
+    }
+    orphan_activity = [
+        a for a in assocs if a.get("activity_id") not in activity_ids
+    ]
+    orphan_project = [
+        a for a in assocs if a.get("project_id") not in project_ids
+    ]
+    projects_with_assoc = {a.get("project_id") for a in assocs}
+    projects_without_assoc = [
+        {"project_id": pid} for pid in sorted(project_ids - projects_with_assoc)
+    ]
+    return orphan_activity, orphan_project, projects_without_assoc
 
 
 def compare_rows(
@@ -232,10 +304,29 @@ def fmt_num(v: float) -> str:
 
 
 def render_report(
-    excel: dict, supabase: dict, matches, mismatches, missing, orphans
+    excel: dict,
+    supabase: dict,
+    matches,
+    mismatches,
+    missing,
+    orphans,
+    assoc_orphan_activity=None,
+    assoc_orphan_project=None,
+    assoc_projects_without=None,
+    assoc_count: int = 0,
 ) -> str:
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    in_sync = not (mismatches or missing or orphans)
+    assoc_orphan_activity = assoc_orphan_activity or []
+    assoc_orphan_project = assoc_orphan_project or []
+    assoc_projects_without = assoc_projects_without or []
+    in_sync = not (
+        mismatches
+        or missing
+        or orphans
+        or assoc_orphan_activity
+        or assoc_orphan_project
+        or assoc_projects_without
+    )
 
     lines = []
     lines.append("---")
@@ -261,7 +352,36 @@ def render_report(
     lines.append(f"- Mismatches (overlapping rows that disagree): **{len(mismatches)}**")
     lines.append(f"- Missing in Supabase (A+ sub-activities without a Supabase row): **{len(missing)}**")
     lines.append(f"- Orphans in Supabase (rows whose activity_id isn't in the A+ set): **{len(orphans)}**")
+    lines.append(f"- Activity↔Project associations: **{assoc_count}** "
+                 f"(orphan-activity: {len(assoc_orphan_activity)}, "
+                 f"orphan-project: {len(assoc_orphan_project)}, "
+                 f"projects-without-assoc: {len(assoc_projects_without)})")
     lines.append("")
+
+    if assoc_orphan_activity or assoc_orphan_project or assoc_projects_without:
+        lines.append("## Association integrity")
+        lines.append("")
+        if assoc_orphan_activity:
+            lines.append("**Orphan-activity associations** (point at activity_id with no `kind='activity'` row):")
+            lines.append("")
+            for a in assoc_orphan_activity:
+                lines.append(f"- project_id=`{a.get('project_id')}` → activity_id=`{a.get('activity_id')}`")
+            lines.append("")
+        if assoc_orphan_project:
+            lines.append("**Orphan-project associations** (point at project_id with no `kind='project'` row):")
+            lines.append("")
+            for a in assoc_orphan_project:
+                lines.append(f"- project_id=`{a.get('project_id')}` → activity_id=`{a.get('activity_id')}`")
+            lines.append("")
+        if assoc_projects_without:
+            lines.append(
+                "**Projects with no association** (project rows that don't link "
+                "to any Activity):"
+            )
+            lines.append("")
+            for p in assoc_projects_without:
+                lines.append(f"- `{p['project_id']}`")
+            lines.append("")
 
     # Missing
     if missing:
@@ -355,14 +475,30 @@ def main():
 
     if args.supabase_json:
         rows = read_supabase_json(args.supabase_json)
+        assocs = read_associations_json(args.supabase_json)
     else:
         rows = fetch_supabase_rows()
+        assocs = fetch_associations()
 
     excel = derive_excel_workplan_goals()
     supabase = reshape_supabase(rows)
     matches, mismatches, missing, orphans = compare_rows(excel, supabase)
+    assoc_orphan_activity, assoc_orphan_project, assoc_projects_without = (
+        validate_associations(rows, assocs)
+    )
 
-    report = render_report(excel, supabase, matches, mismatches, missing, orphans)
+    report = render_report(
+        excel,
+        supabase,
+        matches,
+        mismatches,
+        missing,
+        orphans,
+        assoc_orphan_activity=assoc_orphan_activity,
+        assoc_orphan_project=assoc_orphan_project,
+        assoc_projects_without=assoc_projects_without,
+        assoc_count=len(assocs),
+    )
     OUT_PATH.write_text(report, encoding="utf-8")
 
     print(f"wrote {OUT_PATH.relative_to(REPO_ROOT)}")
@@ -374,8 +510,21 @@ def main():
         f"  matches={len(matches)} mismatches={len(mismatches)} "
         f"missing={len(missing)} orphans={len(orphans)}"
     )
+    print(
+        f"  associations={len(assocs)} "
+        f"orphan_activity={len(assoc_orphan_activity)} "
+        f"orphan_project={len(assoc_orphan_project)} "
+        f"projects_without_assoc={len(assoc_projects_without)}"
+    )
 
-    in_sync = not (mismatches or missing or orphans)
+    in_sync = not (
+        mismatches
+        or missing
+        or orphans
+        or assoc_orphan_activity
+        or assoc_orphan_project
+        or assoc_projects_without
+    )
     if not in_sync:
         sys.exit(1)
 
