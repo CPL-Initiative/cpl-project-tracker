@@ -1,7 +1,7 @@
 ---
 title: Playbook — Auto-sync vault-side repo clones via Windows Task Scheduler
 created: 2026-05-27
-updated: 2026-05-27
+updated: 2026-05-28
 tags: [playbook, obsidian-target, vault-wiring, windows, automation, knowledge-base]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -22,12 +22,55 @@ artifacts:
 ## Why this exists
 
 The repo clones at
-`C:\Users\samuel.lee\Documents\Claude\Projects\CPLBrain\COG-second-brain\cpl-project-tracker\`
+`C:\Users\samuel.lee\Documents\GitHub\COG-second-brain\cpl-project-tracker\`
 and `...\cpl-knowledge-base\` are what Obsidian indexes. New commits land on
 `origin/main` whenever a session opens + merges PRs (and the daily cron
 commits its regenerated artifacts at 10:17 UTC). Without a sync mechanism,
 Sam has to remember `git pull` in two folders to see new content. With this
 playbook, the pulls happen on a schedule, no human in the loop.
+
+## 2026-05-28 — canonical vault root repointed
+
+**The sync script was pulling into the wrong directory.**
+`scripts/sync-vault-clones.ps1` hardcoded `$vaultRoot` to
+`%USERPROFILE%\Documents\Claude\Projects\CPLBrain\COG-second-brain`, but Sam's
+actual Obsidian vault is rooted at `%USERPROFILE%\Documents\GitHub\COG-second-brain`.
+The script's fast-forward pulls succeeded — but landed where Obsidian was **not**
+looking, so checkpoint commits and KB notes never appeared in the vault.
+
+The canonical root is now **`%USERPROFILE%\Documents\GitHub\COG-second-brain`**.
+The script + this playbook have been repointed. To complete the cutover on the
+Windows machine, Sam must:
+
+1. **Clone the repos into the new root** if they aren't already there:
+   ```powershell
+   cd "$env:USERPROFILE\Documents\GitHub\COG-second-brain"
+   git clone https://github.com/CPL-Initiative/cpl-project-tracker.git
+   git clone https://github.com/CPL-Initiative/cpl-knowledge-base.git
+   ```
+   (If `Documents\GitHub\COG-second-brain\` doesn't exist yet, `mkdir` it first.
+   If the clones already live there, skip this step.)
+
+2. **Re-point / re-register the scheduled task.** The "CPL Vault Sync" task may
+   still invoke the sync script from its old location. Re-run the companion
+   registration script from the **new** clone so the task points at the
+   repointed script (open an elevated PowerShell):
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\Documents\GitHub\COG-second-brain\cpl-project-tracker\scripts\setup-task-scheduler.ps1"
+   ```
+   The script is idempotent — it updates the existing task in place. (The
+   repointed `sync-vault-clones.ps1` derives `$vaultRoot` from `Documents\GitHub`,
+   and `setup-task-scheduler.ps1` resolves the sync script from `$PSScriptRoot`,
+   so running it from the new clone wires everything to the new root.)
+
+3. **Archive or delete the orphan clones** under the old
+   `%USERPROFILE%\Documents\Claude\Projects\CPLBrain\COG-second-brain\` root (and
+   any other stale parallel locations) so there's **one** source of truth. The
+   old clones are no longer pulled and will silently drift stale. Either delete
+   them outright or move them somewhere clearly marked archived.
+
+After this, the next scheduled run pulls into `Documents\GitHub\COG-second-brain`
+and Obsidian sees fresh content.
 
 ## What the script does (and explicitly does NOT do)
 
@@ -56,7 +99,7 @@ has diverged (ahead AND behind origin). Neither situation gets clobbered.
 After the next `git pull` of `cpl-project-tracker`, the script will be at:
 
 ```
-C:\Users\samuel.lee\Documents\Claude\Projects\CPLBrain\COG-second-brain\cpl-project-tracker\scripts\sync-vault-clones.ps1
+C:\Users\samuel.lee\Documents\GitHub\COG-second-brain\cpl-project-tracker\scripts\sync-vault-clones.ps1
 ```
 
 (The first run requires a manual pull to land the script itself.)
@@ -66,13 +109,13 @@ C:\Users\samuel.lee\Documents\Claude\Projects\CPLBrain\COG-second-brain\cpl-proj
 Open PowerShell and run:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\Documents\Claude\Projects\CPLBrain\COG-second-brain\cpl-project-tracker\scripts\sync-vault-clones.ps1"
+powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\Documents\GitHub\COG-second-brain\cpl-project-tracker\scripts\sync-vault-clones.ps1"
 ```
 
 Then check the log:
 
 ```powershell
-Get-Content "$env:USERPROFILE\Documents\Claude\Projects\CPLBrain\COG-second-brain\.vault-sync.log" -Tail 10
+Get-Content "$env:USERPROFILE\Documents\GitHub\COG-second-brain\.vault-sync.log" -Tail 10
 ```
 
 You should see one timestamped line per repo (or nothing if already up-to-date).
@@ -88,7 +131,7 @@ scheduled task in one shot. **Open an elevated PowerShell** (Right-click
 PowerShell → "Run as Administrator") and run:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\Documents\Claude\Projects\CPLBrain\COG-second-brain\cpl-project-tracker\scripts\setup-task-scheduler.ps1"
+powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\Documents\GitHub\COG-second-brain\cpl-project-tracker\scripts\setup-task-scheduler.ps1"
 ```
 
 That's it. Defaults to a 15-minute cadence. To use a different cadence
@@ -123,7 +166,7 @@ Scheduler** (`Win+R` → `taskschd.msc`):
 4. **Actions tab → New**:
    - **Action**: Start a program
    - **Program/script**: `powershell.exe`
-   - **Add arguments**: `-ExecutionPolicy Bypass -WindowStyle Hidden -NoProfile -File "%USERPROFILE%\Documents\Claude\Projects\CPLBrain\COG-second-brain\cpl-project-tracker\scripts\sync-vault-clones.ps1"`
+   - **Add arguments**: `-ExecutionPolicy Bypass -WindowStyle Hidden -NoProfile -File "%USERPROFILE%\Documents\GitHub\COG-second-brain\cpl-project-tracker\scripts\sync-vault-clones.ps1"`
 5. **Conditions tab**:
    - **Power**: Uncheck "Start the task only if the computer is on AC power" (unless you want laptop-on-battery to skip)
    - **Network**: Check "Start only if the following network connection is available: Any connection"
@@ -149,7 +192,7 @@ Fire on demand to test:
 ```powershell
 Start-ScheduledTask -TaskName "CPL Vault Sync"
 Start-Sleep -Seconds 4
-Get-Content "$env:USERPROFILE\Documents\Claude\Projects\CPLBrain\COG-second-brain\.vault-sync.log" -Tail 5
+Get-Content "$env:USERPROFILE\Documents\GitHub\COG-second-brain\.vault-sync.log" -Tail 5
 ```
 
 The log tail confirms it ran (or stays silent if everything was already up-to-date — that's the script's "quiet on success" design).
