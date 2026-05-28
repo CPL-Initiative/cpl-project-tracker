@@ -1838,11 +1838,16 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
     return html
 
 
-def render_workplan_goals_html(workplan_goals):
+def render_workplan_goals_html(workplan_goals, data_source_stamp=None):
     """
     Render the Annual Workplan Goals as a dashboard section with
     grouped tables showing year-by-year goals and stretch goals.
-    Activities are grouped by their primary number (1.x, 2.x, 3.x, 4.x).
+    Activities are grouped by their primary number (1.x, 2.x, 3.x, 4.x, 5.x).
+
+    data_source_stamp: optional "YYYY-MM-DD" string. When provided, a subtle
+    "Data as of YYYY-MM-DD" line appears under the section description so
+    curators can see when the Supabase fetch (or snapshot fallback) last
+    populated the data.
     """
     if not workplan_goals:
         return ""
@@ -1852,6 +1857,7 @@ def render_workplan_goals_html(workplan_goals):
         "2": "Activity 2: Faculty Workgroups & Credit Recommendations",
         "3": "Activity 3: Build CPL Data Infrastructure",
         "4": "Activity 4: Sprints, Projects, Partnerships & Scale",
+        "5": "Activity 5: Strategic Initiatives & Special Projects",
     }
 
     # Group by activity number
@@ -1860,9 +1866,17 @@ def render_workplan_goals_html(workplan_goals):
         grp = act["id"].split(".")[0]
         groups.setdefault(grp, []).append(act)
 
-    html = '''        <div class="workplan-goals-section" style="margin:2.5rem 0;">
+    stamp_html = ""
+    if data_source_stamp:
+        stamp_html = (
+            f'<p style="color:#888;font-size:0.75rem;margin:-0.75rem 0 1.25rem 0;">'
+            f'Data as of {data_source_stamp}'
+            f'</p>'
+        )
+    html = f'''        <div class="workplan-goals-section" style="margin:2.5rem 0;">
             <h2 style="color:#0A2240;margin-bottom:0.5rem;">Annual Workplan Goals & Stretch Targets</h2>
             <p style="color:#666;font-size:0.85rem;margin-bottom:1.5rem;">Five-year trajectory from the CCCCO CPL Workplan — Goal and Stretch targets per activity per year.</p>
+            {stamp_html}
 '''
 
     for grp_num in sorted(groups.keys()):
@@ -6332,6 +6346,130 @@ def build_workplan_goals_from_projects(projects, live_data=None):
     return workplan_goals, annual_goals
 
 
+def _natural_activity_sort_key(activity_id: str):
+    """Natural sort key: '3.1.10' > '3.1.2', '3.1.2a' > '3.1.2'."""
+    parts = []
+    for p in str(activity_id).split("."):
+        digit = "".join(c for c in p if c.isdigit())
+        alpha = "".join(c for c in p if not c.isdigit())
+        parts.append((int(digit) if digit else 0, alpha))
+    return parts
+
+
+def build_workplan_goals_from_supabase(supabase_rows, projects, live_data=None):
+    """
+    Build the workplan-goals + annual-goals dashboard structures from the
+    Supabase public.workplan_goals table (Phase 1 source-of-truth). Replaces
+    build_workplan_goals_from_projects() once the seed has landed and PR-4
+    flips the read path.
+
+    Activity set is data-driven (A+: whatever Supabase contains, naturally
+    sorted). The renderer's old hardcoded core_ids list is retired.
+
+    `projects` is still used to look up Excel `kpi_metric` per activity for
+    the "Current" column in annual_goals (Phase 2 migrates project metadata
+    to Supabase; until then, kpi_metric stays Excel-sourced).
+
+    Returns (workplan_goals, annual_goals) — same shape as
+    build_workplan_goals_from_projects so the render functions don't change.
+    """
+    year_keys = [
+        ("2025-26", "yr_2025_26"),
+        ("2026-27", "yr_2026_27"),
+        ("2027-28", "yr_2027_28"),
+        ("2028-29", "yr_2028_29"),
+        ("2029-30", "yr_2029_30"),
+    ]
+
+    activity_labels = {
+        "1": "Activity 1: Build AI-Enhanced CPL Infrastructure",
+        "2": "Activity 2: Faculty Workgroups & Credit Recommendations",
+        "3": "Activity 3: Build CPL Data Infrastructure",
+        "4": "Activity 4: Sprints, Projects, Partnerships & Scale",
+        "5": "Activity 5: Strategic Initiatives & Special Projects",
+    }
+
+    proj_map = {p["id"]: p for p in projects}
+
+    # Group Supabase rows by activity_id → {"name": str, "GOAL": row, "STRETCH": row}
+    by_aid: dict[str, dict] = {}
+    for row in supabase_rows:
+        aid = row.get("activity_id")
+        if not aid:
+            continue
+        bucket = by_aid.setdefault(aid, {"name": row.get("name") or ""})
+        bucket[row["row_type"]] = row
+        if not bucket["name"]:
+            bucket["name"] = row.get("name") or ""
+
+    workplan_goals = []
+    annual_goals = []
+
+    for aid in sorted(by_aid.keys(), key=_natural_activity_sort_key):
+        data = by_aid[aid]
+        goal_row = data.get("GOAL") or {}
+        stretch_row = data.get("STRETCH") or {}
+        if not goal_row and not stretch_row:
+            continue  # Defensive — every activity should have both row_types
+
+        def _num(v):
+            try:
+                return float(v) if v is not None else 0.0
+            except (TypeError, ValueError):
+                return 0.0
+
+        goal_values = [_num(goal_row.get(k)) for _label, k in year_keys]
+        stretch_values = [_num(stretch_row.get(k)) for _label, k in year_keys]
+        goal_total = sum(goal_values)
+        stretch_total = sum(stretch_values)
+
+        goal_dict = {label: v for (label, _k), v in zip(year_keys, goal_values)}
+        stretch_dict = {label: v for (label, _k), v in zip(year_keys, stretch_values)}
+        current_dict = {label: 0 for label, _k in year_keys}
+
+        # kpi_metric ("Current" column) still sourced from Excel until Phase 2
+        excel_project = proj_map.get(aid, {})
+        current_metric_raw = excel_project.get("kpi_metric", 0)
+        try:
+            current_metric = float(str(current_metric_raw).replace(",", "")) if current_metric_raw not in (None, "") else 0.0
+        except (TypeError, ValueError):
+            current_metric = 0.0
+        current_dict["2025-26"] = current_metric
+        current_dict["total"] = current_metric
+
+        # Activity group label
+        act_num = aid.split(".")[0]
+        act_label = activity_labels.get(act_num, f"Activity {act_num}")
+
+        # Percentage detection: all non-zero values in (0,1)
+        is_pct = bool(goal_values) and all(0 < v < 1 for v in goal_values if v)
+
+        workplan_goals.append({
+            "id": aid,
+            "name": data["name"],
+            "is_percentage": is_pct,
+            "years": [label for label, _k in year_keys],
+            "goal": goal_values,
+            "goal_total": goal_total,
+            "stretch": stretch_values if stretch_values else [0] * 5,
+            "stretch_total": stretch_total,
+        })
+
+        goal_dict["total"] = goal_total
+        stretch_dict["total"] = stretch_total
+        annual_goals.append({
+            "id": aid,
+            "name": data["name"],
+            "activity": act_label,
+            "goal": goal_dict,
+            "current": current_dict,
+            "stretch": stretch_dict,
+        })
+
+    print(f"  Built {len(workplan_goals)} workplan goal rows from Supabase")
+    return workplan_goals, annual_goals
+
+
 def read_budget_plan(wb):
     """
     Read comprehensive budget and expenditure data from the "20260324 CPL Budget" tab.
@@ -6963,9 +7101,20 @@ def main():
             print(f"  Could not save KPI_Config sheet ({e}); using defaults")
     kpi_params = read_kpi_parameters(wb)
 
-    # Build workplan goals & annual goals from the Project List tab
-    # (no longer needs the old 'Annual Workplan Goals' sheet)
-    workplan_goals, annual_goals = build_workplan_goals_from_projects(projects, live_data)
+    # Build workplan goals & annual goals from Supabase (Phase 1 source-of-truth,
+    # PR-4). Snapshot fallback at kb/workplan_goals_snapshot.json covers
+    # Supabase outages; subtle "as of YYYY-MM-DD" stamp in the rendered tab
+    # signals staleness. kpi_metric for the "Current" column still comes from
+    # Excel until Phase 2 migrates project metadata.
+    try:
+        from kb._load_workplan_goals import load_workplan_goals as _load_wpg
+    except ImportError:
+        sys.path.insert(0, os.path.join(os.path.dirname(__file__), "kb"))
+        from _load_workplan_goals import load_workplan_goals as _load_wpg
+    wpg_rows, wpg_fetched_at, wpg_source = _load_wpg()
+    workplan_goals, annual_goals = build_workplan_goals_from_supabase(
+        wpg_rows, projects, live_data
+    )
 
     # Auto-create attachment subfolders for new activities/projects
     new_folders = ensure_attachment_subfolders(att_dir, projects)
@@ -7484,7 +7633,9 @@ def main():
                 print(f"  Rendered Workplan Activity Metrics ({sum(len(g['kpis']) for g in activity_kpis)} sub-activities, inside Workplan Activities & Projects)")
 
             # ── Inject the Annual Workplan Goals section before Projects Grid ──
-            workplan_goals_html = render_workplan_goals_html(workplan_goals)
+            workplan_goals_html = render_workplan_goals_html(
+                workplan_goals, data_source_stamp=wpg_fetched_at
+            )
             if workplan_goals_html:
                 # Insert before the Projects Grid marker
                 wg_marker = '<!-- Projects Grid -->'
