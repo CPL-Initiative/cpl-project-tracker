@@ -1,7 +1,7 @@
 ---
 title: Excel → Supabase Migration — Workstream Lessons
 date: 2026-05-28
-tags: [excel-to-supabase, workplan-goals, phase-1, migration, source-of-truth, lessons]
+tags: [excel-to-supabase, workplan-goals, projects, phase-1, phase-2, migration, source-of-truth, lessons]
 artifacts:
   - kb/_validate_workplan_goals.py
   - kb/_seed_workplan_goals.py
@@ -759,4 +759,92 @@ decisions. Then PR-1 (validator + snapshots) ships on a fresh branch
 mirroring `kb/_validate_workplan_goals.py`. Expected initial diff:
 27 missing + 0 mismatches + 0 orphans (Supabase `projects` table is
 empty today).
+
+---
+
+## 2026-05-28 — Session 15 (Bruh Parallax)
+
+Picked up the Bruh Sonnet handoff: fix the vault sync, lock the six Phase 2
+forks, ship Phase 2. Ran the work as **parallel lanes** — background sub-agents
+for the build-surface survey + the vault fix + the core_ids draft, while the
+main thread drove Phase 2 PR-1→3. Sam locked all six forks ("accept all") in
+one `AskUserQuestion` round and green-lit the live apply.
+
+### What shipped
+
+- **PR #178 — vault-sync repoint.** `$vaultRoot` → `Documents\GitHub\COG-second-brain`
+  (Bruh Sonnet root-caused it; this session fixed it). Playbook gained the
+  Windows cutover steps. `setup-task-scheduler.ps1` untouched (resolves the
+  sync script via `$PSScriptRoot`).
+- **PR #180 — core_ids auto-derive** (handoff carryover #3). `build_activity_kpis()`
+  now derives `core_ids` via the A+ rule + module-level `SPRINT_IDS=['4.1.1'..'4.1.4']`;
+  fixed the stale `4.1a→4.1.1` in `pid_to_kpi_key`. Activity 5 renders (5.1),
+  the 4.1 sprint composite counts 4, Activity 3 goes 6→9 cards.
+- **Phase 2 PR-1/2/3** (#179/#181/#182) — validator + seed plan + apply
+  artifacts, mirroring Phase 1. RLS tighten applied live via MCP.
+
+### Lessons
+
+1. **Measure-first earns its keep — again.** The Phase 2 scope doc asserted the
+   projects-table unit = the workplan_goals A+ rule (non-zero KPI) → 27. A
+   ~30-line measurement against the real Excel showed the projects table needs
+   **all 34 real projects** — the A+ filter would have silently dropped 7
+   qualitative Activity-5 projects (`5.2`-`5.8`) that ARE grid cards. **The
+   derivation UNIT is table-specific: it follows what the table FEEDS, not the
+   prior phase's filter.** Surfaced to Sam → "keep the zero-KPI cards." (Folded
+   into the measure-first playbook as a step-3 caution.)
+2. **RLS: tighten before exposing; the service key bypasses it.** `public.projects`
+   carried the same loose `Allow auth write` (ALL `using(true)`) that workplan_goals
+   had pre-Phase-1 — anyone with the public anon key could write. Mirror the
+   gated shape (`is_allowed_reviewer()` I/U/D, public SELECT) **before** the
+   table is seeded + exposed. The seed's `service_role` key bypasses RLS, so the
+   seed works either way — but the table must never sit seeded + write-open.
+   Applied via MCP `apply_migration` (one-shot-DDL path); the per-row seed uses
+   the workflow. (Folded into the playbook as step 4b.)
+3. **Seeding ≠ cutover.** Seeding the Supabase table is low-risk because the
+   generator still reads Excel until PR-4. The write threshold (live DB write +
+   schema migration) is real; the *user-facing* threshold is PR-4. Separate them
+   in the human's mental model when asking for the go.
+4. **A worktree sub-agent can land on a stale base.** The core_ids background
+   agent drafted against the 2026-05-25 code state (its worktree base), where
+   `build_workplan_goals_from_projects` still existed (PR #167 had deleted it on
+   main). Its root-cause + fix approach were sound, but I re-implemented against
+   fresh main rather than merging its branch. **Treat a sub-agent's diff as a
+   proposal; re-apply against current main.**
+5. **`merge ≠ apply`.** PR-3 lands the apply script + workflow + RLS SQL but
+   applies nothing on merge — the seed is a manual `workflow_dispatch`, the RLS
+   a deliberate MCP call. Keep the §8 human gate at the irreversible step, not
+   the PR button. (Auto-merged the mechanical vault fix on green; held the
+   visible-output core_ids change for Sam's nod — calibrate the merge bar to
+   blast radius.)
+
+### Current state
+
+- **Vault:** repointed in-repo (PR #178). **Sam still owes the Windows-side
+  cutover** — clone into `Documents\GitHub\COG-second-brain`, re-run
+  `setup-task-scheduler.ps1`, archive orphan clones (steps in the playbook).
+- **core_ids:** fixed; lands on the dashboard at the next daily cron regen.
+- **Phase 2:** PR-1/2/3 merged; RLS tightened + verified live on `public.projects`
+  (4 policies, loose one gone). **The 34-row seed is PENDING Sam's
+  `workflow_dispatch`** of "Projects Phase 2 — Seed Apply".
+- `public.projects`: empty, RLS-gated, ready to seed. Nothing reads it yet
+  (generator reads Excel until PR-4).
+
+### Strategic roadmap
+
+- **Immediate:** Sam dispatches the seed workflow → 34 rows land under V1-V4 +
+  receipts under `kb/projects_seed_out/<date>/`. Verify (count=34, validator green).
+- **PR-4 (next threshold):** generator reads Supabase + snapshot fallback — the
+  actual dashboard cutover. Joins `workplan_goals kind='project'` for the
+  KPI-ladder contract so the 3 JS report consumers see no change. "Data as of"
+  stamp + `kb/_load_projects.py` (mirror `kb/_load_workplan_goals.py`).
+- **PR-5/6:** inline editor (mirror `workplan_goals.js`) + retire `read_projects()`.
+- **Phases 3-5:** Budget / Vision 2030 / Personnel — same five-step shape + the
+  RLS-tighten step. Personnel already has 26 rows (its PR-3 has UPDATEs, not
+  just INSERTs).
+
+### Next concrete step
+
+Sam dispatches "Projects Phase 2 — Seed Apply" (Actions → Run workflow → `main`).
+On green: verify the 34 rows + validator, then scope PR-4 (the cutover).
 

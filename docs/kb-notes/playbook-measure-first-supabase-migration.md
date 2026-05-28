@@ -1,7 +1,7 @@
 ---
 title: Measure-first Supabase migration playbook
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-05-28 (Phase 2 — RLS-tighten step + derivation-unit caution added, Session 15 Bruh Parallax)
 tags: [playbook, supabase, migration, source-of-truth, apply-gates]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -64,6 +64,16 @@ Replace any hardcoded lists with auto-derivation from the data
 (`derive_<topic>_from_<source>()`). The renderer learns from data — future
 additions appear automatically.
 
+**Caution — the derivation UNIT is table-specific.** Don't blindly reuse the
+prior phase's derivation filter. Phase 1 (workplan_goals) used an "A+" rule
+(every row with a non-zero KPI ladder) because that table is *about* KPI
+ladders. Phase 2 (projects) inherited that assumption from the scope doc (→ 27),
+but the projects table feeds *every dashboard card*, so its unit is **all real
+rows** (→ 34) — the A+ filter would have silently dropped 7 qualitative
+projects. The unit follows **what the table feeds**, not the previous
+migration. Measure it against the real source (a ~30-line script) before
+locking the seed.
+
 A `kb/_seed_<topic>.py` script computes the per-row INSERT / UPDATE / DELETE
 plan against the current Supabase state and emits a markdown plan
 (`kb/<topic>_seed_plan.md`). **No writes** in this PR. Sam (or the human
@@ -89,6 +99,28 @@ Apply log + plan snapshot land under `kb/<topic>_seed_out/<date>/` for
 forensics. Concurrency group `daily-dashboard` on the workflow serializes
 against the daily cron so the generator never reads a partially-applied
 Supabase state.
+
+### 4b. Tighten RLS before exposing the seeded table
+
+A migrated source-of-truth table the public dashboard reads must never sit
+seeded + write-open. Mirror the gated RLS shape of an already-migrated table
+(in this project: `public.workplan_goals` — public `SELECT` + `is_allowed_reviewer()`-gated
+`INSERT`/`UPDATE`/`DELETE`). Empty tables in this DB ship with a loose
+`"Allow auth write" ALL using(true)` policy that lets **anyone with the public
+anon key write** — drop it, add the three gated policies, keep public read.
+
+Two facts that set the order:
+- The seed's **`service_role` key bypasses RLS**, so the seed works before OR
+  after the tighten — but apply the tighten **first** so the table is never
+  seeded + write-open.
+- RLS is **one-shot DDL** → apply via the Supabase MCP `apply_migration` (the
+  schema-migration path), NOT the per-row `workflow_dispatch`. The gated
+  policies only bind browser/anon writes (the future inline editor) — exactly
+  what the editor PR needs.
+
+Commit the migration SQL (`kb/supabase_<table>_rls_tighten.sql`) for the audit
+trail even though it's applied via MCP, mirroring how the apply script is
+committed even though it runs in CI.
 
 ### 5. Generator switch + snapshot fallback PR
 
@@ -122,6 +154,13 @@ End-to-end synthetic test pattern (monkey-patched HTTP layer + 30-line
 round-trip verification) caught nothing in Phase 1 but gave confidence
 before workflow_dispatch. The same template will catch real bugs in Phases
 2-4 where the schema is more elaborate.
+
+**Phase 2 (projects, Session 15, Bruh Parallax) confirmed the shape
+generalizes:** PRs #179 (validator) / #181 (dry-run) / #182 (apply + RLS)
+shipped in one session; the same V1-V4 gates applied with V3 = `len(derived)`
+(one row per project — no GOAL/STRETCH multiplier). Two Phase-2 additions fed
+back into this playbook: the **RLS-tighten step (4b)** and the
+**derivation-unit caution (step 3)**.
 
 ## When this applies (and when it doesn't)
 
