@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-28T18:53:49.387Z",
+  "scraped_at": "2026-05-28T23:52:53.506Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -518,17 +518,17 @@
         },
         {
           "college": "Mission College",
-          "students": 126,
-          "units": 756,
-          "avgUnits": 6,
+          "students": 134,
+          "units": 750,
+          "avgUnits": 5.597014925373134,
           "transcriptionRate": 0.8,
-          "avgTranscribed": 0.047619047619047616,
+          "avgTranscribed": 0.04477611940298507,
           "criteriaMetCount": 1,
-          "militaryStudents": 126,
+          "militaryStudents": 134,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 1307880,
-          "yearImpact": 4586652,
+          "savings": 1297500,
+          "yearImpact": 4550250,
           "transcribedUnits": 6
         },
         {
@@ -833,15 +833,15 @@
         },
         {
           "college": "Los Medanos College",
-          "students": 230,
+          "students": 232,
           "units": 45,
-          "avgUnits": 0.1956521739130435,
+          "avgUnits": 0.1939655172413793,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 229,
-          "nonMilitaryStudents": 1,
-          "apprenticeStudents": 0,
+          "nonMilitaryStudents": 3,
+          "apprenticeStudents": 2,
           "savings": 77850,
           "yearImpact": 273015,
           "transcribedUnits": 0
@@ -878,13 +878,13 @@
         },
         {
           "college": "Citrus College",
-          "students": 197,
+          "students": 198,
           "units": 776,
-          "avgUnits": 3.9390862944162435,
+          "avgUnits": 3.919191919191919,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 197,
+          "militaryStudents": 198,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 1342480,
@@ -1118,13 +1118,13 @@
         },
         {
           "college": "Irvine Valley College",
-          "students": 103,
+          "students": 104,
           "units": 300,
-          "avgUnits": 2.912621359223301,
+          "avgUnits": 2.8846153846153846,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 101,
+          "militaryStudents": 102,
           "nonMilitaryStudents": 2,
           "apprenticeStudents": 0,
           "savings": 519000,
@@ -1757,19 +1757,19 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "46,045",
+      "value": "46,057",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,099"
+          "value": "24,109"
         },
         {
           "label": "Workforce/Other",
-          "value": "22,022"
+          "value": "22,024"
         },
         {
           "label": "Apprentice",
-          "value": "747"
+          "value": "749"
         }
       ]
     },
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 46045,
-    "Units": 207384.65000000002,
+    "Students": 46057,
+    "Units": 207378.65000000002,
     "TranscribedUnits": 98841.45,
-    "Savings": 292024317.75,
-    "YearImpact": 1169218069.9,
-    "MilitaryStudents": 24099,
-    "NonMilitaryStudents": 22022,
-    "AprenticeStudents": 747,
-    "AverageUnits": 4.503955912694104,
-    "TranscribedAverage": 2.1466272125095016
+    "Savings": 292013937.75,
+    "YearImpact": 1169181667.9,
+    "MilitaryStudents": 24109,
+    "NonMilitaryStudents": 22024,
+    "AprenticeStudents": 749,
+    "AverageUnits": 4.502652148424779,
+    "TranscribedAverage": 2.1460679158434113
   }
 }
