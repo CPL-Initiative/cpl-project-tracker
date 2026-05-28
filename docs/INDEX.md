@@ -41,6 +41,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [ADR — Supersede, don't mutate, at the synthetic identity layer](kb-notes/adr-supersede-dont-mutate-synthetic-layer.md) | adr | published | 2026-05-27 | 2026-05-27 |
 | [Methodology — Two-mode sync (safe Mode A vs identity-touching Mode B)](kb-notes/methodology-two-mode-sync.md) | methodology | published | 2026-05-27 | 2026-05-27 |
 | [Methodology — Derive whitelists from rendered DOM, not hardcoded lists](kb-notes/methodology-derive-from-dom.md) | methodology | published | 2026-05-27 | 2026-05-27 |
+| [Methodology — Snapshot-with-stamp fallback for live-data dependencies](kb-notes/methodology-snapshot-with-stamp-fallback.md) | methodology | published | 2026-05-28 | 2026-05-28 |
 | [Playbook — Auto-sync vault-side repo clones via Windows Task Scheduler](kb-notes/playbook-vault-sync-setup.md) | playbook | published | 2026-05-27 | 2026-05-27 |
 | [Playbook — Measure-first Supabase migration (snapshot → validate → dry-run → workflow_dispatch apply → cutover)](kb-notes/playbook-measure-first-supabase-migration.md) | playbook | published | 2026-05-28 | 2026-05-28 |
 | [Reference — Windows PowerShell scripting gotchas (PS 5.1 + Task Scheduler)](kb-notes/reference-windows-powershell-gotchas.md) | reference | published | 2026-05-27 | 2026-05-27 |
