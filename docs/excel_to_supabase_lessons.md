@@ -643,3 +643,120 @@ If continuing this workstream: Phase 2 entry point — projects table.
 Same 5-step playbook applies. Otherwise the Activity↔Project model
 is a clean stopping point.
 
+## 2026-05-28 — Session 14 (Bruh Sonnet), checkpoint after the "3 D items"
+
+### What's been learned since PR-C
+
+After PR-A/B/C closed the Activity↔Project triplet, Sam pushed into three
+follow-on items in one continuous session: (1) the Activity-KPI cards
+label cleanup, (2) a bug-hunt of the Activity↔Project work, (3) Phase 2
+scoping. All three shipped before the checkpoint.
+
+**20. The "open follow-up" line in a PR row IS the next session's
+TODO.** PR-B's CLAUDE.md row carried an "Open follow-up" note about
+`build_activity_kpis()`'s second hardcoded `activity_labels` dict. When
+Sam said "let's push the 3 D items", that line was waiting. Lesson: the
+follow-up note on the PR row should be detailed enough that the next
+session (or even Future Me) doesn't have to re-derive the scope —
+including the specific file:line where the bug lives and what the fix
+looks like. PR-B's row did this correctly; PR #173 ate the follow-up in
+~5 minutes because the scope was pre-written.
+
+**21. Cleanup PRs surface NEW pre-existing bugs.** Fixing the
+`activity_labels` dict revealed that `core_ids` in the same function is
+ALSO stale — doesn't include `5.1`, uses `4.1a-d` instead of
+`4.1.1-4.1.4`. Same family as the renderer bug Bruh Baker surfaced in
+Phase 1 PR-1's drift report. Documented as "still open (separate
+pre-existing bug)" on the PR-173 row rather than scope-creeping the
+cleanup. Lesson: when a small cleanup uncovers a structurally similar
+but larger bug, name it on the same PR row so it doesn't get lost — but
+don't ship the larger fix in the small PR.
+
+**22. Background bug-hunt agents earn their cost when the changes are
+small.** Spawned a general-purpose code-review agent to bug-hunt
+PR-A/B/C/cleanup while I started the Phase 2 scoping doc in parallel.
+3.5 minutes of agent time produced 9 findings; 3 were real, 6 were
+dismissed with reasoning. The XSS-via-`title=""` finding was the
+highest-impact one and would have been easy to miss in a manual re-read
+because it was a PR-B-introduced regression at a renderer site that had
+been safe before curators became writers. Lesson: when a multi-PR
+workstream lands in one session, a focused bug-hunt agent immediately
+after is a high-yield discipline. Cheap (~$0.50 of tokens) vs the cost
+of an XSS in a public dashboard.
+
+**23. HTML escape audits need to cover EVERY rendered site, not just
+the one the agent flagged.** The agent identified the `title=""`
+attribute as the highest-impact XSS vector. Reading the same renderer
+carefully, there were FIVE MORE sites where the same Supabase-sourced
+name landed in the visible cell body or group header. Same risk class,
+lower realistic exploitability (attribute injection slightly easier
+than tag injection, but both bad). Fixing only the agent's flagged site
+would have been an incomplete fix. Lesson: when an XSS audit finds one
+hole in a renderer, do a sweep over the whole renderer — same data
+source, same risk class, same fix. Codified as the
+`methodology-xss-audit-on-curator-editable-fields` KB note.
+
+**24. Naming-collision gotcha: `import html` shadowed by local `html`
+output variable.** The first iteration of the XSS fix used
+`html.escape(...)` directly. The function builds its rendered output in
+a local variable named `html`, which shadowed the import.
+`'str' object has no attribute 'escape'` at runtime. Fixed by
+`from html import escape as html_escape`. Lesson: when adding a stdlib
+import to a long-existing file, grep for local variable names that
+match the module name first. Aliasing via `as html_escape` is the safe
+fallback.
+
+### Current state
+
+**Phase 1 + Activity↔Project triplet + cleanup + bug fixes all shipped
+(PRs #162-#174).** Phase 2 scoped (PR #175). The Workplan Goals tab is
+end-to-end Supabase-native with first-class Activities, N-to-N
+associations, chips, the add-flow modal, and XSS-safe rendering.
+
+The only outstanding loose end for the Workplan Goals work is the
+**Activity 5 KPI cards still don't appear** on the dashboard — because
+the `core_ids` list inside `build_activity_kpis()` is hardcoded and
+doesn't include `5.1`. Same family as the Phase 1 drift Bruh Baker
+caught. Out of scope for today's session; fix is to auto-derive
+`core_ids` from the projects list (the A+ derivation pattern).
+
+### Strategic roadmap
+
+**Phase 2 is fully scoped + ready to go.** The 6 forks at the bottom of
+`docs/kb-notes/phase-2-projects-migration-scope.md` need Sam to lock
+before PR-1 ships. The forks are:
+
+1. `start_date`/`end_date` parser strictness
+2. `budget` as text vs numeric
+3. `status` enum vs free-form
+4. `override`/`excel_row` drop confirmation
+5. JS contract — `kpi_target_2026`/`kpi_target_2030`
+6. RLS shape (mirror `kb_curation` / `workplan_goals`)
+
+After the forks lock, the 5-step PR plan mirrors Phase 1 exactly:
+validator → dry-run → apply → generator switch + snapshot → editor →
+retire dead code. Cost estimate: 6-7 PRs, one focused session.
+
+Phase 3-5 (Budget / Vision 2030 / Personnel) follow the same template
+sequentially.
+
+### Parked
+
+  - **`build_activity_kpis()` `core_ids` auto-derivation** — surfaces
+    Activity 5 KPI cards + fixes the `4.1a-d` vs `4.1.1-4.1.4`
+    mismatch. Auto-derive from projects list using the A+ pattern.
+  - **Excel KPI ladder column retirement** — needs all three JS
+    consumers (`generate_reports.js`, `report_generator.js`,
+    `college_report_generator.js`) to migrate first.
+  - **PR-D** — separate Workplan Goals tab. Parked unless curator
+    usage signals demand.
+
+### Next concrete step
+
+Sam reviews the six forks in
+`docs/kb-notes/phase-2-projects-migration-scope.md` and locks the
+decisions. Then PR-1 (validator + snapshots) ships on a fresh branch
+mirroring `kb/_validate_workplan_goals.py`. Expected initial diff:
+27 missing + 0 mismatches + 0 orphans (Supabase `projects` table is
+empty today).
+
