@@ -3,11 +3,19 @@ Validate parity between the Excel-derived workplan-goals ladder and the Supabase
 public.workplan_goals table — the Phase 1 read-only diff that has to land green
 before we cut excel_to_dashboard.py over to Supabase as source-of-truth.
 
+Excel-side derivation ("A+" rules; Sam's call 2026-05-28):
+  * Auto-discover every project in the Project List with at least one non-zero
+    KPI cell (kpi_goal_* or kpi_stretch_*)
+  * Exclude `D.*` dashboard-metric rows (they carry KPI ladders but are not
+    workplan-goal-class entries)
+  * No parent/child aggregation — each project is its own row. `4.1` renders as
+    itself, `4.1.1`-`4.1.4` each render as themselves. The renderer's old
+    hardcoded `core_ids` list retires.
+
 What it checks:
-  * Coverage      — every Excel core_id has both a GOAL and a STRETCH row in Supabase
+  * Coverage      — every A+-derived activity has both a GOAL and a STRETCH row in Supabase
   * Value parity  — for overlapping (activity_id, row_type), every year column matches
-  * Orphans       — Supabase rows whose activity_id is not in Excel's core_ids
-  * Aggregation   — Excel's 4.1 is the SUM of 4.1a-4.1d sprint rows; compared as the sum
+  * Orphans       — Supabase rows whose activity_id is not in A+-derived set
 
 Auth:
   * SUPABASE_URL          (default https://hvuwhnbuahrtptokpqfh.supabase.co)
@@ -50,16 +58,6 @@ COL_KPI_G2627, COL_KPI_S2627 = 22, 23
 COL_KPI_G2728, COL_KPI_S2728 = 24, 25
 COL_KPI_G2829, COL_KPI_S2829 = 26, 27
 COL_KPI_G2930, COL_KPI_S2930 = 28, 29
-
-# Core sub-activity IDs in the rendered workplan goals — mirror
-# build_workplan_goals_from_projects() in excel_to_dashboard.py.
-CORE_IDS = [
-    "1.1", "1.2", "1.3", "1.4",
-    "2.1", "2.2", "2.3", "2.4",
-    "3.1", "3.2", "3.3", "3.4", "3.5", "3.6",
-    "4.1", "4.2", "4.3", "4.4", "4.5",
-]
-SPRINT_IDS = ["4.1a", "4.1b", "4.1c", "4.1d"]  # 4.1 aggregates these
 
 YEAR_COLS = [
     ("yr_2025_26", "2025-26", COL_KPI_G2526, COL_KPI_S2526),
@@ -119,51 +117,39 @@ def read_supabase_json(path: Path) -> list[dict]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def read_excel_ladder() -> dict[str, dict[str, dict[str, float]]]:
+def derive_excel_workplan_goals() -> dict[str, dict[str, dict[str, float]]]:
     """
-    {pid: {"name": str, "GOAL": {yr_key: val, ...}, "STRETCH": {yr_key: val, ...}}}
+    A+ derivation of the workplan-goals set from the canonical Excel.
 
-    Covers CORE_IDS only. For 4.1, sums 4.1a-d. Reads from the canonical Excel.
+    Returns {pid: {"name": str, "GOAL": {yr_key: val}, "STRETCH": {yr_key: val}}}
+
+    Rules:
+      - Read every row in Project List (starting row 4)
+      - Skip rows whose id starts with "D." (dashboard KPI metric rows)
+      - Include the row only if at least one of its 10 KPI cells is non-zero
+      - No aggregation, no parent suppression — each project is its own row
     """
     wb = load_workbook(EXCEL_PATH, data_only=True)
     ws = wb["Project List"]
 
-    by_pid: dict[str, dict] = {}
+    out: dict[str, dict] = {}
     for r in range(4, ws.max_row + 1):
         pid = ws.cell(r, COL_ID).value
         if not pid:
             break
         pid_s = str(pid).strip()
+        if pid_s.startswith("D."):
+            continue
         name = ws.cell(r, COL_NAME).value or ""
         goal_row = {}
         stretch_row = {}
         for yr_key, _yr_label, g_col, s_col in YEAR_COLS:
             goal_row[yr_key] = parse_num(ws.cell(r, g_col).value)
             stretch_row[yr_key] = parse_num(ws.cell(r, s_col).value)
-        by_pid[pid_s] = {"name": str(name), "GOAL": goal_row, "STRETCH": stretch_row}
-
-    # Project the readable Excel rows onto CORE_IDS, summing the sprint kids into 4.1.
-    out: dict[str, dict] = {}
-    for pid in CORE_IDS:
-        if pid == "4.1":
-            sprints = [by_pid[sid] for sid in SPRINT_IDS if sid in by_pid]
-            if not sprints:
-                continue
-            goal_sum = {k: sum(s["GOAL"][k] for s in sprints) for k, *_ in YEAR_COLS}
-            stretch_sum = {
-                k: sum(s["STRETCH"][k] for s in sprints) for k, *_ in YEAR_COLS
-            }
-            out[pid] = {
-                "name": "Sprints (Veteran, Apprenticeship, Adoption, 29 Palms)",
-                "GOAL": goal_sum,
-                "STRETCH": stretch_sum,
-                "_aggregated_from": SPRINT_IDS,
-            }
-        else:
-            if pid not in by_pid:
-                continue
-            out[pid] = by_pid[pid]
-    return out, by_pid  # also return the raw map for orphan reporting
+        if not any(goal_row.values()) and not any(stretch_row.values()):
+            continue
+        out[pid_s] = {"name": str(name), "GOAL": goal_row, "STRETCH": stretch_row}
+    return out
 
 
 def reshape_supabase(rows: list[dict]) -> dict[str, dict[str, dict[str, float]]]:
@@ -246,7 +232,7 @@ def fmt_num(v: float) -> str:
 
 
 def render_report(
-    excel: dict, supabase: dict, matches, mismatches, missing, orphans, raw_excel
+    excel: dict, supabase: dict, matches, mismatches, missing, orphans
 ) -> str:
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     in_sync = not (mismatches or missing or orphans)
@@ -269,20 +255,20 @@ def render_report(
     lines.append("")
     lines.append("## Summary")
     lines.append("")
-    lines.append(f"- Excel core sub-activities: **{len(excel)}** of {len(CORE_IDS)} expected")
+    lines.append(f"- Excel A+-derived sub-activities (non-zero ladder, excl. D.*): **{len(excel)}**")
     lines.append(f"- Supabase rows: **{len(supabase)}** distinct activity_ids")
     lines.append(f"- Matches (GOAL+STRETCH × 5 years agree): **{len(matches)}**")
     lines.append(f"- Mismatches (overlapping rows that disagree): **{len(mismatches)}**")
-    lines.append(f"- Missing in Supabase (Excel CORE_IDS without a Supabase row): **{len(missing)}**")
-    lines.append(f"- Orphans in Supabase (rows whose activity_id isn't in Excel CORE_IDS): **{len(orphans)}**")
+    lines.append(f"- Missing in Supabase (A+ sub-activities without a Supabase row): **{len(missing)}**")
+    lines.append(f"- Orphans in Supabase (rows whose activity_id isn't in the A+ set): **{len(orphans)}**")
     lines.append("")
 
     # Missing
     if missing:
         lines.append("## Missing in Supabase")
         lines.append("")
-        lines.append("Excel core sub-activities that have no row in `workplan_goals`. "
-                     "These have to be seeded before Supabase can become source of truth.")
+        lines.append("A+-derived sub-activities that have no row in `workplan_goals`. "
+                     "These will be INSERTed by the seed step before Supabase can become source of truth.")
         lines.append("")
         lines.append("| activity_id | name | reason |")
         lines.append("|---|---|---|")
@@ -298,9 +284,8 @@ def render_report(
         lines.append("## Orphans in Supabase")
         lines.append("")
         lines.append("Supabase `workplan_goals` rows whose `activity_id` is NOT in "
-                     "Excel's `CORE_IDS` list. Either the renderer needs to learn "
-                     "about these (e.g. add to CORE_IDS), or the rows should be "
-                     "removed from Supabase.")
+                     "the A+-derived set. The seed step will DELETE these so "
+                     "Supabase matches Excel exactly.")
         lines.append("")
         lines.append("| activity_id | name |")
         lines.append("|---|---|")
@@ -317,15 +302,8 @@ def render_report(
                      "drift; you decide which side wins per row.")
         lines.append("")
         for mm in mismatches:
-            agg_note = ""
-            ex_entry = excel.get(mm["activity_id"], {})
-            if ex_entry.get("_aggregated_from"):
-                agg_note = (
-                    f" *(Excel value is the sum of "
-                    f"{', '.join(ex_entry['_aggregated_from'])})*"
-                )
             lines.append(
-                f"### `{mm['activity_id']}` — {mm['name']} — {mm['row_type']}{agg_note}"
+                f"### `{mm['activity_id']}` — {mm['name']} — {mm['row_type']}"
             )
             lines.append("")
             lines.append("| year | Excel | Supabase | Δ |")
@@ -351,15 +329,13 @@ def render_report(
     lines.append("## How to read this")
     lines.append("")
     lines.append(
-        "- **Missing** rows have to be seeded into Supabase before cutover."
+        "- **Missing** rows will be INSERTed by `kb/_seed_workplan_goals.py`."
     )
     lines.append(
-        "- **Mismatches** need a per-row decision: which side is canonical? "
-        "Pick, update the loser to match, re-run this validator until clean."
+        "- **Mismatches** will be UPDATEd by the seed step (Excel A+ wins by construction)."
     )
     lines.append(
-        "- **Orphans** suggest the renderer is missing sub-activities, OR "
-        "Supabase has stale rows. Decide per orphan."
+        "- **Orphans** will be DELETEd by the seed step (Excel A+ is the source of truth)."
     )
     lines.append("")
     lines.append("Re-run: `python3 kb/_validate_workplan_goals.py`")
@@ -382,18 +358,16 @@ def main():
     else:
         rows = fetch_supabase_rows()
 
-    excel, raw_excel = read_excel_ladder()
+    excel = derive_excel_workplan_goals()
     supabase = reshape_supabase(rows)
     matches, mismatches, missing, orphans = compare_rows(excel, supabase)
 
-    report = render_report(
-        excel, supabase, matches, mismatches, missing, orphans, raw_excel
-    )
+    report = render_report(excel, supabase, matches, mismatches, missing, orphans)
     OUT_PATH.write_text(report, encoding="utf-8")
 
     print(f"wrote {OUT_PATH.relative_to(REPO_ROOT)}")
     print(
-        f"  excel core_ids: {len(excel)} / {len(CORE_IDS)}; "
+        f"  excel A+ activities: {len(excel)}; "
         f"supabase activity_ids: {len(supabase)}"
     )
     print(
