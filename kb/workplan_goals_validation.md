@@ -14,36 +14,36 @@ related:
 
 ## Summary
 
-- Excel core sub-activities: **18** of 19 expected
+- Excel A+-derived sub-activities (non-zero ladder, excl. D.*): **27**
 - Supabase rows: **10** distinct activity_ids
 - Matches (GOAL+STRETCH × 5 years agree): **0**
-- Mismatches (overlapping rows that disagree): **18**
-- Missing in Supabase (Excel CORE_IDS without a Supabase row): **9**
-- Orphans in Supabase (rows whose activity_id isn't in Excel CORE_IDS): **1**
+- Mismatches (overlapping rows that disagree): **20**
+- Missing in Supabase (A+ sub-activities without a Supabase row): **17**
+- Orphans in Supabase (rows whose activity_id isn't in the A+ set): **0**
 
 ## Missing in Supabase
 
-Excel core sub-activities that have no row in `workplan_goals`. These have to be seeded before Supabase can become source of truth.
+A+-derived sub-activities that have no row in `workplan_goals`. These will be INSERTed by the seed step before Supabase can become source of truth.
 
 | activity_id | name | reason |
 |---|---|---|
+| `3.1.2` | CPL Offers & Awards Tracking — Veterans & Service Members | no_supabase_row |
+| `3.1.2a` | CPL Offers & Awards Tracking — Apprentice Cohort | no_supabase_row |
 | `3.2` | CPL Units Transcription | no_supabase_row |
 | `3.3` | Institutional Participation | no_supabase_row |
 | `3.4` | Student Impact Rate Survey | no_supabase_row |
 | `3.5` | Student Stories | no_supabase_row |
 | `3.6` | College Tracking & Recognition | no_supabase_row |
+| `4.1` | Sprints and Projects | no_supabase_row |
+| `4.1.1` | Veteran Sprint | no_supabase_row |
+| `4.1.2` | Apprenticeship Sprint | no_supabase_row |
+| `4.1.3` | Statewide Adoption Sprint | no_supabase_row |
+| `4.1.4` | 29 Palms Marine Corps Base Demo | no_supabase_row |
 | `4.2` | Strategic Partnerships | no_supabase_row |
 | `4.3` | Technical Assistance & Training | no_supabase_row |
 | `4.4` | Law & Regulation Review | no_supabase_row |
 | `4.5` | Sustainable Funding | no_supabase_row |
-
-## Orphans in Supabase
-
-Supabase `workplan_goals` rows whose `activity_id` is NOT in Excel's `CORE_IDS` list. Either the renderer needs to learn about these (e.g. add to CORE_IDS), or the rows should be removed from Supabase.
-
-| activity_id | name |
-|---|---|
-| `3.1.1` | Military/Veteran Students Served |
+| `5.1` | AI-Ready California Demonstration | no_supabase_row |
 
 ## Value Mismatches
 
@@ -229,10 +229,30 @@ Overlapping (activity_id, row_type) pairs where the year-by-year values disagree
 | 2028-29 | 380,000 | 380,000 | 0 |
 | 2029-30 | 380,000 | 500,000 | 120,000 ⚠ |
 
+### `3.1.1` — CPL Offers & Awards Tracking — Working Adults — GOAL
+
+| year | Excel | Supabase | Δ |
+|---|---:|---:|---:|
+| 2025-26 | 9,500 | 30,000 | 20,500 ⚠ |
+| 2026-27 | 47,500 | 40,000 | -7,500 ⚠ |
+| 2027-28 | 82,500 | 50,000 | -32,500 ⚠ |
+| 2028-29 | 122,500 | 60,000 | -62,500 ⚠ |
+| 2029-30 | 160,000 | 70,000 | -90,000 ⚠ |
+
+### `3.1.1` — CPL Offers & Awards Tracking — Working Adults — STRETCH
+
+| year | Excel | Supabase | Δ |
+|---|---:|---:|---:|
+| 2025-26 | 39,000 | 40,000 | 1,000 ⚠ |
+| 2026-27 | 101,000 | 55,000 | -46,000 ⚠ |
+| 2027-28 | 183,000 | 70,000 | -113,000 ⚠ |
+| 2028-29 | 283,000 | 85,000 | -198,000 ⚠ |
+| 2029-30 | 360,000 | 100,000 | -260,000 ⚠ |
+
 ## How to read this
 
-- **Missing** rows have to be seeded into Supabase before cutover.
-- **Mismatches** need a per-row decision: which side is canonical? Pick, update the loser to match, re-run this validator until clean.
-- **Orphans** suggest the renderer is missing sub-activities, OR Supabase has stale rows. Decide per orphan.
+- **Missing** rows will be INSERTed by `kb/_seed_workplan_goals.py`.
+- **Mismatches** will be UPDATEd by the seed step (Excel A+ wins by construction).
+- **Orphans** will be DELETEd by the seed step (Excel A+ is the source of truth).
 
 Re-run: `python3 kb/_validate_workplan_goals.py`
