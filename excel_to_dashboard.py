@@ -1298,6 +1298,15 @@ def render_annual_goals_table_html(annual_goals):
             html += f'                        {name_cell}\n'
             html += (f'                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;'
                      f'font-size:0.75rem;">{rtype}</td>\n')
+            # GOAL/STRETCH rows are editable (Supabase); CURRENT is Excel-sourced
+            # kpi_metric, not editable in PR-5.
+            rt_attr = rtype.upper() if rtype in ("Goal", "Stretch") else ""
+            editable = bool(rt_attr)
+            year_keys_map = {
+                "2025-26": "yr_2025_26", "2026-27": "yr_2026_27",
+                "2027-28": "yr_2027_28", "2028-29": "yr_2028_29",
+                "2029-30": "yr_2029_30",
+            }
             for yr in year_cols:
                 v = vals.get(yr, 0)
                 # Format: integers as commas, decimals with 1 place
@@ -1306,12 +1315,24 @@ def render_annual_goals_table_html(annual_goals):
                 disp = fmt_number(v) if v else ""
                 # Highlight current year (2025-26) with special styling
                 yr_style = "font-weight:700;" if yr == "2025-26" and rtype == "Current" and v else ""
-                html += (f'                        <td style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;{yr_style}">'
+                data_attrs = ""
+                if editable:
+                    data_attrs = (
+                        f' data-editable="1" data-aid="{row["id"]}" data-rt="{rt_attr}" '
+                        f'data-yr="{yr}" data-yr-key="{year_keys_map[yr]}" data-val="{v if v else 0}"'
+                    )
+                html += (f'                        <td{data_attrs} style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;{yr_style}">'
                          f'{disp}</td>\n')
             total = vals.get("total", 0)
             if isinstance(total, float) and total == int(total):
                 total = int(total)
-            html += (f'                        <td style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">'
+            total_attrs = ""
+            if editable:
+                total_attrs = (
+                    f' data-aid="{row["id"]}" data-rt="{rt_attr}" data-total="1" '
+                    f'data-val="{total if total else 0}"'
+                )
+            html += (f'                        <td{total_attrs} style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">'
                      f'{fmt_number(total) if total else ""}</td>\n')
             html += '                    </tr>\n'
 
@@ -1926,23 +1947,36 @@ def render_workplan_goals_html(workplan_goals, data_source_stamp=None):
                     return f"{v:,.1f}"
                 return str(v) if v else "—"
 
+            aid = act["id"]
+            year_keys = ["yr_2025_26", "yr_2026_27", "yr_2027_28", "yr_2028_29", "yr_2029_30"]
+            year_labels = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
+            pct_attr = ' data-pct="1"' if is_pct else ''
+
             # GOAL row
             html += f'''                    <tr style="background:{bg};">
-                        <td rowspan="2" style="padding:0.5rem 0.7rem;border-bottom:1px solid #eee;vertical-align:top;font-weight:600;color:#0A2240;">{act["id"]} {act["name"]}</td>
+                        <td rowspan="2" style="padding:0.5rem 0.7rem;border-bottom:1px solid #eee;vertical-align:top;font-weight:600;color:#0A2240;">{aid} {act["name"]}</td>
                         <td style="text-align:center;padding:0.3rem 0.4rem;color:#163A5F;font-weight:600;font-size:0.72rem;">GOAL</td>
 '''
-            for v in act["goal"]:
-                html += f'                        <td style="text-align:right;padding:0.3rem 0.4rem;">{fmt_val(v, is_pct)}</td>\n'
-            html += f'                        <td style="text-align:right;padding:0.3rem 0.7rem;font-weight:700;color:#0A2240;">{fmt_val(act["goal_total"], is_pct)}</td>\n'
+            for v, yk, yl in zip(act["goal"], year_keys, year_labels):
+                html += (f'                        <td data-editable="1" data-aid="{aid}" data-rt="GOAL" '
+                         f'data-yr="{yl}" data-yr-key="{yk}" data-val="{v}"{pct_attr} '
+                         f'style="text-align:right;padding:0.3rem 0.4rem;">{fmt_val(v, is_pct)}</td>\n')
+            html += (f'                        <td data-aid="{aid}" data-rt="GOAL" data-total="1" '
+                     f'data-val="{act["goal_total"]}"{pct_attr} '
+                     f'style="text-align:right;padding:0.3rem 0.7rem;font-weight:700;color:#0A2240;">{fmt_val(act["goal_total"], is_pct)}</td>\n')
             html += '                    </tr>\n'
 
             # STRETCH row
             html += f'''                    <tr style="background:{bg};">
                         <td style="text-align:center;padding:0.3rem 0.4rem;border-bottom:1px solid #eee;color:#C9A84C;font-weight:600;font-size:0.72rem;">STRETCH</td>
 '''
-            for v in act["stretch"]:
-                html += f'                        <td style="text-align:right;padding:0.3rem 0.4rem;border-bottom:1px solid #eee;color:#C9A84C;">{fmt_val(v, is_pct)}</td>\n'
-            html += f'                        <td style="text-align:right;padding:0.3rem 0.7rem;border-bottom:1px solid #eee;font-weight:700;color:#C9A84C;">{fmt_val(act["stretch_total"], is_pct)}</td>\n'
+            for v, yk, yl in zip(act["stretch"], year_keys, year_labels):
+                html += (f'                        <td data-editable="1" data-aid="{aid}" data-rt="STRETCH" '
+                         f'data-yr="{yl}" data-yr-key="{yk}" data-val="{v}"{pct_attr} '
+                         f'style="text-align:right;padding:0.3rem 0.4rem;border-bottom:1px solid #eee;color:#C9A84C;">{fmt_val(v, is_pct)}</td>\n')
+            html += (f'                        <td data-aid="{aid}" data-rt="STRETCH" data-total="1" '
+                     f'data-val="{act["stretch_total"]}"{pct_attr} '
+                     f'style="text-align:right;padding:0.3rem 0.7rem;border-bottom:1px solid #eee;font-weight:700;color:#C9A84C;">{fmt_val(act["stretch_total"], is_pct)}</td>\n')
             html += '                    </tr>\n'
 
         html += '''                </tbody>
