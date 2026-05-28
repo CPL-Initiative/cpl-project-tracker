@@ -1,38 +1,13 @@
 {
-  "_about": "Daily-cached snapshot of public.workplan_goals + public.workplan_activity_associations. Written by kb/_load_workplan_goals.py after a successful Supabase fetch. Falls back to this file on Supabase outage so the dashboard regen continues without manual intervention.",
+  "_about": "Daily-cached snapshot of public.workplan_goals. Written by kb/_load_workplan_goals.py after a successful Supabase fetch. Falls back to this file on Supabase outage so the dashboard regen continues without manual intervention.",
   "_fetched_at": "2026-05-28",
   "_source_table": "public.workplan_goals",
-  "row_count": 64,
+  "row_count": 54,
   "rows": [
-    {
-      "activity_id": "1",
-      "name": "Activity 1: Build AI-Enhanced CPL Infrastructure",
-      "row_type": "GOAL",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
-      "activity_id": "1",
-      "name": "Activity 1: Build AI-Enhanced CPL Infrastructure",
-      "row_type": "STRETCH",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
     {
       "activity_id": "1.1",
       "name": "MAP Platform Development",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 4.0,
       "yr_2026_27": 9.0,
       "yr_2027_28": 18.0,
@@ -44,7 +19,6 @@
       "activity_id": "1.1",
       "name": "MAP Platform Development",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 8.0,
       "yr_2026_27": 18.0,
       "yr_2027_28": 28.0,
@@ -56,7 +30,6 @@
       "activity_id": "1.2",
       "name": "System Integration & Interoperability",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 1.0,
       "yr_2026_27": 2.0,
       "yr_2027_28": 3.0,
@@ -68,7 +41,6 @@
       "activity_id": "1.2",
       "name": "System Integration & Interoperability",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 2.0,
       "yr_2026_27": 4.0,
       "yr_2027_28": 6.0,
@@ -80,7 +52,6 @@
       "activity_id": "1.3",
       "name": "CPL Student Portal",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 100.0,
       "yr_2026_27": 1000.0,
       "yr_2027_28": 5000.0,
@@ -92,7 +63,6 @@
       "activity_id": "1.3",
       "name": "CPL Student Portal",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 200.0,
       "yr_2026_27": 2000.0,
       "yr_2027_28": 10000.0,
@@ -104,7 +74,6 @@
       "activity_id": "1.4",
       "name": "California Credential Registry",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 0.0,
       "yr_2026_27": 50.0,
       "yr_2027_28": 110.0,
@@ -116,7 +85,6 @@
       "activity_id": "1.4",
       "name": "California Credential Registry",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 0.0,
       "yr_2026_27": 200.0,
       "yr_2027_28": 440.0,
@@ -125,34 +93,9 @@
       "total": 2540.0
     },
     {
-      "activity_id": "2",
-      "name": "Activity 2: Faculty Workgroups & Credit Recommendations",
-      "row_type": "GOAL",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
-      "activity_id": "2",
-      "name": "Activity 2: Faculty Workgroups & Credit Recommendations",
-      "row_type": "STRETCH",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
       "activity_id": "2.1",
       "name": "Statewide Credit Recommendations",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 200.0,
       "yr_2026_27": 400.0,
       "yr_2027_28": 600.0,
@@ -164,7 +107,6 @@
       "activity_id": "2.1",
       "name": "Statewide Credit Recommendations",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 400.0,
       "yr_2026_27": 1000.0,
       "yr_2027_28": 1600.0,
@@ -176,7 +118,6 @@
       "activity_id": "2.2",
       "name": "Faculty Discipline Workgroups",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 6.0,
       "yr_2026_27": 15.0,
       "yr_2027_28": 19.0,
@@ -188,7 +129,6 @@
       "activity_id": "2.2",
       "name": "Faculty Discipline Workgroups",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 10.0,
       "yr_2026_27": 22.0,
       "yr_2027_28": 30.0,
@@ -200,7 +140,6 @@
       "activity_id": "2.3",
       "name": "Common Course Crosswalks",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 20.0,
       "yr_2026_27": 50.0,
       "yr_2027_28": 90.0,
@@ -212,7 +151,6 @@
       "activity_id": "2.3",
       "name": "Common Course Crosswalks",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 40.0,
       "yr_2026_27": 100.0,
       "yr_2027_28": 180.0,
@@ -224,7 +162,6 @@
       "activity_id": "2.4",
       "name": "Validated Skills",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 25.0,
       "yr_2026_27": 65.0,
       "yr_2027_28": 115.0,
@@ -236,7 +173,6 @@
       "activity_id": "2.4",
       "name": "Validated Skills",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 50.0,
       "yr_2026_27": 130.0,
       "yr_2027_28": 230.0,
@@ -245,34 +181,9 @@
       "total": 1260.0
     },
     {
-      "activity_id": "3",
-      "name": "Activity 3: Build CPL Data Infrastructure",
-      "row_type": "GOAL",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
-      "activity_id": "3",
-      "name": "Activity 3: Build CPL Data Infrastructure",
-      "row_type": "STRETCH",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
       "activity_id": "3.1",
       "name": "CPL Offers & Awards Tracking — All Populations",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 40000.0,
       "yr_2026_27": 90000.0,
       "yr_2027_28": 140000.0,
@@ -284,7 +195,6 @@
       "activity_id": "3.1",
       "name": "CPL Offers & Awards Tracking — All Populations",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 80000.0,
       "yr_2026_27": 160000.0,
       "yr_2027_28": 260000.0,
@@ -296,7 +206,6 @@
       "activity_id": "3.1.1",
       "name": "CPL Offers & Awards Tracking — Working Adults",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 9500.0,
       "yr_2026_27": 47500.0,
       "yr_2027_28": 82500.0,
@@ -308,7 +217,6 @@
       "activity_id": "3.1.1",
       "name": "CPL Offers & Awards Tracking — Working Adults",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 39000.0,
       "yr_2026_27": 101000.0,
       "yr_2027_28": 183000.0,
@@ -320,7 +228,6 @@
       "activity_id": "3.1.2",
       "name": "CPL Offers & Awards Tracking — Veterans & Service Members",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 30000.0,
       "yr_2026_27": 40000.0,
       "yr_2027_28": 50000.0,
@@ -332,7 +239,6 @@
       "activity_id": "3.1.2",
       "name": "CPL Offers & Awards Tracking — Veterans & Service Members",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 40000.0,
       "yr_2026_27": 55000.0,
       "yr_2027_28": 70000.0,
@@ -344,7 +250,6 @@
       "activity_id": "3.1.2a",
       "name": "CPL Offers & Awards Tracking — Apprentice Cohort",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 500.0,
       "yr_2026_27": 2500.0,
       "yr_2027_28": 7500.0,
@@ -356,7 +261,6 @@
       "activity_id": "3.1.2a",
       "name": "CPL Offers & Awards Tracking — Apprentice Cohort",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 1000.0,
       "yr_2026_27": 5000.0,
       "yr_2027_28": 15000.0,
@@ -368,7 +272,6 @@
       "activity_id": "3.2",
       "name": "CPL Units Transcription",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 90000.0,
       "yr_2026_27": 195000.0,
       "yr_2027_28": 315000.0,
@@ -380,7 +283,6 @@
       "activity_id": "3.2",
       "name": "CPL Units Transcription",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 180000.0,
       "yr_2026_27": 390000.0,
       "yr_2027_28": 630000.0,
@@ -392,7 +294,6 @@
       "activity_id": "3.3",
       "name": "Institutional Participation",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 50.0,
       "yr_2026_27": 60.0,
       "yr_2027_28": 80.0,
@@ -404,7 +305,6 @@
       "activity_id": "3.3",
       "name": "Institutional Participation",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 100.0,
       "yr_2026_27": 116.0,
       "yr_2027_28": 118.0,
@@ -416,7 +316,6 @@
       "activity_id": "3.4",
       "name": "Student Impact Rate Survey",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 0.7,
       "yr_2026_27": 0.75,
       "yr_2027_28": 0.8,
@@ -428,7 +327,6 @@
       "activity_id": "3.4",
       "name": "Student Impact Rate Survey",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 0.8,
       "yr_2026_27": 0.85,
       "yr_2027_28": 0.9,
@@ -440,7 +338,6 @@
       "activity_id": "3.5",
       "name": "Student Stories",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 30.0,
       "yr_2026_27": 60.0,
       "yr_2027_28": 120.0,
@@ -452,7 +349,6 @@
       "activity_id": "3.5",
       "name": "Student Stories",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 100.0,
       "yr_2026_27": 150.0,
       "yr_2027_28": 200.0,
@@ -464,7 +360,6 @@
       "activity_id": "3.6",
       "name": "College Tracking & Recognition",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 2.0,
       "yr_2026_27": 5.0,
       "yr_2027_28": 8.0,
@@ -476,7 +371,6 @@
       "activity_id": "3.6",
       "name": "College Tracking & Recognition",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 4.0,
       "yr_2026_27": 10.0,
       "yr_2027_28": 16.0,
@@ -485,34 +379,9 @@
       "total": 74.0
     },
     {
-      "activity_id": "4",
-      "name": "Activity 4: Sprints, Projects, Partnerships & Scale",
-      "row_type": "GOAL",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
-      "activity_id": "4",
-      "name": "Activity 4: Sprints, Projects, Partnerships & Scale",
-      "row_type": "STRETCH",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
       "activity_id": "4.1",
       "name": "Sprints and Projects",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 1.0,
       "yr_2026_27": 4.0,
       "yr_2027_28": 7.0,
@@ -524,7 +393,6 @@
       "activity_id": "4.1",
       "name": "Sprints and Projects",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 4.0,
       "yr_2026_27": 10.0,
       "yr_2027_28": 16.0,
@@ -536,7 +404,6 @@
       "activity_id": "4.1.1",
       "name": "Veteran Sprint",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 1.0,
       "yr_2026_27": 2.0,
       "yr_2027_28": 3.0,
@@ -548,7 +415,6 @@
       "activity_id": "4.1.1",
       "name": "Veteran Sprint",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 2.0,
       "yr_2026_27": 4.0,
       "yr_2027_28": 6.0,
@@ -560,7 +426,6 @@
       "activity_id": "4.1.2",
       "name": "Apprenticeship Sprint",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 1.0,
       "yr_2026_27": 2.0,
       "yr_2027_28": 3.0,
@@ -572,7 +437,6 @@
       "activity_id": "4.1.2",
       "name": "Apprenticeship Sprint",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 2.0,
       "yr_2026_27": 4.0,
       "yr_2027_28": 6.0,
@@ -584,7 +448,6 @@
       "activity_id": "4.1.3",
       "name": "Statewide Adoption Sprint",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 1.0,
       "yr_2026_27": 2.0,
       "yr_2027_28": 3.0,
@@ -596,7 +459,6 @@
       "activity_id": "4.1.3",
       "name": "Statewide Adoption Sprint",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 2.0,
       "yr_2026_27": 4.0,
       "yr_2027_28": 6.0,
@@ -608,7 +470,6 @@
       "activity_id": "4.1.4",
       "name": "29 Palms Marine Corps Base Demo",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 1.0,
       "yr_2026_27": 2.0,
       "yr_2027_28": 3.0,
@@ -620,7 +481,6 @@
       "activity_id": "4.1.4",
       "name": "29 Palms Marine Corps Base Demo",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 2.0,
       "yr_2026_27": 4.0,
       "yr_2027_28": 6.0,
@@ -632,7 +492,6 @@
       "activity_id": "4.2",
       "name": "Strategic Partnerships",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 3.0,
       "yr_2026_27": 7.0,
       "yr_2027_28": 11.0,
@@ -644,7 +503,6 @@
       "activity_id": "4.2",
       "name": "Strategic Partnerships",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 6.0,
       "yr_2026_27": 12.0,
       "yr_2027_28": 22.0,
@@ -656,7 +514,6 @@
       "activity_id": "4.3",
       "name": "Technical Assistance & Training",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 10.0,
       "yr_2026_27": 23.0,
       "yr_2027_28": 35.0,
@@ -668,7 +525,6 @@
       "activity_id": "4.3",
       "name": "Technical Assistance & Training",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 20.0,
       "yr_2026_27": 26.0,
       "yr_2027_28": 70.0,
@@ -680,7 +536,6 @@
       "activity_id": "4.4",
       "name": "Law & Regulation Review",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 2.0,
       "yr_2026_27": 5.0,
       "yr_2027_28": 7.0,
@@ -692,7 +547,6 @@
       "activity_id": "4.4",
       "name": "Law & Regulation Review",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 4.0,
       "yr_2026_27": 10.0,
       "yr_2027_28": 14.0,
@@ -704,7 +558,6 @@
       "activity_id": "4.5",
       "name": "Sustainable Funding",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 1.0,
       "yr_2026_27": 3.0,
       "yr_2027_28": 4.0,
@@ -716,7 +569,6 @@
       "activity_id": "4.5",
       "name": "Sustainable Funding",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 2.0,
       "yr_2026_27": 6.0,
       "yr_2027_28": 8.0,
@@ -725,34 +577,9 @@
       "total": 38.0
     },
     {
-      "activity_id": "5",
-      "name": "Activity 5: Strategic Initiatives & Special Projects",
-      "row_type": "GOAL",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
-      "activity_id": "5",
-      "name": "Activity 5: Strategic Initiatives & Special Projects",
-      "row_type": "STRETCH",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
       "activity_id": "5.1",
       "name": "AI-Ready California Demonstration",
       "row_type": "GOAL",
-      "kind": "project",
       "yr_2025_26": 0.0,
       "yr_2026_27": 0.0,
       "yr_2027_28": 0.0,
@@ -764,123 +591,12 @@
       "activity_id": "5.1",
       "name": "AI-Ready California Demonstration",
       "row_type": "STRETCH",
-      "kind": "project",
       "yr_2025_26": 0.0,
       "yr_2026_27": 0.0,
       "yr_2027_28": 0.0,
       "yr_2028_29": 0.0,
       "yr_2029_30": 0.0,
       "total": 0.0
-    }
-  ],
-  "associations": [
-    {
-      "project_id": "1.1",
-      "activity_id": "1"
-    },
-    {
-      "project_id": "1.2",
-      "activity_id": "1"
-    },
-    {
-      "project_id": "1.3",
-      "activity_id": "1"
-    },
-    {
-      "project_id": "1.4",
-      "activity_id": "1"
-    },
-    {
-      "project_id": "2.1",
-      "activity_id": "2"
-    },
-    {
-      "project_id": "2.2",
-      "activity_id": "2"
-    },
-    {
-      "project_id": "2.3",
-      "activity_id": "2"
-    },
-    {
-      "project_id": "2.4",
-      "activity_id": "2"
-    },
-    {
-      "project_id": "3.1",
-      "activity_id": "3"
-    },
-    {
-      "project_id": "3.1.1",
-      "activity_id": "3"
-    },
-    {
-      "project_id": "3.1.2",
-      "activity_id": "3"
-    },
-    {
-      "project_id": "3.1.2a",
-      "activity_id": "3"
-    },
-    {
-      "project_id": "3.2",
-      "activity_id": "3"
-    },
-    {
-      "project_id": "3.3",
-      "activity_id": "3"
-    },
-    {
-      "project_id": "3.4",
-      "activity_id": "3"
-    },
-    {
-      "project_id": "3.5",
-      "activity_id": "3"
-    },
-    {
-      "project_id": "3.6",
-      "activity_id": "3"
-    },
-    {
-      "project_id": "4.1",
-      "activity_id": "4"
-    },
-    {
-      "project_id": "4.1.1",
-      "activity_id": "4"
-    },
-    {
-      "project_id": "4.1.2",
-      "activity_id": "4"
-    },
-    {
-      "project_id": "4.1.3",
-      "activity_id": "4"
-    },
-    {
-      "project_id": "4.1.4",
-      "activity_id": "4"
-    },
-    {
-      "project_id": "4.2",
-      "activity_id": "4"
-    },
-    {
-      "project_id": "4.3",
-      "activity_id": "4"
-    },
-    {
-      "project_id": "4.4",
-      "activity_id": "4"
-    },
-    {
-      "project_id": "4.5",
-      "activity_id": "4"
-    },
-    {
-      "project_id": "5.1",
-      "activity_id": "5"
     }
   ]
 }
