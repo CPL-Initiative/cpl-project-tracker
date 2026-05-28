@@ -5,7 +5,7 @@
 # so Sam's Obsidian vault picks up checkpoint commits without manual
 # git pull.
 #
-# Targets (relative to $env:USERPROFILE\Documents\Claude\Projects\CPLBrain\COG-second-brain\):
+# Targets (relative to $env:USERPROFILE\Documents\GitHub\COG-second-brain\):
 #   cpl-project-tracker/       (this repo -- main KB content lane)
 #   cpl-knowledge-base/        (public KB)
 #
@@ -24,7 +24,7 @@
 
 $ErrorActionPreference = "Continue"
 
-$vaultRoot = Join-Path $env:USERPROFILE "Documents\Claude\Projects\CPLBrain\COG-second-brain"
+$vaultRoot = Join-Path $env:USERPROFILE "Documents\GitHub\COG-second-brain"
 $repos = @("cpl-project-tracker", "cpl-knowledge-base")
 $logFile = Join-Path $vaultRoot ".vault-sync.log"
 
