@@ -526,3 +526,120 @@ fields + (for Project) multi-select of associated Activities.
 Bundled in the same `workplan_goals.js` editor; reuses the
 existing magic-link auth + the new `data-kind` scoping.
 
+## 2026-05-28 — Session 14 (Bruh Sonnet), PR-C landed
+
+### What shipped
+
+**PR-C: Editor add-flow modal.** A "+ Add new row" button appears in
+the auth widget bar (signed-in curators only). Clicking it opens a
+modal that lets a curator add either an Activity or a Project row
+end-to-end without touching the database directly.
+
+Decisions Sam locked at the top of PR-C (`AskUserQuestion` × 3):
+
+  - **Button placement: one button top of tab.** Cleanest, no
+    per-section button clutter. Activity/Project radio inside the
+    modal selects which kind. Recommended option.
+  - **ID validation: strict prefix + collision check.** Activity ID
+    must be a single digit; Project ID must be `N.x` where N is an
+    existing Activity ID. Both checks run client-side against the
+    current page state (`data-aid` query). On collision, the modal
+    surfaces a clear error inline. Recommended option.
+  - **Add-only this PR.** No name editing, no association editing on
+    existing rows. Sam's call: smallest blast radius; revisit if
+    curators ask. Recommended option.
+
+### Architecture
+
+`workplan_goals.js` gains five new functions inside the existing IIFE:
+
+  - `collectExistingIds()` — DOM survey: returns `{ activities: [...],
+    projects: [...] }` from `[data-aid][data-kind="..."]` selectors.
+    Used for both validation and populating the multi-select.
+  - `openAddModal(state)` / `closeAddModal()` — overlay + card. Esc /
+    overlay-click-outside / Cancel all close. The Esc listener
+    auto-removes itself after the first close to avoid stacking.
+  - `validateAdd(ctx)` — pure validator. Returns
+    `{ ok, errors, payload }` where `payload` carries the
+    `wpgRows: [GOAL, STRETCH]` + `assocRows: [...]` shapes ready
+    for POST. Computes ladder totals client-side.
+  - `submitAdd(ctx)` — runs the validator; on success, POSTs the
+    `workplan_goals` batch then (if Project) the
+    `workplan_activity_associations` batch. Reloads on success.
+
+The button is hidden when not signed in (it's only added inside the
+`if (state.sess)` branch of `buildAuthWidget`).
+
+### POST shape
+
+Supabase PostgREST accepts batch insert as an array body. Two calls
+total per Project add (one for `workplan_goals`, one for
+`workplan_activity_associations`); one for an Activity add (no
+associations needed since Activities don't link to other Activities).
+
+`Prefer: return=representation` is set so the response carries the
+inserted rows back — useful for diagnostics if the page reload ever
+gets replaced with an in-place row injection (future optimization,
+not in PR-C).
+
+### Lessons
+
+**17. Validation is the work of the modal — not the database.** The
+modal's `validateAdd` catches collisions, malformed IDs, missing
+associations, and surfaces them inline before any POST. Server-side
+the constraints are looser (the wpg table accepts any `kind='project'`
+activity_id with no prefix rule; the associations table doesn't FK
+back to a real Activity). The pattern: client validates against
+display-state for fast feedback; server enforces the truly
+non-negotiable invariants (PK, RLS, CHECK constraints). Mirrors how
+the unified_courses.js Suggested-merges worklist validates against
+the in-memory dataset before write.
+
+**18. Page reload is the simplest "render new row" path.** The
+alternative — fetching the new row + injecting it into the existing
+tables — would have required reproducing the Python renderer's HTML
+shape in JavaScript. Worth it eventually for a smoother UX, but for
+PR-C's add-flow (an action a curator takes maybe 1-3 times per
+session), `window.location.reload()` with an 800ms success message
+is fine. Scroll position drops; that's the cost.
+
+**19. DOM-survey selectors are a useful "no separate fetch" pattern.**
+`collectExistingIds()` reads the current page state to know what
+Activities exist. No Supabase round-trip needed; the page is already
+the source of truth for what's been rendered. Same shape as PR-B's
+chip rendering reading `activity_ids` from the in-memory
+`workplan_goals` list.
+
+### Current state at end of PR-C
+
+  - ✅ Add-flow live for Activities + Projects
+  - ✅ Strict ID validation (prefix + collision)
+  - ✅ Project add includes multi-select of associations
+  - ✅ Modal closes via Esc, overlay-click, Cancel
+  - ✅ Server-side RLS still enforces allowed-reviewer write
+  - ⏳ **PR-D (optional)** — split into own top-level tab if the page
+    feels too dense after PR-A/B/C all land. Sam's prior preference:
+    keep as one page with two sections. Park unless curator demand
+    signals otherwise.
+
+### Phase 1 + Activity↔Project model now functionally complete
+
+The Workplan Goals tab is now fully Supabase-native end-to-end:
+
+  - **Read path** (PR-4): generator reads from Supabase + snapshot fallback
+  - **Schema** (PR-A): kind discriminator + N-to-N associations
+  - **Render** (PR-B): first-class Activities section + Contributes-to chips
+  - **Edit existing** (PR-5): per-cell inline editor
+  - **Add new** (PR-C): modal-driven add-flow
+
+PR-D (separate tab) is the only deferred item. Phase 2-4 (Dashboard
+project cards, Budget, Vision 2030, Personnel) follow the
+`playbook-measure-first-supabase-migration` template documented in
+`docs/kb-notes/` and remain the next architectural big rock.
+
+### Next concrete step
+
+If continuing this workstream: Phase 2 entry point — projects table.
+Same 5-step playbook applies. Otherwise the Activity↔Project model
+is a clean stopping point.
+
