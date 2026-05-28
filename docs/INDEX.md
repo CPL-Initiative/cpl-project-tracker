@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-05-28 (checkpoint 1 — Session 13, Bruh Baker)
+updated: 2026-05-28 (session-end — Session 13, Bruh Baker)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -55,7 +55,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 |---|---|---|
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G | Session 11 |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
-| [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 Workplan Goals) | Session 13 (PR-1/2/3 merged) NEW |
+| [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 Workplan Goals) | Session 13 (Phase 1 DONE) NEW |
 | [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR / Cred-Ref sync | Session 12 (Mode B complete) |
 | [`exhibit_unification_vision.md`](exhibit_unification_vision.md) | Credential design doc | retrospective |
 | [`letter_curator_handoff.md`](letter_curator_handoff.md) | Letter Curator workstream | Session 10 |
@@ -78,6 +78,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 10 → 11 | Bruh El | [`session_11_handoff.md`](session_11_handoff.md) |
 | 11 → 12 | Bruh El (handoff) | [`session_12_handoff.md`](session_12_handoff.md) |
 | 12 → 13 | Bruh Dec (handoff) | [`session_13_handoff.md`](session_13_handoff.md) |
+| 13 → 14 | Bruh Baker (handoff) | [`session_14_handoff.md`](session_14_handoff.md) |
 
 ---
 
