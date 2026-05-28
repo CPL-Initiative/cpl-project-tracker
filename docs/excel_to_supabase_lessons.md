@@ -128,3 +128,120 @@ against live Supabase.
 
 Sam dispatches `.github/workflows/workplan-goals-seed-apply.yml` from the
 Actions tab. After V4 green, PR-4 (generator + snapshot fallback) ships.
+
+## 2026-05-28 — Session 13 (Bruh Baker), session-end
+
+### What shipped after checkpoint 1
+
+The morning checkpoint left PRs 1-3 + plan, awaiting Sam's dispatch. By
+session end:
+
+- **Workflow dispatched** — Sam clicked Run workflow on the seed-apply.
+  V4 reported green on the first run: 27 A+ activities × 2 row_types = 54
+  rows, 54 matches, 0 mismatches/missing/orphans. The apply landed as
+  commit `6778fd7` with full receipts under `kb/workplan_goals_seed_out/2026-05-28/`.
+- **PR #166 (PR-4)** — generator switched to Supabase reads + daily snapshot
+  fallback. New `kb/_load_workplan_goals.py` with the
+  fetch→snapshot-write→fallback chain. Subtle "Data as of YYYY-MM-DD" line
+  in the rendered tab header. First daily run after merge confirmed the
+  snapshot wires + rendered 27 activities cleanly (Sam's "Dash update
+  complete and clean!" confirmation).
+- **PR #167 (PR-6)** — retired the dead `build_workplan_goals_from_projects`
+  (~148 lines). Excel KPI ladder columns stay alive in `read_projects()` for
+  three downstream JS report consumers (`generate_reports.js`,
+  `report_generator.js`, `college_report_generator.js`); migrating those is
+  deferred to Phase 2 when project metadata also moves.
+- **PR #168 (PR-5)** — the inline editor. ~300 lines of JS hydrating the
+  Python-rendered tables with click-to-edit + magic-link auth + dual-table
+  mirroring. Cell edits fan out to both the grouped activity card AND the
+  comprehensive annual_goals table via shared `data-aid`/`data-rt`/
+  `data-yr-key` selectors. Narrow scope per Sam's mid-session call: edit
+  only, no add-flow, kpi_metric (Current column) stays Excel-sourced.
+- **RLS tightening** — `workplan_goals` was wide open (any authenticated
+  user could write). Migration `workplan_goals_rls_tighten_to_allowed_reviewers`
+  dropped the `"Allow auth write"` ALL policy and added per-command policies
+  gating on `is_allowed_reviewer()`. Today `allowed_reviewers` is just
+  `map@rccd.edu`. Public read unchanged. Mirrors `kb_curation`'s policy
+  shape exactly.
+
+### Additional lessons (post-PR-3)
+
+**7. The migration shape generalized end-to-end without surprises.** The
+five-step playbook (snapshot → validate → dry-run → workflow_dispatch
+apply with V1-V4 → cutover) survived contact with reality. V4 reported
+green on the first apply attempt; the generator switch landed cleanly;
+the snapshot fallback wired correctly. The KB note
+`playbook-measure-first-supabase-migration` captures the shape for Phases
+2-4.
+
+**8. The validator's "0/18/9/1" headline became "54/0/0/0" exactly as
+expected.** Pre-seed: 0 matches, 18 mismatches, 9 missing, 1 orphan.
+Post-apply: 54 matches, 0 mismatches, 0 missing, 0 orphans. The numbers
+predicted by the plan (34 INSERTs + 20 UPDATEs + 0 DELETEs = 54 row
+operations to reach 54 expected rows) matched reality with zero
+adjustments. **The dry-run plan was the contract; the apply just executed
+it.** Worth remembering for Phase 2: if your dry-run plan doesn't predict
+exactly the post-apply state, you're not done planning yet.
+
+**9. The dual-table editor pattern is reusable.** Two render functions
+produced two HTML tables for the same data. Rather than picking one to be
+the "editable" table, I tagged ALL editable cells in both renderings with
+shared `data-aid`/`data-rt`/`data-yr-key` attributes; the editor's save
+handler uses `querySelectorAll` to fan optimistic paint + final state out
+to all matching cells. Cost: 4 lines of selector logic. Benefit: no
+"why doesn't the other table update?" confusion. Reusable wherever the
+same data appears in multiple rendered surfaces.
+
+**10. Narrow PR-5 was the right call.** Sam's mid-session context drop
+about Activity↔Project N-to-N associations would have made a broader
+PR-5 (with the add-flow) ship a data model we'd later regret. Pausing
+the scoping conversation for THAT data model preserved future optionality
+without delaying today's editor ship. The instinct: when a user surfaces
+architectural context mid-PR, narrow the current PR rather than
+re-scoping it on the fly.
+
+### Current state at session end
+
+**Phase 1 is functionally complete at the dashboard-tab level:**
+
+- ✅ Supabase `workplan_goals` is the source of truth (27 activities × 2 row_types = 54 rows, all in sync with Excel A+)
+- ✅ Generator reads from Supabase + snapshot fallback
+- ✅ Curators can sign in + edit GOAL/STRETCH cells live
+- ✅ RLS gates writes to `allowed_reviewers` (today: 1 user, `map@rccd.edu`)
+- ✅ Dead code retired
+
+**Excel still feeds:**
+
+- `kpi_metric` (the "Current" column in annual_goals) — Phase 2 territory
+- The 10 KPI ladder columns for three JS report consumers
+  (`generate_reports.js`, `report_generator.js`, `college_report_generator.js`)
+- All other project metadata (status, lead, milestones, etc.) — Phase 2
+
+### Strategic roadmap
+
+The deferred work for the NEXT session, scoped during wind-down:
+
+- **PR-A (next session, top of menu):** schema migration. Add `kind` column
+  to `workplan_goals` (default `'project'`; pre-seed 5 `'activity'` rows
+  from the hardcoded `activity_labels` dict so they're editable from day
+  one). Add `workplan_activity_associations(project_id, activity_id)`
+  table for N-to-N. Backfill obvious 1-to-1 associations from the
+  activity_id prefix.
+- **PR-B:** generator + renderer update. Consume the new model; render
+  Activities section + Projects section separately on the page.
+- **PR-C:** editor + add-flow. Modal with Activity/Project radio + ladder
+  fields + (for Project) multi-select of associated Activities.
+- **PR-D (optional):** split Workplan Goals into its own top-level tab if
+  the page gets too dense, OR keep as one section under existing tab.
+  Sam's prior preference: ONE page with two sections.
+
+Phase 2 (Dashboard project cards, Budget, Vision 2030, Personnel) is the
+next big-rock workstream after PR-A through PR-D. The
+`playbook-measure-first-supabase-migration` KB note is the template; each
+table follows the same five-step shape.
+
+### Next concrete step
+
+Bruh Baker hands the spatula. Next session starts with PR-A (schema
+migration) per the scoped plan in this section.
+
