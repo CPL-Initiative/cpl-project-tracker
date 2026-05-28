@@ -1,0 +1,97 @@
+name: Workplan Goals Phase 1 — Seed Apply
+
+# Manual-dispatch only. Applies the dry-run plan computed by
+# kb/_seed_workplan_goals.py to Supabase public.workplan_goals:
+# INSERTs missing rows, UPDATEs drifted rows to match Excel A+ derivation,
+# DELETEs orphans. Re-runs the validator post-apply (V4) and the planner
+# (should report all NO-OPs after a successful apply).
+#
+# Sequence:
+#   1. Run apply (kb/_seed_workplan_goals_apply.py). In-script V1–V4 gates
+#      keep the apply safe; refuses if Excel derivation produces 0 rows;
+#      fails loudly if any row write fails or if post-apply validator
+#      reports drift.
+#   2. Commit + push the regenerated validator report, seed plan, and the
+#      per-run apply log under kb/workplan_goals_seed_out/<date>/.
+#
+# concurrency: daily-dashboard → serializes against the daily cron so
+# excel_to_dashboard.py never reads a partially-applied Supabase state.
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: daily-dashboard
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install openpyxl
+
+      - name: Apply seed plan to Supabase
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          if [ -z "${SUPABASE_SERVICE_KEY:-}" ]; then
+            echo "::error::SUPABASE_SERVICE_KEY not set — required for apply"
+            exit 1
+          fi
+          python kb/_seed_workplan_goals_apply.py
+
+      - name: Commit + push regenerated outputs
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add kb/workplan_goals_validation.md \
+                  kb/workplan_goals_seed_plan.md \
+                  kb/workplan_goals_seed_out/
+          if git diff --cached --quiet; then
+            echo "No changes to commit (apply was idempotent or already at target)."
+            exit 0
+          fi
+          git commit \
+            -m "Workplan Goals Phase 1 PR-3: seed APPLY" \
+            -m "Atomic re-seed of public.workplan_goals from Excel A+ derivation. Receipts under kb/workplan_goals_seed_out/<date>/." \
+            -m "Validated (in-apply gates): V1 Excel derivation produced N>0 activities; V2 every UPDATE/DELETE matched ≥1 Supabase row (no source-missing); V3 post-apply row count = 2 × |A+ activities|; V4 kb/_validate_workplan_goals.py re-run clean."
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded on attempt $attempt."
+              exit 0
+            fi
+            echo "Push attempt $attempt failed — rebasing and retrying."
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((attempt * 2))
+          done
+          exit 1
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Workplan Goals Phase 1 — seed apply"
+            echo
+            echo "Status: ${{ job.status }}"
+            echo
+            echo "Receipts (committed under kb/workplan_goals_seed_out/<date>/):"
+            echo "- \`plan_snapshot.json\` — pre-apply plan + V1 result"
+            echo "- \`apply_log.json\` — per-row HTTP outcomes"
+          } >> "$GITHUB_STEP_SUMMARY"
