@@ -88,7 +88,14 @@ jobs:
           fi
 
       # ── Step 4: Run pipeline ─────────────────────────────────────
+      # SUPABASE_SERVICE_KEY is needed for the Workplan Goals read path
+      # (Phase 1 PR-4: source-of-truth = public.workplan_goals). The
+      # generator falls back to kb/workplan_goals_snapshot.json on Supabase
+      # outage; if the env var is missing AND the snapshot is missing too,
+      # the generator fails loudly (no silent rendering of nothing).
       - name: Run dashboard pipeline
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python excel_to_dashboard.py
 
       # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
@@ -138,6 +145,9 @@ jobs:
           git add kb/cred_rename_dryrun/report.md \
                   kb/cred_rename_dryrun/alias_map.json \
                   kb/cred_rename_dryrun/collisions.json 2>/dev/null || true
+          # Workplan Goals Phase 1 PR-4: daily-cached Supabase snapshot
+          # (graceful-degradation fallback for Supabase outages)
+          git add kb/workplan_goals_snapshot.json 2>/dev/null || true
           # Only add CustomReport if it was freshly fetched
           git add CustomReport_latest.json 2>/dev/null || true
           if git diff --cached --quiet; then
