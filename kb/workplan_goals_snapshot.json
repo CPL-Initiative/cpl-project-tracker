@@ -5,30 +5,6 @@
   "row_count": 64,
   "rows": [
     {
-      "activity_id": "1",
-      "name": "Activity 1: Build AI-Enhanced CPL Infrastructure",
-      "row_type": "GOAL",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
-      "activity_id": "1",
-      "name": "Activity 1: Build AI-Enhanced CPL Infrastructure",
-      "row_type": "STRETCH",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
       "activity_id": "1.1",
       "name": "MAP Platform Development",
       "row_type": "GOAL",
@@ -125,30 +101,6 @@
       "total": 2540.0
     },
     {
-      "activity_id": "2",
-      "name": "Activity 2: Faculty Workgroups & Credit Recommendations",
-      "row_type": "GOAL",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
-      "activity_id": "2",
-      "name": "Activity 2: Faculty Workgroups & Credit Recommendations",
-      "row_type": "STRETCH",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
       "activity_id": "2.1",
       "name": "Statewide Credit Recommendations",
       "row_type": "GOAL",
@@ -243,30 +195,6 @@
       "yr_2028_29": 350.0,
       "yr_2029_30": 500.0,
       "total": 1260.0
-    },
-    {
-      "activity_id": "3",
-      "name": "Activity 3: Build CPL Data Infrastructure",
-      "row_type": "GOAL",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
-      "activity_id": "3",
-      "name": "Activity 3: Build CPL Data Infrastructure",
-      "row_type": "STRETCH",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
     },
     {
       "activity_id": "3.1",
@@ -485,30 +413,6 @@
       "total": 74.0
     },
     {
-      "activity_id": "4",
-      "name": "Activity 4: Sprints, Projects, Partnerships & Scale",
-      "row_type": "GOAL",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
-      "activity_id": "4",
-      "name": "Activity 4: Sprints, Projects, Partnerships & Scale",
-      "row_type": "STRETCH",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
       "activity_id": "4.1",
       "name": "Sprints and Projects",
       "row_type": "GOAL",
@@ -725,30 +629,6 @@
       "total": 38.0
     },
     {
-      "activity_id": "5",
-      "name": "Activity 5: Strategic Initiatives & Special Projects",
-      "row_type": "GOAL",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
-      "activity_id": "5",
-      "name": "Activity 5: Strategic Initiatives & Special Projects",
-      "row_type": "STRETCH",
-      "kind": "activity",
-      "yr_2025_26": 0,
-      "yr_2026_27": 0,
-      "yr_2027_28": 0,
-      "yr_2028_29": 0,
-      "yr_2029_30": 0,
-      "total": 0
-    },
-    {
       "activity_id": "5.1",
       "name": "AI-Ready California Demonstration",
       "row_type": "GOAL",
@@ -771,6 +651,126 @@
       "yr_2028_29": 0.0,
       "yr_2029_30": 0.0,
       "total": 0.0
+    },
+    {
+      "activity_id": "1",
+      "name": "Activity 1: Build AI-Enhanced CPL Infrastructure",
+      "row_type": "GOAL",
+      "kind": "activity",
+      "yr_2025_26": 0,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 0
+    },
+    {
+      "activity_id": "1",
+      "name": "Activity 1: Build AI-Enhanced CPL Infrastructure",
+      "row_type": "STRETCH",
+      "kind": "activity",
+      "yr_2025_26": 0,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 0
+    },
+    {
+      "activity_id": "2",
+      "name": "Activity 2: Faculty Workgroups & Credit Recommendations",
+      "row_type": "GOAL",
+      "kind": "activity",
+      "yr_2025_26": 0,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 0
+    },
+    {
+      "activity_id": "2",
+      "name": "Activity 2: Faculty Workgroups & Credit Recommendations",
+      "row_type": "STRETCH",
+      "kind": "activity",
+      "yr_2025_26": 0,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 0
+    },
+    {
+      "activity_id": "3",
+      "name": "Activity 3: Build CPL Data Infrastructure",
+      "row_type": "GOAL",
+      "kind": "activity",
+      "yr_2025_26": 0,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 0
+    },
+    {
+      "activity_id": "3",
+      "name": "Activity 3: Build CPL Data Infrastructure",
+      "row_type": "STRETCH",
+      "kind": "activity",
+      "yr_2025_26": 0,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 0
+    },
+    {
+      "activity_id": "4",
+      "name": "Activity 4: Sprints, Projects, Partnerships & Scale",
+      "row_type": "GOAL",
+      "kind": "activity",
+      "yr_2025_26": 0,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 0
+    },
+    {
+      "activity_id": "4",
+      "name": "Activity 4: Sprints, Projects, Partnerships & Scale",
+      "row_type": "STRETCH",
+      "kind": "activity",
+      "yr_2025_26": 0,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 0
+    },
+    {
+      "activity_id": "5",
+      "name": "Activity 5: Strategic Initiatives & Special Projects",
+      "row_type": "GOAL",
+      "kind": "activity",
+      "yr_2025_26": 0,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 0
+    },
+    {
+      "activity_id": "5",
+      "name": "Activity 5: Strategic Initiatives & Special Projects",
+      "row_type": "STRETCH",
+      "kind": "activity",
+      "yr_2025_26": 0,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 0
     }
   ],
   "associations": [
