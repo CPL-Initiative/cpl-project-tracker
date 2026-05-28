@@ -20,6 +20,7 @@ related:
 - Mismatches (overlapping rows that disagree): **0**
 - Missing in Supabase (A+ sub-activities without a Supabase row): **0**
 - Orphans in Supabase (rows whose activity_id isn't in the A+ set): **0**
+- Activity↔Project associations: **27** (orphan-activity: 0, orphan-project: 0, projects-without-assoc: 0)
 
 ## In-sync rows (no action needed)
 

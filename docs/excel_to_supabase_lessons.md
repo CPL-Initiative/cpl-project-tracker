@@ -245,3 +245,155 @@ table follows the same five-step shape.
 Bruh Baker hands the spatula. Next session starts with PR-A (schema
 migration) per the scoped plan in this section.
 
+## 2026-05-28 — Session 14 (Bruh Sonnet), PR-A landed
+
+### What shipped
+
+**PR-A: Activity↔Project N-to-N data model.** The schema migration Bruh
+Baker scoped at session-end. Single migration applied via the Supabase
+`apply_migration` MCP tool — no `workflow_dispatch` step needed since
+PR-A is pure DDL + a single backfill INSERT, not a per-row Excel-derived
+re-key like Phase 1 PR-3.
+
+Decisions Sam locked at session start (`AskUserQuestion` × 3 forks):
+
+  - **Activity ID scheme:** clean `"1"-"5"` (matches the existing
+    `activity_labels` dict). The prefix backfill is trivial
+    (`substring(activity_id from 1 for 1)`).
+  - **Activity ladder values:** curator-editable, initially zero. The
+    5 Activity rows get the same GOAL/STRETCH × 5-year shape as
+    projects so the editor + renderer treat them uniformly. Curator
+    can later set top-level aggregate targets without a schema change.
+  - **N-to-N FK strategy:** no DB-level FK. `workplan_goals.activity_id`
+    is non-unique (each id has GOAL + STRETCH rows), so a clean FK
+    would have required either collapsing the dual-row shape or a
+    unique partial index on `WHERE row_type='GOAL'`. Both are bigger
+    refactors than PR-A warrants. The validator (`validate_associations`)
+    now does the FK check application-side, mirroring how `kb_curation`
+    handles loose pointers.
+
+Schema shape applied:
+
+```
+ALTER TABLE workplan_goals
+  ADD COLUMN kind TEXT NOT NULL DEFAULT 'project'
+  CHECK (kind IN ('activity', 'project'));
+
+-- 5 Activity rows × 2 row_types each (10 total, ladder zeroed)
+INSERT INTO workplan_goals (activity_id, name, row_type, kind, ...) VALUES
+  ('1', 'Activity 1: Build AI-Enhanced CPL Infrastructure', ...),
+  ('2', 'Activity 2: Faculty Workgroups & Credit Recommendations', ...),
+  ('3', 'Activity 3: Build CPL Data Infrastructure', ...),
+  ('4', 'Activity 4: Sprints, Projects, Partnerships & Scale', ...),
+  ('5', 'Activity 5: Strategic Initiatives & Special Projects', ...);
+
+CREATE TABLE workplan_activity_associations (
+  project_id  TEXT NOT NULL,
+  activity_id TEXT NOT NULL,
+  created_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+  PRIMARY KEY (project_id, activity_id)
+);
+-- + index on activity_id; + RLS mirroring workplan_goals
+
+-- Backfill 1-to-1 from project_id leading digit
+INSERT INTO workplan_activity_associations (project_id, activity_id)
+SELECT DISTINCT activity_id, substring(activity_id from 1 for 1)
+FROM workplan_goals WHERE kind = 'project';
+```
+
+### V1-V4 gates (lighter shape — schema add, not re-key)
+
+  - **V1 (cardinality):** total wpg = 64 (54 projects + 10 activities);
+    27 distinct projects + 5 distinct activities; 27 associations ✅
+  - **V2 (project coverage):** every kind='project' activity_id has
+    exactly 1 association ✅
+  - **V3 (association integrity):** every association resolves to a
+    real kind='activity' AND a real kind='project' row ✅
+  - **V4 (validator):** post-migration `_validate_workplan_goals.py`
+    reports 54 matches, 0 drift, 27 associations clean ✅
+
+Backfill distribution: Activity 1 → 4 projects (1.1-1.4); Activity 2 →
+4 (2.1-2.4); Activity 3 → 9 (3.1, 3.1.1, 3.1.2, 3.1.2a, 3.2-3.6);
+Activity 4 → 9 (4.1, 4.1.1-4.1.4, 4.2-4.5); Activity 5 → 1 (5.1).
+Totals 27.
+
+### Code changes that rode along
+
+The migration touched the four scripts that consume `workplan_goals`:
+
+  - **`kb/_load_workplan_goals.py`** — new `load_workplan_goals_full()`
+    returns `(rows, associations, fetched_at, source)`; legacy
+    `load_workplan_goals()` keeps its tuple shape for backwards-compat.
+    SELECT now pulls the `kind` column. Snapshot file carries both
+    `rows` and `associations`.
+  - **`kb/_validate_workplan_goals.py`** — `reshape_supabase()` scopes
+    to `kind='project'` so the Excel-A+ comparison ignores Activity
+    rows (they're curator-managed, not Excel-derived). New
+    `validate_associations()` does the application-enforced FK
+    check (orphan-activity, orphan-project, projects-without-assoc).
+    `read_supabase_json()` now accepts both flat-list legacy input
+    AND the snapshot-shaped `{rows: [...], associations: [...]}` dict.
+  - **`kb/_seed_workplan_goals_apply.py`** — every PATCH/DELETE
+    scoped to `kind=eq.project` so the apply loop can never touch
+    an Activity row. INSERT payload includes `"kind": "project"`
+    explicitly. V3 cardinality check counts kind='project' rows
+    (was: all rows). V4 calls the extended validator signature.
+  - **`excel_to_dashboard.py`** — `build_workplan_goals_from_supabase()`
+    filters `kind='activity'` out of `by_aid` so the existing
+    rendering is unchanged. PR-B will add the proper Activities
+    section.
+
+The `kind or 'project'` default appears in 4 places (loader, validator,
+seed planner via reshape_supabase, generator). This lets pre-PR-A
+snapshots fall through gracefully — important for the
+snapshot-fallback resilience pattern.
+
+### Lessons (post-Phase-1-extension)
+
+**11. The first non-Excel-derived `workplan_goals` rows landed.** PR-A
+introduces the first rows in `workplan_goals` that aren't in Excel A+.
+The seed planner had to be taught to ignore them — `reshape_supabase`
+now filters by `kind='project'`. This is the model for every future
+expansion of the table: anything curator-managed lives behind a
+`kind` discriminator so the Excel-A+ planner stays oblivious to it.
+
+**12. `apply_migration` is the right shape when DDL fits one
+transaction.** Phase 1 needed `workflow_dispatch` because the apply
+script iterated 54 row operations via PostgREST. PR-A is one DDL
+batch + a backfill INSERT, all in one transaction the migration
+runner already gives us atomically. Don't wrap one-shot DDL in a
+GitHub Actions workflow when the migration tool handles it directly.
+
+**13. AskUserQuestion paid for architectural forks.** Three
+recommended-option questions resolved the design space in one
+exchange: ID scheme, ladder values, FK strategy. Each had
+materially different blast radius. Surfacing them as forks (with
+the recommended option labeled and the trade-offs spelled out)
+made the decisions fast and reversible-feeling for Sam.
+
+### Current state at end of PR-A
+
+  - ✅ `workplan_goals` has a `kind` column (default 'project')
+  - ✅ 5 Activity rows + 27 Project rows; 64 total (× 2 row_types per id)
+  - ✅ `workplan_activity_associations` table exists with 27 backfilled
+    1-to-1 associations + RLS mirroring `workplan_goals`
+  - ✅ Snapshot carries both tables; loader's full signature returns both
+  - ✅ Validator covers associations integrity
+  - ✅ Apply script + generator scope to kind='project' consistently
+  - ⏳ **PR-B (next):** generator + renderer update. Render Activities
+    section as first-class on the tab; project rows show
+    "Contributes to: Activity N" chips. Retire the hardcoded
+    `activity_labels` dict (it stays in code as a fallback for now).
+  - ⏳ **PR-C (after PR-B):** editor + add-flow modal. Activity/Project
+    radio + ladder fields + N-to-N multi-select.
+  - ⏳ **PR-D (optional):** split into its own tab if the page
+    gets dense. Sam's prior preference: one page, two sections.
+
+### Next concrete step
+
+PR-B. The generator + renderer update. The hardcoded `activity_labels`
+dict in `excel_to_dashboard.py` (lines 1361, 6270) becomes a
+fallback; the live label/ladder source becomes the Activity rows in
+Supabase. Project rows surface their `Contributes to: Activity N`
+chips via the new associations table.
+

@@ -6,6 +6,11 @@ After PR-4 of the Excel→Supabase Phase 1 migration, excel_to_dashboard.py
 calls `load_workplan_goals()` here instead of reading the 10 KPI columns
 out of the Excel Project List sheet.
 
+PR-A (Activity↔Project N-to-N) added the `kind` column on workplan_goals and
+a sibling `workplan_activity_associations` table. The snapshot now carries
+both, and `load_workplan_goals_full()` returns them together. The legacy
+`load_workplan_goals()` signature stays backwards-compatible.
+
 Fallback behavior (Sam's call: subtle):
   - Supabase fetch succeeds → write `kb/workplan_goals_snapshot.json` (the
     daily cron commits it; subsequent runs use it on failure), return rows
@@ -38,14 +43,11 @@ SUPABASE_URL = os.environ.get(
 SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 
 
-def _fetch_supabase() -> list[dict]:
+def _fetch_table(path: str) -> list[dict]:
+    """Generic Supabase REST fetch for a select query path (excluding base)."""
     if not SUPABASE_KEY:
         raise RuntimeError("SUPABASE_SERVICE_KEY not set")
-    endpoint = (
-        f"{SUPABASE_URL}/rest/v1/workplan_goals"
-        "?select=activity_id,name,row_type,"
-        "yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total"
-    )
+    endpoint = f"{SUPABASE_URL}/rest/v1/{path}"
     req = urllib.request.Request(
         endpoint,
         headers={
@@ -58,10 +60,31 @@ def _fetch_supabase() -> list[dict]:
         return json.load(r)
 
 
-def _write_snapshot(rows: list[dict], fetched_at: str) -> None:
+def _fetch_supabase() -> tuple[list[dict], list[dict]]:
+    """
+    Returns (workplan_goals_rows, associations_rows).
+
+    PR-A added the `kind` column + the workplan_activity_associations table;
+    both are fetched here so the snapshot carries the full picture.
+    """
+    rows = _fetch_table(
+        "workplan_goals"
+        "?select=activity_id,name,row_type,kind,"
+        "yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total"
+    )
+    assocs = _fetch_table(
+        "workplan_activity_associations?select=project_id,activity_id"
+    )
+    return rows, assocs
+
+
+def _write_snapshot(
+    rows: list[dict], assocs: list[dict], fetched_at: str
+) -> None:
     snapshot = {
         "_about": (
-            "Daily-cached snapshot of public.workplan_goals. Written by "
+            "Daily-cached snapshot of public.workplan_goals + "
+            "public.workplan_activity_associations. Written by "
             "kb/_load_workplan_goals.py after a successful Supabase fetch. "
             "Falls back to this file on Supabase outage so the dashboard "
             "regen continues without manual intervention."
@@ -70,6 +93,7 @@ def _write_snapshot(rows: list[dict], fetched_at: str) -> None:
         "_source_table": "public.workplan_goals",
         "row_count": len(rows),
         "rows": rows,
+        "associations": assocs,
     }
     SNAPSHOT_PATH.write_text(
         json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n",
@@ -77,7 +101,7 @@ def _write_snapshot(rows: list[dict], fetched_at: str) -> None:
     )
 
 
-def _read_snapshot() -> tuple[list[dict], str]:
+def _read_snapshot() -> tuple[list[dict], list[dict], str]:
     if not SNAPSHOT_PATH.exists():
         raise RuntimeError(
             f"Supabase fetch failed AND no snapshot at {SNAPSHOT_PATH}. "
@@ -85,31 +109,50 @@ def _read_snapshot() -> tuple[list[dict], str]:
         )
     snap = json.loads(SNAPSHOT_PATH.read_text(encoding="utf-8"))
     rows = snap.get("rows") or []
+    assocs = snap.get("associations") or []
     fetched_at = snap.get("_fetched_at") or "unknown"
-    return rows, fetched_at
+    return rows, assocs, fetched_at
 
 
 def load_workplan_goals() -> tuple[list[dict], str, str]:
     """
     Returns (rows, fetched_at, source) where source ∈ {"supabase", "snapshot"}.
 
+    Backwards-compatible shape: returns only workplan_goals rows. Callers that
+    need the new associations table should use `load_workplan_goals_full()`.
+
     fetched_at is "YYYY-MM-DD" — today's date on a successful fresh fetch, or
     the snapshot's stored `_fetched_at` date on fallback.
     """
+    rows, _assocs, fetched_at, source = load_workplan_goals_full()
+    return rows, fetched_at, source
+
+
+def load_workplan_goals_full() -> tuple[list[dict], list[dict], str, str]:
+    """
+    Returns (rows, associations, fetched_at, source).
+
+    PR-A: the new return shape carrying the workplan_activity_associations
+    rows alongside the workplan_goals rows. Backwards-compatible callers can
+    stick with `load_workplan_goals()`.
+    """
     try:
-        rows = _fetch_supabase()
+        rows, assocs = _fetch_supabase()
         fetched_at = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-        _write_snapshot(rows, fetched_at)
-        print(f"[workplan_goals] Loaded {len(rows)} rows from Supabase (fresh fetch).")
-        return rows, fetched_at, "supabase"
+        _write_snapshot(rows, assocs, fetched_at)
+        print(
+            f"[workplan_goals] Loaded {len(rows)} rows + {len(assocs)} "
+            f"associations from Supabase (fresh fetch)."
+        )
+        return rows, assocs, fetched_at, "supabase"
     except Exception as e:
         print(
             f"[workplan_goals] Supabase fetch failed: {e}. "
             f"Falling back to snapshot at {SNAPSHOT_PATH}."
         )
-        rows, fetched_at = _read_snapshot()
+        rows, assocs, fetched_at = _read_snapshot()
         print(
-            f"[workplan_goals] Loaded {len(rows)} rows from snapshot "
-            f"(as of {fetched_at})."
+            f"[workplan_goals] Loaded {len(rows)} rows + {len(assocs)} "
+            f"associations from snapshot (as of {fetched_at})."
         )
-        return rows, fetched_at, "snapshot"
+        return rows, assocs, fetched_at, "snapshot"
