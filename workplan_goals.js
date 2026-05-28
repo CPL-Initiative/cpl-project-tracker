@@ -427,9 +427,18 @@
     };
   }
 
+  // Tracks the active Esc listener so closeAddModal can detach it. Without
+  // this, every modal open stacks another listener that survives Cancel /
+  // overlay-click close paths until the next Esc keypress.
+  var _activeEscListener = null;
+
   function closeAddModal() {
     var ov = document.querySelector(".wpg-modal-overlay");
     if (ov) ov.remove();
+    if (_activeEscListener) {
+      document.removeEventListener("keydown", _activeEscListener);
+      _activeEscListener = null;
+    }
   }
 
   function openAddModal(state) {
@@ -531,9 +540,11 @@
     card.appendChild(actions);
 
     function syncKindUI() {
-      var k = document.querySelector('input[name="wpg-kind"]:checked').value;
+      // Read from the bound refs directly instead of querySelector — safer
+      // if keyboard navigation briefly puts neither radio in the :checked
+      // state during a transition.
+      var k = kindAct.checked ? "activity" : "project";
       assocSection.style.display = (k === "project") ? "" : "none";
-      // Update ID hint focus
       idInput.placeholder = (k === "activity") ? "e.g. 6" : "e.g. 3.7";
     }
     kindAct.addEventListener("change", syncKindUI);
@@ -545,12 +556,10 @@
     overlay.addEventListener("click", function (e) {
       if (e.target === overlay) closeAddModal();
     });
-    document.addEventListener("keydown", function escListener(e) {
-      if (e.key === "Escape") {
-        closeAddModal();
-        document.removeEventListener("keydown", escListener);
-      }
-    });
+    _activeEscListener = function (e) {
+      if (e.key === "Escape") closeAddModal();
+    };
+    document.addEventListener("keydown", _activeEscListener);
 
     btnSubmit.addEventListener("click", function () {
       submitAdd({
