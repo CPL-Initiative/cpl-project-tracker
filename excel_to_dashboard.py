@@ -16,6 +16,7 @@ Open (or refresh) CPL_Dashboard.html in your browser to see updated data.
 
 import json, os, re, sys, urllib.request
 from datetime import datetime, timedelta, timezone
+from html import escape as html_escape
 from openpyxl import load_workbook
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -1274,11 +1275,11 @@ def render_annual_goals_table_html(annual_goals):
 
     current_activity = ""
     for row in annual_goals:
-        # Activity group header
+        # Activity group header — curator-editable Activity name flows here
         if row["activity"] != current_activity:
             current_activity = row["activity"]
             html += (f'                    <tr style="background:#163A5F;color:#fff;">\n'
-                     f'                        <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid #0A2240;">{current_activity}</td>\n'
+                     f'                        <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid #0A2240;">{html_escape(current_activity)}</td>\n'
                      f'                    </tr>\n')
 
         # Three rows per sub-activity: GOAL, CURRENT, STRETCH
@@ -1306,9 +1307,11 @@ def render_annual_goals_table_html(annual_goals):
                         f'<div style="font-size:0.65rem;color:#888;font-weight:400;'
                         f'margin-top:0.15rem;">{chips_html}</div>'
                     )
+                # Curator-editable id + name flow into the visible cell — escape both.
                 name_cell = (f'<td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;'
                              f'vertical-align:top;font-weight:600;background:#fff;">'
-                             f'<span style="color:#888;font-size:0.75rem;">{row["id"]}</span> {row["name"]}{chip_line}</td>')
+                             f'<span style="color:#888;font-size:0.75rem;">{html_escape(row["id"])}</span> '
+                             f'{html_escape(row["name"])}{chip_line}</td>')
 
             html += f'                    <tr style="{style}">\n'
             html += f'                        {name_cell}\n'
@@ -2094,15 +2097,17 @@ def render_workplan_goals_html(
         )
         for i, act in enumerate(activities):
             bg = "#fff" if i % 2 == 0 else "#fafbfc"
-            # Activity names already start with "Activity N:" — don't double the prefix
-            name_content = act["name"]
+            # Activity names already start with "Activity N:" — don't double the prefix.
+            # Escape: curator-editable via the PR-C add-flow.
+            name_content = html_escape(act["name"])
             html += _render_ladder_rows(act, bg, "activity", name_content)
         html += _table_close()
 
     # ── Projects section — per-Activity tables, sub-grouped + chips ───────
     for grp_num in sorted(groups.keys()):
         acts = groups[grp_num]
-        grp_label = _act_label(grp_num)
+        # Curator-editable Activity name lands in the table card header
+        grp_label = html_escape(_act_label(grp_num))
 
         html += _table_open(grp_label)
         for i, p in enumerate(acts):
@@ -2114,10 +2119,14 @@ def render_workplan_goals_html(
             for assoc_id in p.get("activity_ids", []):
                 # Use the short "Activity N" label inside the chip — the
                 # full Supabase name (which can be long) is the hover.
+                # `full` is curator-editable via the PR-C add-flow, so escape
+                # before it lands inside the title="" attribute (otherwise
+                # a stray `"` breaks out and the rest of the name parses as
+                # HTML).
                 short = f"Activity {assoc_id}"
                 full = sb_activity_labels.get(assoc_id) or short
                 chips_html += (
-                    f'<span class="wpg-act-chip" title="{full}" '
+                    f'<span class="wpg-act-chip" title="{html_escape(full, quote=True)}" '
                     f'style="display:inline-block;margin:0 0.25rem 0 0;padding:0.05rem 0.4rem;'
                     f'background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.7rem;'
                     f'font-weight:600;">{short}</span>'
@@ -2130,7 +2139,12 @@ def render_workplan_goals_html(
                     f'<span style="color:#888;">Contributes to:</span> '
                     f'{chips_html}</div>'
                 )
-            name_content = f'{p["id"]} {p["name"]}{chip_line}'
+            # Project name is curator-editable via the PR-C add-flow; escape.
+            # `chip_line` is already known-safe (curator-injected names only
+            # flow into it via the title="" attribute, which is escaped above).
+            name_content = (
+                f'{html_escape(p["id"])} {html_escape(p["name"])}{chip_line}'
+            )
             html += _render_ladder_rows(p, bg, "project", name_content)
         html += _table_close()
 
