@@ -1361,10 +1361,81 @@ def render_annual_goals_table_html(annual_goals):
     return html
 
 
+# Sprint children that fold into the 4.1 "Sprints" composite KPI card.
+SPRINT_IDS = ["4.1.1", "4.1.2", "4.1.3", "4.1.4"]
+
+# The 10 KPI ladder columns (goal+stretch x 5 years) carried per project.
+_ACTIVITY_KPI_LADDER_KEYS = [
+    "kpi_goal_2526", "kpi_stretch_2526", "kpi_goal_2627", "kpi_stretch_2627",
+    "kpi_goal_2728", "kpi_stretch_2728", "kpi_goal_2829", "kpi_stretch_2829",
+    "kpi_goal_2930", "kpi_stretch_2930",
+]
+
+
+def _kpi_cell_nonzero_any(p):
+    """True if any of the project's 10 KPI ladder cells parses to a non-zero
+    number. read_projects() formats these as display strings (e.g. '42,620'),
+    so strip separators before the numeric test; non-numeric -> not a KPI."""
+    for k in _ACTIVITY_KPI_LADDER_KEYS:
+        v = p.get(k)
+        if v is None or v == "":
+            continue
+        if isinstance(v, (int, float)):
+            if float(v) != 0:
+                return True
+            continue
+        s = str(v).strip().replace(",", "").replace("+", "")
+        if not s:
+            continue
+        try:
+            if float(s) != 0:
+                return True
+        except ValueError:
+            continue
+    return False
+
+
+def derive_core_activity_ids(projects):
+    """Auto-derive the ordered activity-KPI-card id list from the live Project
+    List, replacing the old hardcoded `core_ids` that drifted.
+
+    A+ rule: every project (in Project List order) with a non-zero KPI ladder,
+    EXCLUDING `D.*` dashboard-metric rows and the sprint children in SPRINT_IDS
+    (they fold into the 4.1 composite). The 4.1 composite anchor is guaranteed
+    present whenever any sprint child exists, even if 4.1's own ladder is blank.
+    """
+    sprint_set = set(SPRINT_IDS)
+    ids, seen = [], set()
+    has_sprint = False
+    for p in projects:
+        pid = str(p.get("id", "")).strip()
+        if not pid or pid.startswith("D."):
+            continue
+        if pid in sprint_set:
+            has_sprint = True
+            continue
+        if not _kpi_cell_nonzero_any(p):
+            continue
+        if pid not in seen:
+            ids.append(pid)
+            seen.add(pid)
+    # The 4.1 card represents the sprint COUNT, so it must appear whenever there
+    # are sprint children -- even if 4.1's own ladder happens to be blank.
+    if has_sprint and "4.1" not in seen:
+        insert_at = next(
+            (i for i, x in enumerate(ids) if x.startswith("4.") and x != "4.1"),
+            len(ids),
+        )
+        ids.insert(insert_at, "4.1")
+    return ids
+
+
 def build_activity_kpis(projects, activities=None):
     """
-    Build 19 activity-level KPI cards from the core sub-activities (1.1-4.5).
-    Groups them by Activity 1-5 for the dashboard.
+    Build activity-level KPI cards from the core sub-activities, grouped by
+    Activity 1-5 for the dashboard. The core id list is AUTO-DERIVED from the
+    live Project List (see derive_core_activity_ids) so it stays correct as
+    projects change.
 
     PR-C follow-up (2026-05-28): `activities` (new, optional) is the list
     returned by `build_workplan_goals_from_supabase()`. When provided, the
@@ -1373,18 +1444,15 @@ def build_activity_kpis(projects, activities=None):
     survives as a fallback (now including Activity 5 — previously the
     dict was missing it, which silently dropped the Activity 5 KPI group).
     """
-    # Core sub-activity IDs in order (19 Workplan sub-activities)
-    # Note: 4.1 is represented by 4.1a-4.1d in the project list (sprint components)
-    core_ids = [
-        "1.1", "1.2", "1.3", "1.4",
-        "2.1", "2.2", "2.3", "2.4",
-        "3.1", "3.2", "3.3", "3.4", "3.5", "3.6",
-        "4.1",  # aggregated from 4.1a-4.1d
-        "4.2", "4.3", "4.4", "4.5",
-    ]
+    # Core sub-activity IDs, AUTO-DERIVED from the live Project List (A+ rule:
+    # every project with a non-zero KPI ladder, excl D.* metric rows and the
+    # sprint children that fold into the 4.1 composite). Replaces a hardcoded
+    # list that had drifted out of sync (missing Activity 5; referencing the
+    # non-existent 4.1a-4.1d instead of the real 4.1.1-4.1.4 sprint children).
+    core_ids = derive_core_activity_ids(projects)
 
-    # Sub-IDs that compose 4.1
-    sprint_ids = ["4.1a", "4.1b", "4.1c", "4.1d"]
+    # Real sub-IDs that compose the 4.1 sprint composite
+    sprint_ids = SPRINT_IDS
 
     # Defensive fallback labels. Used when the Supabase Activity row for the
     # given activity_id is missing. Now covers Activity 5 (previously absent
@@ -7244,7 +7312,7 @@ def main():
         "3.2": "eligible_units",
         "2.1": "credit_recommendations",
         "3.3": "active_colleges",
-        "4.1a": "veteran_sprint",
+        "4.1.1": "veteran_sprint",
     }
     proj_map_for_order = {p["id"]: p for p in projects}
     kpi_order_pairs = []  # (order_val, kpi_key)
