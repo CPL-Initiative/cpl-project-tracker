@@ -6,6 +6,10 @@ This is the dry-run-only sibling of `kb/_validate_workplan_goals.py`. It produce
 `kb/workplan_goals_seed_plan.md` — a human-reviewable INSERT/UPDATE/DELETE plan
 that Sam eyeballs before any actual apply ships in a later PR. NO WRITES.
 
+PR-A scoping: planning is restricted to `kind='project'` rows (via
+`reshape_supabase()` which filters out kind='activity'). Activity rows are
+curator-managed and never appear in the INSERT/UPDATE/DELETE buckets.
+
 Auth + offline mode mirror the validator (SUPABASE_SERVICE_KEY env or
 --supabase-json PATH).
 

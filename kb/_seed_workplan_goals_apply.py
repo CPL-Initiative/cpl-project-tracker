@@ -52,9 +52,11 @@ from _validate_workplan_goals import (  # noqa: E402
     YEAR_COLS,
     compare_rows,
     derive_excel_workplan_goals,
+    fetch_associations,
     fetch_supabase_rows,
     render_report as render_validation_report,
     reshape_supabase,
+    validate_associations,
 )
 
 
@@ -79,6 +81,7 @@ def _values_payload(values: dict, name: str, activity_id: str, row_type: str) ->
         "activity_id": activity_id,
         "name": name,
         "row_type": row_type,
+        "kind": "project",
         "yr_2025_26": values["yr_2025_26"],
         "yr_2026_27": values["yr_2026_27"],
         "yr_2027_28": values["yr_2027_28"],
@@ -105,14 +108,18 @@ def do_insert(ins: dict) -> dict:
 def do_update(upd: dict) -> dict:
     activity_id = upd["activity_id"]
     row_type = upd["row_type"]
+    # Scope to kind='project' so an UPDATE never touches an Activity row that
+    # happens to share an activity_id (no current overlap, but defensive).
     q = (
         f"?activity_id=eq.{urllib.parse.quote(activity_id)}"
         f"&row_type=eq.{urllib.parse.quote(row_type)}"
+        f"&kind=eq.project"
     )
     body = _values_payload(upd["excel"], upd["name"], activity_id, row_type)
-    # Drop activity_id + row_type from the PATCH body (they're the filter, not the new value)
+    # Drop activity_id + row_type + kind from the PATCH body (they're the filter, not the new value)
     body.pop("activity_id", None)
     body.pop("row_type", None)
+    body.pop("kind", None)
     status, resp = _request("PATCH", f"/rest/v1/workplan_goals{q}", body)
     ok = 200 <= status < 300
     # V2 source-exists: PATCH-with-representation returns the patched rows; empty
@@ -138,9 +145,12 @@ def do_update(upd: dict) -> dict:
 def do_delete(d: dict) -> dict:
     activity_id = d["activity_id"]
     row_type = d["row_type"]
+    # Scope DELETE to kind='project' — Activity rows are curator-managed and
+    # must never be removed by the Excel A+ seed loop.
     q = (
         f"?activity_id=eq.{urllib.parse.quote(activity_id)}"
         f"&row_type=eq.{urllib.parse.quote(row_type)}"
+        f"&kind=eq.project"
     )
     status, resp = _request("DELETE", f"/rest/v1/workplan_goals{q}", None)
     ok = 200 <= status < 300
@@ -214,6 +224,9 @@ def main():
         # Still re-run validator to keep the output fresh.
         post_rows = pre_rows
         post_supabase = pre_supabase
+        post_project_rows = [
+            r for r in post_rows if (r.get("kind") or "project") == "project"
+        ]
     else:
         print(
             f"V1 ok. Applying {len(buckets['inserts'])} INSERTs, "
@@ -240,18 +253,36 @@ def main():
             )
 
         # ── V3: post-apply cardinality ────────────────────────────
+        # PR-A: the table now carries kind='activity' rows too; cardinality
+        # check is scoped to kind='project' (2 × A+ activities).
         post_rows = fetch_supabase_rows()
-        if len(post_rows) != expected_total_rows:
+        post_project_rows = [
+            r for r in post_rows if (r.get("kind") or "project") == "project"
+        ]
+        if len(post_project_rows) != expected_total_rows:
             sys.exit(
-                f"V3 failed: post-apply row count {len(post_rows)} "
+                f"V3 failed: post-apply project-row count {len(post_project_rows)} "
                 f"!= expected {expected_total_rows}. Manual reconciliation required."
             )
         post_supabase = reshape_supabase(post_rows)
 
-    # ── V4: re-run validator ──────────────────────────────────────
+    # ── V4: re-run validator (now also covers associations integrity) ──
     matches, mismatches, missing, orphans = compare_rows(excel, post_supabase)
+    post_assocs = fetch_associations()
+    assoc_orphan_activity, assoc_orphan_project, assoc_projects_without = (
+        validate_associations(post_rows, post_assocs)
+    )
     validation_report = render_validation_report(
-        excel, post_supabase, matches, mismatches, missing, orphans
+        excel,
+        post_supabase,
+        matches,
+        mismatches,
+        missing,
+        orphans,
+        assoc_orphan_activity=assoc_orphan_activity,
+        assoc_orphan_project=assoc_orphan_project,
+        assoc_projects_without=assoc_projects_without,
+        assoc_count=len(post_assocs),
     )
     VALIDATOR_OUT_PATH.write_text(validation_report, encoding="utf-8")
     # Re-run the planner against post-apply state too, so the committed plan
@@ -261,17 +292,27 @@ def main():
         render_plan(excel, post_supabase, post_buckets), encoding="utf-8"
     )
 
-    if mismatches or missing or orphans:
+    if (
+        mismatches
+        or missing
+        or orphans
+        or assoc_orphan_activity
+        or assoc_orphan_project
+        or assoc_projects_without
+    ):
         sys.exit(
             f"V4 failed: validator reports drift after apply. "
             f"matches={len(matches)} mismatches={len(mismatches)} "
-            f"missing={len(missing)} orphans={len(orphans)}. "
+            f"missing={len(missing)} orphans={len(orphans)} "
+            f"assoc_orphans={len(assoc_orphan_activity) + len(assoc_orphan_project)} "
+            f"projects_without_assoc={len(assoc_projects_without)}. "
             f"See kb/workplan_goals_validation.md."
         )
 
     print(
         f"Apply complete + V1-V4 green. "
-        f"Supabase: {len(post_rows)} rows = 2 × {len(excel)} A+ activities."
+        f"Supabase: {len(post_project_rows)} project-rows = 2 × {len(excel)} A+ activities; "
+        f"{len(post_assocs)} associations clean."
     )
 
 

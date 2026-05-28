@@ -6278,10 +6278,17 @@ def build_workplan_goals_from_supabase(supabase_rows, projects, live_data=None):
     proj_map = {p["id"]: p for p in projects}
 
     # Group Supabase rows by activity_id → {"name": str, "GOAL": row, "STRETCH": row}
+    # PR-A: scope to kind='project' rows. The 5 kind='activity' rows are
+    # curator-managed top-level Activities; PR-B will render them as their
+    # own section, but until then we keep the projects-grouped-under-hardcoded-
+    # activity-labels rendering. Rows without an explicit kind default to
+    # 'project' so pre-PR-A snapshots still render correctly.
     by_aid: dict[str, dict] = {}
     for row in supabase_rows:
         aid = row.get("activity_id")
         if not aid:
+            continue
+        if (row.get("kind") or "project") != "project":
             continue
         bucket = by_aid.setdefault(aid, {"name": row.get("name") or ""})
         bucket[row["row_type"]] = row
