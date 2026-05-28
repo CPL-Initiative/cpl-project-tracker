@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-28T16:53:43.440Z",
+  "scraped_at": "2026-05-28T18:53:49.387Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -183,13 +183,13 @@
         },
         {
           "college": "Bakersfield College",
-          "students": 562,
+          "students": 565,
           "units": 8193,
-          "avgUnits": 14.578291814946619,
+          "avgUnits": 14.500884955752213,
           "transcriptionRate": 6.7,
-          "avgTranscribed": 0.9822064056939501,
+          "avgTranscribed": 0.9769911504424779,
           "criteriaMetCount": 3,
-          "militaryStudents": 519,
+          "militaryStudents": 522,
           "nonMilitaryStudents": 51,
           "apprenticeStudents": 0,
           "savings": 14883652.5,
@@ -773,13 +773,13 @@
         },
         {
           "college": "Fresno City College",
-          "students": 351,
+          "students": 372,
           "units": 836,
-          "avgUnits": 2.381766381766382,
+          "avgUnits": 2.247311827956989,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 350,
+          "militaryStudents": 371,
           "nonMilitaryStudents": 1,
           "apprenticeStudents": 0,
           "savings": 1446280,
@@ -1207,6 +1207,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Napa Valley College",
+          "students": 46,
+          "units": 21,
+          "avgUnits": 0.45652173913043476,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 46,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 36330,
+          "yearImpact": 127407,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Gavilan College",
           "students": 46,
           "units": 0,
@@ -1237,21 +1252,6 @@
           "transcribedUnits": 0
         },
         {
-          "college": "Napa Valley College",
-          "students": 45,
-          "units": 21,
-          "avgUnits": 0.4666666666666667,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 45,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 36330,
-          "yearImpact": 127407,
-          "transcribedUnits": 0
-        },
-        {
           "college": "American River College",
           "students": 44,
           "units": 132,
@@ -1267,6 +1267,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Sacramento City College",
+          "students": 42,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 42,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Hartnell College",
           "students": 39,
           "units": 114,
@@ -1279,21 +1294,6 @@
           "apprenticeStudents": 0,
           "savings": 197220,
           "yearImpact": 691638,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Sacramento City College",
-          "students": 39,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 39,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
           "transcribedUnits": 0
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "46,017",
+      "value": "46,045",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,071"
+          "value": "24,099"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 46017,
+    "Students": 46045,
     "Units": 207384.65000000002,
     "TranscribedUnits": 98841.45,
     "Savings": 292024317.75,
     "YearImpact": 1169218069.9,
-    "MilitaryStudents": 24071,
+    "MilitaryStudents": 24099,
     "NonMilitaryStudents": 22022,
     "AprenticeStudents": 747,
-    "AverageUnits": 4.5066964382728125,
-    "TranscribedAverage": 2.147933372449312
+    "AverageUnits": 4.503955912694104,
+    "TranscribedAverage": 2.1466272125095016
   }
 }
