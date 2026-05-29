@@ -72,9 +72,22 @@ def _fetch_supabase() -> tuple[list[dict], list[dict]]:
         "?select=activity_id,name,row_type,kind,"
         "yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total"
     )
-    assocs = _fetch_table(
-        "workplan_activity_associations?select=project_id,activity_id"
-    )
+    # is_primary is added by kb/supabase_activity_associations_add_primary.sql
+    # (the Activity↔Project association editor's schema change). Until that
+    # migration is applied, selecting the column 400s, so try the richer select
+    # first and fall back to the (project_id, activity_id) shape. Once the
+    # column lands, the first select succeeds and the snapshot carries
+    # is_primary automatically — the renderer + editor light up the primary
+    # affordance on the next daily regen.
+    try:
+        assocs = _fetch_table(
+            "workplan_activity_associations"
+            "?select=project_id,activity_id,is_primary"
+        )
+    except Exception:
+        assocs = _fetch_table(
+            "workplan_activity_associations?select=project_id,activity_id"
+        )
     return rows, assocs
 
 
