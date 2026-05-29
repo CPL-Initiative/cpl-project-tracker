@@ -148,6 +148,9 @@ jobs:
           # Workplan Goals Phase 1 PR-4: daily-cached Supabase snapshot
           # (graceful-degradation fallback for Supabase outages)
           git add kb/workplan_goals_snapshot.json 2>/dev/null || true
+          # Projects Phase 2 PR-4: daily-cached Supabase snapshot
+          # (graceful-degradation fallback for Supabase outages)
+          git add kb/projects_snapshot.json 2>/dev/null || true
           # Only add CustomReport if it was freshly fetched
           git add CustomReport_latest.json 2>/dev/null || true
           if git diff --cached --quiet; then

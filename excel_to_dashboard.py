@@ -1049,6 +1049,138 @@ def read_projects(wb):
     return projects
 
 
+# ── Excel→Supabase Phase 2 (PR-4): build the project list from Supabase ──────
+# Supabase `public.projects` column → read_projects() field name. The 6 renames
+# (description/workplan_activity/vision_2030_action/cpl_goal/latest_update/
+# wp_notes) + 3 type-changed columns (percent_complete/start_date/end_date) are
+# handled in build_projects_from_supabase(); the rest keep their Excel names.
+#
+# The KPI goal/stretch ladder (kpi_goal_2526 … kpi_stretch_2930) is NOT sourced
+# from Supabase here. It stays Excel-sourced (enriched in load_projects) for two
+# reasons: (1) the Excel ladder columns are NOT retired in Phase 2 — the 3 JS
+# report consumers still read them — so there's no "retire Excel" benefit yet;
+# (2) workplan_goals (the Phase-1 home of the ladder) stores 0.0 for both a
+# blank cell AND a literal 0, so it cannot losslessly reconstruct read_projects'
+# ladder (e.g. project 1.4 has a real "0" target; 5.1 has blanks). Excel is the
+# lossless source. The ladder moves to workplan_goals in Phase 3, when the Excel
+# ladder columns retire alongside the JS-consumer migration.
+_LADDER_SUFFIXES = ("2526", "2627", "2728", "2829", "2930")
+
+
+def _empty_ladder():
+    d = {}
+    for prefix in ("kpi_goal_", "kpi_stretch_"):
+        for suffix in _LADDER_SUFFIXES:
+            d[prefix + suffix] = ""
+    return d
+
+
+def build_projects_from_supabase(supabase_rows):
+    """Reshape Supabase `public.projects` rows into the exact field contract
+    read_projects() emits, so every downstream consumer is unaffected.
+
+    - The 6 renamed columns map back to desc/activity/v2030/goal/update/
+      workplan_notes; pct/start/end/update_date coerce via the same pct logic
+      and fmt_date read_projects() uses (idempotent on already-formatted values).
+    - The ladder is left blank here (see module note above) — load_projects()
+      enriches it from Excel for exact parity.
+    - `override` is None (verified unpopulated in Excel — a true no-op) and
+      `excel_row` is 0 here; load_projects() enriches excel_row from the
+      workbook so the "Open in Excel for the Web" deep-links keep working.
+
+    Returns a list of project dicts (the 34 real grid-card projects).
+    """
+    out = []
+    for row in supabase_rows:
+        pid = str(row.get("id"))
+        pct_raw = row.get("percent_complete")
+        try:
+            pct = int(round(float(pct_raw))) if pct_raw not in (None, "") else 0
+        except (TypeError, ValueError):
+            pct = 0
+        kpi_metric_raw = row.get("kpi_metric")
+        kpi_order_raw = row.get("kpi_order")
+        proj = {
+            "id":            pid,
+            "name":          row.get("name") or "",
+            "desc":          row.get("description") or "",
+            "activity":      row.get("workplan_activity") or "",
+            "v2030":         row.get("vision_2030_action") or "",
+            "goal":          row.get("cpl_goal") or "",
+            "budget_source": row.get("budget_source") or "",
+            "budget":        row.get("budget") or "",
+            "lead":          row.get("lead") or "",
+            "team":          row.get("team") or "",
+            "status":        row.get("status") or "",
+            "pct":           pct,
+            "start":         fmt_date(row.get("start_date") or ""),
+            "end":           fmt_date(row.get("end_date") or ""),
+            "milestones":    row.get("milestones") or "",
+            "update":        row.get("latest_update") or "",
+            "update_date":   fmt_date(row.get("update_date") or ""),
+            "kpi_metric":    fmt_number(kpi_metric_raw) if kpi_metric_raw not in (None, "") else "",
+            "kpi_unit":      str(row.get("kpi_unit") or ""),
+            "workplan_notes": row.get("wp_notes") or "",
+            "kpi_order":     int(kpi_order_raw) if isinstance(kpi_order_raw, (int, float)) and kpi_order_raw else None,
+            "override":      None,
+            "excel_row":     0,
+        }
+        proj.update(_empty_ladder())
+        out.append(proj)
+    return out
+
+
+def load_projects(wb):
+    """Phase 2 (PR-4) project loader with three-tier resilience:
+    Supabase → daily snapshot → Excel (read_projects).
+
+    Returns (projects, fetched_at, source) where:
+      - projects: the read_projects()-shaped list = 34 Supabase-sourced real
+        projects + the Excel-only D.* KPI-helper rows. Each real project's KPI
+        ladder + excel_row are enriched from the workbook (the ladder stays
+        Excel-sourced in Phase 2 — see build_projects_from_supabase note).
+      - fetched_at: 'YYYY-MM-DD' (today on a fresh fetch; the snapshot's date
+        on fallback; today on the Excel fallback).
+      - source: 'supabase' | 'snapshot' | 'excel'.
+
+    On the Excel fallback (both Supabase and the snapshot unavailable) the full
+    read_projects() output is returned unchanged — the ultimate safety net.
+    """
+    excel_projects = read_projects(wb)
+    excel_row_by_id = {p["id"]: p.get("excel_row", 0) for p in excel_projects}
+    helper_rows = [p for p in excel_projects if str(p["id"]).startswith("D.")]
+    excel_ladder_by_id = {
+        p["id"]: {k: v for k, v in p.items()
+                  if k.startswith("kpi_goal_") or k.startswith("kpi_stretch_")}
+        for p in excel_projects
+    }
+
+    try:
+        try:
+            from kb._load_projects import load_projects_full as _load_proj_full
+        except ImportError:
+            sys.path.insert(0, os.path.join(os.path.dirname(__file__), "kb"))
+            from _load_projects import load_projects_full as _load_proj_full
+        supa_rows, fetched_at, source = _load_proj_full()
+        real = build_projects_from_supabase(supa_rows)
+        # Enrich each real project with the Excel-sourced ladder + excel_row
+        # (Excel-web deep-links). Projects added to Supabase but absent from
+        # Excel (none in Phase 2; possible once PR-5's editor lands) keep the
+        # blank ladder + excel_row 0.
+        for p in real:
+            p["excel_row"] = excel_row_by_id.get(p["id"], 0)
+            if p["id"] in excel_ladder_by_id:
+                p.update(excel_ladder_by_id[p["id"]])
+        projects = real + helper_rows
+        print(f"  Projects: {len(real)} from Supabase ({source}, as of {fetched_at}) "
+              f"+ {len(helper_rows)} Excel D.* helper rows")
+        return projects, fetched_at, source
+    except Exception as e:
+        print(f"  Projects: Supabase + snapshot unavailable ({e}); "
+              f"falling back to Excel read_projects().")
+        return excel_projects, _now_pt().strftime("%Y-%m-%d"), "excel"
+
+
 def read_config_overrides(wb):
     """
     Read dashboard configuration overrides from the Project List tab.
@@ -2377,13 +2509,18 @@ def _render_single_project_card(p, update_log=None, attachments=None):
 '''
 
 
-def render_projects_grid_html(projects, update_log=None, attachments=None):
+def render_projects_grid_html(projects, update_log=None, attachments=None,
+                              data_source_stamp=None):
     """
     Generate static HTML for the projects grid with cards,
     grouped under Goal headers (Goal 1, Goal 2, Goal 3).
     Excludes subpopulation rows (D.x IDs).
     Each card has data attributes for JS filtering.
     Multi-goal projects appear under their primary (first) goal.
+
+    data_source_stamp (Phase 2 PR-4): when provided, renders a subtle "Project
+    data as of YYYY-MM-DD" line above the grid so a snapshot-fallback day shows
+    its staleness without being loud.
     """
     # Group projects by primary goal
     goal_groups = {}
@@ -2405,6 +2542,11 @@ def render_projects_grid_html(projects, update_log=None, attachments=None):
                           key=lambda g: (0, int(re.search(r'\d+', g).group())) if re.search(r'\d+', g) else (1, 0))
 
     html = ""
+    if data_source_stamp:
+        html += (
+            f'<p style="color:#888;font-size:0.75rem;margin:0 0 1rem 0;">'
+            f'Project data as of {data_source_stamp}</p>'
+        )
     for goal_key in sorted_goals:
         goal_projects = goal_groups[goal_key]
         goal_info = CPL_GOALS.get(goal_key, {})
@@ -7257,7 +7399,11 @@ def main():
     _LOCAL_ATTACHMENTS = os.path.join(SCRIPT_DIR, "Attachments")
     att_dir = ATTACHMENTS_DIR if os.path.isdir(ATTACHMENTS_DIR) else _LOCAL_ATTACHMENTS
     # Will scan after projects are read (need project list for subfolder creation)
-    projects        = read_projects(wb)
+    # Excel→Supabase Phase 2 (PR-4): the 34 real projects load from Supabase
+    # (with daily-snapshot + Excel fallbacks); the Excel-only D.* KPI-helper
+    # rows + the KPI ladder + excel_row come from the workbook. Behavior-
+    # preserving — see kb/_test_projects_parity.py.
+    projects, projects_fetched_at, projects_source = load_projects(wb)
     config_overrides = read_config_overrides(wb)
     update_log      = read_update_log(wb)
     budget          = read_budget_plan(wb)
@@ -7850,7 +7996,7 @@ def main():
                 proj_grid_end = html.find('<!-- Budget Section -->')
                 proj_grid_end_consumes = proj_grid_end
             if proj_grid_start != -1 and proj_grid_end != -1:
-                proj_cards_html = render_projects_grid_html(projects, update_log, attachments=attachments)
+                proj_cards_html = render_projects_grid_html(projects, update_log, attachments=attachments, data_source_stamp=projects_fetched_at)
                 project_count = len([p for p in projects if not p["id"].startswith("D.")])
                 # Workplan Progress chart now lives inside the Workplan Activity
                 # Metrics section (so it collapses with it). The Projects Grid
