@@ -3,6 +3,9 @@ __pycache__/
 *.pyc
 .DS_Store
 
+# Claude Code background-agent worktrees (transient, harness-managed)
+.claude/worktrees/
+
 # Gitleaks artifacts
 gitleaks-report.json
 gitleaks.exe
