@@ -139,6 +139,51 @@ asserts the rendered output is inert. It's faster + more reliable than re-readin
 and it's a permanent regression guard. (Also reaffirms: a sub-agent diff is a
 proposal — the test-driven review is where the merge is earned.)
 
+## 2026-05-29 — Session 17 third instance + the inline-JSON-in-`<script>` class (#192)
+
+PR #192 is the **third** confirming instance — and it extends the taxonomy. The
+hostile-input test (now the standing review mechanism, per the refinement above)
+was run during the **#191** review — a *different* feature (surfacing the editor on
+all 34 cards). It surfaced raw `<script>` / `<img onerror>` leaks, but in the
+**Activity-KPI cards** (`akpi-name`, the `Activity N:` group header) and the
+**inline `window.CPL_DATA` JSON blob** — neither touched by #191. Project `name`
+became curator-editable in Phase 2 PR-5, and these renderers consume it. Classified
+pre-existing / out-of-scope, flagged in the #191 PR body, fixed in a focused
+follow-up (#192). **Discipline: the injection test pays off beyond the change under
+review — flag the adjacent sink, fix it separately, keep the feature diff clean.**
+
+**The new injection class — (d) JS-string / JSON in a `<script>` block — has its
+OWN escape, and `html.escape` is the WRONG tool for it.** The akpi HTML sites were
+class (a)/(b) → `html_escape(quote=True)`. But `window.CPL_DATA = {…}` emitted
+inline is a JS-string context: a name containing `</script>` terminates the script
+element and everything after is live HTML — HTML-escaping the value does nothing
+about that, because you're not in an HTML text node. The correct fix neutralizes
+the breakout characters **in the serialized JSON**:
+
+    def _js_safe_json(obj, indent=2):
+        return (json.dumps(obj, indent=indent, ensure_ascii=False)
+                .replace("<", "\\u003c").replace(">", "\\u003e")
+                .replace("&", "\\u0026")
+                .replace(" ", "\\u2028").replace(" ", "\\u2029"))
+
+`<`/`>`/`&` → `<`/`>`/`&` kills `</script>` + `<!--`; U+2028/U+2029
+→ escapes guard old JS engines (invalid in pre-ES2019 string literals, even though
+valid JSON). `JSON.parse` / the JS parser decode every escape back, so **the client
+sees byte-identical data** — a transparent, regen-safe fix.
+
+*In-session gotcha worth carrying:* the U+2028/U+2029 characters render as blank in
+an editor, so a `Read` of the helper showed `.replace(" ", …)` and looked like a
+space-corruption bug. A functional unit test (`json.loads` round-trip + assert
+"spaces preserved") settled that the real chars were intact. **Verify a suspected
+unicode bug functionally, not by eyeballing a Read.**
+
+**Refinement to step 3 of the methodology:** class (d)'s escape is JSON
+`\uXXXX`-neutralization, NOT `html.escape`. Reach for `html.escape` only inside
+HTML text/attribute contexts; inside a `<script>` you need the JSON-safe encoder.
+**Fix locus (Rule 1):** #192 committed only the generator — the escaped output
+flows out on the next regen; a render-layer security fix doesn't need the
+regenerated artifacts in its diff.
+
 ## See also
 
 - `[[docs/excel_to_supabase_lessons]]` — Session 16 lesson #4 (sub-agent build,
