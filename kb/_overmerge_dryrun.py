@@ -4,8 +4,29 @@ Cross-discipline over-merge re-mint dry-run.
 MEASUREMENT ONLY. Writes nothing to kb/coci_*.json, nothing to Supabase, nothing
 to live curation. Reads the auditor's `member_top_divergence` flagged set (from
 kb/row_audit/latest.json) plus the current M-ID catalog + memberships, simulates
-splitting each flagged M-ID into discipline-pure pieces by 2-digit TOP division,
-and produces reviewable artifacts under kb/overmerge_out/<date>/:
+splitting each flagged M-ID into discipline-pure pieces, and produces reviewable
+artifacts under kb/overmerge_out/<date>/.
+
+Pass-1 split logic (title/subject/description-aware — the FIRST matching branch
+wins per flagged M-ID):
+  1. REVIEW-HOLD — sister-pair / interdisciplinary-token courses are HELD for
+     curator veto, never split.
+  2. TITLE→DISCIPLINE KEEP-WHOLE — if the common_title matches a curator
+     keep_whole entry in kb/overmerge_title_discipline.json, ONE piece = all
+     members, discipline = the mapped MQ discipline (these are single courses
+     whose TOP/subject merely varies by college — the title is ground truth).
+  3. CONTAINER TITLES ("Independent Study", "Special Topics", …) — detected for
+     reporting, then fall through to the per-member split (step 4).
+  4. MEMBER-DISCIPLINE CASCADE + SPLIT (default) — resolve EACH member's
+     discipline by priority a) SUBJ4→discipline (inverted from
+     discipline_canonical_subj4.json) b) subject_map (discipline_inference.json)
+     c) TOP→discipline (top_discipline_map.json) d) M-ID description
+     (SAFE_PHRASES plurality). Group members by resolved discipline; members that
+     resolve to None stay SUBJECT-SEPARATED (each raw subject its own group) so
+     blank-discipline members are never lumped into a mislabeled bucket. Each
+     group → a piece, stamped `disc_source` for the report.
+
+Artifacts under kb/overmerge_out/<date>/:
 
   report.md          — human summary: totals, split-factor distribution, the 4
                        apply gates (PASS/FAIL), top-30 split previews, the
@@ -45,6 +66,8 @@ ARTICULATIONS = os.path.join(HERE, "coci_articulations.json")
 UNIFIED_COURSES = os.path.join(HERE, "coci_unified_courses.json")
 TOP_DISC_MAP = os.path.join(HERE, "top_discipline_map.json")
 CANONICAL = os.path.join(HERE, "discipline_canonical_subj4.json")
+SUBJECT_MAP = os.path.join(HERE, "discipline_inference.json")
+TITLE_DISC_MAP = os.path.join(HERE, "overmerge_title_discipline.json")
 ROW_AUDIT = os.path.join(HERE, "row_audit", "latest.json")
 CCN_REF = os.path.join(HERE, "reference", "ccn_courses.json")
 CID_REF = os.path.join(HERE, "reference", "cid_descriptors.json")
@@ -59,8 +82,6 @@ COURSE_ID_RE = re.compile(r"^([A-Z]+) M(\d)([A-Z0-9]{3})$")
 # "NNNN.NN". Parse the leading 4-digit code (+ optional .NN).
 MEMBER_TOP_RE = re.compile(r"^\s*(\d{4})(\.\d{2})?")
 LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-# Division key for members whose top_code has no parseable numeric code.
-NO_DIV = "00"
 # Generic / scaffolding title tokens — copied verbatim from the 2026-05-22 +
 # Phase 1e re-mints so the within-bucket sort order is stable across re-mints.
 TITLE_STOP = {"and", "the", "of", "for", "with", "into", "from", "this", "that",
@@ -105,6 +126,83 @@ SISTER_PAIRS = {
     frozenset({"Business", "Management"}),                             #  18
     frozenset({"Business", "Marketing"}),                              #  17
 }
+
+# ── Container titles ─────────────────────────────────────────────────────────
+# Course-scaffolding titles ("Independent Study", "Special Topics") that DON'T
+# name a discipline — different colleges run them in unrelated program areas. A
+# container is NEVER kept whole; it always falls through to the per-member
+# discipline split (step 4). Detecting it is purely for the report (so a curator
+# sees WHY a row was split many ways) and as a guard that a container can never
+# be accidentally swept into the title→discipline keep-whole map. Substring,
+# lowercased, against the M-ID common_title.
+CONTAINER_PATTERNS = (
+    "independent study", "independent studies", "independent project",
+    "special topic", "selected topic", "directed study", "directed studies",
+    "special project", "field studies", "regional field studies",
+    "undergraduate research", "topics in",
+)
+# False-positive guard: "Independent Living" is a concrete discipline (DSPS /
+# adapted ed), NOT an independent-study container.
+CONTAINER_EXCLUDE = ("independent living",)
+
+# Safe, high-precision description phrase set — COPIED VERBATIM from
+# kb/_infer_disciplines_from_desc.py (keep in sync). Only terms decisive inside
+# long prose. Used as the LAST cascade rung (step 4d) for blank members when the
+# M-ID-level description names a single field; plurality scoring with a
+# unique-winner gate (ties skipped) mirrors that module exactly.
+SAFE_PHRASES = [
+    (["welding", "gas tungsten arc", "gas metal arc", "shielded metal arc",
+      "nondestructive testing", "non-destructive testing"], "Welding"),
+    (["automotive"], "Automotive Technology"),
+    (["dental"], "Dental Technology"),
+    (["phlebotomy"], "Health Care Ancillaries"),
+    (["cosmetology"], "Cosmetology"),
+    (["barbering"], "Barbering"),
+    (["heating, ventilation", "hvac", "refrigeration"], "Air Conditioning, Refrigeration, Heating"),
+    (["paramedic", "emergency medical technician", "basic life support",
+      "advanced cardiac life support"], "Emergency Medical Technologies"),
+    (["surgical technolog", "operating room"], "Surgical Technology"),
+    (["computer numerical control", "cnc machin"], "Machine Tool Technology"),
+    (["industrial robot", "robotics"], "Robotics"),
+    (["cybersecurity", "cyber security", "penetration testing"], "Computer Information Systems"),
+    (["court reporting", "stenograph"], "Court Reporting"),
+    (["embalming", "funeral service", "funeral director", "mortuary"], "Mortuary Science"),
+    (["viticulture", "enology"], "Agricultural Production"),
+    (["solidworks", "autocad", "computer-aided drafting", "computer aided drafting"], "Drafting/CADD"),
+    (["photovoltaic"], "Environmental Technologies"),
+    (["radiographic", "fluoroscopy"], "Radiological Technology"),
+    (["veterinary"], "Registered Veterinary Technician"),
+    (["aircraft", "airframe", "flight instructor", "private pilot"], "Aviation"),
+    (["sonograph", "ultrasound"], "Diagnostic Medical Technology"),
+    (["upholster"], "Upholstering"),
+    (["locksmith"], "Locksmithing"),
+    (["gunsmith"], "Gunsmithing"),
+    (["floral design"], "Ornamental Horticulture"),
+    (["sign language interpret", "american sign language"], "Sign Language, American"),
+    (["pharmacy technician"], "Pharmacy Technology"),
+]
+_DESC_RULES = [
+    (re.compile(r"\b(?:%s)\b" % "|".join(re.escape(t) for t in terms), re.I), disc)
+    for terms, disc in SAFE_PHRASES
+]
+
+
+def classify_description(desc):
+    """Plurality-scored discipline from a description via SAFE_PHRASES; unique
+    winner only (tie → None). Mirrors _infer_disciplines_from_desc.classify."""
+    if not desc or len(desc.strip()) < 20:
+        return None
+    score = Counter()
+    for pat, disc in _DESC_RULES:
+        n = len(pat.findall(desc))
+        if n:
+            score[disc] += n
+    if not score:
+        return None
+    ranked = score.most_common()
+    if len(ranked) > 1 and ranked[1][1] == ranked[0][1]:
+        return None  # tie — ambiguous, skip
+    return ranked[0][0]
 
 
 def ntitle(t):
@@ -222,19 +320,67 @@ def main():
                 continue
             top_disc[k] = v
 
-    # discipline → canonical 4-letter SUBJ (curator-confirmed where reviewed).
+    # discipline → canonical 4-letter SUBJ (curator-confirmed where reviewed),
+    # plus the INVERTED map: every SUBJ code a discipline owns (its
+    # canonical_subj4 AND every code in variants_observed) → that discipline.
+    # First-wins on the handful of cross-discipline collisions (e.g. CISC, COSM,
+    # PHYS) — see CLAUDE.md §11 subject_collision_signal. This is cascade rung
+    # (a): a member whose `subject` is a key resolves to that discipline.
     canon_map = {}
+    subj4_to_disc = {}
     if os.path.exists(CANONICAL):
         with open(CANONICAL, encoding="utf-8") as f:
             canon_doc = json.load(f)
         for disc, rec in (canon_doc.get("disciplines", {}) or {}).items():
-            c = (rec or {}).get("canonical_subj4")
+            rec = rec or {}
+            c = rec.get("canonical_subj4")
             if c and SUBJ4_RE.match(c):
                 canon_map[disc] = c
+            codes = set((rec.get("variants_observed") or {}).keys())
+            if c:
+                codes.add(c)
+            for code in codes:
+                subj4_to_disc.setdefault(code, disc)  # first-wins on conflict
 
     def canonical_subj4(discipline):
         """discipline → curator-confirmed 4-letter SUBJ, else None."""
         return canon_map.get(discipline) if discipline else None
+
+    # subject_map (discipline_inference.json): member subject code → discipline.
+    # Cascade rung (b), consulted only when the inverted SUBJ4 map missed.
+    subject_map = {}
+    if os.path.exists(SUBJECT_MAP):
+        with open(SUBJECT_MAP, encoding="utf-8") as f:
+            subject_map = (json.load(f) or {}).get("subject_map", {}) or {}
+
+    # Curator title→discipline keep-whole map (overmerge_title_discipline.json).
+    # Branch 2: a flagged M-ID whose lowercased common_title CONTAINS a keep_whole
+    # key is kept as ONE piece, discipline = the mapped MQ discipline. The
+    # `_needs_check` section is intentionally ignored (not yet confirmed).
+    title_keep_whole = []  # list of (lowercased_substring, discipline)
+    if os.path.exists(TITLE_DISC_MAP):
+        with open(TITLE_DISC_MAP, encoding="utf-8") as f:
+            tdoc = json.load(f) or {}
+        for sub, rec in (tdoc.get("entries", {}) or {}).items():
+            rec = rec or {}
+            if rec.get("keep_whole") and rec.get("discipline"):
+                title_keep_whole.append((sub.lower(), rec["discipline"]))
+
+    def member_discipline(subject, top_code, desc):
+        """Cascade a member to a discipline by priority a→d; returns
+        (discipline_or_None, disc_source). disc_source ∈ {subj4, subject_map,
+        top_code, description, None}."""
+        if subject in subj4_to_disc:
+            return subj4_to_disc[subject], "subj4"
+        if subject in subject_map:
+            return subject_map[subject], "subject_map"
+        code, _ = parse_member_top(top_code)
+        if code and code in top_disc:
+            return top_disc[code], "top_code"
+        d = classify_description(desc)
+        if d:
+            return d, "description"
+        return None, None
 
     # ── Index existing ids for collision-avoidance + sequence reservation ────
     # Existing corroborated seqs + standalone suffixes, per (SUBJ4, band), drawn
@@ -279,148 +425,215 @@ def main():
 
     id_reservations = load_id_reservations()  # CCN/C-ID seq reservations
 
-    # ── Pass 1: per flagged M-ID — partition members + classify each group ───
-    # A "plan" per M-ID records its division groups, plus the held / retire
-    # decision. Groups are built but NOT yet allocated ids (Pass 2).
+    # ── Pass 1: per flagged M-ID — title/subject/description-aware split ──────
+    # A "plan" per M-ID records its pieces (groups), plus the held / retire
+    # decision. Groups are built but NOT yet allocated ids (Pass 2). The FIRST
+    # matching branch wins per M-ID: (1) review-hold, (2) title keep-whole,
+    # (3) container [→ split], (4) member-discipline cascade split.
     plans = {}                # mid -> plan dict
     held = {}                 # mid -> hold record (held M-IDs are NOT split)
     retiring_old_ids = set()  # old M-IDs whose id retires (no group keeps it)
-    n_no_div_members = 0      # members with no parseable top_code (-> NO_DIV)
+    n_blank_members = 0       # members the cascade couldn't resolve (→ raw-subject)
+    n_container = 0           # M-IDs whose title matched a container pattern
+
+    def _mk_group(grp_members, *, discipline, disc_source, subj4, band, norm):
+        """Assemble one piece descriptor from a member list. kind = corroborated
+        iff ≥2 distinct colleges. Mirrors the field set every downstream pass
+        reads (div, members, colleges, kind, discipline, subj4, band, rep_title,
+        norm_title, n_members, control_numbers) + the new disc_source."""
+        colleges = sorted({m.get("college") for m in grp_members if m.get("college")})
+        return {
+            # `div` is repurposed as a traceability key: the group's discipline
+            # (or its raw-subject fallback) rather than a TOP division. Downstream
+            # passes use it only as an opaque label / sort tie-break.
+            "div": discipline or subj4 or "?",
+            "members": grp_members,
+            "colleges": colleges,
+            "kind": "corroborated" if len(colleges) >= 2 else "singleton",
+            "discipline": discipline,
+            "disc_source": disc_source,
+            "subj4": subj4,
+            "band": band,
+            "rep_title": "",  # filled by caller (parent title)
+            "norm_title": norm,
+            "n_members": len(grp_members),
+            "control_numbers": sorted(
+                {m.get("control_number") for m in grp_members if m.get("control_number")}
+            ),
+        }
+
+    def cascade_split(members, *, band, norm, desc, old_subj4):
+        """Default branch: group members by resolved discipline (cascade a→d).
+        Members resolving to None are SUBJECT-SEPARATED — each distinct raw
+        subject becomes its own blank-discipline group (never lumped). Pure (no
+        side effects) so it can also serve as the sister-pair hold probe. Returns
+        a list of piece descriptors."""
+        by_disc = defaultdict(list)   # discipline -> members (resolved)
+        disc_src = {}                 # discipline -> disc_source of first member
+        by_raw = defaultdict(list)    # raw subject -> members (unresolved)
+        # Collapse members sharing a control_number into ONE atomic unit first.
+        # A shared CourseControlNumber means a cross-listed course (one course
+        # offered under two subject codes at one college, e.g. DMA C201 / DMAC
+        # 201) — it is a SINGLE course and must land in ONE piece, else the
+        # apply (which gathers each piece's members by control_number) would
+        # double-count it (V2 member-conservation failure). Members without a CN
+        # are their own unit. The unit's discipline = the modal of its members'
+        # resolved disciplines; ties/all-None fall to the raw-subject bucket
+        # keyed by the unit's modal subject.
+        cn_units = defaultdict(list)
+        for i, m in enumerate(members):
+            cn = m.get("control_number")
+            cn_units[cn if cn else ("_nocn", i)].append(m)
+        for umembers in cn_units.values():
+            resolved = [member_discipline(m.get("subject"), m.get("top_code"), desc)
+                        for m in umembers]
+            discs = [d for d, _ in resolved if d]
+            if discs:
+                d = Counter(discs).most_common(1)[0][0]
+                src = next(s for dd, s in resolved if dd == d)
+                by_disc[d].extend(umembers)
+                disc_src.setdefault(d, src)
+            else:
+                subj = Counter(m.get("subject") or "" for m in umembers).most_common(1)[0][0]
+                by_raw[subj].extend(umembers)
+        groups = []
+        for d in sorted(by_disc):
+            subj4 = canonical_subj4(d) or old_subj4
+            groups.append(_mk_group(by_disc[d], discipline=d,
+                                    disc_source=disc_src[d], subj4=subj4,
+                                    band=band, norm=norm))
+        for raw_subj in sorted(by_raw):
+            # Blank-discipline group keyed by its raw subject. subj4 = the raw
+            # subject if it's already 4 uppercase letters, else the old M-ID's.
+            subj4 = raw_subj if SUBJ4_RE.match(raw_subj) else old_subj4
+            g = _mk_group(by_raw[raw_subj], discipline=None,
+                          disc_source="raw_subject", subj4=subj4,
+                          band=band, norm=norm)
+            g["div"] = "RAW:" + raw_subj  # traceability label for blank pieces
+            groups.append(g)
+        return groups
 
     for mid in flagged_ids:
         rec = courses.get(mid, {})
         members = memberships.get(mid, []) or []
         title = rec.get("common_title") or ""
+        title_lc = title.lower()
+        desc = rec.get("description") or ""
         norm = ntitle(title)
+        old_subj4 = rec.get("subject_4letter") or ""
         # band is derived from the M-ID's credit_status (member rows carry no
         # reliable credit_status for re-key purposes; the M-ID's is the source
         # of truth). Noncredit / Noncredit Enhanced → band 9, else band 1.
         band = "9" if rec.get("credit_status") in ("Noncredit", "Noncredit Enhanced") else "1"
-
-        # Partition members by 2-digit TOP division. Members with no parseable
-        # code go to the NO_DIV ("00") group (they stay grouped together).
-        by_div = defaultdict(list)
-        for m in members:
-            code, _ = parse_member_top(m.get("top_code"))
-            div = fam2(code) if code else NO_DIV
-            if div == NO_DIV:
-                n_no_div_members += 1
-            by_div[div].append(m)
-
-        # Build per-group descriptors.
-        groups = []
-        for div in sorted(by_div):
-            grp_members = by_div[div]
-            colleges = sorted({m.get("college") for m in grp_members if m.get("college")})
-            kind = "corroborated" if len(colleges) >= 2 else "singleton"
-            # Group discipline = discipline of the MODAL member 6-digit TOP code
-            # resolved through top_disc, else None (blank for curator review).
-            full_codes = []
-            for m in grp_members:
-                code, _ = parse_member_top(m.get("top_code"))
-                if code:
-                    full_codes.append(code)
-            grp_disc = None
-            if full_codes:
-                modal_code = Counter(full_codes).most_common(1)[0][0]
-                grp_disc = top_disc.get(modal_code)
-            # Group SUBJ4 = canonical for the group discipline if it resolves,
-            # else fall back to the OLD M-ID's SUBJ4 (subject_4letter).
-            grp_subj4 = canonical_subj4(grp_disc) or rec.get("subject_4letter") or ""
-            # A representative title for the within-bucket deterministic sort
-            # (groups inherit the parent M-ID's title; division disambiguates).
-            rep_title = title
-            groups.append({
-                "div": div,
-                "members": grp_members,
-                "colleges": colleges,
-                "kind": kind,
-                "discipline": grp_disc,
-                "subj4": grp_subj4,
-                "band": band,
-                "rep_title": rep_title,
-                "norm_title": norm,
-                "n_members": len(grp_members),
-                "control_numbers": sorted(
-                    {m.get("control_number") for m in grp_members if m.get("control_number")}
-                ),
-            })
 
         plan = {
             "mid": mid,
             "title": title,
             "norm_title": norm,
             "band": band,
-            "old_subj4": rec.get("subject_4letter") or "",
-            "groups": groups,
+            "old_subj4": old_subj4,
             "n_members": len(members),
         }
 
-        # ── Review-hold heuristic (HIGH-PRECISION — hold only likely-legit
+        # ── Branch 1: REVIEW-HOLD (high-precision — hold only likely-legit
         #    interdisciplinary courses). Fire on EITHER:
-        #    (a) exactly 2 division groups whose two RESOLVED disciplines form a
-        #        known sister/adjacent pair; OR
-        #    (b) the normalized title contains an interdisciplinary-compound token.
+        #    (a) the normalized title carries an interdisciplinary-compound token;
+        #        OR
+        #    (b) the cascade split yields exactly 2 discipline groups whose two
+        #        disciplines form a known sister/adjacent pair.
+        #    Held M-IDs are recorded and NOT split (they keep their old id).
         hold_reason = None
         hold_detail = {}
         norm_tokens = set(norm.split())
         token_hit = norm_tokens & INTERDISCIPLINARY_TOKENS
+        # The cascade split is computed ONCE per non-token-held M-ID — it both
+        # answers the sister-pair probe AND becomes the default-branch result
+        # (reused below; never recomputed).
+        cascade_groups = None
         if token_hit:
             hold_reason = "interdisciplinary_token"
             hold_detail = {"tokens": sorted(token_hit)}
-        elif len(groups) == 2:
-            d0, d1 = groups[0]["discipline"], groups[1]["discipline"]
-            if d0 and d1 and frozenset({d0, d1}) in SISTER_PAIRS:
-                hold_reason = "sister_pair"
-                hold_detail = {"disciplines": sorted({d0, d1})}
+        else:
+            cascade_groups = cascade_split(members, band=band, norm=norm,
+                                           desc=desc, old_subj4=old_subj4)
+            disc_groups = [g for g in cascade_groups if g["discipline"]]
+            if len(cascade_groups) == 2 and len(disc_groups) == 2:
+                d0, d1 = disc_groups[0]["discipline"], disc_groups[1]["discipline"]
+                if frozenset({d0, d1}) in SISTER_PAIRS:
+                    hold_reason = "sister_pair"
+                    hold_detail = {"disciplines": sorted({d0, d1})}
 
         if hold_reason:
             held[mid] = {
                 "held": True,
                 "reason": hold_reason,
                 "title": title,
-                "disciplines": hold_detail.get("disciplines",
-                                                sorted({g["discipline"] for g in groups if g["discipline"]})),
+                "disciplines": hold_detail.get("disciplines", []),
                 "tokens": hold_detail.get("tokens", []),
-                "n_division_groups": len(groups),
             }
             plan["held"] = True
             plan["hold_reason"] = hold_reason
+            plan["groups"] = []  # held → not split (no pieces)
             plans[mid] = plan
             continue
 
         plan["held"] = False
 
-        # ── Plurality group + id-retention decision (NON-held only) ──────────
-        # plurality = most members; tie-break corroborated-before-singleton,
-        # then lowest division string.
-        def _plur_key(g):
-            return (-g["n_members"], 0 if g["kind"] == "corroborated" else 1, g["div"])
-        plurality = min(groups, key=_plur_key)
-        any_corr = any(g["kind"] == "corroborated" for g in groups)
-        plan["any_corroborated"] = any_corr
+        # ── Branch 2: TITLE→DISCIPLINE KEEP-WHOLE. If the title contains a
+        #    curator keep_whole substring, emit ONE piece = ALL members at the
+        #    mapped discipline (these single courses just vary in TOP/subject by
+        #    college). First matching key wins.
+        keep_disc = None
+        for sub, d in title_keep_whole:
+            if sub in title_lc:
+                keep_disc = d
+                break
+        if keep_disc is not None:
+            subj4 = canonical_subj4(keep_disc) or old_subj4
+            g = _mk_group(members, discipline=keep_disc, disc_source="title_map",
+                          subj4=subj4, band=band, norm=norm)
+            g["div"] = keep_disc
+            plan["keep_whole"] = True
+            plan["groups"] = [g]
+        else:
+            # ── Branch 3 (detection only) + Branch 4: CONTAINER / CASCADE SPLIT.
+            # A container title is split exactly like any other M-ID (per-member
+            # cascade); we only note it for the report. Reuses the cascade
+            # computed for the sister-pair probe above.
+            is_container = (any(p in title_lc for p in CONTAINER_PATTERNS)
+                            and not any(x in title_lc for x in CONTAINER_EXCLUDE))
+            if is_container:
+                n_container += 1
+                plan["container"] = True
+            plan["groups"] = cascade_groups
 
-        if plurality["kind"] == "corroborated":
-            # Plurality is corroborated → it KEEPS the old M-ID id; others fresh.
-            plurality["keeps_old_id"] = True
-            plan["old_id_retired"] = False
-        elif any_corr:
-            # Plurality is a singleton, but a SMALLER corroborated group still
-            # survives → the M-ID does NOT fully de-corroborate, so the old id
-            # must NOT retire. The spec's two explicit branches ("plurality
-            # corroborated → keeps" / "NO group corroborated → retire") leave
-            # this case open; keeping the old id on the largest CORROBORATED
-            # group preserves continuity of the most-corroborated lineage and
-            # keeps `old_id_retired` accurate (true ⇔ fully dissolved). Tie-break
-            # same as plurality minus the kind term (all candidates corroborated).
-            corr_groups = [g for g in groups if g["kind"] == "corroborated"]
-            keeper = min(corr_groups, key=lambda g: (-g["n_members"], g["div"]))
+        groups = plan["groups"]
+        # Count members that landed in a blank-discipline (raw-subject) piece —
+        # the residue the cascade couldn't resolve (for the report's blank rate).
+        n_blank_members += sum(
+            g["n_members"] for g in groups if g["disc_source"] == "raw_subject"
+        )
+
+        # ── id-retention decision (NON-held only) ───────────────────────────
+        # The old id "SUBJ M<band><suffix>" may survive ONLY on a corroborated
+        # group whose SUBJ4 STILL MATCHES the old id's SUBJ — otherwise keeping
+        # it would create an id-prefix↔SUBJ4 mismatch. A keep-whole "Social
+        # Media" relabeled OTEC→Multimedia must become MULT M####, NOT stay
+        # OTEC M1212; likewise a cascade plurality whose resolved discipline maps
+        # to a different SUBJ4 than the old prefix re-keys instead of inheriting.
+        # If no corroborated group matches the old SUBJ, the old id RETIRES and
+        # every group (incl. any corroborated one) gets a fresh id in its own
+        # SUBJ4. The largest eligible (subj4-matching) group inherits the old id.
+        m_old = COURSE_ID_RE.match(mid)
+        old_subj4 = m_old.group(1) if m_old else None
+        corr_groups = [g for g in groups if g["kind"] == "corroborated"]
+        plan["any_corroborated"] = bool(corr_groups)
+        eligible = [g for g in corr_groups if g["subj4"] == old_subj4]
+        if eligible:
+            keeper = min(eligible, key=lambda g: (-g["n_members"], g["div"]))
             keeper["keeps_old_id"] = True
             plan["old_id_retired"] = False
         else:
-            # No corroborated group anywhere → the old id RETIRES; ALL groups
-            # get fresh ids (and all will be singletons).
-            plurality["keeps_old_id"] = False
             plan["old_id_retired"] = True
             retiring_old_ids.add(mid)
         plans[mid] = plan
@@ -626,7 +839,13 @@ def main():
             earned = set(a.get("earned_by_colleges") or [])
             hits = [pid for pid, cols, _ in pieces if cols & earned]
             if not hits:
-                # Fallback: match article top_code division to a piece division.
+                # Fallback: match article top_code division to a piece `div`.
+                # Pieces are now discipline-keyed (not 2-digit-TOP-keyed), and the
+                # articulation top_code is typically a short/truncated form that
+                # parse_member_top can't parse — so this fallback is effectively a
+                # no-op; primary college-intersection routing carries the load.
+                # Preserved structurally; harmless (a 2-digit code never equals a
+                # discipline / "RAW:" key).
                 code, _ = parse_member_top(a.get("top_code"))
                 a_div = fam2(code) if code else None
                 if a_div:
@@ -740,6 +959,22 @@ def main():
     held_by_reason = Counter(h["reason"] for h in held.values())
     split_factor = Counter(len(p["groups"]) for p in split_plans)
 
+    # disc_source breakdown over ALL pieces of non-held M-IDs (how each piece's
+    # discipline was resolved) + the keep-whole / container M-ID counts + the
+    # blank-piece rate (pieces whose discipline stayed None → raw-subject).
+    disc_source_counts = Counter()
+    n_pieces = 0
+    n_blank_pieces = 0
+    for p in split_plans:
+        for g in p["groups"]:
+            n_pieces += 1
+            src = g.get("disc_source") or "blank"
+            disc_source_counts[src] += 1
+            if not g["discipline"]:
+                n_blank_pieces += 1
+    blank_piece_rate = (n_blank_pieces / n_pieces) if n_pieces else 0.0
+    n_keep_whole = sum(1 for p in split_plans if p.get("keep_whole"))
+
     # ── Write artifacts ──────────────────────────────────────────────────────
     os.makedirs(OUT_DIR, exist_ok=True)
     today = date.today().isoformat()
@@ -803,7 +1038,10 @@ def main():
         art_multi=art_multi, art_unroutable=art_unroutable,
         art_unroutable_examples=art_unroutable_examples,
         cluster_affected=cluster_affected, cluster_sample=cluster_sample,
-        n_no_div_members=n_no_div_members,
+        n_blank_members=n_blank_members, n_container=n_container,
+        n_keep_whole=n_keep_whole, disc_source_counts=disc_source_counts,
+        n_pieces=n_pieces, n_blank_pieces=n_blank_pieces,
+        blank_piece_rate=blank_piece_rate,
         overflow_corr=overflow_corr, overflow_sing=overflow_sing,
     )
     with open(os.path.join(out_today, "report.md"), "w", encoding="utf-8") as f:
@@ -814,6 +1052,8 @@ def main():
     print(f"  flagged M-IDs:             {n_flagged}")
     print(f"  held (curator veto):       {n_held}  "
           f"({', '.join(f'{r}={c}' for r, c in held_by_reason.items()) or 'none'})")
+    print(f"    keep-whole (title map):  {n_keep_whole}")
+    print(f"    container titles:        {n_container}")
     print(f"  split:                     {n_split}")
     print(f"    fully de-corroborated:   {n_fully_dissolved}")
     print(f"    kept corroborated grps:  {kept_corr_groups}")
@@ -821,6 +1061,10 @@ def main():
     print(f"    new singletons:          {new_singletons}")
     print(f"  corroborated after split:  {corr_after}  (net delta {net_corr_delta:+d})")
     print(f"  split-factor dist:         {dict(sorted(split_factor.items()))}")
+    print(f"  pieces:                    {n_pieces}  "
+          f"(blank {n_blank_pieces} = {blank_piece_rate:.1%})")
+    print(f"  disc_source breakdown:     "
+          f"{dict(disc_source_counts.most_common())}")
     print(f"  articulations on flagged:  {art_total_on_flagged} "
           f"(routable {art_routable}, multi {art_multi}, unroutable {art_unroutable})")
     print(f"  clusters touched:          {cluster_affected}")
@@ -837,7 +1081,9 @@ def _render_report(*, today, n_flagged, n_held, n_split, n_fully_dissolved,
                    gates, plans, held, alias_map, art_total_on_flagged,
                    art_distinct_mids, art_routable, art_multi, art_unroutable,
                    art_unroutable_examples, cluster_affected, cluster_sample,
-                   n_no_div_members, overflow_corr, overflow_sing):
+                   n_blank_members, n_container, n_keep_whole,
+                   disc_source_counts, n_pieces, n_blank_pieces,
+                   blank_piece_rate, overflow_corr, overflow_sing):
     lines = []
     lines.append("---")
     lines.append("title: Cross-discipline Over-merge Re-mint Dry-Run")
@@ -857,7 +1103,13 @@ def _render_report(*, today, n_flagged, n_held, n_split, n_fully_dissolved,
                  "(members span ≥2 two-digit TOP divisions, minority share ≥ 0.30).")
     lines.append(f"- **{n_held}** HELD for curator veto (not split): "
                  + (", ".join(f"{r} {c}" for r, c in held_by_reason.items()) or "none") + ".")
-    lines.append(f"- **{n_split}** split into discipline-pure pieces by 2-digit TOP division.")
+    lines.append(f"- **{n_split}** split into discipline pieces via the member "
+                 "**SUBJ4→subject_map→TOP→description cascade** (title keep-whole "
+                 "map applied first; container titles split per-member).")
+    lines.append(f"  - **{n_keep_whole}** kept WHOLE by the curator title→discipline "
+                 "map (one piece, no split).")
+    lines.append(f"  - **{n_container}** matched a container pattern "
+                 "(Independent Study / Special Topics / …) → split per-member.")
     lines.append(f"  - **{n_fully_dissolved}** fully de-corroborate (dissolve to singletons — "
                  "the title collision was never a real consolidated course).")
     lines.append(f"  - **{kept_corr_groups}** plurality groups keep their old corroborated id.")
@@ -865,9 +1117,29 @@ def _render_report(*, today, n_flagged, n_held, n_split, n_fully_dissolved,
     lines.append(f"  - **{new_singletons}** members peel to singleton status.")
     lines.append(f"- Corroborated catalog: **{n_flagged} → {corr_after}** "
                  f"(**{net_corr_delta:+d}**) — spurious corroborations removed.")
-    if n_no_div_members:
-        lines.append(f"- {n_no_div_members} member courses have no parseable TOP code "
-                     f"(grouped into the `{NO_DIV}` division).")
+    lines.append(f"- Pieces: **{n_pieces}** total; **{n_blank_pieces}** "
+                 f"(**{blank_piece_rate:.1%}**) stayed blank-discipline "
+                 "(subject-separated for curator review).")
+    lines.append("")
+
+    # disc_source breakdown — how each piece's discipline was resolved.
+    lines.append("## Discipline-source breakdown\n")
+    lines.append("How the cascade resolved each piece's discipline "
+                 "(`raw_subject` + `blank` = the blank-discipline residue, "
+                 "subject-separated).\n")
+    lines.append("| disc_source | pieces |")
+    lines.append("|---|---:|")
+    src_order = ["subj4", "subject_map", "top_code", "description", "title_map",
+                 "raw_subject", "blank"]
+    seen = set()
+    for src in src_order:
+        if src in disc_source_counts:
+            lines.append(f"| `{src}` | {disc_source_counts[src]} |")
+            seen.add(src)
+    for src, c in disc_source_counts.most_common():
+        if src not in seen:
+            lines.append(f"| `{src}` | {c} |")
+    lines.append(f"| **total** | **{n_pieces}** |")
     lines.append("")
 
     # Apply gate
@@ -904,9 +1176,9 @@ def _render_report(*, today, n_flagged, n_held, n_split, n_fully_dissolved,
 
     # Split-factor distribution
     lines.append("## Split-factor distribution\n")
-    lines.append("How many division groups each SPLIT M-ID partitions into "
-                 "(held M-IDs excluded).\n")
-    lines.append("| division groups | M-IDs |")
+    lines.append("How many discipline pieces each SPLIT M-ID partitions into "
+                 "(held M-IDs excluded; keep-whole M-IDs are 1).\n")
+    lines.append("| pieces | M-IDs |")
     lines.append("|---:|---:|")
     for k in sorted(split_factor):
         lines.append(f"| {k} | {split_factor[k]} |")
@@ -914,8 +1186,9 @@ def _render_report(*, today, n_flagged, n_held, n_split, n_fully_dissolved,
 
     # Top-30 split previews
     lines.append("## Top 30 split previews\n")
-    lines.append("Old M-ID → its pieces (`discipline` (n_colleges col, kind)). "
-                 "Ranked by split factor then member count.\n")
+    lines.append("Old M-ID → its pieces (`discipline` (n_colleges col, kind, "
+                 "disc_source)). Ranked by split factor then member count. A "
+                 "`*(blank)*` piece is subject-separated for curator review.\n")
     lines.append("| old M-ID | title | pieces |")
     lines.append("|---|---|---|")
     ranked = sorted(
@@ -925,10 +1198,11 @@ def _render_report(*, today, n_flagged, n_held, n_split, n_fully_dissolved,
     for p in ranked:
         pieces = []
         for g in sorted(p["groups"], key=lambda g: (-g["n_members"], g["div"])):
-            disc = g["discipline"] or "*(blank)*"
+            disc = g["discipline"] or f"*(blank: {g['div']})*"
             ncol = len(g["colleges"])
             kindmark = "keep" if g.get("keeps_old_id") else g["kind"][:4]
-            pieces.append(f"{disc} ({ncol} col, {kindmark})")
+            src = g.get("disc_source") or "blank"
+            pieces.append(f"{disc} ({ncol} col, {kindmark}, {src})")
         title = (p["title"] or "")[:40]
         lines.append(f"| `{p['mid']}` | {title} | " + " · ".join(pieces) + " |")
     lines.append("")
