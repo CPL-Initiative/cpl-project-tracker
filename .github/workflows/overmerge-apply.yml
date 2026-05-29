@@ -1,0 +1,143 @@
+name: Over-merge Re-mint — Atomic Apply
+
+# One-shot, manual-dispatch only. Atomic apply of the cross-discipline
+# over-merge re-mint per the curator-reviewed dry-run plan at
+# kb/overmerge_out/<date>/alias_map.json (produced by kb/_overmerge_dryrun.py).
+#
+# Sequence (each step exits non-zero on failure → workflow aborts):
+#
+#   1. Apply kb mutations in-place via kb/_overmerge_apply.py --commit. The
+#      script self-gates: FRESH-READ (plan control_numbers ⊆ current
+#      memberships) + the four V1–V4 apply gates. It ABORTS (exit 2) on drift,
+#      a partial-apply state, any collision, or any gate failure — so a bad
+#      apply never writes a half-state. (Idempotent: a re-run on already-applied
+#      data is a clean no-op.)
+#   2. Re-key Supabase kb_curation rows via kb/_overmerge_apply_supabase.py
+#      --commit. Guarded on SUPABASE_SERVICE_KEY; today 0 rows reference the
+#      flagged set (no-op). Best-effort — a transient failure logs but doesn't
+#      strand the apply (continue-on-error).
+#   3. Re-run the auditor (kb/_row_audit.py) — the post-apply RECEIPT.
+#      member_top_divergence should drop sharply (split M-IDs are now
+#      discipline-pure pieces; only the held set + residual mixed-unit rows
+#      remain).
+#   4. Commit all mutated kb files + the apply receipts + the refreshed audit +
+#      push to main.
+#
+# concurrency: daily-dashboard  →  serializes against the daily cron so
+# excel_to_dashboard.py never reads kb/coci_*.json mid-mutation, and the daily
+# push + this apply push never race.
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: daily-dashboard
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      # ── Step 1: apply kb file mutations (self-gates: FRESH-READ + V1–V4) ──
+      - name: Apply over-merge re-mint to kb files
+        run: python3 kb/_overmerge_apply.py --commit
+
+      # ── Step 2: Supabase kb_curation row re-keys ─────────────────────────
+      # Runs only AFTER the kb mutations validated cleanly. Failures here are
+      # logged but don't crash the workflow — the operator can re-run from
+      # kb/overmerge_apply/<date>/supabase_log.json (the frozen alias_map is the
+      # source of truth). Skips gracefully if the secret is unset.
+      - name: Re-key Supabase kb_curation rows
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 kb/_overmerge_apply_supabase.py --commit
+
+      # ── Step 3: re-run the auditor — post-apply receipt ──────────────────
+      # member_top_divergence should drop sharply (the split M-IDs are now
+      # discipline-pure pieces). We don't hard-assert a target here — the
+      # remaining flags are the 63 held M-IDs plus any residual mixed-unit
+      # rows; the count is surfaced for the operator to eyeball in the summary.
+      - name: Re-run auditor (post-apply receipt)
+        run: |
+          python3 kb/_row_audit.py
+          python3 << 'EOF'
+          import json
+          with open('kb/row_audit/latest.json') as f:
+              audit = json.load(f)
+          rows = audit.get('rows') or []
+          n = sum(1 for r in rows
+                  if 'member_top_divergence' in (r.get('tags') or []))
+          print(f"post-apply auditor: member_top_divergence = {n} "
+                f"(was 1299 pre-apply; the 63 held M-IDs + any residual "
+                f"mixed-unit rows are expected to remain)")
+          EOF
+
+      # ── Step 4: commit + push ─────────────────────────────────────────────
+      - name: Commit + push
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add kb/coci_minted_courses.json \
+                  kb/coci_minted_singletons.json \
+                  kb/coci_minted_memberships.json \
+                  kb/coci_articulations.json \
+                  kb/coci_unified_courses.json \
+                  kb/coci_curation.json \
+                  kb/overmerge_out/ \
+                  kb/overmerge_apply/ \
+                  kb/row_audit/
+          if git diff --cached --quiet; then
+            echo "No changes to commit (apply was a no-op or re-ran on already-applied state)."
+            exit 0
+          fi
+          # Use multiple -m flags (each becomes a paragraph). Avoids the
+          # YAML-block-scalar termination trap from an unindented multi-line
+          # string inside `run: |` — caught on phase-1e-apply.yml 2026-05-23.
+          git commit \
+            -m "Over-merge re-mint: cross-discipline APPLY" \
+            -m "Atomic split of the 1,299 member_top_divergence-flagged M-IDs into discipline-pure pieces per the curator-reviewed plan kb/overmerge_out/<date>/alias_map.json (63 held, 1,236 split: 752 fully dissolved, 484 plurality groups keep their old id, 212 new corroborated, 1,951 members peel to singletons)." \
+            -m "Mutated kb files: coci_minted_courses.json, coci_minted_singletons.json, coci_minted_memberships.json, coci_articulations.json, coci_unified_courses.json, coci_curation.json." \
+            -m "Validated (in-script gates): V1 plan-executed, V2 member conservation, V3 collision-free + no-orphan, V4 article (article x earning-college) cardinality preserved. FRESH-READ gate confirmed the plan matched the data at apply time." \
+            -m "Frozen plan (rollback source): kb/overmerge_apply/<date>/alias_map.json. Supabase kb_curation re-key log: kb/overmerge_apply/<date>/supabase_log.json."
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded on attempt $attempt."
+              exit 0
+            fi
+            echo "Push attempt $attempt failed — rebasing and retrying."
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((attempt * 2))
+          done
+          exit 1
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Over-merge re-mint — cross-discipline apply"
+            echo
+            echo "Status: ${{ job.status }}"
+            echo
+            echo "Receipts (kb/overmerge_apply/<date>/):"
+            echo "- \`report.md\` — apply summary + per-file counts"
+            echo "- \`validation.md\` — the four V1–V4 apply-gate results"
+            echo "- \`alias_map.json\` — frozen plan (rollback input)"
+            echo "- \`supabase_log.json\` — per-old-M-ID Supabase kb_curation re-key log"
+          } >> "$GITHUB_STEP_SUMMARY"
