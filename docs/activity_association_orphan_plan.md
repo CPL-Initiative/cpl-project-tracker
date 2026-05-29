@@ -1,7 +1,7 @@
 ---
 title: Activity↔Project association — orphan-project linking plan
 created: 2026-05-29
-tags: [workplan, associations, activity-project, proposal]
+tags: [workplan, associations, activity-project, applied]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
 related:
@@ -10,6 +10,39 @@ related:
 ---
 
 # Orphan-project association plan
+
+## APPLIED 2026-05-29
+
+The orphan linking below **has been applied** (this supersedes the
+"NOT applied — for product-owner confirmation" framing further down, which is
+kept only as the historical proposal record).
+
+- **All 7 orphans linked**, product-owner-confirmed (Sam, MAP@rccd.edu) via
+  session. Final confirmed associations (primary unless noted):
+  - `5.2 → A1 (primary)`
+  - `5.3 → A1 (primary) + A4 (secondary)`
+  - `5.4 → A4 (primary)`
+  - `5.5 → A5 (primary)`
+  - `5.6 → A4 (primary)`
+  - `5.7 → A3 (primary)`
+  - `5.8 → A4 (primary)`
+- **Default-primary backfill:** each of the 27 pre-existing 1-to-1 associations
+  (Activities 1–4 projects + 5.1) was set as its own primary.
+- **Verification (live, post-apply):**
+  `total_associations=35, total_primaries=34, projects_not_exactly_one_primary=0,
+  orphans_remaining=0`.
+- **This PR closes the "7 not reachable in the UI" gap:** the Activity↔Project
+  association editor is now surfaced on **all 34 Dashboard project cards** (the
+  Projects Grid renders every project, including 5.2–5.8 — which never appear in
+  the Workplan Goals tab because they have no KPI ladder, so the #190 in-tab
+  editor could never reach them). A signed-in curator can now edit any project's
+  Activity associations + primary directly from its card.
+
+> The note in "How to apply" about these seven not rendering in the Workplan
+> Goals tab remains true *for that tab*; the Dashboard project cards are the
+> surface that now reaches them.
+
+---
 
 Seven `public.projects` rows under Activity 5 have **no row** in
 `public.workplan_activity_associations` (the N-to-N Activity↔Project table).
@@ -39,13 +72,15 @@ Activity 5.)
 - **Activity 4** — Sprints, Projects, Partnerships & Scale
 - **Activity 5** — Strategic Initiatives & Special Projects
 
-## Proposed primary association (NOT applied — for product-owner confirmation)
+## Proposed primary association (APPLIED 2026-05-29 — see top section for the final links)
 
-These are **proposals only**. No rows are written to Supabase by this work; the
-human links them with the product owner's confirmation (via the association
-editor once the projects render in the Workplan Goals tab, or directly in
-Supabase). Confidence reflects how clearly the project's purpose maps to a
-single Activity.
+> **Historical record.** These were the original *proposals*; the final
+> product-owner-confirmed links are recorded in the **APPLIED 2026-05-29**
+> section at the top of this doc and are now live in Supabase
+> (`total_associations=35, orphans_remaining=0`). Where the applied link differs
+> from the proposal below (e.g. 5.2 landed on A1, 5.4/5.8 on A4, 5.5 on A5), the
+> applied section is authoritative. Confidence reflected how clearly the
+> project's purpose mapped to a single Activity at proposal time.
 
 | Project | Proposed **primary** | Secondary candidate(s) | Confidence | Rationale |
 |---|---|---|---|---|
@@ -64,7 +99,12 @@ tool that is both infrastructure and tied to a sprint/credit-rec effort). The
 editor supports multiple associations with exactly one marked primary, so the
 product owner can check more than one Activity and pick the lead.
 
-## How to apply (human, after confirmation)
+## How to apply (DONE 2026-05-29 — retained as the runbook used)
+
+The steps below are the procedure that **was followed** this session (the
+`is_primary` migration is applied, the 7 confirmed associations are inserted,
+and the 27 pre-existing links are primary-backfilled). Retained as a runbook for
+future orphan linking.
 
 1. Apply the schema migration first if `is_primary` should be recorded:
    `kb/supabase_activity_associations_add_primary.sql` (via the Supabase MCP
