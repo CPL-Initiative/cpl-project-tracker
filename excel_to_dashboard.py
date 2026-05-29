@@ -2085,7 +2085,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                          f'<span style="font-size:0.8rem;">&#9998;</span> Update</a>'
                          f'<a href="#" '
                          f'class="attach-btn" '
-                         f'data-folder="{kpi_pid} {kpi["name"]}" '
+                         f'data-folder="{html_escape(str(kpi_pid) + " " + str(kpi.get("name", "")), quote=True)}" '
                          f'style="{btn_style}color:#163A5F;background:#fafafa;"'
                          f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
                          f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
@@ -2386,22 +2386,32 @@ def _render_single_project_card(p, update_log=None, attachments=None):
     # and PATCH the Supabase `public.projects` column named by `column`. The
     # visible body keeps the existing (unescaped) render to match prior
     # behaviour; only the data-val attribute (machine-read on edit) is escaped.
-    def _ed(column, raw_value, body_html, dtype="text", multiline=False):
+    def _ed(column, raw_value, body, dtype="text", multiline=False, body_is_html=False):
+        # Curator-editable values render HTML-escaped (writers are RLS-gated to
+        # allowed reviewers, but mirror PR #174's escape-curator-fields hygiene).
+        # An empty value shows a neutral "—" (clean for anonymous viewers; the
+        # signed-in hover affordance still signals editability). Pass
+        # body_is_html=True for the few call sites that supply intentional markup
+        # (they pre-escape their own dynamic content).
         raw_str = "" if raw_value is None else str(raw_value)
         ml = ' data-multiline="1"' if multiline else ""
+        inner = body if body_is_html else html_escape(str(body))
+        if not inner:
+            inner = "—"
         return (
             f'<span class="proj-editable" data-editable="1" '
             f'data-pid="{html_escape(str(pid), quote=True)}" '
             f'data-field="{column}" data-type="{dtype}"{ml} '
-            f'data-val="{html_escape(raw_str, quote=True)}">{body_html}</span>'
+            f'data-val="{html_escape(raw_str, quote=True)}">{inner}</span>'
         )
 
     def _ml_preview(text, limit=90):
-        """Truncated single-line preview for a multi-line modal field."""
+        """Truncated single-line preview for a multi-line modal field. Empty →
+        '' so _ed() renders the neutral '—' placeholder."""
         t = (text or "").replace("\n", " ").strip()
         if len(t) > limit:
             t = t[:limit].rstrip() + "…"
-        return t if t else "(none — click to add)"
+        return t
 
     # ── Current notes (always visible) ──
     update_text = p.get("update", "")
@@ -2416,13 +2426,13 @@ def _render_single_project_card(p, update_log=None, attachments=None):
         f'            <div style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
         f'<span style="font-size:0.65rem;font-weight:600;background:#163A5F;color:#fff;'
         f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Latest Update</span>'
-        f'{_ed("latest_update", update_text, update_text or "(none — click to add)", multiline=True)}</div>\n'
+        f'{_ed("latest_update", update_text, update_text, multiline=True)}</div>\n'
     )
     current_notes_html += (
         f'            <div style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
         f'<span style="font-size:0.65rem;font-weight:600;background:#C9A84C;color:#0A2240;'
         f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Workplan Note</span>'
-        f'{_ed("wp_notes", wp_text, wp_text or "(none — click to add)", multiline=True)}</div>\n'
+        f'{_ed("wp_notes", wp_text, wp_text, multiline=True)}</div>\n'
     )
 
     # ── Full history toggle (hidden by default, shown via JS checkbox) ──
@@ -2468,8 +2478,8 @@ def _render_single_project_card(p, update_log=None, attachments=None):
             )
         update_date_ed = _ed(
             "update_date", update_date,
-            f'<strong style="color:#0A2240;">{update_date or "(set date)"}</strong>',
-            dtype="date",
+            f'<strong style="color:#0A2240;">{html_escape(str(update_date)) if update_date else "—"}</strong>',
+            dtype="date", body_is_html=True,
         )
         notes_html = (
             f'            <div style="margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.5rem;">\n'
@@ -2498,9 +2508,9 @@ def _render_single_project_card(p, update_log=None, attachments=None):
     # existing Lead/Activity/Budget rows).
     _row = 'font-size:0.85rem;color:#555;margin-bottom:0.5rem;'
 
-    return f'''        <div class="project-card" data-pid="{html_escape(str(pid), quote=True)}" data-activity="{activity}" data-v2030="{v2030}" data-goal="{goal}" data-status="{status}" data-lead="{lead}">
+    return f'''        <div class="project-card" data-pid="{html_escape(str(pid), quote=True)}" data-activity="{html_escape(str(activity), quote=True)}" data-v2030="{html_escape(str(v2030), quote=True)}" data-goal="{html_escape(str(goal), quote=True)}" data-status="{html_escape(str(status), quote=True)}" data-lead="{html_escape(str(lead), quote=True)}">
             <div class="project-name">{_ed("name", name, name)}</div>
-            <div class="project-desc">{_ed("description", desc, desc or "(no description — click to add)", multiline=True)}</div>
+            <div class="project-desc">{_ed("description", desc, desc, multiline=True)}</div>
             <span class="status-badge status-{css_class}">{_ed("status", status, status)}</span>
             <div class="progress-container">
                 <div class="progress-label">
@@ -2512,10 +2522,10 @@ def _render_single_project_card(p, update_log=None, attachments=None):
                 </div>
             </div>
             <div style="{_row}">
-                <strong>Lead:</strong> {_ed("lead", lead, lead or "(none)")}
+                <strong>Lead:</strong> {_ed("lead", lead, lead)}
             </div>
             <div style="{_row}">
-                <strong>Team:</strong> {_ed("team", team, team or "(none)")}
+                <strong>Team:</strong> {_ed("team", team, team)}
             </div>
             <div style="{_row}">
                 <strong>Activity:</strong> {activity}
@@ -2524,16 +2534,16 @@ def _render_single_project_card(p, update_log=None, attachments=None):
                 <strong>CPL Goal:</strong> {_ed("cpl_goal", goal, _ml_preview(goal), multiline=True)}
             </div>
             <div style="{_row}">
-                <strong>Timeline:</strong> {_ed("start_date", start, start or "(start)", dtype="date")} &ndash; {_ed("end_date", end, end or "(end)", dtype="date")}
+                <strong>Timeline:</strong> {_ed("start_date", start, start, dtype="date")} &ndash; {_ed("end_date", end, end, dtype="date")}
             </div>
             <div style="{_row}">
-                <strong>KPI:</strong> {_ed("kpi_metric", kpi_metric, kpi_metric or "(none)")} {_ed("kpi_unit", kpi_unit, kpi_unit or "(unit)")}
+                <strong>KPI:</strong> {_ed("kpi_metric", kpi_metric, kpi_metric)} {_ed("kpi_unit", kpi_unit, kpi_unit)}
             </div>
             <div style="{_row}">
                 <strong>Milestones:</strong> {_ed("milestones", milestones, _ml_preview(milestones), multiline=True)}
             </div>
             <div style="{_row}">
-                <strong>Budget:</strong> {_ed("budget", budget, budget or "(none)")} ({_ed("budget_source", budget_source, budget_source or "(source)")})
+                <strong>Budget:</strong> {_ed("budget", budget, budget)} ({_ed("budget_source", budget_source, budget_source)})
             </div>
 {notes_html}            <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.5rem;">
                 <a href="reports/projects/{pid}_Report.docx" download class="report-btn"
@@ -2553,7 +2563,7 @@ def _render_single_project_card(p, update_log=None, attachments=None):
                     title="Open Excel for the Web at cell P{p.get('excel_row', '')} ({EXCEL_SHEET_NAME})">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
-                    data-folder="{pid} {p['name']}"
+                    data-folder="{html_escape(str(pid) + ' ' + str(p.get('name', '')), quote=True)}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#163A5F;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;

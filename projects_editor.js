@@ -183,9 +183,7 @@
 
   // ─── Helpers for optimistic display ─────────────────────────────────────
   function displayFor(type, raw) {
-    if (raw === null || raw === undefined || raw === "") {
-      return type === "date" ? "(set date)" : "";
-    }
+    if (raw === null || raw === undefined || raw === "") return "";
     return String(raw);
   }
 
@@ -274,19 +272,20 @@
       if (raw === oldVal) { cancel(); return; }
 
       done = true;
-      // Optimistic paint.
-      var bodyHtml;
+      // Optimistic paint (textContent, not innerHTML — curator input is never
+      // treated as markup; matches the renderer's escape-curator-fields hygiene).
+      var bodyText;
       if (type === "num") {
-        bodyHtml = raw + "%";
+        bodyText = raw + "%";
       } else {
         var disp = displayFor(type, raw);
-        // Lead/Budget-style fields show a "(none)" placeholder when cleared.
-        if (!disp) disp = (type === "date") ? "(set date)" : "(none)";
-        bodyHtml = disp;
+        // Cleared fields show a neutral "—" (matches the renderer placeholder).
+        if (!disp) disp = "—";
+        bodyText = disp;
       }
       cell.classList.remove("proj-editing");
       cell.classList.add("proj-saving");
-      cell.innerHTML = bodyHtml;
+      cell.textContent = bodyText;
       cell.setAttribute("data-val", raw);
 
       // Live filter-attr + progress-bar consistency BEFORE the round-trip
@@ -347,11 +346,10 @@
     return t;
   }
 
-  // Field-specific empty-state placeholder for a multi-line field's preview.
+  // Neutral empty-state placeholder for a multi-line field's preview (matches
+  // the renderer's "—" so anonymous viewers don't see editor-oriented text).
   function emptyPreviewFor(column) {
-    if (column === "description") return "(no description — click to add)";
-    if (column === "latest_update" || column === "wp_notes") return "(none — click to add)";
-    return "(none — click to add)";
+    return "—";
   }
 
   var MODAL_LABELS = {
@@ -417,7 +415,7 @@
           }
           // Repaint the card preview optimistically.
           var newPreview = trimmed ? multilinePreview(trimmed) : emptyPreviewFor(column);
-          cell.innerHTML = newPreview;
+          cell.textContent = newPreview;
           cell.setAttribute("data-val", trimmed);
           if (column === "cpl_goal") syncWrapperAttr(cell, column, trimmed);
           cell.classList.add("proj-saved");
