@@ -1749,6 +1749,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 .cpl-analytics-body,
 .activity-kpi-body {
@@ -2072,6 +2084,41 @@
 .proj-btn-cancel { background:#fff; border:1px solid #ccc !important; color:#333; }
 .proj-btn-submit { background:#0A2240; color:#fff; font-weight:600; }
 .proj-btn-submit:disabled { opacity:0.6; cursor:not-allowed; }
+/* ── Activity↔Project association editor (workplan_goals.js) ── */
+/* Primary association chip (★) reads slightly bolder than a plain chip. */
+.wpg-act-chip-primary { background:#FBF3DA !important; color:#8A6D1F !important; }
+/* The ✎ pencil + click affordance only appear once a curator is signed in
+   (workplan_goals.js adds .wpg-assoc-on to editable chip cells). */
+.wpg-assoc-edit-hint { color:#A9B4C2; font-size:0.72rem; opacity:0; transition:opacity 0.15s; }
+.wpg-assoc-cell.wpg-assoc-on { cursor:pointer; border-radius:4px; transition:background 0.15s; }
+.wpg-assoc-cell.wpg-assoc-on:hover { background:#F0F4F8; }
+.wpg-assoc-cell.wpg-assoc-on:hover .wpg-assoc-edit-hint { opacity:1; color:#4D7EA8; }
+.wpg-assoc-cell.wpg-assoc-saving { background:#FFF8E1 !important; }
+.wpg-assoc-cell.wpg-assoc-saved { background:#E8F5E9 !important; transition:background 0.4s; }
+.wpg-assoc-cell.wpg-assoc-error { background:#FFEBEE !important; transition:background 0.4s; }
+/* Association popover (anchored near the clicked chip cell) */
+.wpg-assoc-pop { position:absolute; z-index:10000; background:#fff; border:1px solid #c8d2de; border-radius:8px; box-shadow:0 8px 28px rgba(10,34,64,0.22); width:300px; max-width:92vw; padding:0.75rem 0.85rem; font-family:inherit; color:#0A2240; }
+.wpg-assoc-pop h4 { margin:0 0 0.15rem 0; font-size:0.9rem; color:#0A2240; }
+.wpg-assoc-pop .wpg-assoc-pop-sub { color:#666; font-size:0.72rem; margin-bottom:0.5rem; }
+.wpg-assoc-pop .wpg-assoc-list { display:flex; flex-direction:column; gap:0.15rem; max-height:240px; overflow-y:auto; }
+.wpg-assoc-pop .wpg-assoc-row { display:flex; align-items:center; gap:0.45rem; padding:0.2rem 0.25rem; border-radius:5px; font-size:0.8rem; }
+.wpg-assoc-pop .wpg-assoc-row:hover { background:#F4F6F9; }
+.wpg-assoc-pop .wpg-assoc-row label { flex:1; cursor:pointer; display:flex; align-items:center; gap:0.4rem; margin:0; font-weight:500; }
+.wpg-assoc-pop .wpg-assoc-row .wpg-assoc-name { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+/* "primary" radio column */
+.wpg-assoc-pop .wpg-assoc-prim { font-size:0.66rem; color:#8A6D1F; display:flex; align-items:center; gap:0.25rem; cursor:pointer; white-space:nowrap; }
+.wpg-assoc-pop .wpg-assoc-prim input { cursor:pointer; }
+.wpg-assoc-pop .wpg-assoc-prim.wpg-assoc-prim-disabled { color:#bbb; cursor:default; }
+.wpg-assoc-pop .wpg-assoc-pop-status { font-size:0.75rem; min-height:1.1em; margin-top:0.4rem; }
+.wpg-assoc-pop .wpg-assoc-pop-status.err { color:#A33; }
+.wpg-assoc-pop .wpg-assoc-pop-status.ok { color:#2A7D4F; }
+.wpg-assoc-pop .wpg-assoc-pop-actions { display:flex; justify-content:flex-end; gap:0.4rem; margin-top:0.6rem; }
+.wpg-assoc-pop .wpg-assoc-pop-actions button { padding:0.3rem 0.7rem; border-radius:5px; font-size:0.78rem; cursor:pointer; border:0; }
+.wpg-assoc-pop .wpg-assoc-cancel { background:#fff; border:1px solid #ccc !important; color:#333; }
+.wpg-assoc-pop .wpg-assoc-save { background:#0A2240; color:#fff; font-weight:600; }
+.wpg-assoc-pop .wpg-assoc-save:disabled { opacity:0.6; cursor:not-allowed; }
+.wpg-assoc-pop .wpg-assoc-note { font-size:0.68rem; color:#999; margin-top:0.45rem; line-height:1.3; }
+/* ═══ End MAP Articulation Analysis Cards ═══ */
 
 
 /* ═══ Collapsible Algorithm Descriptions ═══ */
@@ -2283,8 +2330,16 @@
         
         
         
-        <div class="last-updated">Last Updated: May 29, 2026 at 8:03 AM PT</div>
+        
+        
+        
+        
+        <div class="last-updated">Last Updated: May 29, 2026 at 9:33 AM PT</div>
         <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:#C9A84C;border:1px solid #C9A84C;padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='#C9A84C';this.style.color='#0A2240'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='#C9A84C'}">&#x21bb; Refresh Today&#39;s Data</button></div>
+        
+        
+        
+        
         
         
         
@@ -7824,6 +7879,10 @@
 
 
 
+
+
+
+
         </div>
         <!-- /main-container for Dashboard tab -->
 
@@ -8742,7 +8801,7 @@ Cont</td>
                         <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid #0A2240;">Activity 1: Build AI-Enhanced CPL Infrastructure</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">1.1</span> MAP Platform Development<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 1</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">1.1</span> MAP Platform Development<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="1.1" data-assoc="[{&quot;activity_id&quot;: &quot;1&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 1</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="1.1" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="4" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">4</td>
                         <td data-editable="1" data-aid="1.1" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="9" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">9</td>
@@ -8772,7 +8831,7 @@ Cont</td>
                         <td data-aid="1.1" data-kind="project" data-rt="STRETCH" data-total="1" data-val="140" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">140</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">1.2</span> System Integration &amp; Interoperability<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 1</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">1.2</span> System Integration &amp; Interoperability<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="1.2" data-assoc="[{&quot;activity_id&quot;: &quot;1&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 1</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="1.2" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="1" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">1</td>
                         <td data-editable="1" data-aid="1.2" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="2" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">2</td>
@@ -8802,7 +8861,7 @@ Cont</td>
                         <td data-aid="1.2" data-kind="project" data-rt="STRETCH" data-total="1" data-val="30" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">30</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">1.3</span> CPL Student Portal<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 1</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">1.3</span> CPL Student Portal<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="1.3" data-assoc="[{&quot;activity_id&quot;: &quot;1&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 1</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="1.3" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="100" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">100</td>
                         <td data-editable="1" data-aid="1.3" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="1000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">1,000</td>
@@ -8832,7 +8891,7 @@ Cont</td>
                         <td data-aid="1.3" data-kind="project" data-rt="STRETCH" data-total="1" data-val="74200" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">74,200</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">1.4</span> California Credential Registry<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 1</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">1.4</span> California Credential Registry<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="1.4" data-assoc="[{&quot;activity_id&quot;: &quot;1&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 1</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="1.4" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="0" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;"></td>
                         <td data-editable="1" data-aid="1.4" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="50" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">50</td>
@@ -8865,7 +8924,7 @@ Cont</td>
                         <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid #0A2240;">Activity 2: Faculty Workgroups &amp; Credit Recommendations</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">2.1</span> Statewide Credit Recommendations<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 2</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">2.1</span> Statewide Credit Recommendations<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="2.1" data-assoc="[{&quot;activity_id&quot;: &quot;2&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 2</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="2.1" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="200" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">200</td>
                         <td data-editable="1" data-aid="2.1" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="400" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">400</td>
@@ -8895,7 +8954,7 @@ Cont</td>
                         <td data-aid="2.1" data-kind="project" data-rt="STRETCH" data-total="1" data-val="8000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">8,000</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">2.2</span> Faculty Discipline Workgroups<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 2</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">2.2</span> Faculty Discipline Workgroups<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="2.2" data-assoc="[{&quot;activity_id&quot;: &quot;2&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 2</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="2.2" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="6" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">6</td>
                         <td data-editable="1" data-aid="2.2" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="15" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">15</td>
@@ -8925,7 +8984,7 @@ Cont</td>
                         <td data-aid="2.2" data-kind="project" data-rt="STRETCH" data-total="1" data-val="138" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">138</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">2.3</span> Common Course Crosswalks<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 2</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">2.3</span> Common Course Crosswalks<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="2.3" data-assoc="[{&quot;activity_id&quot;: &quot;2&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 2</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="2.3" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="20" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">20</td>
                         <td data-editable="1" data-aid="2.3" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="50" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">50</td>
@@ -8955,7 +9014,7 @@ Cont</td>
                         <td data-aid="2.3" data-kind="project" data-rt="STRETCH" data-total="1" data-val="1000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">1,000</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">2.4</span> Validated Skills<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 2</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">2.4</span> Validated Skills<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="2.4" data-assoc="[{&quot;activity_id&quot;: &quot;2&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 2</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="2.4" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="25" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">25</td>
                         <td data-editable="1" data-aid="2.4" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="65" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">65</td>
@@ -8988,7 +9047,7 @@ Cont</td>
                         <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid #0A2240;">Activity 3: Build CPL Data Infrastructure</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.1</span> CPL Offers &amp; Awards Tracking — All Populations<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.1</span> CPL Offers &amp; Awards Tracking — All Populations<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="3.1" data-assoc="[{&quot;activity_id&quot;: &quot;3&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="3.1" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="40000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">40,000</td>
                         <td data-editable="1" data-aid="3.1" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="90000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">90,000</td>
@@ -9018,7 +9077,7 @@ Cont</td>
                         <td data-aid="3.1" data-kind="project" data-rt="STRETCH" data-total="1" data-val="1260000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">1,260,000</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.1.1</span> CPL Offers &amp; Awards Tracking — Working Adults<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.1.1</span> CPL Offers &amp; Awards Tracking — Working Adults<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="3.1.1" data-assoc="[{&quot;activity_id&quot;: &quot;3&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="3.1.1" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="9500" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">9,500</td>
                         <td data-editable="1" data-aid="3.1.1" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="47500" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">47,500</td>
@@ -9048,7 +9107,7 @@ Cont</td>
                         <td data-aid="3.1.1" data-kind="project" data-rt="STRETCH" data-total="1" data-val="966000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">966,000</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.1.2</span> CPL Offers &amp; Awards Tracking — Veterans &amp; Service Members<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.1.2</span> CPL Offers &amp; Awards Tracking — Veterans &amp; Service Members<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="3.1.2" data-assoc="[{&quot;activity_id&quot;: &quot;3&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="3.1.2" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="30000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">30,000</td>
                         <td data-editable="1" data-aid="3.1.2" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="40000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">40,000</td>
@@ -9078,7 +9137,7 @@ Cont</td>
                         <td data-aid="3.1.2" data-kind="project" data-rt="STRETCH" data-total="1" data-val="350000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">350,000</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.1.2a</span> CPL Offers &amp; Awards Tracking — Apprentice Cohort<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.1.2a</span> CPL Offers &amp; Awards Tracking — Apprentice Cohort<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="3.1.2a" data-assoc="[{&quot;activity_id&quot;: &quot;3&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="3.1.2a" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="500" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">500</td>
                         <td data-editable="1" data-aid="3.1.2a" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="2500" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">2,500</td>
@@ -9108,7 +9167,7 @@ Cont</td>
                         <td data-aid="3.1.2a" data-kind="project" data-rt="STRETCH" data-total="1" data-val="91000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">91,000</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.2</span> CPL Units Transcription<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.2</span> CPL Units Transcription<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="3.2" data-assoc="[{&quot;activity_id&quot;: &quot;3&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="3.2" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="90000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">90,000</td>
                         <td data-editable="1" data-aid="3.2" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="195000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">195,000</td>
@@ -9138,7 +9197,7 @@ Cont</td>
                         <td data-aid="3.2" data-kind="project" data-rt="STRETCH" data-total="1" data-val="3630000" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">3,630,000</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.3</span> Institutional Participation<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.3</span> Institutional Participation<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="3.3" data-assoc="[{&quot;activity_id&quot;: &quot;3&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="3.3" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="50" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">50</td>
                         <td data-editable="1" data-aid="3.3" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="60" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">60</td>
@@ -9168,7 +9227,7 @@ Cont</td>
                         <td data-aid="3.3" data-kind="project" data-rt="STRETCH" data-total="1" data-val="604" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">604</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.4</span> Student Impact Rate Survey<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.4</span> Student Impact Rate Survey<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="3.4" data-assoc="[{&quot;activity_id&quot;: &quot;3&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="3.4" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="0.7" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">0.7</td>
                         <td data-editable="1" data-aid="3.4" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="0.75" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">0.8</td>
@@ -9198,7 +9257,7 @@ Cont</td>
                         <td data-aid="3.4" data-kind="project" data-rt="STRETCH" data-total="1" data-val="4.45" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">4.5</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.5</span> Student Stories<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.5</span> Student Stories<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="3.5" data-assoc="[{&quot;activity_id&quot;: &quot;3&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="3.5" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="30" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">30</td>
                         <td data-editable="1" data-aid="3.5" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="60" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">60</td>
@@ -9228,7 +9287,7 @@ Cont</td>
                         <td data-aid="3.5" data-kind="project" data-rt="STRETCH" data-total="1" data-val="930" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">930</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.6</span> College Tracking &amp; Recognition<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">3.6</span> College Tracking &amp; Recognition<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="3.6" data-assoc="[{&quot;activity_id&quot;: &quot;3&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 3</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="3.6" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="2" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">2</td>
                         <td data-editable="1" data-aid="3.6" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="5" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">5</td>
@@ -9261,7 +9320,7 @@ Cont</td>
                         <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid #0A2240;">Activity 4: Sprints, Projects, Partnerships &amp; Scale</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.1</span> Sprints and Projects<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.1</span> Sprints and Projects<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="4.1" data-assoc="[{&quot;activity_id&quot;: &quot;4&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="4.1" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="1" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">1</td>
                         <td data-editable="1" data-aid="4.1" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="4" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">4</td>
@@ -9291,7 +9350,7 @@ Cont</td>
                         <td data-aid="4.1" data-kind="project" data-rt="STRETCH" data-total="1" data-val="83" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">83</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.1.1</span> Veteran Sprint<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.1.1</span> Veteran Sprint<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="4.1.1" data-assoc="[{&quot;activity_id&quot;: &quot;4&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="4.1.1" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="1" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">1</td>
                         <td data-editable="1" data-aid="4.1.1" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="2" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">2</td>
@@ -9321,7 +9380,7 @@ Cont</td>
                         <td data-aid="4.1.1" data-kind="project" data-rt="STRETCH" data-total="1" data-val="30" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">30</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.1.2</span> Apprenticeship Sprint<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.1.2</span> Apprenticeship Sprint<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="4.1.2" data-assoc="[{&quot;activity_id&quot;: &quot;4&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="4.1.2" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="1" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">1</td>
                         <td data-editable="1" data-aid="4.1.2" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="2" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">2</td>
@@ -9351,7 +9410,7 @@ Cont</td>
                         <td data-aid="4.1.2" data-kind="project" data-rt="STRETCH" data-total="1" data-val="30" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">30</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.1.3</span> Statewide Adoption Sprint<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.1.3</span> Statewide Adoption Sprint<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="4.1.3" data-assoc="[{&quot;activity_id&quot;: &quot;4&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="4.1.3" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="1" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">1</td>
                         <td data-editable="1" data-aid="4.1.3" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="2" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">2</td>
@@ -9381,7 +9440,7 @@ Cont</td>
                         <td data-aid="4.1.3" data-kind="project" data-rt="STRETCH" data-total="1" data-val="20" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">20</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.1.4</span> 29 Palms Marine Corps Base Demo<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.1.4</span> 29 Palms Marine Corps Base Demo<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="4.1.4" data-assoc="[{&quot;activity_id&quot;: &quot;4&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="4.1.4" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="1" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">1</td>
                         <td data-editable="1" data-aid="4.1.4" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="2" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">2</td>
@@ -9411,7 +9470,7 @@ Cont</td>
                         <td data-aid="4.1.4" data-kind="project" data-rt="STRETCH" data-total="1" data-val="20" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">20</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.2</span> Strategic Partnerships<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.2</span> Strategic Partnerships<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="4.2" data-assoc="[{&quot;activity_id&quot;: &quot;4&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="4.2" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="3" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">3</td>
                         <td data-editable="1" data-aid="4.2" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="7" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">7</td>
@@ -9441,7 +9500,7 @@ Cont</td>
                         <td data-aid="4.2" data-kind="project" data-rt="STRETCH" data-total="1" data-val="78" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">78</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.3</span> Technical Assistance &amp; Training<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.3</span> Technical Assistance &amp; Training<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="4.3" data-assoc="[{&quot;activity_id&quot;: &quot;4&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="4.3" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="10" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">10</td>
                         <td data-editable="1" data-aid="4.3" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="23" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">23</td>
@@ -9471,7 +9530,7 @@ Cont</td>
                         <td data-aid="4.3" data-kind="project" data-rt="STRETCH" data-total="1" data-val="332" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">332</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.4</span> Law &amp; Regulation Review<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.4</span> Law &amp; Regulation Review<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="4.4" data-assoc="[{&quot;activity_id&quot;: &quot;4&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="4.4" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="2" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">2</td>
                         <td data-editable="1" data-aid="4.4" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="5" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">5</td>
@@ -9501,7 +9560,7 @@ Cont</td>
                         <td data-aid="4.4" data-kind="project" data-rt="STRETCH" data-total="1" data-val="66" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;font-weight:700;">66</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.5</span> Sustainable Funding<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.5</span> Sustainable Funding<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="4.5" data-assoc="[{&quot;activity_id&quot;: &quot;4&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 4</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="4.5" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="1" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">1</td>
                         <td data-editable="1" data-aid="4.5" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="3" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;">3</td>
@@ -9534,7 +9593,7 @@ Cont</td>
                         <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid #0A2240;">Activity 5: Strategic Initiatives &amp; Special Projects</td>
                     </tr>
                     <tr style="background:#FAF8F4;font-weight:600;color:#0A2240;">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">5.1</span> AI-Ready California Demonstration<div style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 5</span></div></td>
+                        <td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">5.1</span> AI-Ready California Demonstration<div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="5.1" data-assoc="[{&quot;activity_id&quot;: &quot;5&quot;, &quot;is_primary&quot;: false}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Sprints, Projects, Partnerships &amp; Scale&quot;}, {&quot;id&quot;: &quot;5&quot;, &quot;name&quot;: &quot;Activity 5: Strategic Initiatives &amp; Special Projects&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;font-weight:600;">Activity 5</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="5.1" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="0" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;"></td>
                         <td data-editable="1" data-aid="5.1" data-kind="project" data-rt="GOAL" data-yr="2026-27" data-yr-key="yr_2026_27" data-val="0" style="padding:0.3rem 0.4rem;text-align:right;border:1px solid #ddd;"></td>
@@ -9569,7 +9628,7 @@ Cont</td>
         </div>
         <!-- End Annual Workplan Goals -->
 
-                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                </div>
         <!-- /main-container for Workplan Goals tab -->
     </div>
     <!-- /tab-workplan-goals -->
@@ -9643,6 +9702,10 @@ Cont</td>
             </div>
         </div>
         <!-- End Vision 2030 Section -->
+        
+        
+        
+        
         
         
         
@@ -10223,8 +10286,8 @@ Cont</td>
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "May 29, 2026 at 8:03 AM PT",
-  "data_as_of": "May 29, 2026 at 8:03 AM PT",
+  "last_updated": "May 29, 2026 at 9:33 AM PT",
+  "data_as_of": "May 29, 2026 at 9:33 AM PT",
   "kpis": {
     "cumulative_students": {
       "value": "46,057",
@@ -14347,7 +14410,14 @@ Cont</td>
       "stretch_total": 140.0,
       "activity_ids": [
         "1"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "1",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "1.2",
@@ -14379,7 +14449,14 @@ Cont</td>
       "stretch_total": 30.0,
       "activity_ids": [
         "1"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "1",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "1.3",
@@ -14411,7 +14488,14 @@ Cont</td>
       "stretch_total": 74200.0,
       "activity_ids": [
         "1"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "1",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "1.4",
@@ -14443,7 +14527,14 @@ Cont</td>
       "stretch_total": 2540.0,
       "activity_ids": [
         "1"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "1",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "2.1",
@@ -14475,7 +14566,14 @@ Cont</td>
       "stretch_total": 8000.0,
       "activity_ids": [
         "2"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "2",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "2.2",
@@ -14507,7 +14605,14 @@ Cont</td>
       "stretch_total": 138.0,
       "activity_ids": [
         "2"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "2",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "2.3",
@@ -14539,7 +14644,14 @@ Cont</td>
       "stretch_total": 1000.0,
       "activity_ids": [
         "2"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "2",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "2.4",
@@ -14571,7 +14683,14 @@ Cont</td>
       "stretch_total": 1260.0,
       "activity_ids": [
         "2"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "2",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "3.1",
@@ -14603,7 +14722,14 @@ Cont</td>
       "stretch_total": 1260000.0,
       "activity_ids": [
         "3"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "3",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "3.1.1",
@@ -14635,7 +14761,14 @@ Cont</td>
       "stretch_total": 966000.0,
       "activity_ids": [
         "3"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "3",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "3.1.2",
@@ -14667,7 +14800,14 @@ Cont</td>
       "stretch_total": 350000.0,
       "activity_ids": [
         "3"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "3",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "3.1.2a",
@@ -14699,7 +14839,14 @@ Cont</td>
       "stretch_total": 91000.0,
       "activity_ids": [
         "3"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "3",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "3.2",
@@ -14731,7 +14878,14 @@ Cont</td>
       "stretch_total": 3630000.0,
       "activity_ids": [
         "3"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "3",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "3.3",
@@ -14763,7 +14917,14 @@ Cont</td>
       "stretch_total": 604.0,
       "activity_ids": [
         "3"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "3",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "3.4",
@@ -14795,7 +14956,14 @@ Cont</td>
       "stretch_total": 4.45,
       "activity_ids": [
         "3"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "3",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "3.5",
@@ -14827,7 +14995,14 @@ Cont</td>
       "stretch_total": 930.0,
       "activity_ids": [
         "3"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "3",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "3.6",
@@ -14859,7 +15034,14 @@ Cont</td>
       "stretch_total": 74.0,
       "activity_ids": [
         "3"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "3",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "4.1",
@@ -14891,7 +15073,14 @@ Cont</td>
       "stretch_total": 83.0,
       "activity_ids": [
         "4"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "4",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "4.1.1",
@@ -14923,7 +15112,14 @@ Cont</td>
       "stretch_total": 30.0,
       "activity_ids": [
         "4"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "4",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "4.1.2",
@@ -14955,7 +15151,14 @@ Cont</td>
       "stretch_total": 30.0,
       "activity_ids": [
         "4"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "4",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "4.1.3",
@@ -14987,7 +15190,14 @@ Cont</td>
       "stretch_total": 20.0,
       "activity_ids": [
         "4"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "4",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "4.1.4",
@@ -15019,7 +15229,14 @@ Cont</td>
       "stretch_total": 20.0,
       "activity_ids": [
         "4"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "4",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "4.2",
@@ -15051,7 +15268,14 @@ Cont</td>
       "stretch_total": 78.0,
       "activity_ids": [
         "4"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "4",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "4.3",
@@ -15083,7 +15307,14 @@ Cont</td>
       "stretch_total": 332.0,
       "activity_ids": [
         "4"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "4",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "4.4",
@@ -15115,7 +15346,14 @@ Cont</td>
       "stretch_total": 66.0,
       "activity_ids": [
         "4"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "4",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "4.5",
@@ -15147,7 +15385,14 @@ Cont</td>
       "stretch_total": 38.0,
       "activity_ids": [
         "4"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "4",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     },
     {
       "id": "5.1",
@@ -15179,7 +15424,14 @@ Cont</td>
       "stretch_total": 0.0,
       "activity_ids": [
         "5"
-      ]
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "5",
+          "is_primary": false
+        }
+      ],
+      "assoc_backfilled": false
     }
   ]
 };
