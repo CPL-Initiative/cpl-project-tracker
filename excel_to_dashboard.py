@@ -1381,13 +1381,35 @@ def _pcount(pmap, pid):
         return 0
 
 
-def render_annual_goals_table_html(annual_goals):
+def render_annual_goals_table_html(annual_goals, activities=None):
     """
     Render the Annual Workplan Goals as a static HTML table
     at the bottom of the dashboard. Shows GOAL, CURRENT, STRETCH for each row.
+
+    `activities` (optional) — the Supabase Activity rows, used to build the
+    association-editor option list (`data-activities`) on each chip cell so the
+    same click-to-edit popover that works on the grouped section also works
+    here. This table is the one actually visible in the workplan-goals tab
+    today (it's injected after — and into the same markers as —
+    render_workplan_goals_html, so it wins), which is why the editor lives on
+    both renderers.
     """
     if not annual_goals:
         return ""
+
+    activities = activities or []
+    activity_options = [{"id": a["id"], "name": a["name"]} for a in activities]
+    if not activity_options:
+        # Fallback: synthesize from the activity_ids that appear on the rows.
+        seen = {}
+        for r in annual_goals:
+            for aid in r.get("activity_ids", []):
+                seen.setdefault(aid, f"Activity {aid}")
+        activity_options = [
+            {"id": k, "name": seen[k]}
+            for k in sorted(seen.keys(), key=_natural_activity_sort_key)
+        ]
+    activity_options_json = json.dumps(activity_options, ensure_ascii=False)
 
     year_cols = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
 
@@ -1425,20 +1447,41 @@ def render_annual_goals_table_html(annual_goals):
             if is_first:
                 # PR-B: surface "Contributes to: Activity N" chips on the
                 # row name, mirroring the grouped Workplan Goals section.
+                # Association editor: ★ marks the primary; the chip line is an
+                # editable cell (data-assoc-edit) carrying the real association
+                # rows + the activity option list.
+                assoc_records = row.get("assoc_records", [])
+                primary_set = {
+                    r["activity_id"] for r in assoc_records if r.get("is_primary")
+                }
                 chips_html = ""
                 for assoc_id in row.get("activity_ids", []):
+                    is_primary = assoc_id in primary_set
+                    star = "★ " if is_primary else ""
+                    chip_cls = (
+                        "wpg-act-chip wpg-act-chip-primary" if is_primary
+                        else "wpg-act-chip"
+                    )
                     chips_html += (
-                        f'<span class="wpg-act-chip" '
+                        f'<span class="{chip_cls}" '
                         f'style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;'
                         f'background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;'
-                        f'font-weight:600;">Activity {assoc_id}</span>'
+                        f'font-weight:600;">{star}Activity {assoc_id}</span>'
                     )
-                chip_line = ""
-                if chips_html:
-                    chip_line = (
-                        f'<div style="font-size:0.65rem;color:#888;font-weight:400;'
-                        f'margin-top:0.15rem;">{chips_html}</div>'
-                    )
+                assoc_json = json.dumps(assoc_records, ensure_ascii=False)
+                chip_line = (
+                    f'<div class="wpg-assoc-cell" data-assoc-edit="1" '
+                    f'data-pid="{html_escape(row["id"], quote=True)}" '
+                    f'data-assoc="{html_escape(assoc_json, quote=True)}" '
+                    f'data-assoc-backfilled="{1 if row.get("assoc_backfilled") else 0}" '
+                    f'data-activities="{html_escape(activity_options_json, quote=True)}" '
+                    f'style="font-size:0.65rem;color:#888;font-weight:400;'
+                    f'margin-top:0.15rem;">'
+                    f'<span style="color:#888;">Contributes to:</span> '
+                    f'{chips_html}'
+                    f'<span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span>'
+                    f'</div>'
+                )
                 # Curator-editable id + name flow into the visible cell — escape both.
                 name_cell = (f'<td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;'
                              f'vertical-align:top;font-weight:600;background:#fff;">'
@@ -2303,6 +2346,24 @@ def render_workplan_goals_html(
             html += _render_ladder_rows(act, bg, "activity", name_content)
         html += _table_close()
 
+    # Activity option list for the association editor popover. Emitted once as
+    # a JSON blob on each editable chip cell's data-activities attribute so
+    # workplan_goals.js is self-contained (no second source of activity names).
+    # Both id + name are escaped at the attribute boundary below via
+    # html_escape(..., quote=True); the names are curator-editable.
+    activity_options = [
+        {"id": a["id"], "name": a["name"]} for a in activities
+    ]
+    # Defensive fallback: if no Supabase Activity rows came through, synthesize
+    # the option list from the project group numbers + the label map so the
+    # editor still has something to offer.
+    if not activity_options:
+        seen_grp = sorted(groups.keys(), key=_natural_activity_sort_key)
+        activity_options = [
+            {"id": g, "name": _act_label(g)} for g in seen_grp
+        ]
+    activity_options_json = json.dumps(activity_options, ensure_ascii=False)
+
     # ── Projects section — per-Activity tables, sub-grouped + chips ───────
     for grp_num in sorted(groups.keys()):
         acts = groups[grp_num]
@@ -2315,6 +2376,12 @@ def render_workplan_goals_html(
             # PR-B: "Contributes to: Activity N" chips. Always render
             # (locked at scoping time). Maps each association to the
             # Supabase label when available so renames flow through.
+            # Association editor: a chip carrying is_primary=true gets a ★
+            # marker so curators see which Activity owns the project.
+            assoc_records = p.get("assoc_records", [])
+            primary_set = {
+                r["activity_id"] for r in assoc_records if r.get("is_primary")
+            }
             chips_html = ""
             for assoc_id in p.get("activity_ids", []):
                 # Use the short "Activity N" label inside the chip — the
@@ -2323,25 +2390,42 @@ def render_workplan_goals_html(
                 # before it lands inside the title="" attribute (otherwise
                 # a stray `"` breaks out and the rest of the name parses as
                 # HTML).
+                is_primary = assoc_id in primary_set
                 short = f"Activity {assoc_id}"
+                star = "★ " if is_primary else ""
                 full = sb_activity_labels.get(assoc_id) or short
+                title_txt = (full + " (primary)") if is_primary else full
+                chip_cls = "wpg-act-chip wpg-act-chip-primary" if is_primary else "wpg-act-chip"
                 chips_html += (
-                    f'<span class="wpg-act-chip" title="{html_escape(full, quote=True)}" '
+                    f'<span class="{chip_cls}" title="{html_escape(title_txt, quote=True)}" '
                     f'style="display:inline-block;margin:0 0.25rem 0 0;padding:0.05rem 0.4rem;'
                     f'background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.7rem;'
-                    f'font-weight:600;">{short}</span>'
+                    f'font-weight:600;">{star}{short}</span>'
                 )
-            chip_line = ""
-            if chips_html:
-                chip_line = (
-                    f'<div style="font-size:0.72rem;color:#666;font-weight:400;'
-                    f'margin-top:0.2rem;">'
-                    f'<span style="color:#888;">Contributes to:</span> '
-                    f'{chips_html}</div>'
-                )
+            # The editable chip cell. data-assoc carries the REAL association
+            # rows (so the editor opens pre-checked correctly + knows the
+            # primary); data-assoc-backfilled flags a derived (no-real-row)
+            # chip so the editor opens with nothing checked for the
+            # zero-association case. data-activities is the option list.
+            # All curator-sourced strings are JSON-then-attribute-escaped.
+            assoc_json = json.dumps(assoc_records, ensure_ascii=False)
+            chip_line = (
+                f'<div class="wpg-assoc-cell" data-assoc-edit="1" '
+                f'data-pid="{html_escape(p["id"], quote=True)}" '
+                f'data-assoc="{html_escape(assoc_json, quote=True)}" '
+                f'data-assoc-backfilled="{1 if p.get("assoc_backfilled") else 0}" '
+                f'data-activities="{html_escape(activity_options_json, quote=True)}" '
+                f'style="font-size:0.72rem;color:#666;font-weight:400;'
+                f'margin-top:0.2rem;">'
+                f'<span style="color:#888;">Contributes to:</span> '
+                f'{chips_html}'
+                f'<span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span>'
+                f'</div>'
+            )
             # Project name is curator-editable via the PR-C add-flow; escape.
             # `chip_line` is already known-safe (curator-injected names only
-            # flow into it via the title="" attribute, which is escaped above).
+            # flow into it via escaped title=""/data-* attributes + escaped
+            # chip bodies above).
             name_content = (
                 f'{html_escape(p["id"])} {html_escape(p["name"])}{chip_line}'
             )
@@ -6617,6 +6701,41 @@ EXHIBIT_ANALYSIS_CSS = """
 .proj-btn-cancel { background:#fff; border:1px solid #ccc !important; color:#333; }
 .proj-btn-submit { background:#0A2240; color:#fff; font-weight:600; }
 .proj-btn-submit:disabled { opacity:0.6; cursor:not-allowed; }
+/* ── Activity↔Project association editor (workplan_goals.js) ── */
+/* Primary association chip (★) reads slightly bolder than a plain chip. */
+.wpg-act-chip-primary { background:#FBF3DA !important; color:#8A6D1F !important; }
+/* The ✎ pencil + click affordance only appear once a curator is signed in
+   (workplan_goals.js adds .wpg-assoc-on to editable chip cells). */
+.wpg-assoc-edit-hint { color:#A9B4C2; font-size:0.72rem; opacity:0; transition:opacity 0.15s; }
+.wpg-assoc-cell.wpg-assoc-on { cursor:pointer; border-radius:4px; transition:background 0.15s; }
+.wpg-assoc-cell.wpg-assoc-on:hover { background:#F0F4F8; }
+.wpg-assoc-cell.wpg-assoc-on:hover .wpg-assoc-edit-hint { opacity:1; color:#4D7EA8; }
+.wpg-assoc-cell.wpg-assoc-saving { background:#FFF8E1 !important; }
+.wpg-assoc-cell.wpg-assoc-saved { background:#E8F5E9 !important; transition:background 0.4s; }
+.wpg-assoc-cell.wpg-assoc-error { background:#FFEBEE !important; transition:background 0.4s; }
+/* Association popover (anchored near the clicked chip cell) */
+.wpg-assoc-pop { position:absolute; z-index:10000; background:#fff; border:1px solid #c8d2de; border-radius:8px; box-shadow:0 8px 28px rgba(10,34,64,0.22); width:300px; max-width:92vw; padding:0.75rem 0.85rem; font-family:inherit; color:#0A2240; }
+.wpg-assoc-pop h4 { margin:0 0 0.15rem 0; font-size:0.9rem; color:#0A2240; }
+.wpg-assoc-pop .wpg-assoc-pop-sub { color:#666; font-size:0.72rem; margin-bottom:0.5rem; }
+.wpg-assoc-pop .wpg-assoc-list { display:flex; flex-direction:column; gap:0.15rem; max-height:240px; overflow-y:auto; }
+.wpg-assoc-pop .wpg-assoc-row { display:flex; align-items:center; gap:0.45rem; padding:0.2rem 0.25rem; border-radius:5px; font-size:0.8rem; }
+.wpg-assoc-pop .wpg-assoc-row:hover { background:#F4F6F9; }
+.wpg-assoc-pop .wpg-assoc-row label { flex:1; cursor:pointer; display:flex; align-items:center; gap:0.4rem; margin:0; font-weight:500; }
+.wpg-assoc-pop .wpg-assoc-row .wpg-assoc-name { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+/* "primary" radio column */
+.wpg-assoc-pop .wpg-assoc-prim { font-size:0.66rem; color:#8A6D1F; display:flex; align-items:center; gap:0.25rem; cursor:pointer; white-space:nowrap; }
+.wpg-assoc-pop .wpg-assoc-prim input { cursor:pointer; }
+.wpg-assoc-pop .wpg-assoc-prim.wpg-assoc-prim-disabled { color:#bbb; cursor:default; }
+.wpg-assoc-pop .wpg-assoc-pop-status { font-size:0.75rem; min-height:1.1em; margin-top:0.4rem; }
+.wpg-assoc-pop .wpg-assoc-pop-status.err { color:#A33; }
+.wpg-assoc-pop .wpg-assoc-pop-status.ok { color:#2A7D4F; }
+.wpg-assoc-pop .wpg-assoc-pop-actions { display:flex; justify-content:flex-end; gap:0.4rem; margin-top:0.6rem; }
+.wpg-assoc-pop .wpg-assoc-pop-actions button { padding:0.3rem 0.7rem; border-radius:5px; font-size:0.78rem; cursor:pointer; border:0; }
+.wpg-assoc-pop .wpg-assoc-cancel { background:#fff; border:1px solid #ccc !important; color:#333; }
+.wpg-assoc-pop .wpg-assoc-save { background:#0A2240; color:#fff; font-weight:600; }
+.wpg-assoc-pop .wpg-assoc-save:disabled { opacity:0.6; cursor:not-allowed; }
+.wpg-assoc-pop .wpg-assoc-note { font-size:0.68rem; color:#999; margin-top:0.45rem; line-height:1.3; }
+/* ═══ End MAP Articulation Analysis Cards ═══ */
 """
 
 
@@ -6772,16 +6891,36 @@ def build_workplan_goals_from_supabase(
             bucket["name"] = row.get("name") or ""
 
     # ── Phase 2: associations index: project_id → sorted list of activity_ids ──
+    # assoc_by_project carries the de-duped activity_id list (drives the chips +
+    # the prefix-backfill fallback). assoc_records_by_project carries the REAL
+    # association rows (activity_id + is_primary) so the editor can distinguish
+    # a genuine association from a backfilled chip and show which one is primary.
+    # is_primary degrades gracefully: absent column (migration unapplied) → all
+    # False (the loader's select falls back to the no-is_primary shape).
     assoc_by_project: dict[str, list[str]] = {}
+    assoc_records_by_project: dict[str, list[dict]] = {}
     for a in associations or []:
         pid = a.get("project_id")
         aid = a.get("activity_id")
         if not pid or not aid:
             continue
         assoc_by_project.setdefault(pid, []).append(aid)
+        assoc_records_by_project.setdefault(pid, []).append(
+            {"activity_id": aid, "is_primary": bool(a.get("is_primary"))}
+        )
     for pid, aids in assoc_by_project.items():
         # De-dup + natural sort (numeric chars on Activity ids "1"-"5")
         assoc_by_project[pid] = sorted(set(aids), key=_natural_activity_sort_key)
+    for pid, recs in assoc_records_by_project.items():
+        # De-dup by activity_id (OR the is_primary flags) + natural sort, so the
+        # editor sees one stable record per activity.
+        by_aid: dict[str, bool] = {}
+        for r in recs:
+            by_aid[r["activity_id"]] = by_aid.get(r["activity_id"], False) or r["is_primary"]
+        assoc_records_by_project[pid] = [
+            {"activity_id": aid, "is_primary": by_aid[aid]}
+            for aid in sorted(by_aid.keys(), key=_natural_activity_sort_key)
+        ]
 
     def _num(v):
         try:
@@ -6828,9 +6967,16 @@ def build_workplan_goals_from_supabase(
         entry = _build_entry(aid, data, "project")
         # PR-B: enrich with the associations this project contributes to
         entry["activity_ids"] = assoc_by_project.get(aid, [])
+        # The REAL association rows (with is_primary) for the editor. Distinct
+        # from activity_ids, which is backfilled below for chip display.
+        entry["assoc_records"] = assoc_records_by_project.get(aid, [])
         # Fall back to the prefix rule if the project has no association row
         # (defensive — every project gets backfilled in PR-A, but if a curator
         # manually deletes the association we still render a sensible chip).
+        # assoc_backfilled flags the chip as a derived guess (no real row) so
+        # the editor opens with nothing checked → the curator adds the FIRST
+        # real link (the zero-association case).
+        entry["assoc_backfilled"] = not entry["activity_ids"]
         if not entry["activity_ids"]:
             entry["activity_ids"] = [aid.split(".")[0]]
         workplan_goals.append(entry)
@@ -6869,6 +7015,10 @@ def build_workplan_goals_from_supabase(
             "name": data["name"],
             "activity": act_label,
             "activity_ids": entry["activity_ids"],
+            # Carry the REAL association rows + backfill flag so the comprehensive
+            # table can host the same association editor as the grouped section.
+            "assoc_records": entry["assoc_records"],
+            "assoc_backfilled": entry["assoc_backfilled"],
             "goal": goal_dict,
             "current": current_dict,
             "stretch": stretch_dict,
@@ -8098,11 +8248,35 @@ def main():
                 # Analysis Cards" block (renamed 2026-05-18) need to be
                 # stripped so the static template never accumulates copies.
                 import re as _re
+                # Strip from the start marker to the explicit END marker so the
+                # WHOLE block is removed before re-injection. (Previously the
+                # tail anchor was `.sw-rec-course {…}`, the last rule when the
+                # guard was written — but rules appended after it, the PR-5
+                # `.proj-*` editor block and the association-editor block,
+                # escaped the strip and ACCUMULATED on repeat runs. The end
+                # marker makes the guard durable against future additions.)
+                end_marker = r'/\* ═══ End MAP Articulation Analysis Cards ═══ \*/'
                 pattern = _re.compile(
-                    r'\n?/\* ═══ MAP Articulation Analysis Cards ═══ \*/.*?\.sw-rec-course \{[^}]*\}\n?',
+                    r'\n?/\* ═══ MAP Articulation Analysis Cards ═══ \*/.*?'
+                    + end_marker + r'\n?',
                     _re.DOTALL,
                 )
-                html = pattern.sub('', html)
+                # Back-compat one-time transition: a copy injected BEFORE this
+                # end marker existed has no end marker. Its tail is the PR-5
+                # `.proj-*` editor block, whose last rule is
+                # `.proj-btn-submit:disabled {…}` (the string's last line on
+                # origin/main). Anchor the legacy strip there so the trailing
+                # `.proj-*` rules are removed too — anchoring at `.sw-rec-course`
+                # (the original guard) would orphan them and they'd accumulate.
+                if not _re.search(end_marker, html):
+                    legacy_no_end = _re.compile(
+                        r'\n?/\* ═══ MAP Articulation Analysis Cards ═══ \*/.*?'
+                        r'\.proj-btn-submit:disabled \{[^}]*\}\n?',
+                        _re.DOTALL,
+                    )
+                    html = legacy_no_end.sub('', html)
+                else:
+                    html = pattern.sub('', html)
                 legacy_pattern = _re.compile(
                     r'\n?/\* ═══ MAP Exhibit Analysis Cards ═══ \*/.*?\.exhibit-toggle-btn:hover \{[^}]*\}\n?',
                     _re.DOTALL,
@@ -8356,7 +8530,7 @@ def main():
             # that's the workplan-goals tab pane). Falls back to inserting
             # before Vision 2030 Section only on a fresh template.
             if annual_goals:
-                goals_table_html = render_annual_goals_table_html(annual_goals)
+                goals_table_html = render_annual_goals_table_html(annual_goals, activities=activities)
                 ag_start = html.find('<!-- Annual Workplan Goals -->')
                 ag_end = html.find('<!-- End Annual Workplan Goals -->')
                 if ag_start != -1 and ag_end != -1:

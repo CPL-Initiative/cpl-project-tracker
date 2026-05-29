@@ -102,6 +102,427 @@
     });
   }
 
+  // ═══ Activity↔Project association editor ════════════════════════════════
+  // Lets a curator edit which Activities an EXISTING project contributes to
+  // (the add-flow already covers NEW projects). Writes to
+  // public.workplan_activity_associations:
+  //   add    → POST  {project_id, activity_id [, is_primary]}
+  //   remove → DELETE ?project_id=eq.X&activity_id=eq.Y
+  //   primary→ PATCH  the chosen row is_primary=true + the project's OTHERS false
+  // The is_primary column is added by
+  // kb/supabase_activity_associations_add_primary.sql (unapplied until a human
+  // runs it). The editor probes for the column once; until it exists, the
+  // primary radios are hidden and is_primary is omitted from write bodies so
+  // nothing 400s.
+  var ASSOC_TABLE = SUPABASE_URL + "/rest/v1/workplan_activity_associations";
+
+  function assocHeaders(sess, prefer) {
+    var h = {
+      "apikey": SUPABASE_ANON,
+      "Authorization": "Bearer " + sess.access_token,
+      "Content-Type": "application/json"
+    };
+    if (prefer) h.Prefer = prefer;
+    return h;
+  }
+
+  // One-time detection of the is_primary column. Resolves true/false; cached.
+  var _primaryColPromise = null;
+  function detectPrimaryColumn(sess) {
+    if (_primaryColPromise) return _primaryColPromise;
+    _primaryColPromise = fetch(
+      ASSOC_TABLE + "?select=is_primary&limit=1",
+      { headers: assocHeaders(sess) }
+    ).then(function (r) {
+      // 200 → column exists; 400 (undefined column) → not yet migrated.
+      return r.ok;
+    }).catch(function () {
+      return false;
+    });
+    return _primaryColPromise;
+  }
+
+  function addAssociation(sess, pid, aid, includePrimary, isPrimary) {
+    var body = { project_id: pid, activity_id: aid };
+    if (includePrimary) body.is_primary = !!isPrimary;
+    return fetch(ASSOC_TABLE, {
+      method: "POST",
+      headers: assocHeaders(sess, "return=minimal"),
+      body: JSON.stringify([body])
+    });
+  }
+
+  function removeAssociation(sess, pid, aid) {
+    var qs = "project_id=eq." + encodeURIComponent(pid)
+           + "&activity_id=eq." + encodeURIComponent(aid);
+    return fetch(ASSOC_TABLE + "?" + qs, {
+      method: "DELETE",
+      headers: assocHeaders(sess, "return=minimal")
+    });
+  }
+
+  // PATCH is_primary for a specific (project, activity) row.
+  function setPrimaryFlag(sess, pid, aid, value) {
+    var qs = "project_id=eq." + encodeURIComponent(pid)
+           + "&activity_id=eq." + encodeURIComponent(aid);
+    return fetch(ASSOC_TABLE + "?" + qs, {
+      method: "PATCH",
+      headers: assocHeaders(sess, "return=minimal"),
+      body: JSON.stringify({ is_primary: !!value })
+    });
+  }
+
+  // ─── Association editor — DOM + state helpers ───────────────────────────
+  // Read the current association records off a chip cell's data-assoc.
+  // Returns [{activity_id, is_primary}] (deduped, the renderer already did so).
+  function readAssoc(cell) {
+    try {
+      var raw = cell.getAttribute("data-assoc") || "[]";
+      var arr = JSON.parse(raw);
+      if (!Array.isArray(arr)) return [];
+      return arr.filter(function (r) { return r && r.activity_id; })
+        .map(function (r) {
+          return { activity_id: String(r.activity_id), is_primary: !!r.is_primary };
+        });
+    } catch (e) { return []; }
+  }
+  function readActivityOptions(cell) {
+    try {
+      var raw = cell.getAttribute("data-activities") || "[]";
+      var arr = JSON.parse(raw);
+      if (!Array.isArray(arr)) return [];
+      return arr.filter(function (a) { return a && a.id != null; })
+        .map(function (a) {
+          return { id: String(a.id), name: String(a.name == null ? "" : a.name) };
+        });
+    } catch (e) { return []; }
+  }
+
+  // Repaint a chip cell's chips + data-assoc after a successful save. `records`
+  // is the NEW canonical [{activity_id, is_primary}] state. Uses textContent /
+  // DOM construction only — never innerHTML with Supabase strings.
+  function repaintAssocCell(cell, records, options) {
+    var labelOf = {};
+    options.forEach(function (o) { labelOf[o.id] = o.name; });
+    // Drop existing chips (keep the leading "Contributes to:" span + the
+    // trailing ✎ hint, which carry no curator data).
+    Array.prototype.slice.call(cell.querySelectorAll(".wpg-act-chip"))
+      .forEach(function (c) { c.remove(); });
+    var hint = cell.querySelector(".wpg-assoc-edit-hint");
+    // Sort by natural activity id for a stable display.
+    var sorted = records.slice().sort(function (a, b) {
+      return a.activity_id.localeCompare(b.activity_id, undefined, { numeric: true });
+    });
+    sorted.forEach(function (rec) {
+      var aid = rec.activity_id;
+      var full = labelOf[aid] || ("Activity " + aid);
+      var chip = el("span", {
+        "class": rec.is_primary ? "wpg-act-chip wpg-act-chip-primary" : "wpg-act-chip",
+        "style": "display:inline-block;margin:0 0.25rem 0 0;padding:0.05rem 0.4rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.7rem;font-weight:600;"
+      }, []);
+      chip.setAttribute("title", rec.is_primary ? (full + " (primary)") : full);
+      // textContent keeps the curator-editable activity NAME inert (the chip
+      // body shows the short label, but we keep the hygiene contract anyway).
+      chip.textContent = (rec.is_primary ? "★ " : "") + "Activity " + aid;
+      if (hint) cell.insertBefore(chip, hint);
+      else cell.appendChild(chip);
+    });
+    // Persist the new canonical state back onto the cell for the next open.
+    cell.setAttribute("data-assoc", JSON.stringify(sorted));
+    cell.setAttribute("data-assoc-backfilled", "0");
+  }
+
+  // Tracks the open popover + its outside-click / Esc listeners so they can be
+  // torn down cleanly (mirrors the add-modal's _activeEscListener pattern).
+  var _assocPop = null;
+  var _assocPopCleanup = null;
+  function closeAssocPop() {
+    if (_assocPop && _assocPop.parentNode) _assocPop.parentNode.removeChild(_assocPop);
+    _assocPop = null;
+    if (_assocPopCleanup) { _assocPopCleanup(); _assocPopCleanup = null; }
+  }
+
+  function openAssocPop(cell, state) {
+    if (!state.sess) return;
+    closeAssocPop();
+
+    var pid = cell.getAttribute("data-pid");
+    if (!pid) return;
+    var options = readActivityOptions(cell);
+    var backfilled = cell.getAttribute("data-assoc-backfilled") === "1";
+    // The "current" set the editor opens with. A backfilled chip is a derived
+    // guess (no real association row), so the editor opens with NOTHING checked
+    // → the curator deliberately adds the first real link.
+    var current = backfilled ? [] : readAssoc(cell);
+    var curChecked = {};
+    var curPrimary = null;
+    current.forEach(function (r) {
+      curChecked[r.activity_id] = true;
+      if (r.is_primary) curPrimary = r.activity_id;
+    });
+
+    var pop = el("div", { "class": "wpg-assoc-pop" }, []);
+    pop.appendChild(el("h4", {}, ["Contributes to which Activities?"]));
+    pop.appendChild(el("div", { "class": "wpg-assoc-pop-sub" }, [
+      "Project " + pid + (backfilled ? " — no link set yet" : "")
+    ]));
+
+    var list = el("div", { "class": "wpg-assoc-list" }, []);
+    var checkboxes = {};   // aid → input
+    var primaryRadios = {}; // aid → input
+    var statusEl = el("div", { "class": "wpg-assoc-pop-status" }, []);
+
+    // Build one row per activity option.
+    options.forEach(function (opt) {
+      var aid = opt.id;
+      var row = el("div", { "class": "wpg-assoc-row" }, []);
+
+      var cbId = "wpg-assoc-cb-" + pid + "-" + aid;
+      var cb = el("input", { "type": "checkbox", "id": cbId }, []);
+      if (curChecked[aid]) cb.checked = true;
+      checkboxes[aid] = cb;
+
+      var lbl = el("label", { "for": cbId }, []);
+      lbl.appendChild(cb);
+      var nameSpan = el("span", { "class": "wpg-assoc-name" }, []);
+      // Activity NAME is curator-editable → textContent, never innerHTML.
+      nameSpan.textContent = opt.name || ("Activity " + aid);
+      lbl.appendChild(nameSpan);
+      row.appendChild(lbl);
+
+      // Primary radio (one group across the popover). Hidden until we know the
+      // column exists; enabled only when the checkbox is checked.
+      var prim = el("label", { "class": "wpg-assoc-prim wpg-assoc-prim-disabled" }, []);
+      var radio = el("input", { "type": "radio", "name": "wpg-assoc-prim-" + pid, "value": aid }, []);
+      radio.disabled = true; // toggled on once the column is confirmed
+      if (curPrimary === aid) radio.checked = true;
+      primaryRadios[aid] = radio;
+      prim.appendChild(radio);
+      prim.appendChild(document.createTextNode("primary"));
+      prim.style.display = "none"; // revealed by the column probe below
+      row.appendChild(prim);
+
+      // Keep the primary radio's enabled-state in lock-step with the checkbox.
+      cb.addEventListener("change", function () {
+        syncPrimaryEnabled();
+      });
+
+      list.appendChild(row);
+    });
+    if (!options.length) {
+      list.appendChild(el("div", { "style": "color:#888;font-size:0.78rem;padding:0.3rem;" },
+        ["(no Activities available)"]));
+    }
+    pop.appendChild(list);
+
+    function syncPrimaryEnabled() {
+      Object.keys(checkboxes).forEach(function (aid) {
+        var checked = checkboxes[aid].checked;
+        var radio = primaryRadios[aid];
+        var primLbl = radio.parentNode;
+        radio.disabled = !checked || !state.hasPrimaryCol;
+        if (primLbl.classList) {
+          primLbl.classList.toggle("wpg-assoc-prim-disabled", radio.disabled);
+        }
+        // If an activity got unchecked while it was the primary, clear it.
+        if (!checked && radio.checked) radio.checked = false;
+      });
+    }
+
+    pop.appendChild(statusEl);
+    pop.appendChild(el("div", { "class": "wpg-assoc-note" }, [
+      "Exactly one Activity can be primary. Saving applies adds, removes, and the primary change together."
+    ]));
+
+    var actions = el("div", { "class": "wpg-assoc-pop-actions" }, []);
+    var btnCancel = el("button", { "class": "wpg-assoc-cancel", "type": "button" }, ["Cancel"]);
+    var btnSave = el("button", { "class": "wpg-assoc-save", "type": "button" }, ["Save"]);
+    actions.appendChild(btnCancel);
+    actions.appendChild(btnSave);
+    pop.appendChild(actions);
+
+    btnCancel.addEventListener("click", closeAssocPop);
+    btnSave.addEventListener("click", function () {
+      doAssocSave(cell, state, pid, options, checkboxes, primaryRadios, current, statusEl, btnSave);
+    });
+
+    // Position + mount. Append to body, then place near the cell.
+    document.body.appendChild(pop);
+    _assocPop = pop;
+    positionPop(pop, cell);
+
+    // Probe the is_primary column once; reveal the primary radios if present.
+    detectPrimaryColumn(state.sess).then(function (has) {
+      state.hasPrimaryCol = has;
+      if (has) {
+        Object.keys(primaryRadios).forEach(function (aid) {
+          primaryRadios[aid].parentNode.style.display = "";
+        });
+      }
+      syncPrimaryEnabled();
+    });
+    syncPrimaryEnabled();
+
+    // Outside-click + Esc teardown.
+    function onDocClick(e) {
+      if (_assocPop && !_assocPop.contains(e.target) && e.target !== cell && !cell.contains(e.target)) {
+        closeAssocPop();
+      }
+    }
+    function onKey(e) { if (e.key === "Escape") closeAssocPop(); }
+    // Defer the click listener so the opening click doesn't immediately close.
+    setTimeout(function () { document.addEventListener("click", onDocClick, true); }, 0);
+    document.addEventListener("keydown", onKey);
+    _assocPopCleanup = function () {
+      document.removeEventListener("click", onDocClick, true);
+      document.removeEventListener("keydown", onKey);
+    };
+  }
+
+  function positionPop(pop, cell) {
+    var r = cell.getBoundingClientRect();
+    var top = window.scrollY + r.bottom + 4;
+    var left = window.scrollX + r.left;
+    // Keep within the viewport horizontally.
+    var popW = pop.offsetWidth || 300;
+    var maxLeft = window.scrollX + document.documentElement.clientWidth - popW - 8;
+    if (left > maxLeft) left = Math.max(window.scrollX + 8, maxLeft);
+    pop.style.top = top + "px";
+    pop.style.left = left + "px";
+  }
+
+  // Compute the diff between the opened state (`current`) and the form, then
+  // fire the minimal set of writes. Optimistic repaint with rollback.
+  function doAssocSave(cell, state, pid, options, checkboxes, primaryRadios, current, statusEl, btnSave) {
+    var sess = state.sess;
+    if (!sess) return;
+
+    // Desired set from the form.
+    var desired = [];
+    Object.keys(checkboxes).forEach(function (aid) {
+      if (checkboxes[aid].checked) desired.push(aid);
+    });
+    if (!desired.length) {
+      statusEl.className = "wpg-assoc-pop-status err";
+      statusEl.textContent = "Pick at least one Activity (or Cancel to leave unchanged).";
+      return;
+    }
+
+    var curSet = {};
+    var curPrimary = null;
+    current.forEach(function (r) {
+      curSet[r.activity_id] = true;
+      if (r.is_primary) curPrimary = r.activity_id;
+    });
+    var desSet = {};
+    desired.forEach(function (aid) { desSet[aid] = true; });
+
+    // Desired primary (only meaningful if the column exists).
+    var desiredPrimary = null;
+    if (state.hasPrimaryCol) {
+      Object.keys(primaryRadios).forEach(function (aid) {
+        if (primaryRadios[aid].checked && desSet[aid]) desiredPrimary = aid;
+      });
+    }
+
+    var toAdd = desired.filter(function (aid) { return !curSet[aid]; });
+    var toRemove = Object.keys(curSet).filter(function (aid) { return !desSet[aid]; });
+
+    // Build the write plan.
+    //  - adds: POST (carry is_primary only if this aid is the desired primary)
+    //  - removes: DELETE
+    //  - primary change on a KEPT row: PATCH true; PATCH false on the others
+    var ops = [];
+    toAdd.forEach(function (aid) {
+      ops.push(addAssociation(sess, pid, aid, state.hasPrimaryCol, desiredPrimary === aid));
+    });
+    toRemove.forEach(function (aid) {
+      ops.push(removeAssociation(sess, pid, aid));
+    });
+    if (state.hasPrimaryCol) {
+      desired.forEach(function (aid) {
+        var wasPrimary = (curPrimary === aid);
+        var willBePrimary = (desiredPrimary === aid);
+        var isNewlyAdded = toAdd.indexOf(aid) !== -1;
+        // Newly-added rows already carried their is_primary in the POST.
+        if (isNewlyAdded) return;
+        if (wasPrimary !== willBePrimary) {
+          ops.push(setPrimaryFlag(sess, pid, aid, willBePrimary));
+        }
+      });
+    }
+
+    if (!ops.length) {
+      // No change.
+      closeAssocPop();
+      return;
+    }
+
+    // Optimistic state for the repaint.
+    var newRecords = desired.map(function (aid) {
+      return { activity_id: aid, is_primary: state.hasPrimaryCol && desiredPrimary === aid };
+    });
+
+    btnSave.disabled = true;
+    statusEl.className = "wpg-assoc-pop-status";
+    statusEl.textContent = "Saving…";
+    cell.classList.remove("wpg-assoc-saved", "wpg-assoc-error");
+    cell.classList.add("wpg-assoc-saving");
+
+    Promise.all(ops.map(function (p) {
+      return p.then(function (r) {
+        if (!r.ok) {
+          return r.text().then(function (t) {
+            throw new Error("HTTP " + r.status + (t ? ": " + t.slice(0, 160) : ""));
+          });
+        }
+      });
+    })).then(function () {
+      cell.classList.remove("wpg-assoc-saving");
+      cell.classList.add("wpg-assoc-saved");
+      setTimeout(function () { cell.classList.remove("wpg-assoc-saved"); }, 1500);
+      repaintAssocCell(cell, newRecords, options);
+      closeAssocPop();
+    }).catch(function (e) {
+      // A partial failure can leave the DB out of sync with the optimistic
+      // plan; we did NOT pre-paint the chips, so the cell still shows the old
+      // state. Surface the error + reload guidance so the curator re-checks.
+      cell.classList.remove("wpg-assoc-saving");
+      cell.classList.add("wpg-assoc-error");
+      setTimeout(function () { cell.classList.remove("wpg-assoc-error"); }, 2500);
+      btnSave.disabled = false;
+      statusEl.className = "wpg-assoc-pop-status err";
+      statusEl.textContent = "Save failed — " + (e.message || "unknown") + ". Reload to re-check.";
+      console.error("[workplan_goals] association save failed:", e);
+    });
+  }
+
+  // Light up the chip cells (cursor + ✎) when signed in.
+  function paintAssocEditability(state) {
+    var cells = document.querySelectorAll('[data-assoc-edit="1"]');
+    cells.forEach(function (c) {
+      if (state.sess) c.classList.add("wpg-assoc-on");
+      else c.classList.remove("wpg-assoc-on");
+    });
+  }
+
+  // Click delegation for the chip cells. Kept separate from the year-cell
+  // handler so a chip-cell click never starts a year edit.
+  function attachAssocClickHandler(state) {
+    document.body.addEventListener("click", function (e) {
+      var target = e.target;
+      while (target && target !== document.body) {
+        if (target.getAttribute && target.getAttribute("data-assoc-edit") === "1") {
+          if (!state.sess) return; // anonymous: chips are read-only
+          openAssocPop(target, state);
+          e.stopPropagation();
+          return;
+        }
+        target = target.parentNode;
+      }
+    });
+  }
+
   // ─── Auth widget (banner at top of tab) ──────────────────────────────────
   function buildAuthWidget(state, onChange) {
     var widget = el("div", {
@@ -188,6 +609,8 @@
       state.sess = getSession();
       mountAuthWidget(state);
       paintEditability(state);
+      paintAssocEditability(state);
+      if (!state.sess) closeAssocPop();
     });
     if (existing) existing.replaceWith(widget);
     else tab.insertBefore(widget, tab.firstChild);
@@ -731,10 +1154,15 @@
   function init() {
     if (!document.getElementById("tab-workplan-goals")) return;
     injectStyles();
-    var state = { sess: getSession() };
+    // hasPrimaryCol is resolved lazily by detectPrimaryColumn() the first time
+    // the association popover opens; default false → primary radios hidden +
+    // is_primary omitted from writes until the migration lands.
+    var state = { sess: getSession(), hasPrimaryCol: false };
     mountAuthWidget(state);
     paintEditability(state);
+    paintAssocEditability(state);
     attachClickHandler(state);
+    attachAssocClickHandler(state);
 
     // Re-paint when the tab becomes visible (in case sign-in happened on
     // another tab and the URL fragment now reflects us).
@@ -742,6 +1170,7 @@
       state.sess = getSession();
       mountAuthWidget(state);
       paintEditability(state);
+      paintAssocEditability(state);
     });
   }
 
