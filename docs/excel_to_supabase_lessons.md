@@ -848,3 +848,99 @@ one `AskUserQuestion` round and green-lit the live apply.
 Sam dispatches "Projects Phase 2 — Seed Apply" (Actions → Run workflow → `main`).
 On green: verify the 34 rows + validator, then scope PR-4 (the cutover).
 
+## 2026-05-29 — Session 16 (Bruh Word) — Phase 2 cutover + editor (COMPLETE)
+
+Picked up the Bruh Parallax handoff. The seed was the gating step; Sam
+dispatched it at session open → **34 rows landed, V1-V4 green on first attempt**
+(receipts `kb/projects_seed_out/2026-05-29/`, commit `472f798`). Then drove
+PR-4 (cutover) + PR-5 (editor) to merge. Phase 2 is now functionally complete.
+
+### What shipped
+- **PR #184 — PR-4 cutover.** `kb/_load_projects.py` (Supabase fetch + snapshot
+  fallback, mirrors `_load_workplan_goals.py`) + `build_projects_from_supabase()`
+  + `load_projects()` with three-tier resilience **Supabase → snapshot → Excel**.
+  Subtle "Project data as of YYYY-MM-DD" stamp. Backed by
+  `kb/_test_projects_parity.py` proving byte-identical output to `read_projects()`.
+- **PR #185 — gitignore agent worktrees.** `.claude/worktrees/` (stop-hook
+  surfaced the running PR-5 agent's worktree as untracked).
+- **PR #186 — PR-5 editor.** `projects_editor.js`, 17 fields, mirrors
+  `workplan_goals.js`. Built by a worktree sub-agent, reviewed + hardened.
+
+### Lessons
+
+**1. A byte-identical parity test is the right proof for a data-source cutover.**
+PR-4 swapped the projects source from Excel to Supabase. Rather than reason about
+correctness, `kb/_test_projects_parity.py` *proved* it: load via the new path,
+diff field-by-field against `read_projects()` for the 34 real projects, and the
+only diffs must be the explained/intentional ones. It caught **three real things
+the scope doc missed** that pure reasoning would likely have shipped wrong (see
+lesson 2). The test is also the regression guard for every future regen.
+Distilled into `docs/kb-notes/methodology-parity-test-cutover-proof.md`.
+
+**2. The scope doc is a hypothesis; the parity test is the falsifier.** The Phase 2
+scope doc (written Session 14) assumed projects = a clean 34-row swap with
+`override`/`excel_row` dropped and the ladder sourced from workplan_goals. Reality,
+surfaced by measuring + the parity test:
+- `read_projects()` returns **49 rows** (34 grid cards + 15 `D.*` KPI-helper rows).
+  `D.1/2/3` feed the cohort KPI composites via the `dpop` map. → `D.*` must stay
+  Excel-sourced (not migrated, not grid cards).
+- `excel_row` (scope doc: "drop") still drives the "Open in Excel" deep-links. →
+  kept Excel-sourced; retires with the buttons later.
+- The ladder **can't** come losslessly from workplan_goals: wpg stores `0.0` for
+  BOTH a blank Excel cell AND a literal `0`, but `read_projects()` renders blank
+  as `""` and `0` as `"0"` — project 1.4 has a real `0` target, 5.1 has blanks, so
+  wpg-sourcing mis-renders in opposite directions. → ladder stays Excel-sourced
+  (and the Excel ladder cols aren't retired in Phase 2 anyway, so no loss).
+- `override` (scope doc: "drop") verified all-None across 49 rows → truly a no-op.
+**The takeaway: a scope doc written before the code is read is a starting
+hypothesis. Measure against the real data + prove parity before trusting it.**
+
+**3. "Retire the legacy reader" (PR-6) was the wrong frame.** Phase 1's PR-6
+deleted a dead function. Phase 2's "PR-6 retire `read_projects()`" turned out
+**moot** — `read_projects()` is load-bearing for D.*, the ladder, `excel_row`,
+and the Excel fallback. A migration doesn't necessarily *kill* the old reader; it
+can *demote* it to a fallback + extras provider. Don't assume the legacy path
+dies just because the new one lands.
+
+**4. Delegate the big build to a sub-agent, but the review is non-negotiable —
+and a hostile-input smoke test IS the review.** PR-5 (a ~485-line editor + 7 new
+card rows + Rule-4 dual-file wiring) was built by a worktree sub-agent off fresh
+main. It was functionally solid (faithful `workplan_goals.js` mirror), but the
+review's hostile-input smoke test (`<script>`, `"`, `<img onerror>` into a project
+name) caught a **`data-folder` attribute XSS sink the agent left unescaped** —
+because project `name` is now curator-editable (PR-5), every unescaped render of
+it is newly live. This is exactly the `methodology-xss-audit-on-curator-editable-
+fields` note's prediction ("Phase 2-5 will each introduce a new editor… each
+needs this audit"). The smoke test, not the eyeball, is what found it. Treat a
+sub-agent's diff as a proposal; the test-driven review is where you earn the merge.
+
+**5. Calibrate the merge gate to blast radius (again).** PR-4 (changes the live
+data source) → explicit `AskUserQuestion` before merge. PR-5 (live-write editor +
+changes public-card appearance) → `AskUserQuestion` on the one substantive fork
+(public-card visibility), then merge once that's answered + review done + CI green.
+PR-185 (mechanical `.gitignore`) → auto-merged on green. The gate sits at the
+irreversible/visible step, not uniformly on every PR.
+
+### Current state
+- **Phase 2 COMPLETE** at the dashboard-tab level: projects read from Supabase
+  (snapshot + Excel fallbacks), 17-field inline editor, RLS-gated to
+  allowed_reviewers. PR-4/PR-5 merged; the editor CSS + Supabase-sourced cards go
+  live on the next daily regen (or a manual `workflow_dispatch`).
+- `read_projects()` stays as the Excel fallback + D.*/ladder/excel_row provider.
+- Excel still feeds: the KPI ladder (per project cards/reports), `D.*` helpers,
+  config overrides, budget, update_log — i.e. Phases 3-5 territory.
+
+### Strategic roadmap
+- **Phase 3-5** (Budget / Vision 2030 / Personnel) — same five-step shape
+  (snapshot → validate → dry-run → workflow_dispatch apply → cutover) + the
+  RLS-tighten step + a parity test. Personnel already has 26 Supabase rows, so its
+  PR-3 has UPDATEs (the only phase where V2 source-exists fires on existing rows).
+- The Excel KPI ladder columns + `D.*` helpers + the "Open in Excel" buttons
+  retire together when the 3 JS report consumers migrate (a Phase 3+ bundle).
+
+### Next concrete step
+Phase 3 entry point — pick a tab (Budget is the natural next; it's its own section
+already). Write `kb/_validate_budget.py` mirroring `_validate_projects.py`, measure
+the real Excel→Supabase diff, and lock any forks before the seed. Or, if verifying
+first: dispatch a daily run to see the Supabase-sourced project cards + editor live.
+

@@ -1,7 +1,7 @@
 ---
 title: Playbook — Auto-sync vault-side repo clones via Windows Task Scheduler
 created: 2026-05-27
-updated: 2026-05-28
+updated: 2026-05-29
 tags: [playbook, obsidian-target, vault-wiring, windows, automation, knowledge-base]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -262,6 +262,34 @@ Three scenarios get logged-and-skipped:
 
 In all three cases, **the vault clone's content is preserved exactly as it
 was**. The script's worst-case behavior is "do nothing, log a warning."
+
+## 2026-05-29 — vault consolidation complete + community-plugins follow-up
+
+**Consolidation done (Session 16).** Sam inventoried every local `COG-second-brain`
+/ `CPLBrain` / `cpl-knowledge-base` directory and collapsed to **one** source of
+truth at `Documents\GitHub\COG-second-brain`. Removed: the
+`Documents\Claude\Projects\CPLBrain` orphan tree (held a stale vault repo, a stale
+`cpl-knowledge-base` clone, and a junk `C-\Users\…` folder — a Windows path once
+written as a literal directory name), plus `Documents\GitHub\BU\CPLBrain` (backup)
+and `Documents\Obsidian Vault\CPLBrain` (old vault). The canonical `.obsidian` was
+verified dialed in: `userIgnoreFilters` carries the documented big-data exclusions
+(`coci_*.json`, `coci_course_list.xlsx`, `row_audit`, `exports`,
+`CustomReport_latest.json`) + `appearance.json` / `core-plugins.json` /
+`workspace.json`. The sync task confirmed healthy (it's **silent on success** —
+no log line when a repo is already up-to-date; a missing log file ≠ a failure).
+
+**⏳ FOLLOW-UP for a future session (Sam's request): Obsidian community plugins.**
+Sam doesn't use any community plugins yet but **enabled** them in the canonical
+vault so he can add later. He wants to **come back to this and get recommendations
+on which to explore.** When picking up: ask about his workflow (graph-heavy?
+daily notes? data views over the KB tables? task tracking?) then suggest a short
+list — likely candidates to evaluate for this vault: **Dataview** (query the
+KB-notes frontmatter — `kb-status`, `tags`, `type` — into live tables/indexes;
+pairs perfectly with the three-lane doc model + `docs/INDEX.md`), **Templater**
+(scaffold new KB notes / lessons / handoffs from the existing templates),
+**Obsidian Git** (an in-app alternative/complement to the Task Scheduler sync),
+and maybe a **Kanban** or **Projects** plugin if he wants the workplan/roadmap
+tables as boards. Keep it minimal — recommend, don't over-install.
 
 ## See also
 
