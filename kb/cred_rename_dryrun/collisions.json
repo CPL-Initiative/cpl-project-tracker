@@ -1,6 +1,6 @@
 {
   "_about": "Credential rename collisions detected by the dry-run. Each entry is a proposed rename whose target already exists as a key in credentials.json. Policy: reject + decision queue — curator picks a non-colliding target, or explicitly confirms a merge via the deferred PR-5b/2 UX. NEVER auto-merged; NEVER auto-disambiguated.",
-  "_generated_at": "2026-05-29T17:24:05Z",
+  "_generated_at": "2026-05-29T20:21:13Z",
   "count": 0,
   "collisions": []
 }
