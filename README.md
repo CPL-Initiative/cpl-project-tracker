@@ -102,10 +102,12 @@ The whole ecosystem, end-to-end:
         GitHub Pages  (cpl-initiative.github.io/cpl-project-tracker/)
 
 
-Side channels:
-  Supabase (hvuwhnbuahrtptokpqfh.supabase.co)
-    ├── projects, budget_expenditures, personnel, workplan_goals  (project data)
-    └── kb_curation, allowed_reviewers                            (UCL curation overlay)
+Supabase (hvuwhnbuahrtptokpqfh.supabase.co)
+    ├── workplan_goals, projects   ← READ BY the pipeline (source of truth as of the
+    │      Excel→Supabase migration Phase 1-2; daily snapshot + Excel fallback);
+    │      inline-editable on their tabs by allowed reviewers
+    ├── budget_expenditures, personnel   (project data — still Excel-sourced; Phase 3-5 pending)
+    └── kb_curation, allowed_reviewers   (UCL curation overlay)
 
 Cloudflare Worker (cpl-proxy.slee-548.workers.dev)
     ├── GET  /scrape    → CCCCO MAP API → live_metrics.json
