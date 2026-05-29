@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-29T15:03:15.155Z",
+  "scraped_at": "2026-05-29T17:23:25.722Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -33,13 +33,13 @@
         },
         {
           "college": "Los Angeles Pierce College",
-          "students": 1844,
+          "students": 1845,
           "units": 28212,
-          "avgUnits": 15.299349240780911,
+          "avgUnits": 15.291056910569106,
           "transcriptionRate": 98.7,
-          "avgTranscribed": 15.106290672451193,
+          "avgTranscribed": 15.098102981029811,
           "criteriaMetCount": 5,
-          "militaryStudents": 104,
+          "militaryStudents": 105,
           "nonMilitaryStudents": 1740,
           "apprenticeStudents": 173,
           "savings": 27471945,
@@ -892,6 +892,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Lemoore College",
+          "students": 213,
+          "units": 330,
+          "avgUnits": 1.5492957746478873,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 31,
+          "nonMilitaryStudents": 183,
+          "apprenticeStudents": 1,
+          "savings": 389595,
+          "yearImpact": 1686189,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Citrus College",
           "students": 198,
           "units": 776,
@@ -904,21 +919,6 @@
           "apprenticeStudents": 0,
           "savings": 1342480,
           "yearImpact": 4707992,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Lemoore College",
-          "students": 190,
-          "units": 330,
-          "avgUnits": 1.736842105263158,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 31,
-          "nonMilitaryStudents": 160,
-          "apprenticeStudents": 1,
-          "savings": 389595,
-          "yearImpact": 1686189,
           "transcribedUnits": 0
         },
         {
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "46,057",
+      "value": "46,081",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,109"
+          "value": "24,110"
         },
         {
           "label": "Workforce/Other",
-          "value": "22,024"
+          "value": "22,047"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 46057,
+    "Students": 46081,
     "Units": 207652.65000000002,
     "TranscribedUnits": 98841.45,
     "Savings": 292493147.75,
     "YearImpact": 1170862226.9,
-    "MilitaryStudents": 24109,
-    "NonMilitaryStudents": 22024,
+    "MilitaryStudents": 24110,
+    "NonMilitaryStudents": 22047,
     "AprenticeStudents": 749,
-    "AverageUnits": 4.508601298391125,
-    "TranscribedAverage": 2.1460679158434113
+    "AverageUnits": 4.5062531195069555,
+    "TranscribedAverage": 2.1449501963933075
   }
 }
