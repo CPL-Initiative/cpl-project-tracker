@@ -944,3 +944,107 @@ already). Write `kb/_validate_budget.py` mirroring `_validate_projects.py`, meas
 the real Excel→Supabase diff, and lock any forks before the seed. Or, if verifying
 first: dispatch a daily run to see the Supabase-sourced project cards + editor live.
 
+## 2026-05-29 — Session 17 (Q / Qualitastic) — Budget cutover + association editor + orphan close-out + XSS
+
+Picked up the Bruh Word handoff. Verified Phase 2 live (and caught a **live Budget
+$0 bug** in the process), then pivoted the bulk of the session to *finishing* the
+Activity↔Project association editor (Session 14 built the data model; this session
+made it editable + reachable) and a security follow-up.
+
+### What shipped
+- **PR #189 — Phase 3 Budget read-path cutover.** Budget tab now reads
+  `budget_expenditures` from Supabase (`kb/_load_budget.py` + snapshot fallback +
+  "Data as of" stamp). Fixed a live **$0 → ~$89M** rendering bug. Compressed vs
+  Phase 2 — the table already had rows, so a direct cutover, not the seed dance.
+  Budget inline editor still queued.
+- **PR #190 — Activity↔Project association editor.** The "Contributes to" chip line
+  became click-to-edit (popover, Supabase CRUD on `workplan_activity_associations`)
+  + the **`is_primary`** column (MCP `apply_migration`) + a CSS-accumulation fix.
+- **Orphan close-out (Supabase data ops).** Linked the 7 zero-ladder Activity-5
+  projects (5.2–5.8) + default-primary-backfilled the 27 existing associations →
+  35 associations, 34/34 single-primary, 0 orphans. Audit trail in
+  `docs/activity_association_orphan_plan.md`.
+- **PR #191 — assoc editor on all 34 Dashboard cards.** Shared `assoc_editor.js`
+  module; `workplan_goals.js` refactored to delegate (−441 lines).
+- **PR #192 — akpi / CPL_DATA XSS hardening.** Closed the pre-existing sink the
+  #191 review surfaced.
+
+### Lessons
+
+**1. An editor whose reach is tied to "what renders" silently orphans the rows
+that don't render.** The #190 editor attaches to the Workplan-Goals chip line,
+which only renders the 27 A+ (non-zero-KPI) projects. The 7 zero-ladder
+Activity-5 projects (5.2–5.8) therefore (a) never got association rows from the
+PR-A backfill AND (b) couldn't be linked through the UI even after. The orphan
+wasn't a data bug — it was a *reachability* gap. The two-part fix: close the data
+orphans (link via Supabase, leads product-owner-confirmed), AND close the reach
+gap by putting the editor on a surface that renders **every** row (the Dashboard
+Projects Grid — all 34 cards). Lesson: when you add an editor, ask "what subset of
+the entity does this surface render?" — anything outside it is un-editable and can
+quietly drift out of integrity.
+
+**2. Share one widget across two surfaces with a single delegated listener — never
+two bindings.** #191 needed the #190 popover on both the workplan chips and the
+project cards. The trap: bind a second handler and clicking a workplan chip opens
+*two* popovers. The fix: extract the popover into `assoc_editor.js` with ONE
+`document`-level delegated `click` listener (`_hasListener`-guarded so it installs
+once), have both surfaces emit the same `data-assoc-edit` anchor markup, and
+refactor the original consumer to delegate (removed 441 lines of duplicate popover
+from `workplan_goals.js`). The hard-review must then test **both** surfaces — the
+refactor is where you can regress the thing that already worked.
+
+**3. The hostile-input test during a *feature* review surfaces *adjacent*
+pre-existing sinks — flag them out-of-scope, fix in a focused follow-up.** The #191
+injection test (the established review mechanism) found raw `<script>` / `<img
+onerror>` leaks — but in the **Activity-KPI cards + the inline `CPL_DATA` JSON**,
+not #191's code. Right move: classify them as pre-existing/out-of-scope, note them
+in the #191 PR body, keep that diff clean, and fix in a dedicated PR (#192). The
+test pays off beyond the thing under review; don't let an adjacent finding bloat
+the feature PR, but don't drop it either.
+
+**4. Inline JSON-in-`<script>` is its own XSS class — `html.escape` is the wrong
+tool there.** The akpi cards were an HTML-context sink (html.escape fixes those).
+But `window.CPL_DATA = {…}` inline is a *JS-string/JSON* context: a name containing
+`</script>` breaks out of the script element regardless of HTML escaping. The right
+escape is to neutralize `<`/`>`/`&` → `<`/`>`/`&` in the serialized
+JSON (`_js_safe_json()`); `JSON.parse` decodes them back so client data is
+byte-identical. Extended the `methodology-xss-audit-on-curator-editable-fields`
+note with this injection class (its taxonomy listed class (d) but hadn't given it
+a concrete escape).
+
+**5. Generator-only is the right diff for a render-layer fix.** #192 committed
+ONLY `excel_to_dashboard.py` — not the regenerated HTML/JS. The escaped output
+flows to the live site on the next regen (Rule 1: change the generator, not the
+artifact). Cleanest reviewable diff, zero churn-revert dance.
+
+**6. Calibrate the merge gate to blast radius (again).** The `is_primary`
+migration (§8 source-of-truth schema) — applied via MCP, but only after Sam
+pre-authorized it in the same AskUserQuestion as the #190 merge. #190/#191
+(public-appearance + new editor) — reviewed + AskUserQuestion on the substantive
+forks (orphan leads), then merged. #192 (behavior-preserving security fix) —
+merged on green. The gate sits at the irreversible/visible step.
+
+### Current state
+- Budget reads from Supabase ($89M live-fixed); association editor complete +
+  reachable on all 34 cards; orphans closed (0); `is_primary` live; the akpi/JSON
+  XSS sink closed. All merged to `main`; the #191 card editor + ★ primaries + #192
+  escaping go live on the **next daily regen**.
+- `assoc_editor.js` is now the single association-editor implementation (both
+  surfaces delegate to it). Reusable for any future per-card association UI.
+
+### Strategic roadmap
+- **Phase 3 Budget** — finish it: a validate/seed pass if the table needs
+  reconciliation, then the inline editor (mirror `workplan_goals.js` /
+  `projects_editor.js`; XSS-audit any newly-editable field). The read-path cutover
+  (#189) is done.
+- **Phases 4-5** (Vision 2030 / Personnel) — same five-step shape; Personnel's 26
+  existing rows make its PR-3 the UPDATEs-heavy one.
+- Carryover unchanged: the Excel ladder cols + `D.*` helpers + "Open in Excel"
+  buttons retire with the 3 JS-report-consumer migration (Phase 3+ bundle);
+  Obsidian community-plugins recommendation; 1e-5d id_system data-value rename.
+
+### Next concrete step
+Confirm the next daily regen renders the #191 card editor + ★ primaries + #192
+escaping + the $89M budget live (eyeball the deployed site). Then take the Budget
+inline editor (Phase 3 PR-5-equivalent) or Phase 4 Vision 2030.
+
