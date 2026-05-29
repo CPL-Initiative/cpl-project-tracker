@@ -165,6 +165,9 @@
       state.sess = getSession();
       mountAuthWidget(state);
       paintEditability(state);
+      // Re-light the shared Activity↔Project association editor's ✎ affordance
+      // on the project-card "Contributes to:" chips (assoc_editor.js).
+      if (window.CPL_ASSOC_EDITOR) window.CPL_ASSOC_EDITOR.refresh();
     });
     if (existing) existing.replaceWith(widget);
     else parent.insertBefore(widget, anchor);
@@ -465,6 +468,8 @@
     mountAuthWidget(state);
     paintEditability(state);
     attachClickHandler(state);
+    // Light up the shared association editor's chip affordance on the cards.
+    if (window.CPL_ASSOC_EDITOR) window.CPL_ASSOC_EDITOR.refresh();
 
     // Re-paint when the hash changes (sign-in may have completed on another
     // tab and routed back here via cpl_sb_return_tab).
@@ -472,6 +477,7 @@
       state.sess = getSession();
       mountAuthWidget(state);
       paintEditability(state);
+      if (window.CPL_ASSOC_EDITOR) window.CPL_ASSOC_EDITOR.refresh();
     });
   }
 
