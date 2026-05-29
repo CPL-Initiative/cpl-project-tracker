@@ -1,0 +1,97 @@
+{
+  "_about": "Pre-Phase-3-cutover snapshot of Supabase budget tables (hvuwhnbuahrtptokpqfh). Rollback input per the measure-first migration playbook. Captured before any generator cutover / RLS tighten / expenditure seed.",
+  "_captured_at": "2026-05-29",
+  "_notes": [
+    "budget_funding: 6 rows, the authoritative funding data (Excel budget sheet is a zeroed husk; this is the only source).",
+    "budget_expenditures: empty (0 rows) at capture time.",
+    "personnel: 26 rows are 13 positions duplicated by a double-seed; full row snapshot taken at the dedupe step."
+  ],
+  "budget_funding": [
+    {
+      "id": 1,
+      "name": "Scale MAP Initiative CPL Statewide -- one-time $6M Prop 98 (2024-2026) CO Admin",
+      "category": "Funds",
+      "source_code": "$6M P98 (CO)",
+      "yr_2025_26_budget": 2254764,
+      "yr_2025_26_expense": 2154386,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 2254764,
+      "avg_yearly": 450952.8
+    },
+    {
+      "id": 2,
+      "name": "Scale MAP Initiative CPL Statewide -- one-time $6M Prop 98 (2024-2026) RCCD Admin",
+      "category": "Funds",
+      "source_code": "$6M P98 (RCCD)",
+      "yr_2025_26_budget": 3745235.64,
+      "yr_2025_26_expense": 3123328.51,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 3745235.64,
+      "avg_yearly": 749047.128
+    },
+    {
+      "id": 3,
+      "name": "CPL Initiative Operations -- ongoing $5M Prop 98",
+      "category": "Funds",
+      "source_code": "$5M P98 Ongoing",
+      "yr_2025_26_budget": 5000000.04,
+      "yr_2025_26_expense": 4499763.615,
+      "yr_2026_27": 5000000.04,
+      "yr_2027_28": 5000000.367,
+      "yr_2028_29": 4999999.784940001,
+      "yr_2029_30": 4890999.670838801,
+      "total": 24890999.902778804,
+      "avg_yearly": 4978199.980555761
+    },
+    {
+      "id": 4,
+      "name": "CPL Infrastructure and Scaling -- one-time $15M Prop 98 (2025-2028)",
+      "category": "Funds",
+      "source_code": "$15M P98",
+      "yr_2025_26_budget": 5959692.76,
+      "yr_2025_26_expense": 5962203.03,
+      "yr_2026_27": 2808450.4,
+      "yr_2027_28": 2136854.53,
+      "yr_2028_29": 2013327.01,
+      "yr_2029_30": 2081675.46,
+      "total": 15000000.16,
+      "avg_yearly": 3000000.032
+    },
+    {
+      "id": 5,
+      "name": "CPL Initiative Operations -- ongoing $2M Prop 98 (2026-30 GO proposed budget)",
+      "category": "Funds",
+      "source_code": "$2M P98",
+      "yr_2025_26_budget": 0,
+      "yr_2025_26_expense": 0,
+      "yr_2026_27": 2000000,
+      "yr_2027_28": 2000000,
+      "yr_2028_29": 2000000,
+      "yr_2029_30": 2000000,
+      "total": 8000000,
+      "avg_yearly": 1600000
+    },
+    {
+      "id": 6,
+      "name": "CPL Local Implementation Support -- PROPOSED one-time $35M Prop 98 (2026-30 GO proposed budget )",
+      "category": "Funds",
+      "source_code": "$35M P98",
+      "yr_2025_26_budget": 0,
+      "yr_2025_26_expense": 0,
+      "yr_2026_27": 15000000,
+      "yr_2027_28": 15000000,
+      "yr_2028_29": 5000000,
+      "yr_2029_30": 0,
+      "total": 35000000,
+      "avg_yearly": 7000000
+    }
+  ],
+  "budget_expenditures": [],
+  "personnel_note": "26 rows = 13 distinct positions duplicated (ids 1-13 @17:03, 14-26 @17:17). Snapshot deferred to the personnel-dedupe step; Positions sheet (39 rows) is the richer source."
+}

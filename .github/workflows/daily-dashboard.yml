@@ -151,6 +151,9 @@ jobs:
           # Projects Phase 2 PR-4: daily-cached Supabase snapshot
           # (graceful-degradation fallback for Supabase outages)
           git add kb/projects_snapshot.json 2>/dev/null || true
+          # Budget Phase 3 PR-1: daily-cached Supabase snapshot
+          # (budget_funding + personnel; graceful-degradation fallback)
+          git add kb/budget_snapshot.json 2>/dev/null || true
           # Only add CustomReport if it was freshly fetched
           git add CustomReport_latest.json 2>/dev/null || true
           if git diff --cached --quiet; then
