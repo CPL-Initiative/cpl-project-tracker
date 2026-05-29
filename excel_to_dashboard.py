@@ -2085,7 +2085,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                          f'<span style="font-size:0.8rem;">&#9998;</span> Update</a>'
                          f'<a href="#" '
                          f'class="attach-btn" '
-                         f'data-folder="{kpi_pid} {kpi["name"]}" '
+                         f'data-folder="{html_escape(str(kpi_pid) + " " + str(kpi.get("name", "")), quote=True)}" '
                          f'style="{btn_style}color:#163A5F;background:#fafafa;"'
                          f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
                          f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
@@ -2381,27 +2381,59 @@ def _render_single_project_card(p, update_log=None, attachments=None):
     goal = p.get("goal", "")
     lead = p.get("lead", "")
 
+    # ── Inline-editor span builder (Phase 2 PR-5) ──
+    # Wraps a displayed field value so projects_editor.js can click-to-edit it
+    # and PATCH the Supabase `public.projects` column named by `column`. The
+    # visible body keeps the existing (unescaped) render to match prior
+    # behaviour; only the data-val attribute (machine-read on edit) is escaped.
+    def _ed(column, raw_value, body, dtype="text", multiline=False, body_is_html=False):
+        # Curator-editable values render HTML-escaped (writers are RLS-gated to
+        # allowed reviewers, but mirror PR #174's escape-curator-fields hygiene).
+        # An empty value shows a neutral "—" (clean for anonymous viewers; the
+        # signed-in hover affordance still signals editability). Pass
+        # body_is_html=True for the few call sites that supply intentional markup
+        # (they pre-escape their own dynamic content).
+        raw_str = "" if raw_value is None else str(raw_value)
+        ml = ' data-multiline="1"' if multiline else ""
+        inner = body if body_is_html else html_escape(str(body))
+        if not inner:
+            inner = "—"
+        return (
+            f'<span class="proj-editable" data-editable="1" '
+            f'data-pid="{html_escape(str(pid), quote=True)}" '
+            f'data-field="{column}" data-type="{dtype}"{ml} '
+            f'data-val="{html_escape(raw_str, quote=True)}">{inner}</span>'
+        )
+
+    def _ml_preview(text, limit=90):
+        """Truncated single-line preview for a multi-line modal field. Empty →
+        '' so _ed() renders the neutral '—' placeholder."""
+        t = (text or "").replace("\n", " ").strip()
+        if len(t) > limit:
+            t = t[:limit].rstrip() + "…"
+        return t
+
     # ── Current notes (always visible) ──
     update_text = p.get("update", "")
     wp_text = p.get("workplan_notes", "")
     update_date = p.get("update_date", "")
 
-    # Current update + workplan note section
+    # Current update + workplan note section. The body of each is click-to-edit
+    # (modal textarea) → PATCH latest_update / wp_notes. Rendered even when blank
+    # so a curator can add a first note (preview shows "(none — click to add)").
     current_notes_html = ""
-    if update_text:
-        current_notes_html += (
-            f'            <div style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
-            f'<span style="font-size:0.65rem;font-weight:600;background:#163A5F;color:#fff;'
-            f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Latest Update</span>'
-            f'{update_text}</div>\n'
-        )
-    if wp_text:
-        current_notes_html += (
-            f'            <div style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
-            f'<span style="font-size:0.65rem;font-weight:600;background:#C9A84C;color:#0A2240;'
-            f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Workplan Note</span>'
-            f'{wp_text}</div>\n'
-        )
+    current_notes_html += (
+        f'            <div style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
+        f'<span style="font-size:0.65rem;font-weight:600;background:#163A5F;color:#fff;'
+        f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Latest Update</span>'
+        f'{_ed("latest_update", update_text, update_text, multiline=True)}</div>\n'
+    )
+    current_notes_html += (
+        f'            <div style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
+        f'<span style="font-size:0.65rem;font-weight:600;background:#C9A84C;color:#0A2240;'
+        f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Workplan Note</span>'
+        f'{_ed("wp_notes", wp_text, wp_text, multiline=True)}</div>\n'
+    )
 
     # ── Full history toggle (hidden by default, shown via JS checkbox) ──
     all_notes = (update_log or {}).get(pid, [])
@@ -2444,11 +2476,16 @@ def _render_single_project_card(p, update_log=None, attachments=None):
                 f'style="accent-color:#C9A84C;cursor:pointer;"> '
                 f'Show all ({len(all_notes)})</label>\n'
             )
+        update_date_ed = _ed(
+            "update_date", update_date,
+            f'<strong style="color:#0A2240;">{html_escape(str(update_date)) if update_date else "—"}</strong>',
+            dtype="date", body_is_html=True,
+        )
         notes_html = (
             f'            <div style="margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.5rem;">\n'
             f'                <div style="display:flex;align-items:center;margin-bottom:0.35rem;">\n'
             f'                    <span style="font-size:0.75rem;color:#888;">Last updated: '
-            f'<strong style="color:#0A2240;">{update_date}</strong></span>\n'
+            f'{update_date_ed}</span>\n'
             f'{toggle_html}'
             f'                </div>\n'
             f'{current_notes_html}'
@@ -2456,27 +2493,57 @@ def _render_single_project_card(p, update_log=None, attachments=None):
             f'            </div>\n'
         )
 
-    return f'''        <div class="project-card" data-activity="{activity}" data-v2030="{v2030}" data-goal="{goal}" data-status="{status}" data-lead="{lead}">
-            <div class="project-name">{p.get("name", "")}</div>
-            <div class="project-desc">{p.get("desc", "")}</div>
-            <span class="status-badge status-{css_class}">{status}</span>
+    name = p.get("name", "")
+    desc = p.get("desc", "")
+    team = p.get("team", "")
+    kpi_metric = p.get("kpi_metric", "")
+    kpi_unit = p.get("kpi_unit", "")
+    start = p.get("start", "")
+    end = p.get("end", "")
+    milestones = p.get("milestones", "")
+    budget = p.get("budget", "")
+    budget_source = p.get("budget_source", "")
+
+    # Row-label style for the supplementary editable fields (matches the
+    # existing Lead/Activity/Budget rows).
+    _row = 'font-size:0.85rem;color:#555;margin-bottom:0.5rem;'
+
+    return f'''        <div class="project-card" data-pid="{html_escape(str(pid), quote=True)}" data-activity="{html_escape(str(activity), quote=True)}" data-v2030="{html_escape(str(v2030), quote=True)}" data-goal="{html_escape(str(goal), quote=True)}" data-status="{html_escape(str(status), quote=True)}" data-lead="{html_escape(str(lead), quote=True)}">
+            <div class="project-name">{_ed("name", name, name)}</div>
+            <div class="project-desc">{_ed("description", desc, desc, multiline=True)}</div>
+            <span class="status-badge status-{css_class}">{_ed("status", status, status)}</span>
             <div class="progress-container">
                 <div class="progress-label">
                     <span>Progress</span>
-                    <span>{pct}%</span>
+                    <span>{_ed("percent_complete", pct, f"{pct}%", dtype="num")}</span>
                 </div>
                 <div class="progress-bar-bg">
                     <div class="progress-bar-fill" style="width:{pct}%;--progress-width:{pct}%;"></div>
                 </div>
             </div>
-            <div style="font-size:0.85rem;color:#555;margin-bottom:0.5rem;">
-                <strong>Lead:</strong> {lead}
+            <div style="{_row}">
+                <strong>Lead:</strong> {_ed("lead", lead, lead)}
             </div>
-            <div style="font-size:0.85rem;color:#555;margin-bottom:0.5rem;">
+            <div style="{_row}">
+                <strong>Team:</strong> {_ed("team", team, team)}
+            </div>
+            <div style="{_row}">
                 <strong>Activity:</strong> {activity}
             </div>
-            <div style="font-size:0.85rem;color:#555;margin-bottom:0.5rem;">
-                <strong>Budget:</strong> {p.get("budget", "")} ({p.get("budget_source", "")})
+            <div style="{_row}">
+                <strong>CPL Goal:</strong> {_ed("cpl_goal", goal, _ml_preview(goal), multiline=True)}
+            </div>
+            <div style="{_row}">
+                <strong>Timeline:</strong> {_ed("start_date", start, start, dtype="date")} &ndash; {_ed("end_date", end, end, dtype="date")}
+            </div>
+            <div style="{_row}">
+                <strong>KPI:</strong> {_ed("kpi_metric", kpi_metric, kpi_metric)} {_ed("kpi_unit", kpi_unit, kpi_unit)}
+            </div>
+            <div style="{_row}">
+                <strong>Milestones:</strong> {_ed("milestones", milestones, _ml_preview(milestones), multiline=True)}
+            </div>
+            <div style="{_row}">
+                <strong>Budget:</strong> {_ed("budget", budget, budget)} ({_ed("budget_source", budget_source, budget_source)})
             </div>
 {notes_html}            <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.5rem;">
                 <a href="reports/projects/{pid}_Report.docx" download class="report-btn"
@@ -2496,7 +2563,7 @@ def _render_single_project_card(p, update_log=None, attachments=None):
                     title="Open Excel for the Web at cell P{p.get('excel_row', '')} ({EXCEL_SHEET_NAME})">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
-                    data-folder="{pid} {p['name']}"
+                    data-folder="{html_escape(str(pid) + ' ' + str(p.get('name', '')), quote=True)}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#163A5F;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
@@ -6524,6 +6591,32 @@ EXHIBIT_ANALYSIS_CSS = """
 .sw-credit-recs { margin-top:0.25rem; padding-top:0.2rem; border-top:1px solid rgba(255,255,255,0.05); }
 .sw-rec-line { font-size:0.64rem; color:rgba(255,255,255,0.55); line-height:1.5; padding:1px 0; }
 .sw-rec-course { font-size:0.58rem; color:rgba(201,168,76,0.5); }
+/* ═══ Projects inline editor (Phase 2 PR-5 — projects_editor.js) ═══ */
+.proj-auth-widget { margin:0 0 1rem 0; padding:0.75rem 1rem; background:#F4F5F7; border-radius:8px; font-size:0.85rem; color:#0A2240; display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
+.proj-auth-widget input[type=email] { padding:0.35rem 0.5rem; border:1px solid #ccc; border-radius:5px; font-size:0.8rem; min-width:180px; }
+.proj-btn { padding:0.35rem 0.75rem; border:0; background:#0A2240; color:#fff; border-radius:5px; font-size:0.8rem; cursor:pointer; }
+.proj-btn-out { border:1px solid #ccc; background:#fff; color:#333; }
+/* Click-to-edit affordance only lights up when signed in */
+.proj-editable.proj-on { cursor:pointer; border-bottom:1px dashed transparent; transition:background 0.15s, border-color 0.15s; }
+.proj-editable.proj-on:hover { background:#F0F4F8; border-bottom-color:#4D7EA8; }
+.proj-editing { background:#fff !important; }
+.proj-cell-input { box-sizing:border-box; padding:2px 4px; font:inherit; border:1px solid #4D7EA8; border-radius:3px; background:#fff; min-width:60px; }
+.proj-saving { background:#FFF8E1 !important; }
+.proj-saved { background:#E8F5E9 !important; transition:background 0.4s; }
+.proj-error { background:#FFEBEE !important; transition:background 0.4s; }
+/* Multi-line edit modal */
+.proj-modal-overlay { position:fixed; inset:0; background:rgba(10,34,64,0.55); z-index:9999; display:flex; align-items:flex-start; justify-content:center; overflow-y:auto; padding:3rem 1rem; }
+.proj-modal-card { background:#fff; border-radius:10px; box-shadow:0 8px 32px rgba(0,0,0,0.25); max-width:640px; width:100%; padding:1.5rem; font-family:inherit; color:#0A2240; }
+.proj-modal-card h3 { margin:0 0 0.5rem 0; color:#0A2240; font-size:1.05rem; }
+.proj-modal-card .proj-modal-sub { color:#666; font-size:0.78rem; margin-bottom:0.75rem; }
+.proj-modal-card textarea { width:100%; min-height:140px; padding:0.5rem 0.6rem; border:1px solid #ccc; border-radius:6px; font-size:0.85rem; font-family:inherit; box-sizing:border-box; resize:vertical; }
+.proj-modal-card .proj-modal-status { margin-top:0.5rem; font-size:0.82rem; min-height:1.2em; }
+.proj-modal-card .proj-modal-status.err { color:#A33; }
+.proj-modal-actions { display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1rem; }
+.proj-modal-actions button { padding:0.4rem 0.9rem; border-radius:5px; font-size:0.85rem; cursor:pointer; border:0; }
+.proj-btn-cancel { background:#fff; border:1px solid #ccc !important; color:#333; }
+.proj-btn-submit { background:#0A2240; color:#fff; font-weight:600; }
+.proj-btn-submit:disabled { opacity:0.6; cursor:not-allowed; }
 """
 
 
