@@ -7113,10 +7113,117 @@ def read_budget_plan(wb):
     }
 
 
-def render_budget_html(budget):
+def build_budget_from_supabase(funding_rows, personnel_rows, excel_budget):
+    """Reshape Supabase `budget_funding` + `personnel` rows into the budget dict
+    shape render_budget_html() expects (Excel→Supabase Phase 3 cutover).
+
+    This FIXES the latent read_budget_plan() year-column bug for free: the
+    Supabase funding rows carry the correct 6-column layout (yr_2025_26_budget,
+    yr_2025_26_expense, then 4 out-years), so budget_by_year is the 5 actual
+    annual budgets — not the buggy [budget, expense, …] mix that dropped 2029-30.
+
+    Expenditures + the expense category/area rollups are left EMPTY (held — see
+    kb/_load_budget.py; the Excel dollar columns are gutted, so seeding would
+    publish misleading numbers). `factors` + `year_labels` come from excel_budget
+    (no Supabase table — they stay Excel-sourced, like the D.* helper rows in
+    Phase 2). grand_total = sum of funding totals.
+    """
+    def fnum(v):
+        try:
+            return float(v) if v not in (None, "") else 0.0
+        except (TypeError, ValueError):
+            return 0.0
+
+    funding_sources = []
+    for r in funding_rows:
+        funding_sources.append({
+            "name": r.get("name") or "",
+            "source_code": r.get("source_code") or "",
+            # the 5 ANNUAL BUDGETS in year order (the 2025-26 EXPENSE is the
+            # separate expense_2025 field, NOT a year column — the bug fix).
+            "budget_by_year": [
+                fnum(r.get("yr_2025_26_budget")),
+                fnum(r.get("yr_2026_27")),
+                fnum(r.get("yr_2027_28")),
+                fnum(r.get("yr_2028_29")),
+                fnum(r.get("yr_2029_30")),
+            ],
+            "expense_2025": fnum(r.get("yr_2025_26_expense")),
+            "total": fnum(r.get("total")),
+            "avg": fnum(r.get("avg_yearly")),
+        })
+    grand_total = sum(s["total"] for s in funding_sources)
+
+    personnel = []
+    for r in personnel_rows:
+        personnel.append({
+            "title": r.get("title") or "",
+            "fte_by_year": [
+                fnum(r.get("fte_2025_26")),
+                fnum(r.get("fte_2026_27")),
+                fnum(r.get("fte_2027_28")),
+                fnum(r.get("fte_2028_29")),
+                fnum(r.get("fte_2029_30")),
+            ],
+            "total_comp": fnum(r.get("total_comp")),
+        })
+    personnel_totals = {
+        "total_fte": sum(p["fte_by_year"][0] for p in personnel),
+        "total_comp": sum(p["total_comp"] for p in personnel),
+    }
+
+    excel_budget = excel_budget or {}
+    return {
+        "funding_sources": funding_sources,
+        "funding_subtotals": {},        # unused by the renderer
+        "expenditures": [],             # HELD empty — accurate figures pending
+        "expense_categories": [],       # rollup of expenditures → empty while held
+        "expense_areas": [],
+        "factors": excel_budget.get("factors", {}),
+        "personnel": personnel,
+        "personnel_totals": personnel_totals,
+        "year_labels": excel_budget.get(
+            "year_labels", ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
+        ),
+        "grand_total": grand_total,
+        "_expenditures_held": True,     # render shows a "pending" note
+    }
+
+
+def load_budget(wb):
+    """Phase 3 (Budget) loader with three-tier resilience:
+    Supabase (budget_funding + personnel) → daily snapshot → Excel (read_budget_plan).
+
+    Returns (budget, fetched_at, source) with source ∈ {"supabase","snapshot","excel"}.
+    read_budget_plan(wb) is always called first: it supplies `factors` + `year_labels`
+    for the Supabase path AND is the ultimate Excel fallback if both Supabase and
+    the snapshot are unavailable.
+    """
+    excel_budget = read_budget_plan(wb)
+    try:
+        try:
+            from kb._load_budget import load_budget_full as _load_budget_full
+        except ImportError:
+            sys.path.insert(0, os.path.join(os.path.dirname(__file__), "kb"))
+            from _load_budget import load_budget_full as _load_budget_full
+        funding_rows, personnel_rows, fetched_at, source = _load_budget_full()
+        budget = build_budget_from_supabase(funding_rows, personnel_rows, excel_budget)
+        print(f"  Budget: {len(funding_rows)} funding + {len(personnel_rows)} personnel "
+              f"from Supabase ({source}, as of {fetched_at}); expenditures held empty")
+        return budget, fetched_at, source
+    except Exception as e:
+        print(f"  Budget: Supabase + snapshot unavailable ({e}); "
+              f"falling back to Excel read_budget_plan().")
+        return excel_budget, _now_pt().strftime("%Y-%m-%d"), "excel"
+
+
+def render_budget_html(budget, data_source_stamp=None):
     """
     Generate a complete HTML section for the budget dashboard.
     Replaces content between <!-- Budget Section --> and <!-- Vision 2030 Section -->.
+
+    data_source_stamp (Phase 3): when provided, renders a subtle "Budget data as
+    of YYYY-MM-DD" line under the section title (mirrors the projects grid stamp).
 
     Includes:
     - Funding Overview with stacked bar chart and source table
@@ -7144,6 +7251,15 @@ def render_budget_html(budget):
     factors = budget.get("factors", {})
     year_labels = budget.get("year_labels", ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"])
     grand_total = budget.get("grand_total", 0)
+
+    # Phase 3: when expenditure data is held empty (accurate figures pending),
+    # the Summary + Detail sections show a "pending" note rather than empty tables.
+    expenditures_held = bool(budget.get("_expenditures_held")) or not expenditures
+    stamp_html = (
+        f'        <p style="color:#888;font-size:0.75rem;margin:0 0 1.25rem 0;">'
+        f'Budget data as of {data_source_stamp}</p>\n'
+        if data_source_stamp else ''
+    )
 
     # Color scheme
     colors = ["#0A2240", "#163A5F", "#2A7D4F", "#C9A84C", "#9BBCD8"]
@@ -7313,6 +7429,21 @@ def render_budget_html(budget):
 
     detail_html += '    </div>\n'
 
+    # Phase 3 — expenditures held empty: replace the (empty) Summary + Detail
+    # sections with a single "pending" note rather than misleading blank tables.
+    if expenditures_held:
+        summary_html = (
+            '    <div class="budget-expenditure-summary" style="margin-top:2rem;">\n'
+            '        <h3>Expenditure Detail</h3>\n'
+            '        <p style="color:#666;font-style:italic;background:#f5f5f5;'
+            'border-left:4px solid #C9A84C;padding:0.9rem 1.1rem;border-radius:4px;'
+            'margin:0;">Detailed expenditure line items and category breakdowns '
+            'are being refreshed and will appear here once updated figures are '
+            'entered. The funding plan and personnel below are current.</p>\n'
+            '    </div>\n'
+        )
+        detail_html = ''
+
     # === SECTION 4: PERSONNEL PLAN ===
     personnel_html = '    <div class="budget-personnel-plan" style="margin-top:2rem;">\n'
     personnel_html += '        <h3>Personnel Plan</h3>\n'
@@ -7393,7 +7524,7 @@ def render_budget_html(budget):
     budget_section = f'''<!-- Budget Section -->
     <div class="budget-section" style="background-color:#fafafa;padding:2rem;border-radius:8px;margin-bottom:2rem;">
         <h2>CPL Budget & Expenditure Plan</h2>
-{funding_html}
+{stamp_html}{funding_html}
 {summary_html}
 {detail_html}
 {personnel_html}
@@ -7499,7 +7630,7 @@ def main():
     projects, projects_fetched_at, projects_source = load_projects(wb)
     config_overrides = read_config_overrides(wb)
     update_log      = read_update_log(wb)
-    budget          = read_budget_plan(wb)
+    budget, budget_fetched_at, budget_source = load_budget(wb)
     # Load live CCCCO scrape early so it can seed star_college_count (single
     # source of truth for the Veteran Sprint headline + sprint composite).
     live_data       = read_live_metrics()
@@ -8144,7 +8275,7 @@ def main():
             # ── Render and inject the Budget section ──
             budget_section_start = html.find('<!-- Budget Section -->')
             budget_section_end = html.find('<!-- End Budget Section -->')
-            budget_html = render_budget_html(budget)
+            budget_html = render_budget_html(budget, data_source_stamp=budget_fetched_at)
 
             if budget_section_start != -1 and budget_section_end != -1:
                 # Replace existing rendered budget section

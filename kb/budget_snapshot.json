@@ -1,0 +1,230 @@
+{
+  "_about": "Daily-cached snapshot of public.budget_funding + public.personnel (Supabase hvuwhnbuahrtptokpqfh). Written by kb/_load_budget.py after a successful fetch; the dashboard regen falls back to this file on a Supabase outage. budget_expenditures is intentionally omitted (held empty until accurate figures are entered \u2014 the Excel budget sheet's dollar columns are gutted). Personnel is stored DEDUPED (the live table holds 13 positions double-seeded to 26; the loader dedupes on read).",
+  "_fetched_at": "2026-05-29",
+  "_source_tables": [
+    "public.budget_funding",
+    "public.personnel"
+  ],
+  "row_counts": {
+    "budget_funding": 6,
+    "personnel": 13
+  },
+  "budget_funding": [
+    {
+      "id": 1,
+      "name": "Scale MAP Initiative CPL Statewide -- one-time $6M Prop 98 (2024-2026) CO Admin",
+      "category": "Funds",
+      "source_code": "$6M P98 (CO)",
+      "yr_2025_26_budget": 2254764,
+      "yr_2025_26_expense": 2154386,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 2254764,
+      "avg_yearly": 450952.8
+    },
+    {
+      "id": 2,
+      "name": "Scale MAP Initiative CPL Statewide -- one-time $6M Prop 98 (2024-2026) RCCD Admin",
+      "category": "Funds",
+      "source_code": "$6M P98 (RCCD)",
+      "yr_2025_26_budget": 3745235.64,
+      "yr_2025_26_expense": 3123328.51,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 3745235.64,
+      "avg_yearly": 749047.128
+    },
+    {
+      "id": 3,
+      "name": "CPL Initiative Operations -- ongoing $5M Prop 98",
+      "category": "Funds",
+      "source_code": "$5M P98 Ongoing",
+      "yr_2025_26_budget": 5000000.04,
+      "yr_2025_26_expense": 4499763.615,
+      "yr_2026_27": 5000000.04,
+      "yr_2027_28": 5000000.367,
+      "yr_2028_29": 4999999.784940001,
+      "yr_2029_30": 4890999.670838801,
+      "total": 24890999.902778804,
+      "avg_yearly": 4978199.980555761
+    },
+    {
+      "id": 4,
+      "name": "CPL Infrastructure and Scaling -- one-time $15M Prop 98 (2025-2028)",
+      "category": "Funds",
+      "source_code": "$15M P98",
+      "yr_2025_26_budget": 5959692.76,
+      "yr_2025_26_expense": 5962203.03,
+      "yr_2026_27": 2808450.4,
+      "yr_2027_28": 2136854.53,
+      "yr_2028_29": 2013327.01,
+      "yr_2029_30": 2081675.46,
+      "total": 15000000.16,
+      "avg_yearly": 3000000.032
+    },
+    {
+      "id": 5,
+      "name": "CPL Initiative Operations -- ongoing $2M Prop 98 (2026-30 GO proposed budget)",
+      "category": "Funds",
+      "source_code": "$2M P98",
+      "yr_2025_26_budget": 0,
+      "yr_2025_26_expense": 0,
+      "yr_2026_27": 2000000,
+      "yr_2027_28": 2000000,
+      "yr_2028_29": 2000000,
+      "yr_2029_30": 2000000,
+      "total": 8000000,
+      "avg_yearly": 1600000
+    },
+    {
+      "id": 6,
+      "name": "CPL Local Implementation Support -- PROPOSED one-time $35M Prop 98 (2026-30 GO proposed budget )",
+      "category": "Funds",
+      "source_code": "$35M P98",
+      "yr_2025_26_budget": 0,
+      "yr_2025_26_expense": 0,
+      "yr_2026_27": 15000000,
+      "yr_2027_28": 15000000,
+      "yr_2028_29": 5000000,
+      "yr_2029_30": 0,
+      "total": 35000000,
+      "avg_yearly": 7000000
+    }
+  ],
+  "personnel": [
+    {
+      "id": 1,
+      "title": "Senior Advisor to the Chancellor for CPL",
+      "fte_2025_26": 1,
+      "fte_2026_27": 1,
+      "fte_2027_28": 1,
+      "fte_2028_29": 1,
+      "fte_2029_30": 1,
+      "total_comp": 334773
+    },
+    {
+      "id": 2,
+      "title": "Executive Director of CPL MAP Initiative",
+      "fte_2025_26": 1,
+      "fte_2026_27": 1,
+      "fte_2027_28": 1,
+      "fte_2028_29": 1,
+      "fte_2029_30": 1,
+      "total_comp": 213813.74999999997
+    },
+    {
+      "id": 3,
+      "title": "Director of Workforce CPL & MAP Operations",
+      "fte_2025_26": 1,
+      "fte_2026_27": 1,
+      "fte_2027_28": 1,
+      "fte_2028_29": 1,
+      "fte_2029_30": 1,
+      "total_comp": 211530.99999999997
+    },
+    {
+      "id": 4,
+      "title": "Director of CPL MAP Infrastructure",
+      "fte_2025_26": 1,
+      "fte_2026_27": 1,
+      "fte_2027_28": 1,
+      "fte_2028_29": 1,
+      "fte_2029_30": 1,
+      "total_comp": 201567.4
+    },
+    {
+      "id": 5,
+      "title": "Director of Military CPL Pathways",
+      "fte_2025_26": 1,
+      "fte_2026_27": 1,
+      "fte_2027_28": 1,
+      "fte_2028_29": 1,
+      "fte_2029_30": 1,
+      "total_comp": 149104.4
+    },
+    {
+      "id": 6,
+      "title": "CPL MAP Lead Counselor (112,622)",
+      "fte_2025_26": 1.5,
+      "fte_2026_27": 1.5,
+      "fte_2027_28": 1.5,
+      "fte_2028_29": 1.5,
+      "fte_2029_30": 1.5,
+      "total_comp": 194272.94999999998
+    },
+    {
+      "id": 7,
+      "title": "Enrollment Services Coordinator",
+      "fte_2025_26": 0.3,
+      "fte_2026_27": 0.3,
+      "fte_2027_28": 0.3,
+      "fte_2028_29": 0.3,
+      "fte_2029_30": 0.3,
+      "total_comp": 23794.649999999998
+    },
+    {
+      "id": 8,
+      "title": "Special Project (144,830)",
+      "fte_2025_26": 0.67,
+      "fte_2026_27": 0.67,
+      "fte_2027_28": 0.67,
+      "fte_2028_29": 0.67,
+      "fte_2029_30": 0.67,
+      "total_comp": 167388.25
+    },
+    {
+      "id": 9,
+      "title": "Administrative Coordinator",
+      "fte_2025_26": 1,
+      "fte_2026_27": 1,
+      "fte_2027_28": 1,
+      "fte_2028_29": 1,
+      "fte_2029_30": 1,
+      "total_comp": 93039.59999999999
+    },
+    {
+      "id": 10,
+      "title": "Professional Expert",
+      "fte_2025_26": 1,
+      "fte_2026_27": 1,
+      "fte_2027_28": 1,
+      "fte_2028_29": 1,
+      "fte_2029_30": 1,
+      "total_comp": 173650
+    },
+    {
+      "id": 11,
+      "title": "Professional Expert",
+      "fte_2025_26": 2,
+      "fte_2026_27": 2,
+      "fte_2027_28": 2,
+      "fte_2028_29": 2,
+      "fte_2029_30": 2,
+      "total_comp": 202399.99999999997
+    },
+    {
+      "id": 12,
+      "title": "Professional Expert",
+      "fte_2025_26": 0.67,
+      "fte_2026_27": 0.67,
+      "fte_2027_28": 0.67,
+      "fte_2028_29": 0.67,
+      "fte_2029_30": 0.67,
+      "total_comp": 92000
+    },
+    {
+      "id": 13,
+      "title": "Professional Expert",
+      "fte_2025_26": 0,
+      "fte_2026_27": 0,
+      "fte_2027_28": 0,
+      "fte_2028_29": 0,
+      "fte_2029_30": 0,
+      "total_comp": 0
+    }
+  ]
+}
