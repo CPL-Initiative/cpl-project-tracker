@@ -1,0 +1,715 @@
+{
+  "_about": "Flagged M-IDs HELD for curator veto — likely-legitimate interdisciplinary courses that span ≥2 TOP divisions on purpose. NOT split by the apply; they keep their old id. Held by EITHER a known sister-pair split (exactly 2 division groups whose disciplines form a SISTER_PAIRS entry) OR an interdisciplinary-compound title token.",
+  "_generated_by": "kb/_overmerge_dryrun.py",
+  "_generated_at": "2026-05-29",
+  "count": 63,
+  "by_reason": {
+    "sister_pair": 58,
+    "interdisciplinary_token": 5
+  },
+  "held": {
+    "ARTD M1007": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Motion Design",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1014": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "COMPUTER GRAPHICS 2: 3D COMPUTER GRAPHICS",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1035": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "3D Texturing and Lighting",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1104": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Animation",
+      "disciplines": [
+        "Art",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1139": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "DIGITAL ART",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1187": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Digital Arts",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1312": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Computer Graphics",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1338": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "History of Graphic Design",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1373": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Designing for the Web",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1378": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Digital Drawing and Painting",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1383": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Digital Imaging I",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1388": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Digital Imaging",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1395": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Figure Drawing",
+      "disciplines": [
+        "Art",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1405": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Drawing Fundamentals",
+      "disciplines": [
+        "Art",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1450": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Fundamentals of Typography",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "ARTS M1455": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Motion Graphics",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "BIOL M1205": {
+      "held": true,
+      "reason": "interdisciplinary_token",
+      "title": "Ethnobotany/Ethnoecology Lab",
+      "disciplines": [
+        "Biological Sciences",
+        "Ethnic Studies"
+      ],
+      "tokens": [
+        "ethnobotany",
+        "ethnoecology"
+      ],
+      "n_division_groups": 2
+    },
+    "BIOL M1206": {
+      "held": true,
+      "reason": "interdisciplinary_token",
+      "title": "Ethnoecology",
+      "disciplines": [
+        "Biological Sciences",
+        "Environmental Technologies",
+        "Ethnic Studies"
+      ],
+      "tokens": [
+        "ethnoecology"
+      ],
+      "n_division_groups": 4
+    },
+    "BUSI M1126": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Microsoft Applications for Business",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "BUSI M1190": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Business Information Systems",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "BUSI M1412": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "MULTIMEDIA PRESENTATIONS---POWERPOINT",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "CISC M1043": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Microsoft Access: Comprehensive",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "CISC M1078": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "ADVANCED WEB APPLICATION DEVELOPMENT",
+      "disciplines": [
+        "Computer Information Systems",
+        "Computer Science"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "CISC M1186": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Building Business Web Sites",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "CISC M1377": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "DESIGNING WEB GRAPHICS",
+      "disciplines": [
+        "Computer Information Systems",
+        "Computer Science"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "CISC M1385": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Web Development I",
+      "disciplines": [
+        "Computer Information Systems",
+        "Computer Science"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "CISC M1387": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Web Development II",
+      "disciplines": [
+        "Computer Information Systems",
+        "Computer Science"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "CISC M1390": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Web Development with PHP and MySQL",
+      "disciplines": [
+        "Computer Information Systems",
+        "Computer Science"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "CISC M1391": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Web Page Development",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "CISC M1522": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to WordPress",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "CISC M1575": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Server-Side Ruby Web Programming",
+      "disciplines": [
+        "Computer Information Systems",
+        "Computer Science"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "CISC M9047": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Business Web Graphics",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "FIMS M1102": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Multimedia",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "GRAF M1003": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Typography 2",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "GRAF M1005": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Advanced Adobe Illustrator",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "GRAF M1010": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Adobe Illustrator",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "GRAF M1014": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Advanced Typography",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "GRAF M1036": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Typography and Graphic Design",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "GRAF M1053": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Multimedia Production",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "GRAF M1057": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Storyboarding",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "JOUR M1015": {
+      "held": true,
+      "reason": "interdisciplinary_token",
+      "title": "Basic Photojournalism",
+      "disciplines": [
+        "Journalism"
+      ],
+      "tokens": [
+        "photojournalism"
+      ],
+      "n_division_groups": 2
+    },
+    "JOUR M1094": {
+      "held": true,
+      "reason": "interdisciplinary_token",
+      "title": "Photojournalism",
+      "disciplines": [
+        "English",
+        "Journalism"
+      ],
+      "tokens": [
+        "photojournalism"
+      ],
+      "n_division_groups": 3
+    },
+    "MULT M1001": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "User Experience Design 1",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1002": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "User Experience Design 2",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1018": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "3D Animation and Modeling",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1035": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Animal Drawing",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1036": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Animation",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1062": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Motion Graphics, Compositing and Visual Effects",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1070": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Digital Illustration for Graphic Design I",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1072": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Digital Illustration for Graphic Design II",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1082": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "MOBILE GAME DESIGN",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1084": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Graphic Design Studio II",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1099": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Fundamentals of Digital Media",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1100": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Digital Illustration II",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1101": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Digital Imaging II",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1103": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Digital Illustration",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1106": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Digital Painting",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "MULT M1136": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Social Media for Professionals",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "OTEC M1036": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Advanced Excel",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "OTEC M1120": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Computer Keyboarding",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "OTEC M1124": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Computers and Keyboarding",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    },
+    "PHOT M1034": {
+      "held": true,
+      "reason": "interdisciplinary_token",
+      "title": "BEGINNING PHOTOJOURNALISM",
+      "disciplines": [
+        "Journalism"
+      ],
+      "tokens": [
+        "photojournalism"
+      ],
+      "n_division_groups": 2
+    },
+    "VOCE M9045": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "COMPUTER LITERACY FOR COLLEGE",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": [],
+      "n_division_groups": 2
+    }
+  }
+}

@@ -135,6 +135,17 @@ collision concern is moot for these rows (re-confirm at apply time regardless).
 
 - **PR-1 — dry-run + alias map** (`kb/_overmerge_dryrun.py`). Read-only; the
   apply gate's green light. The artifact Sam reviews before any write.
+  **DONE 2026-05-29** — all four gates PASS (V1 ✓, V2 member-conservation
+  4507==4507 ✓, V3 collision-free 0 ✓, V4 article-routability 0 unroutable ✓);
+  collisions empty. Result on locked forks: 1,299 flagged → **63 held** for
+  curator veto (58 sister-pair Graphic-Arts↔Multimedia / CIS↔Office-Tech design
+  courses + 5 interdisciplinary-token Photojournalism/Ethnoecology) → **1,236
+  split**, of which **752 fully de-corroborate**, 484 keep their old corroborated
+  id, 212 new corroborated groups, 1,951 members peel to singletons. Corroborated
+  catalog 1,299 → **759 (−540)**. Motivating case verified: `CRIM M1231` →
+  `NRSR M11SM` (Nursing, Mission) + `CRIM M11VD` (Admin Justice, Diablo Valley).
+  Articulations: 98 (77 routable / 21 multi / 0 unroutable). 52 clusters touched.
+  Artifacts at `kb/overmerge_out/2026-05-29/`.
 - **PR-2 — apply** (`kb/_overmerge_apply.py` + `kb/_overmerge_apply_supabase.py`
   + `.github/workflows/overmerge-apply.yml`). V1–V4 gates baked in; manual
   `workflow_dispatch`; alias map committed.
