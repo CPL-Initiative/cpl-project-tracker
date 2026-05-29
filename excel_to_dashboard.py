@@ -21,6 +21,26 @@ from openpyxl import load_workbook
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
+
+def _js_safe_json(obj, indent=2):
+    """json.dumps hardened for embedding inside an inline <script> element.
+
+    Neutralizes the characters that could terminate the script element early
+    or open a comment (`</script>`, `<!--`). The replacements are valid JSON
+    string escapes, so the client's JSON.parse / JS parser decodes them back
+    to the original characters — the data seen by the client is identical.
+    Curator-editable fields (project / activity names) flow into
+    window.CPL_DATA, so a name containing `</script>` would otherwise be a
+    stored-XSS breakout."""
+    return (
+        json.dumps(obj, indent=indent, ensure_ascii=False)
+        .replace("<", "\\u003c")
+        .replace(">", "\\u003e")
+        .replace("&", "\\u0026")
+        .replace(" ", "\\u2028")
+        .replace(" ", "\\u2029")
+    )
+
 # ── Timezone ─────────────────────────────────────────────────────────
 # CPL Initiative is a California project; all displayed dates, daily
 # snapshots, and "last updated" stamps should reflect Pacific Time.
@@ -1885,12 +1905,12 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
 
         html += f'            <div class="activity-group">\n'
         html += (f'            <div class="activity-group-header">\n'
-                 f'                <h3><span style="color:#888;font-weight:600;">{act_id}:</span> {act_name}</h3>\n'
+                 f'                <h3><span style="color:#888;font-weight:600;">{act_id}:</span> {html_escape(act_name)}</h3>\n'
                  f'            </div>\n')
         # Activity progress bar with goal + annual targets
         html += (f'            <div style="padding:0 0.5rem 0.6rem 0.5rem;">\n'
                  f'                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25rem;">\n'
-                 f'                    <span style="font-size:0.75rem;color:#555;">{act_goal_text}</span>\n'
+                 f'                    <span style="font-size:0.75rem;color:#555;">{html_escape(act_goal_text)}</span>\n'
                  f'                    <span style="font-size:0.75rem;font-weight:700;color:{bar_color};white-space:nowrap;margin-left:0.5rem;">{avg_pct}% avg &middot; {completed}/{total_kpis} complete (toward 2030 goal)</span>\n'
                  f'                </div>\n'
                  f'                <div style="height:6px;background:#e8e8e8;border-radius:3px;overflow:hidden;">\n'
@@ -1928,12 +1948,12 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                          f'background:linear-gradient(90deg,#163A5F 0%,#0A2240 100%);border-radius:6px;">\n'
                          f'                <div style="display:flex;align-items:center;gap:0.6rem;">\n'
                          f'                    <span style="color:#C9A84C;font-weight:700;font-size:0.85rem;white-space:nowrap;">{goal_key}</span>\n'
-                         f'                    <span style="color:#fff;font-size:0.8rem;font-weight:600;">{goal_title}</span>\n'
+                         f'                    <span style="color:#fff;font-size:0.8rem;font-weight:600;">{html_escape(goal_title)}</span>\n'
                          f'                </div>\n')
                 # Add target text
                 target = goal_info.get("target", "")
                 if target:
-                    html += f'                <div style="color:rgba(255,255,255,0.75);font-size:0.72rem;margin-top:0.2rem;line-height:1.3;">{target}</div>\n'
+                    html += f'                <div style="color:rgba(255,255,255,0.75);font-size:0.72rem;margin-top:0.2rem;line-height:1.3;">{html_escape(target)}</div>\n'
                 html += f'            </div>\n'
 
             html += '            <div class="activity-kpi-grid">\n'
@@ -1946,11 +1966,11 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
 
                 html += f'            <div class="activity-kpi-card {card_class}">\n'
                 html += (f'                <div class="akpi-header">\n'
-                         f'                    <span class="akpi-id">{kpi["id"]}</span>\n'
-                         f'                    <span class="akpi-status status-badge status-{status_class}" '
-                         f'style="margin:0;font-size:0.7rem;padding:0.15rem 0.5rem;">{status_raw}</span>\n'
+                         f'                    <span class="akpi-id">{html_escape(str(kpi["id"]))}</span>\n'
+                         f'                    <span class="akpi-status status-badge status-{html_escape(status_class, quote=True)}" '
+                         f'style="margin:0;font-size:0.7rem;padding:0.15rem 0.5rem;">{html_escape(status_raw)}</span>\n'
                          f'                </div>\n')
-                html += f'                <div class="akpi-name">{kpi["name"]}</div>\n'
+                html += f'                <div class="akpi-name">{html_escape(str(kpi["name"]))}</div>\n'
 
                 # 2030 Goal & Stretch subtitle
                 g2930 = kpi.get("goal_2930", "")
@@ -8123,7 +8143,7 @@ def main():
         " *   - Budget data from 5-year plan\n"
         " *   - Vision 2030 alignment\n"
         " */\n\n"
-        "window.CPL_DATA = " + json.dumps(data, indent=2, ensure_ascii=False) + ";\n"
+        "window.CPL_DATA = " + _js_safe_json(data) + ";\n"
     )
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
@@ -8326,7 +8346,7 @@ def main():
             inline_block = (
                 "<!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->\n"
                 "    <script>\n"
-                "    window.CPL_DATA = " + json.dumps(data, indent=2, ensure_ascii=False) + ";\n"
+                "    window.CPL_DATA = " + _js_safe_json(data) + ";\n"
                 "    </script>\n"
                 "    "
             )
