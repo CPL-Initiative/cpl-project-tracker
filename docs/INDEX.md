@@ -85,6 +85,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 13 → 14 | Bruh Baker (handoff) | [`session_14_handoff.md`](session_14_handoff.md) |
 | 14 → 15 | Bruh Sonnet (handoff) | [`session_15_handoff.md`](session_15_handoff.md) |
 | 15 → 16 | Bruh Parallax (handoff) | [`session_16_handoff.md`](session_16_handoff.md) |
+| 16 → 17 | Bruh Word (handoff) | [`session_17_handoff.md`](session_17_handoff.md) |
 
 ---
 
