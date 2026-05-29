@@ -2436,8 +2436,21 @@ def render_workplan_goals_html(
     return html
 
 
-def _render_single_project_card(p, update_log=None, attachments=None):
-    """Render a single project card HTML string with full notes history."""
+def _render_single_project_card(p, update_log=None, attachments=None,
+                                assoc_records_by_project=None,
+                                activity_options_json=None,
+                                sb_activity_labels=None):
+    """Render a single project card HTML string with full notes history.
+
+    assoc_records_by_project / activity_options_json / sb_activity_labels
+    (Dashboard-card association editor): when provided, the card gets a
+    "Contributes to: Activity N" chip line + the click-to-edit association
+    editor anchor (shared assoc_editor.js popover). All 34 cards render —
+    including 5.2-5.8, which have no workplan_goals row and were unreachable by
+    the Workplan-Goals-tab editor. Degrades gracefully: if the map is empty/None
+    the card renders normally (a backfilled chip off the id prefix, still
+    editable) and never throws.
+    """
     pid = p["id"]
     status = p.get("status", "")
     status_class = status.lower().replace(" ", "-")
@@ -2592,9 +2605,24 @@ def _render_single_project_card(p, update_log=None, attachments=None):
     # existing Lead/Activity/Budget rows).
     _row = 'font-size:0.85rem;color:#555;margin-bottom:0.5rem;'
 
+    # ── "Contributes to: Activity N" chip line + association editor ──
+    # Shared assoc_editor.js popover. Rendered for ALL 34 cards (incl. 5.2-5.8,
+    # which have no workplan_goals row). The assoc map comes from the
+    # associations table joined to the full projects list (NOT workplan_goals,
+    # which covers only 27), so 5.2-5.8 are reachable here. Degrades gracefully
+    # to a backfilled chip when the map is empty.
+    assoc_line = ""
+    if activity_options_json is not None:
+        recs = (assoc_records_by_project or {}).get(str(pid), [])
+        assoc_line = render_assoc_chip_line(
+            str(pid), recs, activity_options_json,
+            sb_activity_labels=sb_activity_labels,
+            cell_style="font-size:0.72rem;color:#666;font-weight:400;margin:0.15rem 0 0.6rem 0;",
+        )
+
     return f'''        <div class="project-card" data-pid="{html_escape(str(pid), quote=True)}" data-activity="{html_escape(str(activity), quote=True)}" data-v2030="{html_escape(str(v2030), quote=True)}" data-goal="{html_escape(str(goal), quote=True)}" data-status="{html_escape(str(status), quote=True)}" data-lead="{html_escape(str(lead), quote=True)}">
             <div class="project-name">{_ed("name", name, name)}</div>
-            <div class="project-desc">{_ed("description", desc, desc, multiline=True)}</div>
+{('            ' + assoc_line + chr(10)) if assoc_line else ''}            <div class="project-desc">{_ed("description", desc, desc, multiline=True)}</div>
             <span class="status-badge status-{css_class}">{_ed("status", status, status)}</span>
             <div class="progress-container">
                 <div class="progress-label">
@@ -2661,7 +2689,9 @@ def _render_single_project_card(p, update_log=None, attachments=None):
 
 
 def render_projects_grid_html(projects, update_log=None, attachments=None,
-                              data_source_stamp=None):
+                              data_source_stamp=None,
+                              assoc_records_by_project=None,
+                              activities=None):
     """
     Generate static HTML for the projects grid with cards,
     grouped under Goal headers (Goal 1, Goal 2, Goal 3).
@@ -2672,7 +2702,38 @@ def render_projects_grid_html(projects, update_log=None, attachments=None,
     data_source_stamp (Phase 2 PR-4): when provided, renders a subtle "Project
     data as of YYYY-MM-DD" line above the grid so a snapshot-fallback day shows
     its staleness without being loud.
+
+    assoc_records_by_project / activities (Dashboard-card association editor):
+    the per-project association records (from build_assoc_records_by_project)
+    + the Supabase Activity rows. When provided, each card gets the
+    "Contributes to:" chip line + the shared assoc_editor.js editor anchor.
+    Sourced from the associations table joined to ALL 34 projects, so projects
+    with no workplan_goals row (5.2-5.8) are covered. Absent → cards render
+    without the editor (graceful degradation on a Supabase outage).
     """
+    # Build the shared activity-option list (one JSON blob reused by every card)
+    # + the id→name label map for chip hovers. Falls back to synthesizing the
+    # options from the activity_ids that actually appear on the associations so
+    # the editor still offers choices even if the Activity rows didn't load.
+    activities = activities or []
+    activity_options = [{"id": a["id"], "name": a["name"]} for a in activities]
+    sb_activity_labels = {a["id"]: a["name"] for a in activities}
+    if not activity_options and assoc_records_by_project:
+        seen = {}
+        for recs in assoc_records_by_project.values():
+            for r in recs:
+                seen.setdefault(r["activity_id"], f"Activity {r['activity_id']}")
+        activity_options = [
+            {"id": k, "name": seen[k]}
+            for k in sorted(seen.keys(), key=_natural_activity_sort_key)
+        ]
+    # activity_options_json stays None when there's nothing to offer → the card
+    # renderer skips the editor entirely (no anchor, no chip line).
+    activity_options_json = (
+        json.dumps(activity_options, ensure_ascii=False)
+        if (activity_options or assoc_records_by_project is not None)
+        else None
+    )
     # Group projects by primary goal
     goal_groups = {}
     for p in projects:
@@ -2739,7 +2800,12 @@ def render_projects_grid_html(projects, update_log=None, attachments=None,
         # Project cards grid for this goal
         html += '        <div class="projects-grid goal-project-group">\n'
         for p in goal_projects:
-            html += _render_single_project_card(p, update_log, attachments=attachments)
+            html += _render_single_project_card(
+                p, update_log, attachments=attachments,
+                assoc_records_by_project=assoc_records_by_project,
+                activity_options_json=activity_options_json,
+                sb_activity_labels=sb_activity_labels,
+            )
         html += '        </div>\n'
 
     return html
@@ -6829,6 +6895,109 @@ def _natural_activity_sort_key(activity_id: str):
     return parts
 
 
+def build_assoc_records_by_project(associations):
+    """
+    Collapse the raw public.workplan_activity_associations rows into a stable,
+    de-duped per-project record map for the association editor.
+
+    Returns project_id -> [{"activity_id": str, "is_primary": bool}, ...],
+    one record per activity_id (the is_primary flags are OR'd if a project
+    somehow has duplicate rows for the same activity), natural-sorted by
+    activity_id so the chips + the editor's pre-checked state are deterministic.
+
+    Shared by build_workplan_goals_from_supabase() (Workplan Goals tab) and the
+    Projects Grid card renderer so both surfaces emit byte-identical data-assoc
+    payloads off the SAME associations table — the Grid covers all 34 projects
+    (incl. 5.2-5.8, which never reach the workplan_goals-derived tab).
+
+    is_primary degrades gracefully: if the column is absent (migration
+    unapplied) the loader's select drops it and every flag reads False.
+    """
+    by_project: dict[str, list[dict]] = {}
+    for a in associations or []:
+        pid = a.get("project_id")
+        aid = a.get("activity_id")
+        if not pid or not aid:
+            continue
+        by_project.setdefault(pid, []).append(
+            {"activity_id": aid, "is_primary": bool(a.get("is_primary"))}
+        )
+    for pid, recs in by_project.items():
+        by_aid: dict[str, bool] = {}
+        for r in recs:
+            by_aid[r["activity_id"]] = (
+                by_aid.get(r["activity_id"], False) or r["is_primary"]
+            )
+        by_project[pid] = [
+            {"activity_id": aid, "is_primary": by_aid[aid]}
+            for aid in sorted(by_aid.keys(), key=_natural_activity_sort_key)
+        ]
+    return by_project
+
+
+def render_assoc_chip_line(pid, assoc_records, activity_options_json,
+                           sb_activity_labels=None,
+                           cell_style="font-size:0.72rem;color:#666;font-weight:400;margin-top:0.2rem;"):
+    """
+    Render the "Contributes to: Activity N …" chip line + the click-to-edit
+    association-editor anchor. This is the SAME `data-assoc-edit` shape the
+    Workplan Goals renderers emit (data-pid / data-assoc / data-assoc-backfilled
+    / data-activities), so the shared assoc_editor.js popover drives it
+    identically on the Dashboard project cards.
+
+    `assoc_records` is the per-project [{activity_id, is_primary}] list from
+    build_assoc_records_by_project(). When empty, the chip line is "backfilled"
+    (a derived guess off the project-id prefix) and the editor opens with nothing
+    checked so the curator adds the first real link.
+
+    `activity_options_json` is the pre-serialized [{id,name}] option list (one
+    JSON blob shared across all cards). `sb_activity_labels` (optional) maps
+    activity_id → full Supabase Activity name for the chip hover.
+
+    EVERY curator/Supabase string is escaped: pid + the activity name in the
+    title="" attribute + the JSON blobs at the attribute boundary. The chip
+    body is the literal "Activity N" (no curator string).
+    """
+    sb_activity_labels = sb_activity_labels or {}
+    backfilled = not assoc_records
+    if assoc_records:
+        activity_ids = [r["activity_id"] for r in assoc_records]
+    else:
+        # Derived guess off the project-id prefix (e.g. "5.2" → Activity 5),
+        # mirroring build_workplan_goals_from_supabase's backfill rule.
+        activity_ids = [str(pid).split(".")[0]] if pid else []
+    primary_set = {r["activity_id"] for r in assoc_records if r.get("is_primary")}
+
+    chips_html = ""
+    for assoc_id in activity_ids:
+        is_primary = assoc_id in primary_set
+        short = f"Activity {assoc_id}"
+        star = "★ " if is_primary else ""
+        full = sb_activity_labels.get(assoc_id) or short
+        title_txt = (full + " (primary)") if is_primary else full
+        chip_cls = "wpg-act-chip wpg-act-chip-primary" if is_primary else "wpg-act-chip"
+        chips_html += (
+            f'<span class="{chip_cls}" title="{html_escape(title_txt, quote=True)}" '
+            f'style="display:inline-block;margin:0 0.25rem 0 0;padding:0.05rem 0.4rem;'
+            f'background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.7rem;'
+            f'font-weight:600;">{star}{short}</span>'
+        )
+
+    assoc_json = json.dumps(assoc_records, ensure_ascii=False)
+    return (
+        f'<div class="wpg-assoc-cell" data-assoc-edit="1" '
+        f'data-pid="{html_escape(str(pid), quote=True)}" '
+        f'data-assoc="{html_escape(assoc_json, quote=True)}" '
+        f'data-assoc-backfilled="{1 if backfilled else 0}" '
+        f'data-activities="{html_escape(activity_options_json, quote=True)}" '
+        f'style="{cell_style}">'
+        f'<span style="color:#888;">Contributes to:</span> '
+        f'{chips_html}'
+        f'<span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span>'
+        f'</div>'
+    )
+
+
 def build_workplan_goals_from_supabase(
     supabase_rows, associations, projects, live_data=None
 ):
@@ -6897,30 +7066,15 @@ def build_workplan_goals_from_supabase(
     # a genuine association from a backfilled chip and show which one is primary.
     # is_primary degrades gracefully: absent column (migration unapplied) → all
     # False (the loader's select falls back to the no-is_primary shape).
-    assoc_by_project: dict[str, list[str]] = {}
-    assoc_records_by_project: dict[str, list[dict]] = {}
-    for a in associations or []:
-        pid = a.get("project_id")
-        aid = a.get("activity_id")
-        if not pid or not aid:
-            continue
-        assoc_by_project.setdefault(pid, []).append(aid)
-        assoc_records_by_project.setdefault(pid, []).append(
-            {"activity_id": aid, "is_primary": bool(a.get("is_primary"))}
-        )
-    for pid, aids in assoc_by_project.items():
-        # De-dup + natural sort (numeric chars on Activity ids "1"-"5")
-        assoc_by_project[pid] = sorted(set(aids), key=_natural_activity_sort_key)
-    for pid, recs in assoc_records_by_project.items():
-        # De-dup by activity_id (OR the is_primary flags) + natural sort, so the
-        # editor sees one stable record per activity.
-        by_aid: dict[str, bool] = {}
-        for r in recs:
-            by_aid[r["activity_id"]] = by_aid.get(r["activity_id"], False) or r["is_primary"]
-        assoc_records_by_project[pid] = [
-            {"activity_id": aid, "is_primary": by_aid[aid]}
-            for aid in sorted(by_aid.keys(), key=_natural_activity_sort_key)
-        ]
+    # Shared dedup with the Projects Grid card renderer — one stable record per
+    # (project, activity) with OR'd is_primary, natural-sorted.
+    assoc_records_by_project = build_assoc_records_by_project(associations)
+    # assoc_by_project (the lean activity_id list for chips) is just the keys of
+    # each project's record list, already de-duped + sorted by the helper.
+    assoc_by_project: dict[str, list[str]] = {
+        pid: [r["activity_id"] for r in recs]
+        for pid, recs in assoc_records_by_project.items()
+    }
 
     def _num(v):
         try:
@@ -7802,6 +7956,11 @@ def main():
     activities, workplan_goals, annual_goals = build_workplan_goals_from_supabase(
         wpg_rows, wpg_assocs, projects, live_data
     )
+    # Per-project association records for the Dashboard project-card editor.
+    # Built from the associations table directly (NOT workplan_goals, which only
+    # covers 27 projects) so all 34 grid cards — incl. 5.2-5.8 — carry the
+    # "Contributes to:" chip line + the shared assoc_editor.js editor anchor.
+    assoc_records_by_project = build_assoc_records_by_project(wpg_assocs)
 
     activity_kpis   = build_activity_kpis(projects, activities=activities)
 
@@ -8394,7 +8553,12 @@ def main():
                 proj_grid_end = html.find('<!-- Budget Section -->')
                 proj_grid_end_consumes = proj_grid_end
             if proj_grid_start != -1 and proj_grid_end != -1:
-                proj_cards_html = render_projects_grid_html(projects, update_log, attachments=attachments, data_source_stamp=projects_fetched_at)
+                proj_cards_html = render_projects_grid_html(
+                    projects, update_log, attachments=attachments,
+                    data_source_stamp=projects_fetched_at,
+                    assoc_records_by_project=assoc_records_by_project,
+                    activities=activities,
+                )
                 project_count = len([p for p in projects if not p["id"].startswith("D.")])
                 # Workplan Progress chart now lives inside the Workplan Activity
                 # Metrics section (so it collapses with it). The Projects Grid
