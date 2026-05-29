@@ -45,8 +45,17 @@ the locked forks) and the **invariants KB note**
 - **Split brain redesigned twice from Sam's review** (the algo was TOP-only):
   - **Iteration 1 (committed):** title/subject/description cascade replaces the
     2-digit-TOP split. Blank-piece rate **51% → 38.6%**.
-  - **Iteration 2 (building):** description-similarity keep-vs-split for the
-    unmapped concrete in-betweeners (measure-first on the threshold).
+  - **Iteration 2 (DONE):** description-similarity keep-vs-split for the unmapped
+    concrete in-betweeners. Branch 5: per-member catalog descriptions (joined from
+    `coci_course_list.xlsx` by control_number), mean pairwise token-set Jaccard,
+    threshold **0.55** — collapse a split M-ID back to ONE piece when its members'
+    descriptions cohere (one course mis-coded across colleges). **232 collapses**
+    of 1,003 measurable in-betweeners; blank-piece rate 38.6% → **36.3%**;
+    corroborated-catalog delta −585 → **−544**. `CRIM M1231` (0.349), `CRIM M1130`
+    (0.508), `HEIT M1042` (0.029) all correctly **stay split**. Both dry-run + apply
+    gates green; CN-atomicity + id↔SUBJ4 invariants hold (0/0). No-ops gracefully
+    if the xlsx is absent. New artifact `coherence.json` (per-row scores + the
+    threshold table for recalibration).
 - **Curator title→discipline keep-whole map** seeded (`kb/overmerge_title_discipline.json`).
 - **Backlog:** SUBJ4-curation → CCR cascade (a curated SUBJ4 change auto-re-keys
   that discipline's M-IDs); the 341 SUBJ4→discipline blank-backfill.
@@ -129,7 +138,7 @@ sub-agent review tractable.
 | Scope + dry-run | `kb/_overmerge_dryrun.py`, all gates | **DONE** PR #194 |
 | Apply (staged) | `kb/_overmerge_apply.py` + workflow | **DONE** (dispatch-only) |
 | Split iter 1 | title/subject/description cascade + keep-whole + container | **DONE** |
-| Split iter 2 | description-similarity keep-vs-split | **building** |
+| Split iter 2 | description-similarity keep-vs-split (Jaccard 0.55; 232 collapses; blank 36.3%) | **DONE** |
 | Curator review loop | grow `overmerge_title_discipline.json` from review notes | ongoing |
 | **Dispatch the apply** | Sam triggers `overmerge-apply.yml` after final review | **gated on review** |
 | SUBJ4-curation cascade | curated SUBJ4 → auto re-key that discipline's M-IDs | parked (backlog) |

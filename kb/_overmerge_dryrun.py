@@ -16,7 +16,8 @@ wins per flagged M-ID):
      members, discipline = the mapped MQ discipline (these are single courses
      whose TOP/subject merely varies by college — the title is ground truth).
   3. CONTAINER TITLES ("Independent Study", "Special Topics", …) — detected for
-     reporting, then fall through to the per-member split (step 4).
+     reporting, then fall through to the per-member split (step 4). Containers
+     are NEVER collapsed by step 5 (they're split per-subject by design).
   4. MEMBER-DISCIPLINE CASCADE + SPLIT (default) — resolve EACH member's
      discipline by priority a) SUBJ4→discipline (inverted from
      discipline_canonical_subj4.json) b) subject_map (discipline_inference.json)
@@ -25,19 +26,40 @@ wins per flagged M-ID):
      resolve to None stay SUBJECT-SEPARATED (each raw subject its own group) so
      blank-discipline members are never lumped into a mislabeled bucket. Each
      group → a piece, stamped `disc_source` for the report.
+  5. DESCRIPTION-COHERENCE KEEP-WHOLE (iteration 2) — applied AFTER step 4 to
+     "in-betweeners" only (non-container M-IDs the cascade split into ≥2 pieces).
+     Generalizes step 2's hand-curated title-map to the unmapped tail: if the
+     members' raw CATALOG DESCRIPTIONS are coherent (mean pairwise token-set
+     Jaccard ≥ DESC_COHERENCE_THRESHOLD), the M-ID is ONE course whose
+     TOP/subject merely varies by college → COLLAPSE the cascade back to ONE
+     keep-whole piece (discipline = the plurality cascade piece's discipline;
+     disc_source="description_coherence"). Below threshold / insufficient
+     descriptions / xlsx absent → keep the cascade split. Conservative default
+     (0.55): lean toward preserving splits (a wrong split is recoverable via the
+     title-map; a wrong merge re-buries an over-merge). Per-member descriptions
+     come from kb/reference/coci_course_list.xlsx (control_number join); if that
+     file is ABSENT the whole layer no-ops and the run is identical to iter 1.
 
 Artifacts under kb/overmerge_out/<date>/:
 
   report.md          — human summary: totals, split-factor distribution, the 4
-                       apply gates (PASS/FAIL), top-30 split previews, the
-                       review-hold list with reasons, article + cluster impact.
+                       apply gates (PASS/FAIL), the iteration-2 measure-first
+                       coherence threshold table + borderline samples + named
+                       examples, top-30 split previews, the review-hold list with
+                       reasons, article + cluster impact.
   alias_map.json     — old M-ID -> {held, old_id_retired, splits:[…]} (the
                        canonical re-key receipt + rollback source for the apply).
+                       A description-coherence-collapsed M-ID is a single-split
+                       entry (one piece = all members), identical in shape to a
+                       title-map keep-whole — the apply needs no new branch.
   review_hold.json   — flagged M-IDs HELD for curator veto (likely-legitimate
                        interdisciplinary courses), NOT split — high-precision
                        sister-pair / interdisciplinary-token heuristic.
   collisions.json    — new course_ids that collide with an existing id or with
                        another new id (must be EMPTY if allocation is correct).
+  coherence.json     — iteration-2 per-in-betweener coherence scores + the
+                       measure-first threshold table (recalibrate without
+                       re-deriving from the report prose).
 
 Re-runnable. The root cause is in kb/_seed_coci_minted_mids.py (groups raw
 courses by normalized title alone); this dry-run plans the surgical re-key of the
@@ -71,7 +93,59 @@ TITLE_DISC_MAP = os.path.join(HERE, "overmerge_title_discipline.json")
 ROW_AUDIT = os.path.join(HERE, "row_audit", "latest.json")
 CCN_REF = os.path.join(HERE, "reference", "ccn_courses.json")
 CID_REF = os.path.join(HERE, "reference", "cid_descriptors.json")
+# Raw COCI course list (~24MB / 141k rows) — the per-member CatalogDescription
+# source for the iteration-2 description-coherence keep-vs-split layer. Read ONCE
+# (openpyxl read-only/streaming) into a control_number → description map. If the
+# file is ABSENT, the coherence layer is a no-op (iteration-2 == iteration-1).
+COCI_COURSE_LIST = os.path.join(HERE, "reference", "coci_course_list.xlsx")
 OUT_DIR = os.path.join(HERE, "overmerge_out")
+
+# ── Iteration-2 description-coherence keep-vs-split tunable ───────────────────
+# Some flagged M-IDs are ONE course whose members merely carry different
+# TOP/subject codes by college (the cascade wrongly SPLITS them); others are
+# genuine over-merges of different courses (correctly split). The discriminator
+# is DESCRIPTION coherence: members of one real course share similar catalog
+# descriptions; a genuine over-merge has divergent ones. The title→discipline
+# keep-whole map (iteration 1) handles the cases Sam named explicitly; THIS layer
+# generalizes it to the unmapped tail.
+#
+# We score coherence as the MEAN pairwise token-set Jaccard across the members
+# that HAVE a description (see desc_coherence). Jaccard chosen over cosine-TF: it
+# is pure set arithmetic (deterministic, no magnitudes), and it scores slightly
+# LOWER than cosine on the borderline (so it leans toward PRESERVING splits —
+# the conservative bias Sam asked for: a wrong split is recoverable via the
+# title-map, a wrong merge re-buries an over-merge).
+#
+# Default 0.55 = only collapse clearly-coherent in-betweeners. Trivially tunable
+# here. (Measured outcomes at the named cases, this data: CRIM M1130 "Intro to
+# Conflict Resolution" = 0.508 → stays split [borderline, as Sam predicted];
+# HEIT M1042 "Information Technology" = 0.030 → stays split; the genuine
+# over-merge CRIM M1231 "Leadership and Ethics" = 0.349 → stays split.)
+DESC_COHERENCE_THRESHOLD = 0.55
+
+# Boilerplate phrases stripped from a description before tokenizing — generic
+# catalog scaffolding that would inflate naive similarity across unrelated
+# courses. Lowercased substring removal, applied before punctuation stripping.
+DESC_BOILERPLATE = (
+    "students will", "this course", "upon completion", "prerequisite",
+    "corequisite", "repeatab", "transfer credit", "grade of c",
+    "pass/no pass", "pass / no pass", "no pass", "credit/no credit",
+)
+# Description stopwords — high-frequency catalog connective tissue + generic
+# pedagogy verbs/nouns that carry no discipline signal. Dropped after
+# tokenizing; tokens ≤2 chars are also dropped (catches stray "a"/"ii"/digits).
+DESC_STOP = set("""
+a an the of for with into from this that to in on or as by at is be and are will
+course courses students student covers cover introduction designed provides
+provide include includes including study basic principles concepts topics
+emphasis focus fundamental fundamentals various skills knowledge develop
+development understanding through use using each may also other than not their
+they them these those it its which who whom whose what when where how all any
+some more most such can could should would been being have has had do does did
+then there here learn learning explore examine examination overview survey
+designed intended prepares prepare required recommended hours lecture lab
+laboratory unit units semester quarter
+""".split())
 
 SUBJ4_RE = re.compile(r"^[A-Z]{4}$")
 # A current M-ID course_id is "<SUBJ> M<band><suffix>" — suffix is 3 digits
@@ -205,6 +279,69 @@ def classify_description(desc):
     return ranked[0][0]
 
 
+def desc_norm_tokens(desc):
+    """Normalize one catalog description → a SET of content tokens.
+
+    lowercase → strip boilerplate phrases → drop punctuation → tokenize → drop
+    stopwords + ≤2-char tokens. Returns a set (the coherence metric is set-based).
+    Empty/missing → empty set. The raw COCI xlsx descriptions sometimes carry
+    UTF-8-read-as-Latin-1 mojibake (e.g. "studentsÃ¢â‚¬â„¢"); punctuation
+    stripping + stopword filtering neutralizes most of it, and any residual
+    garbage token is shared boilerplate so it cancels in the pairwise overlap."""
+    if not desc:
+        return set()
+    s = str(desc).lower()
+    for b in DESC_BOILERPLATE:
+        s = s.replace(b, " ")
+    s = re.sub(r"[^a-z0-9 ]+", " ", s)
+    return {t for t in s.split() if len(t) > 2 and t not in DESC_STOP}
+
+
+def desc_coherence(token_sets):
+    """Mean pairwise token-set Jaccard across the member descriptions that HAVE
+    content. Members with no/empty description are ignored. If <2 members have a
+    description, coherence is UNDEFINED → returns (None, n_with_desc) so the
+    caller leaves the cascade split as-is ("insufficient_desc")."""
+    sets = [s for s in token_sets if s]
+    n = len(sets)
+    if n < 2:
+        return None, n
+    sims = []
+    for i in range(n):
+        si = sets[i]
+        for j in range(i + 1, n):
+            sj = sets[j]
+            union = si | sj
+            sims.append(len(si & sj) / len(union) if union else 0.0)
+    return (sum(sims) / len(sims)), n
+
+
+def load_cn_descriptions():
+    """control_number → CatalogDescription, read ONCE from the raw COCI course
+    list (openpyxl read-only/streaming so the ~24MB/141k-row file never lands in
+    memory whole). Returns {} if the file is absent (→ the coherence layer
+    no-ops, iteration-2 behaves exactly like iteration-1). Cols (0-based):
+    1 = CourseControlNumber, 10 = CatalogDescription."""
+    if not os.path.exists(COCI_COURSE_LIST):
+        return {}
+    import openpyxl  # local import — only needed when the file exists
+    cn_desc = {}
+    wb = openpyxl.load_workbook(COCI_COURSE_LIST, read_only=True, data_only=True)
+    try:
+        ws = wb.active
+        rows = ws.iter_rows(values_only=True)
+        next(rows, None)  # header
+        for row in rows:
+            if len(row) < 11:
+                continue
+            cn, desc = row[1], row[10]
+            if cn and desc:
+                cn_desc[cn] = desc
+    finally:
+        wb.close()
+    return cn_desc
+
+
 def ntitle(t):
     """Normalized title — lowercased, non-alnum stripped, stopwords dropped,
     tokens sorted. Used as the deterministic within-bucket sort key so the
@@ -307,6 +444,13 @@ def main():
         singletons = json.load(f)["courses"]
     with open(MEMBERSHIPS, encoding="utf-8") as f:
         memberships = json.load(f)["memberships"]
+
+    # Per-member catalog descriptions (control_number → description), read ONCE
+    # from the raw COCI course list for the iteration-2 description-coherence
+    # keep-vs-split layer. Empty dict ⇒ the file is absent ⇒ the coherence layer
+    # is skipped entirely (iteration-2 == iteration-1). Reported either way.
+    cn_desc = load_cn_descriptions()
+    desc_layer_active = bool(cn_desc)
 
     # top_discipline_map: drop None values + the 4930.* academic catch-all
     # (deliberately unmapped — see CLAUDE.md). What's left maps a full 6-digit
@@ -513,6 +657,42 @@ def main():
             groups.append(g)
         return groups
 
+    def collapse_groups(cascade_groups, all_members, *, band, norm, old_subj4):
+        """Iteration-2 description-coherence COLLAPSE: fold a cascade's pieces
+        back into ONE keep-whole piece holding ALL members.
+
+        discipline = the PLURALITY cascade piece's discipline — the discipline of
+        the piece with the most members (ties → the lexicographically smallest
+        discipline; a blank raw-subject piece can win, in which case discipline
+        is None and subj4 falls back). subj4 = canonical_subj4(that discipline)
+        or the old M-ID's. The piece carries every member, so its
+        `control_numbers` = the union of all members' CNs (CN-atomicity is
+        preserved trivially — no CN can span pieces when there is one piece).
+        disc_source is stamped `description_coherence` to distinguish it from the
+        curator title-map keep-whole pieces."""
+        # Plurality across ALL cascade pieces (disc + blank). Sort key: most
+        # members first, then a deterministic tie-break preferring a real
+        # discipline over a blank, then the label.
+        ranked = sorted(
+            cascade_groups,
+            key=lambda g: (-g["n_members"], 0 if g["discipline"] else 1, g["div"]),
+        )
+        plur = ranked[0]
+        disc = plur["discipline"]  # may be None (plurality piece was blank)
+        subj4 = canonical_subj4(disc) or old_subj4
+        g = _mk_group(all_members, discipline=disc,
+                      disc_source="description_coherence", subj4=subj4,
+                      band=band, norm=norm)
+        g["div"] = disc or ("RAW:" + (subj4 or "?"))
+        return g
+
+    # Per-in-betweener coherence telemetry for the measure-first report. An
+    # "in-betweener" is a flagged M-ID that the cascade split into ≥2 pieces and
+    # that is NOT held, NOT title-map keep-whole, NOT a container — exactly the
+    # population this layer decides. Each record: (mid, title, coherence|None,
+    # n_with_desc, n_pieces, [piece disciplines], collapsed_bool).
+    coherence_records = []
+
     for mid in flagged_ids:
         rec = courses.get(mid, {})
         members = memberships.get(mid, []) or []
@@ -594,9 +774,11 @@ def main():
                           subj4=subj4, band=band, norm=norm)
             g["div"] = keep_disc
             plan["keep_whole"] = True
+            plan["keep_whole_reason"] = "title_map"
             plan["groups"] = [g]
         else:
-            # ── Branch 3 (detection only) + Branch 4: CONTAINER / CASCADE SPLIT.
+            # ── Branch 3 (detection only) + Branch 4: CONTAINER / CASCADE SPLIT
+            #    + Branch 5 (iteration 2): DESCRIPTION-COHERENCE KEEP-WHOLE.
             # A container title is split exactly like any other M-ID (per-member
             # cascade); we only note it for the report. Reuses the cascade
             # computed for the sister-pair probe above.
@@ -605,7 +787,44 @@ def main():
             if is_container:
                 n_container += 1
                 plan["container"] = True
-            plan["groups"] = cascade_groups
+
+            # ── Branch 5: DESCRIPTION-COHERENCE KEEP-VS-SPLIT (iteration 2) ──
+            # Applies ONLY to "in-betweeners": non-container M-IDs the cascade
+            # split into ≥2 pieces (containers stay split per-subject by design;
+            # single-piece M-IDs need no decision). If the members' catalog
+            # descriptions are coherent (mean pairwise Jaccard ≥ threshold), the
+            # M-ID is ONE course whose TOP/subject merely varies by college →
+            # COLLAPSE to a single keep-whole piece. Below threshold (or
+            # insufficient descriptions, or the xlsx absent) → keep the cascade
+            # split unchanged. Conservative bias: lean toward preserving splits.
+            is_inbetweener = (not is_container) and len(cascade_groups) >= 2
+            collapsed = False
+            coh = None
+            n_with_desc = 0
+            if is_inbetweener:
+                tsets = [desc_norm_tokens(cn_desc.get(m.get("control_number")))
+                         for m in members]
+                coh, n_with_desc = desc_coherence(tsets)
+                if (desc_layer_active and coh is not None
+                        and coh >= DESC_COHERENCE_THRESHOLD):
+                    g = collapse_groups(cascade_groups, members, band=band,
+                                        norm=norm, old_subj4=old_subj4)
+                    plan["keep_whole"] = True
+                    plan["keep_whole_reason"] = "description_coherence"
+                    plan["coherence"] = round(coh, 4)
+                    plan["groups"] = [g]
+                    collapsed = True
+                # Telemetry for the measure-first report (every in-betweener,
+                # collapsed or not). Piece disciplines from the CASCADE result
+                # (pre-collapse) so the report shows what would have been split.
+                piece_discs = [g["discipline"] or g["div"] for g in cascade_groups]
+                coherence_records.append({
+                    "mid": mid, "title": title, "coherence": coh,
+                    "n_with_desc": n_with_desc, "n_pieces": len(cascade_groups),
+                    "piece_disciplines": piece_discs, "collapsed": collapsed,
+                })
+            if not collapsed:
+                plan["groups"] = cascade_groups
 
         groups = plan["groups"]
         # Count members that landed in a blank-discipline (raw-subject) piece —
@@ -974,6 +1193,32 @@ def main():
                 n_blank_pieces += 1
     blank_piece_rate = (n_blank_pieces / n_pieces) if n_pieces else 0.0
     n_keep_whole = sum(1 for p in split_plans if p.get("keep_whole"))
+    n_keep_whole_title = sum(
+        1 for p in split_plans if p.get("keep_whole_reason") == "title_map")
+    n_keep_whole_desc = sum(
+        1 for p in split_plans if p.get("keep_whole_reason") == "description_coherence")
+
+    # ── Iteration-2 measure-first telemetry over the in-betweener population ──
+    # The threshold table: at each candidate threshold, how many in-betweeners
+    # WOULD collapse (mean Jaccard ≥ threshold), of those with ≥2 descriptions.
+    n_inbetween = len(coherence_records)
+    measurable = [r for r in coherence_records if r["coherence"] is not None]
+    n_insufficient = n_inbetween - len(measurable)
+    threshold_table = []  # list of (threshold, would_collapse)
+    for thr in (0.30, 0.40, 0.50, 0.55, 0.60, 0.70):
+        wc = sum(1 for r in measurable if r["coherence"] >= thr)
+        threshold_table.append((thr, wc))
+    # ~12 borderline samples (coherence 0.40–0.60) for eyeball calibration.
+    borderline = sorted(
+        [r for r in measurable if 0.40 <= r["coherence"] <= 0.60],
+        key=lambda r: r["coherence"],
+    )[:12]
+    # The two M-IDs Sam called out by name (report their outcome explicitly).
+    named_examples = {}
+    coh_by_mid = {r["mid"]: r for r in coherence_records}
+    for ex_mid in ("CRIM M1130", "HEIT M1042"):
+        if ex_mid in coh_by_mid:
+            named_examples[ex_mid] = coh_by_mid[ex_mid]
 
     # ── Write artifacts ──────────────────────────────────────────────────────
     os.makedirs(OUT_DIR, exist_ok=True)
@@ -1026,6 +1271,43 @@ def main():
         json.dump(collisions_doc, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
+    # Iteration-2 coherence telemetry artifact — the per-in-betweener scores +
+    # the measure-first threshold table, so the threshold can be recalibrated
+    # without re-deriving from the report prose.
+    coherence_doc = {
+        "_about": ("Iteration-2 description-coherence keep-vs-split telemetry. "
+                   "An 'in-betweener' is a flagged M-ID the cascade split into "
+                   "≥2 pieces that is NOT held / title-map keep-whole / "
+                   "container. coherence = mean pairwise token-set Jaccard across "
+                   "members WITH a catalog description (None ⇒ <2 had one). "
+                   "collapsed=true ⇒ coherence ≥ threshold ⇒ kept whole as ONE "
+                   "piece (plurality discipline)."),
+        "_generated_by": "kb/_overmerge_dryrun.py",
+        "_generated_at": today,
+        "_metric": "mean pairwise token-set Jaccard of boilerplate-stripped descriptions",
+        "_threshold": DESC_COHERENCE_THRESHOLD,
+        "_desc_layer_active": desc_layer_active,
+        "_coci_course_list_present": os.path.exists(COCI_COURSE_LIST),
+        "in_betweeners": n_inbetween,
+        "measurable": len(measurable),
+        "insufficient_desc": n_insufficient,
+        "would_collapse_by_threshold": {f"{t:.2f}": c for t, c in threshold_table},
+        "collapsed_at_active_threshold": n_keep_whole_desc,
+        "records": sorted(
+            ({"mid": r["mid"], "title": r["title"],
+              "coherence": (round(r["coherence"], 4) if r["coherence"] is not None
+                            else None),
+              "n_with_desc": r["n_with_desc"], "n_pieces": r["n_pieces"],
+              "piece_disciplines": r["piece_disciplines"],
+              "collapsed": r["collapsed"]}
+             for r in coherence_records),
+            key=lambda r: (r["coherence"] is None, -(r["coherence"] or 0), r["mid"]),
+        ),
+    }
+    with open(os.path.join(out_today, "coherence.json"), "w", encoding="utf-8") as f:
+        json.dump(coherence_doc, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
     report = _render_report(
         today=today, n_flagged=n_flagged, n_held=n_held, n_split=n_split,
         n_fully_dissolved=n_fully_dissolved, new_corr_groups=new_corr_groups,
@@ -1043,6 +1325,13 @@ def main():
         n_pieces=n_pieces, n_blank_pieces=n_blank_pieces,
         blank_piece_rate=blank_piece_rate,
         overflow_corr=overflow_corr, overflow_sing=overflow_sing,
+        n_keep_whole_title=n_keep_whole_title,
+        n_keep_whole_desc=n_keep_whole_desc,
+        desc_layer_active=desc_layer_active,
+        coci_course_list_present=os.path.exists(COCI_COURSE_LIST),
+        n_inbetween=n_inbetween, n_measurable=len(measurable),
+        n_insufficient=n_insufficient, threshold_table=threshold_table,
+        borderline=borderline, named_examples=named_examples,
     )
     with open(os.path.join(out_today, "report.md"), "w", encoding="utf-8") as f:
         f.write(report)
@@ -1052,8 +1341,15 @@ def main():
     print(f"  flagged M-IDs:             {n_flagged}")
     print(f"  held (curator veto):       {n_held}  "
           f"({', '.join(f'{r}={c}' for r, c in held_by_reason.items()) or 'none'})")
-    print(f"    keep-whole (title map):  {n_keep_whole}")
+    print(f"    keep-whole (title map):  {n_keep_whole_title}")
+    print(f"    keep-whole (desc-cohere):{n_keep_whole_desc}"
+          f"{'' if desc_layer_active else '  [layer INACTIVE — coci_course_list.xlsx absent]'}")
     print(f"    container titles:        {n_container}")
+    print(f"  in-betweeners:             {n_inbetween}  "
+          f"(measurable {len(measurable)}, insufficient_desc {n_insufficient})")
+    print(f"    would-collapse @thr:     "
+          + ", ".join(f"{t:.2f}:{c}" for t, c in threshold_table)
+          + f"  (active threshold {DESC_COHERENCE_THRESHOLD})")
     print(f"  split:                     {n_split}")
     print(f"    fully de-corroborated:   {n_fully_dissolved}")
     print(f"    kept corroborated grps:  {kept_corr_groups}")
@@ -1072,7 +1368,8 @@ def main():
     print("  GATES:")
     for gk, gv in gates.items():
         print(f"    {'PASS' if gv['pass'] else 'FAIL'}  {gk}")
-    print(f"  artifacts: {out_today}/{{report.md,alias_map.json,review_hold.json,collisions.json}}")
+    print(f"  artifacts: {out_today}/{{report.md,alias_map.json,review_hold.json,"
+          f"collisions.json,coherence.json}}")
 
 
 def _render_report(*, today, n_flagged, n_held, n_split, n_fully_dissolved,
@@ -1083,7 +1380,10 @@ def _render_report(*, today, n_flagged, n_held, n_split, n_fully_dissolved,
                    art_unroutable_examples, cluster_affected, cluster_sample,
                    n_blank_members, n_container, n_keep_whole,
                    disc_source_counts, n_pieces, n_blank_pieces,
-                   blank_piece_rate, overflow_corr, overflow_sing):
+                   blank_piece_rate, overflow_corr, overflow_sing,
+                   n_keep_whole_title, n_keep_whole_desc, desc_layer_active,
+                   coci_course_list_present, n_inbetween, n_measurable,
+                   n_insufficient, threshold_table, borderline, named_examples):
     lines = []
     lines.append("---")
     lines.append("title: Cross-discipline Over-merge Re-mint Dry-Run")
@@ -1094,6 +1394,7 @@ def _render_report(*, today, n_flagged, n_held, n_split, n_fully_dissolved,
     lines.append(f"  - kb/overmerge_out/{today}/alias_map.json")
     lines.append(f"  - kb/overmerge_out/{today}/review_hold.json")
     lines.append(f"  - kb/overmerge_out/{today}/collisions.json")
+    lines.append(f"  - kb/overmerge_out/{today}/coherence.json")
     lines.append("---\n")
     lines.append("# Cross-discipline Over-merge Re-mint Dry-Run\n")
 
@@ -1106,8 +1407,10 @@ def _render_report(*, today, n_flagged, n_held, n_split, n_fully_dissolved,
     lines.append(f"- **{n_split}** split into discipline pieces via the member "
                  "**SUBJ4→subject_map→TOP→description cascade** (title keep-whole "
                  "map applied first; container titles split per-member).")
-    lines.append(f"  - **{n_keep_whole}** kept WHOLE by the curator title→discipline "
-                 "map (one piece, no split).")
+    lines.append(f"  - **{n_keep_whole}** kept WHOLE (one piece, no split): "
+                 f"**{n_keep_whole_title}** by the curator title→discipline map + "
+                 f"**{n_keep_whole_desc}** by **description coherence** "
+                 "(iteration 2).")
     lines.append(f"  - **{n_container}** matched a container pattern "
                  "(Independent Study / Special Topics / …) → split per-member.")
     lines.append(f"  - **{n_fully_dissolved}** fully de-corroborate (dissolve to singletons — "
@@ -1141,6 +1444,84 @@ def _render_report(*, today, n_flagged, n_held, n_split, n_fully_dissolved,
             lines.append(f"| `{src}` | {c} |")
     lines.append(f"| **total** | **{n_pieces}** |")
     lines.append("")
+
+    # ── Iteration-2: description-coherence keep-vs-split (measure-first) ──────
+    lines.append("## Description-coherence keep-vs-split (iteration 2)\n")
+    if not coci_course_list_present:
+        lines.append("**⚠ LAYER INACTIVE** — `kb/reference/coci_course_list.xlsx` "
+                     "is absent, so the description-coherence layer is a no-op "
+                     "(this run is identical to iteration 1). No M-IDs were "
+                     "collapsed by description coherence.\n")
+    else:
+        lines.append("Some flagged M-IDs are ONE course whose members merely carry "
+                     "different TOP/subject codes by college (the cascade wrongly "
+                     "SPLITS them); others are genuine over-merges of different "
+                     "courses (correctly split). The discriminator is **catalog-"
+                     "description coherence** — the mean pairwise **token-set "
+                     "Jaccard** of members' boilerplate-stripped descriptions "
+                     "(only members that HAVE a description count; <2 ⇒ "
+                     "`insufficient_desc` ⇒ left split). An **in-betweener** is a "
+                     "flagged M-ID the cascade split into ≥2 pieces that is NOT "
+                     "held / title-map keep-whole / container — exactly the "
+                     "population this layer decides.\n")
+        lines.append(f"- In-betweeners: **{n_inbetween}** "
+                     f"(measurable **{n_measurable}**, insufficient-desc "
+                     f"**{n_insufficient}**).")
+        lines.append(f"- Active threshold: **{DESC_COHERENCE_THRESHOLD}** → "
+                     f"**{n_keep_whole_desc}** collapsed to one piece "
+                     "(kept whole); the rest stay split.")
+        lines.append("- Metric choice: token-set **Jaccard** over cosine-TF — "
+                     "pure set arithmetic (deterministic) and it scores slightly "
+                     "lower on the borderline, so it leans toward **preserving "
+                     "splits** (a wrong split is recoverable via the title-map; a "
+                     "wrong merge re-buries an over-merge).\n")
+
+        # Measure-first threshold table.
+        lines.append("### Measure-first — would-collapse by threshold\n")
+        lines.append("How many in-betweeners (of the "
+                     f"**{n_measurable}** measurable) would collapse to keep-whole "
+                     "at each candidate threshold. The active default is "
+                     f"**{DESC_COHERENCE_THRESHOLD}**.\n")
+        lines.append("| threshold | would-collapse | of measurable |")
+        lines.append("|---:|---:|---:|")
+        for thr, wc in threshold_table:
+            mark = " ← **active**" if abs(thr - DESC_COHERENCE_THRESHOLD) < 1e-9 else ""
+            lines.append(f"| {thr:.2f} | {wc} | {n_measurable}{mark} |")
+        lines.append(f"| _insufficient-desc_ | {n_insufficient} | "
+                     "_(left split — undefined coherence)_ |")
+        lines.append("")
+
+        # Named examples Sam called out.
+        if named_examples:
+            lines.append("### Named examples (Sam-flagged)\n")
+            lines.append("| M-ID | title | coherence | n_with_desc | cascade pieces | outcome @ active |")
+            lines.append("|---|---|---:|---:|---|---|")
+            for ex_mid in ("CRIM M1130", "HEIT M1042"):
+                r = named_examples.get(ex_mid)
+                if not r:
+                    continue
+                coh = ("`%.3f`" % r["coherence"]) if r["coherence"] is not None else "_insufficient_"
+                outcome = ("**COLLAPSE** (keep whole)" if r["collapsed"]
+                           else "split (kept)")
+                discs = ", ".join(str(d) for d in r["piece_disciplines"])
+                lines.append(f"| `{ex_mid}` | {r['title'][:34]} | {coh} | "
+                             f"{r['n_with_desc']} | {discs} | {outcome} |")
+            lines.append("")
+
+        # ~12 borderline samples for eyeball calibration.
+        lines.append("### Borderline samples (coherence 0.40–0.60)\n")
+        lines.append("For threshold calibration by eye — title + per-piece "
+                     "disciplines + coherence score, sorted ascending.\n")
+        if borderline:
+            lines.append("| M-ID | title | coherence | n_with_desc | cascade pieces |")
+            lines.append("|---|---|---:|---:|---|")
+            for r in borderline:
+                discs = ", ".join(str(d) for d in r["piece_disciplines"])
+                lines.append(f"| `{r['mid']}` | {r['title'][:32]} | "
+                             f"`{r['coherence']:.3f}` | {r['n_with_desc']} | {discs} |")
+        else:
+            lines.append("_(no in-betweeners in the 0.40–0.60 band)_")
+        lines.append("")
 
     # Apply gate
     all_pass = all(g["pass"] for g in gates.values())

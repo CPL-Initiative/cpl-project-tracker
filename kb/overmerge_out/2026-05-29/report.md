@@ -7,6 +7,7 @@ artifacts:
   - kb/overmerge_out/2026-05-29/alias_map.json
   - kb/overmerge_out/2026-05-29/review_hold.json
   - kb/overmerge_out/2026-05-29/collisions.json
+  - kb/overmerge_out/2026-05-29/coherence.json
 ---
 
 # Cross-discipline Over-merge Re-mint Dry-Run
@@ -16,14 +17,14 @@ artifacts:
 - Flagged by `member_top_divergence`: **1299** M-IDs (members span ≥2 two-digit TOP divisions, minority share ≥ 0.30).
 - **52** HELD for curator veto (not split): sister_pair 47, interdisciplinary_token 5.
 - **1247** split into discipline pieces via the member **SUBJ4→subject_map→TOP→description cascade** (title keep-whole map applied first; container titles split per-member).
-  - **23** kept WHOLE by the curator title→discipline map (one piece, no split).
+  - **255** kept WHOLE (one piece, no split): **23** by the curator title→discipline map + **232** by **description coherence** (iteration 2).
   - **5** matched a container pattern (Independent Study / Special Topics / …) → split per-member.
-  - **885** fully de-corroborate (dissolve to singletons — the title collision was never a real consolidated course).
-  - **362** plurality groups keep their old corroborated id.
-  - **300** NEW corroborated groups minted (fresh ids).
-  - **2349** members peel to singleton status.
-- Corroborated catalog: **1299 → 714** (**-585**) — spurious corroborations removed.
-- Pieces: **3011** total; **1161** (**38.6%**) stayed blank-discipline (subject-separated for curator review).
+  - **858** fully de-corroborate (dissolve to singletons — the title collision was never a real consolidated course).
+  - **389** plurality groups keep their old corroborated id.
+  - **314** NEW corroborated groups minted (fresh ids).
+  - **2052** members peel to singleton status.
+- Corroborated catalog: **1299 → 755** (**-544**) — spurious corroborations removed.
+- Pieces: **2755** total; **1001** (**36.3%**) stayed blank-discipline (subject-separated for curator review).
 
 ## Discipline-source breakdown
 
@@ -31,13 +32,62 @@ How the cascade resolved each piece's discipline (`raw_subject` + `blank` = the 
 
 | disc_source | pieces |
 |---|---:|
-| `subj4` | 605 |
-| `subject_map` | 201 |
-| `top_code` | 997 |
-| `description` | 24 |
+| `subj4` | 501 |
+| `subject_map` | 155 |
+| `top_code` | 842 |
+| `description` | 21 |
 | `title_map` | 23 |
-| `raw_subject` | 1161 |
-| **total** | **3011** |
+| `raw_subject` | 981 |
+| `description_coherence` | 232 |
+| **total** | **2755** |
+
+## Description-coherence keep-vs-split (iteration 2)
+
+Some flagged M-IDs are ONE course whose members merely carry different TOP/subject codes by college (the cascade wrongly SPLITS them); others are genuine over-merges of different courses (correctly split). The discriminator is **catalog-description coherence** — the mean pairwise **token-set Jaccard** of members' boilerplate-stripped descriptions (only members that HAVE a description count; <2 ⇒ `insufficient_desc` ⇒ left split). An **in-betweener** is a flagged M-ID the cascade split into ≥2 pieces that is NOT held / title-map keep-whole / container — exactly the population this layer decides.
+
+- In-betweeners: **1077** (measurable **1003**, insufficient-desc **74**).
+- Active threshold: **0.55** → **232** collapsed to one piece (kept whole); the rest stay split.
+- Metric choice: token-set **Jaccard** over cosine-TF — pure set arithmetic (deterministic) and it scores slightly lower on the borderline, so it leans toward **preserving splits** (a wrong split is recoverable via the title-map; a wrong merge re-buries an over-merge).
+
+### Measure-first — would-collapse by threshold
+
+How many in-betweeners (of the **1003** measurable) would collapse to keep-whole at each candidate threshold. The active default is **0.55**.
+
+| threshold | would-collapse | of measurable |
+|---:|---:|---:|
+| 0.30 | 368 | 1003 |
+| 0.40 | 283 | 1003 |
+| 0.50 | 243 | 1003 |
+| 0.55 | 232 | 1003 ← **active** |
+| 0.60 | 222 | 1003 |
+| 0.70 | 196 | 1003 |
+| _insufficient-desc_ | 74 | _(left split — undefined coherence)_ |
+
+### Named examples (Sam-flagged)
+
+| M-ID | title | coherence | n_with_desc | cascade pieces | outcome @ active |
+|---|---|---:|---:|---|---|
+| `CRIM M1130` | Introduction to Conflict Resolutio | `0.508` | 4 | Administration of Justice, Political Science, Psychology, RAW:CMUN | split (kept) |
+| `HEIT M1042` | Information Technology | `0.029` | 4 | Health Information Technology, Library Technology, Office Technologies, RAW:ITIS | split (kept) |
+
+### Borderline samples (coherence 0.40–0.60)
+
+For threshold calibration by eye — title + per-piece disciplines + coherence score, sorted ascending.
+
+| M-ID | title | coherence | n_with_desc | cascade pieces |
+|---|---|---:|---:|---|
+| `PSYC M1012` | DEVELOPMENTAL PSYCHOLOGY-CHILDHO | `0.401` | 3 | Child Development/Early Childhood Education, Psychology, RAW:PSYCH |
+| `CISC M1570` | Technical and Professional Writi | `0.404` | 3 | English, RAW:CIS, RAW:ENG |
+| `CISC M1086` | Advanced Web Development | `0.405` | 5 | Computer Information Systems, Multimedia |
+| `ENGL M1063` | African American Literature - Ho | `0.406` | 3 | English, Ethnic Studies |
+| `KINE M1586` | Pilates Mat Instructor Training | `0.406` | 3 | Kinesiology, RAW:KIN, RAW:PRO CR |
+| `GRAF M1046` | Digital Media | `0.408` | 3 | Graphic Arts, RAW:ARTG |
+| `ENGT M1021` | Construction Surveying | `0.410` | 3 | Architecture, Engineering Technology |
+| `OSHA M1004` | Medic First Aid Training/CPR | `0.412` | 3 | Emergency Medical Technologies, Industrial Safety |
+| `ETHS M1057` | African American Humanities | `0.415` | 3 | Ethnic Studies, RAW:HUM |
+| `JOUR M1093` | Photography for Publication | `0.415` | 3 | Journalism, Photography |
+| `ENVR M1019` | Energy and Sustainability | `0.416` | 3 | Forestry/Natural Resources, RAW:EVST |
+| `ENGL M1026` | Literature by and About Women | `0.417` | 3 | English, RAW:GWOS |
 
 ## Apply gate
 
@@ -51,7 +101,7 @@ How the cascade resolved each piece's discipline (`raw_subject` + `blank` = the 
 - ✅ **V3_collision_free**: PASS
   - 0 collision(s) (see `collisions.json` — must be 0)
 - ✅ **V4_article_routability**: PASS
-  - routable 90 · multi 8 · unroutable 0
+  - routable 92 · multi 6 · unroutable 0
 
 ## Split-factor distribution
 
@@ -59,10 +109,10 @@ How many discipline pieces each SPLIT M-ID partitions into (held M-IDs excluded;
 
 | pieces | M-IDs |
 |---:|---:|
-| 1 | 165 |
-| 2 | 746 |
-| 3 | 206 |
-| 4 | 60 |
+| 1 | 397 |
+| 2 | 534 |
+| 3 | 190 |
+| 4 | 56 |
 | 5 | 28 |
 | 6 | 16 |
 | 7 | 7 |
@@ -172,27 +222,27 @@ Old M-ID → its pieces (`discipline` (n_colleges col, kind, disc_source)). Rank
 ## Articulation impact
 
 - Articulations referencing flagged M-IDs: **98** (across 66 M-IDs).
-- Routing (primary: earned_by_colleges ∩ piece colleges; fallback: top_code division): routable **90**, multi **8**, unroutable **0**.
+- Routing (primary: earned_by_colleges ∩ piece colleges; fallback: top_code division): routable **92**, multi **6**, unroutable **0**.
 
 ## Cluster member-ref impact
 
 - Clusters in `coci_unified_courses.json` with ≥1 flagged member: **52**.
 - Sample old-member → new-id(s) mappings:
   - `UC-00126` · `GRAF M1005` → ['GRAF M1005']
-  - `UC-00159` · `KINE M1092` → ['PHYS M14CO', 'KINS M10AB']
-  - `UC-00174` · `KINE M1103` → ['PHYS M14CR', 'KINS M10AD']
+  - `UC-00159` · `KINE M1092` → ['PHYS M14CN', 'KINS M10AB']
+  - `UC-00174` · `KINE M1103` → ['PHYS M14CP', 'KINS M10AD']
   - `UC-00191` · `ARCH M1020` → ['DRAF M1012']
-  - `UC-00210` · `DANC M1051` → ['DANC M11WE', 'PHYS M14CZ']
+  - `UC-00210` · `DANC M1051` → ['DANC M11WE']
   - `UC-00281` · `HLTH M1026` → ['OTEC M10QR', 'MEDA M10AB']
-  - `UC-00311` · `KINE M1156` → ['PHYS M1278', 'KINS M10AG']
-  - `UC-00312` · `KINE M1157` → ['KINE M12FV', 'KINE M12FW']
+  - `UC-00311` · `KINE M1156` → ['PHYS M1421', 'KINS M10AG']
+  - `UC-00312` · `KINE M1157` → ['KINE M12FS', 'KINE M12FT']
   - `UC-00395` · `DANC M9005` → ['PHYS M9023', 'DANC M90AC']
-  - `UC-00404` · `KINE M1213` → ['PHYS M14DM', 'KINE M12GF']
-  - `UC-00409` · `BIOL M1047` → ['BIOL M11BL', 'BIOL M11BM']
-  - `UC-00465` · `KINE M1272` → ['PHYS M1783', 'KINS M10AJ']
+  - `UC-00404` · `KINE M1213` → ['PHYS M14DI', 'KINE M12GB']
+  - `UC-00409` · `BIOL M1047` → ['BIOL M11BL']
+  - `UC-00465` · `KINE M1272` → ['PHYS M1817', 'KINS M10AJ']
   - `UC-00475` · `BUSI M1141` → ['OTEC M1148']
-  - `UC-00489` · `PSYC M1035` → ['PSYC M10KV', 'PSYC M10KW']
-  - `UC-00490` · `PSYC M1037` → ['PSYC M10KX', 'PSYC M10KY', 'PSYC M1037']
+  - `UC-00489` · `PSYC M1035` → ['PSYC M10KU']
+  - `UC-00490` · `PSYC M1037` → ['PSYC M10KV', 'PSYC M10KW', 'PSYC M1037']
 
 ## How to proceed
 

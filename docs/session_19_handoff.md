@@ -65,16 +65,15 @@ claude/adoring-hypatia-uihzi → PR #194 (draft, watch it):
 
 ═══ FIRST: confirm iteration-2's state ═══
 
-At Session-18 end, iteration 2 (description-similarity keep-vs-split for unmapped
-concrete in-betweeners) was BUILDING in the background. Cascade planned to
-hard-review + commit it autonomously when it landed (read-only dry-run, Sam
-pre-approved). CHECK: `git log --oneline -8` on the branch — is there an
-"iteration 2 / description-similarity" commit on kb/_overmerge_dryrun.py? Then
-re-run BOTH `python3 kb/_overmerge_dryrun.py` AND `python3 kb/_overmerge_apply.py`
-(dry) and confirm all 4 gates PASS on each, collisions 0, plus the invariant
-counts: 0 control-numbers in >1 piece, 0 id-prefix≠subj4. If iteration 2 did NOT
-land/commit, re-dispatch it from the iteration-1 base (committed 07978eb) with the
-spec in docs/overmerge_remint_lessons.md.
+Iteration 2 (description-similarity keep-vs-split for unmapped concrete
+in-betweeners) LANDED — Cascade hard-reviewed + committed it post-checkout (Jaccard
+threshold 0.55; 232 collapses; blank 38.6%→36.3%; both dry-run + apply gates green;
+CN-atomicity + id↔SUBJ4 invariants 0/0; `CRIM M1231`/`M1130`/`HEIT M1042` correctly
+stay split). RE-VERIFY before building on it: re-run BOTH
+`python3 kb/_overmerge_dryrun.py` AND `python3 kb/_overmerge_apply.py` (dry) — all
+4 gates PASS on each, collisions 0, 0 control-numbers in >1 piece, 0 id-prefix≠subj4.
+Calibration lives in `kb/overmerge_out/<date>/coherence.json` (the threshold table —
+tune `DESC_COHERENCE_THRESHOLD` if Sam wants more/fewer collapses).
 
 ═══ PRIORITY WORKSTREAM: finish the over-merge re-mint ═══
 
@@ -166,7 +165,7 @@ preview loop with him, and he dispatches the apply. Carry it forward. 🅰️�
 | — | `kb/_overmerge_dryrun.py` (all gates green) |
 | — | `kb/_overmerge_apply.py` + `_supabase.py` + `overmerge-apply.yml` (staged) |
 | — | Split brain iteration 1 (title/subject/description cascade) — blank 51%→38.6% |
-| — | Split brain iteration 2 (description-similarity) — building at session end |
+| — | Split brain iteration 2 (description-similarity, Jaccard 0.55, 232 collapses, blank→36.3%) — **DONE, committed post-checkout** |
 | — | `kb/overmerge_title_discipline.json` curator map (seeded from review) |
 | — | `methodology-remint-split-invariants.md` KB note |
 | `2da3d0c` | Rule 8 checkpoint |
