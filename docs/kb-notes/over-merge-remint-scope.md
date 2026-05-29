@@ -156,6 +156,21 @@ collision concern is moot for these rows (re-confirm at apply time regardless).
   residue; the auditor receipt confirms the cleanup (like `subject_collision_signal`
   → 0 after the SUBJ4 re-mint).
 
+## Backlog — SUBJ4-curation cascade to the CCR (future)
+
+Sam's direction (2026-05-29): when a discipline's **canonical SUBJ4 is changed
+through curation** (the Common Subject Code tab → `discipline_canonical_subj4.json`
++ Supabase `_CANON_SUBJ4::<discipline>`), that change should **cascade-update the
+CCR** — i.e. re-key every M-ID of that discipline to the new SUBJ4. This is a
+*scoped re-mint* triggered by a curation edit rather than an audit flag, and it
+reuses this exact dry-run → apply machinery (re-key minted ids + memberships +
+articulations + cluster refs + curation pointers, alias map, atomic land in the
+cron window per Rule 7). `discipline_canonical_subj4.json` is the SUBJ4 source of
+truth both for this over-merge split's labeling AND for the future cascade, so the
+two share an anchor. Scope it as its own small re-mint when picked up (likely a
+`kb/_subj4_recurate_dryrun.py` / `_apply.py` pair parameterized on a discipline +
+old→new SUBJ4). Not blocking the over-merge work.
+
 ## What this is NOT
 
 - Not a curation pass — curation (re-discipline / merge) can't *split* an
