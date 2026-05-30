@@ -5287,6 +5287,15 @@ def export_unified_courses():
 
     cat = cat_doc["courses"]
     sg = (_load("coci_minted_singletons.json") or {}).get("courses", {})
+    # Auto-seeded variant-unification clusters (UC-XXXXX) were DISSOLVED 2026-05-30:
+    # this dict is now empty, so every `clusters` loop below no-ops. They token-sorted
+    # titles (collapsing distinct course levels, e.g. "Algebra 1: Part 2" == "Algebra 2:
+    # Part 1"), were never curator-reviewed, double-emitted their members as Stand-Alone
+    # rows, and carried zero articulations. Their job is now done — better — by the
+    # level-safe Suggested-merges worklist (curator-confirmed). The "Cluster" id_system
+    # that still appears in the CCR comes ONLY from the merge_members path below
+    # (curator merge targets / UC-CUR-*), a SEPARATE mechanism. The load is retained
+    # (empty) for provenance + so curation pointers / descriptions still resolve cleanly.
     clusters = (_load("coci_unified_courses.json") or {}).get("clusters", {})
     art_doc = _load("coci_articulations.json") or {}
     art_ident = art_doc.get("identities", {})
