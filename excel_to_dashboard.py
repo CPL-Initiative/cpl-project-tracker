@@ -5420,8 +5420,14 @@ def export_unified_courses():
             continue
         curated_n += 1
         ad, pot = rollup([ccid])
+        # Surface the curated sub-area (discipline_provisional) when it refines the
+        # broad MQ discipline (e.g. Business -> Accounting) as a read-only signal on
+        # the firewalled anchor rows. Omitted on staging rows whose provisional is
+        # just a raw subject code. Rendered in the CCR discipline cell (unified_courses.js).
+        _dp = v.get("discipline_provisional")
+        _dp = _dp if (_dp and _dp != v.get("discipline")) else None
         rows.append({"kind": "Course", "id": ccid, "title": v.get("common_title"),
-                     "disc": v.get("discipline"), "credit": None,
+                     "disc": v.get("discipline"), "disc_prov": _dp, "credit": None,
                      "units": v.get("typical_units"), "top": None,
                      "subj": [v["subject"]] if v.get("subject") else [],
                      "members": v.get("source_college_count"), "conf": v.get("confidence"),
