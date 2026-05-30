@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-05-30T11:47:39Z",
-  "count": 48,
+  "_synced_at": "2026-05-30T13:43:15Z",
+  "count": 40,
   "curations": {
     "ARTS M10BJ": {
       "merge_into": "ARTS M1159",
@@ -175,6 +175,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
     },
+    "PHYS M11WB": {
+      "merge_into": "PHYS M1265",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
+    },
     "PHYS M1265": {
       "unified_title": "Body Conditioning and Physical Fitness (Intermediate)",
       "reviewed_by": "map@rccd.edu",
@@ -201,51 +206,6 @@
       "merge_into": "REAL M1017",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:43:10.485612+00:00"
-    },
-    "UC-00328": {
-      "merge_into": "ARTS M1159",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:44:46.536545+00:00"
-    },
-    "UC-00353": {
-      "merge_into": "REAL M1017",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:43:10.485612+00:00"
-    },
-    "UC-00432": {
-      "merge_into": "ARTS M1201",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:44:12.663107+00:00"
-    },
-    "UC-00527": {
-      "merge_into": "PHYS M1265",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
-    },
-    "UC-00546": {
-      "merge_into": "BUSI M1170",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:45:04.930041+00:00"
-    },
-    "UC-00594": {
-      "merge_into": "COUN M1045",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:45:05.405159+00:00"
-    },
-    "UC-00676": {
-      "merge_into": "HIST M1152",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:42:04.429467+00:00"
-    },
-    "UC-00796": {
-      "merge_into": "ENGL M1217",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:41:29.977439+00:00"
-    },
-    "UC-01273": {
-      "merge_into": "ENGL M1367",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:41:44.880094+00:00"
     },
     "UC-CUR-MPG029OM": {
       "unified_title": "Advanced Auto Body Collision and Damage Repair",
