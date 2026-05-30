@@ -1,8 +1,8 @@
 ---
 title: Unified Courses Trust-Card Auditor — Decisions & Lessons
 date: 2026-05-23
-last_updated: 2026-05-27
-session: 4 (Bruh Prime), updated across sessions 7 (Sexy Dexy, unit_anomaly) and 12 (Bruh Dec, merge_into_orphan)
+last_updated: 2026-05-29
+session: 4 (Bruh Prime), updated across sessions 7 (Sexy Dexy, unit_anomaly), 12 (Bruh Dec, merge_into_orphan), and 18 (member_top_divergence)
 phases: [1a, 1b/1, 1b/2, 1c (8 of 9), 1c-UX]
 tags: [auditor, unified-courses, m-id, mc, cidx, trust-score, calibration, decisions, knowledge-base]
 artifacts:
@@ -596,6 +596,113 @@ helper is a clean separation: record-derived tags stay in
 the new helper. Future curation-pointer rules (e.g. cycle detection,
 title-drift between source and merge_into target) plug into the same
 helper without touching record-tag code.
+
+---
+
+## 2026-05-29 — `member_top_divergence` (Session 18, the cross-discipline over-merge detector)
+
+**Trigger.** Sam, opening a CCR cleanup workstream, screenshotted a Cluster
+row (`UC-00987` "Ethics and Leadership") and asked to "track down the error."
+Tracing it: the cluster grouping was sound (two CRIM M-IDs), but one level
+down the M-ID minting had over-merged — `CRIM M1231` consolidated Diablo
+Valley's `ADJUS 126` (Administration of Justice, TOP 2105.00) with Mission
+College's `HOC 62` + `RNB 42` (Registered Nursing, TOP 1230.10) purely
+because the normalized title matched. Root cause: `_seed_coci_minted_mids.py`
+grouped by normalized title with **no discipline/TOP guard**; generic titles
+are the failure mode.
+
+**The gap this rule closes.** `CRIM M1231` carried only `seed_untouched_discipline`
+— the *worst* over-merge in the cluster slipped through every strong signal.
+`top_discipline_disagreement` missed it because that rule checks the M-ID's
+single *representative* TOP code (2105.00, which matches the assigned Admin-of-
+Justice discipline) — it never looks at the member spread. `unit_anomaly`
+missed it because 1.0 units was a 2/3 majority (the rule needs <50%). So the
+auditor was structurally blind to the M1231 pattern: **members diverge, but
+the representative happens to match.** That's the gap `member_top_divergence`
+fills — it's the first rule keyed on the *distribution of member TOP codes*,
+not a single representative.
+
+**Measure-first paid off (again).** The standing count for "cross-discipline
+over-merge" was implicitly `top_discipline_disagreement` = 857, but that
+measures a different, weaker thing. Prototyping the real metric before
+committing a threshold revealed the honest population and let me calibrate:
+
+| Cut | Count | Catches M1230? | M1231? |
+|---|---|---|---|
+| ≥2 two-digit divisions (any split) | 1,995 | yes | yes |
+| ≥2 divisions, 2nd division ≥2 members | 417 | **no** | **no** |
+| **≥2 divisions, minority share ≥ 0.30** | **1,299** | **yes** | **yes** |
+| plurality division ≠ assigned (map-based) | 359 | **no** | yes |
+
+The "2nd division ≥2 members" cut is the intuitive one and it's *wrong* — it
+misses both motivating cases (their minority division has 1 member). The
+map-based cut misses M1230 (Admin Justice IS the plurality; Law is the stray)
+and leans on the incomplete TOP→discipline map. **Minority-share ≥ 0.30** is
+the sweet spot: a 9-vs-1 split (0.10) is a lone TOP miscode and doesn't fire;
+a 2-vs-1 (0.33) or 1-vs-1 (0.50) does. Of the 1,299, **736 (57%) carry no
+other strong signal** — the measured value-add — and **255 are "mis-disciplined"**
+(the assigned discipline isn't even the members' plurality division;
+`MUSI M1512` "Independent Projects" labeled Music but plurality Engineering).
+
+**The 2-digit division is load-bearing.** TOP codes wobble within a division
+college-to-college (CLAUDE.md §9: ~52% of M-IDs are TOP-mixed, "coarser TOP
+digits are more stable"). Grouping at the 2-digit *division* — not the 4-digit
+program or 6-digit code — is what keeps this clean: cross-division divergence
+(12xx Health vs 21xx Public/Protective) is the real over-merge; within-division
+wobble (2105.00 vs 2105.50) is noise and never fires. A bonus falls out: most
+sister-discipline pairs that `top_discipline_disagreement` needs `SISTER_PAIRS`
+to suppress (Kinesiology/PE both 0835, CIS/CompSci both 07, Nursing/LVN both
+1230, Business/Office-Tech both 05) **share a division**, so this rule never
+fires on them — zero suppression list needed. A few cross-division sisters
+(Art↔Multimedia 10↔06) survive; folded into the calibration follow-on.
+
+**Mini-lesson — match the signal to the mechanism, not the symptom.** Both
+`unit_anomaly` and `top_discipline_disagreement` *incidentally* catch some
+over-merges (M1230 fires `unit_anomaly` because its units happen to be all-
+distinct). But neither is keyed on the actual mechanism — members from
+different program areas. A rule keyed on the symptom catches the easy cases
+and misses the clean ones (M1231). Keying on the mechanism (member TOP
+distribution) catches the class. When a rule "sort-of works," check whether
+it's measuring the cause or a side effect.
+
+**Implementation — mirrors `unit_anomaly` exactly.** `_build_mid_top_divergence(memberships)`
+pre-builds `{mid: {fams, labels, n}}` for ≥2-division M-IDs (keyed like
+`_build_mid_unit_modal`); `_classify_member_top_divergence(rec, mid_top_div)`
+applies the 0.30 floor; threaded through `_tags_for_mid` via a new
+`mid_top_div=` param. Penalty −0.15 on the discipline field (parallel to its
+sibling `top_discipline_disagreement`; conservative for a v1). Report-only
+`audit_detail` is attached to the full card (not slim `latest.json`) so the
+MD report can render a dedicated worst-offenders table with division splits +
+★ mis-disciplined flag, ranked mis-disciplined-first. Client mirror in
+`unified_courses.js`: penalty in `TAG_PENALTY_ON_DISCIPLINE`, tooltip label,
+a new `Triage:` option ("Cross-discipline over-merge (member TOP)"), + the
+`QS_TRIAGE` whitelist entry.
+
+**Current state + strategic roadmap.** This is a **measurement instrument**,
+not a fix — the deliverable was the count + ranked worst-offender queue so
+the team can pick the cleanup *lane* on evidence. The fix is a genuine fork:
+(a) **curation** — re-discipline / split worst offenders via the tab +
+Supabase overlay (additive, safe, but the overlay can't cleanly *split* an
+over-merged M-ID today), vs. (b) **discipline-aware re-mint** — fix
+`_seed_coci_minted_mids.py` to never conflate across divisions, re-mint under
+Rule 7 + the playbook (dry-run, alias map, atomic land). The root cause is in
+the minter, so (b) is the durable fix — but only justified once the count +
+shape say the population is systemic (it is: 1,299, 736 invisible). The next
+concrete step is Sam's call between curate-now and scope-the-re-mint.
+
+**Calibration follow-ons (next session, if pursued).** (1) Penalty may want
+to scale by severity — the 255 mis-disciplined cases (assigned ≠ plurality
+division) are provably wrong and could warrant a stronger dock than the
+uniform −0.15; some high-corroboration over-merges (MUSI M1512, 28 members)
+still score 0.88 "ready" because one −0.15 dock can't move a well-populated
+row. (2) A few cross-division sister pairs (Art↔Multimedia) could get a small
+family-pair suppression if curators report them as noise. (3) The auditor
+flags the M-ID; surfacing the same signal on the parent `coci_unified_courses`
+cluster rows (which the auditor doesn't currently score) is a follow-on if
+curators prefer browsing clusters. (4) The teased cohort-quality classifier —
+when this fires, suggest WHICH members are the intrusion (the minority-division
+ones) so a curator can split them off in one click — pairs naturally with the
+`unit_anomaly` "which member is the over-merge" idea.
 
 ---
 

@@ -296,6 +296,7 @@
     description_discipline_disagreement: "Course description's safe-phrase set points to a different discipline (≥2 mentions)",
     subject_collision_signal:         "SUBJ4 differs from the modal SUBJ4 for this discipline — Phase 1e re-mint will canonicalize",
     unit_anomaly:                     "typical_units represents <50% of member colleges — high unit variance, possible over-merge across different unit-load variants",
+    member_top_divergence:            "Member colleges' TOP codes span ≥2 broad divisions (≥30% minority) — cross-discipline over-merge: a generic title grouped courses from different program areas",
     merge_into_orphan:                "Curation merge_into target doesn't exist — pointer is dangling (data-integrity bug)",
   };
   // Mirror of kb/_row_audit.py's TAG_PENALTY_ON_DISCIPLINE +
@@ -308,6 +309,7 @@
     "top_discipline_disagreement":         0.15,
     "description_discipline_disagreement": 0.15,
     "generic_title_concrete_discipline":   0.20,
+    "member_top_divergence":               0.15,
   };
   var TAG_PENALTY_ON_UNITS = {
     "unit_anomaly": 0.20,
@@ -925,6 +927,7 @@
       "Description mismatch",
       "Generic title (can't justify discipline)",
       "Unit anomaly (high member-unit variance)",
+      "Cross-discipline over-merge (member TOP)",
       "Subject collision (Phase 1e re-mint target)",
       "Seed untouched (never reviewed)",
       "Orphan merge target (dangling pointer)",
@@ -939,6 +942,7 @@
       "Description mismatch":                 function (c) { return c.tags.indexOf("description_discipline_disagreement") >= 0; },
       "Generic title (can't justify discipline)": function (c) { return c.tags.indexOf("generic_title_concrete_discipline") >= 0; },
       "Unit anomaly (high member-unit variance)": function (c) { return c.tags.indexOf("unit_anomaly") >= 0; },
+      "Cross-discipline over-merge (member TOP)": function (c) { return c.tags.indexOf("member_top_divergence") >= 0; },
       "Subject collision (Phase 1e re-mint target)": function (c) { return c.tags.indexOf("subject_collision_signal") >= 0; },
       "Seed untouched (never reviewed)":      function (c) { return c.tags.indexOf("seed_untouched_discipline") >= 0; },
       "Orphan merge target (dangling pointer)": function (c) { return c.tags.indexOf("merge_into_orphan") >= 0; },
@@ -1518,6 +1522,7 @@
       "Any audit flag": 1, "3+ findings": 1,
       "Title mismatch (likely misassigned)": 1, "TOP mismatch": 1,
       "Description mismatch": 1, "Generic title (can't justify discipline)": 1,
+      "Cross-discipline over-merge (member TOP)": 1,
       "Subject collision (Phase 1e re-mint target)": 1,
       "Seed untouched (never reviewed)": 1, "Cluster issues": 1,
     };

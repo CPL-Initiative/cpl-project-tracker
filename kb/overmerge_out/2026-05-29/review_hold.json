@@ -1,0 +1,528 @@
+{
+  "_about": "Flagged M-IDs HELD for curator veto — likely-legitimate interdisciplinary courses that span ≥2 TOP divisions on purpose. NOT split by the apply; they keep their old id. Held by EITHER a known sister-pair split (exactly 2 division groups whose disciplines form a SISTER_PAIRS entry) OR an interdisciplinary-compound title token.",
+  "_generated_by": "kb/_overmerge_dryrun.py",
+  "_generated_at": "2026-05-29",
+  "count": 52,
+  "by_reason": {
+    "sister_pair": 47,
+    "interdisciplinary_token": 5
+  },
+  "held": {
+    "ARTS M1014": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "COMPUTER GRAPHICS 2: 3D COMPUTER GRAPHICS",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "ARTS M1035": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "3D Texturing and Lighting",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "ARTS M1139": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "DIGITAL ART",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "ARTS M1187": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Digital Arts",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "ARTS M1312": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Computer Graphics",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "ARTS M1373": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Designing for the Web",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "ARTS M1450": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Fundamentals of Typography",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "BIOL M1205": {
+      "held": true,
+      "reason": "interdisciplinary_token",
+      "title": "Ethnobotany/Ethnoecology Lab",
+      "disciplines": [],
+      "tokens": [
+        "ethnobotany",
+        "ethnoecology"
+      ]
+    },
+    "BIOL M1206": {
+      "held": true,
+      "reason": "interdisciplinary_token",
+      "title": "Ethnoecology",
+      "disciplines": [],
+      "tokens": [
+        "ethnoecology"
+      ]
+    },
+    "BUSI M1126": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Microsoft Applications for Business",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": []
+    },
+    "BUSI M1190": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Business Information Systems",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": []
+    },
+    "BUSI M1412": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "MULTIMEDIA PRESENTATIONS---POWERPOINT",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": []
+    },
+    "BUSI M9024": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "ADVANCED MICROSOFT WORD",
+      "disciplines": [
+        "Business",
+        "Office Technologies"
+      ],
+      "tokens": []
+    },
+    "CISC M1043": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Microsoft Access: Comprehensive",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": []
+    },
+    "CISC M1078": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "ADVANCED WEB APPLICATION DEVELOPMENT",
+      "disciplines": [
+        "Computer Information Systems",
+        "Computer Science"
+      ],
+      "tokens": []
+    },
+    "CISC M1186": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Building Business Web Sites",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": []
+    },
+    "CISC M1377": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "DESIGNING WEB GRAPHICS",
+      "disciplines": [
+        "Computer Information Systems",
+        "Computer Science"
+      ],
+      "tokens": []
+    },
+    "CISC M1522": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to WordPress",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": []
+    },
+    "CISC M1575": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Server-Side Ruby Web Programming",
+      "disciplines": [
+        "Computer Information Systems",
+        "Computer Science"
+      ],
+      "tokens": []
+    },
+    "CISC M9047": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Business Web Graphics",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": []
+    },
+    "FIMS M1102": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Multimedia",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "FIRE M1348": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Health and Fitness for the Fire Service",
+      "disciplines": [
+        "Kinesiology",
+        "Physical Education"
+      ],
+      "tokens": []
+    },
+    "GRAF M1003": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Typography 2",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "GRAF M1014": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Advanced Typography",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "GRAF M1036": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Typography and Graphic Design",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "GRAF M1057": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Storyboarding",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "JOUR M1015": {
+      "held": true,
+      "reason": "interdisciplinary_token",
+      "title": "Basic Photojournalism",
+      "disciplines": [],
+      "tokens": [
+        "photojournalism"
+      ]
+    },
+    "JOUR M1094": {
+      "held": true,
+      "reason": "interdisciplinary_token",
+      "title": "Photojournalism",
+      "disciplines": [],
+      "tokens": [
+        "photojournalism"
+      ]
+    },
+    "KINE M1184": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Clinical Experiences in Athletic Training I",
+      "disciplines": [
+        "Kinesiology",
+        "Physical Education"
+      ],
+      "tokens": []
+    },
+    "KINE M1185": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Clinical Experiences in Athletic Training II",
+      "disciplines": [
+        "Kinesiology",
+        "Physical Education"
+      ],
+      "tokens": []
+    },
+    "KINE M1675": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Spinning",
+      "disciplines": [
+        "Kinesiology",
+        "Physical Education"
+      ],
+      "tokens": []
+    },
+    "MULT M1001": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "User Experience Design 1",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "MULT M1002": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "User Experience Design 2",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "MULT M1018": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "3D Animation and Modeling",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "MULT M1036": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Animation",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "MULT M1062": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Motion Graphics, Compositing and Visual Effects",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "MULT M1070": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Digital Illustration for Graphic Design I",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "MULT M1072": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Digital Illustration for Graphic Design II",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "MULT M1082": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "MOBILE GAME DESIGN",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "MULT M1084": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Graphic Design Studio II",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "MULT M1099": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Fundamentals of Digital Media",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "MULT M1100": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Digital Illustration II",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "MULT M1106": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Digital Painting",
+      "disciplines": [
+        "Graphic Arts",
+        "Multimedia"
+      ],
+      "tokens": []
+    },
+    "MUSI M1118": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "JAZZ LAB BAND",
+      "disciplines": [
+        "Commercial Music",
+        "Music"
+      ],
+      "tokens": []
+    },
+    "NUTR M1057": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Topics in Nutrition",
+      "disciplines": [
+        "Culinary Arts/Food Technology",
+        "Dietetics/Nutritional Science"
+      ],
+      "tokens": []
+    },
+    "OTEC M1036": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Advanced Excel",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": []
+    },
+    "OTEC M1078": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Beginning Word Processing",
+      "disciplines": [
+        "Business",
+        "Office Technologies"
+      ],
+      "tokens": []
+    },
+    "OTEC M1124": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Introduction to Computers and Keyboarding",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": []
+    },
+    "OTEC M1223": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Microsoft Project",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": []
+    },
+    "PHOT M1034": {
+      "held": true,
+      "reason": "interdisciplinary_token",
+      "title": "BEGINNING PHOTOJOURNALISM",
+      "disciplines": [],
+      "tokens": [
+        "photojournalism"
+      ]
+    },
+    "PHYS M9002": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "Adapted Body Conditioning",
+      "disciplines": [
+        "Kinesiology",
+        "Physical Education"
+      ],
+      "tokens": []
+    },
+    "VOCE M9045": {
+      "held": true,
+      "reason": "sister_pair",
+      "title": "COMPUTER LITERACY FOR COLLEGE",
+      "disciplines": [
+        "Computer Information Systems",
+        "Office Technologies"
+      ],
+      "tokens": []
+    }
+  }
+}
