@@ -9540,9 +9540,10 @@
             #tab-unified-courses .uc-export:hover { background:#0d2c52; }
             #tab-unified-courses .uc-summary { color:#6b7280; font-size:.82rem; margin-bottom:8px; }
             #tab-unified-courses .uc-table-wrap { overflow:auto; max-height:70vh; border:1px solid #e5e7eb; border-radius:8px; }
-            #tab-unified-courses table.uc-table { border-collapse:collapse; width:100%; font-size:.82rem; }
-            #tab-unified-courses .uc-table th { position:sticky; top:0; background:#0A2240; color:#C9A84C; text-align:center; vertical-align:middle; padding:8px 10px; white-space:nowrap; z-index:1; }
-            #tab-unified-courses .uc-table td { padding:6px 10px; border-top:1px solid #eef2f7; text-align:center; vertical-align:middle; }
+            #tab-unified-courses table.uc-table { border-collapse:collapse; width:100%; font-size:.78rem; }
+            /* #5 economize: tighter padding + wrappable headers so all columns fit a row */
+            #tab-unified-courses .uc-table th { position:sticky; top:0; background:#0A2240; color:#C9A84C; text-align:center; vertical-align:middle; padding:6px 6px; line-height:1.15; z-index:1; }
+            #tab-unified-courses .uc-table td { padding:4px 6px; border-top:1px solid #eef2f7; text-align:center; vertical-align:middle; }
             /* CSC-G: center-except-first per CSC-F prototype, with per-column
                opt-outs for the long-text identifier columns (Title col 3,
                Discipline col 4) where natural left-read beats centering. */
