@@ -1620,6 +1620,13 @@
     // training agency, quality flag. Display-override pattern: the original
     // KB key (r.unified_title) is immutable; overrides change the rendered
     // label only. Future PR-5 will promote overrides into real KB renames.
+    // Scaffolding (tr > td[colspan] > div.cr-expanded-body). Without these three
+    // declarations the very first append below threw a ReferenceError, which
+    // aborted the table render and left the tab blank on expand. Restored
+    // 2026-05-30 (matches the .cr-expanded / .cr-expanded-body CSS).
+    var tr = el("tr", { class: "cr-expanded" });
+    var td = el("td", { colspan: String(colSpan) });
+    var div = el("div", { class: "cr-expanded-body" });
     div.appendChild(renderCurationPanel(r));
 
     // ── Common-course identities articulating to this credential ──
