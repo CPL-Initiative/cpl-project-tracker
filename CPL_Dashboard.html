@@ -2508,8 +2508,8 @@
             <button class="cpl-tab" data-tab="budget" role="tab" aria-selected="false">Budget</button>
             <button class="cpl-tab" data-tab="vision-2030" role="tab" aria-selected="false">Vision 2030</button>
             <button class="cpl-tab" data-tab="unified-courses" role="tab" aria-selected="false">Common Course Reference</button>
-            <button class="cpl-tab" data-tab="canonical-subj4" role="tab" aria-selected="false">Common Subject Code</button>
-            <button class="cpl-tab" data-tab="credential-reference" role="tab" aria-selected="false">Credential Reference</button>
+            <button class="cpl-tab" data-tab="canonical-subj4" role="tab" aria-selected="false">Common Subjects Reference</button>
+            <button class="cpl-tab" data-tab="credential-reference" role="tab" aria-selected="false">Common Credential Reference</button>
             <button class="cpl-tab" data-tab="pipeline" role="tab" aria-selected="false">Pipeline</button>
             <button class="cpl-tab" data-tab="letters" role="tab" aria-selected="false">Letters</button>
         </nav>
@@ -9520,7 +9520,7 @@
             #tab-unified-courses .uc-beta-banner { background:#FFF6E0; border:1px solid #C9A84C; color:#7a5c00; padding:10px 14px; border-radius:8px; font-size:.9rem; margin-bottom:14px; }
             #tab-unified-courses h2 { margin-bottom:4px; }
             #tab-unified-courses .uc-sub { font-weight:400; color:#6b7280; font-size:1rem; }
-            #tab-unified-courses .uc-intro { color:#4b5563; margin:0 0 14px; max-width:70ch; }
+            #tab-unified-courses .uc-intro { color:#4b5563; margin:0 0 14px; }
             #tab-unified-courses .uc-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px; }
             #tab-unified-courses .uc-filter { padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; font-size:.85rem; background:#fff; }
             #tab-unified-courses input.uc-filter { min-width:200px; }
@@ -9595,7 +9595,7 @@
             #tab-canonical-subj4 .cs-banner { background:#FFF6E0; border:1px solid #C9A84C; color:#7a5c00; padding:10px 14px; border-radius:8px; font-size:.9rem; margin-bottom:14px; }
             #tab-canonical-subj4 h2 { margin-bottom:4px; }
             #tab-canonical-subj4 .cs-sub { font-weight:400; color:#6b7280; font-size:1rem; }
-            #tab-canonical-subj4 .cs-intro { color:#4b5563; margin:0 0 14px; max-width:75ch; }
+            #tab-canonical-subj4 .cs-intro { color:#4b5563; margin:0 0 14px; }
             #tab-canonical-subj4 .cs-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px; }
             #tab-canonical-subj4 .cs-filter { padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; font-size:.85rem; background:#fff; }
             #tab-canonical-subj4 input.cs-filter { min-width:200px; }
@@ -9708,7 +9708,7 @@
             #tab-canonical-subj4 .cs-scope-note { background:#F0F9FF; border:1px solid #BAE6FD; border-radius:8px; padding:10px 14px; margin:0 0 14px; font-size:.85rem; color:#0c4a6e; }
             #tab-canonical-subj4 .cs-scope-note strong { color:#075985; }
         </style>
-        <h2>Common Subject Code <span class="cs-stamp draft">Development Draft</span> <span class="cs-stamp">curator-edited</span><br><span class="cs-sub">— one shared 4-letter abbreviation per discipline</span></h2>
+        <h2>Common Subjects Reference <span class="cs-stamp draft">Development Draft</span> <span class="cs-stamp">curator-edited</span><br><span class="cs-sub">— one shared 4-letter abbreviation per discipline</span></h2>
         <p class="cs-intro"><strong>This is a development draft — nothing here is final.</strong> Different colleges abbreviate the same discipline different ways. Sign Language American shows up across 10 different codes (ASL, AMSL, DEAF, SIGN, …); Physical Education across 71. This page picks <strong>one 4-letter code per discipline</strong> so the dashboard uses a single, consistent label everywhere. Click the <strong>Common SUBJ</strong> cell on a row to set or change a code, add notes if you'd like, then a faculty validator confirms when you're done.</p>
         <div class="cs-scope-note">
             <strong>Scope.</strong> Common Subject Codes are used <strong>for CPL crosswalk purposes only</strong> — they let colleges find and adopt each other's articulation decisions without getting tangled in subject-code variations. They are not a claim of equivalence with CCN, CID, or any official credentialing system. <strong>Discipline names</strong> on this page come directly from the <a href="https://www.cccco.edu/-/media/CCCCO-Website/Files/Educational-Services-and-Support/Curriculum/MQ-Handbook" target="_blank" rel="noopener">CCC 2025-26 Minimum Qualifications Handbook</a> — the authoritative source for who's qualified to teach what in California Community Colleges.
@@ -9770,7 +9770,7 @@
         <style>
             #tab-credential-reference h2 { margin-bottom:4px; }
             #tab-credential-reference .cr-sub { font-weight:400; color:#6b7280; font-size:1rem; }
-            #tab-credential-reference .cr-intro { color:#4b5563; margin:0 0 14px; max-width:75ch; }
+            #tab-credential-reference .cr-intro { color:#4b5563; margin:0 0 14px; }
             #tab-credential-reference .cr-stamp { display:inline-block; font-size:.7rem; color:#92400e; background:#FEF3C7; border:1px solid #F59E0B; padding:2px 8px; border-radius:10px; margin-left:8px; vertical-align:middle; font-weight:600; }
             #tab-credential-reference .cr-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px; }
             #tab-credential-reference .cr-filter { padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; font-size:.85rem; background:#fff; }
@@ -9916,7 +9916,7 @@
             .cr-toast.err { background:#991b1b; }
         </style>
 
-        <h2>Credential Reference
+        <h2>Common Credential Reference
             <span class="cr-stamp">Development Draft</span>
         </h2>
         <p class="cr-sub">Curator surface for the credential-identity layer (kb/unified_titles.json + kb/credentials.json).</p>
