@@ -6476,11 +6476,12 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
             ],
         )
 
-    # ── 8. Statewide Exhibit Adoption (dynamic — powered by statewide_data.js) ──
-    statewide_card = ""
-    statewide_data = tables.get("statewide_adoption", [])
-    if statewide_data:
-        statewide_card = '<div id="statewide-interactive-container" style="margin-top:2rem;"></div>\n'
+    # ── 8. Statewide Exhibit Adoption — MOVED 2026-05-30 to its own top-level tab
+    # (#tab-exhibit-adoption, "Exhibit Adoption & Credit Recommendations"). The
+    # mount point #statewide-interactive-container now lives statically in that
+    # pane and is populated by statewide_interactive.js (it finds the node by id),
+    # so it is no longer injected into the CPL Analytics body. The statewide_data.js
+    # export below is unchanged.
 
     # ── Assemble section as a collapsible wrapper that mirrors the KPI Metrics chrome ──
     gen_at = tables.get("generated_at", "")
@@ -6502,7 +6503,6 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
         f'            {top_card}\n'
         f'            {abc_card}\n'
         '        </div>\n'
-        + (f'        {statewide_card}\n' if statewide_card else '')
         + '    </div>\n'
         '</div>\n'
     )
