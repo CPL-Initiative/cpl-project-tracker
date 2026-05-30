@@ -21,25 +21,26 @@ college's articulation decision to the rest of the system.
 The whole ecosystem, end-to-end:
 
 1. **The public dashboard** (GitHub Pages) — KPI cards, project cards, CPL
-   Analytics (including an **Exhibit Adoption & Credit Recommendations**
-   table that groups cards by unified credential identity: each card shows
-   the canonical title in bold + issuing-agency subtitle, a confidence /
+   Analytics, plus a dedicated **Exhibit Adoption & Credit Recommendations**
+   tab (moved out of CPL Analytics into its own top-level tab 2026-05-30)
+   that groups cards by unified credential identity: each card shows the
+   canonical title in bold + issuing-agency subtitle, a confidence /
    quality-flag badge when the underlying classification is shaky, and an
-   "Also entered as N variants" disclosure that exposes every raw MAP
-   title folded into the card — 28% collapse vs raw IDs as of 2026-05-26),
+   "Also entered as N variants" disclosure that exposes every raw MAP title
+   folded into the card (28% collapse vs raw IDs as of 2026-05-26),
    Workplan Activities & Projects, Annual Goals, Budget, Vision 2030, a
-   per-college **Common Course Reference** curation tab, a **Common Subject
-   Code** tab (faculty-facing per-discipline curation with validate workflow
+   per-college **Common Course Reference** curation tab, a **Common Subjects
+   Reference** tab (faculty-facing per-discipline curation with validate workflow
    + TOP/CTE/CIP columns + collapsible category groupings; Variants column
    shows the raw local college subject codes colleges actually use, sourced
-   from `kb/coci_minted_memberships.json`), a **Credential Reference** tab
+   from `kb/coci_minted_memberships.json`), a **Common Exhibit Reference** tab
    (sister to CCR, with edit-override curation landed in Cred-Ref PR-4), a
    **quick-start natural-language chat** widget on the first screen (Claude
-   API classifies your prompt to one of the 9 tabs **and** can pre-pop the
+   API classifies your prompt to one of the 10 tabs **and** can pre-pop the
    destination tab's filters — "review unclassified credentials" lands you
-   in Credential Reference with the unclassified-in-MAP queue already
+   in Common Exhibit Reference with the unclassified-in-MAP queue already
    filtered; "apprenticeship initiative" pre-fills the Dashboard search;
-   "subjects needing review" lands in Common Subject Code filtered to
+   "subjects needing review" lands in Common Subjects Reference filtered to
    needs-review), a **Letters** tab embedding the budget-support letter
    curator (iframe to `budget-support/web/curator.html`, passcode-gated),
    and a **Pipeline** progress board.
