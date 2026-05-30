@@ -938,6 +938,8 @@
     var fSource = sel("uc-source", "All sources", uniqSorted(rows.map(function (r) { return r.id_system; })));
     var fStatus = sel("uc-status", "All statuses", ["Verified", "Generated"]);
     var fDisc = sel("uc-disc", "All disciplines", uniqSorted(rows.map(function (r) { return r.disc; })));
+    // #8 SUBJ filter — subjects are per-row arrays (r.subj), so flatten before uniq.
+    var fSubj = sel("uc-subj", "All subjects", uniqSorted(rows.reduce(function (a, r) { if (r.subj) r.subj.forEach(function (s) { if (s) a.push(s); }); return a; }, [])));
     var fCredit = sel("uc-credit", "All credit statuses", uniqSorted(rows.map(function (r) { return r.credit; })));
     var fConf = sel("uc-conf", "Any confidence", ["high (≥0.85)", "medium (0.7–0.84)", "low (<0.7)"]);
     var fArtic = sel("uc-artic", "Adoption: any", ["Has earned articulation", "No articulation yet"]);
@@ -1009,7 +1011,7 @@
       ["✨ Suggested merges"]);
     suggestBtn.onclick = function () { openSuggestions(); };
 
-    [fKind, fSource, fStatus, fDisc, fCredit, fConf, fArtic, fOfficial, fProv, fTriage, search, flagged, blanksBtn, verifyAllBtn, suggestBtn, auth, syncBadge, auditStatus, exportBtn]
+    [fKind, fSource, fStatus, fDisc, fSubj, fCredit, fConf, fArtic, fOfficial, fProv, fTriage, search, flagged, blanksBtn, verifyAllBtn, suggestBtn, auth, syncBadge, auditStatus, exportBtn]
       .forEach(function (c) { toolbar.appendChild(c); });
 
     // Curation edits hit Supabase instantly but are only folded into git
@@ -1139,6 +1141,7 @@
       if (state.source && r.id_system !== state.source) return false;
       if (state.status && statusOf(r) !== state.status) return false;
       if (state.disc && r.disc !== state.disc && !(r.xdisc && r.xdisc.indexOf(state.disc) >= 0)) return false;
+      if (state.subj && !(r.subj && r.subj.indexOf(state.subj) >= 0)) return false;
       if (state.credit && r.credit !== state.credit) return false;
       if (state.conf && confTier(r.conf) !== state.conf) return false;
       var hasArt = (r.adopted && r.adopted.length) || (r.potential && r.potential.length);
@@ -1603,6 +1606,7 @@
     fTriage.onchange = function () { state.triage = this.value; render(); };
     fStatus.onchange = function () { state.status = this.value; render(); };
     fDisc.onchange = function () { state.disc = this.value; render(); };
+    fSubj.onchange = function () { state.subj = this.value; render(); };
     fCredit.onchange = function () { state.credit = this.value; render(); };
     fConf.onchange = function () { state.conf = this.value.split(" ")[0]; render(); };
     fArtic.onchange = function () { state.artic = this.value; render(); };

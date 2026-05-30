@@ -517,6 +517,15 @@
     // dropdown is handled by the browser, so there's no race with our state.
     search.oninput = function () { state.search = this.value.toLowerCase(); render(); };
     tb.appendChild(search);
+    // #8 SUBJ filter — match canonical SUBJ4 or any local subject code/variant.
+    var subjSearch = el("input", {
+      class: "cs-filter", id: "cs-subj-search", type: "search",
+      placeholder: "SUBJ code…", autocomplete: "off", style: "min-width:120px;",
+      title: "Filter by canonical SUBJ4 or any local subject code",
+    });
+    subjSearch.value = state.subj || "";
+    subjSearch.oninput = function () { state.subj = this.value.trim(); render(); };
+    tb.appendChild(subjSearch);
     // Auth widget — populated by renderAuth() so async sign-in/out flows
     // don't have to rebuild the whole toolbar (and clobber search focus).
     tb.appendChild(el("span", { id: "cs-auth", class: "cs-auth" }));
@@ -653,6 +662,13 @@
 
     var filtered = allRows.filter(function (e) {
       if (state.search && e.discipline.toLowerCase().indexOf(state.search) < 0) return false;
+      if (state.subj) {
+        var sq = state.subj.toUpperCase();
+        var subjHit = (e.canonical_subj4 || "").toUpperCase().indexOf(sq) >= 0
+          || (e.data_modal || "").toUpperCase().indexOf(sq) >= 0
+          || Object.keys(variantsFor(e)).some(function (s) { return s.toUpperCase().indexOf(sq) >= 0; });
+        if (!subjHit) return false;
+      }
       return passesFilter(e);
     });
     filtered = sortRows(filtered);
