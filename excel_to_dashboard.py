@@ -5316,6 +5316,17 @@ def export_unified_courses():
         c = curation.get(cid)
         return (c.get("discipline") or base) if c else base
 
+    def xdisc_of(cid):
+        # Secondary (cross-listed) disciplines from curation — a comma-separated
+        # MQ-discipline string -> list. Lets one course list under two disciplines
+        # (same number) without changing its primary `discipline`. None when unset.
+        c = curation.get(cid)
+        v = c.get("cross_listed_disciplines") if c else None
+        if not v:
+            return None
+        parts = [p.strip() for p in str(v).split(",") if p.strip()]
+        return parts or None
+
     def reviewed_by_of(cid):
         return (curation.get(cid) or {}).get("reviewed_by")
 
@@ -5386,7 +5397,7 @@ def export_unified_courses():
             continue
         ad, pot = rollup([mid])
         rows.append(_add_prov({"kind": "Course", "id": mid, "title": v.get("common_title"),
-                     "disc": disc_of(mid, v.get("discipline")), "credit": v.get("credit_status"),
+                     "disc": disc_of(mid, v.get("discipline")), "xdisc": xdisc_of(mid), "credit": v.get("credit_status"),
                      "units": v.get("typical_units"), "top": v.get("top_code"),
                      "subj": [v["subject"]] if v.get("subject") else [],
                      "members": v.get("corroboration_members"), "conf": v.get("confidence"),
@@ -6026,7 +6037,7 @@ def export_unified_courses():
         if sid in merge_into or sid in merge_members:
             continue
         sa_rows.append(_add_prov({"kind": "Stand-Alone", "id": sid, "title": v.get("common_title"),
-                        "disc": disc_of(sid, v.get("discipline")), "credit": v.get("credit_status"),
+                        "disc": disc_of(sid, v.get("discipline")), "xdisc": xdisc_of(sid), "credit": v.get("credit_status"),
                         "units": v.get("typical_units"), "top": v.get("top_code"),
                         "subj": [v["subject"]] if v.get("subject") else [],
                         "members": 1, "conf": v.get("confidence"),

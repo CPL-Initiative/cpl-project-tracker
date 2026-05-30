@@ -34,7 +34,12 @@ KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 # unified id) + `unified_title` (canonical title on the target) drive the
 # reviewer "Generate unified course" consolidation. `description` is the
 # editable course description surfaced in the row-details modal.
-FIELDS = {"discipline", "merge_into", "unified_title", "description"}
+# `cross_listed_disciplines` (comma-separated MQ disciplines) adds SECONDARY
+# disciplines to a row without changing its primary `discipline` — for courses
+# that genuinely belong to two areas (e.g. "Agricultural Accounting" =
+# Agriculture + Business). Same course number; additive, no re-mint.
+FIELDS = {"discipline", "merge_into", "unified_title", "description",
+          "cross_listed_disciplines"}
 
 
 def fetch_rows():
