@@ -1,9 +1,41 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-05-29T20:20:28Z",
-  "count": 7,
+  "_synced_at": "2026-05-30T11:47:39Z",
+  "count": 48,
   "curations": {
+    "ARTS M10BJ": {
+      "merge_into": "ARTS M1159",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:44:46.536545+00:00"
+    },
+    "ARTS M1159": {
+      "unified_title": "History of Modern Art",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:44:46.536545+00:00",
+      "discipline": "Art History"
+    },
+    "ARTS M1160": {
+      "merge_into": "ARTS M1159",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:44:46.536545+00:00"
+    },
+    "ARTS M11AH": {
+      "merge_into": "ARTS M1201",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:44:12.663107+00:00"
+    },
+    "ARTS M1201": {
+      "unified_title": "Ceramics Beginning Handbuilding",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:44:12.663107+00:00",
+      "discipline": "Ceramic Technology"
+    },
+    "ARTS M1202": {
+      "merge_into": "ARTS M1201",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:44:12.663107+00:00"
+    },
     "AUTB M1002": {
       "merge_into": "UC-CUR-MPG029OM",
       "reviewed_by": "map@rccd.edu",
@@ -24,6 +56,37 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T19:22:55.870894+00:00"
     },
+    "BUSI M1170": {
+      "unified_title": "Entrepreneurship and Small Business Management",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:45:04.930041+00:00",
+      "discipline": "Business"
+    },
+    "BUSI M1171": {
+      "merge_into": "BUSI M1170",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:45:04.930041+00:00"
+    },
+    "BUSI M1172": {
+      "merge_into": "BUSI M1170",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:45:04.930041+00:00"
+    },
+    "COUN M1045": {
+      "unified_title": "College and Career Success",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:45:05.405159+00:00"
+    },
+    "COUN M10JJ": {
+      "merge_into": "COUN M1045",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:45:05.405159+00:00"
+    },
+    "COUN M10JK": {
+      "merge_into": "COUN M1045",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:45:05.405159+00:00"
+    },
     "DRAF M1002": {
       "discipline": "Drafting/CADD",
       "reviewed_by": "map@rccd.edu",
@@ -33,6 +96,156 @@
       "discipline": "Electricity",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-22T16:42:00.670793+00:00"
+    },
+    "ENGL M10WP": {
+      "merge_into": "ENGL M1217",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:41:29.977439+00:00"
+    },
+    "ENGL M10YQ": {
+      "merge_into": "ENGL M1367",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:41:44.880094+00:00"
+    },
+    "ENGL M11HY": {
+      "merge_into": "ENGL M1367",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:41:44.880094+00:00"
+    },
+    "ENGL M11HZ": {
+      "merge_into": "ENGL M1367",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:41:44.880094+00:00"
+    },
+    "ENGL M1217": {
+      "unified_title": "Writing in Creative Nonfiction",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:41:29.977439+00:00",
+      "discipline": "English"
+    },
+    "ENGL M1218": {
+      "merge_into": "ENGL M1217",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:41:29.977439+00:00"
+    },
+    "ENGL M1219": {
+      "merge_into": "ENGL M1217",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:41:29.977439+00:00"
+    },
+    "ENGL M1367": {
+      "unified_title": "Introduction to Shakespeare (The Drama)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:41:44.880094+00:00",
+      "discipline": "English"
+    },
+    "HIST M10CQ": {
+      "merge_into": "HIST M1152",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:04.429467+00:00"
+    },
+    "HIST M10RS": {
+      "merge_into": "HIST M1152",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:04.429467+00:00"
+    },
+    "HIST M1147": {
+      "merge_into": "HIST M1152",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:04.429467+00:00"
+    },
+    "HIST M1152": {
+      "unified_title": "History of Western (European) Civilization",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:04.429467+00:00",
+      "discipline": "History"
+    },
+    "PHYS M10NM": {
+      "merge_into": "PHYS M1265",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
+    },
+    "PHYS M11RE": {
+      "merge_into": "PHYS M1265",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
+    },
+    "PHYS M11WA": {
+      "merge_into": "PHYS M1265",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
+    },
+    "PHYS M1265": {
+      "unified_title": "Body Conditioning and Physical Fitness (Intermediate)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00",
+      "discipline": "Physical Education"
+    },
+    "REAL M1017": {
+      "unified_title": "Legal Aspects of Real Estate",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:43:10.485612+00:00",
+      "discipline": "Real Estate"
+    },
+    "REAL M1018": {
+      "merge_into": "REAL M1017",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:43:10.485612+00:00"
+    },
+    "REAL M1019": {
+      "merge_into": "REAL M1017",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:43:10.485612+00:00"
+    },
+    "REAL M10AE": {
+      "merge_into": "REAL M1017",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:43:10.485612+00:00"
+    },
+    "UC-00328": {
+      "merge_into": "ARTS M1159",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:44:46.536545+00:00"
+    },
+    "UC-00353": {
+      "merge_into": "REAL M1017",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:43:10.485612+00:00"
+    },
+    "UC-00432": {
+      "merge_into": "ARTS M1201",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:44:12.663107+00:00"
+    },
+    "UC-00527": {
+      "merge_into": "PHYS M1265",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
+    },
+    "UC-00546": {
+      "merge_into": "BUSI M1170",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:45:04.930041+00:00"
+    },
+    "UC-00594": {
+      "merge_into": "COUN M1045",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:45:05.405159+00:00"
+    },
+    "UC-00676": {
+      "merge_into": "HIST M1152",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:04.429467+00:00"
+    },
+    "UC-00796": {
+      "merge_into": "ENGL M1217",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:41:29.977439+00:00"
+    },
+    "UC-01273": {
+      "merge_into": "ENGL M1367",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:41:44.880094+00:00"
     },
     "UC-CUR-MPG029OM": {
       "unified_title": "Advanced Auto Body Collision and Damage Repair",
