@@ -37,6 +37,7 @@
     {hash: 'unified-courses',      label: 'Common Course Reference',  desc: 'Curate common-course identities (CCN-ID / C-ID / M-ID), disciplines, descriptions'},
     {hash: 'canonical-subj4',      label: 'Common Subjects Reference',      desc: 'Curate the 4-letter subject code per MQ discipline'},
     {hash: 'credential-reference', label: 'Common Exhibit Reference',     desc: 'Curate exhibit/credential identities — unified credential names, issuing agencies'},
+    {hash: 'exhibit-adoption',     label: 'Exhibit Adoption',     desc: 'Statewide CPL exhibit adoption & credit recommendations by unified credential identity'},
     {hash: 'pipeline',             label: 'Pipeline',                 desc: 'Data pipeline reference / methodology'},
     {hash: 'letters',              label: 'Letters',                  desc: 'Budget support letter curator — edits campaign letter blocks (passcode-gated)'},
   ];
