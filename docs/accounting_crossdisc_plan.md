@@ -9,7 +9,7 @@ artifacts:
 related:
   - CLAUDE.md Rule 7 (re-mint playbook)
   - docs/coursecontrolnumber_remint.md
-status: safe-set APPLIED; cross-disciplinary set BLOCKED on 2 decisions
+status: safe-set APPLIED; cross-disciplinary set APPLIED (capability + 26 rows) — see Resolution
 ---
 
 # Accounting discipline cleanup
@@ -87,20 +87,29 @@ under **Office Technologies**. Office Tech *is* a legitimate home for computeriz
 accounting, so this is genuinely "defensible either way": **similar** (cross-list
 Office Tech + Business) vs **not aligned** (→ Business single) vs **leave** (Office Tech).
 
-## Two decisions needed before I apply the cross-disciplinary set
+## Decisions — RESOLVED & APPLIED (2026-05-30, Sam via AskUserQuestion)
 
-1. **Cross-list mechanic.** "Same number, both disciplines" is **not natively
-   representable** in the staging M-ID layer (one `discipline` per row; SUBJ4 is
-   tied to discipline). The *curated anchor* layer already has a
-   `cross_listing_group` field, but staging rows don't.
-   - **(rec) Add a lightweight `cross_listed_disciplines` array** to staging rows
-     → CCR shows "Business + Agriculture", **no renumber, no Rule-7**. Small,
-     reversible, additive (renderer + auditor + filter touch-ups).
-   - Promote cross-listed courses into the curated anchor layer (heavier, firewalled).
-   - Defer cross-listing → pick a single best discipline per course for now.
+1. **Cross-list mechanic → add a `cross_listed_disciplines` field.** Lightweight
+   secondary-discipline array on staging rows (comma-separated MQ disciplines);
+   CCR shows "Office Technologies + Business". Same course number, **no renumber,
+   no Rule-7**, reversible. Built this PR: `kb/_apply_curation.py` FIELDS +=
+   `cross_listed_disciplines`; generator `xdisc_of()` emits `xdisc` on M-ID +
+   singleton rows; `unified_courses.js` renders a "+ Business" chip and the
+   discipline filter matches primary OR cross-listed.
 
-2. **Bucket 3 classification** (Office-Tech QuickBooks/accounting): similar
-   (cross-list) / not-aligned (→ Business) / leave as Office Technologies.
+2. **Bucket 3 → cross-list Office Technologies + Business** (treated as "similar").
+
+**Applied to Supabase `kb_curation` (26 rows, reviewer=MAP@rccd.edu):**
+- Bucket 1 (not aligned → Business, single): `CISC M9029/M9030/M12GG/M90AQ`
+  `discipline=Business`.
+- `AUTB M10BJ` (mis-mapped "Auto Body") → `discipline=Agriculture` +
+  `cross_listed_disciplines=Business`.
+- Bucket 2 (domain-fused, primary kept) + Bucket 3 (Office-Tech): 20 rows
+  `cross_listed_disciplines=Business` (AGRI/AUTO/CULN×2/ENTR×2/MGMT + 13 OTEC).
+
+Activation: the cross-list chips + Business reassignments show in the CCR after
+the next daily `_apply_curation.py` cron mirrors the overlay and regenerates
+`unified_courses_data.js` (client no-ops gracefully until then).
 
 ## Rule-7 note on renumbering
 "Numbers in the order that best fits surrounding courses" = re-keying minted

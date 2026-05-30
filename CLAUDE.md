@@ -733,6 +733,20 @@ session resuming the build — read it before touching `kb/` or the curation tab
    - **CURATED ANCHOR — firewalled, do NOT bulk-edit:** `common_courses.json` +
      `course_crosswalk.json` are a small hand-reviewed quality anchor. NEVER
      bulk-merge staging into them; promote individual entries only after review.
+     **Anchor curation affordances (PR #198 + follow-up, 2026-05-30):** anchors now
+     surface their `discipline_provisional` sub-area in the CCR (e.g. Business →
+     Accounting; generator emits `disc_prov` on anchor rows). They stay read-only,
+     but a signed-in reviewer can **propose** a correction — written to a
+     `kb_curation` row with field **`anchor_discipline_proposal`** (deliberately
+     EXCLUDED from `_apply_curation.py` FIELDS, so it never folds into the overlay
+     or overwrites `common_courses.json`); shown as a public "✎ proposed" badge until
+     a maintainer promotes it. **Cross-listing** (a course under two disciplines, same
+     number) uses the new `kb_curation` field **`cross_listed_disciplines`**
+     (comma-separated MQ disciplines, IN `_apply_curation.py` FIELDS) — generator
+     `xdisc_of()` emits `xdisc` on M-ID/singleton rows, CCR shows a "+ Discipline"
+     chip and the discipline filter matches primary OR cross-listed. Additive, same
+     number, no re-mint. (Used for the cross-disciplinary accounting cleanup —
+     `docs/accounting_crossdisc_plan.md`.)
    - **Reference authorities (read-only):** `reference/cid_descriptors.json`,
      `ccn_courses.json`, `mq_disciplines.json` (official MQ discipline
      vocabulary), `reference/coci_courses.json` (authoritative C-ID/CCN courses

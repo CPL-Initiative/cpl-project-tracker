@@ -1138,7 +1138,7 @@
       if (state.kind && r.kind !== state.kind) return false;
       if (state.source && r.id_system !== state.source) return false;
       if (state.status && statusOf(r) !== state.status) return false;
-      if (state.disc && r.disc !== state.disc) return false;
+      if (state.disc && r.disc !== state.disc && !(r.xdisc && r.xdisc.indexOf(state.disc) >= 0)) return false;
       if (state.credit && r.credit !== state.credit) return false;
       if (state.conf && confTier(r.conf) !== state.conf) return false;
       var hasArt = (r.adopted && r.adopted.length) || (r.potential && r.potential.length);
@@ -1279,6 +1279,15 @@
         } else {
           var node = el("span", r.locked ? { title: "Curated common-course anchor — official discipline (read-only; firewalled). Sign in and use “propose correction” to suggest a change." } : {}, [v]);
           td.appendChild(node);
+        }
+        // Cross-listed (secondary) disciplines — same course, listed under both
+        // (e.g. Business + Agriculture). Additive curation; primary disc unchanged.
+        if (r.xdisc && r.xdisc.length) {
+          r.xdisc.forEach(function (xd) {
+            td.appendChild(el("span", { style: "margin-left:5px;font-size:.72rem;color:#1e40af;background:#dbeafe;border:1px solid #bfdbfe;border-radius:4px;padding:0 5px;white-space:nowrap;",
+              title: "Cross-listed discipline — this course is listed under both “" + (r.disc || "—") + "” and “" + xd + "” (same course number)." },
+              ["+ " + xd]));
+          });
         }
         // A: curated sub-area (e.g. Business → Accounting). Only anchors carry a
         // refining discipline_provisional; the broad MQ discipline stays official.
