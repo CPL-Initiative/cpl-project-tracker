@@ -49,22 +49,33 @@
         .header {
             background-color: var(--navy-primary);
             color: var(--white);
-            padding: 2rem;
-            text-align: center;
+            padding: 0.5rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.1rem 0.9rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .header h1 {
-            font-size: 2rem;
+            font-size: 1.2rem;
             color: var(--white);
-            margin-bottom: 0.5rem;
+            margin: 0;
+            white-space: nowrap;
         }
 
         .header .subtitle {
-            font-size: 1rem;
+            font-size: 0.82rem;
             color: var(--light-blue);
-            margin-bottom: 1rem;
+            margin: 0;
         }
+
+        /* Header collapsed to a slim one-line bar (#4) — neutralize the
+           generator's inline centering margin so the project-description
+           toggle + attachments sit inline rather than stacking. */
+        .header .project-description { margin: 0 !important; max-width: none !important; }
+        .header .project-description > summary { font-size: 0.78rem; }
 
         .header .last-updated {
             font-size: 0.9rem;
