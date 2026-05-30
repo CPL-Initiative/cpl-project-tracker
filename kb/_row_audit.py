@@ -3,7 +3,7 @@ Row-level Trust-Card auditor for the Unified Courses tab (UCL).
 
 Purpose
 -------
-Every M-ID (and every curator-formed Cluster) is a draft Model Curriculum
+Every M-ID (and every curator-formed Unified merge target) is a draft Model Curriculum
 (MC) in waiting. We deliberately say MC, NOT TMC: Transfer Model Curriculum
 implies intersegmental transferability (CCC/CSU/UC agreement via CIAC), and
 M-IDs are intentionally NOT a transferability claim — they're CPL articulation
@@ -15,7 +15,7 @@ the Unified Course catalog (alias-tracked, same Rule 7 / re-mint playbook).
 Before a row is put in front of discipline faculty for
 adoption-of-a-cross-college-articulation review, the data on the row needs
 to be either real, transparently aggregated, or transparently synthetic. The
-auditor walks every M-ID + Cluster, classifies each field, and writes a
+auditor walks every M-ID + Unified merge target, classifies each field, and writes a
 per-row Trust Card with two scores:
 
   * faculty_trust_score — is the row trustworthy enough that a discipline
@@ -41,7 +41,7 @@ are emitted on every fix-able field in the shape that _apply_curation.py
 already understands, so a future Phase 1b "Repair from members" curate action
 can consume them without rework.
 
-Scope: M-ID + Cluster only (singletons out of scope for Phase 1a — they're
+Scope: M-ID + Unified merge targets only (singletons out of scope for Phase 1a — they're
 the suggested-merges worklist's job, not this auditor's). C-ID/CCN reference
 anchors are excluded too; they're upstream authority.
 
@@ -338,7 +338,7 @@ def _apply_curation_overlay(card, fields, curation_entry):
 
 
 # ─── cluster aggregation ─────────────────────────────────────────────────────
-# A Cluster row (UC-CUR-* / curator-defined merge target) renders with
+# A Unified merge-target row (UC-CUR-* / curator-defined merge target) renders with
 # credit/units/top/conf hardcoded to None in excel_to_dashboard.py:4357.
 # Its members ARE M-IDs / singletons whose fields are already populated.
 # So we aggregate from members for these blanked fields.
@@ -397,7 +397,7 @@ def _agg_confidence(members_recs):
 
 
 def _classify_cluster_fields(cluster_id, members_ids, courses, singletons):
-    """Build a Cluster row's faculty_fields by walking its members."""
+    """Build a Unified merge-target row's faculty_fields by walking its members."""
     members_recs = [(courses.get(m) or singletons.get(m),
                      "mid" if m in courses else ("singleton" if m in singletons else None))
                     for m in members_ids]
@@ -1276,12 +1276,12 @@ def main():
             }
         cards.append(card)
 
-    # ── Clusters ──────────────────────────────────────────────────────
+    # ── Unified merge targets ─────────────────────────────────────────
     for cluster_id, members in cluster_members.items():
         cur = curation.get(cluster_id) or {}
         agg_fields, n_resolved, n_dropped = _classify_cluster_fields(
             cluster_id, members, courses, singletons)
-        # Cluster discipline comes from curation if present (it's the curator's
+        # Unified-row discipline comes from curation if present (it's the curator's
         # chosen unified discipline), else from majority of members.
         if cur.get("discipline"):
             agg_fields["discipline"] = {"state": "curated", "value": cur["discipline"]}
@@ -1299,8 +1299,8 @@ def main():
         f_score, m_score = _compute_scores(agg_fields, _virtual_mc(mc), tags=tags)
         card = {
             "row_id": cluster_id,
-            "row_kind": "Cluster",
-            "id_system": "Cluster",
+            "row_kind": "Unified",
+            "id_system": "Unified",
             "title": cur.get("unified_title"),
             "leverage": {
                 "members": n_resolved,
@@ -1339,7 +1339,7 @@ def _build_cluster_fix(cluster_id, fields):
         return None
     return {
         "type": "aggregate_from_members",
-        "rationale": "Cluster row was rendered with blank fields; members carry "
+        "rationale": "Unified merge-target row was rendered with blank fields; members carry "
                      "consistent enough values to synthesize a representative.",
         "apply": apply_map,
     }
@@ -1354,7 +1354,7 @@ def _write_outputs(cards):
     #
     #   latest.json — slim, committed. One terse "summary" record per row
     #     (short keys for size), PLUS full breakdowns inlined for every
-    #     Cluster row (small population, large per-row value). This is what
+    #     Unified merge-target row (small population, large per-row value). This is what
     #     the Phase 1b UI consumes and what git captures day-to-day.
     #
     #   <date>.full.json — heavy, gitignored. Every card with its full
@@ -1365,7 +1365,7 @@ def _write_outputs(cards):
     metadata = {
         "_generated_at": NOW_ISO,
         "_generated_by": "kb/_row_audit.py (Phase 1a — trust-card auditor)",
-        "_scope": "M-ID + Cluster only (singletons excluded; C-ID/CCN reference anchors excluded)",
+        "_scope": "M-ID + Unified merge targets only (singletons excluded; C-ID/CCN reference anchors excluded)",
         "_rules_active": [
             "seed_untouched_discipline", "blank_discipline", "blank_description",
             "subject_spread_high_low_confidence", "mid_id_off_scheme",
@@ -1389,7 +1389,7 @@ def _write_outputs(cards):
         "_readiness_tiers": READINESS_TIERS,
         "_summary_schema": {
             "id":   "row_id",
-            "k":    "row_kind ('C'=Course, 'X'=Cluster)",
+            "k":    "row_kind ('C'=Course, 'X'=Unified merge target)",
             "lev":  "leverage.members",
             "fts":  "faculty_trust_score",
             "mcs":  "mc_ready_score (Model Curriculum readiness)",
@@ -1410,10 +1410,10 @@ def _write_outputs(cards):
             "mcr":  c["mc_readiness"],
             "tags": c["tags"],
         }
-        # Clusters: also inline the full breakdown — there are only a handful,
-        # and Phase 1b's "Repair from members" action needs the suggested_fix
-        # payload and the per-field state.
-        if c["row_kind"] == "Cluster":
+        # Unified merge targets: also inline the full breakdown — there are only
+        # a handful, and Phase 1b's "Repair from members" action needs the
+        # suggested_fix payload and the per-field state.
+        if c["row_kind"] == "Unified":
             s["title"] = c.get("title")
             s["faculty_fields"] = c["faculty_fields"]
             s["members"] = c.get("members")
@@ -1443,7 +1443,7 @@ def _write_outputs(cards):
     s = summary_payload["stats"]
     print(f"[row_audit] {TODAY}: {s['total_cards']} cards "
           f"({s['by_kind'].get('Course', 0)} M-IDs, "
-          f"{s['by_kind'].get('Cluster', 0)} clusters)")
+          f"{s['by_kind'].get('Unified', 0)} unified merge targets)")
     print(f"           faculty readiness: {dict(s['faculty_readiness'])}")
     print(f"           mc readiness:      {dict(s['mc_readiness'])}")
     print(f"           top tag counts:    {dict(s['tag_counts'].most_common(10))}")
@@ -1565,10 +1565,10 @@ def _render_md(payload):
                          f"{c['faculty_trust_score']:.2f} | {split} | {title} |")
         lines.append("")
 
-    # ── Cluster spotlight (always small population) ───────────────────────
-    clusters = [c for c in payload["rows"] if c["row_kind"] == "Cluster"]
+    # ── Unified-merge-target spotlight (always small population) ──────────
+    clusters = [c for c in payload["rows"] if c["row_kind"] == "Unified"]
     if clusters:
-        lines.append("## All Clusters (full inventory)")
+        lines.append("## All Unified merge targets (full inventory)")
         lines.append("")
         for c in clusters:
             lines.append(f"### `{c['row_id']}` — {c.get('title') or '(no title)'}")

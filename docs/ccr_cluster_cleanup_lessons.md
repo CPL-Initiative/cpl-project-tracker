@@ -7,7 +7,9 @@ tags: [ccr, unified-courses, cluster, dissolution, curation-migration, supabase,
 artifacts:
   - kb/coci_unified_courses.json (clusters dict emptied)
   - kb/coci_curation.json (9 cluster-key merges → per-member)
-  - excel_to_dashboard.py (export_unified_courses cluster-load note)
+  - excel_to_dashboard.py (cluster-load note + _target_identity relabel)
+  - unified_courses.js (Kind/Source/QS/triage labels + doConsolidate relabel)
+  - kb/_row_audit.py (merge-target cards → "Unified")
   - archive/coci_unified_courses_clusters_2026-05-30_pre-dissolution.json
 related:
   - docs/kb-notes/methodology-retiring-an-auto-seeded-layer.md (the durable pattern)
@@ -29,12 +31,14 @@ are needed — hopefully, just eliminate the whole cluster category."
 - **Migrated** the 9 clusters that carried curator `merge_into` decisions to
   **per-member `merge_into`** rows in Supabase `kb_curation` + `coci_curation.json`
   BEFORE dissolving, so no curator decision was lost.
-- **Result:** CCR `id_system: Cluster` rows dropped from ~1,376 → **10**
-  (9 curator merge-target M-IDs + 1 `UC-CUR-*`). Those 10 come from the
-  `merge_members` path, NOT from `coci_unified_courses.json`.
-- **Open follow-on (Sam's call):** whether merge targets should keep the
-  `"Cluster"` label or revert to their native `id_system` (M-ID), which would
-  retire the category *name* entirely.
+- **Then RETIRED the category entirely** (same session, Sam: "no more clusters"):
+  the `merge_members` path no longer relabels targets "Cluster". Native-identity
+  targets (M-ID/C-ID/CCN) keep their `id_system` + `kind:"Course"` (9 rows); a
+  synthetic `UC-CUR-*` target (no pre-existing identity) gets the new
+  `id_system/kind: "Unified"` (1 row, grows with singleton-only merges).
+- **Result:** CCR `id_system: Cluster` rows: ~1,376 → **0**. The 9 former
+  cluster-target M-IDs now read as plain M-IDs (with members folded); the 1
+  synthetic course reads as "Unified".
 
 ## What the auto-seeded clusters were
 
@@ -108,16 +112,47 @@ they fired *because* the redundant cluster-key merges added unresolvable
   the auditor only ever saw the 10 curator clusters; the 1,376 auto-seeds were
   invisible to it. Disambiguate before "eliminating a category."
 
+## The relabel (Cluster category fully retired — same session)
+
+Sam's call after the dissolution: "no more clusters :)". The `merge_members`
+emission used to slap `kind/id_system: "Cluster"` on every merge target — which
+**overrode a real M-ID's identity** just because members were folded in. That
+was the actual mislabel. The fix, across three layers:
+
+- **Generator** (`excel_to_dashboard.py`): new `_target_identity(tgt)` →
+  native (`M-ID`/`C-ID`/`CCN-ID`, `kind:"Course"`) when the target resolves to a
+  real identity, else `("Unified","Unified")` for a synthetic `UC-CUR-*`. Wired
+  into the merge emission; `sys_order` + the two suggested-merge anchor filters
+  updated `"Cluster"` → `"Unified"`.
+- **Client** (`unified_courses.js`): Kind filter, Source/QS vocab, and the
+  triage label all `"Cluster"` → `"Unified"`; `doConsolidate()` mirrors the
+  generator (synthetic live-merge → "Unified", merge-into-existing keeps native).
+- **Auditor** (`kb/_row_audit.py`): merge-target cards `row_kind/id_system` →
+  `"Unified"`; report + scope strings updated. **Tag keys stay `cluster_*`** —
+  internal stable identifiers (like a column name); their human labels read
+  "Unified". The client matches the audit overlay by id, so the relabel is safe.
+
+**Lesson — one label, two mechanisms (again).** "Cluster" conflated (a) the
+auto-seeds and (b) merge-target relabeling. Killing the auto-seeds left the
+*second* mechanism still minting "Cluster". Fully retiring a category name means
+finding every *producer*, not just the obvious data source. Verified: 0 `Cluster`
+in `unified_courses_data.js`, the auditor, and `latest.json`.
+
+**Lesson — a synthetic identity needs a home label.** Merge targets split into
+"has a native identity" (revert to it) vs "synthetic, curator-minted" (`UC-CUR-*`).
+The first was mislabeled; the second genuinely needed a name → "Unified". Don't
+blanket-relabel; distinguish the two.
+
 ## Roadmap / next steps
 
-1. **Surface the merge-target-label follow-on to Sam.** Keep "Cluster" for
-   curator merges, or relabel them M-ID (retires the category name; touches the
-   `merge_members` emission at `excel_to_dashboard.py` ~5503 + the auditor's
-   cluster-from-merge logic + the CCR Kind filter).
-2. **Continue camping on the crosswalk** (Sam's stated intent): the
+1. **Continue camping on the crosswalk** (Sam's stated intent): the
    Suggested-merges worklist (`singleton_groups`, 1,350 candidates; 214
    same-college flagged) is now the front door for variant unification —
-   curator-confirmed, level-safe.
-3. If clusters never come back, consider removing the now-dead
+   curator-confirmed, level-safe. Confirmed singleton-only merges mint
+   `UC-CUR-*` "Unified" courses.
+2. If clusters never come back, consider removing the now-dead
    `coci_unified_courses.json` load + emission loops from the generator (kept
    for now as graceful no-ops + provenance).
+3. Auditor tag keys are still `cluster_*` (internal). A future rename to
+   `unified_*` would ripple to the client predicate, CLAUDE.md, and historical
+   audit files — low value, deferred.

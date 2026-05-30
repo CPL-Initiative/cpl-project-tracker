@@ -5010,7 +5010,7 @@ def export_credential_reference():
       - the canonical credential name (unified_title) + issuer + trainer
       - the predominant discipline + TOP code across articulations
       - whether ANY articulation is CCC Collaborative (statewide badge)
-      - per common-course identity (CCN-ID/C-ID/M-ID/Cluster) that articulates
+      - per common-course identity (CCN-ID/C-ID/M-ID/Unified) that articulates
         to this credential: identity + title + discipline + the local college
         course rows (subject/number/title) and earning colleges
 
@@ -5080,7 +5080,7 @@ def export_credential_reference():
                 "discipline": rec.get("discipline", "") or "",
                 "top": rec.get("top_code", "") or "",
                 "sys": rec.get("id_system") or rec.get("identity_system")
-                       or ("Cluster" if top_key == "clusters" else "M-ID"),
+                       or ("Unified" if top_key == "clusters" else "M-ID"),
             }
         del doc  # free the 28MB minted_courses promptly
 
@@ -5171,8 +5171,8 @@ def export_credential_reference():
                 "top": m.get("top", ""),
                 "local": local_list,
             })
-        # Order common-course identities: official first (CCN-ID, C-ID), then M-ID / Cluster.
-        sys_order = {"CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Cluster": 3}
+        # Order common-course identities: official first (CCN-ID, C-ID), then M-ID / Unified.
+        sys_order = {"CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3}
         articulations_out.sort(key=lambda x: (sys_order.get(x["sys"], 9), x["cid"]))
 
         audit_tags = dict(audit_tags_by_ut.get(ut, {}))
@@ -5292,10 +5292,13 @@ def export_unified_courses():
     # titles (collapsing distinct course levels, e.g. "Algebra 1: Part 2" == "Algebra 2:
     # Part 1"), were never curator-reviewed, double-emitted their members as Stand-Alone
     # rows, and carried zero articulations. Their job is now done — better — by the
-    # level-safe Suggested-merges worklist (curator-confirmed). The "Cluster" id_system
-    # that still appears in the CCR comes ONLY from the merge_members path below
-    # (curator merge targets / UC-CUR-*), a SEPARATE mechanism. The load is retained
-    # (empty) for provenance + so curation pointers / descriptions still resolve cleanly.
+    # level-safe Suggested-merges worklist (curator-confirmed). The "Cluster"
+    # id_system was RETIRED entirely (Session 19): curator merge targets in the
+    # merge_members path below now emit their NATIVE id_system (an M-ID gaining
+    # members is still that M-ID), and a synthetic curator-minted target with no
+    # pre-existing identity (UC-CUR-*) emits the new "Unified" id_system. The load
+    # is retained (empty) for provenance + so curation pointers / descriptions
+    # still resolve cleanly; the dead auto-cluster loops below no-op on the empty dict.
     clusters = (_load("coci_unified_courses.json") or {}).get("clusters", {})
     art_doc = _load("coci_articulations.json") or {}
     art_ident = art_doc.get("identities", {})
@@ -5493,11 +5496,30 @@ def export_unified_courses():
         factor = 0.85 if coherent else 0.70
         return round(min(1.0, mean / max(factor, 0.01)), 3)
 
+    # A curator merge target keeps its NATIVE identity (an M-ID gaining members is
+    # still that M-ID); only a synthetic, curator-minted target with no pre-existing
+    # identity (a `UC-CUR-*` from a singleton-only worklist merge) is a brand-new
+    # "Unified" course. The "Cluster" label was RETIRED 2026-05-30 (Session 19) — it
+    # used to override a real M-ID's identity just because members were folded in.
+    _ccn_id_set = {c.get("ccn") for c in ccn_courses if c.get("ccn")}
+
+    def _target_identity(tgt):
+        """(kind, id_system) for a merge target — its native identity when it has
+        one, else ('Unified', 'Unified') for a synthetic UC-CUR-* unified course."""
+        if tgt in cat or tgt in sg:
+            return "Course", "M-ID"
+        if tgt in cc:
+            return "Course", (cc[tgt].get("id_system") or "M-ID")
+        if tgt in _ccn_id_set:
+            return "Course", "CCN-ID"
+        return "Unified", "Unified"
+
     for tgt, members in sorted(merge_members.items()):
         cur = curation.get(tgt, {})
         # If the target is itself an existing course (merge INTO an M-ID/C-ID),
         # include it as a member so its title/subject/articulations are folded in.
         tgt_v = _member_v(tgt)
+        t_kind, t_idsys = _target_identity(tgt)
         all_members = ([tgt] if tgt_v else []) + list(members)
         member_recs = [_member_v(m) for m in all_members]
         subs = sorted({mv.get("subject") for mv in member_recs if mv.get("subject")})
@@ -5509,7 +5531,7 @@ def export_unified_courses():
         c_units,  _units_mixed = _agg_unanimous([mv.get("typical_units") for mv in member_recs])
         c_conf                 = _synth_cluster_conf(member_recs)
 
-        rows.append({"kind": "Cluster", "id": tgt,
+        rows.append({"kind": t_kind, "id": tgt,
                      "title": cur.get("unified_title") or _member_title(tgt) or (variants[0] if variants else tgt),
                      "disc": cur.get("discipline") or tgt_v.get("discipline"),
                      "credit": cur.get("credit_status") or c_credit,
@@ -5517,7 +5539,7 @@ def export_unified_courses():
                      "top":    cur.get("top_code")      or c_top,
                      "subj": subs, "members": len(all_members),
                      "conf": cur.get("confidence_override") if cur.get("confidence_override") is not None else c_conf,
-                     "id_system": "Cluster", "locked": False, "title_variants": variants,
+                     "id_system": t_idsys, "locked": False, "title_variants": variants,
                      "flags": {"over_merged": False,
                                "credit_mixed": credit_mixed and not cur.get("credit_status"),
                                "top_mixed":    top_mixed    and not cur.get("top_code"),
@@ -5716,7 +5738,7 @@ def export_unified_courses():
                         if r.get("locked") and r.get("id_system") in ("C-ID", "CCN-ID")}
         groups = {}
         for r in rows:
-            if r.get("locked") or r.get("id_system") not in ("M-ID", "Cluster"):
+            if r.get("locked") or r.get("id_system") not in ("M-ID", "Unified"):
                 continue
             m = r.get("match") or {}
             if m.get("ccn"):
@@ -5836,7 +5858,7 @@ def export_unified_courses():
 
     sug = {}
     for r in rows:
-        if r.get("locked") or r.get("id_system") not in ("M-ID", "Cluster"):
+        if r.get("locked") or r.get("id_system") not in ("M-ID", "Unified"):
             continue
         if (r.get("match") or {}).get("cid_conflict"):
             continue

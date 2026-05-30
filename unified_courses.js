@@ -280,10 +280,10 @@
   // Human-readable labels for the audit tag taxonomy (see kb/_row_audit.py).
   // Used in the chip tooltip so curators see what the chip is flagging.
   var AUDIT_TAG_LABELS = {
-    cluster_blanks_when_aggregatable: "Cluster fields aggregable from members but not curated",
-    cluster_members_too_sparse:       "Cluster members lack data to aggregate",
-    cluster_id_off_scheme:            "Cluster ID off-scheme (UC-CUR-*) — promotion candidate",
-    cluster_member_unresolved:        "Cluster has unresolvable member ids",
+    cluster_blanks_when_aggregatable: "Unified-row fields aggregable from members but not curated",
+    cluster_members_too_sparse:       "Unified-row members lack data to aggregate",
+    cluster_id_off_scheme:            "Unified-course ID off-scheme (UC-CUR-*) — promotion candidate",
+    cluster_member_unresolved:        "Unified row has unresolvable member ids",
     uc_cur_ripe_for_promotion:        "Ripe for promotion from UC-CUR-* to a proper MID",
     seed_untouched_discipline:        "Discipline set by Phase B seed and never reviewed",
     blank_discipline:                 "Discipline missing",
@@ -676,9 +676,15 @@
           var subjSet = {}; ids.forEach(function (id) { String(chosen[id][2] || "").split(";").forEach(function (s) { if (s) subjSet[s] = 1; }); });
           var variants = ids.map(function (id) { return chosen[id][1]; }).filter(Boolean);
           var urow = byId[target];
+          // Merging into an existing identity keeps that identity's native kind/id_system
+          // (an M-ID gaining members is still that M-ID). A brand-new synthetic target
+          // (no identity chosen → a generated UC-CUR-* id) is a "Unified" course. The
+          // "Cluster" label was retired 2026-05-30 (Session 19).
+          var synthetic = !identity;
           if (!urow) { urow = { id: target, adopted: [], potential: [], flags: {} }; rows.push(urow); }
-          urow.kind = "Cluster"; urow.title = title || urow.title || variants[0]; urow.disc = disc || urow.disc;
-          urow.subj = Object.keys(subjSet).sort(); urow.members = ids.length; urow.id_system = "Cluster";
+          if (synthetic) { urow.kind = "Unified"; urow.id_system = "Unified"; }
+          urow.title = title || urow.title || variants[0]; urow.disc = disc || urow.disc;
+          urow.subj = Object.keys(subjSet).sort(); urow.members = ids.length;
           urow.title_variants = variants; urow._mergedAway = false; urow._curated = true;
           urow.flags = urow.flags || {}; urow.flags.reviewed = true; urow.reviewed_by = sess.email; urow.reviewed_at = today();
           close(); render();
@@ -692,7 +698,7 @@
     // members pre-checked; Confirm reuses doConsolidate; Skip advances. NEVER
     // auto-applies. Two sections, anchored first:
     //   1. Identity-anchored groups (kind "anchored") — Confirm MERGES into the
-    //      existing M-ID/Cluster identity (a real member is the target).
+    //      existing M-ID/Unified identity (a real member is the target).
     //   2. Singleton-only groups (kind "singleton", V2) — single-college courses
     //      that match no existing identity; Confirm MINTS a brand-new unified
     //      course (target left blank so doConsolidate generates a UC-CUR id).
@@ -901,7 +907,7 @@
       opts.forEach(function (o) { s.appendChild(el("option", { value: o }, [o])); });
       return s;
     }
-    var fKind = sel("uc-kind", "All kinds", ["Course", "Cluster", "Stand-Alone"]);
+    var fKind = sel("uc-kind", "All kinds", ["Course", "Unified", "Stand-Alone"]);
     var fSource = sel("uc-source", "All sources", uniqSorted(rows.map(function (r) { return r.id_system; })));
     var fStatus = sel("uc-status", "All statuses", ["Verified", "Generated"]);
     var fDisc = sel("uc-disc", "All disciplines", uniqSorted(rows.map(function (r) { return r.disc; })));
@@ -931,7 +937,7 @@
       "Subject collision (Phase 1e re-mint target)",
       "Seed untouched (never reviewed)",
       "Orphan merge target (dangling pointer)",
-      "Cluster issues",
+      "Unified issues",
     ]);
     // Map filter labels → predicate over an audit card (auditIndex[r.id]).
     var TRIAGE_PRED = {
@@ -946,7 +952,7 @@
       "Subject collision (Phase 1e re-mint target)": function (c) { return c.tags.indexOf("subject_collision_signal") >= 0; },
       "Seed untouched (never reviewed)":      function (c) { return c.tags.indexOf("seed_untouched_discipline") >= 0; },
       "Orphan merge target (dangling pointer)": function (c) { return c.tags.indexOf("merge_into_orphan") >= 0; },
-      "Cluster issues":                       function (c) { return c.tags.some(function (t) { return t.indexOf("cluster_") === 0 || t === "uc_cur_ripe_for_promotion"; }); },
+      "Unified issues":                       function (c) { return c.tags.some(function (t) { return t.indexOf("cluster_") === 0 || t === "uc_cur_ripe_for_promotion"; }); },
     };
     var search = el("input", { id: "uc-search", type: "search", placeholder: "Search title or ID…", class: "uc-filter" });
     var flagged = el("label", { class: "uc-flag-toggle" }, []);
@@ -1505,8 +1511,8 @@
     // module-private state AND each DOM <select>.value / checkbox.checked so
     // the chrome matches. Unknown keys / out-of-vocab values dropped silently.
     var QS_TAB = "unified-courses";
-    var QS_KIND = { "Course": 1, "Cluster": 1, "Stand-Alone": 1 };
-    var QS_SOURCE = { "C-ID": 1, "CCN-ID": 1, "M-ID": 1, "Cluster": 1 };
+    var QS_KIND = { "Course": 1, "Unified": 1, "Stand-Alone": 1 };
+    var QS_SOURCE = { "C-ID": 1, "CCN-ID": 1, "M-ID": 1, "Unified": 1 };
     var QS_STATUS = { "Verified": 1, "Generated": 1 };
     var QS_CREDIT = { "Credit": 1, "Noncredit": 1, "Noncredit Enhanced": 1 };
     var QS_CONF = { "high": "high (≥0.85)", "medium": "medium (0.7–0.84)", "low": "low (<0.7)" };
@@ -1524,7 +1530,7 @@
       "Description mismatch": 1, "Generic title (can't justify discipline)": 1,
       "Cross-discipline over-merge (member TOP)": 1,
       "Subject collision (Phase 1e re-mint target)": 1,
-      "Seed untouched (never reviewed)": 1, "Cluster issues": 1,
+      "Seed untouched (never reviewed)": 1, "Unified issues": 1,
     };
     function setSel(id, val) {
       var n = document.getElementById(id);
