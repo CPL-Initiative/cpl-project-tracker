@@ -159,19 +159,26 @@ into the Pipeline Reference below or into dedicated docs.
   activity (CI + review comments) and follow through — fixing small/clear
   issues, asking when ambiguous — until the PR is merged or closed.
 - **Auto-merge authorization (added Session 11, 2026-05-27; broadened
-  Session 12, 2026-05-27 — Bruh Dec).** Claude sessions are authorized
-  to merge **every** PR they open in this project once the universal
-  gates below are met. The "confirm-before-merging for architecturally
-  significant PRs" carve-out was removed: the real safety mechanisms
-  for re-mints / schema migrations / Excel→Supabase phases are inside
-  the workstream itself (pre-merge dry-run review, in-script V1–V4
-  apply gates, `workflow_dispatch` manual triggers on the apply
-  workflow), not at the PR-merge button. Merging an apply-script PR
-  doesn't auto-run the apply.
+  Session 12, 2026-05-27 — Bruh Dec; trust-expanded 2026-05-30 — Sam:
+  "change rules to not require my review before you squash-merge. I trust
+  you at this point, Bruh!").** Claude sessions merge **every** PR they
+  open in this project as soon as the universal gates below are met.
+  **Sam's review/approval is NOT a gate — do not wait for him to review,
+  and do not wait for an explicit "merge" go-ahead.** Open the PR (as a
+  draft per the harness default), let CI run, then mark it ready and
+  squash-merge the moment CI is green. The "confirm-before-merging for
+  architecturally significant PRs" carve-out was removed: the real safety
+  mechanisms for re-mints / schema migrations / Excel→Supabase phases are
+  inside the workstream itself (pre-merge dry-run review, in-script V1–V4
+  apply gates, `workflow_dispatch` manual triggers on the apply workflow),
+  not at the PR-merge button. Merging an apply-script PR doesn't auto-run
+  the apply.
   - **CI must be green** — every required check passing (TruffleHog, plus
     any push-only checks like CodeQL when they apply).
-  - **No unresolved review comments or change-requests.** If a reviewer
-    asks for changes, fix or ask before re-merging.
+  - **No unresolved change-request from a reviewer.** Sam's review is not
+    required to merge — but if a reviewer *has* left an unresolved comment
+    or change-request, address it (fix, or ask when ambiguous) before
+    merging. Absent any such comment, green CI is the only gate.
   - **Method: squash and merge** — collapses to one commit on `main` with
     the PR title + body. Matches the existing `Merge pull request #N`
     history pattern.
