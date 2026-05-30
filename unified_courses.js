@@ -118,6 +118,30 @@
       .then(function (arr) { var m = {}; arr.forEach(function (x) { m[x.course_id] = x; }); return m; })
       .catch(function () { return {}; });
   }
+  // Locked curated anchors (common_courses.json) are firewalled — the daily overlay
+  // sync never overwrites them. A signed-in reviewer can still PROPOSE a discipline
+  // correction, recorded in kb_curation under the `anchor_discipline_proposal` field.
+  // kb/_apply_curation.py deliberately EXCLUDES that field from its FIELDS set, so the
+  // proposal never folds into the overlay and the anchor stays pristine until a
+  // maintainer promotes it into common_courses.json. Proposals are world-readable
+  // (anon key) so the suggestion is publicly visible while it waits for review.
+  function fetchAnchorProposals() {
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,value,reviewer_email,reviewed_at&field=eq.anchor_discipline_proposal",
+      { headers: { "apikey": SUPABASE_ANON } })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (arr) { var m = {}; arr.forEach(function (x) { m[x.course_id] = x; }); return m; })
+      .catch(function () { return {}; });
+  }
+  function saveAnchorProposal(courseId, value, sess) {
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
+        "Content-Type": "application/json", "Prefer": "resolution=merge-duplicates,return=minimal"
+      },
+      body: JSON.stringify({ course_id: courseId, field: "anchor_discipline_proposal", value: value, reviewer_email: sess.email })
+    });
+  }
   function saveDiscipline(courseId, value, sess) {
     return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
       method: "POST",
@@ -442,6 +466,9 @@
     // Live discipline overlay (course_id -> row), kept so it can also be applied
     // to stand-alone rows that load lazily after the initial fetch.
     var liveDiscOverlay = {};
+    // Live anchor discipline-correction proposals (course_id -> row) on the
+    // firewalled curated anchors. Read-only suggestions; never mutate r.disc.
+    var anchorProposals = {};
 
     function applyDiscOverlay(targetRows) {
       var changed = false;
@@ -1250,8 +1277,33 @@
           span.onclick = function () { showEditor(); };
           td.appendChild(span);
         } else {
-          var node = el("span", r.locked ? { title: "Curated common-course anchor — read-only here" } : {}, [v]);
+          var node = el("span", r.locked ? { title: "Curated common-course anchor — official discipline (read-only; firewalled). Sign in and use “propose correction” to suggest a change." } : {}, [v]);
           td.appendChild(node);
+        }
+        // A: curated sub-area (e.g. Business → Accounting). Only anchors carry a
+        // refining discipline_provisional; the broad MQ discipline stays official.
+        if (r.disc_prov) {
+          td.appendChild(el("span", { style: "color:#94a3b8;font-size:.82em;margin-left:5px;white-space:nowrap;",
+            title: "Curated sub-area (provisional). “" + r.disc_prov + "” isn’t on the MQ discipline vocabulary, so the broad label above is the official one." },
+            ["→ " + r.disc_prov]));
+        }
+        // B: locked anchors show any proposed correction (public) + a reviewer affordance.
+        if (r.locked) {
+          var prop = anchorProposals[r.id];
+          if (prop && prop.value) {
+            var meta = (prop.reviewer_email ? " by " + prop.reviewer_email : "") +
+                       (prop.reviewed_at ? " on " + String(prop.reviewed_at).slice(0, 10) : "");
+            td.appendChild(el("span", { style: "margin-left:6px;font-size:.74rem;color:#92400e;background:#fef3c7;border:1px solid #fde68a;border-radius:4px;padding:0 5px;",
+              title: "Proposed correction" + meta + " — pending maintainer review; the firewalled anchor is unchanged." },
+              ["✎ proposed: " + prop.value]));
+          }
+          if (session) {
+            var pbtn = el("a", { href: "#", class: "uc-auth-link",
+              title: "Suggest a different discipline for this curated anchor (recorded for review — does not overwrite the anchor)." },
+              [prop && prop.value ? " edit proposal" : " propose correction"]);
+            pbtn.onclick = function (e) { e.preventDefault(); showProposalEditor(); };
+            td.appendChild(pbtn);
+          }
         }
       }
       function showEditor() {
@@ -1298,6 +1350,49 @@
                 showValue();
               }
             });
+          });
+        };
+        s.onblur = function () { setTimeout(function () { if (td.contains(s)) showValue(); }, 150); };
+      }
+      // B: propose a discipline correction on a firewalled curated anchor. Writes to
+      // the `anchor_discipline_proposal` field (which the overlay sync ignores), so it
+      // never overwrites common_courses.json — a suggestion that waits for a maintainer
+      // to promote it. The displayed (official) discipline is left unchanged.
+      function showProposalEditor() {
+        td.innerHTML = "";
+        var s = el("select", { class: "uc-filter" });
+        s.appendChild(el("option", { value: "" }, ["— propose discipline —"]));
+        var curProp = (anchorProposals[r.id] && anchorProposals[r.id].value) || r.disc;
+        mqList.forEach(function (d) {
+          var o = el("option", { value: d }, [d]);
+          if (d === curProp) o.setAttribute("selected", "selected");
+          s.appendChild(o);
+        });
+        td.appendChild(s);
+        s.focus();
+        s.onchange = function () {
+          var val = s.value;
+          if (!val) { showValue(); return; }
+          if (!session) { renderAuth(); render(); alert("You're not signed in — please sign in to propose a correction."); return; }
+          s.disabled = true;
+          ensureFresh().then(function (sess) {
+            if (!sess || !isValidJwt(sess.access_token)) {
+              signOut(); session = null; renderAuth(); render();
+              alert("Your sign-in session expired and couldn't be renewed — please sign in again.");
+              return;
+            }
+            return saveAnchorProposal(r.id, val, sess).then(function (resp) {
+              if (resp.ok) {
+                anchorProposals[r.id] = { value: val, reviewer_email: sess.email, reviewed_at: today() };
+                showValue();
+              } else { alert("Could not save proposal (status " + resp.status + "). Are you an allowed reviewer?"); showValue(); }
+            });
+          }).catch(function (err) {
+            var m = (err && err.message) || "network error";
+            if (/ISO-8859-1|headers/i.test(m)) {
+              signOut(); session = null; renderAuth(); render();
+              alert("Your sign-in session looks corrupted — you've been signed out. Please sign in again.");
+            } else { alert("Could not save proposal: " + m); showValue(); }
           });
         };
         s.onblur = function () { setTimeout(function () { if (td.contains(s)) showValue(); }, 150); };
@@ -1622,6 +1717,9 @@
       liveDiscOverlay = m;
       if (applyDiscOverlay(rows)) render();
     });
+    // Load anchor discipline-correction proposals (read-only suggestions on the
+    // firewalled curated anchors; visible to all, editable by signed-in reviewers).
+    fetchAnchorProposals().then(function (m) { anchorProposals = m; render(); });
     // Load live curated descriptions so the pending-sync badge counts
     // description edits not yet folded into git.
     fetchDescriptionOverlay().then(function (m) { descOverlay = m; renderSyncBadge(); });
