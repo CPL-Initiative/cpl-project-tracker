@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-05-30 (Session 19 — CCR cluster dissolution)
+updated: 2026-05-30 (Session 20 — dashboard cleanup + cross-disc accounting)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -50,6 +50,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Playbook — Measure-first Supabase migration (snapshot → validate → dry-run → workflow_dispatch apply → cutover)](kb-notes/playbook-measure-first-supabase-migration.md) | playbook | published | 2026-05-28 | 2026-05-28 (Phase 2) |
 | [Playbook — Phase 2 projects migration scope (column map, KPI ladder contract, 6 forks for Sam)](kb-notes/phase-2-projects-migration-scope.md) | playbook | published | 2026-05-28 | 2026-05-28 |
 | [Playbook — Cross-discipline over-merge re-mint scope (split algorithm, 60% de-corroboration, 6 forks for Sam)](kb-notes/over-merge-remint-scope.md) | playbook | published | 2026-05-29 | 2026-05-29 |
+| [Playbook — Moving a generator-managed dashboard section to its own tab (end-anchor classify + sentinel marker)](kb-notes/playbook-move-generated-section-to-tab.md) | playbook | published | 2026-05-30 | 2026-05-30 |
 | [Reference — Windows PowerShell scripting gotchas (PS 5.1 + Task Scheduler)](kb-notes/reference-windows-powershell-gotchas.md) | reference | published | 2026-05-27 | 2026-05-27 |
 
 ---
@@ -61,6 +62,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | File | Workstream | Last touched |
 |---|---|---|
 | [`ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) | CCR cluster dissolution (UC-XXXXX retired; 9 curated → per-member merges) | **Session 19 (2026-05-30)** |
+| [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes | **Session 20 (2026-05-30)** |
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G | Session 11 |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project model + **Phase 2 COMPLETE** + **Phase 3 Budget read-path cutover** + association editor + orphan close-out) | Session 17 (Qualitastic, 2026-05-29) |
@@ -92,6 +94,9 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 15 → 16 | Bruh Parallax (handoff) | [`session_16_handoff.md`](session_16_handoff.md) |
 | 16 → 17 | Bruh Word (handoff) | [`session_17_handoff.md`](session_17_handoff.md) |
 | 17 → 18 | Qualitastic / Q (handoff) | [`session_18_handoff.md`](session_18_handoff.md) |
+| 18 → 19 | Cascade (handoff) | [`session_19_handoff.md`](session_19_handoff.md) |
+| 19 → 20 | Wizardly Turing (handoff) | [`session_20_handoff.md`](session_20_handoff.md) |
+| 20 → 21 | Bruh / "Twenty" (handoff) | [`session_21_handoff.md`](session_21_handoff.md) |
 
 ---
 
