@@ -48,8 +48,9 @@ Start by reading, in order:
 ═══ CONTEXT: what Session 18 did ═══
 
 Sam pivoted from the Session-18-handoff's Budget priority to CCR cleanup. Built
-the cross-discipline over-merge re-mint, all on branch
-claude/adoring-hypatia-uihzi → PR #194 (draft, watch it):
+the cross-discipline over-merge re-mint. PR #194 is **MERGED to main**
+(squash `340d753`, 2026-05-30) — the whole workstream is now ON MAIN, you do NOT
+need to watch #194. Contents:
   - member_top_divergence auditor rule (kb/_row_audit.py) — 1,299 flags, the
     cross-discipline over-merge detector. + client mirror + Triage option.
   - kb/_overmerge_dryrun.py — splits each flagged M-ID into discipline-pure
@@ -159,7 +160,7 @@ preview loop with him, and he dispatches the apply. Carry it forward. 🅰️�
 
 | PR / commit | What |
 |---|---|
-| #194 (open, draft) | The whole over-merge workstream lives here on `claude/adoring-hypatia-uihzi` |
+| #194 (**MERGED** to main, squash `340d753`, 2026-05-30) | The whole over-merge workstream — now on main |
 | — | `member_top_divergence` auditor rule (1,299 flags) + client mirror + Triage |
 | — | Over-merge scope KB note (60% de-corroboration, locked forks) |
 | — | `kb/_overmerge_dryrun.py` (all gates green) |
