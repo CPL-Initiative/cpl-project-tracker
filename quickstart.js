@@ -35,8 +35,8 @@
     {hash: 'budget',               label: 'Budget',                   desc: 'CPL budget and expenditure plan'},
     {hash: 'vision-2030',          label: 'Vision 2030',              desc: 'Alignment cards showing CPL contribution to Vision 2030'},
     {hash: 'unified-courses',      label: 'Common Course Reference',  desc: 'Curate common-course identities (CCN-ID / C-ID / M-ID), disciplines, descriptions'},
-    {hash: 'canonical-subj4',      label: 'Common Subject Code',      desc: 'Curate the 4-letter subject code per MQ discipline'},
-    {hash: 'credential-reference', label: 'Credential Reference',     desc: 'Curate credential identities — unified credential names, issuing agencies'},
+    {hash: 'canonical-subj4',      label: 'Common Subjects Reference',      desc: 'Curate the 4-letter subject code per MQ discipline'},
+    {hash: 'credential-reference', label: 'Common Credential Reference',     desc: 'Curate credential identities — unified credential names, issuing agencies'},
     {hash: 'pipeline',             label: 'Pipeline',                 desc: 'Data pipeline reference / methodology'},
     {hash: 'letters',              label: 'Letters',                  desc: 'Budget support letter curator — edits campaign letter blocks (passcode-gated)'},
   ];
@@ -159,10 +159,10 @@
       '  "apprenticeship sprint" → {"tab":"dashboard","filter_hint":{"scroll_to":"Apprenticeship Sprint"},"message":"Jumping to the Apprenticeship Sprint project."}',
       '  "show me Activity 3 projects" → {"tab":"dashboard","filter_hint":{"activity":"Activity 3"},"message":"Opening Dashboard filtered to Activity 3."}',
       '  "AI in CPL" → {"tab":"dashboard","filter_hint":{"search":"AI"},"message":"Opening Dashboard filtered to AI-related projects."}',
-      '  "review unclassified credentials" → {"tab":"credential-reference","filter_hint":{"audit_tag":"unclassified_in_map"},"message":"Opening Credential Reference with the unclassified-in-MAP queue."}',
-      '  "find Adobe credentials" → {"tab":"credential-reference","filter_hint":{"search":"Adobe"},"message":"Opening Credential Reference filtered to Adobe."}',
+      '  "review unclassified credentials" → {"tab":"credential-reference","filter_hint":{"audit_tag":"unclassified_in_map"},"message":"Opening Common Credential Reference with the unclassified-in-MAP queue."}',
+      '  "find Adobe credentials" → {"tab":"credential-reference","filter_hint":{"search":"Adobe"},"message":"Opening Common Credential Reference filtered to Adobe."}',
       '  "title-keyword Generated rows in CCR" → {"tab":"unified-courses","filter_hint":{"status":"Generated","prov":"by title-keyword"},"message":"Opening the Common Course Reference with title-keyword Generated rows."}',
-      '  "subjects needing review" → {"tab":"canonical-subj4","filter_hint":{"status":"needs_review"},"message":"Opening Common Subject Code filtered to needs-review."}',
+      '  "subjects needing review" → {"tab":"canonical-subj4","filter_hint":{"status":"needs_review"},"message":"Opening Common Subjects Reference filtered to needs-review."}',
       '  "show me the budget" → {"tab":"budget","message":"Opening the Budget tab."}',
       '  "draft a support letter" → {"tab":"letters","message":"Opening the Letters tab."}',
       '',
@@ -411,10 +411,9 @@
       }, 200);
     }
 
-    // Last-typed memory (just to spare the next visit)
-    var last = '';
-    try { last = sessionStorage.getItem(STORAGE_KEY) || ''; } catch (e) { /* private mode */ }
-    if (last) input.value = last;
+    // Quick-search always opens blank — no pre-fill from a previous visit — so
+    // the box is a clean slate every time the dashboard loads. (STORAGE_KEY is
+    // still written on submit for potential future reuse, just not read back.)
 
     function setStatus(text, kind) {
       status.textContent = text || '';
