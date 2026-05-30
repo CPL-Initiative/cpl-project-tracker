@@ -59,6 +59,9 @@ the locked forks) and the **invariants KB note**
 - **Curator title→discipline keep-whole map** seeded (`kb/overmerge_title_discipline.json`).
 - **Backlog:** SUBJ4-curation → CCR cascade (a curated SUBJ4 change auto-re-keys
   that discipline's M-IDs); the 341 SUBJ4→discipline blank-backfill.
+- **MERGED to main** 2026-05-30 (PR #194, squash `340d753`). The whole workstream
+  is on main; the **apply stays STAGED** (`workflow_dispatch`-only — merging did
+  NOT run it). Next: the curator preview loop → Sam dispatches `overmerge-apply.yml`.
 
 ## How the split brain works now (iteration 1)
 
@@ -121,6 +124,15 @@ for the keep-vs-split decision on the unmapped tail.
 alias map; when the dry-run's split logic changed, the apply's V2 broke even
 though the dry-run's V2 still passed. The dry-run↔apply pair is a cross-check —
 run both after any planner change.
+
+**Merging a long-lived branch: regenerated-artifact conflicts → re-run the
+generator.** By merge time the daily cron had advanced `main` (a new
+`Daily dashboard update`), and the only conflict was `kb/row_audit/latest.json`
+(both the branch and the cron regenerate it). Don't hand-merge a regenerated
+file — `git merge origin/main`, then re-run `python3 kb/_row_audit.py` to
+regenerate `latest.json` on the merged state, `git add`, finish the merge. Also:
+deleting the merged branch from the session 403s (token limitation) — enable repo
+"auto-delete head branches" (noted in CLAUDE.md branch policy).
 
 **Sub-agent for the big builds, the review is where the merge is earned.** The
 dry-run, apply, and both split-brain iterations were sub-agent-built against
