@@ -1,0 +1,7 @@
+{
+  "_about": "New course_ids that collide with an existing id (courses ∪ singletons, minus retiring old ids) or with another new id. MUST be empty if sequence allocation is correct.",
+  "_generated_by": "kb/_overmerge_dryrun.py",
+  "_generated_at": "2026-05-29",
+  "count": 0,
+  "collisions": []
+}

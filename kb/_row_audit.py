@@ -180,6 +180,14 @@ TAG_PENALTY_ON_DISCIPLINE = {
     "top_discipline_disagreement":         0.15,
     "description_discipline_disagreement": 0.15,
     "generic_title_concrete_discipline":   0.20,
+    # member_top_divergence is member-level cross-validation: the M-ID's
+    # member colleges carry TOP codes spanning ≥2 broad divisions, so a single
+    # assigned discipline cannot be right for all of them. Penalty parallels
+    # its sibling TOP-based signal top_discipline_disagreement (0.15) —
+    # conservative for a v1 rule; revisit after curator calibration. Stacks
+    # with the other discipline signals (overlap is small — ~9% also fire
+    # top_discipline_disagreement) so a doubly-flagged row drops further.
+    "member_top_divergence":               0.15,
     "seed_untouched_discipline":           0.00,  # already captured by state-score
     "blank_discipline":                    0.00,  # already captured by state-score
 }
@@ -513,7 +521,7 @@ def _compute_scores(faculty_fields, mc_fields, tags=None):
 # ─── tag generators ─────────────────────────────────────────────────────────
 
 def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None, top_disc=None,
-                  disc_to_modal_subj4=None, mid_unit_modal=None):
+                  disc_to_modal_subj4=None, mid_unit_modal=None, mid_top_div=None):
     tags = []
     if faculty_fields["discipline"]["state"] == "seed-untouched":
         tags.append("seed_untouched_discipline")
@@ -577,6 +585,19 @@ def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None, top_disc
     if mid_unit_modal is not None:
         if _classify_unit_anomaly(rec, mid_unit_modal):
             tags.append("unit_anomaly")
+    # member_top_divergence — the M-ID's member colleges carry TOP codes
+    # spanning ≥2 broad (2-digit) divisions with the minority divisions holding
+    # ≥30% of members. The cross-discipline OVER-MERGE detector: a generic
+    # title minted courses from structurally different program areas under one
+    # identity (nursing "Leadership and Ethics" folded into an Admin-of-Justice
+    # M-ID). Complements top_discipline_disagreement, which only checks the
+    # M-ID's single representative TOP — it misses the case where the MEMBERS
+    # diverge but the representative happens to match the discipline (the M1231
+    # gap). Calibration: 1,299 flags at the 0.30 floor; ~57% carry no other
+    # strong signal.
+    if mid_top_div is not None:
+        if _classify_member_top_divergence(rec, mid_top_div):
+            tags.append("member_top_divergence")
     return tags
 
 
@@ -642,6 +663,96 @@ def _classify_unit_anomaly(rec, mid_unit_modal):
     typ_share = sum(n for v, n in counts.items() if abs(typ_f - v) < 0.5)
     # Strict majority: typ_share must EXCEED half of total. <= half fires.
     return typ_share * 2 <= total
+
+
+# ─── member_top_divergence (cross-discipline over-merge detector) ──────────────
+# Member top_code in the memberships file is "NNNN.NN: Program Title" (the
+# embedded title is the TOP program name, not the MQ discipline) or a bare
+# "NNNN.NN".
+_MEMBER_TOP_RE = re.compile(r"^\s*(\d{4})(\.\d{2})?")
+
+
+def _parse_member_top(s):
+    """('NNNN.NN: Program Title') → ('NNNN.NN', 'Program Title').
+    Returns (None, label_or_None) when no numeric code is present."""
+    if not s:
+        return None, None
+    code, _, title = str(s).partition(":")
+    m = _MEMBER_TOP_RE.match(code)
+    if not m:
+        return None, (title.strip() or None)
+    return m.group(1) + (m.group(2) or ".00"), (title.strip() or None)
+
+
+def _build_mid_top_divergence(memberships):
+    """Per-M-ID member TOP-division spread, for the member_top_divergence rule.
+
+    Returns {course_id: {"fams": {fam2: count}, "labels": {fam2: program_title},
+    "n": n_top}} — ONLY for M-IDs whose members span ≥2 distinct 2-digit TOP
+    divisions (others can't fire), keyed exactly like _build_mid_unit_modal.
+
+    Why the 2-digit division (not the 4-digit program or the 6-digit code):
+    TOP codes wobble within a division college-to-college — CLAUDE.md notes
+    ~52% of consolidated M-IDs are TOP-mixed and "the coarser TOP digits are
+    more stable." Cross-DIVISION divergence (e.g. 12xx Health vs 21xx Public
+    & Protective Services) is the genuine over-merge signal. A useful side
+    effect: most sister-discipline pairs the auditor otherwise has to suppress
+    (Kinesiology/Physical Education both 0835, CIS/Computer Science both 07,
+    Nursing/LVN both 1230) share a division, so this rule never fires on them —
+    no SISTER_PAIRS list needed (a few cross-division sisters like Art↔Multimedia
+    10↔06 remain; folded into the calibration follow-on).
+    """
+    out = {}
+    for mid, members in (memberships or {}).items():
+        fams = Counter()
+        labels = defaultdict(Counter)
+        n = 0
+        for m in (members or []):
+            code, title = _parse_member_top((m or {}).get("top_code"))
+            if not code:
+                continue
+            n += 1
+            fam = code[:2]
+            fams[fam] += 1
+            if title:
+                labels[fam][title] += 1
+        if n < 2 or len(fams) < 2:
+            continue
+        out[mid] = {
+            "fams": dict(fams),
+            "n": n,
+            "labels": {f: lab.most_common(1)[0][0] for f, lab in labels.items()},
+        }
+    return out
+
+
+def _classify_member_top_divergence(rec, mid_top_div):
+    """True when an M-ID's member colleges carry TOP codes spanning ≥2 two-digit
+    divisions AND the minority (non-dominant) divisions hold ≥30% of the
+    TOP-carrying members.
+
+    This is the cross-discipline OVER-MERGE detector. A generic title
+    ("Ethics and Leadership", "Introduction to …") minted courses from
+    structurally different program areas under one identity — the motivating
+    case being Mission College's nursing "Leadership and Ethics" (TOP 1230.10)
+    folded into the Administration-of-Justice M-ID CRIM M1231 because the title
+    matched. Like unit_anomaly, it SURFACES the M-ID for curator review
+    (members carry divergent TOP divisions → confirm it's one course, not an
+    over-merge) rather than asserting a verdict — TOP codes vary by college.
+
+    The 30% minority floor distinguishes a real divergence from a lone stray:
+    a 9-vs-1 division split (minority 0.10) is likely one college's TOP miscode
+    and does NOT fire; a 2-vs-1 (0.33) or 1-vs-1 (0.50) split does. Calibrated
+    against the data — 0.30 captures the motivating cases (CRIM M1230/M1231,
+    minority 0.33) and the near-even splits while excluding single strays in
+    large clean M-IDs.
+    """
+    info = (mid_top_div or {}).get(rec.get("course_id"))
+    if not info:
+        return False
+    n = info["n"]
+    dominant = max(info["fams"].values())
+    return (n - dominant) / n >= 0.30
 
 
 def _build_disc_to_modal_subj4(courses):
@@ -1074,6 +1185,15 @@ def main():
     except FileNotFoundError:
         memberships = {}
     mid_unit_modal = _build_mid_unit_modal(memberships)
+    # Per-M-ID member TOP-division spread for the member_top_divergence rule.
+    mid_top_div = _build_mid_top_divergence(memberships)
+    # discipline → set of 2-digit TOP divisions that map to it (inverted from
+    # top_disc). Used only to flag the "mis-disciplined" subset in the report
+    # (the assigned discipline isn't even the members' plurality division) —
+    # not part of the fire/no-fire decision, so the incomplete map is harmless.
+    disc_to_fams = defaultdict(set)
+    for _code, _disc in (top_disc or {}).items():
+        disc_to_fams[_disc].add(_code[:2])
 
     # Build cluster targets from merge_into.
     cluster_members = defaultdict(list)  # cluster_id -> [member_id, ...]
@@ -1108,7 +1228,7 @@ def main():
         tags = _tags_for_mid(rec, faculty, disc_bag=disc_bag,
                              subject_map=subject_map, top_disc=top_disc,
                              disc_to_modal_subj4=disc_to_modal_subj4,
-                             mid_unit_modal=mid_unit_modal)
+                             mid_unit_modal=mid_unit_modal, mid_top_div=mid_top_div)
         tags += _curation_orphan_tags(cur, course_id, courses, singletons)
         mc = {}
         f_score, m_score = _compute_scores(faculty, _virtual_mc(mc), tags=tags)
@@ -1135,6 +1255,25 @@ def main():
             card["reviewed_at"] = cur.get("reviewed_at")
         if mc:
             card["mc_fields"] = mc
+        # member_top_divergence detail (report-only; lives on the full card, not
+        # the slim latest.json summary) — the member TOP-division breakdown +
+        # whether the assigned discipline is the members' plurality division.
+        if "member_top_divergence" in tags:
+            info = mid_top_div[course_id]
+            fams_sorted = sorted(info["fams"].items(), key=lambda kv: (-kv[1], kv[0]))
+            dominant_fam = fams_sorted[0][0]
+            assigned_fams = disc_to_fams.get(rec.get("discipline"))
+            card["audit_detail"] = {
+                "member_top_divergence": {
+                    "n": info["n"],
+                    "minority_share": round((info["n"] - fams_sorted[0][1]) / info["n"], 2),
+                    "divisions": [{"fam": f, "count": c,
+                                   "label": info["labels"].get(f, f)} for f, c in fams_sorted],
+                    # True when the assigned discipline's division(s) don't include
+                    # the members' plurality division — the highest-severity subset.
+                    "assigned_is_minority": bool(assigned_fams) and dominant_fam not in assigned_fams,
+                }
+            }
         cards.append(card)
 
     # ── Clusters ──────────────────────────────────────────────────────
@@ -1232,7 +1371,7 @@ def _write_outputs(cards):
             "subject_spread_high_low_confidence", "mid_id_off_scheme",
             "discipline_title_mismatch", "generic_title_concrete_discipline",
             "top_discipline_disagreement", "description_discipline_disagreement",
-            "subject_collision_signal", "unit_anomaly",
+            "subject_collision_signal", "unit_anomaly", "member_top_divergence",
             "merge_into_orphan",
             "cluster_blanks_when_aggregatable", "cluster_members_too_sparse",
             "cluster_id_off_scheme", "uc_cur_ripe_for_promotion",
@@ -1392,6 +1531,39 @@ def _render_md(payload):
                      f"{c['leverage'].get('members', 0)} | {c['faculty_trust_score']:.2f} | "
                      f"{tags} | {title} |")
     lines.append("")
+
+    # ── member_top_divergence over-merge candidates ───────────────────────
+    div_rows = [c for c in payload["rows"]
+                if c.get("audit_detail", {}).get("member_top_divergence")]
+    if div_rows:
+        def _div_key(c):
+            d = c["audit_detail"]["member_top_divergence"]
+            return (d["assigned_is_minority"], len(d["divisions"]),
+                    d["minority_share"], d["n"])
+        div_rows.sort(key=_div_key, reverse=True)
+        n_mis = sum(c["audit_detail"]["member_top_divergence"]["assigned_is_minority"]
+                    for c in div_rows)
+        lines.append("## Cross-discipline over-merge candidates "
+                     "(`member_top_divergence`)")
+        lines.append("")
+        lines.append(f"M-IDs whose member colleges carry TOP codes spanning ≥2 broad "
+                     f"divisions (≥30% minority share) — the title-collision over-merge "
+                     f"queue. **{len(div_rows)} flagged**, of which **{n_mis}** are "
+                     f"_mis-disciplined_ (★ — the assigned discipline isn't even the "
+                     f"members' plurality division). Each `Program ×N` is a member "
+                     f"TOP division. Ranked mis-disciplined-first, then most-fragmented.")
+        lines.append("")
+        lines.append("| row_id | disc | members | f-trust | division split | title |")
+        lines.append("|---|---|---:|---:|---|---|")
+        for c in div_rows[:80]:
+            d = c["audit_detail"]["member_top_divergence"]
+            disc = (c.get("faculty_fields", {}).get("discipline", {}).get("value") or "—")
+            split = " · ".join(f"{dv['label']}×{dv['count']}" for dv in d["divisions"])[:70]
+            star = "★ " if d["assigned_is_minority"] else ""
+            title = (c.get("title") or "")[:38]
+            lines.append(f"| `{c['row_id']}` | {star}{disc[:24]} | {d['n']} | "
+                         f"{c['faculty_trust_score']:.2f} | {split} | {title} |")
+        lines.append("")
 
     # ── Cluster spotlight (always small population) ───────────────────────
     clusters = [c for c in payload["rows"] if c["row_kind"] == "Cluster"]

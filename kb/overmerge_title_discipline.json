@@ -1,0 +1,23 @@
+{
+  "_about": "Curator title→discipline map for the cross-discipline over-merge re-mint. When a flagged M-ID's normalized title contains a key (substring match, lowercased), the split assigns the mapped MQ discipline to ALL members and KEEPS THE M-ID WHOLE (one piece, no division/subject split) — these are single courses whose TOP/subject varies by college (the title is the ground truth). This is the durable home for the domain calls the TOP/subject/description cascade can't make. Discipline values are exact MQ discipline names (verified against discipline_canonical_subj4.json). Seeded 2026-05-29 from Sam's dry-run review notes; grows as curation continues.",
+  "_generated_by": "seeded by hand from curator review notes",
+  "_seeded_at": "2026-05-29",
+  "_match": "substring, case-insensitive, against the M-ID common_title",
+  "_schema": "title_substring -> {discipline, keep_whole, note?}",
+  "entries": {
+    "social media": {"discipline": "Multimedia", "keep_whole": true, "note": "Sam: should be Multimedia (SUBJ misalign — some colleges coded Office Tech)"},
+    "desktop publishing": {"discipline": "Multimedia", "keep_whole": true, "note": "Sam: Advanced Desktop Publishing should be Multimedia"},
+    "visual communication": {"discipline": "Multimedia", "keep_whole": true, "note": "Sam: Multimedia (drop the Interior Design member grouping)"},
+    "death and dying": {"discipline": "Gerontology", "keep_whole": true, "note": "Sam: should be GERO"},
+    "introduction to gerontology": {"discipline": "Gerontology", "keep_whole": true, "note": "Sam: keep in GERO"},
+    "online learning": {"discipline": "Learning Assistance or Learning Skills", "keep_whole": true, "note": "Sam: put Introduction to Online Learning in LSKL"},
+    "digital literacy": {"discipline": "Learning Assistance or Learning Skills", "keep_whole": true, "note": "Sam: should be LSKL"},
+    "stem careers": {"discipline": "Counseling", "keep_whole": true, "note": "Sam: Introduction to STEM Careers should be COUN"},
+    "emotional intelligence": {"discipline": "Counseling", "keep_whole": true, "note": "Sam: keep in COUN (may curate a Business variant later)"},
+    "storytelling": {"discipline": "Communication Studies", "keep_whole": true, "note": "Sam: Storytelling usually in COMM"},
+    "production management": {"discipline": "Film and Media Studies", "keep_whole": true, "note": "Sam: should be Film Production; NOTE a Restaurant-Management member should go to Culinary — per-member exception not handled by keep_whole, curate later"}
+  },
+  "_needs_check": {
+    "introduction to computers": {"candidate_discipline": "Office Technologies", "note": "Sam: Office Tech used to have its own MQ discipline; could be a SUBJ correction — asked to verify before mapping. NOT applied until confirmed."}
+  }
+}
