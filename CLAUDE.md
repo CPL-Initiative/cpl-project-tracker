@@ -694,6 +694,37 @@ session resuming the build — read it before touching `kb/` or the curation tab
 2. **Course-identity layer** (which common course a local course is) — staging
    built; the **articulation crosswalk is the current frontier**. Identifier
    precedence is **CCN-ID > C-ID > M-ID** (see the README section).
+
+   **Cluster lifecycle — what "Cluster" means in the CCR (rule, 2026-05-30).**
+   There are TWO distinct things the CCR ever labelled `id_system: "Cluster"`:
+   1. **Auto-seeded variant-unification clusters** (`UC-XXXXX`, from
+      `_seed_coci_unified_courses.py`) — **DISSOLVED 2026-05-30.** They grouped
+      M-IDs by a **token-sorted** title key, which collapsed distinct course
+      *levels* (e.g. "Algebra 1: Part 2" and "Algebra 2: Part 1" both sort to
+      `1 2 algebra part` → wrongly merged). They were never curator-reviewed,
+      **double-emitted** their members as Stand-Alone rows, and carried **zero**
+      articulations. The level-safe **Suggested-merges worklist** does this job
+      now — better, and curator-confirmed. The `clusters` dict in
+      `coci_unified_courses.json` is now empty (archived at
+      `archive/coci_unified_courses_clusters_2026-05-30_pre-dissolution.json`);
+      every `for … in clusters` loop in `export_unified_courses()` no-ops.
+   2. **Curator merge targets** (`UC-CUR-*` synthetic ids **and** any M-ID/C-ID
+      a curator folds members into via `merge_into`) — **KEPT.** These are the
+      legitimate, reviewed consolidations from the worklist. After the
+      dissolution the CCR shows **exactly 10** Cluster rows (9 curator
+      merge-target M-IDs + 1 `UC-CUR-*`), down from ~1,376. This is the ONLY
+      source of a "Cluster" row now; it comes from the `merge_members` path, not
+      from `coci_unified_courses.json`.
+
+   The 9 clusters that had ALREADY been curated (merged into an M-ID) were
+   migrated to **per-member `merge_into`** entries in Supabase `kb_curation` +
+   `kb/coci_curation.json` BEFORE dissolution, so no curator decision was lost
+   (16 of 17 per-member equivalents already existed from the worklist; only
+   `PHYS M11WB → PHYS M1265` had to be added). Side-benefit: this cleared all 9
+   `cluster_member_unresolved` auditor findings (they fired on the redundant
+   cluster-key merges). **Open follow-on for Sam:** decide whether merge targets
+   should keep the `"Cluster"` label or revert to their native id_system (M-ID),
+   which would retire the category name entirely.
    - **CURATED ANCHOR — firewalled, do NOT bulk-edit:** `common_courses.json` +
      `course_crosswalk.json` are a small hand-reviewed quality anchor. NEVER
      bulk-merge staging into them; promote individual entries only after review.
@@ -706,8 +737,10 @@ session resuming the build — read it before touching `kb/` or the curation tab
      discipline, credit_status, typical_units, top_code, noncredit_category, each
      with `*_mixed` variance flags), `coci_minted_memberships.json` (lean
      M-ID → member `(subject, number)` join index), `coci_minted_singletons.json`
-     (deferred single-college courses), `coci_unified_courses.json` (variant-
-     unified clusters), `coci_articulations.json` (earned articulations resolved
+     (deferred single-college courses), `coci_unified_courses.json` (its
+     auto-seeded variant-unification clusters were **DISSOLVED 2026-05-30** — the
+     `clusters` dict is now empty; see the "Cluster lifecycle" note below),
+     `coci_articulations.json` (earned articulations resolved
      to identity + credential, with cross-college **adoption-leverage** lists —
      the payoff layer), `coci_curation.json` (human curation overlay synced from
      Supabase — each entry carries `discipline` + `reviewed_by` + `reviewed_at`).
@@ -1188,6 +1221,7 @@ repo root: `python3 kb/_row_audit.py`.
 | **Assoc editor on all 34 Dashboard cards (#191)** | The 7 orphans don't render in the Workplan Goals tab, so the #190 editor couldn't reach them. Extracted the popover into a **shared `assoc_editor.js`** module (ONE delegated `document` click listener, `_hasListener`-guarded) and wired it onto **all 34 project cards** in the Dashboard Projects Grid — card assoc data sourced from the **associations table joined to the full projects list** (covers 5.2–5.8, which aren't in `workplan_goals`). `workplan_goals.js` refactored to delegate (**−441 lines**, no duplicate popover; the "two popovers open at once" trap avoided). Reuses `.wpg-assoc-*` CSS; graceful on Supabase outage (backfilled chips). Sub-agent-built, **hard-reviewed** (both surfaces + hostile-input + 3× idempotency + Rule 4). | **DONE 2026-05-29** (PR #191, Session 17, Qualitastic) |
 | **akpi / CPL_DATA XSS hardening (#192)** | Closed a **pre-existing stored-XSS sink** surfaced (and confirmed via injection) during the #191 review: Activity-KPI cards rendered curator-editable project/activity/goal names **unescaped**, and the inline `window.CPL_DATA` `<script>` blob could **break out via a name containing `</script>`**. Fix: `html_escape(quote=True)` on the akpi HTML sites + new **`_js_safe_json()`** (neutralizes `<`/`>`/`&`/U+2028/9 → `\uXXXX` in the JSON; `JSON.parse` decodes back → client data byte-identical) on both `window.CPL_DATA` emissions. Hostile-input injection: raw leaks **3+2 → 0**. Generator-only diff (Rule 1). Third confirming instance of `methodology-xss-audit-on-curator-editable-fields` — adds the **inline-JSON-in-`<script>`** injection class. | **DONE 2026-05-29** (PR #192, Session 17, Qualitastic) |
 | **Over-merge re-mint (Session 18)** | Cross-discipline over-merge cleanup of the CCR. **`member_top_divergence` auditor rule** (PR #194, 1,299 flags — M-ID members span ≥2 two-digit TOP divisions, ≥30% minority; 736 invisible to prior rules; the cross-discipline over-merge detector). Then a Rule-7 re-mint that **splits** each flagged M-ID into discipline-pure pieces: **dry-run** `kb/_overmerge_dryrun.py` (all 4 gates green) + **apply** `kb/_overmerge_apply.py` + `_supabase.py` + `.github/workflows/overmerge-apply.yml` (STAGED, dispatch-only, V1–V4 + FRESH-READ + idempotent). 60% of flagged "corroborated" M-IDs de-corroborate on split (phantom title-collisions). **Split brain redesigned twice from Sam's review** (TOP-only → title/subject/description-aware): iter-1 cascade (SUBJ4→subject→TOP→description, raw-subject fallback) + curator **title→discipline keep-whole map** (`kb/overmerge_title_discipline.json`) + container-by-subject → blank-piece rate **51%→38.6%**; iter-2 description-similarity keep-vs-split (Jaccard 0.55 → **36.3%**). Two re-mint invariants learned (id-prefix==SUBJ4 re-key; control-number atomicity) → `docs/kb-notes/methodology-remint-split-invariants.md`. Full state: `docs/overmerge_remint_lessons.md` + scope `docs/kb-notes/over-merge-remint-scope.md`. **Apply gated on Sam's final preview review** (he dispatches). Backlog: SUBJ4-curation→CCR cascade; 341 SUBJ4→discipline blank-backfill. | **DONE + MERGED to main** (PR #194, squash `340d753`, 2026-05-30); split iter-1 + iter-2 DONE; apply STAGED + gated on Sam's dispatch (Session 18) |
+| **CCR cluster dissolution (Session 19)** | Retired the **1,385 auto-seeded `UC-XXXXX` variant-unification clusters** (`coci_unified_courses.json` `clusters` → `{}`, archived). They token-sorted titles (collapsing distinct levels, e.g. "Algebra 1: Part 2" == "Algebra 2: Part 1"), were never curator-reviewed, double-emitted members as Stand-Alone, carried 0 articulations — superseded by the level-safe Suggested-merges worklist. The **9 already-curated clusters migrated to per-member `merge_into`** (Supabase `kb_curation` + `coci_curation.json`) FIRST so no decision was lost — measure-first found 16/17 per-member equivalents already existed, so the migration was 1 INSERT (`PHYS M11WB→PHYS M1265`) + 9 DELETEs; side-benefit cleared 9 `cluster_member_unresolved` findings. CCR `id_system: Cluster` rows: ~1,376 → **10** (9 curator merge-target M-IDs + 1 `UC-CUR-*`, from the `merge_members` path). Generator regenerated + verified in isolation. Full rule in the "Cluster lifecycle" note above; lessons `docs/ccr_cluster_cleanup_lessons.md`; method `docs/kb-notes/methodology-retiring-an-auto-seeded-layer.md`. **Open follow-on:** relabel merge targets M-ID (vs keep "Cluster") to retire the category name. | **DONE** (Session 19, 2026-05-30) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 3 | EACR interactive re-pivot to course-identity grouping (Approach B per §9) | **DONE 2026-05-26** (Session 8, Octaman — see Exhibit-canon PR-C0/C0b/C1/C2/C2-hotfix rows above) |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
