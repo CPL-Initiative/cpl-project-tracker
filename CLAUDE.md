@@ -179,6 +179,13 @@ into the Pipeline Reference below or into dedicated docs.
     required to merge — but if a reviewer *has* left an unresolved comment
     or change-request, address it (fix, or ask when ambiguous) before
     merging. Absent any such comment, green CI is the only gate.
+  - **Merge promptly — never park a PR in draft / "waiting for review".** The
+    harness opens PRs as draft; mark it **ready immediately** (a PR can be ready
+    while CI is still running) and **squash-merge the instant CI goes green**. A
+    green-CI PR you opened is an action item, not a resting state — merge it
+    before moving on to the next piece of work. (Leaving #202 sitting in draft
+    during unrelated recon is what made it look like it was "waiting for review"
+    — 2026-05-30, Sam.)
   - **Method: squash and merge** — collapses to one commit on `main` with
     the PR title + body. Matches the existing `Merge pull request #N`
     history pattern.
