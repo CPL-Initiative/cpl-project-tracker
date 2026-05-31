@@ -1048,3 +1048,56 @@ Confirm the next daily regen renders the #191 card editor + ★ primaries + #192
 escaping + the $89M budget live (eyeball the deployed site). Then take the Budget
 inline editor (Phase 3 PR-5-equivalent) or Phase 4 Vision 2030.
 
+
+## 2026-05-31 — Session 23 (Bruh 23): Excel retirement scoped + PR-1 keystone
+
+### (a) What shipped
+- **Excel-retirement scope (PR #210, merged)** — `docs/kb-notes/excel-retirement-final-scope.md`.
+  Measure-first corrected stale roadmap state: **Personnel is already Supabase**
+  (folded into the budget cutover #189), **Vision 2030 is static cards +
+  computed/config progress** (not an Excel data table) — neither needs a
+  migration. Only **2** report JS consume the ladder (not 3). The whole job
+  reduces to: migrate the KPI ladder + 15 `D.*` rows, then sunset `read_projects()`.
+- **Excel PR-1 — KPI-ladder keystone (PR #211, merged).** Repointed the ladder
+  (`kpi_goal_2526 … kpi_stretch_2930`) in `CPL_Data.js` from Excel
+  (`read_projects`) to Supabase `workplan_goals`. New `_build_wg_ladder()` +
+  `load_projects()` enrichment (Excel ladder kept as per-project fallback;
+  `read_projects()` still the total-outage fallback).
+
+### (b) What was learned
+- **The "Excel-sourced for fidelity" blocker was a representational gap, and it
+  was tiny.** The ladder data already lived in `workplan_goals`; Excel only
+  stayed the source because `workplan_goals` seeded blanks as `0` (couldn't tell
+  "no goal" from a literal `0`). Measure-first (Excel vs Supabase, cell-by-cell)
+  found the gap was **exactly 11 cells** (5.1 GOAL yrs 1-4 + STRETCH all 5;
+  4.1.3/4.1.4 final STRETCH) and **2 real 0s** (1.4) — and **0 mismatches**
+  (no curator edits to preserve). Lesson: when a source-swap is "blocked by
+  fidelity," MEASURE the gap before assuming it's big; here a 1-line-per-cell
+  `UPDATE … = NULL` closed it.
+- **Fix the gap at the NEW source, then prove with a parity gate.** NULLed the
+  11 cells live (nullable numeric columns already existed — a data fix, not a
+  schema migration; pre-fix snapshot archived for reversibility). The repoint
+  then regenerated `CPL_Data.js` **byte-identical** to the Excel-sourced ladder
+  across all 49 projects (0 diffs) — the go/no-go. 1.4 keeps `'0'/'0'`, 5.1
+  keeps `''/''`. Reinforces `methodology-parity-test-cutover-proof.md`.
+- **The repoint was output-invisible.** Rendered HTML diff = 17 timestamp lines;
+  the report-consumer field contract is unchanged (no JS edit). A clean
+  source-swap: same bytes out, Excel no longer the source.
+- **Live Supabase reads via MCP are the measure-first tool when no key is local.**
+  `execute_sql` (read-only) let me inspect `workplan_goals` storage + apply the
+  targeted fix without a service key in the container; the local generator falls
+  back to the committed snapshot (which I synced to match the live fix).
+
+### (c) Current state
+KPI ladder no longer Excel-sourced (PR-1 done). `read_projects()` still supplies
+the 15 `D.*` cohort-helper rows + `excel_row` + the total-outage fallback —
+those retire next. Personnel + Vision 2030 confirmed NO-migration. Budget
+read-path done; Budget + KPI-ladder inline editors still to build (Sam chose a
+dashboard inline editor for the ladder).
+
+### (d) Next concrete step
+**Excel PR-2:** migrate the 15 `D.*` cohort-helper rows off Excel (Sam's fork:
+`kind='kpi_helper'` in `workplan_goals` recommended — reuses table/RLS/loader/
+snapshot, no new migration), repoint `build_activity_kpis()` +
+`derive_core_activity_ids()`. Then the **KPI-ladder inline editor** on the
+Workplan Goals tab, then **PR-4** sunset `read_projects()` + drop the `.xlsx`.
