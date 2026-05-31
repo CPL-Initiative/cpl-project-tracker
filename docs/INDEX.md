@@ -51,6 +51,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Playbook — Phase 2 projects migration scope (column map, KPI ladder contract, 6 forks for Sam)](kb-notes/phase-2-projects-migration-scope.md) | playbook | published | 2026-05-28 | 2026-05-28 |
 | [Playbook — Cross-discipline over-merge re-mint scope (split algorithm, 60% de-corroboration, 6 forks for Sam)](kb-notes/over-merge-remint-scope.md) | playbook | published | 2026-05-29 | 2026-05-29 |
 | [Playbook — Moving a generator-managed dashboard section to its own tab (end-anchor classify + sentinel marker)](kb-notes/playbook-move-generated-section-to-tab.md) | playbook | published | 2026-05-30 | 2026-05-30 |
+| [Playbook — Full Excel retirement final scope (KPI ladder blank-vs-0 crux, D.* helpers, read_projects sunset, 5 forks)](kb-notes/excel-retirement-final-scope.md) | playbook | published | 2026-05-31 | 2026-05-31 |
 | [Reference — Windows PowerShell scripting gotchas (PS 5.1 + Task Scheduler)](kb-notes/reference-windows-powershell-gotchas.md) | reference | published | 2026-05-27 | 2026-05-27 |
 
 ---
