@@ -979,6 +979,11 @@ def read_update_log(wb):
         pid = str(ws.cell(r, 1).value or "").strip()
         if not pid:
             continue
+        # D.* sub-population helper rows were retired (vestigial — nothing
+        # consumed their values); skip their orphaned update-log entries so
+        # they don't linger in CPL_Data.js without a matching project card.
+        if pid.startswith("D."):
+            continue
         date_val = ws.cell(r, 2).value
         note = str(ws.cell(r, 3).value or "").strip()
         ntype = str(ws.cell(r, 4).value or "update").strip()
@@ -1204,20 +1209,21 @@ def load_projects(wb):
     Supabase → daily snapshot → Excel (read_projects).
 
     Returns (projects, fetched_at, source) where:
-      - projects: the read_projects()-shaped list = 34 Supabase-sourced real
-        projects + the Excel-only D.* KPI-helper rows. Each real project's KPI
-        ladder is enriched from workplan_goals (Phase 3 / PR-1; the Excel ladder
-        is the per-project fallback); excel_row still comes from the workbook.
+      - projects: the read_projects()-shaped list = the 34 Supabase-sourced real
+        projects. Each real project's KPI ladder is enriched from workplan_goals
+        (Phase 3 / PR-1; the Excel ladder is the per-project fallback); excel_row
+        still comes from the workbook. (The 15 Excel-only D.* sub-population
+        helper rows were retired as vestigial — nothing consumed their values.)
       - fetched_at: 'YYYY-MM-DD' (today on a fresh fetch; the snapshot's date
         on fallback; today on the Excel fallback).
       - source: 'supabase' | 'snapshot' | 'excel'.
 
-    On the Excel fallback (both Supabase and the snapshot unavailable) the full
-    read_projects() output is returned unchanged — the ultimate safety net.
+    On the Excel fallback (both Supabase and the snapshot unavailable) the
+    read_projects() output is returned minus the retired D.* rows — the
+    ultimate safety net.
     """
     excel_projects = read_projects(wb)
     excel_row_by_id = {p["id"]: p.get("excel_row", 0) for p in excel_projects}
-    helper_rows = [p for p in excel_projects if str(p["id"]).startswith("D.")]
     excel_ladder_by_id = {
         p["id"]: {k: v for k, v in p.items()
                   if k.startswith("kpi_goal_") or k.startswith("kpi_stretch_")}
@@ -1243,14 +1249,14 @@ def load_projects(wb):
             ladder = wg_ladder_by_id.get(p["id"]) or excel_ladder_by_id.get(p["id"])
             if ladder:
                 p.update(ladder)
-        projects = real + helper_rows
-        print(f"  Projects: {len(real)} from Supabase ({source}, as of {fetched_at}) "
-              f"+ {len(helper_rows)} Excel D.* helper rows")
-        return projects, fetched_at, source
+        print(f"  Projects: {len(real)} from Supabase ({source}, as of {fetched_at})")
+        return real, fetched_at, source
     except Exception as e:
         print(f"  Projects: Supabase + snapshot unavailable ({e}); "
               f"falling back to Excel read_projects().")
-        return excel_projects, _now_pt().strftime("%Y-%m-%d"), "excel"
+        # Excel fallback drops the retired D.* sub-population helper rows too.
+        excel_real = [p for p in excel_projects if not str(p["id"]).startswith("D.")]
+        return excel_real, _now_pt().strftime("%Y-%m-%d"), "excel"
 
 
 def read_config_overrides(wb):
@@ -1297,17 +1303,6 @@ def read_config_overrides(wb):
         print(f"  Config overrides from Col AG: {list(overrides.keys())}")
 
     return overrides
-
-
-def _override_int(proj_map, pid):
-    """Return the Col AG override for a project as an int, or None if not set."""
-    p = proj_map.get(pid)
-    if p and p.get("override") is not None:
-        try:
-            return int(float(p["override"]))
-        except (ValueError, TypeError):
-            pass
-    return None
 
 
 def read_annual_goals(wb):
@@ -1376,81 +1371,6 @@ def read_annual_goals(wb):
         r += 3  # skip GOAL/CURRENT/STRETCH triplet
 
     return rows
-
-
-def populate_current_metrics(annual_goals, projects):
-    """
-    Fill in the 'current' 2025-26 column for each annual goal row
-    using actual metrics from the Project List and live data.
-    """
-    proj_map = {p["id"]: p for p in projects}
-    # Sub-population data rows
-    dpop = {p["id"]: p for p in projects if p["id"].startswith("D.")}
-
-    # Mapping: annual goal ID → how to compute current metric
-    # Most map to the Project List KPI metric for the matching or related project ID.
-    # Col AG overrides take priority when present (checked via _override_int).
-    metric_map = {
-        "1.1": lambda: _override_int(proj_map, "1.1") if _override_int(proj_map, "1.1") is not None else 1,  # MAP platform operational (default 1)
-        "1.2": lambda: _override_int(proj_map, "1.2") if _override_int(proj_map, "1.2") is not None else _pcount(proj_map, "1.2"),
-        "1.3": lambda: _override_int(proj_map, "1.3") if _override_int(proj_map, "1.3") is not None else (1 if _ppct(proj_map, "1.3") >= 50 else 0),
-        "1.4": lambda: _override_int(proj_map, "1.4") if _override_int(proj_map, "1.4") is not None else _pmetric_int(proj_map, "1.4"),
-        "2.1": lambda: _override_int(proj_map, "2.1") if _override_int(proj_map, "2.1") is not None else _pmetric_int(proj_map, "2.1"),
-        "2.2": lambda: _override_int(proj_map, "2.2") if _override_int(proj_map, "2.2") is not None else _pmetric_int(proj_map, "2.2"),
-        "2.3": lambda: _override_int(proj_map, "2.3") if _override_int(proj_map, "2.3") is not None else _pmetric_int(proj_map, "2.3"),
-        "2.4": lambda: _override_int(proj_map, "2.4") if _override_int(proj_map, "2.4") is not None else (1 if _ppct(proj_map, "5.1") > 0 else 0),  # AI-Ready = project 5.1
-        "3.1": lambda: _override_int(proj_map, "3.1") if _override_int(proj_map, "3.1") is not None else _pmetric_int(proj_map, "3.1"),
-        "3.1.1": lambda: _override_int(dpop, "D.1") if _override_int(dpop, "D.1") is not None else _pmetric_int(dpop, "D.1"),
-        "3.1.2": lambda: _override_int(dpop, "D.2") if _override_int(dpop, "D.2") is not None else _pmetric_int(dpop, "D.2"),
-        "3.1.2b": lambda: _override_int(dpop, "D.3") if _override_int(dpop, "D.3") is not None else _pmetric_int(dpop, "D.3"),
-        "3.2": lambda: _override_int(proj_map, "3.2") if _override_int(proj_map, "3.2") is not None else _pmetric_int(proj_map, "3.2"),
-        "3.3": lambda: _override_int(proj_map, "3.3") if _override_int(proj_map, "3.3") is not None else _pmetric_int(proj_map, "3.3"),
-        "3.4": lambda: _override_int(proj_map, "3.5") if _override_int(proj_map, "3.5") is not None else _pmetric_int(proj_map, "3.5"),  # stories
-        "4.1": lambda: _override_int(proj_map, "4.1") if _override_int(proj_map, "4.1") is not None else 2,  # Title 5 updates (default 2)
-        "4.2": lambda: _override_int(proj_map, "4.2") if _override_int(proj_map, "4.2") is not None else 5,  # $5M ongoing (default 5)
-        "4.3": lambda: _override_int(proj_map, "4.3") if _override_int(proj_map, "4.3") is not None else _pmetric_int(proj_map, "4.3"),
-        "4.4": lambda: _override_int(proj_map, "4.4") if _override_int(proj_map, "4.4") is not None else _pmetric_int(proj_map, "4.3"),  # TA ~ trainings
-        "4.5": lambda: _override_int(proj_map, "4.5") if _override_int(proj_map, "4.5") is not None else _pmetric_int(proj_map, "5.4"),  # research ~ RP Group
-    }
-
-    for row in annual_goals:
-        getter = metric_map.get(row["id"])
-        if getter:
-            try:
-                val = getter()
-            except Exception:
-                val = 0
-            row["current"]["2025-26"] = val
-            row["current"]["total"] = val  # only first year has actuals so far
-
-
-def _pmetric_int(pmap, pid):
-    """Extract integer metric from a project map entry."""
-    p = pmap.get(pid)
-    if not p:
-        return 0
-    m = p.get("kpi_metric", "")
-    try:
-        return int(str(m).replace(",", "").replace("k", "000").replace("K", "000").rstrip("+"))
-    except (ValueError, TypeError):
-        return 0
-
-
-def _ppct(pmap, pid):
-    p = pmap.get(pid)
-    return p.get("pct", 0) if p else 0
-
-
-def _pcount(pmap, pid):
-    """Count non-empty integrations for a project."""
-    p = pmap.get(pid)
-    if not p:
-        return 0
-    m = p.get("kpi_metric", "")
-    try:
-        return int(str(m).replace(",", ""))
-    except (ValueError, TypeError):
-        return 0
 
 
 def render_annual_goals_table_html(annual_goals, activities=None):
@@ -7549,8 +7469,8 @@ def build_budget_from_supabase(funding_rows, personnel_rows, excel_budget):
     Expenditures + the expense category/area rollups are left EMPTY (held — see
     kb/_load_budget.py; the Excel dollar columns are gutted, so seeding would
     publish misleading numbers). `factors` + `year_labels` come from excel_budget
-    (no Supabase table — they stay Excel-sourced, like the D.* helper rows in
-    Phase 2). grand_total = sum of funding totals.
+    (no Supabase table yet — they stay Excel-sourced). grand_total = sum of
+    funding totals.
     """
     def fnum(v):
         try:
@@ -8048,9 +7968,10 @@ def main():
     att_dir = ATTACHMENTS_DIR if os.path.isdir(ATTACHMENTS_DIR) else _LOCAL_ATTACHMENTS
     # Will scan after projects are read (need project list for subfolder creation)
     # Excel→Supabase Phase 2 (PR-4): the 34 real projects load from Supabase
-    # (with daily-snapshot + Excel fallbacks); the Excel-only D.* KPI-helper
-    # rows + the KPI ladder + excel_row come from the workbook. Behavior-
-    # preserving — see kb/_test_projects_parity.py.
+    # (with daily-snapshot + Excel fallbacks); excel_row still comes from the
+    # workbook. The KPI ladder is sourced from workplan_goals (Phase 3 / PR-1),
+    # and the 15 D.* sub-population helper rows were retired as vestigial.
+    # Behavior-preserving — see kb/_test_projects_parity.py.
     projects, projects_fetched_at, projects_source = load_projects(wb)
     config_overrides = read_config_overrides(wb)
     update_log      = read_update_log(wb)
