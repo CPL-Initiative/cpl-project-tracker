@@ -4,8 +4,10 @@ Parity test for the Excel→Supabase Phase 2 (PR-4) projects cutover.
 Proves that load_projects() (Supabase-sourced, via the snapshot path when no
 service key is present) produces a project list byte-identical to the legacy
 read_projects() (Excel) for the 34 real grid-card projects — so the cutover is
-behavior-preserving. The D.* KPI-helper rows come straight from Excel in both,
-so they're trivially identical.
+behavior-preserving. The 15 D.* sub-population helper rows were retired as
+vestigial (nothing consumed their values), so load_projects() now emits the 34
+real projects only — read_projects() still surfaces D.* from the Excel master,
+but the cutover filters them out.
 
 Expected divergences (NOT failures, reported separately):
   - `end` for the 3 projects whose Excel value was "Ongoing": fork #1 (lenient
@@ -47,7 +49,7 @@ def main() -> int:
 
     print(f"source={source} fetched_at={fetched_at}")
     print(f"excel real projects = {len(excel_real)}; built real projects = {len(built_real)}; "
-          f"D.* helper rows = {len(helper_rows)}")
+          f"D.* rows leaked into built (expect 0) = {len(helper_rows)}")
 
     hard_failures = []      # field diffs that are NOT explained by a known fork
     expected_divergences = []  # date-fork + ladder-curator-edit diffs
@@ -77,11 +79,16 @@ def main() -> int:
             else:
                 hard_failures.append(f"{pid}.{key}: excel={ev!r} != built={bv!r}")
 
-    # 3. D.* helper rows must be byte-identical to Excel (same source).
-    excel_helpers = {p["id"]: p for p in excel_projects if str(p["id"]).startswith("D.")}
-    built_helpers = {p["id"]: p for p in helper_rows}
-    if excel_helpers != built_helpers:
-        hard_failures.append("D.* helper rows differ from Excel (should be identical)")
+    # 3. D.* sub-population helper rows are RETIRED (vestigial — nothing consumed
+    #    them). read_projects() still surfaces them from the Excel master, but
+    #    load_projects() must filter them out entirely (no-leak guard).
+    excel_dstar = sorted(p["id"] for p in excel_projects if str(p["id"]).startswith("D."))
+    if helper_rows:
+        hard_failures.append(
+            f"load_projects() leaked retired D.* rows: "
+            f"{sorted(p['id'] for p in helper_rows)}")
+    print(f"\nD.* in Excel master = {len(excel_dstar)} (read_projects surfaces them); "
+          f"load_projects filtered them out → {len(helper_rows)} leaked")
 
     print(f"\nexpected divergences ({len(expected_divergences)}):")
     for d in expected_divergences:
