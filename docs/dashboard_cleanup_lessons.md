@@ -113,3 +113,62 @@ daily cron folds it into the overlay + regenerates the CCR.
    hard — pervasive inline colors); a `dashboard-tab-surgery` Skill; full Excel
    retirement (Phases 4 Vision / 5 Personnel + migrate the KPI ladder + 3 report
    consumers).
+
+## 2026-05-31 — Session 22 (Bruh Sentinel)
+
+### (a) What shipped — #1, the deferred HIGH-RISK page move (PR #206, merged)
+
+**Workplan Activities & Projects → its own "Activities & Projects" tab**
+(`#tab-activities-projects`). The hard-case path from the playbook:
+
+- The section's marker `<!-- ═══ Workplan Activities & Projects Section ═══ -->`
+  was the **end-anchor for 4 generator ops** (KPI Summary replace, MAP
+  Articulation strip, CPL Analytics strip, CPL Analytics insert). Moving it would
+  let those `.*?` regexes gobble across the Dashboard→new-pane gap on the next regen.
+- Fix: a permanent **`<!-- ═══ Dashboard Sections End ═══ -->` sentinel** stays in
+  the Dashboard tab (where the section began); all 4 ops re-anchor on it (one
+  `replace_all` of the marker string + comment updates). The section's inner
+  anchors (`Filter Bar` 5108, `Projects Grid` 5198, `End Projects Grid` 7930,
+  `activityKpiSection`) travelled with the ~4,600-line block, so Ops 5/6/7 still
+  resolve via `html.find()` in the new pane. Op 6 (Annual Workplan Goals) was a
+  red herring — it replaces in place at the *workplan-goals tab's* AWG markers
+  (8547/9394), not in the moved block; its `<!-- Projects Grid -->` ref is a
+  fresh-template fallback only.
+
+### (b) What was learned
+
+- **You CAN run `excel_to_dashboard.py` in a web session.** `pip install openpyxl
+  pandas`; it falls back to `kb/*_snapshot.json` when `SUPABASE_SERVICE_KEY` is
+  unset (snapshots + `live_metrics.json` + the project xlsx are committed). The
+  Node `docx` report step fails (no npm module) but that's AFTER the HTML write
+  (8896) + index mirror (8943) — non-fatal. This turns the playbook's "non-optional
+  local regen" from a blocker into a 1-minute check.
+- **Idempotency = run twice, diff.** Two consecutive regens diffed to only the
+  5:33→5:34 PM timestamp + trailing whitespace (15 lines). That's the definitive
+  proof the Rule-1 regex anchors don't gobble or accumulate. A structural drift or
+  duplicated section would have shown up immediately.
+- **Marker-based surgery beats line numbers.** The move was done by a throwaway
+  Python script keyed on marker *strings* with `count()==1` assertions that
+  `sys.exit` on surprise — robust against the 10k-line file's whitespace. (Script
+  deleted post-merge; method lives in the commit + KB note.)
+- **Ship structure-only HTML.** Reverted the regen's data files (CPL_Data.js,
+  unified_*.js, exports/) and shipped the pre-regen HTML (move applied, committed
+  data intact) → tight 3-file diff, no data churn. The move is a proven-idempotent
+  generator input, so the next cron regenerates cleanly on top.
+
+### (c) Current state
+
+#1 DONE + merged. #6 (Exhibit Adoption) already landed Session 20. Both page moves
+from the cleanup sprint are now complete. CLAUDE.md §6b/§7b/§11 synced to the new
+layout. Tab nav now: Dashboard · **Activities & Projects** · Annual Workplan Goals ·
+Budget · Vision 2030 · CCR · CSR · CER · Exhibit Adoption · Pipeline · Letters.
+
+### (d) Strategic roadmap / next
+
+1. **#2 sidebar sub-links** — now UNBLOCKED (depended on the final tab layout).
+   Expand each pane's `data-sections`; scroll-spy already wired. Per-pane, additive,
+   no generator risk. Verify rendering (can't eyeball scroll-spy headless).
+2. **#3 MID/CID/CCNID cosmetic sweep** — own focused PR + measure-first; preserve
+   the 224 anchor identifier keys; lockstep every `=== "M-ID"` comparison.
+3. **Encode a `dashboard-tab-surgery` Skill** — there's now a clean, proven instance
+   (this PR) + the KB-note playbook to encode it from.
