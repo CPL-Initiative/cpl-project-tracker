@@ -47,6 +47,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Re-mint split invariants (id↔SUBJ4, control-number atomicity, dry-run↔apply cross-check)](kb-notes/methodology-remint-split-invariants.md) | methodology | published | 2026-05-29 | 2026-05-29 |
 | [Methodology — Retiring an auto-seeded data layer (check for curator decisions riding on it)](kb-notes/methodology-retiring-an-auto-seeded-layer.md) | methodology | published | 2026-05-30 | 2026-05-30 |
 | [Methodology — Cosmetic relabel via a display-label map, not a stored-value rename](kb-notes/methodology-display-label-map-vs-data-rename.md) | methodology | published | 2026-05-31 | 2026-05-31 |
+| [Methodology — Verify the consumer graph before migrating a data class (a dead reader means delete)](kb-notes/methodology-verify-consumer-before-migrating.md) | methodology | published | 2026-05-31 | 2026-05-31 |
 | [Playbook — Auto-sync vault-side repo clones via Windows Task Scheduler](kb-notes/playbook-vault-sync-setup.md) | playbook | published | 2026-05-27 | 2026-05-29 (consolidation + plugins follow-up) |
 | [Playbook — Measure-first Supabase migration (snapshot → validate → dry-run → workflow_dispatch apply → cutover)](kb-notes/playbook-measure-first-supabase-migration.md) | playbook | published | 2026-05-28 | 2026-05-28 (Phase 2) |
 | [Playbook — Phase 2 projects migration scope (column map, KPI ladder contract, 6 forks for Sam)](kb-notes/phase-2-projects-migration-scope.md) | playbook | published | 2026-05-28 | 2026-05-28 |
