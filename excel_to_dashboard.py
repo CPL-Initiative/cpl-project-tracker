@@ -1085,15 +1085,15 @@ def read_projects(wb):
 # wp_notes) + 3 type-changed columns (percent_complete/start_date/end_date) are
 # handled in build_projects_from_supabase(); the rest keep their Excel names.
 #
-# The KPI goal/stretch ladder (kpi_goal_2526 … kpi_stretch_2930) is NOT sourced
-# from Supabase here. It stays Excel-sourced (enriched in load_projects) for two
-# reasons: (1) the Excel ladder columns are NOT retired in Phase 2 — the 3 JS
-# report consumers still read them — so there's no "retire Excel" benefit yet;
-# (2) workplan_goals (the Phase-1 home of the ladder) stores 0.0 for both a
-# blank cell AND a literal 0, so it cannot losslessly reconstruct read_projects'
-# ladder (e.g. project 1.4 has a real "0" target; 5.1 has blanks). Excel is the
-# lossless source. The ladder moves to workplan_goals in Phase 3, when the Excel
-# ladder columns retire alongside the JS-consumer migration.
+# The KPI goal/stretch ladder (kpi_goal_2526 … kpi_stretch_2930) is sourced from
+# workplan_goals (the Phase-1 source of truth), NOT Excel — Phase 3 / PR-1.
+# _build_wg_ladder() reads it; load_projects() enriches each project. A NULL year
+# value renders as "" (blank — distinct from a literal 0, which stays "0"). The
+# blank-vs-0 conflation that previously kept the ladder on Excel was fixed at the
+# source (workplan_goals: the 11 genuinely-blank cells NULLed — 4.1.3/4.1.4 final
+# STRETCH + all of 5.1 — while project 1.4's two real "0" targets were kept). The
+# per-project Excel ladder is retained as a fallback (and read_projects() is the
+# total-outage fallback in load_projects) until read_projects() is sunset.
 _LADDER_SUFFIXES = ("2526", "2627", "2728", "2829", "2930")
 
 
@@ -1103,6 +1103,45 @@ def _empty_ladder():
         for suffix in _LADDER_SUFFIXES:
             d[prefix + suffix] = ""
     return d
+
+
+# Phase 3 / PR-1: year-suffix → workplan_goals column. GOAL rows feed kpi_goal_*,
+# STRETCH rows feed kpi_stretch_*.
+_WG_YEAR_COL = {
+    "2526": "yr_2025_26", "2627": "yr_2026_27", "2728": "yr_2027_28",
+    "2829": "yr_2028_29", "2930": "yr_2029_30",
+}
+
+
+def _build_wg_ladder():
+    """KPI goal/stretch ladder per project id, sourced from workplan_goals (the
+    Phase-1 source of truth; Phase 3 / PR-1 repoint). A NULL year value renders
+    as "" (blank — distinct from a literal 0, which fmt_number keeps as "0"), so
+    the ladder is now lossless from Supabase after the blank-vs-0 fix. Returns {}
+    if workplan_goals is unavailable — load_projects() then falls back to the
+    per-project Excel ladder (and read_projects() is the total-outage fallback)."""
+    try:
+        from kb._load_workplan_goals import load_workplan_goals_full as _f
+    except ImportError:
+        sys.path.insert(0, os.path.join(os.path.dirname(__file__), "kb"))
+        from _load_workplan_goals import load_workplan_goals_full as _f
+    try:
+        rows, _assocs, _fetched, _src = _f()
+    except Exception:
+        return {}
+    out = {}
+    for r in rows:
+        if r.get("kind") != "project":
+            continue
+        pid = r.get("activity_id")
+        prefix = {"GOAL": "kpi_goal_", "STRETCH": "kpi_stretch_"}.get(r.get("row_type"))
+        if not pid or not prefix:
+            continue
+        d = out.setdefault(pid, {})
+        for suffix, col in _WG_YEAR_COL.items():
+            v = r.get(col)
+            d[prefix + suffix] = "" if v is None else fmt_number(v)
+    return out
 
 
 def build_projects_from_supabase(supabase_rows):
@@ -1167,8 +1206,8 @@ def load_projects(wb):
     Returns (projects, fetched_at, source) where:
       - projects: the read_projects()-shaped list = 34 Supabase-sourced real
         projects + the Excel-only D.* KPI-helper rows. Each real project's KPI
-        ladder + excel_row are enriched from the workbook (the ladder stays
-        Excel-sourced in Phase 2 — see build_projects_from_supabase note).
+        ladder is enriched from workplan_goals (Phase 3 / PR-1; the Excel ladder
+        is the per-project fallback); excel_row still comes from the workbook.
       - fetched_at: 'YYYY-MM-DD' (today on a fresh fetch; the snapshot's date
         on fallback; today on the Excel fallback).
       - source: 'supabase' | 'snapshot' | 'excel'.
@@ -1184,6 +1223,9 @@ def load_projects(wb):
                   if k.startswith("kpi_goal_") or k.startswith("kpi_stretch_")}
         for p in excel_projects
     }
+    # Phase 3 / PR-1: the ladder now comes from workplan_goals (lossless after
+    # the blank-vs-0 fix); excel_ladder_by_id is the per-project fallback.
+    wg_ladder_by_id = _build_wg_ladder()
 
     try:
         try:
@@ -1193,14 +1235,14 @@ def load_projects(wb):
             from _load_projects import load_projects_full as _load_proj_full
         supa_rows, fetched_at, source = _load_proj_full()
         real = build_projects_from_supabase(supa_rows)
-        # Enrich each real project with the Excel-sourced ladder + excel_row
-        # (Excel-web deep-links). Projects added to Supabase but absent from
-        # Excel (none in Phase 2; possible once PR-5's editor lands) keep the
-        # blank ladder + excel_row 0.
+        # Enrich each real project's KPI ladder from workplan_goals (Phase 3 /
+        # PR-1), falling back to the per-project Excel ladder when wg lacks it;
+        # excel_row (Excel-web deep-links) still comes from the workbook.
         for p in real:
             p["excel_row"] = excel_row_by_id.get(p["id"], 0)
-            if p["id"] in excel_ladder_by_id:
-                p.update(excel_ladder_by_id[p["id"]])
+            ladder = wg_ladder_by_id.get(p["id"]) or excel_ladder_by_id.get(p["id"])
+            if ladder:
+                p.update(ladder)
         projects = real + helper_rows
         print(f"  Projects: {len(real)} from Supabase ({source}, as of {fetched_at}) "
               f"+ {len(helper_rows)} Excel D.* helper rows")
