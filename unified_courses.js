@@ -29,6 +29,9 @@
     return n;
   }
   function uniqSorted(arr) { return Array.from(new Set(arr.filter(Boolean))).sort(); }
+  // Cosmetic display label for the id_system value: M-ID→MID, C-ID→CID, CCN-ID→CCNID.
+  // Stored values + every comparison are unchanged; this maps ONLY at render sites.
+  function idSysLabel(v) { return v === "M-ID" ? "MID" : v === "C-ID" ? "CID" : v === "CCN-ID" ? "CCNID" : (v || ""); }
   function today() { return new Date().toISOString().slice(0, 10); }
 
   // ---- Supabase auth (magic-link implicit flow, no library) ----------------
@@ -630,7 +633,7 @@
           identSel.appendChild(el("option", { value: "" }, ["Create new unified course"]));
           Object.keys(chosen).forEach(function (id) {
             var e = chosen[id];
-            if (e[3] && e[3] !== "Stand-Alone") identSel.appendChild(el("option", { value: id }, ["Merge into existing: " + id + " (" + e[3] + ")"]));
+            if (e[3] && e[3] !== "Stand-Alone") identSel.appendChild(el("option", { value: id }, ["Merge into existing: " + id + " (" + idSysLabel(e[3]) + ")"]));
           });
           if (cur) identSel.value = cur;
         }
@@ -642,7 +645,7 @@
           cb.onchange = function () { if (cb.checked) chosen[entry[0]] = entry; else delete chosen[entry[0]]; refreshIdentity(); };
           row.appendChild(cb);
           row.appendChild(el("span", { style: "flex:1;" }, [entry[1] || entry[0]]));
-          row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;" }, [entry[0] + " · " + (entry[2] || "") + " · " + (entry[3] || "")]));
+          row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;" }, [entry[0] + " · " + (entry[2] || "") + " · " + idSysLabel(entry[3])]));
           list.appendChild(row);
         }
         addRow([seed.id, seed.title, (seed.subj || []).join(";"), seed.kind], true, true);
@@ -838,7 +841,7 @@
 
       box.appendChild(el("h3", { style: "margin:0 0 2px;color:#0A2240;" }, [r.title || r.id || ""]));
       box.appendChild(el("div", { style: "color:#6b7280;font-family:monospace;font-size:.8rem;margin-bottom:12px;" },
-        [r.id + " · " + (r.id_system || "") + " · " + (r.kind || "") + " · " + statusOf(r)]));
+        [r.id + " · " + idSysLabel(r.id_system) + " · " + (r.kind || "") + " · " + statusOf(r)]));
 
       var dl = el("div", { style: "display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline;" });
       function field(label, value) {
@@ -928,14 +931,14 @@
     }
 
     // ---- toolbar ----
-    function sel(id, label, opts) {
+    function sel(id, label, opts, labelFn) {
       var s = el("select", { id: id, class: "uc-filter" });
       s.appendChild(el("option", { value: "" }, [label]));
-      opts.forEach(function (o) { s.appendChild(el("option", { value: o }, [o])); });
+      opts.forEach(function (o) { s.appendChild(el("option", { value: o }, [labelFn ? labelFn(o) : o])); });
       return s;
     }
     var fKind = sel("uc-kind", "All kinds", ["Course", "Unified", "Stand-Alone"]);
-    var fSource = sel("uc-source", "All sources", uniqSorted(rows.map(function (r) { return r.id_system; })));
+    var fSource = sel("uc-source", "All sources", uniqSorted(rows.map(function (r) { return r.id_system; })), idSysLabel);
     var fStatus = sel("uc-status", "All statuses", ["Verified", "Generated"]);
     var fDisc = sel("uc-disc", "All disciplines", uniqSorted(rows.map(function (r) { return r.disc; })));
     // #8 SUBJ filter — subjects are per-row arrays (r.subj), so flatten before uniq.
@@ -1188,7 +1191,7 @@
       b(f.credit_mixed, "credit", "mix", "members disagree on credit status");
       b(f.top_mixed, "TOP", "mix", "members disagree on TOP code");
       b(f.ncc_mixed, "noncredit", "mix", "members disagree on noncredit category");
-      b(r.locked, "anchor", "ok", "curated common-course anchor (" + (r.id_system || "") + ") — read-only");
+      b(r.locked, "anchor", "ok", "curated common-course anchor (" + idSysLabel(r.id_system) + ") — read-only");
       // Trust-Card auditor overlay (lazy — only present after loadAudit() resolves).
       // Renders a "⚠ N · 0.XX" chip on rows the auditor flagged so the curator sees
       // tag count + faculty_trust_score at a glance. Chip color grades by score
@@ -1205,7 +1208,7 @@
         out.appendChild(el("span", {
           class: "uc-badge ok", style: "background:#ddf4ff;border:1px solid #54aeff;color:#0969da;",
           title: "Official-ID consolidation: " + r.consolidated_from.length +
-            " minted MIDs that share this " + (r.id_system || "official") +
+            " minted MIDs that share this " + (idSysLabel(r.id_system) || "official") +
             " were merged into one identity (" + r.consolidated_from.join(", ") + ")."
         }, ["⛓ " + r.consolidated_from.length + " merged"]));
       }
