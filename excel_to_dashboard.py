@@ -6485,6 +6485,23 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
 # ── CSS for exhibit analysis cards ──
 EXHIBIT_ANALYSIS_CSS = """
 /* ═══ MAP Articulation Analysis Cards ═══ */
+/* ─── Budget inline editor (budget_editor.js) ─── */
+.budget-auth-widget { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center;
+    background:#F0F4F8; border:1px solid #D6E0EA; border-radius:8px;
+    padding:0.7rem 1rem; margin:0 0 1.25rem 0; font-size:0.85rem; }
+.budget-auth-widget input[type=email] { padding:0.4rem 0.6rem; border:1px solid #B9C7D6;
+    border-radius:5px; font-size:0.85rem; min-width:200px; }
+.budget-btn { background:#0A2240; color:#fff; border:none; border-radius:5px;
+    padding:0.4rem 0.9rem; font-size:0.82rem; cursor:pointer; }
+.budget-btn:hover { background:#163A5F; }
+.budget-btn-out { background:#6B7785; margin-left:auto; }
+.budget-cell.budget-on { cursor:pointer; transition:background 0.15s; border-radius:3px; }
+.budget-cell.budget-on:hover { background:#EAF1F8; outline:1px dashed #4D7EA8; }
+.budget-cell-input { width:100%; box-sizing:border-box; text-align:right; padding:2px 4px;
+    border:1px solid #4D7EA8; border-radius:3px; font-size:0.85rem; font-family:inherit; }
+.budget-cell.budget-saving { background:#FFF6D9; }
+.budget-cell.budget-saved { background:#DBF0DD; }
+.budget-cell.budget-error { background:#F7D9D9; }
 .cpl-analytics-body,
 .activity-kpi-body {
     background-color: #ffffff;
@@ -7481,6 +7498,7 @@ def build_budget_from_supabase(funding_rows, personnel_rows, excel_budget):
     funding_sources = []
     for r in funding_rows:
         funding_sources.append({
+            "id": r.get("id"),               # carried for the inline editor's PATCH
             "name": r.get("name") or "",
             "source_code": r.get("source_code") or "",
             # the 5 ANNUAL BUDGETS in year order (the 2025-26 EXPENSE is the
@@ -7652,18 +7670,36 @@ def render_budget_html(budget, data_source_stamp=None):
     funding_html += '            </thead>\n'
     funding_html += '            <tbody>\n'
 
+    # Editable dollar cells (budget_editor.js): the 5 annual budgets + the
+    # 2025-26 expense + the total each PATCH their own budget_funding column for
+    # a signed-in allowed-reviewer (RLS-gated). data-val carries the raw number
+    # (the cell text stays fmt_dollars()); `total` is independently editable —
+    # a later PR adds the total=Σyears / avg formulas (then total goes read-only).
+    YEAR_COLS = ["yr_2025_26_budget", "yr_2026_27", "yr_2027_28", "yr_2028_29", "yr_2029_30"]
+
+    def _bcell(col, raw, bid, extra_style=""):
+        """One right-aligned funding-table dollar cell; editable when bid is set."""
+        dv = ("%.2f" % float(raw or 0)).rstrip("0").rstrip(".")
+        attrs = "" if bid is None else (
+            f' class="budget-cell" data-editable="1" data-bid="{bid}"'
+            f' data-field="{col}" data-type="num" data-val="{dv}"')
+        return (f'                    <td style="padding:8px;text-align:right;{extra_style}"'
+                f'{attrs}>{fmt_dollars(raw)}</td>\n')
+
     for source in funding_sources:
         source_name = source.get("name", "")
         budget_by_year = source.get("budget_by_year", [])
         expense_2025 = source.get("expense_2025", 0)
         total = source.get("total", 0)
+        bid = source.get("id")
 
         funding_html += f'                <tr style="border-bottom:1px solid #ddd;">\n'
         funding_html += f'                    <td style="padding:8px;font-weight:500;">{source_name}</td>\n'
-        for budget in budget_by_year:
-            funding_html += f'                    <td style="padding:8px;text-align:right;">{fmt_dollars(budget)}</td>\n'
-        funding_html += f'                    <td style="padding:8px;text-align:right;color:#666;">{fmt_dollars(expense_2025)}</td>\n'
-        funding_html += f'                    <td style="padding:8px;text-align:right;border-right:2px solid #0A2240;font-weight:bold;">{fmt_dollars(total)}</td>\n'
+        for idx in range(5):
+            val = budget_by_year[idx] if idx < len(budget_by_year) else 0
+            funding_html += _bcell(YEAR_COLS[idx], val, bid)
+        funding_html += _bcell("yr_2025_26_expense", expense_2025, bid, "color:#666;")
+        funding_html += _bcell("total", total, bid, "border-right:2px solid #0A2240;font-weight:bold;")
         funding_html += f'                </tr>\n'
 
     funding_html += '            </tbody>\n'
