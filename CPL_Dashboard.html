@@ -3373,7 +3373,7 @@
     <!-- /tab-dashboard -->
 
     <div class="cpl-tab-pane" id="tab-activities-projects" data-tab="activities-projects" role="tabpanel" aria-labelledby="tab-activities-projects"
-        data-sections='[{"slug":"projects","id":"workplanProjectsWrapper","label":"Activities &amp; Projects"}]'>
+        data-sections='[{"slug":"metrics","id":"activityKpiSection","label":"Activity Metrics"},{"slug":"projects","id":"projectsGrid","label":"Projects"}]'>
 
 <!-- ═══ Workplan Activities & Projects Section ═══ -->
     <div class="kpi-section-wrapper" id="workplanProjectsWrapper">
@@ -8027,14 +8027,15 @@
     <!-- /tab-activities-projects -->
 
 
-    <div class="cpl-tab-pane" id="tab-budget" data-tab="budget" role="tabpanel" aria-labelledby="tab-budget">
+    <div class="cpl-tab-pane" id="tab-budget" data-tab="budget" role="tabpanel" aria-labelledby="tab-budget"
+        data-sections='[{"slug":"funding","id":"budget-funding","label":"5-Year Funding Plan"},{"slug":"expenditure","id":"budget-expenditure","label":"Expenditure"},{"slug":"personnel","id":"budget-personnel","label":"Personnel Plan"}]'>
         <div class="main-container">
 
         <!-- Budget Section -->
     <div class="budget-section" style="background-color:#fafafa;padding:2rem;border-radius:8px;margin-bottom:2rem;">
         <h2>CPL Budget & Expenditure Plan</h2>
         <p style="color:#888;font-size:0.75rem;margin:0 0 1.25rem 0;">Budget data as of 2026-05-31</p>
-<div class="budget-funding-overview">
+<div class="budget-funding-overview" id="budget-funding">
         <h3>CPL 5-Year Funding Plan</h3>
         <p style="font-size:1.3rem;font-weight:bold;color:#0A2240;margin-bottom:1.5rem;">$88.9M Total Allocation</p>
         <div style="margin-bottom:2rem;">
@@ -8133,13 +8134,13 @@
         </table>
     </div>
 
-    <div class="budget-expenditure-summary" style="margin-top:2rem;">
+    <div class="budget-expenditure-summary" id="budget-expenditure" style="margin-top:2rem;">
         <h3>Expenditure Detail</h3>
         <p style="color:#666;font-style:italic;background:#f5f5f5;border-left:4px solid #C9A84C;padding:0.9rem 1.1rem;border-radius:4px;margin:0;">Detailed expenditure line items and category breakdowns are being refreshed and will appear here once updated figures are entered. The funding plan and personnel below are current.</p>
     </div>
 
 
-    <div class="budget-personnel-plan" style="margin-top:2rem;">
+    <div class="budget-personnel-plan" id="budget-personnel" style="margin-top:2rem;">
         <h3>Personnel Plan</h3>
         <div style="overflow-x:auto;">
             <table style="width:100%;border-collapse:collapse;margin-bottom:1.5rem;font-size:0.85rem;">

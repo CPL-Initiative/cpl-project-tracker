@@ -7637,7 +7637,7 @@ def render_budget_html(budget, data_source_stamp=None):
     colors = ["#0A2240", "#163A5F", "#2A7D4F", "#C9A84C", "#9BBCD8"]
 
     # === SECTION 1: FUNDING OVERVIEW ===
-    funding_html = '<div class="budget-funding-overview">\n'
+    funding_html = '<div class="budget-funding-overview" id="budget-funding">\n'
     funding_html += f'        <h3>CPL 5-Year Funding Plan</h3>\n'
     funding_html += f'        <p style="font-size:1.3rem;font-weight:bold;color:#0A2240;margin-bottom:1.5rem;">{fmt_dollars(grand_total)} Total Allocation</p>\n'
 
@@ -7699,7 +7699,7 @@ def render_budget_html(budget, data_source_stamp=None):
     funding_html += '    </div>\n'
 
     # === SECTION 2: EXPENDITURE SUMMARY ===
-    summary_html = '    <div class="budget-expenditure-summary" style="margin-top:2rem;">\n'
+    summary_html = '    <div class="budget-expenditure-summary" id="budget-expenditure" style="margin-top:2rem;">\n'
     summary_html += '        <h3>Expenditure Summary</h3>\n'
     summary_html += '        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem;">\n'
 
@@ -7805,7 +7805,7 @@ def render_budget_html(budget, data_source_stamp=None):
     # sections with a single "pending" note rather than misleading blank tables.
     if expenditures_held:
         summary_html = (
-            '    <div class="budget-expenditure-summary" style="margin-top:2rem;">\n'
+            '    <div class="budget-expenditure-summary" id="budget-expenditure" style="margin-top:2rem;">\n'
             '        <h3>Expenditure Detail</h3>\n'
             '        <p style="color:#666;font-style:italic;background:#f5f5f5;'
             'border-left:4px solid #C9A84C;padding:0.9rem 1.1rem;border-radius:4px;'
@@ -7817,7 +7817,7 @@ def render_budget_html(budget, data_source_stamp=None):
         detail_html = ''
 
     # === SECTION 4: PERSONNEL PLAN ===
-    personnel_html = '    <div class="budget-personnel-plan" style="margin-top:2rem;">\n'
+    personnel_html = '    <div class="budget-personnel-plan" id="budget-personnel" style="margin-top:2rem;">\n'
     personnel_html += '        <h3>Personnel Plan</h3>\n'
 
     if personnel:
