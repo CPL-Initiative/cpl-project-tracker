@@ -1,9 +1,14 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-05-30T13:43:15Z",
-  "count": 40,
+  "_synced_at": "2026-05-31T11:52:41Z",
+  "count": 87,
   "curations": {
+    "AGRI M1002": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
     "ARTS M10BJ": {
       "merge_into": "ARTS M1159",
       "reviewed_by": "map@rccd.edu",
@@ -46,15 +51,66 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T21:25:33.462587+00:00"
     },
+    "AUTB M10BJ": {
+      "discipline": "Agriculture",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00",
+      "cross_listed_disciplines": "Business"
+    },
     "AUTB M10BN": {
       "merge_into": "UC-CUR-MPG029OM",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T21:25:33.462587+00:00"
     },
+    "AUTO M10CX": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "BBK M1001": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BBK M10AC": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BBK M9001": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
     "BSIC M9001": {
       "discipline": "Interdisciplinary-Basic Skills: Noncredit 53412",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T19:22:55.870894+00:00"
+    },
+    "BUAC M10AE": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSA M1003": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSA M10AF": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSA M10AJ": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSA M9003": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
     },
     "BUSI M1170": {
       "unified_title": "Entrepreneurship and Small Business Management",
@@ -72,6 +128,26 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:45:04.930041+00:00"
     },
+    "CISC M12GG": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "CISC M9029": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "CISC M9030": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "CISC M90AQ": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
     "COUN M1045": {
       "unified_title": "College and Career Success",
       "reviewed_by": "map@rccd.edu",
@@ -86,6 +162,16 @@
       "merge_into": "COUN M1045",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:45:05.405159+00:00"
+    },
+    "CULN M1003": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "CULN M90AE": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
     "DRAF M1002": {
       "discipline": "Drafting/CADD",
@@ -139,6 +225,21 @@
       "reviewed_at": "2026-05-29T20:41:44.880094+00:00",
       "discipline": "English"
     },
+    "ENTR M1001": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "ENTR M10BZ": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "FINC M9006": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
     "HIST M10CQ": {
       "merge_into": "HIST M1152",
       "reviewed_by": "map@rccd.edu",
@@ -159,6 +260,106 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:04.429467+00:00",
       "discipline": "History"
+    },
+    "MGMT M10AI": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "NC M90LW": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "NC M90LX": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "NCBU M90AO": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "NCBU M90AP": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "OFFT M90AJ": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "OFFT M90BB": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "OTEC M1025": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "OTEC M10CK": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "OTEC M10IN": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "OTEC M10IT": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "OTEC M10PM": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "OTEC M1132": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "OTEC M9008": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "OTEC M9013": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "OTEC M9014": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "OTEC M9015": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "OTEC M90DB": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "OTEC M90DC": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "OTEC M90DG": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
     "PHYS M10NM": {
       "merge_into": "PHYS M1265",
@@ -212,6 +413,41 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T21:25:33.462587+00:00",
       "discipline": "Auto Body Technology"
+    },
+    "VBUS M90BG": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "VOCE M90CX": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "VOCE M90CY": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "VOCE M90CZ": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "VOCE M90DA": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "VOCE M90DB": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "VOCE M90QC": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
     }
   }
 }
