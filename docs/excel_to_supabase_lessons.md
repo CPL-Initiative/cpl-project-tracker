@@ -1157,3 +1157,60 @@ editor over Supabase-direct) — the ladder cells already render there; mirror
 editor** (mirrors `projects_editor.js`), then **PR-4**: sunset `read_projects()`
 + drop the `.xlsx` (keep a Supabase→xlsx backup export) once a daily cron
 confirms parity with `D.*` gone.
+
+## 2026-05-31 — Session 24 (Bruh 24), round 2: KPI-ladder editor was already done; Budget editor built
+
+### (a) What shipped
+- **Budget inline editor (PR #215)** — click-to-edit dollar cells on the Budget
+  tab's 5-Year Funding Plan (`budget_editor.js`, mirrors `projects_editor.js`).
+  7 editable cells per `budget_funding` row (5 annual budgets + 2025-26 expense
+  + total), each PATCHing its own column. NO `total=Σyears`/`avg` formula yet
+  (Sam: "formulas are a later PR") — total is independently editable so a year
+  edit never silently desyncs the row. Generator emits the cells via a `_bcell()`
+  helper; editor CSS lives inside the `EXHIBIT_ANALYSIS_CSS` strip fence.
+- **Budget/personnel RLS tighten (live migration this session)** —
+  `budget_funding` / `budget_expenditures` / `personnel` had loose
+  `"Allow auth write"` (any signed-in user could write); replaced with
+  `is_allowed_reviewer()`-gated writes (provenance: `kb/supabase_budget_rls_tighten.sql`).
+
+### (b) What was learned — **measure-first found the KPI-ladder editor ALREADY DONE**
+- The roadmap listed *two* remaining editors (KPI-ladder + Budget). Before
+  building the KPI-ladder one, I traced it: PR-1 (Session 23) sourced the project
+  KPI ladder (`kpi_goal_2526…`) **from `workplan_goals`**, and `workplan_goals.js`
+  (Phase 1 PR-5) **already edits all 27 of those GOAL/STRETCH cells** on the
+  Workplan Goals tab. Cross-checked every real project: **27 ladder-bearing →
+  all editable; 7 blank (5.2–5.8); 0 Excel-fallback gaps.** So PR-1 had
+  *subsumed* the KPI-ladder editor — the roadmap framing was stale (pre-PR-1,
+  when the ladder was Excel-sourced and genuinely needed a new editor). **Second
+  instance this session** (after D.*) of the
+  `methodology-verify-consumer-before-migrating` lesson — generalize it: *verify
+  the FEATURE/consumer doesn't already exist before building/migrating.*
+- **Rule-2 strip-fence gotcha (caught in review):** new CSS added to
+  `EXHIBIT_ANALYSIS_CSS` must go **inside** the `/* ═══ MAP Articulation Analysis
+  Cards ═══ */ … /* End … */` marker fence, or the idempotency strip skips it and
+  it **accumulates every regen** (the same trap that bit the `.proj-*` block —
+  see the code comment at the inject site). I first placed the budget CSS *before*
+  the start marker, caught it by running the actual strip+inject 3× (budget CSS
+  count must stay stable), moved it inside the fence. Bonus: confirmed the
+  ~+3-newline/run pile-up before the marker is **HEAD-identical** (pre-existing,
+  harmless `<style>` whitespace — not my regression, left out of scope).
+- **RLS audit pattern:** before wiring a Supabase write-editor, query
+  `pg_policies` for the target tables. Found `budget_*`/`personnel` still loose
+  (`qual=true`) while `workplan_goals`/`projects` were already tightened —
+  tightened all three in one pass (defense-in-depth, even ahead of their editors).
+
+### (c) Current state
+Both remaining editors resolved: **KPI-ladder = already-done** (no build needed),
+**Budget = built (PR #215)**. Budget cells/CSS activate on the next daily regen
+(the editor's no-editable-cells guard keeps the interim silent); RLS is already
+live so it's write-gated from first paint.
+
+### (d) Next concrete step
+Excel retirement's editor surface is now complete. Remaining to drop the `.xlsx`:
+(1) **`total=Σyears` / `avg` formula layer** for the Budget editor (then `total`
+goes read-only) + a **personnel editor** (needs a fix for the 26→13 dedupe row
+identity first); (2) **PR-4** — audit every remaining `.xlsx` reader
+(`read_projects` fallback + `excel_row`, `read_budget_plan` factors/year_labels,
+`read_update_log`, `read_config_overrides`, the `KPI_Config` sheet), then sunset
+them + drop the file, keeping a Supabase→xlsx backup export. A precise
+reader-audit (measure-first) should precede any teardown.
