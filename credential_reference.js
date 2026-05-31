@@ -80,6 +80,9 @@
     return n;
   }
 
+  // Cosmetic display label for the identity-system value: M-ID→MID, C-ID→CID,
+  // CCN-ID→CCNID. Stored 'sys' values + CSS classes are unchanged; maps only at render.
+  function idSysLabel(v) { return v === "M-ID" ? "MID" : v === "C-ID" ? "CID" : v === "CCN-ID" ? "CCNID" : (v || ""); }
   function clearNode(n) {
     while (n.firstChild) n.removeChild(n.firstChild);
   }
@@ -1659,7 +1662,7 @@
           if (idx === 0) {
             var idCell = el("td", { class: "cr-art-ident " + sysCls,
               rowspan: nLocal > 1 ? String(nLocal) : "1" });
-            idCell.appendChild(el("span", { class: "cr-id-sys" }, [a.sys || "?"]));
+            idCell.appendChild(el("span", { class: "cr-id-sys" }, [idSysLabel(a.sys) || "?"]));
             idCell.appendChild(document.createTextNode(" "));
             idCell.appendChild(el("code", { class: "cr-id-code" }, [a.cid || "—"]));
             if (a.title) {
