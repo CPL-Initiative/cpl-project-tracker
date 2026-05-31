@@ -172,3 +172,46 @@ Budget · Vision 2030 · CCR · CSR · CER · Exhibit Adoption · Pipeline · Le
    the 224 anchor identifier keys; lockstep every `=== "M-ID"` comparison.
 3. **Encode a `dashboard-tab-surgery` Skill** — there's now a clean, proven instance
    (this PR) + the KB-note playbook to encode it from.
+
+## 2026-05-31 — Session 23 (Bruh 23): #2 + #3 carryover cleared
+
+### (a) What shipped
+- **#2 sidebar sub-links (PR #208, merged).** Expanded `data-sections` on the
+  two genuinely multi-section panes: **Activities & Projects** → *Activity
+  Metrics* (`#activityKpiSection`) + *Projects* (`#projectsGrid`) — a pure
+  static-template edit (both ids already stable); **Budget** → *5-Year Funding
+  Plan* / *Expenditure* / *Personnel Plan* — 4 stable `id`s added to the
+  generator's budget divs (`render_budget_html`, both expenditure paths) +
+  hand-applied to the live HTML. Left single-section panes (Vision/CCR/CSR/CER/
+  Letters/Workplan-Goals) alone — a 1-item TOC is clutter, not value.
+- **#3 MID/CID/CCNID (PR #209, merged).** Chose **display-only** over the
+  data-value rename (Sam course-corrected mid-recon: "just cosmetic… not
+  touching the keys"). `idSysLabel`/`id_sys_label` maps the value at ~9 render
+  sites (CCR Source filter / detail modal / anchor tooltip / consolidation prose
+  / Unify dialog; CER identity badge; Articulations-by-Course chips). Stored
+  `id_system` value + the 224 anchor keys untouched; comparisons keep working.
+
+### (b) What was learned
+- **`data-sections` ids must be classified static-vs-generated.** `tabs.js`
+  scroll-spy gracefully skips a missing id (no crash), but for a STABLE anchor
+  you must confirm the id is either static-template OR stably generator-emitted.
+  `#activityKpiSection` is generator-emitted but stable (re-emitted every run);
+  `#projectsGrid` is static + already referenced by `dashboard_filters.js`.
+- **Filter dropdown: map option TEXT, keep option VALUE raw.** The CCR Source
+  filter's `<option value="M-ID">MID</option>` — display mapped, value raw — so
+  the filter-match logic (`r.id_system !== state.source`) keeps comparing raw
+  values. One optional `labelFn` param on `sel()`; nothing else changes.
+- **Display-label map > stored-value rename for a "cosmetic" ask.** Mapping at
+  render sites is inherently safe against conceptual prose, the pipeline
+  narrative, and the **glossary** (where "C-ID"/"CCN" are the real ASCCC/AB-1111
+  authority names that must NOT change) — because there's no global replace.
+  Distilled to `docs/kb-notes/methodology-display-label-map-vs-data-rename.md`.
+
+### (c) Current state
+Both Session-20 carryover items (#2, #3) DONE + merged. The cleanup sprint
+(#1–#10) is fully closed. Pivoted to Excel retirement (see
+`docs/excel_to_supabase_lessons.md` Session 23).
+
+### (d) Next
+Backlog only (KPI-card sort-order, dark mode, a `dashboard-tab-surgery` Skill).
+No open dashboard-cleanup threads.

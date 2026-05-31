@@ -43,9 +43,10 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Derive whitelists from rendered DOM, not hardcoded lists](kb-notes/methodology-derive-from-dom.md) | methodology | published | 2026-05-27 | 2026-05-27 |
 | [Methodology — Snapshot-with-stamp fallback for live-data dependencies](kb-notes/methodology-snapshot-with-stamp-fallback.md) | methodology | published | 2026-05-28 | 2026-05-28 |
 | [Methodology — XSS audit when a previously-trusted field becomes curator-editable](kb-notes/methodology-xss-audit-on-curator-editable-fields.md) | methodology | published | 2026-05-28 | 2026-05-29 (#192 JSON-in-script class) |
-| [Methodology — Parity test as the proof for a data-source cutover](kb-notes/methodology-parity-test-cutover-proof.md) | methodology | published | 2026-05-29 | 2026-05-29 |
+| [Methodology — Parity test as the proof for a data-source cutover](kb-notes/methodology-parity-test-cutover-proof.md) | methodology | published | 2026-05-29 | 2026-05-31 (PR-1 closed the blank-vs-0 gap) |
 | [Methodology — Re-mint split invariants (id↔SUBJ4, control-number atomicity, dry-run↔apply cross-check)](kb-notes/methodology-remint-split-invariants.md) | methodology | published | 2026-05-29 | 2026-05-29 |
 | [Methodology — Retiring an auto-seeded data layer (check for curator decisions riding on it)](kb-notes/methodology-retiring-an-auto-seeded-layer.md) | methodology | published | 2026-05-30 | 2026-05-30 |
+| [Methodology — Cosmetic relabel via a display-label map, not a stored-value rename](kb-notes/methodology-display-label-map-vs-data-rename.md) | methodology | published | 2026-05-31 | 2026-05-31 |
 | [Playbook — Auto-sync vault-side repo clones via Windows Task Scheduler](kb-notes/playbook-vault-sync-setup.md) | playbook | published | 2026-05-27 | 2026-05-29 (consolidation + plugins follow-up) |
 | [Playbook — Measure-first Supabase migration (snapshot → validate → dry-run → workflow_dispatch apply → cutover)](kb-notes/playbook-measure-first-supabase-migration.md) | playbook | published | 2026-05-28 | 2026-05-28 (Phase 2) |
 | [Playbook — Phase 2 projects migration scope (column map, KPI ladder contract, 6 forks for Sam)](kb-notes/phase-2-projects-migration-scope.md) | playbook | published | 2026-05-28 | 2026-05-28 |
@@ -63,10 +64,10 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | File | Workstream | Last touched |
 |---|---|---|
 | [`ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) | CCR cluster dissolution (UC-XXXXX retired; 9 curated → per-member merges) | **Session 19 (2026-05-30)** |
-| [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes | **Session 20 (2026-05-30)** |
+| [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes; **Session 23: #2 sidebar sub-links + #3 display-label map** | Session 23 (Bruh 23, 2026-05-31) |
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G | Session 11 |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
-| [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project model + **Phase 2 COMPLETE** + **Phase 3 Budget read-path cutover** + association editor + orphan close-out) | Session 17 (Qualitastic, 2026-05-29) |
+| [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project model + **Phase 2 COMPLETE** + **Phase 3 Budget read-path** + **Excel-retirement scope + PR-1 KPI-ladder keystone**) | Session 23 (Bruh 23, 2026-05-31) |
 | [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR / Cred-Ref sync | Session 12 (Mode B complete) |
 | [`exhibit_unification_vision.md`](exhibit_unification_vision.md) | Credential design doc | retrospective |
 | [`letter_curator_handoff.md`](letter_curator_handoff.md) | Letter Curator workstream | Session 10 |
