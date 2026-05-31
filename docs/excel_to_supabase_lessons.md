@@ -1101,3 +1101,59 @@ dashboard inline editor for the ladder).
 snapshot, no new migration), repoint `build_activity_kpis()` +
 `derive_core_activity_ids()`. Then the **KPI-ladder inline editor** on the
 Workplan Goals tab, then **PR-4** sunset `read_projects()` + drop the `.xlsx`.
+
+## 2026-05-31 — Session 24 (Bruh 24): Excel PR-2 — D.* rows RETIRED, not migrated (PR #213)
+
+### (a) What shipped
+- **Excel PR-2 (PR #213, draft→merged):** retired the 15 `D.*` sub-population
+  helper rows (Students/Eligible-Units/Transcribed/Savings/20yr-Impact ×
+  Military/Workforce/Apprentice) instead of migrating them. Generator-only:
+  `load_projects()` drops the `helper_rows` append (+ filters `D.*` from the
+  Excel-outage fallback); `read_update_log()` skips `D.*` pids; deleted the dead
+  `populate_current_metrics()` + its 4 now-orphaned helpers (`_override_int`,
+  `_pmetric_int`, `_ppct`, `_pcount`); `kb/_test_projects_parity.py`'s D.*
+  assertion became a **no-leak guard**.
+
+### (b) What was learned — **measure the CONSUMER graph before migrating, not just the data**
+- **The documented plan rested on a false premise.** The scope doc + Session-23
+  handoff said "the 15 `D.*` rows feed `build_activity_kpis()` cohort composites
+  (3.1.x, 4.1 sprint)" and Sam pre-locked `kind='kpi_helper'` in `workplan_goals`.
+  Tracing the actual consumer graph showed `build_activity_kpis()` only
+  *excludes* `D.*`; the sole **value**-reader was `populate_current_metrics()` —
+  and that function **has been dead code since 2026-05-28** (Phase 1 PR-4 moved
+  the annual-goals "Current" column to `build_workplan_goals_from_supabase()`;
+  the call site was dropped, the `def` left behind). Every other ref excludes
+  `D.*`; all 3 JS report generators `continue` on them. **Nothing reads their
+  values.** So the right move wasn't "migrate" — it was "delete."
+- **Lesson:** before migrating a data class, grep for who *reads its values*
+  (not who passes it through or excludes it). A `grep` for the literal ids +
+  "is this function ever called?" beat the summarized plan. Had I followed the
+  pre-locked fork mechanically, I'd have built a CHECK-constraint migration + a
+  text column to faithfully store `$172M`/`99k` strings into Supabase — for data
+  with zero consumers. Captured as a KB note:
+  `docs/kb-notes/methodology-verify-consumer-before-migrating.md`.
+- **The fork's "no new migration" premise was also false** independent of the
+  vestigial finding: `workplan_goals.kind` has a CHECK `{activity,project}` (so
+  `kpi_helper` needs an ALTER) and only numeric year columns (so the formatted
+  metric strings need a text column). Surfacing that + the vestigial finding via
+  one `AskUserQuestion` (delete / migrate / JSON) → Sam chose delete. Right call
+  to ask: schema change needed his nod anyway (§8), and the keep-vs-drop was a
+  genuine product fork the code couldn't settle.
+
+### (c) Current state
+`read_projects()` now supplies only the KPI ladder (already repointed to
+`workplan_goals` in PR-1 — so it's a *fallback* there) + `excel_row` + the
+total-outage fallback. The `D.*` responsibility is gone. **CPL_Data.js** sheds
+its 15 `D.*` project + 15 `D.*` update_log entries on the next daily regen
+(proven locally: regen == committed minus exactly the `D.*` ids, 34 real
+projects byte-identical, on both the snapshot AND Excel-fallback paths).
+Personnel + Vision 2030 confirmed NO-migration (Session 23). Budget read-path
+done; Budget + KPI-ladder inline editors still to build.
+
+### (d) Next concrete step
+**KPI-ladder inline editor** on the Workplan Goals tab (Sam chose a dashboard
+editor over Supabase-direct) — the ladder cells already render there; mirror
+`workplan_goals.js`'s per-cell edit. Then optionally the **Budget inline
+editor** (mirrors `projects_editor.js`), then **PR-4**: sunset `read_projects()`
++ drop the `.xlsx` (keep a Supabase→xlsx backup export) once a daily cron
+confirms parity with `D.*` gone.
