@@ -2515,6 +2515,7 @@
         </div>
         <nav class="cpl-tabs" role="tablist" aria-label="Dashboard sections">
             <button class="cpl-tab active" data-tab="dashboard" role="tab" aria-selected="true">Dashboard</button>
+            <button class="cpl-tab" data-tab="activities-projects" role="tab" aria-selected="false">Activities &amp; Projects</button>
             <button class="cpl-tab" data-tab="workplan-goals" role="tab" aria-selected="false">Annual Workplan Goals</button>
             <button class="cpl-tab" data-tab="budget" role="tab" aria-selected="false">Budget</button>
             <button class="cpl-tab" data-tab="vision-2030" role="tab" aria-selected="false">Vision 2030</button>
@@ -2532,7 +2533,7 @@
     <main class="cpl-main">
 
     <div class="cpl-tab-pane active" id="tab-dashboard" data-tab="dashboard" role="tabpanel" aria-labelledby="tab-dashboard"
-        data-sections='[{"slug":"kpis","id":"kpiSectionWrapper","label":"KPI Metrics"},{"slug":"analytics","id":"cplAnalyticsWrapper","label":"CPL Analytics"},{"slug":"projects","id":"workplanProjectsWrapper","label":"Workplan &amp; Projects"}]'>
+        data-sections='[{"slug":"kpis","id":"kpiSectionWrapper","label":"KPI Metrics"},{"slug":"analytics","id":"cplAnalyticsWrapper","label":"CPL Analytics"}]'>
 
     <!-- KPI Summary Cards -->
     <div class="kpi-section-wrapper" id="kpiSectionWrapper">
@@ -3341,7 +3342,35 @@
     </div>
 </div>
 
-    <!-- ═══ Workplan Activities & Projects Section ═══ -->
+    <!-- ═══ Dashboard Sections End ═══ -->
+
+        <!-- Teaser cards (auto-generated, do not edit manually) -->
+        <div class="tab-teaser-grid">
+            <div class="tab-teaser-card">
+                <h3>Annual Workplan Goals</h3>
+                <p>Year-by-year targets and stretch goals tracked across 27 sub-activities, with current progress and pacing toward 2030.</p>
+                <a class="tab-teaser-link" href="#workplan-goals">View Workplan Goals →</a>
+            </div>
+            <div class="tab-teaser-card">
+                <h3>Budget</h3>
+                <p>CPL 5-year funding plan, expenditure detail, personnel, and category roll-ups including AB 123 and ESS 25-82 allocations.</p>
+                <a class="tab-teaser-link" href="#budget">View Budget →</a>
+            </div>
+            <div class="tab-teaser-card">
+                <h3>Vision 2030 Alignment</h3>
+                <p>CPL Initiative alignment with Vision 2030 Actions 1a &amp; 5, and the three CPL system goals — with live progress against each.</p>
+                <a class="tab-teaser-link" href="#vision-2030">View Vision 2030 →</a>
+            </div>
+        </div>
+        <!-- End Teaser cards -->
+
+    </div>
+    <!-- /tab-dashboard -->
+
+    <div class="cpl-tab-pane" id="tab-activities-projects" data-tab="activities-projects" role="tabpanel" aria-labelledby="tab-activities-projects"
+        data-sections='[{"slug":"projects","id":"workplanProjectsWrapper","label":"Activities &amp; Projects"}]'>
+
+<!-- ═══ Workplan Activities & Projects Section ═══ -->
     <div class="kpi-section-wrapper" id="workplanProjectsWrapper">
         <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('workplanProjectsWrapper');w.classList.toggle('collapsed');})()">
             <span class="kpi-section-title">Workplan Activities &amp; Projects</span>
@@ -7988,28 +8017,9 @@
     </div><!-- /#workplanProjectsWrapper -->
     <!-- ═══ End Workplan Activities & Projects Section ═══ -->
 
-        <!-- Teaser cards (auto-generated, do not edit manually) -->
-        <div class="tab-teaser-grid">
-            <div class="tab-teaser-card">
-                <h3>Annual Workplan Goals</h3>
-                <p>Year-by-year targets and stretch goals tracked across 27 sub-activities, with current progress and pacing toward 2030.</p>
-                <a class="tab-teaser-link" href="#workplan-goals">View Workplan Goals →</a>
-            </div>
-            <div class="tab-teaser-card">
-                <h3>Budget</h3>
-                <p>CPL 5-year funding plan, expenditure detail, personnel, and category roll-ups including AB 123 and ESS 25-82 allocations.</p>
-                <a class="tab-teaser-link" href="#budget">View Budget →</a>
-            </div>
-            <div class="tab-teaser-card">
-                <h3>Vision 2030 Alignment</h3>
-                <p>CPL Initiative alignment with Vision 2030 Actions 1a &amp; 5, and the three CPL system goals — with live progress against each.</p>
-                <a class="tab-teaser-link" href="#vision-2030">View Vision 2030 →</a>
-            </div>
-        </div>
-        <!-- End Teaser cards -->
-
     </div>
-    <!-- /tab-dashboard -->
+    <!-- /tab-activities-projects -->
+
 
     <div class="cpl-tab-pane" id="tab-budget" data-tab="budget" role="tabpanel" aria-labelledby="tab-budget">
         <div class="main-container">
