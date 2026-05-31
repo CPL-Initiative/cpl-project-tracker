@@ -1,7 +1,7 @@
 ---
 title: Methodology — Parity test as the proof for a data-source cutover
 created: 2026-05-29
-updated: 2026-05-29
+updated: 2026-05-31
 tags: [methodology, migration, testing, cutover, supabase, excel, parity]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -58,6 +58,16 @@ already missed:
 None of these were visible from the scope doc; all three were one assertion
 away in the parity test. The test turned "ship and hope" into "ship because
 the diff is provably the intended one."
+
+**Update (Session 23, PR #211)** — the third item above (the "lossy" blank-vs-`0`
+gap that blocked sourcing the KPI ladder from `workplan_goals`) was **closed**,
+and the same parity discipline proved it. Measure-first found the gap was exactly
+**11 cells** (a blank seeded as `0`), fixed them at the *new* source
+(`UPDATE … = NULL`, keeping project 1.4's real `0`s), then the repoint
+regenerated `CPL_Data.js` **byte-identical** across all 49 projects (0 diffs).
+The lesson within the lesson: when a cutover looks blocked by a "lossy" target,
+**measure the gap before believing it's big** — it's often a handful of cells you
+can fix at the source, after which the parity test goes green.
 
 ## Shape of the test
 
