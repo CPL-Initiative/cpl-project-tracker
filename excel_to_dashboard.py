@@ -776,6 +776,16 @@ def fmt_number(val):
         return str(val)
 
 
+def id_sys_label(v):
+    """Display label for the id_system CLASSIFICATION value (cosmetic only).
+
+    M-ID -> MID, C-ID -> CID, CCN-ID -> CCNID. The stored value is unchanged
+    (so every `== "M-ID"` comparison still works); this maps ONLY at render
+    sites. Pass-through for any other value ("Course"/"Unified"/"Stand-Alone").
+    """
+    return {"M-ID": "MID", "C-ID": "CID", "CCN-ID": "CCNID"}.get(v, v or "")
+
+
 def fmt_dollars(val):
     """Format a numeric value as dollars with smart scaling.
     - Millions: $X.XM (e.g., 6000000 -> $6.0M)
@@ -6439,7 +6449,7 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
 
         def _abc_course(r):
             t = r["title"] or ""
-            sub = f'<div style="font-size:0.72rem;opacity:0.7;">{r["course_id"]} &middot; {r["id_system"]}</div>' if t else f'{r["course_id"]} &middot; {r["id_system"]}'
+            sub = f'<div style="font-size:0.72rem;opacity:0.7;">{r["course_id"]} &middot; {id_sys_label(r["id_system"])}</div>' if t else f'{r["course_id"]} &middot; {id_sys_label(r["id_system"])}'
             return (f'{t}{sub}' if t else sub)
 
         def _abc_cred(r):
@@ -6468,7 +6478,7 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
                     f'Full set ({fmt(n_ident)} identities) in the Excel export.'),
             xlsx_rows=[
                 [i + 1,
-                 f'{r["title"]} ({r["course_id"]} · {r["id_system"]})' if r["title"] else f'{r["course_id"]} · {r["id_system"]}',
+                 f'{r["title"]} ({r["course_id"]} · {id_sys_label(r["id_system"])})' if r["title"] else f'{r["course_id"]} · {id_sys_label(r["id_system"])}',
                  r["discipline"], r["colleges_earned"], r["credit_rec"],
                  r["credential"] + (f' (+{r["credential_count"]-1})' if r["credential_count"] > 1 else ""),
                  "over-merged (withheld)" if r["over_merged"] else r["leverage"]]
