@@ -444,33 +444,42 @@ properties to preserve:
   strippers in `main()` near the EXHIBIT_CSS_MARKER block — they're
   what guarantees idempotency across rename events.
 
-### 6b. Workplan Activities & Projects wrapper (Dashboard tab)
+### 6b. Workplan Activities & Projects wrapper (own tab — moved 2026-05-31)
 
-The Dashboard tab's Activity Metrics, Filter Bar, and Projects Grid
-all collapse together as **one** unit, under the section title
-**Workplan Activities & Projects**. The Filter Bar applies to both,
-so they share one collapse toggle.
+**Moved out of the Dashboard tab into its own top-level "Activities &
+Projects" tab (`#tab-activities-projects`, hash `activities-projects`) on
+2026-05-31 (Session 22, PR #206).** Inside that tab, the Activity Metrics,
+Filter Bar, and Projects Grid still collapse together as **one** unit, under
+the section title **Workplan Activities & Projects**. The Filter Bar applies to
+both, so they share one collapse toggle. (Distinct from the **Annual Workplan
+Goals** tab, which holds the 5-year targets table — different content.)
 
 - Outer wrapper id: `#workplanProjectsWrapper` (class
   `kpi-section-wrapper`); body class is `.workplan-projects-body`.
   Collapse rule:
   `.kpi-section-wrapper.collapsed .workplan-projects-body { display: none; }`
   (lives inside `EXHIBIT_ANALYSIS_CSS` so the daily regen restores it).
-- Wrapper open/close lives in the **static template** between
+- Wrapper open/close lives in the **static template** (now inside the
+  `#tab-activities-projects` pane) between
   `<!-- ═══ Workplan Activities & Projects Section ═══ -->` and
   `<!-- ═══ End Workplan Activities & Projects Section ═══ -->`.
 - The injected **Workplan Activity Metrics** subsection has NO inner
   `kpi-section-wrapper` of its own — the outer wrapper provides the
   only collapse. If you re-add inner collapse chrome, you'll get
   nested collapsibles with confusing UX.
-- **Generator anchor change**: KPI Summary Cards replacement, MAP
-  Articulation Analysis strip, and CPL Analytics strip/inject all
-  end-anchor on `<!-- ═══ Workplan Activities & Projects Section ═══ -->`
-  (NOT `<!-- Filter Bar -->`). Filter Bar now lives inside the
-  wrapper; using it as the end-anchor would wipe the wrapper opening
-  every run. The Workplan Activity Metrics strip/inject still uses
-  `<!-- Filter Bar -->` because that subsection sits between the
-  wrapper opening and Filter Bar.
+- **Generator anchors (post-move — IMPORTANT):** KPI Summary Cards
+  replacement, MAP Articulation Analysis strip, and CPL Analytics strip/inject
+  end-anchor on the **permanent sentinel `<!-- ═══ Dashboard Sections End
+  ═══ -->`**, which **stays in the Dashboard tab** where this section used to
+  begin (after CPL Analytics, before the teaser cards). The section's own
+  marker travelled with it to the new pane, so it can no longer serve as the
+  end-anchor (it'd let the bounded regexes gobble everything between the
+  Dashboard tab and the new pane on the next regen — catastrophic). The
+  **Workplan Activity Metrics strip/inject** and the **Projects Grid replace**
+  still use `<!-- Filter Bar -->` / `<!-- Projects Grid -->` / `<!-- End
+  Projects Grid -->` because those anchors travelled *with* the content into
+  the new pane and resolve there via `html.find()`. Hard-case procedure:
+  [`docs/kb-notes/playbook-move-generated-section-to-tab.md`](docs/kb-notes/playbook-move-generated-section-to-tab.md).
 
 ### 7. Custom Report Generator
 
@@ -516,12 +525,17 @@ code stay in sync.
 
 ### 7b. Top-level Tab Layout (Phase D, 2026-05-18)
 
-The dashboard renders **4 top-level tabs**, navigated via URL hash so they
-are linkable and survive a refresh:
+The dashboard renders a left-rail nav of top-level tabs, navigated via URL
+hash so they are linkable and survive a refresh. `tabs.js` **auto-derives
+`VALID_TABS` from the rendered nav buttons** — adding a tab is "drop a nav
+button + a pane," no whitelist edit. The core data tabs (the rest —
+`unified-courses`/CCR, `canonical-subj4`/CSR, `credential-reference`/CER,
+`exhibit-adoption`, `pipeline`, `letters` — are documented elsewhere):
 
 | Tab key (hash) | Display label | Content |
 |----------------|---------------|---------|
-| `dashboard` (default, no hash) | Dashboard | KPI Metrics, CPL Analytics, Workplan Activity Metrics, Filter Bar, Projects Grid, **plus teaser cards** linking to the other three tabs |
+| `dashboard` (default, no hash) | Dashboard | KPI Metrics, CPL Analytics, **plus teaser cards** linking to the other tabs. (Workplan Activity Metrics + Filter Bar + Projects Grid MOVED OUT 2026-05-31 → `activities-projects`.) |
+| `activities-projects` | Activities & Projects | Workplan Activity Metrics, Filter Bar, Projects Grid (the `#workplanProjectsWrapper` collapsible — see §6b). **Added 2026-05-31, PR #206.** |
 | `workplan-goals` | Annual Workplan Goals | The 5-year goals + stretch + current table |
 | `budget` | Budget | CPL Budget & Expenditure Plan |
 | `vision-2030` | Vision 2030 | Vision 2030 Alignment cards with live progress |
@@ -1269,6 +1283,7 @@ repo root: `python3 kb/_row_audit.py`.
 | **Over-merge re-mint (Session 18)** | Cross-discipline over-merge cleanup of the CCR. **`member_top_divergence` auditor rule** (PR #194, 1,299 flags — M-ID members span ≥2 two-digit TOP divisions, ≥30% minority; 736 invisible to prior rules; the cross-discipline over-merge detector). Then a Rule-7 re-mint that **splits** each flagged M-ID into discipline-pure pieces: **dry-run** `kb/_overmerge_dryrun.py` (all 4 gates green) + **apply** `kb/_overmerge_apply.py` + `_supabase.py` + `.github/workflows/overmerge-apply.yml` (STAGED, dispatch-only, V1–V4 + FRESH-READ + idempotent). 60% of flagged "corroborated" M-IDs de-corroborate on split (phantom title-collisions). **Split brain redesigned twice from Sam's review** (TOP-only → title/subject/description-aware): iter-1 cascade (SUBJ4→subject→TOP→description, raw-subject fallback) + curator **title→discipline keep-whole map** (`kb/overmerge_title_discipline.json`) + container-by-subject → blank-piece rate **51%→38.6%**; iter-2 description-similarity keep-vs-split (Jaccard 0.55 → **36.3%**). Two re-mint invariants learned (id-prefix==SUBJ4 re-key; control-number atomicity) → `docs/kb-notes/methodology-remint-split-invariants.md`. Full state: `docs/overmerge_remint_lessons.md` + scope `docs/kb-notes/over-merge-remint-scope.md`. **Apply gated on Sam's final preview review** (he dispatches). Backlog: SUBJ4-curation→CCR cascade; 341 SUBJ4→discipline blank-backfill. | **DONE + MERGED to main** (PR #194, squash `340d753`, 2026-05-30); split iter-1 + iter-2 DONE; apply STAGED + gated on Sam's dispatch (Session 18) |
 | **CCR cluster dissolution (Session 19)** | Retired the **1,385 auto-seeded `UC-XXXXX` variant-unification clusters** (`coci_unified_courses.json` `clusters` → `{}`, archived). They token-sorted titles (collapsing distinct levels, e.g. "Algebra 1: Part 2" == "Algebra 2: Part 1"), were never curator-reviewed, double-emitted members as Stand-Alone, carried 0 articulations — superseded by the level-safe Suggested-merges worklist. The **9 already-curated clusters migrated to per-member `merge_into`** (Supabase `kb_curation` + `coci_curation.json`) FIRST so no decision was lost — measure-first found 16/17 per-member equivalents already existed, so the migration was 1 INSERT (`PHYS M11WB→PHYS M1265`) + 9 DELETEs; side-benefit cleared 9 `cluster_member_unresolved` findings. CCR `id_system: Cluster` rows: ~1,376 → **0** — the category is RETIRED. **Then relabelled the merge-target path** (same session): native-identity targets (M-ID/C-ID/CCN) keep their `id_system` + `kind:"Course"` (an M-ID gaining members is still that M-ID; 9 rows), and synthetic `UC-CUR-*` targets get the new `id_system/kind: "Unified"` (1 row, grows with singleton-only merges). Touched the generator `_target_identity()`, `unified_courses.js` (Kind/Source/QS/triage labels + `doConsolidate` live-merge mirror), and the auditor (`row_kind/id_system → "Unified"`; tag *keys* stay `cluster_*`). Generator + auditor regenerated + verified in isolation (0 Cluster anywhere). Full rule in the "Cluster category RETIRED" note above; lessons `docs/ccr_cluster_cleanup_lessons.md`; method `docs/kb-notes/methodology-retiring-an-auto-seeded-layer.md`. | **DONE** (Session 19, 2026-05-30) |
 | **Dashboard cleanup + cross-disc accounting (Session 20)** | Two threads + rule changes. **Accounting (PR #198/#199):** 27 accounting M-IDs/singletons in a blank/Vocational slot → `Business` (Supabase `kb_curation` + overlay); 21 cross-disciplinary accounting courses cross-listed via the new **`cross_listed_disciplines`** `kb_curation` field; CCR anchors surface `discipline_provisional` (A); firewall-safe **`anchor_discipline_proposal`** propose-correction on locked anchors (B, excluded from `_apply_curation.py` FIELDS). **Dashboard cleanup (PR #201/#202/#204):** Common Subject Code → **Common Subjects Reference (CSR)**; Credential Reference → **Common Exhibit Reference (CER)** (CCR/CSR/CER family); full-width intros; blank quick-search; slim one-line header (CSS-only); CCR table economize; **SUBJ filter on CCR+CSR**; fixed CER blank-on-expand bug (`renderExpandedRow` undeclared tr/td/div); **#6 Exhibit Adoption & Credit Recommendations → its own `#tab-exhibit-adoption`** (out of CPL Analytics — generator no longer emits the mount; static container in the new pane). **Rule changes (PR #200/#201/#203):** checkpoint refreshes pipeline-viz + writes the handoff EVERY time; auto-merge needs no Sam review (green CI is the gate); merge promptly (never park a PR in draft). **Deferred → Session 21:** #1 Workplan tab (HIGH RISK — its marker is the end-anchor for 4 generator ops; sentinel-marker plan in `docs/kb-notes/playbook-move-generated-section-to-tab.md`), #2 sidebar sub-links, #3 MID/CID/CCNID **cosmetic** sweep (preserve the 224 `M-ID ACCT 100` anchor keys; CCN-ID→CCNID). Backlog: KPI-card sort-order, dark mode (phased), tab-surgery Skill, full Excel retirement. Lessons: `docs/dashboard_cleanup_lessons.md`. | **DONE** (Session 20, 2026-05-30) |
+| **Workplan → own tab (#1, Session 22)** | The deferred HIGH-RISK page move: **Workplan Activities & Projects** (Activity Metrics + Filter Bar + Projects Grid) moved OUT of the Dashboard tab into its own top-level **"Activities & Projects"** tab (`#tab-activities-projects`). Hard-case playbook executed: a permanent **`<!-- ═══ Dashboard Sections End ═══ -->` sentinel** now stays in the Dashboard tab and the **4 generator end-anchor ops** (KPI Summary replace + MAP Articulation strip + CPL Analytics strip + CPL Analytics insert) re-anchor on it; the section's inner anchors (`Filter Bar`/`Projects Grid`/`activityKpiSection`) travelled with the content so Ops 5/6/7 relocate via `html.find()`. **Verified by running `excel_to_dashboard.py` locally twice** (pip-installed openpyxl/pandas, snapshot fallbacks — no Supabase key): all 7 ops fire, **idempotent** (only timestamp/whitespace diffs), correct pane placement, marker counts = 1 (no gobble). Shipped structure-only HTML (no data churn). Label "Activities & Projects" (distinct from "Annual Workplan Goals") — Sam approved. §6b + §7b updated. **Next: #2 sidebar sub-links now UNBLOCKED** (depends on the final tab layout). | **DONE + MERGED** (PR #206, Session 22, 2026-05-31) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 3 | EACR interactive re-pivot to course-identity grouping (Approach B per §9) | **DONE 2026-05-26** (Session 8, Octaman — see Exhibit-canon PR-C0/C0b/C1/C2/C2-hotfix rows above) |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
