@@ -1,6 +1,6 @@
 {
   "_about": "Daily-cached snapshot of public.budget_funding + public.personnel. Written by kb/_load_budget.py after a successful Supabase fetch. Falls back to this file on a Supabase outage. Personnel is stored deduped. budget_expenditures intentionally omitted (held empty).",
-  "_fetched_at": "2026-05-30",
+  "_fetched_at": "2026-05-31",
   "_source_tables": [
     "public.budget_funding",
     "public.personnel"

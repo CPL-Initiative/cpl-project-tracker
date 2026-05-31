@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-30T11:47:38.885Z",
+  "scraped_at": "2026-05-31T11:52:40.134Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -63,14 +63,14 @@
         },
         {
           "college": "Norco College",
-          "students": 731,
+          "students": 732,
           "units": 5422,
-          "avgUnits": 7.417236662106703,
+          "avgUnits": 7.407103825136612,
           "transcriptionRate": 61.5,
-          "avgTranscribed": 4.560875512995896,
+          "avgTranscribed": 4.554644808743169,
           "criteriaMetCount": 5,
           "militaryStudents": 486,
-          "nonMilitaryStudents": 251,
+          "nonMilitaryStudents": 252,
           "apprenticeStudents": 93,
           "savings": 10281960,
           "yearImpact": 42394171,
@@ -293,17 +293,17 @@
         },
         {
           "college": "College of the Desert",
-          "students": 359,
-          "units": 2111.5,
-          "avgUnits": 5.881615598885793,
-          "transcriptionRate": 39.4,
-          "avgTranscribed": 2.316155988857939,
+          "students": 361,
+          "units": 2119.5,
+          "avgUnits": 5.871191135734072,
+          "transcriptionRate": 39.2,
+          "avgTranscribed": 2.3033240997229916,
           "criteriaMetCount": 2,
-          "militaryStudents": 323,
+          "militaryStudents": 325,
           "nonMilitaryStudents": 37,
           "apprenticeStudents": 0,
-          "savings": 3045912.5,
-          "yearImpact": 11835231,
+          "savings": 3059752.5,
+          "yearImpact": 11883767,
           "transcribedUnits": 831.5
         },
         {
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "46,122",
+      "value": "46,125",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,135"
+          "value": "24,137"
         },
         {
           "label": "Workforce/Other",
-          "value": "22,063"
+          "value": "22,064"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 46122,
-    "Units": 205070.65000000002,
+    "Students": 46125,
+    "Units": 205078.65000000002,
     "TranscribedUnits": 96102.95,
-    "Savings": 292768352.75,
-    "YearImpact": 1171840851.4,
-    "MilitaryStudents": 24135,
-    "NonMilitaryStudents": 22063,
+    "Savings": 292782192.75,
+    "YearImpact": 1171889387.4,
+    "MilitaryStudents": 24137,
+    "NonMilitaryStudents": 22064,
     "AprenticeStudents": 749,
-    "AverageUnits": 4.446265339751095,
-    "TranscribedAverage": 2.0836683144703176
+    "AverageUnits": 4.446149593495935,
+    "TranscribedAverage": 2.0835327913279134
   }
 }
