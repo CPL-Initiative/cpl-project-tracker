@@ -1433,7 +1433,12 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
    Decisions locked + **4-phase ladder** (PR-1 consolidation → PR-2 Local+CCC merge
    → PR-3 master-detail seeker view → PR-4 prescriptive recommendations) in
    [`docs/kb-notes/eacr-consolidation-scope.md`](docs/kb-notes/eacr-consolidation-scope.md).
-   **Scoped + queued; build deferred pending Sam's greenlight.**
+   Delivery = a **versioned prototype gallery** (v1 = current table made
+   collapsible; stack v2/v3 below — same data, many renderers; graduate the winner)
+   hosting **3 audience views: Student** (find/request credit + likely local
+   matches), **College** (my articulations + adoption options), **System**
+   (inequitable-access map from `adoption_leverage` × eligible-students,
+   privacy-ADR-gated). **Scoped + queued; build deferred pending Sam's greenlight.**
 - **Sidebar levels** (interleave) — add `data-sections` to CCR/CER/CSR/Exhibit-Adoption;
   optional 2nd nesting level where deep. **Excel retirement** (P5 budget factors →
   JSON, then drop the `.xlsx`) continues underneath.
