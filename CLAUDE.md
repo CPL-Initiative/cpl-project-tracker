@@ -1418,10 +1418,12 @@ isn't available in this env — ran it via parallel `Agent`s) + parent verificat
   ≈22.8k birthdates in `CustomReport_latest.json`, re-committed daily). **Forward-stop
   MERGED (PR #227):** gitignore + `git rm --cached` + dropped the workflow `git add` +
   trimmed the 4 unused student-identity columns from `fetch_custom_report.py` (kept
-  `MAP Internal StudentID` — aggregate-only). **History purge is STAGED for Sam's
-  force-push** — runbook: [`docs/kb-notes/playbook-pii-history-purge.md`](docs/kb-notes/playbook-pii-history-purge.md)
-  (overrides Rule 5; one-time, cron-paused, backed-up). **Do NOT re-add the trimmed
-  PII columns to the fetch.**
+  `MAP Internal StudentID` — aggregate-only). **History purge DONE** (Sam executed
+  2026-06-01: `git filter-repo` + force-push to main [.git 385→248 MB] + deleted the merged
+  session branches + closed PR #238; runbook
+  [`docs/kb-notes/playbook-pii-history-purge.md`](docs/kb-notes/playbook-pii-history-purge.md)).
+  The data is out of main AND its history. **Do NOT re-add the trimmed PII columns to the
+  fetch.** (PR #238's cheat-sheet feature was re-created clean on the rewritten main in #239.)
 - **Idempotency IDEM-1–5 (PR #231):** fixed 4 live whitespace-accretion inject sites
   (refresh button, PROJ-INFO, Vision 2030, the Annual-Workplan-Goals 446-char mega-line)
   + hardened the ALGO_DETAILS_CSS strip with an End marker. Verified by triple regen

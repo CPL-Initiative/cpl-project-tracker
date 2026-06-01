@@ -76,6 +76,23 @@ Pages will redeploy from the rewritten `main`. ⚠ This is **irreversible on the
    - `https://cpl-initiative.github.io/cpl-project-tracker/CustomReport_latest.json` → 404
    - `https://raw.githubusercontent.com/CPL-Initiative/cpl-project-tracker/main/CustomReport_latest.json` → 404
 
+## Open PRs after the rewrite — re-create, don't rebase
+
+An open PR whose branch was cut from the **old** (pre-rewrite) `main` cannot be rebased onto
+the new `main`: `git rebase origin/main` replays the branch's entire old history (hundreds of
+commits) and **re-introduces the purged file**. GitHub also flags it `dirty` with a massive
+phantom diff (every old commit reads "ahead"). The clean path:
+
+1. **Close the PR + delete its branch** — removes a reachable copy of the old history.
+2. **Recover the work without the old history:** `git fetch origin refs/pull/<N>/head`
+   (closed-PR commits persist until GC), then `git show <work-commit> -- <files>` for the
+   actual change as a diff.
+3. **Re-apply** that diff to a fresh branch off the rewritten `main`; open a new PR.
+
+Done for PR #238 (the cheat-sheet button/modal) → re-created clean in **#239** after the
+2026-06-01 purge; the PROJ-INFO button was re-verified byte-identical to the generator
+emission so the daily regen has no churn.
+
 ## Risks / caveats
 
 - **All commit SHAs change** → any external reference to a commit hash (links, notes) breaks.

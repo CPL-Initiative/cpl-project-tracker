@@ -98,3 +98,20 @@ this doc captures the *process* learnings + state.
   once the routing pointed at the right tab. Find the authoritative list first.
 - **Next concrete step (Session 27):** BUG-2 (Cluster→Unified vocab), then IDEM-7, then the
   audit menu + strategic items 2–6.
+
+## Checkpoint 3 — PII purge executed + cheat-sheet re-created (2026-06-01)
+
+- **PII history purge EXECUTED by Sam** (was staged): `git filter-repo --invert-paths --path
+  CustomReport_latest.json` on a fresh clone → force-push to `main` (.git 385→248 MB) →
+  deleted the merged `claude/*` session branches → closed PR #238. Verified at each gate
+  (file gone from all history; the purge clone == current `main` tip before the force-push,
+  so nothing was lost). Data is out of `main` AND its history.
+- **10th process learning — after a history rewrite, RE-CREATE open PRs, don't rebase.**
+  PR #238 (a cheat-sheet button/modal) was cut from pre-rewrite `main`; a rebase would replay
+  the purged history. Closed it + deleted the branch, recovered the work via
+  `git fetch origin refs/pull/238/head` + `git show c7140fd -- <files>`, and re-applied the
+  exact 149-line diff to a fresh branch off the clean main (#239). Re-verified the PROJ-INFO
+  button byte-matches the generator emission (no daily churn) + the static modal survives the
+  regen. Captured in `docs/kb-notes/playbook-pii-history-purge.md` ("Open PRs after the rewrite").
+- **Session 26 fully closed.** Remaining = 2 Sam-side ops (worker redeploy + WAF rate-limit;
+  "Allow auto-merge" toggle). Session 27 queue unchanged.
