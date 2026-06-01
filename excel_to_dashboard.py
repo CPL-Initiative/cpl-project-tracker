@@ -229,94 +229,67 @@ KPI_PARAMETERS_DEFAULTS = {
     "TWENTY_YEAR_MULTIPLIER":                4.0,
 }
 
-KPI_PARAMETER_META = {
-    "SAVINGS_DEFAULT":                       ("this file (fallback only)",
-        "Fallback value for Estimated Savings when live scrape unavailable."),
-    "TIER_MIN_STUDENTS":                     ("cloudflare-worker-proxy.js L184",
-        "Min CPL students for one tier criterion (college-level)."),
-    "TIER_MIN_UNITS":                        ("cloudflare-worker-proxy.js L185",
-        "Min CPL eligible units for one tier criterion."),
-    "TIER_MIN_AVG_UNITS_PER_STUDENT":        ("cloudflare-worker-proxy.js L186",
-        "Min average eligible units per student for one tier criterion."),
-    "TIER_MIN_TRANSCRIPTION_RATE":           ("cloudflare-worker-proxy.js L187",
-        "Min TranscribedUnits/Units ratio for one tier criterion (0.25 = 25%)."),
-    "TIER_MIN_AVG_TRANSCRIBED_PER_STUDENT":  ("cloudflare-worker-proxy.js L188",
-        "Min average transcribed units per student for one tier criterion."),
-    "BEACON_PER_UNIT_SAVINGS":               ("CCCCO dashboard (reference)",
-        "Per-unit savings factor (Beacon Economics). CCCCO computes the savings; this value is documentation only."),
-    "TWENTY_YEAR_MULTIPLIER":                ("CCCCO dashboard (reference)",
-        "Multiplier applied by CCCCO to one-year impact for 20-year projection."),
-}
+# (KPI_PARAMETER_META was removed in Excel-retirement P2 — it existed only to
+# populate the Description / Where-Applied columns of the now-deleted KPI_Config
+# sheet writer. The threshold→consumer mapping is documented at each parameter's
+# use site in cloudflare-worker-proxy.js + this file's ALGO_DESCRIPTIONS.)
+
+_DASHBOARD_CONFIG_CACHE = None
+
+def load_dashboard_config():
+    """Load kb/dashboard_config.json — the committed home for the dashboard
+    title/description/attachments URL, the Col-AG config overrides, and any
+    KPI-parameter overrides (Excel-retirement P2; these were Project List rows
+    1-2, Col AG, and the KPI_Config sheet respectively). Cached per run.
+
+    Returns {project_config, config_overrides, kpi_parameters}. Falls back to
+    empty sections if the file is missing/unreadable — it NEVER reads Excel
+    (the whole point of P2 is to drop the workbook config reads/writes).
+    """
+    global _DASHBOARD_CONFIG_CACHE
+    if _DASHBOARD_CONFIG_CACHE is not None:
+        return _DASHBOARD_CONFIG_CACHE
+    cfg = {"project_config": {}, "config_overrides": {}, "kpi_parameters": {}}
+    path = os.path.join(SCRIPT_DIR, "kb", "dashboard_config.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            loaded = json.load(f)
+        for k in cfg:
+            if isinstance(loaded.get(k), dict):
+                cfg[k] = loaded[k]
+    except Exception as e:
+        print(f"  WARNING: kb/dashboard_config.json unreadable ({e}); using built-in config defaults")
+    _DASHBOARD_CONFIG_CACHE = cfg
+    return cfg
 
 
-def read_kpi_parameters(wb):
-    """Read tunable KPI parameters from the 'KPI_Config' sheet.
-    Falls back to KPI_PARAMETERS_DEFAULTS for any missing entries.
-    Returns a dict of {param: value} with all parameters populated,
-    plus a '_last_modified' dict of {param: last_modified_str}.
+def read_kpi_parameters():
+    """Tunable KPI parameters: KPI_PARAMETERS_DEFAULTS overlaid with any
+    kb/dashboard_config.json `kpi_parameters` overrides (Excel-retirement P2 —
+    was the 'KPI_Config' sheet, which only ever held the code defaults).
+
+    Still returns a '_last_modified' map for the methodology display's call
+    shape, but it's now always empty: it was keyed by parameter but looked up by
+    KPI *card id*, so it never matched — the display already falls back to each
+    card's ALGO_DESCRIPTIONS last_modified.
     """
     params = dict(KPI_PARAMETERS_DEFAULTS)
-    last_modified = {}
-    if "KPI_Config" not in wb.sheetnames:
-        return {**params, "_last_modified": last_modified}
-
-    ws = wb["KPI_Config"]
-    for row in ws.iter_rows(min_row=2, values_only=True):
-        if not row or not row[0]:
+    overrides = load_dashboard_config().get("kpi_parameters", {})
+    for key, val in overrides.items():
+        if key not in params or val is None or val == "":
             continue
-        key = str(row[0]).strip()
-        if key not in params:
-            continue
-        val = row[1] if len(row) > 1 else None
-        lm  = row[3] if len(row) > 3 else None
-        if val is not None and val != "":
-            default = KPI_PARAMETERS_DEFAULTS[key]
-            if isinstance(default, int) and not isinstance(default, bool):
-                try: params[key] = int(float(val))
-                except (ValueError, TypeError): pass
-            elif isinstance(default, float):
-                try: params[key] = float(val)
-                except (ValueError, TypeError): pass
-            else:
-                params[key] = str(val)
-        if lm:
-            last_modified[key] = str(lm)[:10] if hasattr(lm, "strftime") else str(lm)
-
-    return {**params, "_last_modified": last_modified}
-
-
-def ensure_kpi_config_sheet(wb):
-    """Create the 'KPI_Config' sheet populated with defaults if it doesn't exist.
-    Returns True if a new sheet was created (caller should save the workbook).
-    """
-    if "KPI_Config" in wb.sheetnames:
-        return False
-    try:
-        from openpyxl.styles import Font, PatternFill, Alignment
-    except ImportError:
-        return False
-
-    ws = wb.create_sheet("KPI_Config")
-    ws.append(["Parameter", "Value", "Description", "Last Modified", "Where Applied"])
-
-    header_font = Font(bold=True, color="FFFFFF", size=11)
-    header_fill = PatternFill(start_color="0A2240", end_color="0A2240", fill_type="solid")
-    for cell in ws[1]:
-        cell.font = header_font
-        cell.fill = header_fill
-        cell.alignment = Alignment(horizontal="left", vertical="center")
-
-    today = _now_pt().strftime("%Y-%m-%d")
-    for key, default_val in KPI_PARAMETERS_DEFAULTS.items():
-        where, desc = KPI_PARAMETER_META.get(key, ("", ""))
-        ws.append([key, default_val, desc, today, where])
-
-    # Column widths
-    widths = {"A": 42, "B": 12, "C": 60, "D": 16, "E": 38}
-    for col, w in widths.items():
-        ws.column_dimensions[col].width = w
-
-    return True
+        default = KPI_PARAMETERS_DEFAULTS[key]
+        if isinstance(default, bool):
+            params[key] = bool(val)
+        elif isinstance(default, int):
+            try: params[key] = int(float(val))
+            except (ValueError, TypeError): pass
+        elif isinstance(default, float):
+            try: params[key] = float(val)
+            except (ValueError, TypeError): pass
+        else:
+            params[key] = str(val)
+    return {**params, "_last_modified": {}}
 
 
 # Structured algorithm descriptions for each card shown on the dashboard.
@@ -683,22 +656,18 @@ def ensure_attachment_subfolders(attachments_dir, projects):
     return created
 
 
-def read_project_config(wb):
-    """Read project configuration from rows 1-2 of the Project List tab.
-    Layout:
-      A1='Project Title:', B1=title, E1='Project ID:', F1=id,
-      H1='Attachments URL:', I1=url
-      A2='Description:', B2=description text
-    Returns dict with keys: title, project_id, description, attachments_url
+def read_project_config():
+    """Dashboard title / project id / attachments URL / description.
+    Excel-retirement P2: sourced from kb/dashboard_config.json `project_config`
+    (was Project List rows 1-2). Same 4-key return shape as before.
     """
-    ws = wb["Project List"]
-    config = {
-        "title": str(ws.cell(1, 2).value or "CPL Initiative").strip(),
-        "project_id": str(ws.cell(1, 6).value or "").strip(),
-        "attachments_url": str(ws.cell(1, 9).value or "").strip(),
-        "description": str(ws.cell(2, 2).value or "").strip(),
+    pc = load_dashboard_config().get("project_config", {})
+    return {
+        "title": str(pc.get("title") or "CPL Initiative").strip(),
+        "project_id": str(pc.get("project_id") or "").strip(),
+        "attachments_url": str(pc.get("attachments_url") or "").strip(),
+        "description": str(pc.get("description") or "").strip(),
     }
-    return config
 
 
 # ── Official CPL Workplan Goal Definitions ─────────────────────────
@@ -1251,15 +1220,14 @@ def load_projects(wb):
         return excel_real, _now_pt().strftime("%Y-%m-%d"), "excel"
 
 
-def read_config_overrides(wb):
-    """
-    Read dashboard configuration overrides from the Project List tab.
-    Scans rows BELOW the last project (after the first empty ID cell)
-    looking for config key-value pairs in Col A (key) and Col AG (value).
+def read_config_overrides():
+    """Dashboard config overrides (workplan-chart baselines, Vision 2030 progress
+    %, savings fallback, …). Excel-retirement P2: sourced from
+    kb/dashboard_config.json `config_overrides` (was Project List Col AG, which
+    was empty — every consumer `.get(key, default)`s with an inline fallback, so
+    an empty map renders exactly as before).
 
-    Returns a dict of config_key → value.
-
-    Supported config keys (case-insensitive):
+    Supported keys (case-insensitive, upper-cased here to match the consumers):
       BASE_MIL, BASE_WF, BASE_APP         — workplan chart 2024 baselines
       ACTUAL_2025_MIL, ACTUAL_2025_WF,     — workplan chart 2025 actuals
       ACTUAL_2025_APP, ACTUAL_2025_TOTAL
@@ -1267,33 +1235,10 @@ def read_config_overrides(wb):
       V2030_G2_CURRENT, V2030_G3_CURRENT   — Vision 2030 status text
       SAVINGS_DEFAULT                       — estimated savings fallback
     """
-    ws = wb["Project List"]
-    overrides = {}
-
-    # Skip past project rows (they end at first empty Col A after row 3)
-    config_start = None
-    for r in range(4, ws.max_row + 1):
-        pid = cell_val(ws, r, COL_ID, None)
-        if not pid:
-            config_start = r
-            break
-
-    if config_start is None:
-        return overrides
-
-    # Scan remaining rows for config entries (skip section headers)
-    _skip = {"DASHBOARD CONFIGURATION OVERRIDES", "VALUE"}
-    for r in range(config_start, min(config_start + 50, ws.max_row + 1)):
-        key = cell_val(ws, r, COL_ID, None)
-        val = cell_val(ws, r, COL_OVERRIDE, None)
-        if key and val is not None:
-            k = str(key).strip().upper()
-            if k not in _skip and not k.startswith("──"):
-                overrides[k] = val
-
+    raw = load_dashboard_config().get("config_overrides", {})
+    overrides = {str(k).strip().upper(): v for k, v in raw.items()}
     if overrides:
-        print(f"  Config overrides from Col AG: {list(overrides.keys())}")
-
+        print(f"  Config overrides from kb/dashboard_config.json: {list(overrides.keys())}")
     return overrides
 
 
@@ -7826,7 +7771,7 @@ def main():
 
     # Read all data from the Project List (single source of truth)
     wb = load_workbook(EXCEL_FILE, data_only=True)
-    project_config  = read_project_config(wb)
+    project_config  = read_project_config()
     print(f"  Project: {project_config['title']} ({project_config['project_id']})")
 
     # Scan attachments folder (SharePoint sync or local)
@@ -7847,7 +7792,7 @@ def main():
     # "Update" deep-link it fed was removed in Excel-retirement P1).
     # Behavior-preserving — see kb/_test_projects_parity.py.
     projects, projects_fetched_at, projects_source = load_projects(wb)
-    config_overrides = read_config_overrides(wb)
+    config_overrides = read_config_overrides()
     update_log      = read_update_log(wb)
     budget, budget_fetched_at, budget_source = load_budget(wb)
     # Load live CCCCO scrape early so it can seed star_college_count (single
@@ -7879,16 +7824,12 @@ def main():
 
     activity_kpis   = build_activity_kpis(projects, activities=activities)
 
-    # ── KPI tunable parameters (from KPI_Config sheet, with defaults) ──
-    # Auto-create the sheet on first run so users have a place to edit
-    # thresholds without touching the codebase.
-    if ensure_kpi_config_sheet(wb):
-        try:
-            wb.save(EXCEL_FILE)
-            print(f"  Created KPI_Config sheet in {os.path.basename(EXCEL_FILE)} with default parameters")
-        except Exception as e:
-            print(f"  Could not save KPI_Config sheet ({e}); using defaults")
-    kpi_params = read_kpi_parameters(wb)
+    # ── KPI tunable parameters ──
+    # Excel-retirement P2: KPI_PARAMETERS_DEFAULTS overlaid with any
+    # kb/dashboard_config.json `kpi_parameters` overrides. (Was the KPI_Config
+    # sheet + the ensure_kpi_config_sheet writer — a hard .xlsx-deletion blocker,
+    # now removed; the sheet only ever held the code defaults.)
+    kpi_params = read_kpi_parameters()
 
     # Auto-create attachment subfolders for new activities/projects
     new_folders = ensure_attachment_subfolders(att_dir, projects)
