@@ -41,6 +41,15 @@ jobs:
 
       # ── Step 1: Fetch CustomReport JSON ─────────────────────────
       - name: Fetch CustomReport from MAP API
+        # Pre-staged for MAP's user-auth rollout (docs/map_api_auth_handoff.md).
+        # These secrets don't exist yet → they resolve to empty → fetch stays
+        # unauthenticated (today's behavior). When MAP issues a service
+        # credential, add the MAP_API_KEY secret (+ optionally header/scheme) and
+        # the fetch authenticates with no code change.
+        env:
+          MAP_API_KEY: ${{ secrets.MAP_API_KEY }}
+          MAP_API_AUTH_HEADER: ${{ secrets.MAP_API_AUTH_HEADER }}
+          MAP_API_AUTH_SCHEME: ${{ secrets.MAP_API_AUTH_SCHEME }}
         run: |
           python fetch_custom_report.py --output CustomReport_latest.json \
             && echo "CUSTOM_REPORT_STATUS=success" >> "$GITHUB_ENV" \
