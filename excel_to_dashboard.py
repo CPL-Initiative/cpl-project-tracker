@@ -8082,6 +8082,19 @@ def main():
             f' onmouseout="this.style.background=\'rgba(255,255,255,0.1)\'"'
             f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
             f'&#128206; See Attachments{badge_html}</a></div>')
+        # KB Cheat Sheet button — opens the static #kbcs-overlay modal (defined before </body>).
+        # Plain string (no interpolation) so the hand-maintained HTML mirror stays byte-identical.
+        proj_info_parts.append(
+            '<div style="margin-top:0.5rem;"><button type="button" class="attach-btn" '
+            'onclick="kbcsOpen()" '
+            'style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.82rem;'
+            'color:#fff;text-decoration:none;font-weight:600;padding:6px 14px;'
+            'border:1px solid rgba(255,255,255,0.3);border-radius:4px;'
+            'background:rgba(255,255,255,0.1);cursor:pointer;transition:background 0.2s;" '
+            'onmouseover="this.style.background=\'rgba(255,255,255,0.2)\'" '
+            'onmouseout="this.style.background=\'rgba(255,255,255,0.1)\'" '
+            'title="How to use Claude Code with the CPL Knowledge Base">'
+            '&#128214; Claude + KB Cheat Sheet</button></div>')
         proj_info_parts.append(PROJ_INFO_END)
         proj_info_html = '\n        '.join(proj_info_parts)
 
