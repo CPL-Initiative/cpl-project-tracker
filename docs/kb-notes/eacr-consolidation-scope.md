@@ -3,7 +3,7 @@ title: EACR card + credit-rec consolidation (Scope)
 date: 2026-06-01
 kb-status: published
 kb-type: playbook
-tags: [eacr, exhibit-adoption, consolidation, credit-recommendations, scope, generator, statewide]
+tags: [eacr, exhibit-adoption, consolidation, credit-recommendations, scope, generator, statewide, seeker-view, adoption-leverage, unified-courses]
 related:
   - docs/exhibit_canonicalization_lessons.md (Session 8 — the EACR re-pivot to credential-identity grouping)
   - docs/session_27_handoff.md (the build queue this feeds)
@@ -13,6 +13,7 @@ artifacts:
   - excel_to_dashboard.py::_parse_exhibits (headline "MAP Exhibits" KPI — shares the grouping key, MUST move in lockstep)
   - statewide_interactive.js (EACR consumer — credit-rec rendering + the "undefined" filter-label bug at :563)
   - statewide_data.js (generated EACR payload — gains the grouped credit-rec fields)
+  - kb/coci_articulations.json (unified-course ↔ credential ↔ colleges join; adoption_leverage = the prescriptive layer; PR-3/PR-4 wire it into the EACR producer)
   - kb/_eacr_flag_migrate.py (the _EACR_FLAG merged_id alias migration — a no-op today, 0 flags)
 ---
 
@@ -77,8 +78,9 @@ And `credit_recs` is a flat `[{course, credit}]` list deduped only on the exact
 2. **Credit-rec consolidation → group by `(normalized course title, units)`,
    local course codes inline**, plus a "Typical award: N units (range a–b)"
    headline so the list reads as **alternatives, not additive**. (The deeper
-   M-ID/C-ID course-identity grouping is a later phase — it ties into strategic
-   item 5, EACR↔CER convergence.)
+   M-ID/C-ID course-identity grouping + the CCC-anchored master-detail + the
+   prescriptive potential-adoption layers are captured in **Vision enrichment**
+   below — Sam expanded the vision in the same session.)
 3. **Sequencing → queue + this scope doc only; do NOT build yet.** Sam reviews
    the plan before any code ships.
 
@@ -155,6 +157,105 @@ Consumer (`statewide_interactive.js`):
 - Verify by running `excel_to_dashboard.py` locally (snapshot fallbacks; no
   Supabase key needed) and confirming idempotency (regen twice → only
   timestamp diffs) per Rules 1/2/4 — mirror `index.html`.
+
+## Vision enrichment (Sam, 2026-06-01) — the seeker view + adoption engine
+
+A design dialogue right after the scope landed expanded the vision well beyond
+de-cluttering. Captured here as the **target end-state**; the exact
+representation is **proposed / iterating** (Sam: *"we can get there in
+iterations"*), but the data findings and the layout model are durable.
+
+### Audience shift
+
+The EACR stops being only an admin adoption tracker. It becomes three lenses on
+one surface:
+1. **CPL-seeker view** — *"If I hold this cert, what credit would I typically
+   get, and in what range?"*
+2. **Adoption cockpit** — who has articulated it (unchanged).
+3. **Prescriptive adoption engine** — which aligned colleges *should* articulate
+   it, and *exactly which local course* to map to.
+
+This is the literal artifact a future **Student CPL Portal** would embed, so the
+seeker framing is first-class, not cosmetic.
+
+### Layout — CCC-anchored master-detail (Sam's proposal, refined)
+
+A credential card becomes a **header + per-pattern local cards**:
+- **Header = the standard.** When a **CCC Collaborative** version exists it is
+  the authoritative anchor (*"🏛 Statewide CCC standard: N units → course"*).
+  Sam: *"the CCC version will be set, so key off that when there is one."*
+  **Validated** — every CCC articulation for CompTIA A+ agrees on 3 units → ICT
+  Essentials.
+- **When there is NO CCC version** (the common case — see findings), the header
+  is a **synthesized "suggested standard"** from the modal local award
+  (*"⚙ Suggested standard from N colleges: ~3 units → modal course"*),
+  explicitly *not-yet-official*. This doubles as a **Model-Curriculum / CIDx
+  submission candidate** (CLAUDE.md §11) — same modal-course computation.
+- **Local cards grouped by articulation PATTERN, not raw college** (the
+  refinement to Sam's "small local card per college"): colleges that award the
+  cert identically collapse into one card listing its colleges, so CompTIA A+'s
+  21 colleges → ~5 pattern cards, not 21.
+- **Seeker headline:** *"Typically ~3 units (1 course); range 1–N courses."*
+  Anchor on the CCC value when present; cap/flag outliers (CompTIA A+ has a 22u
+  tail vs. a 3u mode).
+
+```
+WITH a CCC version (≈5% of credentials) — CompTIA A+:
+┌─ CompTIA A+ · CompTIA · Industry Certification ───────────────────┐
+│ 🏛 STATEWIDE CCC STANDARD:  3 units → ICT Essentials              │
+│ 💡 You'd typically earn ~3 units (1 course). Range: 1–3 courses.  │
+│  How colleges award it:                                           │
+│   ▸ 3u  · ICT Essentials ......................... 11 colleges 🏛 │
+│   ▸ 6u  · A+ Cert Prep: Hardware + Software ........ 1 college    │
+│   ▸ 4.5u · Technical Support Fundamentals .......... 1 college    │
+│   … +N more local patterns                                        │
+└───────────────────────────────────────────────────────────────────┘
+
+LOCAL-ONLY (≈94% of credentials):
+┌─ [Local Cert] · [Issuer] · Industry Certification ───────────────┐
+│ ⚙ SUGGESTED STANDARD (from 6 colleges): ~3 units → [modal course]│  (→ MC/CIDx candidate, §11)
+│ 💡 You'd typically earn ~3 units; range 2–4u.                     │
+│   ▸ 3u · [Course X] .............................. 4 colleges     │
+└───────────────────────────────────────────────────────────────────┘
+```
+
+### Prescriptive layer — status per college + recommended course
+
+Each local-college entry carries a **status**, surfacing the existing
+adoption-leverage data:
+
+| Status | Signal (already in data) | Card shows |
+|---|---|---|
+| ✅ Articulated | `earned_by_colleges` | actual local course + units |
+| 🎯 Potential — aligned course | `adoption_leverage` (identity match) | **"you already teach [course = the standard] — recommend articulating to it"** |
+| ○ Potential — aligned program | `potential_names` (TOP/CID match only) | "aligned program area — consider" |
+
+The strong tier is the gold: *"you already teach the course the standard maps
+to — one articulation away."* Naming the specific recommended local course needs
+one more join (M-ID → that college's member course); the join that *produced*
+the leverage list already knows it, so it's a surfacing step, not new logic.
+
+### Data findings that shape it (`kb/coci_articulations.json`, 2026-06-01)
+
+- **CCC is "set":** all CompTIA A+ CCC articulations agree (3u → ICT Essentials).
+- **94% local-only:** only **90 of 1,726** articulated credentials (5%) have a CCC version → the synthesized-standard header is the **main** layout, not the fallback.
+- **Per-college variance is real:** of 21 CompTIA A+ colleges, **17 award 1 course, 3 award 2, 1 awards 3**; modal 3u (tail outlier 22u to cap).
+- **Prescriptive fuel exists:** **2,597** articulation records carry `adoption_leverage` (~**48,000** college×cert "should-articulate" opportunities); **413** `over_merged` records correctly **withhold** leverage.
+- **Identity-fragmentation caveat:** CompTIA A+ resolves to **24 distinct M-IDs**, ~10 of which are the same "ICT Essentials, 3u" minted as separate single-college M-IDs. So grouping on the raw M-ID does NOT collapse them (24 rows) — **group local cards by `(normalized title, units)` today**, carry the M-ID/C-ID as enrichment, and let the EACR's visible fragmentation **feed the Suggested-merges worklist** (curation tightens identity → the EACR tightens automatically).
+
+### Revised iteration ladder
+
+| Phase | What | Depends on |
+|---|---|---|
+| **PR-1** | `(title,units)` credit-rec consolidation + "typical units" range headline (orig. #2/#3) | nothing — works today |
+| **PR-2** | Merge Local+CCC, CCC top billing (orig. #1) | KPI lockstep + flag re-check |
+| **PR-3** | Master-detail expand: CCC / synthesized-standard header + per-pattern local cards + seeker range | `coci_articulations.json` join (CCC flag, modal award) |
+| **PR-4** | Prescriptive status per college (articulated / potential-aligned-course / potential-aligned-program) + recommended local course | `adoption_leverage` + membership join; over-merge guardrail |
+| **later** | Replace the `(title,units)` heuristic with true identity grouping as stand-alone M-IDs get curated-merged; Student CPL Portal surface | curation throughput |
+
+PR-1/PR-2 still ship first (low risk, immediate de-clutter); PR-3/PR-4 layer the
+seeker + prescriptive value on top once the `coci_articulations.json` join is
+wired into the EACR producer (which today reads only the credential KB).
 
 ## When this applies (and when it doesn't)
 
