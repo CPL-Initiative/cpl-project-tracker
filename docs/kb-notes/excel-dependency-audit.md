@@ -1,7 +1,7 @@
 ---
 title: Excel dependency audit — what still touches CPL_Initiative_Project_List_v3.xlsx, and the fix queue
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-06-01 (P1 done, Session 25)
 tags: [reference, excel-to-supabase, retirement, audit, fix-queue, phase-final]
 kb-status: published
 kb-type: reference
@@ -62,8 +62,8 @@ These are the **hard blockers** for deleting the file — the generator currentl
 
 | Link | Where | Goes to | Fix |
 |---|---|---|---|
-| **"Update" button** | `_render_single_project_card` (`excel_cell_url(excel_row)`) **and** `render_activity_kpis_html` | **Excel-for-the-Web at cell `P{row}`** — the one the curator hit | **P1** — replace with the inline editor (we already have `projects_editor.js`) |
-| `SHARED_EXCEL_URL` rewire | `dashboard_filters.js` (decl line 11; rewires `updateBtn` + card btns lines 322–349) | SharePoint Excel | **P1** — remove the rewire |
+| **"Update" button** | `_render_single_project_card` (`excel_cell_url(excel_row)`) **and** `render_activity_kpis_html` | **Excel-for-the-Web at cell `P{row}`** — the one the curator hit | **P1 ✅ DONE (#219)** — card button now triggers the inline Latest Update editor; akpi copy dropped |
+| `SHARED_EXCEL_URL` rewire | `dashboard_filters.js` (decl line 11; rewires `updateBtn` + card btns lines 322–349) | SharePoint Excel | **P1 ✅ DONE (#219)** — rewire + toolbar button removed |
 | **"Attach" button** | card (`window.CPL_ATTACHMENTS_URL` from `read_project_config` I1) | SharePoint **attachments folder** (not the workbook itself) | Keep, but re-source the URL from the config home (P2). NOT a workbook dep once I1 moves. |
 | "Report" button | card → `reports/projects/{pid}_Report.docx` | A **generated docx** (no Excel) | None — already Excel-free |
 
@@ -84,15 +84,18 @@ These are the **hard blockers** for deleting the file — the generator currentl
 
 ## Fix queue (prioritized)
 
-**P1 — "Update" button → in-dashboard (user-facing; the reported bug).** Highest
-value, self-contained. The card fields are *already* click-to-edit via
-`projects_editor.js`, so the Excel "Update" button is redundant **and** points at
-the retiring file. Replace it: either (a) make it trigger/scroll-to the card's
-`latest_update` inline edit (signed-in), or (b) drop it and surface a "click any
-field to edit" hint (the auth widget already says this). Remove the
-`dashboard_filters.js` `SHARED_EXCEL_URL` rewire (lines 11, 322–349) and the
-activity-KPI-card copy. `excel_row` becomes unused → stop emitting it. *Generator
-+ dashboard_filters.js; no data migration; no Supabase change.* **Do this first.**
+**P1 — "Update" button → in-dashboard (user-facing; the reported bug). ✅ DONE
+(Session 25, 2026-06-01, PR #219).** Chose option (a): the per-card "Update"
+button is now an inline trigger (`<a href="#" class="proj-update-btn">`) that
+opens the card's `latest_update` modal editor when signed in, or scrolls-to +
+flashes the auth widget when signed out — instead of deep-linking into Excel.
+The activity-KPI-card "Update" copy was **dropped** (aggregates, no single
+editable row; Report + Attach stay). Removed the Excel deep-link cluster
+(`SHAREPOINT_EXCEL_URL` / `EXCEL_SHEET_NAME` / `excel_cell_url()`), the
+`dashboard_filters.js` `SHARED_EXCEL_URL` rewire + toolbar "Update Projects"
+button, and stopped emitting `excel_row` (gone from `CPL_Data.js` entirely).
+*Generator + dashboard_filters.js + projects_editor.js; no data migration; no
+Supabase change.* The workbook **path** (read path) still retires in P5.
 
 **P2 — config tables off Excel.** `read_config_overrides` (Col AG), `read_kpi_parameters`
 + `ensure_kpi_config_sheet` (KPI_Config), and `read_project_config` (title /
