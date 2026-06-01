@@ -15,6 +15,32 @@
   var container = document.getElementById("statewide-interactive-container");
   if (!container) return;
 
+  // ── Default order (Sam's tweaks, 2026-06-01) ──
+  //  (1) Sink UNCLASSIFIED cards (no credential identity in the KB yet) to the
+  //      bottom — lowest confidence, least actionable, and it collects the
+  //      "curate the unclassified" triage backlog in one place.
+  //  (2) Cluster a credential's variants together (CompTIA A+ was scattered)
+  //      while keeping high-opportunity credentials near the top: order each
+  //      (issuer, credential) cluster by its best potential, then issuer + title
+  //      so variants stay contiguous, then potential/adopters within.
+  (function sortExhibits() {
+    var clusterMax = {};
+    function ckey(e) { return (e.issuing_agency || "") + "||" + (e.unified_title || e.title || ""); }
+    exhibits.forEach(function (e) {
+      var k = ckey(e), p = e.potential || 0;
+      if (clusterMax[k] === undefined || p > clusterMax[k]) clusterMax[k] = p;
+    });
+    function unclassified(e) { return e.is_classified === false ? 1 : 0; }
+    exhibits.sort(function (a, b) {
+      return (unclassified(a) - unclassified(b))                                   // classified first
+        || (clusterMax[ckey(b)] - clusterMax[ckey(a)])                             // best-opportunity cluster first
+        || (a.issuing_agency || "").localeCompare(b.issuing_agency || "")          // group by issuer
+        || (a.unified_title || a.title || "").localeCompare(b.unified_title || b.title || "")  // variants contiguous
+        || ((b.potential || 0) - (a.potential || 0))                              // within: potential desc
+        || ((b.adopters || 0) - (a.adopters || 0));
+    });
+  })();
+
   var PAGE_SIZE = 50;
 
   // ── Supabase config (shared with the credential / common-course tabs) ──

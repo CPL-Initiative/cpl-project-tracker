@@ -360,6 +360,39 @@ PR-4 + a single-college pivot = the **College** view; a new equity aggregate = t
 **System** view — each a renderer over the shared consolidated layer, graduating to
 a Student/College/System toggle once they stabilize.
 
+## Backlog / next tweaks (from the live EACR review, 2026-06-01)
+
+- **Default sort — DONE (consumer-side, after PR-1 shipped):** cluster a
+  credential's variants together (CompTIA A+ was scattered across the
+  potential-ranked list) **and sink the 105 unclassified cards (4%) to the bottom**
+  (lowest confidence, least actionable; collects the triage backlog in one place).
+  Sort key: unclassified-last → cluster-best-potential → issuer → title → potential.
+- **Curate the unclassified** (Sam — *"a cool way to curate those,"* later): the
+  105 raw-title cards with no credential identity are the natural input to a **CER
+  triage queue** — a reviewer assigns each an existing/new `unified_title` (folding
+  it into a credential), exactly the CER's job. Surface the EACR's bottom-of-list
+  unclassified set in the CER flow (or a dedicated "unclassified exhibits"
+  worklist), reusing `kb/_audit_exhibits.py`'s unclassified flagging.
+- **CCR-centric inverse view** (Sam, later): the mirror of the EACR — **one row per
+  CCR (common course), listing all the aligned exhibits/credentials** that
+  articulate to it. Same `coci_articulations.json` data, pivoted by `course_id`
+  instead of by credential; the existing `_build_articulations_by_course()` already
+  groups this way — extend it to list aligned exhibits per course. Likely lives in
+  the CCR tab.
+- **CSR-centric rollup view** (Sam, later): like the CCR view but at the
+  **discipline/subject grain** — one row per discipline so **discipline faculty see
+  how many CPL opportunities they've created** (exhibits/credentials articulating to
+  courses in their discipline, across N colleges). Roll `coci_articulations.json` up
+  by `discipline`; lives in the CSR tab. Completes a **"same data, three grains"**
+  family — **CER/EACR (credential) · CCR (course) · CSR (discipline)** — each a pivot
+  of the articulation layer for a different audience (and the CSR grain feeds the
+  §11 faculty-trust / MC-readiness story directly).
+- **Per-group college counts** ("11 colleges") on the consolidated credit recs —
+  producer follow-up (the deduped `credit_recs` lost per-college attribution).
+- **Data nit:** some titles carry a mojibake em dash ("Generic Credit by Exam â€"
+  …") from an upstream encoding slip — a generator/source data-hygiene fix,
+  independent of these view tweaks.
+
 ## When this applies (and when it doesn't)
 
 - **Applies** to display/grouping changes on data that is *recomputed from raw
