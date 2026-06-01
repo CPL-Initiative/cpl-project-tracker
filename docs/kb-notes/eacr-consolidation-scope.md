@@ -75,6 +75,9 @@ And `credit_recs` is a flat `[{course, credit}]` list deduped only on the exact
    cards** (Industry Certification + Credit-by-Exam), not 1. Genuinely-different
    earning mechanisms (present a cert vs. pass a challenge exam) and their
    different unit awards stay distinct. *Not* a full per-credential collapse.
+   **(Revised later — Sam, 2026-06-01: merge CPL Type onto one card too, surfacing
+   it as a per-rec tag / sub-group; see "Full credential merge" in the backlog.
+   PR-2 shipped the Local+CCC step; the CPL-Type merge is the next one.)**
 2. **Credit-rec consolidation → group by `(normalized course title, units)`,
    local course codes inline**, plus a "Typical award: N units (range a–b)"
    headline so the list reads as **alternatives, not additive**. (The deeper
@@ -387,6 +390,17 @@ a Student/College/System toggle once they stabilize.
   family — **CER/EACR (credential) · CCR (course) · CSR (discipline)** — each a pivot
   of the articulation layer for a different audience (and the CSR grain feeds the
   §11 faculty-trust / MC-readiness story directly).
+- **Full credential merge — CPL Type as a tag, not a card-splitter** (Sam, later;
+  REVISES locked decision #1): drop `cpl_type` from the key too, so a credential is
+  **ONE card** (CompTIA A+ → 1, not 2). Surface CPL Type as a **tag on each credit
+  rec / pathway**, sub-grouping the consolidated recs by CPL Type (*"Via Industry
+  Certification: ~3 units …; Via Credit-by-Exam: 2–5 units …"*) so a seeker sees ALL
+  the ways to earn credit on one card. Producer change paralleling PR-2 — drop
+  `cpl_type` from both `_build_statewide_adoption` + `_parse_exhibits` keys (in
+  lockstep) + tag recs with `cpl_type` (`[{course, credit, cpl_type}]`). **Subtlety:**
+  different CPL Types can grant different units, so **sub-group by CPL Type rather
+  than blend** the typical-award headline (keeps it honest). PR-2 (Local+CCC,
+  cpl_type kept) stays a valid intermediate; this is the next merge step on top.
 - **Per-group college counts** ("11 colleges") on the consolidated credit recs —
   producer follow-up (the deduped `credit_recs` lost per-college attribution).
 - **Data nit:** some titles carry a mojibake em dash ("Generic Credit by Exam â€"
