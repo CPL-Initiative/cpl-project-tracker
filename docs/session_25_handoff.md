@@ -80,24 +80,32 @@ SESSION 24 ROUND 2 RESOLVED BOTH EDITORS (so the priority shifted — see below)
     yet (Sam: later PR). budget_funding/budget_expenditures/personnel RLS
     tightened to is_allowed_reviewer() live this session.
 
-YOUR PRIORITY WORKSTREAM — the Excel-retirement FINALE (editors are done):
-  (1) BUDGET FORMULA LAYER — add total=Σ(5 years) + avg=total/5 to the Budget
-     editor (recompute on a year-cell edit, PATCH total+avg, then render total/
-     avg READ-ONLY). Sam explicitly wants this as its own PR. The relationship
-     is confirmed in budget_funding (total=Σyears, avg=total/5).
-  (2) PERSONNEL EDITOR — the 2nd budget table. BLOCKER first: the live personnel
-     table is 26 rows deduped to 13 in _load_budget.py (_dedupe_personnel), so a
-     displayed row maps to multiple underlying ids — resolve row identity before
-     wiring PATCH (e.g. dedupe-by-canonical-id, or collapse the dupes in the
-     table). RLS already tightened this session.
-  (3) PR-4 — drop the .xlsx. Measure-first AUDIT every remaining reader before
-     teardown: read_projects() (fallback + excel_row), read_budget_plan()
-     (factors/year_labels — still Excel!), read_update_log(), read_config_
-     overrides(), the KPI_Config sheet. Each needs a Supabase/JSON home or a
-     deliberate drop. Then sunset them + delete the file, keeping a Supabase→xlsx
-     backup export (scope-doc Fork 5). excel_row powers "Open in Excel for the
-     Web" deep-links — scope-doc Fork 4 says drop.
-  Vision 2030 + Personnel need NO migration (confirmed Session 23 recon).
+YOUR PRIORITY WORKSTREAM — the Excel-retirement FINALE. Full measure-first
+catalog + prioritized queue now in docs/kb-notes/excel-dependency-audit.md
+(read it first — it supersedes the older final-scope reader list). The queue:
+  (P1) "UPDATE" BUTTON → IN-DASHBOARD (user-facing; a curator hit it and it
+     opened EXCEL). The card "Update" button is an <a href> to
+     excel_cell_url(excel_row) (SharePoint Excel-for-the-Web), rendered in
+     _render_single_project_card AND render_activity_kpis_html; dashboard_filters.js
+     also rewires it to SHARED_EXCEL_URL (lines 11, 322-349). REDUNDANT now —
+     projects_editor.js already makes the fields click-to-edit. Replace it
+     (trigger the inline latest_update edit, or drop it) + remove the JS rewire +
+     stop emitting excel_row. Generator + dashboard_filters.js; no data migration.
+     HIGHEST VALUE, do first.
+  (P2) CONFIG TABLES off Excel — read_config_overrides (Col AG baselines/tunables),
+     read_kpi_parameters + ensure_kpi_config_sheet (KPI_Config; also a WRITER),
+     read_project_config (title/desc/attachments_url I1). Fork: committed
+     kb/dashboard_config.json (rec) vs a Supabase app_config table.
+  (P3) UPDATE LOG history — read_update_log + archive_updates_to_log (a WRITER).
+     latest_update is already in Supabase; product fork: keep full history (→ a
+     project_update_log table) or retire it (keep just latest_update). Needs Sam.
+  (P4) delete dead readers read_annual_goals + read_workplan_goals (no call sites).
+  (P5) FINALE — drop the .xlsx: retire all the readers/writers above + the
+     EXCEL_FILE resolution + openpyxl import; keep a Supabase→xlsx backup export.
+  ALSO independent (from Session 24): the Budget total=Σyears/avg formula layer
+  (then total read-only — Sam wants it) + a personnel editor (BLOCKER: the live
+  personnel table is 26 rows deduped→13 in _load_budget.py, ambiguous row id).
+  Vision 2030 + Personnel data need NO migration (Session 23 recon).
 
 PATTERNS THAT WORKED THIS SESSION:
   - AUDIT THE CONSUMER GRAPH before migrating. grep the literal ids for readers,
