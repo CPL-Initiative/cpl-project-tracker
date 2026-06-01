@@ -3522,8 +3522,8 @@ def render_college_activity_card(live_data, last_activity=None, military_student
     # Emit the data blob immediately before the external script so it loads first.
     data_script = (
         "    <script>\n"
-        "    window.COLLEGE_ACTIVITY_DATA = " + json.dumps(all_data, ensure_ascii=False) + ";\n"
-        "    window.COLLEGE_DISCIPLINE_DETAIL = " + json.dumps(college_discipline_detail, ensure_ascii=False) + ";\n"
+        "    window.COLLEGE_ACTIVITY_DATA = " + _js_safe_json(all_data, indent=None) + ";\n"
+        "    window.COLLEGE_DISCIPLINE_DETAIL = " + _js_safe_json(college_discipline_detail, indent=None) + ";\n"
         "    </script>\n"
         "    <script src=\"college_activity.js\"></script>\n"
     )
@@ -8131,7 +8131,7 @@ def main():
             kb_anchor = '<script src="dashboard_filters.js">'
             kb_anchor_pos = html.find(kb_anchor)
             if kb_anchor_pos != -1:
-                kb_json = json.dumps(kb_text)  # safe JS string with proper escaping
+                kb_json = _js_safe_json(kb_text)  # hardened against </script> breakout (audit SEC-4)
                 kb_inject = f"<script>window.CPL_KB={kb_json};</script>\n    "
                 html = html[:kb_anchor_pos] + kb_inject + html[kb_anchor_pos:]
                 print(f"  Injected CPL KB excerpt ({len(kb_text):,} chars) from {CPL_KB_REPO}")
