@@ -29,3 +29,11 @@ kb/exhibit_audit/*.full.json
 # Classifier dry-run preview — local-only debugging artifact written by
 # classify_exhibits.py --dry-run.
 kb/_classify_dryrun_sample.json
+
+# ── Student/staff PII — NEVER commit to this PUBLIC repo ──
+# The raw MAP CustomReport pull contains student names/DOB/IDs and staff
+# contact info (View_StudentAggregatedValues, View_CollegeContacts,
+# View_CollegeUsersRoles). It is fetched fresh on every run and read by
+# excel_to_dashboard.py at runtime; only the *aggregated* public artifacts
+# may be committed. Keep this raw file out of git (and out of GitHub Pages).
+CustomReport_*.json

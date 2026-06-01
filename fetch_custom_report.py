@@ -91,14 +91,20 @@ REQUEST_PAYLOAD = [
     },
     {
         "viewName": "View_StudentAggregatedValues_APIDataset",
+        # Student-identity columns (BirthDate, FirstName, LastName, StudentID)
+        # are intentionally NOT requested — the dashboard only uses aggregate
+        # counts, never per-student identity. "MAP Internal StudentID" is kept
+        # solely for the per-college distinct-student count in
+        # excel_to_dashboard.py (_compute_college_military_students). Do not
+        # re-add the identity columns: this file feeds a PUBLIC repo.
         "columnName": ["College", "Catalog Year", "Applied Credits",
-                       "Apprenticeship Credits", "Area Credits", "BirthDate",
+                       "Apprenticeship Credits", "Area Credits",
                        "Course Credits", "CPL Mode of Learning",
                        "CPL Type Description", "Default Area Credits",
-                       "Elective Credits", "Eligible Credits", "FirstName",
-                       "Last Updated", "LastName", "MAP Internal StudentID",
+                       "Elective Credits", "Eligible Credits",
+                       "Last Updated", "MAP Internal StudentID",
                        "Military Credits", "NonMilitary Credits",
-                       "Potential Student", "StudentID", "Test Student",
+                       "Potential Student", "Test Student",
                        "Transcribed Credits", "Uploaded Date"]
     },
 ]
