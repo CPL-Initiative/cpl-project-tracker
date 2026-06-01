@@ -57,33 +57,46 @@ WHAT SHIPPED IN SESSION 24 (merged to main):
         exactly the 15 D.* ids, 34 real project objects byte-identical, on BOTH
         the snapshot AND forced-Excel-fallback paths. CPL_Data.js sheds the 15
         D.* project + 15 D.* update_log entries on the next daily regen.
-  - Docs PR (this session's checkpoint): Session 24 lessons entry, the new KB
-    methodology note above, CLAUDE.md roadmap row, INDEX.md, this handoff.
-    (Landed as a small follow-up because #213 merged before docs were bundled —
-    no harm; the code was clean.)
+  - Budget inline editor (PR #215) — click-to-edit dollar cells on the Budget
+    tab's 5-Year Funding Plan (budget_editor.js, mirrors projects_editor.js). 7
+    cells/row PATCH budget_funding; no total=Σyears/avg formula yet (Sam: later).
+    + budget_funding/budget_expenditures/personnel RLS tightened to
+    is_allowed_reviewer() live (was loose "Allow auth write"). Found the
+    KPI-ladder editor was ALREADY DONE (subsumed by PR-1 + workplan_goals.js) —
+    no build needed; 2nd measure-first "already exists" catch this session.
+  - Docs: Session 24 lessons entries, the KB methodology note, CLAUDE.md roadmap,
+    INDEX.md, this handoff. (PR #213's docs landed as follow-up #214 because Sam
+    merged #213 before docs were bundled; the Budget editor's docs are bundled
+    INTO #215.)
 
-YOUR PRIORITY WORKSTREAM — finish Excel retirement (2 pieces + the sunset left):
-  KPI-LADDER INLINE EDITOR (next, Sam's locked choice = a DASHBOARD editor, not
-     Supabase-direct). The ladder cells (kpi_goal_2526 … kpi_stretch_2930)
-     already RENDER on the Workplan Goals tab. The data now lives in Supabase
-     workplan_goals as kind='project' GOAL/STRETCH rows (PR-1). Build per-cell
-     click-to-edit mirroring workplan_goals.js (shared cpl_sb magic-link auth,
-     PATCH workplan_goals?activity_id=eq.{pid}&row_type=eq.{GOAL|STRETCH}&
-     kind=eq.project, optimistic paint + rollback). The Activity-Metrics KPI
-     cards + the project cards read the SAME ladder off CPL_Data.js, so a live
-     edit only persists to Supabase; the rendered ladder refreshes on the next
-     daily regen (same model as the other editors). RLS on workplan_goals
-     already gates writes to is_allowed_reviewer() (Phase 1 RLS-tighten).
-  BUDGET INLINE EDITOR (optional, independent, no fork; mirrors
-     projects_editor.js / workplan_goals.js). Budget read-path already cut over
-     (PR #189). RLS on budget_funding/personnel — verify before wiring writes.
-  PR-4 — sunset read_projects() + drop the .xlsx, keep a Supabase→xlsx backup
-     export. ONLY after the editors land + one daily cron confirms parity with
-     D.* gone. read_projects() still supplies excel_row + the total-outage
-     fallback + the per-project Excel ladder fallback — so its removal also
-     retires those (the ladder fallback is moot post-PR-1; excel_row powers the
-     "Open in Excel for the Web" deep-links — decide its fate, scope-doc Fork 4
-     says drop).
+SESSION 24 ROUND 2 RESOLVED BOTH EDITORS (so the priority shifted — see below):
+  - KPI-LADDER INLINE EDITOR = ALREADY DONE (no build needed). Measure-first:
+    PR-1 sourced the ladder (kpi_goal_2526…) FROM workplan_goals, and
+    workplan_goals.js (Phase 1 PR-5) already edits all 27 of those GOAL/STRETCH
+    cells on the Workplan Goals tab. Cross-checked: 27 ladder-bearing projects
+    all editable, 7 blank (5.2–5.8), 0 Excel-fallback gaps. Roadmap was stale.
+  - BUDGET INLINE EDITOR = BUILT (PR #215). budget_editor.js, 7 dollar cells per
+    budget_funding row, mirrors projects_editor.js. NO total=Σyears/avg formula
+    yet (Sam: later PR). budget_funding/budget_expenditures/personnel RLS
+    tightened to is_allowed_reviewer() live this session.
+
+YOUR PRIORITY WORKSTREAM — the Excel-retirement FINALE (editors are done):
+  (1) BUDGET FORMULA LAYER — add total=Σ(5 years) + avg=total/5 to the Budget
+     editor (recompute on a year-cell edit, PATCH total+avg, then render total/
+     avg READ-ONLY). Sam explicitly wants this as its own PR. The relationship
+     is confirmed in budget_funding (total=Σyears, avg=total/5).
+  (2) PERSONNEL EDITOR — the 2nd budget table. BLOCKER first: the live personnel
+     table is 26 rows deduped to 13 in _load_budget.py (_dedupe_personnel), so a
+     displayed row maps to multiple underlying ids — resolve row identity before
+     wiring PATCH (e.g. dedupe-by-canonical-id, or collapse the dupes in the
+     table). RLS already tightened this session.
+  (3) PR-4 — drop the .xlsx. Measure-first AUDIT every remaining reader before
+     teardown: read_projects() (fallback + excel_row), read_budget_plan()
+     (factors/year_labels — still Excel!), read_update_log(), read_config_
+     overrides(), the KPI_Config sheet. Each needs a Supabase/JSON home or a
+     deliberate drop. Then sunset them + delete the file, keeping a Supabase→xlsx
+     backup export (scope-doc Fork 5). excel_row powers "Open in Excel for the
+     Web" deep-links — scope-doc Fork 4 says drop.
   Vision 2030 + Personnel need NO migration (confirmed Session 23 recon).
 
 PATTERNS THAT WORKED THIS SESSION:
@@ -136,10 +149,11 @@ SEPARATE TRACK (not Excel retirement):
 |---|---|
 | Excel PR-1 (KPI-ladder keystone) | **DONE + MERGED** (PR #211, Session 23) |
 | Excel PR-2 (D.* rows retired) | **DONE + MERGED** (PR #213, Session 24) |
-| Session 24 docs (lessons/KB-note/roadmap/INDEX/handoff) | follow-up docs PR (this checkpoint) |
-| KPI-ladder inline editor (dashboard) | **NEXT** — not started (Sam chose dashboard editor) |
-| Budget inline editor | queued (optional, independent) |
-| Excel PR-4 (sunset read_projects + drop xlsx) | queued (after editors + 1 cron parity) |
+| KPI-ladder inline editor | **ALREADY DONE** (Session 24 measure-first — subsumed by PR-1 + workplan_goals.js; no build) |
+| Budget inline editor | **DONE** (PR #215, Session 24) + budget/personnel RLS tighten (live) |
+| Budget total/avg formula layer (+ total read-only) | **NEXT** — Sam wants its own PR |
+| Personnel editor | queued (BLOCKER: resolve the 26→13 dedupe row identity first) |
+| Excel PR-4 (sunset .xlsx + all readers) | queued (after the above; measure-first reader audit first) |
 | Vision 2030 / Personnel migration | N/A — confirmed no migration needed |
 | over-merge re-mint apply (Session 18) | STAGED, gated on Sam's dispatch (separate track) |
 
