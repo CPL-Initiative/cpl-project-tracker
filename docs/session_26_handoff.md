@@ -110,16 +110,16 @@ SAFETY TO HONOR:
     push/weekly). After a squash-merge, `git fetch origin main && git rebase
     origin/main` (the merged commits drop as "already upstream") then continue —
     the remote feature branch needs a --force-with-lease push afterward.
-  - MERGE POLICY (CLAUDE.md Branch Policy, refreshed 2026-06-01): **autonomous
-    engineering PRs merge on green WITHOUT waiting for a comment/"Go!"** — and
-    "green" = `mergeable_state` **`clean` OR `unstable`** (both mean required
-    checks pass; a pending *required* check reads `blocked`). Don't end the turn
-    waiting for `unstable`→`clean`. BUT **a deliverable Sam commissioned, where
-    his input completes it (a screenshot, a decision), SHOULD be held ready (not
-    draft) for his reply** — he confirmed that's the right call (#222). The line:
-    your own work → merge on green; a thing he asked for + would eyeball → hold
-    ready, present, merge on his nod. Never park in *draft*. (Sam merges FAST,
-    often "Go!" — he may merge before you do.)
+  - MERGE POLICY (CLAUDE.md Branch Policy, refreshed 2026-06-01): **merge on green
+    WITHOUT waiting for a comment/"Go!"** — "green" = `mergeable_state` **`clean`
+    OR `unstable`** (both mean required checks pass; a pending *required* check
+    reads `blocked`). Don't end the turn waiting for `unstable`→`clean`. **Hold a
+    PR for Sam's input ONLY when you have a concrete reason** — a known gap pending
+    something only he supplies (e.g. #222's §5 placeholder for his screenshot) or
+    an embedded decision only he can make. Being a thing he commissioned is NOT
+    itself a reason; no reason → merge, even if he asked for it. When you hold:
+    ready (never draft), state the reason, merge on his nod. (Sam merges FAST,
+    often "Go!" — he may beat you to it.)
 
 SEPARATE TRACK (not Excel retirement):
   - Over-merge re-mint apply (Session 18) is STAGED + gated on Sam's
