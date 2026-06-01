@@ -55,6 +55,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Playbook — Moving a generator-managed dashboard section to its own tab (end-anchor classify + sentinel marker)](kb-notes/playbook-move-generated-section-to-tab.md) | playbook | published | 2026-05-30 | 2026-05-30 |
 | [Playbook — GitHub scheduled-workflow reliability (diagnose a missed cron + backstop-cron fix)](kb-notes/playbook-github-scheduled-workflow-reliability.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 | [Playbook — Full Excel retirement final scope (KPI ladder blank-vs-0 crux, D.* helpers, read_projects sunset, 5 forks)](kb-notes/excel-retirement-final-scope.md) | playbook | published | 2026-05-31 | 2026-05-31 |
+| [Playbook — CPL Chatbox → dashboard integration + cpl-knowledge-base re-point (shared-backend finding, 6 forks)](kb-notes/cpl-chatbox-integration-scope.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 | [Reference — Excel dependency audit + fix queue (every remaining .xlsx touchpoint; the "Update→Excel" button)](kb-notes/excel-dependency-audit.md) | reference | published | 2026-06-01 | 2026-06-01 (P1+P2+P4 done) |
 | [Reference — Daily dashboard data pipeline (all 7 sources, every KPI's lineage, the committed daily dataset)](kb-notes/reference-daily-dashboard-data-pipeline.md) | reference | published | 2026-06-01 | 2026-06-01 |
 | [Reference — Windows PowerShell scripting gotchas (PS 5.1 + Task Scheduler)](kb-notes/reference-windows-powershell-gotchas.md) | reference | published | 2026-05-27 | 2026-05-27 |
