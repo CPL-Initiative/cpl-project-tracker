@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-05-30 (Session 20 — dashboard cleanup + cross-disc accounting)
+updated: 2026-06-01 (Session 26 — codebase audit + PII/idempotency/security remediation)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -59,6 +59,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Reference — Excel dependency audit + fix queue (every remaining .xlsx touchpoint; the "Update→Excel" button)](kb-notes/excel-dependency-audit.md) | reference | published | 2026-06-01 | 2026-06-01 (P1+P2+P4 done) |
 | [Reference — Daily dashboard data pipeline (all 7 sources, every KPI's lineage, the committed daily dataset)](kb-notes/reference-daily-dashboard-data-pipeline.md) | reference | published | 2026-06-01 | 2026-06-01 |
 | [Reference — Windows PowerShell scripting gotchas (PS 5.1 + Task Scheduler)](kb-notes/reference-windows-powershell-gotchas.md) | reference | published | 2026-05-27 | 2026-05-27 |
+| [Reference — Session 26 codebase audit findings catalog (51 findings, ranked fix queue)](kb-notes/reference-codebase-audit-2026-06-01.md) | reference | published | 2026-06-01 | 2026-06-01 |
+| [Playbook — Purge committed PII from git history (CustomReport_latest.json; Rule-5-override force-push)](kb-notes/playbook-pii-history-purge.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 
 ---
 
