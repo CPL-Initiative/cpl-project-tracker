@@ -444,12 +444,43 @@
     else startInlineEdit(cell, state);
   }
 
+  // Repurposed card "Update" button (Excel-retirement P1): instead of opening
+  // Excel for the Web, it opens the card's inline Latest Update editor. Signed
+  // out → nudge sign-in (scroll to + flash the auth widget, focus the email).
+  function handleUpdateBtn(btn, state) {
+    var card = btn.closest(".project-card");
+    if (!card) return;
+    if (!state.sess) { promptSignIn(); return; }
+    var cell = card.querySelector('[data-field="latest_update"]');
+    if (!cell) return;
+    try { cell.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) {}
+    startEdit(cell, state);
+  }
+
+  function promptSignIn() {
+    var widget = document.querySelector(".proj-auth-widget");
+    if (!widget) return;
+    try { widget.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) {}
+    var input = widget.querySelector('input[type="email"]');
+    if (input) { try { input.focus(); } catch (e) {} }
+    // Brief inline highlight (no CSS dependency — the editor's proj-* CSS is
+    // injected by the daily regen, so a stylesheet rule could lag a deploy).
+    var prev = widget.style.boxShadow;
+    widget.style.boxShadow = "0 0 0 3px #C9A84C";
+    setTimeout(function () { widget.style.boxShadow = prev; }, 1600);
+  }
+
   function attachClickHandler(state) {
     var grid = document.getElementById("projectsGrid");
     if (!grid) return;
     grid.addEventListener("click", function (e) {
       var target = e.target;
       while (target && target !== grid) {
+        if (target.classList && target.classList.contains("proj-update-btn")) {
+          e.preventDefault();  // it's an <a href="#"> — never jump to top
+          handleUpdateBtn(target, state);
+          return;
+        }
         if (target.getAttribute && target.getAttribute("data-editable") === "1") {
           startEdit(target, state);
           return;
