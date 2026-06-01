@@ -263,7 +263,7 @@ function resetFilters() {
         // exactly which card they want. Scrolls, flashes, no filter churn.
         if (typeof hint.scroll_to === 'string' && hint.scroll_to.trim()) {
             var target = hint.scroll_to.trim().toLowerCase();
-            var cards = document.querySelectorAll('#tab-dashboard .project-card');
+            var cards = document.querySelectorAll('#tab-activities-projects .project-card');
             var hit = null;
             for (var ci = 0; ci < cards.length; ci++) {
                 var nm = cards[ci].querySelector('.project-name');
@@ -296,14 +296,16 @@ function resetFilters() {
         if (changed) applyFilters();
     }
     // Cold-load path — a hint stashed in sessionStorage from a previous
-    // quickstart submit gets consumed once.
+    // quickstart submit gets consumed once. (The projects grid + filter bar
+    // moved to the Activities & Projects tab in PR #206, so the hint is keyed
+    // to 'activities-projects', not 'dashboard'.)
     if (window.CPL_QS && typeof window.CPL_QS.consume === 'function') {
-        applyQuickstartHint(window.CPL_QS.consume('dashboard'));
+        applyQuickstartHint(window.CPL_QS.consume('activities-projects'));
     }
-    // Live path — the user submits the chat with Dashboard already active.
+    // Live path — the user submits the chat with Activities & Projects active.
     window.addEventListener('cpl-qs-hint', function (ev) {
         var d = ev && ev.detail;
-        if (d && d.tab === 'dashboard') applyQuickstartHint(d.hint);
+        if (d && d.tab === 'activities-projects') applyQuickstartHint(d.hint);
     });
 
     // Inject Master Report button next to filter buttons. (The "Update Projects"
