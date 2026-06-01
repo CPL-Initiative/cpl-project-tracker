@@ -161,8 +161,10 @@ jobs:
           # Budget Phase 3 PR-1: daily-cached Supabase snapshot
           # (budget_funding + personnel; graceful-degradation fallback)
           git add kb/budget_snapshot.json 2>/dev/null || true
-          # Only add CustomReport if it was freshly fetched
-          git add CustomReport_latest.json 2>/dev/null || true
+          # CustomReport_latest.json is intentionally NOT committed — it carries
+          # student PII (names/DOB/IDs) + staff contacts. It is fetched fresh each
+          # run (Step 1) and read by the generator at runtime; gitignored so it
+          # never lands in this PUBLIC repo. Only aggregated artifacts are committed.
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
