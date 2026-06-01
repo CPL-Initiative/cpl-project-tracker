@@ -30,7 +30,8 @@
 
   // Tabs known to the router — keep in sync with VALID_TABS in CPL_Dashboard.html (~line 13091).
   var TABS = [
-    {hash: 'dashboard',            label: 'Dashboard',                desc: 'KPI overview, CPL projects grid (named projects + initiatives like Apprenticeship, AI in CPL, etc.), workplan activities. Use filter_hint.search to surface specific projects/initiatives.'},
+    {hash: 'dashboard',            label: 'Dashboard',                desc: 'KPI metrics + CPL Analytics overview, plus teaser cards linking to the other tabs. (The CPL projects grid + workplan activity metrics moved to the Activities & Projects tab in PR #206.)'},
+    {hash: 'activities-projects',  label: 'Activities & Projects',    desc: 'CPL projects grid (named projects + initiatives like Apprenticeship, AI in CPL, etc.) + workplan activity metrics. Use filter_hint.scroll_to for one named project, or search/activity/goal/status to filter the grid.'},
     {hash: 'workplan-goals',       label: 'Annual Workplan Goals',    desc: 'Five-year CPL goals with annual progress'},
     {hash: 'budget',               label: 'Budget',                   desc: 'CPL budget and expenditure plan'},
     {hash: 'vision-2030',          label: 'Vision 2030',              desc: 'Alignment cards showing CPL contribution to Vision 2030'},
@@ -53,7 +54,7 @@
   // unknown keys/values, so adding entries here is safe; removing them is
   // the only thing to be careful about.
   var HINT_VOCAB = {
-    'dashboard': {
+    'activities-projects': {
       // Direct-jump to a specific project card. Use this when the user
       // names a project (e.g. "Apprenticeship Sprint", "MAP Platform
       // Development") — must be an EXACT project name from CPL_DATA.
@@ -153,14 +154,14 @@
       'If the user asks about courses, course identities, C-ID / M-ID / CCN → "unified-courses".',
       'If the user asks about discipline codes or subject abbreviations → "canonical-subj4".',
       '',
-      'filter_hint vocabulary — only these keys are recognized, and only the listed values per key. Use the EXACT strings shown; multiple keys may be combined in one object. Other tabs (workplan-goals / budget / vision-2030 / pipeline / letters) accept no filter_hint — omit it.',
+      'filter_hint vocabulary — only these keys are recognized, and only the listed values per key. Use the EXACT strings shown; multiple keys may be combined in one object. Other tabs (dashboard / workplan-goals / budget / vision-2030 / pipeline / letters) accept no filter_hint — omit it.',
       '',
       buildHintVocabBlock(),
       '',
       'Examples:',
-      '  "apprenticeship sprint" → {"tab":"dashboard","filter_hint":{"scroll_to":"Apprenticeship Sprint"},"message":"Jumping to the Apprenticeship Sprint project."}',
-      '  "show me Activity 3 projects" → {"tab":"dashboard","filter_hint":{"activity":"Activity 3"},"message":"Opening Dashboard filtered to Activity 3."}',
-      '  "AI in CPL" → {"tab":"dashboard","filter_hint":{"search":"AI"},"message":"Opening Dashboard filtered to AI-related projects."}',
+      '  "apprenticeship sprint" → {"tab":"activities-projects","filter_hint":{"scroll_to":"Apprenticeship Sprint"},"message":"Jumping to the Apprenticeship Sprint project."}',
+      '  "show me Activity 3 projects" → {"tab":"activities-projects","filter_hint":{"activity":"Activity 3"},"message":"Opening Activities & Projects filtered to Activity 3."}',
+      '  "AI in CPL" → {"tab":"activities-projects","filter_hint":{"search":"AI"},"message":"Opening Activities & Projects filtered to AI-related projects."}',
       '  "review unclassified credentials" → {"tab":"credential-reference","filter_hint":{"audit_tag":"unclassified_in_map"},"message":"Opening Common Exhibit Reference with the unclassified-in-MAP queue."}',
       '  "find Adobe credentials" → {"tab":"credential-reference","filter_hint":{"search":"Adobe"},"message":"Opening Common Exhibit Reference filtered to Adobe."}',
       '  "title-keyword Generated rows in CCR" → {"tab":"unified-courses","filter_hint":{"status":"Generated","prov":"by title-keyword"},"message":"Opening the Common Course Reference with title-keyword Generated rows."}',
@@ -284,7 +285,7 @@
 
   // Build the typeahead directory from CPL_DATA — list of {kind, label, meta, hint}.
   // hint is what we pass to navigateTo(): {tab: <hash>, filter_hint?: {...}}.
-  // Projects: kind='project', dashboard tab + scroll_to filter_hint (Part 2).
+  // Projects: kind='project', activities-projects tab + scroll_to filter_hint (Part 2).
   // Tabs:    kind='tab', no filter_hint, just direct navigation.
   function buildSuggestionDirectory() {
     var entries = [];
@@ -295,7 +296,7 @@
         kind: 'project',
         label: p.name,
         meta: p.activity ? String(p.activity).replace(/^Activity\s+/i, 'A') : '',
-        hint: {tab: 'dashboard', filter_hint: {scroll_to: p.name}},
+        hint: {tab: 'activities-projects', filter_hint: {scroll_to: p.name}},
         // Searchable text includes id (e.g. "4.1.2") so curators can find by code.
         searchable: ((p.id || '') + ' ' + p.name + ' ' + (p.activity || '')).toLowerCase(),
       });
