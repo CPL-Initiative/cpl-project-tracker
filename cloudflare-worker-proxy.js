@@ -33,10 +33,25 @@ const ALLOWED_ORIGINS = [
 // aggregates used by our dashboard's KPI cards.
 const CPL_API_URL = 'https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0';
 
+// SEC-2: exact-match the allowlist. The old `startsWith` let
+// `https://cpl-initiative.github.io.evil.com` and `http://localhost.evil.com`
+// through. The production origin is matched exactly; localhost/127.0.0.1 dev is
+// matched by hostname so any dev port works but `localhost.evil.com` cannot.
+function isAllowedOrigin(origin) {
+  if (!origin) return false;
+  if (ALLOWED_ORIGINS.includes(origin)) return true;   // exact match (prod + bare localhost)
+  try {
+    const host = new URL(origin).hostname;
+    return host === 'localhost' || host === '127.0.0.1';
+  } catch (e) {
+    return false;
+  }
+}
+
 function corsHeaders(origin) {
-  const allowed = ALLOWED_ORIGINS.some(o => origin && origin.startsWith(o));
+  const allowed = isAllowedOrigin(origin);
   return {
-    'Access-Control-Allow-Origin': allowed ? origin : ALLOWED_ORIGINS[0],
+    'Access-Control-Allow-Origin': allowed ? origin : 'https://cpl-initiative.github.io',
     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, x-api-key, anthropic-version',
     'Access-Control-Max-Age': '86400',
@@ -300,6 +315,17 @@ async function handleScrape(url, env) {
 // can kick off a full pipeline run with one click.
 
 async function handleTrigger(request, env, origin) {
+  // SEC-3: the shared secret is shipped to every public visitor in the dashboard
+  // refresh button, so it gates nothing on its own. Add an origin check
+  // (defense-in-depth) + keep the secret; the REAL backstop is a Cloudflare
+  // rate-limit rule on /trigger. (The pipeline job is idempotent, so a spurious
+  // trigger is low-impact, but rate-limit it anyway.)
+  if (!isAllowedOrigin(origin)) {
+    return new Response(JSON.stringify({ error: 'Forbidden origin' }), {
+      status: 403,
+      headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
+    });
+  }
   // Verify shared secret (same SCRAPE_SECRET)
   let body;
   try { body = await request.json(); } catch { body = {}; }
@@ -391,6 +417,18 @@ export default {
       });
     }
 
+    // SEC-1: don't be an open relay to Anthropic on our key. Gate by the origin
+    // allowlist (blocks browser-based abuse from other sites). NOTE: a non-browser
+    // client can forge the Origin header, so a Cloudflare rate-limit rule on this
+    // route is the REAL backstop — configure it in the Cloudflare dashboard
+    // (Security -> WAF -> Rate limiting) for `/`, `/scrape`, and `/trigger`.
+    if (!isAllowedOrigin(origin)) {
+      return new Response(JSON.stringify({ error: 'Forbidden origin' }), {
+        status: 403,
+        headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
+      });
+    }
+
     const apiKey = env.ANTHROPIC_API_KEY;
     if (!apiKey) {
       return new Response(JSON.stringify({ error: 'API key not configured on proxy' }), {
@@ -401,6 +439,14 @@ export default {
 
     try {
       const body = await request.text();
+
+      // SEC-1: reject oversized payloads (legit report prompts are a few KB).
+      if (body.length > 262144) {
+        return new Response(JSON.stringify({ error: 'Request body too large' }), {
+          status: 413,
+          headers: { ...corsHeaders(origin), 'Content-Type': 'application/json' },
+        });
+      }
 
       const resp = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
