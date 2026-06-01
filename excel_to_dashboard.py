@@ -1297,74 +1297,6 @@ def read_config_overrides(wb):
     return overrides
 
 
-def read_annual_goals(wb):
-    """
-    Read the 'Annual Workplan Goals' tab.
-    Returns a list of dicts, one per sub-activity, each with:
-      id, name, activity_label, goal/stretch/current for each year, and totals.
-    Activity header rows (no ID) are kept as group separators.
-    """
-    if "Annual Workplan Goals" not in wb.sheetnames:
-        print("  WARNING: 'Annual Workplan Goals' tab not found — skipping")
-        return []
-
-    ws = wb["Annual Workplan Goals"]
-    year_cols = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
-
-    rows = []
-    current_activity = ""
-    r = 2  # skip header row
-    while r <= ws.max_row:
-        pid = cell_val(ws, r, 1, "")
-        name = cell_val(ws, r, 2, "")
-        row_type = str(cell_val(ws, r, 3, "")).strip().upper()
-
-        # Activity header row (no ID, no row type)
-        if not pid and not row_type and name:
-            current_activity = str(name)
-            r += 1
-            continue
-
-        if not pid or row_type != "GOAL":
-            r += 1
-            continue
-
-        # Read GOAL row
-        goal_vals = {}
-        for ci, yr in enumerate(year_cols, start=4):
-            v = cell_val(ws, r, ci, 0)
-            goal_vals[yr] = float(v) if isinstance(v, (int, float)) else 0
-        goal_vals["total"] = float(cell_val(ws, r, 9, 0) or 0)
-
-        # Next row should be CURRENT
-        current_vals = {}
-        if r + 1 <= ws.max_row and str(cell_val(ws, r + 1, 3, "")).strip().upper() == "CURRENT":
-            for ci, yr in enumerate(year_cols, start=4):
-                v = cell_val(ws, r + 1, ci, 0)
-                current_vals[yr] = float(v) if isinstance(v, (int, float)) else 0
-            current_vals["total"] = float(cell_val(ws, r + 1, 9, 0) or 0)
-
-        # Next row should be STRETCH
-        stretch_vals = {}
-        if r + 2 <= ws.max_row and str(cell_val(ws, r + 2, 3, "")).strip().upper() == "STRETCH":
-            for ci, yr in enumerate(year_cols, start=4):
-                v = cell_val(ws, r + 2, ci, 0)
-                stretch_vals[yr] = float(v) if isinstance(v, (int, float)) else 0
-            stretch_vals["total"] = float(cell_val(ws, r + 2, 9, 0) or 0)
-
-        rows.append({
-            "id": str(pid),
-            "name": str(name),
-            "activity": current_activity,
-            "goal": goal_vals,
-            "current": current_vals,
-            "stretch": stretch_vals,
-        })
-        r += 3  # skip GOAL/CURRENT/STRETCH triplet
-
-    return rows
-
-
 def render_annual_goals_table_html(annual_goals, activities=None):
     """
     Render the Annual Workplan Goals as a static HTML table
@@ -1797,7 +1729,8 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
     """
     Generate static HTML for the 19 activity-level KPI cards section.
     KPI cards are grouped under Goal sub-headers within each Activity.
-    annual_goals: list from read_annual_goals() — used to show 2025-26 targets.
+    annual_goals: list from build_workplan_goals_from_supabase() — used to show
+    2025-26 targets.
     """
     if not activity_kpis:
         return ""
@@ -6844,86 +6777,6 @@ EXHIBIT_ANALYSIS_CSS = """
 .wpg-assoc-pop .wpg-assoc-note { font-size:0.68rem; color:#999; margin-top:0.45rem; line-height:1.3; }
 /* ═══ End MAP Articulation Analysis Cards ═══ */
 """
-
-
-def read_workplan_goals(wb):
-    """
-    Read the 'Annual Workplan Goals' sheet.
-    Each activity block has 3 rows: GOAL, CURRENT, STRETCH.
-    Columns: B=Activity description, C=row type, D-H=years (2025-26 to 2029-30), I=TOTAL.
-    Returns list of dicts with annual goal/stretch data per activity.
-    CURRENT row values are ignored (placeholder data).
-    """
-    if "Annual Workplan Goals" not in wb.sheetnames:
-        print("  No 'Annual Workplan Goals' sheet found — skipping")
-        return []
-
-    ws = wb["Annual Workplan Goals"]
-    year_labels = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
-    activities = []
-    r = 4  # first data row
-
-    while r <= ws.max_row:
-        activity_desc = ws.cell(row=r, column=2).value
-        row_type = str(ws.cell(row=r, column=3).value or "").strip().upper()
-        if not activity_desc and not row_type:
-            r += 1
-            continue
-        if row_type != "GOAL":
-            r += 1
-            continue
-
-        # Parse activity ID and name from the description cell
-        desc_text = str(activity_desc).strip()
-        lines = desc_text.split("\n")
-        first_line = lines[0].strip()
-        # Extract ID like "1.1", "3.1.1", "3.1.2" from start
-        import re as _re
-        id_match = _re.match(r'^(\d+\.\d+(?:\.\d+)?)\s+(.+)', first_line)
-        if id_match:
-            act_id = id_match.group(1)
-            act_name = id_match.group(2)
-        else:
-            act_id = first_line[:3].strip()
-            act_name = first_line
-
-        # Read GOAL row values (columns D=4 through H=8, I=9 for total)
-        goal_values = []
-        for c in range(4, 9):
-            v = ws.cell(row=r, column=c).value
-            goal_values.append(v if v is not None else 0)
-        goal_total = ws.cell(row=r, column=9).value or 0
-
-        # Read STRETCH row (should be r+2, skip CURRENT at r+1)
-        stretch_values = []
-        stretch_total = 0
-        stretch_row = r + 2
-        if stretch_row <= ws.max_row:
-            stype = str(ws.cell(row=stretch_row, column=3).value or "").strip().upper()
-            if stype == "STRETCH":
-                for c in range(4, 9):
-                    v = ws.cell(row=stretch_row, column=c).value
-                    stretch_values.append(v if v is not None else 0)
-                stretch_total = ws.cell(row=stretch_row, column=9).value or 0
-
-        # Determine if values are percentages (0-1 range)
-        is_pct = all(isinstance(v, float) and 0 < v < 1 for v in goal_values if v)
-
-        activities.append({
-            "id": act_id,
-            "name": act_name,
-            "is_percentage": is_pct,
-            "years": year_labels,
-            "goal": goal_values,
-            "goal_total": goal_total,
-            "stretch": stretch_values if stretch_values else [0] * 5,
-            "stretch_total": stretch_total,
-        })
-
-        r += 3  # skip GOAL, CURRENT, STRETCH rows
-
-    print(f"  Read {len(activities)} activities from Annual Workplan Goals")
-    return activities
 
 
 def _natural_activity_sort_key(activity_id: str):
