@@ -27,7 +27,10 @@ The whole ecosystem, end-to-end:
    canonical title in bold + issuing-agency subtitle, a confidence /
    quality-flag badge when the underlying classification is shaky, and an
    "Also entered as N variants" disclosure that exposes every raw MAP title
-   folded into the card (28% collapse vs raw IDs as of 2026-05-26),
+   folded into the card (28% collapse vs raw IDs as of 2026-05-26) — now with
+   Local + CCC versions merged into one card, per-course consolidated credit recs
+   under a "Typical CPL" units headline, and a master-detail **Credential view**
+   (one card per credential, the CCC standard on top); plus
    Workplan Activities & Projects, Annual Goals, Budget, Vision 2030, a
    per-college **Common Course Reference** curation tab, a **Common Subjects
    Reference** tab (faculty-facing per-discipline curation with validate workflow

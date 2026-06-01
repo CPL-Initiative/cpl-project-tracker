@@ -1438,7 +1438,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
    hosting **3 audience views: Student** (find/request credit + likely local
    matches), **College** (my articulations + adoption options), **System**
    (inequitable-access map from `adoption_leverage` × eligible-students,
-   privacy-ADR-gated). **Scoped + queued; build deferred pending Sam's greenlight.**
+   privacy-ADR-gated). **Session 27 SHIPPED PR-1 → PR-3 + the sort + the gallery
+   v2** (see the Session 27 subsection below); **PR-4 (prescriptive layer) is
+   next**, plus the captured backlog (CPL-Type full-merge, CCR/CSR inverse views,
+   curate-the-unclassified).
 - **Sidebar levels** (interleave) — add `data-sections` to CCR/CER/CSR/Exhibit-Adoption;
   optional 2nd nesting level where deep. **Excel retirement** (P5 budget factors →
   JSON, then drop the `.xlsx`) continues underneath.
@@ -1488,6 +1491,51 @@ EXHIBIT_ANALYSIS_CSS Rule-2 guard), the rest of the audit menu, and strategic-qu
 **items 2–6** (KPI reorder, student-eligibility counts [privacy ADR first], contacts panel,
 EACR↔CER convergence, project→activity consolidation) + sidebar levels. Full ranked menu in
 the audit KB-note. Pipeline viz correctly SKIPPED (no M-ID pipeline change this session).
+
+### Session 27 — EACR consolidation + master-detail gallery (shipped 2026-06-01)
+
+Ran strategic-queue **item 7** end-to-end from Sam's live EACR screenshot review —
+the exhibit-adoption surface (NOT the M-ID pipeline; all consumer/generator, no
+re-mint). Shipped + merged:
+
+- **PR-1 (#244)** — credit-rec consolidation: `buildCreditRecsHtml()` (in
+  `statewide_interactive.js`) groups recs by `(course title, units)` with local
+  codes inline + a **"💡 Typical CPL: ~N units (range a–b) · not the sum"**
+  headline. Also fixed the "undefined (N)" Issuing-Agency filter-button label.
+- **Sort (#245)** — cluster a credential's variants together (CompTIA A+ was
+  scattered) + **sink the 105 unclassified cards (4%) to the bottom**. Consumer-side.
+- **PR-2 (#246)** — **merge Local + CCC into one card** (CCC top billing): dropped
+  `Collaborative Type` from the EACR group key; `_parse_exhibits()` (the "MAP
+  Exhibits" KPI) moved in **lockstep** on the same key. **Generator** change,
+  verified live on the next regen: **2,456 → 2,406 cards**, CompTIA A+ 4→2, merged
+  CCC card unions to 21 adopters. `cpl_type` kept in the key.
+- **PR-3 (#249)** — **master-detail "Credential view" (v2)** as the first entry in
+  the **versioned gallery**: v1 = the existing adoption table (preserved,
+  collapsible); v2 = one card per credential (`unified_title`+issuer), CCC version
+  as the standard on top (or a synthesized **⚙ Suggested standard** for the ~94%
+  no-CCC case), other CPL-Type/collab variants sub-listed. Reuses PR-1; additive
+  (v2 behind a collapsed `<details>`). 2,406 cards → 2,114 credential cards.
+- **MAP-auth pre-stage + spec sheet (#248)** — MAP is adding user auth to the
+  Custom Report Builder that `fetch_custom_report.py` hits **unauthenticated**.
+  Pre-staged an optional `MAP_API_KEY` header (no-op until the secret is set;
+  Bearer/APIM/x-api-key). Teams spec sheet + activation steps at
+  [`docs/map_api_auth_handoff.md`](docs/map_api_auth_handoff.md) (Sam sent it to
+  MAP). **Second host** (`cpldashboardcccco.../potential-savings`, the KPI scrape)
+  flagged for the same treatment.
+
+**Decision evolved:** locked decision #1 ("keep CPL Type separate") was **revised**
+mid-run — Sam wants CPL Type as a tag, not a card-splitter (the v2 master-detail
+delivers that visually; a full producer-side `cpl_type`-drop merge is the captured
+"full credential merge" backlog item).
+
+**Backlog captured** (`docs/kb-notes/eacr-consolidation-scope.md`): full credential
+merge (CPL Type as tag), **CCR inverse view** (one row per course → aligned
+exhibits), **CSR rollup** (one row per discipline → CPL opportunities, for faculty),
+curate-the-unclassified (CER triage), per-group college counts, a mojibake-em-dash
+data nit. **Next: PR-4 — the prescriptive layer** (per potential-adopter college,
+the recommended local course; turns `adoption_leverage` into "here's how to adopt")
++ then the 3 audience views (Student/College/System) as further gallery renderers.
+Lessons: [`docs/eacr_consolidation_lessons.md`](docs/eacr_consolidation_lessons.md).
 
 ---
 
