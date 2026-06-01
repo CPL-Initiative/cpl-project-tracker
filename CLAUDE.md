@@ -1365,6 +1365,44 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
   optional 2nd nesting level where deep. **Excel retirement** (P5 budget factors →
   JSON, then drop the `.xlsx`) continues underneath.
 
+### Session 26 — codebase audit + remediation (Bruh 26, shipped 2026-06-01)
+
+Ran strategic-queue **item 1 (codebase audit)** as a 6-subagent fan-out (`/workflow`
+isn't available in this env — ran it via parallel `Agent`s) + parent verification →
+**51 findings**, catalogued in
+[`docs/kb-notes/reference-codebase-audit-2026-06-01.md`](docs/kb-notes/reference-codebase-audit-2026-06-01.md)
+(PR #229). Sam green-lit fixes; shipped this session (all merged):
+
+- 🔴 **SEC-10 — student PII committed to the PUBLIC repo** (≈48k names, ≈30k IDs,
+  ≈22.8k birthdates in `CustomReport_latest.json`, re-committed daily). **Forward-stop
+  MERGED (PR #227):** gitignore + `git rm --cached` + dropped the workflow `git add` +
+  trimmed the 4 unused student-identity columns from `fetch_custom_report.py` (kept
+  `MAP Internal StudentID` — aggregate-only). **History purge is STAGED for Sam's
+  force-push** — runbook: [`docs/kb-notes/playbook-pii-history-purge.md`](docs/kb-notes/playbook-pii-history-purge.md)
+  (overrides Rule 5; one-time, cron-paused, backed-up). **Do NOT re-add the trimmed
+  PII columns to the fetch.**
+- **Idempotency IDEM-1–5 (PR #231):** fixed 4 live whitespace-accretion inject sites
+  (refresh button, PROJ-INFO, Vision 2030, the Annual-Workplan-Goals 446-char mega-line)
+  + hardened the ALGO_DETAILS_CSS strip with an End marker. Verified by triple regen
+  (8-space cruft 329→275, stable). **IDEM-6 NOT done** (CLAUDE.md §6a requires keeping
+  the legacy "MAP Exhibit Analysis Cards" stripper). **IDEM-7 (NEW, QUEUED):** a separate
+  pre-existing empty-line accretion (+3–4/run) at the EXHIBIT_ANALYSIS_CSS guard +
+  CPL-Analytics-HTML inject — deferred so as not to bundle a change to the Rule-2 guard.
+- **SEC-4/5 (PR #232):** routed `window.CPL_KB` + `window.COLLEGE_ACTIVITY_DATA`/
+  `_DISCIPLINE_DETAIL` inline `<script>` blobs through `_js_safe_json` (`</script>`-breakout).
+- **SEC-1/2/3 worker hardening (PR #233):** exact-match CORS (closes the `*.evil.com`
+  `startsWith` bypass), origin gate + 256 KB body cap on the `POST /` open Anthropic
+  proxy, origin gate on `/trigger`. **⚠ NEEDS Sam's Cloudflare redeploy + WAF rate-limit
+  rules** to take effect (the repo file isn't auto-deployed; rate-limiting is the real
+  backstop for forged-Origin `curl` abuse). `/scrape` left ungated (server-side caller).
+
+**Queued for Session 27** (green-lit, not yet built): **BUG-1** (quickstart project-nav
+routes to `#tab-dashboard`, but the grid moved to `#tab-activities-projects` in PR #206 —
+repoint `quickstart.js:33/297` + `dashboard_filters.js:266`); **IDEM-7**; and strategic-queue
+**items 2–6** (KPI reorder, student-eligibility counts [privacy ADR first], contacts panel,
+EACR↔CER convergence, project→activity consolidation) + sidebar levels. Full ranked menu in
+the audit KB-note. Pipeline viz correctly SKIPPED (no M-ID pipeline change this session).
+
 ---
 
 ## Troubleshooting
