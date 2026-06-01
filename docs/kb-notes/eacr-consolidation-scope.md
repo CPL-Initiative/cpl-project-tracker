@@ -203,7 +203,12 @@ prescriptive layer + a Quick-Adopt-style affordance **here**, iterate freely, an
 **promote proven views to MAP later.** (The actual adopt *transaction* may still
 route to MAP's backend, but the view + UX are designed and battle-tested here.)
 This is the general rationale for running both surfaces: **project dash = R&D
-sandbox; MAP = slow-moving production.**
+sandbox; MAP = slow-moving production.** The promotion path is explicit (Sam,
+2026-06-01): once the approach is stable and strategic, the **CCR/CSR/CER reference
+data — and likely the curation procedures developed here — get output / integrated
+into MAP.** So these layers are incubating *production* reference data + the
+curation workflow MAP will adopt, **not throwaway prototypes** — the
+stability/soundness bar matters before promotion.
 
 **Two consolidation axes — CER for the card, CCR for the credit recs.** MAP's
 exhibit *titles* vary widely (the same credential entered under many freehand

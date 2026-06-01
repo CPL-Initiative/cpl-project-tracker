@@ -1425,7 +1425,8 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
    `(title,units)` now + let EACR fragmentation feed the Suggested-merges worklist.
    **Rebuilds the per-college grid in the project dash as a playground** (Sam: MAP
    Dash changes are heavyweight + must be prioritized far ahead → prototype here,
-   promote proven views to MAP later) — adds the consolidation MAP's grid lacks via
+   promote proven views — and ultimately the CCR/CSR/CER reference data + curation
+   procedures — to MAP later) — adds the consolidation MAP's grid lacks via
    **CER** (exhibit-title unification = card grain) + **CCR** (course-title = credit
    recs), both preserving local titles; the CCR crosswalk is the Quick-Adopt
    enabler; wiring CER overrides into the producer = strategic item 5.
