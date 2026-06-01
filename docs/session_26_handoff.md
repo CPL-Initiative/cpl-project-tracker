@@ -15,7 +15,9 @@ moniker_suggestion: Bruh 26 / "Two-Six" / "Deuce-Six" — or claim your own
 # Session 26 Hand-off Prompt
 
 A capsule from Session 25 ("Bruh 25" — shipped 3 Excel-retirement steps + a
-daily-pipeline accounting doc; 5 PRs merged). Paste the fenced block into Session 26.
+daily-pipeline accounting doc + a merge-policy refinement; **7 PRs merged**; then
+ran a **strategy session** with Sam that locked a 6-item roadmap + 4 decisions —
+see "SESSION 26 STRATEGIC QUEUE" below). Paste the fenced block into Session 26.
 
 ## The prompt
 
@@ -56,7 +58,65 @@ WHAT SHIPPED IN SESSION 25 (all merged to main):
     confirmed the Custom Reporting Module offers exactly 9 categories, all pulled
     (151 fields) — only College Contacts + College Users & Roles are fetched-but-
     UNUSED.
-  - Docs: CLAUDE.md §11, the lessons doc, INDEX.md, this handoff.
+  - Docs: CLAUDE.md §11, the lessons doc, INDEX.md, this handoff. Plus #224
+    (Rule-8 checkpoint) + #225 (merge-policy refinement: hold for input ONLY with
+    a concrete reason — default is merge-on-green even for commissioned docs).
+
+═══ SESSION 26 STRATEGIC QUEUE (approved by Sam, 2026-06-01) ═══
+Sam ran a strategy session and approved a 6-item roadmap + 4 locked decisions.
+**KICK OFF SESSION 26 with the /workflow audit** (item 1) — Sam explicitly OK'd
+using the built-in `/workflow` feature for it (it fans subagents out across the
+codebase in parallel; the textbook use case). Then work the rest in sequence.
+
+  1. **CODEBASE AUDIT via `/workflow`** (read-only → findings report). Fan out
+     subagents over excel_to_dashboard.py (~8,200-line monolith), the kb/
+     generators, the JS layer, the daily pipeline — each hunts ONE class:
+     (a) dead code (we keep finding it — read_annual_goals, populate_current_metrics…),
+     (b) the **blank-line idempotency bug** (the generator accretes ~7 blank lines/run
+     in the refresh-button injection — reproducible on main, REAL Rule-2-style defect),
+     (c) perf hotspots (profile the 91 MB CustomReport parse + unified-courses export
+     before optimizing), (d) simplification/duplication, (e) security. Output ONE
+     KB-note findings report; Sam green-lights specific fixes. **Do NOT blind-refactor.**
+     Do NOT move the daily cron to a /schedule routine (GitHub Actions is fine).
+  2. **KPI CARD REORDER** — login-free drag-to-rearrange on the **Activity-KPI grid**
+     (the 19+ cards; Sam's pick), persisted **per-viewer in localStorage** (NO auth,
+     NO backend, NO generator-data dep). New static JS module + a script tag + a
+     "Reset to default order" link. A curated *default* order (auth-gated, via the
+     existing kpi_order field) is a LATER add — localStorage-only first.
+  3. **STUDENT ELIGIBILITY COUNTS on the EACR (#5)** — Sam's highest-impact item;
+     data is already in the daily pull (View_StudentAggregatedValues StudentID +
+     View_ArticulatedCollegeCourses Students). **Count semantics (Sam's call):
+     BOTH per-college AND deduped-statewide** per exhibit identity. **PRIVACY ADR
+     FIRST** (write it, get sign-off before building): aggregate counts ONLY, NEVER
+     a StudentID/PII in any committed or public artifact (it's a public Pages repo —
+     hard no). Then prototype the join offline, prove counts vs a known college,
+     surface read-only counts on EACR + CER.
+  4. **CONTACTS PANEL (#A / pipeline §5)** — Sam chose **WIRE** (not drop): build a
+     per-college contacts surface from View_CollegeContacts (AO / CPL Coordinator /
+     VRC official / CEO — already in the 91 MB pull). College Users & Roles stays
+     fetched (revisit). Mind PII display (these are staff contacts, public-ish).
+  5. **EACR↔CER CONVERGENCE (#7)** — the EACR ALREADY groups by unified/CE title +
+     has an "Also entered as N variants" local-titles disclosure (Session 8). Gap to
+     close: (a) make _build_statewide_adoption() apply the **CER curator overrides**
+     (credential_review_overlay.json — unified_title_override/issuer/quality) so CER
+     fixes flow to the EACR grouping; (b) enrich the disclosure with **per-local-title
+     college counts**; (c) optional CER↔EACR cross-link.
+  6. **PROJECT→ACTIVITY CONSOLIDATION (#4)** — Sam chose **FOLD the project's rich
+     fields into the activity card + ARCHIVE the project row** (reversible, nothing
+     lost — NOT hard-delete). **Write the playbook first**
+     (docs/kb-notes/playbook-project-activity-consolidation.md): snapshot → move
+     fields onto/under the activity → archive the project row → re-key
+     workplan_activity_associations → leave an alias. Get sign-off, THEN build UI.
+  + **SIDEBAR LEVELS (#6, interleave anytime)** — (a) add data-sections to the
+     curator tabs that have NONE (CCR/CER/CSR/Exhibit-Adoption) for scroll-spy
+     sub-links; (b) a true 2nd nesting level only where a tab is deep (CPL Analytics'
+     6 cards; Pipeline phases). tabs.js already renders one nested <ul>; 2nd level is
+     contained. Mock the tree for Sam before building (b).
+  + **REPO SETTING (Sam-side)** — flip on Settings → Pull Requests → **Allow
+     auto-merge** so a session can `enable_pr_auto_merge` (squash) right after marking
+     ready (tried on #220, failed: not enabled). Until then, merge manually on green.
+
+EXCEL RETIREMENT (continues underneath the queue — audit doc is the plan):
 
 YOUR PRIORITY WORKSTREAM — finish Excel retirement (audit doc is the plan). The
 master .xlsx is already never written; closing it out is now about the remaining
@@ -136,8 +196,15 @@ SEPARATE TRACK (not Excel retirement):
 | Excel P2 (config → kb/dashboard_config.json; writer deleted) | **DONE + MERGED** (#221) |
 | Excel P4 (dead readers deleted) | **DONE + MERGED** (#220) |
 | Daily data-pipeline reference doc (+ §5 screenshot inventory) | **DONE + MERGED** (#222/#223) |
-| **P5 budget factors/year_labels → JSON** | **NEXT-tier** — carve-out from P2; same shape |
-| **CustomReport Contacts/Users&Roles — drop or wire** | **DECISION (Sam)** — pipeline doc §5; rec drop |
+| **STRATEGY QUEUE item 1 — codebase audit via `/workflow`** | **SESSION 26 KICKOFF** (approved) — read-only findings report; Sam green-lights fixes |
+| **item 2 — KPI reorder (Activity-KPI grid, localStorage, login-free)** | approved + scoped; static JS, no auth |
+| **item 3 — student eligibility counts on EACR** | approved — BOTH per-college + deduped-statewide; **privacy ADR first** |
+| **item 4 — Contacts panel (WIRE View_CollegeContacts)** | **DECIDED: wire** (not drop); Users&Roles stays fetched |
+| **item 5 — EACR↔CER convergence (apply CER overrides + local-title counts)** | approved; EACR already CE-grouped (Session 8), close the gap |
+| **item 6 — project→activity consolidation** | **DECIDED: fold into activity card + archive project row**; playbook first |
+| sidebar levels (#6, interleave) | approved — data-sections on CCR/CER/CSR + optional 2nd level |
+| repo "Allow auto-merge" | **Sam-side** — flip it on so sessions can enable_pr_auto_merge |
+| **P5 budget factors/year_labels → JSON** | carve-out from P2; same shape — feeds the .xlsx delete |
 | P3 Update Log history | **PARKED** — Sam dismissed the fork 2026-06-01; don't re-raise |
 | P5 finale (drop the .xlsx) | blocked on the remaining readers (read_projects, read_budget_plan, read_update_log) |
 | Budget total/avg formula (+ total read-only) | queued — Sam wants its own PR (independent) |
