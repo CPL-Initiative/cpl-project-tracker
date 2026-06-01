@@ -265,6 +265,80 @@
   function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
   function escAttr(s) { return esc(s).replace(/"/g, "&quot;"); }
 
+  // ── Consolidated credit recommendations (PR-1) ──
+  // Each (course, credit) pair is one college's local mapping of the credential.
+  // Rendering them all as a flat list reads like a stackable "bucket of CPL," when
+  // a student really earns ONE college's mapping (~a few units). Group the recs by
+  // (normalized course title, units), list the local course codes inline, and lead
+  // with a "typical award" headline framed as alternatives, not a sum.
+  function fmtUnits(u) {
+    if (u == null) return "";
+    return (u % 1 === 0) ? u.toFixed(0) : String(u);
+  }
+  function buildCreditRecsHtml(recs) {
+    recs = recs || [];
+    if (!recs.length) return "";
+
+    // Parse "N hours in Title" → {units, title}; keep unparseable recs as raw.
+    var groups = {}, order = [];
+    recs.forEach(function (r) {
+      var m = (r.credit || "").match(/^(\d+\.?\d*)\s*(?:hours?|units?)\s+(?:in\s+)?(.+)/i);
+      var units = m ? parseFloat(m[1]) : null;
+      var title = m ? m[2].trim() : (r.credit || r.course || "").trim();
+      var key = title.toLowerCase().replace(/\s+/g, " ").trim() + "|" + (units == null ? "" : units);
+      if (!groups[key]) { groups[key] = { units: units, title: title, courses: [] }; order.push(key); }
+      if (r.course && groups[key].courses.indexOf(r.course) === -1) groups[key].courses.push(r.course);
+    });
+    var grouped = order.map(function (k) { return groups[k]; });
+    // Surface the dominant mapping first (most local courses ≈ most colleges).
+    grouped.sort(function (a, b) {
+      return b.courses.length - a.courses.length || (a.units || 0) - (b.units || 0);
+    });
+
+    // "Typical award" headline from the per-group unit values.
+    var unitVals = grouped.map(function (g) { return g.units; }).filter(function (u) { return u != null; });
+    var headline = "";
+    if (unitVals.length) {
+      var freq = {};
+      unitVals.forEach(function (u) { freq[u] = (freq[u] || 0) + 1; });
+      var modal = null, best = -1;
+      // Highest frequency wins; ties break to the LOWER value (don't overstate).
+      unitVals.forEach(function (u) {
+        if (freq[u] > best || (freq[u] === best && (modal == null || u < modal))) { best = freq[u]; modal = u; }
+      });
+      var mn = Math.min.apply(null, unitVals), mx = Math.max.apply(null, unitVals);
+      var awardTxt;
+      if (mn === mx) {
+        awardTxt = '~' + fmtUnits(modal) + ' unit' + (modal === 1 ? '' : 's');
+      } else if (best <= 1) {
+        // No repeated value → no real mode; lead with the honest range.
+        awardTxt = fmtUnits(mn) + '–' + fmtUnits(mx) + ' units';
+      } else {
+        awardTxt = '~' + fmtUnits(modal) + ' unit' + (modal === 1 ? '' : 's') +
+          ' (range ' + fmtUnits(mn) + '–' + fmtUnits(mx) + ')';
+      }
+      headline =
+        '<div style="font-size:0.66rem;color:#C9A84C;font-weight:600;margin:0.15rem 0 0.05rem;">' +
+          '💡 Typical CPL: ' + awardTxt +
+        '</div>' +
+        '<div style="font-size:0.57rem;color:rgba(255,255,255,0.45);font-style:italic;margin-bottom:0.15rem;">' +
+          'a student earns one college’s mapping below — not the sum' +
+        '</div>';
+    }
+
+    var lines = grouped.map(function (g) {
+      var label = (g.units != null)
+        ? fmtUnits(g.units) + ' unit' + (g.units === 1 ? '' : 's') + ' — ' + esc(g.title)
+        : esc(g.title);
+      var codes = g.courses.length
+        ? ' <span class="sw-rec-course">(' + g.courses.map(esc).join(", ") + ')</span>'
+        : "";
+      return '<div class="sw-rec-line">' + label + codes + '</div>';
+    }).join("");
+
+    return '<div class="sw-credit-recs">' + headline + lines + '</div>';
+  }
+
   // ── Render rows (paginated) ──
   function renderRows() {
     var filtered = getFiltered();
@@ -308,24 +382,9 @@
         ? '<span class="sw-badge sw-badge-ccc">CCC</span>'
         : '<span class="sw-badge sw-badge-local">' + esc(e.collaborative_type || "Local") + '</span>';
 
-      // Build credit recs inline under the title
-      var recs = e.credit_recs || [];
-      var recsHtml = "";
-      if (recs.length > 0) {
-        recsHtml = '<div class="sw-credit-recs">' + recs.map(function (r) {
-          // Extract units from CRUnits-style ("3.00") or from credit text
-          var units = r.course.match(/(\d+\.?\d*)\s*(unit|hr|hour)/i);
-          var unitStr = "";
-          // Try to parse "3 hours in Course Title" pattern from credit field
-          var creditMatch = r.credit.match(/^(\d+\.?\d*)\s*(hours?|units?)\s+(?:in\s+)?(.+)/i);
-          if (creditMatch) {
-            unitStr = creditMatch[1] + " " + creditMatch[2].charAt(0).toUpperCase() + creditMatch[2].slice(1).toLowerCase();
-            if (unitStr.match(/hour/i)) unitStr = unitStr.replace(/hours?/i, "Hours");
-            return '<div class="sw-rec-line">' + esc(unitStr) + ' — ' + esc(creditMatch[3]) + ' <span class="sw-rec-course">(' + esc(r.course) + ')</span></div>';
-          }
-          return '<div class="sw-rec-line">' + esc(r.course) + ': ' + esc(r.credit) + '</div>';
-        }).join("") + '</div>';
-      }
+      // Build consolidated credit recs inline under the title (PR-1: group by
+      // (course title, units), local codes inline, + a "typical award" headline).
+      var recsHtml = buildCreditRecsHtml(e.credit_recs);
 
       // Curator flag cell — small select (or read-only badge if not signed in).
       // No flag for anonymous viewers; flagged rows still show the badge so
@@ -560,7 +619,7 @@
         invalidateCache();
         renderRows();
         var btnEl = group.querySelector(".sw-filter-btn");
-        var labels = { collabType: "Statewide / Local", cplType: "CPL Type", sector: "Career Cluster", discipline: "TOP Code Category", college: "College", district: "District", swRegion: "SW Region" };
+        var labels = { collabType: "Statewide / Local", cplType: "CPL Type", sector: "Career Cluster", discipline: "TOP Code Category", issuer: "Issuing Agency", college: "College", district: "District", swRegion: "SW Region" };
         var count = state.filters[filterKey].length;
         btnEl.textContent = labels[filterKey] + (count > 0 ? " (" + count + ")" : "") + " ▾";
         btnEl.classList.toggle("active", count > 0);
