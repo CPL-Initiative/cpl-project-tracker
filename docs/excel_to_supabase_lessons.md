@@ -1214,3 +1214,46 @@ identity first); (2) **PR-4** — audit every remaining `.xlsx` reader
 `read_update_log`, `read_config_overrides`, the `KPI_Config` sheet), then sunset
 them + drop the file, keeping a Supabase→xlsx backup export. A precise
 reader-audit (measure-first) should precede any teardown.
+
+## 2026-06-01 — Session 24 (Bruh 24), checkpoint: Excel-dependency audit + a missed-cron detour
+
+### (a) What shipped
+- **Excel-dependency audit (PR #217)** — `docs/kb-notes/excel-dependency-audit.md`,
+  the measure-first catalog of EVERY remaining `.xlsx` touchpoint + a P1–P5 fix
+  queue. Triggered by a curator clicking **Update** on a project card → it opened
+  **Excel-for-the-Web**. Supersedes the older final-scope reader list (which
+  under-counted).
+- **Missed-cron detour (PRs #216 + the investigation)** — the 2026-06-01 daily
+  run didn't fire. Diagnosed → **GitHub's best-effort scheduler dropped it** (not
+  our Excel work); shipped a **backstop cron** (`17 14 * * *`). New playbook:
+  `docs/kb-notes/playbook-github-scheduled-workflow-reliability.md`.
+
+### (b) What was learned
+- **The Excel surface is bigger than "readers."** The audit found the real
+  blockers are the **3 Excel WRITERS** the generator runs every cron:
+  `archive_updates_to_log` (writes the Update Log tab), `ensure_kpi_config_sheet`'s
+  `wb.save` (writes the KPI_Config sheet), and the `.bak` backup. You can't delete
+  a file the generator keeps writing to — these must retire alongside the readers.
+- **The visible Excel tie was a UI deep-link, not data.** The "Update" button is
+  an `<a href>` to `excel_cell_url(excel_row)` in BOTH card renderers, plus a
+  `dashboard_filters.js` `SHARED_EXCEL_URL` rewire. It's **redundant** —
+  `projects_editor.js` already makes the fields click-to-edit — so P1 is "point it
+  at the inline editor (or drop it)," not a migration. `excel_row` then dies.
+- **Diagnose a missed cron by elimination, not assumption.** Workflow file
+  unchanged + pipeline runs clean (exit 0) + not disabled (no yellow banner) +
+  other workflows running (PR CI) ⇒ it's the scheduler. The run-history
+  timestamps were the tell: the cron fires 1.5–3h late *every day* (11:46–13:35
+  UTC vs the 10:17 target). Full method in the new playbook note.
+
+### (c) Current state
+Excel-retirement editor surface complete (Budget editor #215, KPI-ladder
+already-done, D.* retired #213). The audit is the authoritative remaining-work
+catalog. Daily cron now has a backstop; 2026-06-01 update landed (no `kpi_history`
+gap).
+
+### (d) Next concrete step
+**P1 from the audit** — replace the "Update→Excel" button with the inline editor
+(generator's two card renderers + remove the `dashboard_filters.js` rewire + stop
+emitting `excel_row`). Then P2 (config tables → JSON/`app_config`), P3 (Update Log
+history — product fork), P4 (delete the 2 dead readers), P5 (drop the `.xlsx`).
+Independent: Budget `total`/`avg` formula layer + personnel editor.
