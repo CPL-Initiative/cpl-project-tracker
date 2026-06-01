@@ -240,6 +240,36 @@ one surface:
 This is the literal artifact a future **Student CPL Portal** would embed, so the
 seeker framing is first-class, not cosmetic.
 
+### Three audience views + versioned-gallery delivery (Sam, 2026-06-01)
+
+**Delivery — versioned prototype gallery.** Preserve the **current EACR table as
+v1** (made collapsible), stack **v2, v3, … below** as additive collapsible blocks,
+and **iterate in-place** until a version is "as simple and usable as possible."
+Reuses the existing `.kpi-section-wrapper` collapse chrome; v1 stays untouched as
+the baseline; each version is a small **renderer over the same consolidated data**
+(`statewide_data.js` / `coci_articulations.json`) so there is **zero data drift**
+between versions. Two guardrails: (1) a **graduation rule** — once a version wins,
+the also-rans collapse-by-default / archive so the page doesn't become a museum;
+(2) iteration-versions want the vertical collapsible stack, but the
+**audience-versions likely graduate into a segmented toggle (Student / College /
+System)** since a user picks one lens.
+
+**Three audience lenses** — sharpens the function-based cut above into the cut that
+matters: same credential-centered data, three framings + default filters + a
+distinct call-to-action.
+
+| View | Centers on | Surfaces | Primary CTA | Data already available |
+|---|---|---|---|---|
+| **Student** | the credential | where to get credit (adopting colleges + award) + likely local matches at colleges that *haven't* adopted | *find / request credit (near me)* | adopters + `adoption_leverage` + CCR crosswalk; region/near-me filter |
+| **College** | the credential, *my-college* lens | my articulations + my adoption options (my courses that match the standard but aren't articulated) | *adopt / articulate* | one college's earned set + its leverage matches |
+| **System** | the credential, statewide | adoption coverage + **inequitable-access gaps** (aligned-but-not-adopted, weighted by students affected) | *prioritize / drive adoption* | `adoption_leverage` aggregated × eligible students × region |
+
+The **System view is the most novel:** `adoption_leverage` (~48k
+"teaches-the-equivalent-but-hasn't-articulated" signals) **is** an
+inequitable-access map — weighted by eligible-students-affected + region it answers
+*"where are students missing CPL they could get, ranked by impact."* Leans on
+eligible-student counts → **privacy ADR first, aggregate-only** (strategic item 3).
+
 ### Layout — CCC-anchored master-detail (Sam's proposal, refined)
 
 A credential card becomes a **header + per-pattern local cards**:
@@ -323,6 +353,12 @@ card identity reflects curated title-unification, and **rebuilds the per-college
 grid in the project dash** (the playground — MAP changes are slow); PR-4's
 recommendation is the CCR crosswalk lookup, surfaced as a Quick-Adopt-style
 affordance here (the transaction may route to MAP later).
+
+**Delivery via the versioned gallery** (see the subsection above): v1 = today's
+table (made collapsible); PR-3's seeker master-detail = the **Student** view (v2);
+PR-4 + a single-college pivot = the **College** view; a new equity aggregate = the
+**System** view — each a renderer over the shared consolidated layer, graduating to
+a Student/College/System toggle once they stabilize.
 
 ## When this applies (and when it doesn't)
 
