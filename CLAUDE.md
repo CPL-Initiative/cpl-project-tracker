@@ -1335,6 +1335,36 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### Session 25 strategic roadmap (approved by Sam, 2026-06-01)
+
+A strategy session locked a forward roadmap beyond Excel retirement. Full specs +
+the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_handoff.md)
+("SESSION 26 STRATEGIC QUEUE"); the compact version:
+
+1. **Codebase audit via the built-in `/workflow`** (Sam OK'd using it) — fan
+   subagents across the monolith + kb/ + JS + pipeline; one read-only findings
+   report (dead code, the **~7-blank-lines/run idempotency bug** in the
+   refresh-button injection, perf hotspots, simplification, security). Sam
+   green-lights fixes; **no blind refactor**, and **don't** move the daily cron to
+   a `/schedule` routine. This is the **Session 26 kickoff**.
+2. **KPI card reorder** — login-free drag-to-rearrange on the **Activity-KPI grid**
+   (Sam's pick), `localStorage` per-viewer (no auth/backend). Curated default order
+   (auth-gated, via `kpi_order`) is a later add.
+3. **Student eligibility counts on the EACR** — data's already in the daily pull;
+   **both per-college + deduped-statewide** (Sam's call). **Privacy ADR FIRST** —
+   aggregate counts only, **never a StudentID/PII** in any committed/public artifact.
+4. **Contacts panel** — Sam chose **WIRE** `View_CollegeContacts` into a per-college
+   surface (not drop). Users & Roles stays fetched.
+5. **EACR↔CER convergence** — EACR already groups by CE/unified title (Session 8);
+   close the gap: apply the CER curator overrides in `_build_statewide_adoption()` +
+   add per-local-title college counts to the "Also entered as N variants" disclosure.
+6. **Project→Activity consolidation** — Sam chose **fold the project's rich fields
+   into the activity card + ARCHIVE the project row** (reversible, never hard-delete).
+   Write `docs/kb-notes/playbook-project-activity-consolidation.md` first.
+- **Sidebar levels** (interleave) — add `data-sections` to CCR/CER/CSR/Exhibit-Adoption;
+  optional 2nd nesting level where deep. **Excel retirement** (P5 budget factors →
+  JSON, then drop the `.xlsx`) continues underneath.
+
 ---
 
 ## Troubleshooting
