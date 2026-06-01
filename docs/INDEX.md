@@ -55,7 +55,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Playbook — Moving a generator-managed dashboard section to its own tab (end-anchor classify + sentinel marker)](kb-notes/playbook-move-generated-section-to-tab.md) | playbook | published | 2026-05-30 | 2026-05-30 |
 | [Playbook — GitHub scheduled-workflow reliability (diagnose a missed cron + backstop-cron fix)](kb-notes/playbook-github-scheduled-workflow-reliability.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 | [Playbook — Full Excel retirement final scope (KPI ladder blank-vs-0 crux, D.* helpers, read_projects sunset, 5 forks)](kb-notes/excel-retirement-final-scope.md) | playbook | published | 2026-05-31 | 2026-05-31 |
-| [Playbook — CPL Chatbox → dashboard integration + cpl-knowledge-base re-point (shared-backend finding, 6 forks)](kb-notes/cpl-chatbox-integration-scope.md) | playbook | published | 2026-06-01 | 2026-06-01 |
+| [Playbook — CPL Chatbox → dashboard integration + cpl-knowledge-base re-point (shared-backend finding, 6 forks)](kb-notes/cpl-chatbox-integration-scope.md) | playbook | published | 2026-06-01 | 2026-06-01 (Phase 1 SHIPPED + LIVE v14) |
+| [Playbook — Redeploying a shared, live Supabase Edge Function safely (capture-before-redeploy, preserve verify_jwt, fail-closed)](kb-notes/playbook-deploy-shared-supabase-edge-function.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 | [Reference — Excel dependency audit + fix queue (every remaining .xlsx touchpoint; the "Update→Excel" button)](kb-notes/excel-dependency-audit.md) | reference | published | 2026-06-01 | 2026-06-01 (P1+P2+P4 done) |
 | [Reference — Daily dashboard data pipeline (all 7 sources, every KPI's lineage, the committed daily dataset)](kb-notes/reference-daily-dashboard-data-pipeline.md) | reference | published | 2026-06-01 | 2026-06-01 |
 | [Reference — Windows PowerShell scripting gotchas (PS 5.1 + Task Scheduler)](kb-notes/reference-windows-powershell-gotchas.md) | reference | published | 2026-05-27 | 2026-05-27 |
@@ -73,6 +74,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) | CCR cluster dissolution (UC-XXXXX retired; 9 curated → per-member merges) | **Session 19 (2026-05-30)** |
 | [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes; **Session 23: #2 sidebar sub-links + #3 display-label map** | Session 23 (Bruh 23, 2026-05-31) |
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G | Session 11 |
+| [`cpl_assistant_lessons.md`](cpl_assistant_lessons.md) | CPL Assistant (in-dashboard RAG chatbot tab; Phase 1 shipped + live `cpl-chat` v14) | **Session 26 (Bruh 26, 2026-06-01) NEW** |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
 | [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR / Cred-Ref sync | Session 12 (Mode B complete) |
@@ -111,6 +113,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 23 → 24 | Bruh 23 (handoff) | [`session_24_handoff.md`](session_24_handoff.md) |
 | 24 → 25 | Bruh 24 (handoff) | [`session_25_handoff.md`](session_25_handoff.md) |
 | 25 → 26 | Bruh 25 (handoff) | [`session_26_handoff.md`](session_26_handoff.md) |
+| 26 → 27 | Bruh 26 / Deuce-Six (handoff) | [`session_27_handoff.md`](session_27_handoff.md) |
 
 ---
 

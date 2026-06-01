@@ -10,7 +10,7 @@ related:
   - budget-support/web/curator.html (Letters tab — iframe-embed precedent)
   - the uploaded cpl-chatbox SKILL.md (system-of-record for the chatbox today)
 artifacts:
-  - "Supabase edge function: cpl-chat (project hvuwhnbuahrtptokpqfh, v13, ACTIVE)"
+  - "Supabase edge function: cpl-chat (project hvuwhnbuahrtptokpqfh, v14, ACTIVE — Phase 1 redeploy added the GH-Pages CORS origin)"
   - "Supabase tables: cpl_documents, cpl_document_sections, chat_interactions, chat_analysis, chatbox_college_profiles, chatbox_exhibits"
   - unified_courses.js (already embeds SUPABASE_URL + anon key the chat panel reuses)
   - CPL_Dashboard.html / index.html (tab nav + panes — Rule 4 mirror)
@@ -35,11 +35,17 @@ portable for a future Student CPL Portal embed in MAP. This doc is the
 feasibility verdict + the per-PR scope + the locked decisions. **No code ships from
 this doc** — it's the contract reviewed before any build PR.
 
-**STATUS: APPROVED 2026-06-01.** Sam green-lit the initiative and accepted all
-six fork recommendations ("Your picks are fine!"). Forks A–F below are now
-*locked decisions*, not open questions. The one residual sub-decision is fork F's
-Phase-2 isolation choice (does the live map.rccd.edu bot flip to KB content at
-the same time?) — resolved when Phase 2 starts, not now.
+**STATUS: APPROVED 2026-06-01 · PHASE 1 SHIPPED + LIVE 2026-06-01** (Session 26,
+PR #230 — CPL Assistant tab live; `cpl-chat` redeployed **v13 → v14** with the
+GH-Pages CORS origin, `verify_jwt:false` preserved; Sam confirmed "Works
+fantastically!"). Sam green-lit the initiative and accepted all six fork
+recommendations ("Your picks are fine!"). Forks A–F below are *locked decisions*.
+The one residual sub-decision is fork F's Phase-2 isolation choice (does the live
+map.rccd.edu bot flip to KB content at the same time?) — resolved when Phase 2
+starts. **Phase 2 (content re-point) + Phase 3 (Student Portal) remain;** the
+redeploy procedure is distilled in
+[`playbook-deploy-shared-supabase-edge-function.md`](playbook-deploy-shared-supabase-edge-function.md),
+the build lessons in [`../cpl_assistant_lessons.md`](../cpl_assistant_lessons.md).
 
 ## Feasibility verdict: HIGH — most of the expensive work is already done
 
