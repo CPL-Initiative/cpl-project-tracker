@@ -36,13 +36,17 @@ The whole ecosystem, end-to-end:
    from `kb/coci_minted_memberships.json`), a **Common Exhibit Reference** tab
    (sister to CCR, with edit-override curation landed in Cred-Ref PR-4), a
    **quick-start natural-language chat** widget on the first screen (Claude
-   API classifies your prompt to one of the 10 tabs **and** can pre-pop the
+   API classifies your prompt to one of the 11 tabs **and** can pre-pop the
    destination tab's filters — "review unclassified credentials" lands you
    in Common Exhibit Reference with the unclassified-in-MAP queue already
    filtered; "apprenticeship initiative" pre-fills the Dashboard search;
    "subjects needing review" lands in Common Subjects Reference filtered to
    needs-review), a **Letters** tab embedding the budget-support letter
    curator (iframe to `budget-support/web/curator.html`, passcode-gated),
+   a **CPL Assistant** tab (a conversational RAG chatbot — ask CPL questions
+   and get streamed answers drawn from the knowledge base, live dashboard
+   metrics, and 2,300+ statewide exhibits; it talks to the shared `cpl-chat`
+   Supabase Edge Function that also powers the live map.rccd.edu widget),
    and a **Pipeline** progress board.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,

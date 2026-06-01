@@ -569,7 +569,8 @@ hash so they are linkable and survive a refresh. `tabs.js` **auto-derives
 `VALID_TABS` from the rendered nav buttons** — adding a tab is "drop a nav
 button + a pane," no whitelist edit. The core data tabs (the rest —
 `unified-courses`/CCR, `canonical-subj4`/CSR, `credential-reference`/CER,
-`exhibit-adoption`, `pipeline`, `letters` — are documented elsewhere):
+`exhibit-adoption`, `pipeline`, `letters`, `chatbot`/CPL Assistant — are
+documented elsewhere; the CPL Assistant RAG tab is detailed in §7c):
 
 | Tab key (hash) | Display label | Content |
 |----------------|---------------|---------|
@@ -603,6 +604,45 @@ Implementation notes (important — keep in sync with the generator):
 - Tab switching JS sits at the bottom of the template (just before
   `</body>`) and uses `history.replaceState` for the default tab so the
   URL stays clean.
+
+### 7c. CPL Assistant — in-dashboard RAG chatbot tab (Phase 1, 2026-06-01)
+
+The **CPL Assistant** tab (`#tab-chatbot`, hash `chatbot`) is a conversational
+RAG surface. `cpl_chat.js` (a self-contained **static** asset — NOT regenerated
+by `excel_to_dashboard.py`) POSTs `{query, session_id}` to the shared Supabase
+Edge Function **`cpl-chat`** and streams the answer over SSE (`event: sources`
+→ `event: text` deltas → `event: done`). The function runs 4 parallel lookups
+(pgvector RAG over `cpl_documents`/`cpl_document_sections`, college detection,
+live `live_metrics.json` fetch, topic exhibit search) → a streamed
+`claude-sonnet-4-20250514` answer. Model output is HTML-escaped **before** the
+markdown-lite pass (XSS-safe). The browser uses only the public anon key (the
+same one already in `unified_courses.js`); 20 req/min/IP rate limit; every turn
+is logged to `chat_interactions` (anon-INSERT, no-SELECT) — **don't put PII in
+queries.** It's the literal artifact a future Student CPL Portal embed will
+reuse, so keep it self-contained behind its CONFIG block.
+
+**Operational invariants (do not violate):**
+- The Edge Function is **SHARED + LIVE** — the production map.rccd.edu widget
+  calls the same `cpl-chat` + same tables. **Redeploying it affects that widget
+  too.** Capture the running version first (`get_edge_function`) so you can roll
+  back; Deno validates at deploy time and fails *closed* (a bad deploy leaves the
+  prior version up). Smoke-test all 4 modes (general / college / topic /
+  college+topic) after a deploy.
+- **`verify_jwt` MUST stay `false`** — the function does its own anon-key +
+  rate-limit gating; flipping it to `true` would break the live widget.
+- Deploy is a **one-shot** via the Supabase MCP `deploy_edge_function` (project
+  `hvuwhnbuahrtptokpqfh`, slug `cpl-chat`, `entrypoint_path: index.ts`) — **NOT**
+  part of the daily GitHub Actions cron. Source-of-record is the **live
+  function**, captured at `chatbox/supabase/functions/cpl-chat/index.ts`
+  (re-capture with `get_edge_function` before editing if in doubt).
+- Live now: **v14 ACTIVE** (= v13 + `https://cpl-initiative.github.io` added to
+  `ALLOWED_ORIGINS` so the deployed dashboard can call it). Scope + phased plan
+  (Phase 2 content re-point CPLBrain → `cpl-knowledge-base`; Phase 3 Student
+  Portal):
+  [`docs/kb-notes/cpl-chatbox-integration-scope.md`](docs/kb-notes/cpl-chatbox-integration-scope.md);
+  deploy mechanics: [`chatbox/README.md`](chatbox/README.md); the durable
+  redeploy procedure:
+  [`docs/kb-notes/playbook-deploy-shared-supabase-edge-function.md`](docs/kb-notes/playbook-deploy-shared-supabase-edge-function.md).
 
 ### 8. Supabase Database (Separate System)
 
@@ -1324,6 +1364,7 @@ repo root: `python3 kb/_row_audit.py`.
 | **Dashboard cleanup + cross-disc accounting (Session 20)** | Two threads + rule changes. **Accounting (PR #198/#199):** 27 accounting M-IDs/singletons in a blank/Vocational slot → `Business` (Supabase `kb_curation` + overlay); 21 cross-disciplinary accounting courses cross-listed via the new **`cross_listed_disciplines`** `kb_curation` field; CCR anchors surface `discipline_provisional` (A); firewall-safe **`anchor_discipline_proposal`** propose-correction on locked anchors (B, excluded from `_apply_curation.py` FIELDS). **Dashboard cleanup (PR #201/#202/#204):** Common Subject Code → **Common Subjects Reference (CSR)**; Credential Reference → **Common Exhibit Reference (CER)** (CCR/CSR/CER family); full-width intros; blank quick-search; slim one-line header (CSS-only); CCR table economize; **SUBJ filter on CCR+CSR**; fixed CER blank-on-expand bug (`renderExpandedRow` undeclared tr/td/div); **#6 Exhibit Adoption & Credit Recommendations → its own `#tab-exhibit-adoption`** (out of CPL Analytics — generator no longer emits the mount; static container in the new pane). **Rule changes (PR #200/#201/#203):** checkpoint refreshes pipeline-viz + writes the handoff EVERY time; auto-merge needs no Sam review (green CI is the gate); merge promptly (never park a PR in draft). **Deferred → Session 21:** #1 Workplan tab (HIGH RISK — its marker is the end-anchor for 4 generator ops; sentinel-marker plan in `docs/kb-notes/playbook-move-generated-section-to-tab.md`), #2 sidebar sub-links, #3 MID/CID/CCNID **cosmetic** sweep (preserve the 224 `M-ID ACCT 100` anchor keys; CCN-ID→CCNID). Backlog: KPI-card sort-order, dark mode (phased), tab-surgery Skill, full Excel retirement. Lessons: `docs/dashboard_cleanup_lessons.md`. | **DONE** (Session 20, 2026-05-30) |
 | **Workplan → own tab (#1, Session 22)** | The deferred HIGH-RISK page move: **Workplan Activities & Projects** (Activity Metrics + Filter Bar + Projects Grid) moved OUT of the Dashboard tab into its own top-level **"Activities & Projects"** tab (`#tab-activities-projects`). Hard-case playbook executed: a permanent **`<!-- ═══ Dashboard Sections End ═══ -->` sentinel** now stays in the Dashboard tab and the **4 generator end-anchor ops** (KPI Summary replace + MAP Articulation strip + CPL Analytics strip + CPL Analytics insert) re-anchor on it; the section's inner anchors (`Filter Bar`/`Projects Grid`/`activityKpiSection`) travelled with the content so Ops 5/6/7 relocate via `html.find()`. **Verified by running `excel_to_dashboard.py` locally twice** (pip-installed openpyxl/pandas, snapshot fallbacks — no Supabase key): all 7 ops fire, **idempotent** (only timestamp/whitespace diffs), correct pane placement, marker counts = 1 (no gobble). Shipped structure-only HTML (no data churn). Label "Activities & Projects" (distinct from "Annual Workplan Goals") — Sam approved. §6b + §7b updated. **Next: #2 sidebar sub-links now UNBLOCKED** (depends on the final tab layout). | **DONE + MERGED** (PR #206, Session 22, 2026-05-31) |
 | **Cleanup close-out + Excel PR-1 (Session 23, Bruh 23)** | Cleared the last two Session-20 carryover items + started Excel retirement. **#2 sidebar sub-links (PR #208):** `data-sections` expanded on the two genuinely multi-section panes — Activities & Projects (Activity Metrics `#activityKpiSection` + Projects `#projectsGrid`, pure static edit) and Budget (5-Year Funding/Expenditure/Personnel; 4 stable `id`s added to the generator's budget divs + hand-applied). Verified via local regen (ids land, data-sections survive, idempotent). **#3 MID/CID/CCNID (PR #209):** chose **display-only** (Sam's call) over the data-value rename — `idSysLabel`/`id_sys_label` maps the value at ~9 render sites (CCR Source filter/modal/badges/Unify, CER badge, Articulations-by-Course chips); stored value + keys untouched. **Excel retirement scope (PR #210)** + **PR-1 keystone (PR #211):** KPI ladder repointed Excel→`workplan_goals`, parity-exact (0 diffs/49 projects); the blank-vs-0 crux was exactly 11 cells, fixed live in Supabase (1.4's real 0s kept). Lessons: `docs/dashboard_cleanup_lessons.md` + `docs/excel_to_supabase_lessons.md`. | **DONE + MERGED** (PRs #208/#209/#210/#211, Session 23, 2026-05-31) |
+| **CPL Assistant chatbot tab (Phase 1, Session 26)** | The live map.rccd.edu RAG chatbox brought into the dashboard as its own top-level **CPL Assistant** tab (`#tab-chatbot`). **Backend (PR #230):** captured the live `cpl-chat` Edge Function source into `chatbox/supabase/functions/cpl-chat/index.ts` + added `https://cpl-initiative.github.io` to `ALLOWED_ORIGINS`; **redeployed v13 → v14** via Supabase MCP `deploy_edge_function`, **`verify_jwt:false` preserved** (captured v13 first for rollback). **Front-end (PR #230):** self-contained `cpl_chat.js` (SSE reader `sources`→`text` deltas→`done`; markdown-lite, escape-FIRST XSS safety; `crypto.randomUUID` session; starter chips; 429/offline handling) + `#tab-chatbot` nav/pane/script + CSS in `EXHIBIT_ANALYSIS_CSS` (Rule 1/2) + `quickstart.js` TABS row (router lands "ask"/"what is" prompts here) + Rule-4 mirror to `index.html`. **Also Session 26:** generator whitespace-accretion idempotency fixes IDEM-1..5 (PR #231) + 2 inline-`<script>` `</script>`-breakout hardenings SEC-4/5 (PR #232), both from the Session-26 codebase audit (PR #229, 51 findings). Backend is **SHARED + LIVE** (a redeploy hits the map.rccd.edu widget too) → §7c operational invariants. Sam confirmed: "Works fantastically!" **Next:** Phase 2 (re-point content CPLBrain → `cpl-knowledge-base`), Phase 3 (Student Portal embed). | **DONE + LIVE (v14)** (Session 26, 2026-06-01) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 3 | EACR interactive re-pivot to course-identity grouping (Approach B per §9) | **DONE 2026-05-26** (Session 8, Octaman — see Exhibit-canon PR-C0/C0b/C1/C2/C2-hotfix rows above) |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
