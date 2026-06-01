@@ -3863,8 +3863,11 @@ def _parse_exhibits(datasets):
             exhibit_ids.add(exhibit_id)
             if title and exhibit_id:
                 ident = _classify_exhibit(raw_title, unified_lookup, issuer_pick)
-                grp = (ident["unified_title"], ident["issuing_agency"],
-                       cpl_type, collab_type)
+                # EACR PR-2: key without Collaborative Type so Local + CCC merge
+                # into one group (lockstep with _build_statewide_adoption). A group
+                # is "CCC" if ANY constituent row is CCC (CCC top billing), so a
+                # mixed group counts as CCC and drops out of the Local tally.
+                grp = (ident["unified_title"], ident["issuing_agency"], cpl_type)
                 exhibit_groups.add(grp)
                 if "CCC" in collab_type:
                     ccc_exhibit_groups.add(grp)
@@ -4580,6 +4583,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         "training_agency": "",  # set on first classified row
         "confidence_issuer": 0.0,
         "is_classified": False,
+        "collab_types": [],  # all constituent Collaborative Type values (CCC-precedence label)
     })
 
     for row in exhibit_rows:
@@ -4592,13 +4596,16 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         collab = (row[i_collab] or "").strip()
 
         ident = _classify_exhibit(raw_title, unified_lookup, issuer_pick)
+        # EACR PR-2 (2026-06-01): Collaborative Type dropped from the key so a
+        # credential's Local + CCC (+ Industry/etc.) cards merge into ONE; the raw
+        # collab values are collected on the group for a CCC-precedence label below.
         group_key = (
             ident["unified_title"],
             ident["issuing_agency"],
             cpl,
-            collab,
         )
         e = all_exhibits[group_key]
+        e["collab_types"].append(collab)
         e["eids"].add(eid)
         e["raw_titles"].add(title)
         if ident["confidence_title"]:
@@ -4635,7 +4642,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     from collections import Counter as _Counter
     results = []
     for group_key, e in all_exhibits.items():
-        unified_title, issuing_agency, cpl_type, collab_type = group_key
+        unified_title, issuing_agency, cpl_type = group_key
         adopters = e["adopters"]
         tops_sorted = sorted(e["tops"])
         map_top = tops_sorted[0] if tops_sorted else ""
@@ -4662,9 +4669,15 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         else:
             sector = ""
 
-        # Classify as Statewide (CCC Collaborative) or Local
-        is_statewide = "CCC" in collab_type
-        collab_label = "CCC Collaborative" if is_statewide else (collab_type or "Local")
+        # Classify as Statewide (CCC Collaborative) or Local. CCC takes top billing
+        # (EACR PR-2): the merged card is CCC Collaborative if ANY constituent row is
+        # CCC; otherwise label by the dominant (modal) local collab type.
+        is_statewide = any("CCC" in (c or "") for c in e["collab_types"])
+        if is_statewide:
+            collab_label = "CCC Collaborative"
+        else:
+            non_empty = [c for c in e["collab_types"] if c]
+            collab_label = _Counter(non_empty).most_common(1)[0][0] if non_empty else "Local"
 
         # Stable identifier for the merged group (concatenation of member MAP IDs).
         # Used by the UI as a row-selection / dedup key. Post Phase 4 the merged_id
