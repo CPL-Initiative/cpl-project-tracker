@@ -1,7 +1,7 @@
 ---
 title: Verify the consumer graph before migrating a data class — a dead reader means delete, not migrate
 created: 2026-05-31
-updated: 2026-05-31
+updated: 2026-06-01
 tags: [methodology, excel-to-supabase, migration, dead-code, measure-first]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -74,6 +74,13 @@ The deletion was then proven safe by the **parity-minus-X** technique
 (`[[methodology-parity-test-cutover-proof]]`): regenerated output ==
 committed output **minus exactly the deleted ids**, everything else
 byte-identical.
+
+**Generalizes to "verify the FEATURE doesn't already exist before BUILDING it"**
+(second instance, 2026-06-01): the roadmap listed a "KPI-ladder inline editor"
+to build, but tracing it showed a prior PR had sourced the ladder from
+`workplan_goals`, which `workplan_goals.js` *already edits* — 27 projects, 0
+gaps. The editor was already done; the roadmap was stale. Same move (trace the
+real state before doing the work) saved a redundant build.
 
 ## When this applies (and when it doesn't)
 
