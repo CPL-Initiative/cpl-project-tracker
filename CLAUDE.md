@@ -193,16 +193,18 @@ into the Pipeline Reference below or into dedicated docs.
     mergeable-on-green PR is squash-merged, full stop. (#221/#223 should have
     merged on `unstable` instead of ending the turn to wait for Sam's "Go!" —
     2026-06-01.)
-  - **Carve-out — a PR that IS a deliverable Sam commissioned, where his input
-    completes it, SHOULD be held (ready, not draft) for that input.** When the
-    value depends on something only Sam supplies — a screenshot to finish a
-    section, a decision, a "does this read right?" — mark it **ready**, present it,
-    and hold the merge for his reply, then merge promptly on his nod. This is good
-    collaboration, **not** parking. (Holding the commissioned pipeline doc #222 for
-    Sam's screenshot was the **RIGHT call** — Sam, 2026-06-01: *"Good call on
-    holding 222."*) **The line:** session-initiated work → merge on green; a thing
-    Sam asked for and would want to eyeball → hold **ready**, present, merge on his
-    nod. Unsure which? Mark ready + present + ask — never leave it in *draft*.
+  - **Carve-out — hold for input ONLY when you have a concrete reason to.** The
+    default is always merge-on-green (above), **including for docs Sam
+    commissioned** — being a thing he asked for is **not** itself a reason to hold.
+    Hold (ready, not draft) only when there's a specific, articulable reason the
+    merge genuinely benefits from his input first: the deliverable has a known
+    **gap** pending something only he supplies (a screenshot to finish a section),
+    or an embedded **decision** only he can make. That concrete reason is what made
+    the #222 hold right — §5 had an explicit placeholder for his screenshot. (Sam,
+    2026-06-01: *"Good call on holding 222"* + *"hold for comment only if you have
+    a reason to hold."*) **No reason → merge**, even if he asked for it; fold later
+    polish into a follow-up. When you DO hold: mark **ready**, state the reason,
+    merge on his nod. Never leave it in *draft*.
   - **Merge promptly — never PARK a PR in DRAFT.** Mark it **ready immediately** (a
     PR can be ready while CI runs). For autonomous work, squash-merge the instant
     it's mergeable on green (`clean` OR `unstable`) — in the SAME turn, rather than
