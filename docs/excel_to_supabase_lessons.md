@@ -1257,3 +1257,83 @@ gap).
 emitting `excel_row`). Then P2 (config tables → JSON/`app_config`), P3 (Update Log
 history — product fork), P4 (delete the 2 dead readers), P5 (drop the `.xlsx`).
 Independent: Budget `total`/`avg` formula layer + personnel editor.
+
+---
+
+## 2026-06-01 — Session 25 (Bruh 25): Excel retirement P1+P2+P4 + the daily-pipeline reference doc
+
+Five PRs merged. Three Excel-retirement steps shipped + a data-pipeline
+accounting doc Sam commissioned.
+
+### (a) What shipped
+- **P1 — "Update→Excel" button → inline editor (#219).** The card "Update" button
+  was a SharePoint Excel-for-the-Web deep-link (the reported bug — a curator
+  clicked it and Excel opened). Repointed it: now an `<a class="proj-update-btn">`
+  that `projects_editor.js` intercepts → opens the card's **Latest Update** modal
+  (signed-in) or scrolls-to + flashes the auth widget (signed-out). Dropped the
+  akpi-card copy, the `dashboard_filters.js` `SHARED_EXCEL_URL` rewire + toolbar
+  "Update Projects" button, and the `excel_cell_url`/`SHAREPOINT_EXCEL_URL`/
+  `EXCEL_SHEET_NAME` cluster. `excel_row` stopped being emitted (gone from
+  `CPL_Data.js`). Chose option (a) (repoint) over (b) (drop) — directly serves
+  the "I clicked Update to update" intent.
+- **P4 — dead-reader delete (#220).** `read_annual_goals` + `read_workplan_goals`
+  confirmed zero-call-site (measure-first), deleted (148 lines), one stale
+  docstring repointed. Same #213 pattern.
+- **P2 — config off Excel (#221).** New `load_dashboard_config()` reads a committed
+  `kb/dashboard_config.json`; `read_project_config`/`read_config_overrides`/
+  `read_kpi_parameters` rewritten to source it (all drop `wb`). **Deleted the
+  `ensure_kpi_config_sheet` WRITER** + its `wb.save(EXCEL_FILE)` (master `.xlsx`
+  now never written) + the orphaned `KPI_PARAMETER_META`. Measure-first shrank it
+  hugely: Col AG was **empty**, KPI_Config **== code defaults exactly**, so the
+  JSON carries only the **4 real `project_config` fields**. Parity proven two
+  ways: byte-identical reader output (JSON vs Excel) + a full **A/B regen**
+  (render-from-JSON == render-from-Excel, byte-identical modulo timestamps).
+  Carve-out: budget `factors`/`year_labels` (computed from Excel rows 75-81,
+  entangled with `read_budget_plan`) deferred to **P5**.
+- **Daily data-pipeline reference doc (#222, +§5 #223).** Sam asked to "account
+  for the whole daily dataset now that we're abandoning Excel."
+  `docs/kb-notes/reference-daily-dashboard-data-pipeline.md` maps all **7 sources**
+  (S1 CCCCO scrape→`live_metrics.json`, S2 MAP Custom Reporting Module→
+  `CustomReport_latest.json`, S3 Supabase, S4 the new `dashboard_config.json`, S5
+  KB JSONs, S6 COCI list, S7 `kpi_history`), every headline KPI's lineage, the
+  9-pulled/7-consumed CustomReport datasets, the committed daily dataset, and
+  inspection commands. **Built from the code paths, not memory.** Sam's screenshot
+  confirmed the Custom Reporting Module offers **exactly 9 categories, all pulled
+  with every field (151)** — no available-but-unpulled report; only **College
+  Contacts + College Users & Roles are fetched-but-unused**.
+
+### (b) Lessons / what worked
+- **Measure-first keeps shrinking "migrations" into near-no-ops.** P2 looked like
+  "migrate 3 config tables + a writer"; measuring the live values turned it into
+  "move 4 static fields to JSON" (the other two sources were empty / == defaults).
+  Always dump the live values before designing the migration. (Nth instance of
+  `methodology-verify-consumer-before-migrating`.)
+- **A/B render parity is the gold standard for a config/source cutover.** Render
+  twice from the *same committed HTML* (old source vs new source), diff with
+  timestamps + blank lines filtered → "identical" is the proof. Reader-output
+  byte-identity is the faster first check; the A/B regen catches any rendering-path
+  surprise.
+- **Document a pipeline from the code, not the summary.** The CLAUDE.md prose was
+  a good map, but the authoritative lineage (which 7 of 9 CustomReport datasets
+  are *consumed*, which Supabase tables, the exact `git add` list) only comes from
+  grepping `daily-dashboard.yml` + the loaders. The doc is trustworthy because it
+  was built bottom-up.
+- **Pre-existing idempotency quirk noted (not fixed):** the generator accretes ~7
+  blank lines/run in the refresh-button injection (reproducible on `main`,
+  unrelated to any P-change). A future cleanup, out of scope here.
+
+### (c) Current state
+P1+P2+P4 merged. The master `.xlsx` is **no longer written** (1 writer left:
+`archive_updates_to_log`, gated on P3). Remaining Excel *readers*: `read_projects`
+(KPI ladder + outage fallback), `read_budget_plan` (+ budget factors), `read_update_log`.
+The pipeline is fully documented (#222/#223).
+
+### (d) Next concrete step
+**P3 is parked** (Sam dismissed the snapshot/retire/Supabase fork 2026-06-01).
+Pick from: (1) the **College Contacts/Users&Roles drop-or-wire** decision from the
+pipeline doc §5 (small `fetch_custom_report.py` edit if "drop"); (2) **P5 budget
+factors/year_labels → `dashboard_config.json`** (the carve-out; same measure-first
++ A/B-parity shape as P2); (3) the independent **Budget `total`/`avg` formula
+layer**; or (4) re-surface **P3** if Sam wants it. An on-dashboard **"Data
+Pipeline" view** (the doc's §1 source table + live counts) is offered + pending
+Sam's call.

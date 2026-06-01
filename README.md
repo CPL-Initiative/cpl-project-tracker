@@ -105,9 +105,12 @@ The whole ecosystem, end-to-end:
 
 Supabase (hvuwhnbuahrtptokpqfh.supabase.co)
     ├── workplan_goals, projects   ← READ BY the pipeline (source of truth as of the
-    │      Excel→Supabase migration Phase 1-2; daily snapshot + Excel fallback);
+    │      Excel→Supabase migration; daily snapshot + Excel fallback);
     │      inline-editable on their tabs by allowed reviewers
-    ├── budget_expenditures, personnel   (project data — still Excel-sourced; Phase 3-5 pending)
+    ├── budget_funding, budget_expenditures, personnel  ← also Supabase-read (Budget
+    │      cutover, PR #189); inline-editable. Dashboard config (title/desc/KPI
+    │      params) moved to committed kb/dashboard_config.json (Excel-retirement P2).
+    │      The master .xlsx is no longer WRITTEN on any run; a few readers remain.
     └── kb_curation, allowed_reviewers   (UCL curation overlay)
 
 Cloudflare Worker (cpl-proxy.slee-548.workers.dev)

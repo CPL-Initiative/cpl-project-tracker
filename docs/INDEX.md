@@ -71,7 +71,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes; **Session 23: #2 sidebar sub-links + #3 display-label map** | Session 23 (Bruh 23, 2026-05-31) |
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G | Session 11 |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
-| [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project model + **Phase 2 COMPLETE** + **Phase 3 Budget read-path** + **Excel-retirement scope + PR-1 KPI-ladder keystone**) | Session 23 (Bruh 23, 2026-05-31) |
+| [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
 | [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR / Cred-Ref sync | Session 12 (Mode B complete) |
 | [`exhibit_unification_vision.md`](exhibit_unification_vision.md) | Credential design doc | retrospective |
 | [`letter_curator_handoff.md`](letter_curator_handoff.md) | Letter Curator workstream | Session 10 |
@@ -103,6 +103,10 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 18 → 19 | Cascade (handoff) | [`session_19_handoff.md`](session_19_handoff.md) |
 | 19 → 20 | Wizardly Turing (handoff) | [`session_20_handoff.md`](session_20_handoff.md) |
 | 20 → 21 | Bruh / "Twenty" (handoff) | [`session_21_handoff.md`](session_21_handoff.md) |
+| 22 → 23 | Bruh Sentinel (handoff) | [`session_23_handoff.md`](session_23_handoff.md) |
+| 23 → 24 | Bruh 23 (handoff) | [`session_24_handoff.md`](session_24_handoff.md) |
+| 24 → 25 | Bruh 24 (handoff) | [`session_25_handoff.md`](session_25_handoff.md) |
+| 25 → 26 | Bruh 25 (handoff) | [`session_26_handoff.md`](session_26_handoff.md) |
 
 ---
 
