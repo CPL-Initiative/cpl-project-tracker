@@ -1,6 +1,6 @@
 {
   "_about": "Daily-cached snapshot of public.projects. Written by kb/_load_projects.py after a successful Supabase fetch. Falls back to this file on Supabase outage so the dashboard regen continues without manual intervention.",
-  "_fetched_at": "2026-05-31",
+  "_fetched_at": "2026-06-01",
   "_source_table": "public.projects",
   "row_count": 34,
   "rows": [
