@@ -67,13 +67,15 @@ These are the **hard blockers** for deleting the file — the generator currentl
 | **"Attach" button** | card (`window.CPL_ATTACHMENTS_URL` from `read_project_config` I1) | SharePoint **attachments folder** (not the workbook itself) | Keep, but re-source the URL from the config home (P2). NOT a workbook dep once I1 moves. |
 | "Report" button | card → `reports/projects/{pid}_Report.docx` | A **generated docx** (no Excel) | None — already Excel-free |
 
-## D. Dead Excel readers (defined, never called — delete on sight)
+## D. Dead Excel readers (defined, never called) — ✅ DELETED (P4, #220)
 
-- `read_annual_goals(wb)` — annual goals now come from `build_workplan_goals_from_supabase()`; only a docstring still names it. **DEAD.**
-- `read_workplan_goals(wb)` — no call site. **DEAD.**
+- `read_annual_goals(wb)` — annual goals now come from `build_workplan_goals_from_supabase()`; only a docstring still named it. **DELETED.**
+- `read_workplan_goals(wb)` — no call site. **DELETED.**
 
-(These join the `populate_current_metrics` cluster deleted in #213 — same
-"verify the consumer, then delete" pattern: `[[methodology-verify-consumer-before-migrating]]`.)
+Both removed (148 lines) in Session 25; the stale `render_activity_kpis_html`
+docstring was repointed to `build_workplan_goals_from_supabase()`. They joined
+the `populate_current_metrics` cluster deleted in #213 — same "verify the
+consumer, then delete" pattern: `[[methodology-verify-consumer-before-migrating]]`.
 
 ## E. The file + its resolution
 
@@ -115,7 +117,8 @@ each `latest_update` edit (the editor already writes the field). If retire → d
 the "Show all (N)" history, keep `latest_update`. *Needs Sam's call.*
 
 **P4 — delete the dead readers** (`read_annual_goals`, `read_workplan_goals`).
-Trivial; bundle into P1 or P2.
+**✅ DONE (Session 25, 2026-06-01, PR #220).** Both confirmed zero-call-site
+(measure-first), deleted (148 lines), the one stale docstring repointed.
 
 **P5 — the finale: drop the `.xlsx`.** After P1–P3: delete `read_projects`,
 `read_budget_plan`, `read_update_log`, `read_config_overrides`,
