@@ -80,3 +80,21 @@ this doc captures the *process* learnings + state.
   contacts panel, EACR↔CER convergence, project→activity consolidation) + sidebar levels.
   Full ranked menu in the audit KB-note; carryover table in
   [`docs/session_27_handoff.md`](docs/session_27_handoff.md).
+
+## Checkpoint 2 — close-out (2026-06-01)
+
+- **BUG-1 shipped (PR #235)** — quickstart project navigation repointed to
+  `#tab-activities-projects`. Root cause: the router's hardcoded `TABS` list in `quickstart.js`
+  never gained an `activities-projects` entry when PR #206 created the tab, so project picks /
+  Activity / search / scroll_to hints all routed to `dashboard`; the `dashboard_filters.js`
+  selector + `cpl-qs-hint` consumer key were downstream symptoms. That completes **every**
+  Session-26 green-lit fix.
+- **Guided Sam through the 3 pending actions** (PII history force-push, Cloudflare worker
+  redeploy + WAF rate-limit, "Allow auto-merge" toggle). The history purge force-pushes `main`,
+  so I offered to run it step-by-step (one command, confirm output, next).
+- **9th process learning — fix the source-of-truth, not just the symptoms.** A "repoint N JS
+  sites" bug can hide a missing registry entry: BUG-1's real fix was adding the tab to the
+  router's `TABS` list (+ a `HINT_VOCAB` key rename); the selector/consumer edits only mattered
+  once the routing pointed at the right tab. Find the authoritative list first.
+- **Next concrete step (Session 27):** BUG-2 (Cluster→Unified vocab), then IDEM-7, then the
+  audit menu + strategic items 2–6.
