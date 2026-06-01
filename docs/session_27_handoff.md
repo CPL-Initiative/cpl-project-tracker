@@ -62,13 +62,12 @@ WHAT SHIPPED IN SESSION 26 (all merged to main):
      Flipping it on lets a session enable_pr_auto_merge(squash) instead of manual merges.
 
 ═══ BUILD QUEUE (green-lit; pick in this order unless Sam redirects) ═══
-  1. BUG-1 (quickstart project-nav, HIGH, broken since PR #206) — quickstart routes project
-     picks/Activity hints to tab:'dashboard', and dashboard_filters.js:266 queries
-     `#tab-dashboard .project-card`, but the Projects Grid MOVED to #tab-activities-projects
-     in PR #206. Repoint quickstart.js:33 (stale tab description), quickstart.js:297
-     (scroll_to hint tab), dashboard_filters.js:266 (selector). Also BUG-2 (XS): quickstart
-     HINT_VOCAB['unified-courses'] still advertises the retired 'Cluster' enum → CCR hints
-     dropped; swap Cluster→Unified + add the member-TOP triage. Static JS, no regen.
+  1. BUG-2 (XS, quickstart vocab desync) — HINT_VOCAB['unified-courses'] still advertises the
+     retired 'Cluster' enum (kind/source/triage), so CCR hints get dropped; swap Cluster→Unified
+     + add the 'Cross-discipline over-merge (member TOP)' triage. Match the EXACT consumer enum
+     strings in unified_courses.js (QS_KIND/QS_SOURCE/QS_TRIAGE). Static JS, no regen.
+     (BUG-1 — the quickstart project-nav routing — was DONE in PR #235 this session: added the
+     missing 'activities-projects' router entry + moved HINT_VOCAB/routing/selector/consumer.)
   2. IDEM-7 (NEW, from the triple-regen) — a SEPARATE pre-existing empty-line accretion
      (+3–4/run) at the EXHIBIT_ANALYSIS_CSS guard region (~94 empties already) + the
      CPL-Analytics-HTML inject. It's at the Rule-2 guard, so analyze carefully + verify by
@@ -121,7 +120,8 @@ SAFETY TO HONOR:
 | **PII history purge** | **STAGED — Sam force-pushes** (runbook ready) |
 | **Worker Cloudflare redeploy + WAF rate-limit** | **WAITING ON SAM** (PR merged, not deployed) |
 | Repo "Allow auto-merge" | Sam-side toggle, still off |
-| BUG-1 quickstart project-nav (+ BUG-2 cluster vocab) | queued (next, green-lit) |
+| BUG-1 quickstart project-nav | **DONE + MERGED** (#235) |
+| BUG-2 quickstart Cluster→Unified vocab desync | queued (next, XS) |
 | IDEM-7 empty-line accretion (Rule-2 guard) | queued (analyze + triple-regen) |
 | Rest of audit menu (dead-code / perf / correctness / DUP-1 auth refactor) | queued — Sam green-lights from the KB-note |
 | Strategic queue items 2–6 + sidebar levels | queued (approved Session 25) |
