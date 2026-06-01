@@ -4811,6 +4811,118 @@ def _build_articulations_by_course():
     out.sort(key=lambda x: (x["over_merged"], -x["leverage"], -x["colleges_earned"]))
     return out
 
+
+def _build_statewide_prescriptive():
+    """Per-credential prescriptive adoption layer for the EACR "Credential view".
+
+    Returns ``unified_title -> {colleges:[{college, courses:[{subject,number,
+    units}]}], n_colleges, withheld}`` (or None if the inputs are absent).
+
+    For each credential, names the specific local course a *potential adopter*
+    college already teaches that maps to the credential's M-ID identity — turning
+    the abstract "could adopt" list into an actionable "here is the course to
+    articulate" worklist (the CCR crosswalk that powers MAP's Request-Quick-Adopt).
+    Joins two committed KB files on the M-ID ``course_id``:
+
+      kb/coci_articulations.json   articulations[].adoption_leverage = the leverage
+          college NAMES (peer colleges teaching the same identity that have NOT
+          earned the articulation).
+      kb/coci_minted_memberships.json  memberships[course_id] = [{college, subject,
+          course_number, units, …}] = the local course each member college teaches.
+
+    Aggregated by ``unified_title`` because one credential fans to many M-IDs
+    (CompTIA A+ → ~24), so the per-college recommendations union across them.
+
+    Guardrails:
+      - Over-merge (§6a): leverage on ``over_merged`` course_ids is WITHHELD
+        (counted, never emitted) so a conflated cluster never yields a bogus
+        target. A college still surfaces if a CLEAN M-ID for the same credential
+        lists it; ``withheld`` counts only colleges with no clean source.
+      - The (subject, number) membership key is lossy → recs are "likely".
+      - M-ID leverage only (resolves ~100% from committed JSON). C-ID leverage is
+        deferred — its per-college courses are keyed by CIDNumber in the 24 MB raw
+        coci_course_list.xlsx, a heavier add.
+
+    Verified + measured by kb/_verify_prescriptive_join.py (the in-session test;
+    the full regen isn't testable here since the raw CustomReport isn't present).
+    """
+    art_path = os.path.join(SCRIPT_DIR, "kb", "coci_articulations.json")
+    mem_path = os.path.join(SCRIPT_DIR, "kb", "coci_minted_memberships.json")
+    if not (os.path.exists(art_path) and os.path.exists(mem_path)):
+        return None
+    try:
+        with open(art_path, encoding="utf-8") as f:
+            art_doc = json.load(f)
+        with open(mem_path, encoding="utf-8") as f:
+            mem_doc = json.load(f)
+    except Exception as e:
+        print(f"  Prescriptive layer: failed to load inputs ({e})")
+        return None
+
+    identities = art_doc.get("identities", {}) or {}
+    records = art_doc.get("articulations", []) or []
+    memberships = mem_doc.get("memberships", {}) or {}
+
+    acc = {}        # unified_title -> college -> set[(subject, number, units)]
+    withheld = {}   # unified_title -> set[colleges withheld via over_merged ids]
+
+    for r in records:
+        if r.get("identity_system") != "M-ID":
+            continue
+        lev = r.get("adoption_leverage")
+        if not isinstance(lev, list) or not lev:
+            continue
+        ut = r.get("unified_title") or ""
+        if not ut:
+            continue
+        cid = r.get("course_id")
+        over = bool(r.get("over_merged")) or bool((identities.get(cid) or {}).get("over_merged"))
+        if over:
+            w = withheld.setdefault(ut, set())
+            for c in lev:
+                c = (c or "").strip()
+                if c:
+                    w.add(c)
+            continue
+        by_college = {}
+        for m in (memberships.get(cid) or []):
+            by_college.setdefault((m.get("college") or "").strip(), []).append(m)
+        ut_acc = acc.setdefault(ut, {})
+        for college in lev:
+            college = (college or "").strip()
+            if not college:
+                continue
+            courses = ut_acc.setdefault(college, set())
+            for m in by_college.get(college, []):
+                subj = (m.get("subject") or "").strip()
+                num = (m.get("course_number") or "").strip()
+                if subj or num:
+                    courses.add((subj, num, m.get("units")))
+
+    out = {}
+    for ut, colleges in acc.items():
+        rows = []
+        for college, courses in colleges.items():
+            cs = sorted(courses, key=lambda t: (t[0], t[1]))
+            rows.append({
+                "college": college,
+                # Cap at 4 local courses per college so a lab/lecture ladder
+                # doesn't bloat the payload; they are all "likely" matches anyway.
+                "courses": [{"subject": s, "number": n, "units": u} for (s, n, u) in cs[:4]],
+            })
+        rows.sort(key=lambda x: x["college"])
+        clean = {r["college"] for r in rows}
+        w_only = withheld.get(ut, set()) - clean
+        out[ut] = {"colleges": rows, "n_colleges": len(rows), "withheld": len(w_only)}
+    # Credentials whose every M-ID leverage record was over_merged still surface
+    # the withheld count so the card stays honest ("N flagged, withheld") even
+    # with zero clean recommendations.
+    for ut, w in withheld.items():
+        if ut not in out and w:
+            out[ut] = {"colleges": [], "n_colleges": 0, "withheld": len(w)}
+    return out
+
+
 def _write_analytics_xlsx_export(card_id, title, headers, rows, output_dir):
     """Write a single CPL Analytics table to <output_dir>/<card_id>.xlsx.
     rows is a list of lists (one row per data row); headers is a list of strings.
@@ -8022,6 +8134,41 @@ def main():
             f.write(sw_js)
         print(f"  Exported statewide data to {sw_js_path} ({len(exhibit_tables['statewide_adoption'])} exhibits)")
 
+    # ── Write the EACR prescriptive adoption layer (PR-4) ──
+    # Lazy companion to statewide_data.js, keyed by unified_title: per credential,
+    # the colleges that could adopt it and the likely local course each already
+    # teaches (M-ID adoption_leverage ⨝ minted memberships; over-merged withheld,
+    # §6a). Consumed by the EACR v2 "Credential view". Always written (empty global
+    # if inputs are absent) so the consumer lookup is defined and a stale prior
+    # file never lingers.
+    pres_js_path = os.path.join(SCRIPT_DIR, "statewide_prescriptive.js")
+    try:
+        prescriptive = _build_statewide_prescriptive()
+    except Exception as e:
+        prescriptive = None
+        print(f"  Prescriptive layer build failed ({e}); writing empty global")
+    if prescriptive:
+        n_recs = sum(p["n_colleges"] for p in prescriptive.values())
+        n_withheld = sum(p["withheld"] for p in prescriptive.values())
+        pres_js = (
+            "/* EACR prescriptive adoption layer — auto-generated. DO NOT EDIT.\n"
+            "   unified_title -> {colleges:[{college, courses:[{subject,number,units}]}],\n"
+            "                     n_colleges, withheld}\n"
+            "   M-ID adoption_leverage joined to minted memberships; over-merged\n"
+            "   leverage is withheld (CLAUDE.md §6a). Recs are 'likely' (lossy key). */\n"
+            "window.CPL_STATEWIDE_PRESCRIPTIVE = "
+            + json.dumps(prescriptive, ensure_ascii=False) + ";\n"
+        )
+        with open(pres_js_path, "w", encoding="utf-8") as f:
+            f.write(pres_js)
+        print(f"  Exported prescriptive layer to {pres_js_path} "
+              f"({len(prescriptive)} credentials, {n_recs} college recs, {n_withheld} withheld)")
+    else:
+        with open(pres_js_path, "w", encoding="utf-8") as f:
+            f.write("/* prescriptive inputs absent — empty global */\n"
+                    "window.CPL_STATEWIDE_PRESCRIPTIVE = {};\n")
+        print("  Prescriptive layer: inputs absent; wrote empty global")
+
     # ── Build the Unified Courses tab data + xlsx export (COCI KB staging layer) ──
     try:
         export_unified_courses()
@@ -8167,6 +8314,7 @@ def main():
             '<script src="docx.min.js"></script>',
             '<script src="college_lookup.js"></script>',
             '<script src="statewide_data.js"></script>',
+            '<script src="statewide_prescriptive.js"></script>',
             '<script src="statewide_interactive.js"></script>',
             '<script src="college_report_generator.js"></script>',
             '<script src="unified_courses_data.js"></script>',
