@@ -34,10 +34,12 @@ You are Session 25 on the CPL Project Tracker. Read these first, in order:
      Session 24 PR-2 row).
   2. docs/excel_to_supabase_lessons.md — read the "Session 24" section (the
      active workstream); skim Session 23 above it for the ladder repoint.
-  3. docs/kb-notes/excel-retirement-final-scope.md — the retirement plan. The
-     D.* fork (Fork 3) is now RESOLVED: deleted, not migrated.
+  3. docs/kb-notes/excel-dependency-audit.md — **the authoritative Excel-retirement
+     plan** (the P1–P5 queue; supersedes the older excel-retirement-final-scope.md
+     reader list). START HERE for the workstream.
   4. docs/kb-notes/methodology-verify-consumer-before-migrating.md — the
-     Session 24 lesson (audit who READS a data class's values before migrating).
+     Session 24 lesson (audit who READS / whether a feature already exists before
+     migrating or building).
 
 WHAT SHIPPED IN SESSION 24 (merged to main):
   - Excel PR-2 — D.* rows RETIRED (PR #213, merged b4d1868). The 15 D.*
@@ -64,10 +66,16 @@ WHAT SHIPPED IN SESSION 24 (merged to main):
     is_allowed_reviewer() live (was loose "Allow auth write"). Found the
     KPI-ladder editor was ALREADY DONE (subsumed by PR-1 + workplan_goals.js) —
     no build needed; 2nd measure-first "already exists" catch this session.
-  - Docs: Session 24 lessons entries, the KB methodology note, CLAUDE.md roadmap,
-    INDEX.md, this handoff. (PR #213's docs landed as follow-up #214 because Sam
-    merged #213 before docs were bundled; the Budget editor's docs are bundled
-    INTO #215.)
+  - Backstop cron (PR #216) — the 2026-06-01 daily run was DROPPED by GitHub's
+    best-effort scheduler (not our code: workflow file unchanged, pipeline runs
+    clean, not disabled). Added a 2nd cron (17 14 * * *) as a backstop; idempotent
+    job makes it safe. Playbook: docs/kb-notes/playbook-github-scheduled-workflow-reliability.md.
+  - Excel-dependency audit (PR #217) — docs/kb-notes/excel-dependency-audit.md:
+    the full measure-first catalog of every remaining .xlsx tie + the P1–P5 fix
+    queue (P1 = the Update→Excel button). This is the authoritative
+    Excel-retirement plan; read it before any teardown.
+  - Docs: Session 24 lessons entries, KB notes (verify-consumer, scheduler
+    playbook, dependency audit), CLAUDE.md §6+§11, INDEX.md, this handoff.
 
 SESSION 24 ROUND 2 RESOLVED BOTH EDITORS (so the priority shifted — see below):
   - KPI-LADDER INLINE EDITOR = ALREADY DONE (no build needed). Measure-first:
@@ -159,9 +167,12 @@ SEPARATE TRACK (not Excel retirement):
 | Excel PR-2 (D.* rows retired) | **DONE + MERGED** (PR #213, Session 24) |
 | KPI-ladder inline editor | **ALREADY DONE** (Session 24 measure-first — subsumed by PR-1 + workplan_goals.js; no build) |
 | Budget inline editor | **DONE** (PR #215, Session 24) + budget/personnel RLS tighten (live) |
-| Budget total/avg formula layer (+ total read-only) | **NEXT** — Sam wants its own PR |
+| Daily-cron backstop | **DONE** (PR #216) — GitHub dropped the 06-01 scheduled run; 2nd cron added |
+| Excel-dependency audit + fix queue | **DONE** (PR #217) — `docs/kb-notes/excel-dependency-audit.md`, P1–P5 |
+| **P1: "Update→Excel" button → inline editor** | **NEXT** — user-facing; redundant with projects_editor.js |
+| P2 config tables off Excel / P3 Update Log / P4 dead readers / P5 drop .xlsx | queued (see the audit) |
+| Budget total/avg formula layer (+ total read-only) | queued — Sam wants its own PR (independent) |
 | Personnel editor | queued (BLOCKER: resolve the 26→13 dedupe row identity first) |
-| Excel PR-4 (sunset .xlsx + all readers) | queued (after the above; measure-first reader audit first) |
 | Vision 2030 / Personnel migration | N/A — confirmed no migration needed |
 | over-merge re-mint apply (Session 18) | STAGED, gated on Sam's dispatch (separate track) |
 
