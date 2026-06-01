@@ -1423,6 +1423,12 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
    opportunities (413 `over_merged` correctly withheld). Caveat: the M-ID layer is
    fragmented for single-college articulations (CompTIA A+ → 24 M-IDs), so group by
    `(title,units)` now + let EACR fragmentation feed the Suggested-merges worklist.
+   **Rebuilds the per-college grid in the project dash as a playground** (Sam: MAP
+   Dash changes are heavyweight + must be prioritized far ahead → prototype here,
+   promote proven views to MAP later) — adds the consolidation MAP's grid lacks via
+   **CER** (exhibit-title unification = card grain) + **CCR** (course-title = credit
+   recs), both preserving local titles; the CCR crosswalk is the Quick-Adopt
+   enabler; wiring CER overrides into the producer = strategic item 5.
    Decisions locked + **4-phase ladder** (PR-1 consolidation → PR-2 Local+CCC merge
    → PR-3 master-detail seeker view → PR-4 prescriptive recommendations) in
    [`docs/kb-notes/eacr-consolidation-scope.md`](docs/kb-notes/eacr-consolidation-scope.md).

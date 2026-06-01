@@ -165,6 +165,63 @@ de-cluttering. Captured here as the **target end-state**; the exact
 representation is **proposed / iterating** (Sam: *"we can get there in
 iterations"*), but the data findings and the layout model are durable.
 
+### Relationship to the live MAP Opportunities tab + Request Quick Adopt — the *why* of CCR/CSR/CER
+
+The production CCCCO MAP dashboard already has an **Opportunities → Non-Military
+Credit** tab (`cpldashboardcccco.azurewebsites.net/insights/exhibit-courses`) that
+renders **per-college cards** for a searched credential (e.g. "CompTIA A+"): each
+card = one college's articulation, Eligible Credits, Eligible Students, the
+credit-rec ("4 hours in IT ESSENTIALS NETWORKING PERSONAL COMPUTERS"), a
+Course/Status/College table, and a **"Request Quick Adopt"** button (+ a "CCC
+Statewide Recommendations Only" toggle). So the per-college card + adopt-request
+flow **already exists on MAP** — but we **deliberately rebuild the grid in the
+project dashboard anyway** (see *Design stance — Playground* below).
+
+**What MAP's grid lacks — and the reason CCR/CSR/CER exist:** it's a *wall of
+unconsolidated cards* (in Sam's screenshot "CompTIA A+ · LA Trade Technical
+College" appears **three times** with different courses — MICROTK 162, 164, 162).
+The **Common Course Reference (CCR)** + Common Subjects Reference (CSR) + Common
+Exhibit Reference (CER) were built precisely to **collapse that fragmentation** so
+a student looks up one credential and sees **all** opportunities — local or CCC — in
+one common-course-anchored view. Our EACR refinement (consolidate + CCC-anchor +
+typical-units) **is** that consolidation layer, over the *same* data MAP shows (the
+screenshot's credit recs match `coci_articulations.json` line-for-line).
+
+**The CCR is the Request-Quick-Adopt enabler.** To request adoption a college must
+know *which of its local courses* corresponds to the credential — the local title
+variation. That mapping **is** the CCR crosswalk. So **PR-4's "recommended local
+course for a potential adopter" is literally the CCR lookup that powers Quick
+Adopt** (common course → that college's local title variation).
+
+**Design stance — Playground (Sam, 2026-06-01).** Even though MAP already has the
+per-college grid + Quick Adopt, Sam wants the grid **rebuilt in the project
+dashboard** — *not* merely deep-linked — because the project dash is the
+**fast-iteration playground** for refining and categorizing views, whereas
+**changes to the live MAP Dash are heavyweight and must be prioritized far in
+advance.** So we prototype the full grid + consolidated/CCC-anchored view +
+prescriptive layer + a Quick-Adopt-style affordance **here**, iterate freely, and
+**promote proven views to MAP later.** (The actual adopt *transaction* may still
+route to MAP's backend, but the view + UX are designed and battle-tested here.)
+This is the general rationale for running both surfaces: **project dash = R&D
+sandbox; MAP = slow-moving production.**
+
+**Two consolidation axes — CER for the card, CCR for the credit recs.** MAP's
+exhibit *titles* vary widely (the same credential entered under many freehand
+spellings). The **CER (Common Exhibit Reference)** unifies those into one credential
+— the EACR card's row grain (`unified_title` from the credential KB) — while
+**still surfacing the local titles** via the "Also entered as N variants"
+disclosure. Symmetrically, the **CCR** unifies the *course*-title variations in the
+credit recs while keeping the local course codes inline. Principle (Sam): **unify
+for grouping, preserve the local titles for use.** ⚠ Today the EACR groups on the
+*raw* `unified_titles.json` classification, NOT the **CER curator overrides** —
+wiring those into `_build_statewide_adoption()` is **strategic item 5 (EACR↔CER
+convergence)** and belongs in PR-3, so curator title-unification flows into the
+card grouping.
+
+(Confirmed from the screenshot: **Eligible Students** counts are in the source data
+→ strategic item 3, student-eligibility on the EACR; **privacy ADR first**,
+aggregate-only, no StudentID/PII.)
+
 ### Audience shift
 
 The EACR stops being only an admin adoption tracker. It becomes three lenses on
@@ -255,7 +312,12 @@ the leverage list already knows it, so it's a surfacing step, not new logic.
 
 PR-1/PR-2 still ship first (low risk, immediate de-clutter); PR-3/PR-4 layer the
 seeker + prescriptive value on top once the `coci_articulations.json` join is
-wired into the EACR producer (which today reads only the credential KB).
+wired into the EACR producer (which today reads only the credential KB). PR-3 also
+wires the **CER curator overrides** into the producer (strategic item 5) so the
+card identity reflects curated title-unification, and **rebuilds the per-college
+grid in the project dash** (the playground — MAP changes are slow); PR-4's
+recommendation is the CCR crosswalk lookup, surfaced as a Quick-Adopt-style
+affordance here (the transaction may route to MAP later).
 
 ## When this applies (and when it doesn't)
 
