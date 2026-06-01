@@ -80,6 +80,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`letter_curator_handoff.md`](letter_curator_handoff.md) | Letter Curator workstream | Session 10 |
 | [`overmerge_remint_lessons.md`](overmerge_remint_lessons.md) | Cross-discipline over-merge re-mint (member_top_divergence → dry-run/apply → split-brain iters) | **Session 18 (2026-05-29)** |
 | [`quickstart_chat_lessons.md`](quickstart_chat_lessons.md) | Quick-start chat | Session 10 |
+| [`session_26_audit_lessons.md`](session_26_audit_lessons.md) | Session 26 codebase audit + remediation (PII fix, idempotency, security, BUG-1) | **Session 26 (Bruh 26, 2026-06-01)** |
 | [`sidebar_lessons.md`](sidebar_lessons.md) | Sidebar / tabs.js router | Session 11 |
 | [`subj4_canonicalization_remint_lessons.md`](subj4_canonicalization_remint_lessons.md) | Phase 1e re-mint | Session 5 |
 | [`unified_courses_audit_lessons.md`](unified_courses_audit_lessons.md) | Trust-Card auditor | **Session 18 (`member_top_divergence`)** |

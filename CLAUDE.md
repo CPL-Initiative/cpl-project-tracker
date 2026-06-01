@@ -1396,9 +1396,15 @@ isn't available in this env — ran it via parallel `Agent`s) + parent verificat
   rules** to take effect (the repo file isn't auto-deployed; rate-limiting is the real
   backstop for forged-Origin `curl` abuse). `/scrape` left ungated (server-side caller).
 
-**Queued for Session 27** (green-lit, not yet built): **BUG-1** (quickstart project-nav
-routes to `#tab-dashboard`, but the grid moved to `#tab-activities-projects` in PR #206 —
-repoint `quickstart.js:33/297` + `dashboard_filters.js:266`); **IDEM-7**; and strategic-queue
+**All Session-26 green-lit fixes shipped** — BUG-1 (quickstart project-nav) landed in PR #235
+(added the missing `activities-projects` entry to quickstart's router + moved HINT_VOCAB /
+routing / `dashboard_filters.js` selector+consumer there). **Pending Sam-actions (guided
+2026-06-01):** (1) PII **history force-push** (runbook:
+[`docs/kb-notes/playbook-pii-history-purge.md`](docs/kb-notes/playbook-pii-history-purge.md)),
+(2) **Cloudflare worker redeploy + WAF rate-limit** (PR #233 is inert until redeployed),
+(3) repo **"Allow auto-merge"** toggle. **Queued for Session 27** (green-lit, not yet built):
+**BUG-2** (quickstart Cluster→Unified vocab desync), **IDEM-7** (empty-line accretion at the
+EXHIBIT_ANALYSIS_CSS Rule-2 guard), the rest of the audit menu, and strategic-queue
 **items 2–6** (KPI reorder, student-eligibility counts [privacy ADR first], contacts panel,
 EACR↔CER convergence, project→activity consolidation) + sidebar levels. Full ranked menu in
 the audit KB-note. Pipeline viz correctly SKIPPED (no M-ID pipeline change this session).
