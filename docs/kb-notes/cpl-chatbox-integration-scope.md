@@ -32,8 +32,14 @@ map.rccd.edu) into the project-tracker dashboard as a tab so it can be developed
 in-repo, (2) re-point its knowledge source from the private `samueltlee/CPLBrain`
 vault to the public `CPL-Initiative/cpl-knowledge-base` repo, and (3) keep it
 portable for a future Student CPL Portal embed in MAP. This doc is the
-feasibility verdict + the per-PR scope + the open forks. **No code ships from
-this doc** — it's the contract to review before any build PR.
+feasibility verdict + the per-PR scope + the locked decisions. **No code ships from
+this doc** — it's the contract reviewed before any build PR.
+
+**STATUS: APPROVED 2026-06-01.** Sam green-lit the initiative and accepted all
+six fork recommendations ("Your picks are fine!"). Forks A–F below are now
+*locked decisions*, not open questions. The one residual sub-decision is fork F's
+Phase-2 isolation choice (does the live map.rccd.edu bot flip to KB content at
+the same time?) — resolved when Phase 2 starts, not now.
 
 ## Feasibility verdict: HIGH — most of the expensive work is already done
 
@@ -109,16 +115,18 @@ desirable (one consistent bot on the public KB), but Sam must choose:
 unless Sam wants the live bot left on CPLBrain while trialing the KB — the public
 KB is the *better* source for a public bot, so flipping both is usually the goal.
 
-## Open forks (Sam to lock before PR-1)
+## Locked decisions (approved by Sam, 2026-06-01 — "Your picks are fine!" + "Go for it!")
 
-| # | Fork | Options | Rec |
-|---|---|---|---|
-| A | Content source | replace CPLBrain / union both | **Replace** (user said "instead"; also a privacy win — see below) |
-| B | UI shape | native `cpl_chat.js` panel / iframe | **Native panel** — themeable + the literal artifact the Student Portal will embed |
-| C | Source-of-truth for widget+function code | into `cpl-project-tracker/chatbox/` / keep separate repo | **Into this repo** (user said "into this project"); deploy function via Supabase MCP/workflow |
-| D | Indexer location | `cpl-knowledge-base` repo / this repo | **cpl-knowledge-base** — triggers on its own push, no cross-repo PAT (the SKILL.md's own rationale); means the build touches 2 repos |
-| E | Widget source | reuse existing `widget/cpl-chatbox.js` / rebuild fresh | **Rebuild fresh** from quickstart scaffolding (~300–400 lines; skips Shadow-DOM widget weight we don't need inside the dash). Reuse if Sam drops the file in |
-| F | Isolation | shared backend / isolated dev backend | **Shared for Phase 1**; decide Phase 2 per the GLOBAL-swap note above |
+All recommendations accepted. The "Decision" column is now binding.
+
+| # | Fork | Decision |
+|---|---|---|
+| A | Content source | **Replace** CPLBrain with cpl-knowledge-base (privacy win — see below) |
+| B | UI shape | **Native `cpl_chat.js` panel** — themeable + the literal artifact the Student Portal will embed |
+| C | Source-of-truth for widget+function code | **Into this repo** (`cpl-project-tracker/chatbox/`); deploy function via Supabase MCP/workflow |
+| D | Indexer location | **cpl-knowledge-base repo** — re-indexes on its own push, no cross-repo PAT; build touches 2 repos |
+| E | Widget source | **Rebuild fresh** from quickstart scaffolding (~300–400 lines). Reuse the existing widget only if Sam drops the file in |
+| F | Isolation | **Shared backend for Phase 1.** Phase-2 isolation sub-decision (flip the live bot too?) deferred to Phase 2 start |
 
 ## Privacy: the content swap is a privacy *upgrade*, not just a feature
 
