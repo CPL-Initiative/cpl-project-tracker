@@ -40,6 +40,7 @@
     {hash: 'exhibit-adoption',     label: 'Exhibit Adoption',     desc: 'Statewide CPL exhibit adoption & credit recommendations by unified credential identity'},
     {hash: 'pipeline',             label: 'Pipeline',                 desc: 'Data pipeline reference / methodology'},
     {hash: 'letters',              label: 'Letters',                  desc: 'Budget support letter curator — edits campaign letter blocks (passcode-gated)'},
+    {hash: 'chatbot',              label: 'CPL Assistant',            desc: 'Conversational RAG assistant — ask CPL questions; answers from the knowledge base, live dashboard metrics, and statewide exhibits. Route here for open-ended "ask"/"chat"/"what is" questions.'},
   ];
 
   var VALID_HASHES = TABS.map(function (t) { return t.hash; });
