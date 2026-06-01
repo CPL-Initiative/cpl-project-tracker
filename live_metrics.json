@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-31T11:52:40.134Z",
+  "scraped_at": "2026-06-01T13:08:28.706Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -833,13 +833,13 @@
         },
         {
           "college": "Antelope Valley College",
-          "students": 260,
+          "students": 261,
           "units": 1051,
-          "avgUnits": 4.042307692307692,
+          "avgUnits": 4.026819923371647,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 260,
+          "militaryStudents": 261,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 1818230,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "46,125",
+      "value": "46,126",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,137"
+          "value": "24,138"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 46125,
+    "Students": 46126,
     "Units": 205078.65000000002,
     "TranscribedUnits": 96102.95,
     "Savings": 292782192.75,
     "YearImpact": 1171889387.4,
-    "MilitaryStudents": 24137,
+    "MilitaryStudents": 24138,
     "NonMilitaryStudents": 22064,
     "AprenticeStudents": 749,
-    "AverageUnits": 4.446149593495935,
-    "TranscribedAverage": 2.0835327913279134
+    "AverageUnits": 4.4460532020986,
+    "TranscribedAverage": 2.083487620864588
   }
 }
