@@ -110,6 +110,33 @@ REQUEST_PAYLOAD = [
 ]
 
 
+def _build_headers():
+    """Content-Type + an OPTIONAL non-interactive auth credential.
+
+    Pre-staged (2026-06-01) for MAP's upcoming user-auth rollout on the Custom
+    Report Builder. The endpoint is unauthenticated today, so this is a **no-op**
+    until MAP issues a service credential and the env var is set:
+
+      MAP_API_KEY          the credential (API key / Bearer token). REQUIRED to
+                           activate; absent → no auth header (today's behavior).
+      MAP_API_AUTH_HEADER  header name (default "Authorization"; e.g.
+                           "Ocp-Apim-Subscription-Key" for Azure APIM, or "x-api-key").
+      MAP_API_AUTH_SCHEME  prefix (default "Bearer"; set "" for a raw key value).
+
+    Read at call-time from the environment (the daily workflow injects them from
+    repo secrets). See docs/map_api_auth_handoff.md.
+    """
+    headers = {"Content-Type": "application/json"}
+    key = os.environ.get("MAP_API_KEY", "").strip()
+    if key:
+        header_name = os.environ.get("MAP_API_AUTH_HEADER", "").strip() or "Authorization"
+        scheme = os.environ.get("MAP_API_AUTH_SCHEME", "Bearer").strip()
+        headers[header_name] = (scheme + " " + key).strip() if scheme else key
+        print(f"  Auth: attaching MAP_API_KEY via '{header_name}'"
+              + (f" ({scheme} scheme)." if scheme else " (raw value)."))
+    return headers
+
+
 def fetch_report(output_path=None, timeout=120):
     """Fetch the full CustomReport from the MAP API and save to disk."""
     if output_path is None:
@@ -120,7 +147,7 @@ def fetch_report(output_path=None, timeout=120):
     req = urllib.request.Request(
         API_URL,
         data=body,
-        headers={"Content-Type": "application/json"},
+        headers=_build_headers(),
         method="POST",
     )
 
