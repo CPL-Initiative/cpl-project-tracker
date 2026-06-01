@@ -1411,8 +1411,27 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
    stackable "bucket of CPL". **Generator change, NOT a re-mint** — cards recompute
    from raw MAP rows each run, 0 `_EACR_FLAG` rows to migrate (verified), and
    `_parse_exhibits()` (the "MAP Exhibits" KPI) must move in lockstep on the same
-   key. Decisions locked + 2-PR plan (consolidation first/LOW risk, then the
-   merge/MEDIUM risk) in
+   key. The vision then grew in-session into a **seeker + adoption-engine view**:
+   a **CCC-anchored master-detail** card (CCC Collaborative version as the header
+   when one exists — *validated "set"*; else a **synthesized "suggested standard"**
+   from the modal local award, which doubles as an MC/CIDx candidate per §11 —
+   **94% of articulated credentials are local-only**), per-pattern local cards
+   (grouped by `(title,units)`, NOT raw college — 21 colleges → ~5 patterns), and
+   a **prescriptive layer** giving each college a status (✅ articulated /
+   🎯 potential-aligned-course / ○ potential-aligned-program) with a recommended
+   local course — `adoption_leverage` already supplies ~**48k** "should-articulate"
+   opportunities (413 `over_merged` correctly withheld). Caveat: the M-ID layer is
+   fragmented for single-college articulations (CompTIA A+ → 24 M-IDs), so group by
+   `(title,units)` now + let EACR fragmentation feed the Suggested-merges worklist.
+   **Rebuilds the per-college grid in the project dash as a playground** (Sam: MAP
+   Dash changes are heavyweight + must be prioritized far ahead → prototype here,
+   promote proven views — and ultimately the CCR/CSR/CER reference data + curation
+   procedures — to MAP later) — adds the consolidation MAP's grid lacks via
+   **CER** (exhibit-title unification = card grain) + **CCR** (course-title = credit
+   recs), both preserving local titles; the CCR crosswalk is the Quick-Adopt
+   enabler; wiring CER overrides into the producer = strategic item 5.
+   Decisions locked + **4-phase ladder** (PR-1 consolidation → PR-2 Local+CCC merge
+   → PR-3 master-detail seeker view → PR-4 prescriptive recommendations) in
    [`docs/kb-notes/eacr-consolidation-scope.md`](docs/kb-notes/eacr-consolidation-scope.md).
    **Scoped + queued; build deferred pending Sam's greenlight.**
 - **Sidebar levels** (interleave) — add `data-sections` to CCR/CER/CSR/Exhibit-Adoption;
