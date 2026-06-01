@@ -172,6 +172,7 @@ SAFETY TO HONOR:
 | IDEM-7 empty-line accretion (Rule-2 guard) | queued (analyze + triple-regen) |
 | Rest of audit menu (dead-code / perf / correctness / DUP-1 auth refactor) | queued — Sam green-lights from the KB-note |
 | Strategic queue items 2–6 + sidebar levels | queued (approved Session 25) |
+| **EACR consolidation** (merge Local+CCC + credit-rec title+units grouping + "typical units") | **SCOPED + queued** (Session 27) — `docs/kb-notes/eacr-consolidation-scope.md`; generator-not-re-mint, 2-PR plan, build deferred pending Sam's greenlight |
 | Excel retirement P5 (budget factors → JSON; then .xlsx delete) | queued |
 | P3 Update Log history | **PARKED** — Sam dismissed; don't re-raise |
 | over-merge re-mint apply (Session 18) | STAGED, gated on Sam's dispatch (separate track) |

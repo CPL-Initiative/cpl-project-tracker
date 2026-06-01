@@ -1402,6 +1402,19 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 6. **Project→Activity consolidation** — Sam chose **fold the project's rich fields
    into the activity card + ARCHIVE the project row** (reversible, never hard-delete).
    Write `docs/kb-notes/playbook-project-activity-consolidation.md` first.
+7. **EACR card + credit-rec consolidation** (added 2026-06-01, Session 27) — Sam's
+   3 asks from the EACR screenshot review: (a) **merge a credential's Local + CCC
+   cards into one** (CCC top billing) by dropping `Collaborative Type` from the
+   EACR group key; (b) **consolidate the per-college credit-rec list** by
+   `(course title, units)` with local course codes inline; (c) a **"Typical award:
+   N units (range a–b)" headline** so the list reads as alternatives, not a
+   stackable "bucket of CPL". **Generator change, NOT a re-mint** — cards recompute
+   from raw MAP rows each run, 0 `_EACR_FLAG` rows to migrate (verified), and
+   `_parse_exhibits()` (the "MAP Exhibits" KPI) must move in lockstep on the same
+   key. Decisions locked + 2-PR plan (consolidation first/LOW risk, then the
+   merge/MEDIUM risk) in
+   [`docs/kb-notes/eacr-consolidation-scope.md`](docs/kb-notes/eacr-consolidation-scope.md).
+   **Scoped + queued; build deferred pending Sam's greenlight.**
 - **Sidebar levels** (interleave) — add `data-sections` to CCR/CER/CSR/Exhibit-Adoption;
   optional 2nd nesting level where deep. **Excel retirement** (P5 budget factors →
   JSON, then drop the `.xlsx`) continues underneath.

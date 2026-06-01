@@ -62,6 +62,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Reference — Windows PowerShell scripting gotchas (PS 5.1 + Task Scheduler)](kb-notes/reference-windows-powershell-gotchas.md) | reference | published | 2026-05-27 | 2026-05-27 |
 | [Reference — Session 26 codebase audit findings catalog (51 findings, ranked fix queue)](kb-notes/reference-codebase-audit-2026-06-01.md) | reference | published | 2026-06-01 | 2026-06-01 |
 | [Playbook — Purge committed PII from git history (CustomReport_latest.json; Rule-5-override force-push)](kb-notes/playbook-pii-history-purge.md) | playbook | published | 2026-06-01 | 2026-06-01 |
+| [Playbook — EACR card + credit-rec consolidation scope (merge Local+CCC, title+units grouping, generator-not-re-mint, 2 PRs)](kb-notes/eacr-consolidation-scope.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 
 ---
 
