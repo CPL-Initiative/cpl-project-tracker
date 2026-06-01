@@ -1,7 +1,7 @@
 ---
 title: Daily dashboard data pipeline — accounting for the whole daily dataset
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-06-01 (§5 report inventory confirmed complete via screenshot)
 tags: [reference, data-pipeline, daily-refresh, kpi, data-sources, supabase, map, cccco, custom-report]
 kb-status: published
 kb-type: reference
@@ -118,28 +118,33 @@ metric.
 
 ## 5. The CustomReport report inventory (S2) — pulled vs consumed
 
-`fetch_custom_report.py` requests **9 datasets**. The daily pipeline
-(`read_exhibit_metrics()` + `college_activity.js`) **consumes 7**; two are
-**fetched but not yet used** by the dashboard (they're archived in
-`CustomReport_latest.json` for other/future use):
+> **✅ Confirmed COMPLETE coverage (screenshot, 2026-06-01).** The Custom Reporting
+> Module's *Select Data Categories* step (Step 1 of 3) offers **exactly 9 data
+> categories** — and `fetch_custom_report.py` requests **all 9, with every field
+> in each** (the per-category field counts below match our column lists exactly,
+> **151 fields total**). So there is **no "available-but-unpulled" report** — we
+> pull the entire menu. The only slack is **consumption**: the dashboard pipeline
+> (`read_exhibit_metrics()` + `college_activity.js`) **uses 7 of the 9**; the
+> other 2 are archived in the 91 MB blob but unused.
 
-| # | Dataset (`viewName`) | Pulled | Consumed daily? | Feeds |
-|---|---|:--:|:--:|---|
-| 1 | `View_ArticulatedMAPExhibits` | ✅ | ✅ | Exhibit analysis / EACR / CPL Analytics |
-| 2 | `View_ArticulatedCollegeCourses` | ✅ | ✅ | Course-level articulation detail, college activity |
-| 3 | `View_CollegeCourses` | ✅ | ✅ | College course catalog |
-| 4 | `View_CreditDistributionByCollege` | ✅ | ✅ | Per-college credit breakdown |
-| 5 | `View_PointInTime_StudentAggregatedValues` | ✅ | ✅ | Student aggregates by year/type |
-| 6 | `View_ProgramsofStudy` | ✅ | ✅ | Programs of study (adopter matching) |
-| 7 | `View_StudentAggregatedValues` | ✅ | ✅ | Student-level credit data (JST/Military) |
-| 8 | `View_CollegeContacts` | ✅ | ⬜ **fetch-only** | (contacts roster — archived, unused) |
-| 9 | `View_CollegeUsersRoles` | ✅ | ⬜ **fetch-only** | (users/roles — archived, unused) |
+| # | UI category (fields) — *its description* | `viewName` | Pulled | Used by dashboard | Feeds |
+|---|---|---|:--:|:--:|---|
+| 1 | **Articulated MAP Exhibits** (14) — *MAP exhibit data with articulation info* | `View_ArticulatedMAPExhibits` | ✅ all 14 | ✅ | Exhibit analysis / EACR / CPL Analytics |
+| 2 | **Articulated College Courses** (30) — *comprehensive course articulation data* | `View_ArticulatedCollegeCourses` | ✅ all 30 | ✅ | Course-level articulation detail, college activity |
+| 3 | **College Courses** (7) — *basic college course info* | `View_CollegeCourses` | ✅ all 7 | ✅ | College course catalog |
+| 4 | **Credit Distribution by College** (10) — *credit allocation/distribution* | `View_CreditDistributionByCollege` | ✅ all 10 | ✅ | Per-college credit breakdown |
+| 5 | **Point-in-Time Student Values** (14) — *student aggregates at specific time points* | `View_PointInTime_StudentAggregatedValues` | ✅ all 14 | ✅ | Student aggregates by year/type |
+| 6 | **Programs of Study** (10) — *academic program info + structure* | `View_ProgramsofStudy` | ✅ all 10 | ✅ | Programs of study (adopter matching) |
+| 7 | **Student Aggregated Values** (23) — *comprehensive student data aggregation* | `View_StudentAggregatedValues` | ✅ all 23 | ✅ | Student-level credit data (JST/Military) |
+| 8 | **College Contacts** (32) — *contact info for college personnel* | `View_CollegeContacts` | ✅ all 32 | ⬜ **fetch-only** | contacts roster — archived, unused |
+| 9 | **College Users & Roles** (11) — *user management + role assignments* | `View_CollegeUsersRoles` | ✅ all 11 | ⬜ **fetch-only** | users/roles — archived, unused |
 
-> **⚠ Gap to close — the "all available reports" screenshot.** This table is the
-> **9 we pull**. The Custom Reporting Module UI almost certainly offers **more
-> views than these 9**. To make the inventory complete ("everything available vs.
-> what we use"), drop the screenshot (or the report list) into this section and
-> I'll add the available-but-not-pulled rows + flag any worth wiring in.
+**Takeaway:** the only decision left is the **2 fetched-but-unused categories**
+(rows 8–9, **43 fields, the bulk of the contact/roster PII** in the 91 MB blob).
+Either wire **College Contacts** into a surface (e.g. a per-college contacts
+panel — AO / CPL Coordinator / VRC official are already in hand) or **drop both
+from `REQUEST_PAYLOAD`** to shrink the daily pull and stop fetching personnel PII
+we don't use. *(Recommend dropping unless there's a contacts-panel plan.)*
 
 ---
 
@@ -194,13 +199,15 @@ The **GitHub Actions run summary** also prints a per-run `CustomReport` /
 
 ## 8. Gaps + open items
 
-1. **Available-reports inventory incomplete** — §5 lists the 9 we pull; the
-   Custom Reporting Module screenshot would let me enumerate the full menu +
-   flag available-but-unused views. *(Need the screenshot.)*
-2. **2 datasets fetched-but-unused** — `View_CollegeContacts` +
-   `View_CollegeUsersRoles` are pulled into the 91 MB blob but nothing consumes
-   them. Either wire them into a surface or drop them from `REQUEST_PAYLOAD` to
-   shrink the pull.
+1. **Available-reports inventory — ✅ CLOSED (2026-06-01).** The Custom Reporting
+   Module offers exactly **9 categories** and we pull **all 9 + every field** (§5,
+   confirmed by screenshot). No available-but-unpulled report exists.
+2. **2 datasets fetched-but-unused — DECISION NEEDED.** `College Contacts` (32
+   fields) + `College Users & Roles` (11) are pulled into the 91 MB blob but
+   nothing consumes them. **Either** wire `College Contacts` into a per-college
+   contacts panel (AO / CPL Coordinator / VRC official are all in the payload)
+   **or** drop both from `REQUEST_PAYLOAD` to shrink the pull and stop fetching
+   unused personnel PII. *(Recommend: drop, unless a contacts panel is wanted.)*
 3. **No keys on the two MAP endpoints** — S1 is gated by the worker's
    `SCRAPE_SECRET`; S2's `getReport` is an open POST. Worth confirming that's
    intended.
