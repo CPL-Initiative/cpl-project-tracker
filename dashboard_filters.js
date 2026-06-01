@@ -4,11 +4,11 @@
  * Filters Activity KPI cards (with Goal sub-headers) and Project cards (grouped by Goal)
  */
 
-// ── Shared Excel URL ──
-// When hosted (GitHub Pages, etc.), Update buttons link to this shared URL.
-// Replace with your OneDrive/SharePoint share link.
-// When empty, buttons link to the local Excel file.
-var SHARED_EXCEL_URL = 'https://studentrcc.sharepoint.com/:x:/s/MilitaryArticulationPlatform/IQDtrAHqCEmCTZXE7sqqeLMZAQkt2PJzGno44GfJVp5b6Ak?e=8W61fK';
+// ── (Removed: Shared Excel URL) ──
+// The toolbar "Update Projects" button + the per-card "Update" Excel deep-links
+// were retired in Excel-retirement P1 (2026-06-01). Project cards are now
+// click-to-edit via projects_editor.js, and the card "Update" button triggers
+// the inline Latest Update editor instead of opening Excel for the Web.
 
 // ── Attachments Folder URL ──
 // Read from window.CPL_ATTACHMENTS_URL (injected by the pipeline from Excel config row 1, cell I1).
@@ -306,7 +306,10 @@ function resetFilters() {
         if (d && d.tab === 'dashboard') applyQuickstartHint(d.hint);
     });
 
-    // Inject Master Report + Update buttons next to filter buttons
+    // Inject Master Report button next to filter buttons. (The "Update Projects"
+    // toolbar button was an Excel-for-the-Web deep-link — removed in
+    // Excel-retirement P1; the per-card "Update" button now opens the inline
+    // Latest Update editor via projects_editor.js.)
     var filterBtns = document.querySelector('.filter-buttons');
     if (filterBtns) {
         var reportBtn = document.createElement('a');
@@ -317,16 +320,6 @@ function resetFilters() {
         reportBtn.onmouseover = function() { this.style.background = '#f5f5f5'; };
         reportBtn.onmouseout = function() { this.style.background = 'transparent'; };
         filterBtns.appendChild(reportBtn);
-
-        var updateBtn = document.createElement('a');
-        updateBtn.href = SHARED_EXCEL_URL || 'CPL_Initiative_Project_List_v3.xlsx';
-        if (SHARED_EXCEL_URL) updateBtn.target = '_blank';
-        updateBtn.innerHTML = '&#9998; Update Projects';
-        updateBtn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:#0A2240;border:1px solid #ccc;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;";
-        updateBtn.onmouseover = function() { this.style.background = '#f5f5f5'; };
-        updateBtn.onmouseout = function() { this.style.background = 'transparent'; };
-        updateBtn.title = 'Open Excel to update project data';
-        filterBtns.appendChild(updateBtn);
 
         // Attach Doc button — opens SharePoint attachments folder
         if (ATTACHMENTS_URL) {
@@ -341,15 +334,8 @@ function resetFilters() {
             filterBtns.appendChild(attachBtn);
         }
 
-        // Rewrite all card-level Update & Attach buttons to use shared URLs
-        function rewriteUpdateBtns() {
-            if (!SHARED_EXCEL_URL) return;
-            var cardBtns = document.querySelectorAll('a.update-btn');
-            for (var i = 0; i < cardBtns.length; i++) {
-                cardBtns[i].href = SHARED_EXCEL_URL;
-                cardBtns[i].target = '_blank';
-            }
-        }
+        // Rewrite all card-level Attach buttons to use the parsed SharePoint URL.
+        // (The card "Update" rewrite was removed in P1 — see note above.)
         function rewriteAttachBtns() {
             if (!ATTACHMENTS_BASE_ID) return;
             var attachBtns = document.querySelectorAll('a.attach-btn');
@@ -359,11 +345,10 @@ function resetFilters() {
                 attachBtns[i].target = '_blank';
             }
         }
-        rewriteUpdateBtns();
         rewriteAttachBtns();
         // Also rewrite after DOM fully loads (in case buttons render late)
-        document.addEventListener('DOMContentLoaded', function() { rewriteUpdateBtns(); rewriteAttachBtns(); });
-        setTimeout(function() { rewriteUpdateBtns(); rewriteAttachBtns(); }, 500);
+        document.addEventListener('DOMContentLoaded', function() { rewriteAttachBtns(); });
+        setTimeout(function() { rewriteAttachBtns(); }, 500);
     }
 
     // Notes history toggle — show/hide full history per card
