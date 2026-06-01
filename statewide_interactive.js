@@ -198,6 +198,92 @@
     state.page = 0;
   }
 
+  // ── Credential view (v2 · master-detail) styles — self-contained, injected
+  // once so the daily regen / generator never needs to carry them. ──
+  var CV_STYLE = '<style>'
+    + '.sw-gallery-sec{border:1px solid rgba(255,255,255,0.08);border-radius:6px;margin:0 0 0.6rem;}'
+    + '.sw-gallery-sum{cursor:pointer;padding:0.55rem 0.8rem;font-size:0.82rem;font-weight:600;color:#C9A84C;list-style:none;}'
+    + '.sw-gallery-sum::-webkit-details-marker{display:none;}'
+    + '.sw-gallery-tag{font-size:0.62rem;background:rgba(201,168,76,0.18);color:#C9A84C;padding:1px 5px;border-radius:3px;margin-left:0.35rem;font-weight:500;}'
+    + '.cv-body{padding:0.4rem 0.8rem 1rem;}'
+    + '.cv-note{font-size:0.66rem;color:rgba(255,255,255,0.5);padding:0.4rem 0;font-style:italic;}'
+    + '.cv-credential{border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:0.6rem 0.8rem;margin-bottom:0.55rem;background:rgba(255,255,255,0.02);}'
+    + '.cv-title{font-size:0.9rem;font-weight:700;color:#fff;margin-bottom:0.15rem;}'
+    + '.cv-issuer{font-size:0.72rem;font-weight:400;color:rgba(255,255,255,0.55);}'
+    + '.cv-standard{border-left:3px solid #C9A84C;padding:0.2rem 0 0.2rem 0.6rem;margin:0.3rem 0;}'
+    + '.cv-others{margin-top:0.45rem;border-top:1px dashed rgba(255,255,255,0.1);padding-top:0.4rem;}'
+    + '.cv-others-label{font-size:0.66rem;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:0.2rem;}'
+    + '.cv-variant{padding:0.15rem 0 0.15rem 0.6rem;border-left:2px solid rgba(255,255,255,0.12);margin:0.25rem 0;}'
+    + '.cv-meta{font-size:0.66rem;color:rgba(255,255,255,0.62);}'
+    + '.cv-badge{font-size:0.6rem;padding:1px 5px;border-radius:3px;font-weight:600;white-space:nowrap;}'
+    + '.cv-ccc{background:rgba(76,175,120,0.2);color:#7fd0a0;}'
+    + '.cv-synth{background:rgba(201,168,76,0.18);color:#C9A84C;}'
+    + '.cv-local{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.72);}'
+    + '</style>';
+
+  // ── Credential view (v2): one card per credential (unified_title + issuer),
+  // CCC version as the standard on top (or a synthesized "suggested standard"
+  // when no CCC exists), with the other CPL-Type/collab variants sub-listed.
+  // Shares the v1 search + filters via getFiltered(); reuses buildCreditRecsHtml.
+  // Consumer-side, additive — the per-college prescriptive layer is PR-4.
+  function buildCredentialView() {
+    var filtered = getFiltered();
+    var groups = {}, order = [];
+    filtered.forEach(function (e) {
+      var k = (e.unified_title || e.title || "") + "||" + (e.issuing_agency || "");
+      if (!groups[k]) { groups[k] = []; order.push(k); }
+      groups[k].push(e);
+    });
+    function bestPot(cards) { return cards.reduce(function (m, e) { return Math.max(m, e.potential || 0); }, 0); }
+    function allUnclassified(cards) { return cards.every(function (e) { return e.is_classified === false; }); }
+    // Same ordering spirit as the table: unclassified last, best-opportunity first.
+    order.sort(function (a, b) {
+      var ua = allUnclassified(groups[a]) ? 1 : 0, ub = allUnclassified(groups[b]) ? 1 : 0;
+      return (ua - ub) || (bestPot(groups[b]) - bestPot(groups[a]));
+    });
+
+    var LIMIT = 50;
+    var out = [];
+    if (order.length > LIMIT) {
+      out.push('<div class="cv-note">Showing top ' + LIMIT + ' of ' + fmt(order.length) +
+        ' credentials — use the search box / filters above to narrow.</div>');
+    }
+    order.slice(0, LIMIT).forEach(function (k) {
+      var cards = groups[k];
+      var title = cards[0].unified_title || cards[0].title || "";
+      var issuer = cards[0].issuing_agency || "";
+      // Anchor = the CCC version (most adopters) if any; else the top-adopter local card.
+      var byAdopt = function (a, b) { return (b.adopters || 0) - (a.adopters || 0); };
+      var ccc = cards.filter(function (e) { return e.collaborative_type === "CCC Collaborative"; }).sort(byAdopt);
+      var isCCC = ccc.length > 0;
+      var anchor = isCCC ? ccc[0] : cards.slice().sort(byAdopt)[0];
+      var stdBadge = isCCC
+        ? '<span class="cv-badge cv-ccc">🏛 Statewide CCC standard</span>'
+        : '<span class="cv-badge cv-synth">⚙ Suggested standard (local) — not yet official</span>';
+      var head = '<div class="cv-title">' + esc(title) +
+        (issuer ? ' <span class="cv-issuer">· ' + esc(issuer) + '</span>' : '') + '</div>';
+      var std = '<div class="cv-standard">' + stdBadge +
+        ' <span class="cv-meta">' + esc(anchor.cpl_type || "") + ' · ' +
+        (anchor.adopters || 0) + ' colleges · ' + (anchor.potential || 0) + ' potential</span>' +
+        buildCreditRecsHtml(anchor.credit_recs) + '</div>';
+      var others = cards.filter(function (e) { return e !== anchor; }).sort(byAdopt);
+      var othersHtml = "";
+      if (others.length) {
+        othersHtml = '<div class="cv-others"><div class="cv-others-label">Other ways to earn credit:</div>' +
+          others.map(function (e) {
+            var badge = e.collaborative_type === "CCC Collaborative"
+              ? '<span class="cv-badge cv-ccc">CCC</span>'
+              : '<span class="cv-badge cv-local">' + esc(e.collaborative_type || "Local") + '</span>';
+            return '<div class="cv-variant"><div class="cv-meta">' + esc(e.cpl_type || "") + ' ' + badge +
+              ' · ' + (e.adopters || 0) + ' colleges · ' + (e.potential || 0) + ' potential</div>' +
+              buildCreditRecsHtml(e.credit_recs) + '</div>';
+          }).join("") + '</div>';
+      }
+      out.push('<div class="cv-credential">' + head + std + othersHtml + '</div>');
+    });
+    return out.join("") || '<div class="cv-note">No credentials match the current filters.</div>';
+  }
+
   // ── Build DOM ──
   function buildCard() {
     var totalPotential = 0, withPotential = 0, totalRecs = 0, statewide = 0, local = 0;
@@ -272,7 +358,18 @@
 
     html += '</div>';
 
-    container.innerHTML = html;
+    // ── Gallery (Sam's playground): v1 = the adoption table above (preserved
+    // intact), v2 = a credential-centric master-detail view below. Both share the
+    // same search + filters; v1 is untouched. Iterate v2 freely; graduate the winner.
+    container.innerHTML = CV_STYLE
+      + '<details class="sw-gallery-sec" open><summary class="sw-gallery-sum">📋 Adoption table'
+      + ' <span class="sw-gallery-tag">v1</span></summary>'
+      + html
+      + '</details>'
+      + '<details class="sw-gallery-sec"><summary class="sw-gallery-sum">🎓 Credential view'
+      + ' <span class="sw-gallery-tag">v2 · beta</span> — one card per credential, the standard on top</summary>'
+      + '<div id="sw-cv-body" class="cv-body"></div>'
+      + '</details>';
   }
 
   function buildFilterButton(key, label, options) {
@@ -475,6 +572,10 @@
     });
 
     tbody.innerHTML = rows.join("");
+
+    // v2 credential view shares the same filtered set — re-render it alongside.
+    var cvBody = document.getElementById("sw-cv-body");
+    if (cvBody) cvBody.innerHTML = buildCredentialView();
 
     // Pagination controls
     renderPagination(filtered.length, totalPages);
