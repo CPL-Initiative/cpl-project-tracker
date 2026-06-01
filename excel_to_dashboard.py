@@ -569,6 +569,7 @@ ALGO_DETAILS_CSS = """
     color: rgba(255,255,255,0.35);
     font-style: italic;
 }
+/* ═══ End Collapsible Algorithm Descriptions ═══ */
 """
 
 
@@ -8048,7 +8049,12 @@ def main():
         pi_start = html.find(PROJ_INFO_START)
         pi_end = html.find(PROJ_INFO_END)
         if pi_start != -1 and pi_end != -1:
-            html = html[:pi_start] + html[pi_end + len(PROJ_INFO_END):]
+            # Also consume the leading whitespace inserted before the block so a
+            # blank indented line doesn't accrete on each regen (audit IDEM-2).
+            ws = pi_start
+            while ws > 0 and html[ws - 1] in ' \t\n':
+                ws -= 1
+            html = html[:ws] + html[pi_end + len(PROJ_INFO_END):]
 
         # Build description (collapsible, default collapsed) + See Attachments block
         proj_info_parts = [PROJ_INFO_START]
@@ -8305,11 +8311,19 @@ def main():
                 ALGO_CSS_MARKER = '/* ═══ Collapsible Algorithm Descriptions ═══ */'
                 if ALGO_CSS_MARKER in html:
                     import re as _re
-                    algo_pattern = _re.compile(
-                        r'\n?/\* ═══ Collapsible Algorithm Descriptions ═══ \*/.*?\.algo-details \.algo-meta \{[^}]*\}\n?',
+                    # Strip the new-form block (start marker .. End marker) first, then
+                    # any pre-Session-26 residue (start .. last .algo-meta rule), so the
+                    # marker-hardening transition can't leave two copies (audit IDEM-5).
+                    html = _re.compile(
+                        r'\n?/\* ═══ Collapsible Algorithm Descriptions ═══ \*/.*?'
+                        r'/\* ═══ End Collapsible Algorithm Descriptions ═══ \*/\n?',
                         _re.DOTALL,
-                    )
-                    html = algo_pattern.sub('', html)
+                    ).sub('', html)
+                    html = _re.compile(
+                        r'\n?/\* ═══ Collapsible Algorithm Descriptions ═══ \*/.*?'
+                        r'\.algo-details \.algo-meta \{[^}]*\}\n?',
+                        _re.DOTALL,
+                    ).sub('', html)
 
                 style_end = html.find('</style>')
                 if style_end != -1:
@@ -8387,15 +8401,18 @@ def main():
                     # Add a section marker for future updates
                     wrapped = ('<!-- Annual Workplan Goals -->\n'
                                + workplan_goals_html
-                               + '        <!-- End Annual Workplan Goals -->\n\n        ')
+                               + '        <!-- End Annual Workplan Goals -->')
                     # Check if there's already an Annual Workplan Goals section to replace
                     awg_start = html.find('<!-- Annual Workplan Goals -->')
                     awg_end = html.find('<!-- End Annual Workplan Goals -->')
                     if awg_start != -1 and awg_end != -1:
-                        html = html[:awg_start] + wrapped + html[awg_end + len('<!-- End Annual Workplan Goals -->'):].lstrip('\n')
+                        # lstrip the remainder + re-add a fixed trailer so leading
+                        # spaces don't accrete into a mega-line each regen (audit IDEM-4).
+                        rest = html[awg_end + len('<!-- End Annual Workplan Goals -->'):]
+                        html = html[:awg_start] + wrapped + '\n\n        ' + rest.lstrip()
                         print(f"  Replaced Annual Workplan Goals section ({len(workplan_goals)} activities)")
                     else:
-                        html = html[:wg_pos] + wrapped + html[wg_pos:]
+                        html = html[:wg_pos] + wrapped + '\n\n        ' + html[wg_pos:]
                         print(f"  Injected Annual Workplan Goals section ({len(workplan_goals)} activities)")
 
             # ── Replace the Projects Grid with fully rendered static HTML ──
@@ -8532,8 +8549,10 @@ def main():
                 'onmouseout="if(!this.disabled){this.style.background=\'transparent\';this.style.color=\'#C9A84C\'}">'
                 '&#x21bb; Refresh Today&#39;s Data</button></div>'
             )
-            # Remove any existing refresh button first, then insert after last-updated
-            html = re.sub(r'<div style="text-align:center;margin-top:0\.5rem;">.*?Refresh.*?Data.*?</div>', '', html)
+            # Remove any existing refresh button first, then insert after last-updated.
+            # Consume the leading newline+indent too, else a blank indented line
+            # accretes on every regen (idempotency — Session 26 audit IDEM-1).
+            html = re.sub(r'\n\s*<div style="text-align:center;margin-top:0\.5rem;">.*?Refresh.*?Data.*?</div>', '', html)
             html = html.replace(
                 '<div class="last-updated">Last Updated: ' + data["last_updated"] + '</div>',
                 '<div class="last-updated">Last Updated: ' + data["last_updated"] + '</div>\n        ' + refresh_btn
@@ -8557,7 +8576,9 @@ def main():
                 ag_end = html.find('<!-- End Annual Workplan Goals -->')
                 if ag_start != -1 and ag_end != -1:
                     wrapped = '<!-- Annual Workplan Goals -->\n' + goals_table_html + '        <!-- End Annual Workplan Goals -->'
-                    html = html[:ag_start] + wrapped + html[ag_end + len('<!-- End Annual Workplan Goals -->'):]
+                    # lstrip remainder + fixed trailer so spaces don't accrete (audit IDEM-4)
+                    rest = html[ag_end + len('<!-- End Annual Workplan Goals -->'):]
+                    html = html[:ag_start] + wrapped + '\n\n        ' + rest.lstrip()
                     print(f"  Rendered Annual Workplan Goals table ({len(annual_goals)} rows)")
                 else:
                     # Fresh template: insert before Vision 2030 Section
@@ -8577,6 +8598,10 @@ def main():
             v2030_end = html.find('<!-- End Vision 2030 Section -->')
             if v2030_end != -1:
                 v2030_end_consumes = v2030_end + len('<!-- End Vision 2030 Section -->')
+                # Swallow trailing whitespace after the End marker so blank indented
+                # lines don't accrete before DATA-START on each regen (audit IDEM-3).
+                while v2030_end_consumes < len(html) and html[v2030_end_consumes] in ' \t\n':
+                    v2030_end_consumes += 1
             else:
                 v2030_end = html.find('<!-- DATA-START')
                 v2030_end_consumes = v2030_end
