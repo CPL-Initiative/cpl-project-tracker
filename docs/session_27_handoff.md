@@ -70,11 +70,11 @@ WHAT SHIPPED IN SESSION 26 (all merged to main):
     (Rule 1/2) + quickstart.js TABS row + Rule-4 mirror. LIVE + Sam-confirmed.
 
 ═══ WAITING ON SAM (surface these early) ═══
-  A. PII HISTORY PURGE — forward exposure stopped; the file still lives in 8 historical
-     commits on the public repo. Runbook ready (playbook-pii-history-purge.md): pause cron
-     → mirror backup → git filter-repo --invert-paths --path CustomReport_latest.json →
-     force-push main (OVERRIDES Rule 5; re-lock after) → re-clone everywhere + GitHub
-     Support to purge cached blobs. Offer to prep the exact commands / walk him through it.
+  A. PII HISTORY PURGE — ✅ DONE (Sam executed 2026-06-01): git filter-repo purge of
+     CustomReport_latest.json + force-push to main (.git 385→248 MB) + deleted the merged
+     session branches + closed PR #238. Data is out of main AND its history; the GitHub
+     Support ticket clears cached blobs. (#238's cheat-sheet feature → re-created clean in #239.)
+     [No longer waiting — kept here as the audit trail.]
   B. WORKER REDEPLOY — #233 hardened cloudflare-worker-proxy.js but the repo file is NOT
      auto-deployed. Sam must re-paste it into the Cloudflare Worker AND add WAF rate-limit
      rules on /, /scrape, /trigger (the real backstop for forged-Origin curl abuse). Remind.
@@ -163,7 +163,8 @@ SAFETY TO HONOR:
 | Audit catalog (#229), IDEM-1–5 (#231), SEC-4/5 (#232), worker SEC-1/2/3 (#233) | **DONE + MERGED** |
 | BUG-1 quickstart project-nav (#235) | **DONE + MERGED** |
 | **CPL Assistant Phase 1 (tab + backend v14)** | **DONE + LIVE** (#230) — Sam confirmed |
-| **PII history purge** | **STAGED — Sam force-pushes** (runbook ready) |
+| Cheat-sheet button + popup (was closed #238) | **DONE + MERGED** (#239) — re-created clean after the history rewrite |
+| **PII history purge** | **DONE** — Sam ran filter-repo + force-push + deleted merged branches + closed #238 (2026-06-01) |
 | **Worker Cloudflare redeploy + WAF rate-limit** | **WAITING ON SAM** (PR merged, not deployed) |
 | Repo "Allow auto-merge" | Sam-side toggle, still off |
 | **CPL Assistant Phase 2 (content re-point) / Phase 3 (Student Portal)** | queued — GLOBAL-swap decision is the gate |
