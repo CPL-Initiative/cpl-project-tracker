@@ -1,0 +1,11 @@
+{
+  "_comment": "Dashboard config migrated off CPL_Initiative_Project_List_v3.xlsx (Excel-retirement P2, 2026-06-01). Edit here + commit; the daily cron renders from this file. Source of truth for the dashboard title/description/attachments URL (was Project List rows 1-2), the Col AG config overrides (was empty), and KPI-parameter overrides on top of KPI_PARAMETERS_DEFAULTS in excel_to_dashboard.py (the KPI_Config sheet held only the code defaults).",
+  "project_config": {
+    "title": "CPL Initiative",
+    "project_id": "CPL-2025",
+    "attachments_url": "https://studentrcc.sharepoint.com/sites/MilitaryArticulationPlatform/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FMilitaryArticulationPlatform%2FShared%20Documents%2FCPL%20Workplan%20Dashboard%2FAttachments&viewid=562abb89%2D79c8%2D4db7%2Dbbbe%2D614229e53d64",
+    "description": "The CPL Initiative is a statewide effort led by the California Community Colleges Chancellor's Office to expand Credit for Prior Learning opportunities for veterans, working adults, and apprentices across all 116 colleges. Aligned with Vision 2030, the initiative builds AI-enhanced infrastructure, faculty-led credit recommendations, student-centered data systems, and strategic partnerships to ensure prior learning is recognized and applied toward degree completion and career advancement. The initiative has served over 43,000 students, transcribed 97,000+ units, and established the foundation for a permanent statewide CPL service."
+  },
+  "config_overrides": {},
+  "kpi_parameters": {}
+}
