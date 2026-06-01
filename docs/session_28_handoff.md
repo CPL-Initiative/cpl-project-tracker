@@ -59,6 +59,20 @@ WHAT SHIPPED IN SESSION 27 (all merged to main):
     (no-op until the secret is set; Bearer/APIM/x-api-key) + workflow env + the Teams
     spec sheet (docs/map_api_auth_handoff.md). Sam SENT it to MAP. DON'T re-add PII columns.
 
+⚠ FIRST (quick browser fix) — the v2 "🎓 Credential view (v2 · beta)" summary
+DOESN'T EXPAND on click (Sam, end of Session 27). The markup is valid native
+<details>/<summary> (statewide_interactive.js ~L364-372) and nothing preventDefaults
+the summary, so reproduce in a BROWSER w/ devtools: click the summary → does the
+<details> gain the `open` attribute?
+  - If YES (toggles) but nothing appears → #sw-cv-body is empty: confirm
+    buildCredentialView() ran (it's filled in renderRows at ~L578) + check console.
+  - If NO (doesn't toggle) → a click interception / CSS overlap from the v1
+    .sw-table-wrap or table; inspect what element is topmost at the summary.
+  Robust fix either way (~5 lines, low-risk): restore a VISIBLE disclosure chevron
+  (the marker is hidden at L205-206 — `list-style:none` + `::-webkit-details-marker
+  {display:none}` → no affordance) AND add an explicit JS toggle for `.sw-gallery-sum`
+  (click → toggle the parent <details>'s `open`). THEN proceed to PR-4.
+
 PRIORITY — PR-4: the prescriptive layer (SCOPED, producer-side). Per potential-adopter
 college, the recommended local course to articulate (turn adoption_leverage's ~48k
 "should-articulate" opportunities into a per-college "here's how to adopt" worklist).
@@ -118,6 +132,7 @@ redeploy + WAF (Session-26 #233, still inert); repo "Allow auto-merge" toggle.
 | Item | Status |
 |---|---|
 | EACR PR-1 / sort / PR-2 / PR-3 + MAP-auth pre-stage | **DONE + MERGED** (#244/#245/#246/#249/#248) |
+| **v2 Credential-view summary won't expand** | **KNOWN BUG — fix FIRST** (hidden marker / toggle; browser-devtools 5-min fix; see prompt) |
 | **PR-4 prescriptive layer** | **SCOPED (producer-side); next build** |
 | 3 audience views (Student/College/System) | queued (gallery renderers) |
 | Backlog: full credential merge (cpl_type as tag), CCR inverse, CSR rollup, curate-unclassified, college counts, mojibake | captured in the scope doc |
