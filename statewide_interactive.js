@@ -204,6 +204,8 @@
     + '.sw-gallery-sec{border:1px solid rgba(255,255,255,0.08);border-radius:6px;margin:0 0 0.6rem;}'
     + '.sw-gallery-sum{cursor:pointer;padding:0.55rem 0.8rem;font-size:0.82rem;font-weight:600;color:#C9A84C;list-style:none;}'
     + '.sw-gallery-sum::-webkit-details-marker{display:none;}'
+    + '.sw-gallery-sum::before{content:"▸";display:inline-block;margin-right:0.4rem;color:#C9A84C;transition:transform 0.15s ease;}'
+    + '.sw-gallery-sec[open]>.sw-gallery-sum::before{transform:rotate(90deg);}'
     + '.sw-gallery-tag{font-size:0.62rem;background:rgba(201,168,76,0.18);color:#C9A84C;padding:1px 5px;border-radius:3px;margin-left:0.35rem;font-weight:500;}'
     + '.cv-body{padding:0.4rem 0.8rem 1rem;}'
     + '.cv-note{font-size:0.66rem;color:rgba(255,255,255,0.5);padding:0.4rem 0;font-style:italic;}'
@@ -667,6 +669,22 @@
     });
 
     container.addEventListener("click", function (ev) {
+      // Gallery section disclosure (v1 table / v2 credential view). The native
+      // <details> marker is hidden for styling, so drive the open state in JS
+      // too — this is immune to any stacking/overflow quirk in the v1 table
+      // that could swallow the summary's native toggle. preventDefault stops the
+      // native toggle from racing ours (a double-toggle reads as "nothing happened").
+      var galSum = ev.target.closest(".sw-gallery-sum");
+      if (galSum) {
+        var galDet = galSum.closest("details");
+        if (galDet) {
+          ev.preventDefault();
+          if (galDet.open) galDet.removeAttribute("open");
+          else galDet.setAttribute("open", "");
+        }
+        return;
+      }
+
       // Show more potential colleges
       var showMore = ev.target.closest(".sw-show-more");
       if (showMore) {
