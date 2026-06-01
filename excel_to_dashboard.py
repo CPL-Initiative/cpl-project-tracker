@@ -74,24 +74,14 @@ _LOCAL_EXCEL = os.path.join(SCRIPT_DIR, "CPL_Initiative_Project_List_v3.xlsx")
 EXCEL_FILE = SHAREPOINT_EXCEL if os.path.exists(SHAREPOINT_EXCEL) else _LOCAL_EXCEL
 OUTPUT_FILE = os.path.join(SCRIPT_DIR, "CPL_Data.js")
 
-# SharePoint Excel-for-the-Web URL for the workbook. Used by the "Update"
-# buttons so they deep-link to the exact row/cell instead of just downloading.
-SHAREPOINT_EXCEL_URL = (
-    "https://studentrcc.sharepoint.com/:x:/r/sites/MilitaryArticulationPlatform/"
-    "Shared%20Documents/CCCCO/Claude%20Prompts/Projects/CPL%20Projects/"
-    "CPL%20Project%20Tracker/CPL_Initiative_Project_List_v3.xlsx"
-    "?d=wb836315f451d4e2cb03e6cf2b6af4568&csf=1&web=1&e=WJpt4H"
-)
-EXCEL_SHEET_NAME = "Project List"
-
-def excel_cell_url(row, col="P"):
-    """Build a SharePoint Excel-for-the-Web URL that opens at a specific cell."""
-    if not row:
-        return SHAREPOINT_EXCEL_URL
-    # activeCell uses 'Sheet Name'!Cell form; URL-encode the sheet name.
-    from urllib.parse import quote
-    sheet = quote(f"'{EXCEL_SHEET_NAME}'", safe="")
-    return f"{SHAREPOINT_EXCEL_URL}&activeCell={sheet}!{col}{row}"
+# NOTE (Excel-retirement P1, 2026-06-01): the card "Update" buttons used to be
+# SharePoint Excel-for-the-Web deep-links built by excel_cell_url() (a curator
+# clicked one and it opened Excel — the reported bug). The project cards are now
+# click-to-edit via projects_editor.js, so the per-card "Update" button triggers
+# the inline Latest Update editor instead. SHAREPOINT_EXCEL_URL / EXCEL_SHEET_NAME
+# / excel_cell_url() were removed here, and `excel_row` is no longer emitted.
+# (The workbook *path* SHAREPOINT_EXCEL/EXCEL_FILE above is still the data reader;
+# it retires in the P5 finale — see docs/kb-notes/excel-dependency-audit.md.)
 
 # ── CPL Knowledge Base (public GitHub repo) ──
 # Fetched at pipeline build time and embedded into the dashboard as window.CPL_KB
@@ -1158,9 +1148,9 @@ def build_projects_from_supabase(supabase_rows):
       and fmt_date read_projects() uses (idempotent on already-formatted values).
     - The ladder is left blank here (see module note above) — load_projects()
       enriches it from Excel for exact parity.
-    - `override` is None (verified unpopulated in Excel — a true no-op) and
-      `excel_row` is 0 here; load_projects() enriches excel_row from the
-      workbook so the "Open in Excel for the Web" deep-links keep working.
+    - `override` is None (verified unpopulated in Excel — a true no-op). The old
+      `excel_row` field is no longer emitted at all (the Excel "Update" deep-link
+      it fed was removed in Excel-retirement P1).
 
     Returns a list of project dicts (the 34 real grid-card projects).
     """
@@ -1197,7 +1187,6 @@ def build_projects_from_supabase(supabase_rows):
             "workplan_notes": row.get("wp_notes") or "",
             "kpi_order":     int(kpi_order_raw) if isinstance(kpi_order_raw, (int, float)) and kpi_order_raw else None,
             "override":      None,
-            "excel_row":     0,
         }
         proj.update(_empty_ladder())
         out.append(proj)
@@ -1211,9 +1200,10 @@ def load_projects(wb):
     Returns (projects, fetched_at, source) where:
       - projects: the read_projects()-shaped list = the 34 Supabase-sourced real
         projects. Each real project's KPI ladder is enriched from workplan_goals
-        (Phase 3 / PR-1; the Excel ladder is the per-project fallback); excel_row
-        still comes from the workbook. (The 15 Excel-only D.* sub-population
-        helper rows were retired as vestigial — nothing consumed their values.)
+        (Phase 3 / PR-1; the Excel ladder is the per-project fallback). (The 15
+        Excel-only D.* sub-population helper rows were retired as vestigial —
+        nothing consumed their values; `excel_row` is no longer enriched or
+        published either, as of Excel-retirement P1.)
       - fetched_at: 'YYYY-MM-DD' (today on a fresh fetch; the snapshot's date
         on fallback; today on the Excel fallback).
       - source: 'supabase' | 'snapshot' | 'excel'.
@@ -1223,7 +1213,6 @@ def load_projects(wb):
     ultimate safety net.
     """
     excel_projects = read_projects(wb)
-    excel_row_by_id = {p["id"]: p.get("excel_row", 0) for p in excel_projects}
     excel_ladder_by_id = {
         p["id"]: {k: v for k, v in p.items()
                   if k.startswith("kpi_goal_") or k.startswith("kpi_stretch_")}
@@ -1242,10 +1231,10 @@ def load_projects(wb):
         supa_rows, fetched_at, source = _load_proj_full()
         real = build_projects_from_supabase(supa_rows)
         # Enrich each real project's KPI ladder from workplan_goals (Phase 3 /
-        # PR-1), falling back to the per-project Excel ladder when wg lacks it;
-        # excel_row (Excel-web deep-links) still comes from the workbook.
+        # PR-1), falling back to the per-project Excel ladder when wg lacks it.
+        # (excel_row is no longer enriched — the Excel "Update" deep-link it fed
+        # was removed in Excel-retirement P1, 2026-06-01.)
         for p in real:
-            p["excel_row"] = excel_row_by_id.get(p["id"], 0)
             ladder = wg_ladder_by_id.get(p["id"]) or excel_ladder_by_id.get(p["id"])
             if ladder:
                 p.update(ladder)
@@ -1254,8 +1243,11 @@ def load_projects(wb):
     except Exception as e:
         print(f"  Projects: Supabase + snapshot unavailable ({e}); "
               f"falling back to Excel read_projects().")
-        # Excel fallback drops the retired D.* sub-population helper rows too.
+        # Excel fallback drops the retired D.* sub-population helper rows too, and
+        # strips excel_row (the deep-link it fed was removed in P1).
         excel_real = [p for p in excel_projects if not str(p["id"]).startswith("D.")]
+        for p in excel_real:
+            p.pop("excel_row", None)
         return excel_real, _now_pt().strftime("%Y-%m-%d"), "excel"
 
 
@@ -1672,7 +1664,6 @@ def build_activity_kpis(projects, activities=None):
             "workplan_notes": wp_note or f"Components: {sprint_details}",
             "status": "In Progress",
             "pct": sum(sp["pct"] for sp in sprint_projects) // len(sprint_projects),
-            "excel_row": sprint_projects[0].get("excel_row", 0),
             "sprint_components": [
                 {
                     "id": sp["id"],
@@ -1720,7 +1711,6 @@ def build_activity_kpis(projects, activities=None):
             "update_date":   p.get("update_date", ""),
             "status":        p.get("status", ""),
             "pct":           p.get("pct", 0),
-            "excel_row":     p.get("excel_row", 0),
         }
         # Include sprint components for 4.1
         if pid == "4.1" and "sprint_components" in p:
@@ -2100,9 +2090,10 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
 
                     html += '                </div>\n'
 
-                # Report + Update buttons
-                safe_id = kpi_pid.replace(".", "_")
-                excel_row = kpi.get("excel_row", 0)
+                # Report + Attach buttons. (The Excel "Update" deep-link was
+                # removed in Excel-retirement P1 — these activity-KPI cards are
+                # aggregates with no single editable row; curators edit the
+                # underlying project on its card in the Projects Grid below.)
                 btn_style = ('display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;'
                              'font-size:0.7rem;text-decoration:none;font-weight:600;'
                              'padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;'
@@ -2112,12 +2103,6 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                          f'style="{btn_style}color:#163A5F;background:#fafafa;"'
                          f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'">'
                          f'<span style="font-size:0.8rem;">&#128196;</span> Report</a>'
-                         f'<a href="{excel_cell_url(excel_row)}" target="_blank" rel="noopener" '
-                         f'class="update-btn" data-row="{excel_row}" data-col="P" '
-                         f'style="{btn_style}color:#FFFFFF;background:#C9A84C;"'
-                         f' onmouseover="this.style.background=\'#b89540\'" onmouseout="this.style.background=\'#C9A84C\'"'
-                         f' title="Open Excel for the Web at cell P{excel_row} ({EXCEL_SHEET_NAME})">'
-                         f'<span style="font-size:0.8rem;">&#9998;</span> Update</a>'
                          f'<a href="#" '
                          f'class="attach-btn" '
                          f'data-folder="{html_escape(str(kpi_pid) + " " + str(kpi.get("name", "")), quote=True)}" '
@@ -2657,14 +2642,13 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
-                <a href="{excel_cell_url(p.get('excel_row', 0))}" target="_blank" rel="noopener"
-                    class="update-btn" data-row="{p.get('excel_row', 0)}" data-col="P"
+                <a href="#" class="proj-update-btn" data-pid="{html_escape(str(pid), quote=True)}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
                     background:#C9A84C;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
-                    title="Open Excel for the Web at cell P{p.get('excel_row', '')} ({EXCEL_SHEET_NAME})">
+                    title="Add or edit this project's Latest Update (sign in to edit)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="{html_escape(str(pid) + ' ' + str(p.get('name', '')), quote=True)}"
@@ -8004,9 +7988,10 @@ def main():
     att_dir = ATTACHMENTS_DIR if os.path.isdir(ATTACHMENTS_DIR) else _LOCAL_ATTACHMENTS
     # Will scan after projects are read (need project list for subfolder creation)
     # Excel→Supabase Phase 2 (PR-4): the 34 real projects load from Supabase
-    # (with daily-snapshot + Excel fallbacks); excel_row still comes from the
-    # workbook. The KPI ladder is sourced from workplan_goals (Phase 3 / PR-1),
-    # and the 15 D.* sub-population helper rows were retired as vestigial.
+    # (with daily-snapshot + Excel fallbacks). The KPI ladder is sourced from
+    # workplan_goals (Phase 3 / PR-1), the 15 D.* sub-population helper rows were
+    # retired as vestigial, and `excel_row` is no longer published (the Excel
+    # "Update" deep-link it fed was removed in Excel-retirement P1).
     # Behavior-preserving — see kb/_test_projects_parity.py.
     projects, projects_fetched_at, projects_source = load_projects(wb)
     config_overrides = read_config_overrides(wb)
