@@ -1275,3 +1275,36 @@ CustomReport, so the fold keeps the snapshot current itself). 2 CLEAN adds, 1 SK
 - **Idempotent additive fold, no workflow_dispatch ceremony:** reads the committed overlay,
   only inserts NEW keys, diff is the review → ran `--apply` locally + committed. Re-runnable
   as curators assign more (SKIPs folded, rejects conflicts).
+
+### Batch triage at scale (#272 + #273) — 194→67 backlog
+
+Cleared 125 of the 194 by **batching the safe class only: "duplicate raw spelling → an
+EXISTING credential."** Method (re-usable for the next pass):
+1. **Surface candidates** by normalized match of each unclassified raw to the set of
+   *existing* `unified_title` values — exact-normalized token-set (batch 1, score 1.0,
+   slam-dunk) then fuzzy ≥0.72 (batch 2). Require a **unique** existing target (drop any raw
+   that matches >1).
+2. **Hand-vet with an explicit exclude-list** for the traps the fuzzy score can't see:
+   level drift (`Fire Inspector 2B`→`1B`), AP Calculus AB/BC subscore ambiguity, mismatched
+   multi-code cert bundles (Wildland S-130/S-110…), generic targets (`IW-Welding`→`Welding
+   Certification`).
+3. **Batch-insert** to Supabase `_UNCLASSIFIED::` via a `jsonb_array_elements` INSERT (one
+   JSONB literal, apostrophes doubled for the `'…'` wrapper) → overlay sync → `--apply`.
+
+**Learnings:**
+- **The V4 ripple-gate found a real KB-consistency bug, not just noise:** it blocked batch 2's
+  apply on **3 punctuation-variant DUPLICATE credentials** — the KB carries the same credential
+  twice (`History of Architecture I` *and* `1`; `ASE A4 — Suspension & Steering` *and* `…and
+  Steering`; `… — Command & Control` *and* `…: Command and Control`). My matcher picked spelling
+  A; the articulation layer inlines spelling B. Fix: **re-assign to the spelling the articulation
+  already uses** (both are valid credentials) → 0 ripple. The dup credentials themselves are a
+  separate cleanup. Takeaway: a ripple often means "two valid spellings," not "wrong" — align to
+  the articulation layer.
+- **The audit snapshot is very stale:** ~half of each batch (30/56, 65/127) came back **SKIP —
+  already classified**. The 2026-05-24 `latest.json` over-reports unclassified. The fold's
+  prune was extended to drop **all** overlay-assigned raws now classified (CLEAN + SKIP), so the
+  worklist + `unclassified_in_map` count self-heal toward truth without a full audit re-run
+  (which needs the PII-purged CustomReport).
+- **Know when to STOP batching:** the remaining 67 are the long tail — **~50 need a NEW credential
+  minted** (new `unified_title` + issuer, a `credentials.json` add), not a fold-into-existing.
+  That's per-item judgement (the `exhibit-canonicalization` skill), NOT safe to fuzzy-batch.
