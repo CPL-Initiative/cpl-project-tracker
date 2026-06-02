@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-01 (Session 27 — EACR consolidation + master-detail gallery + MAP-auth pre-stage)
+updated: 2026-06-01 (Session 28 — EACR PR-4 prescriptive layer + v2-toggle/contrast fixes)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -62,8 +62,9 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Reference — Windows PowerShell scripting gotchas (PS 5.1 + Task Scheduler)](kb-notes/reference-windows-powershell-gotchas.md) | reference | published | 2026-05-27 | 2026-05-27 |
 | [Reference — Session 26 codebase audit findings catalog (51 findings, ranked fix queue)](kb-notes/reference-codebase-audit-2026-06-01.md) | reference | published | 2026-06-01 | 2026-06-01 |
 | [Playbook — Purge committed PII from git history (CustomReport_latest.json; Rule-5-override force-push)](kb-notes/playbook-pii-history-purge.md) | playbook | published | 2026-06-01 | 2026-06-01 |
-| [Playbook — EACR consolidation + master-detail gallery scope (Local+CCC merge, versioned gallery, 3 audience views, 4-phase ladder, backlog)](kb-notes/eacr-consolidation-scope.md) | playbook | published | 2026-06-01 | 2026-06-01 (Session 27: PR-1→3 shipped) |
+| [Playbook — EACR consolidation + master-detail gallery scope (Local+CCC merge, versioned gallery, 3 audience views, 4-phase ladder, backlog)](kb-notes/eacr-consolidation-scope.md) | playbook | published | 2026-06-01 | 2026-06-01 (Session 28: PR-4 prescriptive layer SHIPPED) |
 | [Methodology — Versioned prototype gallery (preserve v1, stack v2, graduate the winner)](kb-notes/methodology-versioned-prototype-gallery.md) | methodology | published | 2026-06-01 | 2026-06-01 |
+| [Methodology — Styling a native &lt;details&gt;: keep a visible affordance, drive the toggle in JS](kb-notes/methodology-styling-native-details-toggle.md) | methodology | published | 2026-06-01 | 2026-06-01 |
 | [Playbook — Pre-stage optional auth before an external API enforces it (no-op until secret set)](kb-notes/playbook-prestage-optional-external-auth.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 
 ---
@@ -81,7 +82,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
 | [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR / Cred-Ref sync | Session 12 (Mode B complete) |
-| [`eacr_consolidation_lessons.md`](eacr_consolidation_lessons.md) | EACR consolidation + Local+CCC merge + master-detail gallery (v2) + MAP-auth pre-stage | **Session 27 (Bruh 27, 2026-06-01) NEW** |
+| [`eacr_consolidation_lessons.md`](eacr_consolidation_lessons.md) | EACR consolidation + Local+CCC merge + master-detail gallery (v2) + MAP-auth pre-stage + **PR-4 prescriptive layer + v2-toggle/contrast fixes** | **Session 28 (Bruh 28, 2026-06-01)** |
 | [`map_api_auth_handoff.md`](map_api_auth_handoff.md) | MAP CustomReport API auth coordination (Teams spec sheet + the no-op pre-stage activation steps) | **Session 27 (2026-06-01) NEW** |
 | [`exhibit_unification_vision.md`](exhibit_unification_vision.md) | Credential design doc | retrospective |
 | [`letter_curator_handoff.md`](letter_curator_handoff.md) | Letter Curator workstream | Session 10 |
@@ -120,6 +121,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 25 → 26 | Bruh 25 (handoff) | [`session_26_handoff.md`](session_26_handoff.md) |
 | 26 → 27 | Bruh 26 / Deuce-Six (handoff) | [`session_27_handoff.md`](session_27_handoff.md) |
 | 27 → 28 | Bruh 27 (handoff) | [`session_28_handoff.md`](session_28_handoff.md) |
+| 28 → 29 | Bruh 28 (handoff) | [`session_29_handoff.md`](session_29_handoff.md) |
 
 ---
 
