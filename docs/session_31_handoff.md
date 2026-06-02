@@ -118,7 +118,8 @@ dispatch once — docs/map_api_auth_handoff.md); Cloudflare worker redeploy + WA
 | College short-name dataset + chip resolver (#264) | **DONE + MERGED** (verified sound) |
 | CER economize cosmetic (#265) | **DONE + MERGED** |
 | CER unclassified-triage worklist PR-1 (#266) + daily sync PR-2 (#267) | **DONE + MERGED** |
-| CER triage tire-kick (#269) + PR-3 the FOLD (#270) | **DONE + MERGED — loop complete** (`kb/_fold_unclassified.py`; 2 folded, 192 unclassified remain) |
+| CER triage tire-kick (#269) + PR-3 the FOLD (#270) | **DONE + MERGED — loop complete** (`kb/_fold_unclassified.py`) |
+| CER triage batches 1+2 (#272 + #273) | **DONE + MERGED — 125 cleared, backlog 194→67.** Remaining 67 = long tail (~50 need NEW credentials → exhibit-canonicalization skill; rest ambiguous). V4 ripple-gate caught 3 punctuation-variant dup credentials. |
 | 3 audience views (Student/College/System) | **SCOPED; headline.** System needs a privacy ADR |
 | EACR v2 scope/generated-rec treatment | deferred (producer-side → next cron) |
 | MID curation passes (CompTIA A+ fragmentation) | backlog → Suggested-merges worklist |

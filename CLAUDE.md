@@ -1698,9 +1698,20 @@ NCCER Welding Level 1), 1 SKIP (Azure Admin — stale audit flag), `unified_titl
 COMPLETE end-to-end** (worklist #266 → sync #267 → assign #269 → fold #270). The CER baked payload
 surfaces folded titles as raw variants under existing credential rows on the next daily cron.
 
-**Carryover / next:** continue CER triage (≈190 raw titles remain, ≈48 clear credentials — re-run
-`kb/_fold_unclassified.py --apply` after more worklist assignments), then the rest of the Session-30
-queue: the **3 audience views** (Student/College/System — System needs a privacy ADR), **EACR v2**
+**CER triage — 125 of 194 cleared (#272 + #273), backlog 194→67.** Two vetted batches of
+"duplicate raw spelling → EXISTING credential" folds (53 exact-normalized + 71 fuzzy-≥0.72,
+both hand-reviewed with an exclude-list for level/subscore/bundle traps): real worklist
+assignments (Supabase `_UNCLASSIFIED::`, `map@rccd.edu`) → overlay → `kb/_fold_unclassified.py`.
+The **V4 articulation-ripple gate caught 3 punctuation-variant duplicate credentials** (KB carries
+the same credential twice, e.g. `History of Architecture I` vs `1`) → re-assigned to the
+articulation's spelling. Method: surface candidates by exact/fuzzy normalized match to existing
+credentials, hand-vet, batch-insert, fold (SKIP already-classified, CONFLICT-block mismatches).
+
+**Carryover / next:** the remaining **67** are the LONG TAIL — **~50 need a NEW credential
+created** (new `unified_title` + issuer, not a fold-into-existing) → the `exhibit-canonicalization`
+skill's domain (heavier, per-item judgment); the rest are genuinely ambiguous (AP Calculus AB/BC
+subscores, bare "Automotive", mismatched cert bundles). Then the rest of the Session-30 queue: the
+**3 audience views** (Student/College/System — System needs a privacy ADR), **EACR v2**
 scope/generated-rec (producer-side → next cron), **MID curation** (CompTIA A+ fragmentation →
 Suggested-merges worklist).
 
