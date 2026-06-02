@@ -237,6 +237,13 @@
       disc_modal: b.disc_modal || "",
       top_modal: b.top_modal || "",
       statewide: !!b.statewide,
+      // Session 29 CER enrichment — scope/CPL chips + statewide/generated rec +
+      // potential-adopter badges (rendered by renderScopeAndBadges).
+      has_local: !!b.has_local,
+      cpl_types: b.cpl_types || [],
+      ccc_rec: b.ccc_rec || "",
+      gen_rec: b.gen_rec || "",
+      potential_colleges: b.potential_colleges || [],
       articulations: b.articulations || [],
       n_articulation_lines: b.n_articulation_lines || 0,
       // The legacy raw_variants list is NOT included in baked (saves payload size);
@@ -1618,6 +1625,113 @@
     }
   }
 
+  // ── Session 29 CER enrichment: scope/CPL chips, statewide-or-generated credit
+  // rec, and green(articulated)/orange(potential) college badges. Injected CSS
+  // (cr-scope-css) keeps it self-contained — no HTML-template edit (Rule 4). ──
+  function ensureCerScopeCss() {
+    if (document.getElementById("cr-scope-css")) return;
+    var st = document.createElement("style");
+    st.id = "cr-scope-css";
+    st.textContent =
+      "#tab-credential-reference .cr-scope-block{margin:2px 0 14px;}" +
+      "#tab-credential-reference .cr-chips{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-bottom:7px;}" +
+      "#tab-credential-reference .cr-chip{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:600;border:1px solid transparent;}" +
+      "#tab-credential-reference .cr-chip-ccc{background:#0A2240;color:#fff;}" +
+      "#tab-credential-reference .cr-chip-local{background:#e8eef5;color:#0A2240;border-color:#cdd9e6;}" +
+      "#tab-credential-reference .cr-chip-gen{background:#FFF6E0;color:#7a5c00;border-color:#C9A84C;}" +
+      "#tab-credential-reference .cr-chip-none{background:#f1f5f9;color:#94a3b8;}" +
+      "#tab-credential-reference .cr-chip-cpl{background:#f1f5f9;color:#475569;border-color:#e2e8f0;font-weight:500;}" +
+      "#tab-credential-reference .cr-rec{font-size:.78rem;color:#334155;margin-bottom:8px;}" +
+      "#tab-credential-reference .cr-rec-label{font-weight:600;}" +
+      "#tab-credential-reference .cr-rec-ccc{color:#0A2240;}" +
+      "#tab-credential-reference .cr-rec-gen{color:#7a5c00;}" +
+      "#tab-credential-reference .cr-rec-val{font-family:ui-monospace,Menlo,monospace;}" +
+      "#tab-credential-reference .cr-badges{display:flex;flex-direction:column;gap:6px;margin-bottom:6px;}" +
+      "#tab-credential-reference .cr-badge-group{display:flex;flex-wrap:wrap;gap:4px;align-items:center;}" +
+      "#tab-credential-reference .cr-badge-grouplabel{font-size:.72rem;font-weight:600;color:#475569;margin-right:4px;}" +
+      "#tab-credential-reference .cr-college-badge{display:inline-block;padding:1px 7px;border-radius:9px;font-size:.68rem;font-weight:500;border:1px solid;}" +
+      "#tab-credential-reference .cr-badge-green{background:#e6f4ea;color:#1e7e45;border-color:#a7d8b9;}" +
+      "#tab-credential-reference .cr-badge-orange{background:#fff4e5;color:#b45309;border-color:#f0c894;}" +
+      "#tab-credential-reference .cr-badge-more{font-size:.68rem;color:#2563eb;cursor:pointer;text-decoration:underline;}";
+    document.head.appendChild(st);
+  }
+
+  // A label + capped list of college pills with an expandable "+N more".
+  function collegeBadgeGroup(label, names, cls, icon) {
+    var CAP = 12;
+    var g = el("div", { class: "cr-badge-group" });
+    g.appendChild(el("span", { class: "cr-badge-grouplabel" }, [icon + " " + label + " (" + names.length + ")"]));
+    names.slice(0, CAP).forEach(function (c) {
+      g.appendChild(el("span", { class: "cr-college-badge " + cls }, [c]));
+    });
+    if (names.length > CAP) {
+      var more = el("a", { href: "#", class: "cr-badge-more" }, ["+" + (names.length - CAP) + " more"]);
+      more.onclick = function (e) {
+        e.preventDefault();
+        names.slice(CAP).forEach(function (c) {
+          g.insertBefore(el("span", { class: "cr-college-badge " + cls }, [c]), more);
+        });
+        if (more.parentNode) more.parentNode.removeChild(more);
+      };
+      g.appendChild(more);
+    }
+    return g;
+  }
+
+  // The enrichment block: scope chips + CPL chips, the statewide/generated rec,
+  // and the articulated/potential college badges (the screenshot's green/orange).
+  function renderScopeAndBadges(r) {
+    ensureCerScopeCss();
+    var wrap = el("div", { class: "cr-scope-block" });
+
+    var chips = el("div", { class: "cr-chips" });
+    if (r.statewide) chips.appendChild(el("span", { class: "cr-chip cr-chip-ccc", title: "At least one CCC Collaborative (statewide) articulation." }, ["🏛 CCC"]));
+    if (r.has_local) chips.appendChild(el("span", { class: "cr-chip cr-chip-local", title: "At least one local-college articulation." }, ["🏠 Local"]));
+    if (!r.statewide && r.has_local) {
+      chips.appendChild(el("span", {
+        class: "cr-chip cr-chip-gen",
+        title: "No statewide CCC standard exists for this credential. Generated suggestion for consideration only — NOT an official CCC standard." + (r.gen_rec ? "\nSuggested: " + r.gen_rec : "")
+      }, ["⚙ CCC Generated · consideration only"]));
+    }
+    if (!r.statewide && !r.has_local) {
+      chips.appendChild(el("span", { class: "cr-chip cr-chip-none", title: "No common-course articulations resolved." }, ["— no articulations"]));
+    }
+    (r.cpl_types || []).forEach(function (t) {
+      chips.appendChild(el("span", { class: "cr-chip cr-chip-cpl", title: "CPL Type" }, [t]));
+    });
+    wrap.appendChild(chips);
+
+    if (r.statewide && r.ccc_rec) {
+      wrap.appendChild(el("div", { class: "cr-rec" }, [
+        el("span", { class: "cr-rec-label cr-rec-ccc" }, ["🏛 Statewide standard: "]),
+        el("span", { class: "cr-rec-val" }, [r.ccc_rec]),
+      ]));
+    } else if (!r.statewide && r.gen_rec) {
+      wrap.appendChild(el("div", { class: "cr-rec", title: "Best available recommendation from the M-ID/C-ID/CCN identities — for consideration only, not an official CCC standard." }, [
+        el("span", { class: "cr-rec-label cr-rec-gen" }, ["⚙ Generated (consideration only): "]),
+        el("span", { class: "cr-rec-val" }, [r.gen_rec]),
+      ]));
+    }
+
+    // Green = articulated (earning colleges across the identities); orange =
+    // potential adopters (adoption_leverage; over-merged already withheld upstream).
+    var adopters = {};
+    (r.articulations || []).forEach(function (a) {
+      (a.local || []).forEach(function (lc) {
+        (lc.colleges || []).forEach(function (c) { if (c) adopters[c] = 1; });
+      });
+    });
+    var green = Object.keys(adopters).sort();
+    var orange = (r.potential_colleges || []);
+    if (green.length || orange.length) {
+      var badges = el("div", { class: "cr-badges" });
+      if (green.length) badges.appendChild(collegeBadgeGroup("Articulated", green, "cr-badge-green", "✅"));
+      if (orange.length) badges.appendChild(collegeBadgeGroup("Potential adopters", orange, "cr-badge-orange", "○"));
+      wrap.appendChild(badges);
+    }
+    return wrap;
+  }
+
   function renderExpandedRow(r, colSpan) {
     // Lets a signed-in reviewer edit 4 fields: display title, issuing agency,
     // training agency, quality flag. Display-override pattern: the original
@@ -1631,6 +1745,11 @@
     var td = el("td", { colspan: String(colSpan) });
     var div = el("div", { class: "cr-expanded-body" });
     div.appendChild(renderCurationPanel(r));
+
+    // ── Scope + CPL chips, statewide/generated credit rec, and college badges
+    // (Session 29 CER enrichment) — sits between the curation header and the
+    // common-course identities table. ──
+    div.appendChild(renderScopeAndBadges(r));
 
     // ── Common-course identities articulating to this credential ──
     // Render a table per identity: identity badge on the left, local
