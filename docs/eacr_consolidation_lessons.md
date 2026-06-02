@@ -170,3 +170,75 @@ into the prescriptive layer. For the Student view, reuse `buildCredentialView` +
 `buildPrescriptiveHtml` as a new gallery renderer (v3) with a near-me/region
 filter; per the versioned-gallery methodology, keep v1/v2 untouched and graduate
 the winner.
+
+---
+
+## Session 29 — three grains complete (CCR inverse + CSR rollup) + EACR filter lift + CER enrichment (2026-06-02 · "Two-Niner")
+
+Resumed cold after a bricked/parallel-session scare. **First act: a diagnostic.**
+The alarming "10 sessions of work missing from `main`" was a **stale `origin/main`
+tracking ref** — the container's first `git fetch origin main <branch>` aborted on a
+non-existent remote branch, so `origin/main` never updated from its clone-time value.
+A clean `git fetch origin main` (alone) corrected it with a *forced update* (the
+Session-26 PII-purge force-push footprint) → divergence collapsed to `0 0`; branch ==
+`main` exactly. The real episode (frozen Session 28 + a parallel recovery session) had
+already self-healed: duplicate PRs #255/#257 were closed, the new work landed as #258.
+Captured in `playbook-resume-frozen-session-check-main-first.md`.
+
+### What shipped (4 PRs, all merged + live)
+- **#259 CCR inverse view** — mirror of the EACR: expand a CCR row → all aligned
+  exhibits/credentials. `_build_aligned_exhibits_by_course()` pivots
+  `coci_articulations.json` by `course_id` → committed lazy file
+  `unified_courses_aligned.js` (2,355 courses); consumer renders "🎓 N aligned …" in
+  the row-expand (reuses `.uc-member-table`, unions Phase-B `consolidated_from`). 13/13.
+- **#260 CSR rollup** — discipline grain: sortable **"CPL opportunities"** column on the
+  CSR tab + a credential-list modal. `_build_cpl_by_discipline()` rolls up by discipline
+  (sourced from the minted catalogs — the articulations' own `identities` map keys only
+  ~381/2,355 re-minted course_ids) → `kb/discipline_cpl_rollup.json` (97 disciplines).
+  12/12. **Completes "same data, three grains": CER/EACR (credential) · CCR (course) ·
+  CSR (discipline).**
+- **#261 EACR filter lift + darker titles** — filters were *inside* the v1 `<details>`
+  (hidden on collapse, unshared). Lifted search + filters into a page-level dark bar
+  above the gallery. Darkened `.sw-gallery-sum` gold `#C9A84C` (washed out on the light
+  page) → navy `#0A2240`. Consumer-only. 13/13.
+- **#262 CER enrichment** — per credential's expanded detail: scope chips (🏛 CCC + 🏠
+  Local; "⚙ CCC Generated · consideration only" when only Local), CPL-type chips, the
+  statewide standard rec (modal CCC) or a generated suggestion (modal, labeled
+  not-official per §11), green(articulated)/orange(potential) college badges + "+N more".
+  Producer emits 5 new fields from `coci_articulations.json`; consumer
+  `renderScopeAndBadges()`. 17/17.
+
+### Learned this checkpoint
+- **CER producer regenerates from committed inputs → ship live-on-merge.** Unlike the
+  EACR (`statewide_data.js` needs the raw MAP pull, absent locally → next-cron),
+  `export_credential_reference()` reads only `kb/*.json`, so I regenerated
+  `credential_reference_data.js` locally + committed it. Generalized in
+  `methodology-ship-generator-changes-live-on-merge.md`.
+- **Watch the adapter.** `adaptBakedRow()` whitelists fields — new producer fields are
+  silently dropped at the consumer until added there. Caught in the build, not by Sam.
+- **Daily cron = mid-flight merge hazard for generated files.** #262 went `dirty` when
+  the 2026-06-02 daily run regenerated `credential_reference_data.js` on `main`. Fix:
+  rebase onto main, **re-run the producer** to regenerate (never hand-merge a minified
+  one-liner), verify additive-only vs the new main, force-push.
+- **jsdom-test the real consumer** — ran each actual `*.js` IIFE in jsdom with a minimal
+  fixture + stubbed `fetch`; caught the CSR grouped-by-default render + the thead-row
+  selector quirk, and proved the EACR filter wiring survived the bar move.
+
+### Current state
+Three grains all live (CER/EACR · CCR inverse · CSR rollup); EACR gallery filters
+page-level (primed for more views). New committed artifacts: `unified_courses_aligned.js`,
+`kb/discipline_cpl_rollup.json` (both in the daily git-add); new generators
+`kb/_build_aligned_exhibits.py`, `kb/_build_cpl_by_discipline.py`.
+
+### Strategic roadmap / next
+- **CER unclassified-triage** (the original "CER triage") — assign a unified_title to
+  the 105 unclassified exhibits.
+- **EACR v2** version of the CER scope/generated-rec treatment (producer-side → next cron).
+- **MID curation passes** (CompTIA A+ fragmentation) → Suggested-merges worklist;
+  tightens the CCR/CER/CSR lists automatically.
+- **The 3 audience views** (Student/College/System) — still the headline; System needs a
+  privacy ADR first.
+
+### Next concrete step
+CER unclassified-triage OR the Student audience view (v3 gallery renderer, reuse
+`buildCredentialView` + `buildPrescriptiveHtml` + a near-me filter; keep v1/v2 untouched).
