@@ -1,5 +1,5 @@
 {
-  "_generated_at": "2026-06-02T18:12:57Z",
+  "_generated_at": "2026-06-02T18:28:23Z",
   "mode": "apply",
   "gates": {
     "V1_apply_safe": true,
@@ -10,27 +10,427 @@
   "apply_safe": true,
   "clean": [
     {
+      "raw": "AP - Psychology",
+      "assigned": "AP Psychology",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP 2-D Art and Design",
+      "assigned": "AP 2-D Art and Design",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP English Language Composition",
+      "assigned": "AP English Language & Composition",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP Exam: Computer Science Principles",
+      "assigned": "AP Computer Science Principles",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP Exam: English Language and Composition",
+      "assigned": "AP English Language and Composition",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP:  Human Geography",
+      "assigned": "AP Human Geography",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: Art History",
+      "assigned": "AP Art History",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: Chemistry",
+      "assigned": "AP Chemistry",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: Comparative Government & Politics",
+      "assigned": "AP Comparative Government & Politics",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: English Language & Composition",
+      "assigned": "AP English Language & Composition",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: Environmental  Science",
+      "assigned": "AP Environmental Science",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: German Language & Culture",
+      "assigned": "AP German Language & Culture",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: Music Theory",
+      "assigned": "AP Music Theory",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: Physics C- Mechanics",
+      "assigned": "AP Physics C: Mechanics",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Advanced Metal Framing",
+      "assigned": "Advanced Metal Framing",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Bus Operator",
+      "assigned": "Bus Operator",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "CLEP Exam: Human Growth and Development",
+      "assigned": "CLEP Human Growth and Development",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "CLP – C CERTIFIED PROFESSIONAL PROGRAMMER",
+      "assigned": "CLP — C Certified Professional Programmer",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "CPP – C++ CERTIFIED PROFESSIONAL PROGRAMMER",
+      "assigned": "CPP — C++ Certified Professional Programmer",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Cosmetology License",
+      "assigned": "Cosmetology License",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Firefighter 1 Certification",
+      "assigned": "Firefighter 1",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Foreman Training",
+      "assigned": "Foreman Training",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Framing Ceilings and Soffits",
+      "assigned": "Framing Ceilings and Soffits",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "MICROSOFT OFFICE SPECIALIST OUTLOOK CERTIFICATION",
+      "assigned": "Microsoft Office Specialist — Outlook",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Spanish I",
+      "assigned": "Spanish I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Spanish II",
+      "assigned": "Spanish II",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    }
+  ],
+  "skip": [
+    {
+      "raw": "Artificial Intelligence: Prompt Engineering and AI Systems",
+      "assigned": "Artificial Intelligence: Prompt Engineering and AI Systems",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Basic Pharmacology",
+      "assigned": "Basic Pharmacology",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "COMPTIA LINUX+",
       "assigned": "CompTIA Linux+",
       "issuer": "CompTIA",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:02:32Z"
+      "reviewed_at": "2026-06-02T18:02:32Z",
+      "why": "already classified to the same target"
     },
     {
-      "raw": "NCCER Welding Level 1",
-      "assigned": "NCCER Welding Level 1",
-      "issuer": "NCCER",
+      "raw": "Certified Bloodstain Pattern Analyst (CBPA) Certification",
+      "assigned": "Certified Bloodstain Pattern Analyst (CBPA)",
+      "issuer": "",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:02:32Z"
-    }
-  ],
-  "skip": [
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Certified Crime Scene Investigator (CCSI) Certification",
+      "assigned": "Certified Crime Scene Investigator (CCSI)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Certified Footwear Examiner (CFE) Certification",
+      "assigned": "Certified Footwear Examiner (CFE)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Certified Forensic Photographer (CFP) Certification",
+      "assigned": "Certified Forensic Photographer (CFP)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Certified Latent Print Examiner (CLPE) Certification",
+      "assigned": "Certified Latent Print Examiner (CLPE)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Community and the Justice System",
+      "assigned": "Community and the Justice System",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Crime Scene Management and Forensic Evidence",
+      "assigned": "Crime Scene Management and Forensic Evidence",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Crime and Delinquency",
+      "assigned": "Crime and Delinquency",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Criminal Court Process",
+      "assigned": "Criminal Court Process",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Criminal Investigation",
+      "assigned": "Criminal Investigation",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Digital Forensics Fundamentals",
+      "assigned": "Digital Forensics Fundamentals",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Human Resource Management",
+      "assigned": "Human Resource Management",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Introduction to Computer Information Systems",
+      "assigned": "Introduction to Computer Information Systems",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Introduction to Computer Programming",
+      "assigned": "Introduction to Computer Programming",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Introduction to Energy Surveying",
+      "assigned": "Introduction to Energy Surveying",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Introduction to the Linux Operating System",
+      "assigned": "Introduction to the Linux Operating System",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Juvenile Procedures",
+      "assigned": "Juvenile Procedures",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Legal Aspects of Evidence",
+      "assigned": "Legal Aspects of Evidence",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Metal Building Erection I / Foreman Training",
+      "assigned": "Metal Building Erection I / Foreman Training",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
     {
       "raw": "Microsoft Azure Administrator",
       "assigned": "Microsoft Certified: Azure Administrator Associate",
       "issuer": "Microsoft",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:02:32Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "NCCER Welding Level 1",
+      "assigned": "NCCER Welding Level 1",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:02:32Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Nursing Process 2",
+      "assigned": "Nursing Process 2",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Pathophysiology for Nursing",
+      "assigned": "Pathophysiology for Nursing",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Social Equity and the Criminal Justice System",
+      "assigned": "Social Equity and the Criminal Justice System",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Transportation Management",
+      "assigned": "Transportation Management",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Violence in America",
+      "assigned": "Violence in America",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Web Page Development and Publishing",
+      "assigned": "Web Page Development and Publishing",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z",
       "why": "already classified to the same target"
     }
   ],

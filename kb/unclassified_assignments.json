@@ -1,26 +1,291 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-02T18:13:34Z",
-  "count": 3,
+  "_synced_at": "2026-06-02T18:27:09Z",
+  "count": 56,
   "assignments": {
+    "AP - Psychology": {
+      "unified_title": "AP Psychology",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP 2-D Art and Design": {
+      "unified_title": "AP 2-D Art and Design",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP English Language Composition": {
+      "unified_title": "AP English Language & Composition",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP Exam: Computer Science Principles": {
+      "unified_title": "AP Computer Science Principles",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP Exam: English Language and Composition": {
+      "unified_title": "AP English Language and Composition",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP:  Human Geography": {
+      "unified_title": "AP Human Geography",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP: Art History": {
+      "unified_title": "AP Art History",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP: Chemistry": {
+      "unified_title": "AP Chemistry",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP: Comparative Government & Politics": {
+      "unified_title": "AP Comparative Government & Politics",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP: English Language & Composition": {
+      "unified_title": "AP English Language & Composition",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP: Environmental  Science": {
+      "unified_title": "AP Environmental Science",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP: German Language & Culture": {
+      "unified_title": "AP German Language & Culture",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP: Music Theory": {
+      "unified_title": "AP Music Theory",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP: Physics C- Mechanics": {
+      "unified_title": "AP Physics C: Mechanics",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Advanced Metal Framing": {
+      "unified_title": "Advanced Metal Framing",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Artificial Intelligence: Prompt Engineering and AI Systems": {
+      "unified_title": "Artificial Intelligence: Prompt Engineering and AI Systems",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Basic Pharmacology": {
+      "unified_title": "Basic Pharmacology",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Bus Operator": {
+      "unified_title": "Bus Operator",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "CLEP Exam: Human Growth and Development": {
+      "unified_title": "CLEP Human Growth and Development",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "CLP – C CERTIFIED PROFESSIONAL PROGRAMMER": {
+      "unified_title": "CLP — C Certified Professional Programmer",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
     "COMPTIA LINUX+": {
       "unified_title": "CompTIA Linux+",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:02:32.590984+00:00",
+      "reviewed_at": "2026-06-02T18:02:32Z",
       "issuing_agency": "CompTIA"
+    },
+    "CPP – C++ CERTIFIED PROFESSIONAL PROGRAMMER": {
+      "unified_title": "CPP — C++ Certified Professional Programmer",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Certified Bloodstain Pattern Analyst (CBPA) Certification": {
+      "unified_title": "Certified Bloodstain Pattern Analyst (CBPA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Certified Crime Scene Investigator (CCSI) Certification": {
+      "unified_title": "Certified Crime Scene Investigator (CCSI)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Certified Footwear Examiner (CFE) Certification": {
+      "unified_title": "Certified Footwear Examiner (CFE)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Certified Forensic Photographer (CFP) Certification": {
+      "unified_title": "Certified Forensic Photographer (CFP)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Certified Latent Print Examiner (CLPE) Certification": {
+      "unified_title": "Certified Latent Print Examiner (CLPE)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Community and the Justice System": {
+      "unified_title": "Community and the Justice System",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Cosmetology License": {
+      "unified_title": "Cosmetology License",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Crime Scene Management and Forensic Evidence": {
+      "unified_title": "Crime Scene Management and Forensic Evidence",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Crime and Delinquency": {
+      "unified_title": "Crime and Delinquency",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Criminal Court Process": {
+      "unified_title": "Criminal Court Process",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Criminal Investigation": {
+      "unified_title": "Criminal Investigation",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Digital Forensics Fundamentals": {
+      "unified_title": "Digital Forensics Fundamentals",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Firefighter 1 Certification": {
+      "unified_title": "Firefighter 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Foreman Training": {
+      "unified_title": "Foreman Training",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Framing Ceilings and Soffits": {
+      "unified_title": "Framing Ceilings and Soffits",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Human Resource Management": {
+      "unified_title": "Human Resource Management",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Introduction to Computer Information Systems": {
+      "unified_title": "Introduction to Computer Information Systems",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Introduction to Computer Programming": {
+      "unified_title": "Introduction to Computer Programming",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Introduction to Energy Surveying": {
+      "unified_title": "Introduction to Energy Surveying",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Introduction to the Linux Operating System": {
+      "unified_title": "Introduction to the Linux Operating System",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Juvenile Procedures": {
+      "unified_title": "Juvenile Procedures",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Legal Aspects of Evidence": {
+      "unified_title": "Legal Aspects of Evidence",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "MICROSOFT OFFICE SPECIALIST OUTLOOK CERTIFICATION": {
+      "unified_title": "Microsoft Office Specialist — Outlook",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Metal Building Erection I / Foreman Training": {
+      "unified_title": "Metal Building Erection I / Foreman Training",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
     },
     "Microsoft Azure Administrator": {
       "unified_title": "Microsoft Certified: Azure Administrator Associate",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:02:32.590984+00:00",
+      "reviewed_at": "2026-06-02T18:02:32Z",
       "issuing_agency": "Microsoft"
     },
     "NCCER Welding Level 1": {
       "unified_title": "NCCER Welding Level 1",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:02:32.590984+00:00",
+      "reviewed_at": "2026-06-02T18:02:32Z",
       "issuing_agency": "NCCER"
+    },
+    "Nursing Process 2": {
+      "unified_title": "Nursing Process 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Pathophysiology for Nursing": {
+      "unified_title": "Pathophysiology for Nursing",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Social Equity and the Criminal Justice System": {
+      "unified_title": "Social Equity and the Criminal Justice System",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Spanish I": {
+      "unified_title": "Spanish I",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Spanish II": {
+      "unified_title": "Spanish II",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Transportation Management": {
+      "unified_title": "Transportation Management",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Violence in America": {
+      "unified_title": "Violence in America",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Web Page Development and Publishing": {
+      "unified_title": "Web Page Development and Publishing",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
     }
   }
 }

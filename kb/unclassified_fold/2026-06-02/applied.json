@@ -1,21 +1,189 @@
 {
   "folded": [
     {
-      "raw": "COMPTIA LINUX+",
-      "assigned": "CompTIA Linux+",
-      "issuer": "CompTIA",
+      "raw": "AP - Psychology",
+      "assigned": "AP Psychology",
+      "issuer": "",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:02:32Z"
+      "reviewed_at": "2026-06-02T18:25:47Z"
     },
     {
-      "raw": "NCCER Welding Level 1",
-      "assigned": "NCCER Welding Level 1",
-      "issuer": "NCCER",
+      "raw": "AP 2-D Art and Design",
+      "assigned": "AP 2-D Art and Design",
+      "issuer": "",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-02T18:02:32Z"
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP English Language Composition",
+      "assigned": "AP English Language & Composition",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP Exam: Computer Science Principles",
+      "assigned": "AP Computer Science Principles",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP Exam: English Language and Composition",
+      "assigned": "AP English Language and Composition",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP:  Human Geography",
+      "assigned": "AP Human Geography",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: Art History",
+      "assigned": "AP Art History",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: Chemistry",
+      "assigned": "AP Chemistry",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: Comparative Government & Politics",
+      "assigned": "AP Comparative Government & Politics",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: English Language & Composition",
+      "assigned": "AP English Language & Composition",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: Environmental  Science",
+      "assigned": "AP Environmental Science",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: German Language & Culture",
+      "assigned": "AP German Language & Culture",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: Music Theory",
+      "assigned": "AP Music Theory",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "AP: Physics C- Mechanics",
+      "assigned": "AP Physics C: Mechanics",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Advanced Metal Framing",
+      "assigned": "Advanced Metal Framing",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Bus Operator",
+      "assigned": "Bus Operator",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "CLEP Exam: Human Growth and Development",
+      "assigned": "CLEP Human Growth and Development",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "CLP – C CERTIFIED PROFESSIONAL PROGRAMMER",
+      "assigned": "CLP — C Certified Professional Programmer",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "CPP – C++ CERTIFIED PROFESSIONAL PROGRAMMER",
+      "assigned": "CPP — C++ Certified Professional Programmer",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Cosmetology License",
+      "assigned": "Cosmetology License",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Firefighter 1 Certification",
+      "assigned": "Firefighter 1",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Foreman Training",
+      "assigned": "Foreman Training",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Framing Ceilings and Soffits",
+      "assigned": "Framing Ceilings and Soffits",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "MICROSOFT OFFICE SPECIALIST OUTLOOK CERTIFICATION",
+      "assigned": "Microsoft Office Specialist — Outlook",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Spanish I",
+      "assigned": "Spanish I",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    {
+      "raw": "Spanish II",
+      "assigned": "Spanish II",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:25:47Z"
     }
   ],
   "credential_added": [],
-  "audit_pruned": 2,
-  "unified_titles_count": 3276
+  "audit_pruned": 54,
+  "unified_titles_count": 3302
 }
