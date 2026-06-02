@@ -1,0 +1,21 @@
+{
+  "folded": [
+    {
+      "raw": "COMPTIA LINUX+",
+      "assigned": "CompTIA Linux+",
+      "issuer": "CompTIA",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:02:32Z"
+    },
+    {
+      "raw": "NCCER Welding Level 1",
+      "assigned": "NCCER Welding Level 1",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:02:32Z"
+    }
+  ],
+  "credential_added": [],
+  "audit_pruned": 2,
+  "unified_titles_count": 3276
+}
