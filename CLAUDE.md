@@ -1634,6 +1634,66 @@ scope/generated-rec treatment (producer-side → next cron) · MID curation pass
 A+ fragmentation → Suggested-merges worklist) · the 3 audience views (Student first;
 System needs a privacy ADR). Pipeline viz correctly SKIPPED — no M-ID pipeline movement.
 
+### Session 30 — college short-names + CER economize + unclassified-triage worklist (shipped 2026-06-02)
+
+Opened with a **curator dataset add** (Sam's ask), then cleared CER polish + started the
+queue's CER triage. **4 PRs merged.** None touched the M-ID pipeline → pipeline viz skipped.
+
+- **#264 College short-name dataset + chip resolver** — Sam supplied a 118-row
+  CollegeName→short-name table to shrink the college chips. `kb/_seed_college_short_names.py`
+  (one-shot, idempotent) emits the KB source-of-truth `kb/college_short_names.json` +
+  the on-page `college_short_names.js` (`window.CPL_COLLEGE_SHORT` + `window.cplCollegeShort(name[,style])`
+  resolver: exact → **normalized** fallback that folds funding suffixes (Credit/Non-Credit),
+  Community/Junior, the `Cañada`/`Canada`/mojibake-`CaÃ±ada` trio, and the West Hills→Coalinga/Lemoore
+  rename — one short per campus across every spelling). `<script>`-loaded in both HTMLs;
+  CCR/EACR/CER chips wired via a lazy `SHORT()` helper. **Title Case** default (both casings
+  stored). Storage = **committed, NOT Supabase** (static reference data — like `college_lookup.js`).
+  Re-verified this session: seed re-runs **byte-identical** (sound), 122/123 chip names resolve
+  (the 1 miss is a junk `CA MAP INITIATIVE COLLEGE` placeholder, safe full-name fallback).
+  Reference note: `docs/kb-notes/reference-college-short-names.md`.
+- **#265 CER economize (cosmetic, consumer-only `credential_reference.js`)** — 4 curator asks:
+  (1) the per-row **Curate** panel is now behind a collapsed `✎ Curate` button (persists in
+  `state.curateOpen`); (2) the unclear **"Scope" column was folded into title-level chips**
+  (compact 🏛 CCC / 🏠 Local / ⚙ Generated + CPL-type under each unified title; column 12→11);
+  (3) **common-course identity rows collapse to ONE row per identity** (was rowspan'd per local
+  course — local codes inline w/ titles on hover, colleges a deduped short-name union); (4)
+  **Unified Title left-justified**. New CSS via the JS-injected `cr-scope-css` (no HTML edit).
+  jsdom 20/20.
+- **#266 CER unclassified-triage worklist (PR-1)** — the original "CER triage" ask. A
+  `⚠ Triage unclassified (N)` toolbar button opens a worklist over the **194 raw MAP exhibit
+  titles** the exhibit auditor flagged `unclassified_in_map` (no `unified_titles.json` entry).
+  Lazily fetches the committed audit snapshot `kb/exhibit_audit/latest.json` (no producer/cron
+  change). Each row: raw title + assign-unified-title input (datalist typeahead over the 1,969
+  existing credentials, or type new) + optional issuer + Save. Writes to Supabase `kb_curation`
+  under a new **`_UNCLASSIFIED::<raw_title>`** namespace (`unified_title_assignment` /
+  `issuing_agency_assignment`) — **no schema migration** (generic course_id/field/value table).
+  In-place row updates on save (unsaved sibling input preserved); progress counter; clear.
+  Overlay-only display (mirrors the original CER PR-B MVP). jsdom 18/18.
+- **#267 unclassified-triage daily sync (PR-2)** — `kb/_apply_unclassified_triage.py` folds the
+  `_UNCLASSIFIED::` rows into the git-canonical overlay `kb/unclassified_assignments.json`
+  (mirrors `_apply_credential_review.py`; idempotent — no rewrite when unchanged → no empty-overlay
+  daily churn). Wired into the daily "Sync curation overlay" step (guarded on `SUPABASE_SERVICE_KEY`)
+  + git-add. Synthetic-tested 9/9.
+
+**Patterns / learnings:** (1) **`kb_curation` synthesized-namespace** = add a whole curation
+surface with ZERO schema migration — new `course_id` prefix + `field` values on the generic
+`(course_id, field, value)` table. Now used 4× (`_CREDENTIAL_REVIEW`, `_CANON_SUBJ4`, `_EACR_FLAG`,
+`_UNCLASSIFIED`). New KB note `methodology-kb-curation-synthesized-namespace.md`. (2) **Runtime-fetch
+a committed snapshot** to drive a worklist (audit `latest.json`) — single-file, no producer/cron
+coupling, good for an MVP. (3) **In-place DOM row updates** beat full re-render when a save mustn't
+wipe sibling unsaved input. (4) **jsdom needs a `url:`** option or `sessionStorage` throws
+`SecurityError: opaque origin`. (5) **Reusing the one session branch** after each squash-merge =
+`git reset --hard origin/main` then **`git push --force-with-lease`** (the remote branch still points
+at the pre-squash head — non-fast-forward is expected).
+
+**Carryover / next:** **CER triage PR-3** — the FOLD: a dry-run-first apply that promotes confirmed
+`unclassified_assignments.json` entries into `kb/unified_titles.json` + `kb/credentials.json` (and
+surfaces them as credential rows / removes them from the unclassified list); KB-mutation (ripples into
+`coci_articulations.json`'s inlined `unified_title`), so its own PR with V-gates. Then the rest of the
+Session-30 queue: the **3 audience views** (Student/College/System — System needs a privacy ADR),
+**EACR v2** scope/generated-rec (producer-side → next cron), **MID curation** (CompTIA A+ fragmentation
+→ Suggested-merges worklist).
+
 ---
 
 ## Troubleshooting
