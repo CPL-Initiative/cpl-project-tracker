@@ -543,6 +543,7 @@
     flagOnly: false,
     sort: { key: "unified_title", dir: "asc" },
     expanded: {},  // unified_title → bool (row body open)
+    curateOpen: {},  // unified_title → bool (per-row Curate panel open; default collapsed)
     // Sign-in feedback lives IN the auth widget (not a corner toast) so
     // curators can't miss it. pendingSignInEmail = "user@example.com" after
     // a successful OTP request; pendingSignInError = "msg" after a failure.
@@ -939,6 +940,7 @@
   }
 
   function render() {
+    ensureCerScopeCss();  // scope/CPL chip styles now also used at the title level (collapsed rows)
     var filtered = state.rows.filter(function (r) { return passesFilter(r, state); });
     filtered = sortRows(filtered, state.sort);
     renderSummary(state.rows, filtered);
@@ -954,8 +956,6 @@
       { key: "unified_title",   label: "Unified Title" },
       { key: "raw_count",       label: "Variants",
         title: "Number of distinct raw MAP titles collapsed under this unified title." },
-      { key: "statewide",       label: "Scope",
-        title: "🏛 Statewide if any articulation is CCC Collaborative; 🏠 Local otherwise. — = no articulations resolved." },
       { key: "disc_modal",      label: "Discipline",
         title: "Predominant MQ discipline across this credential's articulated common courses." },
       { key: "primary_issuer",  label: "Issuing Agency" },
@@ -1142,26 +1142,13 @@
         title: "Display label curated · originally: " + r.unified_title
       }, [" ✎"]));
     }
+    // Scope + CPL chips at the title level (the Scope column was folded into
+    // these — same chips the curator liked from the expanded enrichment block).
+    var tchips = crTitleChips(r);
+    if (tchips) titleTd.appendChild(tchips);
     tr.appendChild(titleTd);
 
     tr.appendChild(el("td", null, [String(r.raw_count)]));
-
-    // Scope badge — Statewide vs Local, computed from any articulation's
-    // collaborative_type ("CCC" / "CCC Collaborative" → statewide).
-    var scopeTd = el("td", { class: "cr-scope-cell" });
-    if (r.articulations && r.articulations.length) {
-      scopeTd.appendChild(r.statewide
-        ? el("span", { class: "cr-scope-badge cr-scope-state",
-                       title: "At least one articulation is CCC Collaborative" },
-             ["🏛 Statewide"])
-        : el("span", { class: "cr-scope-badge cr-scope-local",
-                       title: "All articulations are local (no CCC Collaborative)" },
-             ["🏠 Local"]));
-    } else {
-      scopeTd.appendChild(el("span", { class: "cr-null",
-        title: "No common-course articulations resolved for this credential" }, ["—"]));
-    }
-    tr.appendChild(scopeTd);
 
     // Discipline column — modal MQ discipline across this credential's
     // articulations (blank if no articulations).
@@ -1652,7 +1639,17 @@
       "#tab-credential-reference .cr-college-badge{display:inline-block;padding:1px 7px;border-radius:9px;font-size:.68rem;font-weight:500;border:1px solid;}" +
       "#tab-credential-reference .cr-badge-green{background:#e6f4ea;color:#1e7e45;border-color:#a7d8b9;}" +
       "#tab-credential-reference .cr-badge-orange{background:#fff4e5;color:#b45309;border-color:#f0c894;}" +
-      "#tab-credential-reference .cr-badge-more{font-size:.68rem;color:#2563eb;cursor:pointer;text-decoration:underline;}";
+      "#tab-credential-reference .cr-badge-more{font-size:.68rem;color:#2563eb;cursor:pointer;text-decoration:underline;}" +
+      // Scope/CPL chips under the unified title on collapsed rows (compact).
+      "#tab-credential-reference .cr-title-chips{display:flex;flex-wrap:wrap;gap:4px;margin:3px 0 0 18px;}" +
+      "#tab-credential-reference .cr-title-chips .cr-chip{font-size:.62rem;padding:1px 6px;}" +
+      // Left-justify the Unified Title column (header + body) — overrides the
+      // global center-align with higher specificity.
+      "#tab-credential-reference table.cr-table td.cr-title-cell{text-align:left;}" +
+      "#tab-credential-reference table.cr-table th:nth-child(2){text-align:left;}" +
+      // Curate panel is now behind this toggle button (default collapsed).
+      "#tab-credential-reference .cr-curate-toggle{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;color:#0A2240;font-size:.74rem;font-weight:600;cursor:pointer;padding:3px 10px;margin-bottom:8px;}" +
+      "#tab-credential-reference .cr-curate-toggle:hover{background:#e2e8f0;}";
     document.head.appendChild(st);
   }
 
@@ -1685,6 +1682,30 @@
 
   // The enrichment block: scope chips + CPL chips, the statewide/generated rec,
   // and the articulated/potential college badges (the screenshot's green/orange).
+  // Compact scope + CPL-type chips shown UNDER the unified title on the
+  // collapsed row (replaces the old standalone "Scope" column). Same chip
+  // vocabulary as the expanded enrichment block, just smaller. Returns null
+  // when there's nothing to show so the title stays clean.
+  function crTitleChips(r) {
+    var c = el("div", { class: "cr-title-chips" });
+    if (r.statewide) {
+      c.appendChild(el("span", { class: "cr-chip cr-chip-ccc", title: "At least one CCC Collaborative (statewide) articulation." }, ["🏛 CCC"]));
+    }
+    if (r.has_local) {
+      c.appendChild(el("span", { class: "cr-chip cr-chip-local", title: "At least one local-college articulation." }, ["🏠 Local"]));
+    }
+    if (!r.statewide && r.has_local) {
+      c.appendChild(el("span", { class: "cr-chip cr-chip-gen", title: "No statewide CCC standard — generated suggestion for consideration only, NOT an official CCC standard." + (r.gen_rec ? "\nSuggested: " + r.gen_rec : "") }, ["⚙ Generated"]));
+    }
+    if (!r.statewide && !r.has_local && !(r.articulations && r.articulations.length)) {
+      c.appendChild(el("span", { class: "cr-chip cr-chip-none", title: "No common-course articulations resolved." }, ["— no articulations"]));
+    }
+    (r.cpl_types || []).forEach(function (t) {
+      c.appendChild(el("span", { class: "cr-chip cr-chip-cpl", title: "CPL Type" }, [t]));
+    });
+    return c.childNodes.length ? c : null;
+  }
+
   function renderScopeAndBadges(r) {
     ensureCerScopeCss();
     var wrap = el("div", { class: "cr-scope-block" });
@@ -1746,10 +1767,28 @@
     // declarations the very first append below threw a ReferenceError, which
     // aborted the table render and left the tab blank on expand. Restored
     // 2026-05-30 (matches the .cr-expanded / .cr-expanded-body CSS).
+    if (!state.curateOpen) state.curateOpen = {};
     var tr = el("tr", { class: "cr-expanded" });
     var td = el("td", { colspan: String(colSpan) });
     var div = el("div", { class: "cr-expanded-body" });
-    div.appendChild(renderCurationPanel(r));
+
+    // ── Curation behind a button (was an always-open panel that ate space) ──
+    // Default collapsed; a small "✎ Curate" toggle reveals the edit panel in
+    // place. Open-state persists in state.curateOpen across re-renders.
+    var curOpen = !!state.curateOpen[r.unified_title];
+    var curBtn = el("button", { type: "button", class: "cr-curate-toggle",
+      title: "Show/hide the curation panel (display title, issuing agency, training agency, quality flag)" },
+      [(curOpen ? "▾ ✎ Curate" : "▸ ✎ Curate")]);
+    var curPanel = renderCurationPanel(r);
+    curPanel.style.display = curOpen ? "" : "none";
+    curBtn.onclick = function () {
+      var open = !state.curateOpen[r.unified_title];
+      state.curateOpen[r.unified_title] = open;
+      curPanel.style.display = open ? "" : "none";
+      curBtn.textContent = open ? "▾ ✎ Curate" : "▸ ✎ Curate";
+    };
+    div.appendChild(curBtn);
+    div.appendChild(curPanel);
 
     // ── Scope + CPL chips, statewide/generated credit rec, and college badges
     // (Session 29 CER enrichment) — sits between the curation header and the
@@ -1778,46 +1817,48 @@
       var tbody2 = el("tbody");
       r.articulations.forEach(function (a) {
         var sysCls = "cr-sys-" + (a.sys || "mid").toLowerCase().replace(/[^a-z]/g, "");
-        // First row of each identity carries the rowspan'd identity cell.
-        var nLocal = Math.max(1, (a.local || []).length);
-        var locals = a.local && a.local.length ? a.local : [{ subj: "", num: "", t: "", colleges: [] }];
-        locals.forEach(function (lc, idx) {
-          var row = el("tr", { class: "cr-art-row" + (idx === 0 ? " cr-art-first" : "") });
-          if (idx === 0) {
-            var idCell = el("td", { class: "cr-art-ident " + sysCls,
-              rowspan: nLocal > 1 ? String(nLocal) : "1" });
-            idCell.appendChild(el("span", { class: "cr-id-sys" }, [idSysLabel(a.sys) || "?"]));
-            idCell.appendChild(document.createTextNode(" "));
-            idCell.appendChild(el("code", { class: "cr-id-code" }, [a.cid || "—"]));
-            if (a.title) {
-              idCell.appendChild(el("div", { class: "cr-id-title" }, [a.title]));
-            }
-            var metaParts = [];
-            if (a.disc) metaParts.push(a.disc);
-            if (a.top)  metaParts.push("TOP " + a.top);
-            if (metaParts.length) {
-              idCell.appendChild(el("div", { class: "cr-id-meta" }, [metaParts.join(" · ")]));
-            }
-            row.appendChild(idCell);
-          }
-          var lcCell = el("td", { class: "cr-art-local" });
-          if (lc.subj || lc.num || lc.t) {
-            lcCell.appendChild(el("span", { class: "cr-lc-code" },
-              [(lc.subj || "") + " " + (lc.num || "")]));
-            if (lc.t) {
-              lcCell.appendChild(document.createTextNode(" "));
-              lcCell.appendChild(el("span", { class: "cr-lc-title" }, [lc.t]));
-            }
-          } else {
-            lcCell.appendChild(el("span", { class: "cr-null" }, ["—"]));
-          }
-          row.appendChild(lcCell);
-          var lcCols = lc.colleges || [];
-          var colCell = el("td", { class: "cr-art-colleges", title: lcCols.join(", ") },
-            [lcCols.map(SHORT).join(", ") || "—"]);
-          row.appendChild(colCell);
-          tbody2.appendChild(row);
+        // One row per identity (no rowspan) — the local courses are folded into
+        // a single cell so each identity stays on one row and the table is short.
+        var row = el("tr", { class: "cr-art-row cr-art-first" });
+
+        var idCell = el("td", { class: "cr-art-ident " + sysCls });
+        idCell.appendChild(el("span", { class: "cr-id-sys" }, [idSysLabel(a.sys) || "?"]));
+        idCell.appendChild(document.createTextNode(" "));
+        idCell.appendChild(el("code", { class: "cr-id-code" }, [a.cid || "—"]));
+        if (a.title) idCell.appendChild(el("div", { class: "cr-id-title" }, [a.title]));
+        var metaParts = [];
+        if (a.disc) metaParts.push(a.disc);
+        if (a.top)  metaParts.push("TOP " + a.top);
+        if (metaParts.length) idCell.appendChild(el("div", { class: "cr-id-meta" }, [metaParts.join(" · ")]));
+        row.appendChild(idCell);
+
+        // Local courses — codes inline (full title on hover) to economize space.
+        var locals = (a.local || []).filter(function (lc) { return lc.subj || lc.num || lc.t; });
+        var lcCell = el("td", { class: "cr-art-local" });
+        if (locals.length) {
+          locals.forEach(function (lc, i) {
+            if (i) lcCell.appendChild(document.createTextNode(", "));
+            var code = ((lc.subj || "") + " " + (lc.num || "")).trim();
+            lcCell.appendChild(el("span", { class: "cr-lc-code", title: lc.t || "" },
+              [code || (lc.t || "—")]));
+          });
+        } else {
+          lcCell.appendChild(el("span", { class: "cr-null" }, ["—"]));
+        }
+        row.appendChild(lcCell);
+
+        // Earning colleges — deduped union across this identity's local courses,
+        // as short-name chips (full names on hover).
+        var colSet = {};
+        (a.local || []).forEach(function (lc) {
+          (lc.colleges || []).forEach(function (c) { if (c) colSet[c] = 1; });
         });
+        var allCols = Object.keys(colSet).sort();
+        var colCell = el("td", { class: "cr-art-colleges", title: allCols.join(", ") },
+          [allCols.length ? allCols.map(SHORT).join(", ") : "—"]);
+        row.appendChild(colCell);
+
+        tbody2.appendChild(row);
       });
       tbl.appendChild(tbody2);
       div.appendChild(tbl);
