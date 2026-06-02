@@ -4812,6 +4812,101 @@ def _build_articulations_by_course():
     return out
 
 
+def _build_aligned_exhibits_by_course():
+    """CCR inverse view — the mirror of the EACR.
+
+    Pivots kb/coci_articulations.json by COURSE identity (course_id) instead of by
+    credential, so each common course can list ALL the aligned exhibits/credentials
+    that articulate to it. Returns ``{course_id: [{c,i,p,r,g,n,x}, ...]}`` (or None
+    if the file is absent), where each entry is one aligned credential:
+
+        c  credential (unified_title)        r  distinct credit recommendations
+        i  issuing_agency                    g  earning college names
+        p  modal CPL type (Industry Cert…)   n  # earning colleges
+        x  "CCC" when a statewide CCC-collaborative standard exists (else "")
+
+    Credentials are grouped by (unified_title, issuing_agency); a course's list is
+    sorted CCC-standard first, then by adoption breadth (n colleges), then name.
+    Deterministic (no timestamps) so the daily regen of the lazy file is a no-op diff.
+    """
+    from collections import Counter, defaultdict
+
+    path = os.path.join(SCRIPT_DIR, "kb", "coci_articulations.json")
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            doc = json.load(f)
+    except Exception:
+        return None
+    records = doc.get("articulations", [])
+    if not records:
+        return None
+
+    by_course = defaultdict(lambda: defaultdict(lambda: {
+        "cpl": Counter(), "recs": [], "cols": set(), "collab": set()}))
+    for r in records:
+        cid = r.get("course_id")
+        if not cid:
+            continue
+        cred = (r.get("unified_title") or r.get("exhibit_title") or "").strip()
+        iss = (r.get("issuing_agency") or "").strip()
+        a = by_course[cid][(cred, iss)]
+        if r.get("cpl_type_description"):
+            a["cpl"][r["cpl_type_description"]] += 1
+        for cr in (r.get("credit_recommendations") or []):
+            if cr and cr not in a["recs"]:
+                a["recs"].append(cr)
+        a["cols"].update(c for c in (r.get("earned_by_colleges") or []) if c)
+        ct = (r.get("collaborative_type") or "").strip()
+        if ct:
+            a["collab"].add(ct)
+
+    out = {}
+    for cid, creds in by_course.items():
+        items = []
+        for (cred, iss), a in creds.items():
+            is_ccc = any("CCC" in c for c in a["collab"])
+            items.append({
+                "c": cred,
+                "i": iss,
+                "p": a["cpl"].most_common(1)[0][0] if a["cpl"] else "",
+                "r": a["recs"][:6],
+                "g": sorted(a["cols"]),
+                "n": len(a["cols"]),
+                "x": "CCC" if is_ccc else "",
+            })
+        # CCC statewide standard first, then by adoption breadth, then name.
+        items.sort(key=lambda d: (0 if d["x"] else 1, -d["n"], d["c"].lower()))
+        out[cid] = items
+    return out
+
+
+def _write_aligned_exhibits_js(odir):
+    """Build + write unified_courses_aligned.js (``window.CPL_UC_ALIGNED``).
+
+    Shared by export_unified_courses() and kb/_build_aligned_exhibits.py so the
+    committed file is byte-identical to the daily regen. Returns the course count
+    written, or None when kb/coci_articulations.json is absent.
+    """
+    aligned = _build_aligned_exhibits_by_course()
+    if not aligned:
+        return None
+    path = os.path.join(odir, "unified_courses_aligned.js")
+    payload = {"aligned": aligned}
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(
+            "/* CCR inverse view (mirror of the EACR) — course identity (course_id) -> "
+            "the aligned exhibits/credentials that articulate to it: "
+            "[{c:credential, i:issuer, p:CPL type, r:[credit recs], g:[earning colleges], "
+            "n:#colleges, x:'CCC' when a statewide CCC-collaborative standard}]. Built from "
+            "kb/coci_articulations.json; lazy-loaded when a CCR row is expanded. Deterministic "
+            "(no timestamp) so the daily regen is a no-op diff. */\n"
+            "window.CPL_UC_ALIGNED = " +
+            json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
+    return len(aligned)
+
+
 def _build_statewide_prescriptive():
     """Per-credential prescriptive adoption layer for the EACR "Credential view".
 
@@ -6063,6 +6158,14 @@ def export_unified_courses():
         print(f"  Unified Courses: wrote {out_md} ({len(mdesc)} identities with member descriptions)")
     else:
         print("  Unified Courses: kb/reference/coci_course_list.xlsx absent — skipped member rows")
+
+    # ---- CCR inverse view: aligned exhibits/credentials per course (lazy) ----
+    n_aligned = _write_aligned_exhibits_js(odir)
+    if n_aligned is not None:
+        print(f"  Unified Courses: wrote {os.path.join(odir, 'unified_courses_aligned.js')} "
+              f"({n_aligned} courses with aligned exhibits)")
+    else:
+        print("  Unified Courses: kb/coci_articulations.json absent — skipped aligned exhibits")
 
     # ---- full xlsx export (Course + Cluster + Singleton, incl. college name lists) ----
     headers = ["Kind", "ID", "Title", "Discipline", "Credit Status", "Units", "TOP Code",

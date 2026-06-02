@@ -6,6 +6,10 @@ __pycache__/
 # Claude Code background-agent worktrees (transient, harness-managed)
 .claude/worktrees/
 
+# Node deps for the jsdom render tests — dev-only, never committed.
+node_modules/
+package-lock.json
+
 # Gitleaks artifacts
 gitleaks-report.json
 gitleaks.exe
