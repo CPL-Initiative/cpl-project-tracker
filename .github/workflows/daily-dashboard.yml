@@ -99,6 +99,11 @@ jobs:
             # non-dashboard consumers. unified_title renames are RECORDED but
             # not applied — see Cred-Ref PR-5b for rename promotion.
             python kb/_apply_credential_review.py || echo "Credential review sync failed — non-fatal"
+            # CER unclassified-triage PR-2: fold the worklist's raw-title→unified-title
+            # assignments (_UNCLASSIFIED::<raw_title> rows) into the git-canonical
+            # overlay kb/unclassified_assignments.json. Records only (the fold into
+            # kb/unified_titles.json is the dry-run-first PR-3). Idempotent.
+            python kb/_apply_unclassified_triage.py || echo "Unclassified triage sync failed — non-fatal"
           else
             echo "SUPABASE_SERVICE_KEY not set — skipping curation sync."
           fi
@@ -161,6 +166,8 @@ jobs:
           git add kb/discipline_cpl_rollup.json 2>/dev/null || true
           # Cred-Ref PR-5a: credential-review curator-edit overlay
           git add kb/credential_review_overlay.json 2>/dev/null || true
+          # CER unclassified-triage PR-2: raw-title→unified-title assignment overlay
+          git add kb/unclassified_assignments.json 2>/dev/null || true
           # Cred-Ref PR-5b/0: credential rename dry-run artifacts (Mode B preview)
           git add kb/cred_rename_dryrun/report.md \
                   kb/cred_rename_dryrun/alias_map.json \
