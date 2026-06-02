@@ -1185,3 +1185,69 @@ demand surfaces:
    snapshot is the canonical audit trail.
 
 Cred-Ref workstream is in maintenance mode unless curators flag a gap.
+
+---
+
+## Session 30 — CER economize + unclassified-triage worklist (2026-06-02)
+
+Two CER threads shipped (4 PRs total this session; the other two were the
+college short-name dataset #264 — see `docs/kb-notes/reference-college-short-names.md`).
+
+### CER economize (#265, cosmetic, consumer-only)
+
+Four curator asks from a live screenshot review, all in `credential_reference.js`
+(single static asset — no HTML/Rule-4; new CSS via the JS-injected `cr-scope-css`):
+1. **Curate panel → collapsed `✎ Curate` button** (persists in `state.curateOpen`)
+   so the expanded row leads with the useful info instead of the edit form.
+2. **"Scope" column folded into title-level chips** — the standalone 🏛 Statewide/
+   🏠 Local column was unclear next to the richer enrichment chips, so the compact
+   🏛 CCC / 🏠 Local / ⚙ Generated + CPL-type chips now render under each unified
+   title (column count 12 → 11). Judgment call: removed the column rather than
+   keeping both (flagged for Sam; trivially reversible).
+3. **Identity rows → one row per identity** (was rowspan'd per local course):
+   local codes inline (titles on hover), earning colleges a deduped short-name
+   union (full names on hover).
+4. **Unified Title left-justified** (overrides the global center-align via higher
+   specificity). jsdom 20/20.
+
+### CER unclassified-triage worklist (#266 PR-1, #267 PR-2)
+
+The original "CER triage" ask. **Measured first:** the unclassified set is **194
+raw titles** (not the handoff's stale "105") — `kb/exhibit_audit/latest.json`
+`title_cards` with `unified_title: null` + the `unclassified_in_map` tag. They're
+baked into the committed audit snapshot, so no dependency on the PII-purged
+`CustomReport_latest.json`.
+
+- **PR-1 (#266):** a worklist on the CER tab (toolbar `⚠ Triage unclassified (N)`)
+  that lazily fetches `latest.json`, lists each raw title, and lets a signed-in
+  reviewer assign an existing-or-new unified title (datalist typeahead over the
+  1,969 credentials) + optional issuer. Writes to a new `_UNCLASSIFIED::<raw>`
+  `kb_curation` namespace — **no schema migration**. In-place row updates on save
+  (so unsaved sibling input isn't wiped); progress counter; clear. Overlay-only
+  display (mirrors the original Cred-Ref PR-B MVP). jsdom 18/18.
+- **PR-2 (#267):** `kb/_apply_unclassified_triage.py` syncs the namespace into the
+  git-canonical overlay `kb/unclassified_assignments.json` (mirrors
+  `_apply_credential_review.py`; idempotent so an empty overlay produces no daily
+  churn) + daily-workflow step + git-add. Synthetic 9/9.
+
+**Sam chose the worklist over AI-classify-then-confirm** (the AskUserQuestion
+fork): a human assigns each of the 194. The AI-assist (the `exhibit-canonicalization`
+skill) stays available as a future accelerator.
+
+### What's next (CER triage PR-3 — the FOLD)
+
+The overlay only *records* assignments. **PR-3** is the dry-run-first apply that
+promotes confirmed entries into `kb/unified_titles.json` + `kb/credentials.json`
+so the raw titles leave the unclassified queue and appear as credential rows.
+That mutates a curated KB file and ripples into `coci_articulations.json`'s
+inlined `unified_title`, so it gets V-gates + its own PR (this is exactly how
+`credential_review_overlay.json` went sync-first, bake-consume-later).
+
+### Patterns this session
+
+- **`kb_curation` synthesized-namespace** = zero-migration curation surface (4th
+  use) → `docs/kb-notes/methodology-kb-curation-synthesized-namespace.md`.
+- **Runtime-fetch a committed snapshot** (audit `latest.json`) for a worklist —
+  single-file MVP, no producer/cron coupling.
+- **In-place DOM row updates** to avoid wiping unsaved sibling input on save.
+- **jsdom `url:` option** required or `sessionStorage` throws on opaque origin.

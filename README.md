@@ -41,7 +41,9 @@ The whole ecosystem, end-to-end:
    subject codes colleges actually use, sourced from
    `kb/coci_minted_memberships.json`), a **Common Exhibit Reference** tab (sister
    to CCR — expand a credential for scope/CPL chips, a statewide-or-generated
-   credit rec, and green/orange adopted-vs-potential college badges), a
+   credit rec, and green/orange adopted-vs-potential college badges, plus a
+   **⚠ Triage unclassified** worklist that lets reviewers assign a unified title
+   to each raw MAP exhibit title with no credential identity yet), a
    **quick-start natural-language chat** widget on the first screen (Claude
    API classifies your prompt to one of the 11 tabs **and** can pre-pop the
    destination tab's filters — "review unclassified credentials" lands you
