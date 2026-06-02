@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-01 (Session 28 — EACR PR-4 prescriptive layer + v2-toggle/contrast fixes)
+updated: 2026-06-02 (Session 28 follow-up — 2 KB notes from the post-freeze recovery: self-paint-canvas styling + resume-after-freeze)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -66,6 +66,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Versioned prototype gallery (preserve v1, stack v2, graduate the winner)](kb-notes/methodology-versioned-prototype-gallery.md) | methodology | published | 2026-06-01 | 2026-06-01 |
 | [Methodology — Styling a native &lt;details&gt;: keep a visible affordance, drive the toggle in JS](kb-notes/methodology-styling-native-details-toggle.md) | methodology | published | 2026-06-01 | 2026-06-01 |
 | [Playbook — Pre-stage optional auth before an external API enforces it (no-op until secret set)](kb-notes/playbook-prestage-optional-external-auth.md) | playbook | published | 2026-06-01 | 2026-06-01 |
+| [Methodology — A self-contained injected component must paint its own canvas, not just its text](kb-notes/methodology-self-contained-injected-component-styling.md) | methodology | published | 2026-06-02 | 2026-06-02 |
+| [Playbook — Resuming a frozen session: check `main` before rebuilding its in-flight work](kb-notes/playbook-resume-frozen-session-check-main-first.md) | playbook | published | 2026-06-02 | 2026-06-02 |
 
 ---
 
