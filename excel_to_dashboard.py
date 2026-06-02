@@ -4907,6 +4907,114 @@ def _write_aligned_exhibits_js(odir):
     return len(aligned)
 
 
+def _build_cpl_by_discipline():
+    """CSR rollup — the discipline grain of the CER/EACR · CCR · CSR family.
+
+    Rolls up earned MAP articulations by DISCIPLINE so faculty see how many CPL
+    opportunities (aligned exhibits/credentials) exist across colleges for the
+    courses in their area. Returns ``{discipline: {n_creds, n_colleges, n_courses,
+    creds:[{c,i,n}]}}`` (or None if inputs absent), where each ``creds`` entry is one
+    credential (c=unified_title, i=issuer, n=#colleges that earned it).
+
+    Discipline per articulated ``course_id`` comes from the committed minted catalogs
+    (coci_minted_courses.json + coci_minted_singletons.json) — the same inference-
+    filled/curated discipline the CCR/CER show (~2,062 of 2,355 articulated courses
+    resolve → ~97 disciplines). The ``identities`` map inside coci_articulations.json
+    keys only a small slice of the re-minted course_ids, so the catalogs are the
+    authoritative discipline source. Deterministic (no timestamps).
+    """
+    from collections import defaultdict
+
+    art_path = os.path.join(SCRIPT_DIR, "kb", "coci_articulations.json")
+    if not os.path.exists(art_path):
+        return None
+    try:
+        with open(art_path, encoding="utf-8") as f:
+            doc = json.load(f)
+    except Exception:
+        return None
+    records = doc.get("articulations", [])
+    if not records:
+        return None
+
+    # course_id -> discipline from the committed minted catalogs (corroborated +
+    # singleton). First non-blank wins; corroborated catalog read first.
+    disc_of = {}
+    for cat in ("coci_minted_courses.json", "coci_minted_singletons.json"):
+        p = os.path.join(SCRIPT_DIR, "kb", cat)
+        if not os.path.exists(p):
+            continue
+        try:
+            with open(p, encoding="utf-8") as f:
+                cdoc = json.load(f)
+        except Exception:
+            continue
+        coll = cdoc.get("courses") or cdoc.get("singletons") or cdoc
+        if isinstance(coll, dict):
+            for cid, rec in coll.items():
+                if cid not in disc_of and isinstance(rec, dict):
+                    d = (rec.get("discipline") or "").strip()
+                    if d:
+                        disc_of[cid] = d
+    if not disc_of:
+        return None
+
+    agg = defaultdict(lambda: {"creds": {}, "cols": set(), "courses": set()})
+    for r in records:
+        cid = r.get("course_id")
+        if not cid:
+            continue
+        disc = disc_of.get(cid)
+        if not disc:
+            continue
+        a = agg[disc]
+        a["courses"].add(cid)
+        cols = [c for c in (r.get("earned_by_colleges") or []) if c]
+        a["cols"].update(cols)
+        cred = (r.get("unified_title") or r.get("exhibit_title") or "").strip()
+        if cred:
+            key = (cred, (r.get("issuing_agency") or "").strip())
+            a["creds"].setdefault(key, set()).update(cols)
+
+    out = {}
+    for disc, a in agg.items():
+        creds = [{"c": c, "i": i, "n": len(cols)} for (c, i), cols in a["creds"].items()]
+        creds.sort(key=lambda d: (-d["n"], d["c"].lower()))
+        out[disc] = {
+            "n_creds": len(creds),
+            "n_colleges": len(a["cols"]),
+            "n_courses": len(a["courses"]),
+            "creds": creds,
+        }
+    return out
+
+
+def _write_cpl_by_discipline_json(odir):
+    """Build + write kb/discipline_cpl_rollup.json (fetched by the CSR tab).
+
+    Shared by export_unified_courses() + kb/_build_cpl_by_discipline.py so the
+    committed file is byte-identical to the daily regen. Returns the discipline
+    count, or None when inputs are absent. Deterministic (sorted keys, no timestamp).
+    """
+    roll = _build_cpl_by_discipline()
+    if not roll:
+        return None
+    path = os.path.join(odir, "kb", "discipline_cpl_rollup.json")
+    payload = {
+        "_about": "CSR rollup — earned MAP articulations grouped by discipline (the "
+                  "CER/EACR · CCR · CSR 'three grains' family; this is the discipline "
+                  "grain). discipline -> {n_creds, n_colleges, n_courses, creds:[{c:"
+                  "credential, i:issuer, n:#colleges}]}. Built by "
+                  "_build_cpl_by_discipline() from kb/coci_articulations.json + the "
+                  "minted catalogs. Consumed by the Common Subjects Reference tab.",
+        "byDiscipline": roll,
+    }
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        f.write("\n")
+    return len(roll)
+
+
 def _build_statewide_prescriptive():
     """Per-credential prescriptive adoption layer for the EACR "Credential view".
 
@@ -6166,6 +6274,14 @@ def export_unified_courses():
               f"({n_aligned} courses with aligned exhibits)")
     else:
         print("  Unified Courses: kb/coci_articulations.json absent — skipped aligned exhibits")
+
+    # ---- CSR rollup: CPL opportunities (aligned credentials) per discipline ----
+    n_cpl = _write_cpl_by_discipline_json(odir)
+    if n_cpl is not None:
+        print(f"  Unified Courses: wrote {os.path.join(odir, 'kb', 'discipline_cpl_rollup.json')} "
+              f"({n_cpl} disciplines with CPL opportunities)")
+    else:
+        print("  Unified Courses: articulations/minted catalogs absent — skipped CSR rollup")
 
     # ---- full xlsx export (Course + Cluster + Singleton, incl. college name lists) ----
     headers = ["Kind", "ID", "Title", "Discipline", "Credit Status", "Units", "TOP Code",

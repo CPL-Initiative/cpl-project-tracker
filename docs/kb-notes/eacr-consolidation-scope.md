@@ -377,20 +377,25 @@ a Student/College/System toggle once they stabilize.
   it into a credential), exactly the CER's job. Surface the EACR's bottom-of-list
   unclassified set in the CER flow (or a dedicated "unclassified exhibits"
   worklist), reusing `kb/_audit_exhibits.py`'s unclassified flagging.
-- **CCR-centric inverse view** (Sam, later): the mirror of the EACR — **one row per
-  CCR (common course), listing all the aligned exhibits/credentials** that
-  articulate to it. Same `coci_articulations.json` data, pivoted by `course_id`
-  instead of by credential; the existing `_build_articulations_by_course()` already
-  groups this way — extend it to list aligned exhibits per course. Likely lives in
-  the CCR tab.
-- **CSR-centric rollup view** (Sam, later): like the CCR view but at the
-  **discipline/subject grain** — one row per discipline so **discipline faculty see
-  how many CPL opportunities they've created** (exhibits/credentials articulating to
-  courses in their discipline, across N colleges). Roll `coci_articulations.json` up
-  by `discipline`; lives in the CSR tab. Completes a **"same data, three grains"**
-  family — **CER/EACR (credential) · CCR (course) · CSR (discipline)** — each a pivot
-  of the articulation layer for a different audience (and the CSR grain feeds the
-  §11 faculty-trust / MC-readiness story directly).
+- **CCR-centric inverse view — DONE 2026-06-02 (Session 29, PR #259):** the mirror
+  of the EACR — when a CCR row is expanded it lists all the aligned exhibits/
+  credentials that articulate to that course. `_build_aligned_exhibits_by_course()`
+  pivots `coci_articulations.json` by `course_id` → the committed lazy file
+  `unified_courses_aligned.js` (`window.CPL_UC_ALIGNED`, 2,355 courses); the consumer
+  (`unified_courses.js`) renders an "🎓 N aligned …" table in the row-expand (reuses
+  `.uc-member-table`; unions Phase-B `consolidated_from`). CCC-statewide-standard
+  badge. jsdom-verified 13/13.
+- **CSR-centric rollup view — DONE 2026-06-02 (Session 29):** the **discipline grain**
+  — a sortable **"CPL opportunities"** column on the Common Subjects Reference tab
+  (one row per discipline): how many distinct exhibits/credentials articulate to its
+  courses, across how many colleges; click the badge → modal lists the credentials
+  (credential · issuer · #colleges). `_build_cpl_by_discipline()` rolls
+  `coci_articulations.json` up by discipline (discipline sourced from the committed
+  minted catalogs; ~2,062/2,355 courses → 97 disciplines) → `kb/discipline_cpl_rollup.json`;
+  the consumer (`canonical_subj4.js`) fetches it (empty-on-404). jsdom-verified 12/12.
+  **Completes the "same data, three grains" family — CER/EACR (credential) · CCR
+  (course) · CSR (discipline)** — each a pivot of the articulation layer for a
+  different audience (the CSR grain feeds the §11 faculty-trust / MC-readiness story).
 - **Full credential merge — CPL Type as a tag, not a card-splitter** (Sam, later;
   REVISES locked decision #1): drop `cpl_type` from the key too, so a credential is
   **ONE card** (CompTIA A+ → 1, not 2). Surface CPL Type as a **tag on each credit
