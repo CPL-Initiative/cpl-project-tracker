@@ -1251,3 +1251,27 @@ inlined `unified_title`, so it gets V-gates + its own PR (this is exactly how
   single-file MVP, no producer/cron coupling.
 - **In-place DOM row updates** to avoid wiping unsaved sibling input on save.
 - **jsdom `url:` option** required or `sessionStorage` throws on opaque origin.
+
+### PR-3 — the FOLD (#270) + tire-kick (#269)
+
+Closed the loop: 3 real assignments entered live (`map@rccd.edu`, RLS write-gate
+confirmed via `pg_policies`) → synced (#269) → folded (#270). `kb/_fold_unclassified.py`
+(dry-run-first, V-gates V1–V4) adds the raw→unified entries to `unified_titles.json`,
+ensures `credentials.json`, and PRUNES the folded raws from `kb/exhibit_audit/latest.json`
+(the worklist's source — the exhibit auditor isn't in the daily cron + needs the purged
+CustomReport, so the fold keeps the snapshot current itself). 2 CLEAN adds, 1 SKIP
+(already classified — stale audit flag), 0 ripples; `unclassified_in_map` 194→192.
+
+**Lessons:**
+- **Match a generated file's on-disk JSON format when hand-editing it.** First apply
+  wrote `latest.json` with `indent=2` but the auditor writes it **minified**
+  (`separators=(",",":")`, no trailing newline) → a **55,588-line reformat diff** for a
+  2-card change. Always grep the generator's `json.dump(...)` and mirror its separators +
+  newline. (`unified_titles.json`/`credentials.json` ARE `indent=2` — match per file.)
+- **The dry-run earns its keep on messy real data:** one "unclassified" title was *already
+  classified* (stale 2026-05-24 audit snapshot) → SKIP not double-add; and all 3 raws
+  already had correct inlined `unified_title` in `coci_articulations.json` → 0 ripple. The
+  V-gates (SKIP/CONFLICT/ripple) turn those surprises into safe no-ops instead of clobbers.
+- **Idempotent additive fold, no workflow_dispatch ceremony:** reads the committed overlay,
+  only inserts NEW keys, diff is the review → ran `--apply` locally + committed. Re-runnable
+  as curators assign more (SKIPs folded, rejects conflicts).
