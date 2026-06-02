@@ -1,7 +1,26 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-02T00:00:00Z",
-  "count": 0,
-  "assignments": {}
+  "_synced_at": "2026-06-02T18:03:02Z",
+  "count": 3,
+  "assignments": {
+    "COMPTIA LINUX+": {
+      "issuing_agency": "CompTIA",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:02:32Z",
+      "unified_title": "CompTIA Linux+"
+    },
+    "Microsoft Azure Administrator": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:02:32Z",
+      "unified_title": "Microsoft Certified: Azure Administrator Associate"
+    },
+    "NCCER Welding Level 1": {
+      "issuing_agency": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:02:32Z",
+      "unified_title": "NCCER Welding Level 1"
+    }
+  }
 }
