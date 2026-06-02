@@ -272,7 +272,7 @@
         var u = (q.units != null && q.units !== "") ? " (" + fmtUnits(q.units) + "u)" : "";
         return '<span class="cv-rx-course">' + esc(code) + u + '</span>';
       }).join(", ");
-      return '<div class="cv-rx-row"><span class="cv-rx-college">' + esc(c.college) + '</span>' +
+      return '<div class="cv-rx-row">' + collegeChip(c.college, "cv-rx-college") +
         (courses ? '<span class="cv-rx-arrow">→</span>' + courses : '') + '</div>';
     }).join("");
     var note = withheld
@@ -461,6 +461,14 @@
 
   function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
   function escAttr(s) { return esc(s).replace(/"/g, "&quot;"); }
+  // Compact college label for chips (full name kept in the title attr). Looks up
+  // window.cplCollegeShort lazily at call time (college_short_names.js loads after
+  // this file), falling back to the full name so a chip never renders blank.
+  function SHORT(c) { var f = window.cplCollegeShort; return (f ? (f(c) || c) : c); }
+  // A college chip: short label, full name on hover.
+  function collegeChip(c, cls) {
+    return '<span class="' + cls + '" title="' + escAttr(c) + '">' + esc(SHORT(c)) + '</span>';
+  }
 
   // ── Consolidated credit recommendations (PR-1) ──
   // Each (course, credit) pair is one college's local mapping of the credential.
@@ -561,16 +569,16 @@
       var potentials = hasCollegeFilter ? (e.potential_names || []).filter(collegeMatchesFilters) : (e.potential_names || []);
 
       var adopterTags = adopters.length > 0
-        ? adopters.map(function (c) { return '<span class="sw-college sw-adopted">' + esc(c) + '</span>'; }).join(", ")
+        ? adopters.map(function (c) { return collegeChip(c, "sw-college sw-adopted"); }).join(", ")
         : '<span style="opacity:0.4;font-style:italic;">none</span>';
 
       var potentialTags;
       if (potentials.length > 10 && !isExpanded) {
         potentialTags = potentials.slice(0, 10).map(function (c) {
-          return '<span class="sw-college sw-potential">' + esc(c) + '</span>';
+          return collegeChip(c, "sw-college sw-potential");
         }).join(", ") + ' <span class="sw-show-more" data-eid="' + escAttr(eid) + '">+' + (potentials.length - 10) + ' more</span>';
       } else if (potentials.length > 0) {
-        potentialTags = potentials.map(function (c) { return '<span class="sw-college sw-potential">' + esc(c) + '</span>'; }).join(", ");
+        potentialTags = potentials.map(function (c) { return collegeChip(c, "sw-college sw-potential"); }).join(", ");
       } else {
         potentialTags = '<span style="opacity:0.4;font-style:italic;">none identified</span>';
       }
