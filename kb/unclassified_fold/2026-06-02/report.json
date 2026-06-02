@@ -1,0 +1,40 @@
+{
+  "_generated_at": "2026-06-02T18:12:57Z",
+  "mode": "apply",
+  "gates": {
+    "V1_apply_safe": true,
+    "V2_target_credential": true,
+    "V3_additive_only": true,
+    "V4_no_articulation_ripple": true
+  },
+  "apply_safe": true,
+  "clean": [
+    {
+      "raw": "COMPTIA LINUX+",
+      "assigned": "CompTIA Linux+",
+      "issuer": "CompTIA",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:02:32Z"
+    },
+    {
+      "raw": "NCCER Welding Level 1",
+      "assigned": "NCCER Welding Level 1",
+      "issuer": "NCCER",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:02:32Z"
+    }
+  ],
+  "skip": [
+    {
+      "raw": "Microsoft Azure Administrator",
+      "assigned": "Microsoft Certified: Azure Administrator Associate",
+      "issuer": "Microsoft",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:02:32Z",
+      "why": "already classified to the same target"
+    }
+  ],
+  "conflict": [],
+  "credential_adds": [],
+  "articulation_ripples": []
+}

@@ -42896,5 +42896,21 @@
     ],
     "quality_flag": "suspect_course_as_exhibit",
     "_notes": "Generic; likely Yoga Alliance RYT but not specified."
+  },
+  "COMPTIA LINUX+": {
+    "unified_title": "CompTIA Linux+",
+    "confidence_title": 1.0,
+    "classified_at": "2026-06-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-02T18:02:32Z",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "NCCER Welding Level 1": {
+    "unified_title": "NCCER Welding Level 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-06-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-02T18:02:32Z",
+    "reviewed_by": "map@rccd.edu"
   }
 }
