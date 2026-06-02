@@ -197,7 +197,11 @@ def main():
     pruned = 0
     if os.path.exists(AUDIT_PATH):
         audit = load(AUDIT_PATH)
-        folded = {r["raw"]: r["assigned"] for r in clean}
+        # Prune every overlay-assigned raw that's now classified — the CLEAN ones
+        # this fold just added AND the SKIP ones already classified (stale audit
+        # snapshot) — so the worklist drops all the curator acted on, not just the
+        # new adds.
+        folded = {r["raw"]: r["assigned"] for r in (clean + skip)}
         for card in audit.get("title_cards", []):
             if card.get("raw_title") in folded and not card.get("unified_title"):
                 card["unified_title"] = folded[card["raw_title"]]
