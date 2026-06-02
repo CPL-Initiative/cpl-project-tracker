@@ -342,11 +342,11 @@ the leverage list already knows it, so it's a surfacing step, not new logic.
 
 | Phase | What | Depends on |
 |---|---|---|
-| **PR-1** | `(title,units)` credit-rec consolidation + "typical units" range headline (orig. #2/#3) | nothing — works today |
-| **PR-2** | Merge Local+CCC, CCC top billing (orig. #1) | KPI lockstep + flag re-check |
-| **PR-3** | Master-detail expand: CCC / synthesized-standard header + per-pattern local cards + seeker range | `coci_articulations.json` join (CCC flag, modal award) |
-| **PR-4** | Prescriptive status per college (articulated / potential-aligned-course / potential-aligned-program) + recommended local course | `adoption_leverage` + membership join; over-merge guardrail |
-| **later** | Replace the `(title,units)` heuristic with true identity grouping as stand-alone M-IDs get curated-merged; Student CPL Portal surface | curation throughput |
+| **PR-1** ✅ **DONE (#244)** | `(title,units)` credit-rec consolidation + "typical units" range headline (orig. #2/#3) | nothing — works today |
+| **PR-2** ✅ **DONE (#246)** | Merge Local+CCC, CCC top billing (orig. #1) | KPI lockstep + flag re-check |
+| **PR-3** ✅ **DONE (#249)** | Master-detail expand: CCC / synthesized-standard header + per-pattern local cards + seeker range | `coci_articulations.json` join (CCC flag, modal award) |
+| **PR-4** ✅ **DONE (#253)** | Prescriptive **recommended local course** per potential-adopter college (`_build_statewide_prescriptive` → lazy `statewide_prescriptive.js` → `buildPrescriptiveHtml`); **806 credentials / 5,235 recs / 4,538 withheld** on over-merge; M-ID leverage only (C-ID deferred) | `adoption_leverage` + membership join; over-merge guardrail |
+| **next** | The 3 audience views (Student / College / System) as gallery renderers over the shared layer; full credential merge (drop `cpl_type` + tag); CCR inverse view; CSR rollup; curate-the-unclassified; mojibake nit | curation throughput |
 
 PR-1/PR-2 still ship first (low risk, immediate de-clutter); PR-3/PR-4 layer the
 seeker + prescriptive value on top once the `coci_articulations.json` join is

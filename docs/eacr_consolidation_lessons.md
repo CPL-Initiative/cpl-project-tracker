@@ -105,3 +105,62 @@ the workstream narrative + state.
 Read the PR-4 scoping agent's findings → decide consumer vs producer for the
 prescriptive layer → build it (v2 first, then graduate). If producer, mirror the
 PR-2 pattern (synthetic unit test + regen-gated, Sam verifies live).
+
+## Session 28 (2026-06-02) — close-out after a mid-checkpoint freeze
+
+Session 28 shipped the rest of the ladder, then **froze mid-`/checkpoint`**; a
+continuation session re-ran the checkpoint (this section) and discovered the v2
+contrast fix had already landed in parallel.
+
+### What shipped (all merged to `main`)
+| PR | What | Side |
+|---|---|---|
+| #252 | **v2 "Credential view" expand fix** — hidden `<details>` marker → no affordance + the native toggle could be swallowed; restored a visible `::before` chevron + an explicit `preventDefault()` JS toggle on `.sw-gallery-sum`. | consumer |
+| #253 | **PR-4 prescriptive adoption layer** — `_build_statewide_prescriptive()` joins `coci_articulations.json` `adoption_leverage` ⨝ `coci_minted_memberships.json` on `course_id`, by `unified_title`; lazy `statewide_prescriptive.js`; `buildPrescriptiveHtml()` renders "N colleges could adopt → likely local course". **806 credentials / 5,235 recs / 4,538 withheld** on over-merge. M-ID leverage only. | **producer** |
+| #254 | **v2 contrast fix** — v2 panel rendered **white-on-white**; gave `.cv-body` the same dark navy canvas (`rgba(10,34,64,0.9)`) + gold border that v1's `.sw-interactive` already has. *(Shipped by a parallel actor, not the frozen session.)* | consumer |
+| ~~#255~~ | **Closed unmerged** — an independently-rebuilt duplicate of #254's contrast fix. | — |
+
+### What's been learned
+- **A self-contained component that injects its own dark-theme CSS must also paint
+  its own background canvas.** v2's `CV_STYLE` colored everything white (correct for
+  dark) but `#sw-cv-body` sat on the dashboard's light page → invisible. v1 only
+  worked because it's wrapped in `.sw-interactive { background:rgba(10,34,64,0.85) }`.
+  The injected stylesheet and the canvas are a package — ship them together.
+  → `methodology-self-contained-injected-component-styling.md`.
+- **A native `<details>` with a hidden disclosure marker needs a restored affordance
+  AND a guarded toggle.** Hiding `::-webkit-details-marker` for styling removes the
+  click cue, and a JS click handler that also toggles races the native toggle into a
+  double-no-op — so add a visible chevron + `preventDefault()`.
+  → `methodology-styling-native-details-toggle.md`.
+- **After a freeze, check `main` before rebuilding the frozen session's in-flight
+  work.** The contrast fix was already on `main` as #254; a fresh rebuild (#255) just
+  produced a conflicting duplicate. `git fetch` + the PR's `mergeable_state` (it read
+  `dirty`) + a one-line `git log a17cf9f..origin/main` would have caught it before any
+  code was written. → `playbook-resume-frozen-session-check-main-first.md`.
+- **Freezes lose only uncommitted work — merged PRs are durable.** #252/#253 were
+  squash-merged before the freeze, so nothing of value was lost; only the
+  un-committed checkpoint doc edits had to be redone. The lifeline is: merge early,
+  and the handoff/checkpoint is the only at-risk artifact (hence Rule 8's
+  "write the handoff EVERY checkpoint" safeguard).
+
+### Current state
+- The **EACR 4-phase ladder is DONE** (PR-1→PR-4). v1 table + v2 master-detail
+  Credential view both live; v2 now readable (dark canvas) and expandable; each v2
+  card carries the prescriptive "could adopt → likely local course" block.
+- The **mojibake-em-dash** data nit (`â€"` in titles like "Generic Credit by Exam â€"
+  San Diego City College") is now glaring in the readable v2 cards — still the right
+  fix is at the producer/data level (corrects v1 + v2 + exports together), not a v2
+  display band-aid.
+
+### Strategic roadmap
+- **Next: the 3 audience views** (Student / College / System) as further gallery
+  renderers over the shared consolidated layer (scope doc).
+- **Backlog:** full credential merge (drop `cpl_type` + tag it), CCR inverse view,
+  CSR rollup (faculty-facing), curate-the-unclassified (CER triage), per-group college
+  counts, the mojibake nit.
+
+### Next concrete step
+Pick the **Student view** (PR-3's seeker master-detail is already most of it) or the
+**mojibake producer fix** (quick, high-visibility). For the mojibake, normalize the
+common CP1252-double-encoding sequences (`â€"`→`—`, `â€™`→`'`, `â€œ/â€`→`"/"`) where
+`unified_title` is set in the producer, so v1/v2/exports all correct at once.

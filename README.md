@@ -30,7 +30,8 @@ The whole ecosystem, end-to-end:
    folded into the card (28% collapse vs raw IDs as of 2026-05-26) — now with
    Local + CCC versions merged into one card, per-course consolidated credit recs
    under a "Typical CPL" units headline, and a master-detail **Credential view**
-   (one card per credential, the CCC standard on top); plus
+   (one card per credential, the CCC standard on top, plus a per-college "colleges
+   that could adopt → likely local course to articulate" prescriptive block); plus
    Workplan Activities & Projects, Annual Goals, Budget, Vision 2030, a
    per-college **Common Course Reference** curation tab, a **Common Subjects
    Reference** tab (faculty-facing per-discipline curation with validate workflow

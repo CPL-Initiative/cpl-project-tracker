@@ -1439,9 +1439,11 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
    matches), **College** (my articulations + adoption options), **System**
    (inequitable-access map from `adoption_leverage` × eligible-students,
    privacy-ADR-gated). **Session 27 SHIPPED PR-1 → PR-3 + the sort + the gallery
-   v2** (see the Session 27 subsection below); **PR-4 (prescriptive layer) is
-   next**, plus the captured backlog (CPL-Type full-merge, CCR/CSR inverse views,
-   curate-the-unclassified).
+   v2; Session 28 SHIPPED PR-4 (prescriptive layer, #253) + both v2-card fixes
+   (#252 expand, #254 contrast)** (see the Session 27 + 28 subsections below).
+   **The 4-phase ladder is now DONE**; next is the 3 audience views
+   (Student/College/System) + the captured backlog (CPL-Type full-merge, CCR/CSR
+   inverse views, curate-the-unclassified).
 - **Sidebar levels** (interleave) — add `data-sections` to CCR/CER/CSR/Exhibit-Adoption;
   optional 2nd nesting level where deep. **Excel retirement** (P5 budget factors →
   JSON, then drop the `.xlsx`) continues underneath.
@@ -1532,10 +1534,51 @@ delivers that visually; a full producer-side `cpl_type`-drop merge is the captur
 merge (CPL Type as tag), **CCR inverse view** (one row per course → aligned
 exhibits), **CSR rollup** (one row per discipline → CPL opportunities, for faculty),
 curate-the-unclassified (CER triage), per-group college counts, a mojibake-em-dash
-data nit. **Next: PR-4 — the prescriptive layer** (per potential-adopter college,
-the recommended local course; turns `adoption_leverage` into "here's how to adopt")
-+ then the 3 audience views (Student/College/System) as further gallery renderers.
+data nit. **PR-4 — the prescriptive layer** (per potential-adopter college, the
+recommended local course; turns `adoption_leverage` into "here's how to adopt")
+**shipped in Session 28 (#253, below)**; next is the 3 audience views
+(Student/College/System) as further gallery renderers.
 Lessons: [`docs/eacr_consolidation_lessons.md`](docs/eacr_consolidation_lessons.md).
+
+### Session 28 — EACR PR-4 + v2-card fixes (close-out after a mid-checkpoint freeze, 2026-06-02)
+
+Completed the EACR 4-phase ladder. **All on `main`:**
+
+- **PR-4 (#253) — prescriptive adoption layer.** New `_build_statewide_prescriptive()`
+  in `excel_to_dashboard.py` joins `kb/coci_articulations.json` (`adoption_leverage` =
+  leverage college names) ⨝ `kb/coci_minted_memberships.json` (`{college, subject,
+  course_number, units}` per `course_id`) on `course_id`, aggregated by `unified_title`.
+  Emits the lazy `statewide_prescriptive.js` (`window.CPL_STATEWIDE_PRESCRIPTIVE`);
+  consumer `buildPrescriptiveHtml()` renders a collapsible "N colleges could adopt →
+  likely local course to articulate" block per v2 card. **Numbers:** 806 credentials,
+  5,235 (title,college) recs, **4,538 withheld** on `over_merged` ids (§6a guardrail —
+  withheld, never a bogus target). **M-ID leverage only** (resolves 100% from committed
+  JSON); C-ID leverage deferred (keyed by CIDNumber in the 24 MB raw xlsx). Verified by
+  `kb/_verify_prescriptive_join.py` + a jsdom render test; `statewide_prescriptive.js`
+  added to the daily `git add` (§6).
+- **v2 "Credential view" expand fix (#252)** — the native `<details>` summary wouldn't
+  open: its disclosure marker is hidden for styling (no affordance) and the native toggle
+  could be swallowed. Fix: restore a visible `::before` chevron + an explicit delegated
+  JS toggle on `.sw-gallery-sum` with `preventDefault()` (so native + JS don't
+  double-toggle to a no-op). → KB note
+  [`methodology-styling-native-details-toggle.md`](docs/kb-notes/methodology-styling-native-details-toggle.md).
+- **v2 contrast fix (#254)** — the v2 panel rendered **white-on-white** (invisible): its
+  text is dark-theme white but `#sw-cv-body` sat on the light page with no canvas (v1 is
+  wrapped in `.sw-interactive`'s dark navy bg). Fix: give `.cv-body` the same
+  `rgba(10,34,64,0.9)` canvas + gold border. → KB note
+  [`methodology-self-contained-injected-component-styling.md`](docs/kb-notes/methodology-self-contained-injected-component-styling.md).
+
+**Recovery note:** Session 28 **froze mid-`/checkpoint`** right after merging #253 — the
+doc edits were uncommitted and lost (the code was safe on `main`). A continuation session
+re-ran the checkpoint (this one). The contrast fix had **already** been shipped in
+parallel as #254, so a freshly-built duplicate (#255) was closed unmerged — lesson in
+[`playbook-resume-frozen-session-check-main-first.md`](docs/kb-notes/playbook-resume-frozen-session-check-main-first.md).
+
+**Next:** the 3 audience views (Student / College / System) as further gallery renderers;
+backlog (full credential merge = drop `cpl_type` + tag; CCR inverse view; CSR rollup;
+curate-the-unclassified; the mojibake-em-dash nit — now glaring in the readable v2 cards,
+e.g. "Generic Credit by Exam â€" San Diego City College"; best fixed at the producer/data
+level so v1 + v2 + exports correct together).
 
 ---
 
