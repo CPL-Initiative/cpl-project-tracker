@@ -201,12 +201,20 @@
   // ── Credential view (v2 · master-detail) styles — self-contained, injected
   // once so the daily regen / generator never needs to carry them. ──
   var CV_STYLE = '<style>'
-    + '.sw-gallery-sec{border:1px solid rgba(255,255,255,0.08);border-radius:6px;margin:0 0 0.6rem;}'
-    + '.sw-gallery-sum{cursor:pointer;padding:0.55rem 0.8rem;font-size:0.82rem;font-weight:600;color:#C9A84C;list-style:none;}'
+    + '.sw-gallery-sec{border:1px solid rgba(10,34,64,0.12);border-radius:6px;margin:0 0 0.6rem;}'
+    // Section titles render on the LIGHT dashboard page (the dark card sits INSIDE
+    // the section), so use the dashboard navy for readable contrast — the old gold
+    // (#C9A84C) was washed out on white.
+    + '.sw-gallery-sum{cursor:pointer;padding:0.55rem 0.8rem;font-size:0.84rem;font-weight:700;color:#0A2240;list-style:none;}'
     + '.sw-gallery-sum::-webkit-details-marker{display:none;}'
-    + '.sw-gallery-sum::before{content:"▸";display:inline-block;margin-right:0.4rem;color:#C9A84C;transition:transform 0.15s ease;}'
+    + '.sw-gallery-sum::before{content:"▸";display:inline-block;margin-right:0.4rem;color:#0A2240;transition:transform 0.15s ease;}'
     + '.sw-gallery-sec[open]>.sw-gallery-sum::before{transform:rotate(90deg);}'
-    + '.sw-gallery-tag{font-size:0.62rem;background:rgba(201,168,76,0.18);color:#C9A84C;padding:1px 5px;border-radius:3px;margin-left:0.35rem;font-weight:500;}'
+    + '.sw-gallery-tag{font-size:0.62rem;background:rgba(201,168,76,0.22);color:#7a5c00;padding:1px 5px;border-radius:3px;margin-left:0.35rem;font-weight:600;}'
+    // Page-level filter bar — lifted out of the v1 card so search + filters sit
+    // above the whole gallery and apply to every view (not repeated per card).
+    + '.sw-filterbar{margin-bottom:0.6rem;}'
+    + '.sw-filterbar .sw-toolbar{border-bottom:none;}'
+    + '.sw-filterbar-hint{font-size:0.64rem;color:rgba(255,255,255,0.5);padding:0 0.8rem 0.6rem;font-style:italic;}'
     // Dark navy card so the v2 credential view's white/grey text is readable —
     // it renders on the light dashboard page, and (unlike the v1 table, which
     // sits inside .sw-interactive) cv-body was transparent → text was invisible.
@@ -363,17 +371,20 @@
       fmt(totalPotential) + ' potential new adoptions | ' +
       fmt(totalRecs) + ' credit recommendations</div></div>';
 
-    html += '<div class="sw-toolbar">';
-    html += '<input type="text" id="sw-search" placeholder="Search exhibits, colleges, courses..." />';
-    html += buildFilterButton("collabType", "Statewide / Local", collabTypes);
-    html += buildFilterButton("cplType", "CPL Type", cplTypes);
-    html += buildFilterButton("sector", "Career Cluster", sectors);
-    html += buildFilterButton("discipline", "TOP Code Category", disciplines);
-    if (issuers.length) html += buildFilterButton("issuer", "Issuing Agency", issuers);
-    html += buildFilterButton("college", "College", collegeNames);
-    html += buildFilterButton("district", "District", districts);
-    html += buildFilterButton("swRegion", "SW Region", swRegions);
-    html += '</div>';
+    // Page-level filter bar (search + multi-select filters). Built separately and
+    // rendered ABOVE the gallery so it applies to every view (v1 table, v2
+    // credential view, future audience views) instead of being repeated per card.
+    var toolbarHtml = '<div class="sw-toolbar">'
+      + '<input type="text" id="sw-search" placeholder="Search exhibits, colleges, courses..." />'
+      + buildFilterButton("collabType", "Statewide / Local", collabTypes)
+      + buildFilterButton("cplType", "CPL Type", cplTypes)
+      + buildFilterButton("sector", "Career Cluster", sectors)
+      + buildFilterButton("discipline", "TOP Code Category", disciplines)
+      + (issuers.length ? buildFilterButton("issuer", "Issuing Agency", issuers) : "")
+      + buildFilterButton("college", "College", collegeNames)
+      + buildFilterButton("district", "District", districts)
+      + buildFilterButton("swRegion", "SW Region", swRegions)
+      + '</div>';
 
     html += '<div class="sw-action-bar">';
     html += '<label style="font-size:0.72rem;color:rgba(255,255,255,0.7);cursor:pointer;display:flex;align-items:center;gap:0.3rem;">' +
@@ -421,6 +432,10 @@
     // intact), v2 = a credential-centric master-detail view below. Both share the
     // same search + filters; v1 is untouched. Iterate v2 freely; graduate the winner.
     container.innerHTML = CV_STYLE
+      // Page-level filter bar (dark wrapper so the existing dark-bg toolbar styles
+      // read correctly) — shared by every view below.
+      + '<div class="sw-interactive sw-filterbar">' + toolbarHtml
+      + '<div class="sw-filterbar-hint">Search &amp; filters apply to all views below.</div></div>'
       + '<details class="sw-gallery-sec" open><summary class="sw-gallery-sum">📋 Adoption table'
       + ' <span class="sw-gallery-tag">v1</span></summary>'
       + html
