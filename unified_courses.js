@@ -263,6 +263,22 @@
     });
     return _ucMembersP;
   }
+  // Lazy-load the CCR inverse view: course identity -> aligned exhibits/credentials
+  // (window.CPL_UC_ALIGNED.aligned). Only fetched the first time a row is expanded.
+  var _ucAligned = null, _ucAlignedP = null;
+  function loadAligned() {
+    if (_ucAligned) return Promise.resolve(_ucAligned);
+    if (_ucAlignedP) return _ucAlignedP;
+    _ucAlignedP = new Promise(function (resolve) {
+      if (window.CPL_UC_ALIGNED) { _ucAligned = window.CPL_UC_ALIGNED.aligned || {}; resolve(_ucAligned); return; }
+      var s = document.createElement("script");
+      s.src = "unified_courses_aligned.js";
+      s.onload = function () { _ucAligned = (window.CPL_UC_ALIGNED || {}).aligned || {}; resolve(_ucAligned); };
+      s.onerror = function () { _ucAligned = {}; resolve(_ucAligned); };
+      document.head.appendChild(s);
+    });
+    return _ucAlignedP;
+  }
   // Lazy-load the precomputed suggested-merge worklist — only when the curator
   // opens it. Anchored same-title groups + singleton-only groups; human-confirmed, never auto.
   var _ucSug = null, _ucSugP = null;
@@ -1514,6 +1530,67 @@
         var mrow = el("tr", { class: "uc-member-row" }); mrow.appendChild(cell);
         if (tr.nextSibling) tr.parentNode.insertBefore(mrow, tr.nextSibling);
         else tr.parentNode.appendChild(mrow);
+        appendAlignedSection(cell, r);  // CCR inverse view, lazy + async, below the members table
+      });
+    }
+
+    // Inject the few CSS rules the aligned section needs (the table itself reuses
+    // .uc-member-table; only the heading + CCC badge are new). Runs once per page.
+    function ensureAlignedCss() {
+      if (document.getElementById("uc-aligned-css")) return;
+      var st = document.createElement("style");
+      st.id = "uc-aligned-css";
+      st.textContent =
+        "#tab-unified-courses .uc-aligned-wrap{margin-top:12px;padding-top:10px;border-top:1px dashed #cbd5e1;}" +
+        "#tab-unified-courses .uc-aligned-head{font-size:.82rem;font-weight:700;color:#0f3d6e;margin-bottom:6px;}" +
+        "#tab-unified-courses .uc-aligned-head .uc-aligned-sub{font-weight:400;color:#64748b;}" +
+        "#tab-unified-courses .uc-aligned-badge{display:inline-block;font-size:.66rem;font-weight:700;color:#fff;background:#0f766e;border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:middle;}";
+      document.head.appendChild(st);
+    }
+
+    // Append the CCR inverse view to an expanded row's cell: the aligned
+    // exhibits/credentials that articulate to this course (lazy-loaded). The mirror
+    // of the EACR. Unions Phase-B consolidated rows' folded ids so a C-ID/CCN anchor
+    // catches articulations keyed under the M-IDs it absorbed. Renders nothing when
+    // the course has no earned articulations (the common case), keeping the row lean.
+    function appendAlignedSection(cell, r) {
+      loadAligned().then(function (al) {
+        var ids = [r.id].concat(r.consolidated_from || []);
+        var seen = {}, list = [];
+        ids.forEach(function (id) {
+          (al[id] || []).forEach(function (x) {
+            var k = (x.c || "") + "||" + (x.i || "");
+            if (seen[k]) return; seen[k] = 1; list.push(x);
+          });
+        });
+        if (!list.length) return;
+        ensureAlignedCss();
+        var nC = list.length;
+        var wrap = el("div", { class: "uc-aligned-wrap" });
+        wrap.appendChild(el("div", { class: "uc-aligned-head" }, [
+          "🎓 " + nC + " aligned exhibit" + (nC === 1 ? "" : "s") + " / credential" + (nC === 1 ? "" : "s"),
+          el("span", { class: "uc-aligned-sub" }, [" articulate to this course — the inverse of the EACR"])
+        ]));
+        var at = el("table", { class: "uc-member-table" });
+        var ah = el("thead"), ahr = el("tr");
+        ["Credential", "CPL type", "Credit recommendation", "Earning college(s)"].forEach(function (h) { ahr.appendChild(el("th", {}, [h])); });
+        ah.appendChild(ahr); at.appendChild(ah);
+        var ab = el("tbody");
+        list.forEach(function (x) {
+          var ar = el("tr");
+          var credTd = el("td", {}, [x.c || "—"]);
+          if (x.i) credTd.appendChild(el("div", { style: "font-size:.74rem;color:#64748b;font-style:italic;" }, [x.i]));
+          if (x.x === "CCC") credTd.appendChild(el("span", { class: "uc-aligned-badge", title: "A statewide CCC-collaborative articulation exists for this credential" }, ["CCC standard"]));
+          ar.appendChild(credTd);
+          ar.appendChild(el("td", {}, [x.p || "—"]));
+          ar.appendChild(el("td", { style: "font-size:.8rem;color:#475569;" }, [(x.r && x.r.length) ? x.r.join("; ") : "—"]));
+          var g = x.g || [], nCol = (x.n != null ? x.n : g.length);
+          var colsTxt = g.length <= 3 ? g.join(", ") : (g.slice(0, 3).join(", ") + " +" + (g.length - 3) + " more");
+          ar.appendChild(el("td", { style: "font-size:.8rem;color:#475569;", title: g.join(", ") }, [nCol + (g.length ? " · " + colsTxt : "")]));
+          ab.appendChild(ar);
+        });
+        at.appendChild(ab); wrap.appendChild(at);
+        cell.appendChild(wrap);
       });
     }
 
@@ -1564,7 +1641,7 @@
       matched.slice(0, MAX_VISIBLE).forEach(function (r) {
         var tr = el("tr");
         var kindTd = el("td", { class: "uc-kind-cell" });
-        var caret = el("a", { href: "#", class: "uc-caret", title: "Show member college courses" }, ["▸"]);
+        var caret = el("a", { href: "#", class: "uc-caret", title: "Show member college courses + aligned exhibits/credentials" }, ["▸"]);
         caret.onclick = function (e) { e.preventDefault(); toggleMembers(tr, r, caret); };
         kindTd.appendChild(caret);
         kindTd.appendChild(document.createTextNode(" " + (r.kind || "")));
