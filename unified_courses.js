@@ -872,8 +872,8 @@
       field("Subject(s)", r.subj);
       field("Members", r.members == null ? "" : r.members);
       field("Confidence", r.conf == null ? "" : r.conf.toFixed(2));
-      field("Adopted", (r.adopted && r.adopted.length) ? r.adopted.length + " — " + names(r.adopted).join(", ") : "");
-      field("Adoptable (potential)", (r.potential && r.potential.length) ? r.potential.length + " — " + names(r.potential).join(", ") : "");
+      field("Adopted", (r.adopted && r.adopted.length) ? r.adopted.length + " — " + shortNames(r.adopted).join(", ") : "");
+      field("Adoptable (potential)", (r.potential && r.potential.length) ? r.potential.length + " — " + shortNames(r.potential).join(", ") : "");
       if (r.title_variants && r.title_variants.length) field("Title variants", r.title_variants);
       box.appendChild(dl);
 
@@ -1194,6 +1194,12 @@
       return true;
     }
     function names(idxList) { return (idxList || []).map(function (i) { return colleges[i]; }).filter(Boolean).sort(); }
+    // Short college labels for the (often long) adopted/adoptable lists. Looks up
+    // window.cplCollegeShort lazily (college_short_names.js loads after this file);
+    // falls back to the full name. The adoption-count cell keeps full names in its
+    // hover tooltip via names() above.
+    function SHORT(c) { var f = window.cplCollegeShort; return c ? (f ? (f(c) || c) : c) : c; }
+    function shortNames(idxList) { return (idxList || []).map(function (i) { return colleges[i]; }).filter(Boolean).map(SHORT).sort(); }
     function adoptionCell(idxList, kind) {
       var n = (idxList || []).length;
       var span = el("span", { class: "uc-adopt " + kind }, [String(n)]);
@@ -1585,7 +1591,8 @@
           ar.appendChild(el("td", {}, [x.p || "—"]));
           ar.appendChild(el("td", { style: "font-size:.8rem;color:#475569;" }, [(x.r && x.r.length) ? x.r.join("; ") : "—"]));
           var g = x.g || [], nCol = (x.n != null ? x.n : g.length);
-          var colsTxt = g.length <= 3 ? g.join(", ") : (g.slice(0, 3).join(", ") + " +" + (g.length - 3) + " more");
+          var gShort = g.map(SHORT);
+          var colsTxt = gShort.length <= 3 ? gShort.join(", ") : (gShort.slice(0, 3).join(", ") + " +" + (gShort.length - 3) + " more");
           ar.appendChild(el("td", { style: "font-size:.8rem;color:#475569;", title: g.join(", ") }, [nCol + (g.length ? " · " + colsTxt : "")]));
           ab.appendChild(ar);
         });

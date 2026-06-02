@@ -1656,20 +1656,25 @@
     document.head.appendChild(st);
   }
 
+  // Compact college label for the pills (full name kept in the title attr). Looks
+  // up window.cplCollegeShort lazily — college_short_names.js loads after this file
+  // — and falls back to the full name so a pill never renders blank.
+  function SHORT(c) { var f = window.cplCollegeShort; return c ? (f ? (f(c) || c) : c) : c; }
+
   // A label + capped list of college pills with an expandable "+N more".
   function collegeBadgeGroup(label, names, cls, icon) {
     var CAP = 12;
     var g = el("div", { class: "cr-badge-group" });
     g.appendChild(el("span", { class: "cr-badge-grouplabel" }, [icon + " " + label + " (" + names.length + ")"]));
     names.slice(0, CAP).forEach(function (c) {
-      g.appendChild(el("span", { class: "cr-college-badge " + cls }, [c]));
+      g.appendChild(el("span", { class: "cr-college-badge " + cls, title: c }, [SHORT(c)]));
     });
     if (names.length > CAP) {
       var more = el("a", { href: "#", class: "cr-badge-more" }, ["+" + (names.length - CAP) + " more"]);
       more.onclick = function (e) {
         e.preventDefault();
         names.slice(CAP).forEach(function (c) {
-          g.insertBefore(el("span", { class: "cr-college-badge " + cls }, [c]), more);
+          g.insertBefore(el("span", { class: "cr-college-badge " + cls, title: c }, [SHORT(c)]), more);
         });
         if (more.parentNode) more.parentNode.removeChild(more);
       };
@@ -1807,8 +1812,9 @@
             lcCell.appendChild(el("span", { class: "cr-null" }, ["—"]));
           }
           row.appendChild(lcCell);
-          var colCell = el("td", { class: "cr-art-colleges" },
-            [(lc.colleges || []).join(", ") || "—"]);
+          var lcCols = lc.colleges || [];
+          var colCell = el("td", { class: "cr-art-colleges", title: lcCols.join(", ") },
+            [lcCols.map(SHORT).join(", ") || "—"]);
           row.appendChild(colCell);
           tbody2.appendChild(row);
         });

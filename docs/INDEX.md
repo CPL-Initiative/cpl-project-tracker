@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-02 (Session 29 "Two-Niner" — three grains complete: CCR inverse + CSR rollup + EACR filter lift + CER enrichment; new KB note: ship-generator-changes-live-on-merge)
+updated: 2026-06-02 (Session 30 — college short-name dataset + chip resolver across CCR/EACR/CER; new KB note: reference-college-short-names)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -61,6 +61,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Reference — Daily dashboard data pipeline (all 7 sources, every KPI's lineage, the committed daily dataset)](kb-notes/reference-daily-dashboard-data-pipeline.md) | reference | published | 2026-06-01 | 2026-06-01 |
 | [Reference — Windows PowerShell scripting gotchas (PS 5.1 + Task Scheduler)](kb-notes/reference-windows-powershell-gotchas.md) | reference | published | 2026-05-27 | 2026-05-27 |
 | [Reference — Session 26 codebase audit findings catalog (51 findings, ranked fix queue)](kb-notes/reference-codebase-audit-2026-06-01.md) | reference | published | 2026-06-01 | 2026-06-01 |
+| [Reference — College short-name dataset + resolver (compact chips across CCR/EACR/CER)](kb-notes/reference-college-short-names.md) | reference | published | 2026-06-02 | 2026-06-02 |
 | [Playbook — Purge committed PII from git history (CustomReport_latest.json; Rule-5-override force-push)](kb-notes/playbook-pii-history-purge.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 | [Playbook — EACR consolidation + master-detail gallery scope (Local+CCC merge, versioned gallery, 3 audience views, 4-phase ladder, backlog)](kb-notes/eacr-consolidation-scope.md) | playbook | published | 2026-06-01 | 2026-06-01 (Session 28: PR-4 prescriptive layer SHIPPED) |
 | [Methodology — Versioned prototype gallery (preserve v1, stack v2, graduate the winner)](kb-notes/methodology-versioned-prototype-gallery.md) | methodology | published | 2026-06-01 | 2026-06-01 |
