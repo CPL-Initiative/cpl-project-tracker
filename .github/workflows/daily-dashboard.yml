@@ -157,6 +157,8 @@ jobs:
                   exports/unified_courses.xlsx
           # Phase 1e canonical SUBJ4 seed + curator-edit overlay (added 5a)
           git add kb/discipline_canonical_subj4.json 2>/dev/null || true
+          # CSR rollup: per-discipline CPL opportunities (mirror of EACR/CCR)
+          git add kb/discipline_cpl_rollup.json 2>/dev/null || true
           # Cred-Ref PR-5a: credential-review curator-edit overlay
           git add kb/credential_review_overlay.json 2>/dev/null || true
           # Cred-Ref PR-5b/0: credential rename dry-run artifacts (Mode B preview)

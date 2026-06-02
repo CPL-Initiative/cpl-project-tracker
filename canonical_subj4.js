@@ -143,6 +143,15 @@
       .catch(function () { return { disciplines: {}, _counts: {} }; });
   }
 
+  // CSR rollup — per-discipline CPL opportunities (the mirror of the EACR/CCR at the
+  // discipline grain). { byDiscipline: { discipline: {n_creds,n_colleges,n_courses,
+  // creds:[{c,i,n}]} } }. Generated daily by excel_to_dashboard.py; empty-on-404.
+  function fetchCplRollup() {
+    return fetch("kb/discipline_cpl_rollup.json", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : { byDiscipline: {} }; })
+      .catch(function () { return { byDiscipline: {} }; });
+  }
+
   // Load C-ID and CCN reference data. Used to:
   //   (a) Show C-ID / CCN match badges per row (count + visual indicator of
   //       whether the canonical SUBJ4 matches the official identifier's
@@ -405,6 +414,7 @@
     status: function (e) { return STATUS_ORDER[status(e).label] || 99; },
     top_4digit: function (e) { return e.top_modal_4digit || "~"; },
     cte: function (e) { return CTE_ORDER[e.cte_flag] || 99; },
+    _cpl_n: function (e) { return e._cpl_n || 0; },
     reviewed_by: function (e) { return (e.reviewed_by || "~").toLowerCase(); },
     _impact: function (e) { return e._impact || 0; },
   };
@@ -657,6 +667,8 @@
       var entry = applyOverlay(state.seed.disciplines[d], state.overlay[d]);
       entry.discipline = d;
       entry._impact = rekeyImpact(entry);
+      entry._cpl = (state.cpl || {})[d] || null;        // CSR rollup for this discipline
+      entry._cpl_n = entry._cpl ? entry._cpl.n_creds : 0; // sort key
       return entry;
     });
 
@@ -720,6 +732,7 @@
       { key: "top_4digit",       label: "TOP",       title: "Modal TOP 4-digit category for this discipline (from the 2023 CCC Taxonomy of Programs Manual). Hover the cell for the 6-digit code + program title." },
       { key: null,               label: "CIP",       title: "CIP (Classification of Instructional Programs) — placeholder. The CCCCO is transitioning from TOP to CIP; column will populate when the mapping finalizes." },
       { key: "cte",              label: "CTE",       title: "Career Technical Education designation per the 2023 TOP Manual (asterisk-marked codes). 'all' = every MID is CTE; 'most' / 'mixed' / 'none' summarize the share." },
+      { key: "_cpl_n",           label: "CPL opportunities", title: "Earned CPL articulations in this discipline: how many distinct exhibits/credentials articulate to its courses, across how many colleges. Click the badge for the full credential list. (The CER/EACR · CCR · CSR “three grains” family — this is the discipline grain.)" },
       { key: "status",           label: "Status" },
       { key: null,               label: "Notes" },
       { key: "reviewed_by",      label: "Reviewed" },
@@ -920,6 +933,11 @@
     }
     tr.appendChild(tdCte);
 
+    // CPL opportunities cell — the CSR rollup (mirror of the EACR/CCR at the
+    // discipline grain): how many exhibits/credentials articulate to this
+    // discipline's courses, across how many colleges. Click to list them.
+    tr.appendChild(cplCell(entry));
+
     var st = status(entry);
     tr.appendChild(el("td", null, [el("span", { class: "cs-badge " + st.cls }, [st.label])]));
 
@@ -993,6 +1011,89 @@
     return tr;
   }
 
+  // CPL-opportunities cell: a count badge ("🎓 N · M coll.") linking to the
+  // credential list, or a muted dash when the discipline has no earned
+  // articulations yet. Data from the CSR rollup (state.cpl[discipline]).
+  function cplCell(entry) {
+    var td = el("td");
+    var r = entry._cpl;
+    if (!r || !r.n_creds) {
+      td.appendChild(el("span", { class: "cs-muted-dash", title: "No earned CPL articulations recorded for this discipline yet." }, ["—"]));
+      return td;
+    }
+    var top = (r.creds || []).slice(0, 6).map(function (c) { return c.c; }).join(", ");
+    var badge = el("span", {
+      class: "cs-badge ok", style: "cursor:pointer",
+      title: r.n_creds + " credential" + (r.n_creds === 1 ? "" : "s") + " · " +
+             r.n_colleges + " college" + (r.n_colleges === 1 ? "" : "s") + " · " +
+             r.n_courses + " course" + (r.n_courses === 1 ? "" : "s") +
+             "\nTop: " + top + "\n(click for the full list)",
+    }, ["🎓 " + r.n_creds + " · " + r.n_colleges + " coll."]);
+    badge.onclick = function (e) { e.stopPropagation(); openCplModal(entry); };
+    td.appendChild(badge);
+    return td;
+  }
+
+  // Inject the CPL modal once (reuses the tab's .cs-modal-bg/.cs-modal classes;
+  // appended inside the pane so those scoped rules apply — no HTML edit needed).
+  function ensureCplModal() {
+    if (document.getElementById("cs-cpl-modal")) return;
+    if (!document.getElementById("cs-cpl-css")) {
+      document.head.appendChild(el("style", { id: "cs-cpl-css" }, [
+        "#tab-canonical-subj4 .cs-cpl-table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:8px;}" +
+        "#tab-canonical-subj4 .cs-cpl-table th{text-align:left;color:#6b7280;font-weight:600;border-bottom:1px solid #e5e7eb;padding:4px 8px;}" +
+        "#tab-canonical-subj4 .cs-cpl-table td{padding:4px 8px;border-bottom:1px solid #f1f5f9;vertical-align:top;}"
+      ]));
+    }
+    var close = el("button", { class: "cs-modal-close", type: "button", "aria-label": "Close" }, ["×"]);
+    var modal = el("div", { class: "cs-modal" }, [
+      close,
+      el("h3", { id: "cs-cpl-title" }, ["CPL opportunities"]),
+      el("div", { id: "cs-cpl-body" }),
+    ]);
+    var bg = el("div", { id: "cs-cpl-modal", class: "cs-modal-bg", role: "dialog", "aria-modal": "true" }, [modal]);
+    function shut() { bg.classList.remove("show"); document.removeEventListener("keydown", esc); }
+    function esc(e) { if (e.key === "Escape") shut(); }
+    bg._esc = esc;
+    close.onclick = shut;
+    bg.onclick = function (e) { if (e.target === bg) shut(); };
+    document.getElementById("tab-canonical-subj4").appendChild(bg);
+  }
+
+  // Open the CPL modal for a discipline: list every aligned exhibit/credential
+  // (credential · issuer · #colleges that earned it).
+  function openCplModal(entry) {
+    ensureCplModal();
+    var r = entry._cpl;
+    if (!r) return;
+    var bg = document.getElementById("cs-cpl-modal");
+    document.getElementById("cs-cpl-title").textContent = "🎓 CPL opportunities · " + entry.discipline;
+    var body = document.getElementById("cs-cpl-body");
+    body.innerHTML = "";
+    body.appendChild(el("p", {}, [
+      r.n_creds + " distinct exhibit/credential" + (r.n_creds === 1 ? "" : "s") +
+      " articulate to this discipline’s courses, earned across " + r.n_colleges +
+      " college" + (r.n_colleges === 1 ? "" : "s") + " (" + r.n_courses + " course identit" +
+      (r.n_courses === 1 ? "y" : "ies") + ")."
+    ]));
+    var tbl = el("table", { class: "cs-cpl-table" });
+    var hr = el("tr");
+    ["Credential", "Issuer", "Colleges"].forEach(function (h) { hr.appendChild(el("th", {}, [h])); });
+    tbl.appendChild(el("thead", null, [hr]));
+    var tb = el("tbody");
+    (r.creds || []).forEach(function (c) {
+      var row = el("tr");
+      row.appendChild(el("td", {}, [c.c || "—"]));
+      row.appendChild(el("td", { style: "color:#6b7280;" }, [c.i || "—"]));
+      row.appendChild(el("td", { class: "cs-mono", style: "text-align:center;" }, [String(c.n)]));
+      tb.appendChild(row);
+    });
+    tbl.appendChild(tb);
+    body.appendChild(tbl);
+    document.addEventListener("keydown", bg._esc);
+    bg.classList.add("show");
+  }
+
   // Guidelines modal — wire the open/close on the curator-facing button.
   // Light-weight focus-trap-less modal; click-outside or × closes it.
   function wireGuidelinesModal() {
@@ -1043,11 +1144,12 @@
     state.sess = getSession();
     wireGuidelinesModal();
     wireVariantsModal();
-    Promise.all([fetchSeed(), fetchOverlay(), fetchCidCcn()]).then(function (parts) {
+    Promise.all([fetchSeed(), fetchOverlay(), fetchCidCcn(), fetchCplRollup()]).then(function (parts) {
       state.seed = parts[0];
       state.overlay = parts[1];
       state.cidBySubj = parts[2].cidBySubj || {};
       state.ccnBySubj = parts[2].ccnBySubj || {};
+      state.cpl = (parts[3] || {}).byDiscipline || {};
       // Apply any pending quickstart hint stashed before init (refresh case).
       if (window.CPL_QS) applyQsHint(window.CPL_QS.consume(QS_TAB));
       // Toolbar is built once at init. Subsequent state changes only
