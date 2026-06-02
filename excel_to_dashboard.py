@@ -5288,7 +5288,13 @@ def export_credential_reference():
 
         ut_arts = art_by_ut.get(ut, [])
         disc_counter, top_counter = Counter(), Counter()
-        statewide = False
+        statewide = False        # has_ccc — any CCC Collaborative articulation
+        has_local = False        # any non-CCC (Local/Industry/Apprenticeship/blank) articulation
+        cpl_set = set()          # distinct CPL types across this credential's articulations
+        ccc_recs = Counter()     # credit-recommendation strings from CCC rows (the statewide standard)
+        all_recs = Counter()     # credit-recommendation strings from all rows (the generated modal)
+        adopter_cols = set()     # colleges that earned ≥1 articulation (green-badge source; also in articulations[].local[])
+        potential_cols = set()   # peer colleges that could adopt (adoption_leverage; orange-badge source)
         by_cid = defaultdict(list)
         for a in ut_arts:
             cid = a.get("course_id")
@@ -5299,8 +5305,23 @@ def export_credential_reference():
             # "CCC". Match either form so the badge survives a future kb-pipeline
             # change that re-introduces the long form.
             ct = a.get("collaborative_type") or ""
-            if ct == "CCC" or ct == "CCC Collaborative":
+            is_ccc = (ct == "CCC" or ct == "CCC Collaborative")
+            if is_ccc:
                 statewide = True
+            else:
+                has_local = True
+            cpl = (a.get("cpl_type_description") or "").strip()
+            if cpl:
+                cpl_set.add(cpl)
+            for cr in (a.get("credit_recommendations") or []):
+                if cr:
+                    all_recs[cr] += 1
+                    if is_ccc:
+                        ccc_recs[cr] += 1
+            adopter_cols.update(c for c in (a.get("earned_by_colleges") or []) if c)
+            # Over-merge guardrail (§6a): never surface leverage off a conflated cluster.
+            if not a.get("over_merged"):
+                potential_cols.update(c for c in (a.get("adoption_leverage") or []) if c)
             m = course_meta.get(cid) or {}
             if m.get("discipline"):
                 disc_counter[m["discipline"]] += 1
@@ -5309,6 +5330,15 @@ def export_credential_reference():
 
         disc_modal = disc_counter.most_common(1)[0][0] if disc_counter else ""
         top_modal = top_counter.most_common(1)[0][0] if top_counter else ""
+        # Scope/CPL/credit-rec rollups (Session 29 CER enrichment):
+        #   ccc_rec = the statewide standard credit rec (modal across CCC rows);
+        #   gen_rec = the "generated" suggestion (modal across all rows) shown
+        #     consideration-only when there's no CCC standard;
+        #   potential = could-adopt colleges (leverage) minus those already adopted.
+        ccc_rec = ccc_recs.most_common(1)[0][0] if ccc_recs else ""
+        gen_rec = all_recs.most_common(1)[0][0] if all_recs else ""
+        cpl_types = sorted(cpl_set)
+        potential_cols -= adopter_cols
 
         articulations_out = []
         for cid, recs in by_cid.items():
@@ -5353,6 +5383,11 @@ def export_credential_reference():
             "disc_modal": disc_modal,
             "top_modal": top_modal,
             "statewide": statewide,
+            "has_local": has_local,
+            "cpl_types": cpl_types,
+            "ccc_rec": ccc_rec,
+            "gen_rec": gen_rec,
+            "potential_colleges": sorted(potential_cols),
             "audit_tags": audit_tags,
             "audit_tag_total": sum(audit_tags.values()),
             "articulations": articulations_out,
