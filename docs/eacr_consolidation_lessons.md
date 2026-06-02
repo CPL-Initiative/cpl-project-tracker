@@ -105,3 +105,68 @@ the workstream narrative + state.
 Read the PR-4 scoping agent's findings → decide consumer vs producer for the
 prescriptive layer → build it (v2 first, then graduate). If producer, mirror the
 PR-2 pattern (synthetic unit test + regen-gated, Sam verifies live).
+
+## Session 28 (2026-06-01) — PR-4 prescriptive layer + v2-toggle fix
+
+### What shipped (both merged to `main`)
+| PR | What | Side |
+|---|---|---|
+| #252 | **v2-toggle fix (fix-first)** — the "🎓 Credential view" `<details>` wouldn't expand. Visible `::before` chevron + delegated JS toggle on `.sw-gallery-sum` with `preventDefault()`. jsdom-tested (12 assertions). | consumer |
+| #253 | **PR-4 prescriptive layer** — per credential, the colleges that could adopt it + the **likely local course each already teaches**. New producer `_build_statewide_prescriptive()` → `statewide_prescriptive.js`; consumer `buildPrescriptiveHtml()` renders a collapsible block per v2 card. | producer + consumer |
+
+### What's been learned
+- **The EACR card's `potential_names` is NOT the prescriptive data.** The card's
+  potential adopters come from TOP/CID *program* matching (`ProgramsofStudy` +
+  `CollegeCourses`). The actionable "which local course" data lives in a different
+  place — `coci_articulations.json` `adoption_leverage` (leverage college NAMES) ⨝
+  `coci_minted_memberships.json` (`{college,subject,course_number,units}` per M-ID
+  `course_id`). Bridged by `unified_title`. Don't assume one "potential" list is
+  the other.
+- **Producer-side, keyed by the consumer's group key.** The consumer
+  (`statewide_data.js`) has no `course_id`, and one `unified_title` fans to many
+  M-IDs — so the join MUST be producer-side, and the emitted file is keyed by the
+  exact field the consumer groups on (`unified_title`). Then the consumer is a
+  trivial `map[title]` lookup. (Same lesson the PR-4 scoping agent predicted.)
+- **The over-merge guardrail needs a *clean-source* invariant, not a naive
+  "withheld>0" check.** A college can appear in BOTH an over_merged record's
+  leverage AND a clean M-ID's leverage for the same credential — it's legitimately
+  recommendable via the clean one. The right invariant: *every emitted (title,
+  college) pair has a clean (non-over-merged) source*; `withheld` counts only
+  colleges with NO clean source. My first verify-script assertion got this wrong
+  (flagged a legit emit as a leak) — the BUILD was right, the TEST was wrong. 4,538
+  pairs correctly withheld, 0 leaks.
+- **Spot-check against a documented example pays off.** The handoff named
+  `CNST M1029 → Rio Hondo CARP 050T`; my join reproduced it exactly — instant
+  confidence the membership join resolves real local course codes.
+- **Commit the generated file + hand-add the `<script>` tag so it's live on
+  merge.** A producer-side change normally waits for the daily regen, but
+  committing `statewide_prescriptive.js` (generated via the real
+  `_build_statewide_prescriptive()`) + adding the tag to both HTML files (Rule 4)
+  makes it live immediately. Confirmed the inline producer header matches the
+  committed file char-for-char → the daily regen is a no-op diff (no churn).
+- **The `<details>` styling gotcha is real + reusable** → split into
+  `docs/kb-notes/methodology-styling-native-details-toggle.md`.
+
+### Current state
+- v1 (table) + v2 (master-detail Credential view, now with a per-card
+  **prescriptive block**) both live; v2 expands correctly. PR-4 is producer-side +
+  live on merge (committed file + tag). 806 credentials carry recommendations.
+
+### Strategic roadmap
+- **Next: the 3 audience views** (Student / College / System) as further gallery
+  renderers over the same consolidated + prescriptive data (per the scope doc).
+  The prescriptive layer is the data spine for the **College** ("my adoption
+  options") and **System** ("inequitable-access map") views.
+- **Backlog** (`docs/kb-notes/eacr-consolidation-scope.md`): full credential merge
+  (CPL Type as a tag), CCR inverse view, CSR rollup, curate-the-unclassified,
+  per-group college counts, the mojibake-em-dash nit. Also: **C-ID prescriptive
+  leverage** (30.4k slots, deferred — keyed by CIDNumber in the 24 MB raw
+  `coci_course_list.xlsx`) is the natural extension once that heavier join is worth
+  it.
+
+### Next concrete step
+Pick the **Student view** (highest-value seeker lens) or wire **C-ID leverage**
+into the prescriptive layer. For the Student view, reuse `buildCredentialView` +
+`buildPrescriptiveHtml` as a new gallery renderer (v3) with a near-me/region
+filter; per the versioned-gallery methodology, keep v1/v2 untouched and graduate
+the winner.

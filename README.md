@@ -163,6 +163,7 @@ data refresh are captured atomically.
 ├── CPL_Dashboard.html                 ← generated dashboard (mirror of index.html)
 ├── index.html                         ← served by GitHub Pages
 ├── CPL_Data.js / statewide_data.js    ← client-side data for filters/search
+├── statewide_prescriptive.js          ← EACR prescriptive layer (who could adopt → likely local course)
 ├── unified_courses*.js                ← Unified Courses tab data + lazy files
 ├── dashboard_filters.js               ← client-side filter/search/sort
 ├── report_generator.js                ← Custom Report (Claude API via proxy)

@@ -1,6 +1,7 @@
 ---
 title: EACR card + credit-rec consolidation (Scope)
 date: 2026-06-01
+updated: 2026-06-01 (Session 28 — PR-4 prescriptive layer SHIPPED + v2-toggle fix)
 kb-status: published
 kb-type: playbook
 tags: [eacr, exhibit-adoption, consolidation, credit-recommendations, scope, generator, statewide, seeker-view, adoption-leverage, unified-courses]
