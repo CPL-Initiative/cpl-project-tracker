@@ -1686,13 +1686,23 @@ wipe sibling unsaved input. (4) **jsdom needs a `url:`** option or `sessionStora
 `git reset --hard origin/main` then **`git push --force-with-lease`** (the remote branch still points
 at the pre-squash head — non-fast-forward is expected).
 
-**Carryover / next:** **CER triage PR-3** — the FOLD: a dry-run-first apply that promotes confirmed
-`unclassified_assignments.json` entries into `kb/unified_titles.json` + `kb/credentials.json` (and
-surfaces them as credential rows / removes them from the unclassified list); KB-mutation (ripples into
-`coci_articulations.json`'s inlined `unified_title`), so its own PR with V-gates. Then the rest of the
-Session-30 queue: the **3 audience views** (Student/College/System — System needs a privacy ADR),
-**EACR v2** scope/generated-rec (producer-side → next cron), **MID curation** (CompTIA A+ fragmentation
-→ Suggested-merges worklist).
+**CER triage PR-3 — the FOLD — DONE (#270) + tire-kick (#269).** `kb/_fold_unclassified.py`
+(dry-run-first, V-gates V1–V4) folds confirmed `unclassified_assignments.json` entries into
+`kb/unified_titles.json` (+ `credentials.json` if missing) and PRUNES `kb/exhibit_audit/latest.json`
+(the worklist's source — the exhibit auditor isn't in the daily cron + needs the purged CustomReport)
+in the auditor's minified format. Idempotent: already-classified→SKIP, different-target→CONFLICT
+(rejected); detects + blocks `coci_articulations.json` ripples (V4). First real run (3 tire-kick
+assignments entered live as `map@rccd.edu`, RLS write-gate confirmed): 2 CLEAN adds (CompTIA Linux+,
+NCCER Welding Level 1), 1 SKIP (Azure Admin — stale audit flag), `unified_titles` 3274→3276,
+`unclassified_in_map` 194→192, 0 credential adds, 0 ripples. **The CER unclassified-triage loop is
+COMPLETE end-to-end** (worklist #266 → sync #267 → assign #269 → fold #270). The CER baked payload
+surfaces folded titles as raw variants under existing credential rows on the next daily cron.
+
+**Carryover / next:** continue CER triage (≈190 raw titles remain, ≈48 clear credentials — re-run
+`kb/_fold_unclassified.py --apply` after more worklist assignments), then the rest of the Session-30
+queue: the **3 audience views** (Student/College/System — System needs a privacy ADR), **EACR v2**
+scope/generated-rec (producer-side → next cron), **MID curation** (CompTIA A+ fragmentation →
+Suggested-merges worklist).
 
 ---
 

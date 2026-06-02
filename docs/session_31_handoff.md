@@ -51,15 +51,26 @@ WHAT SHIPPED IN SESSION 30 (all merged to main):
   - #267 TRIAGE DAILY SYNC (PR-2) — kb/_apply_unclassified_triage.py syncs the
     namespace → git-canonical overlay kb/unclassified_assignments.json (idempotent;
     no empty-overlay churn) + daily-workflow step + git-add. Synthetic 9/9.
+  - #269 TIRE-KICK — 3 real assignments entered into the live _UNCLASSIFIED::
+    namespace as map@rccd.edu (RLS write-gate confirmed) + synced to the overlay,
+    proving the worklist→Supabase→sync path end-to-end.
+  - #270 CER TRIAGE PR-3 (THE FOLD) — kb/_fold_unclassified.py (dry-run-first,
+    V-gates V1-V4) folds confirmed overlay assignments into kb/unified_titles.json
+    (+ credentials.json if missing) + PRUNES kb/exhibit_audit/latest.json (the
+    worklist source) so folded titles drop off. Applied the 3: 2 CLEAN adds
+    (CompTIA Linux+, NCCER Welding Level 1), 1 SKIP (Azure Admin already classified
+    — stale audit flag). unified_titles 3274→3276; unclassified_in_map 194→192;
+    0 credential adds, 0 articulation ripples. THE CER UNCLASSIFIED-TRIAGE LOOP IS
+    NOW COMPLETE end-to-end (worklist→sync→assign→fold).
 
 PRIORITY OPTIONS FOR SESSION 31 (Sam picks):
-  - CER TRIAGE PR-3 (the FOLD) — the natural next step: a dry-run-first apply that
-    promotes confirmed kb/unclassified_assignments.json entries into
-    kb/unified_titles.json + kb/credentials.json so the raw titles leave the
-    unclassified queue and render as credential rows. KB-mutation (ripples into
-    coci_articulations.json's inlined unified_title) → V-gates + its own PR. NOTE:
-    the overlay is empty until a curator actually assigns titles in the worklist,
-    so PR-3 is testable via synthetic injection but no-ops on real data until then.
+  - CONTINUE CER TRIAGE — more real classifications: open the worklist (or insert
+    _UNCLASSIFIED:: rows), then re-run `python3 kb/_fold_unclassified.py --apply`
+    (idempotent; SKIPs already-folded, rejects CONFLICTs). ~190 raw titles remain;
+    ~48 look like clear credentials (COMPTIA/Microsoft/Adobe/ASE/NCCER/Cal-JAC…).
+    The exhibit auditor (kb/_audit_exhibits.py) is NOT in the daily cron + needs the
+    PII-purged CustomReport, so the fold prunes latest.json itself to keep the
+    worklist current.
   - THE 3 AUDIENCE VIEWS (Student/College/System) — still the headline. v3+ gallery
     renderers over the EACR consolidated + prescriptive data. Student first (reuse
     buildCredentialView + buildPrescriptiveHtml + a near-me/region filter). System
@@ -107,7 +118,7 @@ dispatch once — docs/map_api_auth_handoff.md); Cloudflare worker redeploy + WA
 | College short-name dataset + chip resolver (#264) | **DONE + MERGED** (verified sound) |
 | CER economize cosmetic (#265) | **DONE + MERGED** |
 | CER unclassified-triage worklist PR-1 (#266) + daily sync PR-2 (#267) | **DONE + MERGED** |
-| **CER triage PR-3 (the FOLD into unified_titles.json)** | **NEXT — not started** (KB-mutation; dry-run-first; no-ops until a curator assigns) |
+| CER triage tire-kick (#269) + PR-3 the FOLD (#270) | **DONE + MERGED — loop complete** (`kb/_fold_unclassified.py`; 2 folded, 192 unclassified remain) |
 | 3 audience views (Student/College/System) | **SCOPED; headline.** System needs a privacy ADR |
 | EACR v2 scope/generated-rec treatment | deferred (producer-side → next cron) |
 | MID curation passes (CompTIA A+ fragmentation) | backlog → Suggested-merges worklist |
