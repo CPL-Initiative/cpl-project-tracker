@@ -32,12 +32,16 @@ The whole ecosystem, end-to-end:
    under a "Typical CPL" units headline, and a master-detail **Credential view**
    (one card per credential, the CCC standard on top); plus
    Workplan Activities & Projects, Annual Goals, Budget, Vision 2030, a
-   per-college **Common Course Reference** curation tab, a **Common Subjects
-   Reference** tab (faculty-facing per-discipline curation with validate workflow
-   + TOP/CTE/CIP columns + collapsible category groupings; Variants column
-   shows the raw local college subject codes colleges actually use, sourced
-   from `kb/coci_minted_memberships.json`), a **Common Exhibit Reference** tab
-   (sister to CCR, with edit-override curation landed in Cred-Ref PR-4), a
+   per-college **Common Course Reference** curation tab (expand a course → an
+   **inverse view** of the EACR: the aligned exhibits/credentials that articulate
+   to it), a **Common Subjects Reference** tab (faculty-facing per-discipline
+   curation with validate workflow + TOP/CTE/CIP columns + collapsible category
+   groupings; a **"CPL opportunities"** column rolls up how many credentials
+   articulate to each discipline; Variants column shows the raw local college
+   subject codes colleges actually use, sourced from
+   `kb/coci_minted_memberships.json`), a **Common Exhibit Reference** tab (sister
+   to CCR — expand a credential for scope/CPL chips, a statewide-or-generated
+   credit rec, and green/orange adopted-vs-potential college badges), a
    **quick-start natural-language chat** widget on the first screen (Claude
    API classifies your prompt to one of the 11 tabs **and** can pre-pop the
    destination tab's filters — "review unclassified credentials" lands you

@@ -1582,6 +1582,57 @@ regen-untestable producer change. **Next: the 3 audience views** (Student/Colleg
 System) + the backlog. Lessons:
 [`docs/eacr_consolidation_lessons.md`](docs/eacr_consolidation_lessons.md).
 
+### Session 29 — three grains complete + EACR/CER enrichment (shipped 2026-06-02, "Two-Niner")
+
+Resumed after a bricked/parallel-session scare; **opened with a diagnostic** — the
+"missing work" was a **stale `origin/main` ref** (the first `git fetch origin main
+<branch>` aborted on a non-existent remote branch, so the tracking ref never updated;
+a clean `git fetch origin main` forced-updated it and divergence collapsed to `0 0`).
+The frozen Session 28 + recovery session had already self-healed (dup PRs #255/#257
+closed, new work landed as #258). Then shipped **4 PRs, all merged + live**:
+
+- **#259 CCR inverse view** — mirror of the EACR: expand a CCR row → all aligned
+  exhibits/credentials that articulate to that course. `_build_aligned_exhibits_by_course()`
+  pivots `coci_articulations.json` by `course_id` → committed lazy file
+  `unified_courses_aligned.js` (`window.CPL_UC_ALIGNED`, 2,355 courses; in the daily
+  git-add + the §"lazy files" table). Consumer renders "🎓 N aligned …" in the existing
+  CCR row-expand (reuses `.uc-member-table`, unions Phase-B `consolidated_from`). jsdom 13/13.
+- **#260 CSR rollup** — discipline grain: a sortable **"CPL opportunities"** column on
+  the Common Subjects Reference tab + a credential-list modal. `_build_cpl_by_discipline()`
+  rolls articulations up by discipline (discipline sourced from the minted catalogs —
+  the articulations' `identities` map keys only ~381/2,355 re-minted course_ids) →
+  committed `kb/discipline_cpl_rollup.json` (97 disciplines; in the daily git-add).
+  jsdom 12/12. **Completes the "same data, three grains" family — CER/EACR (credential)
+  · CCR (course) · CSR (discipline).**
+- **#261 EACR filter lift + darker titles** — the v1/v2 gallery filters were *inside*
+  the v1 `<details>` (hidden on collapse, unshared). Lifted search + filters to a
+  page-level dark bar above the whole gallery (every view shares `state.filters` /
+  `getFiltered()`); darkened `.sw-gallery-sum` from gold `#C9A84C` (washed out on the
+  light page) → navy `#0A2240`. Consumer-only (`statewide_interactive.js`). jsdom 13/13.
+- **#262 CER enrichment** — per credential's expanded detail (between curation header
+  and the identities table): **scope chips** (🏛 CCC + 🏠 Local both when both;
+  "⚙ CCC Generated · consideration only" when only Local), **CPL-type chips**, the
+  **statewide standard** rec (modal CCC) or a **generated** suggestion (modal across all,
+  labeled NOT official per §11), and **green (articulated) / orange (potential, from
+  `adoption_leverage`, over-merge-withheld)** college badges + "+N more".
+  `export_credential_reference()` emits 5 new fields (`has_local`, `cpl_types`,
+  `ccc_rec`, `gen_rec`, `potential_colleges`); consumer `renderScopeAndBadges()` (Rule-4-safe,
+  CSS injected from JS). jsdom 17/17.
+
+**Patterns / learnings (this session):** (1) **CER producer regenerates from committed
+inputs → shipped live-on-merge** (regen `credential_reference_data.js` locally + commit;
+unlike EACR's `statewide_data.js`, which needs the raw MAP pull → next-cron). New KB note
+`methodology-ship-generator-changes-live-on-merge.md`. (2) **Consumer adapters whitelist**
+— new producer fields are dropped at the consumer until added to `adaptBakedRow`. (3)
+**The daily cron is a mid-flight merge hazard** for generated files — #262 went `dirty`;
+fix = rebase onto main, re-run the producer to regenerate, verify additive-only,
+force-push. (4) **jsdom-test the real consumer** with a minimal fixture + stubbed fetch.
+
+**Carryover / next:** CER unclassified-triage (the original ask) · EACR v2 version of the
+scope/generated-rec treatment (producer-side → next cron) · MID curation passes (CompTIA
+A+ fragmentation → Suggested-merges worklist) · the 3 audience views (Student first;
+System needs a privacy ADR). Pipeline viz correctly SKIPPED — no M-ID pipeline movement.
+
 ---
 
 ## Troubleshooting

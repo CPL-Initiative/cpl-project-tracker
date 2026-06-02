@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-02 (Session 28 follow-up — 2 KB notes from the post-freeze recovery: self-paint-canvas styling + resume-after-freeze)
+updated: 2026-06-02 (Session 29 "Two-Niner" — three grains complete: CCR inverse + CSR rollup + EACR filter lift + CER enrichment; new KB note: ship-generator-changes-live-on-merge)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -68,6 +68,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Playbook — Pre-stage optional auth before an external API enforces it (no-op until secret set)](kb-notes/playbook-prestage-optional-external-auth.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 | [Methodology — A self-contained injected component must paint its own canvas, not just its text](kb-notes/methodology-self-contained-injected-component-styling.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [Playbook — Resuming a frozen session: check `main` before rebuilding its in-flight work](kb-notes/playbook-resume-frozen-session-check-main-first.md) | playbook | published | 2026-06-02 | 2026-06-02 |
+| [Methodology — Ship generator changes live-on-merge when the artifact regenerates from committed inputs](kb-notes/methodology-ship-generator-changes-live-on-merge.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 
 ---
 
@@ -84,7 +85,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
 | [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR / Cred-Ref sync | Session 12 (Mode B complete) |
-| [`eacr_consolidation_lessons.md`](eacr_consolidation_lessons.md) | EACR consolidation + Local+CCC merge + master-detail gallery (v2) + MAP-auth pre-stage + **PR-4 prescriptive layer + v2-toggle/contrast fixes** | **Session 28 (Bruh 28, 2026-06-01)** |
+| [`eacr_consolidation_lessons.md`](eacr_consolidation_lessons.md) | EACR consolidation + Local+CCC merge + master-detail gallery (v2) + PR-4 prescriptive + **the "three grains" family: CCR inverse (#259) · CSR rollup (#260) · EACR filter-lift (#261) · CER enrichment (#262)** | **Session 29 (Two-Niner, 2026-06-02)** |
 | [`map_api_auth_handoff.md`](map_api_auth_handoff.md) | MAP CustomReport API auth coordination (Teams spec sheet + the no-op pre-stage activation steps) | **Session 27 (2026-06-01) NEW** |
 | [`exhibit_unification_vision.md`](exhibit_unification_vision.md) | Credential design doc | retrospective |
 | [`letter_curator_handoff.md`](letter_curator_handoff.md) | Letter Curator workstream | Session 10 |
@@ -124,6 +125,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 26 → 27 | Bruh 26 / Deuce-Six (handoff) | [`session_27_handoff.md`](session_27_handoff.md) |
 | 27 → 28 | Bruh 27 (handoff) | [`session_28_handoff.md`](session_28_handoff.md) |
 | 28 → 29 | Bruh 28 (handoff) | [`session_29_handoff.md`](session_29_handoff.md) |
+| 29 → 30 | Two-Niner (handoff) | [`session_30_handoff.md`](session_30_handoff.md) |
 
 ---
 
