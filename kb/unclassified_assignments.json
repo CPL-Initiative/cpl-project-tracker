@@ -1,9 +1,14 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-02T18:27:09Z",
-  "count": 56,
+  "_synced_at": "2026-06-02T18:34:04Z",
+  "count": 127,
   "assignments": {
+    "ADJU 232 - Juvenile Justice Procedures - Credit by Exam": {
+      "unified_title": "Juvenile Justice Procedures",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "AP - Psychology": {
       "unified_title": "AP Psychology",
       "reviewed_by": "map@rccd.edu",
@@ -18,6 +23,46 @@
       "unified_title": "AP English Language & Composition",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AP English Language and Composition (IGETC)": {
+      "unified_title": "AP English Language and Composition",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "AP Exam Physics 1: Algebra-Based Score of 4 or 5": {
+      "unified_title": "AP Physics 1: Algebra-Based",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "AP Exam Physics 2: Algebra-Based (Score of 3)": {
+      "unified_title": "AP Physics 2: Algebra-Based",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "AP Exam Physics C: Electricity and Magnetism (Score 4-5)": {
+      "unified_title": "AP Physics C: Electricity and Magnetism",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "AP Exam Physics C: Electricity and Magnetism Score of 4 or 5": {
+      "unified_title": "AP Physics C: Electricity and Magnetism",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "AP Exam Physics C: Mechanics (Score 4-5)": {
+      "unified_title": "AP Physics C: Mechanics",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "AP Exam Precalculus (Score 3-5)": {
+      "unified_title": "AP Precalculus",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "AP Exam Statistics (Score 3-5)": {
+      "unified_title": "AP Statistics",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
     },
     "AP Exam: Computer Science Principles": {
       "unified_title": "AP Computer Science Principles",
@@ -64,15 +109,45 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
     },
+    "AP: History European": {
+      "unified_title": "AP European History",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "AP: History U.S. History": {
+      "unified_title": "AP U.S. History",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "AP: Music Theory": {
       "unified_title": "AP Music Theory",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
     },
+    "AP: Physics C- Electricity/ Magnetism": {
+      "unified_title": "AP Physics C: Electricity and Magnetism",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "AP: Physics C- Mechanics": {
       "unified_title": "AP Physics C: Mechanics",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "AUTO 60B: Automotive Electronics - Credit By Exam": {
+      "unified_title": "Automotive Electronics",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam": {
+      "unified_title": "Automotive Suspension, Steering and Alignment",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam": {
+      "unified_title": "Wheel Alignment, Chassis Dynamics, and ADAS",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
     },
     "Advanced Metal Framing": {
       "unified_title": "Advanced Metal Framing",
@@ -84,20 +159,70 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
     },
+    "Automotive Service Excellence (ASE) A4 Certificate Suspension & Steering": {
+      "unified_title": "ASE A4 — Suspension and Steering",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "Automotive Service Excellence (ASE) A5 Certificate Brakes": {
+      "unified_title": "ASE A5 — Brakes",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "Automotive Service Excellence (ASE) L3: Light Duty Hybrid/Electric Vehicle Specialist Certiication": {
+      "unified_title": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "Automotive Technology MLR I & II - Irvine High School": {
+      "unified_title": "Automotive Technology MLR I and II — Irvine High School",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "Basic Pharmacology": {
       "unified_title": "Basic Pharmacology",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Building Construction for Fire Protection Credit by Exam": {
+      "unified_title": "Building Construction for Fire Protection",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
     },
     "Bus Operator": {
       "unified_title": "Bus Operator",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
     },
+    "C-190, C-290, ICS 100 and ICS 700 Wildland Fire Certifications": {
+      "unified_title": "Wildland Fire Certifications (C-190, C-290, ICS-100, ICS-700)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)": {
+      "unified_title": "Business Management and Entrepreneurship — Cajon High School",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "CIT 144 - Medical Terminology": {
+      "unified_title": "Medical Terminology",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "CLEP Analyzing & Interpreting Literature": {
+      "unified_title": "CLEP Analyzing and Interpreting Literature",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "CLEP Exam: Human Growth and Development": {
       "unified_title": "CLEP Human Growth and Development",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "CLEP Principles Marketing": {
+      "unified_title": "CLEP Principles of Marketing",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
     },
     "CLP – C CERTIFIED PROFESSIONAL PROGRAMMER": {
       "unified_title": "CLP — C Certified Professional Programmer",
@@ -110,10 +235,40 @@
       "reviewed_at": "2026-06-02T18:02:32Z",
       "issuing_agency": "CompTIA"
     },
+    "CPA – C++ CERTIFIED ASSOCIATE PROGRAMMER": {
+      "unified_title": "C++ Certified Associate Programmer (CPA)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "CPP – C++ CERTIFIED PROFESSIONAL PROGRAMMER": {
       "unified_title": "CPP — C++ Certified Professional Programmer",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Cal Fire Hazardous Materials First Responder Operational Level, Decontamination": {
+      "unified_title": "Hazardous Materials First Responder Operational — Decontamination",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "Cal-JAC Fire Fighter Paramedic Journeyperson Certificate": {
+      "unified_title": "Fire Fighter Paramedic Journeyperson Certificate",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "Cal-JAC Firefighter EMT Certificate": {
+      "unified_title": "Firefighter EMT Certificate",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "Cal-JAC Firefighter Journeyperson Certificate": {
+      "unified_title": "Firefighter Journeyperson Certificate",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "Center for Financial Training: CFTA-0025 Human Resources Management;": {
+      "unified_title": "Center for Financial Training (CFT) — Human Resources Management (CFTA-0025)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
     },
     "Certified Bloodstain Pattern Analyst (CBPA) Certification": {
       "unified_title": "Certified Bloodstain Pattern Analyst (CBPA)",
@@ -140,6 +295,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
     },
+    "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors": {
+      "unified_title": "High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "Community and the Justice System": {
       "unified_title": "Community and the Justice System",
       "reviewed_by": "map@rccd.edu",
@@ -149,6 +309,16 @@
       "unified_title": "Cosmetology License",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Credit by Exam- Introduction to Legal Research and Terminology": {
+      "unified_title": "Introduction to Legal Research and Terminology",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "Credit by Exam: History Of Architecture I": {
+      "unified_title": "History of Architecture I",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
     },
     "Crime Scene Management and Forensic Evidence": {
       "unified_title": "Crime Scene Management and Forensic Evidence",
@@ -170,10 +340,40 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
     },
+    "DANCETQ 141 - Modern Dance Techniques I": {
+      "unified_title": "Modern Dance Techniques I",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "Digital Forensics Fundamentals": {
       "unified_title": "Digital Forensics Fundamentals",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Digital Illustration with Adobe- Credit by Exam": {
+      "unified_title": "Digital Illustration with Adobe",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "Dollar General Store Manager Training DLGC-0001 Store Manager Training": {
+      "unified_title": "Dollar General Store Manager Training",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "FTECH 302 Fire Prevention": {
+      "unified_title": "Fire Prevention",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship": {
+      "unified_title": "Fire Service In-Service Training: Command and Control",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "Fire Inspector 2A: Fire Prevention Administration": {
+      "unified_title": "Fire Inspector 2A",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
     },
     "Firefighter 1 Certification": {
       "unified_title": "Firefighter 1",
@@ -190,10 +390,40 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
     },
+    "GEOG 025 - Introduction to Geographic Information Systems and Laboratory": {
+      "unified_title": "Introduction to Geographic Information Systems",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "GIS 025 - Introduction to Geographic Information Systems and Laboratory": {
+      "unified_title": "Introduction to Geographic Information Systems",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "Human Resource Management": {
       "unified_title": "Human Resource Management",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "ICS 300: Intermediate Incident Command System for Expanding Incidents (2019)": {
+      "unified_title": "ICS 300 — Intermediate Incident Command System",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "ICS 400: Advanced Incident Command System for Command and General Staff Complex Incidents (2019)": {
+      "unified_title": "ICS 400 — Advanced Incident Command System",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)": {
+      "unified_title": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "INSPEC 017 - California State Energy Regulations for Residential Buildings - PORTFOLIO Review": {
+      "unified_title": "California State Energy Regulations for Residential Buildings",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
     },
     "Introduction to Computer Information Systems": {
       "unified_title": "Introduction to Computer Information Systems",
@@ -225,10 +455,50 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
     },
+    "MDAST 320 - Introduction to Medical Assisting - Industry Certification": {
+      "unified_title": "Introduction to Medical Assisting",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "MDAST 322 Medical Assisting Administrative Procedures - Industry Certification": {
+      "unified_title": "Medical Assisting Administrative Procedures",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "MDAST 323 - Medical Assisting Clinical - Indsutry Certification": {
+      "unified_title": "Medical Assisting Clinical",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "MDAST 325 - Medical Assisting Lab Procedures - Industry Certification": {
+      "unified_title": "Medical Assisting Lab Procedures",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "MDAST 326 Medical Assisting Practicum - Indsutry Certification": {
+      "unified_title": "Medical Assisting Practicum",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "MICROSOFT OFFICE SPECIALIST OUTLOOK CERTIFICATION": {
       "unified_title": "Microsoft Office Specialist — Outlook",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "MUSIC 165 - Introduction to Recording Arts": {
+      "unified_title": "Introduction to Recording Arts",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "McDonald's Corporation MCD-0051 Business Leadership Practices;": {
+      "unified_title": "McDonald's MCD-0051 Business Leadership Practices",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "McDonald's Corporation: MCD-0074 Mid Management Foundations Curriculum: Getting Started & Transition to the Role;": {
+      "unified_title": "McDonald's MCD-0074 Mid-Management Foundations Curriculum",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
     },
     "Metal Building Erection I / Foreman Training": {
       "unified_title": "Metal Building Erection I / Foreman Training",
@@ -241,21 +511,86 @@
       "reviewed_at": "2026-06-02T18:02:32Z",
       "issuing_agency": "Microsoft"
     },
+    "Music Skills II - Credit by Exam": {
+      "unified_title": "Music Skills II",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "NCCER Welding Level 1": {
       "unified_title": "NCCER Welding Level 1",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:02:32Z",
       "issuing_agency": "NCCER"
     },
+    "NURSING 402 - Pharmacology": {
+      "unified_title": "Pharmacology (Nursing)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "Nursing Process 2": {
       "unified_title": "Nursing Process 2",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
     },
+    "PLNT SC 812 - Landscape Installation and Maintenance I": {
+      "unified_title": "Landscape Installation and Maintenance I",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "PLNT SC 827 - Sustainable Gardening for Landscapes": {
+      "unified_title": "Sustainable Gardening for Landscapes",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "Pathophysiology for Nursing": {
       "unified_title": "Pathophysiology for Nursing",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "Portfolio Production Studio- Credit by Exam": {
+      "unified_title": "Portfolio Production Studio",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "Portfolio: History Of Architecture I": {
+      "unified_title": "History of Architecture 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "Principles of Emergency Services Credit by Exam": {
+      "unified_title": "Principles of Emergency Services",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "Principles of Emergency Services Safety and Survival Credit by Exam": {
+      "unified_title": "Principles of Fire and Emergency Services Safety and Survival",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "QuickBooks: Online Software- Credit by Exam": {
+      "unified_title": "QuickBooks Online",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "REALES 1, Real Estate Principles": {
+      "unified_title": "Real Estate Principles",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "REALES 3, Real Estate Practice": {
+      "unified_title": "Real Estate Practice",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "SFT CFSTES Courses: Fire Inspector 1B and 1C (or former SFT Fire Marshal curriculum) OR Work Experience": {
+      "unified_title": "SFT Fire Inspector 1B and 1C",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "SFT Fire Inspector 1C + EXP": {
+      "unified_title": "SFT Fire Inspector 1C",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
     },
     "Social Equity and the Criminal Justice System": {
       "unified_title": "Social Equity and the Criminal Justice System",
@@ -272,15 +607,35 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
     },
+    "Structural Steel I": {
+      "unified_title": "Ironworker Structural Steel I",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "Transportation Management": {
       "unified_title": "Transportation Management",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
     },
+    "Transportation Security Administration (HLS-1)": {
+      "unified_title": "Transportation Security Administration Training (HLS-1)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
+    "U.S. HOMELAND SECURITY IS-200 Basic Incident Command System (ICS)": {
+      "unified_title": "FEMA IS-200 Basic Incident Command System (ICS)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
+    },
     "Violence in America": {
       "unified_title": "Violence in America",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47Z"
+    },
+    "WST 034 -  Introduction to Water Resource Management - Portfolio Review": {
+      "unified_title": "Introduction to Water Resource Management",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-02T18:30:00Z"
     },
     "Web Page Development and Publishing": {
       "unified_title": "Web Page Development and Publishing",
