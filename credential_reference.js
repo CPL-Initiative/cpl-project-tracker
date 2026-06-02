@@ -37,6 +37,20 @@
   var FIELD_QFLAG_OVERRIDE   = "quality_flag_override";
   var QFLAG_OPTIONS = ["", "suspect_course_as_exhibit", "not_a_credential", "duplicate_of_other"];
 
+  // ── Unclassified-triage worklist ──────────────────────────────────────────
+  // The raw MAP exhibit titles flagged `unclassified_in_map` by the exhibit
+  // auditor (kb/exhibit_audit/latest.json) — they have NO entry in
+  // kb/unified_titles.json yet, so they don't appear as credential rows above.
+  // The worklist lets a signed-in reviewer assign each one an existing or new
+  // unified_title (+ issuer), folding it into the credential layer. Separate
+  // kb_curation namespace so assignments never collide with the per-credential
+  // override rows. PR-1 (this) = overlay-only (Supabase + live display); the
+  // JSON sync into unified_titles.json (+ daily cron) is PR-2.
+  var UNCLASS_PREFIX = "_UNCLASSIFIED::";
+  var FIELD_UNCLASS_TITLE  = "unified_title_assignment";
+  var FIELD_UNCLASS_ISSUER = "issuing_agency_assignment";
+  var AUDIT_URL = "kb/exhibit_audit/latest.json";
+
   // Allowlist-driven element builder. CodeQL's js/xss query flags dynamic
   // setAttribute(k, v) where the attribute name can be anything attacker-
   // controlled (e.g. "onclick"), so the helper uses property assignment for
@@ -208,6 +222,71 @@
         "Authorization": "Bearer " + sess.access_token
       }
     });
+  }
+
+  // ─── Unclassified-triage worklist data layer ──────────────────────────────
+  // The unclassified raw titles are baked into the committed audit snapshot, so
+  // we lazily fetch + filter it (no producer/cron change for PR-1). Each card
+  // with no unified_title AND the `unclassified_in_map` tag is a backlog item.
+  function fetchUnclassified() {
+    return fetch(AUDIT_URL, { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        var cards = (d && d.title_cards) || [];
+        return cards.filter(function (c) {
+          return c && !c.unified_title
+            && (c.tags || []).indexOf("unclassified_in_map") >= 0;
+        }).map(function (c) {
+          return { raw_title: c.raw_title, band: c.band || "", quality_flag: c.quality_flag || null };
+        }).sort(function (a, b) { return (a.raw_title || "").localeCompare(b.raw_title || ""); });
+      })
+      .catch(function () { return []; });
+  }
+  // Assignments made so far (own namespace). Returns raw_title → {title, issuer, by, at}.
+  function fetchUnclassOverlay() {
+    var url = SUPABASE_URL + "/rest/v1/kb_curation"
+      + "?select=course_id,field,value,reviewer_email,reviewed_at"
+      + "&course_id=like." + encodeURIComponent(UNCLASS_PREFIX) + "%25";
+    return fetch(url, { headers: { "apikey": SUPABASE_ANON } })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (arr) {
+        var m = {};
+        arr.forEach(function (row) {
+          var raw = (row.course_id || "").slice(UNCLASS_PREFIX.length);
+          if (!raw) return;
+          var rec = m[raw] = m[raw] || {};
+          if (row.field === FIELD_UNCLASS_TITLE) {
+            rec.title = row.value || "";
+            rec.by = row.reviewer_email; rec.at = row.reviewed_at;
+          } else if (row.field === FIELD_UNCLASS_ISSUER) {
+            rec.issuer = row.value || "";
+          }
+        });
+        return m;
+      })
+      .catch(function () { return {}; });
+  }
+  function saveUnclass(raw, field, value, sess) {
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON,
+        "Authorization": "Bearer " + sess.access_token,
+        "Content-Type": "application/json",
+        "Prefer": "resolution=merge-duplicates,return=minimal"
+      },
+      body: JSON.stringify({
+        course_id: UNCLASS_PREFIX + raw, field: field, value: value,
+        reviewer_email: sess.email
+      })
+    });
+  }
+  function clearUnclass(raw, sess) {
+    // Remove BOTH the title + issuer rows for this raw title (un-assign).
+    var base = SUPABASE_URL + "/rest/v1/kb_curation"
+      + "?course_id=eq." + encodeURIComponent(UNCLASS_PREFIX + raw);
+    var hdr = { "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token };
+    return fetch(base, { method: "DELETE", headers: hdr });
   }
 
   // ─── data loading ───────────────────────────────────────────────────────
@@ -544,6 +623,10 @@
     sort: { key: "unified_title", dir: "asc" },
     expanded: {},  // unified_title → bool (row body open)
     curateOpen: {},  // unified_title → bool (per-row Curate panel open; default collapsed)
+    worklistOpen: false,  // unclassified-triage worklist replacing the main table
+    unclassified: null,   // lazy: [{raw_title, band, …}] from the audit
+    unclassLoading: false,
+    unclassAssign: {},    // raw_title → {title, issuer, by, at} (Supabase overlay + live edits)
     // Sign-in feedback lives IN the auth widget (not a corner toast) so
     // curators can't miss it. pendingSignInEmail = "user@example.com" after
     // a successful OTP request; pendingSignInError = "msg" after a failure.
@@ -735,6 +818,15 @@
       render();
     };
     tb.appendChild(search);
+
+    // Unclassified-triage worklist toggle — opens a worklist over the raw MAP
+    // exhibit titles the auditor flagged `unclassified_in_map` (no credential
+    // identity yet). Count fills in after the lazy fetch.
+    var triageBtn = el("button", { type: "button", class: "cr-triage-btn",
+      title: "Review raw MAP exhibit titles with no credential identity yet and assign each a unified title." },
+      [state.unclassified ? ("⚠ Triage unclassified (" + state.unclassified.length + ")") : "⚠ Triage unclassified"]);
+    triageBtn.onclick = openWorklist;
+    tb.appendChild(triageBtn);
 
     // Bulk-action button — refreshed in place by renderBulkAction() so the
     // toolbar doesn't rebuild on every selection change (preserves focus +
@@ -941,6 +1033,7 @@
 
   function render() {
     ensureCerScopeCss();  // scope/CPL chip styles now also used at the title level (collapsed rows)
+    if (state.worklistOpen) { renderWorklist(); return; }
     var filtered = state.rows.filter(function (r) { return passesFilter(r, state); });
     filtered = sortRows(filtered, state.sort);
     renderSummary(state.rows, filtered);
@@ -1649,7 +1742,31 @@
       "#tab-credential-reference table.cr-table th:nth-child(2){text-align:left;}" +
       // Curate panel is now behind this toggle button (default collapsed).
       "#tab-credential-reference .cr-curate-toggle{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;color:#0A2240;font-size:.74rem;font-weight:600;cursor:pointer;padding:3px 10px;margin-bottom:8px;}" +
-      "#tab-credential-reference .cr-curate-toggle:hover{background:#e2e8f0;}";
+      "#tab-credential-reference .cr-curate-toggle:hover{background:#e2e8f0;}" +
+      // Unclassified-triage worklist.
+      "#tab-credential-reference .cr-triage-btn{background:#FEF3C7;border:1px solid #F59E0B;color:#92400e;border-radius:6px;font-size:.82rem;font-weight:600;cursor:pointer;padding:6px 10px;}" +
+      "#tab-credential-reference .cr-triage-btn:hover{background:#fde68a;}" +
+      "#tab-credential-reference .cr-worklist{padding:4px 2px 16px;}" +
+      "#tab-credential-reference .cr-wl-back{font-size:.82rem;color:#2563eb;text-decoration:none;}" +
+      "#tab-credential-reference .cr-wl-back:hover{text-decoration:underline;}" +
+      "#tab-credential-reference .cr-wl-title{color:#0A2240;margin:8px 0 4px;}" +
+      "#tab-credential-reference .cr-wl-intro{color:#4b5563;font-size:.85rem;margin:0 0 8px;max-width:74ch;}" +
+      "#tab-credential-reference .cr-wl-progress{font-size:.85rem;color:#374151;margin-bottom:10px;}" +
+      "#tab-credential-reference .cr-wl-note{color:#6b7280;font-style:italic;}" +
+      "#tab-credential-reference .cr-wl-table{border-collapse:collapse;width:100%;font-size:.85rem;}" +
+      "#tab-credential-reference .cr-wl-table th{text-align:left;background:#0A2240;color:#C9A84C;padding:7px 10px;position:sticky;top:0;}" +
+      "#tab-credential-reference .cr-wl-table td{padding:6px 10px;border-top:1px solid #eef2f7;vertical-align:top;}" +
+      "#tab-credential-reference .cr-wl-row.cr-wl-done{background:#f0fdf4;}" +
+      "#tab-credential-reference .cr-wl-raw{max-width:42ch;}" +
+      "#tab-credential-reference .cr-wl-band{color:#94a3b8;font-size:.72rem;}" +
+      "#tab-credential-reference .cr-wl-input{width:100%;min-width:15ch;padding:4px 6px;border:1px solid #cbd5e1;border-radius:5px;font-size:.82rem;}" +
+      "#tab-credential-reference .cr-wl-input:disabled{background:#f8fafc;color:#94a3b8;}" +
+      "#tab-credential-reference .cr-wl-act{white-space:nowrap;}" +
+      "#tab-credential-reference .cr-wl-save{background:#0A2240;color:#fff;border:none;border-radius:5px;font-size:.78rem;font-weight:600;cursor:pointer;padding:4px 12px;}" +
+      "#tab-credential-reference .cr-wl-save:disabled{opacity:.6;cursor:default;}" +
+      "#tab-credential-reference .cr-wl-clear{font-size:.74rem;color:#b45309;margin-left:8px;text-decoration:none;}" +
+      "#tab-credential-reference .cr-wl-clear:hover{text-decoration:underline;}" +
+      "#tab-credential-reference .cr-wl-assigned-by{color:#1e7e45;font-size:.78rem;font-weight:600;}";
     document.head.appendChild(st);
   }
 
@@ -1756,6 +1873,183 @@
       wrap.appendChild(badges);
     }
     return wrap;
+  }
+
+  // ─── Unclassified-triage worklist ─────────────────────────────────────────
+  function openWorklist() {
+    state.worklistOpen = true;
+    if (!state.unclassified && !state.unclassLoading) {
+      state.unclassLoading = true;
+      Promise.all([fetchUnclassified(), fetchUnclassOverlay()]).then(function (parts) {
+        state.unclassified = parts[0];
+        state.unclassAssign = parts[1] || {};
+        state.unclassLoading = false;
+        renderToolbar();  // refresh the button count
+        render();
+      });
+    }
+    renderToolbar();
+    render();
+  }
+  function closeWorklist() {
+    state.worklistOpen = false;
+    renderToolbar();
+    render();
+  }
+
+  // Shared <datalist>s for the assign inputs (built once): existing unified
+  // titles + existing issuers, so a reviewer can pick an existing credential or
+  // type a brand-new one.
+  function ensureWorklistDatalists() {
+    if (!document.getElementById("cr-unclass-titles")) {
+      var dl = el("datalist", { id: "cr-unclass-titles" }), seen = {};
+      state.rows.forEach(function (r) {
+        var t = r.unified_title;
+        if (t && !seen[t]) { seen[t] = 1; dl.appendChild(el("option", { value: t })); }
+      });
+      document.body.appendChild(dl);
+    }
+    if (!document.getElementById("cr-unclass-issuers")) {
+      var dl2 = el("datalist", { id: "cr-unclass-issuers" }), seen2 = {};
+      state.rows.forEach(function (r) {
+        var i = r.primary_issuer;
+        if (i && !seen2[i]) { seen2[i] = 1; dl2.appendChild(el("option", { value: i })); }
+      });
+      document.body.appendChild(dl2);
+    }
+  }
+
+  function unclassAssignedCount() {
+    var n = 0;
+    (state.unclassified || []).forEach(function (it) {
+      var a = state.unclassAssign[it.raw_title];
+      if (a && a.title) n++;
+    });
+    return n;
+  }
+  function updateWorklistProgress() {
+    var el2 = document.getElementById("cr-wl-progress-count");
+    if (el2) el2.textContent = String(unclassAssignedCount());
+  }
+
+  function renderWorklist() {
+    var wrap = document.getElementById("cr-table-wrap");
+    if (!wrap) return;
+    clearNode(wrap);
+    var sum = document.getElementById("cr-summary"); if (sum) clearNode(sum);
+
+    var panel = el("div", { class: "cr-worklist" });
+    var back = el("a", { class: "cr-wl-back", href: "#" }, ["← back to credentials"]);
+    back.onclick = function (e) { e.preventDefault(); closeWorklist(); };
+    panel.appendChild(back);
+    panel.appendChild(el("h3", { class: "cr-wl-title" }, ["Unclassified exhibit triage"]));
+
+    if (state.unclassLoading || !state.unclassified) {
+      panel.appendChild(el("p", { class: "cr-wl-note" }, ["Loading unclassified titles…"]));
+      wrap.appendChild(panel);
+      return;
+    }
+
+    var items = state.unclassified;
+    panel.appendChild(el("p", { class: "cr-wl-intro" }, [
+      "These " + items.length + " raw MAP exhibit titles have no credential identity in the "
+      + "knowledge base yet. Assign each an existing unified title (start typing to pick one) or "
+      + "type a brand-new credential name; optionally set the issuing agency. "
+      + (state.sess ? "Assignments save to the curation overlay immediately."
+                    : "Sign in via the toolbar to save assignments.")
+    ]));
+    var prog = el("div", { class: "cr-wl-progress" });
+    prog.appendChild(el("strong", { id: "cr-wl-progress-count" }, [String(unclassAssignedCount())]));
+    prog.appendChild(document.createTextNode(" of " + items.length + " assigned"));
+    panel.appendChild(prog);
+
+    ensureWorklistDatalists();
+
+    var tbl = el("table", { class: "cr-wl-table" });
+    tbl.appendChild(el("thead", null, [el("tr", null, [
+      el("th", null, ["Raw MAP exhibit title"]),
+      el("th", null, ["Assign unified title"]),
+      el("th", null, ["Issuing agency (optional)"]),
+      el("th", null, [""]),
+    ])]));
+    var tbody = el("tbody");
+    items.forEach(function (it) { tbody.appendChild(renderWorklistRow(it)); });
+    tbl.appendChild(tbody);
+    panel.appendChild(tbl);
+    wrap.appendChild(panel);
+  }
+
+  // One worklist row. Saves update the row IN PLACE (no full re-render) so
+  // unsaved input typed in other rows isn't wiped.
+  function renderWorklistRow(it) {
+    var raw = it.raw_title;
+    var cur = state.unclassAssign[raw] || {};
+    var tr = el("tr", { class: "cr-wl-row" + (cur.title ? " cr-wl-done" : "") });
+
+    var rawTd = el("td", { class: "cr-wl-raw" });
+    rawTd.appendChild(el("span", { class: "cr-wl-rawt" }, [raw]));
+    if (it.band) rawTd.appendChild(el("span", { class: "cr-wl-band", title: "Auditor title-confidence band" }, [" " + it.band]));
+    tr.appendChild(rawTd);
+
+    var titleInp = el("input", { class: "cr-wl-input cr-wl-title-input", type: "text",
+      list: "cr-unclass-titles", placeholder: "existing or new credential…",
+      value: cur.title || "", autocomplete: "off" });
+    titleInp.disabled = !state.sess;
+    var titleTd = el("td", {}); titleTd.appendChild(titleInp); tr.appendChild(titleTd);
+
+    var issInp = el("input", { class: "cr-wl-input cr-wl-iss-input", type: "text",
+      list: "cr-unclass-issuers", placeholder: "issuer…", value: cur.issuer || "", autocomplete: "off" });
+    issInp.disabled = !state.sess;
+    var issTd = el("td", {}); issTd.appendChild(issInp); tr.appendChild(issTd);
+
+    var actTd = el("td", { class: "cr-wl-act" });
+    if (state.sess) {
+      var saveBtn = el("button", { type: "button", class: "cr-wl-save" }, [cur.title ? "✓ Saved" : "Save"]);
+      titleInp.oninput = function () { if (saveBtn.textContent !== "Save") saveBtn.textContent = "Save"; };
+      issInp.oninput   = function () { if (saveBtn.textContent !== "Save") saveBtn.textContent = "Save"; };
+      saveBtn.onclick = function () {
+        var t = (titleInp.value || "").trim();
+        if (!t) { titleInp.focus(); return; }
+        var iss = (issInp.value || "").trim();
+        saveBtn.disabled = true; saveBtn.textContent = "saving…";
+        Promise.all([
+          saveUnclass(raw, FIELD_UNCLASS_TITLE, t, state.sess),
+          saveUnclass(raw, FIELD_UNCLASS_ISSUER, iss, state.sess)
+        ]).then(function (rs) {
+          saveBtn.disabled = false;
+          if (rs.every(function (r) { return r.ok; })) {
+            state.unclassAssign[raw] = { title: t, issuer: iss, by: state.sess.email, at: new Date().toISOString() };
+            tr.className = "cr-wl-row cr-wl-done";
+            saveBtn.textContent = "✓ Saved";
+            if (!actTd.querySelector(".cr-wl-clear")) actTd.appendChild(makeClearLink(raw, tr, actTd, saveBtn));
+            updateWorklistProgress();
+          } else {
+            saveBtn.textContent = "retry";
+          }
+        }).catch(function () { saveBtn.disabled = false; saveBtn.textContent = "retry"; });
+      };
+      actTd.appendChild(saveBtn);
+      if (cur.title) actTd.appendChild(makeClearLink(raw, tr, actTd, saveBtn));
+    } else if (cur.title) {
+      actTd.appendChild(el("span", { class: "cr-wl-assigned-by", title: "Assigned by " + (cur.by || "") }, ["✓ assigned"]));
+    }
+    tr.appendChild(actTd);
+    return tr;
+  }
+  function makeClearLink(raw, tr, actTd, saveBtn) {
+    var clr = el("a", { class: "cr-wl-clear", href: "#", title: "Remove this assignment" }, ["clear"]);
+    clr.onclick = function (e) {
+      e.preventDefault();
+      clearUnclass(raw, state.sess).then(function (r) {
+        if (!r.ok) return;
+        delete state.unclassAssign[raw];
+        tr.className = "cr-wl-row";
+        if (saveBtn) saveBtn.textContent = "Save";
+        if (clr.parentNode) clr.parentNode.removeChild(clr);
+        updateWorklistProgress();
+      });
+    };
+    return clr;
   }
 
   function renderExpandedRow(r, colSpan) {
