@@ -207,7 +207,10 @@
     + '.sw-gallery-sum::before{content:"▸";display:inline-block;margin-right:0.4rem;color:#C9A84C;transition:transform 0.15s ease;}'
     + '.sw-gallery-sec[open]>.sw-gallery-sum::before{transform:rotate(90deg);}'
     + '.sw-gallery-tag{font-size:0.62rem;background:rgba(201,168,76,0.18);color:#C9A84C;padding:1px 5px;border-radius:3px;margin-left:0.35rem;font-weight:500;}'
-    + '.cv-body{padding:0.4rem 0.8rem 1rem;}'
+    // Dark canvas so the white-on-dark text below is readable — mirrors v1's
+    // .sw-interactive { background:rgba(10,34,64,0.85) }. Without it the v2 panel
+    // sat on the dashboard's light page background → white-on-white wash.
+    + '.cv-body{padding:0.7rem 0.8rem 1rem;background:rgba(10,34,64,0.85);border:1px solid rgba(201,168,76,0.25);border-radius:10px;}'
     + '.cv-note{font-size:0.66rem;color:rgba(255,255,255,0.5);padding:0.4rem 0;font-style:italic;}'
     + '.cv-credential{border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:0.6rem 0.8rem;margin-bottom:0.55rem;background:rgba(255,255,255,0.02);}'
     + '.cv-title{font-size:0.9rem;font-weight:700;color:#fff;margin-bottom:0.15rem;}'
