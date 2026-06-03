@@ -1305,10 +1305,28 @@
     }
     tr.appendChild(revTd);
 
-    // Action: Mark initiated (auth-gated).
+    // Action: ✎ Curate (open the edit panel) + Mark initiated (both auth-gated).
+    // The Curate toggle was moved up here from the expanded body 2026-06-03 so a
+    // reviewer can jump straight into editing without the panel eating a row of
+    // vertical space on every expand.
     var actionTd = el("td", { class: "cr-action-cell" });
+    if (state.sess) {
+      var curOpenNow = !!state.curateOpen[r.unified_title];
+      var curateBtn = el("button", {
+        type: "button",
+        class: "cr-curate-toggle cr-action-curate" + (curOpenNow ? " is-open" : ""),
+        title: "Show/hide the curation panel (display title, issuing agency, training agency, quality flag)."
+      }, [curOpenNow ? "▾ ✎ Curate" : "✎ Curate"]);
+      curateBtn.onclick = function () {
+        var open = !state.curateOpen[r.unified_title];
+        state.curateOpen[r.unified_title] = open;
+        if (open) state.expanded[r.unified_title] = true;  // reveal the panel
+        render();
+      };
+      actionTd.appendChild(curateBtn);
+    }
     if (r.curator_reviewed_at) {
-      actionTd.appendChild(el("span", { class: "cr-action-noop" }, ["—"]));
+      if (!state.sess) actionTd.appendChild(el("span", { class: "cr-action-noop" }, ["—"]));
     } else if (state.sess) {
       var b = el("button", {
         type: "button", class: "cr-action-btn",
@@ -1714,7 +1732,6 @@
     st.id = "cr-scope-css";
     st.textContent =
       "#tab-credential-reference .cr-scope-block{margin:2px 0 14px;}" +
-      "#tab-credential-reference .cr-chips{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-bottom:7px;}" +
       "#tab-credential-reference .cr-chip{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:600;border:1px solid transparent;}" +
       "#tab-credential-reference .cr-chip-ccc{background:#0A2240;color:#fff;}" +
       "#tab-credential-reference .cr-chip-local{background:#e8eef5;color:#0A2240;border-color:#cdd9e6;}" +
@@ -1740,9 +1757,13 @@
       // global center-align with higher specificity.
       "#tab-credential-reference table.cr-table td.cr-title-cell{text-align:left;}" +
       "#tab-credential-reference table.cr-table th:nth-child(2){text-align:left;}" +
-      // Curate panel is now behind this toggle button (default collapsed).
+      // Curate panel is now opened from the row's Action cell (2026-06-03).
       "#tab-credential-reference .cr-curate-toggle{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;color:#0A2240;font-size:.74rem;font-weight:600;cursor:pointer;padding:3px 10px;margin-bottom:8px;}" +
       "#tab-credential-reference .cr-curate-toggle:hover{background:#e2e8f0;}" +
+      "#tab-credential-reference .cr-curate-toggle.is-open{background:#0A2240;color:#fff;border-color:#0A2240;}" +
+      // Action cell stacks Curate over Mark-initiated; no bottom margin needed.
+      "#tab-credential-reference .cr-action-cell{display:flex;flex-direction:column;gap:4px;align-items:flex-start;}" +
+      "#tab-credential-reference .cr-action-curate{margin-bottom:0;}" +
       // Unclassified-triage worklist.
       "#tab-credential-reference .cr-triage-btn{background:#FEF3C7;border:1px solid #F59E0B;color:#92400e;border-radius:6px;font-size:.82rem;font-weight:600;cursor:pointer;padding:6px 10px;}" +
       "#tab-credential-reference .cr-triage-btn:hover{background:#fde68a;}" +
@@ -1823,26 +1844,15 @@
     return c.childNodes.length ? c : null;
   }
 
+  // Enrichment block for the EXPANDED row: the statewide/generated credit rec
+  // + the articulated (green) / potential-adopter (orange) college badges.
+  // The scope (🏛CCC / 🏠Local / ⚙Generated) + CPL-type chips that used to LEAD
+  // this block were removed 2026-06-03 — they duplicated the title-level chips
+  // already shown on the collapsed row (crTitleChips). Returns null when there's
+  // nothing to add so the caller skips an empty block.
   function renderScopeAndBadges(r) {
     ensureCerScopeCss();
     var wrap = el("div", { class: "cr-scope-block" });
-
-    var chips = el("div", { class: "cr-chips" });
-    if (r.statewide) chips.appendChild(el("span", { class: "cr-chip cr-chip-ccc", title: "At least one CCC Collaborative (statewide) articulation." }, ["🏛 CCC"]));
-    if (r.has_local) chips.appendChild(el("span", { class: "cr-chip cr-chip-local", title: "At least one local-college articulation." }, ["🏠 Local"]));
-    if (!r.statewide && r.has_local) {
-      chips.appendChild(el("span", {
-        class: "cr-chip cr-chip-gen",
-        title: "No statewide CCC standard exists for this credential. Generated suggestion for consideration only — NOT an official CCC standard." + (r.gen_rec ? "\nSuggested: " + r.gen_rec : "")
-      }, ["⚙ CCC Generated · consideration only"]));
-    }
-    if (!r.statewide && !r.has_local) {
-      chips.appendChild(el("span", { class: "cr-chip cr-chip-none", title: "No common-course articulations resolved." }, ["— no articulations"]));
-    }
-    (r.cpl_types || []).forEach(function (t) {
-      chips.appendChild(el("span", { class: "cr-chip cr-chip-cpl", title: "CPL Type" }, [t]));
-    });
-    wrap.appendChild(chips);
 
     if (r.statewide && r.ccc_rec) {
       wrap.appendChild(el("div", { class: "cr-rec" }, [
@@ -1872,7 +1882,7 @@
       if (orange.length) badges.appendChild(collegeBadgeGroup("Potential adopters", orange, "cr-badge-orange", "○"));
       wrap.appendChild(badges);
     }
-    return wrap;
+    return wrap.childNodes.length ? wrap : null;
   }
 
   // ─── Unclassified-triage worklist ─────────────────────────────────────────
@@ -2066,28 +2076,21 @@
     var td = el("td", { colspan: String(colSpan) });
     var div = el("div", { class: "cr-expanded-body" });
 
-    // ── Curation behind a button (was an always-open panel that ate space) ──
-    // Default collapsed; a small "✎ Curate" toggle reveals the edit panel in
-    // place. Open-state persists in state.curateOpen across re-renders.
-    var curOpen = !!state.curateOpen[r.unified_title];
-    var curBtn = el("button", { type: "button", class: "cr-curate-toggle",
-      title: "Show/hide the curation panel (display title, issuing agency, training agency, quality flag)" },
-      [(curOpen ? "▾ ✎ Curate" : "▸ ✎ Curate")]);
-    var curPanel = renderCurationPanel(r);
-    curPanel.style.display = curOpen ? "" : "none";
-    curBtn.onclick = function () {
-      var open = !state.curateOpen[r.unified_title];
-      state.curateOpen[r.unified_title] = open;
-      curPanel.style.display = open ? "" : "none";
-      curBtn.textContent = open ? "▾ ✎ Curate" : "▸ ✎ Curate";
-    };
-    div.appendChild(curBtn);
-    div.appendChild(curPanel);
+    // ── Curation panel — toggled from the row's Action-cell "✎ Curate" button
+    // (moved out of the expanded body 2026-06-03 to save vertical space; the
+    // in-body toggle was redundant once the Action cell carries it). Shown only
+    // when the curator opened it; otherwise the expanded row leads straight into
+    // the enrichment block + identities table. Open-state persists in
+    // state.curateOpen across re-renders. ──
+    if (state.curateOpen[r.unified_title]) {
+      div.appendChild(renderCurationPanel(r));
+    }
 
-    // ── Scope + CPL chips, statewide/generated credit rec, and college badges
-    // (Session 29 CER enrichment) — sits between the curation header and the
-    // common-course identities table. ──
-    div.appendChild(renderScopeAndBadges(r));
+    // ── Statewide/generated credit rec + articulated/potential college badges
+    // (Session 29 CER enrichment) — the duplicate scope/CPL chips were dropped
+    // 2026-06-03 (they live on the collapsed-row title now). Skip if empty. ──
+    var scopeBlock = renderScopeAndBadges(r);
+    if (scopeBlock) div.appendChild(scopeBlock);
 
     // ── Common-course identities articulating to this credential ──
     // Render a table per identity: identity badge on the left, local
