@@ -1,5 +1,5 @@
 {
-  "_generated_at": "2026-06-03T17:56:13Z",
+  "_generated_at": "2026-06-03T19:32:26Z",
   "mode": "apply",
   "gates": {
     "V1_apply_safe": true,
@@ -10,53 +10,25 @@
   "apply_safe": true,
   "clean": [
     {
-      "raw": "ADM JUS 067",
-      "assigned": "Administration of Justice 067",
+      "raw": "Credit by Exam AUTO A1 Engine Repair",
+      "assigned": "ASE A1 — Engine Repair",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00"
     },
     {
-      "raw": "CUL ART 041",
-      "assigned": "Culinary Arts (CUL ART 041)",
-      "issuer": "",
+      "raw": "Firefighter 1A Certification",
+      "assigned": "Firefighter 1A",
+      "issuer": "California State Fire Training (SFT)",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00"
     },
     {
-      "raw": "CULART 250 CBE",
-      "assigned": "Culinary Arts (CULART 250)",
+      "raw": "POST - Peace Officer Standards and Training",
+      "assigned": "POST Basic Academy",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
-    },
-    {
-      "raw": "Cinema 24- Credit by Exam",
-      "assigned": "Cinema 24",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
-    },
-    {
-      "raw": "Math 095 CBE",
-      "assigned": "Mathematics (MATH 095)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
-    },
-    {
-      "raw": "SPAN 103 - CBE",
-      "assigned": "Spanish 3",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
-    },
-    {
-      "raw": "WELD 045 CBE",
-      "assigned": "Welding (WELD 045)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00"
     }
   ],
   "skip": [
@@ -74,6 +46,14 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "ADM JUS 067",
+      "assigned": "Administration of Justice 067",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -597,6 +577,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "CUL ART 041",
+      "assigned": "Culinary Arts (CUL ART 041)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "CULART 250 CBE",
+      "assigned": "Culinary Arts (CULART 250)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "Cal Fire Hazardous Materials First Responder Operational Level, Decontamination",
       "assigned": "Hazardous Materials First Responder Operational — Decontamination",
       "issuer": "",
@@ -690,6 +686,14 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Cinema 24- Credit by Exam",
+      "assigned": "Cinema 24",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -1141,6 +1145,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "Math 095 CBE",
+      "assigned": "Mathematics (MATH 095)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "McDonald's Corporation MCD-0051 Business Leadership Practices;",
       "assigned": "McDonald's MCD-0051 Business Leadership Practices",
       "issuer": "",
@@ -1397,6 +1409,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "SPAN 103 - CBE",
+      "assigned": "Spanish 3",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "ServeSafe Managerial Certification and resume for CUL 003",
       "assigned": "ServSafe Food Protection Manager Certification",
       "issuer": "",
@@ -1477,6 +1497,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "WELD 045 CBE",
+      "assigned": "Welding (WELD 045)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "WST 034 -  Introduction to Water Resource Management - Portfolio Review",
       "assigned": "Introduction to Water Resource Management",
       "issuer": "",
@@ -1504,32 +1532,11 @@
   "conflict": [],
   "credential_adds": [
     {
-      "raw": "CUL ART 041",
-      "assigned": "Culinary Arts (CUL ART 041)",
-      "issuer": "",
+      "raw": "Firefighter 1A Certification",
+      "assigned": "Firefighter 1A",
+      "issuer": "California State Fire Training (SFT)",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
-    },
-    {
-      "raw": "CULART 250 CBE",
-      "assigned": "Culinary Arts (CULART 250)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
-    },
-    {
-      "raw": "Cinema 24- Credit by Exam",
-      "assigned": "Cinema 24",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
-    },
-    {
-      "raw": "Math 095 CBE",
-      "assigned": "Mathematics (MATH 095)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00"
     }
   ],
   "articulation_ripples": []

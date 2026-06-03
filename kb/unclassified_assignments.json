@@ -2,7 +2,7 @@
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
   "_synced_at": "2026-06-03T18:34:14Z",
-  "count": 187,
+  "count": 190,
   "assignments": {
     "A S T 025 - Fundamentals of Auto Mechanics": {
       "unified_title": "Fundamentals of Auto Mechanics",
@@ -440,6 +440,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "Credit by Exam AUTO A1 Engine Repair": {
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "ASE A1 — Engine Repair"
+    },
     "Credit by Exam- Introduction to Legal Research and Terminology": {
       "unified_title": "Introduction to Legal Research and Terminology",
       "reviewed_by": "map@rccd.edu",
@@ -534,6 +539,12 @@
       "unified_title": "Firefighter 1",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "Firefighter 1A Certification": {
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Firefighter 1A",
+      "issuing_agency": "California State Fire Training (SFT)"
     },
     "Forecasting Financial Statemen- Credit by Exam": {
       "unified_title": "Forecasting Financial Statements",
@@ -776,6 +787,11 @@
       "unified_title": "Sustainable Gardening for Landscapes",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "POST - Peace Officer Standards and Training": {
+      "reviewed_at": "2026-06-03T19:32:01.902138+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "POST Basic Academy"
     },
     "Paramedic NCTI (EMS-60/91)": {
       "unified_title": "Paramedic License",
