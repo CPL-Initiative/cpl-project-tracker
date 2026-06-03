@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-03T17:36:00Z",
-  "count": 179,
+  "_synced_at": "2026-06-03T17:56:06Z",
+  "count": 187,
   "assignments": {
     "A S T 025 - Fundamentals of Auto Mechanics": {
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
@@ -13,6 +13,11 @@
       "unified_title": "Juvenile Justice Procedures",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "ADM JUS 067": {
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Administration of Justice 067"
     },
     "AERO 040 - Instrument Ground School - Training Log": {
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
@@ -319,6 +324,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "COMM C1000 Portfolio Review": {
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Public Speaking (COMM C1000)"
+    },
     "COMPTIA LINUX+": {
       "unified_title": "CompTIA Linux+",
       "reviewed_by": "map@rccd.edu",
@@ -334,6 +344,16 @@
       "unified_title": "CPP — C++ Certified Professional Programmer",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "CUL ART 041": {
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Culinary Arts (CUL ART 041)"
+    },
+    "CULART 250 CBE": {
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Culinary Arts (CULART 250)"
     },
     "Cal Fire Hazardous Materials First Responder Operational Level, Decontamination": {
       "unified_title": "Hazardous Materials First Responder Operational — Decontamination",
@@ -394,6 +414,11 @@
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
       "reviewed_by": "map@rccd.edu",
       "unified_title": "High School Articulation — Advanced Engineering Design II Honors (Rancho Cucamonga HS)"
+    },
+    "Cinema 24- Credit by Exam": {
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Cinema 24"
     },
     "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors": {
       "unified_title": "High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)",
@@ -675,6 +700,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "Math 095 CBE": {
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Mathematics (MATH 095)"
+    },
     "McDonald's Corporation MCD-0051 Business Leadership Practices;": {
       "unified_title": "McDonald's MCD-0051 Business Leadership Practices",
       "reviewed_by": "map@rccd.edu",
@@ -837,6 +867,11 @@
       "reviewed_by": "map@rccd.edu",
       "unified_title": "California BAR Smog Check Inspector and Repair Technician License"
     },
+    "SPAN 103 - CBE": {
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Spanish 3"
+    },
     "ServeSafe Managerial Certification and resume for CUL 003": {
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
       "reviewed_by": "map@rccd.edu",
@@ -886,6 +921,11 @@
       "unified_title": "Violence in America",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "WELD 045 CBE": {
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Welding (WELD 045)"
     },
     "WST 034 -  Introduction to Water Resource Management - Portfolio Review": {
       "unified_title": "Introduction to Water Resource Management",

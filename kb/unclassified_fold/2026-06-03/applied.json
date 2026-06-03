@@ -1,14 +1,85 @@
 {
   "folded": [
     {
-      "raw": "S-130 and C-219 and S-230 and S-231 and S-270 Wildland Fire Certifications",
-      "assigned": "NWCG Wildland Fire Certifications (S-130/S-230/S-231/S-270)",
+      "raw": "ADM JUS 067",
+      "assigned": "Administration of Justice 067",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:35:49.462088+00:00"
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+    },
+    {
+      "raw": "CUL ART 041",
+      "assigned": "Culinary Arts (CUL ART 041)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+    },
+    {
+      "raw": "CULART 250 CBE",
+      "assigned": "Culinary Arts (CULART 250)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+    },
+    {
+      "raw": "Cinema 24- Credit by Exam",
+      "assigned": "Cinema 24",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+    },
+    {
+      "raw": "Math 095 CBE",
+      "assigned": "Mathematics (MATH 095)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+    },
+    {
+      "raw": "SPAN 103 - CBE",
+      "assigned": "Spanish 3",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+    },
+    {
+      "raw": "WELD 045 CBE",
+      "assigned": "Welding (WELD 045)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
     }
   ],
-  "credential_added": [],
-  "audit_pruned": 4,
-  "unified_titles_count": 3401
+  "credential_added": [
+    {
+      "raw": "CUL ART 041",
+      "assigned": "Culinary Arts (CUL ART 041)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+    },
+    {
+      "raw": "CULART 250 CBE",
+      "assigned": "Culinary Arts (CULART 250)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+    },
+    {
+      "raw": "Cinema 24- Credit by Exam",
+      "assigned": "Cinema 24",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+    },
+    {
+      "raw": "Math 095 CBE",
+      "assigned": "Mathematics (MATH 095)",
+      "issuer": "",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-03T17:55:58.840521+00:00"
+    }
+  ],
+  "audit_pruned": 8,
+  "unified_titles_count": 3408
 }
