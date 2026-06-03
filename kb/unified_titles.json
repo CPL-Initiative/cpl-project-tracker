@@ -43912,5 +43912,61 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-06-03T17:35:49.462088+00:00",
     "reviewed_by": "map@rccd.edu"
+  },
+  "ADM JUS 067": {
+    "unified_title": "Administration of Justice 067",
+    "confidence_title": 1.0,
+    "classified_at": "2026-06-03",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CUL ART 041": {
+    "unified_title": "Culinary Arts (CUL ART 041)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-06-03",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "CULART 250 CBE": {
+    "unified_title": "Culinary Arts (CULART 250)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-06-03",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Cinema 24- Credit by Exam": {
+    "unified_title": "Cinema 24",
+    "confidence_title": 1.0,
+    "classified_at": "2026-06-03",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "Math 095 CBE": {
+    "unified_title": "Mathematics (MATH 095)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-06-03",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "SPAN 103 - CBE": {
+    "unified_title": "Spanish 3",
+    "confidence_title": 1.0,
+    "classified_at": "2026-06-03",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+    "reviewed_by": "map@rccd.edu"
+  },
+  "WELD 045 CBE": {
+    "unified_title": "Welding (WELD 045)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-06-03",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+    "reviewed_by": "map@rccd.edu"
   }
 }
