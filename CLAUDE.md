@@ -1715,6 +1715,61 @@ subscores, bare "Automotive", mismatched cert bundles). Then the rest of the Ses
 scope/generated-rec (producer-side → next cron), **MID curation** (CompTIA A+ fragmentation →
 Suggested-merges worklist).
 
+### Session 31 — CER triage tail cleared (67 → 5) + CER row/column economy (shipped 2026-06-03)
+
+Finished the CER unclassified-triage loop the long way down and economized the CER
+tab from Sam's live screenshot review. **7 PRs merged**; none touched the M-ID
+pipeline (pipeline viz correctly skipped).
+
+- **#276 CER row consolidation** (consumer-only `credential_reference.js`) — dropped
+  the duplicate scope/CPL chips from the row body (they live at the title level since
+  Session 30) + moved the per-row **✎ Curate** affordance into the Action cell.
+- **#278 CER economy pass** (consumer-only) — merged the two **Confidence** columns
+  (title + issuer) into one and folded the **Initiated** stamp into the Action cell:
+  **11 → 9 columns**. Cosmetic; no producer/data change.
+- **CER unclassified-triage, backlog 67 → 5** across five folds:
+  - **#277** fold 30 (67→38) · **#279** fold 18 (38→20) — both the safe "duplicate raw
+    spelling → existing credential" class (exact-normalized + fuzzy ≥0.72, hand-vetted).
+  - **#280 Option A** (20→16) — the 4 raws whose fold tripped the **V4 articulation
+    ripple gate** because the articulation layer used a *different valid spelling* of the
+    target credential. Fix: **adopt the articulation's spelling** (re-point the raw to the
+    credential string the article rows already inline) → 0 ripple, both spellings valid.
+  - **#281 group A** (16→8) — 8 bare-course-code local exhibits (`AUTO 050`, `WELD 100`,
+    …) given best-judgment unified titles + local-college issuers (no existing credential
+    to fold into; small new-credential adds).
+  - **#282 group C** (8→5) — Sam's 3 module-vs-cert judgment calls: `POST - Peace Officer
+    Standards and Training` → `POST Basic Academy` (clean fold) · `Credit by Exam AUTO A1
+    Engine Repair` → `ASE A1 — Engine Repair` (clean fold) · **`Firefighter 1A
+    Certification` kept DISTINCT** as a new `Firefighter 1A` module (issuer SFT), **not**
+    folded into `Firefighter 1` — its **13 articulation rows re-pointed** `Firefighter 1`
+    → `Firefighter 1A` so the 1A exhibit's articulations attribute to the distinct module.
+- **16 articulation-layer desyncs repaired** along the way (ASE / Water Supply /
+  Firefighter / Math / Culinary / Cinema rows) so those exhibits now attribute to the
+  right credential in the EACR/CER/CCR-aligned views.
+
+**The remaining 5 are un-classifiable by design** and left flagged: 3 bare `AUTO
+600/601/602 Completion` rows (no content signal) + 2 generic buckets (`Automotive`,
+`Inspection Portfolio Spring 2026 #1`). No defensible target.
+
+**Patterns / learnings:** (1) **Three V4-ripple resolution strategies** for a CER fold
+— clean-fold (article already uses the target spelling) / **adopt-the-article-spelling**
+(two valid spellings of the same credential) / **re-point-the-article-rows** (minting a
+DISTINCT credential: the exhibit's articulations move WITH it). New KB note
+`methodology-cer-fold-articulation-ripple-sync.md`. (2) **The daily cron is a mid-flight
+merge hazard for the overlay** — #282 went `dirty` against `kb/unclassified_assignments.json`
+(the cron's Supabase sync rewrote it). Fix per the established playbook: rebase onto main,
+take main's cron-synced overlay (authoritative Supabase state), re-add only the entries
+inserted *after* the cron ran (group C, since the cron synced pre-19:32), `--continue`,
+force-push. (3) **A V4 ripple often means "two valid spellings," not "wrong"** — align to
+the articulation layer rather than overwriting it.
+
+**Carryover / next** (unchanged from Session 30, minus the cleared CER tail): the remaining
+**5** CER unclassifieds are intentionally left; the broader long-tail CER work (~50 NEW
+credentials to mint) is the `exhibit-canonicalization` skill's per-item domain, not batch
+work. Then the rest of the queue: the **3 audience views** (Student/College/System — System
+needs a privacy ADR), **EACR v2** scope/generated-rec (producer-side → next cron), **MID
+curation** (CompTIA A+ fragmentation → Suggested-merges worklist).
+
 ---
 
 ## Troubleshooting

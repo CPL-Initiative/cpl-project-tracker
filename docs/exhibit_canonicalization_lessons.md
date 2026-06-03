@@ -1,7 +1,7 @@
 ---
 title: Exhibit Canonicalization — Decisions & Lessons (credential-identity layer)
 date: 2026-05-24
-last_updated: 2026-05-27
+last_updated: 2026-06-03
 session: 6 (Bruh Hex), updated through 8 (Octaman), 10 (Sexy Dexy), 11 (Bruh El), 12 (Bruh Dec — PR-5b scoping)
 status: ACTIVE — Cred-Ref PR-5b scoped this session (Bruh Dec); 3-PR split locked; PR-5b/0 code pending
 tags: [exhibit-canonicalization, credential-identity, audit, kb, eacr, rename-promotion]
@@ -1308,3 +1308,66 @@ EXISTING credential."** Method (re-usable for the next pass):
 - **Know when to STOP batching:** the remaining 67 are the long tail — **~50 need a NEW credential
   minted** (new `unified_title` + issuer, a `credentials.json` add), not a fold-into-existing.
   That's per-item judgement (the `exhibit-canonicalization` skill), NOT safe to fuzzy-batch.
+
+---
+
+## Session 31 — CER triage tail cleared (67 → 5) + the three V4-ripple resolution strategies (2026-06-03)
+
+Took the CER unclassified-triage backlog from **67 → 5** (5 folds) and economized the
+CER tab UI. 7 PRs merged (#276/#277/#278/#279/#280/#281/#282). No M-ID pipeline movement.
+
+### What shipped
+- **#276 / #278 — CER tab economy** (consumer-only `credential_reference.js`): dropped the
+  duplicate scope/CPL chips from the row body (title-level since Session 30) + moved **✎ Curate**
+  into the Action cell (#276); merged the two **Confidence** columns + folded the **Initiated**
+  stamp into Action → **11 → 9 columns** (#278). Cosmetic only.
+- **#277 (67→38), #279 (38→20)** — the safe "duplicate raw spelling → existing credential" class,
+  same method as Session 30's #272/#273.
+- **#280 Option A (20→16)** — 4 raws that tripped V4 because the articulation layer carried a
+  **different valid spelling** of the same target. Adopted the article's spelling.
+- **#281 group A (16→8)** — 8 bare-course-code local exhibits → best-judgment titles + local issuers
+  (new-credential adds; nothing to fold into).
+- **#282 group C (8→5)** — Sam's 3 module-vs-cert calls (see below).
+
+### The durable learning — three ways a CER fold resolves the V4 articulation-ripple gate
+
+`_fold_unclassified.py`'s **V4 gate** rejects any fold where the target `unified_title` would
+disagree with what `kb/coci_articulations.json` already inlines for that exhibit's rows. There
+are exactly three correct responses, decided by **why** the ripple fires:
+
+1. **Clean fold (no ripple).** The articulation rows already resolve to the exact target
+   spelling. Just fold. (Group C's POST + AUTO A1: their 8 / 2 article rows already said
+   `POST Basic Academy` / `ASE A1 — Engine Repair`.)
+2. **Adopt-the-article-spelling.** Two *valid* spellings of the **same** credential exist (a KB
+   duplicate, e.g. `History of Architecture I` vs `1`). The matcher picked spelling A; the
+   articulation inlines spelling B. **Re-assign the raw to spelling B** → 0 ripple. The duplicate
+   credential is a separate cleanup; do NOT overwrite the article. (#280 + Session 30 batch 2.)
+3. **Re-point-the-article-rows.** You're minting a **DISTINCT** credential, so the exhibit's
+   articulations should move WITH it. Edit the article rows to the new title, THEN fold → 0 ripple.
+   (#282 `Firefighter 1A`: kept distinct from `Firefighter 1` per Sam; re-pointed all **13**
+   article rows `Firefighter 1` → `Firefighter 1A`, format-preserved 13/13 diff, issuer SFT carried
+   onto the new credential via the overlay's `issuing_agency` field → `_fold_unclassified.py` adds
+   the credential record.)
+
+**Diagnostic that picks the strategy:** scan the exhibit's article rows first
+(`exhibit_title == raw`). If their `unified_title` already equals the target → (1). If it's a
+spelling variant of the target → (2). If you intend a NEW distinct credential → (3). Captured as
+the standalone note `docs/kb-notes/methodology-cer-fold-articulation-ripple-sync.md`.
+
+### Merge-hazard learning
+#282 hit `mergeable_state: dirty` because the **daily cron** (`6a0634d`) landed mid-flight and its
+Supabase sync rewrote `kb/unclassified_assignments.json`. The cron synced **before** my 19:32
+group-C insert, so its overlay had batches 1–4 (187) but not group C. Resolution: rebase onto main,
+`git checkout --ours` the overlay (main's cron version = authoritative Supabase state), **re-add only
+the 3 group-C entries** the cron missed (187 → 190), `git add` + `--continue`, `--force-with-lease`.
+The fold deliverable files (`unified_titles.json`/`credentials.json`/`coci_articulations.json`/
+`exhibit_audit/latest.json`) did NOT conflict — the cron doesn't touch them.
+
+### State / next
+- `unclassified_in_map` = **5** (down from 194 over Sessions 30–31). The 5 are un-classifiable: 3
+  bare `AUTO 600/601/602 Completion` (no content) + `Automotive` + `Inspection Portfolio Spring
+  2026 #1`. Left flagged.
+- The folded titles surface as raw variants under their credential rows on the next daily cron
+  (which bakes `credential_reference_data.js`).
+- Broader CER long-tail (~50 NEW credentials to mint) is the `exhibit-canonicalization` skill's
+  per-item domain — NOT safe to batch.
