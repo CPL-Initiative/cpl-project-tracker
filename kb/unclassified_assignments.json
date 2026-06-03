@@ -1,13 +1,23 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-03T17:12:56Z",
-  "count": 157,
+  "_synced_at": "2026-06-03T17:29:02Z",
+  "count": 175,
   "assignments": {
+    "A S T 025 - Fundamentals of Auto Mechanics": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Fundamentals of Auto Mechanics"
+    },
     "ADJU 232 - Juvenile Justice Procedures - Credit by Exam": {
       "unified_title": "Juvenile Justice Procedures",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "AERO 040 - Instrument Ground School - Training Log": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "FAA Instrument Ground School"
     },
     "AP - Psychology": {
       "unified_title": "AP Psychology",
@@ -159,6 +169,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Automotive Electrical Schematic Diagnosis"
+    },
     "AUTO 60B: Automotive Electronics - Credit By Exam": {
       "unified_title": "Automotive Electronics",
       "reviewed_by": "map@rccd.edu",
@@ -219,6 +234,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "BUSAD 210 Business Communication - Military Training": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Business Communication"
+    },
     "Basic Pharmacology": {
       "unified_title": "Basic Pharmacology",
       "reviewed_by": "map@rccd.edu",
@@ -254,6 +274,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "CIT 144 - Medical Terminology - BVNPT Licensure": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Medical Terminology"
+    },
     "CLEP Analyzing & Interpreting Literature": {
       "unified_title": "CLEP Analyzing and Interpreting Literature",
       "reviewed_by": "map@rccd.edu",
@@ -271,6 +296,11 @@
     },
     "CLEP Principles of Management": {
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "CLEP Principles of Management"
+    },
+    "CLEP Principles of Management (CSU Semester Units Earned Toward CSU Admission)": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
       "reviewed_by": "map@rccd.edu",
       "unified_title": "CLEP Principles of Management"
     },
@@ -350,6 +380,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "High School Articulation — Advanced Engineering Design II Honors (Rancho Cucamonga HS)"
+    },
     "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors": {
       "unified_title": "High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)",
       "reviewed_by": "map@rccd.edu",
@@ -359,6 +394,11 @@
       "unified_title": "Community and the Justice System",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "Cooperative Education: Nursing A.D.N.": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Cooperative Education: Nursing (ADN)"
     },
     "Cosmetology License": {
       "unified_title": "Cosmetology License",
@@ -420,6 +460,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "F.C.C. License": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "FCC Commercial Radio Operator License"
+    },
     "FTECH 302 Fire Prevention": {
       "unified_title": "Fire Prevention",
       "reviewed_by": "map@rccd.edu",
@@ -455,6 +500,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "Forecasting Financial Statemen- Credit by Exam": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Forecasting Financial Statements"
+    },
     "Foreman Training": {
       "unified_title": "Foreman Training",
       "reviewed_by": "map@rccd.edu",
@@ -479,6 +529,11 @@
       "unified_title": "Human Resource Management",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "ICS 100, IS 700, L-180, L-280, S-130, S-190, S-215 Wildland Fire Certifications": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Wildland Fire ICS/NWCG Certification Bundle"
     },
     "ICS 300: Intermediate Incident Command System for Expanding Incidents (2019)": {
       "unified_title": "ICS 300 — Intermediate Incident Command System",
@@ -530,6 +585,11 @@
       "reviewed_by": "map@rccd.edu",
       "unified_title": "Ironworker Welding III"
     },
+    "Intro to Entrepreneurship High School to College Articulatio": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Introduction to Entrepreneurship"
+    },
     "Introduction to Computer Information Systems": {
       "unified_title": "Introduction to Computer Information Systems",
       "reviewed_by": "map@rccd.edu",
@@ -554,6 +614,11 @@
       "unified_title": "Juvenile Procedures",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "LA CITY (FCAW) D1.1 STRUCTURAL WELDING CERTIFICATION SEMI-AUTOMATIC": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "LA City Certified Welder — AWS D1.1 FCAW"
     },
     "Legal Aspects of Evidence": {
       "unified_title": "Legal Aspects of Evidence",
@@ -652,6 +717,16 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
     },
+    "OFADM 256 (change to BIT 250) Introduction to Microsoft Word - Military Training": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Microsoft Office Specialist — Word"
+    },
+    "PLNT SC 714 - Principles of Horticulture": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Principles of Horticulture"
+    },
     "PLNT SC 812 - Landscape Installation and Maintenance I": {
       "unified_title": "Landscape Installation and Maintenance I",
       "reviewed_by": "map@rccd.edu",
@@ -661,6 +736,11 @@
       "unified_title": "Sustainable Gardening for Landscapes",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "Paramedic NCTI (EMS-60/91)": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Paramedic License"
     },
     "Pathophysiology for Nursing": {
       "unified_title": "Pathophysiology for Nursing",
@@ -682,6 +762,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "DC and AC Circuit Analysis and Laboratory"
+    },
     "Portfolio: History Of Architecture I": {
       "unified_title": "History of Architecture 1",
       "reviewed_by": "map@rccd.edu",
@@ -696,6 +781,11 @@
       "unified_title": "Principles of Fire and Emergency Services Safety and Survival",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "Psych c1000 - Introduction to Psychology - AP Credit": {
+      "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "AP Psychology"
     },
     "QuickBooks: Online Software- Credit by Exam": {
       "unified_title": "QuickBooks Online",
