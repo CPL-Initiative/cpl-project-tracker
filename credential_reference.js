@@ -1052,14 +1052,13 @@
       { key: "disc_modal",      label: "Discipline",
         title: "Predominant MQ discipline across this credential's articulated common courses." },
       { key: "primary_issuer",  label: "Issuing Agency" },
-      { key: "conf_modal",      label: "Confidence (title)",
-        title: "Modal confidence across the raw variants." },
-      { key: "conf_issuer",     label: "Confidence (issuer)" },
+      { key: "conf_modal",      label: "Confidence",
+        title: "Modal title confidence / issuer confidence across the raw variants (title · issuer)." },
       { key: "audit_tag_total", label: "Audit",
         title: "Sum of audit tag firings across the raw variants. Hover a chip for details." },
       { key: "flag_label",      label: "Quality flag" },
-      { key: "reviewed",        label: "Initiated" },
-      { key: null,              label: "Action" },
+      { key: "reviewed",        label: "Initiated",
+        title: "Curator-initiated state + the Mark-initiated / Curate actions." },
     ];
 
     var headerRow = el("tr");
@@ -1263,10 +1262,17 @@
     }
     tr.appendChild(issuerTd);
 
-    tr.appendChild(el("td", { class: "cr-conf-cell " + _bandCls(r.conf_modal) },
-      [r.conf_modal.toFixed(2)]));
-    tr.appendChild(el("td", { class: "cr-conf-cell " + _bandCls(r.conf_issuer) },
+    // Merged Confidence cell — title / issuer (2026-06-03 economy: was two
+    // columns). Band color keys off the title confidence (the primary signal);
+    // the issuer figure rides muted alongside.
+    var confTd = el("td", { class: "cr-conf-cell " + _bandCls(r.conf_modal),
+      title: "Title confidence " + r.conf_modal.toFixed(2)
+        + " · issuer confidence " + (r.conf_issuer ? r.conf_issuer.toFixed(2) : "—") });
+    confTd.appendChild(el("span", { class: "cr-conf-title" }, [r.conf_modal.toFixed(2)]));
+    confTd.appendChild(el("span", { class: "cr-conf-sep" }, [" / "]));
+    confTd.appendChild(el("span", { class: "cr-conf-issuer" },
       [r.conf_issuer ? r.conf_issuer.toFixed(2) : "—"]));
+    tr.appendChild(confTd);
 
     // Audit-tag chip — count + hover tooltip listing the firing rules.
     var auditTd = el("td", { class: "cr-audit-cell" });
@@ -1296,19 +1302,12 @@
     }
     tr.appendChild(flagTd);
 
-    var revTd = el("td", { class: "cr-rev-cell" });
-    if (r.curator_reviewed_at) {
-      var who = (r.curator_reviewed_by || "").split("@")[0];
-      var when = r.curator_reviewed_at.slice(0, 10);
-      revTd.appendChild(el("span", { class: "cr-rev-on" },
-        ["✓ " + who + " · " + when]));
-    }
-    tr.appendChild(revTd);
-
-    // Action: ✎ Curate (open the edit panel) + Mark initiated (both auth-gated).
-    // The Curate toggle was moved up here from the expanded body 2026-06-03 so a
-    // reviewer can jump straight into editing without the panel eating a row of
-    // vertical space on every expand.
+    // Merged "Initiated" cell (2026-06-03 economy: the standalone Reviewed
+    // column was folded in here). Shows the ✓ who · date stamp once initiated
+    // (visible to everyone), else the ✎ Curate + Mark-initiated actions for
+    // signed-in reviewers. The Curate toggle was moved up from the expanded body
+    // 2026-06-03 so a reviewer can jump straight into editing without the panel
+    // eating a row of vertical space on every expand.
     var actionTd = el("td", { class: "cr-action-cell" });
     if (state.sess) {
       var curOpenNow = !!state.curateOpen[r.unified_title];
@@ -1326,7 +1325,12 @@
       actionTd.appendChild(curateBtn);
     }
     if (r.curator_reviewed_at) {
-      if (!state.sess) actionTd.appendChild(el("span", { class: "cr-action-noop" }, ["—"]));
+      var who = (r.curator_reviewed_by || "").split("@")[0];
+      var when = r.curator_reviewed_at.slice(0, 10);
+      actionTd.appendChild(el("span", {
+        class: "cr-rev-on",
+        title: "Initiated by " + (r.curator_reviewed_by || "?") + " on " + when
+      }, ["✓ " + who + " · " + when]));
     } else if (state.sess) {
       var b = el("button", {
         type: "button", class: "cr-action-btn",
@@ -1761,9 +1765,12 @@
       "#tab-credential-reference .cr-curate-toggle{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;color:#0A2240;font-size:.74rem;font-weight:600;cursor:pointer;padding:3px 10px;margin-bottom:8px;}" +
       "#tab-credential-reference .cr-curate-toggle:hover{background:#e2e8f0;}" +
       "#tab-credential-reference .cr-curate-toggle.is-open{background:#0A2240;color:#fff;border-color:#0A2240;}" +
-      // Action cell stacks Curate over Mark-initiated; no bottom margin needed.
+      // Action cell stacks Curate over Mark-initiated / the ✓ initiated stamp.
       "#tab-credential-reference .cr-action-cell{display:flex;flex-direction:column;gap:4px;align-items:flex-start;}" +
       "#tab-credential-reference .cr-action-curate{margin-bottom:0;}" +
+      // Merged Confidence cell — title figure leads, issuer rides muted.
+      "#tab-credential-reference .cr-conf-sep{opacity:.45;}" +
+      "#tab-credential-reference .cr-conf-issuer{opacity:.6;font-size:.92em;}" +
       // Unclassified-triage worklist.
       "#tab-credential-reference .cr-triage-btn{background:#FEF3C7;border:1px solid #F59E0B;color:#92400e;border-radius:6px;font-size:.82rem;font-weight:600;cursor:pointer;padding:6px 10px;}" +
       "#tab-credential-reference .cr-triage-btn:hover{background:#fde68a;}" +
