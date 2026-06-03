@@ -1,119 +1,14 @@
 {
   "folded": [
     {
-      "raw": "A S T 025 - Fundamentals of Auto Mechanics",
-      "assigned": "Fundamentals of Auto Mechanics",
+      "raw": "S-130 and C-219 and S-230 and S-231 and S-270 Wildland Fire Certifications",
+      "assigned": "NWCG Wildland Fire Certifications (S-130/S-230/S-231/S-270)",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "AERO 040 - Instrument Ground School - Training Log",
-      "assigned": "FAA Instrument Ground School",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "BUSAD 210 Business Communication - Military Training",
-      "assigned": "Business Communication",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "CIT 144 - Medical Terminology - BVNPT Licensure",
-      "assigned": "Medical Terminology",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "CLEP Principles of Management (CSU Semester Units Earned Toward CSU Admission)",
-      "assigned": "CLEP Principles of Management",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2",
-      "assigned": "High School Articulation — Advanced Engineering Design II Honors (Rancho Cucamonga HS)",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "F.C.C. License",
-      "assigned": "FCC Commercial Radio Operator License",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "Forecasting Financial Statemen- Credit by Exam",
-      "assigned": "Forecasting Financial Statements",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "ICS 100, IS 700, L-180, L-280, S-130, S-190, S-215 Wildland Fire Certifications",
-      "assigned": "Wildland Fire ICS/NWCG Certification Bundle",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "Intro to Entrepreneurship High School to College Articulatio",
-      "assigned": "Introduction to Entrepreneurship",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "LA CITY (FCAW) D1.1 STRUCTURAL WELDING CERTIFICATION SEMI-AUTOMATIC",
-      "assigned": "LA City Certified Welder — AWS D1.1 FCAW",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "OFADM 256 (change to BIT 250) Introduction to Microsoft Word - Military Training",
-      "assigned": "Microsoft Office Specialist — Word",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "PLNT SC 714 - Principles of Horticulture",
-      "assigned": "Principles of Horticulture",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "Paramedic NCTI (EMS-60/91)",
-      "assigned": "Paramedic License",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory",
-      "assigned": "DC and AC Circuit Analysis and Laboratory",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
-    },
-    {
-      "raw": "Psych c1000 - Introduction to Psychology - AP Credit",
-      "assigned": "AP Psychology",
-      "issuer": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-03T17:28:52.076094+00:00"
+      "reviewed_at": "2026-06-03T17:35:49.462088+00:00"
     }
   ],
   "credential_added": [],
-  "audit_pruned": 18,
-  "unified_titles_count": 3400
+  "audit_pruned": 4,
+  "unified_titles_count": 3401
 }
