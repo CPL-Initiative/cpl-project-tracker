@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-03T17:29:02Z",
-  "count": 175,
+  "_synced_at": "2026-06-03T17:36:00Z",
+  "count": 179,
   "assignments": {
     "A S T 025 - Fundamentals of Auto Mechanics": {
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
@@ -208,6 +208,16 @@
       "unified_title": "Artificial Intelligence: Prompt Engineering and AI Systems",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "Auto Service Excellence A6": {
+      "reviewed_at": "2026-06-03T17:35:49.462088+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "ASE A6 — Electrical/Electronic Systems"
+    },
+    "Auto Service Excellence Master Auto Technician": {
+      "reviewed_at": "2026-06-03T17:35:49.462088+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "ASE Master Automobile Technician"
     },
     "Automotive Service Excellence (ASE) A4 Certificate Suspension & Steering": {
       "unified_title": "ASE A4 — Suspension and Steering",
@@ -807,6 +817,11 @@
       "reviewed_by": "map@rccd.edu",
       "unified_title": "NWCG Wildland Fire Certifications (S-110 / IS-700 / IS-800 / P-101 / FI-110 / ICS-300 bundle)"
     },
+    "S-130 and C-219 and S-230 and S-231 and S-270 Wildland Fire Certifications": {
+      "reviewed_at": "2026-06-03T17:35:49.462088+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "NWCG Wildland Fire Certifications (S-130/S-230/S-231/S-270)"
+    },
     "SFT CFSTES Courses: Fire Inspector 1B and 1C (or former SFT Fire Marshal curriculum) OR Work Experience": {
       "unified_title": "SFT Fire Inspector 1B and 1C",
       "reviewed_by": "map@rccd.edu",
@@ -876,6 +891,11 @@
       "unified_title": "Introduction to Water Resource Management",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "Water Supply Technology Portfolio Student 1": {
+      "reviewed_at": "2026-06-03T17:35:49.462088+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Generic Portfolio Review — San Bernardino Valley College (Water Supply Technology)"
     },
     "Web Page Development and Publishing": {
       "unified_title": "Web Page Development and Publishing",
