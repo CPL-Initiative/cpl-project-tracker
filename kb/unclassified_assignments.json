@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-03T15:07:08Z",
-  "count": 127,
+  "_synced_at": "2026-06-03T17:12:56Z",
+  "count": 157,
   "assignments": {
     "ADJU 232 - Juvenile Justice Procedures - Credit by Exam": {
       "unified_title": "Juvenile Justice Procedures",
@@ -28,6 +28,11 @@
       "unified_title": "AP English Language and Composition",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "AP Exam Calculus BC/AB Sub-score (Score 3-5)": {
+      "reviewed_at": "2026-06-03T17:13:24.442594+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "AP Calculus BC"
     },
     "AP Exam Physics 1: Algebra-Based Score of 4 or 5": {
       "unified_title": "AP Physics 1: Algebra-Based",
@@ -64,6 +69,16 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "AP Exam World History: Modern (prior to Fall 2025) (Score 3-5)": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "AP World History: Modern"
+    },
+    "AP Exam: Calculus AB (or Calculus BC/AB SubScore)": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "AP Calculus AB"
+    },
     "AP Exam: Computer Science Principles": {
       "unified_title": "AP Computer Science Principles",
       "reviewed_by": "map@rccd.edu",
@@ -73,6 +88,16 @@
       "unified_title": "AP English Language and Composition",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "AP Exam: Precalcululs": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "AP Precalculus"
+    },
+    "AP Physics 1\tNatural Sciences - 4\tCredit for PHYS 2A": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "AP Physics 1"
     },
     "AP:  Human Geography": {
       "unified_title": "AP Human Geography",
@@ -149,10 +174,20 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "Adobe Photoshop Certified Professional": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Adobe Certified Professional — Visual Design (Photoshop)"
+    },
     "Advanced Metal Framing": {
       "unified_title": "Advanced Metal Framing",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "American National Standard Institute (ANSI) Food Manager Certificate": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "ANSI-Accredited Food Protection Manager Certification"
     },
     "Artificial Intelligence: Prompt Engineering and AI Systems": {
       "unified_title": "Artificial Intelligence: Prompt Engineering and AI Systems",
@@ -173,6 +208,11 @@
       "unified_title": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "Automotive Services Excellence (A5: Brakes) Certificate": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "ASE A5 — Brakes"
     },
     "Automotive Technology MLR I & II - Irvine High School": {
       "unified_title": "Automotive Technology MLR I and II — Irvine High School",
@@ -199,6 +239,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "CA Smog Repair License": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "California Smog Check Repair Technician License"
+    },
     "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)": {
       "unified_title": "Business Management and Entrepreneurship — Cajon High School",
       "reviewed_by": "map@rccd.edu",
@@ -223,6 +268,11 @@
       "unified_title": "CLEP Principles of Marketing",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "CLEP Principles of Management": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "CLEP Principles of Management"
     },
     "CLP – C CERTIFIED PROFESSIONAL PROGRAMMER": {
       "unified_title": "CLP — C Certified Professional Programmer",
@@ -249,6 +299,11 @@
       "unified_title": "Hazardous Materials First Responder Operational — Decontamination",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "Cal Fire Instructor I": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Fire Instructor 1"
     },
     "Cal-JAC Fire Fighter Paramedic Journeyperson Certificate": {
       "unified_title": "Fire Fighter Paramedic Journeyperson Certificate",
@@ -345,6 +400,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "DEPT of VA POST": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Department of Veterans Affairs Police Officer (VA POST)"
+    },
     "Digital Forensics Fundamentals": {
       "unified_title": "Digital Forensics Fundamentals",
       "reviewed_by": "map@rccd.edu",
@@ -370,10 +430,25 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:33:50.363171+00:00"
     },
+    "FTECH 324B - Fire Service In-ServiceTraining  Administration": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Fire Service In-Service Training — Administration"
+    },
     "Fire Inspector 2A: Fire Prevention Administration": {
       "unified_title": "Fire Inspector 2A",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "Fire Inspector 2B: Fire and Life Safety Requirements": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Fire Inspector 2B"
+    },
+    "Fire Inspector 2D: Hazardous Materials, Operations, and Processes": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Fire Inspector 2D"
     },
     "Firefighter 1 Certification": {
       "unified_title": "Firefighter 1",
@@ -425,6 +500,36 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "IW- Architectural II": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Ironworker Architectural II"
+    },
+    "IW- Architectural III": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Ironworker Architectural III"
+    },
+    "IW- Detailing": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Ironworker Apprenticeship — Detailing"
+    },
+    "IW- Structural Precast Concrete": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Ironworker Structural Precast Concrete"
+    },
+    "IW- Structural Steel II": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Ironworker Structural Steel II"
+    },
+    "IW- Welding III": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Ironworker Welding III"
+    },
     "Introduction to Computer Information Systems": {
       "unified_title": "Introduction to Computer Information Systems",
       "reviewed_by": "map@rccd.edu",
@@ -469,6 +574,11 @@
       "unified_title": "Medical Assisting Clinical",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "MDAST 324 - Introduction to Disease & Pharmacology - Industrial Certification": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Introduction to Disease and Pharmacology"
     },
     "MDAST 325 - Medical Assisting Lab Procedures - Industry Certification": {
       "unified_title": "Medical Assisting Lab Procedures",
@@ -527,6 +637,16 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "National Center for Construction Education and Research (NCCER)": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "NCCER Certification (unspecified)"
+    },
+    "National Center for Construction Education and Research (NCCER) (10 Certificates)": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "NCCER Certification Bundle (10 Certificates)"
+    },
     "Nursing Process 2": {
       "unified_title": "Nursing Process 2",
       "reviewed_by": "map@rccd.edu",
@@ -546,6 +666,16 @@
       "unified_title": "Pathophysiology for Nursing",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "PayrollOrg (PAYO) APAE-0001 Certified Payroll Professional Examination": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Certified Payroll Professional (CPP)"
+    },
+    "Peace Officer Standards and Training Basic Academy Certificate (POST)": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "POST Basic Academy"
     },
     "Portfolio Production Studio- Credit by Exam": {
       "unified_title": "Portfolio Production Studio",
@@ -582,6 +712,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "S-110, IS 700, IS 800, P-101, FI 110, ICS 300 Wildland Fire Certifications": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "NWCG Wildland Fire Certifications (S-110 / IS-700 / IS-800 / P-101 / FI-110 / ICS-300 bundle)"
+    },
     "SFT CFSTES Courses: Fire Inspector 1B and 1C (or former SFT Fire Marshal curriculum) OR Work Experience": {
       "unified_title": "SFT Fire Inspector 1B and 1C",
       "reviewed_by": "map@rccd.edu",
@@ -591,6 +726,16 @@
       "unified_title": "SFT Fire Inspector 1C",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "SMOG Inspector and Repair License": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "California BAR Smog Check Inspector and Repair Technician License"
+    },
+    "ServeSafe Managerial Certification and resume for CUL 003": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "ServSafe Food Protection Manager Certification"
     },
     "Social Equity and the Criminal Justice System": {
       "unified_title": "Social Equity and the Criminal Justice System",
@@ -606,6 +751,11 @@
       "unified_title": "Spanish II",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "Structural Arch Orn I": {
+      "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+      "reviewed_by": "map@rccd.edu",
+      "unified_title": "Ironworker Structural, Architectural and Ornamental I"
     },
     "Structural Steel I": {
       "unified_title": "Ironworker Structural Steel I",
