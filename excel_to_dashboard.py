@@ -5180,6 +5180,54 @@ def _write_analytics_xlsx_export(card_id, title, headers, rows, output_dir):
     return out_path
 
 
+# ── Course-FAMILY key (the "ordinal rule") — shared by the CER identity
+# consolidation (export_credential_reference) and the CCR Suggested-merges
+# worklist's co-articulation family signal (export_unified_courses). Collapses
+# level/format title drift ("EMT" / "EMT Academy" / "EMT I" / "EMT Training")
+# while keeping genuine sequences apart: the ordinal "1"/"I" is non-distinguishing
+# (a bare title == its "I") but "2"+/"II"+ are KEPT as distinguishing tokens, so
+# Calculus I != II, Spanish 1 != 2, Paramedic 2/3/4 never fold. Full rationale:
+# docs/kb-notes/methodology-within-credential-identity-consolidation.md
+_FAM_FORMAT = {"basic", "training", "academy", "preparation", "prep",
+               "certificate", "course", "application", "module", "part",
+               "semester", "program"}
+_FAM_DROP = {"the", "of", "to", "and", "for", "with", "in", "a", "an",
+             "on", "at", "as", "or"}
+_FAM_ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5",
+              "vi": "6", "vii": "7", "viii": "8", "ix": "9"}
+
+
+def _fam_key(title):
+    """Course-family key: sorted distinguishing tokens. Strips parentheticals,
+    articles, FORMAT words, bare section letters, multi-digit course numbers, and
+    the ordinal "1"/"I" (non-distinguishing). KEEPS ordinals 2–9 (roman
+    normalized) as tokens — so "X" == "X I" but "X" != "X II"."""
+    t = re.sub(r"\([^)]*\)", " ", str(title or "").lower())
+    t = re.sub(r"[^a-z0-9 ]+", " ", t)
+    toks = []
+    for w in t.split():
+        if w == "emt":
+            toks += ["emergency", "medical", "technician"]
+        elif w == "tech":
+            toks.append("technician")
+        else:
+            toks.append(w)
+    keep = []
+    for w in toks:
+        if len(w) == 1 and not w.isdigit():   # bare section letter ("A"/"B")
+            continue                          # (keep single digits 2–9)
+        if w in _FAM_DROP or w in _FAM_FORMAT:
+            continue
+        if w in _FAM_ROMAN:
+            w = _FAM_ROMAN[w]                  # roman → digit
+        if w.isdigit():
+            if w == "1" or len(w) >= 2:        # "1"/"I" non-distinguishing; ≥10 = course #
+                continue
+            # else 2–9: keep as a distinguishing token
+        keep.append(w)
+    return " ".join(sorted(set(keep)))
+
+
 def export_credential_reference():
     """Build credential_reference_data.js — the lean payload consumed by the
     Credential Reference tab. Joins the credential-identity layer
@@ -5530,48 +5578,8 @@ def export_credential_reference():
     # Honors Sam's "Core EMT-Basic only" call. The DURABLE identity merges are
     # queued separately in the worklist; this is the immediate declutter ("CER view
     # + worklist"). Scoped WITHIN a credential, so the blast radius is one card.
-    _FAM_FORMAT = {"basic", "training", "academy", "preparation", "prep",
-                   "certificate", "course", "application", "module", "part",
-                   "semester", "program"}
-    _FAM_DROP = {"the", "of", "to", "and", "for", "with", "in", "a", "an",
-                 "on", "at", "as", "or"}
-    # Roman→digit for the ordinal rule below. "i"/"1" are treated as
-    # non-distinguishing (a bare title is the same course as its "I"); "ii"+/"2"+
-    # are KEPT as distinguishing tokens so real sequences (Calculus II, Spanish 2,
-    # Paramedic 2/3/4) never fold into level 1.
-    _FAM_ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5",
-                  "vi": "6", "vii": "7", "viii": "8", "ix": "9"}
-
-    def _fam_key(title):
-        """Course-family key: sorted distinguishing tokens. Strips parentheticals,
-        articles, FORMAT words, bare section letters, multi-digit course numbers,
-        and the ordinal "1"/"I" (non-distinguishing). KEEPS ordinals 2–9 (roman
-        normalized) as tokens — so "X" == "X I" but "X" != "X II"."""
-        t = re.sub(r"\([^)]*\)", " ", str(title or "").lower())
-        t = re.sub(r"[^a-z0-9 ]+", " ", t)
-        toks = []
-        for w in t.split():
-            if w == "emt":
-                toks += ["emergency", "medical", "technician"]
-            elif w == "tech":
-                toks.append("technician")
-            else:
-                toks.append(w)
-        keep = []
-        for w in toks:
-            if len(w) == 1 and not w.isdigit():   # bare section letter ("A"/"B")
-                continue                          # (keep single digits 2–9)
-            if w in _FAM_DROP or w in _FAM_FORMAT:
-                continue
-            if w in _FAM_ROMAN:
-                w = _FAM_ROMAN[w]                  # roman → digit
-            if w.isdigit():
-                if w == "1" or len(w) >= 2:        # "1"/"I" non-distinguishing; ≥10 = course #
-                    continue
-                # else 2–9: keep as a distinguishing token
-            keep.append(w)
-        return " ".join(sorted(set(keep)))
-
+    # _fam_key + the _FAM_* constants are module-level (shared with the worklist's
+    # co-articulation family signal in export_unified_courses).
     _SYS_RANK = {"CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3}
     _FAM_MERGE_SYS = {"M-ID", "Unified"}           # only surrogate identities fold;
                                                    # C-ID/CCN anchors stay 1 row each
@@ -6550,20 +6558,95 @@ def export_unified_courses():
     # Cross-college candidates first (by cohesion); flagged same-college last.
     singleton_groups.sort(key=lambda x: (x["same_college"], -x["score"]))
 
+    # ── Co-articulation family merges (NEW, 2026-06-04) — surface near-duplicate
+    # M-IDs that the level-SAFE _sug_sig MISSES. The same course gets minted as
+    # many single-college M-IDs whose titles differ only by level/format wording
+    # ("Emergency Medical Technician" / "EMT Academy" / "EMT (Basic)" / "EMT I" /
+    # "EMT Training" …); _sug_sig keeps them apart on purpose, so the EMT-style
+    # clusters never surface for merging. This pass groups identities by the
+    # ordinal-rule _fam_key (module-level; the SAME key the CER consolidation
+    # uses) — SAFE because it's GATED on CO-ARTICULATION: two identities group
+    # only when they share a credential in coci_articulations.json AND the family
+    # key. That gate keeps it tight (~54 groups / 120 ids) instead of a global
+    # over-merge, and the ordinal rule keeps Calculus I≠II / Paramedic 2/3/4
+    # apart. Confirming a group reuses doConsolidate → merge_into (→ CCR + the
+    # auditor); the EACR/CER articulation views are static raw-M-ID, so they don't
+    # re-collapse from it until a re-key. NEVER auto-applied — a worklist only.
+    from collections import defaultdict as _dd
+    family_groups = []
+    _art_doc = _load("coci_articulations.json") or {}
+    if _art_doc.get("articulations"):
+        # mergeable CCR rows by id (same gate as the anchored `sug` loop above)
+        _row_by_id = {}
+        for r in rows:
+            if r.get("locked") or r.get("id_system") not in ("M-ID", "Unified"):
+                continue
+            if (r.get("match") or {}).get("cid_conflict"):
+                continue
+            _row_by_id[r["id"]] = r
+        # credential -> set of mergeable ids that articulate to it
+        _cred_ids = _dd(set)
+        for a in _art_doc["articulations"]:
+            cid, ut = a.get("course_id"), a.get("unified_title")
+            if ut and cid in _row_by_id:
+                _cred_ids[ut].add(cid)
+        # within each credential, group ids by (M-ID subject prefix, family key);
+        # emit groups of >=2, de-duping an id-set that co-articulates to several
+        # credentials. The SUBJ4 prefix gate keeps the merge WITHIN one discipline
+        # (per the M-ID invariant "one discipline ⇒ one SUBJ4"), so a generic
+        # title can't fold across disciplines (e.g. AUTO + AVIA under one ASE
+        # cert). Conservative on purpose — a worklist over-surfacing a bad merge
+        # is worse than missing a cross-SUBJ4 one (curators can still Unify those).
+        _seen_fam = set()
+        for ut, ids in _cred_ids.items():
+            fam = _dd(list)
+            for cid in ids:
+                k = _fam_key(_row_by_id[cid].get("title"))
+                if k:
+                    subj4 = str(cid).split(" ", 1)[0]   # "EMST M1064" → "EMST"
+                    fam[(subj4, k)].append(cid)
+            for (_subj4, k), cids in fam.items():
+                if len(cids) < 2:
+                    continue
+                key = tuple(sorted(cids))
+                if key in _seen_fam:
+                    continue
+                _seen_fam.add(key)
+                # Lead with the cleanest-title identity (fewest tokens) so the
+                # worklist's default merge target is the canonical name (e.g.
+                # "Emergency Medical Technician", not "…Basic Training Application")
+                # — mirrors the CER consolidation's representative pick.
+                _cids = sorted(cids, key=lambda c: (
+                    len((_row_by_id[c].get("title") or "").split()), c))
+                members = [{"id": cid, "t": _row_by_id[cid].get("title"),
+                            "s": ";".join(_row_by_id[cid].get("subj") or []),
+                            "u": _row_by_id[cid].get("units"),
+                            "k": _row_by_id[cid].get("id_system")}
+                           for cid in _cids]
+                family_groups.append({"sig": k, "n": len(members),
+                                      "score": _sug_score(members),
+                                      "credential": ut, "members": members})
+        family_groups.sort(key=lambda x: -x["score"])
+
     out_sug = os.path.join(odir, "unified_courses_suggestions.js")
     _sc_flagged = sum(1 for g in singleton_groups if g["same_college"])
     sug_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
                    "count": len(sug_groups), "groups": sug_groups,
                    "singleton_count": len(singleton_groups),
-                   "singleton_groups": singleton_groups}
+                   "singleton_groups": singleton_groups,
+                   "family_count": len(family_groups),
+                   "family_groups": family_groups}
     with open(out_sug, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses suggested-merge worklist — lazy-loaded. groups = "
                 "identity-anchored same-title merges; singleton_groups = NEW unified "
                 "courses minted from single-college matches (same_college flag = likely "
-                "intra-college variants). HUMAN-CONFIRMED in the tab, NEVER auto-applied. */\n"
+                "intra-college variants); family_groups = co-articulation family merges "
+                "(near-duplicate M-IDs the level-safe signature misses, gated on a shared "
+                "credential + the ordinal-rule family key). HUMAN-CONFIRMED, NEVER auto-applied. */\n"
                 "window.CPL_UC_SUGGESTIONS = " + json.dumps(sug_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
     print(f"  Unified Courses: wrote {out_sug} ({len(sug_groups)} anchored + "
-          f"{len(singleton_groups)} singleton-only groups [{_sc_flagged} same-college flagged])")
+          f"{len(singleton_groups)} singleton-only + {len(family_groups)} co-articulation-family "
+          f"groups [{_sc_flagged} same-college flagged])")
 
     mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
     payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,

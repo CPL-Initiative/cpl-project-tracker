@@ -758,10 +758,18 @@
       var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;";
       loadSuggestions().then(function (data) {
         var anchored = (data.groups || []).map(function (g) { g._kind = "anchored"; return g; });
+        // Co-articulation family groups (2026-06-04): near-duplicate M-IDs the
+        // level-safe signature misses, surfaced because they co-articulate to one
+        // credential AND share the ordinal-rule family key (e.g. EMT's 9 "Academy"/
+        // "Basic"/"I"/"Training" variants). They MERGE into an existing identity
+        // like anchored groups (target = first M-ID member), so they sit in the
+        // "merge into existing" half, before the singleton-only (new-mint) section.
+        var family = (data.family_groups || []).map(function (g) { g._kind = "family"; return g; });
         var singles = (data.singleton_groups || []).map(function (g) { g._kind = "singleton"; return g; });
-        var groups = anchored.concat(singles);
+        var groups = anchored.concat(family).concat(singles);
         if (!groups.length) { alert("No suggested merges available in this build."); return; }
-        var nAnchored = anchored.length;
+        // Singleton (new-mint) section starts after anchored + family.
+        var nNonSingleton = anchored.length + family.length;
         var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
         var mergedAway = function (id) { return byId[id] && byId[id]._mergedAway; };
         function liveMembers(g) { return g.members.filter(function (m) { return !mergedAway(m.id); }); }
@@ -785,18 +793,24 @@
             return;
           }
           var g = groups[i], mems = liveMembers(g), isSingleton = g._kind === "singleton";
+          var isFamily = g._kind === "family";
           box.appendChild(el("h3", { style: "margin:0 0 2px;color:#0A2240;" }, ["Suggested merge " + (i + 1) + " of " + groups.length]));
           // Section badge so the curator knows whether this merges into an
           // existing identity or mints a brand-new unified course.
           var badge = isSingleton
             ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#ede9fe;color:#5b21b6;margin:0 0 8px;" },
-                ["✨ New unified course · stand-alone matches (" + (i - nAnchored + 1) + " of " + (groups.length - nAnchored) + ")"])
+                ["✨ New unified course · stand-alone matches (" + (i - nNonSingleton + 1) + " of " + (groups.length - nNonSingleton) + ")"])
+            : isFamily
+            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#dbeafe;color:#1e40af;margin:0 0 8px;" },
+                ["⛓ Co-articulation family · merge near-duplicate identities"])
             : el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#e0f2fe;color:#075985;margin:0 0 8px;" },
                 ["⛓ Merge into existing identity"]);
           box.appendChild(badge);
           box.appendChild(el("p", { style: "margin:0 0 10px;color:#6b7280;" },
             [isSingleton
               ? "Single-college courses that share a title but match no existing identity (confidence score " + g.score + "). Confirming creates a NEW unified course from the checked members. Uncheck any that differ — or Skip."
+              : isFamily
+              ? "These identities co-articulate to “" + (g.credential || "the same credential") + "” and share a course family the level-safe worklist skips (level/format title drift — e.g. “Academy” / “Basic” / “I” / “Training”). Confirming MERGES the checked members into one identity. Uncheck any genuinely different course, then Confirm — or Skip."
               : "Same-title candidates (confidence score " + g.score + "). Uncheck any that differ, then Confirm — or Skip. Nothing is applied until you confirm."]));
           if (isSingleton && g.same_college) {
             box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
