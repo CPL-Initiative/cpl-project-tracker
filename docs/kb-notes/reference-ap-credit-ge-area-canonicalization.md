@@ -129,8 +129,10 @@ collapsed disclosure (`bucket` flag) and badges minority-subject identities
 - **CLEP / IB — DONE** (Session 33, from ESLEI 24-35). Future: when the 2026
   Title 5 NPRM finalizes (it may add exams / shift to Cal-GETC area numbers),
   re-transcribe the updated chart into `ccc_ge_exam_credit.json`.
-- A **GE-Area grain** view (group standardized-exam credentials by GE Area) —
-  the faculty/student-facing rollup, analogous to the CER/CCR/CSR family.
+- **GE-Area grain view — DONE** (Session 33): a "Group: GE Area" mode on the CER
+  toolbar (`groupKeysOf` multi-buckets a row under each area it satisfies;
+  consumer-only, reuses the TOP/Discipline grouping machinery). N/A → an
+  elective bucket; non-exam credentials → a default-collapsed catch-all.
 - A coherence check: flag exam credentials whose articulated local courses'
   disciplines don't fit the exam's GE Area (the subject-outlier badge is a first
   cut).

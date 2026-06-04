@@ -669,7 +669,7 @@
     curationEditing: {},
   };
 
-  // Group key for a row given the current state.groupBy mode.
+  // Group key for a row given the current state.groupBy mode (single-key modes).
   function groupKeyOf(r) {
     if (state.groupBy === "top") {
       var t = (r.top_modal || "").slice(0, 2);
@@ -680,6 +680,21 @@
     }
     return null;
   }
+  // Group keys for a row — an ARRAY so a row can belong to MULTIPLE buckets.
+  // GE-Area grouping (the faculty/student grain view) is multi-bucket: an exam
+  // that satisfies "Social/Behavioral Sciences or Arts and Humanities" appears
+  // under BOTH areas, since either qualifies. N/A exams → "NA"; non-exam
+  // credentials → "~~none" (the default-collapsed catch-all). Single-key modes
+  // (top/disc) just wrap groupKeyOf in a one-element array.
+  function groupKeysOf(r) {
+    if (state.groupBy === "gearea") {
+      var g = r.ge_credit;
+      if (!g) return ["~~none"];
+      if (g.na || !(g.areas && g.areas.length)) return ["NA"];
+      return g.areas.slice();
+    }
+    return [groupKeyOf(r)];
+  }
   // Display label for a group key.
   function groupLabelOf(key) {
     if (state.groupBy === "top") {
@@ -689,6 +704,11 @@
     }
     if (state.groupBy === "disc") {
       return key === "~~" ? "(No discipline)" : key;
+    }
+    if (state.groupBy === "gearea") {
+      if (key === "~~none") return "— Not a standardized exam (no statewide GE credit)";
+      if (key === "NA") return "N/A — elective credit only (no GE Area)";
+      return key;  // the GE-Area name itself
     }
     return "";
   }
@@ -791,11 +811,13 @@
 
     // PR-3: group-by dropdown.
     var groupSel = el("select", { class: "cr-filter", id: "cr-group-by",
-      title: "Group rows under collapsible TOP category or MQ discipline headers." });
+      title: "Group rows under collapsible headers: TOP category, MQ discipline, "
+           + "or GE Area (the statewide AP/IB/CLEP exam-credit rollup)." });
     [
-      ["none", "Group: none"],
-      ["top",  "Group: TOP category"],
-      ["disc", "Group: Discipline"],
+      ["none",   "Group: none"],
+      ["gearea", "Group: GE Area"],
+      ["top",    "Group: TOP category"],
+      ["disc",   "Group: Discipline"],
     ].forEach(function (opt) {
       var o = el("option", { value: opt[0] }, [opt[1]]);
       if (opt[0] === state.groupBy) o.selected = true;
@@ -805,8 +827,9 @@
       state.groupBy = this.value;
       // Don't carry collapsed-state across grouping modes — the keys are
       // namespaced by mode (e.g. "top:12" vs "disc:Health") to avoid clashes.
-      // Reset to "all expanded" on mode change for predictability.
-      state.collapsedGroups = {};
+      // Reset to "all expanded", except: in GE-Area mode the big "not a
+      // standardized exam" catch-all starts collapsed so the exam buckets lead.
+      state.collapsedGroups = (this.value === "gearea") ? { "gearea:~~none": true } : {};
       render();
     };
     tb.appendChild(groupSel);
@@ -1152,18 +1175,27 @@
         }
       });
     } else {
-      // Grouped render — bucket the filtered rows by the active group key
+      // Grouped render — bucket the filtered rows by the active group key(s)
       // (already filtered + sorted) and emit a collapsible header before each
-      // group's rows.
+      // group's rows. groupKeysOf returns an ARRAY, so GE-Area mode multi-buckets
+      // (a row can appear under each area it satisfies).
       var groups = {};
       var groupOrder = [];
       filtered.forEach(function (r) {
-        var k = groupKeyOf(r);
-        if (!(k in groups)) { groups[k] = []; groupOrder.push(k); }
-        groups[k].push(r);
+        groupKeysOf(r).forEach(function (k) {
+          if (!(k in groups)) { groups[k] = []; groupOrder.push(k); }
+          groups[k].push(r);
+        });
       });
-      // Sort group order: by label (with the empty/no-X bucket last).
+      // Sort group order: by label. GE-Area mode floats the real areas first,
+      // then the N/A bucket, then the non-exam catch-all last; other modes put
+      // the empty/no-X ("~~") bucket last.
       groupOrder.sort(function (a, b) {
+        if (state.groupBy === "gearea") {
+          var rank = function (k) { return k === "~~none" ? 3 : (k === "NA" ? 2 : 1); };
+          if (rank(a) !== rank(b)) return rank(a) - rank(b);
+          return groupLabelOf(a).localeCompare(groupLabelOf(b));
+        }
         if (a === "~~" && b !== "~~") return 1;
         if (b === "~~" && a !== "~~") return -1;
         return groupLabelOf(a).localeCompare(groupLabelOf(b));
