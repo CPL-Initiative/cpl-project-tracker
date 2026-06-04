@@ -325,9 +325,18 @@
       potential_colleges: b.potential_colleges || [],
       articulations: b.articulations || [],
       n_articulation_lines: b.n_articulation_lines || 0,
-      // The legacy raw_variants list is NOT included in baked (saves payload size);
-      // the expanded body uses `articulations` instead. raw_count is still surfaced.
-      raw_variants: null,
+      // Raw college-entered MAP exhibit-title variants collapsed under this
+      // unified title. Baked compactly as {r:raw_title, c:confidence, q:flag}
+      // (added 2026-06-04, item 6) so the expanded row can list them — a
+      // raw_count of "1" means one college title maps here, which may differ
+      // from the AI-generated unified title. Mapped to the {raw_title,…} shape
+      // the renderer + search share with the runtime-fetch path.
+      raw_variants: Array.isArray(b.raw_variants)
+        ? b.raw_variants.map(function (v) {
+            return { raw_title: v.r, confidence: v.c || 0,
+                     quality_flag: v.q || null, _notes: null };
+          })
+        : null,
       credentials: null,
       issuer_count: b.issuer ? 1 : 0,
       confidences: [],
@@ -575,9 +584,15 @@
     if (state.flagOnly && !row.has_quality_flag) return false;
     if (state.search) {
       var q = state.search;
+      // raw_variants is null on baked rows until the payload carries them, so
+      // guard with `|| []` — without it, searching a non-matching baked row
+      // throws (null.some), aborting the whole render and freezing search AND
+      // the expand wedges (the root cause of the "search/expand stopped working"
+      // reports). Also matches the curator-facing display label.
       var hit = row.unified_title.toLowerCase().indexOf(q) >= 0
+        || (row.display_title && row.display_title.toLowerCase().indexOf(q) >= 0)
         || (row.primary_issuer && row.primary_issuer.toLowerCase().indexOf(q) >= 0)
-        || row.raw_variants.some(function (v) {
+        || (row.raw_variants || []).some(function (v) {
           return v.raw_title.toLowerCase().indexOf(q) >= 0;
         });
       if (!hit) return false;
@@ -1048,7 +1063,7 @@
       { key: null,              label: "" },  // checkbox column — header rendered separately below
       { key: "unified_title",   label: "Unified Title" },
       { key: "raw_count",       label: "Variants",
-        title: "Number of distinct raw MAP titles collapsed under this unified title." },
+        title: "Number of distinct college-entered MAP exhibit titles collapsed under this unified title. Expand the row to see them — \"1\" means a single college title maps here, which may differ from the generated unified title." },
       { key: "disc_modal",      label: "Discipline",
         title: "Predominant MQ discipline across this credential's articulated common courses." },
       { key: "primary_issuer",  label: "Issuing Agency" },
@@ -1794,7 +1809,15 @@
       "#tab-credential-reference .cr-wl-save:disabled{opacity:.6;cursor:default;}" +
       "#tab-credential-reference .cr-wl-clear{font-size:.74rem;color:#b45309;margin-left:8px;text-decoration:none;}" +
       "#tab-credential-reference .cr-wl-clear:hover{text-decoration:underline;}" +
-      "#tab-credential-reference .cr-wl-assigned-by{color:#1e7e45;font-size:.78rem;font-weight:600;}";
+      "#tab-credential-reference .cr-wl-assigned-by{color:#1e7e45;font-size:.78rem;font-weight:600;}" +
+      // Item 4 (2026-06-04): center the articulations-table headers to match the
+      // (inherited) centered data cells, let the CCR identity run on one line,
+      // and mute the inline local-course units. Injected here (not the HTML
+      // <style>) so it applies to both CPL_Dashboard.html + index.html without a
+      // Rule-4 mirror; appended after the template <style> so these win on ties.
+      "#tab-credential-reference .cr-arts-table th{text-align:center;}" +
+      "#tab-credential-reference .cr-art-ident{max-width:none;}" +
+      "#tab-credential-reference .cr-lc-units{color:#6b7280;font-size:.92em;}";
     document.head.appendChild(st);
   }
 
@@ -1833,6 +1856,18 @@
   // when there's nothing to show so the title stays clean.
   function crTitleChips(r) {
     var c = el("div", { class: "cr-title-chips" });
+    // "Generated Title" — the credential's Common Exhibit Title is an
+    // AI-generated draft, not yet curator-confirmed (Mark initiated) or renamed
+    // (✎). Shown on every AI-draft title so a curator can tell at a glance
+    // which exhibit titles are machine-generated vs human-confirmed (Sam's
+    // call, 2026-06-04). Curated/initiated rows surface ✓ / ✎ instead.
+    if (!r.curator_reviewed_at && !r.utitle_overridden_at) {
+      c.appendChild(el("span", { class: "cr-chip cr-chip-gen",
+        title: "Common Exhibit Title is an AI-generated draft (title confidence "
+          + (r.conf_modal != null ? r.conf_modal.toFixed(2) : "—")
+          + "), not yet curator-confirmed. Sign in and Mark initiated, or rename, to confirm it."
+      }, ["⚙ Generated Title"]));
+    }
     if (r.statewide) {
       c.appendChild(el("span", { class: "cr-chip cr-chip-ccc", title: "At least one CCC Collaborative (statewide) articulation." }, ["🏛 CCC"]));
     }
@@ -1840,7 +1875,10 @@
       c.appendChild(el("span", { class: "cr-chip cr-chip-local", title: "At least one local-college articulation." }, ["🏠 Local"]));
     }
     if (!r.statewide && r.has_local) {
-      c.appendChild(el("span", { class: "cr-chip cr-chip-gen", title: "No statewide CCC standard — generated suggestion for consideration only, NOT an official CCC standard." + (r.gen_rec ? "\nSuggested: " + r.gen_rec : "") }, ["⚙ Generated"]));
+      // This "Generated" is about the Common Course ALIGNMENT / credit
+      // recommendation (no statewide CCC standard → the rec is derived from the
+      // MID/CID/CCN identities), distinct from the "Generated Title" chip above.
+      c.appendChild(el("span", { class: "cr-chip cr-chip-gen", title: "Common Course alignment: no statewide CCC standard — the credit recommendation is generated from the MID/CID/CCN identities, for consideration only, NOT an official CCC standard." + (r.gen_rec ? "\nSuggested: " + r.gen_rec : "") }, ["⚙ Generated MID Credit Rec"]));
     }
     if (!r.statewide && !r.has_local && !(r.articulations && r.articulations.length)) {
       c.appendChild(el("span", { class: "cr-chip cr-chip-none", title: "No common-course articulations resolved." }, ["— no articulations"]));
@@ -1867,8 +1905,8 @@
         el("span", { class: "cr-rec-val" }, [r.ccc_rec]),
       ]));
     } else if (!r.statewide && r.gen_rec) {
-      wrap.appendChild(el("div", { class: "cr-rec", title: "Best available recommendation from the M-ID/C-ID/CCN identities — for consideration only, not an official CCC standard." }, [
-        el("span", { class: "cr-rec-label cr-rec-gen" }, ["⚙ Generated (consideration only): "]),
+      wrap.appendChild(el("div", { class: "cr-rec", title: "Best available credit recommendation from the MID/CID/CCN identities — for consideration only, not an official CCC standard." }, [
+        el("span", { class: "cr-rec-label cr-rec-gen" }, ["⚙ Generated MID Credit Recommendation (consideration only): "]),
         el("span", { class: "cr-rec-val" }, [r.gen_rec]),
       ]));
     }
@@ -2099,6 +2137,18 @@
     var scopeBlock = renderScopeAndBadges(r);
     if (scopeBlock) div.appendChild(scopeBlock);
 
+    // ── Audit signals — moved up here (2026-06-04, Sam's call) so they sit
+    // directly under the Articulated / Potential-adopter section, where a
+    // curator triaging a credential expects to find them (was at the bottom). ──
+    if (r.audit_tag_total) {
+      div.appendChild(el("h5", { class: "cr-audit-h" }, ["Audit signals"]));
+      var ulA = el("ul", { class: "cr-audit-list" });
+      Object.keys(r.audit_tags).sort().forEach(function (t) {
+        ulA.appendChild(el("li", null, [el("code", null, [t]), " × " + r.audit_tags[t]]));
+      });
+      div.appendChild(ulA);
+    }
+
     // ── Common-course identities articulating to this credential ──
     // Render a table per identity: identity badge on the left, local
     // college course rows on the right. CCN-ID / C-ID anchors first, then
@@ -2129,22 +2179,42 @@
         idCell.appendChild(el("span", { class: "cr-id-sys" }, [idSysLabel(a.sys) || "?"]));
         idCell.appendChild(document.createTextNode(" "));
         idCell.appendChild(el("code", { class: "cr-id-code" }, [a.cid || "—"]));
-        if (a.title) idCell.appendChild(el("div", { class: "cr-id-title" }, [a.title]));
+        // Item 4 (2026-06-04): keep the whole CCR identity on ONE line — the
+        // title + discipline/TOP meta were stacked <div>s; now inline <span>s
+        // joined by " · " so the identity reads across, not down.
+        if (a.title) {
+          idCell.appendChild(document.createTextNode(" · "));
+          idCell.appendChild(el("span", { class: "cr-id-title" }, [a.title]));
+        }
         var metaParts = [];
         if (a.disc) metaParts.push(a.disc);
         if (a.top)  metaParts.push("TOP " + a.top);
-        if (metaParts.length) idCell.appendChild(el("div", { class: "cr-id-meta" }, [metaParts.join(" · ")]));
+        if (metaParts.length) {
+          idCell.appendChild(document.createTextNode(" · "));
+          idCell.appendChild(el("span", { class: "cr-id-meta" }, [metaParts.join(" · ")]));
+        }
         row.appendChild(idCell);
 
-        // Local courses — codes inline (full title on hover) to economize space.
+        // Local courses — code + title + units inline (item 4), e.g.
+        // "BIT 375 10-Key on the Computer (1 unit)". Units come from the baked
+        // `u` field (singleton typical_units / membership modal units); omitted
+        // when unknown.
         var locals = (a.local || []).filter(function (lc) { return lc.subj || lc.num || lc.t; });
         var lcCell = el("td", { class: "cr-art-local" });
         if (locals.length) {
           locals.forEach(function (lc, i) {
             if (i) lcCell.appendChild(document.createTextNode(", "));
             var code = ((lc.subj || "") + " " + (lc.num || "")).trim();
-            lcCell.appendChild(el("span", { class: "cr-lc-code", title: lc.t || "" },
-              [code || (lc.t || "—")]));
+            lcCell.appendChild(el("span", { class: "cr-lc-code" }, [code || "—"]));
+            if (lc.t) {
+              lcCell.appendChild(document.createTextNode(" "));
+              lcCell.appendChild(el("span", { class: "cr-lc-title" }, [lc.t]));
+            }
+            if (lc.u != null && lc.u !== "") {
+              lcCell.appendChild(document.createTextNode(" "));
+              lcCell.appendChild(el("span", { class: "cr-lc-units" },
+                ["(" + lc.u + " unit" + (Number(lc.u) === 1 ? "" : "s") + ")"]));
+            }
           });
         } else {
           lcCell.appendChild(el("span", { class: "cr-null" }, ["—"]));
@@ -2181,7 +2251,12 @@
     // count, since the audit + curation work at the unified-title level.
     if (r.raw_variants && r.raw_variants.length) {
       div.appendChild(el("h5", null, [
-        "Raw MAP titles (" + r.raw_count + ")"
+        "College-entered exhibit titles (" + r.raw_count + ")"
+      ]));
+      div.appendChild(el("p", { class: "cr-empty-note" }, [
+        "The raw title(s) colleges actually entered in MAP, collapsed under the "
+        + "generated Common Exhibit Title above. A count of 1 means a single "
+        + "college title maps here — it may read differently from the generated title."
       ]));
       var ul = el("ul", { class: "cr-variants-list" });
       r.raw_variants
@@ -2243,17 +2318,6 @@
         d2.appendChild(el("div", null, ["Trainer: " + r.primary_trainer]));
       }
       div.appendChild(d2);
-    }
-
-    // ── Audit tag rollup ──
-    if (r.audit_tag_total) {
-      div.appendChild(el("h5", null, ["Audit signals"]));
-      var ul2 = el("ul", { class: "cr-audit-list" });
-      Object.keys(r.audit_tags).sort().forEach(function (t) {
-        ul2.appendChild(el("li", null,
-          [el("code", null, [t]), " × " + r.audit_tags[t]]));
-      });
-      div.appendChild(ul2);
     }
 
     td.appendChild(div);
