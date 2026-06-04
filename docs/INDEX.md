@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-04 (Session 35 — CER identity consolidation: widen the CCR column #307; fold near-duplicate identities #308 (EMT 29→18, the ordinal rule "1"/"I" non-distinguishing but "2"+ kept, 94 rows fold / 47 cards, display-only/reversible, "⛓ N variants" badge); the durable "+ worklist" half queued; NEW methodology-within-credential-identity-consolidation)
+updated: 2026-06-04 (Session 35 — CER identity consolidation: widen the CCR column #307; fold near-duplicate identities #308 (EMT 29→18, the ordinal rule "1"/"I" non-distinguishing but "2"+ kept, 94 rows fold / 47 cards, display-only/reversible, "⛓ N variants" badge); the durable "+ worklist" half shipped #310 (co-articulation family merges in the CCR worklist); NEW methodology-within-credential-identity-consolidation)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker

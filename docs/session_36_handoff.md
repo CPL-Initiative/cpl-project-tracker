@@ -52,6 +52,15 @@ WHAT SHIPPED IN SESSION 35 (all merged to main):
     (15). credential_reference_data.js regenerated (CER ships live-on-merge;
     idempotent → cron no-op; no students/PII regression — committed 0 served,
     regen carried forward 0).
+  - #310 CCR worklist co-articulation family merges (the DURABLE "+ worklist"
+    half): export_unified_courses() now surfaces near-duplicate M-IDs the level-
+    safe _sug_sig misses, GATED on co-articulation (share a credential in
+    coci_articulations.json) + the M-ID subject prefix (0 cross-SUBJ4 — fixed an
+    AUTO+AVIA-under-one-ASE-cert early run). 29 family_groups (EMT's 9 live-
+    mergeable M-IDs lead with the canonical EMST M1064). Consumer: a third
+    worklist _kind ("family") reusing Confirm→doConsolidate→merge_into. _fam_key
+    factored to MODULE scope (shared with the CER consolidation; CER output byte-
+    identical). NEVER auto-applies. tests/uc_family_merges.test.js (11).
 
 THE ORDINAL RULE (the crux — reuse it): in _fam_key, "1"/"I" is NON-distinguishing
 (a bare title == its "I") but "2"+/"II"+ are KEPT as distinguishing tokens. That
@@ -70,18 +79,15 @@ SAM'S TWO LOCKED DECISIONS (via AskUserQuestion, honor them):
     upstream MAP error (flag, don't fold).
 
 PRIORITY / NEXT (in order):
-  1. THE "+ WORKLIST" HALF (the durable side — NOT yet built). The EMT M-IDs are
-     still 12 separate identities in CCR/EACR/audits; only the CER *view* collapses
-     them. Build a CCR Suggested-merges worklist enhancement so these within-
-     credential near-duplicate clusters SURFACE as merge candidates (today _sug_sig
-     is level-SAFE → ~26 buckets for the 29, so they don't surface). Reuse the
-     ordinal-rule _fam_key + a co-articulation signal (M-IDs co-articulating to one
-     credential with a matching family). Generator = export_unified_courses() →
-     unified_courses_suggestions.js; consumer = unified_courses.js. NEVER auto-
-     applies — surfaces for the curator's Confirm (→ merge_into → identity layer).
-     NOTE: coci_articulations.json is a STATIC raw-M-ID artifact, so even after
-     curator merges the CER won't re-collapse beyond the #308 view fold until a
-     re-key (Rule 7 territory) — scope that explicitly if Sam wants full propagation.
+  1. THE "+ WORKLIST" HALF SHIPPED (#310) — the family worklist now surfaces the
+     clusters for curator Confirm (→ doConsolidate → merge_into). OPEN follow-ons:
+     (a) coci_articulations.json is a STATIC raw-M-ID artifact, so curator merges
+     propagate to the CCR + auditor but NOT to the EACR/CER articulation views
+     (beyond #308's view fold) until a Rule-7 RE-KEY — scope that project (dry-run +
+     alias map + atomic land, per docs/coursecontrolnumber_remint.md) if Sam wants
+     the EACR/CER to reflect confirmed merges. (b) extend the family pass to include
+     single-college SINGLETONS (sg), not just `rows` M-IDs (EMT had 12 in the CER
+     view but only 9 live-mergeable rows surfaced in the worklist).
   2. STANDING CARRYOVER (Session 34): wire the eligible-students-per-exhibit dataset
      when Sam sends it (key on ExhibitID/credential, one count column, <5 suppress);
      the College + System audience views (System needs the privacy ADR finished);

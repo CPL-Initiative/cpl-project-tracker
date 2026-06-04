@@ -399,16 +399,27 @@ first column so rows are shorter. **3 PRs, all merged.**
 - A `null`-byte slipped into a Python string literal via the Edit tool once
   (`" solo%d"` → `"\x00solo"`); `ast.parse` + a `\x00` count caught it fast.
 
+- **#310 — the durable "+ worklist" half (SHIPPED).** `export_unified_courses()`
+  now surfaces the EMT-style clusters in the CCR Suggested-merges worklist via a
+  **co-articulation family pass**: mergeable M-IDs grouped by `(subject prefix,
+  _fam_key)`, GATED on a shared credential in `coci_articulations.json` (29 groups,
+  0 cross-SUBJ4 — fixed an AUTO+AVIA-under-one-ASE-cert early run; EMT's 9 live-
+  mergeable M-IDs lead with the canonical `EMST M1064`). Consumer: a third worklist
+  `_kind:"family"` reusing Confirm→`doConsolidate`→`merge_into`. `_fam_key` factored
+  to module scope (shared with #308; CER output byte-identical). Never auto-applies.
+  `tests/uc_family_merges.test.js` (11). **The co-articulation gate is the key
+  safety idea** — grouping by `_fam_key` alone would over-merge globally; requiring
+  a shared credential + same SUBJ4 keeps it tight (29 groups) and within-discipline.
+
 ### Current state
-CER view de-cluttered + live (CER ships live-on-merge; idempotent → cron no-op;
-no students/PII regression — committed had 0 served, regen carried forward 0).
-The **durable "+ worklist" half is NOT yet built** — the M-IDs are still 12
-separate identities in the CCR/EACR/audits; only the CER *view* collapses them.
+The full **"CER view + worklist"** deliverable is shipped (4 PRs). The CER view
+de-clutters (#308); the worklist surfaces the durable merges (#310). **Open
+follow-on:** confirmed merges propagate to the CCR + auditor but NOT to the static
+`coci_articulations.json`, so the EACR/CER articulation views won't reflect them
+(beyond #308's view fold) until a **Rule-7 re-key**.
 
 ### Next concrete step
-Build the **CCR Suggested-merges worklist enhancement** (the "+ worklist" half):
-surface these within-credential near-duplicate clusters as merge candidates so a
-curator confirms them → `merge_into`, propagating to the real identity layer.
-Reuse `_fam_key` + the co-articulation signal (M-IDs co-articulating to one
-credential with a matching family). Then the eligible-students dataset wiring +
-College/System audience views (carryover).
+If Sam wants the EACR/CER to reflect confirmed worklist merges, scope a **Rule-7
+re-key** of `coci_articulations.json` (dry-run + alias map + atomic land). Else the
+standing carryover: the eligible-students dataset wiring + the College/System
+audience views.
