@@ -5217,6 +5217,13 @@ def export_credential_reference():
     identities = art_doc.get("identities", {}) or {}
     articulations = art_doc.get("articulations", []) or []
 
+    # course_ids referenced by articulations — bounds the units lookup below.
+    needed_cids = {a.get("course_id") for a in articulations if a.get("course_id")}
+    # Per-(course_id,(subject,number)) representative units for the local-course
+    # display (item 4, 2026-06-04): singletons carry exact typical_units;
+    # corroborated memberships give modal member units per (subject,number).
+    units_by_cid = {}
+
     # Build a discipline/top/title lookup per course_id. identities[cid] is the
     # primary source but is sometimes empty ({}), so cascade to the broader
     # catalogs (minted_courses → singletons → unified_courses clusters).
@@ -5235,23 +5242,47 @@ def export_credential_reference():
         ("coci_unified_courses.json", "clusters"),
     ):
         doc = _load(name) or {}
+        is_singletons = (name == "coci_minted_singletons.json")
         for cid, rec in (doc.get(top_key) or {}).items():
-            if cid in course_meta:
-                continue
-            course_meta[cid] = {
-                "title": rec.get("common_title") or rec.get("title") or rec.get("unified_title") or "",
-                "discipline": rec.get("discipline", "") or "",
-                "top": rec.get("top_code", "") or "",
-                "sys": rec.get("id_system") or rec.get("identity_system")
-                       or ("Unified" if top_key == "clusters" else "M-ID"),
-            }
+            if cid not in course_meta:
+                course_meta[cid] = {
+                    "title": rec.get("common_title") or rec.get("title") or rec.get("unified_title") or "",
+                    "discipline": rec.get("discipline", "") or "",
+                    "top": rec.get("top_code", "") or "",
+                    "sys": rec.get("id_system") or rec.get("identity_system")
+                           or ("Unified" if top_key == "clusters" else "M-ID"),
+                }
+            # A singleton has exactly one member, so typical_units IS that
+            # member's units — capture it for the local-course display (item 4).
+            if is_singletons and cid in needed_cids:
+                u = rec.get("typical_units")
+                if u is not None:
+                    units_by_cid.setdefault(cid, {})[(rec.get("subject", ""), rec.get("course_number", ""))] = u
         del doc  # free the 28MB minted_courses promptly
+
+    # Corroborated M-IDs: modal member units per (subject,number) (item 4).
+    # Loaded once, gated on needed_cids so memory stays bounded.
+    mem_doc = _load("coci_minted_memberships.json") or {}
+    for cid, members in (mem_doc.get("memberships") or {}).items():
+        if cid not in needed_cids:
+            continue
+        acc = defaultdict(Counter)
+        for m in (members or []):
+            u = m.get("units")
+            if u is None:
+                continue
+            acc[(m.get("subject", ""), m.get("course_number", ""))][u] += 1
+        d = units_by_cid.setdefault(cid, {})
+        for key, ctr in acc.items():
+            d.setdefault(key, ctr.most_common(1)[0][0])
+    del mem_doc
 
     # Pre-aggregate raw-variant info from unified_titles.json
     raw_count_by_ut = Counter()
     quality_by_ut = {}
     confs_by_ut = defaultdict(list)
     raw_to_ut = {}  # raw_title → unified_title (for audit-tag rollup)
+    raw_variants_by_ut = defaultdict(list)  # item 6: lean variant list per ut
     for raw_title, ent in ut_doc.items():
         ut = ent.get("unified_title") or "(blank)"
         raw_count_by_ut[ut] += 1
@@ -5259,6 +5290,12 @@ def export_credential_reference():
         if ent.get("quality_flag"):
             quality_by_ut[ut] = ent["quality_flag"]
         confs_by_ut[ut].append(ent.get("confidence_title", 0))
+        # Lean variant record {r:raw_title, c:confidence, q?:quality_flag} so the
+        # expanded CER row can list the college-entered titles (item 6).
+        _v = {"r": raw_title, "c": round(ent.get("confidence_title", 0) or 0, 2)}
+        if ent.get("quality_flag"):
+            _v["q"] = ent["quality_flag"]
+        raw_variants_by_ut[ut].append(_v)
 
     # Pre-aggregate audit-tag counts per unified_title — sum across raw variants.
     # Falls back to {} if the audit file isn't generated yet (first-run / clean repo).
@@ -5352,10 +5389,14 @@ def export_credential_reference():
                     if key not in local_set:
                         local_set[key] = set()
                     local_set[key].update(cols)
-            local_list = [
-                {"subj": s, "num": n, "t": t, "colleges": sorted(cs)}
-                for (s, n, t), cs in sorted(local_set.items())
-            ]
+            cid_units = units_by_cid.get(cid) or {}
+            local_list = []
+            for (s, n, t), cs in sorted(local_set.items()):
+                entry = {"subj": s, "num": n, "t": t, "colleges": sorted(cs)}
+                u = cid_units.get((s, n))
+                if u is not None:
+                    entry["u"] = u
+                local_list.append(entry)
             articulations_out.append({
                 "cid": cid,
                 "sys": m.get("sys", ""),
@@ -5375,6 +5416,7 @@ def export_credential_reference():
         row = {
             "ut": ut,
             "raw_count": raw_count_by_ut[ut],
+            "raw_variants": sorted(raw_variants_by_ut.get(ut, []), key=lambda v: v["r"]),
             "issuer": issuer_val,
             "trainer": trainer_val,
             "conf_title": conf_modal,
