@@ -1537,6 +1537,52 @@ skill, semantic not lexical); the **3 audience views** (Student/College/System �
 needs the privacy ADR, now half-written); plus the standing Session-31/32 carryover
 (EACR v2 scope/generated-rec, MID curation → Suggested-merges).
 
+### Session 34 — Student view (v3) + the data-unblock loop + PII small-cell hardening (shipped 2026-06-04, "Lucid Wozniak")
+
+EACR/CER/dashboard + PII session (no M-ID pipeline movement → pipeline viz correctly skipped). **5 PRs, all merged + live.**
+
+- **#301 — EACR Student view (v3).** The first of the 3 audience views. A 3rd gallery
+  renderer (v1 table / v2 credential / **v3 "🎒 Student view"**) over the same filtered +
+  prescriptive data: pick a College/District/Region → each credential resolves to **✅
+  available now** / **🎯 likely-qualify** (names the exact local course from
+  `statewide_prescriptive.js`) / **○ aligned-program**, with a "you'd typically earn ~N
+  units" headline; browse mode nudges to pick a college. Consumer-only, additive (v1/v2
+  untouched). `tests/eacr_student.test.js` (27 assertions). **College + System views remain.**
+- **#302 / #305 — CER students-served carry-forward + robust parse + diagnostics.** #302: a
+  session live-on-merge regen runs without the PII CustomReport → was NULLing the public
+  Students column on every CER ship (oscillating blank); now **carries forward** the last
+  cron values when the report's absent (privacy-safe — only already-public/suppressed values).
+  #305: robust `_to_count()` (int/float/comma/whitespace), strip the ExhibitID before the
+  crosswalk join, normalized column lookup, + a detailed roll-up diagnostic line.
+- **#303 — Header restyle.** Uniform meta row — every secondary header item to one
+  font-size/family/weight/color (`var(--light-blue)`), vertically+horizontally centered,
+  interactive items as consistent pills; **h1 untouched**. One scoped CSS block in the static
+  `<style>` (survives regen; Rule 4 mirrored in both HTMLs).
+- **#304 — PII small-cell hardening (the headline).** Per-college cohort counts
+  (students/veterans/working-adults/apprentices) are now **`<2`-suppressed** (Sam's threshold
+  — mask only a true singleton → `"<2"`; 2+ exact); the 34 existing singleton cells re-masked
+  **live** in both HTMLs; **dropped `View_CollegeContacts` + `View_CollegeUsersRoles` from the
+  fetch payload** (audit-confirmed unused → staff PII never lands on the runner, 9→7 views);
+  new standing **`tests/pii_guard.test.js`** fails the build if any committed artifact carries
+  a suppressible small count or an out-of-domain email. A read-only **PII audit** (subagent)
+  confirmed the pipeline is **column-selective + aggregate-only** → the authenticated pull's
+  new PII columns (names/DOB/StudentID) are never read or baked.
+- **The data-unblock loop (Sam-driven).** Sam revised the MAP report PII-free + ran the daily
+  workflow on `main` (I **can't** dispatch — the session's integration token 403s on `actions:
+  write`). Verified safe end-to-end: per-college student/veteran data flowed + `<2`-suppressed +
+  PII guard green + Rule 4 intact + no `NaN`. **The CER per-exhibit "Students" column is still
+  `—`** — root cause confirmed (Sam): the per-exhibit count he wants is **students ELIGIBLE for
+  CPL**, which is in **neither** the MAP dashboard nor the Custom Report. He's preparing a **new
+  dataset**; the roll-up + suppression + carry-forward + column are ready to receive it (key on
+  `ExhibitID` or credential, one count column, same `<5` suppression).
+
+**Carryover / next:** (1) **Wire the new eligible-students-per-exhibit dataset** into the
+existing roll-up when Sam sends it (decide replace-vs-alongside the served column). (2) **College
++ System audience views** (System still needs the privacy ADR finished — `adr-cer-student-impact-counts-privacy`
+is the seed). (3) Standing: EACR v2 scope/generated-rec, MID curation → Suggested-merges, the
+Signal-B dedup leads. **New practice this session:** small-cell-suppress *every* aggregate count on
+a public surface + a committed PII guard test — `docs/kb-notes/methodology-standing-pii-guard.md`.
+
 ---
 
 ## Troubleshooting

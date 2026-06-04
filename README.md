@@ -29,8 +29,10 @@ The whole ecosystem, end-to-end:
    "Also entered as N variants" disclosure that exposes every raw MAP title
    folded into the card (28% collapse vs raw IDs as of 2026-05-26) — now with
    Local + CCC versions merged into one card, per-course consolidated credit recs
-   under a "Typical CPL" units headline, and a master-detail **Credential view**
-   (one card per credential, the CCC standard on top); plus
+   under a "Typical CPL" units headline, a master-detail **Credential view**
+   (one card per credential, the CCC standard on top), and a seeker-framed
+   **Student view** (pick your college → where you can get credit + the likely
+   local course to ask about); plus
    Workplan Activities & Projects, Annual Goals, Budget, Vision 2030, a
    per-college **Common Course Reference** curation tab (expand a course → an
    **inverse view** of the EACR: the aligned exhibits/credentials that articulate
