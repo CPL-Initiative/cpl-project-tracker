@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-04 (Session 32 — CER refinement pass #284/#285/#286: search/expand crash fix, Generated-chip clarify, CCR box layout, 10-Key credential merge + reusable kb/_merge_credentials.py; new KB notes: playbook-cer-credential-merge, methodology-consumer-tolerate-omitted-baked-fields)
+updated: 2026-06-04 (Session 32 — CER refinement #284/#285/#286 + retrospective process improvements #288: committed jsdom test harness + CI, stop-hook false-positive fix, design-system :root tokens + var() rule; new KB notes: playbook-cer-credential-merge, methodology-consumer-tolerate-omitted-baked-fields, reference-ui-design-system, methodology-commit-the-test-harness; new lessons doc engineering_practices_lessons; CLAUDE.md trim + bulk CSS migration STAGED to Session 33)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -74,6 +74,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Resolving the V4 articulation-ripple gate when folding a CER unclassified title](kb-notes/methodology-cer-fold-articulation-ripple-sync.md) | methodology | published | 2026-06-03 | 2026-06-03 |
 | [Methodology — A consumer must guard fields the baked payload omits but the fallback fills](kb-notes/methodology-consumer-tolerate-omitted-baked-fields.md) | methodology | published | 2026-06-04 | 2026-06-04 |
 | [Playbook — Merging two existing CER credentials (existing→existing fold)](kb-notes/playbook-cer-credential-merge.md) | playbook | published | 2026-06-04 | 2026-06-04 |
+| [Reference — Dashboard UI design system (tokens + canonical components)](kb-notes/reference-ui-design-system.md) | reference | published | 2026-06-04 | 2026-06-04 |
+| [Methodology — Commit the test harness; don't let verification evaporate](kb-notes/methodology-commit-the-test-harness.md) | methodology | published | 2026-06-04 | 2026-06-04 |
 
 ---
 
@@ -85,6 +87,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 |---|---|---|
 | [`ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) | CCR cluster dissolution (UC-XXXXX retired; 9 curated → per-member merges) | **Session 19 (2026-05-30)** |
 | [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes; **Session 23: #2 sidebar sub-links + #3 display-label map** | Session 23 (Bruh 23, 2026-05-31) |
+| [`engineering_practices_lessons.md`](engineering_practices_lessons.md) | Dev infra / testing / design system (committed jsdom harness + CI, stop-hook fix, `:root` tokens + `var()` rule, prototype-first) | **Session 32 (Busy Feynman, 2026-06-04) NEW** |
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G | Session 11 |
 | [`cpl_assistant_lessons.md`](cpl_assistant_lessons.md) | CPL Assistant (in-dashboard RAG chatbot tab; Phase 1 shipped + live `cpl-chat` v14) | **Session 26 (Bruh 26, 2026-06-01) NEW** |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |

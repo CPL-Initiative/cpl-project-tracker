@@ -53,6 +53,14 @@ WHAT SHIPPED IN SESSION 32 (all merged to main):
     _fold_unclassified.py.
   - #286 — flipped the CCR articulations table to LEFT-align (Sam's call after #284
     centered it).
+  - #288 + token PR — RETROSPECTIVE PROCESS IMPROVEMENTS (Sam asked for a process
+    review): (a) COMMITTED jsdom test harness — package.json + tests/ (run.js +
+    cer.test.js) + `npm test` + .github/workflows/js-tests.yml (non-required CI).
+    No more /tmp throwaway tests. (b) STOP-HOOK fix — scripts/stop-hook-git-check.sh
+    skips GitHub's own squash-merge commits (the "Unverified noreply@github.com"
+    nag is gone; applied live + committed). (c) DESIGN-SYSTEM tokens — added
+    surface/border/text/link vars to :root (both HTMLs) + the rule "new CSS uses
+    var(--token), never raw hex" + the component cheatsheet.
 
 CURRENT STATE:
   - CER producer ships LIVE-ON-MERGE: regen credential_reference_data.js locally
@@ -60,9 +68,52 @@ CURRENT STATE:
     + commit; idempotent → daily cron sees a no-op. (Needs openpyxl+pandas:
     `pip install openpyxl pandas`.) The baked file now carries raw_variants + per-
     local-course `u` units.
-  - jsdom is the consumer test harness (ad-hoc, NOT committed): `npm install jsdom`
-    in repo, run with NODE_PATH=<repo>/node_modules. node_modules + package-lock are
-    gitignored; DELETE the stray package.json npm creates before committing.
+  - TESTS ARE NOW COMMITTED: `npm install && npm test` (jsdom). Add a consumer test
+    = drop tests/<area>.test.js (run.js auto-discovers). Guard the failure mode, not
+    a happy path (cer.test.js injects a raw_variants:null row). node_modules +
+    package-lock stay gitignored; CI uses `npm install`.
+  - Design tokens: use var(--surface/--border/--text-strong/--text-muted/--accent-link
+    /…) in new CSS. Reference: docs/kb-notes/reference-ui-design-system.md.
+
+STAGED — TWO READY-TO-RUN ITEMS (Sam asked these be teed up; do EITHER as its
+own focused, verified PR — they were deliberately NOT bundled into a checkpoint):
+
+  [A] CLAUDE.md history→archive TRIM (biggest per-session win; ~1,890 lines today,
+      loaded in full every session). GOAL: keep CLAUDE.md to the live, steering
+      content; move the museum next door.
+      KEEP inline: Critical Rules 1-8, Branch policy, Engineering & UI practices,
+        Deployed site, Obsidian wiring, the ENTIRE Pipeline Reference (§1-§10), §11's
+        framing (lifecycle / auditor / CID-CIDx / MC), the roadmap-TABLE rows that
+        are NOT DONE (in progress / parked / queued), and ONLY the most recent 1-2
+        session subsections.
+      MOVE to a new docs/roadmap_archive.md (verbatim, with a one-line pointer left
+        in CLAUDE.md): the DONE roadmap-table rows + the per-session narrative
+        subsections for Sessions <= 31 (the "### Session N —" blocks) + the older
+        "strategic queue" blocks that are fully superseded.
+      SAFETY: this is PROJECT MEMORY — do it surgically. After the move, grep-verify
+        every Critical Rule + every Pipeline Reference heading + every still-open
+        roadmap row is still present in CLAUDE.md, and that the archive contains the
+        moved blocks. One PR, eyeball the diff, merge on green.
+
+  [B] BULK CSS literal→var(--token) MIGRATION (aesthetic continuity). The :root token
+      block now has brand + surface/text/link tokens; the rule is "new CSS uses
+      var()." This migrates the EXISTING ~568 #0A2240 + 431 #163A5F + 755 #C9A84C
+      literals (+ the worst slate-scale grays: #6b7280→--text-muted, #374151→
+      --text-body, #1f2937→--text-strong, #e5e7eb→--border, #cbd5e1→--border-strong,
+      #f8fafc→--surface-subtle, #f1f5f9→--surface-muted, #94a3b8→--text-faint,
+      #2563eb→--accent-link).
+      SAFE BY CONSTRUCTION: var(--x) resolves to the SAME hex, so a correct migration
+      is visually byte-identical. BUT scope it carefully:
+        * DO the static <style> blocks in CPL_Dashboard.html (mirror to index.html,
+          Rule 4) + the JS-injected CSS strings (ensureCerScopeCss etc.).
+        * Do NOT blindly sed the whole file — EXCLUDE generator-emitted hex in
+          excel_to_dashboard.py inline styles (Rule 1) unless you also update the
+          generator, and exclude any hex inside JS data/strings that aren't CSS.
+        * VERIFY: after migration, the set of computed colors is unchanged — e.g.
+          regenerate the dashboard + diff, and spot-check a few tabs. Consider a
+          tiny scripts/check_css_tokens.py lint that flags NEW raw brand-hex.
+      Prototype-first if reworking any component visually (Claude artifact → port).
+      Reference for both: docs/kb-notes/reference-ui-design-system.md.
 
 PRIORITY OPTIONS FOR SESSION 33 (Sam picks):
   - CPL-TYPE-DUPLICATE DETECTOR (the natural next step). Surface the rest of the
@@ -108,12 +159,20 @@ SAFETY PATTERNS TO HONOR:
   - Rules 1/2: don't hand-edit regenerated sections; preserve idempotency guards.
   - NEVER commit student PII (SEC-10). Aggregate counts only in any public artifact.
   - Feature branch + PR; auto-merge on green (clean OR unstable); never force-push
-    main. The stop-hook may flag GitHub's own squash-merge commit on main as
-    "Unverified" (committer noreply@github.com) — that's GitHub's commit, already on
-    main; do NOT amend/force-push main to "fix" it.
+    main. (The stop-hook's "Unverified noreply@github.com" false-positive on
+    GitHub's own squash-merge commit was FIXED in #288 — scripts/stop-hook-git-check.sh;
+    if it ever nags again, `cp scripts/stop-hook-git-check.sh ~/.claude/`. Still NEVER
+    amend/force-push a commit that's on main — Rule 5.)
   - Supabase kb_curation/allowed_reviewers only; no destructive migrations w/o sign-off.
 
 A moniker is yours to claim. Checkpoint per Rule 8 (~every 100K tokens); the
 pipeline viz is skippable when the M-ID pipeline doesn't move (it didn't in
 Session 32 — credential-layer + UI only).
+
+ONE FUN THING (Sam's request, 2026-06-04): Session 32 ("Busy Feynman") was a
+legend run — 8 PRs, the whole CER refinement + the process-improvement overhaul.
+Sam asked that you embed a tasteful "Legend 32" easter egg in your next
+checkpoint. Keep it classy + harmless (e.g. an HTML comment, a code-comment
+tip-of-the-hat, or a console.debug line) — nothing user-facing/disruptive, never
+in a regenerated section that the daily cron would strip. Pay the lineage forward.
 ```
