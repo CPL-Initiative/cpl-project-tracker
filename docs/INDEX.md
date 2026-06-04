@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-04 (Session 33 — staged item [A] shipped: CLAUDE.md history→archive trim, 1908→1514 lines; 84 completed roadmap rows + Session 26-31 narratives moved to docs/roadmap_archive.md, live rows + Session-25 queue + Session 32 kept inline)
+updated: 2026-06-04 (Session 33 — [A] CLAUDE.md history→archive trim 1908→1514; R1 CER noise suppression #292 (demote elective-bucket COMM M1038 + flag subject-outliers); R2' AP-credit GE-Area layer (kb/reference/ccc_ge_ap_list.json + CER GE-credit callout) + new reference KB note + the 3 authoritative AP-policy source docs in docs/reference/)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -76,6 +76,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Playbook — Merging two existing CER credentials (existing→existing fold)](kb-notes/playbook-cer-credential-merge.md) | playbook | published | 2026-06-04 | 2026-06-04 |
 | [Reference — Dashboard UI design system (tokens + canonical components)](kb-notes/reference-ui-design-system.md) | reference | published | 2026-06-04 | 2026-06-04 |
 | [Methodology — Commit the test harness; don't let verification evaporate](kb-notes/methodology-commit-the-test-harness.md) | methodology | published | 2026-06-04 | 2026-06-04 |
+| [Reference — AP credit is a GE-Area mapping (the canonical anchor for AP/standardized-exam credentials)](kb-notes/reference-ap-credit-ge-area-canonicalization.md) | reference | published | 2026-06-04 | 2026-06-04 |
 
 ---
 
