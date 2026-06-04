@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-04 (Session 32 — CER refinement #284/#285/#286 + retrospective process improvements #288: committed jsdom test harness + CI, stop-hook false-positive fix, design-system :root tokens + var() rule; new KB notes: playbook-cer-credential-merge, methodology-consumer-tolerate-omitted-baked-fields, reference-ui-design-system, methodology-commit-the-test-harness; new lessons doc engineering_practices_lessons; CLAUDE.md trim + bulk CSS migration STAGED to Session 33)
+updated: 2026-06-04 (Session 33 — staged item [A] shipped: CLAUDE.md history→archive trim, 1908→1514 lines; 84 completed roadmap rows + Session 26-31 narratives moved to docs/roadmap_archive.md, live rows + Session-25 queue + Session 32 kept inline)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -143,6 +143,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 ## Top-level orientation docs
 
 - [`../CLAUDE.md`](../CLAUDE.md) — project memory, Critical Rules, M-ID lifecycle (§11)
+- [`roadmap_archive.md`](roadmap_archive.md) — museum annex to CLAUDE.md: completed roadmap rows + Session 26-31 narratives (moved out Session 33 to keep CLAUDE.md to live, steering content)
 - [`../README.md`](../README.md) — first-time visitor entry
 - [`../kb/README.md`](../kb/README.md) — knowledge-base schemas + generators
 
