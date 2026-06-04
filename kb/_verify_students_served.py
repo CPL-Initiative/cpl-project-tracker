@@ -29,10 +29,10 @@ print(f"exhibit B {exB!r} -> {utB!r}")
 TEST_COLLEGE = next(iter(m._TEST_COLLEGES))
 cols = ["College", "ExhibitID", "Students"]
 rows = [
-    ["Real College One", exA, 3],          # A: 3 + 4 = 7  → exact (>=5)
-    ["Real College Two", exA, 4],
+    ["Real College One", exA, "3"],        # A: string int + float = 7 → exact (>=5);
+    ["Real College Two", exA, 4.0],        #    proves the robust parse (old int() zeroed these)
     [TEST_COLLEGE,       exA, 999],         # test college → MUST be excluded
-    ["Real College Three", exB, 2],         # B: 2         → suppressed (<5)
+    ["Real College Three", exB, "2.0"],     # B: float-string 2 → suppressed (<5)
 ]
 synth = [{"viewName": "View_ArticulatedCollegeCourses_APIDataset",
           "columnName": cols, "columnValue": rows, "dataCount": len(rows)}]
