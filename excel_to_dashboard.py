@@ -5305,6 +5305,7 @@ def export_credential_reference():
         if _ex and _utx:
             exid_to_ut.setdefault(_ex, _utx)
     served_by_ut = Counter()
+    carry_served = {}  # ut -> (students_served, served_suppressed); used when the CustomReport is absent
     if EXHIBIT_FILE and os.path.exists(EXHIBIT_FILE):
         try:
             with open(EXHIBIT_FILE, encoding="utf-8") as _f:
@@ -5333,7 +5334,26 @@ def export_credential_reference():
         except (json.JSONDecodeError, IOError, TypeError, KeyError) as _e:
             print(f"  Students-served roll-up skipped (CustomReport unreadable: {_e})")
     else:
-        print("  Students-served roll-up skipped (CustomReport absent — populates on the daily cron)")
+        # CustomReport absent (clean checkout / a session live-on-merge regen).
+        # Rather than NULL the public Students column — which oscillates blank on
+        # every CER ship until the next cron repopulates it — carry forward the
+        # last cron-populated values from the existing committed payload. Only the
+        # cron (with the PII CustomReport) ever computes fresh counts; a local
+        # regen preserves them. Privacy-safe: the prior file already holds only
+        # public values (exact ≥5, or the suppressed "<5" mask), no exact <5.
+        if os.path.exists(out_js):
+            try:
+                with open(out_js, encoding="utf-8") as _pf:
+                    _ptxt = _pf.read()
+                _ptxt = _ptxt[_ptxt.index("=") + 1:].strip().rstrip(";")
+                for _pr in (json.loads(_ptxt).get("unified_titles") or []):
+                    if _pr.get("students_served") is not None or _pr.get("served_suppressed"):
+                        carry_served[_pr.get("ut")] = (_pr.get("students_served"),
+                                                       bool(_pr.get("served_suppressed")))
+            except (ValueError, IOError, KeyError) as _e:
+                carry_served = {}
+        print(f"  Students-served roll-up skipped (CustomReport absent — carried forward "
+              f"{len(carry_served)} prior values; refreshes on the daily cron)")
 
     # course_ids referenced by articulations — bounds the units lookup below.
     needed_cids = {a.get("course_id") for a in articulations if a.get("course_id")}
@@ -5569,8 +5589,13 @@ def export_credential_reference():
         # exact count is baked only when ≥5; 1-4 → served_suppressed (shown "<5",
         # exact number never leaves the cron); 0 / no data → neither field.
         _served = served_by_ut.get(ut, 0)
-        students_served = _served if _served >= SERVED_SUPPRESS_BELOW else None
-        served_suppressed = bool(0 < _served < SERVED_SUPPRESS_BELOW)
+        if served_by_ut:
+            # Cron path: fresh CustomReport data → suppress <5; null for 0/missing.
+            students_served = _served if _served >= SERVED_SUPPRESS_BELOW else None
+            served_suppressed = bool(0 < _served < SERVED_SUPPRESS_BELOW)
+        else:
+            # No fresh data this run → carry forward last cron values (else null).
+            students_served, served_suppressed = carry_served.get(ut, (None, False))
         row = {
             "ut": ut,
             "ge_credit": ge_credit_out,

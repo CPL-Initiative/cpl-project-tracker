@@ -51,8 +51,18 @@ Bake a per-credential **"students served"** count and surface it as a sortable
   scope** until an exhibit-keyed eligibility export exists. If/when it does, the same
   suppression rule applies.
 - The count **populates on the daily cron** (the CustomReport file is fetched then,
-  not committed — PII policy). A clean checkout / local regen bakes `null` for all
-  rows (renders `—`), which is correct.
+  not committed — PII policy). A **first** clean checkout / local regen bakes `null`
+  (renders `—`), which is correct.
+- **Carry-forward (2026-06-04).** Because the CER ships *live-on-merge* (a session
+  regenerates `credential_reference_data.js` from committed inputs, **without** the
+  PII CustomReport), a naive regen would NULL the public Students column on every CER
+  ship until the next cron — an oscillating blank (what surfaced this). The producer
+  now **carries forward** the last cron-populated values from the existing committed
+  payload when the CustomReport is absent (only the cron computes fresh counts).
+  Privacy-safe: the prior file already holds only public values (exact ≥5, or the
+  suppressed `<5` mask — never an exact 1-4). So the column is **stable** between
+  crons; a truly clean checkout (no prior file) still bakes `null`. Verified by
+  `kb/_verify_students_served.py` (cron path **and** carry-forward path).
 
 ## Consequences
 - Curators can sort the CER by **Students** to surface the highest-impact credentials.
