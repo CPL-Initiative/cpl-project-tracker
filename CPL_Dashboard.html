@@ -93,8 +93,50 @@
         .header .project-description > summary { font-size: 0.78rem; }
 
         .header .last-updated {
-            font-size: 0.9rem;
-            color: var(--gold-accent);
+            font-size: 0.82rem;
+            color: var(--light-blue);
+        }
+
+        /* ── Uniform header meta row (Session 34, Sam: "clean and uniform") ──
+           Every secondary header item shares one font-size / family / weight /
+           color and sits centered on the flex line; the h1 title is left as-is.
+           The subtitle (0.82rem · --light-blue) is the reference. !important
+           overrides the inline styles the generator emits on the regenerated
+           PROJ-INFO items (Project Description / See Attachments / Cheat Sheet)
+           and the refresh button's inline hover JS, so the look survives the
+           daily regen (Rule 1) with no generator edit. Mirror in index.html
+           (Rule 4). */
+        .header > div, .header > details { margin: 0 !important; }
+        .header .subtitle,
+        .header .last-updated,
+        .header .project-description > summary,
+        .header .attach-btn,
+        .header #refreshBtn {
+            font-size: 0.82rem !important;
+            font-family: 'Source Sans 3', Arial, sans-serif !important;
+            font-weight: 600 !important;
+            color: var(--light-blue) !important;
+        }
+        /* Interactive items → one consistent subtle pill (keeps click
+           affordance while reading as a uniform set). */
+        .header .project-description > summary,
+        .header .attach-btn,
+        .header #refreshBtn {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.3rem !important;
+            padding: 5px 12px !important;
+            border: 1px solid rgba(155,188,216,0.40) !important;
+            border-radius: 4px !important;
+            background: rgba(155,188,216,0.10) !important;
+            text-decoration: none !important;
+            cursor: pointer !important;
+        }
+        .header .project-description > summary:hover,
+        .header .project-description[open] > summary,
+        .header .attach-btn:hover,
+        .header #refreshBtn:hover {
+            background: rgba(155,188,216,0.22) !important;
         }
 
         /* KPI Cards */
