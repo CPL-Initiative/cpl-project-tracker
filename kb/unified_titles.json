@@ -11951,17 +11951,18 @@
     "_notes": "'Advanced Excel — Industry Certificate' most plausibly maps to MOS Excel Expert; lower confidence pending review."
   },
   "BIT 375\t10-KEY on the Computer - Industry Certificate": {
-    "unified_title": "10-Key Numeric Data Entry",
+    "unified_title": "10-Key Data Entry",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-B3OT-1-001"
     ],
     "quality_flag": "suspect_course_as_exhibit",
-    "_notes": "No standard industry cert known for 10-key; likely local proficiency credential."
+    "_notes": "No standard industry cert known for 10-key; likely local proficiency credential.",
+    "_merge_note": "merged from credential '10-Key Numeric Data Entry' (curator)"
   },
   "BUSAD 210\tBusiness Communication - Credit by Exam": {
     "unified_title": "Business Communication",
