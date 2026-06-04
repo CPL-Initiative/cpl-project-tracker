@@ -1,16 +1,17 @@
 {
   "\tFTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship": {
-    "unified_title": "Fire Service In-Service Training: Command and Control",
+    "unified_title": "Fire Service In-Service Training — Command & Control",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPPRA-F3FS1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Local college course exhibit; references fire service command/control internship."
+    "_notes": "Local college course exhibit; references fire service command/control internship.",
+    "_merge_note": "merged from credential 'Fire Service In-Service Training: Command and Control' (curator)"
   },
   " Advanced Metal Framing": {
     "unified_title": "Advanced Metal Framing",
@@ -1860,17 +1861,18 @@
     "_notes": null
   },
   "AP - Calculus BC/AB subscore": {
-    "unified_title": "AP Calculus BC (AB Subscore)",
+    "unified_title": "AP Calculus BC — AB Subscore",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-A-CB1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Subscore variant of BC exam; kept distinct since it credits the AB portion."
+    "_notes": "Subscore variant of BC exam; kept distinct since it credits the AB portion.",
+    "_merge_note": "merged from credential 'AP Calculus BC (AB Subscore)' (curator)"
   },
   "AP - Chemistry": {
     "unified_title": "AP Chemistry",
@@ -2446,17 +2448,18 @@
     "_notes": null
   },
   "AP : Calculus BC/AB Subscore": {
-    "unified_title": "AP Calculus BC (AB Subscore)",
+    "unified_title": "AP Calculus BC — AB Subscore",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-A:CB1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Calculus BC (AB Subscore)' (curator)"
   },
   "AP : Chemistry": {
     "unified_title": "AP Chemistry",
@@ -3470,17 +3473,18 @@
     "_notes": "Stripped score qualifier."
   },
   "AP Chinese Language & Culture (score 3-5): Cal-GETC Area 3B": {
-    "unified_title": "AP Chinese Language & Culture",
+    "unified_title": "AP Chinese Language and Culture",
     "confidence_title": 0.98,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ACLC-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Chinese Language & Culture' (curator)"
   },
   "AP Chinese Language and Culture": {
     "unified_title": "AP Chinese Language and Culture",
@@ -3550,17 +3554,18 @@
     "_notes": "Stripped score qualifier."
   },
   "AP Comparative Government & Politics (score 3-5): Cal-GETC Area 4": {
-    "unified_title": "AP Comparative Government & Politics",
+    "unified_title": "AP Comparative Government and Politics",
     "confidence_title": 0.97,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ACGP-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Comparative Government & Politics' (curator)"
   },
   "AP Comparative Government and Politics": {
     "unified_title": "AP Comparative Government and Politics",
@@ -3914,17 +3919,18 @@
     "_notes": "Stripped articulation-area suffix."
   },
   "AP English Language/Composition (score 3-5): Cal-GETC Area 1A": {
-    "unified_title": "AP English Language & Composition",
+    "unified_title": "AP English Language and Composition",
     "confidence_title": 0.96,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AEL4-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Normalized 'Language/Composition' â†’ 'Language & Composition' (College Board's canonical phrasing)."
+    "_notes": "Normalized 'Language/Composition' â†’ 'Language & Composition' (College Board's canonical phrasing).",
+    "_merge_note": "merged from credential 'AP English Language & Composition' (curator)"
   },
   "AP English Literature": {
     "unified_title": "AP English Literature and Composition",
@@ -3970,17 +3976,18 @@
     "_notes": null
   },
   "AP English Literature/Composition (score 3-5): Cal-GETC Area 1A or 3B": {
-    "unified_title": "AP English Literature & Composition",
+    "unified_title": "AP English Literature and Composition",
     "confidence_title": 0.96,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AEL5-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Normalized 'Literature/Composition' â†’ 'Literature & Composition' (College Board's canonical phrasing)."
+    "_notes": "Normalized 'Literature/Composition' â†’ 'Literature & Composition' (College Board's canonical phrasing).",
+    "_merge_note": "merged from credential 'AP English Literature & Composition' (curator)"
   },
   "AP English: Language & Composition (Score of 3-5)": {
     "unified_title": "AP English Language and Composition",
@@ -5877,17 +5884,18 @@
     "_notes": "Older name for AP French Language and Culture; unifying per Rule 3."
   },
   "AP French Language & Culture (score 3-5): Cal-GETC Area 3B": {
-    "unified_title": "AP French Language & Culture",
+    "unified_title": "AP French Language and Culture",
     "confidence_title": 0.98,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AFLC-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP French Language & Culture' (curator)"
   },
   "AP French Language (Fall 2009 - Fall 2011)": {
     "unified_title": "AP French Language and Culture",
@@ -6025,17 +6033,18 @@
     "_notes": "Older name; unifying with current AP German Language and Culture."
   },
   "AP German Language & Culture (score 3-5): Cal-GETC Area 3B": {
-    "unified_title": "AP German Language & Culture",
+    "unified_title": "AP German Language and Culture",
     "confidence_title": 0.98,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AGLC-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP German Language & Culture' (curator)"
   },
   "AP German Language (prior to Fall 2009)": {
     "unified_title": "AP German Language and Culture",
@@ -6303,17 +6312,18 @@
     "_notes": null
   },
   "AP Italian Language & Culture (score 3-5): Cal-GETC Area 3B": {
-    "unified_title": "AP Italian Language & Culture",
+    "unified_title": "AP Italian Language and Culture",
     "confidence_title": 0.98,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AILC-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Italian Language & Culture' (curator)"
   },
   "AP Italian Language and Culture": {
     "unified_title": "AP Italian Language and Culture",
@@ -6384,17 +6394,18 @@
     "_notes": null
   },
   "AP Japanese Language & Culture (score 3-5): Cal-GETC Area 3B": {
-    "unified_title": "AP Japanese Language & Culture",
+    "unified_title": "AP Japanese Language and Culture",
     "confidence_title": 0.98,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AJLC-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Japanese Language & Culture' (curator)"
   },
   "AP Japanese Language and Culture": {
     "unified_title": "AP Japanese Language and Culture",
@@ -7428,17 +7439,18 @@
     "_notes": "Older name for the current AP Spanish Language and Culture exam."
   },
   "AP Spanish Language & Culture (score 3-5): Cal-GETC Area 3B": {
-    "unified_title": "AP Spanish Language & Culture",
+    "unified_title": "AP Spanish Language and Culture",
     "confidence_title": 0.98,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ASLC-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Spanish Language & Culture' (curator)"
   },
   "AP Spanish Language and Culture": {
     "unified_title": "AP Spanish Language and Culture",
@@ -7535,17 +7547,18 @@
     "_notes": "Older name for current AP Spanish Literature and Culture."
   },
   "AP Spanish Literature & Culture (score 3-5): Cal-GETC Area 3B": {
-    "unified_title": "AP Spanish Literature & Culture",
+    "unified_title": "AP Spanish Literature and Culture",
     "confidence_title": 0.98,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ASLC1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Spanish Literature & Culture' (curator)"
   },
   "AP Spanish Literature (Score 3-5)": {
     "unified_title": "AP Spanish Literature and Culture",
@@ -7791,17 +7804,18 @@
     "_notes": "Score qualifier stripped."
   },
   "AP U.S. Government & Politics (score 3-5): Cal-GETC Area 4": {
-    "unified_title": "AP U.S. Government & Politics",
+    "unified_title": "AP U.S. Government and Politics",
     "confidence_title": 0.97,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AUGP-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP U.S. Government & Politics' (curator)"
   },
   "AP U.S. Government and Politics": {
     "unified_title": "AP United States Government and Politics",
@@ -8057,17 +8071,18 @@
     "_notes": null
   },
   "AP: Calculus BC/AB Subscore": {
-    "unified_title": "AP Calculus BC: AB Subscore",
+    "unified_title": "AP Calculus BC — AB Subscore",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ACBS-1-001"
     ],
     "quality_flag": null,
-    "_notes": "AB subscore reported separately on the Calculus BC exam; preserved as distinct credential per Rule 8b."
+    "_notes": "AB subscore reported separately on the Calculus BC exam; preserved as distinct credential per Rule 8b.",
+    "_merge_note": "merged from credential 'AP Calculus BC: AB Subscore' (curator)"
   },
   "AP: Chemistry ": {
     "unified_title": "AP Chemistry",
@@ -8564,17 +8579,18 @@
     "_notes": "Local college course."
   },
   "ASE A7 Certificate": {
-    "unified_title": "ASE A7 — Heating & Air Conditioning",
+    "unified_title": "ASE A7 — Heating and Air Conditioning",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-AAC-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'ASE A7 — Heating & Air Conditioning' (curator)"
   },
   "ASE CERTIFICATION (A1) A1 – ENGINE REPAIR": {
     "unified_title": "ASE A1 — Engine Repair",
@@ -8603,30 +8619,32 @@
     "_notes": null
   },
   "ASE CERTIFICATION (A3) A3 – MANUAL DRIVE TRAIN & AXLES": {
-    "unified_title": "ASE A3 — Manual Drive Train & Axles",
+    "unified_title": "ASE A3 — Manual Drive Train and Axles",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-AC(A3-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'ASE A3 — Manual Drive Train & Axles' (curator)"
   },
   "ASE CERTIFICATION (A4) A4 – SUSPENSION & STEERING": {
-    "unified_title": "ASE A4 — Suspension & Steering",
+    "unified_title": "ASE A4 — Suspension and Steering",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-AC(A2-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'ASE A4 — Suspension & Steering' (curator)"
   },
   "ASE CERTIFICATION (A5) A5 – BRAKES": {
     "unified_title": "ASE A5 — Brakes",
@@ -8655,17 +8673,18 @@
     "_notes": null
   },
   "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING": {
-    "unified_title": "ASE A7 — Heating & Air Conditioning",
+    "unified_title": "ASE A7 — Heating and Air Conditioning",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-AC(A6-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'ASE A7 — Heating & Air Conditioning' (curator)"
   },
   "ASE CERTIFICATION (A8) A8 – ENGINE PERFORMANCE": {
     "unified_title": "ASE A8 — Engine Performance",
@@ -9217,30 +9236,32 @@
     "_notes": "Same local course mapped from industry cert."
   },
   "AUTO 052 - Auto Suspension & Steering - ASE Certificate": {
-    "unified_title": "ASE A4 — Suspension & Steering",
+    "unified_title": "ASE A4 — Suspension and Steering",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-A0-A-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Referenced via a local course name; underlying credential is ASE A4."
+    "_notes": "Referenced via a local course name; underlying credential is ASE A4.",
+    "_merge_note": "merged from credential 'ASE A4 — Suspension & Steering' (curator)"
   },
   "AUTO 052L - Auto Suspension & Steering Laboratory - ASE Certification Automobile -Suspension and Steering": {
-    "unified_title": "ASE A4 — Suspension & Steering",
+    "unified_title": "ASE A4 — Suspension and Steering",
     "confidence_title": 0.88,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-A0-A1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Lab course articulated to ASE A4."
+    "_notes": "Lab course articulated to ASE A4.",
+    "_merge_note": "merged from credential 'ASE A4 — Suspension & Steering' (curator)"
   },
   "AUTO 065 - Advanced Automotive Electrical Systems": {
     "unified_title": "Advanced Automotive Electrical Systems",
@@ -13657,17 +13678,18 @@
     "_notes": null
   },
   "CLEP : College Algebra – Trigonometry": {
-    "unified_title": "CLEP College Algebra — Trigonometry",
+    "unified_title": "CLEP College Algebra-Trigonometry",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-C:CA1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Older CLEP composite exam name."
+    "_notes": "Older CLEP composite exam name.",
+    "_merge_note": "merged from credential 'CLEP College Algebra — Trigonometry' (curator)"
   },
   "CLEP : German Level II": {
     "unified_title": "CLEP German Language Level II",
@@ -40354,17 +40376,18 @@
     "_notes": "Security Fundamentals course awarded via Security+ exam."
   },
   "Self-Defense (KIN 121 C)": {
-    "unified_title": "Self-Defense",
+    "unified_title": "Self Defense",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPOO-S(1C-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Kinesiology course."
+    "_notes": "Kinesiology course.",
+    "_merge_note": "merged from credential 'Self-Defense' (curator)"
   },
   "Self-Defense for Law Enforcement": {
     "unified_title": "Self-Defense for Law Enforcement",
@@ -42931,12 +42954,13 @@
     "reviewed_by": "map@rccd.edu"
   },
   "AP English Language Composition": {
-    "unified_title": "AP English Language & Composition",
+    "unified_title": "AP English Language and Composition",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-02T18:25:47Z",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP English Language & Composition' (curator)"
   },
   "AP Exam: Computer Science Principles": {
     "unified_title": "AP Computer Science Principles",
@@ -42979,20 +43003,22 @@
     "reviewed_by": "map@rccd.edu"
   },
   "AP: Comparative Government & Politics": {
-    "unified_title": "AP Comparative Government & Politics",
+    "unified_title": "AP Comparative Government and Politics",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-02T18:25:47Z",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Comparative Government & Politics' (curator)"
   },
   "AP: English Language & Composition": {
-    "unified_title": "AP English Language & Composition",
+    "unified_title": "AP English Language and Composition",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-02T18:25:47Z",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP English Language & Composition' (curator)"
   },
   "AP: Environmental  Science": {
     "unified_title": "AP Environmental Science",
@@ -43003,12 +43029,13 @@
     "reviewed_by": "map@rccd.edu"
   },
   "AP: German Language & Culture": {
-    "unified_title": "AP German Language & Culture",
+    "unified_title": "AP German Language and Culture",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-02T18:25:47Z",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP German Language & Culture' (curator)"
   },
   "AP: Music Theory": {
     "unified_title": "AP Music Theory",
@@ -43371,12 +43398,13 @@
     "reviewed_by": "map@rccd.edu"
   },
   "FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship": {
-    "unified_title": "Fire Service In-Service Training: Command and Control",
+    "unified_title": "Fire Service In-Service Training — Command & Control",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-02T18:30:00Z",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-06-04",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'Fire Service In-Service Training: Command and Control' (curator)"
   },
   "Fire Inspector 2A: Fire Prevention Administration": {
     "unified_title": "Fire Inspector 2A",

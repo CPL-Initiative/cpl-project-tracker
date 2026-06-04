@@ -1,14 +1,140 @@
 {
-  "_generated_at": "2026-06-04T01:37:06Z",
+  "_generated_at": "2026-06-04T16:45:53Z",
   "applied": [
     {
-      "loser": "10-Key Numeric Data Entry",
-      "winner": "10-Key Data Entry",
+      "loser": "AP Calculus BC (AB Subscore)",
+      "winner": "AP Calculus BC — AB Subscore",
+      "raws_repointed": 2,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Calculus BC: AB Subscore",
+      "winner": "AP Calculus BC — AB Subscore",
       "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Chinese Language & Culture",
+      "winner": "AP Chinese Language and Culture",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Comparative Government & Politics",
+      "winner": "AP Comparative Government and Politics",
+      "raws_repointed": 2,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP English Language & Composition",
+      "winner": "AP English Language and Composition",
+      "raws_repointed": 3,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP English Literature & Composition",
+      "winner": "AP English Literature and Composition",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP French Language & Culture",
+      "winner": "AP French Language and Culture",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP German Language & Culture",
+      "winner": "AP German Language and Culture",
+      "raws_repointed": 2,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Italian Language & Culture",
+      "winner": "AP Italian Language and Culture",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Japanese Language & Culture",
+      "winner": "AP Japanese Language and Culture",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Spanish Language & Culture",
+      "winner": "AP Spanish Language and Culture",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Spanish Literature & Culture",
+      "winner": "AP Spanish Literature and Culture",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP U.S. Government & Politics",
+      "winner": "AP U.S. Government and Politics",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "ASE A3 — Manual Drive Train & Axles",
+      "winner": "ASE A3 — Manual Drive Train and Axles",
+      "raws_repointed": 1,
+      "articulations_repointed": 3,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "ASE A4 — Suspension & Steering",
+      "winner": "ASE A4 — Suspension and Steering",
+      "raws_repointed": 3,
+      "articulations_repointed": 5,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "ASE A7 — Heating & Air Conditioning",
+      "winner": "ASE A7 — Heating and Air Conditioning",
+      "raws_repointed": 2,
+      "articulations_repointed": 4,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "CLEP College Algebra — Trigonometry",
+      "winner": "CLEP College Algebra-Trigonometry",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "Fire Service In-Service Training: Command and Control",
+      "winner": "Fire Service In-Service Training — Command & Control",
+      "raws_repointed": 2,
       "articulations_repointed": 1,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "Self-Defense",
+      "winner": "Self Defense",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
       "loser_credential_dropped": true
     }
   ],
   "unified_titles_count": 3411,
-  "credentials_count": 2013
+  "credentials_count": 1994
 }
