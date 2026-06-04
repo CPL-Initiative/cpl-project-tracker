@@ -242,3 +242,50 @@ page-level (primed for more views). New committed artifacts: `unified_courses_al
 ### Next concrete step
 CER unclassified-triage OR the Student audience view (v3 gallery renderer, reuse
 `buildCredentialView` + `buildPrescriptiveHtml` + a near-me filter; keep v1/v2 untouched).
+
+## Session 33 — CER intelligence layer: noise suppression + GE-Area credit + student impact (2026-06-04 · "Sleepy Goodall")
+
+Triggered by Sam's live AP-card review ("CIDs for 170/180, a curious COMM, several
+MIDs that shouldn't exist") + three authoritative AP-credit policy docs he supplied.
+6 PRs (#291-#296), all merged + live. The arc: diagnose → noise-suppress → discover
+the *right* canonical layer (GE Area, not course-fold) → operationalize → prioritize.
+
+### What was learned
+- **The "curious COMM" was systemic.** `COMM M1038` "Group Communication" (Clovis)
+  articulates to **61 credentials**, all "Elective Course Credits" — a high-precision
+  detector (≈100%-elective recs + ≥5 credentials + ≤3 colleges) matches exactly it,
+  never the legit broad CTE courses (WELD/AJ carry real recs → 0% elective).
+- **AP/CER canonicalization is a GE-AREA mapping, NOT a course-identity fold.** Per
+  AB 1985 / AA 17-20 (+ IB/CLEP title 5 §55052.5; current charts ESLEI 24-35), an exam's
+  system-level meaning is its **GE Area + min units**; course-to-course is explicitly a
+  *local* decision. A would-be re-mint ("fold Western-Civ M-IDs into HIST 170/180") was
+  the **wrong layer**; the GE-Area reference layer is right, authoritative, additive (no
+  re-key). The policy's "no GE Area → elective" fallback *explains* the COMM bucket.
+  Model: KB note `reference-ap-credit-ge-area-canonicalization`.
+- **49% of Western/World-Civ local courses carry no CIDNumber** → the fragmentation is
+  title-only, not a resolution bug; can't be auto-folded, and shouldn't be (it's local).
+  **World ≠ Western** (HIST 150/160 vs 170/180) — a "curious" World-Civ→AP-European-History
+  articulation is a genuinely different course, not noise to fold.
+- **Student-impact data grain matters.** Per-exhibit "students served" IS derivable
+  (`View_ArticulatedCollegeCourses.Students` → roll up exhibit_id→unified_title);
+  per-exhibit **eligibility** is NOT (only college×CPL-type) — a real gap pending an
+  exhibit-keyed MAP export. Public counts need a privacy ADR: aggregate + small-cell
+  suppression <5 (Sam). ADR: `adr-cer-student-impact-counts-privacy`.
+
+### Patterns that worked
+- **CER ships live-on-merge** (producer regenerates from committed inputs) — but
+  cron-only data (the PII-purged CustomReport) no-ops locally + lights up on the daily
+  pull; verify with a synthetic-fixture script (`kb/_verify_students_served.py`).
+- **Whitelist every new baked field in `adaptBakedRow`** — the Session-29 omitted-field
+  trap bit twice (`ge_credit`, `students_served`); a red test each time.
+- **char-prefix match rules** beat 30 exact aliases for IB's legacy name zoo.
+- 5 committed CER jsdom test files now (68 assertions); guard the failure mode + the
+  privacy mask, not just the happy path.
+
+### Next concrete step
+Recommended-order **#3 GE-Area coherence check** (flag exam credentials whose articulated
+local courses' disciplines don't fit the exam's GE Area — the subject-outlier badge is a
+first cut) and **#4 CPL-type-duplicate detector** (the `&`/`and` AP-title dupes →
+`credential_merges.json`). Eligibility side of student-impact when Sam supplies an
+exhibit-keyed MAP export. Then the standing 3 audience views (System needs the privacy ADR
+— now half-written).
