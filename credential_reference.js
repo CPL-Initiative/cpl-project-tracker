@@ -1810,12 +1810,15 @@
       "#tab-credential-reference .cr-wl-clear{font-size:.74rem;color:#b45309;margin-left:8px;text-decoration:none;}" +
       "#tab-credential-reference .cr-wl-clear:hover{text-decoration:underline;}" +
       "#tab-credential-reference .cr-wl-assigned-by{color:#1e7e45;font-size:.78rem;font-weight:600;}" +
-      // Item 4 (2026-06-04): center the articulations-table headers to match the
-      // (inherited) centered data cells, let the CCR identity run on one line,
-      // and mute the inline local-course units. Injected here (not the HTML
-      // <style>) so it applies to both CPL_Dashboard.html + index.html without a
-      // Rule-4 mirror; appended after the template <style> so these win on ties.
-      "#tab-credential-reference .cr-arts-table th{text-align:center;}" +
+      // Item 4 (2026-06-04): the CCR identity runs on one line + muted inline
+      // local-course units. The articulations table is LEFT-aligned (header +
+      // data) — Sam's call 2026-06-04: the global center-align made the long
+      // one-line identities read awkwardly. `table.cr-arts-table` (extra element
+      // bump → 0,1,1,2) beats the (0,1,1,1) `.cr-table th/td` center rule the
+      // inner cells would otherwise inherit. Injected here (not the HTML <style>)
+      // so it covers both CPL_Dashboard.html + index.html without a Rule-4 mirror.
+      "#tab-credential-reference table.cr-arts-table th{text-align:left;}" +
+      "#tab-credential-reference table.cr-arts-table td{text-align:left;}" +
       "#tab-credential-reference .cr-art-ident{max-width:none;}" +
       "#tab-credential-reference .cr-lc-units{color:#6b7280;font-size:.92em;}";
     document.head.appendChild(st);
