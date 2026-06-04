@@ -25238,179 +25238,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPSAS-CCA-2-1-001|MAPSAS-CCA-3-1-001|MAPSAS-CCAT-1-001|MAPSAS-CCA–-1-001|MAPSAS-CECA2-1-001",
-      "exhibit_ids": [
-        "MAPSAS-CCA-2-1-001",
-        "MAPSAS-CCA-3-1-001",
-        "MAPSAS-CCAT-1-001",
-        "MAPSAS-CCA–-1-001",
-        "MAPSAS-CECA2-1-001"
-      ],
-      "title": "CLEP College Algebra-Trigonometry",
-      "unified_title": "CLEP College Algebra-Trigonometry",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "CLEP College Algebra - Trigonometry",
-        "CLEP College Algebra – Trigonometry",
-        "CLEP College Algebra- Trigonometry",
-        "CLEP Exam College Algebra - Trigonometry (Score of 50 or higher)"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 6,
-      "adopter_names": [
-        "CA MAP INITIATIVE COLLEGE",
-        "Chaffey College",
-        "Clovis Community College",
-        "Los Angeles Pierce College",
-        "Saddleback College",
-        "Santa Ana College"
-      ],
-      "potential": 102,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 108,
-      "credit_recs": [
-        {
-          "course": "CPL 1",
-          "credit": "3 hours in Elective Course Credits"
-        },
-        {
-          "course": "COMM 8",
-          "credit": "3 hours in Elective Course Credits"
-        },
-        {
-          "course": "ECO 4",
-          "credit": "3 hours in Elective Course Credits"
-        },
-        {
-          "course": "Local GE 2",
-          "credit": "3 hours in Math concepts"
-        },
-        {
-          "course": "Local GE 2",
-          "credit": "3 hours in 2. Mathematical Concepts and Quantitative Reasoning"
-        },
-        {
-          "course": "GE 2",
-          "credit": "3 hours in Area 2 - Mathematical Concepts and Quantitative Reasoning (3-5 units)"
-        },
-        {
-          "course": "LACCD GE 2",
-          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPSAH-IMH(-1-001|MAPSAI-IEMH-1-001|MAPSAS-IMH-1-001|MAPSAS-IMH1-1-001",
       "exhibit_ids": [
         "MAPSAH-IMH(-1-001",
@@ -26584,6 +26411,185 @@ window.CPL_STATEWIDE = {
         {
           "course": "CIS 055",
           "credit": "3 hours in Systems and Network Administration"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPSAS-C:CA1-1-001|MAPSAS-CCA-2-1-001|MAPSAS-CCA-3-1-001|MAPSAS-CCAT-1-001|MAPSAS-CCA–-1-001|MAPSAS-CECA2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-C:CA1-1-001",
+        "MAPSAS-CCA-2-1-001",
+        "MAPSAS-CCA-3-1-001",
+        "MAPSAS-CCAT-1-001",
+        "MAPSAS-CCA–-1-001",
+        "MAPSAS-CECA2-1-001"
+      ],
+      "title": "CLEP College Algebra-Trigonometry",
+      "unified_title": "CLEP College Algebra-Trigonometry",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP : College Algebra – Trigonometry",
+        "CLEP College Algebra - Trigonometry",
+        "CLEP College Algebra – Trigonometry",
+        "CLEP College Algebra- Trigonometry",
+        "CLEP Exam College Algebra - Trigonometry (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 7,
+      "adopter_names": [
+        "CA MAP INITIATIVE COLLEGE",
+        "Chaffey College",
+        "Clovis Community College",
+        "Copper Mountain College",
+        "Los Angeles Pierce College",
+        "Saddleback College",
+        "Santa Ana College"
+      ],
+      "potential": 101,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 108,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "COMM 8",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "ECO 4",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "Local GE 2",
+          "credit": "3 hours in Math concepts"
+        },
+        {
+          "course": "Local GE 2",
+          "credit": "3 hours in 2. Mathematical Concepts and Quantitative Reasoning"
+        },
+        {
+          "course": "GE 2",
+          "credit": "3 hours in Area 2 - Mathematical Concepts and Quantitative Reasoning (3-5 units)"
+        },
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        },
+        {
+          "course": "Local GE Area 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
       ]
     },
@@ -39010,294 +39016,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPSAH-AELA-1-001|MAPSAH-AELA2-1-001|MAPSAH-AELA4-1-001|MAPSAH-AELA5-1-001|MAPSAS-A-EL1-1-001|MAPSAS-A-EL3-1-001|MAPSAS-A:EL-1-001|MAPSAS-A:E–-1-001|MAPSAS-AE-L-1-001|MAPSAS-AE-L3-1-001|MAPSAS-AEEL1-1-001|MAPSAS-AEEL3-1-001|MAPSAS-AEEL5-1-001|MAPSAS-AEEL7-1-001|MAPSAS-AEL&2-1-001|MAPSAS-AEL3-1-001|MAPSAS-AELA1-1-001|MAPSAS-AELA13-1-001|MAPSAS-AELA4-1-001|MAPSAS-AELA6-1-001|MAPSAS-AELA8-1-001|MAPSAS-AELA9-1-001|MAPSAS-EL&C-1-001",
-      "exhibit_ids": [
-        "MAPSAH-AELA-1-001",
-        "MAPSAH-AELA2-1-001",
-        "MAPSAH-AELA4-1-001",
-        "MAPSAH-AELA5-1-001",
-        "MAPSAS-A-EL1-1-001",
-        "MAPSAS-A-EL3-1-001",
-        "MAPSAS-A:EL-1-001",
-        "MAPSAS-A:E–-1-001",
-        "MAPSAS-AE-L-1-001",
-        "MAPSAS-AE-L3-1-001",
-        "MAPSAS-AEEL1-1-001",
-        "MAPSAS-AEEL3-1-001",
-        "MAPSAS-AEEL5-1-001",
-        "MAPSAS-AEEL7-1-001",
-        "MAPSAS-AEL&2-1-001",
-        "MAPSAS-AEL3-1-001",
-        "MAPSAS-AELA1-1-001",
-        "MAPSAS-AELA13-1-001",
-        "MAPSAS-AELA4-1-001",
-        "MAPSAS-AELA6-1-001",
-        "MAPSAS-AELA8-1-001",
-        "MAPSAS-AELA9-1-001",
-        "MAPSAS-EL&C-1-001"
-      ],
-      "title": "AP English Literature and Composition",
-      "unified_title": "AP English Literature and Composition",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP - English Literature",
-        "AP - English Literature/Composition",
-        "AP : English Literature",
-        "AP : English – Literature & Composition",
-        "AP English - Literature and Composition",
-        "AP English Literature",
-        "AP English Literature and Composition",
-        "AP English: Literature & Composition (Score of 3-5)",
-        "AP English: Literature and Composition (ENGL C1000)",
-        "AP English: Literature and Composition (Local GE)",
-        "AP Exam English Literature (Score 3-5)",
-        "AP Exam English Literature and Composition (Score 3-5)",
-        "AP Exam: English Literature and Composition",
-        "English Literature & Composition"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 18,
-      "adopter_names": [
-        "Chaffey College",
-        "Clovis Community College",
-        "Coastline Community College",
-        "Copper Mountain College",
-        "Foothill College",
-        "Glendale Community College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Merced College",
-        "Moreno Valley College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Riverside City College",
-        "Saddleback College",
-        "Santa Ana College"
-      ],
-      "potential": 97,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coalinga College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 115,
-      "credit_recs": [
-        {
-          "course": "ENG 1A",
-          "credit": "4 hours in Principles of Composition I"
-        },
-        {
-          "course": "ENGL C1000",
-          "credit": "4 hours in Academic Reading and Writing"
-        },
-        {
-          "course": "CPL (A1)",
-          "credit": "3 hours in (A1) English Composition - (3 units)"
-        },
-        {
-          "course": "CPL (C)",
-          "credit": "3 hours in (C) Humanities - (3 units)"
-        },
-        {
-          "course": "ENGL 02",
-          "credit": "3 hours in Oral Interpretation"
-        },
-        {
-          "course": "CSU GE A2",
-          "credit": "3 hours in CSU GE A2 – Written Communication"
-        },
-        {
-          "course": "CSU GE C2",
-          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
-        },
-        {
-          "course": "IGETC 1A",
-          "credit": "3 hours in IGETC 1A – English Composition"
-        },
-        {
-          "course": "IGETC 3B",
-          "credit": "3 hours in IGETC 3B – Humanities"
-        },
-        {
-          "course": "ENGL C1000H",
-          "credit": "4 hours in Academic Reading and Writing - Honors"
-        },
-        {
-          "course": "RCCD GE-A 3",
-          "credit": "3 hours in Area 3: Arts and Humanities (3-5 units)"
-        },
-        {
-          "course": "ENGLISH 101",
-          "credit": "3 hours in College Reading and Composition I"
-        },
-        {
-          "course": "ENGL C1000",
-          "credit": "3 hours in Academic Reading and Writing"
-        },
-        {
-          "course": "LACCD GE 1A",
-          "credit": "3 hours in English Composition"
-        },
-        {
-          "course": "LACCD GE 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "ENGL C140",
-          "credit": "3 hours in Appreciation of Literature"
-        },
-        {
-          "course": "Local GE 1A",
-          "credit": "3 hours in English Communication"
-        },
-        {
-          "course": "Local GE 3",
-          "credit": "3 hours in Art & Humanities"
-        },
-        {
-          "course": "Local GE E1",
-          "credit": "3 hours in English Composition"
-        },
-        {
-          "course": "Local GE C",
-          "credit": "3 hours in Humanities"
-        },
-        {
-          "course": "ENGL 1C",
-          "credit": "3 hours in Introduction to Literature"
-        },
-        {
-          "course": "Local GE Area 1A",
-          "credit": "3 hours in English Composition"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "ENGL C1000",
-          "credit": "5 hours in Academic Reading and Writing"
-        },
-        {
-          "course": "English 101Y",
-          "credit": "3.5 hours in College Reading and Composition I Plus 2-Hour Lab"
-        },
-        {
-          "course": "English 101Z",
-          "credit": "4 hours in College Composition and Reading I Plus 3-Hour Lab"
-        },
-        {
-          "course": "E.S.L. 110",
-          "credit": "4 hours in College Composition for Non-Native Speakers"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICI-CL-1-001|MAPICI-CL1-1-001|MAPICI-CL2-1-001|MAPICI-CL4-1-001|MAPICI-CLC-1-001",
       "exhibit_ids": [
         "MAPICI-CL-1-001",
@@ -46784,262 +46502,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPSAH-AELA1-1-001|MAPSAH-AELA3-1-001|MAPSAS-A-EL-1-001|MAPSAS-A-EL2-1-001|MAPSAS-A:EL1-1-001|MAPSAS-A:EL2-1-001|MAPSAS-AE-E-1-001|MAPSAS-AE-L1-1-001|MAPSAS-AE-L2-1-001|MAPSAS-AEE--1-001|MAPSAS-AEEL-1-001|MAPSAS-AEEL2-1-001|MAPSAS-AEEL4-1-001|MAPSAS-AEEL6-1-001|MAPSAS-AEL&-1-001|MAPSAS-AEL&1-1-001|MAPSAS-AEL2-1-001|MAPSAS-AELA-1-001|MAPSAS-AELA12-1-001|MAPSAS-AELA2-1-001|MAPSAS-AELA3-1-001|MAPSAS-AELA5-1-001|MAPSAS-AELA7-1-001|MAPSAS-AELC-1-001|MAPSAS-AP(E-1-001",
-      "exhibit_ids": [
-        "MAPSAH-AELA1-1-001",
-        "MAPSAH-AELA3-1-001",
-        "MAPSAS-A-EL-1-001",
-        "MAPSAS-A-EL2-1-001",
-        "MAPSAS-A:EL1-1-001",
-        "MAPSAS-A:EL2-1-001",
-        "MAPSAS-AE-E-1-001",
-        "MAPSAS-AE-L1-1-001",
-        "MAPSAS-AE-L2-1-001",
-        "MAPSAS-AEE--1-001",
-        "MAPSAS-AEEL-1-001",
-        "MAPSAS-AEEL2-1-001",
-        "MAPSAS-AEEL4-1-001",
-        "MAPSAS-AEEL6-1-001",
-        "MAPSAS-AEL&-1-001",
-        "MAPSAS-AEL&1-1-001",
-        "MAPSAS-AEL2-1-001",
-        "MAPSAS-AELA-1-001",
-        "MAPSAS-AELA12-1-001",
-        "MAPSAS-AELA2-1-001",
-        "MAPSAS-AELA3-1-001",
-        "MAPSAS-AELA5-1-001",
-        "MAPSAS-AELA7-1-001",
-        "MAPSAS-AELC-1-001",
-        "MAPSAS-AP(E-1-001"
-      ],
-      "title": "AP English Language and Composition",
-      "unified_title": "AP English Language and Composition",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP - English Language",
-        "AP - English Language/Composition",
-        "AP : English Language",
-        "AP : English Language & Composition",
-        "AP English - Language and Composition",
-        "AP English Language",
-        "AP English Language Composition",
-        "AP English Language and Composition",
-        "AP English Language and Composition (IGETC)",
-        "AP English: Language & Composition (Score of 3-5)",
-        "AP English: Language and Composition",
-        "AP Exam - English Language & Comp",
-        "AP Exam English Language (Score 3-5)",
-        "AP Exam English Language and Composition (Score 3-5)",
-        "AP Exam: English - Language and Composition",
-        "AP Exam: English Language and Composition",
-        "AP: English Language & Composition"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 20,
-      "adopter_names": [
-        "Chaffey College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "Copper Mountain College",
-        "Foothill College",
-        "Glendale Community College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Merced College",
-        "Moreno Valley College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Riverside City College",
-        "Saddleback College",
-        "Santa Ana College",
-        "Woodland Community College"
-      ],
-      "potential": 94,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Citrus College",
-        "Coalinga College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 114,
-      "credit_recs": [
-        {
-          "course": "ENG 1A",
-          "credit": "4 hours in Principles of Composition I"
-        },
-        {
-          "course": "ENGL C1000",
-          "credit": "4 hours in Academic Reading and Writing"
-        },
-        {
-          "course": "ENGLISH 101",
-          "credit": "3 hours in College Reading and Composition I"
-        },
-        {
-          "course": "ENGL C1000",
-          "credit": "3 hours in Academic Reading and Writing"
-        },
-        {
-          "course": "LACCD GE 1A",
-          "credit": "3 hours in English Composition"
-        },
-        {
-          "course": "CPL (A1)",
-          "credit": "3 hours in (A1) English Composition - (3 units)"
-        },
-        {
-          "course": "CPL (C)",
-          "credit": "3 hours in (C) Humanities - (3 units)"
-        },
-        {
-          "course": "CPL (A2)",
-          "credit": "3 hours in Communication and Analytical Thinking - (3 units)"
-        },
-        {
-          "course": "ENGLISH 101",
-          "credit": "3 hours in COLLEGE READING AND COMPOSITION I"
-        },
-        {
-          "course": "CSU GE A2",
-          "credit": "3 hours in CSU GE A2 – Written Communication"
-        },
-        {
-          "course": "IGETC 1A",
-          "credit": "3 hours in IGETC 1A – English Composition"
-        },
-        {
-          "course": "Local GE 1A",
-          "credit": "3 hours in English Communication"
-        },
-        {
-          "course": "Local GE Area 1A",
-          "credit": "3 hours in English Composition"
-        },
-        {
-          "course": "Local GE Area 1A",
-          "credit": "6 hours in English Composition"
-        },
-        {
-          "course": "ENGL C1000",
-          "credit": "5 hours in Academic Reading and Writing"
-        },
-        {
-          "course": "English 101Y",
-          "credit": "3.5 hours in College Reading and Composition I Plus 2-Hour Lab"
-        },
-        {
-          "course": "English 101Z",
-          "credit": "4 hours in College Composition and Reading I Plus 3-Hour Lab"
-        },
-        {
-          "course": "E.S.L. 110",
-          "credit": "4 hours in College Composition for Non-Native Speakers"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICI-SCAA-1-003|MAPICI-SOC--1-001",
       "exhibit_ids": [
         "MAPICI-SCAA-1-003",
@@ -49670,228 +49132,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "BUSI 100",
           "credit": "3 hours in Introduction to Business"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAH-AGAP-1-001|MAPSAS-A-CG-1-001|MAPSAS-A:CG-1-001|MAPSAS-ACG&-1-001|MAPSAS-ACG&1-1-001|MAPSAS-ACGA-1-001|MAPSAS-ACGA1-1-001|MAPSAS-ACGA2-1-001|MAPSAS-ACGA3-1-001|MAPSAS-ACGA4-1-001|MAPSAS-ACGA5-1-001|MAPSAS-AECG-1-001|MAPSAS-AECG1-1-001|MAPSAS-AECG2-1-001|MAPSAS-AGAP-1-001",
-      "exhibit_ids": [
-        "MAPSAH-AGAP-1-001",
-        "MAPSAS-A-CG-1-001",
-        "MAPSAS-A:CG-1-001",
-        "MAPSAS-ACG&-1-001",
-        "MAPSAS-ACG&1-1-001",
-        "MAPSAS-ACGA-1-001",
-        "MAPSAS-ACGA1-1-001",
-        "MAPSAS-ACGA2-1-001",
-        "MAPSAS-ACGA3-1-001",
-        "MAPSAS-ACGA4-1-001",
-        "MAPSAS-ACGA5-1-001",
-        "MAPSAS-AECG-1-001",
-        "MAPSAS-AECG1-1-001",
-        "MAPSAS-AECG2-1-001",
-        "MAPSAS-AGAP-1-001"
-      ],
-      "title": "AP Comparative Government and Politics",
-      "unified_title": "AP Comparative Government and Politics",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.99,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP - Comparative Government & Politics",
-        "AP : Comparative Government & Politics",
-        "AP Comparative Government & Politics (Score of 3-5)",
-        "AP Comparative Government and Politics",
-        "AP Exam Comparative Government and Politics (Score 3-5)",
-        "AP Exam: Comparative Government & Politics",
-        "AP Exam: Comparative Government and Politics",
-        "AP Government and Politics - Comparative",
-        "AP Government and Politics: Comparative",
-        "AP: Comparative Government & Politics"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 17,
-      "adopter_names": [
-        "Chaffey College",
-        "Clovis Community College",
-        "Coastline Community College",
-        "Copper Mountain College",
-        "Foothill College",
-        "Glendale Community College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Valley College",
-        "Merced College",
-        "Moreno Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Jose City College",
-        "Santa Ana College"
-      ],
-      "potential": 92,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "City College of San Francisco",
-        "Coalinga College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 109,
-      "credit_recs": [
-        {
-          "course": "PS 12",
-          "credit": "3 hours in COMPARATIVE POLITICS AND GOVERNMENT"
-        },
-        {
-          "course": "POLS 102",
-          "credit": "3 hours in Modern Comparative Governments"
-        },
-        {
-          "course": "CPL (D2)",
-          "credit": "3 hours in History and Political Sciences - (3 units)"
-        },
-        {
-          "course": "CSU GE D8",
-          "credit": "3 hours in CSU GE D8 – Political Science, Government and Legal Institutions"
-        },
-        {
-          "course": "IGETC 4",
-          "credit": "3 hours in IGETC 4 – Social Sciences"
-        },
-        {
-          "course": "POL 2",
-          "credit": "3 hours in Comparative Politics"
-        },
-        {
-          "course": "GE 4",
-          "credit": "3 hours in Area 4 - Social and Behavioral Sciences (3 units)"
-        },
-        {
-          "course": "POL SCI 002",
-          "credit": "3 hours in Introduction to Comparative Politics"
-        },
-        {
-          "course": "LACCD GE 4B",
-          "credit": "3 hours in Social and Behavioral Sciences"
-        },
-        {
-          "course": "Political Science (POLSC) 002",
-          "credit": "3 hours in Comparative Politics"
-        },
-        {
-          "course": "PSCI C185",
-          "credit": "3 hours in Comparative Government and Politics"
-        },
-        {
-          "course": "Local GE 4",
-          "credit": "4 hours in Social & Behavioral science"
-        },
-        {
-          "course": "POLT 201",
-          "credit": "3 hours in Introduction to Comparative Politics"
-        },
-        {
-          "course": "Local GE Area 4",
-          "credit": "3 hours in Social and Behavioral Sciences"
-        },
-        {
-          "course": "Local GE Area 4",
-          "credit": "4.5 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
       ]
     },
@@ -69614,255 +68854,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPSAH-ASLL1-1-001|MAPSAS-A-SL1-1-001|MAPSAS-A-SL3-1-001|MAPSAS-A:SL2-1-001|MAPSAS-A:SL3-1-001|MAPSAS-AE-S1-1-001|MAPSAS-AESL-1-001|MAPSAS-AESL3-1-001|MAPSAS-AESL6-1-001|MAPSAS-AS-A1-1-001|MAPSAS-ASL(-1-001|MAPSAS-ASL3-1-001|MAPSAS-ASL4-1-001|MAPSAS-ASL7-1-001|MAPSAS-ASLA16-1-001|MAPSAS-ASLA18-1-001|MAPSAS-ASLA2-1-001|MAPSAS-ASLA3-1-001|MAPSAS-ASLA5-1-001|MAPSAS-ASLA8-1-001",
-      "exhibit_ids": [
-        "MAPSAH-ASLL1-1-001",
-        "MAPSAS-A-SL1-1-001",
-        "MAPSAS-A-SL3-1-001",
-        "MAPSAS-A:SL2-1-001",
-        "MAPSAS-A:SL3-1-001",
-        "MAPSAS-AE-S1-1-001",
-        "MAPSAS-AESL-1-001",
-        "MAPSAS-AESL3-1-001",
-        "MAPSAS-AESL6-1-001",
-        "MAPSAS-AS-A1-1-001",
-        "MAPSAS-ASL(-1-001",
-        "MAPSAS-ASL3-1-001",
-        "MAPSAS-ASL4-1-001",
-        "MAPSAS-ASL7-1-001",
-        "MAPSAS-ASLA16-1-001",
-        "MAPSAS-ASLA18-1-001",
-        "MAPSAS-ASLA2-1-001",
-        "MAPSAS-ASLA3-1-001",
-        "MAPSAS-ASLA5-1-001",
-        "MAPSAS-ASLA8-1-001"
-      ],
-      "title": "AP Spanish Literature and Culture",
-      "unified_title": "AP Spanish Literature and Culture",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.99,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP - Spanish Literature",
-        "AP - Spanish Literature & Culture",
-        "AP : Spanish Literature",
-        "AP : Spanish Literature and Culture",
-        "AP Exam - Spanish Literature & Culture",
-        "AP Exam Spanish Literature and Culture",
-        "AP Exam: Spanish Literature and Culture",
-        "AP Spanish -Literature and Culture",
-        "AP Spanish Literature",
-        "AP Spanish Literature (Score 3-5)",
-        "AP Spanish Literature and Culture",
-        "AP Spanish Literature and Culture (Score of 3-5)",
-        "AP Spanish Literature/ Literature and Culture"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 16,
-      "adopter_names": [
-        "Chaffey College",
-        "Coastline Community College",
-        "Copper Mountain College",
-        "Foothill College",
-        "Glendale Community College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Valley College",
-        "Merced College",
-        "Moreno Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Saddleback College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Woodland Community College"
-      ],
-      "potential": 84,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Southwest College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College"
-      ],
-      "total_addressable": 100,
-      "credit_recs": [
-        {
-          "course": "SPAN 1",
-          "credit": "5 hours in ELEMENTARY SPANISH"
-        },
-        {
-          "course": "SPAN 2",
-          "credit": "5 hours in ELEMENTARY SPANISH"
-        },
-        {
-          "course": "SPAN 3",
-          "credit": "5 hours in INTERMEDIATE SPANISH"
-        },
-        {
-          "course": "RCCD GE-A RCCD GE Area 3",
-          "credit": "5 hours in ELEMENTARY SPANISH"
-        },
-        {
-          "course": "SPAN 124H",
-          "credit": "3 hours in Honors English Translations Of Masterpieces Of Hispanic Literature"
-        },
-        {
-          "course": "CPL (C)",
-          "credit": "3 hours in (C) Humanities - (3 units)"
-        },
-        {
-          "course": "IGETC 3B",
-          "credit": "3 hours in IGETC 3B – Humanities"
-        },
-        {
-          "course": "CSU GE C2",
-          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
-        },
-        {
-          "course": "IGETC 6A",
-          "credit": "3 hours in IGETC 6A – Language Other Than English"
-        },
-        {
-          "course": "RCCD GE-A 3",
-          "credit": "3 hours in Area 3: Arts and Humanities (3-5 units)"
-        },
-        {
-          "course": "SPAN 20A",
-          "credit": "4 hours in Spanish for Spanish Speakers I"
-        },
-        {
-          "course": "SPAN 20B",
-          "credit": "4 hours in Spanish for Spanish Speakers II"
-        },
-        {
-          "course": "SPANISH 004",
-          "credit": "5 hours in Intermediate Spanish II"
-        },
-        {
-          "course": "LACCD GE 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "Spanish (SPAN) 032",
-          "credit": "3 hours in Introduction to Spanish and Latin American Literature"
-        },
-        {
-          "course": "Local GE 3B",
-          "credit": "3 hours in 3B. Humanities"
-        },
-        {
-          "course": "SPAN C185",
-          "credit": "5 hours in Elementary Spanish 2"
-        },
-        {
-          "course": "GE 3B",
-          "credit": "3 hours in Area 3- Humanities"
-        },
-        {
-          "course": "SPAN 3",
-          "credit": "4 hours in Intermediate Spanish I"
-        },
-        {
-          "course": "Local GE Area 3B",
-          "credit": "5 hours in Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "4.5 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "3 hours in Arts and Humanities"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPCBEI-EMTC-1-001|MAPCXH-EMT(1-1-001|MAPCXH-EMT(2-1-001|MAPCXN-CECB-1-001|MAPCXS-E3MT-1-001|MAPCXS-E3MT1-1-001|MAPCXS-EMT1-1-001|MAPCXS-EMTB-1-001|MAPCXS-EMTB1-1-001|MAPCXS-EMTP-1-001",
       "exhibit_ids": [
         "MAPCBEI-EMTC-1-001",
@@ -73124,315 +72115,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "HUMSV 098",
           "credit": "4 hours in Human Services Work Experience"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAH-AS(O-1-001|MAPSAH-ASLA-1-001|MAPSAH-ASLL-1-001|MAPSAS-A-SL-1-001|MAPSAS-A-SL2-1-001|MAPSAS-A:SL-1-001|MAPSAS-A:SL1-1-001|MAPSAS-AE-S-1-001|MAPSAS-AESA-1-001|MAPSAS-AESL1-1-001|MAPSAS-AESL2-1-001|MAPSAS-AESL4-1-001|MAPSAS-AESL5-1-001|MAPSAS-AS-A-1-001|MAPSAS-ASL&-1-001|MAPSAS-ASL1-1-001|MAPSAS-ASL2-1-001|MAPSAS-ASL5-1-001|MAPSAS-ASL6-1-001|MAPSAS-ASLA-1-001|MAPSAS-ASLA1-1-001|MAPSAS-ASLA15-1-001|MAPSAS-ASLA17-1-001|MAPSAS-ASLA4-1-001|MAPSAS-ASLA6-1-001|MAPSAS-ASLA7-1-001",
-      "exhibit_ids": [
-        "MAPSAH-AS(O-1-001",
-        "MAPSAH-ASLA-1-001",
-        "MAPSAH-ASLL-1-001",
-        "MAPSAS-A-SL-1-001",
-        "MAPSAS-A-SL2-1-001",
-        "MAPSAS-A:SL-1-001",
-        "MAPSAS-A:SL1-1-001",
-        "MAPSAS-AE-S-1-001",
-        "MAPSAS-AESA-1-001",
-        "MAPSAS-AESL1-1-001",
-        "MAPSAS-AESL2-1-001",
-        "MAPSAS-AESL4-1-001",
-        "MAPSAS-AESL5-1-001",
-        "MAPSAS-AS-A-1-001",
-        "MAPSAS-ASL&-1-001",
-        "MAPSAS-ASL1-1-001",
-        "MAPSAS-ASL2-1-001",
-        "MAPSAS-ASL5-1-001",
-        "MAPSAS-ASL6-1-001",
-        "MAPSAS-ASLA-1-001",
-        "MAPSAS-ASLA1-1-001",
-        "MAPSAS-ASLA15-1-001",
-        "MAPSAS-ASLA17-1-001",
-        "MAPSAS-ASLA4-1-001",
-        "MAPSAS-ASLA6-1-001",
-        "MAPSAS-ASLA7-1-001"
-      ],
-      "title": "AP Spanish Language and Culture",
-      "unified_title": "AP Spanish Language and Culture",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.99,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP - Spanish Language",
-        "AP - Spanish Language & Culture",
-        "AP : Spanish Language",
-        "AP : Spanish Language and Culture",
-        "AP Exam - Spanish Language & Culture",
-        "AP Exam Spanish Language and Culture Score of 3",
-        "AP Exam Spanish Language and Culture Score of 4 or 5",
-        "AP Exam: Spanish Language and Culture",
-        "AP Exam: Spanish and Language",
-        "AP SPAN (score of 3) Language and Culture",
-        "AP SPAN (score of 4-5) Language and Culture",
-        "AP Spanish -Language and Culture",
-        "AP Spanish Language",
-        "AP Spanish Language and Culture",
-        "AP Spanish Language and Culture (Score of 3)",
-        "AP Spanish Language and Culture (Score of 3-5)",
-        "AP Spanish Language and Culture (Score of 4 or 5)",
-        "AP Spanish Language/ Language and Culture",
-        "AP: Spanish Language & Culture"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 21,
-      "adopter_names": [
-        "Bakersfield College",
-        "Chaffey College",
-        "Coastline Community College",
-        "College of the Canyons",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Foothill College",
-        "Glendale Community College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Valley College",
-        "Merced College",
-        "Moreno Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Solano Community College",
-        "Woodland Community College"
-      ],
-      "potential": 79,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Southwest College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College"
-      ],
-      "total_addressable": 100,
-      "credit_recs": [
-        {
-          "course": "SPAN 1",
-          "credit": "5 hours in ELEMENTARY SPANISH"
-        },
-        {
-          "course": "SPAN 2",
-          "credit": "5 hours in ELEMENTARY SPANISH"
-        },
-        {
-          "course": "SPAN 3",
-          "credit": "5 hours in INTERMEDIATE SPANISH"
-        },
-        {
-          "course": "RCCD GE-A RCCD GE Area 3",
-          "credit": "5 hours in ELEMENTARY SPANISH"
-        },
-        {
-          "course": "SPAN 101",
-          "credit": "5 hours in BEGINNING SPANISH I"
-        },
-        {
-          "course": "SPAN 102",
-          "credit": "5 hours in BEGINNING SPANISH II"
-        },
-        {
-          "course": "CPL (C)",
-          "credit": "3 hours in (C) Humanities - (3 units)"
-        },
-        {
-          "course": "CSU GE C2",
-          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
-        },
-        {
-          "course": "IGETC 3B",
-          "credit": "3 hours in IGETC 3B – Humanities"
-        },
-        {
-          "course": "IGETC 6A",
-          "credit": "3 hours in IGETC 6A – Language Other Than English"
-        },
-        {
-          "course": "SPA 1",
-          "credit": "5 hours in Spanish 1"
-        },
-        {
-          "course": "SPA 2",
-          "credit": "5 hours in Spanish 2"
-        },
-        {
-          "course": "SPAN 001",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 002",
-          "credit": "4 hours in Elementary Spanish II"
-        },
-        {
-          "course": "SPAN 1",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 2",
-          "credit": "4 hours in Elementary Spanish II"
-        },
-        {
-          "course": "SPAN B1",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 101",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPANISH 003",
-          "credit": "5 hours in Intermediate Spanish I"
-        },
-        {
-          "course": "LACCD GE 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "SPANISH 004",
-          "credit": "5 hours in Intermediate Spanish II"
-        },
-        {
-          "course": "Spanish (SPAN) 002A",
-          "credit": "5 hours in Intermediate Spanish 1"
-        },
-        {
-          "course": "Spanish (SPAN) 022A",
-          "credit": "5 hours in Spanish for Heritage Speakers 1"
-        },
-        {
-          "course": "Spanish (SPAN) 002B",
-          "credit": "5 hours in Intermediate Spanish 2"
-        },
-        {
-          "course": "Spanish (SPAN) 022B",
-          "credit": "5 hours in Spanish for Heritage Speakers 2"
-        },
-        {
-          "course": "SPAN 101",
-          "credit": "5 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 102",
-          "credit": "5 hours in Elementary Spanish II"
-        },
-        {
-          "course": "SPAN C185",
-          "credit": "5 hours in Elementary Spanish 2"
-        },
-        {
-          "course": "Local GE Area 3B",
-          "credit": "5 hours in Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "4.5 hours in Arts and Humanities"
-        },
-        {
-          "course": "SPAN 201",
-          "credit": "5 hours in SPANISH I"
-        },
-        {
-          "course": "SPAN 202",
-          "credit": "5 hours in SPANISH II"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "SPAN 101A",
-          "credit": "5 hours in Elementary Spanish"
         }
       ]
     },
@@ -95345,118 +94027,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPICI-AC(A3-1-001",
-      "exhibit_ids": [
-        "MAPICI-AC(A3-1-001"
-      ],
-      "title": "ASE A3 — Manual Drive Train & Axles",
-      "unified_title": "ASE A3 — Manual Drive Train & Axles",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE CERTIFICATION (A3) A3 – MANUAL DRIVE TRAIN & AXLES"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "Copper Mountain College",
-        "Riverside City College"
-      ],
-      "potential": 68,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 3",
-          "credit": "4 hours in Man Drivetrain Systems"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPCBEN-ITAT-1-001|MAPCXH-ITAT-1-001",
       "exhibit_ids": [
         "MAPCBEN-ITAT-1-001",
@@ -97567,252 +96137,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "AUTO 010",
           "credit": "3 hours in Introduction To Automotive Technology"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICI-A0-A-1-001|MAPICI-A0-A1-1-001|MAPICI-AC(A2-1-001",
-      "exhibit_ids": [
-        "MAPICI-A0-A-1-001",
-        "MAPICI-A0-A1-1-001",
-        "MAPICI-AC(A2-1-001"
-      ],
-      "title": "ASE A4 — Suspension & Steering",
-      "unified_title": "ASE A4 — Suspension & Steering",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE CERTIFICATION (A4) A4 – SUSPENSION & STEERING",
-        "AUTO 052 - Auto Suspension & Steering - ASE Certificate",
-        "AUTO 052L - Auto Suspension & Steering Laboratory - ASE Certification Automobile -Suspension and Steering"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 4,
-      "adopter_names": [
-        "Copper Mountain College",
-        "Los Medanos College",
-        "Riverside City College",
-        "San Bernardino Valley College"
-      ],
-      "potential": 66,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 4A",
-          "credit": "4 hours in Auto Steering & Suspension"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 120",
-          "credit": "4 hours in Auto Steering & Suspension"
-        },
-        {
-          "course": "AUTO 052L",
-          "credit": "1 hour in Automotive Suspension and Steering - Laboratory"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICI-AAC-1-001|MAPICI-AC(A6-1-001",
-      "exhibit_ids": [
-        "MAPICI-AAC-1-001",
-        "MAPICI-AC(A6-1-001"
-      ],
-      "title": "ASE A7 — Heating & Air Conditioning",
-      "unified_title": "ASE A7 — Heating & Air Conditioning",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE A7 Certificate",
-        "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "Local",
-      "adopters": 4,
-      "adopter_names": [
-        "College of the Desert",
-        "Copper Mountain College",
-        "Los Medanos College",
-        "Riverside City College"
-      ],
-      "potential": 66,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 7",
-          "credit": "4 hours in Auto Heat & Air"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 113",
-          "credit": "4 hours in Auto Heat & Air"
-        },
-        {
-          "course": "AUTO 018",
-          "credit": "4 hours in Automotive Heating, Ventilation & Air Conditioning"
         }
       ]
     },
@@ -116215,9 +114539,10 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPPRA-F3FS-1-001",
+      "exhibit_id": "MAPPRA-F3FS-1-001|MAPPRA-F3FS1-1-001",
       "exhibit_ids": [
-        "MAPPRA-F3FS-1-001"
+        "MAPPRA-F3FS-1-001",
+        "MAPPRA-F3FS1-1-001"
       ],
       "title": "Fire Service In-Service Training — Command & Control",
       "unified_title": "Fire Service In-Service Training — Command & Control",
@@ -116228,7 +114553,8 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.3,
       "quality_flag": "",
       "raw_titles": [
-        "FTECH 323B Fire Service In-Service Training/Command & Control - Internship/Apprenticeship"
+        "FTECH 323B Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
+        "FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship"
       ],
       "cpl_type": "Portfolio Review",
       "discipline": "Public and Protective Services",
@@ -116304,96 +114630,7 @@ window.CPL_STATEWIDE = {
         {
           "course": "FTECH 323XABC",
           "credit": "2 hours in Fire Service In-Service Training/Command & Control"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPPRA-F3FS1-1-001",
-      "exhibit_ids": [
-        "MAPPRA-F3FS1-1-001"
-      ],
-      "title": "Fire Service In-Service Training: Command and Control",
-      "unified_title": "Fire Service In-Service Training: Command and Control",
-      "is_classified": true,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.8,
-      "quality_flag": "",
-      "raw_titles": [
-        "FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship"
-      ],
-      "cpl_type": "Portfolio Review",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Modesto Junior College"
-      ],
-      "potential": 58,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Imperial Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 59,
-      "credit_recs": [
+        },
         {
           "course": "FTECH 323XABC",
           "credit": "0.5 hours in Fire Service In-Service Training/Command & Control"
@@ -125229,170 +123466,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "CPLICI-ASE7-1-001|MAPICI-ASE(34-1-001|MAPICI-CCSA-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE7-1-001",
-        "MAPICI-ASE(34-1-001",
-        "MAPICI-CCSA-1-001"
-      ],
-      "title": "ASE A7 — Heating and Air Conditioning",
-      "unified_title": "ASE A7 — Heating and Air Conditioning",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
-        "Automotive Services Excellence 7 (A7) Certificate",
-        "Climate Control Systems ASE A7"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 15,
-      "adopter_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "City College of San Francisco",
-        "Columbia College",
-        "Contra Costa College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Las Positas College",
-        "Lassen College",
-        "Mendocino College",
-        "Merced College",
-        "Rio Hondo College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College"
-      ],
-      "potential": 55,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chaffey College",
-        "Citrus College",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO B49",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 056",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 117",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO A7",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AT 58",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 44",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 58",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AT 112",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 240",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTOMO 701",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 066.",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUT 146",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "ATEC 7",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUSER 238",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 169G",
-          "credit": "2 hours in Climate Control Systems"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICI-FI1D-1-001",
       "exhibit_ids": [
         "MAPICI-FI1D-1-001"
@@ -126408,184 +124481,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "CS  005",
           "credit": "3 hours in Certified Ethical Hacker"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "CPLICI-ASE3-1-001|MAPICI-ASE(18-1-001|MAPICI-ASE(30-1-001|MAPICI-MDTA-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE3-1-001",
-        "MAPICI-ASE(18-1-001",
-        "MAPICI-ASE(30-1-001",
-        "MAPICI-MDTA-1-001"
-      ],
-      "title": "ASE A3 — Manual Drive Train and Axles",
-      "unified_title": "ASE A3 — Manual Drive Train and Axles",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Automotive Service Excellence (ASE) A3 Certificate",
-        "Automotive Service Excellence (ASE) A3 Certificate Manual Drive Train & Axles",
-        "Automotive Services Excellence 3 (A3) Certificate",
-        "Manual Drive Train and Axles ASE A3"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 16,
-      "adopter_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Mendocino College",
-        "Merced College",
-        "Rio Hondo College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College"
-      ],
-      "potential": 54,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO B48",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 077",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 113",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO A3",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AT 66",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 36",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AT 122",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 220",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 075L",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 077L",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTOMO 301",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 063A",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUT 144",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "ATEC 3",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUSER 117",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 172G",
-          "credit": "2 hours in Manual Drive Train and Axles"
-        },
-        {
-          "course": "AUTO 016",
-          "credit": "3 hours in Automotive Manual Transmissions & Drive Train Systems"
-        },
-        {
-          "course": "AUTO 213",
-          "credit": "3 hours in Automotive Manual Transmission"
         }
       ]
     },
@@ -130649,26 +128544,28 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "CPLICI-ASE4-1-001|MAPICI-ASE(19-1-001|MAPICI-ASE(31-1-001|MAPICI-SSAH-1-001",
+      "exhibit_id": "CPLICI-ASE3-1-001|MAPICI-AC(A3-1-001|MAPICI-ASE(18-1-001|MAPICI-ASE(30-1-001|MAPICI-MDTA-1-001",
       "exhibit_ids": [
-        "CPLICI-ASE4-1-001",
-        "MAPICI-ASE(19-1-001",
-        "MAPICI-ASE(31-1-001",
-        "MAPICI-SSAH-1-001"
+        "CPLICI-ASE3-1-001",
+        "MAPICI-AC(A3-1-001",
+        "MAPICI-ASE(18-1-001",
+        "MAPICI-ASE(30-1-001",
+        "MAPICI-MDTA-1-001"
       ],
-      "title": "ASE A4 — Suspension and Steering",
-      "unified_title": "ASE A4 — Suspension and Steering",
+      "title": "ASE A3 — Manual Drive Train and Axles",
+      "unified_title": "ASE A3 — Manual Drive Train and Axles",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
       "confidence_title": 0.97,
-      "confidence_issuer": 0.97,
+      "confidence_issuer": 0.98,
       "quality_flag": "",
       "raw_titles": [
-        "Automotive Service Excellence (ASE) A4 Certificate",
-        "Automotive Service Excellence (ASE) A4 Certificate Suspension & Steering",
-        "Automotive Services Excellence 4 (A4) Certificate",
-        "Suspension, Steering and Handling ASE A4"
+        "ASE CERTIFICATION (A3) A3 – MANUAL DRIVE TRAIN & AXLES",
+        "Automotive Service Excellence (ASE) A3 Certificate",
+        "Automotive Service Excellence (ASE) A3 Certificate Manual Drive Train & Axles",
+        "Automotive Services Excellence 3 (A3) Certificate",
+        "Manual Drive Train and Axles ASE A3"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -130677,12 +128574,11 @@ window.CPL_STATEWIDE = {
       "adopters": 18,
       "adopter_names": [
         "Bakersfield College",
-        "Barstow Community College",
         "Chabot College",
-        "City College of San Francisco",
         "College of the Desert",
         "Columbia College",
         "Contra Costa College",
+        "Copper Mountain College",
         "De Anza College",
         "East Los Angeles College",
         "Las Positas College",
@@ -130691,6 +128587,7 @@ window.CPL_STATEWIDE = {
         "Mendocino College",
         "Merced College",
         "Rio Hondo College",
+        "Riverside City College",
         "San Bernardino Valley College",
         "San Diego Miramar College",
         "Santa Ana College"
@@ -130700,17 +128597,18 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College",
         "American River College",
         "Antelope Valley College",
+        "Barstow Community College",
         "Butte College",
         "Cerritos College",
         "Chaffey College",
         "Citrus College",
+        "City College of San Francisco",
         "College of Alameda",
         "College of Marin",
         "College of the Canyons",
         "College of the Redwoods",
         "College of the Sequoias",
         "Compton College",
-        "Copper Mountain College",
         "Cosumnes River College",
         "Cuesta College",
         "Cuyamaca College",
@@ -130734,7 +128632,6 @@ window.CPL_STATEWIDE = {
         "Palomar College",
         "Pasadena City College",
         "Reedley College",
-        "Riverside City College",
         "Saddleback College",
         "San Diego College of Continuing Education",
         "San Diego College of Continuing Education Credit",
@@ -130753,80 +128650,88 @@ window.CPL_STATEWIDE = {
       "total_addressable": 70,
       "credit_recs": [
         {
-          "course": "AUTO B40",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AUTO B48",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 052",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AUTO 077",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 114",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AUTO 113",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO A4",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AUTO A3",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AT 56",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AT 66",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 32",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AUTO 36",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 59",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AT 122",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AT 120",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AUTO 220",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 200",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AUTO 075L",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 052L",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AUTO 077L",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTOMO 401",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AUTOMO 301",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 062A",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AUTO 063A",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUT 142",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AUT 144",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 55",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "ATEC 3",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "ATEC 4",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AUSER 117",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUSER 113",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
+          "course": "AUTO 172G",
+          "credit": "2 hours in Manual Drive Train and Axles"
         },
         {
-          "course": "AUTO 178G",
-          "credit": "2 hours in Suspension, Steering and Handling"
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUTO 012A",
-          "credit": "4 hours in Automotive Suspension & Steering Systems"
+          "course": "AUT 3",
+          "credit": "4 hours in Man Drivetrain Systems"
         },
         {
-          "course": "AUTO 214",
-          "credit": "3 hours in Automotive Wheel Alignment"
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 016",
+          "credit": "3 hours in Automotive Manual Transmissions & Drive Train Systems"
+        },
+        {
+          "course": "AUTO 213",
+          "credit": "3 hours in Automotive Manual Transmission"
         }
       ]
     },
@@ -132841,6 +130746,194 @@ window.CPL_STATEWIDE = {
         {
           "course": "DANCE 183",
           "credit": "2 hours in Dance Rehearsal & Performance 3"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "CPLICI-ASE7-1-001|MAPICI-AAC-1-001|MAPICI-AC(A6-1-001|MAPICI-ASE(34-1-001|MAPICI-CCSA-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE7-1-001",
+        "MAPICI-AAC-1-001",
+        "MAPICI-AC(A6-1-001",
+        "MAPICI-ASE(34-1-001",
+        "MAPICI-CCSA-1-001"
+      ],
+      "title": "ASE A7 — Heating and Air Conditioning",
+      "unified_title": "ASE A7 — Heating and Air Conditioning",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "ASE A7 Certificate",
+        "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
+        "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
+        "Automotive Services Excellence 7 (A7) Certificate",
+        "Climate Control Systems ASE A7"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 19,
+      "adopter_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Las Positas College",
+        "Lassen College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 51,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chaffey College",
+        "Citrus College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 70,
+      "credit_recs": [
+        {
+          "course": "AUTO B49",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 056",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 117",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO A7",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AT 58",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 44",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 58",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AT 112",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 240",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTOMO 701",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 066.",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUT 146",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "ATEC 7",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUSER 238",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 169G",
+          "credit": "2 hours in Climate Control Systems"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 7",
+          "credit": "4 hours in Auto Heat & Air"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 113",
+          "credit": "4 hours in Auto Heat & Air"
+        },
+        {
+          "course": "AUTO 018",
+          "credit": "4 hours in Automotive Heating, Ventilation & Air Conditioning"
         }
       ]
     },
@@ -138493,6 +136586,214 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "CPLICI-ASE4-1-001|MAPICI-A0-A-1-001|MAPICI-A0-A1-1-001|MAPICI-AC(A2-1-001|MAPICI-ASE(19-1-001|MAPICI-ASE(31-1-001|MAPICI-SSAH-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE4-1-001",
+        "MAPICI-A0-A-1-001",
+        "MAPICI-A0-A1-1-001",
+        "MAPICI-AC(A2-1-001",
+        "MAPICI-ASE(19-1-001",
+        "MAPICI-ASE(31-1-001",
+        "MAPICI-SSAH-1-001"
+      ],
+      "title": "ASE A4 — Suspension and Steering",
+      "unified_title": "ASE A4 — Suspension and Steering",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.97,
+      "quality_flag": "",
+      "raw_titles": [
+        "ASE CERTIFICATION (A4) A4 – SUSPENSION & STEERING",
+        "AUTO 052 - Auto Suspension & Steering - ASE Certificate",
+        "AUTO 052L - Auto Suspension & Steering Laboratory - ASE Certification Automobile -Suspension and Steering",
+        "Automotive Service Excellence (ASE) A4 Certificate",
+        "Automotive Service Excellence (ASE) A4 Certificate Suspension & Steering",
+        "Automotive Services Excellence 4 (A4) Certificate",
+        "Suspension, Steering and Handling ASE A4"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 21,
+      "adopter_names": [
+        "Bakersfield College",
+        "Barstow Community College",
+        "Chabot College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 49,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Butte College",
+        "Cerritos College",
+        "Chaffey College",
+        "Citrus College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 70,
+      "credit_recs": [
+        {
+          "course": "AUTO B40",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 052",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 114",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO A4",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AT 56",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 32",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 59",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AT 120",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 200",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 052L",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTOMO 401",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 062A",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUT 142",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 55",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "ATEC 4",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUSER 113",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 178G",
+          "credit": "2 hours in Suspension, Steering and Handling"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 4A",
+          "credit": "4 hours in Auto Steering & Suspension"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 120",
+          "credit": "4 hours in Auto Steering & Suspension"
+        },
+        {
+          "course": "AUTO 052L",
+          "credit": "1 hour in Automotive Suspension and Steering - Laboratory"
+        },
+        {
+          "course": "AUTO 012A",
+          "credit": "4 hours in Automotive Suspension & Steering Systems"
+        },
+        {
+          "course": "AUTO 214",
+          "credit": "3 hours in Automotive Wheel Alignment"
+        }
+      ]
+    },
+    {
       "exhibit_id": "CPLICI-ASE5-1-001|MAPICI-ABSA-1-001|MAPICI-AC(A4-1-001|MAPICI-ASE(20-1-001|MAPICI-ASE(32-1-001|MAPICI-ASE(6-1-001",
       "exhibit_ids": [
         "CPLICI-ASE5-1-001",
@@ -139760,13 +138061,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPOO-S(1C-1-001"
       ],
-      "title": "Self-Defense",
-      "unified_title": "Self-Defense",
+      "title": "Self Defense",
+      "unified_title": "Self Defense",
       "is_classified": true,
       "issuing_agency": "",
       "training_agency": "",
       "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
+      "confidence_issuer": 0.4,
       "quality_flag": "",
       "raw_titles": [
         "Self-Defense (KIN 121 C)"
@@ -157645,6 +155946,563 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPSAH-AELA1-1-001|MAPSAH-AELA3-1-001|MAPSAS-A-EL-1-001|MAPSAS-A-EL2-1-001|MAPSAS-A:EL1-1-001|MAPSAS-A:EL2-1-001|MAPSAS-AE-E-1-001|MAPSAS-AE-L1-1-001|MAPSAS-AE-L2-1-001|MAPSAS-AEE--1-001|MAPSAS-AEEL-1-001|MAPSAS-AEEL2-1-001|MAPSAS-AEEL4-1-001|MAPSAS-AEEL6-1-001|MAPSAS-AEL&-1-001|MAPSAS-AEL&1-1-001|MAPSAS-AEL2-1-001|MAPSAS-AEL4-1-001|MAPSAS-AELA-1-001|MAPSAS-AELA12-1-001|MAPSAS-AELA2-1-001|MAPSAS-AELA3-1-001|MAPSAS-AELA5-1-001|MAPSAS-AELA7-1-001|MAPSAS-AELC-1-001|MAPSAS-AP(E-1-001",
+      "exhibit_ids": [
+        "MAPSAH-AELA1-1-001",
+        "MAPSAH-AELA3-1-001",
+        "MAPSAS-A-EL-1-001",
+        "MAPSAS-A-EL2-1-001",
+        "MAPSAS-A:EL1-1-001",
+        "MAPSAS-A:EL2-1-001",
+        "MAPSAS-AE-E-1-001",
+        "MAPSAS-AE-L1-1-001",
+        "MAPSAS-AE-L2-1-001",
+        "MAPSAS-AEE--1-001",
+        "MAPSAS-AEEL-1-001",
+        "MAPSAS-AEEL2-1-001",
+        "MAPSAS-AEEL4-1-001",
+        "MAPSAS-AEEL6-1-001",
+        "MAPSAS-AEL&-1-001",
+        "MAPSAS-AEL&1-1-001",
+        "MAPSAS-AEL2-1-001",
+        "MAPSAS-AEL4-1-001",
+        "MAPSAS-AELA-1-001",
+        "MAPSAS-AELA12-1-001",
+        "MAPSAS-AELA2-1-001",
+        "MAPSAS-AELA3-1-001",
+        "MAPSAS-AELA5-1-001",
+        "MAPSAS-AELA7-1-001",
+        "MAPSAS-AELC-1-001",
+        "MAPSAS-AP(E-1-001"
+      ],
+      "title": "AP English Language and Composition",
+      "unified_title": "AP English Language and Composition",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.96,
+      "confidence_issuer": 0.95,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP - English Language",
+        "AP - English Language/Composition",
+        "AP : English Language",
+        "AP : English Language & Composition",
+        "AP English - Language and Composition",
+        "AP English Language",
+        "AP English Language Composition",
+        "AP English Language and Composition",
+        "AP English Language and Composition (IGETC)",
+        "AP English Language/Composition (score 3-5): Cal-GETC Area 1A",
+        "AP English: Language & Composition (Score of 3-5)",
+        "AP English: Language and Composition",
+        "AP Exam - English Language & Comp",
+        "AP Exam English Language (Score 3-5)",
+        "AP Exam English Language and Composition (Score 3-5)",
+        "AP Exam: English - Language and Composition",
+        "AP Exam: English Language and Composition",
+        "AP: English Language & Composition"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 82,
+      "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "potential": 33,
+      "potential_names": [
+        "Cañada College",
+        "Cerro Coso Community College",
+        "College of Alameda",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Siskiyous",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Feather River College",
+        "Fullerton College",
+        "Gavilan College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Los Angeles Harbor College",
+        "MiraCosta College",
+        "Mission College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 115,
+      "credit_recs": [
+        {
+          "course": "ENG 1A",
+          "credit": "4 hours in Principles of Composition I"
+        },
+        {
+          "course": "ENGL C1000",
+          "credit": "4 hours in Academic Reading and Writing"
+        },
+        {
+          "course": "ENGLISH 101",
+          "credit": "3 hours in College Reading and Composition I"
+        },
+        {
+          "course": "ENGL C1000",
+          "credit": "3 hours in Academic Reading and Writing"
+        },
+        {
+          "course": "LACCD GE 1A",
+          "credit": "3 hours in English Composition"
+        },
+        {
+          "course": "CPL (A1)",
+          "credit": "3 hours in (A1) English Composition - (3 units)"
+        },
+        {
+          "course": "CPL (C)",
+          "credit": "3 hours in (C) Humanities - (3 units)"
+        },
+        {
+          "course": "CPL (A2)",
+          "credit": "3 hours in Communication and Analytical Thinking - (3 units)"
+        },
+        {
+          "course": "ENGLISH 101",
+          "credit": "3 hours in COLLEGE READING AND COMPOSITION I"
+        },
+        {
+          "course": "CSU GE A2",
+          "credit": "3 hours in CSU GE A2 – Written Communication"
+        },
+        {
+          "course": "IGETC 1A",
+          "credit": "3 hours in IGETC 1A – English Composition"
+        },
+        {
+          "course": "Local GE 1A",
+          "credit": "3 hours in English Communication"
+        },
+        {
+          "course": "Cal-GETC Area 1A",
+          "credit": "3 hours in English Composition"
+        },
+        {
+          "course": "Local GE Area 1A",
+          "credit": "3 hours in English Composition"
+        },
+        {
+          "course": "Local GE Area 1A",
+          "credit": "6 hours in English Composition"
+        },
+        {
+          "course": "ENGL C1000",
+          "credit": "5 hours in Academic Reading and Writing"
+        },
+        {
+          "course": "English 101Y",
+          "credit": "3.5 hours in College Reading and Composition I Plus 2-Hour Lab"
+        },
+        {
+          "course": "English 101Z",
+          "credit": "4 hours in College Composition and Reading I Plus 3-Hour Lab"
+        },
+        {
+          "course": "E.S.L. 110",
+          "credit": "4 hours in College Composition for Non-Native Speakers"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPSAH-AELA-1-001|MAPSAH-AELA2-1-001|MAPSAH-AELA4-1-001|MAPSAH-AELA5-1-001|MAPSAS-A-EL1-1-001|MAPSAS-A-EL3-1-001|MAPSAS-A:EL-1-001|MAPSAS-A:E–-1-001|MAPSAS-AE-L-1-001|MAPSAS-AE-L3-1-001|MAPSAS-AEEL1-1-001|MAPSAS-AEEL3-1-001|MAPSAS-AEEL5-1-001|MAPSAS-AEEL7-1-001|MAPSAS-AEL&2-1-001|MAPSAS-AEL3-1-001|MAPSAS-AEL5-1-001|MAPSAS-AELA1-1-001|MAPSAS-AELA13-1-001|MAPSAS-AELA4-1-001|MAPSAS-AELA6-1-001|MAPSAS-AELA8-1-001|MAPSAS-AELA9-1-001|MAPSAS-EL&C-1-001",
+      "exhibit_ids": [
+        "MAPSAH-AELA-1-001",
+        "MAPSAH-AELA2-1-001",
+        "MAPSAH-AELA4-1-001",
+        "MAPSAH-AELA5-1-001",
+        "MAPSAS-A-EL1-1-001",
+        "MAPSAS-A-EL3-1-001",
+        "MAPSAS-A:EL-1-001",
+        "MAPSAS-A:E–-1-001",
+        "MAPSAS-AE-L-1-001",
+        "MAPSAS-AE-L3-1-001",
+        "MAPSAS-AEEL1-1-001",
+        "MAPSAS-AEEL3-1-001",
+        "MAPSAS-AEEL5-1-001",
+        "MAPSAS-AEEL7-1-001",
+        "MAPSAS-AEL&2-1-001",
+        "MAPSAS-AEL3-1-001",
+        "MAPSAS-AEL5-1-001",
+        "MAPSAS-AELA1-1-001",
+        "MAPSAS-AELA13-1-001",
+        "MAPSAS-AELA4-1-001",
+        "MAPSAS-AELA6-1-001",
+        "MAPSAS-AELA8-1-001",
+        "MAPSAS-AELA9-1-001",
+        "MAPSAS-EL&C-1-001"
+      ],
+      "title": "AP English Literature and Composition",
+      "unified_title": "AP English Literature and Composition",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.96,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP - English Literature",
+        "AP - English Literature/Composition",
+        "AP : English Literature",
+        "AP : English – Literature & Composition",
+        "AP English - Literature and Composition",
+        "AP English Literature",
+        "AP English Literature and Composition",
+        "AP English Literature/Composition (score 3-5): Cal-GETC Area 1A or 3B",
+        "AP English: Literature & Composition (Score of 3-5)",
+        "AP English: Literature and Composition (ENGL C1000)",
+        "AP English: Literature and Composition (Local GE)",
+        "AP Exam English Literature (Score 3-5)",
+        "AP Exam English Literature and Composition (Score 3-5)",
+        "AP Exam: English Literature and Composition",
+        "English Literature & Composition"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 82,
+      "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "potential": 33,
+      "potential_names": [
+        "Cañada College",
+        "Cerro Coso Community College",
+        "College of Alameda",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Siskiyous",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Feather River College",
+        "Fullerton College",
+        "Gavilan College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Los Angeles Harbor College",
+        "MiraCosta College",
+        "Mission College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 115,
+      "credit_recs": [
+        {
+          "course": "ENG 1A",
+          "credit": "4 hours in Principles of Composition I"
+        },
+        {
+          "course": "ENGL C1000",
+          "credit": "4 hours in Academic Reading and Writing"
+        },
+        {
+          "course": "CPL (A1)",
+          "credit": "3 hours in (A1) English Composition - (3 units)"
+        },
+        {
+          "course": "CPL (C)",
+          "credit": "3 hours in (C) Humanities - (3 units)"
+        },
+        {
+          "course": "ENGL 02",
+          "credit": "3 hours in Oral Interpretation"
+        },
+        {
+          "course": "CSU GE A2",
+          "credit": "3 hours in CSU GE A2 – Written Communication"
+        },
+        {
+          "course": "CSU GE C2",
+          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
+        },
+        {
+          "course": "IGETC 1A",
+          "credit": "3 hours in IGETC 1A – English Composition"
+        },
+        {
+          "course": "IGETC 3B",
+          "credit": "3 hours in IGETC 3B – Humanities"
+        },
+        {
+          "course": "ENGL C1000H",
+          "credit": "4 hours in Academic Reading and Writing - Honors"
+        },
+        {
+          "course": "RCCD GE-A 3",
+          "credit": "3 hours in Area 3: Arts and Humanities (3-5 units)"
+        },
+        {
+          "course": "ENGLISH 101",
+          "credit": "3 hours in College Reading and Composition I"
+        },
+        {
+          "course": "ENGL C1000",
+          "credit": "3 hours in Academic Reading and Writing"
+        },
+        {
+          "course": "LACCD GE 1A",
+          "credit": "3 hours in English Composition"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "ENGL C140",
+          "credit": "3 hours in Appreciation of Literature"
+        },
+        {
+          "course": "Local GE 1A",
+          "credit": "3 hours in English Communication"
+        },
+        {
+          "course": "Local GE 3",
+          "credit": "3 hours in Art & Humanities"
+        },
+        {
+          "course": "Local GE E1",
+          "credit": "3 hours in English Composition"
+        },
+        {
+          "course": "Local GE C",
+          "credit": "3 hours in Humanities"
+        },
+        {
+          "course": "Cal-GETC 1A or 3B",
+          "credit": "3 hours in English Composition or Humanities"
+        },
+        {
+          "course": "ENGL 1C",
+          "credit": "3 hours in Introduction to Literature"
+        },
+        {
+          "course": "Local GE Area 1A",
+          "credit": "3 hours in English Composition"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "ENGL C1000",
+          "credit": "5 hours in Academic Reading and Writing"
+        },
+        {
+          "course": "English 101Y",
+          "credit": "3.5 hours in College Reading and Composition I Plus 2-Hour Lab"
+        },
+        {
+          "course": "English 101Z",
+          "credit": "4 hours in College Composition and Reading I Plus 3-Hour Lab"
+        },
+        {
+          "course": "E.S.L. 110",
+          "credit": "4 hours in College Composition for Non-Native Speakers"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPSAH-AHWW-1-001|MAPSAH-WHE-1-001|MAPSAS-A-WH-1-001|MAPSAS-A-WH1-1-001|MAPSAS-A:WH-1-001|MAPSAS-A:WH1-1-001|MAPSAS-A:WH2-1-001|MAPSAS-A:WH3-1-001|MAPSAS-AE-W-1-001|MAPSAS-AEWH-1-001|MAPSAS-AEWH1-1-001|MAPSAS-AEWH2-1-001|MAPSAS-AEWH3-1-001|MAPSAS-AEWH4-1-001|MAPSAS-AEWH5-1-001|MAPSAS-AEWH6-1-001|MAPSAS-AH-W-1-001|MAPSAS-AHWH-1-001|MAPSAS-AP(W-1-001|MAPSAS-AWH1-1-001|MAPSAS-AWH2-1-001|MAPSAS-AWH3-1-001|MAPSAS-AWH4-1-001|MAPSAS-AWHM-1-001|MAPSAS-AWHM1-1-001|MAPSAS-AWHM2-1-001|MAPSAS-AWHM3-1-001|MAPSAS-AWHM4-1-001|MAPSAS-AWHM5-1-001|MAPSAS-AWHM6-1-001|MAPSAS-AWHM7-1-001",
       "exhibit_ids": [
         "MAPSAH-AHWW-1-001",
@@ -162410,6 +161268,237 @@ window.CPL_STATEWIDE = {
         {
           "course": "BA 102A",
           "credit": "3 hours in Principles of Economics-Macroeconomics"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPSAH-AGAP-1-001|MAPSAS-A-CG-1-001|MAPSAS-A:CG-1-001|MAPSAS-ACG&-1-001|MAPSAS-ACG&1-1-001|MAPSAS-ACGA-1-001|MAPSAS-ACGA1-1-001|MAPSAS-ACGA2-1-001|MAPSAS-ACGA3-1-001|MAPSAS-ACGA4-1-001|MAPSAS-ACGA5-1-001|MAPSAS-ACGP-1-001|MAPSAS-AECG-1-001|MAPSAS-AECG1-1-001|MAPSAS-AECG2-1-001|MAPSAS-AGAP-1-001",
+      "exhibit_ids": [
+        "MAPSAH-AGAP-1-001",
+        "MAPSAS-A-CG-1-001",
+        "MAPSAS-A:CG-1-001",
+        "MAPSAS-ACG&-1-001",
+        "MAPSAS-ACG&1-1-001",
+        "MAPSAS-ACGA-1-001",
+        "MAPSAS-ACGA1-1-001",
+        "MAPSAS-ACGA2-1-001",
+        "MAPSAS-ACGA3-1-001",
+        "MAPSAS-ACGA4-1-001",
+        "MAPSAS-ACGA5-1-001",
+        "MAPSAS-ACGP-1-001",
+        "MAPSAS-AECG-1-001",
+        "MAPSAS-AECG1-1-001",
+        "MAPSAS-AECG2-1-001",
+        "MAPSAS-AGAP-1-001"
+      ],
+      "title": "AP Comparative Government and Politics",
+      "unified_title": "AP Comparative Government and Politics",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.99,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP - Comparative Government & Politics",
+        "AP : Comparative Government & Politics",
+        "AP Comparative Government & Politics (Score of 3-5)",
+        "AP Comparative Government & Politics (score 3-5): Cal-GETC Area 4",
+        "AP Comparative Government and Politics",
+        "AP Exam Comparative Government and Politics (Score 3-5)",
+        "AP Exam: Comparative Government & Politics",
+        "AP Exam: Comparative Government and Politics",
+        "AP Government and Politics - Comparative",
+        "AP Government and Politics: Comparative",
+        "AP: Comparative Government & Politics"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 81,
+      "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "potential": 31,
+      "potential_names": [
+        "Cañada College",
+        "Cerro Coso Community College",
+        "College of Alameda",
+        "College of San Mateo",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Feather River College",
+        "Fullerton College",
+        "Gavilan College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "MiraCosta College",
+        "Mission College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palomar College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 112,
+      "credit_recs": [
+        {
+          "course": "PS 12",
+          "credit": "3 hours in COMPARATIVE POLITICS AND GOVERNMENT"
+        },
+        {
+          "course": "POLS 102",
+          "credit": "3 hours in Modern Comparative Governments"
+        },
+        {
+          "course": "CPL (D2)",
+          "credit": "3 hours in History and Political Sciences - (3 units)"
+        },
+        {
+          "course": "CSU GE D8",
+          "credit": "3 hours in CSU GE D8 – Political Science, Government and Legal Institutions"
+        },
+        {
+          "course": "IGETC 4",
+          "credit": "3 hours in IGETC 4 – Social Sciences"
+        },
+        {
+          "course": "POL 2",
+          "credit": "3 hours in Comparative Politics"
+        },
+        {
+          "course": "GE 4",
+          "credit": "3 hours in Area 4 - Social and Behavioral Sciences (3 units)"
+        },
+        {
+          "course": "POL SCI 002",
+          "credit": "3 hours in Introduction to Comparative Politics"
+        },
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        },
+        {
+          "course": "Political Science (POLSC) 002",
+          "credit": "3 hours in Comparative Politics"
+        },
+        {
+          "course": "PSCI C185",
+          "credit": "3 hours in Comparative Government and Politics"
+        },
+        {
+          "course": "Local GE 4",
+          "credit": "4 hours in Social & Behavioral science"
+        },
+        {
+          "course": "POLT 201",
+          "credit": "3 hours in Introduction to Comparative Politics"
+        },
+        {
+          "course": "Cal-GETC Area 4",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        },
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        },
+        {
+          "course": "Local GE Area 4",
+          "credit": "4.5 hours in SOCIAL AND BEHAVIORAL SCIENCES"
         }
       ]
     },
@@ -167328,6 +166417,270 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPSAH-ASLL1-1-001|MAPSAS-A-SL1-1-001|MAPSAS-A-SL3-1-001|MAPSAS-A:SL2-1-001|MAPSAS-A:SL3-1-001|MAPSAS-AE-S1-1-001|MAPSAS-AESL-1-001|MAPSAS-AESL3-1-001|MAPSAS-AESL6-1-001|MAPSAS-AS-A1-1-001|MAPSAS-ASL(-1-001|MAPSAS-ASL3-1-001|MAPSAS-ASL4-1-001|MAPSAS-ASL7-1-001|MAPSAS-ASLA16-1-001|MAPSAS-ASLA18-1-001|MAPSAS-ASLA2-1-001|MAPSAS-ASLA3-1-001|MAPSAS-ASLA5-1-001|MAPSAS-ASLA8-1-001|MAPSAS-ASLC1-1-001",
+      "exhibit_ids": [
+        "MAPSAH-ASLL1-1-001",
+        "MAPSAS-A-SL1-1-001",
+        "MAPSAS-A-SL3-1-001",
+        "MAPSAS-A:SL2-1-001",
+        "MAPSAS-A:SL3-1-001",
+        "MAPSAS-AE-S1-1-001",
+        "MAPSAS-AESL-1-001",
+        "MAPSAS-AESL3-1-001",
+        "MAPSAS-AESL6-1-001",
+        "MAPSAS-AS-A1-1-001",
+        "MAPSAS-ASL(-1-001",
+        "MAPSAS-ASL3-1-001",
+        "MAPSAS-ASL4-1-001",
+        "MAPSAS-ASL7-1-001",
+        "MAPSAS-ASLA16-1-001",
+        "MAPSAS-ASLA18-1-001",
+        "MAPSAS-ASLA2-1-001",
+        "MAPSAS-ASLA3-1-001",
+        "MAPSAS-ASLA5-1-001",
+        "MAPSAS-ASLA8-1-001",
+        "MAPSAS-ASLC1-1-001"
+      ],
+      "title": "AP Spanish Literature and Culture",
+      "unified_title": "AP Spanish Literature and Culture",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.98,
+      "confidence_issuer": 0.99,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP - Spanish Literature",
+        "AP - Spanish Literature & Culture",
+        "AP : Spanish Literature",
+        "AP : Spanish Literature and Culture",
+        "AP Exam - Spanish Literature & Culture",
+        "AP Exam Spanish Literature and Culture",
+        "AP Exam: Spanish Literature and Culture",
+        "AP Spanish -Literature and Culture",
+        "AP Spanish Literature",
+        "AP Spanish Literature & Culture (score 3-5): Cal-GETC Area 3B",
+        "AP Spanish Literature (Score 3-5)",
+        "AP Spanish Literature and Culture",
+        "AP Spanish Literature and Culture (Score of 3-5)",
+        "AP Spanish Literature/ Literature and Culture"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 80,
+      "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "potential": 29,
+      "potential_names": [
+        "Cañada College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Fullerton College",
+        "Gavilan College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "MiraCosta College",
+        "Mission College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 109,
+      "credit_recs": [
+        {
+          "course": "SPAN 1",
+          "credit": "5 hours in ELEMENTARY SPANISH"
+        },
+        {
+          "course": "SPAN 2",
+          "credit": "5 hours in ELEMENTARY SPANISH"
+        },
+        {
+          "course": "SPAN 3",
+          "credit": "5 hours in INTERMEDIATE SPANISH"
+        },
+        {
+          "course": "RCCD GE-A RCCD GE Area 3",
+          "credit": "5 hours in ELEMENTARY SPANISH"
+        },
+        {
+          "course": "SPAN 124H",
+          "credit": "3 hours in Honors English Translations Of Masterpieces Of Hispanic Literature"
+        },
+        {
+          "course": "CPL (C)",
+          "credit": "3 hours in (C) Humanities - (3 units)"
+        },
+        {
+          "course": "IGETC 3B",
+          "credit": "3 hours in IGETC 3B – Humanities"
+        },
+        {
+          "course": "CSU GE C2",
+          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
+        },
+        {
+          "course": "IGETC 6A",
+          "credit": "3 hours in IGETC 6A – Language Other Than English"
+        },
+        {
+          "course": "RCCD GE-A 3",
+          "credit": "3 hours in Area 3: Arts and Humanities (3-5 units)"
+        },
+        {
+          "course": "SPAN 20A",
+          "credit": "4 hours in Spanish for Spanish Speakers I"
+        },
+        {
+          "course": "SPAN 20B",
+          "credit": "4 hours in Spanish for Spanish Speakers II"
+        },
+        {
+          "course": "SPANISH 004",
+          "credit": "5 hours in Intermediate Spanish II"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "Spanish (SPAN) 032",
+          "credit": "3 hours in Introduction to Spanish and Latin American Literature"
+        },
+        {
+          "course": "Local GE 3B",
+          "credit": "3 hours in 3B. Humanities"
+        },
+        {
+          "course": "SPAN C185",
+          "credit": "5 hours in Elementary Spanish 2"
+        },
+        {
+          "course": "GE 3B",
+          "credit": "3 hours in Area 3- Humanities"
+        },
+        {
+          "course": "Cal-GETC Area 3B",
+          "credit": "3 hours in Humanities"
+        },
+        {
+          "course": "SPAN 3",
+          "credit": "4 hours in Intermediate Spanish I"
+        },
+        {
+          "course": "Local GE Area 3B",
+          "credit": "5 hours in Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "4.5 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPCBEH-ITMA-1-001",
       "exhibit_ids": [
         "MAPCBEH-ITMA-1-001"
@@ -169740,6 +169093,330 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPSAH-AS(O-1-001|MAPSAH-ASLA-1-001|MAPSAH-ASLL-1-001|MAPSAS-A-SL-1-001|MAPSAS-A-SL2-1-001|MAPSAS-A:SL-1-001|MAPSAS-A:SL1-1-001|MAPSAS-AE-S-1-001|MAPSAS-AESA-1-001|MAPSAS-AESL1-1-001|MAPSAS-AESL2-1-001|MAPSAS-AESL4-1-001|MAPSAS-AESL5-1-001|MAPSAS-AS-A-1-001|MAPSAS-ASL&-1-001|MAPSAS-ASL1-1-001|MAPSAS-ASL2-1-001|MAPSAS-ASL5-1-001|MAPSAS-ASL6-1-001|MAPSAS-ASLA-1-001|MAPSAS-ASLA1-1-001|MAPSAS-ASLA15-1-001|MAPSAS-ASLA17-1-001|MAPSAS-ASLA4-1-001|MAPSAS-ASLA6-1-001|MAPSAS-ASLA7-1-001|MAPSAS-ASLC-1-001",
+      "exhibit_ids": [
+        "MAPSAH-AS(O-1-001",
+        "MAPSAH-ASLA-1-001",
+        "MAPSAH-ASLL-1-001",
+        "MAPSAS-A-SL-1-001",
+        "MAPSAS-A-SL2-1-001",
+        "MAPSAS-A:SL-1-001",
+        "MAPSAS-A:SL1-1-001",
+        "MAPSAS-AE-S-1-001",
+        "MAPSAS-AESA-1-001",
+        "MAPSAS-AESL1-1-001",
+        "MAPSAS-AESL2-1-001",
+        "MAPSAS-AESL4-1-001",
+        "MAPSAS-AESL5-1-001",
+        "MAPSAS-AS-A-1-001",
+        "MAPSAS-ASL&-1-001",
+        "MAPSAS-ASL1-1-001",
+        "MAPSAS-ASL2-1-001",
+        "MAPSAS-ASL5-1-001",
+        "MAPSAS-ASL6-1-001",
+        "MAPSAS-ASLA-1-001",
+        "MAPSAS-ASLA1-1-001",
+        "MAPSAS-ASLA15-1-001",
+        "MAPSAS-ASLA17-1-001",
+        "MAPSAS-ASLA4-1-001",
+        "MAPSAS-ASLA6-1-001",
+        "MAPSAS-ASLA7-1-001",
+        "MAPSAS-ASLC-1-001"
+      ],
+      "title": "AP Spanish Language and Culture",
+      "unified_title": "AP Spanish Language and Culture",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.98,
+      "confidence_issuer": 0.99,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP - Spanish Language",
+        "AP - Spanish Language & Culture",
+        "AP : Spanish Language",
+        "AP : Spanish Language and Culture",
+        "AP Exam - Spanish Language & Culture",
+        "AP Exam Spanish Language and Culture Score of 3",
+        "AP Exam Spanish Language and Culture Score of 4 or 5",
+        "AP Exam: Spanish Language and Culture",
+        "AP Exam: Spanish and Language",
+        "AP SPAN (score of 3) Language and Culture",
+        "AP SPAN (score of 4-5) Language and Culture",
+        "AP Spanish -Language and Culture",
+        "AP Spanish Language",
+        "AP Spanish Language & Culture (score 3-5): Cal-GETC Area 3B",
+        "AP Spanish Language and Culture",
+        "AP Spanish Language and Culture (Score of 3)",
+        "AP Spanish Language and Culture (Score of 3-5)",
+        "AP Spanish Language and Culture (Score of 4 or 5)",
+        "AP Spanish Language/ Language and Culture",
+        "AP: Spanish Language & Culture"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 81,
+      "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "potential": 28,
+      "potential_names": [
+        "Cañada College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Fullerton College",
+        "Gavilan College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "MiraCosta College",
+        "Mission College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 109,
+      "credit_recs": [
+        {
+          "course": "SPAN 1",
+          "credit": "5 hours in ELEMENTARY SPANISH"
+        },
+        {
+          "course": "SPAN 2",
+          "credit": "5 hours in ELEMENTARY SPANISH"
+        },
+        {
+          "course": "SPAN 3",
+          "credit": "5 hours in INTERMEDIATE SPANISH"
+        },
+        {
+          "course": "RCCD GE-A RCCD GE Area 3",
+          "credit": "5 hours in ELEMENTARY SPANISH"
+        },
+        {
+          "course": "SPAN 101",
+          "credit": "5 hours in BEGINNING SPANISH I"
+        },
+        {
+          "course": "SPAN 102",
+          "credit": "5 hours in BEGINNING SPANISH II"
+        },
+        {
+          "course": "CPL (C)",
+          "credit": "3 hours in (C) Humanities - (3 units)"
+        },
+        {
+          "course": "CSU GE C2",
+          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
+        },
+        {
+          "course": "IGETC 3B",
+          "credit": "3 hours in IGETC 3B – Humanities"
+        },
+        {
+          "course": "IGETC 6A",
+          "credit": "3 hours in IGETC 6A – Language Other Than English"
+        },
+        {
+          "course": "SPA 1",
+          "credit": "5 hours in Spanish 1"
+        },
+        {
+          "course": "SPA 2",
+          "credit": "5 hours in Spanish 2"
+        },
+        {
+          "course": "SPAN 001",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN 002",
+          "credit": "4 hours in Elementary Spanish II"
+        },
+        {
+          "course": "SPAN 1",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN 2",
+          "credit": "4 hours in Elementary Spanish II"
+        },
+        {
+          "course": "SPAN B1",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN 101",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPANISH 003",
+          "credit": "5 hours in Intermediate Spanish I"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "SPANISH 004",
+          "credit": "5 hours in Intermediate Spanish II"
+        },
+        {
+          "course": "Spanish (SPAN) 002A",
+          "credit": "5 hours in Intermediate Spanish 1"
+        },
+        {
+          "course": "Spanish (SPAN) 022A",
+          "credit": "5 hours in Spanish for Heritage Speakers 1"
+        },
+        {
+          "course": "Spanish (SPAN) 002B",
+          "credit": "5 hours in Intermediate Spanish 2"
+        },
+        {
+          "course": "Spanish (SPAN) 022B",
+          "credit": "5 hours in Spanish for Heritage Speakers 2"
+        },
+        {
+          "course": "SPAN 101",
+          "credit": "5 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN 102",
+          "credit": "5 hours in Elementary Spanish II"
+        },
+        {
+          "course": "SPAN C185",
+          "credit": "5 hours in Elementary Spanish 2"
+        },
+        {
+          "course": "Cal-GETC Area 3B",
+          "credit": "3 hours in Humanities"
+        },
+        {
+          "course": "Local GE Area 3B",
+          "credit": "5 hours in Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "4.5 hours in Arts and Humanities"
+        },
+        {
+          "course": "SPAN 201",
+          "credit": "5 hours in SPANISH I"
+        },
+        {
+          "course": "SPAN 202",
+          "credit": "5 hours in SPANISH II"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "SPAN 101A",
+          "credit": "5 hours in Elementary Spanish"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPSAH-APC(-1-001|MAPSAS-A-PC1-1-001|MAPSAS-A:PC-1-001|MAPSAS-AE-P3-1-001|MAPSAS-AEPC-1-001|MAPSAS-AEPC1-1-001|MAPSAS-AEPC4-1-001|MAPSAS-APC(1-1-001|MAPSAS-APC--1-001|MAPSAS-APC-1-1-001|MAPSAS-APCE-1-001|MAPSAS-APCE1-1-001|MAPSAS-APCE2-1-001|MAPSAS-APCE3-1-001|MAPSAS-APCE5-1-001|MAPSAS-APCE6-1-001|MAPSAS-APCE7-1-001",
       "exhibit_ids": [
         "MAPSAH-APC(-1-001",
@@ -170004,180 +169681,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "Local GE Area 5",
           "credit": "3 hours in Natural Sciences"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAH-AFLL-1-001|MAPSAS-A-FL-1-001|MAPSAS-A:FL-1-001|MAPSAS-AEFL-1-001|MAPSAS-AEFL1-1-001|MAPSAS-AF-L-1-001|MAPSAS-AFL1-1-001|MAPSAS-AFL3-1-001|MAPSAS-AFL4-1-001|MAPSAS-AFL5-1-001|MAPSAS-AFLA-1-001|MAPSAS-AFLA1-1-001|MAPSAS-AFLA2-1-001|MAPSAS-AFLA3-1-001|MAPSAS-AFLA4-1-001|MAPSAS-AFLA6-1-001|MAPSAS-AFLA7-1-001",
-      "exhibit_ids": [
-        "MAPSAH-AFLL-1-001",
-        "MAPSAS-A-FL-1-001",
-        "MAPSAS-A:FL-1-001",
-        "MAPSAS-AEFL-1-001",
-        "MAPSAS-AEFL1-1-001",
-        "MAPSAS-AF-L-1-001",
-        "MAPSAS-AFL1-1-001",
-        "MAPSAS-AFL3-1-001",
-        "MAPSAS-AFL4-1-001",
-        "MAPSAS-AFL5-1-001",
-        "MAPSAS-AFLA-1-001",
-        "MAPSAS-AFLA1-1-001",
-        "MAPSAS-AFLA2-1-001",
-        "MAPSAS-AFLA3-1-001",
-        "MAPSAS-AFLA4-1-001",
-        "MAPSAS-AFLA6-1-001",
-        "MAPSAS-AFLA7-1-001"
-      ],
-      "title": "AP French Language and Culture",
-      "unified_title": "AP French Language and Culture",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.99,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP - French Language & Culture",
-        "AP : French Language & Culture",
-        "AP Exam French Language and Culture (Score 3-5)",
-        "AP Exam: French Language and Culture",
-        "AP French - Language & Culture",
-        "AP French Language",
-        "AP French Language (Fall 2009 - Fall 2011)",
-        "AP French Language and Culture",
-        "AP French Language and Culture (Score of 3)",
-        "AP French Language and Culture (Score of 3-5)",
-        "AP French Language and Culture (Score of 4 or 5)",
-        "AP French Language/ Language and Culture"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 13,
-      "adopter_names": [
-        "Chaffey College",
-        "Coastline Community College",
-        "Copper Mountain College",
-        "Foothill College",
-        "Glendale Community College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Valley College",
-        "Merced College",
-        "Ohlone College",
-        "Saddleback College",
-        "San Jose City College",
-        "Santa Ana College"
-      ],
-      "potential": 28,
-      "potential_names": [
-        "Allan Hancock College",
-        "Cerritos College",
-        "City College of San Francisco",
-        "College of Marin",
-        "College of the Canyons",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "MiraCosta College",
-        "Monterey Peninsula College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Solano Community College",
-        "Southwestern College",
-        "West Valley College"
-      ],
-      "total_addressable": 41,
-      "credit_recs": [
-        {
-          "course": "FR 1",
-          "credit": "5 hours in ELEMENTARY FRENCH"
-        },
-        {
-          "course": "FR 2",
-          "credit": "5 hours in ELEMENTARY FRENCH"
-        },
-        {
-          "course": "FR 3",
-          "credit": "5 hours in INTERMEDIATE FRENCH"
-        },
-        {
-          "course": "FREN 101",
-          "credit": "5 hours in BEG FRENCH I"
-        },
-        {
-          "course": "FREN 102",
-          "credit": "5 hours in BEG FREN II"
-        },
-        {
-          "course": "CPL (C)",
-          "credit": "3 hours in (C) Humanities - (3 units)"
-        },
-        {
-          "course": "CSU GE C2",
-          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
-        },
-        {
-          "course": "IGETC 3B",
-          "credit": "3 hours in IGETC 3B – Humanities"
-        },
-        {
-          "course": "IGETC 6A",
-          "credit": "3 hours in IGETC 6A – Language Other Than English"
-        },
-        {
-          "course": "LACCD GE 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "French (FREN) 001A",
-          "credit": "5 hours in Elementary French"
-        },
-        {
-          "course": "FREN 101",
-          "credit": "5 hours in Elementary French 1"
-        },
-        {
-          "course": "FREN 102",
-          "credit": "5 hours in Elementary French II"
-        },
-        {
-          "course": "FREN C185",
-          "credit": "5 hours in Elementary French 2"
-        },
-        {
-          "course": "FR 1",
-          "credit": "4 hours in Elementary French I"
-        },
-        {
-          "course": "FR 2",
-          "credit": "4 hours in Elementary French II"
-        },
-        {
-          "course": "Local GE Area 3B",
-          "credit": "5 hours in Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "4.5 hours in Arts and Humanities"
-        },
-        {
-          "course": "FREN 101A",
-          "credit": "5 hours in Elementary French"
         }
       ]
     },
@@ -183443,163 +182946,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPSAH-AJLA-1-001|MAPSAS-A-JL-1-001|MAPSAS-A:JL-1-001|MAPSAS-AEJL-1-001|MAPSAS-AEJL1-1-001|MAPSAS-AJ-L-1-001|MAPSAS-AJLA-1-001|MAPSAS-AJLA1-1-001|MAPSAS-AJLA2-1-001|MAPSAS-AJLA3-1-001|MAPSAS-AJLA4-1-001|MAPSAS-AJLA5-1-001|MAPSAS-AJLA7-1-001|MAPSAS-AJLC1-1-001",
-      "exhibit_ids": [
-        "MAPSAH-AJLA-1-001",
-        "MAPSAS-A-JL-1-001",
-        "MAPSAS-A:JL-1-001",
-        "MAPSAS-AEJL-1-001",
-        "MAPSAS-AEJL1-1-001",
-        "MAPSAS-AJ-L-1-001",
-        "MAPSAS-AJLA-1-001",
-        "MAPSAS-AJLA1-1-001",
-        "MAPSAS-AJLA2-1-001",
-        "MAPSAS-AJLA3-1-001",
-        "MAPSAS-AJLA4-1-001",
-        "MAPSAS-AJLA5-1-001",
-        "MAPSAS-AJLA7-1-001",
-        "MAPSAS-AJLC1-1-001"
-      ],
-      "title": "AP Japanese Language and Culture",
-      "unified_title": "AP Japanese Language and Culture",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.99,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP - Japanese Language & Culture",
-        "AP : Japanese Language & Culture",
-        "AP Exam Japanese Language and Culture (Score 3-5)",
-        "AP Exam: Japanese Language and Culture",
-        "AP Japanese - Language & Culture",
-        "AP Japanese Language & Culture (Score of 3-5)",
-        "AP Japanese Language and Culture",
-        "AP Japanese Language and Culture (Score of 3)",
-        "AP Japanese Language and Culture (Score of 4 or 5)",
-        "AP: Japanese Language and Culture"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 14,
-      "adopter_names": [
-        "Chaffey College",
-        "Clovis Community College",
-        "Coastline Community College",
-        "Copper Mountain College",
-        "Foothill College",
-        "Glendale Community College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Valley College",
-        "Merced College",
-        "Ohlone College",
-        "Saddleback College",
-        "San Jose City College",
-        "Santa Ana College"
-      ],
-      "potential": 19,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "City College of San Francisco",
-        "Crafton Hills College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Grossmont College",
-        "Irvine Valley College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "MiraCosta College",
-        "Monterey Peninsula College",
-        "Palomar College",
-        "Pasadena City College",
-        "San Diego Mesa College",
-        "Southwestern College"
-      ],
-      "total_addressable": 33,
-      "credit_recs": [
-        {
-          "course": "JA 1",
-          "credit": "5 hours in ELEMENTARY JAPANESE"
-        },
-        {
-          "course": "JA 2",
-          "credit": "5 hours in ELEMENTARY JAPANESE"
-        },
-        {
-          "course": "JA 3",
-          "credit": "5 hours in INTERMEDIATE JAPANESE"
-        },
-        {
-          "course": "JAPAN 101",
-          "credit": "5 hours in BEG JAPANESE I"
-        },
-        {
-          "course": "JAPAN 102",
-          "credit": "5 hours in BEG JAPANESE II"
-        },
-        {
-          "course": "CPL (C)",
-          "credit": "3 hours in (C) Humanities - (3 units)"
-        },
-        {
-          "course": "IGETC 3B",
-          "credit": "3 hours in IGETC 3B – Humanities"
-        },
-        {
-          "course": "IGETC 6A",
-          "credit": "3 hours in IGETC 6A – Language Other Than English"
-        },
-        {
-          "course": "LACCD GE 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "Japanese (JAPAN) 001A",
-          "credit": "5 hours in Elementary Japanese 1"
-        },
-        {
-          "course": "Local GE 3",
-          "credit": "3 hours in Art & Humanities"
-        },
-        {
-          "course": "Cal-GETC LOTE",
-          "credit": "0 hours in Language Other than English"
-        },
-        {
-          "course": "Local GE 3B",
-          "credit": "3 hours in 3B. Humanities"
-        },
-        {
-          "course": "JAPN C185",
-          "credit": "5 hours in Elementary Japanese 2"
-        },
-        {
-          "course": "GE 3 Area 3",
-          "credit": "8 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE Area 3B",
-          "credit": "5 hours in Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "4.5 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "3 hours in Arts and Humanities"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICI-MCWA-1-001",
       "exhibit_ids": [
         "MAPICI-MCWA-1-001"
@@ -184080,60 +183426,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "HOSP M140",
           "credit": "3 hours in Introduction to Hotel Management"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPCXA-ITES-1-001",
-      "exhibit_ids": [
-        "MAPCXA-ITES-1-001"
-      ],
-      "title": "Introduction to Energy Surveying",
-      "unified_title": "Introduction to Energy Surveying",
-      "is_classified": true,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Introduction to Energy Surveying"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Cerritos College"
-      ],
-      "potential": 19,
-      "potential_names": [
-        "Cabrillo College",
-        "College of the Desert",
-        "De Anza College",
-        "Diablo Valley College",
-        "Foothill College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Mendocino College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Bernardino Valley College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Skyline College",
-        "Southwestern College",
-        "Taft College"
-      ],
-      "total_addressable": 20,
-      "credit_recs": [
-        {
-          "course": "ELAP 90.01",
-          "credit": "2 hours in Introduction to Energy Surveying"
         }
       ]
     },
@@ -202534,146 +201826,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPSAH-AILA-1-001|MAPSAS-A-IL-1-001|MAPSAS-A:IL-1-001|MAPSAS-AEIL-1-001|MAPSAS-AI-L-1-001|MAPSAS-AIL&-1-001|MAPSAS-AILA-1-001|MAPSAS-AILA1-1-001|MAPSAS-AILA2-1-001|MAPSAS-AILA3-1-001|MAPSAS-AILA4-1-001|MAPSAS-AILA6-1-001|MAPSAS-AILC1-1-001",
-      "exhibit_ids": [
-        "MAPSAH-AILA-1-001",
-        "MAPSAS-A-IL-1-001",
-        "MAPSAS-A:IL-1-001",
-        "MAPSAS-AEIL-1-001",
-        "MAPSAS-AI-L-1-001",
-        "MAPSAS-AIL&-1-001",
-        "MAPSAS-AILA-1-001",
-        "MAPSAS-AILA1-1-001",
-        "MAPSAS-AILA2-1-001",
-        "MAPSAS-AILA3-1-001",
-        "MAPSAS-AILA4-1-001",
-        "MAPSAS-AILA6-1-001",
-        "MAPSAS-AILC1-1-001"
-      ],
-      "title": "AP Italian Language and Culture",
-      "unified_title": "AP Italian Language and Culture",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.99,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP - Italian Language & Culture",
-        "AP : Italian Language & Culture",
-        "AP Exam Italian Language and Culture (Score 3-5)",
-        "AP Italian - Language & Culture",
-        "AP Italian Language & Culture (Score of 3-5)",
-        "AP Italian Language and Culture",
-        "AP Italian Language and Culture (Score of 3)",
-        "AP Italian Language and Culture (Score of 4 or 5)",
-        "AP: Italian Language & Culture"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 12,
-      "adopter_names": [
-        "Chaffey College",
-        "Clovis Community College",
-        "Coastline Community College",
-        "Copper Mountain College",
-        "Foothill College",
-        "Glendale Community College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Valley College",
-        "Ohlone College",
-        "Saddleback College",
-        "Santa Ana College"
-      ],
-      "potential": 10,
-      "potential_names": [
-        "City College of San Francisco",
-        "College of Marin",
-        "De Anza College",
-        "Diablo Valley College",
-        "MiraCosta College",
-        "Palomar College",
-        "Pasadena City College",
-        "San Diego City College",
-        "Southwestern College",
-        "West Valley College"
-      ],
-      "total_addressable": 22,
-      "credit_recs": [
-        {
-          "course": "ITA 1",
-          "credit": "5 hours in ELEMENTARY ITALIAN"
-        },
-        {
-          "course": "ITA 2",
-          "credit": "5 hours in ELEMENTARY ITALIAN"
-        },
-        {
-          "course": "ITA 3",
-          "credit": "5 hours in INTERMEDIATE ITALIAN"
-        },
-        {
-          "course": "ITAL 101",
-          "credit": "5 hours in BEG ITALIAN I"
-        },
-        {
-          "course": "ITAL 102",
-          "credit": "5 hours in BEG ITALIAN II"
-        },
-        {
-          "course": "CSU GE C2",
-          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
-        },
-        {
-          "course": "IGETC 3B",
-          "credit": "3 hours in IGETC 3B – Humanities"
-        },
-        {
-          "course": "IGETC 6A",
-          "credit": "3 hours in IGETC 6A – Language Other Than English"
-        },
-        {
-          "course": "LACCD GE 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE 3",
-          "credit": "3 hours in Art & Humanities"
-        },
-        {
-          "course": "Cal-GETC LOTE",
-          "credit": "0 hours in Language Other than English"
-        },
-        {
-          "course": "Local GE 3B",
-          "credit": "3 hours in 3B. Humanities"
-        },
-        {
-          "course": "ITAL C185",
-          "credit": "5 hours in Elementary Italian 2"
-        },
-        {
-          "course": "GE 3 Area 3",
-          "credit": "8 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE Area 3B",
-          "credit": "5 hours in Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "4.5 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "3 hours in Arts and Humanities"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPCBEN-SOAE-1-001",
       "exhibit_ids": [
         "MAPCBEN-SOAE-1-001"
@@ -203234,97 +202386,170 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPSAH-ACLA-1-001|MAPSAS-A-CL-1-001|MAPSAS-A:CL-1-001|MAPSAS-AC-L-1-001|MAPSAS-ACL&-1-001|MAPSAS-ACL&1-1-001|MAPSAS-ACLA-1-001|MAPSAS-ACLA1-1-001|MAPSAS-ACLA2-1-001|MAPSAS-ACLA3-1-001|MAPSAS-ACLA4-1-001|MAPSAS-ACLA5-1-001|MAPSAS-ACLA7-1-001|MAPSAS-AECL-1-001",
+      "exhibit_id": "MAPSAH-AFLL-1-001|MAPSAS-A-FL-1-001|MAPSAS-A:FL-1-001|MAPSAS-AEFL-1-001|MAPSAS-AEFL1-1-001|MAPSAS-AF-L-1-001|MAPSAS-AFL1-1-001|MAPSAS-AFL3-1-001|MAPSAS-AFL4-1-001|MAPSAS-AFL5-1-001|MAPSAS-AFLA-1-001|MAPSAS-AFLA1-1-001|MAPSAS-AFLA2-1-001|MAPSAS-AFLA3-1-001|MAPSAS-AFLA4-1-001|MAPSAS-AFLA6-1-001|MAPSAS-AFLA7-1-001|MAPSAS-AFLC-1-001",
       "exhibit_ids": [
-        "MAPSAH-ACLA-1-001",
-        "MAPSAS-A-CL-1-001",
-        "MAPSAS-A:CL-1-001",
-        "MAPSAS-AC-L-1-001",
-        "MAPSAS-ACL&-1-001",
-        "MAPSAS-ACL&1-1-001",
-        "MAPSAS-ACLA-1-001",
-        "MAPSAS-ACLA1-1-001",
-        "MAPSAS-ACLA2-1-001",
-        "MAPSAS-ACLA3-1-001",
-        "MAPSAS-ACLA4-1-001",
-        "MAPSAS-ACLA5-1-001",
-        "MAPSAS-ACLA7-1-001",
-        "MAPSAS-AECL-1-001"
+        "MAPSAH-AFLL-1-001",
+        "MAPSAS-A-FL-1-001",
+        "MAPSAS-A:FL-1-001",
+        "MAPSAS-AEFL-1-001",
+        "MAPSAS-AEFL1-1-001",
+        "MAPSAS-AF-L-1-001",
+        "MAPSAS-AFL1-1-001",
+        "MAPSAS-AFL3-1-001",
+        "MAPSAS-AFL4-1-001",
+        "MAPSAS-AFL5-1-001",
+        "MAPSAS-AFLA-1-001",
+        "MAPSAS-AFLA1-1-001",
+        "MAPSAS-AFLA2-1-001",
+        "MAPSAS-AFLA3-1-001",
+        "MAPSAS-AFLA4-1-001",
+        "MAPSAS-AFLA6-1-001",
+        "MAPSAS-AFLA7-1-001",
+        "MAPSAS-AFLC-1-001"
       ],
-      "title": "AP Chinese Language and Culture",
-      "unified_title": "AP Chinese Language and Culture",
+      "title": "AP French Language and Culture",
+      "unified_title": "AP French Language and Culture",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
       "confidence_title": 0.98,
-      "confidence_issuer": 0.98,
+      "confidence_issuer": 0.99,
       "quality_flag": "",
       "raw_titles": [
-        "AP - Chinese Language & Culture",
-        "AP : Chinese Language & Culture",
-        "AP Chinese - Language & Culture",
-        "AP Chinese Language",
-        "AP Chinese Language & Culture (Score of 3-5)",
-        "AP Chinese Language and Culture",
-        "AP Chinese Language and Culture (Score 3-5)",
-        "AP Chinese Language and Culture (Score of 3)",
-        "AP Chinese Language and Culture (Score of 4 or 5)",
-        "AP Exam: Chinese Language and Culture",
-        "AP: Chinese Language & Culture"
+        "AP - French Language & Culture",
+        "AP : French Language & Culture",
+        "AP Exam French Language and Culture (Score 3-5)",
+        "AP Exam: French Language and Culture",
+        "AP French - Language & Culture",
+        "AP French Language",
+        "AP French Language & Culture (score 3-5): Cal-GETC Area 3B",
+        "AP French Language (Fall 2009 - Fall 2011)",
+        "AP French Language and Culture",
+        "AP French Language and Culture (Score of 3)",
+        "AP French Language and Culture (Score of 3-5)",
+        "AP French Language and Culture (Score of 4 or 5)",
+        "AP French Language/ Language and Culture"
       ],
       "cpl_type": "Standardized Assessment",
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
       "collaborative_type": "Local",
-      "adopters": 13,
+      "adopters": 80,
       "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
         "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
         "Clovis Community College",
+        "Coalinga College",
         "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
         "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
         "Foothill College",
+        "Fresno City College",
         "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
         "Los Angeles Mission College",
         "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
         "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
         "Merced College",
+        "Merritt College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
         "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Sacramento City College",
         "Saddleback College",
-        "Santa Ana College"
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
       ],
       "potential": 9,
       "potential_names": [
-        "Cerritos College",
-        "Chabot College",
-        "City College of San Francisco",
-        "De Anza College",
-        "Diablo Valley College",
+        "Grossmont College",
+        "Imperial Valley College",
         "Irvine Valley College",
-        "Laney College",
-        "Los Angeles City College",
-        "Pasadena City College"
+        "Los Angeles Harbor College",
+        "MiraCosta College",
+        "Palomar College",
+        "Rio Hondo College",
+        "Santa Barbara City College",
+        "Southwestern College"
       ],
-      "total_addressable": 22,
+      "total_addressable": 89,
       "credit_recs": [
         {
-          "course": "CHI 1",
-          "credit": "5 hours in ELEMENTARY CHINESE"
+          "course": "FR 1",
+          "credit": "5 hours in ELEMENTARY FRENCH"
         },
         {
-          "course": "CHI 2",
-          "credit": "5 hours in ELEMENTARY CHINESE"
+          "course": "FR 2",
+          "credit": "5 hours in ELEMENTARY FRENCH"
         },
         {
-          "course": "CHI 3",
-          "credit": "5 hours in INTERMEDIATE CHINESE"
+          "course": "FR 3",
+          "credit": "5 hours in INTERMEDIATE FRENCH"
         },
         {
-          "course": "CHIN 101",
-          "credit": "5 hours in BEGINNING CHINESE I"
+          "course": "FREN 101",
+          "credit": "5 hours in BEG FRENCH I"
         },
         {
-          "course": "CHIN 102",
-          "credit": "5 hours in BEGINNING CHINESE II"
+          "course": "FREN 102",
+          "credit": "5 hours in BEG FREN II"
         },
         {
           "course": "CPL (C)",
@@ -203343,32 +202568,36 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in IGETC 6A – Language Other Than English"
         },
         {
-          "course": "CHIN 1",
-          "credit": "4 hours in Elementary Mandarin Chinese I"
-        },
-        {
-          "course": "CHIN 2",
-          "credit": "4 hours in Elementary Mandarin Chinese II"
-        },
-        {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         },
         {
-          "course": "Local GE 3",
-          "credit": "3 hours in Art & Humanities"
+          "course": "French (FREN) 001A",
+          "credit": "5 hours in Elementary French"
         },
         {
-          "course": "Cal-GETC LOTE",
-          "credit": "3 hours in Language Other than English"
+          "course": "FREN 101",
+          "credit": "5 hours in Elementary French 1"
         },
         {
-          "course": "Local GE C",
+          "course": "FREN 102",
+          "credit": "5 hours in Elementary French II"
+        },
+        {
+          "course": "FREN C185",
+          "credit": "5 hours in Elementary French 2"
+        },
+        {
+          "course": "Cal-GETC Area 3B",
           "credit": "3 hours in Humanities"
         },
         {
-          "course": "CHIN C185",
-          "credit": "5 hours in Elementary Chinese 2"
+          "course": "FR 1",
+          "credit": "4 hours in Elementary French I"
+        },
+        {
+          "course": "FR 2",
+          "credit": "4 hours in Elementary French II"
         },
         {
           "course": "Local GE Area 3B",
@@ -203379,8 +202608,8 @@ window.CPL_STATEWIDE = {
           "credit": "4.5 hours in Arts and Humanities"
         },
         {
-          "course": "Local GE Area 3",
-          "credit": "3 hours in Arts and Humanities"
+          "course": "FREN 101A",
+          "credit": "5 hours in Elementary French"
         }
       ]
     },
@@ -205800,6 +205029,222 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPSAH-AJLA-1-001|MAPSAS-A-JL-1-001|MAPSAS-A:JL-1-001|MAPSAS-AEJL-1-001|MAPSAS-AEJL1-1-001|MAPSAS-AJ-L-1-001|MAPSAS-AJLA-1-001|MAPSAS-AJLA1-1-001|MAPSAS-AJLA2-1-001|MAPSAS-AJLA3-1-001|MAPSAS-AJLA4-1-001|MAPSAS-AJLA5-1-001|MAPSAS-AJLA7-1-001|MAPSAS-AJLC-1-001|MAPSAS-AJLC1-1-001",
+      "exhibit_ids": [
+        "MAPSAH-AJLA-1-001",
+        "MAPSAS-A-JL-1-001",
+        "MAPSAS-A:JL-1-001",
+        "MAPSAS-AEJL-1-001",
+        "MAPSAS-AEJL1-1-001",
+        "MAPSAS-AJ-L-1-001",
+        "MAPSAS-AJLA-1-001",
+        "MAPSAS-AJLA1-1-001",
+        "MAPSAS-AJLA2-1-001",
+        "MAPSAS-AJLA3-1-001",
+        "MAPSAS-AJLA4-1-001",
+        "MAPSAS-AJLA5-1-001",
+        "MAPSAS-AJLA7-1-001",
+        "MAPSAS-AJLC-1-001",
+        "MAPSAS-AJLC1-1-001"
+      ],
+      "title": "AP Japanese Language and Culture",
+      "unified_title": "AP Japanese Language and Culture",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.98,
+      "confidence_issuer": 0.99,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP - Japanese Language & Culture",
+        "AP : Japanese Language & Culture",
+        "AP Exam Japanese Language and Culture (Score 3-5)",
+        "AP Exam: Japanese Language and Culture",
+        "AP Japanese - Language & Culture",
+        "AP Japanese Language & Culture (Score of 3-5)",
+        "AP Japanese Language & Culture (score 3-5): Cal-GETC Area 3B",
+        "AP Japanese Language and Culture",
+        "AP Japanese Language and Culture (Score of 3)",
+        "AP Japanese Language and Culture (Score of 4 or 5)",
+        "AP: Japanese Language and Culture"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 80,
+      "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "potential": 6,
+      "potential_names": [
+        "Crafton Hills College",
+        "Grossmont College",
+        "Irvine Valley College",
+        "MiraCosta College",
+        "Palomar College",
+        "Southwestern College"
+      ],
+      "total_addressable": 86,
+      "credit_recs": [
+        {
+          "course": "JA 1",
+          "credit": "5 hours in ELEMENTARY JAPANESE"
+        },
+        {
+          "course": "JA 2",
+          "credit": "5 hours in ELEMENTARY JAPANESE"
+        },
+        {
+          "course": "JA 3",
+          "credit": "5 hours in INTERMEDIATE JAPANESE"
+        },
+        {
+          "course": "JAPAN 101",
+          "credit": "5 hours in BEG JAPANESE I"
+        },
+        {
+          "course": "JAPAN 102",
+          "credit": "5 hours in BEG JAPANESE II"
+        },
+        {
+          "course": "CPL (C)",
+          "credit": "3 hours in (C) Humanities - (3 units)"
+        },
+        {
+          "course": "IGETC 3B",
+          "credit": "3 hours in IGETC 3B – Humanities"
+        },
+        {
+          "course": "IGETC 6A",
+          "credit": "3 hours in IGETC 6A – Language Other Than English"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "Japanese (JAPAN) 001A",
+          "credit": "5 hours in Elementary Japanese 1"
+        },
+        {
+          "course": "Local GE 3",
+          "credit": "3 hours in Art & Humanities"
+        },
+        {
+          "course": "Cal-GETC LOTE",
+          "credit": "0 hours in Language Other than English"
+        },
+        {
+          "course": "Local GE 3B",
+          "credit": "3 hours in 3B. Humanities"
+        },
+        {
+          "course": "JAPN C185",
+          "credit": "5 hours in Elementary Japanese 2"
+        },
+        {
+          "course": "Cal-GETC Area 3B",
+          "credit": "3 hours in Humanities"
+        },
+        {
+          "course": "GE 3 Area 3",
+          "credit": "8 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area 3B",
+          "credit": "5 hours in Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "4.5 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPICI-HSR(-1-001",
       "exhibit_ids": [
         "MAPICI-HSR(-1-001"
@@ -206319,145 +205764,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "NURADN 428",
           "credit": "3 hours in Basic Pharmacology"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAH-AGLL-1-001|MAPSAS-A-GL-1-001|MAPSAS-A:GL-1-001|MAPSAS-AEGL-1-001|MAPSAS-AG-&-1-001|MAPSAS-AGL&-1-001|MAPSAS-AGL-1-001|MAPSAS-AGL1-1-001|MAPSAS-AGL2-1-001|MAPSAS-AGL3-1-001|MAPSAS-AGL4-1-001|MAPSAS-AGLA-1-001|MAPSAS-AGLA1-1-001|MAPSAS-AGLA3-1-001|MAPSAS-AGLA4-1-001",
-      "exhibit_ids": [
-        "MAPSAH-AGLL-1-001",
-        "MAPSAS-A-GL-1-001",
-        "MAPSAS-A:GL-1-001",
-        "MAPSAS-AEGL-1-001",
-        "MAPSAS-AG-&-1-001",
-        "MAPSAS-AGL&-1-001",
-        "MAPSAS-AGL-1-001",
-        "MAPSAS-AGL1-1-001",
-        "MAPSAS-AGL2-1-001",
-        "MAPSAS-AGL3-1-001",
-        "MAPSAS-AGL4-1-001",
-        "MAPSAS-AGLA-1-001",
-        "MAPSAS-AGLA1-1-001",
-        "MAPSAS-AGLA3-1-001",
-        "MAPSAS-AGLA4-1-001"
-      ],
-      "title": "AP German Language and Culture",
-      "unified_title": "AP German Language and Culture",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.99,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP - German Language & Culture",
-        "AP : German Language & Culture",
-        "AP Exam German Language and Culture (Score 3-5)",
-        "AP German -Language & Culture",
-        "AP German Language",
-        "AP German Language (prior to Fall 2009)",
-        "AP German Language (prior to Fall 2011)",
-        "AP German Language and Culture",
-        "AP German Language and Culture (Score of 3-5)",
-        "AP German Language/ Language and Culture",
-        "AP: German Language & Culture"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 12,
-      "adopter_names": [
-        "Chaffey College",
-        "Clovis Community College",
-        "Coastline Community College",
-        "Copper Mountain College",
-        "Foothill College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Valley College",
-        "Merced College",
-        "Ohlone College",
-        "Saddleback College",
-        "Santa Ana College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "Cerritos College",
-        "Diablo Valley College",
-        "Grossmont College",
-        "Palomar College",
-        "Pasadena City College"
-      ],
-      "total_addressable": 17,
-      "credit_recs": [
-        {
-          "course": "GER 1",
-          "credit": "5 hours in ELEMENTARY GERMAN"
-        },
-        {
-          "course": "GER 2",
-          "credit": "5 hours in ELEMENTARY GERMAN"
-        },
-        {
-          "course": "GER 21",
-          "credit": "3 hours in INTRODUCTION TO GERMAN CULTURE"
-        },
-        {
-          "course": "CPL (C)",
-          "credit": "3 hours in (C) Humanities - (3 units)"
-        },
-        {
-          "course": "CPL (C)",
-          "credit": "6 hours in (C) Humanities - (3 units)"
-        },
-        {
-          "course": "CSU GE C2",
-          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
-        },
-        {
-          "course": "IGETC 3B",
-          "credit": "3 hours in IGETC 3B – Humanities"
-        },
-        {
-          "course": "IGETC 6A",
-          "credit": "3 hours in IGETC 6A – Language Other Than English"
-        },
-        {
-          "course": "Local GE 3",
-          "credit": "3 hours in Art & Humanities"
-        },
-        {
-          "course": "Cal-GETC LOTE",
-          "credit": "3 hours in Language Other than English"
-        },
-        {
-          "course": "Local GE 3B",
-          "credit": "3 hours in 3B. Humanities"
-        },
-        {
-          "course": "GE 3B",
-          "credit": "5 hours in Area 3- Humanities"
-        },
-        {
-          "course": "GE 3 Area 3",
-          "credit": "8 hours in Arts and Humanities"
-        },
-        {
-          "course": "LACCD GE 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE Area 3B",
-          "credit": "5 hours in Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "4.5 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "3 hours in Arts and Humanities"
         }
       ]
     },
@@ -209483,6 +208789,213 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPSAH-AILA-1-001|MAPSAS-A-IL-1-001|MAPSAS-A:IL-1-001|MAPSAS-AEIL-1-001|MAPSAS-AI-L-1-001|MAPSAS-AIL&-1-001|MAPSAS-AILA-1-001|MAPSAS-AILA1-1-001|MAPSAS-AILA2-1-001|MAPSAS-AILA3-1-001|MAPSAS-AILA4-1-001|MAPSAS-AILA6-1-001|MAPSAS-AILC-1-001|MAPSAS-AILC1-1-001",
+      "exhibit_ids": [
+        "MAPSAH-AILA-1-001",
+        "MAPSAS-A-IL-1-001",
+        "MAPSAS-A:IL-1-001",
+        "MAPSAS-AEIL-1-001",
+        "MAPSAS-AI-L-1-001",
+        "MAPSAS-AIL&-1-001",
+        "MAPSAS-AILA-1-001",
+        "MAPSAS-AILA1-1-001",
+        "MAPSAS-AILA2-1-001",
+        "MAPSAS-AILA3-1-001",
+        "MAPSAS-AILA4-1-001",
+        "MAPSAS-AILA6-1-001",
+        "MAPSAS-AILC-1-001",
+        "MAPSAS-AILC1-1-001"
+      ],
+      "title": "AP Italian Language and Culture",
+      "unified_title": "AP Italian Language and Culture",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.98,
+      "confidence_issuer": 0.99,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP - Italian Language & Culture",
+        "AP : Italian Language & Culture",
+        "AP Exam Italian Language and Culture (Score 3-5)",
+        "AP Italian - Language & Culture",
+        "AP Italian Language & Culture (Score of 3-5)",
+        "AP Italian Language & Culture (score 3-5): Cal-GETC Area 3B",
+        "AP Italian Language and Culture",
+        "AP Italian Language and Culture (Score of 3)",
+        "AP Italian Language and Culture (Score of 4 or 5)",
+        "AP: Italian Language & Culture"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 80,
+      "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "potential": 3,
+      "potential_names": [
+        "MiraCosta College",
+        "Palomar College",
+        "Southwestern College"
+      ],
+      "total_addressable": 83,
+      "credit_recs": [
+        {
+          "course": "ITA 1",
+          "credit": "5 hours in ELEMENTARY ITALIAN"
+        },
+        {
+          "course": "ITA 2",
+          "credit": "5 hours in ELEMENTARY ITALIAN"
+        },
+        {
+          "course": "ITA 3",
+          "credit": "5 hours in INTERMEDIATE ITALIAN"
+        },
+        {
+          "course": "ITAL 101",
+          "credit": "5 hours in BEG ITALIAN I"
+        },
+        {
+          "course": "ITAL 102",
+          "credit": "5 hours in BEG ITALIAN II"
+        },
+        {
+          "course": "CSU GE C2",
+          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
+        },
+        {
+          "course": "IGETC 3B",
+          "credit": "3 hours in IGETC 3B – Humanities"
+        },
+        {
+          "course": "IGETC 6A",
+          "credit": "3 hours in IGETC 6A – Language Other Than English"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE 3",
+          "credit": "3 hours in Art & Humanities"
+        },
+        {
+          "course": "Cal-GETC LOTE",
+          "credit": "0 hours in Language Other than English"
+        },
+        {
+          "course": "Local GE 3B",
+          "credit": "3 hours in 3B. Humanities"
+        },
+        {
+          "course": "ITAL C185",
+          "credit": "5 hours in Elementary Italian 2"
+        },
+        {
+          "course": "Cal-GETC Area 3B",
+          "credit": "3 hours in Humanities"
+        },
+        {
+          "course": "GE 3 Area 3",
+          "credit": "8 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area 3B",
+          "credit": "5 hours in Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "4.5 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPCXS-P1D-1-001",
       "exhibit_ids": [
         "MAPCXS-P1D-1-001"
@@ -209897,6 +209410,216 @@ window.CPL_STATEWIDE = {
         {
           "course": "MORT 482 C",
           "credit": "4 hours in Clinical Embalming Externship"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPSAH-AGLL-1-001|MAPSAS-A-GL-1-001|MAPSAS-A:GL-1-001|MAPSAS-AEGL-1-001|MAPSAS-AG-&-1-001|MAPSAS-AGL&-1-001|MAPSAS-AGL-1-001|MAPSAS-AGL1-1-001|MAPSAS-AGL2-1-001|MAPSAS-AGL3-1-001|MAPSAS-AGL4-1-001|MAPSAS-AGLA-1-001|MAPSAS-AGLA1-1-001|MAPSAS-AGLA3-1-001|MAPSAS-AGLA4-1-001|MAPSAS-AGLC-1-001",
+      "exhibit_ids": [
+        "MAPSAH-AGLL-1-001",
+        "MAPSAS-A-GL-1-001",
+        "MAPSAS-A:GL-1-001",
+        "MAPSAS-AEGL-1-001",
+        "MAPSAS-AG-&-1-001",
+        "MAPSAS-AGL&-1-001",
+        "MAPSAS-AGL-1-001",
+        "MAPSAS-AGL1-1-001",
+        "MAPSAS-AGL2-1-001",
+        "MAPSAS-AGL3-1-001",
+        "MAPSAS-AGL4-1-001",
+        "MAPSAS-AGLA-1-001",
+        "MAPSAS-AGLA1-1-001",
+        "MAPSAS-AGLA3-1-001",
+        "MAPSAS-AGLA4-1-001",
+        "MAPSAS-AGLC-1-001"
+      ],
+      "title": "AP German Language and Culture",
+      "unified_title": "AP German Language and Culture",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.98,
+      "confidence_issuer": 0.99,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP - German Language & Culture",
+        "AP : German Language & Culture",
+        "AP Exam German Language and Culture (Score 3-5)",
+        "AP German -Language & Culture",
+        "AP German Language",
+        "AP German Language & Culture (score 3-5): Cal-GETC Area 3B",
+        "AP German Language (prior to Fall 2009)",
+        "AP German Language (prior to Fall 2011)",
+        "AP German Language and Culture",
+        "AP German Language and Culture (Score of 3-5)",
+        "AP German Language/ Language and Culture",
+        "AP: German Language & Culture"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 80,
+      "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "potential": 2,
+      "potential_names": [
+        "Grossmont College",
+        "Palomar College"
+      ],
+      "total_addressable": 82,
+      "credit_recs": [
+        {
+          "course": "GER 1",
+          "credit": "5 hours in ELEMENTARY GERMAN"
+        },
+        {
+          "course": "GER 2",
+          "credit": "5 hours in ELEMENTARY GERMAN"
+        },
+        {
+          "course": "GER 21",
+          "credit": "3 hours in INTRODUCTION TO GERMAN CULTURE"
+        },
+        {
+          "course": "CPL (C)",
+          "credit": "3 hours in (C) Humanities - (3 units)"
+        },
+        {
+          "course": "CPL (C)",
+          "credit": "6 hours in (C) Humanities - (3 units)"
+        },
+        {
+          "course": "CSU GE C2",
+          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
+        },
+        {
+          "course": "IGETC 3B",
+          "credit": "3 hours in IGETC 3B – Humanities"
+        },
+        {
+          "course": "IGETC 6A",
+          "credit": "3 hours in IGETC 6A – Language Other Than English"
+        },
+        {
+          "course": "Local GE 3",
+          "credit": "3 hours in Art & Humanities"
+        },
+        {
+          "course": "Cal-GETC LOTE",
+          "credit": "3 hours in Language Other than English"
+        },
+        {
+          "course": "Local GE 3B",
+          "credit": "3 hours in 3B. Humanities"
+        },
+        {
+          "course": "GE 3B",
+          "credit": "5 hours in Area 3- Humanities"
+        },
+        {
+          "course": "Cal-GETC Area 3B",
+          "credit": "3 hours in Humanities"
+        },
+        {
+          "course": "GE 3 Area 3",
+          "credit": "8 hours in Arts and Humanities"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area 3B",
+          "credit": "5 hours in Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "4.5 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
         }
       ]
     },
@@ -210421,6 +210144,222 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPSAH-ACLA-1-001|MAPSAS-A-CL-1-001|MAPSAS-A:CL-1-001|MAPSAS-AC-L-1-001|MAPSAS-ACL&-1-001|MAPSAS-ACL&1-1-001|MAPSAS-ACLA-1-001|MAPSAS-ACLA1-1-001|MAPSAS-ACLA2-1-001|MAPSAS-ACLA3-1-001|MAPSAS-ACLA4-1-001|MAPSAS-ACLA5-1-001|MAPSAS-ACLA7-1-001|MAPSAS-ACLC-1-001|MAPSAS-AECL-1-001",
+      "exhibit_ids": [
+        "MAPSAH-ACLA-1-001",
+        "MAPSAS-A-CL-1-001",
+        "MAPSAS-A:CL-1-001",
+        "MAPSAS-AC-L-1-001",
+        "MAPSAS-ACL&-1-001",
+        "MAPSAS-ACL&1-1-001",
+        "MAPSAS-ACLA-1-001",
+        "MAPSAS-ACLA1-1-001",
+        "MAPSAS-ACLA2-1-001",
+        "MAPSAS-ACLA3-1-001",
+        "MAPSAS-ACLA4-1-001",
+        "MAPSAS-ACLA5-1-001",
+        "MAPSAS-ACLA7-1-001",
+        "MAPSAS-ACLC-1-001",
+        "MAPSAS-AECL-1-001"
+      ],
+      "title": "AP Chinese Language and Culture",
+      "unified_title": "AP Chinese Language and Culture",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.98,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP - Chinese Language & Culture",
+        "AP : Chinese Language & Culture",
+        "AP Chinese - Language & Culture",
+        "AP Chinese Language",
+        "AP Chinese Language & Culture (Score of 3-5)",
+        "AP Chinese Language & Culture (score 3-5): Cal-GETC Area 3B",
+        "AP Chinese Language and Culture",
+        "AP Chinese Language and Culture (Score 3-5)",
+        "AP Chinese Language and Culture (Score of 3)",
+        "AP Chinese Language and Culture (Score of 4 or 5)",
+        "AP Exam: Chinese Language and Culture",
+        "AP: Chinese Language & Culture"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 80,
+      "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "potential": 1,
+      "potential_names": [
+        "Irvine Valley College"
+      ],
+      "total_addressable": 81,
+      "credit_recs": [
+        {
+          "course": "CHI 1",
+          "credit": "5 hours in ELEMENTARY CHINESE"
+        },
+        {
+          "course": "CHI 2",
+          "credit": "5 hours in ELEMENTARY CHINESE"
+        },
+        {
+          "course": "CHI 3",
+          "credit": "5 hours in INTERMEDIATE CHINESE"
+        },
+        {
+          "course": "CHIN 101",
+          "credit": "5 hours in BEGINNING CHINESE I"
+        },
+        {
+          "course": "CHIN 102",
+          "credit": "5 hours in BEGINNING CHINESE II"
+        },
+        {
+          "course": "CPL (C)",
+          "credit": "3 hours in (C) Humanities - (3 units)"
+        },
+        {
+          "course": "CSU GE C2",
+          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
+        },
+        {
+          "course": "IGETC 3B",
+          "credit": "3 hours in IGETC 3B – Humanities"
+        },
+        {
+          "course": "IGETC 6A",
+          "credit": "3 hours in IGETC 6A – Language Other Than English"
+        },
+        {
+          "course": "CHIN 1",
+          "credit": "4 hours in Elementary Mandarin Chinese I"
+        },
+        {
+          "course": "CHIN 2",
+          "credit": "4 hours in Elementary Mandarin Chinese II"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE 3",
+          "credit": "3 hours in Art & Humanities"
+        },
+        {
+          "course": "Cal-GETC LOTE",
+          "credit": "3 hours in Language Other than English"
+        },
+        {
+          "course": "Local GE C",
+          "credit": "3 hours in Humanities"
+        },
+        {
+          "course": "CHIN C185",
+          "credit": "5 hours in Elementary Chinese 2"
+        },
+        {
+          "course": "Cal-GETC Area 3B",
+          "credit": "3 hours in Humanities"
+        },
+        {
+          "course": "Local GE Area 3B",
+          "credit": "5 hours in Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "4.5 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPSAH-IMH--1-001|MAPSAS-I:MA-1-001|MAPSAS-IEMA-1-001|MAPSAS-IMA&-1-001|MAPSAS-IMAA-1-001",
       "exhibit_ids": [
         "MAPSAH-IMH--1-001",
@@ -210691,1018 +210630,21 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPSAS-ACLC-1-001",
+      "exhibit_id": "MAPSAS-A:UG-1-001|MAPSAS-AUGP-1-001",
       "exhibit_ids": [
-        "MAPSAS-ACLC-1-001"
-      ],
-      "title": "AP Chinese Language & Culture",
-      "unified_title": "AP Chinese Language & Culture",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP Chinese Language & Culture (score 3-5): Cal-GETC Area 3B"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 78,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 78,
-      "credit_recs": [
-        {
-          "course": "Cal-GETC Area 3B",
-          "credit": "3 hours in Humanities"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-ACGP-1-001",
-      "exhibit_ids": [
-        "MAPSAS-ACGP-1-001"
-      ],
-      "title": "AP Comparative Government & Politics",
-      "unified_title": "AP Comparative Government & Politics",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP Comparative Government & Politics (score 3-5): Cal-GETC Area 4"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 78,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 78,
-      "credit_recs": [
-        {
-          "course": "Cal-GETC Area 4",
-          "credit": "3 hours in Social and Behavioral Sciences"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-AEL4-1-001",
-      "exhibit_ids": [
-        "MAPSAS-AEL4-1-001"
-      ],
-      "title": "AP English Language & Composition",
-      "unified_title": "AP English Language & Composition",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.96,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP English Language/Composition (score 3-5): Cal-GETC Area 1A"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 78,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 78,
-      "credit_recs": [
-        {
-          "course": "Cal-GETC Area 1A",
-          "credit": "3 hours in English Composition"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-AFLC-1-001",
-      "exhibit_ids": [
-        "MAPSAS-AFLC-1-001"
-      ],
-      "title": "AP French Language & Culture",
-      "unified_title": "AP French Language & Culture",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP French Language & Culture (score 3-5): Cal-GETC Area 3B"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 78,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 78,
-      "credit_recs": [
-        {
-          "course": "Cal-GETC Area 3B",
-          "credit": "3 hours in Humanities"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-AGLC-1-001",
-      "exhibit_ids": [
-        "MAPSAS-AGLC-1-001"
-      ],
-      "title": "AP German Language & Culture",
-      "unified_title": "AP German Language & Culture",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP German Language & Culture (score 3-5): Cal-GETC Area 3B"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 78,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 78,
-      "credit_recs": [
-        {
-          "course": "Cal-GETC Area 3B",
-          "credit": "3 hours in Humanities"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-AILC-1-001",
-      "exhibit_ids": [
-        "MAPSAS-AILC-1-001"
-      ],
-      "title": "AP Italian Language & Culture",
-      "unified_title": "AP Italian Language & Culture",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP Italian Language & Culture (score 3-5): Cal-GETC Area 3B"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 78,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 78,
-      "credit_recs": [
-        {
-          "course": "Cal-GETC Area 3B",
-          "credit": "3 hours in Humanities"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-AJLC-1-001",
-      "exhibit_ids": [
-        "MAPSAS-AJLC-1-001"
-      ],
-      "title": "AP Japanese Language & Culture",
-      "unified_title": "AP Japanese Language & Culture",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP Japanese Language & Culture (score 3-5): Cal-GETC Area 3B"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 78,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 78,
-      "credit_recs": [
-        {
-          "course": "Cal-GETC Area 3B",
-          "credit": "3 hours in Humanities"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-ASLC-1-001",
-      "exhibit_ids": [
-        "MAPSAS-ASLC-1-001"
-      ],
-      "title": "AP Spanish Language & Culture",
-      "unified_title": "AP Spanish Language & Culture",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP Spanish Language & Culture (score 3-5): Cal-GETC Area 3B"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 78,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 78,
-      "credit_recs": [
-        {
-          "course": "Cal-GETC Area 3B",
-          "credit": "3 hours in Humanities"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-ASLC1-1-001",
-      "exhibit_ids": [
-        "MAPSAS-ASLC1-1-001"
-      ],
-      "title": "AP Spanish Literature & Culture",
-      "unified_title": "AP Spanish Literature & Culture",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP Spanish Literature & Culture (score 3-5): Cal-GETC Area 3B"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 78,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 78,
-      "credit_recs": [
-        {
-          "course": "Cal-GETC Area 3B",
-          "credit": "3 hours in Humanities"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-AUGP-1-001",
-      "exhibit_ids": [
+        "MAPSAS-A:UG-1-001",
         "MAPSAS-AUGP-1-001"
       ],
-      "title": "AP U.S. Government & Politics",
-      "unified_title": "AP U.S. Government & Politics",
+      "title": "AP U.S. Government and Politics",
+      "unified_title": "AP U.S. Government and Politics",
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
       "confidence_title": 0.97,
-      "confidence_issuer": 0.95,
+      "confidence_issuer": 0.98,
       "quality_flag": "",
       "raw_titles": [
+        "AP : U.S. Government and Politics",
         "AP U.S. Government & Politics (score 3-5): Cal-GETC Area 4"
       ],
       "cpl_type": "Standardized Assessment",
@@ -211796,6 +210738,10 @@ window.CPL_STATEWIDE = {
       "credit_recs": [
         {
           "course": "Cal-GETC Area 4",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        },
+        {
+          "course": "Local GE Area 4",
           "credit": "3 hours in Social and Behavioral Sciences"
         }
       ]
@@ -212245,117 +211191,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPSAS-AEL5-1-001",
-      "exhibit_ids": [
-        "MAPSAS-AEL5-1-001"
-      ],
-      "title": "AP English Literature & Composition",
-      "unified_title": "AP English Literature & Composition",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.96,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP English Literature/Composition (score 3-5): Cal-GETC Area 1A or 3B"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 78,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 78,
-      "credit_recs": [
-        {
-          "course": "Cal-GETC 1A or 3B",
-          "credit": "3 hours in English Composition or Humanities"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPSAH-ILAL-1-001|MAPSAS-I:LA-1-001|MAPSAS-ILAL10-1-001|MAPSAS-ILAL12-1-001|MAPSAS-ILAL2-1-001",
       "exhibit_ids": [
         "MAPSAH-ILAL-1-001",
@@ -212526,6 +211361,58 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPSAS-A-CB1-1-001|MAPSAS-A:CB1-1-001|MAPSAS-ACBS-1-001",
+      "exhibit_ids": [
+        "MAPSAS-A-CB1-1-001",
+        "MAPSAS-A:CB1-1-001",
+        "MAPSAS-ACBS-1-001"
+      ],
+      "title": "AP Calculus BC — AB Subscore",
+      "unified_title": "AP Calculus BC — AB Subscore",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 0.95,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP - Calculus BC/AB subscore",
+        "AP : Calculus BC/AB Subscore",
+        "AP: Calculus BC/AB Subscore"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 3,
+      "adopter_names": [
+        "Clovis Community College",
+        "Copper Mountain College",
+        "Los Angeles Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 3,
+      "credit_recs": [
+        {
+          "course": "CSU GE B4",
+          "credit": "3 hours in CSU GE B4 – Mathematics/Quantitative Reasoning"
+        },
+        {
+          "course": "IGETC 2A",
+          "credit": "3 hours in IGETC 2A – Math"
+        },
+        {
+          "course": "Local GE 2",
+          "credit": "3 hours in Math concepts"
+        },
+        {
+          "course": "Local GE Area 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPSAS-CESL1-1-001|MAPSAS-CSLI1-1-001|MAPSAS-CSLI2-1-001|MAPSAS-CSLI4-1-001",
       "exhibit_ids": [
         "MAPSAS-CESL1-1-001",
@@ -212670,51 +211557,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "GE 3 Area 3",
           "credit": "4 hours in Arts and Humanities"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-A-CB1-1-001|MAPSAS-A:CB1-1-001",
-      "exhibit_ids": [
-        "MAPSAS-A-CB1-1-001",
-        "MAPSAS-A:CB1-1-001"
-      ],
-      "title": "AP Calculus BC (AB Subscore)",
-      "unified_title": "AP Calculus BC (AB Subscore)",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 0.99,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP - Calculus BC/AB subscore",
-        "AP : Calculus BC/AB Subscore"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "Copper Mountain College",
-        "Los Angeles Valley College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 2,
-      "credit_recs": [
-        {
-          "course": "CSU GE B4",
-          "credit": "3 hours in CSU GE B4 – Mathematics/Quantitative Reasoning"
-        },
-        {
-          "course": "IGETC 2A",
-          "credit": "3 hours in IGETC 2A – Math"
-        },
-        {
-          "course": "Local GE Area 2",
-          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
       ]
     },
@@ -214067,40 +212909,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "AIRC 141",
           "credit": "3 hours in Hydronics and Air Distribution"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-ACBS-1-001",
-      "exhibit_ids": [
-        "MAPSAS-ACBS-1-001"
-      ],
-      "title": "AP Calculus BC: AB Subscore",
-      "unified_title": "AP Calculus BC: AB Subscore",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP: Calculus BC/AB Subscore"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Clovis Community College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 1,
-      "credit_recs": [
-        {
-          "course": "Local GE 2",
-          "credit": "3 hours in Math concepts"
         }
       ]
     },
@@ -215875,74 +214683,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "ART 031",
           "credit": "3 hours in Digital Photography"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-A:UG-1-001",
-      "exhibit_ids": [
-        "MAPSAS-A:UG-1-001"
-      ],
-      "title": "AP U.S. Government and Politics",
-      "unified_title": "AP U.S. Government and Politics",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP : U.S. Government and Politics"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Copper Mountain College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 1,
-      "credit_recs": [
-        {
-          "course": "Local GE Area 4",
-          "credit": "3 hours in Social and Behavioral Sciences"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-C:CA1-1-001",
-      "exhibit_ids": [
-        "MAPSAS-C:CA1-1-001"
-      ],
-      "title": "CLEP College Algebra — Trigonometry",
-      "unified_title": "CLEP College Algebra — Trigonometry",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "CLEP : College Algebra – Trigonometry"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Copper Mountain College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 1,
-      "credit_recs": [
-        {
-          "course": "Local GE Area 2",
-          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         }
       ]
     },
@@ -219091,8 +217831,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Cerritos College",
-        "credit_recs": 82,
-        "exhibits": 71,
+        "credit_recs": 81,
+        "exhibits": 70,
         "disciplines": 5,
         "ccc_collaborative": 0,
         "industry_certs": 0,
@@ -219588,9 +218328,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 1905,
-        "exhibits": 1021,
-        "courses": 1100,
+        "credit_recs": 1904,
+        "exhibits": 1020,
+        "courses": 1099,
         "colleges": 53,
         "ccc_collaborative": 459,
         "pct": 17.0
@@ -219802,10 +218542,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 1566,
-        "exhibits": 1157,
+        "credit_recs": 1565,
+        "exhibits": 1156,
         "colleges": 56,
-        "pct": 14.0
+        "pct": 13.9
       },
       {
         "cpl_type": "Portfolio Review",
@@ -219846,8 +218586,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1203,
-        "exhibits": 556,
+        "credit_recs": 1202,
+        "exhibits": 555,
         "colleges": 43,
         "pct": 10.7
       },
@@ -219904,8 +218644,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 9743,
-        "exhibits": 3646,
+        "credit_recs": 9742,
+        "exhibits": 3645,
         "colleges": 99,
         "disciplines": 23,
         "pct": 86.8
@@ -220330,6 +219070,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-04T13:32:59",
-  "total_credit_recs": 11224
+  "generated_at": "2026-06-04T17:23:39",
+  "total_credit_recs": 11223
 };
