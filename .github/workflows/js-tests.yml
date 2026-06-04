@@ -1,0 +1,22 @@
+name: JS tests
+
+# Consumer (jsdom) regression tests for the dashboard's static front-end JS
+# (credential_reference.js, …). Non-required check — informational on PRs; it
+# does NOT gate the merge-on-green flow (a failing non-required check leaves the
+# PR `unstable`, which the auto-merge policy still merges). Catches regressions
+# like the Session-32 raw_variants:null search/expand crash before they ship.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: npm test
