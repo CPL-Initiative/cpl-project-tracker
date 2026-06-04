@@ -5506,6 +5506,126 @@ def export_credential_reference():
         if ut:
             art_by_ut[ut].append(a)
 
+    # ── Identity consolidation for the CER view (display de-clutter, 2026-06-04)
+    # Within ONE credential the same course shows up as many single-college M-IDs
+    # whose TITLES differ only by level/format wording ("EMT" / "EMT Academy" /
+    # "EMT (Basic)" / "EMT I" / "EMT Training" / "EMERGENCY MEDICAL TECH" …). The
+    # CCR Suggested-merges worklist is deliberately level-SAFE so it won't merge
+    # these, and coci_articulations.json is a static raw-M-ID artifact — so the CER
+    # rendered 29 rows for EMT Certification when there are ~12 real courses (Sam's
+    # screenshot review, 2026-06-04). Collapse them HERE — display only, NO identity
+    # mutation, fully reversible (revert the code → the rows return) — via a course
+    # FAMILY key: strip parentheticals + punctuation, expand EMT/Tech, drop a small
+    # FORMAT word set (basic/training/academy/…) + bare section letters, sort the
+    # remaining tokens. Whatever's LEFT is the distinguishing concept, so Lab /
+    # Clinical / Refresher / First-Responder / Intro-to-EMS / National-Registry
+    # stay distinct (their component word survives the strip).
+    #
+    # ORDINALS are the trap: blindly dropping "I/II/1/2" over-merges genuine course
+    # SEQUENCES (Calculus I vs II, Spanish 1 vs 2, Paramedic 1/2/3/4). So ordinals
+    # are level-SAFE by default — kept as a distinguishing `level` — EXCEPT when a
+    # base title carries only ONE distinct level across the card (e.g. "EMT" + "EMT
+    # I" with no "EMT II" → the ordinal is non-distinguishing → merge). That two-
+    # pass rule collapses the EMT-Basic core to ONE row while keeping Calculus I≠II.
+    # Honors Sam's "Core EMT-Basic only" call. The DURABLE identity merges are
+    # queued separately in the worklist; this is the immediate declutter ("CER view
+    # + worklist"). Scoped WITHIN a credential, so the blast radius is one card.
+    _FAM_FORMAT = {"basic", "training", "academy", "preparation", "prep",
+                   "certificate", "course", "application", "module", "part",
+                   "semester", "program"}
+    _FAM_DROP = {"the", "of", "to", "and", "for", "with", "in", "a", "an",
+                 "on", "at", "as", "or"}
+    # Roman→digit for the ordinal rule below. "i"/"1" are treated as
+    # non-distinguishing (a bare title is the same course as its "I"); "ii"+/"2"+
+    # are KEPT as distinguishing tokens so real sequences (Calculus II, Spanish 2,
+    # Paramedic 2/3/4) never fold into level 1.
+    _FAM_ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5",
+                  "vi": "6", "vii": "7", "viii": "8", "ix": "9"}
+
+    def _fam_key(title):
+        """Course-family key: sorted distinguishing tokens. Strips parentheticals,
+        articles, FORMAT words, bare section letters, multi-digit course numbers,
+        and the ordinal "1"/"I" (non-distinguishing). KEEPS ordinals 2–9 (roman
+        normalized) as tokens — so "X" == "X I" but "X" != "X II"."""
+        t = re.sub(r"\([^)]*\)", " ", str(title or "").lower())
+        t = re.sub(r"[^a-z0-9 ]+", " ", t)
+        toks = []
+        for w in t.split():
+            if w == "emt":
+                toks += ["emergency", "medical", "technician"]
+            elif w == "tech":
+                toks.append("technician")
+            else:
+                toks.append(w)
+        keep = []
+        for w in toks:
+            if len(w) == 1 and not w.isdigit():   # bare section letter ("A"/"B")
+                continue                          # (keep single digits 2–9)
+            if w in _FAM_DROP or w in _FAM_FORMAT:
+                continue
+            if w in _FAM_ROMAN:
+                w = _FAM_ROMAN[w]                  # roman → digit
+            if w.isdigit():
+                if w == "1" or len(w) >= 2:        # "1"/"I" non-distinguishing; ≥10 = course #
+                    continue
+                # else 2–9: keep as a distinguishing token
+            keep.append(w)
+        return " ".join(sorted(set(keep)))
+
+    _SYS_RANK = {"CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3}
+    _FAM_MERGE_SYS = {"M-ID", "Unified"}           # only surrogate identities fold;
+                                                   # C-ID/CCN anchors stay 1 row each
+
+    def _consolidate_arts(entries):
+        """Fold same-family M-ID/Unified entries (within one credential) into one
+        CER row. C-ID/CCN anchors and empty-key entries are NEVER merged (each
+        stays its own row — anchors are authoritative + one-per-course, and their
+        title is often blank so a family key would be unreliable). Representative =
+        the cleanest (fewest-token) title, then stable cid. Unions the member local
+        courses; lists the folded ids for a disclosure."""
+        groups, order = {}, []
+        for i, a in enumerate(entries):
+            fk = _fam_key(a.get("title")) if a.get("sys") in _FAM_MERGE_SYS else ""
+            # empty key (anchor / unkeyable title) → unique bucket, never merges
+            gk = fk if fk else "~solo%d" % i
+            if gk not in groups:
+                groups[gk] = []
+                order.append(gk)
+            groups[gk].append(a)
+        out = []
+        for gk in order:
+            members = groups[gk]
+            if len(members) == 1:
+                out.append(members[0])
+                continue
+            rep = min(members, key=lambda a: (_SYS_RANK.get(a.get("sys"), 9),
+                                              len((a.get("title") or "").split()),
+                                              a.get("cid", "")))
+            lset = {}
+            for a in members:
+                for lc in (a.get("local") or []):
+                    key = (lc.get("subj", ""), lc.get("num", ""), lc.get("t", ""))
+                    if key not in lset:
+                        lset[key] = {"colleges": set(), "u": lc.get("u")}
+                    lset[key]["colleges"].update(lc.get("colleges") or [])
+                    if lset[key]["u"] is None and lc.get("u") is not None:
+                        lset[key]["u"] = lc.get("u")
+            local = []
+            for (s, n, t) in sorted(lset):
+                ent = {"subj": s, "num": n, "t": t,
+                       "colleges": sorted(lset[(s, n, t)]["colleges"])}
+                if lset[(s, n, t)]["u"] is not None:
+                    ent["u"] = lset[(s, n, t)]["u"]
+                local.append(ent)
+            out.append({"cid": rep["cid"], "sys": rep.get("sys", ""),
+                        "title": rep.get("title", ""), "disc": rep.get("disc", ""),
+                        "top": rep.get("top", ""), "local": local,
+                        "merged": len(members),
+                        "members": [{"cid": a["cid"], "sys": a.get("sys", ""),
+                                     "title": a.get("title", "")}
+                                    for a in members if a["cid"] != rep["cid"]]})
+        return out
+
     rows = []
     for ut, _n in raw_count_by_ut.items():
         creds = cred_doc.get(ut, [])
@@ -5596,6 +5716,10 @@ def export_credential_reference():
                 "top": m.get("top", ""),
                 "local": local_list,
             })
+        # Fold near-duplicate identities (same course, level/format title drift)
+        # into one row BEFORE flagging/ordering, so the subject-outlier + header
+        # counts operate on the consolidated set.
+        articulations_out = _consolidate_arts(articulations_out)
         # Order common-course identities: official first (CCN-ID, C-ID), then M-ID / Unified.
         sys_order = {"CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3}
         articulations_out.sort(key=lambda x: (sys_order.get(x["sys"], 9), x["cid"]))

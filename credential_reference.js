@@ -1905,6 +1905,9 @@
       // elective-bucket disclosure. Native <details> marker kept (the expand
       // affordance) per the Session-28 toggle lesson.
       "#tab-credential-reference .cr-art-outlier{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:#FFF6E0;color:#7a5c00;border:1px solid #C9A84C;white-space:nowrap;}" +
+      // Consolidated-identity badge (2026-06-04) — informational (consolidation
+      // is good), so navy-on-light like the Local chip, not the amber warn badges.
+      "#tab-credential-reference .cr-art-merged{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:#e8eef5;color:#0A2240;border:1px solid #cdd9e6;white-space:nowrap;cursor:help;}" +
       "#tab-credential-reference .cr-bucket-details{margin:8px 0 4px;}" +
       "#tab-credential-reference .cr-bucket-summary{cursor:pointer;font-size:.78rem;font-weight:600;color:#92400e;background:#FEF3C7;border:1px solid #F59E0B;border-radius:6px;padding:4px 10px;display:inline-block;}" +
       "#tab-credential-reference .cr-bucket-note{font-size:.74rem;color:#6b7280;font-style:italic;margin:6px 0 4px;max-width:74ch;}" +
@@ -2371,6 +2374,26 @@
         if (metaParts.length) {
           idCell.appendChild(document.createTextNode(" · "));
           idCell.appendChild(el("span", { class: "cr-id-meta" }, [metaParts.join(" · ")]));
+        }
+        // Consolidated-identity badge (2026-06-04) — this row folds N near-
+        // duplicate common-course identities (the same course minted as separate
+        // single-college M-IDs, differing only in level/format title wording:
+        // "EMT" / "EMT Academy" / "EMT I" / "EMT Training" …) into one, so the
+        // EMT-style 29-row sprawl reads as the ~12 real courses. Producer-side
+        // (_consolidate_arts); the DURABLE identity merges are queued in the CCR
+        // Suggested-merges worklist. The folded ids + titles ride in the tooltip.
+        if (a.merged && a.merged > 1) {
+          idCell.appendChild(document.createTextNode(" "));
+          var _mem = (a.members || []).map(function (m) {
+            return m.cid + (m.title ? " (" + m.title + ")" : "");
+          });
+          idCell.appendChild(el("span", {
+            class: "cr-art-merged",
+            title: a.merged + " near-duplicate common-course identities folded into this "
+                 + "row (same course, different local title wording). Folded: "
+                 + (_mem.join("; ") || "—") + ". Durable identity merges are queued in "
+                 + "the CCR Suggested-merges worklist."
+          }, ["⛓ " + a.merged + " variants"]));
         }
         // Subject-outlier review badge (R1) — minority subject vs this
         // credential's predominant one; a candidate for review, not a verdict.
