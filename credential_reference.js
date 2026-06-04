@@ -1820,7 +1820,17 @@
       "#tab-credential-reference table.cr-arts-table th{text-align:left;}" +
       "#tab-credential-reference table.cr-arts-table td{text-align:left;}" +
       "#tab-credential-reference .cr-art-ident{max-width:none;}" +
-      "#tab-credential-reference .cr-lc-units{color:#6b7280;font-size:.92em;}";
+      "#tab-credential-reference .cr-lc-units{color:#6b7280;font-size:.92em;}" +
+      // R1 noise suppression (2026-06-04): subject-outlier review badge (amber,
+      // matches the file's existing gen-chip/triage palette) + the collapsed
+      // elective-bucket disclosure. Native <details> marker kept (the expand
+      // affordance) per the Session-28 toggle lesson.
+      "#tab-credential-reference .cr-art-outlier{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:#FFF6E0;color:#7a5c00;border:1px solid #C9A84C;white-space:nowrap;}" +
+      "#tab-credential-reference .cr-bucket-details{margin:8px 0 4px;}" +
+      "#tab-credential-reference .cr-bucket-summary{cursor:pointer;font-size:.78rem;font-weight:600;color:#92400e;background:#FEF3C7;border:1px solid #F59E0B;border-radius:6px;padding:4px 10px;display:inline-block;}" +
+      "#tab-credential-reference .cr-bucket-note{font-size:.74rem;color:#6b7280;font-style:italic;margin:6px 0 4px;max-width:74ch;}" +
+      "#tab-credential-reference .cr-bucket-table{opacity:.72;margin-top:2px;}" +
+      "#tab-credential-reference .cr-bucket-row .cr-id-code{color:#6b7280;}";
     document.head.appendChild(st);
   }
 
@@ -2157,34 +2167,28 @@
     // college course rows on the right. CCN-ID / C-ID anchors first, then
     // M-ID / Cluster surrogates.
     if (r.articulations && r.articulations.length) {
-      var n_lines = r.n_articulation_lines || 0;
-      div.appendChild(el("h5", null, [
-        "Common-course identities articulating to this credential "
-        + "(" + r.articulations.length + " "
-        + (r.articulations.length === 1 ? "identity" : "identities")
-        + " · " + n_lines + " local-course line" + (n_lines === 1 ? "" : "s") + ")"
-      ]));
-      var tbl = el("table", { class: "cr-arts-table" });
-      var thead = el("thead", null, [el("tr", null, [
-        el("th", null, ["Common Course (CCR)"]),
-        el("th", null, ["Local Course"]),
-        el("th", null, ["Earning College(s)"]),
-      ])]);
-      tbl.appendChild(thead);
-      var tbody2 = el("tbody");
-      r.articulations.forEach(function (a) {
+      // R1 noise suppression (2026-06-04): split identities into the substantive
+      // set (shown) and "elective-bucket" entries (a.bucket — a single local
+      // course a college maps many unrelated exams to for generic elective
+      // credit, e.g. Clovis's COMM M1038 → 61 credentials). Buckets are demoted
+      // into a collapsed disclosure so the table boils down to essentials.
+      // Subject-outliers (a.outlier) stay visible with a review badge — a
+      // minority subject may still be a legitimate local/GE choice.
+      var shownArts = r.articulations.filter(function (a) { return !a.bucket; });
+      var bucketArts = r.articulations.filter(function (a) { return a.bucket; });
+
+      // Build one identity <tr>. `bucketRow` mutes it (used in the disclosure).
+      function mkArtRow(a, bucketRow) {
         var sysCls = "cr-sys-" + (a.sys || "mid").toLowerCase().replace(/[^a-z]/g, "");
-        // One row per identity (no rowspan) — the local courses are folded into
-        // a single cell so each identity stays on one row and the table is short.
-        var row = el("tr", { class: "cr-art-row cr-art-first" });
+        // One row per identity (no rowspan) — local courses folded into one cell.
+        var row = el("tr", { class: "cr-art-row cr-art-first" + (bucketRow ? " cr-bucket-row" : "") });
 
         var idCell = el("td", { class: "cr-art-ident " + sysCls });
         idCell.appendChild(el("span", { class: "cr-id-sys" }, [idSysLabel(a.sys) || "?"]));
         idCell.appendChild(document.createTextNode(" "));
         idCell.appendChild(el("code", { class: "cr-id-code" }, [a.cid || "—"]));
         // Item 4 (2026-06-04): keep the whole CCR identity on ONE line — the
-        // title + discipline/TOP meta were stacked <div>s; now inline <span>s
-        // joined by " · " so the identity reads across, not down.
+        // title + discipline/TOP meta as inline <span>s joined by " · ".
         if (a.title) {
           idCell.appendChild(document.createTextNode(" · "));
           idCell.appendChild(el("span", { class: "cr-id-title" }, [a.title]));
@@ -2196,12 +2200,21 @@
           idCell.appendChild(document.createTextNode(" · "));
           idCell.appendChild(el("span", { class: "cr-id-meta" }, [metaParts.join(" · ")]));
         }
+        // Subject-outlier review badge (R1) — minority subject vs this
+        // credential's predominant one; a candidate for review, not a verdict.
+        if (a.outlier) {
+          idCell.appendChild(document.createTextNode(" "));
+          idCell.appendChild(el("span", {
+            class: "cr-art-outlier",
+            title: "Subject outlier — a minority subject vs this credential's "
+                 + "predominant one. Review whether the articulation is correct "
+                 + "(it may be a legitimate cross-listing or local GE choice)."
+          }, ["⚠ subject outlier"]));
+        }
         row.appendChild(idCell);
 
         // Local courses — code + title + units inline (item 4), e.g.
-        // "BIT 375 10-Key on the Computer (1 unit)". Units come from the baked
-        // `u` field (singleton typical_units / membership modal units); omitted
-        // when unknown.
+        // "BIT 375 10-Key on the Computer (1 unit)". Units from the baked `u`.
         var locals = (a.local || []).filter(function (lc) { return lc.subj || lc.num || lc.t; });
         var lcCell = el("td", { class: "cr-art-local" });
         if (locals.length) {
@@ -2231,14 +2244,56 @@
           (lc.colleges || []).forEach(function (c) { if (c) colSet[c] = 1; });
         });
         var allCols = Object.keys(colSet).sort();
-        var colCell = el("td", { class: "cr-art-colleges", title: allCols.join(", ") },
-          [allCols.length ? allCols.map(SHORT).join(", ") : "—"]);
-        row.appendChild(colCell);
+        row.appendChild(el("td", { class: "cr-art-colleges", title: allCols.join(", ") },
+          [allCols.length ? allCols.map(SHORT).join(", ") : "—"]));
+        return row;
+      }
 
-        tbody2.appendChild(row);
-      });
-      tbl.appendChild(tbody2);
-      div.appendChild(tbl);
+      // Header count reflects the SHOWN (substantive) identities only.
+      var shownLines = shownArts.reduce(function (s, a) {
+        return s + (a.local || []).filter(function (lc) { return lc.subj || lc.num || lc.t; }).length;
+      }, 0);
+      var nId = shownArts.length;
+      div.appendChild(el("h5", null, [
+        nId
+          ? ("Common-course identities articulating to this credential ("
+             + nId + " " + (nId === 1 ? "identity" : "identities")
+             + " · " + shownLines + " local-course line" + (shownLines === 1 ? "" : "s") + ")")
+          : "Common-course identities articulating to this credential"
+      ]));
+
+      if (nId) {
+        var tbl = el("table", { class: "cr-arts-table" });
+        tbl.appendChild(el("thead", null, [el("tr", null, [
+          el("th", null, ["Common Course (CCR)"]),
+          el("th", null, ["Local Course"]),
+          el("th", null, ["Earning College(s)"]),
+        ])]));
+        var tbody2 = el("tbody");
+        shownArts.forEach(function (a) { tbody2.appendChild(mkArtRow(a, false)); });
+        tbl.appendChild(tbody2);
+        div.appendChild(tbl);
+      }
+
+      // Demoted elective-bucket entries — collapsed, not counted above.
+      if (bucketArts.length) {
+        var det = el("details", { class: "cr-bucket-details" });
+        det.appendChild(el("summary", { class: "cr-bucket-summary" }, [
+          "⚠ " + bucketArts.length + " non-substantive “elective-bucket” "
+          + (bucketArts.length === 1 ? "entry" : "entries") + " hidden"
+        ]));
+        det.appendChild(el("p", { class: "cr-bucket-note" }, [
+          "A single local course a college maps many unrelated exams to for "
+          + "generic elective credit — not specific to this credential. "
+          + "Surfaced for review, not counted above."
+        ]));
+        var btbl = el("table", { class: "cr-arts-table cr-bucket-table" });
+        var bbody = el("tbody");
+        bucketArts.forEach(function (a) { bbody.appendChild(mkArtRow(a, true)); });
+        btbl.appendChild(bbody);
+        det.appendChild(btbl);
+        div.appendChild(det);
+      }
     } else {
       div.appendChild(el("h5", null, ["No common-course articulations resolved"]));
       div.appendChild(el("p", { class: "cr-empty-note" }, [
