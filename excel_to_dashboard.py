@@ -5240,27 +5240,51 @@ def export_credential_reference():
         if _recs and _elec / len(_recs) >= 0.8 and len(_creds) >= 5 and len(_cols) <= 3:
             elective_bucket_ids.add(_cid)
 
-    # CCC GE AP List (2026-06-04): AP credit is set at the SYSTEM level (AB 1985 /
-    # AA 17-20, being codified in CCR Title 5). The authoritative anchor for an AP
-    # exam is its GE Area + min units — NOT a course-identity fold (course-to-
-    # course AP credit is explicitly a LOCAL faculty decision). Join each AP
-    # credential to its statewide GE-Area credit so the CER card can headline it.
-    # Local course titles vary; the GE Area does not. Match on the exam name with
-    # the "AP " prefix stripped + normalized (the CER uses modern College Board
-    # names; the 2017 list uses older ones → per-exam `aliases` bridge them).
+    # CCC GE credit for standardized exams — AP / IB / CLEP (2026-06-04). This
+    # credit is set at the SYSTEM level (AP: AB 1985 / AA 17-20 / title 5 §55052;
+    # IB+CLEP: title 5 §55052.5; current charts: ESLEI 24-35, 2024-06-25). The
+    # authoritative anchor for an exam is its GE Area + min units — NOT a course-
+    # identity fold (course-to-course credit is explicitly a LOCAL faculty
+    # decision). Join each AP/IB/CLEP credential to its statewide GE-Area credit
+    # so the CER card can headline it; local course titles vary, the GE Area does
+    # not. Match: strip the program prefix, normalize, then exact/alias, else a
+    # per-program char-prefix rule (e.g. IB "language a" → Arts and Humanities,
+    # "language b" → N/A; bridges the CER's many old IB names to the chart).
     import re as _re
-    def _ap_norm(s):
-        s = (s or "").strip()
-        for _pre in ("Advanced Placement ", "AP "):
+    _PROG_PREFIXES = (("Advanced Placement ", "AP"), ("AP ", "AP"),
+                      ("IB ", "IB"), ("CLEP ", "CLEP"))
+    def _ge_prog(s):
+        for _pre, _p in _PROG_PREFIXES:
             if s.startswith(_pre):
-                s = s[len(_pre):]
-        return _re.sub(r"[^a-z0-9]+", " ", s.replace("&", "and").lower()).strip()
-    ge_ap_doc = _load(os.path.join("reference", "ccc_ge_ap_list.json")) or {}
-    ge_ap_lut = {}
-    for _e in (ge_ap_doc.get("exams") or []):
-        ge_ap_lut[_ap_norm(_e.get("exam", ""))] = _e
-        for _al in (_e.get("aliases") or []):
-            ge_ap_lut[_re.sub(r"[^a-z0-9]+", " ", _al.lower()).strip()] = _e
+                return _p, s[len(_pre):]
+        return None, s
+    def _ge_norm(s):
+        return _re.sub(r"[^a-z0-9]+", " ", (s or "").replace("&", "and").lower()).strip()
+    ge_doc = _load(os.path.join("reference", "ccc_ge_exam_credit.json")) or {}
+    # per-program lookup: program -> (exact{norm:entry}, [(norm_prefix, entry)])
+    ge_luts = {}
+    for _prog, _pd in (ge_doc.get("programs") or {}).items():
+        _exact, _prefixes = {}, []
+        for _e in (_pd.get("exams") or []):
+            _exact[_ge_norm(_e.get("exam", ""))] = _e
+            for _al in (_e.get("aliases") or []):
+                _exact[_ge_norm(_al)] = _e
+            for _pf in (_e.get("prefix") or []):
+                _prefixes.append((_ge_norm(_pf), _e))
+        ge_luts[_prog] = (_exact, _prefixes)
+    def _ge_lookup(ut):
+        _prog, _rest = _ge_prog(ut)
+        if not _prog or _prog not in ge_luts:
+            return None, None
+        _exact, _prefixes = ge_luts[_prog]
+        _n = _ge_norm(_rest)
+        _e = _exact.get(_n)
+        if not _e:
+            for _pfx, _ent in _prefixes:
+                if _n == _pfx or _n.startswith(_pfx):
+                    _e = _ent
+                    break
+        return _prog, _e
 
     # course_ids referenced by articulations — bounds the units lookup below.
     needed_cids = {a.get("course_id") for a in articulations if a.get("course_id")}
@@ -5481,19 +5505,20 @@ def export_credential_reference():
         issuer_val = primary.get("issuing_agency")
         trainer_val = primary.get("training_agency")
         qflag_val = quality_by_ut.get(ut)
-        # System-level GE-Area credit for AP exams (CCC GE AP List, AA 17-20).
-        # None for non-AP credentials + the 7 newer/discontinued AP exams not on
-        # the 2017 list (Precalculus, African American Studies, Physics B, …).
-        _ge = ge_ap_lut.get(_ap_norm(ut)) if str(ut).startswith(("AP ", "Advanced Placement ")) else None
-        ge_ap_out = None
+        # System-level GE-Area credit for AP/IB/CLEP exams (ESLEI 24-35 charts).
+        # None for non-exam credentials + exams not on the 2024 charts (AP African
+        # American Studies / Physics B / …; CLEP English Literature / Trigonometry).
+        _prog, _ge = _ge_lookup(str(ut))
+        ge_credit_out = None
         if _ge:
-            ge_ap_out = {"exam": _ge.get("exam", ""), "areas": _ge.get("areas", []),
-                         "units": _ge.get("min_units"), "na": bool(_ge.get("na"))}
+            ge_credit_out = {"program": _prog, "exam": _ge.get("exam", ""),
+                             "areas": _ge.get("areas", []), "units": _ge.get("min_units"),
+                             "na": bool(_ge.get("na")), "areas_all": bool(_ge.get("areas_all"))}
             if _ge.get("note"):
-                ge_ap_out["note"] = _ge["note"]
+                ge_credit_out["note"] = _ge["note"]
         row = {
             "ut": ut,
-            "ge_ap": ge_ap_out,
+            "ge_credit": ge_credit_out,
             "raw_count": raw_count_by_ut[ut],
             "raw_variants": sorted(raw_variants_by_ut.get(ut, []), key=lambda v: v["r"]),
             "issuer": issuer_val,
@@ -5581,8 +5606,9 @@ def export_credential_reference():
     print(f"    noise suppression: {len(elective_bucket_ids)} elective-bucket "
           f"identit{'y' if len(elective_bucket_ids)==1 else 'ies'} demoted "
           f"({', '.join(sorted(elective_bucket_ids)) or 'none'})")
-    _nge = sum(1 for _r in rows if _r.get("ge_ap"))
-    print(f"    CCC GE AP List: {_nge} AP credentials joined to system-level GE-Area credit")
+    _gec = Counter(_r["ge_credit"]["program"] for _r in rows if _r.get("ge_credit"))
+    print(f"    CCC GE exam credit (ESLEI 24-35): {sum(_gec.values())} credentials joined "
+          f"(AP {_gec.get('AP',0)} · IB {_gec.get('IB',0)} · CLEP {_gec.get('CLEP',0)})")
 
 
 def export_unified_courses():

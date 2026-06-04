@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-04 (Session 33 — [A] CLAUDE.md history→archive trim 1908→1514; R1 CER noise suppression #292 (demote elective-bucket COMM M1038 + flag subject-outliers); R2' AP-credit GE-Area layer (kb/reference/ccc_ge_ap_list.json + CER GE-credit callout) + new reference KB note + the 3 authoritative AP-policy source docs in docs/reference/)
+updated: 2026-06-04 (Session 33 — [A] CLAUDE.md history→archive trim 1908→1514; R1 CER noise suppression #292 (demote elective-bucket COMM M1038 + flag subject-outliers); GE-Area exam-credit layer #293 then extended to AP+IB+CLEP from ESLEI 24-35 — kb/reference/ccc_ge_exam_credit.json + CER GE-credit callout, 147/154 joined; new reference KB note + 4 authoritative source docs in docs/reference/)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker

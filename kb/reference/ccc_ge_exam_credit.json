@@ -1,0 +1,764 @@
+{
+ "_title": "CCC GE credit for standardized examinations — AP, IB & CLEP",
+ "_source": "ESLEI 24-35 (CCCCO Equitable Student Learning/ESS, 2024-06-25) Annual Updates — IB (App. B, title 5 §55052.5), CLEP (App. C, §55052.5), AP (App. D, §55052 / AB 1985). Foundational AP policy: AA 17-20 (2017-03-30) + FAQ AA 17-33 (2017-06-16); being codified via CCR Title 5 NPRM (45-day notice 2026-01-12). Source docs in docs/reference/.",
+ "_ge_framework": "title 5 §55063 four divisions (2024 labels): Natural Sciences, Social/Behavioral Sciences, Arts and Humanities, Language and Rationality. N/A (Not Applicable) -> the college may award elective credit.",
+ "_policy_notes": [
+  "Minimum passing score per program (AP>=3; IB 4-5 by exam; CLEP 50-63 by exam); GE-Area credit awarded at the indicated minimum units (colleges may award more / additional / alternative).",
+  "Course-to-course credit is a LOCAL faculty decision; the GE Area is the statewide constant. Where no GE Area matches, the college may award elective credit (origin of the MAP 'elective bucket').",
+  "areas_all=true means credit is awarded in ALL listed areas together (e.g. AP English Literature = 6 units across Language and Rationality AND Arts and Humanities); otherwise any one listed area qualifies ('X or Y')."
+ ],
+ "_match": "CER credentials are prefixed 'AP '/'IB '/'CLEP '. Strip the program prefix, normalize ('&'->'and', lowercase, non-alphanumeric->space, collapse), then match exam name or an alias (exact), else a program prefix rule. 2024 ESLEI is authoritative; AP 'Music' retained from AA 17-20.",
+ "_generated_by": "session 33 (sleepy-goodall), 2026-06-04 — transcribed from ESLEI 24-35 Appendices B/C/D (+ AA 17-20 for AP Music).",
+ "programs": {
+  "AP": {
+   "exams": [
+    {
+     "exam": "2-D Art and Design",
+     "areas": [],
+     "min_units": 0,
+     "na": true,
+     "aliases": [
+      "art and design 2 d",
+      "art and design 2 d design"
+     ]
+    },
+    {
+     "exam": "3-D Art and Design",
+     "areas": [],
+     "min_units": 0,
+     "na": true,
+     "aliases": [
+      "art and design 3 d",
+      "art and design 3 d design"
+     ]
+    },
+    {
+     "exam": "Art History",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Biology",
+     "areas": [
+      "Natural Sciences"
+     ],
+     "min_units": 4
+    },
+    {
+     "exam": "Calculus AB",
+     "areas": [
+      "Language and Rationality"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Calculus BC",
+     "areas": [
+      "Language and Rationality"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Calculus BC/AB Subscore",
+     "areas": [
+      "Language and Rationality"
+     ],
+     "min_units": 3,
+     "aliases": [
+      "calculus bc ab subscore"
+     ]
+    },
+    {
+     "exam": "Chemistry",
+     "areas": [
+      "Natural Sciences"
+     ],
+     "min_units": 4
+    },
+    {
+     "exam": "Chinese Language and Culture",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Comparative Government and Politics",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Computer Science A",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "Computer Science AB",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "Computer Science Principles",
+     "areas": [
+      "Language and Rationality"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Drawing",
+     "areas": [],
+     "min_units": 0,
+     "na": true,
+     "aliases": [
+      "art and design drawing"
+     ]
+    },
+    {
+     "exam": "English Language and Composition",
+     "areas": [
+      "Language and Rationality"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "English Literature and Composition",
+     "areas": [
+      "Language and Rationality",
+      "Arts and Humanities"
+     ],
+     "min_units": 6,
+     "areas_all": true
+    },
+    {
+     "exam": "Environmental Science",
+     "areas": [
+      "Natural Sciences"
+     ],
+     "min_units": 4
+    },
+    {
+     "exam": "European History",
+     "areas": [
+      "Social/Behavioral Sciences",
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "French Language and Culture",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "German Language and Culture",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Human Geography",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Italian Language and Culture",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Japanese Language and Culture",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Latin",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Macroeconomics",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Microeconomics",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Music",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3,
+     "aliases": [
+      "music theory"
+     ]
+    },
+    {
+     "exam": "Physics 1",
+     "areas": [
+      "Natural Sciences"
+     ],
+     "min_units": 4,
+     "aliases": [
+      "physics 1 algebra based"
+     ]
+    },
+    {
+     "exam": "Physics 2",
+     "areas": [
+      "Natural Sciences"
+     ],
+     "min_units": 4,
+     "aliases": [
+      "physics 2 algebra based"
+     ]
+    },
+    {
+     "exam": "Physics C: Mechanics",
+     "areas": [
+      "Natural Sciences"
+     ],
+     "min_units": 4,
+     "aliases": [
+      "physics c mechanics"
+     ]
+    },
+    {
+     "exam": "Physics C: Electricity and Magnetism",
+     "areas": [
+      "Natural Sciences"
+     ],
+     "min_units": 4,
+     "aliases": [
+      "physics c electricity magnetism",
+      "physics c electricity and magnetism"
+     ]
+    },
+    {
+     "exam": "PreCalculus",
+     "areas": [
+      "Language and Rationality"
+     ],
+     "min_units": 3,
+     "aliases": [
+      "pre calculus"
+     ]
+    },
+    {
+     "exam": "Psychology",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Seminar",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "Spanish Language and Culture",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Spanish Literature and Culture",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Statistics",
+     "areas": [
+      "Language and Rationality"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "U.S. Government and Politics",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3,
+     "aliases": [
+      "united states government and politics"
+     ]
+    },
+    {
+     "exam": "U.S. History",
+     "areas": [
+      "Social/Behavioral Sciences",
+      "Arts and Humanities"
+     ],
+     "min_units": 3,
+     "aliases": [
+      "united states history"
+     ]
+    },
+    {
+     "exam": "World History",
+     "areas": [
+      "Social/Behavioral Sciences",
+      "Arts and Humanities"
+     ],
+     "min_units": 3,
+     "aliases": [
+      "world history modern"
+     ]
+    }
+   ]
+  },
+  "IB": {
+   "exams": [
+    {
+     "exam": "Biology HL",
+     "areas": [
+      "Natural Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Chemistry HL",
+     "areas": [
+      "Natural Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Economics HL",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Geography HL",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "History (any region) HL",
+     "areas": [
+      "Social/Behavioral Sciences",
+      "Arts and Humanities"
+     ],
+     "min_units": 3,
+     "prefix": [
+      "history"
+     ]
+    },
+    {
+     "exam": "Language A: Literature HL",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3,
+     "prefix": [
+      "language a"
+     ]
+    },
+    {
+     "exam": "Language A: Language and Literature HL",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Language B (any language) HL",
+     "areas": [],
+     "min_units": 0,
+     "na": true,
+     "prefix": [
+      "language b"
+     ]
+    },
+    {
+     "exam": "Mathematics: Analysis and Approaches HL",
+     "areas": [
+      "Language and Rationality"
+     ],
+     "min_units": 3,
+     "prefix": [
+      "mathematics"
+     ]
+    },
+    {
+     "exam": "Mathematics: Applications and Interpretation HL",
+     "areas": [
+      "Language and Rationality"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Physics HL",
+     "areas": [
+      "Natural Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Psychology HL",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Theatre HL",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    }
+   ]
+  },
+  "CLEP": {
+   "exams": [
+    {
+     "exam": "American Government",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "American Literature",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Analyzing and Interpreting Literature",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Biology",
+     "areas": [
+      "Natural Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Calculus",
+     "areas": [
+      "Language and Rationality"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Chemistry",
+     "areas": [
+      "Natural Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "College Algebra",
+     "areas": [
+      "Language and Rationality"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "College Algebra - Trigonometry",
+     "areas": [
+      "Language and Rationality"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "College Composition",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "College Composition - Modular",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "College Mathematics",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "English Composition (no essay)",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "English Composition (with essay)",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "Financial Accounting",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "French Level I",
+     "areas": [],
+     "min_units": 0,
+     "na": true,
+     "aliases": [
+      "french language level i"
+     ]
+    },
+    {
+     "exam": "French Level II",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3,
+     "aliases": [
+      "french language level ii"
+     ]
+    },
+    {
+     "exam": "Freshman College Composition",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "German Level I",
+     "areas": [],
+     "min_units": 0,
+     "na": true,
+     "aliases": [
+      "german language level i"
+     ]
+    },
+    {
+     "exam": "German Level II",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3,
+     "aliases": [
+      "german language level ii"
+     ]
+    },
+    {
+     "exam": "History, United States I",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3,
+     "aliases": [
+      "history of the united states i"
+     ]
+    },
+    {
+     "exam": "History, United States II",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3,
+     "aliases": [
+      "history of the united states ii"
+     ]
+    },
+    {
+     "exam": "Human Growth and Development",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Humanities",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Information Systems and Computer Apps",
+     "areas": [],
+     "min_units": 0,
+     "na": true,
+     "aliases": [
+      "information systems and computer applications"
+     ]
+    },
+    {
+     "exam": "Introduction to Educational Psychology",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "Introductory Business Law",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "Introductory Psychology",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Introductory Sociology",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Natural Sciences",
+     "areas": [
+      "Natural Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Pre-Calculus",
+     "areas": [
+      "Language and Rationality"
+     ],
+     "min_units": 3,
+     "aliases": [
+      "precalculus"
+     ]
+    },
+    {
+     "exam": "Principles of Accounting",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "Principles of Macroeconomics",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Principles of Management",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "Principles of Marketing",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "Principles of Microeconomics",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Social Sciences and History",
+     "areas": [],
+     "min_units": 0,
+     "na": true
+    },
+    {
+     "exam": "Spanish Level I",
+     "areas": [],
+     "min_units": 0,
+     "na": true,
+     "aliases": [
+      "spanish language level i"
+     ]
+    },
+    {
+     "exam": "Spanish Level II",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3,
+     "aliases": [
+      "spanish language level ii"
+     ]
+    },
+    {
+     "exam": "Spanish with Writing I",
+     "areas": [],
+     "min_units": 0,
+     "na": true,
+     "aliases": [
+      "spanish with writing level i"
+     ]
+    },
+    {
+     "exam": "Spanish with Writing Level II",
+     "areas": [
+      "Arts and Humanities"
+     ],
+     "min_units": 3,
+     "aliases": [
+      "spanish with writing ii"
+     ]
+    },
+    {
+     "exam": "Western Civilization I",
+     "areas": [
+      "Arts and Humanities",
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    },
+    {
+     "exam": "Western Civilization II",
+     "areas": [
+      "Social/Behavioral Sciences"
+     ],
+     "min_units": 3
+    }
+   ]
+  }
+ },
+ "_unmapped_note": "CER titles not on the 2024 charts carry no GE mapping: AP African American Studies / French Literature / Latin Literature / Physics / Physics B; CLEP English Literature / Trigonometry."
+}

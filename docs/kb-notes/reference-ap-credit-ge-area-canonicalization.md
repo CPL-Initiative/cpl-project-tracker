@@ -10,13 +10,24 @@ related:
   - "[[docs/eacr_consolidation_lessons]]"
   - "[[docs/kb-notes/playbook-cer-credential-merge]]"
 artifacts:
-  - kb/reference/ccc_ge_ap_list.json
+  - kb/reference/ccc_ge_exam_credit.json
+  - docs/reference/ccc_ib_clep_ap_exam_charts_ESLEI24-35_2024-06-25.pdf
   - docs/reference/ccc_ap_credit_policy_AA17-20_2017.docx
   - docs/reference/ccc_ge_ap_policy_faqs_AA17-33_2017.docx
   - docs/reference/ccr_title5_awarding_credit_ap_external_exams_45day_2026-01-12.pdf
-  - excel_to_dashboard.py (export_credential_reference → ge_ap)
+  - excel_to_dashboard.py (export_credential_reference → ge_credit)
   - credential_reference.js (renderGeApCredit)
 ---
+
+> **Scope update (2026-06-04):** extended from AP-only to **AP + IB + CLEP**,
+> now sourced from the current annual chart **ESLEI 24-35** (2024-06-25;
+> IB App. B / CLEP App. C / AP App. D). The single dataset is
+> `kb/reference/ccc_ge_exam_credit.json` (`programs: {AP, IB, CLEP}`); the baked
+> field is `ge_credit` (was `ge_ap`). **147 of 154** exam credentials join
+> (AP 62 · IB 44 · CLEP 41). The 2024 AP chart also corrected a few 2017 values
+> — e.g. **Computer Science Principles** N/A → Language & Rationality; **English
+> Literature & Composition** → 6 units across *both* L&R **and** Arts & Humanities
+> (`areas_all`); **PreCalculus** now mapped; "Humanities" → "Arts and Humanities".
 
 # AP credit is a GE-Area mapping, not a course-identity fold
 
@@ -78,27 +89,31 @@ not an M-ID→C-ID fold:
 
 ## How it's wired (shipped Session 33)
 
-- **`kb/reference/ccc_ge_ap_list.json`** — the transcribed list: per exam
-  `{exam, areas[], min_units, na, aliases[]}`. `aliases` bridge the **modern
-  College Board names** the CER uses (e.g. "AP World History: Modern", "AP
-  Physics C: Mechanics", "AP United States History", "AP Calculus BC — AB
-  Subscore") to the **2017 policy names** ("World History", "Physics C
-  mechanics", "U.S. History", "Calculus BC/AB Subscore").
-- **Producer** (`export_credential_reference()`): normalizes each AP
-  `unified_title` (strip `AP `/`Advanced Placement `, `&`→`and`, lowercase,
-  non-alnum→space) and looks it up → bakes a per-row `ge_ap`
-  `{exam, areas, units, na}`. **60 of 67** CER AP titles match; the 7 unmatched
-  are newer/discontinued exams off the 2017 list (Precalculus, African American
-  Studies, Physics B, Computer Science AB, French/Latin Literature, bare
-  "Physics") — they carry no `ge_ap` until an updated list is sourced.
+- **`kb/reference/ccc_ge_exam_credit.json`** — the transcribed charts under
+  `programs: {AP, IB, CLEP}`, per exam `{exam, areas[], min_units, na,
+  areas_all, aliases[], prefix[]}`. **`aliases`** bridge the CER's names to the
+  chart names (e.g. AP "World History: Modern"→"World History", "Calculus BC — AB
+  Subscore"→"Calculus BC/AB Subscore"; CLEP "History of the United States I"→
+  "History, United States I"). **`prefix`** char-prefix rules collapse the CER's
+  ~30 old IB names: `language a`→Arts & Humanities, `language b`→N/A,
+  `mathematics`→Language & Rationality, `history`→the History entry.
+- **Producer** (`export_credential_reference()`): detect program from the
+  `AP `/`IB `/`CLEP ` prefix, normalize the rest (`&`→`and`, lowercase,
+  non-alnum→space), then exact/alias match, else the program's char-prefix rules
+  → bake a per-row `ge_credit` `{program, exam, areas, units, na, areas_all}`.
+  **147 of 154** exam credentials match (AP 62 · IB 44 · CLEP 41); the 7
+  unmatched are exams off the 2024 charts (AP African American Studies / Physics
+  B / French & Latin Literature / bare "Physics"; CLEP English Literature /
+  Trigonometry).
 - **Consumer** (`renderGeApCredit()` in `credential_reference.js`): a navy
   callout at the **top** of the expanded row — *"📜 Statewide AP credit · CCC GE
-  AP List → General Education — Social/Behavioral Sciences or Humanities · 3
-  semester units (minimum · score ≥ 3)"*, with the note that the local courses
-  below are the local grant. N/A exams render *"No GE Area assigned (N/A) —
-  colleges may award N elective units."* **Remember to whitelist new baked fields
-  in `adaptBakedRow`** (the field is dropped otherwise — Session 29 trap; cost a
-  red test here too).
+  AP List → General Education — Social/Behavioral Sciences or Arts and Humanities
+  · 3 semester units (minimum)"*, with the note that the local courses below are
+  the local grant. `areas_all` joins with **and** (e.g. AP English Lit = "Language
+  and Rationality and Arts and Humanities · 6 units"). N/A exams render *"No GE
+  Area assigned (N/A) — colleges may award N elective units."* **Remember to
+  whitelist new baked fields in `adaptBakedRow`** (the field is dropped otherwise
+  — Session 29 trap; cost a red test here too).
 
 ## Related noise-suppression (Session 33 R1, shipped first)
 
@@ -111,10 +126,11 @@ collapsed disclosure (`bucket` flag) and badges minority-subject identities
 
 ## Next (not yet built)
 
-- A **CLEP / IB GE list** (the 2026 NPRM extends the framework) — same dataset
-  shape, new exams.
-- Optional: a **GE-Area grain** view (group standardized-exam credentials by GE
-  Area) — the faculty/student-facing rollup, analogous to the CER/CCR/CSR family.
-- A coherence check: flag AP credentials whose articulated local courses'
+- **CLEP / IB — DONE** (Session 33, from ESLEI 24-35). Future: when the 2026
+  Title 5 NPRM finalizes (it may add exams / shift to Cal-GETC area numbers),
+  re-transcribe the updated chart into `ccc_ge_exam_credit.json`.
+- A **GE-Area grain** view (group standardized-exam credentials by GE Area) —
+  the faculty/student-facing rollup, analogous to the CER/CCR/CSR family.
+- A coherence check: flag exam credentials whose articulated local courses'
   disciplines don't fit the exam's GE Area (the subject-outlier badge is a first
   cut).

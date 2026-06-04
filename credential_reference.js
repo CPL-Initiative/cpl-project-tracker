@@ -325,8 +325,8 @@
       potential_colleges: b.potential_colleges || [],
       articulations: b.articulations || [],
       n_articulation_lines: b.n_articulation_lines || 0,
-      // System-level GE-Area AP credit (CCC GE AP List) — null for non-AP rows.
-      ge_ap: b.ge_ap || null,
+      // System-level GE-Area credit for AP/IB/CLEP exams — null otherwise.
+      ge_credit: b.ge_credit || null,
       // Raw college-entered MAP exhibit-title variants collapsed under this
       // unified title. Baked compactly as {r:raw_title, c:confidence, q:flag}
       // (added 2026-06-04, item 6) so the expanded row can list them — a
@@ -2130,16 +2130,18 @@
     return clr;
   }
 
-  // System-level GE-Area credit callout for an AP credential (CCC GE AP List,
-  // AA 17-20). Returns null for non-AP credentials + the newer/discontinued AP
-  // exams not on the 2017 list (no r.ge_ap baked). The GE Area is the statewide
+  // System-level GE-Area credit callout for an AP/IB/CLEP credential (CCC GE
+  // charts, ESLEI 24-35 + AA 17-20). Returns null for non-exam credentials +
+  // exams not on the charts (no r.ge_credit baked). The GE Area is the statewide
   // constant; the per-college local courses (shown below) vary.
   function renderGeApCredit(r) {
-    var g = r.ge_ap;
+    var g = r.ge_credit;
     if (!g) return null;
     ensureCerScopeCss();
+    var prog = g.program || "exam";
     var box = el("div", { class: "cr-geap" });
-    box.appendChild(el("div", { class: "cr-geap-head" }, ["📜 Statewide AP credit · CCC GE AP List"]));
+    box.appendChild(el("div", { class: "cr-geap-head" },
+      ["📜 Statewide " + prog + " credit · CCC GE " + prog + " List"]));
     var body = el("div", { class: "cr-geap-body" });
     if (g.na || !(g.areas && g.areas.length)) {
       body.appendChild(el("span", { class: "cr-geap-na" }, ["No GE Area assigned (N/A)"]));
@@ -2148,20 +2150,24 @@
         body.appendChild(el("strong", null, [g.units + " elective unit" + (g.units === 1 ? "" : "s")]));
       }
     } else {
+      // areas_all → credit awarded in ALL listed areas together ("X and Y");
+      // otherwise any one listed area qualifies ("X or Y").
       body.appendChild(document.createTextNode("General Education — "));
-      body.appendChild(el("strong", { class: "cr-geap-area" }, [g.areas.join(" or ")]));
+      body.appendChild(el("strong", { class: "cr-geap-area" },
+        [g.areas.join(g.areas_all ? " and " : " or ")]));
       if (g.units != null) {
         body.appendChild(document.createTextNode(" · "));
         body.appendChild(el("strong", null, [g.units + " semester unit" + (g.units === 1 ? "" : "s")]));
-        body.appendChild(document.createTextNode(" (minimum · score ≥ 3)"));
+        body.appendChild(document.createTextNode(" (minimum)"));
       }
     }
     box.appendChild(body);
     box.appendChild(el("div", { class: "cr-geap-note" }, [
-      "AP credit is set at the system level (AB 1985 / AA 17-20, now being codified "
-      + "in CCR Title 5). The local courses below are how individual colleges grant "
-      + "it — course-to-course credit is a local faculty decision; the GE Area is the "
-      + "statewide constant." + (g.note ? "  " + g.note : "")
+      "Credit for AP/IB/CLEP exams is set at the system level (AP: AB 1985 / "
+      + "AA 17-20; IB & CLEP: title 5 §55052.5; current charts ESLEI 24-35). The "
+      + "local courses below are how individual colleges grant it — course-to-course "
+      + "credit is a local faculty decision; the GE Area is the statewide constant."
+      + (g.note ? "  " + g.note : "")
     ]));
     return box;
   }
@@ -2190,11 +2196,12 @@
       div.appendChild(renderCurationPanel(r));
     }
 
-    // ── System-level GE-Area credit for AP exams (2026-06-04). AP credit is set
-    // statewide (AB 1985 / AA 17-20): the authoritative anchor is the GE Area +
-    // min units, NOT a course-identity fold (course-to-course credit is a local
-    // faculty decision). Headlined at the top so the system-level truth leads;
-    // the local-course identity table below is framed as the local detail. ──
+    // ── System-level GE-Area credit for AP/IB/CLEP exams (2026-06-04). This
+    // credit is set statewide (AP: AB 1985 / AA 17-20; IB+CLEP: title 5 §55052.5;
+    // charts: ESLEI 24-35): the authoritative anchor is the GE Area + min units,
+    // NOT a course-identity fold (course-to-course credit is a local faculty
+    // decision). Headlined at the top so the system-level truth leads; the
+    // local-course identity table below is framed as the local detail. ──
     var geBlock = renderGeApCredit(r);
     if (geBlock) div.appendChild(geBlock);
 
