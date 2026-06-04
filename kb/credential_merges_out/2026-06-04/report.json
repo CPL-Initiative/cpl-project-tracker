@@ -1,5 +1,5 @@
 {
-  "_generated_at": "2026-06-04T01:37:06Z",
+  "_generated_at": "2026-06-04T16:45:53Z",
   "mode": "apply",
   "gates": {
     "V1_apply_safe": true,
@@ -10,17 +10,227 @@
   "apply_safe": true,
   "clean": [
     {
+      "loser": "AP Calculus BC (AB Subscore)",
+      "winner": "AP Calculus BC — AB Subscore",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'AP Calculus BC (AB Subscore)' folds into 'AP Calculus BC — AB Subscore'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 2,
+      "n_articulations": 0
+    },
+    {
+      "loser": "AP Calculus BC: AB Subscore",
+      "winner": "AP Calculus BC — AB Subscore",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'AP Calculus BC: AB Subscore' folds into 'AP Calculus BC — AB Subscore'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 1,
+      "n_articulations": 0
+    },
+    {
+      "loser": "AP Chinese Language & Culture",
+      "winner": "AP Chinese Language and Culture",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'AP Chinese Language & Culture' folds into 'AP Chinese Language and Culture'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 1,
+      "n_articulations": 0
+    },
+    {
+      "loser": "AP Comparative Government & Politics",
+      "winner": "AP Comparative Government and Politics",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'AP Comparative Government & Politics' folds into 'AP Comparative Government and Politics'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 2,
+      "n_articulations": 0
+    },
+    {
+      "loser": "AP English Language & Composition",
+      "winner": "AP English Language and Composition",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'AP English Language & Composition' folds into 'AP English Language and Composition'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 3,
+      "n_articulations": 0
+    },
+    {
+      "loser": "AP English Literature & Composition",
+      "winner": "AP English Literature and Composition",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'AP English Literature & Composition' folds into 'AP English Literature and Composition'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 1,
+      "n_articulations": 0
+    },
+    {
+      "loser": "AP French Language & Culture",
+      "winner": "AP French Language and Culture",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'AP French Language & Culture' folds into 'AP French Language and Culture'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 1,
+      "n_articulations": 0
+    },
+    {
+      "loser": "AP German Language & Culture",
+      "winner": "AP German Language and Culture",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'AP German Language & Culture' folds into 'AP German Language and Culture'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 2,
+      "n_articulations": 0
+    },
+    {
+      "loser": "AP Italian Language & Culture",
+      "winner": "AP Italian Language and Culture",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'AP Italian Language & Culture' folds into 'AP Italian Language and Culture'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 1,
+      "n_articulations": 0
+    },
+    {
+      "loser": "AP Japanese Language & Culture",
+      "winner": "AP Japanese Language and Culture",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'AP Japanese Language & Culture' folds into 'AP Japanese Language and Culture'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 1,
+      "n_articulations": 0
+    },
+    {
+      "loser": "AP Spanish Language & Culture",
+      "winner": "AP Spanish Language and Culture",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'AP Spanish Language & Culture' folds into 'AP Spanish Language and Culture'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 1,
+      "n_articulations": 0
+    },
+    {
+      "loser": "AP Spanish Literature & Culture",
+      "winner": "AP Spanish Literature and Culture",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'AP Spanish Literature & Culture' folds into 'AP Spanish Literature and Culture'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 1,
+      "n_articulations": 0
+    },
+    {
+      "loser": "AP U.S. Government & Politics",
+      "winner": "AP U.S. Government and Politics",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'AP U.S. Government & Politics' folds into 'AP U.S. Government and Politics'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 1,
+      "n_articulations": 0
+    },
+    {
+      "loser": "ASE A3 — Manual Drive Train & Axles",
+      "winner": "ASE A3 — Manual Drive Train and Axles",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'ASE A3 — Manual Drive Train & Axles' folds into 'ASE A3 — Manual Drive Train and Axles'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 1,
+      "n_articulations": 3
+    },
+    {
+      "loser": "ASE A4 — Suspension & Steering",
+      "winner": "ASE A4 — Suspension and Steering",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'ASE A4 — Suspension & Steering' folds into 'ASE A4 — Suspension and Steering'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 3,
+      "n_articulations": 5
+    },
+    {
+      "loser": "ASE A7 — Heating & Air Conditioning",
+      "winner": "ASE A7 — Heating and Air Conditioning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'ASE A7 — Heating & Air Conditioning' folds into 'ASE A7 — Heating and Air Conditioning'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 2,
+      "n_articulations": 4
+    },
+    {
+      "loser": "CLEP College Algebra — Trigonometry",
+      "winner": "CLEP College Algebra-Trigonometry",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'CLEP College Algebra — Trigonometry' folds into 'CLEP College Algebra-Trigonometry'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 1,
+      "n_articulations": 0
+    },
+    {
+      "loser": "Fire Service In-Service Training: Command and Control",
+      "winner": "Fire Service In-Service Training — Command & Control",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'Fire Service In-Service Training: Command and Control' folds into 'Fire Service In-Service Training — Command & Control'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 2,
+      "n_articulations": 1
+    },
+    {
+      "loser": "Self-Defense",
+      "winner": "Self Defense",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Normalized-title duplicate (differ only by punctuation/&-vs-and): 'Self-Defense' folds into 'Self Defense'. Same credential; CER keys on unified_title. Surfaced by kb/_detect_cpl_type_dupes.py Signal A.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 1,
+      "n_articulations": 0
+    }
+  ],
+  "skip": [
+    {
       "loser": "10-Key Numeric Data Entry",
       "winner": "10-Key Data Entry",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-04",
       "reason": "Same exhibit: both are BIT 375 '10-Key on the Computer' at Modesto Junior College (course_id CNSR M10AA), same credit recommendation '1 hour in 10-Key on the Computer'. The classifier split it into two unified titles purely by CPL type (Industry Certification -> '10-Key Numeric Data Entry' vs Credit By Exam -> '10-Key Data Entry'). CER keys on unified_title, not CPL type, so they showed as two rows.",
-      "loser_has_cred": true,
+      "raws": [],
+      "loser_has_cred": false,
       "winner_has_cred": true,
-      "n_raws": 1,
-      "n_articulations": 1
+      "why": "loser absent (already merged?)"
     }
   ],
-  "skip": [],
   "conflict": []
 }

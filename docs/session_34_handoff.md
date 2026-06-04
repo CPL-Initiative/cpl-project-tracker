@@ -55,29 +55,36 @@ WHAT SHIPPED IN SESSION 33 (all merged to main):
     MAP View_ArticulatedCollegeCourses.Students rolled up exhibit_id→unified_title;
     sortable column. PRIVACY: aggregate-only, suppress <5 (1-4 → "<5", exact never baked),
     test colleges excluded. Cron-only data → no-ops locally, lights up on the daily pull.
+  - #297 Rule-8 checkpoint (docs).
+  - #298 GE-Area COHERENCE CHECK (#3): discipline_ge_areas map baked as disc_ge_areas;
+    consumer "⚠ off GE Area" badge + callout note. AUDIT FINDING: data already
+    GE-coherent (1 non-bucket residual) — a future-proof cue.
+  - #299 + apply — CPL-TYPE-DUPLICATE DETECTOR (#4): read-only kb/_detect_cpl_type_dupes.py
+    (Signal A = &/and + punctuation collisions; Signal B = same-exhibit leads, manual only).
+    APPLIED the 18 Signal-A groups (19 pairs) via credential_merges.json +
+    _merge_credentials.py --apply (V1-V4 green); CER rows 2013 → 1994.
 
 CURRENT STATE / HOW THE CER SHIPS:
   - CER ships LIVE-ON-MERGE: regen credential_reference_data.js locally
     (`python3 -c "import excel_to_dashboard as m; m.export_credential_reference()"`,
     needs `pip install openpyxl pandas`) + commit. The students-served roll-up reads the
     CustomReport (cron-only, gitignored for PII) → bakes null locally, populates on cron.
-  - 5 committed CER jsdom test files now (npm test): cer / cer_geap / cer_gearea /
-    cer_noise / cer_students = 68 assertions. ALWAYS whitelist new baked fields in
-    adaptBakedRow (the Session-29 omitted-field trap bit twice this session).
+  - 6 committed CER jsdom test files now (npm test): cer / cer_geap / cer_gearea /
+    cer_noise / cer_students / cer_ge_coherence = 77 assertions. ALWAYS whitelist new
+    baked fields in adaptBakedRow (the Session-29 omitted-field trap bit twice).
   - Producer cron-path verified by kb/_verify_students_served.py (synthetic CustomReport).
+  - Credential dedup tool: kb/_detect_cpl_type_dupes.py (read-only detector) →
+    kb/credential_merges.json (decisions) → kb/_merge_credentials.py --apply (V1-V4).
 
-PRIORITY OPTIONS FOR SESSION 34 (Sam's recommended order; he's been saying "keep pushing"):
-  - #3 GE-AREA COHERENCE CHECK (natural next): flag exam credentials whose articulated
-    local courses' DISCIPLINES don't fit the exam's GE Area (e.g. a History-discipline
-    course under an AP that's GE "Natural Sciences"). The #292 subject-outlier badge is a
-    first cut; this is the GE-Area-aware version. Consumer-side off ge_credit + disc data.
-  - #4 CPL-TYPE-DUPLICATE DETECTOR: the `&`/`and` AP-title dupes ("AP Chinese Language &
-    Culture" vs "…and Culture") are the 10-Key class — a read-only script printing
-    candidate (loser,winner) pairs → one-line adds to kb/credential_merges.json →
-    `python3 kb/_merge_credentials.py --apply`. Do NOT auto-merge.
+REMAINING WORK (recommended-order #1-#4 ALL shipped — keep pushing or pick):
   - ELIGIBILITY side of student impact: blocked on Sam supplying an exhibit-keyed MAP
     eligibility export (today eligibility is only college×CPL-type, not per-exhibit). Same
     privacy ADR applies. He may send it — if so, add a "students eligible" column alongside.
+  - SIGNAL-B DEDUP LEADS (162, manual-review): kb/_detect_cpl_type_dupes.py Signal B
+    surfaces same-exhibit-different-phrasing pairs, but mixes true dupes (FAA "Airframe
+    Mechanic Certification" vs "Mechanic Certificate — Airframe Rating") with sibling
+    credentials (Airframe vs Powerplant, Calc AB vs BC). Lexical heuristics can't separate
+    → needs a human who knows the credentials (exhibit-canonicalization skill domain).
   - THE 3 AUDIENCE VIEWS (Student/College/System) — the standing headline carryover.
     System needs the privacy ADR (now half-written in adr-cer-student-impact-counts-privacy).
   - Standing carryover: EACR v2 scope/generated-rec (producer-side → next cron); MID

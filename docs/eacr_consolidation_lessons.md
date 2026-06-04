@@ -283,9 +283,12 @@ the *right* canonical layer (GE Area, not course-fold) → operationalize → pr
   privacy mask, not just the happy path.
 
 ### Next concrete step
-Recommended-order **#3 GE-Area coherence check** (flag exam credentials whose articulated
-local courses' disciplines don't fit the exam's GE Area — the subject-outlier badge is a
-first cut) and **#4 CPL-type-duplicate detector** (the `&`/`and` AP-title dupes →
-`credential_merges.json`). Eligibility side of student-impact when Sam supplies an
-exhibit-keyed MAP export. Then the standing 3 audience views (System needs the privacy ADR
-— now half-written).
+Recommended-order **#1-#4 ALL shipped.** #3 GE-Area coherence check (#298) found the data
+is already GE-coherent (1 residual) — a future-proof cue. #4 detector (#299) + **applied
+the 18 Signal-A `&`/`and` dupe groups** (19 pairs, CER 2013→1994); Signal B (162) is
+manual-review leads (sibling-credential noise lexical heuristics can't filter — the
+exhibit-canon skill's domain). **Lesson:** a `&`/`and`-class winner should be the
+DOMINANT record (most articulations to keep, fewest to re-point), NOT the cleaner
+spelling — they usually agree, but diverge when the `&` form dominates (Fire Service).
+Next: eligibility side of student-impact (needs an exhibit-keyed MAP export); the 3
+audience views (System needs the privacy ADR — now half-written); the Signal-B leads.

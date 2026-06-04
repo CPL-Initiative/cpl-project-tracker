@@ -1510,18 +1510,32 @@ merged + live.** No M-ID pipeline movement → pipeline viz correctly skipped.
   cell suppression below 5** (Sam's threshold — 1-4 → "<5", exact never baked), test
   colleges excluded, volume-not-distinct. Cron-only data → no-ops locally, lights up on
   the daily pull; verified end-to-end via `kb/_verify_students_served.py`.
+- **#298 — GE-Area coherence check** (recommended-order #3): a `discipline_ge_areas`
+  map (MQ disc → CCC division[s]) baked as `disc_ge_areas`; consumer flags an
+  articulated course whose discipline's division is disjoint from the exam's GE Area
+  (`⚠ off GE Area`) + a callout note. **Audit finding:** post-#292 the data is already
+  GE-coherent — 1 non-bucket residual (SOCI under AP Statistics); a future-proof cue.
+- **#299 + the apply — CPL-type-duplicate detector** (recommended-order #4):
+  read-only `kb/_detect_cpl_type_dupes.py` (Signal A = `&`/`and` + punctuation
+  normalized-title collisions; Signal B = same-exhibit-different-phrasing leads,
+  manual-review only). **Applied the 18 Signal-A groups (19 pairs)** via
+  `credential_merges.json` + `_merge_credentials.py --apply` (V1-V4 green): the AP
+  "Language & Culture"→"and Culture" family, ASE "& "→"and", AB-Subscore variants,
+  Self-Defense, etc. CER rows **2013 → 1994**. (Winner = dominant record; Fire
+  Service kept the `&` form as the established record — renamable later.)
 
 Patterns reused: CER ships **live-on-merge** (producer regenerates from committed
 inputs); **whitelist new baked fields in `adaptBakedRow`** (the Session-29 omitted-
-field trap bit twice); jsdom-test the real consumer (now **5 CER test files, 68
+field trap bit twice); jsdom-test the real consumer (now **6 CER test files, 77
 assertions**). Lessons: `docs/eacr_consolidation_lessons.md` (Session 33). KB notes:
 `reference-ap-credit-ge-area-canonicalization`, `adr-cer-student-impact-counts-privacy`.
 
-**Carryover / next:** the **eligible** side of student impact (needs an exhibit-keyed
-MAP eligibility export — only college×CPL-type today); recommended-order **#3 GE-Area
-coherence check** (flag exam credentials whose local courses' disciplines don't fit the
-exam's GE Area) + **#4 CPL-type-duplicate detector** (the `&`/`and` AP-title dupes);
-plus the standing Session-31/32 carryover (3 audience views, EACR v2, MID curation).
+**Carryover / next** (recommended-order #1-#4 ALL shipped): the **eligible** side of
+student impact (needs an exhibit-keyed MAP eligibility export — only college×CPL-type
+today); the **Signal-B dedup leads** (162, manual-review — `exhibit-canonicalization`
+skill, semantic not lexical); the **3 audience views** (Student/College/System — System
+needs the privacy ADR, now half-written); plus the standing Session-31/32 carryover
+(EACR v2 scope/generated-rec, MID curation → Suggested-merges).
 
 ---
 
