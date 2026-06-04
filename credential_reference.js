@@ -325,6 +325,8 @@
       potential_colleges: b.potential_colleges || [],
       articulations: b.articulations || [],
       n_articulation_lines: b.n_articulation_lines || 0,
+      // System-level GE-Area AP credit (CCC GE AP List) — null for non-AP rows.
+      ge_ap: b.ge_ap || null,
       // Raw college-entered MAP exhibit-title variants collapsed under this
       // unified title. Baked compactly as {r:raw_title, c:confidence, q:flag}
       // (added 2026-06-04, item 6) so the expanded row can list them — a
@@ -1830,7 +1832,15 @@
       "#tab-credential-reference .cr-bucket-summary{cursor:pointer;font-size:.78rem;font-weight:600;color:#92400e;background:#FEF3C7;border:1px solid #F59E0B;border-radius:6px;padding:4px 10px;display:inline-block;}" +
       "#tab-credential-reference .cr-bucket-note{font-size:.74rem;color:#6b7280;font-style:italic;margin:6px 0 4px;max-width:74ch;}" +
       "#tab-credential-reference .cr-bucket-table{opacity:.72;margin-top:2px;}" +
-      "#tab-credential-reference .cr-bucket-row .cr-id-code{color:#6b7280;}";
+      "#tab-credential-reference .cr-bucket-row .cr-id-code{color:#6b7280;}" +
+      // System-level GE-Area AP-credit callout (2026-06-04) — navy/brand accent
+      // (authoritative statewide info), sits at the top of the expanded body.
+      "#tab-credential-reference .cr-geap{border:1px solid #cdd9e6;border-left:4px solid #0A2240;background:#f6f9fc;border-radius:6px;padding:8px 12px;margin:2px 0 12px;}" +
+      "#tab-credential-reference .cr-geap-head{font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#0A2240;margin-bottom:3px;}" +
+      "#tab-credential-reference .cr-geap-body{font-size:.92rem;color:#1f2937;}" +
+      "#tab-credential-reference .cr-geap-area{color:#0A2240;}" +
+      "#tab-credential-reference .cr-geap-na{color:#7a5c00;font-weight:600;}" +
+      "#tab-credential-reference .cr-geap-note{font-size:.72rem;color:#6b7280;font-style:italic;margin-top:4px;max-width:80ch;}";
     document.head.appendChild(st);
   }
 
@@ -2120,6 +2130,42 @@
     return clr;
   }
 
+  // System-level GE-Area credit callout for an AP credential (CCC GE AP List,
+  // AA 17-20). Returns null for non-AP credentials + the newer/discontinued AP
+  // exams not on the 2017 list (no r.ge_ap baked). The GE Area is the statewide
+  // constant; the per-college local courses (shown below) vary.
+  function renderGeApCredit(r) {
+    var g = r.ge_ap;
+    if (!g) return null;
+    ensureCerScopeCss();
+    var box = el("div", { class: "cr-geap" });
+    box.appendChild(el("div", { class: "cr-geap-head" }, ["📜 Statewide AP credit · CCC GE AP List"]));
+    var body = el("div", { class: "cr-geap-body" });
+    if (g.na || !(g.areas && g.areas.length)) {
+      body.appendChild(el("span", { class: "cr-geap-na" }, ["No GE Area assigned (N/A)"]));
+      if (g.units) {
+        body.appendChild(document.createTextNode(" — colleges may award "));
+        body.appendChild(el("strong", null, [g.units + " elective unit" + (g.units === 1 ? "" : "s")]));
+      }
+    } else {
+      body.appendChild(document.createTextNode("General Education — "));
+      body.appendChild(el("strong", { class: "cr-geap-area" }, [g.areas.join(" or ")]));
+      if (g.units != null) {
+        body.appendChild(document.createTextNode(" · "));
+        body.appendChild(el("strong", null, [g.units + " semester unit" + (g.units === 1 ? "" : "s")]));
+        body.appendChild(document.createTextNode(" (minimum · score ≥ 3)"));
+      }
+    }
+    box.appendChild(body);
+    box.appendChild(el("div", { class: "cr-geap-note" }, [
+      "AP credit is set at the system level (AB 1985 / AA 17-20, now being codified "
+      + "in CCR Title 5). The local courses below are how individual colleges grant "
+      + "it — course-to-course credit is a local faculty decision; the GE Area is the "
+      + "statewide constant." + (g.note ? "  " + g.note : "")
+    ]));
+    return box;
+  }
+
   function renderExpandedRow(r, colSpan) {
     // Lets a signed-in reviewer edit 4 fields: display title, issuing agency,
     // training agency, quality flag. Display-override pattern: the original
@@ -2143,6 +2189,14 @@
     if (state.curateOpen[r.unified_title]) {
       div.appendChild(renderCurationPanel(r));
     }
+
+    // ── System-level GE-Area credit for AP exams (2026-06-04). AP credit is set
+    // statewide (AB 1985 / AA 17-20): the authoritative anchor is the GE Area +
+    // min units, NOT a course-identity fold (course-to-course credit is a local
+    // faculty decision). Headlined at the top so the system-level truth leads;
+    // the local-course identity table below is framed as the local detail. ──
+    var geBlock = renderGeApCredit(r);
+    if (geBlock) div.appendChild(geBlock);
 
     // ── Statewide/generated credit rec + articulated/potential college badges
     // (Session 29 CER enrichment) — the duplicate scope/CPL chips were dropped

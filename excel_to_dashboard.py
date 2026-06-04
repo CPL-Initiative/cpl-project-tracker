@@ -5240,6 +5240,28 @@ def export_credential_reference():
         if _recs and _elec / len(_recs) >= 0.8 and len(_creds) >= 5 and len(_cols) <= 3:
             elective_bucket_ids.add(_cid)
 
+    # CCC GE AP List (2026-06-04): AP credit is set at the SYSTEM level (AB 1985 /
+    # AA 17-20, being codified in CCR Title 5). The authoritative anchor for an AP
+    # exam is its GE Area + min units — NOT a course-identity fold (course-to-
+    # course AP credit is explicitly a LOCAL faculty decision). Join each AP
+    # credential to its statewide GE-Area credit so the CER card can headline it.
+    # Local course titles vary; the GE Area does not. Match on the exam name with
+    # the "AP " prefix stripped + normalized (the CER uses modern College Board
+    # names; the 2017 list uses older ones → per-exam `aliases` bridge them).
+    import re as _re
+    def _ap_norm(s):
+        s = (s or "").strip()
+        for _pre in ("Advanced Placement ", "AP "):
+            if s.startswith(_pre):
+                s = s[len(_pre):]
+        return _re.sub(r"[^a-z0-9]+", " ", s.replace("&", "and").lower()).strip()
+    ge_ap_doc = _load(os.path.join("reference", "ccc_ge_ap_list.json")) or {}
+    ge_ap_lut = {}
+    for _e in (ge_ap_doc.get("exams") or []):
+        ge_ap_lut[_ap_norm(_e.get("exam", ""))] = _e
+        for _al in (_e.get("aliases") or []):
+            ge_ap_lut[_re.sub(r"[^a-z0-9]+", " ", _al.lower()).strip()] = _e
+
     # course_ids referenced by articulations — bounds the units lookup below.
     needed_cids = {a.get("course_id") for a in articulations if a.get("course_id")}
     # Per-(course_id,(subject,number)) representative units for the local-course
@@ -5459,8 +5481,19 @@ def export_credential_reference():
         issuer_val = primary.get("issuing_agency")
         trainer_val = primary.get("training_agency")
         qflag_val = quality_by_ut.get(ut)
+        # System-level GE-Area credit for AP exams (CCC GE AP List, AA 17-20).
+        # None for non-AP credentials + the 7 newer/discontinued AP exams not on
+        # the 2017 list (Precalculus, African American Studies, Physics B, …).
+        _ge = ge_ap_lut.get(_ap_norm(ut)) if str(ut).startswith(("AP ", "Advanced Placement ")) else None
+        ge_ap_out = None
+        if _ge:
+            ge_ap_out = {"exam": _ge.get("exam", ""), "areas": _ge.get("areas", []),
+                         "units": _ge.get("min_units"), "na": bool(_ge.get("na"))}
+            if _ge.get("note"):
+                ge_ap_out["note"] = _ge["note"]
         row = {
             "ut": ut,
+            "ge_ap": ge_ap_out,
             "raw_count": raw_count_by_ut[ut],
             "raw_variants": sorted(raw_variants_by_ut.get(ut, []), key=lambda v: v["r"]),
             "issuer": issuer_val,
@@ -5548,6 +5581,8 @@ def export_credential_reference():
     print(f"    noise suppression: {len(elective_bucket_ids)} elective-bucket "
           f"identit{'y' if len(elective_bucket_ids)==1 else 'ies'} demoted "
           f"({', '.join(sorted(elective_bucket_ids)) or 'none'})")
+    _nge = sum(1 for _r in rows if _r.get("ge_ap"))
+    print(f"    CCC GE AP List: {_nge} AP credentials joined to system-level GE-Area credit")
 
 
 def export_unified_courses():
