@@ -1,7 +1,7 @@
 ---
 title: ADR — Student-impact counts in the public CER (aggregate + small-cell suppression)
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-06-04 (Session 34 — extended to per-college cohort counts at <2, fetch data-minimization, + a standing PII guard)
 tags: [adr, cer, privacy, student-data, sec-10]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -71,3 +71,28 @@ Bake a per-credential **"students served"** count and surface it as a sortable
   payload) all hold. Consumer render + sort guarded by `tests/cer_students.test.js`.
 - If the threshold ever needs to change, it's one constant (`SERVED_SUPPRESS_BELOW`
   in the producer) — but lowering it below 5 needs a new ADR.
+
+## Session-34 extension — per-college cohort counts, data-minimization, a standing guard
+Ahead of enabling the authenticated MAP pull, the privacy posture was widened (PR #304):
+
+1. **Per-college cohort counts suppressed at `<2`.** The per-college activity card bakes
+   `students / veterans / working_adults / apprentices` into `COLLEGE_ACTIVITY_DATA`. Sam set
+   their threshold at **`<2`** (mask only a true singleton → `"<2"`; 2+ exact) — *lighter* than
+   the CER `students-served` `<5`, deliberately: these are coarser per-college aggregates (mostly
+   already public on the CCCCO MAP dashboard), only the single-person cell is sensitive. Producer
+   `_suppress_small(v, COHORT_SUPPRESS_BELOW=2)`; the 34 existing singleton cells were re-masked
+   **live** in both HTMLs (don't wait for the cron). Consumer (`college_activity.js`) renders
+   `"<2"` HTML-escaped, excludes masked cells from the totals (a floor), and sorts them as ~N-1.
+2. **Fetch data-minimization.** `View_CollegeContacts` + `View_CollegeUsersRoles` (staff
+   names/emails/phones, audit-confirmed *unused*) were dropped from `fetch_custom_report.py`
+   (9→7 views) so staff PII never even lands on the Action runner.
+3. **A standing PII guard** (`tests/pii_guard.test.js`) — turns the one-time audit into a
+   permanent regression check: fails the build if any committed artifact carries a cohort count
+   `<2`, a CER `students_served` in 1-4, or an email outside the allowed domains. The reusable
+   pattern is split out into `[[docs/kb-notes/methodology-standing-pii-guard]]`.
+
+**The eligible side (still out of scope here).** The original ADR reserved the *eligible* metric
+("if/when an exhibit-keyed eligibility export exists, the same suppression applies"). Session 34
+confirmed (Sam) that per-exhibit **eligible** counts are in **neither** the MAP dashboard nor the
+Custom Report — a **new dataset** is required. When it lands, the same aggregate-only + `<5`
+suppression applies, and the guard already covers it.

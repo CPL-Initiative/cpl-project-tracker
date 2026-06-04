@@ -292,3 +292,54 @@ DOMINANT record (most articulations to keep, fewest to re-point), NOT the cleane
 spelling — they usually agree, but diverge when the `&` form dominates (Fire Service).
 Next: eligibility side of student-impact (needs an exhibit-keyed MAP export); the 3
 audience views (System needs the privacy ADR — now half-written); the Signal-B leads.
+
+## Session 34 — Student view (v3) + the data-unblock loop + PII small-cell hardening (2026-06-04 · "Lucid Wozniak")
+
+Shipped the **Student view** (first audience view), then a long live thread where Sam
+unblocked the authenticated MAP data — which surfaced both a real CER parse-robustness gap
+and the true shape of the missing input. **5 PRs (#301-#305), all merged + live.**
+
+### What shipped
+- **#301 Student view (v3)** — a 3rd gallery renderer over the same filtered + prescriptive
+  data. Pick a College/District/Region → each credential is classified **✅ available now**
+  (adopter) / **🎯 likely-qualify** (names the exact local course the college teaches, from
+  `statewide_prescriptive.js`) / **○ aligned-program**, sorted most-actionable-first, with a
+  "you'd typically earn ~N units" headline; browse mode nudges to pick a college. Consumer-only,
+  v1/v2 untouched. Factored a shared `typicalAward()` helper (DRY, behavior-preserving). 27 jsdom assertions.
+- **#302 CER carry-forward** — the CER ships live-on-merge *without* the PII CustomReport, so each
+  ship was NULLing the public Students column (oscillating blank). Now carries forward the last
+  cron values when the report's absent (privacy-safe). #303 **header restyle** (uniform meta row).
+- **#304 PII small-cell hardening** — `<2`-suppress the per-college cohort counts; drop 2 unused
+  staff-PII views from the fetch; new standing `tests/pii_guard.test.js`. #305 **robust Students
+  parse** (`_to_count`: int/float/comma/whitespace) + ExhibitID-strip + roll-up diagnostics.
+
+### What was learned
+- **"Unexpectedly 0" from a roll-up is a *source* question first, a *bug* question second.** I
+  chased the blank CER Students column through carry-forward (#302) → robust parse (#305) →
+  instrument-the-roll-up, and confirmed the **join key was sound** (coci_articulations.exhibit_id
+  == the raw MAP ExhibitID, 100% overlap with `View_ArticulatedMAPExhibits`). The real answer
+  (Sam, from his side): **the per-exhibit count he wants is students ELIGIBLE for CPL, which is
+  in neither the MAP dashboard nor the Custom Report.** Served ≠ eligible; eligibility isn't at
+  exhibit grain anywhere upstream. So it's a **missing input**, not a code bug — a new dataset is
+  the fix, and the roll-up/suppression/carry-forward/column structure is already there to receive it.
+- **`int(v or 0)` silently zeros a `"3.0"`/`"3,000"` string** (ValueError → 0) — a whole-column
+  blanker if the source returns numeric strings. The robust `_to_count` + a diagnostic that prints
+  *dataset_found / rows / matched_exhibitid / students>0 / unparseable* (counts only, no raw
+  values) makes the next "0" conclusive without needing the PII file or the (403-gated) run log.
+- **A read-only PII audit before flipping the switch paid off.** The pipeline is **column-selective
+  + aggregate-only** — every CustomReport consumer reads named columns and reduces to counts, so the
+  authenticated pull's new PII columns (names/DOB/StudentID) are *never read*. The one gap was
+  small-cell *counts* (the audit hunts PII *values*); closed with `<2` suppression + the guard.
+- **I can't dispatch workflows** (session integration token → 403 `actions: write`); Sam runs them
+  from the Actions UI. The watch pattern: a background `git fetch origin main` until-loop that pings
+  me when the daily commit lands (no webhook for main commits).
+
+### Current state
+Student view live (College/System remain). PII posture hardened + verified live (per-college counts
+`<2`-suppressed, guard green, staff views no longer fetched). CER Students column `—` awaiting Sam's
+eligible-per-exhibit dataset.
+
+### Next concrete step
+Wire the new eligible-students-per-exhibit dataset into the roll-up when it lands (key on ExhibitID
+or credential; decide replace-vs-alongside the served column; same `<5` suppression). Then the
+**College** + **System** audience views.

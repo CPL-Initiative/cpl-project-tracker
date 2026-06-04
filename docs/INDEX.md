@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-04 (Session 33 — [A] CLAUDE.md trim 1908→1514; R1 CER noise suppression #292; GE-Area exam-credit layer #293→AP+IB+CLEP from ESLEI 24-35 (#294, 147/154); GE-Area grain view #295; CER student-impact "Students" column + impact-sort (path 1, students-served roll-up, suppress<5) + privacy ADR; +5 reference/source docs in docs/reference/)
+updated: 2026-06-04 (Session 34 "Lucid Wozniak" — EACR Student view v3 #301; CER carry-forward #302 + robust parse/diagnostics #305; header restyle #303; PII small-cell hardening #304 (<2 per-college suppression + dropped 2 staff views + standing pii_guard test); Sam-driven data-unblock verified safe; CER eligible-per-exhibit column awaiting a new dataset; NEW methodology-standing-pii-guard)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -77,7 +77,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Reference — Dashboard UI design system (tokens + canonical components)](kb-notes/reference-ui-design-system.md) | reference | published | 2026-06-04 | 2026-06-04 |
 | [Methodology — Commit the test harness; don't let verification evaporate](kb-notes/methodology-commit-the-test-harness.md) | methodology | published | 2026-06-04 | 2026-06-04 |
 | [Reference — AP credit is a GE-Area mapping (the canonical anchor for AP/standardized-exam credentials)](kb-notes/reference-ap-credit-ge-area-canonicalization.md) | reference | published | 2026-06-04 | 2026-06-04 |
-| [ADR — Student-impact counts in the public CER (aggregate + small-cell suppression)](kb-notes/adr-cer-student-impact-counts-privacy.md) | adr | published | 2026-06-04 | 2026-06-04 |
+| [ADR — Student-impact counts in the public CER (aggregate + small-cell suppression)](kb-notes/adr-cer-student-impact-counts-privacy.md) | adr | published | 2026-06-04 | 2026-06-04 (Session 34 — per-college <2 + minimization + guard) |
+| [Methodology — Turn a one-time PII audit into a standing guard (committed test over the public artifacts)](kb-notes/methodology-standing-pii-guard.md) | methodology | published | 2026-06-04 | 2026-06-04 |
 
 ---
 
@@ -95,7 +96,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
 | [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR / Cred-Ref / CER triage / **merge tool** | **Session 32 (CER refinement #284/#285/#286 + the existing→existing credential MERGE tool)** |
-| [`eacr_consolidation_lessons.md`](eacr_consolidation_lessons.md) | EACR consolidation + Local+CCC merge + master-detail gallery (v2) + PR-4 prescriptive + **the "three grains" family: CCR inverse (#259) · CSR rollup (#260) · EACR filter-lift (#261) · CER enrichment (#262)** | **Session 29 (Two-Niner, 2026-06-02)** |
+| [`eacr_consolidation_lessons.md`](eacr_consolidation_lessons.md) | EACR consolidation + gallery (v2) + prescriptive + three-grains + **Student view (v3) #301 + the data-unblock loop + CER carry-forward/robust-parse + PII `<2` hardening** | **Session 34 (Lucid Wozniak, 2026-06-04)** |
 | [`map_api_auth_handoff.md`](map_api_auth_handoff.md) | MAP CustomReport API auth coordination (Teams spec sheet + the no-op pre-stage activation steps) | **Session 27 (2026-06-01) NEW** |
 | [`exhibit_unification_vision.md`](exhibit_unification_vision.md) | Credential design doc | retrospective |
 | [`letter_curator_handoff.md`](letter_curator_handoff.md) | Letter Curator workstream | Session 10 |
@@ -139,6 +140,8 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 30 → 31 | Session 30 (handoff) | [`session_31_handoff.md`](session_31_handoff.md) |
 | 31 → 32 | Session 31 (handoff) | [`session_32_handoff.md`](session_32_handoff.md) |
 | 32 → 33 | Busy Feynman (handoff) | [`session_33_handoff.md`](session_33_handoff.md) |
+| 33 → 34 | Sleepy Goodall (handoff) | [`session_34_handoff.md`](session_34_handoff.md) |
+| 34 → 35 | Lucid Wozniak (handoff) | [`session_35_handoff.md`](session_35_handoff.md) |
 
 ---
 
