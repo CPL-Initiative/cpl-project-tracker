@@ -3398,6 +3398,23 @@ def _load_college_activity_template():
     return _COLLEGE_ACTIVITY_TEMPLATE
 
 
+# Small-cell suppression for PUBLIC per-college cohort counts (Sam, 2026-06-04).
+# A headcount of 1..floor-1 is masked as "<floor" so an exact small headcount of a
+# (possibly protected) group never lands in a committed/public artifact. 0 and
+# >=floor pass through as exact ints. Threshold is <2 here — mask only a true
+# singleton; 2+ shows exact. (Lighter than the CER students-served <5 rule, which
+# is a more sensitive credential-level rollup.) The college-activity consumer
+# renders the "<N" mask as-is and excludes it from totals/sort.
+COHORT_SUPPRESS_BELOW = 2
+
+def _suppress_small(v, floor=COHORT_SUPPRESS_BELOW):
+    try:
+        n = int(round(float(v)))
+    except (TypeError, ValueError):
+        return v
+    return f"<{floor}" if 1 <= n < floor else n
+
+
 def render_college_activity_card(live_data, last_activity=None, military_students=None,
                                  exhibit_tables=None, kpi_params=None):
     """Render the full-width College Activity card — rich single-table layout.
@@ -3482,10 +3499,10 @@ def render_college_activity_card(live_data, last_activity=None, military_student
             "tier":               tier_name,
             "college":            name,
             "district":           district_lookup.get(name, ""),
-            "students":           students,
-            "veterans":           military,
-            "working_adults":     non_mil,
-            "apprentices":        apprentice,
+            "students":           _suppress_small(students),
+            "veterans":           _suppress_small(military),
+            "working_adults":     _suppress_small(non_mil),
+            "apprentices":        _suppress_small(apprentice),
             "eligible_units":     units,
             "transcribed_units":  transcribed,
             "exhibits":           ex["exhibits"],

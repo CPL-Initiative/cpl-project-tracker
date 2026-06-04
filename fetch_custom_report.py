@@ -39,34 +39,15 @@ REQUEST_PAYLOAD = [
                        "Skill Level", "Students", "Subject", "Team Reviewed",
                        "Top Code", "Units", "Version Number"]
     },
-    {
-        "viewName": "View_CollegeContacts_APIDataset",
-        "columnName": ["College", "Academic Senate President",
-                       "Academic Senate President Email", "Articulation Officer",
-                       "Articulation Officer Email", "CEO", "CEO Email",
-                       "CPL Coordinator", "CPL Coordinator Email",
-                       "CPL Counselor Contact", "CPL Counselor Email",
-                       "Faculty Lead", "Faculty Lead Email", "IT Contact",
-                       "IT Contact Email", "Last Updated On", "Lead Initiator",
-                       "Lead Initiator Email", "Lead Manager", "Lead Manager Email",
-                       "Primary Contact", "Primary Contact Email",
-                       "Primary Contact Phone", "School Certifying Official",
-                       "Veteran School Certifying Official Email", "VPAA",
-                       "VPAA Email", "VPSS", "VPSS Email",
-                       "VRC Official From Map Cohort Application",
-                       "VRC Official From Map Cohort Application Email",
-                       "VRC Official From Map Cohort Application Phone"]
-    },
+    # View_CollegeContacts + View_CollegeUsersRoles are intentionally NOT fetched
+    # (Session 34, PII data-minimization): they carry staff names/emails/phones
+    # that the dashboard never reads (audit-confirmed unused). Dropping them from
+    # the payload means staff PII never lands on the Action runner at all. Re-add
+    # only if a consumer genuinely needs them — and keep them out of the public repo.
     {
         "viewName": "View_CollegeCourses_APIDataset",
         "columnName": ["College", "CID Number", "Course Control Number",
                        "Course Number", "Course Title", "Subject", "Top Code"]
-    },
-    {
-        "viewName": "View_CollegeUsersRoles_APIDataset",
-        "columnName": ["College", "CollegeID", "Administrator", "Email",
-                       "FirstName", "LastName", "Order", "RoleID", "RoleName",
-                       "SuperUser", "UserName"]
     },
     {
         "viewName": "View_CreditDistributionByCollege_APIDataset",
