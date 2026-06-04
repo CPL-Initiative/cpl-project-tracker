@@ -5286,6 +5286,55 @@ def export_credential_reference():
                     break
         return _prog, _e
 
+    # Per-credential "students served" (path 1, 2026-06-04): roll up
+    # View_ArticulatedCollegeCourses.Students (per college×exhibit×course) to the
+    # credential via exhibit_id → unified_title (the articulation crosswalk), so
+    # the CER surfaces a student-impact figure for curation prioritization. SUM
+    # across articulating colleges/courses — this view carries Students *counts*,
+    # not student IDs, so it's a volume signal, not a distinct headcount. The
+    # CustomReport file is fetched daily but NOT committed (PII policy, gitignored)
+    # → absent in a clean checkout / local regen, present during the cron, so this
+    # lights up on the next daily run. PRIVACY (Sam, 2026-06-04): small-cell
+    # suppression below 5 — counts 1-4 are masked as "<5" and the exact number is
+    # NEVER baked, so a credential served by a handful of students at one college
+    # can't be singled out in the public payload.
+    SERVED_SUPPRESS_BELOW = 5
+    exid_to_ut = {}
+    for _a in articulations:
+        _ex, _utx = _a.get("exhibit_id"), _a.get("unified_title")
+        if _ex and _utx:
+            exid_to_ut.setdefault(_ex, _utx)
+    served_by_ut = Counter()
+    if EXHIBIT_FILE and os.path.exists(EXHIBIT_FILE):
+        try:
+            with open(EXHIBIT_FILE, encoding="utf-8") as _f:
+                _cr = json.load(_f)
+            for _rep in (_cr if isinstance(_cr, list) else []):
+                if "ArticulatedCollegeCourses" not in str(_rep.get("viewName", "")):
+                    continue
+                _cm = {c: i for i, c in enumerate(_rep.get("columnName", []))}
+                _ix, _ic, _il = _cm.get("ExhibitID"), _cm.get("College"), _cm.get("Students")
+                if _ix is None or _il is None:
+                    continue
+                for _row in (_rep.get("columnValue") or []):
+                    if _ic is not None and _ic < len(_row) and _row[_ic] in _TEST_COLLEGES:
+                        continue
+                    _ut2 = exid_to_ut.get(_row[_ix] if _ix < len(_row) else None)
+                    if not _ut2:
+                        continue
+                    try:
+                        _n = int(_row[_il] or 0) if _il < len(_row) else 0
+                    except (ValueError, TypeError):
+                        _n = 0
+                    if _n:
+                        served_by_ut[_ut2] += _n
+            print(f"  Students-served roll-up: {len(served_by_ut)} credentials with "
+                  f"≥1 student (from View_ArticulatedCollegeCourses)")
+        except (json.JSONDecodeError, IOError, TypeError, KeyError) as _e:
+            print(f"  Students-served roll-up skipped (CustomReport unreadable: {_e})")
+    else:
+        print("  Students-served roll-up skipped (CustomReport absent — populates on the daily cron)")
+
     # course_ids referenced by articulations — bounds the units lookup below.
     needed_cids = {a.get("course_id") for a in articulations if a.get("course_id")}
     # Per-(course_id,(subject,number)) representative units for the local-course
@@ -5516,9 +5565,17 @@ def export_credential_reference():
                              "na": bool(_ge.get("na")), "areas_all": bool(_ge.get("areas_all"))}
             if _ge.get("note"):
                 ge_credit_out["note"] = _ge["note"]
+        # Student-impact figure (path 1) — small-cell-suppressed below 5: the
+        # exact count is baked only when ≥5; 1-4 → served_suppressed (shown "<5",
+        # exact number never leaves the cron); 0 / no data → neither field.
+        _served = served_by_ut.get(ut, 0)
+        students_served = _served if _served >= SERVED_SUPPRESS_BELOW else None
+        served_suppressed = bool(0 < _served < SERVED_SUPPRESS_BELOW)
         row = {
             "ut": ut,
             "ge_credit": ge_credit_out,
+            "students_served": students_served,
+            "served_suppressed": served_suppressed,
             "raw_count": raw_count_by_ut[ut],
             "raw_variants": sorted(raw_variants_by_ut.get(ut, []), key=lambda v: v["r"]),
             "issuer": issuer_val,
