@@ -10,9 +10,12 @@ related:
   - "[[docs/eacr_consolidation_lessons.md]]"
   - "[[docs/kb-notes/eacr-consolidation-scope.md]]"
 artifacts:
-  - excel_to_dashboard.py (export_credential_reference()._consolidate_arts + _fam_key)
+  - excel_to_dashboard.py (export_credential_reference()._consolidate_arts + module-level _fam_key)
+  - excel_to_dashboard.py (export_unified_courses() co-articulation family pass → unified_courses_suggestions.js)
   - credential_reference.js (the "⛓ N variants" badge in mkArtRow)
+  - unified_courses.js (worklist family _kind)
   - tests/cer_consolidation.test.js
+  - tests/uc_family_merges.test.js
 ---
 
 # Consolidating near-duplicate course identities within one credential (the ordinal rule)
@@ -103,6 +106,40 @@ assertion on the motivating card.
   *data*. Keep them as two steps.
 - **Reuse target:** the EACR's per-college credit-rec list has the same
   fragmentation; `_fam_key` is the natural grouping key there too.
+
+## The durable side — applying `_fam_key` globally needs a SECOND gate (#310)
+
+The view fold (above) is scoped *within one credential's card*, so `_fam_key`
+alone is safe there. The **worklist** (the durable merge that writes `merge_into`)
+runs over the *whole* identity space, where `_fam_key` alone would **over-merge
+globally** — every "Welding" M-ID statewide, etc. `export_unified_courses()`'s
+co-articulation family pass adds **two gates** that make it tight (29 groups, not
+hundreds):
+
+1. **Co-articulation gate** — two identities group only when they **share a
+   credential** in `coci_articulations.json`. Co-articulating to the same
+   credential is strong evidence they're the same course; it's the signal the
+   level-safe worklist signature can't see.
+2. **Subject-prefix (SUBJ4) gate** — group by `(M-ID subject prefix, _fam_key)`,
+   not `_fam_key` alone. Per the M-ID invariant *one discipline ⇒ one SUBJ4*, this
+   keeps a generic title from folding **across disciplines**. A first run without
+   it surfaced `AUTO + AVIA` under one ASE cert (an automotive cert an aviation
+   M-ID happened to articulate to); the prefix gate dropped it. Conservative on
+   purpose — a worklist over-surfacing a bad merge is worse than missing a
+   cross-SUBJ4 one (curators can still Unify those by hand).
+
+Other reusable bits of the worklist side: **lead the member list with the
+cleanest-title identity** (fewest tokens) so the default merge target is the
+canonical name (`EMST M1064 "Emergency Medical Technician"`, not
+"…Basic Training Application"); **factor `_fam_key` to module scope** so the view
+and the worklist share one key (CER output stays byte-identical); and the merge
+**never auto-applies** — it only surfaces for the curator's Confirm.
+
+**The boundary that remains:** even after a curator confirms, `merge_into`
+propagates to the CCR + auditor but **not** to the static `coci_articulations.json`
+(so the EACR/CER articulation *views* don't re-collapse beyond the display fold)
+until a **Rule-7 re-key**. View = display; worklist = identity layer; re-key =
+articulation layer. Three steps, not one.
 
 ---
 
