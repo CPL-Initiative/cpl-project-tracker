@@ -8,7 +8,13 @@
 #     cp scripts/stop-hook-git-check.sh ~/.claude/stop-hook-git-check.sh
 #     chmod +x ~/.claude/stop-hook-git-check.sh
 #
-# WHY THIS COPY EXISTS — the "Unverified" false-positive fix:
+# WHY THIS COPY EXISTS — squash-merge-then-reset false-positive fixes:
+#   Both fixes below target the SAME root cause: after a squash-merge +
+#   `git reset --hard origin/main`, local HEAD is main's tip (a GitHub squash
+#   commit) while the feature-branch ref is stale, so HEAD-vs-stale-upstream
+#   comparisons misfire. Fix 1 (the primary one) bails early when HEAD is already
+#   an ancestor of origin/main — killing BOTH the "Unverified" and the "N unpushed
+#   commit(s)" false-positives. Fix 2 (defense-in-depth) is the awk note below.
 #   The previous version flagged EVERY commit on HEAD whose committer email
 #   wasn't noreply@anthropic.com. After a squash-merge + `git reset --hard
 #   origin/main` (the standard session-branch-reuse flow), local HEAD becomes
@@ -54,6 +60,19 @@ fi
 
 current_branch=$(git branch --show-current)
 if [[ -n "$current_branch" ]]; then
+  # If HEAD is already merged into origin/main, the work is on the remote and the
+  # feature-branch ref is merely stale — this is the session-branch-reuse flow
+  # (squash-merge, then `git reset --hard origin/main`), which leaves HEAD AT
+  # main's tip: a GitHub squash commit that is already pushed and must NOT be
+  # amended or force-pushed (Rule 5). Skip the unverified + unpushed checks below
+  # (they otherwise false-positive every single cycle — first as "Unverified
+  # noreply@github.com", then as "1 unpushed commit"). The uncommitted/untracked
+  # checks above already ran, so genuine in-flight work is still caught.
+  if git rev-parse --verify -q origin/main >/dev/null 2>&1 \
+     && git merge-base --is-ancestor HEAD origin/main 2>/dev/null; then
+    exit 0
+  fi
+
   if git rev-parse "origin/$current_branch" >/dev/null 2>&1; then
     upstream="origin/$current_branch"
   else
