@@ -1,9 +1,9 @@
 ---
 title: Exhibit Canonicalization — Decisions & Lessons (credential-identity layer)
 date: 2026-05-24
-last_updated: 2026-06-03
-session: 6 (Bruh Hex), updated through 8 (Octaman), 10 (Sexy Dexy), 11 (Bruh El), 12 (Bruh Dec — PR-5b scoping)
-status: ACTIVE — Cred-Ref PR-5b scoped this session (Bruh Dec); 3-PR split locked; PR-5b/0 code pending
+last_updated: 2026-06-04
+session: 6 (Bruh Hex), updated through 8 (Octaman), 10 (Sexy Dexy), 11 (Bruh El), 12 (Bruh Dec), 30–31 (CER triage), 32 (CER refinement + merge tool)
+status: ACTIVE — Session 32 added the existing→existing credential MERGE tool (kb/_merge_credentials.py); CER UI refinements shipped (#284/#285/#286)
 tags: [exhibit-canonicalization, credential-identity, audit, kb, eacr, rename-promotion]
 artifacts:
   - kb/unified_titles.json
@@ -1371,3 +1371,68 @@ The fold deliverable files (`unified_titles.json`/`credentials.json`/`coci_artic
   (which bakes `credential_reference_data.js`).
 - Broader CER long-tail (~50 NEW credentials to mint) is the `exhibit-canonicalization` skill's
   per-item domain — NOT safe to batch.
+
+---
+
+## Session 32 — CER refinement pass + the credential MERGE tool (2026-06-04)
+
+Sam's live screenshot review of the **Common Exhibit Reference** tab produced a
+7-item polish list. 3 PRs (#284 UI+producer, #285 the 10-Key merge + tool, #286
+CCR left-align). Two durable learnings beyond the UI tweaks.
+
+### Learning 1 — there is no "CPL-Type consolidation rule" in the CER to turn off
+Sam's instinct ("the different CPL types might have split them") was *half* right.
+"10-Key Data Entry" and "10-Key Numeric Data Entry" ARE the same exhibit — both
+`BIT 375 "10-Key on the Computer"` at Modesto JC (`course_id CNSR M10AA`), same
+credit rec — and the classifier DID split them by CPL type (Industry Certification
+vs Credit By Exam). **But the CER row grain is `unified_title`; it never
+groups/splits by CPL type.** The split was baked into `kb/unified_titles.json` as
+two AI titles. So "adjust the consolidation rules" had no rule to adjust — the fix
+is a **credential merge** (re-classification), not a render-time grouping change.
+The diagnostic that proves it: both rows' articulations share the **same
+`course_id` + same local course + same college**, differing only in
+`cpl_type_description`.
+
+### Learning 2 — the existing→existing MERGE is the sibling of the fold
+`_fold_unclassified.py` handles **unclassified→existing** (ADD a raw key). Merging
+two ALREADY-classified credentials is a different operation: **existing→existing**.
+New tool **`kb/_merge_credentials.py`** (dry-run + `--apply`, V1–V4 gates, receipt)
+driven by **`kb/credential_merges.json`** (`{loser, winner, reviewed_by,
+reviewed_at, reason}`). Per merge it:
+- re-points every raw whose `unified_title == loser` → winner in `unified_titles.json`
+  (stamps reviewed_by/at + a `_merge_note`; preserves `confidence_title`);
+- DROPs the loser record in `credentials.json` when the winner already has one
+  (winner authoritative); MOVEs it when the winner has none;
+- re-points every articulation `unified_title == loser` → winner in
+  `coci_articulations.json` (producers group by `course_id`, so the two records
+  collapse to one CER identity row; the differing `cpl_type` is preserved).
+
+**V-gates:** V1 no conflicts (loser==winner / empty) · V2 winner ends with ≥1 raw +
+a credential record · V3 (post-assert) no loser remnant in any of the 3 files · V4
+re-pointed articulation count == pre-scan count. The 10-Key apply: 1 raw + 1
+articulation re-pointed, orphan credential dropped, all gates OK → "10-Key Data
+Entry" `raw_count 2`, both CPL types, one identity row; Numeric gone (2014→2013).
+**This is a CLASS** — same exhibit under ≥2 CPL types → ≥2 near-duplicate titles.
+The next merges are a one-line add to `credential_merges.json`; a detector
+(articulations sharing `course_id`+local-course but differing `unified_title`)
+would surface the rest. Distilled: `docs/kb-notes/playbook-cer-credential-merge.md`.
+
+### Learning 3 — the search/expand crash was one baked-vs-fallback shape bug
+Both "search doesn't fire" (item 2) and "expand wedge stopped working" (item 7)
+were the **same** `TypeError`: `passesFilter` did `row.raw_variants.some(...)`, but
+**baked rows carry `raw_variants: null`** (only the runtime-fetch fallback path
+built it). On the first non-matching row, the throw aborted the whole `render()`,
+freezing search AND every expand wedge. One `|| []` guard. Distilled as the general
+rule `docs/kb-notes/methodology-consumer-tolerate-omitted-baked-fields.md`: a
+consumer that supports both a baked payload and a runtime-fetch fallback must guard
+every field the baked path omits but the fallback fills. (Same review also baked
+the omitted fields properly — `raw_variants` + per-local-course `u` units — so item
+6 + item 4 got the data they needed.)
+
+### State / next
+- 3 PRs merged + live (CER producer ships live-on-merge by regenerating
+  `credential_reference_data.js` locally + committing; idempotent → cron no-op).
+- **Carryover:** build the CPL-type-duplicate detector (or keep adding merges
+  manually); then the Session-31 carryover stands (3 audience views, EACR v2
+  scope/generated-rec, MID curation, the 5 un-classifiable unclassifieds, the
+  ~50 NEW-credential long tail).
