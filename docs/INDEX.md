@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-04 (Session 33 — [A] CLAUDE.md history→archive trim 1908→1514; R1 CER noise suppression #292 (demote elective-bucket COMM M1038 + flag subject-outliers); GE-Area exam-credit layer #293 then extended to AP+IB+CLEP from ESLEI 24-35 — kb/reference/ccc_ge_exam_credit.json + CER GE-credit callout, 147/154 joined; new reference KB note + 4 authoritative source docs in docs/reference/)
+updated: 2026-06-04 (Session 33 — [A] CLAUDE.md trim 1908→1514; R1 CER noise suppression #292; GE-Area exam-credit layer #293→AP+IB+CLEP from ESLEI 24-35 (#294, 147/154); GE-Area grain view #295; CER student-impact "Students" column + impact-sort (path 1, students-served roll-up, suppress<5) + privacy ADR; +5 reference/source docs in docs/reference/)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -77,6 +77,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Reference — Dashboard UI design system (tokens + canonical components)](kb-notes/reference-ui-design-system.md) | reference | published | 2026-06-04 | 2026-06-04 |
 | [Methodology — Commit the test harness; don't let verification evaporate](kb-notes/methodology-commit-the-test-harness.md) | methodology | published | 2026-06-04 | 2026-06-04 |
 | [Reference — AP credit is a GE-Area mapping (the canonical anchor for AP/standardized-exam credentials)](kb-notes/reference-ap-credit-ge-area-canonicalization.md) | reference | published | 2026-06-04 | 2026-06-04 |
+| [ADR — Student-impact counts in the public CER (aggregate + small-cell suppression)](kb-notes/adr-cer-student-impact-counts-privacy.md) | adr | published | 2026-06-04 | 2026-06-04 |
 
 ---
 

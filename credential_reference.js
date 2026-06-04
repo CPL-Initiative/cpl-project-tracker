@@ -327,6 +327,11 @@
       n_articulation_lines: b.n_articulation_lines || 0,
       // System-level GE-Area credit for AP/IB/CLEP exams — null otherwise.
       ge_credit: b.ge_credit || null,
+      // Student-impact roll-up (path 1): total CPL students served across
+      // articulating colleges. null + served_suppressed when 1-4 (masked "<5");
+      // null + !served_suppressed when 0 / no data. Populates on the daily cron.
+      students_served: (typeof b.students_served === "number") ? b.students_served : null,
+      served_suppressed: !!b.served_suppressed,
       // Raw college-entered MAP exhibit-title variants collapsed under this
       // unified title. Baked compactly as {r:raw_title, c:confidence, q:flag}
       // (added 2026-06-04, item 6) so the expanded row can list them — a
@@ -615,6 +620,13 @@
       audit_tag_total: function (r) { return r.audit_tag_total; },
       flag_label:      function (r) { return r.flag_label || "~"; },
       reviewed:        function (r) { return r.curator_reviewed_at ? 1 : 0; },
+      // Students-served sort: known count (≥5) → its value; suppressed (1-4) →
+      // 0.5 (above no-data, below any real count); none → 0. So "sort desc"
+      // floats the highest-impact credentials to the top for curation triage.
+      students:        function (r) {
+        return (typeof r.students_served === "number") ? r.students_served
+             : (r.served_suppressed ? 0.5 : 0);
+      },
     };
     var f = getters[k] || getters.unified_title;
     return rows.slice().sort(function (a, b) {
@@ -1089,6 +1101,8 @@
       { key: "unified_title",   label: "Unified Title" },
       { key: "raw_count",       label: "Variants",
         title: "Number of distinct college-entered MAP exhibit titles collapsed under this unified title. Expand the row to see them — \"1\" means a single college title maps here, which may differ from the generated unified title." },
+      { key: "students",        label: "Students",
+        title: "Total CPL students served across articulating colleges (MAP View_ArticulatedCollegeCourses) — a volume signal for prioritizing curation. Sort to surface the highest-impact credentials. Counts below 5 are masked as \"<5\" for privacy; \"—\" = no articulated student credit yet. Populates on the daily MAP pull." },
       { key: "disc_modal",      label: "Discipline",
         title: "Predominant MQ discipline across this credential's articulated common courses." },
       { key: "primary_issuer",  label: "Issuing Agency" },
@@ -1290,6 +1304,22 @@
     tr.appendChild(titleTd);
 
     tr.appendChild(el("td", null, [String(r.raw_count)]));
+
+    // Students-served column (path 1) — the curation-prioritization signal.
+    // Exact count ≥5; "<5" masked (small-cell suppression); "—" no data.
+    var servedTd = el("td", { class: "cr-served-cell" });
+    if (typeof r.students_served === "number") {
+      servedTd.appendChild(el("span", { class: "cr-served-n",
+        title: "Total CPL students served across articulating colleges." },
+        [r.students_served.toLocaleString()]));
+    } else if (r.served_suppressed) {
+      servedTd.appendChild(el("span", { class: "cr-served-sup",
+        title: "Fewer than 5 students — exact count withheld (small-cell privacy suppression)." },
+        ["<5"]));
+    } else {
+      servedTd.appendChild(el("span", { class: "cr-null" }, ["—"]));
+    }
+    tr.appendChild(servedTd);
 
     // Discipline column — modal MQ discipline across this credential's
     // articulations (blank if no articulations).
@@ -1872,7 +1902,11 @@
       "#tab-credential-reference .cr-geap-body{font-size:.92rem;color:#1f2937;}" +
       "#tab-credential-reference .cr-geap-area{color:#0A2240;}" +
       "#tab-credential-reference .cr-geap-na{color:#7a5c00;font-weight:600;}" +
-      "#tab-credential-reference .cr-geap-note{font-size:.72rem;color:#6b7280;font-style:italic;margin-top:4px;max-width:80ch;}";
+      "#tab-credential-reference .cr-geap-note{font-size:.72rem;color:#6b7280;font-style:italic;margin-top:4px;max-width:80ch;}" +
+      // Students-served column (path 1) — the count stands out for triage; the
+      // masked "<5" is muted (small-cell suppression).
+      "#tab-credential-reference .cr-served-n{font-weight:600;color:#0A2240;}" +
+      "#tab-credential-reference .cr-served-sup{color:#94a3b8;font-style:italic;font-size:.85em;}";
     document.head.appendChild(st);
   }
 
