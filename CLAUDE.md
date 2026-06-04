@@ -1477,6 +1477,52 @@ System — System needs a privacy ADR), **EACR v2** scope/generated-rec
 remaining **5** un-classifiable CER unclassifieds (left flagged), and the long-tail
 ~50 NEW-credential mints (`exhibit-canonicalization` skill domain).
 
+### Session 33 — CLAUDE.md trim + the CER intelligence layer (shipped 2026-06-04, "Sleepy Goodall")
+
+A marathon: the staged CLAUDE.md trim + a full CER prioritization/canonicalization
+layer driven by Sam's live AP-card review + authoritative policy docs. **6 PRs, all
+merged + live.** No M-ID pipeline movement → pipeline viz correctly skipped.
+
+- **#291 — CLAUDE.md history→archive trim** (staged item [A]): 1908→1514 lines; 84
+  DONE roadmap rows + Session 26-31 narratives → `docs/roadmap_archive.md` (pointers
+  left inline). Kept: Critical Rules, full Pipeline Reference, §11 framing, open
+  roadmap rows, Session-25 queue, most-recent narrative.
+- **#292 — CER R1 noise suppression**: the "curious COMM" Sam flagged is a *systemic*
+  pattern — `COMM M1038` "Group Communication" (Clovis) articulates to **61
+  credentials**, all generic "Elective Course Credits." Producer flags **elective-
+  bucket** identities (≈100%-elective recs + ≥5 credentials + ≤3 colleges → exactly
+  COMM M1038) → consumer **demotes** them to a collapsed disclosure; **subject-outlier**
+  identities get a visible review badge. (61 + 251 baked flags.)
+- **#293/#294 — GE-Area exam-credit layer**: AP credit is **system-level** (AB 1985 /
+  AA 17-20; IB+CLEP title 5 §55052.5) — the canonical anchor for an exam credential is
+  its **GE Area + min units**, NOT a course-identity fold (course-to-course is a *local*
+  decision). This **reframed the would-be "fold Western-Civ M-IDs into HIST 170/180" R2
+  as the wrong layer.** New `kb/reference/ccc_ge_exam_credit.json` (AP+IB+CLEP from the
+  current **ESLEI 24-35** charts; alias + char-prefix rules collapse the CER's legacy
+  IB names) → per-row `ge_credit`; CER headlines the statewide credit. **147/154**
+  exam credentials joined. The elective fallback in the policy *explains* #292's bucket.
+- **#295 — GE-Area grain view**: a "Group: GE Area" mode (multi-bucket via new
+  `groupKeysOf`) — the CER/CCR/CSR grain family's exam-credit rollup.
+- **#296 — CER "Students" impact column** (path 1): per-credential **students served**
+  = SUM of MAP `View_ArticulatedCollegeCourses.Students` rolled up `exhibit_id →
+  unified_title`; sortable column to prioritize curation by reach. **Privacy ADR**
+  (`docs/kb-notes/adr-cer-student-impact-counts-privacy.md`): aggregate-only, **small-
+  cell suppression below 5** (Sam's threshold — 1-4 → "<5", exact never baked), test
+  colleges excluded, volume-not-distinct. Cron-only data → no-ops locally, lights up on
+  the daily pull; verified end-to-end via `kb/_verify_students_served.py`.
+
+Patterns reused: CER ships **live-on-merge** (producer regenerates from committed
+inputs); **whitelist new baked fields in `adaptBakedRow`** (the Session-29 omitted-
+field trap bit twice); jsdom-test the real consumer (now **5 CER test files, 68
+assertions**). Lessons: `docs/eacr_consolidation_lessons.md` (Session 33). KB notes:
+`reference-ap-credit-ge-area-canonicalization`, `adr-cer-student-impact-counts-privacy`.
+
+**Carryover / next:** the **eligible** side of student impact (needs an exhibit-keyed
+MAP eligibility export — only college×CPL-type today); recommended-order **#3 GE-Area
+coherence check** (flag exam credentials whose local courses' disciplines don't fit the
+exam's GE Area) + **#4 CPL-type-duplicate detector** (the `&`/`and` AP-title dupes);
+plus the standing Session-31/32 carryover (3 audience views, EACR v2, MID curation).
+
 ---
 
 ## Troubleshooting
