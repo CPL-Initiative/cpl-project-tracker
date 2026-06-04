@@ -5327,27 +5327,63 @@ def export_credential_reference():
         try:
             with open(EXHIBIT_FILE, encoding="utf-8") as _f:
                 _cr = json.load(_f)
+            def _to_count(v):
+                # Robust: int / float / numeric string (commas, decimals, whitespace)
+                # → int; else None. The old int(v or 0) silently zeroed a "3.0"/"3,000"
+                # string (ValueError), which would blank the whole column.
+                if v is None or v == "" or isinstance(v, bool):
+                    return None
+                if isinstance(v, (int, float)):
+                    return int(v)
+                try:
+                    return int(float(str(v).replace(",", "").strip()))
+                except (ValueError, TypeError):
+                    return None
+
+            _ds_found = _row_n = _matched = _withn = _unparsed = _total = 0
+            _ix = _il = None
+            _cols_seen = []
             for _rep in (_cr if isinstance(_cr, list) else []):
                 if "ArticulatedCollegeCourses" not in str(_rep.get("viewName", "")):
                     continue
-                _cm = {c: i for i, c in enumerate(_rep.get("columnName", []))}
+                _ds_found = 1
+                # Normalize column names (strip stray whitespace) before lookup.
+                _cm = {str(c).strip(): i for i, c in enumerate(_rep.get("columnName", []))}
+                _cols_seen = list(_cm.keys())
                 _ix, _ic, _il = _cm.get("ExhibitID"), _cm.get("College"), _cm.get("Students")
+                _rows = _rep.get("columnValue") or []
+                _row_n = len(_rows)
                 if _ix is None or _il is None:
                     continue
-                for _row in (_rep.get("columnValue") or []):
+                for _row in _rows:
                     if _ic is not None and _ic < len(_row) and _row[_ic] in _TEST_COLLEGES:
                         continue
-                    _ut2 = exid_to_ut.get(_row[_ix] if _ix < len(_row) else None)
+                    # Strip the raw ExhibitID before joining (guards stray whitespace).
+                    _eid = str(_row[_ix]).strip() if (_ix < len(_row) and _row[_ix] is not None) else ""
+                    _ut2 = exid_to_ut.get(_eid)
                     if not _ut2:
                         continue
-                    try:
-                        _n = int(_row[_il] or 0) if _il < len(_row) else 0
-                    except (ValueError, TypeError):
-                        _n = 0
-                    if _n:
+                    _matched += 1
+                    _n = _to_count(_row[_il] if _il < len(_row) else None)
+                    if _n is None:
+                        _unparsed += 1
+                        continue
+                    if _n > 0:
+                        _withn += 1
+                        _total += _n
                         served_by_ut[_ut2] += _n
-            print(f"  Students-served roll-up: {len(served_by_ut)} credentials with "
-                  f"≥1 student (from View_ArticulatedCollegeCourses)")
+            # Detailed diagnostic (counts only — no raw per-row student values) so a
+            # "0 students" outcome is debuggable from the cron log without the PII file.
+            print(f"  Students-served roll-up: {len(served_by_ut)} credentials, {_total} students "
+                  f"(dataset_found={_ds_found} rows={_row_n} matched_exhibitid={_matched} "
+                  f"students>0={_withn} unparseable={_unparsed} "
+                  f"ExhibitID_col={_ix} Students_col={_il})")
+            if _ds_found and (_ix is None or _il is None):
+                print(f"    ⚠ required column missing — ExhibitID={_ix}, Students={_il}; columns present: {_cols_seen}")
+            elif _ds_found and _row_n and _matched == 0:
+                print(f"    ⚠ 0 of {_row_n} rows' ExhibitID matched the crosswalk ({len(exid_to_ut)} keys) — ID-format mismatch in View_ArticulatedCollegeCourses?")
+            elif _matched and _withn == 0:
+                print(f"    ⚠ {_matched} rows matched the crosswalk but none had a parseable Students>0 (unparseable={_unparsed}) — value-format issue in the Students column.")
         except (json.JSONDecodeError, IOError, TypeError, KeyError) as _e:
             print(f"  Students-served roll-up skipped (CustomReport unreadable: {_e})")
     else:
