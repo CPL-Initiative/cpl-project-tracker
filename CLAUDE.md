@@ -1770,6 +1770,73 @@ work. Then the rest of the queue: the **3 audience views** (Student/College/Syst
 needs a privacy ADR), **EACR v2** scope/generated-rec (producer-side → next cron), **MID
 curation** (CompTIA A+ fragmentation → Suggested-merges worklist).
 
+### Session 32 — CER refinement pass + credential merge tool (shipped 2026-06-04)
+
+Seven-item CER polish from Sam's live screenshot review of the **Common Exhibit
+Reference** tab. All consumer/producer/KB — no M-ID pipeline movement (pipeline
+viz correctly skipped). **3 PRs merged.**
+
+- **#284 — the headline fixes (consumer `credential_reference.js` + producer
+  `export_credential_reference()`):**
+  - **Search + expand crash (items 2 & 7 — same root cause).** `passesFilter`
+    called `row.raw_variants.some(...)`, but **baked rows carry `raw_variants:
+    null`** (only the runtime-fetch fallback path populated it). The instant you
+    typed in search, the first non-matching row threw a `TypeError` that aborted
+    the whole `render()` — freezing **both** search AND every expand wedge ("expand
+    stopped working after the first two" = they'd searched in between). One `|| []`
+    guard fixes both; search now also matches `display_title` + the raw variants.
+    Distilled as `methodology-consumer-tolerate-omitted-baked-fields.md`.
+  - **Generated chips clarified (item 3).** The existing `⚙ Generated` chip was
+    actually about the credit rec → relabeled **`⚙ Generated MID Credit Rec`**;
+    added a new **`⚙ Generated Title`** chip on every AI-draft title (not yet
+    curator-confirmed/renamed — Sam's pick: show on all AI-draft titles).
+  - **CCR identities box (item 4).** Identity now on ONE line (title/disc/TOP as
+    inline spans, not stacked divs); local courses read **`CODE Title (N units)`**;
+    units **baked** (`u`) from singleton `typical_units` + corroborated-membership
+    modal units (3393/4360 local lines resolve). Headers centered first (#284),
+    then **flipped to left-align (#286)** at Sam's call (centered long one-liners
+    read awkwardly).
+  - **Audit signals moved up (item 5)** to sit directly under the
+    Articulated/Potential section.
+  - **Raw variants surfaced (item 6).** Baked a lean `raw_variants` list per
+    credential; the expanded row lists the **college-entered exhibit titles** so a
+    `Variants: 1` is explainable (one college title, may differ from the generated
+    unified title). Verified with an ad-hoc jsdom test (20/20).
+- **#285 — 10-Key consolidation (item 1) + reusable merge tool.** Diagnosis:
+  "10-Key Data Entry" + "10-Key Numeric Data Entry" are the **same exhibit** (both
+  `BIT 375 "10-Key on the Computer"`, Modesto JC, `CNSR M10AA`, same credit rec) —
+  the classifier split them by CPL type. **There is NO CPL-Type rule in the CER to
+  turn off** (it keys on `unified_title`, never CPL type); the split was baked into
+  `unified_titles.json` as two AI titles → the fix is a credential **merge**, not a
+  grouping change. New **`kb/_merge_credentials.py`** (dry-run + `--apply`, V1–V4
+  gates, receipt) driven by curator decisions in **`kb/credential_merges.json`**:
+  folds a `loser` unified_title into a `winner` across `unified_titles.json`
+  (re-point raws), `credentials.json` (drop the orphan; winner authoritative), and
+  `coci_articulations.json` (re-point the articulation). This is the **existing→
+  existing** sibling of `_fold_unclassified.py` (unclassified→existing). Applied:
+  "10-Key Data Entry" → `raw_count 2`, both CPL types, one identity row; the
+  Numeric row gone (2014 → 2013). Playbook:
+  [`docs/kb-notes/playbook-cer-credential-merge.md`](docs/kb-notes/playbook-cer-credential-merge.md).
+- **#286 — CCR table left-align** (consumer CSS follow-up to item 4).
+
+**Patterns / learnings:** (1) **CER producer ships live on merge** — I regenerate
+`credential_reference_data.js` locally + commit, so the changes are live without
+waiting for the cron (the regen also catches the baked file up to already-merged
+Session-31 folds — Firefighter 1A etc.); idempotent → cron sees a no-op. (2) The
+**baked-vs-fallback shape divergence** crash class (item 2/7) — a consumer must
+guard any field the baked payload omits but the runtime path fills. (3) The
+**CPL-type-duplicate class**: same exhibit entered under ≥2 CPL types → ≥2
+near-duplicate AI titles; detectable as articulations sharing a `course_id` +
+local course but differing `unified_title`. Offered Sam a detector for the rest.
+
+**Carryover / next:** (1) **CPL-type-duplicate detector** — surface the rest of
+the class for review (each merge = a one-line add to `credential_merges.json`).
+(2) The Session-31 carryover stands: the **3 audience views** (Student/College/
+System — System needs a privacy ADR), **EACR v2** scope/generated-rec
+(producer-side → next cron), **MID curation** (CompTIA A+ → Suggested-merges), the
+remaining **5** un-classifiable CER unclassifieds (left flagged), and the long-tail
+~50 NEW-credential mints (`exhibit-canonicalization` skill domain).
+
 ---
 
 ## Troubleshooting
