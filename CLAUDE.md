@@ -1589,8 +1589,8 @@ From Sam's screenshot review of **EMT Certification** in the CER: the expanded
 identity table showed **29 rows** for ~12 real courses (the EMT-Basic course
 minted as a dozen single-college M-IDs). Asks: refine the CER — *why* are these
 here, *why* don't near-identical M-IDs consolidate ("involves the CCR procedures
-too"), collapse them, + widen the first column. All CER consumer/producer — no
-M-ID pipeline movement (pipeline viz correctly skipped). **3 PRs, all merged.**
+too"), collapse them, + widen the first column. All CER/CCR consumer/producer — no
+M-ID pipeline movement (pipeline viz correctly skipped). **4 PRs, all merged.**
 
 - **#307 — widen the CCR identity column.** HTML `<style>` capped `.cr-art-ident`
   at `max-width:32ch` under `table-layout:auto` → the longest column wrapped to
@@ -1615,10 +1615,20 @@ EMT-Basic while keeping **Calculus I≠II / Spanish 1≠2 / Paramedic 2/3/4** ap
 Traps: `len(w)<=1` letter-guard eats single-digit ordinals; exclude C-ID/CCN
 anchors (blank titles); audit every merge for a shared substantive word.
 
-**Carryover / next:** (1) **The durable "+ worklist" half is NOT yet built** — the
-EMT M-IDs are still 12 separate identities in CCR/EACR/audits; only the CER *view*
-collapses them. Next: a CCR Suggested-merges worklist enhancement (co-articulation
-+ `_fam_key` signal) → curator confirms → `merge_into` → identity-layer. (2) The
+- **#310 — the durable "+ worklist" half.** `export_unified_courses()` now surfaces
+  the EMT-style clusters in the CCR Suggested-merges worklist via a **co-articulation
+  family pass**: group mergeable M-IDs by `(subject prefix, _fam_key)` GATED on a
+  shared credential in `coci_articulations.json` (29 groups, 0 cross-SUBJ4 — fixed an
+  AUTO+AVIA early run; EMT's 9 live-mergeable M-IDs lead with the canonical `EMST
+  M1064`). Consumer: a third worklist `_kind:"family"` reusing Confirm→`merge_into`.
+  `_fam_key` factored to **module scope** (shared with #308; CER output byte-identical).
+  Never auto-applies. `tests/uc_family_merges.test.js` (11).
+
+**Carryover / next:** (1) **Re-key follow-on (open).** Confirmed worklist merges
+propagate to the CCR + auditor but NOT to the static `coci_articulations.json`, so
+the **EACR/CER articulation views won't reflect them** (beyond #308's view fold)
+until a **Rule-7 re-key** — scope that project if Sam wants full propagation. (Also:
+extend the family pass to single-college singletons, not just `rows` M-IDs.) (2) The
 Session-34 carryover stands: eligible-students dataset wiring, College/System
 audience views, EACR v2 scope, the Signal-B dedup leads.
 
