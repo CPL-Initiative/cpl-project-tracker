@@ -40,7 +40,14 @@
         if (val >= 1e3) return '$' + (val / 1e3).toFixed(1) + 'K';
         return '$' + Math.round(val);
       }
-      function fmtN(n) { return (n || 0).toLocaleString(); }
+      // Numbers format with separators; a small-cell-masked count ("<N") or any
+      // non-number renders as-is, HTML-escaped (the "<" in "<2" must not be parsed
+      // as a stray tag). Exact small counts are never baked — privacy.
+      function fmtN(n) {
+        if (typeof n === 'number') return n.toLocaleString();
+        if (n == null) return '0';
+        return String(n).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+      }
       function fmtU(n) {
         if (!n) return '0';
         if (n >= 1000) return Math.round(n / 1000) + 'k';
@@ -65,10 +72,12 @@
                        credit_recs:0, savings:0, year_impact:0 };
         const allDiscs = new Set();
         filteredData.forEach(r => {
-          sums.students += r.students;
-          sums.veterans += r.veterans;
-          sums.working_adults += r.working_adults;
-          sums.apprentices += r.apprentices;
+          // Masked "<N" cells (small-cell suppression) are non-numeric → exclude
+          // them from the totals (the row is a floor; suppressed cells are rare).
+          if (typeof r.students === 'number') sums.students += r.students;
+          if (typeof r.veterans === 'number') sums.veterans += r.veterans;
+          if (typeof r.working_adults === 'number') sums.working_adults += r.working_adults;
+          if (typeof r.apprentices === 'number') sums.apprentices += r.apprentices;
           sums.eligible_units += r.eligible_units;
           sums.transcribed_units += r.transcribed_units;
           sums.savings += r.savings;
@@ -190,6 +199,10 @@
               va = sortKey === 'disciplines' ? aev.disciplines : aev[sortKey];
               vb = sortKey === 'disciplines' ? bev.disciplines : bev[sortKey];
             }
+            // A small-cell-masked count ("<N") sorts as ~N-1 (between 0 and N), so
+            // suppressed rows land in their right numeric spot, not lexically.
+            if (typeof va === 'string' && /^<\d/.test(va)) va = parseInt(va.slice(1), 10) - 1;
+            if (typeof vb === 'string' && /^<\d/.test(vb)) vb = parseInt(vb.slice(1), 10) - 1;
             if (typeof va === 'string') va = va.toLowerCase();
             if (typeof vb === 'string') vb = vb.toLowerCase();
             if (va == null) va = sortAsc ? Infinity : -Infinity;
