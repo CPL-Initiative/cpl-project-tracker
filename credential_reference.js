@@ -1885,6 +1885,20 @@
       "#tab-credential-reference table.cr-arts-table th{text-align:left;}" +
       "#tab-credential-reference table.cr-arts-table td{text-align:left;}" +
       "#tab-credential-reference .cr-art-ident{max-width:none;}" +
+      // Widen the CCR identity column so the one-line identity wraps to fewer
+      // lines → shorter rows (Sam, 2026-06-04). The HTML <style> caps
+      // .cr-art-ident at max-width:32ch under table-layout:auto, which squeezed
+      // the longest column (identity = code · title · discipline · TOP) into 5-6
+      // lines while the Local/Colleges columns sat short. Switch the table to
+      // table-layout:fixed and give the identity the largest share (42/40/18).
+      // Set widths on BOTH the header th's (drives the main table) AND the td
+      // classes (drives the headerless elective-bucket table). overflow-wrap so
+      // a long code can't overflow a fixed column.
+      "#tab-credential-reference table.cr-arts-table{table-layout:fixed;}" +
+      "#tab-credential-reference table.cr-arts-table th:nth-child(1),#tab-credential-reference table.cr-arts-table td.cr-art-ident{width:42%;}" +
+      "#tab-credential-reference table.cr-arts-table th:nth-child(2),#tab-credential-reference table.cr-arts-table td.cr-art-local{width:40%;}" +
+      "#tab-credential-reference table.cr-arts-table th:nth-child(3),#tab-credential-reference table.cr-arts-table td.cr-art-colleges{width:18%;}" +
+      "#tab-credential-reference table.cr-arts-table td{overflow-wrap:anywhere;}" +
       "#tab-credential-reference .cr-lc-units{color:#6b7280;font-size:.92em;}" +
       // R1 noise suppression (2026-06-04): subject-outlier review badge (amber,
       // matches the file's existing gen-chip/triage palette) + the collapsed
