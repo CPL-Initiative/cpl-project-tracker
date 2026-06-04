@@ -5217,6 +5217,29 @@ def export_credential_reference():
     identities = art_doc.get("identities", {}) or {}
     articulations = art_doc.get("articulations", []) or []
 
+    # Elective-bucket identities (R1 noise suppression, 2026-06-04): a single
+    # local course used as a generic elective dumping-ground — its credit recs
+    # are ~entirely "elective" AND it spans many unrelated credentials from
+    # one/two colleges (e.g. Clovis's COMM M1038 → 61 credentials, 100% "3 hours
+    # in Elective Course Credits"). These pollute every credential card they
+    # touch with a nonsensical common-course identity, so the consumer demotes
+    # them into a collapsed disclosure. High-precision by construction: the
+    # ~100%-elective + breadth signature matches exactly COMM M1038 today and
+    # never the legitimately-broad CTE courses (WELD/FIRE/AJ 200 span 10-20
+    # credentials too, but carry REAL credit recs → 0% elective → not flagged).
+    _eb_recs = defaultdict(list)
+    for _a in articulations:
+        if _a.get("course_id"):
+            _eb_recs[_a["course_id"]].append(_a)
+    elective_bucket_ids = set()
+    for _cid, _recs in _eb_recs.items():
+        _creds = {a.get("unified_title") for a in _recs}
+        _elec = sum(1 for a in _recs if any("elective" in str(x).lower()
+                    for x in (a.get("credit_recommendations") or [])))
+        _cols = {c for a in _recs for c in (a.get("earned_by_colleges") or [])}
+        if _recs and _elec / len(_recs) >= 0.8 and len(_creds) >= 5 and len(_cols) <= 3:
+            elective_bucket_ids.add(_cid)
+
     # course_ids referenced by articulations — bounds the units lookup below.
     needed_cids = {a.get("course_id") for a in articulations if a.get("course_id")}
     # Per-(course_id,(subject,number)) representative units for the local-course
@@ -5409,6 +5432,29 @@ def export_credential_reference():
         sys_order = {"CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3}
         articulations_out.sort(key=lambda x: (sys_order.get(x["sys"], 9), x["cid"]))
 
+        # Noise flags (R1, 2026-06-04) — demote/flag non-substantive identities
+        # in this credential's identity table (consumer renders the treatment):
+        #   bucket  — an elective-bucket identity (computed globally above) →
+        #             hidden in a collapsed disclosure, not counted in the header.
+        #   outlier — a subject-outlier WITHIN this credential's set: its subject
+        #             (the course_id's leading token) is a small minority vs the
+        #             modal subject (e.g. a lone COMM identity in a History card).
+        #             Kept visible but badged for curator review — it may be a
+        #             legit cross-listing, so it's a candidate, not a verdict.
+        # The modal subject is computed over the non-bucket entries so a bucket
+        # can't distort it. Only meaningful once a credential has ≥4 identities.
+        _real = [x for x in articulations_out if x["cid"] not in elective_bucket_ids]
+        _subjc = Counter(str(x["cid"]).split()[0] for x in _real if x.get("cid"))
+        _modal_subj = _subjc.most_common(1)[0][0] if _subjc else ""
+        _nreal = len(_real)
+        for x in articulations_out:
+            if x["cid"] in elective_bucket_ids:
+                x["bucket"] = 1
+            else:
+                _s = str(x["cid"]).split()[0] if x.get("cid") else ""
+                if _nreal >= 4 and _s and _s != _modal_subj and _subjc[_s] <= max(1, 0.25 * _nreal):
+                    x["outlier"] = 1
+
         audit_tags = dict(audit_tags_by_ut.get(ut, {}))
         issuer_val = primary.get("issuing_agency")
         trainer_val = primary.get("training_agency")
@@ -5499,6 +5545,9 @@ def export_credential_reference():
     print(f"  Credential Reference: wrote {sz//1024} KB "
           f"({s['unified_titles']} unified titles · {s['articulated_titles']} articulated · "
           f"{s['total_articulation_lines']} local-course lines · {s['statewide_titles']} statewide)")
+    print(f"    noise suppression: {len(elective_bucket_ids)} elective-bucket "
+          f"identit{'y' if len(elective_bucket_ids)==1 else 'ies'} demoted "
+          f"({', '.join(sorted(elective_bucket_ids)) or 'none'})")
 
 
 def export_unified_courses():
