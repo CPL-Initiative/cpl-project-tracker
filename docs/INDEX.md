@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-04 (Session 35 — CER identity consolidation: widen the CCR column #307; fold near-duplicate identities #308 (EMT 29→18, the ordinal rule "1"/"I" non-distinguishing but "2"+ kept, 94 rows fold / 47 cards, display-only/reversible, "⛓ N variants" badge); the durable "+ worklist" half shipped #310 (co-articulation family merges in the CCR worklist); NEW methodology-within-credential-identity-consolidation)
+updated: 2026-06-04 (Session 35 — CER identity consolidation: widen the CCR column #307; fold near-duplicate identities #308 (EMT 29→18, the ordinal rule "1"/"I" non-distinguishing but "2"+ kept, 94 rows fold / 47 cards, display-only/reversible, "⛓ N variants" badge); the durable "+ worklist" half shipped #310 (co-articulation family merges in the CCR worklist); NEW methodology-within-credential-identity-consolidation [+#310 worklist section]; NEW reference-claude-code-web-environment-reach [recovering Cowork-style screen/computer-use on the web env])
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -79,7 +79,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Reference — AP credit is a GE-Area mapping (the canonical anchor for AP/standardized-exam credentials)](kb-notes/reference-ap-credit-ge-area-canonicalization.md) | reference | published | 2026-06-04 | 2026-06-04 |
 | [ADR — Student-impact counts in the public CER (aggregate + small-cell suppression)](kb-notes/adr-cer-student-impact-counts-privacy.md) | adr | published | 2026-06-04 | 2026-06-04 (Session 34 — per-college <2 + minimization + guard) |
 | [Methodology — Turn a one-time PII audit into a standing guard (committed test over the public artifacts)](kb-notes/methodology-standing-pii-guard.md) | methodology | published | 2026-06-04 | 2026-06-04 |
-| [Methodology — Consolidating near-duplicate course identities within one credential (the ordinal rule)](kb-notes/methodology-within-credential-identity-consolidation.md) | methodology | published | 2026-06-04 | 2026-06-04 |
+| [Methodology — Consolidating near-duplicate course identities within one credential (the ordinal rule)](kb-notes/methodology-within-credential-identity-consolidation.md) | methodology | published | 2026-06-04 | 2026-06-04 (#310 worklist side: co-articulation + SUBJ4 gates) |
+| [Reference — Recovering screen/computer-use reach on Claude Code (web)](kb-notes/reference-claude-code-web-environment-reach.md) | reference | published | 2026-06-04 | 2026-06-04 |
 
 ---
 
@@ -97,7 +98,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
 | [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR / Cred-Ref / CER triage / **merge tool** | **Session 32 (CER refinement #284/#285/#286 + the existing→existing credential MERGE tool)** |
-| [`eacr_consolidation_lessons.md`](eacr_consolidation_lessons.md) | EACR consolidation + gallery (v2) + prescriptive + three-grains + **Student view (v3) #301 + the data-unblock loop + CER carry-forward/robust-parse + PII `<2` hardening** | **Session 34 (Lucid Wozniak, 2026-06-04)** |
+| [`eacr_consolidation_lessons.md`](eacr_consolidation_lessons.md) | EACR consolidation + gallery (v2) + prescriptive + three-grains + Student view (v3) #301 + the data-unblock loop + **Session 35: CER consolidation EMT 29→18 #308 + the ordinal rule + the CCR worklist co-articulation family merges #310** | **Session 35 (2026-06-04)** |
 | [`map_api_auth_handoff.md`](map_api_auth_handoff.md) | MAP CustomReport API auth coordination (Teams spec sheet + the no-op pre-stage activation steps) | **Session 27 (2026-06-01) NEW** |
 | [`exhibit_unification_vision.md`](exhibit_unification_vision.md) | Credential design doc | retrospective |
 | [`letter_curator_handoff.md`](letter_curator_handoff.md) | Letter Curator workstream | Session 10 |

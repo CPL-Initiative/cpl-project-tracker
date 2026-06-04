@@ -423,3 +423,15 @@ If Sam wants the EACR/CER to reflect confirmed worklist merges, scope a **Rule-7
 re-key** of `coci_articulations.json` (dry-run + alias map + atomic land). Else the
 standing carryover: the eligible-students dataset wiring + the College/System
 audience views.
+
+### Checkpoint 2 (2026-06-04, session close)
+Session 35 closed with **5 PRs merged** (#307 column width, #308 CER view fold,
+#309 checkpoint, #310 the worklist co-articulation family pass, #311 doc record).
+The full **"CER view + worklist"** deliverable is shipped; the only open follow-on
+is the Rule-7 re-key (above) — Sam: *"I'll wait on those for the next session."*
+Off-workstream but captured: an **environment-reach advisory** (recovering
+Cowork-style screen/computer-use on the web env) → new KB note
+`docs/kb-notes/reference-claude-code-web-environment-reach.md`. The reusable
+worklist learning (the co-articulation + SUBJ4 double-gate that makes `_fam_key`
+safe to apply globally) was folded into
+`docs/kb-notes/methodology-within-credential-identity-consolidation.md`.

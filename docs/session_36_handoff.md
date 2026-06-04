@@ -5,21 +5,24 @@ session: 35 → 36 hand-off
 status: hand-off — paste the fenced block into Session 36's first message
 tags: [handoff, session-prompt, cer, consolidation, ordinal-rule, worklist, emt]
 related:
-  - docs/eacr_consolidation_lessons.md (Session 35 section)
-  - docs/kb-notes/methodology-within-credential-identity-consolidation.md (NEW)
+  - docs/eacr_consolidation_lessons.md (Session 35 section + Checkpoint 2)
+  - docs/kb-notes/methodology-within-credential-identity-consolidation.md (the ordinal rule + the #310 worklist double-gate)
+  - docs/kb-notes/reference-claude-code-web-environment-reach.md (NEW — off-workstream advisory)
   - docs/kb-notes/eacr-consolidation-scope.md (the 3 audience views + gallery)
   - CLAUDE.md §11 "Session 35" subsection (end of §11)
-moniker_suggestion: Session 34 was "Lucid Wozniak"; Session 35 (branch claude/adoring-sagan-IB1bW) shipped the CER consolidation — claim your own
+moniker_suggestion: Session 34 was "Lucid Wozniak"; Session 35 (branch claude/adoring-sagan-IB1bW) shipped the CER consolidation + the CCR worklist — claim your own
 ---
 
 <!-- Lineage: Sleepy Goodall (33) → Lucid Wozniak (34) → Session 35 (CER identity
-     consolidation: EMT 29→18 + the ordinal rule, 3 PRs). Pay it forward, 36. 🏅 -->
+     consolidation: EMT 29→18 + the ordinal rule + the CCR worklist co-articulation
+     family merges, 5 PRs). Pay it forward, 36. 🏅 -->
 
 # Session 36 Hand-off Prompt
 
 Session 35 answered Sam's CER screenshot review of **EMT Certification**: *why*
 29 courses sit under one exhibit, *why* near-identical M-IDs don't consolidate,
-and collapsed them in the CER view + widened the first column. **3 PRs, all
+collapsed them in the CER view, built the durable CCR worklist merges, + widened
+the first column. **5 PRs (3 substantive #307/#308/#310 + 2 doc #309/#311), all
 merged + live.** Paste the block below.
 
 ## The prompt
@@ -119,6 +122,13 @@ SAFETY PATTERNS TO HONOR:
   - The Edit tool once injected a NULL byte into a Python string literal — if an
     import dies with "source code string cannot contain null bytes", grep \x00.
 
+OFF-WORKSTREAM CONTEXT (FYI, not a task): Sam asked how to recover Cowork-style
+"see my screen / use my computer" reach now that he's on Claude Code web. Advisory
+captured in docs/kb-notes/reference-claude-code-web-environment-reach.md (this env
+can render+screenshot the dashboard back to him via SendUserFile, has direct MCP
+to Supabase/GitHub/Drive, and Chrome-extension / desktop-app options exist). He's
+revisiting it later — no action needed unless he raises it.
+
 Pipeline viz is skippable when the M-ID pipeline doesn't move (it didn't — all CER
-display). A moniker is yours to claim.
+display + a worklist that never auto-applies). A moniker is yours to claim.
 ```
