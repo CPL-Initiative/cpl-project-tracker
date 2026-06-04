@@ -31,6 +31,21 @@
             --status-on-track: #D4AF37;
             --status-at-risk: #C73E3E;
             --status-proposed: #9BBCD8;
+            /* Surface / border / text-scale / link tokens (added Session 32,
+               2026-06-04). USE THESE via var() in new CSS — do NOT hardcode the
+               hex. The newer tabs (CCR/CER/CSR) had drifted onto an ad-hoc slate
+               scale; these are the canonical names to converge on. Reference +
+               component cheatsheet: docs/kb-notes/reference-ui-design-system.md. */
+            --surface: #FFFFFF;
+            --surface-subtle: #F8FAFC;
+            --surface-muted: #F1F5F9;
+            --border: #E5E7EB;
+            --border-strong: #CBD5E1;
+            --text-strong: #1F2937;
+            --text-body: #374151;
+            --text-muted: #6B7280;
+            --text-faint: #94A3B8;
+            --accent-link: #2563EB;
         }
 
         body {

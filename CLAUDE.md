@@ -233,6 +233,40 @@ into the Pipeline Reference below or into dedicated docs.
     PR that landed so the next session has context, even though no
     pre-merge pause happened.
 
+## Engineering & UI practices (added Session 32, 2026-06-04)
+
+From a retrospective Sam asked for. These are lightweight standing practices —
+honor them in normal work:
+
+- **Commit your verification.** Front-end (consumer JS) changes get a jsdom test
+  under `tests/` (run with `npm test`; `tests/run.js` auto-discovers
+  `tests/*.test.js`). Don't write a throwaway `/tmp` test and discard it — a test
+  worth running once is worth committing. Make it guard the *failure mode* (e.g.
+  the CER test injects a `raw_variants:null` row to guard the search/expand
+  crash). `node_modules`/`package-lock.json` stay gitignored; CI
+  (`.github/workflows/js-tests.yml`) runs `npm install && npm test` as a
+  **non-required** check (never gates merge-on-green). See
+  [`docs/kb-notes/methodology-commit-the-test-harness.md`](docs/kb-notes/methodology-commit-the-test-harness.md).
+- **New CSS uses `var(--token)`, never a raw hex.** The `:root` block (top of both
+  HTMLs) holds the brand + surface/text/link tokens. If a role is missing, add a
+  token (in BOTH HTMLs — Rule 4) rather than inlining hex. Palette + canonical
+  components (chip, badge, table, curate affordance):
+  [`docs/kb-notes/reference-ui-design-system.md`](docs/kb-notes/reference-ui-design-system.md).
+- **Prefer injecting tab CSS from the tab's JS** (the CER `ensureCerScopeCss()`
+  pattern) over editing the HTML `<style>` blocks — JS is one static file, so it
+  covers both HTMLs without a Rule-4 mirror. Only the global `:root` tokens need
+  the mirror.
+- **Prototype UI in a fast-feedback canvas, then port.** For a new tab or visual
+  rework, iterate the look in a Claude artifact / claude.ai (live preview), lock
+  it with Sam, then implement into the monolith. In-repo analog: the EACR
+  versioned prototype gallery.
+- **Stop-hook:** the repo carries the canonical
+  [`scripts/stop-hook-git-check.sh`](scripts/stop-hook-git-check.sh) (install:
+  `cp scripts/stop-hook-git-check.sh ~/.claude/`). It ignores GitHub's own
+  squash-merge commits, so the "Unverified `noreply@github.com`" nag after a
+  squash-merge + `reset --hard origin/main` is gone — that commit is on `main`
+  and must NOT be amended (Rule 5).
+
 ## Deployed site
 
 https://cpl-initiative.github.io/cpl-project-tracker/
