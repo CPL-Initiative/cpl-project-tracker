@@ -133,6 +133,14 @@ collapsed disclosure (`bucket` flag) and badges minority-subject identities
   toolbar (`groupKeysOf` multi-buckets a row under each area it satisfies;
   consumer-only, reuses the TOP/Discipline grouping machinery). N/A → an
   elective bucket; non-exam credentials → a default-collapsed catch-all.
-- A coherence check: flag exam credentials whose articulated local courses'
-  disciplines don't fit the exam's GE Area (the subject-outlier badge is a first
-  cut).
+- **GE-Area coherence check — DONE** (Session 33): a `discipline_ge_areas` map
+  (MQ discipline → CCC division[s]) in `ccc_ge_exam_credit.json`, baked as
+  `disc_ge_areas`; the consumer flags any articulated course whose discipline's
+  division is disjoint from the exam's GE Area with a **`⚠ off GE Area`** badge +
+  a credential-level callout note. **Audit finding:** post-noise-suppression the
+  exam-credential data is **already GE-coherent** — only 1 non-bucket residual
+  (`SOCI M1083` under AP Statistics, an arguably-legit soc-stats articulation);
+  the rest of the off-division signal is the `COMM M1038` elective bucket, already
+  demoted. So this is a future-proof cue (catches new mismatches as data shifts),
+  not a backlog of fixes. Disciplines that cross divisions (History/Geography) and
+  unknown disciplines never flag.

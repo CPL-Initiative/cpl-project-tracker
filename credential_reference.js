@@ -676,6 +676,7 @@
     groupBy: "none",
     collapsedGroups: {},
     topCategories: {},   // 2-digit → title (loaded from baked payload)
+    discGeAreas: {},     // MQ discipline → [GE divisions] (GE-Area coherence check)
     // PR-4: per-row, per-field edit-mode tracker for the curation panel.
     // shape: { "unified_title": { "field_name": "display" | "edit" | "saving" } }
     curationEditing: {},
@@ -1906,7 +1907,11 @@
       // Students-served column (path 1) — the count stands out for triage; the
       // masked "<5" is muted (small-cell suppression).
       "#tab-credential-reference .cr-served-n{font-weight:600;color:#0A2240;}" +
-      "#tab-credential-reference .cr-served-sup{color:#94a3b8;font-style:italic;font-size:.85em;}";
+      "#tab-credential-reference .cr-served-sup{color:#94a3b8;font-style:italic;font-size:.85em;}" +
+      // GE-Area coherence (item #3) — per-identity "off GE Area" badge (warn) +
+      // the credential-level callout note.
+      "#tab-credential-reference .cr-ge-off{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:#FEF3C7;color:#92400e;border:1px solid #F59E0B;white-space:nowrap;}" +
+      "#tab-credential-reference .cr-geap-off{font-size:.74rem;font-weight:600;color:#92400e;margin-top:5px;}";
     document.head.appendChild(st);
   }
 
@@ -2196,6 +2201,19 @@
     return clr;
   }
 
+  // GE-Area coherence check (item #3): true when this articulated course's
+  // discipline sits in GE division(s) DISJOINT from the credit the exam grants
+  // (e.g. a Sociology course under AP Statistics, which grants Language &
+  // Rationality). A review candidate, not a verdict — disciplines like
+  // History/Geography legitimately cross divisions, and unknown disciplines never
+  // flag. Map (disc → [divisions]) is baked from kb/reference/ccc_ge_exam_credit.json.
+  function geAreaOff(disc, ge) {
+    if (!ge || ge.na || !(ge.areas && ge.areas.length) || !disc) return false;
+    var divs = state.discGeAreas[disc];
+    if (!divs || !divs.length) return false;          // unknown discipline → don't flag
+    return !divs.some(function (d) { return ge.areas.indexOf(d) >= 0; });
+  }
+
   // System-level GE-Area credit callout for an AP/IB/CLEP credential (CCC GE
   // charts, ESLEI 24-35 + AA 17-20). Returns null for non-exam credentials +
   // exams not on the charts (no r.ge_credit baked). The GE Area is the statewide
@@ -2228,6 +2246,19 @@
       }
     }
     box.appendChild(body);
+    // GE-Area coherence (item #3): count articulated courses whose discipline
+    // sits outside the granted GE Area (excludes demoted elective-bucket rows —
+    // those are flagged separately). Surfaced as a credential-level review cue.
+    var nOff = (r.articulations || []).filter(function (a) {
+      return !a.bucket && geAreaOff(a.disc, g);
+    }).length;
+    if (nOff) {
+      box.appendChild(el("div", { class: "cr-geap-off",
+        title: "These articulated courses' disciplines fall in a different GE division "
+             + "than the credit this exam grants — review whether the articulation is correct." },
+        ["⚠ " + nOff + " articulated course" + (nOff === 1 ? "" : "s")
+         + " sit outside this GE Area — worth a review."]));
+    }
     box.appendChild(el("div", { class: "cr-geap-note" }, [
       "Credit for AP/IB/CLEP exams is set at the system level (AP: AB 1985 / "
       + "AA 17-20; IB & CLEP: title 5 §55052.5; current charts ESLEI 24-35). The "
@@ -2337,6 +2368,18 @@
                  + "predominant one. Review whether the articulation is correct "
                  + "(it may be a legitimate cross-listing or local GE choice)."
           }, ["⚠ subject outlier"]));
+        }
+        // GE-Area coherence badge (item #3) — this course's discipline sits in a
+        // GE division other than the one this exam grants. Policy-grounded cousin
+        // of the subject-outlier badge; only fires on exam credentials (ge_credit).
+        if (geAreaOff(a.disc, r.ge_credit)) {
+          idCell.appendChild(document.createTextNode(" "));
+          idCell.appendChild(el("span", {
+            class: "cr-ge-off",
+            title: "Off GE Area — this course's discipline (" + a.disc + ") sits in a "
+                 + "different GE division than the " + ((r.ge_credit && r.ge_credit.areas || []).join(" / "))
+                 + " credit this exam grants. Review whether the articulation is correct."
+          }, ["⚠ off GE Area"]));
         }
         row.appendChild(idCell);
 
@@ -2599,6 +2642,7 @@
         state.overlay = overlay;
         state.bakedAt = baked._generated_at;
         state.topCategories = baked.top_categories || {};
+        state.discGeAreas = baked.disc_ge_areas || {};
         renderToolbar();
         render();
       });
