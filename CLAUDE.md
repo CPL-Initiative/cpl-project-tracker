@@ -1583,6 +1583,45 @@ is the seed). (3) Standing: EACR v2 scope/generated-rec, MID curation → Sugges
 Signal-B dedup leads. **New practice this session:** small-cell-suppress *every* aggregate count on
 a public surface + a committed PII guard test — `docs/kb-notes/methodology-standing-pii-guard.md`.
 
+### Session 35 — CER identity consolidation (EMT 29→18) + the ordinal rule (shipped 2026-06-04)
+
+From Sam's screenshot review of **EMT Certification** in the CER: the expanded
+identity table showed **29 rows** for ~12 real courses (the EMT-Basic course
+minted as a dozen single-college M-IDs). Asks: refine the CER — *why* are these
+here, *why* don't near-identical M-IDs consolidate ("involves the CCR procedures
+too"), collapse them, + widen the first column. All CER consumer/producer — no
+M-ID pipeline movement (pipeline viz correctly skipped). **3 PRs, all merged.**
+
+- **#307 — widen the CCR identity column.** HTML `<style>` capped `.cr-art-ident`
+  at `max-width:32ch` under `table-layout:auto` → the longest column wrapped to
+  5-6 lines. Switched to `table-layout:fixed` 42/40/18 in `ensureCerScopeCss()`
+  (one static JS file → both HTMLs, no Rule-4 mirror). `tests/cer_arts_width.test.js`.
+- **#308 — consolidate near-duplicate identities (headline).** `export_credential_reference()._consolidate_arts`
+  folds same-course **M-ID/Unified** identities into one CER row at build time —
+  **display only, no identity mutation, reversible**. EMT **29→18**; globally **94
+  rows fold / 47 cards**, **0 of 72** merged groups suspect. `⛓ N variants` badge
+  (folded ids in the tooltip). `tests/cer_consolidation.test.js` (15).
+- **The two "why" answers:** courses are here because the CER reflects raw MAP
+  faithfully (incl. an upstream miskey — `AUTO 156G "Engine"` mapped to an EMT
+  exhibit, already subject-outlier-flagged → a signal to send upstream, not our
+  bug). M-IDs don't consolidate because the worklist `_sug_sig` is *level-SAFE*
+  (won't merge "Tech I"≠"Tech II") **and** `coci_articulations.json` is a static
+  raw-M-ID artifact. Hence Sam's **"CER view + worklist"** + **"Core EMT-Basic
+  only"** decisions (via AskUserQuestion).
+
+**The ordinal rule** (reusable — `methodology-within-credential-identity-consolidation.md`):
+`"1"/"I"` non-distinguishing (bare title == its "I"); `"2"+/"II"+` kept — folds
+EMT-Basic while keeping **Calculus I≠II / Spanish 1≠2 / Paramedic 2/3/4** apart.
+Traps: `len(w)<=1` letter-guard eats single-digit ordinals; exclude C-ID/CCN
+anchors (blank titles); audit every merge for a shared substantive word.
+
+**Carryover / next:** (1) **The durable "+ worklist" half is NOT yet built** — the
+EMT M-IDs are still 12 separate identities in CCR/EACR/audits; only the CER *view*
+collapses them. Next: a CCR Suggested-merges worklist enhancement (co-articulation
++ `_fam_key` signal) → curator confirms → `merge_into` → identity-layer. (2) The
+Session-34 carryover stands: eligible-students dataset wiring, College/System
+audience views, EACR v2 scope, the Signal-B dedup leads.
+
 ---
 
 ## Troubleshooting
