@@ -61,5 +61,21 @@ expect(f"B suppressed (<5): students_served null", rB.get("students_served") is 
 expect(f"B served_suppressed True", rB.get("served_suppressed") is True)
 expect(f"B's exact count (2) is NOT in the baked payload", '"students_served": 2' not in baked and '"students_served":2' not in baked)
 
+# ── Carry-forward (2026-06-04): a session live-on-merge regen runs WITHOUT the
+# CustomReport. The public Students column must NOT blank — it carries forward the
+# last cron values from the existing baked file rather than nulling them. ──
+m.EXHIBIT_FILE = None                  # simulate CustomReport absent (clean checkout / session regen)
+m.export_credential_reference()        # re-bake into the SAME UC_OUT_DIR (out_js already populated above)
+baked2 = open(os.path.join(tmp, "credential_reference_data.js")).read()
+baked2 = baked2[baked2.index("=") + 1:].strip().rstrip(";")
+by2 = {r["ut"]: r for r in json.loads(baked2)["unified_titles"]}
+rA2, rB2 = by2.get(utA, {}), by2.get(utB, {})
+expect("carry-forward: A still 7 after a no-CustomReport regen (not nulled)", rA2.get("students_served") == 7)
+expect("carry-forward: A still not suppressed", rA2.get("served_suppressed") is False)
+expect("carry-forward: B mask preserved (suppressed, exact null)",
+       rB2.get("served_suppressed") is True and rB2.get("students_served") is None)
+expect("carry-forward: B's exact count still absent from payload",
+       '"students_served": 2' not in baked2 and '"students_served":2' not in baked2)
+
 print("\nVERIFIED" if ok else "\nFAILED")
 sys.exit(0 if ok else 1)
