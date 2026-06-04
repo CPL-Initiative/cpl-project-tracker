@@ -5649,6 +5649,10 @@ def export_credential_reference():
             "statewide_titles": sum(1 for r in rows if r["statewide"]),
         },
         "top_categories": top_categories,
+        # MQ discipline → GE division(s), for the consumer's GE-Area coherence
+        # check (an articulated course whose discipline's division is disjoint
+        # from the exam's GE Area → "⚠ off GE Area"). From ccc_ge_exam_credit.json.
+        "disc_ge_areas": (ge_doc.get("discipline_ge_areas") or {}),
         "unified_titles": rows,
     }
     with open(out_js, "w", encoding="utf-8") as f:

@@ -9,6 +9,29 @@
  ],
  "_match": "CER credentials are prefixed 'AP '/'IB '/'CLEP '. Strip the program prefix, normalize ('&'->'and', lowercase, non-alphanumeric->space, collapse), then match exam name or an alias (exact), else a program prefix rule. 2024 ESLEI is authoritative; AP 'Music' retained from AA 17-20.",
  "_generated_by": "session 33 (sleepy-goodall), 2026-06-04 — transcribed from ESLEI 24-35 Appendices B/C/D (+ AA 17-20 for AP Music).",
+ "_discipline_ge_note": "MQ discipline → the CCC title-5 §55063 GE division(s) it belongs to, for the CER GE-Area COHERENCE check: an exam credential grants a GE Area, and an articulated local course whose discipline's division is DISJOINT from that area is surfaced as '⚠ off GE Area' for review (a candidate, not a verdict — disciplines like History/Geography legitimately cross divisions). Covers the disciplines that appear on AP/IB/CLEP articulations today; extend as new ones appear. Baked into credential_reference_data.js as disc_ge_areas and consumed client-side.",
+ "discipline_ge_areas": {
+  "Communication Studies": ["Language and Rationality"],
+  "Foreign Languages": ["Arts and Humanities"],
+  "History": ["Social/Behavioral Sciences", "Arts and Humanities"],
+  "Physics/Astronomy": ["Natural Sciences"],
+  "Mathematics": ["Language and Rationality"],
+  "Art": ["Arts and Humanities"],
+  "Art History": ["Arts and Humanities"],
+  "Music": ["Arts and Humanities"],
+  "Humanities": ["Arts and Humanities"],
+  "Biological Sciences": ["Natural Sciences"],
+  "Chemistry": ["Natural Sciences"],
+  "Environmental Technologies": ["Natural Sciences"],
+  "Economics": ["Social/Behavioral Sciences"],
+  "Political Science": ["Social/Behavioral Sciences"],
+  "Sociology": ["Social/Behavioral Sciences"],
+  "Geography": ["Social/Behavioral Sciences", "Natural Sciences"],
+  "Business": ["Social/Behavioral Sciences"],
+  "Marketing": ["Social/Behavioral Sciences"],
+  "Computer Science": ["Language and Rationality"],
+  "Computer Information Systems": ["Language and Rationality"]
+ },
  "programs": {
   "AP": {
    "exams": [
