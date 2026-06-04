@@ -1,10 +1,12 @@
-// Regression tests for the CER system-level GE-Area AP-credit callout
-// (2026-06-04). AP credit is set statewide (AB 1985 / AA 17-20): each AP
-// credential is joined to its CCC GE AP List entry (GE Area + min units) and
-// the expanded row headlines it. Guards:
-//   - a GE-Area exam renders the callout with "Area or Area · N semester units"
-//   - an N/A exam renders the "No GE Area assigned … elective" variant
-//   - a non-AP credential (no r.ge_ap) renders NO callout
+// Regression tests for the CER system-level GE-Area exam-credit callout
+// (2026-06-04). AP/IB/CLEP credit is set statewide (AB 1985 / AA 17-20 for AP;
+// title 5 §55052.5 for IB/CLEP; charts ESLEI 24-35): each exam credential is
+// joined to its GE Area + min units and the expanded row headlines it. Guards:
+//   - an AP "X or Y" exam renders the callout with the areas + semester units
+//   - areas_all renders "X and Y" (e.g. AP English Literature, 6 units)
+//   - IB / CLEP credentials render with the right program label
+//   - an N/A exam with units renders the "elective" variant
+//   - a non-exam credential (no r.ge_credit) renders NO callout
 //
 // Run from repo root: `npm test` (or `node tests/cer_geap.test.js`).
 const fs = require("fs");
@@ -23,18 +25,36 @@ const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 function txt(el) { return (el && el.textContent || "").trim(); }
 
-const geRow = {
+const apRow = {
   ut: "AP European History", raw_count: 2, audit_tags: {}, audit_tag_total: 0,
-  ge_ap: { exam: "European History", areas: ["Social/Behavioral Sciences", "Humanities"], units: 3, na: false },
+  ge_credit: { program: "AP", exam: "European History",
+    areas: ["Social/Behavioral Sciences", "Arts and Humanities"], units: 3, na: false },
   articulations: [{ cid: "HIST 170", sys: "C-ID", title: "Western Civ I",
     local: [{ subj: "HIST", num: "170", t: "Western Civ I", colleges: ["Glendale Community College"] }] }],
 };
-const naRow = {
-  ut: "AP Computer Science A", raw_count: 1, audit_tags: {}, audit_tag_total: 0,
-  ge_ap: { exam: "Computer Science A", areas: [], units: 3, na: true }, articulations: [],
+const engLitRow = {
+  ut: "AP English Literature and Composition", raw_count: 1, audit_tags: {}, audit_tag_total: 0,
+  ge_credit: { program: "AP", exam: "English Literature and Composition",
+    areas: ["Language and Rationality", "Arts and Humanities"], units: 6, na: false, areas_all: true },
+  articulations: [],
 };
-const plainRow = { ut: "ZZZ Not An AP Credential", raw_count: 1, audit_tags: {}, audit_tag_total: 0, articulations: [] };
-const fixtureRows = [geRow, naRow, plainRow];
+const ibRow = {
+  ut: "IB Biology HL", raw_count: 1, audit_tags: {}, audit_tag_total: 0,
+  ge_credit: { program: "IB", exam: "Biology HL", areas: ["Natural Sciences"], units: 3, na: false },
+  articulations: [],
+};
+const clepNaRow = {
+  ut: "CLEP College Composition", raw_count: 1, audit_tags: {}, audit_tag_total: 0,
+  ge_credit: { program: "CLEP", exam: "College Composition", areas: [], units: 0, na: true },
+  articulations: [],
+};
+// Synthetic — exercises the N/A-with-units "elective" branch of the consumer.
+const electiveRow = {
+  ut: "ZZZ NA With Elective Units", raw_count: 1, audit_tags: {}, audit_tag_total: 0,
+  ge_credit: { program: "AP", exam: "X", areas: [], units: 3, na: true }, articulations: [],
+};
+const plainRow = { ut: "ZZZ Not An Exam Credential", raw_count: 1, audit_tags: {}, audit_tag_total: 0, articulations: [] };
+const fixtureRows = [apRow, engLitRow, ibRow, clepNaRow, electiveRow, plainRow];
 
 const html = `<!DOCTYPE html><html><head></head><body>
 <div id="tab-credential-reference">
@@ -67,38 +87,42 @@ function expandBody(wrap, needle) {
   return (sib && sib.classList && sib.classList.contains("cr-expanded"))
     ? sib.querySelector(".cr-expanded-body") : null;
 }
+function geText(wrap, needle) {
+  const body = expandBody(wrap, needle);
+  return body ? { body: body, box: body.querySelector(".cr-geap"), t: txt(body.querySelector(".cr-geap")) } : null;
+}
 
 function runAssertions() {
   const doc = window.document;
   const wrap = doc.getElementById("cr-table-wrap");
   check("table rendered", !!wrap.querySelector("table.cr-table"));
 
-  const geBody = expandBody(wrap, "AP European History");
-  check("GE-Area row expanded", !!geBody);
-  if (geBody) {
-    const box = geBody.querySelector(".cr-geap");
-    check("GE callout present", !!box);
-    const t = txt(box);
-    check("callout names both GE Areas joined by 'or'", /Social\/Behavioral Sciences or Humanities/.test(t));
-    check("callout states '3 semester units'", /3 semester units/.test(t));
-    check("callout cites the system-level policy (AA 17-20)", /AA 17-20/.test(t));
+  const ap = geText(wrap, "AP European History");
+  check("AP callout present", ap && !!ap.box);
+  if (ap) {
+    check("AP header reads 'Statewide AP credit · CCC GE AP List'", /Statewide AP credit · CCC GE AP List/.test(ap.t));
+    check("AP areas joined by 'or'", /Social\/Behavioral Sciences or Arts and Humanities/.test(ap.t));
+    check("AP shows '3 semester units'", /3 semester units/.test(ap.t));
+    check("AP cites system-level policy", /ESLEI 24-35|AA 17-20|§55052/.test(ap.t));
   }
 
-  const naBody = expandBody(wrap, "AP Computer Science A");
-  check("N/A row expanded", !!naBody);
-  if (naBody) {
-    const box = naBody.querySelector(".cr-geap");
-    check("N/A callout present", !!box);
-    const t = txt(box);
-    check("N/A callout says 'No GE Area assigned (N/A)'", /No GE Area assigned \(N\/A\)/.test(t));
-    check("N/A callout offers elective units", /3 elective units/.test(t));
-  }
+  const el2 = geText(wrap, "AP English Literature and Composition");
+  check("areas_all joins with 'and'", el2 && /Language and Rationality and Arts and Humanities/.test(el2.t));
+  check("areas_all shows '6 semester units'", el2 && /6 semester units/.test(el2.t));
 
-  const plainBody = expandBody(wrap, "ZZZ Not An AP Credential");
-  check("non-AP row expanded", !!plainBody);
-  if (plainBody) {
-    check("non-AP credential renders NO GE callout", !plainBody.querySelector(".cr-geap"));
-  }
+  const ib = geText(wrap, "IB Biology HL");
+  check("IB header reads 'Statewide IB credit · CCC GE IB List'", ib && /Statewide IB credit · CCC GE IB List/.test(ib.t));
+  check("IB shows 'Natural Sciences'", ib && /Natural Sciences/.test(ib.t));
+
+  const clep = geText(wrap, "CLEP College Composition");
+  check("CLEP header reads 'Statewide CLEP credit'", clep && /Statewide CLEP credit · CCC GE CLEP List/.test(clep.t));
+  check("CLEP N/A shows 'No GE Area assigned (N/A)'", clep && /No GE Area assigned \(N\/A\)/.test(clep.t));
+
+  const elec = geText(wrap, "ZZZ NA With Elective Units");
+  check("N/A-with-units shows '3 elective units'", elec && /3 elective units/.test(elec.t));
+
+  const plainBody = expandBody(wrap, "ZZZ Not An Exam Credential");
+  check("non-exam credential renders NO GE callout", plainBody && !plainBody.querySelector(".cr-geap"));
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
