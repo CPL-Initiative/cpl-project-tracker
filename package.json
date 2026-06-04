@@ -1,0 +1,11 @@
+{
+  "name": "cpl-project-tracker-tests",
+  "private": true,
+  "description": "Consumer (jsdom) regression tests for the CPL dashboard's static front-end JS (credential_reference.js, etc.). Run: npm install && npm test.",
+  "scripts": {
+    "test": "node tests/run.js"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1"
+  }
+}
