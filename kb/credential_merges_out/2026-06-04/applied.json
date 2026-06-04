@@ -1,0 +1,14 @@
+{
+  "_generated_at": "2026-06-04T01:37:06Z",
+  "applied": [
+    {
+      "loser": "10-Key Numeric Data Entry",
+      "winner": "10-Key Data Entry",
+      "raws_repointed": 1,
+      "articulations_repointed": 1,
+      "loser_credential_dropped": true
+    }
+  ],
+  "unified_titles_count": 3411,
+  "credentials_count": 2013
+}

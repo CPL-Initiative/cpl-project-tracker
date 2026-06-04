@@ -1,0 +1,26 @@
+{
+  "_generated_at": "2026-06-04T01:37:06Z",
+  "mode": "apply",
+  "gates": {
+    "V1_apply_safe": true,
+    "V2_winner_present": true,
+    "V3_loser_gone": true,
+    "V4_articulation_count": true
+  },
+  "apply_safe": true,
+  "clean": [
+    {
+      "loser": "10-Key Numeric Data Entry",
+      "winner": "10-Key Data Entry",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-04",
+      "reason": "Same exhibit: both are BIT 375 '10-Key on the Computer' at Modesto Junior College (course_id CNSR M10AA), same credit recommendation '1 hour in 10-Key on the Computer'. The classifier split it into two unified titles purely by CPL type (Industry Certification -> '10-Key Numeric Data Entry' vs Credit By Exam -> '10-Key Data Entry'). CER keys on unified_title, not CPL type, so they showed as two rows.",
+      "loser_has_cred": true,
+      "winner_has_cred": true,
+      "n_raws": 1,
+      "n_articulations": 1
+    }
+  ],
+  "skip": [],
+  "conflict": []
+}
