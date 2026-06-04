@@ -343,3 +343,72 @@ eligible-per-exhibit dataset.
 Wire the new eligible-students-per-exhibit dataset into the roll-up when it lands (key on ExhibitID
 or credential; decide replace-vs-alongside the served column; same `<5` suppression). Then the
 **College** + **System** audience views.
+
+---
+
+## Session 35 — CER identity consolidation: the EMT 29→18 collapse + the ordinal rule (2026-06-04)
+
+Sam's screenshot review of **EMT Certification** in the CER: the expanded
+"Common-course identities" table showed **29 rows** for what is really ~12
+courses — the EMT-Basic course minted as a dozen single-college M-IDs ("EMT" /
+"EMT Academy" / "EMT (Basic)" / "EMT I" / "EMT Training" …), plus genuinely
+distinct sub-courses (Lab/Clinical/Refresher/First-Responder/Intro/NatRegistry),
+First-Aid/CPR (a separate credential), and one automotive course. Ask: refine the
+CER — *why* are these here, *why* don't the near-identical M-IDs consolidate, and
+collapse them (it "involves the CCR procedures too"). Plus a UI tweak: widen the
+first column so rows are shorter. **3 PRs, all merged.**
+
+- **#307 — widen the CCR identity column.** The HTML `<style>` capped
+  `.cr-art-ident` at `max-width:32ch` under `table-layout:auto`, squeezing the
+  longest column (identity = code · title · disc · TOP) into 5-6 lines. Switched
+  the arts table to `table-layout:fixed` 42/40/18 in `ensureCerScopeCss()` (one
+  static JS file → both HTMLs, no Rule-4 mirror). `tests/cer_arts_width.test.js`.
+- **#308 — consolidate near-duplicate identities (the headline).** Folded
+  same-course M-ID/Unified identities into one CER row at build time
+  (`export_credential_reference()._consolidate_arts`) — **display only, no
+  identity mutation, reversible**. EMT: **29 → 18**; globally **94 rows fold
+  across 47 cards**, **0 of 72** merged groups suspect (audit = members share a
+  substantive word). `⛓ N variants` badge; folded ids in the tooltip; full KB
+  note: `methodology-within-credential-identity-consolidation.md`.
+
+### Two answers Sam wanted (the "why")
+- **Why these courses are under one exhibit:** the CER groups raw articulation
+  records by `unified_title`; each record's local course → minted M-ID. The 29
+  are: the EMT-Basic core (now folded), distinct sub-courses, First-Aid/CPR (a
+  separate credential, already subject-outlier-flagged), and `AUTO 156G "Engine
+  and Related Systems"` — an **upstream MAP data-entry error** (San Diego Miramar
+  mapped an EMT exhibit to an automotive course). The pipeline reflects raw MAP
+  faithfully; the subject-outlier badge already flags the noise. **Not a bug
+  here — a signal to send upstream.**
+- **Why the M-IDs don't consolidate:** the CCR worklist's `_sug_sig` is
+  *level-SAFE* (won't merge "Tech I"≠"Tech II") → ~26 buckets for the 29; and
+  `coci_articulations.json` is a static raw-M-ID artifact, so even curator merges
+  wouldn't collapse the view. Hence Sam's **"CER view + worklist"** decision.
+
+### Learnings
+- **The ordinal rule** is the crux of any title-family grouping: `"1"/"I"` is
+  non-distinguishing (a bare title == its "I"); `"2"+/"II"+` are kept. It folds
+  EMT-Basic while keeping Calculus I≠II / Spanish 1≠2 / Paramedic 2/3/4 apart.
+  (Removing all ordinals over-merged sequences — caught by the global audit.)
+- **A `len(w) <= 1` letter-guard silently eats single-digit ordinals.** `"2"`
+  has length 1 → dropped before the digit logic. `len==1 and not isdigit()`.
+- **Exclude C-ID/CCN anchors from folding** — blank titles → unreliable key, and
+  they're authoritative one-per-course anyway.
+- **Audit a global grouping heuristic before shipping:** every merged group must
+  share a substantive word; pair with idempotency + a rows-count assertion.
+- A `null`-byte slipped into a Python string literal via the Edit tool once
+  (`" solo%d"` → `"\x00solo"`); `ast.parse` + a `\x00` count caught it fast.
+
+### Current state
+CER view de-cluttered + live (CER ships live-on-merge; idempotent → cron no-op;
+no students/PII regression — committed had 0 served, regen carried forward 0).
+The **durable "+ worklist" half is NOT yet built** — the M-IDs are still 12
+separate identities in the CCR/EACR/audits; only the CER *view* collapses them.
+
+### Next concrete step
+Build the **CCR Suggested-merges worklist enhancement** (the "+ worklist" half):
+surface these within-credential near-duplicate clusters as merge candidates so a
+curator confirms them → `merge_into`, propagating to the real identity layer.
+Reuse `_fam_key` + the co-articulation signal (M-IDs co-articulating to one
+credential with a matching family). Then the eligible-students dataset wiring +
+College/System audience views (carryover).

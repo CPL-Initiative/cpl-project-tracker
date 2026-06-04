@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-04 (Session 34 "Lucid Wozniak" — EACR Student view v3 #301; CER carry-forward #302 + robust parse/diagnostics #305; header restyle #303; PII small-cell hardening #304 (<2 per-college suppression + dropped 2 staff views + standing pii_guard test); Sam-driven data-unblock verified safe; CER eligible-per-exhibit column awaiting a new dataset; NEW methodology-standing-pii-guard)
+updated: 2026-06-04 (Session 35 — CER identity consolidation: widen the CCR column #307; fold near-duplicate identities #308 (EMT 29→18, the ordinal rule "1"/"I" non-distinguishing but "2"+ kept, 94 rows fold / 47 cards, display-only/reversible, "⛓ N variants" badge); the durable "+ worklist" half queued; NEW methodology-within-credential-identity-consolidation)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -79,6 +79,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Reference — AP credit is a GE-Area mapping (the canonical anchor for AP/standardized-exam credentials)](kb-notes/reference-ap-credit-ge-area-canonicalization.md) | reference | published | 2026-06-04 | 2026-06-04 |
 | [ADR — Student-impact counts in the public CER (aggregate + small-cell suppression)](kb-notes/adr-cer-student-impact-counts-privacy.md) | adr | published | 2026-06-04 | 2026-06-04 (Session 34 — per-college <2 + minimization + guard) |
 | [Methodology — Turn a one-time PII audit into a standing guard (committed test over the public artifacts)](kb-notes/methodology-standing-pii-guard.md) | methodology | published | 2026-06-04 | 2026-06-04 |
+| [Methodology — Consolidating near-duplicate course identities within one credential (the ordinal rule)](kb-notes/methodology-within-credential-identity-consolidation.md) | methodology | published | 2026-06-04 | 2026-06-04 |
 
 ---
 
@@ -142,6 +143,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 32 → 33 | Busy Feynman (handoff) | [`session_33_handoff.md`](session_33_handoff.md) |
 | 33 → 34 | Sleepy Goodall (handoff) | [`session_34_handoff.md`](session_34_handoff.md) |
 | 34 → 35 | Lucid Wozniak (handoff) | [`session_35_handoff.md`](session_35_handoff.md) |
+| 35 → 36 | CER identity consolidation (handoff) | [`session_36_handoff.md`](session_36_handoff.md) |
 
 ---
 
