@@ -22256,16 +22256,16 @@ window.CPL_STATEWIDE = {
       "total_addressable": 109,
       "credit_recs": [
         {
+          "course": "CIS  070A",
+          "credit": "3 hours in Computer Information Systems"
+        },
+        {
           "course": "CMPR 125",
           "credit": "3 hours in Computer Information Systems"
         },
         {
           "course": "COSA 50",
           "credit": "4 hours in Intro to IT Concepts and Applications"
-        },
-        {
-          "course": "CIS  070A",
-          "credit": "3 hours in Computer Information Systems"
         },
         {
           "course": "CIS 069A",
@@ -47520,196 +47520,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPSAM-SDLP-1-001|MAPSAM-SDLP1-1-001|MAPSAM-SDLP2-1-001|MAPSAM-SDLP3-1-001|MAPSAM-SDLP4-1-001|MAPSAM-SDLP5-1-001",
-      "exhibit_ids": [
-        "MAPSAM-SDLP-1-001",
-        "MAPSAM-SDLP1-1-001",
-        "MAPSAM-SDLP2-1-001",
-        "MAPSAM-SDLP3-1-001",
-        "MAPSAM-SDLP4-1-001",
-        "MAPSAM-SDLP5-1-001"
-      ],
-      "title": "Defense Language Proficiency Test (DLPT) — Spanish",
-      "unified_title": "Defense Language Proficiency Test (DLPT) — Spanish",
-      "is_classified": true,
-      "issuing_agency": "Defense Language Institute Foreign Language Center (DLIFLC)",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Spanish Defense Language Proficiency Test (DLPT) Score 1",
-        "Spanish Defense Language Proficiency Test (DLPT) Score 1+",
-        "Spanish Defense Language Proficiency Test (DLPT) Score 2",
-        "Spanish Defense Language Proficiency Test (DLPT) Score 2+ (Heritage Speakers)",
-        "Spanish Defense Language Proficiency Test (DLPT) Score 3 (Heritage Speakers)",
-        "Spanish Defense Language Proficiency Test (DLPT) Scores 0+ to 1"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Foreign Languages",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 5,
-      "adopter_names": [
-        "Bakersfield College",
-        "College of the Canyons",
-        "Norco College",
-        "Solano Community College",
-        "Woodland Community College"
-      ],
-      "potential": 93,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College"
-      ],
-      "total_addressable": 98,
-      "credit_recs": [
-        {
-          "course": "SPAN 1",
-          "credit": "4 hours in Elementary Spanish 1"
-        },
-        {
-          "course": "RCCD GE-A RCCD GE Area 3",
-          "credit": "4 hours in Elementary Spanish 1"
-        },
-        {
-          "course": "SPAN 001",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 002",
-          "credit": "4 hours in Elementary Spanish II"
-        },
-        {
-          "course": "SPAN 1",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 2",
-          "credit": "4 hours in Elementary Spanish II"
-        },
-        {
-          "course": "SPAN B1",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 101",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "RCCD GE-A RCCD GE Area 3",
-          "credit": "4 hours in Elementary Spanish I"
-        },
-        {
-          "course": "RCCD GE-A RCCD GE Area 3",
-          "credit": "4 hours in Elementary Spanish II"
-        },
-        {
-          "course": "SPAN 20A",
-          "credit": "4 hours in Spanish for Heritage Speakers I"
-        },
-        {
-          "course": "RCCD GE-A RCCD GE Area 3",
-          "credit": "4 hours in Spanish for Heritage Speakers I"
-        },
-        {
-          "course": "RCCD GE-A RCCD GE Area 3",
-          "credit": "4 hours in Spanish for Heritage Speakers II"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPCXS-CBES2-1-001|MAPCxS-ISIS-1-001",
       "exhibit_ids": [
         "MAPCXS-CBES2-1-001",
@@ -49132,6 +48942,196 @@ window.CPL_STATEWIDE = {
         {
           "course": "BUSI 100",
           "credit": "3 hours in Introduction to Business"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPSAM-SDLP-1-001|MAPSAM-SDLP1-1-001|MAPSAM-SDLP2-1-001|MAPSAM-SDLP3-1-001|MAPSAM-SDLP4-1-001|MAPSAM-SDLP5-1-001",
+      "exhibit_ids": [
+        "MAPSAM-SDLP-1-001",
+        "MAPSAM-SDLP1-1-001",
+        "MAPSAM-SDLP2-1-001",
+        "MAPSAM-SDLP3-1-001",
+        "MAPSAM-SDLP4-1-001",
+        "MAPSAM-SDLP5-1-001"
+      ],
+      "title": "Defense Language Proficiency Test (DLPT) — Spanish",
+      "unified_title": "Defense Language Proficiency Test (DLPT) — Spanish",
+      "is_classified": true,
+      "issuing_agency": "Defense Language Institute Foreign Language Center (DLIFLC)",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Spanish Defense Language Proficiency Test (DLPT) Score 1",
+        "Spanish Defense Language Proficiency Test (DLPT) Score 1+",
+        "Spanish Defense Language Proficiency Test (DLPT) Score 2",
+        "Spanish Defense Language Proficiency Test (DLPT) Score 2+ (Heritage Speakers)",
+        "Spanish Defense Language Proficiency Test (DLPT) Score 3 (Heritage Speakers)",
+        "Spanish Defense Language Proficiency Test (DLPT) Scores 0+ to 1"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 6,
+      "adopter_names": [
+        "Bakersfield College",
+        "College of the Canyons",
+        "Copper Mountain College",
+        "Norco College",
+        "Solano Community College",
+        "Woodland Community College"
+      ],
+      "potential": 92,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College"
+      ],
+      "total_addressable": 98,
+      "credit_recs": [
+        {
+          "course": "SPAN 1",
+          "credit": "4 hours in Elementary Spanish 1"
+        },
+        {
+          "course": "RCCD GE-A RCCD GE Area 3",
+          "credit": "4 hours in Elementary Spanish 1"
+        },
+        {
+          "course": "SPAN 001",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN 002",
+          "credit": "4 hours in Elementary Spanish II"
+        },
+        {
+          "course": "SPAN 1",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN 2",
+          "credit": "4 hours in Elementary Spanish II"
+        },
+        {
+          "course": "SPAN B1",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN 101",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "RCCD GE-A RCCD GE Area 3",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "RCCD GE-A RCCD GE Area 3",
+          "credit": "4 hours in Elementary Spanish II"
+        },
+        {
+          "course": "SPAN 20A",
+          "credit": "4 hours in Spanish for Heritage Speakers I"
+        },
+        {
+          "course": "RCCD GE-A RCCD GE Area 3",
+          "credit": "4 hours in Spanish for Heritage Speakers I"
+        },
+        {
+          "course": "RCCD GE-A RCCD GE Area 3",
+          "credit": "4 hours in Spanish for Heritage Speakers II"
         }
       ]
     },
@@ -94813,11 +94813,11 @@ window.CPL_STATEWIDE = {
       "total_addressable": 69,
       "credit_recs": [
         {
-          "course": "CSCI 220",
+          "course": "CIS  070A",
           "credit": "3 hours in Computer Information Systems"
         },
         {
-          "course": "CIS  070A",
+          "course": "CSCI 220",
           "credit": "3 hours in Computer Information Systems"
         }
       ]
@@ -217435,10 +217435,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Copper Mountain College",
-        "credit_recs": 313,
-        "exhibits": 287,
+        "credit_recs": 320,
+        "exhibits": 291,
         "disciplines": 15,
-        "ccc_collaborative": 11,
+        "ccc_collaborative": 17,
         "industry_certs": 43,
         "pct": 2.8
       },
@@ -218324,7 +218324,7 @@ window.CPL_STATEWIDE = {
         "courses": 155,
         "colleges": 84,
         "ccc_collaborative": 26,
-        "pct": 40.4
+        "pct": 40.3
       },
       {
         "discipline": "Engineering and Industrial Technologies",
@@ -218390,21 +218390,21 @@ window.CPL_STATEWIDE = {
         "pct": 2.3
       },
       {
+        "discipline": "Foreign Languages",
+        "credit_recs": 215,
+        "exhibits": 95,
+        "courses": 98,
+        "colleges": 27,
+        "ccc_collaborative": 26,
+        "pct": 1.9
+      },
+      {
         "discipline": "Fine and Applied Arts",
         "credit_recs": 214,
         "exhibits": 170,
         "courses": 170,
         "colleges": 31,
         "ccc_collaborative": 0,
-        "pct": 1.9
-      },
-      {
-        "discipline": "Foreign Languages",
-        "credit_recs": 208,
-        "exhibits": 95,
-        "courses": 98,
-        "colleges": 27,
-        "ccc_collaborative": 20,
         "pct": 1.9
       },
       {
@@ -218528,10 +218528,10 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 5818,
+        "credit_recs": 5825,
         "exhibits": 1179,
         "colleges": 86,
-        "pct": 51.8
+        "pct": 51.9
       },
       {
         "cpl_type": "Industry Certification",
@@ -218572,17 +218572,17 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 6774,
+        "credit_recs": 6775,
         "exhibits": 1851,
         "colleges": 92,
-        "pct": 60.4
+        "pct": 60.3
       },
       {
         "mode": "Industry training (I)",
         "credit_recs": 2521,
         "exhibits": 925,
         "colleges": 74,
-        "pct": 22.5
+        "pct": 22.4
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
@@ -218607,10 +218607,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Military training (M)",
-        "credit_recs": 151,
+        "credit_recs": 157,
         "exhibits": 64,
         "colleges": 32,
-        "pct": 1.3
+        "pct": 1.4
       },
       {
         "mode": "Other (O)",
@@ -218644,7 +218644,7 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 9742,
+        "credit_recs": 9743,
         "exhibits": 3645,
         "colleges": 99,
         "disciplines": 23,
@@ -218652,7 +218652,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1256,
+        "credit_recs": 1262,
         "exhibits": 163,
         "colleges": 63,
         "disciplines": 8,
@@ -219070,6 +219070,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-04T17:23:39",
-  "total_credit_recs": 11223
+  "generated_at": "2026-06-04T18:45:55",
+  "total_credit_recs": 11230
 };
