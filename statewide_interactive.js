@@ -245,6 +245,30 @@
     + '.cv-rx-arrow{color:#7fd0a0;margin:0 0.2rem;}'
     + '.cv-rx-course{color:#9BBCD8;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}'
     + '.cv-rx-note{font-size:0.62rem;color:rgba(201,168,76,0.85);font-style:italic;margin-top:0.3rem;}'
+    // Student view (v3) — seeker lens. Renders inside the same dark .cv-body.
+    + '.sv-banner{font-size:0.72rem;color:#cfe0f0;background:rgba(155,188,216,0.12);border-left:3px solid #9BBCD8;padding:0.45rem 0.7rem;border-radius:4px;margin-bottom:0.6rem;}'
+    + '.sv-banner-tip{color:rgba(255,255,255,0.72);border-left-color:#C9A84C;background:rgba(201,168,76,0.1);}'
+    + '.sv-banner b{color:#fff;}'
+    + '.sv-award{font-size:0.74rem;color:#C9A84C;font-weight:600;margin:0.1rem 0 0.4rem;}'
+    + '.sv-award b{color:#ffdd88;}'
+    + '.sv-status{font-size:0.7rem;line-height:1.55;padding:0.15rem 0;color:rgba(255,255,255,0.85);}'
+    + '.sv-yes b{color:#7fd0a0;}'
+    + '.sv-maybe b{color:#e8cf8a;}'
+    + '.sv-prog b{color:rgba(255,255,255,0.7);}'
+    + '.sv-none{color:rgba(255,255,255,0.6);font-style:italic;}'
+    + '.sv-cta{font-style:italic;color:rgba(255,255,255,0.5);font-size:0.64rem;}'
+    + '.sv-teaches{font-size:0.64rem;color:rgba(255,255,255,0.6);}'
+    + '.sv-chip{font-size:0.62rem;padding:1px 6px;border-radius:3px;margin:0 1px;white-space:nowrap;display:inline-block;}'
+    + '.sv-chip-yes{background:rgba(76,175,120,0.25);color:#9be3bb;}'
+    + '.sv-chip-maybe{background:rgba(201,168,76,0.22);color:#e8cf8a;}'
+    + '.sv-chip-prog{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);}'
+    + '.sv-chip-sw{background:rgba(155,188,216,0.16);color:#bcd4ea;}'
+    + '.sv-sw{font-size:0.66rem;color:rgba(255,255,255,0.72);margin-top:0.4rem;border-top:1px dashed rgba(255,255,255,0.1);padding-top:0.35rem;}'
+    + '.sv-sw-label{font-weight:600;color:rgba(255,255,255,0.82);}'
+    + '.sv-sw-none{font-style:italic;color:rgba(255,255,255,0.5);}'
+    + '.sv-pres-hint{font-size:0.64rem;color:rgba(201,168,76,0.85);font-style:italic;margin-top:0.25rem;}'
+    + '.sv-more{font-size:0.6rem;color:rgba(255,255,255,0.45);}'
+    + '.sv-unclass{opacity:0.6;}'
     + '</style>';
 
   // ── Prescriptive adoption layer (PR-4) ──
@@ -351,6 +375,170 @@
     return out.join("") || '<div class="cv-note">No credentials match the current filters.</div>';
   }
 
+  // ── Student view (v3) ──
+  // The seeker lens: "I hold this credential — where NEAR ME can I get credit,
+  // how much, and which local course do I ask about?" Reuses the same filtered
+  // set + (unified_title, issuer) grouping as v2, but reframes each credential
+  // against the student's selected college(s):
+  //   ✅ available now   — their college already articulated it
+  //   🎯 likely qualify  — their college teaches the matching course (prescriptive
+  //                        layer names the exact local course) → ask about CPL
+  //   ○ aligned program  — their college has an aligned program area
+  // With no college picked it's a browse view nudging them to pick one.
+
+  // Set of college names matching the active college/district/region filters, or
+  // null when none is active (→ browse mode). This is the student's "near me".
+  function nearMeColleges() {
+    var f = state.filters;
+    if (!f.college.length && !f.district.length && !f.swRegion.length) return null;
+    var set = {};
+    collegeNames.forEach(function (c) { if (collegeMatchesFilters(c)) set[c] = 1; });
+    return set;
+  }
+
+  function buildStudentView() {
+    var filtered = getFiltered();
+    var nearMe = nearMeColleges();                 // null = browse mode
+    var presAll = window.CPL_STATEWIDE_PRESCRIPTIVE || {};
+
+    // Group by (unified_title, issuer), same key as the credential view.
+    var groups = {}, order = [];
+    filtered.forEach(function (e) {
+      var k = (e.unified_title || e.title || "") + "||" + (e.issuing_agency || "");
+      if (!groups[k]) { groups[k] = []; order.push(k); }
+      groups[k].push(e);
+    });
+
+    // Summarize each credential: union adopters/potential across its cards,
+    // gather recs, and (when near-me) classify the student's colleges. Award is
+    // computed later for the rendered slice only (it parses the rec list).
+    function summarize(k) {
+      var cards = groups[k];
+      var adoptSet = {}, potSet = {}, recs = [];
+      cards.forEach(function (e) {
+        (e.adopter_names || []).forEach(function (c) { adoptSet[c] = 1; });
+        (e.potential_names || []).forEach(function (c) { potSet[c] = 1; });
+        recs = recs.concat(e.credit_recs || []);
+      });
+      var title = cards[0].unified_title || cards[0].title || "";
+      var pres = presAll[title] || null;
+      var presByCollege = {};
+      if (pres) (pres.colleges || []).forEach(function (c) { presByCollege[c.college] = c.courses || []; });
+
+      var avail = [], qualify = [], aligned = [];
+      if (nearMe) {
+        Object.keys(nearMe).forEach(function (c) {
+          if (adoptSet[c]) avail.push(c);                                  // already articulated
+          else if (presByCollege[c]) qualify.push({ college: c, courses: presByCollege[c] });  // teaches the match
+          else if (potSet[c]) aligned.push(c);                             // aligned program only
+        });
+      }
+      return {
+        title: title, issuer: cards[0].issuing_agency || "",
+        unclass: cards.every(function (e) { return e.is_classified === false; }),
+        adopters: Object.keys(adoptSet).sort(), adoptCount: Object.keys(adoptSet).length,
+        presN: (pres && pres.n_colleges) || 0, recs: recs,
+        avail: avail.sort(), qualify: qualify, aligned: aligned.sort()
+      };
+    }
+    var summaries = order.map(summarize);
+
+    // Sort: classified first; in near-me mode surface the student's actionable
+    // credentials (available > qualify > aligned > none); then widest reach.
+    function rank(s) {
+      if (!nearMe) return 0;
+      if (s.avail.length) return 0;
+      if (s.qualify.length) return 1;
+      if (s.aligned.length) return 2;
+      return 3;
+    }
+    summaries.sort(function (a, b) {
+      return ((a.unclass ? 1 : 0) - (b.unclass ? 1 : 0))
+        || (rank(a) - rank(b))
+        || (b.adoptCount - a.adoptCount)
+        || a.title.localeCompare(b.title);
+    });
+
+    var out = [];
+    if (nearMe) {
+      var label = state.filters.college.length
+        ? state.filters.college.join(", ")
+        : state.filters.district.concat(state.filters.swRegion).join(", ");
+      out.push('<div class="sv-banner">📍 Showing credit options near <b>' + esc(label) +
+        '</b> — what you could earn credit for, and the local course to ask your college about.</div>');
+    } else {
+      out.push('<div class="sv-banner sv-banner-tip">📍 Pick your <b>College</b> (or District / SW Region) in the filters above to see exactly where you can get credit near you — and which local course to ask about.</div>');
+    }
+
+    var LIMIT = 50;
+    if (summaries.length > LIMIT) {
+      out.push('<div class="cv-note">Showing top ' + LIMIT + ' of ' + fmt(summaries.length) +
+        ' credentials — search / filter above to narrow.</div>');
+    }
+
+    summaries.slice(0, LIMIT).forEach(function (s) {
+      var head = '<div class="cv-title">' + esc(s.title) +
+        (s.issuer ? ' <span class="cv-issuer">· ' + esc(s.issuer) + '</span>' : '') + '</div>';
+      var award = typicalAward(s.recs).award;
+      var awardHtml = award
+        ? '<div class="sv-award">💡 You’d typically earn <b>' + esc(award.text) + '</b> for this credential</div>'
+        : '';
+
+      var nearHtml = "";
+      if (nearMe) {
+        var bits = [];
+        if (s.avail.length) {
+          bits.push('<div class="sv-status sv-yes">✅ <b>Available now</b> at ' +
+            s.avail.map(function (c) { return collegeChip(c, "sv-chip sv-chip-yes"); }).join(" ") +
+            ' <span class="sv-cta">— request CPL credit</span></div>');
+        }
+        if (s.qualify.length) {
+          bits.push('<div class="sv-status sv-maybe">🎯 <b>You likely already qualify</b> at ' +
+            s.qualify.map(function (q) {
+              var courses = (q.courses || []).map(function (c) {
+                var code = ((c.subject || "") + " " + (c.number || "")).trim();
+                var u = (c.units != null && c.units !== "") ? " (" + fmtUnits(c.units) + "u)" : "";
+                return '<span class="cv-rx-course">' + esc(code) + u + '</span>';
+              }).join(", ");
+              return collegeChip(q.college, "sv-chip sv-chip-maybe") +
+                (courses ? ' <span class="sv-teaches">teaches ' + courses + '</span>' : '');
+            }).join(" · ") +
+            ' <span class="sv-cta">— ask about CPL credit for this course</span></div>');
+        }
+        if (s.aligned.length) {
+          bits.push('<div class="sv-status sv-prog">○ <b>Aligned program</b> at ' +
+            s.aligned.slice(0, 8).map(function (c) { return collegeChip(c, "sv-chip sv-chip-prog"); }).join(" ") +
+            (s.aligned.length > 8 ? ' <span class="sv-more">+' + (s.aligned.length - 8) + ' more</span>' : '') +
+            ' <span class="sv-cta">— worth asking</span></div>');
+        }
+        nearHtml = bits.length ? bits.join("")
+          : '<div class="sv-status sv-none">Not yet offered near you — available at <b>' + s.adoptCount +
+            '</b> college' + (s.adoptCount === 1 ? '' : 's') + ' statewide (see below).</div>';
+      }
+
+      var swHtml;
+      if (s.adoptCount) {
+        var shown = s.adopters.slice(0, 10).map(function (c) { return collegeChip(c, "sv-chip sv-chip-sw"); }).join(" ");
+        var more = s.adoptCount > 10 ? ' <span class="sv-more">+' + (s.adoptCount - 10) + ' more</span>' : '';
+        swHtml = '<div class="sv-sw"><span class="sv-sw-label">🎓 Get credit at ' + s.adoptCount +
+          ' college' + (s.adoptCount === 1 ? '' : 's') + ' statewide:</span> ' + shown + more + '</div>';
+      } else {
+        swHtml = '<div class="sv-sw sv-sw-none">No college has articulated this yet' +
+          (s.presN ? ' — but ' + s.presN + ' could.' : '.') + '</div>';
+      }
+      // In browse mode, tie the prescriptive opportunity back to the near-me CTA.
+      if (!nearMe && s.presN) {
+        swHtml += '<div class="sv-pres-hint">🎯 ' + s.presN + ' more college' + (s.presN === 1 ? '' : 's') +
+          ' already teach a matching course — pick your college above to check yours.</div>';
+      }
+
+      out.push('<div class="cv-credential' + (s.unclass ? ' sv-unclass' : '') + '">' +
+        head + awardHtml + nearHtml + swHtml + '</div>');
+    });
+
+    return out.join("") || '<div class="cv-note">No credentials match the current filters.</div>';
+  }
+
   // ── Build DOM ──
   function buildCard() {
     var totalPotential = 0, withPotential = 0, totalRecs = 0, statewide = 0, local = 0;
@@ -443,6 +631,10 @@
       + '<details class="sw-gallery-sec"><summary class="sw-gallery-sum">🎓 Credential view'
       + ' <span class="sw-gallery-tag">v2 · beta</span> — one card per credential, the standard on top</summary>'
       + '<div id="sw-cv-body" class="cv-body"></div>'
+      + '</details>'
+      + '<details class="sw-gallery-sec"><summary class="sw-gallery-sum">🎒 Student view'
+      + ' <span class="sw-gallery-tag">v3 · beta</span> — “where can I get credit for my credential?”</summary>'
+      + '<div id="sw-sv-body" class="cv-body"></div>'
       + '</details>';
   }
 
@@ -480,11 +672,13 @@
     if (u == null) return "";
     return (u % 1 === 0) ? u.toFixed(0) : String(u);
   }
-  function buildCreditRecsHtml(recs) {
+  // Parse a credit-rec list into (course title, units) buckets + a "typical
+  // award" summary, on the SAME basis the v1/v2 list rendering uses (distinct
+  // mappings, not raw rows). Shared by buildCreditRecsHtml (v1/v2) and the
+  // Student view (v3) so the headline number is identical everywhere.
+  //   → { grouped: [{units, title, courses:[…]}] (sorted), award: {modal,min,max,text}|null }
+  function typicalAward(recs) {
     recs = recs || [];
-    if (!recs.length) return "";
-
-    // Parse "N hours in Title" → {units, title}; keep unparseable recs as raw.
     var groups = {}, order = [];
     recs.forEach(function (r) {
       var m = (r.credit || "").match(/^(\d+\.?\d*)\s*(?:hours?|units?)\s+(?:in\s+)?(.+)/i);
@@ -499,10 +693,8 @@
     grouped.sort(function (a, b) {
       return b.courses.length - a.courses.length || (a.units || 0) - (b.units || 0);
     });
-
-    // "Typical award" headline from the per-group unit values.
     var unitVals = grouped.map(function (g) { return g.units; }).filter(function (u) { return u != null; });
-    var headline = "";
+    var award = null;
     if (unitVals.length) {
       var freq = {};
       unitVals.forEach(function (u) { freq[u] = (freq[u] || 0) + 1; });
@@ -512,19 +704,33 @@
         if (freq[u] > best || (freq[u] === best && (modal == null || u < modal))) { best = freq[u]; modal = u; }
       });
       var mn = Math.min.apply(null, unitVals), mx = Math.max.apply(null, unitVals);
-      var awardTxt;
+      var text;
       if (mn === mx) {
-        awardTxt = '~' + fmtUnits(modal) + ' unit' + (modal === 1 ? '' : 's');
+        text = '~' + fmtUnits(modal) + ' unit' + (modal === 1 ? '' : 's');
       } else if (best <= 1) {
         // No repeated value → no real mode; lead with the honest range.
-        awardTxt = fmtUnits(mn) + '–' + fmtUnits(mx) + ' units';
+        text = fmtUnits(mn) + '–' + fmtUnits(mx) + ' units';
       } else {
-        awardTxt = '~' + fmtUnits(modal) + ' unit' + (modal === 1 ? '' : 's') +
+        text = '~' + fmtUnits(modal) + ' unit' + (modal === 1 ? '' : 's') +
           ' (range ' + fmtUnits(mn) + '–' + fmtUnits(mx) + ')';
       }
+      award = { modal: modal, min: mn, max: mx, text: text };
+    }
+    return { grouped: grouped, award: award };
+  }
+  function buildCreditRecsHtml(recs) {
+    recs = recs || [];
+    if (!recs.length) return "";
+
+    var ta = typicalAward(recs);
+    var grouped = ta.grouped;
+
+    // "Typical award" headline from the per-group unit values.
+    var headline = "";
+    if (ta.award) {
       headline =
         '<div style="font-size:0.66rem;color:#C9A84C;font-weight:600;margin:0.15rem 0 0.05rem;">' +
-          '💡 Typical CPL: ' + awardTxt +
+          '💡 Typical CPL: ' + ta.award.text +
         '</div>' +
         '<div style="font-size:0.57rem;color:rgba(255,255,255,0.45);font-style:italic;margin-bottom:0.15rem;">' +
           'a student earns one college’s mapping below — not the sum' +
@@ -658,6 +864,9 @@
     // v2 credential view shares the same filtered set — re-render it alongside.
     var cvBody = document.getElementById("sw-cv-body");
     if (cvBody) cvBody.innerHTML = buildCredentialView();
+    // v3 student view — same filtered set, seeker framing.
+    var svBody = document.getElementById("sw-sv-body");
+    if (svBody) svBody.innerHTML = buildStudentView();
 
     // Pagination controls
     renderPagination(filtered.length, totalPages);
