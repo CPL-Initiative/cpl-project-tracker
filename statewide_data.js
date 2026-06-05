@@ -219070,6 +219070,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-04T18:45:55",
+  "generated_at": "2026-06-05T13:26:58",
   "total_credit_recs": 11230
 };
