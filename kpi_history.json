@@ -938,9 +938,9 @@
   },
   {
     "date": "2026-06-05",
-    "students": 46355,
+    "students": 46356,
     "students_military": 24319,
-    "students_workforce": 22112,
+    "students_workforce": 22113,
     "students_apprentice": 750,
     "eligible_units": 206047,
     "transcribed_units": 96602,
@@ -949,7 +949,7 @@
     "active_colleges": 98,
     "leading_colleges": 14,
     "star_colleges": 50,
-    "credit_recs": 11230,
+    "credit_recs": 11257,
     "map_exhibits": 2428,
     "ccc_collaborative": 63,
     "articulating_colleges": 102

@@ -161980,6 +161980,89 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPICI-CPC2-1-001",
+      "exhibit_ids": [
+        "MAPICI-CPC2-1-001"
+      ],
+      "title": "C-36 Plumbing Contractor",
+      "unified_title": "C-36 Plumbing Contractor",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "C-36 Plumbing Contractor"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 31,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Orange Coast College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 33,
+      "credit_recs": [
+        {
+          "course": "CEM 151PL",
+          "credit": "3-5 hours in Rough Plumbing"
+        },
+        {
+          "course": "CEM 157",
+          "credit": "3-5 hours in Construction Law"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "3-5 hours in Construction Law"
+        },
+        {
+          "course": "CNST 060",
+          "credit": "3-5 hours in Rough Plumbing"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPCBES-PCBE-1-001",
       "exhibit_ids": [
         "MAPCBES-PCBE-1-001"
@@ -171002,6 +171085,1242 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPICI-O1A1-1-001",
+      "exhibit_ids": [
+        "MAPICI-O1A1-1-001"
+      ],
+      "title": "OSHA 10 and 1 yr Experience",
+      "unified_title": "OSHA 10 and 1 yr Experience",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "OSHA 10 and 1 yr Experience"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "Copper Mountain College"
+      ],
+      "potential": 27,
+      "potential_names": [
+        "Bakersfield College",
+        "Cabrillo College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-O3A1-1-001",
+      "exhibit_ids": [
+        "MAPICI-O3A1-1-001"
+      ],
+      "title": "OSHA 30 and 6 months Experience",
+      "unified_title": "OSHA 30 and 6 months Experience",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "OSHA 30 and 6 months Experience"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "Copper Mountain College"
+      ],
+      "potential": 27,
+      "potential_names": [
+        "Bakersfield College",
+        "Cabrillo College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-CSC2-1-001",
+      "exhibit_ids": [
+        "MAPICI-CSC2-1-001"
+      ],
+      "title": "C-46 Solar Contractor",
+      "unified_title": "C-46 Solar Contractor",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "C-46 Solar Contractor"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 151EL",
+          "credit": "3-5 hours in Rough Electrical"
+        },
+        {
+          "course": "CEM 157",
+          "credit": "3-5 hours in Construction Law"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "3-5 hours in Construction Law"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-CGMH-1-001",
+      "exhibit_ids": [
+        "MAPICI-CGMH-1-001"
+      ],
+      "title": "C-47 General Manufactured Housing Contractor",
+      "unified_title": "C-47 General Manufactured Housing Contractor",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "C-47 General Manufactured Housing Contractor"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 151",
+          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)"
+        },
+        {
+          "course": "CEM 151FC",
+          "credit": "3-5 hours in Residential Finishes"
+        },
+        {
+          "course": "CEM 151L",
+          "credit": "3-5 hours in Introduction to Residential Construction Lab"
+        },
+        {
+          "course": "CEM 157",
+          "credit": "3-5 hours in Construction Law"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "3-5 hours in Construction Law"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-CFAR-1-001",
+      "exhibit_ids": [
+        "MAPICI-CFAR-1-001"
+      ],
+      "title": "C-5 Framing and Rough Carpentry Contractor",
+      "unified_title": "C-5 Framing and Rough Carpentry Contractor",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "C-5 Framing and Rough Carpentry Contractor"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 151",
+          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)"
+        },
+        {
+          "course": "CEM 151L",
+          "credit": "3-5 hours in Introduction to Residential Construction Lab"
+        },
+        {
+          "course": "CEM 154",
+          "credit": "3 hours in Introduction to Construction Estimating"
+        },
+        {
+          "course": "CEM 155",
+          "credit": "3-4 hours in Construction Drawing/Blueprint Reading (Lecture)"
+        },
+        {
+          "course": "CEM 155",
+          "credit": "1-3 hours in Construction Drawing/Blueprint Reading Lab"
+        },
+        {
+          "course": "CEM 157",
+          "credit": "3-5 hours in Construction Law"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "3-5 hours in Construction Law"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-CACL-1-001",
+      "exhibit_ids": [
+        "MAPICI-CACL-1-001"
+      ],
+      "title": "Class A Contractor License",
+      "unified_title": "Class A Contractor License",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Class A Contractor License"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 151",
+          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)"
+        },
+        {
+          "course": "CEM 154",
+          "credit": "3-4 hours in Construction Drawing/Blueprint Reading"
+        },
+        {
+          "course": "CEM 154",
+          "credit": "3 hours in Introduction to Construction Estimating"
+        },
+        {
+          "course": "CEM 157",
+          "credit": "3-5 hours in Construction Law"
+        },
+        {
+          "course": "CEM 159",
+          "credit": "3-4 hours in Construction Planning and Scheduling"
+        },
+        {
+          "course": "CEM 161",
+          "credit": "3 hours in Construction Business Practice"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "3-5 hours in Construction Law"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-CCMA-1-001",
+      "exhibit_ids": [
+        "MAPICI-CCMA-1-001"
+      ],
+      "title": "C-6 Cabinet, Millwork and Finish Carpentry Contractor",
+      "unified_title": "C-6 Cabinet, Millwork and Finish Carpentry Contractor",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "C-6 Cabinet, Millwork and Finish Carpentry Contractor"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 151",
+          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)"
+        },
+        {
+          "course": "CEM 151FC",
+          "credit": "3-5 hours in Residential Finishes (Lecture)"
+        },
+        {
+          "course": "CEM 151FC",
+          "credit": "3-5 hours in Finish Carpentry (Lecture)"
+        },
+        {
+          "course": "CEM 151L",
+          "credit": "3-5 hours in Introduction to Residential Construction Lab"
+        },
+        {
+          "course": "CEM 157",
+          "credit": "3-5 hours in Construction Law"
+        },
+        {
+          "course": "CEM 178B",
+          "credit": "3-5 hours in Residential Finishes Lab"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "3-5 hours in Construction Law"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-CEA-1-001",
+      "exhibit_ids": [
+        "MAPICA-CEA-1-001"
+      ],
+      "title": "Commercial Electrical Apprenticeship",
+      "unified_title": "Commercial Electrical Apprenticeship",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Commercial Electrical Apprenticeship"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 151EL",
+          "credit": "1-5 hours in Rough Electrical"
+        },
+        {
+          "course": "CEM 99",
+          "credit": "2-4 hour in Electives/Work Experience - Construction"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-CCLA-1-001",
+      "exhibit_ids": [
+        "MAPICA-CCLA-1-001"
+      ],
+      "title": "Construction Craft Laborer Apprenticeship",
+      "unified_title": "Construction Craft Laborer Apprenticeship",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Construction Craft Laborer Apprenticeship"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 99",
+          "credit": "2-4 hour in Electives/Work Experience - Construction"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-CCC6-1-001",
+      "exhibit_ids": [
+        "MAPICI-CCC6-1-001"
+      ],
+      "title": "C-8 Concrete Contractor",
+      "unified_title": "C-8 Concrete Contractor",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "C-8 Concrete Contractor"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 157",
+          "credit": "3-5 hours in Construction Law"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "3-5 hours in Construction Law"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-CEC1-1-001",
+      "exhibit_ids": [
+        "MAPICI-CEC1-1-001"
+      ],
+      "title": "C-10 Electrical Contractor",
+      "unified_title": "C-10 Electrical Contractor",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "C-10 Electrical Contractor"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 151EL",
+          "credit": "3-5 hours in Rough Electrical"
+        },
+        {
+          "course": "CEM 157",
+          "credit": "3-5 hours in Construction Law"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "3-5 hours in Construction Law"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-CMC-1-001",
+      "exhibit_ids": [
+        "MAPICI-CMC-1-001"
+      ],
+      "title": "C-29 Masonry Contractor",
+      "unified_title": "C-29 Masonry Contractor",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "C-29 Masonry Contractor"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 157",
+          "credit": "3-5 hours in Construction Law"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "3-5 hours in Construction Law"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-CA3-1-001",
+      "exhibit_ids": [
+        "MAPICA-CA3-1-001"
+      ],
+      "title": "Carpentry Apprenticeship",
+      "unified_title": "Carpentry Apprenticeship",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Carpentry Apprenticeship"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 151",
+          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)"
+        },
+        {
+          "course": "CEM 151FC",
+          "credit": "3-5 hours in Residential Finishes (Lecture)"
+        },
+        {
+          "course": "CEM 151FC",
+          "credit": "3-5 hours in Finish Carpentry (Lecture)"
+        },
+        {
+          "course": "CEM 151L",
+          "credit": "3-5 hours in Introduction to Residential Construction Lab"
+        },
+        {
+          "course": "CEM 155",
+          "credit": "3-4 hours in Construction Drawing/Blueprint Reading (Lecture)"
+        },
+        {
+          "course": "CEM 155",
+          "credit": "1-3 hours in Construction Drawing/Blueprint Reading Lab"
+        },
+        {
+          "course": "CEM 178B",
+          "credit": "3-5 hours in Residential Finishes Lab"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-CBCL-1-001",
+      "exhibit_ids": [
+        "MAPICI-CBCL-1-001"
+      ],
+      "title": "Class B Contractor License",
+      "unified_title": "Class B Contractor License",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Class B Contractor License"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 151",
+          "credit": "3-5 hours in Introduction to Residential Construction"
+        },
+        {
+          "course": "CEM 154",
+          "credit": "3-4 hours in Construction Drawing/Blueprint Reading"
+        },
+        {
+          "course": "CEM 154",
+          "credit": "3 hours in Introduction to Construction Estimating"
+        },
+        {
+          "course": "CEM 157",
+          "credit": "3-5 hours in Construction Law"
+        },
+        {
+          "course": "CEM 159",
+          "credit": "3-4 hours in Construction Planning and Scheduling"
+        },
+        {
+          "course": "CEM 161",
+          "credit": "3 hours in Construction Business Practice"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "3-5 hours in Construction Law"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-CBCL1-1-001",
+      "exhibit_ids": [
+        "MAPICI-CBCL1-1-001"
+      ],
+      "title": "Class B-2 Contractor License",
+      "unified_title": "Class B-2 Contractor License",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Class B-2 Contractor License"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 151FC",
+          "credit": "3-5 hours in Residential Finishes"
+        },
+        {
+          "course": "CEM 154",
+          "credit": "3-4 hours in Construction Drawing/Blueprint Reading"
+        },
+        {
+          "course": "CEM 154",
+          "credit": "3 hours in Introduction to Construction Estimating"
+        },
+        {
+          "course": "CEM 157",
+          "credit": "3-5 hours in Construction Law"
+        },
+        {
+          "course": "CEM 161",
+          "credit": "3 hours in Construction Business Practice"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "3-5 hours in Construction Law"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-REA-1-001",
+      "exhibit_ids": [
+        "MAPICA-REA-1-001"
+      ],
+      "title": "Residential Electrical Apprenticeship",
+      "unified_title": "Residential Electrical Apprenticeship",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Residential Electrical Apprenticeship"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cosumnes River College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 28,
+      "credit_recs": [
+        {
+          "course": "CEM 151EL",
+          "credit": "1-5 hours in Rough Electrical"
+        },
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CEM 99",
+          "credit": "2-4 hours in Electives/Work Experience - Construction"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPCBEN-ASDA-1-001",
       "exhibit_ids": [
         "MAPCBEN-ASDA-1-001"
@@ -171974,144 +173293,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPICI-CSC2-1-001",
-      "exhibit_ids": [
-        "MAPICI-CSC2-1-001"
-      ],
-      "title": "C-46 Solar Contractor",
-      "unified_title": "C-46 Solar Contractor",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "C-46 Solar Contractor"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 151EL",
-          "credit": "3-5 hours in Rough Electrical"
-        },
-        {
-          "course": "CEM 157",
-          "credit": "3-5 hours in Construction Law"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICI-CGMH-1-001",
-      "exhibit_ids": [
-        "MAPICI-CGMH-1-001"
-      ],
-      "title": "C-47 General Manufactured Housing Contractor",
-      "unified_title": "C-47 General Manufactured Housing Contractor",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "C-47 General Manufactured Housing Contractor"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 151",
-          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)"
-        },
-        {
-          "course": "CEM 151FC",
-          "credit": "3-5 hours in Residential Finishes"
-        },
-        {
-          "course": "CEM 151L",
-          "credit": "3-5 hours in Introduction to Residential Construction Lab"
-        },
-        {
-          "course": "CEM 157",
-          "credit": "3-5 hours in Construction Law"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPCXS-BDS-1-001",
       "exhibit_ids": [
         "MAPCXS-BDS-1-001"
@@ -172617,168 +173798,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPICI-CFAR-1-001",
-      "exhibit_ids": [
-        "MAPICI-CFAR-1-001"
-      ],
-      "title": "C-5 Framing and Rough Carpentry Contractor",
-      "unified_title": "C-5 Framing and Rough Carpentry Contractor",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "C-5 Framing and Rough Carpentry Contractor"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 151",
-          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)"
-        },
-        {
-          "course": "CEM 151L",
-          "credit": "3-5 hours in Introduction to Residential Construction Lab"
-        },
-        {
-          "course": "CEM 154",
-          "credit": "3 hours in Introduction to Construction Estimating"
-        },
-        {
-          "course": "CEM 155",
-          "credit": "3-4 hours in Construction Drawing/Blueprint Reading (Lecture)"
-        },
-        {
-          "course": "CEM 155",
-          "credit": "1-3 hours in Construction Drawing/Blueprint Reading Lab"
-        },
-        {
-          "course": "CEM 157",
-          "credit": "3-5 hours in Construction Law"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICI-CACL-1-001",
-      "exhibit_ids": [
-        "MAPICI-CACL-1-001"
-      ],
-      "title": "Class A Contractor License",
-      "unified_title": "Class A Contractor License",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Class A Contractor License"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 151",
-          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)"
-        },
-        {
-          "course": "CEM 154",
-          "credit": "3-4 hours in Construction Drawing/Blueprint Reading"
-        },
-        {
-          "course": "CEM 154",
-          "credit": "3 hours in Introduction to Construction Estimating"
-        },
-        {
-          "course": "CEM 157",
-          "credit": "3-5 hours in Construction Law"
-        },
-        {
-          "course": "CEM 159",
-          "credit": "3-4 hours in Construction Planning and Scheduling"
-        },
-        {
-          "course": "CEM 161",
-          "credit": "3 hours in Construction Business Practice"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICI-NCEL-1-001",
       "exhibit_ids": [
         "MAPICI-NCEL-1-001"
@@ -172901,213 +173920,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPICI-CCMA-1-001",
-      "exhibit_ids": [
-        "MAPICI-CCMA-1-001"
-      ],
-      "title": "C-6 Cabinet, Millwork and Finish Carpentry Contractor",
-      "unified_title": "C-6 Cabinet, Millwork and Finish Carpentry Contractor",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "C-6 Cabinet, Millwork and Finish Carpentry Contractor"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 151",
-          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)"
-        },
-        {
-          "course": "CEM 151FC",
-          "credit": "3-5 hours in Residential Finishes (Lecture)"
-        },
-        {
-          "course": "CEM 151FC",
-          "credit": "3-5 hours in Finish Carpentry (Lecture)"
-        },
-        {
-          "course": "CEM 151L",
-          "credit": "3-5 hours in Introduction to Residential Construction Lab"
-        },
-        {
-          "course": "CEM 157",
-          "credit": "3-5 hours in Construction Law"
-        },
-        {
-          "course": "CEM 178B",
-          "credit": "3-5 hours in Residential Finishes Lab"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICA-CEA-1-001",
-      "exhibit_ids": [
-        "MAPICA-CEA-1-001"
-      ],
-      "title": "Commercial Electrical Apprenticeship",
-      "unified_title": "Commercial Electrical Apprenticeship",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Commercial Electrical Apprenticeship"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 151EL",
-          "credit": "1-5 hours in Rough Electrical"
-        },
-        {
-          "course": "CEM 99",
-          "credit": "2-4 hour in Electives/Work Experience - Construction"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICA-CCLA-1-001",
-      "exhibit_ids": [
-        "MAPICA-CCLA-1-001"
-      ],
-      "title": "Construction Craft Laborer Apprenticeship",
-      "unified_title": "Construction Craft Laborer Apprenticeship",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Construction Craft Laborer Apprenticeship"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 99",
-          "credit": "2-4 hour in Electives/Work Experience - Construction"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICA-DAA-1-001",
       "exhibit_ids": [
         "MAPICA-DAA-1-001"
@@ -173226,67 +174038,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 151EL",
           "credit": "3 hours in Rough Electrical"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICI-CCC6-1-001",
-      "exhibit_ids": [
-        "MAPICI-CCC6-1-001"
-      ],
-      "title": "C-8 Concrete Contractor",
-      "unified_title": "C-8 Concrete Contractor",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "C-8 Concrete Contractor"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 157",
-          "credit": "3-5 hours in Construction Law"
         }
       ]
     },
@@ -173600,197 +174351,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPICI-CEC1-1-001",
-      "exhibit_ids": [
-        "MAPICI-CEC1-1-001"
-      ],
-      "title": "C-10 Electrical Contractor",
-      "unified_title": "C-10 Electrical Contractor",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "C-10 Electrical Contractor"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 151EL",
-          "credit": "3-5 hours in Rough Electrical"
-        },
-        {
-          "course": "CEM 157",
-          "credit": "3-5 hours in Construction Law"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICI-CMC-1-001",
-      "exhibit_ids": [
-        "MAPICI-CMC-1-001"
-      ],
-      "title": "C-29 Masonry Contractor",
-      "unified_title": "C-29 Masonry Contractor",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "C-29 Masonry Contractor"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 157",
-          "credit": "3-5 hours in Construction Law"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICI-CPC2-1-001",
-      "exhibit_ids": [
-        "MAPICI-CPC2-1-001"
-      ],
-      "title": "C-36 Plumbing Contractor",
-      "unified_title": "C-36 Plumbing Contractor",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "C-36 Plumbing Contractor"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 151PL",
-          "credit": "3-5 hours in Rough Plumbing"
-        },
-        {
-          "course": "CEM 157",
-          "credit": "3-5 hours in Construction Law"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICI-CRCC-1-001",
       "exhibit_ids": [
         "MAPICI-CRCC-1-001"
@@ -173852,249 +174412,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 164C",
           "credit": "3 hours in California Residential Building Codes"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICA-CA3-1-001",
-      "exhibit_ids": [
-        "MAPICA-CA3-1-001"
-      ],
-      "title": "Carpentry Apprenticeship",
-      "unified_title": "Carpentry Apprenticeship",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Carpentry Apprenticeship"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 151",
-          "credit": "3-5 hours in Introduction to Residential Construction (Lecture)"
-        },
-        {
-          "course": "CEM 151FC",
-          "credit": "3-5 hours in Residential Finishes (Lecture)"
-        },
-        {
-          "course": "CEM 151FC",
-          "credit": "3-5 hours in Finish Carpentry (Lecture)"
-        },
-        {
-          "course": "CEM 151L",
-          "credit": "3-5 hours in Introduction to Residential Construction Lab"
-        },
-        {
-          "course": "CEM 155",
-          "credit": "3-4 hours in Construction Drawing/Blueprint Reading (Lecture)"
-        },
-        {
-          "course": "CEM 155",
-          "credit": "1-3 hours in Construction Drawing/Blueprint Reading Lab"
-        },
-        {
-          "course": "CEM 178B",
-          "credit": "3-5 hours in Residential Finishes Lab"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICI-CBCL-1-001",
-      "exhibit_ids": [
-        "MAPICI-CBCL-1-001"
-      ],
-      "title": "Class B Contractor License",
-      "unified_title": "Class B Contractor License",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Class B Contractor License"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 151",
-          "credit": "3-5 hours in Introduction to Residential Construction"
-        },
-        {
-          "course": "CEM 154",
-          "credit": "3-4 hours in Construction Drawing/Blueprint Reading"
-        },
-        {
-          "course": "CEM 154",
-          "credit": "3 hours in Introduction to Construction Estimating"
-        },
-        {
-          "course": "CEM 157",
-          "credit": "3-5 hours in Construction Law"
-        },
-        {
-          "course": "CEM 159",
-          "credit": "3-4 hours in Construction Planning and Scheduling"
-        },
-        {
-          "course": "CEM 161",
-          "credit": "3 hours in Construction Business Practice"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICI-CBCL1-1-001",
-      "exhibit_ids": [
-        "MAPICI-CBCL1-1-001"
-      ],
-      "title": "Class B-2 Contractor License",
-      "unified_title": "Class B-2 Contractor License",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Class B-2 Contractor License"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 151FC",
-          "credit": "3-5 hours in Residential Finishes"
-        },
-        {
-          "course": "CEM 154",
-          "credit": "3-4 hours in Construction Drawing/Blueprint Reading"
-        },
-        {
-          "course": "CEM 154",
-          "credit": "3 hours in Introduction to Construction Estimating"
-        },
-        {
-          "course": "CEM 157",
-          "credit": "3-5 hours in Construction Law"
-        },
-        {
-          "course": "CEM 161",
-          "credit": "3 hours in Construction Business Practice"
         }
       ]
     },
@@ -174656,71 +174973,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "CEM 164C",
           "credit": "3 hours in California Residential Building Codes"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICA-REA-1-001",
-      "exhibit_ids": [
-        "MAPICA-REA-1-001"
-      ],
-      "title": "Residential Electrical Apprenticeship",
-      "unified_title": "Residential Electrical Apprenticeship",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Residential Electrical Apprenticeship"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Cabrillo College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CEM 151EL",
-          "credit": "1-5 hours in Rough Electrical"
-        },
-        {
-          "course": "CEM 99",
-          "credit": "2-4 hours in Electives/Work Experience - Construction"
         }
       ]
     },
@@ -217152,60 +217404,6 @@ window.CPL_STATEWIDE = {
       "credit_recs": []
     },
     {
-      "exhibit_id": "MAPICI-O1A1-1-001",
-      "exhibit_ids": [
-        "MAPICI-O1A1-1-001"
-      ],
-      "title": "OSHA 10 and 1 yr Experience",
-      "unified_title": "OSHA 10 and 1 yr Experience",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "OSHA 10 and 1 yr Experience"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-O3A1-1-001",
-      "exhibit_ids": [
-        "MAPICI-O3A1-1-001"
-      ],
-      "title": "OSHA 30 and 6 months Experience",
-      "unified_title": "OSHA 30 and 6 months Experience",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "OSHA 30 and 6 months Experience"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": []
-    },
-    {
       "exhibit_id": "MAPPRA-ITE-1-001",
       "exhibit_ids": [
         "MAPPRA-ITE-1-001"
@@ -217425,6 +217623,15 @@ window.CPL_STATEWIDE = {
         "pct": 3.7
       },
       {
+        "college": "Copper Mountain College",
+        "credit_recs": 349,
+        "exhibits": 308,
+        "disciplines": 15,
+        "ccc_collaborative": 46,
+        "industry_certs": 72,
+        "pct": 3.1
+      },
+      {
         "college": "Norco College",
         "credit_recs": 334,
         "exhibits": 264,
@@ -217432,15 +217639,6 @@ window.CPL_STATEWIDE = {
         "ccc_collaborative": 23,
         "industry_certs": 74,
         "pct": 3.0
-      },
-      {
-        "college": "Copper Mountain College",
-        "credit_recs": 320,
-        "exhibits": 291,
-        "disciplines": 15,
-        "ccc_collaborative": 17,
-        "industry_certs": 43,
-        "pct": 2.8
       },
       {
         "college": "Cabrillo College",
@@ -217863,7 +218061,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 5,
         "ccc_collaborative": 17,
         "industry_certs": 20,
-        "pct": 0.7
+        "pct": 0.6
       },
       {
         "college": "Madera College",
@@ -217872,7 +218070,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 11,
         "ccc_collaborative": 2,
         "industry_certs": 3,
-        "pct": 0.7
+        "pct": 0.6
       },
       {
         "college": "CA MAP INITIATIVE COLLEGE",
@@ -218319,21 +218517,21 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 4530,
-        "exhibits": 878,
+        "credit_recs": 4529,
+        "exhibits": 877,
         "courses": 155,
         "colleges": 84,
-        "ccc_collaborative": 26,
-        "pct": 40.3
+        "ccc_collaborative": 25,
+        "pct": 40.2
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 1904,
-        "exhibits": 1020,
+        "credit_recs": 1932,
+        "exhibits": 1022,
         "courses": 1099,
         "colleges": 53,
-        "ccc_collaborative": 459,
-        "pct": 17.0
+        "ccc_collaborative": 487,
+        "pct": 17.2
       },
       {
         "discipline": "Public and Protective Services",
@@ -218531,14 +218729,14 @@ window.CPL_STATEWIDE = {
         "credit_recs": 5825,
         "exhibits": 1179,
         "colleges": 86,
-        "pct": 51.9
+        "pct": 51.7
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3260,
+        "credit_recs": 3287,
         "exhibits": 1129,
         "colleges": 78,
-        "pct": 29.0
+        "pct": 29.2
       },
       {
         "cpl_type": "Credit By Exam",
@@ -218575,18 +218773,18 @@ window.CPL_STATEWIDE = {
         "credit_recs": 6775,
         "exhibits": 1851,
         "colleges": 92,
-        "pct": 60.3
+        "pct": 60.2
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2521,
+        "credit_recs": 2544,
         "exhibits": 925,
         "colleges": 74,
-        "pct": 22.4
+        "pct": 22.6
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1202,
+        "credit_recs": 1206,
         "exhibits": 555,
         "colleges": 43,
         "pct": 10.7
@@ -218648,15 +218846,15 @@ window.CPL_STATEWIDE = {
         "exhibits": 3645,
         "colleges": 99,
         "disciplines": 23,
-        "pct": 86.8
+        "pct": 86.6
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1262,
+        "credit_recs": 1289,
         "exhibits": 163,
         "colleges": 63,
         "disciplines": 8,
-        "pct": 11.2
+        "pct": 11.5
       },
       {
         "category": "Industry/Other",
@@ -219070,6 +219268,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-05T13:26:58",
-  "total_credit_recs": 11230
+  "generated_at": "2026-06-05T16:42:52",
+  "total_credit_recs": 11257
 };

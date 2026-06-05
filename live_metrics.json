@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-05T13:27:36.736Z",
+  "scraped_at": "2026-06-05T16:43:31.831Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -48,14 +48,14 @@
         },
         {
           "college": "Moreno Valley College",
-          "students": 1491,
+          "students": 1492,
           "units": 9712.5,
-          "avgUnits": 6.514084507042254,
+          "avgUnits": 6.509718498659518,
           "transcriptionRate": 90.5,
-          "avgTranscribed": 5.892018779342723,
+          "avgTranscribed": 5.888069705093834,
           "criteriaMetCount": 5,
           "militaryStudents": 926,
-          "nonMilitaryStudents": 581,
+          "nonMilitaryStudents": 582,
           "apprenticeStudents": 0,
           "savings": 14868920,
           "yearImpact": 57999817,
@@ -743,14 +743,14 @@
         },
         {
           "college": "Santa Ana College",
-          "students": 460,
+          "students": 459,
           "units": 1619.1999999999998,
-          "avgUnits": 3.5199999999999996,
+          "avgUnits": 3.5276688453159037,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 342,
-          "nonMilitaryStudents": 117,
+          "nonMilitaryStudents": 116,
           "apprenticeStudents": 6,
           "savings": 2680228.5,
           "yearImpact": 9792049.6,
@@ -818,14 +818,14 @@
         },
         {
           "college": "Lemoore College",
-          "students": 266,
+          "students": 267,
           "units": 330,
-          "avgUnits": 1.2406015037593985,
+          "avgUnits": 1.2359550561797752,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 31,
-          "nonMilitaryStudents": 236,
+          "nonMilitaryStudents": 237,
           "apprenticeStudents": 1,
           "savings": 389595,
           "yearImpact": 1686189,
@@ -1757,7 +1757,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "46,355",
+      "value": "46,356",
       "breakdowns": [
         {
           "label": "Military",
@@ -1765,7 +1765,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "22,112"
+          "value": "22,113"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 46355,
+    "Students": 46356,
     "Units": 206047.65000000002,
     "TranscribedUnits": 96602.95,
     "Savings": 294161190.25,
     "YearImpact": 1177224197.4,
     "MilitaryStudents": 24319,
-    "NonMilitaryStudents": 22112,
+    "NonMilitaryStudents": 22113,
     "AprenticeStudents": 750,
-    "AverageUnits": 4.444992988890088,
-    "TranscribedAverage": 2.08398123179808
+    "AverageUnits": 4.444897100698939,
+    "TranscribedAverage": 2.083936275778756
   }
 }
