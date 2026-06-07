@@ -1907,6 +1907,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 /* ─── Budget inline editor (budget_editor.js) ─── */
 .budget-auth-widget { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center;
@@ -2510,7 +2513,7 @@
         
         
         
-        <div class="last-updated">Last Updated: June 07, 2026 at 5:03 AM PT</div>
+        <div class="last-updated">Last Updated: June 07, 2026 at 8:44 AM PT</div>
         <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:#C9A84C;border:1px solid #C9A84C;padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='#C9A84C';this.style.color='#0A2240'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='#C9A84C'}">&#x21bb; Refresh Today&#39;s Data</button></div>
         
         
@@ -2671,7 +2674,7 @@
     <div class="kpi-section-wrapper" id="kpiSectionWrapper">
         <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('kpiSectionWrapper');w.classList.toggle('collapsed');})()"> 
             <span class="kpi-section-title">KPI Metrics</span>
-            <span class="kpi-section-updated">Live data refreshed Jun 7, 2026 · 5:03 AM PT</span>
+            <span class="kpi-section-updated">Live data refreshed Jun 7, 2026 · 8:43 AM PT</span>
             <span class="kpi-toggle-arrow">&#9650;</span>
         </div>
     <div class="kpi-section">
@@ -3081,7 +3084,7 @@
 <div class="kpi-section-wrapper" id="cplAnalyticsWrapper">
     <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('cplAnalyticsWrapper');w.classList.toggle('collapsed');})()">
         <span class="kpi-section-title">CPL Analytics</span>
-        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-06-07T12:03:02</span>
+        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-06-07T15:43:23</span>
         <span class="kpi-toggle-arrow">&#9650;</span>
     </div>
     <div class="cpl-analytics-body" id="exhibitAnalysisSection">
@@ -8125,6 +8128,7 @@
 
 
 
+
         </div>
         <!-- /main-container for Dashboard tab -->
 
@@ -10185,8 +10189,8 @@
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "June 07, 2026 at 5:03 AM PT",
-  "data_as_of": "June 07, 2026 at 5:03 AM PT",
+  "last_updated": "June 07, 2026 at 8:44 AM PT",
+  "data_as_of": "June 07, 2026 at 8:44 AM PT",
   "kpis": {
     "cumulative_students": {
       "value": "46,351",
@@ -10368,7 +10372,7 @@
       ],
       "live": true
     },
-    "_live_updated": "2026-06-07T12:03:42.909Z",
+    "_live_updated": "2026-06-07T15:43:58.634Z",
     "map_exhibits": {
       "value": "2,472",
       "label": "MAP Exhibits",
@@ -10421,7 +10425,7 @@
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-06-07T12:03:02",
+    "_exhibit_updated": "2026-06-07T15:43:23",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
