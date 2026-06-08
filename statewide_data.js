@@ -148483,6 +148483,178 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPSAS-A:UH-1-001|MAPSAS-A:UH1-1-001|MAPSAS-AUH3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-A:UH-1-001",
+        "MAPSAS-A:UH1-1-001",
+        "MAPSAS-AUH3-1-001"
+      ],
+      "title": "AP U.S. History",
+      "unified_title": "AP U.S. History",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.98,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP : U.S. History Area 3B",
+        "AP : U.S. History Area 4",
+        "AP U.S. History (score 3-5): Cal-GETC Area 3B or 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 79,
+      "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "CA MAP INITIATIVE COLLEGE",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "potential": 39,
+      "potential_names": [
+        "Cañada College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Siskiyous",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Feather River College",
+        "Fullerton College",
+        "Gavilan College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "MiraCosta College",
+        "Mission College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 118,
+      "credit_recs": [
+        {
+          "course": "HIST 4A",
+          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
+        },
+        {
+          "course": "Cal-GETC 3B or 4",
+          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
+        },
+        {
+          "course": "ACC 200",
+          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
+        },
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        },
+        {
+          "course": "Local GE Area 3B",
+          "credit": "3 hours in Humanities"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPCXS-CBEE9-1-001|MAPCxS-EASL-1-001",
       "exhibit_ids": [
         "MAPCXS-CBEE9-1-001",
@@ -152846,243 +153018,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPSAS-A:UH-1-001|MAPSAS-A:UH1-1-001|MAPSAS-AUH3-1-001",
-      "exhibit_ids": [
-        "MAPSAS-A:UH-1-001",
-        "MAPSAS-A:UH1-1-001",
-        "MAPSAS-AUH3-1-001"
-      ],
-      "title": "AP U.S. History",
-      "unified_title": "AP U.S. History",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP : U.S. History Area 3B",
-        "AP : U.S. History Area 4",
-        "AP U.S. History (score 3-5): Cal-GETC Area 3B or 4"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 78,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 37,
-      "potential_names": [
-        "Cañada College",
-        "Cerro Coso Community College",
-        "Chaffey College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of San Mateo",
-        "College of the Desert",
-        "College of the Siskiyous",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "Feather River College",
-        "Fullerton College",
-        "Gavilan College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Los Angeles Harbor College",
-        "Los Angeles Southwest College",
-        "MiraCosta College",
-        "Mission College",
-        "Moorpark College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Santa Barbara City College",
-        "Santiago Canyon College",
-        "Skyline College",
-        "Southwestern College",
-        "Taft College"
-      ],
-      "total_addressable": 115,
-      "credit_recs": [
-        {
-          "course": "HIST 4A",
-          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
-        },
-        {
-          "course": "Cal-GETC 3B or 4",
-          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
-        },
-        {
-          "course": "Local GE Area 4",
-          "credit": "3 hours in Social and Behavioral Sciences"
-        },
-        {
-          "course": "Local GE Area 3B",
-          "credit": "3 hours in Humanities"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPCxS-WAWA-1-001",
-      "exhibit_ids": [
-        "MAPCxS-WAWA-1-001"
-      ],
-      "title": "Web-Based Animation with Adobe Animate",
-      "unified_title": "Web-Based Animation with Adobe Animate",
-      "is_classified": true,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Web-Based Animation with Animate CIS 082H Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Copper Mountain College"
-      ],
-      "potential": 37,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Berkeley City College",
-        "Calbright College Non-Credit",
-        "Cerritos College",
-        "Chabot College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Foothill College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Mt. San Antonio College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "San Diego Mesa College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 38,
-      "credit_recs": [
-        {
-          "course": "CIS  082H",
-          "credit": "3 hours in Web-Based Animation with Animate"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPSAH-AHE-1-001|MAPSAS-A-EH-1-001|MAPSAS-A-EH1-1-001|MAPSAS-A:EH-1-001|MAPSAS-A:EH1-1-001|MAPSAS-AEEH-1-001|MAPSAS-AEEH1-1-001|MAPSAS-AEH(-1-001|MAPSAS-AEH-1-001|MAPSAS-AEH1-1-001|MAPSAS-AEH10-1-001|MAPSAS-AEH2-1-001|MAPSAS-AEH3-1-001|MAPSAS-AEH4-1-001|MAPSAS-AEH5-1-001|MAPSAS-AEH6-1-001|MAPSAS-AEH9-1-001|MAPSAS-AH-E-1-001|MAPSAS-AHE-1-001|MAPSAS-AP(E1-1-001",
       "exhibit_ids": [
         "MAPSAH-AHE-1-001",
@@ -153217,7 +153152,7 @@ window.CPL_STATEWIDE = {
         "Woodland Community College",
         "Yuba College"
       ],
-      "potential": 35,
+      "potential": 37,
       "potential_names": [
         "Cañada College",
         "Cerro Coso Community College",
@@ -153243,6 +153178,8 @@ window.CPL_STATEWIDE = {
         "Mission College",
         "Moorpark College",
         "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
         "Orange Coast College",
         "Palo Verde College",
         "Palomar College",
@@ -153255,7 +153192,7 @@ window.CPL_STATEWIDE = {
         "Southwestern College",
         "Taft College"
       ],
-      "total_addressable": 116,
+      "total_addressable": 118,
       "credit_recs": [
         {
           "course": "CPL 1",
@@ -153355,6 +153292,10 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "Cal-GETC 3B or 4",
+          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
+        },
+        {
+          "course": "ACC 200",
           "credit": "3 hours in Humanities or Social and Behavioral Sciences"
         },
         {
@@ -153511,7 +153452,7 @@ window.CPL_STATEWIDE = {
         "Woodland Community College",
         "Yuba College"
       ],
-      "potential": 35,
+      "potential": 37,
       "potential_names": [
         "Cañada College",
         "Cerro Coso Community College",
@@ -153537,6 +153478,8 @@ window.CPL_STATEWIDE = {
         "Mission College",
         "Moorpark College",
         "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
         "Orange Coast College",
         "Palo Verde College",
         "Palomar College",
@@ -153549,7 +153492,7 @@ window.CPL_STATEWIDE = {
         "Southwestern College",
         "Taft College"
       ],
-      "total_addressable": 116,
+      "total_addressable": 118,
       "credit_recs": [
         {
           "course": "CPL 1",
@@ -153592,6 +153535,10 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Humanities or Social and Behavioral Sciences"
         },
         {
+          "course": "ACC 200",
+          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
+        },
+        {
           "course": "LACCD GE 3",
           "credit": "3 hours in Arts and Humanities"
         },
@@ -153610,6 +153557,429 @@ window.CPL_STATEWIDE = {
         {
           "course": "Local GE Area 3",
           "credit": "4 hours in Arts and Humanities"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPCxS-WAWA-1-001",
+      "exhibit_ids": [
+        "MAPCxS-WAWA-1-001"
+      ],
+      "title": "Web-Based Animation with Adobe Animate",
+      "unified_title": "Web-Based Animation with Adobe Animate",
+      "is_classified": true,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.85,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Web-Based Animation with Animate CIS 082H Cx"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Copper Mountain College"
+      ],
+      "potential": 37,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Calbright College Non-Credit",
+        "Cerritos College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "College of the Canyons",
+        "College of the Desert",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Foothill College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "San Diego Mesa College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 38,
+      "credit_recs": [
+        {
+          "course": "CIS  082H",
+          "credit": "3 hours in Web-Based Animation with Animate"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPSAH-AHWW-1-001|MAPSAH-WHE-1-001|MAPSAS-A-WH-1-001|MAPSAS-A-WH1-1-001|MAPSAS-A:WH-1-001|MAPSAS-A:WH1-1-001|MAPSAS-A:WH2-1-001|MAPSAS-A:WH3-1-001|MAPSAS-AE-W-1-001|MAPSAS-AEWH-1-001|MAPSAS-AEWH1-1-001|MAPSAS-AEWH2-1-001|MAPSAS-AEWH3-1-001|MAPSAS-AEWH4-1-001|MAPSAS-AEWH5-1-001|MAPSAS-AEWH6-1-001|MAPSAS-AH-W-1-001|MAPSAS-AHWH-1-001|MAPSAS-AP(W-1-001|MAPSAS-AWH1-1-001|MAPSAS-AWH2-1-001|MAPSAS-AWH3-1-001|MAPSAS-AWH4-1-001|MAPSAS-AWHM-1-001|MAPSAS-AWHM1-1-001|MAPSAS-AWHM2-1-001|MAPSAS-AWHM3-1-001|MAPSAS-AWHM4-1-001|MAPSAS-AWHM5-1-001|MAPSAS-AWHM6-1-001|MAPSAS-AWHM7-1-001",
+      "exhibit_ids": [
+        "MAPSAH-AHWW-1-001",
+        "MAPSAH-WHE-1-001",
+        "MAPSAS-A-WH-1-001",
+        "MAPSAS-A-WH1-1-001",
+        "MAPSAS-A:WH-1-001",
+        "MAPSAS-A:WH1-1-001",
+        "MAPSAS-A:WH2-1-001",
+        "MAPSAS-A:WH3-1-001",
+        "MAPSAS-AE-W-1-001",
+        "MAPSAS-AEWH-1-001",
+        "MAPSAS-AEWH1-1-001",
+        "MAPSAS-AEWH2-1-001",
+        "MAPSAS-AEWH3-1-001",
+        "MAPSAS-AEWH4-1-001",
+        "MAPSAS-AEWH5-1-001",
+        "MAPSAS-AEWH6-1-001",
+        "MAPSAS-AH-W-1-001",
+        "MAPSAS-AHWH-1-001",
+        "MAPSAS-AP(W-1-001",
+        "MAPSAS-AWH1-1-001",
+        "MAPSAS-AWH2-1-001",
+        "MAPSAS-AWH3-1-001",
+        "MAPSAS-AWH4-1-001",
+        "MAPSAS-AWHM-1-001",
+        "MAPSAS-AWHM1-1-001",
+        "MAPSAS-AWHM2-1-001",
+        "MAPSAS-AWHM3-1-001",
+        "MAPSAS-AWHM4-1-001",
+        "MAPSAS-AWHM5-1-001",
+        "MAPSAS-AWHM6-1-001",
+        "MAPSAS-AWHM7-1-001"
+      ],
+      "title": "AP World History: Modern",
+      "unified_title": "AP World History: Modern",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP - World History",
+        "AP - World History: Modern",
+        "AP : World History Area 3B",
+        "AP : World History Area 4",
+        "AP : World History: Modern Area 3B",
+        "AP : World History: Modern Area 4",
+        "AP Exam - World History",
+        "AP Exam World History: Modern (Fall 2025 and after)",
+        "AP Exam World History: Modern (prior to Fall 2025)",
+        "AP Exam World History: Modern (prior to Fall 2025) (Score 3-5)",
+        "AP Exam: World History",
+        "AP Exam: World History - Modern",
+        "AP Exam: World History: Modern",
+        "AP History - World: Modern",
+        "AP History: World/ World Modern",
+        "AP World History",
+        "AP World History Modern",
+        "AP World History Modern (Score 3-5) (Area 3)",
+        "AP World History Modern (Score 3-5) (Area 4)",
+        "AP World History: Modern",
+        "AP World History: Modern (Area 3)",
+        "AP World History: Modern (Area 4)",
+        "AP World History: Modern (score 3-5): Cal-GETC Area 3B or 4",
+        "AP: History: World  HIstory-Modern",
+        "AP: World History",
+        "World History-AP Exam"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 83,
+      "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "CA MAP INITIATIVE COLLEGE",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "Cañada College",
+        "Cerro Coso Community College",
+        "College of Alameda",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Siskiyous",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Feather River College",
+        "Fullerton College",
+        "Gavilan College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Los Angeles Harbor College",
+        "MiraCosta College",
+        "Mission College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 118,
+      "credit_recs": [
+        {
+          "course": "HIST 5",
+          "credit": "3 hours in WORLD HISTORY SINCE 1500"
+        },
+        {
+          "course": "HIST 102",
+          "credit": "3 hours in World History from 1500 to Present"
+        },
+        {
+          "course": "HISTORY 086",
+          "credit": "3 hours in Introduction to World Civilization I"
+        },
+        {
+          "course": "HISTORY 087",
+          "credit": "3 hours in Introduction to World Civilization II"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "LACCD GE 4A",
+          "credit": "3 hours in American Institutions"
+        },
+        {
+          "course": "CPL (D2)",
+          "credit": "3 hours in History and Political Sciences - (3 units)"
+        },
+        {
+          "course": "CSU GE C2",
+          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
+        },
+        {
+          "course": "CSU GE D",
+          "credit": "3 hours in CSU GE D – Social Sciences"
+        },
+        {
+          "course": "IGETC 3B",
+          "credit": "3 hours in IGETC 3B – Humanities"
+        },
+        {
+          "course": "IGETC 4",
+          "credit": "3 hours in IGETC 4 – Social Sciences"
+        },
+        {
+          "course": "CSU GE D6",
+          "credit": "3 hours in CSU GE D6 – History"
+        },
+        {
+          "course": "HIS 2",
+          "credit": "3 hours in World History since 1500"
+        },
+        {
+          "course": "HIST 5A",
+          "credit": "3 hours in World Civilizations I"
+        },
+        {
+          "course": "HIST 5B",
+          "credit": "3 hours in World Civilizations II"
+        },
+        {
+          "course": "History (HIST) 011A",
+          "credit": "3 hours in World History to 1500"
+        },
+        {
+          "course": "History (HIST) 011B",
+          "credit": "3 hours in World History from 1500"
+        },
+        {
+          "course": "Local GE 3",
+          "credit": "3 hours in Art & Humanities"
+        },
+        {
+          "course": "Local GE 4",
+          "credit": "3 hours in Social & Behavioral science"
+        },
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        },
+        {
+          "course": "HIST 102",
+          "credit": "3 hours in World Civilizations Since the 16th Century"
+        },
+        {
+          "course": "HIST C161",
+          "credit": "3 hours in World History 1"
+        },
+        {
+          "course": "HIST C162",
+          "credit": "3 hours in World History 2"
+        },
+        {
+          "course": "HIST 20",
+          "credit": "3 hours in World History I, to 1600"
+        },
+        {
+          "course": "HIST 4A",
+          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
+        },
+        {
+          "course": "Cal-GETC 3B or 4",
+          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
+        },
+        {
+          "course": "ACC 200",
+          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
+        },
+        {
+          "course": "GE 3 Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "GE 4",
+          "credit": "3 hours in Area 4 - Social and Behavioral Sciences (3 units)"
+        },
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        },
+        {
+          "course": "Local GE Area 3B",
+          "credit": "3 hours in Humanities"
+        },
+        {
+          "course": "HIST 107",
+          "credit": "3 hours in World Civilization From the 16th Century"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "4 hours in Arts and Humanities"
+        },
+        {
+          "course": "Local GE Area 4",
+          "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
+        },
+        {
+          "course": "LACCD GE Area B2",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        },
+        {
+          "course": "LACCD GE Area C",
+          "credit": "3 hours in Humanities"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
         }
       ]
     },
@@ -159866,350 +160236,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "E.S.L. 110",
           "credit": "4 hours in College Composition for Non-Native Speakers"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAH-AHWW-1-001|MAPSAH-WHE-1-001|MAPSAS-A-WH-1-001|MAPSAS-A-WH1-1-001|MAPSAS-A:WH-1-001|MAPSAS-A:WH1-1-001|MAPSAS-A:WH2-1-001|MAPSAS-A:WH3-1-001|MAPSAS-AE-W-1-001|MAPSAS-AEWH-1-001|MAPSAS-AEWH1-1-001|MAPSAS-AEWH2-1-001|MAPSAS-AEWH3-1-001|MAPSAS-AEWH4-1-001|MAPSAS-AEWH5-1-001|MAPSAS-AEWH6-1-001|MAPSAS-AH-W-1-001|MAPSAS-AHWH-1-001|MAPSAS-AP(W-1-001|MAPSAS-AWH1-1-001|MAPSAS-AWH2-1-001|MAPSAS-AWH3-1-001|MAPSAS-AWH4-1-001|MAPSAS-AWHM-1-001|MAPSAS-AWHM1-1-001|MAPSAS-AWHM2-1-001|MAPSAS-AWHM3-1-001|MAPSAS-AWHM4-1-001|MAPSAS-AWHM5-1-001|MAPSAS-AWHM6-1-001|MAPSAS-AWHM7-1-001",
-      "exhibit_ids": [
-        "MAPSAH-AHWW-1-001",
-        "MAPSAH-WHE-1-001",
-        "MAPSAS-A-WH-1-001",
-        "MAPSAS-A-WH1-1-001",
-        "MAPSAS-A:WH-1-001",
-        "MAPSAS-A:WH1-1-001",
-        "MAPSAS-A:WH2-1-001",
-        "MAPSAS-A:WH3-1-001",
-        "MAPSAS-AE-W-1-001",
-        "MAPSAS-AEWH-1-001",
-        "MAPSAS-AEWH1-1-001",
-        "MAPSAS-AEWH2-1-001",
-        "MAPSAS-AEWH3-1-001",
-        "MAPSAS-AEWH4-1-001",
-        "MAPSAS-AEWH5-1-001",
-        "MAPSAS-AEWH6-1-001",
-        "MAPSAS-AH-W-1-001",
-        "MAPSAS-AHWH-1-001",
-        "MAPSAS-AP(W-1-001",
-        "MAPSAS-AWH1-1-001",
-        "MAPSAS-AWH2-1-001",
-        "MAPSAS-AWH3-1-001",
-        "MAPSAS-AWH4-1-001",
-        "MAPSAS-AWHM-1-001",
-        "MAPSAS-AWHM1-1-001",
-        "MAPSAS-AWHM2-1-001",
-        "MAPSAS-AWHM3-1-001",
-        "MAPSAS-AWHM4-1-001",
-        "MAPSAS-AWHM5-1-001",
-        "MAPSAS-AWHM6-1-001",
-        "MAPSAS-AWHM7-1-001"
-      ],
-      "title": "AP World History: Modern",
-      "unified_title": "AP World History: Modern",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP - World History",
-        "AP - World History: Modern",
-        "AP : World History Area 3B",
-        "AP : World History Area 4",
-        "AP : World History: Modern Area 3B",
-        "AP : World History: Modern Area 4",
-        "AP Exam - World History",
-        "AP Exam World History: Modern (Fall 2025 and after)",
-        "AP Exam World History: Modern (prior to Fall 2025)",
-        "AP Exam World History: Modern (prior to Fall 2025) (Score 3-5)",
-        "AP Exam: World History",
-        "AP Exam: World History - Modern",
-        "AP Exam: World History: Modern",
-        "AP History - World: Modern",
-        "AP History: World/ World Modern",
-        "AP World History",
-        "AP World History Modern",
-        "AP World History Modern (Score 3-5) (Area 3)",
-        "AP World History Modern (Score 3-5) (Area 4)",
-        "AP World History: Modern",
-        "AP World History: Modern (Area 3)",
-        "AP World History: Modern (Area 4)",
-        "AP World History: Modern (score 3-5): Cal-GETC Area 3B or 4",
-        "AP: History: World  HIstory-Modern",
-        "AP: World History",
-        "World History-AP Exam"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 82,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 33,
-      "potential_names": [
-        "Cañada College",
-        "Cerro Coso Community College",
-        "College of Alameda",
-        "College of San Mateo",
-        "College of the Desert",
-        "College of the Siskiyous",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "Feather River College",
-        "Fullerton College",
-        "Gavilan College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Los Angeles Harbor College",
-        "MiraCosta College",
-        "Mission College",
-        "Moorpark College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Santa Barbara City College",
-        "Santiago Canyon College",
-        "Skyline College",
-        "Southwestern College",
-        "Taft College"
-      ],
-      "total_addressable": 115,
-      "credit_recs": [
-        {
-          "course": "HIST 5",
-          "credit": "3 hours in WORLD HISTORY SINCE 1500"
-        },
-        {
-          "course": "HIST 102",
-          "credit": "3 hours in World History from 1500 to Present"
-        },
-        {
-          "course": "HISTORY 086",
-          "credit": "3 hours in Introduction to World Civilization I"
-        },
-        {
-          "course": "HISTORY 087",
-          "credit": "3 hours in Introduction to World Civilization II"
-        },
-        {
-          "course": "LACCD GE 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "LACCD GE 4A",
-          "credit": "3 hours in American Institutions"
-        },
-        {
-          "course": "CPL (D2)",
-          "credit": "3 hours in History and Political Sciences - (3 units)"
-        },
-        {
-          "course": "CSU GE C2",
-          "credit": "3 hours in CSU GE C2 – Humanities (Literature, Philosophy, Languages Other than English)"
-        },
-        {
-          "course": "CSU GE D",
-          "credit": "3 hours in CSU GE D – Social Sciences"
-        },
-        {
-          "course": "IGETC 3B",
-          "credit": "3 hours in IGETC 3B – Humanities"
-        },
-        {
-          "course": "IGETC 4",
-          "credit": "3 hours in IGETC 4 – Social Sciences"
-        },
-        {
-          "course": "CSU GE D6",
-          "credit": "3 hours in CSU GE D6 – History"
-        },
-        {
-          "course": "HIS 2",
-          "credit": "3 hours in World History since 1500"
-        },
-        {
-          "course": "HIST 5A",
-          "credit": "3 hours in World Civilizations I"
-        },
-        {
-          "course": "HIST 5B",
-          "credit": "3 hours in World Civilizations II"
-        },
-        {
-          "course": "History (HIST) 011A",
-          "credit": "3 hours in World History to 1500"
-        },
-        {
-          "course": "History (HIST) 011B",
-          "credit": "3 hours in World History from 1500"
-        },
-        {
-          "course": "Local GE 3",
-          "credit": "3 hours in Art & Humanities"
-        },
-        {
-          "course": "Local GE 4",
-          "credit": "3 hours in Social & Behavioral science"
-        },
-        {
-          "course": "LACCD GE 4B",
-          "credit": "3 hours in Social and Behavioral Sciences"
-        },
-        {
-          "course": "HIST 102",
-          "credit": "3 hours in World Civilizations Since the 16th Century"
-        },
-        {
-          "course": "HIST C161",
-          "credit": "3 hours in World History 1"
-        },
-        {
-          "course": "HIST C162",
-          "credit": "3 hours in World History 2"
-        },
-        {
-          "course": "HIST 20",
-          "credit": "3 hours in World History I, to 1600"
-        },
-        {
-          "course": "HIST 4A",
-          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
-        },
-        {
-          "course": "Cal-GETC 3B or 4",
-          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
-        },
-        {
-          "course": "GE 3 Area 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "GE 4",
-          "credit": "3 hours in Area 4 - Social and Behavioral Sciences (3 units)"
-        },
-        {
-          "course": "Local GE Area 4",
-          "credit": "3 hours in Social and Behavioral Sciences"
-        },
-        {
-          "course": "Local GE Area 3B",
-          "credit": "3 hours in Humanities"
-        },
-        {
-          "course": "HIST 107",
-          "credit": "3 hours in World Civilization From the 16th Century"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "4 hours in Arts and Humanities"
-        },
-        {
-          "course": "Local GE Area 4",
-          "credit": "4 hours in SOCIAL AND BEHAVIORAL SCIENCES"
-        },
-        {
-          "course": "LACCD GE Area B2",
-          "credit": "3 hours in Social and Behavioral Sciences"
-        },
-        {
-          "course": "LACCD GE Area C",
-          "credit": "3 hours in Humanities"
-        },
-        {
-          "course": "Local GE Area 3",
-          "credit": "3 hours in Arts and Humanities"
         }
       ]
     },
@@ -221813,7 +221839,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 17,
         "ccc_collaborative": 23,
         "industry_certs": 74,
-        "pct": 3.0
+        "pct": 2.9
       },
       {
         "college": "Cabrillo College",
@@ -222230,6 +222256,15 @@ window.CPL_STATEWIDE = {
         "pct": 0.7
       },
       {
+        "college": "CA MAP INITIATIVE COLLEGE",
+        "credit_recs": 75,
+        "exhibits": 74,
+        "disciplines": 4,
+        "ccc_collaborative": 1,
+        "industry_certs": 2,
+        "pct": 0.7
+      },
+      {
         "college": "East Los Angeles College",
         "credit_recs": 74,
         "exhibits": 67,
@@ -222254,15 +222289,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 11,
         "ccc_collaborative": 2,
         "industry_certs": 3,
-        "pct": 0.6
-      },
-      {
-        "college": "CA MAP INITIATIVE COLLEGE",
-        "credit_recs": 71,
-        "exhibits": 70,
-        "disciplines": 4,
-        "ccc_collaborative": 1,
-        "industry_certs": 2,
         "pct": 0.6
       },
       {
@@ -222697,7 +222723,7 @@ window.CPL_STATEWIDE = {
         "courses": 160,
         "colleges": 84,
         "ccc_collaborative": 25,
-        "pct": 40.1
+        "pct": 40.0
       },
       {
         "discipline": "Engineering and Industrial Technologies",
@@ -222737,9 +222763,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Business and Management",
-        "credit_recs": 408,
-        "exhibits": 218,
-        "courses": 192,
+        "credit_recs": 412,
+        "exhibits": 222,
+        "courses": 193,
         "colleges": 37,
         "ccc_collaborative": 46,
         "pct": 3.6
@@ -222901,7 +222927,7 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 5827,
+        "credit_recs": 5831,
         "exhibits": 1181,
         "colleges": 86,
         "pct": 51.5
@@ -222945,7 +222971,7 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 6806,
+        "credit_recs": 6810,
         "exhibits": 1882,
         "colleges": 92,
         "pct": 60.1
@@ -223017,7 +223043,7 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 9802,
+        "credit_recs": 9806,
         "exhibits": 3691,
         "colleges": 99,
         "disciplines": 23,
@@ -223114,44 +223140,44 @@ window.CPL_STATEWIDE = {
         "discipline": "Foreign Languages"
       },
       {
+        "title": "AP European History (score 3-5): Cal-GETC Area 3B or 4",
+        "credit_recs": 80,
+        "courses": 3,
+        "colleges": 79,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Social Sciences"
+      },
+      {
+        "title": "AP U.S. History (score 3-5): Cal-GETC Area 3B or 4",
+        "credit_recs": 80,
+        "courses": 3,
+        "colleges": 79,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Social Sciences"
+      },
+      {
+        "title": "AP World History: Modern (score 3-5): Cal-GETC Area 3B or 4",
+        "credit_recs": 80,
+        "courses": 3,
+        "colleges": 79,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Social Sciences"
+      },
+      {
+        "title": "IB History (any region) HL (score 5-7): Cal-GETC Area 3B or 4",
+        "credit_recs": 80,
+        "courses": 3,
+        "colleges": 79,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Social Sciences"
+      },
+      {
         "title": "AP Psychology (score 3-5): Cal-GETC Area 4",
         "credit_recs": 79,
         "courses": 2,
         "colleges": 78,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
-      },
-      {
-        "title": "AP European History (score 3-5): Cal-GETC Area 3B or 4",
-        "credit_recs": 79,
-        "courses": 2,
-        "colleges": 78,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Social Sciences"
-      },
-      {
-        "title": "AP U.S. History (score 3-5): Cal-GETC Area 3B or 4",
-        "credit_recs": 79,
-        "courses": 2,
-        "colleges": 78,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Social Sciences"
-      },
-      {
-        "title": "AP World History: Modern (score 3-5): Cal-GETC Area 3B or 4",
-        "credit_recs": 79,
-        "courses": 2,
-        "colleges": 78,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Social Sciences"
-      },
-      {
-        "title": "IB History (any region) HL (score 5-7): Cal-GETC Area 3B or 4",
-        "credit_recs": 79,
-        "courses": 2,
-        "colleges": 78,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Social Sciences"
       },
       {
         "title": "IB Theatre HL (score 5-7): Cal-GETC Area 3A",
@@ -223443,6 +223469,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-08T14:32:02",
-  "total_credit_recs": 11319
+  "generated_at": "2026-06-08T17:29:56",
+  "total_credit_recs": 11323
 };
