@@ -1,0 +1,154 @@
+{
+  "_generated_at": "2026-06-09T20:39:42Z",
+  "applied": [
+    {
+      "loser": "FAA Airframe Mechanic Certification",
+      "winner": "FAA Mechanic Certificate — Airframe Rating",
+      "raws_repointed": 1,
+      "articulations_repointed": 22,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "FAA Powerplant Mechanic Certification",
+      "winner": "FAA Mechanic Certificate — Powerplant Rating",
+      "raws_repointed": 1,
+      "articulations_repointed": 24,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "CDCR Correctional Officer Academy",
+      "winner": "Basic Correctional Officer Academy",
+      "raws_repointed": 1,
+      "articulations_repointed": 6,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "CDCR Corrections Officer Academy",
+      "winner": "Basic Correctional Officer Academy",
+      "raws_repointed": 2,
+      "articulations_repointed": 13,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "SFT Fire Inspector 1A",
+      "winner": "Fire Inspector 1A",
+      "raws_repointed": 1,
+      "articulations_repointed": 3,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "Fire Inspector 1A — Duties and Administration",
+      "winner": "Fire Inspector 1A",
+      "raws_repointed": 1,
+      "articulations_repointed": 1,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "Fire Inspector 1B — Fire and Life Safety",
+      "winner": "Fire Inspector 1B",
+      "raws_repointed": 1,
+      "articulations_repointed": 1,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "Fire Inspector 1C — Field Inspection",
+      "winner": "Fire Inspector 1C",
+      "raws_repointed": 1,
+      "articulations_repointed": 1,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "Fire and Emergency Services Instructor 1",
+      "winner": "Fire Instructor 1",
+      "raws_repointed": 1,
+      "articulations_repointed": 1,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "Fire Tactics and Strategy",
+      "winner": "Fire Service Tactics and Strategy",
+      "raws_repointed": 2,
+      "articulations_repointed": 2,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "ASE A3 — Manual Drivetrain and Axles",
+      "winner": "ASE A3 — Manual Drive Train and Axles",
+      "raws_repointed": 1,
+      "articulations_repointed": 1,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "Automotive Service and Introduction Industry Certification",
+      "winner": "Automotive Service and Introduction",
+      "raws_repointed": 1,
+      "articulations_repointed": 1,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "Legal Aspects of Evidence (Administration of Justice 3)",
+      "winner": "Legal Aspects of Evidence",
+      "raws_repointed": 1,
+      "articulations_repointed": 1,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "PLTW Introduction to Engineering Design — Baldy View ROP",
+      "winner": "PLTW Introduction to Engineering Design",
+      "raws_repointed": 1,
+      "articulations_repointed": 2,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AWS D1.1 SMAW Certification",
+      "winner": "AWS D1.1 SMAW Qualified Welder",
+      "raws_repointed": 1,
+      "articulations_repointed": 7,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AWS D1.5 SMAW Certification",
+      "winner": "AWS D1.5 SMAW Qualified Welder",
+      "raws_repointed": 1,
+      "articulations_repointed": 8,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AWS D17.1 GTAW Certification",
+      "winner": "AWS D17.1 GTAW Qualified Welder",
+      "raws_repointed": 1,
+      "articulations_repointed": 4,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AWS D1.8 FCAW Certification",
+      "winner": "AWS D1.8 FCAW Qualified Welder",
+      "raws_repointed": 1,
+      "articulations_repointed": 4,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AWS D1.1 FCAW Certification",
+      "winner": "AWS D1.1 FCAW Qualified Welder",
+      "raws_repointed": 1,
+      "articulations_repointed": 3,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AWS D1.3 GMAW Certification",
+      "winner": "AWS D1.3 GMAW Qualified Welder",
+      "raws_repointed": 1,
+      "articulations_repointed": 3,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AWS D9.1 GMAW Certification",
+      "winner": "AWS D9.1 GMAW Qualified Welder",
+      "raws_repointed": 1,
+      "articulations_repointed": 2,
+      "loser_credential_dropped": true
+    }
+  ],
+  "unified_titles_count": 3411,
+  "credentials_count": 1973
+}

@@ -9547,17 +9547,18 @@
     "_notes": "AJ 2 is commonly Concepts of Criminal Law in CA C-ID alignment."
   },
   "Admin Just 3 CBE": {
-    "unified_title": "Legal Aspects of Evidence (Administration of Justice 3)",
+    "unified_title": "Legal Aspects of Evidence",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCXS-AJ3C-1-001"
     ],
     "quality_flag": null,
-    "_notes": "AJ 3 commonly maps to Legal Aspects of Evidence."
+    "_notes": "AJ 3 commonly maps to Legal Aspects of Evidence.",
+    "_merge_note": "merged from credential 'Legal Aspects of Evidence (Administration of Justice 3)' (curator)"
   },
   "Admin Just 4 CBE": {
     "unified_title": "Principles & Procedures of the Justice System (Administration of Justice 4)",
@@ -10179,95 +10180,102 @@
     "_notes": "ANSI accredits multiple providers (ServSafe, etc.); unified at the ANSI-accredited credential level."
   },
   "American Welding Society  D17.1 GTAW Certification": {
-    "unified_title": "AWS D17.1 GTAW Certification",
+    "unified_title": "AWS D17.1 GTAW Qualified Welder",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-AWS(6-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AWS D17.1 GTAW Certification' (curator)"
   },
   "American Welding Society D1.1 FCAW Certification": {
-    "unified_title": "AWS D1.1 FCAW Certification",
+    "unified_title": "AWS D1.1 FCAW Qualified Welder",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-AWSD1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AWS D1.1 FCAW Certification' (curator)"
   },
   "American Welding Society D1.1 SMAW Certification": {
-    "unified_title": "AWS D1.1 SMAW Certification",
+    "unified_title": "AWS D1.1 SMAW Qualified Welder",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-AWSD-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AWS D1.1 SMAW Certification' (curator)"
   },
   "American Welding Society D1.3 GMAW Certification": {
-    "unified_title": "AWS D1.3 GMAW Certification",
+    "unified_title": "AWS D1.3 GMAW Qualified Welder",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-AWSD5-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AWS D1.3 GMAW Certification' (curator)"
   },
   "American Welding Society D1.5 SMAW Certification": {
-    "unified_title": "AWS D1.5 SMAW Certification",
+    "unified_title": "AWS D1.5 SMAW Qualified Welder",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-AWSD2-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AWS D1.5 SMAW Certification' (curator)"
   },
   "American Welding Society D1.8 FCAW Certification": {
-    "unified_title": "AWS D1.8 FCAW Certification",
+    "unified_title": "AWS D1.8 FCAW Qualified Welder",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-AWSD3-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AWS D1.8 FCAW Certification' (curator)"
   },
   "American Welding Society D9.1 GMAW Certification": {
-    "unified_title": "AWS D9.1 GMAW Certification",
+    "unified_title": "AWS D9.1 GMAW Qualified Welder",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-AWSD4-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AWS D9.1 GMAW Certification' (curator)"
   },
   "Anatomy and Physiology": {
     "unified_title": "Anatomy and Physiology",
@@ -11517,17 +11525,18 @@
     "_notes": "Either-or pathway: full master cert series or L3 hybrid specialist."
   },
   "Automotive Service and Introduction Industry Certification": {
-    "unified_title": "Automotive Service and Introduction Industry Certification",
+    "unified_title": "Automotive Service and Introduction",
     "confidence_title": 0.45,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-ASAI-1-001"
     ],
     "quality_flag": "suspect_course_as_exhibit",
-    "_notes": "Title is vague; not a recognizable named industry cert. Needs reviewer input."
+    "_notes": "Title is vague; not a recognizable named industry cert. Needs reviewer input.",
+    "_merge_note": "merged from credential 'Automotive Service and Introduction Industry Certification' (curator)"
   },
   "Automotive Services Excellence (ASE) 2": {
     "unified_title": "ASE A2 — Automatic Transmission/Transaxle",
@@ -12090,18 +12099,19 @@
     "_notes": "EMR training through ROP; specific certifying body (NREMT/American Red Cross/AHA) not stated."
   },
   "Baldy View ROP - Introduction to Engineering Design": {
-    "unified_title": "PLTW Introduction to Engineering Design — Baldy View ROP",
+    "unified_title": "PLTW Introduction to Engineering Design",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCXH-BVR-3-1-001",
       "MAPCXH-BVR-4-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Matches PLTW IED course offered via ROP."
+    "_notes": "Matches PLTW IED course offered via ROP.",
+    "_merge_note": "merged from credential 'PLTW Introduction to Engineering Design — Baldy View ROP' (curator)"
   },
   "Baldy View ROP - Transportation, Distribution and Logistics": {
     "unified_title": "Transportation, Distribution and Logistics — Baldy View ROP",
@@ -13314,30 +13324,32 @@
     "_notes": "High school articulation; specific course content unclear from CD-005 code alone."
   },
   "CDCR Corrections Academy": {
-    "unified_title": "CDCR Corrections Officer Academy",
+    "unified_title": "Basic Correctional Officer Academy",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-CCA-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CDCR Corrections Officer Academy' (curator)"
   },
   "CDCR/CPOST - Apprenticeship program certificate of completion": {
-    "unified_title": "CDCR Corrections Officer Academy",
+    "unified_title": "Basic Correctional Officer Academy",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-C-AP-1-001"
     ],
     "quality_flag": null,
-    "_notes": "CDCR/CPOST apprenticeship; same correctional officer credential."
+    "_notes": "CDCR/CPOST apprenticeship; same correctional officer credential.",
+    "_merge_note": "merged from credential 'CDCR Corrections Officer Academy' (curator)"
   },
   "CDL Permit": {
     "unified_title": "Commercial Driver's License (CDL) Permit",
@@ -16897,17 +16909,18 @@
     "_notes": null
   },
   "Cal Fire Fire and Emergency Services Instructor 1": {
-    "unified_title": "Fire and Emergency Services Instructor 1",
+    "unified_title": "Fire Instructor 1",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-CFFA2-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'Fire and Emergency Services Instructor 1' (curator)"
   },
   "Cal Fire Hazardous Materials First Responder Operational Level, Decontamination ": {
     "unified_title": "Hazardous Materials First Responder Operational — Decontamination",
@@ -17223,17 +17236,18 @@
     "_notes": "Likely SFT/OSHA HAZWOPER awareness; issuer guessed."
   },
   "Calif State Fire Marshal Fire Inspector 1C: Field Inspection Course": {
-    "unified_title": "Fire Inspector 1C — Field Inspection",
+    "unified_title": "Fire Inspector 1C",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-CSFM2-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'Fire Inspector 1C — Field Inspection' (curator)"
   },
   "Calif State Fire Marshal Fire Inspector-Calif Specific Course": {
     "unified_title": "Fire Inspector — California Specific",
@@ -17249,43 +17263,46 @@
     "_notes": null
   },
   "Calif State Fire Marshal: Fire Inspector 1A: Duties & Administration Course": {
-    "unified_title": "Fire Inspector 1A — Duties and Administration",
+    "unified_title": "Fire Inspector 1A",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-CSFM-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'Fire Inspector 1A — Duties and Administration' (curator)"
   },
   "Calif State Fire Marshal: Fire Inspector 1B: Fire & Life Safety Course": {
-    "unified_title": "Fire Inspector 1B — Fire and Life Safety",
+    "unified_title": "Fire Inspector 1B",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-CSFM1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'Fire Inspector 1B — Fire and Life Safety' (curator)"
   },
   "California Department of Corrections and Rehabilitation Correctional Officer": {
-    "unified_title": "CDCR Correctional Officer Academy",
+    "unified_title": "Basic Correctional Officer Academy",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPPRA-CDOC-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Distinct from POST per Rule 4."
+    "_notes": "Distinct from POST per Rule 4.",
+    "_merge_note": "merged from credential 'CDCR Correctional Officer Academy' (curator)"
   },
   "California Emergency Medical Technician 2": {
     "unified_title": "EMT-II Certification",
@@ -20942,17 +20959,18 @@
     "_notes": null
   },
   "Credit by Exam AUTO A3 Manual Drivetrains": {
-    "unified_title": "ASE A3 — Manual Drivetrain and Axles",
+    "unified_title": "ASE A3 — Manual Drive Train and Axles",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCXS-CBEA2-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'ASE A3 — Manual Drivetrain and Axles' (curator)"
   },
   "Credit by Exam AUTO A4 Suspension and Steering": {
     "unified_title": "ASE A4 — Suspension and Steering",
@@ -27183,30 +27201,32 @@
     "_notes": "Local college nursing course CBE; not a standalone credential."
   },
   "Federal Aviation Administration Airframe": {
-    "unified_title": "FAA Airframe Mechanic Certification",
+    "unified_title": "FAA Mechanic Certificate — Airframe Rating",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-FAAA-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'FAA Airframe Mechanic Certification' (curator)"
   },
   "Federal Aviation Administration Powerplant": {
-    "unified_title": "FAA Powerplant Mechanic Certification",
+    "unified_title": "FAA Mechanic Certificate — Powerplant Rating",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICI-FAAP-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'FAA Powerplant Mechanic Certification' (curator)"
   },
   "Federal Law Enforcement Training (DOD Post)": {
     "unified_title": "Federal Law Enforcement Training (DoD)",
@@ -27902,17 +27922,18 @@
     "_notes": "CCSF-specific course code; review needed."
   },
   "Fire Science Tactics & Strategy Credit by Exam": {
-    "unified_title": "Fire Tactics and Strategy",
+    "unified_title": "Fire Service Tactics and Strategy",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCXS-FST&-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Common Fire Tech course."
+    "_notes": "Common Fire Tech course.",
+    "_merge_note": "merged from credential 'Fire Tactics and Strategy' (curator)"
   },
   "Fire Science- College and Career Advantage": {
     "unified_title": "Fire Science (High School Articulation)",
@@ -28110,17 +28131,18 @@
     "_notes": null
   },
   "Firefighting Strategies and Tactics FIRE 008 Cx": {
-    "unified_title": "Fire Tactics and Strategy",
+    "unified_title": "Fire Service Tactics and Strategy",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCxS-FSAT-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Local FIRE 008 CBE."
+    "_notes": "Local FIRE 008 CBE.",
+    "_merge_note": "merged from credential 'Fire Tactics and Strategy' (curator)"
   },
   "First Aid, CPR and AED": {
     "unified_title": "First Aid, CPR, and AED Certification",
@@ -39661,17 +39683,18 @@
     "_notes": "Unified with ICC/NFPA Fire Inspector I per Rule 4."
   },
   "SFT Fire Inspector 1A Certificate": {
-    "unified_title": "SFT Fire Inspector 1A",
+    "unified_title": "Fire Inspector 1A",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-06-09",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPICA-SFI1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "SFT modular sub-cert; kept distinct from full Fire Inspector I."
+    "_notes": "SFT modular sub-cert; kept distinct from full Fire Inspector I.",
+    "_merge_note": "merged from credential 'SFT Fire Inspector 1A' (curator)"
   },
   "SFT Fire Inspector 1C + EXP ": {
     "unified_title": "SFT Fire Inspector 1C",
