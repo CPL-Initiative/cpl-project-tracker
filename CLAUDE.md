@@ -1686,6 +1686,58 @@ cross-disc re-mint (pipeline viz refreshed: the re-mint card).
   individual planner + `View_StudentAggregatedValues` ExhibitID/SkillLevel join
   are the deferred student-portal tier.
 
+### Session 37 — CER credential dedup (Signal-B) + the "Eligible students" relabel (shipped 2026-06-09)
+
+Sam picked the **Signal-B dedup leads** + relabeling the CER student column. All
+CER/credential-layer + detector tooling — no M-ID pipeline movement (pipeline viz
+correctly skipped). **3 PRs, all merged.**
+
+- **#322 — CER "Students" → "Eligible students".** The student-impact column is
+  the catalog's `TotalStudentsForCR` = the cohort eligible for each credential's
+  CPL credit recs (parallel to "Eligible (units)"); the generic "Students" header
+  read ambiguously. Consumer-only relabel (`credential_reference.js` label +
+  tooltip; `tests/cer_students.test.js` finder regex; the reference KB note). This
+  resolved the Session-36 carryover "confirm the label semantics with Sam."
+- **#323 — merged 21 Signal-B duplicate credentials.** Worked all **162** Signal-B
+  leads from `kb/_detect_cpl_type_dupes.py` (the manual-review, semantic class).
+  The large majority are **false positives**, correctly left split: ~62 are the
+  `COMM M1038` **elective-bucket** noise (two different exams both landing on one
+  generic-elective-credit course), and most of the rest are genuinely-distinct
+  credentials that merely **share a course** (different FAA ratings, AWS welding
+  processes/codes, AP exams, WSET levels, per-high-school articulations) — kept
+  split per **scope-of-competency** (skill Rule 4). **21** are true
+  same-credential phrasing variants, curator-verified against the KB (issuer +
+  credit rec) and applied via `kb/_merge_credentials.py` (V1–V4 green): FAA
+  Airframe/Powerplant "Mechanic Certification" → "Mechanic Certificate — {…}
+  Rating" (A&P combined kept separate); CDCR Correctional/Corrections Officer
+  Academy → Basic Correctional Officer Academy; SFT Fire Inspector 1A/1B/1C
+  subtitle + "SFT " prefix → bare code; Fire and Emergency Services Instructor 1
+  → Fire Instructor 1; 7× AWS "{code} {process} Certification" → "Qualified
+  Welder" (identical issuer + credit rec); + 4 spelling/Rule-1 strips. CER
+  credentials **1994 → 1973**; regenerated `credential_reference_data.js`
+  live-on-merge (carried forward 543 students + 1726 eligible cron-only values).
+- **#324 — taught the detector to suppress elective-bucket noise.** Added a third
+  Signal-B gate mirroring the producer's R1 elective-bucket rule (≥0.8-elective /
+  ≥5-credentials / ≤3-colleges): a pair sharing ONLY a bucket course is
+  suppressed. High-precision (a true dup always shares a REAL course → can't hide
+  one). **Signal B 162 → 77** (62 bucket-only suppressed, 23 gone because #323
+  merged their losers). Makes the next Signal-B pass tractable.
+
+**Patterns/learnings:** the CER ships **live-on-merge** (regenerate the baked file
+from committed inputs; the carry-forward preserves the cron-only Eligible/Students
+columns). The Signal-B **triage methodology** (false-positive taxonomy +
+scope-of-competency line) is the durable output → new KB note
+[`methodology-credential-dedup-triage.md`](docs/kb-notes/methodology-credential-dedup-triage.md);
+it complements the existing merge **mechanism** playbook. Lessons:
+`docs/eacr_consolidation_lessons.md` (Session 37).
+
+**Carryover / next:** the residual **77** Signal-B pairs are genuine but mostly
+legitimate splits (Rule 4) — leave for a curator; the **Signal-A** queue is empty.
+The Session-36 carryover stands: **ACE skill-level child-exhibit** scope (the
+handoff's flagged next-real-work, data-confirmed), the **College + System
+audience views** (System needs the privacy ADR finished), **EACR v2** scope, and
+the eligible-students-per-exhibit dataset wiring when Sam sends it.
+
 ---
 
 ## Troubleshooting
