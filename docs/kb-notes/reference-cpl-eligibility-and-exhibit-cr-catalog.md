@@ -55,13 +55,28 @@ SkillLevel, CreditRecommendation, …finer criteria/evidence…)**. The `Total�
 values **repeat** across the finer rows — only ~16% of (exhibit, skill, CR) groups
 vary. So a naive per-exhibit `SUM` of the raw rows over-counts ~2.5×.
 
+## The id-namespace gotcha (the bridge is TITLE, not ExhibitID)
+
+**Two different ExhibitID namespaces.** The catalog keys exhibits by a **numeric
+`ExhibitID`** (`7651`) and **includes military/ACE** exhibits;
+`View_ArticulatedMAPExhibits` (what our `coci_articulations.json` crosswalk is
+seeded from) keys by the **`MAP…` string id** (`MAPICA-ACDA-1-001`) and
+**excludes military**. They do **not** join on id. The only shared field for the
+overlapping (non-military) exhibits is the **exhibit Title** — the catalog's
+`Title` matches the MAP canonical Exhibit Title our unified-title layer keys on.
+So the rollup bridges **Title → unified_title** (`title_to_ut`, normalized), built
+from the articulations' canonical `exhibit_title`. (Discovered post-cron, 2026-06-09:
+a naive `ExhibitID` join baked 0 matches — `students_served`, which joins
+`View_ArticulatedCollegeCourses.ExhibitID` (still `MAP…`), is a *separate*
+preexisting issue.)
+
 ## The rollup rule (`_rollup_exhibit_cr_catalog`)
 
 1. **De-dupe** to `(ExhibitID, SkillLevel, CreditRecommendation)` taking the **MAX**
-   of each credit total (collapses the finer-grain repetition; conservative-high
-   on the ~16% that vary).
-2. **Sum the credit UNITS** up to the credential via `exhibit_id → unified_title`
-   (the articulation crosswalk). Credits are **additive** across CRs and skill
+   of each credit total (`ExhibitID` is still the precise de-dupe key; this
+   collapses the finer-grain repetition; conservative-high on the ~16% that vary).
+2. **Sum the credit UNITS** up to the credential via **Title → unified_title**
+   (`eid → Title → ut`). Credits are **additive** across CRs and skill
    levels → a per-credential **credit volume** (a prioritization signal, like
    `students_served` — not a distinct accounting).
 3. **Never sum the per-CR student headcount.** One member spans multiple CRs/skill

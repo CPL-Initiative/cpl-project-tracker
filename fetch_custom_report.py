@@ -98,7 +98,12 @@ REQUEST_PAYLOAD = [
         # credit/student totals the rollup needs (~37 MB vs ~128 MB for all 27
         # columns). No PII columns. dataCount ~268k rows.
         "viewName": "View_ExhibitCRsCatalog_Dataset",
-        "columnName": ["ExhibitID", "SkillLevel", "CreditRecommendation",
+        # Title is the BRIDGE to our credential layer — the catalog's numeric
+        # ExhibitID is a different namespace from View_ArticulatedMAPExhibits' MAP…
+        # string id, so the rollup joins on exhibit Title (export_credential_reference
+        # → _rollup_exhibit_cr_catalog). SkillLevel + ExhibitID are the precise
+        # de-dupe key; the rest are the credit funnel.
+        "columnName": ["ExhibitID", "SkillLevel", "CreditRecommendation", "Title",
                        "TotalEligibleCreditsForCR", "TotalTranscribedCreditsForCR",
                        "TotalAppliedCreditsForCR", "TotalCreditsInReviewForCR",
                        "TotalStudentsForCR"]
