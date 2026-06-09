@@ -1,0 +1,389 @@
+{
+  "_generated_by": "kb/_fl_subj4_dryrun.py (read-only)",
+  "discipline": "Foreign Languages (unchanged — MQ authoritative)",
+  "fl_mids": 409,
+  "fl_singletons": 1045,
+  "classified": 1447,
+  "residual": 7,
+  "by_language": {
+    "M-ID|Arabic": 14,
+    "M-ID|French": 54,
+    "M-ID|Chinese": 49,
+    "M-ID|German": 27,
+    "M-ID|Italian": 41,
+    "M-ID|Japanese": 41,
+    "M-ID|Portuguese": 7,
+    "M-ID|Spanish": 138,
+    "M-ID|Vietnamese": 8,
+    "M-ID|Punjabi": 4,
+    "M-ID|Korean": 10,
+    "M-ID|Russian": 10,
+    "M-ID|Tagalog": 2,
+    "M-ID|Hebrew": 3,
+    "M-ID|Persian": 1,
+    "singleton|RESIDUAL": 7,
+    "singleton|Arabic": 41,
+    "singleton|Italian": 69,
+    "singleton|Spanish": 401,
+    "singleton|Chinese": 113,
+    "singleton|Vietnamese": 31,
+    "singleton|Japanese": 110,
+    "singleton|French": 105,
+    "singleton|German": 62,
+    "singleton|Portuguese": 9,
+    "singleton|Russian": 37,
+    "singleton|Hebrew": 8,
+    "singleton|Korean": 23,
+    "singleton|Hmong": 7,
+    "singleton|Tagalog": 12,
+    "singleton|Persian": 10
+  },
+  "capacity_per_subj4_band": {
+    "FLAR|1": 54,
+    "FLFR|1": 154,
+    "FLCH|1": 161,
+    "FLGE|1": 88,
+    "FLIT|1": 106,
+    "FLJA|1": 149,
+    "FLPO|1": 16,
+    "FLSP|1": 482,
+    "FLVI|1": 38,
+    "FLPU|1": 4,
+    "FLKO|1": 32,
+    "FLRU|1": 46,
+    "FLTA|1": 14,
+    "FLHE|1": 11,
+    "FLPE|1": 11,
+    "FLSP|9": 57,
+    "FLHM|1": 7,
+    "FLVI|9": 1,
+    "FLFR|9": 5,
+    "FLIT|9": 4,
+    "FLCH|9": 1,
+    "FLAR|9": 1,
+    "FLGE|9": 1,
+    "FLKO|9": 1,
+    "FLJA|9": 2,
+    "FLRU|9": 1
+  },
+  "alias_preview_count": 409,
+  "alias_preview_sample": [
+    [
+      "FLNG M1001",
+      "FLAR",
+      "Arabic",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1002",
+      "FLFR",
+      "French",
+      "1",
+      "member_subject"
+    ],
+    [
+      "FLNG M1003",
+      "FLCH",
+      "Chinese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1004",
+      "FLFR",
+      "French",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1005",
+      "FLFR",
+      "French",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1006",
+      "FLGE",
+      "German",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1007",
+      "FLIT",
+      "Italian",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1008",
+      "FLJA",
+      "Japanese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1009",
+      "FLPO",
+      "Portuguese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1010",
+      "FLSP",
+      "Spanish",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1011",
+      "FLVI",
+      "Vietnamese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1012",
+      "FLFR",
+      "French",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1013",
+      "FLGE",
+      "German",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1014",
+      "FLJA",
+      "Japanese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1015",
+      "FLSP",
+      "Spanish",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1016",
+      "FLVI",
+      "Vietnamese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1017",
+      "FLIT",
+      "Italian",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1018",
+      "FLJA",
+      "Japanese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1019",
+      "FLSP",
+      "Spanish",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1020",
+      "FLSP",
+      "Spanish",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1021",
+      "FLFR",
+      "French",
+      "1",
+      "member_subject"
+    ],
+    [
+      "FLNG M1022",
+      "FLCH",
+      "Chinese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1023",
+      "FLFR",
+      "French",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1024",
+      "FLFR",
+      "French",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1025",
+      "FLGE",
+      "German",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1026",
+      "FLIT",
+      "Italian",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1027",
+      "FLJA",
+      "Japanese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1028",
+      "FLPO",
+      "Portuguese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1029",
+      "FLSP",
+      "Spanish",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1030",
+      "FLVI",
+      "Vietnamese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1031",
+      "FLFR",
+      "French",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1032",
+      "FLGE",
+      "German",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1033",
+      "FLSP",
+      "Spanish",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1034",
+      "FLIT",
+      "Italian",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1035",
+      "FLJA",
+      "Japanese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1036",
+      "FLSP",
+      "Spanish",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1037",
+      "FLVI",
+      "Vietnamese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1038",
+      "FLIT",
+      "Italian",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1039",
+      "FLJA",
+      "Japanese",
+      "1",
+      "member_top"
+    ],
+    [
+      "FLNG M1040",
+      "FLSP",
+      "Spanish",
+      "1",
+      "member_top"
+    ]
+  ],
+  "residual_titles": [
+    [
+      "singleton",
+      "FLNG M10AA",
+      "Cross Age Teaching"
+    ],
+    [
+      "singleton",
+      "FLNG M10GP",
+      "Advanced Nauatl Language and Culture"
+    ],
+    [
+      "singleton",
+      "FLNG M10KN",
+      "Introduction to Aztec-Mexica Culture and Nauatl Language I"
+    ],
+    [
+      "singleton",
+      "FLNG M10KO",
+      "Introduction to Aztec-Mexica Culture and Nauatl Language II"
+    ],
+    [
+      "singleton",
+      "FLNG M10MS",
+      "Beginning Conversational Nauatl"
+    ],
+    [
+      "singleton",
+      "FLNG M10ZI",
+      "Intermediate Nauatl Language and Culture"
+    ],
+    [
+      "singleton",
+      "FLNG M11FQ",
+      "Fundamentals of Healthcare Interpreting"
+    ]
+  ]
+}

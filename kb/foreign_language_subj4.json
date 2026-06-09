@@ -1,0 +1,43 @@
+{
+  "_about": "Curated per-language SUBJ4 surrogates for the 'Foreign Languages' MQ umbrella discipline. Our SYNTHETIC codes (NOT a CCN claim) — scheme = 'FL' + an intuitive 2-letter language tag (Sam, 2026-06-09). Splits the FLNG SUBJ4 collision so each language is a distinct course-identity subject, WHILE the MQ discipline stays 'Foreign Languages' (the authoritative MQ list has no per-language discipline). Used by kb/_fl_subj4_dryrun.py (and the future re-mint apply) to classify each FL M-ID / singleton to a language and re-key its SUBJ4. NOT a daily-cron artifact.",
+  "_model": "SUBJ4 tracks the SUBJECT a student enrolls in; discipline tracks the MQ category. They coincide for ~every discipline; 'Foreign Languages' is the lone umbrella (you enroll in Spanish, not 'a foreign language'), so it earns per-language SUBJ4s. This refines the Rule-7 invariant (one SUBJECT -> one SUBJ4), it does not break it.",
+  "discipline": "Foreign Languages",
+  "naming_scheme": "FL + intuitive 2-letter",
+  "_top_authoritative": {
+    "_note": "CCC TOP 6-digit foreign-language taxonomy, DERIVED from the labeled M-ID member TOP codes (e.g. '1105.00: Spanish'). The most authoritative classifier signal; member TOP labels are self-describing.",
+    "1101.00": "Foreign Language, General (residual)",
+    "1102.00": "French", "1103.00": "German", "1104.00": "Italian",
+    "1105.00": "Spanish", "1106.00": "Russian", "1107.00": "Chinese",
+    "1108.00": "Japanese", "1111.00": "Hebrew", "1112.00": "Arabic",
+    "1117.00": "Asian/South Asian/Pacific - generic (residual)",
+    "1117.10": "Filipino (Tagalog)", "1117.20": "Vietnamese", "1117.30": "Korean",
+    "1119.00": "Portuguese", "1199.00": "Other Foreign Languages (residual)"
+  },
+  "classification_precedence": ["top_code (11xx 6-digit -> language)", "title keyword", "member local-subject code"],
+  "languages": {
+    "Spanish":    {"subj4": "FLSP", "top": ["1105.00"], "subjects": ["SPAN", "SPANISH", "SPA", "SPN"], "title": ["spanish"]},
+    "French":     {"subj4": "FLFR", "top": ["1102.00"], "subjects": ["FREN", "FRENCH", "FR", "FRNC", "FRNCH", "FRCH"], "title": ["french"]},
+    "German":     {"subj4": "FLGE", "top": ["1103.00"], "subjects": ["GERM", "GER", "GRMN", "GERMAN"], "title": ["german"]},
+    "Italian":    {"subj4": "FLIT", "top": ["1104.00"], "subjects": ["ITAL", "ITA", "ITALIAN"], "title": ["italian"]},
+    "Russian":    {"subj4": "FLRU", "top": ["1106.00"], "subjects": ["RUSS", "RUSSIAN"], "title": ["russian"]},
+    "Chinese":    {"subj4": "FLCH", "top": ["1107.00"], "subjects": ["CHIN", "CHI", "MAND", "CANT", "CHINESE", "MANDARIN", "CANTONESE"], "title": ["chinese", "mandarin", "cantonese"], "_note": "Mandarin + Cantonese FOLDED into Chinese (varieties of one language) — Sam default 2026-06-09."},
+    "Japanese":   {"subj4": "FLJA", "top": ["1108.00"], "subjects": ["JAPN", "JAPAN", "JPN", "JA", "JPNS", "JAPA", "JAPANESE"], "title": ["japanese"]},
+    "Hebrew":     {"subj4": "FLHE", "top": ["1111.00"], "subjects": ["HEBR", "HEBREW"], "title": ["hebrew"]},
+    "Arabic":     {"subj4": "FLAR", "top": ["1112.00"], "subjects": ["ARBC", "ARAB", "ARABIC", "ARA"], "title": ["arabic"]},
+    "Tagalog":    {"subj4": "FLTA", "top": ["1117.10"], "subjects": ["TAGA", "TAGALOG", "FILI", "FILIPINO"], "title": ["tagalog", "filipino"]},
+    "Vietnamese": {"subj4": "FLVI", "top": ["1117.20"], "subjects": ["VIET", "VIETNAMESE"], "title": ["vietnamese"]},
+    "Korean":     {"subj4": "FLKO", "top": ["1117.30"], "subjects": ["KOR", "KOREAN", "KORE"], "title": ["korean"]},
+    "Portuguese": {"subj4": "FLPO", "top": ["1119.00"], "subjects": ["PORT", "PORTUGUESE"], "title": ["portuguese"]},
+    "Latin":      {"subj4": "FLLA", "top": [], "subjects": ["LATN", "LATIN"], "title": ["latin"]},
+    "Greek":      {"subj4": "FLGR", "top": [], "subjects": ["GREK", "GREEK"], "title": ["greek"]},
+    "Hindi":      {"subj4": "FLHI", "top": [], "subjects": ["HIND", "HINDI"], "title": ["hindi"]},
+    "Punjabi":    {"subj4": "FLPU", "top": [], "subjects": ["PUNJ", "PUNJABI", "PANJ"], "title": ["punjabi"]},
+    "Hmong":      {"subj4": "FLHM", "top": [], "subjects": ["HMNG", "HMONG"], "title": ["hmong"]},
+    "Persian":    {"subj4": "FLPE", "top": [], "subjects": ["PERS", "FARSI", "PERSIAN"], "title": ["persian", "farsi"]}
+  },
+  "do_not_fold": {
+    "American Sign Language": {"subj4": "SLNA", "_note": "Already its OWN MQ discipline ('Sign Language, American') + SUBJ4 (SLNA). Listed so any ASL title that drifted into FL does NOT misroute to an FL code; it is out of scope for this re-mint."}
+  },
+  "residual_subj4": "FLNG",
+  "_residual_note": "Language-agnostic FL courses keep FLNG until hand-curated: TOP 1101.00 (general) / 1117.00 (Asian-generic) / 1199.00 (other) with NO language in the title, plus interpreting / translation / linguistics courses (Consecutive/Simultaneous Interpretation, Sight Translation, Romance Linguistics)."
+}
