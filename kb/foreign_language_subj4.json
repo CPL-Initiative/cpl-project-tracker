@@ -33,7 +33,8 @@
     "Hindi":      {"subj4": "FLHI", "top": [], "subjects": ["HIND", "HINDI"], "title": ["hindi"]},
     "Punjabi":    {"subj4": "FLPU", "top": [], "subjects": ["PUNJ", "PUNJABI", "PANJ"], "title": ["punjabi"]},
     "Hmong":      {"subj4": "FLHM", "top": [], "subjects": ["HMNG", "HMONG"], "title": ["hmong"]},
-    "Persian":    {"subj4": "FLPE", "top": [], "subjects": ["PERS", "FARSI", "PERSIAN"], "title": ["persian", "farsi"]}
+    "Persian":    {"subj4": "FLPE", "top": [], "subjects": ["PERS", "FARSI", "PERSIAN"], "title": ["persian", "farsi"]},
+    "Nahuatl":    {"subj4": "FLNA", "top": [], "subjects": ["NAHU", "NAUA", "NAHUATL", "NAUATL"], "title": ["nahuatl", "nauatl"]}
   },
   "do_not_fold": {
     "American Sign Language": {"subj4": "SLNA", "_note": "Already its OWN MQ discipline ('Sign Language, American') + SUBJ4 (SLNA). Listed so any ASL title that drifted into FL does NOT misroute to an FL code; it is out of scope for this re-mint."}

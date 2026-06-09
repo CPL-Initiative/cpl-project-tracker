@@ -3,8 +3,8 @@
   "discipline": "Foreign Languages (unchanged — MQ authoritative)",
   "fl_mids": 409,
   "fl_singletons": 1045,
-  "classified": 1447,
-  "residual": 7,
+  "classified": 1452,
+  "residual": 2,
   "by_language": {
     "M-ID|Arabic": 14,
     "M-ID|French": 54,
@@ -21,7 +21,7 @@
     "M-ID|Tagalog": 2,
     "M-ID|Hebrew": 3,
     "M-ID|Persian": 1,
-    "singleton|RESIDUAL": 7,
+    "singleton|RESIDUAL": 2,
     "singleton|Arabic": 41,
     "singleton|Italian": 69,
     "singleton|Spanish": 401,
@@ -36,6 +36,7 @@
     "singleton|Korean": 23,
     "singleton|Hmong": 7,
     "singleton|Tagalog": 12,
+    "singleton|Nahuatl": 5,
     "singleton|Persian": 10
   },
   "capacity_per_subj4_band": {
@@ -56,6 +57,7 @@
     "FLPE|1": 11,
     "FLSP|9": 57,
     "FLHM|1": 7,
+    "FLNA|1": 5,
     "FLVI|9": 1,
     "FLFR|9": 5,
     "FLIT|9": 4,
@@ -354,31 +356,6 @@
       "singleton",
       "FLNG M10AA",
       "Cross Age Teaching"
-    ],
-    [
-      "singleton",
-      "FLNG M10GP",
-      "Advanced Nauatl Language and Culture"
-    ],
-    [
-      "singleton",
-      "FLNG M10KN",
-      "Introduction to Aztec-Mexica Culture and Nauatl Language I"
-    ],
-    [
-      "singleton",
-      "FLNG M10KO",
-      "Introduction to Aztec-Mexica Culture and Nauatl Language II"
-    ],
-    [
-      "singleton",
-      "FLNG M10MS",
-      "Beginning Conversational Nauatl"
-    ],
-    [
-      "singleton",
-      "FLNG M10ZI",
-      "Intermediate Nauatl Language and Culture"
     ],
     [
       "singleton",
