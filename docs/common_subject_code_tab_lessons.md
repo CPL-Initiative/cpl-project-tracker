@@ -513,3 +513,54 @@ source change (one file in this case).
 
 CSC-G family is feature-complete. Future per-column header conventions
 would extend the same tuple+CSS pattern.
+
+## 2026-06-09 — Session 37 (stoic-bardeen): orphan tail on the CSR + FL-split surfacing
+
+Two CSR changes from Sam's live review ("FLSP, etc. subjects don't show on the CSR").
+**2 PRs merged (#330, #331).**
+
+### What's been learned
+- **The CSR is discipline-grain — a subject with no discipline is invisible.** FLSP
+  isn't a discipline; it's a synthetic subject code on a course whose `discipline`
+  was blank, so it attached to no CSR row. The fix wasn't a CSR-rendering change — it
+  was **disciplining the orphan courses** (#330) so they roll up onto a discipline row,
+  plus **surfacing the per-language split** (#331) so the FL codes are findable.
+- **Coarse-but-honest beats blank, when flagged.** #330's TOP-division fallback fills
+  the ~5.9k orphan tail with a 2-digit-division umbrella discipline (`49`→Interdisciplinary
+  Studies, `12`→Health, …) at confidence 0.4 / `⚙ TOP-div`. It deliberately relaxes the
+  "leave catch-alls blank" guardrail (Sam: "whole tail please") — reversible, reviewer-
+  flagged. Side-effect: re-introduces `subject_collision_signal` (0→1,076), expected
+  (the coarse fills haven't been SUBJ4-canonicalized — a future fold queue).
+- **A single-grain reference view CAN surface a finer derived layer.** #331: "Foreign
+  Languages" stays one row (MQ has no per-language discipline) but now shows a
+  `⚯ N splits` chip + a `FLSP · FLFR · …` codes line, and **both** search boxes match
+  the split language-names + codes. The trick is loading the split file
+  (`kb/foreign_language_subj4.json`) + stamping `entry.discipline` on every seed entry
+  so `splitFor()` resolves from raw entries too (the entries are keyed by name but
+  don't carry it).
+- **Live-state ≠ committed-file.** I'd planned an "invalid→split" status relabel off
+  the committed `canonical_subj4: null`, but the live row showed "initiated/FLNG" — the
+  daily cron's `_apply_canonical_subj4.py` had folded a Supabase canonical override on
+  top. Sam's screenshot caught it. **Check the live overlay, not just the committed
+  JSON, before "fixing" a status.**
+- **Verify a browser view you can't load** by computing each row from the JSON
+  (mirroring the consumer's `status()`/`variantsFor()`), then jsdom-test the real
+  consumer (`tests/csr_fl_split.test.js`, 9 checks — mocked fetch + DOM scaffold).
+
+### Current state
+The orphan tail is disciplined (blank disciplines ~7,193→~580; CSR gained umbrella
+rows). FL splits are searchable + visible. Both live on merge. `canonical_subj4.js`
+is a static asset (one file, both HTMLs `<script>`-load it — no Rule-4 mirror).
+
+### Strategic roadmap
+- **Curate the coarse fills:** the `⚙ TOP-div` rows are a reviewer queue (the
+  "by TOP division" Generated-by filter isolates them); the ~580 no-umbrella residual
+  (Media / Fine Arts / Commercial) needs in-tab curation.
+- **Canonical-SUBJ4 fold** for the 1,076 new collision rows is a future re-mint
+  (confirm the coarse discipline first, then canonicalize SUBJ4).
+- The FL-split-surfacing pattern generalizes to any future umbrella split file.
+
+### Next concrete step
+Watch the cron land the CCR discipline column for the 6,590 newly-disciplined courses,
+then (if Sam wants) tighten the coarsest divisions to finer 4-digit TOP→discipline
+mappings where a clean MQ target exists.
