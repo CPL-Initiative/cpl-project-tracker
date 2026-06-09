@@ -7,19 +7,22 @@ session's container cannot — egress allowlist). Sam confirmed the dataset
 
   viewName  : View_ExhibitCRsCatalog_Dataset   (note: _Dataset, NOT _APIDataset)
   dataCount : 268,400 rows  (~78 per exhibit → grain is finer than exhibit×CR)
-  columns   : ExhibitID, CreditRecommendation, Title, Issuer, CPLType…, Level,
+  columns   : ExhibitID, CreditRecommendation, Title, Issuer, SkillLevel, Level,
               TotalStudentsForCR, TotalEligibleCreditsForCR, TotalTranscribed/
               Applied/Apprenticeship/InReviewCreditsForCR, + evidence/criteria.
 
-The CER has been blocked for 3 sessions on a PER-EXHIBIT eligible/student count;
-this dataset has it (ExhibitID + TotalStudentsForCR + TotalEligibleCreditsForCR).
-Before wiring it into the CER we must know the GRAIN: with ~78 rows/exhibit, are
-the `Total…ForCR` values constant within an (ExhibitID, CreditRecommendation)
-group (so the right rollup is "dedupe to distinct CR, then sum/aggregate per
-exhibit") or do they vary per row (so a sum double-counts)? This probe answers
-that from one run and PRINTS it to the log (which Claude reads via the GitHub
-MCP). It writes/commits NOTHING; output is PII-safe (no identity columns are
-requested; small student headcounts are masked <5).
+CustomReport response shape (confirmed from excel_to_dashboard.py:3684): each
+dataset is {viewName, columnName:[...headers...], columnValue:[[...row values...]]}
+— rows are COLUMN-ORIENTED arrays indexed by columnName, not dicts.
+
+Two questions this answers from ONE run, printed to the log (which Claude reads
+via the GitHub MCP), committing NOTHING (PII-safe: no identity columns requested;
+student headcounts masked <5):
+  1. GRAIN — with ~78 rows/exhibit, are the Total…ForCR values constant within an
+     (ExhibitID, CreditRecommendation) group (→ rollup = dedupe-to-CR then
+     aggregate) or do they vary per row (→ don't blind-sum)?
+  2. SKILL-LEVEL structure (Sam's ACE child-exhibit question) — how many exhibits
+     are multi-SkillLevel, and does the #CRs / credit climb with the level?
 
 Invoked by .github/workflows/discover-map-datasets.yml (manual dispatch).
 """
@@ -28,8 +31,8 @@ from collections import defaultdict, Counter
 
 GETREPORT = "https://mapwebapinew.azurewebsites.net/api/CustomReport/getReport"
 VIEW = "View_ExhibitCRsCatalog_Dataset"
-# Lean subset for grain analysis (the credit/student totals + the keys) — keeps
-# the response far under the full 128 MB while revealing the aggregation.
+# Lean subset for grain analysis (keys + the credit/student totals) — keeps the
+# response well under the full 128 MB while revealing the aggregation.
 GRAIN_COLS = ["ExhibitID", "CreditRecommendation", "Title", "CPLTypeDescription",
               "Issuer", "SkillLevel", "Level", "ExhibitType",
               "TotalStudentsForCR", "TotalEligibleCreditsForCR",
@@ -52,16 +55,113 @@ def mask_students(v):
     return "<5" if 0 < n < 5 else (int(n) if n == int(n) else n)
 
 
+def fetch(view, cols):
+    body = json.dumps([{"viewName": view, "columnName": cols}]).encode()
+    req = urllib.request.Request(GETREPORT, data=body,
+                                 headers={"Content-Type": "application/json"}, method="POST")
+    with urllib.request.urlopen(req, timeout=600) as r:
+        return r.read()
+
+
+def analyze(ds):
+    cols = ds.get("columnName", [])
+    ci = {c: i for i, c in enumerate(cols)}          # column name -> index
+    rows = ds.get("columnValue") or ds.get("data") or []
+    print(f"viewName={ds.get('viewName')} dataCount={ds.get('dataCount')} parsed_rows={len(rows)}")
+    print(f"columns returned ({len(cols)}): {cols}")
+    if not rows:
+        print("no rows — response keys were:", list(ds.keys()))
+        return
+
+    def cell(r, name):
+        i = ci.get(name)
+        if i is None:
+            return None
+        return r[i] if isinstance(r, list) and i < len(r) else (r.get(name) if isinstance(r, dict) else None)
+
+    # ── grain: (ExhibitID) and (ExhibitID, CreditRecommendation) ──
+    by_exhibit, by_excr = defaultdict(list), defaultdict(list)
+    for r in rows:
+        eid = cell(r, "ExhibitID")
+        by_exhibit[eid].append(r)
+        by_excr[(eid, cell(r, "CreditRecommendation"))].append(r)
+    print(f"\ndistinct ExhibitID: {len(by_exhibit):,}")
+    print(f"distinct (ExhibitID, CreditRecommendation): {len(by_excr):,}")
+    rpe = [len(v) for v in by_exhibit.values()]
+    rpc = [len(v) for v in by_excr.values()]
+    print(f"rows per exhibit: avg {sum(rpe)/len(rpe):.1f}, max {max(rpe)}")
+    print(f"rows per (exhibit,CR): avg {sum(rpc)/len(rpc):.1f}, max {max(rpc)}")
+
+    print("\nAre Total…ForCR constant within an (ExhibitID, CreditRecommendation)?")
+    for col in TOTALS:
+        varies = sum(1 for g in by_excr.values() if len({to_num(cell(r, col)) for r in g}) > 1)
+        print(f"  {col}: varies within group in {varies:,}/{len(by_excr):,} "
+              + ("(CONSTANT → dedupe-to-CR then aggregate)" if varies == 0 else "(VARIES → a finer key, e.g. SkillLevel, drives the rows)"))
+
+    # Does adding SkillLevel to the key make the totals constant? If YES, SkillLevel
+    # IS part of the grain → the totals are per (exhibit, skill, CR) and the rollup
+    # must key on it — which is direct DATA SUPPORT for Sam's child-exhibit split.
+    by_eslcr = defaultdict(list)
+    for r in rows:
+        by_eslcr[(cell(r, "ExhibitID"), str(cell(r, "SkillLevel") or ""), cell(r, "CreditRecommendation"))].append(r)
+    print(f"\nWith SkillLevel in the key — distinct (ExhibitID, SkillLevel, CreditRecommendation): {len(by_eslcr):,}")
+    for col in ("TotalStudentsForCR", "TotalEligibleCreditsForCR"):
+        varies = sum(1 for g in by_eslcr.values() if len({to_num(cell(r, col)) for r in g}) > 1)
+        print(f"  {col}: varies within group in {varies:,}/{len(by_eslcr):,} "
+              + ("(CONSTANT → SkillLevel IS part of the grain → child-exhibits justified)" if varies == 0 else "(still varies → an even finer key remains)"))
+
+    # ── skill-level structure (ACE military child-exhibit question) ──
+    def is_set(s):
+        return s is not None and str(s).strip().lower() not in ("", "none", "null", "n/a")
+    ex_levels = defaultdict(set)
+    for r in rows:
+        if is_set(cell(r, "SkillLevel")):
+            ex_levels[cell(r, "ExhibitID")].add(str(cell(r, "SkillLevel")).strip())
+    multi = {e: s for e, s in ex_levels.items() if len(s) >= 2}
+    print("\n## Skill-level structure (ACE military child-exhibit question)")
+    print(f"exhibits with a SkillLevel set: {len(ex_levels):,}/{len(by_exhibit):,}")
+    print(f"exhibits with >=2 distinct SkillLevels: {len(multi):,}")
+    print(f"skill-levels-per-exhibit distribution: {dict(sorted(Counter(len(s) for s in ex_levels.values()).items()))}")
+
+    def issuer_of(eid):
+        return next((str(cell(r, "Issuer") or "") for r in by_exhibit[eid]), "")
+    def ace_ish(eid):
+        s = issuer_of(eid).lower()
+        return "ace" in s or "american council" in s or "military" in s
+    for eid in sorted(multi, key=lambda e: (not ace_ish(e), -len(multi[e])))[:3]:
+        per = defaultdict(lambda: {"crs": set(), "stu": 0.0, "elig": 0.0})
+        for r in by_exhibit[eid]:
+            sl = str(cell(r, "SkillLevel") or "").strip()
+            per[sl]["crs"].add(cell(r, "CreditRecommendation"))
+            per[sl]["stu"] = max(per[sl]["stu"], to_num(cell(r, "TotalStudentsForCR")))
+            per[sl]["elig"] = max(per[sl]["elig"], to_num(cell(r, "TotalEligibleCreditsForCR")))
+        title = str(cell(by_exhibit[eid][0], "Title") or "")
+        print(f"\n  ExhibitID={eid} Issuer={issuer_of(eid)[:34]!r} Title={title[:42]!r}")
+        for sl in sorted(per):
+            d = per[sl]
+            print(f"    SkillLevel={sl!r}: {len(d['crs'])} distinct CRs, students~{mask_students(d['stu'])}, elig_credits~{d['elig']}")
+
+    # ── sample 3 exhibits: dedupe-to-CR rollup (the candidate CER aggregation) ──
+    print("\nSample exhibits — dedupe-to-CR rollup (candidate CER aggregation):")
+    for eid in list(by_exhibit)[:3]:
+        crs = {}
+        for (e, cr), g in by_excr.items():
+            if e == eid:
+                crs[cr] = {col: to_num(cell(g[0], col)) for col in TOTALS}
+        roll = {col: sum(c[col] for c in crs.values()) for col in TOTALS}
+        title = str(cell(by_exhibit[eid][0], "Title") or "")
+        print(f"  ExhibitID={eid} Title={title[:46]!r} ({len(crs)} distinct CRs) → "
+              f"students={mask_students(roll['TotalStudentsForCR'])} "
+              f"elig={roll['TotalEligibleCreditsForCR']} transcribed={roll['TotalTranscribedCreditsForCR']} "
+              f"applied={roll['TotalAppliedCreditsForCR']} in_review={roll['TotalCreditsInReviewForCR']}")
+
+
 def main():
     print("=" * 74)
     print(f"Exhibit CRs Catalog grain analysis — {VIEW}")
     print("=" * 74)
-    body = json.dumps([{"viewName": VIEW, "columnName": GRAIN_COLS}]).encode()
-    req = urllib.request.Request(GETREPORT, data=body,
-                                 headers={"Content-Type": "application/json"}, method="POST")
     try:
-        with urllib.request.urlopen(req, timeout=600) as r:
-            raw = r.read()
+        raw = fetch(VIEW, GRAIN_COLS)
     except urllib.error.HTTPError as e:
         print(f"HTTP {e.code}: {e.read()[:400]!r}")
         return
@@ -70,100 +170,11 @@ def main():
         return
     print(f"fetched {len(raw):,} bytes")
     data = json.loads(raw)
-    ds = data[0] if isinstance(data, list) else data
-    rows = ds.get("data") or ds.get("Data") or []
-    print(f"viewName={ds.get('viewName')} dataCount={ds.get('dataCount')} parsed_rows={len(rows)}")
-    if not rows:
-        print("no rows — check the viewName/columns.")
-        return
-    print(f"columns returned: {sorted(rows[0].keys())}\n")
-
-    # ── grain ──
-    by_exhibit = defaultdict(list)
-    by_excr = defaultdict(list)
-    for r in rows:
-        eid = r.get("ExhibitID")
-        cr = r.get("CreditRecommendation")
-        by_exhibit[eid].append(r)
-        by_excr[(eid, cr)].append(r)
-    print(f"distinct ExhibitID: {len(by_exhibit):,}")
-    print(f"distinct (ExhibitID, CreditRecommendation): {len(by_excr):,}")
-    rpe = [len(v) for v in by_exhibit.values()]
-    print(f"rows per exhibit: avg {sum(rpe)/len(rpe):.1f}, max {max(rpe)}")
-    rpc = [len(v) for v in by_excr.values()]
-    print(f"rows per (exhibit,CR): avg {sum(rpc)/len(rpc):.1f}, max {max(rpc)}")
-
-    # ── are the Total…ForCR values CONSTANT within an (exhibit, CR) group? ──
-    # (decides: dedupe-to-CR-then-sum vs the totals already vary per row)
-    print("\nAre Total…ForCR constant within an (ExhibitID, CreditRecommendation)?")
-    for col in TOTALS:
-        varies = sum(1 for g in by_excr.values() if len({to_num(r.get(col)) for r in g}) > 1)
-        print(f"  {col}: varies within group in {varies:,} / {len(by_excr):,} groups "
-              + ("(CONSTANT → dedupe-to-CR then aggregate)" if varies == 0 else "(VARIES → row-level, don't blind-sum)"))
-
-    # ── skill-level structure (ACE military child-exhibit question, Sam 2026-06-09) ──
-    # Many ACE military exhibits carry multiple SkillLevels; Sam reports higher
-    # levels list MORE credit recs and proposes splitting them into child exhibits.
-    # Measure: how many exhibits are multi-skill-level, and does #CRs / credit climb
-    # with the level? (Decides whether SkillLevel should be a child-identity key.)
-    def is_set(s):
-        return s and str(s).strip().lower() not in ("", "none", "null", "n/a")
-    ex_levels = defaultdict(set)
-    for r in rows:
-        if is_set(r.get("SkillLevel")):
-            ex_levels[r.get("ExhibitID")].add(str(r.get("SkillLevel")).strip())
-    multi = {e: sls for e, sls in ex_levels.items() if len(sls) >= 2}
-    print("\n## Skill-level structure (ACE military child-exhibit question)")
-    print(f"exhibits with a SkillLevel set: {len(ex_levels):,} / {len(by_exhibit):,}")
-    print(f"exhibits with >=2 distinct SkillLevels: {len(multi):,}")
-    print(f"skill-levels-per-exhibit distribution: {dict(sorted(Counter(len(s) for s in ex_levels.values()).items()))}")
-    # Sample a few multi-skill-level exhibits — prefer ACE/military issuers — and
-    # show the SkillLevel -> (#distinct CRs, students, eligible) ladder.
-    def ace_ish(eid):
-        iss = next((str(r.get("Issuer") or "") for r in rows if r.get("ExhibitID") == eid), "")
-        return "ace" in iss.lower() or "american council" in iss.lower() or "military" in iss.lower()
-    sample = sorted(multi, key=lambda e: (not ace_ish(e), -len(multi[e])))[:3]
-    for eid in sample:
-        per = defaultdict(lambda: {"crs": set(), "stu": 0.0, "elig": 0.0})
-        title = issuer = ""
-        for r in rows:
-            if r.get("ExhibitID") != eid:
-                continue
-            title = title or str(r.get("Title") or "")
-            issuer = issuer or str(r.get("Issuer") or "")
-            sl = str(r.get("SkillLevel") or "").strip()
-            per[sl]["crs"].add(r.get("CreditRecommendation"))
-            per[sl]["stu"] = max(per[sl]["stu"], to_num(r.get("TotalStudentsForCR")))
-            per[sl]["elig"] = max(per[sl]["elig"], to_num(r.get("TotalEligibleCreditsForCR")))
-        print(f"\n  ExhibitID={eid} Issuer={issuer[:34]!r} Title={title[:42]!r}")
-        for sl in sorted(per):
-            d = per[sl]
-            print(f"    SkillLevel={sl!r}: {len(d['crs'])} distinct CRs, students~{mask_students(d['stu'])}, elig_credits~{d['elig']}")
-
-    # ── sample 3 exhibits: distinct CRs + their totals + a per-exhibit rollup ──
-    print("\nSample exhibits (distinct CRs, totals, and a dedupe-to-CR rollup):")
-    for eid in list(by_exhibit)[:3]:
-        crs = defaultdict(lambda: defaultdict(float))
-        for (e, cr), g in by_excr.items():
-            if e != eid:
-                continue
-            r0 = g[0]
-            for col in TOTALS:
-                crs[cr][col] = to_num(r0.get(col))  # constant-per-CR assumption; verified above
-        title = by_exhibit[eid][0].get("Title")
-        print(f"\n  ExhibitID={eid}  Title={str(title)[:50]!r}  ({len(crs)} distinct CRs)")
-        roll = {col: sum(c[col] for c in crs.values()) for col in TOTALS}
-        for cr, c in list(crs.items())[:4]:
-            print(f"    CR={str(cr)[:46]!r}  students={mask_students(c['TotalStudentsForCR'])} "
-                  f"elig={c['TotalEligibleCreditsForCR']} trans={c['TotalTranscribedCreditsForCR']}")
-        print(f"    → exhibit rollup (sum over distinct CRs): students={mask_students(roll['TotalStudentsForCR'])} "
-              f"elig_credits={roll['TotalEligibleCreditsForCR']} transcribed={roll['TotalTranscribedCreditsForCR']} "
-              f"applied={roll['TotalAppliedCreditsForCR']} in_review={roll['TotalCreditsInReviewForCR']}")
-
+    ds = data[0] if isinstance(data, list) and data else data
+    analyze(ds)
     print("\n" + "=" * 74)
-    print("Claude reads this to lock the exhibit rollup, then wires fetch_custom_report.py")
-    print("(add View_ExhibitCRsCatalog_Dataset) + the CER eligible/students columns.")
-    print("Nothing was committed.")
+    print("Claude reads this to lock the exhibit rollup + the skill-level/child-exhibit")
+    print("decision, then wires fetch_custom_report.py + the CER eligible/students columns.")
     print("=" * 74)
 
 
