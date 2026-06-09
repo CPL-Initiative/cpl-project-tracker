@@ -47937,7 +47937,7 @@ window.CPL_STATEWIDE = {
         "Credit for Basic Military Service - HLTH 101 + PE 101 + (PE 102 or PE 215)"
       ],
       "cpl_type": "Military",
-      "discipline": "Education",
+      "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
       "collaborative_type": "CCC Collaborative",
       "adopters": 18,
@@ -48121,10 +48121,6 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Principles of Health Education"
         },
         {
-          "course": "HEALTH 011",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
           "course": "EXSC 140A",
           "credit": "1 hour in Advanced Strength Training"
         },
@@ -48174,6 +48170,10 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "HSCI C101",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "LACCD GE 7",
           "credit": "3 hours in Principles of Health Education"
         },
         {
@@ -75558,11 +75558,11 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "EMT 90",
-          "credit": "7 hours in Emergency Medical Technician"
+          "credit": "Emergency Medical Technician"
         },
         {
           "course": "EMT 90-A",
-          "credit": "1.5 hours in Introduction to EMS System"
+          "credit": "Introduction to EMS System"
         },
         {
           "course": "EMT 093",
@@ -182384,6 +182384,65 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPICI-A-0A-1-001",
+      "exhibit_ids": [
+        "MAPICI-A-0A-1-001"
+      ],
+      "title": "AGBUS - 024: Agriculture Accounting",
+      "unified_title": "AGBUS - 024: Agriculture Accounting",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AGBUS - 024: Agriculture Accounting"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Agriculture and Natural Resources",
+      "sector": "Agriculture, Water & Environmental Technologies",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Lemoore College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Allan Hancock College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Coalinga College",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Feather River College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Madera College",
+        "Merced College",
+        "Modesto Junior College",
+        "Porterville College",
+        "Reedley College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Ventura College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "AGBUS 024",
+          "credit": "3 hours in Agricultural Accounting"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPCXH-EPOE-1-001",
       "exhibit_ids": [
         "MAPCXH-EPOE-1-001"
@@ -183898,6 +183957,64 @@ window.CPL_STATEWIDE = {
         {
           "course": "HS 061",
           "credit": "6 hours in Nurse Assistant Training"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-A-0T-1-001",
+      "exhibit_ids": [
+        "MAPICI-A-0T-1-001"
+      ],
+      "title": "AG - 014: Tractor Operations",
+      "unified_title": "AG - 014: Tractor Operations",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AG - 014: Tractor Operations"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Agriculture and Natural Resources",
+      "sector": "Agriculture, Water & Environmental Technologies",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Lemoore College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Allan Hancock College",
+        "Butte College",
+        "Cabrillo College",
+        "Coalinga College",
+        "College of the Redwoods",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Feather River College",
+        "Fullerton College",
+        "Hartnell College",
+        "Lassen College",
+        "Los Angeles Pierce College",
+        "Mendocino College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Porterville College",
+        "Reedley College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "AG 014",
+          "credit": "3 hours in Tractor Operations"
         }
       ]
     },
@@ -222220,21 +222337,21 @@ window.CPL_STATEWIDE = {
         "pct": 0.8
       },
       {
+        "college": "Mt. San Antonio College",
+        "credit_recs": 85,
+        "exhibits": 75,
+        "disciplines": 4,
+        "ccc_collaborative": 0,
+        "industry_certs": 4,
+        "pct": 0.8
+      },
+      {
         "college": "Mendocino College",
         "credit_recs": 84,
         "exhibits": 69,
         "disciplines": 5,
         "ccc_collaborative": 26,
         "industry_certs": 30,
-        "pct": 0.7
-      },
-      {
-        "college": "Mt. San Antonio College",
-        "credit_recs": 83,
-        "exhibits": 75,
-        "disciplines": 4,
-        "ccc_collaborative": 0,
-        "industry_certs": 2,
         "pct": 0.7
       },
       {
@@ -222581,11 +222698,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Lemoore College",
-        "credit_recs": 30,
-        "exhibits": 19,
-        "disciplines": 5,
+        "credit_recs": 32,
+        "exhibits": 21,
+        "disciplines": 6,
         "ccc_collaborative": 14,
-        "industry_certs": 20,
+        "industry_certs": 22,
         "pct": 0.3
       },
       {
@@ -222745,20 +222862,20 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Interdisciplinary Studies",
-        "credit_recs": 639,
-        "exhibits": 161,
+        "credit_recs": 640,
+        "exhibits": 162,
         "courses": 27,
         "colleges": 81,
-        "ccc_collaborative": 0,
-        "pct": 5.6
+        "ccc_collaborative": 1,
+        "pct": 5.7
       },
       {
         "discipline": "Health",
-        "credit_recs": 417,
+        "credit_recs": 418,
         "exhibits": 192,
-        "courses": 273,
+        "courses": 272,
         "colleges": 45,
-        "ccc_collaborative": 33,
+        "ccc_collaborative": 32,
         "pct": 3.7
       },
       {
@@ -222853,10 +222970,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Agriculture and Natural Resources",
-        "credit_recs": 86,
-        "exhibits": 59,
-        "courses": 52,
-        "colleges": 4,
+        "credit_recs": 88,
+        "exhibits": 61,
+        "courses": 54,
+        "colleges": 5,
         "ccc_collaborative": 0,
         "pct": 0.8
       },
@@ -222934,8 +223051,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3312,
-        "exhibits": 1141,
+        "credit_recs": 3316,
+        "exhibits": 1143,
         "colleges": 78,
         "pct": 29.3
       },
@@ -222978,8 +223095,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2571,
-        "exhibits": 939,
+        "credit_recs": 2573,
+        "exhibits": 941,
         "colleges": 74,
         "pct": 22.7
       },
@@ -222999,7 +223116,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Noncredit, community education, and contract education coursework (N)",
-        "credit_recs": 203,
+        "credit_recs": 205,
         "exhibits": 168,
         "colleges": 11,
         "pct": 1.8
@@ -223043,8 +223160,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 9806,
-        "exhibits": 3691,
+        "credit_recs": 9810,
+        "exhibits": 3693,
         "colleges": 99,
         "disciplines": 23,
         "pct": 86.6
@@ -223054,7 +223171,7 @@ window.CPL_STATEWIDE = {
         "credit_recs": 1292,
         "exhibits": 163,
         "colleges": 63,
-        "disciplines": 8,
+        "disciplines": 9,
         "pct": 11.4
       },
       {
@@ -223469,6 +223586,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-08T17:29:56",
-  "total_credit_recs": 11323
+  "generated_at": "2026-06-09T13:19:10",
+  "total_credit_recs": 11327
 };
