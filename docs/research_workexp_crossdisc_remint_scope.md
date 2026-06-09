@@ -1,7 +1,7 @@
 ---
 title: Cross-Disciplinary Shared-COR Course Identity — Re-mint Scope
 date: 2026-06-09
-status: SCOPE — pending Sam's approval of the open decisions (§5). NO build yet.
+status: SCOPE + Phase-1 dry-run DONE (read-only, §2a). Pending Sam's §5 decisions before the APPLY build.
 session: 36 (stoic-bardeen)
 tags: [scope, remint, rule-7, cross-listing, cross-disciplinary, work-experience, research, m-id, knowledge-base]
 related:
@@ -89,11 +89,35 @@ is much larger and mostly **invisible** to the identity layer.
    (College of the Desert's `BI/CH/MATH/PH/A 31`). That classifier doesn't exist
    yet.
 
-5. **Exclusion likely costs articulations.** `coci_articulations.json` resolves
-   earned MAP articulations to an identity; an articulation pointing at an excluded
-   shell course can't resolve → it's dropped/unmatched. Work-experience & CWEE are
-   prime experiential CPL targets, so the exclusion may be silently losing real
-   articulation signal. **(Quantify in the dry-run — §6.)**
+5. **Exclusion's articulation cost is smaller than hypothesized — the real cost is
+   invisibility.** The dry-run (below) found ~0 shell courses in the *resolved*
+   `coci_articulations.json` — expected, since the exclusion drops them *before*
+   resolution. The true lost-count needs the raw MAP CustomReport feed (a follow-up
+   measurement). So the primary motivation is **visibility + correct
+   cross-disciplinary representation** of a large real class, not recovering past
+   credit.
+
+## 2a. Dry-run results (Phase 1 — measured 2026-06-09, read-only)
+
+`kb/_crossdisc_dryrun.py` over the 141,738-row raw list + the minted/singleton
+layers (manifest at `kb/crossdisc_dryrun/manifest.json`):
+
+| Type | Raw rows | Colleges | Local subjects | TOP divisions | Intra-college cross-list | Minted today |
+|---|---|---|---|---|---|---|
+| **research** (primary) | 34 | 11 | 16 | 9 | 2 | `MATH M1262` + 17 singletons |
+| **work_experience** (primary) | **2,194** | **106** | **717** | 23 | 66 | **0 (all excluded)** |
+| independent_study (context) | 2,459 | 86 | 647 | 23 | 39 | 0 |
+| internship (context) | 774 | 84 | 309 | 23 | 12 | 0 |
+| supervised_tutoring (context) | 152 | 98 | 69 | 3 | 10 | 0 |
+
+- **Research = a clean, tiny first case** (34 rows) yet unmistakably
+  cross-disciplinary (one concept under **16 subjects / 9 TOP divisions**); today
+  it's `MATH M1262` (mis-subjected, over-merge-flagged) + 17 stranded singletons.
+- **Work Experience = the headline:** **2,194 rows across 106 colleges, 717 local
+  subject codes, 23 TOP divisions — and 0 in the identity layer.** A huge, real,
+  cross-disciplinary class completely invisible to CCR/EACR/CER today.
+- Independent Study (2,459) + Internship (774) are the same shape (large, fully
+  excluded) — strong fast-follow candidates on the same engine.
 
 ## 3. Why this is a Rule-7 re-mint (not a quick fix)
 
@@ -177,16 +201,18 @@ them too.
 
 ## 6. Dry-run plan (measure-first, per the playbook)
 
-Build a read-only `kb/_crossdisc_dryrun.py` that produces a committed manifest +
-report **before any apply** (the `coursecontrolnumber_remint` pattern):
-- The classifier manifest: every shared-COR group, its member (college, subject,
-  number, title, units, TOP), proposed canonical id, and the member-discipline set.
-- Counts: # canonical identities minted, # fragment M-IDs/singletons folded, #
-  raw rows captured, per shell-type.
-- **Articulation impact:** how many `coci_articulations.json` records re-key; how
-  much `adoption_leverage` moves; **how many MAP articulations currently point at
-  excluded shells and are being lost** (§2.5) — re-resolve against the new ids.
-- Alias map (old→new) committed as the receipt + rollback inverse.
+`kb/_crossdisc_dryrun.py` is **built + run** (first results in §2a; manifest at
+`kb/crossdisc_dryrun/manifest.json`) — the measure-first receipt **before any
+apply** (the `coursecontrolnumber_remint` pattern). Done so far: per-type footprint
+(rows / colleges / subjects / TOP-division spread), the intra-college cross-list
+signal, and the existing minted fragments that would fold. **Remaining dry-run
+work, once §5 is locked:**
+- Per-canonical-identity member manifest (college, subject, number, title, units,
+  TOP) + the member-discipline set, and the proposed `SUBJ M####` id per type.
+- The **old→new alias map** committed as the receipt + rollback inverse.
+- **Raw-feed articulation impact:** how many MAP CustomReport articulations point
+  at excluded shells (the §2.5 true lost-count — needs the raw feed, absent here),
+  + how much `adoption_leverage` moves when the 27 curator merges ride along.
 
 ## 7. Validation gates + rollback
 
@@ -204,9 +230,10 @@ report **before any apply** (the `coursecontrolnumber_remint` pattern):
 
 ## 8. Phasing
 
-1. **Dry-run + manifest** (read-only, committed) — answers "what changes?"
-   including the lost-articulations measurement. ← *first build step, after §5.*
-2. **Lock §5 decisions** with Sam against the dry-run numbers.
+1. **Dry-run + manifest** (read-only) — ✅ **DONE** (§2a): per-type footprint +
+   the existing fragments. Remaining items (per-identity member manifest, alias
+   map, raw-feed lost-count) finish once §5 is locked.
+2. **Lock §5 decisions** with Sam against the dry-run numbers. ← *we are here.*
 3. **Apply:** mint canonical identities, re-key articulations (+ the 27 merges),
    `cross_disciplinary` flag + auditor exemption, STOP_PATTERNS routing.
 4. **Verify** (V1-V4) + atomic land + dashboard regen so EACR/CER are current
