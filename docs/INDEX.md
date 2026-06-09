@@ -81,6 +81,9 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Turn a one-time PII audit into a standing guard (committed test over the public artifacts)](kb-notes/methodology-standing-pii-guard.md) | methodology | published | 2026-06-04 | 2026-06-04 |
 | [Methodology — Consolidating near-duplicate course identities within one credential (the ordinal rule)](kb-notes/methodology-within-credential-identity-consolidation.md) | methodology | published | 2026-06-04 | 2026-06-04 (#310 worklist side: co-articulation + SUBJ4 gates) |
 | [Reference — Recovering screen/computer-use reach on Claude Code (web)](kb-notes/reference-claude-code-web-environment-reach.md) | reference | published | 2026-06-04 | 2026-06-04 |
+| [Methodology — Lazy-load heavy per-tab data behind tab activation](kb-notes/methodology-lazy-load-heavy-tab-data.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [Reference — CPL eligibility (military vs non-military) + the Exhibit CRs Catalog rollup](kb-notes/reference-cpl-eligibility-and-exhibit-cr-catalog.md) | reference | published | 2026-06-09 | 2026-06-09 |
+| [Methodology — Cron-as-window (reach egress-blocked data via a workflow + run logs)](kb-notes/methodology-cron-as-discovery-window.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 
 ---
 
@@ -98,7 +101,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
 | [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR / Cred-Ref / CER triage / **merge tool** | **Session 32 (CER refinement #284/#285/#286 + the existing→existing credential MERGE tool)** |
-| [`eacr_consolidation_lessons.md`](eacr_consolidation_lessons.md) | EACR consolidation + gallery (v2) + prescriptive + three-grains + Student view (v3) #301 + the data-unblock loop + **Session 35: CER consolidation EMT 29→18 #308 + the ordinal rule + the CCR worklist co-articulation family merges #310** | **Session 35 (2026-06-04)** |
+| [`eacr_consolidation_lessons.md`](eacr_consolidation_lessons.md) | EACR consolidation + gallery (v2) + prescriptive + three-grains + Student view (v3) #301 + the data-unblock loop + **Session 35: CER consolidation EMT 29→18 #308 + the ordinal rule + the CCR worklist co-articulation family merges #310** + **Session 36: perf lazy-load #314 + cross-disc re-mint RSCH/WKEX #315 + the CER Eligible/Students columns from the Exhibit CRs Catalog #318/#319/#320 (the id-namespace Title-bridge)** | **Session 36 (2026-06-09)** |
 | [`map_api_auth_handoff.md`](map_api_auth_handoff.md) | MAP CustomReport API auth coordination (Teams spec sheet + the no-op pre-stage activation steps) | **Session 27 (2026-06-01) NEW** |
 | [`exhibit_unification_vision.md`](exhibit_unification_vision.md) | Credential design doc | retrospective |
 | [`letter_curator_handoff.md`](letter_curator_handoff.md) | Letter Curator workstream | Session 10 |
@@ -145,6 +148,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 33 → 34 | Sleepy Goodall (handoff) | [`session_34_handoff.md`](session_34_handoff.md) |
 | 34 → 35 | Lucid Wozniak (handoff) | [`session_35_handoff.md`](session_35_handoff.md) |
 | 35 → 36 | CER identity consolidation (handoff) | [`session_36_handoff.md`](session_36_handoff.md) |
+| 36 → 37 | perf + cross-disc re-mint + CER Eligible/Students (handoff) | [`session_37_handoff.md`](session_37_handoff.md) |
 
 ---
 

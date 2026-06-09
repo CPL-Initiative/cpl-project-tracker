@@ -45,8 +45,10 @@ The whole ecosystem, end-to-end:
    to CCR — expand a credential for scope/CPL chips, a statewide-or-generated
    credit rec, green/orange adopted-vs-potential college badges, the
    college-entered exhibit-title variants, and the local courses with units that
-   articulate to it, plus a **⚠ Triage unclassified** worklist that lets reviewers
-   assign a unified title to each raw MAP exhibit title with no credential
+   articulate to it, an **Eligible (units)** column (credit waiting to be unlocked
+   = eligible − transcribed, rolled up from MAP's Exhibit CRs Catalog) and a
+   **Students** impact column, plus a **⚠ Triage unclassified** worklist that lets
+   reviewers assign a unified title to each raw MAP exhibit title with no credential
    identity yet), a
    **quick-start natural-language chat** widget on the first screen (Claude
    API classifies your prompt to one of the 11 tabs **and** can pre-pop the

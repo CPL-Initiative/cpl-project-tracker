@@ -1632,6 +1632,60 @@ extend the family pass to single-college singletons, not just `rows` M-IDs.) (2)
 Session-34 carryover stands: eligible-students dataset wiring, College/System
 audience views, EACR v2 scope, the Signal-B dedup leads.
 
+### Session 36 — perf + cross-disc re-mint + the CER Eligible/Students columns (shipped 2026-06-09)
+
+Three workstreams, **8 PRs merged**. No deep M-ID pipeline churn beyond the
+cross-disc re-mint (pipeline viz refreshed: the re-mint card).
+
+- **#314 PERF (Sam: "super fast"):** lazy-load ~17 MB of per-tab data
+  (`unified_courses_data` 7.1 MB + `statewide_data` 6.6 MB +
+  `credential_reference_data` 2.6 MB + `statewide_prescriptive`) only on first
+  tab-open. `tabs.js` gained `onActivate`/`loadScript`; consumers boot lazily
+  (defensive eager fallback when `CPL_TABS` absent); the generator stops
+  eager-injecting the data tags + self-heals old HTML. Default Dashboard load
+  17 MB → ~1 MB. `tests/lazy_tab_data.test.js`,
+  `docs/kb-notes/methodology-lazy-load-heavy-tab-data.md`.
+- **#315 CROSS-DISC RE-MINT (Rule 7):** minted **RSCH M1001** "Undergraduate
+  Research Experience" (folds `MATH M1262` + 17 research singletons; 34 members,
+  10 cross-listed disciplines) + **WKEX M1001** "Work Experience Education"
+  (net-new; 2,190 members, 105 disciplines). Both `cross_disciplinary=true` /
+  discipline "Interdisciplinary Studies". The auditor EXEMPTS them
+  (`kb/_row_audit.py` early-return → no over-merge/`member_top_divergence`/
+  seed-untouched flags; `member_top_divergence` 1299→1298, `seed_untouched`
+  11150→11148). `cross_listed_disciplines` rides the **minted record** (cron-safe —
+  `coci_curation.json` is rebuilt from Supabase) via an `xdisc_of()` fallback. The
+  root cause this surfaces: `kb/_seed_coci_minted_mids.py` `STOP_PATTERNS`
+  deliberately excludes the whole shell class — that's *why* work-experience was
+  invisible. `kb/_apply_crossdisc_remint.py` (idempotent); alias receipt
+  `kb/crossdisc_out/alias_map.json`. Scope:
+  `docs/research_workexp_crossdisc_remint_scope.md`. **Open follow-on:** ACE
+  skill-level child-exhibits (data-confirmed — own scope doc).
+- **#316/#317 DISCOVERY TOOLING — "cron-as-window":** a session can't reach the
+  MAP hosts (egress allowlist), but a GitHub runner can + Claude reads run logs.
+  `kb/_discover_map_datasets.py` behind a `workflow_dispatch` workflow confirmed
+  the catalog's grain + the ACE skill-level structure.
+  `docs/kb-notes/methodology-cron-as-discovery-window.md`.
+- **#318/#319/#320 CER ELIGIBLE + STUDENTS (the headline — 3-session blocker
+  closed):** MAP's new **Exhibit CRs Catalog** (`View_ExhibitCRsCatalog_Dataset` —
+  note `_Dataset`, NOT `_APIDataset`) → `fetch_custom_report.py` pulls it (lean
+  9 cols) → `_rollup_exhibit_cr_catalog` → CER **"Eligible (units)"** column with
+  "credit waiting to be unlocked = eligible − transcribed". **1,726/1,994
+  populate; eligible ≥ transcribed 100%** (e.g. Military Basic Training 11,528
+  eligible / 0 transcribed). **THE ID-NAMESPACE GOTCHA (#319):** the catalog keys
+  exhibits by a NUMERIC ExhibitID (+ military), but `View_ArticulatedMAPExhibits`
+  (our crosswalk's source) keys by the `MAP…` STRING id (no military) — two
+  namespaces, a naive id join baked 0. Fix: bridge on exhibit **Title** →
+  unified_title. **Students column (#320):** same root cause sank it
+  (`View_ArticulatedCollegeCourses.ExhibitID` is also numeric, 0/37,093 matched +
+  no Title to bridge) → sourced from the catalog's `TotalStudentsForCR` (MAX per
+  exhibit, summed; `<5`-suppressed headcount). Credits sum, headcounts don't.
+  Both columns **confirmed live on the cron** (Sam, 2026-06-09: "Student count is
+  working!"). `kb/_verify_exhibit_cr_eligible.py`, `tests/cer_eligible.test.js`,
+  `docs/kb-notes/reference-cpl-eligibility-and-exhibit-cr-catalog.md`. Carryover:
+  confirm `TotalStudentsForCR` semantics (label only — not a blocker); the JST
+  individual planner + `View_StudentAggregatedValues` ExhibitID/SkillLevel join
+  are the deferred student-portal tier.
+
 ---
 
 ## Troubleshooting

@@ -435,3 +435,52 @@ Cowork-style screen/computer-use on the web env) → new KB note
 worklist learning (the co-articulation + SUBJ4 double-gate that makes `_fam_key`
 safe to apply globally) was folded into
 `docs/kb-notes/methodology-within-credential-identity-consolidation.md`.
+
+---
+
+## Session 36 — perf + cross-disc re-mint + the CER Eligible/Students columns (2026-06-09)
+
+A long session across three workstreams. **8 PRs merged** (#314 perf, #315
+cross-disc re-mint, #316/#317 discovery tooling, #318/#319 eligible column +
+Title-bridge fix, #320 students-from-catalog).
+
+### Learnings
+- **Lazy-load heavy per-tab data behind tab activation** (#314). The dashboard
+  eager-`<script>`-loaded ~17 MB of per-tab JSON before the page was interactive —
+  none needed by the default tab. Defer each payload + its first render to first
+  tab-open (`tabs.js` onActivate/loadScript). 17 MB → ~1 MB default load.
+  `methodology-lazy-load-heavy-tab-data.md`.
+- **The cross-disc shell class was invisible by design** (#315). `kb/_seed_coci_
+  minted_mids.py` STOP_PATTERNS deliberately excluded "administrative shells"
+  (work experience, independent study, …) — that's *why* work-experience had 0
+  minted identities. A principled re-mint (RSCH M1001 + WKEX M1001,
+  cross_disciplinary, auditor-exempt) brings them in. Cross-list rides the MINTED
+  RECORD (cron-safe — `coci_curation.json` is rebuilt from Supabase).
+- **Cron-as-window** (#316/#317): a session can't reach MAP (egress allowlist),
+  but a runner can + Claude reads run logs. Ship a read-only probe behind
+  `workflow_dispatch`. `methodology-cron-as-discovery-window.md`.
+- **The id-namespace gotcha** (#319, the big one): MAP's Exhibit CRs Catalog keys
+  exhibits by a NUMERIC ExhibitID (+ includes military/ACE); View_Articulated
+  MAPExhibits (our crosswalk's source) keys by the MAP… STRING id (no military).
+  Two namespaces — a naive ExhibitID join baked 0. Bridge on exhibit **Title** →
+  unified_title. When a MAP dataset won't join on id, check the id NAMESPACE
+  before assuming a data bug. (Same root cause sank the Students column —
+  View_ArticulatedCollegeCourses.ExhibitID is also numeric, 0/37,093 matched.)
+- **Credits sum, headcounts don't** (#318/#320): eligible/transcribed/applied
+  CREDIT UNITS are additive across CRs/skill-levels (sum them); per-CR STUDENT
+  counts are NOT (one student spans CRs → MAX per exhibit, then sum across
+  exhibits). Credits → no suppression; headcounts → <5-suppressed.
+
+### Current state
+The CER now has an **Eligible (units)** column (1,726/1,994 populate; eligible ≥
+transcribed 100%; "credit waiting to be unlocked = eligible − transcribed" — e.g.
+Military Basic Training 11,528 eligible / 0 transcribed) and a **Students** column
+sourced from the catalog's TotalStudentsForCR (#320) — **both confirmed live on the
+cron** (Sam, 2026-06-09: "Student count is working!"). Cross-disc RSCH/WKEX
+identities are live. Dashboard loads ~1 MB.
+
+### Next concrete step
+Both CER columns are live; only a soft follow-up remains (confirm the
+TotalStudentsForCR label semantics with Sam — not a blocker). Next real work: scope
+the **ACE skill-level child-exhibit** decomposition (data-confirmed: 3,013
+skill-leveled exhibits, 2,428 multi-level).
