@@ -1818,6 +1818,50 @@ the FL** ids → the CCR impact columns + Suggested-merges become per-language-c
 + fill the blank disciplines). Future umbrellas (none else identified). Plus the
 standing Session-36/37 carryover (ACE skill-level scope, College + System views).
 
+### Session 37 (cont. 2) — orphan-tail discipline fallback + FL-split CSR surfacing (shipped 2026-06-09, branch stoic-bardeen)
+
+Triggered by Sam's CSR observation ("FLSP, etc. subjects don't show on the CSR").
+Diagnosis: the CSR is **discipline-grain** (one row per MQ discipline), so a course
+with **no discipline** attaches to no row — and ~5.9k single-college orphans were
+blank because their 6-digit TOP codes are the catch-all buckets the precise passes
+deliberately skip. **2 PRs merged.** No M-ID pipeline re-key (the auditor receipt is
+dynamic — auto-current from `latest.json`; pipeline viz correctly needs no edit).
+
+- **#330 — coarse TOP-division discipline fallback (the orphan tail).** New lowest-
+  precision pass `kb/_infer_disciplines_from_top_division.py` + `kb/top_division_discipline_map.json`
+  fill the orphans with the broad umbrella discipline of their **2-digit TOP division**
+  (`49`→Interdisciplinary Studies, `12`→Health, `09`→Industrial Technology, …; 19
+  divisions mapped to an MQ-verified umbrella, 5 with no honest umbrella left blank).
+  **Filled 6,590** → tail **~7,193→~580**. A deliberate, reversible relaxation of the
+  "leave catch-alls blank" guardrail (Sam: "whole tail please") at confidence **0.4** /
+  `discipline_source="top_division"` (`⚙ TOP-div` badge + "by TOP division" filter).
+  CSR re-seeded → new umbrella rows (Industrial Technology 806, Public Safety 496,
+  Interdisciplinary Studies 2109). Auditor: `blank_discipline` 1,266→**73**;
+  `subject_collision_signal` 0→**1,076** (expected — coarse fills assign a discipline
+  without re-keying SUBJ4 to canonical → candidates for a future canonical-SUBJ4 fold).
+  `kb/_verify_top_division_inference.py` (12 checks). KB note:
+  `methodology-coarse-top-division-discipline-fallback.md`.
+- **#331 — FL splits searchable + visible on the CSR.** The #328 FL re-mint put the
+  per-language codes (`FLSP`/`FLFR`/…) in `kb/foreign_language_subj4.json`, but the
+  discipline-grain CSR kept one "Foreign Languages" row and never surfaced them —
+  searching "Spanish"/"FLSP" found nothing. `canonical_subj4.js` now loads the split
+  file → shows a `⚯ N splits` chip + a per-language codes line on the row, and matches
+  the split language-names+codes in **both** search boxes. Static asset → live on
+  merge. `tests/csr_fl_split.test.js` (9 checks, real consumer via jsdom).
+
+**Patterns:** (1) **A single-grain reference view can surface a finer derived layer**
+(per-language splits under one discipline) via display chips + search-matching the
+derived tokens, without breaking the one-row-per-X grain. (2) **Verify the data that
+drives a browser view you can't load** — compute what each row renders from the JSON
+(mirroring the consumer's `status()`/`variantsFor()`) + jsdom-test the real consumer.
+(3) When a **parallel session already solved part of the problem** (the FL re-mint),
+pivot your fix to the actual remaining gap (searchability), don't redo it. Lessons:
+`docs/common_subject_code_tab_lessons.md`.
+
+**Carryover:** the ~580 honestly-blank residual (no-umbrella divisions — curate in-tab);
+the 1,076 new `subject_collision_signal` rows are a future canonical-SUBJ4-fold queue;
+plus the standing ACE skill-level scope + College/System EACR views.
+
 ---
 
 ## Troubleshooting

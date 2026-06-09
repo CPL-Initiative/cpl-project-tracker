@@ -87,6 +87,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Triaging credential-dedup candidates (merge vs leave-split; scope-of-competency)](kb-notes/methodology-credential-dedup-triage.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Umbrella-discipline SUBJ4 split (one MQ discipline, many subjects)](kb-notes/methodology-umbrella-discipline-subj4-split.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Rank a cleanup queue by downstream impact, not structural leverage](kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [Methodology — Coarse TOP-division discipline fallback (make the orphan tail visible)](kb-notes/methodology-coarse-top-division-discipline-fallback.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [Methodology — Surface a finer derived layer on a single-grain reference tab](kb-notes/methodology-surface-derived-layer-on-single-grain-tab.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 
 ---
 
@@ -99,7 +101,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) | CCR cleanup — cluster dissolution; **Session 37: impact columns #326 + the Foreign-Language SUBJ4 re-mint #327/#328 (umbrella discipline)** | **Session 37 (2026-06-09)** |
 | [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes; **Session 23: #2 sidebar sub-links + #3 display-label map** | Session 23 (Bruh 23, 2026-05-31) |
 | [`engineering_practices_lessons.md`](engineering_practices_lessons.md) | Dev infra / testing / design system (committed jsdom harness + CI, stop-hook fix, `:root` tokens + `var()` rule, prototype-first) | **Session 32 (Busy Feynman, 2026-06-04) NEW** |
-| [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G | Session 11 |
+| [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G; **Session 37: orphan-tail discipline fallback #330 + FL-split CSR search/display #331** | **Session 37 (2026-06-09)** |
 | [`cpl_assistant_lessons.md`](cpl_assistant_lessons.md) | CPL Assistant (in-dashboard RAG chatbot tab; Phase 1 shipped + live `cpl-chat` v14) | **Session 26 (Bruh 26, 2026-06-01) NEW** |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
