@@ -2701,9 +2701,20 @@
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+  // Lazy boot (perf): the ~2.6 MB baked CPL_CREDENTIAL_REFERENCE payload + the
+  // table render are deferred until the Credential Reference (CER) tab is first
+  // opened — no longer eager at page load. tabs.js loadScript injects
+  // credential_reference_data.js on demand, then init() runs. (init() still
+  // falls back to a runtime kb/*.json fetch if the baked global is absent —
+  // e.g. pre-first-cron local dev.) See tabs.js onActivate/loadScript.
+  if (window.CPL_TABS && CPL_TABS.onActivate) {
+    CPL_TABS.onActivate("credential-reference", function () {
+      CPL_TABS.loadScript("credential_reference_data.js", "CPL_CREDENTIAL_REFERENCE", init);
+    });
   } else {
-    init();
+    // Fallback (tabs.js absent — unit tests, or a load-order regression): eager
+    // init, as before the lazy split. init() guards on the data global itself.
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+    else init();
   }
 })();

@@ -9061,15 +9061,30 @@ def main():
                 html = html[:kb_anchor_pos] + kb_inject + html[kb_anchor_pos:]
                 print(f"  Injected CPL KB excerpt ({len(kb_text):,} chars) from {CPL_KB_REPO}")
 
-        # ── Inject statewide interactive scripts (college_lookup, statewide_data, statewide_interactive) ──
+        # ── Strip the deprecated EAGER data <script> tags (perf) ──
+        # These heavy per-tab data payloads (~17 MB total) were formerly eager
+        # <script src> tags loaded at page boot, freezing the main thread before
+        # the default Dashboard tab was even interactive. They are now LAZY-loaded
+        # on first activation of their owning tab (CCR/EACR/CER) via tabs.js
+        # loadScript + each consumer's CPL_TABS.onActivate boot. Strip any stale
+        # eager tag so regenerating an older HTML drops it (idempotent / self-heal).
+        for stale_tag in (
+            '<script src="statewide_data.js"></script>',
+            '<script src="statewide_prescriptive.js"></script>',
+            '<script src="unified_courses_data.js"></script>',
+            '<script src="credential_reference_data.js"></script>',
+        ):
+            html = html.replace('    ' + stale_tag + '\n', '')
+
+        # ── Inject statewide interactive scripts (college_lookup, consumers) ──
+        # NOTE: the heavy *_data.js payloads are intentionally NOT in this list —
+        # they're lazy-loaded per tab (see the stale-tag strip above). Only the
+        # CONSUMER scripts are eager so they can register their onActivate boots.
         sw_scripts = [
             '<script src="docx.min.js"></script>',
             '<script src="college_lookup.js"></script>',
-            '<script src="statewide_data.js"></script>',
-            '<script src="statewide_prescriptive.js"></script>',
             '<script src="statewide_interactive.js"></script>',
             '<script src="college_report_generator.js"></script>',
-            '<script src="unified_courses_data.js"></script>',
             '<script src="unified_courses.js"></script>',
         ]
         # Remove any existing statewide script tags first to guarantee correct order
@@ -9081,7 +9096,7 @@ def main():
             body_end = len(html)
         block = ''.join('    ' + t + '\n' for t in sw_scripts)
         html = html[:body_end] + block + html[body_end:]
-        print("  Ensured statewide interactive script tags present (correct order)")
+        print("  Ensured statewide interactive script tags present (consumers eager; data lazy)")
 
         START_MARKER = "<!-- DATA-START"
         END_MARKER   = "<!-- DATA-END -->"

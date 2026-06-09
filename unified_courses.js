@@ -1842,8 +1842,22 @@
     loadAudit().then(function () { render(); });
   }
 
-  // Process an auth redirect hash as early as possible, then init.
+  // Process an auth redirect hash as early as possible (must run regardless of
+  // which tab is active so a curator magic-link sign-in is captured + shared via
+  // sessionStorage with the other curator tabs).
   consumeAuthHash();
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
-  else init();
+  // Lazy boot (perf): the ~7 MB CPL_UNIFIED_COURSES payload + the table render
+  // are deferred until the Unified Courses (CCR) tab is first opened — they are
+  // no longer eager at page load. tabs.js loadScript injects unified_courses_data.js
+  // on demand, then init() runs. See tabs.js onActivate/loadScript.
+  if (window.CPL_TABS && CPL_TABS.onActivate) {
+    CPL_TABS.onActivate("unified-courses", function () {
+      CPL_TABS.loadScript("unified_courses_data.js", "CPL_UNIFIED_COURSES", init);
+    });
+  } else {
+    // Fallback (tabs.js absent — unit tests, or a load-order regression): eager
+    // init, as before the lazy split. init() guards on the data global itself.
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+    else init();
+  }
 })();
