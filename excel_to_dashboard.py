@@ -5281,7 +5281,7 @@ def _rollup_exhibit_cr_catalog(reports, title_to_ut):
             continue
         cm = {str(c).strip(): i for i, c in enumerate(rep.get("columnName", []))}
         ix, isl, icr, it = cm.get("ExhibitID"), cm.get("SkillLevel"), cm.get("CreditRecommendation"), cm.get("Title")
-        colidx = {c: cm.get(c) for c in _CR_CREDIT_COLS}
+        colidx = {c: cm.get(c) for c in _CR_CREDIT_COLS + ("TotalStudentsForCR",)}
         if ix is None or icr is None or it is None:
             continue
         for row in (rep.get("columnValue") or []):
@@ -5301,21 +5301,41 @@ def _rollup_exhibit_cr_catalog(reports, title_to_ut):
                 v = _credits_to_num(row[ci])
                 if v > slot.get(c, 0.0):
                     slot[c] = v
-    out = {}  # unified_title -> {eligible, transcribed, applied, in_review}
+    out = {}  # unified_title -> {eligible, transcribed, applied, in_review, students}
     for (eid, _skill, _cr), slot in best.items():
         ut = title_to_ut.get(eid_title.get(eid))
         if not ut:
             continue
-        agg = out.setdefault(ut, {"eligible": 0.0, "transcribed": 0.0, "applied": 0.0, "in_review": 0.0})
+        agg = out.setdefault(ut, {"eligible": 0.0, "transcribed": 0.0, "applied": 0.0, "in_review": 0.0, "students": 0.0})
         agg["eligible"] += slot.get("TotalEligibleCreditsForCR", 0.0)
         agg["transcribed"] += slot.get("TotalTranscribedCreditsForCR", 0.0)
         agg["applied"] += slot.get("TotalAppliedCreditsForCR", 0.0)
         agg["in_review"] += slot.get("TotalCreditsInReviewForCR", 0.0)
-    # round to 1 dp (credit units) — keeps the payload tidy + diffs stable
+    # STUDENTS (the catalog's TotalStudentsForCR) — a HEADCOUNT, so the rollup is
+    # DIFFERENT from the additive credit units: take MAX per exhibit (one student
+    # spans that exhibit's CRs/skill-levels, so summing CRs would over-count), then
+    # SUM across the credential's DISTINCT exhibits. A volume signal; the consumer
+    # <5-suppresses it (it's a headcount, unlike the credit columns).
+    eid_smax = {}
+    for (eid, _s, _c), slot in best.items():
+        sv = slot.get("TotalStudentsForCR", 0.0)
+        if sv > eid_smax.get(eid, 0.0):
+            eid_smax[eid] = sv
+    _seen_eid = set()
+    for (eid, _s, _c) in best:
+        if eid in _seen_eid:
+            continue
+        _seen_eid.add(eid)
+        ut = title_to_ut.get(eid_title.get(eid))
+        if ut and ut in out:
+            out[ut]["students"] += eid_smax.get(eid, 0.0)
+    # round to 1 dp (credit units) / int (students) — tidy payload + stable diffs
     for v in out.values():
-        for k in v:
+        for k in ("eligible", "transcribed", "applied", "in_review"):
             v[k] = round(v[k], 1)
-    diag = {"rows_seen": rows_seen, "matched": matched, "groups": len(best), "credentials": len(out)}
+        v["students"] = int(round(v["students"]))
+    diag = {"rows_seen": rows_seen, "matched": matched, "groups": len(best),
+            "credentials": len(out), "with_students": sum(1 for v in out.values() if v["students"] > 0)}
     return out, diag
 
 
@@ -5912,16 +5932,19 @@ def export_credential_reference():
                              "na": bool(_ge.get("na")), "areas_all": bool(_ge.get("areas_all"))}
             if _ge.get("note"):
                 ge_credit_out["note"] = _ge["note"]
-        # Student-impact figure (path 1) — small-cell-suppressed below 5: the
-        # exact count is baked only when ≥5; 1-4 → served_suppressed (shown "<5",
-        # exact number never leaves the cron); 0 / no data → neither field.
-        _served = served_by_ut.get(ut, 0)
-        if served_by_ut:
-            # Cron path: fresh CustomReport data → suppress <5; null for 0/missing.
+        # Student-impact figure — small-cell-suppressed below 5: exact count baked
+        # only when ≥5; 1-4 → served_suppressed (shown "<5", exact never leaves the
+        # cron); 0 / no data → neither. SOURCE = the catalog's TotalStudentsForCR
+        # (via the working Title-bridge): the original View_ArticulatedCollegeCourses
+        # source is id-mismatched (numeric ExhibitID vs our MAP… crosswalk → 0
+        # matches) AND has no exhibit Title to bridge, so the catalog is the path
+        # that resolves. (served_by_ut still computes + logs its diagnostic above.)
+        _served = (eligible_by_ut.get(ut) or {}).get("students", 0) if eligible_by_ut else 0
+        if eligible_by_ut:
             students_served = _served if _served >= SERVED_SUPPRESS_BELOW else None
             served_suppressed = bool(0 < _served < SERVED_SUPPRESS_BELOW)
         else:
-            # No fresh data this run → carry forward last cron values (else null).
+            # No fresh catalog this run → carry forward last cron values (else null).
             students_served, served_suppressed = carry_served.get(ut, (None, False))
         # Eligible-credit FUNNEL (units) from the Exhibit CRs Catalog. Credit UNITS,
         # not headcounts → no suppression. Cron path uses the fresh roll-up; else

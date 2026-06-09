@@ -42,12 +42,12 @@ rows = [
     # max 30) → 70. E1 = 90.
     row("E1", "10", "3u Hist", "Cred A Exhibit", 12, 3), row("E1", "10", "3u Hist", "Cred A Exhibit", 12, 3),
     row("E1", "10", "2u PE", "Cred A Exhibit", 8),
-    row("E1", "20", "3u Hist", "Cred A Exhibit", 40, 10),
-    row("E1", "20", "Leadership", "Cred A Exhibit", 7), row("E1", "20", "Leadership", "Cred A Exhibit", 30),
-    # E2 (a DIFFERENT exhibit, also → Cred A via its title): "welding" (5).
-    row("E2", "", "welding", "Cred A Exhibit Two", 5, 5),
-    # E3 (Cred B): "anatomy" (10).
-    row("E3", "", "anatomy", "Cred B Exhibit", 10),
+    row("E1", "20", "3u Hist", "Cred A Exhibit", 40, 10, stu=30),   # max students for E1 = 30
+    row("E1", "20", "Leadership", "Cred A Exhibit", 7, stu=7), row("E1", "20", "Leadership", "Cred A Exhibit", 30, stu=12),
+    # E2 (a DIFFERENT exhibit, also → Cred A via its title): "welding" (5), 3 students.
+    row("E2", "", "welding", "Cred A Exhibit Two", 5, 5, stu=3),
+    # E3 (Cred B): "anatomy" (10), 10 students.
+    row("E3", "", "anatomy", "Cred B Exhibit", 10, stu=10),
     # E9 — a MILITARY title NOT in title_to_ut (the catalog has ~30k such) → skipped.
     row("E9", "AD1", "ignored", "Aviation Machinist's Mate", 999),
 ]
@@ -64,6 +64,10 @@ check("Cred B eligible = 10", round(out.get("Cred B", {}).get("eligible", -1), 1
 check("Cred A transcribed funnel = 18", round(out.get("Cred A", {}).get("transcribed", -1), 1) == 18.0)
 check("unmatched MILITARY title (not in title_to_ut) excluded", "Cred A" in out and diag["matched"] == 8 and diag["rows_seen"] == 9)
 check("only credentials with a Title match appear", set(out) == {"Cred A", "Cred B"})
+# students = MAX per exhibit (E1=30, E2=3 → Cred A 33), summed across distinct exhibits; Cred B=10.
+check("Cred A students = 33 (MAX-per-exhibit, summed across exhibits)", out.get("Cred A", {}).get("students") == 33)
+check("Cred B students = 10", out.get("Cred B", {}).get("students") == 10)
+check("students is an int headcount (not a float)", isinstance(out.get("Cred B", {}).get("students"), int))
 check("two exhibits with different Titles both fold into one credential", round(out["Cred A"]["eligible"], 1) == 95.0)
 check("_credits_to_num robust", e._credits_to_num("1,234.5") == 1234.5 and e._credits_to_num(None) == 0.0)
 
