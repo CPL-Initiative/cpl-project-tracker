@@ -279,7 +279,9 @@ def _classify_mid_discipline(rec):
     if src == "subject_map" or src == "top_code":
         return {"state": "inferred-high", "value": v, "source": src,
                 "confidence": rec.get("discipline_confidence")}
-    if src == "title_keyword" or src == "description":
+    if src == "title_keyword" or src == "description" or src == "top_division":
+        # top_division is the coarsest tier (2-digit TOP umbrella, conf 0.4);
+        # classified inferred-low so it is NOT mislabeled seed-untouched below.
         return {"state": "inferred-low", "value": v, "source": src,
                 "confidence": rec.get("discipline_confidence")}
     # No source label + value set ≡ original Phase B "draft" classification
