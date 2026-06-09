@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-09T13:19:34.582Z",
+  "scraped_at": "2026-06-09T16:49:51.133Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -63,13 +63,13 @@
         },
         {
           "college": "Norco College",
-          "students": 733,
+          "students": 734,
           "units": 5427,
-          "avgUnits": 7.403819918144611,
+          "avgUnits": 7.393732970027248,
           "transcriptionRate": 61.4,
-          "avgTranscribed": 4.548431105047749,
+          "avgTranscribed": 4.5422343324250685,
           "criteriaMetCount": 5,
-          "militaryStudents": 487,
+          "militaryStudents": 488,
           "nonMilitaryStudents": 252,
           "apprenticeStudents": 93,
           "savings": 10290610,
@@ -198,13 +198,13 @@
         },
         {
           "college": "Bakersfield College",
-          "students": 565,
+          "students": 569,
           "units": 8223,
-          "avgUnits": 14.553982300884956,
+          "avgUnits": 14.451669595782073,
           "transcriptionRate": 8.4,
-          "avgTranscribed": 1.2238938053097346,
+          "avgTranscribed": 1.2152899824253076,
           "criteriaMetCount": 3,
-          "militaryStudents": 522,
+          "militaryStudents": 526,
           "nonMilitaryStudents": 51,
           "apprenticeStudents": 0,
           "savings": 15023782.5,
@@ -293,13 +293,13 @@
         },
         {
           "college": "College of the Desert",
-          "students": 375,
+          "students": 379,
           "units": 2175.5,
-          "avgUnits": 5.801333333333333,
+          "avgUnits": 5.740105540897098,
           "transcriptionRate": 38.2,
-          "avgTranscribed": 2.2173333333333334,
+          "avgTranscribed": 2.1939313984168867,
           "criteriaMetCount": 2,
-          "militaryStudents": 339,
+          "militaryStudents": 343,
           "nonMilitaryStudents": 37,
           "apprenticeStudents": 0,
           "savings": 3156632.5,
@@ -954,16 +954,16 @@
         {
           "college": "Cerro Coso Community College",
           "students": 151,
-          "units": 745,
-          "avgUnits": 4.933774834437086,
+          "units": 740,
+          "avgUnits": 4.900662251655629,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 150,
-          "nonMilitaryStudents": 1,
+          "militaryStudents": 151,
+          "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 1288850,
-          "yearImpact": 4519915,
+          "savings": 1280200,
+          "yearImpact": 4489580,
           "transcribedUnits": 0
         },
         {
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,519",
+      "value": "47,528",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,334"
+          "value": "24,344"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,261"
+          "value": "23,260"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47519,
-    "Units": 224976.65000000002,
+    "Students": 47528,
+    "Units": 224971.65000000002,
     "TranscribedUnits": 96736.95,
-    "Savings": 313442287.75,
-    "YearImpact": 1268646290.3999999,
-    "MilitaryStudents": 24334,
-    "NonMilitaryStudents": 23261,
+    "Savings": 313433637.75,
+    "YearImpact": 1268615955.3999999,
+    "MilitaryStudents": 24344,
+    "NonMilitaryStudents": 23260,
     "AprenticeStudents": 751,
-    "AverageUnits": 4.734456743618343,
-    "TranscribedAverage": 2.035753067194175
+    "AverageUnits": 4.733455015990574,
+    "TranscribedAverage": 2.035367572799192
   }
 }
