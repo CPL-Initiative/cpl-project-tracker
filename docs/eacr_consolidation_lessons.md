@@ -484,3 +484,52 @@ Both CER columns are live; only a soft follow-up remains (confirm the
 TotalStudentsForCR label semantics with Sam — not a blocker). Next real work: scope
 the **ACE skill-level child-exhibit** decomposition (data-confirmed: 3,013
 skill-leveled exhibits, 2,428 multi-level).
+
+## Session 37 — CER credential dedup (the Signal-B leads) + "Eligible students" relabel (2026-06-09)
+
+Sam (AskUserQuestion) chose the **Signal-B dedup leads** as the focus + relabeled
+the student column to **"Eligible students"**. **3 PRs merged** (#322 relabel, #323
+the 21 merges, #324 the detector noise-suppression). No M-ID pipeline movement →
+pipeline viz correctly skipped.
+
+### Learnings
+- **The Signal-B signal is mostly false positives — triage is the work, not merging.**
+  Of the 162 leads, only **21 (~13%)** were true duplicates. The two false-positive
+  classes: (1) **elective-bucket coincidence** — two genuinely-different exams (AP
+  Art History vs AP European History; every CLEP/IB-HL cross-pair) both articulate
+  to ONE generic dumping-ground course (`COMM M1038` → 60+ credentials, 100%
+  "Elective Course Credits"), so they collide on `(course_id, local course)` without
+  being the same exhibit (~62 pairs); (2) **distinct credentials sharing a real
+  course** — different FAA ratings, AWS welding processes/codes (SMAW≠FCAW≠GMAW,
+  D1.1≠D1.5≠D9.1), AP exams (Calc AB≠BC, Lang≠Lit), WSET levels, per-high-school
+  articulations. The deciding line is **scope of competency** (skill Rule 4), NOT
+  title similarity.
+- **Verify against the KB before merging the borderline cases.** A 20-line probe
+  printing each loser/winner's `issuing_agency` + a sample `credit_recommendation`
+  resolved every judgment call: FAA airframe→airframe (A&P combined kept separate);
+  CDCR Correctional/Corrections → the official "Basic Correctional Officer Academy";
+  the 7 AWS "Certification" vs "Qualified Welder" pairs had **identical** issuer +
+  credit rec → clearly one credential.
+- **The detector should encode the producer's noise definition.** The CER producer
+  already flags elective buckets (R1 suppression: ≥0.8-elective / ≥5-credentials /
+  ≤3-colleges). Mirroring that exact rule as a 3rd Signal-B gate dropped the queue
+  **162 → 77** with zero risk (a true dup always shares a REAL course, so bucket-only
+  suppression can't hide one). Keep tooling's noise model in sync with the consumer's.
+- **CER ships live-on-merge** (regenerate `credential_reference_data.js` from
+  committed inputs); the carry-forward (#302/#305) preserves the cron-only
+  Eligible/Students columns on a local regen — verified 543 students + 1726 eligible
+  carried.
+
+### Current state
+CER credentials **1994 → 1973**. Signal-A queue empty; Signal-B detector now
+suppresses bucket noise (residual 77, mostly legitimate Rule-4 splits). The
+student column reads "Eligible students." New KB note
+`methodology-credential-dedup-triage.md` captures the triage taxonomy (complements
+the merge-mechanism `playbook-cer-credential-merge.md`).
+
+### Next concrete step
+The 77 residual Signal-B pairs are genuine but mostly legitimate splits — leave for
+a curator. Next real work is unchanged from Session 36: **scope the ACE skill-level
+child-exhibit decomposition** (the handoff's flagged next-real-work). Standing:
+College + System audience views, EACR v2 scope, the eligible-students-per-exhibit
+dataset wiring.
