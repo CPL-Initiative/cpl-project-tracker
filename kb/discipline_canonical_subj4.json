@@ -6,8 +6,8 @@
   "_counts": {
     "total_disciplines": 147,
     "multi_subj4_disciplines": 19,
-    "needs_review": 23,
-    "seeded_default": 124
+    "needs_review": 22,
+    "seeded_default": 125
   },
   "disciplines": {
     "Administration of Justice": {
@@ -4389,7 +4389,7 @@
       "_notes": null
     },
     "Foreign Languages": {
-      "canonical_subj4": null,
+      "canonical_subj4": "FLNG",
       "source": "curator_override",
       "data_modal": "SPAN",
       "data_modal_is_4letter": true,
@@ -4502,7 +4502,7 @@
       "cte_known_n": 1480,
       "cte_unknown_n": 69,
       "cip_code": null,
-      "needs_review": true,
+      "needs_review": false,
       "reviewed_at": "2026-05-23T17:26:10.27766+00:00",
       "reviewed_by": "map@rccd.edu",
       "validated_at": null,
@@ -10032,5 +10032,7 @@
       "validated_by": null,
       "_notes": null
     }
-  }
+  },
+  "_synced_at": "2026-06-09T23:01:33Z",
+  "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
 }
