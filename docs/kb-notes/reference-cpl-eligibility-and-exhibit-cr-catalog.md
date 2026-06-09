@@ -89,7 +89,7 @@ it from the **catalog's** `TotalStudentsForCR` (Title-bridged, same as eligible)
    (different exhibits ≈ different cohorts). It's a conservative *volume* signal,
    not a distinct-person accounting — a clean **distinct** per-exhibit headcount
    would still need `ExhibitID`+`SkillLevel` added to `View_StudentAggregatedValues`
-   (a pending MAP request). This is what feeds the CER **Students** column (#320):
+   (a pending MAP request). This is what feeds the CER **"Eligible students"** column (#320):
    sourced from the catalog because `View_ArticulatedCollegeCourses.ExhibitID` is in
    the *other* (`MAP…`) namespace and matched 0 of 37,093 — same Title-bridge gotcha
    as the eligible column. Headcounts ARE `<5`-suppressed (units are not).
@@ -107,7 +107,9 @@ on the daily cron.
 (`transcribed/applied/in_review_credits`) **and** `students_served` (the catalog
 headcount rollup) per credential; `credential_reference.js` renders a sortable
 **"Eligible (units)"** column with a hover funnel + **"credit waiting to be
-unlocked" = eligible − transcribed**, plus the **Students** column. Verified by
+unlocked" = eligible − transcribed**, plus the **"Eligible students"** column
+(the catalog `TotalStudentsForCR` headcount rollup; relabeled from "Students"
+2026-06-09 — Sam's call, since the count is the CPL-eligible cohort). Verified by
 `kb/_verify_exhibit_cr_eligible.py` (rollup logic — 10 checks incl. the
 MAX-per-exhibit student case) + `tests/cer_eligible.test.js` (consumer).
 
