@@ -22,7 +22,8 @@ artifacts:
 > **One-sentence summary** — Non-military CPL eligibility is exhibit-deterministic;
 > military eligibility is JST-driven (multiple ACE IDs at differing skill levels);
 > MAP's new **Exhibit CRs Catalog** bakes both into per-(exhibit, skill, CR) credit
-> totals, which we roll up to a per-credential **eligible-credit volume** for the CER.
+> totals, which we roll up to a per-credential **eligible-credit volume** (and a
+> conservative **student-volume**) for the CER.
 
 ## The eligibility model (Sam, 2026-06-09)
 
@@ -66,9 +67,10 @@ overlapping (non-military) exhibits is the **exhibit Title** — the catalog's
 `Title` matches the MAP canonical Exhibit Title our unified-title layer keys on.
 So the rollup bridges **Title → unified_title** (`title_to_ut`, normalized), built
 from the articulations' canonical `exhibit_title`. (Discovered post-cron, 2026-06-09:
-a naive `ExhibitID` join baked 0 matches — `students_served`, which joins
-`View_ArticulatedCollegeCourses.ExhibitID` (still `MAP…`), is a *separate*
-preexisting issue.)
+a naive `ExhibitID` join baked 0 matches.) The CER **Students** column hit the
+*same* wall from the other direction — `View_ArticulatedCollegeCourses.ExhibitID` is
+also numeric and matched 0 of 37,093 against the `MAP…` crosswalk — so #320 re-sources
+it from the **catalog's** `TotalStudentsForCR` (Title-bridged, same as eligible).
 
 ## The rollup rule (`_rollup_exhibit_cr_catalog`)
 
@@ -79,11 +81,18 @@ preexisting issue.)
    (`eid → Title → ut`). Credits are **additive** across CRs and skill
    levels → a per-credential **credit volume** (a prioritization signal, like
    `students_served` — not a distinct accounting).
-3. **Never sum the per-CR student headcount.** One member spans multiple CRs/skill
-   levels, so summing `TotalStudentsForCR` over-counts distinct students. We
-   surface credit **units** only. (A clean *distinct* per-exhibit headcount would
-   need `ExhibitID`+`SkillLevel` added to `View_StudentAggregatedValues` — a
-   pending MAP request; useful but **not** required for the aggregate CER.)
+3. **Student headcount — MAX-per-exhibit, then sum across exhibits (NOT a raw
+   `SUM`).** One member spans multiple CRs/skill levels of the *same* exhibit, so
+   summing `TotalStudentsForCR` over the de-duped rows over-counts. We take the
+   **MAX `TotalStudentsForCR` within each `ExhibitID`** (the exhibit's peak cohort),
+   then **sum that across the distinct exhibits** folding into the credential
+   (different exhibits ≈ different cohorts). It's a conservative *volume* signal,
+   not a distinct-person accounting — a clean **distinct** per-exhibit headcount
+   would still need `ExhibitID`+`SkillLevel` added to `View_StudentAggregatedValues`
+   (a pending MAP request). This is what feeds the CER **Students** column (#320):
+   sourced from the catalog because `View_ArticulatedCollegeCourses.ExhibitID` is in
+   the *other* (`MAP…`) namespace and matched 0 of 37,093 — same Title-bridge gotcha
+   as the eligible column. Headcounts ARE `<5`-suppressed (units are not).
 
 **Privacy:** credit units are not headcounts → no `<5` suppression on the eligible
 column (unlike `students_served`). The standing PII guard still covers any student
@@ -95,11 +104,12 @@ on the daily cron.
 ## CER surfaces
 
 `export_credential_reference()` emits `eligible_credits` + the funnel
-(`transcribed/applied/in_review_credits`) per credential;
-`credential_reference.js` renders a sortable **"Eligible (units)"** column with a
-hover funnel + **"credit waiting to be unlocked" = eligible − transcribed**.
-Verified by `kb/_verify_exhibit_cr_eligible.py` (rollup logic) +
-`tests/cer_eligible.test.js` (consumer).
+(`transcribed/applied/in_review_credits`) **and** `students_served` (the catalog
+headcount rollup) per credential; `credential_reference.js` renders a sortable
+**"Eligible (units)"** column with a hover funnel + **"credit waiting to be
+unlocked" = eligible − transcribed**, plus the **Students** column. Verified by
+`kb/_verify_exhibit_cr_eligible.py` (rollup logic — 10 checks incl. the
+MAX-per-exhibit student case) + `tests/cer_eligible.test.js` (consumer).
 
 ## Open / deferred
 
