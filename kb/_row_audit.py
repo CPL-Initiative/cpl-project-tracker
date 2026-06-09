@@ -104,6 +104,13 @@ GENERIC_DISCIPLINES = {
     "Older Adults: Noncredit",
 }
 
+# Umbrella MQ disciplines: one MQ discipline that legitimately spans many SUBJ4
+# "subjects". 'Foreign Languages' splits per language (FLSP/FLFR/… — the
+# 2026-06-09 re-mint, docs/fl_subj4_remint_scope.md); the SUBJ4 tracks the subject
+# a student enrolls in while the MQ discipline stays coarse. EXEMPT from
+# subject_collision_signal (they are SUPPOSED to span >1 SUBJ4).
+UMBRELLA_DISCIPLINES = {"Foreign Languages"}
+
 def _title_tokens(s):
     """Lowercase tokens ≥3 chars, with stop-words filtered."""
     if not s:
@@ -767,6 +774,12 @@ def _classify_member_top_divergence(rec, mid_top_div):
 def _build_disc_to_modal_subj4(courses):
     """Per-discipline modal SUBJ4 across M-ID rows.
 
+    UMBRELLA DISCIPLINES are exempt: 'Foreign Languages' is an MQ umbrella whose
+    SUBJ4 legitimately splits per language (FLSP/FLFR/… — the 2026-06-09 re-mint),
+    so it is EXPECTED to span many SUBJ4s and must never fire
+    subject_collision_signal. Skipping it here means it gets no modal → the rule
+    can't fire on its M-IDs (keeps the 0-count honest, not by mis-sharing a SUBJ4).
+
     Returns {discipline: modal_subj4} for disciplines whose M-IDs span ≥2
     distinct SUBJ4 codes (the only ones where the collision rule can fire).
     Disciplines with a single SUBJ4 are omitted — no collision possible.
@@ -779,6 +792,8 @@ def _build_disc_to_modal_subj4(courses):
         if rec.get("id_system") != "M-ID":
             continue
         d = rec.get("discipline")
+        if d in UMBRELLA_DISCIPLINES:
+            continue  # umbrella disciplines legitimately span many SUBJ4s — never collide
         s4 = rec.get("subject_4letter") or ""
         if not d or not s4:
             continue

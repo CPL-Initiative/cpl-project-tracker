@@ -3852,7 +3852,7 @@
       "_notes": null
     },
     "Foreign Languages": {
-      "canonical_subj4": "FLNG",
+      "canonical_subj4": null,
       "source": "curator_override",
       "data_modal": "SPAN",
       "data_modal_is_4letter": true,
@@ -3920,7 +3920,32 @@
       "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": null
+      "_notes": null,
+      "is_umbrella": true,
+      "umbrella_subj4_by_language": {
+        "Spanish": "FLSP",
+        "French": "FLFR",
+        "German": "FLGE",
+        "Italian": "FLIT",
+        "Russian": "FLRU",
+        "Chinese": "FLCH",
+        "Japanese": "FLJA",
+        "Hebrew": "FLHE",
+        "Arabic": "FLAR",
+        "Tagalog": "FLTA",
+        "Vietnamese": "FLVI",
+        "Korean": "FLKO",
+        "Portuguese": "FLPO",
+        "Latin": "FLLA",
+        "Greek": "FLGR",
+        "Hindi": "FLHI",
+        "Punjabi": "FLPU",
+        "Hmong": "FLHM",
+        "Persian": "FLPE",
+        "Nahuatl": "FLNA"
+      },
+      "umbrella_residual_subj4": "FLNG",
+      "_umbrella_note": "Foreign Languages is an UMBRELLA MQ discipline: SUBJ4 splits per language (FL + 2-letter); discipline stays 'Foreign Languages'. Re-mint: kb/_apply_fl_subj4_remint.py, 2026-06-09."
     },
     "Forestry/Natural Resources": {
       "canonical_subj4": "ENVR",
