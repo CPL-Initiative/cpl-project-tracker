@@ -152,6 +152,44 @@
       .catch(function () { return { byDiscipline: {} }; });
   }
 
+  // Per-language SUBJ4 split for umbrella disciplines (currently Foreign
+  // Languages → FLSP/FLFR/FLGE/…). MQ has no per-language discipline, so the
+  // discipline stays one row but carries MANY synthetic subjects. We surface
+  // those splits on the row + make them searchable (so "Spanish"/"FLSP" find
+  // the Foreign Languages row). Empty-on-404 so a missing file never crashes.
+  function fetchFLSplit() {
+    return fetch("kb/foreign_language_subj4.json", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .catch(function () { return null; });
+  }
+
+  // Build { disciplineName: [{lang, code, subjects:[…]}, …] } from the split
+  // file. Generalizes to future split files; today it's just Foreign Languages.
+  function buildSplit(fl) {
+    var map = {};
+    if (fl && fl.discipline && fl.languages) {
+      var arr = Object.keys(fl.languages).map(function (lang) {
+        var L = fl.languages[lang] || {};
+        return { lang: lang, code: L.subj4 || "", subjects: L.subjects || [] };
+      }).filter(function (x) { return x.code; });
+      arr.sort(function (a, b) { return a.lang.localeCompare(b.lang); });
+      if (arr.length) map[fl.discipline] = arr;
+    }
+    return map;
+  }
+
+  // The split entry for a row's discipline, or null. (entry.discipline is
+  // stamped on every seed entry at init + on every built row.)
+  function splitFor(entry) {
+    return (entry && entry.discipline && state.split && state.split[entry.discipline]) || null;
+  }
+  // Lowercase "lang code lang code …" haystack for search matching.
+  function splitSearchText(entry) {
+    var s = splitFor(entry);
+    if (!s) return "";
+    return s.map(function (x) { return x.lang + " " + x.code; }).join(" ").toLowerCase();
+  }
+
   // Load C-ID and CCN reference data. Used to:
   //   (a) Show C-ID / CCN match badges per row (count + visual indicator of
   //       whether the canonical SUBJ4 matches the official identifier's
@@ -673,12 +711,16 @@
     });
 
     var filtered = allRows.filter(function (e) {
-      if (state.search && e.discipline.toLowerCase().indexOf(state.search) < 0) return false;
+      // Discipline search also matches a split discipline's language names +
+      // codes, so "Spanish" / "FLSP" surface the Foreign Languages row.
+      if (state.search && e.discipline.toLowerCase().indexOf(state.search) < 0
+          && splitSearchText(e).indexOf(state.search) < 0) return false;
       if (state.subj) {
         var sq = state.subj.toUpperCase();
         var subjHit = (e.canonical_subj4 || "").toUpperCase().indexOf(sq) >= 0
           || (e.data_modal || "").toUpperCase().indexOf(sq) >= 0
-          || Object.keys(variantsFor(e)).some(function (s) { return s.toUpperCase().indexOf(sq) >= 0; });
+          || Object.keys(variantsFor(e)).some(function (s) { return s.toUpperCase().indexOf(sq) >= 0; })
+          || (splitFor(e) || []).some(function (x) { return x.code.toUpperCase().indexOf(sq) >= 0; });
         if (!subjHit) return false;
       }
       return passesFilter(e);
@@ -856,6 +898,25 @@
     };
     input.onkeydown = function (e) { if (e.key === "Enter") input.blur(); };
     var tdCanon = el("td", null, [input]);
+    // Multi-SUBJ4 umbrella (e.g. Foreign Languages): show the per-language
+    // split codes so the curator sees the discipline isn't single-canonical,
+    // and the codes are visibly searchable (matched in render()'s filter).
+    var splitArr = splitFor(entry);
+    if (splitArr && splitArr.length) {
+      var splitTip = splitArr.map(function (x) { return x.lang + " → " + x.code; }).join("\n");
+      var splitChip = el("span", {
+        class: "cs-badge muted",
+        title: "Split per-language (multi-SUBJ4 umbrella):\n" + splitTip,
+      }, ["⚯ " + splitArr.length + " splits"]);
+      splitChip.style.marginLeft = "6px";
+      splitChip.style.cursor = "help";
+      tdCanon.appendChild(splitChip);
+      var codesLine = el("div", {
+        class: "cs-mono",
+        style: "font-size:.68rem;color:#6b7280;margin-top:3px;line-height:1.3;",
+      }, [splitArr.map(function (x) { return x.code; }).join(" · ")]);
+      tdCanon.appendChild(codesLine);
+    }
     // CID / CCN match badges — count official identifiers whose subject
     // equals the canonical SUBJ4 (or, if no canonical set yet, the data
     // modal). Hover tooltip lists the actual identifiers + titles (capped
@@ -1144,12 +1205,18 @@
     state.sess = getSession();
     wireGuidelinesModal();
     wireVariantsModal();
-    Promise.all([fetchSeed(), fetchOverlay(), fetchCidCcn(), fetchCplRollup()]).then(function (parts) {
+    Promise.all([fetchSeed(), fetchOverlay(), fetchCidCcn(), fetchCplRollup(), fetchFLSplit()]).then(function (parts) {
       state.seed = parts[0];
       state.overlay = parts[1];
       state.cidBySubj = parts[2].cidBySubj || {};
       state.ccnBySubj = parts[2].ccnBySubj || {};
       state.cpl = (parts[3] || {}).byDiscipline || {};
+      state.split = buildSplit(parts[4]);
+      // Stamp the discipline name onto every seed entry (the entries are keyed
+      // by name but don't carry it) so splitFor()/status() can resolve it from
+      // the raw entry too, not just from built rows.
+      var dd = state.seed.disciplines || {};
+      Object.keys(dd).forEach(function (n) { if (dd[n] && !dd[n].discipline) dd[n].discipline = n; });
       // Apply any pending quickstart hint stashed before init (refresh case).
       if (window.CPL_QS) applyQsHint(window.CPL_QS.consume(QS_TAB));
       // Toolbar is built once at init. Subsequent state changes only
