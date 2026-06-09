@@ -968,6 +968,28 @@ session resuming the build — read it before touching `kb/` or the curation tab
      blank rather than get a misleading lump-discipline (only ESL `4930.86/.87`
      are mapped). Pass 5 filled **~10,344** (the biggest pass — every staging
      course carries a top_code; blanks 17,537 → ~7,193). Edit the map + re-run.
+   - **COARSE TOP-division fallback (re-runnable, lowest-precision — added Session
+     37, 2026-06-09):** `kb/_infer_disciplines_from_top_division.py` fills the
+     orphan tail the precise passes leave blank (their 6-digit TOP code is a
+     catch-all `*99.00 Other` / `* General` / `4930.xx` Interdisciplinary that
+     `top_discipline_map.json` deliberately omits) with the **broad umbrella
+     discipline of their 2-digit TOP division** via `kb/top_division_discipline_map.json`
+     (`49`→Interdisciplinary Studies, `12`→Health, `09`→Industrial Technology, …;
+     19 divisions mapped to an **MQ-verified** umbrella, 5 with no honest umbrella —
+     Media/Fine-Arts/Commercial — left blank). Fills at **confidence 0.4**,
+     `discipline_source="top_division"` (surfaced as `⚙ TOP-div`, warn-colored, with
+     a **"by TOP division"** Generated-by filter). A deliberate, **reversible
+     relaxation** of the "leave catch-alls blank" guardrail (Sam, 2026-06-09: "whole
+     tail please") so the ~5.9k orphan singletons stop being invisible to the CSR.
+     A division fill is honest (a 09xx course IS an industrial technology) but
+     COARSE (welding vs drafting both → Industrial Technology) — refine via
+     curation. **Filled 6,590** (singletons 5,904→500 blank, minted parents
+     1,268→80). Side-effect: reintroduces `subject_collision_signal` (0→1,076) since
+     the coarse fills assign a discipline without re-keying SUBJ4 to that
+     discipline's canonical — expected, pending a future canonical-SUBJ4 fold.
+     Verified by `kb/_verify_top_division_inference.py`. After running, **re-seed the
+     CSR** (`python3 kb/_seed_canonical_subj4.py`) so the new disciplines/variants
+     surface (the cron doesn't re-seed; it only applies Supabase overlays).
 
 **Generators** (`kb/_seed_*.py`, `_join_*.py`, `_curation_*.py`, `_flag_*.py`)
 are one-shot, kept for provenance — curate by editing JSON / via Supabase, not
@@ -1195,19 +1217,22 @@ mirroring the C-ID anchor, and are usable as ⚇ Unify merge targets.
   committing. (Motivating case: College of the Desert's MATH 31 genuinely *is*
   "Undergraduate Research Experience" in STEM — title match already keeps it; the
   tie-breaker is for the harder cases the title gate can't settle.)
-**Discipline completion — 5 inference passes done (2026-05-22).** Blank
-disciplines went from **21,656 → ~7,193** (~67% filled) across: lexicon passes
-1–3 (`discipline_inference.json` + `_infer_disciplines.py` — subject_map +
-title_keyword), the description pass (`_infer_disciplines_from_desc.py`), and
-the highest-yield TOP-aware pass (`_infer_disciplines_from_top.py` +
-`top_discipline_map.json`, ~10.3k fills). Each fill is a confidence-tiered,
-reviewer-verifiable draft (`discipline_source` ∈
-`subject_map`/`title_keyword`/`description`/`top_code`; surfaced via the
-Generated-by filter + `⚙` badges + **batch-verify**). **The remaining ~7,193
-are mostly the genuinely-ambiguous `4930.xx` academic catch-all** (deliberately
-not auto-filled) — best closed by **reviewer curation in the tab** (now
-well-tooled), not more heuristics. Re-run any pass after editing its
-lexicon/map; all skip reviewed/curated and only fill blanks.
+**Discipline completion — 6 inference passes done (5 precise 2026-05-22; the
+coarse division fallback 2026-06-09).** Blank disciplines went from **21,656 →
+~580** across: lexicon passes 1–3 (`discipline_inference.json` +
+`_infer_disciplines.py` — subject_map + title_keyword), the description pass
+(`_infer_disciplines_from_desc.py`), the highest-yield TOP-aware pass
+(`_infer_disciplines_from_top.py` + `top_discipline_map.json`, ~10.3k fills), and
+the **Session-37 COARSE TOP-division fallback** (`_infer_disciplines_from_top_division.py`
++ `top_division_discipline_map.json`, **6,590 fills** — closed the orphan tail from
+~7,193 to ~580 so it stops being invisible to the CSR). Each fill is a
+confidence-tiered, reviewer-verifiable draft (`discipline_source` ∈
+`subject_map`/`title_keyword`/`description`/`top_code`/`top_division`; surfaced via
+the Generated-by filter + `⚙` badges + **batch-verify**). **The remaining ~580 are
+the divisions with no honest single MQ umbrella** (Media, Fine/Applied Arts,
+Commercial Services, 2 untitled) — intentionally left blank; best closed by
+**reviewer curation in the tab**. Re-run any pass after editing its lexicon/map;
+all skip reviewed/curated and only fill blanks.
 
 **Guardrails when resuming:**
 - The `coci_*.json` files are large (tens of MB). **Never read/cat them into the
@@ -1290,15 +1315,15 @@ Read-only auditor over every M-ID + Cluster. Per row, produces a Trust Card:
   missing / conflicting / not_yet_captured.
 - **Readiness tiers:** ready (≥0.85) / needs_review (≥0.65) /
   needs_repair (≥0.40) / not_ready.
-- **Rule tags + counts (2026-05-29, after `member_top_divergence` landed):**
-  - `seed_untouched_discipline` (11,158) — Phase B subject_map draft never reviewed (Phase 1a)
-  - `subject_collision_signal` (**0** ✓) — Phase 1e cleanup receipt: every M-ID with a discipline now shares the canonical SUBJ4 (down from 7,203 pre-apply)
+- **Rule tags + counts (refreshed 2026-06-09 after the Session-37 coarse TOP-division fill):**
+  - `seed_untouched_discipline` (11,148) — Phase B subject_map draft never reviewed (Phase 1a)
+  - `subject_collision_signal` (**1,076**, was 0 — 2026-06-09) — Phase 1e cleanup receipt; the Session-37 coarse TOP-division fill assigned ~1.2k blank minted parents a broad umbrella discipline **without** re-keying SUBJ4 to that discipline's canonical, so they re-trip the SUBJ4-collision diagnostic. Expected + honest — they're new candidates for a future canonical-SUBJ4 fold; the previously-disciplined rows (incl. the FL split) stay collision-free
   - `unit_anomaly` (4,385) — typical_units represents <50% of member colleges (member-unit variance is high, possible over-merge across different unit-load variants); 71% of flags are 2-member splits like `[3.0, 0.0]` (credit vs noncredit drift in the same M-ID) (Phase 1c)
   - `member_top_divergence` (**1,299**, 2026-05-29) — an M-ID's member colleges carry TOP codes spanning ≥2 broad (2-digit) divisions with ≥30% minority share: the **cross-discipline over-merge** detector (a generic title — "Ethics and Leadership", "Undergraduate Research Experience" — minted courses from different program areas under one identity). **57% (736) carry no other strong signal** — it closes a real gap: `top_discipline_disagreement` only checks the M-ID's single *representative* TOP, so it missed the case where the *members* diverge but the representative matches (the motivating `CRIM M1231`: nursing TOP 1230.10 minority-merged into Admin-of-Justice). 2-digit division grouping inherently suppresses sister-discipline noise (Kinesiology/PE both 0835) — no SISTER_PAIRS needed. **255 are "mis-disciplined"** (assigned discipline isn't even the members' plurality division). Surfaces for review, not a verdict (TOP codes vary by college). (Phase 1c)
   - `top_discipline_disagreement` (857, was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
   - `blank_description` (1,733) — Phase 1a
-  - `blank_discipline` (1,266) — Phase 1a
-  - `discipline_title_mismatch` (742) — title shares 0 tokens with assigned discipline AND ≥2 with some other (Phase 1c)
+  - `blank_discipline` (**73**, was 1,266 — 2026-06-09) — Phase 1a; the coarse TOP-division fill cleared the minted-parent blank tail (1,268→80 blank; residual = the no-honest-umbrella divisions)
+  - `discipline_title_mismatch` (762, was 742) — title shares 0 tokens with assigned discipline AND ≥2 with some other; +20 from coarse umbrella fills (Phase 1c)
   - `description_discipline_disagreement` (78) — description's safe-phrase set points elsewhere with ≥2 mentions (Phase 1c)
   - `generic_title_concrete_discipline` (44) — title is course-format generic; can't justify a specific discipline (Phase 1c)
   - `mid_id_off_scheme` (**2** — `F M1002` + `N M9001`, both blank-discipline; unfixable residue) — was 27 pre-apply

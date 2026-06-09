@@ -1,0 +1,34 @@
+{
+  "_about": "COARSE fallback: 2-digit MAP TOP DIVISION -> a broad, MQ-verified umbrella discipline. Consumed by kb/_infer_disciplines_from_top_division.py to fill blank-discipline staging courses that the precise passes leave blank because their 6-digit TOP code is a catch-all ('*99.00 Other', '* General', 4930.xx Interdisciplinary) deliberately omitted from kb/top_discipline_map.json. This is the LOWEST-precision inference tier (confidence 0.4, discipline_source='top_division', surfaced as a reviewer-triage badge). It deliberately RELAXES the 'leave catch-alls blank' guardrail for the ~5.9k orphan singletons so they stop being invisible to the Common Subjects Reference (Sam, 2026-06-09: 'whole tail please'). A division-level fill is honest (a 09xx course IS an industrial technology) but COARSE (welding vs drafting both land in Industrial Technology) — refine via curation. Reversible: delete a row + re-run, or Verify/override in the tab.",
+  "_division_titles_source": "TOP_Code_Lookup.xlsx 'CCC Discipline Code' -> 'CCC Discipline Title' (authoritative).",
+  "_skipped_divisions": {
+    "06": "Media and Communications — no single honest MQ umbrella (Communication Studies vs Mass Communication vs Journalism vs Multimedia). Left blank.",
+    "10": "Fine and Applied Arts — MQ has no bare 'Art'/'Fine Arts' umbrella (only Graphic/Commercial/Theater/Culinary/Martial). Left blank.",
+    "16": "No authoritative CCC division title. Left blank.",
+    "18": "No authoritative CCC division title. Left blank.",
+    "30": "Commercial Services — fragments into cosmetology/culinary/hotel/travel/janitorial, no honest umbrella. Left blank."
+  },
+  "_confidence": 0.4,
+  "_invariant": "every target MUST exist in reference/mq_disciplines.json (the pass aborts otherwise).",
+  "map": {
+    "01": "Agriculture",
+    "02": "Architecture",
+    "03": "Environmental Technologies",
+    "04": "Biological Sciences",
+    "05": "Business",
+    "07": "Computer Information Systems",
+    "08": "Education",
+    "09": "Industrial Technology",
+    "11": "Foreign Languages",
+    "12": "Health",
+    "13": "Family and Consumer Studies/ Home Economics",
+    "14": "Law",
+    "15": "Humanities",
+    "17": "Mathematics",
+    "19": "Physical Sciences",
+    "20": "Psychology",
+    "21": "Public Safety",
+    "22": "Social Science",
+    "49": "Interdisciplinary Studies"
+  }
+}
