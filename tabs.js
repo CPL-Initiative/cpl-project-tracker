@@ -12,6 +12,7 @@
 // Exposes window.CPL_TABS.activate(tab) so other modules (quickstart.js)
 // can route without touching location.hash directly.
 (function () {
+  var _currentTab = null;
   function navButtons() {
     return Array.prototype.slice.call(
       document.querySelectorAll('nav.cpl-tabs .cpl-tab[data-tab]')
@@ -65,6 +66,14 @@
     closeRail();
     // Refresh auth badge — sign-in state may have changed since last render.
     renderRailAuth();
+    // Announce the activation so heavy per-tab modules (CCR/EACR/CER) can lazy-
+    // load their data payload + do their first render only when their tab is
+    // actually opened (perf — the ~17 MB of tab data is no longer eager). See
+    // onActivate / loadScript below + the consumers' boot wiring.
+    _currentTab = tabName;
+    try {
+      window.dispatchEvent(new CustomEvent('cpl-tab-activated', { detail: { tab: tabName } }));
+    } catch (e) { /* CustomEvent unsupported — onActivate's current() check still fires */ }
   }
   function navigate(tabName, sectionSlug) {
     var hash = (tabName === 'dashboard' && !sectionSlug)
@@ -252,10 +261,48 @@
     renderRailAuth();
   }
 
+  // -- Lazy per-tab boot helpers (perf) ---------------------------------
+  // onActivate(tab, cb): run cb ONCE, the first time `tab` is activated. Covers
+  // the deep-link / refresh-onto-this-tab case where the tab is already active
+  // by the time the consumer registers (tabs.js init() runs before the
+  // consumers' top-level code finishes wiring, so we also check _currentTab).
+  function onActivate(tabName, cb) {
+    var done = false;
+    function go() { if (done) return; done = true; cb(); }
+    window.addEventListener('cpl-tab-activated', function (e) {
+      if (e && e.detail && e.detail.tab === tabName) go();
+    });
+    if (_currentTab === tabName) go();
+  }
+  // loadScript(src, globalName, cb): inject `src` once (idempotent by src) and
+  // invoke cb when it's loaded — or immediately if `globalName` is already on
+  // window. Fails soft (cb still fires on error so the consumer's own
+  // missing-data guard can render a graceful empty state). Used to pull the
+  // heavy per-tab data files (statewide_data.js, unified_courses_data.js, …) on
+  // demand rather than eagerly at page load.
+  function loadScript(src, globalName, cb) {
+    if (globalName && window[globalName]) { cb(); return; }
+    var existing = document.querySelector('script[data-lazy-src="' + src + '"]');
+    if (existing) {
+      if (existing.getAttribute('data-lazy-loaded') === '1') cb();
+      else existing.addEventListener('load', function () { cb(); });
+      return;
+    }
+    var s = document.createElement('script');
+    s.src = src;
+    s.setAttribute('data-lazy-src', src);
+    s.onload = function () { s.setAttribute('data-lazy-loaded', '1'); cb(); };
+    s.onerror = function () { cb(); };
+    document.head.appendChild(s);
+  }
+
   window.CPL_TABS = {
     activate: activate,
     navigate: navigate,
     valid: validTabs,
+    current: function () { return _currentTab; },
+    onActivate: onActivate,
+    loadScript: loadScript,
     openRail: openRail,
     closeRail: closeRail,
     renderRailAuth: renderRailAuth

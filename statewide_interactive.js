@@ -7,13 +7,16 @@
 (function () {
   "use strict";
 
-  var DATA = window.CPL_STATEWIDE;
+  // Data (window.CPL_STATEWIDE / CPL_STATEWIDE_PRESCRIPTIVE) is lazy-loaded on
+  // first EACR-tab open (perf — it's ~7 MB and not needed for the default
+  // dashboard view). tabs.js loadScript injects the payloads when the
+  // "exhibit-adoption" tab is first activated; start() (bottom of file) then
+  // assigns these and runs the first render. The functions below close over
+  // these vars and only execute after start() has run.
+  var DATA = null;
   var LOOKUP = window.CCC_COLLEGE_LOOKUP || {};
-  if (!DATA || !DATA.exhibits) return;
-
-  var exhibits = DATA.exhibits;
-  var container = document.getElementById("statewide-interactive-container");
-  if (!container) return;
+  var exhibits = null;
+  var container = null;
 
   // ── Default order (Sam's tweaks, 2026-06-01) ──
   //  (1) Sink UNCLASSIFIED cards (no credential identity in the KB yet) to the
@@ -23,7 +26,7 @@
   //      while keeping high-opportunity credentials near the top: order each
   //      (issuer, credential) cluster by its best potential, then issuer + title
   //      so variants stay contiguous, then potential/adopters within.
-  (function sortExhibits() {
+  function sortExhibits() {
     var clusterMax = {};
     function ckey(e) { return (e.issuing_agency || "") + "||" + (e.unified_title || e.title || ""); }
     exhibits.forEach(function (e) {
@@ -39,7 +42,7 @@
         || ((b.potential || 0) - (a.potential || 0))                              // within: potential desc
         || ((b.adopters || 0) - (a.adopters || 0));
     });
-  })();
+  }
 
   var PAGE_SIZE = 50;
 
@@ -107,34 +110,39 @@
     });
   }
 
-  // ── Derive filter option sets ──
-  var cplTypes = unique(exhibits.map(function (e) { return e.cpl_type || "Unknown"; }));
-  var disciplines = unique(exhibits.map(function (e) { return e.discipline || "Unknown"; }));
-  var sectors = unique(exhibits.map(function (e) { return e.sector || "Unassigned"; }));
-  var collabTypes = unique(exhibits.map(function (e) { return e.collaborative_type || "Local"; }));
-  // Issuing agencies — only collect non-empty (cards without an issuer skip the filter).
-  // Added by EACR Phase 4 PR-C2 once the generator started emitting e.issuing_agency.
-  var issuers = unique(exhibits.map(function (e) { return e.issuing_agency || ""; }).filter(Boolean));
+  // ── Filter option sets + college rollups ──
+  // Derived from `exhibits` by deriveFromData() inside start(), after the lazy
+  // data load. Declared here (closure scope) so the functions below can read
+  // them; populated once start() runs.
+  var cplTypes = [], disciplines = [], sectors = [], collabTypes = [], issuers = [];
+  var allColleges = {}, collegeNames = [], districtSet = {}, swRegionSet = {}, districts = [], swRegions = [];
   // Vision §6.2 — cards with modal confidence_title below this threshold get a "needs review" badge.
   var CONFIDENCE_THRESHOLD = 0.75;
-
-  // Collect all college names across adopters + potential
-  var allColleges = {};
-  exhibits.forEach(function (e) {
-    (e.adopter_names || []).concat(e.potential_names || []).forEach(function (c) { allColleges[c] = 1; });
-  });
-  var collegeNames = Object.keys(allColleges).sort();
-
-  var districtSet = {}, swRegionSet = {};
-  collegeNames.forEach(function (c) {
-    var info = LOOKUP[c];
-    if (info) {
-      if (info.district) districtSet[info.district] = 1;
-      if (info.swRegion) swRegionSet[info.swRegion] = 1;
-    }
-  });
-  var districts = Object.keys(districtSet).sort();
-  var swRegions = Object.keys(swRegionSet).sort();
+  function deriveFromData() {
+    cplTypes = unique(exhibits.map(function (e) { return e.cpl_type || "Unknown"; }));
+    disciplines = unique(exhibits.map(function (e) { return e.discipline || "Unknown"; }));
+    sectors = unique(exhibits.map(function (e) { return e.sector || "Unassigned"; }));
+    collabTypes = unique(exhibits.map(function (e) { return e.collaborative_type || "Local"; }));
+    // Issuing agencies — only collect non-empty (cards without an issuer skip the filter).
+    // Added by EACR Phase 4 PR-C2 once the generator started emitting e.issuing_agency.
+    issuers = unique(exhibits.map(function (e) { return e.issuing_agency || ""; }).filter(Boolean));
+    // Collect all college names across adopters + potential
+    allColleges = {};
+    exhibits.forEach(function (e) {
+      (e.adopter_names || []).concat(e.potential_names || []).forEach(function (c) { allColleges[c] = 1; });
+    });
+    collegeNames = Object.keys(allColleges).sort();
+    districtSet = {}; swRegionSet = {};
+    collegeNames.forEach(function (c) {
+      var info = LOOKUP[c];
+      if (info) {
+        if (info.district) districtSet[info.district] = 1;
+        if (info.swRegion) swRegionSet[info.swRegion] = 1;
+      }
+    });
+    districts = Object.keys(districtSet).sort();
+    swRegions = Object.keys(swRegionSet).sort();
+  }
 
   // ── State ──
   var state = {
@@ -1175,17 +1183,43 @@
     setTimeout(function () { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
   }
 
-  // ── Init ──
-  // Build the card chrome first so the table is visible immediately; the
-  // Supabase flag overlay loads in the background and triggers a re-render
-  // when it lands. Anonymous viewers see the table fully without waiting.
-  state.sess = getSession();
-  buildCard();
-  renderRows();
-  bindEvents();
-  fetchFlagOverlay().then(function (m) {
-    state.flags = m || {};
-    // Re-render so existing flags surface on first paint after the fetch.
+  // ── Init (deferred until the EACR tab is first opened) ──
+  // Assign the lazy-loaded data, derive the filter vocab, then build the card
+  // chrome so the table is visible immediately; the Supabase flag overlay loads
+  // in the background and triggers a re-render when it lands. Anonymous viewers
+  // see the table fully without waiting.
+  function start() {
+    DATA = window.CPL_STATEWIDE;
+    if (!DATA || !DATA.exhibits) return;
+    exhibits = DATA.exhibits;
+    container = document.getElementById("statewide-interactive-container");
+    if (!container) return;
+    sortExhibits();
+    deriveFromData();
+    state.sess = getSession();
+    buildCard();
     renderRows();
-  });
+    bindEvents();
+    fetchFlagOverlay().then(function (m) {
+      state.flags = m || {};
+      // Re-render so existing flags surface on first paint after the fetch.
+      renderRows();
+    });
+  }
+
+  // Lazy boot (perf): pull the heavy CPL_STATEWIDE (+ prescriptive) payload only
+  // when the Exhibit-Adoption (EACR) tab is first activated — it's ~7 MB and not
+  // needed for the default dashboard view. See tabs.js onActivate/loadScript.
+  if (window.CPL_TABS && CPL_TABS.onActivate) {
+    CPL_TABS.onActivate("exhibit-adoption", function () {
+      CPL_TABS.loadScript("statewide_data.js", "CPL_STATEWIDE", function () {
+        CPL_TABS.loadScript("statewide_prescriptive.js", "CPL_STATEWIDE_PRESCRIPTIVE", start);
+      });
+    });
+  } else {
+    // Fallback (tabs.js absent — unit tests, or a load-order regression): eager
+    // start, as before the lazy split. start() guards on the data global itself.
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+    else start();
+  }
 })();
