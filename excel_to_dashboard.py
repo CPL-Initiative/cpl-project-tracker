@@ -5228,6 +5228,85 @@ def _fam_key(title):
     return " ".join(sorted(set(keep)))
 
 
+# ── Exhibit CRs Catalog → per-credential credit funnel (Sam 2026-06-09) ──
+# The NEW View_ExhibitCRsCatalog_Dataset carries the long-missing PER-EXHIBIT
+# eligible-credit grain (MAP's JST-aggregated totals per credit recommendation).
+EXHIBIT_CR_CATALOG_VIEW = "View_ExhibitCRsCatalog_Dataset"
+_CR_CREDIT_COLS = ("TotalEligibleCreditsForCR", "TotalTranscribedCreditsForCR",
+                   "TotalAppliedCreditsForCR", "TotalCreditsInReviewForCR")
+
+
+def _credits_to_num(v):
+    """Credit-unit value → float (robust to int/float/comma/decimal string)."""
+    if v is None or v == "" or isinstance(v, bool):
+        return 0.0
+    if isinstance(v, (int, float)):
+        return float(v)
+    try:
+        return float(str(v).replace(",", "").strip())
+    except (ValueError, TypeError):
+        return 0.0
+
+
+def _rollup_exhibit_cr_catalog(reports, exid_to_ut):
+    """Roll the Exhibit CRs Catalog up to per-credential CREDIT-unit totals.
+
+    The catalog is per (ExhibitID, SkillLevel, CreditRecommendation, …finer
+    criteria/evidence…); the `Total…ForCR` values REPEAT across the finer rows
+    (verified via the discovery probe: only ~16% of (exhibit,skill,CR) groups
+    vary). So we DE-DUPE to (ExhibitID, SkillLevel, CreditRecommendation) by MAX,
+    then SUM the credit-unit totals up to the credential via exhibit_id →
+    unified_title. Credits are ADDITIVE across CRs/skill-levels → a per-credential
+    credit VOLUME (a prioritization signal, like students_served — NOT a distinct
+    accounting). Per-CR STUDENT headcounts are deliberately NOT summed (one
+    service member spans multiple CRs/skill-levels, so summing over-counts — see
+    the military/non-military note), so this surfaces credit UNITS only.
+
+    Returns ({unified_title: {eligible, transcribed, applied, in_review}}, diag).
+    """
+    best = {}  # (eid, skill, cr) -> {credit_col: max_value}
+    rows_seen = matched = 0
+    for rep in (reports if isinstance(reports, list) else []):
+        if EXHIBIT_CR_CATALOG_VIEW not in str(rep.get("viewName", "")):
+            continue
+        cm = {str(c).strip(): i for i, c in enumerate(rep.get("columnName", []))}
+        ix, isl, icr = cm.get("ExhibitID"), cm.get("SkillLevel"), cm.get("CreditRecommendation")
+        colidx = {c: cm.get(c) for c in _CR_CREDIT_COLS}
+        if ix is None or icr is None:
+            continue
+        for row in (rep.get("columnValue") or []):
+            rows_seen += 1
+            eid = str(row[ix]).strip() if (ix < len(row) and row[ix] is not None) else ""
+            if eid not in exid_to_ut:
+                continue
+            matched += 1
+            skill = str(row[isl]).strip() if (isl is not None and isl < len(row) and row[isl] is not None) else ""
+            cr = row[icr] if icr < len(row) else None
+            slot = best.setdefault((eid, skill, cr), {})
+            for c, ci in colidx.items():
+                if ci is None or ci >= len(row):
+                    continue
+                v = _credits_to_num(row[ci])
+                if v > slot.get(c, 0.0):
+                    slot[c] = v
+    out = {}  # unified_title -> {eligible, transcribed, applied, in_review}
+    for (eid, _skill, _cr), slot in best.items():
+        ut = exid_to_ut.get(eid)
+        if not ut:
+            continue
+        agg = out.setdefault(ut, {"eligible": 0.0, "transcribed": 0.0, "applied": 0.0, "in_review": 0.0})
+        agg["eligible"] += slot.get("TotalEligibleCreditsForCR", 0.0)
+        agg["transcribed"] += slot.get("TotalTranscribedCreditsForCR", 0.0)
+        agg["applied"] += slot.get("TotalAppliedCreditsForCR", 0.0)
+        agg["in_review"] += slot.get("TotalCreditsInReviewForCR", 0.0)
+    # round to 1 dp (credit units) — keeps the payload tidy + diffs stable
+    for v in out.values():
+        for k in v:
+            v[k] = round(v[k], 1)
+    diag = {"rows_seen": rows_seen, "matched": matched, "groups": len(best), "credentials": len(out)}
+    return out, diag
+
+
 def export_credential_reference():
     """Build credential_reference_data.js — the lean payload consumed by the
     Credential Reference tab. Joins the credential-identity layer
@@ -5455,6 +5534,47 @@ def export_credential_reference():
                 carry_served = {}
         print(f"  Students-served roll-up skipped (CustomReport absent — carried forward "
               f"{len(carry_served)} prior values; refreshes on the daily cron)")
+
+    # Per-credential ELIGIBLE CREDITS (units) from the NEW Exhibit CRs Catalog
+    # (Sam 2026-06-09) — the long-blocked eligible side. _rollup_exhibit_cr_catalog
+    # de-dupes the catalog's finer-grain row repetition (max per exhibit×skill×CR)
+    # and SUMS credit UNITS up to the credential. Credits, not headcounts → no <5
+    # suppression (not PII). Carries forward like students_served when the
+    # CustomReport is absent (local / live-on-merge regen) so the column doesn't
+    # oscillate blank. exid_to_ut was built above for students_served.
+    eligible_by_ut = {}   # ut -> {eligible, transcribed, applied, in_review}
+    carry_eligible = {}   # ut -> {…}; used when the CustomReport is absent
+    if EXHIBIT_FILE and os.path.exists(EXHIBIT_FILE):
+        try:
+            with open(EXHIBIT_FILE, encoding="utf-8") as _f:
+                _crc = json.load(_f)
+            eligible_by_ut, _eldiag = _rollup_exhibit_cr_catalog(_crc, exid_to_ut)
+            print(f"  Exhibit-CR eligible roll-up: {_eldiag['credentials']} credentials "
+                  f"(catalog rows={_eldiag['rows_seen']} matched_exhibitid={_eldiag['matched']} "
+                  f"deduped_groups={_eldiag['groups']})")
+            if _eldiag['rows_seen'] and _eldiag['matched'] == 0:
+                print(f"    ⚠ 0 of {_eldiag['rows_seen']} catalog rows' ExhibitID matched the "
+                      f"crosswalk ({len(exid_to_ut)} keys) — ID-format mismatch?")
+        except (json.JSONDecodeError, IOError, TypeError, KeyError) as _e:
+            print(f"  Exhibit-CR eligible roll-up skipped (CustomReport unreadable: {_e})")
+    else:
+        if os.path.exists(out_js):
+            try:
+                with open(out_js, encoding="utf-8") as _pf:
+                    _ptxt = _pf.read()
+                _ptxt = _ptxt[_ptxt.index("=") + 1:].strip().rstrip(";")
+                for _pr in (json.loads(_ptxt).get("unified_titles") or []):
+                    if _pr.get("eligible_credits") is not None:
+                        carry_eligible[_pr.get("ut")] = {
+                            "eligible": _pr.get("eligible_credits"),
+                            "transcribed": _pr.get("transcribed_credits"),
+                            "applied": _pr.get("applied_credits"),
+                            "in_review": _pr.get("in_review_credits"),
+                        }
+            except (ValueError, IOError, KeyError):
+                carry_eligible = {}
+        print(f"  Exhibit-CR eligible roll-up skipped (CustomReport absent — carried forward "
+              f"{len(carry_eligible)} prior values; refreshes on the daily cron)")
 
     # course_ids referenced by articulations — bounds the units lookup below.
     needed_cids = {a.get("course_id") for a in articulations if a.get("course_id")}
@@ -5781,11 +5901,27 @@ def export_credential_reference():
         else:
             # No fresh data this run → carry forward last cron values (else null).
             students_served, served_suppressed = carry_served.get(ut, (None, False))
+        # Eligible-credit FUNNEL (units) from the Exhibit CRs Catalog. Credit UNITS,
+        # not headcounts → no suppression. Cron path uses the fresh roll-up; else
+        # carry forward. None (renders "—") = no catalog match; 0.0 = matched but
+        # no eligible credit yet. eligible − transcribed = "credit waiting to be
+        # unlocked" (computed consumer-side).
+        _elig = eligible_by_ut.get(ut) if eligible_by_ut else carry_eligible.get(ut)
+        eligible_credits = transcribed_credits = applied_credits = in_review_credits = None
+        if _elig:
+            eligible_credits = _elig.get("eligible")
+            transcribed_credits = _elig.get("transcribed")
+            applied_credits = _elig.get("applied")
+            in_review_credits = _elig.get("in_review")
         row = {
             "ut": ut,
             "ge_credit": ge_credit_out,
             "students_served": students_served,
             "served_suppressed": served_suppressed,
+            "eligible_credits": eligible_credits,
+            "transcribed_credits": transcribed_credits,
+            "applied_credits": applied_credits,
+            "in_review_credits": in_review_credits,
             "raw_count": raw_count_by_ut[ut],
             "raw_variants": sorted(raw_variants_by_ut.get(ut, []), key=lambda v: v["r"]),
             "issuer": issuer_val,
