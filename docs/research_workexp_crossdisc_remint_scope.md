@@ -1,7 +1,7 @@
 ---
 title: Cross-Disciplinary Shared-COR Course Identity — Re-mint Scope
 date: 2026-06-09
-status: SCOPE + Phase-1 dry-run DONE (read-only, §2a). Pending Sam's §5 decisions before the APPLY build.
+status: APPLIED — research (RSCH M1001) + work-experience (WKEX M1001) landed this session (§8). §5 defaulted on Sam's "apply + move forward".
 session: 36 (stoic-bardeen)
 tags: [scope, remint, rule-7, cross-listing, cross-disciplinary, work-experience, research, m-id, knowledge-base]
 related:
@@ -230,16 +230,28 @@ work, once §5 is locked:**
 
 ## 8. Phasing
 
-1. **Dry-run + manifest** (read-only) — ✅ **DONE** (§2a): per-type footprint +
-   the existing fragments. Remaining items (per-identity member manifest, alias
-   map, raw-feed lost-count) finish once §5 is locked.
-2. **Lock §5 decisions** with Sam against the dry-run numbers. ← *we are here.*
-3. **Apply:** mint canonical identities, re-key articulations (+ the 27 merges),
-   `cross_disciplinary` flag + auditor exemption, STOP_PATTERNS routing.
-4. **Verify** (V1-V4) + atomic land + dashboard regen so EACR/CER are current
-   before the next cron.
-5. **Fast-follows:** remaining shell-types; then the harder
-   *interdisciplinary-content* cross-listings (Social Psychology, Ethnic Studies).
+1. **Dry-run + manifest** (read-only) — ✅ **DONE** (§2a).
+2. **§5 decisions** — defaulted on Sam's "apply + move forward": research +
+   work-experience; ONE identity each (General-vs-Occupational split is a
+   fast-follow); reuse `cross_listed_disciplines`; the 27 curator merges deferred
+   to a separate clean follow-up (kept this apply focused).
+3. **Apply** — ✅ **DONE** (`kb/_apply_crossdisc_remint.py`): minted **RSCH M1001**
+   (folds `MATH M1262` + 17 research singletons; 34 members, 10 cross-listed
+   disciplines) + **WKEX M1001** (net-new; 2,190 members, 105 disciplines), both
+   `cross_disciplinary=true` with discipline "Interdisciplinary Studies". Auditor
+   exempts them (`kb/_row_audit.py`); cross-list rides the **minted record**
+   (cron-safe — `coci_curation.json` is rebuilt from Supabase) with an
+   `xdisc_of()` fallback in the generator. Alias receipt at
+   `kb/crossdisc_out/alias_map.json`. Articulations untouched (0 records — research
+   had none; work-exp net-new).
+4. **Verify** — ✅ V1–V4 + **export-seam output-diff** (ran `export_unified_courses`
+   against the mutated kb: both rows render with disc + xdisc + members; in-browser
+   rows 16,260→16,261; repo clean). The next daily cron regenerates the published
+   `unified_courses_*.js` (no need to commit the ~30 MB regen here).
+5. **Fast-follows:** General-vs-Occupational work-experience split; Independent
+   Study (2,459) + Internship (774) on the same engine; the 27 curator-merge
+   propagation; then the harder *interdisciplinary-content* cross-listings
+   (Social Psychology, Ethnic Studies).
 
 ---
 

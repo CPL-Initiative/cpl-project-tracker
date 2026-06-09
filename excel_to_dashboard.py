@@ -5944,6 +5944,13 @@ def export_unified_courses():
         c = curation.get(cid)
         v = c.get("cross_listed_disciplines") if c else None
         if not v:
+            # Cron-safe fallback: coci_curation.json is rebuilt from Supabase each
+            # cron, but the minted catalog (cat) is not — so a cross-disciplinary
+            # shared-COR identity (Research, Work Experience, …) carries its
+            # cross-list on the minted record itself. See kb/_apply_crossdisc_remint.py.
+            mrec = cat.get(cid)
+            v = mrec.get("cross_listed_disciplines") if mrec else None
+        if not v:
             return None
         parts = [p.strip() for p in str(v).split(",") if p.strip()]
         return parts or None
