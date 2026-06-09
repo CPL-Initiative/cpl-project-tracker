@@ -65,6 +65,18 @@ into the Pipeline Reference below or into dedicated docs.
      SL/SNLA) collapse to a single canonical SUBJ4 at re-mint. The
      `subject_collision_signal` rule (Phase 1c queued) surfaces these
      so curators can confirm the canonical choice before re-mint.
+   - **Umbrella-discipline exception (2026-06-09, Session 37).** One MQ
+     discipline that is genuinely a *parent over many distinct subjects*
+     splits its SUBJ4 per subject — the invariant becomes *one **SUBJECT**
+     → one SUBJ4*. **"Foreign Languages"** is the lone umbrella today:
+     its 1,452 identities re-keyed `FLNG` → per-language `FL**` (FLSP
+     Spanish · FLFR French · FLCH Chinese · …) while the **MQ discipline
+     stays "Foreign Languages"** (authoritative MQ has no per-language
+     discipline). Umbrella disciplines are listed in `UMBRELLA_DISCIPLINES`
+     (`kb/_row_audit.py`) and are **exempt from `subject_collision_signal`**
+     (they're *supposed* to span many SUBJ4s). Scope:
+     [`docs/fl_subj4_remint_scope.md`](docs/fl_subj4_remint_scope.md);
+     map: `kb/foreign_language_subj4.json`; apply: `kb/_apply_fl_subj4_remint.py`.
    - **C-IDs and CCN-IDs preserve their official format** — they're
      external authorities with variable lengths (`ANTH 100`, `AG-PS 104`,
      `ANTH C1000`). Never re-key.
@@ -1737,6 +1749,49 @@ The Session-36 carryover stands: **ACE skill-level child-exhibit** scope (the
 handoff's flagged next-real-work, data-confirmed), the **College + System
 audience views** (System needs the privacy ADR finished), **EACR v2** scope, and
 the eligible-students-per-exhibit dataset wiring when Sam sends it.
+
+### Session 37 (cont.) — CCR impact columns + the Foreign-Language SUBJ4 re-mint (shipped 2026-06-09)
+
+Sam pivoted to "get the CCR cleaner where there are obvious opportunities." **3 PRs.**
+
+- **#326 — CCR Eligible-units + Students columns + 🎯 Cleanup-impact preset.** The
+  Unified Courses tab can now be ranked by **real student-credit payoff**, not just
+  the auditor's structural leverage (`members × (1−trust)`). `export_unified_courses`
+  rolls the CER's per-credential eligible-credit + student totals up to each course
+  via the articulation crosswalk (credential→course), unioning Phase-B
+  `consolidated_from`; emitted on ~693 main rows (`eu`/`st`). Consumer: 2 sortable
+  columns + over-merge ⚠ badge + the login-free preset (auditor-flagged ∩ eu>0,
+  sorted by eligible desc). `<5`-safe by construction (students sum already-public
+  ≥5 counts). `tests/uc_impact_columns.test.js` + a CCR `st` PII guard.
+- **The lens immediately surfaced the cleanup target:** the **Spanish /
+  foreign-language pile-up** — `SPAN 100` / `FLNG M1019` / `FLNG M1272` all
+  "Elementary Spanish I", ~12k eligible units each, **all blank-discipline**.
+- **#327 / #328 — Foreign-Language SUBJ4 re-mint (Rule 7).** Root cause: the MQ
+  list has only **"Foreign Languages"** (no per-language discipline), so the SUBJ4
+  invariant forced every language into one `FLNG`. Fix (Sam's design): split the
+  SUBJ4 **per language** (`FLSP`/`FLFR`/`FLCH`/…) while the **discipline stays
+  "Foreign Languages."** Model: **SUBJ4 = the subject a student enrolls in;
+  discipline = the MQ category** — "Foreign Languages" is the lone umbrella. The
+  apply re-prefixed (kept the already-unique M-number → collision-free, no
+  re-sequence) **1,452 FL identities → 17 per-language SUBJ4s** + re-keyed 115
+  articulations; **99.5–99.9% auto-classified** by the self-describing CCC TOP-11xx
+  taxonomy (`1105=Spanish`). V1–V4 green; `subject_collision_signal` held at **0**
+  via the new `UMBRELLA_DISCIPLINES` auditor exemption (see Rule 7). Scope +
+  dry-run: [`docs/fl_subj4_remint_scope.md`](docs/fl_subj4_remint_scope.md); apply:
+  `kb/_apply_fl_subj4_remint.py`; alias receipt: `kb/fl_subj4_out/2026-06-09/`.
+
+**Patterns/learnings (KB notes this checkpoint):** rank a cleanup queue by the
+**downstream impact the data already carries** (eligible-units/students), not just
+structural leverage — `docs/kb-notes/methodology-rank-cleanup-by-downstream-impact.md`;
+and the **umbrella-discipline SUBJ4 split** (re-prefix keeps the unique number;
+auditor umbrella exemption) — `docs/kb-notes/methodology-umbrella-discipline-subj4-split.md`.
+Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 37).
+
+**Carryover / next:** the next daily cron regenerates `unified_courses_*.js` with
+the FL** ids → the CCR impact columns + Suggested-merges become per-language-coherent;
+**then drive the Spanish/FL consolidation** (all `FLSP` rows now consolidate cleanly
++ fill the blank disciplines). Future umbrellas (none else identified). Plus the
+standing Session-36/37 carryover (ACE skill-level scope, College + System views).
 
 ---
 

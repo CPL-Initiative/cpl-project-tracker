@@ -156,3 +156,53 @@ blanket-relabel; distinguish the two.
 3. Auditor tag keys are still `cluster_*` (internal). A future rename to
    `unified_*` would ripple to the client predicate, CLAUDE.md, and historical
    audit files — low value, deferred.
+
+---
+
+## Session 37 (2026-06-09) — CCR impact columns + the Foreign-Language SUBJ4 re-mint
+
+Sam: "get the CCR cleaner where there are obvious opportunities." Two moves, the
+first surfacing the second. **3 PRs** (#326 impact columns, #327 FL scope, #328 FL apply).
+
+### What's new
+- **#326 — Eligible-units + Students impact columns + 🎯 Cleanup-impact preset.**
+  The CCR can now be ranked by **real student-credit payoff** (the CPL currency), not
+  just the auditor's `members × (1−trust)` structural leverage. `export_unified_courses`
+  rolls the CER's per-credential eligible/students up to each course via the
+  articulation crosswalk. Pattern distilled →
+  `methodology-rank-cleanup-by-downstream-impact.md`.
+- **#327/#328 — Foreign-Language SUBJ4 re-mint (Rule 7).** The impact lens pointed
+  straight at the Spanish/FL pile-up (`SPAN 100`/`FLNG M1019`/`FLNG M1272` "Elementary
+  Spanish I", ~12k eligible each, blank discipline). Root cause: MQ has only "Foreign
+  Languages", so the SUBJ4 invariant forced all languages into one `FLNG`. Split per
+  language (`FLSP`/`FLFR`/…), discipline unchanged. Pattern →
+  `methodology-umbrella-discipline-subj4-split.md`.
+
+### Learnings
+- **Rank cleanup by downstream impact, not structural leverage** — and the impact is
+  one join away from data you already bake (CER per-credential eligible/students ⨝
+  articulations). ~700 of 16k rows light up: exactly the cleanup-worth concentration.
+- **The auditor's leverage metric and the impact metric disagree, productively.**
+  "Medical Terminology" is the structural #1 (85 colleges) but the Spanish cluster
+  carries far more eligible credit. Keep both; the target is the intersection.
+- **An MQ umbrella discipline needs a per-subject SUBJ4 split.** "Foreign Languages"
+  is coarser than the subject a student enrolls in → SUBJ4 = subject, discipline = MQ
+  category. Re-prefix keeps the already-unique number (collision-free, no
+  re-sequence); the CCC TOP-11xx taxonomy is self-describing (`1105=Spanish`) → 99.5%
+  auto-classified; the auditor needs an `UMBRELLA_DISCIPLINES` exemption so
+  `subject_collision_signal` stays honestly 0.
+- **A new public student-count surface needs a PII guard** — the CCR `st` column got
+  one in `pii_guard.test.js` (sum of `≥5` values → never 1–4 by construction, guarded
+  anyway).
+
+### Current state
+CCR impact columns live (#326). FL `FLNG` → 17 per-language SUBJ4s in the KB (#328);
+the **next daily cron** regenerates `unified_courses_*.js` with the FL** ids, so the
+impact columns + Suggested-merges become per-language-coherent. `subject_collision_signal`
+0 (umbrella exemption). Alias receipt `kb/fl_subj4_out/2026-06-09/`.
+
+### Next concrete step
+After the cron lands the FL** ids: **drive the Spanish/FL consolidation** — all `FLSP`
+rows now consolidate cleanly via Suggested-merges, and the blank FL disciplines are a
+high-impact discipline-fill (they all roll up to "Foreign Languages"). Then look for
+the next umbrella (none else identified yet).
