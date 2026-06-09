@@ -80,7 +80,10 @@ The whole ecosystem, end-to-end:
    authenticated reviewers (Supabase
    magic-link auth) curate disciplines, merge variants, and verify
    inferred values. Edits write to a live Supabase table and overlay the
-   git-tracked KB.
+   git-tracked KB. **Eligible-units + Students columns + a 🎯 Cleanup-impact
+   preset** (Session 37) rank the cleanup queue by real CPL student-credit
+   payoff (rolled up from the Common Exhibit Reference via the articulation
+   crosswalk), not just structural leverage.
 5. **The row Trust-Card auditor** (`kb/_row_audit.py`) — produces a per-row
    Trust Card for every M-ID + Cluster with a `faculty_trust_score` (the
    bar for cross-college articulation adoption) and an `mc_ready_score`

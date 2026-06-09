@@ -3,107 +3,106 @@ title: Session 38 Hand-off Prompt
 date: 2026-06-09
 session: 37 → 38 hand-off
 status: hand-off — paste the fenced block into Session 38's first message
-tags: [handoff, session-prompt, cer, credential-dedup, signal-b, exhibit-canonicalization]
+tags: [handoff, session-prompt, ccr, impact-columns, subj4-remint, foreign-languages, cer, signal-b]
 related:
-  - docs/kb-notes/methodology-credential-dedup-triage.md (the triage taxonomy this session produced)
-  - docs/kb-notes/playbook-cer-credential-merge.md (the merge mechanism)
-  - docs/eacr_consolidation_lessons.md (Session 37 section)
-  - CLAUDE.md §11 "Session 37" subsection
-  - docs/research_workexp_crossdisc_remint_scope.md (the cross-disc re-mint, the scope-doc template)
-moniker_suggestion: Sessions 35-37 ran mostly unnamed; if you want one, claim it — lineage below
+  - docs/ccr_cluster_cleanup_lessons.md (Session 37 — the CCR cleanup arc)
+  - docs/fl_subj4_remint_scope.md (the FL SUBJ4 split scope + dry-run)
+  - docs/kb-notes/methodology-umbrella-discipline-subj4-split.md
+  - docs/kb-notes/methodology-rank-cleanup-by-downstream-impact.md
+  - docs/kb-notes/methodology-credential-dedup-triage.md
+  - CLAUDE.md §11 "Session 37" + "Session 37 (cont.)" subsections + Rule 7 umbrella refinement
+moniker_suggestion: Session 37 ran unnamed; if you want one, claim it — lineage below
 ---
 
-<!-- Lineage: Lucid Wozniak (34) → CER consolidation (35) → perf + cross-disc
-     re-mint + CER Eligible/Students (36) → CER credential dedup, the Signal-B
-     leads (37). Pay it forward, 38. 🏅 -->
+<!-- Lineage: Lucid Wozniak (34) → CER consolidation (35) → perf+cross-disc (36) →
+     Session 37: CER Signal-B dedup, the CCR impact columns, the Foreign-Language
+     SUBJ4 re-mint. Pay it forward, 38. 🏅 -->
 
 # Session 38 Hand-off Prompt
 
-Session 37 worked the CER Signal-B dedup leads (162 → 21 real merges, the rest
-correctly left split), taught the detector to suppress elective-bucket noise, and
-relabeled the student column. Paste the block below.
+Session 37 cleaned up CER duplicate credentials, then pivoted to the CCR: shipped
+impact columns that re-rank cleanup by student-credit payoff, which surfaced the
+Spanish/foreign-language collision → a Rule-7 SUBJ4 re-mint splitting `FLNG` per
+language. Paste the block below.
 
 ## The prompt
 
 ```
 You are Session 38 on the CPL Project Tracker. Read these first, in order:
-  1. CLAUDE.md (all of it — Critical Rules 1/2/4/5, Rule 7 re-mint playbook, the
-     Branch Policy auto-merge gates [merge on green = clean OR unstable], §6a/§9
-     EACR, §11 framing + the NEW "Session 37" subsection at the end of §11).
-  2. docs/eacr_consolidation_lessons.md — the Session 37 section.
-  3. docs/kb-notes/methodology-credential-dedup-triage.md — the merge-vs-split
-     triage taxonomy (scope-of-competency line; the elective-bucket + distinct-
-     credential false-positive classes). Its sibling is
-     docs/kb-notes/playbook-cer-credential-merge.md (the merge mechanism).
-  4. If you'll pick up ACE skill-level (below):
-     docs/kb-notes/reference-cpl-eligibility-and-exhibit-cr-catalog.md +
-     docs/research_workexp_crossdisc_remint_scope.md (the scope-doc template).
+  1. CLAUDE.md — all of it. Critical Rules 1/2/4/5; the Branch-Policy auto-merge
+     gates (merge on green = clean OR unstable); Rule 7 re-mint playbook + the NEW
+     "Umbrella-discipline exception" in its structural invariants; §11 framing +
+     the "Session 37" and "Session 37 (cont.)" subsections at the end of §11.
+  2. docs/ccr_cluster_cleanup_lessons.md — the Session 37 section (the CCR arc).
+  3. docs/fl_subj4_remint_scope.md — the Foreign-Language SUBJ4 split (scope+dry-run).
+  4. The two new methodology KB notes: methodology-umbrella-discipline-subj4-split.md
+     + methodology-rank-cleanup-by-downstream-impact.md.
 
 WHAT SHIPPED IN SESSION 37 (all merged to main):
-  - #322 CER "Students" → "Eligible students" (the column is the catalog's
-    TotalStudentsForCR = the CPL-eligible cohort; consumer-only relabel +
-    tooltip + test). Resolved the Session-36 label-semantics follow-up.
-  - #323 merged 21 Signal-B duplicate credentials. Worked ALL 162 Signal-B leads
-    from kb/_detect_cpl_type_dupes.py. ~62 were COMM M1038 elective-bucket noise
-    (two different exams on one generic-elective course) + most of the rest are
-    genuinely-distinct credentials sharing a course (FAA ratings, AWS welding
-    processes/codes, AP exams, WSET levels, per-HS articulations) → left split
-    per scope-of-competency (skill Rule 4). The 21 real ones (FAA Airframe/
-    Powerplant Certification → Mechanic Certificate — {…} Rating; CDCR → Basic
-    Correctional Officer Academy; SFT Fire Inspector 1A/1B/1C + instructor; 7×
-    AWS Certification→Qualified Welder; spelling/Rule-1 strips) were KB-verified
-    (issuer + credit rec) and applied via kb/_merge_credentials.py (V1–V4 green).
-    CER credentials 1994 → 1973; credential_reference_data.js regenerated
-    live-on-merge (carried forward 543 students + 1726 eligible cron values).
-  - #324 added a 3rd Signal-B gate to the detector: suppress pairs sharing ONLY
-    an elective-bucket course (mirrors the producer's R1 ≥0.8/≥5/≤3 rule).
-    Signal B 162 → 77; the next pass is now tractable.
+  - #322/#323/#324 — CER Signal-B dedup: relabel "Students"→"Eligible students";
+    merged 21 true-duplicate credentials (162 leads, ~13% real); taught the
+    detector to suppress COMM M1038 elective-bucket noise (162→77). Triage taxonomy
+    → methodology-credential-dedup-triage.md.
+  - #326 — CCR Eligible-units + Students impact columns + 🎯 Cleanup-impact preset.
+    export_unified_courses rolls the CER per-credential eligible/students up to each
+    course via the articulation crosswalk; 2 sortable columns + over-merge ⚠ badge +
+    a login-free preset (auditor-flagged ∩ eu>0, sorted by eligible desc).
+    <5-safe by construction; tests/uc_impact_columns.test.js + a CCR `st` PII guard.
+  - #327/#328 — Foreign-Language SUBJ4 re-mint (Rule 7). MQ has only "Foreign
+    Languages" (no per-language discipline) → the SUBJ4 invariant forced every
+    language into one FLNG. Split per language (FLSP/FLFR/FLCH/…), DISCIPLINE STAYS
+    "Foreign Languages." Re-prefix kept the unique M-number (collision-free, no
+    re-sequence): 1,452 identities → 17 SUBJ4s + 115 articulations re-keyed; 99.5%
+    auto-classified by the self-describing CCC TOP-11xx taxonomy. V1–V4 green;
+    subject_collision_signal held at 0 via the new UMBRELLA_DISCIPLINES auditor
+    exemption. kb/_apply_fl_subj4_remint.py; alias receipt kb/fl_subj4_out/2026-06-09/.
 
 PRIORITY / NEXT (in order):
-  1. ACE SKILL-LEVEL CHILD-EXHIBITS — the standing next-real-work (Session 36
-     handoff + the eligibility reference doc "Open/deferred"). Data-confirmed:
-     3,013 skill-leveled exhibits, 2,428 multi-level, per-level CR sets differ
-     (Navy OS1=6 CRs/OS2=5/OSC=8). SCOPE FIRST (own scope doc, like the cross-
-     disc one) before any build — it's an identity change (Rule 7 class): military
-     decomposes by SkillLevel (parent ExhibitID + SkillLevel children, derived/
-     reversible); non-military stays flat. Don't infer individual eligibility from
-     exhibits — that's JST-driven (deferred student-portal tier). Lock the
-     mechanism with Sam (AskUserQuestion) before applying.
-  2. CER residual Signal-B — 77 pairs remain after the bucket gate; they're
-     mostly legitimate Rule-4 splits (leave for a curator). Signal-A queue empty.
-     Only revisit if Sam wants the residual hand-reviewed.
-  3. STANDING CARRYOVER: the College + System audience views (System needs the
-     privacy ADR finished — adr-cer-student-impact-counts-privacy is the seed);
-     EACR v2 scope/generated-rec; wire the eligible-students-per-exhibit dataset
-     when Sam sends it (key on ExhibitID/credential, same <5 suppression).
+  1. DRIVE THE SPANISH/FL CONSOLIDATION (the payoff of the re-mint). After the next
+     daily cron regenerates unified_courses_*.js with the FL** ids, the CCR impact
+     columns + Suggested-merges worklist become per-language-coherent: all FLSP rows
+     now consolidate cleanly (no French/Chinese noise). Two cleanups: (a) confirm the
+     FLSP same-course merges via Suggested-merges; (b) fill the blank FL disciplines
+     (they all roll up to "Foreign Languages" — high-impact, low-risk). Use the
+     🎯 Cleanup-impact preset to rank by eligible-units.
+  2. CHECK THE CRON LANDED CLEAN — first daily run after #328 should show FLSP/FLFR/…
+     rows in the CCR (not FLNG) + the impact columns populated + the audit chips
+     attaching (latest.json already FL**). If a row looks off, the alias map is the
+     inverse for rollback.
+  3. NEXT UMBRELLA? None else identified. If one emerges (a coarse MQ discipline over
+     distinct enrollment subjects), the FL pattern + kb/foreign_language_subj4.json
+     are the template.
+  4. STANDING CARRYOVER (Session 36/37): ACE skill-level child-exhibit scope (the
+     long-flagged next-real-work, data-confirmed); College + System EACR audience
+     views (System needs the privacy ADR finished); EACR v2 scope; the residual 77
+     Signal-B pairs (mostly legitimate Rule-4 splits — leave); the eligible-students-
+     per-exhibit dataset wiring when Sam sends it.
 
 PATTERNS THAT WORKED (Session 37):
-  - AskUserQuestion to pick the session focus + resolve a pending Sam-decision
-    (the label) in one round, when the handoff offers several divergent threads.
-  - Triage-then-merge: most "duplicate" detector hits are false positives; decide
-    by scope-of-competency, not title similarity; VERIFY borderline pairs against
-    the KB (issuer + credit rec) with a tiny read-only probe before merging.
-  - Encode the consumer's noise model into the tool (the elective-bucket gate
-    mirrors the CER producer's R1 rule) so the queue stays clean for next time.
-  - CER ships live-on-merge: kb/_merge_credentials.py --apply, then
-    `python3 -c "import excel_to_dashboard as m; m.export_credential_reference()"`
-    to regen the baked file (carry-forward keeps the cron-only columns), commit it.
+  - Rank cleanup by DOWNSTREAM IMPACT (eligible-units/students), not just the
+    auditor's structural members×(1−trust) — and the impact is one join away from
+    data you already bake. It re-ranked the queue to the real target.
+  - Scope-first for re-mint-class work: AskUserQuestion to lock the keystone decision
+    (the naming scheme), measure-first dry-run (99.5%), then atomic apply with V-gates
+    + an alias-map receipt. The self-describing CCC TOP-11xx taxonomy did the
+    classifying — let the data's own taxonomy do the work.
+  - Re-prefix-keep-the-number when old ids are already unique (collision-free, no
+    risky re-sequence). Discipline NEVER changes in a SUBJ4 re-mint (V3 = unchanged).
   - Small PRs, merge on green (clean OR unstable). After each squash-merge:
     git checkout -B claude/<branch> origin/main, force-push-with-lease the next.
 
 SAFETY PATTERNS TO HONOR:
-  - Staging KB only (unified_titles/credentials/coci_articulations + the merge
-    decisions file). No Supabase, no destructive migration. The curated anchor
-    (common_courses.json / course_crosswalk.json) is firewalled.
-  - NEVER commit PII (SEC-10). pii_guard.test.js enforces it; student headcounts
-    are <5-suppressed, credit UNITS are not.
-  - Rule 4: CPL_Dashboard.html == index.html byte-identical. Rules 1/2: don't
-    hand-edit regenerated sections; preserve idempotency guards. Rule 5: never
-    force-push main (the "Unverified noreply@github.com" stop-hook nag on GitHub's
-    own squash-merge commits is a FALSE POSITIVE — never amend a main commit).
-  - Feature branch + PR; auto-merge on green; commit your verification (jsdom
-    test for consumer JS; a _verify_*.py or the run log for kb/ scripts).
+  - Rule 4: CPL_Dashboard.html == index.html byte-identical (the Pipeline tab is
+    hand-maintained in BOTH). Rules 1/2: don't hand-edit regenerated sections.
+    Rule 5: never force-push main (the "Unverified noreply@github.com" stop-hook nag
+    on GitHub's own squash-merge commits is a FALSE POSITIVE — never amend a main
+    commit; the canonical scripts/stop-hook-git-check.sh ignores them).
+  - Staging KB only (coci_*.json + the map/decisions files). No Supabase, no
+    destructive migration. The curated anchor (common_courses/course_crosswalk) is
+    firewalled. NEVER commit PII (pii_guard.test.js; <5/<2 suppression).
+  - Re-mints: dry-run → V-gates → atomic land within one cron window; alias map is
+    the rollback inverse. The auditor (kb/_row_audit.py) is NOT a cron step — commit
+    its regenerated latest.json after any identity re-key.
 
-Pipeline viz NOT touched this session (no M-ID pipeline movement — correctly
-skipped). A moniker is yours to claim.
+Pipeline viz refreshed this checkpoint (the FL re-mint card). A moniker is yours.
 ```

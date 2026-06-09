@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-09 (Session 37 — CER credential dedup: 21 Signal-B merges #323 + the detector elective-bucket gate #324 (Signal B 162→77, COMM M1038 noise) + "Students"→"Eligible students" relabel #322; NEW methodology-credential-dedup-triage)
+updated: 2026-06-09 (Session 37 cont. — CCR Eligible-units+Students impact columns + 🎯 Cleanup-impact preset #326; Foreign-Language SUBJ4 re-mint FLNG→FLSP/FLFR/… #327 scope + #328 apply (umbrella discipline, discipline stays "Foreign Languages"); NEW methodology-umbrella-discipline-subj4-split + methodology-rank-cleanup-by-downstream-impact. [Earlier: CER Signal-B dedup #322-#324 + methodology-credential-dedup-triage])
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -85,6 +85,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Reference — CPL eligibility (military vs non-military) + the Exhibit CRs Catalog rollup](kb-notes/reference-cpl-eligibility-and-exhibit-cr-catalog.md) | reference | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Cron-as-window (reach egress-blocked data via a workflow + run logs)](kb-notes/methodology-cron-as-discovery-window.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Triaging credential-dedup candidates (merge vs leave-split; scope-of-competency)](kb-notes/methodology-credential-dedup-triage.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [Methodology — Umbrella-discipline SUBJ4 split (one MQ discipline, many subjects)](kb-notes/methodology-umbrella-discipline-subj4-split.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [Methodology — Rank a cleanup queue by downstream impact, not structural leverage](kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 
 ---
 
@@ -94,7 +96,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 
 | File | Workstream | Last touched |
 |---|---|---|
-| [`ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) | CCR cluster dissolution (UC-XXXXX retired; 9 curated → per-member merges) | **Session 19 (2026-05-30)** |
+| [`ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) | CCR cleanup — cluster dissolution; **Session 37: impact columns #326 + the Foreign-Language SUBJ4 re-mint #327/#328 (umbrella discipline)** | **Session 37 (2026-06-09)** |
 | [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes; **Session 23: #2 sidebar sub-links + #3 display-label map** | Session 23 (Bruh 23, 2026-05-31) |
 | [`engineering_practices_lessons.md`](engineering_practices_lessons.md) | Dev infra / testing / design system (committed jsdom harness + CI, stop-hook fix, `:root` tokens + `var()` rule, prototype-first) | **Session 32 (Busy Feynman, 2026-06-04) NEW** |
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G | Session 11 |
@@ -150,7 +152,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 34 → 35 | Lucid Wozniak (handoff) | [`session_35_handoff.md`](session_35_handoff.md) |
 | 35 → 36 | CER identity consolidation (handoff) | [`session_36_handoff.md`](session_36_handoff.md) |
 | 36 → 37 | perf + cross-disc re-mint + CER Eligible/Students (handoff) | [`session_37_handoff.md`](session_37_handoff.md) |
-| 37 → 38 | CER credential dedup (Signal-B) + "Eligible students" (handoff) | [`session_38_handoff.md`](session_38_handoff.md) |
+| 37 → 38 | CER Signal-B dedup + CCR impact columns + Foreign-Language SUBJ4 re-mint (handoff) | [`session_38_handoff.md`](session_38_handoff.md) |
 
 ---
 
