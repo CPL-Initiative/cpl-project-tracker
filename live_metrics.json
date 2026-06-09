@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-09T19:09:09.206Z",
+  "scraped_at": "2026-06-09T19:38:46.516Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -818,14 +818,14 @@
         },
         {
           "college": "Lemoore College",
-          "students": 273,
+          "students": 283,
           "units": 330,
-          "avgUnits": 1.2087912087912087,
+          "avgUnits": 1.1660777385159011,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 31,
-          "nonMilitaryStudents": 243,
+          "nonMilitaryStudents": 253,
           "apprenticeStudents": 1,
           "savings": 389595,
           "yearImpact": 1686189,
@@ -1757,7 +1757,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,588",
+      "value": "47,598",
       "breakdowns": [
         {
           "label": "Military",
@@ -1765,7 +1765,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "23,262"
+          "value": "23,272"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47588,
+    "Students": 47598,
     "Units": 224969.65000000002,
     "TranscribedUnits": 96736.95,
     "Savings": 313430177.75,
     "YearImpact": 1268603821.3999999,
     "MilitaryStudents": 24402,
-    "NonMilitaryStudents": 23262,
+    "NonMilitaryStudents": 23272,
     "AprenticeStudents": 751,
-    "AverageUnits": 4.727444944103556,
-    "TranscribedAverage": 2.0328013364713793
+    "AverageUnits": 4.726451741669819,
+    "TranscribedAverage": 2.0323742594226646
   }
 }
