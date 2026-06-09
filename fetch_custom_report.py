@@ -88,6 +88,21 @@ REQUEST_PAYLOAD = [
                        "Potential Student", "Test Student",
                        "Transcribed Credits", "Uploaded Date"]
     },
+    {
+        # Exhibit CRs Catalog (NEW 2026-06-09) — per (ExhibitID, SkillLevel,
+        # CreditRecommendation, …) credit funnel that carries the long-missing
+        # PER-EXHIBIT eligible-credit grain (MAP's JST-aggregated totals). Feeds
+        # the CER "Eligible (units)" column (export_credential_reference →
+        # _rollup_exhibit_cr_catalog). viewName ends "_Dataset" (NOT "_APIDataset")
+        # — confirmed by Sam's report header. Lean subset: only the keys + the
+        # credit/student totals the rollup needs (~37 MB vs ~128 MB for all 27
+        # columns). No PII columns. dataCount ~268k rows.
+        "viewName": "View_ExhibitCRsCatalog_Dataset",
+        "columnName": ["ExhibitID", "SkillLevel", "CreditRecommendation",
+                       "TotalEligibleCreditsForCR", "TotalTranscribedCreditsForCR",
+                       "TotalAppliedCreditsForCR", "TotalCreditsInReviewForCR",
+                       "TotalStudentsForCR"]
+    },
 ]
 
 

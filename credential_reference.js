@@ -332,6 +332,15 @@
       // null + !served_suppressed when 0 / no data. Populates on the daily cron.
       students_served: (typeof b.students_served === "number") ? b.students_served : null,
       served_suppressed: !!b.served_suppressed,
+      // Eligible-credit FUNNEL (units) from the Exhibit CRs Catalog (2026-06-09):
+      // per-credential statewide credit volume — eligible / transcribed / applied /
+      // in-review. Credit UNITS (not headcounts), so no <5 suppression. null = no
+      // catalog match yet ("—"); 0 = matched but none eligible. eligible −
+      // transcribed = "credit waiting to be unlocked". Populates on the daily cron.
+      eligible_credits: (typeof b.eligible_credits === "number") ? b.eligible_credits : null,
+      transcribed_credits: (typeof b.transcribed_credits === "number") ? b.transcribed_credits : null,
+      applied_credits: (typeof b.applied_credits === "number") ? b.applied_credits : null,
+      in_review_credits: (typeof b.in_review_credits === "number") ? b.in_review_credits : null,
       // Raw college-entered MAP exhibit-title variants collapsed under this
       // unified title. Baked compactly as {r:raw_title, c:confidence, q:flag}
       // (added 2026-06-04, item 6) so the expanded row can list them — a
@@ -626,6 +635,12 @@
       students:        function (r) {
         return (typeof r.students_served === "number") ? r.students_served
              : (r.served_suppressed ? 0.5 : 0);
+      },
+      // Eligible-credits sort: credit-unit value, or 0 when no catalog data —
+      // sort desc floats the credentials with the most eligible (unlockable)
+      // credit to the top.
+      eligible:        function (r) {
+        return (typeof r.eligible_credits === "number") ? r.eligible_credits : 0;
       },
     };
     var f = getters[k] || getters.unified_title;
@@ -1104,6 +1119,8 @@
         title: "Number of distinct college-entered MAP exhibit titles collapsed under this unified title. Expand the row to see them — \"1\" means a single college title maps here, which may differ from the generated unified title." },
       { key: "students",        label: "Students",
         title: "Total CPL students served across articulating colleges (MAP View_ArticulatedCollegeCourses) — a volume signal for prioritizing curation. Sort to surface the highest-impact credentials. Counts below 5 are masked as \"<5\" for privacy; \"—\" = no articulated student credit yet. Populates on the daily MAP pull." },
+      { key: "eligible",        label: "Eligible (units)",
+        title: "Statewide CPL credit-UNITS eligible for this credential, from MAP's Exhibit CRs Catalog (the per-exhibit credit funnel, JST-aggregated for military). Credit waiting to be unlocked = eligible − transcribed (shown on hover). Credit units, not a headcount. \"—\" = no catalog data yet; populates on the daily MAP pull." },
       { key: "disc_modal",      label: "Discipline",
         title: "Predominant MQ discipline across this credential's articulated common courses." },
       { key: "primary_issuer",  label: "Issuing Agency" },
@@ -1321,6 +1338,26 @@
       servedTd.appendChild(el("span", { class: "cr-null" }, ["—"]));
     }
     tr.appendChild(servedTd);
+
+    // Eligible-credits column — statewide CPL credit UNITS eligible (Exhibit CRs
+    // Catalog). Credit units, not a headcount → no suppression. Hover shows the
+    // funnel + "credit waiting to be unlocked" (eligible − transcribed). "—" = no
+    // catalog data yet.
+    var eligTd = el("td", { class: "cr-served-cell" });
+    if (typeof r.eligible_credits === "number") {
+      var _waiting = (typeof r.transcribed_credits === "number")
+        ? Math.max(0, r.eligible_credits - r.transcribed_credits) : null;
+      var _tip = "Statewide eligible CPL credit units."
+        + (typeof r.transcribed_credits === "number" ? " Transcribed: " + r.transcribed_credits.toLocaleString() + " units." : "")
+        + (typeof r.applied_credits === "number" ? " Applied: " + r.applied_credits.toLocaleString() + "." : "")
+        + (typeof r.in_review_credits === "number" ? " In review: " + r.in_review_credits.toLocaleString() + "." : "")
+        + (_waiting != null ? " Credit waiting to be unlocked (eligible − transcribed): " + _waiting.toLocaleString() + " units." : "");
+      eligTd.appendChild(el("span", { class: "cr-served-n", title: _tip },
+        [r.eligible_credits.toLocaleString()]));
+    } else {
+      eligTd.appendChild(el("span", { class: "cr-null" }, ["—"]));
+    }
+    tr.appendChild(eligTd);
 
     // Discipline column — modal MQ discipline across this credential's
     // articulations (blank if no articulations).
