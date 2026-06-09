@@ -1,0 +1,30 @@
+# Manual schema-discovery probe for the MAP Custom Reporting Module.
+#
+# Why: a Claude session's container can't reach the MAP hosts (egress allowlist),
+# but a GitHub Actions runner can. This one-click workflow runs the PII-safe probe
+# (kb/_discover_map_datasets.py) on the runner and prints the NEW datasets' real
+# viewName + columns + grain + a couple of redacted sample rows to the run log,
+# which Claude reads back via the GitHub MCP. It commits NOTHING (the raw MAP pull
+# is PII-bearing + gitignored) — only the schema goes to the log.
+#
+# Run it: Actions → "Discover MAP datasets (manual)" → Run workflow. Once the real
+# viewName is confirmed from the log, the Exhibit CRs Catalog gets wired into the
+# daily fetch (fetch_custom_report.py) + the CER eligible/students columns.
+name: Discover MAP datasets (manual)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Probe MAP Custom Reporting Module for the new dataset schemas
+        run: python kb/_discover_map_datasets.py
