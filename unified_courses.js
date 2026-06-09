@@ -478,7 +478,7 @@
       }).catch(function () { return null; });
     }
 
-    var state = { kind: "", source: "", status: "", disc: "", credit: "", conf: "", artic: "", official: "", prov: "", triage: "", flagged: false, q: "", sort: "subj", dir: 1 };
+    var state = { kind: "", source: "", status: "", disc: "", credit: "", conf: "", artic: "", official: "", prov: "", triage: "", flagged: false, impactOnly: false, q: "", sort: "subj", dir: 1 };
     // Live curated descriptions (course_id -> value), loaded on init + updated on
     // save; diffed against data.committed_descriptions for the pending-sync count.
     var descOverlay = {};
@@ -1044,7 +1044,28 @@
       ["✨ Suggested merges"]);
     suggestBtn.onclick = function () { openSuggestions(); };
 
-    [fKind, fSource, fStatus, fDisc, fSubj, fCredit, fConf, fArtic, fOfficial, fProv, fTriage, search, flagged, blanksBtn, verifyAllBtn, suggestBtn, auth, syncBadge, auditStatus, exportBtn]
+    // Cleanup-impact preset (login-free): one click ranks the cleanup queue by
+    // real CPL payoff — auditor-flagged rows that also carry eligible-credit
+    // impact, sorted by eligible-units desc. Re-click to clear. (Sam 2026-06-09:
+    // "where's the greatest cleanup impact" → eligible-units/students, not just
+    // the auditor's structural members×(1−trust) leverage.)
+    var impactBtn = el("button", { id: "uc-impact", class: "uc-filter",
+      style: "cursor:pointer;background:#eff6ff;border:1px solid #3b82f6;color:#1e40af;font-weight:600;border-radius:6px;",
+      title: "Rank the cleanup queue by student-credit impact: show only auditor-flagged rows that carry eligible CPL units, sorted by eligible units (desc). Click again to clear." },
+      ["🎯 Cleanup impact"]);
+    impactBtn.onclick = function () {
+      var on = !state.impactOnly;
+      state.impactOnly = on;
+      state.triage = on ? "Any audit flag" : "";
+      if (fTriage) fTriage.value = state.triage;
+      if (on) { state.sort = "eu"; state.dir = -1; }
+      else if (state.sort === "eu") { state.sort = "subj"; state.dir = 1; }
+      impactBtn.style.background = on ? "#dbeafe" : "#eff6ff";
+      impactBtn.style.outline = on ? "2px solid #3b82f6" : "none";
+      loadAudit().then(render);
+    };
+
+    [fKind, fSource, fStatus, fDisc, fSubj, fCredit, fConf, fArtic, fOfficial, fProv, fTriage, search, flagged, blanksBtn, verifyAllBtn, suggestBtn, impactBtn, auth, syncBadge, auditStatus, exportBtn]
       .forEach(function (c) { toolbar.appendChild(c); });
 
     // Curation edits hit Supabase instantly but are only folded into git
@@ -1191,6 +1212,7 @@
         if (r.dsrc !== wantSrc) return false;
       }
       if (state.flagged && !rowFlagged(r)) return false;
+      if (state.impactOnly && !(r.eu > 0)) return false;  // Cleanup-impact preset: only rows carrying eligible CPL units
       // Audit triage filter — backed by loadAudit()'s auditIndex.
       // If the audit overlay hasn't loaded yet, the filter silently
       // matches nothing (so the curator doesn't see a stale view).
@@ -1489,7 +1511,10 @@
       { key: "disc", label: "Discipline" }, { key: "credit", label: "Credit" },
       { key: "units", label: "Units" }, { key: "top", label: "TOP" }, { key: "subj", label: "Subject(s)" },
       { key: "members", label: "Members" }, { key: "adopted", label: "Adopted" },
-      { key: "potential", label: "Adoptable" }, { key: "conf", label: "Conf." }, { key: "flags", label: "Flags" }
+      { key: "potential", label: "Adoptable" },
+      { key: "eu", label: "Eligible units", title: "Statewide CPL credit-units eligible across the credentials that articulate to this course (rolled up from the Common Exhibit Reference). A real student-impact signal for prioritizing cleanup — higher = more credit riding on this identity being right. “—” = no CPL articulations yet." },
+      { key: "st", label: "Students", title: "Eligible-student volume across the credentials that articulate to this course (CPL-eligible cohort; <5-suppressed). A prioritization signal, not a distinct headcount." },
+      { key: "conf", label: "Conf." }, { key: "flags", label: "Flags" }
     ];
 
     // Expand/collapse a row to show its member college courses (lazy-loaded).
@@ -1625,7 +1650,7 @@
           return (courseNum(a) - courseNum(b)) * state.dir;
         }
         if (k === "adopted" || k === "potential") { av = (a[k] || []).length; bv = (b[k] || []).length; }
-        else if (k === "members" || k === "units" || k === "conf") { av = a[k] || 0; bv = b[k] || 0; }
+        else if (k === "members" || k === "units" || k === "conf" || k === "eu" || k === "st") { av = a[k] || 0; bv = b[k] || 0; }
         else { av = (a[k] == null ? "" : String(a[k])).toLowerCase(); bv = (b[k] == null ? "" : String(b[k])).toLowerCase(); }
         return (av < bv ? -1 : av > bv ? 1 : 0) * state.dir;
       });
@@ -1652,7 +1677,7 @@
       var table = el("table", { class: "uc-table" });
       var thead = el("thead"), htr = el("tr");
       COLS.forEach(function (c) {
-        var th = el("th", { "data-key": c.key }, [c.label + (state.sort === c.key ? (state.dir > 0 ? " ▲" : " ▼") : "")]);
+        var th = el("th", { "data-key": c.key, title: c.title || "" }, [c.label + (state.sort === c.key ? (state.dir > 0 ? " ▲" : " ▼") : "")]);
         th.style.cursor = "pointer";
         th.onclick = function () { if (state.sort === c.key) state.dir = -state.dir; else { state.sort = c.key; state.dir = 1; } render(); };
         htr.appendChild(th);
@@ -1684,6 +1709,16 @@
         tr.appendChild(el("td", {}, [String(r.members == null ? "" : r.members)]));
         tr.appendChild(el("td", {}, [adoptionCell(r.adopted, "adopted")]));
         tr.appendChild(el("td", {}, [adoptionCell(r.potential, "potential")]));
+        var euTd = el("td", {});
+        if (r.eu == null) { euTd.appendChild(document.createTextNode("—")); }
+        else {
+          euTd.appendChild(document.createTextNode(r.eu.toLocaleString()));
+          if (r.flags && r.flags.over_merged) euTd.appendChild(el("span",
+            { title: "Over-merged cluster — high-impact split candidate (the eligible-units may span conflated courses).",
+              style: "margin-left:4px;color:#b45309;cursor:help;" }, ["⚠"]));
+        }
+        tr.appendChild(euTd);
+        tr.appendChild(el("td", {}, [r.st == null ? "—" : r.st.toLocaleString()]));
         tr.appendChild(el("td", {}, [r.conf == null ? "—" : r.conf.toFixed(2)]));
         tr.appendChild(el("td", { class: "uc-flags-cell" }, [flagBadges(r)]));
         tb.appendChild(tr);

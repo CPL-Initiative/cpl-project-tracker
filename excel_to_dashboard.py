@@ -6625,6 +6625,58 @@ def export_unified_courses():
             print(f"  Unified Courses: Phase B consolidated {len(consumed)} M-IDs into "
                   f"{len(synthesized)} new official-ID rows + {folds} anchor folds")
 
+    # ---- per-course CPL impact: Eligible units + Students -------------------
+    # Roll the CER's per-credential eligible-credit + student totals up to each
+    # course via the articulation crosswalk (credential→course), so the CCR can be
+    # ranked by REAL student/credit impact, not just structural leverage (Sam
+    # 2026-06-09 — "where's the greatest cleanup impact"). Source = the baked
+    # credential_reference_data.js (already carry-forward-safe + <5-student-
+    # suppressed); a credential's totals flow to a course through the articulations
+    # that earn it. A consolidated official-ID row unions its consolidated_from
+    # M-IDs. Eligible-credit UNITS sum (additive volume); the student column sums
+    # already-public (>=5) per-credential counts → never a fresh small cell, so the
+    # course total is <5-safe by construction. Emitted only when >0 (lean payload —
+    # ~2.3k of 16k rows carry articulations). NOTE: export_unified_courses() runs
+    # before export_credential_reference() in main(), so on the daily cron this reads
+    # YESTERDAY's CER — a 1-day lag on a slow-moving prioritization signal, self-heals
+    # each day. Omitted entirely if the CER file is absent (degrades to no columns).
+    cer_elig, cer_stu = {}, {}
+    _cer_path = os.path.join(odir, "credential_reference_data.js")
+    if os.path.exists(_cer_path):
+        try:
+            _ct = open(_cer_path, encoding="utf-8").read()
+            _cerd = json.loads(_ct[_ct.index("{"):_ct.rindex("}") + 1])
+            for _cr in (_cerd.get("unified_titles") or []):
+                _ut = _cr.get("ut")
+                if _cr.get("eligible_credits") is not None:
+                    cer_elig[_ut] = _cr["eligible_credits"]
+                if isinstance(_cr.get("students_served"), (int, float)):
+                    cer_stu[_ut] = _cr["students_served"]
+        except (ValueError, IOError, KeyError) as _e:
+            print(f"  Unified Courses: CPL-impact skipped (CER unreadable: {_e})")
+    if cer_elig or cer_stu:
+        course_uts = {}
+        for _a in art_doc.get("articulations", []):
+            _cid, _ut = _a.get("course_id"), _a.get("unified_title")
+            if _cid and _ut:
+                course_uts.setdefault(_cid, set()).add(_ut)
+        _n_eu = _n_st = 0
+        for r in rows:
+            uts = set()
+            for c in [r["id"]] + list(r.get("consolidated_from") or []):
+                uts |= course_uts.get(c, set())
+            if not uts:
+                continue
+            eu = round(sum(cer_elig.get(u, 0) for u in uts), 1)
+            st = int(sum(cer_stu.get(u, 0) for u in uts))
+            if eu:
+                r["eu"] = eu
+                _n_eu += 1
+            if st:
+                r["st"] = st
+                _n_st += 1
+        print(f"  Unified Courses: CPL impact on {_n_eu} rows (eligible units) / {_n_st} (students)")
+
     # Compact all-course title index for the "Generate unified course" dialog —
     # a separate file the tab lazy-loads only when a curator opens it. Built from
     # the FINAL row set (post-Phase-B) plus stand-alone singletons, so consumed

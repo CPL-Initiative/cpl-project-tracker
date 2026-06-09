@@ -60,6 +60,14 @@ const badServed = cer.filter((r) => typeof r.students_served === "number"
   .map((r) => `${r.ut}=${r.students_served}`);
 check(`CER: no exact students_served < ${SERVED_FLOOR}`, badServed.length === 0, badServed.slice(0, 8).join(", "));
 
+// ── 2b. CCR per-course student rollup (`st` in unified_courses_data.js) ──
+// The Unified Courses "Students" column sums already-<5-suppressed per-credential
+// counts, so a course total is >=5 or absent by construction — guard it anyway.
+const ccr = (loadAssign("unified_courses_data.js").rows) || [];
+const badCcrSt = ccr.filter((r) => typeof r.st === "number" && r.st >= 1 && r.st < SERVED_FLOOR)
+  .map((r) => `${r.id}=${r.st}`);
+check(`CCR: no exact st < ${SERVED_FLOOR} (unified_courses_data.js)`, badCcrSt.length === 0, badCcrSt.slice(0, 8).join(", "));
+
 // ── 3. Email scan across the committed data artifacts ──
 // Scope: artifacts derived from the MAP CustomReport / KPI pull (where staff PII
 // would land if a Contacts/Users consumer ever crept in). Consumer UI JS with
