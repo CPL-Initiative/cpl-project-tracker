@@ -2,10 +2,12 @@
 Verify _rollup_exhibit_cr_catalog on a synthetic column-oriented payload.
 
 The real Exhibit CRs Catalog can't be fetched from a Claude session (egress
-allowlist), so this guards the aggregation LOGIC end-to-end: de-dupe the catalog's
-finer-grain row repetition by MAX per (ExhibitID, SkillLevel, CreditRecommendation),
-then SUM credit UNITS up to the credential via exhibit_id → unified_title. Run so
-the daily cron bakes correct CER eligible/funnel numbers:
+allowlist), so this guards the aggregation LOGIC end-to-end. The catalog's numeric
+ExhibitID is a DIFFERENT namespace from View_ArticulatedMAPExhibits' MAP… string
+id (and the catalog includes military/ACE exhibits the articulation view
+excludes), so the rollup BRIDGES ON exhibit Title → unified_title. It de-dupes the
+finer-grain row repetition by MAX per (ExhibitID, SkillLevel, CreditRecommendation)
+then SUMS credit UNITS to the credential. Run:
 
   python3 kb/_verify_exhibit_cr_eligible.py
 """
@@ -13,52 +15,57 @@ import os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import excel_to_dashboard as e
 
-COLS = ["ExhibitID", "SkillLevel", "CreditRecommendation", "TotalEligibleCreditsForCR",
-        "TotalTranscribedCreditsForCR", "TotalAppliedCreditsForCR",
-        "TotalCreditsInReviewForCR", "TotalStudentsForCR"]
+COLS = ["ExhibitID", "SkillLevel", "CreditRecommendation", "Title",
+        "TotalEligibleCreditsForCR", "TotalTranscribedCreditsForCR",
+        "TotalAppliedCreditsForCR", "TotalCreditsInReviewForCR", "TotalStudentsForCR"]
 
 
-def row(eid, sl, cr, elig, trans=0, app=0, inrev=0, stu=0):
-    d = {"ExhibitID": eid, "SkillLevel": sl, "CreditRecommendation": cr,
+def row(eid, sl, cr, title, elig, trans=0, app=0, inrev=0, stu=0):
+    d = {"ExhibitID": eid, "SkillLevel": sl, "CreditRecommendation": cr, "Title": title,
          "TotalEligibleCreditsForCR": elig, "TotalTranscribedCreditsForCR": trans,
          "TotalAppliedCreditsForCR": app, "TotalCreditsInReviewForCR": inrev,
          "TotalStudentsForCR": stu}
     return [d[c] for c in COLS]
 
 
-# Synthetic catalog (column-oriented, like the real CustomReport response):
+# title_to_ut maps NORMALIZED exhibit Title → unified_title (built from the
+# articulations' canonical exhibit_title in the real producer).
+title_to_ut = {
+    e._norm_title("Cred A Exhibit"): "Cred A",
+    e._norm_title("Cred A Exhibit Two"): "Cred A",
+    e._norm_title("Cred B Exhibit"): "Cred B",
+}
+
 rows = [
-    # E1 (Cred A) skill 10: CR "3u Hist" REPEATED across 2 finer rows (constant 12
-    # → max 12) + CR "2u PE" (8). → skill-10 eligible 20.
-    row("E1", "10", "3u Hist", 12, 3), row("E1", "10", "3u Hist", 12, 3), row("E1", "10", "2u PE", 8),
-    # E1 skill 20: "3u Hist" (40) + "Leadership" with VARYING finer rows (7 vs 30
-    # → max 30). → skill-20 eligible 70.
-    row("E1", "20", "3u Hist", 40, 10), row("E1", "20", "Leadership", 7), row("E1", "20", "Leadership", 30),
-    # E2 (Cred A): one CR (5). E3 (Cred B): one CR (10).
-    row("E2", "", "welding", 5, 5),
-    row("E3", "", "anatomy", 10),
-    # E9 NOT in the crosswalk → must be skipped (real catalog has ~33k exhibits,
-    # most without articulations).
-    row("E9", "", "ignored", 999),
+    # E1 (Cred A Exhibit) skill 10: "3u Hist" REPEATED (constant 12 → max 12) +
+    # "2u PE" (8) → 20. skill 20: "3u Hist" (40) + "Leadership" varying (7 vs 30 →
+    # max 30) → 70. E1 = 90.
+    row("E1", "10", "3u Hist", "Cred A Exhibit", 12, 3), row("E1", "10", "3u Hist", "Cred A Exhibit", 12, 3),
+    row("E1", "10", "2u PE", "Cred A Exhibit", 8),
+    row("E1", "20", "3u Hist", "Cred A Exhibit", 40, 10),
+    row("E1", "20", "Leadership", "Cred A Exhibit", 7), row("E1", "20", "Leadership", "Cred A Exhibit", 30),
+    # E2 (a DIFFERENT exhibit, also → Cred A via its title): "welding" (5).
+    row("E2", "", "welding", "Cred A Exhibit Two", 5, 5),
+    # E3 (Cred B): "anatomy" (10).
+    row("E3", "", "anatomy", "Cred B Exhibit", 10),
+    # E9 — a MILITARY title NOT in title_to_ut (the catalog has ~30k such) → skipped.
+    row("E9", "AD1", "ignored", "Aviation Machinist's Mate", 999),
 ]
 report = [{"viewName": "View_ExhibitCRsCatalog_Dataset", "columnName": COLS, "columnValue": rows}]
-exid_to_ut = {"E1": "Cred A", "E2": "Cred A", "E3": "Cred B"}
 
-out, diag = e._rollup_exhibit_cr_catalog(report, exid_to_ut)
+out, diag = e._rollup_exhibit_cr_catalog(report, title_to_ut)
 
-# Expected — Cred A: E1 [skill10 20 + skill20 (40 + max(7,30)=30) = 70] = 90, + E2 5 = 95.
-#            Cred A transcribed: E1 [skill10 max(3,3)=3 + skill20 10 = 13] + E2 5 = 18.
 results = []
 def check(name, cond):
     results.append((name, bool(cond)))
 
-check("Cred A eligible = 95 (skill+CR sum, finer-grain de-duped by MAX)", round(out.get("Cred A", {}).get("eligible", -1), 1) == 95.0)
+check("Cred A eligible = 95 (Title-bridged, skill+CR sum, finer-grain MAX de-dupe)", round(out.get("Cred A", {}).get("eligible", -1), 1) == 95.0)
 check("Cred B eligible = 10", round(out.get("Cred B", {}).get("eligible", -1), 1) == 10.0)
-check("Cred A transcribed funnel = 18 (de-duped MAX then summed)", round(out.get("Cred A", {}).get("transcribed", -1), 1) == 18.0)
-check("unmatched ExhibitID (E9) excluded", "Cred A" in out and "ignored" not in str(out))
-check("diag.matched counts only crosswalk hits (8 of 9 rows)", diag["matched"] == 8 and diag["rows_seen"] == 9)
-check("only credentials with matches appear", set(out) == {"Cred A", "Cred B"})
-check("_credits_to_num robust ('1,234.5'/None/'' )", e._credits_to_num("1,234.5") == 1234.5 and e._credits_to_num(None) == 0.0 and e._credits_to_num("") == 0.0)
+check("Cred A transcribed funnel = 18", round(out.get("Cred A", {}).get("transcribed", -1), 1) == 18.0)
+check("unmatched MILITARY title (not in title_to_ut) excluded", "Cred A" in out and diag["matched"] == 8 and diag["rows_seen"] == 9)
+check("only credentials with a Title match appear", set(out) == {"Cred A", "Cred B"})
+check("two exhibits with different Titles both fold into one credential", round(out["Cred A"]["eligible"], 1) == 95.0)
+check("_credits_to_num robust", e._credits_to_num("1,234.5") == 1234.5 and e._credits_to_num(None) == 0.0)
 
 pass_n = sum(1 for _, ok in results if ok)
 for n, ok in results:

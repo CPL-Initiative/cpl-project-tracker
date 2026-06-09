@@ -5248,38 +5248,50 @@ def _credits_to_num(v):
         return 0.0
 
 
-def _rollup_exhibit_cr_catalog(reports, exid_to_ut):
+def _norm_title(s):
+    return re.sub(r"\s+", " ", str(s or "").strip().lower())
+
+
+def _rollup_exhibit_cr_catalog(reports, title_to_ut):
     """Roll the Exhibit CRs Catalog up to per-credential CREDIT-unit totals.
+
+    BRIDGE = exhibit TITLE, not ExhibitID. The catalog keys exhibits by a NUMERIC
+    ExhibitID (and includes military/ACE exhibits), whereas our crosswalk +
+    View_ArticulatedMAPExhibits key by the `MAP…` STRING id (no military). The two
+    are different id namespaces, so the only shared field for the overlapping
+    (non-military) exhibits is the exhibit Title (verified: the catalog's Title
+    matches the MAP canonical Exhibit Title our unified-title layer keys on). So we
+    map the catalog's Title → unified_title via `title_to_ut` (normalized).
 
     The catalog is per (ExhibitID, SkillLevel, CreditRecommendation, …finer
     criteria/evidence…); the `Total…ForCR` values REPEAT across the finer rows
-    (verified via the discovery probe: only ~16% of (exhibit,skill,CR) groups
-    vary). So we DE-DUPE to (ExhibitID, SkillLevel, CreditRecommendation) by MAX,
-    then SUM the credit-unit totals up to the credential via exhibit_id →
-    unified_title. Credits are ADDITIVE across CRs/skill-levels → a per-credential
-    credit VOLUME (a prioritization signal, like students_served — NOT a distinct
-    accounting). Per-CR STUDENT headcounts are deliberately NOT summed (one
-    service member spans multiple CRs/skill-levels, so summing over-counts — see
-    the military/non-military note), so this surfaces credit UNITS only.
+    (probe: ~16% of (exhibit,skill,CR) groups vary). So we DE-DUPE to (ExhibitID,
+    SkillLevel, CreditRecommendation) by MAX (ExhibitID is still the precise dedup
+    key), then SUM the credit UNITS up to the credential (eid → Title → ut).
+    Credits are ADDITIVE → a per-credential credit VOLUME signal; per-CR STUDENT
+    headcounts are deliberately NOT summed (one member spans CRs/levels).
 
     Returns ({unified_title: {eligible, transcribed, applied, in_review}}, diag).
     """
-    best = {}  # (eid, skill, cr) -> {credit_col: max_value}
+    best = {}        # (eid, skill, cr) -> {credit_col: max_value}
+    eid_title = {}   # eid -> norm(Title) (for the eid → ut bridge at rollup)
     rows_seen = matched = 0
     for rep in (reports if isinstance(reports, list) else []):
         if EXHIBIT_CR_CATALOG_VIEW not in str(rep.get("viewName", "")):
             continue
         cm = {str(c).strip(): i for i, c in enumerate(rep.get("columnName", []))}
-        ix, isl, icr = cm.get("ExhibitID"), cm.get("SkillLevel"), cm.get("CreditRecommendation")
+        ix, isl, icr, it = cm.get("ExhibitID"), cm.get("SkillLevel"), cm.get("CreditRecommendation"), cm.get("Title")
         colidx = {c: cm.get(c) for c in _CR_CREDIT_COLS}
-        if ix is None or icr is None:
+        if ix is None or icr is None or it is None:
             continue
         for row in (rep.get("columnValue") or []):
             rows_seen += 1
-            eid = str(row[ix]).strip() if (ix < len(row) and row[ix] is not None) else ""
-            if eid not in exid_to_ut:
+            title = _norm_title(row[it]) if it < len(row) else ""
+            if title not in title_to_ut:        # only the articulated (non-military) overlap matches
                 continue
             matched += 1
+            eid = str(row[ix]).strip() if (ix < len(row) and row[ix] is not None) else ""
+            eid_title[eid] = title
             skill = str(row[isl]).strip() if (isl is not None and isl < len(row) and row[isl] is not None) else ""
             cr = row[icr] if icr < len(row) else None
             slot = best.setdefault((eid, skill, cr), {})
@@ -5291,7 +5303,7 @@ def _rollup_exhibit_cr_catalog(reports, exid_to_ut):
                     slot[c] = v
     out = {}  # unified_title -> {eligible, transcribed, applied, in_review}
     for (eid, _skill, _cr), slot in best.items():
-        ut = exid_to_ut.get(eid)
+        ut = title_to_ut.get(eid_title.get(eid))
         if not ut:
             continue
         agg = out.setdefault(ut, {"eligible": 0.0, "transcribed": 0.0, "applied": 0.0, "in_review": 0.0})
@@ -5542,13 +5554,23 @@ def export_credential_reference():
     # suppression (not PII). Carries forward like students_served when the
     # CustomReport is absent (local / live-on-merge regen) so the column doesn't
     # oscillate blank. exid_to_ut was built above for students_served.
+    # Title-bridge: the catalog's numeric ExhibitID is a different namespace from
+    # the MAP… string id our crosswalk uses (the catalog also includes military/ACE
+    # exhibits the articulation view excludes), so we join on the exhibit Title —
+    # the only shared field. Map the MAP canonical exhibit_title → unified_title
+    # from the articulations (which carry that canonical title).
+    title_to_ut = {}
+    for _a in articulations:
+        _et, _u = _a.get("exhibit_title"), _a.get("unified_title")
+        if _et and _u:
+            title_to_ut.setdefault(_norm_title(_et), _u)
     eligible_by_ut = {}   # ut -> {eligible, transcribed, applied, in_review}
     carry_eligible = {}   # ut -> {…}; used when the CustomReport is absent
     if EXHIBIT_FILE and os.path.exists(EXHIBIT_FILE):
         try:
             with open(EXHIBIT_FILE, encoding="utf-8") as _f:
                 _crc = json.load(_f)
-            eligible_by_ut, _eldiag = _rollup_exhibit_cr_catalog(_crc, exid_to_ut)
+            eligible_by_ut, _eldiag = _rollup_exhibit_cr_catalog(_crc, title_to_ut)
             print(f"  Exhibit-CR eligible roll-up: {_eldiag['credentials']} credentials "
                   f"(catalog rows={_eldiag['rows_seen']} matched_exhibitid={_eldiag['matched']} "
                   f"deduped_groups={_eldiag['groups']})")
