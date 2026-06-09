@@ -17,6 +17,9 @@ Two signals:
       articulations share the SAME course_id + SAME local course (the 10-Key
       signature). Higher-judgment — a course can legitimately articulate to two
       genuinely different credentials — so these are listed for manual review only.
+      Pairs that share ONLY an elective-bucket course (a generic dumping-ground
+      like COMM M1038 — two different exams both giving generic elective credit)
+      are suppressed as noise, mirroring the R1 suppression in the CER producer.
 
 Run from repo root: python3 kb/_detect_cpl_type_dupes.py
 """
@@ -116,6 +119,26 @@ def _dupe_like(x, y):
         return False   # differ only by level/number → a level distinction, not a dupe
     return True
 
+# (3) ELECTIVE-BUCKET gate — a single local course used as a generic elective
+# dumping-ground: its credit recs are ~entirely "elective" AND it spans many
+# unrelated credentials from ≤3 colleges (e.g. Clovis's COMM M1038 → 60+
+# credentials, 100% "Elective Course Credits"). Two genuinely-DIFFERENT exams
+# both articulating to one such bucket are NOT the same exhibit, so a pair that
+# shares ONLY elective-bucket courses is noise. Mirrors the R1 suppression in
+# excel_to_dashboard.py:export_credential_reference() (same ≥0.8 / ≥5 / ≤3 rule).
+_eb_recs = collections.defaultdict(list)
+for _a in art:
+    if _a.get("course_id"):
+        _eb_recs[_a["course_id"]].append(_a)
+elective_bucket_ids = set()
+for _cid, _recs in _eb_recs.items():
+    _creds = {x.get("unified_title") for x in _recs}
+    _elec = sum(1 for x in _recs if any("elective" in str(v).lower()
+                for v in (x.get("credit_recommendations") or [])))
+    _cols = {c for x in _recs for c in (x.get("earned_by_colleges") or [])}
+    if _recs and _elec / len(_recs) >= 0.8 and len(_creds) >= 5 and len(_cols) <= 3:
+        elective_bucket_ids.add(_cid)
+
 key_to_uts = collections.defaultdict(set)
 for a in art:
     cid, u = a.get("course_id"), a.get("unified_title")
@@ -125,6 +148,7 @@ for a in art:
         key_to_uts[(cid, lc.get("subject"), lc.get("number"))].add(u)
 sigB = collections.Counter()
 pair_ev = {}
+_pair_seen = set()          # pairs passing sim+level via ANY shared course (real or bucket)
 for (cid, sub, num), uts in key_to_uts.items():
     if len(uts) < 2:
         continue
@@ -136,12 +160,18 @@ for (cid, sub, num), uts in key_to_uts.items():
                 continue  # already a Signal-A collision
             if not _dupe_like(pair[0], pair[1]):
                 continue  # noise gate (level/distinct credentials sharing a course)
+            _pair_seen.add(pair)
+            if cid in elective_bucket_ids:
+                continue  # bucket share alone isn't evidence — needs a REAL shared course
             sigB[pair] += 1
             pair_ev.setdefault(pair, (cid, f"{sub} {num}"))
+_bucket_only = len(_pair_seen) - len(sigB)   # passed gates but every shared course was a bucket
 
 print("\n" + "=" * 78)
 print(f"SIGNAL B — same exhibit, different phrasing ({len(sigB)} pair[s] after the "
-      f"similarity + level-safe gate)")
+      f"similarity + level-safe + elective-bucket gate)")
+print(f"  ({_bucket_only} pair[s] suppressed: shared ONLY an elective-bucket course; "
+      f"{len(elective_bucket_ids)} bucket id(s) detected)")
 print("  (review CAREFULLY — confirm it's one credential, not two related ones)")
 print("=" * 78)
 for pair, n in sigB.most_common():
@@ -151,4 +181,5 @@ for pair, n in sigB.most_common():
     print(f"    shared via {n} (course_id, local course), e.g. {cid} · {lc}")
 
 print(f"\nSummary: Signal A {len(collisions)} group(s) / {len(snippets)} pair(s) "
-      f"[high-confidence]; Signal B {len(sigB)} pair(s) [review]. Read-only.")
+      f"[high-confidence]; Signal B {len(sigB)} pair(s) [review] "
+      f"(+{_bucket_only} elective-bucket-only suppressed). Read-only.")
