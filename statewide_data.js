@@ -222154,11 +222154,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "San Bernardino Valley College",
-        "credit_recs": 237,
+        "credit_recs": 236,
         "exhibits": 134,
         "disciplines": 13,
         "ccc_collaborative": 20,
-        "industry_certs": 85,
+        "industry_certs": 84,
         "pct": 2.1
       },
       {
@@ -222984,7 +222984,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 1940,
+        "credit_recs": 1939,
         "exhibits": 1030,
         "courses": 1100,
         "colleges": 53,
@@ -223007,7 +223007,7 @@ window.CPL_STATEWIDE = {
         "courses": 27,
         "colleges": 81,
         "ccc_collaborative": 1,
-        "pct": 5.6
+        "pct": 5.7
       },
       {
         "discipline": "Health",
@@ -223191,7 +223191,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3316,
+        "credit_recs": 3315,
         "exhibits": 1143,
         "colleges": 78,
         "pct": 29.3
@@ -223235,7 +223235,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2573,
+        "credit_recs": 2572,
         "exhibits": 941,
         "colleges": 74,
         "pct": 22.7
@@ -223300,7 +223300,7 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 9811,
+        "credit_recs": 9810,
         "exhibits": 3694,
         "colleges": 99,
         "disciplines": 23,
@@ -223726,6 +223726,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-09T17:44:58",
-  "total_credit_recs": 11328
+  "generated_at": "2026-06-09T19:08:40",
+  "total_credit_recs": 11327
 };
