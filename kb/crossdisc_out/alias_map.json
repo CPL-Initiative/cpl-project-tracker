@@ -1,0 +1,24 @@
+{
+  "_status": "crossdisc re-mint old->new alias (receipt + rollback inverse)",
+  "_at": "2026-06-09",
+  "alias": {
+    "MATH M1262": "RSCH M1001",
+    "STEM M10AD": "RSCH M1001",
+    "STEM M90AA": "RSCH M1001",
+    "BIOL M10SY": "RSCH M1001",
+    "BIOL M10OR": "RSCH M1001",
+    "BIOL M10PG": "RSCH M1001",
+    "BIOL M10XD": "RSCH M1001",
+    "BIOL M10PY": "RSCH M1001",
+    "CHEM M10GX": "RSCH M1001",
+    "ENGL M11FM": "RSCH M1001",
+    "ENGL M11LE": "RSCH M1001",
+    "ENGR M10GA": "RSCH M1001",
+    "ENGR M10GB": "RSCH M1001",
+    "PHYS M13KT": "RSCH M1001",
+    "PHYS M13KR": "RSCH M1001",
+    "PSYC M10CC": "RSCH M1001",
+    "PSYC M10GZ": "RSCH M1001",
+    "PSYC M10CK": "RSCH M1001"
+  }
+}

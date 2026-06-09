@@ -523,6 +523,15 @@ def _compute_scores(faculty_fields, mc_fields, tags=None):
 def _tags_for_mid(rec, faculty_fields, disc_bag=None, subject_map=None, top_disc=None,
                   disc_to_modal_subj4=None, mid_unit_modal=None, mid_top_div=None):
     tags = []
+    # Recognized cross-disciplinary shared-COR courses (Undergraduate Research,
+    # Work Experience, …): ONE course outline of record cross-listed under many
+    # subjects BY DESIGN. Their discipline ("Interdisciplinary Studies") is an
+    # intentional re-mint assignment (NOT an unreviewed seed draft), and the
+    # over-merge / TOP-divergence / discipline-mismatch / seed-untouched rules
+    # would all fire SPURIOUSLY. Fully exempt — return no tags. (crossdisc
+    # re-mint, session 36; see kb/_apply_crossdisc_remint.py.)
+    if rec.get("cross_disciplinary"):
+        return tags
     if faculty_fields["discipline"]["state"] == "seed-untouched":
         tags.append("seed_untouched_discipline")
     if faculty_fields["discipline"]["state"] == "missing":
