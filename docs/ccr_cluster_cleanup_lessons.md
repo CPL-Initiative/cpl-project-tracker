@@ -395,3 +395,37 @@ members), SPAN 200/210 queued in the worklist; KINE M1015 + AUTB M1002 merged
 rows awaiting Sam's Verify; 0 UC-CUR ids; 0 orphans; anchors carry Credit; the
 Flags column wraps; Subject(s) sits beside Discipline. All live except the baked
 data, which lands on the next cron.
+
+## Session 40 — the severed evidence index (2026-06-10)
+
+Sam's screenshot question — *"SPAN 200 should include all the Intermediate
+Spanish variants; I thought our rules checked title + description alignment"* —
+led to a root cause, not a missing feature. Full analysis + recommendations:
+[`official_id_fold_scope.md`](official_id_fold_scope.md); reproducible numbers:
+`kb/_analyze_official_fold_evidence.py`.
+
+### Learnings
+- **The automatic official-ID fold (Phase A/B) keys on `kb/promotions.json`,
+  and four re-keys since 2026-05-22 never re-keyed it.** `_row_official()` does
+  exact-id lookup; 1,111 of 2,083 evidence records (53%) point at dead ids.
+  Only 174 CCR rows carry `match` badges today; 1,386 are entitled. The whole
+  FLSP family was severed twice over (canonical-SUBJ4 fold, then FL split).
+- **Promotions evidence is the 5th artifact class that must move in every
+  re-key** (with memberships, articulations, curation, Supabase). Playbook gap.
+- **Evidence beats lexical similarity in both directions**: it folds what
+  titles can't ("Spanish 3" → SPAN 200 ×6 witnesses) and it *blocks* what
+  titles would wrongly fold (bare "Intermediate Spanish" = SPAN 200 ×8 vs
+  SPAN 210 ×6 — two courses wearing one title; the level-safe conservatism was
+  right about it).
+- **Strict unanimity is too strict once evidence is restored**: FLSP M1352 is
+  24× SPAN 210 vs 1× SPAN 200 — "conflict" under today's rule. Plurality ≥80%
+  with ≥2 witnesses reproduces 11 of Sam's 15 evidence-bearing hand-merges and
+  contradicts none.
+- **Restoring keys without touching the worklist's `cid_conflict` exclusion
+  would HIDE currently-queued groups** (M1352's SPAN 210 group) — the re-key,
+  the plurality rule, and the evidence-lane surfacing must ship together.
+
+### State
+Scope doc committed; build (R1 re-key + R2 plurality + R3 evidence lane, then
+R4 singletons) gated on Sam's §7 sign-off. His queued SPAN 200/210 worklist
+confirms remain valid and compatible meanwhile.
