@@ -528,7 +528,18 @@
     }
     // Course number parsed from the trailing digits of the ID ("M-ID EGDTEK 100" -> 100).
     function courseNum(r) { var m = String(r.id || "").match(/(\d+)\s*$/); return m ? parseInt(m[1], 10) : 0; }
-    function subjKey(r) { return (r.subj || []).join("/").toLowerCase(); }
+    // Canonical "common" subject (SUBJ4) for the Subject column/filter/sort. The
+    // 4-letter SUBJ4 is the M-ID/C-ID/CCN id prefix (the product of the SUBJ4
+    // re-mint); r.subj holds the noisier raw per-college local codes (KIN/PE),
+    // which disagree with the canonical SUBJ4 in ~73% of M-IDs. Prefer a baked
+    // r.subj4 when the generator provides it; else derive from the id prefix;
+    // fall back to the raw local codes for the synthetic UC-CUR-* rows.
+    function subj4Of(r) {
+      if (r.subj4) return r.subj4;
+      if (r.id_system === "Unified" || /^UC-/.test(r.id || "")) return (r.subj || []).join(", ");
+      return String(r.id || "").split(/\s+/)[0] || (r.subj || []).join(", ");
+    }
+    function subjKey(r) { return String(subj4Of(r)).toLowerCase(); }
     // Verified = human-verified (curated, reviewed, or the curated anchor);
     // Generated = machine-produced, not yet verified.
     function statusOf(r) {
@@ -971,8 +982,9 @@
     var fSource = sel("uc-source", "All sources", uniqSorted(rows.map(function (r) { return r.id_system; })), idSysLabel);
     var fStatus = sel("uc-status", "All statuses", ["Verified", "Generated"]);
     var fDisc = sel("uc-disc", "All disciplines", uniqSorted(rows.map(function (r) { return r.disc; })));
-    // #8 SUBJ filter — subjects are per-row arrays (r.subj), so flatten before uniq.
-    var fSubj = sel("uc-subj", "All subjects", uniqSorted(rows.reduce(function (a, r) { if (r.subj) r.subj.forEach(function (s) { if (s) a.push(s); }); return a; }, [])));
+    // #8 SUBJ filter — list the canonical SUBJ4 (one per row) so it matches the
+    // Subject column display (passes() filters on subj4Of, below).
+    var fSubj = sel("uc-subj", "All subjects", uniqSorted(rows.map(subj4Of).filter(Boolean)));
     var fCredit = sel("uc-credit", "All credit statuses", uniqSorted(rows.map(function (r) { return r.credit; })));
     var fConf = sel("uc-conf", "Any confidence", ["high (≥0.85)", "medium (0.7–0.84)", "low (<0.7)"]);
     var fArtic = sel("uc-artic", "Adoption: any", ["Has earned articulation", "No articulation yet"]);
@@ -1195,7 +1207,7 @@
       if (state.source && r.id_system !== state.source) return false;
       if (state.status && statusOf(r) !== state.status) return false;
       if (state.disc && r.disc !== state.disc && !(r.xdisc && r.xdisc.indexOf(state.disc) >= 0)) return false;
-      if (state.subj && !(r.subj && r.subj.indexOf(state.subj) >= 0)) return false;
+      if (state.subj && subj4Of(r) !== state.subj) return false;
       if (state.credit && r.credit !== state.credit) return false;
       if (state.conf && confTier(r.conf) !== state.conf) return false;
       var hasArt = (r.adopted && r.adopted.length) || (r.potential && r.potential.length);
@@ -1341,11 +1353,12 @@
         td.innerHTML = "";
         var v = r.disc || "—";
         if (session && !r.locked) {
-          var span = el("span", { class: "uc-disc-edit", title: "Click to set discipline" }, [v]);
+          var span = el("span", { class: "uc-disc-edit uc-trunc", title: v + " — click to set discipline" }, [v]);
           span.onclick = function () { showEditor(); };
           td.appendChild(span);
         } else {
-          var node = el("span", r.locked ? { title: "Curated common-course anchor — official discipline (read-only; firewalled). Sign in and use “propose correction” to suggest a change." } : {}, [v]);
+          // .uc-trunc caps the NAME only (col 4); badges + propose-correction stay visible.
+          var node = el("span", { class: "uc-trunc", title: r.locked ? (v + " — curated common-course anchor (read-only; firewalled). Sign in and use “propose correction” to suggest a change.") : v }, [v]);
           td.appendChild(node);
         }
         // Cross-listed (secondary) disciplines — same course, listed under both
@@ -1541,36 +1554,74 @@
           var descLink = el("a", { href: "#", class: "uc-auth-link", title: "Load and show each member course's catalog description (helps judge discipline)" }, ["Show descriptions"]);
           countDiv.appendChild(descLink);
           cell.appendChild(countDiv);
+          // #4 sortable member columns. Each column carries an accessor + numeric
+          // flag; clicking a header sorts (re-click toggles direction). _oi pins the
+          // original generator order so the on-demand descriptions (aligned to that
+          // order) stay correctly mapped after a sort.
+          list.forEach(function (e, i) { e._oi = i; });
+          var MCOLS = [
+            { label: "College",           get: function (e) { return cols[e.c] || ""; },        num: false },
+            { label: "Local code",        get: function (e) { return e.n || ""; },              num: false },
+            { label: "Local title",       get: function (e) { return e.t || ""; },              num: false },
+            { label: "Units",             get: function (e) { return e.u != null ? e.u : null; }, num: true },
+            { label: "TOP (code: title)", get: function (e) { return e.p || ""; },              num: false }
+          ];
+          var msort = { i: -1, dir: 1 };   // i = MCOLS index sorted on; -1 = original order
+          var dsLoaded = null;             // descriptions (md[r.id]) once the heavy file loads
           var mt = el("table", { class: "uc-member-table" });
           var mh = el("thead"), mhr = el("tr");
-          ["College", "Local code", "Local title", "Units", "TOP (code: title)"].forEach(function (h) { mhr.appendChild(el("th", {}, [h])); });
+          function paintHeaders() {
+            Array.prototype.forEach.call(mhr.children, function (h, hi) {
+              h.textContent = MCOLS[hi].label + (msort.i === hi ? (msort.dir > 0 ? " ▲" : " ▼") : "");
+            });
+          }
+          MCOLS.forEach(function (c, ci) {
+            var th = el("th", { title: "Sort by " + c.label, style: "cursor:pointer;white-space:nowrap;" }, [c.label]);
+            th.onclick = function () {
+              if (msort.i === ci) msort.dir = -msort.dir; else { msort.i = ci; msort.dir = 1; }
+              paintHeaders(); paintBody();
+            };
+            mhr.appendChild(th);
+          });
           mh.appendChild(mhr); mt.appendChild(mh);
           var mb = el("tbody");
-          list.forEach(function (e) {
-            var mr = el("tr");
-            mr.appendChild(el("td", {}, [cols[e.c] || ""]));
-            mr.appendChild(el("td", { class: "uc-id" }, [e.n || ""]));
-            mr.appendChild(el("td", {}, [e.t || ""]));
-            mr.appendChild(el("td", {}, [e.u != null ? String(e.u) : ""]));
-            mr.appendChild(el("td", { style: "font-size:.82rem;color:#475569;" },
-              [e.p ? (e.p + (topmap[e.p] ? ": " + topmap[e.p] : "")) : ""]));
-            mb.appendChild(mr);
-          });
+          function sortedList() {
+            if (msort.i < 0) return list.slice();
+            var c = MCOLS[msort.i];
+            return list.slice().sort(function (a, b) {
+              var av = c.get(a), bv = c.get(b), cmp;
+              if (c.num) { cmp = (av == null ? -Infinity : av) - (bv == null ? -Infinity : bv); }
+              else { av = String(av).toLowerCase(); bv = String(bv).toLowerCase(); cmp = av < bv ? -1 : av > bv ? 1 : 0; }
+              if (cmp === 0) cmp = a._oi - b._oi;   // stable tie-break = original order
+              return cmp * msort.dir;
+            });
+          }
+          function paintBody() {
+            mb.innerHTML = "";
+            sortedList().forEach(function (e) {
+              var mr = el("tr");
+              mr.appendChild(el("td", {}, [cols[e.c] || ""]));
+              mr.appendChild(el("td", { class: "uc-id" }, [e.n || ""]));
+              mr.appendChild(el("td", {}, [e.t || ""]));
+              mr.appendChild(el("td", {}, [e.u != null ? String(e.u) : ""]));
+              mr.appendChild(el("td", { style: "font-size:.82rem;color:#475569;" },
+                [e.p ? (e.p + (topmap[e.p] ? ": " + topmap[e.p] : "")) : ""]));
+              mb.appendChild(mr);
+              if (dsLoaded) {
+                var dtd = el("td", { colspan: String(MCOLS.length), class: "uc-member-desc", style: "font-size:.8rem;color:#64748b;padding:2px 8px 8px 28px;" },
+                  [dsLoaded[e._oi] || "—"]);
+                var dr = el("tr"); dr.appendChild(dtd); mb.appendChild(dr);
+              }
+            });
+          }
+          paintBody();
           mt.appendChild(mb); cell.appendChild(mt);
           descLink.onclick = function (ev) {
             ev.preventDefault();
             descLink.textContent = "Loading descriptions…";
             loadMemberDesc().then(function (md) {
-              var ds = md[r.id] || [];
-              var bodyRows = mb.querySelectorAll("tr");
-              list.forEach(function (e, idx) {
-                var tr2 = bodyRows[idx]; if (!tr2 || tr2._descAdded) return;
-                var td = el("td", { colspan: "5", class: "uc-member-desc", style: "font-size:.8rem;color:#64748b;padding:2px 8px 8px 28px;" },
-                  [ds[idx] || "—"]);
-                var dr = el("tr"); dr.appendChild(td);
-                if (tr2.nextSibling) tr2.parentNode.insertBefore(dr, tr2.nextSibling); else tr2.parentNode.appendChild(dr);
-                tr2._descAdded = true;
-              });
+              dsLoaded = md[r.id] || [];
+              paintBody();   // re-render with descriptions interleaved, preserving the current sort
               descLink.textContent = "Descriptions shown";
               descLink.onclick = function (e2) { e2.preventDefault(); };
             });
@@ -1702,14 +1753,20 @@
         idTd.appendChild(info);
         idTd.appendChild(document.createTextNode(" " + (r.id || "")));
         tr.appendChild(idTd);
-        tr.appendChild(el("td", {}, [r.title || ""]));
+        // Title is width-capped via an inner .uc-trunc inline-block (truncation on a
+        // bare <td> is ignored under table-layout:auto) so all columns fit without
+        // horizontal scroll; full title on the cell hover + ⓘ modal.
+        tr.appendChild(el("td", { title: r.title || "" }, [el("span", { class: "uc-trunc" }, [r.title || ""])]));
         tr.appendChild(disciplineCell(r));
         tr.appendChild(el("td", {}, [r.credit || "—"]));
         tr.appendChild(el("td", {}, [r.units == null ? "—" : String(r.units)]));
         tr.appendChild(el("td", (r.top && topMap[r.top]) ? { title: topMap[r.top], style: "cursor:help;" } : {}, [r.top || "—"]));
         var subjTitle = (r.title_variants && r.title_variants.length)
           ? r.title_variants.join("\n") : (r.title || "");
-        tr.appendChild(el("td", { title: subjTitle }, [(r.subj || []).join(", ")]));
+        // Subject column shows the canonical SUBJ4 (the "common" subject); the raw
+        // per-college local code(s) move to the hover so nothing is lost.
+        var localCodes = (r.subj || []).join(", ");
+        tr.appendChild(el("td", { title: "Local member subject code(s): " + (localCodes || "—") + (subjTitle ? "\n" + subjTitle : "") }, [subj4Of(r)]));
         tr.appendChild(el("td", {}, [String(r.members == null ? "" : r.members)]));
         tr.appendChild(el("td", {}, [adoptionCell(r.adopted, "adopted")]));
         tr.appendChild(el("td", {}, [adoptionCell(r.potential, "potential")]));
