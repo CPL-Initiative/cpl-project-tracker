@@ -190,6 +190,26 @@
     return s.map(function (x) { return x.lang + " " + x.code; }).join(" ").toLowerCase();
   }
 
+  // Fan-in discipline aliases (canonical → [alternate names], e.g. Kinesiology
+  // → ["Physical Education"]; kb/discipline_aliases.json). The alternate name
+  // stays a valid MQ, but its identities were folded into the canonical row —
+  // surface that as an "also: …" chip and make the alternate searchable so a
+  // curator typing "Physical Education" finds Kinesiology. Empty-on-404.
+  function fetchAliases() {
+    return fetch("kb/discipline_aliases.json", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .catch(function () { return null; });
+  }
+  // Alternate names for a row's discipline, or null.
+  function aliasesFor(entry) {
+    return (entry && entry.discipline && state.aliases && state.aliases[entry.discipline]) || null;
+  }
+  // Lowercase alternate-name haystack for search matching.
+  function aliasSearchText(entry) {
+    var a = aliasesFor(entry);
+    return a ? a.join(" ").toLowerCase() : "";
+  }
+
   // Load C-ID and CCN reference data. Used to:
   //   (a) Show C-ID / CCN match badges per row (count + visual indicator of
   //       whether the canonical SUBJ4 matches the official identifier's
@@ -712,9 +732,11 @@
 
     var filtered = allRows.filter(function (e) {
       // Discipline search also matches a split discipline's language names +
-      // codes, so "Spanish" / "FLSP" surface the Foreign Languages row.
+      // codes ("Spanish"/"FLSP" → Foreign Languages) and a converged
+      // discipline's alternate names ("Physical Education" → Kinesiology).
       if (state.search && e.discipline.toLowerCase().indexOf(state.search) < 0
-          && splitSearchText(e).indexOf(state.search) < 0) return false;
+          && splitSearchText(e).indexOf(state.search) < 0
+          && aliasSearchText(e).indexOf(state.search) < 0) return false;
       if (state.subj) {
         var sq = state.subj.toUpperCase();
         var subjHit = (e.canonical_subj4 || "").toUpperCase().indexOf(sq) >= 0
@@ -846,7 +868,24 @@
 
   function rowFor(entry) {
     var tr = el("tr");
-    tr.appendChild(el("td", { class: "cs-disc" }, [entry.discipline]));
+    // Discipline cell — name first; a converged discipline (fan-in) also
+    // carries an "also: <alternate name>" chip so the folded-in name stays
+    // discoverable (matched in render()'s search filter too).
+    var tdDisc = el("td", { class: "cs-disc" }, [entry.discipline]);
+    var aliasArr = aliasesFor(entry);
+    if (aliasArr && aliasArr.length) {
+      var aliasChip = el("span", {
+        class: "cs-badge muted",
+        title: "Alternate discipline name" + (aliasArr.length > 1 ? "s" : "")
+          + " (fan-in convergence): identities minted under "
+          + aliasArr.join(" / ") + " were folded into " + entry.discipline
+          + ". The alternate remains a valid MQ for faculty qualification.",
+      }, ["also: " + aliasArr.join(", ")]);
+      aliasChip.style.marginLeft = "6px";
+      aliasChip.style.cursor = "help";
+      tdDisc.appendChild(aliasChip);
+    }
+    tr.appendChild(tdDisc);
     tr.appendChild(el("td", { class: "cs-mono" }, [String(entry.total_mids || 0)]));
     tr.appendChild(variantsCell(entry));
     // Data-modal cell — show the most-common code colleges use today, with
@@ -1205,13 +1244,14 @@
     state.sess = getSession();
     wireGuidelinesModal();
     wireVariantsModal();
-    Promise.all([fetchSeed(), fetchOverlay(), fetchCidCcn(), fetchCplRollup(), fetchFLSplit()]).then(function (parts) {
+    Promise.all([fetchSeed(), fetchOverlay(), fetchCidCcn(), fetchCplRollup(), fetchFLSplit(), fetchAliases()]).then(function (parts) {
       state.seed = parts[0];
       state.overlay = parts[1];
       state.cidBySubj = parts[2].cidBySubj || {};
       state.ccnBySubj = parts[2].ccnBySubj || {};
       state.cpl = (parts[3] || {}).byDiscipline || {};
       state.split = buildSplit(parts[4]);
+      state.aliases = (parts[5] || {}).aliases || {};
       // Stamp the discipline name onto every seed entry (the entries are keyed
       // by name but don't carry it) so splitFor()/status() can resolve it from
       // the raw entry too, not just from built rows.
