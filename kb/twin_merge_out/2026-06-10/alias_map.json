@@ -1,0 +1,378 @@
+{
+ "generated_at": "2026-06-10T19:58:53.940672",
+ "direction": "loser → winner (rollback = invert; losers were pure merges, no re-numbering)",
+ "alias_map": {
+  "FLSP M1029": "FLSP M1279",
+  "FLSP M1033": "FLSP M1335",
+  "FLSP M1358": "FLSP M1040",
+  "FLSP M1041": "FLSP M1359",
+  "FLSP M1365": "FLSP M1043",
+  "FLSP M1386": "FLSP M1045",
+  "FLSP M1121": "FLSP M1130",
+  "FLSP M1183": "FLSP M1181",
+  "FLSP M1224": "FLSP M1225",
+  "FLSP M1218": "FLSP M1230",
+  "FLSP M1294": "FLSP M1272",
+  "FLSP M1010": "FLSP M1272",
+  "FLSP M1307": "FLSP M1235",
+  "FLSP M1308": "FLSP M1237",
+  "FLSP M1015": "FLSP M1342",
+  "FLSP M1346": "FLSP M1391",
+  "FLSP M1396": "FLSP M1245",
+  "FLSP M1348": "FLSP M1019",
+  "FLSP M1400": "FLSP M1349",
+  "FLSP M1020": "FLSP M1349",
+  "FLSP M1397": "FLSP M1246",
+  "KINE M1018": "KINE M1231",
+  "KINE M1030": "KINE M1572",
+  "KINE M1032": "KINE M1234",
+  "KINE M1121": "KINE M1120",
+  "KINE M1150": "KINE M1149",
+  "KINE M1155": "KINE M1156",
+  "KINE M1157": "KINE M1158",
+  "KINE M1183": "KINE M1182",
+  "KINE M1202": "KINE M1197",
+  "KINE M1203": "KINE M1204",
+  "KINE M1213": "KINE M1214",
+  "KINE M1228": "KINE M1223",
+  "KINE M1003": "KINE M1223",
+  "KINE M1239": "KINE M1229",
+  "KINE M1240": "KINE M1241",
+  "KINE M1245": "KINE M1252",
+  "KINE M1269": "KINE M1268",
+  "KINE M1296": "KINE M1295",
+  "KINE M1297": "KINE M1303",
+  "KINE M1731": "KINE M1732",
+  "KINE M1875": "KINE M1874",
+  "KINE M1320": "KINE M1321",
+  "KINE M1331": "KINE M1332",
+  "KINE M1326": "KINE M1335",
+  "KINE M1349": "KINE M1350",
+  "KINE M1382": "KINE M1381",
+  "KINE M1771": "KINE M1072",
+  "KINE M1774": "KINE M1073",
+  "KINE M1221": "KINE M1406",
+  "KINE M1407": "KINE M1404",
+  "KINE M1449": "KINE M1450",
+  "KINE M1466": "KINE M1465",
+  "KINE M1471": "KINE M1470",
+  "KINE M1454": "KINE M1489",
+  "KINE M1490": "KINE M1489",
+  "KINE M1007": "KINE M1492",
+  "KINE M1506": "KINE M1505",
+  "KINE M1594": "KINE M1593",
+  "KINE M1635": "KINE M1634",
+  "KINE M1653": "KINE M1652",
+  "KINE M1656": "KINE M1535",
+  "KINE M1657": "KINE M1538",
+  "KINE M1659": "KINE M1540",
+  "KINE M1539": "KINE M1658",
+  "KINE M1660": "KINE M1541",
+  "KINE M1542": "KINE M1661",
+  "KINE M1662": "KINE M1663",
+  "KINE M1667": "KINE M1666",
+  "KINE M1672": "KINE M1673",
+  "KINE M1683": "KINE M1548",
+  "KINE M1725": "KINE M1815",
+  "KINE M1549": "KINE M1015",
+  "KINE M1551": "KINE M1688"
+ },
+ "merges": [
+  {
+   "from": "FLSP M1029",
+   "into": "FLSP M1279"
+  },
+  {
+   "from": "FLSP M1033",
+   "into": "FLSP M1335"
+  },
+  {
+   "from": "FLSP M1358",
+   "into": "FLSP M1040"
+  },
+  {
+   "from": "FLSP M1041",
+   "into": "FLSP M1359"
+  },
+  {
+   "from": "FLSP M1365",
+   "into": "FLSP M1043"
+  },
+  {
+   "from": "FLSP M1386",
+   "into": "FLSP M1045"
+  },
+  {
+   "from": "FLSP M1121",
+   "into": "FLSP M1130"
+  },
+  {
+   "from": "FLSP M1183",
+   "into": "FLSP M1181"
+  },
+  {
+   "from": "FLSP M1224",
+   "into": "FLSP M1225"
+  },
+  {
+   "from": "FLSP M1218",
+   "into": "FLSP M1230"
+  },
+  {
+   "from": "FLSP M1294",
+   "into": "FLSP M1272"
+  },
+  {
+   "from": "FLSP M1010",
+   "into": "FLSP M1272"
+  },
+  {
+   "from": "FLSP M1307",
+   "into": "FLSP M1235"
+  },
+  {
+   "from": "FLSP M1308",
+   "into": "FLSP M1237"
+  },
+  {
+   "from": "FLSP M1015",
+   "into": "FLSP M1342"
+  },
+  {
+   "from": "FLSP M1346",
+   "into": "FLSP M1391"
+  },
+  {
+   "from": "FLSP M1396",
+   "into": "FLSP M1245"
+  },
+  {
+   "from": "FLSP M1348",
+   "into": "FLSP M1019"
+  },
+  {
+   "from": "FLSP M1400",
+   "into": "FLSP M1349"
+  },
+  {
+   "from": "FLSP M1020",
+   "into": "FLSP M1349"
+  },
+  {
+   "from": "FLSP M1397",
+   "into": "FLSP M1246"
+  },
+  {
+   "from": "KINE M1018",
+   "into": "KINE M1231"
+  },
+  {
+   "from": "KINE M1030",
+   "into": "KINE M1572"
+  },
+  {
+   "from": "KINE M1032",
+   "into": "KINE M1234"
+  },
+  {
+   "from": "KINE M1121",
+   "into": "KINE M1120"
+  },
+  {
+   "from": "KINE M1150",
+   "into": "KINE M1149"
+  },
+  {
+   "from": "KINE M1155",
+   "into": "KINE M1156"
+  },
+  {
+   "from": "KINE M1157",
+   "into": "KINE M1158"
+  },
+  {
+   "from": "KINE M1183",
+   "into": "KINE M1182"
+  },
+  {
+   "from": "KINE M1202",
+   "into": "KINE M1197"
+  },
+  {
+   "from": "KINE M1203",
+   "into": "KINE M1204"
+  },
+  {
+   "from": "KINE M1213",
+   "into": "KINE M1214"
+  },
+  {
+   "from": "KINE M1228",
+   "into": "KINE M1223"
+  },
+  {
+   "from": "KINE M1003",
+   "into": "KINE M1223"
+  },
+  {
+   "from": "KINE M1239",
+   "into": "KINE M1229"
+  },
+  {
+   "from": "KINE M1240",
+   "into": "KINE M1241"
+  },
+  {
+   "from": "KINE M1245",
+   "into": "KINE M1252"
+  },
+  {
+   "from": "KINE M1269",
+   "into": "KINE M1268"
+  },
+  {
+   "from": "KINE M1296",
+   "into": "KINE M1295"
+  },
+  {
+   "from": "KINE M1297",
+   "into": "KINE M1303"
+  },
+  {
+   "from": "KINE M1731",
+   "into": "KINE M1732"
+  },
+  {
+   "from": "KINE M1875",
+   "into": "KINE M1874"
+  },
+  {
+   "from": "KINE M1320",
+   "into": "KINE M1321"
+  },
+  {
+   "from": "KINE M1331",
+   "into": "KINE M1332"
+  },
+  {
+   "from": "KINE M1326",
+   "into": "KINE M1335"
+  },
+  {
+   "from": "KINE M1349",
+   "into": "KINE M1350"
+  },
+  {
+   "from": "KINE M1382",
+   "into": "KINE M1381"
+  },
+  {
+   "from": "KINE M1771",
+   "into": "KINE M1072"
+  },
+  {
+   "from": "KINE M1774",
+   "into": "KINE M1073"
+  },
+  {
+   "from": "KINE M1221",
+   "into": "KINE M1406"
+  },
+  {
+   "from": "KINE M1407",
+   "into": "KINE M1404"
+  },
+  {
+   "from": "KINE M1449",
+   "into": "KINE M1450"
+  },
+  {
+   "from": "KINE M1466",
+   "into": "KINE M1465"
+  },
+  {
+   "from": "KINE M1471",
+   "into": "KINE M1470"
+  },
+  {
+   "from": "KINE M1454",
+   "into": "KINE M1489"
+  },
+  {
+   "from": "KINE M1490",
+   "into": "KINE M1489"
+  },
+  {
+   "from": "KINE M1007",
+   "into": "KINE M1492"
+  },
+  {
+   "from": "KINE M1506",
+   "into": "KINE M1505"
+  },
+  {
+   "from": "KINE M1594",
+   "into": "KINE M1593"
+  },
+  {
+   "from": "KINE M1635",
+   "into": "KINE M1634"
+  },
+  {
+   "from": "KINE M1653",
+   "into": "KINE M1652"
+  },
+  {
+   "from": "KINE M1656",
+   "into": "KINE M1535"
+  },
+  {
+   "from": "KINE M1657",
+   "into": "KINE M1538"
+  },
+  {
+   "from": "KINE M1659",
+   "into": "KINE M1540"
+  },
+  {
+   "from": "KINE M1539",
+   "into": "KINE M1658"
+  },
+  {
+   "from": "KINE M1660",
+   "into": "KINE M1541"
+  },
+  {
+   "from": "KINE M1542",
+   "into": "KINE M1661"
+  },
+  {
+   "from": "KINE M1662",
+   "into": "KINE M1663"
+  },
+  {
+   "from": "KINE M1667",
+   "into": "KINE M1666"
+  },
+  {
+   "from": "KINE M1672",
+   "into": "KINE M1673"
+  },
+  {
+   "from": "KINE M1683",
+   "into": "KINE M1548"
+  },
+  {
+   "from": "KINE M1725",
+   "into": "KINE M1815"
+  },
+  {
+   "from": "KINE M1549",
+   "into": "KINE M1015"
+  },
+  {
+   "from": "KINE M1551",
+   "into": "KINE M1688"
+  }
+ ]
+}
