@@ -1,0 +1,81 @@
+{
+ "generated_at": "2026-06-10T18:35:57.857827",
+ "alias_map": {
+  "DRAM M1003": "THEA M1261",
+  "DRAM M1012": "THEA M1262",
+  "DRAM M1013": "THEA M1263",
+  "DRAM M1014": "THEA M1264",
+  "DRAM M1015": "THEA M1265",
+  "DRAM M1005": "THEA M1266",
+  "DRAM M1016": "THEA M1267",
+  "DRAM M1017": "THEA M1268",
+  "DRAM M1022": "THEA M1269",
+  "DRAM M1025": "THEA M1001",
+  "DRAM M1037": "THEA M1270",
+  "DRAM M1036": "THEA M1271",
+  "DRAM M1011": "THEA M1272",
+  "DRAM M1040": "THEA M1273",
+  "DRAM M1009": "THEA M1274",
+  "DRAM M1027": "THEA M1275",
+  "DRAM M1039": "THEA M1276",
+  "DRAM M1042": "THEA M1277",
+  "DRAM M1047": "THEA M1234",
+  "DRAM M1007": "THEA M1278",
+  "DRAM M1001": "THEA M1279",
+  "DRAM M1002": "THEA M1280",
+  "DRAM M1028": "THEA M1281",
+  "DRAM M1032": "THEA M1282",
+  "DRAM M1034": "THEA M1283",
+  "DRAM M1045": "THEA M1284",
+  "DRAM M1050": "THEA M1285",
+  "DRAM M1019": "THEA M1286",
+  "DRAM M1049": "THEA M1287",
+  "DRAM M1023": "THEA M1288",
+  "DRAM M1008": "THEA M1289",
+  "DRAM M1044": "THEA M1290",
+  "DRAM M1010": "THEA M1291",
+  "DRAM M1024": "THEA M1292",
+  "DRAM M1029": "THEA M1293",
+  "DRAM M1033": "THEA M1294",
+  "DRAM M1035": "THEA M1295",
+  "DRAM M1046": "THEA M1296",
+  "DRAM M1020": "THEA M1297",
+  "DRAM M1048": "THEA M1298",
+  "DRAM M9001": "THEA M9007",
+  "DRAM M9004": "THEA M9008",
+  "DRAM M9002": "THEA M9009",
+  "DRAM M9003": "THEA M9010",
+  "DRAM M1006": "THEA M1299",
+  "DRAM M1026": "THEA M1300",
+  "DRAM M1030": "THEA M1301",
+  "DRAM M1041": "THEA M1302",
+  "DRAM M1038": "THEA M1303",
+  "DRAM M1031": "THEA M1304",
+  "DRAM M1021": "THEA M1305",
+  "DRAM M1018": "THEA M1138",
+  "DRAM M1043": "THEA M1215",
+  "DRAM M1004": "THEA M1306"
+ },
+ "merges": [
+  {
+   "from": "DRAM M1025",
+   "into": "THEA M1001",
+   "title": "History of Theatre"
+  },
+  {
+   "from": "DRAM M1047",
+   "into": "THEA M1234",
+   "title": "Movement for the Stage"
+  },
+  {
+   "from": "DRAM M1018",
+   "into": "THEA M1138",
+   "title": "Introduction to Design for Theatre"
+  },
+  {
+   "from": "DRAM M1043",
+   "into": "THEA M1215",
+   "title": "Introduction to Theater"
+  }
+ ]
+}

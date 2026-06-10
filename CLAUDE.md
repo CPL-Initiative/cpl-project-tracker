@@ -68,15 +68,28 @@ into the Pipeline Reference below or into dedicated docs.
    - **Umbrella-discipline exception (2026-06-09, Session 37).** One MQ
      discipline that is genuinely a *parent over many distinct subjects*
      splits its SUBJ4 per subject — the invariant becomes *one **SUBJECT**
-     → one SUBJ4*. **"Foreign Languages"** is the lone umbrella today:
+     → one SUBJ4*. Two umbrellas today: **"Foreign Languages"** —
      its 1,452 identities re-keyed `FLNG` → per-language `FL**` (FLSP
      Spanish · FLFR French · FLCH Chinese · …) while the **MQ discipline
      stays "Foreign Languages"** (authoritative MQ has no per-language
-     discipline). Umbrella disciplines are listed in `UMBRELLA_DISCIPLINES`
+     discipline) — and **"Kinesiology"** (2026-06-10, the KIN/PE
+     convergence): spans `KINE` (instruction) + `ATHL` (intercollegiate
+     athletics). Umbrella disciplines are listed in `UMBRELLA_DISCIPLINES`
      (`kb/_row_audit.py`) and are **exempt from `subject_collision_signal`**
-     (they're *supposed* to span many SUBJ4s). Scope:
-     [`docs/fl_subj4_remint_scope.md`](docs/fl_subj4_remint_scope.md);
-     map: `kb/foreign_language_subj4.json`; apply: `kb/_apply_fl_subj4_remint.py`.
+     (they're *supposed* to span many SUBJ4s). Scopes:
+     [`docs/fl_subj4_remint_scope.md`](docs/fl_subj4_remint_scope.md) ·
+     [`docs/kin_pe_convergence_scope.md`](docs/kin_pe_convergence_scope.md);
+     map: `kb/foreign_language_subj4.json`; applies: `kb/_apply_fl_subj4_remint.py`,
+     `kb/_apply_kin_pe_convergence.py`.
+   - **Fan-in convergence (2026-06-10).** The inverse of the umbrella: two MQ
+     discipline *names* for one converging field fold to a canonical name, the
+     other recorded as an **alternate name** in `kb/discipline_aliases.json`
+     (never deleted from the MQ vocab). Applied: **Kinesiology ⟵ Physical
+     Education** (+ carve-outs `ATHL`/`PEDS` — "Physical Education Disabled
+     Students" is its own MQ + SUBJ4) and **Drama/Theater Arts ⟵ Theater
+     Arts** (SUBJ4 `THEA`). Both parent + singleton layers converged; alias
+     receipts under `kb/kin_pe_out/`, `kb/drama_theater_out/`,
+     `kb/convergence_singletons_out/`.
    - **C-IDs and CCN-IDs preserve their official format** — they're
      external authorities with variable lengths (`ANTH 100`, `AG-PS 104`,
      `ANTH C1000`). Never re-key.

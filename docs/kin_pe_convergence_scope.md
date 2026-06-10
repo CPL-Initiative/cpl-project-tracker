@@ -220,6 +220,32 @@ the Suggested-merges worklist now collapses the remaining cross-subject dups
 alternate-name chip (`canonical_subj4.js` ← `kb/discipline_aliases.json`). The 5 other
 DSPS disciplines still carrying a stray `53414` are a separate pre-existing vocab bug.
 
+## 9. Same-day follow-ons (2026-06-10, after the §8 apply merged)
+
+- **Drama/Theater Arts ⟵ Theater Arts** — fan-in #2, same machinery
+  (`kb/_apply_drama_theater_convergence.py`). Canonical **"Drama/Theater Arts"**
+  (the MQ slash form; Sam's pick), SUBJ4 **THEA**, "Theater Arts" → alternate name.
+  Parents: 4 level-safe merges + 50 re-sequences (all 54 `DRAM` numbers collided),
+  266 discipline flips; 16,221 → 16,217 identities. Receipt: `kb/drama_theater_out/`.
+- **Singleton-layer extension** (`kb/_apply_convergence_singletons.py`) — the first
+  two applies converged only the minted parents; the ~56k stand-alones still carried
+  the old names (2,590 PE · 1,187 Theater Arts · 192 DRAM, + the `PHYS` overload
+  repeated: 2,590 PE vs 242 Physics). Same rules, no merging at this layer
+  (the worklist's job): PE → 1,853 KINE + 625 ATHL + 112 PEDS; KINE carve-outs
+  120 ATHL + 27 PEDS; 192 DRAM → THEA; 1,187 Theater-Arts flips. 2,929 ids re-keyed,
+  collision-aware in the stand-alone `M<band><d><LL>` space; articulations 11,
+  curation 4. Receipt: `kb/convergence_singletons_out/`. **Known pre-existing
+  stray:** `PEDS M10AE` ("Intro Wrk Readiness", Family & Consumer Studies) wore the
+  literal local code `PEDS` before the convergence — canonical-SUBJ4-fold queue.
+- **Auditor**: Kinesiology added to `UMBRELLA_DISCIPLINES` (deliberately spans
+  KINE + ATHL per §5.2) → `subject_collision_signal` back to its 1,076 baseline
+  (the +299 ATHL artifact absorbed). `latest.json` + `2026-06-10.md` regenerated.
+- **CSR**: re-seeded — "Physical Education"/"Theater Arts" rows gone (148 → 146
+  disciplines); canonical pins **Drama/Theater Arts → THEA** and **PEDS** written
+  as re-seed-surviving curator overrides. NOTE: the Supabase `kb_curation` row
+  `_CANON_SUBJ4::Theater Arts` is now a harmless orphan (not edited — local-only
+  session); clean up whenever convenient.
+
 **Bottom line.** KIN/PE is the headline collision and the template-setter for a new
 **fan-in / discipline-alias** pattern (the way FL set the fan-out template). It's a
 bigger operation than FL — it changes a faculty-facing discipline and needs

@@ -1,7 +1,7 @@
 {
   "_status": "PREVIEW — members carry College + CourseControlNumber (the re-key fix).",
   "_generated_at": "2026-05-22",
-  "count": 16221,
+  "count": 16217,
   "member_courses_total": 63754,
   "memberships": {
     "POSC M1007": [
@@ -216207,7 +216207,7 @@
         "top_code": "0956.00: Manufacturing and Industrial Technology"
       }
     ],
-    "DRAM M1003": [
+    "THEA M1261": [
       {
         "college": "Riverside City College",
         "control_number": "CCC000659898",
@@ -216236,7 +216236,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1012": [
+    "THEA M1262": [
       {
         "college": "Diablo Valley College",
         "control_number": "CCC000082928",
@@ -216256,7 +216256,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1013": [
+    "THEA M1263": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000533746",
@@ -216276,7 +216276,7 @@
         "top_code": "1006.00: Technical Theater"
       }
     ],
-    "DRAM M1014": [
+    "THEA M1264": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000609749",
@@ -216296,7 +216296,7 @@
         "top_code": "1006.00: Technical Theater"
       }
     ],
-    "DRAM M1015": [
+    "THEA M1265": [
       {
         "college": "College of the Sequoias",
         "control_number": "CCC000598315",
@@ -216325,7 +216325,7 @@
         "top_code": "1006.00: Technical Theater"
       }
     ],
-    "DRAM M1005": [
+    "THEA M1266": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000134818",
@@ -216345,7 +216345,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1016": [
+    "THEA M1267": [
       {
         "college": "Contra Costa College",
         "control_number": "CCC000566303",
@@ -216365,7 +216365,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1017": [
+    "THEA M1268": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000580074",
@@ -216385,7 +216385,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1022": [
+    "THEA M1269": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000111364",
@@ -216405,36 +216405,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1025": [
-      {
-        "college": "CaÃ±ada College",
-        "control_number": "CCC000202138",
-        "subject": "DRAM",
-        "course_number": "101",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "1007.00: Dramatic Arts"
-      },
-      {
-        "college": "Hartnell College",
-        "control_number": "CCC000100238",
-        "subject": "TAC",
-        "course_number": "3",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "1007.00: Dramatic Arts"
-      },
-      {
-        "college": "Victor Valley College",
-        "control_number": "CCC000305290",
-        "subject": "TA",
-        "course_number": "102",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "1007.00: Dramatic Arts"
-      }
-    ],
-    "DRAM M1037": [
+    "THEA M1270": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000609602",
@@ -216454,7 +216425,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1036": [
+    "THEA M1271": [
       {
         "college": "College of the Sequoias",
         "control_number": "CCC000608965",
@@ -216474,7 +216445,7 @@
         "top_code": "1006.00: Technical Theater"
       }
     ],
-    "DRAM M1011": [
+    "THEA M1272": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000043684",
@@ -216494,7 +216465,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1040": [
+    "THEA M1273": [
       {
         "college": "MiraCosta College",
         "control_number": "CCC000570419",
@@ -216514,7 +216485,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1009": [
+    "THEA M1274": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000652806",
@@ -216534,7 +216505,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1027": [
+    "THEA M1275": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000068465",
@@ -216554,7 +216525,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1039": [
+    "THEA M1276": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000377880",
@@ -216574,7 +216545,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1042": [
+    "THEA M1277": [
       {
         "college": "Diablo Valley College",
         "control_number": "CCC000372526",
@@ -216594,27 +216565,7 @@
         "top_code": "1006.00: Technical Theater"
       }
     ],
-    "DRAM M1047": [
-      {
-        "college": "MiraCosta College",
-        "control_number": "CCC000272822",
-        "subject": "DRAM",
-        "course_number": "232",
-        "units": 2.0,
-        "credit_status": "Credit",
-        "top_code": "1007.00: Dramatic Arts"
-      },
-      {
-        "college": "Mt. San Antonio College",
-        "control_number": "CCC000630992",
-        "subject": "THTR",
-        "course_number": "31",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "1007.00: Dramatic Arts"
-      }
-    ],
-    "DRAM M1007": [
+    "THEA M1278": [
       {
         "college": "Contra Costa College",
         "control_number": "CCC000558197",
@@ -216643,7 +216594,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1001": [
+    "THEA M1279": [
       {
         "college": "College of the Sequoias",
         "control_number": "CCC000217163",
@@ -216663,7 +216614,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1002": [
+    "THEA M1280": [
       {
         "college": "College of the Sequoias",
         "control_number": "CCC000332295",
@@ -216692,7 +216643,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1028": [
+    "THEA M1281": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000545777",
@@ -216730,7 +216681,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1032": [
+    "THEA M1282": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000545555",
@@ -216786,7 +216737,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1034": [
+    "THEA M1283": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000545556",
@@ -216824,7 +216775,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1045": [
+    "THEA M1284": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000545557",
@@ -216862,7 +216813,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1050": [
+    "THEA M1285": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000638322",
@@ -216882,7 +216833,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1019": [
+    "THEA M1286": [
       {
         "college": "Irvine Valley College",
         "control_number": "CCC000411069",
@@ -216911,7 +216862,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1049": [
+    "THEA M1287": [
       {
         "college": "Diablo Valley College",
         "control_number": "CCC000213605",
@@ -216931,7 +216882,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1023": [
+    "THEA M1288": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000442832",
@@ -216951,7 +216902,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1008": [
+    "THEA M1289": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000623556",
@@ -216971,7 +216922,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1044": [
+    "THEA M1290": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000504336",
@@ -216991,7 +216942,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1010": [
+    "THEA M1291": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000214320",
@@ -217011,7 +216962,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1024": [
+    "THEA M1292": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000283100",
@@ -217031,7 +216982,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1029": [
+    "THEA M1293": [
       {
         "college": "Monterey Peninsula College",
         "control_number": "CCC000240619",
@@ -217060,7 +217011,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1033": [
+    "THEA M1294": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000602156",
@@ -217080,7 +217031,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1035": [
+    "THEA M1295": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000602157",
@@ -217100,7 +217051,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1046": [
+    "THEA M1296": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000602158",
@@ -217120,7 +217071,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1020": [
+    "THEA M1297": [
       {
         "college": "Contra Costa College",
         "control_number": "CCC000035610",
@@ -217140,7 +217091,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1048": [
+    "THEA M1298": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000240777",
@@ -217160,7 +217111,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M9001": [
+    "THEA M9007": [
       {
         "college": "San Joaquin Delta College",
         "control_number": "CCC000626518",
@@ -217180,7 +217131,7 @@
         "top_code": "1006.00: Technical Theater"
       }
     ],
-    "DRAM M9004": [
+    "THEA M9008": [
       {
         "college": "San Joaquin Delta College",
         "control_number": "CCC000621100",
@@ -217200,7 +217151,7 @@
         "top_code": "1006.00: Technical Theater"
       }
     ],
-    "DRAM M9002": [
+    "THEA M9009": [
       {
         "college": "San Joaquin Delta College",
         "control_number": "CCC000621106",
@@ -217220,7 +217171,7 @@
         "top_code": "1006.00: Technical Theater"
       }
     ],
-    "DRAM M9003": [
+    "THEA M9010": [
       {
         "college": "San Joaquin Delta College",
         "control_number": "CCC000621107",
@@ -290048,7 +289999,7 @@
         "top_code": "2203.00: Ethnic Studies"
       }
     ],
-    "DRAM M1006": [
+    "THEA M1299": [
       {
         "college": "Saddleback College",
         "control_number": "CCC000386580",
@@ -563234,7 +563185,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1026": [
+    "THEA M1300": [
       {
         "college": "Palomar College",
         "control_number": "CCC000038582",
@@ -563254,7 +563205,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1030": [
+    "THEA M1301": [
       {
         "college": "Palomar College",
         "control_number": "CCC000544085",
@@ -565035,7 +564986,7 @@
         "top_code": "1006.00: Technical Theater"
       }
     ],
-    "DRAM M1041": [
+    "THEA M1302": [
       {
         "college": "Hartnell College",
         "control_number": "CCC000643634",
@@ -566589,7 +566540,7 @@
         "top_code": "1303.10: Fashion Design"
       }
     ],
-    "DRAM M1038": [
+    "THEA M1303": [
       {
         "college": "Barstow Community College",
         "control_number": "CCC000630774",
@@ -567416,6 +567367,42 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "1007.00: Dramatic Arts"
+      },
+      {
+        "college": "East Los Angeles College",
+        "control_number": "CCC000653961",
+        "subject": "TECTHTR",
+        "course_number": "315",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1006.00: Technical Theater"
+      },
+      {
+        "college": "Los Angeles Harbor College",
+        "control_number": "CCC000626611",
+        "subject": "THEATER",
+        "course_number": "305",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1006.00: Technical Theater"
+      },
+      {
+        "college": "Los Angeles Pierce College",
+        "control_number": "CCC000608611",
+        "subject": "THEATER",
+        "course_number": "305",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1006.00: Technical Theater"
+      },
+      {
+        "college": "San Diego City College",
+        "control_number": "CCC000653287",
+        "subject": "DRAM",
+        "course_number": "113",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1006.00: Technical Theater"
       }
     ],
     "THEA M1168": [
@@ -568349,7 +568336,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1031": [
+    "THEA M1304": [
       {
         "college": "Mendocino College",
         "control_number": "CCC000578048",
@@ -569614,7 +569601,7 @@
         "top_code": "0699.00: Other Media and Communications"
       }
     ],
-    "DRAM M1021": [
+    "THEA M1305": [
       {
         "college": "Cypress College",
         "control_number": "CCC000293211",
@@ -570296,44 +570283,6 @@
         "top_code": "1006.00: Technical Theater"
       }
     ],
-    "DRAM M1018": [
-      {
-        "college": "East Los Angeles College",
-        "control_number": "CCC000653961",
-        "subject": "TECTHTR",
-        "course_number": "315",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "1006.00: Technical Theater"
-      },
-      {
-        "college": "Los Angeles Harbor College",
-        "control_number": "CCC000626611",
-        "subject": "THEATER",
-        "course_number": "305",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "1006.00: Technical Theater"
-      },
-      {
-        "college": "Los Angeles Pierce College",
-        "control_number": "CCC000608611",
-        "subject": "THEATER",
-        "course_number": "305",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "1006.00: Technical Theater"
-      },
-      {
-        "college": "San Diego City College",
-        "control_number": "CCC000653287",
-        "subject": "DRAM",
-        "course_number": "113",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "1006.00: Technical Theater"
-      }
-    ],
     "THEA M1123": [
       {
         "college": "Los Angeles Mission College",
@@ -570540,9 +570489,7 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "1007.00: Dramatic Arts"
-      }
-    ],
-    "DRAM M1043": [
+      },
       {
         "college": "Coastline Community College",
         "control_number": "CCC000437523",
@@ -571780,6 +571727,24 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "1007.00: Dramatic Arts"
+      },
+      {
+        "college": "MiraCosta College",
+        "control_number": "CCC000272822",
+        "subject": "DRAM",
+        "course_number": "232",
+        "units": 2.0,
+        "credit_status": "Credit",
+        "top_code": "1007.00: Dramatic Arts"
+      },
+      {
+        "college": "Mt. San Antonio College",
+        "control_number": "CCC000630992",
+        "subject": "THTR",
+        "course_number": "31",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1007.00: Dramatic Arts"
       }
     ],
     "THEA M1244": [
@@ -571911,6 +571876,33 @@
         "control_number": "CCC000430128",
         "subject": "THEA",
         "course_number": "10",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1007.00: Dramatic Arts"
+      },
+      {
+        "college": "CaÃ±ada College",
+        "control_number": "CCC000202138",
+        "subject": "DRAM",
+        "course_number": "101",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1007.00: Dramatic Arts"
+      },
+      {
+        "college": "Hartnell College",
+        "control_number": "CCC000100238",
+        "subject": "TAC",
+        "course_number": "3",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1007.00: Dramatic Arts"
+      },
+      {
+        "college": "Victor Valley College",
+        "control_number": "CCC000305290",
+        "subject": "TA",
+        "course_number": "102",
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "1007.00: Dramatic Arts"
@@ -572086,7 +572078,7 @@
         "top_code": "1007.00: Dramatic Arts"
       }
     ],
-    "DRAM M1004": [
+    "THEA M1306": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000586591",
