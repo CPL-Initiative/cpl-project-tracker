@@ -9683,7 +9683,8 @@
             #tab-unified-courses .uc-table-wrap { overflow:auto; max-height:70vh; border:1px solid #e5e7eb; border-radius:8px; }
             #tab-unified-courses table.uc-table { border-collapse:collapse; width:100%; font-size:.78rem; }
             /* #5 economize + #3 fit-on-open: tight padding, wrappable headers, and
-               width-capped text columns (Title col 3, Discipline col 4) so all 15
+               width-capped text columns (Title col 3, Discipline col 5 — Subject(s)
+               moved to col 4, just left of Discipline, 2026-06-10) so all 15
                columns fit without horizontal scroll. The wrap stays overflow:auto, so
                zooming (or a narrow viewport) still scrolls — nothing is lost. */
             #tab-unified-courses .uc-table th { position:sticky; top:0; background:#0A2240; color:#C9A84C; text-align:center; vertical-align:middle; padding:5px 5px; line-height:1.15; z-index:1; }
@@ -9691,21 +9692,21 @@
             /* Truncation under table-layout:auto needs an inner inline-block — max-width
                on a <td> is spec-undefined and ignored by Chrome/Firefox (it would just
                grow the column and force horizontal scroll). The .uc-trunc span caps Title
-               (col 3) and the Discipline NAME (col 4) with an ellipsis, while the cell —
+               (col 3) and the Discipline NAME (col 5) with an ellipsis, while the cell —
                and the Discipline cell's cross-list badges + propose-correction link — stay
                fully visible. Full text is on the cell/span title hover. */
             #tab-unified-courses .uc-table .uc-trunc { display:inline-block; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; vertical-align:middle; }
             #tab-unified-courses .uc-table td:nth-child(3) .uc-trunc { max-width:24ch; }
-            #tab-unified-courses .uc-table td:nth-child(4) .uc-trunc { max-width:15ch; }
+            #tab-unified-courses .uc-table td:nth-child(5) .uc-trunc { max-width:15ch; }
             /* CSC-G: center-except-first per CSC-F prototype, with per-column
                opt-outs for the long-text identifier columns (Title col 3,
-               Discipline col 4) where natural left-read beats centering. */
+               Discipline col 5) where natural left-read beats centering. */
             #tab-unified-courses .uc-table th:first-child,
             #tab-unified-courses .uc-table td:first-child,
             #tab-unified-courses .uc-table th:nth-child(3),
             #tab-unified-courses .uc-table td:nth-child(3),
-            #tab-unified-courses .uc-table th:nth-child(4),
-            #tab-unified-courses .uc-table td:nth-child(4) { text-align:left; }
+            #tab-unified-courses .uc-table th:nth-child(5),
+            #tab-unified-courses .uc-table td:nth-child(5) { text-align:left; }
             #tab-unified-courses .uc-table td.uc-kind-cell { white-space:nowrap; }
             #tab-unified-courses .uc-table tr:hover td { background:#f8fafc; }
             #tab-unified-courses .uc-id { font-family:ui-monospace,Menlo,monospace; white-space:nowrap; color:#334155; }
@@ -9716,14 +9717,19 @@
             #tab-unified-courses .uc-member-cell { background:#f8fafc; padding:8px 14px 12px; }
             #tab-unified-courses .uc-member-count { font-size:.78rem; color:#64748b; margin:2px 0 6px; }
             #tab-unified-courses .uc-member-table { width:100%; border-collapse:collapse; font-size:.82rem; background:#fff; border:1px solid #e5e7eb; border-radius:6px; }
-            #tab-unified-courses .uc-member-table th { text-align:left; padding:5px 10px; color:#64748b; font-weight:600; border-bottom:1px solid #eef2f7; }
-            #tab-unified-courses .uc-member-table td { padding:5px 10px; border-top:1px solid #f1f5f9; }
+            #tab-unified-courses .uc-member-table th { text-align:left; padding:5px 8px; color:#64748b; font-weight:600; border-bottom:1px solid #eef2f7; }
+            #tab-unified-courses .uc-member-table td { text-align:left; padding:5px 8px; border-top:1px solid #f1f5f9; }
             #tab-unified-courses .uc-member-empty { font-size:.82rem; color:#94a3b8; }
             #tab-unified-courses .uc-adopt { font-weight:600; cursor:default; }
             #tab-unified-courses .uc-adopt.adopted { color:#15803d; }
             #tab-unified-courses .uc-adopt.potential { color:#b45309; }
             #tab-unified-courses .uc-badge { display:inline-block; font-size:.68rem; padding:1px 6px; border-radius:10px; margin:1px 3px 1px 0; white-space:nowrap; }
-            #tab-unified-courses td.uc-flags-cell { white-space:nowrap; }
+            /* Flags chips wrap inside a width-capped inner block (left-aligned) so the
+               chip column stacks 2-up instead of stringing the row past the viewport —
+               the nowrap version was the remaining horizontal-scroll culprit. */
+            #tab-unified-courses td.uc-flags-cell { white-space:normal; text-align:left; }
+            #tab-unified-courses .uc-flags-wrap { display:inline-block; max-width:180px; text-align:left; line-height:1.7; }
+            #tab-unified-courses .uc-flags-wrap .uc-merge-link { margin-right:6px; }
             #tab-unified-courses .uc-badge.warn { background:#fee2e2; color:#991b1b; }
             #tab-unified-courses .uc-badge.mix { background:#fef3c7; color:#92400e; }
             #tab-unified-courses .uc-badge.muted { background:#eef2f7; color:#64748b; }

@@ -1056,26 +1056,28 @@ def _classify_generic_title_concrete_discipline(rec, subject_map):
     return True
 
 
-def _classify_merge_into_orphan(merge_into, source_id, courses, singletons):
+def _classify_merge_into_orphan(merge_into, source_id, courses, singletons,
+                                anchors=frozenset()):
     """True when a curation `merge_into` target can't be resolved to any
     known identity in the staging KB.
 
     A target is RESOLVABLE when it's:
       * an existing M-ID key in `courses`, OR
       * an existing singleton key in `singletons`, OR
+      * an OFFICIAL anchor id in `anchors` — common_courses.json keys plus the
+        C-ID/CCN reference catalogs (since 2026-06-10 curators merge variant
+        M-IDs INTO the official id — "rely on the C-ID/CCN as the common
+        course reference"), OR
       * a `UC-CUR-*` synthetic cluster id — these are self-defining by
         construction (pointing to one IS what makes it a cluster), so we
         trust the prefix even when only one entry currently points there.
 
     Skips self-pointers (`merge_into == source_id`) — that's a cycle bug,
-    different rule. Skips C-ID/CCN reference anchors (not loaded by the
-    auditor; a typo'd official-id target is rare enough to defer until we
-    pull those catalogs in).
+    different rule.
 
-    Calibration: current data has 0 orphans (the 3 live `merge_into`
-    pointers all target `UC-CUR-MPG029OM`). The rule is preventive
-    infrastructure — when a future re-mint leaves a dangling pointer, or
-    a hand-edit misspells a target id, the next audit run catches it.
+    The rule is preventive infrastructure — when a future re-mint leaves a
+    dangling pointer, or a hand-edit misspells a target id, the next audit
+    run catches it (the 2026-06-10 `PHYS M1265` ghost was exactly this).
     """
     if not merge_into:
         return False
@@ -1085,12 +1087,14 @@ def _classify_merge_into_orphan(merge_into, source_id, courses, singletons):
         return False
     if merge_into in singletons:
         return False
+    if merge_into in anchors:
+        return False
     if merge_into.startswith("UC-CUR-"):
         return False
     return True
 
 
-def _curation_orphan_tags(cur, source_id, courses, singletons):
+def _curation_orphan_tags(cur, source_id, courses, singletons, anchors=frozenset()):
     """Tags derived from the curation entry (not the record). Kept separate
     from `_tags_for_mid` / `_tags_for_cluster` because curation-based rules
     apply uniformly across both row kinds — clusters can also carry their
@@ -1100,7 +1104,7 @@ def _curation_orphan_tags(cur, source_id, courses, singletons):
     tags = []
     if cur:
         mi = cur.get("merge_into")
-        if mi and _classify_merge_into_orphan(mi, source_id, courses, singletons):
+        if mi and _classify_merge_into_orphan(mi, source_id, courses, singletons, anchors):
             tags.append("merge_into_orphan")
     return tags
 
@@ -1183,6 +1187,25 @@ def _tags_for_cluster(cluster_id, faculty_fields, members_resolved,
 def main():
     courses = load("coci_minted_courses.json")["courses"]
     singletons = load("coci_minted_singletons.json")["courses"]
+    # Official anchor ids — valid merge_into targets since curators fold
+    # variant M-IDs INTO the C-ID/CCN (2026-06-10): curated anchors + the
+    # C-ID descriptor + CCN reference catalogs. Missing files -> empty set.
+    anchor_ids = set()
+    try:
+        anchor_ids |= set((load("common_courses.json") or {}).keys())
+    except (IOError, ValueError):
+        pass
+    try:
+        _cidd = load(os.path.join("reference", "cid_descriptors.json")) or {}
+        anchor_ids |= {str(d.get("descriptor") or "").strip()
+                       for d in _cidd.get("descriptors", []) if d.get("descriptor")}
+    except (IOError, ValueError):
+        pass
+    try:
+        _ccnd = load(os.path.join("reference", "ccn_courses.json")) or {}
+        anchor_ids |= {c.get("ccn") for c in _ccnd.get("courses", []) if c.get("ccn")}
+    except (IOError, ValueError):
+        pass
     curation_blob = load("coci_curation.json")
     curation = curation_blob.get("curations", {}) or {}
     # Lexicon used for the discipline_title_mismatch rule's bag construction.
@@ -1257,7 +1280,7 @@ def main():
                              subject_map=subject_map, top_disc=top_disc,
                              disc_to_modal_subj4=disc_to_modal_subj4,
                              mid_unit_modal=mid_unit_modal, mid_top_div=mid_top_div)
-        tags += _curation_orphan_tags(cur, course_id, courses, singletons)
+        tags += _curation_orphan_tags(cur, course_id, courses, singletons, anchor_ids)
         mc = {}
         f_score, m_score = _compute_scores(faculty, _virtual_mc(mc), tags=tags)
         card = {
@@ -1322,7 +1345,7 @@ def main():
 
         colleges = _cluster_member_colleges(members, courses, singletons)
         tags = _tags_for_cluster(cluster_id, agg_fields, n_resolved, n_dropped, colleges)
-        tags += _curation_orphan_tags(cur, cluster_id, courses, singletons)
+        tags += _curation_orphan_tags(cur, cluster_id, courses, singletons, anchor_ids)
         mc = {}
         f_score, m_score = _compute_scores(agg_fields, _virtual_mc(mc), tags=tags)
         card = {

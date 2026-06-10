@@ -6246,8 +6246,16 @@ def export_unified_courses():
         # just a raw subject code. Rendered in the CCR discipline cell (unified_courses.js).
         _dp = v.get("discipline_provisional")
         _dp = _dp if (_dp and _dp != v.get("discipline")) else None
+        # Credit status: the curated anchor file predates the credit-status join
+        # and carries none. C-ID descriptors and AB-1111 CCN templates are credit
+        # transfer courses by definition; M-ID anchors fall back to the system's
+        # documented blank-CreditType rule (units > 0 → Credit). (Sam 2026-06-10:
+        # blank Credit on anchor rows "is a theme" — SPAN 100 etc.)
+        _ccredit = v.get("credit_status") or (
+            "Credit" if v.get("id_system") in ("C-ID", "CCN-ID")
+            or (v.get("typical_units") or 0) > 0 else None)
         rows.append({"kind": "Course", "id": ccid, "title": v.get("common_title"),
-                     "disc": v.get("discipline"), "disc_prov": _dp, "credit": None,
+                     "disc": v.get("discipline"), "disc_prov": _dp, "credit": _ccredit,
                      "units": v.get("typical_units"), "top": None,
                      "subj": [v["subject"]] if v.get("subject") else [],
                      "members": v.get("source_college_count"), "conf": v.get("confidence"),
@@ -6271,7 +6279,7 @@ def export_unified_courses():
             continue
         ccn_n += 1
         rows.append({"kind": "Course", "id": ccid, "title": c.get("title"),
-                     "disc": None, "credit": None, "units": None, "top": None,
+                     "disc": None, "credit": "Credit", "units": None, "top": None,
                      "subj": [c["subject"]] if c.get("subject") else [],
                      "members": None, "conf": None,
                      "id_system": "CCN-ID", "locked": True,
@@ -6783,10 +6791,18 @@ def export_unified_courses():
 
     sug = {}
     for r in rows:
-        if r.get("locked") or r.get("id_system") not in ("M-ID", "Unified"):
-            continue
-        if (r.get("match") or {}).get("cid_conflict"):
-            continue
+        # Official C-ID/CCN anchors JOIN their title-signature group as the
+        # canonical MERGE TARGET (Sam 2026-06-10: "when there is an aligned
+        # C-ID or CCN, we should rely on it as the common course reference" —
+        # we only mint M-IDs where no official id exists). They are never
+        # mergeable members themselves; the consumer picks the highest-
+        # precedence identity (CCN > C-ID > M-ID) as the Confirm target.
+        is_official_anchor = bool(r.get("locked")) and r.get("id_system") in ("C-ID", "CCN-ID")
+        if not is_official_anchor:
+            if r.get("locked") or r.get("id_system") not in ("M-ID", "Unified"):
+                continue
+            if (r.get("match") or {}).get("cid_conflict"):
+                continue
         s = _sug_sig(r.get("title"))
         if not s:
             continue
@@ -6810,10 +6826,17 @@ def export_unified_courses():
         else:
             sing_only.setdefault(s, []).append(m)
 
+    # Identifier-precedence order for the worklist's merge target: CCN > C-ID >
+    # M-ID > Unified (§10). Anchors sort first so the consumer's "first non-
+    # Stand-Alone member" target pick lands on the official id when one exists.
+    _SUG_K_PRI = {"CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3}
     sug_groups = []
     for s, g in sug.items():
-        members = g["main"] + g["sing"]
-        if not g["main"] or len(members) < 2:
+        members = sorted(g["main"], key=lambda m: _SUG_K_PRI.get(m["k"], 9)) + g["sing"]
+        mergeable = [m for m in members if m["k"] not in ("C-ID", "CCN-ID")]
+        # Need something to merge (≥1 non-anchor) and ≥2 members total; a group
+        # that is ONLY anchors (or one anchor alone) is not a worklist item.
+        if not g["main"] or not mergeable or len(members) < 2:
             continue
         sug_groups.append({"sig": s, "n": len(members), "score": _sug_score(members),
                            "members": members})
