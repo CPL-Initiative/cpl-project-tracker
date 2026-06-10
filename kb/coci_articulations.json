@@ -154034,7 +154034,7 @@
       "_remint_from": "M-ID EXSC 136"
     },
     {
-      "course_id": "PHYS M1430",
+      "course_id": "KINE M1717",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -154069,7 +154069,7 @@
       "_remint_from": "M-ID ES/T 102"
     },
     {
-      "course_id": "PHYS M1430",
+      "course_id": "KINE M1717",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -154104,7 +154104,7 @@
       "_remint_from": "M-ID ES/T 102"
     },
     {
-      "course_id": "PHYS M1797",
+      "course_id": "KINE M1718",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -170201,7 +170201,7 @@
       "_remint_from": "M-ID FIT 142"
     },
     {
-      "course_id": "PHYS M1272",
+      "course_id": "KINE M1732",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -191704,7 +191704,7 @@
       "_remint_from": "M-ID KIN 866"
     },
     {
-      "course_id": "PHYS M1484",
+      "course_id": "KINE M1794",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -213375,7 +213375,7 @@
       "_remint_from": "M-ID KIN 196"
     },
     {
-      "course_id": "PHYS M1224",
+      "course_id": "KINE M1864",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -213638,7 +213638,7 @@
       "_remint_from": "M-ID PE 982"
     },
     {
-      "course_id": "PHYS M1804",
+      "course_id": "KINE M1015",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -213696,7 +213696,7 @@
       "_remint_from": "M-ID PE 388"
     },
     {
-      "course_id": "PHYS M1804",
+      "course_id": "KINE M1015",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -213754,7 +213754,7 @@
       "_remint_from": "M-ID PE 388"
     },
     {
-      "course_id": "PHYS M1804",
+      "course_id": "KINE M1015",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
