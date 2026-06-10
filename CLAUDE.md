@@ -1329,14 +1329,14 @@ Read-only auditor over every M-ID + Cluster. Per row, produces a Trust Card:
 - **Readiness tiers:** ready (≥0.85) / needs_review (≥0.65) /
   needs_repair (≥0.40) / not_ready.
 - **Rule tags + counts (refreshed 2026-06-09 after the Session-37 coarse TOP-division fill):**
-  - `seed_untouched_discipline` (11,148) — Phase B subject_map draft never reviewed (Phase 1a)
-  - `subject_collision_signal` (**1,076**, was 0 — 2026-06-09) — Phase 1e cleanup receipt; the Session-37 coarse TOP-division fill assigned ~1.2k blank minted parents a broad umbrella discipline **without** re-keying SUBJ4 to that discipline's canonical, so they re-trip the SUBJ4-collision diagnostic. Expected + honest — they're new candidates for a future canonical-SUBJ4 fold; the previously-disciplined rows (incl. the FL split) stay collision-free
-  - `unit_anomaly` (4,385) — typical_units represents <50% of member colleges (member-unit variance is high, possible over-merge across different unit-load variants); 71% of flags are 2-member splits like `[3.0, 0.0]` (credit vs noncredit drift in the same M-ID) (Phase 1c)
-  - `member_top_divergence` (**1,299**, 2026-05-29) — an M-ID's member colleges carry TOP codes spanning ≥2 broad (2-digit) divisions with ≥30% minority share: the **cross-discipline over-merge** detector (a generic title — "Ethics and Leadership", "Undergraduate Research Experience" — minted courses from different program areas under one identity). **57% (736) carry no other strong signal** — it closes a real gap: `top_discipline_disagreement` only checks the M-ID's single *representative* TOP, so it missed the case where the *members* diverge but the representative matches (the motivating `CRIM M1231`: nursing TOP 1230.10 minority-merged into Admin-of-Justice). 2-digit division grouping inherently suppresses sister-discipline noise (Kinesiology/PE both 0835) — no SISTER_PAIRS needed. **255 are "mis-disciplined"** (assigned discipline isn't even the members' plurality division). Surfaces for review, not a verdict (TOP codes vary by college). (Phase 1c)
-  - `top_discipline_disagreement` (857, was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
+  - `seed_untouched_discipline` (11,071, was 11,148 — 2026-06-10 convergence merges/flips) — Phase B subject_map draft never reviewed (Phase 1a)
+  - `subject_collision_signal` (**1,076** — held at baseline through the 2026-06-10 convergences; Kinesiology joined `UMBRELLA_DISCIPLINES` since it deliberately spans KINE+ATHL, absorbing the +299 ATHL artifact. Was 0 → 1,076 on 2026-06-09) — Phase 1e cleanup receipt; the Session-37 coarse TOP-division fill assigned ~1.2k blank minted parents a broad umbrella discipline **without** re-keying SUBJ4 to that discipline's canonical, so they re-trip the SUBJ4-collision diagnostic. Expected + honest — they're new candidates for a future canonical-SUBJ4 fold; the previously-disciplined rows (incl. the FL split) stay collision-free
+  - `unit_anomaly` (4,360, was 4,385) — typical_units represents <50% of member colleges (member-unit variance is high, possible over-merge across different unit-load variants); 71% of flags are 2-member splits like `[3.0, 0.0]` (credit vs noncredit drift in the same M-ID) (Phase 1c)
+  - `member_top_divergence` (**1,286**, was 1,299) — an M-ID's member colleges carry TOP codes spanning ≥2 broad (2-digit) divisions with ≥30% minority share: the **cross-discipline over-merge** detector (a generic title — "Ethics and Leadership", "Undergraduate Research Experience" — minted courses from different program areas under one identity). **57% (736) carry no other strong signal** — it closes a real gap: `top_discipline_disagreement` only checks the M-ID's single *representative* TOP, so it missed the case where the *members* diverge but the representative matches (the motivating `CRIM M1231`: nursing TOP 1230.10 minority-merged into Admin-of-Justice). 2-digit division grouping inherently suppresses sister-discipline noise (Kinesiology/PE both 0835) — no SISTER_PAIRS needed. **255 are "mis-disciplined"** (assigned discipline isn't even the members' plurality division). Surfaces for review, not a verdict (TOP codes vary by college). (Phase 1c)
+  - `top_discipline_disagreement` (960, was 857 — the coarse umbrella fills + 2026-06-10 convergence flips add TOP-vs-discipline tension rows; was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
   - `blank_description` (1,733) — Phase 1a
   - `blank_discipline` (**73**, was 1,266 — 2026-06-09) — Phase 1a; the coarse TOP-division fill cleared the minted-parent blank tail (1,268→80 blank; residual = the no-honest-umbrella divisions)
-  - `discipline_title_mismatch` (762, was 742) — title shares 0 tokens with assigned discipline AND ≥2 with some other; +20 from coarse umbrella fills (Phase 1c)
+  - `discipline_title_mismatch` (773, was 762) — title shares 0 tokens with assigned discipline AND ≥2 with some other; +20 from coarse umbrella fills (Phase 1c)
   - `description_discipline_disagreement` (78) — description's safe-phrase set points elsewhere with ≥2 mentions (Phase 1c)
   - `generic_title_concrete_discipline` (44) — title is course-format generic; can't justify a specific discipline (Phase 1c)
   - `mid_id_off_scheme` (**2** — `F M1002` + `N M9001`, both blank-discipline; unfixable residue) — was 27 pre-apply
@@ -1874,6 +1874,66 @@ pivot your fix to the actual remaining gap (searchability), don't redo it. Lesso
 **Carryover:** the ~580 honestly-blank residual (no-umbrella divisions — curate in-tab);
 the 1,076 new `subject_collision_signal` rows are a future canonical-SUBJ4-fold queue;
 plus the standing ACE skill-level scope + College/System EACR views.
+
+### Session 38 — CCR refinements + the fan-in convergences (shipped 2026-06-10, "Trusting Newton")
+
+Sam's 5-item CCR hand-off (built partly from a KB-scoped consult's patch) + the
+**first two fan-in discipline convergences** — the mirror pattern of the FL umbrella
+split. **3 PRs merged (#333/#334/#335).**
+
+- **#333 — CCR refinements (all 5 items).** #2 Subject column/filter/sort → the
+  canonical **SUBJ4** (id prefix; raw local codes → hover; `subj4Of()`); #3
+  fit-on-open via inner **`.uc-trunc`** spans (the consult patch's bare-`<td>`
+  `max-width` is ignored under `table-layout:auto` — the CER-#307 trap — and its
+  `white-space:nowrap` would have *widened* the column); #4 sortable member-table
+  headers (descriptions order-pinned via `_oi`); #1 the merge affordance **surfaced**
+  ("⚇ Merge" pill leading the actions cell, disabled signed-out; dialog renamed
+  "Merge courses") — Sam's pick over checkbox-multiselect; #5 **units-as-a-range**
+  (`umin`/`umax` baked in `export_unified_courses()` when members disagree; consumer
+  renders "lo–hi" + a **>2.0 ⚠ over-merge alarm**, scalar fallback; populates on the
+  cron). `tests/uc_subj4_member_sort.test.js` (23 assertions). #4's per-college
+  student count: **data gap** — `st` is a credential-level rollup; not fabricated.
+- **#334 — Kinesiology ⟵ Physical Education convergence (Rule 7 fan-in #1).** Two MQ
+  names for one converging field → canonical **Kinesiology**, "Physical Education" an
+  **alternate name** (new `kb/discipline_aliases.json`; never deleted from the MQ
+  vocab). Measure-first caught: (a) **`PHYS` SUBJ4 overloaded** (PE 745 + Physics 87)
+  → re-key **discipline-scoped**, `PHYS` now = Physics; (b) **band overflow** (~1,140
+  > 1,000/band) → merge the **88** true dups (naive fam-key over-merged Golf I–IV;
+  fixed with the canonical level-safe `_fam_key` + single-letter-roman strictness +
+  same-credit guard → 0 mismatched merges). Carve-outs per Sam: **ATHL** (299
+  intercollegiate, disc Kinesiology) + **PEDS** (41 adapted → new MQ "Physical
+  Education Disabled Students"; garbled `53414` name cleaned). Parents 16,309→16,221.
+- **#335 — Drama/Theater Arts ⟵ Theater Arts (fan-in #2) + the singleton-layer
+  extension + auditor refresh.** Canonical **"Drama/Theater Arts"** (MQ slash form),
+  SUBJ4 **THEA** (4 merges + 50 re-sequences + 266 flips; 16,221→16,217). The
+  **singleton gap**: parents-only convergence left ~56k stand-alones on the old names
+  (2,590 PE / 1,187 Theater Arts / 192 DRAM) — extended with the same rules, no
+  merging (2,929 re-keys, collision-aware in the `M<band><d><LL>` space).
+  **Kinesiology → `UMBRELLA_DISCIPLINES`** (sanctioned KINE+ATHL span) →
+  `subject_collision_signal` back to its 1,076 baseline. CSR re-seeded (148→146
+  disciplines; dead names gone; canonical pins THEA/PEDS as re-seed-surviving
+  overrides). Auditor `latest.json` + `2026-06-10.md` committed (16,227 cards).
+
+**Patterns:** (1) **fan-in vs fan-out** — two discipline *names* for one field fold to
+a canonical + alternate-name alias (`discipline_aliases.json`); one discipline over
+many subjects splits SUBJ4 (umbrella). KIN/PE set the fan-in template the way FL set
+fan-out. (2) **Never key a re-mint on `subject_4letter`** — it can be overloaded
+(PHYS); key on discipline. (3) **A convergence isn't done at the parent layer** —
+singletons carry the same names and feed the CSR/CCR/worklist. (4) For an
+**irreversible apply**, be stricter than the curator-confirmed worklist's family key
+(single-letter romans). KB note: `methodology-fan-in-discipline-convergence.md`.
+
+**Carryover / next:** (1) **verify the cron regen** — first daily run after #333/#335
+should show the CCR units-ranges (`umin`/`umax`), KINE/ATHL/PEDS/THEA rows, and the
+"⚇ Merge" pill on live data. (2) **Next fan-in candidates** (measured, in order):
+CIS↔CS↔Office-Tech cluster (39/29/26 shared families — only *partly* renames, needs
+judgment), Health↔Health Care Ancillaries (16), Commercial Music↔Music (12); the
+visual-arts tangle is mostly real distinctions. (3) The 5 other DSPS disciplines
+carry a stray `53414` in the MQ vocab (pre-existing bug). (4) The Supabase
+`_CANON_SUBJ4::Theater Arts` row is an orphan (cleanup whenever). (5) `PEDS M10AE`
+stray (raw local code literally "PEDS") → canonical-SUBJ4-fold queue. (6) Standing:
+Spanish/FL consolidation via the worklist, ACE skill-level scope, College/System
+EACR views, EACR v2.
 
 ---
 
