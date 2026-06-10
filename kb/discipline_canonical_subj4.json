@@ -4416,7 +4416,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.25,
       "variants_observed": {
-        "FLSP": 540,
+        "FLSP": 519,
         "FLCH": 162,
         "FLFR": 159,
         "FLJA": 151,
@@ -4468,7 +4468,7 @@
         "VIET": 1,
         "YUR": 1
       },
-      "total_mids": 1549,
+      "total_mids": 1528,
       "local_subject_variants": {
         "SPAN": 709,
         "FREN": 219,
@@ -4520,7 +4520,7 @@
       "top_category_title": "Foreign Language",
       "cte_share": 0.045,
       "cte_flag": "none",
-      "cte_known_n": 1480,
+      "cte_known_n": 1459,
       "cte_unknown_n": 69,
       "cip_code": null,
       "needs_review": false,
@@ -6414,10 +6414,10 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.2,
       "variants_observed": {
-        "KINE": 4224,
+        "KINE": 4171,
         "ATHL": 1044
       },
-      "total_mids": 5268,
+      "total_mids": 5215,
       "local_subject_variants": {
         "KIN": 2032,
         "PE": 1242,
@@ -6467,10 +6467,10 @@
       "top_modal_title": "Physical Education",
       "top_category_2digit": "08",
       "top_category_title": "Education",
-      "cte_share": 0.103,
+      "cte_share": 0.104,
       "cte_flag": "mixed",
-      "cte_known_n": 3714,
-      "cte_unknown_n": 1554,
+      "cte_known_n": 3664,
+      "cte_unknown_n": 1551,
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:29:23.088926+00:00",
@@ -9980,7 +9980,5 @@
       "validated_by": null,
       "_notes": null
     }
-  },
-  "_synced_at": "2026-06-10T19:05:16Z",
-  "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
+  }
 }
