@@ -1,7 +1,7 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-10T22:08:14Z",
+  "_synced_at": "2026-06-10T22:47:31Z",
   "count": 115,
   "curations": {
     "AGRI M1002": {
@@ -243,72 +243,72 @@
     "FLSP M1019": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "FLSP M1040": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "FLSP M1125": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "FLSP M1130": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "FLSP M1175": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "FLSP M1176": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "FLSP M1194": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "FLSP M1235": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "FLSP M1245": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "FLSP M1272": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "FLSP M1279": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "FLSP M1282": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "FLSP M1322": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "FLSP M1323": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T22:36:26.491125+00:00"
+      "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
     "HIST M10CQ": {
       "merge_into": "HIST M1152",

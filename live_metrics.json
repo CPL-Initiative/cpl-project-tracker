@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-10T22:08:13.571Z",
+  "scraped_at": "2026-06-10T22:47:30.334Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -138,14 +138,14 @@
         },
         {
           "college": "Chaffey College",
-          "students": 3570,
+          "students": 3571,
           "units": 18495,
-          "avgUnits": 5.180672268907563,
+          "avgUnits": 5.17922150658079,
           "transcriptionRate": 0.8,
-          "avgTranscribed": 0.04201680672268908,
+          "avgTranscribed": 0.04200504060487258,
           "criteriaMetCount": 3,
           "militaryStudents": 247,
-          "nonMilitaryStudents": 3324,
+          "nonMilitaryStudents": 3325,
           "apprenticeStudents": 9,
           "savings": 18623395,
           "yearImpact": 89210733.5,
@@ -1757,7 +1757,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,704",
+      "value": "47,705",
       "breakdowns": [
         {
           "label": "Military",
@@ -1765,7 +1765,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "23,321"
+          "value": "23,322"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47704,
+    "Students": 47705,
     "Units": 226090.65000000002,
     "TranscribedUnits": 96751.95,
     "Savings": 315364952.75,
     "YearImpact": 1275409201.3999999,
     "MilitaryStudents": 24459,
-    "NonMilitaryStudents": 23321,
+    "NonMilitaryStudents": 23322,
     "AprenticeStudents": 752,
-    "AverageUnits": 4.739448473922523,
-    "TranscribedAverage": 2.0281726899211807
+    "AverageUnits": 4.739349124829683,
+    "TranscribedAverage": 2.0281301750340637
   }
 }
