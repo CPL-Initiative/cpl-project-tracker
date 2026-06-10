@@ -1991,6 +1991,47 @@ for curator confirms — twin-merge took only the strictest slice. (4) Standing:
 ACE skill-level scope, College/System EACR views, EACR v2, the 5 DSPS `53414`
 strays, `PEDS M10AE`.
 
+### Session 39 (cont.) — the live-curation loop: merge ≠ verify + official-id targets (#339–#342, 2026-06-10)
+
+Sam curated live against the fresh regen; 4 PRs shipped in direct response. Full
+narrative: `docs/ccr_cluster_cleanup_lessons.md` (Session 39 cont.).
+
+- **#339 — the Weight Training merge incident** (his 15-course merge silently
+  minted a synthetic UC-CUR target, lost the members' st/eu from the Students
+  sort, and auto-stamped Verified): dialog now target-explicit ("Merge into"
+  defaults to the opened row; button states the action); merged rows carry
+  members' st/eu (max live; TRUE union in the generator — eu/st + umin/umax
+  rollups union `merge_members`); **merge ≠ verify** — merged rows (baked `mt:1`)
+  stay Generated until Verify records `validated_at/_by` (the CSR two-tier
+  pattern; `_apply_curation.py` syncs those columns; batch-verify excludes `mt`
+  rows; the dialog stopped writing `discipline` on existing targets so its
+  presence stays an explicit-verify signal). His merge re-pointed into
+  `KINE M1015` "Weight Training".
+- **#340 — UC-CUR demystified + retired.** `UC-CUR-<base36 timestamp>` is the
+  browser's deliberately off-scheme placeholder (it can't safely allocate
+  `(SUBJ4, band)` numbers). The 1 existing id re-pointed into `AUTB M1002`;
+  0 remain. Future promotion script deferred until singleton-only mints
+  accumulate.
+- **#341/#342 — official ids are the common course reference (ADR:**
+  [`docs/kb-notes/adr-official-ids-as-common-course-reference.md`](docs/kb-notes/adr-official-ids-as-common-course-reference.md)**).**
+  Mint an M-ID only where no aligned C-ID/CCN exists; variants MERGE INTO the
+  official id (precedence CCN > C-ID > M-ID): worklist groups lead with anchors
+  (61), the dialog defaults to the official id, Confirm writes ONLY merge
+  pointers on it, and the **whole 495-descriptor C-ID catalog is a valid target**
+  (row or no row — `_member_v`/`_target_identity` + the auditor's orphan rule).
+  **Honors rule:** C-ID has NO honors tier (0 H-suffixed descriptors; honors
+  bundle by design — colleges' own COCI mappings); CCN honors ARE separate (23)
+  and stay exact-string distinct. Sam's 5-item review also shipped: Subject(s)
+  beside Discipline; the `nowrap` Flags column (the real horizontal-scroll
+  culprit) wraps in a capped `.uc-flags-wrap`; anchor `credit: None` fixed
+  (302 → 1 honestly blank). **Spanish consolidation data:** 7 → SPAN 100,
+  7 → SPAN 110, 5 → SPAN 220, 3 → SPAN 230 (heritage/native/speakers; honors +
+  A-B + M1184 Comp&Conv excluded as different/ambiguous).
+
+**Carryover:** SPAN 200/210 confirms queued in the worklist; Sam's Verify clicks
+on the merged KINE M1015 / AUTB M1002 / SPAN rows; the level-ambiguous Spanish
+rows (Honors, A/B, High-Beginning, Advanced Elementary) are curator calls.
+
 ---
 
 ## Troubleshooting

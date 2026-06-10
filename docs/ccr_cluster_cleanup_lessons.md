@@ -333,3 +333,65 @@ Verify the next cron folds the merges into `unified_courses_*.js` (Elementary
 Spanish I @ 59 colleges; ghost `PHYS M1265` gone), then Sam's §5 sign-off on
 `docs/cis_cs_convergence_scope.md` decides the CISC pass. The worklist queues
 (KINE 178+107, FLSP 29+13 minus the 74 merged) remain the curator lane.
+
+---
+
+## 2026-06-10 (evening) — Session 39 cont.: the live-curation loop (#339–#342)
+
+Sam curated live against the freshly-regenerated CCR; four PRs shipped in direct
+response to what he hit, each within the hour.
+
+### What happened
+- **#339 — the Weight Training merge incident.** Sam merged 15 weight-training
+  courses; the dialog's blank-default target minted a synthetic UC-CUR id, the
+  merged row carried none of the members' st/eu (vanished from the Students sort),
+  and the merge auto-stamped Verified. Fixes: target-explicit dialog (defaults to
+  the opened row; button states the action), st/eu carry (max live; true union in
+  the generator via merge_members), and **merge ≠ verify** — merged rows stay
+  Generated until the Verify affordance records `validated_at/_by` (the CSR
+  two-tier pattern; `_apply_curation.py` now syncs those columns). His merge was
+  re-pointed into KINE M1015 ("Weight Training", 4,823 students intact).
+- **#340 — the last UC-CUR retired.** Sam asked why ids look like
+  `UC-CUR-MPG029OM`: UC = Unified Course, CUR = curator-minted, and the suffix is
+  a BASE-36 TIMESTAMP (decodes to the click moment) — a deliberately off-scheme
+  placeholder because a browser can't safely allocate `(SUBJ4, band)` numbers.
+  The one existing row re-pointed into AUTB M1002 (its title was literally the
+  anchor's own).
+- **#341 — official ids as merge targets (Sam's 5-item review).** The principle
+  encoded everywhere: *mint an M-ID only when no aligned C-ID/CCN exists;
+  otherwise the official id IS the common course reference.* Worklist groups now
+  lead with C-ID/CCN anchors (61 groups); the dialog defaults to the official id
+  (CCN > C-ID > M-ID); Confirm writes ONLY merge pointers on an official target.
+  Plus: Subject(s) moved beside Discipline; the `nowrap` Flags column (the real
+  horizontal-scroll culprit) now wraps in a width-capped block; anchor rows'
+  hardcoded `credit: None` fixed (302 anchors → 1 honestly blank). Data: 7
+  Spanish-1 variants → SPAN 100, 7 Spanish-2 → SPAN 110.
+- **#342 — heritage speakers → SPAN 220/230 + the descriptor catalog as target
+  authority.** The honors recon first: C-ID has ZERO H-suffixed descriptors
+  (honors bundle into the same descriptor by design — the honors members under
+  SPAN 100 are the colleges' own official COCI mappings); CCN honors ARE separate
+  (23 listings) and already fully distinct in the pipeline. Then the folds: 5
+  variants → SPAN 220, 3 → SPAN 230. SPAN 220/230 had no CCR row → the generator
+  now resolves merge targets from `kb/reference/cid_descriptors.json` (all 495),
+  with a member-aggregated discipline fallback.
+
+### Learnings
+- **A blank default in a destructive-ish dialog is a decision the curator didn't
+  make.** The target selector now always states what Confirm will do.
+- **Merge ≠ verify needs a signal the merge itself doesn't write.** Discipline
+  curation = explicit verify for existing targets (the dialog stopped writing it
+  on them); `validated_at` = the explicit verify for everything else.
+- **The auditor's docstring claimed C-ID targets were skipped — no code branch
+  existed.** When official ids became legal targets, the claim would have become
+  14 false orphans. Read the code, not the comment, when a rule's scope changes.
+- **Official-id precedence belongs in every surface that picks a target**:
+  worklist ordering, dialog default, Confirm pick — one principle, three sites.
+- **The descriptor catalog is the natural completion**: an official id is a valid
+  fold target whether or not it has a row yet.
+
+### State
+CCR: Spanish 1/2/heritage consolidated under SPAN 100/110/220/230 (8/8/6/4
+members), SPAN 200/210 queued in the worklist; KINE M1015 + AUTB M1002 merged
+rows awaiting Sam's Verify; 0 UC-CUR ids; 0 orphans; anchors carry Credit; the
+Flags column wraps; Subject(s) sits beside Discipline. All live except the baked
+data, which lands on the next cron.
