@@ -44,7 +44,8 @@ FIELDS = {"discipline", "merge_into", "unified_title", "description",
 
 def fetch_rows():
     endpoint = (f"{URL}/rest/v1/kb_curation"
-                "?select=course_id,field,value,reviewer_email,reviewed_at")
+                "?select=course_id,field,value,reviewer_email,reviewed_at,"
+                "validated_at,validated_by")
     req = urllib.request.Request(endpoint, headers={
         "apikey": KEY, "Authorization": f"Bearer {KEY}", "Accept": "application/json"})
     with urllib.request.urlopen(req, timeout=30) as r:
@@ -70,6 +71,15 @@ def main():
         if row.get("reviewed_at", "") >= entry.get("reviewed_at", ""):
             entry["reviewed_by"] = row.get("reviewer_email")
             entry["reviewed_at"] = row.get("reviewed_at")
+        # Explicit validation (the CCR "Verify" on a merged course PATCHes
+        # validated_at/_by — distinct from the merge itself, which only
+        # reviews). Merge-target rows render Verified only once validated
+        # (Sam, 2026-06-10: "it shouldn't change to Verified until I verify
+        # it through a specific process"). Latest validation wins.
+        if (row.get("validated_at") or "") >= (entry.get("validated_at") or ""):
+            if row.get("validated_at"):
+                entry["validated_at"] = row.get("validated_at")
+                entry["validated_by"] = row.get("validated_by")
 
     out = {
         "_about": ("Human curation overlay for the COCI staging KB. Git-canonical and "

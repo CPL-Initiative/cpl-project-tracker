@@ -6357,7 +6357,19 @@ def export_unified_courses():
         c_units,  _units_mixed = _agg_unanimous([mv.get("typical_units") for mv in member_recs])
         c_conf                 = _synth_cluster_conf(member_recs)
 
-        rows.append({"kind": t_kind, "id": tgt,
+        # Verified semantics for merge targets (Sam, 2026-06-10): the MERGE never
+        # verifies — a merged course renders Generated until explicitly verified.
+        # Two explicit-verify signals: (a) validated_at on the target's curation
+        # (the CCR Verify on a merged row PATCHes it — the CSR's two-tier
+        # pattern); (b) for an EXISTING-identity target only, a discipline
+        # curation (the dialog no longer writes one on existing targets, so its
+        # presence = the normal Verify/set-discipline flow). A synthetic UC-CUR
+        # target's discipline curation comes from the merge dialog itself, so it
+        # does NOT count — validated_at is its only path to Verified.
+        _synthetic = not tgt_v
+        _validated = bool(cur.get("validated_at"))
+        _verified = _validated or (not _synthetic and bool(cur.get("discipline")))
+        rows.append({"kind": t_kind, "id": tgt, "mt": 1,
                      "title": cur.get("unified_title") or _member_title(tgt) or (variants[0] if variants else tgt),
                      "disc": cur.get("discipline") or tgt_v.get("discipline"),
                      "credit": cur.get("credit_status") or c_credit,
@@ -6369,8 +6381,11 @@ def export_unified_courses():
                      "flags": {"over_merged": False,
                                "credit_mixed": credit_mixed and not cur.get("credit_status"),
                                "top_mixed":    top_mixed    and not cur.get("top_code"),
-                               "ncc_mixed": False, "reviewed": True},
-                     "reviewed_by": cur.get("reviewed_by"), "reviewed_at": (cur.get("reviewed_at") or "")[:10],
+                               "ncc_mixed": False, "reviewed": _verified},
+                     "reviewed_by": ((cur.get("validated_by") if _validated else cur.get("reviewed_by"))
+                                     if _verified else None),
+                     "reviewed_at": (((cur.get("validated_at") if _validated else cur.get("reviewed_at")) or "")[:10]
+                                     if _verified else ""),
                      "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
 
     # NOTE: unified_courses_data.js is written further down, AFTER the raw COCI
@@ -6663,7 +6678,12 @@ def export_unified_courses():
         _n_eu = _n_st = 0
         for r in rows:
             uts = set()
-            for c in [r["id"]] + list(r.get("consolidated_from") or []):
+            # Union Phase-B consolidated_from AND curator merge members —
+            # articulations stay keyed on the ORIGINAL M-IDs until a Rule-7
+            # re-key, so a merged course must inherit its members' credentials
+            # or it silently drops out of the impact ranking (the Weight
+            # Training merge, 2026-06-10: KINE M1015's 4,823 students vanished).
+            for c in [r["id"]] + list(r.get("consolidated_from") or []) + merge_members.get(r["id"], []):
                 uts |= course_uts.get(c, set())
             if not uts:
                 continue
@@ -6690,7 +6710,9 @@ def export_unified_courses():
     _n_ur = 0
     for r in rows:
         mus = []
-        for c in [r["id"]] + list(r.get("consolidated_from") or []):
+        # Same union as the eu/st rollup: curator merge targets inherit their
+        # members' membership units (a UC-CUR id has no memberships of its own).
+        for c in [r["id"]] + list(r.get("consolidated_from") or []) + merge_members.get(r["id"], []):
             for m in memships.get(c, []):
                 u = m.get("units")
                 if isinstance(u, (int, float)):
