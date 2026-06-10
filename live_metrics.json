@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-10T19:05:15.293Z",
+  "scraped_at": "2026-06-10T20:17:05.785Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -773,13 +773,13 @@
         },
         {
           "college": "Fresno City College",
-          "students": 415,
+          "students": 417,
           "units": 960,
-          "avgUnits": 2.3132530120481927,
+          "avgUnits": 2.302158273381295,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 414,
+          "militaryStudents": 416,
           "nonMilitaryStudents": 1,
           "apprenticeStudents": 0,
           "savings": 1660800,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,673",
+      "value": "47,675",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,428"
+          "value": "24,430"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47673,
+    "Students": 47675,
     "Units": 226090.65000000002,
     "TranscribedUnits": 96751.95,
     "Savings": 315364952.75,
     "YearImpact": 1275409201.3999999,
-    "MilitaryStudents": 24428,
+    "MilitaryStudents": 24430,
     "NonMilitaryStudents": 23321,
     "AprenticeStudents": 751,
-    "AverageUnits": 4.74253036309861,
-    "TranscribedAverage": 2.02949153608961
+    "AverageUnits": 4.742331410592554,
+    "TranscribedAverage": 2.0294063974829575
   }
 }

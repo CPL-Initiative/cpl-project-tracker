@@ -65830,6 +65830,142 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPICI-CEMT1-1-001",
+      "exhibit_ids": [
+        "MAPICI-CEMT1-1-001"
+      ],
+      "title": "EMT-II Certification",
+      "unified_title": "EMT-II Certification",
+      "is_classified": true,
+      "issuing_agency": "California Emergency Medical Services Authority (EMSA)",
+      "training_agency": "",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "California Emergency Medical Technician 2"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Industry",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "West Los Angeles College"
+      ],
+      "potential": 88,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 90,
+      "credit_recs": [
+        {
+          "course": "ALD HTH 021",
+          "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
+        },
+        {
+          "course": "ALD HTH 052",
+          "credit": "9 hours in EMERGENCY MEDICAL TRAINING - BASIC"
+        },
+        {
+          "course": "ALD HTH 900",
+          "credit": "0.5 hours in Cooperative Education - Emergency Medical Training"
+        },
+        {
+          "course": "KIN 13",
+          "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPCXS-M23--1-001|MAPCXS-MTI-4-1-001",
       "exhibit_ids": [
         "MAPCXS-M23--1-001",
@@ -67216,146 +67352,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "CMPET 324",
           "credit": "3 hours in CompTIA CyberDefense Analyst Certification Prep"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICI-CEMT1-1-001",
-      "exhibit_ids": [
-        "MAPICI-CEMT1-1-001"
-      ],
-      "title": "EMT-II Certification",
-      "unified_title": "EMT-II Certification",
-      "is_classified": true,
-      "issuing_agency": "California Emergency Medical Services Authority (EMSA)",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "California Emergency Medical Technician 2"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Health",
-      "sector": "Health",
-      "collaborative_type": "Industry",
-      "adopters": 3,
-      "adopter_names": [
-        "Cabrillo College",
-        "City College of San Francisco",
-        "West Los Angeles College"
-      ],
-      "potential": 87,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 90,
-      "credit_recs": [
-        {
-          "course": "ALD HTH 021",
-          "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
-        },
-        {
-          "course": "ALD HTH 052",
-          "credit": "9 hours in EMERGENCY MEDICAL TRAINING - BASIC"
-        },
-        {
-          "course": "ALD HTH 900",
-          "credit": "0.5 hours in Cooperative Education - Emergency Medical Training"
-        },
-        {
-          "course": "KIN 13",
-          "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
-        },
-        {
-          "course": "EMT 100",
-          "credit": "9 hours in EMERGENCY MEDICAL TRAINING - BASIC"
         }
       ]
     },
@@ -71241,10 +71237,6 @@ window.CPL_STATEWIDE = {
           "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
         },
         {
-          "course": "EMT 100",
-          "credit": "9 hours in EMERGENCY MEDICAL TRAINING - BASIC"
-        },
-        {
           "course": "EMS 60",
           "credit": "4.5 hours in Patient Assess/Airway Mgmt"
         },
@@ -72228,6 +72220,129 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPICI-BLS(-1-001",
+      "exhibit_ids": [
+        "MAPICI-BLS(-1-001"
+      ],
+      "title": "Basic Life Support (BLS) Certification",
+      "unified_title": "Basic Life Support (BLS) Certification",
+      "is_classified": true,
+      "issuing_agency": "American Heart Association (AHA)",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 0.8,
+      "quality_flag": "",
+      "raw_titles": [
+        "Basic Life Support (BLS) Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 3,
+      "adopter_names": [
+        "Cabrillo College",
+        "Los Angeles Mission College",
+        "West Los Angeles College"
+      ],
+      "potential": 82,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 85,
+      "credit_recs": [
+        {
+          "course": "ALD HTH 021",
+          "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
+        },
+        {
+          "course": "KIN 13",
+          "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPICI-CS(-1-001|MAPICI-CS1-1-001|MAPICI-CSC-1-001|MAPICI-CSFC-1-001",
       "exhibit_ids": [
         "MAPICI-CS(-1-001",
@@ -72431,133 +72546,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "CIS 060",
           "credit": "3 hours in Information Systems Security"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICI-BLS(-1-001",
-      "exhibit_ids": [
-        "MAPICI-BLS(-1-001"
-      ],
-      "title": "Basic Life Support (BLS) Certification",
-      "unified_title": "Basic Life Support (BLS) Certification",
-      "is_classified": true,
-      "issuing_agency": "American Heart Association (AHA)",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 0.8,
-      "quality_flag": "",
-      "raw_titles": [
-        "Basic Life Support (BLS) Certification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Health",
-      "sector": "Health",
-      "collaborative_type": "Local",
-      "adopters": 4,
-      "adopter_names": [
-        "Cabrillo College",
-        "City College of San Francisco",
-        "Los Angeles Mission College",
-        "West Los Angeles College"
-      ],
-      "potential": 81,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "West Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 85,
-      "credit_recs": [
-        {
-          "course": "ALD HTH 021",
-          "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
-        },
-        {
-          "course": "KIN 13",
-          "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
-        },
-        {
-          "course": "EMT 12",
-          "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
         }
       ]
     },
@@ -75431,349 +75419,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "ARTH 19",
           "credit": "3 hours in Contemporary Art: 1945-Present"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICA-E1MB-1-001|MAPICA-EMT(-1-001|MAPICA-EMTR-1-001|MAPICI-CECO-1-001|MAPICI-CNRE-1-001|MAPICI-E1MA-1-001|MAPICI-E1MA1-1-001|MAPICI-E3MT-1-001|MAPICI-E3MT1-1-001|MAPICI-EMT(1-1-001|MAPICI-EMT(2-1-001|MAPICI-EMT1-1-001|MAPICI-EMT11-1-001|MAPICI-EMT2-1-001|MAPICI-EMT3-1-001|MAPICI-EMT4-1-001|MAPICI-EMT5-1-001|MAPICI-EMTH-1-001|MAPICI-EMTN-1-001|MAPICI-NREC-1-001|MAPICN-(9EM-1-001",
-      "exhibit_ids": [
-        "MAPICA-E1MB-1-001",
-        "MAPICA-EMT(-1-001",
-        "MAPICA-EMTR-1-001",
-        "MAPICI-CECO-1-001",
-        "MAPICI-CNRE-1-001",
-        "MAPICI-E1MA-1-001",
-        "MAPICI-E1MA1-1-001",
-        "MAPICI-E3MT-1-001",
-        "MAPICI-E3MT1-1-001",
-        "MAPICI-EMT(1-1-001",
-        "MAPICI-EMT(2-1-001",
-        "MAPICI-EMT1-1-001",
-        "MAPICI-EMT11-1-001",
-        "MAPICI-EMT2-1-001",
-        "MAPICI-EMT3-1-001",
-        "MAPICI-EMT4-1-001",
-        "MAPICI-EMT5-1-001",
-        "MAPICI-EMTH-1-001",
-        "MAPICI-EMTN-1-001",
-        "MAPICI-NREC-1-001",
-        "MAPICN-(9EM-1-001"
-      ],
-      "title": "EMT Certification",
-      "unified_title": "EMT Certification",
-      "is_classified": true,
-      "issuing_agency": "National Registry of Emergency Medical Technicians (NREMT)",
-      "training_agency": "",
-      "confidence_title": 0.95,
-      "confidence_issuer": 0.97,
-      "quality_flag": "",
-      "raw_titles": [
-        "Current EMT Certification or Paramedic License",
-        "Current NREMT certification or State of California EMT license AND current American Heart Association ‘BLS Provider' certification",
-        "EMERGENCY MEDICAL TECHNICIAN (EMS-50/51)",
-        "EMS 389\tEmergency Medical Technician 1- Clinical - Industry Certification",
-        "EMS 390\tEmergency Medical Technician 1 - Industry Certification",
-        "EMT 1 Module A and B",
-        "EMT 1, Module A",
-        "EMT 1, Module B",
-        "Emergency Medical Technician",
-        "Emergency Medical Technician (EMT)",
-        "Emergency Medical Technician 1, Module A",
-        "Emergency Medical Technician 1, Module B",
-        "Emergency Medical Technician Certificate",
-        "Emergency Medical Technician Health and Fitness",
-        "Emergency Medical Technician NRE and CPR",
-        "Emergency Medical Technician ROP",
-        "National Registry EMS Certification-EMT Level"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Health",
-      "sector": "Health",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 24,
-      "adopter_names": [
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "Chabot College",
-        "Chaffey College",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Cuesta College",
-        "East Los Angeles College",
-        "Lake Tahoe Community College",
-        "Los Angeles Pierce College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Modesto Junior College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Palo Verde College",
-        "Rio Hondo College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Woodland Community College"
-      ],
-      "potential": 77,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coalinga College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "EMGM 105A",
-          "credit": "6 hours in Emergency Medical Technician - National Registry"
-        },
-        {
-          "course": "EMGM 106",
-          "credit": "0.3 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"
-        },
-        {
-          "course": "EMGM 106",
-          "credit": "0.25 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"
-        },
-        {
-          "course": "AUTO 156G",
-          "credit": "0.3 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"
-        },
-        {
-          "course": "EMT 11",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMT 405",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMER 50A",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMGM 105A",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMGM 105A",
-          "credit": "7 hours in Emergency Medical Technician - National Registry"
-        },
-        {
-          "course": "EMS 4",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMER 50B",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "FT 183",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "FIRETEK 096",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "HEA 140E",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMS 010",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMT 61",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "FT 183L",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMS 95",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMT  084",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMS 57",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMT 101",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMS 135",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMS 201",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMED 110",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "LACCD GE Area 7",
-          "credit": "3 hours in Lifelong Learning and Self Development"
-        },
-        {
-          "course": "EMER 50A",
-          "credit": "2.5 hours in Emergency Medical Technician 1, Module A"
-        },
-        {
-          "course": "EMER 50B",
-          "credit": "4.5 hours in Emergency Medical Technician 1, Module B"
-        },
-        {
-          "course": "EMT 104",
-          "credit": "10 hours in Emergency Medical Technician"
-        },
-        {
-          "course": "EMT 105",
-          "credit": "1 hour in Clinical EMT Skills Laboratory"
-        },
-        {
-          "course": "EMS 389",
-          "credit": "0.5 hours in Emergency Medical Technician 1- Clinical"
-        },
-        {
-          "course": "EMS 390",
-          "credit": "8 hours in Emergency Medical Technician 1"
-        },
-        {
-          "course": "EMS 50",
-          "credit": "5 hours in Emergency Medical Technician"
-        },
-        {
-          "course": "EMS 51",
-          "credit": "1 hour in Emergency Medical Services-Basic Clinical/Field"
-        },
-        {
-          "course": "EMS 1",
-          "credit": "3 hours in First Responder"
-        },
-        {
-          "course": "EMS 3",
-          "credit": "9 hours in Emergency Medical Technician Academy"
-        },
-        {
-          "course": "EMT 90",
-          "credit": "Emergency Medical Technician"
-        },
-        {
-          "course": "EMT 90-A",
-          "credit": "Introduction to EMS System"
-        },
-        {
-          "course": "EMT 093",
-          "credit": "9 hours in Emergency Medical Technician"
-        },
-        {
-          "course": "EMTC B50",
-          "credit": "9 hours in Emergency Medical Technician"
-        },
-        {
-          "course": "EMS 161",
-          "credit": "1.5 hours in Emergency Medical Technician Refresher"
-        },
-        {
-          "course": "EMS 8",
-          "credit": "3 hours in Health & Fitness for Emergency Medical Services"
-        },
-        {
-          "course": "FT 183",
-          "credit": "7 hours in Emergency Medical Technician"
-        },
-        {
-          "course": "KIN 13",
-          "credit": "3 hours in First Aid"
-        },
-        {
-          "course": "FT 183L",
-          "credit": "2 hours in Emergency Medical Technician Lab"
         }
       ]
     },
@@ -82208,6 +81853,353 @@ window.CPL_STATEWIDE = {
         {
           "course": "CNET 66",
           "credit": "2 hours in Security+ Certification Preparation"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-E1MB-1-001|MAPICA-EMT(-1-001|MAPICA-EMTR-1-001|MAPICI-CECO-1-001|MAPICI-CNRE-1-001|MAPICI-E1MA-1-001|MAPICI-E1MA1-1-001|MAPICI-E3MT-1-001|MAPICI-E3MT1-1-001|MAPICI-EMT(1-1-001|MAPICI-EMT(2-1-001|MAPICI-EMT1-1-001|MAPICI-EMT11-1-001|MAPICI-EMT2-1-001|MAPICI-EMT3-1-001|MAPICI-EMT4-1-001|MAPICI-EMT5-1-001|MAPICI-EMTH-1-001|MAPICI-EMTN-1-001|MAPICI-NREC-1-001|MAPICN-(9EM-1-001",
+      "exhibit_ids": [
+        "MAPICA-E1MB-1-001",
+        "MAPICA-EMT(-1-001",
+        "MAPICA-EMTR-1-001",
+        "MAPICI-CECO-1-001",
+        "MAPICI-CNRE-1-001",
+        "MAPICI-E1MA-1-001",
+        "MAPICI-E1MA1-1-001",
+        "MAPICI-E3MT-1-001",
+        "MAPICI-E3MT1-1-001",
+        "MAPICI-EMT(1-1-001",
+        "MAPICI-EMT(2-1-001",
+        "MAPICI-EMT1-1-001",
+        "MAPICI-EMT11-1-001",
+        "MAPICI-EMT2-1-001",
+        "MAPICI-EMT3-1-001",
+        "MAPICI-EMT4-1-001",
+        "MAPICI-EMT5-1-001",
+        "MAPICI-EMTH-1-001",
+        "MAPICI-EMTN-1-001",
+        "MAPICI-NREC-1-001",
+        "MAPICN-(9EM-1-001"
+      ],
+      "title": "EMT Certification",
+      "unified_title": "EMT Certification",
+      "is_classified": true,
+      "issuing_agency": "National Registry of Emergency Medical Technicians (NREMT)",
+      "training_agency": "",
+      "confidence_title": 0.95,
+      "confidence_issuer": 0.97,
+      "quality_flag": "",
+      "raw_titles": [
+        "Current EMT Certification or Paramedic License",
+        "Current NREMT certification or State of California EMT license AND current American Heart Association ‘BLS Provider' certification",
+        "EMERGENCY MEDICAL TECHNICIAN (EMS-50/51)",
+        "EMS 389\tEmergency Medical Technician 1- Clinical - Industry Certification",
+        "EMS 390\tEmergency Medical Technician 1 - Industry Certification",
+        "EMT 1 Module A and B",
+        "EMT 1, Module A",
+        "EMT 1, Module B",
+        "Emergency Medical Technician",
+        "Emergency Medical Technician (EMT)",
+        "Emergency Medical Technician 1, Module A",
+        "Emergency Medical Technician 1, Module B",
+        "Emergency Medical Technician Certificate",
+        "Emergency Medical Technician Health and Fitness",
+        "Emergency Medical Technician NRE and CPR",
+        "Emergency Medical Technician ROP",
+        "National Registry EMS Certification-EMT Level"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 25,
+      "adopter_names": [
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Cuesta College",
+        "East Los Angeles College",
+        "Lake Tahoe Community College",
+        "Los Angeles Pierce College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Modesto Junior College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Palo Verde College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Woodland Community College"
+      ],
+      "potential": 76,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Citrus College",
+        "Coalinga College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 101,
+      "credit_recs": [
+        {
+          "course": "EMGM 105A",
+          "credit": "6 hours in Emergency Medical Technician - National Registry"
+        },
+        {
+          "course": "EMGM 106",
+          "credit": "0.3 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"
+        },
+        {
+          "course": "EMGM 106",
+          "credit": "0.25 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"
+        },
+        {
+          "course": "AUTO 156G",
+          "credit": "0.3 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"
+        },
+        {
+          "course": "EMT 11",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMT 405",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMER 50A",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMGM 105A",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMGM 105A",
+          "credit": "7 hours in Emergency Medical Technician - National Registry"
+        },
+        {
+          "course": "EMT 100",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMS 4",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMER 50B",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "FT 183",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "FIRETEK 096",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "HEA 140E",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMS 010",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMT 61",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "FT 183L",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMS 95",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMT  084",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMS 57",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMT 101",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMS 135",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMS 201",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMED 110",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "LACCD GE Area 7",
+          "credit": "3 hours in Lifelong Learning and Self Development"
+        },
+        {
+          "course": "EMER 50A",
+          "credit": "2.5 hours in Emergency Medical Technician 1, Module A"
+        },
+        {
+          "course": "EMER 50B",
+          "credit": "4.5 hours in Emergency Medical Technician 1, Module B"
+        },
+        {
+          "course": "EMT 104",
+          "credit": "10 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "EMT 105",
+          "credit": "1 hour in Clinical EMT Skills Laboratory"
+        },
+        {
+          "course": "EMS 389",
+          "credit": "0.5 hours in Emergency Medical Technician 1- Clinical"
+        },
+        {
+          "course": "EMS 390",
+          "credit": "8 hours in Emergency Medical Technician 1"
+        },
+        {
+          "course": "EMS 50",
+          "credit": "5 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "EMS 51",
+          "credit": "1 hour in Emergency Medical Services-Basic Clinical/Field"
+        },
+        {
+          "course": "EMS 1",
+          "credit": "3 hours in First Responder"
+        },
+        {
+          "course": "EMS 3",
+          "credit": "9 hours in Emergency Medical Technician Academy"
+        },
+        {
+          "course": "EMT 90",
+          "credit": "Emergency Medical Technician"
+        },
+        {
+          "course": "EMT 90-A",
+          "credit": "Introduction to EMS System"
+        },
+        {
+          "course": "EMT 093",
+          "credit": "9 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "EMTC B50",
+          "credit": "9 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "EMS 161",
+          "credit": "1.5 hours in Emergency Medical Technician Refresher"
+        },
+        {
+          "course": "EMS 8",
+          "credit": "3 hours in Health & Fitness for Emergency Medical Services"
+        },
+        {
+          "course": "FT 183",
+          "credit": "7 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "KIN 13",
+          "credit": "3 hours in First Aid"
+        },
+        {
+          "course": "FT 183L",
+          "credit": "2 hours in Emergency Medical Technician Lab"
         }
       ]
     },
@@ -220740,7 +220732,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 13,
         "ccc_collaborative": 125,
         "industry_certs": 192,
-        "pct": 2.8
+        "pct": 2.7
       },
       {
         "college": "Los Angeles Pierce College",
@@ -220861,12 +220853,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "City College of San Francisco",
-        "credit_recs": 165,
-        "exhibits": 117,
+        "credit_recs": 163,
+        "exhibits": 115,
         "disciplines": 12,
-        "ccc_collaborative": 66,
-        "industry_certs": 99,
-        "pct": 1.5
+        "ccc_collaborative": 67,
+        "industry_certs": 97,
+        "pct": 1.4
       },
       {
         "college": "San Diego Mesa College",
@@ -221004,6 +220996,15 @@ window.CPL_STATEWIDE = {
         "pct": 0.9
       },
       {
+        "college": "Foothill College",
+        "credit_recs": 105,
+        "exhibits": 100,
+        "disciplines": 10,
+        "ccc_collaborative": 0,
+        "industry_certs": 0,
+        "pct": 0.9
+      },
+      {
         "college": "Woodland Community College",
         "credit_recs": 104,
         "exhibits": 80,
@@ -221109,15 +221110,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 5,
         "ccc_collaborative": 26,
         "industry_certs": 30,
-        "pct": 0.7
-      },
-      {
-        "college": "Foothill College",
-        "credit_recs": 84,
-        "exhibits": 82,
-        "disciplines": 9,
-        "ccc_collaborative": 0,
-        "industry_certs": 0,
         "pct": 0.7
       },
       {
@@ -221601,12 +221593,12 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 4488,
+        "credit_recs": 4506,
         "exhibits": 882,
         "courses": 160,
         "colleges": 84,
         "ccc_collaborative": 25,
-        "pct": 39.6
+        "pct": 39.7
       },
       {
         "discipline": "Engineering and Industrial Technologies",
@@ -221628,20 +221620,20 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Interdisciplinary Studies",
-        "credit_recs": 634,
+        "credit_recs": 637,
         "exhibits": 162,
         "courses": 27,
-        "colleges": 80,
+        "colleges": 81,
         "ccc_collaborative": 1,
         "pct": 5.6
       },
       {
         "discipline": "Health",
-        "credit_recs": 425,
+        "credit_recs": 423,
         "exhibits": 193,
         "courses": 274,
         "colleges": 45,
-        "ccc_collaborative": 32,
+        "ccc_collaborative": 33,
         "pct": 3.7
       },
       {
@@ -221810,17 +221802,17 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 5779,
+        "credit_recs": 5800,
         "exhibits": 1181,
         "colleges": 86,
-        "pct": 51.0
+        "pct": 51.1
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3319,
+        "credit_recs": 3317,
         "exhibits": 1144,
         "colleges": 78,
-        "pct": 29.3
+        "pct": 29.2
       },
       {
         "cpl_type": "Credit By Exam",
@@ -221854,21 +221846,21 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 6820,
+        "credit_recs": 6841,
         "exhibits": 1883,
         "colleges": 92,
-        "pct": 60.1
+        "pct": 60.2
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2576,
+        "credit_recs": 2573,
         "exhibits": 942,
         "colleges": 74,
-        "pct": 22.7
+        "pct": 22.6
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1207,
+        "credit_recs": 1208,
         "exhibits": 556,
         "colleges": 43,
         "pct": 10.6
@@ -221926,7 +221918,7 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 9822,
+        "credit_recs": 9842,
         "exhibits": 3696,
         "colleges": 99,
         "disciplines": 23,
@@ -221934,7 +221926,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1292,
+        "credit_recs": 1293,
         "exhibits": 163,
         "colleges": 63,
         "disciplines": 9,
@@ -221942,7 +221934,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "category": "Industry/Other",
-        "credit_recs": 227,
+        "credit_recs": 225,
         "exhibits": 44,
         "colleges": 22,
         "disciplines": 11,
@@ -221952,25 +221944,25 @@ window.CPL_STATEWIDE = {
     "top_exhibits": [
       {
         "title": "AP Biology (score 3-5): Cal-GETC Area 5B and 5C",
-        "credit_recs": 154,
+        "credit_recs": 156,
         "courses": 2,
-        "colleges": 77,
+        "colleges": 78,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Chemistry (score 3-5): Cal-GETC Area 5A and 5C",
-        "credit_recs": 154,
+        "credit_recs": 156,
         "courses": 2,
-        "colleges": 77,
+        "colleges": 78,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Environmental Science (score 3-5): Cal-GETC Area 5A and 5C",
-        "credit_recs": 154,
+        "credit_recs": 156,
         "courses": 2,
-        "colleges": 77,
+        "colleges": 78,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
@@ -222024,9 +222016,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "title": "AP European History (score 3-5): Cal-GETC Area 3B or 4",
-        "credit_recs": 79,
+        "credit_recs": 80,
         "courses": 3,
-        "colleges": 78,
+        "colleges": 79,
         "cpl_type": "Standardized Assessment",
         "discipline": "Social Sciences"
       },
@@ -222055,10 +222047,114 @@ window.CPL_STATEWIDE = {
         "discipline": "Social Sciences"
       },
       {
+        "title": "AP Calculus AB (score 3-5): Cal-GETC Area 2",
+        "credit_recs": 78,
+        "courses": 1,
+        "colleges": 78,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "AP Calculus BC (score 3-5): Cal-GETC Area 2",
+        "credit_recs": 78,
+        "courses": 1,
+        "colleges": 78,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "AP Calculus BC/ AB sub score (score 3-5): Cal-GETC Area 2",
+        "credit_recs": 78,
+        "courses": 1,
+        "colleges": 78,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "AP Chinese Language & Culture (score 3-5): Cal-GETC Area 3B",
+        "credit_recs": 78,
+        "courses": 1,
+        "colleges": 78,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "AP Comparative Government & Politics (score 3-5): Cal-GETC Area 4",
+        "credit_recs": 78,
+        "courses": 1,
+        "colleges": 78,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "AP English Language/Composition (score 3-5): Cal-GETC Area 1A",
+        "credit_recs": 78,
+        "courses": 1,
+        "colleges": 78,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "AP French Language & Culture (score 3-5): Cal-GETC Area 3B",
+        "credit_recs": 78,
+        "courses": 1,
+        "colleges": 78,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "AP German Language & Culture (score 3-5): Cal-GETC Area 3B",
+        "credit_recs": 78,
+        "courses": 1,
+        "colleges": 78,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "AP Human Geography (score 3-5): Cal-GETC Area 4",
+        "credit_recs": 78,
+        "courses": 1,
+        "colleges": 78,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "AP Italian Language & Culture (score 3-5): Cal-GETC Area 3B",
+        "credit_recs": 78,
+        "courses": 1,
+        "colleges": 78,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "AP Japanese Language & Culture (score 3-5): Cal-GETC Area 3B",
+        "credit_recs": 78,
+        "courses": 1,
+        "colleges": 78,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "AP Latin (score 3-5): Cal-GETC Area 3B",
+        "credit_recs": 78,
+        "courses": 1,
+        "colleges": 78,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
         "title": "AP Psychology (score 3-5): Cal-GETC Area 4",
         "credit_recs": 78,
         "courses": 2,
         "colleges": 77,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "AP Art History (score 3-5): Cal-GETC Area 3A or 3B",
+        "credit_recs": 78,
+        "courses": 1,
+        "colleges": 78,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
@@ -222071,98 +222167,10 @@ window.CPL_STATEWIDE = {
         "discipline": "Interdisciplinary Studies"
       },
       {
-        "title": "AP Calculus AB (score 3-5): Cal-GETC Area 2",
-        "credit_recs": 77,
+        "title": "AP English Literature/Composition (score 3-5): Cal-GETC Area 1A or 3B",
+        "credit_recs": 78,
         "courses": 1,
-        "colleges": 77,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
-        "title": "AP Calculus BC (score 3-5): Cal-GETC Area 2",
-        "credit_recs": 77,
-        "courses": 1,
-        "colleges": 77,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
-        "title": "AP Calculus BC/ AB sub score (score 3-5): Cal-GETC Area 2",
-        "credit_recs": 77,
-        "courses": 1,
-        "colleges": 77,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
-        "title": "AP Chinese Language & Culture (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 77,
-        "courses": 1,
-        "colleges": 77,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
-        "title": "AP Comparative Government & Politics (score 3-5): Cal-GETC Area 4",
-        "credit_recs": 77,
-        "courses": 1,
-        "colleges": 77,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
-        "title": "AP English Language/Composition (score 3-5): Cal-GETC Area 1A",
-        "credit_recs": 77,
-        "courses": 1,
-        "colleges": 77,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
-        "title": "AP French Language & Culture (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 77,
-        "courses": 1,
-        "colleges": 77,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
-        "title": "AP German Language & Culture (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 77,
-        "courses": 1,
-        "colleges": 77,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
-        "title": "AP Human Geography (score 3-5): Cal-GETC Area 4",
-        "credit_recs": 77,
-        "courses": 1,
-        "colleges": 77,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
-        "title": "AP Italian Language & Culture (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 77,
-        "courses": 1,
-        "colleges": 77,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
-        "title": "AP Japanese Language & Culture (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 77,
-        "courses": 1,
-        "colleges": 77,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
-        "title": "AP Latin (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 77,
-        "courses": 1,
-        "colleges": 77,
+        "colleges": 78,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
@@ -222208,14 +222216,6 @@ window.CPL_STATEWIDE = {
       },
       {
         "title": "AP U.S. Government & Politics (score 3-5): Cal-GETC Area 4",
-        "credit_recs": 77,
-        "courses": 1,
-        "colleges": 77,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
-        "title": "AP Art History (score 3-5): Cal-GETC Area 3A or 3B",
         "credit_recs": 77,
         "courses": 1,
         "colleges": 77,
@@ -222311,14 +222311,6 @@ window.CPL_STATEWIDE = {
         "discipline": "Interdisciplinary Studies"
       },
       {
-        "title": "AP English Literature/Composition (score 3-5): Cal-GETC Area 1A or 3B",
-        "credit_recs": 77,
-        "courses": 1,
-        "colleges": 77,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
         "title": "IB Physics HL (score 5-7): Cal-GETC Area 5A",
         "credit_recs": 77,
         "courses": 1,
@@ -222352,6 +222344,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-10T19:04:39",
-  "total_credit_recs": 11341
+  "generated_at": "2026-06-10T20:16:32",
+  "total_credit_recs": 11360
 };
