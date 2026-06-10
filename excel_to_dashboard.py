@@ -6677,6 +6677,31 @@ def export_unified_courses():
                 _n_st += 1
         print(f"  Unified Courses: CPL impact on {_n_eu} rows (eligible units) / {_n_st} (students)")
 
+    # ---- typical-units RANGE: bake umin/umax when member colleges disagree --------
+    # The Units column shows a scalar typical (typical_units). When a course's member
+    # colleges actually offer it at different unit loads (e.g. 1.0 and 1.5), surface the
+    # spread as a range — the consumer renders "lo–hi" and alarms a > 2.0 spread (a
+    # likely over-merge of different unit-load variants, which is what the auditor's
+    # unit_anomaly flag catches; NOT a silent tolerance band). Members come from
+    # coci_minted_memberships.json (memships, keyed by M-ID); a consolidated official-ID
+    # row unions its consolidated_from M-IDs, mirroring the eu/st rollup above.
+    # Deterministic (pure fn of the committed members) → stable daily diff. Baked only
+    # when members genuinely disagree (lean); the consumer falls back to the scalar.
+    _n_ur = 0
+    for r in rows:
+        mus = []
+        for c in [r["id"]] + list(r.get("consolidated_from") or []):
+            for m in memships.get(c, []):
+                u = m.get("units")
+                if isinstance(u, (int, float)):
+                    mus.append(u)
+        if mus:
+            lo, hi = min(mus), max(mus)
+            if lo != hi:
+                r["umin"], r["umax"] = lo, hi
+                _n_ur += 1
+    print(f"  Unified Courses: units range on {_n_ur} rows")
+
     # Compact all-course title index for the "Generate unified course" dialog —
     # a separate file the tab lazy-loads only when a curator opens it. Built from
     # the FINAL row set (post-Phase-B) plus stand-alone singletons, so consumed

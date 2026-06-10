@@ -528,7 +528,18 @@
     }
     // Course number parsed from the trailing digits of the ID ("M-ID EGDTEK 100" -> 100).
     function courseNum(r) { var m = String(r.id || "").match(/(\d+)\s*$/); return m ? parseInt(m[1], 10) : 0; }
-    function subjKey(r) { return (r.subj || []).join("/").toLowerCase(); }
+    // Canonical "common" subject (SUBJ4) for the Subject column/filter/sort. The
+    // 4-letter SUBJ4 is the M-ID/C-ID/CCN id prefix (the product of the SUBJ4
+    // re-mint); r.subj holds the noisier raw per-college local codes (KIN/PE),
+    // which disagree with the canonical SUBJ4 in ~73% of M-IDs. Prefer a baked
+    // r.subj4 when the generator provides it; else derive from the id prefix;
+    // fall back to the raw local codes for the synthetic UC-CUR-* rows.
+    function subj4Of(r) {
+      if (r.subj4) return r.subj4;
+      if (r.id_system === "Unified" || /^UC-/.test(r.id || "")) return (r.subj || []).join(", ");
+      return String(r.id || "").split(/\s+/)[0] || (r.subj || []).join(", ");
+    }
+    function subjKey(r) { return String(subj4Of(r)).toLowerCase(); }
     // Verified = human-verified (curated, reviewed, or the curated anchor);
     // Generated = machine-produced, not yet verified.
     function statusOf(r) {
@@ -629,7 +640,7 @@
         overlay.appendChild(box);
         function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
         overlay.onclick = function (e) { if (e.target === overlay) close(); };
-        box.appendChild(el("h3", { style: "margin:0 0 4px;color:#0A2240;" }, ["Generate unified course"]));
+        box.appendChild(el("h3", { style: "margin:0 0 4px;color:#0A2240;" }, ["Merge courses"]));
         box.appendChild(el("p", { style: "margin:0 0 12px;color:#6b7280;" },
           ["Select the courses that are the same as “" + (seed.title || seed.id) + "”. Exact-title matches are pre-checked; review the suggested near matches and search to add others (incl. Stand-Alone)."]));
         box.appendChild(el("label", { style: "display:block;font-weight:600;margin:8px 0 2px;" }, ["Unified title"]));
@@ -881,7 +892,9 @@
       }
       field("Discipline", r.disc);
       field("Credit", r.credit);
-      field("Units", r.units == null ? "" : r.units);
+      field("Units", (r.umin != null && r.umax != null && r.umin !== r.umax)
+        ? (r.umin + "–" + r.umax + (r.units == null ? "" : " (typical " + r.units + ")"))
+        : (r.units == null ? "" : r.units));
       field("TOP code", r.top && topMap[r.top] ? r.top + ": " + topMap[r.top] : r.top);
       field("Subject(s)", r.subj);
       field("Members", r.members == null ? "" : r.members);
@@ -971,8 +984,9 @@
     var fSource = sel("uc-source", "All sources", uniqSorted(rows.map(function (r) { return r.id_system; })), idSysLabel);
     var fStatus = sel("uc-status", "All statuses", ["Verified", "Generated"]);
     var fDisc = sel("uc-disc", "All disciplines", uniqSorted(rows.map(function (r) { return r.disc; })));
-    // #8 SUBJ filter — subjects are per-row arrays (r.subj), so flatten before uniq.
-    var fSubj = sel("uc-subj", "All subjects", uniqSorted(rows.reduce(function (a, r) { if (r.subj) r.subj.forEach(function (s) { if (s) a.push(s); }); return a; }, [])));
+    // #8 SUBJ filter — list the canonical SUBJ4 (one per row) so it matches the
+    // Subject column display (passes() filters on subj4Of, below).
+    var fSubj = sel("uc-subj", "All subjects", uniqSorted(rows.map(subj4Of).filter(Boolean)));
     var fCredit = sel("uc-credit", "All credit statuses", uniqSorted(rows.map(function (r) { return r.credit; })));
     var fConf = sel("uc-conf", "Any confidence", ["high (≥0.85)", "medium (0.7–0.84)", "low (<0.7)"]);
     var fArtic = sel("uc-artic", "Adoption: any", ["Has earned articulation", "No articulation yet"]);
@@ -1195,7 +1209,7 @@
       if (state.source && r.id_system !== state.source) return false;
       if (state.status && statusOf(r) !== state.status) return false;
       if (state.disc && r.disc !== state.disc && !(r.xdisc && r.xdisc.indexOf(state.disc) >= 0)) return false;
-      if (state.subj && !(r.subj && r.subj.indexOf(state.subj) >= 0)) return false;
+      if (state.subj && subj4Of(r) !== state.subj) return false;
       if (state.credit && r.credit !== state.credit) return false;
       if (state.conf && confTier(r.conf) !== state.conf) return false;
       var hasArt = (r.adopted && r.adopted.length) || (r.potential && r.potential.length);
@@ -1313,11 +1327,8 @@
           out.appendChild(vbtn);
         }
       }
-      if (session && !r.locked) {
-        var ubtn = el("a", { href: "#", class: "uc-auth-link", title: "Find matching courses and consolidate into one unified course" }, [" ⚇ Unify"]);
-        ubtn.onclick = function (e) { e.preventDefault(); openUnifyDialog(r); };
-        out.appendChild(ubtn);
-      }
+      // (The merge affordance — formerly a buried "⚇ Unify" link here — was lifted to
+      //  the FRONT of this actions cell + renamed "⚇ Merge"; see mergeAffordance().)
       return out;
     }
 
@@ -1341,11 +1352,12 @@
         td.innerHTML = "";
         var v = r.disc || "—";
         if (session && !r.locked) {
-          var span = el("span", { class: "uc-disc-edit", title: "Click to set discipline" }, [v]);
+          var span = el("span", { class: "uc-disc-edit uc-trunc", title: v + " — click to set discipline" }, [v]);
           span.onclick = function () { showEditor(); };
           td.appendChild(span);
         } else {
-          var node = el("span", r.locked ? { title: "Curated common-course anchor — official discipline (read-only; firewalled). Sign in and use “propose correction” to suggest a change." } : {}, [v]);
+          // .uc-trunc caps the NAME only (col 4); badges + propose-correction stay visible.
+          var node = el("span", { class: "uc-trunc", title: r.locked ? (v + " — curated common-course anchor (read-only; firewalled). Sign in and use “propose correction” to suggest a change.") : v }, [v]);
           td.appendChild(node);
         }
         // Cross-listed (secondary) disciplines — same course, listed under both
@@ -1541,36 +1553,74 @@
           var descLink = el("a", { href: "#", class: "uc-auth-link", title: "Load and show each member course's catalog description (helps judge discipline)" }, ["Show descriptions"]);
           countDiv.appendChild(descLink);
           cell.appendChild(countDiv);
+          // #4 sortable member columns. Each column carries an accessor + numeric
+          // flag; clicking a header sorts (re-click toggles direction). _oi pins the
+          // original generator order so the on-demand descriptions (aligned to that
+          // order) stay correctly mapped after a sort.
+          list.forEach(function (e, i) { e._oi = i; });
+          var MCOLS = [
+            { label: "College",           get: function (e) { return cols[e.c] || ""; },        num: false },
+            { label: "Local code",        get: function (e) { return e.n || ""; },              num: false },
+            { label: "Local title",       get: function (e) { return e.t || ""; },              num: false },
+            { label: "Units",             get: function (e) { return e.u != null ? e.u : null; }, num: true },
+            { label: "TOP (code: title)", get: function (e) { return e.p || ""; },              num: false }
+          ];
+          var msort = { i: -1, dir: 1 };   // i = MCOLS index sorted on; -1 = original order
+          var dsLoaded = null;             // descriptions (md[r.id]) once the heavy file loads
           var mt = el("table", { class: "uc-member-table" });
           var mh = el("thead"), mhr = el("tr");
-          ["College", "Local code", "Local title", "Units", "TOP (code: title)"].forEach(function (h) { mhr.appendChild(el("th", {}, [h])); });
+          function paintHeaders() {
+            Array.prototype.forEach.call(mhr.children, function (h, hi) {
+              h.textContent = MCOLS[hi].label + (msort.i === hi ? (msort.dir > 0 ? " ▲" : " ▼") : "");
+            });
+          }
+          MCOLS.forEach(function (c, ci) {
+            var th = el("th", { title: "Sort by " + c.label, style: "cursor:pointer;white-space:nowrap;" }, [c.label]);
+            th.onclick = function () {
+              if (msort.i === ci) msort.dir = -msort.dir; else { msort.i = ci; msort.dir = 1; }
+              paintHeaders(); paintBody();
+            };
+            mhr.appendChild(th);
+          });
           mh.appendChild(mhr); mt.appendChild(mh);
           var mb = el("tbody");
-          list.forEach(function (e) {
-            var mr = el("tr");
-            mr.appendChild(el("td", {}, [cols[e.c] || ""]));
-            mr.appendChild(el("td", { class: "uc-id" }, [e.n || ""]));
-            mr.appendChild(el("td", {}, [e.t || ""]));
-            mr.appendChild(el("td", {}, [e.u != null ? String(e.u) : ""]));
-            mr.appendChild(el("td", { style: "font-size:.82rem;color:#475569;" },
-              [e.p ? (e.p + (topmap[e.p] ? ": " + topmap[e.p] : "")) : ""]));
-            mb.appendChild(mr);
-          });
+          function sortedList() {
+            if (msort.i < 0) return list.slice();
+            var c = MCOLS[msort.i];
+            return list.slice().sort(function (a, b) {
+              var av = c.get(a), bv = c.get(b), cmp;
+              if (c.num) { cmp = (av == null ? -Infinity : av) - (bv == null ? -Infinity : bv); }
+              else { av = String(av).toLowerCase(); bv = String(bv).toLowerCase(); cmp = av < bv ? -1 : av > bv ? 1 : 0; }
+              if (cmp === 0) cmp = a._oi - b._oi;   // stable tie-break = original order
+              return cmp * msort.dir;
+            });
+          }
+          function paintBody() {
+            mb.innerHTML = "";
+            sortedList().forEach(function (e) {
+              var mr = el("tr");
+              mr.appendChild(el("td", {}, [cols[e.c] || ""]));
+              mr.appendChild(el("td", { class: "uc-id" }, [e.n || ""]));
+              mr.appendChild(el("td", {}, [e.t || ""]));
+              mr.appendChild(el("td", {}, [e.u != null ? String(e.u) : ""]));
+              mr.appendChild(el("td", { style: "font-size:.82rem;color:#475569;" },
+                [e.p ? (e.p + (topmap[e.p] ? ": " + topmap[e.p] : "")) : ""]));
+              mb.appendChild(mr);
+              if (dsLoaded) {
+                var dtd = el("td", { colspan: String(MCOLS.length), class: "uc-member-desc", style: "font-size:.8rem;color:#64748b;padding:2px 8px 8px 28px;" },
+                  [dsLoaded[e._oi] || "—"]);
+                var dr = el("tr"); dr.appendChild(dtd); mb.appendChild(dr);
+              }
+            });
+          }
+          paintBody();
           mt.appendChild(mb); cell.appendChild(mt);
           descLink.onclick = function (ev) {
             ev.preventDefault();
             descLink.textContent = "Loading descriptions…";
             loadMemberDesc().then(function (md) {
-              var ds = md[r.id] || [];
-              var bodyRows = mb.querySelectorAll("tr");
-              list.forEach(function (e, idx) {
-                var tr2 = bodyRows[idx]; if (!tr2 || tr2._descAdded) return;
-                var td = el("td", { colspan: "5", class: "uc-member-desc", style: "font-size:.8rem;color:#64748b;padding:2px 8px 8px 28px;" },
-                  [ds[idx] || "—"]);
-                var dr = el("tr"); dr.appendChild(td);
-                if (tr2.nextSibling) tr2.parentNode.insertBefore(dr, tr2.nextSibling); else tr2.parentNode.appendChild(dr);
-                tr2._descAdded = true;
-              });
+              dsLoaded = md[r.id] || [];
+              paintBody();   // re-render with descriptions interleaved, preserving the current sort
               descLink.textContent = "Descriptions shown";
               descLink.onclick = function (e2) { e2.preventDefault(); };
             });
@@ -1594,6 +1644,21 @@
         "#tab-unified-courses .uc-aligned-head{font-size:.82rem;font-weight:700;color:#0f3d6e;margin-bottom:6px;}" +
         "#tab-unified-courses .uc-aligned-head .uc-aligned-sub{font-weight:400;color:#64748b;}" +
         "#tab-unified-courses .uc-aligned-badge{display:inline-block;font-size:.66rem;font-weight:700;color:#fff;background:#0f766e;border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:middle;}";
+      document.head.appendChild(st);
+    }
+
+    // The surfaced "⚇ Merge" affordance pill (was the buried "⚇ Unify" link). Injected
+    // once from JS so it covers both HTMLs without a Rule-4 mirror (per the tab-CSS-from-JS
+    // practice). The enabled form also carries .uc-auth-link; the disabled (signed-out)
+    // form is greyed so the action stays discoverable.
+    function ensureMergeCss() {
+      if (document.getElementById("uc-merge-css")) return;
+      var st = document.createElement("style");
+      st.id = "uc-merge-css";
+      st.textContent =
+        "#tab-unified-courses .uc-merge-link{display:inline-block;margin-right:8px;padding:1px 7px;border:1px solid var(--gold-accent);border-radius:4px;text-decoration:none;white-space:nowrap;}" +
+        "#tab-unified-courses a.uc-merge-link:hover{background:var(--gold-accent);color:var(--navy-primary);}" +
+        "#tab-unified-courses .uc-merge-disabled{color:#94a3b8;border-color:#cbd5e1;cursor:not-allowed;}";
       document.head.appendChild(st);
     }
 
@@ -1645,6 +1710,7 @@
     }
 
     function render() {
+      ensureMergeCss();
       var matched = rows.filter(passes);
       matched.sort(function (a, b) {
         var k = state.sort, av, bv;
@@ -1702,14 +1768,34 @@
         idTd.appendChild(info);
         idTd.appendChild(document.createTextNode(" " + (r.id || "")));
         tr.appendChild(idTd);
-        tr.appendChild(el("td", {}, [r.title || ""]));
+        // Title is width-capped via an inner .uc-trunc inline-block (truncation on a
+        // bare <td> is ignored under table-layout:auto) so all columns fit without
+        // horizontal scroll; full title on the cell hover + ⓘ modal.
+        tr.appendChild(el("td", { title: r.title || "" }, [el("span", { class: "uc-trunc" }, [r.title || ""])]));
         tr.appendChild(disciplineCell(r));
         tr.appendChild(el("td", {}, [r.credit || "—"]));
-        tr.appendChild(el("td", {}, [r.units == null ? "—" : String(r.units)]));
+        // Units: show a RANGE (lo–hi) when member colleges disagree (umin/umax baked by
+        // the generator); a spread > 2.0 is surfaced as an over-merge ⚠ alarm (not a
+        // silent tolerance band — a wide spread likely conflates different unit-load
+        // variants, which is exactly what the auditor's unit_anomaly flag catches).
+        // Falls back to the scalar typical (r.units) when the range isn't baked yet.
+        var uTd = el("td", {});
+        if (r.umin != null && r.umax != null && r.umin !== r.umax) {
+          uTd.appendChild(document.createTextNode(r.umin + "–" + r.umax));
+          if (r.umax - r.umin > 2.0) uTd.appendChild(el("span",
+            { title: "Unit spread > 2.0 across member colleges — likely an over-merge of different unit-load variants; review/split.",
+              style: "margin-left:4px;color:#b45309;cursor:help;" }, ["⚠"]));
+        } else {
+          uTd.appendChild(document.createTextNode(r.units == null ? "—" : String(r.units)));
+        }
+        tr.appendChild(uTd);
         tr.appendChild(el("td", (r.top && topMap[r.top]) ? { title: topMap[r.top], style: "cursor:help;" } : {}, [r.top || "—"]));
         var subjTitle = (r.title_variants && r.title_variants.length)
           ? r.title_variants.join("\n") : (r.title || "");
-        tr.appendChild(el("td", { title: subjTitle }, [(r.subj || []).join(", ")]));
+        // Subject column shows the canonical SUBJ4 (the "common" subject); the raw
+        // per-college local code(s) move to the hover so nothing is lost.
+        var localCodes = (r.subj || []).join(", ");
+        tr.appendChild(el("td", { title: "Local member subject code(s): " + (localCodes || "—") + (subjTitle ? "\n" + subjTitle : "") }, [subj4Of(r)]));
         tr.appendChild(el("td", {}, [String(r.members == null ? "" : r.members)]));
         tr.appendChild(el("td", {}, [adoptionCell(r.adopted, "adopted")]));
         tr.appendChild(el("td", {}, [adoptionCell(r.potential, "potential")]));
@@ -1724,7 +1810,21 @@
         tr.appendChild(euTd);
         tr.appendChild(el("td", {}, [r.st == null ? "—" : r.st.toLocaleString()]));
         tr.appendChild(el("td", {}, [r.conf == null ? "—" : r.conf.toFixed(2)]));
-        tr.appendChild(el("td", { class: "uc-flags-cell" }, [flagBadges(r)]));
+        // Actions cell: the surfaced "⚇ Merge" affordance leads (was a buried "⚇ Unify"
+        // link), then the audit/flag badges. Shown disabled when signed out so it's
+        // discoverable; omitted for locked anchors (firewalled — never merged).
+        var flagsTd = el("td", { class: "uc-flags-cell" });
+        if (!r.locked) {
+          if (session) {
+            var mbtn = el("a", { href: "#", class: "uc-auth-link uc-merge-link", title: "Merge this course with others into one unified course" }, ["⚇ Merge"]);
+            mbtn.onclick = function (e) { e.preventDefault(); openUnifyDialog(r); };
+            flagsTd.appendChild(mbtn);
+          } else {
+            flagsTd.appendChild(el("span", { class: "uc-merge-link uc-merge-disabled", title: "Sign in to merge courses into one unified course" }, ["⚇ Merge"]));
+          }
+        }
+        flagsTd.appendChild(flagBadges(r));
+        tr.appendChild(flagsTd);
         tb.appendChild(tr);
       });
       table.appendChild(tb);
