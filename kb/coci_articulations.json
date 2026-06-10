@@ -137185,7 +137185,7 @@
       "_remint_from": "M-ID DRAFT 110"
     },
     {
-      "course_id": "DRAM M1015",
+      "course_id": "THEA M1265",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -137218,7 +137218,7 @@
       "_remint_from": "M-ID DRAM 104"
     },
     {
-      "course_id": "DRAM M1015",
+      "course_id": "THEA M1265",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -152879,7 +152879,7 @@
       "_remint_from": "M-ID ENVS 114"
     },
     {
-      "course_id": "PHYS M13AL",
+      "course_id": "KINE M13AL",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -191737,7 +191737,7 @@
       "_remint_from": "M-ID KINA 110"
     },
     {
-      "course_id": "PHYS M11XA",
+      "course_id": "KINE M10WF",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -213518,7 +213518,7 @@
       "_remint_from": "M-ID KIN 360"
     },
     {
-      "course_id": "PHYS M11SA",
+      "course_id": "KINE M13ER",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -213548,7 +213548,7 @@
       "_remint_from": "M-ID PE 594"
     },
     {
-      "course_id": "PHYS M12YC",
+      "course_id": "KINE M13JI",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -213578,7 +213578,7 @@
       "_remint_from": "M-ID PE 750"
     },
     {
-      "course_id": "PHYS M12YM",
+      "course_id": "KINE M13JK",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -213608,7 +213608,7 @@
       "_remint_from": "M-ID PE 752"
     },
     {
-      "course_id": "PHYS M10YF",
+      "course_id": "KINE M13NM",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -213812,7 +213812,7 @@
       "_remint_from": "M-ID PE 388"
     },
     {
-      "course_id": "PHYS M12TR",
+      "course_id": "KINE M14DB",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -213842,7 +213842,7 @@
       "_remint_from": "M-ID PEC 106"
     },
     {
-      "course_id": "PHYS M12TR",
+      "course_id": "KINE M14DB",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -213872,7 +213872,7 @@
       "_remint_from": "M-ID PEC 106"
     },
     {
-      "course_id": "PHYS M12MR",
+      "course_id": "KINE M14IG",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -213902,7 +213902,7 @@
       "_remint_from": "M-ID PEX 146"
     },
     {
-      "course_id": "PHYS M13AV",
+      "course_id": "KINE M14IP",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -213932,7 +213932,7 @@
       "_remint_from": "M-ID PEX 166"
     },
     {
-      "course_id": "PHYS M13AZ",
+      "course_id": "KINE M14IR",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,

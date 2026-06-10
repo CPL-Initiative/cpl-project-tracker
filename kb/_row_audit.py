@@ -106,10 +106,12 @@ GENERIC_DISCIPLINES = {
 
 # Umbrella MQ disciplines: one MQ discipline that legitimately spans many SUBJ4
 # "subjects". 'Foreign Languages' splits per language (FLSP/FLFR/… — the
-# 2026-06-09 re-mint, docs/fl_subj4_remint_scope.md); the SUBJ4 tracks the subject
-# a student enrolls in while the MQ discipline stays coarse. EXEMPT from
-# subject_collision_signal (they are SUPPOSED to span >1 SUBJ4).
-UMBRELLA_DISCIPLINES = {"Foreign Languages"}
+# 2026-06-09 re-mint, docs/fl_subj4_remint_scope.md); 'Kinesiology' spans
+# KINE (instruction) + ATHL (intercollegiate athletics) since the 2026-06-10
+# KIN/PE convergence (docs/kin_pe_convergence_scope.md §5.2). The SUBJ4 tracks
+# the subject a student enrolls in while the MQ discipline stays coarse. EXEMPT
+# from subject_collision_signal (they are SUPPOSED to span >1 SUBJ4).
+UMBRELLA_DISCIPLINES = {"Foreign Languages", "Kinesiology"}
 
 def _title_tokens(s):
     """Lowercase tokens ≥3 chars, with stop-words filtered."""

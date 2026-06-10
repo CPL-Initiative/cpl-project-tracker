@@ -361,26 +361,6 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "PHYS M10NM": {
-      "merge_into": "KINE M1873",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
-    },
-    "PHYS M11RE": {
-      "merge_into": "KINE M1873",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
-    },
-    "PHYS M11WA": {
-      "merge_into": "KINE M1873",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
-    },
-    "PHYS M11WB": {
-      "merge_into": "KINE M1873",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
-    },
     "REAL M1017": {
       "unified_title": "Legal Aspects of Real Estate",
       "reviewed_by": "map@rccd.edu",
@@ -448,6 +428,26 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:38.890153+00:00",
       "discipline": "Physical Education"
+    },
+    "KINE M13FV": {
+      "merge_into": "KINE M1873",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
+    },
+    "KINE M13FX": {
+      "merge_into": "KINE M1873",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
+    },
+    "KINE M13FY": {
+      "merge_into": "KINE M1873",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
+    },
+    "KINE M13MA": {
+      "merge_into": "KINE M1873",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
     }
   }
 }
