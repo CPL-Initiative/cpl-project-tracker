@@ -2073,6 +2073,311 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPCBES-CBEM-1-001",
+      "exhibit_ids": [
+        "MAPCBES-CBEM-1-001"
+      ],
+      "title": "Credit By Exam Miramar",
+      "unified_title": "Credit By Exam Miramar",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit By Exam Miramar"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 7,
+      "adopter_names": [
+        "Bakersfield College",
+        "Copper Mountain College",
+        "Lake Tahoe Community College",
+        "Los Medanos College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College"
+      ],
+      "potential": 112,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 119,
+      "credit_recs": [
+        {
+          "course": "FIRE B1",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "CJ 006",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "CBTE 140",
+          "credit": "2 hours in Beginning Microsoft Excel"
+        },
+        {
+          "course": "CHIL 291A",
+          "credit": "1 hour in Child Development Center Practicum"
+        },
+        {
+          "course": "CHIL 291B",
+          "credit": "1 hour in Child Development Center Practicum"
+        },
+        {
+          "course": "CHIL 291D",
+          "credit": "1 hour in Child Development Center Practicum"
+        },
+        {
+          "course": "CHIL 160",
+          "credit": "1 hour in Observation and Assessment of Children"
+        },
+        {
+          "course": "CHIL 161",
+          "credit": "1 hour in Observations and Issues in Child Development"
+        },
+        {
+          "course": "ADJU 160",
+          "credit": "3 hours in Criminal Law II"
+        },
+        {
+          "course": "ADJU 162",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AUTO 153G",
+          "credit": "1.75 hours in Introduction to Automotive Technology"
+        },
+        {
+          "course": "AUTO 156G",
+          "credit": "2 hours in Engine and Related Systems"
+        },
+        {
+          "course": "AUTO 161G",
+          "credit": "2 hours in Basic Electricity and Electrical Systems Fundamentals"
+        },
+        {
+          "course": "AUTO 165G",
+          "credit": "2 hours in Engine Performance"
+        },
+        {
+          "course": "AUTO 176G",
+          "credit": "2 hours in Automotive Brake Systems"
+        },
+        {
+          "course": "AUTO 178G",
+          "credit": "2 hours in Suspension, Steering and Handling"
+        },
+        {
+          "course": "AUTO 186",
+          "credit": "2 hours in BAR Specified Diagnostic, Repair, and Level 2 Inspection Training"
+        },
+        {
+          "course": "AVIA 101",
+          "credit": "3 hours in Private Pilot Grounded School"
+        },
+        {
+          "course": "BIOL 131",
+          "credit": "3 hours in Introduction to Biotechnology"
+        },
+        {
+          "course": "BIOL 132",
+          "credit": "4 hours in Applied Biotechnology I"
+        },
+        {
+          "course": "BUSE 100",
+          "credit": "3 hours in Introduction to Business"
+        },
+        {
+          "course": "BUSE 129",
+          "credit": "3 hours in Introduction to Entrepreneurship"
+        },
+        {
+          "course": "CBTE 120",
+          "credit": "1.5 hours in Beginning Microsoft Word"
+        },
+        {
+          "course": "CBTE 122",
+          "credit": "2 hours in Intermediate Microsoft Word"
+        },
+        {
+          "course": "CBTE 127",
+          "credit": "1.5 hours in Beginning Microsoft PowerPoint"
+        },
+        {
+          "course": "CBTE 152",
+          "credit": "1.5 hours in Beginning Microsoft Access"
+        },
+        {
+          "course": "EMGM 105A",
+          "credit": "6 hours in Emergency Medical Technician - National Registry"
+        },
+        {
+          "course": "FIPT 101",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "FIPT 101",
+          "credit": "3 hours in Principles of Emergency Services"
+        },
+        {
+          "course": "FIPT 351A",
+          "credit": "0.5 hours in Fire Inspector 1A: Inspection and Code Enforcement"
+        },
+        {
+          "course": "FIPT 351B",
+          "credit": "0.5 hours in Fire Inspector 1B: Fire and Life Safety"
+        },
+        {
+          "course": "FIPT 351C",
+          "credit": "0.5 hours in Fire Inspector 1C: Field Inspection"
+        },
+        {
+          "course": "LFGD 301",
+          "credit": "3.5 hours in Advanced Open Water Lifeguard Training"
+        },
+        {
+          "course": "LFGD 330",
+          "credit": "0.3 hours in All-Terrain Vehicle Operations"
+        },
+        {
+          "course": "PARA 100",
+          "credit": "3 hours in Legal Procedures"
+        },
+        {
+          "course": "FIR 101",
+          "credit": "3 hours in Fire Protection Organization"
+        },
+        {
+          "course": "FIR 104",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FIR 105",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "ADJUS 140",
+          "credit": "3 hours in Criminal Investigation"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPCBES-1M1C-1-001",
       "exhibit_ids": [
         "MAPCBES-1M1C-1-001"
@@ -220407,9 +220712,18 @@ window.CPL_STATEWIDE = {
         "pct": 3.7
       },
       {
+        "college": "San Diego Miramar College",
+        "credit_recs": 353,
+        "exhibits": 139,
+        "disciplines": 15,
+        "ccc_collaborative": 87,
+        "industry_certs": 202,
+        "pct": 3.1
+      },
+      {
         "college": "Copper Mountain College",
-        "credit_recs": 351,
-        "exhibits": 309,
+        "credit_recs": 352,
+        "exhibits": 310,
         "disciplines": 15,
         "ccc_collaborative": 48,
         "industry_certs": 72,
@@ -220431,15 +220745,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 13,
         "ccc_collaborative": 125,
         "industry_certs": 192,
-        "pct": 2.8
-      },
-      {
-        "college": "San Diego Miramar College",
-        "credit_recs": 307,
-        "exhibits": 138,
-        "disciplines": 15,
-        "ccc_collaborative": 87,
-        "industry_certs": 202,
         "pct": 2.7
       },
       {
@@ -220489,8 +220794,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Bakersfield College",
-        "credit_recs": 224,
-        "exhibits": 117,
+        "credit_recs": 225,
+        "exhibits": 118,
         "disciplines": 7,
         "ccc_collaborative": 90,
         "industry_certs": 153,
@@ -220566,7 +220871,16 @@ window.CPL_STATEWIDE = {
         "disciplines": 12,
         "ccc_collaborative": 66,
         "industry_certs": 99,
-        "pct": 1.5
+        "pct": 1.4
+      },
+      {
+        "college": "San Diego Mesa College",
+        "credit_recs": 161,
+        "exhibits": 98,
+        "disciplines": 12,
+        "ccc_collaborative": 3,
+        "industry_certs": 6,
+        "pct": 1.4
       },
       {
         "college": "Los Angeles Valley College",
@@ -220575,15 +220889,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 3,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 1.4
-      },
-      {
-        "college": "San Diego Mesa College",
-        "credit_recs": 155,
-        "exhibits": 97,
-        "disciplines": 12,
-        "ccc_collaborative": 3,
-        "industry_certs": 6,
         "pct": 1.4
       },
       {
@@ -220596,6 +220901,15 @@ window.CPL_STATEWIDE = {
         "pct": 1.3
       },
       {
+        "college": "San Diego City College",
+        "credit_recs": 148,
+        "exhibits": 103,
+        "disciplines": 11,
+        "ccc_collaborative": 12,
+        "industry_certs": 22,
+        "pct": 1.3
+      },
+      {
         "college": "Coastline Community College",
         "credit_recs": 147,
         "exhibits": 139,
@@ -220605,18 +220919,9 @@ window.CPL_STATEWIDE = {
         "pct": 1.3
       },
       {
-        "college": "San Diego City College",
-        "credit_recs": 144,
-        "exhibits": 102,
-        "disciplines": 11,
-        "ccc_collaborative": 12,
-        "industry_certs": 22,
-        "pct": 1.3
-      },
-      {
         "college": "Lake Tahoe Community College",
-        "credit_recs": 136,
-        "exhibits": 103,
+        "credit_recs": 139,
+        "exhibits": 104,
         "disciplines": 6,
         "ccc_collaborative": 46,
         "industry_certs": 66,
@@ -220656,7 +220961,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 14,
         "ccc_collaborative": 1,
         "industry_certs": 12,
-        "pct": 1.1
+        "pct": 1.0
       },
       {
         "college": "Chabot College",
@@ -220677,6 +220982,15 @@ window.CPL_STATEWIDE = {
         "pct": 1.0
       },
       {
+        "college": "Los Medanos College",
+        "credit_recs": 109,
+        "exhibits": 85,
+        "disciplines": 6,
+        "ccc_collaborative": 12,
+        "industry_certs": 43,
+        "pct": 1.0
+      },
+      {
         "college": "Reedley College",
         "credit_recs": 109,
         "exhibits": 74,
@@ -220692,15 +221006,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 6,
         "ccc_collaborative": 0,
         "industry_certs": 57,
-        "pct": 1.0
-      },
-      {
-        "college": "Los Medanos College",
-        "credit_recs": 108,
-        "exhibits": 84,
-        "disciplines": 6,
-        "ccc_collaborative": 12,
-        "industry_certs": 43,
         "pct": 1.0
       },
       {
@@ -220809,7 +221114,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 4,
         "ccc_collaborative": 0,
         "industry_certs": 4,
-        "pct": 0.8
+        "pct": 0.7
       },
       {
         "college": "Mendocino College",
@@ -220854,7 +221159,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 5,
         "ccc_collaborative": 11,
         "industry_certs": 11,
-        "pct": 0.7
+        "pct": 0.6
       },
       {
         "college": "Columbia College",
@@ -221306,12 +221611,12 @@ window.CPL_STATEWIDE = {
         "courses": 160,
         "colleges": 84,
         "ccc_collaborative": 25,
-        "pct": 40.0
+        "pct": 39.8
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 1939,
-        "exhibits": 1030,
+        "credit_recs": 1952,
+        "exhibits": 1031,
         "courses": 1100,
         "colleges": 53,
         "ccc_collaborative": 487,
@@ -221319,12 +221624,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1319,
-        "exhibits": 401,
-        "courses": 548,
+        "credit_recs": 1339,
+        "exhibits": 402,
+        "courses": 550,
         "colleges": 48,
         "ccc_collaborative": 544,
-        "pct": 11.6
+        "pct": 11.8
       },
       {
         "discipline": "Interdisciplinary Studies",
@@ -221337,26 +221642,26 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Health",
-        "credit_recs": 421,
-        "exhibits": 192,
-        "courses": 272,
+        "credit_recs": 425,
+        "exhibits": 193,
+        "courses": 274,
         "colleges": 45,
         "ccc_collaborative": 32,
         "pct": 3.7
       },
       {
         "discipline": "Business and Management",
-        "credit_recs": 413,
-        "exhibits": 223,
+        "credit_recs": 421,
+        "exhibits": 224,
         "courses": 194,
         "colleges": 37,
         "ccc_collaborative": 46,
-        "pct": 3.6
+        "pct": 3.7
       },
       {
         "discipline": "Information Technology",
-        "credit_recs": 355,
-        "exhibits": 199,
+        "credit_recs": 356,
+        "exhibits": 200,
         "courses": 246,
         "colleges": 42,
         "ccc_collaborative": 106,
@@ -221390,20 +221695,20 @@ window.CPL_STATEWIDE = {
         "pct": 1.9
       },
       {
+        "discipline": "Family and Consumer Sciences",
+        "credit_recs": 173,
+        "exhibits": 92,
+        "courses": 88,
+        "colleges": 21,
+        "ccc_collaborative": 0,
+        "pct": 1.5
+      },
+      {
         "discipline": "Mathematics",
         "credit_recs": 163,
         "exhibits": 118,
         "courses": 86,
         "colleges": 28,
-        "ccc_collaborative": 0,
-        "pct": 1.4
-      },
-      {
-        "discipline": "Family and Consumer Sciences",
-        "credit_recs": 160,
-        "exhibits": 91,
-        "courses": 88,
-        "colleges": 21,
         "ccc_collaborative": 0,
         "pct": 1.4
       },
@@ -221463,8 +221768,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Biological Sciences",
-        "credit_recs": 49,
-        "exhibits": 39,
+        "credit_recs": 51,
+        "exhibits": 40,
         "courses": 29,
         "colleges": 21,
         "ccc_collaborative": 0,
@@ -221499,8 +221804,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Law",
-        "credit_recs": 4,
-        "exhibits": 4,
+        "credit_recs": 5,
+        "exhibits": 5,
         "courses": 4,
         "colleges": 3,
         "ccc_collaborative": 0,
@@ -221513,21 +221818,21 @@ window.CPL_STATEWIDE = {
         "credit_recs": 5831,
         "exhibits": 1181,
         "colleges": 86,
-        "pct": 51.5
+        "pct": 51.2
       },
       {
         "cpl_type": "Industry Certification",
         "credit_recs": 3319,
         "exhibits": 1144,
         "colleges": 78,
-        "pct": 29.3
+        "pct": 29.1
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 1594,
-        "exhibits": 1185,
+        "credit_recs": 1656,
+        "exhibits": 1186,
         "colleges": 56,
-        "pct": 14.1
+        "pct": 14.5
       },
       {
         "cpl_type": "Portfolio Review",
@@ -221554,24 +221859,24 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 6810,
-        "exhibits": 1882,
+        "credit_recs": 6872,
+        "exhibits": 1883,
         "colleges": 92,
-        "pct": 60.1
+        "pct": 60.3
       },
       {
         "mode": "Industry training (I)",
         "credit_recs": 2576,
         "exhibits": 942,
         "colleges": 74,
-        "pct": 22.7
+        "pct": 22.6
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
         "credit_recs": 1207,
         "exhibits": 556,
         "colleges": 43,
-        "pct": 10.7
+        "pct": 10.6
       },
       {
         "mode": "High school coursework (H)",
@@ -221626,11 +221931,11 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 9812,
-        "exhibits": 3695,
+        "credit_recs": 9874,
+        "exhibits": 3696,
         "colleges": 99,
         "disciplines": 23,
-        "pct": 86.6
+        "pct": 86.7
       },
       {
         "category": "CCC Collaborative",
@@ -221638,7 +221943,7 @@ window.CPL_STATEWIDE = {
         "exhibits": 163,
         "colleges": 63,
         "disciplines": 9,
-        "pct": 11.4
+        "pct": 11.3
       },
       {
         "category": "Industry/Other",
@@ -222035,23 +222340,23 @@ window.CPL_STATEWIDE = {
         "discipline": "Public and Protective Services"
       },
       {
+        "title": "Credit By Exam Miramar",
+        "credit_recs": 62,
+        "courses": 38,
+        "colleges": 7,
+        "cpl_type": "Credit By Exam",
+        "discipline": "Public and Protective Services"
+      },
+      {
         "title": "Credit By Exam at Mesa",
         "credit_recs": 54,
         "courses": 40,
         "colleges": 5,
         "cpl_type": "Credit By Exam",
         "discipline": "Business and Management"
-      },
-      {
-        "title": "Credit By Exam San Diego City College",
-        "credit_recs": 50,
-        "courses": 26,
-        "colleges": 3,
-        "cpl_type": "Credit By Exam",
-        "discipline": "Engineering and Industrial Technologies"
       }
     ]
   },
-  "generated_at": "2026-06-10T13:50:04",
-  "total_credit_recs": 11331
+  "generated_at": "2026-06-10T17:07:08",
+  "total_credit_recs": 11393
 };
