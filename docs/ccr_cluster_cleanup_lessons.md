@@ -1,7 +1,7 @@
 ---
 title: CCR Cluster Cleanup — Lessons & State
 date: 2026-05-30
-last_updated: 2026-05-30
+last_updated: 2026-06-10
 session: 19 (CCR cluster dissolution)
 tags: [ccr, unified-courses, cluster, dissolution, curation-migration, supabase, m-id]
 artifacts:
@@ -206,3 +206,65 @@ After the cron lands the FL** ids: **drive the Spanish/FL consolidation** — al
 rows now consolidate cleanly via Suggested-merges, and the blank FL disciplines are a
 high-impact discipline-fill (they all roll up to "Foreign Languages"). Then look for
 the next umbrella (none else identified yet).
+
+---
+
+## 2026-06-10 — Session 38 ("Trusting Newton"): CCR refinements + the first fan-in convergences (#333/#334/#335)
+
+### What happened
+- **#333** shipped Sam's 5-item CCR refinement set: canonical-SUBJ4 Subject
+  column/filter/sort, fit-on-open column caps, sortable member tables, the surfaced
+  "⚇ Merge" pill, and units-as-a-range (`umin`/`umax` baked; "lo–hi" + >2.0 ⚠).
+  3 of 5 arrived as a tested patch from a KB-scoped consult; verified against the
+  live tree before applying (every hunk reconciled), and #3 had to be reworked —
+  bare-`<td>` `max-width` is ignored under `table-layout:auto` (the CER-#307 trap).
+- **#334** applied the **Kinesiology ⟵ Physical Education convergence** — the first
+  **fan-in** (two MQ names, one converging field → canonical + alternate-name alias).
+- **#335** applied **Drama/Theater Arts ⟵ Theater Arts** (fan-in #2), extended both
+  convergences to the **singleton layer** (the gap that kept dead names in the CSR),
+  and refreshed the auditor + CSR.
+
+### Learnings
+- **Fan-in is the mirror of the umbrella split, and the data tells you which one you
+  have.** A discipline over many distinct *enrollment subjects* (Foreign Languages)
+  fans OUT (SUBJ4 per subject). Two discipline *names* over one field (KIN/PE,
+  Drama/Theater) fan IN (canonical name + `discipline_aliases.json`). Modeling KIN/PE
+  as a "PE child under KIN" would have *perpetuated* the split the field is resolving.
+- **Never key a re-mint on `subject_4letter` — key on discipline.** `PHYS` was
+  overloaded (745 PE + 87 Physics); a subject-keyed re-key would have re-keyed
+  physics courses. Bonus: vacating PE from `PHYS` made the code *mean* Physics — the
+  collision fixed itself without the PHED rename Sam floated.
+- **The M-ID band cap is a real design force.** Merged Kinesiology (~1,140 raw
+  credit) exceeded the 1,000/band space; it only fits because the 88 true duplicates
+  merge. A capacity check belongs in every convergence dry-run (and KINE now sits at
+  987/999 — the next growth event forces a numbering decision).
+- **For an irreversible apply, be stricter than the worklist's family key.** The
+  canonical `_fam_key` drops single-letter "V" as a section letter → "Swimming V"
+  folds into "Swimming I". Fine for a curator-confirmed queue; not for an apply.
+  Roman-convert before the letter-drop; verify 0 mismatched-family merges.
+- **A convergence isn't done at the parent layer.** ~56k singletons carry the same
+  discipline names + SUBJ4-prefixed ids and feed the CSR seed/CCR/worklist — the
+  first applies left 2,590 PE + 1,187 Theater Arts stand-alones behind, which is
+  exactly why the CSR kept dead rows. Converge both layers in one PR window.
+- **Sanctioned multi-SUBJ4 spans go in `UMBRELLA_DISCIPLINES`.** Kinesiology now
+  deliberately spans KINE+ATHL; without the exemption `subject_collision_signal`
+  gained exactly +299 (the ATHL parents). With it: back to the 1,076 baseline.
+- **Diff hygiene for KB mutations:** serialize with the file's native indent and
+  rebuild dicts in original key order — the first apply produced a 1.5M-line diff
+  (whole-file reshuffle); the fix got it to ~23k (proportional to the real change).
+
+### Current state
+Both convergences live on `main` across both layers: 0 "Physical Education" /
+0 "Theater Arts" anywhere; Kinesiology 1,308 parents + 3,960 singletons (KINE+ATHL),
+Drama/Theater Arts 316 + 1,379 (THEA), PEDS 41 + 139 (new MQ name cleaned of the
+stray `53414`). Aliases registered; receipts in `kb/kin_pe_out/`,
+`kb/drama_theater_out/`, `kb/convergence_singletons_out/`. Auditor at 16,227 cards,
+`subject_collision_signal` 1,076 (baseline). CSR 146 disciplines with THEA/PEDS
+pinned. CCR #333 features live; units-ranges populate on the next cron.
+
+### Next concrete step
+**Verify the next daily cron**: CCR shows units-ranges + KINE/ATHL/PEDS/THEA rows
+(no PHYS-PE, no DRAM, no dead disciplines), then drive the KINE dedup via
+Suggested-merges. Next fan-in candidates, measured: CIS↔CS↔Office-Tech (39/29/26
+shared families — partly real distinctions, needs judgment), Health↔Health Care
+Ancillaries (16), Commercial Music↔Music (12).

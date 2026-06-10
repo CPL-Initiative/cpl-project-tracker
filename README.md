@@ -83,7 +83,12 @@ The whole ecosystem, end-to-end:
    git-tracked KB. **Eligible-units + Students columns + a 🎯 Cleanup-impact
    preset** (Session 37) rank the cleanup queue by real CPL student-credit
    payoff (rolled up from the Common Exhibit Reference via the articulation
-   crosswalk), not just structural leverage.
+   crosswalk), not just structural leverage. **Session 38:** the Subject
+   column/filter shows the **canonical SUBJ4** (raw local codes on hover), a
+   surfaced **"⚇ Merge"** affordance leads each row's actions cell, the
+   expanded member table is **click-to-sort**, and Units shows a **range**
+   (e.g. `1–1.5`) with a ⚠ alarm when the spread exceeds 2.0 — a likely
+   over-merge signal.
 5. **The row Trust-Card auditor** (`kb/_row_audit.py`) — produces a per-row
    Trust Card for every M-ID + Cluster with a `faculty_trust_score` (the
    bar for cross-college articulation adoption) and an `mc_ready_score`
