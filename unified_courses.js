@@ -700,6 +700,10 @@
             ? ("Merge " + Math.max(n - 1, 0) + " course" + (n === 2 ? "" : "s") + " into " + tgt)
             : ("Mint NEW unified course from " + n);
         }
+        // Identifier precedence for the default target (§10): CCN > C-ID > M-ID.
+        // When an official id is among the chosen, the variants merge INTO it —
+        // we only mint/keep M-IDs where no official id exists (Sam 2026-06-10).
+        function kindPri(k) { return k === "CCN-ID" ? 0 : k === "C-ID" ? 1 : 2; }
         function refreshIdentity() {
           var cur = identSel.value; identSel.innerHTML = "";
           identSel.appendChild(el("option", { value: "" }, ["✨ Mint a NEW unified course"]));
@@ -711,7 +715,10 @@
               eligible.push(id);
             }
           });
+          var official = eligible.filter(function (id) { return kindPri(chosen[id][3]) < 2; })
+            .sort(function (a, b) { return kindPri(chosen[a][3]) - kindPri(chosen[b][3]); });
           if (userPickedTarget && (cur === "" || chosen[cur])) identSel.value = cur;
+          else if (official.length) identSel.value = official[0];
           else if (eligible.indexOf(seed.id) >= 0) identSel.value = seed.id;
           else if (eligible.length) identSel.value = eligible[0];
           syncTargetUi();
@@ -728,7 +735,8 @@
           row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;" }, [entry[0] + " · " + (entry[2] || "") + " · " + idSysLabel(entry[3])]));
           list.appendChild(row);
         }
-        addRow([seed.id, seed.title, (seed.subj || []).join(";"), seed.kind], true, true);
+        addRow([seed.id, seed.title, (seed.subj || []).join(";"),
+                (seed.id_system === "C-ID" || seed.id_system === "CCN-ID") ? seed.id_system : seed.kind], true, true);
         cand.exact.forEach(function (e) { addRow(e, true, false); });
         if (cand.near.length) {
           list.appendChild(el("div", { style: "font-size:.78rem;color:#94a3b8;padding:4px;" }, ["— suggested near matches —"]));
@@ -776,9 +784,15 @@
         if (!sess) { signOut(); session = null; renderAuth(); render(); alert("Sign-in expired — please sign in again."); return; }
         var target = identity || ("UC-CUR-" + Date.now().toString(36).toUpperCase());
         var synthetic = !identity;
+        // An official C-ID/CCN target's title + discipline are AUTHORITATIVE —
+        // write nothing on it but the members' merge pointers (the anchor record
+        // stays firewalled; the merged row reads its fields from it).
+        var tgtRow0 = null;
+        rows.some(function (r) { if (r.id === target) { tgtRow0 = r; return true; } return false; });
+        var tgtOfficial = !!(tgtRow0 && (tgtRow0.id_system === "C-ID" || tgtRow0.id_system === "CCN-ID"));
         var members = ids.filter(function (id) { return id !== target; });
         var items = members.map(function (id) { return { course_id: id, field: "merge_into", value: target }; });
-        if (title) items.push({ course_id: target, field: "unified_title", value: title });
+        if (title && !tgtOfficial) items.push({ course_id: target, field: "unified_title", value: title });
         // A discipline curation is written only when MINTING a new unified
         // course (it has no underlying record). An existing-identity target
         // keeps its own discipline — and "discipline curation present" stays a
@@ -797,7 +811,7 @@
           // "Cluster" label was retired 2026-05-30 (Session 19).
           if (!urow) { urow = { id: target, adopted: [], potential: [], flags: {} }; rows.push(urow); }
           if (synthetic) { urow.kind = "Unified"; urow.id_system = "Unified"; }
-          urow.title = title || urow.title || variants[0];
+          if (!tgtOfficial) urow.title = title || urow.title || variants[0];
           if (synthetic && disc) urow.disc = disc;
           urow.subj = Object.keys(subjSet).sort(); urow.members = ids.length;
           urow.title_variants = variants; urow._mergedAway = false; urow.mt = 1;
@@ -918,8 +932,14 @@
             cbs.push({ cb: cb, m: m });
             row.appendChild(cb);
             row.appendChild(el("span", { style: "flex:1;" }, [m.t || m.id]));
+            var isOfficial = m.k === "C-ID" || m.k === "CCN-ID";
             row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;" },
-              [m.id + " · " + (m.s || "") + (m.u != null ? " · " + m.u + "u" : "") + (m.g ? " · Stand-Alone" : "")]));
+              [m.id + " · " + (m.s || "") + (m.u != null ? " · " + m.u + "u" : "") + (m.g ? " · Stand-Alone" : "")
+               + (isOfficial ? " · " + m.k : "")]));
+            if (isOfficial) row.appendChild(el("span", {
+              style: "font-size:.7rem;font-weight:600;padding:1px 7px;border-radius:10px;background:#dcfce7;color:#166534;white-space:nowrap;",
+              title: "Official identifier — the checked courses merge INTO this one (it stays the common course reference)",
+            }, ["← merge target"]));
             list.appendChild(row);
           });
           box.appendChild(list);
@@ -930,9 +950,14 @@
           go.onclick = function () {
             var picked = cbs.filter(function (x) { return x.cb.checked; }).map(function (x) { return x.m; });
             if (picked.length < 2) { alert("Check at least two members to merge."); return; }
-            var mainPick = picked.filter(function (m) { return m.k !== "Stand-Alone"; });
-            // Anchored: merge into the existing identity. Singleton-only: leave the
-            // target blank so doConsolidate mints a brand-new UC-CUR id.
+            // Anchored: merge into the existing identity, preferring the OFFICIAL
+            // id when one is in the group (CCN > C-ID > M-ID/Unified — §10
+            // precedence; the official id IS the common course reference).
+            // Singleton-only: leave the target blank so doConsolidate mints a
+            // brand-new UC-CUR id.
+            var pri = { "CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3 };
+            var mainPick = picked.filter(function (m) { return m.k !== "Stand-Alone"; })
+              .slice().sort(function (a, b) { return (pri[a.k] != null ? pri[a.k] : 9) - (pri[b.k] != null ? pri[b.k] : 9); });
             var target = mainPick.length ? mainPick[0].id : "";
             var chosen = {};
             picked.forEach(function (m) { chosen[m.id] = [m.id, m.t, m.s, m.k, m.u]; });
@@ -1598,8 +1623,9 @@
 
     var COLS = [
       { key: "kind", label: "Kind" }, { key: "id", label: "ID" }, { key: "title", label: "Title" },
+      { key: "subj", label: "Subject(s)" },   // just left of Discipline for clarity (Sam 2026-06-10)
       { key: "disc", label: "Discipline" }, { key: "credit", label: "Credit" },
-      { key: "units", label: "Units" }, { key: "top", label: "TOP" }, { key: "subj", label: "Subject(s)" },
+      { key: "units", label: "Units" }, { key: "top", label: "TOP" },
       { key: "members", label: "Members" }, { key: "adopted", label: "Adopted" },
       { key: "potential", label: "Adoptable" },
       { key: "eu", label: "Eligible units", title: "Statewide CPL credit-units eligible across the credentials that articulate to this course (rolled up from the Common Exhibit Reference). A real student-impact signal for prioritizing cleanup — higher = more credit riding on this identity being right. “—” = no CPL articulations yet." },
@@ -1846,6 +1872,12 @@
         // bare <td> is ignored under table-layout:auto) so all columns fit without
         // horizontal scroll; full title on the cell hover + ⓘ modal.
         tr.appendChild(el("td", { title: r.title || "" }, [el("span", { class: "uc-trunc" }, [r.title || ""])]));
+        // Subject(s) sits just left of Discipline (Sam 2026-06-10) — canonical
+        // SUBJ4 shown; raw per-college local code(s) stay on the hover.
+        var subjTitle = (r.title_variants && r.title_variants.length)
+          ? r.title_variants.join("\n") : (r.title || "");
+        var localCodes = (r.subj || []).join(", ");
+        tr.appendChild(el("td", { title: "Local member subject code(s): " + (localCodes || "—") + (subjTitle ? "\n" + subjTitle : "") }, [subj4Of(r)]));
         tr.appendChild(disciplineCell(r));
         tr.appendChild(el("td", {}, [r.credit || "—"]));
         // Units: show a RANGE (lo–hi) when member colleges disagree (umin/umax baked by
@@ -1864,12 +1896,6 @@
         }
         tr.appendChild(uTd);
         tr.appendChild(el("td", (r.top && topMap[r.top]) ? { title: topMap[r.top], style: "cursor:help;" } : {}, [r.top || "—"]));
-        var subjTitle = (r.title_variants && r.title_variants.length)
-          ? r.title_variants.join("\n") : (r.title || "");
-        // Subject column shows the canonical SUBJ4 (the "common" subject); the raw
-        // per-college local code(s) move to the hover so nothing is lost.
-        var localCodes = (r.subj || []).join(", ");
-        tr.appendChild(el("td", { title: "Local member subject code(s): " + (localCodes || "—") + (subjTitle ? "\n" + subjTitle : "") }, [subj4Of(r)]));
         tr.appendChild(el("td", {}, [String(r.members == null ? "" : r.members)]));
         tr.appendChild(el("td", {}, [adoptionCell(r.adopted, "adopted")]));
         tr.appendChild(el("td", {}, [adoptionCell(r.potential, "potential")]));
@@ -1887,17 +1913,30 @@
         // Actions cell: the surfaced "⚇ Merge" affordance leads (was a buried "⚇ Unify"
         // link), then the audit/flag badges. Shown disabled when signed out so it's
         // discoverable; omitted for locked anchors (firewalled — never merged).
+        // Chips live inside a width-capped, left-aligned inner wrap so they stack
+        // instead of stringing the row out past the viewport (the nowrap flags
+        // column was the remaining horizontal-scroll culprit — Sam 2026-06-10).
         var flagsTd = el("td", { class: "uc-flags-cell" });
-        if (!r.locked) {
+        var flagsWrap = el("span", { class: "uc-flags-wrap" });
+        flagsTd.appendChild(flagsWrap);
+        // The ⚇ Merge pill shows on regular rows AND on locked OFFICIAL anchors
+        // (C-ID/CCN) — merging variants INTO the official id is the whole point
+        // ("rely on the C-ID/CCN as the common course reference"); the anchor's
+        // own record stays firewalled (no title/discipline writes on it).
+        var officialAnchor = r.locked && (r.id_system === "C-ID" || r.id_system === "CCN-ID");
+        if (!r.locked || officialAnchor) {
+          var mTip = officialAnchor
+            ? "Merge variant courses INTO this official " + r.id_system + " (it becomes the common course reference)"
+            : "Merge this course with others into one unified course";
           if (session) {
-            var mbtn = el("a", { href: "#", class: "uc-auth-link uc-merge-link", title: "Merge this course with others into one unified course" }, ["⚇ Merge"]);
+            var mbtn = el("a", { href: "#", class: "uc-auth-link uc-merge-link", title: mTip }, ["⚇ Merge"]);
             mbtn.onclick = function (e) { e.preventDefault(); openUnifyDialog(r); };
-            flagsTd.appendChild(mbtn);
+            flagsWrap.appendChild(mbtn);
           } else {
-            flagsTd.appendChild(el("span", { class: "uc-merge-link uc-merge-disabled", title: "Sign in to merge courses into one unified course" }, ["⚇ Merge"]));
+            flagsWrap.appendChild(el("span", { class: "uc-merge-link uc-merge-disabled", title: "Sign in to merge courses into one unified course" }, ["⚇ Merge"]));
           }
         }
-        flagsTd.appendChild(flagBadges(r));
+        flagsWrap.appendChild(flagBadges(r));
         tr.appendChild(flagsTd);
         tb.appendChild(tr);
       });

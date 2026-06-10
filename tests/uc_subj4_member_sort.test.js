@@ -73,7 +73,7 @@ function gridAssertions() {
   bodyRows.forEach((tr) => {
     const cells = tr.querySelectorAll("td");
     const id = txt(cells[1]).replace(/^ⓘ\s*/, "");        // ID cell carries an ⓘ prefix
-    bySubj[id] = txt(cells[7]);                            // 8th column = Subject(s)
+    bySubj[id] = txt(cells[3]);                            // 4th column = Subject(s) (moved left of Discipline, 2026-06-10)
   });
 
   // #2 — Subject column shows the canonical SUBJ4 (id prefix), not raw local code.
@@ -84,7 +84,7 @@ function gridAssertions() {
 
   // #2 — the raw local code is preserved on the cell hover (nothing lost).
   const kineRow = bodyRows.find((tr) => txt(tr.querySelectorAll("td")[1]).indexOf("KINE M1371") >= 0);
-  const kineCell = kineRow.querySelectorAll("td")[7];
+  const kineCell = kineRow.querySelectorAll("td")[3];
   check("raw local code preserved in Subject cell hover", (kineCell.getAttribute("title") || "").indexOf("KIN") >= 0);
 
   // #3 — Title/Discipline truncate via an inner .uc-trunc inline-block, NOT a bare-<td>
@@ -94,7 +94,7 @@ function gridAssertions() {
   const titleCell = kineRow.querySelectorAll("td")[2];   // 3rd column = Title
   check("#3 Title text wrapped in .uc-trunc (truncates under table-layout:auto)", !!titleCell.querySelector(".uc-trunc"));
   check("#3 Title cell keeps the full title on hover", (titleCell.getAttribute("title") || "").indexOf("Weight Training and Conditioning I") >= 0);
-  const discCell = kineRow.querySelectorAll("td")[3];    // 4th column = Discipline
+  const discCell = kineRow.querySelectorAll("td")[4];    // 5th column = Discipline (Subject sits at 4)
   check("#3 Discipline NAME wrapped in .uc-trunc", !!discCell.querySelector(".uc-trunc"));
 
   // #2 — the Subject FILTER lists SUBJ4 values, not raw local codes.
@@ -113,7 +113,7 @@ function gridAssertions() {
   // #5 — Units shows a RANGE when member colleges disagree (umin/umax); a > 2.0 spread
   // adds the over-merge ⚠ alarm (not a silent band); a row without umin/umax falls back
   // to the scalar typical. (Units = the 6th column, cells[5].)
-  const unitsCell = (id2) => bodyRows.find((tr) => txt(tr.querySelectorAll("td")[1]).indexOf(id2) >= 0).querySelectorAll("td")[5];
+  const unitsCell = (id2) => bodyRows.find((tr) => txt(tr.querySelectorAll("td")[1]).indexOf(id2) >= 0).querySelectorAll("td")[6];
   check("#5 narrow range renders 'lo–hi' (1–1.5)", txt(unitsCell("KINE M1100")).indexOf("1–1.5") >= 0);
   check("#5 narrow range (<=2.0) shows NO alarm", unitsCell("KINE M1100").textContent.indexOf("⚠") < 0);
   check("#5 wide range renders 'lo–hi' (1–4)", txt(unitsCell("KINE M1200")).indexOf("1–4") >= 0);
