@@ -1,7 +1,7 @@
 ---
 title: CCR Cluster Cleanup — Lessons & State
 date: 2026-05-30
-last_updated: 2026-06-10
+last_updated: 2026-06-10  # Session 39
 session: 19 (CCR cluster dissolution)
 tags: [ccr, unified-courses, cluster, dissolution, curation-migration, supabase, m-id]
 artifacts:
@@ -268,3 +268,68 @@ pinned. CCR #333 features live; units-ranges populate on the next cron.
 Suggested-merges. Next fan-in candidates, measured: CIS↔CS↔Office-Tech (39/29/26
 shared families — partly real distinctions, needs judgment), Health↔Health Care
 Ancillaries (16), Commercial Music↔Music (12).
+
+---
+
+## 2026-06-10 — Session 39: cron verify, the Supabase-mirror regression, the twin-merge payoff
+
+### What happened
+- **Verified the first cron after the convergences (handoff priority 1).** Everything
+  #333/#334/#335 promised landed: units-ranges (7,103 rows), KINE/ATHL/PEDS/THEA
+  populated, dead names 0 in both layers, PHYS = Physics-only, audit chips 1:1,
+  the worklist surfacing KINE 178+107 and FLSP 29+13 dedup groups.
+- **#337 — one real defect: the Supabase-mirror regression.** The daily sync rebuilds
+  `kb/coci_curation.json` FROM Supabase `kb_curation`; the convergence applies had
+  re-pointed only the local overlay. The cron faithfully resurrected `PHYS M1265` as a
+  ghost "Unified" row with discipline "Physical Education" (+ `cluster_member_unresolved`
+  in the auditor — it caught it too). Fixed at the source: 6 live `kb_curation` UPDATEs
+  (re-key 5 course_ids, re-point 4 `merge_into` values, discipline → Kinesiology),
+  reviewer stamps preserved; cross-checked the whole table against ALL 77,726 aliases
+  from every applied re-mint — exactly those 5 were stale. Plus: both orphaned
+  `_CANON_SUBJ4` pins deleted, the `M-ID THEA 100` anchor renamed to the canonical
+  discipline, and the CSR "also: Physical Education" alternate-name chip shipped
+  (`tests/csr_alias_chip.test.js`, 8 checks).
+- **The KINE/FLSP strict twin-merge (Sam-authorized).** 70 groups / 74 losers folded
+  (16,217 → 16,143 parents) under the strictest key — discipline + band + strict fam +
+  credit_status + typical_units, winner = most corroborated. The motivating Spanish
+  pile-up ("Elementary Spanish I"/"Elementary Spanish"/"Elementary Spanish 1") is now
+  one 59-college identity. 6 V-gates + independent re-verify green; receipt
+  `kb/twin_merge_out/2026-06-10/`.
+- **Fan-in candidates measured — mostly NOT fan-ins.** CIS↔CS 10/44, Health↔HCA 3/9,
+  CommMusic↔Music 0/2 (vs KIN/PE's 93) and the big pairs already share one SUBJ4. Sam
+  chose to scope CIS↔CS anyway → `docs/cis_cs_convergence_scope.md` (recommendation:
+  Option B, a guarded CISC twin-merge — not a name fold).
+
+### Learnings
+- **A re-mint that re-points curation MUST write Supabase, not just the synced
+  mirror.** `kb/coci_curation.json` is a *rebuild target*, not a store — any local-only
+  edit silently reverts on the next cron and resurrects dead ids. Now fan-in guard 6
+  (`methodology-fan-in-discipline-convergence.md`); the twin-merge apply prints the
+  exact tuples needing the mirror.
+- **Verify a re-mint against the regenerated artifacts, not just the KB files.** The
+  V-gates passed in Session 38 and the KB was correct — the regression only existed
+  in the *next day's* cron output. "Cron landed clean" is a separate verification
+  with its own checklist (the handoff's priority-1 list was exactly right).
+- **The strict twin key is domain-sensitive: single-letter tokens.** `R Programming` ↔
+  `C# Programming` collide (R / C#→c dropped as section letters) — fine for KINE/FLSP
+  (audited: only possessive-'s artifacts), wrong for computing. Trap 4 in the ordinal-
+  rule note; a blocking guard for any CISC extension.
+- **"Shared title-family count" requires the right title field.** First measurement
+  read `unified_title`/`title` and got 0 everywhere — the KB field is `common_title`.
+  Empty-input zero looks exactly like true zero: sanity-check a metric against a known
+  case (KIN/PE ≈ 93) before believing it.
+- **Measure-first killed two of three "next fan-ins" honestly.** The data
+  distinguished KIN/PE (one field, two SUBJ4 spaces, 93 families) from CIS/CS (two
+  fields, one shared SUBJ4 space, 10 families) — the fan-in test generalizes.
+
+### Current state
+KB at 16,143 minted parents; auditor 16,153 cards, `subject_collision_signal` at the
+1,076 baseline, `cluster_member_unresolved` 0. Supabase `kb_curation` fully aligned
+with the post-convergence ids. CSR re-seeded (146 disciplines) + alternate-name chips
+live. The CCR/EACR/CER artifacts pick up the 74 merges on the next cron.
+
+### Next concrete step
+Verify the next cron folds the merges into `unified_courses_*.js` (Elementary
+Spanish I @ 59 colleges; ghost `PHYS M1265` gone), then Sam's §5 sign-off on
+`docs/cis_cs_convergence_scope.md` decides the CISC pass. The worklist queues
+(KINE 178+107, FLSP 29+13 minus the 74 merged) remain the curator lane.

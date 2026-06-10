@@ -1329,19 +1329,19 @@ Read-only auditor over every M-ID + Cluster. Per row, produces a Trust Card:
 - **Readiness tiers:** ready (≥0.85) / needs_review (≥0.65) /
   needs_repair (≥0.40) / not_ready.
 - **Rule tags + counts (refreshed 2026-06-09 after the Session-37 coarse TOP-division fill):**
-  - `seed_untouched_discipline` (11,071, was 11,148 — 2026-06-10 convergence merges/flips) — Phase B subject_map draft never reviewed (Phase 1a)
+  - `seed_untouched_discipline` (10,998, was 11,071 — 2026-06-10 twin-merge absorbed 73 drafted losers) — Phase B subject_map draft never reviewed (Phase 1a)
   - `subject_collision_signal` (**1,076** — held at baseline through the 2026-06-10 convergences; Kinesiology joined `UMBRELLA_DISCIPLINES` since it deliberately spans KINE+ATHL, absorbing the +299 ATHL artifact. Was 0 → 1,076 on 2026-06-09) — Phase 1e cleanup receipt; the Session-37 coarse TOP-division fill assigned ~1.2k blank minted parents a broad umbrella discipline **without** re-keying SUBJ4 to that discipline's canonical, so they re-trip the SUBJ4-collision diagnostic. Expected + honest — they're new candidates for a future canonical-SUBJ4 fold; the previously-disciplined rows (incl. the FL split) stay collision-free
-  - `unit_anomaly` (4,360, was 4,385) — typical_units represents <50% of member colleges (member-unit variance is high, possible over-merge across different unit-load variants); 71% of flags are 2-member splits like `[3.0, 0.0]` (credit vs noncredit drift in the same M-ID) (Phase 1c)
-  - `member_top_divergence` (**1,286**, was 1,299) — an M-ID's member colleges carry TOP codes spanning ≥2 broad (2-digit) divisions with ≥30% minority share: the **cross-discipline over-merge** detector (a generic title — "Ethics and Leadership", "Undergraduate Research Experience" — minted courses from different program areas under one identity). **57% (736) carry no other strong signal** — it closes a real gap: `top_discipline_disagreement` only checks the M-ID's single *representative* TOP, so it missed the case where the *members* diverge but the representative matches (the motivating `CRIM M1231`: nursing TOP 1230.10 minority-merged into Admin-of-Justice). 2-digit division grouping inherently suppresses sister-discipline noise (Kinesiology/PE both 0835) — no SISTER_PAIRS needed. **255 are "mis-disciplined"** (assigned discipline isn't even the members' plurality division). Surfaces for review, not a verdict (TOP codes vary by college). (Phase 1c)
+  - `unit_anomaly` (4,347, was 4,360 — twin-merge) — typical_units represents <50% of member colleges (member-unit variance is high, possible over-merge across different unit-load variants); 71% of flags are 2-member splits like `[3.0, 0.0]` (credit vs noncredit drift in the same M-ID) (Phase 1c)
+  - `member_top_divergence` (**1,275**, was 1,286 — twin-merge) — an M-ID's member colleges carry TOP codes spanning ≥2 broad (2-digit) divisions with ≥30% minority share: the **cross-discipline over-merge** detector (a generic title — "Ethics and Leadership", "Undergraduate Research Experience" — minted courses from different program areas under one identity). **57% (736) carry no other strong signal** — it closes a real gap: `top_discipline_disagreement` only checks the M-ID's single *representative* TOP, so it missed the case where the *members* diverge but the representative matches (the motivating `CRIM M1231`: nursing TOP 1230.10 minority-merged into Admin-of-Justice). 2-digit division grouping inherently suppresses sister-discipline noise (Kinesiology/PE both 0835) — no SISTER_PAIRS needed. **255 are "mis-disciplined"** (assigned discipline isn't even the members' plurality division). Surfaces for review, not a verdict (TOP codes vary by college). (Phase 1c)
   - `top_discipline_disagreement` (960, was 857 — the coarse umbrella fills + 2026-06-10 convergence flips add TOP-vs-discipline tension rows; was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
-  - `blank_description` (1,733) — Phase 1a
+  - `blank_description` (1,732) — Phase 1a
   - `blank_discipline` (**73**, was 1,266 — 2026-06-09) — Phase 1a; the coarse TOP-division fill cleared the minted-parent blank tail (1,268→80 blank; residual = the no-honest-umbrella divisions)
   - `discipline_title_mismatch` (773, was 762) — title shares 0 tokens with assigned discipline AND ≥2 with some other; +20 from coarse umbrella fills (Phase 1c)
   - `description_discipline_disagreement` (78) — description's safe-phrase set points elsewhere with ≥2 mentions (Phase 1c)
   - `generic_title_concrete_discipline` (44) — title is course-format generic; can't justify a specific discipline (Phase 1c)
   - `mid_id_off_scheme` (**2** — `F M1002` + `N M9001`, both blank-discipline; unfixable residue) — was 27 pre-apply
   - `merge_into_orphan` (**0** — preventive infrastructure; fires when a curation `merge_into` points to a target not in courses ∪ singletons ∪ `UC-CUR-*`. All 3 current pointers cleanly target `UC-CUR-MPG029OM`) (Phase 1c, 2026-05-27)
-  - `cluster_blanks_when_aggregatable` (1), `cluster_id_off_scheme` (1), `uc_cur_ripe_for_promotion` (1) — Phase 1a
+  - `cluster_blanks_when_aggregatable` (6 — grew with Sam's 2026-06-10 worklist merges; each carries an `aggregate_from_members` suggested fix for the parked Phase 1b), `cluster_id_off_scheme` (1), `uc_cur_ripe_for_promotion` (1) — Phase 1a
 
 - **Score now incorporates per-tag penalties (`TAG_PENALTY_ON_DISCIPLINE` + `TAG_PENALTY_ON_UNITS`).** Each cross-validation tag deducts from its target field's per-field score before the weighted mean (floored at 0). Tags compound: a row firing 3 discipline rules drops materially below a row firing 1, even with the same field states. Penalties: `discipline_title_mismatch` −0.20, `top_discipline_disagreement` −0.15, `description_discipline_disagreement` −0.15, `generic_title_concrete_discipline` −0.20, `member_top_divergence` −0.15 (all dock the `discipline` field); `unit_anomaly` −0.20 (docks the `typical_units` field). Mirrored client-side in `unified_courses.js` for the breakdown tooltip — keep the two in sync.
 
@@ -1934,6 +1934,62 @@ carry a stray `53414` in the MQ vocab (pre-existing bug). (4) The Supabase
 stray (raw local code literally "PEDS") → canonical-SUBJ4-fold queue. (6) Standing:
 Spanish/FL consolidation via the worklist, ACE skill-level scope, College/System
 EACR views, EACR v2.
+
+### Session 39 — cron verify + the Supabase-mirror fix + the KINE/FLSP twin-merge (shipped 2026-06-10)
+
+Post-convergence follow-through. **2 PRs (#337 merged; twin-merge + scope + checkpoint
+in the second).** Pipeline viz refreshed (re-mint card → the twin-merge).
+
+- **Cron verification (handoff priority 1) — CLEAN, one defect found + fixed.** The
+  regenerated artifacts carried everything #333/#335 promised: units-ranges on 7,103
+  rows (`KINE M1371` = 1.0–1.5 exactly), KINE 1009 / ATHL 299 / PEDS 41 / THEA 296,
+  0 dead disciplines both layers, PHYS = Physics-only, audit chips 1:1, worklist
+  surfacing KINE 178+107 + FLSP 29+13 dedup groups. The FL discipline-fill carryover
+  was already done (1,455 FL** rows, 0 blank).
+- **#337 — the defect: stale Supabase curation resurrected `PHYS M1265`.** The daily
+  sync REBUILDS `kb/coci_curation.json` FROM Supabase; the convergence had re-pointed
+  only the local overlay, so the cron resurrected the dead id as a ghost "Unified" row
+  (+ `cluster_member_unresolved`). Fixed at the source (live `kb_curation` UPDATEs,
+  alias-map-driven, reviewer stamps preserved; checked against ALL 77,726 aliases from
+  every applied re-mint — exactly 5 stale course_ids); deleted the two orphaned
+  `_CANON_SUBJ4` pins ("Theater Arts" + "Physical Education"); mirrored the overlay;
+  fixed the one dead-name anchor (`M-ID THEA 100` → "Drama/Theater Arts"); shipped the
+  **CSR alternate-name chip** ("also: Physical Education" on Kinesiology, #331 pattern,
+  `tests/csr_alias_chip.test.js`). **Institutionalized as fan-in guard 6** (Supabase
+  mirror) in `methodology-fan-in-discipline-convergence.md`.
+- **KINE + FLSP strict twin-merge pass (Sam-authorized narrowing of the KIN/PE
+  sign-off #5).** `kb/_apply_kine_flsp_twin_merge.py` (dry-run → review every line →
+  `--apply` with 6 V-gates → independent re-verify): merged the strictest twin class
+  only — same discipline + band + STRICT level-safe fam + credit_status +
+  typical_units; winner = most corroborated. **70 groups, 74 losers folded
+  (16,217 → 16,143):** FLSP 21 (the "Elementary Spanish I/…/1" pile-up → ONE
+  59-college identity), KINE 53. Ripple: 19 articulations, 74 membership folds,
+  0 curation. Receipt `kb/twin_merge_out/2026-06-10/`. CSR re-seeded; auditor
+  16,153 cards, collision signal at the 1,076 baseline. Everything fuzzier stays in
+  the curator worklist.
+- **Fan-in candidates measured → mostly NOT fan-ins (Sam asked, data answered).**
+  CIS↔CS 10/44 shared families (parents/both-layers), CIS↔OTEC 4/12, Health↔HCA 3/9,
+  CommMusic↔Music 0/2 — vs KIN/PE's 93 across two SUBJ4 spaces. The big pairs already
+  share one SUBJ4 (CISC, HLTH — Sam's pins), so their twins are ordinary worklist
+  dups. Sam chose **"Scope CIS↔CS anyway"** →
+  [`docs/cis_cs_convergence_scope.md`](docs/cis_cs_convergence_scope.md) (options
+  A/B/C, recommendation **B** = guarded twin-merge over CISC, sign-off GATED).
+- **⚠ New trap found (gates any CISC twin-merge): the single-letter token drop.**
+  `R Programming` ↔ `C# Programming` collide under the strict fam key (R / C# → `c`
+  dropped as "section letters") — in computing titles the single letter IS the
+  content. The applied KINE/FLSP pass was audited clean (only possessive-`'s`
+  artifacts). Added as trap 4 in
+  `methodology-within-credential-identity-consolidation.md`; the CER's display-only
+  `_consolidate_arts` shares the key → flagged for a future audit pass.
+
+**Carryover / next:** (1) verify the next cron regenerates `unified_courses_*.js`
+with the 74 merges folded (Elementary Spanish I @ 59 colleges on the CCR) and the
+ghost `PHYS M1265` row gone. (2) Sam's §5 sign-off on
+`docs/cis_cs_convergence_scope.md` (Option B + the single-letter guard + the CIS
+SUBJ4-tail fold). (3) The KINE/FLSP worklist queues (178+107 / 29+13) are teed up
+for curator confirms — twin-merge took only the strictest slice. (4) Standing:
+ACE skill-level scope, College/System EACR views, EACR v2, the 5 DSPS `53414`
+strays, `PEDS M10AE`.
 
 ---
 

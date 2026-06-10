@@ -1,7 +1,7 @@
 ---
 title: Fan-in discipline convergence — fold alternate names to a canonical, the mirror of the umbrella split
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-06-10  # guard 6 added Session 39
 tags: [methodology, remint, rule-7, discipline, subj4, convergence, alias, m-id]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -23,7 +23,7 @@ artifacts:
 > names for one converging field** (Kinesiology/Physical Education,
 > Drama-Theater-Arts/Theater-Arts), fold to a **canonical name + an
 > alternate-name alias** (`kb/discipline_aliases.json`) — the mirror of the
-> umbrella SUBJ4 split — and apply it as a Rule-7 re-mint with five specific
+> umbrella SUBJ4 split — and apply it as a Rule-7 re-mint with six specific
 > guards (below), at **both** the parent and singleton layers.
 
 ## Context
@@ -49,7 +49,7 @@ split; an alternate-name alias **resolves** it. Never delete the losing name
 from the MQ vocab (it stays a valid credential basis — use
 `cross_listed_disciplines` where dual-MQ eligibility is real).
 
-**The five apply guards:**
+**The six apply guards:**
 
 1. **Key the re-key on `discipline`, never `subject_4letter`.** SUBJ4 codes can
    be overloaded: `PHYS` carried 745 Physical-Education + 87 Physics rows. A
@@ -76,6 +76,17 @@ from the MQ vocab (it stays a valid credential basis — use
    (Kinesiology → KINE + ATHL), the auditor's `subject_collision_signal` fires
    on every carved row (+299, exactly the ATHL parents) unless the discipline
    is registered as deliberately-spanning.
+6. **Mirror every curation re-key into Supabase `kb_curation` — the local
+   overlay is NOT the durable store.** The daily cron REBUILDS
+   `kb/coci_curation.json` from Supabase, so a re-key applied only to the
+   local JSON is silently reverted on the next sync — resurrecting the dead
+   ids as ghost "Unified" rows (the Session-39 `PHYS M1265` regression: 6
+   stale rows survived the KIN/PE apply and the next cron re-emitted the
+   pre-convergence id, firing `cluster_member_unresolved`). Apply the same
+   UPDATEs to the `kb_curation` table (re-key `course_id`, re-point
+   `merge_into` values, preserve reviewer stamps) in the same window. The
+   twin-merge apply (`kb/_apply_kine_flsp_twin_merge.py`) prints the exact
+   tuples needing the mirror.
 
 **Diff hygiene for the KB mutation:** serialize with the file's native indent
 and rebuild dicts in **original key order** (re-keys replace in place). The
@@ -115,5 +126,5 @@ surfaced the singleton gap via a stale CSR row. Receipts (rollback inverses):
 
 *Authoring check: durable (the MQ vocab will keep carrying converging name
 pairs), reusable (next candidates already measured: Health/Health-Care-
-Ancillaries, Commercial-Music/Music), distilled (one pattern, five guards),
+Ancillaries, Commercial-Music/Music), distilled (one pattern, six guards),
 self-contained.*

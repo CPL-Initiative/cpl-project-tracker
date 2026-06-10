@@ -70,7 +70,7 @@ Whatever survives is the *distinguishing concept*, so **Lab / Clinical /
 Refresher / First-Responder / Intro-to-EMS / National-Registry** keep their
 component word and stay separate, while the EMT-Basic core collapses to one row.
 
-## The three traps (each one cost a debug cycle — guard them)
+## The four traps (each one cost a debug cycle — guard them)
 
 - **Removing ordinals over-merges SEQUENCES.** Blindly dropping "I/II/1/2"
   folded Calculus I+II, Spanish 1+2, Paramedic 1/2/3/4, Barbering 1+2. The
@@ -80,6 +80,14 @@ component word and stay separate, while the EMT-Basic core collapses to one row.
   ordinals.** `"2"` has length 1, so the "drop bare letters A/B" check silently
   dropped every `"2"`–`"9"` before the digit logic ran → Calculus 2 merged with
   Calculus. Fix: `len(w) == 1 and not w.isdigit()`.
+- **The same guard eats single-letter LANGUAGE/CONTENT tokens (found Session
+  39).** In computing titles the single letter IS the course: `R Programming`
+  and `C# Programming` both reduce to bare `programming` (`R` dropped as a
+  "section letter"; `C#` → `c` → dropped) — a false fold the KINE/FLSP domain
+  never triggers (its single-letter drops are possessive-`'s` artifacts). Any
+  fold over computing subjects (CISC etc.) must refuse to merge a pair whose
+  RAW titles differ in single-letter tokens. See
+  `docs/cis_cs_convergence_scope.md` §3.
 - **C-ID/CCN anchors have blank titles → a family key would be unreliable.**
   They're authoritative + one-per-course anyway, so **exclude them from folding**
   (only `M-ID`/`Unified` surrogates fold; anchors are always their own row).

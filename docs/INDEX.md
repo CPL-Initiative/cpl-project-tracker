@@ -99,7 +99,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 
 | File | Workstream | Last touched |
 |---|---|---|
-| [`ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) | CCR cleanup — cluster dissolution; Session 37: impact columns + FL SUBJ4 re-mint; **Session 38: CCR refinements #333 + the KIN/PE #334 & Drama/Theater #335 fan-in convergences** | **Session 38 (2026-06-10)** |
+| [`ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) | CCR cleanup — cluster dissolution; Session 37: impact columns + FL SUBJ4 re-mint; Session 38: CCR refinements #333 + the KIN/PE #334 & Drama/Theater #335 fan-in convergences; **Session 39: cron verify + the Supabase-mirror fix #337 + the KINE/FLSP strict twin-merge (74 folds) + [`cis_cs_convergence_scope.md`](cis_cs_convergence_scope.md) (GATED)** | **Session 39 (2026-06-10)** |
 | [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes; **Session 23: #2 sidebar sub-links + #3 display-label map** | Session 23 (Bruh 23, 2026-05-31) |
 | [`engineering_practices_lessons.md`](engineering_practices_lessons.md) | Dev infra / testing / design system (committed jsdom harness + CI, stop-hook fix, `:root` tokens + `var()` rule, prototype-first) | **Session 32 (Busy Feynman, 2026-06-04) NEW** |
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G; **Session 37: orphan-tail discipline fallback #330 + FL-split CSR search/display #331** | **Session 37 (2026-06-09)** |
@@ -157,6 +157,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 36 → 37 | perf + cross-disc re-mint + CER Eligible/Students (handoff) | [`session_37_handoff.md`](session_37_handoff.md) |
 | 37 → 38 | CER Signal-B dedup + CCR impact columns + Foreign-Language SUBJ4 re-mint (handoff) | [`session_38_handoff.md`](session_38_handoff.md) |
 | 38 → 39 | CCR refinements #333 + the KIN/PE #334 & Drama/Theater #335 fan-in convergences (handoff) | [`session_39_handoff.md`](session_39_handoff.md) |
+| 39 → 40 | Cron verify + Supabase-mirror fix #337 + KINE/FLSP twin-merge + CIS↔CS scope (handoff) | [`session_40_handoff.md`](session_40_handoff.md) |
 
 ---
 
