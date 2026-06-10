@@ -6290,8 +6290,24 @@ def export_unified_courses():
 
     # Reviewer-consolidated unified courses (from merge_into curations) — one
     # synthesized Verified row per target id, with its members folded in.
+    # C-ID descriptor catalog as a merge-TARGET authority (2026-06-10): a curator
+    # can fold variant M-IDs into any official C-ID (e.g. the heritage-speaker
+    # courses → SPAN 220/230) even when that C-ID has no pre-existing CCR row.
+    # The descriptor record supplies the authoritative title + subject so the
+    # merged row emits as a proper C-ID Course, not a synthetic "Unified".
+    _cid_desc_rec = {}
+    try:
+        _cidd = _load(os.path.join("reference", "cid_descriptors.json")) or {}
+        for _d in _cidd.get("descriptors", []):
+            _did = str(_d.get("descriptor") or "").strip()
+            if _did:
+                _cid_desc_rec[_did] = {"common_title": _d.get("title"),
+                                       "subject": _did.split()[0], "id_system": "C-ID"}
+    except (IOError, ValueError):
+        pass
+
     def _member_v(m):
-        return cat.get(m) or sg.get(m) or cc.get(m) or clusters.get(m) or {}
+        return cat.get(m) or sg.get(m) or cc.get(m) or clusters.get(m) or _cid_desc_rec.get(m) or {}
 
     def _member_title(m):
         v = _member_v(m)
@@ -6346,6 +6362,8 @@ def export_unified_courses():
             return "Course", (cc[tgt].get("id_system") or "M-ID")
         if tgt in _ccn_id_set:
             return "Course", "CCN-ID"
+        if tgt in _cid_desc_rec:
+            return "Course", "C-ID"
         return "Unified", "Unified"
 
     for tgt, members in sorted(merge_members.items()):
@@ -6363,6 +6381,7 @@ def export_unified_courses():
         c_credit, credit_mixed = _agg_unanimous([mv.get("credit_status") for mv in member_recs])
         c_top,    top_mixed    = _agg_unanimous([mv.get("top_code")      for mv in member_recs])
         c_units,  _units_mixed = _agg_unanimous([mv.get("typical_units") for mv in member_recs])
+        c_disc,   _disc_mixed  = _agg_unanimous([mv.get("discipline")    for mv in member_recs])
         c_conf                 = _synth_cluster_conf(member_recs)
 
         # Verified semantics for merge targets (Sam, 2026-06-10): the MERGE never
@@ -6379,7 +6398,7 @@ def export_unified_courses():
         _verified = _validated or (not _synthetic and bool(cur.get("discipline")))
         rows.append({"kind": t_kind, "id": tgt, "mt": 1,
                      "title": cur.get("unified_title") or _member_title(tgt) or (variants[0] if variants else tgt),
-                     "disc": cur.get("discipline") or tgt_v.get("discipline"),
+                     "disc": cur.get("discipline") or tgt_v.get("discipline") or c_disc,
                      "credit": cur.get("credit_status") or c_credit,
                      "units":  cur.get("typical_units") if cur.get("typical_units") is not None else c_units,
                      "top":    cur.get("top_code")      or c_top,
