@@ -2,7 +2,7 @@
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
   "_synced_at": "2026-06-10T20:17:06Z",
-  "count": 87,
+  "count": 102,
   "curations": {
     "AGRI M1002": {
       "cross_listed_disciplines": "Business",
@@ -261,6 +261,51 @@
       "reviewed_at": "2026-05-29T20:42:04.429467+00:00",
       "discipline": "History"
     },
+    "KINE M1015": {
+      "unified_title": "Weight Training",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M10SU": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M11XF": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M1289": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M12BJ": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M12CC": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M1371": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M13FH": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M13FJ": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
     "KINE M13FV": {
       "merge_into": "KINE M1873",
       "reviewed_by": "map@rccd.edu",
@@ -281,11 +326,41 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
     },
+    "KINE M13QS": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M13VG": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M14HW": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M1704": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
     "KINE M1873": {
       "unified_title": "Body Conditioning and Physical Fitness (Intermediate)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:38.890153+00:00",
       "discipline": "Kinesiology"
+    },
+    "KINE M1925": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M1946": {
+      "merge_into": "KINE M1015",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
     },
     "MGMT M10AI": {
       "cross_listed_disciplines": "Business",

@@ -548,8 +548,31 @@
     // "Verify" = accept the row's current (generated) discipline as-is, which
     // writes it as a curation and promotes the row to Verified. Reuses the
     // discipline-curation path (no bulk prompt).
+    // MERGED courses (r.mt) are different: the merge itself never verifies
+    // (Sam 2026-06-10), and the merge already wrote the title/discipline
+    // curation rows — so Verify on a merged row records the separate
+    // VALIDATION stamp (validated_at/_by, the CSR two-tier pattern) on the
+    // target's kb_curation rows. The daily regen renders it Verified from that.
+    function validateMergeTarget(r) {
+      ensureFresh().then(function (sess) {
+        if (!sess) { signOut(); session = null; renderAuth(); render(); alert("Your sign-in expired — please sign in again."); return; }
+        fetch(SUPABASE_URL + "/rest/v1/kb_curation?course_id=eq." + encodeURIComponent(r.id), {
+          method: "PATCH",
+          headers: {
+            "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
+            "Content-Type": "application/json", "Prefer": "return=minimal"
+          },
+          body: JSON.stringify({ validated_at: new Date().toISOString(), validated_by: sess.email })
+        }).then(function (resp) {
+          if (resp.ok) { r.flags = r.flags || {}; r.flags.reviewed = true; r.reviewed_by = sess.email; r.reviewed_at = today(); render(); }
+          else alert("Verify failed (status " + resp.status + "). Are you an allowed reviewer?");
+        }).catch(function (e) { alert("Could not verify: " + ((e && e.message) || "network error")); });
+      });
+    }
     function verifyRow(r) {
-      if (!session || !r.disc) return;
+      if (!session) return;
+      if (r.mt) { validateMergeTarget(r); return; }
+      if (!r.disc) return;
       ensureFresh().then(function (sess) {
         if (!sess) { signOut(); session = null; renderAuth(); render(); alert("Your sign-in expired — please sign in again."); return; }
         saveDiscipline(r.id, r.disc, sess).then(function (resp) {
@@ -566,7 +589,9 @@
     // curator can narrow to "by subject-code" first. Writes are chunked.
     function batchVerifySet() {
       return rows.filter(passes).filter(function (r) {
-        return statusOf(r) === "Generated" && r.disc && !r.locked;
+        // Merged courses (r.mt) are excluded: verifying a merge is an explicit
+        // per-row act (it validates the MERGE, not just the discipline fill).
+        return statusOf(r) === "Generated" && r.disc && !r.locked && !r.mt;
       });
     }
     function batchVerify() {
@@ -651,19 +676,47 @@
         discSel.appendChild(el("option", { value: "" }, ["— choose —"]));
         mqList.forEach(function (d) { var o = el("option", { value: d }, [d]); if (d === seed.disc) o.setAttribute("selected", "selected"); discSel.appendChild(o); });
         box.appendChild(discSel);
+        var discNote = el("div", { style: "font-size:.78rem;color:#94a3b8;margin:2px 0 0;" }, [""]);
+        box.appendChild(discNote);
         box.appendChild(el("label", { style: "display:block;font-weight:600;margin:12px 0 4px;" }, ["Members"]));
         var list = el("div", { style: "max-height:260px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
         box.appendChild(list);
         var identSel = el("select", { class: "uc-filter" });
+        var go;                  // confirm button — defined below, label synced here
+        var userPickedTarget = false;
+        // Keep the target selector, the discipline note, and the confirm-button
+        // label telling ONE story about what Confirm will do. A blank default
+        // used to silently mint a synthetic UC-CUR course (the 2026-06-10
+        // Weight Training merge surprise) — the target now defaults to the row
+        // the curator opened the merge from.
+        function syncTargetUi() {
+          var n = Object.keys(chosen).length;
+          var tgt = identSel.value;
+          discSel.disabled = !!tgt;
+          discNote.textContent = tgt
+            ? "Merging into an existing course — it keeps its own discipline."
+            : "Applies to the NEW unified course.";
+          if (go) go.textContent = tgt
+            ? ("Merge " + Math.max(n - 1, 0) + " course" + (n === 2 ? "" : "s") + " into " + tgt)
+            : ("Mint NEW unified course from " + n);
+        }
         function refreshIdentity() {
           var cur = identSel.value; identSel.innerHTML = "";
-          identSel.appendChild(el("option", { value: "" }, ["Create new unified course"]));
+          identSel.appendChild(el("option", { value: "" }, ["✨ Mint a NEW unified course"]));
+          var eligible = [];
           Object.keys(chosen).forEach(function (id) {
             var e = chosen[id];
-            if (e[3] && e[3] !== "Stand-Alone") identSel.appendChild(el("option", { value: id }, ["Merge into existing: " + id + " (" + idSysLabel(e[3]) + ")"]));
+            if (e[3] && e[3] !== "Stand-Alone") {
+              identSel.appendChild(el("option", { value: id }, [id + " — " + (e[1] || "") + " (" + idSysLabel(e[3]) + ")"]));
+              eligible.push(id);
+            }
           });
-          if (cur) identSel.value = cur;
+          if (userPickedTarget && (cur === "" || chosen[cur])) identSel.value = cur;
+          else if (eligible.indexOf(seed.id) >= 0) identSel.value = seed.id;
+          else if (eligible.length) identSel.value = eligible[0];
+          syncTargetUi();
         }
+        identSel.onchange = function () { userPickedTarget = true; syncTargetUi(); };
         function addRow(entry, checked, isSeed) {
           if (list.querySelector('[data-id="' + cssEsc(entry[0]) + '"]')) return;
           var row = el("div", { "data-id": entry[0], style: "display:flex;align-items:center;gap:8px;padding:3px 4px;border-bottom:1px solid #f1f5f9;" });
@@ -702,14 +755,14 @@
             }
           }, 200);
         };
-        box.appendChild(el("label", { style: "display:block;font-weight:600;margin:12px 0 2px;" }, ["Unified identity"]));
+        box.appendChild(el("label", { style: "display:block;font-weight:600;margin:12px 0 2px;" }, ["Merge into"]));
         box.appendChild(identSel);
-        refreshIdentity();
         var actions = el("div", { style: "margin-top:16px;display:flex;gap:10px;justify-content:flex-end;" });
         var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Cancel"]);
         cancel.onclick = close;
-        var go = el("button", { type: "button", style: "padding:7px 14px;border:none;border-radius:6px;background:#0A2240;color:#C9A84C;font-weight:600;cursor:pointer;" }, ["Consolidate"]);
-        go.onclick = function () { doConsolidate(chosen, titleIn.value.trim(), discSel.value, identSel.value, close); };
+        go = el("button", { type: "button", style: "padding:7px 14px;border:none;border-radius:6px;background:#0A2240;color:#C9A84C;font-weight:600;cursor:pointer;" }, ["Consolidate"]);
+        go.onclick = function () { doConsolidate(chosen, titleIn.value.trim(), (identSel.value ? "" : discSel.value), identSel.value, close); };
+        refreshIdentity();
         actions.appendChild(cancel); actions.appendChild(go);
         box.appendChild(actions);
         document.body.appendChild(overlay);
@@ -722,10 +775,15 @@
       ensureFresh().then(function (sess) {
         if (!sess) { signOut(); session = null; renderAuth(); render(); alert("Sign-in expired — please sign in again."); return; }
         var target = identity || ("UC-CUR-" + Date.now().toString(36).toUpperCase());
+        var synthetic = !identity;
         var members = ids.filter(function (id) { return id !== target; });
         var items = members.map(function (id) { return { course_id: id, field: "merge_into", value: target }; });
         if (title) items.push({ course_id: target, field: "unified_title", value: title });
-        if (disc) items.push({ course_id: target, field: "discipline", value: disc });
+        // A discipline curation is written only when MINTING a new unified
+        // course (it has no underlying record). An existing-identity target
+        // keeps its own discipline — and "discipline curation present" stays a
+        // clean explicit-verify signal for the daily regen (merge ≠ verify).
+        if (disc && synthetic) items.push({ course_id: target, field: "discipline", value: disc });
         saveCurations(items, sess).then(function (resp) {
           if (!resp.ok) { alert("Consolidation save failed (status " + resp.status + ")."); return; }
           var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
@@ -737,15 +795,31 @@
           // (an M-ID gaining members is still that M-ID). A brand-new synthetic target
           // (no identity chosen → a generated UC-CUR-* id) is a "Unified" course. The
           // "Cluster" label was retired 2026-05-30 (Session 19).
-          var synthetic = !identity;
           if (!urow) { urow = { id: target, adopted: [], potential: [], flags: {} }; rows.push(urow); }
           if (synthetic) { urow.kind = "Unified"; urow.id_system = "Unified"; }
-          urow.title = title || urow.title || variants[0]; urow.disc = disc || urow.disc;
+          urow.title = title || urow.title || variants[0];
+          if (synthetic && disc) urow.disc = disc;
           urow.subj = Object.keys(subjSet).sort(); urow.members = ids.length;
-          urow.title_variants = variants; urow._mergedAway = false; urow._curated = true;
-          urow.flags = urow.flags || {}; urow.flags.reviewed = true; urow.reviewed_by = sess.email; urow.reviewed_at = today();
+          urow.title_variants = variants; urow._mergedAway = false; urow.mt = 1;
+          urow.flags = urow.flags || {};
+          // Carry the members' CPL-impact values so the merged course doesn't
+          // vanish from the Students/Eligible sorts mid-session (the 2026-06-10
+          // Weight Training merge dropped KINE M1015's 4,823 students to the
+          // bottom). MAX, not sum — members may share a credential, so summing
+          // could double-count; the next daily regen computes the true union
+          // via the articulation crosswalk.
+          var st = urow.st || 0, eu = urow.eu || 0;
+          ids.forEach(function (id) {
+            var m = byId[id];
+            if (m) { if ((m.st || 0) > st) st = m.st; if ((m.eu || 0) > eu) eu = m.eu; }
+          });
+          if (st) urow.st = st;
+          if (eu) urow.eu = eu;
+          // The merge does NOT verify (merge ≠ verify, Sam 2026-06-10): no
+          // reviewed/_curated stamping — the row keeps its prior status and
+          // promotes to Verified only via Verify (which validates the merge).
           close(); render();
-          if (!quiet) alert("Consolidated " + ids.length + " courses. The unified course will fully materialize on the next daily sync (or via Sync now).");
+          if (!quiet) alert("Consolidated " + ids.length + " courses into " + target + ". It shows as Generated until you Verify it; it fully materializes on the next daily sync (or via Sync now).");
         }).catch(function (e) { alert("Could not save consolidation: " + ((e && e.message) || "network error")); });
       });
     }
