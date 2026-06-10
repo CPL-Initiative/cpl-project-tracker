@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-10T17:07:43.746Z",
+  "scraped_at": "2026-06-10T17:36:40.801Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -533,13 +533,13 @@
         },
         {
           "college": "Mission College",
-          "students": 143,
+          "students": 146,
           "units": 858,
-          "avgUnits": 6,
+          "avgUnits": 5.876712328767123,
           "transcriptionRate": 0.7,
-          "avgTranscribed": 0.04195804195804196,
+          "avgTranscribed": 0.0410958904109589,
           "criteriaMetCount": 1,
-          "militaryStudents": 143,
+          "militaryStudents": 146,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 1484340,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,671",
+      "value": "47,674",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,423"
+          "value": "24,426"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47671,
+    "Students": 47674,
     "Units": 226090.65000000002,
     "TranscribedUnits": 96751.95,
     "Savings": 315364952.75,
     "YearImpact": 1275409201.3999999,
-    "MilitaryStudents": 24423,
+    "MilitaryStudents": 24426,
     "NonMilitaryStudents": 23324,
     "AprenticeStudents": 751,
-    "AverageUnits": 4.742729332298463,
-    "TranscribedAverage": 2.0295766818401124
+    "AverageUnits": 4.742430884758988,
+    "TranscribedAverage": 2.029448965893359
   }
 }
