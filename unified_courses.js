@@ -640,7 +640,7 @@
         overlay.appendChild(box);
         function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
         overlay.onclick = function (e) { if (e.target === overlay) close(); };
-        box.appendChild(el("h3", { style: "margin:0 0 4px;color:#0A2240;" }, ["Generate unified course"]));
+        box.appendChild(el("h3", { style: "margin:0 0 4px;color:#0A2240;" }, ["Merge courses"]));
         box.appendChild(el("p", { style: "margin:0 0 12px;color:#6b7280;" },
           ["Select the courses that are the same as “" + (seed.title || seed.id) + "”. Exact-title matches are pre-checked; review the suggested near matches and search to add others (incl. Stand-Alone)."]));
         box.appendChild(el("label", { style: "display:block;font-weight:600;margin:8px 0 2px;" }, ["Unified title"]));
@@ -892,7 +892,9 @@
       }
       field("Discipline", r.disc);
       field("Credit", r.credit);
-      field("Units", r.units == null ? "" : r.units);
+      field("Units", (r.umin != null && r.umax != null && r.umin !== r.umax)
+        ? (r.umin + "–" + r.umax + (r.units == null ? "" : " (typical " + r.units + ")"))
+        : (r.units == null ? "" : r.units));
       field("TOP code", r.top && topMap[r.top] ? r.top + ": " + topMap[r.top] : r.top);
       field("Subject(s)", r.subj);
       field("Members", r.members == null ? "" : r.members);
@@ -1325,11 +1327,8 @@
           out.appendChild(vbtn);
         }
       }
-      if (session && !r.locked) {
-        var ubtn = el("a", { href: "#", class: "uc-auth-link", title: "Find matching courses and consolidate into one unified course" }, [" ⚇ Unify"]);
-        ubtn.onclick = function (e) { e.preventDefault(); openUnifyDialog(r); };
-        out.appendChild(ubtn);
-      }
+      // (The merge affordance — formerly a buried "⚇ Unify" link here — was lifted to
+      //  the FRONT of this actions cell + renamed "⚇ Merge"; see mergeAffordance().)
       return out;
     }
 
@@ -1648,6 +1647,21 @@
       document.head.appendChild(st);
     }
 
+    // The surfaced "⚇ Merge" affordance pill (was the buried "⚇ Unify" link). Injected
+    // once from JS so it covers both HTMLs without a Rule-4 mirror (per the tab-CSS-from-JS
+    // practice). The enabled form also carries .uc-auth-link; the disabled (signed-out)
+    // form is greyed so the action stays discoverable.
+    function ensureMergeCss() {
+      if (document.getElementById("uc-merge-css")) return;
+      var st = document.createElement("style");
+      st.id = "uc-merge-css";
+      st.textContent =
+        "#tab-unified-courses .uc-merge-link{display:inline-block;margin-right:8px;padding:1px 7px;border:1px solid var(--gold-accent);border-radius:4px;text-decoration:none;white-space:nowrap;}" +
+        "#tab-unified-courses a.uc-merge-link:hover{background:var(--gold-accent);color:var(--navy-primary);}" +
+        "#tab-unified-courses .uc-merge-disabled{color:#94a3b8;border-color:#cbd5e1;cursor:not-allowed;}";
+      document.head.appendChild(st);
+    }
+
     // Append the CCR inverse view to an expanded row's cell: the aligned
     // exhibits/credentials that articulate to this course (lazy-loaded). The mirror
     // of the EACR. Unions Phase-B consolidated rows' folded ids so a C-ID/CCN anchor
@@ -1696,6 +1710,7 @@
     }
 
     function render() {
+      ensureMergeCss();
       var matched = rows.filter(passes);
       matched.sort(function (a, b) {
         var k = state.sort, av, bv;
@@ -1759,7 +1774,21 @@
         tr.appendChild(el("td", { title: r.title || "" }, [el("span", { class: "uc-trunc" }, [r.title || ""])]));
         tr.appendChild(disciplineCell(r));
         tr.appendChild(el("td", {}, [r.credit || "—"]));
-        tr.appendChild(el("td", {}, [r.units == null ? "—" : String(r.units)]));
+        // Units: show a RANGE (lo–hi) when member colleges disagree (umin/umax baked by
+        // the generator); a spread > 2.0 is surfaced as an over-merge ⚠ alarm (not a
+        // silent tolerance band — a wide spread likely conflates different unit-load
+        // variants, which is exactly what the auditor's unit_anomaly flag catches).
+        // Falls back to the scalar typical (r.units) when the range isn't baked yet.
+        var uTd = el("td", {});
+        if (r.umin != null && r.umax != null && r.umin !== r.umax) {
+          uTd.appendChild(document.createTextNode(r.umin + "–" + r.umax));
+          if (r.umax - r.umin > 2.0) uTd.appendChild(el("span",
+            { title: "Unit spread > 2.0 across member colleges — likely an over-merge of different unit-load variants; review/split.",
+              style: "margin-left:4px;color:#b45309;cursor:help;" }, ["⚠"]));
+        } else {
+          uTd.appendChild(document.createTextNode(r.units == null ? "—" : String(r.units)));
+        }
+        tr.appendChild(uTd);
         tr.appendChild(el("td", (r.top && topMap[r.top]) ? { title: topMap[r.top], style: "cursor:help;" } : {}, [r.top || "—"]));
         var subjTitle = (r.title_variants && r.title_variants.length)
           ? r.title_variants.join("\n") : (r.title || "");
@@ -1781,7 +1810,21 @@
         tr.appendChild(euTd);
         tr.appendChild(el("td", {}, [r.st == null ? "—" : r.st.toLocaleString()]));
         tr.appendChild(el("td", {}, [r.conf == null ? "—" : r.conf.toFixed(2)]));
-        tr.appendChild(el("td", { class: "uc-flags-cell" }, [flagBadges(r)]));
+        // Actions cell: the surfaced "⚇ Merge" affordance leads (was a buried "⚇ Unify"
+        // link), then the audit/flag badges. Shown disabled when signed out so it's
+        // discoverable; omitted for locked anchors (firewalled — never merged).
+        var flagsTd = el("td", { class: "uc-flags-cell" });
+        if (!r.locked) {
+          if (session) {
+            var mbtn = el("a", { href: "#", class: "uc-auth-link uc-merge-link", title: "Merge this course with others into one unified course" }, ["⚇ Merge"]);
+            mbtn.onclick = function (e) { e.preventDefault(); openUnifyDialog(r); };
+            flagsTd.appendChild(mbtn);
+          } else {
+            flagsTd.appendChild(el("span", { class: "uc-merge-link uc-merge-disabled", title: "Sign in to merge courses into one unified course" }, ["⚇ Merge"]));
+          }
+        }
+        flagsTd.appendChild(flagBadges(r));
+        tr.appendChild(flagsTd);
         tb.appendChild(tr);
       });
       table.appendChild(tb);

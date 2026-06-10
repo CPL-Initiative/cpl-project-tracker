@@ -29,6 +29,12 @@ const rows = [
   mkRow("ACCT 110", "Financial Accounting", ["ACCT"], 4, "C-ID"),
   mkRow("UC-CUR-MPG029OM", "Auto Body Combo", ["AB", "ABDY"], 3, "Unified"),
 ];
+// #5 units-range scenarios (umin/umax baked by the generator when member colleges
+// disagree): a <=2.0 spread renders "lo–hi", a >2.0 spread adds an over-merge ⚠ alarm,
+// and a row WITHOUT umin/umax falls back to the scalar typical.
+const rNarrow = mkRow("KINE M1100", "Aerobics", ["KIN"], 1.0); rNarrow.umin = 1.0; rNarrow.umax = 1.5;
+const rWide = mkRow("KINE M1200", "Special Topics", ["KIN"], 2.0); rWide.umin = 1.0; rWide.umax = 4.0;
+rows.push(rNarrow, rWide);
 
 // Member rows for KINE M1371 with varied units to exercise numeric sort.
 const members = {
@@ -95,6 +101,24 @@ function gridAssertions() {
   const opts = Array.from(doc.querySelectorAll("#uc-subj option")).map((o) => o.value);
   check("Subject filter lists SUBJ4 'KINE' and 'PHYS'", opts.indexOf("KINE") >= 0 && opts.indexOf("PHYS") >= 0);
   check("Subject filter does NOT list raw 'KIN' / 'PE'", opts.indexOf("KIN") < 0 && opts.indexOf("PE") < 0);
+
+  // #1 — the merge affordance is surfaced at the front of the actions cell (was a
+  // buried, signed-in-only "⚇ Unify" link). Signed out (this harness), it renders as a
+  // discoverable-but-disabled span (.uc-merge-disabled), NOT a clickable link.
+  const kineFlags = kineRow.querySelector("td.uc-flags-cell");
+  check("#1 '⚇ Merge' affordance present in the actions cell", !!kineFlags && kineFlags.textContent.indexOf("⚇ Merge") >= 0);
+  check("#1 merge affordance is disabled (span, no link) when signed out",
+    !!kineFlags && !!kineFlags.querySelector("span.uc-merge-disabled") && !kineFlags.querySelector("a.uc-merge-link"));
+
+  // #5 — Units shows a RANGE when member colleges disagree (umin/umax); a > 2.0 spread
+  // adds the over-merge ⚠ alarm (not a silent band); a row without umin/umax falls back
+  // to the scalar typical. (Units = the 6th column, cells[5].)
+  const unitsCell = (id2) => bodyRows.find((tr) => txt(tr.querySelectorAll("td")[1]).indexOf(id2) >= 0).querySelectorAll("td")[5];
+  check("#5 narrow range renders 'lo–hi' (1–1.5)", txt(unitsCell("KINE M1100")).indexOf("1–1.5") >= 0);
+  check("#5 narrow range (<=2.0) shows NO alarm", unitsCell("KINE M1100").textContent.indexOf("⚠") < 0);
+  check("#5 wide range renders 'lo–hi' (1–4)", txt(unitsCell("KINE M1200")).indexOf("1–4") >= 0);
+  check("#5 wide range (>2.0) shows the ⚠ over-merge alarm", unitsCell("KINE M1200").textContent.indexOf("⚠") >= 0);
+  check("#5 row without umin/umax falls back to the scalar typical (1.5)", txt(unitsCell("KINE M1371")) === "1.5");
 
   memberSortAssertions();
 }
