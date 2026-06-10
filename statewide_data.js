@@ -146763,6 +146763,178 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPSAS-A:UH-1-001|MAPSAS-A:UH1-1-001|MAPSAS-AUH3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-A:UH-1-001",
+        "MAPSAS-A:UH1-1-001",
+        "MAPSAS-AUH3-1-001"
+      ],
+      "title": "AP U.S. History",
+      "unified_title": "AP U.S. History",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.98,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP : U.S. History Area 3B",
+        "AP : U.S. History Area 4",
+        "AP U.S. History (score 3-5): Cal-GETC Area 3B or 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 78,
+      "adopter_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "CA MAP INITIATIVE COLLEGE",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "potential": 40,
+      "potential_names": [
+        "Cañada College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Siskiyous",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Feather River College",
+        "Foothill College",
+        "Fullerton College",
+        "Gavilan College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "MiraCosta College",
+        "Mission College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Santa Barbara City College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College"
+      ],
+      "total_addressable": 118,
+      "credit_recs": [
+        {
+          "course": "HIST 4A",
+          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
+        },
+        {
+          "course": "Cal-GETC 3B or 4",
+          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
+        },
+        {
+          "course": "ACC 200",
+          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
+        },
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        },
+        {
+          "course": "Local GE Area 3B",
+          "credit": "3 hours in Humanities"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPCBES-R1-1-001",
       "exhibit_ids": [
         "MAPCBES-R1-1-001"
@@ -147661,178 +147833,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "ASL 001",
           "credit": "5 hours in Elementary American Sign Language I"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPSAS-A:UH-1-001|MAPSAS-A:UH1-1-001|MAPSAS-AUH3-1-001",
-      "exhibit_ids": [
-        "MAPSAS-A:UH-1-001",
-        "MAPSAS-A:UH1-1-001",
-        "MAPSAS-AUH3-1-001"
-      ],
-      "title": "AP U.S. History",
-      "unified_title": "AP U.S. History",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP : U.S. History Area 3B",
-        "AP : U.S. History Area 4",
-        "AP U.S. History (score 3-5): Cal-GETC Area 3B or 4"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 79,
-      "adopter_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "CA MAP INITIATIVE COLLEGE",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "potential": 39,
-      "potential_names": [
-        "Cañada College",
-        "Cerro Coso Community College",
-        "Chaffey College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of San Mateo",
-        "College of the Desert",
-        "College of the Siskiyous",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "Feather River College",
-        "Fullerton College",
-        "Gavilan College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Los Angeles Harbor College",
-        "Los Angeles Southwest College",
-        "MiraCosta College",
-        "Mission College",
-        "Moorpark College",
-        "Mt. San Jacinto College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Santa Barbara City College",
-        "Santiago Canyon College",
-        "Skyline College",
-        "Southwestern College",
-        "Taft College"
-      ],
-      "total_addressable": 118,
-      "credit_recs": [
-        {
-          "course": "HIST 4A",
-          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
-        },
-        {
-          "course": "Cal-GETC 3B or 4",
-          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
-        },
-        {
-          "course": "ACC 200",
-          "credit": "3 hours in Humanities or Social and Behavioral Sciences"
-        },
-        {
-          "course": "Local GE Area 4",
-          "credit": "3 hours in Social and Behavioral Sciences"
-        },
-        {
-          "course": "Local GE Area 3B",
-          "credit": "3 hours in Humanities"
         }
       ]
     },
@@ -213924,7 +213924,7 @@ window.CPL_STATEWIDE = {
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
       "collaborative_type": "Local",
-      "adopters": 78,
+      "adopters": 77,
       "adopter_names": [
         "Allan Hancock College",
         "American River College",
@@ -213956,7 +213956,6 @@ window.CPL_STATEWIDE = {
         "El Camino College",
         "Evergreen Valley College",
         "Folsom Lake College",
-        "Foothill College",
         "Fresno City College",
         "Glendale Community College",
         "Golden West College",
@@ -214007,7 +214006,7 @@ window.CPL_STATEWIDE = {
       ],
       "potential": 0,
       "potential_names": [],
-      "total_addressable": 78,
+      "total_addressable": 77,
       "credit_recs": [
         {
           "course": "Cal-GETC Area 4",
@@ -214039,7 +214038,7 @@ window.CPL_STATEWIDE = {
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
       "collaborative_type": "Local",
-      "adopters": 78,
+      "adopters": 77,
       "adopter_names": [
         "Allan Hancock College",
         "American River College",
@@ -214071,7 +214070,6 @@ window.CPL_STATEWIDE = {
         "El Camino College",
         "Evergreen Valley College",
         "Folsom Lake College",
-        "Foothill College",
         "Fresno City College",
         "Glendale Community College",
         "Golden West College",
@@ -214122,7 +214120,7 @@ window.CPL_STATEWIDE = {
       ],
       "potential": 0,
       "potential_names": [],
-      "total_addressable": 78,
+      "total_addressable": 77,
       "credit_recs": [
         {
           "course": "Cal-GETC Area 3B",
@@ -214150,7 +214148,7 @@ window.CPL_STATEWIDE = {
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
       "collaborative_type": "Local",
-      "adopters": 78,
+      "adopters": 77,
       "adopter_names": [
         "Allan Hancock College",
         "American River College",
@@ -214182,7 +214180,6 @@ window.CPL_STATEWIDE = {
         "El Camino College",
         "Evergreen Valley College",
         "Folsom Lake College",
-        "Foothill College",
         "Fresno City College",
         "Glendale Community College",
         "Golden West College",
@@ -214233,7 +214230,7 @@ window.CPL_STATEWIDE = {
       ],
       "potential": 0,
       "potential_names": [],
-      "total_addressable": 78,
+      "total_addressable": 77,
       "credit_recs": [
         {
           "course": "Cal-GETC Area 3B",
@@ -214261,7 +214258,7 @@ window.CPL_STATEWIDE = {
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
       "collaborative_type": "Local",
-      "adopters": 78,
+      "adopters": 77,
       "adopter_names": [
         "Allan Hancock College",
         "American River College",
@@ -214293,7 +214290,6 @@ window.CPL_STATEWIDE = {
         "El Camino College",
         "Evergreen Valley College",
         "Folsom Lake College",
-        "Foothill College",
         "Fresno City College",
         "Glendale Community College",
         "Golden West College",
@@ -214344,7 +214340,7 @@ window.CPL_STATEWIDE = {
       ],
       "potential": 0,
       "potential_names": [],
-      "total_addressable": 78,
+      "total_addressable": 77,
       "credit_recs": [
         {
           "course": "Cal-GETC Area 3B",
@@ -214372,7 +214368,7 @@ window.CPL_STATEWIDE = {
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
       "collaborative_type": "Local",
-      "adopters": 78,
+      "adopters": 77,
       "adopter_names": [
         "Allan Hancock College",
         "American River College",
@@ -214404,7 +214400,6 @@ window.CPL_STATEWIDE = {
         "El Camino College",
         "Evergreen Valley College",
         "Folsom Lake College",
-        "Foothill College",
         "Fresno City College",
         "Glendale Community College",
         "Golden West College",
@@ -214455,7 +214450,7 @@ window.CPL_STATEWIDE = {
       ],
       "potential": 0,
       "potential_names": [],
-      "total_addressable": 78,
+      "total_addressable": 77,
       "credit_recs": [
         {
           "course": "Cal-GETC Area 3B",
@@ -220745,7 +220740,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 13,
         "ccc_collaborative": 125,
         "industry_certs": 192,
-        "pct": 2.7
+        "pct": 2.8
       },
       {
         "college": "Los Angeles Pierce College",
@@ -220871,7 +220866,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 12,
         "ccc_collaborative": 66,
         "industry_certs": 99,
-        "pct": 1.4
+        "pct": 1.5
       },
       {
         "college": "San Diego Mesa College",
@@ -220925,15 +220920,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 6,
         "ccc_collaborative": 46,
         "industry_certs": 66,
-        "pct": 1.2
-      },
-      {
-        "college": "Foothill College",
-        "credit_recs": 136,
-        "exhibits": 127,
-        "disciplines": 10,
-        "ccc_collaborative": 0,
-        "industry_certs": 0,
         "pct": 1.2
       },
       {
@@ -221126,6 +221112,15 @@ window.CPL_STATEWIDE = {
         "pct": 0.7
       },
       {
+        "college": "Foothill College",
+        "credit_recs": 84,
+        "exhibits": 82,
+        "disciplines": 9,
+        "ccc_collaborative": 0,
+        "industry_certs": 0,
+        "pct": 0.7
+      },
+      {
         "college": "Cerritos College",
         "credit_recs": 81,
         "exhibits": 70,
@@ -221159,7 +221154,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 5,
         "ccc_collaborative": 11,
         "industry_certs": 11,
-        "pct": 0.6
+        "pct": 0.7
       },
       {
         "college": "Columbia College",
@@ -221606,12 +221601,12 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 4534,
+        "credit_recs": 4488,
         "exhibits": 882,
         "courses": 160,
         "colleges": 84,
         "ccc_collaborative": 25,
-        "pct": 39.8
+        "pct": 39.6
       },
       {
         "discipline": "Engineering and Industrial Technologies",
@@ -221620,7 +221615,7 @@ window.CPL_STATEWIDE = {
         "courses": 1100,
         "colleges": 53,
         "ccc_collaborative": 487,
-        "pct": 17.1
+        "pct": 17.2
       },
       {
         "discipline": "Public and Protective Services",
@@ -221633,10 +221628,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Interdisciplinary Studies",
-        "credit_recs": 640,
+        "credit_recs": 634,
         "exhibits": 162,
         "courses": 27,
-        "colleges": 81,
+        "colleges": 80,
         "ccc_collaborative": 1,
         "pct": 5.6
       },
@@ -221815,24 +221810,24 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 5831,
+        "credit_recs": 5779,
         "exhibits": 1181,
         "colleges": 86,
-        "pct": 51.2
+        "pct": 51.0
       },
       {
         "cpl_type": "Industry Certification",
         "credit_recs": 3319,
         "exhibits": 1144,
         "colleges": 78,
-        "pct": 29.1
+        "pct": 29.3
       },
       {
         "cpl_type": "Credit By Exam",
         "credit_recs": 1656,
         "exhibits": 1186,
         "colleges": 56,
-        "pct": 14.5
+        "pct": 14.6
       },
       {
         "cpl_type": "Portfolio Review",
@@ -221859,17 +221854,17 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 6872,
+        "credit_recs": 6820,
         "exhibits": 1883,
         "colleges": 92,
-        "pct": 60.3
+        "pct": 60.1
       },
       {
         "mode": "Industry training (I)",
         "credit_recs": 2576,
         "exhibits": 942,
         "colleges": 74,
-        "pct": 22.6
+        "pct": 22.7
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
@@ -221931,11 +221926,11 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 9874,
+        "credit_recs": 9822,
         "exhibits": 3696,
         "colleges": 99,
         "disciplines": 23,
-        "pct": 86.7
+        "pct": 86.6
       },
       {
         "category": "CCC Collaborative",
@@ -221943,7 +221938,7 @@ window.CPL_STATEWIDE = {
         "exhibits": 163,
         "colleges": 63,
         "disciplines": 9,
-        "pct": 11.3
+        "pct": 11.4
       },
       {
         "category": "Industry/Other",
@@ -221957,57 +221952,57 @@ window.CPL_STATEWIDE = {
     "top_exhibits": [
       {
         "title": "AP Biology (score 3-5): Cal-GETC Area 5B and 5C",
-        "credit_recs": 156,
+        "credit_recs": 154,
         "courses": 2,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Chemistry (score 3-5): Cal-GETC Area 5A and 5C",
-        "credit_recs": 156,
+        "credit_recs": 154,
         "courses": 2,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Environmental Science (score 3-5): Cal-GETC Area 5A and 5C",
-        "credit_recs": 156,
+        "credit_recs": 154,
         "courses": 2,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Physics 1: Algebra-Based (score 3-5): Cal-GETC Area 5A and 5C",
-        "credit_recs": 156,
+        "credit_recs": 154,
         "courses": 2,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Physics 2: Algebra-Based (score 3-5): Cal-GETC Area 5A and 5C",
-        "credit_recs": 156,
+        "credit_recs": 154,
         "courses": 2,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Physics C: Mechanics (score 3-5): Cal-GETC Area 5A and 5C",
-        "credit_recs": 156,
+        "credit_recs": 154,
         "courses": 2,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Physics C: Electricity/Magnetism (score 3-5): Cal-GETC Area 5A and 5C",
-        "credit_recs": 156,
+        "credit_recs": 154,
         "courses": 2,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
@@ -222029,305 +222024,305 @@ window.CPL_STATEWIDE = {
       },
       {
         "title": "AP European History (score 3-5): Cal-GETC Area 3B or 4",
-        "credit_recs": 80,
+        "credit_recs": 79,
         "courses": 3,
-        "colleges": 79,
+        "colleges": 78,
         "cpl_type": "Standardized Assessment",
         "discipline": "Social Sciences"
       },
       {
         "title": "AP U.S. History (score 3-5): Cal-GETC Area 3B or 4",
-        "credit_recs": 80,
+        "credit_recs": 79,
         "courses": 3,
-        "colleges": 79,
+        "colleges": 78,
         "cpl_type": "Standardized Assessment",
         "discipline": "Social Sciences"
       },
       {
         "title": "AP World History: Modern (score 3-5): Cal-GETC Area 3B or 4",
-        "credit_recs": 80,
+        "credit_recs": 79,
         "courses": 3,
-        "colleges": 79,
+        "colleges": 78,
         "cpl_type": "Standardized Assessment",
         "discipline": "Social Sciences"
       },
       {
         "title": "IB History (any region) HL (score 5-7): Cal-GETC Area 3B or 4",
-        "credit_recs": 80,
+        "credit_recs": 79,
         "courses": 3,
-        "colleges": 79,
+        "colleges": 78,
         "cpl_type": "Standardized Assessment",
         "discipline": "Social Sciences"
       },
       {
         "title": "AP Psychology (score 3-5): Cal-GETC Area 4",
-        "credit_recs": 79,
+        "credit_recs": 78,
         "courses": 2,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "IB Theatre HL (score 5-7): Cal-GETC Area 3A",
-        "credit_recs": 79,
+        "credit_recs": 78,
         "courses": 2,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Calculus AB (score 3-5): Cal-GETC Area 2",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Calculus BC (score 3-5): Cal-GETC Area 2",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Calculus BC/ AB sub score (score 3-5): Cal-GETC Area 2",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Chinese Language & Culture (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Comparative Government & Politics (score 3-5): Cal-GETC Area 4",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP English Language/Composition (score 3-5): Cal-GETC Area 1A",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP French Language & Culture (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP German Language & Culture (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Human Geography (score 3-5): Cal-GETC Area 4",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Italian Language & Culture (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Japanese Language & Culture (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Latin (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Macroeconomics (score 3-5): Cal-GETC Area 4",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Microeconomics (score 3-5): Cal-GETC Area 4",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Spanish Language & Culture (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Spanish Literature & Culture (score 3-5): Cal-GETC Area 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Statistics (score 3-5): Cal-GETC Area 2",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP U.S. Government & Politics (score 3-5): Cal-GETC Area 4",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Art History (score 3-5): Cal-GETC Area 3A or 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "IB Biology HL (score 5-7): Cal-GETC Area 5B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "IB Chemistry HL (score 5-7): Cal-GETC Area 5A",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "IB Economics HL (score 5-7): Cal-GETC Area 4",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "IB Geography HL (score 5-7): Cal-GETC Area 4",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "IB Language A: Literature (any language, except English) HL (score 5-7): Cal-GETC Area 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "IB Language A: Language and Literature (any language, except English) HL (score 5-7): Cal-GETC Area 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "IB Language A: Literature (any language) HL (score 5-7): Cal-GETC Area 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "IB Language A: Language and Literature (any language) HL (score 5-7): Cal-GETC Area 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "IB Mathematics: Analysis and Approaches HL (score 5-7): Cal-GETC Area 2",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "IB Mathematics: Applications and Interpretation HL (score 5-7): Cal-GETC Area 2 (may not be at all UC)",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "IB Psychology HL (score 5-7): Cal-GETC Area 4",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP English Literature/Composition (score 3-5): Cal-GETC Area 1A or 3B",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "IB Physics HL (score 5-7): Cal-GETC Area 5A",
-        "credit_recs": 78,
+        "credit_recs": 77,
         "courses": 1,
-        "colleges": 78,
+        "colleges": 77,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
@@ -222357,6 +222352,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-10T17:36:07",
-  "total_credit_recs": 11393
+  "generated_at": "2026-06-10T19:04:39",
+  "total_credit_recs": 11341
 };

@@ -1,7 +1,7 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-10T17:36:41Z",
+  "_synced_at": "2026-06-10T19:05:16Z",
   "count": 87,
   "curations": {
     "AGRI M1002": {
@@ -361,6 +361,32 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
+    "PHYS M10NM": {
+      "merge_into": "PHYS M1265",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
+    },
+    "PHYS M11RE": {
+      "merge_into": "PHYS M1265",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
+    },
+    "PHYS M11WA": {
+      "merge_into": "PHYS M1265",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
+    },
+    "PHYS M11WB": {
+      "merge_into": "PHYS M1265",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
+    },
+    "PHYS M1265": {
+      "unified_title": "Body Conditioning and Physical Fitness (Intermediate)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:42:38.890153+00:00",
+      "discipline": "Physical Education"
+    },
     "REAL M1017": {
       "unified_title": "Legal Aspects of Real Estate",
       "reviewed_by": "map@rccd.edu",
@@ -422,32 +448,6 @@
       "discipline": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "KINE M1873": {
-      "unified_title": "Body Conditioning and Physical Fitness (Intermediate)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:42:38.890153+00:00",
-      "discipline": "Physical Education"
-    },
-    "KINE M13FV": {
-      "merge_into": "KINE M1873",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
-    },
-    "KINE M13FX": {
-      "merge_into": "KINE M1873",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
-    },
-    "KINE M13FY": {
-      "merge_into": "KINE M1873",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
-    },
-    "KINE M13MA": {
-      "merge_into": "KINE M1873",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
     }
   }
 }
