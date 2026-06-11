@@ -1780,6 +1780,12 @@
           var msort = { i: -1, dir: 1 };   // i = MCOLS index sorted on; -1 = original order
           var dsLoaded = null;             // descriptions (md[r.id]) once the heavy file loads
           var mt = el("table", { class: "uc-member-table" });
+          // Fixed-layout column proportions (ensureUcFixCss #3), parallel to MCOLS.
+          var mcg = el("colgroup", {});
+          [24, 12, 38, 8, 18].forEach(function (w) {
+            mcg.appendChild(el("col", { style: "width:" + w + "%;" }));
+          });
+          mt.appendChild(mcg);
           var mh = el("thead"), mhr = el("tr");
           function paintHeaders() {
             Array.prototype.forEach.call(mhr.children, function (h, hi) {
@@ -1881,13 +1887,28 @@
     //     chip stack wraps the row anyway, so wrapping costs no height (Sam).
     //  2. Member-table headers: the static sheet left them slate (#64748b) on
     //     the navy band inherited from .uc-table th — unreadable. White.
+    //  3. FIXED table layout (Session 43, the AoJ "blank columns" report):
+    //     under auto layout one wide cell inflates its column and silently
+    //     parks the trailing columns past the wrap's right edge — the
+    //     h-scrollbar sits at the BOTTOM of the 70vh wrap, so to a reader the
+    //     columns are just GONE, and the effect varies by filtered row set
+    //     (per-discipline). table-layout:fixed + the colgroup in render()
+    //     hard-caps every column so the table can NEVER outgrow the wrap at
+    //     desktop widths; min-width keeps the narrow-screen safety net
+    //     (overflow-x:auto on the wrap) for sub-900px viewports. td overflow
+    //     is clipped — long content wraps inside its fixed column, and every
+    //     clipped cell type already carries a full-value hover/ⓘ path.
     function ensureUcFixCss() {
       if (document.getElementById("uc-fix-css")) return;
       var st = document.createElement("style");
       st.id = "uc-fix-css";
       st.textContent =
         "#tab-unified-courses .uc-table td:nth-child(3) .uc-trunc{white-space:normal;overflow:visible;text-overflow:clip;}" +
-        "#tab-unified-courses .uc-member-table th{color:#fff;background:var(--navy-primary,#0A2240);}";
+        "#tab-unified-courses .uc-member-table th{color:#fff;background:var(--navy-primary,#0A2240);}" +
+        "#tab-unified-courses table.uc-table{table-layout:fixed;min-width:900px;}" +
+        "#tab-unified-courses .uc-table td{overflow:hidden;}" +
+        "#tab-unified-courses .uc-member-table{table-layout:fixed;}" +
+        "#tab-unified-courses .uc-member-table td{overflow:hidden;}";
       document.head.appendChild(st);
     }
 
@@ -1983,6 +2004,16 @@
       suggestBtn.style.display = session ? "" : "none";
 
       var table = el("table", { class: "uc-table" });
+      // Explicit column proportions for table-layout:fixed (ensureUcFixCss #3)
+      // — without a colgroup, fixed layout would split all 15 columns evenly.
+      var COL_W = { kind: 5.5, id: 7.5, title: 14, subj: 5.5, disc: 10, credit: 6,
+                    units: 4.5, top: 11, members: 4.5, adopted: 4.5, potential: 5,
+                    eu: 5, st: 4.5, conf: 3.5, flags: 10.5 };
+      var cgroup = el("colgroup", {});
+      COLS.forEach(function (c) {
+        cgroup.appendChild(el("col", { style: "width:" + (COL_W[c.key] || 6) + "%;" }));
+      });
+      table.appendChild(cgroup);
       var thead = el("thead"), htr = el("tr");
       COLS.forEach(function (c) {
         var th = el("th", { "data-key": c.key, title: c.title || "" }, [c.label + (state.sort === c.key ? (state.dir > 0 ? " ▲" : " ▼") : "")]);
