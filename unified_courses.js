@@ -786,10 +786,14 @@
         var synthetic = !identity;
         // An official C-ID/CCN target's title + discipline are AUTHORITATIVE —
         // write nothing on it but the members' merge pointers (the anchor record
-        // stays firewalled; the merged row reads its fields from it).
+        // stays firewalled; the merged row reads its fields from it). A row-less
+        // official target (#342 — any of the 495 descriptor-catalog C-IDs is a
+        // valid target with no pre-existing CCR row) is recognized via the
+        // chosen-tuple's id_system ([3]) so it gets no writes either.
         var tgtRow0 = null;
         rows.some(function (r) { if (r.id === target) { tgtRow0 = r; return true; } return false; });
-        var tgtOfficial = !!(tgtRow0 && (tgtRow0.id_system === "C-ID" || tgtRow0.id_system === "CCN-ID"));
+        var tgtOfficial = !!(tgtRow0 && (tgtRow0.id_system === "C-ID" || tgtRow0.id_system === "CCN-ID"))
+          || !!(chosen[target] && (chosen[target][3] === "C-ID" || chosen[target][3] === "CCN-ID"));
         var members = ids.filter(function (id) { return id !== target; });
         var items = members.map(function (id) { return { course_id: id, field: "merge_into", value: target }; });
         if (title && !tgtOfficial) items.push({ course_id: target, field: "unified_title", value: title });
@@ -864,11 +868,17 @@
         // like anchored groups (target = first M-ID member), so they sit in the
         // "merge into existing" half, before the singleton-only (new-mint) section.
         var family = (data.family_groups || []).map(function (g) { g._kind = "family"; return g; });
+        // Evidence lane (2026-06-11): rows whose member courses carried an
+        // official C-ID/CCN in COCI (witness counts per member) but didn't
+        // clear the auto-fold bar — fold the checked members into the official
+        // id. Contested members (x:1 — their own colleges disagree on the
+        // target) start UNCHECKED.
+        var evidence = (data.evidence_groups || []).map(function (g) { g._kind = "evidence"; return g; });
         var singles = (data.singleton_groups || []).map(function (g) { g._kind = "singleton"; return g; });
-        var groups = anchored.concat(family).concat(singles);
+        var groups = anchored.concat(family).concat(evidence).concat(singles);
         if (!groups.length) { alert("No suggested merges available in this build."); return; }
-        // Singleton (new-mint) section starts after anchored + family.
-        var nNonSingleton = anchored.length + family.length;
+        // Singleton (new-mint) section starts after anchored + family + evidence.
+        var nNonSingleton = anchored.length + family.length + evidence.length;
         var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
         var mergedAway = function (id) { return byId[id] && byId[id]._mergedAway; };
         function liveMembers(g) { return g.members.filter(function (m) { return !mergedAway(m.id); }); }
@@ -893,6 +903,7 @@
           }
           var g = groups[i], mems = liveMembers(g), isSingleton = g._kind === "singleton";
           var isFamily = g._kind === "family";
+          var isEvidence = g._kind === "evidence";
           box.appendChild(el("h3", { style: "margin:0 0 2px;color:#0A2240;" }, ["Suggested merge " + (i + 1) + " of " + groups.length]));
           // Section badge so the curator knows whether this merges into an
           // existing identity or mints a brand-new unified course.
@@ -902,6 +913,9 @@
             : isFamily
             ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#dbeafe;color:#1e40af;margin:0 0 8px;" },
                 ["⛓ Co-articulation family · merge near-duplicate identities"])
+            : isEvidence
+            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#dcfce7;color:#166534;margin:0 0 8px;" },
+                ["🧾 COCI evidence · fold into " + (g.sig || "the official id")])
             : el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#e0f2fe;color:#075985;margin:0 0 8px;" },
                 ["⛓ Merge into existing identity"]);
           box.appendChild(badge);
@@ -910,13 +924,15 @@
               ? "Single-college courses that share a title but match no existing identity (confidence score " + g.score + "). Confirming creates a NEW unified course from the checked members. Uncheck any that differ — or Skip."
               : isFamily
               ? "These identities co-articulate to “" + (g.credential || "the same credential") + "” and share a course family the level-safe worklist skips (level/format title drift — e.g. “Academy” / “Basic” / “I” / “Training”). Confirming MERGES the checked members into one identity. Uncheck any genuinely different course, then Confirm — or Skip."
+              : isEvidence
+              ? "Member college courses of these identities carried " + (g.sig || "an official id") + " as their official C-ID/CCN in COCI — the 🧾 witness counts on each row. Confirming MERGES the checked members into the official id. Rows whose own colleges DISAGREE on the target start unchecked; check one only if you're sure. Nothing is applied until you confirm."
               : "Same-title candidates (confidence score " + g.score + "). Uncheck any that differ, then Confirm — or Skip. Nothing is applied until you confirm."]));
           if (isSingleton && g.same_college) {
             box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
               ["⚠ All members appear to be from the same college — these are often course variants (levels, credit/noncredit, language versions), not cross-college duplicates. Review carefully before confirming."]));
           }
           box.appendChild(el("label", { style: "display:block;font-weight:600;margin:6px 0 2px;" }, ["Unified title"]));
-          var titleIn = el("input", { type: "text", value: bestTitle(g), style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
+          var titleIn = el("input", { type: "text", value: (isEvidence && g.official) || bestTitle(g), style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
           box.appendChild(titleIn);
           box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" }, ["Discipline (optional)"]));
           var discSel = el("select", { class: "uc-filter", style: "min-width:280px;" });
@@ -928,7 +944,9 @@
           var cbs = [];
           mems.forEach(function (m) {
             var row = el("div", { style: "display:flex;align-items:center;gap:8px;padding:3px 4px;border-bottom:1px solid #f1f5f9;" });
-            var cb = el("input", { type: "checkbox" }); cb.checked = true;
+            // Contested evidence members (m.x — their own colleges disagree on
+            // the official target) start UNCHECKED: the curator opts IN.
+            var cb = el("input", { type: "checkbox" }); cb.checked = !m.x;
             cbs.push({ cb: cb, m: m });
             row.appendChild(cb);
             row.appendChild(el("span", { style: "flex:1;" }, [m.t || m.id]));
@@ -936,6 +954,15 @@
             row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;" },
               [m.id + " · " + (m.s || "") + (m.u != null ? " · " + m.u + "u" : "") + (m.g ? " · Stand-Alone" : "")
                + (isOfficial ? " · " + m.k : "")]));
+            if (m.ev) {
+              var evTx = Object.keys(m.ev).map(function (k) { return k + " ×" + m.ev[k]; }).join(" · ");
+              row.appendChild(el("span", {
+                style: "font-size:.7rem;font-weight:600;padding:1px 7px;border-radius:10px;white-space:nowrap;background:"
+                  + (m.x ? "#fef3c7;color:#92400e;" : "#dcfce7;color:#166534;"),
+                title: "COCI witnesses — this identity's member courses that carried an official id before the re-mint split"
+                  + (m.x ? ". The colleges DISAGREE on the target, so this row starts unchecked." : ""),
+              }, ["🧾 " + evTx]));
+            }
             if (isOfficial) row.appendChild(el("span", {
               style: "font-size:.7rem;font-weight:600;padding:1px 7px;border-radius:10px;background:#dcfce7;color:#166534;white-space:nowrap;",
               title: "Official identifier — the checked courses merge INTO this one (it stays the common course reference)",
@@ -1386,9 +1413,17 @@
       }
       // Phase A crosswalk surfacing: official C-ID / CCN carried by member courses.
       var mt = r.match || {};
-      if (mt.ccn) out.appendChild(el("span", { class: "uc-badge ok", title: "A member college course carries the official Common Course Number " + mt.ccn + " — candidate to promote to CCN-ID." }, ["→ CCN " + mt.ccn]));
-      if (mt.cid) out.appendChild(el("span", { class: "uc-badge ok", title: "A member college course carries the official CID " + mt.cid + " — candidate to promote to CID." }, ["→ CID " + mt.cid]));
-      if (mt.cid_conflict) out.appendChild(el("span", { class: "uc-badge warn", title: "Members carry different official CIDs (" + mt.cid_conflict.join(", ") + ") — likely over-merged; do not promote." }, ["CID conflict"]));
+      // Witness distribution (match.evidence, 2026-06-11): how many member
+      // college courses carried each official id in COCI before the re-mint
+      // split — the auditability behind the badge.
+      var mtEv = mt.evidence
+        ? " COCI witnesses: " + Object.keys(mt.evidence).map(function (k) {
+            return k.replace(/^C-ID:|^CCN:/, "") + " ×" + mt.evidence[k];
+          }).join(", ") + "."
+        : "";
+      if (mt.ccn) out.appendChild(el("span", { class: "uc-badge ok", title: "Member college courses carried the official Common Course Number " + mt.ccn + " — candidate to promote to CCN-ID." + mtEv }, ["→ CCN " + mt.ccn]));
+      if (mt.cid) out.appendChild(el("span", { class: "uc-badge ok", title: "Member college courses carried the official CID " + mt.cid + " — candidate to promote to CID." + mtEv }, ["→ CID " + mt.cid]));
+      if (mt.cid_conflict) out.appendChild(el("span", { class: "uc-badge warn", title: "Members carry different official CIDs (" + mt.cid_conflict.join(", ") + ") — likely over-merged; do not auto-promote. Review it in the ✨ worklist's evidence lane." + mtEv }, ["CID conflict"]));
       if (statusOf(r) === "Verified") {
         out.appendChild(el("span", {
           class: "uc-badge",

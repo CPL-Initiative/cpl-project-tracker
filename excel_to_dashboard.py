@@ -6566,20 +6566,45 @@ def export_unified_courses():
     def _row_official(r):
         if r.get("id_system") in ("C-ID", "CCN-ID"):
             return None  # already an official-ID identity
-        cids, ccns = set(), set()
+        cids, ccns = {}, {}
         for i in _leaf_ids(r):
-            for oid in (promotions.get(i, {}).get("official_targets") or {}):
+            for oid, w in (promotions.get(i, {}).get("official_targets") or {}).items():
+                n = (w or {}).get("members", 0) or 0
                 if oid.startswith("CCN:"):
-                    ccns.add(oid[4:])
+                    ccns[oid[4:]] = ccns.get(oid[4:], 0) + n
                 elif oid.startswith("C-ID:"):
-                    cids.add(oid[5:])
+                    cids[oid[5:]] = cids.get(oid[5:], 0) + n
+
+        def _pick(pool):
+            # R2 (docs/official_id_fold_scope.md): unanimous evidence matches at
+            # any witness count (the pre-R2 behavior); with dissent, the top
+            # target must hold >=80% of witnesses AND >=2 (any 80% share over a
+            # dissenter implies >=5 witnesses, so dissent is never overridden
+            # on thin evidence). Below the bar -> no match (conflict surfaces
+            # in the worklist evidence lane instead of auto-folding).
+            if not pool:
+                return None
+            if len(pool) == 1:
+                return next(iter(pool))
+            top, n = max(pool.items(), key=lambda x: x[1])
+            if n >= 2 and n / sum(pool.values()) >= 0.8:
+                return top
+            return None
+
         out = {}
-        if len(ccns) == 1:
-            out["ccn"] = next(iter(ccns))
-        if len(cids) == 1:
-            out["cid"] = next(iter(cids))
+        ccn = _pick(ccns)
+        if ccn:
+            out["ccn"] = ccn
+        cid = _pick(cids)
+        if cid:
+            out["cid"] = cid
         elif len(cids) > 1:
             out["cid_conflict"] = sorted(cids)
+        if cids or ccns:
+            # Full witness distribution (namespace-prefixed), for the CCR badge
+            # tooltips + the worklist evidence lane.
+            out["evidence"] = {**{"C-ID:" + k: v for k, v in cids.items()},
+                               **{"CCN:" + k: v for k, v in ccns.items()}}
         return out or None
 
     # ---- write unified_courses_data.js (deferred so rows carry matched IDs) --
@@ -6957,6 +6982,54 @@ def export_unified_courses():
                                       "credential": ut, "members": members})
         family_groups.sort(key=lambda x: -x["score"])
 
+    # ── Evidence lane (R3, 2026-06-11 — docs/official_id_fold_scope.md) ──────
+    # Rows whose promotions evidence did NOT clear the R2 auto bar (mixed /
+    # below-80% — today's cid_conflict) plus rows that cleared it but Phase B
+    # had nothing to act on (a lone claimant of an official id with no CCR
+    # anchor row). The conflicts used to be EXCLUDED from the worklist entirely
+    # — silently hidden. Now each surfaces under its TOP evidence target with
+    # the full witness distribution; Confirm folds the checked members into the
+    # official id via the #341/#342 flow (the descriptor catalog is a valid
+    # target, row or no row). Members whose own colleges DISAGREE on the target
+    # (multi-target evidence) ship `x:1` → the consumer pre-UNCHECKS them, so a
+    # curator opts IN to folding a contested row (e.g. FLSP M1379 "Intermediate
+    # Spanish": SPAN 200 ×8 vs SPAN 210 ×6 — two courses wearing one title).
+    evidence_groups = []
+    _ev_anchor_title = {r["id"]: r.get("title") for r in rows
+                        if r.get("locked") and r.get("id_system") in ("C-ID", "CCN-ID")}
+    _ev_by_target = {}
+    for r in rows:
+        ev = (r.get("match") or {}).get("evidence")
+        if not ev or r.get("locked") or r.get("id_system") not in ("M-ID", "Unified"):
+            continue
+        top = max(ev.items(), key=lambda x: x[1])[0]
+        _ev_by_target.setdefault(top, []).append(r)
+    for top, claimants in _ev_by_target.items():
+        osys = "CCN-ID" if top.startswith("CCN:") else "C-ID"
+        oid = top.split(":", 1)[1]
+        if not (oid in _ev_anchor_title or (osys == "C-ID" and oid in _cid_desc_rec)
+                or (osys == "CCN-ID" and oid in _ccn_id_set)):
+            continue  # unknown official id — leave to the badge only
+        otitle = (_ev_anchor_title.get(oid)
+                  or (_cid_desc_rec.get(oid) or {}).get("common_title") or oid)
+        members = [{"id": oid, "t": otitle, "s": oid.split()[0], "u": None, "k": osys}]
+        wit = 0
+        for r in sorted(claimants,
+                        key=lambda r: -((r.get("match") or {}).get("evidence") or {}).get(top, 0)):
+            ev = (r.get("match") or {}).get("evidence") or {}
+            m = {"id": r["id"], "t": r.get("title"),
+                 "s": ";".join(r.get("subj") or []), "u": r.get("units"),
+                 "k": r.get("id_system"),
+                 "ev": {k.split(":", 1)[1]: v
+                        for k, v in sorted(ev.items(), key=lambda x: -x[1])}}
+            if len(ev) > 1:
+                m["x"] = 1  # contested — pre-unchecked in the consumer
+            members.append(m)
+            wit += ev.get(top, 0)
+        evidence_groups.append({"sig": oid, "official": otitle, "n": len(members),
+                                "score": wit, "members": members})
+    evidence_groups.sort(key=lambda g: -g["score"])
+
     out_sug = os.path.join(odir, "unified_courses_suggestions.js")
     _sc_flagged = sum(1 for g in singleton_groups if g["same_college"])
     sug_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
@@ -6964,18 +7037,22 @@ def export_unified_courses():
                    "singleton_count": len(singleton_groups),
                    "singleton_groups": singleton_groups,
                    "family_count": len(family_groups),
-                   "family_groups": family_groups}
+                   "family_groups": family_groups,
+                   "evidence_count": len(evidence_groups),
+                   "evidence_groups": evidence_groups}
     with open(out_sug, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses suggested-merge worklist — lazy-loaded. groups = "
                 "identity-anchored same-title merges; singleton_groups = NEW unified "
                 "courses minted from single-college matches (same_college flag = likely "
                 "intra-college variants); family_groups = co-articulation family merges "
                 "(near-duplicate M-IDs the level-safe signature misses, gated on a shared "
-                "credential + the ordinal-rule family key). HUMAN-CONFIRMED, NEVER auto-applied. */\n"
+                "credential + the ordinal-rule family key); evidence_groups = COCI-evidence "
+                "folds into official C-ID/CCN ids (witness counts per member; x=1 members "
+                "are contested and pre-unchecked). HUMAN-CONFIRMED, NEVER auto-applied. */\n"
                 "window.CPL_UC_SUGGESTIONS = " + json.dumps(sug_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
     print(f"  Unified Courses: wrote {out_sug} ({len(sug_groups)} anchored + "
-          f"{len(singleton_groups)} singleton-only + {len(family_groups)} co-articulation-family "
-          f"groups [{_sc_flagged} same-college flagged])")
+          f"{len(singleton_groups)} singleton-only + {len(family_groups)} co-articulation-family + "
+          f"{len(evidence_groups)} evidence groups [{_sc_flagged} same-college flagged])")
 
     mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
     payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,
