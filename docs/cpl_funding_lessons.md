@@ -128,6 +128,68 @@ parallel-session shared-file freeze lifts.
    five-step shape (seed → read-path → editor → RLS) instead of growing the
    workbook.
 
+### 2026-06-11 (sandbox) — formulas read from the workbook + the what-if layer
+
+Sam asked to make the variables interactive ("this is still in draft form")
+and whether the Excel formulas are readable. **They are** (openpyxl,
+`data_only=False`); the chain, now formula-confirmed:
+
+```
+H3 = I3 = J3 = ((C3 remaining + D3 one-time) − (E3 admin + F3 scaling)) / 3   ← per-year tranche
+E3 = 400000*3                                                                  ← admin self-documents ($400K/yr × 3)
+K3 = C8 ;  C8 = SUM(C9:C125)        ← THE BUG: the list ends at C126 (Yuba)
+L3 = H3 / K3                         ← per-student rate
+row: heads_k = C_row × rate_k(row7) ;  dollars_k = heads_k × $L$3 × factor_k(row7)
+M3 PROJECTED = K8 (SYSTEM total) ;  N3 BALANCE = H3 − M3
+D126 + parts of col P are typed literals, not formulas → the mixed denominators
+```
+
+**What-if sandbox SHIPPED** (`cpl_funding.js`): the funding pools, CCC
+headcount, per-priority funding factors, and projection % are editable
+inputs; everything (hero pool, per-student rate, shares, formula line,
+BALANCE card, all 118 college rows, district rollups, drill-ins, average)
+recomputes through the same chain. Pristine state renders the committed
+workbook values **verbatim** (recompute only after an edit); edits persist
+per-browser (`localStorage: cpl_funding_whatif_v1`) with a "● modified /
+Reset to workbook" pill; BALANCE goes red + the formula line warns when
+edits make shares ≠ 100% (mirrors the workbook's own N3 BALANCE cell). The
+workbook-variance footnote is suppressed while modified (it describes the
+workbook, not the sandbox). The CCC-headcount input tooltips the corrected
+list sum (2,199,157) so testing the fixed model is one paste. Tests 50 → 67.
+
+### Formula review + recommendations (Sam asked; "simple is always preferred")
+
+1. **Make the headcount SUM unbreakable.** Quick fix: `C8 =SUM(C9:C126)`.
+   Durable fix: convert the college list to an Excel **Table** and use
+   `=SUM(Table[HEADCOUNT])` — Tables auto-expand when a row is added, which
+   eliminates exactly this bug class (a row appended below the SUM range).
+2. **THE structural one — specify the three shares directly; stop
+   back-solving.** Today `share_k = factor_k × rate_k` and the pair is
+   hand-tuned to hit 30/42/28 (that's why P3's rate is the awkward
+   4.6666666%). Two side-effects: the projection % *looks* like a forecast
+   but actually moves money, and every future tweak must keep
+   Σ(factor×rate)=1 by hand or the model silently over/under-allocates
+   (the sandbox's red BALANCE demonstrates it live). Simpler, equivalent
+   model: **inputs = the three shares (30/42/28)**; college dollars =
+   `headcount-share × share_k × tranche`. The per-student rate and factors
+   drop out of the allocation math entirely; keep "projected headcount
+   achieving the metric" as a separate target column (`headcount × rate`)
+   that no longer affects dollars. Forecasts become honest forecasts;
+   balance is exact *by construction*; same outputs today.
+3. **One formula per column, filled down — no literals mid-column.** D126
+   and parts of column P are typed literals among formulas; that's where
+   the mixed-denominator inconsistencies came from. Fill D9 down; delete
+   or formula-ize column P (the tab doesn't render it — it's internally
+   inconsistent).
+4. Cosmetics: J2's header repeats "26-27" (should read 28-29). E3's
+   `=400000*3` is good self-documenting style — keep doing that.
+5. **Revision methodology (simple):** iterate scenarios in the tab's
+   sandbox (zero risk, per-browser); when one is chosen, type it into the
+   workbook → `python3 funding/_build_funding_data.py` → commit. The
+   workbook stays the single model-of-record. Only reach for the
+   Excel→Supabase editor pattern if the model someday needs multi-user
+   collaborative editing — not while it's a draft.
+
 ### 2026-06-11 (provenance) — college-headcount lineage (Sam's DataMart note)
 
 Sam identified the headcount column's source: **CCCCO MIS DataMart →

@@ -53,6 +53,13 @@ the parallel-session freeze is over.
    PR 3** (#354), after the coordination check found nothing in flight.
 2. ~~Teaser card~~ — **DONE #355** (Sam asked); code-only generator change,
    published via post-merge `workflow_dispatch` (dispatch works — 204).
+3a. ~~Interactive variables~~ — **DONE (what-if sandbox)**: pools, CCC
+   headcount, factors, projection % editable; recomputes via the
+   workbook's own formula chain (read from the xlsx, `data_only=False`);
+   per-browser localStorage; Reset-to-workbook; live BALANCE warning.
+   Formula-review recommendations for Sam (shares-first model, Table-based
+   SUM, no mid-column literals) live in the lessons doc — if Sam adopts
+   shares-first in the workbook, mirror the chain in `vm()`.
 3. ~~3-year view / district rollups / drill-in~~ — **DONE v1.1** (same
    day): view + period toggles, drill-in detail rows, 46-assertion test.
    **v1.1 found a source-workbook variance** — the college list outsums
