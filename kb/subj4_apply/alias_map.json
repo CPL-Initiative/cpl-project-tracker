@@ -1,5 +1,7 @@
 {
-  "_status": "DRY-RUN — Phase 1e SUBJ4 canonicalization; no kb files mutated, no Supabase writes.",
+  "_status": "APPLIED 2026-05-23T19:22:06Z — this is the frozen copy of the dry-run plan that kb/_subj4_apply consumed verbatim (see kb/subj4_apply/report.md + validation.md; per-row _subj4_remint_from stamps confirm all 65,311 moves, including fate:'no_change' rows whose SUBJ4 stayed but whose number re-sequenced).",
+  "_status_original": "DRY-RUN — Phase 1e SUBJ4 canonicalization; no kb files mutated, no Supabase writes. [stale dry-run header carried into the apply receipt; corrected Session 42, 2026-06-11 — it misled the first promotions re-key into treating this map as unapplied/iterable]",
+  "_semantics": "Simultaneous permutation old_id→new_id over the whole catalog; slot reuse is pervasive (a retired old id is routinely re-occupied by a different row in the same apply). Resolve by SINGLE lookup — never iterate (kb/_rekey_promotions.py module docstring).",
   "_generated_by": "kb/_subj4_dryrun.py",
   "_generated_at": "2026-05-23",
   "_canonical_map_synced_at": "2026-05-23T19:22:03Z",

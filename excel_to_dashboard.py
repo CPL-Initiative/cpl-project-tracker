@@ -7221,7 +7221,9 @@ def export_unified_courses():
                 family_groups.append({"sig": k, "n": len(members),
                                       "score": _sug_score(members),
                                       "credential": ut, "members": members})
-        family_groups.sort(key=lambda x: -x["score"])
+        # sig tiebreak: equal scores otherwise order nondeterministically run-to-run,
+        # churning the committed artifact on no-op days
+        family_groups.sort(key=lambda x: (-x["score"], x["sig"]))
 
     # ── Evidence lane (R3, 2026-06-11 — docs/official_id_fold_scope.md) ──────
     # Rows whose promotions evidence did NOT clear the R2 auto bar (mixed /

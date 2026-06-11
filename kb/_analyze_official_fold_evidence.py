@@ -5,14 +5,15 @@ re-keyed + tiered rule would do.
 
 Background (Session 40, 2026-06-10 — the SPAN 200 case): kb/promotions.json
 is the ONLY evidence source for the automatic Phase A badge / Phase B
-official-ID consolidation in export_unified_courses(). Its keys are the
-2026-05-22 re-mint's minted ids, but FOUR subsequent re-keys (canonical-SUBJ4
-fold, over-merge splits, the FL SUBJ4 split, the KIN/PE + Drama/Theater
-convergences + twin merges) re-keyed the live identities without re-keying
-the manifest — and _row_official() looks ids up EXACTLY (no alias
-resolution). Result: rows like FLSP M1342 "Intermediate Spanish I" carry 30
-control-number-exact member mappings to C-ID SPAN 200 that the generator can
-no longer see.
+official-ID consolidation in export_unified_courses(). Its keys were the
+2026-05-22 re-mint's minted ids, but subsequent APPLIED re-keys (the
+canonical-SUBJ4 fold, the FL SUBJ4 split, the KIN/PE + Drama/Theater
+convergences + twin merges — NOT the staged-only over-merge plan) re-keyed
+the live identities without re-keying the manifest — and _row_official()
+looks ids up EXACTLY (no alias resolution). Result: rows like FLSP M1342
+"Intermediate Spanish I" carry 30 control-number-exact member mappings to
+C-ID SPAN 200 that the generator could no longer see. (Fixed by
+kb/_rekey_promotions.py — this analyzer is era-aware via `_rekeyed_through`.)
 
 This script resolves every promotions key through the full applied-alias
 chain (the same receipts Rule 7 mandates), aggregates official_targets onto
@@ -33,10 +34,12 @@ from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Applied re-mints only, in chronological order (dry-runs excluded).
+# APPLY-CONFIRMED re-mints only, in chronological order. Must stay in lockstep
+# with kb/_rekey_promotions.py ALIAS_MAPS (see its module docstring for the
+# resolution semantics and why kb/overmerge_out/2026-05-29/alias_map.json — a
+# STAGED, never-dispatched plan — is excluded).
 ALIAS_MAPS = [
     "kb/subj4_apply/alias_map.json",
-    "kb/overmerge_out/2026-05-29/alias_map.json",
     "kb/crossdisc_out/alias_map.json",
     "kb/fl_subj4_out/2026-06-09/alias_map.json",
     "kb/kin_pe_out/2026-06-10/alias_map.json",
@@ -75,20 +78,30 @@ def _step(v):
 
 
 def main():
-    maps = [load_alias(p) for p in ALIAS_MAPS]
+    promo_doc = _load("kb/promotions.json")
+    # Era awareness: only resolve through maps NOT already folded into the
+    # file's keys (kb/_rekey_promotions.py stamps `_rekeyed_through`).
+    done = set(promo_doc.get("_rekeyed_through") or [])
+    pending = [p for p in ALIAS_MAPS if p not in done]
+    maps = [load_alias(p) for p in pending]
+    if done:
+        print(f"promotions.json already re-keyed through {len(done)} maps; "
+              f"resolving through {len(pending)} pending")
 
     def resolve(old):
-        cur, changed, guard = old, True, 0
-        while changed and guard < 10:
-            changed, guard = False, guard + 1
-            for m in maps:
-                if cur in m:
-                    nxt = _step(m[cur])
-                    if nxt and nxt != cur:
-                        cur, changed = nxt, True
+        # Chronological single-step: each map applied AT MOST ONCE, in order.
+        # An alias map is a simultaneous permutation — iterating it follows
+        # slot-occupancy chains across unrelated rows (the Session-42
+        # telescoping defect). Lockstep with kb/_rekey_promotions.py.
+        cur = old
+        for m in maps:
+            if cur in m:
+                nxt = _step(m[cur])
+                if nxt and nxt != cur:
+                    cur = nxt
         return cur
 
-    promotions = _load("kb/promotions.json")["promotions"]
+    promotions = promo_doc["promotions"]
     courses = _load("kb/coci_minted_courses.json")["courses"]
     sgd = _load("kb/coci_minted_singletons.json")
     singletons = sgd.get("singletons") or sgd.get("courses") or sgd
@@ -105,16 +118,17 @@ def main():
     asis = rekeyed = 0
     dead = []
     for k, v in promotions.items():
-        if k in courses or k in singletons:
-            cur = k
+        # No liveness shortcut: under slot reuse a live key may be occupied by
+        # a DIFFERENT family ("ANTH M1023" stayed live while its family moved
+        # to "ANTH M1035") — resolve every key, "as-is" is a result.
+        cur = resolve(k)
+        if cur not in courses and cur not in singletons:
+            dead.append((k, cur))
+            continue
+        if cur == k:
             asis += 1
         else:
-            cur = resolve(k)
-            if cur in courses or cur in singletons:
-                rekeyed += 1
-            else:
-                dead.append((k, cur))
-                continue
+            rekeyed += 1
         for t, w in (v.get("official_targets") or {}).items():
             evid[cur][t] += w["members"]
 

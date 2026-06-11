@@ -1,15 +1,16 @@
 // Guards the WITNESS-KINSHIP gate on the official-ID fold + the Session-41
-// CCR fixes (2026-06-11 — the AUTO 120X/150X chimera receipts).
+// CCR fixes (2026-06-11 — the AUTO 120X/150X chimera receipts), updated for
+// the Session-42 promotions slot-fix (the re-key rebuilt with permutation
+// semantics relocated 1,066 mis-keyed evidence records to their true rows).
 //
-//  A. Committed producer output: the marquee mis-folds are corrected —
-//     AUTO 120 X / 150 X carry their C-ID descriptor titles (not a folded
-//     remnant's), no bogus consolidated_from, Credit, the 4–6 units range of
-//     their DISPLAYED claimant members, and a members count that matches the
-//     member table. The five chimera M-IDs are back as their own rows with
-//     evidence-but-empty-kin (lane-visible, never auto-folded). The SPAN
-//     200/210 folds survive (the gate must not undo Session 40's win).
-//     Claims-only official rows exist. Lane: kin-failed members carry tm + x,
-//     all-mismatch groups score 0 and rank after kin-backed groups.
+//  A. Committed producer output: AUTO 120 X / 150 X carry their C-ID
+//     descriptor titles and REAL kin folds (transmissions / brakes families);
+//     stats describe the DISPLAYED members (claims ∪ folded leaves). The five
+//     chimera M-IDs stay their own rows and carry NO official-id evidence
+//     (their mis-keyed receipts relocated home). The SPAN 200/210 folds
+//     survive (the gate must not undo Session 40's win). Claims-only official
+//     rows exist. Lane: AUTO 120 X no longer queues (its evidence folds);
+//     FLSP M1379 stays contested; kin-failed members are pre-unchecked.
 //
 //  B. jsdom drive of the real consumer: the ⚠ title-mismatch chip renders and
 //     the member starts UNCHECKED; the all-mismatched group banner shows; the
@@ -39,30 +40,30 @@ const byId = {};
 data.rows.forEach((r) => { byId[r.id] = r; });
 
 const a120 = byId["AUTO 120 X"], a150 = byId["AUTO 150 X"];
-check("AUTO 120 X row exists (claims-only after the bogus folds dropped)", !!a120);
+check("AUTO 120 X row exists", !!a120);
 check("AUTO 120 X is titled by its C-ID descriptor, not a folded remnant",
   a120 && a120.title === "Automatic Transmissions and Transaxles");
-check("AUTO 120 X carries NO consolidated_from (the chimera folds are gone)",
-  a120 && !(a120.consolidated_from || []).length);
-check("AUTO 120 X units range matches its displayed members (4–6, not 0–6)",
-  a120 && a120.umin === 4 && a120.umax === 6);
+// Session 42 (slot-fix): the promotions re-key was rebuilt with permutation
+// semantics, relocating mis-keyed evidence to its true rows — AUTO 120 X now
+// carries REAL kin folds (transmissions families), not the chimera set.
+check("AUTO 120 X folds are exactly the kin transmissions M-IDs",
+  a120 && JSON.stringify((a120.consolidated_from || []).slice().sort()) ===
+    JSON.stringify(["AUTO M1065", "AUTO M1067"]));
+check("AUTO 120 X stats describe the DISPLAYED members (claims ∪ folded leaves)",
+  a120 && a120.members === 21 && a120.umin === 0 && a120.umax === 9);
 check("AUTO 120 X credit resolved (was blank)", a120 && a120.credit === "Credit");
-check("AUTO 120 X members count matches the member table (3 claimants)",
-  a120 && a120.members === 3);
 check("AUTO 150 X is titled by its C-ID descriptor",
   a150 && a150.title === "Automotive Braking Systems");
-check("AUTO 150 X carries NO consolidated_from",
-  a150 && !(a150.consolidated_from || []).length);
+check("AUTO 150 X folds are exactly the kin brakes M-IDs",
+  a150 && JSON.stringify((a150.consolidated_from || []).slice().sort()) ===
+    JSON.stringify(["AUTO M1075", "AUTO M1076", "AUTO M1079"]));
 
 const chimeras = ["AUTO M1017", "AUTO M1176", "AUTO M1027", "AUTO M1024", "AUTO M1025"];
-check("the five chimera M-IDs are back as their own rows",
+check("the five chimera M-IDs remain their own rows (never folded)",
   chimeras.every((id) => byId[id]));
-check("each chimera row keeps its evidence with an EMPTY kin (gated, lane-visible)",
-  chimeras.every((id) => {
-    const mt = (byId[id] || {}).match || {};
-    return mt.evidence && mt.kin && Object.keys(mt.kin).length === 0
-      && !mt.cid && !mt.ccn;
-  }));
+check("the chimera rows carry NO official-id evidence at all (the slot-fix " +
+  "relocated the mis-keyed receipts to their true families)",
+  chimeras.every((id) => !(byId[id] || {}).match));
 
 // The Session-40 win must survive the gate: witnesses' own courses were
 // title-kin ("Spanish 3" witnesses are titled "Spanish 3"), so these fold.
@@ -95,15 +96,19 @@ const saIds = new Set(saPayload.rows.map((r) => r.id));
 check("R4-folded stand-alones are out of the stand-alone payload",
   !saIds.has("FLSP M11HH") && !saIds.has("FLSP M11HY") && !saIds.has("AHSD M90BK"));
 
-// Lane payload: kin-failed members are tm-flagged + pre-unchecked; groups with
-// zero kin-valid witnesses score 0 and sort after every kin-backed group.
+// Lane payload. Post-slot-fix the lane is the CONTESTED/queued evidence only:
+// the 187 phantom "stale-receipt" groups dissolved when their evidence was
+// re-keyed home (AUTO 120 X folds instead of laning), and the marquee
+// genuinely-mixed row (FLSP M1379, SPAN 200 ×8 vs 210 ×6) still queues.
 const sug = loadPayload("unified_courses_suggestions.js", "window.CPL_UC_SUGGESTIONS");
 const eg = sug.evidence_groups || [];
-const g120 = eg.find((g) => g.sig === "AUTO 120 X");
-check("AUTO 120 X evidence group surfaced in the lane", !!g120);
-check("its chimera members are tm-flagged AND pre-unchecked (x:1)",
-  g120 && g120.members.slice(1).every((m) => m.tm >= 1 && m.x === 1));
-check("all-mismatch group scores 0", g120 && g120.score === 0 && g120.tm >= 1);
+check("AUTO 120 X no longer needs a lane group (its evidence folds)",
+  !eg.find((g) => g.sig === "AUTO 120 X"));
+const m1379 = eg.find((g) => g.members.some((m) => m.id === "FLSP M1379"));
+check("FLSP M1379 (genuinely mixed bare 'Intermediate Spanish') stays contested in the lane",
+  !!m1379 && m1379.sig === "SPAN 200");
+check("kin-failed members anywhere in the lane are pre-unchecked (x:1)",
+  eg.every((g) => g.members.filter((m) => m.tm && !m.ev).every((m) => m.x === 1)));
 const firstZero = eg.findIndex((g) => g.score === 0);
 check("score-0 (stale-receipt) groups rank after every kin-backed group",
   firstZero === -1 || eg.slice(firstZero).every((g) => g.score === 0));
