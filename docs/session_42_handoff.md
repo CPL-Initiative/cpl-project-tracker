@@ -81,6 +81,20 @@ open → mergeable_state "dirty". For generated-artifact conflicts, NEVER
 pick sides: rebuild the branch from the new main, re-apply the CODE
 files, regenerate from the cron-fresh inputs, force-push-with-lease.
 
+POLICY CHANGES SHIPPED AT SESSION-41 CLOSE (read before working):
+  - CLAUDE.md slimmed 618 lines: Session 26-40 narratives now live in
+    docs/roadmap_archive.md — CONSULT IT when a carryover/PR#/decision
+    traces to an earlier session (grep an id like "FLSP M1379" there).
+  - Your own §11 subsection: <= ~10 lines + pointer to the lessons doc;
+    keep <= 2 narratives inline (archive older at checkpoint).
+  - Sibling claude/<desc> branches AUTHORIZED for independent PRs (no
+    more 3-stacked-PRs-one-branch serialization).
+  - Prefer CODE-ONLY PRs; artifacts via cron/dispatch. Manual artifact
+    commits = fallback until Sam grants the app Actions: Read and write
+    (check whether he has — then post-merge dispatch is the default).
+  - Rule 5 clarified (feature branches force-with-lease freely; main
+    never, except a coordinated PII-scrub with Sam's go).
+
 PRIORITY / NEXT (in order):
   1. VERIFY THE CRON regen (first daily run after #348 should no-op on
      unified_courses_*.js apart from generated_at; AUTO 120 X keeps its
