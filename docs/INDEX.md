@@ -125,6 +125,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`quickstart_chat_lessons.md`](quickstart_chat_lessons.md) | Quick-start chat | Session 10 |
 | [`session_26_audit_lessons.md`](session_26_audit_lessons.md) | Session 26 codebase audit + remediation (PII fix, idempotency, security, BUG-1) | **Session 26 (Bruh 26, 2026-06-01)** |
 | [`sidebar_lessons.md`](sidebar_lessons.md) | Sidebar / tabs.js router | Session 11 |
+| [`statewide_kpi_lessons.md`](statewide_kpi_lessons.md) | Statewide Exhibits KPI card #375 → program-area categories + doublewide #376 + KPI card drag-to-reorder #377 | **Session 44 (2026-06-11) NEW** |
 | [`subj4_canonicalization_remint_lessons.md`](subj4_canonicalization_remint_lessons.md) | Phase 1e re-mint | Session 5 |
 | [`unified_courses_audit_lessons.md`](unified_courses_audit_lessons.md) | Trust-Card auditor | **Session 18 (`member_top_divergence`)** |
 | [`vault_sync_lessons.md`](vault_sync_lessons.md) | Vault auto-sync (Windows Task Scheduler) | Session 11 (NEW) |
@@ -172,6 +173,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 41 → 42 | Witness-kinship gate #347 + R4 singletons #348 (handoff) | [`session_42_handoff.md`](session_42_handoff.md) |
 | 42 → 43 | Bruh Moonshot — the slot-fix #357 + era guard + C-ID router #365/#366 (handoff) | [`session_43_handoff.md`](session_43_handoff.md) |
 | 43 → 44 | Bruh Starlord — cron no-op verified; off-pane-columns fix #370–#373 (handoff) | [`session_44_handoff.md`](session_44_handoff.md) |
+| 44 → 45 | Statewide Exhibits KPI card #375/#376 + KPI reorder #377 (handoff) | [`session_45_handoff.md`](session_45_handoff.md) |
 
 ---
 

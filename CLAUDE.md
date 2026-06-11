@@ -445,6 +445,7 @@ scraping proved unreliable.
 | `cpl_funding_data.js` | Funding-model data (`window.CPL_FUNDING`: pools, 3 priorities, 118 colleges + SYSTEM). Built one-shot by `funding/_build_funding_data.py` from the committed `funding/CPL_Funding_Model_2026.xlsx` (PII-clean institutional/census aggregates; builder re-derives every allocation and asserts <1¢ drift). Static — NOT a daily-cron artifact; new workbook edition → re-run builder → commit both. |
 | `cpl_funding_performance.js` | Funding priority-metric actuals (`window.CPL_FUNDING_PERF`: per-college P2/P3 distinct-student counts + statewide, small-cell suppressed <5 per the RATIFIED `docs/kb-notes/adr-funding-priority-metrics-privacy.md`). **Daily-cron artifact**: built by `funding/_build_funding_performance.py` from the transient `CustomReport_latest.json` (workflow step 4a2; in the `git add` list); skips gracefully on fetch fallback. P1 is a deliberate gap (`docs/kb-notes/reference-p1-completion-data-gap.md`). |
 | `dashboard_filters.js` | Client-side filter/search/sort logic |
+| `kpi_reorder.js` | Login-free drag-to-reorder for the headline KPI grid (`.kpi-section`): per-browser order in localStorage (`cplKpiOrder.v1`), cards re-matched by label text across daily regens, new cards re-enter at default position, ↺ reset affordance. Static — NOT a daily-cron artifact. |
 | `report_generator.js` | Custom Report Generator (Claude API via proxy) |
 | `docx.min.js` | Local copy of docx@8.0.4 UMD build (do **not** switch to CDN) |
 | `fetch_custom_report.py` | Fetches CustomReport JSON from the MAP API |
@@ -1526,30 +1527,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > locked decisions verbatim. Searching the archive for an id (e.g. "FLSP
 > M1379", "#310") is usually faster than re-deriving from code.
 
-> **Session 41 narrative archived** → `docs/roadmap_archive.md` (the
-> witness-kinship gate + R4 singletons, 2026-06-11).
-
-### Session 42 — the slot-fix: 51% of the promotions evidence was keyed to slot-mates (2026-06-11)
-
-The handoff's "31 `_unresolved` keys" unraveled R1 itself: the over-merge map
-was STAGED-never-dispatched, the subj4 map's "DRY-RUN" `_status` was a stale
-header on a fully-applied catalog-wide **permutation with slot reuse**, and
-R1's iterate+liveness-shortcut resolver mis-keyed **1,066/2,083 records**.
-Rebuilt `kb/_rekey_promotions.py` (single-step chronological, era-stamped,
-V5 stamp gate 1,954/0) + re-applied from baseline: lane 310→**158 all-kin**
-groups, R4 folds 301→**610**, ANTH 120 2→7 folds, AUTO 120X/150X gain real
-kin folds; SPAN intact. + CCR **era guard** (mixed-era lazy joins = Sam's
-"non-argumentation in COMM M1006"; banner + `?v=` bust) + `family_groups`
-sort tiebreak. THEN (same session, Sam's extract): the **C-ID articulation
-authority** — c-id.net per-college approvals as evidence tier 2′ (28,070
-rows; 9,676 new-authority; 76 true conflicts) + the **Phase-1 router**
-(329 MATH members display under their descriptors; M1175 "Calculus I"
-splits 210/211 below family grain; `rfold`/`routed_from`; multi-approval/
-sequence/conflict NEVER auto-route) + the layman's **CCR rules brief**
-(`docs/ccr_rules_brief.md`, linked from the tab). Tests green. Full story:
-`docs/ccr_cluster_cleanup_lessons.md` (Session 42); rules:
-`methodology-alias-map-resolution-semantics.md` +
-`docs/cid_articulation_authority_scope.md`.
+> **Session 41 + 42 narratives archived** → `docs/roadmap_archive.md`
+> (witness-kinship gate + R4 singletons; the slot-fix + C-ID authority +
+> Phase-1 router — both 2026-06-11).
 
 ### Session 43 — Bruh Starlord: cron no-op verified + the off-pane-columns bug (2026-06-11)
 
@@ -1567,6 +1547,22 @@ fixed` + colgroups + min-width 900 net; clipping scoped to 5 text columns
 after a perf dip (**"still a bit slow" — WATCH**). KB note:
 [`methodology-fixed-table-layout-off-pane-columns.md`](docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md);
 lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 43).
+
+### Session 44 — Statewide Exhibits KPI card + program-area categories + KPI reorder (2026-06-11)
+
+Sam's live feature day; 3 PRs, all merged on green + dispatched. **#375** new
+**Statewide Exhibits** headline KPI card (CCC Collaborative / ASCCC focus — a
+NEW card, not a revision of the adoption card, per Sam): exhibits + areas +
+credit recs + adoptions, total/per-area; **distinct (course,credit) recs vs
+row-count adoptions** semantics locked in the popover. **#376** rollup re-keyed
+from TOP disciplines to the **map.rccd.edu/statewidecpl program areas** via
+curated `kb/statewide_exhibit_categories.json` (merge-preserving seeder
+`kb/_seed_statewide_categories.py`; `^`-anchored pattern fallback; "Other
+Statewide" review bucket — State Bar + HRCM 001 parked for Sam) + **doublewide**
+card (`kpi-card-wide` rides `EXHIBIT_ANALYSIS_CSS`, no Rule-4 mirror). **#377**
+login-free **KPI card drag-to-reorder** (`kpi_reorder.js`, per-browser
+localStorage, label-identity re-match across regens, ↺ reset) — strategic-queue
+item 2. Full story: `docs/statewide_kpi_lessons.md`.
 
 ---
 
