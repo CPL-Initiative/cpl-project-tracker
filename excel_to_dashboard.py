@@ -340,6 +340,13 @@ ALGO_DESCRIPTIONS = {
         "caveats":     "Counts adopting colleges only, not colleges that created collaborative exhibits.",
         "last_modified": "2026-04-19",
     },
+    "statewide_exhibits": {
+        "source":      "MAP Custom Reporting Module (View_ArticulatedMAPExhibits), rows whose Collaborative Type contains 'CCC'.",
+        "formula":     "Exhibits = distinct credential groups (unified title + issuer + CPL type, the same grouping as the Exhibit Adoption table) with at least one CCC Collaborative row. Credit Recommendations = distinct (course, credit) pairs across each group's CCC rows. Adoptions = CCC rows carrying an Articulation College (one row = one college articulating one credit recommendation). Disciplines via each group's first TOP code (TOP_Code_Lookup.xlsx).",
+        "assumptions": "Tracks the CCC Collaborative statewide-standards work (the ASCCC focus project). A mixed group counts as statewide if ANY constituent exhibit row is CCC; only its CCC rows feed the rec/adoption counts.",
+        "caveats":     "TOP codes vary by college — a multi-TOP group is assigned its alphabetically-first TOP's discipline (same representative-pick rule as the Exhibit Adoption table). Exhibits with no TOP-mapped discipline appear as 'Not Mapped' in the per-discipline list and are excluded from the Discipline Areas count. Distinct credit recs ≠ the row-count 'Collaborative Credit Recs' on the adoption card (that metric counts raw articulation rows).",
+        "last_modified": "2026-06-11",
+    },
     "active_colleges": {
         "source":      "CCCCO MAP CPL Dashboard (tier classification computed by the Cloudflare worker).",
         "formula":     "Leading + Advancing tiers. A college is Leading if it meets ≥3 of 5 criteria, Advancing if 1-2, Inactive otherwise.",
@@ -1609,6 +1616,7 @@ def render_kpi_section_html(kpis, kpi_display_order=None, kpi_params=None):
     """
     default_order = ['cumulative_students', 'eligible_units', 'transcripted_units',
                      'credit_recommendations', 'map_exhibits', 'ccc_collaborative',
+                     'statewide_exhibits',
                      'active_colleges', 'articulation_colleges',
                      'estimated_savings', 'veteran_sprint', 'twenty_year_impact']
     display_keys = kpi_display_order if kpi_display_order else default_order
@@ -3845,7 +3853,10 @@ def _parse_exhibits(datasets):
         i_exhibit = cm.get("ExhibitID", 1)
         i_title = cm.get("Exhibit Title", 2)
         i_artic = cm.get("Articulation College", 4)
+        i_course = cm.get("Course", 5)
+        i_credit = cm.get("Credit Recommendation", 6)
         i_collab = cm.get("Collaborative Type", 7)
+        i_top = cm.get("TOP Code", 8)
         i_cpl = cm.get("CPL Type Description", 13)
 
         exhibit_ids = set()
@@ -3868,6 +3879,16 @@ def _parse_exhibits(datasets):
         exhibit_groups = set()
         ccc_exhibit_groups = set()
 
+        # Statewide (CCC Collaborative) per-group accumulators for the
+        # Statewide Exhibits KPI card (the ASCCC collaborative-focus card).
+        # grp_tops collects TOP codes from ALL constituent rows so the
+        # discipline pick mirrors _build_statewide_adoption (alphabetically-
+        # first TOP) and the card reconciles with the EACR table's labels.
+        top_lookup = _load_top_code_lookup()
+        grp_tops = {}           # group -> set of TOP codes (all rows)
+        ccc_grp_recs = {}       # group -> distinct (course, credit) on CCC rows
+        ccc_grp_adoptions = {}  # group -> CCC rows carrying an articulation college
+
         for row in rows:
             college = (row[i_college] or "").strip()
             exhibit_id = (row[i_exhibit] or "").strip()
@@ -3886,8 +3907,20 @@ def _parse_exhibits(datasets):
                 # mixed group counts as CCC and drops out of the Local tally.
                 grp = (ident["unified_title"], ident["issuing_agency"], cpl_type)
                 exhibit_groups.add(grp)
+                top = (row[i_top] or "").strip()
+                if top:
+                    grp_tops.setdefault(grp, set()).add(top)
                 if "CCC" in collab_type:
                     ccc_exhibit_groups.add(grp)
+                    # Only CCC rows feed the statewide rec/adoption counts — a
+                    # mixed group's Local articulations of the same credential
+                    # are not part of the statewide standard.
+                    course = (row[i_course] or "").strip()
+                    credit = (row[i_credit] or "").strip()
+                    if course and credit:
+                        ccc_grp_recs.setdefault(grp, set()).add((course, credit))
+                    if artic_college:
+                        ccc_grp_adoptions[grp] = ccc_grp_adoptions.get(grp, 0) + 1
             if college:
                 originating_colleges.add(college)
             if artic_college:
@@ -3904,6 +3937,24 @@ def _parse_exhibits(datasets):
         local_credit_recs = len(rows) - ccc_credit_recs
         local_exhibit_groups = exhibit_groups - ccc_exhibit_groups
 
+        # Statewide-by-discipline rollup: one discipline per CCC group via its
+        # first sorted TOP code; groups with no TOP land in "Not Mapped" (kept
+        # as a rollup row, excluded from the headline discipline count).
+        sw_by_disc = {}
+        for grp in ccc_exhibit_groups:
+            tops = sorted(grp_tops.get(grp, ()))
+            disc = _top_disc(top_lookup, tops[0] if tops else "")
+            d = sw_by_disc.setdefault(disc, {"exhibits": 0, "credit_recs": 0, "adoptions": 0})
+            d["exhibits"] += 1
+            d["credit_recs"] += len(ccc_grp_recs.get(grp, ()))
+            d["adoptions"] += ccc_grp_adoptions.get(grp, 0)
+        sw_disc_rows = [
+            {"discipline": k, "exhibits": v["exhibits"],
+             "credit_recs": v["credit_recs"], "adoptions": v["adoptions"]}
+            for k, v in sorted(sw_by_disc.items(),
+                               key=lambda kv: (-kv[1]["exhibits"], kv[0]))
+        ]
+
         return {
             "total_credit_recs": len(rows),
             "unique_exhibits": len(exhibit_groups),
@@ -3917,6 +3968,13 @@ def _parse_exhibits(datasets):
                 "unique_exhibits_raw_ids": len(ccc_exhibit_ids),
                 "adopting_colleges": len(ccc_artic_colleges),
                 "college_names": sorted(ccc_artic_colleges),
+                # Statewide Exhibits KPI card payload. distinct_credit_recs
+                # dedupes (course, credit) per group — unlike credit_recs above,
+                # which counts raw CCC rows (the historical row-count metric).
+                "disciplines": sum(1 for r in sw_disc_rows if r["discipline"] != "Not Mapped"),
+                "distinct_credit_recs": sum(r["credit_recs"] for r in sw_disc_rows),
+                "rec_adoptions": sum(r["adoptions"] for r in sw_disc_rows),
+                "by_discipline": sw_disc_rows,
             },
             "local": {
                 "credit_recs": local_credit_recs,
@@ -3962,6 +4020,10 @@ def _parse_exhibits(datasets):
                 "unique_exhibits": 0,
                 "adopting_colleges": 0,
                 "college_names": [],
+                "disciplines": 0,
+                "distinct_credit_recs": 0,
+                "rec_adoptions": 0,
+                "by_discipline": [],
             },
             "local": {
                 "credit_recs": len(rows),
@@ -4081,6 +4143,33 @@ def merge_exhibit_metrics(kpis, exhibit_data):
         ],
         "live": True,
     }
+
+    # ── 3b. STATEWIDE EXHIBITS KPI — the CCC Collaborative / ASCCC focus card ──
+    # Deliberately a NEW card (not folded into the adoption card above): it adds
+    # discipline coverage + distinct credit recs + rec adoptions, total and per
+    # discipline. Skipped when the rollup is absent (fallback dataset has no
+    # Collaborative Type column).
+    sw_disc = ccc.get("by_discipline") or []
+    if sw_disc:
+        fn = ["By discipline — exhibits · credit recs · adoptions"]
+        for r in sw_disc:
+            fn.append(f'{r["discipline"]}: {_fmt_int(r["exhibits"])} · '
+                      f'{_fmt_int(r["credit_recs"])} · {_fmt_int(r["adoptions"])}')
+        kpis["statewide_exhibits"] = {
+            "value": _fmt_int(ccc["unique_exhibits"]),
+            "label": "Statewide Exhibits",
+            "sub": "CCC Collaborative standards in MAP",
+            "breakdowns": [
+                {"label": "Discipline Areas", "value": _fmt_int(ccc.get("disciplines", 0)),
+                 "note": "by TOP code"},
+                {"label": "Credit Recommendations", "value": _fmt_int(ccc.get("distinct_credit_recs", 0)),
+                 "note": "distinct course recs"},
+                {"label": "Adoptions", "value": _fmt_int(ccc.get("rec_adoptions", 0)),
+                 "note": "college articulations of those recs"},
+            ],
+            "footnote": fn,
+            "live": True,
+        }
 
     # ── 4. ARTICULATING COLLEGES KPI ──
     kpis["articulation_colleges"] = {
@@ -9530,6 +9619,7 @@ def main():
         kpi_display_order = [k for _, k in kpi_order_pairs]
         default_keys = ['cumulative_students', 'eligible_units', 'transcripted_units',
                         'credit_recommendations', 'map_exhibits', 'ccc_collaborative',
+                        'statewide_exhibits',
                         'active_colleges', 'articulation_colleges',
                         'estimated_savings', 'veteran_sprint', 'twenty_year_impact']
         for dk in default_keys:
