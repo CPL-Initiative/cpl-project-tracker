@@ -74,6 +74,21 @@ row and asserts it matches the workbook to <1¢ (`max drift 0.01`):
 - 4 colleges carry `*Survey did not estimate counties <65K in population` →
   `working_adults: null`; renderer shows em-dashes (test-guarded against
   NaN).
+- **The workbook disagrees with itself by exactly its last list row (found
+  2026-06-11, v1.1).** The 118 college rows sum to **2,199,157 heads /
+  $11,644,568/yr**, but the pool block's CCC HEADCOUNT — and therefore the
+  SYSTEM row and the $5.295 per-student rate — carries **2,190,740 /
+  $11,600,000**: short by 8,417, which is exactly **Yuba**, the final row
+  before the AVERAGE footer. Classic Excel SUM-range-stops-one-row-early
+  artifact; net effect, the per-college allocations over-allocate the
+  $11.6M tranche by ~$44,568/yr (0.38%). Also: `HEADCOUNT PCT TOTAL` mixes
+  denominators across rows (Alameda ÷ pool figure, Yuba ÷ list sum).
+  **Handling: surfaced, never corrected** — extractor prints a build-time
+  NOTE, the tab renders a data-driven footnote (auto-disappears when a
+  fixed edition is committed), and the test pins conservation against the
+  *list* plus a <1% honesty bound vs the SYSTEM pool. **Flag for Sam's
+  next workbook edition: extend the pool block's SUM ranges to include the
+  last row.**
 
 ### PII check (per the standing-PII-guard methodology)
 
@@ -112,6 +127,33 @@ parallel-session shared-file freeze lifts.
    model ever becomes curator-editable, follow the Excel→Supabase Phase 2-4
    five-step shape (seed → read-path → editor → RLS) instead of growing the
    workbook.
+
+### 2026-06-11 (later still) — teaser card + v1.1 (Sam: "Go on the teaser card and next steps")
+
+- **Teaser card SHIPPED (PR #355, code-only)** — 4th Dashboard teaser
+  (after Budget, rail order) linking `#implementation-funding`; headline
+  numbers read from `cpl_funding_data.js` at generate time with a
+  number-free fallback. Verified idempotent across two local generator
+  runs; published via post-merge `workflow_dispatch` of
+  `daily-dashboard.yml` (**dispatch 204 — the Actions grant works from a
+  session now**). Process scar: built it on a sibling branch forked from
+  the session branch instead of `main`, so the PR briefly double-counted
+  the prior PR's files — `git rebase origin/main` dropped the duplicate
+  (patch-id match) and the PR collapsed to the real 1-file diff. Fork
+  sibling branches FROM `origin/main`. Also: a careless `git checkout -- .`
+  while clearing regen noise reverted the uncommitted generator edit —
+  commit first, then regen-verify, then reset.
+- **v1.1 SHIPPED** (`cpl_funding.js` + test): **Colleges | Districts**
+  rollup toggle (73 districts; conservation-tested), **Per year | 2026-30
+  total** period toggle (SYSTEM ×3 = $34.8M, header relabels), and
+  **click-to-expand drill-ins** (college: per-priority math + county
+  context; district: member colleges ranked by allocation). Test grew
+  33 → 46 assertions.
+- **v1.1's real find: the SYSTEM-row variance** (see workbook quirks
+  above) — caught by a *failing conservation assertion*, not by reading
+  the sheet. Writing the "obvious" reconciliation test against the
+  workbook's own totals is exactly what surfaces a source's internal
+  inconsistency.
 
 ### 2026-06-11 (later) — freeze lift: CCR-session coordination + shared-file follow-ups
 

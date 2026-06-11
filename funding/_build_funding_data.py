@@ -187,6 +187,20 @@ def main():
         worst = max(worst, abs((c["p1"] + c["p2"] + c["p3"]) - c["total"]))
     assert worst < 0.51, f"model math drifted from workbook values by {worst}"
 
+    # --- reconcile the list against the workbook's own SYSTEM row ------------
+    # Known 2026-06-11-edition variance: the college rows sum to 2,199,157
+    # heads / $11,644,568, but the pool block's CCC HEADCOUNT (and therefore
+    # the SYSTEM row + per-student rate) carries 2,190,740 / $11,600,000 —
+    # short by exactly the LAST list row (Yuba, 8,417), i.e. the workbook's
+    # SUM range appears to stop one row early. Surfaced, not corrected: the
+    # artifact stays faithful to the source; the renderer footnotes it.
+    list_heads = sum((c["headcount"] or 0) for c in colleges)
+    list_total = round(sum(c["total"] for c in colleges), 2)
+    if list_heads != system["headcount"] or abs(list_total - system["total"]) > 0.01:
+        print(f"NOTE: source-model variance — college rows sum to {list_heads:,} heads / "
+              f"${list_total:,.2f}/yr vs the workbook SYSTEM row {system['headcount']:,} / "
+              f"${system['total']:,.2f} (flag for the next workbook edition).")
+
     data = {
         "model_version": "2026-06-11",
         "source": "funding/CPL_Funding_Model_2026.xlsx",
