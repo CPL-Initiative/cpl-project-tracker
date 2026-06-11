@@ -81,6 +81,20 @@ const claimsOnly = data.rows.filter((r) =>
 check("claims-only official rows exist in force (the official reference layer)",
   claimsOnly.length >= 100);
 
+// R4 singleton folds: evidence-bearing stand-alones folded under official
+// rows (sfold), kinship-gated like everything else; the folded ids left the
+// stand-alone payload (its writer excludes merge_into ids).
+const sfoldTotal = data.rows.reduce((n, r) => n + (r.sfold || 0), 0);
+check("R4 folded a substantial set of evidence-bearing stand-alones (sfold ≥ 200)",
+  sfoldTotal >= 200);
+check("SPAN 210 absorbed its R4 stand-alone variants (Level II / IV / Advanced Intermediate)",
+  byId["SPAN 210"] && (byId["SPAN 210"].sfold || 0) >= 2
+    && (byId["SPAN 210"].title_variants || []).indexOf("Intermediate Spanish: Level II") >= 0);
+const saPayload = loadPayload("unified_courses_standalone.js", "window.CPL_UC_STANDALONE");
+const saIds = new Set(saPayload.rows.map((r) => r.id));
+check("R4-folded stand-alones are out of the stand-alone payload",
+  !saIds.has("FLSP M11HH") && !saIds.has("FLSP M11HY") && !saIds.has("AHSD M90BK"));
+
 // Lane payload: kin-failed members are tm-flagged + pre-unchecked; groups with
 // zero kin-valid witnesses score 0 and sort after every kin-backed group.
 const sug = loadPayload("unified_courses_suggestions.js", "window.CPL_UC_SUGGESTIONS");

@@ -6636,12 +6636,13 @@ def export_unified_courses():
             return _ccn_title.get(oid, "")
         return (_cid_desc_rec.get(oid) or {}).get("common_title") or ""
 
-    def _row_official(r):
-        if r.get("id_system") in ("C-ID", "CCN-ID"):
-            return None  # already an official-ID identity
+    def _official_match(leaves):
+        """Kinship-gated official-ID match over a set of leaf identity ids —
+        the core of _row_official, also callable for a single stand-alone
+        (the R4 singleton folds)."""
         cids, ccns = {}, {}          # raw witness counts (full distribution)
         kin_cids, kin_ccns = {}, {}  # kin-valid witness counts (what _pick sees)
-        for i in _leaf_ids(r):
+        for i in leaves:
             lt = _kin_toks(_member_title(i))
             for oid_ns, w in (promotions.get(i, {}).get("official_targets") or {}).items():
                 n = (w or {}).get("members", 0) or 0
@@ -6708,6 +6709,11 @@ def export_unified_courses():
                 out["kin"] = kin_all
         return out or None
 
+    def _row_official(r):
+        if r.get("id_system") in ("C-ID", "CCN-ID"):
+            return None  # already an official-ID identity
+        return _official_match(_leaf_ids(r))
+
     # ---- write unified_courses_data.js (deferred so rows carry matched IDs) --
     if _have_raw:
         for r in rows:
@@ -6727,6 +6733,7 @@ def export_unified_courses():
     # curation/articulation pointers survive. Only acts when it changes something
     # (an anchor to fold into, or >1 M-ID claiming one id); a lone M-ID with no
     # anchor keeps just its Phase A badge.
+    _sg_lane = []  # R4: kin-valid singleton evidence that didn't auto-fold (lane entries)
     if _have_raw:
         anchor_by_id = {r["id"]: r for r in rows
                         if r.get("locked") and r.get("id_system") in ("C-ID", "CCN-ID")}
@@ -6839,6 +6846,44 @@ def export_unified_courses():
         if claims_only:
             print(f"  Unified Courses: {claims_only} claims-only official-ID rows "
                   f"(raw COCI claimants, no folds)")
+
+        # ---- R4: singleton evidence folds (Session 41, scope §R4) ----------
+        # Stand-alone courses whose promotions receipts carry KIN-VALID
+        # official-id evidence fold under the official row the way Phase B
+        # folds M-IDs — these 653 receipts were invisible before (singletons
+        # aren't main-payload rows). Gate + thresholds identical to
+        # _row_official (CCN > C-ID precedence). Folds only when the target
+        # row EXISTS (anchor / synthesized / claims-only). Contested or
+        # target-less matches surface in the evidence lane (g:1 stand-alone
+        # entries); records where EVERY witness fails the kinship gate are
+        # stale chimera receipts (measured: 340 of 653) and stay out of the
+        # lane — recoverable via kb/_analyze_witness_kinship.py.
+        _r4_folds = 0
+        row_by_id = {r["id"]: r for r in rows}
+        for sid in promotions:
+            sv = sg.get(sid)
+            if not sv or sid in cat or sid in merge_into or sid in merge_members:
+                continue
+            m = _official_match([sid])
+            if not m:
+                continue
+            oid = m.get("ccn") or m.get("cid")
+            tgt = row_by_id.get(oid) if oid else None
+            if tgt is not None and tgt.get("id_system") in ("C-ID", "CCN-ID"):
+                merge_into[sid] = oid
+                merge_members.setdefault(oid, []).append(sid)
+                tgt["sfold"] = tgt.get("sfold", 0) + 1
+                t = sv.get("common_title")
+                if t and t != tgt.get("title"):
+                    tgt["title_variants"] = sorted(set(tgt.get("title_variants") or []) | {t})
+                _r4_folds += 1
+            elif m.get("kin") is None or any(v > 0 for v in m["kin"].values()):
+                # kin-valid evidence that couldn't auto-fold (contested /
+                # sub-bar / no target row) — queue for the evidence lane.
+                _sg_lane.append((sid, sv, m))
+        if _r4_folds or _sg_lane:
+            print(f"  Unified Courses: R4 folded {_r4_folds} evidence-bearing "
+                  f"stand-alones under official rows ({len(_sg_lane)} queued to the lane)")
 
     # ---- per-course CPL impact: Eligible units + Students -------------------
     # Roll the CER's per-credential eligible-credit + student totals up to each
@@ -7194,7 +7239,14 @@ def export_unified_courses():
     _ev_anchor_title = {r["id"]: r.get("title") for r in rows
                         if r.get("locked") and r.get("id_system") in ("C-ID", "CCN-ID")}
     _ev_by_target = {}
-    for r in rows:
+    # R4 stand-alone lane entries ride the same builder as light pseudo-rows
+    # (g:1 in the member payload — the consumer already renders "· Stand-Alone").
+    _sg_pseudo = [{"id": sid, "title": sv.get("common_title"),
+                   "subj": [sv["subject"]] if sv.get("subject") else [],
+                   "units": sv.get("typical_units"), "id_system": "M-ID",
+                   "match": m, "_sg": 1}
+                  for sid, sv, m in _sg_lane]
+    for r in list(rows) + _sg_pseudo:
         ev = (r.get("match") or {}).get("evidence")
         if not ev or r.get("locked") or r.get("id_system") not in ("M-ID", "Unified"):
             continue
@@ -7228,6 +7280,8 @@ def export_unified_courses():
                  "k": r.get("id_system"),
                  "ev": {k.split(":", 1)[1]: v
                         for k, v in sorted(ev.items(), key=lambda x: -x[1])}}
+            if r.get("_sg"):
+                m["g"] = 1  # stand-alone (R4) — consumer renders "· Stand-Alone"
             if len(ev) > 1:
                 m["x"] = 1  # contested — pre-unchecked in the consumer
             # Title-mismatch (the kinship gate, Session 41): witnesses whose own
