@@ -279,8 +279,9 @@ function freshDom() {
     doc.querySelector('input[data-wf="target"][data-i="2"]').value === "4.6666666");
   check("no CCC-headcount input — it derives from the college rows in rev2",
     !doc.querySelector('input[data-wf="headcount"]'));
-  check("pristine per-student rate shows the corrected $5.27",
-    doc.querySelector(".cplfund-cards").textContent.indexOf("$5.27") !== -1);
+  const expRate = "$" + (D.pool.available_per_year / D.system.headcount).toFixed(2);
+  check("pristine per-student rate derives from the live roster (" + expRate + ")",
+    doc.querySelector(".cplfund-cards").textContent.indexOf(expRate) !== -1);
   check("pristine balance card reads $0",
     doc.querySelector(".cplfund-cards .cplfund-card:last-child .v").textContent.trim() === "$0");
 
@@ -319,8 +320,9 @@ function freshDom() {
   commit('input[data-wf="share"][data-i="0"]', "30");
   const totalBefore = doc.querySelector(".cplfund-table tbody tr td.tot").textContent;
   commit('input[data-wf="target"][data-i="0"]', "10");
-  check("target edit doubles projected students (statewide P1 → 219,916)",
-    doc.querySelector(".cplfund-prio .p").textContent.indexOf("219,916") !== -1);
+  const expHeads = Math.round(D.system.headcount * 0.10).toLocaleString("en-US");
+  check("target edit doubles projected students (statewide P1 → " + expHeads + ")",
+    doc.querySelector(".cplfund-prio .p").textContent.indexOf(expHeads) !== -1);
   check("target edit moves NO dollars (first-row total unchanged)",
     doc.querySelector(".cplfund-table tbody tr td.tot").textContent === totalBefore);
 
