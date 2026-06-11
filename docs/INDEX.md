@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-11 (Session 42 — the SLOT-FIX: R1's promotions re-key had mis-keyed 51% of the evidence index (alias maps are permutations with slot reuse, not graphs); rebuilt + re-applied (lane 310→158 all-kin, R4 folds 301→610, ANTH 120 2→7); CCR era guard for mixed-era lazy joins; NEW methodology-alias-map-resolution-semantics. [Earlier: Session 41 — the WITNESS-KINSHIP GATE: 565 chimera folds un-folded, claims-only official rows (C-ID 259→456), official-row stats from displayed members, kin-aware evidence lane; NEW methodology-witness-kinship-gate. [Earlier: Session 38 — CCR 5-item refinements #333; fan-in convergences #334/#335]])
+updated: 2026-06-11 (Session 43, Bruh Starlord — slotfix cron no-op VERIFIED (payload hashes byte-stable across 3 runs; /tmp regen == HEAD); the AJ "blank columns" bug = auto table layout parking columns off-pane → table-layout:fixed + colgroups #372/#373 (perf "still a bit slow" — WATCH); audit fetch era-busted + UC_OUT_DIR seam fixes #370; sessions default to claude-fable-5[1m] #371; NEW methodology-fixed-table-layout-off-pane-columns. [Earlier: Session 42 — the SLOT-FIX: R1's promotions re-key had mis-keyed 51% of the evidence index; rebuilt + re-applied (lane 310→158 all-kin, R4 folds 301→610); CCR era guard; NEW methodology-alias-map-resolution-semantics])
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -89,6 +89,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Umbrella-discipline SUBJ4 split (one MQ discipline, many subjects)](kb-notes/methodology-umbrella-discipline-subj4-split.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Fan-in discipline convergence (fold alternate names to a canonical)](kb-notes/methodology-fan-in-discipline-convergence.md) | methodology | published | 2026-06-10 | 2026-06-11 (guard 7) |
 | [Methodology — Re-key every id-keyed artifact (the severed promotions index; registry + conservation gates + drift detector)](kb-notes/methodology-rekey-every-id-keyed-artifact.md) | methodology | published | 2026-06-11 | 2026-06-11 |
+| [Methodology — Auto-layout tables silently park columns off-pane (fixed layout + the inspector rung)](kb-notes/methodology-fixed-table-layout-off-pane-columns.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Methodology — Witness-kinship gate (historical receipts need a present-tense validity check)](kb-notes/methodology-witness-kinship-gate.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Methodology — Alias maps are permutations, not graphs (slot-reuse resolution semantics)](kb-notes/methodology-alias-map-resolution-semantics.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Methodology — Rank a cleanup queue by downstream impact, not structural leverage](kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
@@ -106,7 +107,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 
 | File | Workstream | Last touched |
 |---|---|---|
-| [`ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) | CCR cleanup — cluster dissolution; Session 37: impact columns + FL SUBJ4 re-mint; Session 38: CCR refinements #333 + the KIN/PE #334 & Drama/Theater #335 fan-in convergences; Session 39: cron verify + the Supabase-mirror fix #337 + the KINE/FLSP strict twin-merge (74 folds) + [`cis_cs_convergence_scope.md`](cis_cs_convergence_scope.md) (GATED); Session 39 cont.: the live-curation loop #339–#342 — merge ≠ verify, UC-CUR retired, official-id merge targets, Spanish → SPAN 100/110/220/230; **Session 40: the severed evidence index — [`official_id_fold_scope.md`](official_id_fold_scope.md) APPROVED + BUILT #344/#345 (promotions re-key applied, plurality rule, 🧾 evidence lane, Phase B 455→1,155 folds, M-ID SPAN 10x anchors retired)** | **Session 40 (2026-06-11)** |
+| [`ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) | CCR cleanup — cluster dissolution; Session 37: impact columns + FL SUBJ4 re-mint; Session 38: CCR refinements #333 + the KIN/PE #334 & Drama/Theater #335 fan-in convergences; Session 39: cron verify + the Supabase-mirror fix #337 + the KINE/FLSP strict twin-merge (74 folds) + [`cis_cs_convergence_scope.md`](cis_cs_convergence_scope.md) (GATED); Session 39 cont.: the live-curation loop #339–#342 — merge ≠ verify, UC-CUR retired, official-id merge targets, Spanish → SPAN 100/110/220/230; **Session 40: the severed evidence index — [`official_id_fold_scope.md`](official_id_fold_scope.md) APPROVED + BUILT #344/#345 (promotions re-key applied, plurality rule, 🧾 evidence lane, Phase B 455→1,155 folds, M-ID SPAN 10x anchors retired)**; Sessions 41/42: kinship gate + slot-fix; **Session 43: the off-pane-columns bug (#372/#373 fixed layout) + slotfix cron no-op verified + era-mix hardening #370** | **Session 43 (2026-06-11)** |
 | [Scope — C-ID articulation authority (the math cleanup)](cid_articulation_authority_scope.md) | 2026-06-11 | 2026-06-11 |
 | [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes; **Session 23: #2 sidebar sub-links + #3 display-label map** | Session 23 (Bruh 23, 2026-05-31) |
 | [`engineering_practices_lessons.md`](engineering_practices_lessons.md) | Dev infra / testing / design system (committed jsdom harness + CI, stop-hook fix, `:root` tokens + `var()` rule, prototype-first) | **Session 32 (Busy Feynman, 2026-06-04) NEW** |
@@ -168,6 +169,9 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 38 → 39 | CCR refinements #333 + the KIN/PE #334 & Drama/Theater #335 fan-in convergences (handoff) | [`session_39_handoff.md`](session_39_handoff.md) |
 | 39 → 40 | Cron verify + Supabase-mirror fix #337 + KINE/FLSP twin-merge + CIS↔CS scope (handoff) | [`session_40_handoff.md`](session_40_handoff.md) |
 | 40 → 41 | The severed evidence index #344/#345 — promotions re-key + plurality rule + evidence lane + anchor retirement (handoff) | [`session_41_handoff.md`](session_41_handoff.md) |
+| 41 → 42 | Witness-kinship gate #347 + R4 singletons #348 (handoff) | [`session_42_handoff.md`](session_42_handoff.md) |
+| 42 → 43 | Bruh Moonshot — the slot-fix #357 + era guard + C-ID router #365/#366 (handoff) | [`session_43_handoff.md`](session_43_handoff.md) |
+| 43 → 44 | Bruh Starlord — cron no-op verified; off-pane-columns fix #370–#373 (handoff) | [`session_44_handoff.md`](session_44_handoff.md) |
 
 ---
 

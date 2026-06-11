@@ -668,3 +668,83 @@ reuse that renders a different family's members beneath a row. Durable note:
 - **Validate against a family the bug can't reach and you'll ship the bug.**
   Session 40/41 validated on Spanish — FLNG/FLSP namespaces postdate the
   subj4 permutation, so they were immune to telescoping by construction.
+
+## Session 43 — Bruh Starlord: the off-pane-columns bug + cron no-op verification (2026-06-11)
+
+A verification-and-troubleshooting session: no identity work, four small PRs
+(#370–#373, all merged on green), and one genuinely instructive front-end bug.
+
+**Slotfix cron no-op — VERIFIED.** Three daily runs followed #357 (17:17 /
+17:48 / 18:35 UTC). Timestamp-normalized MD5s over every artifact payload:
+`unified_courses_{data,suggestions,standalone,members,member_desc}.js`
+byte-stable across #357's committed regen and all three runs — the
+`family_groups` sig tiebreak ended the daily churn; CER/statewide differ only
+in their `generated_at` stamps. A `/tmp` regen (UC_OUT_DIR seam) reproduced
+HEAD exactly (15,652 rows; eu 673 / st 452) — the generator is deterministic.
+Caveat: stat-level `2 +-` diffs prove nothing on one-line-payload artifacts
+(a whole-payload change and a stamp change look identical); normalize the
+stamp and hash. Also: two stamp formats exist (`"generated_at": "…"` spaced
+and `"generated_at":"…"` compact) — a regex that assumes one reports FALSE
+churn. Residual: #365/#366 (the MATH router) landed after the last run; the
+next cron is the first to exercise them (expect timestamp-only).
+
+**The AJ "blank columns" bug (#372/#373).** Sam: AoJ rows render nothing
+right of Discipline — headers included; later "most disciplines, but not Ag."
+The diagnostic ladder, in order, with what each rung ruled out:
+1. **Payload scan** — every row carries every field (not data).
+2. **jsdom repro, real renderer + real rows + real audit/member payloads,
+   driving the real dropdown** — 15/15 columns, 5/5 member columns, no
+   errors (not the code, *at the DOM level*).
+3. **Incognito repro** (Sam) — still broken (not an extension/cache).
+4. **Console** (Sam) — no JS errors (the render never crashed).
+5. **Elements inspector** (Sam) — all 15 `<th>`s present WITH text; the
+   `#uc-table-wrap` carries Chrome's `scroll` badge. **The DOM was complete
+   the whole time — it was a LAYOUT bug, the one category a jsdom repro
+   structurally cannot see.**
+
+Mechanism: under `table-layout: auto`, one wide cell inflates its column and
+pushes the trailing columns past the right edge of the `overflow:auto` wrap.
+The wrap is 70vh tall, so its horizontal scrollbar renders at the *bottom* —
+effectively undiscoverable — and the columns simply look gone. Per-discipline
+because each filtered row set computes its own column widths. The fix
+(per the standing no-horizontal-scroll mandate): `table-layout: fixed` + an
+explicit 15-col colgroup (+ a 5-col one on the member table), `min-width:
+900px` keeping h-scroll as the narrow-screen safety net, and td
+overflow-clipping. The clipping then caused its own lesson: a blanket
+`td{overflow:hidden}` = ~7,500 paint-clip contexts (500 rows × 15) and Sam
+felt it ("noticeably slower") — #373 scoped it to the 5 text-bearing columns.
+**"Still a bit slow" at session end — WATCH; next levers: skip the
+post-audit-load second render when nothing visible changed, tune the
+colgroup, row virtualization as the heavyweight.** Durable note:
+[`kb-notes/methodology-fixed-table-layout-off-pane-columns.md`](kb-notes/methodology-fixed-table-layout-off-pane-columns.md).
+
+**Era-mix hardening (#370).** Triage also surfaced that Sam's tab held a
+stale audit overlay (toolbar "14,228 flagged" vs 14,232 deployed): the audit
+JSON was the one lazy fetch without the `?v=<era>` buster. Busted now;
+deliberately NOT wired into the `_eraGuard` banner (the audit re-runs only on
+cron regens, so a code-only artifact commit would false-trip it). Plus the
+handoff's seam item: the eu/st impact join read the CER — an *input* — from
+the OUT dir (a `/tmp` regen silently lost the columns), and
+`_write_cpl_by_discipline_json` crashed on the seam dir's missing `kb/`.
+Both fixed; a full seam run now completes clean.
+
+**Also:** `.claude/settings.json` now pins sessions to `claude-fable-5[1m]`
+(#371 — web `/model` picks are session-scoped and the picker strips `[1m]`;
+upstream anthropics/claude-code#41078). The stop-hook "Unverified
+noreply@github.com" nag after squash-merge + reset is the DOCUMENTED false
+positive — refresh `~/.claude/stop-hook-git-check.sh` from
+`scripts/stop-hook-git-check.sh`, never amend main's squash commits.
+
+**Patterns that worked:**
+- **Hash payloads with stamps normalized; never trust `--stat` on one-line
+  artifacts.** And know both stamp formats.
+- **Climb the diagnostic ladder one rung at a time** (data → DOM → incognito
+  → console → inspector) and let each rung kill a hypothesis class. Sam's
+  inspector screenshot was the decisive rung — ask for it sooner: a DOM-level
+  repro passing while the user sees breakage = suspect LAYOUT immediately.
+- **A jsdom suite cannot guard layout.** The new test pins the *defense*
+  (fixed layout + colgroup present), not the layout itself — name that
+  limitation in the test header.
+- **Perf-check your own defense:** the overflow clip that fixed the layout
+  cost paint time at 15× scale; scope protections to where the failure can
+  actually occur.
