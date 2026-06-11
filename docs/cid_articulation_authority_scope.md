@@ -1,7 +1,7 @@
 ---
 title: C-ID articulation authority — per-college official articulations as a CCR evidence tier (the math cleanup)
 date: 2026-06-11
-status: PHASE 0 BUILT + FULL DATA LANDED (Session 42) — Sam supplied the statewide extract (27,379 rows) same-day; ingest + set-aware joiner built; join artifact committed. NEXT = the Phase-1 generator member routing (design §4, gates unchanged)
+status: PHASES 0/0b/1 BUILT (Session 42) — seed + statewide extract (Sam, same-day) + set-aware joins + the generator member router (MATH-scoped) all landed. NEXT = Phase 2 (ccn_equiv bridge), curation surfaces for conflicts/sequences/unmatched, then widen routing beyond MATH
 session: 42
 tags: [scope, ccr, c-id, m-id, math, articulation-authority, rules-based-merging, knowledge-base]
 related:
@@ -181,6 +181,6 @@ per-college authority); `MATH M1185` "Calculus II" routes 7 → MATH 220,
 |---|---|---|
 | 0 | Seed reference (10 MATH 210 rows) + joiner + this scope | **BUILT** (#362) |
 | 0b | Full statewide extract + ingest + set-aware joiner + committed join artifact | **BUILT (Session 42)** |
-| 1 | Generator member routing (§4; MATH descriptors first) + dry-run gates + CCR regression set | NEXT |
+| 1 | Generator member routing (§4; MATH descriptors first) + dry-run gates + CCR regression set | **BUILT (Session 42)** — 329 members routed; 11 fully-routed M-IDs + 43 stand-alones folded (`rfold`/`routed_from`); MATH 210: 83→101 members incl. Folsom Lake MATH 400; M1175 13→6-member residue; Pierce 261 (210∧211) correctly held; SPAN/AUTO/ANTH regression byte-stable; `tests/uc_cid_routing.test.js` |
 | 2 | C-ID↔CCN `ccn_equiv` cross-reference (the COMM 130/C1004 class) | after 1 |
 | 3 | Routing beyond MATH (the other 455 descriptors) + termly refresh procedure | after 1 proves at math scale |

@@ -6494,6 +6494,39 @@ def export_unified_courses():
     # instead of being blank — treat these as "no official id".
     _NULLISH = {"", "NULL", "N/A", "NA", "NONE", "NOT APPLICABLE", "NOT APPLICABLE.", "TBD", "-"}
 
+    # ---- C-ID articulation authority routing (Phase 1 — the math cleanup) --
+    # kb/cid_articulation_joins.json holds per-(college, course) OFFICIAL C-ID
+    # approvals from the c-id.net table — the same trust tier as COCI's own
+    # CIDNumber column (and ~doubles it; colleges under-report in COCI). A
+    # routed member displays under its descriptor's official row and leaves
+    # its M-ID's display: display-level, recomputed each regen, reversible,
+    # NO KB mutation (the Phase B / R4 governance, one grain down). It splits
+    # BELOW the family grain — "Calculus I" members route to MATH 210 or 211
+    # per their own college's approval, which no family-level rule can do.
+    # MATH descriptors first; widen _ROUTE_PREFIXES per
+    # docs/cid_articulation_authority_scope.md §8 once math proves out.
+    _ROUTE_PREFIXES = ("MATH ",)
+    ROUTE, _routed_live = {}, set()
+    _joins_doc = _load("cid_articulation_joins.json")
+    if _joins_doc:
+        _by_cn = {}
+        for _j in _joins_doc.get("joins", []):
+            # new_authority = COCI blank, the table is the only authority;
+            # compatible_multi = COCI names another of the course's OWN
+            # approvals. coci_conflict NEVER routes; sequence rows never join.
+            if _j.get("disposition") not in ("new_authority", "compatible_multi"):
+                continue
+            if not str(_j.get("cid", "")).startswith(_ROUTE_PREFIXES):
+                continue
+            _by_cn.setdefault(_nrm(_j.get("control_number")), set()).add(_j["cid"])
+        for _cn, _cids in _by_cn.items():
+            _nons = sorted(c for c in _cids if not c.endswith(" S"))
+            if len(_nons) == 1:
+                ROUTE[_cn] = _nons[0]           # the unique component descriptor
+            elif not _nons and len(_cids) == 1:
+                ROUTE[_cn] = next(iter(_cids))  # series-only approval
+            # multiple non-series descriptors → curation, never auto-route
+
     if _have_raw:
         from openpyxl import load_workbook as _load_wb
         wb = _load_wb(raw_xlsx, read_only=True)
@@ -6513,6 +6546,12 @@ def export_unified_courses():
                 cidn = ""
             if ccnn in _NULLISH:
                 ccnn = ""
+            if not cidn and not ccnn and ctrl in ROUTE:
+                # c-id.net authority fills COCI's blank: the ent joins
+                # cid_rows[descriptor] like any claimant. A course with its
+                # own COCI claim already departed at the re-mint — untouched.
+                cidn = ROUTE[ctrl]
+                _routed_live.add(ctrl)
             tcode = ""
             if topc and str(topc).strip():
                 ts = str(topc).strip()
@@ -6562,11 +6601,16 @@ def export_unified_courses():
         return leaves
 
     def _leaf_cns(i):
+        # members routed by the C-ID articulation authority display under
+        # their descriptor row (they joined cid_rows at read time) — they
+        # leave every identity-side member table here.
         if i in memships:
-            return [_nrm(p.get("control_number")) for p in memships[i] if p.get("control_number")]
+            return [cn for p in memships[i] if p.get("control_number")
+                    and (cn := _nrm(p["control_number"])) not in _routed_live]
         sv = sg.get(i)
         if sv and sv.get("control_number"):
-            return [_nrm(sv["control_number"])]
+            cn = _nrm(sv["control_number"])
+            return [] if cn in _routed_live else [cn]
         return []
 
     # Candidate college-course ents for a displayed row — exact control-number join.
@@ -6885,6 +6929,51 @@ def export_unified_courses():
             print(f"  Unified Courses: R4 folded {_r4_folds} evidence-bearing "
                   f"stand-alones under official rows ({len(_sg_lane)} queued to the lane)")
 
+        # ---- C-ID articulation routing: fully-routed identities ------------
+        # (Phase 1, scope §4.) Routed members already display under their
+        # descriptor rows (cid_rows) and left their identity's display
+        # (_leaf_cns). An identity whose EVERY member routed has nothing left
+        # to show: register it like a fold (in-memory merge_into — the R4
+        # pattern, NO curation writes) so the stand-alone writer excludes it
+        # and provenance rides the official row (routed_from). Partially
+        # routed M-IDs simply shrink (stats recomputed below). Reversible —
+        # remove the joins file and the next regen restores everything.
+        _r_single = _r_mids = 0
+        if _routed_live:
+            row_by_id = {r["id"]: r for r in rows}
+            for sid, sv in sg.items():
+                cn = _nrm(sv.get("control_number") or "")
+                if not cn or cn not in _routed_live or sid in merge_into:
+                    continue
+                tgt = row_by_id.get(ROUTE.get(cn))
+                if tgt is not None and tgt.get("id_system") == "C-ID":
+                    merge_into[sid] = tgt["id"]
+                    merge_members.setdefault(tgt["id"], []).append(sid)
+                    tgt["rfold"] = tgt.get("rfold", 0) + 1
+                    _r_single += 1
+            for mid, ms in memships.items():
+                cns = [_nrm(m.get("control_number") or "") for m in ms]
+                if not cns or not all(c in _routed_live for c in cns):
+                    continue
+                r = row_by_id.get(mid)
+                if (r is None or r.get("locked") or r.get("reviewed_by")
+                        or mid in merge_into or r.get("consolidated_from")
+                        or merge_members.get(mid)):
+                    continue  # entangled rows just shrink; curation owns them
+                targets = {ROUTE[c] for c in cns if c in ROUTE}
+                tgt = row_by_id.get(next(iter(targets))) if len(targets) == 1 else None
+                if tgt is not None and tgt.get("id_system") == "C-ID":
+                    merge_into[mid] = tgt["id"]
+                    merge_members.setdefault(tgt["id"], []).append(mid)
+                    tgt.setdefault("routed_from", []).append(mid)
+                    tgt["rfold"] = tgt.get("rfold", 0) + 1
+                    rows.remove(r)
+                    _r_mids += 1
+        if _routed_live:
+            print(f"  Unified Courses: C-ID articulation routing — {len(_routed_live)} "
+                  f"members display under their descriptor rows; {_r_mids} fully-routed "
+                  f"M-IDs + {_r_single} stand-alones folded (rfold)")
+
     # ---- per-course CPL impact: Eligible units + Students -------------------
     # Roll the CER's per-credential eligible-credit + student totals up to each
     # course via the articulation crosswalk (credential→course), so the CCR can be
@@ -6957,13 +7046,24 @@ def export_unified_courses():
         if r.get("id_system") in ("C-ID", "CCN-ID"):
             continue  # official rows: stats come from displayed members (below)
         mus = []
+        _n_routed_here = _n_kept_here = 0
         # Same union as the eu/st rollup: curator merge targets inherit their
         # members' membership units (a UC-CUR id has no memberships of its own).
+        # Members routed to a descriptor row by the articulation authority no
+        # longer display here — the Members count becomes the REMAINING
+        # membership records (what the row displays — the #347 lesson), not
+        # arithmetic on the seed member_count (which can drift).
         for c in [r["id"]] + list(r.get("consolidated_from") or []) + merge_members.get(r["id"], []):
             for m in memships.get(c, []):
+                if _nrm(m.get("control_number") or "") in _routed_live:
+                    _n_routed_here += 1
+                    continue
+                _n_kept_here += 1
                 u = m.get("units")
                 if isinstance(u, (int, float)):
                     mus.append(u)
+        if _n_routed_here:
+            r["members"] = _n_kept_here
         if mus:
             lo, hi = min(mus), max(mus)
             if lo != hi:

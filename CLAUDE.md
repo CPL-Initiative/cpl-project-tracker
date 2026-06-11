@@ -1599,8 +1599,16 @@ V5 stamp gate 1,954/0) + re-applied from baseline: lane 310→**158 all-kin**
 groups, R4 folds 301→**610**, ANTH 120 2→7 folds, AUTO 120X/150X gain real
 kin folds; SPAN intact. + CCR **era guard** (mixed-era lazy joins = Sam's
 "non-argumentation in COMM M1006"; banner + `?v=` bust) + `family_groups`
-sort tiebreak. Tests green. Full story: `docs/ccr_cluster_cleanup_lessons.md`
-(Session 42); rule: `methodology-alias-map-resolution-semantics.md`.
+sort tiebreak. THEN (same session, Sam's extract): the **C-ID articulation
+authority** — c-id.net per-college approvals as evidence tier 2′ (28,070
+rows; 9,676 new-authority; 76 true conflicts) + the **Phase-1 router**
+(329 MATH members display under their descriptors; M1175 "Calculus I"
+splits 210/211 below family grain; `rfold`/`routed_from`; multi-approval/
+sequence/conflict NEVER auto-route) + the layman's **CCR rules brief**
+(`docs/ccr_rules_brief.md`, linked from the tab). Tests green. Full story:
+`docs/ccr_cluster_cleanup_lessons.md` (Session 42); rules:
+`methodology-alias-map-resolution-semantics.md` +
+`docs/cid_articulation_authority_scope.md`.
 
 ---
 
