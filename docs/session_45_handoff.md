@@ -81,6 +81,10 @@ PATTERNS THAT WORKED:
 - User-vocabulary rollups → curated JSON + ^-anchored pattern fallback +
   merge-preserving seeder. Anchor patterns EARLY (AWS/ASE/cisco traps).
 
+FINAL STATE: all 4 PRs merged (#375/#376/#377 + checkpoint #378), live
+verified (132 exhibits / 12 areas / doublewide / reorder tag survives
+regen). KB note: methodology-user-vocabulary-category-maps.md.
+
 SAFETY: Rules 1/4/5 as ever — change the generator not the HTML; the two
 HTMLs stay identical (static-zone edits in BOTH); never force-push main.
 kb/coci_*.json never gets cat'd into context.

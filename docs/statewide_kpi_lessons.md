@@ -94,3 +94,16 @@ sub-headers — needs a product call: reorder cards within a group vs whole
 groups; the module is generic enough either way). (3) Optional later add per
 the strategic queue: an auth-gated **curated default order** writer (the
 `kpi_order` column already exists server-side).
+
+### Checkpoint close-out (same day, post-#378)
+
+Verified live on `main` after the dispatch: doublewide card, **132 exhibits ·
+12 program areas**, per-area lines incl. Construction Technology 46 · 122 ·
+122 (single-adopter recs), Welding 23 · 183 · 228 (multi-college adoption),
+World Languages 2 · 13 · 36, Other Statewide 2 · 8 · 8, HVAC italic tail;
+`kpi_reorder.js` tag survived the cron regen in both HTMLs. Strategic-queue
+item 2 marked DONE. The categories pattern is distilled in
+`docs/kb-notes/methodology-user-vocabulary-category-maps.md` (initially
+deferred at #378, reversed at the formal /checkpoint — the anchored-pattern
+traps + merge-preserving reseed + review-bucket contract clear the
+durability bar).
