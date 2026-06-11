@@ -205,6 +205,21 @@ def main():
         "model_version": "2026-06-11",
         "source": "funding/CPL_Funding_Model_2026.xlsx",
         "sheet": SHEET,
+        # College-headcount provenance (Sam, 2026-06-11): the workbook's
+        # headcount column is pulled from the CCCCO MIS DataMart Annual/Term
+        # Student Count report, Collegewide Search. headcount_label carries
+        # the vintage from the workbook's own column header (currently
+        # "2022-2023 MIS ANNUAL HEADCOUNT"), so a refreshed workbook edition
+        # re-labels the tab automatically. A DataMart refresh is a MODELING
+        # decision, not a drop-in swap: the report's Headcount Status filter
+        # and partial in-progress years change values materially (the
+        # 2025-26 annual pull shows far smaller counts than 2022-23).
+        "headcount_label": str(table_headers[2]).strip(),
+        "headcount_source": {
+            "name": "CCCCO MIS DataMart — Annual/Term Student Count",
+            "url": "https://datamart.cccco.edu/Students/Student_Headcount_Term_Annual.aspx",
+            "selection": "Collegewide Search",
+        },
         "pool": pool,
         "priorities": priorities,
         "system": system,

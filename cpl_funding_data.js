@@ -6,6 +6,12 @@ window.CPL_FUNDING = {
  "model_version": "2026-06-11",
  "source": "funding/CPL_Funding_Model_2026.xlsx",
  "sheet": "CPL IMPLEMENTATION MODEL 2026",
+ "headcount_label": "2022-2023 MIS ANNUAL HEADCOUNT",
+ "headcount_source": {
+  "name": "CCCCO MIS DataMart — Annual/Term Student Count",
+  "url": "https://datamart.cccco.edu/Students/Student_Headcount_Term_Annual.aspx",
+  "selection": "Collegewide Search"
+ },
  "pool": {
   "remaining_2025_26": 9040307.0,
   "one_time_2026_27": 35000000.0,

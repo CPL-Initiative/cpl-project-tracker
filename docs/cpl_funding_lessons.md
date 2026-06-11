@@ -128,6 +128,29 @@ parallel-session shared-file freeze lifts.
    five-step shape (seed → read-path → editor → RLS) instead of growing the
    workbook.
 
+### 2026-06-11 (provenance) — college-headcount lineage (Sam's DataMart note)
+
+Sam identified the headcount column's source: **CCCCO MIS DataMart →
+Students → Annual/Term Student Count**
+(https://datamart.cccco.edu/Students/Student_Headcount_Term_Annual.aspx),
+**Collegewide Search** — the workbook carries the **2022-23 annual** edition
+("a bit dated", his words). Baked in three places: the extractor emits
+`headcount_label` (vintage read from the workbook's own column header, so a
+refreshed edition re-labels the tab automatically) + `headcount_source`
+(name/url/selection); the tab footnotes the citation and tooltips the
+Headcount column header; the test pins both.
+
+**Refresh caveat (do NOT drop-in swap):** Sam's 2025-26 Collegewide pull
+shows far smaller counts (Allan Hancock 6,156; Desert 975) than the 2022-23
+figures in the model (Alameda 9,582 scale) — the report's **Headcount
+Status** filter (e.g. "A - Credit Student Enrolled") and a partial
+in-progress year change values materially, and the per-student rate /
+allocations all scale off these counts. Refreshing the vintage is **Sam's
+modeling decision inside the workbook**; the pipeline then just needs the
+new edition dropped at `funding/CPL_Funding_Model_2026.xlsx` + a builder
+re-run. Note the parallel CCR session went active again the same hour
+(#357 merged) — this change stayed inside the funding lane's own files.
+
 ### 2026-06-11 (later still) — teaser card + v1.1 (Sam: "Go on the teaser card and next steps")
 
 - **Teaser card SHIPPED (PR #355, code-only)** — 4th Dashboard teaser
