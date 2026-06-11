@@ -2133,11 +2133,33 @@ STRING (old version), while the dash button POSTs it in the JSON body → 403
 durable fix = re-paste `cloudflare-worker-proxy.js` into the Cloudflare
 dashboard (Sam-only — sessions can't reach Cloudflare).
 
-**Carryover / next:** (1) R4 singletons + the 31 `_unresolved` keys (now
+**R4 singletons SHIPPED same day (#348):** of the 653 evidence-bearing
+stand-alones, **301 auto-fold** under their official rows (kinship-gated:
+297 unanimous + 4 plurality; `sfold` on the row, counted in the ⛓ chip),
+**12 contested → evidence-lane `g:1` stand-alone entries**, and **340
+all-witness-blocked stale receipts deliberately NOT laned** (keeps ~340
+noise groups out of the curator queue; recoverable via
+`kb/_analyze_witness_kinship.py`). SPAN 200 absorbed "Intermediate Spanish:
+Level I", SPAN 210 absorbed Level II/IV/Advanced Intermediate — the scope
+§4's named R4 queue, exactly. `_row_official`'s core became
+`_official_match(leaves)`; folds are display-level (in-memory
+merge_into/merge_members, NO curation writes, Generated until Verify).
+Stand-alone payload −301 exactly.
+
+**Ops resolution:** the 06-11 backstop cron fired at 14:17 UTC (primary was
+dropped — the documented scheduler flakiness, no action needed) and ran with
+the #347 generator, so the deployed dashboard already carries the gate + the
+fixed refresh button.
+
+**Carryover / next:** (1) The 31 `_unresolved` promotions keys (now
 gate-aware). (2) Sam's curator queue: the kin-ranked evidence lane top (~123
-kin-backed groups; the 187 stale-receipt groups below the banner are Skip
-material). (3) Standing: CIS↔CS §5 sign-off, ACE skill-level scope,
-College/System EACR views, EACR v2, 5 DSPS `53414` strays, `PEDS M10AE`.
+kin-backed groups incl. the 12 stand-alone contested entries; the 187
+stale-receipt groups below the banner are Skip material). (3) Verify
+tomorrow's cron no-ops on the R4 artifacts. (4) Sam-only: re-paste
+`cloudflare-worker-proxy.js` into the Cloudflare dashboard (durable
+refresh-button fix; the button works against either version now). (5)
+Standing: CIS↔CS §5 sign-off, ACE skill-level scope, College/System EACR
+views, EACR v2, 5 DSPS `53414` strays, `PEDS M10AE`.
 
 ---
 
