@@ -232,11 +232,12 @@ until the artifact exists):
 Sam: NC = **35,363**, credit = **41,950** (replacing Mt San Antonio's prior
 66,445). Applied to the workbook (two C-cells), rebuilt: statewide
 2,199,157 → **2,210,025**, per-student **$5.2488**, NC row allocates
-**$185,614/yr**, credit **$220,188/yr**, balance $0. **Flagged, not
-blocked:** the decomposition implies a 77,313 combined total vs the old
-cell's 66,445 — Mt SAC's pair is from a newer DataMart pull than the
-2022-23 column the rest of the roster carries (mixed vintage by one row,
-Sam's explicit call; reconcile at the next full headcount refresh). Two
+**$185,614/yr**, credit **$220,188/yr**, balance $0. **Vintage story (Sam, on the flag):** Mt SAC's pair is from **24-25 MIS
+totals**; he believes the rest of the table is actually **23-24** (despite
+the column header reading "2022-2023" — MIS trails by up to a year). Mixed
+vintage by one row is accepted for now; **Sam will supply a complete
+25-26 revised table once all numbers report** — that refresh should also
+correct the column header (which auto-relabels the tab footnote). Two
 test assertions that had hardcoded headcount-derived numbers ($5.27 rate,
 219,916 projected) now derive from the live data — headcount edits can't
 break the suite again.
