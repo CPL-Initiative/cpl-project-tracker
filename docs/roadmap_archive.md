@@ -1172,3 +1172,20 @@ sequence/conflict NEVER auto-route) + the layman's **CCR rules brief**
 `docs/ccr_cluster_cleanup_lessons.md` (Session 42); rules:
 `methodology-alias-map-resolution-semantics.md` +
 `docs/cid_articulation_authority_scope.md`.
+
+### Session 43 — Bruh Starlord: cron no-op verified + the off-pane-columns bug (2026-06-11)
+
+Troubleshooting day; 4 PRs, all merged on green. **Slotfix cron no-op
+VERIFIED** (timestamp-normalized payload hashes byte-stable across #357 + 3
+daily runs; suggestions churn gone; a `/tmp` regen reproduced HEAD exactly).
+**#370** audit overlay era-busted (the one unbusted lazy fetch) + 2 UC_OUT_DIR
+seam papercuts. **#371** `.claude/settings.json` defaults sessions to
+`claude-fable-5[1m]` (web `/model` picks are session-scoped; the picker strips
+`[1m]` — upstream #41078). **#372/#373** Sam's "AJ blank columns": auto table
+layout parks columns past the scroll wrap's right edge (h-scrollbar buried at
+the bottom of the 70vh wrap; per-discipline since each filtered set lays out
+its own widths; DOM was complete — jsdom can't see layout) → `table-layout:
+fixed` + colgroups + min-width 900 net; clipping scoped to 5 text columns
+after a perf dip (**"still a bit slow" — WATCH**). KB note:
+[`methodology-fixed-table-layout-off-pane-columns.md`](docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md);
+lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 43).

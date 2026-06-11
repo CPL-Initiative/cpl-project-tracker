@@ -1068,7 +1068,7 @@ session resuming the build — read it before touching `kb/` or the curation tab
 **Generators** (`kb/_seed_*.py`, `_join_*.py`, `_curation_*.py`, `_flag_*.py`)
 are one-shot, kept for provenance — curate by editing JSON / via Supabase, not
 by re-running them. **Exception:** `kb/_infer_disciplines.py` is intentionally
-re-runnable (idempotent — only fills blanks, never overwrites reviewed/curated).
+re-runnable (re-derives + RETRACTS its own prior fills when the lexicon changes — Session 45; never touches reviewed/curated/manual or other passes' fills). subject_map entries may be COLLEGE-SCOPED ({discipline, colleges}) for homonym subjects — validate with `kb/_audit_subject_map.py` after edits (docs/kb-notes/methodology-college-homonym-subject-codes.md).
 
 **Unified Courses dashboard tab + Supabase:**
 - The **Unified Courses** tab lets allowed reviewers curate disciplines.
@@ -1306,7 +1306,7 @@ the Generated-by filter + `⚙` badges + **batch-verify**). **The remaining ~580
 the divisions with no honest single MQ umbrella** (Media, Fine/Applied Arts,
 Commercial Services, 2 untitled) — intentionally left blank; best closed by
 **reviewer curation in the tab**. Re-run any pass after editing its lexicon/map;
-all skip reviewed/curated and only fill blanks.
+all skip reviewed/curated; pass 1 re-derives + retracts its own fills (Session 45 — lexicon removals propagate), the rest only fill blanks. Homonym subject codes are college-scoped in the lexicon, enforced by `kb/_audit_subject_map.py`.
 
 **Guardrails when resuming:**
 - The `coci_*.json` files are large (tens of MB). **Never read/cat them into the
@@ -1389,16 +1389,16 @@ Read-only auditor over every M-ID + Cluster. Per row, produces a Trust Card:
   missing / conflicting / not_yet_captured.
 - **Readiness tiers:** ready (≥0.85) / needs_review (≥0.65) /
   needs_repair (≥0.40) / not_ready.
-- **Rule tags + counts (refreshed 2026-06-09 after the Session-37 coarse TOP-division fill):**
+- **Rule tags + counts (refreshed 2026-06-11, Session 45 — after the homonym repair chain, #381):**
   - `seed_untouched_discipline` (10,998, was 11,071 — 2026-06-10 twin-merge absorbed 73 drafted losers) — Phase B subject_map draft never reviewed (Phase 1a)
-  - `subject_collision_signal` (**1,076** — held at baseline through the 2026-06-10 convergences; Kinesiology joined `UMBRELLA_DISCIPLINES` since it deliberately spans KINE+ATHL, absorbing the +299 ATHL artifact. Was 0 → 1,076 on 2026-06-09) — Phase 1e cleanup receipt; the Session-37 coarse TOP-division fill assigned ~1.2k blank minted parents a broad umbrella discipline **without** re-keying SUBJ4 to that discipline's canonical, so they re-trip the SUBJ4-collision diagnostic. Expected + honest — they're new candidates for a future canonical-SUBJ4 fold; the previously-disciplined rows (incl. the FL split) stay collision-free
+  - `subject_collision_signal` (**1,210**, was 1,076 — Session 45's homonym repair re-filled ~320 minority-side rows with honest disciplines whose canonical SUBJ4 ≠ their key; queued for the next SUBJ4 re-mint, by design. Previously held at baseline through the 2026-06-10 convergences; Kinesiology joined `UMBRELLA_DISCIPLINES` since it deliberately spans KINE+ATHL, absorbing the +299 ATHL artifact. Was 0 → 1,076 on 2026-06-09) — Phase 1e cleanup receipt; the Session-37 coarse TOP-division fill assigned ~1.2k blank minted parents a broad umbrella discipline **without** re-keying SUBJ4 to that discipline's canonical, so they re-trip the SUBJ4-collision diagnostic. Expected + honest — they're new candidates for a future canonical-SUBJ4 fold; the previously-disciplined rows (incl. the FL split) stay collision-free
   - `unit_anomaly` (4,347, was 4,360 — twin-merge) — typical_units represents <50% of member colleges (member-unit variance is high, possible over-merge across different unit-load variants); 71% of flags are 2-member splits like `[3.0, 0.0]` (credit vs noncredit drift in the same M-ID) (Phase 1c)
   - `member_top_divergence` (**1,275**, was 1,286 — twin-merge) — an M-ID's member colleges carry TOP codes spanning ≥2 broad (2-digit) divisions with ≥30% minority share: the **cross-discipline over-merge** detector (a generic title — "Ethics and Leadership", "Undergraduate Research Experience" — minted courses from different program areas under one identity). **57% (736) carry no other strong signal** — it closes a real gap: `top_discipline_disagreement` only checks the M-ID's single *representative* TOP, so it missed the case where the *members* diverge but the representative matches (the motivating `CRIM M1231`: nursing TOP 1230.10 minority-merged into Admin-of-Justice). 2-digit division grouping inherently suppresses sister-discipline noise (Kinesiology/PE both 0835) — no SISTER_PAIRS needed. **255 are "mis-disciplined"** (assigned discipline isn't even the members' plurality division). Surfaces for review, not a verdict (TOP codes vary by college). (Phase 1c)
-  - `top_discipline_disagreement` (960, was 857 — the coarse umbrella fills + 2026-06-10 convergence flips add TOP-vs-discipline tension rows; was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
+  - `top_discipline_disagreement` (**926**, was 960 — Session 45 homonym repair aligned fills with TOP evidence; before that 857 → the coarse umbrella fills + 2026-06-10 convergence flips add TOP-vs-discipline tension rows; was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
   - `blank_description` (1,732) — Phase 1a
-  - `blank_discipline` (**73**, was 1,266 — 2026-06-09) — Phase 1a; the coarse TOP-division fill cleared the minted-parent blank tail (1,268→80 blank; residual = the no-honest-umbrella divisions)
-  - `discipline_title_mismatch` (773, was 762) — title shares 0 tokens with assigned discipline AND ≥2 with some other; +20 from coarse umbrella fills (Phase 1c)
-  - `description_discipline_disagreement` (78) — description's safe-phrase set points elsewhere with ≥2 mentions (Phase 1c)
+  - `blank_discipline` (**82**, was 73 — a few Session-45 retractions had no honest re-fill; 1,266 pre-2026-06-09) — Phase 1a; the coarse TOP-division fill cleared the minted-parent blank tail (1,268→80 blank; residual = the no-honest-umbrella divisions)
+  - `discipline_title_mismatch` (**712**, was 773 — Session 45 repair; 762 before the coarse fills) — title shares 0 tokens with assigned discipline AND ≥2 with some other; +20 from coarse umbrella fills (Phase 1c)
+  - `description_discipline_disagreement` (75, was 78) — description's safe-phrase set points elsewhere with ≥2 mentions (Phase 1c)
   - `generic_title_concrete_discipline` (44) — title is course-format generic; can't justify a specific discipline (Phase 1c)
   - `mid_id_off_scheme` (**2** — `F M1002` + `N M9001`, both blank-discipline; unfixable residue) — was 27 pre-apply
   - `merge_into_orphan` (**0** — preventive infrastructure; fires when a curation `merge_into` points to a target not in courses ∪ singletons ∪ `UC-CUR-*`. All 3 current pointers cleanly target `UC-CUR-MPG029OM`) (Phase 1c, 2026-05-27)
@@ -1530,26 +1530,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > locked decisions verbatim. Searching the archive for an id (e.g. "FLSP
 > M1379", "#310") is usually faster than re-deriving from code.
 
-> **Session 41 + 42 narratives archived** → `docs/roadmap_archive.md`
+> **Session 41 + 42 + 43 narratives archived** → `docs/roadmap_archive.md`
 > (witness-kinship gate + R4 singletons; the slot-fix + C-ID authority +
-> Phase-1 router — both 2026-06-11).
-
-### Session 43 — Bruh Starlord: cron no-op verified + the off-pane-columns bug (2026-06-11)
-
-Troubleshooting day; 4 PRs, all merged on green. **Slotfix cron no-op
-VERIFIED** (timestamp-normalized payload hashes byte-stable across #357 + 3
-daily runs; suggestions churn gone; a `/tmp` regen reproduced HEAD exactly).
-**#370** audit overlay era-busted (the one unbusted lazy fetch) + 2 UC_OUT_DIR
-seam papercuts. **#371** `.claude/settings.json` defaults sessions to
-`claude-fable-5[1m]` (web `/model` picks are session-scoped; the picker strips
-`[1m]` — upstream #41078). **#372/#373** Sam's "AJ blank columns": auto table
-layout parks columns past the scroll wrap's right edge (h-scrollbar buried at
-the bottom of the 70vh wrap; per-discipline since each filtered set lays out
-its own widths; DOM was complete — jsdom can't see layout) → `table-layout:
-fixed` + colgroups + min-width 900 net; clipping scoped to 5 text columns
-after a perf dip (**"still a bit slow" — WATCH**). KB note:
-[`methodology-fixed-table-layout-off-pane-columns.md`](docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md);
-lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 43).
+> Phase-1 router; Starlord's cron-verify + off-pane-columns fix — all
+> 2026-06-11).
 
 ### Session 44 — Statewide Exhibits KPI card + program-area categories + KPI reorder (2026-06-11)
 
@@ -1567,6 +1551,24 @@ login-free **KPI card drag-to-reorder** (`kpi_reorder.js`, per-browser
 localStorage, label-identity re-match across regens, ↺ reset) — strategic-queue
 item 2. Full story: `docs/statewide_kpi_lessons.md`; pattern distilled:
 `docs/kb-notes/methodology-user-vocabulary-category-maps.md`. Checkpoint #378.
+
+### Session 45 — CCR rules day: statewide C-ID routing + the CADM homonym + the description lane (2026-06-11)
+
+Sam's three asks, three PRs, merged on green. **#379** C-ID router **Phase 3
+statewide** (gate removed): 8,377 members under 454 descriptors, 174 M-IDs +
+1,682 stand-alones rfold; 0 members vanish, 125 invisible claimants
+materialize; 4 MATH∧SOCI dual-approval stats courses un-route (scope-gates
+must filter AFTER assembling the full approval set — scope §9). **#381** the
+screenshot's `CRIM M1003` root-caused to the `CADM` college-homonym lexicon
+entry laundered by the SUBJ4 re-key → `kb/_audit_subject_map.py` (TOP-division
+votes + minority-title grading), **college-scoped subject_map entries**,
+**retraction propagation**; 11 homonyms scoped, ~320 rows re-filled honestly
+(CRIM M1003 → Drafting/CADD). **#382** the dark 86% (13,922 M-IDs, no official
+evidence): TF-IDF description lane, level/gender/sport-guarded → **474 groups
+(135 cross-college)** as the worklist's 4th section (`desc_groups`, receipt
+`kb/desc_consolidation_out/candidates.json`, termly re-run). Suite 29/29.
+Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 45); KB note:
+`methodology-college-homonym-subject-codes.md`.
 
 ---
 

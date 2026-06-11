@@ -748,3 +748,89 @@ positive — refresh `~/.claude/stop-hook-git-check.sh` from
 - **Perf-check your own defense:** the overflow clip that fixed the layout
   cost paint time at 15× scale; scope protections to where the failure can
   actually occur.
+
+## Session 45 — rules-and-procedures day: statewide routing, the CADM homonym, the description lane (2026-06-11)
+
+Sam's brief: stay in the CCR, refine the rules/procedures behind minting and
+merging. Three asks, three PRs, all merged on green (#379, #381, #382).
+First: verified the day's cron no-op'd on the #365/#366 router artifacts
+(stamp-normalized hashes byte-stable; CER/statewide moved with fresh MAP
+data — handoff item 2 closed).
+
+**#379 — C-ID router Phase 3: statewide.** Removed `_ROUTE_PREFIXES =
+("MATH ",)` after math proved out. 8,377 members (was 329) now display
+under 454 descriptor rows; 174 fully-routed M-IDs + 1,682 stand-alones fold
+(`rfold`); +28 claims-only rows; payload 15,652 → 15,517. Conservation
+verified: **0 member tuples vanish, 125 previously-INVISIBLE claimants
+materialize** (their descriptor row didn't exist pre-widening). The
+surprise: **4 stats courses un-routed** — they hold MATH 110 ∧ SOCI 125
+dual approvals, and Phase 1's gate filtered joins to MATH *before* the
+uniqueness test, hiding the SOCI side and auto-picking MATH 110. **Rule
+recorded (scope §9): a routing scope-gate must filter AFTER assembling each
+course's full approval set, never before** — a scoped view biases
+dual-approved courses toward the in-scope descriptor.
+
+**#381 — the CRIM M1003 case → the homonym machinery.** Sam's screenshot
+("Introduction to 3D" filed under Administration of Justice as CRIM M1003)
+root-caused to `subject_map["CADM"] = AoJ`: right for Bakersfield
+(Corrections ADMin ×47) and wrong for Merced (Computer-Aided Drafting ×4),
+then **laundered into the identity** by the canonical-SUBJ4 re-key
+(MAD M1003 → CRIM M1003). Subject codes are college-local vocabulary; a
+global map entry poisons the minority college. Built:
+- `kb/_audit_subject_map.py` — per-entry college TOP-division votes
+  (internal-consistency gated) + **minority-title evidence** grading
+  (overlap with the discipline name separates "different department"
+  from "same content, different TOP philosophy"). 17 candidates → 11 true
+  homonyms (ADM=police/graphics, AP=anatomy/photography, PLS=paralegal/
+  plant-science, OT=occupational-therapy/office-tech, FS=fire/food/film,
+  GSS=gunsmithing/gender-studies, IS, CADM, AET, CAM, AQUA), 6 false
+  positives. The title heuristic under-credits abstract discipline names
+  ('Multimedia') — human eyeball on actual titles decided the borderlines;
+  clearances persist in `_subject_map_notes.audit_cleared`.
+- **College-scoped subject_map entries** (`{"discipline":…, "colleges":
+  […]}`) — scoping beats removal: flat removal degraded the MAJORITY side
+  (Lassen's 118 correct Gunsmithing fills → coarse division umbrella). The
+  first run measured exactly that (651 retracted), which forced the design.
+- **Retraction propagation** — `_infer_disciplines.py` re-derived its own
+  fills (refinements propagate) but left stale fills when an entry was
+  removed. Now they blank + downstream passes re-fill. **Any pass that
+  re-derives its own fills must also retract them.**
+Repair chain: 363 majority fills kept at 0.8; ~320 minority rows re-filled
+from per-row evidence (CRIM M1003 → Drafting/CADD; police courses → AoJ;
++`2105.10` Corrections added to the TOP map). Audit: title-mismatch
+773→712, TOP-disagreement 960→926, collision-signal 1,076→1,210 (re-filled
+rows queued for the next SUBJ4 re-mint — by design). Consumers hardened for
+the scoped form (`_row_audit`, `_overmerge_dryrun`). KB note:
+`methodology-college-homonym-subject-codes.md`.
+
+**#382 — the description-evidence lane (the dark 86%).** Post-router,
+13,922 of 16,143 M-IDs carry NO official evidence anywhere — content is the
+only consolidation signal. `kb/_desc_consolidation_dryrun.py`: TF-IDF
+cosine over 12,025 dark descriptions, top-IDF inverted index, gates =
+cos ≥ 0.60 + credit + units(0.5) + NOT-same-title-sig + **level** (FLSP
+M1379) + **gender** + **sport** guards — the last two earned by the first
+run's output (Men's/Women's Varsity XC grouped; Wrestling joined XC via
+the off-season conditioning template description). **474 groups (135
+cross-college)**; receipt committed, re-run termly like the c-id refresh.
+Marquee finds the title lane structurally cannot make: the 8-M-ID
+infant/toddler ECED family (~20 colleges — singular/plural splits the
+sig), the state fire curriculum (I-200, Driver/Operator 1A/1B), NRSH/NRSR
+CNA. Generator joins the receipt as `desc_groups` (liveness-validated,
+sig-tiebreak); consumer renders the 4th worklist section (📝 badge,
+same-college amber); Confirm = the existing doConsolidate;
+`tests/uc_desc_lane.test.js` (17 assertions). Suite 29/29.
+
+**Patterns:**
+- **Dry-run the regen against a byte-exact baseline and diff member
+  CONSERVATION, not counts.** The +94 net member rows decomposed into
+  125 materialized (a strict improvement: pre-#345-class invisibility
+  ending) + 31 dedups — a count-only diff would have hidden both.
+- **A scoped gate corrupts set-valued evidence.** Filter-then-test made
+  dual approvals look unique (the 4 stats courses). Assemble the full set,
+  then test, then scope.
+- **Template descriptions are the description-evidence trap**: athletics
+  off-season/varsity text is interchangeable across sport and gender —
+  guard with closed-vocabulary title marks before trusting cosine 1.0.
+- **Let the first run's output design the guards.** Both the scoped-entry
+  design (#381) and the gender/sport guards (#382) came from running the
+  naive version and reading its damage, not from up-front speculation.

@@ -79,7 +79,14 @@ The whole ecosystem, end-to-end:
    AHA / American Heart Assoc. First Aid" all collapse to one card),
    unified course identities using a CCN-aligned surrogate scheme
    (CCN-ID > C-ID > M-ID), with a Phase B fold that consolidates M-IDs
-   under official C-ID/CCN anchors when the underlying members agree.
+   under official C-ID/CCN anchors when the underlying members agree,
+   a statewide **c-id.net articulation router** (per-college official
+   approvals place 8,377 member courses under their C-ID descriptor rows —
+   no titles consulted), and a **description-evidence worklist lane** that
+   surfaces same-course candidates among the M-IDs no official source
+   covers (TF-IDF over catalog descriptions, level/gender/sport-guarded,
+   always curator-confirmed). The rules in plain language:
+   [`docs/ccr_rules_brief.md`](docs/ccr_rules_brief.md).
 4. **The Common Course Reference curation tab** (formerly "Unified Courses" —
    renamed to avoid UC/University-of-California confusion and to signal that
    the tab is a *reference faculty consult*, not an authority replacing them) —

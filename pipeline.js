@@ -29,9 +29,12 @@
   var ROADMAP = [
     { id: "1a",     title: "Trust-Card auditor",                         status: "done",   when: "2026-05-23" },
     { id: "1b",     title: "Cluster aggregation + UCL chip + cron",      status: "done",   when: "2026-05-23" },
-    { id: "1c",     title: "Audit rules (6 of 9)",                       status: "done",   when: "2026-05-23" },
+    { id: "1c",     title: "Audit rules (8 of 9)",                       status: "done",   when: "2026-05-29" },
     { id: "1d",     title: "Rename → Common Course Reference",           status: "done",   when: "2026-05-23" },
     { id: "1e",     title: "SUBJ4 canonicalization re-mint",             status: "done",   when: "2026-05-23" },
+    { id: "CID-rt", title: "c-id.net articulation router (statewide)",   status: "done",   when: "2026-06-11" },
+    { id: "lex-hx", title: "Homonym-safe discipline lexicon",            status: "done",   when: "2026-06-11" },
+    { id: "desc",   title: "Description-evidence worklist lane",         status: "done",   when: "2026-06-11" },
     { id: "1e-5d",  title: "M-ID → MID / C-ID → CID rename (cosmetic)",  status: "active", when: "queued" },
     { id: "2",      title: "Articulations by Unified Course",            status: "parked", when: "" },
     { id: "3",      title: "EACR interactive re-pivot",                  status: "parked", when: "" },
