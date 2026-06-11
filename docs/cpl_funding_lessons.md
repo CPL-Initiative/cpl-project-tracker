@@ -102,10 +102,9 @@ parallel-session shared-file freeze lifts.
 
 ### Open follow-ups (smallest first)
 
-1. pii_guard EMAIL_FILES fold-in (above).
-2. Shared-doc rows once safe: CLAUDE.md §7b tab table + `docs/INDEX.md`
-   entries for this lane, and optionally a Dashboard-tab teaser card
-   (generator change — coordinate with the CCR session).
+1. ~~pii_guard EMAIL_FILES fold-in~~ — **DONE PR 3 (2026-06-11)**.
+2. ~~Shared-doc rows~~ — **DONE PR 3**: CLAUDE.md §7b tab-table row + §2
+   file-inventory rows + `docs/INDEX.md` lessons-table row.
 3. `data-sections` sidebar TOC on the pane (the "Sidebar levels" backlog) —
    needs a shell-HTML touch or a JS `setAttribute` before first activation.
 4. New workbook editions: drop at `funding/CPL_Funding_Model_2026.xlsx`,
@@ -113,3 +112,20 @@ parallel-session shared-file freeze lifts.
    model ever becomes curator-editable, follow the Excel→Supabase Phase 2-4
    five-step shape (seed → read-path → editor → RLS) instead of growing the
    workbook.
+
+### 2026-06-11 (later) — freeze lift: CCR-session coordination + shared-file follow-ups
+
+Sam asked to coordinate with the parallel CCR session and move forward.
+**Coordination = repo-state check, since sessions can't message each other:**
+zero open PRs repo-wide, `main`'s tip was this workstream's #353, and the 17
+`claude/*` remote branches are all pre-auto-delete leftovers of merged PRs —
+nothing in flight, so the shared-file freeze lifted. Edits were kept to
+single disjoint rows/lines so even a CCR push mid-flight rebases cleanly.
+Shipped (PR 3): pii_guard EMAIL_FILES + scope-comment line, CLAUDE.md §7b +
+§2 rows, INDEX.md row, these doc updates. **Deliberately skipped: the
+Dashboard teaser card** — the generator hardcodes teasers for only 3 of 12
+tabs (Workplan Goals / Budget / Vision 2030; none of the newer tabs have
+one), so a funding teaser isn't the established pattern AND it's the
+highest-collision file (the generator is where `export_unified_courses`
+lives). Available on request as a small generator edit at the
+`teaser_html` block (~line 10076).
