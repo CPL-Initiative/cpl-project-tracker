@@ -134,6 +134,24 @@ function freshDom() {
   check("null working-adults cells render as —",
     doc.querySelector(".cplfund-table").textContent.indexOf("NaN") === -1);
 
+  // No-horizontal-scroll rule (Sam, 2026-06-11): district names fold to
+  // "… CCD" in a truncating cell with the full name on hover; priority
+  // headers compress to P1/P2/P3 with titles; card variable lines left-align.
+  {
+    const distCell = doc.querySelector(".cplfund-table tbody tr td.trunc");
+    check("district cell folds the CCD suffix + keeps the full name in title",
+      distCell.textContent.indexOf(" CCD") !== -1 &&
+      distCell.textContent.indexOf("Community College District") === -1 &&
+      distCell.getAttribute("title").indexOf("Community College District") !== -1);
+    check("priority headers compress to P1/P2/P3 with explanatory titles",
+      doc.querySelector('th[data-sort="p1"]').textContent.trim().indexOf("P1") === 0 &&
+      doc.querySelector('th[data-sort="p1"]').getAttribute("title") === "Priority 1 allocation");
+    const css = doc.getElementById("cpl-funding-css").textContent;
+    check("priority-card variable lines + metric left-align (CSS rule present)",
+      css.indexOf(".cplfund-prio .p .nums, .cplfund-prio .p .metric { text-align: left; }") !== -1);
+    check("truncating cells cap width with ellipsis", css.indexOf("text-overflow: ellipsis") !== -1);
+  }
+
   // Search narrows the table.
   const input = doc.getElementById("cplFundSearch");
   input.value = "Yuba";
@@ -359,7 +377,7 @@ function freshDom() {
       "Alameda": { p2: 120, p3: 300 },
       "Yuba": { p2: null, p2_suppressed: true, p3: 6 }
     },
-    unmatched: {}
+    unmatched: { "Mystery University": { p2: null, p2_suppressed: true, p3: 7 } }
   };
   window.eval(dataSrc);
   window.eval(consumerSrc);
@@ -374,6 +392,9 @@ function freshDom() {
     doc.querySelector(".cplfund-table tfoot").textContent.indexOf("20,000") !== -1);
   check("footer explains the actuals basis + suppression",
     doc.querySelector(".cplfund-foot").textContent.indexOf("deduplicates across colleges") !== -1);
+  check("a non-empty unmatched bucket is surfaced in the footer",
+    doc.querySelector(".cplfund-foot").textContent.indexOf("Mystery University") !== -1 &&
+    doc.querySelector(".cplfund-foot").textContent.indexOf("could not be matched") !== -1);
 
   // Column values: Alameda 300; a perf-less college renders an em-dash.
   const rowsArr = Array.from(doc.querySelectorAll(".cplfund-table tbody tr"));

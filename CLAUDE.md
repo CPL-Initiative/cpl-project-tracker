@@ -326,6 +326,14 @@ honor them in normal work:
   pattern) over editing the HTML `<style>` blocks — JS is one static file, so it
   covers both HTMLs without a Rule-4 mirror. Only the global `:root` tokens need
   the mirror.
+- **No horizontal scroll whenever feasible (Sam, 2026-06-11).** Tables/grids
+  fit the viewport at desktop widths: tighten cell padding/fonts, truncate
+  long text cells with ellipsis + the full value in `title`, fold redundant
+  suffixes ("X Community College District" → "X CCD"), shorten headers
+  (`P1`/`P2`/`P3` + a `title`), and prefer drill-in rows over extra columns.
+  Keep `overflow-x: auto` on the wrapper only as the narrow-screen safety
+  net — never as the default desktop experience. (First applied: the
+  Implementation Funding college table.)
 - **Prototype UI in a fast-feedback canvas, then port.** For a new tab or visual
   rework, iterate the look in a Claude artifact / claude.ai (live preview), lock
   it with Sam, then implement into the monolith. In-repo analog: the EACR
