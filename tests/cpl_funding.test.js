@@ -62,6 +62,14 @@ check("data: pool math (remaining + one-time − admin − scaling = total)",
 check("data: per-college totals = p1+p2+p3 (≤1¢ rounding)",
   D && D.colleges.every(function (c) { return Math.abs(c.p1 + c.p2 + c.p3 - c.total) < 0.03; }));
 
+// Headcount provenance (Sam, 2026-06-11): vintage label from the workbook's
+// own column header + the CCCCO DataMart source — both carried in the data
+// so the tab cites them and a refreshed workbook edition re-labels itself.
+check("data: headcount_label carries the workbook vintage",
+  D && /MIS ANNUAL HEADCOUNT/i.test(D.headcount_label || ""));
+check("data: headcount_source points at the CCCCO DataMart report",
+  D && D.headcount_source && /datamart\.cccco\.edu/.test(D.headcount_source.url || ""));
+
 // PII: emails (allow-list mirrors tests/pii_guard.test.js) + person-level keys.
 const emails = dataSrc.match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g) || [];
 const badEmails = emails.filter(function (e) {
@@ -123,6 +131,13 @@ function freshDom() {
   const maxCollege = D.colleges.filter(function (c) { return c.total === maxTotal; })[0].college;
   check("sort by Total desc puts the largest college first",
     firstRow.textContent.indexOf(maxCollege) !== -1);
+
+  // Provenance surfaces: footnote cites the DataMart; headcount header
+  // tooltip carries the workbook vintage.
+  check("footnote cites the DataMart headcount source",
+    doc.querySelector(".cplfund-foot").textContent.indexOf("DataMart") !== -1);
+  check("headcount column header tooltips the vintage",
+    (doc.querySelector('th[data-sort="headcount"]').getAttribute("title") || "").indexOf("2022-2023") !== -1);
 
   // No-match search shows the empty-row message, not a blank table.
   const input2 = doc.getElementById("cplFundSearch");

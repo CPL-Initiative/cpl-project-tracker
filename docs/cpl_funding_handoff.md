@@ -74,6 +74,13 @@ the parallel-session freeze is over.
 5. **xlsx export button** — mostly covered: the tab already links the
    committed source workbook. Only build a derived export if Sam asks for
    the on-screen view (then pre-generate; never ship a client xlsx lib).
+5b. **Headcount vintage refresh** — the headcounts are the 2022-23 CCCCO
+   DataMart annual pull (provenance baked into data + tab footnote,
+   2026-06-11). A refresh is **Sam's modeling decision in the workbook**
+   (DataMart Headcount Status filter + partial years shift counts
+   materially — see the lessons doc); pipeline-side it's just: new
+   workbook edition → re-run builder → commit. The vintage label updates
+   itself from the workbook header.
 6. **If the model becomes editable** (allocations negotiated, factors
    tuned): do NOT grow the workbook — follow the Excel→Supabase Phase 2-4
    five-step shape (seed table → read-path cutover → inline editor → RLS

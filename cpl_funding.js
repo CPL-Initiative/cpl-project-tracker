@@ -295,7 +295,8 @@
     var head = cols.map(function (col) {
       var label = col.label === "TOTAL_LABEL" ? totalLabel() : col.label;
       var arr = state.sortKey === col.key ? ' <span class="arr">' + (state.sortDir === 1 ? "▲" : "▼") + "</span>" : "";
-      return '<th class="' + col.cls + '" data-sort="' + col.key + '">' + label + arr + "</th>";
+      var title = (col.key === "headcount" && d.headcount_label) ? ' title="' + esc(d.headcount_label) + '"' : "";
+      return '<th class="' + col.cls + '" data-sort="' + col.key + '"' + title + ">" + label + arr + "</th>";
     }).join("");
     var body;
     if (!rows.length) {
@@ -328,6 +329,20 @@
       "<tbody>" + body + "</tbody>" +
       "<tfoot>" + foot + "</tfoot>" +
       "</table></div>";
+  }
+
+  // Headcount provenance footnote — vintage comes from the workbook's own
+  // column header (carried as headcount_label), source identified by Sam
+  // (2026-06-11): CCCCO MIS DataMart, Annual/Term Student Count, Collegewide.
+  function headcountSourceHtml(d) {
+    if (!d.headcount_label && !d.headcount_source) return "";
+    var src = d.headcount_source || {};
+    var inner = esc(src.name || "source") + (src.selection ? " (" + esc(src.selection) + ")" : "");
+    var linked = src.url
+      ? '<a href="' + esc(src.url) + '" target="_blank" rel="noopener">' + inner + "</a>"
+      : inner;
+    return "<div>College headcounts: " + esc(d.headcount_label || "per the workbook") +
+      " &mdash; " + linked + ".</div>";
   }
 
   // Data-driven honesty note: the 2026-06-11 workbook's college rows sum to
@@ -378,6 +393,7 @@
       "<div>Dollar cells round to whole dollars; click a row to expand its detail. Priority-cell hovers and projected " +
       "student counts are per year, whichever period is shown. " +
       "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the college&#39;s county.</div>" +
+      headcountSourceHtml(d) +
       varianceNoteHtml(d) +
       d.footnotes.map(function (f) { return "<div>" + esc(f) + "</div>"; }).join("") +
       "</div></div>";
