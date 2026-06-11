@@ -80,11 +80,15 @@ the parallel-session freeze is over.
    pseudonymous `View_StudentAggregatedValues` (`Transcribed Credits` per
    student); **P1 (completion) is a data gap** — no award field anywhere in
    the 9-category pull; completions live in MIS. Forks for Sam: ① ratify
-   the ADR defaults (<5 suppression, aggregate-only), ② P1 path (defer +
-   pursue MAP award ingestion — recommended), ③ exclude `Potential Student`
-   rows (recommended). Then the 3-PR ladder in the scope doc: cron-artifact
-   producer (+ workflow git-add + pii_guard fold-in) → tab "actual vs
-   target" consumer → P1 when a source lands.
+   the ADR defaults (<5 suppression, aggregate-only) — **OPEN**; ② P1 path
+   — **ANSWERED 2026-06-11**: the gap stays deliberately, as an incentive
+   (SIS-duplication + identity-join anatomy + the full strategy ladder in
+   [`kb-notes/reference-p1-completion-data-gap.md`](kb-notes/reference-p1-completion-data-gap.md));
+   ③ exclude `Potential Student` rows (recommended) — **OPEN**. Once ① + ③
+   land: the 3-PR ladder in the scope doc — cron-artifact producer (+
+   workflow git-add + pii_guard fold-in) → tab "actual vs target" consumer
+   (P1 rendered as a labeled incentive-gap state, never blank) → P1 when a
+   source lands.
 5. **xlsx export button** — mostly covered: the tab already links the
    committed source workbook. Only build a derived export if Sam asks for
    the on-screen view (then pre-generate; never ship a client xlsx lib).

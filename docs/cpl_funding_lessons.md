@@ -157,6 +157,21 @@ workbook-variance footnote is suppressed while modified (it describes the
 workbook, not the sandbox). The CCC-headcount input tooltips the corrected
 list sum (2,199,157) so testing the fixed model is one paste. Tests 50 → 67.
 
+### 2026-06-11 (P1 gap) — fork ② answered; the gap's anatomy + strategy captured as a KB note
+
+Sam answered the P1 fork with the full domain story (completions live in
+SIS — Banner/Colleague/PeopleSoft — not MAP; DataMart aggregates untieable;
+MAP Student IDs inconsistent until CCCApply; probable fix = periodic
+SIS→MAP routine) and the deliberate decision: **the unmeasurable metric
+stays, as an incentive to close the gap**, aiming at a CA replication of
+the CAEL-WICHE completion effect. Per his ask, the reasons + procedures +
+strategies are now first-class project learning:
+[`kb-notes/reference-p1-completion-data-gap.md`](kb-notes/reference-p1-completion-data-gap.md)
+(identity-first P3 sub-indicator, P1 maturity ladder, CO-level match-back
+before 116 SIS integrations, decoupled CAEL replication study, provenance
+stamps, labeled dashboard state). Scope doc P1 section updated; forks ① + ③
+still open before the P2/P3 producer ships.
+
 ### 2026-06-11 (rev2) — recommendations APPLIED: the workbook is now shares-first
 
 Sam: "Great recommendations! Make the changes." All four applied to

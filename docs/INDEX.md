@@ -94,6 +94,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Rank a cleanup queue by downstream impact, not structural leverage](kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Coarse TOP-division discipline fallback (make the orphan tail visible)](kb-notes/methodology-coarse-top-division-discipline-fallback.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Surface a finer derived layer on a single-grain reference tab](kb-notes/methodology-surface-derived-layer-on-single-grain-tab.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [ADR — Per-college funding-priority metric counts (aggregate + suppression)](kb-notes/adr-funding-priority-metrics-privacy.md) | adr | **proposed** | 2026-06-11 | 2026-06-11 |
+| [Reference — The P1 completion-data gap (why completions aren't in MAP; the strategy ladder out)](kb-notes/reference-p1-completion-data-gap.md) | reference | published | 2026-06-11 | 2026-06-11 |
 
 ---
 
