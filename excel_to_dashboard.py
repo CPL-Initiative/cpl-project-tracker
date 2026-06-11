@@ -5017,6 +5017,8 @@ def _write_cpl_by_discipline_json(odir):
     if not roll:
         return None
     path = os.path.join(odir, "kb", "discipline_cpl_rollup.json")
+    # A fresh UC_OUT_DIR seam dir has no kb/ subdir — don't crash the export.
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     payload = {
         "_about": "CSR rollup — earned MAP articulations grouped by discipline (the "
                   "CER/EACR · CCR · CSR 'three grains' family; this is the discipline "
@@ -6991,6 +6993,11 @@ def export_unified_courses():
     # each day. Omitted entirely if the CER file is absent (degrades to no columns).
     cer_elig, cer_stu = {}, {}
     _cer_path = os.path.join(odir, "credential_reference_data.js")
+    if not os.path.exists(_cer_path):
+        # The CER is an INPUT here (yesterday's committed file at the repo
+        # root); a fresh UC_OUT_DIR seam dir has no copy — fall back to the
+        # repo so a /tmp preview regen doesn't silently drop the eu/st join.
+        _cer_path = os.path.join(SCRIPT_DIR, "credential_reference_data.js")
     if os.path.exists(_cer_path):
         try:
             _ct = open(_cer_path, encoding="utf-8").read()

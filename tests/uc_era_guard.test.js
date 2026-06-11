@@ -50,7 +50,11 @@ function build(dataStamp, membersStamp) {
 </script>
 </body></html>`;
   const dom = new JSDOM(html, { runScripts: "dangerously", url: "https://example.org/" });
-  dom.window.fetch = () => Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([]) });
+  dom.window._fetched = [];
+  dom.window.fetch = (url) => {
+    dom.window._fetched.push(String(url));
+    return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([]) });
+  };
   dom.window.eval(src);
   return dom.window;
 }
@@ -79,6 +83,12 @@ function build(dataStamp, membersStamp) {
   await sleep(120);
   check("same-era expand shows NO banner",
     !w2.document.getElementById("uc-era-warning"));
+
+  // 3. the audit overlay fetch carries the era buster (it was the one lazy
+  //    fetch without ?v= — a cached stale copy survived deploys)
+  check("audit fetch is era-busted (?v=<dataset stamp>)",
+    w2._fetched.some((u) => u.indexOf("kb/row_audit/latest.json?v=" +
+      encodeURIComponent("2026-06-11 15:00")) >= 0));
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
