@@ -341,10 +341,10 @@ ALGO_DESCRIPTIONS = {
         "last_modified": "2026-04-19",
     },
     "statewide_exhibits": {
-        "source":      "MAP Custom Reporting Module (View_ArticulatedMAPExhibits), rows whose Collaborative Type contains 'CCC'.",
-        "formula":     "Exhibits = distinct credential groups (unified title + issuer + CPL type, the same grouping as the Exhibit Adoption table) with at least one CCC Collaborative row. Credit Recommendations = distinct (course, credit) pairs across each group's CCC rows. Adoptions = CCC rows carrying an Articulation College (one row = one college articulating one credit recommendation). Disciplines via each group's first TOP code (TOP_Code_Lookup.xlsx).",
+        "source":      "MAP Custom Reporting Module (View_ArticulatedMAPExhibits), rows whose Collaborative Type contains 'CCC'. Program-area categories per the Statewide CPL page (map.rccd.edu/statewidecpl), curated in kb/statewide_exhibit_categories.json.",
+        "formula":     "Exhibits = distinct credential groups (unified title + issuer + CPL type, the same grouping as the Exhibit Adoption table) with at least one CCC Collaborative row. Credit Recommendations = distinct (course, credit) pairs across each group's CCC rows. Adoptions = CCC rows carrying an Articulation College (one row = one college articulating one credit recommendation). Each exhibit's program area comes from the curated title map (keyword-rule fallback for new titles).",
         "assumptions": "Tracks the CCC Collaborative statewide-standards work (the ASCCC focus project). A mixed group counts as statewide if ANY constituent exhibit row is CCC; only its CCC rows feed the rec/adoption counts.",
-        "caveats":     "TOP codes vary by college — a multi-TOP group is assigned its alphabetically-first TOP's discipline (same representative-pick rule as the Exhibit Adoption table). Exhibits with no TOP-mapped discipline appear as 'Not Mapped' in the per-discipline list and are excluded from the Discipline Areas count. Distinct credit recs ≠ the row-count 'Collaborative Credit Recs' on the adoption card (that metric counts raw articulation rows).",
+        "caveats":     "Titles not yet in the curated map fall back to keyword rules, then to an 'Other Statewide' bucket (shown in the rollup, excluded from the Program Areas count) — edit kb/statewide_exhibit_categories.json to reassign. Distinct credit recs ≠ the row-count 'Collaborative Credit Recs' on the adoption card (that metric counts raw articulation rows).",
         "last_modified": "2026-06-11",
     },
     "active_colleges": {
@@ -1650,8 +1650,11 @@ def render_kpi_section_html(kpis, kpi_display_order=None, kpi_params=None):
 
         algo_html = render_algo_details(key, params=kpi_params)
 
+        # "wide" cards span 2 grid columns (the Statewide Exhibits per-category
+        # rollup) — CSS lives in EXHIBIT_ANALYSIS_CSS (.kpi-card-wide).
+        card_cls = "kpi-card kpi-card-wide" if kpi.get("wide") else "kpi-card"
         cards_html += (
-            f'        <div class="kpi-card">\n'
+            f'        <div class="{card_cls}">\n'
             f'            <div class="kpi-number">{kpi["value"]}</div>\n'
             f'            <div class="kpi-label">{kpi["label"]}</div>\n'
             f'            {sub_html}\n'
@@ -3937,22 +3940,31 @@ def _parse_exhibits(datasets):
         local_credit_recs = len(rows) - ccc_credit_recs
         local_exhibit_groups = exhibit_groups - ccc_exhibit_groups
 
-        # Statewide-by-discipline rollup: one discipline per CCC group via its
-        # first sorted TOP code; groups with no TOP land in "Not Mapped" (kept
-        # as a rollup row, excluded from the headline discipline count).
+        # Statewide-by-category rollup: one program-area category per CCC group
+        # via the curated kb/statewide_exhibit_categories.json (the categories
+        # on map.rccd.edu/statewidecpl/). Unmatched titles land in the JSON's
+        # fallback bucket. When the JSON is absent, fall back to the broad
+        # TOP-code discipline (first sorted TOP, "Not Mapped" when none) so
+        # the card still renders. Residual buckets are kept as rollup rows but
+        # excluded from the headline category count.
+        sw_cats = _load_statewide_categories()
+        sw_residual = {"Not Mapped", sw_cats.get("fallback") if sw_cats else "Other Statewide"}
         sw_by_disc = {}
         for grp in ccc_exhibit_groups:
-            tops = sorted(grp_tops.get(grp, ()))
-            disc = _top_disc(top_lookup, tops[0] if tops else "")
+            if sw_cats:
+                disc = _statewide_category(grp[0], sw_cats)
+            else:
+                tops = sorted(grp_tops.get(grp, ()))
+                disc = _top_disc(top_lookup, tops[0] if tops else "")
             d = sw_by_disc.setdefault(disc, {"exhibits": 0, "credit_recs": 0, "adoptions": 0})
             d["exhibits"] += 1
             d["credit_recs"] += len(ccc_grp_recs.get(grp, ()))
             d["adoptions"] += ccc_grp_adoptions.get(grp, 0)
         sw_disc_rows = [
-            {"discipline": k, "exhibits": v["exhibits"],
+            {"category": k, "exhibits": v["exhibits"],
              "credit_recs": v["credit_recs"], "adoptions": v["adoptions"]}
             for k, v in sorted(sw_by_disc.items(),
-                               key=lambda kv: (-kv[1]["exhibits"], kv[0]))
+                               key=lambda kv: (kv[0] in sw_residual, -kv[1]["exhibits"], kv[0]))
         ]
 
         return {
@@ -3971,10 +3983,12 @@ def _parse_exhibits(datasets):
                 # Statewide Exhibits KPI card payload. distinct_credit_recs
                 # dedupes (course, credit) per group — unlike credit_recs above,
                 # which counts raw CCC rows (the historical row-count metric).
-                "disciplines": sum(1 for r in sw_disc_rows if r["discipline"] != "Not Mapped"),
+                "category_count": sum(1 for r in sw_disc_rows
+                                      if r["category"] not in sw_residual),
                 "distinct_credit_recs": sum(r["credit_recs"] for r in sw_disc_rows),
                 "rec_adoptions": sum(r["adoptions"] for r in sw_disc_rows),
-                "by_discipline": sw_disc_rows,
+                "by_category": sw_disc_rows,
+                "in_progress": sw_cats.get("in_progress", []) if sw_cats else [],
             },
             "local": {
                 "credit_recs": local_credit_recs,
@@ -4020,10 +4034,11 @@ def _parse_exhibits(datasets):
                 "unique_exhibits": 0,
                 "adopting_colleges": 0,
                 "college_names": [],
-                "disciplines": 0,
+                "category_count": 0,
                 "distinct_credit_recs": 0,
                 "rec_adoptions": 0,
-                "by_discipline": [],
+                "by_category": [],
+                "in_progress": [],
             },
             "local": {
                 "credit_recs": len(rows),
@@ -4146,28 +4161,35 @@ def merge_exhibit_metrics(kpis, exhibit_data):
 
     # ── 3b. STATEWIDE EXHIBITS KPI — the CCC Collaborative / ASCCC focus card ──
     # Deliberately a NEW card (not folded into the adoption card above): it adds
-    # discipline coverage + distinct credit recs + rec adoptions, total and per
-    # discipline. Skipped when the rollup is absent (fallback dataset has no
-    # Collaborative Type column).
-    sw_disc = ccc.get("by_discipline") or []
+    # program-area coverage + distinct credit recs + rec adoptions, total and
+    # per category (the map.rccd.edu/statewidecpl program areas). Renders
+    # doublewide ("wide") so the per-category rollup gets a 2-column footnote.
+    # Skipped when the rollup is absent (fallback dataset has no Collaborative
+    # Type column).
+    sw_disc = ccc.get("by_category") or []
     if sw_disc:
-        fn = ["By discipline — exhibits · credit recs · adoptions"]
+        fn = ["By program area — exhibits · credit recs · adoptions"]
         for r in sw_disc:
-            fn.append(f'{r["discipline"]}: {_fmt_int(r["exhibits"])} · '
+            fn.append(f'{r["category"]}: {_fmt_int(r["exhibits"])} · '
                       f'{_fmt_int(r["credit_recs"])} · {_fmt_int(r["adoptions"])}')
+        # Workgroups in motion (no articulated exhibits yet), verbatim from
+        # the categories JSON — mirrors the statewide CPL page's listing.
+        for item in ccc.get("in_progress", []):
+            fn.append(f'<em>{item}</em>')
         kpis["statewide_exhibits"] = {
             "value": _fmt_int(ccc["unique_exhibits"]),
             "label": "Statewide Exhibits",
             "sub": "CCC Collaborative standards in MAP",
             "breakdowns": [
-                {"label": "Discipline Areas", "value": _fmt_int(ccc.get("disciplines", 0)),
-                 "note": "by TOP code"},
+                {"label": "Program Areas", "value": _fmt_int(ccc.get("category_count", 0)),
+                 "note": "statewide workgroup categories"},
                 {"label": "Credit Recommendations", "value": _fmt_int(ccc.get("distinct_credit_recs", 0)),
                  "note": "distinct course recs"},
                 {"label": "Adoptions", "value": _fmt_int(ccc.get("rec_adoptions", 0)),
                  "note": "college articulations of those recs"},
             ],
             "footnote": fn,
+            "wide": True,
             "live": True,
         }
 
@@ -4262,6 +4284,61 @@ def _top_sector(top_lookup, code, default=""):
     if isinstance(entry, dict):
         return entry.get("sector") or default
     return default
+
+
+# ── Statewide exhibit program-area categories ───────────────────────────
+# kb/statewide_exhibit_categories.json maps each statewide (CCC Collaborative)
+# exhibit title to the program-area categories listed on
+# https://map.rccd.edu/statewidecpl/ (curated; seeded by
+# kb/_seed_statewide_categories.py). Drives the Statewide Exhibits KPI card's
+# per-category rollup. When the file is absent the card falls back to broad
+# TOP-code disciplines (the pre-category behavior).
+_STATEWIDE_CATS_CACHE = None
+
+
+def _load_statewide_categories():
+    """Return {titles, patterns, fallback, in_progress} or {} when unavailable.
+    Title keys + pattern fragments are casefolded for matching; a leading "^"
+    on a pattern fragment anchors it to the start of the title."""
+    global _STATEWIDE_CATS_CACHE
+    if _STATEWIDE_CATS_CACHE is not None:
+        return _STATEWIDE_CATS_CACHE
+    path = os.path.join(SCRIPT_DIR, "kb", "statewide_exhibit_categories.json")
+    cats = {}
+    if os.path.exists(path):
+        try:
+            with open(path, encoding="utf-8") as f:
+                raw = json.load(f)
+            cats = {
+                "titles": {k.strip().casefold(): v
+                           for k, v in (raw.get("titles") or {}).items()},
+                "patterns": [(p[0].casefold(), p[1])
+                             for p in (raw.get("patterns") or [])],
+                "fallback": raw.get("fallback", "Other Statewide"),
+                "in_progress": raw.get("in_progress") or [],
+            }
+        except Exception as e:
+            print(f"  WARNING: could not load statewide_exhibit_categories.json: {e}")
+            cats = {}
+    _STATEWIDE_CATS_CACHE = cats
+    return cats
+
+
+def _statewide_category(title, cats):
+    """Program-area category for a statewide exhibit title: exact
+    (case-insensitive) match first, then the ordered pattern rules (future
+    titles not yet seeded), else the fallback bucket."""
+    key = (title or "").strip().casefold()
+    hit = cats["titles"].get(key)
+    if hit:
+        return hit
+    for frag, cat in cats["patterns"]:
+        if frag.startswith("^"):
+            if key.startswith(frag[1:]):
+                return cat
+        elif frag in key:
+            return cat
+    return cats["fallback"]
 
 
 # ── Credential identity layer (kb/unified_titles.json + kb/credentials.json) ──
@@ -8122,6 +8199,19 @@ EXHIBIT_ANALYSIS_CSS = """
 .budget-cell.budget-saving { background:#FFF6D9; }
 .budget-cell.budget-saved { background:#DBF0DD; }
 .budget-cell.budget-error { background:#F7D9D9; }
+/* ─── Doublewide KPI card (Statewide Exhibits per-category rollup) ─── */
+.kpi-card-wide { grid-column: span 2; }
+.kpi-card-wide .kpi-footnote {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.4rem;
+}
+.kpi-card-wide .kpi-footnote .kpi-fn-item:first-child { grid-column: 1 / -1; }
+.kpi-card-wide .kpi-fn-item { font-size: 0.68rem; }
+@media (max-width: 640px) {
+    .kpi-card-wide { grid-column: auto; }
+    .kpi-card-wide .kpi-footnote { display: block; }
+}
 .cpl-analytics-body,
 .activity-kpi-body {
     background-color: #ffffff;
