@@ -216,6 +216,91 @@ function freshDom() {
     doc.querySelectorAll(".cplfund-table tbody tr").length < distinctDistricts);
 }
 
+// C1c — what-if sandbox: pools / headcount / factors / projection % editable,
+// everything recomputes via the workbook's own formula chain; per-browser
+// persistence; reset; the BALANCE readout goes red when edits un-balance the
+// model (shares ≠ 100%).
+{
+  const { window } = freshDom();
+  window.eval(dataSrc);
+  window.eval(consumerSrc);
+  window.CPL_FUNDING_TAB.boot();
+  const doc = window.document;
+  function click(el) { el.dispatchEvent(new window.Event("click", { bubbles: true })); }
+  function commit(sel, v) {
+    const inp = doc.querySelector(sel);
+    inp.value = v;
+    inp.dispatchEvent(new window.Event("change"));
+  }
+
+  check("sandbox banner renders; pristine shows no modified pill",
+    doc.querySelector(".cplfund-sandbox") && !doc.querySelector(".cplfund-sandbox .mod"));
+  check("pool inputs carry the workbook values",
+    doc.querySelector('input[data-wf="oneTime"]').value === "35,000,000" &&
+    doc.querySelector('input[data-wf="rate"][data-i="2"]').value === "4.6666666");
+  check("pristine balance card reads $0",
+    doc.querySelector(".cplfund-cards .cplfund-card:last-child .v").textContent.trim() === "$0");
+
+  // Edit the 2026-27 pool: 35,000,000 → 23,400,000 ⇒ net 2026-30 = $23,200,000.
+  commit('input[data-wf="oneTime"]', "23,400,000");
+  check("edit shows the modified pill + Reset button",
+    doc.querySelector(".cplfund-sandbox .mod") && doc.getElementById("cplFundReset"));
+  check("hero recomputes the 2026-30 pool to $23,200,000",
+    doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$23,200,000") !== -1);
+  check("balance stays $0 while shares still sum to 100%",
+    doc.querySelector(".cplfund-cards .cplfund-card:last-child .v").textContent.trim() === "$0");
+  // College rows rescale per the workbook formula chain (same op order).
+  {
+    const perStudent = (23200000 / 3) / D.pool.ccc_headcount;
+    let exp = 0;
+    D.priorities.forEach((p) => { exp += (D.colleges[0].headcount * p.rate) * perStudent * p.factor; });
+    check("college rows recompute (first row total matches the formula)",
+      doc.querySelector(".cplfund-table tbody tr").textContent.indexOf("$" + Math.round(exp).toLocaleString("en-US")) !== -1);
+  }
+  const stored = window.localStorage.getItem("cpl_funding_whatif_v1");
+  check("edit persists to localStorage", !!stored);
+
+  // P1 projection 5% → 10% ⇒ P1 share 60%, shares sum 130% ⇒ warn + red balance.
+  commit('input[data-wf="rate"][data-i="0"]', "10");
+  check("priority share recomputes (60% of each tranche)",
+    doc.querySelector(".cplfund-prio .p .share").textContent.indexOf("60%") !== -1);
+  check("formula line warns when shares no longer sum to 100%",
+    (doc.querySelector(".cplfund-formula .cplfund-warn-text") || { textContent: "" }).textContent.indexOf("130") !== -1);
+  check("balance goes red when the model over-allocates",
+    !!doc.querySelector(".cplfund-cards .cplfund-warn-text"));
+  check("workbook-variance footnote suppressed while modified",
+    doc.querySelector(".cplfund-foot").textContent.indexOf("source-workbook variance") === -1);
+
+  // Typing the workbook values back returns to pristine (pill + storage clear).
+  commit('input[data-wf="rate"][data-i="0"]', "5");
+  commit('input[data-wf="oneTime"]', "35,000,000");
+  check("typing workbook values back returns to pristine",
+    !doc.querySelector(".cplfund-sandbox .mod") && !window.localStorage.getItem("cpl_funding_whatif_v1"));
+
+  // Headcount is editable (the corrected-sum experiment) and Reset restores all.
+  commit('input[data-wf="headcount"]', "2,199,157");
+  check("headcount edit shifts the per-student rate to $5.27",
+    doc.querySelector(".cplfund-cards").textContent.indexOf("$5.27") !== -1);
+  click(doc.getElementById("cplFundReset"));
+  check("Reset restores the workbook model ($34,800,000 hero, no pill)",
+    doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$34,800,000") !== -1 &&
+    !doc.querySelector(".cplfund-sandbox .mod"));
+  check("Reset clears localStorage", !window.localStorage.getItem("cpl_funding_whatif_v1"));
+
+  // Persistence: a fresh boot with a stored sandbox re-applies it.
+  {
+    const dom2 = freshDom();
+    const w2 = dom2.window;
+    w2.localStorage.setItem("cpl_funding_whatif_v1", stored);
+    w2.eval(dataSrc);
+    w2.eval(consumerSrc);
+    w2.CPL_FUNDING_TAB.boot();
+    check("a stored sandbox re-applies on fresh boot ($23,200,000 hero + pill)",
+      w2.document.querySelector(".cplfund-card.hero .v").textContent.indexOf("$23,200,000") !== -1 &&
+      !!w2.document.querySelector(".cplfund-sandbox .mod"));
+  }
+}
+
 // C2 — failure mode: data never arrives (404 → loadScript fails soft).
 {
   const { window } = freshDom();
