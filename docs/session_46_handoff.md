@@ -8,7 +8,7 @@ related:
   - docs/ccr_cluster_cleanup_lessons.md (Session 45 section — the full story)
   - docs/cid_articulation_authority_scope.md (§8/§9 — Phase 3 + what's next)
   - docs/kb-notes/methodology-college-homonym-subject-codes.md (the durable lesson)
-moniker_suggestion: Session 45 ran unnamed (two Session-44s collided that day — check git log before claiming a number); claim your own moniker
+moniker_suggestion: Session 45 ran as "Hercules Bruh" (Sam's coinage at close — "powerlifted boulders"; note two Session-44s collided that day, so check git log before claiming a number); claim your own moniker
 ---
 
 # Session 46 Hand-off Prompt
