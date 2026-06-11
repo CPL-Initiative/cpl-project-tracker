@@ -1,7 +1,7 @@
 ---
 title: C-ID articulation authority — per-college official articulations as a CCR evidence tier (the math cleanup)
 date: 2026-06-11
-status: PHASE 0 BUILT (seed + joiner + this scope, Session 42) — Phase 1 GATED on the full MATH export from c-id.net (Sam-supplied; the site 403s session containers)
+status: PHASE 0 BUILT + FULL DATA LANDED (Session 42) — Sam supplied the statewide extract (27,379 rows) same-day; ingest + set-aware joiner built; join artifact committed. NEXT = the Phase-1 generator member routing (design §4, gates unchanged)
 session: 42
 tags: [scope, ccr, c-id, m-id, math, articulation-authority, rules-based-merging, knowledge-base]
 related:
@@ -143,18 +143,44 @@ Procedure additions:
   `kb/reference/cid_articulations.json` `articulations[]`. The joiner
   validates everything else.
 
-## 7. Phases
+## 7. The full extract (landed 2026-06-11, same session)
+
+Sam supplied the **statewide** export (`kb/reference/cid_articulations_raw.csv`,
+27,379 rows; descriptions deliberately absent — the descriptor catalog
+`cid_descriptors.json` remains the description source).
+`kb/_ingest_cid_articulations.py` normalizes it (CSU rows dropped; the
+`" + "` zip convention decoded — distinct colleges = district-shared
+approvals, a repeated college = a COURSE SEQUENCE, flagged + excluded from
+routing; college-name aliases measured, the lone residual was Barstow):
+**28,070 CCC articulations, 475 descriptors, 115 colleges; 1,537 MATH rows
+across all 20 MATH descriptors.**
+
+`kb/_join_cid_articulations.py` (set-aware: a course can hold approvals under
+several descriptors — 1,820 statewide, dominated by series∧component pairs;
+COCI's CIDNumber is itself parsed as a set; sequence rows count toward a
+course's approval set but never route):
+
+| disposition | n |
+|---|---|
+| `already_claimed` | 10,741 |
+| `compatible_multi` | 615 |
+| **`new_authority`** | **9,676** |
+| `coci_conflict` (true disagreements) | 76 |
+| `unmatched` (likely renumbered since approval) | 3,976 |
+
+The naive conflict count was 1,252; set-awareness + sequence-set absorption
+reduced it to **76 genuine curation items**. **3,917 identities hold 9,072
+routable members.** Flagship confirmations: `MATH M1175` "Calculus I" routes
+**7 → MATH 210, 3 → MATH 211** (the unfoldable `cid_conflict` row splits on
+per-college authority); `MATH M1185` "Calculus II" routes 7 → MATH 220,
+4 → MATH 221.
+
+## 8. Phases
 
 | Phase | What | Status |
 |---|---|---|
-| 0 | Seed reference (10 MATH 210 rows) + joiner + this scope | **BUILT (Session 42)** |
-| 1 | Full MATH export (20 descriptors) → `--write` → generator member routing + dry-run gates + CCR regression set | GATED on Sam's export |
+| 0 | Seed reference (10 MATH 210 rows) + joiner + this scope | **BUILT** (#362) |
+| 0b | Full statewide extract + ingest + set-aware joiner + committed join artifact | **BUILT (Session 42)** |
+| 1 | Generator member routing (§4; MATH descriptors first) + dry-run gates + CCR regression set | NEXT |
 | 2 | C-ID↔CCN `ccn_equiv` cross-reference (the COMM 130/C1004 class) | after 1 |
-| 3 | Statewide exports (491 descriptors) + termly refresh procedure | after 1 proves at math scale |
-
-## 8. What Sam supplies
-
-The c-id.net approved-courses table for the **20 MATH descriptors** (paste or
-export — any consistent columnar form; the seed shows the shape). Math first
-because: highest fragmentation (405 calculus-titled identities), the
-flagship unfoldable rows, and number-heavy titles that defeat lexical rules.
+| 3 | Routing beyond MATH (the other 455 descriptors) + termly refresh procedure | after 1 proves at math scale |
