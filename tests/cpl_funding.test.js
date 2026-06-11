@@ -35,13 +35,15 @@ check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
   check("shell " + pair[0] + " present (CPL_Dashboard.html)", cpl.indexOf(pair[1]) !== -1);
   check("shell " + pair[0] + " present (index.html)", idx.indexOf(pair[1]) !== -1);
 });
-["cpl_funding.js", "cpl_funding_data.js"].forEach(function (f) {
+["cpl_funding.js", "cpl_funding_data.js", "cpl_funding_performance.js"].forEach(function (f) {
   check("no eager <script> for " + f, idx.indexOf('<script src="' + f + '">') === -1);
 });
 
 const consumerSrc = fs.readFileSync("cpl_funding.js", "utf8");
 check("consumer lazy-loads cpl_funding_data.js via CPL_TABS.loadScript",
   /CPL_TABS\.loadScript\("cpl_funding_data\.js",\s*"CPL_FUNDING"/.test(consumerSrc));
+check("consumer lazy-loads cpl_funding_performance.js (fail-soft actuals)",
+  /CPL_TABS\.loadScript\("cpl_funding_performance\.js",\s*"CPL_FUNDING_PERF"/.test(consumerSrc));
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Part B — data artifact: schema + PII scan
@@ -94,7 +96,11 @@ check("PII: no person-level keys in the data artifact", !PERSON_KEYS.test(dataSr
 // ─────────────────────────────────────────────────────────────────────────────
 function freshDom() {
   const dom = new JSDOM(
-    '<!DOCTYPE html><html><head></head><body><div id="cplFundingMount">placeholder</div></body></html>',
+    '<!DOCTYPE html><html><head></head><body>' +
+    '<div class="cpl-tab-pane" id="tab-implementation-funding"><div class="main-container">' +
+    '<div><h2>CPL Implementation Funding</h2></div>' +
+    '<div id="cplFundingMount">placeholder</div>' +
+    "</div></div></body></html>",
     { runScripts: "outside-only", url: "https://example.org/" });
   dom.window.scrollTo = function () {};
   return dom;
@@ -116,6 +122,12 @@ function freshDom() {
   check("SYSTEM pinned as tfoot total row (not a body row)",
     doc.querySelector(".cplfund-table tfoot").textContent.indexOf("SYSTEM") !== -1);
   check("scoped CSS injected once", doc.querySelectorAll("#cpl-funding-css").length === 1);
+  // DRAFT chip (Sam: the tab is shared in the field while the model is in
+  // revision) — in the pane header, exactly once even across re-renders.
+  window.CPL_FUNDING_TAB.render();
+  check("DRAFT chip renders in the pane header, once",
+    doc.querySelectorAll("#cplFundingDraftChip").length === 1 &&
+    doc.querySelector("#tab-implementation-funding h2 .cplfund-draftchip").textContent === "Draft");
   check("uses var(--token) CSS, no raw hex", !/#[0-9a-fA-F]{3,6}\b/.test(doc.getElementById("cpl-funding-css").textContent));
 
   // Null census cells render as an em-dash, never NaN.
@@ -322,6 +334,75 @@ function freshDom() {
   }
 }
 
+// C1d — priority-metric actuals (P2/P3 per the ratified ADR; P1 = labeled gap).
+{
+  // WITHOUT the perf artifact: hints + the P1 incentive label, dashes in the column.
+  const { window } = freshDom();
+  window.eval(dataSrc);
+  window.eval(consumerSrc);
+  window.CPL_FUNDING_TAB.boot();
+  const doc = window.document;
+  check("P1 card carries the labeled incentive-gap state (no perf needed)",
+    doc.querySelector(".cplfund-prio .p").textContent.indexOf("awaiting completion data") !== -1);
+  check("P2/P3 cards hint that actuals arrive with the daily refresh",
+    doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("next daily data refresh") !== -1);
+  check("CPL-students column renders dashes without the artifact",
+    doc.querySelector(".cplfund-table tbody tr td:nth-child(6)").textContent.trim() === "—");
+}
+{
+  // WITH a synthetic perf artifact (the shape the producer emits).
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = {
+    as_of: "2026-06-11", suppress_below: 5,
+    statewide: { p2: 9000, p3: 20000 },
+    colleges: {
+      "Alameda": { p2: 120, p3: 300 },
+      "Yuba": { p2: null, p2_suppressed: true, p3: 6 }
+    },
+    unmatched: {}
+  };
+  window.eval(dataSrc);
+  window.eval(consumerSrc);
+  window.CPL_FUNDING_TAB.boot();
+  const doc = window.document;
+  function click(el) { el.dispatchEvent(new window.Event("click", { bubbles: true })); }
+
+  const p2card = doc.querySelectorAll(".cplfund-prio .p")[1];
+  check("P2 card shows the statewide actual vs target",
+    p2card.textContent.indexOf("9,000") !== -1 && p2card.textContent.indexOf("of target") !== -1);
+  check("tfoot carries the deduplicated statewide P3 actual (20,000)",
+    doc.querySelector(".cplfund-table tfoot").textContent.indexOf("20,000") !== -1);
+  check("footer explains the actuals basis + suppression",
+    doc.querySelector(".cplfund-foot").textContent.indexOf("deduplicates across colleges") !== -1);
+
+  // Column values: Alameda 300; a perf-less college renders an em-dash.
+  const rowsArr = Array.from(doc.querySelectorAll(".cplfund-table tbody tr"));
+  const alaRow = rowsArr.find((tr) => tr.textContent.indexOf("Alameda") !== -1);
+  check("Alameda's CPL-students cell shows the P3 actual (300)",
+    alaRow.querySelector("td:nth-child(6)").textContent.trim() === "300");
+  const venRow = rowsArr.find((tr) => tr.textContent.indexOf("Ventura") !== -1);
+  check("a college absent from the artifact renders —",
+    venRow.querySelector("td:nth-child(6)").textContent.trim() === "—");
+
+  // Sorting by the actuals column puts Alameda (300) first.
+  click(doc.querySelector('th[data-sort="p3a"]'));
+  check("sort by CPL students puts the highest actual first",
+    doc.querySelector(".cplfund-table tbody tr").textContent.indexOf("Alameda") !== -1);
+
+  // Drill-ins: vs-target on a visible count; "<5" on a suppressed one.
+  click(doc.querySelector(".cplfund-table tbody tr"));   // Alameda (sorted first)
+  let detail = doc.querySelector("tr.cplfund-detail");
+  check("drill-in shows actual vs target for visible counts",
+    detail.textContent.indexOf("actual 300") !== -1 && detail.textContent.indexOf("of target") !== -1);
+  click(doc.querySelector(".cplfund-table tbody tr"));   // collapse
+  const yubaRow = Array.from(doc.querySelectorAll(".cplfund-table tbody tr"))
+    .find((tr) => tr.textContent.indexOf("Yuba") !== -1);
+  click(yubaRow);
+  detail = doc.querySelector("tr.cplfund-detail");
+  check("drill-in renders a suppressed P2 actual as <5",
+    detail.textContent.indexOf("<5") !== -1);
+}
+
 // C2 — failure mode: data never arrives (404 → loadScript fails soft).
 {
   const { window } = freshDom();
@@ -335,6 +416,8 @@ function freshDom() {
   check("missing-data boot does not throw", !threw);
   check("missing-data renders graceful empty state",
     window.document.getElementById("cplFundingMount").textContent.indexOf("unavailable") !== -1);
+  check("DRAFT chip shows even in the no-data state",
+    !!window.document.getElementById("cplFundingDraftChip"));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

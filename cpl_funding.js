@@ -78,6 +78,7 @@
     ".cplfund-ed-s:focus { outline: none; border-color: var(--gold-accent); }",
     ".cplfund-warn-text { color: var(--red-alert); font-weight: 600; }",
     ".cplfund .dk { color: var(--text-muted); font-weight: 400; }",
+    ".cplfund-draftchip { display: inline-block; margin-left: 10px; vertical-align: middle; background: var(--yellow-warning); color: var(--navy-primary); font-size: .42em; font-weight: 700; letter-spacing: .08em; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }",
     "@media (max-width: 700px) { .cplfund-toolbar input { min-width: 140px; flex: 1; } }"
   ].join("\n");
 
@@ -234,6 +235,22 @@
       ' value="' + esc(value) + '" aria-label="' + esc(opts.label || field) + '">';
   }
 
+  // ── priority-metric actuals (cron artifact; may not exist yet) ─────────
+  // window.CPL_FUNDING_PERF — per-college P2/P3 distinct-student counts,
+  // small-cell suppressed per the ratified ADR. P1 is a deliberate data gap
+  // (docs/kb-notes/reference-p1-completion-data-gap.md) and renders as a
+  // labeled incentive state, never a blank.
+  function perf() { return window.CPL_FUNDING_PERF || null; }
+  function perfFor(collegeName) {
+    var p = perf();
+    return (p && p.colleges && p.colleges[collegeName]) || null;
+  }
+  function fmtActual(rec, key) {
+    if (!rec) return "—";
+    if (rec[key] == null) return rec[key + "_suppressed"] ? "&lt;5" : "—";
+    return fmtInt(rec[key]);
+  }
+
   // ── render pieces ─────────────────────────────────────────────────────
   function poolCardsHtml(d) {
     var p = d.pool;
@@ -270,8 +287,24 @@
         '<p class="nums">Projection target ' + edInput("target", fmtRatePct(p.target_rate), { small: true, idx: i, label: p.label + " projection target percent of headcount" }) +
         "% of headcount" + (sysHeads != null ? " &rarr; " + fmtInt(sysHeads) + " students" : "") +
         ' <span class="dk">(target only &mdash; doesn&#39;t move dollars)</span></p>' +
+        actualLineHtml(p, sysHeads) +
         '<div class="metric">METRIC: ' + esc(p.metric) + "</div></div>";
     }).join("") + "</div>";
+  }
+
+  function actualLineHtml(p, targetHeads) {
+    if (p.key === "p1") {
+      return '<p class="nums dk">&#9203; Actual: <strong>awaiting completion data</strong> &mdash; deliberate ' +
+        "incentive metric; completions live in college SIS, not MAP (see the P1 gap note).</p>";
+    }
+    var pf = perf();
+    if (!pf || !pf.statewide || pf.statewide[p.key] == null) {
+      return '<p class="nums dk">Actuals (per MAP) arrive with the next daily data refresh.</p>';
+    }
+    var act = pf.statewide[p.key];
+    var pct = targetHeads ? act / targetHeads : null;
+    return '<p class="nums">Actual <strong>' + fmtInt(act) + "</strong> students per MAP (as of " +
+      esc(pf.as_of) + ")" + (pct != null ? " &mdash; <strong>" + fmtPctTrim(pct) + "</strong> of target" : "") + "</p>";
   }
 
   function formulaHtml(d) {
@@ -301,6 +334,7 @@
     { key: "district", label: "District", cls: "t" },
     { key: "county", label: "County", cls: "t" },
     { key: "headcount", label: "Headcount", cls: "" },
+    { key: "p3a", label: "CPL students†", cls: "" },
     { key: "p1", label: "Priority 1", cls: "" },
     { key: "p2", label: "Priority 2", cls: "" },
     { key: "p3", label: "Priority 3", cls: "" },
@@ -361,8 +395,15 @@
         return hay.toLowerCase().indexOf(q) !== -1;
       });
     }
+    function sortVal(r) {
+      if (state.sortKey !== "p3a") return r[state.sortKey];
+      var rec = perfFor(r.college);
+      if (!rec) return null;
+      if (rec.p3 == null) return rec.p3_suppressed ? 0.5 : null; // "<5" sorts between 0 and 5
+      return rec.p3;
+    }
     rows = rows.slice().sort(function (a, b) {
-      var ka = a[state.sortKey], kb = b[state.sortKey];
+      var ka = sortVal(a), kb = sortVal(b);
       if (ka == null && kb == null) return 0;
       if (ka == null) return 1;             // nulls last either direction
       if (kb == null) return -1;
@@ -386,6 +427,7 @@
       '<td class="t">' + esc(c.district || "—") + "</td>" +
       '<td class="t">' + esc(c.county || "—") + "</td>" +
       '<td title="' + fmtPct(c.headcount_pct, 2) + ' of statewide headcount">' + fmtInt(c.headcount) + "</td>" +
+      '<td title="distinct students with transcribed CPL, per MAP (P3 actual)">' + fmtActual(perfFor(c.college), "p3") + "</td>" +
       pCell("p1") + pCell("p2") + pCell("p3") +
       '<td class="tot">' + fmtMoney(c.total * m) + "</td>" +
       "<td>" + (c.working_adults == null ? "—" : fmtInt(c.working_adults) +
@@ -395,12 +437,23 @@
 
   function collegeDetailHtml(c, m) {
     var d = vm(window.CPL_FUNDING);
+    var rec = perfFor(c.college);
     var prio = d.priorities.map(function (p) {
+      var actual = "";
+      if (p.key === "p1") {
+        actual = ' &middot; actual: <span class="dk">awaiting completion data (incentive metric)</span>';
+      } else if (rec) {
+        actual = " &middot; actual <strong>" + fmtActual(rec, p.key) + "</strong>";
+        if (rec[p.key] != null && c[p.key + "_heads"] > 0) {
+          actual += " (" + fmtPctTrim(rec[p.key] / c[p.key + "_heads"]) + " of target)";
+        }
+      }
       return '<div><span class="dk">' + esc(p.label) + ":</span> " +
         fmtPctTrim(c.headcount_pct) + " headcount share &times; " + fmtPctTrim(p.share) + " share &times; " +
         fmtMoney(d.pool.available_per_year) + " = <strong>" + fmtMoney(c[p.key] * m) + "</strong>" +
         (m > 1 ? " over " + d.pool.years.length + " yrs" : "/yr") +
-        " &middot; target " + fmtInt(c[p.key + "_heads"]) + " students (" + fmtPctTrim(p.target_rate) + ")</div>";
+        " &middot; target " + fmtInt(c[p.key + "_heads"]) + " students (" + fmtPctTrim(p.target_rate) + ")" +
+        actual + "</div>";
     }).join("");
     var county = c.working_adults == null
       ? '<div><span class="dk">County context:</span> not estimated (county &lt; 65K population)</div>'
@@ -466,9 +519,12 @@
         "<td>" + fmtMoney(sys.p1 * m) + "</td><td>" + fmtMoney(sys.p2 * m) + "</td><td>" + fmtMoney(sys.p3 * m) + "</td>" +
         "<td>" + fmtMoney(sys.total * m) + "</td></tr>";
     } else {
+      var pf = perf();
       foot = "<tr>" +
         '<td></td><td class="t">SYSTEM (statewide)</td><td class="t">' + esc(sys.district || "") + '</td><td class="t">' + esc(sys.county || "") + "</td>" +
         "<td>" + fmtInt(sys.headcount) + "</td>" +
+        '<td title="statewide distinct students — deduplicated across colleges, not the column sum">' +
+        (pf && pf.statewide && pf.statewide.p3 != null ? fmtInt(pf.statewide.p3) : "—") + "</td>" +
         "<td>" + fmtMoney(sys.p1 * m) + "</td><td>" + fmtMoney(sys.p2 * m) + "</td><td>" + fmtMoney(sys.p3 * m) + "</td>" +
         "<td>" + fmtMoney(sys.total * m) + "</td>" +
         "<td>" + (sys.working_adults == null ? "—" : fmtInt(sys.working_adults)) + "</td></tr>";
@@ -492,6 +548,18 @@
       : inner;
     return "<div>College headcounts: " + esc(d.headcount_label || "per the workbook") +
       " &mdash; " + linked + ".</div>";
+  }
+
+  function actualsFootHtml() {
+    var pf = perf();
+    if (!pf) {
+      return "<div>&dagger; Priority actuals (per MAP) will appear after the next daily data refresh; " +
+        "Priority 1 is a deliberate data gap kept as an incentive (completions live in college SIS).</div>";
+    }
+    return "<div>&dagger; CPL students = distinct students with transcribed CPL per MAP, as of " + esc(pf.as_of) +
+      "; test/potential records excluded; counts under " + pf.suppress_below + " show as &lt;5; the statewide " +
+      "figure deduplicates across colleges (not the column sum). Priority 1 awaits completion data " +
+      "(deliberate incentive metric &mdash; completions live in college SIS).</div>";
   }
 
   // Data-driven honesty note: the 2026-06-11 workbook's college rows sum to
@@ -528,15 +596,33 @@
       "model of record." + mod + "</div>";
   }
 
+  // DRAFT chip in the pane header (Sam, 2026-06-11: the tab is shared in the
+  // field while the model is under revision — label it). Injected from JS so
+  // the shell HTMLs stay untouched; idempotent; shows even in the no-data
+  // state. Remove when the model is finalized.
+  function ensureDraftChip() {
+    if (document.getElementById("cplFundingDraftChip")) return;
+    var pane = document.getElementById("tab-implementation-funding");
+    var h2 = pane && pane.querySelector("h2");
+    if (!h2) return;
+    var chip = document.createElement("span");
+    chip.id = "cplFundingDraftChip";
+    chip.className = "cplfund-draftchip";
+    chip.textContent = "Draft";
+    chip.title = "Draft funding model — under active revision; figures are potential allocations, not awards.";
+    h2.appendChild(chip);
+  }
+
   function render() {
     var mount = document.getElementById("cplFundingMount");
     if (!mount) return;
+    ensureCss();
+    ensureDraftChip();
     var d = vm(window.CPL_FUNDING);
     if (!d || !d.colleges || !d.system) {
       mount.innerHTML = '<div class="cplfund-empty">Funding model data is unavailable right now (cpl_funding_data.js failed to load). Try a hard refresh.</div>';
       return;
     }
-    ensureCss();
     mount.innerHTML = '<div class="cplfund">' +
       '<div class="cplfund-src">Model version ' + esc(d.model_version) + " &middot; extracted from the " +
       '<a href="' + esc(d.source) + '">funding model workbook</a> (sheet &ldquo;' + esc(d.sheet) + "&rdquo;)</div>" +
@@ -556,6 +642,7 @@
       "student counts are per year, whichever period is shown. " +
       "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the college&#39;s county.</div>" +
       headcountSourceHtml(d) +
+      actualsFootHtml() +
       varianceNoteHtml(d) +
       d.footnotes.map(function (f) { return "<div>" + esc(f) + "</div>"; }).join("") +
       "</div></div>";
@@ -652,18 +739,33 @@
 
   // ── boot ──────────────────────────────────────────────────────────────
   var booted = false;
+  function loadPerf() {
+    // The actuals artifact is cron-published — it may 404 until the first
+    // daily run after this feature merges. Fail soft; render() already shows
+    // the "arrives with the next refresh" hints.
+    if (window.CPL_FUNDING_PERF) { render(); return; }
+    if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
+      window.CPL_TABS.loadScript("cpl_funding_performance.js", "CPL_FUNDING_PERF", render);
+    } else {
+      var s = document.createElement("script");
+      s.src = "cpl_funding_performance.js";
+      s.onload = render;
+      s.onerror = function () { /* keep the hint state */ };
+      document.head.appendChild(s);
+    }
+  }
   function boot() {
     if (booted) { render(); return; }
     booted = true;
     loadWhatif();
-    if (window.CPL_FUNDING) { render(); return; }
+    if (window.CPL_FUNDING) { render(); loadPerf(); return; }
     if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
-      window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", render);
+      window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", function () { render(); loadPerf(); });
     } else {
       // No tabs helper (e.g. embedded standalone) — plain one-shot injection.
       var s = document.createElement("script");
       s.src = "cpl_funding_data.js";
-      s.onload = render;
+      s.onload = function () { render(); loadPerf(); };
       s.onerror = render; // render() shows the graceful empty state
       document.head.appendChild(s);
     }

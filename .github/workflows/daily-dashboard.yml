@@ -119,6 +119,15 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python excel_to_dashboard.py
 
+      # ── Step 4a2: Funding priority-metric actuals (P2/P3) ─────────
+      # Aggregates the transient CustomReport student grain into per-college
+      # suppressed counts (docs/kb-notes/adr-funding-priority-metrics-privacy.md,
+      # ratified 2026-06-11). Skips gracefully (exit 0, keeps the prior
+      # artifact) when the fetch fell back; non-fatal otherwise — the
+      # dashboard publish matters more than one day of actuals.
+      - name: Build funding priority-metric actuals
+        run: python3 funding/_build_funding_performance.py CustomReport_latest.json || echo "funding-performance build failed (non-fatal; prior artifact kept)"
+
       # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
       # Read-only over kb/coci_*.json; writes kb/row_audit/{latest.json,
       # <date>.md} that the UCL "⚠ hinky" badge consumes. See CLAUDE.md §11.
@@ -172,6 +181,8 @@ jobs:
           git add kb/cred_rename_dryrun/report.md \
                   kb/cred_rename_dryrun/alias_map.json \
                   kb/cred_rename_dryrun/collisions.json 2>/dev/null || true
+          # Funding priority-metric actuals (P2/P3, suppressed — ratified ADR)
+          git add cpl_funding_performance.js 2>/dev/null || true
           # Workplan Goals Phase 1 PR-4: daily-cached Supabase snapshot
           # (graceful-degradation fallback for Supabase outages)
           git add kb/workplan_goals_snapshot.json 2>/dev/null || true

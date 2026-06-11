@@ -79,16 +79,18 @@ the parallel-session freeze is over.
    Recon verdict: **P2 + P3 derivable today** from the already-fetched
    pseudonymous `View_StudentAggregatedValues` (`Transcribed Credits` per
    student); **P1 (completion) is a data gap** — no award field anywhere in
-   the 9-category pull; completions live in MIS. Forks for Sam: ① ratify
-   the ADR defaults (<5 suppression, aggregate-only) — **OPEN**; ② P1 path
-   — **ANSWERED 2026-06-11**: the gap stays deliberately, as an incentive
-   (SIS-duplication + identity-join anatomy + the full strategy ladder in
-   [`kb-notes/reference-p1-completion-data-gap.md`](kb-notes/reference-p1-completion-data-gap.md));
-   ③ exclude `Potential Student` rows (recommended) — **OPEN**. Once ① + ③
-   land: the 3-PR ladder in the scope doc — cron-artifact producer (+
-   workflow git-add + pii_guard fold-in) → tab "actual vs target" consumer
-   (P1 rendered as a labeled incentive-gap state, never blank) → P1 when a
-   source lands.
+   the 9-category pull; completions live in MIS. **All forks ANSWERED
+   ("Yes on forks", 2026-06-11): ① ADR RATIFIED; ② P1 gap kept deliberately
+   ([`kb-notes/reference-p1-completion-data-gap.md`](kb-notes/reference-p1-completion-data-gap.md));
+   ③ `Potential Student` EXCLUDED. Producer + consumer SHIPPED same day**
+   (`funding/_build_funding_performance.py` — workflow step 4a2 + git-add,
+   pii_guard fold-in, fixture-driven producer test — and the tab's
+   actual-vs-target UI: priority-card actuals, "CPL students†" column,
+   drill-in vs-target, P1 labeled incentive state, DRAFT header chip).
+   **Pending the first daily cron**: the artifact publishes and the hints
+   flip to actuals — then audit the `unmatched` bucket (name-join reality
+   check) and confirm the committed-artifact PII screens activated. P1
+   build resumes only when a completion source lands.
 5. **xlsx export button** — mostly covered: the tab already links the
    committed source workbook. Only build a derived export if Sam asks for
    the on-screen view (then pre-generate; never ship a client xlsx lib).

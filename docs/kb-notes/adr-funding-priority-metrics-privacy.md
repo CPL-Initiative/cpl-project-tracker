@@ -15,8 +15,9 @@ artifacts:
 
 # ADR — Funding-priority metric counts (per college) in the public dashboard
 
-> **Status: PROPOSED** (defaults mirror the ratified CER student-impact ADR;
-> Sam ratifies or adjusts before the producer ships).
+> **Status: RATIFIED** (Sam, 2026-06-11 — "Yes on forks": defaults accepted
+> as written, including the `Potential Student` exclusion; implemented the
+> same day in `funding/_build_funding_performance.py`).
 
 ## Context
 
