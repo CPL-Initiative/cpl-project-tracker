@@ -2088,6 +2088,57 @@ live-shipped artifacts. (4) Sam's curator queue: the 151-group evidence lane
 Standing: CIS↔CS §5 sign-off, ACE skill-level scope, College/System EACR views,
 EACR v2, 5 DSPS `53414` strays, `PEDS M10AE`.
 
+### Session 41 — the witness-kinship gate: chimera receipts un-folded (2026-06-11)
+
+Sam's screenshot — `AUTO 120 X` titled "Advanced Automotive Eng…" over
+transmission members, `AUTO 150 X` "Advanced Engine Manage…" over brakes —
+exposed that **~half of Session 40's restored folds were built on stale
+receipts.** The members were RIGHT (colleges' own COCI claims; AUTO 120 X *is*
+"Automatic Transmissions and Transaxles"); the folded M-IDs + row titles were
+wrong. Root cause: a `kb/promotions.json` receipt is a **departure record**
+about the family that existed 2026-05-22; the lossy pre-re-mint chimera
+families were later carved up by the 2026-05-29 over-merge splits, but ids
+that SURVIVED a split kept receipts describing the pre-split family — a decay
+mode **no re-key can fix** (the key is live; the *meaning* is stale). Witness
+counts are no defense ("APPLIED ANTHROPOLOGY" had 40 unanimous witnesses for
+ANTH 120 — all from the dead family).
+
+**The fix — the witness-kinship gate** (measured first via
+`kb/_analyze_witness_kinship.py`): a witness counts toward an auto-fold only
+if the remnant's title matches the witness's OWN claimant-course title or the
+official catalog title (token-set Jaccard ≥ 0.5, level-safe). Blocks 781 of
+1,635 evidence edges, unfolds 565 chimera folds, keeps all 7 SPAN folds,
+unlocks new good folds (SOCI M1023's "conflict" was one chimera witness
+diluting 3 real ones). Shipped with it: **synthesized official rows titled by
+the official catalog** (never a remnant); **claims-only official rows** (307 —
+an official id with real COCI claimants gets a row with zero folds; C-ID rows
+259 → 456); **official-row stats describe the DISPLAYED members** (claims ∪
+folded leaves: members count, modal units + range — the "0–6 ⚠" chip had been
+computed over invisible bogus folds while the table showed 4/6/4 — modal TOP,
+credit default Credit); member tables on official rows now show folded-leaf
+members too. **Lane goes kin-aware**: `tm` flags + pre-unchecked, kin-ranked
+groups (187 all-stale groups sink under a banner), "🧾 stale evidence" row
+badge. UI: Title column wraps (no "…"), member-table headers white-on-navy.
+CCR 15,489 → 16,289 rows; 0 curator-verified rows disturbed; suite 22/22
+(`tests/uc_kinship_gate.test.js`). KB note:
+[`methodology-witness-kinship-gate.md`](docs/kb-notes/methodology-witness-kinship-gate.md);
+lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 41).
+
+**Ops (same morning):** GitHub's scheduler dropped/over-delayed the 06-11
+primary cron (the documented flakiness — backstop catches it); session
+self-dispatch still 403s (`actions: write`). **Manual Refresh root cause:**
+the deployed Cloudflare worker's `/trigger` reads the secret from the QUERY
+STRING (old version), while the dash button POSTs it in the JSON body → 403
+"Invalid or missing secret". Fix: button sends both (`?secret=` + body);
+durable fix = re-paste `cloudflare-worker-proxy.js` into the Cloudflare
+dashboard (Sam-only — sessions can't reach Cloudflare).
+
+**Carryover / next:** (1) R4 singletons + the 31 `_unresolved` keys (now
+gate-aware). (2) Sam's curator queue: the kin-ranked evidence lane top (~123
+kin-backed groups; the 187 stale-receipt groups below the banner are Skip
+material). (3) Standing: CIS↔CS §5 sign-off, ACE skill-level scope,
+College/System EACR views, EACR v2, 5 DSPS `53414` strays, `PEDS M10AE`.
+
 ---
 
 ## Troubleshooting

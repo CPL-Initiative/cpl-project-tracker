@@ -467,3 +467,99 @@ a follow-up PR); the 31 `_unresolved` promotions keys; watch the next cron
 (should be a no-op on these artifacts since the regen shipped live); Sam's
 curator queue now includes the 151-group evidence lane (FLSP M1379 is the
 marquee contested row).
+
+## Session 41 (2026-06-11) — the witness-kinship gate: half the restored folds were chimera receipts
+
+Sam's screenshot: `AUTO 120 X` rendered as "Advanced Automotive Eng…" with
+**transmission** member courses, `AUTO 150 X` as "Advanced Engine Manage…"
+with **brake** members. His read — wrong members under an engine C-ID — was
+inverted but pointing at the right rot: the **members were correct** (the
+colleges' own COCI claims; AUTO 120 X *is* "Automatic Transmissions and
+Transaxles") and the **folded M-IDs + the row title were wrong**.
+
+### Root cause — a departure receipt is not kinship evidence
+
+`kb/promotions.json` receipts record members that LEFT their M-ID family for
+an official id at the 2026-05-22 re-mint. `_row_official()` consumed each
+receipt as evidence that the REMNANT belongs under that official id. Sound
+when the old family was title-coherent (the Spanish set); wrong when the old
+family was a lossy `(subject, number)` chimera (old `M-ID AUTO 162` etc.) —
+the witness (MiraCosta's transmissions course) was never the same course as
+the remnant (Mendocino's engine-performance course). The 2026-05-29 over-merge
+splits then carved those chimera families down to coherent 2-member remnants,
+but the receipts stayed keyed to the surviving id, still describing the
+13–20-member pre-split family. **An id that survives a split keeps a receipt
+that no longer describes it** — R1's re-key handled moved keys; it could not
+know a surviving key's family had shrunk.
+
+Witness COUNTS cannot catch this class: "APPLIED ANTHROPOLOGY" carried **40
+unanimous witnesses** for ANTH 120 — all 40 titled "Cultural Anthropology",
+all from the dead chimera family. Thresholds saw a slam dunk.
+
+### The fix — the witness-kinship gate (measured first)
+
+A witness is **kin-valid** iff the remnant's title matches the witness's OWN
+claimant-course title OR the official catalog title (token-set Jaccard ≥ 0.5,
+level-safe normalization). `_pick` runs on kin-valid counts only; the full raw
+distribution stays on `match.evidence` (+ a `kin` map when they differ) so
+nothing is silently hidden.
+
+- The **witness branch** preserves evidence-over-lexical: "Spanish 3" → SPAN
+  200 still folds (its witnesses are titled "Spanish 3").
+- The **official branch** folds remnants that ARE the official course by name
+  even when witness resolution hiccups.
+- Measured (`kb/_analyze_witness_kinship.py`): blocks **781 of 1,635**
+  evidence edges (450 at Jaccard 0.0 — pure chimeras), **unfolds 565 of the
+  1,155** Session-40 folds, keeps **all seven** SPAN folds, and *unlocks new
+  good folds* — SOCI M1023 "Crime and Society" was stuck at a 75% "conflict"
+  because one chimera AJ 110 witness diluted its 3 real SOCI 160 witnesses;
+  gate filters the noise → unanimous → folds.
+- Borderline band (J 0.3–0.5, 61 edges) eyeballed: overwhelmingly correct
+  blocks ("Intro to Counseling"→MATH 110 *Statistics*, "Beginning Piano"→
+  MUS 180 *Beginning Band*); the few semantic synonyms ("Multivariate
+  Calculus"→"Multivariable Calculus") land in the evidence lane for a
+  one-click curator confirm — exactly the auto-vs-curate split Sam asked for.
+
+### What shipped with it (the screenshot's other wounds)
+
+- **Synthesized official rows are titled by the official catalog** (C-ID
+  descriptor / CCN list), never by a folded remnant; remnant titles stay as
+  `title_variants`.
+- **Claims-only official rows** (307): an official id with real COCI
+  claimants gets a CCR row even with zero folds — without this, unfolding
+  AUTO 120 X would have made its 3 correct claimant courses invisible again.
+  Bound: in-catalog OR ≥2 claimant colleges.
+- **Official-row stats now describe the DISPLAYED members** (claims ∪ folded
+  leaves): members count, modal units + 4–6 range (was "0–6 ⚠" off invisible
+  bogus folds), modal TOP, credit (modal of folded leaves, default Credit —
+  C-ID/CCN territory is credit by definition). The member table itself now
+  unions folded leaves too (SPAN 200 finally *shows* the Intermediate-Spanish
+  family it absorbed).
+- **Evidence lane goes kin-aware**: kin-failed witnesses ship `tm` (+ `x:1`
+  pre-unchecked); groups rank by kin-valid witnesses so the 187 all-stale
+  groups sink to the bottom under a "⚠ every witness title-mismatched"
+  banner. Rows with gated evidence get a "🧾 stale evidence" badge.
+- **UI**: Title column wraps at its 24ch cap (no more "…"); member-table
+  headers white on the navy band (the static sheet left them slate-on-navy —
+  a `.uc-table th` background leak under equal specificity).
+
+### Numbers (regen, live-on-merge)
+
+Phase B 1,155 → **552 M-IDs folded** (125 synthesized + 21 anchor folds);
++604 unfolded M-IDs return as rows; +307 claims-only officials (C-ID rows 259
+→ 456); CCR 15,489 → 16,289; evidence lane 151 → 310 groups (187 score-0,
+ranked last); only 2 rows vanish outright (both pure chimera constructs, e.g.
+`AG-EH 130 X` titled "Cannabis Careers"); 0 curator-verified rows disturbed.
+Tests: `tests/uc_kinship_gate.test.js` + suite 22/22.
+
+### Lessons
+
+- **A receipt is evidence about the family that existed when it was written.**
+  Re-keying moves the key; it cannot move the *meaning*. Any rule consuming
+  historical receipts needs a present-tense validity check (here: kinship).
+- **Unanimity over stale evidence is still stale.** 40 witnesses, 0 signal.
+- **Make stats describe what the row displays.** The "0–6 ⚠" chip was
+  computed over a different member set than the table below it — every such
+  divergence is a curator-trust leak.
+- The gate runs in both directions: blocks bad folds AND un-poisons good ones
+  (the SOCI M1023 conflict was manufactured by one chimera witness).
