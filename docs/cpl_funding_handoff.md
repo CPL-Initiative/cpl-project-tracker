@@ -106,13 +106,16 @@ the parallel-session freeze is over.
    five-step shape (seed table → read-path cutover → inline editor → RLS
    tighten) that Budget/Projects used.
 
-## Open item — Mt San Antonio Noncredit headcount
+## ~~Open item — Mt San Antonio Noncredit headcount~~ CLOSED (2026-06-11)
 
-The institution row exists (order 119) with **headcount 0, allocating $0,
-pending Sam's 2022-23 DataMart annual headcount for the noncredit
-division**. When he supplies it: type it into the workbook's C-cell for
-that row → `python3 funding/_build_funding_data.py` → commit both. The
-builder prints a NOTE while any row carries headcount 0.
+Sam supplied the split: **Noncredit 35,363 / credit 41,950** (replacing the
+row's prior 66,445). Statewide headcount 2,199,157 → **2,210,025**;
+per-student rate → **$5.2488**; every college's share shifted ~−0.49%.
+**Noted for the next full refresh:** Mt SAC's pair comes from a newer
+DataMart pull than the 2022-23 column the rest of the roster uses (his
+decomposition implies a 77,313 combined total vs the old cell's 66,445) —
+the headcount column is now mixed-vintage by one row, by Sam's explicit
+call.
 
 ## Safety patterns to honor
 

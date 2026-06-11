@@ -227,6 +227,20 @@ until the artifact exists):
   with explanatory titles. **Sam made no-horizontal-scroll a standing
   rule** → added to CLAUDE.md "Engineering & UI practices". Tests 89 → 94.
 
+### 2026-06-11 (Mt SAC split) — noncredit headcount landed; mixed-vintage flag
+
+Sam: NC = **35,363**, credit = **41,950** (replacing Mt San Antonio's prior
+66,445). Applied to the workbook (two C-cells), rebuilt: statewide
+2,199,157 → **2,210,025**, per-student **$5.2488**, NC row allocates
+**$185,614/yr**, credit **$220,188/yr**, balance $0. **Flagged, not
+blocked:** the decomposition implies a 77,313 combined total vs the old
+cell's 66,445 — Mt SAC's pair is from a newer DataMart pull than the
+2022-23 column the rest of the roster carries (mixed vintage by one row,
+Sam's explicit call; reconcile at the next full headcount refresh). Two
+test assertions that had hardcoded headcount-derived numbers ($5.27 rate,
+219,916 projected) now derive from the live data — headcount edits can't
+break the suite again.
+
 ### 2026-06-11 (P1 gap) — fork ② answered; the gap's anatomy + strategy captured as a KB note
 
 Sam answered the P1 fork with the full domain story (completions live in
