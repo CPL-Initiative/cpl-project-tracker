@@ -70,12 +70,14 @@ check(`CCR: no exact st < ${SERVED_FLOOR} (unified_courses_data.js)`, badCcrSt.l
 
 // ── 3. Email scan across the committed data artifacts ──
 // Scope: artifacts derived from the MAP CustomReport / KPI pull (where staff PII
-// would land if a Contacts/Users consumer ever crept in). Consumer UI JS with
+// would land if a Contacts/Users consumer ever crept in), plus other committed
+// public data artifacts (the funding-model extract). Consumer UI JS with
 // intentional placeholder emails is excluded by the placeholder-domain allowlist.
 const EMAIL_FILES = [
   "CPL_Dashboard.html", "index.html", "CPL_Data.js",
   "credential_reference_data.js", "statewide_data.js",
   "statewide_prescriptive.js", "college_activity.js",
+  "cpl_funding_data.js",
 ];
 const EMAIL_RE = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
 const offending = new Set();

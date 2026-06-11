@@ -49,17 +49,18 @@ the parallel-session freeze is over.
 
 ## Priority queue
 
-1. **pii_guard fold-in** (1 line in `tests/pii_guard.test.js` EMAIL_FILES) —
-   blocked only by the shared-file freeze; first thing once it lifts.
-2. **Shared-doc registration**: CLAUDE.md §7b table row + `docs/INDEX.md`
-   rows for `cpl_funding_lessons.md`/this handoff; optional Dashboard teaser
-   card (that one is a generator change — coordinate with the CCR session).
-3. **Product asks to expect from Sam**: per-college 3-year view (the table
+1. ~~pii_guard fold-in~~ + ~~shared-doc registration~~ — **DONE 2026-06-11
+   PR 3** after the freeze lifted (coordination check: zero open PRs,
+   nothing in flight from the CCR session). The Dashboard teaser card was
+   **deliberately skipped** — only 3 of 12 tabs have teasers, and it's a
+   generator-file edit (highest CCR-collision surface); do it only if Sam
+   asks.
+2. **Product asks to expect from Sam**: per-college 3-year view (the table
    shows one $11.6M tranche/yr), district rollups, a college detail
    drill-in, xlsx export button (pre-generate, don't ship a client xlsx
    lib), or wiring actual MAP performance against the three priority
    metrics (P1/P2/P3 are MAP-derivable — that's the interesting v2).
-4. **If the model becomes editable** (allocations negotiated, factors
+3. **If the model becomes editable** (allocations negotiated, factors
    tuned): do NOT grow the workbook — follow the Excel→Supabase Phase 2-4
    five-step shape (seed table → read-path cutover → inline editor → RLS
    tighten) that Budget/Projects used.
