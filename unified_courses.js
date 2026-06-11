@@ -1420,13 +1420,18 @@
         out.appendChild(el("span", { class: "uc-badge " + auditChipCls(auditCard.fts),
                                      title: auditTagsTip(auditCard) }, [chipText]));
       }
-      if (r.consolidated_from && r.consolidated_from.length) {
+      if ((r.consolidated_from && r.consolidated_from.length) || r.sfold) {
+        // r.sfold (R4, Session 41) = evidence-folded stand-alone courses; they
+        // count in the chip alongside the Phase-B consolidated M-IDs.
+        var nCf = (r.consolidated_from || []).length, nMerged = nCf + (r.sfold || 0);
         out.appendChild(el("span", {
           class: "uc-badge ok", style: "background:#ddf4ff;border:1px solid #54aeff;color:#0969da;",
-          title: "Official-ID consolidation: " + r.consolidated_from.length +
-            " minted MIDs that share this " + (idSysLabel(r.id_system) || "official") +
-            " were merged into one identity (" + r.consolidated_from.join(", ") + ")."
-        }, ["⛓ " + r.consolidated_from.length + " merged"]));
+          title: "Official-ID consolidation: " + nMerged +
+            " minted identities that share this " + (idSysLabel(r.id_system) || "official") +
+            " were merged into one" +
+            (nCf ? " (" + r.consolidated_from.join(", ") + (r.sfold ? " + " + r.sfold + " stand-alone" : "") + ")"
+                 : " (" + r.sfold + " stand-alone)") + "."
+        }, ["⛓ " + nMerged + " merged"]));
       }
       // Phase A crosswalk surfacing: official C-ID / CCN carried by member courses.
       var mt = r.match || {};
