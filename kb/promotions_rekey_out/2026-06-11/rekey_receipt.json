@@ -1,0 +1,8595 @@
+{
+ "date": "2026-06-11",
+ "witness_total": 9826,
+ "targets": 446,
+ "counts": {
+  "rekeyed": 1111,
+  "folded": 13,
+  "unresolved": 31,
+  "unchanged": 941
+ },
+ "rekeyed": [
+  {
+   "old": "ABE M9031",
+   "new": "ENGL M9024",
+   "hops": [
+    "ENGL M9024"
+   ]
+  },
+  {
+   "old": "ABT M1002",
+   "new": "AGRI M1014",
+   "hops": [
+    "AGRI M1014"
+   ]
+  },
+  {
+   "old": "ABT M10AC",
+   "new": "AGRI M10CI",
+   "hops": [
+    "AGRI M10CI"
+   ]
+  },
+  {
+   "old": "ACC M1004",
+   "new": "BUSI M1072",
+   "hops": [
+    "BUSI M1072"
+   ]
+  },
+  {
+   "old": "ACC M1005",
+   "new": "BUSI M1077",
+   "hops": [
+    "BUSI M1077"
+   ]
+  },
+  {
+   "old": "ACCT M1047",
+   "new": "BUSI M1051",
+   "hops": [
+    "BUSI M1051"
+   ]
+  },
+  {
+   "old": "ACCT M1048",
+   "new": "BUSI M1052",
+   "hops": [
+    "BUSI M1052"
+   ]
+  },
+  {
+   "old": "ACCT M1049",
+   "new": "BUSI M1054",
+   "hops": [
+    "BUSI M1054"
+   ]
+  },
+  {
+   "old": "ACCT M1060",
+   "new": "BUSI M1053",
+   "hops": [
+    "BUSI M1053"
+   ]
+  },
+  {
+   "old": "ACCT M1080",
+   "new": "BUSI M1071",
+   "hops": [
+    "BUSI M1071"
+   ]
+  },
+  {
+   "old": "ACCT M1081",
+   "new": "BUSI M1076",
+   "hops": [
+    "BUSI M1076"
+   ]
+  },
+  {
+   "old": "ACCT M1082",
+   "new": "BUSI M1084",
+   "hops": [
+    "BUSI M1084"
+   ]
+  },
+  {
+   "old": "ACCT M1083",
+   "new": "BUSI M1065",
+   "hops": [
+    "BUSI M1065"
+   ]
+  },
+  {
+   "old": "ACCT M1092",
+   "new": "BUSI M1085",
+   "hops": [
+    "BUSI M1085"
+   ]
+  },
+  {
+   "old": "ACCT M10EO",
+   "new": "BUSI M10FI",
+   "hops": [
+    "BUSI M10FI"
+   ]
+  },
+  {
+   "old": "ACTG M1003",
+   "new": "BUSI M1055",
+   "hops": [
+    "BUSI M1055"
+   ]
+  },
+  {
+   "old": "AD M10AI",
+   "new": "COUN M10IX",
+   "hops": [
+    "COUN M10FY",
+    "COUN M10IX"
+   ]
+  },
+  {
+   "old": "ADDI M1003",
+   "new": "COUN M1136",
+   "hops": [
+    "COUN M1059",
+    "COUN M1136"
+   ]
+  },
+  {
+   "old": "ADDI M1011",
+   "new": "COUN M1167",
+   "hops": [
+    "COUN M1011",
+    "COUN M1052",
+    "COUN M1167"
+   ]
+  },
+  {
+   "old": "ADJ M1001",
+   "new": "CRIM M1091",
+   "hops": [
+    "CRIM M1091"
+   ]
+  },
+  {
+   "old": "ADJ M1007",
+   "new": "CRIM M1172",
+   "hops": [
+    "CRIM M1172"
+   ]
+  },
+  {
+   "old": "ADJ M1009",
+   "new": "CRIM M1126",
+   "hops": [
+    "CRIM M1126"
+   ]
+  },
+  {
+   "old": "ADJ M1010",
+   "new": "CRIM M1043",
+   "hops": [
+    "CRIM M1043"
+   ]
+  },
+  {
+   "old": "ADJ M1013",
+   "new": "CRIM M1191",
+   "hops": [
+    "CRIM M1191"
+   ]
+  },
+  {
+   "old": "ADJ M1015",
+   "new": "CRIM M1044",
+   "hops": [
+    "CRIM M1044"
+   ]
+  },
+  {
+   "old": "ADJU M1003",
+   "new": "CRIM M1176",
+   "hops": [
+    "CRIM M1176"
+   ]
+  },
+  {
+   "old": "ADJU M1013",
+   "new": "CRIM M1287",
+   "hops": [
+    "CRIM M1287"
+   ]
+  },
+  {
+   "old": "ADJU M1014",
+   "new": "CRIM M1279",
+   "hops": [
+    "CRIM M1279"
+   ]
+  },
+  {
+   "old": "ADJU M10AP",
+   "new": "CRIM M10PL",
+   "hops": [
+    "CRIM M10PL"
+   ]
+  },
+  {
+   "old": "ADJU M10BR",
+   "new": "CRIM M11DJ",
+   "hops": [
+    "CRIM M11DJ"
+   ]
+  },
+  {
+   "old": "ADMI M10AI",
+   "new": "CRIM M10VY",
+   "hops": [
+    "CRIM M10VY"
+   ]
+  },
+  {
+   "old": "ADMJ M1006",
+   "new": "CRIM M1124",
+   "hops": [
+    "CRIM M1124"
+   ]
+  },
+  {
+   "old": "ADMJ M1007",
+   "new": "CRIM M1122",
+   "hops": [
+    "CRIM M1122"
+   ]
+  },
+  {
+   "old": "ADMJ M1010",
+   "new": "CRIM M1159",
+   "hops": [
+    "CRIM M1159"
+   ]
+  },
+  {
+   "old": "ADMJ M1025",
+   "new": "CRIM M1045",
+   "hops": [
+    "CRIM M1045"
+   ]
+  },
+  {
+   "old": "ADMJ M1031",
+   "new": "CRIM M1256",
+   "hops": [
+    "CRIM M1256"
+   ]
+  },
+  {
+   "old": "ADMJ M1035",
+   "new": "CRIM M1286",
+   "hops": [
+    "CRIM M1286"
+   ]
+  },
+  {
+   "old": "ADMJ M1036",
+   "new": "CRIM M1203",
+   "hops": [
+    "CRIM M1203"
+   ]
+  },
+  {
+   "old": "ADMJ M1038",
+   "new": "CRIM M1080",
+   "hops": [
+    "CRIM M1080"
+   ]
+  },
+  {
+   "old": "ADMJ M10AT",
+   "new": "CRIM M10WG",
+   "hops": [
+    "CRIM M10WG"
+   ]
+  },
+  {
+   "old": "ADMJ M10CP",
+   "new": "CRIM M10YZ",
+   "hops": [
+    "CRIM M10YZ"
+   ]
+  },
+  {
+   "old": "ADMJ M10CQ",
+   "new": "CRIM M10ZA",
+   "hops": [
+    "CRIM M10ZA"
+   ]
+  },
+  {
+   "old": "ADMJ M10CR",
+   "new": "CRIM M10ZH",
+   "hops": [
+    "CRIM M10ZH"
+   ]
+  },
+  {
+   "old": "ADS M1002",
+   "new": "COUN M1160",
+   "hops": [
+    "COUN M1017",
+    "COUN M1048",
+    "COUN M1160"
+   ]
+  },
+  {
+   "old": "ADST M10AJ",
+   "new": "COUN M10QU",
+   "hops": [
+    "COUN M10IH",
+    "COUN M10QU"
+   ]
+  },
+  {
+   "old": "AG M1001",
+   "new": "AGRI M1018",
+   "hops": [
+    "AGRI M1002",
+    "AGRI M1018"
+   ]
+  },
+  {
+   "old": "AG M1013",
+   "new": "AGRI M1110",
+   "hops": [
+    "AGRI M1006",
+    "AGRI M1110"
+   ]
+  },
+  {
+   "old": "AG M1020",
+   "new": "AGRI M1041",
+   "hops": [
+    "AGRI M1041"
+   ]
+  },
+  {
+   "old": "AG M1022",
+   "new": "AGRI M1121",
+   "hops": [
+    "AGRI M1121"
+   ]
+  },
+  {
+   "old": "AG M10BT",
+   "new": "AGRI M10CR",
+   "hops": [
+    "AGRI M10CR"
+   ]
+  },
+  {
+   "old": "AG M10BW",
+   "new": "AGRI M10IE",
+   "hops": [
+    "AGRI M10IE"
+   ]
+  },
+  {
+   "old": "AG M10DK",
+   "new": "AGRI M10OI",
+   "hops": [
+    "AGRI M10OI"
+   ]
+  },
+  {
+   "old": "AGAS M1002",
+   "new": "AGRI M1038",
+   "hops": [
+    "AGRI M1038"
+   ]
+  },
+  {
+   "old": "AGAS M1003",
+   "new": "AGRI M1072",
+   "hops": [
+    "AGRI M1072"
+   ]
+  },
+  {
+   "old": "AGAS M1004",
+   "new": "AGRI M1039",
+   "hops": [
+    "AGRI M1039"
+   ]
+  },
+  {
+   "old": "AGMA M10AT",
+   "new": "AGRI M10OH",
+   "hops": [
+    "AGRI M10OH"
+   ]
+  },
+  {
+   "old": "AGMT M1001",
+   "new": "AGRI M1016",
+   "hops": [
+    "AGRI M1016"
+   ]
+  },
+  {
+   "old": "AGMT M10AD",
+   "new": "BUSI M10CI",
+   "hops": [
+    "BUSI M10CI"
+   ]
+  },
+  {
+   "old": "AGNR M10AB",
+   "new": "AGRI M10FD",
+   "hops": [
+    "AGRI M10FD"
+   ]
+  },
+  {
+   "old": "AGNR M10AV",
+   "new": "AGRI M10NM",
+   "hops": [
+    "AGRI M10NM"
+   ]
+  },
+  {
+   "old": "AGPS M1001",
+   "new": "AGPR M1024",
+   "hops": [
+    "AGPR M1024"
+   ]
+  },
+  {
+   "old": "AHS M1003",
+   "new": "ARTS M1135",
+   "hops": [
+    "ARTS M1135"
+   ]
+  },
+  {
+   "old": "AJ M1009",
+   "new": "CRIM M1123",
+   "hops": [
+    "CRIM M1123"
+   ]
+  },
+  {
+   "old": "AJ M1010",
+   "new": "CRIM M1127",
+   "hops": [
+    "CRIM M1127"
+   ]
+  },
+  {
+   "old": "AJ M1018",
+   "new": "CRIM M1174",
+   "hops": [
+    "CRIM M1174"
+   ]
+  },
+  {
+   "old": "AJ M1019",
+   "new": "CRIM M1182",
+   "hops": [
+    "CRIM M1182"
+   ]
+  },
+  {
+   "old": "AJ M1020",
+   "new": "CRIM M1187",
+   "hops": [
+    "CRIM M1187"
+   ]
+  },
+  {
+   "old": "AJ M1022",
+   "new": "CRIM M1189",
+   "hops": [
+    "CRIM M1189"
+   ]
+  },
+  {
+   "old": "AJ M1023",
+   "new": "CRIM M1190",
+   "hops": [
+    "CRIM M1190"
+   ]
+  },
+  {
+   "old": "AJ M1025",
+   "new": "CRIM M1192",
+   "hops": [
+    "CRIM M1192"
+   ]
+  },
+  {
+   "old": "AJ M1042",
+   "new": "CRIM M1154",
+   "hops": [
+    "CRIM M1154"
+   ]
+  },
+  {
+   "old": "AJ M1044",
+   "new": "CRIM M1207",
+   "hops": [
+    "CRIM M1207"
+   ]
+  },
+  {
+   "old": "AJ M1046",
+   "new": "CRIM M1234",
+   "hops": [
+    "CRIM M1234"
+   ]
+  },
+  {
+   "old": "AJ M1047",
+   "new": "CRIM M1258",
+   "hops": [
+    "CRIM M1258"
+   ]
+  },
+  {
+   "old": "AJ M1050",
+   "new": "CRIM M1271",
+   "hops": [
+    "CRIM M1271"
+   ]
+  },
+  {
+   "old": "AJ M1059",
+   "new": "CRIM M1290",
+   "hops": [
+    "CRIM M1290"
+   ]
+  },
+  {
+   "old": "AJ M1060",
+   "new": "CRIM M1291",
+   "hops": [
+    "CRIM M1291"
+   ]
+  },
+  {
+   "old": "AJ M10AC",
+   "new": "CRIM M10IN",
+   "hops": [
+    "CRIM M10IN"
+   ]
+  },
+  {
+   "old": "AJ M10BS",
+   "new": "CRIM M10WF",
+   "hops": [
+    "CRIM M10WF"
+   ]
+  },
+  {
+   "old": "AJ M90AD",
+   "new": "CRIM M90BQ",
+   "hops": [
+    "CRIM M90BQ"
+   ]
+  },
+  {
+   "old": "AMLA M1004",
+   "new": "ENGL M1415",
+   "hops": [
+    "ENGL M1159",
+    "ENGL M1172",
+    "ENGL M1125",
+    "ENGL M1309",
+    "ENGL M1415"
+   ]
+  },
+  {
+   "old": "ANAT M1002",
+   "new": "BIOL M1263",
+   "hops": [
+    "BIOL M1022",
+    "BIOL M1156",
+    "BIOL M1263"
+   ]
+  },
+  {
+   "old": "ANAT M1004",
+   "new": "BIOL M1183",
+   "hops": [
+    "BIOL M1029",
+    "BIOL M1073",
+    "BIOL M1183"
+   ]
+  },
+  {
+   "old": "ANAT M10AE",
+   "new": "BIOL M10ZH",
+   "hops": [
+    "BIOL M10ZH"
+   ]
+  },
+  {
+   "old": "ANML M1004",
+   "new": "NUTR M1041",
+   "hops": [
+    "NUTR M1004",
+    "NUTR M1013",
+    "NUTR M1041"
+   ]
+  },
+  {
+   "old": "ANML M1005",
+   "new": "AGRI M1048",
+   "hops": [
+    "AGRI M1048"
+   ]
+  },
+  {
+   "old": "ANSC M1005",
+   "new": "AGRI M1081",
+   "hops": [
+    "AGRI M1081"
+   ]
+  },
+  {
+   "old": "ANSC M1009",
+   "new": "AGRI M1119",
+   "hops": [
+    "AGRI M1119"
+   ]
+  },
+  {
+   "old": "ANT M1006",
+   "new": "ANTH M1111",
+   "hops": [
+    "ANTH M1054",
+    "ANTH M1040",
+    "ANTH M1081",
+    "ANTH M1111"
+   ]
+  },
+  {
+   "old": "ANT M1007",
+   "new": "ANTH M1105",
+   "hops": [
+    "ANTH M1063",
+    "ANTH M1082",
+    "ANTH M1105"
+   ]
+  },
+  {
+   "old": "ANT M10AC",
+   "new": "ANTH M10FK",
+   "hops": [
+    "ANTH M10IW",
+    "ANTH M10KE",
+    "ANTH M10HJ",
+    "ANTH M10BM",
+    "ANTH M10FR",
+    "ANTH M10JP",
+    "ANTH M10BR",
+    "ANTH M10FU",
+    "ANTH M10BF",
+    "ANTH M10FK"
+   ]
+  },
+  {
+   "old": "ANTH M1050",
+   "new": "ANTH M1109",
+   "hops": [
+    "ANTH M1077",
+    "ANTH M1012",
+    "ANTH M1068",
+    "ANTH M1109"
+   ]
+  },
+  {
+   "old": "AP M90AC",
+   "new": "PHOT M90BA",
+   "hops": [
+    "PHOT M90BA"
+   ]
+  },
+  {
+   "old": "ARC M1016",
+   "new": "ARCH M1121",
+   "hops": [
+    "ARCH M1121"
+   ]
+  },
+  {
+   "old": "ART M1001",
+   "new": "ARTS M1016",
+   "hops": [
+    "ARTS M1016"
+   ]
+  },
+  {
+   "old": "ART M1003",
+   "new": "ARTS M1026",
+   "hops": [
+    "ARTS M1026"
+   ]
+  },
+  {
+   "old": "ART M1010",
+   "new": "ARTS M1037",
+   "hops": [
+    "ARTS M1037"
+   ]
+  },
+  {
+   "old": "ART M1020",
+   "new": "ARTS M1059",
+   "hops": [
+    "ARTS M1059"
+   ]
+  },
+  {
+   "old": "ART M1058",
+   "new": "ARTS M1109",
+   "hops": [
+    "ARTS M1109"
+   ]
+  },
+  {
+   "old": "ART M1059",
+   "new": "ARTS M1111",
+   "hops": [
+    "ARTS M1111"
+   ]
+  },
+  {
+   "old": "ART M1067",
+   "new": "ARTS M1096",
+   "hops": [
+    "ARTS M1096"
+   ]
+  },
+  {
+   "old": "ART M1070",
+   "new": "ARTS M1080",
+   "hops": [
+    "ARTS M1080"
+   ]
+  },
+  {
+   "old": "ART M1071",
+   "new": "ARTS M1092",
+   "hops": [
+    "ARTH M1032",
+    "ARTH M1029",
+    "ARTH M1015",
+    "ARTH M1008",
+    "ARTS M1092"
+   ]
+  },
+  {
+   "old": "ART M1072",
+   "new": "ARTS M1119",
+   "hops": [
+    "ARTS M1119"
+   ]
+  },
+  {
+   "old": "ART M1076",
+   "new": "ARTS M1200",
+   "hops": [
+    "ARTS M1200"
+   ]
+  },
+  {
+   "old": "ART M1081",
+   "new": "ARTS M1215",
+   "hops": [
+    "ARTS M1215"
+   ]
+  },
+  {
+   "old": "ART M1083",
+   "new": "ARTS M1209",
+   "hops": [
+    "ARTS M1209"
+   ]
+  },
+  {
+   "old": "ART M1085",
+   "new": "ARTS M1216",
+   "hops": [
+    "ARTS M1216"
+   ]
+  },
+  {
+   "old": "ART M1086",
+   "new": "ARTS M1210",
+   "hops": [
+    "ARTS M1210"
+   ]
+  },
+  {
+   "old": "ART M1089",
+   "new": "ARTS M1217",
+   "hops": [
+    "ARTS M1217"
+   ]
+  },
+  {
+   "old": "ART M1090",
+   "new": "ARTS M1224",
+   "hops": [
+    "ARTS M1224"
+   ]
+  },
+  {
+   "old": "ART M1091",
+   "new": "ARTS M1225",
+   "hops": [
+    "ARTS M1225"
+   ]
+  },
+  {
+   "old": "ART M1094",
+   "new": "ARTS M1036",
+   "hops": [
+    "ARTS M1036"
+   ]
+  },
+  {
+   "old": "ART M10AG",
+   "new": "ARTS M10DS",
+   "hops": [
+    "ARTS M10DS"
+   ]
+  },
+  {
+   "old": "ART M10IC",
+   "new": "ARTS M10KV",
+   "hops": [
+    "ARTS M10KV"
+   ]
+  },
+  {
+   "old": "ART M10ID",
+   "new": "ARTS M10KW",
+   "hops": [
+    "ARTS M10KW"
+   ]
+  },
+  {
+   "old": "ART M10IE",
+   "new": "ARTS M10LD",
+   "hops": [
+    "ARTS M10LD"
+   ]
+  },
+  {
+   "old": "ART M10UQ",
+   "new": "ARTS M11IJ",
+   "hops": [
+    "ARTS M10AO",
+    "ARTS M11IJ"
+   ]
+  },
+  {
+   "old": "ART M10UR",
+   "new": "ARTS M12ER",
+   "hops": [
+    "ARTS M10CR",
+    "ARTS M12ER"
+   ]
+  },
+  {
+   "old": "ART M10US",
+   "new": "ARTS M10FW",
+   "hops": [
+    "ARTS M10CI",
+    "ARTS M10FW"
+   ]
+  },
+  {
+   "old": "ART M1100",
+   "new": "ARTS M1232",
+   "hops": [
+    "ARTS M1232"
+   ]
+  },
+  {
+   "old": "ART M1102",
+   "new": "ARTS M1211",
+   "hops": [
+    "ARTS M1211"
+   ]
+  },
+  {
+   "old": "ART M1103",
+   "new": "ARTS M1212",
+   "hops": [
+    "ARTS M1212"
+   ]
+  },
+  {
+   "old": "ART M1105",
+   "new": "ARTS M1227",
+   "hops": [
+    "ARTS M1227"
+   ]
+  },
+  {
+   "old": "ART M1120",
+   "new": "ARTS M1277",
+   "hops": [
+    "ARTS M1003",
+    "ARTS M1277"
+   ]
+  },
+  {
+   "old": "ART M1127",
+   "new": "ARTS M1268",
+   "hops": [
+    "ARTS M1268"
+   ]
+  },
+  {
+   "old": "ART M1136",
+   "new": "ARTS M1286",
+   "hops": [
+    "ARTS M1286"
+   ]
+  },
+  {
+   "old": "ART M1139",
+   "new": "ARTS M1293",
+   "hops": [
+    "ARTS M1293"
+   ]
+  },
+  {
+   "old": "ART M1140",
+   "new": "ARTS M1288",
+   "hops": [
+    "ARTS M1288"
+   ]
+  },
+  {
+   "old": "ART M1142",
+   "new": "ARTS M1127",
+   "hops": [
+    "ARTS M1127"
+   ]
+  },
+  {
+   "old": "ART M1161",
+   "new": "ARTS M1289",
+   "hops": [
+    "ARTS M1289"
+   ]
+  },
+  {
+   "old": "ART M1163",
+   "new": "ARTS M1333",
+   "hops": [
+    "ARTS M1333"
+   ]
+  },
+  {
+   "old": "ART M1179",
+   "new": "ARTS M1393",
+   "hops": [
+    "ARTS M1393"
+   ]
+  },
+  {
+   "old": "ART M1180",
+   "new": "ARTS M1296",
+   "hops": [
+    "ARTS M1296"
+   ]
+  },
+  {
+   "old": "ART M1181",
+   "new": "ARTS M1298",
+   "hops": [
+    "ARTS M1298"
+   ]
+  },
+  {
+   "old": "ART M1182",
+   "new": "ARTS M1299",
+   "hops": [
+    "ARTS M1299"
+   ]
+  },
+  {
+   "old": "ART M1189",
+   "new": "ARTS M1409",
+   "hops": [
+    "ARTS M1409"
+   ]
+  },
+  {
+   "old": "ART M1190",
+   "new": "ARTS M1412",
+   "hops": [
+    "ARTS M1412"
+   ]
+  },
+  {
+   "old": "ART M1191",
+   "new": "ARTS M1414",
+   "hops": [
+    "ARTS M1414"
+   ]
+  },
+  {
+   "old": "ART M11CD",
+   "new": "ARTS M11YD",
+   "hops": [
+    "ARTS M10BJ",
+    "ARTS M11YD"
+   ]
+  },
+  {
+   "old": "ART M11CX",
+   "new": "ARTS M10SF",
+   "hops": [
+    "ARTS M10SF"
+   ]
+  },
+  {
+   "old": "ART M11DL",
+   "new": "ARTS M11AU",
+   "hops": [
+    "ARTS M11AU"
+   ]
+  },
+  {
+   "old": "ART M11FE",
+   "new": "ARTS M11LA",
+   "hops": [
+    "ARTS M11LA"
+   ]
+  },
+  {
+   "old": "ART M11FF",
+   "new": "ARTS M11LB",
+   "hops": [
+    "ARTS M11LB"
+   ]
+  },
+  {
+   "old": "ART M11FK",
+   "new": "ARTS M11SA",
+   "hops": [
+    "ARTS M11SA"
+   ]
+  },
+  {
+   "old": "ART M11HT",
+   "new": "ARTS M10QO",
+   "hops": [
+    "ARTS M10QO"
+   ]
+  },
+  {
+   "old": "ART M11LT",
+   "new": "ARTS M11IU",
+   "hops": [
+    "ARTS M10AQ",
+    "ARTS M11IU"
+   ]
+  },
+  {
+   "old": "ART M11ZF",
+   "new": "ARTS M10YA",
+   "hops": [
+    "ARTS M10YA"
+   ]
+  },
+  {
+   "old": "ART M11ZJ",
+   "new": "ARTS M10WN",
+   "hops": [
+    "ARTS M10WN"
+   ]
+  },
+  {
+   "old": "ART M11ZM",
+   "new": "ARTS M10LP",
+   "hops": [
+    "ARTS M10LP"
+   ]
+  },
+  {
+   "old": "ART M11ZO",
+   "new": "ARTS M10LK",
+   "hops": [
+    "ARTS M10LK"
+   ]
+  },
+  {
+   "old": "ART M11ZX",
+   "new": "ARTS M10KU",
+   "hops": [
+    "ARTS M10KU"
+   ]
+  },
+  {
+   "old": "ART M1200",
+   "new": "ARTS M1394",
+   "hops": [
+    "ARTS M1394"
+   ]
+  },
+  {
+   "old": "ART M1210",
+   "new": "ARTS M1396",
+   "hops": [
+    "ARTS M1396"
+   ]
+  },
+  {
+   "old": "ART M1211",
+   "new": "ARTS M1397",
+   "hops": [
+    "ARTS M1397"
+   ]
+  },
+  {
+   "old": "ART M1214",
+   "new": "ARTS M1401",
+   "hops": [
+    "ARTS M1401"
+   ]
+  },
+  {
+   "old": "ART M1228",
+   "new": "ARTS M1406",
+   "hops": [
+    "ARTS M1406"
+   ]
+  },
+  {
+   "old": "ART M1229",
+   "new": "ARTS M1448",
+   "hops": [
+    "ARTS M1448"
+   ]
+  },
+  {
+   "old": "ART M1239",
+   "new": "ARTS M1339",
+   "hops": [
+    "ARTS M1339"
+   ]
+  },
+  {
+   "old": "ART M1252",
+   "new": "ARTS M1120",
+   "hops": [
+    "ARTS M1120"
+   ]
+  },
+  {
+   "old": "ART M1261",
+   "new": "ARTS M1159",
+   "hops": [
+    "ARTS M1159"
+   ]
+  },
+  {
+   "old": "ART M1287",
+   "new": "ARTS M1417",
+   "hops": [
+    "ARTS M1417"
+   ]
+  },
+  {
+   "old": "ART M12BM",
+   "new": "ARTS M12EL",
+   "hops": [
+    "ARTS M12EL"
+   ]
+  },
+  {
+   "old": "ART M12CY",
+   "new": "ARTS M10XK",
+   "hops": [
+    "ARTS M10XK"
+   ]
+  },
+  {
+   "old": "ART M1307",
+   "new": "ARTS M1165",
+   "hops": [
+    "ARTS M1165"
+   ]
+  },
+  {
+   "old": "ART M1309",
+   "new": "ARTS M1156",
+   "hops": [
+    "ARTS M1156"
+   ]
+  },
+  {
+   "old": "ART M1311",
+   "new": "ARTS M1273",
+   "hops": [
+    "ARTS M1273"
+   ]
+  },
+  {
+   "old": "ART M1313",
+   "new": "ARTS M1312",
+   "hops": [
+    "ARTS M1312"
+   ]
+  },
+  {
+   "old": "ART M1315",
+   "new": "ARTS M1141",
+   "hops": [
+    "ARTS M1141"
+   ]
+  },
+  {
+   "old": "ART M1319",
+   "new": "ARTS M1419",
+   "hops": [
+    "ARTS M1419"
+   ]
+  },
+  {
+   "old": "ART M1322",
+   "new": "ARTS M1345",
+   "hops": [
+    "ARTS M1345"
+   ]
+  },
+  {
+   "old": "ART M1329",
+   "new": "ARTS M1522",
+   "hops": [
+    "ARTS M1522"
+   ]
+  },
+  {
+   "old": "ART M1330",
+   "new": "ARTS M1526",
+   "hops": [
+    "ARTS M1526"
+   ]
+  },
+  {
+   "old": "ART M1332",
+   "new": "ARTS M1527",
+   "hops": [
+    "ARTS M1527"
+   ]
+  },
+  {
+   "old": "ART M1334",
+   "new": "ARTS M1193",
+   "hops": [
+    "ARTS M1193"
+   ]
+  },
+  {
+   "old": "ART M1349",
+   "new": "ARTS M1421",
+   "hops": [
+    "ARTS M1421"
+   ]
+  },
+  {
+   "old": "ART M1351",
+   "new": "ARTS M1410",
+   "hops": [
+    "ARTS M1410"
+   ]
+  },
+  {
+   "old": "ART M1357",
+   "new": "ARTS M1460",
+   "hops": [
+    "ARTS M1460"
+   ]
+  },
+  {
+   "old": "ART M1369",
+   "new": "ARTS M1134",
+   "hops": [
+    "ARTS M1134"
+   ]
+  },
+  {
+   "old": "ART M1370",
+   "new": "ARTS M1173",
+   "hops": [
+    "ARTS M1173"
+   ]
+  },
+  {
+   "old": "ART M1371",
+   "new": "ARTS M1160",
+   "hops": [
+    "ARTS M1160"
+   ]
+  },
+  {
+   "old": "ART M1376",
+   "new": "ARTS M1463",
+   "hops": [
+    "ARTS M1463"
+   ]
+  },
+  {
+   "old": "ART M1377",
+   "new": "ARTS M1479",
+   "hops": [
+    "ARTS M1479"
+   ]
+  },
+  {
+   "old": "ART M1378",
+   "new": "ARTS M1492",
+   "hops": [
+    "ARTS M1492"
+   ]
+  },
+  {
+   "old": "ART M1379",
+   "new": "ARTS M1548",
+   "hops": [
+    "ARTS M1548"
+   ]
+  },
+  {
+   "old": "ART M1380",
+   "new": "ARTS M1116",
+   "hops": [
+    "ARTS M1007",
+    "ARTS M1116"
+   ]
+  },
+  {
+   "old": "ART M1383",
+   "new": "ARTS M1464",
+   "hops": [
+    "ARTS M1464"
+   ]
+  },
+  {
+   "old": "ART M1409",
+   "new": "ARTS M1467",
+   "hops": [
+    "ARTS M1467"
+   ]
+  },
+  {
+   "old": "ART M1417",
+   "new": "ARTS M1563",
+   "hops": [
+    "ARTS M1563"
+   ]
+  },
+  {
+   "old": "ART M1431",
+   "new": "ARTS M1567",
+   "hops": [
+    "ARTS M1567"
+   ]
+  },
+  {
+   "old": "ART M1456",
+   "new": "ARTS M1153",
+   "hops": [
+    "ARTS M1153"
+   ]
+  },
+  {
+   "old": "ART M1458",
+   "new": "ARTS M1121",
+   "hops": [
+    "ARTS M1121"
+   ]
+  },
+  {
+   "old": "ART M1465",
+   "new": "ARTS M1326",
+   "hops": [
+    "ARTS M1326"
+   ]
+  },
+  {
+   "old": "ART M1467",
+   "new": "ARTS M1327",
+   "hops": [
+    "ARTS M1327"
+   ]
+  },
+  {
+   "old": "ART M1481",
+   "new": "ARTS M1473",
+   "hops": [
+    "ARTS M1473"
+   ]
+  },
+  {
+   "old": "ART M1487",
+   "new": "ARTS M1465",
+   "hops": [
+    "ARTS M1465"
+   ]
+  },
+  {
+   "old": "ART M9002",
+   "new": "ARTS M9011",
+   "hops": [
+    "ARTS M9011"
+   ]
+  },
+  {
+   "old": "ARTF M1018",
+   "new": "ARCH M1122",
+   "hops": [
+    "ARCH M1122"
+   ]
+  },
+  {
+   "old": "ASCI M1003",
+   "new": "AGRI M1042",
+   "hops": [
+    "AGRI M1042"
+   ]
+  },
+  {
+   "old": "ASCI M1013",
+   "new": "AGRI M1097",
+   "hops": [
+    "AGRI M1097"
+   ]
+  },
+  {
+   "old": "ASCI M1021",
+   "new": "AGRI M1120",
+   "hops": [
+    "AGRI M1120"
+   ]
+  },
+  {
+   "old": "ASCI M10AF",
+   "new": "AGRI M10GU",
+   "hops": [
+    "AGRI M10GU"
+   ]
+  },
+  {
+   "old": "AT M1008",
+   "new": "AUTO M1176",
+   "hops": [
+    "AUTO M1065",
+    "AUTO M1136",
+    "AUTO M1176"
+   ]
+  },
+  {
+   "old": "ATC M1008",
+   "new": "AVIA M1049",
+   "hops": [
+    "AVIA M1049"
+   ]
+  },
+  {
+   "old": "ATMN M10AB",
+   "new": "DRAF M10KT",
+   "hops": [
+    "DRAF M10KT"
+   ]
+  },
+  {
+   "old": "BA M1009",
+   "new": "BUSI M1181",
+   "hops": [
+    "BUSI M1181"
+   ]
+  },
+  {
+   "old": "BI M1003",
+   "new": "BIOL M1229",
+   "hops": [
+    "BIOL M1025",
+    "BIOL M1070",
+    "BIOL M1103",
+    "BIOL M1229"
+   ]
+  },
+  {
+   "old": "BI M1004",
+   "new": "BIOL M1242",
+   "hops": [
+    "BIOL M1027",
+    "BIOL M1072",
+    "BIOL M1106",
+    "BIOL M1242"
+   ]
+  },
+  {
+   "old": "BIO M1001",
+   "new": "BIOL M1216",
+   "hops": [
+    "BIOL M1033",
+    "BIOL M1014",
+    "BIOL M1065",
+    "BIOL M1216"
+   ]
+  },
+  {
+   "old": "BIO M1002",
+   "new": "BIOL M1222",
+   "hops": [
+    "BIOL M1034",
+    "BIOL M1077",
+    "BIOL M1222"
+   ]
+  },
+  {
+   "old": "BIO M1009",
+   "new": "BIOL M1195",
+   "hops": [
+    "BIOL M1157",
+    "BIOL M1195"
+   ]
+  },
+  {
+   "old": "BIO M1019",
+   "new": "BIOL M1259",
+   "hops": [
+    "BIOL M1159",
+    "BIOL M1043",
+    "BIOL M1172",
+    "BIOL M1143",
+    "BIOL M1259"
+   ]
+  },
+  {
+   "old": "BIO M1023",
+   "new": "BIOL M1193",
+   "hops": [
+    "BIOL M1071",
+    "BIOL M1105",
+    "BIOL M1193"
+   ]
+  },
+  {
+   "old": "BIO M1030",
+   "new": "BIOL M1246",
+   "hops": [
+    "BIOL M1123",
+    "BIOL M1246"
+   ]
+  },
+  {
+   "old": "BIO M1041",
+   "new": "BIOL M1256",
+   "hops": [
+    "BIOL M1256"
+   ]
+  },
+  {
+   "old": "BIO M1042",
+   "new": "BIOL M1253",
+   "hops": [
+    "BIOL M1253"
+   ]
+  },
+  {
+   "old": "BIO M10AT",
+   "new": "BIOL M10QK",
+   "hops": [
+    "BIOL M10QK"
+   ]
+  },
+  {
+   "old": "BIO M10AZ",
+   "new": "BIOL M10TN",
+   "hops": [
+    "BIOL M10LN",
+    "BIOL M10TN"
+   ]
+  },
+  {
+   "old": "BIO M10CW",
+   "new": "RSCH M1001",
+   "hops": [
+    "BIOL M10DU",
+    "BIOL M10SY",
+    "RSCH M1001"
+   ]
+  },
+  {
+   "old": "BIO M10DL",
+   "new": "BIOL M10UM",
+   "hops": [
+    "BIOL M10LO",
+    "BIOL M10JX",
+    "BIOL M10KF",
+    "BIOL M10UM"
+   ]
+  },
+  {
+   "old": "BIO M10EC",
+   "new": "BIOL M10ZJ",
+   "hops": [
+    "BIOL M10ZJ"
+   ]
+  },
+  {
+   "old": "BIO M10ES",
+   "new": "BIOL M10YX",
+   "hops": [
+    "BIOL M10MK",
+    "BIOL M10JC",
+    "BIOL M10PE",
+    "BIOL M10BP",
+    "BIOL M10HV",
+    "BIOL M10ND",
+    "BIOL M10YX"
+   ]
+  },
+  {
+   "old": "BIO M10FQ",
+   "new": "BIOL M10VE",
+   "hops": [
+    "BIOL M10FS",
+    "BIOL M10VE"
+   ]
+  },
+  {
+   "old": "BIOL M1040",
+   "new": "BIOL M1226",
+   "hops": [
+    "BIOL M1082",
+    "BIOL M1226"
+   ]
+  },
+  {
+   "old": "BIOL M10OR",
+   "new": "BIOL M10QM",
+   "hops": [
+    "BIOL M10QM"
+   ]
+  },
+  {
+   "old": "BOT M1032",
+   "new": "OTEC M1141",
+   "hops": [
+    "OTEC M1141"
+   ]
+  },
+  {
+   "old": "BOT M1033",
+   "new": "OTEC M1143",
+   "hops": [
+    "OTEC M1143"
+   ]
+  },
+  {
+   "old": "BRDC M1002",
+   "new": "BCST M1011",
+   "hops": [
+    "BCST M1011"
+   ]
+  },
+  {
+   "old": "BT M1005",
+   "new": "OTEC M1175",
+   "hops": [
+    "OTEC M1175"
+   ]
+  },
+  {
+   "old": "BT M1006",
+   "new": "OTEC M1179",
+   "hops": [
+    "OTEC M1179"
+   ]
+  },
+  {
+   "old": "BUS M1008",
+   "new": "BUSI M1139",
+   "hops": [
+    "BUSI M1139"
+   ]
+  },
+  {
+   "old": "BUS M1014",
+   "new": "BUSI M1152",
+   "hops": [
+    "BUSI M1152"
+   ]
+  },
+  {
+   "old": "BUS M1015",
+   "new": "BUSI M1153",
+   "hops": [
+    "BUSI M1153"
+   ]
+  },
+  {
+   "old": "BUS M1022",
+   "new": "BUSI M1199",
+   "hops": [
+    "BUSI M1199"
+   ]
+  },
+  {
+   "old": "BUS M1023",
+   "new": "BUSI M1187",
+   "hops": [
+    "BUSI M1187"
+   ]
+  },
+  {
+   "old": "BUS M1027",
+   "new": "BUSI M1208",
+   "hops": [
+    "BUSI M1208"
+   ]
+  },
+  {
+   "old": "BUS M1029",
+   "new": "BUSI M1219",
+   "hops": [
+    "BUSI M1219"
+   ]
+  },
+  {
+   "old": "BUS M1066",
+   "new": "BUSI M1182",
+   "hops": [
+    "BUSI M1182"
+   ]
+  },
+  {
+   "old": "BUS M1076",
+   "new": "BUSI M1185",
+   "hops": [
+    "BUSI M1185"
+   ]
+  },
+  {
+   "old": "BUS M1084",
+   "new": "BUSI M1355",
+   "hops": [
+    "BUSI M1355"
+   ]
+  },
+  {
+   "old": "BUS M1096",
+   "new": "BUSI M1197",
+   "hops": [
+    "BUSI M1197"
+   ]
+  },
+  {
+   "old": "BUS M1099",
+   "new": "BUSI M1189",
+   "hops": [
+    "BUSI M1189"
+   ]
+  },
+  {
+   "old": "BUS M10CB",
+   "new": "BUSI M10RQ",
+   "hops": [
+    "BUSI M10RQ"
+   ]
+  },
+  {
+   "old": "BUS M10KO",
+   "new": "BUSI M10SE",
+   "hops": [
+    "BUSI M10SE"
+   ]
+  },
+  {
+   "old": "BUS M10KY",
+   "new": "BUSI M10LD",
+   "hops": [
+    "BUSI M10LD"
+   ]
+  },
+  {
+   "old": "BUS M1123",
+   "new": "BUSI M1374",
+   "hops": [
+    "BUSI M1374"
+   ]
+  },
+  {
+   "old": "BUS M1125",
+   "new": "BUSI M1174",
+   "hops": [
+    "BUSI M1174"
+   ]
+  },
+  {
+   "old": "BUS M1203",
+   "new": "OTEC M1183",
+   "hops": [
+    "OTEC M1183"
+   ]
+  },
+  {
+   "old": "BUS M1207",
+   "new": "BUSI M1156",
+   "hops": [
+    "BUSI M1156"
+   ]
+  },
+  {
+   "old": "BUSE M1001",
+   "new": "BUSI M1173",
+   "hops": [
+    "BUSI M1173"
+   ]
+  },
+  {
+   "old": "CA M1004",
+   "new": "CISC M1395",
+   "hops": [
+    "CISC M1395"
+   ]
+  },
+  {
+   "old": "CA M1008",
+   "new": "CULN M1048",
+   "hops": [
+    "CULN M1048"
+   ]
+  },
+  {
+   "old": "CAM M1001",
+   "new": "CULN M1105",
+   "hops": [
+    "CULN M1105"
+   ]
+  },
+  {
+   "old": "CAM M10AF",
+   "new": "CULN M10GX",
+   "hops": [
+    "CULN M10GX"
+   ]
+  },
+  {
+   "old": "CART M1003",
+   "new": "CULN M1110",
+   "hops": [
+    "CULN M1110"
+   ]
+  },
+  {
+   "old": "CAWT M10AD",
+   "new": "OTEC M10CE",
+   "hops": [
+    "OTEC M10CE"
+   ]
+  },
+  {
+   "old": "CAWT M10AF",
+   "new": "OTEC M10MR",
+   "hops": [
+    "OTEC M10MR"
+   ]
+  },
+  {
+   "old": "CBA M90AA",
+   "new": "OTEC M90FQ",
+   "hops": [
+    "OTEC M90FQ"
+   ]
+  },
+  {
+   "old": "CBTE M1004",
+   "new": "OTEC M1164",
+   "hops": [
+    "OTEC M1164"
+   ]
+  },
+  {
+   "old": "CD M1016",
+   "new": "ECED M1224",
+   "hops": [
+    "ECED M1224"
+   ]
+  },
+  {
+   "old": "CD M1017",
+   "new": "ECED M1128",
+   "hops": [
+    "ECED M1128"
+   ]
+  },
+  {
+   "old": "CD M10BC",
+   "new": "ECED M10FC",
+   "hops": [
+    "ECED M10FC"
+   ]
+  },
+  {
+   "old": "CD M10BF",
+   "new": "ECED M10TC",
+   "hops": [
+    "ECED M10TC"
+   ]
+  },
+  {
+   "old": "CD M10BI",
+   "new": "ECED M10EX",
+   "hops": [
+    "ECED M10EX"
+   ]
+  },
+  {
+   "old": "CD M10BM",
+   "new": "ECED M11EL",
+   "hops": [
+    "ECED M11EL"
+   ]
+  },
+  {
+   "old": "CD M10CB",
+   "new": "ECED M11HH",
+   "hops": [
+    "ECED M11HH"
+   ]
+  },
+  {
+   "old": "CDES M10AN",
+   "new": "ECED M10XM",
+   "hops": [
+    "ECED M10XM"
+   ]
+  },
+  {
+   "old": "CDEV M10AK",
+   "new": "ECED M10RR",
+   "hops": [
+    "ECED M10RR"
+   ]
+  },
+  {
+   "old": "CDEV M10BU",
+   "new": "ECED M11CA",
+   "hops": [
+    "ECED M11CA"
+   ]
+  },
+  {
+   "old": "CDEV M10CF",
+   "new": "ECED M10ZT",
+   "hops": [
+    "ECED M10ZT"
+   ]
+  },
+  {
+   "old": "CDEV M10CX",
+   "new": "ECED M10LM",
+   "hops": [
+    "ECED M10LM"
+   ]
+  },
+  {
+   "old": "CHDE M1003",
+   "new": "ECED M1114",
+   "hops": [
+    "ECED M1114"
+   ]
+  },
+  {
+   "old": "CHDE M1008",
+   "new": "ECED M1162",
+   "hops": [
+    "ECED M1162"
+   ]
+  },
+  {
+   "old": "CHDE M1014",
+   "new": "ECED M1143",
+   "hops": [
+    "ECED M1143"
+   ]
+  },
+  {
+   "old": "CHDE M1017",
+   "new": "ECED M1074",
+   "hops": [
+    "ECED M1074"
+   ]
+  },
+  {
+   "old": "CHDV M10AL",
+   "new": "ECED M10UM",
+   "hops": [
+    "ECED M10UM"
+   ]
+  },
+  {
+   "old": "CHDV M10CA",
+   "new": "ECED M11AR",
+   "hops": [
+    "ECED M11AR"
+   ]
+  },
+  {
+   "old": "CHE M1003",
+   "new": "DENT M1033",
+   "hops": [
+    "DENT M1033"
+   ]
+  },
+  {
+   "old": "CHIL M1011",
+   "new": "ECED M1176",
+   "hops": [
+    "ECED M1176"
+   ]
+  },
+  {
+   "old": "CHIL M1016",
+   "new": "ECED M1153",
+   "hops": [
+    "ECED M1153"
+   ]
+  },
+  {
+   "old": "CHLD M1005",
+   "new": "ECED M1109",
+   "hops": [
+    "ECED M1109"
+   ]
+  },
+  {
+   "old": "CHLD M1010",
+   "new": "ECED M1144",
+   "hops": [
+    "ECED M1144"
+   ]
+  },
+  {
+   "old": "CHLD M1013",
+   "new": "ECED M1154",
+   "hops": [
+    "ECED M1154"
+   ]
+  },
+  {
+   "old": "CHLD M1014",
+   "new": "ECED M1188",
+   "hops": [
+    "ECED M1188"
+   ]
+  },
+  {
+   "old": "CHM M1001",
+   "new": "CHEM M1092",
+   "hops": [
+    "CHEM M1083",
+    "CHEM M1011",
+    "CHEM M1092"
+   ]
+  },
+  {
+   "old": "CINE M1019",
+   "new": "FIMS M1096",
+   "hops": [
+    "FIMS M1096"
+   ]
+  },
+  {
+   "old": "CINE M1020",
+   "new": "FIMS M1069",
+   "hops": [
+    "FIMS M1069"
+   ]
+  },
+  {
+   "old": "CINE M1025",
+   "new": "FIMS M1078",
+   "hops": [
+    "FIMS M1078"
+   ]
+  },
+  {
+   "old": "CINE M10AO",
+   "new": "FIMS M10FN",
+   "hops": [
+    "FIMS M10FN"
+   ]
+  },
+  {
+   "old": "CINE M10CC",
+   "new": "FIMS M10DB",
+   "hops": [
+    "FIMS M10DB"
+   ]
+  },
+  {
+   "old": "CIS M1036",
+   "new": "CISC M1239",
+   "hops": [
+    "CISC M1239"
+   ]
+  },
+  {
+   "old": "CIS M1037",
+   "new": "CISC M1108",
+   "hops": [
+    "CISC M1108"
+   ]
+  },
+  {
+   "old": "CIS M1041",
+   "new": "CISC M1274",
+   "hops": [
+    "CISC M1274"
+   ]
+  },
+  {
+   "old": "CIS M1043",
+   "new": "CISC M1293",
+   "hops": [
+    "CISC M1293"
+   ]
+  },
+  {
+   "old": "CIS M1047",
+   "new": "CISC M1280",
+   "hops": [
+    "CISC M1280"
+   ]
+  },
+  {
+   "old": "CIS M1051",
+   "new": "CISC M1332",
+   "hops": [
+    "CISC M1332"
+   ]
+  },
+  {
+   "old": "CIS M1070",
+   "new": "CISC M1110",
+   "hops": [
+    "CISC M1110"
+   ]
+  },
+  {
+   "old": "CIS M1072",
+   "new": "CISC M1357",
+   "hops": [
+    "CISC M1357"
+   ]
+  },
+  {
+   "old": "CIS M1090",
+   "new": "CISC M1421",
+   "hops": [
+    "CISC M1421"
+   ]
+  },
+  {
+   "old": "CIS M10FJ",
+   "new": "CISC M11LQ",
+   "hops": [
+    "CISC M11LQ"
+   ]
+  },
+  {
+   "old": "CIS M10GO",
+   "new": "CISC M10XV",
+   "hops": [
+    "CISC M10XV"
+   ]
+  },
+  {
+   "old": "CIS M10KT",
+   "new": "CISC M12KY",
+   "hops": [
+    "CISC M12KY"
+   ]
+  },
+  {
+   "old": "CIS M10NP",
+   "new": "CISC M11ZU",
+   "hops": [
+    "CISC M11ZU"
+   ]
+  },
+  {
+   "old": "CIS M10OW",
+   "new": "CISC M11GI",
+   "hops": [
+    "CISC M11GI"
+   ]
+  },
+  {
+   "old": "CIS M10OX",
+   "new": "CISC M12AZ",
+   "hops": [
+    "CISC M12AZ"
+   ]
+  },
+  {
+   "old": "CIS M10QD",
+   "new": "CISC M11GY",
+   "hops": [
+    "CISC M11GY"
+   ]
+  },
+  {
+   "old": "CIS M10QE",
+   "new": "CISC M12SU",
+   "hops": [
+    "CISC M12SU"
+   ]
+  },
+  {
+   "old": "CIS M10QN",
+   "new": "CISC M12SV",
+   "hops": [
+    "CISC M12SV"
+   ]
+  },
+  {
+   "old": "CIS M10RQ",
+   "new": "CISC M12PJ",
+   "hops": [
+    "CISC M12PJ"
+   ]
+  },
+  {
+   "old": "CIS M10UN",
+   "new": "CISC M12XX",
+   "hops": [
+    "CISC M12XX"
+   ]
+  },
+  {
+   "old": "CIS M10UQ",
+   "new": "CISC M11KS",
+   "hops": [
+    "CISC M11KS"
+   ]
+  },
+  {
+   "old": "CIS M10WG",
+   "new": "CISC M11FW",
+   "hops": [
+    "CISC M11FW"
+   ]
+  },
+  {
+   "old": "CIS M1104",
+   "new": "CISC M1249",
+   "hops": [
+    "CISC M1249"
+   ]
+  },
+  {
+   "old": "CIS M1116",
+   "new": "CISC M1195",
+   "hops": [
+    "CISC M1195"
+   ]
+  },
+  {
+   "old": "CIS M1117",
+   "new": "CISC M1236",
+   "hops": [
+    "CISC M1236"
+   ]
+  },
+  {
+   "old": "CIS M1120",
+   "new": "CISC M1292",
+   "hops": [
+    "CISC M1292"
+   ]
+  },
+  {
+   "old": "CIS M1121",
+   "new": "CISC M1296",
+   "hops": [
+    "CISC M1296"
+   ]
+  },
+  {
+   "old": "CIS M1122",
+   "new": "CISC M1298",
+   "hops": [
+    "CISC M1298"
+   ]
+  },
+  {
+   "old": "CIS M1123",
+   "new": "CISC M1313",
+   "hops": [
+    "CISC M1313"
+   ]
+  },
+  {
+   "old": "CIS M1124",
+   "new": "CISC M1341",
+   "hops": [
+    "CISC M1341"
+   ]
+  },
+  {
+   "old": "CIS M1125",
+   "new": "CISC M1339",
+   "hops": [
+    "CISC M1339"
+   ]
+  },
+  {
+   "old": "CIS M1127",
+   "new": "CISC M1355",
+   "hops": [
+    "CISC M1355"
+   ]
+  },
+  {
+   "old": "CIS M1129",
+   "new": "CISC M1362",
+   "hops": [
+    "CISC M1362"
+   ]
+  },
+  {
+   "old": "CIS M1135",
+   "new": "CISC M1422",
+   "hops": [
+    "CISC M1422"
+   ]
+  },
+  {
+   "old": "CIS M1137",
+   "new": "CISC M1466",
+   "hops": [
+    "CISC M1466"
+   ]
+  },
+  {
+   "old": "CIS M1138",
+   "new": "CISC M1465",
+   "hops": [
+    "CISC M1465"
+   ]
+  },
+  {
+   "old": "CIS M1140",
+   "new": "CISC M1489",
+   "hops": [
+    "CISC M1489"
+   ]
+  },
+  {
+   "old": "CIS M1145",
+   "new": "CISC M1501",
+   "hops": [
+    "CISC M1501"
+   ]
+  },
+  {
+   "old": "CIS M1155",
+   "new": "CISC M1515",
+   "hops": [
+    "CISC M1515"
+   ]
+  },
+  {
+   "old": "CIS M1158",
+   "new": "CISC M1513",
+   "hops": [
+    "CISC M1513"
+   ]
+  },
+  {
+   "old": "CIS M1163",
+   "new": "CISC M1118",
+   "hops": [
+    "CISC M1118"
+   ]
+  },
+  {
+   "old": "CIS M1189",
+   "new": "CISC M1045",
+   "hops": [
+    "CISC M1045"
+   ]
+  },
+  {
+   "old": "CIS M1191",
+   "new": "CISC M1426",
+   "hops": [
+    "CISC M1426"
+   ]
+  },
+  {
+   "old": "CIS M1192",
+   "new": "CISC M1549",
+   "hops": [
+    "CISC M1549"
+   ]
+  },
+  {
+   "old": "CIS M1194",
+   "new": "CISC M1550",
+   "hops": [
+    "CISC M1550"
+   ]
+  },
+  {
+   "old": "CIS M1201",
+   "new": "CISC M1417",
+   "hops": [
+    "CISC M1417"
+   ]
+  },
+  {
+   "old": "CIS M1202",
+   "new": "CISC M1440",
+   "hops": [
+    "CISC M1440"
+   ]
+  },
+  {
+   "old": "CIS M1218",
+   "new": "CISC M1188",
+   "hops": [
+    "CISC M1188"
+   ]
+  },
+  {
+   "old": "CIS M1219",
+   "new": "CISC M1189",
+   "hops": [
+    "CISC M1189"
+   ]
+  },
+  {
+   "old": "CIS M1225",
+   "new": "CISC M1571",
+   "hops": [
+    "CISC M1571"
+   ]
+  },
+  {
+   "old": "CIS M1231",
+   "new": "CISC M1419",
+   "hops": [
+    "CISC M1419"
+   ]
+  },
+  {
+   "old": "CIS M1234",
+   "new": "CISC M1223",
+   "hops": [
+    "CISC M1223"
+   ]
+  },
+  {
+   "old": "CIS M1235",
+   "new": "CISC M1243",
+   "hops": [
+    "CISC M1243"
+   ]
+  },
+  {
+   "old": "CIS M1243",
+   "new": "CISC M1121",
+   "hops": [
+    "CISC M1121"
+   ]
+  },
+  {
+   "old": "CIS M1245",
+   "new": "CISC M1065",
+   "hops": [
+    "CISC M1065"
+   ]
+  },
+  {
+   "old": "CIS M1266",
+   "new": "CISC M1581",
+   "hops": [
+    "CISC M1581"
+   ]
+  },
+  {
+   "old": "CIS M90AQ",
+   "new": "CISC M90ER",
+   "hops": [
+    "CISC M90ER"
+   ]
+  },
+  {
+   "old": "CISA M1004",
+   "new": "OTEC M1191",
+   "hops": [
+    "OTEC M1191"
+   ]
+  },
+  {
+   "old": "CISA M1005",
+   "new": "OTEC M1133",
+   "hops": [
+    "OTEC M1133"
+   ]
+  },
+  {
+   "old": "CISP M1002",
+   "new": "CISC M1172",
+   "hops": [
+    "CISC M1172"
+   ]
+  },
+  {
+   "old": "CISP M1003",
+   "new": "CISC M1353",
+   "hops": [
+    "CISC M1353"
+   ]
+  },
+  {
+   "old": "CISP M1006",
+   "new": "CISC M1518",
+   "hops": [
+    "CISC M1518"
+   ]
+  },
+  {
+   "old": "CISP M1009",
+   "new": "CISC M1198",
+   "hops": [
+    "CISC M1198"
+   ]
+  },
+  {
+   "old": "CIT M1003",
+   "new": "CISC M1420",
+   "hops": [
+    "CISC M1420"
+   ]
+  },
+  {
+   "old": "CIT M10BM",
+   "new": "CISC M12DX",
+   "hops": [
+    "CISC M12DX"
+   ]
+  },
+  {
+   "old": "CJ M1006",
+   "new": "CRIM M1180",
+   "hops": [
+    "CRIM M1180"
+   ]
+  },
+  {
+   "old": "CJ M10BZ",
+   "new": "CRIM M11DP",
+   "hops": [
+    "CRIM M11DP"
+   ]
+  },
+  {
+   "old": "CMPR M10AV",
+   "new": "CISC M11VQ",
+   "hops": [
+    "CISC M11VQ"
+   ]
+  },
+  {
+   "old": "CMST M1002",
+   "new": "COMM M1081",
+   "hops": [
+    "COMM M1069",
+    "COMM M1081"
+   ]
+  },
+  {
+   "old": "CMST M10AF",
+   "new": "COMM M10II",
+   "hops": [
+    "COMM M10BK",
+    "COMM M10CZ",
+    "COMM M10CP",
+    "COMM M10GH",
+    "COMM M10II"
+   ]
+  },
+  {
+   "old": "CNIT M1007",
+   "new": "CISC M1436",
+   "hops": [
+    "CISC M1436"
+   ]
+  },
+  {
+   "old": "CNSE M1001",
+   "new": "CISC M1115",
+   "hops": [
+    "CISC M1115"
+   ]
+  },
+  {
+   "old": "CNSE M10AN",
+   "new": "CISC M11RL",
+   "hops": [
+    "CISC M11RL"
+   ]
+  },
+  {
+   "old": "CNT M10AL",
+   "new": "CISC M11SQ",
+   "hops": [
+    "CISC M11SQ"
+   ]
+  },
+  {
+   "old": "COMM M1030",
+   "new": "COMM M1075",
+   "hops": [
+    "COMM M1049",
+    "COMM M1059",
+    "COMM M1075"
+   ]
+  },
+  {
+   "old": "COMM M1040",
+   "new": "COMM M1087",
+   "hops": [
+    "COMM M1087"
+   ]
+  },
+  {
+   "old": "COMM M1070",
+   "new": "COMM M1079",
+   "hops": [
+    "COMM M1029",
+    "COMM M1079"
+   ]
+  },
+  {
+   "old": "COMP M1002",
+   "new": "BUSI M1190",
+   "hops": [
+    "BUSI M1190"
+   ]
+  },
+  {
+   "old": "COMP M1008",
+   "new": "CISC M1504",
+   "hops": [
+    "CISC M1504"
+   ]
+  },
+  {
+   "old": "COMP M10AH",
+   "new": "CISC M10MA",
+   "hops": [
+    "CISC M10MA"
+   ]
+  },
+  {
+   "old": "COMP M10AK",
+   "new": "CISC M11AC",
+   "hops": [
+    "CISC M11AC"
+   ]
+  },
+  {
+   "old": "COMP M10DN",
+   "new": "CISC M12AL",
+   "hops": [
+    "CISC M12AL"
+   ]
+  },
+  {
+   "old": "COMP M9049",
+   "new": "OTEC M9098",
+   "hops": [
+    "OTEC M9098"
+   ]
+  },
+  {
+   "old": "COSA M9001",
+   "new": "OTEC M9057",
+   "hops": [
+    "OTEC M9057"
+   ]
+  },
+  {
+   "old": "CS M1003",
+   "new": "CISC M1092",
+   "hops": [
+    "CISC M1092"
+   ]
+  },
+  {
+   "old": "CS M1007",
+   "new": "CISC M1202",
+   "hops": [
+    "CISC M1202"
+   ]
+  },
+  {
+   "old": "CS M1011",
+   "new": "CISC M1152",
+   "hops": [
+    "CISC M1152"
+   ]
+  },
+  {
+   "old": "CS M1019",
+   "new": "CISC M1104",
+   "hops": [
+    "CISC M1104"
+   ]
+  },
+  {
+   "old": "CS M1023",
+   "new": "CISC M1405",
+   "hops": [
+    "CISC M1405"
+   ]
+  },
+  {
+   "old": "CS M1024",
+   "new": "CISC M1269",
+   "hops": [
+    "CISC M1269"
+   ]
+  },
+  {
+   "old": "CS M1034",
+   "new": "CISC M1151",
+   "hops": [
+    "CISC M1151"
+   ]
+  },
+  {
+   "old": "CS M1036",
+   "new": "CISC M1299",
+   "hops": [
+    "CISC M1299"
+   ]
+  },
+  {
+   "old": "CS M1037",
+   "new": "CISC M1300",
+   "hops": [
+    "CISC M1300"
+   ]
+  },
+  {
+   "old": "CS M1038",
+   "new": "CISC M1345",
+   "hops": [
+    "CISC M1345"
+   ]
+  },
+  {
+   "old": "CS M1040",
+   "new": "CISC M1399",
+   "hops": [
+    "CISC M1399"
+   ]
+  },
+  {
+   "old": "CS M1044",
+   "new": "CISC M1319",
+   "hops": [
+    "CISC M1319"
+   ]
+  },
+  {
+   "old": "CS M1047",
+   "new": "CISC M1530",
+   "hops": [
+    "CISC M1530"
+   ]
+  },
+  {
+   "old": "CS M1052",
+   "new": "CISC M1061",
+   "hops": [
+    "CISC M1061"
+   ]
+  },
+  {
+   "old": "CS M1054",
+   "new": "CISC M1557",
+   "hops": [
+    "CISC M1557"
+   ]
+  },
+  {
+   "old": "CS M1055",
+   "new": "CISC M1200",
+   "hops": [
+    "CISC M1200"
+   ]
+  },
+  {
+   "old": "CS M1060",
+   "new": "CISC M1318",
+   "hops": [
+    "CISC M1318"
+   ]
+  },
+  {
+   "old": "CS M1061",
+   "new": "CISC M1203",
+   "hops": [
+    "CISC M1203"
+   ]
+  },
+  {
+   "old": "CS M1062",
+   "new": "CISC M1531",
+   "hops": [
+    "CISC M1531"
+   ]
+  },
+  {
+   "old": "CS M10ED",
+   "new": "CISC M12BF",
+   "hops": [
+    "CISC M12BF"
+   ]
+  },
+  {
+   "old": "CS M10EI",
+   "new": "CISC M12BG",
+   "hops": [
+    "CISC M12BG"
+   ]
+  },
+  {
+   "old": "CS M10FE",
+   "new": "CISC M11RE",
+   "hops": [
+    "CISC M11RE"
+   ]
+  },
+  {
+   "old": "CS M10FJ",
+   "new": "CISC M11RO",
+   "hops": [
+    "CISC M11RO"
+   ]
+  },
+  {
+   "old": "CS M10GS",
+   "new": "CISC M11SM",
+   "hops": [
+    "CISC M11SM"
+   ]
+  },
+  {
+   "old": "CS M10KC",
+   "new": "CISC M10BD",
+   "hops": [
+    "CISC M10BD"
+   ]
+  },
+  {
+   "old": "CS M10LA",
+   "new": "CISC M11ZM",
+   "hops": [
+    "CISC M11ZM"
+   ]
+  },
+  {
+   "old": "CS M10LD",
+   "new": "CISC M12PP",
+   "hops": [
+    "CISC M12PP"
+   ]
+  },
+  {
+   "old": "CS M10LE",
+   "new": "CISC M12PX",
+   "hops": [
+    "CISC M12PX"
+   ]
+  },
+  {
+   "old": "CSC M10AM",
+   "new": "CISC M10QG",
+   "hops": [
+    "CISC M10QG"
+   ]
+  },
+  {
+   "old": "CSC M10AN",
+   "new": "CISC M10QH",
+   "hops": [
+    "CISC M10QH"
+   ]
+  },
+  {
+   "old": "CSCI M1003",
+   "new": "CISC M1162",
+   "hops": [
+    "CISC M1162"
+   ]
+  },
+  {
+   "old": "CSCI M1005",
+   "new": "CISC M1281",
+   "hops": [
+    "CISC M1281"
+   ]
+  },
+  {
+   "old": "CSCI M1009",
+   "new": "CISC M1435",
+   "hops": [
+    "CISC M1435"
+   ]
+  },
+  {
+   "old": "CSCI M1012",
+   "new": "CISC M1317",
+   "hops": [
+    "CISC M1317"
+   ]
+  },
+  {
+   "old": "CSCI M10AG",
+   "new": "CISC M10XY",
+   "hops": [
+    "CISC M10XY"
+   ]
+  },
+  {
+   "old": "CSCI M10BK",
+   "new": "CISC M11QC",
+   "hops": [
+    "CISC M11QC"
+   ]
+  },
+  {
+   "old": "CSCI M10CG",
+   "new": "CISC M11GO",
+   "hops": [
+    "CISC M11GO"
+   ]
+  },
+  {
+   "old": "CSIS M1002",
+   "new": "CISC M1163",
+   "hops": [
+    "CISC M1163"
+   ]
+  },
+  {
+   "old": "CSIS M1003",
+   "new": "CISC M1192",
+   "hops": [
+    "CISC M1192"
+   ]
+  },
+  {
+   "old": "CSIS M1004",
+   "new": "CISC M1193",
+   "hops": [
+    "CISC M1193"
+   ]
+  },
+  {
+   "old": "CSIS M10AI",
+   "new": "CISC M10OH",
+   "hops": [
+    "CISC M10OH"
+   ]
+  },
+  {
+   "old": "CSIS M10AX",
+   "new": "CISC M12GT",
+   "hops": [
+    "CISC M10AS",
+    "CISC M12GT"
+   ]
+  },
+  {
+   "old": "CSIS M10DV",
+   "new": "CISC M12PR",
+   "hops": [
+    "CISC M12PR"
+   ]
+  },
+  {
+   "old": "CSN M10AB",
+   "new": "CISC M13AD",
+   "hops": [
+    "CISC M13AD"
+   ]
+  },
+  {
+   "old": "CUL M1016",
+   "new": "CULN M1156",
+   "hops": [
+    "CULN M1156"
+   ]
+  },
+  {
+   "old": "CUL M10CL",
+   "new": "CULN M10IV",
+   "hops": [
+    "CULN M10IV"
+   ]
+  },
+  {
+   "old": "CUL M10EV",
+   "new": "CULN M10PM",
+   "hops": [
+    "CULN M10PM"
+   ]
+  },
+  {
+   "old": "CULA M1003",
+   "new": "CULN M1102",
+   "hops": [
+    "CULN M1102"
+   ]
+  },
+  {
+   "old": "CULA M10AK",
+   "new": "RMGT M10AU",
+   "hops": [
+    "RMGT M10AU"
+   ]
+  },
+  {
+   "old": "DAID M10AC",
+   "new": "MULT M10VA",
+   "hops": [
+    "MULT M10VA"
+   ]
+  },
+  {
+   "old": "DART M1004",
+   "new": "ARTS M1347",
+   "hops": [
+    "ARTS M1347"
+   ]
+  },
+  {
+   "old": "DART M1005",
+   "new": "MULT M1106",
+   "hops": [
+    "MULT M1106"
+   ]
+  },
+  {
+   "old": "DBA M10AM",
+   "new": "BCST M10JT",
+   "hops": [
+    "BCST M10JT"
+   ]
+  },
+  {
+   "old": "DDP M10AH",
+   "new": "GRAF M10CF",
+   "hops": [
+    "GRAF M10CF"
+   ]
+  },
+  {
+   "old": "DGA M1001",
+   "new": "MULT M1055",
+   "hops": [
+    "MULT M1055"
+   ]
+  },
+  {
+   "old": "DGA M1006",
+   "new": "GRAF M1019",
+   "hops": [
+    "GRAF M1019"
+   ]
+  },
+  {
+   "old": "DH M1039",
+   "new": "DENT M1109",
+   "hops": [
+    "DENT M1109"
+   ]
+  },
+  {
+   "old": "DM M10CB",
+   "new": "MULT M10WL",
+   "hops": [
+    "MULT M10WL"
+   ]
+  },
+  {
+   "old": "DMA M1006",
+   "new": "ARTS M1188",
+   "hops": [
+    "ARTS M1188"
+   ]
+  },
+  {
+   "old": "DMD M10AA",
+   "new": "MULT M10OO",
+   "hops": [
+    "MULT M10OO"
+   ]
+  },
+  {
+   "old": "DRAM M1013",
+   "new": "THEA M1272",
+   "hops": [
+    "DRAM M1011",
+    "THEA M1272"
+   ]
+  },
+  {
+   "old": "DRAM M1023",
+   "new": "THEA M1281",
+   "hops": [
+    "DRAM M1028",
+    "THEA M1281"
+   ]
+  },
+  {
+   "old": "DRAM M1025",
+   "new": "THEA M1283",
+   "hops": [
+    "DRAM M1034",
+    "THEA M1283"
+   ]
+  },
+  {
+   "old": "DRAM M1026",
+   "new": "THEA M1284",
+   "hops": [
+    "DRAM M1045",
+    "THEA M1284"
+   ]
+  },
+  {
+   "old": "DRAM M1036",
+   "new": "THEA M1294",
+   "hops": [
+    "DRAM M1033",
+    "THEA M1294"
+   ]
+  },
+  {
+   "old": "DRAM M1037",
+   "new": "THEA M1295",
+   "hops": [
+    "DRAM M1035",
+    "THEA M1295"
+   ]
+  },
+  {
+   "old": "DRAM M1038",
+   "new": "THEA M1296",
+   "hops": [
+    "DRAM M1046",
+    "THEA M1296"
+   ]
+  },
+  {
+   "old": "DRAM M10CN",
+   "new": "THEA M11UC",
+   "hops": [
+    "DRAM M10BH",
+    "THEA M11UC"
+   ]
+  },
+  {
+   "old": "DRAM M10CX",
+   "new": "THEA M11UM",
+   "hops": [
+    "DRAM M10GC",
+    "THEA M11UM"
+   ]
+  },
+  {
+   "old": "DRAM M10DX",
+   "new": "THEA M11VM",
+   "hops": [
+    "DRAM M10GH",
+    "THEA M11VM"
+   ]
+  },
+  {
+   "old": "DRAM M10EH",
+   "new": "THEA M11VW",
+   "hops": [
+    "DRAM M10GT",
+    "THEA M11VW"
+   ]
+  },
+  {
+   "old": "DRAM M10GI",
+   "new": "THEA M11XX",
+   "hops": [
+    "DRAM M10EO",
+    "THEA M11XX"
+   ]
+  },
+  {
+   "old": "EAR M1005",
+   "new": "ECED M1066",
+   "hops": [
+    "ECED M1066"
+   ]
+  },
+  {
+   "old": "EART M10AA",
+   "new": "ARTS M11TC",
+   "hops": [
+    "ARTS M11TC"
+   ]
+  },
+  {
+   "old": "ECD M10AC",
+   "new": "ECED M10VZ",
+   "hops": [
+    "ECED M10VZ"
+   ]
+  },
+  {
+   "old": "ECE M1012",
+   "new": "ECED M1110",
+   "hops": [
+    "ECED M1110"
+   ]
+  },
+  {
+   "old": "ECE M1013",
+   "new": "ECED M1119",
+   "hops": [
+    "ECED M1119"
+   ]
+  },
+  {
+   "old": "ECE M1014",
+   "new": "ECED M1127",
+   "hops": [
+    "ECED M1127"
+   ]
+  },
+  {
+   "old": "ECE M1015",
+   "new": "ECED M1175",
+   "hops": [
+    "ECED M1175"
+   ]
+  },
+  {
+   "old": "ECE M1021",
+   "new": "ECED M1140",
+   "hops": [
+    "ECED M1140"
+   ]
+  },
+  {
+   "old": "ECE M1022",
+   "new": "ECED M1142",
+   "hops": [
+    "ECED M1142"
+   ]
+  },
+  {
+   "old": "ECE M1031",
+   "new": "ECED M1177",
+   "hops": [
+    "ECED M1177"
+   ]
+  },
+  {
+   "old": "ECE M1038",
+   "new": "ECED M1197",
+   "hops": [
+    "ECED M1197"
+   ]
+  },
+  {
+   "old": "ECE M1039",
+   "new": "ECED M1151",
+   "hops": [
+    "ECED M1151"
+   ]
+  },
+  {
+   "old": "ECE M1044",
+   "new": "ECED M1211",
+   "hops": [
+    "ECED M1211"
+   ]
+  },
+  {
+   "old": "ECE M1046",
+   "new": "ECED M1070",
+   "hops": [
+    "ECED M1070"
+   ]
+  },
+  {
+   "old": "ECE M1047",
+   "new": "ECED M1069",
+   "hops": [
+    "ECED M1069"
+   ]
+  },
+  {
+   "old": "ECE M1049",
+   "new": "ECED M1189",
+   "hops": [
+    "ECED M1189"
+   ]
+  },
+  {
+   "old": "ECE M1054",
+   "new": "ECED M1210",
+   "hops": [
+    "ECED M1210"
+   ]
+  },
+  {
+   "old": "ECE M1055",
+   "new": "ECED M1111",
+   "hops": [
+    "ECED M1111"
+   ]
+  },
+  {
+   "old": "ECE M10DJ",
+   "new": "ECED M10WO",
+   "hops": [
+    "ECED M10WO"
+   ]
+  },
+  {
+   "old": "ECE M10FQ",
+   "new": "ECED M10WZ",
+   "hops": [
+    "ECED M10WZ"
+   ]
+  },
+  {
+   "old": "ECOL M10AC",
+   "new": "BIOL M10TB",
+   "hops": [
+    "BIOL M10TB"
+   ]
+  },
+  {
+   "old": "EMSP M1001",
+   "new": "EMST M1005",
+   "hops": [
+    "EMST M1005"
+   ]
+  },
+  {
+   "old": "EMSP M1002",
+   "new": "EMST M1009",
+   "hops": [
+    "EMST M1009"
+   ]
+  },
+  {
+   "old": "EMSP M10AG",
+   "new": "EMST M10AL",
+   "hops": [
+    "EMST M10AL"
+   ]
+  },
+  {
+   "old": "EMSP M10AH",
+   "new": "EMST M10CZ",
+   "hops": [
+    "EMST M10CZ"
+   ]
+  },
+  {
+   "old": "ENG M1001",
+   "new": "ESOL M1275",
+   "hops": [
+    "ENGL M1104",
+    "ESOL M1021",
+    "ESOL M1027",
+    "ESOL M1013",
+    "ESOL M1275"
+   ]
+  },
+  {
+   "old": "ENG M1002",
+   "new": "ENGL M1379",
+   "hops": [
+    "ENGL M1114",
+    "ENGL M1294",
+    "ENGL M1084",
+    "ENGL M1220",
+    "ENGL M1379"
+   ]
+  },
+  {
+   "old": "ENG M10AD",
+   "new": "ESOL M10FE",
+   "hops": [
+    "ENGL M10CF",
+    "ESOL M10FE"
+   ]
+  },
+  {
+   "old": "ENG M10AH",
+   "new": "ENGL M11LN",
+   "hops": [
+    "ENGL M10CE",
+    "ENGL M10HY",
+    "ENGL M10XC",
+    "ENGL M10XM",
+    "ENGL M11LN"
+   ]
+  },
+  {
+   "old": "ENG M10BF",
+   "new": "ENGL M11LT",
+   "hops": [
+    "ENGL M10CS",
+    "ENGL M10IP",
+    "ENGL M10YK",
+    "ENGL M10YV",
+    "ENGL M11LT"
+   ]
+  },
+  {
+   "old": "ENG M10CL",
+   "new": "ENGL M11BH",
+   "hops": [
+    "ENGL M10QD",
+    "ENGL M10SC",
+    "ENGL M10AU",
+    "ENGL M10FI",
+    "ENGL M10QM",
+    "ENGL M10ZZ",
+    "ENGL M10FS",
+    "ENGL M10RQ",
+    "ENGL M10YQ",
+    "ENGL M11BH"
+   ]
+  },
+  {
+   "old": "ENG M10CM",
+   "new": "ENGL M11HV",
+   "hops": [
+    "ENGL M11AL",
+    "ENGL M10AS",
+    "ENGL M10FU",
+    "ENGL M10RV",
+    "ENGL M11HV"
+   ]
+  },
+  {
+   "old": "ENG M10CN",
+   "new": "ENGL M11JX",
+   "hops": [
+    "ENGL M11JX"
+   ]
+  },
+  {
+   "old": "ENG M10CS",
+   "new": "ENGL M11LG",
+   "hops": [
+    "ENGL M11FS",
+    "ENGL M11LG"
+   ]
+  },
+  {
+   "old": "ENGI M1001",
+   "new": "ENGL M1418",
+   "hops": [
+    "ENGR M1044",
+    "ENGR M1071",
+    "READ M1006",
+    "ENGL M1096",
+    "ENGL M1250",
+    "ENGL M1174",
+    "ENGL M1349",
+    "ENGL M1418"
+   ]
+  },
+  {
+   "old": "ENGI M1002",
+   "new": "ENGR M1083",
+   "hops": [
+    "ENGR M1066",
+    "ENGR M1076",
+    "ENGR M1017",
+    "ENGR M1035",
+    "ENGR M1063",
+    "ENGR M1078",
+    "ENGR M1083"
+   ]
+  },
+  {
+   "old": "ENGI M10AB",
+   "new": "ENGR M10AW",
+   "hops": [
+    "ENGR M10DW",
+    "ENGR M10GT",
+    "ENGR M10BY",
+    "ENGR M10EJ",
+    "ENGR M10FJ",
+    "ENGR M10HG",
+    "ENGR M10FE",
+    "ENGR M10EB",
+    "ENGR M10AK",
+    "ENGR M10AW"
+   ]
+  },
+  {
+   "old": "ENGL M1003",
+   "new": "ENGL M1409",
+   "hops": [
+    "ENGL M1037",
+    "ENGL M1015",
+    "ENGL M1056",
+    "ENGL M1023",
+    "ENGL M1086",
+    "ENGL M1223",
+    "ENGL M1285",
+    "ENGL M1409"
+   ]
+  },
+  {
+   "old": "ENGL M1020",
+   "new": "ENGL M1381",
+   "hops": [
+    "ENGL M1022",
+    "ENGL M1078",
+    "ENGL M1207",
+    "ENGL M1381"
+   ]
+  },
+  {
+   "old": "ENGL M1035",
+   "new": "ENGL M1385",
+   "hops": [
+    "ENGL M1101",
+    "ENGL M1014",
+    "ENGL M1059",
+    "ENGL M1169",
+    "ENGL M1240",
+    "ENGL M1098",
+    "ENGL M1252",
+    "ENGL M1385"
+   ]
+  },
+  {
+   "old": "ENGL M1045",
+   "new": "ENGL M1369",
+   "hops": [
+    "ENGL M1152",
+    "ENGL M1085",
+    "ENGL M1222",
+    "ENGL M1238",
+    "ENGL M1369"
+   ]
+  },
+  {
+   "old": "ENGR M1020",
+   "new": "ENGL M1149",
+   "hops": [
+    "ENGR M1006",
+    "ENGR M1016",
+    "ENGR M1033",
+    "ENGR M1056",
+    "ENGR M1072",
+    "READ M1004",
+    "ENGL M1175",
+    "ENGL M1350",
+    "ENGL M1046",
+    "ENGL M1149"
+   ]
+  },
+  {
+   "old": "ENGR M1030",
+   "new": "ESOL M1097",
+   "hops": [
+    "ENGR M1036",
+    "ENGR M1064",
+    "ENGR M1059",
+    "ENGR M1075",
+    "ENGR M1001",
+    "READ M1003",
+    "READ M1001",
+    "ESOL M1097"
+   ]
+  },
+  {
+   "old": "ENGR M1080",
+   "new": "ENGR M1084",
+   "hops": [
+    "ENGR M1084"
+   ]
+  },
+  {
+   "old": "ENGR M10GB",
+   "new": "READ M10DD",
+   "hops": [
+    "ENGR M10GI",
+    "ENGR M10BT",
+    "ENGR M10DX",
+    "ENGR M10GU",
+    "ENGR M10ED",
+    "ENGR M10GZ",
+    "READ M10CG",
+    "READ M10DD"
+   ]
+  },
+  {
+   "old": "ENGS M1004",
+   "new": "DRAF M1052",
+   "hops": [
+    "DRAF M1052"
+   ]
+  },
+  {
+   "old": "ENGW M10AF",
+   "new": "ENGL M11HW",
+   "hops": [
+    "ENGL M10RM",
+    "ENGL M11HW"
+   ]
+  },
+  {
+   "old": "ENGW M10AK",
+   "new": "ENGL M11DR",
+   "hops": [
+    "ENGL M10RJ",
+    "ENGL M10WJ",
+    "ENGL M10AO",
+    "ENGL M10FF",
+    "ENGL M10PL",
+    "ENGL M10QR",
+    "ENGL M11CT",
+    "ENGL M11CL",
+    "ENGL M10LX",
+    "ENGL M11DR"
+   ]
+  },
+  {
+   "old": "ENVS M1007",
+   "new": "ESCI M1060",
+   "hops": [
+    "ESCI M1060"
+   ]
+  },
+  {
+   "old": "ENVS M10AS",
+   "new": "ESCI M10KV",
+   "hops": [
+    "ESCI M10KV"
+   ]
+  },
+  {
+   "old": "ENVS M10BX",
+   "new": "ESCI M10NB",
+   "hops": [
+    "ESCI M10NB"
+   ]
+  },
+  {
+   "old": "ESL M1071",
+   "new": "ESOL M1208",
+   "hops": [
+    "ESOL M1208"
+   ]
+  },
+  {
+   "old": "ESL M10FF",
+   "new": "ESOL M10NH",
+   "hops": [
+    "ESOL M10NH"
+   ]
+  },
+  {
+   "old": "ESL M10FJ",
+   "new": "ESOL M10NL",
+   "hops": [
+    "ESOL M10NL"
+   ]
+  },
+  {
+   "old": "ESL M10FY",
+   "new": "ESOL M10OT",
+   "hops": [
+    "ESOL M10OT"
+   ]
+  },
+  {
+   "old": "ESL M10GK",
+   "new": "ESOL M10QI",
+   "hops": [
+    "ESOL M10QI"
+   ]
+  },
+  {
+   "old": "ESL M1239",
+   "new": "ESOL M1238",
+   "hops": [
+    "ESOL M1238"
+   ]
+  },
+  {
+   "old": "ESTU M1002",
+   "new": "ETHS M1209",
+   "hops": [
+    "ETHS M1209"
+   ]
+  },
+  {
+   "old": "ET M10DM",
+   "new": "ESCI M10QS",
+   "hops": [
+    "ESCI M10QS"
+   ]
+  },
+  {
+   "old": "ETEC M1004",
+   "new": "ENGT M1020",
+   "hops": [
+    "ENGT M1020"
+   ]
+  },
+  {
+   "old": "ETEC M1020",
+   "new": "ELEC M1060",
+   "hops": [
+    "ELEC M1060"
+   ]
+  },
+  {
+   "old": "ETHN M1039",
+   "new": "ETHS M1213",
+   "hops": [
+    "ETHS M1213"
+   ]
+  },
+  {
+   "old": "ETHN M1068",
+   "new": "ETHS M1191",
+   "hops": [
+    "ETHS M1191"
+   ]
+  },
+  {
+   "old": "ETHN M10CD",
+   "new": "ETHS M10RX",
+   "hops": [
+    "ETHS M10RX"
+   ]
+  },
+  {
+   "old": "ETHN M10DC",
+   "new": "ETHS M10SZ",
+   "hops": [
+    "ETHS M10SZ"
+   ]
+  },
+  {
+   "old": "ETHN M10DG",
+   "new": "ETHS M10QE",
+   "hops": [
+    "ETHS M10QE"
+   ]
+  },
+  {
+   "old": "ETS M1010",
+   "new": "ETHS M1073",
+   "hops": [
+    "ETHS M1073"
+   ]
+  },
+  {
+   "old": "F M1010",
+   "new": "THES M1005",
+   "hops": [
+    "THES M1005"
+   ]
+  },
+  {
+   "old": "FAMI M10AA",
+   "new": "CULN M10WJ",
+   "hops": [
+    "CULN M10WJ"
+   ]
+  },
+  {
+   "old": "FBM M1002",
+   "new": "CULN M1056",
+   "hops": [
+    "CULN M1056"
+   ]
+  },
+  {
+   "old": "FCS M10AJ",
+   "new": "CULN M10WK",
+   "hops": [
+    "CULN M10WK"
+   ]
+  },
+  {
+   "old": "FILM M1004",
+   "new": "FIMS M1032",
+   "hops": [
+    "FIMS M1032"
+   ]
+  },
+  {
+   "old": "FILM M1036",
+   "new": "FIMS M1063",
+   "hops": [
+    "FIMS M1063"
+   ]
+  },
+  {
+   "old": "FILM M1039",
+   "new": "FIMS M1086",
+   "hops": [
+    "FIMS M1086"
+   ]
+  },
+  {
+   "old": "FILM M1041",
+   "new": "ENGL M1356",
+   "hops": [
+    "ENGL M1356"
+   ]
+  },
+  {
+   "old": "FILM M1049",
+   "new": "FIMS M1109",
+   "hops": [
+    "FIMS M1109"
+   ]
+  },
+  {
+   "old": "FILM M1051",
+   "new": "FIMS M1108",
+   "hops": [
+    "FIMS M1108"
+   ]
+  },
+  {
+   "old": "FILM M10DN",
+   "new": "FIMS M10MB",
+   "hops": [
+    "FIMS M10MB"
+   ]
+  },
+  {
+   "old": "FISC M10AA",
+   "new": "FIRE M10ZM",
+   "hops": [
+    "FIRE M10ZM"
+   ]
+  },
+  {
+   "old": "FIT M10AN",
+   "new": "FIRE M10UL",
+   "hops": [
+    "FIRE M10HP",
+    "FIRE M10AG",
+    "FIRE M10UL"
+   ]
+  },
+  {
+   "old": "FPTC M10AN",
+   "new": "FIRE M11LO",
+   "hops": [
+    "FIRE M11LO"
+   ]
+  },
+  {
+   "old": "FSC M1011",
+   "new": "FIRE M1361",
+   "hops": [
+    "FIRE M1361"
+   ]
+  },
+  {
+   "old": "FSM M1005",
+   "new": "CULN M1130",
+   "hops": [
+    "CULN M1130"
+   ]
+  },
+  {
+   "old": "FSN M1001",
+   "new": "CULN M1126",
+   "hops": [
+    "CULN M1126"
+   ]
+  },
+  {
+   "old": "FTMA M10AS",
+   "new": "BCST M10JL",
+   "hops": [
+    "BCST M10JL"
+   ]
+  },
+  {
+   "old": "FTV M1002",
+   "new": "FIMS M1038",
+   "hops": [
+    "FIMS M1038"
+   ]
+  },
+  {
+   "old": "FTV M1004",
+   "new": "FIMS M1039",
+   "hops": [
+    "FIMS M1039"
+   ]
+  },
+  {
+   "old": "FTVE M1005",
+   "new": "FIMS M1085",
+   "hops": [
+    "FIMS M1085"
+   ]
+  },
+  {
+   "old": "GEG M1001",
+   "new": "GEOG M1087",
+   "hops": [
+    "GEOG M1063",
+    "GEOG M1087"
+   ]
+  },
+  {
+   "old": "GEG M1002",
+   "new": "GEOG M1077",
+   "hops": [
+    "GEOG M1077"
+   ]
+  },
+  {
+   "old": "GEG M10AE",
+   "new": "GEOG M10GH",
+   "hops": [
+    "GEOG M10GH"
+   ]
+  },
+  {
+   "old": "GEND M1002",
+   "new": "ENGL M1388",
+   "hops": [
+    "ENGL M1303",
+    "ENGL M1388"
+   ]
+  },
+  {
+   "old": "GEO M1001",
+   "new": "GEOG M1081",
+   "hops": [
+    "GEOG M1081"
+   ]
+  },
+  {
+   "old": "GEOG M1015",
+   "new": "GEOG M1084",
+   "hops": [
+    "GEOG M1058",
+    "GEOG M1084"
+   ]
+  },
+  {
+   "old": "GEOG M1020",
+   "new": "GEOG M1076",
+   "hops": [
+    "GEOG M1021",
+    "GEOG M1059",
+    "GEOG M1076"
+   ]
+  },
+  {
+   "old": "GEOG M1025",
+   "new": "GEOG M1094",
+   "hops": [
+    "GEOG M1024",
+    "GEOG M1064",
+    "GEOG M1094"
+   ]
+  },
+  {
+   "old": "GEOG M1030",
+   "new": "GEOG M1079",
+   "hops": [
+    "GEOG M1079"
+   ]
+  },
+  {
+   "old": "GEOG M1040",
+   "new": "GEOG M1089",
+   "hops": [
+    "GEOG M1069",
+    "GEOG M1089"
+   ]
+  },
+  {
+   "old": "GEOL M1010",
+   "new": "GEOL M1066",
+   "hops": [
+    "GEOL M1026",
+    "GEOL M1052",
+    "GEOL M1053",
+    "GEOL M1066"
+   ]
+  },
+  {
+   "old": "GEOS M1001",
+   "new": "GEOG M1091",
+   "hops": [
+    "GEOG M1091"
+   ]
+  },
+  {
+   "old": "GNBU M10AD",
+   "new": "OTEC M10FC",
+   "hops": [
+    "OTEC M10FC"
+   ]
+  },
+  {
+   "old": "HE M1001",
+   "new": "HLTH M1108",
+   "hops": [
+    "HLTH M1108"
+   ]
+  },
+  {
+   "old": "HE M10AI",
+   "new": "HLTH M10OL",
+   "hops": [
+    "HLTH M10OL"
+   ]
+  },
+  {
+   "old": "HEAL M1015",
+   "new": "HLTH M1161",
+   "hops": [
+    "HLTH M1161"
+   ]
+  },
+  {
+   "old": "HEAL M1017",
+   "new": "HLTH M1145",
+   "hops": [
+    "HLTH M1019",
+    "HLTH M1145"
+   ]
+  },
+  {
+   "old": "HEAL M1019",
+   "new": "HLTH M1156",
+   "hops": [
+    "HLTH M1156"
+   ]
+  },
+  {
+   "old": "HEAL M1020",
+   "new": "HLTH M1153",
+   "hops": [
+    "HLTH M1153"
+   ]
+  },
+  {
+   "old": "HEAL M10AJ",
+   "new": "HLTH M10SU",
+   "hops": [
+    "HLTH M10DW",
+    "HLTH M10SU"
+   ]
+  },
+  {
+   "old": "HEAL M10AK",
+   "new": "HLTH M10LW",
+   "hops": [
+    "HLTH M10LW"
+   ]
+  },
+  {
+   "old": "HEAL M10AU",
+   "new": "HLTH M10PC",
+   "hops": [
+    "HLTH M10PC"
+   ]
+  },
+  {
+   "old": "HED M1002",
+   "new": "CRIM M1215",
+   "hops": [
+    "CRIM M1215"
+   ]
+  },
+  {
+   "old": "HED M1005",
+   "new": "HLTH M1154",
+   "hops": [
+    "HLTH M1154"
+   ]
+  },
+  {
+   "old": "HED M10AW",
+   "new": "HLTH M10QG",
+   "hops": [
+    "HLTH M10QG"
+   ]
+  },
+  {
+   "old": "HEED M1002",
+   "new": "HLTH M1100",
+   "hops": [
+    "CRIM M1066",
+    "HLTH M1020",
+    "HLTH M1100"
+   ]
+  },
+  {
+   "old": "HEED M1003",
+   "new": "HLTH M1157",
+   "hops": [
+    "HLTH M1157"
+   ]
+  },
+  {
+   "old": "HIM M1002",
+   "new": "HEIT M1033",
+   "hops": [
+    "HEIT M1033"
+   ]
+  },
+  {
+   "old": "HIM M10AA",
+   "new": "HEIT M10CV",
+   "hops": [
+    "HEIT M10CV"
+   ]
+  },
+  {
+   "old": "HIS M1005",
+   "new": "HIST M1190",
+   "hops": [
+    "HIST M1148",
+    "HIST M1129",
+    "HIST M1103",
+    "HIST M1064",
+    "HIST M1109",
+    "HIST M1051",
+    "HIST M1018",
+    "HIST M1121",
+    "HIST M1190"
+   ]
+  },
+  {
+   "old": "HIS M1011",
+   "new": "HIST M1189",
+   "hops": [
+    "HIST M1042",
+    "HIST M1073",
+    "HIST M1061",
+    "HIST M1189"
+   ]
+  },
+  {
+   "old": "HIS M10AX",
+   "new": "HIST M10EM",
+   "hops": [
+    "HIST M10BN",
+    "HIST M10LZ",
+    "HIST M10FY",
+    "HIST M10PG",
+    "HIST M10FL",
+    "HIST M10OF",
+    "HIST M10VM",
+    "HIST M10CT",
+    "HIST M10NY",
+    "HIST M10EM"
+   ]
+  },
+  {
+   "old": "HIS M10AZ",
+   "new": "HIST M10WW",
+   "hops": [
+    "HIST M10BK",
+    "HIST M10LP",
+    "HIST M10AW",
+    "HIST M10FC",
+    "HIST M10DK",
+    "HIST M10PD",
+    "HIST M10WW"
+   ]
+  },
+  {
+   "old": "HIS M10BA",
+   "new": "HIST M10WH",
+   "hops": [
+    "HIST M10BL",
+    "HIST M10MO",
+    "HIST M10PW",
+    "HIST M10HJ",
+    "HIST M10KU",
+    "HIST M10DG",
+    "HIST M10SR",
+    "HIST M10WH"
+   ]
+  },
+  {
+   "old": "HIT M1002",
+   "new": "HEIT M1014",
+   "hops": [
+    "HEIT M1014"
+   ]
+  },
+  {
+   "old": "HIT M10AN",
+   "new": "HEIT M10BK",
+   "hops": [
+    "HEIT M10BK"
+   ]
+  },
+  {
+   "old": "HLED M1004",
+   "new": "HLTH M1152",
+   "hops": [
+    "HLTH M1152"
+   ]
+  },
+  {
+   "old": "HM M1003",
+   "new": "RMGT M1003",
+   "hops": [
+    "RMGT M1003"
+   ]
+  },
+  {
+   "old": "HMDV M9007",
+   "new": "ECED M9031",
+   "hops": [
+    "ECED M9031"
+   ]
+  },
+  {
+   "old": "HOSP M1013",
+   "new": "CULN M1087",
+   "hops": [
+    "CULN M1087"
+   ]
+  },
+  {
+   "old": "HOSP M1014",
+   "new": "CULN M1143",
+   "hops": [
+    "CULN M1143"
+   ]
+  },
+  {
+   "old": "HOSP M1017",
+   "new": "CULN M1057",
+   "hops": [
+    "CULN M1057"
+   ]
+  },
+  {
+   "old": "HOSP M1018",
+   "new": "CULN M1144",
+   "hops": [
+    "CULN M1144"
+   ]
+  },
+  {
+   "old": "HOSP M1021",
+   "new": "CULN M1161",
+   "hops": [
+    "CULN M1161"
+   ]
+  },
+  {
+   "old": "HOSP M10AJ",
+   "new": "CULN M10JD",
+   "hops": [
+    "CULN M10JD"
+   ]
+  },
+  {
+   "old": "HOSP M90AB",
+   "new": "CULN M90CF",
+   "hops": [
+    "CULN M90CF"
+   ]
+  },
+  {
+   "old": "HOSP M90AD",
+   "new": "CULN M90CR",
+   "hops": [
+    "CULN M90CR"
+   ]
+  },
+  {
+   "old": "HRC M1002",
+   "new": "NUTR M1042",
+   "hops": [
+    "NUTR M1042"
+   ]
+  },
+  {
+   "old": "HS M1004",
+   "new": "COUN M1171",
+   "hops": [
+    "COUN M1077",
+    "COUN M1171"
+   ]
+  },
+  {
+   "old": "HS M1006",
+   "new": "HLTH M1092",
+   "hops": [
+    "HLTH M1092"
+   ]
+  },
+  {
+   "old": "HS M1014",
+   "new": "COUN M1159",
+   "hops": [
+    "COUN M1159"
+   ]
+  },
+  {
+   "old": "HSAD M1004",
+   "new": "COUN M1155",
+   "hops": [
+    "COUN M1155"
+   ]
+  },
+  {
+   "old": "HSAR M90AC",
+   "new": "MUSI M90DJ",
+   "hops": [
+    "MUSI M90AE",
+    "MUSI M90AO",
+    "MUSI M90DJ"
+   ]
+  },
+  {
+   "old": "HSER M1005",
+   "new": "COUN M1149",
+   "hops": [
+    "COUN M1149"
+   ]
+  },
+  {
+   "old": "HST M1001",
+   "new": "HIST M1034",
+   "hops": [
+    "HIST M1049",
+    "HIST M1076",
+    "HIST M1120",
+    "HIST M1096",
+    "HIST M1150",
+    "HIST M1141",
+    "HIST M1086",
+    "HIST M1067",
+    "HIST M1119",
+    "HIST M1034"
+   ]
+  },
+  {
+   "old": "HUM M1014",
+   "new": "HUMA M1054",
+   "hops": [
+    "HUMA M1054"
+   ]
+  },
+  {
+   "old": "HUM M1036",
+   "new": "ARTS M1545",
+   "hops": [
+    "ARTS M1545"
+   ]
+  },
+  {
+   "old": "HUS M10AQ",
+   "new": "COUN M10WE",
+   "hops": [
+    "COUN M10AV",
+    "COUN M10HI",
+    "COUN M10WE"
+   ]
+  },
+  {
+   "old": "HW M10AA",
+   "new": "HLTH M10LM",
+   "hops": [
+    "HLTH M10LM"
+   ]
+  },
+  {
+   "old": "IET M1001",
+   "new": "MANU M1007",
+   "hops": [
+    "MANU M1007"
+   ]
+  },
+  {
+   "old": "IS M1003",
+   "new": "CISC M1181",
+   "hops": [
+    "CISC M1181"
+   ]
+  },
+  {
+   "old": "IS M1004",
+   "new": "CISC M1262",
+   "hops": [
+    "CISC M1262"
+   ]
+  },
+  {
+   "old": "IS M1013",
+   "new": "CISC M1505",
+   "hops": [
+    "CISC M1505"
+   ]
+  },
+  {
+   "old": "IS M1014",
+   "new": "CISC M1510",
+   "hops": [
+    "CISC M1510"
+   ]
+  },
+  {
+   "old": "IS M10AO",
+   "new": "CISC M12OH",
+   "hops": [
+    "CISC M12OH"
+   ]
+  },
+  {
+   "old": "IT M1006",
+   "new": "OTEC M1197",
+   "hops": [
+    "OTEC M1197"
+   ]
+  },
+  {
+   "old": "ITIS M1002",
+   "new": "CISC M1441",
+   "hops": [
+    "CISC M1441"
+   ]
+  },
+  {
+   "old": "J M1001",
+   "new": "JOUR M1082",
+   "hops": [
+    "JOUR M1006",
+    "JOUR M1015",
+    "JOUR M1025",
+    "JOUR M1039",
+    "JOUR M1082"
+   ]
+  },
+  {
+   "old": "J M1002",
+   "new": "JOUR M1084",
+   "hops": [
+    "JOUR M1071",
+    "JOUR M1052",
+    "JOUR M1004",
+    "JOUR M1011",
+    "JOUR M1026",
+    "JOUR M1042",
+    "JOUR M1084"
+   ]
+  },
+  {
+   "old": "JOU M10AA",
+   "new": "JOUR M10IV",
+   "hops": [
+    "JOUR M10GU",
+    "JOUR M10IV"
+   ]
+  },
+  {
+   "old": "JOUR M1010",
+   "new": "JOUR M1089",
+   "hops": [
+    "JOUR M1024",
+    "JOUR M1056",
+    "JOUR M1048",
+    "JOUR M1089"
+   ]
+  },
+  {
+   "old": "JRNL M1001",
+   "new": "JOUR M1097",
+   "hops": [
+    "JOUR M1074",
+    "JOUR M1097"
+   ]
+  },
+  {
+   "old": "JRNL M1002",
+   "new": "JOUR M1091",
+   "hops": [
+    "JOUR M1091"
+   ]
+  },
+  {
+   "old": "JRNL M10AA",
+   "new": "JOUR M10IJ",
+   "hops": [
+    "JOUR M10HD",
+    "JOUR M10IJ"
+   ]
+  },
+  {
+   "old": "KIN M10KG",
+   "new": "KINE M10MN",
+   "hops": [
+    "KINE M10MN"
+   ]
+  },
+  {
+   "old": "KIN M1104",
+   "new": "KINE M1136",
+   "hops": [
+    "KINE M1136"
+   ]
+  },
+  {
+   "old": "KIN M1142",
+   "new": "KINE M1606",
+   "hops": [
+    "KINE M1606"
+   ]
+  },
+  {
+   "old": "KINM M10AD",
+   "new": "KINE M11UX",
+   "hops": [
+    "KINE M11UX"
+   ]
+  },
+  {
+   "old": "KNHE M1001",
+   "new": "KINE M1522",
+   "hops": [
+    "KINE M1522"
+   ]
+  },
+  {
+   "old": "LAW M1008",
+   "new": "LEGL M1018",
+   "hops": [
+    "LEGL M1018"
+   ]
+  },
+  {
+   "old": "LAW M1024",
+   "new": "LEGL M1031",
+   "hops": [
+    "LEGL M1031"
+   ]
+  },
+  {
+   "old": "LE M1008",
+   "new": "CRIM M1166",
+   "hops": [
+    "CRIM M1166"
+   ]
+  },
+  {
+   "old": "LIT M10AC",
+   "new": "ENGL M11ES",
+   "hops": [
+    "ENGL M10JH",
+    "ENGL M10NM",
+    "ENGL M10LQ",
+    "ENGL M11DL",
+    "ENGL M10UF",
+    "ENGL M11BX",
+    "ENGL M10AG",
+    "ENGL M10ER",
+    "ENGL M10NV",
+    "ENGL M11ES"
+   ]
+  },
+  {
+   "old": "MAT M1001",
+   "new": "MATH M1329",
+   "hops": [
+    "MATH M1104",
+    "MATH M1072",
+    "MATH M1047",
+    "MATH M1194",
+    "MATH M1306",
+    "MATH M1329"
+   ]
+  },
+  {
+   "old": "MAT M1002",
+   "new": "MATH M1324",
+   "hops": [
+    "MATH M1108",
+    "MATH M1214",
+    "MATH M1097",
+    "MATH M1246",
+    "MATH M1324"
+   ]
+  },
+  {
+   "old": "MATH M1010",
+   "new": "MATH M1328",
+   "hops": [
+    "MATH M1111",
+    "MATH M1263",
+    "MATH M1157",
+    "MATH M1176",
+    "MATH M1130",
+    "MATH M1043",
+    "MATH M1156",
+    "MATH M1193",
+    "MATH M1304",
+    "MATH M1328"
+   ]
+  },
+  {
+   "old": "MATH M1040",
+   "new": "MATH M1310",
+   "hops": [
+    "MATH M1152",
+    "MATH M1093",
+    "CULN M1108",
+    "MATH M1210",
+    "MATH M1096",
+    "MATH M1064",
+    "MATH M1213",
+    "MATH M1310"
+   ]
+  },
+  {
+   "old": "MATH M1050",
+   "new": "MATH M1322",
+   "hops": [
+    "MATH M1172",
+    "MATH M1129",
+    "MATH M1174",
+    "MATH M1094",
+    "MATH M1242",
+    "MATH M1238",
+    "MATH M1322"
+   ]
+  },
+  {
+   "old": "MATH M1051",
+   "new": "MATH M1326",
+   "hops": [
+    "MATH M1171",
+    "MATH M1294",
+    "MATH M1326"
+   ]
+  },
+  {
+   "old": "MCOM M1002",
+   "new": "JOUR M1076",
+   "hops": [
+    "JOUR M1076"
+   ]
+  },
+  {
+   "old": "MEA M1003",
+   "new": "FIMS M1031",
+   "hops": [
+    "FIMS M1031"
+   ]
+  },
+  {
+   "old": "MEDA M1004",
+   "new": "NRSR M1157",
+   "hops": [
+    "NRSR M1157"
+   ]
+  },
+  {
+   "old": "MEDI M1013",
+   "new": "ARTS M1520",
+   "hops": [
+    "ARTS M1520"
+   ]
+  },
+  {
+   "old": "MEDI M1019",
+   "new": "JOUR M1083",
+   "hops": [
+    "JOUR M1083"
+   ]
+  },
+  {
+   "old": "MEDI M10AG",
+   "new": "FIMP M10AU",
+   "hops": [
+    "FIMP M10AU"
+   ]
+  },
+  {
+   "old": "MGT M1005",
+   "new": "BUSI M1175",
+   "hops": [
+    "BUSI M1175"
+   ]
+  },
+  {
+   "old": "MGT M10AF",
+   "new": "MGMT M10DP",
+   "hops": [
+    "MGMT M10BM",
+    "MGMT M10BR",
+    "MGMT M10DP"
+   ]
+  },
+  {
+   "old": "MOA M1002",
+   "new": "HLTH M1051",
+   "hops": [
+    "HLTH M1051"
+   ]
+  },
+  {
+   "old": "MTH M1001",
+   "new": "MATH M1320",
+   "hops": [
+    "MATH M1106",
+    "MATH M1075",
+    "MATH M1058",
+    "MATH M1189",
+    "MATH M1257",
+    "MATH M1005",
+    "MATH M1080",
+    "MATH M1227",
+    "MATH M1234",
+    "MATH M1320"
+   ]
+  },
+  {
+   "old": "MTH M1002",
+   "new": "MATH M1283",
+   "hops": [
+    "MATH M1240",
+    "MATH M1052",
+    "MATH M1177",
+    "MATH M1131",
+    "MATH M1286",
+    "MATH M1203",
+    "MATH M1241",
+    "MATH M1042",
+    "MATH M1153",
+    "MATH M1283"
+   ]
+  },
+  {
+   "old": "MTH M1005",
+   "new": "MATH M1307",
+   "hops": [
+    "MATH M1307"
+   ]
+  },
+  {
+   "old": "MTH M10AC",
+   "new": "MATH M10IG",
+   "hops": [
+    "MATH M10NM",
+    "MATH M10JN",
+    "MATH M11BR",
+    "MATH M10ST",
+    "MATH M10OP",
+    "MATH M10ZE",
+    "MATH M10XL",
+    "MATH M10VI",
+    "MATH M10VU",
+    "MATH M10IG"
+   ]
+  },
+  {
+   "old": "MTH M10AD",
+   "new": "MATH M10PW",
+   "hops": [
+    "MATH M10NS",
+    "MATH M10JZ",
+    "MATH M10MD",
+    "MATH M11DM",
+    "MATH M10GL",
+    "MATH M10OS",
+    "MATH M10IV",
+    "MATH M10JH",
+    "MATH M10TS",
+    "MATH M10PW"
+   ]
+  },
+  {
+   "old": "MTH M10AG",
+   "new": "MATH M10KT",
+   "hops": [
+    "MATH M10JL",
+    "MATH M11BQ",
+    "MATH M10EG",
+    "MATH M10US",
+    "MATH M11BJ",
+    "MATH M10CN",
+    "MATH M10QX",
+    "MATH M10XN",
+    "MATH M10NF",
+    "MATH M10KT"
+   ]
+  },
+  {
+   "old": "MUFH M1001",
+   "new": "MUSI M1321",
+   "hops": [
+    "MUSI M1129",
+    "MUSI M1087",
+    "MUSI M1071",
+    "MUSI M1078",
+    "MUSI M1321"
+   ]
+  },
+  {
+   "old": "MUFH M1005",
+   "new": "MUSI M1468",
+   "hops": [
+    "MUSI M1468"
+   ]
+  },
+  {
+   "old": "MUFH M1006",
+   "new": "MUSI M1493",
+   "hops": [
+    "MUSI M1493"
+   ]
+  },
+  {
+   "old": "MUFH M1007",
+   "new": "MUSI M1540",
+   "hops": [
+    "MUSI M1540"
+   ]
+  },
+  {
+   "old": "MUFH M1008",
+   "new": "MUSI M1501",
+   "hops": [
+    "MUSI M1006",
+    "MUSI M1043",
+    "MUSI M1196",
+    "MUSI M1501"
+   ]
+  },
+  {
+   "old": "MUFH M1009",
+   "new": "MUSI M1239",
+   "hops": [
+    "MUSI M1004",
+    "MUSI M1035",
+    "MUSI M1239"
+   ]
+  },
+  {
+   "old": "MUFH M10AE",
+   "new": "MUSI M11XP",
+   "hops": [
+    "MUSI M11XP"
+   ]
+  },
+  {
+   "old": "MUP M1001",
+   "new": "MUSI M1256",
+   "hops": [
+    "MUSI M1256"
+   ]
+  },
+  {
+   "old": "MUP M1004",
+   "new": "MUSI M1351",
+   "hops": [
+    "MUSI M1351"
+   ]
+  },
+  {
+   "old": "MUP M10AB",
+   "new": "MUSI M12HK",
+   "hops": [
+    "MUSI M10GX",
+    "MUSI M12HK"
+   ]
+  },
+  {
+   "old": "MUP M10AC",
+   "new": "MUSI M10RL",
+   "hops": [
+    "MUSI M10KV",
+    "MUSI M10RL"
+   ]
+  },
+  {
+   "old": "MUS M1001",
+   "new": "MUSI M1389",
+   "hops": [
+    "MUSI M1018",
+    "MUSI M1108",
+    "MUSI M1389"
+   ]
+  },
+  {
+   "old": "MUS M1015",
+   "new": "MUSI M1252",
+   "hops": [
+    "MUSI M1044",
+    "MUSI M1252"
+   ]
+  },
+  {
+   "old": "MUS M1017",
+   "new": "MUSI M1488",
+   "hops": [
+    "MUSI M1074",
+    "MUSI M1204",
+    "MUSI M1488"
+   ]
+  },
+  {
+   "old": "MUS M1018",
+   "new": "MUSI M1367",
+   "hops": [
+    "MUSI M1070",
+    "MUSI M1367"
+   ]
+  },
+  {
+   "old": "MUS M1019",
+   "new": "MUSI M1316",
+   "hops": [
+    "MUSI M1069",
+    "MUSI M1316"
+   ]
+  },
+  {
+   "old": "MUS M1020",
+   "new": "MUSI M1515",
+   "hops": [
+    "MUSI M1075",
+    "MUSI M1205",
+    "MUSI M1515"
+   ]
+  },
+  {
+   "old": "MUS M1021",
+   "new": "MUSI M1319",
+   "hops": [
+    "MUSI M1065",
+    "MUSI M1319"
+   ]
+  },
+  {
+   "old": "MUS M1023",
+   "new": "MUSI M1332",
+   "hops": [
+    "MUSI M1077",
+    "MUSI M1207",
+    "MUSI M1332"
+   ]
+  },
+  {
+   "old": "MUS M1030",
+   "new": "MUSI M1535",
+   "hops": [
+    "MUSI M1101",
+    "MUSI M1535"
+   ]
+  },
+  {
+   "old": "MUS M1034",
+   "new": "MUSI M1257",
+   "hops": [
+    "MUSI M1139",
+    "MUSI M1045",
+    "MUSI M1257"
+   ]
+  },
+  {
+   "old": "MUS M1042",
+   "new": "MUSI M1576",
+   "hops": [
+    "MUSI M1156",
+    "MUSI M1576"
+   ]
+  },
+  {
+   "old": "MUS M1044",
+   "new": "MUSI M1582",
+   "hops": [
+    "MUSI M1161",
+    "MUSI M1582"
+   ]
+  },
+  {
+   "old": "MUS M1059",
+   "new": "MUSI M1261",
+   "hops": [
+    "MUSI M1182",
+    "MUSI M1261"
+   ]
+  },
+  {
+   "old": "MUS M1060",
+   "new": "MUSI M1509",
+   "hops": [
+    "MUSI M1190",
+    "MUSI M1119",
+    "MUSI M1509"
+   ]
+  },
+  {
+   "old": "MUS M1061",
+   "new": "MUSI M1457",
+   "hops": [
+    "MUSI M1185",
+    "MUSI M1457"
+   ]
+  },
+  {
+   "old": "MUS M1062",
+   "new": "MUSI M1405",
+   "hops": [
+    "MUSI M1191",
+    "MUSI M1405"
+   ]
+  },
+  {
+   "old": "MUS M1063",
+   "new": "MUSI M1517",
+   "hops": [
+    "MUSI M1193",
+    "MUSI M1174",
+    "MUSI M1094",
+    "MUSI M1517"
+   ]
+  },
+  {
+   "old": "MUS M1066",
+   "new": "MUSI M1476",
+   "hops": [
+    "MUSI M1195",
+    "MUSI M1476"
+   ]
+  },
+  {
+   "old": "MUS M1067",
+   "new": "MUSI M1335",
+   "hops": [
+    "MUSI M1208",
+    "MUSI M1335"
+   ]
+  },
+  {
+   "old": "MUS M1068",
+   "new": "MUSI M1218",
+   "hops": [
+    "MUSI M1218"
+   ]
+  },
+  {
+   "old": "MUS M1073",
+   "new": "MUSI M1224",
+   "hops": [
+    "MUSI M1224"
+   ]
+  },
+  {
+   "old": "MUS M1074",
+   "new": "MUSI M1228",
+   "hops": [
+    "MUSI M1228"
+   ]
+  },
+  {
+   "old": "MUS M1075",
+   "new": "MUSI M1232",
+   "hops": [
+    "MUSI M1232"
+   ]
+  },
+  {
+   "old": "MUS M1084",
+   "new": "MUSI M1214",
+   "hops": [
+    "MUSI M1214"
+   ]
+  },
+  {
+   "old": "MUS M1091",
+   "new": "MUSI M1415",
+   "hops": [
+    "MUSI M1113",
+    "MUSI M1415"
+   ]
+  },
+  {
+   "old": "MUS M1092",
+   "new": "MUSI M1452",
+   "hops": [
+    "MUSI M1114",
+    "MUSI M1452"
+   ]
+  },
+  {
+   "old": "MUS M1093",
+   "new": "MUSI M1227",
+   "hops": [
+    "MUSI M1198",
+    "MUSI M1227"
+   ]
+  },
+  {
+   "old": "MUS M1094",
+   "new": "MUSI M1357",
+   "hops": [
+    "MUSI M1199",
+    "MUSI M1357"
+   ]
+  },
+  {
+   "old": "MUS M1095",
+   "new": "MUSI M1217",
+   "hops": [
+    "MUSI M1200",
+    "MUSI M1217"
+   ]
+  },
+  {
+   "old": "MUS M1096",
+   "new": "MUSI M1362",
+   "hops": [
+    "MUSI M1201",
+    "MUSI M1362"
+   ]
+  },
+  {
+   "old": "MUS M1097",
+   "new": "MUSI M1421",
+   "hops": [
+    "MUSI M1202",
+    "MUSI M1421"
+   ]
+  },
+  {
+   "old": "MUS M1098",
+   "new": "MUSI M1210",
+   "hops": [
+    "MUSI M1210"
+   ]
+  },
+  {
+   "old": "MUS M10AM",
+   "new": "MUSI M11KX",
+   "hops": [
+    "MUSI M10HO",
+    "MUSI M11KX"
+   ]
+  },
+  {
+   "old": "MUS M10AQ",
+   "new": "MUSI M11AK",
+   "hops": [
+    "MUSI M10IJ",
+    "MUSI M11AK"
+   ]
+  },
+  {
+   "old": "MUS M10AT",
+   "new": "MUSI M12KB",
+   "hops": [
+    "MUSI M10HZ",
+    "MUSI M12KB"
+   ]
+  },
+  {
+   "old": "MUS M10CD",
+   "new": "MUSI M11ZY",
+   "hops": [
+    "MUSI M10JC",
+    "MUSI M11ZY"
+   ]
+  },
+  {
+   "old": "MUS M10CM",
+   "new": "MUSI M12FH",
+   "hops": [
+    "MUSI M10JE",
+    "MUSI M12FH"
+   ]
+  },
+  {
+   "old": "MUS M10CY",
+   "new": "MUSI M11RC",
+   "hops": [
+    "MUSI M10NH",
+    "MUSI M11RC"
+   ]
+  },
+  {
+   "old": "MUS M10DG",
+   "new": "MUSI M11YD",
+   "hops": [
+    "MUSI M10OO",
+    "MUSI M11YD"
+   ]
+  },
+  {
+   "old": "MUS M10DJ",
+   "new": "MUSI M11PM",
+   "hops": [
+    "MUSI M10ON",
+    "MUSI M11PM"
+   ]
+  },
+  {
+   "old": "MUS M10DM",
+   "new": "MUSI M11EO",
+   "hops": [
+    "MUSI M10OS",
+    "MUSI M10MG",
+    "MUSI M11EO"
+   ]
+  },
+  {
+   "old": "MUS M10DO",
+   "new": "MUSI M12GW",
+   "hops": [
+    "MUSI M10OU",
+    "MUSI M12GW"
+   ]
+  },
+  {
+   "old": "MUS M10DQ",
+   "new": "MUSI M11VB",
+   "hops": [
+    "MUSI M10OW",
+    "MUSI M10RE",
+    "MUSI M11VB"
+   ]
+  },
+  {
+   "old": "MUS M10DW",
+   "new": "MUSI M10RU",
+   "hops": [
+    "MUSI M10RU"
+   ]
+  },
+  {
+   "old": "MUS M10EJ",
+   "new": "MUSI M10SQ",
+   "hops": [
+    "MUSI M10SQ"
+   ]
+  },
+  {
+   "old": "MUS M10EK",
+   "new": "MUSI M10SR",
+   "hops": [
+    "MUSI M10SR"
+   ]
+  },
+  {
+   "old": "MUS M10EL",
+   "new": "MUSI M10SS",
+   "hops": [
+    "MUSI M10SS"
+   ]
+  },
+  {
+   "old": "MUS M10EM",
+   "new": "MUSI M10ST",
+   "hops": [
+    "MUSI M10ST"
+   ]
+  },
+  {
+   "old": "MUS M10IS",
+   "new": "MUSI M11JQ",
+   "hops": [
+    "MUSI M11JQ"
+   ]
+  },
+  {
+   "old": "MUS M10IT",
+   "new": "MUSI M11JX",
+   "hops": [
+    "MUSI M11JX"
+   ]
+  },
+  {
+   "old": "MUS M10JB",
+   "new": "MUSI M10UI",
+   "hops": [
+    "MUSI M10UI"
+   ]
+  },
+  {
+   "old": "MUS M10JU",
+   "new": "MUSI M10UK",
+   "hops": [
+    "MUSI M10UK"
+   ]
+  },
+  {
+   "old": "MUS M10JV",
+   "new": "MUSI M10UM",
+   "hops": [
+    "MUSI M10UM"
+   ]
+  },
+  {
+   "old": "MUS M10KU",
+   "new": "MUSI M11SM",
+   "hops": [
+    "MUSI M11SM"
+   ]
+  },
+  {
+   "old": "MUS M10KV",
+   "new": "MUSI M11SN",
+   "hops": [
+    "MUSI M11SN"
+   ]
+  },
+  {
+   "old": "MUS M10LN",
+   "new": "MUSI M11TU",
+   "hops": [
+    "MUSI M11TU"
+   ]
+  },
+  {
+   "old": "MUS M10LR",
+   "new": "MUSI M11UA",
+   "hops": [
+    "MUSI M11UA"
+   ]
+  },
+  {
+   "old": "MUS M10MT",
+   "new": "MUSI M11ZM",
+   "hops": [
+    "MUSI M11ZM"
+   ]
+  },
+  {
+   "old": "MUS M10MU",
+   "new": "MUSI M11ZN",
+   "hops": [
+    "MUSI M11ZN"
+   ]
+  },
+  {
+   "old": "MUS M10MZ",
+   "new": "MUSI M11UC",
+   "hops": [
+    "MUSI M11UC"
+   ]
+  },
+  {
+   "old": "MUS M10PO",
+   "new": "MUSI M11KO",
+   "hops": [
+    "MUSI M10JZ",
+    "MUSI M11KO"
+   ]
+  },
+  {
+   "old": "MUS M10PV",
+   "new": "MUSI M11IF",
+   "hops": [
+    "MUSI M11IF"
+   ]
+  },
+  {
+   "old": "MUS M10QK",
+   "new": "MUSI M12KG",
+   "hops": [
+    "MUSI M12KG"
+   ]
+  },
+  {
+   "old": "MUS M10SQ",
+   "new": "MUSI M11UD",
+   "hops": [
+    "MUSI M11UD"
+   ]
+  },
+  {
+   "old": "MUS M10UJ",
+   "new": "MUSI M12OB",
+   "hops": [
+    "MUSI M12OB"
+   ]
+  },
+  {
+   "old": "MUS M10YC",
+   "new": "MUSI M12DO",
+   "hops": [
+    "MUSI M12DO"
+   ]
+  },
+  {
+   "old": "MUS M10YD",
+   "new": "MUSI M12GC",
+   "hops": [
+    "MUSI M12GC"
+   ]
+  },
+  {
+   "old": "MUS M10ZR",
+   "new": "MUSI M12RA",
+   "hops": [
+    "MUSI M12RA"
+   ]
+  },
+  {
+   "old": "MUS M10ZS",
+   "new": "MUSI M11UE",
+   "hops": [
+    "MUSI M11UE"
+   ]
+  },
+  {
+   "old": "MUS M1103",
+   "new": "MUSI M1286",
+   "hops": [
+    "MUSI M1286"
+   ]
+  },
+  {
+   "old": "MUS M1107",
+   "new": "MUSI M1288",
+   "hops": [
+    "MUSI M1288"
+   ]
+  },
+  {
+   "old": "MUS M1110",
+   "new": "MUSI M1295",
+   "hops": [
+    "MUSI M1295"
+   ]
+  },
+  {
+   "old": "MUS M1112",
+   "new": "MUSI M1300",
+   "hops": [
+    "MUSI M1300"
+   ]
+  },
+  {
+   "old": "MUS M1116",
+   "new": "MUSI M1458",
+   "hops": [
+    "MUSI M1203",
+    "MUSI M1458"
+   ]
+  },
+  {
+   "old": "MUS M1119",
+   "new": "MUSI M1320",
+   "hops": [
+    "MUSI M1320"
+   ]
+  },
+  {
+   "old": "MUS M1120",
+   "new": "MUSI M1379",
+   "hops": [
+    "MUSI M1379"
+   ]
+  },
+  {
+   "old": "MUS M1121",
+   "new": "MUSI M1382",
+   "hops": [
+    "MUSI M1382"
+   ]
+  },
+  {
+   "old": "MUS M1122",
+   "new": "MUSI M1385",
+   "hops": [
+    "MUSI M1385"
+   ]
+  },
+  {
+   "old": "MUS M1123",
+   "new": "MUSI M1388",
+   "hops": [
+    "MUSI M1388"
+   ]
+  },
+  {
+   "old": "MUS M1124",
+   "new": "MUSI M1325",
+   "hops": [
+    "MUSI M1325"
+   ]
+  },
+  {
+   "old": "MUS M1138",
+   "new": "MUSI M1390",
+   "hops": [
+    "MUSI M1082",
+    "MUSI M1390"
+   ]
+  },
+  {
+   "old": "MUS M1141",
+   "new": "MUSI M1491",
+   "hops": [
+    "MUSI M1189",
+    "MUSI M1123",
+    "MUSI M1491"
+   ]
+  },
+  {
+   "old": "MUS M1153",
+   "new": "MUSI M1520",
+   "hops": [
+    "MUSI M1520"
+   ]
+  },
+  {
+   "old": "MUS M1155",
+   "new": "MUSI M1522",
+   "hops": [
+    "MUSI M1522"
+   ]
+  },
+  {
+   "old": "MUS M1164",
+   "new": "MUSI M1528",
+   "hops": [
+    "MUSI M1528"
+   ]
+  },
+  {
+   "old": "MUS M1165",
+   "new": "MUSI M1404",
+   "hops": [
+    "MUSI M1176",
+    "MUSI M1097",
+    "MUSC M1010",
+    "MUSI M1404"
+   ]
+  },
+  {
+   "old": "MUS M1167",
+   "new": "MUSI M1531",
+   "hops": [
+    "MUSI M1531"
+   ]
+  },
+  {
+   "old": "MUS M1173",
+   "new": "MUSI M1455",
+   "hops": [
+    "MUSI M1117",
+    "MUSI M1455"
+   ]
+  },
+  {
+   "old": "MUS M1174",
+   "new": "MUSI M1253",
+   "hops": [
+    "MUSI M1253"
+   ]
+  },
+  {
+   "old": "MUS M1176",
+   "new": "MUSI M1341",
+   "hops": [
+    "MUSI M1341"
+   ]
+  },
+  {
+   "old": "MUS M1179",
+   "new": "MUSI M1511",
+   "hops": [
+    "MUSI M1511"
+   ]
+  },
+  {
+   "old": "MUS M1185",
+   "new": "MUSI M1550",
+   "hops": [
+    "MUSI M1550"
+   ]
+  },
+  {
+   "old": "MUS M1187",
+   "new": "MUSI M1344",
+   "hops": [
+    "MUSI M1344"
+   ]
+  },
+  {
+   "old": "MUS M1190",
+   "new": "MUSI M1342",
+   "hops": [
+    "MUSI M1342"
+   ]
+  },
+  {
+   "old": "MUS M1193",
+   "new": "MUSI M1431",
+   "hops": [
+    "MUSI M1431"
+   ]
+  },
+  {
+   "old": "MUS M1195",
+   "new": "MUSI M1346",
+   "hops": [
+    "MUSI M1346"
+   ]
+  },
+  {
+   "old": "MUS M1197",
+   "new": "MUSI M1211",
+   "hops": [
+    "MUSI M1211"
+   ]
+  },
+  {
+   "old": "MUS M1199",
+   "new": "MUSI M1215",
+   "hops": [
+    "MUSI M1215"
+   ]
+  },
+  {
+   "old": "MUS M11CB",
+   "new": "MUSI M12KH",
+   "hops": [
+    "MUSI M10AF",
+    "MUSI M10ID",
+    "MUSI M12KH"
+   ]
+  },
+  {
+   "old": "MUS M11FJ",
+   "new": "MUSI M11XA",
+   "hops": [
+    "MUSI M11XA"
+   ]
+  },
+  {
+   "old": "MUS M11FS",
+   "new": "MUSI M10WE",
+   "hops": [
+    "MUSI M10WE"
+   ]
+  },
+  {
+   "old": "MUS M11GA",
+   "new": "MUSI M12EP",
+   "hops": [
+    "MUSI M12EP"
+   ]
+  },
+  {
+   "old": "MUS M11GB",
+   "new": "MUSI M12HF",
+   "hops": [
+    "MUSI M12HF"
+   ]
+  },
+  {
+   "old": "MUS M11GC",
+   "new": "MUSI M12IM",
+   "hops": [
+    "MUSI M12IM"
+   ]
+  },
+  {
+   "old": "MUS M11GD",
+   "new": "MUSI M12MS",
+   "hops": [
+    "MUSI M12MS"
+   ]
+  },
+  {
+   "old": "MUS M11GE",
+   "new": "MUSI M12DZ",
+   "hops": [
+    "MUSI M12DZ"
+   ]
+  },
+  {
+   "old": "MUS M11GX",
+   "new": "MUSI M11UJ",
+   "hops": [
+    "MUSI M11UJ"
+   ]
+  },
+  {
+   "old": "MUS M11GY",
+   "new": "MUSI M11UV",
+   "hops": [
+    "MUSI M11UV"
+   ]
+  },
+  {
+   "old": "MUS M11GZ",
+   "new": "MUSI M11VF",
+   "hops": [
+    "MUSI M11VF"
+   ]
+  },
+  {
+   "old": "MUS M11HA",
+   "new": "MUSI M11VX",
+   "hops": [
+    "MUSI M11VX"
+   ]
+  },
+  {
+   "old": "MUS M1200",
+   "new": "MUSI M1424",
+   "hops": [
+    "MUSI M1088",
+    "MUSI M1424"
+   ]
+  },
+  {
+   "old": "MUS M1201",
+   "new": "MUSI M1391",
+   "hops": [
+    "MUSI M1083",
+    "MUSI M1391"
+   ]
+  },
+  {
+   "old": "MUS M1203",
+   "new": "MUSI M1448",
+   "hops": [
+    "MUSI M1177",
+    "MUSI M1448"
+   ]
+  },
+  {
+   "old": "MUS M1207",
+   "new": "MUSI M1374",
+   "hops": [
+    "MUSI M1374"
+   ]
+  },
+  {
+   "old": "MUS M1219",
+   "new": "MUSI M1432",
+   "hops": [
+    "MUSI M1432"
+   ]
+  },
+  {
+   "old": "MUS M1220",
+   "new": "MUSI M1438",
+   "hops": [
+    "MUSI M1438"
+   ]
+  },
+  {
+   "old": "MUS M1221",
+   "new": "MUSI M1474",
+   "hops": [
+    "MUSI M1474"
+   ]
+  },
+  {
+   "old": "MUS M1222",
+   "new": "MUSI M1499",
+   "hops": [
+    "MUSI M1499"
+   ]
+  },
+  {
+   "old": "MUS M1223",
+   "new": "MUSI M1545",
+   "hops": [
+    "MUSI M1545"
+   ]
+  },
+  {
+   "old": "MUS M1229",
+   "new": "MUSI M1579",
+   "hops": [
+    "MUSI M1579"
+   ]
+  },
+  {
+   "old": "MUS M1230",
+   "new": "MUSI M1546",
+   "hops": [
+    "MUSI M1546"
+   ]
+  },
+  {
+   "old": "MUS M1232",
+   "new": "MUSI M1581",
+   "hops": [
+    "MUSI M1581"
+   ]
+  },
+  {
+   "old": "MUS M1234",
+   "new": "MUSI M1428",
+   "hops": [
+    "MUSI M1121",
+    "MUSI M1428"
+   ]
+  },
+  {
+   "old": "MUS M1235",
+   "new": "MUSI M1352",
+   "hops": [
+    "MUSI M1352"
+   ]
+  },
+  {
+   "old": "MUS M1238",
+   "new": "MUSI M1353",
+   "hops": [
+    "MUSI M1353"
+   ]
+  },
+  {
+   "old": "MUS M1239",
+   "new": "MUSI M1444",
+   "hops": [
+    "MUSI M1444"
+   ]
+  },
+  {
+   "old": "MUS M1240",
+   "new": "MUSI M1479",
+   "hops": [
+    "MUSI M1479"
+   ]
+  },
+  {
+   "old": "MUS M1241",
+   "new": "MUSI M1503",
+   "hops": [
+    "MUSI M1503"
+   ]
+  },
+  {
+   "old": "MUS M1242",
+   "new": "MUSI M1548",
+   "hops": [
+    "MUSI M1548"
+   ]
+  },
+  {
+   "old": "MUS M1252",
+   "new": "MUSI M1445",
+   "hops": [
+    "MUSI M1445"
+   ]
+  },
+  {
+   "old": "MUS M1259",
+   "new": "MUSI M1593",
+   "hops": [
+    "MUSI M1593"
+   ]
+  },
+  {
+   "old": "MUS M1263",
+   "new": "MUSI M1464",
+   "hops": [
+    "MUSI M1122",
+    "MUSI M1464"
+   ]
+  },
+  {
+   "old": "MUS M1264",
+   "new": "MUSI M1355",
+   "hops": [
+    "MUSI M1355"
+   ]
+  },
+  {
+   "old": "MUS M1267",
+   "new": "MUSI M1583",
+   "hops": [
+    "MUSI M1583"
+   ]
+  },
+  {
+   "old": "MUS M1271",
+   "new": "MUSI M1407",
+   "hops": [
+    "MUSI M1407"
+   ]
+  },
+  {
+   "old": "MUS M1273",
+   "new": "MUSI M1538",
+   "hops": [
+    "MUSI M1124",
+    "MUSI M1538"
+   ]
+  },
+  {
+   "old": "MUS M1275",
+   "new": "MUSI M1584",
+   "hops": [
+    "MUSI M1584"
+   ]
+  },
+  {
+   "old": "MUS M1276",
+   "new": "MUSI M1442",
+   "hops": [
+    "MUSI M1442"
+   ]
+  },
+  {
+   "old": "MUS M1277",
+   "new": "MUSI M1477",
+   "hops": [
+    "MUSI M1477"
+   ]
+  },
+  {
+   "old": "MUS M1278",
+   "new": "MUSI M1502",
+   "hops": [
+    "MUSI M1502"
+   ]
+  },
+  {
+   "old": "MUS M1279",
+   "new": "MUSI M1547",
+   "hops": [
+    "MUSI M1547"
+   ]
+  },
+  {
+   "old": "MUS M1289",
+   "new": "MUSI M1345",
+   "hops": [
+    "MUSI M1345"
+   ]
+  },
+  {
+   "old": "MUS M1296",
+   "new": "MUSI M1451",
+   "hops": [
+    "MUSI M1451"
+   ]
+  },
+  {
+   "old": "MUS M1297",
+   "new": "MUSI M1483",
+   "hops": [
+    "MUSI M1483"
+   ]
+  },
+  {
+   "old": "MUS M1298",
+   "new": "MUSI M1504",
+   "hops": [
+    "MUSI M1504"
+   ]
+  },
+  {
+   "old": "MUS M1299",
+   "new": "MUSI M1549",
+   "hops": [
+    "MUSI M1549"
+   ]
+  },
+  {
+   "old": "MUS M9001",
+   "new": "MUSI M9021",
+   "hops": [
+    "MUSI M9021"
+   ]
+  },
+  {
+   "old": "MUS M9003",
+   "new": "MUSI M9022",
+   "hops": [
+    "MUSI M9022"
+   ]
+  },
+  {
+   "old": "MUS M9006",
+   "new": "MUSI M9035",
+   "hops": [
+    "MUSI M9035"
+   ]
+  },
+  {
+   "old": "MUS M90BD",
+   "new": "MUSI M90EW",
+   "hops": [
+    "MUSI M90EW"
+   ]
+  },
+  {
+   "old": "MUS M90CA",
+   "new": "MUSI M90ER",
+   "hops": [
+    "MUSI M90ER"
+   ]
+  },
+  {
+   "old": "MUSA M10AU",
+   "new": "MUSI M11WO",
+   "hops": [
+    "MUSI M10OM",
+    "MUSI M11WO"
+   ]
+  },
+  {
+   "old": "MUSC M10FX",
+   "new": "MUSI M10YN",
+   "hops": [
+    "MUSI M10BX",
+    "MUSI M10YN"
+   ]
+  },
+  {
+   "old": "MUSC M10GY",
+   "new": "MUSI M12QL",
+   "hops": [
+    "MUSI M12QL"
+   ]
+  },
+  {
+   "old": "MUSC M10HT",
+   "new": "MUSI M11ZF",
+   "hops": [
+    "MUSI M10QW",
+    "MUSI M11ZF"
+   ]
+  },
+  {
+   "old": "MUSC M9004",
+   "new": "MUSI M9028",
+   "hops": [
+    "MUSI M9028"
+   ]
+  },
+  {
+   "old": "MUSC M9005",
+   "new": "MUSI M9038",
+   "hops": [
+    "MUSI M9038"
+   ]
+  },
+  {
+   "old": "MUSC M9008",
+   "new": "MUSI M9030",
+   "hops": [
+    "MUSI M9030"
+   ]
+  },
+  {
+   "old": "MUSM M10AN",
+   "new": "MUSI M11YF",
+   "hops": [
+    "MUSC M10DO",
+    "MUSI M11YF"
+   ]
+  },
+  {
+   "old": "MUSP M10BD",
+   "new": "MUSI M12PZ",
+   "hops": [
+    "MUSI M10AW",
+    "MUSI M10MY",
+    "MUSI M12PZ"
+   ]
+  },
+  {
+   "old": "MUSP M10BE",
+   "new": "MUSI M11LU",
+   "hops": [
+    "MUSI M10EL",
+    "MUSI M11LU"
+   ]
+  },
+  {
+   "old": "MUST M10AR",
+   "new": "MUSI M11NQ",
+   "hops": [
+    "MUSI M10EU",
+    "MUSI M11NQ"
+   ]
+  },
+  {
+   "old": "MUST M10AS",
+   "new": "MUSI M11QP",
+   "hops": [
+    "MUSI M10FN",
+    "MUSI M11QP"
+   ]
+  },
+  {
+   "old": "NC M9022",
+   "new": "BUSI M9068",
+   "hops": [
+    "BUSI M9068"
+   ]
+  },
+  {
+   "old": "NURS M1066",
+   "new": "NRSR M1177",
+   "hops": [
+    "NRSR M1177"
+   ]
+  },
+  {
+   "old": "NUTR M1020",
+   "new": "NUTR M1051",
+   "hops": [
+    "NUTR M1051"
+   ]
+  },
+  {
+   "old": "OAP M1001",
+   "new": "HLTH M1159",
+   "hops": [
+    "HLTH M1159"
+   ]
+  },
+  {
+   "old": "OH M10AQ",
+   "new": "HORT M10MC",
+   "hops": [
+    "HORT M10MC"
+   ]
+  },
+  {
+   "old": "OLDR M90AL",
+   "new": "MUSI M90EQ",
+   "hops": [
+    "MUSI M90EQ"
+   ]
+  },
+  {
+   "old": "ORNH M10AF",
+   "new": "HORT M10NM",
+   "hops": [
+    "HORT M10NM"
+   ]
+  },
+  {
+   "old": "PADM M1001",
+   "new": "POSC M1067",
+   "hops": [
+    "POSC M1067"
+   ]
+  },
+  {
+   "old": "PH M1006",
+   "new": "HLTH M1162",
+   "hops": [
+    "HLTH M1030",
+    "HLTH M1162"
+   ]
+  },
+  {
+   "old": "PH M1007",
+   "new": "HLTH M1097",
+   "hops": [
+    "HLTH M1097"
+   ]
+  },
+  {
+   "old": "PHIL M1040",
+   "new": "PHIL M1055",
+   "hops": [
+    "PHIL M1028",
+    "PHIL M1062",
+    "PHIL M1088",
+    "PHIL M1053",
+    "PHIL M1018",
+    "PHIL M1011",
+    "PHIL M1039",
+    "PHIL M1008",
+    "PHIL M1031",
+    "PHIL M1055"
+   ]
+  },
+  {
+   "old": "PHSC M10AD",
+   "new": "PHYS M12EQ",
+   "hops": [
+    "PHYS M12EQ"
+   ]
+  },
+  {
+   "old": "PHTO M9001",
+   "new": "PHOT M9008",
+   "hops": [
+    "PHOT M9004",
+    "PHOT M9006",
+    "PHOT M9008"
+   ]
+  },
+  {
+   "old": "PHY M10AB",
+   "new": "PHYS M12RX",
+   "hops": [
+    "PHYS M12RX"
+   ]
+  },
+  {
+   "old": "PHY M10AD",
+   "new": "PHYS M12SV",
+   "hops": [
+    "PHYS M12SV"
+   ]
+  },
+  {
+   "old": "PHY M10AP",
+   "new": "PHYS M12SX",
+   "hops": [
+    "PHYS M12SX"
+   ]
+  },
+  {
+   "old": "PHYS M1005",
+   "new": "PHYS M1304",
+   "hops": [
+    "PHYS M1304"
+   ]
+  },
+  {
+   "old": "PHYS M1014",
+   "new": "PHYS M1416",
+   "hops": [
+    "PHYS M1416"
+   ]
+  },
+  {
+   "old": "PHYS M1016",
+   "new": "PHYS M1419",
+   "hops": [
+    "PHYS M1419"
+   ]
+  },
+  {
+   "old": "PHYS M1019",
+   "new": "PHYS M1519",
+   "hops": [
+    "PHYS M1519"
+   ]
+  },
+  {
+   "old": "PHYS M1021",
+   "new": "PHYS M1302",
+   "hops": [
+    "PHYS M1302"
+   ]
+  },
+  {
+   "old": "PHYS M1022",
+   "new": "PHYS M1301",
+   "hops": [
+    "PHYS M1301"
+   ]
+  },
+  {
+   "old": "PHYS M1023",
+   "new": "PHYS M1533",
+   "hops": [
+    "PHYS M1533"
+   ]
+  },
+  {
+   "old": "PHYS M1026",
+   "new": "PHYS M1527",
+   "hops": [
+    "PHYS M1527"
+   ]
+  },
+  {
+   "old": "PHYS M1028",
+   "new": "PHYS M1529",
+   "hops": [
+    "PHYS M1529"
+   ]
+  },
+  {
+   "old": "PHYS M1031",
+   "new": "PHYS M1530",
+   "hops": [
+    "PHYS M1530"
+   ]
+  },
+  {
+   "old": "PHYS M1032",
+   "new": "PHYS M1526",
+   "hops": [
+    "PHYS M1526"
+   ]
+  },
+  {
+   "old": "PHYS M1033",
+   "new": "PHYS M1528",
+   "hops": [
+    "PHYS M1528"
+   ]
+  },
+  {
+   "old": "PHYS M1034",
+   "new": "PHYS M1283",
+   "hops": [
+    "PHYS M1283"
+   ]
+  },
+  {
+   "old": "PHYS M1036",
+   "new": "BIOL M1235",
+   "hops": [
+    "BIOL M1235"
+   ]
+  },
+  {
+   "old": "PHYS M1037",
+   "new": "PHYS M1686",
+   "hops": [
+    "PHYS M1686"
+   ]
+  },
+  {
+   "old": "PHYS M1041",
+   "new": "PHYS M1696",
+   "hops": [
+    "PHYS M1696"
+   ]
+  },
+  {
+   "old": "PHYS M1043",
+   "new": "PHYS M1718",
+   "hops": [
+    "PHYS M1718"
+   ]
+  },
+  {
+   "old": "PHYS M1045",
+   "new": "PHYS M1493",
+   "hops": [
+    "PHYS M1493"
+   ]
+  },
+  {
+   "old": "PHYS M1046",
+   "new": "PHYS M1739",
+   "hops": [
+    "PHYS M1739"
+   ]
+  },
+  {
+   "old": "PHYS M1048",
+   "new": "PHYS M1737",
+   "hops": [
+    "PHYS M1737"
+   ]
+  },
+  {
+   "old": "PHYS M1056",
+   "new": "PHYS M1422",
+   "hops": [
+    "PHYS M1422"
+   ]
+  },
+  {
+   "old": "PHYS M1057",
+   "new": "PHYS M1423",
+   "hops": [
+    "PHYS M1423"
+   ]
+  },
+  {
+   "old": "PHYS M1058",
+   "new": "PHYS M1425",
+   "hops": [
+    "PHYS M1425"
+   ]
+  },
+  {
+   "old": "PHYS M1060",
+   "new": "PHYS M1427",
+   "hops": [
+    "PHYS M1427"
+   ]
+  },
+  {
+   "old": "PHYS M1061",
+   "new": "PHYS M1424",
+   "hops": [
+    "PHYS M1424"
+   ]
+  },
+  {
+   "old": "PHYS M1062",
+   "new": "PHYS M1426",
+   "hops": [
+    "PHYS M1426"
+   ]
+  },
+  {
+   "old": "PHYS M10AE",
+   "new": "PHYS M10TH",
+   "hops": [
+    "PHYS M10TH"
+   ]
+  },
+  {
+   "old": "PHYS M10AV",
+   "new": "PHYS M11KC",
+   "hops": [
+    "PHYS M11KC"
+   ]
+  },
+  {
+   "old": "PHYS M10AW",
+   "new": "PHYS M11KD",
+   "hops": [
+    "PHYS M11KD"
+   ]
+  },
+  {
+   "old": "PHYS M10CD",
+   "new": "PHYS M12OV",
+   "hops": [
+    "PHYS M10AY",
+    "PHYS M10BJ",
+    "PHYS M12OV"
+   ]
+  },
+  {
+   "old": "PHYS M10CF",
+   "new": "PHYS M12EF",
+   "hops": [
+    "PHYS M10DH",
+    "PHYS M12EF"
+   ]
+  },
+  {
+   "old": "PHYS M10CZ",
+   "new": "PHYS M13ID",
+   "hops": [
+    "PHYS M13ID"
+   ]
+  },
+  {
+   "old": "PHYS M10FG",
+   "new": "PHYS M13IW",
+   "hops": [
+    "PHYS M13IW"
+   ]
+  },
+  {
+   "old": "PHYS M10FP",
+   "new": "PHYS M12TE",
+   "hops": [
+    "PHYS M12TE"
+   ]
+  },
+  {
+   "old": "PHYS M10GA",
+   "new": "PHYS M11YR",
+   "hops": [
+    "PHYS M11YR"
+   ]
+  },
+  {
+   "old": "PLNT M10AG",
+   "new": "AGPR M10FL",
+   "hops": [
+    "AGPR M10FL"
+   ]
+  },
+  {
+   "old": "PLS M1010",
+   "new": "AGPR M1027",
+   "hops": [
+    "AGPR M1027"
+   ]
+  },
+  {
+   "old": "PLS M10AJ",
+   "new": "AGPR M10GD",
+   "hops": [
+    "AGPR M10GD"
+   ]
+  },
+  {
+   "old": "PLSC M10AG",
+   "new": "AGPR M10FT",
+   "hops": [
+    "AGPR M10FT"
+   ]
+  },
+  {
+   "old": "PLSC M10AK",
+   "new": "POSC M10DK",
+   "hops": [
+    "POSC M10DK"
+   ]
+  },
+  {
+   "old": "PLSC M10AM",
+   "new": "AGPR M10GO",
+   "hops": [
+    "AGPR M10GO"
+   ]
+  },
+  {
+   "old": "POLI M1005",
+   "new": "POSC M1059",
+   "hops": [
+    "POSC M1059"
+   ]
+  },
+  {
+   "old": "POLI M1008",
+   "new": "CRIM M1179",
+   "hops": [
+    "CRIM M1179"
+   ]
+  },
+  {
+   "old": "POLS M1008",
+   "new": "POSC M1031",
+   "hops": [
+    "POSC M1031"
+   ]
+  },
+  {
+   "old": "POLS M1009",
+   "new": "POSC M1036",
+   "hops": [
+    "POSC M1036"
+   ]
+  },
+  {
+   "old": "POLS M1014",
+   "new": "POSC M1064",
+   "hops": [
+    "POSC M1064"
+   ]
+  },
+  {
+   "old": "POLS M1018",
+   "new": "POSC M1032",
+   "hops": [
+    "POSC M1032"
+   ]
+  },
+  {
+   "old": "POLS M1019",
+   "new": "POSC M1033",
+   "hops": [
+    "POSC M1033"
+   ]
+  },
+  {
+   "old": "POLS M1020",
+   "new": "POSC M1035",
+   "hops": [
+    "POSC M1035"
+   ]
+  },
+  {
+   "old": "POLS M1022",
+   "new": "POSC M1056",
+   "hops": [
+    "POSC M1056"
+   ]
+  },
+  {
+   "old": "POLS M1024",
+   "new": "POSC M1063",
+   "hops": [
+    "POSC M1063"
+   ]
+  },
+  {
+   "old": "POLS M1025",
+   "new": "POSC M1066",
+   "hops": [
+    "POSC M1066"
+   ]
+  },
+  {
+   "old": "POLS M1027",
+   "new": "POSC M1071",
+   "hops": [
+    "POSC M1071"
+   ]
+  },
+  {
+   "old": "POLS M1028",
+   "new": "POSC M1068",
+   "hops": [
+    "POSC M1068"
+   ]
+  },
+  {
+   "old": "POLS M1029",
+   "new": "POSC M1072",
+   "hops": [
+    "POSC M1072"
+   ]
+  },
+  {
+   "old": "POLS M1030",
+   "new": "POSC M1073",
+   "hops": [
+    "POSC M1073"
+   ]
+  },
+  {
+   "old": "POLS M1034",
+   "new": "POSC M1052",
+   "hops": [
+    "POSC M1052"
+   ]
+  },
+  {
+   "old": "POLS M1035",
+   "new": "POSC M1074",
+   "hops": [
+    "POSC M1074"
+   ]
+  },
+  {
+   "old": "POLS M1042",
+   "new": "POSC M1083",
+   "hops": [
+    "POSC M1083"
+   ]
+  },
+  {
+   "old": "POLS M1046",
+   "new": "POSC M1058",
+   "hops": [
+    "POSC M1058"
+   ]
+  },
+  {
+   "old": "POLS M1052",
+   "new": "POSC M1086",
+   "hops": [
+    "POSC M1086"
+   ]
+  },
+  {
+   "old": "POLS M10AA",
+   "new": "POSC M10BF",
+   "hops": [
+    "POSC M10BF"
+   ]
+  },
+  {
+   "old": "POLS M10BH",
+   "new": "POSC M10FS",
+   "hops": [
+    "POSC M10FS"
+   ]
+  },
+  {
+   "old": "POLS M10BR",
+   "new": "POSC M10GB",
+   "hops": [
+    "POSC M10GB"
+   ]
+  },
+  {
+   "old": "POLS M10BS",
+   "new": "POSC M10FO",
+   "hops": [
+    "POSC M10FO"
+   ]
+  },
+  {
+   "old": "POLS M10ED",
+   "new": "POSC M10HE",
+   "hops": [
+    "POSC M10HE"
+   ]
+  },
+  {
+   "old": "POLT M10AB",
+   "new": "POSC M10GD",
+   "hops": [
+    "POSC M10GD"
+   ]
+  },
+  {
+   "old": "PSC M1004",
+   "new": "PHYS M1754",
+   "hops": [
+    "PHYS M1754"
+   ]
+  },
+  {
+   "old": "PSCI M1002",
+   "new": "PHYS M1752",
+   "hops": [
+    "PHYS M1752"
+   ]
+  },
+  {
+   "old": "PSCI M1003",
+   "new": "PHYS M1751",
+   "hops": [
+    "PHYS M1751"
+   ]
+  },
+  {
+   "old": "PSY M1013",
+   "new": "PSYC M1124",
+   "hops": [
+    "PSYC M1124"
+   ]
+  },
+  {
+   "old": "PSY M10AC",
+   "new": "PSYC M10JE",
+   "hops": [
+    "PSYC M10CO",
+    "PSYC M10HI",
+    "PSYC M10FV",
+    "PSYC M10AD",
+    "PSYC M10AS",
+    "PSYC M10DR",
+    "PSYC M10JE"
+   ]
+  },
+  {
+   "old": "PSY M10AQ",
+   "new": "PSYC M10JC",
+   "hops": [
+    "PSYC M10JC"
+   ]
+  },
+  {
+   "old": "PSY M10AX",
+   "new": "PSYC M10JM",
+   "hops": [
+    "PSYC M10JM"
+   ]
+  },
+  {
+   "old": "PSY M10BC",
+   "new": "PSYC M10JR",
+   "hops": [
+    "PSYC M10GF",
+    "PSYC M10GO",
+    "PSYC M10JR"
+   ]
+  },
+  {
+   "old": "PSY M90AB",
+   "new": "PSYC M90AD",
+   "hops": [
+    "PSYC M90AD"
+   ]
+  },
+  {
+   "old": "PUBH M10AA",
+   "new": "HLTH M10EE",
+   "hops": [
+    "HLTH M10EE"
+   ]
+  },
+  {
+   "old": "PUBH M10AF",
+   "new": "HLTH M10JU",
+   "hops": [
+    "HLTH M10JU"
+   ]
+  },
+  {
+   "old": "RTV M1002",
+   "new": "BCST M1013",
+   "hops": [
+    "BCST M1013"
+   ]
+  },
+  {
+   "old": "SOC M1001",
+   "new": "SOCI M1070",
+   "hops": [
+    "SOCI M1007",
+    "SOCI M1070"
+   ]
+  },
+  {
+   "old": "SOC M1004",
+   "new": "SOCI M1021",
+   "hops": [
+    "SOCI M1021"
+   ]
+  },
+  {
+   "old": "SOC M1005",
+   "new": "SOCI M1023",
+   "hops": [
+    "SOCI M1023"
+   ]
+  },
+  {
+   "old": "SOC M1012",
+   "new": "SOCI M1059",
+   "hops": [
+    "SOCI M1059"
+   ]
+  },
+  {
+   "old": "SOC M1013",
+   "new": "SOCI M1038",
+   "hops": [
+    "SOCI M1038"
+   ]
+  },
+  {
+   "old": "SOC M1015",
+   "new": "SOCI M1022",
+   "hops": [
+    "SOCI M1022"
+   ]
+  },
+  {
+   "old": "SOC M1016",
+   "new": "SOCI M1024",
+   "hops": [
+    "SOCI M1024"
+   ]
+  },
+  {
+   "old": "SOC M1018",
+   "new": "SOCI M1049",
+   "hops": [
+    "SOCI M1049"
+   ]
+  },
+  {
+   "old": "SOC M1019",
+   "new": "SOCI M1065",
+   "hops": [
+    "SOCI M1065"
+   ]
+  },
+  {
+   "old": "SOC M1020",
+   "new": "SOCI M1045",
+   "hops": [
+    "SOCI M1045"
+   ]
+  },
+  {
+   "old": "SOC M1021",
+   "new": "ANTH M1106",
+   "hops": [
+    "ANTH M1106"
+   ]
+  },
+  {
+   "old": "SOC M1022",
+   "new": "SOCI M1043",
+   "hops": [
+    "SOCI M1043"
+   ]
+  },
+  {
+   "old": "SOC M1023",
+   "new": "ETHS M1222",
+   "hops": [
+    "ETHS M1222"
+   ]
+  },
+  {
+   "old": "SOC M1024",
+   "new": "SOCI M1066",
+   "hops": [
+    "SOCI M1066"
+   ]
+  },
+  {
+   "old": "SOC M1025",
+   "new": "SOCI M1064",
+   "hops": [
+    "SOCI M1064"
+   ]
+  },
+  {
+   "old": "SOC M1026",
+   "new": "SOCI M1067",
+   "hops": [
+    "SOCI M1067"
+   ]
+  },
+  {
+   "old": "SOC M1027",
+   "new": "SOCI M1074",
+   "hops": [
+    "SOCI M1074"
+   ]
+  },
+  {
+   "old": "SOC M1028",
+   "new": "SOCI M1061",
+   "hops": [
+    "SOCI M1061"
+   ]
+  },
+  {
+   "old": "SOC M1030",
+   "new": "SOCI M1075",
+   "hops": [
+    "SOCI M1075"
+   ]
+  },
+  {
+   "old": "SOC M1032",
+   "new": "SOCI M1071",
+   "hops": [
+    "SOCI M1071"
+   ]
+  },
+  {
+   "old": "SOC M1033",
+   "new": "SOCI M1034",
+   "hops": [
+    "SOCI M1034"
+   ]
+  },
+  {
+   "old": "SOC M1035",
+   "new": "SOCI M1047",
+   "hops": [
+    "SOCI M1047"
+   ]
+  },
+  {
+   "old": "SOC M1036",
+   "new": "SOCI M1046",
+   "hops": [
+    "SOCI M1046"
+   ]
+  },
+  {
+   "old": "SOC M1037",
+   "new": "SOCI M1078",
+   "hops": [
+    "SOCI M1078"
+   ]
+  },
+  {
+   "old": "SOC M1041",
+   "new": "SOCI M1057",
+   "hops": [
+    "SOCI M1057"
+   ]
+  },
+  {
+   "old": "SOC M1043",
+   "new": "SOCI M1039",
+   "hops": [
+    "SOCI M1039"
+   ]
+  },
+  {
+   "old": "SOC M1044",
+   "new": "SOCI M1042",
+   "hops": [
+    "SOCI M1042"
+   ]
+  },
+  {
+   "old": "SOC M1048",
+   "new": "SOCI M1063",
+   "hops": [
+    "SOCI M1063"
+   ]
+  },
+  {
+   "old": "SOC M1049",
+   "new": "SOCI M1081",
+   "hops": [
+    "SOCI M1081"
+   ]
+  },
+  {
+   "old": "SOC M1051",
+   "new": "SOCI M1079",
+   "hops": [
+    "SOCI M1079"
+   ]
+  },
+  {
+   "old": "SOC M1052",
+   "new": "SOCI M1073",
+   "hops": [
+    "SOCI M1008",
+    "SOCI M1073"
+   ]
+  },
+  {
+   "old": "SOC M1056",
+   "new": "SOCI M1054",
+   "hops": [
+    "SOCI M1054"
+   ]
+  },
+  {
+   "old": "SOC M1062",
+   "new": "SOCI M1048",
+   "hops": [
+    "SOCI M1048"
+   ]
+  },
+  {
+   "old": "SOC M1063",
+   "new": "SOCI M1090",
+   "hops": [
+    "SOCI M1090"
+   ]
+  },
+  {
+   "old": "SOC M1066",
+   "new": "ANTH M1098",
+   "hops": [
+    "SOCI M1009",
+    "SOCI M1001",
+    "SOCI M1003",
+    "ANTH M1098"
+   ]
+  },
+  {
+   "old": "SOC M10AG",
+   "new": "SOCS M10BE",
+   "hops": [
+    "SOCI M10BA",
+    "SOCS M10AC",
+    "SOCS M10BE"
+   ]
+  },
+  {
+   "old": "SOC M10AU",
+   "new": "SOCI M10DM",
+   "hops": [
+    "SOCI M10DM"
+   ]
+  },
+  {
+   "old": "SOC M10BJ",
+   "new": "SOCI M10BZ",
+   "hops": [
+    "SOCI M10BZ"
+   ]
+  },
+  {
+   "old": "SOC M10CA",
+   "new": "SOCI M10FL",
+   "hops": [
+    "SOCI M10FL"
+   ]
+  },
+  {
+   "old": "SOC M10CO",
+   "new": "SOCI M10CW",
+   "hops": [
+    "SOCI M10CW"
+   ]
+  },
+  {
+   "old": "SOC M10CR",
+   "new": "SOCI M10CY",
+   "hops": [
+    "SOCI M10CY"
+   ]
+  },
+  {
+   "old": "SOC M10CU",
+   "new": "SOCI M10FS",
+   "hops": [
+    "SOCI M10FS"
+   ]
+  },
+  {
+   "old": "SOC M10DG",
+   "new": "SOCS M10CA",
+   "hops": [
+    "SOCI M10AZ",
+    "SOCS M10AB",
+    "SOCS M10AI",
+    "SOCS M10AK",
+    "SOCS M10CA"
+   ]
+  },
+  {
+   "old": "SOC M10DM",
+   "new": "SOCI M10CC",
+   "hops": [
+    "SOCI M10CC"
+   ]
+  },
+  {
+   "old": "SOCO M1002",
+   "new": "SOCI M1019",
+   "hops": [
+    "SOCI M1019"
+   ]
+  },
+  {
+   "old": "SOCO M1005",
+   "new": "SOCI M1068",
+   "hops": [
+    "SOCI M1068"
+   ]
+  },
+  {
+   "old": "SOCO M1006",
+   "new": "SOCI M1080",
+   "hops": [
+    "SOCI M1080"
+   ]
+  },
+  {
+   "old": "SPA M1003",
+   "new": "FLSP M1019",
+   "hops": [
+    "FLNG M1019",
+    "FLSP M1019"
+   ]
+  },
+  {
+   "old": "SPA M1004",
+   "new": "FLSP M1040",
+   "hops": [
+    "FLNG M1040",
+    "FLSP M1040"
+   ]
+  },
+  {
+   "old": "SPA M1005",
+   "new": "FLSP M1043",
+   "hops": [
+    "FLNG M1043",
+    "FLSP M1043"
+   ]
+  },
+  {
+   "old": "SPA M1006",
+   "new": "FLSP M1045",
+   "hops": [
+    "FLNG M1045",
+    "FLSP M1045"
+   ]
+  },
+  {
+   "old": "SPAN M1001",
+   "new": "FLSP M1056",
+   "hops": [
+    "FLNG M1056",
+    "FLSP M1056"
+   ]
+  },
+  {
+   "old": "SPAN M1015",
+   "new": "FLSP M1130",
+   "hops": [
+    "FLNG M1130",
+    "FLSP M1130"
+   ]
+  },
+  {
+   "old": "SPAN M1016",
+   "new": "FLSP M1130",
+   "hops": [
+    "FLNG M1121",
+    "FLSP M1121",
+    "FLSP M1130"
+   ]
+  },
+  {
+   "old": "SPAN M1017",
+   "new": "FLSP M1125",
+   "hops": [
+    "FLNG M1125",
+    "FLSP M1125"
+   ]
+  },
+  {
+   "old": "SPAN M1039",
+   "new": "FLSP M1272",
+   "hops": [
+    "FLNG M1294",
+    "FLSP M1294",
+    "FLSP M1272"
+   ]
+  },
+  {
+   "old": "SPAN M1040",
+   "new": "FLSP M1272",
+   "hops": [
+    "FLNG M1010",
+    "FLSP M1010",
+    "FLSP M1272"
+   ]
+  },
+  {
+   "old": "SPAN M1041",
+   "new": "FLSP M1279",
+   "hops": [
+    "FLNG M1029",
+    "FLSP M1029",
+    "FLSP M1279"
+   ]
+  },
+  {
+   "old": "SPAN M1044",
+   "new": "FLSP M1272",
+   "hops": [
+    "FLNG M1272",
+    "FLSP M1272"
+   ]
+  },
+  {
+   "old": "SPAN M1045",
+   "new": "FLSP M1279",
+   "hops": [
+    "FLNG M1279",
+    "FLSP M1279"
+   ]
+  },
+  {
+   "old": "SPAN M1049",
+   "new": "FLSP M1235",
+   "hops": [
+    "FLNG M1307",
+    "FLSP M1307",
+    "FLSP M1235"
+   ]
+  },
+  {
+   "old": "SPAN M1051",
+   "new": "FLSP M1237",
+   "hops": [
+    "FLNG M1308",
+    "FLSP M1308",
+    "FLSP M1237"
+   ]
+  },
+  {
+   "old": "SPAN M1057",
+   "new": "FLSP M1118",
+   "hops": [
+    "FLNG M1118",
+    "FLSP M1118"
+   ]
+  },
+  {
+   "old": "SPAN M1058",
+   "new": "FLSP M1337",
+   "hops": [
+    "FLNG M1337",
+    "FLSP M1337"
+   ]
+  },
+  {
+   "old": "SPAN M1061",
+   "new": "FLSP M1265",
+   "hops": [
+    "FLNG M1265",
+    "FLSP M1265"
+   ]
+  },
+  {
+   "old": "SPAN M1063",
+   "new": "FLSP M1379",
+   "hops": [
+    "FLNG M1379",
+    "FLSP M1379"
+   ]
+  },
+  {
+   "old": "SPAN M1064",
+   "new": "FLSP M1342",
+   "hops": [
+    "FLNG M1015",
+    "FLSP M1015",
+    "FLSP M1342"
+   ]
+  },
+  {
+   "old": "SPAN M1065",
+   "new": "FLSP M1036",
+   "hops": [
+    "FLNG M1036",
+    "FLSP M1036"
+   ]
+  },
+  {
+   "old": "SPAN M1069",
+   "new": "FLSP M1342",
+   "hops": [
+    "FLNG M1342",
+    "FLSP M1342"
+   ]
+  },
+  {
+   "old": "SPAN M1070",
+   "new": "FLSP M1352",
+   "hops": [
+    "FLNG M1352",
+    "FLSP M1352"
+   ]
+  },
+  {
+   "old": "SPAN M1071",
+   "new": "FLSP M1362",
+   "hops": [
+    "FLNG M1362",
+    "FLSP M1362"
+   ]
+  },
+  {
+   "old": "SPAN M1086",
+   "new": "FLSP M1245",
+   "hops": [
+    "FLNG M1396",
+    "FLSP M1396",
+    "FLSP M1245"
+   ]
+  },
+  {
+   "old": "SPAN M1095",
+   "new": "FLSP M1335",
+   "hops": [
+    "FLNG M1033",
+    "FLSP M1033",
+    "FLSP M1335"
+   ]
+  },
+  {
+   "old": "SPAN M1096",
+   "new": "FLSP M1334",
+   "hops": [
+    "FLNG M1334",
+    "FLSP M1334"
+   ]
+  },
+  {
+   "old": "SPAN M1097",
+   "new": "FLSP M1335",
+   "hops": [
+    "FLNG M1335",
+    "FLSP M1335"
+   ]
+  },
+  {
+   "old": "SPAN M10AE",
+   "new": "FLSP M10HF",
+   "hops": [
+    "FLNG M10HF",
+    "FLSP M10HF"
+   ]
+  },
+  {
+   "old": "SPAN M10CT",
+   "new": "FLSP M10BA",
+   "hops": [
+    "FLNG M10BA",
+    "FLSP M10BA"
+   ]
+  },
+  {
+   "old": "SPAN M10CU",
+   "new": "FLSP M10DN",
+   "hops": [
+    "FLNG M10DN",
+    "FLSP M10DN"
+   ]
+  },
+  {
+   "old": "SPAN M10DC",
+   "new": "FLSP M11GY",
+   "hops": [
+    "FLNG M11GY",
+    "FLSP M11GY"
+   ]
+  },
+  {
+   "old": "SPAN M10DM",
+   "new": "FLSP M11BG",
+   "hops": [
+    "FLNG M11BG",
+    "FLSP M11BG"
+   ]
+  },
+  {
+   "old": "SPAN M10EF",
+   "new": "FLSP M11JE",
+   "hops": [
+    "FLNG M11JE",
+    "FLSP M11JE"
+   ]
+  },
+  {
+   "old": "SPAN M10EG",
+   "new": "FLSP M11HK",
+   "hops": [
+    "FLNG M11HK",
+    "FLSP M11HK"
+   ]
+  },
+  {
+   "old": "SPAN M10EH",
+   "new": "FLSP M11IA",
+   "hops": [
+    "FLNG M11IA",
+    "FLSP M11IA"
+   ]
+  },
+  {
+   "old": "SPAN M10EK",
+   "new": "FLSP M11IW",
+   "hops": [
+    "FLNG M11IW",
+    "FLSP M11IW"
+   ]
+  },
+  {
+   "old": "SPAN M10HI",
+   "new": "FLSP M10NU",
+   "hops": [
+    "FLNG M10NU",
+    "FLSP M10NU"
+   ]
+  },
+  {
+   "old": "SPAN M10HU",
+   "new": "FLSP M10BL",
+   "hops": [
+    "FLNG M10BL",
+    "FLSP M10BL"
+   ]
+  },
+  {
+   "old": "SPAN M1102",
+   "new": "FLSP M1347",
+   "hops": [
+    "FLNG M1347",
+    "FLSP M1347"
+   ]
+  },
+  {
+   "old": "SPAN M1103",
+   "new": "FLSP M1357",
+   "hops": [
+    "FLNG M1357",
+    "FLSP M1357"
+   ]
+  },
+  {
+   "old": "SPAN M1104",
+   "new": "FLSP M1349",
+   "hops": [
+    "FLNG M1400",
+    "FLSP M1400",
+    "FLSP M1349"
+   ]
+  },
+  {
+   "old": "SPAN M1105",
+   "new": "FLSP M1349",
+   "hops": [
+    "FLNG M1020",
+    "FLSP M1020",
+    "FLSP M1349"
+   ]
+  },
+  {
+   "old": "SPAN M1106",
+   "new": "FLSP M1359",
+   "hops": [
+    "FLNG M1041",
+    "FLSP M1041",
+    "FLSP M1359"
+   ]
+  },
+  {
+   "old": "SPAN M1107",
+   "new": "FLSP M1349",
+   "hops": [
+    "FLNG M1349",
+    "FLSP M1349"
+   ]
+  },
+  {
+   "old": "SPAN M1108",
+   "new": "FLSP M1359",
+   "hops": [
+    "FLNG M1359",
+    "FLSP M1359"
+   ]
+  },
+  {
+   "old": "SPAN M1111",
+   "new": "FLSP M1019",
+   "hops": [
+    "FLNG M1348",
+    "FLSP M1348",
+    "FLSP M1019"
+   ]
+  },
+  {
+   "old": "SPAN M1112",
+   "new": "FLSP M1040",
+   "hops": [
+    "FLNG M1358",
+    "FLSP M1358",
+    "FLSP M1040"
+   ]
+  },
+  {
+   "old": "SPAN M1113",
+   "new": "FLSP M1043",
+   "hops": [
+    "FLNG M1365",
+    "FLSP M1365",
+    "FLSP M1043"
+   ]
+  },
+  {
+   "old": "SPAN M1114",
+   "new": "FLSP M1045",
+   "hops": [
+    "FLNG M1386",
+    "FLSP M1386",
+    "FLSP M1045"
+   ]
+  },
+  {
+   "old": "SPAN M1120",
+   "new": "FLSP M1246",
+   "hops": [
+    "FLNG M1397",
+    "FLSP M1397",
+    "FLSP M1246"
+   ]
+  },
+  {
+   "old": "SPCH M10BA",
+   "new": "COMM M10HJ",
+   "hops": [
+    "COMM M10ES",
+    "COMM M10DP",
+    "COMM M10DY",
+    "COMM M10BQ",
+    "COMM M10DE",
+    "COMM M10DN",
+    "COMM M10DX",
+    "COMM M10AT",
+    "COMM M10DZ",
+    "COMM M10HJ"
+   ]
+  },
+  {
+   "old": "SPED M1001",
+   "new": "MUSI M1566",
+   "hops": [
+    "MUSI M1566"
+   ]
+  },
+  {
+   "old": "SPN M10AD",
+   "new": "FLSP M11BK",
+   "hops": [
+    "FLNG M11BK",
+    "FLSP M11BK"
+   ]
+  },
+  {
+   "old": "SPN M10AE",
+   "new": "FLSP M11BU",
+   "hops": [
+    "FLNG M11BU",
+    "FLSP M11BU"
+   ]
+  },
+  {
+   "old": "SPN M10AF",
+   "new": "FLSP M11HH",
+   "hops": [
+    "FLNG M11HH",
+    "FLSP M11HH"
+   ]
+  },
+  {
+   "old": "SPN M10AG",
+   "new": "FLSP M11HY",
+   "hops": [
+    "FLNG M11HY",
+    "FLSP M11HY"
+   ]
+  },
+  {
+   "old": "STAT M1003",
+   "new": "MATH M1107",
+   "hops": [
+    "MATH M1290",
+    "MATH M1206",
+    "MATH M1201",
+    "MATH M1300",
+    "MATH M1209",
+    "MATH M1095",
+    "MATH M1063",
+    "MATH M1112",
+    "MATH M1265",
+    "MATH M1107"
+   ]
+  },
+  {
+   "old": "STAT M10AK",
+   "new": "MATH M11GQ",
+   "hops": [
+    "MATH M10SM",
+    "MATH M11GQ"
+   ]
+  },
+  {
+   "old": "SWHS M1005",
+   "new": "COUN M1150",
+   "hops": [
+    "COUN M1150"
+   ]
+  },
+  {
+   "old": "TA M1003",
+   "new": "THEA M1119",
+   "hops": [
+    "THEA M1024",
+    "THEA M1119"
+   ]
+  },
+  {
+   "old": "TA M1004",
+   "new": "THEA M1122",
+   "hops": [
+    "THEA M1026",
+    "THEA M1122"
+   ]
+  },
+  {
+   "old": "TA M1019",
+   "new": "THEA M1108",
+   "hops": [
+    "THEA M1108"
+   ]
+  },
+  {
+   "old": "TA M1026",
+   "new": "THEA M1164",
+   "hops": [
+    "THEA M1164"
+   ]
+  },
+  {
+   "old": "TA M1032",
+   "new": "THEA M1135",
+   "hops": [
+    "THEA M1135"
+   ]
+  },
+  {
+   "old": "TA M1035",
+   "new": "THEA M1216",
+   "hops": [
+    "THEA M1216"
+   ]
+  },
+  {
+   "old": "TA M1036",
+   "new": "THEA M1217",
+   "hops": [
+    "THEA M1217"
+   ]
+  },
+  {
+   "old": "TA M1045",
+   "new": "THEA M1207",
+   "hops": [
+    "THEA M1055",
+    "THEA M1207"
+   ]
+  },
+  {
+   "old": "TA M1047",
+   "new": "THEA M1226",
+   "hops": [
+    "THEA M1226"
+   ]
+  },
+  {
+   "old": "TA M1048",
+   "new": "THEA M1257",
+   "hops": [
+    "THEA M1257"
+   ]
+  },
+  {
+   "old": "TA M1050",
+   "new": "THEA M1249",
+   "hops": [
+    "THEA M1249"
+   ]
+  },
+  {
+   "old": "TA M1058",
+   "new": "THEA M1121",
+   "hops": [
+    "THEA M1025",
+    "THEA M1121"
+   ]
+  },
+  {
+   "old": "TA M1059",
+   "new": "THEA M1215",
+   "hops": [
+    "THEA M1027",
+    "THEA M1052",
+    "THEA M1215"
+   ]
+  },
+  {
+   "old": "TA M10BA",
+   "new": "THEA M10WM",
+   "hops": [
+    "THEA M10WM"
+   ]
+  },
+  {
+   "old": "TA M10DI",
+   "new": "THEA M11HW",
+   "hops": [
+    "THEA M10NK",
+    "THEA M11HW"
+   ]
+  },
+  {
+   "old": "TA M10DZ",
+   "new": "THEA M11GX",
+   "hops": [
+    "THEA M11GX"
+   ]
+  },
+  {
+   "old": "TA M10EA",
+   "new": "THEA M11OZ",
+   "hops": [
+    "THEA M11OZ"
+   ]
+  },
+  {
+   "old": "TA M10ES",
+   "new": "THEA M11IC",
+   "hops": [
+    "THEA M11IC"
+   ]
+  },
+  {
+   "old": "TA M9001",
+   "new": "THEA M9006",
+   "hops": [
+    "THEA M9006"
+   ]
+  },
+  {
+   "old": "TAC M1006",
+   "new": "THEA M1302",
+   "hops": [
+    "DRAM M1041",
+    "THEA M1302"
+   ]
+  },
+  {
+   "old": "TAP M1001",
+   "new": "THEA M1255",
+   "hops": [
+    "THEA M1082",
+    "THEA M1079",
+    "THEA M1255"
+   ]
+  },
+  {
+   "old": "TAP M1002",
+   "new": "THEA M1104",
+   "hops": [
+    "THEA M1084",
+    "THEA M1104"
+   ]
+  },
+  {
+   "old": "TAP M1003",
+   "new": "THEA M1231",
+   "hops": [
+    "THEA M1086",
+    "THEA M1231"
+   ]
+  },
+  {
+   "old": "TAP M1004",
+   "new": "THEA M1244",
+   "hops": [
+    "THEA M1088",
+    "THEA M1244"
+   ]
+  },
+  {
+   "old": "TAP M1005",
+   "new": "THEA M1144",
+   "hops": [
+    "THEA M1083",
+    "THEA M1144"
+   ]
+  },
+  {
+   "old": "TAP M1006",
+   "new": "THEA M1230",
+   "hops": [
+    "THEA M1085",
+    "THEA M1230"
+   ]
+  },
+  {
+   "old": "TAP M1007",
+   "new": "THEA M1234",
+   "hops": [
+    "THEA M1087",
+    "THEA M1234"
+   ]
+  },
+  {
+   "old": "TAP M1008",
+   "new": "THEA M1228",
+   "hops": [
+    "THEA M1089",
+    "THEA M1057",
+    "THEA M1228"
+   ]
+  },
+  {
+   "old": "TAP M1009",
+   "new": "THEA M1306",
+   "hops": [
+    "THEA M1096",
+    "DRAM M1004",
+    "THEA M1306"
+   ]
+  },
+  {
+   "old": "TAP M1010",
+   "new": "THEA M1098",
+   "hops": [
+    "THEA M1098"
+   ]
+  },
+  {
+   "old": "TAP M1011",
+   "new": "THEA M1100",
+   "hops": [
+    "THEA M1100"
+   ]
+  },
+  {
+   "old": "TAP M1012",
+   "new": "THEA M1102",
+   "hops": [
+    "THEA M1102"
+   ]
+  },
+  {
+   "old": "TAP M1013",
+   "new": "THEA M1097",
+   "hops": [
+    "THEA M1097"
+   ]
+  },
+  {
+   "old": "TAP M1014",
+   "new": "THEA M1099",
+   "hops": [
+    "THEA M1099"
+   ]
+  },
+  {
+   "old": "TAP M1015",
+   "new": "THEA M1101",
+   "hops": [
+    "THEA M1101"
+   ]
+  },
+  {
+   "old": "TAP M1016",
+   "new": "THEA M1103",
+   "hops": [
+    "THEA M1103"
+   ]
+  },
+  {
+   "old": "TAP M1017",
+   "new": "THEA M1170",
+   "hops": [
+    "THEA M1170"
+   ]
+  },
+  {
+   "old": "TAP M1018",
+   "new": "THEA M1182",
+   "hops": [
+    "THEA M1182"
+   ]
+  },
+  {
+   "old": "TAP M1019",
+   "new": "THEA M1195",
+   "hops": [
+    "THEA M1195"
+   ]
+  },
+  {
+   "old": "TAP M1020",
+   "new": "THEA M1218",
+   "hops": [
+    "THEA M1218"
+   ]
+  },
+  {
+   "old": "TAP M1021",
+   "new": "THEA M1171",
+   "hops": [
+    "THEA M1171"
+   ]
+  },
+  {
+   "old": "TAP M1022",
+   "new": "THEA M1183",
+   "hops": [
+    "THEA M1183"
+   ]
+  },
+  {
+   "old": "TAP M1023",
+   "new": "THEA M1196",
+   "hops": [
+    "THEA M1196"
+   ]
+  },
+  {
+   "old": "TAP M1024",
+   "new": "THEA M1219",
+   "hops": [
+    "THEA M1219"
+   ]
+  },
+  {
+   "old": "TAP M1025",
+   "new": "THEA M1172",
+   "hops": [
+    "THEA M1172"
+   ]
+  },
+  {
+   "old": "TAP M1026",
+   "new": "THEA M1184",
+   "hops": [
+    "THEA M1184"
+   ]
+  },
+  {
+   "old": "TAP M1027",
+   "new": "THEA M1197",
+   "hops": [
+    "THEA M1197"
+   ]
+  },
+  {
+   "old": "TAP M1028",
+   "new": "THEA M1220",
+   "hops": [
+    "THEA M1220"
+   ]
+  },
+  {
+   "old": "TAP M1029",
+   "new": "THEA M1173",
+   "hops": [
+    "THEA M1173"
+   ]
+  },
+  {
+   "old": "TAP M1030",
+   "new": "THEA M1186",
+   "hops": [
+    "THEA M1186"
+   ]
+  },
+  {
+   "old": "TAP M1031",
+   "new": "THEA M1198",
+   "hops": [
+    "THEA M1198"
+   ]
+  },
+  {
+   "old": "TAP M1032",
+   "new": "THEA M1221",
+   "hops": [
+    "THEA M1221"
+   ]
+  },
+  {
+   "old": "TAP M1033",
+   "new": "THEA M1179",
+   "hops": [
+    "THEA M1179"
+   ]
+  },
+  {
+   "old": "TAP M1034",
+   "new": "THEA M1192",
+   "hops": [
+    "THEA M1192"
+   ]
+  },
+  {
+   "old": "TAP M1035",
+   "new": "THEA M1201",
+   "hops": [
+    "THEA M1201"
+   ]
+  },
+  {
+   "old": "TAP M1036",
+   "new": "THEA M1223",
+   "hops": [
+    "THEA M1223"
+   ]
+  },
+  {
+   "old": "TAP M1037",
+   "new": "THEA M1176",
+   "hops": [
+    "THEA M1176"
+   ]
+  },
+  {
+   "old": "TAP M1038",
+   "new": "THEA M1188",
+   "hops": [
+    "THEA M1188"
+   ]
+  },
+  {
+   "old": "TAP M1039",
+   "new": "THEA M1222",
+   "hops": [
+    "THEA M1222"
+   ]
+  },
+  {
+   "old": "TAP M10AD",
+   "new": "THEA M11KN",
+   "hops": [
+    "THEA M11KN"
+   ]
+  },
+  {
+   "old": "TART M1006",
+   "new": "THEA M1117",
+   "hops": [
+    "THEA M1117"
+   ]
+  },
+  {
+   "old": "TART M1007",
+   "new": "THEA M1303",
+   "hops": [
+    "DRAM M1038",
+    "THEA M1303"
+   ]
+  },
+  {
+   "old": "TART M1010",
+   "new": "THEA M1180",
+   "hops": [
+    "THEA M1180"
+   ]
+  },
+  {
+   "old": "TART M10AY",
+   "new": "THEA M11QU",
+   "hops": [
+    "THEA M10TC",
+    "THEA M11QU"
+   ]
+  },
+  {
+   "old": "TECT M1002",
+   "new": "THES M1011",
+   "hops": [
+    "THES M1011"
+   ]
+  },
+  {
+   "old": "TH M1003",
+   "new": "THEA M1253",
+   "hops": [
+    "THEA M1040",
+    "THEA M1011",
+    "THEA M1068",
+    "THEA M1253"
+   ]
+  },
+  {
+   "old": "TH M10AT",
+   "new": "THES M10DA",
+   "hops": [
+    "THES M10DA"
+   ]
+  },
+  {
+   "old": "THA M1005",
+   "new": "THEA M1138",
+   "hops": [
+    "THEA M1138"
+   ]
+  },
+  {
+   "old": "THA M1011",
+   "new": "THEA M1106",
+   "hops": [
+    "THEA M1106"
+   ]
+  },
+  {
+   "old": "THA M1012",
+   "new": "THEA M1153",
+   "hops": [
+    "THEA M1153"
+   ]
+  },
+  {
+   "old": "THA M10CG",
+   "new": "THEA M11GK",
+   "hops": [
+    "THEA M10QH",
+    "THEA M11GK"
+   ]
+  },
+  {
+   "old": "THAR M1001",
+   "new": "THEA M1113",
+   "hops": [
+    "THEA M1113"
+   ]
+  },
+  {
+   "old": "THAR M1003",
+   "new": "THES M1006",
+   "hops": [
+    "THES M1006"
+   ]
+  },
+  {
+   "old": "THAR M1007",
+   "new": "THEA M1250",
+   "hops": [
+    "THEA M1250"
+   ]
+  },
+  {
+   "old": "THAR M1008",
+   "new": "THEA M1251",
+   "hops": [
+    "THEA M1251"
+   ]
+  },
+  {
+   "old": "THAR M10AB",
+   "new": "THEA M10XY",
+   "hops": [
+    "THEA M10GZ",
+    "THEA M10XY"
+   ]
+  },
+  {
+   "old": "THAR M90AB",
+   "new": "THEA M90BG",
+   "hops": [
+    "THEA M90BG"
+   ]
+  },
+  {
+   "old": "THAR M90AD",
+   "new": "THEA M90BL",
+   "hops": [
+    "THEA M90AJ",
+    "THEA M90BL"
+   ]
+  },
+  {
+   "old": "THE M1015",
+   "new": "THEA M1229",
+   "hops": [
+    "THEA M1229"
+   ]
+  },
+  {
+   "old": "THE M10BE",
+   "new": "THEA M11KZ",
+   "hops": [
+    "THEA M10HX",
+    "THEA M11KZ"
+   ]
+  },
+  {
+   "old": "THE M10CD",
+   "new": "THEA M11HZ",
+   "hops": [
+    "THEA M11HZ"
+   ]
+  },
+  {
+   "old": "THE M10CE",
+   "new": "THEA M11IT",
+   "hops": [
+    "THEA M11IT"
+   ]
+  },
+  {
+   "old": "THET M10AE",
+   "new": "THES M10BQ",
+   "hops": [
+    "THES M10BQ"
+   ]
+  },
+  {
+   "old": "THRT M10AM",
+   "new": "THEA M11HM",
+   "hops": [
+    "THEA M11HM"
+   ]
+  },
+  {
+   "old": "THTR M1003",
+   "new": "THEA M1193",
+   "hops": [
+    "THEA M1193"
+   ]
+  },
+  {
+   "old": "THTR M1004",
+   "new": "THEA M1202",
+   "hops": [
+    "THEA M1202"
+   ]
+  },
+  {
+   "old": "THTR M1005",
+   "new": "THEA M1224",
+   "hops": [
+    "THEA M1224"
+   ]
+  },
+  {
+   "old": "THTR M10BZ",
+   "new": "THEA M10ZX",
+   "hops": [
+    "THEA M10PP",
+    "THEA M10ZX"
+   ]
+  },
+  {
+   "old": "THTR M10DC",
+   "new": "THEA M11IH",
+   "hops": [
+    "THEA M11IH"
+   ]
+  },
+  {
+   "old": "THTR M10DO",
+   "new": "THEA M11GT",
+   "hops": [
+    "THEA M10HH",
+    "THEA M11GT"
+   ]
+  },
+  {
+   "old": "THTR M10EM",
+   "new": "THEA M11RG",
+   "hops": [
+    "THEA M11RG"
+   ]
+  },
+  {
+   "old": "THTR M90AR",
+   "new": "THEA M90AY",
+   "hops": [
+    "THEA M90AY"
+   ]
+  },
+  {
+   "old": "VBUS M90BE",
+   "new": "OTEC M90BS",
+   "hops": [
+    "OTEC M90BS"
+   ]
+  },
+  {
+   "old": "VOC M9008",
+   "new": "BUSI M9015",
+   "hops": [
+    "BUSI M9015"
+   ]
+  },
+  {
+   "old": "VOC M90EK",
+   "new": "VOCE M90NW",
+   "hops": [
+    "VOCE M90NW"
+   ]
+  },
+  {
+   "old": "WFT M1020",
+   "new": "FIRE M1288",
+   "hops": [
+    "FIRE M1288"
+   ]
+  },
+  {
+   "old": "WT M1002",
+   "new": "WELD M1125",
+   "hops": [
+    "WELD M1086",
+    "WELD M1084",
+    "WELD M1065",
+    "WELD M1125"
+   ]
+  }
+ ],
+ "folded": [
+  {
+   "into": "FLSP M1130",
+   "from": "SPAN M1016"
+  },
+  {
+   "into": "FLSP M1272",
+   "from": "SPAN M1040"
+  },
+  {
+   "into": "FLSP M1272",
+   "from": "SPAN M1044"
+  },
+  {
+   "into": "FLSP M1279",
+   "from": "SPAN M1045"
+  },
+  {
+   "into": "FLSP M1342",
+   "from": "SPAN M1069"
+  },
+  {
+   "into": "FLSP M1335",
+   "from": "SPAN M1097"
+  },
+  {
+   "into": "FLSP M1349",
+   "from": "SPAN M1105"
+  },
+  {
+   "into": "FLSP M1349",
+   "from": "SPAN M1107"
+  },
+  {
+   "into": "FLSP M1359",
+   "from": "SPAN M1108"
+  },
+  {
+   "into": "FLSP M1019",
+   "from": "SPAN M1111"
+  },
+  {
+   "into": "FLSP M1040",
+   "from": "SPAN M1112"
+  },
+  {
+   "into": "FLSP M1043",
+   "from": "SPAN M1113"
+  },
+  {
+   "into": "FLSP M1045",
+   "from": "SPAN M1114"
+  }
+ ],
+ "unresolved": [
+  {
+   "key": "ABE M9005",
+   "resolves_to": "ENGL M90FV"
+  },
+  {
+   "key": "ADMJ M1028",
+   "resolves_to": "CRIM M11UQ"
+  },
+  {
+   "key": "ADST M1002",
+   "resolves_to": "COUN M10XN"
+  },
+  {
+   "key": "ADST M1003",
+   "resolves_to": "COUN M10YF"
+  },
+  {
+   "key": "AGPS M1002",
+   "resolves_to": "AGPR M10HH"
+  },
+  {
+   "key": "AGR M1001",
+   "resolves_to": "ECON M10EP"
+  },
+  {
+   "key": "ART M1006",
+   "resolves_to": "ARTS M12GT"
+  },
+  {
+   "key": "ART M1208",
+   "resolves_to": "ARTS M12IN"
+  },
+  {
+   "key": "ART M1317",
+   "resolves_to": "GRAF M1059"
+  },
+  {
+   "key": "ARTC M9001",
+   "resolves_to": "ARTC M9001"
+  },
+  {
+   "key": "ARTC M9002",
+   "resolves_to": "ARTC M9002"
+  },
+  {
+   "key": "BUS M1137",
+   "resolves_to": "OTEC M1252"
+  },
+  {
+   "key": "CIS M1091",
+   "resolves_to": "ECED M11NC"
+  },
+  {
+   "key": "CNET M1003",
+   "resolves_to": "CISC M13BB"
+  },
+  {
+   "key": "COMM M1050",
+   "resolves_to": "COMM M10JB"
+  },
+  {
+   "key": "CS M1013",
+   "resolves_to": "MATH M11IV"
+  },
+  {
+   "key": "CS M1017",
+   "resolves_to": "MATH M11IL"
+  },
+  {
+   "key": "EDU M1003",
+   "resolves_to": "EDUC M10EF"
+  },
+  {
+   "key": "ENG M1010",
+   "resolves_to": "ENGL M11OH"
+  },
+  {
+   "key": "ENG M1011",
+   "resolves_to": "ENGL M11NP"
+  },
+  {
+   "key": "ENGI M1003",
+   "resolves_to": "ENGR M10IQ"
+  },
+  {
+   "key": "GEOG M1011",
+   "resolves_to": "GEOL M10KK"
+  },
+  {
+   "key": "GEOL M1011",
+   "resolves_to": "BIOL M11DA"
+  },
+  {
+   "key": "MC M1001",
+   "resolves_to": "COMM M10JC"
+  },
+  {
+   "key": "NUT M1001",
+   "resolves_to": "BIOL M11BM"
+  },
+  {
+   "key": "NUT M1002",
+   "resolves_to": "CULN M11AJ"
+  },
+  {
+   "key": "PSY M1002",
+   "resolves_to": "PSYC M10KZ"
+  },
+  {
+   "key": "PSY M1005",
+   "resolves_to": "ECED M11MX"
+  },
+  {
+   "key": "SOC M1065",
+   "resolves_to": "MATH M1332"
+  },
+  {
+   "key": "TART M1009",
+   "resolves_to": "FIMP M10GN"
+  },
+  {
+   "key": "WMNS M1001",
+   "resolves_to": "HUMA M10IM"
+  }
+ ],
+ "unchanged": 941
+}

@@ -1,7 +1,7 @@
 ---
 title: Rules-based official-ID folds — the severed evidence index + tiered fold rule (the SPAN 200 case)
 date: 2026-06-10
-status: SCOPED — analysis + recommendations for Sam's review. Root-cause bug confirmed (promotions.json keys stale). Build gated on §7 sign-off.
+status: APPROVED + BUILT (Session 40, 2026-06-11) — Sam signed off all four §7 gates: R1+R2+R3 in one PR, tier-1 AUTO-FOLD, R4 singletons as a follow-up PR, retire the M-ID SPAN 104/106/108 anchors into the C-IDs (separate small PR). One spec deviation, flagged: unanimous single-witness folds stay AUTO (today's behavior — demoting them would UNFOLD 174 established rows / 795 member courses); the ≥80%+≥2 bar applies where dissent exists (any 80% share over a dissenter implies ≥5 witnesses, so the intent holds).
 session: 40
 tags: [scope, ccr, c-id, m-id, merge, phase-a, phase-b, promotions, alias-map, spanish, rules-based-merging, knowledge-base]
 related:
@@ -196,6 +196,14 @@ Of Sam's 62 hand-confirmed `merge_into` pointers, 15 have promotions evidence:
   owning that class.
 
 ## 7. Decisions for Sam (gates the build)
+
+> **ANSWERED (Sam, 2026-06-11):** 1 = yes, one PR; 2 = auto-fold; 3 = thresholds
+> OK (built with the single-witness-unanimous grandfather noted in the status
+> header); 4 = follow-up PR; 5 = retire into the C-IDs (separate small PR).
+> Built results (first regen): Phase B 1,155 M-IDs → 235 official rows + 45
+> anchor folds (CCR 16,080 → 15,492 rows); SPAN 200 = anchor + M1342/M1043/
+> M1362/M1246; SPAN 210 = anchor + M1352/M1045/M1237/M1337/M1036; 151
+> evidence-lane groups; FLSP M1379 surfaced contested under SPAN 200.
 
 1. **Build R1+R2+R3 as one PR?** (recommended — they're coupled; dry-run
    receipts posted before the apply lands)

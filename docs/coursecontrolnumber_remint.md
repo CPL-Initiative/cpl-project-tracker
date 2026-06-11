@@ -269,6 +269,7 @@ regression. Lead with the C-ID rows that now correctly anchor the table.
 |---|---|
 | Authoritative old → new alias | `kb/remint_out/alias_map.json` |
 | Split manifest (Phase A/B input) | `kb/promotions.json` (and copy at `kb/remint_out/promotions.json`) |
+| Split-manifest re-key (run after EVERY later re-mint) | `kb/_rekey_promotions.py` — `kb/promotions.json` is id-keyed and Phase A/B looks ids up exactly, so any re-key that skips it silently severs the official-ID fold evidence (Session-40 root cause, `docs/official_id_fold_scope.md`; receipts under `kb/promotions_rekey_out/`). The id-keyed artifact classes that must move together at every re-key: memberships · articulations · curation + its Supabase mirror · **promotions** |
 | Validation diff report | `kb/remint_out/VALIDATION_1c.md` |
 | Patch artifact (1c-ii export change) | `kb/remint_out/export_1cii.patch` |
 | Re-mint generator (minted + memberships + singletons + alias + promotions) | `kb/_remint_apply.py` |
