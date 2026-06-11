@@ -1985,6 +1985,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 /* ─── Budget inline editor (budget_editor.js) ─── */
 .budget-auth-widget { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center;
@@ -2003,6 +2006,19 @@
 .budget-cell.budget-saving { background:#FFF6D9; }
 .budget-cell.budget-saved { background:#DBF0DD; }
 .budget-cell.budget-error { background:#F7D9D9; }
+/* ─── Doublewide KPI card (Statewide Exhibits per-category rollup) ─── */
+.kpi-card-wide { grid-column: span 2; }
+.kpi-card-wide .kpi-footnote {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.4rem;
+}
+.kpi-card-wide .kpi-footnote .kpi-fn-item:first-child { grid-column: 1 / -1; }
+.kpi-card-wide .kpi-fn-item { font-size: 0.68rem; }
+@media (max-width: 640px) {
+    .kpi-card-wide { grid-column: auto; }
+    .kpi-card-wide .kpi-footnote { display: block; }
+}
 .cpl-analytics-body,
 .activity-kpi-body {
     background-color: #ffffff;
@@ -2588,7 +2604,7 @@
         
         
         
-        <div class="last-updated">Last Updated: June 11, 2026 at 2:35 PM PT</div>
+        <div class="last-updated">Last Updated: June 11, 2026 at 3:44 PM PT</div>
         <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger?secret=CPL_SCRAPE_2026',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:#C9A84C;border:1px solid #C9A84C;padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='#C9A84C';this.style.color='#0A2240'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='#C9A84C'}">&#x21bb; Refresh Today&#39;s Data</button></div>
         
         
@@ -2750,7 +2766,7 @@
     <div class="kpi-section-wrapper" id="kpiSectionWrapper">
         <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('kpiSectionWrapper');w.classList.toggle('collapsed');})()"> 
             <span class="kpi-section-title">KPI Metrics</span>
-            <span class="kpi-section-updated">Live data refreshed Jun 11, 2026 · 2:35 PM PT</span>
+            <span class="kpi-section-updated">Live data refreshed Jun 11, 2026 · 3:44 PM PT</span>
             <span class="kpi-toggle-arrow">&#9650;</span>
         </div>
     <div class="kpi-section">
@@ -2818,16 +2834,16 @@
             
             <details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">MAP Custom Reporting Module (View_ArticulatedMAPExhibits).</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Distinct count of colleges that have adopted at least one exhibit whose Collaborative Type contains 'CCC'.</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Adoption = a row exists where the college articulates a CCC Collaborative exhibit to a local course.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">Counts adopting colleges only, not colleges that created collaborative exhibits.</span></div><div class="algo-meta">Description last updated: 2026-04-19</div></div></details>
         </div>
-        <div class="kpi-card">
+        <div class="kpi-card kpi-card-wide">
             <div class="kpi-number">132</div>
             <div class="kpi-label">Statewide Exhibits</div>
             <div class="kpi-sub" style="font-size:0.75rem;opacity:0.85;margin-top:2px;color:#fff;">CCC Collaborative standards in MAP</div>
-            <div class="kpi-breakdowns"><div class="kpi-bd-row"><span class="kpi-bd-label">Discipline Areas <span class="kpi-bd-note">(by TOP code)</span></span><span class="kpi-bd-value">7</span></div>
+            <div class="kpi-breakdowns"><div class="kpi-bd-row"><span class="kpi-bd-label">Program Areas <span class="kpi-bd-note">(statewide workgroup categories)</span></span><span class="kpi-bd-value">12</span></div>
 <div class="kpi-bd-row"><span class="kpi-bd-label">Credit Recommendations <span class="kpi-bd-note">(distinct course recs)</span></span><span class="kpi-bd-value">1,101</span></div>
 <div class="kpi-bd-row"><span class="kpi-bd-label">Adoptions <span class="kpi-bd-note">(college articulations of those recs)</span></span><span class="kpi-bd-value">1,298</span></div>
 </div>
-            <div class="kpi-footnote"><div class="kpi-fn-item">By discipline — exhibits · credit recs · adoptions</div><div class="kpi-fn-item">Engineering and Industrial Technologies: 78 · 448 · 493</div><div class="kpi-fn-item">Public and Protective Services: 25 · 306 · 405</div><div class="kpi-fn-item">Information Technology: 15 · 102 · 106</div><div class="kpi-fn-item">Health: 4 · 59 · 60</div><div class="kpi-fn-item">Not Mapped: 4 · 5 · 5</div><div class="kpi-fn-item">Business and Management: 3 · 32 · 46</div><div class="kpi-fn-item">Interdisciplinary Studies: 2 · 136 · 147</div><div class="kpi-fn-item">Foreign Languages: 1 · 13 · 36</div></div>
-            <details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">MAP Custom Reporting Module (View_ArticulatedMAPExhibits), rows whose Collaborative Type contains 'CCC'.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Exhibits = distinct credential groups (unified title + issuer + CPL type, the same grouping as the Exhibit Adoption table) with at least one CCC Collaborative row. Credit Recommendations = distinct (course, credit) pairs across each group's CCC rows. Adoptions = CCC rows carrying an Articulation College (one row = one college articulating one credit recommendation). Disciplines via each group's first TOP code (TOP_Code_Lookup.xlsx).</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Tracks the CCC Collaborative statewide-standards work (the ASCCC focus project). A mixed group counts as statewide if ANY constituent exhibit row is CCC; only its CCC rows feed the rec/adoption counts.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">TOP codes vary by college — a multi-TOP group is assigned its alphabetically-first TOP's discipline (same representative-pick rule as the Exhibit Adoption table). Exhibits with no TOP-mapped discipline appear as 'Not Mapped' in the per-discipline list and are excluded from the Discipline Areas count. Distinct credit recs ≠ the row-count 'Collaborative Credit Recs' on the adoption card (that metric counts raw articulation rows).</span></div><div class="algo-meta">Description last updated: 2026-06-11</div></div></details>
+            <div class="kpi-footnote"><div class="kpi-fn-item">By program area — exhibits · credit recs · adoptions</div><div class="kpi-fn-item">Construction Technology: 46 · 122 · 122</div><div class="kpi-fn-item">Welding: 23 · 183 · 228</div><div class="kpi-fn-item">Fire Technology: 16 · 260 · 342</div><div class="kpi-fn-item">Computer Information Systems: 15 · 102 · 106</div><div class="kpi-fn-item">Automotive Technology: 11 · 148 · 148</div><div class="kpi-fn-item">Fire Technology - Wildland: 6 · 9 · 10</div><div class="kpi-fn-item">Emergency Medical Services: 5 · 66 · 67</div><div class="kpi-fn-item">Corrections: 2 · 30 · 46</div><div class="kpi-fn-item">Real Estate: 2 · 24 · 38</div><div class="kpi-fn-item">World Languages: 2 · 13 · 36</div><div class="kpi-fn-item">Administration of Justice: 1 · 113 · 116</div><div class="kpi-fn-item">Kinesiology/Health: 1 · 23 · 31</div><div class="kpi-fn-item">Other Statewide: 2 · 8 · 8</div><div class="kpi-fn-item"><em>HVAC — faculty currently meeting</em></div></div>
+            <details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">MAP Custom Reporting Module (View_ArticulatedMAPExhibits), rows whose Collaborative Type contains 'CCC'. Program-area categories per the Statewide CPL page (map.rccd.edu/statewidecpl), curated in kb/statewide_exhibit_categories.json.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Exhibits = distinct credential groups (unified title + issuer + CPL type, the same grouping as the Exhibit Adoption table) with at least one CCC Collaborative row. Credit Recommendations = distinct (course, credit) pairs across each group's CCC rows. Adoptions = CCC rows carrying an Articulation College (one row = one college articulating one credit recommendation). Each exhibit's program area comes from the curated title map (keyword-rule fallback for new titles).</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Tracks the CCC Collaborative statewide-standards work (the ASCCC focus project). A mixed group counts as statewide if ANY constituent exhibit row is CCC; only its CCC rows feed the rec/adoption counts.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">Titles not yet in the curated map fall back to keyword rules, then to an 'Other Statewide' bucket (shown in the rollup, excluded from the Program Areas count) — edit kb/statewide_exhibit_categories.json to reassign. Distinct credit recs ≠ the row-count 'Collaborative Credit Recs' on the adoption card (that metric counts raw articulation rows).</span></div><div class="algo-meta">Description last updated: 2026-06-11</div></div></details>
         </div>
         <div class="kpi-card">
             <div class="kpi-number">98</div>
@@ -3171,7 +3187,7 @@
 <div class="kpi-section-wrapper" id="cplAnalyticsWrapper">
     <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('cplAnalyticsWrapper');w.classList.toggle('collapsed');})()">
         <span class="kpi-section-title">CPL Analytics</span>
-        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-06-11T21:35:06</span>
+        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-06-11T22:44:14</span>
         <span class="kpi-toggle-arrow">&#9650;</span>
     </div>
     <div class="cpl-analytics-body" id="exhibitAnalysisSection">
@@ -8246,6 +8262,7 @@
 
 
 
+
         </div>
         <!-- /main-container for Dashboard tab -->
 
@@ -10340,8 +10357,8 @@
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "June 11, 2026 at 2:35 PM PT",
-  "data_as_of": "June 11, 2026 at 2:35 PM PT",
+  "last_updated": "June 11, 2026 at 3:44 PM PT",
+  "data_as_of": "June 11, 2026 at 3:44 PM PT",
   "kpis": {
     "cumulative_students": {
       "value": "47,739",
@@ -10523,7 +10540,7 @@
       ],
       "live": true
     },
-    "_live_updated": "2026-06-11T21:35:39.448Z",
+    "_live_updated": "2026-06-11T22:44:51.354Z",
     "map_exhibits": {
       "value": "2,459",
       "label": "MAP Exhibits",
@@ -10564,9 +10581,9 @@
       "sub": "CCC Collaborative standards in MAP",
       "breakdowns": [
         {
-          "label": "Discipline Areas",
-          "value": "7",
-          "note": "by TOP code"
+          "label": "Program Areas",
+          "value": "12",
+          "note": "statewide workgroup categories"
         },
         {
           "label": "Credit Recommendations",
@@ -10580,16 +10597,23 @@
         }
       ],
       "footnote": [
-        "By discipline — exhibits · credit recs · adoptions",
-        "Engineering and Industrial Technologies: 78 · 448 · 493",
-        "Public and Protective Services: 25 · 306 · 405",
-        "Information Technology: 15 · 102 · 106",
-        "Health: 4 · 59 · 60",
-        "Not Mapped: 4 · 5 · 5",
-        "Business and Management: 3 · 32 · 46",
-        "Interdisciplinary Studies: 2 · 136 · 147",
-        "Foreign Languages: 1 · 13 · 36"
+        "By program area — exhibits · credit recs · adoptions",
+        "Construction Technology: 46 · 122 · 122",
+        "Welding: 23 · 183 · 228",
+        "Fire Technology: 16 · 260 · 342",
+        "Computer Information Systems: 15 · 102 · 106",
+        "Automotive Technology: 11 · 148 · 148",
+        "Fire Technology - Wildland: 6 · 9 · 10",
+        "Emergency Medical Services: 5 · 66 · 67",
+        "Corrections: 2 · 30 · 46",
+        "Real Estate: 2 · 24 · 38",
+        "World Languages: 2 · 13 · 36",
+        "Administration of Justice: 1 · 113 · 116",
+        "Kinesiology/Health: 1 · 23 · 31",
+        "Other Statewide: 2 · 8 · 8",
+        "\u003cem\u003eHVAC — faculty currently meeting\u003c/em\u003e"
       ],
+      "wide": true,
       "live": true
     },
     "articulation_colleges": {
@@ -10610,7 +10634,7 @@
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-06-11T21:35:06",
+    "_exhibit_updated": "2026-06-11T22:44:14",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
