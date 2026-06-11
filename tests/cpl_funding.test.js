@@ -132,6 +132,75 @@ function freshDom() {
     doc.querySelector(".cplfund-table tbody").textContent.indexOf("No colleges match") !== -1);
 }
 
+// C1b — v1.1: district rollup, period toggle, drill-in rows.
+{
+  const { window } = freshDom();
+  window.eval(dataSrc);
+  window.eval(consumerSrc);
+  window.CPL_FUNDING_TAB.boot();
+  const doc = window.document;
+  function click(el) { el.dispatchEvent(new window.Event("click", { bubbles: true })); }
+
+  // Drill-in: clicking a college row expands a detail row with the priority math.
+  const firstRow = doc.querySelector("tr.cplfund-row");
+  click(firstRow);
+  let detail = doc.querySelector("tr.cplfund-detail");
+  check("college drill-in renders a detail row", !!detail);
+  check("drill-in shows the per-priority math",
+    detail && detail.textContent.indexOf("Priority 1") !== -1 && detail.textContent.indexOf("factor") !== -1);
+  click(doc.querySelector("tr.cplfund-row"));
+  check("re-click collapses the drill-in", !doc.querySelector("tr.cplfund-detail"));
+
+  // Period toggle: SYSTEM tfoot total ×3 = the 2026-30 pool; header label flips.
+  const totalBtn = doc.querySelector('#cplFundPeriod button[data-val="3"]');
+  click(totalBtn);
+  check("period header flips to Total 2026-30",
+    doc.querySelector(".cplfund-table thead").textContent.indexOf("Total 2026-30") !== -1);
+  const tfootTxt = doc.querySelector(".cplfund-table tfoot").textContent;
+  check("SYSTEM total in 2026-30 mode = $34,800,000", tfootTxt.indexOf("$34,800,000") !== -1);
+  click(doc.querySelector('#cplFundPeriod button[data-val="1"]'));
+
+  // District rollup: row per distinct district; sums reconcile to SYSTEM.
+  const distinctDistricts = new Set(D.colleges.map((c) => c.district || "(no district)")).size;
+  click(doc.querySelector('#cplFundView button[data-val="district"]'));
+  const dRows = doc.querySelectorAll(".cplfund-table tbody tr");
+  check("district view renders one row per district (" + distinctDistricts + ")", dRows.length === distinctDistricts);
+  // Conservation: the rollup must redistribute the college list EXACTLY.
+  // (Deliberately NOT compared to the SYSTEM row: the 2026-06-11 workbook's
+  // own SYSTEM/pool row is 8,417 heads / $44.6K short of its college list —
+  // a source variance the tab footnotes rather than hides.)
+  const listHeads = D.colleges.reduce((s, c) => s + (c.headcount || 0), 0);
+  const dHead = Array.from(dRows).reduce((s, tr) => {
+    const cell = tr.querySelectorAll("td")[3];
+    return s + Number(cell.textContent.replace(/,/g, ""));
+  }, 0);
+  check("district rollup conserves the college-list headcount", dHead === listHeads);
+  const listTotal = D.colleges.reduce((s, c) => s + c.total, 0);
+  check("source variance stays small (<1% of the SYSTEM pool — honesty bound)",
+    Math.abs(listTotal - D.system.total) / D.system.total < 0.01);
+  check("the variance footnote renders while the source disagrees with itself",
+    doc.querySelector(".cplfund-foot").textContent.indexOf("source-workbook variance") !== -1);
+  check("district tfoot college count = " + D.colleges.length,
+    doc.querySelector(".cplfund-table tfoot").textContent.indexOf(String(D.colleges.length)) !== -1);
+
+  // District drill-in lists member colleges.
+  click(doc.querySelector("tr.cplfund-row"));
+  detail = doc.querySelector("tr.cplfund-detail");
+  check("district drill-in lists member colleges", !!detail && detail.querySelectorAll(".cplfund-detail-grid div").length >= 1);
+
+  // Sorting by a college-only key then switching views must not crash; search works per view.
+  click(doc.querySelector('#cplFundView button[data-val="college"]'));
+  click(doc.querySelector('th[data-sort="college"]'));
+  click(doc.querySelector('#cplFundView button[data-val="district"]'));
+  check("view switch resets a college-only sort key without crashing",
+    doc.querySelectorAll(".cplfund-table tbody tr").length === distinctDistricts);
+  const input = doc.getElementById("cplFundSearch");
+  input.value = "Yuba";
+  input.dispatchEvent(new window.Event("input"));
+  check("district search narrows rows",
+    doc.querySelectorAll(".cplfund-table tbody tr").length < distinctDistricts);
+}
+
 // C2 — failure mode: data never arrives (404 → loadScript fails soft).
 {
   const { window } = freshDom();

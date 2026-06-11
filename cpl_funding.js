@@ -10,6 +10,10 @@
 // Self-contained behind this file: scoped CSS is injected from JS (the CER
 // ensureCerScopeCss pattern) so both HTMLs are covered without a Rule-4
 // mirror; everything renders into the shell's #cplFundingMount.
+//
+// v1.1 (2026-06-11): Colleges|Districts rollup toggle, Per-year|2026-30-total
+// period toggle, and click-to-expand drill-in rows (college: per-priority
+// math + county context; district: member colleges).
 (function () {
   "use strict";
 
@@ -37,8 +41,12 @@
     ".cplfund-formula { background: var(--surface-muted); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .9rem; line-height: 1.55; }",
     ".cplfund-formula code { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; white-space: nowrap; }",
     ".cplfund-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 10px; }",
-    ".cplfund-toolbar input { padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: 6px; font-size: .9rem; min-width: 240px; }",
+    ".cplfund-toolbar input { padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: 6px; font-size: .9rem; min-width: 220px; }",
     ".cplfund-toolbar input:focus { outline: none; border-color: var(--navy-secondary); }",
+    ".cplfund-seg { display: inline-flex; border: 1px solid var(--border-strong); border-radius: 6px; overflow: hidden; }",
+    ".cplfund-seg button { background: var(--surface); color: var(--text-body); border: none; padding: 8px 12px; font-size: .85rem; cursor: pointer; }",
+    ".cplfund-seg button + button { border-left: 1px solid var(--border-strong); }",
+    ".cplfund-seg button.on { background: var(--navy-primary); color: var(--white); font-weight: 600; }",
     ".cplfund-count { font-size: .85rem; color: var(--text-muted); }",
     ".cplfund-tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }",
     "table.cplfund-table { border-collapse: collapse; width: 100%; font-size: .87rem; }",
@@ -46,15 +54,21 @@
     ".cplfund-table th.t, .cplfund-table td.t { text-align: left; }",
     ".cplfund-table th .arr { font-size: .7rem; opacity: .85; }",
     ".cplfund-table td { padding: 7px 10px; border-top: 1px solid var(--border); text-align: right; white-space: nowrap; }",
+    ".cplfund-table tbody tr.cplfund-row { cursor: pointer; }",
     ".cplfund-table tbody tr:nth-child(even) { background: var(--surface-subtle); }",
     ".cplfund-table tbody tr:hover { background: var(--surface-muted); }",
     ".cplfund-table td.tot, .cplfund-table tfoot td { font-weight: 700; color: var(--navy-primary); }",
     ".cplfund-table tfoot td { border-top: 2px solid var(--navy-primary); background: var(--surface-muted); }",
     ".cplfund-table td .sub { display: block; font-weight: 400; font-size: .75rem; color: var(--text-faint); }",
+    ".cplfund-caret { display: inline-block; width: 1em; color: var(--text-faint); transition: transform .12s; }",
+    "tr.cplfund-open .cplfund-caret { transform: rotate(90deg); }",
+    "tr.cplfund-detail td { background: var(--surface-subtle); border-top: none; text-align: left; white-space: normal; padding: 10px 16px 12px 30px; cursor: default; }",
+    ".cplfund-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px 22px; font-size: .83rem; }",
+    ".cplfund-detail-grid .dk { color: var(--text-muted); }",
     ".cplfund-foot { font-size: .78rem; color: var(--text-faint); margin: 10px 2px; }",
     ".cplfund-foot div { margin: 2px 0; overflow-wrap: anywhere; }",
     ".cplfund-empty { border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); color: var(--text-muted); padding: 28px; text-align: center; }",
-    "@media (max-width: 700px) { .cplfund-toolbar input { min-width: 150px; flex: 1; } }"
+    "@media (max-width: 700px) { .cplfund-toolbar input { min-width: 140px; flex: 1; } }"
   ].join("\n");
 
   function ensureCss() {
@@ -131,7 +145,8 @@
       p.years.length + " years through " + esc(p.years[p.years.length - 1]) + ".</div>";
   }
 
-  var SORT_COLS = [
+  // ── table state + data shaping ────────────────────────────────────────
+  var COLS_COLLEGE = [
     { key: "order", label: "#", cls: "" },
     { key: "college", label: "College", cls: "t" },
     { key: "district", label: "District", cls: "t" },
@@ -140,18 +155,61 @@
     { key: "p1", label: "Priority 1", cls: "" },
     { key: "p2", label: "Priority 2", cls: "" },
     { key: "p3", label: "Priority 3", cls: "" },
-    { key: "total", label: "Total / yr", cls: "" },
+    { key: "total", label: "TOTAL_LABEL", cls: "" },
     { key: "working_adults", label: "Working adults*", cls: "" }
   ];
+  var COLS_DISTRICT = [
+    { key: "district", label: "District", cls: "t" },
+    { key: "n", label: "Colleges", cls: "" },
+    { key: "counties", label: "Counties", cls: "t" },
+    { key: "headcount", label: "Headcount", cls: "" },
+    { key: "p1", label: "Priority 1", cls: "" },
+    { key: "p2", label: "Priority 2", cls: "" },
+    { key: "p3", label: "Priority 3", cls: "" },
+    { key: "total", label: "TOTAL_LABEL", cls: "" }
+  ];
 
-  var state = { q: "", sortKey: "order", sortDir: 1 };
+  var state = {
+    q: "", view: "college", period: 1,        // period: 1 = per year, 3 = 2026-30 total (years.length)
+    sortKey: "order", sortDir: 1,
+    open: {}                                   // row id → true (drill-ins; cleared on re-render)
+  };
+
+  var _districtsCache = null;
+  function districts(d) {
+    if (_districtsCache) return _districtsCache;
+    var by = {};
+    d.colleges.forEach(function (c) {
+      var k = c.district || "(no district)";
+      var g = by[k] || (by[k] = { district: k, n: 0, counties: [], headcount: 0, p1: 0, p2: 0, p3: 0, total: 0, members: [] });
+      g.n += 1;
+      g.headcount += c.headcount || 0;
+      g.p1 += c.p1; g.p2 += c.p2; g.p3 += c.p3; g.total += c.total;
+      if (c.county && g.counties.indexOf(c.county) === -1) g.counties.push(c.county);
+      g.members.push(c);
+    });
+    _districtsCache = Object.keys(by).map(function (k) {
+      var g = by[k];
+      g.counties = g.counties.sort().join(", ");
+      g.members.sort(function (a, b) { return b.total - a.total; });
+      return g;
+    });
+    return _districtsCache;
+  }
+
+  function activeCols() { return state.view === "district" ? COLS_DISTRICT : COLS_COLLEGE; }
+  function periodMult(d) { return state.period === 1 ? 1 : d.pool.years.length; }
+  function totalLabel() { return state.period === 1 ? "Total / yr" : "Total 2026-30"; }
 
   function rowsFiltered(d) {
     var q = state.q.trim().toLowerCase();
-    var rows = d.colleges;
+    var rows = state.view === "district" ? districts(d) : d.colleges;
     if (q) {
-      rows = rows.filter(function (c) {
-        return [c.college, c.district, c.county].join(" ").toLowerCase().indexOf(q) !== -1;
+      rows = rows.filter(function (r) {
+        var hay = state.view === "district"
+          ? [r.district, r.counties].join(" ")
+          : [r.college, r.district, r.county].join(" ");
+        return hay.toLowerCase().indexOf(q) !== -1;
       });
     }
     rows = rows.slice().sort(function (a, b) {
@@ -165,41 +223,133 @@
     return rows;
   }
 
-  function collegeRowHtml(c) {
+  function rowId(r) { return state.view === "district" ? "d:" + r.district : "c:" + r.order; }
+
+  // ── row + drill-in rendering ──────────────────────────────────────────
+  function collegeRowHtml(c, m) {
     function pCell(k) {
-      return '<td title="projected ' + fmtInt(c[k + "_heads"]) + ' students">' + fmtMoney(c[k]) + "</td>";
+      return '<td title="projected ' + fmtInt(c[k + "_heads"]) + ' students/yr">' + fmtMoney(c[k] * m) + "</td>";
     }
-    return "<tr>" +
+    var id = "c:" + c.order;
+    return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") + '" data-id="' + esc(id) + '">' +
       "<td>" + esc(c.order) + "</td>" +
-      '<td class="t"><strong>' + esc(c.college) + "</strong></td>" +
+      '<td class="t"><span class="cplfund-caret">▸</span><strong>' + esc(c.college) + "</strong></td>" +
       '<td class="t">' + esc(c.district || "—") + "</td>" +
       '<td class="t">' + esc(c.county || "—") + "</td>" +
       '<td title="' + fmtPct(c.headcount_pct, 2) + ' of statewide headcount">' + fmtInt(c.headcount) + "</td>" +
       pCell("p1") + pCell("p2") + pCell("p3") +
-      '<td class="tot">' + fmtMoney(c.total) + "</td>" +
+      '<td class="tot">' + fmtMoney(c.total * m) + "</td>" +
       "<td>" + (c.working_adults == null ? "—" : fmtInt(c.working_adults) +
         '<span class="sub">' + fmtPct(c.county_pop_pct, 1) + " of county</span>") + "</td>" +
-      "</tr>";
+      "</tr>" + (state.open[id] ? collegeDetailHtml(c, m) : "");
+  }
+
+  function collegeDetailHtml(c, m) {
+    var d = window.CPL_FUNDING;
+    var per = d.pool.per_student;
+    var prio = d.priorities.map(function (p) {
+      return '<div><span class="dk">' + esc(p.label) + ":</span> " +
+        fmtInt(c[p.key + "_heads"]) + " projected (" + fmtPct(p.rate, 2) + " of headcount) &times; factor " +
+        esc(p.factor) + " &times; " + fmtRate(per) + " = <strong>" + fmtMoney(c[p.key] * m) + "</strong>" +
+        (m > 1 ? " over " + d.pool.years.length + " yrs" : "/yr") + "</div>";
+    }).join("");
+    var county = c.working_adults == null
+      ? '<div><span class="dk">County context:</span> not estimated (county &lt; 65K population)</div>'
+      : '<div><span class="dk">County context (' + esc(c.county) + "):</span> " + fmtInt(c.working_adults) +
+        " working adults with some college, no degree (" + fmtPct(c.county_pop_pct, 1) + " of county population)</div>";
+    return '<tr class="cplfund-detail"><td colspan="' + COLS_COLLEGE.length + '">' +
+      '<div class="cplfund-detail-grid">' +
+      '<div><span class="dk">Headcount share:</span> ' + fmtInt(c.headcount) + " students = " +
+      fmtPct(c.headcount_pct, 3) + " of the statewide " + fmtInt(d.pool.ccc_headcount) + "</div>" +
+      prio + county +
+      '<div><span class="dk">District:</span> ' + esc(c.district || "—") + "</div>" +
+      "</div></td></tr>";
+  }
+
+  function districtRowHtml(g, m, i) {
+    var id = "d:" + g.district;
+    return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") + '" data-id="' + esc(id) + '">' +
+      '<td class="t"><span class="cplfund-caret">▸</span><strong>' + esc(g.district) + "</strong></td>" +
+      "<td>" + g.n + "</td>" +
+      '<td class="t">' + esc(g.counties) + "</td>" +
+      "<td>" + fmtInt(g.headcount) + "</td>" +
+      "<td>" + fmtMoney(g.p1 * m) + "</td><td>" + fmtMoney(g.p2 * m) + "</td><td>" + fmtMoney(g.p3 * m) + "</td>" +
+      '<td class="tot">' + fmtMoney(g.total * m) + "</td>" +
+      "</tr>" + (state.open[id] ? districtDetailHtml(g, m) : "");
+  }
+
+  function districtDetailHtml(g, m) {
+    var rows = g.members.map(function (c) {
+      return '<div><span class="dk">' + esc(c.college) + ":</span> " + fmtInt(c.headcount) +
+        " students &middot; <strong>" + fmtMoney(c.total * m) + "</strong></div>";
+    }).join("");
+    return '<tr class="cplfund-detail"><td colspan="' + COLS_DISTRICT.length + '">' +
+      '<div class="cplfund-detail-grid">' + rows + "</div></td></tr>";
   }
 
   function tableHtml(d) {
+    var m = periodMult(d);
     var rows = rowsFiltered(d);
+    var cols = activeCols();
     var sys = d.system;
-    var head = SORT_COLS.map(function (col) {
+    var head = cols.map(function (col) {
+      var label = col.label === "TOTAL_LABEL" ? totalLabel() : col.label;
       var arr = state.sortKey === col.key ? ' <span class="arr">' + (state.sortDir === 1 ? "▲" : "▼") + "</span>" : "";
-      return '<th class="' + col.cls + '" data-sort="' + col.key + '">' + col.label + arr + "</th>";
+      return '<th class="' + col.cls + '" data-sort="' + col.key + '">' + label + arr + "</th>";
     }).join("");
-    var foot = "<tr>" +
-      '<td></td><td class="t">SYSTEM (statewide)</td><td class="t">' + esc(sys.district || "") + "</td><td class=\"t\">" + esc(sys.county || "") + "</td>" +
-      "<td>" + fmtInt(sys.headcount) + "</td>" +
-      "<td>" + fmtMoney(sys.p1) + "</td><td>" + fmtMoney(sys.p2) + "</td><td>" + fmtMoney(sys.p3) + "</td>" +
-      "<td>" + fmtMoney(sys.total) + "</td>" +
-      "<td>" + (sys.working_adults == null ? "—" : fmtInt(sys.working_adults)) + "</td></tr>";
+    var body;
+    if (!rows.length) {
+      body = '<tr><td colspan="' + cols.length + '" class="t">No ' +
+        (state.view === "district" ? "districts" : "colleges") + " match the search.</td></tr>";
+    } else if (state.view === "district") {
+      body = rows.map(function (g, i) { return districtRowHtml(g, m, i); }).join("");
+    } else {
+      body = rows.map(function (c) { return collegeRowHtml(c, m); }).join("");
+    }
+    var foot;
+    if (state.view === "district") {
+      foot = "<tr>" +
+        '<td class="t">SYSTEM (statewide)</td>' +
+        "<td>" + districts(d).reduce(function (s, g) { return s + g.n; }, 0) + "</td>" +
+        '<td class="t"></td>' +
+        "<td>" + fmtInt(sys.headcount) + "</td>" +
+        "<td>" + fmtMoney(sys.p1 * m) + "</td><td>" + fmtMoney(sys.p2 * m) + "</td><td>" + fmtMoney(sys.p3 * m) + "</td>" +
+        "<td>" + fmtMoney(sys.total * m) + "</td></tr>";
+    } else {
+      foot = "<tr>" +
+        '<td></td><td class="t">SYSTEM (statewide)</td><td class="t">' + esc(sys.district || "") + '</td><td class="t">' + esc(sys.county || "") + "</td>" +
+        "<td>" + fmtInt(sys.headcount) + "</td>" +
+        "<td>" + fmtMoney(sys.p1 * m) + "</td><td>" + fmtMoney(sys.p2 * m) + "</td><td>" + fmtMoney(sys.p3 * m) + "</td>" +
+        "<td>" + fmtMoney(sys.total * m) + "</td>" +
+        "<td>" + (sys.working_adults == null ? "—" : fmtInt(sys.working_adults)) + "</td></tr>";
+    }
     return '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
       "<thead><tr>" + head + "</tr></thead>" +
-      "<tbody>" + (rows.length ? rows.map(collegeRowHtml).join("") : '<tr><td colspan="' + SORT_COLS.length + '" class="t">No colleges match the search.</td></tr>') + "</tbody>" +
+      "<tbody>" + body + "</tbody>" +
       "<tfoot>" + foot + "</tfoot>" +
       "</table></div>";
+  }
+
+  // Data-driven honesty note: the 2026-06-11 workbook's college rows sum to
+  // 8,417 more heads (+$44.6K/yr) than its own SYSTEM/pool row — the pool's
+  // SUM range appears to stop one row short of the list. Rendered only while
+  // the source actually disagrees with itself, so it disappears the day a
+  // corrected workbook edition is committed.
+  function varianceNoteHtml(d) {
+    var heads = 0, total = 0;
+    d.colleges.forEach(function (c) { heads += c.headcount || 0; total += c.total; });
+    if (heads === d.system.headcount && Math.abs(total - d.system.total) <= 1) return "";
+    return "<div>Note: the " + d.colleges.length + " college rows sum to " + fmtInt(heads) +
+      " students / " + fmtMoney(total) + "/yr, while the workbook&#39;s SYSTEM row carries " +
+      fmtInt(d.system.headcount) + " / " + fmtMoney(d.system.total) +
+      " &mdash; a source-workbook variance (flagged for the next model edition).</div>";
+  }
+
+  function segHtml(id, items, current) {
+    return '<span class="cplfund-seg" id="' + id + '">' + items.map(function (it) {
+      return '<button type="button" data-val="' + esc(it.val) + '"' +
+        (String(current) === String(it.val) ? ' class="on"' : "") + ">" + esc(it.label) + "</button>";
+    }).join("") + "</span>";
   }
 
   function render() {
@@ -219,12 +369,16 @@
       "<h3>How an allocation is computed</h3>" + formulaHtml(d) +
       "<h3>Potential allocation by college</h3>" +
       '<div class="cplfund-toolbar">' +
+      segHtml("cplFundView", [{ val: "college", label: "Colleges" }, { val: "district", label: "Districts" }], state.view) +
+      segHtml("cplFundPeriod", [{ val: 1, label: "Per year" }, { val: 3, label: "2026-30 total" }], state.period) +
       '<input type="search" id="cplFundSearch" placeholder="Search college / district / county&hellip;" aria-label="Search colleges">' +
       '<span class="cplfund-count" id="cplFundCount"></span></div>' +
       '<div id="cplFundTable">' + tableHtml(d) + "</div>" +
       '<div class="cplfund-foot">' +
-      "<div>Dollar cells round to whole dollars; hover a priority cell for its projected student count. " +
+      "<div>Dollar cells round to whole dollars; click a row to expand its detail. Priority-cell hovers and projected " +
+      "student counts are per year, whichever period is shown. " +
       "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the college&#39;s county.</div>" +
+      varianceNoteHtml(d) +
       d.footnotes.map(function (f) { return "<div>" + esc(f) + "</div>"; }).join("") +
       "</div></div>";
     updateCount(d);
@@ -235,25 +389,41 @@
     var el = document.getElementById("cplFundCount");
     if (!el) return;
     var n = rowsFiltered(d).length;
-    el.textContent = n + " of " + d.colleges.length + " colleges" +
-      (d.average_allocation != null ? " · average allocation " + fmtMoney(d.average_allocation) + "/yr" : "");
+    var m = periodMult(d);
+    var unit = state.view === "district" ? "districts" : "colleges";
+    var denom = state.view === "district" ? districts(d).length : d.colleges.length;
+    el.textContent = n + " of " + denom + " " + unit +
+      (d.average_allocation != null && state.view === "college"
+        ? " · average allocation " + fmtMoney(d.average_allocation * m) + (m === 1 ? "/yr" : " over 2026-30")
+        : "");
   }
 
   function refreshTable(d) {
     var holder = document.getElementById("cplFundTable");
     if (holder) holder.innerHTML = tableHtml(d);
     updateCount(d);
-    wireTableHead(d);
+    wireTable(d);
   }
 
-  function wireTableHead(d) {
+  function wireTable(d) {
     var holder = document.getElementById("cplFundTable");
     if (!holder) return;
     holder.querySelectorAll("th[data-sort]").forEach(function (th) {
       th.addEventListener("click", function () {
         var k = th.getAttribute("data-sort");
         if (state.sortKey === k) state.sortDir = -state.sortDir;
-        else { state.sortKey = k; state.sortDir = (k === "college" || k === "district" || k === "county" || k === "order") ? 1 : -1; }
+        else {
+          state.sortKey = k;
+          state.sortDir = (k === "college" || k === "district" || k === "county" || k === "counties" || k === "order") ? 1 : -1;
+        }
+        refreshTable(d);
+      });
+    });
+    holder.querySelectorAll("tr.cplfund-row").forEach(function (tr) {
+      tr.addEventListener("click", function () {
+        var id = tr.getAttribute("data-id");
+        if (state.open[id]) delete state.open[id];
+        else state.open[id] = true;
         refreshTable(d);
       });
     });
@@ -267,7 +437,27 @@
         refreshTable(d);
       });
     }
-    wireTableHead(d);
+    function wireSeg(id, apply) {
+      var seg = document.getElementById(id);
+      if (!seg) return;
+      seg.querySelectorAll("button").forEach(function (b) {
+        b.addEventListener("click", function () {
+          apply(b.getAttribute("data-val"));
+          seg.querySelectorAll("button").forEach(function (x) { x.classList.toggle("on", x === b); });
+          refreshTable(d);
+        });
+      });
+    }
+    wireSeg("cplFundView", function (v) {
+      if (v === state.view) return;
+      state.view = v;
+      state.open = {};
+      // Keep the sort meaningful across views: college-only/district-only keys reset.
+      var valid = activeCols().some(function (c) { return c.key === state.sortKey; });
+      if (!valid) { state.sortKey = v === "district" ? "district" : "order"; state.sortDir = 1; }
+    });
+    wireSeg("cplFundPeriod", function (v) { state.period = Number(v) || 1; });
+    wireTable(d);
   }
 
   // ── boot ──────────────────────────────────────────────────────────────

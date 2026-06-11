@@ -50,17 +50,31 @@ the parallel-session freeze is over.
 ## Priority queue
 
 1. ~~pii_guard fold-in~~ + ~~shared-doc registration~~ — **DONE 2026-06-11
-   PR 3** after the freeze lifted (coordination check: zero open PRs,
-   nothing in flight from the CCR session). The Dashboard teaser card was
-   **deliberately skipped** — only 3 of 12 tabs have teasers, and it's a
-   generator-file edit (highest CCR-collision surface); do it only if Sam
-   asks.
-2. **Product asks to expect from Sam**: per-college 3-year view (the table
-   shows one $11.6M tranche/yr), district rollups, a college detail
-   drill-in, xlsx export button (pre-generate, don't ship a client xlsx
-   lib), or wiring actual MAP performance against the three priority
-   metrics (P1/P2/P3 are MAP-derivable — that's the interesting v2).
-3. **If the model becomes editable** (allocations negotiated, factors
+   PR 3** (#354), after the coordination check found nothing in flight.
+2. ~~Teaser card~~ — **DONE #355** (Sam asked); code-only generator change,
+   published via post-merge `workflow_dispatch` (dispatch works — 204).
+3. ~~3-year view / district rollups / drill-in~~ — **DONE v1.1** (same
+   day): view + period toggles, drill-in detail rows, 46-assertion test.
+   **v1.1 found a source-workbook variance** — the college list outsums
+   the workbook's own SYSTEM/pool row by exactly the last row (Yuba: 8,417
+   heads / $44.6K/yr; SUM range stops early). Surfaced via build NOTE +
+   data-driven tab footnote + test honesty-bound. **Ask Sam to fix the SUM
+   ranges in the next workbook edition** — the footnote auto-disappears.
+4. **The interesting v2 — MAP performance vs the three priority metrics.**
+   Scope before building: P1 (completion w/ ≥6 transcribed CPL units), P2
+   (enrollment w/ ≥6), P3 (any transcribed CPL) are MAP-derivable, but the
+   current daily pull carries college-level aggregates, not the ≥6-unit
+   per-student cuts — check the MAP CustomReport categories (the 151-field
+   pull, `reference-daily-dashboard-data-pipeline.md`) for a usable view
+   first. **Privacy ADR required before any new committed artifact**
+   (aggregate counts only + small-cell suppression per
+   `methodology-standing-pii-guard.md`); join key = college name → funding
+   rows (watch name drift: "Alameda" vs "College of Alameda" — reuse
+   `college_short_names`/`college_lookup` rather than a new map).
+5. **xlsx export button** — mostly covered: the tab already links the
+   committed source workbook. Only build a derived export if Sam asks for
+   the on-screen view (then pre-generate; never ship a client xlsx lib).
+6. **If the model becomes editable** (allocations negotiated, factors
    tuned): do NOT grow the workbook — follow the Excel→Supabase Phase 2-4
    five-step shape (seed table → read-path cutover → inline editor → RLS
    tighten) that Budget/Projects used.
