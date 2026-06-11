@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-11T18:34:41.718Z",
+  "scraped_at": "2026-06-11T21:35:39.448Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -93,14 +93,14 @@
         },
         {
           "college": "West Los Angeles College",
-          "students": 678,
+          "students": 680,
           "units": 7726.5,
-          "avgUnits": 11.396017699115044,
+          "avgUnits": 11.3625,
           "transcriptionRate": 90.6,
-          "avgTranscribed": 10.321533923303836,
+          "avgTranscribed": 10.291176470588235,
           "criteriaMetCount": 5,
           "militaryStudents": 94,
-          "nonMilitaryStudents": 586,
+          "nonMilitaryStudents": 588,
           "apprenticeStudents": 0,
           "savings": 8540640,
           "yearImpact": 40898411,
@@ -108,13 +108,13 @@
         },
         {
           "college": "San Diego City College",
-          "students": 6532,
+          "students": 6533,
           "units": 14217,
-          "avgUnits": 2.176515615431721,
+          "avgUnits": 2.176182458288688,
           "transcriptionRate": 62.2,
-          "avgTranscribed": 1.353949785670545,
+          "avgTranscribed": 1.353742537884586,
           "criteriaMetCount": 3,
-          "militaryStudents": 1341,
+          "militaryStudents": 1342,
           "nonMilitaryStudents": 5201,
           "apprenticeStudents": 0,
           "savings": 17810625,
@@ -123,13 +123,13 @@
         },
         {
           "college": "San Diego Mesa College",
-          "students": 5677,
+          "students": 5684,
           "units": 14963.5,
-          "avgUnits": 2.635811167870354,
+          "avgUnits": 2.6325650950035184,
           "transcriptionRate": 61.8,
-          "avgTranscribed": 1.6292936410075745,
+          "avgTranscribed": 1.6272871217452498,
           "criteriaMetCount": 3,
-          "militaryStudents": 1434,
+          "militaryStudents": 1441,
           "nonMilitaryStudents": 4249,
           "apprenticeStudents": 0,
           "savings": 18812517.5,
@@ -153,13 +153,13 @@
         },
         {
           "college": "San Diego Miramar College",
-          "students": 3419,
+          "students": 3425,
           "units": 11440.7,
-          "avgUnits": 3.34621234279029,
+          "avgUnits": 3.340350364963504,
           "transcriptionRate": 47.1,
-          "avgTranscribed": 1.5766890903773034,
+          "avgTranscribed": 1.5739270072992704,
           "criteriaMetCount": 3,
-          "militaryStudents": 1501,
+          "militaryStudents": 1507,
           "nonMilitaryStudents": 1922,
           "apprenticeStudents": 14,
           "savings": 16022688,
@@ -773,13 +773,13 @@
         },
         {
           "college": "Fresno City College",
-          "students": 417,
+          "students": 418,
           "units": 966,
-          "avgUnits": 2.316546762589928,
+          "avgUnits": 2.311004784688995,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 416,
+          "militaryStudents": 417,
           "nonMilitaryStudents": 1,
           "apprenticeStudents": 0,
           "savings": 1671180,
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,722",
+      "value": "47,739",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,474"
+          "value": "24,489"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,325"
+          "value": "23,327"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47722,
+    "Students": 47739,
     "Units": 228644.15000000002,
     "TranscribedUnits": 99030.95,
     "Savings": 318079410.25,
     "YearImpact": 1287994716.3999999,
-    "MilitaryStudents": 24474,
-    "NonMilitaryStudents": 23325,
+    "MilitaryStudents": 24489,
+    "NonMilitaryStudents": 23327,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.791168643392985,
-    "TranscribedAverage": 2.0751634466283893
+    "AverageUnits": 4.789462493977671,
+    "TranscribedAverage": 2.0744244747481093
   }
 }

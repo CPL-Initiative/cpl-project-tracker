@@ -101647,158 +101647,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "CPLICI-ASEL-1-001|MAPICI-AEPA-1-001|MAPICI-ASE(11-1-001|MAPICI-ASE(2-1-001|MAPICI-ASE(24-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASEL-1-001",
-        "MAPICI-AEPA-1-001",
-        "MAPICI-ASE(11-1-001",
-        "MAPICI-ASE(2-1-001",
-        "MAPICI-ASE(24-1-001"
-      ],
-      "title": "ASE L1 — Advanced Engine Performance Specialist",
-      "unified_title": "ASE L1 — Advanced Engine Performance Specialist",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "Advanced Engine Performance ASE L1",
-        "Auto Service Excellence (ACE) L1",
-        "Automotive Service Excellence (ASE) L1 Certificate",
-        "Automotive Service Excellence (ASE) L1: Advanced Engine Performance Specialist Certification Test",
-        "Automotive Services Excellence L1 Certificate"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 8,
-      "adopter_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "College of the Desert",
-        "De Anza College",
-        "Las Positas College",
-        "Lassen College",
-        "Merced College",
-        "San Diego Miramar College"
-      ],
-      "potential": 62,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO B34",
-          "credit": "3-4 hours in Advanced Engine Performance"
-        },
-        {
-          "course": "AUTO L1",
-          "credit": "3-4 hours in Advanced Engine Performance"
-        },
-        {
-          "course": "AT 84",
-          "credit": "3-4 hours in Advanced Engine Performance"
-        },
-        {
-          "course": "AUTO 58",
-          "credit": "3-4 hours in Advanced Engine Performance"
-        },
-        {
-          "course": "AUTO 167G",
-          "credit": "2 hours in Advanced Engine Performance"
-        },
-        {
-          "course": "AUTO 060D",
-          "credit": "4.5 hours in Ignition Analysis and Oscilloscope Diagnosis"
-        },
-        {
-          "course": "AUTO 060E",
-          "credit": "4.5 hours in Automotive Fuel Injection"
-        },
-        {
-          "course": "ATEC 10",
-          "credit": "3 hours in Automotive Advanced Engine Performance"
-        },
-        {
-          "course": "ATEC 6A",
-          "credit": "4 hours in Automotive Electrical and Electronic Fundamentals"
-        },
-        {
-          "course": "ATEC 8",
-          "credit": "4 hours in Automotive Air and Fuel Delivery Systems"
-        },
-        {
-          "course": "AUTO 014B",
-          "credit": "4 hours in Advanced Engine Management"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPCxS-LAOR-1-001",
       "exhibit_ids": [
         "MAPCxS-LAOR-1-001"
@@ -105983,6 +105831,162 @@ window.CPL_STATEWIDE = {
         {
           "course": "FT 4",
           "credit": "3 hours in Building Construction for Fire  Protection"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "CPLICI-ASEL-1-001|MAPICI-AEPA-1-001|MAPICI-ASE(11-1-001|MAPICI-ASE(2-1-001|MAPICI-ASE(24-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASEL-1-001",
+        "MAPICI-AEPA-1-001",
+        "MAPICI-ASE(11-1-001",
+        "MAPICI-ASE(2-1-001",
+        "MAPICI-ASE(24-1-001"
+      ],
+      "title": "ASE L1 — Advanced Engine Performance Specialist",
+      "unified_title": "ASE L1 — Advanced Engine Performance Specialist",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "Advanced Engine Performance ASE L1",
+        "Auto Service Excellence (ACE) L1",
+        "Automotive Service Excellence (ASE) L1 Certificate",
+        "Automotive Service Excellence (ASE) L1: Advanced Engine Performance Specialist Certification Test",
+        "Automotive Services Excellence L1 Certificate"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 9,
+      "adopter_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "Chaffey College",
+        "College of the Desert",
+        "De Anza College",
+        "Las Positas College",
+        "Lassen College",
+        "Merced College",
+        "San Diego Miramar College"
+      ],
+      "potential": 61,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 70,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 423",
+          "credit": "3-4 hours in Advanced Engine Performance"
+        },
+        {
+          "course": "AUTO B34",
+          "credit": "3-4 hours in Advanced Engine Performance"
+        },
+        {
+          "course": "AUTO L1",
+          "credit": "3-4 hours in Advanced Engine Performance"
+        },
+        {
+          "course": "AT 84",
+          "credit": "3-4 hours in Advanced Engine Performance"
+        },
+        {
+          "course": "AUTO 58",
+          "credit": "3-4 hours in Advanced Engine Performance"
+        },
+        {
+          "course": "AUTO 167G",
+          "credit": "2 hours in Advanced Engine Performance"
+        },
+        {
+          "course": "AUTO 060D",
+          "credit": "4.5 hours in Ignition Analysis and Oscilloscope Diagnosis"
+        },
+        {
+          "course": "AUTO 060E",
+          "credit": "4.5 hours in Automotive Fuel Injection"
+        },
+        {
+          "course": "ATEC 10",
+          "credit": "3 hours in Automotive Advanced Engine Performance"
+        },
+        {
+          "course": "ATEC 6A",
+          "credit": "4 hours in Automotive Electrical and Electronic Fundamentals"
+        },
+        {
+          "course": "ATEC 8",
+          "credit": "4 hours in Automotive Air and Fuel Delivery Systems"
+        },
+        {
+          "course": "AUTO 014B",
+          "credit": "4 hours in Advanced Engine Management"
         }
       ]
     },
@@ -129827,190 +129831,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "CPLICI-ASE8-1-001|MAPICI-AC(A7-1-001|MAPICI-ASE(22-1-001|MAPICI-ASE(35-1-001|MAPICI-EPAA-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE8-1-001",
-        "MAPICI-AC(A7-1-001",
-        "MAPICI-ASE(22-1-001",
-        "MAPICI-ASE(35-1-001",
-        "MAPICI-EPAA-1-001"
-      ],
-      "title": "ASE A8 — Engine Performance",
-      "unified_title": "ASE A8 — Engine Performance",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE CERTIFICATION (A8) A8 – ENGINE PERFORMANCE",
-        "Automotive Service Excellence (ASE) A8 Certificate",
-        "Automotive Service Excellence (ASE) A8 Certificate Engine Performance",
-        "Automotive Services Excellence 8 (A8) Certificate",
-        "Engine Performance ASE A8"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 17,
-      "adopter_names": [
-        "Bakersfield College",
-        "Chabot College",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Mendocino College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College"
-      ],
-      "potential": 53,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO B33",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO 118",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO A8",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AT 82",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AT 106",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO 150",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO 062",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO 062L",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTOMO 801",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO 060C",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUT 166",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "ATEC 8",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUSER 203",
-          "credit": "3 or 4 hours in Engine Performance"
-        },
-        {
-          "course": "AUTO 165G",
-          "credit": "2 hours in Engine Performance"
-        },
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 8A",
-          "credit": "4 hours in Auto Engine Performance 1"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 014A",
-          "credit": "4 hours in Automotive Engine Management"
-        },
-        {
-          "course": "AUTO 218",
-          "credit": "3 hours in Automotive Fuel Systems"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICA-CJFO-1-001",
       "exhibit_ids": [
         "MAPICA-CJFO-1-001"
@@ -130799,28 +130619,28 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "CPLICI-ASE3-1-001|MAPICI-AC(A3-1-001|MAPICI-ASE(18-1-001|MAPICI-ASE(30-1-001|MAPICI-MDTA-1-001",
+      "exhibit_id": "CPLICI-ASE8-1-001|MAPICI-AC(A7-1-001|MAPICI-ASE(22-1-001|MAPICI-ASE(35-1-001|MAPICI-EPAA-1-001",
       "exhibit_ids": [
-        "CPLICI-ASE3-1-001",
-        "MAPICI-AC(A3-1-001",
-        "MAPICI-ASE(18-1-001",
-        "MAPICI-ASE(30-1-001",
-        "MAPICI-MDTA-1-001"
+        "CPLICI-ASE8-1-001",
+        "MAPICI-AC(A7-1-001",
+        "MAPICI-ASE(22-1-001",
+        "MAPICI-ASE(35-1-001",
+        "MAPICI-EPAA-1-001"
       ],
-      "title": "ASE A3 — Manual Drive Train and Axles",
-      "unified_title": "ASE A3 — Manual Drive Train and Axles",
+      "title": "ASE A8 — Engine Performance",
+      "unified_title": "ASE A8 — Engine Performance",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
       "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
+      "confidence_issuer": 0.95,
       "quality_flag": "",
       "raw_titles": [
-        "ASE CERTIFICATION (A3) A3 – MANUAL DRIVE TRAIN & AXLES",
-        "Automotive Service Excellence (ASE) A3 Certificate",
-        "Automotive Service Excellence (ASE) A3 Certificate Manual Drive Train & Axles",
-        "Automotive Services Excellence 3 (A3) Certificate",
-        "Manual Drive Train and Axles ASE A3"
+        "ASE CERTIFICATION (A8) A8 – ENGINE PERFORMANCE",
+        "Automotive Service Excellence (ASE) A8 Certificate",
+        "Automotive Service Excellence (ASE) A8 Certificate Engine Performance",
+        "Automotive Services Excellence 8 (A8) Certificate",
+        "Engine Performance ASE A8"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -130830,6 +130650,7 @@ window.CPL_STATEWIDE = {
       "adopter_names": [
         "Bakersfield College",
         "Chabot College",
+        "Chaffey College",
         "College of the Desert",
         "Columbia College",
         "Contra Costa College",
@@ -130840,7 +130661,6 @@ window.CPL_STATEWIDE = {
         "Lassen College",
         "Long Beach City College",
         "Mendocino College",
-        "Merced College",
         "Rio Hondo College",
         "Riverside City College",
         "San Bernardino Valley College",
@@ -130855,7 +130675,6 @@ window.CPL_STATEWIDE = {
         "Barstow Community College",
         "Butte College",
         "Cerritos College",
-        "Chaffey College",
         "Citrus College",
         "City College of San Francisco",
         "College of Alameda",
@@ -130878,6 +130697,7 @@ window.CPL_STATEWIDE = {
         "Los Angeles Pierce College",
         "Los Angeles Trade Technical College",
         "Los Medanos College",
+        "Merced College",
         "MiraCosta College",
         "Modesto Junior College",
         "Monterey Peninsula College",
@@ -130905,88 +130725,84 @@ window.CPL_STATEWIDE = {
       "total_addressable": 70,
       "credit_recs": [
         {
-          "course": "AUTO B48",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTOTEC 422",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 077",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO B33",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 113",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO 118",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO A3",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO A8",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AT 66",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AT 82",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 36",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AT 106",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AT 122",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO 150",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 220",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO 062",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 075L",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO 062L",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 077L",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTOMO 801",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTOMO 301",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUTO 060C",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUTO 063A",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUT 166",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUT 144",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "ATEC 8",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "ATEC 3",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+          "course": "AUSER 203",
+          "credit": "3 or 4 hours in Engine Performance"
         },
         {
-          "course": "AUSER 117",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 172G",
-          "credit": "2 hours in Manual Drive Train and Axles"
+          "course": "AUTO 165G",
+          "credit": "2 hours in Engine Performance"
         },
         {
           "course": "AUT 50",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUT 3",
-          "credit": "4 hours in Man Drivetrain Systems"
+          "course": "AUT 8A",
+          "credit": "4 hours in Auto Engine Performance 1"
         },
         {
           "course": "AUTO 004",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUTO 016",
-          "credit": "3 hours in Automotive Manual Transmissions & Drive Train Systems"
+          "course": "AUTO 014A",
+          "credit": "4 hours in Automotive Engine Management"
         },
         {
-          "course": "AUTO 213",
-          "credit": "3 hours in Automotive Manual Transmission"
+          "course": "AUTO 218",
+          "credit": "3 hours in Automotive Fuel Systems"
         }
       ]
     },
@@ -133319,16 +133135,16 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "CPLICI-ASE7-1-001|MAPICI-AAC-1-001|MAPICI-AC(A6-1-001|MAPICI-ASE(34-1-001|MAPICI-CCSA-1-001",
+      "exhibit_id": "CPLICI-ASE3-1-001|MAPICI-AC(A3-1-001|MAPICI-ASE(18-1-001|MAPICI-ASE(30-1-001|MAPICI-MDTA-1-001",
       "exhibit_ids": [
-        "CPLICI-ASE7-1-001",
-        "MAPICI-AAC-1-001",
-        "MAPICI-AC(A6-1-001",
-        "MAPICI-ASE(34-1-001",
-        "MAPICI-CCSA-1-001"
+        "CPLICI-ASE3-1-001",
+        "MAPICI-AC(A3-1-001",
+        "MAPICI-ASE(18-1-001",
+        "MAPICI-ASE(30-1-001",
+        "MAPICI-MDTA-1-001"
       ],
-      "title": "ASE A7 — Heating and Air Conditioning",
-      "unified_title": "ASE A7 — Heating and Air Conditioning",
+      "title": "ASE A3 — Manual Drive Train and Axles",
+      "unified_title": "ASE A3 — Manual Drive Train and Axles",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -133336,11 +133152,11 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.98,
       "quality_flag": "",
       "raw_titles": [
-        "ASE A7 Certificate",
-        "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
-        "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
-        "Automotive Services Excellence 7 (A7) Certificate",
-        "Climate Control Systems ASE A7"
+        "ASE CERTIFICATION (A3) A3 – MANUAL DRIVE TRAIN & AXLES",
+        "Automotive Service Excellence (ASE) A3 Certificate",
+        "Automotive Service Excellence (ASE) A3 Certificate Manual Drive Train & Axles",
+        "Automotive Services Excellence 3 (A3) Certificate",
+        "Manual Drive Train and Axles ASE A3"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -133350,7 +133166,7 @@ window.CPL_STATEWIDE = {
       "adopter_names": [
         "Bakersfield College",
         "Chabot College",
-        "City College of San Francisco",
+        "Chaffey College",
         "College of the Desert",
         "Columbia College",
         "Contra Costa College",
@@ -133359,7 +133175,7 @@ window.CPL_STATEWIDE = {
         "East Los Angeles College",
         "Las Positas College",
         "Lassen College",
-        "Los Medanos College",
+        "Long Beach City College",
         "Mendocino College",
         "Merced College",
         "Rio Hondo College",
@@ -133376,8 +133192,8 @@ window.CPL_STATEWIDE = {
         "Barstow Community College",
         "Butte College",
         "Cerritos College",
-        "Chaffey College",
         "Citrus College",
+        "City College of San Francisco",
         "College of Alameda",
         "College of Marin",
         "College of the Canyons",
@@ -133395,9 +133211,9 @@ window.CPL_STATEWIDE = {
         "Golden West College",
         "Hartnell College",
         "Imperial Valley College",
-        "Long Beach City College",
         "Los Angeles Pierce College",
         "Los Angeles Trade Technical College",
+        "Los Medanos College",
         "MiraCosta College",
         "Modesto Junior College",
         "Monterey Peninsula College",
@@ -133425,84 +133241,92 @@ window.CPL_STATEWIDE = {
       "total_addressable": 70,
       "credit_recs": [
         {
-          "course": "AUTO B49",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AUTOTEC 432",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 056",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AUTO B48",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 117",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AUTO 077",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO A7",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AUTO 113",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AT 58",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AUTO A3",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 44",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AT 66",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 58",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AUTO 36",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AT 112",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AT 122",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 240",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AUTO 220",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTOMO 701",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AUTO 075L",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 066.",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AUTO 077L",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUT 146",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AUTOMO 301",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "ATEC 7",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AUTO 063A",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUSER 238",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+          "course": "AUT 144",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
         },
         {
-          "course": "AUTO 169G",
-          "credit": "2 hours in Climate Control Systems"
+          "course": "ATEC 3",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUSER 117",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 172G",
+          "credit": "2 hours in Manual Drive Train and Axles"
         },
         {
           "course": "AUT 50",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUT 7",
-          "credit": "4 hours in Auto Heat & Air"
+          "course": "AUT 3",
+          "credit": "4 hours in Man Drivetrain Systems"
         },
         {
           "course": "AUTO 004",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUTO 113",
-          "credit": "4 hours in Auto Heat & Air"
+          "course": "AUTO 016",
+          "credit": "3 hours in Automotive Manual Transmissions & Drive Train Systems"
         },
         {
-          "course": "AUTO 018",
-          "credit": "4 hours in Automotive Heating, Ventilation & Air Conditioning"
+          "course": "AUTO 213",
+          "credit": "3 hours in Automotive Manual Transmission"
         }
       ]
     },
@@ -136963,17 +136787,16 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "CPLICI-ASE2-1-001|MAPICI-AC(A1-1-001|MAPICI-ASE(17-1-001|MAPICI-ASE(28-1-001|MAPICI-ASE(29-1-001|MAPICI-ATAA-1-001",
+      "exhibit_id": "CPLICI-ASE7-1-001|MAPICI-AAC-1-001|MAPICI-AC(A6-1-001|MAPICI-ASE(34-1-001|MAPICI-CCSA-1-001",
       "exhibit_ids": [
-        "CPLICI-ASE2-1-001",
-        "MAPICI-AC(A1-1-001",
-        "MAPICI-ASE(17-1-001",
-        "MAPICI-ASE(28-1-001",
-        "MAPICI-ASE(29-1-001",
-        "MAPICI-ATAA-1-001"
+        "CPLICI-ASE7-1-001",
+        "MAPICI-AAC-1-001",
+        "MAPICI-AC(A6-1-001",
+        "MAPICI-ASE(34-1-001",
+        "MAPICI-CCSA-1-001"
       ],
-      "title": "ASE A2 — Automatic Transmission/Transaxle",
-      "unified_title": "ASE A2 — Automatic Transmission/Transaxle",
+      "title": "ASE A7 — Heating and Air Conditioning",
+      "unified_title": "ASE A7 — Heating and Air Conditioning",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -136981,12 +136804,11 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.98,
       "quality_flag": "",
       "raw_titles": [
-        "ASE CERTIFICATION (A2) A2 – AUTOMATIC TRANSMISSION/TRANSAXLE",
-        "Automatic Transmissions/Axles ASE A2",
-        "Automotive Service Excellence (ASE) A2 Certificate",
-        "Automotive Service Excellence (ASE) A2 Certificate Automatic Transmission/Transaxle",
-        "Automotive Services Excellence (ASE) 2",
-        "Automotive Services Excellence 2 (A2) Certificate"
+        "ASE A7 Certificate",
+        "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
+        "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
+        "Automotive Services Excellence 7 (A7) Certificate",
+        "Climate Control Systems ASE A7"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -136995,7 +136817,9 @@ window.CPL_STATEWIDE = {
       "adopters": 20,
       "adopter_names": [
         "Bakersfield College",
-        "Barstow Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
         "College of the Desert",
         "Columbia College",
         "Contra Costa College",
@@ -137004,7 +136828,6 @@ window.CPL_STATEWIDE = {
         "East Los Angeles College",
         "Las Positas College",
         "Lassen College",
-        "Long Beach City College",
         "Los Medanos College",
         "Mendocino College",
         "Merced College",
@@ -137012,20 +136835,17 @@ window.CPL_STATEWIDE = {
         "Riverside City College",
         "San Bernardino Valley College",
         "San Diego Miramar College",
-        "Santa Ana College",
-        "Shasta College"
+        "Santa Ana College"
       ],
       "potential": 50,
       "potential_names": [
         "Allan Hancock College",
         "American River College",
         "Antelope Valley College",
+        "Barstow Community College",
         "Butte College",
         "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
         "Citrus College",
-        "City College of San Francisco",
         "College of Alameda",
         "College of Marin",
         "College of the Canyons",
@@ -137043,6 +136863,7 @@ window.CPL_STATEWIDE = {
         "Golden West College",
         "Hartnell College",
         "Imperial Valley College",
+        "Long Beach City College",
         "Los Angeles Pierce College",
         "Los Angeles Trade Technical College",
         "MiraCosta College",
@@ -137060,6 +136881,7 @@ window.CPL_STATEWIDE = {
         "San Joaquin Delta College",
         "Santa Barbara City College",
         "Santa Rosa Junior College",
+        "Shasta College",
         "Sierra College",
         "Skyline College",
         "Solano Community College",
@@ -137071,96 +136893,88 @@ window.CPL_STATEWIDE = {
       "total_addressable": 70,
       "credit_recs": [
         {
-          "course": "AUTO B46",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "AUTOTEC 416",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 075",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "AUTO B49",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 112",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "AUTO 056",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO A2",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "AUTO 117",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AT 68",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "AUTO A7",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AT 132",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "AT 58",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 230",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "AUTO 44",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 075L",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "AUTO 58",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTOMO 201",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "AT 112",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 063.",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "AUTO 240",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 64",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "AUTOMO 701",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUT 145",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "AUTO 066.",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 53",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "AUT 146",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUSER 117",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
+          "course": "ATEC 7",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
         },
         {
-          "course": "AUTO 174G",
-          "credit": "2 hours in Automatic Transmissions/Axles"
+          "course": "AUSER 238",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 169G",
+          "credit": "2 hours in Climate Control Systems"
         },
         {
           "course": "AUT 50",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUT 2",
-          "credit": "4 hours in Auto Transmissions/Transaxles"
+          "course": "AUT 7",
+          "credit": "4 hours in Auto Heat & Air"
         },
         {
           "course": "AUTO 004",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUTO 045",
-          "credit": "4 hours in Auto Transmissions/Transaxles"
+          "course": "AUTO 113",
+          "credit": "4 hours in Auto Heat & Air"
         },
         {
-          "course": "AUTO 130",
-          "credit": "4 hours in Auto Transmissions/Transaxles"
-        },
-        {
-          "course": "AUTO 017",
-          "credit": "3 hours in Automatic Transmissions & Transaxles"
-        },
-        {
-          "course": "AUTO 212",
-          "credit": "3 hours in Automotive Automatic Transmission"
-        },
-        {
-          "course": "AUTO 162",
-          "credit": "3 hours in Auto Transmissions and Transaxles"
+          "course": "AUTO 018",
+          "credit": "4 hours in Automotive Heating, Ventilation & Air Conditioning"
         }
       ]
     },
@@ -138944,436 +138758,17 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "CPLICI-ASE1-1-001|MAPICI-AC(A-1-001|MAPICI-ASE(12-1-001|MAPICI-ASE(16-1-001|MAPICI-ASE(27-1-001",
+      "exhibit_id": "CPLICI-ASE2-1-001|MAPICI-AC(A1-1-001|MAPICI-ASE(17-1-001|MAPICI-ASE(28-1-001|MAPICI-ASE(29-1-001|MAPICI-ATAA-1-001",
       "exhibit_ids": [
-        "CPLICI-ASE1-1-001",
-        "MAPICI-AC(A-1-001",
-        "MAPICI-ASE(12-1-001",
-        "MAPICI-ASE(16-1-001",
-        "MAPICI-ASE(27-1-001"
+        "CPLICI-ASE2-1-001",
+        "MAPICI-AC(A1-1-001",
+        "MAPICI-ASE(17-1-001",
+        "MAPICI-ASE(28-1-001",
+        "MAPICI-ASE(29-1-001",
+        "MAPICI-ATAA-1-001"
       ],
-      "title": "ASE A1 — Engine Repair",
-      "unified_title": "ASE A1 — Engine Repair",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE CERTIFICATION (A1) A1 – ENGINE REPAIR",
-        "Automotive Service Excellence (ASE) A1 Certificate",
-        "Automotive Service Excellence (ASE) A1 Certificate Engine Repair",
-        "Automotive Services Excellence 1 (A1) Certificate"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 21,
-      "adopter_names": [
-        "Bakersfield College",
-        "Barstow Community College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Marin",
-        "College of the Desert",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College"
-      ],
-      "potential": 49,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "College of Alameda",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO B20",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 018",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 090",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 111",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO A1",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AT 72",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 156G",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 54",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 160",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 090L",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTOMO 111",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 064.",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 61",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUT 140",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 53",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 110A",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 112",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUSER 115",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 010",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 1A",
-          "credit": "4 hours in Auto Engine Repair Upper"
-        },
-        {
-          "course": "AUT 1B",
-          "credit": "4 hours in Auto Engine Repair Lower"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 53",
-          "credit": "4 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 015",
-          "credit": "4 hours in Automotive Engine Diagnosis & Repair"
-        },
-        {
-          "course": "AUTO 211",
-          "credit": "3 hours in Automotive Engine Repair"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "CPLICI-ASE4-1-001|MAPICI-A0-A-1-001|MAPICI-A0-A1-1-001|MAPICI-AC(A2-1-001|MAPICI-ASE(19-1-001|MAPICI-ASE(31-1-001|MAPICI-SSAH-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE4-1-001",
-        "MAPICI-A0-A-1-001",
-        "MAPICI-A0-A1-1-001",
-        "MAPICI-AC(A2-1-001",
-        "MAPICI-ASE(19-1-001",
-        "MAPICI-ASE(31-1-001",
-        "MAPICI-SSAH-1-001"
-      ],
-      "title": "ASE A4 — Suspension and Steering",
-      "unified_title": "ASE A4 — Suspension and Steering",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.97,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE CERTIFICATION (A4) A4 – SUSPENSION & STEERING",
-        "AUTO 052 - Auto Suspension & Steering - ASE Certificate",
-        "AUTO 052L - Auto Suspension & Steering Laboratory - ASE Certification Automobile -Suspension and Steering",
-        "Automotive Service Excellence (ASE) A4 Certificate",
-        "Automotive Service Excellence (ASE) A4 Certificate Suspension & Steering",
-        "Automotive Services Excellence 4 (A4) Certificate",
-        "Suspension, Steering and Handling ASE A4"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 21,
-      "adopter_names": [
-        "Bakersfield College",
-        "Barstow Community College",
-        "Chabot College",
-        "City College of San Francisco",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College"
-      ],
-      "potential": 49,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Butte College",
-        "Cerritos College",
-        "Chaffey College",
-        "Citrus College",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 70,
-      "credit_recs": [
-        {
-          "course": "AUTO B40",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 052",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 114",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO A4",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AT 56",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 32",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 59",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AT 120",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 200",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 052L",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTOMO 401",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 062A",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUT 142",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 55",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "ATEC 4",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUSER 113",
-          "credit": "3 hours in Automotive Suspension and Steering Systems"
-        },
-        {
-          "course": "AUTO 178G",
-          "credit": "2 hours in Suspension, Steering and Handling"
-        },
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 4A",
-          "credit": "4 hours in Auto Steering & Suspension"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 120",
-          "credit": "4 hours in Auto Steering & Suspension"
-        },
-        {
-          "course": "AUTO 052L",
-          "credit": "1 hour in Automotive Suspension and Steering - Laboratory"
-        },
-        {
-          "course": "AUTO 012A",
-          "credit": "4 hours in Automotive Suspension & Steering Systems"
-        },
-        {
-          "course": "AUTO 214",
-          "credit": "3 hours in Automotive Wheel Alignment"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "CPLICI-ASE5-1-001|MAPICI-ABSA-1-001|MAPICI-AC(A4-1-001|MAPICI-ASE(20-1-001|MAPICI-ASE(32-1-001|MAPICI-ASE(6-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE5-1-001",
-        "MAPICI-ABSA-1-001",
-        "MAPICI-AC(A4-1-001",
-        "MAPICI-ASE(20-1-001",
-        "MAPICI-ASE(32-1-001",
-        "MAPICI-ASE(6-1-001"
-      ],
-      "title": "ASE A5 — Brakes",
-      "unified_title": "ASE A5 — Brakes",
+      "title": "ASE A2 — Automatic Transmission/Transaxle",
+      "unified_title": "ASE A2 — Automatic Transmission/Transaxle",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
@@ -139381,12 +138776,12 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.98,
       "quality_flag": "",
       "raw_titles": [
-        "ASE CERTIFICATION (A5) A5 – BRAKES",
-        "Automotive Brake Systems ASE A5",
-        "Automotive Service Excellence (ASE) A5 Certificate",
-        "Automotive Service Excellence (ASE) A5 Certificate Brakes",
-        "Automotive Services Excellence (A5: Brakes) Certificate",
-        "Automotive Services Excellence 5 (A5) Certificate"
+        "ASE CERTIFICATION (A2) A2 – AUTOMATIC TRANSMISSION/TRANSAXLE",
+        "Automatic Transmissions/Axles ASE A2",
+        "Automotive Service Excellence (ASE) A2 Certificate",
+        "Automotive Service Excellence (ASE) A2 Certificate Automatic Transmission/Transaxle",
+        "Automotive Services Excellence (ASE) 2",
+        "Automotive Services Excellence 2 (A2) Certificate"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -139396,8 +138791,7 @@ window.CPL_STATEWIDE = {
       "adopter_names": [
         "Bakersfield College",
         "Barstow Community College",
-        "Chabot College",
-        "City College of San Francisco",
+        "Chaffey College",
         "College of the Desert",
         "Columbia College",
         "Contra Costa College",
@@ -139414,7 +138808,8 @@ window.CPL_STATEWIDE = {
         "Riverside City College",
         "San Bernardino Valley College",
         "San Diego Miramar College",
-        "Santa Ana College"
+        "Santa Ana College",
+        "Shasta College"
       ],
       "potential": 49,
       "potential_names": [
@@ -139423,8 +138818,9 @@ window.CPL_STATEWIDE = {
         "Antelope Valley College",
         "Butte College",
         "Cerritos College",
-        "Chaffey College",
+        "Chabot College",
         "Citrus College",
+        "City College of San Francisco",
         "College of Alameda",
         "College of Marin",
         "College of the Canyons",
@@ -139459,7 +138855,6 @@ window.CPL_STATEWIDE = {
         "San Joaquin Delta College",
         "Santa Barbara City College",
         "Santa Rosa Junior College",
-        "Shasta College",
         "Sierra College",
         "Skyline College",
         "Solano Community College",
@@ -139471,116 +138866,100 @@ window.CPL_STATEWIDE = {
       "total_addressable": 70,
       "credit_recs": [
         {
-          "course": "AUTO B43",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTOTEC 432",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO 050",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO B46",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO 115",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO 075",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO A5",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO 112",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AT 54",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO A2",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO 33",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AT 68",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO 63",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AT 132",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AT 105",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO 230",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO 210",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO 075L",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO 050L",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTOMO 201",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTOMO 501",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO 063.",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO 061B",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO 64",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUT 142",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUT 145",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUTO 54",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUTO 53",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "ATEC 5",
-          "credit": "3 hours in Automotive Braking Systems"
+          "course": "AUSER 117",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
         },
         {
-          "course": "AUSER 111",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 176G",
-          "credit": "2 hours in Automotive Brake Systems"
+          "course": "AUTO 174G",
+          "credit": "2 hours in Automatic Transmissions/Axles"
         },
         {
           "course": "AUT 50",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUT 5",
-          "credit": "4 hours in Automotive Brakes"
+          "course": "AUT 2",
+          "credit": "4 hours in Auto Transmissions/Transaxles"
         },
         {
           "course": "AUTO 004",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUTO 33",
-          "credit": "4 hours in Automotive Brakes"
+          "course": "AUTO 045",
+          "credit": "4 hours in Auto Transmissions/Transaxles"
         },
         {
-          "course": "AUTO 121",
-          "credit": "4 hours in Automotive Brakes"
+          "course": "AUTO 130",
+          "credit": "4 hours in Auto Transmissions/Transaxles"
         },
         {
-          "course": "AUTO 061A",
-          "credit": "4.5 hours in Automotive Brake Systems"
+          "course": "AUTO 017",
+          "credit": "3 hours in Automatic Transmissions & Transaxles"
         },
         {
-          "course": "AUTO 061B",
-          "credit": "4.5 hours in Electronically Controlled Brake Systems"
+          "course": "AUTO 212",
+          "credit": "3 hours in Automotive Automatic Transmission"
         },
         {
-          "course": "AUTO 121",
-          "credit": "4.5 hours in Automotive Brake Systems"
-        },
-        {
-          "course": "AUTO 121",
-          "credit": "4.5 hours in Electronically Controlled Brake Systems"
-        },
-        {
-          "course": "AUTO 013A",
-          "credit": "4 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 215",
-          "credit": "3 hours in Automotive Brake Systems"
+          "course": "AUTO 162",
+          "credit": "3 hours in Auto Transmissions and Transaxles"
         }
       ]
     },
@@ -140056,32 +139435,27 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "CPLICI-ASE6-1-001|MAPICI-AC(A5-1-001|MAPICI-ACA+-1-001|MAPICI-ASE(21-1-001|MAPICI-ASE(33-1-001|MAPICI-ASEA3-1-001|MAPICI-BEAE-1-001",
+      "exhibit_id": "CPLICI-ASE1-1-001|MAPICI-AC(A-1-001|MAPICI-ASE(12-1-001|MAPICI-ASE(16-1-001|MAPICI-ASE(27-1-001",
       "exhibit_ids": [
-        "CPLICI-ASE6-1-001",
-        "MAPICI-AC(A5-1-001",
-        "MAPICI-ACA+-1-001",
-        "MAPICI-ASE(21-1-001",
-        "MAPICI-ASE(33-1-001",
-        "MAPICI-ASEA3-1-001",
-        "MAPICI-BEAE-1-001"
+        "CPLICI-ASE1-1-001",
+        "MAPICI-AC(A-1-001",
+        "MAPICI-ASE(12-1-001",
+        "MAPICI-ASE(16-1-001",
+        "MAPICI-ASE(27-1-001"
       ],
-      "title": "ASE A6 — Electrical/Electronic Systems",
-      "unified_title": "ASE A6 — Electrical/Electronic Systems",
+      "title": "ASE A1 — Engine Repair",
+      "unified_title": "ASE A1 — Engine Repair",
       "is_classified": true,
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "training_agency": "",
       "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
+      "confidence_issuer": 0.95,
       "quality_flag": "",
       "raw_titles": [
-        "ASE CERTIFICATION (A6) A6 – ELECTRICAL/ELECTRONIC SYSTEMS",
-        "ASE Certifications: A6 + Residency Units",
-        "Auto Service Excellence A6",
-        "Automotive Service Excellence (ASE) A6 Certificate",
-        "Automotive Service Excellence (ASE) A6 Certificate Electrical/Electronic Systems",
-        "Automotive Services Excellence 6 (A6) Certificate",
-        "Basic Electricity and Electrical Systems Fundamentals ASE A6"
+        "ASE CERTIFICATION (A1) A1 – ENGINE REPAIR",
+        "Automotive Service Excellence (ASE) A1 Certificate",
+        "Automotive Service Excellence (ASE) A1 Certificate Engine Repair",
+        "Automotive Services Excellence 1 (A1) Certificate"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -140091,10 +139465,11 @@ window.CPL_STATEWIDE = {
       "adopter_names": [
         "Bakersfield College",
         "Barstow Community College",
-        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
         "City College of San Francisco",
+        "College of Marin",
         "College of the Desert",
-        "Columbia College",
         "Contra Costa College",
         "Copper Mountain College",
         "De Anza College",
@@ -140102,7 +139477,6 @@ window.CPL_STATEWIDE = {
         "Las Positas College",
         "Lassen College",
         "Long Beach City College",
-        "Los Angeles Trade Technical College",
         "Los Medanos College",
         "Mendocino College",
         "Merced College",
@@ -140119,13 +139493,12 @@ window.CPL_STATEWIDE = {
         "Antelope Valley College",
         "Butte College",
         "Cerritos College",
-        "Chaffey College",
-        "Citrus College",
+        "Chabot College",
         "College of Alameda",
-        "College of Marin",
         "College of the Canyons",
         "College of the Redwoods",
         "College of the Sequoias",
+        "Columbia College",
         "Compton College",
         "Cosumnes River College",
         "Cuesta College",
@@ -140139,6 +139512,7 @@ window.CPL_STATEWIDE = {
         "Hartnell College",
         "Imperial Valley College",
         "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
         "MiraCosta College",
         "Modesto Junior College",
         "Monterey Peninsula College",
@@ -140166,104 +139540,554 @@ window.CPL_STATEWIDE = {
       "total_addressable": 70,
       "credit_recs": [
         {
-          "course": "AUTO B30",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTOTEC 10",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AUTO 065",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTOTEC 427",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AUTO 116",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTO B20",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AUTO A6",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTO 018",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AT 80",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTO 090",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AUTO 51",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTO 111",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AT 113",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTO A1",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AUTO 140",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AT 72",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AUTO 116B",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTO 156G",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AUTOMO 601",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTO 54",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AUTO 060.",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTO 160",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AUTO 57",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTO 090L",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AUT 162",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTOMO 111",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AUTO 52",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTO 064.",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "ATEC 6A",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUTO 61",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AUSER 103",
-          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+          "course": "AUT 140",
+          "credit": "3 hours in Engine Repair"
         },
         {
-          "course": "AUTO 161G",
-          "credit": "2 hours in Basic Electricity and Electrical Systems Fundamentals"
+          "course": "AUTO 53",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 110A",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 112",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUSER 115",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 010",
+          "credit": "3 hours in Engine Repair"
         },
         {
           "course": "AUT 50",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUT 6A",
-          "credit": "4 hours in Auto Electrical Systems 1"
+          "course": "AUT 1A",
+          "credit": "4 hours in Auto Engine Repair Upper"
+        },
+        {
+          "course": "AUT 1B",
+          "credit": "4 hours in Auto Engine Repair Lower"
         },
         {
           "course": "AUTO 004",
           "credit": "4 hours in Automotive Principles"
         },
         {
-          "course": "AUTO 111",
-          "credit": "4 hours in Auto Electrical Systems 1"
+          "course": "AUTO 53",
+          "credit": "4 hours in Engine Repair"
         },
         {
-          "course": "AUTORTK 122",
-          "credit": "3 hours in ELECTRICAL/ELECTRONIC SYSTEMS THEORY, INSPECTION & REPAIR"
+          "course": "AUTO 015",
+          "credit": "4 hours in Automotive Engine Diagnosis & Repair"
         },
         {
-          "course": "AUTO 011B",
-          "credit": "4 hours in Auto Electronics & Electrical Systems"
+          "course": "AUTO 211",
+          "credit": "3 hours in Automotive Engine Repair"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "CPLICI-ASE4-1-001|MAPICI-A0-A-1-001|MAPICI-A0-A1-1-001|MAPICI-AC(A2-1-001|MAPICI-ASE(19-1-001|MAPICI-ASE(31-1-001|MAPICI-SSAH-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE4-1-001",
+        "MAPICI-A0-A-1-001",
+        "MAPICI-A0-A1-1-001",
+        "MAPICI-AC(A2-1-001",
+        "MAPICI-ASE(19-1-001",
+        "MAPICI-ASE(31-1-001",
+        "MAPICI-SSAH-1-001"
+      ],
+      "title": "ASE A4 — Suspension and Steering",
+      "unified_title": "ASE A4 — Suspension and Steering",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.97,
+      "quality_flag": "",
+      "raw_titles": [
+        "ASE CERTIFICATION (A4) A4 – SUSPENSION & STEERING",
+        "AUTO 052 - Auto Suspension & Steering - ASE Certificate",
+        "AUTO 052L - Auto Suspension & Steering Laboratory - ASE Certification Automobile -Suspension and Steering",
+        "Automotive Service Excellence (ASE) A4 Certificate",
+        "Automotive Service Excellence (ASE) A4 Certificate Suspension & Steering",
+        "Automotive Services Excellence 4 (A4) Certificate",
+        "Suspension, Steering and Handling ASE A4"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 22,
+      "adopter_names": [
+        "Bakersfield College",
+        "Barstow Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 48,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Butte College",
+        "Cerritos College",
+        "Citrus College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 70,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 418",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
         },
         {
-          "course": "AUTO 216",
-          "credit": "3 hours in Automotive Electrical Systems"
+          "course": "AUTO B40",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
         },
         {
-          "course": "AUTO 116",
-          "credit": "5 hours in Electrical Fundamentals"
+          "course": "AUTO 052",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 114",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO A4",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AT 56",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 32",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 59",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AT 120",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 200",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 052L",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTOMO 401",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 062A",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUT 142",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 55",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "ATEC 4",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUSER 113",
+          "credit": "3 hours in Automotive Suspension and Steering Systems"
+        },
+        {
+          "course": "AUTO 178G",
+          "credit": "2 hours in Suspension, Steering and Handling"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 4A",
+          "credit": "4 hours in Auto Steering & Suspension"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 120",
+          "credit": "4 hours in Auto Steering & Suspension"
+        },
+        {
+          "course": "AUTO 052L",
+          "credit": "1 hour in Automotive Suspension and Steering - Laboratory"
+        },
+        {
+          "course": "AUTO 012A",
+          "credit": "4 hours in Automotive Suspension & Steering Systems"
+        },
+        {
+          "course": "AUTO 214",
+          "credit": "3 hours in Automotive Wheel Alignment"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "CPLICI-ASE5-1-001|MAPICI-ABSA-1-001|MAPICI-AC(A4-1-001|MAPICI-ASE(20-1-001|MAPICI-ASE(32-1-001|MAPICI-ASE(6-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE5-1-001",
+        "MAPICI-ABSA-1-001",
+        "MAPICI-AC(A4-1-001",
+        "MAPICI-ASE(20-1-001",
+        "MAPICI-ASE(32-1-001",
+        "MAPICI-ASE(6-1-001"
+      ],
+      "title": "ASE A5 — Brakes",
+      "unified_title": "ASE A5 — Brakes",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "ASE CERTIFICATION (A5) A5 – BRAKES",
+        "Automotive Brake Systems ASE A5",
+        "Automotive Service Excellence (ASE) A5 Certificate",
+        "Automotive Service Excellence (ASE) A5 Certificate Brakes",
+        "Automotive Services Excellence (A5: Brakes) Certificate",
+        "Automotive Services Excellence 5 (A5) Certificate"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 22,
+      "adopter_names": [
+        "Bakersfield College",
+        "Barstow Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 48,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Butte College",
+        "Cerritos College",
+        "Citrus College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 70,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 417",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO B43",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 050",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 115",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO A5",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AT 54",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 33",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 63",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AT 105",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 210",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 050L",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTOMO 501",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 061B",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUT 142",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 54",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "ATEC 5",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUSER 111",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 176G",
+          "credit": "2 hours in Automotive Brake Systems"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 5",
+          "credit": "4 hours in Automotive Brakes"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 33",
+          "credit": "4 hours in Automotive Brakes"
+        },
+        {
+          "course": "AUTO 121",
+          "credit": "4 hours in Automotive Brakes"
+        },
+        {
+          "course": "AUTO 061A",
+          "credit": "4.5 hours in Automotive Brake Systems"
+        },
+        {
+          "course": "AUTO 061B",
+          "credit": "4.5 hours in Electronically Controlled Brake Systems"
+        },
+        {
+          "course": "AUTO 121",
+          "credit": "4.5 hours in Automotive Brake Systems"
+        },
+        {
+          "course": "AUTO 121",
+          "credit": "4.5 hours in Electronically Controlled Brake Systems"
+        },
+        {
+          "course": "AUTO 013A",
+          "credit": "4 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 215",
+          "credit": "3 hours in Automotive Brake Systems"
         }
       ]
     },
@@ -141120,6 +140944,226 @@ window.CPL_STATEWIDE = {
         {
           "course": "HOSP M200",
           "credit": "3 hours in Introduction to Event Management"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "CPLICI-ASE6-1-001|MAPICI-AC(A5-1-001|MAPICI-ACA+-1-001|MAPICI-ASE(21-1-001|MAPICI-ASE(33-1-001|MAPICI-ASEA3-1-001|MAPICI-BEAE-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE6-1-001",
+        "MAPICI-AC(A5-1-001",
+        "MAPICI-ACA+-1-001",
+        "MAPICI-ASE(21-1-001",
+        "MAPICI-ASE(33-1-001",
+        "MAPICI-ASEA3-1-001",
+        "MAPICI-BEAE-1-001"
+      ],
+      "title": "ASE A6 — Electrical/Electronic Systems",
+      "unified_title": "ASE A6 — Electrical/Electronic Systems",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "ASE CERTIFICATION (A6) A6 – ELECTRICAL/ELECTRONIC SYSTEMS",
+        "ASE Certifications: A6 + Residency Units",
+        "Auto Service Excellence A6",
+        "Automotive Service Excellence (ASE) A6 Certificate",
+        "Automotive Service Excellence (ASE) A6 Certificate Electrical/Electronic Systems",
+        "Automotive Services Excellence 6 (A6) Certificate",
+        "Basic Electricity and Electrical Systems Fundamentals ASE A6"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 23,
+      "adopter_names": [
+        "Bakersfield College",
+        "Barstow Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 47,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Butte College",
+        "Cerritos College",
+        "Citrus College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Los Angeles Pierce College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 70,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 15",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUTOTEC 429",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUTO B30",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUTO 065",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUTO 116",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUTO A6",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AT 80",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUTO 51",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AT 113",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUTO 140",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUTO 116B",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUTOMO 601",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUTO 060.",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUTO 57",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUT 162",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUTO 52",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "ATEC 6A",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUSER 103",
+          "credit": "3 or 4 hours in Electrical/Electronic Systems"
+        },
+        {
+          "course": "AUTO 161G",
+          "credit": "2 hours in Basic Electricity and Electrical Systems Fundamentals"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 6A",
+          "credit": "4 hours in Auto Electrical Systems 1"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 111",
+          "credit": "4 hours in Auto Electrical Systems 1"
+        },
+        {
+          "course": "AUTORTK 122",
+          "credit": "3 hours in ELECTRICAL/ELECTRONIC SYSTEMS THEORY, INSPECTION & REPAIR"
+        },
+        {
+          "course": "AUTO 011B",
+          "credit": "4 hours in Auto Electronics & Electrical Systems"
+        },
+        {
+          "course": "AUTO 216",
+          "credit": "3 hours in Automotive Electrical Systems"
+        },
+        {
+          "course": "AUTO 116",
+          "credit": "5 hours in Electrical Fundamentals"
         }
       ]
     },
@@ -220724,12 +220768,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Chaffey College",
-        "credit_recs": 418,
-        "exhibits": 357,
+        "credit_recs": 429,
+        "exhibits": 366,
         "disciplines": 18,
-        "ccc_collaborative": 47,
-        "industry_certs": 78,
-        "pct": 3.7
+        "ccc_collaborative": 58,
+        "industry_certs": 89,
+        "pct": 3.8
       },
       {
         "college": "San Diego Miramar College",
@@ -221635,12 +221679,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 1952,
+        "credit_recs": 1963,
         "exhibits": 1031,
         "courses": 1100,
         "colleges": 53,
-        "ccc_collaborative": 487,
-        "pct": 17.1
+        "ccc_collaborative": 498,
+        "pct": 17.2
       },
       {
         "discipline": "Public and Protective Services",
@@ -221649,7 +221693,7 @@ window.CPL_STATEWIDE = {
         "courses": 550,
         "colleges": 48,
         "ccc_collaborative": 544,
-        "pct": 11.8
+        "pct": 11.7
       },
       {
         "discipline": "Interdisciplinary Studies",
@@ -221838,14 +221882,14 @@ window.CPL_STATEWIDE = {
         "credit_recs": 5831,
         "exhibits": 1181,
         "colleges": 86,
-        "pct": 51.2
+        "pct": 51.1
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3317,
+        "credit_recs": 3328,
         "exhibits": 1144,
         "colleges": 78,
-        "pct": 29.1
+        "pct": 29.2
       },
       {
         "cpl_type": "Credit By Exam",
@@ -221886,10 +221930,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2573,
+        "credit_recs": 2584,
         "exhibits": 942,
         "colleges": 74,
-        "pct": 22.6
+        "pct": 22.7
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
@@ -221955,11 +221999,11 @@ window.CPL_STATEWIDE = {
         "exhibits": 3696,
         "colleges": 99,
         "disciplines": 23,
-        "pct": 86.7
+        "pct": 86.6
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1293,
+        "credit_recs": 1304,
         "exhibits": 163,
         "colleges": 63,
         "disciplines": 9,
@@ -222377,6 +222421,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-11T18:34:06",
-  "total_credit_recs": 11391
+  "generated_at": "2026-06-11T21:35:06",
+  "total_credit_recs": 11402
 };
