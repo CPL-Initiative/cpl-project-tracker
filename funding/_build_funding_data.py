@@ -48,7 +48,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_XLSX = os.path.join(HERE, "CPL_Funding_Model_2026.xlsx")
 OUT_JS = os.path.join(HERE, "..", "cpl_funding_data.js")
 SHEET = "CPL IMPLEMENTATION MODEL 2026"
-FIRST_COLLEGE_ROW, LAST_COLLEGE_ROW = 9, 126
+FIRST_COLLEGE_ROW = 9   # the college extent is detected by the numeric ORDER
+                        # column (col A) — never a fixed last-row constant, so
+                        # an inserted row can't silently fall outside the scan
 YEARS = ["2026-27", "2027-28", "2028-29"]
 
 PRIORITY_KEYS = ("p1", "p2", "p3")
@@ -118,22 +120,33 @@ def main():
               "will not allocate the tranche exactly; the tab will surface this.")
 
     # --- college rows (typed: order/location/headcount/district/county/wa) --
+    # Extent detection: college rows are exactly the rows whose ORDER (col A)
+    # is numeric; the AVERAGE/footnote rows below carry no ORDER.
     wa_state = _num(ws["N8"].value)
     colleges = []
-    for r in range(FIRST_COLLEGE_ROW, LAST_COLLEGE_ROW + 1):
+    last_row = FIRST_COLLEGE_ROW - 1
+    r = FIRST_COLLEGE_ROW
+    while isinstance(ws[f"A{r}"].value, (int, float)):
+        last_row = r
         loc = ws[f"B{r}"].value
+        r += 1
         if loc is None or not str(loc).strip():
             continue
-        wa = ws[f"N{r}"].value
+        row_n = last_row
+        wa = ws[f"N{row_n}"].value
         colleges.append({
-            "order": _num(ws[f"A{r}"].value),
+            "order": _num(ws[f"A{row_n}"].value),
             "college": str(loc).strip(),
-            "headcount": _num(ws[f"C{r}"].value) or 0,
-            "district": (str(ws[f"L{r}"].value).strip() if ws[f"L{r}"].value is not None else None),
-            "county": (str(ws[f"M{r}"].value).strip() if ws[f"M{r}"].value is not None else None),
+            "headcount": _num(ws[f"C{row_n}"].value) or 0,
+            "district": (str(ws[f"L{row_n}"].value).strip() if ws[f"L{row_n}"].value is not None else None),
+            "county": (str(ws[f"M{row_n}"].value).strip() if ws[f"M{row_n}"].value is not None else None),
             "working_adults": _num(wa) if not isinstance(wa, str) else None,
         })
     assert len(colleges) > 100, f"expected ~118 college rows, got {len(colleges)}"
+    pending = [c["college"] for c in colleges if not c["headcount"]]
+    if pending:
+        print(f"NOTE: {len(pending)} college row(s) carry headcount 0 (allocation $0, "
+              f"pending data): {', '.join(pending)}")
 
     # --- compute the chain (mirrors the workbook formulas exactly) -------
     total_heads = sum(c["headcount"] for c in colleges)
@@ -176,7 +189,7 @@ def main():
 
     # --- footnotes (rows below the table) ---------------------------------
     footnotes = []
-    for row in ws.iter_rows(min_row=LAST_COLLEGE_ROW + 1, max_row=LAST_COLLEGE_ROW + 6,
+    for row in ws.iter_rows(min_row=last_row + 1, max_row=last_row + 6,
                             min_col=2, max_col=2, values_only=True):
         v = row[0]
         if v and (str(v).startswith("*") or str(v).lower().startswith("source:")):

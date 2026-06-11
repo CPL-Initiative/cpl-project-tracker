@@ -38,6 +38,9 @@
     ".cplfund-prio .p .desc { font-size: .9rem; margin: 0 0 8px; }",
     ".cplfund-prio .p .metric { font-size: .78rem; color: var(--text-muted); border-top: 1px dashed var(--border-strong); padding-top: 6px; }",
     ".cplfund-prio .p .nums { font-size: .85rem; color: var(--text-body); margin: 0 0 6px; }",
+    // Variable lines + metric left-justify (Sam, 2026-06-11) — the page shell
+    // centers text; the cards' data lines read better ragged-right.
+    ".cplfund-prio .p .nums, .cplfund-prio .p .metric { text-align: left; }",
     ".cplfund-formula { background: var(--surface-muted); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .9rem; line-height: 1.55; }",
     ".cplfund-formula code { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; white-space: nowrap; }",
     ".cplfund-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 10px; }",
@@ -49,11 +52,15 @@
     ".cplfund-seg button.on { background: var(--navy-primary); color: var(--white); font-weight: 600; }",
     ".cplfund-count { font-size: .85rem; color: var(--text-muted); }",
     ".cplfund-tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }",
-    "table.cplfund-table { border-collapse: collapse; width: 100%; font-size: .87rem; }",
-    ".cplfund-table th { background: var(--navy-primary); color: var(--white); padding: 8px 10px; text-align: right; white-space: nowrap; cursor: pointer; user-select: none; position: sticky; top: 0; }",
+    // No-horizontal-scroll rule (Sam, 2026-06-11): tight padding/font, long
+    // text cells truncate with the full value in title; overflow-x on the
+    // wrap stays only as the narrow-screen safety net.
+    "table.cplfund-table { border-collapse: collapse; width: 100%; font-size: .82rem; }",
+    ".cplfund-table th { background: var(--navy-primary); color: var(--white); padding: 6px 7px; text-align: right; white-space: nowrap; cursor: pointer; user-select: none; position: sticky; top: 0; }",
     ".cplfund-table th.t, .cplfund-table td.t { text-align: left; }",
     ".cplfund-table th .arr { font-size: .7rem; opacity: .85; }",
-    ".cplfund-table td { padding: 7px 10px; border-top: 1px solid var(--border); text-align: right; white-space: nowrap; }",
+    ".cplfund-table td { padding: 5px 7px; border-top: 1px solid var(--border); text-align: right; white-space: nowrap; }",
+    ".cplfund-table td.trunc { max-width: 16ch; overflow: hidden; text-overflow: ellipsis; }",
     ".cplfund-table tbody tr.cplfund-row { cursor: pointer; }",
     ".cplfund-table tbody tr:nth-child(even) { background: var(--surface-subtle); }",
     ".cplfund-table tbody tr:hover { background: var(--surface-muted); }",
@@ -335,9 +342,9 @@
     { key: "county", label: "County", cls: "t" },
     { key: "headcount", label: "Headcount", cls: "" },
     { key: "p3a", label: "CPL students†", cls: "" },
-    { key: "p1", label: "Priority 1", cls: "" },
-    { key: "p2", label: "Priority 2", cls: "" },
-    { key: "p3", label: "Priority 3", cls: "" },
+    { key: "p1", label: "P1", cls: "", title: "Priority 1 allocation" },
+    { key: "p2", label: "P2", cls: "", title: "Priority 2 allocation" },
+    { key: "p3", label: "P3", cls: "", title: "Priority 3 allocation" },
     { key: "total", label: "TOTAL_LABEL", cls: "" },
     { key: "working_adults", label: "Working adults*", cls: "" }
   ];
@@ -346,11 +353,17 @@
     { key: "n", label: "Colleges", cls: "" },
     { key: "counties", label: "Counties", cls: "t" },
     { key: "headcount", label: "Headcount", cls: "" },
-    { key: "p1", label: "Priority 1", cls: "" },
-    { key: "p2", label: "Priority 2", cls: "" },
-    { key: "p3", label: "Priority 3", cls: "" },
+    { key: "p1", label: "P1", cls: "", title: "Priority 1 allocation" },
+    { key: "p2", label: "P2", cls: "", title: "Priority 2 allocation" },
+    { key: "p3", label: "P3", cls: "", title: "Priority 3 allocation" },
     { key: "total", label: "TOTAL_LABEL", cls: "" }
   ];
+
+  // "X Community College District" → "X CCD" — the no-horizontal-scroll rule:
+  // fold the redundant suffix in the cell, keep the full name in title.
+  function districtShort(name) {
+    return String(name || "").replace(/\s+Community College District$/i, " CCD");
+  }
 
   var state = {
     q: "", view: "college", period: 1,        // period: 1 = per year, 3 = 2026-30 total (years.length)
@@ -424,8 +437,8 @@
     return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") + '" data-id="' + esc(id) + '">' +
       "<td>" + esc(c.order) + "</td>" +
       '<td class="t"><span class="cplfund-caret">▸</span><strong>' + esc(c.college) + "</strong></td>" +
-      '<td class="t">' + esc(c.district || "—") + "</td>" +
-      '<td class="t">' + esc(c.county || "—") + "</td>" +
+      '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
+      '<td class="t trunc" title="' + esc(c.county || "") + '">' + esc(c.county || "—") + "</td>" +
       '<td title="' + fmtPct(c.headcount_pct, 2) + ' of statewide headcount">' + fmtInt(c.headcount) + "</td>" +
       '<td title="distinct students with transcribed CPL, per MAP (P3 actual)">' + fmtActual(perfFor(c.college), "p3") + "</td>" +
       pCell("p1") + pCell("p2") + pCell("p3") +
@@ -471,9 +484,9 @@
   function districtRowHtml(g, m, i) {
     var id = "d:" + g.district;
     return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") + '" data-id="' + esc(id) + '">' +
-      '<td class="t"><span class="cplfund-caret">▸</span><strong>' + esc(g.district) + "</strong></td>" +
+      '<td class="t trunc" title="' + esc(g.district) + '"><span class="cplfund-caret">▸</span><strong>' + esc(districtShort(g.district)) + "</strong></td>" +
       "<td>" + g.n + "</td>" +
-      '<td class="t">' + esc(g.counties) + "</td>" +
+      '<td class="t trunc" title="' + esc(g.counties) + '">' + esc(g.counties) + "</td>" +
       "<td>" + fmtInt(g.headcount) + "</td>" +
       "<td>" + fmtMoney(g.p1 * m) + "</td><td>" + fmtMoney(g.p2 * m) + "</td><td>" + fmtMoney(g.p3 * m) + "</td>" +
       '<td class="tot">' + fmtMoney(g.total * m) + "</td>" +
@@ -497,7 +510,8 @@
     var head = cols.map(function (col) {
       var label = col.label === "TOTAL_LABEL" ? totalLabel() : col.label;
       var arr = state.sortKey === col.key ? ' <span class="arr">' + (state.sortDir === 1 ? "▲" : "▼") + "</span>" : "";
-      var title = (col.key === "headcount" && d.headcount_label) ? ' title="' + esc(d.headcount_label) + '"' : "";
+      var titleVal = (col.key === "headcount" && d.headcount_label) ? d.headcount_label : col.title;
+      var title = titleVal ? ' title="' + esc(titleVal) + '"' : "";
       return '<th class="' + col.cls + '" data-sort="' + col.key + '"' + title + ">" + label + arr + "</th>";
     }).join("");
     var body;
@@ -556,10 +570,15 @@
       return "<div>&dagger; Priority actuals (per MAP) will appear after the next daily data refresh; " +
         "Priority 1 is a deliberate data gap kept as an incentive (completions live in college SIS).</div>";
     }
+    var un = Object.keys((pf && pf.unmatched) || {});
+    var unLine = un.length
+      ? "<div>&#9888; MAP activity for " + un.length + " college name(s) could not be matched to a funding row: " +
+        un.map(esc).join(", ") + " &mdash; included in the statewide totals, not shown in any college row.</div>"
+      : "";
     return "<div>&dagger; CPL students = distinct students with transcribed CPL per MAP, as of " + esc(pf.as_of) +
       "; test/potential records excluded; counts under " + pf.suppress_below + " show as &lt;5; the statewide " +
       "figure deduplicates across colleges (not the column sum). Priority 1 awaits completion data " +
-      "(deliberate incentive metric &mdash; completions live in college SIS).</div>";
+      "(deliberate incentive metric &mdash; completions live in college SIS).</div>" + unLine;
   }
 
   // Data-driven honesty note: the 2026-06-11 workbook's college rows sum to

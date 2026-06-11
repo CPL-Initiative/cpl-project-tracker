@@ -106,6 +106,14 @@ the parallel-session freeze is over.
    five-step shape (seed table → read-path cutover → inline editor → RLS
    tighten) that Budget/Projects used.
 
+## Open item — Mt San Antonio Noncredit headcount
+
+The institution row exists (order 119) with **headcount 0, allocating $0,
+pending Sam's 2022-23 DataMart annual headcount for the noncredit
+division**. When he supplies it: type it into the workbook's C-cell for
+that row → `python3 funding/_build_funding_data.py` → commit both. The
+builder prints a NOTE while any row carries headcount 0.
+
 ## Safety patterns to honor
 
 - Rule 4 (both HTMLs identical) — but you shouldn't need to edit them.

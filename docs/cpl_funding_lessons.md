@@ -196,6 +196,37 @@ until the artifact exists):
   reviewer's OWN email via `allowed_reviewers` — never share the
   map@rccd.edu inbox/links.
 
+### 2026-06-11 (first data + Sam's screenshot pass) — artifact live; roster edits; the no-scroll rule
+
+- **First actuals published** (dispatched run): 27 colleges carry MAP
+  transcribed-student records; statewide **P2 = 4,635 / P3 = 16,151**; 12
+  suppressed cells; **`unmatched` = {} — every MAP name resolved**, which is
+  why Sam "didn't see" the bucket. The UI now surfaces it whenever it's
+  NON-empty (footer ⚠ line listing the unmatched MAP names; included in
+  statewide, no college row).
+- **Roster edits** (workbook revision #2, `_revise_workbook_2026_06_11_b.py`):
+  "Chabot Hayward" → **"Chabot"** — changed at the TRUE source everywhere in
+  lockstep: the workbook, AND `kb/_seed_college_short_names.py`'s RAW table
+  (the seeder REGENERATES the json — editing `college_short_names.json`
+  directly gets overwritten on the next seed; old short kept as an alias so
+  stored data still resolves) → reseeded json + `college_short_names.js`
+  (chips everywhere now read "Chabot"). **"Mt San Antonio Noncredit"
+  added** (order 119, after Mt San Antonio, district/county copied) with
+  **headcount 0 PENDING Sam's DataMart number** — allocates $0 until the
+  2022-23 annual headcount is typed into the workbook C-cell + builder
+  re-run. openpyxl `insert_rows` does NOT adjust formula references — the
+  revision script re-fills the uniform formulas + C8 SUM + the AVERAGE
+  range for the new extent (the exact bug class the rev2 fix addressed).
+  Builder hardened: the college extent is now detected by the numeric
+  ORDER column (no fixed last-row constant to forget), and it warns on
+  0-headcount rows.
+- **UI pass from Sam's screenshot**: priority-card variable lines + METRIC
+  left-justified (the page shell centers text); college table fits without
+  horizontal scroll — tighter padding/`.82rem`, district names folded to
+  "… CCD" in truncating cells (full name in `title`), `P1/P2/P3` headers
+  with explanatory titles. **Sam made no-horizontal-scroll a standing
+  rule** → added to CLAUDE.md "Engineering & UI practices". Tests 89 → 94.
+
 ### 2026-06-11 (P1 gap) — fork ② answered; the gap's anatomy + strategy captured as a KB note
 
 Sam answered the P1 fork with the full domain story (completions live in

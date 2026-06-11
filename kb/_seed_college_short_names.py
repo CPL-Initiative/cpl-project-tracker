@@ -47,7 +47,7 @@ Calbright College\tCALBRIGHT
 Canada College\tCANADA
 Cerritos College\tCERRITOS
 Cerro Coso Community College\tCERRO COSO
-Chabot College\tCHABOT HAYWARD
+Chabot College\tCHABOT
 Chaffey College\tCHAFFEY
 Citrus College\tCITRUS
 City College Of San Francisco\tSAN FRANCISCO
@@ -177,6 +177,9 @@ SPECIAL_TITLE = {
 # Extra full-name spellings that do NOT normalize-match the curator name and so
 # must be aliased explicitly. Keyed by curator CollegeName.
 EXTRA_ALIASES = {
+    # Chabot's prior short ("Chabot Hayward", renamed 2026-06-11 per Sam) so
+    # any data still carrying the old short keeps resolving.
+    "Chabot College": ["Chabot Hayward"],
     # West Hills rename: old district-prefixed name + the bare new official name.
     "West Hills College Coalinga": ["Coalinga College", "Coalinga"],
     "West Hills College Lemoore": ["Lemoore College", "Lemoore"],

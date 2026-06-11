@@ -111,7 +111,7 @@ window.CPL_FUNDING = {
   },
   {
    "order": 14,
-   "college": "Chabot Hayward",
+   "college": "Chabot",
    "headcount": 17342,
    "district": "Chabot-Las Positas Community College District",
    "county": "Alameda",
@@ -753,6 +753,23 @@ window.CPL_FUNDING = {
    "p3_heads": 3100.766622,
    "total": 350480.66,
    "headcount_pct": 0.03021385,
+   "county_pop_pct": 0.235164356
+  },
+  {
+   "order": 119,
+   "college": "Mt San Antonio Noncredit",
+   "headcount": 0,
+   "district": "Mt. San Antonio Community College District",
+   "county": "Los Angeles",
+   "working_adults": 1200796,
+   "p1": 0.0,
+   "p1_heads": 0.0,
+   "p2": 0.0,
+   "p2_heads": 0.0,
+   "p3": 0.0,
+   "p3_heads": 0.0,
+   "total": 0.0,
+   "headcount_pct": 0.0,
    "county_pop_pct": 0.235164356
   },
   {
@@ -2082,7 +2099,7 @@ window.CPL_FUNDING = {
    "county_pop_pct": 0.002764679
   }
  ],
- "average_allocation": 98305.08,
+ "average_allocation": 97478.99,
  "footnotes": [
   "*Survey did not estimate counties <65K in population",
   "Source: U.S. Census 2022 American Community Survey: https://data.census.gov/table/ACSDT1Y2022.B16010?q=Educational%20Attainment%20by%20employment%20status%20and%20state&g=040XX00US06,06$0500000&y=2022&moe=false"
