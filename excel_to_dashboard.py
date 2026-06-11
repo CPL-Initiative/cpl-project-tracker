@@ -6662,7 +6662,7 @@ def export_unified_courses():
     # instead of being blank — treat these as "no official id".
     _NULLISH = {"", "NULL", "N/A", "NA", "NONE", "NOT APPLICABLE", "NOT APPLICABLE.", "TBD", "-"}
 
-    # ---- C-ID articulation authority routing (Phase 1 — the math cleanup) --
+    # ---- C-ID articulation authority routing (Phase 3 — statewide) ---------
     # kb/cid_articulation_joins.json holds per-(college, course) OFFICIAL C-ID
     # approvals from the c-id.net table — the same trust tier as COCI's own
     # CIDNumber column (and ~doubles it; colleges under-report in COCI). A
@@ -6671,9 +6671,11 @@ def export_unified_courses():
     # NO KB mutation (the Phase B / R4 governance, one grain down). It splits
     # BELOW the family grain — "Calculus I" members route to MATH 210 or 211
     # per their own college's approval, which no family-level rule can do.
-    # MATH descriptors first; widen _ROUTE_PREFIXES per
-    # docs/cid_articulation_authority_scope.md §8 once math proves out.
-    _ROUTE_PREFIXES = ("MATH ",)
+    # Phase 1 gated this to MATH descriptors; Phase 3 (2026-06-11) widened it
+    # statewide after math proved out — every routed-to descriptor is in the
+    # catalog, so the claims-only mechanism guarantees a target row. Re-scope
+    # with a prefix filter on _j["cid"] here if a descriptor family ever
+    # needs to be held back. docs/cid_articulation_authority_scope.md §8.
     ROUTE, _routed_live = {}, set()
     _joins_doc = _load("cid_articulation_joins.json")
     if _joins_doc:
@@ -6683,8 +6685,6 @@ def export_unified_courses():
             # compatible_multi = COCI names another of the course's OWN
             # approvals. coci_conflict NEVER routes; sequence rows never join.
             if _j.get("disposition") not in ("new_authority", "compatible_multi"):
-                continue
-            if not str(_j.get("cid", "")).startswith(_ROUTE_PREFIXES):
                 continue
             _by_cn.setdefault(_nrm(_j.get("control_number")), set()).add(_j["cid"])
         for _cn, _cids in _by_cn.items():

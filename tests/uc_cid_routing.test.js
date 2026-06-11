@@ -1,7 +1,7 @@
-// Guards the C-ID ARTICULATION ROUTER (Phase 1, Session 42 —
-// docs/cid_articulation_authority_scope.md §4): members with c-id.net
-// per-college approvals display under their descriptor's official row and
-// leave their M-ID's display. MATH descriptors only in Phase 1.
+// Guards the C-ID ARTICULATION ROUTER (Phase 1 Session 42, widened
+// STATEWIDE in Phase 3 Session 45 — docs/cid_articulation_authority_scope.md
+// §4/§8): members with c-id.net per-college approvals display under their
+// descriptor's official row and leave their M-ID's display.
 //
 //  1. The snippet row that started it: Folsom Lake MATH 400 "Calculus I"
 //     renders in MATH 210's member table (no lexical rule could put it there).
@@ -12,7 +12,12 @@
 //     lists the routed colleges (Folsom Lake gone).
 //  4. Multi-descriptor approvals never auto-route: LA Pierce MATH 261 holds
 //     both MATH 210 and MATH 211 approvals — it stays in M1175's table.
-//  5. Regression: SPAN/AUTO rows untouched (no rfold outside MATH).
+//  5. Phase 3: routing reaches beyond MATH (SPAN/AUTO/AJ descriptors carry
+//     rfold) without disturbing the kin/Phase-B folds those rows already had.
+//  6. Phase-3 honesty fix: a course approved under TWO descriptors in
+//     different subjects (the MATH 110 ∧ SOCI 125 stats-pathway duals) is
+//     HELD — Phase 1's MATH-only view auto-picked MATH 110 for these because
+//     the gate hid the SOCI approval from the uniqueness test.
 //
 // Run from repo root: `npm test` (or `node tests/uc_cid_routing.test.js`).
 const fs = require("fs");
@@ -61,16 +66,31 @@ check("MATH M1175's member table no longer lists Folsom Lake",
 check("LA Pierce MATH 261 (approved for BOTH 210 and 211) stays in M1175's table",
   t1175.some((m) => /Pierce/.test(m.college) && m.n === "MATH 261"));
 
-// 5. regression — routing is MATH-scoped
-check("SPAN 200 keeps its folds, no rfold", byId["SPAN 200"]
+// 5. Phase 3 — routing reaches beyond MATH, prior folds undisturbed
+check("SPAN 200 keeps its kin folds AND gains routed members (rfold)",
+  byId["SPAN 200"]
   && (byId["SPAN 200"].consolidated_from || []).indexOf("FLSP M1342") >= 0
-  && !byId["SPAN 200"].rfold);
-check("AUTO 120 X untouched (descriptor title, kin folds, no rfold)", byId["AUTO 120 X"]
+  && (byId["SPAN 200"].rfold || 0) >= 1);
+check("AUTO 120 X keeps descriptor title + kin folds AND gains rfold",
+  byId["AUTO 120 X"]
   && byId["AUTO 120 X"].title === "Automatic Transmissions and Transaxles"
   && (byId["AUTO 120 X"].consolidated_from || []).length === 2
-  && !byId["AUTO 120 X"].rfold);
-check("no rfold appears outside MATH descriptors",
-  data.rows.every((r) => !r.rfold || r.id.startsWith("MATH")));
+  && (byId["AUTO 120 X"].rfold || 0) >= 1);
+const rfoldSubjects = new Set(
+  data.rows.filter((r) => r.rfold).map((r) => r.id.split(" ")[0]));
+check("rfold spans many descriptor subjects statewide (≥ 20)", rfoldSubjects.size >= 20);
+check("AJ descriptors carry routed members (the screenshot family)",
+  byId["AJ 200"] && (byId["AJ 200"].rfold || 0) >= 1);
+
+// 6. multi-SUBJECT dual approvals are held, not auto-picked (Phase-3 honesty
+// fix: these 4 stats courses hold MATH 110 ∧ SOCI 125 approvals; Phase 1
+// auto-routed them to MATH 110 because its gate hid the SOCI side)
+const standalone = loadPayload("unified_courses_standalone.js", "window.CPL_UC_STANDALONE");
+const saIds = new Set((standalone.rows || standalone).map((r) => r.id));
+["SOCS M10CE", "PSYC M10DC", "SOCI M10FF", "PSYC M10DA"].forEach((id) => {
+  check(`dual-approval stats course ${id} stays a stand-alone (held for curation)`,
+    saIds.has(id) && !byId[id]);
+});
 
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
