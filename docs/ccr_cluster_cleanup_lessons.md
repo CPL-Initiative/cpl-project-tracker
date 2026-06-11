@@ -563,3 +563,23 @@ Tests: `tests/uc_kinship_gate.test.js` + suite 22/22.
   divergence is a curator-trust leak.
 - The gate runs in both directions: blocks bad folds AND un-poisons good ones
   (the SOCI M1023 conflict was manufactured by one chimera witness).
+
+### R4 shipped same day (#348)
+
+Of the 653 evidence-bearing stand-alones (the Session-40 approved follow-up):
+**301 auto-fold** under their official rows (297 kin-valid unanimous + 4 at
+the ≥80%/≥2 bar; `sfold` on the row, counted in the ⛓ chip), **12 contested**
+→ evidence-lane stand-alone (`g:1`) entries pre-unchecked, **340
+all-witness-blocked** stale receipts deliberately NOT laned — ~340 more noise
+groups would have swamped the curator queue; the analyzer keeps them
+findable. The SPAN intermediate singles landed exactly per the scope's §4
+table (Level I → SPAN 200; Level II/IV/Advanced Intermediate → SPAN 210 — the
+colleges' own claims). Mid-PR, the 06-11 backstop cron pushed a daily commit
+→ `mergeable_state: dirty`; resolved by rebuilding the branch from the new
+main and regenerating from the cron-fresh inputs rather than picking sides in
+generated-artifact conflicts (the only sane resolution for generated files).
+
+One number worth keeping: the day's net is **852 identities** (551 chimera
+un-folds correcting Session 40 + 301 singleton folds extending it) moved to
+their evidence-correct positions by ONE gate, measured twice before each
+ship.
