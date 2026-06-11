@@ -59,7 +59,13 @@ these justifications — always the strongest available:
 
 Title similarity alone — "these two names look alike" — is **never** enough
 to merge anything automatically. It only produces *suggestions* for a person
-to confirm or skip.
+to confirm or skip. The same goes for **catalog-description similarity**: for
+courses no official source covers, we compare colleges' own catalog
+descriptions to find likely matches the names would never reveal ("Intro to
+Programming" vs "Programming Fundamentals") — with screens so that different
+course *levels*, men's vs women's athletics, and different sports never pair
+just because their descriptions share a template. Those, too, are only
+suggestions a person confirms.
 
 ## What the automation refuses to do
 
