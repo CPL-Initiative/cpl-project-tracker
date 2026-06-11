@@ -1954,6 +1954,14 @@
         " in-browser identities" + (data.count_total ? " (· " + data.count_total.toLocaleString() + " total incl. stand-alone courses in the export)" : "") +
         (matched.length > MAX_VISIBLE ? " — showing first " + MAX_VISIBLE + "; refine filters or use the export" : "") +
         (session ? " · click a Discipline cell to curate" : "");
+      // Plain-language rules brief (Sam, 2026-06-11): every merge/fold on this
+      // table follows written rules — link them where curators actually look.
+      var brief = document.createElement("a");
+      brief.href = "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/ccr_rules_brief.md";
+      brief.target = "_blank"; brief.rel = "noopener";
+      brief.textContent = " · How courses get merged here (the rules, in plain terms)";
+      brief.style.cssText = "font-size:inherit;";
+      summary.appendChild(brief);
 
       // Batch-verify control: count the filtered Generated rows that carry a
       // discipline (verifiable as-is) and reflect it on the toolbar button.
