@@ -1,0 +1,19 @@
+{
+  "_status": "SEED — 10 MATH 210 rows hand-supplied by Sam (2026-06-11) from the c-id.net approved-courses table. Awaiting the full per-descriptor export for the 20 MATH descriptors (then statewide). Schema below is the ingestion contract.",
+  "_source": "https://c-id.net — ASCCC C-ID 'Approved Courses' per descriptor (the official per-college articulation record, incl. approval terms). NOT reachable from session containers (403) — exports are curator-supplied.",
+  "_schema": "articulations[]: {cid, cid_title, college, subject, number, local_title, approval_term}. Join key is (college, subject, number) against the raw COCI list — EXACT match (leading-zero-normalized fallback is flagged); titles are NEVER used for joining (the whole point of this authority is that it bypasses titles).",
+  "_semantics": "PRESENT-TENSE official authority at the (college, course) grain — same trust tier as COCI's own CIDNumber column, and richer (colleges under-report in COCI: in the seed, 5 of 10 approved articulations carry NO CIDNumber in COCI). Not a receipt about a historical family — no kinship gate applies. Entries that match no current COCI course (renumbered since approval) surface in the joiner's unmatched report for curation; never fuzzy-matched.",
+  "count": 10,
+  "articulations": [
+    {"cid": "MATH 210", "cid_title": "Single Variable Calculus I Early Transcendentals", "college": "Modesto Junior College", "subject": "MATH", "number": "171", "local_title": "Calculus: First Course", "approval_term": "Fall 2013"},
+    {"cid": "MATH 210", "cid_title": "Single Variable Calculus I Early Transcendentals", "college": "Folsom Lake College", "subject": "MATH", "number": "400", "local_title": "Calculus I", "approval_term": "Fall 2013"},
+    {"cid": "MATH 210", "cid_title": "Single Variable Calculus I Early Transcendentals", "college": "Fullerton College", "subject": "MATH", "number": "150HF", "local_title": "Honors Calculus I", "approval_term": "Fall 2015"},
+    {"cid": "MATH 210", "cid_title": "Single Variable Calculus I Early Transcendentals", "college": "Los Angeles Pierce College", "subject": "MATH", "number": "261", "local_title": "Calculus I", "approval_term": "Spring 2016"},
+    {"cid": "MATH 210", "cid_title": "Single Variable Calculus I Early Transcendentals", "college": "Contra Costa College", "subject": "MATH", "number": "C2210", "local_title": "Calculus I: Early Transcendentals", "approval_term": "Fall 2026"},
+    {"cid": "MATH 210", "cid_title": "Single Variable Calculus I Early Transcendentals", "college": "City College of San Francisco", "subject": "MATH", "number": "110A", "local_title": "Calculus I", "approval_term": "Spring 2023"},
+    {"cid": "MATH 210", "cid_title": "Single Variable Calculus I Early Transcendentals", "college": "West Valley College", "subject": "MATH", "number": "003A", "local_title": "Calculus and Analytical Geometry", "approval_term": "Spring 2012"},
+    {"cid": "MATH 210", "cid_title": "Single Variable Calculus I Early Transcendentals", "college": "Cosumnes River College", "subject": "MATH", "number": "400", "local_title": "Calculus I", "approval_term": "Summer 2015"},
+    {"cid": "MATH 210", "cid_title": "Single Variable Calculus I Early Transcendentals", "college": "Woodland Community College", "subject": "MATH", "number": "C2210", "local_title": "Calculus I: Early Transcendentals", "approval_term": "Fall 2026"},
+    {"cid": "MATH 210", "cid_title": "Single Variable Calculus I Early Transcendentals", "college": "Mission College", "subject": "MAT", "number": "003A", "local_title": "Analytic Geometry and Calculus I", "approval_term": "Spring 2010"}
+  ]
+}
