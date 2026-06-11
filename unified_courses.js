@@ -337,11 +337,15 @@
   //   {id, k, lev, fts, mcs, fr, mcr, tags, [title, faculty_fields, members, suggested_fix]}
   // Only rows with at least one tag are indexed (no-tag rows = no chip).
   // See CLAUDE.md §11 for the strategic context.
+  // _eraSrc-busted so a cached copy can't survive a deploy (it was the one
+  // lazy fetch without the buster). Deliberately NOT _eraGuard'd: the audit
+  // re-runs only on cron regens, so a code-only artifact commit would skew
+  // its stamp >15 min from the dataset's and false-trip the reload banner.
   var _ucAudit = null, _ucAuditP = null;
   function loadAudit() {
     if (_ucAudit) return Promise.resolve(_ucAudit);
     if (_ucAuditP) return _ucAuditP;
-    _ucAuditP = fetch("kb/row_audit/latest.json")
+    _ucAuditP = fetch(_eraSrc("kb/row_audit/latest.json"))
       .then(function (r) { return r.ok ? r.json() : { rows: [] }; })
       .then(function (d) {
         var idx = {};
