@@ -7,19 +7,30 @@ Input:  kb/reference/cid_articulations.json (curator-supplied c-id.net export;
 Output: kb/cid_articulation_joins.json (--write) — control_number -> cid map +
         per-row dispositions; always prints the dry-run analysis.
 
-Dispositions per articulation row:
-  already_claimed — the COCI row itself carries the same CIDNumber (the
-                    re-mint already split this member to the official id).
-  new_authority   — COCI carries NO usable CIDNumber (blank/NULL/N-A) but the
-                    articulation table approves it. THE PAYOFF CLASS: in the
-                    MATH 210 seed this is 6 of 10 rows — colleges under-report
-                    C-ID alignment in COCI roughly half the time.
-  coci_conflict   — COCI claims a DIFFERENT C-ID than the articulation table.
-                    Surfaced loudly, auto-trusted NEVER (curation decides).
+Dispositions per articulation row (SET-aware — a local course can hold
+APPROVALS UNDER MULTIPLE DESCRIPTORS, 1,820 statewide, dominated by
+series∧component pairs like CHEM 110 + CHEM 120 S; and COCI's CIDNumber
+column can itself be a comma-list):
+  already_claimed — this row's descriptor is among the COCI row's own
+                    CIDNumber claims (the re-mint already split this member).
+  compatible_multi— COCI claims a DIFFERENT descriptor, but one that is also
+                    in this course's OWN table approval set (e.g. COCI says
+                    PHYS 100 S where the table row says PHYS 105 — the course
+                    holds both; the series/component pattern). NOT a conflict.
+  new_authority   — COCI carries NO usable CIDNumber but the table approves
+                    it. THE PAYOFF CLASS (statewide ~10k courses — colleges
+                    under-report C-ID alignment in COCI roughly half the time).
+  coci_conflict   — COCI claims a descriptor the table does NOT hold for this
+                    course. Surfaced loudly, auto-trusted NEVER.
   unmatched       — no current COCI row at (college, subject, number); the
                     college likely renumbered since the approval term. Goes to
                     curation; NEVER fuzzy-matched (titles are not consulted —
                     that is the entire point of this authority tier).
+Rows flagged `sequence: true` by the ingester (multi-course articulations —
+neither course alone IS the descriptor course) are SKIPPED for joining and
+counted; curation owns them. Series descriptors ("… S") are tagged
+`series: true`; a course's other approvals ride along as `also_approved` so
+the Phase-1 router can prefer the component descriptor as the display home.
 
 Join rules (docs/cid_articulation_authority_scope.md §3):
   * college matched on an ASCII-alnum slug (mojibake-safe);
@@ -96,9 +107,22 @@ def main():
     arts = doc["articulations"]
     exact, zeroed = load_raw_index()
 
+    # per-course table approval sets — a course can hold approvals under
+    # several descriptors (series∧component etc.). SEQUENCE rows count here
+    # (a "PHYS 2A + PHYS 2B" series approval proves both courses participate
+    # in that series) even though routing skips them — without this, a COCI
+    # series claim against a table component row reads as a false conflict.
+    course_cids = defaultdict(set)
+    for a in arts:
+        course_cids[(_slug(a["college"]), a["subject"], _num_norm(a["number"]))].add(a["cid"].upper())
+
     joins = []          # the authority map rows
     by_disp = defaultdict(list)
+    n_sequence = 0
     for a in arts:
+        if a.get("sequence"):
+            n_sequence += 1
+            continue
         key = (_slug(a["college"]), a["subject"], _num_norm(a["number"]))
         hits, zero_normalized = exact.get(key), False
         if not hits:
@@ -107,20 +131,30 @@ def main():
         if not hits:
             by_disp["unmatched"].append(a)
             continue
+        table_set = course_cids[key]
         for h in hits:
-            coci_cid = h["cid"].upper()
-            if coci_cid in CID_SENTINELS:
-                disp = "new_authority"
-            elif coci_cid == a["cid"].upper():
+            coci_set = {x.strip().upper() for x in h["cid"].split(",")
+                        if x.strip().upper() not in CID_SENTINELS}
+            cid_u = a["cid"].upper()
+            if cid_u in coci_set:
                 disp = "already_claimed"
+            elif not coci_set:
+                disp = "new_authority"
+            elif coci_set & table_set:
+                disp = "compatible_multi"
             else:
                 disp = "coci_conflict"
             row = {"control_number": h["control_number"], "cid": a["cid"],
                    "college": h["college"], "subject": h["subject"],
                    "number": h["number"], "local_title": h["title"],
                    "coci_cid": h["cid"] or None, "coci_ccn": h["ccn"] or None,
-                   "approval_term": a.get("approval_term"),
+                   "effective_term": a.get("effective_term"),
                    "disposition": disp}
+            if cid_u.endswith(" S"):
+                row["series"] = True
+            also = sorted(table_set - {cid_u})
+            if also:
+                row["also_approved"] = also
             if zero_normalized:
                 row["zero_normalized"] = True
             joins.append(row)
@@ -138,18 +172,20 @@ def main():
     for j in joins:
         j["current_home"] = cn2home.get(j["control_number"])  # None = departed at re-mint
 
-    print(f"articulation rows: {len(arts)} | joined COCI courses: {len(joins)}")
-    for d in ("already_claimed", "new_authority", "coci_conflict"):
+    print(f"articulation rows: {len(arts)} | sequence-skipped: {n_sequence} | joined COCI courses: {len(joins)}")
+    for d in ("already_claimed", "compatible_multi", "new_authority", "coci_conflict"):
         print(f"  {d:<16} {len(by_disp[d])}")
     print(f"  {'unmatched':<16} {len(by_disp['unmatched'])}")
     if by_disp["coci_conflict"]:
-        print("\nCOCI-conflict rows (COCI claims a different C-ID — curation decides):")
-        for r in by_disp["coci_conflict"]:
+        print(f"\nCOCI-conflict rows (true disagreements — curation decides), first 20 of {len(by_disp['coci_conflict'])}:")
+        for r in by_disp["coci_conflict"][:20]:
             print(f"  {r['college']}: {r['subject']} {r['number']} — table says {r['cid']}, COCI says {r['coci_cid']}")
     if by_disp["unmatched"]:
-        print("\nunmatched rows (no current COCI course — likely renumbered since approval):")
+        ucol = defaultdict(int)
         for a in by_disp["unmatched"]:
-            print(f"  {a['college']}: {a['subject']} {a['number']} ({a.get('approval_term')})")
+            ucol[a["college"]] += 1
+        print(f"\nunmatched rows (no current COCI course — likely renumbered since approval): {len(by_disp['unmatched'])}")
+        print("  by college (top 12):", dict(sorted(ucol.items(), key=lambda x: -x[1])[:12]))
     homes = defaultdict(int)
     for j in joins:
         homes[j["current_home"] or "(departed to official at re-mint)"] += 1
