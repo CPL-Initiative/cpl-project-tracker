@@ -1,0 +1,268 @@
+{
+ "_generated_by": "kb/_audit_subject_map.py",
+ "_generated_at": "2026-06-11",
+ "_params": {
+  "min_courses": 3,
+  "min_share": 0.6
+ },
+ "homonym_candidates": {
+  "AHIS": {
+   "mapped_discipline": "Art History",
+   "scoped": false,
+   "majority_division": "10",
+   "majority_division_umbrella": null,
+   "colleges": {
+    "El Camino College": {
+     "division": "10",
+     "umbrella": null,
+     "courses": 10,
+     "share": 1.0
+    },
+    "Mt. San Antonio College": {
+     "division": "15",
+     "umbrella": "Humanities",
+     "courses": 16,
+     "share": 0.88
+    },
+    "Santa Monica College": {
+     "division": "10",
+     "umbrella": null,
+     "courses": 17,
+     "share": 1.0
+    }
+   },
+   "minority_colleges": [
+    "Mt. San Antonio College"
+   ],
+   "minority_title_evidence": {
+    "Mt. San Antonio College": {
+     "title_overlap": 0.88,
+     "grade": "consistent"
+    }
+   },
+   "verdict": "cleared (curator)"
+  },
+  "BSOT": {
+   "mapped_discipline": "Office Technologies",
+   "scoped": false,
+   "majority_division": "05",
+   "majority_division_umbrella": "Business",
+   "colleges": {
+    "Cerro Coso Community College": {
+     "division": "05",
+     "umbrella": "Business",
+     "courses": 13,
+     "share": 1.0
+    },
+    "Shasta College": {
+     "division": "05",
+     "umbrella": "Business",
+     "courses": 27,
+     "share": 0.89
+    },
+    "Solano Community College": {
+     "division": "07",
+     "umbrella": "Computer Information Systems",
+     "courses": 17,
+     "share": 0.82
+    }
+   },
+   "minority_colleges": [
+    "Solano Community College"
+   ],
+   "minority_title_evidence": {
+    "Solano Community College": {
+     "title_overlap": 0.0,
+     "grade": "foreign"
+    }
+   },
+   "verdict": "cleared (curator)"
+  },
+  "CISW": {
+   "mapped_discipline": "Computer Information Systems",
+   "scoped": false,
+   "majority_division": "07",
+   "majority_division_umbrella": "Computer Information Systems",
+   "colleges": {
+    "American River College": {
+     "division": "07",
+     "umbrella": "Computer Information Systems",
+     "courses": 11,
+     "share": 0.82
+    },
+    "Cosumnes River College": {
+     "division": "06",
+     "umbrella": null,
+     "courses": 14,
+     "share": 0.79
+    },
+    "Mt. San Antonio College": {
+     "division": "07",
+     "umbrella": "Computer Information Systems",
+     "courses": 10,
+     "share": 0.9
+    },
+    "Sacramento City College": {
+     "division": "07",
+     "umbrella": "Computer Information Systems",
+     "courses": 4,
+     "share": 1.0
+    }
+   },
+   "minority_colleges": [
+    "Cosumnes River College"
+   ],
+   "minority_title_evidence": {
+    "Cosumnes River College": {
+     "title_overlap": 0.0,
+     "grade": "foreign"
+    }
+   },
+   "verdict": "cleared (curator)"
+  },
+  "DMA": {
+   "mapped_discipline": "Multimedia",
+   "scoped": false,
+   "majority_division": "06",
+   "majority_division_umbrella": null,
+   "colleges": {
+    "Cerro Coso Community College": {
+     "division": "06",
+     "umbrella": null,
+     "courses": 12,
+     "share": 1.0
+    },
+    "Irvine Valley College": {
+     "division": "06",
+     "umbrella": null,
+     "courses": 20,
+     "share": 0.9
+    },
+    "Lake Tahoe Community College": {
+     "division": "06",
+     "umbrella": null,
+     "courses": 10,
+     "share": 1.0
+    },
+    "Long Beach City College": {
+     "division": "06",
+     "umbrella": null,
+     "courses": 15,
+     "share": 0.67
+    },
+    "Pasadena City College": {
+     "division": "06",
+     "umbrella": null,
+     "courses": 27,
+     "share": 0.81
+    },
+    "Solano Community College": {
+     "division": "10",
+     "umbrella": null,
+     "courses": 22,
+     "share": 0.68
+    }
+   },
+   "minority_colleges": [
+    "Solano Community College"
+   ],
+   "minority_title_evidence": {
+    "Solano Community College": {
+     "title_overlap": 0.0,
+     "grade": "foreign"
+    }
+   },
+   "verdict": "cleared (curator)"
+  },
+  "IDES": {
+   "mapped_discipline": "Interior Design",
+   "scoped": false,
+   "majority_division": "13",
+   "majority_division_umbrella": "Family and Consumer Studies/ Home Economics",
+   "colleges": {
+    "American River College": {
+     "division": "13",
+     "umbrella": "Family and Consumer Studies/ Home Economics",
+     "courses": 38,
+     "share": 1.0
+    },
+    "Fullerton College": {
+     "division": "13",
+     "umbrella": "Family and Consumer Studies/ Home Economics",
+     "courses": 25,
+     "share": 0.96
+    },
+    "West Valley College": {
+     "division": "09",
+     "umbrella": "Industrial Technology",
+     "courses": 6,
+     "share": 0.67
+    }
+   },
+   "minority_colleges": [
+    "West Valley College"
+   ],
+   "minority_title_evidence": {
+    "West Valley College": {
+     "title_overlap": 1.0,
+     "grade": "consistent"
+    }
+   },
+   "verdict": "cleared (curator)"
+  },
+  "MAKR": {
+   "mapped_discipline": "Digital Fabrication Technician",
+   "scoped": false,
+   "majority_division": "09",
+   "majority_division_umbrella": "Industrial Technology",
+   "colleges": {
+    "College of Alameda": {
+     "division": "09",
+     "umbrella": "Industrial Technology",
+     "courses": 22,
+     "share": 1.0
+    },
+    "College of the Desert": {
+     "division": "05",
+     "umbrella": "Business",
+     "courses": 3,
+     "share": 1.0
+    },
+    "Folsom Lake College": {
+     "division": "09",
+     "umbrella": "Industrial Technology",
+     "courses": 9,
+     "share": 0.78
+    },
+    "Moorpark College": {
+     "division": "10",
+     "umbrella": null,
+     "courses": 12,
+     "share": 1.0
+    },
+    "Sacramento City College": {
+     "division": "09",
+     "umbrella": "Industrial Technology",
+     "courses": 12,
+     "share": 0.67
+    }
+   },
+   "minority_colleges": [
+    "College of the Desert",
+    "Moorpark College"
+   ],
+   "minority_title_evidence": {
+    "College of the Desert": {
+     "title_overlap": 0.0,
+     "grade": "foreign"
+    },
+    "Moorpark College": {
+     "title_overlap": 0.08,
+     "grade": "foreign"
+    }
+   },
+   "verdict": "cleared (curator)"
+  }
+ },
+ "suspect_fills": []
+}

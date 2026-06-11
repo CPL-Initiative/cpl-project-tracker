@@ -492,10 +492,14 @@ def main():
 
     # subject_map (discipline_inference.json): member subject code → discipline.
     # Cascade rung (b), consulted only when the inverted SUBJ4 map missed.
+    # College-scoped entries ({"discipline": ..., "colleges": [...]}, Session
+    # 45 homonyms) are DROPPED here rather than flattened: this cascade has no
+    # college context, and a homonym subject must not lump members globally.
     subject_map = {}
     if os.path.exists(SUBJECT_MAP):
         with open(SUBJECT_MAP, encoding="utf-8") as f:
-            subject_map = (json.load(f) or {}).get("subject_map", {}) or {}
+            raw_sm = (json.load(f) or {}).get("subject_map", {}) or {}
+        subject_map = {k: v for k, v in raw_sm.items() if isinstance(v, str)}
 
     # Curator title→discipline keep-whole map (overmerge_title_discipline.json).
     # Branch 2: a flagged M-ID whose lowercased common_title CONTAINS a keep_whole

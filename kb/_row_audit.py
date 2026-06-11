@@ -866,8 +866,11 @@ def _build_disc_bag(courses, lex):
         s = bag.setdefault(d, _title_tokens(d))
         for t in entry.get("any", []):
             s.update(_title_tokens(t))
-    for d in (lex or {}).get("subject_map", {}).values():
-        if d not in bag:
+    for e in (lex or {}).get("subject_map", {}).values():
+        # entries are a plain discipline string OR the college-scoped form
+        # {"discipline": ..., "colleges": [...]} (Session 45 — homonyms)
+        d = e if isinstance(e, str) else (e or {}).get("discipline")
+        if d and d not in bag:
             bag[d] = _title_tokens(d)
     return bag
 
@@ -1215,7 +1218,12 @@ def main():
     except FileNotFoundError:
         lex = {}
     disc_bag = _build_disc_bag(courses, lex)
-    subject_map = (lex or {}).get("subject_map", {})
+    # Flatten college-scoped entries ({"discipline": ..., "colleges": [...]},
+    # Session 45) to their discipline for the corroboration guard: minority-
+    # side rows no longer carry the scoped discipline, so the flat view can't
+    # mis-corroborate them.
+    subject_map = {k: (v if isinstance(v, str) else (v or {}).get("discipline"))
+                   for k, v in ((lex or {}).get("subject_map", {})).items()}
     # TOP code → discipline lookup for the top_discipline_disagreement rule.
     # Drop None entries (deliberately-blank catch-all codes per CLAUDE.md §10)
     # and the 4930.* ESL/basic-skills bucket.
