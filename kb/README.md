@@ -209,6 +209,21 @@ all downstream references (memberships, articulations, clusters, curation
 overlay, live Supabase) updated in lockstep. Full decisions / bugs caught /
 lessons: [`docs/subj4_canonicalization_remint_lessons.md`](../docs/subj4_canonicalization_remint_lessons.md).
 
+## Statewide exhibit program-area categories (2026-06-11)
+
+`statewide_exhibit_categories.json` maps each statewide (CCC Collaborative)
+exhibit title to the program-area categories on
+<https://map.rccd.edu/statewidecpl/> (12 areas + an `Other Statewide` review
+bucket + the in-progress HVAC workgroup line). Consumed daily by
+`excel_to_dashboard.py` (`_load_statewide_categories()`) for the Statewide
+Exhibits KPI card's per-area rollup; **the JSON is the editable source of
+truth** — reassign a title by editing it, no code change. Seeded by
+`_seed_statewide_categories.py` (merge-preserving: re-runs keep existing
+assignments and only classify new titles; the ordered `^`-anchorable keyword
+patterns double as the generator's runtime fallback for future titles).
+Review queue = the `Other Statewide` titles (currently "California State Bar
+Membership" + "HRCM 001").
+
 ## Schemas
 
 ### `unified_titles.json`

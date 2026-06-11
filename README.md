@@ -192,6 +192,7 @@ data refresh are captured atomically.
 ├── statewide_prescriptive.js          ← EACR prescriptive layer (who could adopt → likely local course)
 ├── unified_courses*.js                ← Unified Courses tab data + lazy files
 ├── dashboard_filters.js               ← client-side filter/search/sort
+├── kpi_reorder.js                     ← KPI card drag-to-reorder (per-browser, localStorage)
 ├── report_generator.js                ← Custom Report (Claude API via proxy)
 ├── college_report_generator.js        ← per-college .docx generator
 ├── docx.min.js                        ← local docx@8.0.4 UMD build (do NOT switch to CDN)
