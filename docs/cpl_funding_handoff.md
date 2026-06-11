@@ -71,17 +71,20 @@ the parallel-session freeze is over.
    heads / $44.6K/yr; SUM range stops early). Surfaced via build NOTE +
    data-driven tab footnote + test honesty-bound. **Ask Sam to fix the SUM
    ranges in the next workbook edition** — the footnote auto-disappears.
-4. **The interesting v2 — MAP performance vs the three priority metrics.**
-   Scope before building: P1 (completion w/ ≥6 transcribed CPL units), P2
-   (enrollment w/ ≥6), P3 (any transcribed CPL) are MAP-derivable, but the
-   current daily pull carries college-level aggregates, not the ≥6-unit
-   per-student cuts — check the MAP CustomReport categories (the 151-field
-   pull, `reference-daily-dashboard-data-pipeline.md`) for a usable view
-   first. **Privacy ADR required before any new committed artifact**
-   (aggregate counts only + small-cell suppression per
-   `methodology-standing-pii-guard.md`); join key = college name → funding
-   rows (watch name drift: "Alameda" vs "College of Alameda" — reuse
-   `college_short_names`/`college_lookup` rather than a new map).
+4. **The interesting v2 — MAP performance vs the three priority metrics:
+   SCOPED 2026-06-11, build gated on Sam's 3 forks.** Read
+   [`funding_priority_metrics_scope.md`](funding_priority_metrics_scope.md) +
+   the PROPOSED
+   [`adr-funding-priority-metrics-privacy.md`](kb-notes/adr-funding-priority-metrics-privacy.md).
+   Recon verdict: **P2 + P3 derivable today** from the already-fetched
+   pseudonymous `View_StudentAggregatedValues` (`Transcribed Credits` per
+   student); **P1 (completion) is a data gap** — no award field anywhere in
+   the 9-category pull; completions live in MIS. Forks for Sam: ① ratify
+   the ADR defaults (<5 suppression, aggregate-only), ② P1 path (defer +
+   pursue MAP award ingestion — recommended), ③ exclude `Potential Student`
+   rows (recommended). Then the 3-PR ladder in the scope doc: cron-artifact
+   producer (+ workflow git-add + pii_guard fold-in) → tab "actual vs
+   target" consumer → P1 when a source lands.
 5. **xlsx export button** — mostly covered: the tab already links the
    committed source workbook. Only build a derived export if Sam asks for
    the on-screen view (then pre-generate; never ship a client xlsx lib).
