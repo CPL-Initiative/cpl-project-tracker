@@ -157,6 +157,45 @@ workbook-variance footnote is suppressed while modified (it describes the
 workbook, not the sandbox). The CCC-headcount input tooltips the corrected
 list sum (2,199,157) so testing the fixed model is one paste. Tests 50 → 67.
 
+### 2026-06-11 (rev2) — recommendations APPLIED: the workbook is now shares-first
+
+Sam: "Great recommendations! Make the changes." All four applied to
+`funding/CPL_Funding_Model_2026.xlsx` by the one-shot
+`funding/_revise_workbook_2026_06_11.py` (kept for provenance; the original
+edition lives in git history at #353):
+
+- **C8 `=SUM(C9:C126)`** — the SUM-range fix. SYSTEM headcount is now
+  2,199,157 (the full list incl. Yuba); the variance is GONE, the tab's
+  variance footnote auto-disappeared, balance is **$0.0000 by
+  construction**. Per-student rate corrected $5.295 → **$5.2747**; every
+  college allocation shifted ~−0.38% (Alameda $50,736.83 → $50,542.64) and
+  Yuba is now funded *within* the pool ($44,397.56).
+- **Shares-first**: row 7 inputs are now the three PRIORITY SHARES
+  (30%/42%/28%); dollars = `$D9*E$7*$H$3` (headcount share × priority share
+  × tranche). The FUNDING FACTOR is gone; the projection percents remain as
+  **PROJECTED HEADCOUNT (TARGET)** columns that move no dollars.
+- **One formula per column, filled down** rows 8–126 (D126's literal fixed);
+  **column P removed** (inconsistent literals, never rendered, no
+  recoverable denominator). Input cells are plain values (`E3` = 1,200,000
+  with the `(2 FTE*3 YRS = 400000*3)` derivation moved into the label).
+  `J2` header fixed to 28-29. `fullCalcOnLoad` set so Excel recalcs on open.
+- **Builder is now input-driven** (`_build_funding_data.py` rewritten):
+  openpyxl edits invalidate Excel's cached formula values (and openpyxl
+  can't evaluate), so the builder reads ONLY typed inputs and computes the
+  chain itself — also making the artifact deterministic and adding a
+  structural conservation assert. Artifact: priorities carry
+  `share` + `target_rate` (factor dropped), `headcount_county_pct` dropped,
+  `model_version 2026-06-11.2`.
+- **Tab/sandbox shares-first**: editable = pools + per-priority share % +
+  target %; CCC headcount card is now derived (Σ college rows — no longer
+  an input, matching the model); drill-ins show
+  `headcount share × priority share × tranche`; target edits visibly move
+  projected students but never dollars (test-pinned). localStorage key
+  bumped to `cpl_funding_whatif_v2` (old factor-shaped saves discarded).
+  Tests 67 → 74.
+- ⚠️ One nuance for Sam in Excel: edited cells carry no cached values until
+  the workbook is opened + saved in Excel once (it will recalc on open).
+
 ### Formula review + recommendations (Sam asked; "simple is always preferred")
 
 1. **Make the headcount SUM unbreakable.** Quick fix: `C8 =SUM(C9:C126)`.

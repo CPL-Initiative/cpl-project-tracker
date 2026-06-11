@@ -53,13 +53,17 @@ the parallel-session freeze is over.
    PR 3** (#354), after the coordination check found nothing in flight.
 2. ~~Teaser card~~ — **DONE #355** (Sam asked); code-only generator change,
    published via post-merge `workflow_dispatch` (dispatch works — 204).
-3a. ~~Interactive variables~~ — **DONE (what-if sandbox)**: pools, CCC
-   headcount, factors, projection % editable; recomputes via the
-   workbook's own formula chain (read from the xlsx, `data_only=False`);
-   per-browser localStorage; Reset-to-workbook; live BALANCE warning.
-   Formula-review recommendations for Sam (shares-first model, Table-based
-   SUM, no mid-column literals) live in the lessons doc — if Sam adopts
-   shares-first in the workbook, mirror the chain in `vm()`.
+3a. ~~Interactive variables~~ — **DONE (what-if sandbox)**, then
+   ~~formula recommendations~~ — **APPLIED (rev2, Sam-approved)**: the
+   workbook itself is now shares-first (30/42/28 inputs; projections are
+   targets that move no dollars; `C8=SUM(C9:C126)` fixed; column P
+   removed), revised by `funding/_revise_workbook_2026_06_11.py`. The
+   builder is input-driven (computes the chain; never reads cached
+   formula values) and the sandbox edits pools + shares + targets
+   (localStorage key `cpl_funding_whatif_v2`). Balance is $0 by
+   construction; the variance footnote retired itself. NOTE: the workbook
+   shows stale/blank derived cells until first opened+saved in Excel
+   (fullCalcOnLoad is set).
 3. ~~3-year view / district rollups / drill-in~~ — **DONE v1.1** (same
    day): view + period toggles, drill-in detail rows, 46-assertion test.
    **v1.1 found a source-workbook variance** — the college list outsums

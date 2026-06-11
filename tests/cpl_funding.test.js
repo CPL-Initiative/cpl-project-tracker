@@ -56,6 +56,16 @@ check("data: >100 colleges + SYSTEM row", D && D.colleges.length > 100 && D.syst
 check("data: 3 priorities, shares sum to 1",
   D && D.priorities.length === 3 &&
   Math.abs(D.priorities.reduce(function (s, p) { return s + p.share; }, 0) - 1) < 1e-6);
+// rev2 shares-first model: SHARE is the allocation input, target_rate is a
+// projection target that moves no dollars, the old factor is gone, and the
+// SUM-range fix makes balance + conservation structural.
+check("data: rev2 priorities carry share + target_rate, no factor",
+  D && D.priorities.every(function (p) { return p.share != null && p.target_rate != null && p.factor === undefined; }));
+check("data: balance is $0 by construction", D && D.pool.balance === 0);
+check("data: college totals redistribute the SYSTEM row exactly (≤5¢)",
+  D && Math.abs(D.colleges.reduce(function (s, c) { return s + c.total; }, 0) - D.system.total) < 0.05);
+check("data: SYSTEM headcount = Σ college rows (SUM-range fix)",
+  D && D.system.headcount === D.colleges.reduce(function (s, c) { return s + (c.headcount || 0); }, 0));
 check("data: pool math (remaining + one-time − admin − scaling = total)",
   D && Math.abs((D.pool.remaining_2025_26 + D.pool.one_time_2026_27 -
     D.pool.admin_cost - D.pool.scaling_projects_tech) - D.pool.total_college_funding) < 0.01);
@@ -162,7 +172,7 @@ function freshDom() {
   let detail = doc.querySelector("tr.cplfund-detail");
   check("college drill-in renders a detail row", !!detail);
   check("drill-in shows the per-priority math",
-    detail && detail.textContent.indexOf("Priority 1") !== -1 && detail.textContent.indexOf("factor") !== -1);
+    detail && detail.textContent.indexOf("Priority 1") !== -1 && detail.textContent.indexOf("share") !== -1);
   click(doc.querySelector("tr.cplfund-row"));
   check("re-click collapses the drill-in", !doc.querySelector("tr.cplfund-detail"));
 
@@ -180,10 +190,8 @@ function freshDom() {
   click(doc.querySelector('#cplFundView button[data-val="district"]'));
   const dRows = doc.querySelectorAll(".cplfund-table tbody tr");
   check("district view renders one row per district (" + distinctDistricts + ")", dRows.length === distinctDistricts);
-  // Conservation: the rollup must redistribute the college list EXACTLY.
-  // (Deliberately NOT compared to the SYSTEM row: the 2026-06-11 workbook's
-  // own SYSTEM/pool row is 8,417 heads / $44.6K short of its college list —
-  // a source variance the tab footnotes rather than hides.)
+  // Conservation: the rollup must redistribute the college list EXACTLY —
+  // and since the rev2 SUM-range fix, the list IS the SYSTEM row.
   const listHeads = D.colleges.reduce((s, c) => s + (c.headcount || 0), 0);
   const dHead = Array.from(dRows).reduce((s, tr) => {
     const cell = tr.querySelectorAll("td")[3];
@@ -193,8 +201,8 @@ function freshDom() {
   const listTotal = D.colleges.reduce((s, c) => s + c.total, 0);
   check("source variance stays small (<1% of the SYSTEM pool — honesty bound)",
     Math.abs(listTotal - D.system.total) / D.system.total < 0.01);
-  check("the variance footnote renders while the source disagrees with itself",
-    doc.querySelector(".cplfund-foot").textContent.indexOf("source-workbook variance") !== -1);
+  check("no variance footnote — the rev2 workbook is internally consistent",
+    doc.querySelector(".cplfund-foot").textContent.indexOf("source-workbook variance") === -1);
   check("district tfoot college count = " + D.colleges.length,
     doc.querySelector(".cplfund-table tfoot").textContent.indexOf(String(D.colleges.length)) !== -1);
 
@@ -235,9 +243,14 @@ function freshDom() {
 
   check("sandbox banner renders; pristine shows no modified pill",
     doc.querySelector(".cplfund-sandbox") && !doc.querySelector(".cplfund-sandbox .mod"));
-  check("pool inputs carry the workbook values",
+  check("pool + priority inputs carry the workbook values",
     doc.querySelector('input[data-wf="oneTime"]').value === "35,000,000" &&
-    doc.querySelector('input[data-wf="rate"][data-i="2"]').value === "4.6666666");
+    doc.querySelector('input[data-wf="share"][data-i="0"]').value === "30" &&
+    doc.querySelector('input[data-wf="target"][data-i="2"]').value === "4.6666666");
+  check("no CCC-headcount input — it derives from the college rows in rev2",
+    !doc.querySelector('input[data-wf="headcount"]'));
+  check("pristine per-student rate shows the corrected $5.27",
+    doc.querySelector(".cplfund-cards").textContent.indexOf("$5.27") !== -1);
   check("pristine balance card reads $0",
     doc.querySelector(".cplfund-cards .cplfund-card:last-child .v").textContent.trim() === "$0");
 
@@ -249,20 +262,21 @@ function freshDom() {
     doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$23,200,000") !== -1);
   check("balance stays $0 while shares still sum to 100%",
     doc.querySelector(".cplfund-cards .cplfund-card:last-child .v").textContent.trim() === "$0");
-  // College rows rescale per the workbook formula chain (same op order).
+  // College rows rescale per the rev2 (shares-first) formula chain.
   {
-    const perStudent = (23200000 / 3) / D.pool.ccc_headcount;
+    const perYear = 23200000 / 3;
+    const head = D.system.headcount;
     let exp = 0;
-    D.priorities.forEach((p) => { exp += (D.colleges[0].headcount * p.rate) * perStudent * p.factor; });
+    D.priorities.forEach((p) => { exp += (D.colleges[0].headcount / head) * p.share * perYear; });
     check("college rows recompute (first row total matches the formula)",
       doc.querySelector(".cplfund-table tbody tr").textContent.indexOf("$" + Math.round(exp).toLocaleString("en-US")) !== -1);
   }
-  const stored = window.localStorage.getItem("cpl_funding_whatif_v1");
+  const stored = window.localStorage.getItem("cpl_funding_whatif_v2");
   check("edit persists to localStorage", !!stored);
 
-  // P1 projection 5% → 10% ⇒ P1 share 60%, shares sum 130% ⇒ warn + red balance.
-  commit('input[data-wf="rate"][data-i="0"]', "10");
-  check("priority share recomputes (60% of each tranche)",
+  // P1 share 30% → 60% ⇒ shares sum 130% ⇒ warn + red balance.
+  commit('input[data-wf="share"][data-i="0"]', "60");
+  check("priority share chip recomputes (60% of each tranche)",
     doc.querySelector(".cplfund-prio .p .share").textContent.indexOf("60%") !== -1);
   check("formula line warns when shares no longer sum to 100%",
     (doc.querySelector(".cplfund-formula .cplfund-warn-text") || { textContent: "" }).textContent.indexOf("130") !== -1);
@@ -271,27 +285,34 @@ function freshDom() {
   check("workbook-variance footnote suppressed while modified",
     doc.querySelector(".cplfund-foot").textContent.indexOf("source-workbook variance") === -1);
 
+  // Projection targets move students, never dollars (THE shares-first point).
+  commit('input[data-wf="share"][data-i="0"]', "30");
+  const totalBefore = doc.querySelector(".cplfund-table tbody tr td.tot").textContent;
+  commit('input[data-wf="target"][data-i="0"]', "10");
+  check("target edit doubles projected students (statewide P1 → 219,916)",
+    doc.querySelector(".cplfund-prio .p").textContent.indexOf("219,916") !== -1);
+  check("target edit moves NO dollars (first-row total unchanged)",
+    doc.querySelector(".cplfund-table tbody tr td.tot").textContent === totalBefore);
+
   // Typing the workbook values back returns to pristine (pill + storage clear).
-  commit('input[data-wf="rate"][data-i="0"]', "5");
+  commit('input[data-wf="target"][data-i="0"]', "5");
   commit('input[data-wf="oneTime"]', "35,000,000");
   check("typing workbook values back returns to pristine",
-    !doc.querySelector(".cplfund-sandbox .mod") && !window.localStorage.getItem("cpl_funding_whatif_v1"));
+    !doc.querySelector(".cplfund-sandbox .mod") && !window.localStorage.getItem("cpl_funding_whatif_v2"));
 
-  // Headcount is editable (the corrected-sum experiment) and Reset restores all.
-  commit('input[data-wf="headcount"]', "2,199,157");
-  check("headcount edit shifts the per-student rate to $5.27",
-    doc.querySelector(".cplfund-cards").textContent.indexOf("$5.27") !== -1);
+  // Reset restores the workbook model from any modified state.
+  commit('input[data-wf="share"][data-i="0"]', "55");
   click(doc.getElementById("cplFundReset"));
   check("Reset restores the workbook model ($34,800,000 hero, no pill)",
     doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$34,800,000") !== -1 &&
     !doc.querySelector(".cplfund-sandbox .mod"));
-  check("Reset clears localStorage", !window.localStorage.getItem("cpl_funding_whatif_v1"));
+  check("Reset clears localStorage", !window.localStorage.getItem("cpl_funding_whatif_v2"));
 
   // Persistence: a fresh boot with a stored sandbox re-applies it.
   {
     const dom2 = freshDom();
     const w2 = dom2.window;
-    w2.localStorage.setItem("cpl_funding_whatif_v1", stored);
+    w2.localStorage.setItem("cpl_funding_whatif_v2", stored);
     w2.eval(dataSrc);
     w2.eval(consumerSrc);
     w2.CPL_FUNDING_TAB.boot();

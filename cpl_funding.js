@@ -77,6 +77,7 @@
     ".cplfund-ed-s { width: 72px; font-size: .85rem; font-weight: 700; color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 4px; padding: 2px 6px; text-align: right; background: var(--surface); font-family: inherit; }",
     ".cplfund-ed-s:focus { outline: none; border-color: var(--gold-accent); }",
     ".cplfund-warn-text { color: var(--red-alert); font-weight: 600; }",
+    ".cplfund .dk { color: var(--text-muted); font-weight: 400; }",
     "@media (max-width: 700px) { .cplfund-toolbar input { min-width: 140px; flex: 1; } }"
   ].join("\n");
 
@@ -116,20 +117,21 @@
     return String(parseFloat((v * 100).toFixed(2))) + "%";
   }
 
-  // ── what-if sandbox (Sam, 2026-06-11: pools, factors, projection % revisable) ──
-  // Mirrors the workbook's own formula chain exactly (read from the xlsx):
+  // ── what-if sandbox (Sam, 2026-06-11: pools, shares, projection % revisable) ──
+  // Mirrors the rev2 (shares-first) workbook formula chain exactly:
   //   per-year tranche H3 = (remaining C3 + one-time D3 − admin E3 − scaling F3) / 3
-  //   per-student      L3 = tranche / CCC headcount K3
-  //   per row: heads_k = headcount × rate_k ;  dollars_k = heads_k × per-student × factor_k
-  //   PROJECTED M3 = SYSTEM total ;  BALANCE N3 = tranche − PROJECTED
+  //   CCC headcount   K3 = Σ college headcounts (C8 = SUM of the list)
+  //   per row: dollars_k = headcount-share × share_k × tranche
+  //            heads_k   = headcount × target_k   (projection TARGET — no $ effect)
+  //   BALANCE = tranche − SYSTEM total (0 by construction while Σ shares = 100%)
   // Pristine state renders the committed workbook values verbatim; any edit
   // switches to the recomputed view-model below. Edits persist per-browser
   // (localStorage) only — the committed workbook stays the model of record.
-  var WHATIF_KEY = "cpl_funding_whatif_v1";
+  var WHATIF_KEY = "cpl_funding_whatif_v2";
   var whatif = null; // null = pristine
   function loadWhatif() {
     try { whatif = JSON.parse(localStorage.getItem(WHATIF_KEY) || "null"); } catch (e) { whatif = null; }
-    if (whatif && (!whatif.p || whatif.p.length !== 3)) whatif = null; // stale shape
+    if (whatif && (!whatif.p || whatif.p.length !== 3 || whatif.p[0].share == null)) whatif = null; // stale shape
   }
   function saveWhatif() {
     try {
@@ -141,8 +143,7 @@
     return {
       remaining: d.pool.remaining_2025_26, oneTime: d.pool.one_time_2026_27,
       admin: d.pool.admin_cost, scaling: d.pool.scaling_projects_tech,
-      headcount: d.pool.ccc_headcount,
-      p: d.priorities.map(function (p) { return { factor: p.factor, rate: p.rate }; })
+      p: d.priorities.map(function (p) { return { share: p.share, target: p.target_rate }; })
     };
   }
   function approxEq(a, b) { return Math.abs(a - b) <= 1e-9; }
@@ -151,8 +152,7 @@
     var b = baseInputs(d);
     return approxEq(whatif.remaining, b.remaining) && approxEq(whatif.oneTime, b.oneTime) &&
       approxEq(whatif.admin, b.admin) && approxEq(whatif.scaling, b.scaling) &&
-      approxEq(whatif.headcount, b.headcount) &&
-      whatif.p.every(function (x, i) { return approxEq(x.factor, b.p[i].factor) && approxEq(x.rate, b.p[i].rate); });
+      whatif.p.every(function (x, i) { return approxEq(x.share, b.p[i].share) && approxEq(x.target, b.p[i].target); });
   }
   var _vmCache = null;
   function vm(raw) {
@@ -163,14 +163,17 @@
     var years = d.pool.years.length;
     var net = w.remaining + w.oneTime - w.admin - w.scaling;
     var perYear = net / years;
-    var head = w.headcount > 0 ? w.headcount : 1;
+    var head = 0;
+    d.colleges.forEach(function (c) { head += c.headcount || 0; });
+    if (head <= 0) head = 1;
     var perStudent = perYear / head;
     function allocRow(headcount, src) {
       var r = {}, total = 0;
       d.priorities.forEach(function (p, i) {
-        var heads = headcount * w.p[i].rate;
-        var dollars = heads * perStudent * w.p[i].factor;
-        r[p.key + "_heads"] = heads; r[p.key] = dollars; total += dollars;
+        var dollars = (headcount / head) * w.p[i].share * perYear;
+        r[p.key] = dollars;
+        r[p.key + "_heads"] = headcount * w.p[i].target;
+        total += dollars;
       });
       r.total = total;
       return Object.assign({}, src, r);
@@ -183,7 +186,7 @@
     var system = allocRow(head, d.system);
     system.headcount = head;
     var priorities = d.priorities.map(function (p, i) {
-      return Object.assign({}, p, { factor: w.p[i].factor, rate: w.p[i].rate, share: w.p[i].factor * w.p[i].rate });
+      return Object.assign({}, p, { share: w.p[i].share, target_rate: w.p[i].target });
     });
     _vmCache = Object.assign({}, d, {
       _whatif: true,
@@ -191,7 +194,7 @@
         remaining_2025_26: w.remaining, one_time_2026_27: w.oneTime,
         admin_cost: w.admin, scaling_projects_tech: w.scaling,
         total_college_funding: net, available_per_year: perYear,
-        ccc_headcount: w.headcount, per_student: perStudent,
+        ccc_headcount: head, per_student: perStudent,
         projected: system.total, balance: perYear - system.total
       }),
       priorities: priorities, colleges: colleges, system: system,
@@ -207,9 +210,8 @@
   function setInput(field, idx, value) {
     var d = window.CPL_FUNDING;
     if (!whatif) whatif = baseInputs(d);
-    if (field === "factor") whatif.p[idx].factor = Math.max(0, value);
-    else if (field === "rate") whatif.p[idx].rate = Math.max(0, value) / 100;
-    else if (field === "headcount") whatif.headcount = Math.max(1, Math.round(value));
+    if (field === "share") whatif.p[idx].share = Math.max(0, value) / 100;
+    else if (field === "target") whatif.p[idx].target = Math.max(0, value) / 100;
     else whatif[field] = Math.max(0, value);
     if (isPristine(d)) whatif = null; // typed back to the workbook value
     _vmCache = null; _districtsCache = null;
@@ -235,9 +237,8 @@
   // ── render pieces ─────────────────────────────────────────────────────
   function poolCardsHtml(d) {
     var p = d.pool;
-    var listHeads = 0;
-    d.colleges.forEach(function (c) { listHeads += c.headcount || 0; });
     var bal = p.balance == null ? 0 : p.balance;
+    if (Math.abs(bal) < 0.005) bal = 0; // sub-cent float crumbs read as balanced
     var balWarn = Math.abs(bal) > 1;
     var balStr = (bal < 0 ? "−" : "") + fmtMoney(Math.abs(bal));
     var cards = [
@@ -246,9 +247,9 @@
       { v: edInput("admin", fmtInt(p.admin_cost), { neg: true, label: "Admin cost (deducted)" }), l: esc(p.admin_cost_label.toLowerCase().replace(/^admin cost/, "Admin cost")) + " &mdash; deducted" },
       { v: edInput("scaling", fmtInt(p.scaling_projects_tech), { neg: true, label: "Scaling projects and tech (deducted)" }), l: "Scaling projects &amp; tech &mdash; deducted" },
       { v: fmtMoney(p.total_college_funding), l: "Available college funding 2026-30 &mdash; " + p.years.length + " annual tranches of " + fmtMoney(p.available_per_year) + " (" + esc(p.years[0]) + " &rarr; " + esc(p.years[p.years.length - 1]) + ")", hero: true },
-      { v: edInput("headcount", fmtInt(p.ccc_headcount), { label: "CCC headcount", title: "Workbook value. The " + d.colleges.length + " college rows sum to " + fmtInt(listHeads) + " — the workbook's pool block excludes its last row; type that sum to test the corrected model." }), l: "CCC headcount &mdash; per-student denominator" },
-      { v: fmtRate(p.per_student), l: "Per-student rate &mdash; " + fmtMoney(p.available_per_year) + " &divide; " + fmtInt(p.ccc_headcount) + " headcount" },
-      { v: '<span class="' + (balWarn ? "cplfund-warn-text" : "") + '">' + balStr + "</span>", l: "Balance &mdash; annual tranche minus projected " + fmtMoney(p.projected) + (balWarn ? " &mdash; <strong>the model no longer allocates the pool exactly</strong>" : "") }
+      { v: fmtInt(p.ccc_headcount), l: "CCC headcount &mdash; &Sigma; of the " + d.colleges.length + " college rows" },
+      { v: fmtRate(p.per_student), l: "Per-student rate &mdash; " + fmtMoney(p.available_per_year) + " &divide; " + fmtInt(p.ccc_headcount) + " headcount (informational)" },
+      { v: '<span class="' + (balWarn ? "cplfund-warn-text" : "") + '">' + balStr + "</span>", l: "Balance &mdash; annual tranche minus allocated " + fmtMoney(p.projected) + (balWarn ? " &mdash; <strong>the shares no longer allocate the pool exactly</strong>" : " (exact while shares sum to 100%)") }
     ];
     return '<div class="cplfund-cards">' + cards.map(function (c) {
       return '<div class="cplfund-card' + (c.hero ? " hero" : "") + '">' +
@@ -264,10 +265,11 @@
       return '<div class="p">' +
         "<h4>" + esc(p.label) + '<span class="share">' + fmtPctTrim(p.share) + " of each tranche</span></h4>" +
         '<p class="desc">' + esc(p.description) + "</p>" +
-        '<p class="nums">Funding factor ' + edInput("factor", p.factor, { small: true, idx: i, label: p.label + " funding factor" }) +
-        " &times; projected " + edInput("rate", fmtRatePct(p.rate), { small: true, idx: i, label: p.label + " projection percent of headcount" }) +
-        "% of headcount" +
-        (sys != null ? " &mdash; statewide " + fmtMoney(sys) + " / " + fmtInt(sysHeads) + " students" : "") + "</p>" +
+        '<p class="nums">Allocation share ' + edInput("share", fmtRatePct(p.share), { small: true, idx: i, label: p.label + " allocation share percent" }) +
+        "% of each tranche" + (sys != null ? " &mdash; statewide " + fmtMoney(sys) : "") + "</p>" +
+        '<p class="nums">Projection target ' + edInput("target", fmtRatePct(p.target_rate), { small: true, idx: i, label: p.label + " projection target percent of headcount" }) +
+        "% of headcount" + (sysHeads != null ? " &rarr; " + fmtInt(sysHeads) + " students" : "") +
+        ' <span class="dk">(target only &mdash; doesn&#39;t move dollars)</span></p>' +
         '<div class="metric">METRIC: ' + esc(p.metric) + "</div></div>";
     }).join("") + "</div>";
   }
@@ -286,9 +288,10 @@
         "-allocates the annual pool (see Balance)</span>";
     return '<div class="cplfund-formula">' +
       "Each college&#39;s potential allocation of one annual tranche is " +
-      "<code>headcount &times; projection rate &times; funding factor &times; " + fmtRate(p.per_student) + "</code> " +
+      "<code>headcount share &times; priority share &times; " + fmtMoney(p.available_per_year) + "</code> " +
       "per priority. " + shareSentence + " &mdash; the same again in each of the " +
-      p.years.length + " years through " + esc(p.years[p.years.length - 1]) + ".</div>";
+      p.years.length + " years through " + esc(p.years[p.years.length - 1]) +
+      ". Projection percents are performance <em>targets</em>; they don&#39;t move dollars.</div>";
   }
 
   // ── table state + data shaping ────────────────────────────────────────
@@ -392,12 +395,12 @@
 
   function collegeDetailHtml(c, m) {
     var d = vm(window.CPL_FUNDING);
-    var per = d.pool.per_student;
     var prio = d.priorities.map(function (p) {
       return '<div><span class="dk">' + esc(p.label) + ":</span> " +
-        fmtInt(c[p.key + "_heads"]) + " projected (" + fmtPct(p.rate, 2) + " of headcount) &times; factor " +
-        esc(p.factor) + " &times; " + fmtRate(per) + " = <strong>" + fmtMoney(c[p.key] * m) + "</strong>" +
-        (m > 1 ? " over " + d.pool.years.length + " yrs" : "/yr") + "</div>";
+        fmtPctTrim(c.headcount_pct) + " headcount share &times; " + fmtPctTrim(p.share) + " share &times; " +
+        fmtMoney(d.pool.available_per_year) + " = <strong>" + fmtMoney(c[p.key] * m) + "</strong>" +
+        (m > 1 ? " over " + d.pool.years.length + " yrs" : "/yr") +
+        " &middot; target " + fmtInt(c[p.key + "_heads"]) + " students (" + fmtPctTrim(p.target_rate) + ")</div>";
     }).join("");
     var county = c.working_adults == null
       ? '<div><span class="dk">County context:</span> not estimated (county &lt; 65K population)</div>'
@@ -520,7 +523,7 @@
         '<button type="button" class="rst" id="cplFundReset">Reset to workbook</button>'
       : "";
     return '<div class="cplfund-sandbox">&#129514; <strong>Draft sandbox:</strong> the boxed / dash-underlined values ' +
-      "(funding pools, CCC headcount, funding factors, projection %) are editable &mdash; every card, formula, and " +
+      "(funding pools, priority shares, projection targets) are editable &mdash; every card, formula, and " +
       "college row below recomputes instantly. Edits live in this browser only; the committed workbook stays the " +
       "model of record." + mod + "</div>";
   }
