@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-11T17:16:52.647Z",
+  "scraped_at": "2026-06-11T17:47:56.104Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -728,13 +728,13 @@
         },
         {
           "college": "San Joaquin Delta College",
-          "students": 489,
+          "students": 492,
           "units": 1461,
-          "avgUnits": 2.9877300613496933,
+          "avgUnits": 2.9695121951219514,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 489,
+          "militaryStudents": 492,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 2527530,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,714",
+      "value": "47,717",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,466"
+          "value": "24,469"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47714,
+    "Students": 47717,
     "Units": 228644.15000000002,
     "TranscribedUnits": 99030.95,
     "Savings": 318079410.25,
     "YearImpact": 1287994716.3999999,
-    "MilitaryStudents": 24466,
+    "MilitaryStudents": 24469,
     "NonMilitaryStudents": 23325,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.791971957915917,
-    "TranscribedAverage": 2.0755113803076664
+    "AverageUnits": 4.791670683404238,
+    "TranscribedAverage": 2.0753808915061716
   }
 }
