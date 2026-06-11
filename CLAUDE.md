@@ -44,7 +44,10 @@ into the Pipeline Reference below or into dedicated docs.
    of cleanup are welcome, but they must follow
    [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md):
    dry-run first, alias map committed, Supabase `kb_curation` fresh-read at
-   write-time, articulations re-keyed, atomic land within one cron window
+   write-time, articulations re-keyed, **`kb/promotions.json` re-keyed**
+   (`kb/_rekey_promotions.py` — added 2026-06-11 after four re-mints skipped
+   it, silently severing 53% of the Phase A/B official-ID fold evidence;
+   `docs/official_id_fold_scope.md`), atomic land within one cron window
    (10:17 UTC). The "never bulk renumber" framing that previously lived
    here was **defensive** (against accidental re-keys); it's been relaxed
    for the staging phase. **Never re-mint casually** — the playbook is
@@ -2031,6 +2034,59 @@ narrative: `docs/ccr_cluster_cleanup_lessons.md` (Session 39 cont.).
 **Carryover:** SPAN 200/210 confirms queued in the worklist; Sam's Verify clicks
 on the merged KINE M1015 / AUTB M1002 / SPAN rows; the level-ambiguous Spanish
 rows (Honors, A/B, High-Beginning, Advanced Elementary) are curator calls.
+
+### Session 40 — the severed evidence index + rules-based official-ID folds (#344/#345, 2026-06-11)
+
+Sam's screenshot ask — *"SPAN 200 should include all the Intermediate Spanish
+variants; I thought our rules checked title+description alignment… let's get to
+rules-based merging"* — became a root-cause find + the restored/upgraded
+automatic fold. **3 PRs (#344 scope · #345 build · the anchor retirement), all
+merged.** Pipeline viz refreshed (re-mint card → the promotions re-key).
+
+- **Root cause (#344):** `kb/promotions.json` — the ONLY evidence source for
+  the automatic Phase A/B official-ID fold — still spoke the 2026-05-22 ids;
+  four re-mints re-keyed identities without it, and `_row_official()` resolves
+  no aliases → **53% of the evidence (1,111/2,083 records) severed**, Phase B
+  decayed to 455 folds, the whole Spanish family invisible (FLSP M1342
+  "Intermediate Spanish I" held 30 SPAN-200 witnesses the generator couldn't
+  see). Silent failure class: no error, no audit flag. Analyzer:
+  `kb/_analyze_official_fold_evidence.py` (reproduces every number).
+- **The build (#345, Sam approved all 4 gates):** **R1**
+  `kb/_rekey_promotions.py` (dry-run/--apply, V1–V4 conservation gates,
+  idempotent; 1,111 re-keyed + 13 twin folds, 9,826 witnesses conserved;
+  receipts `kb/promotions_rekey_out/`). **R2** plurality rule — unanimous
+  evidence folds at any witness count (the strict ≥2 spec would have unfolded
+  174 established rows — measured, flagged to Sam); with dissent: ≥80% share +
+  ≥2 witnesses. `match.evidence` carries the distribution (CCR badge hover).
+  **R3** worklist **🧾 evidence lane** (`evidence_groups`, 151) — sub-bar rows
+  surface under their top official target with witness chips instead of being
+  hidden as conflicts; contested members (`x:1`, e.g. FLSP M1379 "Intermediate
+  Spanish" = SPAN 200 ×8 vs 210 ×6 — two courses wearing one title) start
+  UNCHECKED. **Bonus**: the new jsdom test caught a #342 gap — `doConsolidate`
+  wrote `unified_title` on ROW-LESS official targets; fixed via the
+  chosen-tuple id_system. **Net regen:** Phase B 455 → **1,155 M-IDs folded**
+  (235 official rows + 45 anchor folds; CCR 16,080 → 15,489); SPAN 200 =
+  anchor+M1342+M1043("Spanish 3")+M1362+M1246; SPAN 210 = anchor+M1352(24:1)+
+  M1045+M1237+M1337+M1036. `tests/uc_evidence_lane.test.js` (30); suite 21/21.
+- **Anchor retirement (gate 5):** legacy `M-ID SPAN 104/106/108` ("Spanish
+  1/2/3") removed from firewalled `common_courses.json`; their 9 RCCD crosswalk
+  rows re-pointed to SPAN 100/110/200. Receipt:
+  `archive/common_courses_mid_span_anchors_2026-06-11_retired.json`.
+- **Institutionalized:** Rule 7's checklist + the re-mint playbook artifact
+  table + fan-in **guard 7** all now carry "re-key `kb/promotions.json`". KB
+  note: `methodology-rekey-every-id-keyed-artifact.md` (the registry of
+  id-keyed artifact classes + the drift-detector pattern).
+- **Validation that made auto-fold safe to approve:** the rule reproduces 11 of
+  Sam's 15 evidence-bearing hand-merges exactly, holds 3 (same target, below
+  bar), contradicts none — and correctly REFUSES the bare-title over-merge.
+
+**Carryover / next:** (1) **R4 singletons** — 653 evidence-bearing stand-alones
+fold/queue under their official ids (approved as a follow-up PR). (2) The 31
+`_unresolved` promotions keys. (3) Verify the next cron no-ops on the
+live-shipped artifacts. (4) Sam's curator queue: the 151-group evidence lane
+(FLSP M1379 is the marquee contested row) + the standing Verify clicks. (5)
+Standing: CIS↔CS §5 sign-off, ACE skill-level scope, College/System EACR views,
+EACR v2, 5 DSPS `53414` strays, `PEDS M10AE`.
 
 ---
 

@@ -87,7 +87,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Triaging credential-dedup candidates (merge vs leave-split; scope-of-competency)](kb-notes/methodology-credential-dedup-triage.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [ADR — Official C-ID/CCN ids are the common course reference; M-IDs only where none exists (merge-into-official, honors rule, descriptor-catalog targets)](kb-notes/adr-official-ids-as-common-course-reference.md) | adr | published | 2026-06-10 | 2026-06-10 |
 | [Methodology — Umbrella-discipline SUBJ4 split (one MQ discipline, many subjects)](kb-notes/methodology-umbrella-discipline-subj4-split.md) | methodology | published | 2026-06-09 | 2026-06-09 |
-| [Methodology — Fan-in discipline convergence (fold alternate names to a canonical)](kb-notes/methodology-fan-in-discipline-convergence.md) | methodology | published | 2026-06-10 | 2026-06-10 |
+| [Methodology — Fan-in discipline convergence (fold alternate names to a canonical)](kb-notes/methodology-fan-in-discipline-convergence.md) | methodology | published | 2026-06-10 | 2026-06-11 (guard 7) |
+| [Methodology — Re-key every id-keyed artifact (the severed promotions index; registry + conservation gates + drift detector)](kb-notes/methodology-rekey-every-id-keyed-artifact.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Methodology — Rank a cleanup queue by downstream impact, not structural leverage](kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Coarse TOP-division discipline fallback (make the orphan tail visible)](kb-notes/methodology-coarse-top-division-discipline-fallback.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Surface a finer derived layer on a single-grain reference tab](kb-notes/methodology-surface-derived-layer-on-single-grain-tab.md) | methodology | published | 2026-06-09 | 2026-06-09 |
@@ -100,7 +101,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 
 | File | Workstream | Last touched |
 |---|---|---|
-| [`ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) | CCR cleanup — cluster dissolution; Session 37: impact columns + FL SUBJ4 re-mint; Session 38: CCR refinements #333 + the KIN/PE #334 & Drama/Theater #335 fan-in convergences; Session 39: cron verify + the Supabase-mirror fix #337 + the KINE/FLSP strict twin-merge (74 folds) + [`cis_cs_convergence_scope.md`](cis_cs_convergence_scope.md) (GATED); Session 39 cont.: the live-curation loop #339–#342 — merge ≠ verify, UC-CUR retired, official-id merge targets, Spanish → SPAN 100/110/220/230; **Session 40: the severed evidence index — [`official_id_fold_scope.md`](official_id_fold_scope.md) (promotions.json re-key + tiered fold rule, GATED on §7)** | **Session 40 (2026-06-10)** |
+| [`ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) | CCR cleanup — cluster dissolution; Session 37: impact columns + FL SUBJ4 re-mint; Session 38: CCR refinements #333 + the KIN/PE #334 & Drama/Theater #335 fan-in convergences; Session 39: cron verify + the Supabase-mirror fix #337 + the KINE/FLSP strict twin-merge (74 folds) + [`cis_cs_convergence_scope.md`](cis_cs_convergence_scope.md) (GATED); Session 39 cont.: the live-curation loop #339–#342 — merge ≠ verify, UC-CUR retired, official-id merge targets, Spanish → SPAN 100/110/220/230; **Session 40: the severed evidence index — [`official_id_fold_scope.md`](official_id_fold_scope.md) APPROVED + BUILT #344/#345 (promotions re-key applied, plurality rule, 🧾 evidence lane, Phase B 455→1,155 folds, M-ID SPAN 10x anchors retired)** | **Session 40 (2026-06-11)** |
 | [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes; **Session 23: #2 sidebar sub-links + #3 display-label map** | Session 23 (Bruh 23, 2026-05-31) |
 | [`engineering_practices_lessons.md`](engineering_practices_lessons.md) | Dev infra / testing / design system (committed jsdom harness + CI, stop-hook fix, `:root` tokens + `var()` rule, prototype-first) | **Session 32 (Busy Feynman, 2026-06-04) NEW** |
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G; **Session 37: orphan-tail discipline fallback #330 + FL-split CSR search/display #331** | **Session 37 (2026-06-09)** |
@@ -159,6 +160,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 37 → 38 | CER Signal-B dedup + CCR impact columns + Foreign-Language SUBJ4 re-mint (handoff) | [`session_38_handoff.md`](session_38_handoff.md) |
 | 38 → 39 | CCR refinements #333 + the KIN/PE #334 & Drama/Theater #335 fan-in convergences (handoff) | [`session_39_handoff.md`](session_39_handoff.md) |
 | 39 → 40 | Cron verify + Supabase-mirror fix #337 + KINE/FLSP twin-merge + CIS↔CS scope (handoff) | [`session_40_handoff.md`](session_40_handoff.md) |
+| 40 → 41 | The severed evidence index #344/#345 — promotions re-key + plurality rule + evidence lane + anchor retirement (handoff) | [`session_41_handoff.md`](session_41_handoff.md) |
 
 ---
 

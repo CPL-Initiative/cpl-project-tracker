@@ -429,3 +429,41 @@ led to a root cause, not a missing feature. Full analysis + recommendations:
 Scope doc committed; build (R1 re-key + R2 plurality + R3 evidence lane, then
 R4 singletons) gated on Sam's §7 sign-off. His queued SPAN 200/210 worklist
 confirms remain valid and compatible meanwhile.
+
+### Session 40 (cont.) — the build (#345 + the anchor retirement)
+
+Sam approved all four §7 gates same-day → built + merged:
+
+- **R1 applied**: `kb/_rekey_promotions.py` — 2,083 → 2,070 keys (1,111
+  re-keyed, 13 twin-merge folds, 31 flagged `_unresolved`), 9,826 witnesses
+  conserved across 446 targets, V1–V4 + idempotency green. Receipt
+  `kb/promotions_rekey_out/2026-06-11/`. (V1 caught a real authoring bug on
+  the first run — a shallow copy let the fold mutate the source totals.
+  Conservation gates work.)
+- **R2 built with one flagged deviation**: unanimous evidence folds at ANY
+  witness count (today's behavior — the literal ≥2 spec would have UNFOLDED
+  174 established rows / 795 member courses, measured); the ≥80%+≥2 bar
+  applies where dissent exists (80% over a dissenter implies ≥5 witnesses).
+  `match.evidence` carries the distribution; badges show it on hover.
+- **R3**: `evidence_groups` in the suggestions payload + a 🧾 worklist
+  section; contested members (`x:1`) start unchecked. 151 groups.
+- **The jsdom test caught a real #342 gap**: `doConsolidate` didn't
+  recognize a ROW-LESS official target (descriptor-catalog merge) → wrote
+  `unified_title` on it. Fixed via the chosen-tuple `id_system`.
+- **First regen (live-on-merge)**: Phase B 455 → **1,155 M-IDs folded**
+  (235 official rows + 45 anchor folds; CCR 16,080 → 15,489). SPAN 200 =
+  anchor + M1342/M1043/M1362/M1246; SPAN 210 = anchor + M1352/M1045/M1237/
+  M1337/M1036; FLSP M1379 held contested. Suite 21/21.
+- **Anchor retirement (gate 5)**: legacy `M-ID SPAN 104/106/108` ("Spanish
+  1/2/3") removed from the firewalled `common_courses.json`, their 9 RCCD
+  crosswalk member rows re-pointed to SPAN 100/110/200. Receipt:
+  `archive/common_courses_mid_span_anchors_2026-06-11_retired.json`.
+- Playbooks institutionalized: fan-in guard 7 + the re-mint artifact table +
+  Rule 7's checklist line all carry "re-key promotions.json".
+
+### State (post-build)
+Carryover: **R4 singletons** (653 evidence-bearing stand-alones — approved as
+a follow-up PR); the 31 `_unresolved` promotions keys; watch the next cron
+(should be a no-op on these artifacts since the regen shipped live); Sam's
+curator queue now includes the 151-group evidence lane (FLSP M1379 is the
+marquee contested row).
