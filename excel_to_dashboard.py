@@ -10076,6 +10076,23 @@ def main():
             # ── Teaser cards on the Dashboard tab linking to the other tabs ──
             # Replace the static placeholder; idempotent because the placeholder
             # is wrapped in delimiting comments and stays in the template.
+            # The Implementation Funding teaser pulls its headline numbers from
+            # the committed cpl_funding_data.js (static asset, built by
+            # funding/_build_funding_data.py); number-free fallback if absent.
+            funding_teaser_p = (
+                "One-time implementation funding pools for 2026-30, the three "
+                "funding priorities, and each college's potential allocation."
+            )
+            try:
+                with open('cpl_funding_data.js', 'r', encoding='utf-8') as _ff:
+                    _fm = json.loads(_ff.read().split('window.CPL_FUNDING = ', 1)[1].rstrip().rstrip(';'))
+                funding_teaser_p = (
+                    f"${_fm['pool']['total_college_funding'] / 1e6:.1f}M in one-time implementation "
+                    f"funding for 2026-30 — {len(_fm['priorities'])} funding priorities and potential "
+                    f"allocations for {len(_fm['colleges'])} colleges."
+                )
+            except Exception:
+                pass
             teaser_html = (
                 '<!-- Teaser cards (auto-generated, do not edit manually) -->\n'
                 '        <div class="tab-teaser-grid">\n'
@@ -10088,6 +10105,11 @@ def main():
                 f'                <h3>Budget</h3>\n'
                 f'                <p>CPL 5-year funding plan, expenditure detail, personnel, and category roll-ups including AB 123 and ESS 25-82 allocations.</p>\n'
                 f'                <a class="tab-teaser-link" href="#budget">View Budget →</a>\n'
+                f'            </div>\n'
+                f'            <div class="tab-teaser-card">\n'
+                f'                <h3>Implementation Funding</h3>\n'
+                f'                <p>{funding_teaser_p}</p>\n'
+                f'                <a class="tab-teaser-link" href="#implementation-funding">View Implementation Funding →</a>\n'
                 f'            </div>\n'
                 f'            <div class="tab-teaser-card">\n'
                 f'                <h3>Vision 2030 Alignment</h3>\n'
