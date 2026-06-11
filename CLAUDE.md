@@ -1457,9 +1457,12 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
    refresh-button injection, perf hotspots, simplification, security). Sam
    green-lights fixes; **no blind refactor**, and **don't** move the daily cron to
    a `/schedule` routine. This is the **Session 26 kickoff**.
-2. **KPI card reorder** — login-free drag-to-rearrange on the **Activity-KPI grid**
-   (Sam's pick), `localStorage` per-viewer (no auth/backend). Curated default order
-   (auth-gated, via `kpi_order`) is a later add.
+2. **KPI card reorder** — ✅ **DONE Session 44 (#377)** on the **headline KPI
+   grid** (Sam re-targeted it there for presentation screenshots):
+   `kpi_reorder.js`, login-free drag, `localStorage` per-viewer, label-identity
+   re-match across regens, ↺ reset. Curated default order (auth-gated, via
+   `kpi_order`) stays the later add; Activity-grid extension needs a product
+   call (grouped under Goal sub-headers).
 3. **Student eligibility counts on the EACR** — data's already in the daily pull;
    **both per-college + deduped-statewide** (Sam's call). **Privacy ADR FIRST** —
    aggregate counts only, **never a StudentID/PII** in any committed/public artifact.
@@ -1562,7 +1565,8 @@ Statewide" review bucket — State Bar + HRCM 001 parked for Sam) + **doublewide
 card (`kpi-card-wide` rides `EXHIBIT_ANALYSIS_CSS`, no Rule-4 mirror). **#377**
 login-free **KPI card drag-to-reorder** (`kpi_reorder.js`, per-browser
 localStorage, label-identity re-match across regens, ↺ reset) — strategic-queue
-item 2. Full story: `docs/statewide_kpi_lessons.md`.
+item 2. Full story: `docs/statewide_kpi_lessons.md`; pattern distilled:
+`docs/kb-notes/methodology-user-vocabulary-category-maps.md`. Checkpoint #378.
 
 ---
 
