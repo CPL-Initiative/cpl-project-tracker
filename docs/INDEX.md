@@ -94,8 +94,9 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Rank a cleanup queue by downstream impact, not structural leverage](kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Coarse TOP-division discipline fallback (make the orphan tail visible)](kb-notes/methodology-coarse-top-division-discipline-fallback.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Surface a finer derived layer on a single-grain reference tab](kb-notes/methodology-surface-derived-layer-on-single-grain-tab.md) | methodology | published | 2026-06-09 | 2026-06-09 |
-| [ADR — Per-college funding-priority metric counts (aggregate + suppression)](kb-notes/adr-funding-priority-metrics-privacy.md) | adr | **proposed** | 2026-06-11 | 2026-06-11 |
+| [ADR — Per-college funding-priority metric counts (aggregate + suppression)](kb-notes/adr-funding-priority-metrics-privacy.md) | adr | **RATIFIED** | 2026-06-11 | 2026-06-11 (Sam: "Yes on forks"; shipped #364) |
 | [Reference — The P1 completion-data gap (why completions aren't in MAP; the strategy ladder out)](kb-notes/reference-p1-completion-data-gap.md) | reference | published | 2026-06-11 | 2026-06-11 |
+| [Methodology — Maintaining a committed-workbook model (one-shot revisions, input-driven builder)](kb-notes/methodology-committed-workbook-models.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 
 ---
 
@@ -111,7 +112,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`engineering_practices_lessons.md`](engineering_practices_lessons.md) | Dev infra / testing / design system (committed jsdom harness + CI, stop-hook fix, `:root` tokens + `var()` rule, prototype-first) | **Session 32 (Busy Feynman, 2026-06-04) NEW** |
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G; **Session 37: orphan-tail discipline fallback #330 + FL-split CSR search/display #331** | **Session 37 (2026-06-09)** |
 | [`cpl_assistant_lessons.md`](cpl_assistant_lessons.md) | CPL Assistant (in-dashboard RAG chatbot tab; Phase 1 shipped + live `cpl-chat` v14) | **Session 26 (Bruh 26, 2026-06-01) NEW** |
-| [`cpl_funding_lessons.md`](cpl_funding_lessons.md) | CPL Implementation Funding tab (#352 shell + #353 data/renderer/test — funding workbook decoded + PII-checked, model math machine-verified). Own handoff lane: [`cpl_funding_handoff.md`](cpl_funding_handoff.md) | **2026-06-11 NEW** |
+| [`cpl_funding_lessons.md`](cpl_funding_lessons.md) | CPL Implementation Funding tab — full arc #352–#368: shell → data/renderer → what-if sandbox → shares-first rev2 workbook → P2/P3 actuals (ratified ADR) → roster edits + no-scroll rule. Scope: [`funding_priority_metrics_scope.md`](funding_priority_metrics_scope.md); own handoff: [`cpl_funding_handoff.md`](cpl_funding_handoff.md) | **2026-06-11 (13 PRs, Rule-8 checkpointed)** |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
 | [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR / Cred-Ref / CER triage / **merge tool** | **Session 32 (CER refinement #284/#285/#286 + the existing→existing credential MERGE tool)** |

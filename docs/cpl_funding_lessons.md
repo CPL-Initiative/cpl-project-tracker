@@ -23,6 +23,34 @@ Workstream scratchpad for the **Implementation Funding** dashboard tab
 **parallel to an active CCR session** — hence the unusual constraint set:
 shell-first, then new-files-only.
 
+## Session checkpoint — 2026-06-11 (Rule 8; session end)
+
+**(a) Learned:** the committed-workbook-model discipline (one-shot revision
+scripts; input-driven builder since openpyxl invalidates caches;
+`insert_rows` doesn't adjust ranges; extent by structural marker; edit
+generated files at the generator source; no derived values hardcoded in
+tests) — distilled to
+[`kb-notes/methodology-committed-workbook-models.md`](kb-notes/methodology-committed-workbook-models.md).
+Plus: a failing conservation test is how you find a source's internal
+inconsistency; an unmeasurable funded metric needs a maturity ladder, not
+silence; no-horizontal-scroll is now a standing UI rule.
+
+**(b) State:** 13 PRs merged (#352–#368), all green, nothing open. The tab
+is live + DRAFT-chipped: shares-first rev2 workbook (119 colleges, balance
+$0 structural), what-if sandbox, district rollups + period toggle +
+drill-ins, P2/P3 actuals vs target (first artifact: 27 colleges, P2 4,635 /
+P3 16,151), P1 labeled incentive gap, provenance footnotes, no-scroll
+table. ADR ratified; suite 26/26 files (94 + 15 funding assertions).
+
+**(c) Roadmap:** Sam's 25-26 headcount table (mechanical refresh) · P1
+ladder (ID-coverage report → CO match-back → CAEL replication study) ·
+first-cron `unmatched` audits stay quiet unless non-empty (then the footer
+shows them) · Excel→Supabase only if the model needs multi-user editing.
+
+**(d) Next concrete step:** when Sam sends the 25-26 table — drop into the
+workbook, fix the vintage header (auto-relabels the tab), re-run builder,
+commit. Until then: nothing blocked on us.
+
 ## 2026-06-11 — Session 1 (tab shipped)
 
 ### What shipped
