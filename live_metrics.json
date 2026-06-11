@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-11T14:59:32.157Z",
+  "scraped_at": "2026-06-11T16:17:23.401Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -33,13 +33,13 @@
         },
         {
           "college": "Los Angeles Pierce College",
-          "students": 1849,
+          "students": 1851,
           "units": 28228,
-          "avgUnits": 15.266630611141158,
+          "avgUnits": 15.25013506212858,
           "transcriptionRate": 98.7,
-          "avgTranscribed": 15.07409410492158,
+          "avgTranscribed": 15.057806591031875,
           "criteriaMetCount": 5,
-          "militaryStudents": 108,
+          "militaryStudents": 110,
           "nonMilitaryStudents": 1741,
           "apprenticeStudents": 173,
           "savings": 27508745,
@@ -63,13 +63,13 @@
         },
         {
           "college": "Norco College",
-          "students": 734,
+          "students": 735,
           "units": 5432,
-          "avgUnits": 7.400544959128065,
+          "avgUnits": 7.390476190476191,
           "transcriptionRate": 61.4,
-          "avgTranscribed": 4.5422343324250685,
+          "avgTranscribed": 4.536054421768707,
           "criteriaMetCount": 5,
-          "militaryStudents": 488,
+          "militaryStudents": 489,
           "nonMilitaryStudents": 252,
           "apprenticeStudents": 93,
           "savings": 10299260,
@@ -743,13 +743,13 @@
         },
         {
           "college": "Santa Ana College",
-          "students": 449,
+          "students": 452,
           "units": 1801.1999999999998,
-          "avgUnits": 4.011581291759465,
+          "avgUnits": 3.984955752212389,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 344,
+          "militaryStudents": 347,
           "nonMilitaryStudents": 105,
           "apprenticeStudents": 8,
           "savings": 2860848.5,
@@ -758,13 +758,13 @@
         },
         {
           "college": "Santa Rosa Junior College",
-          "students": 426,
+          "students": 427,
           "units": 1700,
-          "avgUnits": 3.9906103286384975,
+          "avgUnits": 3.981264637002342,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 426,
+          "militaryStudents": 427,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 2941000,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,705",
+      "value": "47,712",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,457"
+          "value": "24,464"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47705,
+    "Students": 47712,
     "Units": 228644.15000000002,
     "TranscribedUnits": 99030.95,
     "Savings": 318079410.25,
     "YearImpact": 1287994716.3999999,
-    "MilitaryStudents": 24457,
+    "MilitaryStudents": 24464,
     "NonMilitaryStudents": 23325,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.792876008804109,
-    "TranscribedAverage": 2.075902945183943
+    "AverageUnits": 4.792172828638498,
+    "TranscribedAverage": 2.075598381958417
   }
 }
