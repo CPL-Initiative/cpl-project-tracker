@@ -7581,6 +7581,52 @@ def export_unified_courses():
     # to the bottom instead of swamping the curator's queue.
     evidence_groups.sort(key=lambda g: -g["score"])
 
+    # ── Description-evidence lane (Session 45 — the DARK-M-ID consolidator) ──
+    # kb/desc_consolidation_out/candidates.json is the committed receipt of
+    # kb/_desc_consolidation_dryrun.py: TF-IDF description-similarity groups
+    # over M-IDs with NO official evidence at all (no C-ID/CCN claim, no
+    # c-id.net coverage, no promotions, no curation — 13.9k of 16.1k after the
+    # statewide router). It finds what the level-safe TITLE signature cannot:
+    # the same course under genuinely different names ("Infant and Toddler
+    # Care and Curriculum" / "Care and Education of Infants and Toddlers" —
+    # even singular/plural splits the sig). Level/gender/sport guards + units
+    # + credit gates are applied at receipt build; here we only JOIN it:
+    # validate each member is still a live mergeable row at regen time (drop
+    # merged/promoted/curated ids), drop groups < 2. The receipt is re-run
+    # MANUALLY (descriptions move slowly — like the c-id.net refresh), so the
+    # daily cron stays flat and byte-stable. NEVER auto-applied — a worklist.
+    desc_groups = []
+    _desc_doc = _load(os.path.join("desc_consolidation_out", "candidates.json"))
+    if _desc_doc:
+        _mergeable = {r["id"]: r for r in rows
+                      if not r.get("locked")
+                      and r.get("id_system") in ("M-ID", "Unified")
+                      and not (r.get("match") or {}).get("cid_conflict")}
+        for g in _desc_doc.get("groups", []):
+            live = [m for m in g.get("members", []) if m.get("id") in _mergeable]
+            if len(live) < 2:
+                continue
+            # cleanest title leads (fewest tokens) — the worklist's default
+            # merge target / unified title, mirroring the family lane.
+            live.sort(key=lambda m: (len(str(m.get("title") or "").split()),
+                                     m["id"]))
+            members = [{"id": m["id"], "t": _mergeable[m["id"]].get("title"),
+                        "s": ";".join(_mergeable[m["id"]].get("subj") or []),
+                        "u": _mergeable[m["id"]].get("units"),
+                        "k": _mergeable[m["id"]].get("id_system")}
+                       for m in live]
+            desc_groups.append({"sig": members[0]["t"] or members[0]["id"],
+                                "n": len(members),
+                                "score": g.get("cos_min"),
+                                "cos_max": g.get("cos_max"),
+                                "same_college": not g.get("cross_college"),
+                                "terms": (g.get("shared_terms") or [])[:5],
+                                "members": members})
+        # cross-college first, then tightest cohesion; sig tiebreak so equal
+        # scores don't churn the committed artifact run-to-run
+        desc_groups.sort(key=lambda x: (x["same_college"], -(x["score"] or 0),
+                                        x["sig"]))
+
     out_sug = os.path.join(odir, "unified_courses_suggestions.js")
     _sc_flagged = sum(1 for g in singleton_groups if g["same_college"])
     sug_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
@@ -7589,6 +7635,8 @@ def export_unified_courses():
                    "singleton_groups": singleton_groups,
                    "family_count": len(family_groups),
                    "family_groups": family_groups,
+                   "desc_count": len(desc_groups),
+                   "desc_groups": desc_groups,
                    "evidence_count": len(evidence_groups),
                    "evidence_groups": evidence_groups}
     with open(out_sug, "w", encoding="utf-8") as f:
@@ -7597,12 +7645,16 @@ def export_unified_courses():
                 "courses minted from single-college matches (same_college flag = likely "
                 "intra-college variants); family_groups = co-articulation family merges "
                 "(near-duplicate M-IDs the level-safe signature misses, gated on a shared "
-                "credential + the ordinal-rule family key); evidence_groups = COCI-evidence "
+                "credential + the ordinal-rule family key); desc_groups = description-"
+                "evidence merges over DARK M-IDs (no official evidence anywhere; TF-IDF "
+                "catalog-description similarity, level/gender/sport-guarded — see "
+                "kb/_desc_consolidation_dryrun.py); evidence_groups = COCI-evidence "
                 "folds into official C-ID/CCN ids (witness counts per member; x=1 members "
                 "are contested and pre-unchecked). HUMAN-CONFIRMED, NEVER auto-applied. */\n"
                 "window.CPL_UC_SUGGESTIONS = " + json.dumps(sug_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
     print(f"  Unified Courses: wrote {out_sug} ({len(sug_groups)} anchored + "
           f"{len(singleton_groups)} singleton-only + {len(family_groups)} co-articulation-family + "
+          f"{len(desc_groups)} description-evidence + "
           f"{len(evidence_groups)} evidence groups [{_sc_flagged} same-college flagged])")
 
     mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])

@@ -907,6 +907,12 @@
         // like anchored groups (target = first M-ID member), so they sit in the
         // "merge into existing" half, before the singleton-only (new-mint) section.
         var family = (data.family_groups || []).map(function (g) { g._kind = "family"; return g; });
+        // Description-evidence lane (Session 45): DARK M-IDs — no official
+        // evidence anywhere — whose catalog DESCRIPTIONS match across colleges
+        // (TF-IDF cosine; level/gender/sport-guarded at receipt build). The
+        // only lane that can connect "Intro to Programming" with "Programming
+        // Fundamentals". Merges into an existing identity like family groups.
+        var desc = (data.desc_groups || []).map(function (g) { g._kind = "desc"; return g; });
         // Evidence lane (2026-06-11): rows whose member courses carried an
         // official C-ID/CCN in COCI (witness counts per member) but didn't
         // clear the auto-fold bar — fold the checked members into the official
@@ -914,10 +920,10 @@
         // target) start UNCHECKED.
         var evidence = (data.evidence_groups || []).map(function (g) { g._kind = "evidence"; return g; });
         var singles = (data.singleton_groups || []).map(function (g) { g._kind = "singleton"; return g; });
-        var groups = anchored.concat(family).concat(evidence).concat(singles);
+        var groups = anchored.concat(family).concat(desc).concat(evidence).concat(singles);
         if (!groups.length) { alert("No suggested merges available in this build."); return; }
-        // Singleton (new-mint) section starts after anchored + family + evidence.
-        var nNonSingleton = anchored.length + family.length + evidence.length;
+        // Singleton (new-mint) section starts after anchored + family + desc + evidence.
+        var nNonSingleton = anchored.length + family.length + desc.length + evidence.length;
         var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
         var mergedAway = function (id) { return byId[id] && byId[id]._mergedAway; };
         function liveMembers(g) { return g.members.filter(function (m) { return !mergedAway(m.id); }); }
@@ -943,6 +949,7 @@
           var g = groups[i], mems = liveMembers(g), isSingleton = g._kind === "singleton";
           var isFamily = g._kind === "family";
           var isEvidence = g._kind === "evidence";
+          var isDesc = g._kind === "desc";
           box.appendChild(el("h3", { style: "margin:0 0 2px;color:#0A2240;" }, ["Suggested merge " + (i + 1) + " of " + groups.length]));
           // Section badge so the curator knows whether this merges into an
           // existing identity or mints a brand-new unified course.
@@ -955,6 +962,9 @@
             : isEvidence
             ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#dcfce7;color:#166534;margin:0 0 8px;" },
                 ["🧾 COCI evidence · fold into " + (g.sig || "the official id")])
+            : isDesc
+            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#fce7f3;color:#9d174d;margin:0 0 8px;" },
+                ["📝 Description evidence · same catalog description"])
             : el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#e0f2fe;color:#075985;margin:0 0 8px;" },
                 ["⛓ Merge into existing identity"]);
           box.appendChild(badge);
@@ -965,10 +975,14 @@
               ? "These identities co-articulate to “" + (g.credential || "the same credential") + "” and share a course family the level-safe worklist skips (level/format title drift — e.g. “Academy” / “Basic” / “I” / “Training”). Confirming MERGES the checked members into one identity. Uncheck any genuinely different course, then Confirm — or Skip."
               : isEvidence
               ? "Member college courses of these identities carried " + (g.sig || "an official id") + " as their official C-ID/CCN in COCI — the 🧾 witness counts on each row. Confirming MERGES the checked members into the official id. Rows whose own colleges DISAGREE on the target start unchecked; check one only if you're sure. Nothing is applied until you confirm."
+              : isDesc
+              ? "These identities carry NO official identity evidence anywhere, but their catalog descriptions match across colleges (similarity " + (g.score != null ? g.score : "?") + (g.cos_max != null && g.cos_max !== g.score ? "–" + g.cos_max : "") + (g.terms && g.terms.length ? "; shared terms: " + g.terms.join(", ") : "") + "). Different course levels, genders, and sports were screened out, but read the titles — uncheck any genuinely different course, then Confirm. Nothing is applied until you confirm."
               : "Same-title candidates (confidence score " + g.score + "). Uncheck any that differ, then Confirm — or Skip. Nothing is applied until you confirm."]));
-          if (isSingleton && g.same_college) {
+          if ((isSingleton || isDesc) && g.same_college) {
             box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
-              ["⚠ All members appear to be from the same college — these are often course variants (levels, credit/noncredit, language versions), not cross-college duplicates. Review carefully before confirming."]));
+              [isDesc
+                ? "⚠ Every pair here shares a member college — same-college near-identical descriptions are often course variants (levels, credit/noncredit, formats), not duplicates. Review carefully before confirming."
+                : "⚠ All members appear to be from the same college — these are often course variants (levels, credit/noncredit, language versions), not cross-college duplicates. Review carefully before confirming."]));
           }
           // Kinship-gate banner (Session 41): score 0 = NO witness in this group
           // passed the title check — the receipts date from a pre-split chimera
