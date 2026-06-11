@@ -10101,7 +10101,12 @@ def main():
                 'The process typically takes 3-5 minutes.\\n\\n'
                 'Continue?\'))return;'
                 'var b=this;b.disabled=true;b.textContent=\'⏳ Pipeline triggered — updating...\';'
-                'fetch(\'https://cpl-proxy.slee-548.workers.dev/trigger\','
+                # Secret rides in BOTH the query string and the JSON body: the
+                # currently-deployed worker's /trigger reads url.searchParams
+                # (older paste), the repo version reads body.secret — sending
+                # both works against either deploy (the "Invalid or missing
+                # secret" button failure, Session 41).
+                'fetch(\'https://cpl-proxy.slee-548.workers.dev/trigger?secret=CPL_SCRAPE_2026\','
                 '{method:\'POST\',headers:{\'Content-Type\':\'application/json\'},'
                 'body:JSON.stringify({secret:\'CPL_SCRAPE_2026\'})})'
                 '.then(function(r){return r.json()})'
