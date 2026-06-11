@@ -46,8 +46,8 @@ check("every evidence group LEADS with the official id (C-ID/CCN-ID first)",
                   && g.members[0].id === g.sig));
 check("every non-official member carries its witness distribution (ev)",
   eg.every((g) => g.members.slice(1).every((m) => m.ev && Object.keys(m.ev).length >= 1)));
-check("every contested member (x:1) has multi-target evidence",
-  eg.every((g) => g.members.every((m) => !m.x || Object.keys(m.ev || {}).length > 1)));
+check("every contested member (x:1) has multi-target evidence OR failed the kinship title check (tm)",
+  eg.every((g) => g.members.every((m) => !m.x || Object.keys(m.ev || {}).length > 1 || m.tm)));
 check("every clean member (no x) has single-target evidence",
   eg.every((g) => g.members.slice(1).every((m) => m.x || Object.keys(m.ev || {}).length === 1)));
 

@@ -931,6 +931,14 @@
             box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
               ["⚠ All members appear to be from the same college — these are often course variants (levels, credit/noncredit, language versions), not cross-college duplicates. Review carefully before confirming."]));
           }
+          // Kinship-gate banner (Session 41): score 0 = NO witness in this group
+          // passed the title check — the receipts date from a pre-split chimera
+          // family (e.g. the witness is a transmissions course vouching for an
+          // engine-performance remnant). Almost always Skip material.
+          if (isEvidence && g.tm && !g.score) {
+            box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
+              ["⚠ Every witness in this group is title-mismatched — the COCI claims came from courses that don't resemble these rows (stale evidence from a dissolved over-merge family). These are usually NOT the same course; Skip unless you recognize one."]));
+          }
           box.appendChild(el("label", { style: "display:block;font-weight:600;margin:6px 0 2px;" }, ["Unified title"]));
           var titleIn = el("input", { type: "text", value: (isEvidence && g.official) || bestTitle(g), style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
           box.appendChild(titleIn);
@@ -962,6 +970,15 @@
                 title: "COCI witnesses — this identity's member courses that carried an official id before the re-mint split"
                   + (m.x ? ". The colleges DISAGREE on the target, so this row starts unchecked." : ""),
               }, ["🧾 " + evTx]));
+            }
+            // Kinship-gate flag (Session 41): m.tm = witnesses whose OWN course
+            // titles don't match this row — stale receipts from a pre-split
+            // chimera family. These never auto-fold; the curator opts in.
+            if (m.tm) {
+              row.appendChild(el("span", {
+                style: "font-size:.7rem;font-weight:600;padding:1px 7px;border-radius:10px;white-space:nowrap;background:#fee2e2;color:#b91c1c;",
+                title: m.tm + " witness" + (m.tm === 1 ? "" : "es") + " failed the title check: the claiming course's own title doesn't resemble this row (the receipt predates an over-merge split). Fold only if you recognize it as the same course.",
+              }, ["⚠ title mismatch"]));
             }
             if (isOfficial) row.appendChild(el("span", {
               style: "font-size:.7rem;font-weight:600;padding:1px 7px;border-radius:10px;background:#dcfce7;color:#166534;white-space:nowrap;",
@@ -1418,9 +1435,25 @@
       // split — the auditability behind the badge.
       var mtEv = mt.evidence
         ? " COCI witnesses: " + Object.keys(mt.evidence).map(function (k) {
-            return k.replace(/^C-ID:|^CCN:/, "") + " ×" + mt.evidence[k];
+            // match.kin (Session 41) = the title-checked witness subset; when it
+            // differs from the raw count, the difference is stale chimera-era
+            // receipts that never drive a fold.
+            var kn = mt.kin ? (mt.kin[k] || 0) : null;
+            return k.replace(/^C-ID:|^CCN:/, "") + " ×" + mt.evidence[k]
+              + (kn !== null && kn < mt.evidence[k]
+                 ? " (⚠ " + (mt.evidence[k] - kn) + " title-mismatched)" : "");
           }).join(", ") + "."
         : "";
+      // Evidence present but nothing folds and no conflict = the kinship gate
+      // blocked every witness (or a sub-bar plurality) — surface it.
+      if (mt.evidence && !mt.ccn && !mt.cid && !mt.cid_conflict) {
+        var allTm = mt.kin && !Object.keys(mt.kin).some(function (k) { return mt.kin[k] > 0; });
+        out.appendChild(el("span", { class: "uc-badge " + (allTm ? "muted" : "warn"),
+          title: (allTm
+            ? "Official-id evidence exists but every witness failed the title check (stale receipts from a dissolved over-merge family) — no auto-fold. Review in the ✨ worklist's evidence lane."
+            : "Official-id evidence exists but is below the auto-fold bar — review in the ✨ worklist's evidence lane.") + mtEv },
+          [allTm ? "🧾 stale evidence" : "🧾 evidence"]));
+      }
       if (mt.ccn) out.appendChild(el("span", { class: "uc-badge ok", title: "Member college courses carried the official Common Course Number " + mt.ccn + " — candidate to promote to CCN-ID." + mtEv }, ["→ CCN " + mt.ccn]));
       if (mt.cid) out.appendChild(el("span", { class: "uc-badge ok", title: "Member college courses carried the official CID " + mt.cid + " — candidate to promote to CID." + mtEv }, ["→ CID " + mt.cid]));
       if (mt.cid_conflict) out.appendChild(el("span", { class: "uc-badge warn", title: "Members carry different official CIDs (" + mt.cid_conflict.join(", ") + ") — likely over-merged; do not auto-promote. Review it in the ✨ worklist's evidence lane." + mtEv }, ["CID conflict"]));
@@ -1797,6 +1830,23 @@
       document.head.appendChild(st);
     }
 
+    // Session-41 readability fixes, injected from JS so both HTMLs get them
+    // without a Rule-4 mirror (the static sheet keeps the old rules; this node
+    // is appended after it, so equal-specificity selectors here win):
+    //  1. Title column WRAPS at its 24ch cap instead of "…" truncating — the
+    //     chip stack wraps the row anyway, so wrapping costs no height (Sam).
+    //  2. Member-table headers: the static sheet left them slate (#64748b) on
+    //     the navy band inherited from .uc-table th — unreadable. White.
+    function ensureUcFixCss() {
+      if (document.getElementById("uc-fix-css")) return;
+      var st = document.createElement("style");
+      st.id = "uc-fix-css";
+      st.textContent =
+        "#tab-unified-courses .uc-table td:nth-child(3) .uc-trunc{white-space:normal;overflow:visible;text-overflow:clip;}" +
+        "#tab-unified-courses .uc-member-table th{color:#fff;background:var(--navy-primary,#0A2240);}";
+      document.head.appendChild(st);
+    }
+
     // Append the CCR inverse view to an expanded row's cell: the aligned
     // exhibits/credentials that articulate to this course (lazy-loaded). The mirror
     // of the EACR. Unions Phase-B consolidated rows' folded ids so a C-ID/CCN anchor
@@ -1846,6 +1896,7 @@
 
     function render() {
       ensureMergeCss();
+      ensureUcFixCss();
       var matched = rows.filter(passes);
       matched.sort(function (a, b) {
         var k = state.sort, av, bv;

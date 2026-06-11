@@ -5228,6 +5228,46 @@ def _fam_key(title):
     return " ".join(sorted(set(keep)))
 
 
+# ── Witness-kinship gate for the official-ID fold (Session 41, 2026-06-11) ──
+# A kb/promotions.json receipt ties a DEPARTED witness (a college course whose
+# COCI row claims a C-ID/CCN) to the M-ID remnant of its old pre-re-mint family.
+# When that old family was a lossy (subject, number) chimera, the witness is
+# UNRELATED to the remnant — e.g. MiraCosta's "Automatic Transmissions and
+# Transaxles" (claims AUTO 120 X) vouching for remnant AUTO M1017 "Advanced
+# Automotive Engine Performance". Witness counts can't catch this ("APPLIED
+# ANTHROPOLOGY" had 40 unanimous witnesses for ANTH 120 Cultural Anthropology).
+# The gate: a witness is kin-valid iff the remnant's title matches the witness's
+# OWN course title OR the official catalog title at token-set Jaccard ≥ 0.5
+# (level-safe normalization). The witness branch preserves the evidence-over-
+# lexical wins ("Spanish 3" → SPAN 200: the witnesses are titled "Spanish 3");
+# the official branch keeps remnants that ARE the official course by name.
+# Measured before shipping (kb/_analyze_witness_kinship.py): blocks 781 of
+# 1,635 evidence edges — all eyeballed chimeras; keeps all SPAN folds.
+_KIN_DROP = {"the", "of", "to", "and", "for", "with", "in", "a", "an", "on",
+             "at", "as"}
+_KIN_ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5",
+              "vi": "6", "vii": "7", "viii": "8", "ix": "9", "x": "10"}
+_KIN_THRESHOLD = 0.5
+
+
+def _kin_toks(title):
+    t = re.sub(r"\([^)]*\)", " ", str(title or "").lower())
+    t = re.sub(r"[^a-z0-9 ]+", " ", t)
+    return {_KIN_ROMAN.get(w, w) for w in t.split() if w not in _KIN_DROP}
+
+
+def _kin_jac(a, b):
+    if not a or not b:
+        return 0.0
+    return len(a & b) / len(a | b)
+
+
+def _kin_slug(s):
+    """College-name match key — alnum-only ASCII so the re-mint receipts'
+    mojibake ("CaÃ±ada College") still matches the raw list ("Cañada College")."""
+    return re.sub(r"[^A-Z0-9]+", "", str(s or "").upper().encode("ascii", "ignore").decode())
+
+
 # ── Exhibit CRs Catalog → per-credential credit funnel (Sam 2026-06-09) ──
 # The NEW View_ExhibitCRsCatalog_Dataset carries the long-missing PER-EXHIBIT
 # eligible-credit grain (MAP's JST-aggregated totals per credit recommendation).
@@ -6069,6 +6109,7 @@ def export_unified_courses():
     staging files. Writes an empty global if the KB files are absent so the
     tab degrades gracefully. STAGING data — does not touch curated KB files."""
     from datetime import datetime as _dt
+    from collections import Counter as _Counter
     # UC_KB_DIR / UC_OUT_DIR are a test seam (e.g. validating a re-mint preview);
     # unset in production, so the daily build reads kb/ and writes the repo root.
     kdir = os.environ.get("UC_KB_DIR") or os.path.join(SCRIPT_DIR, "kb")
@@ -6271,6 +6312,10 @@ def export_unified_courses():
     # present in the staging/anchor sets so a future CCN promotion doesn't double-emit.
     ccn_doc = _load(os.path.join("reference", "ccn_courses.json")) or {}
     ccn_courses = ccn_doc.get("courses", [])
+    # Authoritative CCN id → title (the official-row title source + the kinship
+    # gate's official-title branch; the C-ID mirror is _cid_desc_rec below).
+    _ccn_title = {" ".join(c["ccn"].split()).upper(): (c.get("title") or "")
+                  for c in ccn_courses if c.get("ccn")}
     seen_ids = seen | set(cc.keys()) | set(merge_into) | set(merge_members)
     ccn_n = 0
     for c in ccn_courses:
@@ -6527,10 +6572,19 @@ def export_unified_courses():
     # Candidate college-course ents for a displayed row — exact control-number join.
     def _row_candidates(r):
         rid, idsys = r["id"], r.get("id_system")
-        if idsys == "CCN-ID":
-            return ccn_rows.get(_nrm(rid), [])
-        if idsys == "C-ID":
-            return cid_rows.get(_id_cid(rid) or _nrm(rid), [])
+        if idsys in ("CCN-ID", "C-ID"):
+            # Claims ∪ folded leaves (Session 41): an official row's member table
+            # and stats describe what the row actually contains — the colleges'
+            # own COCI claimants PLUS the members of any M-ID folded into it
+            # (Phase B registers folds in merge_members, which _leaf_ids walks).
+            # Pre-fix the units chip read "0–6" off invisible folded members
+            # while the table showed only the 4/6/4 claimants.
+            out = list(ccn_rows.get(_nrm(rid), []) if idsys == "CCN-ID"
+                       else cid_rows.get(_id_cid(rid) or _nrm(rid), []))
+            for i in _leaf_ids(r):
+                for cn in _leaf_cns(i):
+                    out += cn_rows.get(cn, [])
+            return out
         out = []
         for i in _leaf_ids(r):
             for cn in _leaf_cns(i):
@@ -6563,17 +6617,57 @@ def export_unified_courses():
     # C-ID/CCN target(s) of the row's constituent minted identities: {"cid": "ACCT
     # 110"} single agreed, {"cid_conflict": [...]} when they disagree (over-merge
     # signal), {"ccn": "..."} for a CCN. No identity change — purely informational.
+    # Witness-title resolution for the kinship gate — lazy per official id, from
+    # the already-streamed claim ents: namespaced official id → {college slug:
+    # [claimant course titles]}. (See _kin_toks at module scope for the gate.)
+    _claim_title_idx = {}
+
+    def _claim_titles(oid_ns):
+        if oid_ns not in _claim_title_idx:
+            ns, _, bare = oid_ns.partition(":")
+            d = {}
+            for e in (ccn_rows if ns == "CCN" else cid_rows).get(bare, []):
+                d.setdefault(_kin_slug(mcolleges[e["c"]]), []).append(e["t"])
+            _claim_title_idx[oid_ns] = d
+        return _claim_title_idx[oid_ns]
+
+    def _official_title(osys, oid):
+        if osys == "CCN-ID":
+            return _ccn_title.get(oid, "")
+        return (_cid_desc_rec.get(oid) or {}).get("common_title") or ""
+
     def _row_official(r):
         if r.get("id_system") in ("C-ID", "CCN-ID"):
             return None  # already an official-ID identity
-        cids, ccns = {}, {}
+        cids, ccns = {}, {}          # raw witness counts (full distribution)
+        kin_cids, kin_ccns = {}, {}  # kin-valid witness counts (what _pick sees)
         for i in _leaf_ids(r):
-            for oid, w in (promotions.get(i, {}).get("official_targets") or {}).items():
+            lt = _kin_toks(_member_title(i))
+            for oid_ns, w in (promotions.get(i, {}).get("official_targets") or {}).items():
                 n = (w or {}).get("members", 0) or 0
-                if oid.startswith("CCN:"):
-                    ccns[oid[4:]] = ccns.get(oid[4:], 0) + n
-                elif oid.startswith("C-ID:"):
-                    cids[oid[5:]] = cids.get(oid[5:], 0) + n
+                cols = (w or {}).get("colleges") or []
+                if oid_ns.startswith("CCN:"):
+                    pool, kin_pool, bare, osys = ccns, kin_ccns, oid_ns[4:], "CCN-ID"
+                elif oid_ns.startswith("C-ID:"):
+                    pool, kin_pool, bare, osys = cids, kin_cids, oid_ns[5:], "C-ID"
+                else:
+                    continue
+                pool[bare] = pool.get(bare, 0) + n
+                # WITNESS-KINSHIP GATE (Session 41 — the AUTO 120X/150X chimera
+                # receipts): a witness counts toward the auto-fold only if the
+                # remnant's title matches the official catalog title (wholesale
+                # pass) or the witness's OWN claimant course title (per witness).
+                kin = 0
+                if _kin_jac(lt, _kin_toks(_official_title(osys, bare))) >= _KIN_THRESHOLD:
+                    kin = n
+                elif cols:
+                    wt = _claim_titles(oid_ns)
+                    for c in cols:
+                        titles = wt.get(_kin_slug(c), [])
+                        if titles and max(_kin_jac(lt, _kin_toks(t)) for t in titles) >= _KIN_THRESHOLD:
+                            kin += 1
+                if kin:
+                    kin_pool[bare] = kin_pool.get(bare, 0) + kin
 
         def _pick(pool):
             # R2 (docs/official_id_fold_scope.md): unanimous evidence matches at
@@ -6581,7 +6675,8 @@ def export_unified_courses():
             # target must hold >=80% of witnesses AND >=2 (any 80% share over a
             # dissenter implies >=5 witnesses, so dissent is never overridden
             # on thin evidence). Below the bar -> no match (conflict surfaces
-            # in the worklist evidence lane instead of auto-folding).
+            # in the worklist evidence lane instead of auto-folding). Pools are
+            # KIN-VALID counts — title-mismatched witnesses never drive a fold.
             if not pool:
                 return None
             if len(pool) == 1:
@@ -6592,19 +6687,25 @@ def export_unified_courses():
             return None
 
         out = {}
-        ccn = _pick(ccns)
+        ccn = _pick(kin_ccns)
         if ccn:
             out["ccn"] = ccn
-        cid = _pick(cids)
+        cid = _pick(kin_cids)
         if cid:
             out["cid"] = cid
-        elif len(cids) > 1:
-            out["cid_conflict"] = sorted(cids)
+        elif len(kin_cids) > 1:
+            out["cid_conflict"] = sorted(kin_cids)
         if cids or ccns:
             # Full witness distribution (namespace-prefixed), for the CCR badge
-            # tooltips + the worklist evidence lane.
+            # tooltips + the worklist evidence lane. `kin` = the title-checked
+            # subset, present only when it differs (lean) — the lane uses it to
+            # rank/flag title-mismatched receipts.
             out["evidence"] = {**{"C-ID:" + k: v for k, v in cids.items()},
                                **{"CCN:" + k: v for k, v in ccns.items()}}
+            kin_all = {**{"C-ID:" + k: v for k, v in kin_cids.items()},
+                       **{"CCN:" + k: v for k, v in kin_ccns.items()}}
+            if kin_all != out["evidence"]:
+                out["kin"] = kin_all
         return out or None
 
     # ---- write unified_courses_data.js (deferred so rows carry matched IDs) --
@@ -6678,7 +6779,13 @@ def export_unified_courses():
             if tv:
                 target["title_variants"] = tv
             if not target.get("title"):
-                target["title"] = variants[0] if variants else oid
+                # A synthesized official row is titled by the OFFICIAL catalog
+                # (C-ID descriptor / CCN list), never by a folded M-ID — the
+                # AUTO 120X bug rendered the C-ID under a remnant's title
+                # ("Advanced Automotive Engine Performance" on the transmissions
+                # descriptor). Remnant titles stay visible as title_variants.
+                target["title"] = (_official_title(g["sys"], oid)
+                                   or (variants[0] if variants else oid))
             if not target.get("disc") and modal_disc:
                 target["disc"] = modal_disc
             target["adopted"] = sorted(set(target.get("adopted") or []) | {cidx(c) for c in ad})
@@ -6691,6 +6798,47 @@ def export_unified_courses():
             rows.extend(synthesized)
             print(f"  Unified Courses: Phase B consolidated {len(consumed)} M-IDs into "
                   f"{len(synthesized)} new official-ID rows + {folds} anchor folds")
+
+        # Claims-only official rows (Session 41): an official id whose claimant
+        # courses exist in the raw list gets a CCR row even when no M-ID folds
+        # into it — the colleges' COCI claims ARE the membership (per the ADR,
+        # officials are the common-course reference). Without this, removing a
+        # bogus fold made the id's real claimant courses invisible again (the
+        # pre-#345 state). Bound: the id must be in an official catalog, OR be
+        # claimed by >=2 distinct colleges (a lone uncataloged claim is likelier
+        # a typo — it keeps badge/lane visibility only).
+        _existing_ids = {r["id"] for r in rows}
+        claims_only = 0
+        for osys, pool, catalog in (("C-ID", cid_rows, _cid_desc_rec),
+                                    ("CCN-ID", ccn_rows, _ccn_title)):
+            for oid, ents in pool.items():
+                if oid in _existing_ids or oid in merge_into:
+                    continue
+                ncol = len({e["c"] for e in ents})
+                if oid not in catalog and ncol < 2:
+                    continue
+                title = _official_title(osys, oid)
+                if not title:
+                    # uncataloged but multi-college — modal claimant title
+                    title = _Counter(e["t"] for e in ents if e["t"]).most_common(1)
+                    title = title[0][0] if title else oid
+                ad, pot = rollup([oid])
+                rows.append({"kind": "Course", "id": oid, "id_system": osys,
+                             "locked": False, "title": title,
+                             "disc": None, "credit": None, "units": None,
+                             "top": None, "conf": None,
+                             "subj": [oid.split()[0]] if " " in oid else [],
+                             "members": ncol,
+                             "flags": {"over_merged": False, "credit_mixed": False,
+                                       "top_mixed": False, "ncc_mixed": False,
+                                       "reviewed": False},
+                             "reviewed_by": None, "reviewed_at": "",
+                             "adopted": [cidx(c) for c in ad],
+                             "potential": [cidx(c) for c in pot]})
+                claims_only += 1
+        if claims_only:
+            print(f"  Unified Courses: {claims_only} claims-only official-ID rows "
+                  f"(raw COCI claimants, no folds)")
 
     # ---- per-course CPL impact: Eligible units + Students -------------------
     # Roll the CER's per-credential eligible-credit + student totals up to each
@@ -6761,6 +6909,8 @@ def export_unified_courses():
     # when members genuinely disagree (lean); the consumer falls back to the scalar.
     _n_ur = 0
     for r in rows:
+        if r.get("id_system") in ("C-ID", "CCN-ID"):
+            continue  # official rows: stats come from displayed members (below)
         mus = []
         # Same union as the eu/st rollup: curator merge targets inherit their
         # members' membership units (a UC-CUR id has no memberships of its own).
@@ -6774,7 +6924,53 @@ def export_unified_courses():
             if lo != hi:
                 r["umin"], r["umax"] = lo, hi
                 _n_ur += 1
-    print(f"  Unified Courses: units range on {_n_ur} rows")
+
+    # Official-ID row stats (Session 41) — derived from the row's DISPLAYED
+    # members (claims ∪ folded leaves via _row_candidates), so the Members
+    # count, Units/units-range, TOP, and Credit always describe the member
+    # table the curator actually sees. Pre-fix: Members counted folded M-IDs
+    # (2) while the table listed 3 claimant courses, and the range unioned
+    # invisible folded members ("0–6 ⚠" vs displayed 4/6/4). Locked anchors
+    # keep their curated scalars; members/umin/umax stay honest everywhere.
+    _n_off = 0
+    for r in rows:
+        if r.get("id_system") not in ("C-ID", "CCN-ID"):
+            continue
+        ents = _row_ents(r)
+        if not ents:
+            continue
+        _n_off += 1
+        r["members"] = len(ents)
+        us = [e["u"] for e in ents if isinstance(e.get("u"), (int, float))]
+        if us:
+            lo, hi = min(us), max(us)
+            if lo != hi:
+                r["umin"], r["umax"] = lo, hi
+                _n_ur += 1
+        if not r.get("locked"):
+            if us:
+                r["units"] = _Counter(us).most_common(1)[0][0]
+            tops = [e["p"] for e in ents if e.get("p")]
+            if tops:
+                tval, tmix = _agg_unanimous(tops)
+                if tval:
+                    r["top"] = f"{tval}: {top_titles[tval]}" if tval in top_titles else tval
+                r["flags"]["top_mixed"] = bool(tmix) or bool(r["flags"].get("top_mixed"))
+            # Credit: modal over folded leaves' minted credit_status; a row with
+            # no folded leaves (claims-only) defaults to Credit — C-ID/CCN
+            # alignment is credit-course territory (the CCN anchor precedent).
+            crs = [(cat.get(i) or sg.get(i) or {}).get("credit_status")
+                   for i in _leaf_ids(r)]
+            crs = [c for c in crs if c]
+            if crs:
+                cval, cmix = _agg_unanimous(crs)
+                if cval:
+                    r["credit"] = cval
+                r["flags"]["credit_mixed"] = bool(cmix) or bool(r["flags"].get("credit_mixed"))
+            if not r.get("credit"):
+                r["credit"] = "Credit"
+    print(f"  Unified Courses: units range on {_n_ur} rows; "
+          f"official-row stats refreshed on {_n_off}")
 
     # Compact all-course title index for the "Generate unified course" dialog —
     # a separate file the tab lazy-loads only when a curator opens it. Built from
@@ -7002,7 +7198,13 @@ def export_unified_courses():
         ev = (r.get("match") or {}).get("evidence")
         if not ev or r.get("locked") or r.get("id_system") not in ("M-ID", "Unified"):
             continue
-        top = max(ev.items(), key=lambda x: x[1])[0]
+        # Group under the top KIN-VALID target when the kinship gate filtered
+        # any witnesses (a row's strongest REAL target); raw counts tiebreak.
+        # NB: kin == {} means ALL witnesses failed (≠ absent, which means none
+        # were filtered) — hence the explicit None check, not `or`.
+        kn = (r.get("match") or {}).get("kin")
+        kn = ev if kn is None else kn
+        top = max(ev, key=lambda k: (kn.get(k, 0), ev[k]))
         _ev_by_target.setdefault(top, []).append(r)
     for top, claimants in _ev_by_target.items():
         osys = "CCN-ID" if top.startswith("CCN:") else "C-ID"
@@ -7013,9 +7215,13 @@ def export_unified_courses():
         otitle = (_ev_anchor_title.get(oid)
                   or (_cid_desc_rec.get(oid) or {}).get("common_title") or oid)
         members = [{"id": oid, "t": otitle, "s": oid.split()[0], "u": None, "k": osys}]
-        wit = 0
-        for r in sorted(claimants,
-                        key=lambda r: -((r.get("match") or {}).get("evidence") or {}).get(top, 0)):
+        wit = tm_total = 0
+
+        def _kin_of(r):
+            mt = r.get("match") or {}
+            return mt["kin"] if mt.get("kin") is not None else (mt.get("evidence") or {})
+
+        for r in sorted(claimants, key=lambda r: -_kin_of(r).get(top, 0)):
             ev = (r.get("match") or {}).get("evidence") or {}
             m = {"id": r["id"], "t": r.get("title"),
                  "s": ";".join(r.get("subj") or []), "u": r.get("units"),
@@ -7024,10 +7230,26 @@ def export_unified_courses():
                         for k, v in sorted(ev.items(), key=lambda x: -x[1])}}
             if len(ev) > 1:
                 m["x"] = 1  # contested — pre-unchecked in the consumer
+            # Title-mismatch (the kinship gate, Session 41): witnesses whose own
+            # course titles don't match this remnant — stale chimera-era
+            # receipts. tm = how many of the group target's witnesses failed;
+            # all-failed members are pre-unchecked like contested ones.
+            kin_top = _kin_of(r).get(top, 0)
+            raw_top = ev.get(top, 0)
+            if kin_top < raw_top:
+                m["tm"] = raw_top - kin_top
+                tm_total += m["tm"]
+                if kin_top == 0:
+                    m["x"] = 1
             members.append(m)
-            wit += ev.get(top, 0)
-        evidence_groups.append({"sig": oid, "official": otitle, "n": len(members),
-                                "score": wit, "members": members})
+            wit += kin_top
+        g = {"sig": oid, "official": otitle, "n": len(members),
+             "score": wit, "members": members}
+        if tm_total:
+            g["tm"] = tm_total
+        evidence_groups.append(g)
+    # Kin-valid witnesses rank; groups with NONE (pure stale-receipt noise) sink
+    # to the bottom instead of swamping the curator's queue.
     evidence_groups.sort(key=lambda g: -g["score"])
 
     out_sug = os.path.join(odir, "unified_courses_suggestions.js")
@@ -9879,7 +10101,12 @@ def main():
                 'The process typically takes 3-5 minutes.\\n\\n'
                 'Continue?\'))return;'
                 'var b=this;b.disabled=true;b.textContent=\'⏳ Pipeline triggered — updating...\';'
-                'fetch(\'https://cpl-proxy.slee-548.workers.dev/trigger\','
+                # Secret rides in BOTH the query string and the JSON body: the
+                # currently-deployed worker's /trigger reads url.searchParams
+                # (older paste), the repo version reads body.secret — sending
+                # both works against either deploy (the "Invalid or missing
+                # secret" button failure, Session 41).
+                'fetch(\'https://cpl-proxy.slee-548.workers.dev/trigger?secret=CPL_SCRAPE_2026\','
                 '{method:\'POST\',headers:{\'Content-Type\':\'application/json\'},'
                 'body:JSON.stringify({secret:\'CPL_SCRAPE_2026\'})})'
                 '.then(function(r){return r.json()})'
