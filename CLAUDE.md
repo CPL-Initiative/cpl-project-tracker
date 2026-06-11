@@ -333,7 +333,10 @@ honor them in normal work:
   (`P1`/`P2`/`P3` + a `title`), and prefer drill-in rows over extra columns.
   Keep `overflow-x: auto` on the wrapper only as the narrow-screen safety
   net — never as the default desktop experience. (First applied: the
-  Implementation Funding college table.)
+  Implementation Funding college table. Hardened on the CCR, Session 43:
+  `table-layout:fixed` + explicit colgroup — auto layout had silently parked
+  columns past the wrap's right edge, per filtered row set; see
+  [`docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md`](docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md).)
 - **Prototype UI in a fast-feedback canvas, then port.** For a new tab or visual
   rework, iterate the look in a Claude artifact / claude.ai (live preview), lock
   it with Sam, then implement into the monolith. In-repo analog: the EACR
@@ -1523,78 +1526,8 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > locked decisions verbatim. Searching the archive for an id (e.g. "FLSP
 > M1379", "#310") is usually faster than re-deriving from code.
 
-### Session 41 — the witness-kinship gate: chimera receipts un-folded (2026-06-11)
-
-Sam's screenshot — `AUTO 120 X` titled "Advanced Automotive Eng…" over
-transmission members, `AUTO 150 X` "Advanced Engine Manage…" over brakes —
-exposed that **~half of Session 40's restored folds were built on stale
-receipts.** The members were RIGHT (colleges' own COCI claims; AUTO 120 X *is*
-"Automatic Transmissions and Transaxles"); the folded M-IDs + row titles were
-wrong. Root cause: a `kb/promotions.json` receipt is a **departure record**
-about the family that existed 2026-05-22; the lossy pre-re-mint chimera
-families were later carved up by the 2026-05-29 over-merge splits, but ids
-that SURVIVED a split kept receipts describing the pre-split family — a decay
-mode **no re-key can fix** (the key is live; the *meaning* is stale). Witness
-counts are no defense ("APPLIED ANTHROPOLOGY" had 40 unanimous witnesses for
-ANTH 120 — all from the dead family).
-
-**The fix — the witness-kinship gate** (measured first via
-`kb/_analyze_witness_kinship.py`): a witness counts toward an auto-fold only
-if the remnant's title matches the witness's OWN claimant-course title or the
-official catalog title (token-set Jaccard ≥ 0.5, level-safe). Blocks 781 of
-1,635 evidence edges, unfolds 565 chimera folds, keeps all 7 SPAN folds,
-unlocks new good folds (SOCI M1023's "conflict" was one chimera witness
-diluting 3 real ones). Shipped with it: **synthesized official rows titled by
-the official catalog** (never a remnant); **claims-only official rows** (307 —
-an official id with real COCI claimants gets a row with zero folds; C-ID rows
-259 → 456); **official-row stats describe the DISPLAYED members** (claims ∪
-folded leaves: members count, modal units + range — the "0–6 ⚠" chip had been
-computed over invisible bogus folds while the table showed 4/6/4 — modal TOP,
-credit default Credit); member tables on official rows now show folded-leaf
-members too. **Lane goes kin-aware**: `tm` flags + pre-unchecked, kin-ranked
-groups (187 all-stale groups sink under a banner), "🧾 stale evidence" row
-badge. UI: Title column wraps (no "…"), member-table headers white-on-navy.
-CCR 15,489 → 16,289 rows; 0 curator-verified rows disturbed; suite 22/22
-(`tests/uc_kinship_gate.test.js`). KB note:
-[`methodology-witness-kinship-gate.md`](docs/kb-notes/methodology-witness-kinship-gate.md);
-lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 41).
-
-**Ops (same morning):** GitHub's scheduler dropped/over-delayed the 06-11
-primary cron (the documented flakiness — backstop catches it); session
-self-dispatch still 403s (`actions: write`). **Manual Refresh root cause:**
-the deployed Cloudflare worker's `/trigger` reads the secret from the QUERY
-STRING (old version), while the dash button POSTs it in the JSON body → 403
-"Invalid or missing secret". Fix: button sends both (`?secret=` + body);
-durable fix = re-paste `cloudflare-worker-proxy.js` into the Cloudflare
-dashboard (Sam-only — sessions can't reach Cloudflare).
-
-**R4 singletons SHIPPED same day (#348):** of the 653 evidence-bearing
-stand-alones, **301 auto-fold** under their official rows (kinship-gated:
-297 unanimous + 4 plurality; `sfold` on the row, counted in the ⛓ chip),
-**12 contested → evidence-lane `g:1` stand-alone entries**, and **340
-all-witness-blocked stale receipts deliberately NOT laned** (keeps ~340
-noise groups out of the curator queue; recoverable via
-`kb/_analyze_witness_kinship.py`). SPAN 200 absorbed "Intermediate Spanish:
-Level I", SPAN 210 absorbed Level II/IV/Advanced Intermediate — the scope
-§4's named R4 queue, exactly. `_row_official`'s core became
-`_official_match(leaves)`; folds are display-level (in-memory
-merge_into/merge_members, NO curation writes, Generated until Verify).
-Stand-alone payload −301 exactly.
-
-**Ops resolution:** the 06-11 backstop cron fired at 14:17 UTC (primary was
-dropped — the documented scheduler flakiness, no action needed) and ran with
-the #347 generator, so the deployed dashboard already carries the gate + the
-fixed refresh button.
-
-**Carryover / next:** (1) The 31 `_unresolved` promotions keys (now
-gate-aware). (2) Sam's curator queue: the kin-ranked evidence lane top (~123
-kin-backed groups incl. the 12 stand-alone contested entries; the 187
-stale-receipt groups below the banner are Skip material). (3) Verify
-tomorrow's cron no-ops on the R4 artifacts. (4) Sam-only: re-paste
-`cloudflare-worker-proxy.js` into the Cloudflare dashboard (durable
-refresh-button fix; the button works against either version now). (5)
-Standing: CIS↔CS §5 sign-off, ACE skill-level scope, College/System EACR
-views, EACR v2, 5 DSPS `53414` strays, `PEDS M10AE`.
+> **Session 41 narrative archived** → `docs/roadmap_archive.md` (the
+> witness-kinship gate + R4 singletons, 2026-06-11).
 
 ### Session 42 — the slot-fix: 51% of the promotions evidence was keyed to slot-mates (2026-06-11)
 
@@ -1617,6 +1550,23 @@ sequence/conflict NEVER auto-route) + the layman's **CCR rules brief**
 `docs/ccr_cluster_cleanup_lessons.md` (Session 42); rules:
 `methodology-alias-map-resolution-semantics.md` +
 `docs/cid_articulation_authority_scope.md`.
+
+### Session 43 — Bruh Starlord: cron no-op verified + the off-pane-columns bug (2026-06-11)
+
+Troubleshooting day; 4 PRs, all merged on green. **Slotfix cron no-op
+VERIFIED** (timestamp-normalized payload hashes byte-stable across #357 + 3
+daily runs; suggestions churn gone; a `/tmp` regen reproduced HEAD exactly).
+**#370** audit overlay era-busted (the one unbusted lazy fetch) + 2 UC_OUT_DIR
+seam papercuts. **#371** `.claude/settings.json` defaults sessions to
+`claude-fable-5[1m]` (web `/model` picks are session-scoped; the picker strips
+`[1m]` — upstream #41078). **#372/#373** Sam's "AJ blank columns": auto table
+layout parks columns past the scroll wrap's right edge (h-scrollbar buried at
+the bottom of the 70vh wrap; per-discipline since each filtered set lays out
+its own widths; DOM was complete — jsdom can't see layout) → `table-layout:
+fixed` + colgroups + min-width 900 net; clipping scoped to 5 text columns
+after a perf dip (**"still a bit slow" — WATCH**). KB note:
+[`methodology-fixed-table-layout-off-pane-columns.md`](docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md);
+lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 43).
 
 ---
 
