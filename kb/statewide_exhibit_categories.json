@@ -1,0 +1,361 @@
+{
+  "_comment": "Statewide (CCC Collaborative) exhibit title -> program-area category, per the categories on https://map.rccd.edu/statewidecpl/. AI-assisted STAGING seed (kb/_seed_statewide_categories.py) — edit freely; re-runs preserve existing assignments and only add new titles. 'patterns' are the generator's runtime fallback for titles not listed here (first substring match wins, case-insensitive); unmatched titles land in 'fallback'. Review queue: titles assigned to the fallback bucket.",
+  "categories": [
+    "Administration of Justice",
+    "Automotive Technology",
+    "Computer Information Systems",
+    "Construction Technology",
+    "Corrections",
+    "Emergency Medical Services",
+    "Fire Technology",
+    "Fire Technology - Wildland",
+    "Kinesiology/Health",
+    "Real Estate",
+    "Welding",
+    "World Languages"
+  ],
+  "fallback": "Other Statewide",
+  "in_progress": [
+    "HVAC — faculty currently meeting"
+  ],
+  "titles": {
+    "ASE A1 — Engine Repair": "Automotive Technology",
+    "ASE A2 — Automatic Transmission/Transaxle": "Automotive Technology",
+    "ASE A3 — Manual Drive Train and Axles": "Automotive Technology",
+    "ASE A4 — Suspension and Steering": "Automotive Technology",
+    "ASE A5 — Brakes": "Automotive Technology",
+    "ASE A6 — Electrical/Electronic Systems": "Automotive Technology",
+    "ASE A7 — Heating and Air Conditioning": "Automotive Technology",
+    "ASE A8 — Engine Performance": "Automotive Technology",
+    "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair": "Automotive Technology",
+    "ASE G1 — Auto Maintenance and Light Repair": "Automotive Technology",
+    "ASE L1 — Advanced Engine Performance Specialist": "Automotive Technology",
+    "ASME BPVC Section IX — FCAW Welder Qualification": "Welding",
+    "ASME BPVC Section IX — GMAW Welder Qualification": "Welding",
+    "ASME BPVC Section IX — GTAW Welder Qualification": "Welding",
+    "ASME BPVC Section IX — SMAW Welder Qualification": "Welding",
+    "AWS Certified Cloud Practitioner": "Computer Information Systems",
+    "AWS Certified SysOps Administrator — Associate": "Computer Information Systems",
+    "AWS D1.1 FCAW Qualified Welder": "Welding",
+    "AWS D1.1 SMAW Qualified Welder": "Welding",
+    "AWS D1.3 GMAW Qualified Welder": "Welding",
+    "AWS D1.5 SMAW Qualified Welder": "Welding",
+    "AWS D1.8 FCAW Qualified Welder": "Welding",
+    "AWS D17.1 GTAW Qualified Welder": "Welding",
+    "AWS D9.1 GMAW Qualified Welder": "Welding",
+    "Acoustical Installer Apprenticeship": "Construction Technology",
+    "Advanced Gas Tungsten Arc Welding (GTAW)": "Welding",
+    "Basic Military Training": "Kinesiology/Health",
+    "Building Plans Examiner": "Construction Technology",
+    "C-10 Electrical Contractor": "Construction Technology",
+    "C-29 Masonry Contractor": "Construction Technology",
+    "C-36 Plumbing Contractor": "Construction Technology",
+    "C-46 Solar Contractor": "Construction Technology",
+    "C-47 General Manufactured Housing Contractor": "Construction Technology",
+    "C-5 Framing and Rough Carpentry Contractor": "Construction Technology",
+    "C-6 Cabinet, Millwork and Finish Carpentry Contractor": "Construction Technology",
+    "C-8 Concrete Contractor": "Construction Technology",
+    "Cabinetmaker Apprenticeship": "Construction Technology",
+    "California Building Code Certification": "Construction Technology",
+    "California Real Estate Broker License": "Real Estate",
+    "California Real Estate Salesperson License": "Real Estate",
+    "California Residential Code Certification": "Construction Technology",
+    "California State Bar Membership": "Other Statewide",
+    "California State Fire Officer Certification": "Fire Technology",
+    "Carpentry Apprenticeship": "Construction Technology",
+    "Cisco Certified CyberOps Associate": "Computer Information Systems",
+    "Cisco Certified Network Associate (CCNA)": "Computer Information Systems",
+    "Class A Contractor License": "Construction Technology",
+    "Class B Contractor License": "Construction Technology",
+    "Class B-2 Contractor License": "Construction Technology",
+    "Commercial Building Inspector": "Construction Technology",
+    "Commercial Electrical Apprenticeship": "Construction Technology",
+    "CompTIA A+": "Computer Information Systems",
+    "CompTIA Cloud+": "Computer Information Systems",
+    "CompTIA CySA+": "Computer Information Systems",
+    "CompTIA Linux+": "Computer Information Systems",
+    "CompTIA Network+": "Computer Information Systems",
+    "CompTIA PenTest+": "Computer Information Systems",
+    "CompTIA Project+": "Computer Information Systems",
+    "CompTIA Security+": "Computer Information Systems",
+    "CompTIA Server+": "Computer Information Systems",
+    "CompTIA Tech+": "Computer Information Systems",
+    "Construction Craft Laborer Apprenticeship": "Construction Technology",
+    "Correctional Officer Core Course (CDCR/CPOST)": "Corrections",
+    "Defense Language Proficiency Test (DLPT) — Russian": "World Languages",
+    "Defense Language Proficiency Test (DLPT) — Spanish": "World Languages",
+    "Drywall Applicator Apprenticeship": "Construction Technology",
+    "EMT Certification": "Emergency Medical Services",
+    "Fire Apparatus Driver/Operator 1A": "Fire Technology",
+    "Fire Fighter Paramedic Journeyperson Certificate": "Emergency Medical Services",
+    "Fire Inspector 1A": "Fire Technology",
+    "Fire Inspector 1B": "Fire Technology",
+    "Fire Inspector 1C": "Fire Technology",
+    "Fire Inspector 1D": "Fire Technology",
+    "Fire Inspector I": "Fire Technology",
+    "Fire Officer Journeyperson Certificate": "Fire Technology",
+    "Fire Officer — Company Officer 2A": "Fire Technology",
+    "Fire Officer — Company Officer 2A–2E (Full Series)": "Fire Technology",
+    "Fire Officer — Company Officer 2B": "Fire Technology",
+    "Fire Officer — Company Officer 2C": "Fire Technology",
+    "Fire Officer — Company Officer 2D": "Fire Technology",
+    "Fire Officer — Company Officer 2E": "Fire Technology",
+    "Firefighter 1": "Fire Technology",
+    "Firefighter EMT Certificate": "Emergency Medical Services",
+    "Gas Metal Arc Welding (GMAW)": "Welding",
+    "HRCM 001": "Other Statewide",
+    "Hardwood Floor Layer Apprenticeship": "Construction Technology",
+    "Insulator Apprenticeship": "Construction Technology",
+    "Introduction to Gas Tungsten Arc Welding (GTAW)": "Welding",
+    "LA City Certified Welder — AWS D1.1 FCAW": "Welding",
+    "LA City Certified Welder — AWS D1.1 FCAW-S": "Welding",
+    "LA City Certified Welder — AWS D1.1 SMAW": "Welding",
+    "LA City Certified Welder — AWS D1.8 FCAW-S": "Welding",
+    "Microsoft Certified: Azure Administrator Associate (AZ-104)": "Computer Information Systems",
+    "Millwright Apprenticeship": "Construction Technology",
+    "Modular Installer Apprenticeship": "Construction Technology",
+    "NCCER CORE Curriculum - Introduction to Basic Construction Skills": "Construction Technology",
+    "NCCER Commercial Carpenter Journey Level": "Construction Technology",
+    "NCCER Commercial Electrician Level 1": "Construction Technology",
+    "NCCER Commercial Electrician Level 2": "Construction Technology",
+    "NCCER Commercial Electrician Level 3": "Construction Technology",
+    "NCCER Commercial Electrician Level 4/Journey Level": "Construction Technology",
+    "NCCER Construction Foreman Management": "Construction Technology",
+    "NCCER Construction Superintendent Management": "Construction Technology",
+    "NCCER Industrial Carpenter Journey Level": "Construction Technology",
+    "NCCER Industrial Electrician Level 1": "Construction Technology",
+    "NCCER Industrial Electrician Level 2": "Construction Technology",
+    "NCCER Industrial Electrician Level 3": "Construction Technology",
+    "NCCER Industrial Electrician Level 4/Journey Level": "Construction Technology",
+    "NCCER Welding Level 1": "Welding",
+    "NCCER Welding Level 2": "Welding",
+    "NCCER Welding Level 3": "Welding",
+    "NCCER Welding Level 4": "Welding",
+    "NWCG Wildland Fire Certifications (S-110 / IS-700 / IS-800 / P-101 / FI-110 / ICS-300 bundle)": "Fire Technology - Wildland",
+    "NWCG Wildland Fire Certifications (S-130 / S-219 / S-230 / S-231 / S-270 bundle)": "Fire Technology - Wildland",
+    "NWCG Wildland Fire Certifications (S-130/S-230/S-231/S-270)": "Fire Technology - Wildland",
+    "NWCG Wildland Fire Certifications (S-190 / S-290 / ICS-100 / ICS-700 bundle)": "Fire Technology - Wildland",
+    "OSHA 10 and 1 yr Experience": "Construction Technology",
+    "OSHA 30 and 6 months Experience": "Construction Technology",
+    "POST Basic Academy": "Administration of Justice",
+    "Paramedic Journeyperson Certificate": "Emergency Medical Services",
+    "Paramedic License": "Emergency Medical Services",
+    "Pile Driver Apprenticeship": "Construction Technology",
+    "Residential Building Inspector": "Construction Technology",
+    "Residential Electrical Apprenticeship": "Construction Technology",
+    "Residential Plans Examiner": "Construction Technology",
+    "SFT Fire Inspector 1C": "Fire Technology",
+    "Scaffold Erector Apprenticeship": "Construction Technology",
+    "Shielded Metal Arc Welding (SMAW)": "Welding",
+    "Shingler Apprenticeship": "Construction Technology",
+    "Standards and Training for Corrections (STC) / Board of Parole Hearings": "Corrections",
+    "Wildland Fire Certifications (C-190, C-290, ICS-100, ICS-700)": "Fire Technology - Wildland",
+    "Wildland Fire ICS/NWCG Certification Bundle": "Fire Technology - Wildland"
+  },
+  "patterns": [
+    [
+      "^ase ",
+      "Automotive Technology"
+    ],
+    [
+      "automotive",
+      "Automotive Technology"
+    ],
+    [
+      "aws certified",
+      "Computer Information Systems"
+    ],
+    [
+      "comptia",
+      "Computer Information Systems"
+    ],
+    [
+      "^cisco",
+      "Computer Information Systems"
+    ],
+    [
+      "ccna",
+      "Computer Information Systems"
+    ],
+    [
+      "microsoft certified",
+      "Computer Information Systems"
+    ],
+    [
+      "azure",
+      "Computer Information Systems"
+    ],
+    [
+      "cybersecurity",
+      "Computer Information Systems"
+    ],
+    [
+      "welder",
+      "Welding"
+    ],
+    [
+      "welding",
+      "Welding"
+    ],
+    [
+      "gtaw",
+      "Welding"
+    ],
+    [
+      "gmaw",
+      "Welding"
+    ],
+    [
+      "smaw",
+      "Welding"
+    ],
+    [
+      "fcaw",
+      "Welding"
+    ],
+    [
+      "asme bpvc",
+      "Welding"
+    ],
+    [
+      "wildland",
+      "Fire Technology - Wildland"
+    ],
+    [
+      "nwcg",
+      "Fire Technology - Wildland"
+    ],
+    [
+      "paramedic",
+      "Emergency Medical Services"
+    ],
+    [
+      "^emt",
+      "Emergency Medical Services"
+    ],
+    [
+      " emt",
+      "Emergency Medical Services"
+    ],
+    [
+      "emergency medical",
+      "Emergency Medical Services"
+    ],
+    [
+      "fire",
+      "Fire Technology"
+    ],
+    [
+      "correction",
+      "Corrections"
+    ],
+    [
+      "parole",
+      "Corrections"
+    ],
+    [
+      "cdcr",
+      "Corrections"
+    ],
+    [
+      "post basic",
+      "Administration of Justice"
+    ],
+    [
+      "post academy",
+      "Administration of Justice"
+    ],
+    [
+      "peace officer",
+      "Administration of Justice"
+    ],
+    [
+      "real estate",
+      "Real Estate"
+    ],
+    [
+      "dlpt",
+      "World Languages"
+    ],
+    [
+      "defense language",
+      "World Languages"
+    ],
+    [
+      "language proficiency",
+      "World Languages"
+    ],
+    [
+      "basic military training",
+      "Kinesiology/Health"
+    ],
+    [
+      "kinesiology",
+      "Kinesiology/Health"
+    ],
+    [
+      "personal trainer",
+      "Kinesiology/Health"
+    ],
+    [
+      "apprenticeship",
+      "Construction Technology"
+    ],
+    [
+      "contractor",
+      "Construction Technology"
+    ],
+    [
+      "nccer",
+      "Construction Technology"
+    ],
+    [
+      "osha",
+      "Construction Technology"
+    ],
+    [
+      "building inspector",
+      "Construction Technology"
+    ],
+    [
+      "plans examiner",
+      "Construction Technology"
+    ],
+    [
+      "building code",
+      "Construction Technology"
+    ],
+    [
+      "residential code",
+      "Construction Technology"
+    ],
+    [
+      "construction",
+      "Construction Technology"
+    ],
+    [
+      "masonry",
+      "Construction Technology"
+    ],
+    [
+      "plumbing",
+      "Construction Technology"
+    ],
+    [
+      "carpentry",
+      "Construction Technology"
+    ],
+    [
+      "electrical",
+      "Construction Technology"
+    ],
+    [
+      "concrete",
+      "Construction Technology"
+    ],
+    [
+      "framing",
+      "Construction Technology"
+    ]
+  ]
+}
