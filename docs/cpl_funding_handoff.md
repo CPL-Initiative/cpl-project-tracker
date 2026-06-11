@@ -10,12 +10,23 @@ related:
 # You are the next Implementation-Funding session
 
 You're resuming the **CPL Implementation Funding** tab workstream
-(`#implementation-funding`). It shipped 2026-06-11 in two PRs from a session
-that ran parallel to an active CCR session, under a deliberate constraint:
-**PR 1 = tab shell in both HTMLs only; everything after = new files only**
-(no `export_unified_courses`, no `unified_courses*.js`, nothing under
-`kb/coci_*` / `kb/promotions.json`). Honor that constraint unless Sam says
-the parallel-session freeze is over.
+(`#implementation-funding`), built 2026-06-11 across **13 merged PRs
+(#352–#368)** by "Tranche One", parallel to an active CCR session. The
+original new-files-only freeze is OVER (coordination checks + surgical
+disjoint edits became the working mode), but the instinct stands: keep to
+the funding lane's files; never touch `export_unified_courses`,
+`unified_courses*.js`, `kb/coci_*`, `kb/promotions.json`; coordinate via
+repo state (open PRs / branches) before shared-file edits.
+
+**The arc, in order:** #352 shell (fail-soft lazy boot) → #353 data +
+renderer + test → #354 registration/pii_guard → #355 teaser → #356 v1.1
+(districts/period/drill-ins; found the SUM-range variance) → #358 DataMart
+provenance → #359 what-if sandbox (formulas read from the xlsx) → #360
+**rev2 shares-first workbook** (SUM fix, input-driven builder) → #361 v2
+scope + privacy ADR → #363 P1-gap KB note → #364 **P2/P3 actuals vs target**
+(ADR ratified) + DRAFT chip → #367 roster edits + **no-scroll standing
+rule** + unmatched surfacing → #368 Mt SAC credit/NC split. Sam's verdict:
+"hotter than a two-dollar pistol."
 
 ## Read in order
 
@@ -27,25 +38,36 @@ the parallel-session freeze is over.
 3. `docs/kb-notes/methodology-standing-pii-guard.md` — before adding ANY new
    data column to the artifact.
 
-## What exists
+## What exists (post-checkpoint state)
 
-- **Shell** (PR #352, in both HTMLs): rail button after Budget, pane
-  `#tab-implementation-funding`, mount `#cplFundingMount`, inline boot that
-  lazy-loads `cpl_funding.js` (fails soft → placeholder). You should never
-  need to touch the HTMLs for behavior changes — `cpl_funding.js` owns the
-  pane after first activation, and its CSS is injected from JS.
-- **Data**: `cpl_funding_data.js` (`window.CPL_FUNDING`) ← built by
-  `funding/_build_funding_data.py` ← `funding/CPL_Funding_Model_2026.xlsx`
-  (committed, PII-clean). STATIC — the daily cron neither builds nor commits
-  it. New workbook edition = overwrite the xlsx, re-run the builder, commit
-  both, done.
-- **Renderer**: `cpl_funding.js` (`window.CPL_FUNDING_TAB.boot()`): pool
-  cards, 3 priority cards, formula explainer, searchable/sortable college
-  table, SYSTEM tfoot total, footnotes.
-- **Test**: `tests/cpl_funding.test.js` (33 assertions: Rule-4 parity, shell
-  wiring, lazy-only loading, model-math invariants, PII scan, render/search/
-  sort/empty-state). Run `npm test` before every push; extend it with every
-  behavior you add.
+- **Shell** (#352, both HTMLs — never needs touching): rail button, pane
+  `#tab-implementation-funding`, mount, fail-soft lazy boot of
+  `cpl_funding.js`. CSS injected from JS; DRAFT chip injected from JS too.
+- **Workbook** `funding/CPL_Funding_Model_2026.xlsx` — **rev2 shares-first**
+  (inputs = pools + 3 priority SHARES + projection TARGETS; dollars =
+  headcount share × share × tranche; balance $0 by construction;
+  `C8=SUM(C9:C127)`; 119 colleges incl. Mt San Antonio Noncredit). Revision
+  history = the committed one-shots `funding/_revise_workbook_*.py`. ⚠ It
+  shows blank derived cells until next opened+saved in Excel
+  (fullCalcOnLoad set). Vintage: roster believed 23-24 MIS (header says
+  2022-23), Mt SAC pair is 24-25 — **Sam owes a full 25-26 table**.
+- **Builder** `funding/_build_funding_data.py` — INPUT-DRIVEN (computes the
+  chain; never reads cached formulas; extent via numeric ORDER col; warns
+  on 0-headcount rows) → `cpl_funding_data.js` (static, committed).
+- **Actuals** `funding/_build_funding_performance.py` — daily workflow step
+  4a2 over transient `CustomReport_latest.json` → `cpl_funding_performance.js`
+  (cron artifact, in git-add): per-college P2/P3 distinct students, <5
+  suppressed (RATIFIED ADR), unmatched bucket (footer-surfaced when
+  non-empty). First data: 27 colleges, P2 4,635 / P3 16,151.
+- **Renderer** `cpl_funding.js`: pool cards (4 editable), priority cards
+  (share/target inputs + actual-vs-target lines; P1 = labeled incentive
+  gap), formula explainer (warns when shares ≠ 100%), what-if sandbox
+  (localStorage `cpl_funding_whatif_v2`, Reset pill), Colleges|Districts +
+  Per-year|2026-30 toggles, drill-ins, no-scroll table (CCD-folded
+  districts, P1/P2/P3 headers), provenance + actuals footnotes.
+- **Tests**: `tests/cpl_funding.test.js` (94) + `tests/cpl_funding_performance.test.js`
+  (15, runs the real producer on a synthetic fixture). Extend with every
+  behavior; never hardcode data-derived expectations.
 
 ## Priority queue
 

@@ -62,7 +62,13 @@ The whole ecosystem, end-to-end:
    and get streamed answers drawn from the knowledge base, live dashboard
    metrics, and 2,300+ statewide exhibits; it talks to the shared `cpl-chat`
    Supabase Edge Function that also powers the live map.rccd.edu widget),
-   and a **Pipeline** progress board.
+   an **Implementation Funding** tab (the DRAFT 2026-30 CPL funding model:
+   one-time pools, three funding priorities, per-college potential
+   allocations with district rollups and drill-ins, a login-free **what-if
+   sandbox** — edit the pools, priority shares, and projection targets and
+   every figure recomputes in your browser — plus live P2/P3 priority-metric
+   actuals from MAP; Priority 1 completions are a deliberate, labeled data
+   gap kept as an incentive), and a **Pipeline** progress board.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,
    then `excel_to_dashboard.py` regenerates the dashboard HTML, exports the

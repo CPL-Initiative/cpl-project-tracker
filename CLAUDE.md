@@ -695,7 +695,7 @@ documented elsewhere; the CPL Assistant RAG tab is detailed in §7c):
 | `activities-projects` | Activities & Projects | Workplan Activity Metrics, Filter Bar, Projects Grid (the `#workplanProjectsWrapper` collapsible — see §6b). **Added 2026-05-31, PR #206.** |
 | `workplan-goals` | Annual Workplan Goals | The 5-year goals + stretch + current table |
 | `budget` | Budget | CPL Budget & Expenditure Plan |
-| `implementation-funding` | Implementation Funding | CPL Implementation Funding model — 2026-30 one-time pools, the 3 funding priorities, per-college potential allocations. Shell (pane + lazy inline boot) is static HTML; content renders from `cpl_funding.js` + `cpl_funding_data.js` (both lazy, neither cron-regenerated). **Added 2026-06-11, PRs #352/#353** — see `docs/cpl_funding_lessons.md` + `docs/cpl_funding_handoff.md`. |
+| `implementation-funding` | Implementation Funding | CPL Implementation Funding model (DRAFT-chipped) — 2026-30 one-time pools, 3 priorities (shares-first, rev2 workbook), 119 colleges' potential allocations, a **what-if sandbox** (pools/shares/targets editable, per-browser, Reset-to-workbook), and **P2/P3 actuals vs target** from the daily `cpl_funding_performance.js` (P1 = deliberate incentive gap). Shell static; renders from `cpl_funding.js` + `cpl_funding_data.js` (lazy; data static, actuals cron). **Built 2026-06-11, PRs #352–#368** — `docs/cpl_funding_lessons.md` + `docs/cpl_funding_handoff.md`. |
 | `vision-2030` | Vision 2030 | Vision 2030 Alignment cards with live progress |
 
 Implementation notes (important — keep in sync with the generator):
