@@ -31,11 +31,20 @@ flags, per `College`.
 | **P3** capacity | Total headcount with transcribed CPL in MAP **and MIS** | ◐ MAP half today | distinct students where `Transcribed Credits > 0`. The "and MIS" cross-check is NOT in our pipeline (MIS DataMart is a manual report — see the headcount-provenance note) — label the column "per MAP" until an MIS feed exists |
 | **P1** completion | Documented **completion** with transcribed CPL units ≥6 in MAP | ❌ **data gap** | no completion/award field exists anywhere in the 9-category pull; completions live in **MIS** (student awards), not MAP |
 
-**P1 acquisition options** (Sam's fork): (a) ask CCCCO/MAP whether award
-data will be ingested into MAP (then it appears in a view and we extend);
-(b) annual MIS DataMart awards report (manual pull, college-level, joined by
-college name — coarse but real); (c) defer P1 — ship P2/P3 with P1 marked
-"awaiting completion source". Recommendation: **(c) now, pursue (a)**.
+**P1 — fork ② ANSWERED (Sam, 2026-06-11): deferred deliberately, kept as
+an incentive.** Colleges don't record completions in MAP (duplicative with
+their SIS — Banner/Colleague/PeopleSoft); DataMart aggregates can't yet tie
+to MAP student records; MAP Student IDs are inconsistent (CCCApply
+integration fixes identity later, forward-only); the probable operational
+fix is a periodic SIS→MAP ingestion routine. Sam keeps the P1 metric to
+incentivize closing the gap and to eventually demonstrate the CAEL-WICHE
+completion effect with CA data. **Full anatomy + the strategy ladder
+(identity-first P3 sub-indicator, maturity ladder, CO-level match-back
+before 116 SIS integrations, decoupled research study, provenance stamps,
+labeled dashboard state):**
+[`kb-notes/reference-p1-completion-data-gap.md`](kb-notes/reference-p1-completion-data-gap.md).
+Build consequence: ship P2/P3; render P1 as a labeled "awaiting completion
+data (incentive metric)" state — never a blank.
 
 ## Build ladder (after the ADR is ratified)
 
