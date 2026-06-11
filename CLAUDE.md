@@ -207,15 +207,18 @@ into the Pipeline Reference below or into dedicated docs.
   backstop cron (generated-file conflicts are never resolvable by picking
   sides — you rebuild + regen). Manual live-on-merge artifact commits remain
   the FALLBACK when same-hour liveness matters and no dispatch path exists.
-  ⚠ Sessions currently CANNOT dispatch workflows (`actions: write` 403 —
-  confirmed Sessions 34/36/41); once Sam grants the Claude GitHub App
-  **Actions: Read and write**, the post-merge dispatch becomes the default
-  and this fallback retires.
-- **Sam's one-time repo toggles (recommended, Session 41):** ① Settings →
-  Pull Requests → **Allow auto-merge** (lets a session arm auto-merge instead
-  of polling); ② **Automatically delete head branches**; ③ the Claude GitHub
-  App permission **Actions: Read and write** (unblocks self-dispatch: cron
-  self-heal + the artifact policy above).
+  ✅ **Dispatch GRANTED + CONFIRMED 2026-06-11** (Sam accepted the Claude
+  GitHub App's Actions permission; a session dispatched `daily-dashboard.yml`
+  via `mcp__github__actions_run_trigger` the same minute — 204). The
+  post-merge dispatch is now the DEFAULT: merge the code-only PR, dispatch
+  the workflow, let the runner publish artifacts. Manual artifact commits
+  only when the workflow itself is broken.
+- **Sam's one-time repo toggles — ALL SET 2026-06-11:** ① **Allow
+  auto-merge** ✅ (a session can `enable_pr_auto_merge` after marking ready);
+  ② **Automatically delete head branches** ✅ (the post-merge 403 branch
+  leftovers end); ③ Claude GitHub App **Actions: Read and write** ✅
+  (self-dispatch works — cron self-heal + the artifact policy above are
+  live).
 - **Always watch PRs.** When a Claude session opens a PR, subscribe to its
   activity (CI + review comments) and follow through — fixing small/clear
   issues, asking when ambiguous — until the PR is merged or closed.

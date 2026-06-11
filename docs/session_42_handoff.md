@@ -89,9 +89,11 @@ POLICY CHANGES SHIPPED AT SESSION-41 CLOSE (read before working):
     keep <= 2 narratives inline (archive older at checkpoint).
   - Sibling claude/<desc> branches AUTHORIZED for independent PRs (no
     more 3-stacked-PRs-one-branch serialization).
-  - Prefer CODE-ONLY PRs; artifacts via cron/dispatch. Manual artifact
-    commits = fallback until Sam grants the app Actions: Read and write
-    (check whether he has — then post-merge dispatch is the default).
+  - Prefer CODE-ONLY PRs; artifacts via cron/dispatch. Actions: Read
+    and write is GRANTED + dispatch-confirmed (2026-06-11, 204 on
+    daily-dashboard.yml) — post-merge dispatch IS the default; you can
+    also self-heal a dropped cron with actions_run_trigger. All three
+    repo toggles are set (auto-merge, delete-head-branches, Actions).
   - Rule 5 clarified (feature branches force-with-lease freely; main
     never, except a coordinated PII-scrub with Sam's go).
 
