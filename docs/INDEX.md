@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-11 (Session 41 — the WITNESS-KINSHIP GATE: 565 chimera folds un-folded, claims-only official rows (C-ID 259→456), official-row stats from displayed members, kin-aware evidence lane; NEW methodology-witness-kinship-gate. [Earlier: Session 38 — CCR 5-item refinements #333 (SUBJ4 column, ⚇ Merge pill, units-range); the first FAN-IN convergences: Kinesiology ⟵ Physical Education #334 (+ ATHL/PEDS carve-outs) and Drama/Theater Arts ⟵ Theater Arts #335 (+ the singleton-layer extension + auditor refresh); NEW methodology-fan-in-discipline-convergence. [Earlier: impact columns #326 + FL SUBJ4 re-mint #327/#328])
+updated: 2026-06-11 (Session 42 — the SLOT-FIX: R1's promotions re-key had mis-keyed 51% of the evidence index (alias maps are permutations with slot reuse, not graphs); rebuilt + re-applied (lane 310→158 all-kin, R4 folds 301→610, ANTH 120 2→7); CCR era guard for mixed-era lazy joins; NEW methodology-alias-map-resolution-semantics. [Earlier: Session 41 — the WITNESS-KINSHIP GATE: 565 chimera folds un-folded, claims-only official rows (C-ID 259→456), official-row stats from displayed members, kin-aware evidence lane; NEW methodology-witness-kinship-gate. [Earlier: Session 38 — CCR 5-item refinements #333; fan-in convergences #334/#335]])
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -90,6 +90,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Fan-in discipline convergence (fold alternate names to a canonical)](kb-notes/methodology-fan-in-discipline-convergence.md) | methodology | published | 2026-06-10 | 2026-06-11 (guard 7) |
 | [Methodology — Re-key every id-keyed artifact (the severed promotions index; registry + conservation gates + drift detector)](kb-notes/methodology-rekey-every-id-keyed-artifact.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Methodology — Witness-kinship gate (historical receipts need a present-tense validity check)](kb-notes/methodology-witness-kinship-gate.md) | methodology | published | 2026-06-11 | 2026-06-11 |
+| [Methodology — Alias maps are permutations, not graphs (slot-reuse resolution semantics)](kb-notes/methodology-alias-map-resolution-semantics.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Methodology — Rank a cleanup queue by downstream impact, not structural leverage](kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Coarse TOP-division discipline fallback (make the orphan tail visible)](kb-notes/methodology-coarse-top-division-discipline-fallback.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Surface a finer derived layer on a single-grain reference tab](kb-notes/methodology-surface-derived-layer-on-single-grain-tab.md) | methodology | published | 2026-06-09 | 2026-06-09 |

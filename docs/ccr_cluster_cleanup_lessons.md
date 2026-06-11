@@ -583,3 +583,88 @@ One number worth keeping: the day's net is **852 identities** (551 chimera
 un-folds correcting Session 40 + 301 singleton folds extending it) moved to
 their evidence-correct positions by ONE gate, measured twice before each
 ship.
+
+---
+
+## Session 42 — the slot-fix: half the evidence index was keyed to slot-mates (2026-06-11)
+
+Started as the handoff's bounded item 3 ("the 31 `_unresolved` promotions
+keys") and unraveled the whole R1 re-key. Three compounding discoveries:
+
+1. **The over-merge alias map was never applied.** R1's chain included
+   `kb/overmerge_out/2026-05-29/alias_map.json` as an "applied re-mint" — but
+   that plan is STAGED, gated on Sam's dispatch, never dispatched (Session 18,
+   roadmap archive). 1,259 of its 1,299 "retired" old ids are still live. The
+   31 unresolved keys all resolved through its phantom split ids.
+2. **`kb/subj4_apply/alias_map.json` carries a stale "DRY-RUN" `_status`** —
+   it is the frozen dry-run plan the apply consumed VERBATIM (report.md:
+   "APPLIED — kb files mutated in place"; 65,311 moves confirmed by the
+   per-row `_subj4_remint_from` stamps). Its `fate: "no_change"` entries mean
+   *SUBJ4* unchanged — the **number still re-sequenced** ("ECON M1001" →
+   "ECON M1005"), so the catalog-wide apply was a **simultaneous permutation
+   with massive slot reuse** (19,353 retired slots re-occupied by different
+   rows in the same instant).
+3. **The R1 resolver iterated the maps "until stable" and short-circuited
+   on live keys** — both wrong under slot reuse. Iteration follows
+   *slot-occupancy chains* across unrelated rows ("AGR M1001" telescoped
+   ECON M1001→M1005→…→M1035, nine fictional hops); the liveness shortcut
+   pinned a record to a slot whose family had moved away ("ANTH M1023"
+   stayed live while its family moved to "ANTH M1035").
+
+**Measured damage (R1 as shipped): 1,066 of 2,083 promotions records (51%)
+mis-keyed** — 236 wrong/unresolved destinations + 830 false-"unchanged"
+slot-pins. The Session-41 case study inverts poetically: "APPLIED
+ANTHROPOLOGY's 40 stale ANTH 120 witnesses" were never stale — they were
+*correct* evidence pinned to the slot-mate; the kinship gate rightly
+protected the wrong row, and the right row (ANTH M1035 "Cultural
+Anthropology") was missing its fold. The gate and the slot-fix compose:
+re-key puts evidence on the right rows, the gate validates it there.
+
+**The fix (`kb/_rekey_promotions.py` rebuilt + applied from the pre-R1
+baseline):** chronological **single-step** resolution (each apply-confirmed
+map looked up AT MOST once, never iterated, no liveness shortcut),
+era-stamping (`_rekeyed_through`) so re-runs apply only newly-appended maps,
+the over-merge plan excluded until dispatched, V5 stamp gate (every
+resolution checked against `_subj4_remint_from` ground truth — 1,954 checked,
+0 conflicts), abort guard on mixed-era inputs, and a resolver self-test every
+run. Result: 1,972 re-keyed + 111 true-unchanged + **0 unresolved** + 14
+genuine folds (the Spanish twins gained witnesses: SPAN M1064/M1104 etc. fold
+into their FLSP winners). `kb/_analyze_official_fold_evidence.py` fixed in
+lockstep; the subj4 map's `_status` corrected in place (original preserved).
+
+**CCR effect (regenerated, tests 23/23):** Phase B 1,155→1,178 folded M-IDs
+(239 official rows); claims-only officials 307→193 (114 gained real folds);
+R4 stand-alone folds 301→**610**; evidence lane 310→**158 groups, all
+kin-backed** (the 187 phantom "stale" groups dissolved — they were mis-keyed,
+not stale); stand-alone payload 55,830→55,521. Marquee: ANTH 120 folds grew
+2→7 (M1035 home); AUTO 120 X/150 X keep descriptor titles AND gain real kin
+folds (M1065/M1067 transmissions; M1075/76/79 brakes — 21 and 51 member rows,
+all on-topic); SPAN 200/210 rosters byte-identical; 5 chimera rows now carry
+no evidence at all. One curated row (AGRI M1002 "Agricultural Accounting",
+cross-listed Business) folded under C-ID AG-AB 128 "Agricultural Accounting"
+— kin-exact, precedented (ARTS M1159), curation rides the overlay.
+
+**Also shipped:** `family_groups` sort gains a sig tiebreak (same-score pairs
+churned the artifact daily); the CCR **era guard** (`unified_courses.js`) —
+lazy files now fetch with `?v=<era>` and a >15-min stamp mismatch surfaces a
+one-time reload banner (`tests/uc_era_guard.test.js`). That guard is the
+likely answer to Sam's "non-argumentation courses in COMM M1006": every
+committed surface of COMM M1006 (members at every revision, descriptions,
+xlsx, both 06-10/06-11 deploys) is argumentation-pure — but a tab held open
+across a deploy joins old row ids against a new lazy file, and under slot
+reuse that renders a different family's members beneath a row. Durable note:
+[`docs/kb-notes/methodology-alias-map-resolution-semantics.md`](kb-notes/methodology-alias-map-resolution-semantics.md).
+
+**Patterns:**
+- **A receipt's `_status` is itself a receipt — restamp it at apply time.**
+  The stale DRY-RUN header on an applied map misled both R1's author and this
+  session's first hour. (Now a playbook step.)
+- **An alias map is a permutation, not a digraph.** Slot reuse makes
+  iteration follow occupancy history, not the row. Resolve single-step,
+  chronologically, era-stamped — and validate against per-row provenance
+  stamps, which are the only artifact that travels WITH the row.
+- **"The key is live" proves nothing about the family** — same lesson as the
+  kinship gate, one layer down: liveness shortcuts are slot-pins.
+- **Validate against a family the bug can't reach and you'll ship the bug.**
+  Session 40/41 validated on Spanish — FLNG/FLSP namespaces postdate the
+  subj4 permutation, so they were immune to telescoping by construction.

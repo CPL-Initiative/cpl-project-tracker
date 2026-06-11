@@ -215,6 +215,41 @@
       body: JSON.stringify({ course_id: courseId, field: "description", value: value, reviewer_email: sess.email })
     });
   }
+  // Era guard (Session 42). The lazy files are fetched LATER than the main
+  // payload, so a tab held open across a daily deploy joins old row ids
+  // against a NEW lazy file (and a stale browser cache gives the inverse mix).
+  // Re-mint slot reuse means an id can denote a DIFFERENT course family in a
+  // different era, so a mixed-era join silently renders another family's
+  // members/details under a row. _eraSrc pins the fetch URL to this tab's
+  // dataset stamp (defeats the stale-cache direction); _eraGuard compares the
+  // loaded file's stamp against the tab's and surfaces a reload banner on a
+  // real mismatch (the held-open-tab direction). 15-minute tolerance: each
+  // artifact stamps its own clock during a multi-minute generator run.
+  function _ucEra() { return (window.CPL_UNIFIED_COURSES || {}).generated_at || ""; }
+  function _eraSrc(file) {
+    var era = _ucEra();
+    return era ? file + "?v=" + encodeURIComponent(era) : file;
+  }
+  var _eraWarned = false;
+  function _eraGuard(payload) {
+    if (_eraWarned || !payload || !payload.generated_at) return;
+    var era = _ucEra();
+    if (!era) return;
+    var a = Date.parse(String(era).replace(" ", "T"));
+    var b = Date.parse(String(payload.generated_at).replace(" ", "T"));
+    if (isNaN(a) || isNaN(b) || Math.abs(a - b) <= 15 * 60 * 1000) return;
+    _eraWarned = true;
+    var bar = document.createElement("div");
+    bar.id = "uc-era-warning";
+    bar.setAttribute("role", "alert");
+    bar.style.cssText = "margin:6px 0;padding:6px 10px;border:1px solid var(--cpl-warn,#b45309);" +
+      "background:var(--cpl-warn-bg,#fef3c7);color:var(--cpl-warn-text,#92400e);" +
+      "border-radius:6px;font-size:12px;";
+    bar.textContent = "⟳ The dataset behind this tab was refreshed after the page loaded — " +
+      "expanded member/detail views may not match the rows shown. Reload the page for a consistent view.";
+    var host = document.getElementById("uc-toolbar") || document.getElementById("tab-unified-courses");
+    if (host) host.insertBefore(bar, host.firstChild);
+  }
   // Lazy-load the compact all-course search index (only when a curator opens
   // the Generate-unified-course dialog).
   var _ucIndex = null, _ucIndexP = null;
@@ -224,7 +259,7 @@
     _ucIndexP = new Promise(function (resolve) {
       if (window.CPL_UC_INDEX) { _ucIndex = window.CPL_UC_INDEX; resolve(_ucIndex); return; }
       var s = document.createElement("script");
-      s.src = "unified_courses_index.js";
+      s.src = _eraSrc("unified_courses_index.js");
       s.onload = function () { _ucIndex = window.CPL_UC_INDEX || []; resolve(_ucIndex); };
       s.onerror = function () { _ucIndex = []; resolve(_ucIndex); };
       document.head.appendChild(s);
@@ -238,10 +273,10 @@
     if (_ucDetails) return Promise.resolve(_ucDetails);
     if (_ucDetailsP) return _ucDetailsP;
     _ucDetailsP = new Promise(function (resolve) {
-      if (window.CPL_UC_DETAILS) { _ucDetails = window.CPL_UC_DETAILS; resolve(_ucDetails); return; }
+      if (window.CPL_UC_DETAILS) { _eraGuard(window.CPL_UC_DETAILS); _ucDetails = window.CPL_UC_DETAILS; resolve(_ucDetails); return; }
       var s = document.createElement("script");
-      s.src = "unified_courses_details.js";
-      s.onload = function () { _ucDetails = window.CPL_UC_DETAILS || {}; resolve(_ucDetails); };
+      s.src = _eraSrc("unified_courses_details.js");
+      s.onload = function () { _eraGuard(window.CPL_UC_DETAILS); _ucDetails = window.CPL_UC_DETAILS || {}; resolve(_ucDetails); };
       s.onerror = function () { _ucDetails = {}; resolve(_ucDetails); };
       document.head.appendChild(s);
     });
@@ -254,10 +289,10 @@
     if (_ucMembers) return Promise.resolve(_ucMembers);
     if (_ucMembersP) return _ucMembersP;
     _ucMembersP = new Promise(function (resolve) {
-      if (window.CPL_UC_MEMBERS) { _ucMembers = window.CPL_UC_MEMBERS; resolve(_ucMembers); return; }
+      if (window.CPL_UC_MEMBERS) { _eraGuard(window.CPL_UC_MEMBERS); _ucMembers = window.CPL_UC_MEMBERS; resolve(_ucMembers); return; }
       var s = document.createElement("script");
-      s.src = "unified_courses_members.js";
-      s.onload = function () { _ucMembers = window.CPL_UC_MEMBERS || { colleges: [], members: {} }; resolve(_ucMembers); };
+      s.src = _eraSrc("unified_courses_members.js");
+      s.onload = function () { _eraGuard(window.CPL_UC_MEMBERS); _ucMembers = window.CPL_UC_MEMBERS || { colleges: [], members: {} }; resolve(_ucMembers); };
       s.onerror = function () { _ucMembers = { colleges: [], members: {} }; resolve(_ucMembers); };
       document.head.appendChild(s);
     });
@@ -270,10 +305,10 @@
     if (_ucAligned) return Promise.resolve(_ucAligned);
     if (_ucAlignedP) return _ucAlignedP;
     _ucAlignedP = new Promise(function (resolve) {
-      if (window.CPL_UC_ALIGNED) { _ucAligned = window.CPL_UC_ALIGNED.aligned || {}; resolve(_ucAligned); return; }
+      if (window.CPL_UC_ALIGNED) { _eraGuard(window.CPL_UC_ALIGNED); _ucAligned = window.CPL_UC_ALIGNED.aligned || {}; resolve(_ucAligned); return; }
       var s = document.createElement("script");
-      s.src = "unified_courses_aligned.js";
-      s.onload = function () { _ucAligned = (window.CPL_UC_ALIGNED || {}).aligned || {}; resolve(_ucAligned); };
+      s.src = _eraSrc("unified_courses_aligned.js");
+      s.onload = function () { _eraGuard(window.CPL_UC_ALIGNED); _ucAligned = (window.CPL_UC_ALIGNED || {}).aligned || {}; resolve(_ucAligned); };
       s.onerror = function () { _ucAligned = {}; resolve(_ucAligned); };
       document.head.appendChild(s);
     });
@@ -286,10 +321,10 @@
     if (_ucSug) return Promise.resolve(_ucSug);
     if (_ucSugP) return _ucSugP;
     _ucSugP = new Promise(function (resolve) {
-      if (window.CPL_UC_SUGGESTIONS) { _ucSug = window.CPL_UC_SUGGESTIONS; resolve(_ucSug); return; }
+      if (window.CPL_UC_SUGGESTIONS) { _eraGuard(window.CPL_UC_SUGGESTIONS); _ucSug = window.CPL_UC_SUGGESTIONS; resolve(_ucSug); return; }
       var s = document.createElement("script");
-      s.src = "unified_courses_suggestions.js";
-      s.onload = function () { _ucSug = window.CPL_UC_SUGGESTIONS || { groups: [] }; resolve(_ucSug); };
+      s.src = _eraSrc("unified_courses_suggestions.js");
+      s.onload = function () { _eraGuard(window.CPL_UC_SUGGESTIONS); _ucSug = window.CPL_UC_SUGGESTIONS || { groups: [] }; resolve(_ucSug); };
       s.onerror = function () { _ucSug = { groups: [] }; resolve(_ucSug); };
       document.head.appendChild(s);
     });
@@ -419,10 +454,10 @@
     if (_ucMemDesc) return Promise.resolve(_ucMemDesc);
     if (_ucMemDescP) return _ucMemDescP;
     _ucMemDescP = new Promise(function (resolve) {
-      if (window.CPL_UC_MEMBER_DESC) { _ucMemDesc = window.CPL_UC_MEMBER_DESC.desc || {}; resolve(_ucMemDesc); return; }
+      if (window.CPL_UC_MEMBER_DESC) { _eraGuard(window.CPL_UC_MEMBER_DESC); _ucMemDesc = window.CPL_UC_MEMBER_DESC.desc || {}; resolve(_ucMemDesc); return; }
       var s = document.createElement("script");
-      s.src = "unified_courses_member_desc.js";
-      s.onload = function () { _ucMemDesc = (window.CPL_UC_MEMBER_DESC || {}).desc || {}; resolve(_ucMemDesc); };
+      s.src = _eraSrc("unified_courses_member_desc.js");
+      s.onload = function () { _eraGuard(window.CPL_UC_MEMBER_DESC); _ucMemDesc = (window.CPL_UC_MEMBER_DESC || {}).desc || {}; resolve(_ucMemDesc); };
       s.onerror = function () { _ucMemDesc = {}; resolve(_ucMemDesc); };
       document.head.appendChild(s);
     });
@@ -517,10 +552,10 @@
           }
           _standaloneLoaded = true; resolve();
         }
-        if (window.CPL_UC_STANDALONE) { done(); return; }
+        if (window.CPL_UC_STANDALONE) { _eraGuard(window.CPL_UC_STANDALONE); done(); return; }
         var s = document.createElement("script");
-        s.src = "unified_courses_standalone.js";
-        s.onload = done;
+        s.src = _eraSrc("unified_courses_standalone.js");
+        s.onload = function () { _eraGuard(window.CPL_UC_STANDALONE); done(); };
         s.onerror = function () { _standaloneLoaded = true; resolve(); };
         document.head.appendChild(s);
       });

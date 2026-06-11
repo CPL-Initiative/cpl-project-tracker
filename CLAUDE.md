@@ -52,8 +52,14 @@ into the Pipeline Reference below or into dedicated docs.
    write-time, articulations re-keyed, **`kb/promotions.json` re-keyed**
    (`kb/_rekey_promotions.py` — added 2026-06-11 after four re-mints skipped
    it, silently severing 53% of the Phase A/B official-ID fold evidence;
-   `docs/official_id_fold_scope.md`), atomic land within one cron window
-   (10:17 UTC). The "never bulk renumber" framing that previously lived
+   `docs/official_id_fold_scope.md`. Resolution semantics corrected SAME DAY,
+   Session 42: alias maps are simultaneous PERMUTATIONS with slot reuse —
+   apply each map ONCE, chronologically, era-stamped (`_rekeyed_through`),
+   apply-confirmed maps only, V5-validated against per-row `*_remint_from`
+   stamps; an apply that consumes a dry-run plan must RESTAMP the receipt's
+   `_status` —
+   [`docs/kb-notes/methodology-alias-map-resolution-semantics.md`](docs/kb-notes/methodology-alias-map-resolution-semantics.md)),
+   atomic land within one cron window (10:17 UTC). The "never bulk renumber" framing that previously lived
    here was **defensive** (against accidental re-keys); it's been relaxed
    for the staging phase. **Never re-mint casually** — the playbook is
    mandatory. Once we explicitly declare the M-ID layer
@@ -1580,6 +1586,20 @@ tomorrow's cron no-ops on the R4 artifacts. (4) Sam-only: re-paste
 refresh-button fix; the button works against either version now). (5)
 Standing: CIS↔CS §5 sign-off, ACE skill-level scope, College/System EACR
 views, EACR v2, 5 DSPS `53414` strays, `PEDS M10AE`.
+
+### Session 42 — the slot-fix: 51% of the promotions evidence was keyed to slot-mates (2026-06-11)
+
+The handoff's "31 `_unresolved` keys" unraveled R1 itself: the over-merge map
+was STAGED-never-dispatched, the subj4 map's "DRY-RUN" `_status` was a stale
+header on a fully-applied catalog-wide **permutation with slot reuse**, and
+R1's iterate+liveness-shortcut resolver mis-keyed **1,066/2,083 records**.
+Rebuilt `kb/_rekey_promotions.py` (single-step chronological, era-stamped,
+V5 stamp gate 1,954/0) + re-applied from baseline: lane 310→**158 all-kin**
+groups, R4 folds 301→**610**, ANTH 120 2→7 folds, AUTO 120X/150X gain real
+kin folds; SPAN intact. + CCR **era guard** (mixed-era lazy joins = Sam's
+"non-argumentation in COMM M1006"; banner + `?v=` bust) + `family_groups`
+sort tiebreak. Tests green. Full story: `docs/ccr_cluster_cleanup_lessons.md`
+(Session 42); rule: `methodology-alias-map-resolution-semantics.md`.
 
 ---
 
