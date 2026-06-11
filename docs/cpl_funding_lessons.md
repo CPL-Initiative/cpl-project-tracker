@@ -157,6 +157,45 @@ workbook-variance footnote is suppressed while modified (it describes the
 workbook, not the sandbox). The CCC-headcount input tooltips the corrected
 list sum (2,199,157) so testing the fixed model is one paste. Tests 50 → 67.
 
+### 2026-06-11 (actuals) — forks ratified ("Yes on forks"); P2/P3 actual-vs-target SHIPPED
+
+ADR ratified as written + `Potential Student` excluded → the producer ladder
+shipped in one PR (producer + consumer, since the consumer is fail-soft
+until the artifact exists):
+
+- **Producer** `funding/_build_funding_performance.py` — daily-workflow step
+  4a2 over the transient `CustomReport_latest.json`
+  (`View_StudentAggregatedValues`): per-college **P2** (distinct students,
+  transcribed ≥6) + **P3** (any transcribed), Test/Potential + test-college
+  rows excluded, **<5 suppressed producer-side**, statewide computed
+  independently (cross-college dedupe — also defeats subtraction recovery of
+  suppressed cells). College-name join: MAP canonical/alias →
+  `kb/college_short_names.json` short → funding name; unresolved → an
+  `unmatched` bucket for visibility. Graceful exit-0 when the fetch fell
+  back (keeps the prior artifact).
+- **Verification committed**: `tests/cpl_funding_performance.test.js` runs
+  the real producer against a SYNTHETIC fixture via `spawnSync(python3)`
+  (15 assertions: counting/dedupe/sid-less rows, exclusions, suppression,
+  the name join, statewide dedupe, workflow wiring, graceful no-input) +
+  committed-artifact PII screens that activate once the first cron
+  publishes. pii_guard EMAIL_FILES gained the artifact.
+- **Consumer** (`cpl_funding.js`): P2/P3 cards show "Actual N students per
+  MAP (as of DATE) — X% of target" (the % uses the CURRENT, possibly
+  sandboxed, target — drag a target % and attainment moves); **P1 renders
+  the labeled incentive state** ("awaiting completion data"), never a
+  blank; new sortable "CPL students†" column (college view; "<5" / "—";
+  NOT period-multiplied); drill-ins gain per-priority actual + % of
+  target; footer explains basis/suppression/dedupe. All fail-soft: until
+  the first cron publishes the artifact, the tab shows "arrives with the
+  next daily refresh" hints. Tests 74 → 87; suite 25/25 files.
+- **First-cron follow-ups**: audit the `unmatched` bucket (name-join
+  reality check) and confirm the committed-artifact screens activate.
+- **Viewing is login-free** (Sam shared the tab with colleagues): the PII
+  guard is a CI test, not a gate; the sandbox is per-browser. Magic-link
+  credentials exist only for CCR/CSR/CER *editing* and go to each
+  reviewer's OWN email via `allowed_reviewers` — never share the
+  map@rccd.edu inbox/links.
+
 ### 2026-06-11 (P1 gap) — fork ② answered; the gap's anatomy + strategy captured as a KB note
 
 Sam answered the P1 fork with the full domain story (completions live in

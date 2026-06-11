@@ -65,12 +65,22 @@ Join key: college name — reuse `college_lookup.js`/`college_short_names`
 normalization rather than a new map (DataMart "Alameda" vs MAP "College of
 Alameda" drift is the known hazard).
 
-## Sam's forks (answer in any order)
+## Sam's forks — ALL ANSWERED (2026-06-11, "Yes on forks")
 
-1. **Privacy ADR defaults** — aggregate-only, <5 suppression, producer-side
-   (mirrors the CER ADR). Ratify or adjust?
-2. **P1 path** — defer + pursue MAP award ingestion (recommended), or start
-   the manual MIS annual pull?
-3. **`Potential Student` rows** — include or exclude from P2/P3 counts?
-   (Excluding "potential" reads as *documented* activity, which matches the
-   metric wording — recommended exclude.)
+1. **Privacy ADR defaults** — ✅ RATIFIED as written (aggregate-only, <5
+   producer-side suppression).
+2. **P1 path** — ✅ deferred deliberately, kept as an incentive; anatomy +
+   strategy ladder in
+   [`kb-notes/reference-p1-completion-data-gap.md`](kb-notes/reference-p1-completion-data-gap.md).
+3. **`Potential Student` rows** — ✅ EXCLUDED ("documented" means actual
+   records).
+
+**Build status:** PR-1 producer + PR-2 consumer shipped together 2026-06-11
+(`funding/_build_funding_performance.py` + workflow step/git-add +
+pii_guard fold-in + `cpl_funding.js` actuals: priority-card actual-vs-target
+lines, the per-college "CPL students†" column, drill-in vs-target, P1
+labeled incentive state). The artifact publishes with the **first daily
+cron after merge**; until then the tab shows its "arrives with the next
+daily refresh" hints. First-cron follow-ups: check the artifact's
+`unmatched` bucket (the college-name join audit) and that the committed-
+artifact screens in `tests/cpl_funding_performance.test.js` go live.

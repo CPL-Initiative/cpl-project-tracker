@@ -77,7 +77,7 @@ const EMAIL_FILES = [
   "CPL_Dashboard.html", "index.html", "CPL_Data.js",
   "credential_reference_data.js", "statewide_data.js",
   "statewide_prescriptive.js", "college_activity.js",
-  "cpl_funding_data.js",
+  "cpl_funding_data.js", "cpl_funding_performance.js",
 ];
 const EMAIL_RE = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
 const offending = new Set();
