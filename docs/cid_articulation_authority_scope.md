@@ -1,7 +1,7 @@
 ---
 title: C-ID articulation authority — per-college official articulations as a CCR evidence tier (the math cleanup)
 date: 2026-06-11
-status: PHASES 0/0b/1 BUILT (Session 42) — seed + statewide extract (Sam, same-day) + set-aware joins + the generator member router (MATH-scoped) all landed. NEXT = Phase 2 (ccn_equiv bridge), curation surfaces for conflicts/sequences/unmatched, then widen routing beyond MATH
+status: PHASES 0/0b/1/3 BUILT — seed + statewide extract + set-aware joins + the generator member router (Session 42, MATH-scoped) + Phase 3 statewide widening (Session 45 — 8,377 members across 454 descriptors). NEXT = Phase 2 (ccn_equiv bridge), curation surfaces for conflicts/sequences/unmatched/dual-approvals, termly refresh procedure
 session: 42
 tags: [scope, ccr, c-id, m-id, math, articulation-authority, rules-based-merging, knowledge-base]
 related:
@@ -182,5 +182,36 @@ per-college authority); `MATH M1185` "Calculus II" routes 7 → MATH 220,
 | 0 | Seed reference (10 MATH 210 rows) + joiner + this scope | **BUILT** (#362) |
 | 0b | Full statewide extract + ingest + set-aware joiner + committed join artifact | **BUILT (Session 42)** |
 | 1 | Generator member routing (§4; MATH descriptors first) + dry-run gates + CCR regression set | **BUILT (Session 42)** — 329 members routed; 11 fully-routed M-IDs + 43 stand-alones folded (`rfold`/`routed_from`); MATH 210: 83→101 members incl. Folsom Lake MATH 400; M1175 13→6-member residue; Pierce 261 (210∧211) correctly held; SPAN/AUTO/ANTH regression byte-stable; `tests/uc_cid_routing.test.js` |
-| 2 | C-ID↔CCN `ccn_equiv` cross-reference (the COMM 130/C1004 class) | after 1 |
-| 3 | Routing beyond MATH (the other 455 descriptors) + termly refresh procedure | after 1 proves at math scale |
+| 2 | C-ID↔CCN `ccn_equiv` cross-reference (the COMM 130/C1004 class) | after 3 |
+| 3 | Routing statewide (all descriptors) + the dual-approval honesty fix | **BUILT (Session 45)** — see §9 |
+| 3b | Termly refresh procedure (§6) + curation surfaces for the held classes (76 `coci_conflict`, 285 multi-descriptor, 3,976 `unmatched`) | next |
+
+## 9. Phase 3 — statewide widening (landed 2026-06-11, Session 45)
+
+The `_ROUTE_PREFIXES = ("MATH ",)` gate was removed after math proved out.
+Measured on the full regen (baseline reproduced HEAD byte-exactly first):
+
+- **8,377 members** now display under their descriptor rows (was 329 MATH-only);
+  **454 descriptors** routed-to, every one present in `cid_descriptors.json`
+  (so the claims-only mechanism guarantees a target row — 0 invisible-member
+  edges). 285 multi-descriptor courses held; 76 `coci_conflict` excluded.
+- **174 fully-routed M-IDs + 1,682 stand-alones folded** (`rfold`; was 11+43).
+  Main payload 15,652 → 15,517 rows; stand-alone payload 55,478 → 53,839;
+  +28 claims-only descriptor rows materialized by routed claimants.
+- **Conservation verified: 0 member tuples vanished.** 125 previously-INVISIBLE
+  members materialized — claimants whose descriptor row didn't exist at
+  baseline (the pre-#345 invisibility class, e.g. ECE 210 +40, THTR 192 +27).
+- **The scoped-gate lesson (the 4 un-routed stats courses).** Phase 1 filtered
+  joins to MATH *before* the per-course uniqueness test, so a course approved
+  under **MATH 110 ∧ SOCI 125** (the stats-pathway duals: `SOCS M10CE`,
+  `PSYC M10DC`, `SOCI M10FF`, `PSYC M10DA`) looked uniquely-MATH-approved and
+  auto-routed. Statewide collection sees the full approval set and correctly
+  HOLDS them (stand-alone rows, curation decides). **Rule: any future routing
+  scope-gate must filter AFTER assembling each course's full approval set,
+  never before** — a scoped view biases dual-approved courses toward the
+  in-scope descriptor.
+- Spot checks: AJ descriptors 773 → 858 members (AJ 200 "Introduction to
+  Corrections" 48 → 80); SPAN 200 98 → 114 keeping all 4 kin folds; AUTO 120 X
+  21 → 27 keeping both transmissions folds; 4 CRIM M-IDs routed into AJ
+  descriptors. Suite 27/27 green (`uc_cid_routing` re-pinned for Phase 3;
+  `uc_kinship_gate`'s AUTO 120 X stats updated 21 → 27).

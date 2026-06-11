@@ -49,8 +49,11 @@ check("AUTO 120 X is titled by its C-ID descriptor, not a folded remnant",
 check("AUTO 120 X folds are exactly the kin transmissions M-IDs",
   a120 && JSON.stringify((a120.consolidated_from || []).slice().sort()) ===
     JSON.stringify(["AUTO M1065", "AUTO M1067"]));
-check("AUTO 120 X stats describe the DISPLAYED members (claims ∪ folded leaves)",
-  a120 && a120.members === 21 && a120.umin === 0 && a120.umax === 9);
+// Phase 3 (Session 45): statewide C-ID routing adds routed members to the
+// displayed set — AUTO 120 X gained 6 (21 → 27, rfold 3).
+check("AUTO 120 X stats describe the DISPLAYED members (claims ∪ folded ∪ routed)",
+  a120 && a120.members === 27 && a120.umin === 0 && a120.umax === 9
+       && (a120.rfold || 0) >= 1);
 check("AUTO 120 X credit resolved (was blank)", a120 && a120.credit === "Credit");
 check("AUTO 150 X is titled by its C-ID descriptor",
   a150 && a150.title === "Automotive Braking Systems");
