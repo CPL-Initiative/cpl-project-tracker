@@ -1,0 +1,167 @@
+{
+ "date": "2026-06-11",
+ "what": "Retire the 3 legacy M-ID SPAN anchors that duplicate C-IDs (Sam-approved 2026-06-11; ADR officials-as-reference). Rollback: restore removed_anchors into common_courses.json and revert each crosswalk row's course_id/id_system to the 'before'.",
+ "removed_anchors": {
+  "M-ID SPAN 104": {
+   "common_title": "Spanish 1",
+   "description": null,
+   "description_source": null,
+   "id_system": "M-ID",
+   "ccn_id": null,
+   "c_id": null,
+   "cross_listing_group": null,
+   "subject": "SPAN",
+   "discipline": "Foreign Languages",
+   "discipline_provisional": "Spanish",
+   "typical_units": 5.0,
+   "confidence": 0.95,
+   "source_college_count": 3,
+   "classified_at": "2026-05-19",
+   "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+   "reviewed_at": null,
+   "reviewed_by": null,
+   "_notes": "Cross-college match: 3 colleges / 3 local courses map here."
+  },
+  "M-ID SPAN 106": {
+   "common_title": "Spanish 2",
+   "description": null,
+   "description_source": null,
+   "id_system": "M-ID",
+   "ccn_id": null,
+   "c_id": null,
+   "cross_listing_group": null,
+   "subject": "SPAN",
+   "discipline": "Foreign Languages",
+   "discipline_provisional": "Spanish",
+   "typical_units": 5.0,
+   "confidence": 0.95,
+   "source_college_count": 3,
+   "classified_at": "2026-05-19",
+   "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+   "reviewed_at": null,
+   "reviewed_by": null,
+   "_notes": "Cross-college match: 3 colleges / 3 local courses map here."
+  },
+  "M-ID SPAN 108": {
+   "common_title": "Spanish 3",
+   "description": null,
+   "description_source": null,
+   "id_system": "M-ID",
+   "ccn_id": null,
+   "c_id": null,
+   "cross_listing_group": null,
+   "subject": "SPAN",
+   "discipline": "Foreign Languages",
+   "discipline_provisional": "Spanish",
+   "typical_units": 5.0,
+   "confidence": 0.95,
+   "source_college_count": 3,
+   "classified_at": "2026-05-19",
+   "classified_by": "claude-opus-4-7 (Cx common-course draft)",
+   "reviewed_at": null,
+   "reviewed_by": null,
+   "_notes": "Cross-college match: 3 colleges / 3 local courses map here."
+  }
+ },
+ "repointed_crosswalk": [
+  {
+   "key": "Moreno Valley College :: SPA 1 :: Spanish 1",
+   "before": {
+    "course_id": "M-ID SPAN 104",
+    "id_system": "M-ID"
+   },
+   "after": {
+    "course_id": "SPAN 100",
+    "id_system": "C-ID"
+   }
+  },
+  {
+   "key": "Moreno Valley College :: SPA 2 :: Spanish 2",
+   "before": {
+    "course_id": "M-ID SPAN 106",
+    "id_system": "M-ID"
+   },
+   "after": {
+    "course_id": "SPAN 110",
+    "id_system": "C-ID"
+   }
+  },
+  {
+   "key": "Moreno Valley College :: SPA 3 :: Spanish 3",
+   "before": {
+    "course_id": "M-ID SPAN 108",
+    "id_system": "M-ID"
+   },
+   "after": {
+    "course_id": "SPAN 200",
+    "id_system": "C-ID"
+   }
+  },
+  {
+   "key": "Norco College :: SPA 1 :: Spanish 1",
+   "before": {
+    "course_id": "M-ID SPAN 104",
+    "id_system": "M-ID"
+   },
+   "after": {
+    "course_id": "SPAN 100",
+    "id_system": "C-ID"
+   }
+  },
+  {
+   "key": "Norco College :: SPA 2 :: Spanish 2",
+   "before": {
+    "course_id": "M-ID SPAN 106",
+    "id_system": "M-ID"
+   },
+   "after": {
+    "course_id": "SPAN 110",
+    "id_system": "C-ID"
+   }
+  },
+  {
+   "key": "Norco College :: SPA 3 :: Spanish 3",
+   "before": {
+    "course_id": "M-ID SPAN 108",
+    "id_system": "M-ID"
+   },
+   "after": {
+    "course_id": "SPAN 200",
+    "id_system": "C-ID"
+   }
+  },
+  {
+   "key": "Riverside City College :: SPA 1 :: Spanish 1",
+   "before": {
+    "course_id": "M-ID SPAN 104",
+    "id_system": "M-ID"
+   },
+   "after": {
+    "course_id": "SPAN 100",
+    "id_system": "C-ID"
+   }
+  },
+  {
+   "key": "Riverside City College :: SPA 2 :: Spanish 2",
+   "before": {
+    "course_id": "M-ID SPAN 106",
+    "id_system": "M-ID"
+   },
+   "after": {
+    "course_id": "SPAN 110",
+    "id_system": "C-ID"
+   }
+  },
+  {
+   "key": "Riverside City College :: SPA 3 :: Spanish 3",
+   "before": {
+    "course_id": "M-ID SPAN 108",
+    "id_system": "M-ID"
+   },
+   "after": {
+    "course_id": "SPAN 200",
+    "id_system": "C-ID"
+   }
+  }
+ ]
+}
