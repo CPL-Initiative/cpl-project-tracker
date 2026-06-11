@@ -1906,7 +1906,14 @@
         "#tab-unified-courses .uc-table td:nth-child(3) .uc-trunc{white-space:normal;overflow:visible;text-overflow:clip;}" +
         "#tab-unified-courses .uc-member-table th{color:#fff;background:var(--navy-primary,#0A2240);}" +
         "#tab-unified-courses table.uc-table{table-layout:fixed;min-width:900px;}" +
-        "#tab-unified-courses .uc-table td{overflow:hidden;}" +
+        // Clip only the text-bearing columns (title/subj/disc/TOP/flags) —
+        // numeric/enum cells can't overflow a fixed column, and a clip context
+        // on all 15 cells × 500 rows measurably dragged scroll/render (Sam,
+        // 2026-06-12 "noticeably slower"). 5 columns keeps the unbreakable-
+        // token protection at a third of the paint cost.
+        "#tab-unified-courses .uc-table td:nth-child(3),#tab-unified-courses .uc-table td:nth-child(4)," +
+        "#tab-unified-courses .uc-table td:nth-child(5),#tab-unified-courses .uc-table td:nth-child(8)," +
+        "#tab-unified-courses .uc-table td:nth-child(15){overflow:hidden;}" +
         "#tab-unified-courses .uc-member-table{table-layout:fixed;}" +
         "#tab-unified-courses .uc-member-table td{overflow:hidden;}";
       document.head.appendChild(st);

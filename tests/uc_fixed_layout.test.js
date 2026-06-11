@@ -62,8 +62,10 @@ const html = `<!DOCTYPE html><html><head></head><body>
     /table\.uc-table\{[^}]*table-layout:fixed/.test(css));
   check("#uc-fix-css keeps the narrow-screen safety net (min-width:900px)",
     /table\.uc-table\{[^}]*min-width:900px/.test(css));
-  check("#uc-fix-css clips td overflow (no column inflation)",
-    /\.uc-table td\{overflow:hidden;\}/.test(css));
+  check("#uc-fix-css clips the text-bearing columns (scoped — not all 15, for paint cost)",
+    /td:nth-child\(3\)[^}]*\{overflow:hidden;\}/.test(css) &&
+    /td:nth-child\(15\)\{overflow:hidden;\}/.test(css) &&
+    !/\.uc-table td\{overflow:hidden;\}/.test(css));
   check("#uc-fix-css fixes the member-table layout too",
     /\.uc-member-table\{table-layout:fixed;\}/.test(css));
 
