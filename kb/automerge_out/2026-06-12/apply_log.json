@@ -1,0 +1,23 @@
+{
+ "applied_at": "2026-06-12T22:46:30Z",
+ "authorized_by": "Sam — 'They all look great!!! Let's apply!' (22:40:55 UTC)",
+ "method": "server-side: postgres http extension fetched the SHA-pinned plan.json from main (commit 799a42264a84d19b1263c1df7d567addd882e9e5), gated on HTTP 200 + md5 7154294be279e8665beee2f86eec7d21 (byte-identical to the reviewed receipt), single INSERT ... ON CONFLICT (course_id, field) DO NOTHING; extension dropped immediately after",
+ "freshness_gate": "live kb_curation re-read at 22:42 UTC: merge_into=372, unified_title=195, merge_dismissed=4 — identical to the plan's input state (latest human row 21:56, before the 22:14 cron sync); plan re-verified deterministic + 0 collisions pre-apply",
+ "result": {
+  "fetch_ok": 1,
+  "md5_ok": 1,
+  "plan_writes": 5838,
+  "inserted": 5838,
+  "inserted_merges": 3588,
+  "inserted_titles": 2250,
+  "conflicts_skipped": 0
+ },
+ "post_verify": {
+  "automerge_rows": 5838,
+  "distinct_targets": 2272,
+  "new_minted_targets_uc_cur_auto": 941,
+  "kb_curation_total": 6784
+ },
+ "cohort_marker": "reviewer_email = 'automerge-v1@bot'",
+ "revert": "delete from kb_curation where reviewer_email = 'automerge-v1@bot' (whole cohort) or per-row; the daily sync then un-folds the CCR rows"
+}

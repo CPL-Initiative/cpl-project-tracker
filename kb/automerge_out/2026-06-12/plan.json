@@ -1,5 +1,5 @@
 {
- "_status": "DRY-RUN — nothing applied",
+ "_status": "APPLIED 2026-06-12T22:46Z — 5,838/5,838 rows inserted, 0 conflicts (see apply_log.json)",
  "_generated_at": "2026-06-12T22:42:49",
  "_payload_generated_at": "2026-06-12 22:14",
  "_marker": "automerge-v1",
