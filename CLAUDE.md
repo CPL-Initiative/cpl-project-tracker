@@ -453,7 +453,7 @@ scraping proved unreliable.
 | `cpl_funding_performance.js` | Funding priority-metric actuals (`window.CPL_FUNDING_PERF`: per-college P2/P3 distinct-student counts + statewide, small-cell suppressed <5 per the RATIFIED `docs/kb-notes/adr-funding-priority-metrics-privacy.md`). **Daily-cron artifact**: built by `funding/_build_funding_performance.py` from the transient `CustomReport_latest.json` (workflow step 4a2; in the `git add` list); skips gracefully on fetch fallback. P1 is a deliberate gap (`docs/kb-notes/reference-p1-completion-data-gap.md`). |
 | `dashboard_filters.js` | Client-side filter/search/sort logic |
 | `kpi_reorder.js` | Login-free drag-to-reorder for the headline KPI grid (`.kpi-section`): per-browser order in localStorage (`cplKpiOrder.v1`), cards re-matched by label text across daily regens, new cards re-enter at default position, ↺ reset affordance. Static — NOT a daily-cron artifact. |
-| `first_light.js` | **First Light** — the once-a-day plein air greeting (added Session 48): date-seeded painting-of-the-day modal (grayscale→color reveal, gallery lightbox, read-aloud via browser `speechSynthesis`, hand-written alt text), opt-out + once-per-day localStorage guards, runtime-injected "Today's painting" header chip (regen-proof), and an anonymous reflection box POSTing `{painting, reflection}` to Supabase `cpl_reflections` (anon WRITE-ONLY RLS). Manifest = verified-PD paintings ONLY (sourcing rules: `docs/kb-notes/reference-public-domain-art-sourcing.md`). Static — NOT a daily-cron artifact. Theme spec/prototype: `prototype/first_light_theme_v1.html` (v1.4.2, BLESSED 2026-06-12) + `prototype/check_contrast.py`. Tests: `tests/first_light*.test.js`. |
+| `first_light.js` | **First Light** — the once-a-day plein air greeting (added Session 48): date-seeded painting-of-the-day modal (grayscale→color reveal, gallery lightbox, read-aloud via browser `speechSynthesis`, hand-written alt text), opt-out + once-per-day localStorage guards, runtime-injected "Today's painting" header chip (regen-proof), and an anonymous reflection box POSTing `{painting, reflection}` to Supabase `cpl_reflections` (anon WRITE-ONLY RLS). Manifest = verified-PD paintings ONLY (sourcing rules: `docs/kb-notes/reference-public-domain-art-sourcing.md`). Static — NOT a daily-cron artifact. Theme spec/prototype: `prototype/first_light_theme_v1.html` (**v1.6 — GLASS-QUIET chips graduated**, Sam-blessed 2026-06-12; solid family archived in the Chip Studio) + `prototype/check_contrast.py`. Tests: `tests/first_light*.test.js`. |
 | `cpl_todos.js` | The 📋 To-Do button on every tab (added Session 47): renders `kb/cpl_todos.json` as a For-Sam / For-Fable daily checklist with a "where we are" status line; per-browser check-offs (`cplTodos.v1`, keyed by the feed's `_as_of` so each refresh starts fresh); per-tab badge + nav chips for other tabs' items. Feed refreshed at every Rule-8 checkpoint. Static — NOT a daily-cron artifact. |
 | `report_generator.js` | Custom Report Generator (Claude API via proxy) |
 | `docx.min.js` | Local copy of docx@8.0.4 UMD build (do **not** switch to CDN) |
@@ -1575,18 +1575,22 @@ identities → 9 queue families → **2 merged rows + 8 residual queue groups**.
 Suite 30/30. Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 46 +
 part 2); KB note: `methodology-title-similarity-merge-guards.md`.
 
-### Session 48 — First Light: the design sprint (daily plein air art LIVE + the theme spec BLESSED) (2026-06-12)
+### Session 48 (Bruh Glasstronaut) — First Light: the design sprint (daily plein air art LIVE + the theme spec BLESSED) (2026-06-12)
 
-Sam's "personality" brief → a design system + a live feature; **10 PRs
-(#391–#400) merged same-day**. **LIVE:** `first_light.js` — once-a-day PD
+Sam's "personality" brief → a design system + a live feature; **13 PRs
+(#391–#404; #402 was a sibling session's) merged same-day**. **LIVE:** `first_light.js` — once-a-day PD
 plein air greeting (Redmond/LACMA + 2 Paynes; Commons hotlinks + fallback),
 grayscale→color reveal, read-aloud (`speechSynthesis` — Huell declined on
 publicity-rights grounds), reflection box → NEW Supabase **`cpl_reflections`**
 (anon write-only RLS, verified as anon). **SPEC BLESSED (v1.4.2):**
 `prototype/first_light_theme_v1.html` + `check_contrast.py` (derived AA
 tokens — crimson `#920000` · cobalt `#0047AB` · hunter `#2C601A` · violet
-`#6D28D9`; glass=chrome/opaque=data; solid uniform chips 7.25rem + `chip-fit`).
-**NEXT: the live-dashboard token retheme — GO** (`docs/session_49_handoff.md`).
+`#6D28D9`; glass=chrome/opaque=data; **GLASS-QUIET uniform chips graduated at
+session close** — translucent fill/no per-chip blur, gray outline, dark accent
+labels, 6.5rem + `chip-fit`; solid family archived in the Chip Studio).
+**NEXT: the live-dashboard token retheme — GO** (`docs/session_49_handoff.md`;
+restyle checklist includes the To-Do chips + the CSR sweep chips, per the
+sibling CCR/CSR session's note).
 Lessons: `docs/first_light_lessons.md`; KB notes:
 `methodology-derived-aa-token-palette`, `reference-public-domain-art-sourcing`.
 

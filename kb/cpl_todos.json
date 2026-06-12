@@ -38,7 +38,7 @@
       "id": "fable-retheme",
       "who": "fable",
       "tab": "all",
-      "text": "THE RETHEME — spec blessed (prototype v1.4.2), so paint the live dashboard: token-value swap in both HTMLs + generator CSS, ghosted painting, glass chrome, the new chip rules on live badges, CI contrast lint, KPI drag-reorder regression test + keyboard path. Plan: docs/session_49_handoff.md."
+      "text": "THE RETHEME — spec blessed at v1.6 (GLASS-QUIET chips graduated), so paint the live dashboard: token-value swap in both HTMLs + generator CSS, ghosted painting, glass chrome, glass-quiet chips on live badges INCLUDING the 📋 To-Do chips and the CSR sweep chips, CI contrast lint, KPI drag-reorder regression test + keyboard path. Plan: docs/session_49_handoff.md."
     },
     {
       "id": "fable-first-light-growth",

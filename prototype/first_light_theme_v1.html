@@ -37,10 +37,9 @@
   --hunter:  #2C601A;              /* positive · savings · verified    6.72:1 */
   --violet:  #6D28D9;              /* machine-generated · inferred     6.35:1 */
   --mustard-fill: #E3B341;         /* bright brand hue — dots/banners only */
-  --mustard-chip: #946F00;         /* solid chip fill (white label 4.63:1) — the
-                                      "dijon" trade: white on true mustard is ~2:1 */
-  --violet-chip:  #6324C5;         /* solid chip fill, darkened for pop (8.11:1) */
-  --mustard-text: #8B6800;         /* variant-B chip label grade (4.60:1 paper) */
+  --mustard-text: #8B6800;         /* caution chip labels — THE spec (4.60:1) */
+  --mustard-chip: #946F00;         /* ARCHIVED solid fill (Studio A reference) */
+  --violet-chip:  #6324C5;         /* ARCHIVED solid fill (Studio A reference) */
 
   /* on-dark grades — RESERVED (no dark chrome in v1.1; verified vs #27272E) */
   --crimson-on-dark: #CF8F8F;
@@ -155,12 +154,12 @@ body.sim-contrast { --border:rgba(28,28,26,.45); --text-muted:#3A3A36; }
 .masthead .spacer { flex:1; }
 .today-chip {
   display:inline-flex; align-items:center; gap:.45rem;
-  font-size:.82rem; font-weight:600; color:#FFFFFF;
-  border:none; border-radius:8px;
-  padding:.3rem .8rem; min-height:24px;
-  background:var(--mustard-chip); cursor:pointer; font-family:inherit;
+  font-size:.78rem; font-weight:600; color:var(--mustard-text);
+  border:1px solid var(--border-strong); border-radius:8px;
+  padding:.3rem .8rem; min-height:26px;
+  background:rgba(255,255,255,.5); cursor:pointer; font-family:inherit;
 }
-.today-chip:hover { filter:brightness(1.18); }
+.today-chip:hover { background:var(--surface-subtle); }
 .today-chip .dot { width:9px; height:9px; border-radius:50%; background:var(--mustard-fill); }
 
 /* ── layout: rail + main ────────────────────────────────────────────── */
@@ -205,33 +204,15 @@ section > p.lede { color:var(--text-muted); font-size:.9rem; margin-bottom: .9re
 .kpi .note { font-size:.74rem; color:var(--text-muted); }
 
 /* ── chips & badges — every accent does ONE job, always with a glyph ──
-   v1.3 (Sam): SOLID fills, white semibold labels, button-matched 8px
-   corners, no borders, UNIFORM width, left-justified in their column.
-   Deliberately smaller-typed and hover-free than .btn so a status badge
-   never reads as clickable. Overflowing labels ellipsize (title attr
-   carries the full text). */
+   v1.6 (Sam: "Love the glass view. Let's run with that!"): GLASS-QUIET
+   is THE chip spec — subtle translucent fill (NO per-chip backdrop blur:
+   faked glass, GPU-free at row scale), light gray outline, DARKER accent
+   text, .72rem type, uniform 6.5rem × 26px, left-justified. Smaller-typed
+   and hover-free than .btn so a badge never reads as clickable; labels
+   stay one short word + glyph; overflow ellipsizes (title carries full
+   text). Option on file: re-solid crimson for findings if triage
+   scanning ever needs the shout. */
 .chip {
-  display:inline-flex; align-items:center; justify-content:center; gap:.35rem;
-  font-size:.78rem; font-weight:600; border-radius:8px; border:none;
-  width:7.25rem; height:26px; padding:0 .45rem; box-sizing:border-box;
-  color:#FFFFFF; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-}
-.chip-crimson { background:var(--crimson); }
-.chip-hunter  { background:var(--hunter); }
-.chip-violet  { background:var(--violet-chip); }
-.chip-mustard { background:var(--mustard-chip); }
-.chip-neutral { color:var(--text-body); background:var(--surface-muted, #ECE9E2); }
-/* glyph-only badges: compact, not uniform-width (Sam) — same height/
-   radius/fill language, sized to the glyph */
-.chip.chip-fit { width:auto; min-width:26px; padding:0 .45rem; }
-
-/* ── Chip variant B — "glass & quiet" (Sam, session close, for A/B
-   comparison): subtle translucent fill (NO per-chip backdrop blur —
-   faked glass, GPU-free at row scale), light gray outline, DARKER
-   accent text, smaller type (.72rem), tighter width (6.5rem).
-   The blessed v1.4.2 solid chips stay variant A; graduate the winner
-   at retheme time. */
-.chipb {
   display:inline-flex; align-items:center; justify-content:center; gap:.3rem;
   font-size:.72rem; font-weight:600; border-radius:8px;
   border:1px solid var(--border-strong);
@@ -239,13 +220,30 @@ section > p.lede { color:var(--text-muted); font-size:.9rem; margin-bottom: .9re
   background:rgba(255,255,255,.5);
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
-.chipb-crimson { color:var(--crimson); }
-.chipb-cobalt  { color:var(--cobalt); }
-.chipb-hunter  { color:var(--hunter); }
-.chipb-violet  { color:var(--violet); }
-.chipb-mustard { color:var(--mustard-text); }
-.chipb-neutral { color:var(--text-muted); }
-.chipb.chipb-fit { width:auto; min-width:26px; }
+.chip-crimson { color:var(--crimson); }
+.chip-cobalt  { color:var(--cobalt); }
+.chip-hunter  { color:var(--hunter); }
+.chip-violet  { color:var(--violet); }
+.chip-mustard { color:var(--mustard-text); }
+.chip-neutral { color:var(--text-muted); }
+/* glyph-only badges: compact, not uniform-width (Sam) — same height/
+   radius/fill language, sized to the glyph */
+.chip.chip-fit { width:auto; min-width:26px; padding:0 .4rem; }
+
+/* archived solid family (v1.4.2, variant A) — Chip Studio reference row
+   ONLY; not part of the blessed spec */
+.chipa {
+  display:inline-flex; align-items:center; justify-content:center; gap:.35rem;
+  font-size:.78rem; font-weight:600; border-radius:8px; border:none;
+  width:7.25rem; height:26px; padding:0 .45rem; box-sizing:border-box;
+  color:#FFFFFF; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.chipa-cobalt  { background:var(--cobalt); }
+.chipa-crimson { background:var(--crimson); }
+.chipa-hunter  { background:var(--hunter); }
+.chipa-violet  { background:var(--violet-chip); }
+.chipa-mustard { background:var(--mustard-chip); }
+.chipa.chipa-fit { width:auto; min-width:26px; }
 .studio-row { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; margin:.4rem 0 .8rem; }
 .studio-row .lab { font-size:.72rem; color:var(--text-muted); min-width:7.5rem; }
 
@@ -354,7 +352,7 @@ footer .credit { margin-bottom:.3rem; }
 
 <div class="bg-art" id="bgArt" aria-hidden="true"></div>
 
-<div class="proto-note">Prototype v1.5 — “First Light” theme spec &amp; living mock · demo data only · token values AA-verified by <code>prototype/check_contrast.py</code></div>
+<div class="proto-note">Prototype v1.6 — “First Light” theme spec &amp; living mock · demo data only · token values AA-verified by <code>prototype/check_contrast.py</code></div>
 
 <header class="masthead glass">
   <h1>CPL Project Tracker</h1>
@@ -421,7 +419,7 @@ footer .credit { margin-bottom:.3rem; }
     <!-- ── the five accents, each with ONE job ───────────────────────── -->
     <section aria-labelledby="accH">
       <h2 id="accH">Five accents, five jobs</h2>
-      <p class="lede">The base is monochrome; color is meaning. Each accent owns one semantic lane and always travels with a glyph. Chips are solid accent fills with white semibold labels — uniform width, button-matched corners, no borders, left-justified. Mustard’s chip is the derived deep ochre (white on true mustard is ~2:1); the bright hue keeps its dot/banner jobs. Neutral data chips stay quiet on purpose — semantics pop, counts whisper.</p>
+      <p class="lede">The base is monochrome; color is meaning. Each accent owns one semantic lane and always travels with a glyph. Chips are glass-quiet: a subtle translucent fill, light gray outline, and the darker accent grade as the label — uniform 6.5rem × 26px, button-matched corners, left-justified, receding politely on dense rows. Mustard labels use the dark <code>--mustard-text</code> grade (bright mustard can’t be text); the bright hue keeps its dot/banner jobs.</p>
       <div class="role-grid">
         <div class="role-card glass">
           <div class="swatch" style="background:var(--cobalt)"></div>
@@ -482,34 +480,24 @@ footer .credit { margin-bottom:.3rem; }
 
     <!-- ── Chip Studio: A (blessed solid) vs B (glass & quiet) ────────── -->
     <section aria-labelledby="studioH">
-      <h2 id="studioH">Chip Studio — A vs B <span style="font-size:.75rem; font-family:'Source Sans 3'; color:var(--text-muted); font-weight:400;">— same labels, two treatments; pick a winner</span></h2>
-      <p class="lede">A = the blessed v1.4.2 solid fills (semantics pop; best for triage scanning). B = "glass &amp; quiet": subtle translucent fill, light gray outline, darker accent text, type a step smaller (.72rem) so width drops to 6.5rem — recedes on dense rows. The cobalt CHIP sits at the same 26px height as the rest (real <em>buttons</em> keep 32px for target size). Recommendation if minimizing distraction wins: B everywhere, except keep A's solid crimson for findings — the one chip that should shout.</p>
+      <h2 id="studioH">Chip Studio <span style="font-size:.75rem; font-family:'Source Sans 3'; color:var(--text-muted); font-weight:400;">— glass &amp; quiet GRADUATED (Sam, 2026-06-12: “Love the glass view. Let’s run with that!”)</span></h2>
+      <p class="lede">The glass-quiet treatment is now the spec — every chip on this page wears it (role cards and the sample table included). The solid v1.4.2 family is archived below for reference. The cobalt CHIP sits at the uniform 26px (real <em>buttons</em> keep 32px for target size). Option on file: re-solid crimson for findings if triage scanning ever needs the shout.</p>
       <div class="opaque-card" style="padding:1rem 1.1rem;">
-        <div class="studio-row"><span class="lab">A · solid (v1.4.2)</span>
-          <span class="chip" style="background:var(--cobalt)">◉ Selected</span>
+        <div class="studio-row"><span class="lab">BLESSED · glass &amp; quiet</span>
+          <span class="chip chip-cobalt">◉ Selected</span>
           <span class="chip chip-crimson">⚠ 3 findings</span>
           <span class="chip chip-hunter">✓ Verified</span>
           <span class="chip chip-mustard">⚠ Needs review</span>
           <span class="chip chip-violet">⚙ Inferred</span>
           <span class="chip chip-fit chip-hunter">✓</span>
         </div>
-        <div class="studio-row"><span class="lab">B · glass &amp; quiet</span>
-          <span class="chipb chipb-cobalt">◉ Selected</span>
-          <span class="chipb chipb-crimson">⚠ 3 findings</span>
-          <span class="chipb chipb-hunter">✓ Verified</span>
-          <span class="chipb chipb-mustard">⚠ Needs review</span>
-          <span class="chipb chipb-violet">⚙ Inferred</span>
-          <span class="chipb chipb-fit chipb-hunter">✓</span>
-        </div>
-        <div class="tbl-wrap" style="margin-top:.6rem;">
-          <table>
-            <colgroup><col style="width:13%"><col style="width:30%"><col style="width:22%"><col style="width:19%"><col style="width:16%"></colgroup>
-            <thead><tr><th scope="col">ID</th><th scope="col">Course</th><th scope="col">Discipline</th><th scope="col">Status — variant B on rows</th><th scope="col">Colleges</th></tr></thead>
-            <tbody>
-              <tr><td class="id">ACCT M1004</td><td title="Financial Accounting">Financial Accounting</td><td>Accounting <span class="chipb chipb-hunter chipb-fit">✓</span></td><td><span class="chipb chipb-hunter">✓ Verified</span></td><td>41</td></tr>
-              <tr><td class="id">WELD M9012</td><td title="Beginning Welding (Noncredit)">Beginning Welding (Noncredit)</td><td>Welding <span class="chipb chipb-violet chipb-fit">⚙</span></td><td><span class="chipb chipb-crimson">⚠ 3 findings</span></td><td>4</td></tr>
-            </tbody>
-          </table>
+        <div class="studio-row"><span class="lab">archived · solid v1.4.2</span>
+          <span class="chipa chipa-cobalt">◉ Selected</span>
+          <span class="chipa chipa-crimson">⚠ 3 findings</span>
+          <span class="chipa chipa-hunter">✓ Verified</span>
+          <span class="chipa chipa-mustard">⚠ Needs review</span>
+          <span class="chipa chipa-violet">⚙ Inferred</span>
+          <span class="chipa chipa-fit chipa-hunter">✓</span>
         </div>
       </div>
     </section>
@@ -550,9 +538,9 @@ footer .credit { margin-bottom:.3rem; }
             <tr><td><code>--hunter</code></td><td><span class="sw" style="background:#2C601A"></span></td><td><code>#2C601A</code></td><td>positive · verified (white on it: 7.51:1)</td><td>6.72:1 paper</td><td class="pass">PASS</td></tr>
             <tr><td><code>--violet</code></td><td><span class="sw" style="background:#6D28D9"></span></td><td><code>#6D28D9</code></td><td>machine-generated</td><td>6.35:1 paper</td><td class="pass">PASS</td></tr>
             <tr><td><code>--mustard-fill</code></td><td><span class="sw" style="background:#E3B341"></span></td><td><code>#E3B341</code></td><td>brand hue — dots/banners (ink on it: 8.77:1)</td><td>8.77:1 ink-on-fill</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--mustard-chip</code></td><td><span class="sw" style="background:#946F00"></span></td><td><code>#946F00</code></td><td>solid caution chip (white label)</td><td>4.63:1 white-on-fill</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--violet-chip</code></td><td><span class="sw" style="background:#6324C5"></span></td><td><code>#6324C5</code></td><td>solid machine chip (white label)</td><td>8.11:1 white-on-fill</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--mustard-text</code></td><td><span class="sw" style="background:#8B6800"></span></td><td><code>#8B6800</code></td><td>variant-B chip labels</td><td>4.60:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--mustard-text</code></td><td><span class="sw" style="background:#8B6800"></span></td><td><code>#8B6800</code></td><td>caution chip labels (the spec)</td><td>4.60:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--mustard-chip</code></td><td><span class="sw" style="background:#946F00"></span></td><td><code>#946F00</code></td><td>ARCHIVED solid chip fill (Studio A)</td><td>4.63:1 white-on-fill</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--violet-chip</code></td><td><span class="sw" style="background:#6324C5"></span></td><td><code>#6324C5</code></td><td>ARCHIVED solid chip fill (Studio A)</td><td>8.11:1 white-on-fill</td><td class="pass">PASS</td></tr>
             <tr><td><code>--crimson-on-dark</code></td><td><span class="sw" style="background:#CF8F8F"></span></td><td><code>#CF8F8F</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
             <tr><td><code>--cobalt-on-dark</code></td><td><span class="sw" style="background:#7DA1D4"></span></td><td><code>#7DA1D4</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
             <tr><td><code>--hunter-on-dark</code></td><td><span class="sw" style="background:#89A67F"></span></td><td><code>#89A67F</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
@@ -570,8 +558,8 @@ footer .credit { margin-bottom:.3rem; }
       <ul class="rules">
         <li><strong>Color never carries meaning alone</strong> — every semantic accent ships with a glyph (▲▼ ✓ ⚠ ⚙ ✨). Saves the crimson/hunter pair for color-blind readers.</li>
         <li><strong>Glass always carries a scrim</strong> — text contrast is computed against the worst-case composite behind it, never the best case. Data tables skip glass entirely.</li>
-        <li><strong>Mustard’s bright hue is never text</strong> — chips fill with the derived <code>--mustard-chip</code> ochre under white labels (4.63:1); the bright hue is reserved for dots/banners with ink text (8.77:1).</li>
-        <li><strong>Chips are not buttons</strong> — same corner language, but smaller type, no hover, no pointer; only cobalt elements act. Uniform width applies to <em>labeled status</em> chips (7.25rem — chip vocabulary stays one short word + glyph; "⚠ Needs review" is the width-setter); glyph-only badges stay compact (<code>chip-fit</code>).</li>
+        <li><strong>Mustard’s bright hue is never text</strong> — chip labels use the dark <code>--mustard-text</code> grade (4.60:1); the bright hue is reserved for dots/banners with ink text (8.77:1).</li>
+        <li><strong>Chips are glass-quiet and are not buttons</strong> — translucent fill with NO per-chip backdrop blur (faked glass, GPU-free on long tables), gray outline, dark accent labels at .72rem, no hover, no pointer; only cobalt elements act. Uniform width applies to <em>labeled status</em> chips (6.5rem — vocabulary stays one short word + glyph; “⚠ Needs review” is the width-setter); glyph-only badges stay compact (<code>chip-fit</code>).</li>
         <li><strong>Cobalt and violet stay structurally distinct</strong> (the one confusable pair): cobalt always with underline/ring affordances, violet always on glyph-badges.</li>
         <li><strong>OS preferences honored:</strong> <code>prefers-reduced-transparency</code> → solid surfaces; <code>prefers-reduced-motion</code> → no reveal animation; <code>prefers-contrast: more</code> → stronger borders + darker muted text.</li>
         <li><strong>Visible focus everywhere</strong> (3px cobalt ring, offset 2px) · interactive targets ≥24×24 px · the First Light dialog is a real <code>role="dialog"</code> with focus trap, ESC, and focus return.</li>
@@ -625,7 +613,7 @@ footer .credit { margin-bottom:.3rem; }
 
 <footer>
   <div class="credit" id="footCredit"></div>
-  <div>First Light theme · prototype v1.5 (Chip Studio: A solid vs B glass-&amp;-quiet — pick a winner) · next: the live-dashboard token retheme</div>
+  <div>First Light theme · prototype v1.6 (glass-quiet chips GRADUATED — Sam’s pick; solid archived in the Studio) · next: the live-dashboard token retheme</div>
 </footer>
 
 <script>
