@@ -50,12 +50,17 @@ check("cross-college groups rank before same_college ones",
            return f === -1 || dg.slice(f).every((g) => g.same_college); })());
 check("groups carry similarity scores + shared terms",
   dg.every((g) => typeof g.score === "number" && Array.isArray(g.terms)));
-// the marquee find: the fragmented infant/toddler ECED family groups together
-// (pinned to ECED M1098 since the Session-46 statewide twin merge absorbed
-// its exact twin M1099 into it — the family re-forms around the survivor)
-const ecedG = dg.find((g) => g.members.some((m) => m.id === "ECED M1098"));
+// the marquee find: the fragmented infant/toddler ECED family groups together.
+// Found by TITLE family, never by pinned M-ID — re-mints re-sequence ids with
+// slot reuse (the survivor rode ECED M1098 → M1087 in the 2026-06-12 SUBJ4
+// fold; member titles travel with the rows). The family = the desc group with
+// the most infant/toddler-titled ECED members (≥4 = the fragmentation).
+const infTod = (t) => /infant/i.test(t || "") && /toddler/i.test(t || "");
+const ecedG = dg.filter((g) => g.members.filter((m) => infTod(m.t) && /^ECED /.test(m.id || "")).length >= 4)
+  .sort((a, b) => b.members.length - a.members.length)[0];
 check("the ECED infant/toddler fragmentation surfaces as one desc group",
-  !!ecedG && ecedG.members.length >= 4);
+  !!ecedG && ecedG.members.length >= 4
+  && ecedG.members.some((m) => /care/i.test(m.t || "")));
 
 // ── B. jsdom consumer drive (stubbed payload — UI mechanics) ───────────────
 const src = fs.readFileSync("unified_courses.js", "utf8");

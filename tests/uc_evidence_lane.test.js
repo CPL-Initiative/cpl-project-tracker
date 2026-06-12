@@ -6,10 +6,11 @@
 //     evidence_groups exist; every group leads with the OFFICIAL id; every
 //     claimant carries its 🧾 witness distribution (ev); contested members
 //     (multi-target evidence) are flagged x:1; the motivating case holds —
-//     bare-titled FLSP M1379 "Intermediate Spanish" is surfaced CONTESTED
-//     under SPAN 200 (8 vs 6 witnesses), while the clean variants
-//     (FLSP M1342 "Intermediate Spanish I" etc.) auto-folded into the
-//     SPAN 200/210 anchors via Phase B and are NOT separate rows.
+//     the bare-titled "Intermediate Spanish" M-ID (was FLSP M1379,
+//     era-dependent) is surfaced CONTESTED under SPAN 200 (8 vs 6
+//     witnesses), while the clean variants ("Intermediate Spanish I" etc.)
+//     auto-folded into the SPAN 200/210 anchors via Phase B and are NOT
+//     separate rows. M-IDs are derived by TITLE at runtime (slot reuse).
 //
 //  B. jsdom drive of the real consumer (unified_courses.js) with a stubbed
 //     suggestions payload: the 🧾 evidence section renders; witness chips
@@ -51,32 +52,50 @@ check("every contested member (x:1) has multi-target evidence OR failed the kins
 check("every clean member (no x) has single-target evidence",
   eg.every((g) => g.members.slice(1).every((m) => m.x || Object.keys(m.ev || {}).length === 1)));
 
+// Mechanism-style pins (post 2026-06-12 SUBJ4 fold): every M-ID below is
+// DERIVED by TITLE at runtime, never hardcoded — re-mints re-sequence ids
+// with slot reuse (the contested bare row rode FLSP M1379 → M1099; the clean
+// variants rode M1342 → M1090, M1043 → M1004, M1352 → M1093, M1045 → M1005;
+// a vacated id may hold an unrelated course next regen). Titles travel with
+// rows; the C-ID anchors (SPAN 200/210) are official and stable.
+const isBareIntSpanish = (m) =>
+  m.k === "M-ID" && /^intermediate spanish$/i.test((m.t || "").trim());
 const span200 = eg.find((g) => g.sig === "SPAN 200");
 check("SPAN 200 evidence group surfaced", !!span200);
+let bareLane = null;
 if (span200) {
-  const m1379 = span200.members.find((m) => m.id === "FLSP M1379");
-  check("bare-titled FLSP M1379 'Intermediate Spanish' surfaces under SPAN 200", !!m1379);
-  check("FLSP M1379 is CONTESTED (x:1 — its colleges split between SPAN 200/210)",
-    m1379 && m1379.x === 1 && m1379.ev && m1379.ev["SPAN 200"] >= 1 && m1379.ev["SPAN 210"] >= 1);
-  check("clean variant FLSP M1342 is NOT in the lane (it auto-folded via Phase B)",
-    !span200.members.some((m) => m.id === "FLSP M1342"));
+  bareLane = span200.members.find(isBareIntSpanish);
+  check("the bare-titled 'Intermediate Spanish' M-ID surfaces under SPAN 200", !!bareLane);
+  check("the bare claimant is CONTESTED (x:1 — its colleges split between SPAN 200/210)",
+    bareLane && bareLane.x === 1 && bareLane.ev
+    && bareLane.ev["SPAN 200"] >= 1 && bareLane.ev["SPAN 210"] >= 1);
+  check("no clean 'Intermediate Spanish I' variant queues in the lane (it auto-folded via Phase B)",
+    !span200.members.some((m) =>
+      m.k === "M-ID" && /^intermediate spanish i$/i.test((m.t || "").trim())));
 }
 
 const data = loadPayload("unified_courses_data.js", "window.CPL_UNIFIED_COURSES");
 const byId = {};
 data.rows.forEach((r) => { byId[r.id] = r; });
 const s200 = byId["SPAN 200"], s210 = byId["SPAN 210"];
+// The folds are asserted via the anchors' title_variants (the folded
+// variants' titles travel onto the surviving row) + fold counts.
 check("SPAN 200 anchor row consolidated the Intermediate-Spanish-I family",
-  s200 && (s200.consolidated_from || []).indexOf("FLSP M1342") >= 0
-       && (s200.consolidated_from || []).indexOf("FLSP M1043") >= 0);
+  s200 && (s200.consolidated_from || []).length >= 2
+       && (s200.title_variants || []).indexOf("Intermediate Spanish I") >= 0
+       && (s200.title_variants || []).indexOf("Spanish 3") >= 0);
 check("SPAN 210 anchor row consolidated the II/2/4 family (plurality 24:1 included)",
-  s210 && (s210.consolidated_from || []).indexOf("FLSP M1352") >= 0
-       && (s210.consolidated_from || []).indexOf("FLSP M1045") >= 0);
+  s210 && (s210.consolidated_from || []).length >= 2
+       && (s210.title_variants || []).indexOf("Intermediate Spanish II") >= 0
+       && (s210.title_variants || []).indexOf("Spanish 4") >= 0);
+const folded = ((s200 && s200.consolidated_from) || [])
+  .concat((s210 && s210.consolidated_from) || []);
 check("folded variants are no longer separate CCR rows",
-  !byId["FLSP M1342"] && !byId["FLSP M1352"] && !byId["FLSP M1043"]);
-check("FLSP M1379 stays a row, conflict-badged with the witness distribution",
-  byId["FLSP M1379"] && (byId["FLSP M1379"].match || {}).cid_conflict
-    && (byId["FLSP M1379"].match || {}).evidence);
+  folded.length >= 4 && folded.every((id) => !byId[id]));
+const bareRow = bareLane && byId[bareLane.id];
+check("the bare 'Intermediate Spanish' M-ID stays a row, conflict-badged with the witness distribution",
+  bareRow && /^intermediate spanish$/i.test((bareRow.title || "").trim())
+    && (bareRow.match || {}).cid_conflict && (bareRow.match || {}).evidence);
 
 // ── B. jsdom consumer drive (stubbed payload — UI mechanics) ───────────────
 const src = fs.readFileSync("unified_courses.js", "utf8");

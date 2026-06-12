@@ -46,9 +46,15 @@ check("AUTO 120 X is titled by its C-ID descriptor, not a folded remnant",
 // Session 42 (slot-fix): the promotions re-key was rebuilt with permutation
 // semantics, relocating mis-keyed evidence to its true rows — AUTO 120 X now
 // carries REAL kin folds (transmissions families), not the chimera set.
+// The kin SETS are pinned by TITLE + count (title_variants carries the
+// folded variants' titles), never by M-ID — the 2026-06-12 SUBJ4 fold
+// re-sequenced the AUTO bucket WITH SLOT REUSE (ex-M1067 now sits at
+// M1065, one of the previously-pinned ids), so id pins would silently
+// assert the wrong rows after any re-mint.
 check("AUTO 120 X folds are exactly the kin transmissions M-IDs",
-  a120 && JSON.stringify((a120.consolidated_from || []).slice().sort()) ===
-    JSON.stringify(["AUTO M1065", "AUTO M1067"]));
+  a120 && (a120.consolidated_from || []).length === 2
+  && JSON.stringify((a120.title_variants || []).slice().sort()) ===
+    JSON.stringify(["Automatic Transmission - Transaxle", "Automatic Transmissions and Transaxles"]));
 // Phase 3 (Session 45): statewide C-ID routing adds routed members to the
 // displayed set — AUTO 120 X gained 6 (21 → 27, rfold 3).
 check("AUTO 120 X stats describe the DISPLAYED members (claims ∪ folded ∪ routed)",
@@ -58,24 +64,41 @@ check("AUTO 120 X credit resolved (was blank)", a120 && a120.credit === "Credit"
 check("AUTO 150 X is titled by its C-ID descriptor",
   a150 && a150.title === "Automotive Braking Systems");
 check("AUTO 150 X folds are exactly the kin brakes M-IDs",
-  a150 && JSON.stringify((a150.consolidated_from || []).slice().sort()) ===
-    JSON.stringify(["AUTO M1075", "AUTO M1076", "AUTO M1079"]));
+  a150 && (a150.consolidated_from || []).length === 3
+  && JSON.stringify((a150.title_variants || []).slice().sort()) ===
+    JSON.stringify(["Automotive Brake Systems", "Automotive Brakes", "Automotive Braking Systems"]));
 
-const chimeras = ["AUTO M1017", "AUTO M1176", "AUTO M1027", "AUTO M1024", "AUTO M1025"];
+// The five chimera M-IDs — derived by TITLE (unique per title among the AUTO
+// M-ID rows); the fold re-occupied several of their vacated slots with
+// neighbouring courses (ex-M1025 now sits at M1024), so the old id pins
+// silently pointed at the wrong rows.
+const CHIMERA_TITLES = [
+  "Advanced Automotive Engine Performance",
+  "Light Vehicle Diesel Engines",
+  "Advanced Student Projects",
+  "Hybrid Vehicles and Advanced Electric Vehicle Technology",
+  "Advanced Engine Management",
+];
+const chimeras = CHIMERA_TITLES.map((t) => data.rows.find((r) =>
+  r.id_system === "M-ID" && /^AUTO M/.test(r.id) && (r.title || "") === t));
 check("the five chimera M-IDs remain their own rows (never folded)",
-  chimeras.every((id) => byId[id]));
+  chimeras.every((r) => !!r));
 check("the chimera rows carry NO official-id evidence at all (the slot-fix " +
   "relocated the mis-keyed receipts to their true families)",
-  chimeras.every((id) => !(byId[id] || {}).match));
+  chimeras.every((r) => r && !r.match));
 
 // The Session-40 win must survive the gate: witnesses' own courses were
 // title-kin ("Spanish 3" witnesses are titled "Spanish 3"), so these fold.
+// Folds asserted via the anchors' title_variants (the folded variants'
+// titles travel onto the surviving row; ids re-sequence under re-mints).
 const s200 = byId["SPAN 200"], s210 = byId["SPAN 210"];
 check("SPAN 200 keeps its Session-40 folds (gate preserves witness-kin evidence)",
-  s200 && (s200.consolidated_from || []).indexOf("FLSP M1342") >= 0
-       && (s200.consolidated_from || []).indexOf("FLSP M1043") >= 0);
+  s200 && (s200.consolidated_from || []).length >= 2
+       && (s200.title_variants || []).indexOf("Intermediate Spanish I") >= 0
+       && (s200.title_variants || []).indexOf("Spanish 3") >= 0);
 check("SPAN 210 keeps its folds (incl. the 24:1 plurality)",
-  s210 && (s210.consolidated_from || []).indexOf("FLSP M1352") >= 0);
+  s210 && (s210.consolidated_from || []).length >= 1
+       && (s210.title_variants || []).indexOf("Intermediate Spanish II") >= 0);
 
 // Claims-only official rows: officials whose only membership is raw COCI
 // claimants. They are unlocked C-ID/CCN rows with members but no folds.
@@ -94,22 +117,32 @@ check("R4 folded a substantial set of evidence-bearing stand-alones (sfold ≥ 2
 check("SPAN 210 absorbed its R4 stand-alone variants (Level II / IV / Advanced Intermediate)",
   byId["SPAN 210"] && (byId["SPAN 210"].sfold || 0) >= 2
     && (byId["SPAN 210"].title_variants || []).indexOf("Intermediate Spanish: Level II") >= 0);
+// The R4-folded stand-alones are identified by TITLE (their ids re-sequence
+// under re-mints — FLSP M11HH/M11HY rode to M10LD/M10LN, AHSD M90BK to
+// IDST M90LB): once folded, their titles leave the stand-alone payload
+// entirely (the writer excludes merge_into ids).
 const saPayload = loadPayload("unified_courses_standalone.js", "window.CPL_UC_STANDALONE");
-const saIds = new Set(saPayload.rows.map((r) => r.id));
+const saTitles = new Set(saPayload.rows.map((r) => (r.title || "").trim()));
 check("R4-folded stand-alones are out of the stand-alone payload",
-  !saIds.has("FLSP M11HH") && !saIds.has("FLSP M11HY") && !saIds.has("AHSD M90BK"));
+  !saTitles.has("Intermediate Spanish: Level I")
+  && !saTitles.has("Intermediate Spanish: Level II")
+  && !saTitles.has("Introduction to American Government"));
 
 // Lane payload. Post-slot-fix the lane is the CONTESTED/queued evidence only:
 // the 187 phantom "stale-receipt" groups dissolved when their evidence was
 // re-keyed home (AUTO 120 X folds instead of laning), and the marquee
-// genuinely-mixed row (FLSP M1379, SPAN 200 ×8 vs 210 ×6) still queues.
+// genuinely-mixed row (the bare "Intermediate Spanish" M-ID — was
+// FLSP M1379, era-dependent — SPAN 200 ×8 vs 210 ×6) still queues.
 const sug = loadPayload("unified_courses_suggestions.js", "window.CPL_UC_SUGGESTIONS");
 const eg = sug.evidence_groups || [];
 check("AUTO 120 X no longer needs a lane group (its evidence folds)",
   !eg.find((g) => g.sig === "AUTO 120 X"));
-const m1379 = eg.find((g) => g.members.some((m) => m.id === "FLSP M1379"));
-check("FLSP M1379 (genuinely mixed bare 'Intermediate Spanish') stays contested in the lane",
-  !!m1379 && m1379.sig === "SPAN 200");
+const isBareIntSpanish = (m) =>
+  m.k === "M-ID" && /^intermediate spanish$/i.test((m.t || "").trim());
+const bareGroup = eg.find((g) => g.members.some(isBareIntSpanish));
+check("the genuinely mixed bare 'Intermediate Spanish' M-ID stays contested in the lane",
+  !!bareGroup && bareGroup.sig === "SPAN 200"
+  && bareGroup.members.some((m) => isBareIntSpanish(m) && m.x === 1));
 check("kin-failed members anywhere in the lane are pre-unchecked (x:1)",
   eg.every((g) => g.members.filter((m) => m.tm && !m.ev).every((m) => m.x === 1)));
 const firstZero = eg.findIndex((g) => g.score === 0);

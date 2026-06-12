@@ -119,21 +119,28 @@ setTimeout(function () {
   }
 
   // ── Real-data check: EMT Certification folded the EMT-Basic core ──
+  // Mechanism-style pins (post 2026-06-12 SUBJ4 fold): rows found by TITLE,
+  // never by M-ID — re-mints legitimately re-sequence ids WITH SLOT REUSE
+  // (the EMT core rode EMST M1064 → M1058; a vacated id can be re-occupied
+  // by an unrelated course at the next regen). Titles travel with rows.
   if (emt) {
     const m = (emt.articulations || []).filter((a) => a.merged);
     check("EMT Certification has a consolidated identity in the baked payload", m.length >= 1);
     // Threshold history: ≥10 until the Session-46 statewide twin merge began
-    // absorbing exact-twin M-IDs PHYSICALLY (EMST M1052 → M1064), which
-    // legitimately shrinks the display-level fold count — the same
-    // unification, moved upstream into the KB. Guard the mechanism, not a
-    // high-water mark.
-    const core = m.find((a) => a.cid === "EMST M1064");
-    check("the EMT-Basic core folds ≥5 variants into EMST M1064",
-      !!core && core.merged >= 5);
+    // absorbing exact-twin M-IDs PHYSICALLY into the KB, which legitimately
+    // shrinks the display-level fold count — the same unification, moved
+    // upstream. Guard the mechanism, not a high-water mark. The core = the
+    // EMT-family-titled identity carrying the LARGEST fold count.
+    const core = m.filter((a) => /emergency medical technician/i.test(a.title || ""))
+      .sort((a, b) => (b.merged || 0) - (a.merged || 0))[0];
+    check("the EMT-Basic core (titled 'Emergency Medical Technician') folds ≥5 variants",
+      !!core && core.merged >= 5 && /^emergency medical technician$/i.test(core.title || ""));
     // The genuinely-distinct sub-courses stay as their own rows (not folded).
-    const ids = (emt.articulations || []).map((a) => a.cid);
-    check("EMT 'Refresher' (M1061) stays a distinct row", ids.indexOf("EMST M1061") >= 0);
-    check("EMT 'Lab' (M1056) stays a distinct row", ids.indexOf("EMST M1056") >= 0);
+    const titles = (emt.articulations || []).map((a) => (a.title || "").trim());
+    check("EMT 'Refresher' stays a distinct row",
+      titles.some((t) => /^emergency medical technician refresher$/i.test(t)));
+    check("EMT 'Lab' stays a distinct row",
+      titles.some((t) => /^emergency medical technician lab$/i.test(t)));
     check("EMT card collapsed to fewer than 25 rows (was 29)",
       (emt.articulations || []).length < 25);
   } else {
