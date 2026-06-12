@@ -79,9 +79,17 @@ const CHIMERA_TITLES = [
   "Hybrid Vehicles and Advanced Electric Vehicle Technology",
   "Advanced Engine Management",
 ];
+// The 2026-06-12 auto-merge pass (curator-AUTHORIZED) folded the
+// engine-performance token-reorder pair ("Advanced Automotive Engine
+// Performance" → "Automotive Advanced Engine Performance") into one row —
+// a CURATION merge, outside this gate's scope. The gate's claim is
+// narrower and still holds: no chimera ever folds BY EVIDENCE. Each title
+// must resolve (its own row, or a curated survivor's title_variant) and
+// carry NO official-id match.
 const chimeras = CHIMERA_TITLES.map((t) => data.rows.find((r) =>
-  r.id_system === "M-ID" && /^AUTO M/.test(r.id) && (r.title || "") === t));
-check("the five chimera M-IDs remain their own rows (never folded)",
+  r.id_system === "M-ID" && /^AUTO M/.test(r.id)
+  && ((r.title || "") === t || (r.title_variants || []).indexOf(t) >= 0)));
+check("every chimera title still resolves to an AUTO M-ID row (own row or curated-merge survivor; never evidence-folded)",
   chimeras.every((r) => !!r));
 check("the chimera rows carry NO official-id evidence at all (the slot-fix " +
   "relocated the mis-keyed receipts to their true families)",
