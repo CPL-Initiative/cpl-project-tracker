@@ -220,6 +220,9 @@ section > p.lede { color:var(--text-muted); font-size:.9rem; margin-bottom: .9re
 .chip-violet  { background:var(--violet-chip); }
 .chip-mustard { background:var(--mustard-chip); }
 .chip-neutral { color:var(--text-body); background:var(--surface-muted, #ECE9E2); }
+/* glyph-only badges: compact, not uniform-width (Sam) — same height/
+   radius/fill language, sized to the glyph */
+.chip.chip-fit { width:auto; min-width:26px; padding:0 .45rem; }
 
 .role-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(245px,1fr)); gap:1rem; }
 .role-card { padding:1rem 1.1rem; }
@@ -326,7 +329,7 @@ footer .credit { margin-bottom:.3rem; }
 
 <div class="bg-art" id="bgArt" aria-hidden="true"></div>
 
-<div class="proto-note">Prototype v1.4 — “First Light” theme spec &amp; living mock · demo data only · token values AA-verified by <code>prototype/check_contrast.py</code></div>
+<div class="proto-note">Prototype v1.4.1 — “First Light” theme spec &amp; living mock · demo data only · token values AA-verified by <code>prototype/check_contrast.py</code></div>
 
 <header class="masthead glass">
   <h1>CPL Project Tracker</h1>
@@ -461,11 +464,11 @@ footer .credit { margin-bottom:.3rem; }
           <colgroup><col style="width:13%"><col style="width:30%"><col style="width:22%"><col style="width:19%"><col style="width:16%"></colgroup>
           <thead><tr><th scope="col">ID</th><th scope="col">Course</th><th scope="col">Discipline</th><th scope="col">Status</th><th scope="col">Colleges</th></tr></thead>
           <tbody>
-            <tr><td class="id">ACCT M1004</td><td title="Financial Accounting">Financial Accounting</td><td>Accounting <span class="chip chip-hunter">✓</span></td><td><span class="chip chip-hunter">✓ Verified</span></td><td>41</td></tr>
-            <tr><td class="id">AUTO M1007</td><td title="Engine Performance — Level 2">Engine Performance — Level 2</td><td>Automotive Tech <span class="chip chip-violet">⚙</span></td><td><span class="chip chip-violet">✨ Suggested</span></td><td>12</td></tr>
+            <tr><td class="id">ACCT M1004</td><td title="Financial Accounting">Financial Accounting</td><td>Accounting <span class="chip chip-hunter chip-fit">✓</span></td><td><span class="chip chip-hunter">✓ Verified</span></td><td>41</td></tr>
+            <tr><td class="id">AUTO M1007</td><td title="Engine Performance — Level 2">Engine Performance — Level 2</td><td>Automotive Tech <span class="chip chip-violet chip-fit">⚙</span></td><td><span class="chip chip-violet">✨ Suggested</span></td><td>12</td></tr>
             <tr><td class="id">CRIM M1231</td><td title="Ethics and Leadership">Ethics and Leadership</td><td>Administration of Justice</td><td><span class="chip chip-mustard">⚠ Review</span></td><td>9</td></tr>
-            <tr><td class="id">FLSP M1379</td><td title="Elementary Spanish I">Elementary Spanish I</td><td>Foreign Languages <span class="chip chip-hunter">✓</span></td><td><span class="chip chip-hunter">✓ Verified</span></td><td>27</td></tr>
-            <tr><td class="id">WELD M9012</td><td title="Beginning Welding (Noncredit)">Beginning Welding (Noncredit)</td><td>Welding <span class="chip chip-violet">⚙</span></td><td><span class="chip chip-crimson">⚠ 3 findings</span></td><td>4</td></tr>
+            <tr><td class="id">FLSP M1379</td><td title="Elementary Spanish I">Elementary Spanish I</td><td>Foreign Languages <span class="chip chip-hunter chip-fit">✓</span></td><td><span class="chip chip-hunter">✓ Verified</span></td><td>27</td></tr>
+            <tr><td class="id">WELD M9012</td><td title="Beginning Welding (Noncredit)">Beginning Welding (Noncredit)</td><td>Welding <span class="chip chip-violet chip-fit">⚙</span></td><td><span class="chip chip-crimson">⚠ 3 findings</span></td><td>4</td></tr>
           </tbody>
         </table>
       </div>
@@ -508,7 +511,7 @@ footer .credit { margin-bottom:.3rem; }
         <li><strong>Color never carries meaning alone</strong> — every semantic accent ships with a glyph (▲▼ ✓ ⚠ ⚙ ✨). Saves the crimson/hunter pair for color-blind readers.</li>
         <li><strong>Glass always carries a scrim</strong> — text contrast is computed against the worst-case composite behind it, never the best case. Data tables skip glass entirely.</li>
         <li><strong>Mustard’s bright hue is never text</strong> — chips fill with the derived <code>--mustard-chip</code> ochre under white labels (4.63:1); the bright hue is reserved for dots/banners with ink text (8.77:1).</li>
-        <li><strong>Chips are not buttons</strong> — same corner language, but smaller type, no hover, no pointer; only cobalt elements act.</li>
+        <li><strong>Chips are not buttons</strong> — same corner language, but smaller type, no hover, no pointer; only cobalt elements act. Uniform width applies to <em>labeled status</em> chips; glyph-only badges stay compact (<code>chip-fit</code>).</li>
         <li><strong>Cobalt and violet stay structurally distinct</strong> (the one confusable pair): cobalt always with underline/ring affordances, violet always on glyph-badges.</li>
         <li><strong>OS preferences honored:</strong> <code>prefers-reduced-transparency</code> → solid surfaces; <code>prefers-reduced-motion</code> → no reveal animation; <code>prefers-contrast: more</code> → stronger borders + darker muted text.</li>
         <li><strong>Visible focus everywhere</strong> (3px cobalt ring, offset 2px) · interactive targets ≥24×24 px · the First Light dialog is a real <code>role="dialog"</code> with focus trap, ESC, and focus return.</li>

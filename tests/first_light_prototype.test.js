@@ -59,6 +59,11 @@ check("mustard chip uses the derived ochre fill",
   /\.chip-mustard\s*\{\s*background:var\(--mustard-chip\)/.test(HTML));
 check("violet chip uses the darkened fill",
   /\.chip-violet\s*\{\s*background:var\(--violet-chip\)/.test(HTML));
+// v1.4.1: glyph-only badges escape the uniform width (compact chip-fit)
+check("chip-fit modifier restores compact icon badges",
+  /\.chip\.chip-fit\s*\{\s*width:auto/.test(HTML));
+check("table icon badges use chip-fit", HTML.includes('chip chip-hunter chip-fit') &&
+  HTML.includes('chip chip-violet chip-fit'));
 // v1.2: gallery-size painting
 check("dialog goes gallery-size", HTML.includes("max-width:min(1180px, 94vw)"));
 check("painting gets 66vh", /\.fl-art img\s*\{[^}]*max-height:66vh/.test(HTML));
