@@ -2673,7 +2673,7 @@
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-06-12T14:29:15.876275+00:00",
+      "reviewed_at": "2026-06-12T17:18:32.914671+00:00",
       "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
@@ -8833,5 +8833,7 @@
       "validated_by": null,
       "_notes": null
     }
-  }
+  },
+  "_synced_at": "2026-06-12T18:43:05Z",
+  "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
 }
