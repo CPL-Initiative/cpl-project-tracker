@@ -6,8 +6,8 @@
   "_counts": {
     "total_disciplines": 148,
     "multi_subj4_disciplines": 57,
-    "needs_review": 24,
-    "seeded_default": 124
+    "needs_review": 0,
+    "seeded_default": 148
   },
   "disciplines": {
     "Administration of Justice": {
@@ -429,8 +429,8 @@
       "_notes": null
     },
     "Architecture": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ARCH",
+      "source": "curator_override",
       "data_modal": "ARCH",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.587,
@@ -509,9 +509,9 @@
       "cte_known_n": 603,
       "cte_unknown_n": 0,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:47:13.395092+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -590,8 +590,8 @@
       "_notes": null
     },
     "Art History": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ARTH",
+      "source": "curator_override",
       "data_modal": "ARTH",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.57,
@@ -627,9 +627,9 @@
       "cte_known_n": 117,
       "cte_unknown_n": 1,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:53:00.522784+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -803,8 +803,8 @@
       "_notes": null
     },
     "Automotive Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "AUTO",
+      "source": "curator_override",
       "data_modal": "AUTO",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.521,
@@ -866,9 +866,9 @@
       "cte_known_n": 1416,
       "cte_unknown_n": 71,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:51:09.205348+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -1548,8 +1548,8 @@
       "_notes": null
     },
     "Chicano Studies": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ETHN",
+      "source": "curator_override",
       "data_modal": "CHICANO",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.508,
@@ -1594,9 +1594,9 @@
       "cte_known_n": 49,
       "cte_unknown_n": 1,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:56:08.885146+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -2409,8 +2409,8 @@
       "_notes": null
     },
     "Dance": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "DANC",
+      "source": "curator_override",
       "data_modal": "DANC",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.459,
@@ -2472,9 +2472,9 @@
       "cte_known_n": 1634,
       "cte_unknown_n": 5,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:53:46.078267+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -3095,8 +3095,8 @@
       "_notes": null
     },
     "Education": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "EDUC",
+      "source": "curator_override",
       "data_modal": "EDUC",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.323,
@@ -3236,9 +3236,9 @@
       "cte_known_n": 461,
       "cte_unknown_n": 38,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:47:56.427498+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -3317,8 +3317,8 @@
       "_notes": null
     },
     "Electromechanical Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ELMT",
+      "source": "curator_override",
       "data_modal": "ECONMT",
       "data_modal_is_4letter": false,
       "data_modal_share": 1.0,
@@ -3341,9 +3341,9 @@
       "cte_known_n": 55,
       "cte_unknown_n": 0,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:51:51.974332+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -3802,8 +3802,8 @@
       "_notes": null
     },
     "English as a Second Language Noncredit 53412": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "ESOL",
+      "source": "curator_override",
       "data_modal": "ESL NC",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.778,
@@ -3840,9 +3840,9 @@
       "cte_known_n": 64,
       "cte_unknown_n": 0,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:56:20.510479+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -4039,8 +4039,8 @@
       "_notes": null
     },
     "Family and Consumer Studies/ Home Economics": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "FCSH",
+      "source": "curator_override",
       "data_modal": "CLTX",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.056,
@@ -4218,16 +4218,16 @@
       "cte_known_n": 453,
       "cte_unknown_n": 41,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:54:32.919829+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
     },
     "Fashion and Related Technologies": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "FASH",
+      "source": "curator_override",
       "data_modal": "FASH",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.537,
@@ -4289,9 +4289,9 @@
       "cte_known_n": 677,
       "cte_unknown_n": 1,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:55:06.767049+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -5538,8 +5538,8 @@
       "_notes": null
     },
     "Industrial Relations": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "LABR",
+      "source": "curator_override",
       "data_modal": "LABR",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.529,
@@ -5568,9 +5568,9 @@
       "cte_known_n": 62,
       "cte_unknown_n": 0,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:47:25.796469+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -5632,8 +5632,8 @@
       "_notes": null
     },
     "Industrial Technology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "INDT",
+      "source": "curator_override",
       "data_modal": "AOE",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.037,
@@ -5862,9 +5862,9 @@
       "cte_known_n": 803,
       "cte_unknown_n": 50,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:52:27.652343+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -5910,8 +5910,8 @@
       "_notes": null
     },
     "Interdisciplinary Studies": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "INTD",
+      "source": "curator_override",
       "data_modal": "DSSS",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.037,
@@ -6272,16 +6272,16 @@
       "cte_known_n": 2090,
       "cte_unknown_n": 16,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:56:35.774566+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
     },
     "Interdisciplinary-Basic Skills: Noncredit 53412": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "INTD",
+      "source": "curator_override",
       "data_modal": "BSICSKL",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.894,
@@ -6318,9 +6318,9 @@
       "cte_known_n": 116,
       "cte_unknown_n": 0,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:57:06.375421+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -6376,8 +6376,8 @@
       "_notes": null
     },
     "Journalism": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "JOUR",
+      "source": "curator_override",
       "data_modal": "JOUR",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.499,
@@ -6439,9 +6439,9 @@
       "cte_known_n": 336,
       "cte_unknown_n": 0,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:47:47.522457+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -8034,8 +8034,8 @@
       "_notes": null
     },
     "Photography": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "PHOT",
+      "source": "curator_override",
       "data_modal": "PHOT",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.468,
@@ -8098,16 +8098,16 @@
       "cte_known_n": 616,
       "cte_unknown_n": 1,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:53:54.558566+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
     },
     "Physical Education": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "PEDU",
+      "source": "curator_override",
       "data_modal": "PEF",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.095,
@@ -8171,9 +8171,9 @@
       "cte_known_n": 304,
       "cte_unknown_n": 201,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:48:55.92162+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -8615,8 +8615,8 @@
       "_notes": null
     },
     "Psychology": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "PSYC",
+      "source": "curator_override",
       "data_modal": "PSYC",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.514,
@@ -8692,16 +8692,16 @@
       "cte_known_n": 429,
       "cte_unknown_n": 3,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:55:24.959014+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
     },
     "Public Safety": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "PUBS",
+      "source": "curator_override",
       "data_modal": "PUBSERV",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.465,
@@ -8816,9 +8816,9 @@
       "cte_known_n": 499,
       "cte_unknown_n": 0,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:55:49.440699+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -9770,8 +9770,8 @@
       "_notes": null
     },
     "Steamfitting": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "STMF",
+      "source": "curator_override",
       "data_modal": "STMFT",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.91,
@@ -9799,9 +9799,9 @@
       "cte_known_n": 44,
       "cte_unknown_n": 0,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:52:49.210618+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -9853,8 +9853,8 @@
       "_notes": null
     },
     "Theater Arts": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "THEA",
+      "source": "curator_override",
       "data_modal": "THA",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.293,
@@ -9909,9 +9909,9 @@
       "cte_known_n": 142,
       "cte_unknown_n": 5,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:54:06.849039+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -9998,8 +9998,8 @@
       "_notes": null
     },
     "Vocational": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "VOCE",
+      "source": "curator_override",
       "data_modal": "VOC ED",
       "data_modal_is_4letter": false,
       "data_modal_share": 0.66,
@@ -10040,16 +10040,16 @@
       "cte_known_n": 517,
       "cte_unknown_n": 25,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:47:36.355806+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
     },
     "Welding": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "WELD",
+      "source": "curator_override",
       "data_modal": "WELD",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.566,
@@ -10112,9 +10112,9 @@
       "cte_known_n": 803,
       "cte_unknown_n": 1,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:52:54.867122+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
@@ -10154,8 +10154,8 @@
       "_notes": null
     },
     "Work Experience Instructors": {
-      "canonical_subj4": null,
-      "source": null,
+      "canonical_subj4": "WEXP",
+      "source": "curator_override",
       "data_modal": "WEXP",
       "data_modal_is_4letter": true,
       "data_modal_share": 0.046,
@@ -10218,14 +10218,14 @@
       "cte_known_n": 81,
       "cte_unknown_n": 5,
       "cip_code": null,
-      "needs_review": true,
-      "reviewed_at": null,
-      "reviewed_by": null,
+      "needs_review": false,
+      "reviewed_at": "2026-06-12T12:55:15.528015+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": null
     }
   },
-  "_synced_at": "2026-06-12T01:25:03Z",
+  "_synced_at": "2026-06-12T13:45:05Z",
   "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
 }

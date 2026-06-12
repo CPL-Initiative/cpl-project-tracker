@@ -8,7 +8,7 @@ window.CPL_FUNDING_PERF = {
  "suppress_below": 5,
  "statewide": {
   "p2": 4635,
-  "p3": 16151
+  "p3": 16150
  },
  "colleges": {
   "Bakersfield": {
@@ -105,7 +105,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Riverside": {
    "p2": 33,
-   "p3": 688
+   "p3": 687
   },
   "San Bernardino": {
    "p2": 54,
