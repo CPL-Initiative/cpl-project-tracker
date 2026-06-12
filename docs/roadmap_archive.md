@@ -1208,3 +1208,23 @@ login-free **KPI card drag-to-reorder** (`kpi_reorder.js`, per-browser
 localStorage, label-identity re-match across regens, ↺ reset) — strategic-queue
 item 2. Full story: `docs/statewide_kpi_lessons.md`; pattern distilled:
 `docs/kb-notes/methodology-user-vocabulary-category-maps.md`. Checkpoint #378.
+
+## Archived session narratives (Session 45) — moved 2026-06-12 (Session 48)
+
+### Session 45 — CCR rules day: statewide C-ID routing + the CADM homonym + the description lane (2026-06-11)
+
+Sam's three asks, three PRs, merged on green. **#379** C-ID router **Phase 3
+statewide** (gate removed): 8,377 members under 454 descriptors, 174 M-IDs +
+1,682 stand-alones rfold; 0 members vanish, 125 invisible claimants
+materialize; 4 MATH∧SOCI dual-approval stats courses un-route (scope-gates
+must filter AFTER assembling the full approval set — scope §9). **#381** the
+screenshot's `CRIM M1003` root-caused to the `CADM` college-homonym lexicon
+entry laundered by the SUBJ4 re-key → `kb/_audit_subject_map.py` (TOP-division
+votes + minority-title grading), **college-scoped subject_map entries**,
+**retraction propagation**; 11 homonyms scoped, ~320 rows re-filled honestly
+(CRIM M1003 → Drafting/CADD). **#382** the dark 86% (13,922 M-IDs, no official
+evidence): TF-IDF description lane, level/gender/sport-guarded → **474 groups
+(135 cross-college)** as the worklist's 4th section (`desc_groups`, receipt
+`kb/desc_consolidation_out/candidates.json`, termly re-run). Suite 29/29.
+Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 45); KB note:
+`methodology-college-homonym-subject-codes.md`.

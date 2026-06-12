@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-12 (Session 46 — the AUTO/smog over-mint case: the 🏷 title-evidence worklist lane #385 (IDF title cosine over dark M-IDs + 54k stand-alones, shared guard suite kb/_consolidation_guards.py, NO units gate) + the STATEWIDE strict twin-merge #386 (589 token-identical twins absorbed 16,143→15,554, guard-clique gated, curator targets honored, promotions re-keyed) + the Sam-confirmed smog consolidations (52 identities → consolidated rows: AUTO M1001 L1&2, AUTO M1007 the 12-member Level-2 family); docs/ccr_rules_brief.md amended — the twin tier is the ONE title-based auto-merge; NEW methodology-title-similarity-merge-guards)
+updated: 2026-06-12 (Session 48 — First Light: the design sprint, 10 PRs #391–#400 — daily PD plein air greeting LIVE on the dashboard (first_light.js: grayscale→color reveal, read-aloud, anonymous reflections → new write-only Supabase cpl_reflections) + the theme spec BLESSED (prototype v1.4.2 + check_contrast.py derived AA tokens; glass=chrome/opaque=data; solid uniform chips); NEW first_light_lessons + methodology-derived-aa-token-palette + reference-public-domain-art-sourcing; NEXT: the live-dashboard token retheme — GO)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -101,6 +101,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [ADR — Per-college funding-priority metric counts (aggregate + suppression)](kb-notes/adr-funding-priority-metrics-privacy.md) | adr | **RATIFIED** | 2026-06-11 | 2026-06-11 (Sam: "Yes on forks"; shipped #364) |
 | [Reference — The P1 completion-data gap (why completions aren't in MAP; the strategy ladder out)](kb-notes/reference-p1-completion-data-gap.md) | reference | published | 2026-06-11 | 2026-06-11 |
 | [Methodology — Maintaining a committed-workbook model (one-shot revisions, input-driven builder)](kb-notes/methodology-committed-workbook-models.md) | methodology | published | 2026-06-11 | 2026-06-11 |
+| [Methodology — Derive theme tokens from brand seeds with a contrast script (the mock is the spec)](kb-notes/methodology-derived-aa-token-palette.md) | methodology | published | 2026-06-12 | 2026-06-12 |
+| [Reference — Public-domain art sourcing for the dashboard (Adams 79-AA, CA Impressionists, the four traps)](kb-notes/reference-public-domain-art-sourcing.md) | reference | published | 2026-06-12 | 2026-06-12 |
 
 ---
 
@@ -117,6 +119,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G; **Session 37: orphan-tail discipline fallback #330 + FL-split CSR search/display #331** | **Session 37 (2026-06-09)** |
 | [`cpl_assistant_lessons.md`](cpl_assistant_lessons.md) | CPL Assistant (in-dashboard RAG chatbot tab; Phase 1 shipped + live `cpl-chat` v14) | **Session 26 (Bruh 26, 2026-06-01) NEW** |
 | [`cpl_funding_lessons.md`](cpl_funding_lessons.md) | CPL Implementation Funding tab — full arc #352–#368: shell → data/renderer → what-if sandbox → shares-first rev2 workbook → P2/P3 actuals (ratified ADR) → roster edits + no-scroll rule. Scope: [`funding_priority_metrics_scope.md`](funding_priority_metrics_scope.md); own handoff: [`cpl_funding_handoff.md`](cpl_funding_handoff.md) | **2026-06-11 (13 PRs, Rule-8 checkpointed)** |
+| [`first_light_lessons.md`](first_light_lessons.md) | First Light — daily PD plein air greeting LIVE (#394/#396: gallery reveal, read-aloud, anonymous write-only reflections) + the theme spec (prototype v1.4.2 BLESSED: derived AA tokens, glass=chrome/opaque=data, solid uniform chips); next = the live retheme | **Session 48 (2026-06-12) NEW** |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
 | [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR / Cred-Ref / CER triage / **merge tool** | **Session 32 (CER refinement #284/#285/#286 + the existing→existing credential MERGE tool)** |
@@ -179,6 +182,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 44 → 45 | Statewide Exhibits KPI card #375/#376 + KPI reorder #377 (handoff) | [`session_45_handoff.md`](session_45_handoff.md) |
 | 45 → 46 | CCR rules day: statewide router #379 + homonym repair #381 + description lane #382 (handoff) | [`session_46_handoff.md`](session_46_handoff.md) |
 | 46 → 47 | The AUTO/smog over-mint case: 🏷 title lane #385 + statewide twin merge #386 + smog consolidations (handoff) | [`session_47_handoff.md`](session_47_handoff.md) |
+| 48 → 49 | First Light design sprint #391–#400: daily plein air greeting LIVE + theme spec v1.4.2 BLESSED → the retheme is GO (handoff) | [`session_49_handoff.md`](session_49_handoff.md) |
 
 ---
 

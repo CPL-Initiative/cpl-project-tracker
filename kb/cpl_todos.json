@@ -1,26 +1,32 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-06-12",
-  "_session": 47,
-  "_status": "Session 47: the CSR grew a 'Check SUBJ ⇄ CCR' sweep + live collision checking on the Common SUBJ box (#388), and these To-Do lists are new today. All 148 disciplines now carry a Common SUBJ pick (Sam's 24 this morning closed the queue) — 11 shared codes are the remaining CSR decisions. The CCR mint/merge refinement continues — the smog residuals and the title/description queues are the curator frontier; the canonical-SUBJ4 fold re-mint is the next big Fable move.",
+  "_as_of": "2026-06-12-b",
+  "_session": 48,
+  "_status": "Session 48 was the First Light design sprint (10 PRs): the dashboard now greets you once a day with a public-domain California plein air painting — full-color reveal, read-aloud, and an anonymous thought-for-the-day box (stored write-only; nobody can read them back except the service role). The visual spec for the coming dashboard re-theme is locked and BLESSED (prototype v1.4.2: monochrome + crimson/cobalt/hunter/violet/mustard, glass chrome, solid uniform chips). Next big Fable move: paint the live dashboard in the new theme. The Session-47 curation queues (CSR collisions, smog residuals, merge queues) remain the curator frontier.",
   "items": [
+    {
+      "id": "sam-first-light",
+      "who": "sam",
+      "tab": "all",
+      "text": "Tomorrow morning: enjoy First Light on the live dashboard ☀ — try the 🔊 read-aloud and share a reflection (it's anonymous). Reopen anytime via the 'Today's painting' chip in the header."
+    },
     {
       "id": "csr-collisions",
       "who": "sam",
       "tab": "canonical-subj4",
-      "text": "Run the new ✓ Check SUBJ ⇄ CCR sweep: 11 shared Common SUBJ codes need a decision. Four arrived with this morning's picks — INDT (Industrial Tech + Instructional Design) and INTD (Interdisciplinary ×2 + Interior Design) look accidental; ESOL (credit + noncredit ESL) and THEA (Drama/Theater + its alias) look like convergences to confirm with a note. Plus the original 7: CISC, COSM, ELEC, HLTH, NUTR, PHYS, RADT."
+      "text": "Run the ✓ Check SUBJ ⇄ CCR sweep: 11 shared Common SUBJ codes need a decision — INDT and INTD look accidental; ESOL and THEA look like convergences to confirm with a note; plus CISC, COSM, ELEC, HLTH, NUTR, PHYS, RADT."
     },
     {
       "id": "ccr-smog-residuals",
       "who": "sam",
       "tab": "unified-courses",
-      "text": "✨ Suggested merges → 🏷 title groups: the smog residuals await your judgment — the unmarked 'Inspection Procedures' rows (M11DC / M11DE / M11NW) sit in the Level-1 family group, plus the noncredit pair (M9052 / M90AK)."
+      "text": "✨ Suggested merges → 🏷 title groups: the smog residuals await your judgment — the unmarked 'Inspection Procedures' rows (M11DC / M11DE / M11NW) in the Level-1 family group, plus the noncredit pair (M9052 / M90AK)."
     },
     {
       "id": "ccr-queues",
       "who": "sam",
       "tab": "unified-courses",
-      "text": "Work the merge queues as time allows, cross-college groups first: 🏷 title-evidence (5,584 groups), 📝 description-evidence (416), 🧾 COCI-evidence folds. Confirm what's right, Skip the rest — nothing applies without you."
+      "text": "Work the merge queues as time allows, cross-college first: 🏷 title-evidence (5,584 groups), 📝 description-evidence (416), 🧾 COCI-evidence folds. Confirm what's right, Skip the rest — nothing applies without you."
     },
     {
       "id": "cer-statewide-bucket",
@@ -29,10 +35,22 @@
       "text": "Statewide-category review bucket: State Bar + HRCM 001 await a category call."
     },
     {
+      "id": "fable-retheme",
+      "who": "fable",
+      "tab": "all",
+      "text": "THE RETHEME — spec blessed (prototype v1.4.2), so paint the live dashboard: token-value swap in both HTMLs + generator CSS, ghosted painting, glass chrome, the new chip rules on live badges, CI contrast lint, KPI drag-reorder regression test + keyboard path. Plan: docs/session_49_handoff.md."
+    },
+    {
+      "id": "fable-first-light-growth",
+      "who": "fable",
+      "tab": "all",
+      "text": "First Light growth: manifest 3 → 60–90 verified-PD paintings (sourcing rules in the KB note); later, the reflections themes job (service-role mining → a community card) and the Almanac gallery."
+    },
+    {
       "id": "fable-subj4-fold",
       "who": "fable",
       "tab": "canonical-subj4",
-      "text": "Scope the canonical-SUBJ4 fold re-mint: 59 disciplines / 7,436 off-canonical rows incl. stand-alones per the sweep (grew with this morning's 24 fresh picks — their rows await the fold). Identity-grain TOP-vs-SUBJ4 audit first; Rule-7 playbook; your collision decisions feed it directly."
+      "text": "Scope the canonical-SUBJ4 fold re-mint: 59 disciplines / 7,436 off-canonical rows incl. stand-alones per the sweep. Identity-grain TOP-vs-SUBJ4 audit first; Rule-7 playbook; Sam's collision decisions feed it directly."
     },
     {
       "id": "fable-cis-cs-gate",
@@ -51,12 +69,6 @@
       "who": "fable",
       "tab": "unified-courses",
       "text": "Twin-merge cadence: re-run the dry-run termly together with both consolidation receipts (the shared guards upgrade once → re-run all three)."
-    },
-    {
-      "id": "fable-cron-verify",
-      "who": "fable",
-      "tab": "all",
-      "text": "Verify today's backstop cron (14:17 UTC) no-ops cleanly after yesterday's twin-merge dispatch (stamp-normalized hashes, never --stat)."
     }
   ]
 }
