@@ -312,6 +312,432 @@
     return (entry.total_mids || 0) * Math.max(0, nVars - 1);
   }
 
+  // ═══ SUBJ ⇄ CCR error checking (Session 47) ═══════════════════════════════
+  //
+  // Two affordances over one ownership index:
+  //   1. A curator-initiated "Check SUBJ ⇄ CCR" sweep (toolbar button): every
+  //      discipline's Common SUBJ vs the SUBJ4 codes its CCR rows actually
+  //      carry — shared codes (collisions), off-canonical rows (the
+  //      subject_collision_signal class, queued for the next fold re-mint),
+  //      invalid saves, and multi-code disciplines with no pick yet.
+  //   2. Live feedback while typing in the Common SUBJ input: collision /
+  //      in-use warnings + suggestion chips for codes that DON'T collide.
+  //
+  // Data grain: variants_observed in the seed = per-discipline SUBJ4
+  // distribution across actual CCR rows (minted M-IDs + stand-alones),
+  // refreshed at every re-seed (kb/_seed_canonical_subj4.py). Semantics
+  // mirror kb/_row_audit.py's subject_collision_signal, umbrella exemptions
+  // included.
+
+  // Umbrella disciplines legitimately span >1 SUBJ4 and are EXEMPT from the
+  // off-canonical checks (mirror of UMBRELLA_DISCIPLINES in kb/_row_audit.py —
+  // keep the two in sync). Foreign Languages' per-language codes come from the
+  // split file at runtime; Kinesiology's spans are fixed (KINE instruction +
+  // ATHL intercollegiate athletics).
+  var UMBRELLA_EXTRA_SUBJ4 = { "Kinesiology": ["KINE", "ATHL"] };
+
+  function isUmbrellaEntry(entry) {
+    return !!(splitFor(entry) || UMBRELLA_EXTRA_SUBJ4[entry.discipline]);
+  }
+
+  // Codes that are LEGITIMATE on this discipline's CCR rows: the canonical
+  // plus umbrella split codes / fixed umbrella spans.
+  function allowedSubj4(entry) {
+    var ok = {};
+    if (entry.canonical_subj4) ok[entry.canonical_subj4] = true;
+    (splitFor(entry) || []).forEach(function (x) { ok[x.code] = true; });
+    (UMBRELLA_EXTRA_SUBJ4[entry.discipline] || []).forEach(function (c) { ok[c] = true; });
+    return ok;
+  }
+
+  // The merged (seed + live overlay) entry list — the same merge render() shows,
+  // so the checker always sees just-saved edits.
+  function mergedEntries() {
+    if (!state.seed) return [];
+    return Object.keys(state.seed.disciplines).map(function (d) {
+      var entry = applyOverlay(state.seed.disciplines[d], state.overlay[d]);
+      entry.discipline = d;
+      return entry;
+    });
+  }
+
+  // SUBJ4 ownership index over the merged entries.
+  //   owners:   SUBJ4 -> [{d: discipline, why: "canonical"|"split (lang)"|"umbrella span"}]
+  //   observed: SUBJ4 -> { discipline: CCR row count }   (variants_observed)
+  // Cached on state; invalidated on every canonical save.
+  function subjIndex() {
+    if (state._subjIdx) return state._subjIdx;
+    var owners = {}, observed = {};
+    mergedEntries().forEach(function (e) {
+      var c = e.canonical_subj4;
+      if (c && SUBJ4_RE.test(c)) (owners[c] = owners[c] || []).push({ d: e.discipline, why: "canonical" });
+      (splitFor(e) || []).forEach(function (x) {
+        (owners[x.code] = owners[x.code] || []).push({ d: e.discipline, why: "split (" + x.lang + ")" });
+      });
+      (UMBRELLA_EXTRA_SUBJ4[e.discipline] || []).forEach(function (s) {
+        if (s !== c) (owners[s] = owners[s] || []).push({ d: e.discipline, why: "umbrella span" });
+      });
+      var vo = e.variants_observed || {};
+      Object.keys(vo).forEach(function (s) {
+        (observed[s] = observed[s] || {})[e.discipline] = vo[s];
+      });
+    });
+    state._subjIdx = { owners: owners, observed: observed };
+    return state._subjIdx;
+  }
+  function invalidateSubjIndex() { state._subjIdx = null; }
+
+  // Disciplines (other than selfD) that OWN `code` as canonical/split/span.
+  function otherOwners(code, selfD) {
+    return (subjIndex().owners[code] || []).filter(function (o) { return o.d !== selfD; });
+  }
+  // Disciplines (other than selfD) whose CCR rows CARRY `code`, by count desc.
+  function otherUsers(code, selfD) {
+    var m = subjIndex().observed[code] || {};
+    return Object.keys(m).filter(function (d) { return d !== selfD; })
+      .map(function (d) { return { d: d, n: m[d] }; })
+      .sort(function (a, b) { return b.n - a.n; });
+  }
+
+  // The sweep. Categorized findings over the merged entries:
+  //   collisions — one SUBJ4 claimed by ≥2 disciplines (error: one code must
+  //                map to one discipline at the fold re-mint)
+  //   drift      — non-umbrella discipline whose CCR rows carry codes other
+  //                than its canonical (info: folds at the next re-mint; codes
+  //                owned by ANOTHER discipline are flagged — likely
+  //                mis-disciplined rows, the AUTB M1037 class). Carries
+  //                own/total so a minority/new canonical reads on the line.
+  //   invalid    — saved canonical isn't 4 letters
+  //   missing    — no canonical yet + ≥2 observed codes (ranked by impact)
+  function runSubjCheck() {
+    var rows = mergedEntries();
+    var idx = subjIndex();
+    var out = { collisions: [], drift: [], invalid: [], missing: [], nRowsOff: 0 };
+
+    Object.keys(idx.owners).sort().forEach(function (code) {
+      var ds = {};
+      idx.owners[code].forEach(function (o) { if (!ds[o.d]) ds[o.d] = o.why; });
+      var names = Object.keys(ds);
+      if (names.length < 2) return;
+      out.collisions.push({
+        code: code,
+        owners: names.map(function (d) {
+          return { d: d, why: ds[d], n: (idx.observed[code] || {})[d] || 0 };
+        }),
+      });
+    });
+
+    rows.forEach(function (e) {
+      var c = e.canonical_subj4;
+      var vo = e.variants_observed || {};
+      var voKeys = Object.keys(vo);
+      var total = 0;
+      voKeys.forEach(function (s) { total += vo[s]; });
+
+      if (c && !SUBJ4_RE.test(c)) {
+        out.invalid.push({ d: e.discipline, code: c });
+        return;
+      }
+      if (!c) {
+        if (voKeys.length >= 2) {
+          out.missing.push({ d: e.discipline, codes: voKeys.length, rows: total, impact: rekeyImpact(e) });
+        }
+        return;
+      }
+      if (isUmbrellaEntry(e)) return; // umbrellas span many SUBJ4s by design
+
+      var allow = allowedSubj4(e);
+      var off = voKeys.filter(function (s) { return !allow[s]; })
+        .map(function (s) {
+          var own = otherOwners(s, e.discipline);
+          return { code: s, n: vo[s], ownedBy: own.length ? own[0].d : null };
+        })
+        .sort(function (a, b) { return b.n - a.n; });
+      if (off.length) {
+        var nOff = 0;
+        off.forEach(function (x) { nOff += x.n; });
+        out.nRowsOff += nOff;
+        out.drift.push({
+          d: e.discipline, canonical: c, off: off, nOff: nOff,
+          own: vo[c] || 0, total: total,
+          cross: off.some(function (x) { return !!x.ownedBy; }),
+        });
+      }
+    });
+    out.drift.sort(function (a, b) { return (b.cross - a.cross) || (b.nOff - a.nOff); });
+    out.missing.sort(function (a, b) { return b.impact - a.impact; });
+    return out;
+  }
+
+  // Candidate codes for this discipline that don't collide elsewhere: its own
+  // observed SUBJ4s + 4-letter local college codes + the data modal, minus
+  // anything OWNED by another discipline. Codes merely IN USE under another
+  // discipline's rows are kept but warn-marked (the curator sees the
+  // trade-off). Prefix-filtered while the curator types; ranked by usage.
+  function subjSuggestions(entry, prefix) {
+    var weight = {};
+    var vo = entry.variants_observed || {};
+    Object.keys(vo).forEach(function (s) { if (SUBJ4_RE.test(s)) weight[s] = (weight[s] || 0) + vo[s] * 10; });
+    var lv = entry.local_subject_variants || {};
+    Object.keys(lv).forEach(function (s) { if (SUBJ4_RE.test(s)) weight[s] = (weight[s] || 0) + lv[s]; });
+    if (entry.data_modal && SUBJ4_RE.test(entry.data_modal)) weight[entry.data_modal] = (weight[entry.data_modal] || 0) + 1;
+    return Object.keys(weight)
+      .filter(function (s) { return s !== entry.canonical_subj4; })
+      .filter(function (s) { return !prefix || s.indexOf(prefix) === 0; })
+      .filter(function (s) { return !otherOwners(s, entry.discipline).length; })
+      .sort(function (a, b) { return weight[b] - weight[a]; })
+      .slice(0, 6)
+      .map(function (s) {
+        var users = otherUsers(s, entry.discipline);
+        return { code: s, mine: (vo[s] || 0) + (lv[s] || 0), conflict: users.length ? users[0] : null };
+      });
+  }
+
+  // Live feedback under the Common SUBJ input: assessment line(s) + suggestion
+  // chips. Chips set the value on mousedown (before blur) so the input's
+  // natural blur saves the pick.
+  function renderSubjHint(entry, input, hint) {
+    if (input.disabled) return;
+    var v = (input.value || "").toUpperCase();
+    hint.innerHTML = "";
+    if (v && SUBJ4_RE.test(v) && v !== entry.canonical_subj4) {
+      var own = otherOwners(v, entry.discipline);
+      var users = otherUsers(v, entry.discipline);
+      var mineN = (entry.variants_observed || {})[v] || 0;
+      if (own.length) {
+        hint.appendChild(el("span", { class: "cs-badge warn" },
+          ["✗ " + v + " is the Common SUBJ of " + own.map(function (o) { return o.d; }).join(" + ")]));
+      } else if (users.length) {
+        hint.appendChild(el("span", {
+          class: "cs-badge mix",
+          title: users.map(function (u) { return u.d + " ×" + u.n; }).join("\n"),
+        }, ["⚠ on " + users[0].n + " CCR row" + (users[0].n === 1 ? "" : "s") + " under " + users[0].d]));
+      }
+      if (mineN) {
+        hint.appendChild(el("span", { class: "cs-badge ok" },
+          ["✓ on " + mineN + " of this discipline's CCR rows"]));
+      } else if (!own.length && !users.length) {
+        hint.appendChild(el("span", { class: "cs-badge muted" },
+          ["new code — created at the next fold re-mint"]));
+      }
+      var nCid = (state.cidBySubj[v] || []).length;
+      var nCcn = (state.ccnBySubj[v] || []).length;
+      if (nCid || nCcn) {
+        hint.appendChild(el("span", { class: "cs-badge muted" },
+          ["ℹ official subject (" + (nCid ? nCid + " C-ID" : "") + (nCid && nCcn ? ", " : "") + (nCcn ? nCcn + " CCN" : "") + ")"]));
+      }
+    }
+    // Partial input filters the suggestions by prefix; empty or a complete
+    // 4-letter code shows the full alternative list (minus the typed code).
+    var prefix = (v && !SUBJ4_RE.test(v)) ? v : "";
+    var sugg = subjSuggestions(entry, prefix).filter(function (s) { return s.code !== v; });
+    if (sugg.length) {
+      var lab = el("span", { class: "cs-sugg-label" }, ["try:"]);
+      hint.appendChild(lab);
+      sugg.forEach(function (s) {
+        var chip = el("button", {
+          type: "button",
+          class: "cs-sugg-chip" + (s.conflict ? " conflicted" : ""),
+          title: (s.mine ? "Used " + s.mine + "× in this discipline's rows/local codes. " : "") +
+                 (s.conflict ? "⚠ also on " + s.conflict.n + " CCR row(s) under " + s.conflict.d + "."
+                             : "No collisions elsewhere.") + " Click to fill + save.",
+        }, [s.code + (s.conflict ? " ⚠" : "")]);
+        chip.onmousedown = function () {
+          // mousedown fires BEFORE the input's blur, so setting the value here
+          // lets the natural blur-save flow persist the pick.
+          input.value = s.code;
+        };
+        hint.appendChild(chip);
+      });
+    }
+    hint.classList.toggle("show", hint.children.length > 0);
+  }
+
+  // One-time CSS for the checker UI (layout only — colors ride the existing
+  // cs-badge classes + design tokens).
+  function ensureCheckCss() {
+    if (document.getElementById("cs-check-css")) return;
+    document.head.appendChild(el("style", { id: "cs-check-css" }, [
+      "#tab-canonical-subj4 .cs-check-btn{padding:6px 10px;border:1px solid var(--border-strong);border-radius:6px;" +
+        "background:var(--surface);font-size:.85rem;cursor:pointer;color:var(--text-strong);}" +
+      "#tab-canonical-subj4 .cs-check-btn:hover{background:var(--surface-muted);}" +
+      "#tab-canonical-subj4 .cs-subj-hint{display:none;margin-top:4px;text-align:left;line-height:1.9;max-width:34ch;}" +
+      "#tab-canonical-subj4 .cs-subj-hint.show{display:block;}" +
+      "#tab-canonical-subj4 .cs-subj-hint .cs-badge{display:inline-block;margin:0 4px 2px 0;}" +
+      "#tab-canonical-subj4 .cs-sugg-label{color:var(--text-muted);font-size:.72rem;margin-right:4px;}" +
+      "#tab-canonical-subj4 .cs-sugg-chip{font-family:ui-monospace,Menlo,monospace;font-size:.74rem;padding:1px 7px;" +
+        "margin:0 3px 2px 0;border:1px solid var(--border-strong);border-radius:10px;background:var(--surface-subtle);" +
+        "cursor:pointer;color:var(--text-strong);}" +
+      "#tab-canonical-subj4 .cs-sugg-chip:hover{background:var(--surface-muted);}" +
+      "#tab-canonical-subj4 .cs-sugg-chip.conflicted{border-style:dashed;color:var(--text-muted);}" +
+      "#tab-canonical-subj4 .cs-check-section{margin:14px 0 6px;font-size:.95rem;color:var(--text-strong);}" +
+      "#tab-canonical-subj4 .cs-check-list{margin:0;padding:0;list-style:none;}" +
+      "#tab-canonical-subj4 .cs-check-list li{padding:6px 4px;border-top:1px solid var(--border);font-size:.85rem;" +
+        "color:var(--text-body);text-align:left;}" +
+      "#tab-canonical-subj4 .cs-check-jump{margin-left:8px;font-size:.74rem;padding:1px 8px;border:1px solid var(--border-strong);" +
+        "border-radius:10px;background:var(--surface-subtle);cursor:pointer;color:var(--accent-link);white-space:nowrap;}" +
+      "#tab-canonical-subj4 .cs-check-jump:hover{background:var(--surface-muted);}" +
+      "#tab-canonical-subj4 .cs-check-note{color:var(--text-muted);font-size:.78rem;margin:4px 0 10px;text-align:left;}" +
+      "#tab-canonical-subj4 .cs-check-ok{color:var(--green-progress);font-size:.95rem;margin:10px 0;}"
+    ]));
+  }
+
+  // Inject the report modal once (same pattern as ensureCplModal — appended
+  // inside the pane so the scoped .cs-modal rules apply; no HTML edit).
+  function ensureCheckModal() {
+    if (document.getElementById("cs-check-modal")) return;
+    var close = el("button", { class: "cs-modal-close", type: "button", "aria-label": "Close" }, ["×"]);
+    var modal = el("div", { class: "cs-modal" }, [
+      close,
+      el("h3", { id: "cs-check-title" }, ["SUBJ ⇄ CCR check"]),
+      el("div", { id: "cs-check-body" }),
+    ]);
+    var bg = el("div", { id: "cs-check-modal", class: "cs-modal-bg", role: "dialog", "aria-modal": "true" }, [modal]);
+    function shut() { bg.classList.remove("show"); document.removeEventListener("keydown", esc); }
+    function esc(e) { if (e.key === "Escape") shut(); }
+    bg._esc = esc;
+    close.onclick = shut;
+    bg.onclick = function (e) { if (e.target === bg) shut(); };
+    document.getElementById("tab-canonical-subj4").appendChild(bg);
+  }
+
+  // Cure affordance: clear every filter, search the discipline, close the
+  // modal — the curator lands on the row with the live-checking input.
+  function jumpToDiscipline(d) {
+    state.search = d.toLowerCase();
+    state.subj = "";
+    state.filter = "all";
+    state.topFilter = "all";
+    var inp = document.getElementById("cs-search"); if (inp) inp.value = d;
+    var sj = document.getElementById("cs-subj-search"); if (sj) sj.value = "";
+    var f = document.getElementById("cs-filter"); if (f) f.value = "all";
+    var tf = document.getElementById("cs-top-filter"); if (tf) tf.value = "all";
+    render();
+    var bg = document.getElementById("cs-check-modal");
+    if (bg) bg.classList.remove("show");
+  }
+
+  function _jumpBtn(d) {
+    var b = el("button", { type: "button", class: "cs-check-jump", title: "Show this discipline's row (clears other filters)" }, ["show " + d + " →"]);
+    b.onclick = function () { jumpToDiscipline(d); };
+    return b;
+  }
+
+  function openCheckModal() {
+    ensureCheckCss();
+    ensureCheckModal();
+    var res = runSubjCheck();
+    var bg = document.getElementById("cs-check-modal");
+    var body = document.getElementById("cs-check-body");
+    body.innerHTML = "";
+
+    var nIssues = res.collisions.length + res.invalid.length;
+    document.getElementById("cs-check-title").textContent =
+      "SUBJ ⇄ CCR check — " + res.collisions.length + " collision" + (res.collisions.length === 1 ? "" : "s") +
+      " · " + res.drift.length + " discipline" + (res.drift.length === 1 ? "" : "s") + " with off-canonical rows" +
+      (res.invalid.length ? " · " + res.invalid.length + " invalid" : "");
+
+    if (!nIssues && !res.drift.length && !res.missing.length) {
+      body.appendChild(el("p", { class: "cs-check-ok" },
+        ["✅ No SUBJ collisions or mismatches — every Common SUBJ is unique and matches its CCR rows."]));
+    }
+
+    if (res.collisions.length) {
+      body.appendChild(el("h5", { class: "cs-check-section" },
+        ["🔴 Shared Common SUBJ codes (" + res.collisions.length + ")"]));
+      body.appendChild(el("p", { class: "cs-check-note" }, [
+        "One code must map to one discipline at the SUBJ4 fold re-mint, so each of these needs a decision: " +
+        "change one side (open its row — the Common SUBJ box suggests collision-free codes), or, if the two " +
+        "disciplines are deliberately converging (fan-in), leave it and record the intent in the row's notes."]));
+      var ulC = el("ul", { class: "cs-check-list" });
+      res.collisions.forEach(function (c) {
+        var li = el("li");
+        li.appendChild(el("strong", { class: "cs-mono" }, [c.code]));
+        li.appendChild(document.createTextNode(" — " + c.owners.map(function (o) {
+          return o.d + (o.why !== "canonical" ? " (" + o.why + ")" : "") + (o.n ? " ×" + o.n : "");
+        }).join("  +  ") + " "));
+        c.owners.forEach(function (o) { li.appendChild(_jumpBtn(o.d)); });
+        ulC.appendChild(li);
+      });
+      body.appendChild(ulC);
+    }
+
+    if (res.invalid.length) {
+      body.appendChild(el("h5", { class: "cs-check-section" }, ["🔴 Invalid saved codes (" + res.invalid.length + ")"]));
+      var ulI = el("ul", { class: "cs-check-list" });
+      res.invalid.forEach(function (x) {
+        var li = el("li");
+        li.appendChild(document.createTextNode(x.d + " — saved value "));
+        li.appendChild(el("strong", { class: "cs-mono" }, ['"' + x.code + '"']));
+        li.appendChild(document.createTextNode(" isn't 4 letters "));
+        li.appendChild(_jumpBtn(x.d));
+        ulI.appendChild(li);
+      });
+      body.appendChild(ulI);
+    }
+
+    if (res.drift.length) {
+      body.appendChild(el("h5", { class: "cs-check-section" },
+        ["🟡 CCR rows keyed off-canonical (" + res.drift.length + " disciplines · " + res.nRowsOff + " rows)"]));
+      body.appendChild(el("p", { class: "cs-check-note" }, [
+        "These rows carry a SUBJ4 that differs from the discipline's Common SUBJ. They re-key to the canonical at " +
+        "the next SUBJ4 fold re-mint (a receipted, Fable-side operation under the Rule-7 playbook) — nothing to fix " +
+        "here unless the canonical itself is wrong (edit it on the row) or a row's discipline is wrong (fix that row " +
+        "on the Common Course Reference). Codes marked ⚠ are another discipline's Common SUBJ — those rows are " +
+        "likely mis-disciplined."]));
+      var ulD = el("ul", { class: "cs-check-list" });
+      res.drift.forEach(function (g) {
+        var li = el("li");
+        li.appendChild(el("strong", null, [g.d]));
+        li.appendChild(document.createTextNode(" (canonical "));
+        li.appendChild(el("span", { class: "cs-mono" }, [g.canonical]));
+        var share = g.total ? Math.round((g.own / g.total) * 100) : 0;
+        li.appendChild(document.createTextNode(
+          g.own === 0 ? " — not on any CCR row yet)" : (share < 50 ? " — only " + share + "% of rows)" : ")")));
+        li.appendChild(document.createTextNode(": "));
+        g.off.forEach(function (x, i) {
+          if (i) li.appendChild(document.createTextNode(" · "));
+          li.appendChild(el("span", { class: "cs-mono" }, [x.code]));
+          li.appendChild(document.createTextNode(" ×" + x.n));
+          if (x.ownedBy) {
+            li.appendChild(el("span", { class: "cs-badge warn", title: "This code is the Common SUBJ of " + x.ownedBy + " — these rows are likely mis-disciplined." },
+              ["⚠ = " + x.ownedBy]));
+          }
+        });
+        li.appendChild(_jumpBtn(g.d));
+        ulD.appendChild(li);
+      });
+      body.appendChild(ulD);
+    }
+
+    if (res.missing.length) {
+      body.appendChild(el("h5", { class: "cs-check-section" },
+        ["⚪ Multi-code disciplines with no Common SUBJ yet (" + res.missing.length + ")"]));
+      body.appendChild(el("p", { class: "cs-check-note" },
+        ["Highest re-key impact first — pick a code so the fold re-mint can include them."]));
+      var ulM = el("ul", { class: "cs-check-list" });
+      res.missing.slice(0, 15).forEach(function (m) {
+        var li = el("li");
+        li.appendChild(el("strong", null, [m.d]));
+        li.appendChild(document.createTextNode(" — " + m.codes + " codes across " + m.rows + " rows "));
+        li.appendChild(_jumpBtn(m.d));
+        ulM.appendChild(li);
+      });
+      if (res.missing.length > 15) {
+        ulM.appendChild(el("li", { class: "cs-check-note" },
+          ["…+" + (res.missing.length - 15) + ' more — use the "Needs curator review" filter.']));
+      }
+      body.appendChild(ulM);
+    }
+
+    body.appendChild(el("p", { class: "cs-check-note" }, [
+      "CCR snapshot: seeded " + ((state.seed && state.seed._seeded_at) || "—") +
+      " · row counts include stand-alones · umbrella disciplines (Foreign Languages, Kinesiology) span many codes by design and are exempt."]));
+
+    document.addEventListener("keydown", bg._esc);
+    bg.classList.add("show");
+  }
+
   // Build the inline variants summary — show top 5 + a "show all (n)" chip
   // that opens the variants modal. Modal listing always includes any C-IDs
   // and CCNs that share a SUBJ4 with the variants observed, so a curator
@@ -594,6 +1020,14 @@
     subjSearch.value = state.subj || "";
     subjSearch.oninput = function () { state.subj = this.value.trim(); render(); };
     tb.appendChild(subjSearch);
+    // SUBJ ⇄ CCR checker — curator-initiated sweep (works signed-out; cures
+    // need sign-in). See the "SUBJ ⇄ CCR error checking" block above.
+    var checkBtn = el("button", {
+      class: "cs-check-btn", type: "button", id: "cs-subj-check",
+      title: "Check every discipline's Common SUBJ against the SUBJ4 codes its Common Course Reference rows actually carry: shared codes (collisions), off-canonical rows (queued for the fold re-mint), invalid saves, and missing picks.",
+    }, ["✓ Check SUBJ ⇄ CCR"]);
+    checkBtn.onclick = openCheckModal;
+    tb.appendChild(checkBtn);
     // Auth widget — populated by renderAuth() so async sign-in/out flows
     // don't have to rebuild the whole toolbar (and clobber search focus).
     tb.appendChild(el("span", { id: "cs-auth", class: "cs-auth" }));
@@ -910,17 +1344,39 @@
     });
     if (!state.sess) input.disabled = true;
     var initial = input.value;
+    // Live SUBJ ⇄ CCR feedback under the input: collision/in-use assessment
+    // + collision-free suggestion chips. Populated on focus/input, cleared
+    // shortly after blur (the delay lets a chip's mousedown set the value
+    // before the blur-save runs).
+    var hint = el("div", { class: "cs-subj-hint" });
     function reflectValidity() {
       var v = (input.value || "").toUpperCase();
       input.value = v;
       input.classList.remove("cs-saved", "cs-invalid");
       if (v && !SUBJ4_RE.test(v)) input.classList.add("cs-invalid");
     }
-    input.oninput = reflectValidity;
+    input.oninput = function () { reflectValidity(); renderSubjHint(entry, input, hint); };
+    input.onfocus = function () { ensureCheckCss(); renderSubjHint(entry, input, hint); };
     input.onblur = function () {
+      setTimeout(function () { hint.innerHTML = ""; hint.classList.remove("show"); }, 150);
       var v = (input.value || "").toUpperCase();
       if (v === initial.toUpperCase()) return;
       if (v && !SUBJ4_RE.test(v)) { toast("Canonical SUBJ4 must be exactly 4 letters", true); return; }
+      if (v) {
+        // Hard-collision guard: another discipline already owns this code as
+        // its Common SUBJ (or umbrella split/span). Never silent — but never
+        // blocking either: an intentional fan-in convergence is a legitimate
+        // save, so confirm instead of refuse.
+        var own = otherOwners(v, entry.discipline);
+        if (own.length && !confirm(
+          v + " is already the Common SUBJ of " + own.map(function (o) { return o.d; }).join(" + ") +
+          ".\n\nTwo disciplines sharing one code will collide at the SUBJ4 fold re-mint. " +
+          "Save anyway (e.g. an intentional convergence)?")) {
+          input.value = initial;
+          reflectValidity();
+          return;
+        }
+      }
       saveField(entry.discipline, FIELD_CANON, v, state.sess)
         .then(function (r) {
           if (!r.ok) { toast("Save failed (" + r.status + ")", true); return; }
@@ -930,13 +1386,14 @@
           rec[FIELD_CANON] = v;
           rec.reviewed_by = state.sess.email;
           rec.reviewed_at = new Date().toISOString();
+          invalidateSubjIndex(); // ownership changed — next check/hint rebuilds
           toast("Saved " + entry.discipline + " → " + v);
           render();
         })
         .catch(function () { toast("Save failed (network)", true); });
     };
     input.onkeydown = function (e) { if (e.key === "Enter") input.blur(); };
-    var tdCanon = el("td", null, [input]);
+    var tdCanon = el("td", null, [input, hint]);
     // Multi-SUBJ4 umbrella (e.g. Foreign Languages): show the per-language
     // split codes so the curator sees the discipline isn't single-canonical,
     // and the codes are visibly searchable (matched in render()'s filter).
