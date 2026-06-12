@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Light theme — prototype v1 · CPL Project Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════════════════════════════════
+   FIRST LIGHT — theme prototype v1 (standalone mock; the mock IS the spec)
+   Monochrome glass over a ghosted plein air painting; five semantic
+   accents; WCAG 2.2 AA. Every value below is verified by
+   prototype/check_contrast.py against documented WORST-CASE backdrops
+   (paper #F4F2ED · glass-worst #F7F7F6 · dark-worst #27272E).
+   Token NAMES mirror the live dashboard's :root so the port is a
+   value swap, not a rename.
+   ════════════════════════════════════════════════════════════════════ */
+:root {
+  /* base — warm monochrome */
+  --paper: #F4F2ED;
+  --text-strong: #1C1C1A;          /* "ink" — 15.26:1 on paper */
+  --text-body: #3A3A36;            /* 10.21:1 */
+  --text-muted: #5C5C55;           /*  6.02:1 */
+  --text-faint: #87877F;           /* decorative only — never essential text */
+  --surface: rgba(255,255,255,.78);/* glass card fill (over blur) */
+  --surface-opaque: #FFFFFF;       /* data surfaces — tables NEVER on glass */
+  --surface-subtle: #F7F5F1;
+  --border: rgba(28,28,26,.14);
+  --border-strong: rgba(28,28,26,.30);
+  --scrim-dark: rgba(21,21,29,.92);/* masthead — composite worst-case #27272E */
+
+  /* the five accents — light-surface text/icon grades (≥4.5:1) */
+  --crimson: #C8102E;              /* negative · alerts · flags        5.26:1 */
+  --cobalt:  #0047AB;              /* interactive · links · focus      7.54:1 */
+  --hunter:  #355E3B;              /* positive · savings · verified    6.67:1 */
+  --violet:  #6D28D9;              /* machine-generated · inferred     6.35:1 */
+  --mustard-fill: #E3B341;         /* caution chip FILL — never text on light */
+  --mustard-deep: #9A7400;         /* caution border/icon grade (≥3:1) 3.85:1 */
+
+  /* on-dark grades (≥5.5:1 on the masthead scrim, headroom past AA) */
+  --crimson-on-dark: #E28392;
+  --cobalt-on-dark:  #7A9FD3;
+  --hunter-on-dark:  #8CA38F;
+  --violet-on-dark:  #B28DEB;
+  --mustard-on-dark: #E3B341;      /* 7.65:1 — mustard shines on dark */
+
+  /* role aliases mapping onto the live dashboard's existing tokens */
+  --accent-link: var(--cobalt);
+  --green-progress: var(--hunter);
+  --red-alert: var(--crimson);
+  --yellow-warning: var(--mustard-deep);
+
+  --focus-ring: var(--cobalt);
+  --glass-blur: 14px;
+  --radius: 14px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Source Sans 3', Arial, sans-serif;
+  background:var(--paper);
+  color:var(--text-body);
+  line-height:1.55;
+}
+h1,h2,h3 { font-family:'Playfair Display', Georgia, serif; color:var(--text-strong); }
+
+/* ── ghosted painting — grayscale, low opacity, behind everything ───── */
+.bg-art {
+  position:fixed; inset:0; z-index:-1;
+  background-position:center; background-size:cover; background-repeat:no-repeat;
+  filter:grayscale(1) contrast(.95);
+  opacity:.10;                      /* the 10% worst case the spec assumes */
+  pointer-events:none;
+}
+.bg-art.bg-fallback {               /* painterly gradient if Commons is unreachable */
+  background:
+    radial-gradient(120% 70% at 15% 85%, #6b6b66 0%, transparent 60%),
+    radial-gradient(90% 60% at 80% 20%, #8d8d86 0%, transparent 55%),
+    radial-gradient(70% 50% at 55% 65%, #4f4f4a 0%, transparent 50%),
+    linear-gradient(165deg, #c9c7c0 0%, #93938c 55%, #5c5c55 100%);
+  filter:none;
+}
+
+/* ── glass vs opaque — THE structural rule ──────────────────────────── */
+.glass {
+  background:var(--surface);
+  -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(1.05);
+  backdrop-filter:blur(var(--glass-blur)) saturate(1.05);
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow:0 8px 30px rgba(20,20,30,.08);
+  border-radius:var(--radius);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .glass { background:var(--surface-opaque); }
+}
+.opaque-card {
+  background:var(--surface-opaque);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:0 2px 10px rgba(20,20,30,.05);
+}
+
+/* accessibility: OS-level preferences are honored for real; the demo
+   toggles below mirror them with body classes so you can preview */
+@media (prefers-reduced-transparency: reduce) {
+  .glass { background:var(--surface-opaque); backdrop-filter:none; -webkit-backdrop-filter:none; }
+  .bg-art { display:none; }
+}
+body.sim-solid .glass { background:var(--surface-opaque); backdrop-filter:none; -webkit-backdrop-filter:none; }
+body.sim-solid .bg-art { display:none; }
+@media (prefers-contrast: more) {
+  :root { --border:rgba(28,28,26,.45); --text-muted:#3A3A36; }
+}
+body.sim-contrast { --border:rgba(28,28,26,.45); --text-muted:#3A3A36; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
+  .fl-art img, .reveal { transition:none !important; animation:none !important; }
+}
+
+/* visible focus everywhere (WCAG 2.4.7 / 2.4.13-friendly) */
+:focus-visible {
+  outline:3px solid var(--focus-ring);
+  outline-offset:2px;
+  border-radius:6px;
+}
+
+/* ── prototype banner ───────────────────────────────────────────────── */
+.proto-note {
+  background:var(--mustard-fill); color:var(--text-strong);
+  text-align:center; font-size:.85rem; font-weight:600;
+  padding:.45rem .75rem;
+}
+.proto-note a { color:var(--text-strong); }
+
+/* ── masthead — dark glass band ─────────────────────────────────────── */
+.masthead {
+  background:var(--scrim-dark);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  color:#FFFFFF;
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:.35rem 1.4rem;
+  padding:1.05rem 1.6rem;
+  position:sticky; top:0; z-index:50;
+}
+.masthead h1 { color:#FFF; font-size:1.45rem; font-weight:700; letter-spacing:.01em; }
+.masthead .sub { color:rgba(255,255,255,.82); font-size:.85rem; }
+.masthead .spacer { flex:1; }
+.today-chip {
+  display:inline-flex; align-items:center; gap:.45rem;
+  font-size:.82rem; color:var(--mustard-on-dark);
+  border:1px solid rgba(227,179,65,.45); border-radius:999px;
+  padding:.3rem .8rem; min-height:24px;
+  background:rgba(255,255,255,.06); cursor:pointer; font-family:inherit;
+}
+.today-chip:hover { background:rgba(255,255,255,.12); }
+.today-chip .dot { width:9px; height:9px; border-radius:50%; background:var(--mustard-on-dark); }
+
+/* ── layout: rail + main ────────────────────────────────────────────── */
+.shell { display:flex; gap:1.25rem; padding:1.25rem 1.6rem 3rem; max-width:1480px; margin:0 auto; }
+.rail {
+  flex:0 0 235px; align-self:flex-start; position:sticky; top:84px;
+  padding:.8rem .6rem;
+}
+.rail nav { display:flex; flex-direction:column; gap:2px; }
+.rail a {
+  display:block; text-decoration:none; padding:.5rem .8rem; border-radius:9px;
+  color:var(--text-body); min-height:24px;
+}
+.rail a .t { display:block; font-weight:600; font-size:.92rem; color:var(--text-strong); }
+.rail a .s { display:block; font-size:.74rem; color:var(--text-muted); font-style:italic; letter-spacing:.02em; }
+.rail a:hover { background:rgba(28,28,26,.06); }
+.rail a[aria-current="page"] { background:rgba(0,71,171,.10); box-shadow:inset 3px 0 0 var(--cobalt); }
+.rail a[aria-current="page"] .t { color:var(--cobalt); }
+.rail .rail-head { font-size:.7rem; text-transform:uppercase; letter-spacing:.14em; color:var(--text-muted); padding:.2rem .8rem .5rem; }
+main { flex:1; min-width:0; display:flex; flex-direction:column; gap:1.5rem; }
+@media (max-width: 900px) {
+  .shell { flex-direction:column; }
+  .rail { position:static; flex:none; }
+  .rail nav { flex-direction:row; flex-wrap:wrap; }
+}
+
+section h2 { font-size:1.22rem; margin-bottom:.25rem; }
+section > p.lede { color:var(--text-muted); font-size:.9rem; margin-bottom: .9rem; max-width:70ch; }
+
+/* ── KPI hero cards ─────────────────────────────────────────────────── */
+.kpi-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:1rem; }
+.kpi { padding:1.1rem 1.2rem; }
+.kpi .label { font-size:.74rem; text-transform:uppercase; letter-spacing:.12em; color:var(--text-muted); display:flex; align-items:center; gap:.5rem; }
+.kpi .value { font-family:'Playfair Display', Georgia, serif; font-size:1.9rem; font-weight:700; color:var(--text-strong); margin:.15rem 0; }
+.kpi .delta { font-size:.82rem; font-weight:600; }
+.delta.up   { color:var(--hunter); }
+.delta.down { color:var(--crimson); }
+.live {
+  font-size:.62rem; font-weight:700; letter-spacing:.08em; color:var(--crimson);
+  border:1px solid var(--crimson); border-radius:4px; padding:.05rem .3rem;
+}
+.kpi .note { font-size:.74rem; color:var(--text-muted); }
+
+/* ── chips & badges — every accent does ONE job, always with a glyph ── */
+.chip {
+  display:inline-flex; align-items:center; gap:.35rem;
+  font-size:.78rem; font-weight:600; border-radius:999px;
+  padding:.22rem .7rem; min-height:24px; min-width:24px; border:1px solid;
+}
+.chip-crimson { color:var(--crimson); border-color:var(--crimson); background:rgba(200,16,46,.07); }
+.chip-hunter  { color:var(--hunter);  border-color:var(--hunter);  background:rgba(53,94,59,.08); }
+.chip-violet  { color:var(--violet);  border-color:var(--violet);  background:rgba(109,40,217,.07); }
+.chip-mustard { color:var(--text-strong); border-color:var(--mustard-deep); background:var(--mustard-fill); }
+.chip-neutral { color:var(--text-muted); border-color:var(--border-strong); background:var(--surface-subtle); }
+
+.role-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(245px,1fr)); gap:1rem; }
+.role-card { padding:1rem 1.1rem; }
+.role-card .swatch { width:100%; height:6px; border-radius:3px; margin-bottom:.7rem; }
+.role-card h3 { font-size:.98rem; margin-bottom:.1rem; }
+.role-card .job { font-size:.78rem; color:var(--text-muted); margin-bottom:.65rem; }
+.role-card .demo { display:flex; flex-wrap:wrap; gap:.45rem; align-items:center; }
+
+a.link { color:var(--accent-link); text-decoration:underline; text-underline-offset:2px; }
+.btn {
+  display:inline-flex; align-items:center; gap:.4rem; cursor:pointer;
+  font-family:inherit; font-size:.85rem; font-weight:600;
+  background:var(--cobalt); color:#FFF; border:none; border-radius:9px;
+  padding:.5rem 1rem; min-height:32px;
+}
+.btn:hover { background:#003B8E; }
+.btn.ghost { background:transparent; color:var(--cobalt); border:1.5px solid var(--cobalt); }
+.btn.ghost:hover { background:rgba(0,71,171,.08); }
+
+/* ── sample data table — OPAQUE surface, fixed layout ───────────────── */
+.tbl-wrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; table-layout:fixed; font-size:.85rem; }
+th {
+  text-align:left; font-size:.7rem; text-transform:uppercase; letter-spacing:.1em;
+  color:var(--text-muted); padding:.55rem .7rem; border-bottom:2px solid var(--border-strong);
+}
+td { padding:.5rem .7rem; border-bottom:1px solid var(--border); color:var(--text-body);
+     white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+tbody tr:hover { background:var(--surface-subtle); }
+td .id { font-weight:700; color:var(--text-strong); }
+
+/* ── First Light modal ──────────────────────────────────────────────── */
+.fl-overlay {
+  position:fixed; inset:0; z-index:100; display:none;
+  align-items:center; justify-content:center;
+  background:rgba(21,21,29,.55);
+  -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+  padding:1.2rem;
+}
+.fl-overlay.open { display:flex; }
+.fl-dialog {
+  background:var(--surface-opaque); border-radius:18px; overflow:hidden;
+  max-width:760px; width:100%; max-height:92vh; overflow-y:auto;
+  box-shadow:0 30px 80px rgba(10,10,20,.4);
+}
+.fl-head {
+  display:flex; align-items:center; gap:.6rem; padding:.9rem 1.3rem;
+  border-bottom:1px solid var(--border);
+}
+.fl-head .sun { width:12px; height:12px; border-radius:50%; background:var(--mustard-fill); border:2px solid var(--mustard-deep); }
+.fl-head h2 { font-size:1.05rem; }
+.fl-head .day { font-size:.78rem; color:var(--text-muted); margin-left:auto; padding-right:.6rem; }
+.fl-close {
+  background:none; border:1.5px solid var(--border-strong); border-radius:8px;
+  width:32px; height:32px; font-size:1rem; cursor:pointer; color:var(--text-body);
+}
+.fl-close:hover { background:var(--surface-subtle); }
+.fl-art { background:#22221F; text-align:center; }
+.fl-art img {
+  max-width:100%; max-height:46vh; display:block; margin:0 auto;
+  filter:grayscale(1); transition:filter 1.8s ease .35s;
+}
+.fl-overlay.open .fl-art img.revealed { filter:grayscale(0); }
+.fl-art .img-fallback {
+  display:none; padding:3.2rem 1rem; color:rgba(255,255,255,.85); font-size:.85rem;
+  background:linear-gradient(160deg,#8a6d2e 0%,#a8842f 30%,#6e7d52 65%,#43523f 100%);
+}
+.fl-body { padding:1.1rem 1.4rem 1.3rem; }
+.fl-body .title { font-family:'Playfair Display', Georgia, serif; font-size:1.3rem; font-weight:700; color:var(--text-strong); }
+.fl-body .byline { font-size:.88rem; color:var(--text-muted); margin-bottom:.7rem; }
+.fl-body .blurb { font-size:.92rem; margin-bottom:.6rem; }
+.fl-body .setting { font-size:.86rem; color:var(--text-muted); margin-bottom:.8rem; }
+.fl-body .lic { font-size:.74rem; color:var(--text-muted); border-top:1px solid var(--border); padding-top:.7rem; display:flex; flex-wrap:wrap; gap:.4rem 1rem; align-items:center; }
+.fl-actions { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; margin:.9rem 0 .2rem; }
+.fl-optout { font-size:.8rem; color:var(--text-muted); display:flex; align-items:center; gap:.4rem; }
+.fl-optout input { width:16px; height:16px; accent-color:var(--cobalt); }
+
+/* ── token spec table ───────────────────────────────────────────────── */
+.spec td, .spec th { white-space:normal; }
+.spec .sw { display:inline-block; width:30px; height:18px; border-radius:4px; border:1px solid var(--border-strong); vertical-align:middle; }
+.spec code { font-size:.8rem; background:var(--surface-subtle); padding:.05rem .3rem; border-radius:4px; }
+.pass { color:var(--hunter); font-weight:700; }
+
+.rules li { margin:.35rem 0 .35rem 1.2rem; font-size:.9rem; }
+.toggles { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:.8rem; }
+
+footer {
+  text-align:center; font-size:.78rem; color:var(--text-muted);
+  padding:1.6rem 1rem 2.2rem;
+}
+footer .credit { margin-bottom:.3rem; }
+</style>
+</head>
+<body>
+
+<div class="bg-art" id="bgArt" aria-hidden="true"></div>
+
+<div class="proto-note">Prototype v1 — “First Light” theme spec &amp; living mock · demo data only · token values AA-verified by <code>prototype/check_contrast.py</code></div>
+
+<header class="masthead glass">
+  <h1>CPL Project Tracker</h1>
+  <span class="sub">Mapping Articulated Pathways · California Community Colleges</span>
+  <span class="spacer"></span>
+  <button class="today-chip" id="todayChip" type="button">
+    <span class="dot" aria-hidden="true"></span>
+    <span id="todayChipLabel">Today’s painting</span>
+  </button>
+</header>
+
+<div class="shell">
+
+  <!-- ── left rail: tabs + map-flavored subtitle proposals ─────────── -->
+  <aside class="rail glass" aria-label="Dashboard sections (subtitle proposals)">
+    <div class="rail-head">The Map</div>
+    <nav>
+      <a href="#" aria-current="page"><span class="t">Dashboard</span><span class="s">Basecamp</span></a>
+      <a href="#"><span class="t">Activities &amp; Projects</span><span class="s">Trailheads</span></a>
+      <a href="#"><span class="t">Annual Workplan Goals</span><span class="s">Waypoints</span></a>
+      <a href="#"><span class="t">Budget</span><span class="s">Provisions</span></a>
+      <a href="#"><span class="t">Implementation Funding</span><span class="s">The Grubstake</span></a>
+      <a href="#"><span class="t">Vision 2030</span><span class="s">Summit</span></a>
+      <a href="#"><span class="t">Unified Courses</span><span class="s">Atlas</span></a>
+      <a href="#"><span class="t">Canonical Subjects</span><span class="s">The Legend</span></a>
+      <a href="#"><span class="t">Credential Reference</span><span class="s">Field Guide</span></a>
+      <a href="#"><span class="t">Exhibit Adoption</span><span class="s">Overlook</span></a>
+      <a href="#"><span class="t">Pipeline</span><span class="s">Switchbacks</span></a>
+      <a href="#"><span class="t">Letters</span><span class="s">Dispatches</span></a>
+      <a href="#"><span class="t">CPL Assistant</span><span class="s">The Ranger</span></a>
+    </nav>
+  </aside>
+
+  <main>
+
+    <!-- ── KPI hero (glass) ──────────────────────────────────────────── -->
+    <section aria-labelledby="kpiH">
+      <h2 id="kpiH">Headline metrics <span style="font-size:.75rem; font-family:'Source Sans 3'; color:var(--text-muted); font-weight:400;">— glass chrome · demo numbers</span></h2>
+      <p class="lede">Deltas always pair a glyph with the color (▲▼), so meaning never rides on hue alone. The LIVE badge is crimson’s only non-negative job — a recording-dot convention.</p>
+      <div class="kpi-row">
+        <div class="kpi glass">
+          <div class="label">Students served <span class="live">LIVE</span></div>
+          <div class="value">128,450</div>
+          <div class="delta up">▲ 1.2% · 7d</div>
+        </div>
+        <div class="kpi glass">
+          <div class="label">Estimated savings <span class="live">LIVE</span></div>
+          <div class="value">$48.3M</div>
+          <div class="delta up">▲ $612K · 7d</div>
+        </div>
+        <div class="kpi glass">
+          <div class="label">Eligible units</div>
+          <div class="value">1.92M</div>
+          <div class="delta down">▼ 0.3% · 1d</div>
+        </div>
+        <div class="kpi glass">
+          <div class="label">Active colleges</div>
+          <div class="value">109</div>
+          <div class="note">Leading 38 · Advancing 64 · Inactive 7</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── the five accents, each with ONE job ───────────────────────── -->
+    <section aria-labelledby="accH">
+      <h2 id="accH">Five accents, five jobs</h2>
+      <p class="lede">The base is monochrome; color is meaning. Each accent owns one semantic lane and always travels with a glyph. Mustard is fill-only on light surfaces (its text grade fails AA by nature — that’s a rule, not a bug).</p>
+      <div class="role-grid">
+        <div class="role-card glass">
+          <div class="swatch" style="background:var(--cobalt)"></div>
+          <h3>Cobalt — interactive</h3>
+          <div class="job">links · buttons · focus rings · selection</div>
+          <div class="demo">
+            <button class="btn" type="button">Primary action</button>
+            <a class="link" href="#tokens">A link</a>
+          </div>
+        </div>
+        <div class="role-card glass">
+          <div class="swatch" style="background:var(--crimson)"></div>
+          <h3>Crimson — negative</h3>
+          <div class="job">alerts · declines · audit flags · LIVE dot</div>
+          <div class="demo">
+            <span class="chip chip-crimson">⚠ 3 findings</span>
+            <span class="delta down">▼ 2.1%</span>
+          </div>
+        </div>
+        <div class="role-card glass">
+          <div class="swatch" style="background:var(--hunter)"></div>
+          <h3>Hunter — positive</h3>
+          <div class="job">savings · growth · human-verified</div>
+          <div class="demo">
+            <span class="chip chip-hunter">✓ Verified</span>
+            <span class="delta up">▲ $612K</span>
+          </div>
+        </div>
+        <div class="role-card glass">
+          <div class="swatch" style="background:var(--mustard-fill)"></div>
+          <h3>Mustard — caution</h3>
+          <div class="job">needs review · new · provisional state</div>
+          <div class="demo">
+            <span class="chip chip-mustard">⚠ Needs review</span>
+            <span class="chip chip-mustard">NEW</span>
+          </div>
+        </div>
+        <div class="role-card glass">
+          <div class="swatch" style="background:var(--violet)"></div>
+          <h3>Violet — the machine’s hand</h3>
+          <div class="job">AI-inferred · suggested · not yet human-verified</div>
+          <div class="demo">
+            <span class="chip chip-violet">⚙ Inferred</span>
+            <span class="chip chip-violet">✨ Suggested merge</span>
+          </div>
+        </div>
+        <div class="role-card glass">
+          <div class="swatch" style="background:linear-gradient(90deg,#1C1C1A,#87877F,#F4F2ED)"></div>
+          <h3>Monochrome — everything else</h3>
+          <div class="job">structure · data · chrome (no decorative color)</div>
+          <div class="demo">
+            <span class="chip chip-neutral">142 colleges</span>
+            <span class="chip chip-neutral">3.0 units</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── data on OPAQUE surfaces ───────────────────────────────────── -->
+    <section aria-labelledby="tblH">
+      <h2 id="tblH">Data stays opaque</h2>
+      <p class="lede">Glass is for chrome — rails, mastheads, hero cards, modals. Dense data sits on solid surfaces: no blur cost while scrolling, no contrast roulette against the painting. Sample rows in the CCR’s shape:</p>
+      <div class="opaque-card tbl-wrap">
+        <table>
+          <colgroup><col style="width:13%"><col style="width:30%"><col style="width:22%"><col style="width:19%"><col style="width:16%"></colgroup>
+          <thead><tr><th scope="col">ID</th><th scope="col">Course</th><th scope="col">Discipline</th><th scope="col">Status</th><th scope="col">Colleges</th></tr></thead>
+          <tbody>
+            <tr><td class="id">ACCT M1004</td><td title="Financial Accounting">Financial Accounting</td><td>Accounting <span class="chip chip-hunter">✓</span></td><td><span class="chip chip-hunter">✓ Verified</span></td><td>41</td></tr>
+            <tr><td class="id">AUTO M1007</td><td title="Engine Performance — Level 2">Engine Performance — Level 2</td><td>Automotive Tech <span class="chip chip-violet">⚙</span></td><td><span class="chip chip-violet">✨ Suggested</span></td><td>12</td></tr>
+            <tr><td class="id">CRIM M1231</td><td title="Ethics and Leadership">Ethics and Leadership</td><td>Administration of Justice</td><td><span class="chip chip-mustard">⚠ Review</span></td><td>9</td></tr>
+            <tr><td class="id">FLSP M1379</td><td title="Elementary Spanish I">Elementary Spanish I</td><td>Foreign Languages <span class="chip chip-hunter">✓</span></td><td><span class="chip chip-hunter">✓ Verified</span></td><td>27</td></tr>
+            <tr><td class="id">WELD M9012</td><td title="Beginning Welding (Noncredit)">Beginning Welding (Noncredit)</td><td>Welding <span class="chip chip-violet">⚙</span></td><td><span class="chip chip-crimson">⚠ 3 findings</span></td><td>4</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── token spec ────────────────────────────────────────────────── -->
+    <section aria-labelledby="tokH" id="tokens">
+      <h2 id="tokH">Token spec — measured, not eyeballed</h2>
+      <p class="lede">Verified by <code>prototype/check_contrast.py</code> against worst-case composites (paper <code>#F4F2ED</code> · glass-worst <code>#F7F7F6</code> · masthead dark-worst <code>#27272E</code>). WCAG 2.2 AA: ≥4.5:1 text, ≥3:1 non-text UI. These are the values the live retheme adopts.</p>
+      <div class="opaque-card tbl-wrap">
+        <table class="spec">
+          <colgroup><col style="width:26%"><col style="width:8%"><col style="width:12%"><col style="width:26%"><col style="width:18%"><col style="width:10%"></colgroup>
+          <thead><tr><th scope="col">Token</th><th scope="col"></th><th scope="col">Value</th><th scope="col">Role</th><th scope="col">Measured</th><th scope="col">AA</th></tr></thead>
+          <tbody>
+            <tr><td><code>--text-strong</code></td><td><span class="sw" style="background:#1C1C1A"></span></td><td><code>#1C1C1A</code></td><td>ink / headings</td><td>15.26:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--text-body</code></td><td><span class="sw" style="background:#3A3A36"></span></td><td><code>#3A3A36</code></td><td>body text</td><td>10.21:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--text-muted</code></td><td><span class="sw" style="background:#5C5C55"></span></td><td><code>#5C5C55</code></td><td>secondary text</td><td>6.02:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--cobalt</code></td><td><span class="sw" style="background:#0047AB"></span></td><td><code>#0047AB</code></td><td>interactive · focus ring</td><td>7.54:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--crimson</code></td><td><span class="sw" style="background:#C8102E"></span></td><td><code>#C8102E</code></td><td>negative · alerts</td><td>5.26:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--hunter</code></td><td><span class="sw" style="background:#355E3B"></span></td><td><code>#355E3B</code></td><td>positive · verified</td><td>6.67:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--violet</code></td><td><span class="sw" style="background:#6D28D9"></span></td><td><code>#6D28D9</code></td><td>machine-generated</td><td>6.35:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--mustard-fill</code> + ink</td><td><span class="sw" style="background:#E3B341"></span></td><td><code>#E3B341</code></td><td>caution chip fill</td><td>8.77:1 ink-on-fill</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--mustard-deep</code></td><td><span class="sw" style="background:#9A7400"></span></td><td><code>#9A7400</code></td><td>caution border/icon (3:1)</td><td>3.85:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--crimson-on-dark</code></td><td><span class="sw" style="background:#E28392"></span></td><td><code>#E28392</code></td><td>masthead accents</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--cobalt-on-dark</code></td><td><span class="sw" style="background:#7A9FD3"></span></td><td><code>#7A9FD3</code></td><td>masthead accents</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--hunter-on-dark</code></td><td><span class="sw" style="background:#8CA38F"></span></td><td><code>#8CA38F</code></td><td>masthead accents</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--violet-on-dark</code></td><td><span class="sw" style="background:#B28DEB"></span></td><td><code>#B28DEB</code></td><td>masthead accents</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--mustard-on-dark</code></td><td><span class="sw" style="background:#E3B341"></span></td><td><code>#E3B341</code></td><td>masthead accents</td><td>7.65:1 dark-worst</td><td class="pass">PASS</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── standing accessibility rules ──────────────────────────────── -->
+    <section aria-labelledby="a11yH">
+      <h2 id="a11yH">Accessibility, baked in</h2>
+      <p class="lede">Target: WCAG 2.2 AA (a superset of the WCAG 2.1 AA that the DOJ’s ADA Title II rule requires of public entities). Enforced structurally — pre-vetted token pairs + a CI contrast lint — not by vigilance.</p>
+      <ul class="rules">
+        <li><strong>Color never carries meaning alone</strong> — every semantic accent ships with a glyph (▲▼ ✓ ⚠ ⚙ ✨). Saves the crimson/hunter pair for color-blind readers.</li>
+        <li><strong>Glass always carries a scrim</strong> — text contrast is computed against the worst-case composite behind it, never the best case. Data tables skip glass entirely.</li>
+        <li><strong>Mustard is never text on light surfaces</strong> — chip fill with ink text, or the deep border grade.</li>
+        <li><strong>Cobalt and violet stay structurally distinct</strong> (the one confusable pair): cobalt always with underline/ring affordances, violet always on glyph-badges.</li>
+        <li><strong>OS preferences honored:</strong> <code>prefers-reduced-transparency</code> → solid surfaces; <code>prefers-reduced-motion</code> → no reveal animation; <code>prefers-contrast: more</code> → stronger borders + darker muted text.</li>
+        <li><strong>Visible focus everywhere</strong> (3px cobalt ring, offset 2px) · interactive targets ≥24×24 px · the First Light dialog is a real <code>role="dialog"</code> with focus trap, ESC, and focus return.</li>
+        <li><strong>Every painting carries hand-written alt text</strong> in the manifest — half the curatorial blurb anyway.</li>
+      </ul>
+      <div class="toggles">
+        <button class="btn ghost" type="button" id="tglSolid" aria-pressed="false">Preview: solid surfaces</button>
+        <button class="btn ghost" type="button" id="tglContrast" aria-pressed="false">Preview: high contrast</button>
+        <button class="btn ghost" type="button" id="btnReplay">Replay today’s reveal</button>
+        <button class="btn ghost" type="button" id="btnNewDay">Simulate a new day</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ── First Light — the once-a-day reveal ─────────────────────────── -->
+<div class="fl-overlay" id="flOverlay" role="dialog" aria-modal="true" aria-labelledby="flTitle">
+  <div class="fl-dialog">
+    <div class="fl-head">
+      <span class="sun" aria-hidden="true"></span>
+      <h2 id="flTitle">First Light — today’s painting</h2>
+      <span class="day" id="flDay"></span>
+      <button class="fl-close" id="flClose" type="button" aria-label="Close">✕</button>
+    </div>
+    <div class="fl-art">
+      <img id="flImg" src="" alt="">
+      <div class="img-fallback" id="flImgFallback">Painting image loads from Wikimedia Commons — it will appear when you open this file with network access.</div>
+    </div>
+    <div class="fl-body">
+      <div class="title" id="flPTitle"></div>
+      <div class="byline" id="flByline"></div>
+      <p class="blurb" id="flBlurb"></p>
+      <p class="setting" id="flSetting"></p>
+      <div class="fl-actions">
+        <button class="btn" id="flDone" type="button">Begin the day</button>
+        <a class="link" href="#" onclick="return false;">Browse the Almanac ↗ <span style="font-size:.75em;color:var(--text-muted)">(stub)</span></a>
+        <label class="fl-optout"><input type="checkbox" id="flOptOut"> Don’t greet me with paintings</label>
+      </div>
+      <div class="lic" id="flLic"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="credit" id="footCredit"></div>
+  <div>First Light theme · prototype v1 · next: lock the look → token retheme PR → First Light build</div>
+</footer>
+
+<script>
+/* ════════════════════════════════════════════════════════════════════
+   First Light — demo logic. Production version becomes a static asset
+   (first_light.js + a curated manifest) per the repo's static-JS pattern.
+   DEMO manifest: 3 entries, all public-domain, Wikimedia Commons hosted.
+   The production manifest grows to 60–90 hand-curated entries with
+   per-image diligence; images hotlink via Special:FilePath (stable) with
+   the gradient fallback you see here.
+   ════════════════════════════════════════════════════════════════════ */
+var FL_PAINTINGS = [
+  {
+    title: "California Poppy Field",
+    artist: "Granville Redmond", year: "c. 1926",
+    museum: "Los Angeles County Museum of Art",
+    img: "https://commons.wikimedia.org/wiki/Special:FilePath/WLA%20lacma%20Granville%20Redmond%20California%20Poppy%20Field.jpg?width=1600",
+    alt: "A sunlit California meadow blanketed in orange poppies, with dark trees and soft hills in the distance.",
+    blurb: "Redmond lost his hearing to scarlet fever at age two and trained at the California School for the Deaf in Berkeley before studying painting in Paris. Back in Los Angeles he became one of the state's most beloved painters — and a close friend of Charlie Chaplin, who learned sign language from him and gave him roles in his films. Collectors clamored for his blazing poppy hillsides; he privately preferred quiet, tonalist nocturnes.",
+    setting: "The golden poppy — California's state flower — carpets the coastal ranges each spring; Redmond returned to these hillsides his whole career.",
+    lic: "Public domain · LACMA · via Wikimedia Commons"
+  },
+  {
+    title: "The Rendezvous, Santa Cruz Island",
+    artist: "Edgar Payne", year: "c. 1920s",
+    museum: "Private collection",
+    img: "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20The%20Rendezvous%2C%20Santa%20Cruz%20Island.jpg?width=1600",
+    alt: "Fishing boats with weathered sails gathered in the lee of steep island headlands.",
+    blurb: "Largely self-taught, Payne became the first president of the Laguna Beach Art Association and wrote the plein air bible 'Composition of Outdoor Painting.' He sailed to the Channel Islands to paint fishing fleets at anchor, and packed mules into the High Sierra for the granite peaks that made his name.",
+    setting: "Santa Cruz Island is the largest of California's Channel Islands, a day's sail from the harbors Payne worked from.",
+    lic: "Public domain · via Wikimedia Commons"
+  },
+  {
+    title: "Laguna Seascape",
+    artist: "Edgar Payne", year: "c. 1918",
+    museum: "Private collection",
+    img: "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Laguna%20Seascape%202.jpg?width=1600",
+    alt: "Surf breaking against rocky coves along the Laguna coast, cliffs warm in afternoon light.",
+    blurb: "Payne and his wife, the painter Elsie Palmer Payne, helped turn Laguna Beach into California's plein air colony. He painted its coves in every light, laying on paint with a loaded brush that kept the energy of work done outdoors, on the spot.",
+    setting: "Laguna Beach, where the Art Association Payne led grew into today's Laguna Art Museum.",
+    lic: "Public domain · via Wikimedia Commons"
+  }
+];
+
+var dayIndex = Math.floor(Date.now() / 864e5);
+var pick = FL_PAINTINGS[dayIndex % FL_PAINTINGS.length];
+var todayKey = new Date().toDateString();
+
+/* ── ghosted background = today's painting, grayscaled by CSS ──────── */
+(function setBg() {
+  var bg = document.getElementById("bgArt");
+  var probe = new Image();
+  probe.onload = function () { bg.style.backgroundImage = "url('" + pick.img + "')"; };
+  probe.onerror = function () { bg.classList.add("bg-fallback"); };
+  probe.src = pick.img;
+  setTimeout(function () {            /* slow networks: paint the fallback meanwhile */
+    if (!bg.style.backgroundImage) bg.classList.add("bg-fallback");
+  }, 2500);
+})();
+
+/* ── modal ─────────────────────────────────────────────────────────── */
+var overlay = document.getElementById("flOverlay");
+var openerEl = null;
+
+function fillModal() {
+  document.getElementById("flDay").textContent = new Date().toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+  document.getElementById("flPTitle").textContent = pick.title;
+  document.getElementById("flByline").textContent = pick.artist + ", " + pick.year + " · " + pick.museum;
+  document.getElementById("flBlurb").textContent = pick.blurb;
+  document.getElementById("flSetting").textContent = pick.setting;
+  document.getElementById("flLic").textContent = pick.lic;
+  document.getElementById("footCredit").textContent =
+    "Background: " + pick.artist + ", “" + pick.title + "” (" + pick.year + ") — " + pick.lic;
+  var img = document.getElementById("flImg");
+  img.alt = pick.alt;
+  img.onerror = function () {
+    img.style.display = "none";
+    document.getElementById("flImgFallback").style.display = "block";
+  };
+  img.src = pick.img;
+}
+
+function openFL() {
+  openerEl = document.activeElement;
+  fillModal();
+  overlay.classList.add("open");
+  var img = document.getElementById("flImg");
+  img.classList.remove("revealed");
+  /* the reveal: grayscale → color (CSS transition; disabled under
+     prefers-reduced-motion, where it simply appears in color) */
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () { img.classList.add("revealed"); });
+  });
+  document.getElementById("flClose").focus();
+  document.addEventListener("keydown", flKeys);
+}
+
+function closeFL() {
+  overlay.classList.remove("open");
+  document.removeEventListener("keydown", flKeys);
+  try { localStorage.setItem("flSeen.v1", todayKey); } catch (e) {}
+  if (openerEl && openerEl.focus) openerEl.focus();
+}
+
+function flKeys(e) {
+  if (e.key === "Escape") { closeFL(); return; }
+  if (e.key !== "Tab") return;
+  /* focus trap */
+  var items = overlay.querySelectorAll("button, a[href], input");
+  var list = Array.prototype.filter.call(items, function (el) { return el.offsetParent !== null; });
+  if (!list.length) return;
+  var first = list[0], last = list[list.length - 1];
+  if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+  else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+}
+
+document.getElementById("flClose").addEventListener("click", closeFL);
+document.getElementById("flDone").addEventListener("click", closeFL);
+overlay.addEventListener("mousedown", function (e) { if (e.target === overlay) closeFL(); });
+document.getElementById("todayChip").addEventListener("click", openFL);
+document.getElementById("btnReplay").addEventListener("click", openFL);
+document.getElementById("btnNewDay").addEventListener("click", function () {
+  try { localStorage.removeItem("flSeen.v1"); } catch (e) {}
+  openFL();
+});
+document.getElementById("flOptOut").addEventListener("change", function (e) {
+  try { localStorage.setItem("flOptOut.v1", e.target.checked ? "1" : "0"); } catch (e2) {}
+});
+
+/* once per day, opt-out honored, never re-blocks the same day */
+(function maybeGreet() {
+  var seen = null, optout = null;
+  try { seen = localStorage.getItem("flSeen.v1"); optout = localStorage.getItem("flOptOut.v1"); } catch (e) {}
+  document.getElementById("flOptOut").checked = optout === "1";
+  fillModal();                               /* footer credit even if not greeted */
+  if (optout !== "1" && seen !== todayKey) setTimeout(openFL, 650);
+})();
+
+/* ── a11y preview toggles (mirror the real media queries) ──────────── */
+function wireToggle(id, cls) {
+  var b = document.getElementById(id);
+  b.addEventListener("click", function () {
+    var on = document.body.classList.toggle(cls);
+    b.setAttribute("aria-pressed", on ? "true" : "false");
+  });
+}
+wireToggle("tglSolid", "sim-solid");
+wireToggle("tglContrast", "sim-contrast");
+</script>
+</body>
+</html>
