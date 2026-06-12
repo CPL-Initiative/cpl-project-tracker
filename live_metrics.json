@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-12T18:50:24.176Z",
+  "scraped_at": "2026-06-12T20:47:18.432Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -457,6 +457,21 @@
           "transcribedUnits": 247.5
         },
         {
+          "college": "Clovis Community College",
+          "students": 182,
+          "units": 985,
+          "avgUnits": 5.412087912087912,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 1,
+          "militaryStudents": 182,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 1704050,
+          "yearImpact": 5975995,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Shasta College",
           "students": 178,
           "units": 1065,
@@ -484,21 +499,6 @@
           "apprenticeStudents": 0,
           "savings": 1505100,
           "yearImpact": 5278290,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Clovis Community College",
-          "students": 172,
-          "units": 985,
-          "avgUnits": 5.726744186046512,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 1,
-          "militaryStudents": 172,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 1704050,
-          "yearImpact": 5975995,
           "transcribedUnits": 0
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,754",
+      "value": "47,764",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,504"
+          "value": "24,514"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47754,
+    "Students": 47764,
     "Units": 228778.15000000002,
     "TranscribedUnits": 99025.95,
     "Savings": 318296265.25,
     "YearImpact": 1288798406.8999999,
-    "MilitaryStudents": 24504,
+    "MilitaryStudents": 24514,
     "NonMilitaryStudents": 23327,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.790764124471249,
-    "TranscribedAverage": 2.073668174393768
+    "AverageUnits": 4.789761117159367,
+    "TranscribedAverage": 2.0732340256259945
   }
 }
