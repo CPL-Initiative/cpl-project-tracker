@@ -113,14 +113,23 @@ function runAssertions() {
     check("header count reflects SHOWN identities (5)", !!h5 && /\(5 identities/.test(h5));
   }
 
-  // Opportunistic real-data check: AP European History demotes COMM M1038.
+  // Opportunistic real-data check: AP European History demotes its elective-
+  // bucket identity (Clovis's "Group Communication" M-ID). The id is DERIVED
+  // from the payload's own bucket flag, never pinned — re-mints re-sequence
+  // M-IDs with slot reuse (the bucket row rode COMM M1038 → M1037; a vacated
+  // id may hold an unrelated course next regen). The flag travels with the row.
   if (apEuro) {
+    const apBuckets = (apEuro.articulations || []).filter((a) => a.bucket).map((a) => a.cid);
+    check("AP Euro: payload carries ≥1 elective-bucket identity (the Group-Communication M-ID)",
+      apBuckets.length >= 1
+      && (apEuro.articulations || []).some((a) => a.bucket && /group communication/i.test(a.title || "")));
     const apBody = expandBody(wrap, "AP European History");
     if (apBody) {
       const mainTbl = apBody.querySelector("table.cr-arts-table:not(.cr-bucket-table)");
       const det = apBody.querySelector("details.cr-bucket-details");
-      check("AP Euro: COMM M1038 demoted out of the main table",
-        !!mainTbl && !/COMM M1038/.test(txt(mainTbl)) && !!det && /COMM M1038/.test(txt(det)));
+      check("AP Euro: every bucket identity demoted out of the main table into the disclosure",
+        !!mainTbl && !!det && apBuckets.length >= 1
+        && apBuckets.every((id) => txt(mainTbl).indexOf(id) === -1 && txt(det).indexOf(id) >= 0));
     } else {
       check("(AP European History present but not expandable — skipped)", true);
     }

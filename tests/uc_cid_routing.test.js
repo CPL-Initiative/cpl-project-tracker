@@ -5,11 +5,13 @@
 //
 //  1. The snippet row that started it: Folsom Lake MATH 400 "Calculus I"
 //     renders in MATH 210's member table (no lexical rule could put it there).
-//  2. Fully-routed M-IDs fold with provenance: MATH M1104 is no longer a row
-//     and rides MATH 210's routed_from; rfold counts routed identities.
-//  3. The genuinely-mixed row splits below family grain: MATH M1175 remains
-//     as a SHRUNKEN residue (members < 13) and its member table no longer
-//     lists the routed colleges (Folsom Lake gone).
+//  2. Fully-routed M-IDs fold with provenance: the calc-I family M-ID (was
+//     MATH M1104, era-dependent) is no longer a row and rides MATH 210's
+//     routed_from; rfold counts routed identities.
+//  3. The genuinely-mixed row splits below family grain: the "Calculus I"
+//     M-ID residue (was MATH M1175, era-dependent) remains SHRUNKEN
+//     (members < 13) and its member table no longer lists the routed
+//     colleges (Folsom Lake gone).
 //  4. Multi-descriptor approvals never auto-route: LA Pierce MATH 261 holds
 //     both MATH 210 and MATH 211 approvals — it stays in M1175's table.
 //  5. Phase 3: routing reaches beyond MATH (SPAN/AUTO/AJ descriptors carry
@@ -47,29 +49,44 @@ check("Folsom Lake MATH 400 'Calculus I' renders in MATH 210's member table",
 check("MATH 210's row members count matches its member table", byId["MATH 210"]
   && byId["MATH 210"].members === m210.length);
 
-// 2. fully-routed M-ID folds with provenance
-check("MATH M1104 is no longer a top-level row", !byId["MATH M1104"]);
-check("MATH 210 carries routed_from provenance for MATH M1104",
-  byId["MATH 210"] && (byId["MATH 210"].routed_from || []).indexOf("MATH M1104") >= 0);
+// 2. fully-routed M-ID folds with provenance. The folded id is DERIVED from
+// MATH 210's own routed_from list, never pinned — re-mints re-sequence M-IDs
+// with slot reuse (the fully-routed calc-I family M-ID rode MATH M1104 →
+// M1098; a vacated id may hold an unrelated course next regen). The C-ID
+// anchor id is official and stable; its provenance list travels with it.
+const routed210 = (byId["MATH 210"] && byId["MATH 210"].routed_from) || [];
+check("MATH 210 carries routed_from provenance (≥1 fully-routed MATH M-ID)",
+  routed210.length >= 1 && routed210.every((id) => /^MATH M/.test(id)));
+check("every routed_from M-ID is no longer a top-level row (folded with provenance)",
+  routed210.length >= 1 && routed210.every((id) => !byId[id]));
 check("MATH 210 counts routed identities (rfold ≥ 1)",
   byId["MATH 210"] && (byId["MATH 210"].rfold || 0) >= 1);
 
-// 3. the mixed row splits below family grain — residue stays
-const m1175 = byId["MATH M1175"];
-check("MATH M1175 remains as a shrunken residue row (members < 13)",
-  m1175 && typeof m1175.members === "number" && m1175.members > 0 && m1175.members < 13);
-const t1175 = tableOf("MATH M1175");
-check("MATH M1175's member table no longer lists Folsom Lake",
+// 3. the mixed row splits below family grain — residue stays. The residue is
+// the corroborated MATH M-ID still TITLED "Calculus I" (was MATH M1175; found
+// by title + shape since ids re-sequence — pick the largest if several).
+const residue = data.rows.filter((r) =>
+    r.id_system === "M-ID" && /^MATH M1\d{3}$/.test(r.id) && (r.title || "") === "Calculus I")
+  .sort((a, b) => (b.members || 0) - (a.members || 0))[0];
+check("the 'Calculus I' M-ID residue remains as a shrunken row (members < 13)",
+  residue && typeof residue.members === "number" && residue.members > 0 && residue.members < 13);
+const t1175 = residue ? tableOf(residue.id) : [];
+check("the residue's member table no longer lists Folsom Lake (routed out)",
   t1175.length > 0 && !t1175.some((m) => /Folsom Lake/.test(m.college)));
 
 // 4. multi-descriptor approvals never auto-route
-check("LA Pierce MATH 261 (approved for BOTH 210 and 211) stays in M1175's table",
+check("LA Pierce MATH 261 (approved for BOTH 210 and 211) stays in the residue's table",
   t1175.some((m) => /Pierce/.test(m.college) && m.n === "MATH 261"));
 
-// 5. Phase 3 — routing reaches beyond MATH, prior folds undisturbed
+// 5. Phase 3 — routing reaches beyond MATH, prior folds undisturbed. The kin
+// folds are asserted by their TITLES (carried on the anchor's title_variants),
+// not by folded-M-ID pins — the Intermediate-Spanish-I family rode
+// FLSP M1342 → M1090 in the 2026-06-12 fold.
 check("SPAN 200 keeps its kin folds AND gains routed members (rfold)",
   byId["SPAN 200"]
-  && (byId["SPAN 200"].consolidated_from || []).indexOf("FLSP M1342") >= 0
+  && (byId["SPAN 200"].consolidated_from || []).length >= 2
+  && (byId["SPAN 200"].title_variants || []).indexOf("Intermediate Spanish I") >= 0
+  && (byId["SPAN 200"].title_variants || []).indexOf("Spanish 3") >= 0
   && (byId["SPAN 200"].rfold || 0) >= 1);
 check("AUTO 120 X keeps descriptor title + kin folds AND gains rfold",
   byId["AUTO 120 X"]
@@ -84,12 +101,24 @@ check("AJ descriptors carry routed members (the screenshot family)",
 
 // 6. multi-SUBJECT dual approvals are held, not auto-picked (Phase-3 honesty
 // fix: these 4 stats courses hold MATH 110 ∧ SOCI 125 approvals; Phase 1
-// auto-routed them to MATH 110 because its gate hid the SOCI side)
+// auto-routed them to MATH 110 because its gate hid the SOCI side). Each is
+// DERIVED by its unique TITLE — the 2026-06-12 fold moved SOCS M10CE → M10ID
+// and SOCI M10FF → M10FC while RE-OCCUPYING the vacated slots with unrelated
+// courses, so id pins would silently assert the wrong rows.
 const standalone = loadPayload("unified_courses_standalone.js", "window.CPL_UC_STANDALONE");
-const saIds = new Set((standalone.rows || standalone).map((r) => r.id));
-["SOCS M10CE", "PSYC M10DC", "SOCI M10FF", "PSYC M10DA"].forEach((id) => {
-  check(`dual-approval stats course ${id} stays a stand-alone (held for curation)`,
-    saIds.has(id) && !byId[id]);
+const saByTitle = {};
+(standalone.rows || standalone).forEach((r) => {
+  (saByTitle[r.title] = saByTitle[r.title] || []).push(r.id);
+});
+[
+  "Statistics - Social Sciences",
+  "Introductory Statistics for the Behavioral and Social Sciences",
+  "SOCIAL JUSTICE STATISTICS",
+  "STATISTICAL METHODS IN THE BEHAVIORAL SCIENCES HONORS",
+].forEach((t) => {
+  const ids = saByTitle[t] || [];
+  check(`dual-approval stats course '${t}' stays a stand-alone (held for curation)`,
+    ids.length === 1 && !byId[ids[0]]);
 });
 
 let pass = 0;
