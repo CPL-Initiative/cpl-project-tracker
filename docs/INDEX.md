@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-12 (Session 48 — First Light: the design sprint, 10 PRs #391–#400 — daily PD plein air greeting LIVE on the dashboard (first_light.js: grayscale→color reveal, read-aloud, anonymous reflections → new write-only Supabase cpl_reflections) + the theme spec BLESSED (prototype v1.4.2 + check_contrast.py derived AA tokens; glass=chrome/opaque=data; solid uniform chips); NEW first_light_lessons + methodology-derived-aa-token-palette + reference-public-domain-art-sourcing; NEXT: the live-dashboard token retheme — GO; session close: Chip Studio A/B → GLASS-QUIET chips GRADUATED at v1.6, solid archived — Bruh Glasstronaut)
+updated: 2026-06-12 (Session 49 — the First Light RETHEME SHIPPED to prod: #407 palette flip (:root value-swap + legacy-hex sweep across HTML/generator/JS + check_contrast.py --live CI lint) · #408 glass chrome + the ghosted painting (masthead/rail/KPI hero/filter bar; first_light.js .cplfl-bg; reduced-transparency/contrast honored) · #410 glass-quiet chips (CCR/CSR/CER + To-Do FAB); NEW methodology-token-retheme-on-generated-html + session_52_handoff (design lane); Bruh Orbitron)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -104,6 +104,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Reference — The P1 completion-data gap (why completions aren't in MAP; the strategy ladder out)](kb-notes/reference-p1-completion-data-gap.md) | reference | published | 2026-06-11 | 2026-06-11 |
 | [Methodology — Maintaining a committed-workbook model (one-shot revisions, input-driven builder)](kb-notes/methodology-committed-workbook-models.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Methodology — Derive theme tokens from brand seeds with a contrast script (the mock is the spec)](kb-notes/methodology-derived-aa-token-palette.md) | methodology | published | 2026-06-12 | 2026-06-12 |
+| [Methodology — Retheming a generator-owned HTML monolith via token value-swap](kb-notes/methodology-token-retheme-on-generated-html.md) | methodology | published | 2026-06-12 | 2026-06-12 |
 | [Reference — Public-domain art sourcing for the dashboard (Adams 79-AA, CA Impressionists, the four traps)](kb-notes/reference-public-domain-art-sourcing.md) | reference | published | 2026-06-12 | 2026-06-12 |
 
 ---
@@ -187,6 +188,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 48 → 49 | First Light design sprint #391–#400: daily plein air greeting LIVE + theme spec v1.4.2 BLESSED → the retheme is GO (handoff) | [`session_49_handoff.md`](session_49_handoff.md) |
 | 47 → 50 | Data lane (Bruh Supernova): SUBJ ⇄ CCR checker #388/#402 + 📋 To-Do feed #389 + SUBJ4 fold dry-run #405 (5/5 gates) → the receipted APPLY | [`session_50_handoff.md`](session_50_handoff.md) |
 | 50 → 51 | Data lane (Bruh Dawnleader): the SUBJ4 canonical fold APPLIED (71,037-alias permutation + Supabase mirror + post-fold twins + the full Rule-7 chain; collision signal 1,206 → 3) → verify regen, CCR Subject grouping | [`session_51_handoff.md`](session_51_handoff.md) |
+| 49 → 52 | Design lane (Bruh Orbitron): the First Light retheme SHIPPED (#407 palette flip · #408 glass + ghosted painting · #410 glass-quiet chips; --live contrast lint in CI) → Sam's screenshot verdicts, kpi_reorder keyboard path, per-tab polish | [`session_52_handoff.md`](session_52_handoff.md) |
 
 ---
 

@@ -1,14 +1,14 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-06-12-e",
-  "_session": 50,
-  "_status": "THE FOLD IS LIVE (Session 50, Bruh Dawnleader): every course identity now wears its discipline's curator-confirmed Common SUBJ — 48,820 ids re-keyed in one receipted evening window (the 19 buckets you reviewed executed exactly as published), Supabase mirrored and checksum-verified, 19 newly-visible twins absorbed (15,535 parents), and the auditor's collision flag fell 1,206 → 3 (the three are documented baseline-vs-curated disagreements, not defects). Dashboard data regenerates via the post-merge run — an open tab may offer a one-time reload. DESIGN lane: the v1.6 glass-quiet retheme is still the next paint. Curator frontier: the smog residuals + the merge queues (5,581 title / 415 description groups, refreshed to the new ids).",
+  "_as_of": "2026-06-12-f",
+  "_session": 49,
+  "_status": "TWO LANDINGS IN ONE DAY: the SUBJ4 fold is LIVE (Session 50 — every course identity wears its curator-confirmed Common SUBJ; collision flag 1,206 → 3) AND the FIRST LIGHT RETHEME is LIVE (Session 49 — the whole dashboard repainted to the blessed v1.6 spec: warm paper, ink text, the five accents, glass masthead/rail/KPI cards, today's painting ghosted behind the page, glass-quiet chips). Hard-refresh to see it. Curator frontier: the smog residuals + the merge queues; design frontier: your screenshot verdicts steer the polish pass (docs/session_52_handoff.md).",
   "items": [
     {
-      "id": "sam-first-light",
+      "id": "sam-retheme-look",
       "who": "sam",
       "tab": "all",
-      "text": "Enjoy First Light on the live dashboard ☀ — try the 🔊 read-aloud and share a reflection (it's anonymous). Reopen anytime via the 'Today's painting' chip in the header."
+      "text": "The First Light retheme is LIVE ☀ — hard-refresh and look around: warm paper, glass header and KPI cards, today's painting ghosted behind the page, quieter chips. Send screenshots + verdicts (chip width? ghost opacity? the dark data cards?) — they steer the polish pass."
     },
     {
       "id": "sam-fold-landed",
@@ -38,13 +38,7 @@
       "id": "fable-verify-regen",
       "who": "fable",
       "tab": "unified-courses",
-      "text": "Verify the post-fold regen + next cron: CCR rows wear canonical SUBJ codes, audit chips line up, impact columns intact, suite green on the new artifacts, then stamp-normalized hashes on tomorrow's cron (expect byte-stable). Spec: docs/session_51_handoff.md item 1."
-    },
-    {
-      "id": "fable-retheme",
-      "who": "fable",
-      "tab": "all",
-      "text": "THE RETHEME — spec blessed at v1.6 (GLASS-QUIET chips graduated), so paint the live dashboard: token-value swap in both HTMLs + generator CSS, ghosted painting, glass chrome, glass-quiet chips on live badges INCLUDING the 📋 To-Do chips and the CSR sweep chips, CI contrast lint, KPI drag-reorder regression test + keyboard path. Plan: docs/session_49_handoff.md."
+      "text": "URGENT (data lane): the post-fold daily regen BROKE the lane test pins — 6 test files (title/desc/evidence/kinship/routing) fail on main after the cron commits, on fixtures like EMST M1064 / FLSP M1379 / MATH M1104 / SPAN 200-210 folds. Verify whether the cron's export re-derives different ids/routing each run (determinism bug — daily id churn would violate the stable-sequence rule) or the Session-50 pins encoded pre-regen state. CI js-tests is red on main until resolved."
     },
     {
       "id": "fable-first-light-growth",
@@ -75,6 +69,12 @@
       "who": "fable",
       "tab": "unified-courses",
       "text": "C-ID router Phase 2 + 3b: the ccn_equiv bridge, the termly refresh procedure, and curation surfaces for held classes. Termly cadence reminder: twin dry-run + desc + title receipts re-run together."
+    },
+    {
+      "id": "fable-kpi-keyboard",
+      "who": "fable",
+      "tab": "dashboard",
+      "text": "Close the KPI drag-reorder keyboard gap (a11y): Space/Enter to lift a card, arrows to move, Escape to cancel — drag-drop stays. Then the per-tab polish sweeps from Sam's screenshot notes."
     }
   ]
 }
