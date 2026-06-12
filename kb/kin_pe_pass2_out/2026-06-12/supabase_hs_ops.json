@@ -1,0 +1,181 @@
+{
+ "generated_at": "2026-06-12T20:36:18.654321+00:00",
+ "reviewer": "MAP@rccd.edu",
+ "ops": [
+  {
+   "course_id": "BIOL M90BD",
+   "field": "merge_into",
+   "value": "BIOL M90BE"
+  },
+  {
+   "course_id": "ECON M9003",
+   "field": "merge_into",
+   "value": "ECON M9002"
+  },
+  {
+   "course_id": "IDST M9036",
+   "field": "merge_into",
+   "value": "IDST M9035"
+  },
+  {
+   "course_id": "IDST M9044",
+   "field": "merge_into",
+   "value": "IDST M90EE"
+  },
+  {
+   "course_id": "IDST M90BE",
+   "field": "merge_into",
+   "value": "IDST M9022"
+  },
+  {
+   "course_id": "IDST M90CJ",
+   "field": "merge_into",
+   "value": "IDST M9029"
+  },
+  {
+   "course_id": "IDST M90CY",
+   "field": "merge_into",
+   "value": "IDST M9030"
+  },
+  {
+   "course_id": "IDST M90DY",
+   "field": "merge_into",
+   "value": "IDST M90EB"
+  },
+  {
+   "course_id": "IDST M90EH",
+   "field": "merge_into",
+   "value": "IDST M90EL"
+  },
+  {
+   "course_id": "IDST M90GA",
+   "field": "merge_into",
+   "value": "IDST M90GB"
+  },
+  {
+   "course_id": "IDST M90LA",
+   "field": "merge_into",
+   "value": "IDST M9086"
+  },
+  {
+   "course_id": "IDST M90LV",
+   "field": "merge_into",
+   "value": "IDST M9035"
+  },
+  {
+   "course_id": "IDST M90OS",
+   "field": "merge_into",
+   "value": "IDST M90OR"
+  },
+  {
+   "course_id": "IDST M90OZ",
+   "field": "merge_into",
+   "value": "IDST M90PA"
+  },
+  {
+   "course_id": "IDST M90PN",
+   "field": "merge_into",
+   "value": "IDST M90PR"
+  },
+  {
+   "course_id": "IDST M90PQ",
+   "field": "merge_into",
+   "value": "IDST M9108"
+  },
+  {
+   "course_id": "IDST M90SI",
+   "field": "merge_into",
+   "value": "IDST M90SJ"
+  },
+  {
+   "course_id": "IDST M90VM",
+   "field": "merge_into",
+   "value": "IDST M90VQ"
+  },
+  {
+   "course_id": "IDST M90WH",
+   "field": "merge_into",
+   "value": "IDST M90WI"
+  },
+  {
+   "course_id": "IDST M9135",
+   "field": "merge_into",
+   "value": "IDST M90SF"
+  },
+  {
+   "course_id": "IDST M91BB",
+   "field": "merge_into",
+   "value": "IDST M91BC"
+  },
+  {
+   "course_id": "IDST M91BD",
+   "field": "merge_into",
+   "value": "IDST M91BE"
+  },
+  {
+   "course_id": "IDST M91BW",
+   "field": "merge_into",
+   "value": "IDST M91CF"
+  },
+  {
+   "course_id": "IDST M91DC",
+   "field": "merge_into",
+   "value": "IDST M9239"
+  },
+  {
+   "course_id": "IDST M91FJ",
+   "field": "merge_into",
+   "value": "IDST M91FK"
+  },
+  {
+   "course_id": "IDST M91GL",
+   "field": "merge_into",
+   "value": "IDST M91HD"
+  },
+  {
+   "course_id": "IDST M91GS",
+   "field": "merge_into",
+   "value": "IDST M91KM"
+  },
+  {
+   "course_id": "IDST M91GT",
+   "field": "merge_into",
+   "value": "IDST M91LI"
+  },
+  {
+   "course_id": "IDST M91GU",
+   "field": "merge_into",
+   "value": "IDST M9310"
+  },
+  {
+   "course_id": "IDST M91HG",
+   "field": "merge_into",
+   "value": "IDST M90BK"
+  },
+  {
+   "course_id": "IDST M9264",
+   "field": "merge_into",
+   "value": "IDST M9263"
+  },
+  {
+   "course_id": "IDST M9267",
+   "field": "merge_into",
+   "value": "IDST M91HE"
+  },
+  {
+   "course_id": "IDST M9275",
+   "field": "merge_into",
+   "value": "IDST M91LZ"
+  },
+  {
+   "course_id": "IDST M9277",
+   "field": "merge_into",
+   "value": "IDST M91MN"
+  },
+  {
+   "course_id": "PSYC M9006",
+   "field": "merge_into",
+   "value": "PSYC M9008"
+  }
+ ]
+}

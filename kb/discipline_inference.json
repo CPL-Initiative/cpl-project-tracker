@@ -2,8 +2,14 @@
   "_about": "Authored lexicon for inferring a discipline on blank-discipline COCI staging courses. Applied by kb/_infer_disciplines.py over coci_minted_courses.json + coci_unified_courses.json. Every target discipline MUST be an exact string from reference/mq_disciplines.json (the apply script validates and refuses unknown targets). Assignments are written with discipline_source + discipline_confidence and are NEVER applied to entries that are human-reviewed (reviewed_at set) or present in coci_curation.json. STAGING + flagged-for-review — not ground truth. Edit this file and re-run the script to refine.",
   "_authored_by": "claude-opus-4-7 (discipline inference draft)",
   "_authored_at": "2026-05-22",
-  "_revision_notes": "2026-05-22 pass 2: parent-first refinement. Added clean subject codes + cross-cutting title_keywords (foreign languages, music, electronics, drafting/CAD, culinary, AI, aviation, mortuary, HVAC, horticulture, solar, recreation). Keywords sidestep the fragmented/dirty subject codes (e.g. 'CUL ART', 'ELECTRN') by matching on title. 2026-05-22 pass 3: discipline-tail extension. Added 7 subject codes (ATHPE/ANAT/AGPS/PLS/AGRI/AODS/SWHS) + cross-cutting keywords (intercollegiate, yoga/pilates, anatomy/physiology, viticulture, addiction/substance-abuse, social-work/human-services, medical terminology, nutrition, film/cinema, sign language, court reporting, surgical, dental, machining, robotics, cybersecurity, floral, forestry, paramedic/EMS). Dropped 'ceramics' (studio art, not the industrial Ceramic Technology MQ discipline).",
-  "_confidence": { "subject_map": 0.8, "title_keyword": 0.55 },
+  "_revision_notes": [
+    "2026-05-22 pass 2: parent-first refinement. Added clean subject codes + cross-cutting title_keywords (foreign languages, music, electronics, drafting/CAD, culinary, AI, aviation, mortuary, HVAC, horticulture, solar, recreation). Keywords sidestep the fragmented/dirty subject codes (e.g. 'CUL ART', 'ELECTRN') by matching on title. 2026-05-22 pass 3: discipline-tail extension. Added 7 subject codes (ATHPE/ANAT/AGPS/PLS/AGRI/AODS/SWHS) + cross-cutting keywords (intercollegiate, yoga/pilates, anatomy/physiology, viticulture, addiction/substance-abuse, social-work/human-services, medical terminology, nutrition, film/cinema, sign language, court reporting, surgical, dental, machining, robotics, cybersecurity, floral, forestry, paramedic/EMS). Dropped 'ceramics' (studio art, not the industrial Ceramic Technology MQ discipline).",
+    "2026-06-12 (Session 51): fan-in alias repair — every target that named a folded ALTERNATE discipline name re-pointed to its canonical (Physical Education -> Kinesiology / Physical Education Disabled Students [APE, adapted-physical]; Theater Arts -> Drama/Theater Arts). The 'intercollegiate' title keyword is DROPPED (not unambiguous alone: Intercollegiate Forensics is speech, Intercollegiate Logging Sports is forestry; TOP 0835.50 covers athletics). Alias targets had let the Session-45 re-derivation resurrect 'Physical Education' on 605 rows after the 2026-06-10 convergence folded it (the PEDU parking lot) — kb/_alias_canon.py now guards all four passes."
+  ],
+  "_confidence": {
+    "subject_map": 0.8,
+    "title_keyword": 0.55
+  },
   "_policy": "subject_map: assign a discipline to ALL blank courses under a subject code whose sampled member titles are unambiguously one discipline (codes with mixed titles are deliberately omitted). title_keyword: lower-precision fallback for courses still blank after subject_map, matched on whole-word title tokens; kept to terms that are unambiguous on their own. GUARDRAIL — generic non-discipline subject codes must NEVER be added to subject_map. In particular 'NC': some colleges use it to denote Noncredit (a credit-type flag, not a discipline) and rely on the title + description to differentiate, so NC-coded courses span many disciplines and are resolved ONLY by title_keyword + the description pass (kb/_infer_disciplines_from_desc.py), never by their subject code.",
   "_subject_map_notes": {
     "_rule": "subject codes are COLLEGE-LOCAL vocabulary; an entry belongs in this global map only when every college's courses on the code are one discipline. kb/_audit_subject_map.py enforces this (per-college TOP-division votes + minority-title evidence); re-run it after edits.",
@@ -39,10 +45,21 @@
     "ACRP": "Auto Body Technology",
     "ACTG": "Business",
     "ADDICST": "Counseling",
-    "ADM": {"discipline": "Graphic Arts", "colleges": ["Moreno Valley College", "Riverside City College"]},
+    "ADM": {
+      "discipline": "Graphic Arts",
+      "colleges": [
+        "Moreno Valley College",
+        "Riverside City College"
+      ]
+    },
     "ADS": "Counseling",
     "ADVM": "Manufacturing Technology",
-    "AET": {"discipline": "Environmental Technologies", "colleges": ["Rio Hondo College"]},
+    "AET": {
+      "discipline": "Environmental Technologies",
+      "colleges": [
+        "Rio Hondo College"
+      ]
+    },
     "AGEH": "Ornamental Horticulture",
     "AGEQ": "Equine Science",
     "AGPS": "Agricultural Production",
@@ -52,14 +69,25 @@
     "ANIMATN": "Multimedia",
     "ANT": "Anthropology",
     "AODS": "Counseling",
-    "AP": {"discipline": "Photography", "colleges": ["Cabrillo College"]},
+    "AP": {
+      "discipline": "Photography",
+      "colleges": [
+        "Cabrillo College"
+      ]
+    },
     "AP C": "Construction Technology",
-    "APE": "Physical Education",
+    "APE": "Physical Education Disabled Students",
     "APPT": "Air Conditioning, Refrigeration, Heating",
     "APSM": "Air Conditioning, Refrigeration, Heating",
-    "AQUA": {"discipline": "Physical Education", "colleges": ["CaÃ±ada College", "College of San Mateo"]},
+    "AQUA": {
+      "discipline": "Kinesiology",
+      "colleges": [
+        "CaÃ±ada College",
+        "College of San Mateo"
+      ]
+    },
     "ARBC": "Foreign Languages",
-    "ATHPE": "Physical Education",
+    "ATHPE": "Kinesiology",
     "BA": "Business",
     "BAK": "Culinary Arts/Food Technology",
     "BCAS": "Carpentry",
@@ -71,9 +99,20 @@
     "BT": "Office Technologies",
     "BTEC": "Biotechnology",
     "CADD": "Drafting/CADD",
-    "CADM": {"discipline": "Administration of Justice", "colleges": ["Bakersfield College"]},
+    "CADM": {
+      "discipline": "Administration of Justice",
+      "colleges": [
+        "Bakersfield College"
+      ]
+    },
     "CAHM": "Culinary Arts/Food Technology",
-    "CAM": {"discipline": "Culinary Arts/Food Technology", "colleges": ["Cosumnes River College", "Mendocino College"]},
+    "CAM": {
+      "discipline": "Culinary Arts/Food Technology",
+      "colleges": [
+        "Cosumnes River College",
+        "Mendocino College"
+      ]
+    },
     "CARPT": "Construction Technology",
     "CFS": "Child Development/Early Childhood Education",
     "CFT": "Furniture Making",
@@ -111,16 +150,27 @@
     "FIPT": "Fire Technology",
     "FIRS": "Fire Technology",
     "FLM PRD": "Media Production",
-    "FS": {"discipline": "Fire Technology", "colleges": ["Lassen College", "Southwestern College"]},
+    "FS": {
+      "discipline": "Fire Technology",
+      "colleges": [
+        "Lassen College",
+        "Southwestern College"
+      ]
+    },
     "FSE": "Mortuary Science",
     "GDS": "Graphic Arts",
     "GENT": "History",
     "GER": "Foreign Languages",
     "GIS": "Geography",
     "GRC": "Graphic Arts",
-    "GSS": {"discipline": "Gunsmithing", "colleges": ["Lassen College"]},
+    "GSS": {
+      "discipline": "Gunsmithing",
+      "colleges": [
+        "Lassen College"
+      ]
+    },
     "GUID": "Learning Assistance or Learning Skills",
-    "HES": "Physical Education",
+    "HES": "Kinesiology",
     "HIMS": "Health Information Technology",
     "HLTHOCC": "Health Care Ancillaries",
     "HMDT": "Heavy Duty Equipment Mechanics",
@@ -132,12 +182,19 @@
     "HVAC": "Air Conditioning, Refrigeration, Heating",
     "IDES": "Interior Design",
     "INSPEC": "Building Codes and Regulations",
-    "IS": {"discipline": "Computer Information Systems", "colleges": ["Clovis Community College", "Madera College", "Reedley College"]},
+    "IS": {
+      "discipline": "Computer Information Systems",
+      "colleges": [
+        "Clovis Community College",
+        "Madera College",
+        "Reedley College"
+      ]
+    },
     "JOURNAL": "Journalism",
-    "KFIT": "Physical Education",
+    "KFIT": "Kinesiology",
     "KIND": "Dance",
-    "KINT": "Physical Education",
-    "KPEI": "Physical Education",
+    "KINT": "Kinesiology",
+    "KPEI": "Kinesiology",
     "LESD": "Administration of Justice",
     "LRNRE": "Learning Assistance or Learning Skills",
     "MAKR": "Digital Fabrication Technician",
@@ -148,19 +205,33 @@
     "MUSM": "Commercial Music",
     "OBT": "Office Technologies",
     "OSC": "Office Technologies",
-    "OT": {"discipline": "Office Technologies", "colleges": ["Madera College", "Reedley College", "Solano Community College"]},
+    "OT": {
+      "discipline": "Office Technologies",
+      "colleges": [
+        "Madera College",
+        "Reedley College",
+        "Solano Community College"
+      ]
+    },
     "OTEC": "Office Technologies",
-    "PEF": "Physical Education",
-    "PEX": "Physical Education",
+    "PEF": "Kinesiology",
+    "PEX": "Kinesiology",
     "PHYSICS": "Physics/Astronomy",
-    "PLS": {"discipline": "Agricultural Production", "colleges": ["Clovis Community College", "Madera College", "Reedley College"]},
+    "PLS": {
+      "discipline": "Agricultural Production",
+      "colleges": [
+        "Clovis Community College",
+        "Madera College",
+        "Reedley College"
+      ]
+    },
     "PSTC": "Administration of Justice",
     "RCP": "Respiratory Technologies",
     "SLPA": "Speech Language Pathology",
     "STMFT": "Steamfitting",
     "SURV": "Engineering Technology",
     "SWHS": "Counseling",
-    "THA": "Theater Arts",
+    "THA": "Drama/Theater Arts",
     "TRN": "Transportation",
     "WEXP": "Work Experience Instructors",
     "WLF": "Fire Technology",
@@ -168,84 +239,573 @@
     "WST": "Environmental Technologies"
   },
   "title_keywords": [
-    { "any": ["older adults"], "discipline": "Older Adults: Noncredit" },
-    { "any": ["auto body", "autobody", "collision repair", "automotive collision", "automotive refinishing", "automotive painting"], "discipline": "Auto Body Technology" },
-    { "any": ["nursing"], "discipline": "Nursing" },
-    { "any": ["phlebotomy", "phlebotomist"], "discipline": "Health Care Ancillaries" },
-    { "any": ["respiratory", "cardiopulmonary"], "discipline": "Respiratory Technologies" },
-    { "any": ["dance", "ballet", "choreography"], "discipline": "Dance" },
-    { "any": ["welding", "welder", "tig", "mig"], "discipline": "Welding" },
-    { "any": ["aircraft", "airframe", "aviation"], "discipline": "Aviation" },
-    { "any": ["cabinetmaking", "cabinetmaker"], "discipline": "Cabinet Making" },
-    { "any": ["rodeo", "horsemanship", "equitation"], "discipline": "Equine Science" },
-    { "any": ["makerspace", "makerspaces"], "discipline": "Digital Fabrication Technician" },
-    { "any": ["wastewater"], "discipline": "Environmental Technologies" },
-    { "any": ["culinary", "bakeshop", "pastry"], "discipline": "Culinary Arts/Food Technology" },
-    { "any": ["accounting"], "discipline": "Business" },
-    { "any": ["real estate"], "discipline": "Real Estate" },
-    { "any": ["theatre", "playwriting"], "discipline": "Theater Arts" },
-    { "any": ["interior design"], "discipline": "Interior Design" },
-    { "any": ["automotive"], "discipline": "Automotive Technology" },
-    { "any": ["diesel"], "discipline": "Diesel Mechanics" },
-    { "any": ["cosmetology"], "discipline": "Cosmetology" },
-    { "any": ["barbering"], "discipline": "Barbering" },
-    { "any": ["plumbing"], "discipline": "Plumbing" },
-    { "any": ["masonry"], "discipline": "Masonry" },
-    { "any": ["carpentry", "carpenter"], "discipline": "Carpentry" },
-    { "any": ["welding"], "discipline": "Welding" },
-    { "any": ["anthropology"], "discipline": "Anthropology" },
-    { "any": ["photography", "photographic"], "discipline": "Photography" },
-    { "any": ["journalism"], "discipline": "Journalism" },
-    { "any": ["philosophy"], "discipline": "Philosophy" },
-    { "any": ["sociology"], "discipline": "Sociology" },
-    { "any": ["psychology"], "discipline": "Psychology" },
-    { "any": ["economics"], "discipline": "Economics" },
-    { "any": ["geography"], "discipline": "Geography" },
-    { "any": ["paralegal"], "discipline": "Legal Assisting" },
-    { "any": ["veterinary"], "discipline": "Registered Veterinary Technician" },
-    { "any": ["pharmacy"], "discipline": "Pharmacy Technology" },
-    { "any": ["radiography", "radiologic"], "discipline": "Radiological Technology" },
-    { "any": ["firefighter", "firefighting", "wildland"], "discipline": "Fire Technology" },
-    { "any": ["esl"], "discipline": "English as a Second Language" },
-    { "any": ["mandarin", "spanish", "cantonese", "vietnamese"], "discipline": "Foreign Languages" },
-    { "any": ["german", "french", "italian", "japanese", "korean", "arabic", "portuguese", "russian", "hebrew", "tagalog", "hmong", "punjabi", "farsi", "persian"], "discipline": "Foreign Languages" },
-    { "any": ["embalming", "funeral service", "funeral directing", "mortuary"], "discipline": "Mortuary Science" },
-    { "any": ["artificial intelligence"], "discipline": "Artificial Intelligence" },
-    { "any": ["air traffic control", "air navigation", "private pilot", "instrument rating", "airframe", "airport operations"], "discipline": "Aviation" },
-    { "any": ["apprentice electrician", "apprentice electricians"], "discipline": "Electricity" },
-    { "any": ["work experience", "wrk exp", "work exp"], "discipline": "Work Experience Instructors" },
-    { "any": ["refrigeration", "hvac", "hvacr"], "discipline": "Air Conditioning, Refrigeration, Heating" },
-    { "any": ["wordperfect", "spreadsheet", "desktop publishing"], "discipline": "Office Technologies" },
-    { "any": ["geographic information"], "discipline": "Geography" },
-    { "any": ["esthetician", "manicuring", "nail technology"], "discipline": "Cosmetology" },
-    { "any": ["upholstery", "upholstering"], "discipline": "Upholstering" },
-    { "any": ["locksmith", "locksmithing"], "discipline": "Locksmithing" },
-    { "any": ["arboriculture", "horticulture"], "discipline": "Ornamental Horticulture" },
-    { "any": ["photovoltaic", "wind energy", "solar energy"], "discipline": "Environmental Technologies" },
-    { "any": ["drafting", "computer aided drafting", "solidworks", "fusion 360", "autocad"], "discipline": "Drafting/CADD" },
-    { "any": ["electronics", "electronic circuits", "digital circuits"], "discipline": "Electronics" },
-    { "any": ["baking", "cake decorating", "charcuterie", "catering"], "discipline": "Culinary Arts/Food Technology" },
-    { "any": ["piano", "musicianship", "music theory", "music history", "music appreciation", "jazz", "choir", "orchestra"], "discipline": "Music" },
-    { "any": ["adapted physical", "adaptive physical"], "discipline": "Physical Education" },
-    { "any": ["recreation", "leisure"], "discipline": "Recreation Administration" },
-    { "any": ["intercollegiate"], "discipline": "Physical Education" },
-    { "any": ["yoga", "pilates"], "discipline": "Physical Education" },
-    { "any": ["anatomy", "physiology"], "discipline": "Biological Sciences" },
-    { "any": ["viticulture", "enology", "viniculture"], "discipline": "Agricultural Production" },
-    { "any": ["addiction", "substance abuse", "chemical dependency", "alcohol and other drug", "alcohol and drug"], "discipline": "Counseling" },
-    { "any": ["social work", "human services"], "discipline": "Counseling" },
-    { "any": ["medical terminology"], "discipline": "Health Care Ancillaries" },
-    { "any": ["nutrition"], "discipline": "Nutritional Science/Dietetics" },
-    { "any": ["film studies", "filmmaking", "cinema"], "discipline": "Film and Media Studies" },
-    { "any": ["sign language", "american sign"], "discipline": "Sign Language, American" },
-    { "any": ["court reporting"], "discipline": "Court Reporting" },
-    { "any": ["surgical"], "discipline": "Surgical Technology" },
-    { "any": ["dental"], "discipline": "Dental Technology" },
-    { "any": ["machining", "machinist", "lathe", "milling"], "discipline": "Machine Tool Technology" },
-    { "any": ["robotics"], "discipline": "Robotics" },
-    { "any": ["cybersecurity", "cyber security"], "discipline": "Computer Information Systems" },
-    { "any": ["floral", "floristry"], "discipline": "Ornamental Horticulture" },
-    { "any": ["forestry"], "discipline": "Forestry/Natural Resources" },
-    { "any": ["paramedic", "emergency medical"], "discipline": "Emergency Medical Technologies" }
+    {
+      "any": [
+        "older adults"
+      ],
+      "discipline": "Older Adults: Noncredit"
+    },
+    {
+      "any": [
+        "auto body",
+        "autobody",
+        "collision repair",
+        "automotive collision",
+        "automotive refinishing",
+        "automotive painting"
+      ],
+      "discipline": "Auto Body Technology"
+    },
+    {
+      "any": [
+        "nursing"
+      ],
+      "discipline": "Nursing"
+    },
+    {
+      "any": [
+        "phlebotomy",
+        "phlebotomist"
+      ],
+      "discipline": "Health Care Ancillaries"
+    },
+    {
+      "any": [
+        "respiratory",
+        "cardiopulmonary"
+      ],
+      "discipline": "Respiratory Technologies"
+    },
+    {
+      "any": [
+        "dance",
+        "ballet",
+        "choreography"
+      ],
+      "discipline": "Dance"
+    },
+    {
+      "any": [
+        "welding",
+        "welder",
+        "tig",
+        "mig"
+      ],
+      "discipline": "Welding"
+    },
+    {
+      "any": [
+        "aircraft",
+        "airframe",
+        "aviation"
+      ],
+      "discipline": "Aviation"
+    },
+    {
+      "any": [
+        "cabinetmaking",
+        "cabinetmaker"
+      ],
+      "discipline": "Cabinet Making"
+    },
+    {
+      "any": [
+        "rodeo",
+        "horsemanship",
+        "equitation"
+      ],
+      "discipline": "Equine Science"
+    },
+    {
+      "any": [
+        "makerspace",
+        "makerspaces"
+      ],
+      "discipline": "Digital Fabrication Technician"
+    },
+    {
+      "any": [
+        "wastewater"
+      ],
+      "discipline": "Environmental Technologies"
+    },
+    {
+      "any": [
+        "culinary",
+        "bakeshop",
+        "pastry"
+      ],
+      "discipline": "Culinary Arts/Food Technology"
+    },
+    {
+      "any": [
+        "accounting"
+      ],
+      "discipline": "Business"
+    },
+    {
+      "any": [
+        "real estate"
+      ],
+      "discipline": "Real Estate"
+    },
+    {
+      "any": [
+        "theatre",
+        "playwriting"
+      ],
+      "discipline": "Drama/Theater Arts"
+    },
+    {
+      "any": [
+        "interior design"
+      ],
+      "discipline": "Interior Design"
+    },
+    {
+      "any": [
+        "automotive"
+      ],
+      "discipline": "Automotive Technology"
+    },
+    {
+      "any": [
+        "diesel"
+      ],
+      "discipline": "Diesel Mechanics"
+    },
+    {
+      "any": [
+        "cosmetology"
+      ],
+      "discipline": "Cosmetology"
+    },
+    {
+      "any": [
+        "barbering"
+      ],
+      "discipline": "Barbering"
+    },
+    {
+      "any": [
+        "plumbing"
+      ],
+      "discipline": "Plumbing"
+    },
+    {
+      "any": [
+        "masonry"
+      ],
+      "discipline": "Masonry"
+    },
+    {
+      "any": [
+        "carpentry",
+        "carpenter"
+      ],
+      "discipline": "Carpentry"
+    },
+    {
+      "any": [
+        "welding"
+      ],
+      "discipline": "Welding"
+    },
+    {
+      "any": [
+        "anthropology"
+      ],
+      "discipline": "Anthropology"
+    },
+    {
+      "any": [
+        "photography",
+        "photographic"
+      ],
+      "discipline": "Photography"
+    },
+    {
+      "any": [
+        "journalism"
+      ],
+      "discipline": "Journalism"
+    },
+    {
+      "any": [
+        "philosophy"
+      ],
+      "discipline": "Philosophy"
+    },
+    {
+      "any": [
+        "sociology"
+      ],
+      "discipline": "Sociology"
+    },
+    {
+      "any": [
+        "psychology"
+      ],
+      "discipline": "Psychology"
+    },
+    {
+      "any": [
+        "economics"
+      ],
+      "discipline": "Economics"
+    },
+    {
+      "any": [
+        "geography"
+      ],
+      "discipline": "Geography"
+    },
+    {
+      "any": [
+        "paralegal"
+      ],
+      "discipline": "Legal Assisting"
+    },
+    {
+      "any": [
+        "veterinary"
+      ],
+      "discipline": "Registered Veterinary Technician"
+    },
+    {
+      "any": [
+        "pharmacy"
+      ],
+      "discipline": "Pharmacy Technology"
+    },
+    {
+      "any": [
+        "radiography",
+        "radiologic"
+      ],
+      "discipline": "Radiological Technology"
+    },
+    {
+      "any": [
+        "firefighter",
+        "firefighting",
+        "wildland"
+      ],
+      "discipline": "Fire Technology"
+    },
+    {
+      "any": [
+        "esl"
+      ],
+      "discipline": "English as a Second Language"
+    },
+    {
+      "any": [
+        "mandarin",
+        "spanish",
+        "cantonese",
+        "vietnamese"
+      ],
+      "discipline": "Foreign Languages"
+    },
+    {
+      "any": [
+        "german",
+        "french",
+        "italian",
+        "japanese",
+        "korean",
+        "arabic",
+        "portuguese",
+        "russian",
+        "hebrew",
+        "tagalog",
+        "hmong",
+        "punjabi",
+        "farsi",
+        "persian"
+      ],
+      "discipline": "Foreign Languages"
+    },
+    {
+      "any": [
+        "embalming",
+        "funeral service",
+        "funeral directing",
+        "mortuary"
+      ],
+      "discipline": "Mortuary Science"
+    },
+    {
+      "any": [
+        "artificial intelligence"
+      ],
+      "discipline": "Artificial Intelligence"
+    },
+    {
+      "any": [
+        "air traffic control",
+        "air navigation",
+        "private pilot",
+        "instrument rating",
+        "airframe",
+        "airport operations"
+      ],
+      "discipline": "Aviation"
+    },
+    {
+      "any": [
+        "apprentice electrician",
+        "apprentice electricians"
+      ],
+      "discipline": "Electricity"
+    },
+    {
+      "any": [
+        "work experience",
+        "wrk exp",
+        "work exp"
+      ],
+      "discipline": "Work Experience Instructors"
+    },
+    {
+      "any": [
+        "refrigeration",
+        "hvac",
+        "hvacr"
+      ],
+      "discipline": "Air Conditioning, Refrigeration, Heating"
+    },
+    {
+      "any": [
+        "wordperfect",
+        "spreadsheet",
+        "desktop publishing"
+      ],
+      "discipline": "Office Technologies"
+    },
+    {
+      "any": [
+        "geographic information"
+      ],
+      "discipline": "Geography"
+    },
+    {
+      "any": [
+        "esthetician",
+        "manicuring",
+        "nail technology"
+      ],
+      "discipline": "Cosmetology"
+    },
+    {
+      "any": [
+        "upholstery",
+        "upholstering"
+      ],
+      "discipline": "Upholstering"
+    },
+    {
+      "any": [
+        "locksmith",
+        "locksmithing"
+      ],
+      "discipline": "Locksmithing"
+    },
+    {
+      "any": [
+        "arboriculture",
+        "horticulture"
+      ],
+      "discipline": "Ornamental Horticulture"
+    },
+    {
+      "any": [
+        "photovoltaic",
+        "wind energy",
+        "solar energy"
+      ],
+      "discipline": "Environmental Technologies"
+    },
+    {
+      "any": [
+        "drafting",
+        "computer aided drafting",
+        "solidworks",
+        "fusion 360",
+        "autocad"
+      ],
+      "discipline": "Drafting/CADD"
+    },
+    {
+      "any": [
+        "electronics",
+        "electronic circuits",
+        "digital circuits"
+      ],
+      "discipline": "Electronics"
+    },
+    {
+      "any": [
+        "baking",
+        "cake decorating",
+        "charcuterie",
+        "catering"
+      ],
+      "discipline": "Culinary Arts/Food Technology"
+    },
+    {
+      "any": [
+        "piano",
+        "musicianship",
+        "music theory",
+        "music history",
+        "music appreciation",
+        "jazz",
+        "choir",
+        "orchestra"
+      ],
+      "discipline": "Music"
+    },
+    {
+      "any": [
+        "adapted physical",
+        "adaptive physical"
+      ],
+      "discipline": "Physical Education Disabled Students"
+    },
+    {
+      "any": [
+        "recreation",
+        "leisure"
+      ],
+      "discipline": "Recreation Administration"
+    },
+    {
+      "any": [
+        "yoga",
+        "pilates"
+      ],
+      "discipline": "Kinesiology"
+    },
+    {
+      "any": [
+        "anatomy",
+        "physiology"
+      ],
+      "discipline": "Biological Sciences"
+    },
+    {
+      "any": [
+        "viticulture",
+        "enology",
+        "viniculture"
+      ],
+      "discipline": "Agricultural Production"
+    },
+    {
+      "any": [
+        "addiction",
+        "substance abuse",
+        "chemical dependency",
+        "alcohol and other drug",
+        "alcohol and drug"
+      ],
+      "discipline": "Counseling"
+    },
+    {
+      "any": [
+        "social work",
+        "human services"
+      ],
+      "discipline": "Counseling"
+    },
+    {
+      "any": [
+        "medical terminology"
+      ],
+      "discipline": "Health Care Ancillaries"
+    },
+    {
+      "any": [
+        "nutrition"
+      ],
+      "discipline": "Nutritional Science/Dietetics"
+    },
+    {
+      "any": [
+        "film studies",
+        "filmmaking",
+        "cinema"
+      ],
+      "discipline": "Film and Media Studies"
+    },
+    {
+      "any": [
+        "sign language",
+        "american sign"
+      ],
+      "discipline": "Sign Language, American"
+    },
+    {
+      "any": [
+        "court reporting"
+      ],
+      "discipline": "Court Reporting"
+    },
+    {
+      "any": [
+        "surgical"
+      ],
+      "discipline": "Surgical Technology"
+    },
+    {
+      "any": [
+        "dental"
+      ],
+      "discipline": "Dental Technology"
+    },
+    {
+      "any": [
+        "machining",
+        "machinist",
+        "lathe",
+        "milling"
+      ],
+      "discipline": "Machine Tool Technology"
+    },
+    {
+      "any": [
+        "robotics"
+      ],
+      "discipline": "Robotics"
+    },
+    {
+      "any": [
+        "cybersecurity",
+        "cyber security"
+      ],
+      "discipline": "Computer Information Systems"
+    },
+    {
+      "any": [
+        "floral",
+        "floristry"
+      ],
+      "discipline": "Ornamental Horticulture"
+    },
+    {
+      "any": [
+        "forestry"
+      ],
+      "discipline": "Forestry/Natural Resources"
+    },
+    {
+      "any": [
+        "paramedic",
+        "emergency medical"
+      ],
+      "discipline": "Emergency Medical Technologies"
+    }
   ]
 }

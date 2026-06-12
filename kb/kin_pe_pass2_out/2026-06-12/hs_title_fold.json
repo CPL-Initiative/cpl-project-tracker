@@ -1,0 +1,427 @@
+{
+ "generated_at": "2026-06-12T20:36:18.654321+00:00",
+ "merges": [
+  {
+   "hs_id": "BIOL M90BD",
+   "hs_title": "High School Life Science - Physiology",
+   "target": "BIOL M90BE",
+   "target_title": "Life Science – Physiology"
+  },
+  {
+   "hs_id": "ECON M9003",
+   "hs_title": "High School Economics",
+   "target": "ECON M9002",
+   "target_title": "Economics"
+  },
+  {
+   "hs_id": "IDST M9036",
+   "hs_title": "Hs Arithmetic 2",
+   "target": "IDST M9035",
+   "target_title": "Arithmetic 2"
+  },
+  {
+   "hs_id": "IDST M9044",
+   "hs_title": "Hs Life Science 2",
+   "target": "IDST M90EE",
+   "target_title": "Life Science 2"
+  },
+  {
+   "hs_id": "IDST M90BE",
+   "hs_title": "High School United States History 1",
+   "target": "IDST M9022",
+   "target_title": "United States History 1"
+  },
+  {
+   "hs_id": "IDST M90CJ",
+   "hs_title": "High School Geometry 1A",
+   "target": "IDST M9029",
+   "target_title": "Geometry 1A"
+  },
+  {
+   "hs_id": "IDST M90CY",
+   "hs_title": "High School Geometry 1B",
+   "target": "IDST M9030",
+   "target_title": "Geometry 1B"
+  },
+  {
+   "hs_id": "IDST M90DY",
+   "hs_title": "High School United States History 2",
+   "target": "IDST M90EB",
+   "target_title": "United States History 2"
+  },
+  {
+   "hs_id": "IDST M90EH",
+   "hs_title": "High School Workplace Skills for the 21ST Century",
+   "target": "IDST M90EL",
+   "target_title": "Workplace Skills for the 21ST Century"
+  },
+  {
+   "hs_id": "IDST M90GA",
+   "hs_title": "High School Planning for Academic and Career Success",
+   "target": "IDST M90GB",
+   "target_title": "Planning for Academic and Career Success"
+  },
+  {
+   "hs_id": "IDST M90LA",
+   "hs_title": "High School American Government",
+   "target": "IDST M9086",
+   "target_title": "American Government"
+  },
+  {
+   "hs_id": "IDST M90LV",
+   "hs_title": "Hs Arithmetic 2",
+   "target": "IDST M9035",
+   "target_title": "Arithmetic 2"
+  },
+  {
+   "hs_id": "IDST M90OS",
+   "hs_title": "High School Biology - B",
+   "target": "IDST M90OR",
+   "target_title": "Biology B"
+  },
+  {
+   "hs_id": "IDST M90OZ",
+   "hs_title": "High School Earth Science - B",
+   "target": "IDST M90PA",
+   "target_title": "Earth Science B"
+  },
+  {
+   "hs_id": "IDST M90PN",
+   "hs_title": "High School United States History - B",
+   "target": "IDST M90PR",
+   "target_title": "United States History B"
+  },
+  {
+   "hs_id": "IDST M90PQ",
+   "hs_title": "High School Physical Science - B",
+   "target": "IDST M9108",
+   "target_title": "Physical Science B"
+  },
+  {
+   "hs_id": "IDST M90SI",
+   "hs_title": "High School Life Science - Biology",
+   "target": "IDST M90SJ",
+   "target_title": "Life Science - Biology"
+  },
+  {
+   "hs_id": "IDST M90VM",
+   "hs_title": "High School Physical Science - Chemistry",
+   "target": "IDST M90VQ",
+   "target_title": "Physical Science - Chemistry"
+  },
+  {
+   "hs_id": "IDST M90WH",
+   "hs_title": "High School U.S. History: Pre-Colonialism to the Civil War",
+   "target": "IDST M90WI",
+   "target_title": "U.S. History: Pre-Colonialism to the Civil War"
+  },
+  {
+   "hs_id": "IDST M9135",
+   "hs_title": "High School Biology - A",
+   "target": "IDST M90SF",
+   "target_title": "Biology A"
+  },
+  {
+   "hs_id": "IDST M91BB",
+   "hs_title": "High School Earth Science - A",
+   "target": "IDST M91BC",
+   "target_title": "Earth Science A"
+  },
+  {
+   "hs_id": "IDST M91BD",
+   "hs_title": "High School Environmental Science - Ecology",
+   "target": "IDST M91BE",
+   "target_title": "Environmental Science - Ecology"
+  },
+  {
+   "hs_id": "IDST M91BW",
+   "hs_title": "High School Practical English Skills",
+   "target": "IDST M91CF",
+   "target_title": "Practical English Skills"
+  },
+  {
+   "hs_id": "IDST M91DC",
+   "hs_title": "High School Ethnic Studies",
+   "target": "IDST M9239",
+   "target_title": "Ethnic Studies"
+  },
+  {
+   "hs_id": "IDST M91FJ",
+   "hs_title": "High School Introduction to Geometry",
+   "target": "IDST M91FK",
+   "target_title": "Introduction to Geometry"
+  },
+  {
+   "hs_id": "IDST M91GL",
+   "hs_title": "High School United States History - A",
+   "target": "IDST M91HD",
+   "target_title": "United States History A"
+  },
+  {
+   "hs_id": "IDST M91GS",
+   "hs_title": "High School Literature in a Multicultural Society",
+   "target": "IDST M91KM",
+   "target_title": "Literature in a Multicultural Society"
+  },
+  {
+   "hs_id": "IDST M91GT",
+   "hs_title": "High School Physical Science - Physics",
+   "target": "IDST M91LI",
+   "target_title": "Physical Science - Physics"
+  },
+  {
+   "hs_id": "IDST M91GU",
+   "hs_title": "High School Physical Science - A",
+   "target": "IDST M9310",
+   "target_title": "Physical Science A"
+  },
+  {
+   "hs_id": "IDST M91HG",
+   "hs_title": "Hs/Life Science 1",
+   "target": "IDST M90BK",
+   "target_title": "Life Science 1"
+  },
+  {
+   "hs_id": "IDST M9264",
+   "hs_title": "High School Health",
+   "target": "IDST M9263",
+   "target_title": "Health"
+  },
+  {
+   "hs_id": "IDST M9267",
+   "hs_title": "High School World History",
+   "target": "IDST M91HE",
+   "target_title": "World History"
+  },
+  {
+   "hs_id": "IDST M9275",
+   "hs_title": "High School Short Stories",
+   "target": "IDST M91LZ",
+   "target_title": "Short Stories"
+  },
+  {
+   "hs_id": "IDST M9277",
+   "hs_title": "High School Vocabulary",
+   "target": "IDST M91MN",
+   "target_title": "Vocabulary"
+  },
+  {
+   "hs_id": "PSYC M9006",
+   "hs_title": "High School Psychology",
+   "target": "PSYC M9008",
+   "target_title": "Psychology"
+  }
+ ],
+ "flagged": [
+  {
+   "hs_id": "ELEC M9001",
+   "hs_title": "High School English 1",
+   "cross_subj4_twins": [
+    [
+     "IDST M9018",
+     "English 1",
+     "IDST"
+    ]
+   ]
+  },
+  {
+   "hs_id": "ELEC M9004",
+   "hs_title": "High School Algebra 2",
+   "cross_subj4_twins": [
+    [
+     "IDST M9032",
+     "Algebra 2",
+     "IDST"
+    ]
+   ]
+  },
+  {
+   "hs_id": "ELEC M9005",
+   "hs_title": "High School English 2",
+   "cross_subj4_twins": [
+    [
+     "ENGL M90AP",
+     "English 2",
+     "ENGL"
+    ]
+   ]
+  },
+  {
+   "hs_id": "ELEC M9017",
+   "hs_title": "High School Biology",
+   "cross_subj4_twins": [
+    [
+     "IDST M9131",
+     "Biology",
+     "IDST"
+    ]
+   ]
+  },
+  {
+   "hs_id": "ELEC M90AD",
+   "hs_title": "High School Spanish 1A",
+   "cross_subj4_twins": [
+    [
+     "FLSP M9001",
+     "Spanish 1A",
+     "FLSP"
+    ]
+   ]
+  },
+  {
+   "hs_id": "ELEC M90AF",
+   "hs_title": "High School English 2A",
+   "cross_subj4_twins": [
+    [
+     "IDST M90EO",
+     "English 2A",
+     "IDST"
+    ]
+   ]
+  },
+  {
+   "hs_id": "ELEC M90AG",
+   "hs_title": "High School Spanish 2A",
+   "cross_subj4_twins": [
+    [
+     "FLSP M90AG",
+     "Spanish 2A",
+     "FLSP"
+    ]
+   ]
+  },
+  {
+   "hs_id": "ELEC M90CH",
+   "hs_title": "High School Chemistry A",
+   "cross_subj4_twins": [
+    [
+     "IDST M90VK",
+     "Chemistry A",
+     "IDST"
+    ]
+   ]
+  },
+  {
+   "hs_id": "IDST M9028",
+   "hs_title": "High School Algebra 1A",
+   "cross_subj4_twins": [
+    [
+     "MATH M9004",
+     "Algebra 1A",
+     "MATH"
+    ]
+   ]
+  },
+  {
+   "hs_id": "IDST M9053",
+   "hs_title": "High School English 3",
+   "cross_subj4_twins": [
+    [
+     "ENGL M90AS",
+     "English 3",
+     "ENGL"
+    ]
+   ]
+  },
+  {
+   "hs_id": "IDST M9054",
+   "hs_title": "High School English 4",
+   "cross_subj4_twins": [
+    [
+     "ENGL M90AW",
+     "English 4",
+     "ENGL"
+    ]
+   ]
+  },
+  {
+   "hs_id": "IDST M90CO",
+   "hs_title": "High School Algebra 1B",
+   "cross_subj4_twins": [
+    [
+     "MATH M9005",
+     "Algebra 1B",
+     "MATH"
+    ]
+   ]
+  },
+  {
+   "hs_id": "IDST M90KD",
+   "hs_title": "High School Pre-Algebra - B",
+   "cross_subj4_twins": [
+    [
+     "MATH M9013",
+     "Pre-Algebra B",
+     "MATH"
+    ]
+   ]
+  },
+  {
+   "hs_id": "IDST M90KP",
+   "hs_title": "High School Pre-Algebra - A",
+   "cross_subj4_twins": [
+    [
+     "MATH M9014",
+     "Pre Algebra A",
+     "MATH"
+    ]
+   ]
+  },
+  {
+   "hs_id": "IDST M90MF",
+   "hs_title": "High School Art History",
+   "cross_subj4_twins": [
+    [
+     "ARTS M9011",
+     "Art History",
+     "ARTS"
+    ]
+   ]
+  },
+  {
+   "hs_id": "IDST M90PO",
+   "hs_title": "High School World History - B",
+   "cross_subj4_twins": [
+    [
+     "HIST M9003",
+     "World History B",
+     "HIST"
+    ]
+   ]
+  },
+  {
+   "hs_id": "IDST M9180",
+   "hs_title": "High School Civics",
+   "cross_subj4_twins": [
+    [
+     "ESOL M9181",
+     "Civics",
+     "ESOL"
+    ]
+   ]
+  },
+  {
+   "hs_id": "IDST M91GM",
+   "hs_title": "High School World History - A",
+   "cross_subj4_twins": [
+    [
+     "HIST M9004",
+     "World History A",
+     "HIST"
+    ]
+   ]
+  },
+  {
+   "hs_id": "IDST M91GO",
+   "hs_title": "High School Humanities",
+   "cross_subj4_twins": [
+    [
+     "GERO M90AU",
+     "Humanities",
+     "GERO"
+    ]
+   ]
+  }
+ ],
+ "repoints": []
+}

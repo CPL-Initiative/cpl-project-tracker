@@ -72,6 +72,20 @@ def main():
     conf = lex["_confidence"]
     valid = set(load(os.path.join("reference", "mq_disciplines.json"))["disciplines"])
 
+    # ---- alias guard: a folded ALTERNATE discipline name (still a valid MQ
+    # string, so the check below can't catch it) must never be a target — it
+    # resurrects the folded discipline on re-derivation (the PEDU incident,
+    # Session 51). Resolve to canonical with a warning.
+    from _alias_canon import alternate_to_canonical, resolve_target
+    _rev = alternate_to_canonical()
+    for code, e in list(subject_map.items()):
+        if isinstance(e, str):
+            subject_map[code] = resolve_target(e, _rev, f"subject_map[{code}]")
+        elif isinstance(e, dict) and e.get("discipline"):
+            e["discipline"] = resolve_target(e["discipline"], _rev, f"subject_map[{code}]")
+    for k in keywords:
+        k["discipline"] = resolve_target(k["discipline"], _rev, f"title_keywords[{k['any'][0]}]")
+
     # ---- validate every target up front -------------------------------------
     bad = set()
     for e in subject_map.values():

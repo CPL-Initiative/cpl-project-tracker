@@ -1,0 +1,11 @@
+{
+ "generated_at": "2026-06-12T20:25:34.326521",
+ "status": "APPLIED",
+ "counts": {
+  "coci_minted_courses.json": 4141,
+  "coci_minted_singletons.json": 15598,
+  "formerly_stripped": 162,
+  "_note": "counts from the 2026-06-12 apply (apply_run.log); a SIGPIPE-killed first invocation + a 2-row straggler re-apply are folded in; final state verified idempotent (re-run = 0 changes)"
+ },
+ "samples": []
+}

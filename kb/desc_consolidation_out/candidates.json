@@ -9,17 +9,17 @@
   "group_cap": 8
  },
  "population": {
-  "dark_mids_with_desc": 11582,
-  "candidate_pairs": 67039,
-  "passing_pairs": 981,
+  "dark_mids_with_desc": 11564,
+  "candidate_pairs": 66739,
+  "passing_pairs": 978,
   "gate_rejections": {
-   "below_cosine": 22062,
-   "level_risk": 4781,
-   "units_mismatch": 27425,
-   "credit_mismatch": 9140,
-   "variant_risk": 992,
-   "sport_risk": 1258,
-   "gender_risk": 304,
+   "below_cosine": 22007,
+   "level_risk": 4794,
+   "units_mismatch": 27223,
+   "credit_mismatch": 9148,
+   "variant_risk": 991,
+   "sport_risk": 1211,
+   "gender_risk": 291,
    "already_title_lane": 51,
    "year_risk": 45
   }
@@ -29,7 +29,7 @@
    "members": [
     {
      "id": "ECED M1084",
-     "title": "INFANT AND TODDLER CARE AND CURRICULUM",
+     "title": "Infant and Toddler Care and Curriculum",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
      "colleges": [
@@ -219,8 +219,8 @@
    "shared_terms": [
     "pumping",
     "pump",
-    "pumps",
     "hydraulics",
+    "pumps",
     "simulated",
     "inspections"
    ]
@@ -430,14 +430,14 @@
     "debated",
     "degradation",
     "democratic",
-    "reducing"
+    "parties"
    ]
   },
   {
    "members": [
     {
      "id": "ARTS M1418",
-     "title": "Video Production I",
+     "title": "Video Production 1",
      "units": 3.0,
      "disc": "Art",
      "colleges": [
@@ -447,7 +447,7 @@
     },
     {
      "id": "COMM M1021",
-     "title": "CINEMA AS A FORM OF EXPRESSION AND COMMUNICATION",
+     "title": "Cinema as a Form of Expression and Communication",
      "units": 3.0,
      "disc": "Communication Studies",
      "colleges": [
@@ -504,7 +504,7 @@
    "members": [
     {
      "id": "ENGL M1130",
-     "title": "Chicana/o Literature and Studies in the United States",
+     "title": "Chicana/O Literature and Studies in the United States",
      "units": 3.0,
      "disc": "English",
      "colleges": [
@@ -531,7 +531,7 @@
     "chicanx",
     "prose",
     "lived",
-    "authors"
+    "latinx"
    ]
   },
   {
@@ -715,7 +715,7 @@
     },
     {
      "id": "HIST M1103",
-     "title": "HISTORY OF MEXICAN AMERICANS",
+     "title": "History of Mexican Americans",
      "units": 3.0,
      "disc": "History",
      "colleges": [
@@ -763,7 +763,7 @@
     },
     {
      "id": "MATH M1256",
-     "title": "PRECALCULUS/GEOMETRY",
+     "title": "Precalculus/Geometry",
      "units": 5.0,
      "disc": "Mathematics",
      "colleges": [
@@ -778,11 +778,11 @@
    "cross_college": true,
    "shared_terms": [
     "zeros",
-    "permutations",
     "axes",
+    "permutations",
     "binomial",
-    "matrices",
-    "induction"
+    "induction",
+    "matrices"
    ]
   },
   {
@@ -817,8 +817,8 @@
     "carriage",
     "accent",
     "flamenco",
-    "tonal",
-    "folkloric"
+    "folkloric",
+    "tonal"
    ]
   },
   {
@@ -850,8 +850,8 @@
    "shared_terms": [
     "tender",
     "dumpsite",
-    "shuttle",
     "maneuvering",
+    "shuttle",
     "fill",
     "routine"
    ]
@@ -885,9 +885,9 @@
    "cross_college": true,
    "shared_terms": [
     "contouring",
-    "subroutines",
     "looping",
     "canned",
+    "subroutines",
     "diameter",
     "cutter"
    ]
@@ -906,7 +906,7 @@
     },
     {
      "id": "SLNA M1031",
-     "title": "American Sign Language Level II",
+     "title": "American Sign Language Level 2",
      "units": 5.0,
      "disc": "Sign Language, American",
      "colleges": [
@@ -983,7 +983,7 @@
     },
     {
      "id": "PHOT M1006",
-     "title": "ADVANCED PHOTOGRAPHIC DIGITAL IMAGING",
+     "title": "Advanced Photographic Digital Imaging",
      "units": 3.0,
      "disc": "Photography",
      "colleges": [
@@ -997,8 +997,8 @@
    "cos_max": 0.93,
    "cross_college": true,
    "shared_terms": [
-    "collaging",
     "alter",
+    "collaging",
     "retouching",
     "compositing",
     "photoshop",
@@ -1235,7 +1235,7 @@
     },
     {
      "id": "BUSI M1042",
-     "title": "Excel For Accounting and Finance",
+     "title": "Excel for Accounting and Finance",
      "units": 3.0,
      "disc": "Business",
      "colleges": [
@@ -1282,7 +1282,7 @@
     },
     {
      "id": "MGMT M1020",
-     "title": "VALUES & ETHICS",
+     "title": "Values & Ethics",
      "units": 0.5,
      "disc": "Management",
      "colleges": [
@@ -1320,7 +1320,7 @@
     },
     {
      "id": "FIRE M1117",
-     "title": "COMPANY OFFICER 2C / FIRE INSPECTIONS AND INVESTIGATIONS FOR COMPANY OFFICERS",
+     "title": "Company Officer 2C / Fire Inspections and Investigations for Company Officers",
      "units": 2.0,
      "disc": "Fire Technology",
      "colleges": [
@@ -1356,8 +1356,8 @@
    "cos_max": 0.892,
    "cross_college": true,
    "shared_terms": [
-    "preserving",
     "violations",
+    "preserving",
     "preliminary",
     "securing",
     "cause",
@@ -1402,7 +1402,7 @@
    "members": [
     {
      "id": "OTEC M1119",
-     "title": "Computer Keyboarding I",
+     "title": "Computer Keyboarding 1",
      "units": 1.5,
      "disc": "Office Technologies",
      "colleges": [
@@ -1464,8 +1464,8 @@
    "cos_max": 0.884,
    "cross_college": true,
    "shared_terms": [
-    "ignitable",
     "extinguish",
+    "ignitable",
     "flammable",
     "pipeline",
     "liquid",
@@ -1509,8 +1509,8 @@
    "cos_max": 0.878,
    "cross_college": true,
    "shared_terms": [
-    "maneuver",
     "endorsement",
+    "maneuver",
     "turn",
     "apparatus",
     "operate",
@@ -1521,7 +1521,7 @@
    "members": [
     {
      "id": "MATH M1163",
-     "title": "Just in Time Support for Calculus I",
+     "title": "Just in Time Support for Calculus 1",
      "units": 2.0,
      "disc": "Mathematics",
      "colleges": [
@@ -1532,7 +1532,7 @@
     },
     {
      "id": "MATH M1169",
-     "title": "Support for Calculus I",
+     "title": "Support for Calculus 1",
      "units": 2.0,
      "disc": "Mathematics",
      "colleges": [
@@ -1619,7 +1619,7 @@
     },
     {
      "id": "BUSI M1344",
-     "title": "INDIVIDUAL INCOME TAXES",
+     "title": "Individual Income Taxes",
      "units": 4.0,
      "disc": "Business",
      "colleges": [
@@ -1640,13 +1640,13 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.715,
+   "cos_min": 0.714,
    "cos_max": 0.871,
    "cross_college": true,
    "shared_terms": [
     "exemptions",
-    "itemized",
     "exclusions",
+    "itemized",
     "gains",
     "tax",
     "income"
@@ -1656,7 +1656,7 @@
    "members": [
     {
      "id": "BIOL M1234",
-     "title": "Medical Terminology II",
+     "title": "Medical Terminology 2",
      "units": 2.0,
      "disc": "Biological Sciences",
      "colleges": [
@@ -1668,7 +1668,7 @@
     },
     {
      "id": "HLTH M1153",
-     "title": "MED TERMINOLOGY II",
+     "title": "Med Terminology 2",
      "units": 2.0,
      "disc": "Health",
      "colleges": [
@@ -1734,7 +1734,7 @@
    "members": [
     {
      "id": "ECED M1010",
-     "title": "Administration I: Programs in Early Childhood Education",
+     "title": "Administration 1: Programs in Early Childhood Education",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
      "colleges": [
@@ -1847,8 +1847,8 @@
    "cos_max": 0.856,
    "cross_college": true,
    "shared_terms": [
-    "groupings",
     "metropolitan",
+    "groupings",
     "cities",
     "ever",
     "urban"
@@ -2042,7 +2042,7 @@
     }
    ],
    "n": 4,
-   "cos_min": 0.643,
+   "cos_min": 0.642,
    "cos_max": 0.85,
    "cross_college": true,
    "shared_terms": [
@@ -2113,7 +2113,7 @@
     },
     {
      "id": "CNST M1067",
-     "title": "FOUNDATION AND FLATWORK",
+     "title": "Foundation and Flatwork",
      "units": 1.5,
      "disc": "Construction Technology",
      "colleges": [
@@ -2174,7 +2174,7 @@
    ],
    "n": 3,
    "cos_min": 0.781,
-   "cos_max": 0.835,
+   "cos_max": 0.834,
    "cross_college": true,
    "shared_terms": [
     "cognitively",
@@ -2189,7 +2189,7 @@
    "members": [
     {
      "id": "ETHS M1193",
-     "title": "NATURAL DISASTERS AND ENVIRONMENTAL HAZARDS",
+     "title": "Natural Disasters and Environmental Hazards",
      "units": 3.0,
      "disc": "Ethnic Studies",
      "colleges": [
@@ -2213,8 +2213,8 @@
    "cross_college": true,
    "shared_terms": [
     "tsunamis",
-    "flooding",
     "volcanic",
+    "flooding",
     "hurricanes",
     "earthquakes",
     "disasters"
@@ -2289,11 +2289,11 @@
    "cos_max": 0.815,
    "cross_college": true,
    "shared_terms": [
-    "goats",
     "ruminants",
     "flocks",
-    "purebred",
+    "goats",
     "goat",
+    "purebred",
     "sheep"
    ]
   },
@@ -2358,7 +2358,7 @@
     "integrating",
     "member",
     "scene",
-    "evaluating"
+    "daily"
    ]
   },
   {
@@ -2473,8 +2473,8 @@
    "cos_max": 0.805,
    "cross_college": true,
    "shared_terms": [
-    "watts",
     "kirchoff",
+    "watts",
     "volt",
     "electromagnetism",
     "reactance",
@@ -2550,8 +2550,8 @@
    "shared_terms": [
     "antecedents",
     "flourish",
-    "gameplay",
     "aspirations",
+    "gameplay",
     "notable",
     "technological"
    ]
@@ -2626,16 +2626,16 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.779,
-   "cos_max": 0.779,
+   "cos_min": 0.78,
+   "cos_max": 0.78,
    "cross_college": true,
    "shared_terms": [
     "coincides",
     "suas",
     "pilots",
     "referred",
-    "drones",
-    "rating"
+    "rating",
+    "drones"
    ]
   },
   {
@@ -2687,7 +2687,7 @@
     },
     {
      "id": "MATH M1153",
-     "title": "CONCURRENT SUPPORT FOR CALCULUS I",
+     "title": "Concurrent Support for Calculus 1",
      "units": 1.0,
      "disc": "Mathematics",
      "colleges": [
@@ -2724,7 +2724,7 @@
     },
     {
      "id": "POSC M1013",
-     "title": "LATIN AMERICAN POLITICS AND GOVERNMENT",
+     "title": "Latin American Politics and Government",
      "units": 3.0,
      "disc": "Political Science",
      "colleges": [
@@ -2786,7 +2786,7 @@
    "members": [
     {
      "id": "PHMT M1007",
-     "title": "INTRODUCTION TO PHARMACY",
+     "title": "Introduction to Pharmacy",
      "units": 2.0,
      "disc": "Pharmacy Technology",
      "colleges": [
@@ -2832,7 +2832,7 @@
     },
     {
      "id": "ETHS M1208",
-     "title": "ETHNIC STUDIES, SPACE, AND SOCIAL JUSTICE",
+     "title": "Ethnic Studies, Space, and Social Justice",
      "units": 3.0,
      "disc": "Ethnic Studies",
      "colleges": [
@@ -2846,9 +2846,9 @@
    "cross_college": true,
    "shared_terms": [
     "responded",
-    "geog",
     "segregation",
     "exclusion",
+    "geog",
     "intersections",
     "inequality"
    ]
@@ -2952,7 +2952,7 @@
    ],
    "n": 3,
    "cos_min": 0.681,
-   "cos_max": 0.741,
+   "cos_max": 0.74,
    "cross_college": true,
    "shared_terms": [
     "coronary",
@@ -3076,41 +3076,6 @@
   {
    "members": [
     {
-     "id": "RSPT M1001",
-     "title": "Advanced Cardiopulmonary Respiratory Care",
-     "units": 3.0,
-     "disc": "Respiratory Technologies",
-     "colleges": [
-      "Antelope Valley College",
-      "Crafton Hills College"
-     ]
-    },
-    {
-     "id": "RSPT M1004",
-     "title": "Advanced Respiratory Critical Care and Pharmacology",
-     "units": 3.0,
-     "disc": "Respiratory Technologies",
-     "colleges": [
-      "East Los Angeles College",
-      "Los Angeles Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.728,
-   "cos_max": 0.728,
-   "cross_college": true,
-   "shared_terms": [
-    "neuro",
-    "symptom",
-    "respiratory",
-    "diseases",
-    "diagnostic"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "COUN M1101",
      "title": "Identity, Culture and Education",
      "units": 3.0,
@@ -3153,6 +3118,41 @@
     "reference",
     "frame",
     "identities"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "RSPT M1001",
+     "title": "Advanced Cardiopulmonary Respiratory Care",
+     "units": 3.0,
+     "disc": "Respiratory Technologies",
+     "colleges": [
+      "Antelope Valley College",
+      "Crafton Hills College"
+     ]
+    },
+    {
+     "id": "RSPT M1004",
+     "title": "Advanced Respiratory Critical Care and Pharmacology",
+     "units": 3.0,
+     "disc": "Respiratory Technologies",
+     "colleges": [
+      "East Los Angeles College",
+      "Los Angeles Valley College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.727,
+   "cos_max": 0.727,
+   "cross_college": true,
+   "shared_terms": [
+    "neuro",
+    "symptom",
+    "respiratory",
+    "diseases",
+    "diagnostic"
    ]
   },
   {
@@ -3331,8 +3331,8 @@
     "gardening",
     "container",
     "botany",
-    "nursery",
-    "landscaping"
+    "landscaping",
+    "nursery"
    ]
   },
   {
@@ -3357,13 +3357,13 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.715,
-   "cos_max": 0.715,
+   "cos_min": 0.714,
+   "cos_max": 0.714,
    "cross_college": true,
    "shared_terms": [
     "assert",
-    "racist",
     "complexities",
+    "racist",
     "anti",
     "artists",
     "art"
@@ -3373,7 +3373,7 @@
    "members": [
     {
      "id": "INTD M1002",
-     "title": "History of Interior Architecture and Furnishings I",
+     "title": "History of Interior Architecture and Furnishings 1",
      "units": 3.0,
      "disc": "Interior Design",
      "colleges": [
@@ -3498,7 +3498,7 @@
     },
     {
      "id": "MATH M1113",
-     "title": "Just-In-Time Support for Applied Calculus I",
+     "title": "Just-In-Time Support for Applied Calculus 1",
      "units": 1.0,
      "disc": "Mathematics",
      "colleges": [
@@ -3524,7 +3524,7 @@
    "members": [
     {
      "id": "ECED M1011",
-     "title": "Administration II: Personnel and Leadership in Early Childhood Education",
+     "title": "Administration 2: Personnel and Leadership in Early Childhood Education",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
      "colleges": [
@@ -3563,7 +3563,7 @@
     },
     {
      "id": "ECED M1016",
-     "title": "Administration II: Personnel and Leadership in ECE",
+     "title": "Administration 2: Personnel and Leadership in ECE",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
      "colleges": [
@@ -3584,7 +3584,7 @@
     },
     {
      "id": "FCSH M1003",
-     "title": "Admin II: Personnel and Leadership in Early Childhood Education",
+     "title": "Admin 2: Personnel and Leadership in Early Childhood Education",
      "units": 3.0,
      "disc": "Family and Consumer Studies/ Home Economics",
      "colleges": [
@@ -3623,7 +3623,7 @@
     },
     {
      "id": "GRAF M1051",
-     "title": "Virtual Production l",
+     "title": "Virtual Production L",
      "units": 3.0,
      "disc": null,
      "colleges": [
@@ -3649,7 +3649,7 @@
    "members": [
     {
      "id": "ECED M1102",
-     "title": "Games & Rhythms ChildÃ¢â‚¬â„¢s Physical Development:Foundation/Framework",
+     "title": "Games & Rhythms Child's Physical Development:Foundation/Framework",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
      "colleges": [
@@ -3744,14 +3744,14 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.686,
-   "cos_max": 0.686,
+   "cos_min": 0.685,
+   "cos_max": 0.685,
    "cross_college": true,
    "shared_terms": [
     "disadvantaged",
-    "facilitates",
-    "encourages",
     "overcoming",
+    "encourages",
+    "facilitates",
     "americans",
     "groups"
    ]
@@ -3760,7 +3760,7 @@
    "members": [
     {
      "id": "FIRE M1303",
-     "title": "Instructor II: Instructional Development",
+     "title": "Instructor 2: Instructional Development",
      "units": 1.0,
      "disc": "Fire Technology",
      "colleges": [
@@ -3777,7 +3777,7 @@
     },
     {
      "id": "FIRE M1337",
-     "title": "Fire Instructor II",
+     "title": "Fire Instructor 2",
      "units": 1.0,
      "disc": "Fire Technology",
      "colleges": [
@@ -3837,7 +3837,7 @@
    "members": [
     {
      "id": "ECED M1022",
-     "title": "Adult Supervision and Mentoring In Early Childhood Education",
+     "title": "Adult Supervision and Mentoring in Early Childhood Education",
      "units": 2.0,
      "disc": "Child Development/Early Childhood Education",
      "colleges": [
@@ -3921,7 +3921,7 @@
     },
     {
      "id": "BUSI M1015",
-     "title": "Applied Accounting I",
+     "title": "Applied Accounting 1",
      "units": 3.0,
      "disc": "Business",
      "colleges": [
@@ -3931,8 +3931,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.666,
-   "cos_max": 0.666,
+   "cos_min": 0.667,
+   "cos_max": 0.667,
    "cross_college": true,
    "shared_terms": [
     "accrual",
@@ -3984,7 +3984,7 @@
    "members": [
     {
      "id": "PHYS M1019",
-     "title": "Concepts In Physics",
+     "title": "Concepts in Physics",
      "units": 3.0,
      "disc": "Physics/Astronomy",
      "colleges": [
@@ -4010,7 +4010,7 @@
     },
     {
      "id": "PHYS M1043",
-     "title": "PHYSICS FUNDAMENTALS",
+     "title": "Physics Fundamentals",
      "units": 3.0,
      "disc": "Physics/Astronomy",
      "colleges": [
@@ -4058,7 +4058,7 @@
     },
     {
      "id": "MACH M1039",
-     "title": "Machine Technology I",
+     "title": "Machine Technology 1",
      "units": 3.0,
      "disc": "Machine Tool Technology",
      "colleges": [
@@ -4073,8 +4073,8 @@
    "cos_max": 0.659,
    "cross_college": true,
    "shared_terms": [
-    "presses",
     "grinders",
+    "presses",
     "machinist",
     "drill",
     "lathes",
@@ -4097,7 +4097,7 @@
     },
     {
      "id": "ARTS M1428",
-     "title": "Painting II",
+     "title": "Painting 2",
      "units": 3.0,
      "disc": "Art",
      "colleges": [
@@ -4148,46 +4148,6 @@
     "matter",
     "mixing",
     "painting"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ATHL M1130",
-     "title": "Intercollegiate Volleyball-Fitness & Skills Training",
-     "units": 1.0,
-     "disc": "Kinesiology",
-     "colleges": [
-      "East Los Angeles College",
-      "Los Angeles City College",
-      "Los Angeles Harbor College",
-      "Los Angeles Mission College",
-      "Los Angeles Trade Technical College",
-      "West Los Angeles College"
-     ]
-    },
-    {
-     "id": "PEDU M1035",
-     "title": "Volleyball Conditioning",
-     "units": 1.0,
-     "disc": "Physical Education",
-     "colleges": [
-      "CaÃ±ada College",
-      "Glendale Community College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.656,
-   "cos_max": 0.656,
-   "cross_college": true,
-   "shared_terms": [
-    "athlete",
-    "volleyball",
-    "focused",
-    "plays",
-    "injury",
-    "prevention"
    ]
   },
   {
@@ -4297,7 +4257,7 @@
     },
     {
      "id": "REAL M1011",
-     "title": "REAL ESTATE APPRAISAL II",
+     "title": "Real Estate Appraisal 2",
      "units": 3.0,
      "disc": "Real Estate",
      "colleges": [
@@ -4318,57 +4278,6 @@
     "estate",
     "license",
     "real"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ATHL M1204",
-     "title": "Men's Varsity Soccer",
-     "units": 3.0,
-     "disc": "Kinesiology",
-     "colleges": [
-      "Citrus College",
-      "College of the Desert",
-      "College of the Siskiyous",
-      "Lassen College",
-      "Modesto Junior College",
-      "Norco College",
-      "Riverside City College",
-      "Santa Rosa Junior College",
-      "Skyline College",
-      "Victor Valley College"
-     ]
-    },
-    {
-     "id": "PEDU M1059",
-     "title": "Intercollegiate Men's Soccer",
-     "units": 3.0,
-     "disc": "Physical Education",
-     "colleges": [
-      "Antelope Valley College",
-      "City College of San Francisco",
-      "College of the Redwoods",
-      "College of the Sequoias",
-      "Contra Costa College",
-      "De Anza College",
-      "Irvine Valley College",
-      "Las Positas College",
-      "Merritt College",
-      "Saddleback College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.645,
-   "cos_max": 0.645,
-   "cross_college": true,
-   "shared_terms": [
-    "soccer",
-    "men",
-    "competition",
-    "intercollegiate",
-    "fundamentals"
    ]
   },
   {
@@ -4409,6 +4318,46 @@
   {
    "members": [
     {
+     "id": "ATHL M1130",
+     "title": "Intercollegiate Volleyball-Fitness & Skills Training",
+     "units": 1.0,
+     "disc": "Kinesiology",
+     "colleges": [
+      "East Los Angeles College",
+      "Los Angeles City College",
+      "Los Angeles Harbor College",
+      "Los Angeles Mission College",
+      "Los Angeles Trade Technical College",
+      "West Los Angeles College"
+     ]
+    },
+    {
+     "id": "ATHL M1305",
+     "title": "Volleyball Conditioning",
+     "units": 1.0,
+     "disc": "Kinesiology",
+     "colleges": [
+      "CaÃ±ada College",
+      "Glendale Community College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.642,
+   "cos_max": 0.642,
+   "cross_college": true,
+   "shared_terms": [
+    "athlete",
+    "volleyball",
+    "focused",
+    "plays",
+    "injury",
+    "prevention"
+   ]
+  },
+  {
+   "members": [
+    {
      "id": "ATHL M1084",
      "title": "Off Season Conditioning for Softball",
      "units": 0.5,
@@ -4428,12 +4377,15 @@
      "units": 1.0,
      "disc": "Kinesiology",
      "colleges": [
+      "College of the Canyons",
+      "Madera College",
       "Rio Hondo College",
-      "San Joaquin Delta College"
+      "San Joaquin Delta College",
+      "Shasta College"
      ]
     },
     {
-     "id": "KINE M1465",
+     "id": "ATHL M1300",
      "title": "Pre-Season Conditioning for Softball",
      "units": 0.5,
      "disc": "Kinesiology",
@@ -4444,8 +4396,8 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.602,
-   "cos_max": 0.638,
+   "cos_min": 0.604,
+   "cos_max": 0.64,
    "cross_college": true,
    "shared_terms": [
     "plyometrics",
@@ -4679,7 +4631,7 @@
    ],
    "n": 3,
    "cos_min": 0.631,
-   "cos_max": 0.632,
+   "cos_max": 0.633,
    "cross_college": true,
    "shared_terms": [
     "city",
@@ -4725,8 +4677,8 @@
    "cos_max": 0.628,
    "cross_college": true,
    "shared_terms": [
-    "intentional",
     "strict",
+    "intentional",
     "negligence",
     "tort",
     "liability",
@@ -4747,7 +4699,7 @@
     },
     {
      "id": "MUSI M1380",
-     "title": "Woodwind Instrument Instruction I",
+     "title": "Woodwind Instrument Instruction 1",
      "units": 2.0,
      "disc": "Music",
      "colleges": [
@@ -4764,9 +4716,9 @@
    "cross_college": true,
    "shared_terms": [
     "saxophone",
+    "flute",
     "clarinet",
     "oboe",
-    "flute",
     "bassoon",
     "woodwind"
    ]
@@ -4821,7 +4773,7 @@
     },
     {
      "id": "HEIT M1025",
-     "title": "PUBLIC HEALTH DATA REPORTING TECHNIQUES",
+     "title": "Public Health Data Reporting Techniques",
      "units": 3.0,
      "disc": "Health Information Technology",
      "colleges": [
@@ -4830,8 +4782,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.621,
-   "cos_max": 0.621,
+   "cos_min": 0.622,
+   "cos_max": 0.622,
    "cross_college": true,
    "shared_terms": [
     "actionable",
@@ -4844,43 +4796,8 @@
   {
    "members": [
     {
-     "id": "KINE M1045",
-     "title": "Basketball Team Activity, Men",
-     "units": 0.5,
-     "disc": "Kinesiology",
-     "colleges": [
-      "Chaffey College"
-     ]
-    },
-    {
-     "id": "PEDU M1023",
-     "title": "Intercollegiate Basketball for Men",
-     "units": 1.0,
-     "disc": "Physical Education",
-     "colleges": [
-      "Citrus College",
-      "Hartnell College",
-      "Los Medanos College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.621,
-   "cos_max": 0.621,
-   "cross_college": true,
-   "shared_terms": [
-    "basketball",
-    "men",
-    "times",
-    "four",
-    "taken"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "HLTH M1036",
-     "title": "NURSING ASSISTANT TRAINING",
+     "title": "Nursing Assistant Training",
      "units": 0.0,
      "disc": "Health",
      "colleges": [
@@ -5051,7 +4968,7 @@
     },
     {
      "id": "DANC M1199",
-     "title": "Hip-Hop Dance Techniques I",
+     "title": "Hip-Hop Dance Techniques 1",
      "units": 1.0,
      "disc": "Dance",
      "colleges": [
@@ -5064,7 +4981,7 @@
     },
     {
      "id": "DANC M1344",
-     "title": "Hip Hop I",
+     "title": "Hip Hop 1",
      "units": 1.0,
      "disc": "Dance",
      "colleges": [
@@ -5114,7 +5031,7 @@
     },
     {
      "id": "ETHS M1198",
-     "title": "ETHNIC STUDIES FOR EDUCATORS",
+     "title": "Ethnic Studies for Educators",
      "units": 3.0,
      "disc": "Ethnic Studies",
      "colleges": [
@@ -5135,8 +5052,50 @@
   {
    "members": [
     {
+     "id": "ATHL M1068",
+     "title": "Intercollegiate Beach Volleyball: Women",
+     "units": 3.0,
+     "disc": "Kinesiology",
+     "colleges": [
+      "Antelope Valley College",
+      "Cypress College",
+      "Fresno City College",
+      "Las Positas College",
+      "MiraCosta College",
+      "Monterey Peninsula College",
+      "Moorpark College",
+      "Santa Barbara City College",
+      "Shasta College",
+      "Ventura College",
+      "West Valley College"
+     ]
+    },
+    {
+     "id": "ATHL M1069",
+     "title": "Women's Varsity Beach Volleyball",
+     "units": 3.0,
+     "disc": "Kinesiology",
+     "colleges": [
+      "College of the Siskiyous",
+      "Santa Rosa Junior College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.606,
+   "cos_max": 0.606,
+   "cross_college": true,
+   "shared_terms": [
+    "beach",
+    "volleyball",
+    "intercollegiate"
+   ]
+  },
+  {
+   "members": [
+    {
      "id": "ATHL M1089",
-     "title": "INTERCOLLEGIATE CROSS COUNTRY-FITNESS & SKILLS TRAINING",
+     "title": "Intercollegiate Cross Country-Fitness & Skills Training",
      "units": 1.0,
      "disc": "Kinesiology",
      "colleges": [
@@ -5165,52 +5124,15 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.604,
-   "cos_max": 0.604,
+   "cos_min": 0.605,
+   "cos_max": 0.605,
    "cross_college": true,
    "shared_terms": [
     "running",
     "country",
     "season",
     "off",
-    "cross"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ATHL M1068",
-     "title": "Intercollegiate Beach Volleyball: Women",
-     "units": 3.0,
-     "disc": "Kinesiology",
-     "colleges": [
-      "Cypress College",
-      "MiraCosta College",
-      "Monterey Peninsula College",
-      "Moorpark College",
-      "Santa Barbara City College",
-      "Ventura College",
-      "West Valley College"
-     ]
-    },
-    {
-     "id": "ATHL M1069",
-     "title": "Women's Varsity Beach Volleyball",
-     "units": 3.0,
-     "disc": "Kinesiology",
-     "colleges": [
-      "College of the Siskiyous",
-      "Santa Rosa Junior College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.604,
-   "cos_max": 0.604,
-   "cross_college": true,
-   "shared_terms": [
-    "beach",
-    "volleyball",
+    "cross",
     "intercollegiate"
    ]
   },
@@ -5251,7 +5173,7 @@
    "members": [
     {
      "id": "IDST M1002",
-     "title": "21st Century Workplace Skills",
+     "title": "21ST Century Workplace Skills",
      "units": 1.0,
      "disc": "Interdisciplinary Studies",
      "colleges": [
@@ -5261,7 +5183,7 @@
     },
     {
      "id": "OTEC M1008",
-     "title": "21st Century Workforce Skills",
+     "title": "21ST Century Workforce Skills",
      "units": 1.5,
      "disc": "Office Technologies",
      "colleges": [
@@ -5350,48 +5272,6 @@
     "transportation",
     "challenges",
     "security"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "KINE M1471",
-     "title": "Conditioning for Sports",
-     "units": 0.5,
-     "disc": "Kinesiology",
-     "colleges": [
-      "Cabrillo College",
-      "College of Marin",
-      "Columbia College",
-      "Gavilan College",
-      "Golden West College",
-      "Mt. San Antonio College",
-      "Orange Coast College",
-      "Yuba College"
-     ]
-    },
-    {
-     "id": "KINE M1581",
-     "title": "KICKBOXING FOR FITNESS",
-     "units": 0.5,
-     "disc": "Kinesiology",
-     "colleges": [
-      "Cuesta College",
-      "Foothill College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.6,
-   "cos_max": 0.6,
-   "cross_college": true,
-   "shared_terms": [
-    "cardiorespiratory",
-    "muscular",
-    "endurance",
-    "flexibility",
-    "strength",
-    "fitness"
    ]
   },
   {
@@ -5586,7 +5466,7 @@
     },
     {
      "id": "THEA M1181",
-     "title": "Rep of Into the Woods to Native Garden",
+     "title": "Rep of into the Woods to Native Garden",
      "units": 3.0,
      "disc": "Drama/Theater Arts",
      "colleges": [
@@ -5620,7 +5500,7 @@
    "members": [
     {
      "id": "ETHS M1146",
-     "title": "US Hist: Black Perspective I",
+     "title": "US Hist: Black Perspective 1",
      "units": 3.0,
      "disc": "Ethnic Studies",
      "colleges": [
@@ -5629,7 +5509,7 @@
     },
     {
      "id": "HIST M1121",
-     "title": "U.S. History: Black Perspectives I",
+     "title": "U.S. History: Black Perspectives 1",
      "units": 3.0,
      "disc": "History",
      "colleges": [
@@ -5643,8 +5523,8 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
-    "legalistic",
     "paradoxes",
+    "legalistic",
     "backdrop",
     "continental",
     "constitutional",
@@ -5654,19 +5534,19 @@
   {
    "members": [
     {
-     "id": "PEDU M1038",
+     "id": "ATHL M1311",
      "title": "Intercollegiate Football - Defense",
      "units": 3.0,
-     "disc": "Physical Education",
+     "disc": "Kinesiology",
      "colleges": [
       "San Bernardino Valley College"
      ]
     },
     {
-     "id": "PEDU M1048",
+     "id": "ATHL M1320",
      "title": "Intercollegiate Football - Offense",
      "units": 3.0,
-     "disc": "Physical Education",
+     "disc": "Kinesiology",
      "colleges": [
       "San Bernardino Valley College"
      ]
@@ -5758,9 +5638,9 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
-    "bazooka",
-    "spotters",
     "skim",
+    "spotters",
+    "bazooka",
     "butt",
     "coat",
     "boxes"
@@ -5770,7 +5650,7 @@
    "members": [
     {
      "id": "COSM M1046",
-     "title": "Nail Technology I - Cosmetology",
+     "title": "Nail Technology 1 - Cosmetology",
      "units": 4.0,
      "disc": "Cosmetology",
      "colleges": [
@@ -5779,7 +5659,7 @@
     },
     {
      "id": "COSM M1063",
-     "title": "Nail Technology I - Nail",
+     "title": "Nail Technology 1 - Nail",
      "units": 3.5,
      "disc": "Cosmetology",
      "colleges": [
@@ -5804,7 +5684,7 @@
    "members": [
     {
      "id": "ATHL M1041",
-     "title": "Intercollegiate Basketball I",
+     "title": "Intercollegiate Basketball 1",
      "units": 2.0,
      "disc": "Kinesiology",
      "colleges": [
@@ -5817,7 +5697,7 @@
     },
     {
      "id": "ATHL M1044",
-     "title": "Intercollegiate Basketball II",
+     "title": "Intercollegiate Basketball 2",
      "units": 2.0,
      "disc": "Kinesiology",
      "colleges": [
@@ -5830,7 +5710,7 @@
     },
     {
      "id": "ATHL M1050",
-     "title": "INTERCOLLEGIATE BASKETBALL-NP",
+     "title": "Intercollegiate Basketball-Np",
      "units": 1.5,
      "disc": "Kinesiology",
      "colleges": [
@@ -5902,8 +5782,8 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
-    "chancellor",
     "criterion",
+    "chancellor",
     "discontinue",
     "twice",
     "actually",
@@ -5914,7 +5794,7 @@
    "members": [
     {
      "id": "ESCI M1048",
-     "title": "Water Use Efficiency Practitioner I",
+     "title": "Water Use Efficiency Practitioner 1",
      "units": 3.0,
      "disc": "Environmental Technologies",
      "colleges": [
@@ -6029,8 +5909,8 @@
    "cos_max": 0.984,
    "cross_college": false,
    "shared_terms": [
-    "ppo",
     "champus",
+    "ppo",
     "tricare",
     "medi",
     "medicaid",
@@ -6253,8 +6133,8 @@
     "staffed",
     "operates",
     "tutorial",
-    "appointment",
     "drop",
+    "appointment",
     "tutors"
    ]
   },
@@ -6340,9 +6220,9 @@
    "cos_max": 0.973,
    "cross_college": false,
    "shared_terms": [
+    "organizers",
     "neighborhoods",
     "sosc",
-    "organizers",
     "organizing",
     "ewrt",
     "hrs"
@@ -6364,7 +6244,7 @@
     },
     {
      "id": "HUMA M1003",
-     "title": "ADVANCED POETRY WRITING",
+     "title": "Advanced Poetry Writing",
      "units": 5.0,
      "disc": "Humanities",
      "colleges": [
@@ -6399,7 +6279,7 @@
      ]
     },
     {
-     "id": "KINE M1461",
+     "id": "ATHL M1296",
      "title": "Pre-Season Conditioning for Men's Soccer",
      "units": 0.5,
      "disc": "Kinesiology",
@@ -6415,8 +6295,8 @@
    "cos_max": 0.971,
    "cross_college": false,
    "shared_terms": [
-    "guards",
     "shin",
+    "guards",
     "cleats",
     "attire",
     "soccer",
@@ -6427,7 +6307,7 @@
    "members": [
     {
      "id": "KINE M1284",
-     "title": "Walking / Jogging for Fitness Ã¢â‚¬â€œ Beginner",
+     "title": "Walking / Jogging for Fitness – Beginner",
      "units": 1.0,
      "disc": "Kinesiology",
      "colleges": [
@@ -6452,8 +6332,8 @@
     "monitored",
     "cool",
     "jogging",
-    "warm",
     "walking",
+    "warm",
     "down"
    ]
   },
@@ -6461,7 +6341,7 @@
    "members": [
     {
      "id": "CNST M1008",
-     "title": "DRYWALL APPLICATIONS",
+     "title": "Drywall Applications",
      "units": 1.5,
      "disc": "Construction Technology",
      "colleges": [
@@ -6499,7 +6379,7 @@
    "members": [
     {
      "id": "OTEC M1014",
-     "title": "Comprehensive Access, Level III",
+     "title": "Comprehensive Access, Level 3",
      "units": 1.0,
      "disc": "Office Technologies",
      "colleges": [
@@ -6509,7 +6389,7 @@
     },
     {
      "id": "OTEC M1113",
-     "title": "Comprehensive Excel, Level III",
+     "title": "Comprehensive Excel, Level 3",
      "units": 1.0,
      "disc": "Office Technologies",
      "colleges": [
@@ -6519,7 +6399,7 @@
     },
     {
      "id": "OTEC M1118",
-     "title": "Comprehensive Word, Level III",
+     "title": "Comprehensive Word, Level 3",
      "units": 1.0,
      "disc": "Office Technologies",
      "colleges": [
@@ -6573,8 +6453,8 @@
    "shared_terms": [
     "stacks",
     "queues",
-    "trees",
     "algorithms",
+    "trees",
     "abstract",
     "lists"
    ]
@@ -6583,7 +6463,7 @@
    "members": [
     {
      "id": "OTEC M1013",
-     "title": "Comprehensive Access, Level II",
+     "title": "Comprehensive Access, Level 2",
      "units": 1.0,
      "disc": "Office Technologies",
      "colleges": [
@@ -6593,7 +6473,7 @@
     },
     {
      "id": "OTEC M1112",
-     "title": "Comprehensive Excel, Level II",
+     "title": "Comprehensive Excel, Level 2",
      "units": 1.0,
      "disc": "Office Technologies",
      "colleges": [
@@ -6603,7 +6483,7 @@
     },
     {
      "id": "OTEC M1116",
-     "title": "Comprehensive PowerPoint, Level II",
+     "title": "Comprehensive PowerPoint, Level 2",
      "units": 1.0,
      "disc": "Office Technologies",
      "colleges": [
@@ -6613,7 +6493,7 @@
     },
     {
      "id": "OTEC M1117",
-     "title": "Comprehensive Word, Level II",
+     "title": "Comprehensive Word, Level 2",
      "units": 1.0,
      "disc": "Office Technologies",
      "colleges": [
@@ -6682,7 +6562,7 @@
    "members": [
     {
      "id": "DANC M1013",
-     "title": "FALL DANCE CONCERT 3",
+     "title": "Fall Dance Concert 3",
      "units": 2.0,
      "disc": "Dance",
      "colleges": [
@@ -6691,7 +6571,7 @@
     },
     {
      "id": "DANC M1014",
-     "title": "SPRING DANCE CONCERT 3",
+     "title": "Spring Dance Concert 3",
      "units": 2.0,
      "disc": "Dance",
      "colleges": [
@@ -6716,7 +6596,7 @@
    "members": [
     {
      "id": "KINE M1276",
-     "title": "Beach Volleyball II",
+     "title": "Beach Volleyball 2",
      "units": 0.5,
      "disc": "Kinesiology",
      "colleges": [
@@ -6729,7 +6609,7 @@
     },
     {
      "id": "KINE M1705",
-     "title": "Volleyball II",
+     "title": "Volleyball 2",
      "units": 1.0,
      "disc": "Kinesiology",
      "colleges": [
@@ -6806,28 +6686,28 @@
   {
    "members": [
     {
-     "id": "PEDU M9001",
+     "id": "PEDS M9003",
      "title": "Introduction to Adapted Cardiovascular Training",
      "units": 0.0,
-     "disc": "Physical Education",
+     "disc": "Physical Education Disabled Students",
      "colleges": [
       "Victor Valley College"
      ]
     },
     {
-     "id": "PEDU M9002",
+     "id": "PEDS M9004",
      "title": "Introduction to Adapted Walking for Fun Fitness",
      "units": 0.0,
-     "disc": "Physical Education",
+     "disc": "Physical Education Disabled Students",
      "colleges": [
       "Victor Valley College"
      ]
     },
     {
-     "id": "PEDU M9003",
+     "id": "PEDS M9005",
      "title": "Introduction to Adapted Weight Training",
      "units": 0.0,
-     "disc": "Physical Education",
+     "disc": "Physical Education Disabled Students",
      "colleges": [
       "Victor Valley College"
      ]
@@ -7153,41 +7033,6 @@
   {
    "members": [
     {
-     "id": "KINE M1273",
-     "title": "Fundamentals of Beach Volleyball",
-     "units": 2.0,
-     "disc": "Kinesiology",
-     "colleges": [
-      "Gavilan College"
-     ]
-    },
-    {
-     "id": "KINE M1635",
-     "title": "Fundamentals of Volleyball",
-     "units": 2.0,
-     "disc": "Kinesiology",
-     "colleges": [
-      "Coalinga College",
-      "Gavilan College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.947,
-   "cos_max": 0.947,
-   "cross_college": false,
-   "shared_terms": [
-    "once",
-    "coaching",
-    "volleyball",
-    "playing",
-    "purpose",
-    "repeated"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "ANTH M1060",
      "title": "Topics in Anthropology",
      "units": 0.5,
@@ -7330,6 +7175,41 @@
     "lifting",
     "condition",
     "brief"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "ATHL M1277",
+     "title": "Fundamentals of Beach Volleyball",
+     "units": 2.0,
+     "disc": "Kinesiology",
+     "colleges": [
+      "Gavilan College"
+     ]
+    },
+    {
+     "id": "ATHL M1327",
+     "title": "Fundamentals of Volleyball",
+     "units": 2.0,
+     "disc": "Kinesiology",
+     "colleges": [
+      "Coalinga College",
+      "Gavilan College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.946,
+   "cos_max": 0.946,
+   "cross_college": false,
+   "shared_terms": [
+    "once",
+    "coaching",
+    "volleyball",
+    "playing",
+    "purpose",
+    "repeated"
    ]
   },
   {
@@ -7478,7 +7358,7 @@
    "members": [
     {
      "id": "OTEC M1012",
-     "title": "Comprehensive Access, Level I",
+     "title": "Comprehensive Access, Level 1",
      "units": 1.0,
      "disc": "Office Technologies",
      "colleges": [
@@ -7488,7 +7368,7 @@
     },
     {
      "id": "OTEC M1111",
-     "title": "Comprehensive Excel, Level I",
+     "title": "Comprehensive Excel, Level 1",
      "units": 1.0,
      "disc": "Office Technologies",
      "colleges": [
@@ -7498,7 +7378,7 @@
     },
     {
      "id": "OTEC M1114",
-     "title": "Comprehensive PowerPoint, Level I",
+     "title": "Comprehensive PowerPoint, Level 1",
      "units": 1.0,
      "disc": "Office Technologies",
      "colleges": [
@@ -7508,7 +7388,7 @@
     },
     {
      "id": "OTEC M1115",
-     "title": "Comprehensive Word, Level I",
+     "title": "Comprehensive Word, Level 1",
      "units": 1.0,
      "disc": "Office Technologies",
      "colleges": [
@@ -7527,7 +7407,7 @@
     "desiring",
     "mos",
     "consider",
-    "similar"
+    "thorough"
    ]
   },
   {
@@ -7544,7 +7424,7 @@
      ]
     },
     {
-     "id": "KINE M1462",
+     "id": "ATHL M1297",
      "title": "Out-Of-Season Sport Conditioning",
      "units": 1.0,
      "disc": "Kinesiology",
@@ -7668,8 +7548,8 @@
   {
    "members": [
     {
-     "id": "KINE M1853",
-     "title": "Women's Soccer Techniques",
+     "id": "ATHL M1353",
+     "title": "Soccer Techniques",
      "units": 2.0,
      "disc": "Kinesiology",
      "colleges": [
@@ -7677,8 +7557,8 @@
      ]
     },
     {
-     "id": "KINE M1858",
-     "title": "Soccer Techniques",
+     "id": "ATHL M1354",
+     "title": "Women's Soccer Techniques",
      "units": 2.0,
      "disc": "Kinesiology",
      "colleges": [
@@ -7695,15 +7575,15 @@
     "consent",
     "relative",
     "soccer",
-    "hrs",
-    "competitive"
+    "competitive",
+    "hrs"
    ]
   },
   {
    "members": [
     {
      "id": "MATH M1016",
-     "title": "JUST-IN-TIME SUPPORT FOR MATH 33",
+     "title": "Just-In-Time Support for Math 33",
      "units": 2.5,
      "disc": "Mathematics",
      "colleges": [
@@ -7712,7 +7592,7 @@
     },
     {
      "id": "MATH M1017",
-     "title": "JUST-IN-TIME SUPPORT FOR MATH 40A",
+     "title": "Just-In-Time Support for Math 40A",
      "units": 2.5,
      "disc": "Mathematics",
      "colleges": [
@@ -7721,7 +7601,7 @@
     },
     {
      "id": "MATH M1021",
-     "title": "JUST-IN-TIME SUPPORT FOR MATH 48A",
+     "title": "Just-In-Time Support for Math 48A",
      "units": 2.5,
      "disc": "Mathematics",
      "colleges": [
@@ -7818,6 +7698,40 @@
   {
    "members": [
     {
+     "id": "KINE M1917",
+     "title": "Beginning Volleyball Quads",
+     "units": 1.5,
+     "disc": "Kinesiology",
+     "colleges": [
+      "Santa Rosa Junior College"
+     ]
+    },
+    {
+     "id": "KINE M1930",
+     "title": "Introductory Volleyball Quads",
+     "units": 1.5,
+     "disc": "Kinesiology",
+     "colleges": [
+      "Santa Rosa Junior College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.929,
+   "cos_max": 0.929,
+   "cross_college": false,
+   "shared_terms": [
+    "person",
+    "contact",
+    "volleyball",
+    "exposure",
+    "increase",
+    "competition"
+   ]
+  },
+  {
+   "members": [
+    {
      "id": "MUSI M1211",
      "title": "Class Voice-Intermediate",
      "units": 1.0,
@@ -7853,42 +7767,8 @@
   {
    "members": [
     {
-     "id": "PEDU M1030",
-     "title": "Beginning Volleyball Quads",
-     "units": 1.5,
-     "disc": "Physical Education",
-     "colleges": [
-      "Santa Rosa Junior College"
-     ]
-    },
-    {
-     "id": "PEDU M1072",
-     "title": "Introductory Volleyball Quads",
-     "units": 1.5,
-     "disc": "Physical Education",
-     "colleges": [
-      "Santa Rosa Junior College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.928,
-   "cos_max": 0.928,
-   "cross_college": false,
-   "shared_terms": [
-    "person",
-    "contact",
-    "volleyball",
-    "exposure",
-    "increase",
-    "competition"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "BSKL M9002",
-     "title": "21ST CENTURY EMPLOYABILITY SKILLS: ANALYSIS/SOLUTION MINDSET",
+     "title": "21ST Century Employability Skills: Analysis/Solution Mindset",
      "units": 0.0,
      "disc": "Interdisciplinary-Basic Skills: Noncredit 53412",
      "colleges": [
@@ -7899,7 +7779,7 @@
     },
     {
      "id": "BSKL M9004",
-     "title": "21ST CENTURY EMPLOYABILITY SKILLS: SELF-AWARENESS",
+     "title": "21ST Century Employability Skills: Self-Awareness",
      "units": 0.0,
      "disc": "Interdisciplinary-Basic Skills: Noncredit 53412",
      "colleges": [
@@ -7910,7 +7790,7 @@
     },
     {
      "id": "BSKL M9005",
-     "title": "21ST CENTURY EMPLOYABILITY SKILLS: COLLABORATION",
+     "title": "21ST Century Employability Skills: Collaboration",
      "units": 0.0,
      "disc": "Interdisciplinary-Basic Skills: Noncredit 53412",
      "colleges": [
@@ -7921,7 +7801,7 @@
     },
     {
      "id": "BSKL M9006",
-     "title": "21ST CENTURY EMPLOYABILITY SKILLS: COMMUNICATION",
+     "title": "21ST Century Employability Skills: Communication",
      "units": 0.0,
      "disc": "Interdisciplinary-Basic Skills: Noncredit 53412",
      "colleges": [
@@ -7932,7 +7812,7 @@
     },
     {
      "id": "BSKL M9007",
-     "title": "21ST CENTURY EMPLOYABILITY SKILLS: DIGITAL FLUENCY",
+     "title": "21ST Century Employability Skills: Digital Fluency",
      "units": 0.0,
      "disc": "Interdisciplinary-Basic Skills: Noncredit 53412",
      "colleges": [
@@ -7943,7 +7823,7 @@
     },
     {
      "id": "BSKL M9008",
-     "title": "21ST CENTURY EMPLOYABILITY SKILLS: EMPATHY",
+     "title": "21ST Century Employability Skills: Empathy",
      "units": 0.0,
      "disc": "Interdisciplinary-Basic Skills: Noncredit 53412",
      "colleges": [
@@ -7954,7 +7834,7 @@
     },
     {
      "id": "BSKL M9009",
-     "title": "21ST CENTURY EMPLOYABILITY SKILLS: ENTREPRENEURIAL MINDSET",
+     "title": "21ST Century Employability Skills: Entrepreneurial Mindset",
      "units": 0.0,
      "disc": "Interdisciplinary-Basic Skills: Noncredit 53412",
      "colleges": [
@@ -7965,7 +7845,7 @@
     },
     {
      "id": "BSKL M9010",
-     "title": "21ST CENTURY EMPLOYABILITY SKILLS: RESILIENCE",
+     "title": "21ST Century Employability Skills: Resilience",
      "units": 0.0,
      "disc": "Interdisciplinary-Basic Skills: Noncredit 53412",
      "colleges": [
@@ -8035,7 +7915,7 @@
     },
     {
      "id": "HUMA M1069",
-     "title": "Literary Magazine I, Student Edition",
+     "title": "Literary Magazine 1, Student Edition",
      "units": 2.0,
      "disc": "Humanities",
      "colleges": [
@@ -8044,7 +7924,7 @@
     },
     {
      "id": "HUMA M1071",
-     "title": "Literary Magazine II, Student Edition",
+     "title": "Literary Magazine 2, Student Edition",
      "units": 2.0,
      "disc": "Humanities",
      "colleges": [
@@ -8062,7 +7942,7 @@
     "publicity",
     "submission",
     "edition",
-    "magazine"
+    "copy"
    ]
   },
   {
@@ -8093,8 +7973,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.921,
-   "cos_max": 0.921,
+   "cos_min": 0.922,
+   "cos_max": 0.922,
    "cross_college": false,
    "shared_terms": [
     "strategy",
@@ -8146,7 +8026,7 @@
    ],
    "n": 4,
    "cos_min": 0.634,
-   "cos_max": 0.921,
+   "cos_max": 0.922,
    "cross_college": false,
    "shared_terms": [
     "pursue",
@@ -8407,7 +8287,7 @@
    "members": [
     {
      "id": "DANC M1007",
-     "title": "FALL DANCE CONCERT 2",
+     "title": "Fall Dance Concert 2",
      "units": 2.0,
      "disc": "Dance",
      "colleges": [
@@ -8416,7 +8296,7 @@
     },
     {
      "id": "DANC M1008",
-     "title": "SPRING DANCE CONCERT 2",
+     "title": "Spring Dance Concert 2",
      "units": 2.0,
      "disc": "Dance",
      "colleges": [
@@ -8441,7 +8321,7 @@
    "members": [
     {
      "id": "MUSI M1440",
-     "title": "Jazz Improvisation Workshop III",
+     "title": "Jazz Improvisation Workshop 3",
      "units": 1.0,
      "disc": "Music",
      "colleges": [
@@ -8451,7 +8331,7 @@
     },
     {
      "id": "MUSI M1449",
-     "title": "Music Performance Workshop III",
+     "title": "Music Performance Workshop 3",
      "units": 1.0,
      "disc": "Music",
      "colleges": [
@@ -8621,7 +8501,7 @@
    "members": [
     {
      "id": "HTEC M1039",
-     "title": "Skill Building in Medical Transcription and Editing I",
+     "title": "Skill Building in Medical Transcription and Editing 1",
      "units": 1.0,
      "disc": "Health Care Ancillaries",
      "colleges": [
@@ -8630,7 +8510,7 @@
     },
     {
      "id": "HTEC M1065",
-     "title": "Medical Transcription with Editing I",
+     "title": "Medical Transcription with Editing 1",
      "units": 1.5,
      "disc": "Health Care Ancillaries",
      "colleges": [
@@ -8655,7 +8535,7 @@
    "members": [
     {
      "id": "ESOL M1266",
-     "title": "English Skills for Success II",
+     "title": "English Skills for Success 2",
      "units": 0.5,
      "disc": "English as a Second Language",
      "colleges": [
@@ -8819,6 +8699,40 @@
   {
    "members": [
     {
+     "id": "OTEC M1023",
+     "title": "Creating Accessible Documents",
+     "units": 1.0,
+     "disc": "Office Technologies",
+     "colleges": [
+      "Cabrillo College"
+     ]
+    },
+    {
+     "id": "OTEC M1024",
+     "title": "Creating Accessible Media",
+     "units": 1.0,
+     "disc": "Office Technologies",
+     "colleges": [
+      "Cabrillo College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.898,
+   "cos_max": 0.898,
+   "cross_college": false,
+   "shared_terms": [
+    "remediate",
+    "accessible",
+    "barriers",
+    "accessibility",
+    "arranged",
+    "scheduled"
+   ]
+  },
+  {
+   "members": [
+    {
      "id": "JOUR M1038",
      "title": "Freelance Copy Editing for Student Media",
      "units": 1.0,
@@ -8884,40 +8798,6 @@
     "publication",
     "offers",
     "media"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "OTEC M1023",
-     "title": "Creating Accessible Documents",
-     "units": 1.0,
-     "disc": "Office Technologies",
-     "colleges": [
-      "Cabrillo College"
-     ]
-    },
-    {
-     "id": "OTEC M1024",
-     "title": "Creating Accessible Media",
-     "units": 1.0,
-     "disc": "Office Technologies",
-     "colleges": [
-      "Cabrillo College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.897,
-   "cos_max": 0.897,
-   "cross_college": false,
-   "shared_terms": [
-    "remediate",
-    "barriers",
-    "accessible",
-    "accessibility",
-    "arranged",
-    "scheduled"
    ]
   },
   {
@@ -8990,8 +8870,8 @@
    "cross_college": false,
    "shared_terms": [
     "stay",
-    "observed",
     "overnight",
+    "observed",
     "landscapes",
     "geographical",
     "possible"
@@ -9037,7 +8917,7 @@
    "members": [
     {
      "id": "DANC M1001",
-     "title": "FALL DANCE CONCERT 1",
+     "title": "Fall Dance Concert 1",
      "units": 2.0,
      "disc": "Dance",
      "colleges": [
@@ -9046,7 +8926,7 @@
     },
     {
      "id": "DANC M1002",
-     "title": "SPRING DANCE CONCERT 1",
+     "title": "Spring Dance Concert 1",
      "units": 2.0,
      "disc": "Dance",
      "colleges": [
@@ -9061,8 +8941,8 @@
    "shared_terms": [
     "memorizing",
     "concert",
-    "rehearsal",
     "expectations",
+    "rehearsal",
     "choreography",
     "stage"
    ]
@@ -9369,9 +9249,9 @@
    "cross_college": false,
    "shared_terms": [
     "relied",
-    "consequential",
-    "perceived",
     "interacted",
+    "perceived",
+    "consequential",
     "impacted",
     "animals"
    ]
@@ -9406,7 +9286,7 @@
     },
     {
      "id": "FLKO M1004",
-     "title": "CONVERSATIONAL KOREAN",
+     "title": "Conversational Korean",
      "units": 3.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -9454,7 +9334,7 @@
     },
     {
      "id": "AUTO M9019",
-     "title": "ASE TEST PREP-ENGINE REPAIR",
+     "title": "ASE Test Prep-Engine Repair",
      "units": 0.0,
      "disc": "Automotive Technology",
      "colleges": [
@@ -9503,7 +9383,7 @@
     },
     {
      "id": "MATH M1132",
-     "title": "Support for Calculus for Biology and Medicine I",
+     "title": "Support for Calculus for Biology and Medicine 1",
      "units": 2.0,
      "disc": "Mathematics",
      "colleges": [
@@ -9514,7 +9394,7 @@
     },
     {
      "id": "MATH M1134",
-     "title": "Support for Calculus for Biology and Medicine II",
+     "title": "Support for Calculus for Biology and Medicine 2",
      "units": 2.0,
      "disc": "Mathematics",
      "colleges": [
@@ -9597,7 +9477,7 @@
     },
     {
      "id": "HUMA M1027",
-     "title": "Honors Arts and Ideas: The Renaissance through the Modern Era",
+     "title": "Honors Arts and Ideas: The Renaissance Through the Modern Era",
      "units": 3.0,
      "disc": "Humanities",
      "colleges": [
@@ -9623,7 +9503,7 @@
    "members": [
     {
      "id": "FLFR M1013",
-     "title": "BEGINNING CONVERSATIONAL FRENCH",
+     "title": "Beginning Conversational French",
      "units": 3.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -9737,7 +9617,7 @@
     },
     {
      "id": "NRSR M1076",
-     "title": "Nursing Health and Illness Concepts I",
+     "title": "Nursing Health and Illness Concepts 1",
      "units": 4.0,
      "disc": "Nursing",
      "colleges": [
@@ -9783,7 +9663,7 @@
    "members": [
     {
      "id": "DANC M1363",
-     "title": "Jazz II",
+     "title": "Jazz 2",
      "units": 2.0,
      "disc": "Dance",
      "colleges": [
@@ -9795,7 +9675,7 @@
     },
     {
      "id": "DANC M1365",
-     "title": "Modern II",
+     "title": "Modern 2",
      "units": 1.5,
      "disc": "Dance",
      "colleges": [
@@ -9881,49 +9761,6 @@
   {
    "members": [
     {
-     "id": "ESOL M1064",
-     "title": "College Ready Skills: Academic Success Strategies",
-     "units": 0.5,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Laney College"
-     ]
-    },
-    {
-     "id": "ESOL M1187",
-     "title": "College Ready Skills: Best Study Practices",
-     "units": 0.5,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Laney College"
-     ]
-    },
-    {
-     "id": "ESOL M1208",
-     "title": "College Ready Skills: Education Technology Skills",
-     "units": 0.5,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Laney College"
-     ]
-    }
-   ],
-   "n": 3,
-   "cos_min": 0.782,
-   "cos_max": 0.859,
-   "cross_college": false,
-   "shared_terms": [
-    "esol",
-    "facilitate",
-    "learners",
-    "individualized",
-    "low",
-    "continuation"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "OTEC M9025",
      "title": "Computer Concepts and Applications IBEST",
      "units": 0.0,
@@ -9975,6 +9812,49 @@
     "windows",
     "microsoft",
     "word"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "ESOL M1064",
+     "title": "College Ready Skills: Academic Success Strategies",
+     "units": 0.5,
+     "disc": "English as a Second Language",
+     "colleges": [
+      "Laney College"
+     ]
+    },
+    {
+     "id": "ESOL M1187",
+     "title": "College Ready Skills: Best Study Practices",
+     "units": 0.5,
+     "disc": "English as a Second Language",
+     "colleges": [
+      "Laney College"
+     ]
+    },
+    {
+     "id": "ESOL M1208",
+     "title": "College Ready Skills: Education Technology Skills",
+     "units": 0.5,
+     "disc": "English as a Second Language",
+     "colleges": [
+      "Laney College"
+     ]
+    }
+   ],
+   "n": 3,
+   "cos_min": 0.781,
+   "cos_max": 0.859,
+   "cross_college": false,
+   "shared_terms": [
+    "esol",
+    "facilitate",
+    "learners",
+    "individualized",
+    "low",
+    "continuation"
    ]
   },
   {
@@ -10034,7 +9914,7 @@
     },
     {
      "id": "ARTS M1250",
-     "title": "Creative Coding For Mobile Devices",
+     "title": "Creative Coding for Mobile Devices",
      "units": 3.0,
      "disc": "Art",
      "colleges": [
@@ -10043,7 +9923,7 @@
     },
     {
      "id": "ARTS M1251",
-     "title": "Creative Coding For The Internet",
+     "title": "Creative Coding for the Internet",
      "units": 3.0,
      "disc": "Art",
      "colleges": [
@@ -10108,7 +9988,7 @@
    "members": [
     {
      "id": "DANC M1370",
-     "title": "Jazz III",
+     "title": "Jazz 3",
      "units": 1.5,
      "disc": "Dance",
      "colleges": [
@@ -10118,7 +9998,7 @@
     },
     {
      "id": "DANC M1373",
-     "title": "Modern III",
+     "title": "Modern 3",
      "units": 1.5,
      "disc": "Dance",
      "colleges": [
@@ -10128,7 +10008,7 @@
     },
     {
      "id": "DANC M1376",
-     "title": "Tap III",
+     "title": "Tap 3",
      "units": 1.5,
      "disc": "Dance",
      "colleges": [
@@ -10180,10 +10060,10 @@
    "shared_terms": [
     "spatially",
     "esri",
-    "raster",
     "arcgis",
+    "raster",
     "smart",
-    "vector"
+    "projection"
    ]
   },
   {
@@ -10284,7 +10164,7 @@
    "members": [
     {
      "id": "HVAC M1045",
-     "title": "HVAC/R Electrical Systems II Lab",
+     "title": "HVAC/R Electrical Systems 2 Lab",
      "units": 2.0,
      "disc": "Air Conditioning, Refrigeration, Heating",
      "colleges": [
@@ -10293,7 +10173,7 @@
     },
     {
      "id": "HVAC M1065",
-     "title": "HVAC/Refrigeration II Lab",
+     "title": "HVAC/Refrigeration 2 Lab",
      "units": 2.0,
      "disc": "Air Conditioning, Refrigeration, Heating",
      "colleges": [
@@ -10318,7 +10198,7 @@
    "members": [
     {
      "id": "DANC M1239",
-     "title": "Dance Improvisation II",
+     "title": "Dance Improvisation 2",
      "units": 1.0,
      "disc": "Dance",
      "colleges": [
@@ -10373,7 +10253,7 @@
     },
     {
      "id": "MACH M1026",
-     "title": "Computer Numerical Control Individual Projects II",
+     "title": "Computer Numerical Control Individual Projects 2",
      "units": 2.0,
      "disc": "Machine Tool Technology",
      "colleges": [
@@ -10409,7 +10289,7 @@
     }
    ],
    "n": 5,
-   "cos_min": 0.653,
+   "cos_min": 0.652,
    "cos_max": 0.844,
    "cross_college": false,
    "shared_terms": [
@@ -10423,7 +10303,7 @@
    "members": [
     {
      "id": "DANC M1354",
-     "title": "Jazz I",
+     "title": "Jazz 1",
      "units": 1.0,
      "disc": "Dance",
      "colleges": [
@@ -10435,7 +10315,7 @@
     },
     {
      "id": "DANC M1357",
-     "title": "Modern I",
+     "title": "Modern 1",
      "units": 1.5,
      "disc": "Dance",
      "colleges": [
@@ -10484,9 +10364,9 @@
    "cos_max": 0.843,
    "cross_college": false,
    "shared_terms": [
-    "steward",
     "erths",
     "pepperwood",
+    "steward",
     "uneven",
     "preserve",
     "terrain"
@@ -10496,7 +10376,7 @@
    "members": [
     {
      "id": "DANC M1382",
-     "title": "Jazz IV",
+     "title": "Jazz 4",
      "units": 2.0,
      "disc": "Dance",
      "colleges": [
@@ -10507,7 +10387,7 @@
     },
     {
      "id": "DANC M1383",
-     "title": "Modern IV",
+     "title": "Modern 4",
      "units": 2.0,
      "disc": "Dance",
      "colleges": [
@@ -10518,7 +10398,7 @@
     },
     {
      "id": "DANC M1386",
-     "title": "TAP IV",
+     "title": "Tap 4",
      "units": 1.5,
      "disc": "Dance",
      "colleges": [
@@ -10573,7 +10453,7 @@
     },
     {
      "id": "MATH M1145",
-     "title": "SUPPORT FOR CALCULUS FOR BUSINESS AND THE SOCIAL SCIENCES",
+     "title": "Support for Calculus for Business and the Social Sciences",
      "units": 2.0,
      "disc": "Mathematics",
      "colleges": [
@@ -10635,7 +10515,7 @@
      ]
     },
     {
-     "id": "KINE M1373",
+     "id": "ATHL M1280",
      "title": "Men Intrcol Bsktball Team",
      "units": 3.0,
      "disc": "Kinesiology",
@@ -10645,7 +10525,7 @@
      ]
     },
     {
-     "id": "KINE M1620",
+     "id": "ATHL M1321",
      "title": "Men Intrcol Football Team",
      "units": 3.0,
      "disc": "Kinesiology",
@@ -10672,7 +10552,7 @@
    "members": [
     {
      "id": "NRSR M1051",
-     "title": "CARE OF CHILDREN AND FAMILY",
+     "title": "Care of Children and Family",
      "units": 3.5,
      "disc": "Nursing",
      "colleges": [
@@ -10682,7 +10562,7 @@
     },
     {
      "id": "NRSR M1117",
-     "title": "REPRODUCTIVE NURSING AND WOMENS HEALTH",
+     "title": "Reproductive Nursing and Womens Health",
      "units": 3.5,
      "disc": "Nursing",
      "colleges": [
@@ -10692,7 +10572,7 @@
     },
     {
      "id": "NRSR M1125",
-     "title": "Medical Surgical Nursing I",
+     "title": "Medical Surgical Nursing 1",
      "units": 4.0,
      "disc": "Nursing",
      "colleges": [
@@ -10764,44 +10644,6 @@
   {
    "members": [
     {
-     "id": "ATHL M1082",
-     "title": "Off-Season Conditioning for Women's Soccer",
-     "units": 0.5,
-     "disc": "Kinesiology",
-     "colleges": [
-      "American River College",
-      "Cosumnes River College",
-      "Folsom Lake College"
-     ]
-    },
-    {
-     "id": "KINE M1464",
-     "title": "Pre-Season Conditioning for Women's Soccer",
-     "units": 0.5,
-     "disc": "Kinesiology",
-     "colleges": [
-      "Cosumnes River College",
-      "Folsom Lake College",
-      "Sacramento City College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.83,
-   "cos_max": 0.83,
-   "cross_college": false,
-   "shared_terms": [
-    "guards",
-    "shin",
-    "cleats",
-    "attire",
-    "soccer",
-    "season"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "ENGL M1164",
      "title": "Shakespeare's Comedies and Romances",
      "units": 3.0,
@@ -10838,8 +10680,46 @@
   {
    "members": [
     {
+     "id": "ATHL M1082",
+     "title": "Off-Season Conditioning for Women's Soccer",
+     "units": 0.5,
+     "disc": "Kinesiology",
+     "colleges": [
+      "American River College",
+      "Cosumnes River College",
+      "Folsom Lake College"
+     ]
+    },
+    {
+     "id": "ATHL M1299",
+     "title": "Pre-Season Conditioning for Women's Soccer",
+     "units": 0.5,
+     "disc": "Kinesiology",
+     "colleges": [
+      "Cosumnes River College",
+      "Folsom Lake College",
+      "Sacramento City College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.829,
+   "cos_max": 0.829,
+   "cross_college": false,
+   "shared_terms": [
+    "shin",
+    "guards",
+    "cleats",
+    "attire",
+    "soccer",
+    "season"
+   ]
+  },
+  {
+   "members": [
+    {
      "id": "ESCI M1029",
-     "title": "Wastewater Collection I",
+     "title": "Wastewater Collection 1",
      "units": 3.0,
      "disc": "Environmental Technologies",
      "colleges": [
@@ -10848,7 +10728,7 @@
     },
     {
      "id": "ESCI M1030",
-     "title": "Wastewater Collection II",
+     "title": "Wastewater Collection 2",
      "units": 3.0,
      "disc": "Environmental Technologies",
      "colleges": [
@@ -10868,7 +10748,7 @@
    ],
    "n": 3,
    "cos_min": 0.607,
-   "cos_max": 0.827,
+   "cos_max": 0.828,
    "cross_college": false,
    "shared_terms": [
     "cwea",
@@ -10917,7 +10797,7 @@
    "members": [
     {
      "id": "MUSI M1410",
-     "title": "Jazz Improvisation Workshop II",
+     "title": "Jazz Improvisation Workshop 2",
      "units": 1.0,
      "disc": "Music",
      "colleges": [
@@ -10927,7 +10807,7 @@
     },
     {
      "id": "MUSI M1424",
-     "title": "Music Performance Workshop II",
+     "title": "Music Performance Workshop 2",
      "units": 1.0,
      "disc": "Music",
      "colleges": [
@@ -10940,6 +10820,43 @@
    "n": 2,
    "cos_min": 0.825,
    "cos_max": 0.825,
+   "cross_college": false,
+   "shared_terms": [
+    "microphone",
+    "outcome",
+    "rehearse",
+    "articulation",
+    "intonation",
+    "instrument"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "MUSI M1377",
+     "title": "Jazz Improvisation Workshop 1",
+     "units": 1.0,
+     "disc": "Music",
+     "colleges": [
+      "Los Angeles City College",
+      "Los Angeles Pierce College"
+     ]
+    },
+    {
+     "id": "MUSI M1392",
+     "title": "Music Performance Workshop 1",
+     "units": 1.0,
+     "disc": "Music",
+     "colleges": [
+      "East Los Angeles College",
+      "Los Angeles Pierce College",
+      "Los Angeles Valley College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.821,
+   "cos_max": 0.821,
    "cross_college": false,
    "shared_terms": [
     "microphone",
@@ -10980,8 +10897,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.822,
-   "cos_max": 0.822,
+   "cos_min": 0.821,
+   "cos_max": 0.821,
    "cross_college": false,
    "shared_terms": [
     "retouching",
@@ -10995,45 +10912,8 @@
   {
    "members": [
     {
-     "id": "MUSI M1377",
-     "title": "Jazz Improvisation Workshop I",
-     "units": 1.0,
-     "disc": "Music",
-     "colleges": [
-      "Los Angeles City College",
-      "Los Angeles Pierce College"
-     ]
-    },
-    {
-     "id": "MUSI M1392",
-     "title": "Music Performance Workshop I",
-     "units": 1.0,
-     "disc": "Music",
-     "colleges": [
-      "East Los Angeles College",
-      "Los Angeles Pierce College",
-      "Los Angeles Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.821,
-   "cos_max": 0.821,
-   "cross_college": false,
-   "shared_terms": [
-    "microphone",
-    "outcome",
-    "rehearse",
-    "articulation",
-    "intonation",
-    "instrument"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "DANC M1215",
-     "title": "Jazz Dance Techniques I",
+     "title": "Jazz Dance Techniques 1",
      "units": 1.0,
      "disc": "Dance",
      "colleges": [
@@ -11048,7 +10928,7 @@
     },
     {
      "id": "DANC M1222",
-     "title": "Modern Dance Techniques I",
+     "title": "Modern Dance Techniques 1",
      "units": 1.0,
      "disc": "Dance",
      "colleges": [
@@ -11107,76 +10987,6 @@
     "compound",
     "advised",
     "verb"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "LSKL M1001",
-     "title": "Vocabulary Improvement Strategies For Academic Success",
-     "units": 0.5,
-     "disc": "Learning Assistance or Learning Skills",
-     "colleges": [
-      "Bakersfield College"
-     ]
-    },
-    {
-     "id": "LSKL M1002",
-     "title": "Time Management Strategies for Academic Success",
-     "units": 0.5,
-     "disc": "Learning Assistance or Learning Skills",
-     "colleges": [
-      "Bakersfield College"
-     ]
-    },
-    {
-     "id": "LSKL M1004",
-     "title": "Memory Strategies For Academic Success",
-     "units": 0.5,
-     "disc": "Learning Assistance or Learning Skills",
-     "colleges": [
-      "Bakersfield College"
-     ]
-    },
-    {
-     "id": "LSKL M1005",
-     "title": "Note Taking Strategies for Academic Success",
-     "units": 0.5,
-     "disc": "Learning Assistance or Learning Skills",
-     "colleges": [
-      "Bakersfield College"
-     ]
-    },
-    {
-     "id": "LSKL M1006",
-     "title": "Textbook Reading Strategies for Academic Success",
-     "units": 0.5,
-     "disc": "Learning Assistance or Learning Skills",
-     "colleges": [
-      "Bakersfield College",
-      "Santa Rosa Junior College"
-     ]
-    },
-    {
-     "id": "LSKL M1008",
-     "title": "Test Taking Strategies For Academic Success",
-     "units": 0.5,
-     "disc": "Learning Assistance or Learning Skills",
-     "colleges": [
-      "Bakersfield College"
-     ]
-    }
-   ],
-   "n": 6,
-   "cos_min": 0.612,
-   "cos_max": 0.82,
-   "cross_college": false,
-   "shared_terms": [
-    "interactively",
-    "independently",
-    "guided",
-    "developing",
-    "hands"
    ]
   },
   {
@@ -11258,6 +11068,76 @@
   {
    "members": [
     {
+     "id": "LSKL M1001",
+     "title": "Vocabulary Improvement Strategies for Academic Success",
+     "units": 0.5,
+     "disc": "Learning Assistance or Learning Skills",
+     "colleges": [
+      "Bakersfield College"
+     ]
+    },
+    {
+     "id": "LSKL M1002",
+     "title": "Time Management Strategies for Academic Success",
+     "units": 0.5,
+     "disc": "Learning Assistance or Learning Skills",
+     "colleges": [
+      "Bakersfield College"
+     ]
+    },
+    {
+     "id": "LSKL M1004",
+     "title": "Memory Strategies for Academic Success",
+     "units": 0.5,
+     "disc": "Learning Assistance or Learning Skills",
+     "colleges": [
+      "Bakersfield College"
+     ]
+    },
+    {
+     "id": "LSKL M1005",
+     "title": "Note Taking Strategies for Academic Success",
+     "units": 0.5,
+     "disc": "Learning Assistance or Learning Skills",
+     "colleges": [
+      "Bakersfield College"
+     ]
+    },
+    {
+     "id": "LSKL M1006",
+     "title": "Textbook Reading Strategies for Academic Success",
+     "units": 0.5,
+     "disc": "Learning Assistance or Learning Skills",
+     "colleges": [
+      "Bakersfield College",
+      "Santa Rosa Junior College"
+     ]
+    },
+    {
+     "id": "LSKL M1008",
+     "title": "Test Taking Strategies for Academic Success",
+     "units": 0.5,
+     "disc": "Learning Assistance or Learning Skills",
+     "colleges": [
+      "Bakersfield College"
+     ]
+    }
+   ],
+   "n": 6,
+   "cos_min": 0.612,
+   "cos_max": 0.819,
+   "cross_college": false,
+   "shared_terms": [
+    "interactively",
+    "independently",
+    "guided",
+    "developing",
+    "hands"
+   ]
+  },
+  {
+   "members": [
+    {
      "id": "ESOL M1298",
      "title": "High-Intermediate Grammar for Reading and Writing",
      "units": 3.0,
@@ -11283,8 +11163,8 @@
    "shared_terms": [
     "meaningfully",
     "appropriately",
-    "clauses",
     "accurately",
+    "clauses",
     "advised",
     "verb"
    ]
@@ -11321,8 +11201,8 @@
    "cross_college": false,
    "shared_terms": [
     "vintages",
-    "cellar",
     "winery",
+    "cellar",
     "tasting",
     "wines",
     "participate"
@@ -11332,7 +11212,7 @@
    "members": [
     {
      "id": "CNST M1013",
-     "title": "BASIC TUBE AND CLAMP SCAFFOLD",
+     "title": "Basic Tube and Clamp Scaffold",
      "units": 1.5,
      "disc": "Construction Technology",
      "colleges": [
@@ -11342,7 +11222,7 @@
     },
     {
      "id": "CNST M1015",
-     "title": "BASIC FRAME SCAFFOLD",
+     "title": "Basic Frame Scaffold",
      "units": 1.5,
      "disc": "Construction Technology",
      "colleges": [
@@ -11352,7 +11232,7 @@
     },
     {
      "id": "CNST M1017",
-     "title": "BASIC SYSTEMS SCAFFOLD",
+     "title": "Basic Systems Scaffold",
      "units": 1.5,
      "disc": "Construction Technology",
      "colleges": [
@@ -11565,8 +11445,8 @@
    "cross_college": false,
    "shared_terms": [
     "tutorials",
-    "lessons",
     "prescribed",
+    "lessons",
     "assessments",
     "individually",
     "assigned"
@@ -11621,7 +11501,7 @@
      ]
     },
     {
-     "id": "KINE M1227",
+     "id": "ATHL M1259",
      "title": "Pre-Season Conditioning for Baseball",
      "units": 0.5,
      "disc": "Kinesiology",
@@ -11710,11 +11590,11 @@
    "cross_college": false,
    "shared_terms": [
     "ranked",
-    "kennedy",
     "kcactf",
+    "kennedy",
     "festival",
-    "workshop",
-    "theatrical"
+    "theatrical",
+    "workshop"
    ]
   },
   {
@@ -11830,8 +11710,8 @@
    "shared_terms": [
     "aerodynamic",
     "super",
-    "passenger",
     "hydrogen",
+    "passenger",
     "duty",
     "hybrid"
    ]
@@ -11984,59 +11864,8 @@
   {
    "members": [
     {
-     "id": "ATHL M1200",
-     "title": "Intercollegiate Volleyball",
-     "units": 3.0,
-     "disc": "Kinesiology",
-     "colleges": [
-      "Allan Hancock College",
-      "Cerro Coso Community College",
-      "College of the Canyons",
-      "College of the Redwoods",
-      "Cuyamaca College",
-      "Feather River College",
-      "Gavilan College",
-      "Grossmont College",
-      "Hartnell College",
-      "Los Medanos College",
-      "Mendocino College",
-      "Merced College",
-      "Mission College",
-      "Palomar College",
-      "San Jose City College",
-      "Shasta College"
-     ]
-    },
-    {
-     "id": "PEDU M1064",
-     "title": "Intercollegiate Sand Volleyball",
-     "units": 3.0,
-     "disc": "Physical Education",
-     "colleges": [
-      "Feather River College",
-      "Palomar College",
-      "Pasadena City College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.788,
-   "cos_max": 0.788,
-   "cross_college": false,
-   "shared_terms": [
-    "volleyball",
-    "competitive",
-    "situations",
-    "women",
-    "applied",
-    "intercollegiate"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "FLAR M1010",
-     "title": "INTERMEDIATE ARABIC",
+     "title": "Intermediate Arabic",
      "units": 5.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -12087,7 +11916,7 @@
     },
     {
      "id": "FLPO M1004",
-     "title": "INTERMEDIATE PORTUGUESE",
+     "title": "Intermediate Portuguese",
      "units": 5.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -12268,8 +12097,8 @@
    "cross_college": false,
    "shared_terms": [
     "servicing",
-    "technicians",
     "excellence",
+    "technicians",
     "ase",
     "inspection",
     "diagnosis"
@@ -12720,8 +12549,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.76,
-   "cos_max": 0.76,
+   "cos_min": 0.761,
+   "cos_max": 0.761,
    "cross_college": false,
    "shared_terms": [
     "competitively",
@@ -12885,7 +12714,7 @@
    "members": [
     {
      "id": "AUTO M9041",
-     "title": "AUTOMOTIVE TECHNICIAN",
+     "title": "Automotive Technician",
      "units": 0.0,
      "disc": "Automotive Technology",
      "colleges": [
@@ -12895,7 +12724,7 @@
     },
     {
      "id": "AUTO M9065",
-     "title": "ENGINE/ELECTRICAL/PERFORMANCE",
+     "title": "Engine/Electrical/Performance",
      "units": 0.0,
      "disc": "Automotive Technology",
      "colleges": [
@@ -12909,8 +12738,8 @@
    "cos_max": 0.753,
    "cross_college": false,
    "shared_terms": [
-    "articulated",
     "miramar",
+    "articulated",
     "malfunctions",
     "repairing",
     "natef",
@@ -13041,7 +12870,7 @@
    ],
    "n": 4,
    "cos_min": 0.677,
-   "cos_max": 0.748,
+   "cos_max": 0.747,
    "cross_college": false,
    "shared_terms": [
     "repeatable",
@@ -13114,8 +12943,8 @@
    "cos_max": 0.744,
    "cross_college": false,
    "shared_terms": [
-    "revival",
     "roughly",
+    "revival",
     "decorative",
     "classical",
     "interior",
@@ -13241,8 +13070,8 @@
    "cross_college": false,
    "shared_terms": [
     "kick",
-    "boxing",
     "kickboxing",
+    "boxing",
     "martial",
     "cardio"
    ]
@@ -13251,7 +13080,7 @@
    "members": [
     {
      "id": "NRSR M1077",
-     "title": "Nursing Health and Illness Concepts II",
+     "title": "Nursing Health and Illness Concepts 2",
      "units": 4.5,
      "disc": "Nursing",
      "colleges": [
@@ -13261,7 +13090,7 @@
     },
     {
      "id": "NRSR M1078",
-     "title": "Nursing Health and Illness Concepts III",
+     "title": "Nursing Health and Illness Concepts 3",
      "units": 4.5,
      "disc": "Nursing",
      "colleges": [
@@ -13423,7 +13252,7 @@
     },
     {
      "id": "BIOL M1166",
-     "title": "HUMAN PHYSIOLOGY DISCUSSION",
+     "title": "Human Physiology Discussion",
      "units": 1.5,
      "disc": "Biological Sciences",
      "colleges": [
@@ -13458,7 +13287,7 @@
     },
     {
      "id": "ETHS M1042",
-     "title": "The African American Experience in U.S. History From Reconstruction",
+     "title": "The African American Experience in U.S. History from Reconstruction",
      "units": 3.0,
      "disc": "Ethnic Studies",
      "colleges": [
@@ -13534,7 +13363,7 @@
   {
    "members": [
     {
-     "id": "KINE M1212",
+     "id": "ATHL M1254",
      "title": "Training and Conditioning for Athletics",
      "units": 0.5,
      "disc": "Kinesiology",
@@ -13543,7 +13372,7 @@
      ]
     },
     {
-     "id": "KINE M1250",
+     "id": "ATHL M1265",
      "title": "Training and Conditioning for Basketball",
      "units": 0.5,
      "disc": "Kinesiology",
@@ -13552,7 +13381,7 @@
      ]
     },
     {
-     "id": "KINE M1453",
+     "id": "ATHL M1295",
      "title": "Training and Conditioning for Golf",
      "units": 1.0,
      "disc": "Kinesiology",
@@ -13561,7 +13390,7 @@
      ]
     },
     {
-     "id": "KINE M1469",
+     "id": "ATHL M1303",
      "title": "Training and Conditioning for Soccer",
      "units": 0.5,
      "disc": "Kinesiology",
@@ -13575,11 +13404,11 @@
    "cos_max": 0.727,
    "cross_college": false,
    "shared_terms": [
-    "completions",
     "pevm",
+    "completions",
     "mentally",
-    "allowed",
     "might",
+    "allowed",
     "collegiate"
    ]
   },
@@ -13734,7 +13563,7 @@
    "members": [
     {
      "id": "DANC M1085",
-     "title": "Ballet Techniques IV",
+     "title": "Ballet Techniques 4",
      "units": 1.0,
      "disc": "Dance",
      "colleges": [
@@ -13747,7 +13576,7 @@
     },
     {
      "id": "DANC M1297",
-     "title": "Jazz Dance Techniques IV",
+     "title": "Jazz Dance Techniques 4",
      "units": 1.0,
      "disc": "Dance",
      "colleges": [
@@ -13809,45 +13638,8 @@
   {
    "members": [
     {
-     "id": "ATHL M1105",
-     "title": "Off Season Swim & Dive",
-     "units": 0.5,
-     "disc": "Kinesiology",
-     "colleges": [
-      "American River College",
-      "Cosumnes River College",
-      "Sacramento City College"
-     ]
-    },
-    {
-     "id": "KINE M1449",
-     "title": "Pre-Season Conditioning Swim & Dive",
-     "units": 0.5,
-     "disc": "Kinesiology",
-     "colleges": [
-      "American River College",
-      "Cosumnes River College",
-      "Sacramento City College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.712,
-   "cos_max": 0.712,
-   "cross_college": false,
-   "shared_terms": [
-    "dry",
-    "dive",
-    "peak",
-    "swim",
-    "component"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "HUMN M1002",
-     "title": "HONORS INTRODUCTION TO POPULAR CULTURE",
+     "title": "Honors Introduction to Popular Culture",
      "units": 4.0,
      "disc": null,
      "colleges": [
@@ -13856,7 +13648,7 @@
     },
     {
      "id": "HUMN M1003",
-     "title": "HONORS POPULAR CULTURE & UNITED STATES HISTORY",
+     "title": "Honors Popular Culture & United States History",
      "units": 4.0,
      "disc": null,
      "colleges": [
@@ -13875,6 +13667,43 @@
     "esll",
     "placement",
     "popular"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "ATHL M1105",
+     "title": "Off Season Swim & Dive",
+     "units": 0.5,
+     "disc": "Kinesiology",
+     "colleges": [
+      "American River College",
+      "Cosumnes River College",
+      "Sacramento City College"
+     ]
+    },
+    {
+     "id": "ATHL M1292",
+     "title": "Pre-Season Conditioning Swim & Dive",
+     "units": 0.5,
+     "disc": "Kinesiology",
+     "colleges": [
+      "American River College",
+      "Cosumnes River College",
+      "Sacramento City College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.711,
+   "cos_max": 0.711,
+   "cross_college": false,
+   "shared_terms": [
+    "dry",
+    "dive",
+    "peak",
+    "swim",
+    "component"
    ]
   },
   {
@@ -14050,8 +13879,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.699,
-   "cos_max": 0.699,
+   "cos_min": 0.698,
+   "cos_max": 0.698,
    "cross_college": false,
    "shared_terms": [
     "normalizing",
@@ -14066,7 +13895,7 @@
    "members": [
     {
      "id": "CARP M1043",
-     "title": "DRYWALL REPAIR AND FINISHING",
+     "title": "Drywall Repair and Finishing",
      "units": 1.5,
      "disc": "Carpentry",
      "colleges": [
@@ -14139,8 +13968,8 @@
     "lpc",
     "viticultural",
     "canopy",
-    "declared",
     "putting",
+    "declared",
     "vineyard"
    ]
   },
@@ -14208,8 +14037,8 @@
    "shared_terms": [
     "accessing",
     "discussing",
-    "efficiently",
     "designated",
+    "efficiently",
     "adaptive"
    ]
   },
@@ -14244,8 +14073,8 @@
    "cross_college": false,
    "shared_terms": [
     "workload",
-    "cool",
     "bicycle",
+    "cool",
     "finishes",
     "stationary",
     "workout"
@@ -14255,7 +14084,7 @@
    "members": [
     {
      "id": "ESOL M1202",
-     "title": "ESL for Child Development: Domains II",
+     "title": "ESL for Child Development: Domains 2",
      "units": 3.0,
      "disc": "English as a Second Language",
      "colleges": [
@@ -14282,6 +14111,40 @@
     "describe",
     "identify",
     "oral"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "DRAF M1039",
+     "title": "Solid Modeling Design",
+     "units": 3.0,
+     "disc": "Drafting/CADD",
+     "colleges": [
+      "Cuyamaca College"
+     ]
+    },
+    {
+     "id": "DRAF M1050",
+     "title": "Engineering Solid Modeling",
+     "units": 3.0,
+     "disc": "Drafting/CADD",
+     "colleges": [
+      "Cuyamaca College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.691,
+   "cos_max": 0.691,
+   "cross_college": false,
+   "shared_terms": [
+    "extrudes",
+    "revolves",
+    "lofts",
+    "cuts",
+    "sweeps",
+    "sectioning"
    ]
   },
   {
@@ -14379,40 +14242,6 @@
   {
    "members": [
     {
-     "id": "DRAF M1039",
-     "title": "Solid Modeling Design",
-     "units": 3.0,
-     "disc": "Drafting/CADD",
-     "colleges": [
-      "Cuyamaca College"
-     ]
-    },
-    {
-     "id": "DRAF M1050",
-     "title": "Engineering Solid Modeling",
-     "units": 3.0,
-     "disc": "Drafting/CADD",
-     "colleges": [
-      "Cuyamaca College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.69,
-   "cos_max": 0.69,
-   "cross_college": false,
-   "shared_terms": [
-    "revolves",
-    "lofts",
-    "extrudes",
-    "cuts",
-    "sweeps",
-    "sectioning"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "INDT M1044",
      "title": "Framing Suspended Ceilings",
      "units": 1.5,
@@ -14442,8 +14271,8 @@
    "shared_terms": [
     "suspended",
     "ceilings",
-    "drywall",
     "square",
+    "drywall",
     "ceiling",
     "suspension"
    ]
@@ -14452,7 +14281,7 @@
    "members": [
     {
      "id": "HIST M1033",
-     "title": "U.S. History from a Chicana/o/x Perspective: Pre-Columbian to 1848",
+     "title": "U.S. History from a Chicana/O/X Perspective: Pre-Columbian to 1848",
      "units": 3.0,
      "disc": "History",
      "colleges": [
@@ -14461,7 +14290,7 @@
     },
     {
      "id": "HIST M1034",
-     "title": "US History from a Chicana/o/x Perspective: 1848 to Present Day",
+     "title": "US History from a Chicana/O/X Perspective: 1848 to Present Day",
      "units": 3.0,
      "disc": "History",
      "colleges": [
@@ -14638,7 +14467,7 @@
    "members": [
     {
      "id": "CSTF M1001",
-     "title": "CABINET AND FURNITURE TECHNOLOGY TOPICS",
+     "title": "Cabinet and Furniture Technology Topics",
      "units": 0.5,
      "disc": "Furniture Making",
      "colleges": [
@@ -14647,7 +14476,7 @@
     },
     {
      "id": "DENT M1026",
-     "title": "DENTAL ASSISTING TOPICS",
+     "title": "Dental Assisting Topics",
      "units": 0.5,
      "disc": "Dental Technology",
      "colleges": [
@@ -14695,8 +14524,8 @@
    "cos_max": 0.68,
    "cross_college": false,
    "shared_terms": [
-    "lift",
     "rough",
+    "lift",
     "brotherhood",
     "powered",
     "terrain",
@@ -14837,7 +14666,7 @@
     },
     {
      "id": "SOCS M1034",
-     "title": "History Of Mexico, Colonial to Contemporary Period",
+     "title": "History of Mexico, Colonial to Contemporary Period",
      "units": 3.0,
      "disc": "Social Science",
      "colleges": [
@@ -14974,10 +14803,10 @@
    "shared_terms": [
     "dips",
     "pedicures",
-    "manicures",
     "acrylics",
-    "communicable",
-    "gels"
+    "manicures",
+    "gels",
+    "communicable"
    ]
   },
   {
@@ -15087,7 +14916,7 @@
     },
     {
      "id": "HUMA M1029",
-     "title": "Arts & Ideas: Renaissance through the Modern Era",
+     "title": "Arts & Ideas: Renaissance Through the Modern Era",
      "units": 3.0,
      "disc": "Humanities",
      "colleges": [
@@ -15195,8 +15024,8 @@
    "shared_terms": [
     "multithreading",
     "exception",
-    "gaming",
     "connectivity",
+    "gaming",
     "programming"
    ]
   },
@@ -15214,10 +15043,10 @@
      ]
     },
     {
-     "id": "PEDU M1005",
+     "id": "PEDS M1031",
      "title": "Advanced Adapted Physical Exercise",
      "units": 1.0,
-     "disc": "Physical Education",
+     "disc": "Physical Education Disabled Students",
      "colleges": [
       "Grossmont College",
       "Victor Valley College"
@@ -15267,15 +15096,14 @@
    "shared_terms": [
     "gable",
     "rafter",
-    "roof",
-    "views"
+    "roof"
    ]
   },
   {
    "members": [
     {
      "id": "KINE M1674",
-     "title": "Yoga Skills I",
+     "title": "Yoga Skills 1",
      "units": 1.0,
      "disc": "Kinesiology",
      "colleges": [
@@ -15290,7 +15118,7 @@
     },
     {
      "id": "KINE M1719",
-     "title": "Yoga Skills III",
+     "title": "Yoga Skills 3",
      "units": 1.0,
      "disc": "Kinesiology",
      "colleges": [
@@ -15366,44 +15194,6 @@
   {
    "members": [
     {
-     "id": "CNST M1030",
-     "title": "Uniform Mechanical Code",
-     "units": 3.0,
-     "disc": "Construction Technology",
-     "colleges": [
-      "Fullerton College",
-      "Ventura College",
-      "Victor Valley College"
-     ]
-    },
-    {
-     "id": "CNST M1031",
-     "title": "Uniform Plumbing Code",
-     "units": 3.0,
-     "disc": "Construction Technology",
-     "colleges": [
-      "Fullerton College",
-      "Ventura College",
-      "Victor Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.664,
-   "cos_max": 0.664,
-   "cross_college": false,
-   "shared_terms": [
-    "officials",
-    "published",
-    "uniform",
-    "recent",
-    "mechanical",
-    "most"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "THEA M1108",
      "title": "Classical Comedy in Performance",
      "units": 0.5,
@@ -15439,7 +15229,7 @@
    "members": [
     {
      "id": "FLFR M1040",
-     "title": "Intermediate French I",
+     "title": "Intermediate French 1",
      "units": 5.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -15467,7 +15257,7 @@
     },
     {
      "id": "FLIT M1026",
-     "title": "Intermediate Italian I",
+     "title": "Intermediate Italian 1",
      "units": 5.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -15500,8 +15290,46 @@
   {
    "members": [
     {
+     "id": "CNST M1030",
+     "title": "Uniform Mechanical Code",
+     "units": 3.0,
+     "disc": "Construction Technology",
+     "colleges": [
+      "Fullerton College",
+      "Ventura College",
+      "Victor Valley College"
+     ]
+    },
+    {
+     "id": "CNST M1031",
+     "title": "Uniform Plumbing Code",
+     "units": 3.0,
+     "disc": "Construction Technology",
+     "colleges": [
+      "Fullerton College",
+      "Ventura College",
+      "Victor Valley College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.663,
+   "cos_max": 0.663,
+   "cross_college": false,
+   "shared_terms": [
+    "officials",
+    "published",
+    "uniform",
+    "recent",
+    "mechanical",
+    "most"
+   ]
+  },
+  {
+   "members": [
+    {
      "id": "IDST M1137",
-     "title": "Student Leadership II",
+     "title": "Student Leadership 2",
      "units": 2.0,
      "disc": "Interdisciplinary Studies",
      "colleges": [
@@ -15537,7 +15365,7 @@
    "members": [
     {
      "id": "FLHE M1001",
-     "title": "ELEMENTARY HEBREW",
+     "title": "Elementary Hebrew",
      "units": 5.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -15624,7 +15452,7 @@
     },
     {
      "id": "INDT M1008",
-     "title": "DRYWALL ACOUSTICAL CEILINGS",
+     "title": "Drywall Acoustical Ceilings",
      "units": 1.5,
      "disc": "Industrial Technology",
      "colleges": [
@@ -15703,7 +15531,7 @@
     },
     {
      "id": "ARCH M1065",
-     "title": "History of Architecture: Renaissance through Modern",
+     "title": "History of Architecture: Renaissance Through Modern",
      "units": 3.0,
      "disc": "Architecture",
      "colleges": [
@@ -15764,7 +15592,7 @@
    "members": [
     {
      "id": "BUSI M1242",
-     "title": "COMMUNICATING WITH PEOPLE",
+     "title": "Communicating with People",
      "units": 0.5,
      "disc": "Business",
      "colleges": [
@@ -15881,7 +15709,7 @@
     },
     {
      "id": "ETHS M1091",
-     "title": "Native American History II: Contemporary Society",
+     "title": "Native American History 2: Contemporary Society",
      "units": 3.0,
      "disc": "Ethnic Studies",
      "colleges": [
@@ -15986,7 +15814,7 @@
     },
     {
      "id": "MACH M1030",
-     "title": "Numerical Control Program I",
+     "title": "Numerical Control Program 1",
      "units": 4.0,
      "disc": "Machine Tool Technology",
      "colleges": [
@@ -15995,7 +15823,7 @@
     },
     {
      "id": "MACH M1043",
-     "title": "Machine Tool Technology II",
+     "title": "Machine Tool Technology 2",
      "units": 4.0,
      "disc": "Machine Tool Technology",
      "colleges": [
@@ -16114,7 +15942,7 @@
     },
     {
      "id": "BSKL M9046",
-     "title": "GED/HISET PREPARATION: WRITING SKILLS",
+     "title": "GED/HISET Preparation: Writing Skills",
      "units": 0.0,
      "disc": "Interdisciplinary-Basic Skills: Noncredit 53412",
      "colleges": [
@@ -16192,7 +16020,7 @@
     },
     {
      "id": "FLSP M1042",
-     "title": "CIVILIZATION OF SPAIN",
+     "title": "Civilization of Spain",
      "units": 3.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -16326,7 +16154,7 @@
    "members": [
     {
      "id": "ENGT M1022",
-     "title": "Introduction to Engineering Design I",
+     "title": "Introduction to Engineering Design 1",
      "units": 1.5,
      "disc": "Engineering Technology",
      "colleges": [
@@ -16336,7 +16164,7 @@
     },
     {
      "id": "ENGT M1025",
-     "title": "Principles of Engineering Technology I",
+     "title": "Principles of Engineering Technology 1",
      "units": 1.5,
      "disc": "Engineering Technology",
      "colleges": [
@@ -16383,9 +16211,9 @@
    "cos_max": 0.637,
    "cross_college": false,
    "shared_terms": [
-    "hair",
     "styling",
     "barbering",
+    "hair",
     "cosmetology",
     "towards",
     "subjects"
@@ -16811,8 +16639,8 @@
    "cross_college": false,
    "shared_terms": [
     "campuses",
-    "transformative",
     "holistic",
+    "transformative",
     "nine",
     "fund",
     "education"
@@ -16981,7 +16809,6 @@
    "cos_max": 0.619,
    "cross_college": false,
    "shared_terms": [
-    "experts",
     "hrs",
     "see",
     "game",
@@ -17128,7 +16955,7 @@
    "members": [
     {
      "id": "ARCH M1005",
-     "title": "ADVANCED COMPUTER-AIDED DESIGN",
+     "title": "Advanced Computer-Aided Design",
      "units": 3.0,
      "disc": "Architecture",
      "colleges": [
@@ -17200,43 +17027,8 @@
   {
    "members": [
     {
-     "id": "MUSI M9011",
-     "title": "Jazz Ensemble for Older Adults",
-     "units": 0.0,
-     "disc": "Music",
-     "colleges": [
-      "Cabrillo College",
-      "Riverside City College"
-     ]
-    },
-    {
-     "id": "MUSI M9012",
-     "title": "Vocal Jazz Ensemble for Older Adults",
-     "units": 0.0,
-     "disc": "Music",
-     "colleges": [
-      "Cabrillo College",
-      "Las Positas College",
-      "Mendocino College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.614,
-   "cos_max": 0.614,
-   "cross_college": false,
-   "shared_terms": [
-    "performs",
-    "proficient",
-    "arranged",
-    "demonstrated"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "FLAR M1009",
-     "title": "Arabic III",
+     "title": "Arabic 3",
      "units": 5.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -17247,7 +17039,7 @@
     },
     {
      "id": "FLJA M1026",
-     "title": "Japanese III",
+     "title": "Japanese 3",
      "units": 5.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -17307,8 +17099,43 @@
   {
    "members": [
     {
+     "id": "MUSI M9011",
+     "title": "Jazz Ensemble for Older Adults",
+     "units": 0.0,
+     "disc": "Music",
+     "colleges": [
+      "Cabrillo College",
+      "Riverside City College"
+     ]
+    },
+    {
+     "id": "MUSI M9012",
+     "title": "Vocal Jazz Ensemble for Older Adults",
+     "units": 0.0,
+     "disc": "Music",
+     "colleges": [
+      "Cabrillo College",
+      "Las Positas College",
+      "Mendocino College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.613,
+   "cos_max": 0.613,
+   "cross_college": false,
+   "shared_terms": [
+    "performs",
+    "proficient",
+    "arranged",
+    "demonstrated"
+   ]
+  },
+  {
+   "members": [
+    {
      "id": "FLFR M1041",
-     "title": "French II",
+     "title": "French 2",
      "units": 5.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -17321,7 +17148,7 @@
     },
     {
      "id": "FLJA M1024",
-     "title": "Japanese II",
+     "title": "Japanese 2",
      "units": 5.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -17491,7 +17318,7 @@
    "members": [
     {
      "id": "MUSI M1468",
-     "title": "String Instrument Instruction IV",
+     "title": "String Instrument Instruction 4",
      "units": 2.0,
      "disc": "Music",
      "colleges": [
@@ -17502,7 +17329,7 @@
     },
     {
      "id": "MUSI M1469",
-     "title": "WOODWIND INSTRUMENT INSTRUCTION IV",
+     "title": "Woodwind Instrument Instruction 4",
      "units": 2.0,
      "disc": "Music",
      "colleges": [
@@ -17739,8 +17566,8 @@
    "cos_max": 0.603,
    "cross_college": false,
    "shared_terms": [
-    "adaptability",
     "neurodivergent",
+    "adaptability",
     "cohort",
     "disabled",
     "pursuing"
@@ -17750,7 +17577,7 @@
    "members": [
     {
      "id": "FLFR M1011",
-     "title": "Advanced French II",
+     "title": "Advanced French 2",
      "units": 3.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -17762,7 +17589,7 @@
     },
     {
      "id": "FLSP M1015",
-     "title": "Advanced Spanish II",
+     "title": "Advanced Spanish 2",
      "units": 3.0,
      "disc": "Foreign Languages",
      "colleges": [
@@ -17826,7 +17653,7 @@
    "members": [
     {
      "id": "COUN M9010",
-     "title": "Latine First Year Experience Ã¢â‚¬â€œ Career and Life Planning",
+     "title": "Latine First Year Experience – Career and Life Planning",
      "units": 0.0,
      "disc": "Counseling",
      "colleges": [
@@ -17835,7 +17662,7 @@
     },
     {
      "id": "COUN M9013",
-     "title": "Latine First Year Experience Ã¢â‚¬â€œ College Success",
+     "title": "Latine First Year Experience – College Success",
      "units": 0.0,
      "disc": "Counseling",
      "colleges": [
@@ -17850,6 +17677,40 @@
    "shared_terms": [
     "latine",
     "noncredit"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "ESOL M9249",
+     "title": "Intermediate High",
+     "units": 0.0,
+     "disc": "English as a Second Language",
+     "colleges": [
+      "Santa Ana College",
+      "Santiago Canyon College"
+     ]
+    },
+    {
+     "id": "ESOL M9257",
+     "title": "Intermediate Low",
+     "units": 0.0,
+     "disc": "English as a Second Language",
+     "colleges": [
+      "Santa Ana College",
+      "Santiago Canyon College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.6,
+   "cos_max": 0.6,
+   "cross_college": false,
+   "shared_terms": [
+    "informational",
+    "granted",
+    "civic",
+    "elective"
    ]
   },
   {

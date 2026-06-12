@@ -1,7 +1,7 @@
 {
   "_status": "PREVIEW — members carry College + CourseControlNumber (the re-key fix).",
   "_generated_at": "2026-05-22",
-  "count": 15535,
+  "count": 15515,
   "member_courses_total": 63754,
   "memberships": {
     "POSC M1007": [
@@ -12091,7 +12091,7 @@
         "top_code": "0835.80: Adapted Physical Education"
       }
     ],
-    "PEDU M1008": [
+    "PEDS M1034": [
       {
         "college": "Citrus College",
         "control_number": "CCC000399599",
@@ -12196,7 +12196,7 @@
         "top_code": "0835.80: Adapted Physical Education"
       }
     ],
-    "PEDU M1007": [
+    "PEDS M1033": [
       {
         "college": "American River College",
         "control_number": "CCC000232133",
@@ -36314,7 +36314,7 @@
         "top_code": "0957.20: Construction Inspection"
       }
     ],
-    "PEDU M1006": [
+    "PEDS M1032": [
       {
         "college": "Gavilan College",
         "control_number": "CCC000508315",
@@ -36334,7 +36334,7 @@
         "top_code": "0835.80: Adapted Physical Education"
       }
     ],
-    "PEDU M1009": [
+    "PEDS M1035": [
       {
         "college": "Gavilan College",
         "control_number": "CCC000508313",
@@ -36354,7 +36354,7 @@
         "top_code": "0835.80: Adapted Physical Education"
       }
     ],
-    "PEDU M9001": [
+    "PEDS M9003": [
       {
         "college": "Victor Valley College",
         "control_number": "CCC000195412",
@@ -36374,7 +36374,7 @@
         "top_code": "0835.80: Adapted Physical Education"
       }
     ],
-    "PEDU M9002": [
+    "PEDS M9004": [
       {
         "college": "Victor Valley College",
         "control_number": "CCC000316608",
@@ -36394,7 +36394,7 @@
         "top_code": "0835.80: Adapted Physical Education"
       }
     ],
-    "PEDU M9003": [
+    "PEDS M9005": [
       {
         "college": "Victor Valley College",
         "control_number": "CCC000548072",
@@ -37811,7 +37811,7 @@
         "top_code": "3007.00: Cosmetology and Barbering"
       }
     ],
-    "PEDU M1019": [
+    "KINE M1913": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000629478",
@@ -37831,7 +37831,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1034": [
+    "KINE M1919": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000625786",
@@ -37851,7 +37851,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1039": [
+    "KINE M1920": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000617985",
@@ -37871,7 +37871,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1040": [
+    "KINE M1897": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000617986",
@@ -37891,7 +37891,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1041": [
+    "KINE M1900": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000625280",
@@ -37911,7 +37911,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1042": [
+    "KINE M1903": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000625281",
@@ -78357,7 +78357,7 @@
         "top_code": "0948.00: Automotive Technology"
       }
     ],
-    "KINE M1206": [
+    "ATHL M1253": [
       {
         "college": "Cabrillo College",
         "control_number": "CCC000541903",
@@ -78395,7 +78395,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1237": [
+    "ATHL M1261": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551216",
@@ -78480,7 +78480,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1265": [
+    "ATHL M1270": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000592773",
@@ -78547,7 +78547,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1270": [
+    "ATHL M1275": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000552438",
@@ -78632,7 +78632,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1411": [
+    "ATHL M1281": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000581705",
@@ -78661,7 +78661,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1477": [
+    "ATHL M1307": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551281",
@@ -78737,7 +78737,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1481": [
+    "ATHL M1310": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551277",
@@ -78822,7 +78822,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1452": [
+    "ATHL M1294": [
       {
         "college": "Cabrillo College",
         "control_number": "CCC000541904",
@@ -78842,7 +78842,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1621": [
+    "ATHL M1322": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551273",
@@ -78909,7 +78909,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1229": [
+    "ATHL M1260": [
       {
         "college": "Coalinga College",
         "control_number": "CCC000549242",
@@ -78956,7 +78956,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1273": [
+    "ATHL M1277": [
       {
         "college": "Gavilan College",
         "control_number": "CCC000587352",
@@ -78976,7 +78976,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1634": [
+    "ATHL M1326": [
       {
         "college": "Coalinga College",
         "control_number": "CCC000550522",
@@ -79005,7 +79005,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1635": [
+    "ATHL M1327": [
       {
         "college": "Coalinga College",
         "control_number": "CCC000593782",
@@ -79034,7 +79034,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1648": [
+    "ATHL M1329": [
       {
         "college": "San Joaquin Delta College",
         "control_number": "CCC000369010",
@@ -79121,6 +79121,24 @@
         "units": 1.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Glendale Community College",
+        "control_number": "CCC000559737",
+        "subject": "PE",
+        "course_number": "246",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.00: Physical Education"
+      },
+      {
+        "college": "Glendale Community College",
+        "control_number": "CCC000567874",
+        "subject": "ATHPE",
+        "course_number": "128",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
     "ATHL M1182": [
@@ -79150,9 +79168,27 @@
         "units": 1.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Glendale Community College",
+        "control_number": "CCC000559082",
+        "subject": "PE",
+        "course_number": "244",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Glendale Community College",
+        "control_number": "CCC000567876",
+        "subject": "ATHPE",
+        "course_number": "126",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1868": [
+    "ATHL M1358": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551476",
@@ -79228,7 +79264,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1816": [
+    "ATHL M1338": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551728",
@@ -79295,7 +79331,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1881": [
+    "ATHL M1360": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551264",
@@ -79380,7 +79416,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1819": [
+    "ATHL M1341": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551260",
@@ -79447,7 +79483,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1888": [
+    "ATHL M1364": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551349",
@@ -79505,7 +79541,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1549": [
+    "ATHL M1316": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551344",
@@ -79583,7 +79619,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1892": [
+    "ATHL M1365": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551336",
@@ -79668,44 +79704,6 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1813": [
-      {
-        "college": "Cerritos College",
-        "control_number": "CCC000551332",
-        "subject": "ATH",
-        "course_number": "232L",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Long Beach City College",
-        "control_number": "CCC000542167",
-        "subject": "KINIA",
-        "course_number": "23AD",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Mt. San Antonio College",
-        "control_number": "CCC000610162",
-        "subject": "KINX",
-        "course_number": "48",
-        "units": 0.5,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Santa Ana College",
-        "control_number": "CCC000525677",
-        "subject": "KNIA",
-        "course_number": "209",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
     "ATHL M1168": [
       {
         "college": "Cerritos College",
@@ -79735,7 +79733,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1842": [
+    "ATHL M1350": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551328",
@@ -79811,7 +79809,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1820": [
+    "ATHL M1342": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551323",
@@ -79869,7 +79867,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1240": [
+    "ATHL M1264": [
       {
         "college": "Golden West College",
         "control_number": "CCC000604837",
@@ -79898,7 +79896,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1253": [
+    "ATHL M1268": [
       {
         "college": "College of Alameda",
         "control_number": "CCC000553596",
@@ -79927,7 +79925,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1266": [
+    "ATHL M1271": [
       {
         "college": "Golden West College",
         "control_number": "CCC000603257",
@@ -79956,7 +79954,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1267": [
+    "ATHL M1274": [
       {
         "college": "Golden West College",
         "control_number": "CCC000603256",
@@ -79985,7 +79983,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1282": [
+    "ATHL M1279": [
       {
         "college": "Golden West College",
         "control_number": "CCC000559053",
@@ -80014,7 +80012,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1476": [
+    "ATHL M1306": [
       {
         "college": "Laney College",
         "control_number": "CCC000562929",
@@ -80034,7 +80032,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1478": [
+    "ATHL M1308": [
       {
         "college": "Golden West College",
         "control_number": "CCC000604840",
@@ -80063,7 +80061,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1480": [
+    "ATHL M1309": [
       {
         "college": "Golden West College",
         "control_number": "CCC000604839",
@@ -80112,7 +80110,7 @@
         "top_code": "0835.10: Physical Fitness and Body Movement"
       }
     ],
-    "KINE M1623": [
+    "ATHL M1325": [
       {
         "college": "Golden West College",
         "control_number": "CCC000604841",
@@ -80132,7 +80130,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1617": [
+    "ATHL M1319": [
       {
         "college": "Coalinga College",
         "control_number": "CCC000549243",
@@ -80709,6 +80707,42 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Antelope Valley College",
+        "control_number": "CCC000640973",
+        "subject": "IATH",
+        "course_number": "295",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Fresno City College",
+        "control_number": "CCC000594827",
+        "subject": "PE",
+        "course_number": "44B",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Las Positas College",
+        "control_number": "CCC000657863",
+        "subject": "KIN",
+        "course_number": "43B",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Shasta College",
+        "control_number": "CCC000581448",
+        "subject": "PEAT",
+        "course_number": "35",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
     "ATHL M1092": [
@@ -81201,6 +81235,51 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Citrus College",
+        "control_number": "CCC000550198",
+        "subject": "KINC",
+        "course_number": "232",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Hartnell College",
+        "control_number": "CCC000531568",
+        "subject": "PEIN",
+        "course_number": "17",
+        "units": 1.5,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Los Medanos College",
+        "control_number": "CCC000317979",
+        "subject": "KNICA",
+        "course_number": "79",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Chabot College",
+        "control_number": "CCC000552342",
+        "subject": "ATHLMB",
+        "course_number": "11",
+        "units": 1.5,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Glendale Community College",
+        "control_number": "CCC000575571",
+        "subject": "ATHPE",
+        "course_number": "108",
+        "units": 2.5,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
     "ATHL M1148": [
@@ -81481,6 +81560,114 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Antelope Valley College",
+        "control_number": "CCC000640971",
+        "subject": "IATH",
+        "course_number": "250",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "City College of San Francisco",
+        "control_number": "CCC000362234",
+        "subject": "PE A",
+        "course_number": "85",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "College of the Redwoods",
+        "control_number": "CCC000614881",
+        "subject": "PE",
+        "course_number": "49",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "College of the Sequoias",
+        "control_number": "CCC000566366",
+        "subject": "IA",
+        "course_number": "032AD",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Contra Costa College",
+        "control_number": "CCC000310476",
+        "subject": "PEIC",
+        "course_number": "180",
+        "units": 0.1,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "De Anza College",
+        "control_number": "CCC000357100",
+        "subject": "P E",
+        "course_number": "039M",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "De Anza College",
+        "control_number": "CCC000519347",
+        "subject": "P E",
+        "course_number": "39MX",
+        "units": 1.5,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "De Anza College",
+        "control_number": "CCC000573688",
+        "subject": "P E",
+        "course_number": "39MY",
+        "units": 2.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Irvine Valley College",
+        "control_number": "CCC000562805",
+        "subject": "IA",
+        "course_number": "15",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Las Positas College",
+        "control_number": "CCC000574804",
+        "subject": "KIN",
+        "course_number": "38B",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Merritt College",
+        "control_number": "CCC000543800",
+        "subject": "ATHL",
+        "course_number": "30",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Saddleback College",
+        "control_number": "CCC000639864",
+        "subject": "IA",
+        "course_number": "23",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
     "ATHL M1196": [
@@ -81645,6 +81832,42 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Antelope Valley College",
+        "control_number": "CCC000640967",
+        "subject": "IATH",
+        "course_number": "215",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Contra Costa College",
+        "control_number": "CCC000175799",
+        "subject": "PEIC",
+        "course_number": "201",
+        "units": 0.1,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "City College of San Francisco",
+        "control_number": "CCC000361181",
+        "subject": "PE A",
+        "course_number": "67",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Hartnell College",
+        "control_number": "CCC000531888",
+        "subject": "PEIN",
+        "course_number": "21",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
     "ATHL M1184": [
@@ -81662,44 +81885,6 @@
         "control_number": "CCC000562813",
         "subject": "IA",
         "course_number": "1",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "PEDU M1043": [
-      {
-        "college": "Cuesta College",
-        "control_number": "CCC000321185",
-        "subject": "ATHL",
-        "course_number": "291",
-        "units": 1.5,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Hartnell College",
-        "control_number": "CCC000595770",
-        "subject": "PEIN",
-        "course_number": "27",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Palomar College",
-        "control_number": "CCC000573884",
-        "subject": "ACS",
-        "course_number": "135",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Shasta College",
-        "control_number": "CCC000525950",
-        "subject": "PEAT",
-        "course_number": "25",
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
@@ -82206,47 +82391,45 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1024": [
+    "ATHL M1335": [
       {
-        "college": "Chabot College",
-        "control_number": "CCC000552342",
-        "subject": "ATHLMB",
-        "course_number": "11",
-        "units": 1.5,
+        "college": "Cerritos College",
+        "control_number": "CCC000551332",
+        "subject": "ATH",
+        "course_number": "232L",
+        "units": 3.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
       },
       {
-        "college": "Glendale Community College",
-        "control_number": "CCC000575571",
-        "subject": "ATHPE",
-        "course_number": "108",
-        "units": 2.5,
+        "college": "Long Beach City College",
+        "control_number": "CCC000542167",
+        "subject": "KINIA",
+        "course_number": "23AD",
+        "units": 3.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "KINE M1811": [
+      },
       {
-        "college": "Cuesta College",
-        "control_number": "CCC000542472",
-        "subject": "ATHL",
-        "course_number": "241",
+        "college": "Mt. San Antonio College",
+        "control_number": "CCC000610162",
+        "subject": "KINX",
+        "course_number": "48",
         "units": 0.5,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
       },
       {
-        "college": "Saddleback College",
-        "control_number": "CCC000562108",
-        "subject": "IA",
-        "course_number": "7",
+        "college": "Santa Ana College",
+        "control_number": "CCC000525677",
+        "subject": "KNIA",
+        "course_number": "209",
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1815": [
+    "ATHL M1337": [
       {
         "college": "Golden West College",
         "control_number": "CCC000604843",
@@ -82275,7 +82458,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1857": [
+    "ATHL M1352": [
       {
         "college": "Golden West College",
         "control_number": "CCC000604842",
@@ -82304,7 +82487,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1470": [
+    "ATHL M1304": [
       {
         "college": "Cuesta College",
         "control_number": "CCC000542610",
@@ -82324,7 +82507,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1866": [
+    "ATHL M1357": [
       {
         "college": "Golden West College",
         "control_number": "CCC000604836",
@@ -82353,7 +82536,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1542": [
+    "ATHL M1315": [
       {
         "college": "Laney College",
         "control_number": "CCC000551538",
@@ -82373,7 +82556,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1817": [
+    "ATHL M1339": [
       {
         "college": "Golden West College",
         "control_number": "CCC000604902",
@@ -82393,7 +82576,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1883": [
+    "ATHL M1361": [
       {
         "college": "Golden West College",
         "control_number": "CCC000645614",
@@ -82507,7 +82690,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1818": [
+    "ATHL M1340": [
       {
         "college": "Golden West College",
         "control_number": "CCC000604903",
@@ -82527,7 +82710,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1884": [
+    "ATHL M1362": [
       {
         "college": "Golden West College",
         "control_number": "CCC000604925",
@@ -82556,7 +82739,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1812": [
+    "ATHL M1334": [
       {
         "college": "Golden West College",
         "control_number": "CCC000604904",
@@ -82576,7 +82759,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1839": [
+    "ATHL M1348": [
       {
         "college": "Golden West College",
         "control_number": "CCC000604799",
@@ -82645,47 +82828,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1058": [
-      {
-        "college": "Glendale Community College",
-        "control_number": "CCC000559737",
-        "subject": "PE",
-        "course_number": "246",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.00: Physical Education"
-      },
-      {
-        "college": "Glendale Community College",
-        "control_number": "CCC000567874",
-        "subject": "ATHPE",
-        "course_number": "128",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "PEDU M1061": [
-      {
-        "college": "Glendale Community College",
-        "control_number": "CCC000559082",
-        "subject": "PE",
-        "course_number": "244",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Glendale Community College",
-        "control_number": "CCC000567876",
-        "subject": "ATHPE",
-        "course_number": "126",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "PEDU M1020": [
+    "ATHL M1247": [
       {
         "college": "Butte College",
         "control_number": "CCC000545584",
@@ -169993,7 +170136,7 @@
         "top_code": "1506.00: Speech Communication"
       }
     ],
-    "PEDU M1050": [
+    "COMM M1102": [
       {
         "college": "Grossmont College",
         "control_number": "CCC000153662",
@@ -263570,7 +263713,7 @@
         "top_code": "0835.10: Physical Fitness and Body Movement"
       }
     ],
-    "PEDU M1005": [
+    "PEDS M1031": [
       {
         "college": "Grossmont College",
         "control_number": "CCC000194741",
@@ -292283,6 +292426,33 @@
         "units": 2.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Feather River College",
+        "control_number": "CCC000560407",
+        "subject": "HES",
+        "course_number": "219",
+        "units": 2.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Palomar College",
+        "control_number": "CCC000558899",
+        "subject": "ACS",
+        "course_number": "180",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Pasadena City College",
+        "control_number": "CCC000606806",
+        "subject": "KATH",
+        "course_number": "99",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
     "ATHL M1160": [
@@ -293194,7 +293364,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1043": [
+    "ATHL M1227": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000342354",
@@ -293214,7 +293384,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1044": [
+    "ATHL M1218": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000343071",
@@ -293839,7 +294009,7 @@
         "top_code": "0835.20: Fitness Trainer"
       }
     ],
-    "KINE M1231": [
+    "ATHL M1263": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000139339",
@@ -293859,7 +294029,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1233": [
+    "ATHL M1219": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000021826",
@@ -293879,7 +294049,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1256": [
+    "ATHL M1273": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000549967",
@@ -293908,7 +294078,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1259": [
+    "ATHL M1220": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000549966",
@@ -293937,7 +294107,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1274": [
+    "ATHL M1278": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000618935",
@@ -293966,7 +294136,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1275": [
+    "ATHL M1221": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000618936",
@@ -294053,7 +294223,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1675": [
+    "ATHL M1351": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000549965",
@@ -294082,7 +294252,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1697": [
+    "ATHL M1224": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000549964",
@@ -294111,7 +294281,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1677": [
+    "ATHL M1356": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000107615",
@@ -294131,7 +294301,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1699": [
+    "ATHL M1225": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000149376",
@@ -294151,7 +294321,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1506": [
+    "ATHL M1312": [
       {
         "college": "San Diego Mesa College",
         "control_number": "CCC000622309",
@@ -294171,7 +294341,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1507": [
+    "ATHL M1222": [
       {
         "college": "San Diego Mesa College",
         "control_number": "CCC000622310",
@@ -294191,7 +294361,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1678": [
+    "ATHL M1359": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000342617",
@@ -294211,7 +294381,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1700": [
+    "ATHL M1226": [
       {
         "college": "San Diego City College",
         "control_number": "CCC000504365",
@@ -294231,7 +294401,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1668": [
+    "ATHL M1347": [
       {
         "college": "San Diego Mesa College",
         "control_number": "CCC000612042",
@@ -294251,7 +294421,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1690": [
+    "ATHL M1223": [
       {
         "college": "San Diego Mesa College",
         "control_number": "CCC000612043",
@@ -294539,54 +294709,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1055": [
-      {
-        "college": "College of San Mateo",
-        "control_number": "CCC000546397",
-        "subject": "AQUA",
-        "course_number": "109.1",
-        "units": 0.5,
-        "credit_status": "Credit",
-        "top_code": "0835.00: Physical Education"
-      },
-      {
-        "college": "Rio Hondo College",
-        "control_number": "CCC000383863",
-        "subject": "KINA",
-        "course_number": "108",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.00: Physical Education"
-      },
-      {
-        "college": "San Diego Mesa College",
-        "control_number": "CCC000067169",
-        "subject": "EXSC",
-        "course_number": "184A",
-        "units": 0.5,
-        "credit_status": "Credit",
-        "top_code": "0835.00: Physical Education"
-      },
-      {
-        "college": "San Diego Miramar College",
-        "control_number": "CCC000345383",
-        "subject": "EXSC",
-        "course_number": "184A",
-        "units": 0.5,
-        "credit_status": "Credit",
-        "top_code": "0835.00: Physical Education"
-      },
-      {
-        "college": "Southwestern College",
-        "control_number": "CCC000551677",
-        "subject": "ES/A",
-        "course_number": "260",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.00: Physical Education"
-      }
-    ],
-    "PEDU M1056": [
+    "KINE M1898": [
       {
         "college": "College of San Mateo",
         "control_number": "CCC000546398",
@@ -294624,7 +294747,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1057": [
+    "KINE M1901": [
       {
         "college": "College of San Mateo",
         "control_number": "CCC000546399",
@@ -294662,7 +294785,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1073": [
+    "KINE M1904": [
       {
         "college": "College of San Mateo",
         "control_number": "CCC000546400",
@@ -314407,7 +314530,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1035": [
+    "ATHL M1305": [
       {
         "college": "CaÃ±ada College",
         "control_number": "CCC000221831",
@@ -338204,7 +338327,7 @@
         "top_code": "4930.62: Secondary Education (Grades 9-12) and G.E.D."
       }
     ],
-    "PEDU M9004": [
+    "KINE M9020": [
       {
         "college": "Chabot College",
         "control_number": "CCC000550903",
@@ -340024,36 +340147,7 @@
         "top_code": "1201.00: Health Occupations, General"
       }
     ],
-    "PEDU M1064": [
-      {
-        "college": "Feather River College",
-        "control_number": "CCC000560407",
-        "subject": "HES",
-        "course_number": "219",
-        "units": 2.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Palomar College",
-        "control_number": "CCC000558899",
-        "subject": "ACS",
-        "course_number": "180",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Pasadena City College",
-        "control_number": "CCC000606806",
-        "subject": "KATH",
-        "course_number": "99",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "PEDU M9005": [
+    "KINE M9021": [
       {
         "college": "Feather River College",
         "control_number": "CCC000517625",
@@ -363621,7 +363715,7 @@
         "top_code": "1228.00: Athletic Training and Sports Medicine"
       }
     ],
-    "PEDU M1044": [
+    "ATHL M1313": [
       {
         "college": "Fresno City College",
         "control_number": "CCC000632355",
@@ -363650,117 +363744,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1059": [
-      {
-        "college": "Antelope Valley College",
-        "control_number": "CCC000640971",
-        "subject": "IATH",
-        "course_number": "250",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "City College of San Francisco",
-        "control_number": "CCC000362234",
-        "subject": "PE A",
-        "course_number": "85",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "College of the Redwoods",
-        "control_number": "CCC000614881",
-        "subject": "PE",
-        "course_number": "49",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "College of the Sequoias",
-        "control_number": "CCC000566366",
-        "subject": "IA",
-        "course_number": "032AD",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Contra Costa College",
-        "control_number": "CCC000310476",
-        "subject": "PEIC",
-        "course_number": "180",
-        "units": 0.1,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "De Anza College",
-        "control_number": "CCC000357100",
-        "subject": "P E",
-        "course_number": "039M",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "De Anza College",
-        "control_number": "CCC000519347",
-        "subject": "P E",
-        "course_number": "39MX",
-        "units": 1.5,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "De Anza College",
-        "control_number": "CCC000573688",
-        "subject": "P E",
-        "course_number": "39MY",
-        "units": 2.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Irvine Valley College",
-        "control_number": "CCC000562805",
-        "subject": "IA",
-        "course_number": "15",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Las Positas College",
-        "control_number": "CCC000574804",
-        "subject": "KIN",
-        "course_number": "38B",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Merritt College",
-        "control_number": "CCC000543800",
-        "subject": "ATHL",
-        "course_number": "30",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Saddleback College",
-        "control_number": "CCC000639864",
-        "subject": "IA",
-        "course_number": "23",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "KINE M1200": [
+    "ATHL M1252": [
       {
         "college": "College of the Sequoias",
         "control_number": "CCC000556984",
@@ -363858,27 +363842,7 @@
         "top_code": "0945.00: Industrial Systems Technology and Maintenance"
       }
     ],
-    "PEDU M1036": [
-      {
-        "college": "Antelope Valley College",
-        "control_number": "CCC000640968",
-        "subject": "IATH",
-        "course_number": "230",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "City College of San Francisco",
-        "control_number": "CCC000380622",
-        "subject": "PE A",
-        "course_number": "82",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "PEDU M1052": [
+    "ATHL M1328": [
       {
         "college": "Antelope Valley College",
         "control_number": "CCC000640969",
@@ -363907,35 +363871,6 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1060": [
-      {
-        "college": "Antelope Valley College",
-        "control_number": "CCC000640771",
-        "subject": "IATH",
-        "course_number": "280",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Irvine Valley College",
-        "control_number": "CCC000562803",
-        "subject": "IA",
-        "course_number": "19",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Las Positas College",
-        "control_number": "CCC000642849",
-        "subject": "KIN",
-        "course_number": "37B",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
     "ATHL M1127": [
       {
         "college": "Antelope Valley College",
@@ -363956,152 +363891,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1026": [
-      {
-        "college": "Antelope Valley College",
-        "control_number": "CCC000640973",
-        "subject": "IATH",
-        "course_number": "295",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Fresno City College",
-        "control_number": "CCC000594827",
-        "subject": "PE",
-        "course_number": "44B",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Las Positas College",
-        "control_number": "CCC000657863",
-        "subject": "KIN",
-        "course_number": "43B",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Shasta College",
-        "control_number": "CCC000581448",
-        "subject": "PEAT",
-        "course_number": "35",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "PEDU M1037": [
-      {
-        "college": "Antelope Valley College",
-        "control_number": "CCC000640767",
-        "subject": "IATH",
-        "course_number": "235",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "City College of San Francisco",
-        "control_number": "CCC000348935",
-        "subject": "PE A",
-        "course_number": "69",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Feather River College",
-        "control_number": "CCC000549872",
-        "subject": "HES",
-        "course_number": "208",
-        "units": 2.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "PEDU M1053": [
-      {
-        "college": "Antelope Valley College",
-        "control_number": "CCC000640970",
-        "subject": "IATH",
-        "course_number": "245",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Glendale Community College",
-        "control_number": "CCC000574946",
-        "subject": "ATHPE",
-        "course_number": "120",
-        "units": 2.5,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Irvine Valley College",
-        "control_number": "CCC000562912",
-        "subject": "IA",
-        "course_number": "7",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Moorpark College",
-        "control_number": "CCC000571635",
-        "subject": "ICA",
-        "course_number": "M36",
-        "units": 4.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "PEDU M1063": [
-      {
-        "college": "Antelope Valley College",
-        "control_number": "CCC000640967",
-        "subject": "IATH",
-        "course_number": "215",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Contra Costa College",
-        "control_number": "CCC000175799",
-        "subject": "PEIC",
-        "course_number": "201",
-        "units": 0.1,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "PEDU M1045": [
-      {
-        "college": "Antelope Valley College",
-        "control_number": "CCC000640770",
-        "subject": "IATH",
-        "course_number": "275",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Feather River College",
-        "control_number": "CCC000549870",
-        "subject": "HES",
-        "course_number": "212",
-        "units": 2.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "KINE M1466": [
+    "ATHL M1301": [
       {
         "college": "Antelope Valley College",
         "control_number": "CCC000544301",
@@ -364383,6 +364173,24 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Antelope Valley College",
+        "control_number": "CCC000640968",
+        "subject": "IATH",
+        "course_number": "230",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "City College of San Francisco",
+        "control_number": "CCC000380622",
+        "subject": "PE A",
+        "course_number": "82",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
     "ATHL M1101": [
@@ -364500,6 +364308,33 @@
         "subject": "SPORT",
         "course_number": "325",
         "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Antelope Valley College",
+        "control_number": "CCC000640767",
+        "subject": "IATH",
+        "course_number": "235",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "City College of San Francisco",
+        "control_number": "CCC000348935",
+        "subject": "PE A",
+        "course_number": "69",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Feather River College",
+        "control_number": "CCC000549872",
+        "subject": "HES",
+        "course_number": "208",
+        "units": 2.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
       }
@@ -365057,6 +364892,24 @@
         "subject": "SPORT",
         "course_number": "395",
         "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Antelope Valley College",
+        "control_number": "CCC000640770",
+        "subject": "IATH",
+        "course_number": "275",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Feather River College",
+        "control_number": "CCC000549870",
+        "subject": "HES",
+        "course_number": "212",
+        "units": 2.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
       }
@@ -378374,7 +378227,7 @@
         "top_code": "0835.10: Physical Fitness and Body Movement"
       }
     ],
-    "PEDU M1013": [
+    "KINE M1907": [
       {
         "college": "Cabrillo College",
         "control_number": "CCC000559965",
@@ -383869,7 +383722,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1191": [
+    "ATHL M1244": [
       {
         "college": "Cypress College",
         "control_number": "CCC000652184",
@@ -385113,7 +384966,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1051": [
+    "KINE M1922": [
       {
         "college": "Butte College",
         "control_number": "CCC000534558",
@@ -385926,7 +385779,7 @@
         "top_code": "1270.00: Kinesiology"
       }
     ],
-    "PEDU M1054": [
+    "KINE M1924": [
       {
         "college": "Cabrillo College",
         "control_number": "CCC000559963",
@@ -387747,7 +387600,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1462": [
+    "ATHL M1297": [
       {
         "college": "Moreno Valley College",
         "control_number": "CCC000652300",
@@ -401751,7 +401604,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1011": [
+    "KINE M1905": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000552372",
@@ -401838,7 +401691,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1027": [
+    "KINE M1914": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000552371",
@@ -402947,7 +402800,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1066": [
+    "ATHL M1331": [
       {
         "college": "Los Angeles Trade Technical College",
         "control_number": "CCC000455582",
@@ -402967,7 +402820,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1062": [
+    "ATHL M1330": [
       {
         "college": "Los Angeles Trade Technical College",
         "control_number": "CCC000233444",
@@ -403072,7 +402925,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1031": [
+    "KINE M1918": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000547457",
@@ -403179,6 +403032,33 @@
         "units": 0.5,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "College of the Canyons",
+        "control_number": "CCC000545843",
+        "subject": "KPEI",
+        "course_number": "275B",
+        "units": 2.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Madera College",
+        "control_number": "CCC000641305",
+        "subject": "PE",
+        "course_number": "37D",
+        "units": 2.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Shasta College",
+        "control_number": "CCC000536807",
+        "subject": "PEAT",
+        "course_number": "47",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
     "KINE M1550": [
@@ -403275,35 +403155,6 @@
         "units": 1.5,
         "credit_status": "Credit",
         "top_code": "0835.00: Physical Education"
-      }
-    ],
-    "PEDU M1023": [
-      {
-        "college": "Citrus College",
-        "control_number": "CCC000550198",
-        "subject": "KINC",
-        "course_number": "232",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Hartnell College",
-        "control_number": "CCC000531568",
-        "subject": "PEIN",
-        "course_number": "17",
-        "units": 1.5,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Los Medanos College",
-        "control_number": "CCC000317979",
-        "subject": "KNICA",
-        "course_number": "79",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
     "ATHL M1197": [
@@ -405668,7 +405519,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1014": [
+    "KINE M1908": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000628751",
@@ -405851,7 +405702,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1029": [
+    "KINE M1916": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000628749",
@@ -405911,7 +405762,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1028": [
+    "KINE M1915": [
       {
         "college": "Antelope Valley College",
         "control_number": "CCC000589568",
@@ -406028,35 +405879,6 @@
         "subject": "KFIT",
         "course_number": "7.1",
         "units": 1.5,
-        "credit_status": "Credit",
-        "top_code": "0835.00: Physical Education"
-      }
-    ],
-    "PEDU M1032": [
-      {
-        "college": "Mt. San Antonio College",
-        "control_number": "CCC000553841",
-        "subject": "KINF",
-        "course_number": "36B",
-        "units": 0.5,
-        "credit_status": "Credit",
-        "top_code": "0835.00: Physical Education"
-      },
-      {
-        "college": "Santa Rosa Junior College",
-        "control_number": "CCC000547695",
-        "subject": "KFIT",
-        "course_number": "7.2",
-        "units": 1.5,
-        "credit_status": "Credit",
-        "top_code": "0835.00: Physical Education"
-      },
-      {
-        "college": "Solano Community College",
-        "control_number": "CCC000625834",
-        "subject": "KINE",
-        "course_number": "012Y",
-        "units": 1.0,
         "credit_status": "Credit",
         "top_code": "0835.00: Physical Education"
       }
@@ -406213,7 +406035,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1067": [
+    "KINE M1925": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000628750",
@@ -407990,7 +407812,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1047": [
+    "KINE M1921": [
       {
         "college": "Evergreen Valley College",
         "control_number": "CCC000556923",
@@ -408562,7 +408384,7 @@
         "top_code": "1299.00: Other Health Occupations"
       }
     ],
-    "PEDU M1015": [
+    "KINE M1909": [
       {
         "college": "Santa Rosa Junior College",
         "control_number": "CCC000643337",
@@ -408582,7 +408404,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1016": [
+    "KINE M1910": [
       {
         "college": "Santa Rosa Junior College",
         "control_number": "CCC000643334",
@@ -408622,7 +408444,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1187": [
+    "ATHL M1241": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000547211",
@@ -408651,7 +408473,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1225": [
+    "ATHL M1258": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000633501",
@@ -408689,7 +408511,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1188": [
+    "ATHL M1242": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000547206",
@@ -408718,7 +408540,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1045": [
+    "ATHL M1228": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000547214",
@@ -408756,7 +408578,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1046": [
+    "ATHL M1229": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000552765",
@@ -408794,7 +408616,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1030": [
+    "KINE M1917": [
       {
         "college": "Santa Rosa Junior College",
         "control_number": "CCC000643332",
@@ -408814,7 +408636,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1192": [
+    "ATHL M1245": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000627184",
@@ -408843,7 +408665,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1048": [
+    "ATHL M1230": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000633541",
@@ -408881,7 +408703,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1049": [
+    "ATHL M1231": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000633545",
@@ -408919,7 +408741,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1193": [
+    "ATHL M1246": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000547207",
@@ -408948,7 +408770,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1052": [
+    "ATHL M1232": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000556709",
@@ -408986,7 +408808,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1068": [
+    "KINE M1926": [
       {
         "college": "Santa Rosa Junior College",
         "control_number": "CCC000643336",
@@ -409006,7 +408828,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1070": [
+    "KINE M1928": [
       {
         "college": "Santa Rosa Junior College",
         "control_number": "CCC000643333",
@@ -409026,7 +408848,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1071": [
+    "KINE M1929": [
       {
         "college": "Santa Rosa Junior College",
         "control_number": "CCC000643335",
@@ -409046,7 +408868,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1072": [
+    "KINE M1930": [
       {
         "college": "Santa Rosa Junior College",
         "control_number": "CCC000643331",
@@ -409066,7 +408888,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1195": [
+    "ATHL M1249": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000633525",
@@ -409095,7 +408917,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1054": [
+    "ATHL M1234": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000633486",
@@ -409133,7 +408955,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1057": [
+    "ATHL M1237": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000633490",
@@ -409200,7 +409022,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1424": [
+    "ATHL M1282": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000633497",
@@ -409238,7 +409060,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1018": [
+    "KINE M1912": [
       {
         "college": "Antelope Valley College",
         "control_number": "CCC000258684",
@@ -409267,7 +409089,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1198": [
+    "ATHL M1250": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000547212",
@@ -409296,7 +409118,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1055": [
+    "ATHL M1235": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000633482",
@@ -409334,7 +409156,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1199": [
+    "ATHL M1251": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000590799",
@@ -409363,7 +409185,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1058": [
+    "ATHL M1238": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000590801",
@@ -409401,7 +409223,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1194": [
+    "ATHL M1248": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000547210",
@@ -409430,7 +409252,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1053": [
+    "ATHL M1233": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000633515",
@@ -409468,7 +409290,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1056": [
+    "ATHL M1236": [
       {
         "college": "Chaffey College",
         "control_number": "CCC000633549",
@@ -409506,7 +409328,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1001": [
+    "KINE M1923": [
       {
         "college": "Antelope Valley College",
         "control_number": "CCC000568519",
@@ -409526,7 +409348,7 @@
         "top_code": "0835.20: Fitness Trainer"
       }
     ],
-    "PEDU M1002": [
+    "KINE M1896": [
       {
         "college": "Antelope Valley College",
         "control_number": "CCC000568520",
@@ -409546,7 +409368,7 @@
         "top_code": "0835.20: Fitness Trainer"
       }
     ],
-    "PEDU M1003": [
+    "KINE M1899": [
       {
         "college": "Antelope Valley College",
         "control_number": "CCC000568521",
@@ -409566,7 +409388,7 @@
         "top_code": "0835.20: Fitness Trainer"
       }
     ],
-    "PEDU M1004": [
+    "KINE M1902": [
       {
         "college": "Antelope Valley College",
         "control_number": "CCC000568522",
@@ -409626,7 +409448,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1038": [
+    "ATHL M1311": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000552215",
@@ -409646,7 +409468,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1048": [
+    "ATHL M1320": [
       {
         "college": "San Bernardino Valley College",
         "control_number": "CCC000552216",
@@ -409686,7 +409508,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1831": [
+    "ATHL M1346": [
       {
         "college": "Mt. San Antonio College",
         "control_number": "CCC000520953",
@@ -409715,7 +409537,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1012": [
+    "KINE M1906": [
       {
         "college": "Diablo Valley College",
         "control_number": "CCC000631706",
@@ -411991,6 +411813,33 @@
         "units": 0.5,
         "credit_status": "Credit",
         "top_code": "0835.00: Physical Education"
+      },
+      {
+        "college": "Mt. San Antonio College",
+        "control_number": "CCC000553841",
+        "subject": "KINF",
+        "course_number": "36B",
+        "units": 0.5,
+        "credit_status": "Credit",
+        "top_code": "0835.00: Physical Education"
+      },
+      {
+        "college": "Santa Rosa Junior College",
+        "control_number": "CCC000547695",
+        "subject": "KFIT",
+        "course_number": "7.2",
+        "units": 1.5,
+        "credit_status": "Credit",
+        "top_code": "0835.00: Physical Education"
+      },
+      {
+        "college": "Solano Community College",
+        "control_number": "CCC000625834",
+        "subject": "KINE",
+        "course_number": "012Y",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.00: Physical Education"
       }
     ],
     "KINE M1656": [
@@ -412013,7 +411862,7 @@
         "top_code": "0837.00: Health Education"
       }
     ],
-    "KINE M1814": [
+    "ATHL M1336": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551258",
@@ -412060,7 +411909,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1860": [
+    "ATHL M1355": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551480",
@@ -412145,7 +411994,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1185": [
+    "ATHL M1240": [
       {
         "college": "Diablo Valley College",
         "control_number": "CCC000612457",
@@ -412582,7 +412431,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1022": [
+    "ATHL M1262": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000547092",
@@ -412602,7 +412451,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1025": [
+    "ATHL M1272": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000653559",
@@ -412642,7 +412491,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1049": [
+    "ATHL M1323": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000545839",
@@ -412662,7 +412511,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1074": [
+    "ATHL M1343": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000545841",
@@ -412682,36 +412531,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1075": [
-      {
-        "college": "College of the Canyons",
-        "control_number": "CCC000545843",
-        "subject": "KPEI",
-        "course_number": "275B",
-        "units": 2.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Madera College",
-        "control_number": "CCC000641305",
-        "subject": "PE",
-        "course_number": "37D",
-        "units": 2.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Shasta College",
-        "control_number": "CCC000536807",
-        "subject": "PEAT",
-        "course_number": "47",
-        "units": 1.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "PEDU M1076": [
+    "ATHL M1344": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000582857",
@@ -412731,7 +412551,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1046": [
+    "ATHL M1317": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000545847",
@@ -412751,7 +412571,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1077": [
+    "ATHL M1345": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000545849",
@@ -412851,7 +412671,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1148": [
+    "ATHL M1239": [
       {
         "college": "College of the Canyons",
         "control_number": "CCC000515544",
@@ -474474,7 +474294,7 @@
         "top_code": "1501.00: English"
       }
     ],
-    "PEDU M9006": [
+    "KINE M9022": [
       {
         "college": "Citrus College",
         "control_number": "CCC000635167",
@@ -496362,7 +496182,7 @@
         "top_code": "1270.00: Kinesiology"
       }
     ],
-    "KINE M1437": [
+    "ATHL M1283": [
       {
         "college": "Clovis Community College",
         "control_number": "CCC000594832",
@@ -496382,7 +496202,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1442": [
+    "ATHL M1287": [
       {
         "college": "Clovis Community College",
         "control_number": "CCC000569479",
@@ -496429,7 +496249,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1443": [
+    "ATHL M1288": [
       {
         "college": "Madera College",
         "control_number": "CCC000641304",
@@ -496478,7 +496298,7 @@
         "top_code": "0835.10: Physical Fitness and Body Movement"
       }
     ],
-    "KINE M1438": [
+    "ATHL M1284": [
       {
         "college": "Clovis Community College",
         "control_number": "CCC000567018",
@@ -496498,7 +496318,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1445": [
+    "ATHL M1289": [
       {
         "college": "Clovis Community College",
         "control_number": "CCC000651205",
@@ -496518,7 +496338,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1439": [
+    "ATHL M1285": [
       {
         "college": "Clovis Community College",
         "control_number": "CCC000606027",
@@ -496547,7 +496367,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1446": [
+    "ATHL M1290": [
       {
         "college": "Clovis Community College",
         "control_number": "CCC000651214",
@@ -496732,7 +496552,7 @@
         "top_code": "0835.10: Physical Fitness and Body Movement"
       }
     ],
-    "KINE M1627": [
+    "ATHL M1318": [
       {
         "college": "Reedley College",
         "control_number": "CCC000604650",
@@ -497288,7 +497108,7 @@
         "top_code": "0835.10: Physical Fitness and Body Movement"
       }
     ],
-    "KINE M1262": [
+    "ATHL M1269": [
       {
         "college": "Santa Barbara City College",
         "control_number": "CCC000383945",
@@ -498039,6 +497859,42 @@
         "units": 2.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Cuesta College",
+        "control_number": "CCC000321185",
+        "subject": "ATHL",
+        "course_number": "291",
+        "units": 1.5,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Hartnell College",
+        "control_number": "CCC000595770",
+        "subject": "PEIN",
+        "course_number": "27",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Palomar College",
+        "control_number": "CCC000573884",
+        "subject": "ACS",
+        "course_number": "135",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Shasta College",
+        "control_number": "CCC000525950",
+        "subject": "PEAT",
+        "course_number": "25",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
     "ATHL M1177": [
@@ -498517,6 +498373,33 @@
         "subject": "PE",
         "course_number": "191A",
         "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Antelope Valley College",
+        "control_number": "CCC000640771",
+        "subject": "IATH",
+        "course_number": "280",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Irvine Valley College",
+        "control_number": "CCC000562803",
+        "subject": "IA",
+        "course_number": "19",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Las Positas College",
+        "control_number": "CCC000642849",
+        "subject": "KIN",
+        "course_number": "37B",
+        "units": 1.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
       }
@@ -499589,7 +499472,7 @@
         "top_code": "1270.00: Kinesiology"
       }
     ],
-    "KINE M1373": [
+    "ATHL M1280": [
       {
         "college": "Compton College",
         "control_number": "CCC000523327",
@@ -499609,7 +499492,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1620": [
+    "ATHL M1321": [
       {
         "college": "Compton College",
         "control_number": "CCC000523330",
@@ -499629,7 +499512,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1759": [
+    "ATHL M1332": [
       {
         "college": "Compton College",
         "control_number": "CCC000523332",
@@ -499925,7 +499808,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1622": [
+    "ATHL M1324": [
       {
         "college": "De Anza College",
         "control_number": "CCC000296071",
@@ -500186,7 +500069,7 @@
         "top_code": "1270.00: Kinesiology"
       }
     ],
-    "KINE M1858": [
+    "ATHL M1353": [
       {
         "college": "De Anza College",
         "control_number": "CCC000049851",
@@ -500478,27 +500361,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1033": [
-      {
-        "college": "College of the Redwoods",
-        "control_number": "CCC000654536",
-        "subject": "PE",
-        "course_number": "29",
-        "units": 2.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Glendale Community College",
-        "control_number": "CCC000602467",
-        "subject": "ATHPE",
-        "course_number": "163",
-        "units": 1.5,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      }
-    ],
-    "KINE M1886": [
+    "ATHL M1363": [
       {
         "college": "Cuesta College",
         "control_number": "CCC000183870",
@@ -500536,7 +500399,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1840": [
+    "ATHL M1349": [
       {
         "college": "Cuesta College",
         "control_number": "CCC000314830",
@@ -500603,7 +500466,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1190": [
+    "ATHL M1243": [
       {
         "college": "Clovis Community College",
         "control_number": "CCC000563129",
@@ -500623,7 +500486,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1760": [
+    "ATHL M1333": [
       {
         "college": "Compton College",
         "control_number": "CCC000523331",
@@ -500643,7 +500506,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1222": [
+    "ATHL M1256": [
       {
         "college": "Compton College",
         "control_number": "CCC000525928",
@@ -500663,7 +500526,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1223": [
+    "ATHL M1257": [
       {
         "college": "De Anza College",
         "control_number": "CCC000515364",
@@ -500743,7 +500606,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1853": [
+    "ATHL M1354": [
       {
         "college": "De Anza College",
         "control_number": "CCC000301484",
@@ -501085,26 +500948,6 @@
         "units": 1.5,
         "credit_status": "Credit",
         "top_code": "0835.80: Adapted Physical Education"
-      }
-    ],
-    "PEDU M1065": [
-      {
-        "college": "City College of San Francisco",
-        "control_number": "CCC000361181",
-        "subject": "PE A",
-        "course_number": "67",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
-      },
-      {
-        "college": "Hartnell College",
-        "control_number": "CCC000531888",
-        "subject": "PEIN",
-        "course_number": "21",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
     "KINE M1064": [
@@ -501502,7 +501345,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "PEDU M1069": [
+    "KINE M1927": [
       {
         "college": "Chabot College",
         "control_number": "CCC000545186",
@@ -503240,6 +503083,42 @@
         "units": 2.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Antelope Valley College",
+        "control_number": "CCC000640970",
+        "subject": "IATH",
+        "course_number": "245",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Glendale Community College",
+        "control_number": "CCC000574946",
+        "subject": "ATHPE",
+        "course_number": "120",
+        "units": 2.5,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Irvine Valley College",
+        "control_number": "CCC000562912",
+        "subject": "IA",
+        "course_number": "7",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
+      },
+      {
+        "college": "Moorpark College",
+        "control_number": "CCC000571635",
+        "subject": "ICA",
+        "course_number": "M36",
+        "units": 4.0,
+        "credit_status": "Credit",
+        "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
     "ATHL M1176": [
@@ -503439,7 +503318,7 @@
         "top_code": "0835.10: Physical Fitness and Body Movement"
       }
     ],
-    "PEDU M1021": [
+    "ATHL M1255": [
       {
         "college": "Contra Costa College",
         "control_number": "CCC000038336",
@@ -503673,7 +503552,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1212": [
+    "ATHL M1254": [
       {
         "college": "Modesto Junior College",
         "control_number": "CCC000569487",
@@ -503693,7 +503572,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1250": [
+    "ATHL M1265": [
       {
         "college": "Modesto Junior College",
         "control_number": "CCC000608805",
@@ -503713,7 +503592,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1448": [
+    "ATHL M1291": [
       {
         "college": "Modesto Junior College",
         "control_number": "CCC000608812",
@@ -503733,7 +503612,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1453": [
+    "ATHL M1295": [
       {
         "college": "Modesto Junior College",
         "control_number": "CCC000608813",
@@ -503753,7 +503632,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1469": [
+    "ATHL M1303": [
       {
         "college": "Modesto Junior College",
         "control_number": "CCC000608815",
@@ -503773,22 +503652,22 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1450": [
+    "ATHL M1293": [
       {
-        "college": "Modesto Junior College",
-        "control_number": "CCC000608808",
-        "subject": "PEVM",
-        "course_number": "136",
-        "units": 3.0,
+        "college": "College of the Redwoods",
+        "control_number": "CCC000654536",
+        "subject": "PE",
+        "course_number": "29",
+        "units": 2.0,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
       },
       {
-        "college": "Modesto Junior College",
-        "control_number": "CCC000608816",
-        "subject": "PEVW",
-        "course_number": "136",
-        "units": 3.0,
+        "college": "Glendale Community College",
+        "control_number": "CCC000602467",
+        "subject": "ATHPE",
+        "course_number": "163",
+        "units": 1.5,
         "credit_status": "Credit",
         "top_code": "0835.50: Intercollegiate Athletics"
       }
@@ -503862,7 +503741,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "PEDU M1010": [
+    "PEDS M1036": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551239",
@@ -503965,7 +503844,7 @@
         "top_code": "0835.70: Aquatics and Lifesaving"
       }
     ],
-    "PEDU M1017": [
+    "KINE M1911": [
       {
         "college": "Cerritos College",
         "control_number": "CCC000551237",
@@ -504997,7 +504876,7 @@
         "top_code": "1221.00: Pharmacy Technology"
       }
     ],
-    "KINE M1440": [
+    "ATHL M1286": [
       {
         "college": "Palo Verde College",
         "control_number": "CCC000570645",
@@ -558055,7 +557934,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1540": [
+    "ATHL M1314": [
       {
         "college": "American River College",
         "control_number": "CCC000498601",
@@ -558677,7 +558556,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1227": [
+    "ATHL M1259": [
       {
         "college": "Cosumnes River College",
         "control_number": "CCC000559027",
@@ -558706,7 +558585,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1249": [
+    "ATHL M1266": [
       {
         "college": "American River College",
         "control_number": "CCC000566591",
@@ -558735,7 +558614,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1272": [
+    "ATHL M1276": [
       {
         "college": "Cosumnes River College",
         "control_number": "CCC000637621",
@@ -558755,7 +558634,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1461": [
+    "ATHL M1296": [
       {
         "college": "American River College",
         "control_number": "CCC000559511",
@@ -558784,7 +558663,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1465": [
+    "ATHL M1300": [
       {
         "college": "Cosumnes River College",
         "control_number": "CCC000550243",
@@ -558804,7 +558683,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1467": [
+    "ATHL M1302": [
       {
         "college": "American River College",
         "control_number": "CCC000568513",
@@ -558842,7 +558721,7 @@
         "top_code": "0835.00: Physical Education"
       }
     ],
-    "KINE M1463": [
+    "ATHL M1298": [
       {
         "college": "American River College",
         "control_number": "CCC000566580",
@@ -558862,7 +558741,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1464": [
+    "ATHL M1299": [
       {
         "college": "Cosumnes River College",
         "control_number": "CCC000558178",
@@ -558891,7 +558770,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1449": [
+    "ATHL M1292": [
       {
         "college": "American River College",
         "control_number": "CCC000566577",
@@ -565721,7 +565600,7 @@
         "top_code": "0835.50: Intercollegiate Athletics"
       }
     ],
-    "KINE M1251": [
+    "ATHL M1267": [
       {
         "college": "College of San Mateo",
         "control_number": "CCC000635417",
@@ -576839,6 +576718,51 @@
         "units": 0.5,
         "credit_status": "Credit",
         "top_code": "0835.10: Physical Fitness and Body Movement"
+      },
+      {
+        "college": "College of San Mateo",
+        "control_number": "CCC000546397",
+        "subject": "AQUA",
+        "course_number": "109.1",
+        "units": 0.5,
+        "credit_status": "Credit",
+        "top_code": "0835.00: Physical Education"
+      },
+      {
+        "college": "Rio Hondo College",
+        "control_number": "CCC000383863",
+        "subject": "KINA",
+        "course_number": "108",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.00: Physical Education"
+      },
+      {
+        "college": "San Diego Mesa College",
+        "control_number": "CCC000067169",
+        "subject": "EXSC",
+        "course_number": "184A",
+        "units": 0.5,
+        "credit_status": "Credit",
+        "top_code": "0835.00: Physical Education"
+      },
+      {
+        "college": "San Diego Miramar College",
+        "control_number": "CCC000345383",
+        "subject": "EXSC",
+        "course_number": "184A",
+        "units": 0.5,
+        "credit_status": "Credit",
+        "top_code": "0835.00: Physical Education"
+      },
+      {
+        "college": "Southwestern College",
+        "control_number": "CCC000551677",
+        "subject": "ES/A",
+        "course_number": "260",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "0835.00: Physical Education"
       }
     ],
     "AGRI M1002": [

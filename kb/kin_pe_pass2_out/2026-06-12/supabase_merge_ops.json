@@ -1,0 +1,682 @@
+{
+ "generated_at": "2026-06-12T20:31:51.123456+00:00",
+ "reviewer": "MAP@rccd.edu",
+ "ops": [
+  {
+   "course_id": "KINE M1607",
+   "field": "merge_into",
+   "value": "KINE M1596"
+  },
+  {
+   "course_id": "KINE M1561",
+   "field": "merge_into",
+   "value": "KINE M1596"
+  },
+  {
+   "course_id": "KINE M1593",
+   "field": "merge_into",
+   "value": "KINE M1596"
+  },
+  {
+   "course_id": "KINE M1595",
+   "field": "merge_into",
+   "value": "KINE M1596"
+  },
+  {
+   "course_id": "KINE M1556",
+   "field": "merge_into",
+   "value": "KINE M1596"
+  },
+  {
+   "course_id": "KINE M1605",
+   "field": "merge_into",
+   "value": "KINE M1596"
+  },
+  {
+   "course_id": "KINE M1587",
+   "field": "merge_into",
+   "value": "KINE M1596"
+  },
+  {
+   "course_id": "KINE M1603",
+   "field": "merge_into",
+   "value": "KINE M1596"
+  },
+  {
+   "course_id": "KINE M1589",
+   "field": "merge_into",
+   "value": "KINE M1596"
+  },
+  {
+   "course_id": "KINE M1596",
+   "field": "unified_title",
+   "value": "Physical Fitness"
+  },
+  {
+   "course_id": "KINE M1584",
+   "field": "merge_into",
+   "value": "KINE M1582"
+  },
+  {
+   "course_id": "KINE M1582",
+   "field": "unified_title",
+   "value": "Lifelong Fitness Lab"
+  },
+  {
+   "course_id": "KINE M1590",
+   "field": "merge_into",
+   "value": "KINE M1586"
+  },
+  {
+   "course_id": "KINE M1586",
+   "field": "unified_title",
+   "value": "Fitness for Life"
+  },
+  {
+   "course_id": "KINE M1577",
+   "field": "merge_into",
+   "value": "KINE M1305"
+  },
+  {
+   "course_id": "KINE M1284",
+   "field": "merge_into",
+   "value": "KINE M1305"
+  },
+  {
+   "course_id": "KINE M1305",
+   "field": "unified_title",
+   "value": "Walking/Jogging for Fitness — Beginning"
+  },
+  {
+   "course_id": "ATHL M1022",
+   "field": "merge_into",
+   "value": "ATHL M1021"
+  },
+  {
+   "course_id": "ATHL M1256",
+   "field": "merge_into",
+   "value": "ATHL M1021"
+  },
+  {
+   "course_id": "ATHL M1021",
+   "field": "unified_title",
+   "value": "Intercollegiate Badminton — Women"
+  },
+  {
+   "course_id": "ATHL M1005",
+   "field": "merge_into",
+   "value": "ATHL M1028"
+  },
+  {
+   "course_id": "ATHL M1029",
+   "field": "merge_into",
+   "value": "ATHL M1028"
+  },
+  {
+   "course_id": "ATHL M1031",
+   "field": "merge_into",
+   "value": "ATHL M1028"
+  },
+  {
+   "course_id": "ATHL M1032",
+   "field": "merge_into",
+   "value": "ATHL M1028"
+  },
+  {
+   "course_id": "ATHL M1258",
+   "field": "merge_into",
+   "value": "ATHL M1028"
+  },
+  {
+   "course_id": "ATHL M1261",
+   "field": "merge_into",
+   "value": "ATHL M1028"
+  },
+  {
+   "course_id": "ATHL M1264",
+   "field": "merge_into",
+   "value": "ATHL M1028"
+  },
+  {
+   "course_id": "ATHL M1028",
+   "field": "unified_title",
+   "value": "Intercollegiate Baseball"
+  },
+  {
+   "course_id": "ATHL M1045",
+   "field": "merge_into",
+   "value": "ATHL M1047"
+  },
+  {
+   "course_id": "ATHL M1059",
+   "field": "merge_into",
+   "value": "ATHL M1047"
+  },
+  {
+   "course_id": "ATHL M1060",
+   "field": "merge_into",
+   "value": "ATHL M1047"
+  },
+  {
+   "course_id": "ATHL M1228",
+   "field": "merge_into",
+   "value": "ATHL M1047"
+  },
+  {
+   "course_id": "ATHL M1270",
+   "field": "merge_into",
+   "value": "ATHL M1047"
+  },
+  {
+   "course_id": "ATHL M1271",
+   "field": "merge_into",
+   "value": "ATHL M1047"
+  },
+  {
+   "course_id": "ATHL M1047",
+   "field": "unified_title",
+   "value": "Intercollegiate Basketball — Men"
+  },
+  {
+   "course_id": "ATHL M1052",
+   "field": "merge_into",
+   "value": "ATHL M1053"
+  },
+  {
+   "course_id": "ATHL M1057",
+   "field": "merge_into",
+   "value": "ATHL M1053"
+  },
+  {
+   "course_id": "ATHL M1062",
+   "field": "merge_into",
+   "value": "ATHL M1053"
+  },
+  {
+   "course_id": "ATHL M1064",
+   "field": "merge_into",
+   "value": "ATHL M1053"
+  },
+  {
+   "course_id": "ATHL M1229",
+   "field": "merge_into",
+   "value": "ATHL M1053"
+  },
+  {
+   "course_id": "ATHL M1269",
+   "field": "merge_into",
+   "value": "ATHL M1053"
+  },
+  {
+   "course_id": "ATHL M1274",
+   "field": "merge_into",
+   "value": "ATHL M1053"
+  },
+  {
+   "course_id": "ATHL M1275",
+   "field": "merge_into",
+   "value": "ATHL M1053"
+  },
+  {
+   "course_id": "ATHL M1053",
+   "field": "unified_title",
+   "value": "Intercollegiate Basketball — Women"
+  },
+  {
+   "course_id": "ATHL M1066",
+   "field": "merge_into",
+   "value": "ATHL M1067"
+  },
+  {
+   "course_id": "ATHL M1068",
+   "field": "merge_into",
+   "value": "ATHL M1067"
+  },
+  {
+   "course_id": "ATHL M1069",
+   "field": "merge_into",
+   "value": "ATHL M1067"
+  },
+  {
+   "course_id": "ATHL M1279",
+   "field": "merge_into",
+   "value": "ATHL M1067"
+  },
+  {
+   "course_id": "ATHL M1067",
+   "field": "unified_title",
+   "value": "Intercollegiate Beach Volleyball"
+  },
+  {
+   "course_id": "ATHL M1102",
+   "field": "merge_into",
+   "value": "ATHL M1093"
+  },
+  {
+   "course_id": "ATHL M1230",
+   "field": "merge_into",
+   "value": "ATHL M1093"
+  },
+  {
+   "course_id": "ATHL M1307",
+   "field": "merge_into",
+   "value": "ATHL M1093"
+  },
+  {
+   "course_id": "ATHL M1308",
+   "field": "merge_into",
+   "value": "ATHL M1093"
+  },
+  {
+   "course_id": "ATHL M1093",
+   "field": "unified_title",
+   "value": "Intercollegiate Cross Country — Men"
+  },
+  {
+   "course_id": "ATHL M1104",
+   "field": "merge_into",
+   "value": "ATHL M1101"
+  },
+  {
+   "course_id": "ATHL M1231",
+   "field": "merge_into",
+   "value": "ATHL M1101"
+  },
+  {
+   "course_id": "ATHL M1309",
+   "field": "merge_into",
+   "value": "ATHL M1101"
+  },
+  {
+   "course_id": "ATHL M1310",
+   "field": "merge_into",
+   "value": "ATHL M1101"
+  },
+  {
+   "course_id": "ATHL M1101",
+   "field": "unified_title",
+   "value": "Intercollegiate Cross Country — Women"
+  },
+  {
+   "course_id": "ATHL M1132",
+   "field": "merge_into",
+   "value": "ATHL M1131"
+  },
+  {
+   "course_id": "ATHL M1131",
+   "field": "unified_title",
+   "value": "Intercollegiate Flag Football — Women"
+  },
+  {
+   "course_id": "ATHL M1011",
+   "field": "merge_into",
+   "value": "ATHL M1135"
+  },
+  {
+   "course_id": "ATHL M1136",
+   "field": "merge_into",
+   "value": "ATHL M1135"
+  },
+  {
+   "course_id": "ATHL M1141",
+   "field": "merge_into",
+   "value": "ATHL M1135"
+  },
+  {
+   "course_id": "ATHL M1142",
+   "field": "merge_into",
+   "value": "ATHL M1135"
+  },
+  {
+   "course_id": "ATHL M1232",
+   "field": "merge_into",
+   "value": "ATHL M1135"
+  },
+  {
+   "course_id": "ATHL M1321",
+   "field": "merge_into",
+   "value": "ATHL M1135"
+  },
+  {
+   "course_id": "ATHL M1322",
+   "field": "merge_into",
+   "value": "ATHL M1135"
+  },
+  {
+   "course_id": "ATHL M1325",
+   "field": "merge_into",
+   "value": "ATHL M1135"
+  },
+  {
+   "course_id": "ATHL M1135",
+   "field": "unified_title",
+   "value": "Intercollegiate Football"
+  },
+  {
+   "course_id": "ATHL M1145",
+   "field": "merge_into",
+   "value": "ATHL M1328"
+  },
+  {
+   "course_id": "ATHL M1329",
+   "field": "merge_into",
+   "value": "ATHL M1328"
+  },
+  {
+   "course_id": "ATHL M1328",
+   "field": "unified_title",
+   "value": "Intercollegiate Golf — Men"
+  },
+  {
+   "course_id": "ATHL M1146",
+   "field": "merge_into",
+   "value": "ATHL M1144"
+  },
+  {
+   "course_id": "ATHL M1144",
+   "field": "unified_title",
+   "value": "Intercollegiate Golf — Women"
+  },
+  {
+   "course_id": "ATHL M1204",
+   "field": "merge_into",
+   "value": "ATHL M1175"
+  },
+  {
+   "course_id": "ATHL M1234",
+   "field": "merge_into",
+   "value": "ATHL M1175"
+  },
+  {
+   "course_id": "ATHL M1332",
+   "field": "merge_into",
+   "value": "ATHL M1175"
+  },
+  {
+   "course_id": "ATHL M1336",
+   "field": "merge_into",
+   "value": "ATHL M1175"
+  },
+  {
+   "course_id": "ATHL M1337",
+   "field": "merge_into",
+   "value": "ATHL M1175"
+  },
+  {
+   "course_id": "ATHL M1175",
+   "field": "unified_title",
+   "value": "Intercollegiate Soccer — Men"
+  },
+  {
+   "course_id": "ATHL M1210",
+   "field": "merge_into",
+   "value": "ATHL M1194"
+  },
+  {
+   "course_id": "ATHL M1237",
+   "field": "merge_into",
+   "value": "ATHL M1194"
+  },
+  {
+   "course_id": "ATHL M1333",
+   "field": "merge_into",
+   "value": "ATHL M1194"
+  },
+  {
+   "course_id": "ATHL M1352",
+   "field": "merge_into",
+   "value": "ATHL M1194"
+  },
+  {
+   "course_id": "ATHL M1355",
+   "field": "merge_into",
+   "value": "ATHL M1194"
+  },
+  {
+   "course_id": "ATHL M1194",
+   "field": "unified_title",
+   "value": "Intercollegiate Soccer — Women"
+  },
+  {
+   "course_id": "ATHL M1014",
+   "field": "merge_into",
+   "value": "ATHL M1195"
+  },
+  {
+   "course_id": "ATHL M1191",
+   "field": "merge_into",
+   "value": "ATHL M1195"
+  },
+  {
+   "course_id": "ATHL M1196",
+   "field": "merge_into",
+   "value": "ATHL M1195"
+  },
+  {
+   "course_id": "ATHL M1211",
+   "field": "merge_into",
+   "value": "ATHL M1195"
+  },
+  {
+   "course_id": "ATHL M1215",
+   "field": "merge_into",
+   "value": "ATHL M1195"
+  },
+  {
+   "course_id": "ATHL M1282",
+   "field": "merge_into",
+   "value": "ATHL M1195"
+  },
+  {
+   "course_id": "ATHL M1357",
+   "field": "merge_into",
+   "value": "ATHL M1195"
+  },
+  {
+   "course_id": "ATHL M1358",
+   "field": "merge_into",
+   "value": "ATHL M1195"
+  },
+  {
+   "course_id": "ATHL M1195",
+   "field": "unified_title",
+   "value": "Intercollegiate Softball"
+  },
+  {
+   "course_id": "ATHL M1176",
+   "field": "merge_into",
+   "value": "ATHL M1338"
+  },
+  {
+   "course_id": "ATHL M1338",
+   "field": "unified_title",
+   "value": "Intercollegiate Swimming — Men"
+  },
+  {
+   "course_id": "ATHL M1198",
+   "field": "merge_into",
+   "value": "ATHL M1360"
+  },
+  {
+   "course_id": "ATHL M1360",
+   "field": "unified_title",
+   "value": "Intercollegiate Swimming — Women"
+  },
+  {
+   "course_id": "ATHL M1109",
+   "field": "merge_into",
+   "value": "ATHL M1106"
+  },
+  {
+   "course_id": "ATHL M1106",
+   "field": "unified_title",
+   "value": "Intercollegiate Swimming and Diving — Men"
+  },
+  {
+   "course_id": "ATHL M1110",
+   "field": "merge_into",
+   "value": "ATHL M1108"
+  },
+  {
+   "course_id": "ATHL M1108",
+   "field": "unified_title",
+   "value": "Intercollegiate Swimming and Diving — Women"
+  },
+  {
+   "course_id": "ATHL M1205",
+   "field": "merge_into",
+   "value": "ATHL M1177"
+  },
+  {
+   "course_id": "ATHL M1341",
+   "field": "merge_into",
+   "value": "ATHL M1177"
+  },
+  {
+   "course_id": "ATHL M1177",
+   "field": "unified_title",
+   "value": "Intercollegiate Tennis — Men"
+  },
+  {
+   "course_id": "ATHL M1216",
+   "field": "merge_into",
+   "value": "ATHL M1199"
+  },
+  {
+   "course_id": "ATHL M1364",
+   "field": "merge_into",
+   "value": "ATHL M1199"
+  },
+  {
+   "course_id": "ATHL M1199",
+   "field": "unified_title",
+   "value": "Intercollegiate Tennis — Women"
+  },
+  {
+   "course_id": "ATHL M1116",
+   "field": "merge_into",
+   "value": "ATHL M1115"
+  },
+  {
+   "course_id": "ATHL M1123",
+   "field": "merge_into",
+   "value": "ATHL M1115"
+  },
+  {
+   "course_id": "ATHL M1316",
+   "field": "merge_into",
+   "value": "ATHL M1115"
+  },
+  {
+   "course_id": "ATHL M1115",
+   "field": "unified_title",
+   "value": "Intercollegiate Track and Field — Men"
+  },
+  {
+   "course_id": "ATHL M1122",
+   "field": "merge_into",
+   "value": "ATHL M1121"
+  },
+  {
+   "course_id": "ATHL M1124",
+   "field": "merge_into",
+   "value": "ATHL M1121"
+  },
+  {
+   "course_id": "ATHL M1121",
+   "field": "unified_title",
+   "value": "Intercollegiate Track and Field — Women"
+  },
+  {
+   "course_id": "ATHL M1340",
+   "field": "merge_into",
+   "value": "ATHL M1178"
+  },
+  {
+   "course_id": "ATHL M1178",
+   "field": "unified_title",
+   "value": "Intercollegiate Volleyball — Men"
+  },
+  {
+   "course_id": "ATHL M1192",
+   "field": "merge_into",
+   "value": "ATHL M1201"
+  },
+  {
+   "course_id": "ATHL M1212",
+   "field": "merge_into",
+   "value": "ATHL M1201"
+  },
+  {
+   "course_id": "ATHL M1238",
+   "field": "merge_into",
+   "value": "ATHL M1201"
+  },
+  {
+   "course_id": "ATHL M1362",
+   "field": "merge_into",
+   "value": "ATHL M1201"
+  },
+  {
+   "course_id": "ATHL M1365",
+   "field": "merge_into",
+   "value": "ATHL M1201"
+  },
+  {
+   "course_id": "ATHL M1201",
+   "field": "unified_title",
+   "value": "Intercollegiate Volleyball — Women"
+  },
+  {
+   "course_id": "ATHL M1203",
+   "field": "merge_into",
+   "value": "ATHL M1174"
+  },
+  {
+   "course_id": "ATHL M1233",
+   "field": "merge_into",
+   "value": "ATHL M1174"
+  },
+  {
+   "course_id": "ATHL M1334",
+   "field": "merge_into",
+   "value": "ATHL M1174"
+  },
+  {
+   "course_id": "ATHL M1335",
+   "field": "merge_into",
+   "value": "ATHL M1174"
+  },
+  {
+   "course_id": "ATHL M1174",
+   "field": "unified_title",
+   "value": "Intercollegiate Water Polo — Men"
+  },
+  {
+   "course_id": "ATHL M1209",
+   "field": "merge_into",
+   "value": "ATHL M1190"
+  },
+  {
+   "course_id": "ATHL M1236",
+   "field": "merge_into",
+   "value": "ATHL M1190"
+  },
+  {
+   "course_id": "ATHL M1348",
+   "field": "merge_into",
+   "value": "ATHL M1190"
+  },
+  {
+   "course_id": "ATHL M1350",
+   "field": "merge_into",
+   "value": "ATHL M1190"
+  },
+  {
+   "course_id": "ATHL M1190",
+   "field": "unified_title",
+   "value": "Intercollegiate Water Polo — Women"
+  }
+ ],
+ "sql_template": "INSERT INTO kb_curation (course_id, field, value, reviewer_email, reviewed_at) VALUES (%s) ON CONFLICT (course_id, field) DO UPDATE SET value = EXCLUDED.value, reviewer_email = EXCLUDED.reviewer_email, reviewed_at = EXCLUDED.reviewed_at"
+}
