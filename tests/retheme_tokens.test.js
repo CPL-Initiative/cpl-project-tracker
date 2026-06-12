@@ -75,6 +75,20 @@ check("kpi-section grid present", cpl.includes('class="kpi-section"') || /class=
 check("kpi-card class present", cpl.includes("kpi-card"));
 check("kpi_reorder.js script tag shipped", /<script[^>]*src="kpi_reorder\.js/.test(cpl));
 
+// ── (f) PR-2 glass chrome + ghost layer pins ──
+check("glass base class defined", /\.glass\s*\{[^}]*backdrop-filter/.test(cpl));
+check("no-backdrop-filter fallback present", cpl.includes("@supports not (backdrop-filter: blur(1px))"));
+check("prefers-reduced-transparency honored", cpl.includes("prefers-reduced-transparency"));
+check("prefers-contrast honored", cpl.includes("prefers-contrast: more"));
+check("masthead is glass (header bg = --surface)", /\.header\s*\{[^}]*background:\s*var\(--surface\)/.test(cpl));
+check("KPI hero cards are glass", /\.kpi-card\s*\{[^}]*background:\s*var\(--surface\)/.test(cpl));
+check("filter bar is glass", /\.filter-bar\s*\{[^}]*background:\s*var\(--surface\)/.test(cpl));
+check("algo light variant scoped to .kpi-card", cpl.includes(".kpi-card .algo-details summary"));
+const fl = fs.readFileSync("first_light.js", "utf8");
+check("first_light injects the ghost layer", fl.includes("ensureBgArt") && fl.includes(".cplfl-bg{position:fixed"));
+check("ghost layer honors reduced transparency", fl.includes("prefers-reduced-transparency: reduce){.cplfl-bg{display:none}"));
+check("First Light dialog stays opaque", fl.includes(".cplfl-dialog{background:var(--surface-opaque"));
+
 // ── data surfaces stay opaque in the repointed JS assets ──
 for (const f of ["cpl_funding.js", "cpl_todos.js", "canonical_subj4.js", "first_light.js"]) {
   const js = fs.readFileSync(f, "utf8");

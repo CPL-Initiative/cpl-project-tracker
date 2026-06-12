@@ -89,46 +89,54 @@
       ".cplfl-overlay{position:fixed;inset:0;z-index:12000;display:none;align-items:center;justify-content:center;" +
       "background:rgba(10,20,35,.55);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);padding:1.2rem}" +
       ".cplfl-overlay.open{display:flex}" +
-      ".cplfl-dialog{background:var(--surface,#fff);border-radius:16px;overflow:hidden auto;max-width:min(1180px,94vw);width:100%;" +
+      ".cplfl-dialog{background:var(--surface-opaque,#fff);border-radius:16px;overflow:hidden auto;max-width:min(1180px,94vw);width:100%;" +
       "max-height:94vh;box-shadow:0 30px 80px rgba(10,10,20,.4);font-family:'Source Sans 3',Arial,sans-serif}" +
-      ".cplfl-head{display:flex;align-items:center;gap:.6rem;padding:.85rem 1.25rem;border-bottom:1px solid var(--border,#E5E7EB)}" +
+      ".cplfl-head{display:flex;align-items:center;gap:.6rem;padding:.85rem 1.25rem;border-bottom:1px solid var(--border,rgba(28,28,26,.14))}" +
       ".cplfl-head .cplfl-sun{width:12px;height:12px;border-radius:50%;background:var(--gold-accent,#E3B341);flex:none}" +
-      ".cplfl-head h2{font-family:'Playfair Display',Georgia,serif;font-size:1.02rem;margin:0;color:var(--text-strong,#1F2937)}" +
-      ".cplfl-head .cplfl-day{font-size:.76rem;color:var(--text-muted,#6B7280);margin-left:auto;padding-right:.5rem}" +
-      ".cplfl-close{background:none;border:1.5px solid var(--border-strong,#CBD5E1);border-radius:8px;width:32px;height:32px;" +
-      "font-size:1rem;cursor:pointer;color:var(--text-body,#374151);flex:none}" +
-      ".cplfl-close:hover{background:var(--surface-muted,#F1F5F9)}" +
+      ".cplfl-head h2{font-family:'Playfair Display',Georgia,serif;font-size:1.02rem;margin:0;color:var(--text-strong,#1C1C1A)}" +
+      ".cplfl-head .cplfl-day{font-size:.76rem;color:var(--text-muted,#5C5C55);margin-left:auto;padding-right:.5rem}" +
+      ".cplfl-close{background:none;border:1.5px solid var(--border-strong,rgba(28,28,26,.30));border-radius:8px;width:32px;height:32px;" +
+      "font-size:1rem;cursor:pointer;color:var(--text-body,#3A3A36);flex:none}" +
+      ".cplfl-close:hover{background:var(--surface-muted,#ECE9E2)}" +
       ".cplfl-art{background:#22221F;text-align:center}" +
       ".cplfl-art img{max-width:100%;max-height:66vh;display:block;margin:0 auto;filter:grayscale(1);transition:filter 1.8s ease .35s}" +
       ".cplfl-overlay.open .cplfl-art img.cplfl-revealed{filter:grayscale(0)}" +
       ".cplfl-imgfallback{display:none;padding:3rem 1rem;color:rgba(255,255,255,.88);font-size:.85rem;" +
       "background:linear-gradient(160deg,#8a6d2e 0%,#a8842f 30%,#6e7d52 65%,#43523f 100%)}" +
       ".cplfl-body{padding:1rem 1.3rem 1.2rem}" +
-      ".cplfl-title{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:var(--text-strong,#1F2937)}" +
-      ".cplfl-byline{font-size:.86rem;color:var(--text-muted,#6B7280);margin-bottom:.6rem}" +
-      ".cplfl-blurb{font-size:.92rem;color:var(--text-body,#374151);margin:0 0 .55rem;line-height:1.5}" +
-      ".cplfl-setting{font-size:.85rem;color:var(--text-muted,#6B7280);margin:0 0 .75rem;line-height:1.45}" +
+      ".cplfl-title{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:var(--text-strong,#1C1C1A)}" +
+      ".cplfl-byline{font-size:.86rem;color:var(--text-muted,#5C5C55);margin-bottom:.6rem}" +
+      ".cplfl-blurb{font-size:.92rem;color:var(--text-body,#3A3A36);margin:0 0 .55rem;line-height:1.5}" +
+      ".cplfl-setting{font-size:.85rem;color:var(--text-muted,#5C5C55);margin:0 0 .75rem;line-height:1.45}" +
       ".cplfl-reflect{margin:.3rem 0 .2rem}" +
-      ".cplfl-reflect label{display:block;font-weight:600;font-size:.85rem;color:var(--text-strong,#1F2937);margin-bottom:.3rem}" +
-      ".cplfl-reflect label span{font-weight:400;color:var(--text-muted,#6B7280)}" +
+      ".cplfl-reflect label{display:block;font-weight:600;font-size:.85rem;color:var(--text-strong,#1C1C1A);margin-bottom:.3rem}" +
+      ".cplfl-reflect label span{font-weight:400;color:var(--text-muted,#5C5C55)}" +
       ".cplfl-reflect textarea{width:100%;box-sizing:border-box;resize:vertical;min-height:60px;font-family:inherit;font-size:.9rem;" +
-      "color:var(--text-body,#374151);background:var(--surface-subtle,#F8FAFC);border:1px solid var(--border-strong,#CBD5E1);border-radius:9px;padding:.5rem .7rem}" +
-      ".cplfl-reflect-note{font-size:.73rem;color:var(--text-muted,#6B7280);display:block;margin-top:.3rem;max-width:75ch}" +
-      ".cplfl-reflect-msg{font-size:.78rem;color:var(--text-muted,#6B7280)}" +
+      "color:var(--text-body,#3A3A36);background:var(--surface-subtle,#F7F5F1);border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:9px;padding:.5rem .7rem}" +
+      ".cplfl-reflect-note{font-size:.73rem;color:var(--text-muted,#5C5C55);display:block;margin-top:.3rem;max-width:75ch}" +
+      ".cplfl-reflect-msg{font-size:.78rem;color:var(--text-muted,#5C5C55)}" +
       ".cplfl-actions{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:.4rem 0 .6rem}" +
       ".cplfl-btn{display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;font-family:inherit;font-size:.85rem;" +
       "font-weight:600;background:var(--cobalt,#0047AB);color:#fff;border:none;border-radius:9px;padding:.5rem 1rem;min-height:32px}" +
       ".cplfl-btn:hover{background:#003B8E}" +
-      ".cplfl-btn.cplfl-ghost{background:transparent;color:var(--accent-link,#2563EB);border:1.5px solid var(--accent-link,#2563EB)}" +
-      ".cplfl-optout{font-size:.78rem;color:var(--text-muted,#6B7280);display:flex;align-items:center;gap:.4rem}" +
+      ".cplfl-btn.cplfl-ghost{background:transparent;color:var(--accent-link,#0047AB);border:1.5px solid var(--accent-link,#0047AB)}" +
+      ".cplfl-optout{font-size:.78rem;color:var(--text-muted,#5C5C55);display:flex;align-items:center;gap:.4rem}" +
       ".cplfl-optout input{width:15px;height:15px}" +
-      ".cplfl-lic{font-size:.73rem;color:var(--text-muted,#6B7280);border-top:1px solid var(--border,#E5E7EB);padding-top:.6rem}" +
-      ".cplfl-chip{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:600;cursor:pointer;" +
-      "font-family:inherit;color:var(--light-blue,#7DA1D4);background:rgba(255,255,255,.07);border:1px solid var(--gold-accent,#E3B341);" +
-      "border-radius:999px;padding:.25rem .75rem;min-height:24px;white-space:nowrap}" +
-      ".cplfl-chip:hover{background:rgba(255,255,255,.15)}" +
+      ".cplfl-lic{font-size:.73rem;color:var(--text-muted,#5C5C55);border-top:1px solid var(--border,rgba(28,28,26,.14));padding-top:.6rem}" +
+      ".cplfl-chip{display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;cursor:pointer;" +
+      "font-family:inherit;color:var(--mustard-text,#8B6800);background:rgba(255,255,255,.5);border:1px solid var(--border-strong,rgba(28,28,26,.30));" +
+      "border-radius:8px;padding:.25rem .75rem;min-height:26px;white-space:nowrap}" +
+      ".cplfl-chip:hover{background:var(--surface-subtle,#F7F5F1)}" +
       ".cplfl-chip .cplfl-sun{width:9px;height:9px;border-radius:50%;background:var(--gold-accent,#E3B341);flex:none}" +
-      ".cplfl-overlay :focus-visible{outline:3px solid var(--accent-link,#2563EB);outline-offset:2px;border-radius:6px}" +
+      ".cplfl-overlay :focus-visible{outline:3px solid var(--accent-link,#0047AB);outline-offset:2px;border-radius:6px}" +
+      ".cplfl-bg{position:fixed;inset:0;z-index:-1;background-position:center;background-size:cover;" +
+      "background-repeat:no-repeat;filter:grayscale(1) contrast(.95);opacity:.10;pointer-events:none}" +
+      ".cplfl-bg.cplfl-bg-fallback{background:" +
+      "radial-gradient(120% 70% at 15% 85%,#6b6b66 0%,transparent 60%)," +
+      "radial-gradient(90% 60% at 80% 20%,#8d8d86 0%,transparent 55%)," +
+      "linear-gradient(165deg,#c9c7c0 0%,#93938c 55%,#5c5c55 100%);filter:none}" +
+      "@media (prefers-reduced-transparency: reduce){.cplfl-bg{display:none}}" +
+      "@media (prefers-contrast: more){.cplfl-bg{display:none}}" +
       "@media (prefers-reduced-motion: reduce){.cplfl-art img{transition:none}}" +
       "@media (prefers-reduced-transparency: reduce){.cplfl-overlay{background:rgba(10,20,35,.8);backdrop-filter:none;-webkit-backdrop-filter:none}}";
     document.head.appendChild(s);
@@ -176,6 +184,7 @@
     overlay.addEventListener("mousedown", function (e) { if (e.target === overlay) close(); });
     byId("cplfl-optout").addEventListener("change", function (e) {
       lsSet(KEY_OPTOUT, e.target.checked ? "1" : "0");
+      ensureBgArt();   // opting out also lifts the painting off the page
     });
     wireReflect();
     wireSpeak();
@@ -319,6 +328,35 @@
     });
   }
 
+  /* ── the ghosted painting behind the page (First Light retheme PR-2):
+        today's pick, grayscaled by CSS at 10% opacity. Injected at runtime
+        so the daily regen can't strand it; honors the greeting opt-out and
+        the reduced-transparency / contrast preferences (CSS). ─────────── */
+  function ensureBgArt() {
+    var existing = document.getElementById("cplfl-bg");
+    if (lsGet(KEY_OPTOUT) === "1") {
+      if (existing) existing.parentNode.removeChild(existing);
+      return;
+    }
+    if (existing) return;
+    var bg = document.createElement("div");
+    bg.id = "cplfl-bg";
+    bg.className = "cplfl-bg";
+    bg.setAttribute("aria-hidden", "true");
+    document.body.appendChild(bg);
+    var pick = pickToday();
+    var probe = new Image();
+    probe.onload = function () {
+      bg.style.backgroundImage = "url('" + pick.img + "')";
+      bg.classList.remove("cplfl-bg-fallback");
+    };
+    probe.onerror = function () { bg.classList.add("cplfl-bg-fallback"); };
+    probe.src = pick.img;
+    setTimeout(function () {           /* slow networks: paint the fallback meanwhile */
+      if (!bg.style.backgroundImage) bg.classList.add("cplfl-bg-fallback");
+    }, 2500);
+  }
+
   /* ── reopen affordance, injected into the header at runtime (so the
         daily regen of header contents can never strand it in git) ────── */
   function injectChip() {
@@ -349,6 +387,7 @@
     if (inited) return;
     inited = true;
     ensureCss();
+    ensureBgArt();
     injectChip();
     maybeGreet();
   }
