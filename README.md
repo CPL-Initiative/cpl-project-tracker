@@ -89,7 +89,10 @@ The whole ecosystem, end-to-end:
    same across near-duplicate titles — including the ~54k single-college
    stand-alones — with no units gate, because externally standardized
    curricula (BAR smog, POST academy modules) pack the same spec at
-   different unit loads per college. The rules in plain language:
+   different unit loads per college. One deliberately strict exception
+   acts on its own: the **twin merge** folds M-IDs whose titles contain
+   the same words AND match on subject, discipline, credit, and units —
+   every twin carries an alias receipt. The rules in plain language:
    [`docs/ccr_rules_brief.md`](docs/ccr_rules_brief.md).
 4. **The Common Course Reference curation tab** (formerly "Unified Courses" —
    renamed to avoid UC/University-of-California confusion and to signal that
