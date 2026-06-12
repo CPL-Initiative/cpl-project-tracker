@@ -1,24 +1,30 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-12T17:17:34Z",
+  "_synced_at": "2026-06-12T18:24:00Z",
   "count": 128,
   "curations": {
-    "AGRI M1002": {
+    "AGRI M1001": {
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "ARTS M10BJ": {
-      "merge_into": "ARTS M1159",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:44:46.536545+00:00"
+    "AGRI M10AL": {
+      "cross_listed_disciplines": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T22:22:13.20997+00:00",
+      "discipline": "Agriculture"
     },
-    "ARTS M1159": {
-      "unified_title": "History of Modern Art",
+    "ARTH M1022": {
+      "discipline": "Art History",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:44:46.536545+00:00",
-      "discipline": "Art History"
+      "unified_title": "History of Modern Art"
+    },
+    "ARTS M10BJ": {
+      "merge_into": "ARTH M1022",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:44:46.536545+00:00"
     },
     "ARTS M11AH": {
       "merge_into": "ARTS M1201",
@@ -42,178 +48,242 @@
       "reviewed_at": "2026-05-21T21:25:33.462587+00:00"
     },
     "AUTB M1037": {
-      "merge_into": "AUTO M1007",
+      "merge_into": "AUTO M1006",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
-    "AUTB M10BJ": {
-      "discipline": "Agriculture",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T22:22:13.20997+00:00",
-      "cross_listed_disciplines": "Business"
-    },
-    "AUTB M10BN": {
+    "AUTB M10BM": {
       "merge_into": "AUTB M1002",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T21:25:33.462587+00:00"
     },
+    "AUTO M1004": {
+      "merge_into": "AUTO M1006",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
     "AUTO M1005": {
-      "merge_into": "AUTO M1007",
+      "merge_into": "AUTO M1006",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
     "AUTO M1006": {
-      "merge_into": "AUTO M1007",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
-    },
-    "AUTO M1007": {
       "unified_title": "Smog Check Inspector Training Level 2",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
-    "AUTO M10AG": {
+    "AUTO M10AF": {
       "merge_into": "AUTO M1001",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
+    "AUTO M10BJ": {
+      "merge_into": "AUTO M1006",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
     "AUTO M10BK": {
-      "merge_into": "AUTO M1007",
+      "merge_into": "AUTO M1006",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
-    "AUTO M10BL": {
-      "merge_into": "AUTO M1007",
+    "AUTO M10BS": {
+      "merge_into": "AUTO M1006",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
-    "AUTO M10BT": {
-      "merge_into": "AUTO M1007",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
-    },
-    "AUTO M10CX": {
+    "AUTO M10CW": {
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "AUTO M10PB": {
-      "merge_into": "AUTO M1007",
+    "AUTO M10OX": {
+      "merge_into": "AUTO M1006",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
-    "AUTO M11AA": {
-      "merge_into": "AUTO M1007",
+    "AUTO M10ZP": {
+      "merge_into": "AUTO M1006",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
-    "AUTO M11CW": {
-      "merge_into": "AUTO M1007",
+    "AUTO M11CL": {
+      "merge_into": "AUTO M1006",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
-    "AUTO M11DB": {
-      "merge_into": "AUTO M1007",
+    "AUTO M11CQ": {
+      "merge_into": "AUTO M1006",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
-    "AUTO M11NQ": {
-      "merge_into": "AUTO M1007",
+    "AUTO M11NF": {
+      "merge_into": "AUTO M1006",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
-    "AUTO M1217": {
+    "AUTO M1211": {
       "merge_into": "AUTO M1001",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
-    "BBK M1001": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "BBK M10AC": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "BBK M9001": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "BSIC M9001": {
+    "BSKL M9001": {
       "discipline": "Interdisciplinary-Basic Skills: Noncredit 53412",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T19:22:55.870894+00:00"
     },
-    "BUAC M10AE": {
+    "BUSI M1002": {
       "discipline": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
     },
-    "BUSA M1003": {
+    "BUSI M10MO": {
       "discipline": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
     },
-    "BUSA M10AF": {
+    "BUSI M10ZQ": {
       "discipline": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
     },
-    "BUSA M10AJ": {
+    "BUSI M1167": {
       "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "BUSA M9003": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "BUSI M1170": {
-      "unified_title": "Entrepreneurship and Small Business Management",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:45:04.930041+00:00",
-      "discipline": "Business"
+      "unified_title": "Entrepreneurship and Small Business Management"
     },
-    "CISC M12GG": {
+    "BUSI M11BL": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M11CM": {
       "discipline": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "CISC M9029": {
+    "BUSI M11PA": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M1300": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M9003": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M9038": {
       "discipline": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "CISC M9030": {
+    "BUSI M9039": {
       "discipline": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "CISC M90AQ": {
+    "BUSI M9058": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M90BO": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M90BU": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M90BV": {
       "discipline": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "COUN M1045": {
+    "BUSI M90BW": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M90BY": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M90BZ": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M90DJ": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M90EY": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M90GN": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M90GO": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M90IJ": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M90KH": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M90KM": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M90LE": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M9144": {
+      "discipline": "Business",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "COUN M1038": {
       "unified_title": "College and Career Success",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:45:05.405159+00:00"
     },
+    "COUN M10JI": {
+      "merge_into": "COUN M1038",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:45:05.405159+00:00"
+    },
     "COUN M10JJ": {
-      "merge_into": "COUN M1045",
+      "merge_into": "COUN M1038",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:45:05.405159+00:00"
     },
-    "COUN M10JK": {
-      "merge_into": "COUN M1045",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:45:05.405159+00:00"
-    },
-    "CULN M1003": {
+    "CULN M1002": {
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
@@ -228,282 +298,277 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T19:21:54.054269+00:00"
     },
-    "ELEC M1028": {
+    "ELEC M1016": {
       "discipline": "Electricity",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-22T16:42:00.670793+00:00"
     },
-    "ENGL M10WP": {
-      "merge_into": "ENGL M1217",
+    "ENGL M10WM": {
+      "merge_into": "ENGL M1197",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:41:29.977439+00:00"
     },
-    "ENGL M10YQ": {
-      "merge_into": "ENGL M1367",
+    "ENGL M10YN": {
+      "merge_into": "ENGL M1330",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:41:44.880094+00:00"
     },
-    "ENGL M11HY": {
-      "merge_into": "ENGL M1367",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:41:44.880094+00:00"
-    },
-    "ENGL M11HZ": {
-      "merge_into": "ENGL M1367",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:41:44.880094+00:00"
-    },
-    "ENGL M1217": {
-      "unified_title": "Writing in Creative Nonfiction",
+    "ENGL M1197": {
+      "discipline": "English",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:41:29.977439+00:00",
-      "discipline": "English"
+      "unified_title": "Writing in Creative Nonfiction"
     },
-    "ENGL M1367": {
-      "unified_title": "Introduction to Shakespeare (The Drama)",
+    "ENGL M11HU": {
+      "merge_into": "ENGL M1330",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:41:44.880094+00:00"
+    },
+    "ENGL M11HV": {
+      "merge_into": "ENGL M1330",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-05-29T20:41:44.880094+00:00"
+    },
+    "ENGL M1330": {
+      "discipline": "English",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:41:44.880094+00:00",
-      "discipline": "English"
+      "unified_title": "Introduction to Shakespeare (The Drama)"
     },
     "ENTR M1001": {
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "ENTR M10BZ": {
+    "ENTR M10BU": {
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "FINC M9006": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "FLSP M1019": {
+    "FLSP M1001": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1040": {
+    "FLSP M1003": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1125": {
+    "FLSP M1035": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1130": {
+    "FLSP M1036": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1175": {
+    "FLSP M1047": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1176": {
+    "FLSP M1048": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1194": {
+    "FLSP M1056": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1235": {
+    "FLSP M1068": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1245": {
+    "FLSP M1070": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1272": {
+    "FLSP M1074": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1279": {
+    "FLSP M1075": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1282": {
+    "FLSP M1077": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1295": {
+    "FLSP M1078": {
       "merge_into": "SPAN 220",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T23:02:57.624485+00:00"
     },
-    "FLSP M1322": {
+    "FLSP M1081": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1323": {
+    "FLSP M1082": {
       "merge_into": "SPAN 110",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T22:36:13.031376+00:00"
     },
-    "FLSP M1334": {
+    "FLSP M1085": {
       "merge_into": "SPAN 220",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T23:02:57.624485+00:00"
     },
-    "FLSP M1335": {
+    "FLSP M1086": {
       "merge_into": "SPAN 230",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T23:02:57.624485+00:00"
     },
-    "FLSP M1336": {
+    "FLSP M1087": {
       "merge_into": "SPAN 220",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T23:02:57.624485+00:00"
     },
-    "FLSP M1347": {
+    "FLSP M1091": {
       "merge_into": "SPAN 220",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T23:02:57.624485+00:00"
     },
-    "FLSP M1349": {
+    "FLSP M1092": {
       "merge_into": "SPAN 220",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T23:02:57.624485+00:00"
     },
-    "FLSP M1357": {
+    "FLSP M1095": {
       "merge_into": "SPAN 230",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T23:02:57.624485+00:00"
     },
-    "FLSP M1359": {
+    "FLSP M1096": {
       "merge_into": "SPAN 230",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T23:02:57.624485+00:00"
     },
-    "HIST M10CQ": {
-      "merge_into": "HIST M1152",
+    "HIST M10CP": {
+      "merge_into": "HIST M1140",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:04.429467+00:00"
     },
-    "HIST M10RS": {
-      "merge_into": "HIST M1152",
+    "HIST M10RP": {
+      "merge_into": "HIST M1140",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:04.429467+00:00"
     },
-    "HIST M1152": {
-      "unified_title": "History of Western (European) Civilization",
+    "HIST M1140": {
+      "discipline": "History",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:04.429467+00:00",
-      "discipline": "History"
+      "unified_title": "History of Western (European) Civilization"
     },
-    "KINE M1015": {
+    "KINE M1013": {
       "unified_title": "Weight Training",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
     },
-    "KINE M10SU": {
-      "merge_into": "KINE M1015",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
-    },
-    "KINE M11XF": {
-      "merge_into": "KINE M1015",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
-    },
-    "KINE M1289": {
-      "merge_into": "KINE M1015",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
-    },
-    "KINE M12BJ": {
-      "merge_into": "KINE M1015",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
-    },
-    "KINE M12CC": {
-      "merge_into": "KINE M1015",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
-    },
-    "KINE M1371": {
-      "merge_into": "KINE M1015",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
-    },
-    "KINE M13FH": {
-      "merge_into": "KINE M1015",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
-    },
-    "KINE M13FJ": {
-      "merge_into": "KINE M1015",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
-    },
-    "KINE M13FV": {
-      "merge_into": "KINE M1873",
+    "KINE M10MA": {
+      "merge_into": "KINE M1350",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
     },
-    "KINE M13FX": {
-      "merge_into": "KINE M1873",
+    "KINE M1137": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M11MH": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M11MI": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M11QW": {
+      "merge_into": "KINE M1350",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
     },
-    "KINE M13FY": {
-      "merge_into": "KINE M1873",
+    "KINE M11UI": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M11WI": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M11YW": {
+      "merge_into": "KINE M1350",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
     },
-    "KINE M13MA": {
-      "merge_into": "KINE M1873",
+    "KINE M11YX": {
+      "merge_into": "KINE M1350",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
     },
-    "KINE M13QS": {
-      "merge_into": "KINE M1015",
+    "KINE M12OW": {
+      "merge_into": "KINE M1013",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
     },
-    "KINE M13VG": {
-      "merge_into": "KINE M1015",
+    "KINE M1341": {
+      "merge_into": "KINE M1013",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
     },
-    "KINE M14HW": {
-      "merge_into": "KINE M1015",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
-    },
-    "KINE M1704": {
-      "merge_into": "KINE M1015",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
-    },
-    "KINE M1873": {
-      "unified_title": "Body Conditioning and Physical Fitness (Intermediate)",
+    "KINE M1350": {
+      "discipline": "Kinesiology",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:38.890153+00:00",
-      "discipline": "Kinesiology"
+      "unified_title": "Body Conditioning and Physical Fitness (Intermediate)"
     },
-    "KINE M1925": {
-      "merge_into": "KINE M1015",
+    "KINE M13RT": {
+      "merge_into": "KINE M1013",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
     },
-    "KINE M1946": {
-      "merge_into": "KINE M1015",
+    "KINE M13YC": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M1401": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M1455": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M14AA": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M14AB": {
+      "merge_into": "KINE M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M1777": {
+      "merge_into": "KINE M1013",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
     },
@@ -511,36 +576,6 @@
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
-    },
-    "NC M90LW": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "NC M90LX": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "NCBU M90AO": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "NCBU M90AP": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "OFFT M90AJ": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "OFFT M90BB": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
     },
     "OTEC M1025": {
       "cross_listed_disciplines": "Business",
@@ -552,22 +587,22 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "OTEC M10IN": {
+    "OTEC M10IL": {
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "OTEC M10IT": {
+    "OTEC M10IR": {
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "OTEC M10PM": {
+    "OTEC M10PH": {
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "OTEC M1132": {
+    "OTEC M1134": {
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
@@ -607,51 +642,16 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
-    "REAL M1017": {
-      "unified_title": "Legal Aspects of Real Estate",
+    "REAL M1014": {
+      "discipline": "Real Estate",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:43:10.485612+00:00",
-      "discipline": "Real Estate"
+      "unified_title": "Legal Aspects of Real Estate"
     },
     "REAL M10AE": {
-      "merge_into": "REAL M1017",
+      "merge_into": "REAL M1014",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:43:10.485612+00:00"
-    },
-    "VBUS M90BG": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "VOCE M90CX": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "VOCE M90CY": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "VOCE M90CZ": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "VOCE M90DA": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "VOCE M90DB": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
-    },
-    "VOCE M90QC": {
-      "discipline": "Business",
-      "reviewed_by": "MAP@rccd.edu",
-      "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
     }
   }
 }

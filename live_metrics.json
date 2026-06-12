@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-12T17:17:33.249Z",
+  "scraped_at": "2026-06-12T18:23:59.668Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -488,13 +488,13 @@
         },
         {
           "college": "Clovis Community College",
-          "students": 167,
+          "students": 170,
           "units": 985,
-          "avgUnits": 5.8982035928143715,
+          "avgUnits": 5.794117647058823,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 167,
+          "militaryStudents": 170,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 1704050,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,749",
+      "value": "47,752",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,499"
+          "value": "24,502"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47749,
+    "Students": 47752,
     "Units": 228778.15000000002,
     "TranscribedUnits": 99025.95,
     "Savings": 318296265.25,
     "YearImpact": 1288798406.8999999,
-    "MilitaryStudents": 24499,
+    "MilitaryStudents": 24502,
     "NonMilitaryStudents": 23327,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.791265785670904,
-    "TranscribedAverage": 2.0738853169699887
+    "AverageUnits": 4.790964776344447,
+    "TranscribedAverage": 2.0737550259674986
   }
 }
