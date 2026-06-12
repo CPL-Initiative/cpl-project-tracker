@@ -1545,35 +1545,34 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > locked decisions verbatim. Searching the archive for an id (e.g. "FLSP
 > M1379", "#310") is usually faster than re-deriving from code.
 
-> **Session 41 + 42 + 43 + 44 + 45 narratives archived** → `docs/roadmap_archive.md`
+> **Session 41 + 42 + 43 + 44 + 45 + 46 narratives archived** → `docs/roadmap_archive.md`
 > (witness-kinship gate + R4 singletons; the slot-fix + C-ID authority +
 > Phase-1 router; Starlord's cron-verify + off-pane-columns fix; Statewide
 > Exhibits KPI + program-area categories + KPI reorder; CCR rules day —
 > statewide C-ID router #379 + the CADM homonym repair #381 + the
-> description-evidence lane #382).
+> description-evidence lane #382; the AUTO/smog case — the 🏷 title lane
+> #385 + the STATEWIDE twin merge #386).
 
-### Session 46 — the AUTO/smog over-mint case → the 🏷 title-evidence lane + the STATEWIDE twin merge (2026-06-12)
+### Session 47 — Bruh Supernova: SUBJ ⇄ CCR error checking, the To-Do feed, the fold dry-run (2026-06-12)
 
-Sam's brief: refine minting/merging rules off the AUTO over-mints (smog I/II),
-then statewide. One BAR state spec = **52 identities**; all lanes combined had
-surfaced 3 pairs. **#385**: `kb/_title_consolidation_dryrun.py` — IDF-weighted
-title cosine over dark M-IDs **+ 54k stand-alones**, discipline-OR-TOP
-corroboration, **NO units gate** (licensure specs pack 1–7u by college),
-clique-consistent components → 6th worklist section (🏷); shared guard suite
-`kb/_consolidation_guards.py`: **two-axis level marks**, **strict-equality
-variant marks** (refresher/instructor/module/honors/lab), year-edition marks,
-word-number folds (also `_sug_sig`/`_fam_key`). **#386** (Sam: "consolidations
-that should happen — rule sharpening"): the Session-39 twin merge taken
-**STATEWIDE** (`kb/_apply_twin_merge_statewide.py`) + guard-clique gate —
-**589 token-identical twins absorbed** (16,143→15,554 parents; 65 groups
-guard-skipped; curator targets honored; V-gates + promotions re-key + receipts
-`kb/twin_merge_out/2026-06-12/`), **plus the Sam-confirmed smog merges**:
-L1&2 → `AUTO M1001`, the 12-member Level-2 family → `AUTO M1007` (Supabase
-`kb_curation` + overlay). `docs/ccr_rules_brief.md` amended — the strict twin
-tier is the ONE title-based auto-merge, fully condition-listed. Smog: 52
-identities → 9 queue families → **2 merged rows + 8 residual queue groups**.
-Suite 30/30. Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 46 +
-part 2); KB note: `methodology-title-similarity-merge-guards.md`.
+Sam's asks, four PRs, all merged on green. **#388** the CSR "✓ Check SUBJ ⇄
+CCR" sweep + live Common SUBJ input feedback (collision/in-use badges,
+collision-free suggestion chips, confirm-on-collision); Sam cured **all 11
+shared Common SUBJ codes the same morning**. **#402** the sweep's THEA false
+positive (Drama/Theater Arts ↔ its alias "Theater Arts") → **alias-family
+awareness** (`kb/discipline_aliases.json` joins the umbrella exemptions as
+shared SUBJ4-consumer semantics); the needless DRAM re-code reverted with an
+intent note. **#389** the 📋 To-Do button on every tab (`cpl_todos.js` +
+`kb/cpl_todos.json` — the handoff distilled; Rule-8 item 9). **#405** the
+SUBJ4 fold DRY-RUN: seed synced, `_subj4_dryrun.py` taught the umbrella
+allowances (it predated them — was folding FL** back to FLNG + ATHL to KINE,
+bursting KINE M1###), **71,710 M-IDs → 10,974 re-keys, 5/5 gates PASS**;
+apply gate = 19 curated-collision buckets to approve. Suite 34/34. Lessons:
+`docs/ccr_cluster_cleanup_lessons.md` (Session 47); KB note:
+`methodology-subj4-consumer-semantics.md`. **NEXT: the receipted apply**
+(one cron window, twin-merge re-run bundled) + the CCR Subject-dropdown
+grouping (Sam yes'd; spec in `docs/session_50_handoff.md`).
+
 
 ### Session 48 (Bruh Glasstronaut) — First Light: the design sprint (daily plein air art LIVE + the theme spec BLESSED) (2026-06-12)
 

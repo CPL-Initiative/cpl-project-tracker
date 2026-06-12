@@ -93,6 +93,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [`methodology-user-vocabulary-category-maps.md`](kb-notes/methodology-user-vocabulary-category-maps.md) | methodology | Rollup labels owned by the user = curated JSON (`titles{}` source of truth) + `^`-anchored ordered patterns as drift insurance + visible fallback bucket; merge-preserving seeder | 2026-06-11 |
 | [`methodology-college-homonym-subject-codes.md`](kb-notes/methodology-college-homonym-subject-codes.md) | methodology | Subject codes are college-local vocabulary: detect homonym lexicon entries (TOP-division votes + minority-title evidence), SCOPE them per college instead of removing, and make inference passes RETRACT their own stale fills (the CRIM M1003 case) | 2026-06-11 |
 | [Methodology — Title-similarity merge candidates: the guard suite and the licensure-spec lesson](kb-notes/methodology-title-similarity-merge-guards.md) | methodology | published | 2026-06-12 | 2026-06-12 |
+| [Methodology — SUBJ4-consumer semantics: umbrella allowances + alias families mirrored everywhere](kb-notes/methodology-subj4-consumer-semantics.md) | methodology | published | 2026-06-12 | 2026-06-12 |
 | [Methodology — Witness-kinship gate (historical receipts need a present-tense validity check)](kb-notes/methodology-witness-kinship-gate.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Methodology — Alias maps are permutations, not graphs (slot-reuse resolution semantics)](kb-notes/methodology-alias-map-resolution-semantics.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Methodology — Rank a cleanup queue by downstream impact, not structural leverage](kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
@@ -183,6 +184,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 45 → 46 | CCR rules day: statewide router #379 + homonym repair #381 + description lane #382 (handoff) | [`session_46_handoff.md`](session_46_handoff.md) |
 | 46 → 47 | The AUTO/smog over-mint case: 🏷 title lane #385 + statewide twin merge #386 + smog consolidations (handoff) | [`session_47_handoff.md`](session_47_handoff.md) |
 | 48 → 49 | First Light design sprint #391–#400: daily plein air greeting LIVE + theme spec v1.4.2 BLESSED → the retheme is GO (handoff) | [`session_49_handoff.md`](session_49_handoff.md) |
+| 47 → 50 | Data lane (Bruh Supernova): SUBJ ⇄ CCR checker #388/#402 + 📋 To-Do feed #389 + SUBJ4 fold dry-run #405 (5/5 gates) → the receipted APPLY | [`session_50_handoff.md`](session_50_handoff.md) |
 
 ---
 

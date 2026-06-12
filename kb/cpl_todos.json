@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-06-12-c",
+  "_as_of": "2026-06-12-d",
   "_session": 48,
-  "_status": "Session 48 was the First Light design sprint (10 PRs): the dashboard now greets you once a day with a public-domain California plein air painting — full-color reveal, read-aloud, and an anonymous thought-for-the-day box (stored write-only; nobody can read them back except the service role). The visual spec for the coming dashboard re-theme is locked and BLESSED (prototype v1.6: monochrome + crimson/cobalt/hunter/violet/mustard, glass chrome, GLASS-QUIET uniform chips — Sam graduated the glass view at session close). Next big Fable move: paint the live dashboard in the new theme. On the data side: Sam CURED all 11 shared Common SUBJ codes (2026-06-12) — the sweep is now alias-aware so convergence pairs stop flagging — and the SUBJ4 fold dry-run is the next Fable move there. Smog residuals + merge queues remain the curator frontier.",
+  "_status": "Two lanes ran in parallel today. DESIGN (Session 48): First Light is live — a daily public-domain California plein air greeting with read-aloud and an anonymous reflection box — and the re-theme spec is BLESSED at v1.6 (glass-quiet chips graduated); painting the live dashboard is that lane's next move. DATA (Session 47, Bruh Supernova): the CSR grew SUBJ ⇄ CCR error checking with live collision-free suggestions, Sam cured all 11 shared Common SUBJ codes the same morning (the THEA alias false positive fixed + the DRAM re-code reverted — the convergence pair deliberately shares THEA), and the SUBJ4 fold DRY-RUN passed 5/5 gates (#405: 10,974 re-keys planned). Next data-lane move: the receipted APPLY with the twin-merge re-run bundled. Smog residuals + merge queues remain the curator frontier.",
   "items": [
     {
       "id": "sam-first-light",
@@ -11,10 +11,10 @@
       "text": "Tomorrow morning: enjoy First Light on the live dashboard ☀ — try the 🔊 read-aloud and share a reflection (it's anonymous). Reopen anytime via the 'Today's painting' chip in the header."
     },
     {
-      "id": "csr-thea-dram",
+      "id": "sam-fold-buckets",
       "who": "sam",
       "tab": "canonical-subj4",
-      "text": "One revisit: 'Theater Arts' is the recorded ALIAS of 'Drama/Theater Arts' (they converged in Session 38, both keyed THEA — the sweep wrongly flagged that as a collision; fixed now). Your DRAM re-code would re-key 1,540 rows and un-converge the pair at the fold. If you meant to re-split the two disciplines, keep DRAM; otherwise revert Drama/Theater Arts to THEA (one click on its row)."
+      "text": "Before the fold APPLY: skim the 19 curated-collision buckets in kb/subj4_dryrun/report.md (deterministic re-numberings of rows you've curated — e.g. the smog family lands adjacent as AUTO M1004/05/06). A 👍 on that list is the last gate; Fable handles the rest of the apply."
     },
     {
       "id": "ccr-smog-residuals",
@@ -47,10 +47,16 @@
       "text": "First Light growth: manifest 3 → 60–90 verified-PD paintings (sourcing rules in the KB note); later, the reflections themes job (service-role mining → a community card) and the Almanac gallery."
     },
     {
-      "id": "fable-subj4-fold",
+      "id": "fable-subj4-apply",
       "who": "fable",
       "tab": "canonical-subj4",
-      "text": "Scope + dry-run the canonical-SUBJ4 fold re-mint — UNBLOCKED: all 148 disciplines have a pick and all 11 shared codes are cured (2026-06-12). The sweep's off-canonical queue is the input (~7.4k rows incl. stand-alones, pending the THEA call). Identity-grain TOP-vs-SUBJ4 audit first; Rule-7 playbook."
+      "text": "The fold APPLY (dry-run #405 passed 5/5 — 10,974 re-keys): fresh-read kb_curation at write-time, land atomically in one cron window with the Supabase mirror, BUNDLE the statewide twin-merge re-run, then the full post-apply chain (promotions re-key → CSR re-seed → audit → both receipts → artifact regen). Consider the chain-driver script first. Spec: docs/session_50_handoff.md."
+    },
+    {
+      "id": "fable-ccr-subj-groups",
+      "who": "fable",
+      "tab": "unified-courses",
+      "text": "CCR Subject filter grouping (Sam yes'd): one dropdown, three groups — Common ✓ / Official C-ID-CCN / Local-derived (awaiting fold; doubles as the fold's progress meter). Spec in docs/session_50_handoff.md; sequence around the retheme's unified_courses.js chip work."
     },
     {
       "id": "fable-cis-cs-gate",

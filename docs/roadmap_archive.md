@@ -1228,3 +1228,26 @@ evidence): TF-IDF description lane, level/gender/sport-guarded → **474 groups
 `kb/desc_consolidation_out/candidates.json`, termly re-run). Suite 29/29.
 Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 45); KB note:
 `methodology-college-homonym-subject-codes.md`.
+
+## Session 46 — the AUTO/smog over-mint case → the 🏷 title-evidence lane + the STATEWIDE twin merge (2026-06-12)
+
+Sam's brief: refine minting/merging rules off the AUTO over-mints (smog I/II),
+then statewide. One BAR state spec = **52 identities**; all lanes combined had
+surfaced 3 pairs. **#385**: `kb/_title_consolidation_dryrun.py` — IDF-weighted
+title cosine over dark M-IDs **+ 54k stand-alones**, discipline-OR-TOP
+corroboration, **NO units gate** (licensure specs pack 1–7u by college),
+clique-consistent components → 6th worklist section (🏷); shared guard suite
+`kb/_consolidation_guards.py`: **two-axis level marks**, **strict-equality
+variant marks** (refresher/instructor/module/honors/lab), year-edition marks,
+word-number folds (also `_sug_sig`/`_fam_key`). **#386** (Sam: "consolidations
+that should happen — rule sharpening"): the Session-39 twin merge taken
+**STATEWIDE** (`kb/_apply_twin_merge_statewide.py`) + guard-clique gate —
+**589 token-identical twins absorbed** (16,143→15,554 parents; 65 groups
+guard-skipped; curator targets honored; V-gates + promotions re-key + receipts
+`kb/twin_merge_out/2026-06-12/`), **plus the Sam-confirmed smog merges**:
+L1&2 → `AUTO M1001`, the 12-member Level-2 family → `AUTO M1007` (Supabase
+`kb_curation` + overlay). `docs/ccr_rules_brief.md` amended — the strict twin
+tier is the ONE title-based auto-merge, fully condition-listed. Smog: 52
+identities → 9 queue families → **2 merged rows + 8 residual queue groups**.
+Suite 30/30. Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 46 +
+part 2); KB note: `methodology-title-similarity-merge-guards.md`.

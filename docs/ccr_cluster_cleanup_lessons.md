@@ -1003,3 +1003,82 @@ display-level consolidation becomes physical.**
 to document the one exception (the strict twin tier, its full condition
 list, and the alias-map undo guarantee). The plain-language contract must
 track what the automation actually does.
+
+## Session 47 — Bruh Supernova: SUBJ ⇄ CCR checking, the To-Do feed, the fold dry-run (2026-06-12)
+
+Sam's brief: a CSR routine to check-and-cure SUBJ-vs-CCR errors, on-the-fly
+SUBJ validation while curating, and a per-tab To-Do checklist ("simple is
+better"). Four PRs (#388, #389, #402, #405), all merged on green, running
+PARALLEL to Session 48's First Light design sprint (zero collisions — the
+two sessions co-edited `kb/cpl_todos.json` sequentially and even relayed a
+chip-restyle heads-up through it).
+
+**#388 — the `✓ Check SUBJ ⇄ CCR` sweep + live input feedback.** One
+ownership index over the CSR seed's `variants_observed` (the per-discipline
+SUBJ4 distribution across actual CCR rows — refreshed at every re-seed, so
+it is exactly the right grain, already client-side). The sweep reports
+🔴 shared Common SUBJ codes / 🟡 off-canonical CCR rows (with `⚠ = X`
+cross-claim annotations — the `AUTB M1037` class — and minority-share
+notes) / 🔴 invalid saves / ⚪ missing picks, each with a jump-to-row cure.
+The input gains live collision/in-use badges + collision-free suggestion
+chips (chip mousedown fills before blur so the normal blur-save persists);
+colliding saves confirm, never block (convergences are legitimate).
+**Outcome: Sam cured all 11 shared codes within hours** — the affordance
+became throughput the same morning.
+
+**#402 — alias-family awareness (the THEA lesson).** The sweep flagged
+Drama/Theater Arts + its recorded fan-in ALIAS "Theater Arts" (both
+deliberately `THEA` since the Session-38 convergence) as a collision, and
+Sam — reasonably — "cured" it by re-coding DRAM, which would have re-keyed
+1,540 rows and UN-converged the pair at the fold. Fix: `aliasFamilyOf()`
+over `kb/discipline_aliases.json`; within-family code-sharing renders as
+"ℹ expected", drift cross-claims and live-input warnings skip family
+members. The DRAM pick was reverted (Sam's call: "if we can safely keep
+them together, it's preferable") with an intent note in `kb_curation`.
+
+**#389 — the 📋 To-Do button** (every tab): `kb/cpl_todos.json` rendered as
+a For-Sam / For-Fable daily checklist with a "where we are" status;
+per-browser check-offs keyed by `_as_of`; refreshed at every Rule-8
+checkpoint (item 9, paired with the handoff). Day-one lesson: during an
+active curation burst the static counts age within HOURS (the "11
+collisions" item outlived its truth by mid-morning) — acceptable for v1,
+live-count enrichment is the known knob.
+
+**#405 — the canonical-SUBJ4 fold DRY-RUN (Rule-7 playbook step 1).**
+Preconditions verified live (148/148 picks, zero shared codes). The first
+run FAILED honestly: `_subj4_dryrun.py` predates the umbrella-discipline
+concept and planned to fold the per-language FL** rows back into FLNG
+(undoing the 2026-06-09 split re-mint) and Kinesiology's ATHL rows into
+KINE — bursting the 999-seq capacity (`no_seq_overflow`). Patch:
+`load_umbrella_allowances()` (mirror of `kb/_row_audit.py`
+UMBRELLA_DISCIPLINES) — in-allowance rows keep their OWN SUBJ4,
+off-allowance rows surface as `skip_umbrella_offcode` (95 — never
+auto-folded; which language an off-code FL course belongs to is the FL
+apply's call), V2 exempts umbrellas. **Result: 71,710 M-IDs → 10,974
+re-keys (2,254 minted + 8,720 stand-alones), 60,063 no-change, 5/5 gates
+PASS.** Apply gate: 19 curated-collision buckets (deterministic
+re-sequencing to approve — the smog family lands adjacent as
+`AUTO M1004/05/06`). One stray: `ARTS M1201` curated as "Ceramic
+Technology" (not an MQ name) — vocab cleanup later.
+
+**Operational findings:**
+- The cron DOES sync the canonical seed (`_apply_canonical_subj4.py`, step
+  guarded `|| echo non-fatal`) — but it failed/skipped silently on some
+  days (CIS=CSIS sat in Supabase since 5-23 while the seed said CISC), and
+  a one-minute race (cron read 17:17:34, the THEA revert committed
+  17:18:32) briefly split seed-vs-Supabase state during the rebase. Treat
+  the committed seed as eventually-consistent; fresh-read at write-time
+  stays mandatory (it caught this exact case).
+- Network egress from the session container is policy-blocked for both
+  api.github.com and Supabase REST — the MCP `execute_sql` lane is the
+  workable fresh-read path (export via `json_agg`, fold locally).
+
+**Patterns (canon additions):**
+- **Diagnostics must know about deliberate convergences.** A checker that
+  can't see alias families / umbrellas doesn't just false-positive — it
+  actively PUSHES wrong cures to a diligent curator (THEA→DRAM). Shared
+  semantics (umbrella allowances, alias families) now live in three
+  consumers: the auditor, the CSR sweep, the fold dry-run. Mirror or drift.
+- **Let the first dry-run fail.** Both real findings (the FL fold-back, the
+  KINE overflow) came from running the stale machinery and reading its
+  damage — the Session-45/46 pattern holding for re-mints too.
