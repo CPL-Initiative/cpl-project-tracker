@@ -1,11 +1,25 @@
 {
- "generated_at": "2026-06-12T20:25:34.326521",
- "status": "APPLIED",
+ "generated_at": "2026-06-12T22:06:07.681387",
+ "status": "APPLY",
  "counts": {
-  "coci_minted_courses.json": 4141,
-  "coci_minted_singletons.json": 15598,
-  "formerly_stripped": 162,
-  "_note": "counts from the 2026-06-12 apply (apply_run.log); a SIGPIPE-killed first invocation + a 2-row straggler re-apply are folded in; final state verified idempotent (re-run = 0 changes)"
+  "coci_minted_courses.json": 1,
+  "coci_minted_singletons.json": 2
  },
- "samples": []
+ "samples": [
+  {
+   "id": "NRSR M1145",
+   "old": "Nursing Simulation Lab Intermediate Ã‚â",
+   "new": "Nursing Simulation Lab Intermediate"
+  },
+  {
+   "id": "WELD M10FI",
+   "old": "Unitized Body Panel, Section, & Frame; Replacement & Alignment Ã‚â",
+   "new": "Unitized Body Panel, Section, & Frame; Replacement & Alignment"
+  },
+  {
+   "id": "LABR M10BV",
+   "old": "When the Paycheck Stops Ã‚â",
+   "new": "When the Paycheck Stops"
+  }
+ ]
 }

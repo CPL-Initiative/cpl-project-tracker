@@ -197,6 +197,10 @@ jobs:
           # Budget Phase 3 PR-1: daily-cached Supabase snapshot
           # (budget_funding + personnel; graceful-degradation fallback)
           git add kb/budget_snapshot.json 2>/dev/null || true
+          # COCI title-correction queue: raw course titles with encoding
+          # artifacts, repaired for display (e:1 member chip) + queued here
+          # so the source records can be fixed in COCI
+          git add kb/coci_title_corrections.json 2>/dev/null || true
           # CustomReport_latest.json is intentionally NOT committed — it carries
           # student PII (names/DOB/IDs) + staff contacts. It is fetched fresh each
           # run (Step 1) and read by the generator at runtime; gitignored so it

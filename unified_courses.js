@@ -2109,7 +2109,17 @@
               var mr = el("tr");
               mr.appendChild(el("td", {}, [cols[e.c] || ""]));
               mr.appendChild(el("td", { class: "uc-id" }, [e.n || ""]));
-              mr.appendChild(el("td", {}, [e.t || ""]));
+              // e.e = the raw COCI title carried encoding artifacts (mojibake);
+              // the generator repaired it for display and queued the source fix
+              // in kb/coci_title_corrections.json — chip it for the curator.
+              var tcell = el("td", {}, [e.t || ""]);
+              if (e.e) {
+                tcell.appendChild(el("span", {
+                  style: "margin-left:6px;font-size:.68rem;font-weight:600;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#92400e;white-space:nowrap;vertical-align:middle;",
+                  title: "The college's COCI course title contains encoding artifacts (e.g. Ã‚Â) — shown repaired here. The source record still needs correction in COCI; it's queued in kb/coci_title_corrections.json.",
+                }, ["⚠ fix in COCI"]));
+              }
+              mr.appendChild(tcell);
               mr.appendChild(el("td", {}, [e.u != null ? String(e.u) : ""]));
               mr.appendChild(el("td", { style: "font-size:.82rem;color:#475569;" },
                 [e.p ? (e.p + (topmap[e.p] ? ": " + topmap[e.p] : "")) : ""]));
