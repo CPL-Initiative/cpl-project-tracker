@@ -29,7 +29,7 @@ const HTML = fs.readFileSync("prototype/first_light_theme_v1.html", "utf8");
 const SPEC_HEXES = [
   "#F4F2ED", "#1C1C1A", "#3A3A36", "#5C5C55",          // base grays
   "#C8102E", "#0047AB", "#355E3B", "#6D28D9",          // accents, light grade
-  "#E3B341", "#9A7400", "#8B6800", "#5E4700",           // mustard fill + deep + text + halo
+  "#E3B341", "#946F00", "#6324C5",                      // mustard fill + chip fills (white labels)
   "#E28392", "#7DA1D4", "#8EA591", "#B28DEB",          // on-dark grades (reserved)
 ];
 for (const hex of SPEC_HEXES) {
@@ -44,17 +44,20 @@ check("prefers-reduced-transparency honored", HTML.includes("prefers-reduced-tra
 check("prefers-reduced-motion honored", HTML.includes("prefers-reduced-motion"));
 // v1.1: the masthead is a simple LIGHT band — no dark scrim anywhere
 check("no dark masthead scrim remains", !HTML.includes("--scrim-dark"));
-// v1.2: bright mustard chip labels carry the 8-way halo — the bright hue
-// must never appear as text WITHOUT it (the halo is the AA-measured pair)
+// v1.3: solid uniform chips — white labels on accent fills, no borders,
+// button-matched corners, fixed width; bright mustard NEVER text again
+check("bright mustard never used as a text color",
+  !/color:\s*var\(--mustard-fill\)/.test(HTML));
 {
-  const m = HTML.match(/\.chip-mustard\s*\{[^}]*\}/);
-  check("mustard chip = bright label + halo",
-    !!m && m[0].includes("color:var(--mustard-fill)") && m[0].includes("var(--mustard-halo)"));
-  const brightTextUses = (HTML.match(/color:var\(--mustard-fill\)/g) || []).length;
-  check("bright mustard text appears ONLY in the haloed chip rule", brightTextUses === 1);
+  const base = HTML.match(/\.chip\s*\{[^}]*\}/);
+  check("chip base = borderless, uniform width, 8px corners",
+    !!base && base[0].includes("border:none") && base[0].includes("width:10rem") &&
+    base[0].includes("border-radius:8px") && base[0].includes("color:#FFFFFF"));
 }
-check("chips fill with surface-opaque",
-  /\.chip-crimson\s*\{[^}]*background:var\(--surface-opaque\)/.test(HTML));
+check("mustard chip uses the derived ochre fill",
+  /\.chip-mustard\s*\{\s*background:var\(--mustard-chip\)/.test(HTML));
+check("violet chip uses the darkened fill",
+  /\.chip-violet\s*\{\s*background:var\(--violet-chip\)/.test(HTML));
 // v1.2: gallery-size painting
 check("dialog goes gallery-size", HTML.includes("max-width:min(1180px, 94vw)"));
 check("painting gets 66vh", /\.fl-art img\s*\{[^}]*max-height:66vh/.test(HTML));
