@@ -48,7 +48,9 @@ def derive(start_hex, bg, target, toward):
     start = h2rgb(start_hex)
     end = (0, 0, 0) if toward == "black" else (255, 255, 255)
     for step in range(0, 101):
-        c = mix(start, end, step / 100.0)
+        # evaluate the ROUNDED hex we'd actually return — rounding can
+        # nudge a borderline candidate back under the target
+        c = h2rgb(rgb2h(mix(start, end, step / 100.0)))
         if ratio(c, bg) >= target:
             return rgb2h(c), ratio(c, bg)
     return rgb2h(end), ratio(end, bg)
@@ -102,14 +104,20 @@ for name, seed in BRAND.items():
     add(f"--{name}-on-dark", dark_hex, "text", DARK_WORST, "dark-worst", 4.5)
     print(f"  {name:8s} seed {seed} → light {text_hex} · on-dark {dark_hex}")
 
-# Mustard: fill + ink-on-fill + deep (border/icon) + on-dark
+# Mustard: fill + ink-on-fill + deep (border/icon) + TEXT grade + on-dark.
+# v1.1 (white-filled chips): chip labels need a dedicated darker text
+# grade — the brand hue and even the 3:1 border grade fail 4.5:1.
 add("--ink on --mustard fill", "#1C1C1A", "text", h2rgb(MUSTARD_FILL), "mustard fill", 4.5)
 deep_hex, _ = derive(MUSTARD_SEED, GLASS_WORST, 3.0, "black")
 add("--mustard-deep (border/icon)", deep_hex, "ui", PAPER, "paper", 3.0)
 add("--mustard-deep (border/icon)", deep_hex, "ui", GLASS_WORST, "glass-worst", 3.0)
+text_mustard, _ = derive(MUSTARD_SEED, PAPER, 4.5, "black")  # paper binds for dark text
+add("--mustard-text (chip labels)", text_mustard, "text", PAPER, "paper", 4.5)
+add("--mustard-text (chip labels)", text_mustard, "text", GLASS_WORST, "glass-worst", 4.5)
+add("--mustard-text (chip labels)", text_mustard, "text", h2rgb("#FFFFFF"), "white chip", 4.5)
 mustard_dark, _ = derive(MUSTARD_FILL, DARK_WORST, 4.5, "white")
 add("--mustard-on-dark", mustard_dark, "text", DARK_WORST, "dark-worst", 4.5)
-print(f"  mustard  fill {MUSTARD_FILL} · deep {deep_hex} · on-dark {mustard_dark}")
+print(f"  mustard  fill {MUSTARD_FILL} · deep {deep_hex} · text {text_mustard} · on-dark {mustard_dark}")
 
 # Focus ring (cobalt graphic grade) must clear 3:1 against paper
 cobalt_text, _ = derive(BRAND["cobalt"], GLASS_WORST, 4.5, "black")

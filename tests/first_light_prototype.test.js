@@ -29,8 +29,8 @@ const HTML = fs.readFileSync("prototype/first_light_theme_v1.html", "utf8");
 const SPEC_HEXES = [
   "#F4F2ED", "#1C1C1A", "#3A3A36", "#5C5C55",          // base grays
   "#C8102E", "#0047AB", "#355E3B", "#6D28D9",          // accents, light grade
-  "#E3B341", "#9A7400",                                 // mustard fill + deep
-  "#E28392", "#7A9FD3", "#8CA38F", "#B28DEB",          // on-dark grades
+  "#E3B341", "#9A7400", "#8B6800",                      // mustard fill + deep + text
+  "#E28392", "#7DA1D4", "#8EA591", "#B28DEB",          // on-dark grades (reserved)
 ];
 for (const hex of SPEC_HEXES) {
   check("spec hex present: " + hex, HTML.includes(hex));
@@ -44,13 +44,15 @@ check("dialog semantics present",
 // reduced-motion + reduced-transparency media queries shipped
 check("prefers-reduced-transparency honored", HTML.includes("prefers-reduced-transparency"));
 check("prefers-reduced-motion honored", HTML.includes("prefers-reduced-motion"));
-// the dark masthead must never repaint white under solid-surface fallbacks
-// (its text is white): the sim-solid override excludes it + restates dark,
-// and the media-query path pins it with a higher-specificity selector
-check("sim-solid excludes masthead from glass whitening",
-  HTML.includes("body.sim-solid .glass:not(.masthead)"));
-check("sim-solid restates dark masthead", HTML.includes("body.sim-solid .masthead"));
-check("reduced-transparency pins dark masthead", HTML.includes("header.masthead { background:#1A1A22; }"));
+// v1.1: the masthead is a simple LIGHT band — no dark scrim anywhere
+check("no dark masthead scrim remains", !HTML.includes("--scrim-dark"));
+// v1.1: chips are white-filled; mustard labels use the dedicated text grade
+check("mustard chip labels use --mustard-text",
+  /\.chip-mustard\s*\{[^}]*color:var\(--mustard-text\)/.test(HTML));
+check("chips fill with surface-opaque",
+  /\.chip-crimson\s*\{[^}]*background:var\(--surface-opaque\)/.test(HTML));
+// read-aloud button ships (behavior needs a real speech engine)
+check("read-aloud button present", HTML.includes('id="flSpeak"'));
 
 // ── Part B — greet state machine in jsdom ──
 function boot(storage) {
@@ -80,6 +82,9 @@ const isOpen = (dom) =>
   check("fresh: auto-opens once settled", isOpen(fresh));
   check("footer credit filled",
     fresh.window.document.getElementById("footCredit").textContent.length > 10);
+  // jsdom has no speechSynthesis → the read-aloud button must hide itself
+  check("read-aloud hides when unsupported",
+    fresh.window.document.getElementById("flSpeak").style.display === "none");
 
   // (b) ESC closes + stamps today
   fresh.window.document.dispatchEvent(
