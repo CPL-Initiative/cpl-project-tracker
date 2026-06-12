@@ -104,28 +104,27 @@ for name, seed in BRAND.items():
     add(f"--{name}-on-dark", dark_hex, "text", DARK_WORST, "dark-worst", 4.5)
     print(f"  {name:8s} seed {seed} → light {text_hex} · on-dark {dark_hex}")
 
-# Mustard: fill + ink-on-fill + deep (border/icon) + TEXT grade + on-dark.
-# v1.1 (white-filled chips): chip labels need a dedicated darker text
-# grade — the brand hue and even the 3:1 border grade fail 4.5:1.
+# Mustard: bright fill (dots/banners; ink on it) + on-dark.
 add("--ink on --mustard fill", "#1C1C1A", "text", h2rgb(MUSTARD_FILL), "mustard fill", 4.5)
-deep_hex, _ = derive(MUSTARD_SEED, GLASS_WORST, 3.0, "black")
-add("--mustard-deep (border/icon)", deep_hex, "ui", PAPER, "paper", 3.0)
-add("--mustard-deep (border/icon)", deep_hex, "ui", GLASS_WORST, "glass-worst", 3.0)
-text_mustard, _ = derive(MUSTARD_SEED, PAPER, 4.5, "black")  # paper binds for dark text
-add("--mustard-text (chip labels)", text_mustard, "text", PAPER, "paper", 4.5)
-add("--mustard-text (chip labels)", text_mustard, "text", GLASS_WORST, "glass-worst", 4.5)
-add("--mustard-text (chip labels)", text_mustard, "text", h2rgb("#FFFFFF"), "white chip", 4.5)
-# v1.2 (Sam): bright-mustard chip labels with a thin dark outline. With a
-# full halo, the halo is the color adjacent to every letterform — so the
-# pair that must clear 4.5:1 is FILL vs HALO (and halo vs the chip fill
-# behind it). Derive the halo dark enough for both.
-halo_mustard, _ = derive(MUSTARD_SEED, h2rgb(MUSTARD_FILL), 4.5, "black")
-add("--mustard-halo vs bright label", halo_mustard, "text", h2rgb(MUSTARD_FILL), "mustard fill", 4.5)
-add("--mustard-halo vs white chip", halo_mustard, "text", h2rgb("#FFFFFF"), "white chip", 4.5)
-add("--mustard-halo vs paper", halo_mustard, "text", PAPER, "paper", 4.5)
 mustard_dark, _ = derive(MUSTARD_FILL, DARK_WORST, 4.5, "white")
 add("--mustard-on-dark", mustard_dark, "text", DARK_WORST, "dark-worst", 4.5)
-print(f"  mustard  fill {MUSTARD_FILL} · deep {deep_hex} · text {text_mustard} · halo {halo_mustard} · on-dark {mustard_dark}")
+print(f"  mustard  fill {MUSTARD_FILL} · on-dark {mustard_dark}")
+
+# ── v1.3 (Sam): SOLID chip fills with WHITE labels (the Primary-action
+# look). White text must clear 4.5:1 on every fill. Crimson, cobalt and
+# hunter pass as their core hues; violet darkens a touch for extra pop
+# (Sam), and mustard's chip fill MUST darken to a deep ochre — white on
+# true mustard is ~2:1, physically unfixable. The bright hue keeps its
+# dot/banner jobs.
+WHITE_BG = (255, 255, 255)
+for name, seed in BRAND.items():
+    add(f"white label on --{name} chip fill", "#FFFFFF", "text", h2rgb(seed), f"{name} fill", 4.5)
+violet_chip, _ = derive(BRAND["violet"], WHITE_BG, 8.0, "black")   # aesthetic darken, big margin
+add("white label on --violet-chip", "#FFFFFF", "text", h2rgb(violet_chip), "violet-chip", 4.5)
+mustard_chip, _ = derive(MUSTARD_SEED, WHITE_BG, 4.6, "black")     # the dijon trade-off
+add("white label on --mustard-chip", "#FFFFFF", "text", h2rgb(mustard_chip), "mustard-chip", 4.5)
+add("--mustard-chip vs paper (chip vs page)", mustard_chip, "ui", PAPER, "paper", 3.0)
+print(f"  chips    violet-chip {violet_chip} · mustard-chip {mustard_chip} (white labels)")
 
 # Focus ring (cobalt graphic grade) must clear 3:1 against paper
 cobalt_text, _ = derive(BRAND["cobalt"], GLASS_WORST, 4.5, "black")
