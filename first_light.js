@@ -61,7 +61,16 @@
 
   var KEY_SEEN = "cplFirstLight.seen.v1";
   var KEY_OPTOUT = "cplFirstLight.optOut.v1";
+  var KEY_REFLECTED = "cplFirstLight.reflected.v1";
   var GREET_DELAY_MS = 650;
+
+  // Reflections post to an ANONYMOUS, WRITE-ONLY Supabase table
+  // (public.cpl_reflections: anon INSERT with a length check, no SELECT —
+  // the chat_interactions pattern). Same public anon key the dashboard
+  // already ships in cpl_chat.js / unified_courses.js.
+  var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
+  var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+  var REFLECT_ENDPOINT = SUPABASE_URL + "/rest/v1/cpl_reflections";
 
   function todayKey() { return new Date().toDateString(); }
   function pickToday() {
@@ -80,8 +89,8 @@
       ".cplfl-overlay{position:fixed;inset:0;z-index:12000;display:none;align-items:center;justify-content:center;" +
       "background:rgba(10,20,35,.55);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);padding:1.2rem}" +
       ".cplfl-overlay.open{display:flex}" +
-      ".cplfl-dialog{background:var(--surface,#fff);border-radius:16px;overflow:hidden auto;max-width:720px;width:100%;" +
-      "max-height:92vh;box-shadow:0 30px 80px rgba(10,10,20,.4);font-family:'Source Sans 3',Arial,sans-serif}" +
+      ".cplfl-dialog{background:var(--surface,#fff);border-radius:16px;overflow:hidden auto;max-width:min(1180px,94vw);width:100%;" +
+      "max-height:94vh;box-shadow:0 30px 80px rgba(10,10,20,.4);font-family:'Source Sans 3',Arial,sans-serif}" +
       ".cplfl-head{display:flex;align-items:center;gap:.6rem;padding:.85rem 1.25rem;border-bottom:1px solid var(--border,#E5E7EB)}" +
       ".cplfl-head .cplfl-sun{width:12px;height:12px;border-radius:50%;background:var(--gold-accent,#C9A84C);flex:none}" +
       ".cplfl-head h2{font-family:'Playfair Display',Georgia,serif;font-size:1.02rem;margin:0;color:var(--text-strong,#1F2937)}" +
@@ -90,7 +99,7 @@
       "font-size:1rem;cursor:pointer;color:var(--text-body,#374151);flex:none}" +
       ".cplfl-close:hover{background:var(--surface-muted,#F1F5F9)}" +
       ".cplfl-art{background:#22221F;text-align:center}" +
-      ".cplfl-art img{max-width:100%;max-height:46vh;display:block;margin:0 auto;filter:grayscale(1);transition:filter 1.8s ease .35s}" +
+      ".cplfl-art img{max-width:100%;max-height:66vh;display:block;margin:0 auto;filter:grayscale(1);transition:filter 1.8s ease .35s}" +
       ".cplfl-overlay.open .cplfl-art img.cplfl-revealed{filter:grayscale(0)}" +
       ".cplfl-imgfallback{display:none;padding:3rem 1rem;color:rgba(255,255,255,.88);font-size:.85rem;" +
       "background:linear-gradient(160deg,#8a6d2e 0%,#a8842f 30%,#6e7d52 65%,#43523f 100%)}" +
@@ -99,6 +108,13 @@
       ".cplfl-byline{font-size:.86rem;color:var(--text-muted,#6B7280);margin-bottom:.6rem}" +
       ".cplfl-blurb{font-size:.92rem;color:var(--text-body,#374151);margin:0 0 .55rem;line-height:1.5}" +
       ".cplfl-setting{font-size:.85rem;color:var(--text-muted,#6B7280);margin:0 0 .75rem;line-height:1.45}" +
+      ".cplfl-reflect{margin:.3rem 0 .2rem}" +
+      ".cplfl-reflect label{display:block;font-weight:600;font-size:.85rem;color:var(--text-strong,#1F2937);margin-bottom:.3rem}" +
+      ".cplfl-reflect label span{font-weight:400;color:var(--text-muted,#6B7280)}" +
+      ".cplfl-reflect textarea{width:100%;box-sizing:border-box;resize:vertical;min-height:60px;font-family:inherit;font-size:.9rem;" +
+      "color:var(--text-body,#374151);background:var(--surface-subtle,#F8FAFC);border:1px solid var(--border-strong,#CBD5E1);border-radius:9px;padding:.5rem .7rem}" +
+      ".cplfl-reflect-note{font-size:.73rem;color:var(--text-muted,#6B7280);display:block;margin-top:.3rem;max-width:75ch}" +
+      ".cplfl-reflect-msg{font-size:.78rem;color:var(--text-muted,#6B7280)}" +
       ".cplfl-actions{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:.4rem 0 .6rem}" +
       ".cplfl-btn{display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;font-family:inherit;font-size:.85rem;" +
       "font-weight:600;background:var(--navy-primary,#0A2240);color:#fff;border:none;border-radius:9px;padding:.5rem 1rem;min-height:32px}" +
@@ -141,10 +157,17 @@
       '<div class="cplfl-byline" id="cplfl-byline"></div>' +
       '<p class="cplfl-blurb" id="cplfl-blurb"></p>' +
       '<p class="cplfl-setting" id="cplfl-setting"></p>' +
+      '<div class="cplfl-reflect">' +
+      '<label for="cplfl-reflect">A thought for the day <span>(optional)</span></label>' +
+      '<textarea id="cplfl-reflect" maxlength="2000" rows="3" placeholder="About the painting, your priorities — anything."></textarea>' +
+      '<span class="cplfl-reflect-note">Don’t worry — reflections are anonymous, and we’ll only use them to look for uplifting themes and opportunities for growth and innovation for our colleagues and communities.</span>' +
+      '</div>' +
       '<div class="cplfl-actions">' +
       '<button class="cplfl-btn" id="cplfl-done" type="button">Begin the day</button>' +
+      '<button class="cplfl-btn cplfl-ghost" id="cplfl-reflect-send" type="button">Share reflection</button>' +
       '<button class="cplfl-btn cplfl-ghost" id="cplfl-speak" type="button" aria-pressed="false">🔊 Read aloud</button>' +
       '<label class="cplfl-optout"><input type="checkbox" id="cplfl-optout"> Don’t greet me with paintings</label>' +
+      '<span class="cplfl-reflect-msg" id="cplfl-reflect-msg" role="status"></span>' +
       '</div><div class="cplfl-lic" id="cplfl-lic"></div></div></div>';
     document.body.appendChild(overlay);
 
@@ -154,6 +177,7 @@
     byId("cplfl-optout").addEventListener("change", function (e) {
       lsSet(KEY_OPTOUT, e.target.checked ? "1" : "0");
     });
+    wireReflect();
     wireSpeak();
   }
 
@@ -185,6 +209,7 @@
     buildDom();
     openerEl = document.activeElement;
     fill();
+    syncReflectState();
     overlay.classList.add("open");
     var img = byId("cplfl-img");
     img.classList.remove("cplfl-revealed");
@@ -214,6 +239,57 @@
     var first = list[0], last = list[list.length - 1];
     if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
     else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+  }
+
+  /* ── reflection: anonymous, write-only, once a day per browser ─────── */
+  function syncReflectState() {
+    var ta = byId("cplfl-reflect"), btn = byId("cplfl-reflect-send");
+    if (!ta || !btn) return;
+    if (lsGet(KEY_REFLECTED) === todayKey()) {
+      ta.disabled = true;
+      btn.disabled = true;
+      btn.textContent = "✓ Shared — thank you";
+    } else {
+      ta.disabled = false;
+      btn.disabled = false;
+      btn.textContent = "Share reflection";
+    }
+  }
+  function wireReflect() {
+    var ta = byId("cplfl-reflect"), btn = byId("cplfl-reflect-send"), msg = byId("cplfl-reflect-msg");
+    btn.addEventListener("click", function () {
+      if (lsGet(KEY_REFLECTED) === todayKey()) return;
+      var text = (ta.value || "").trim();
+      if (!text) { ta.focus(); return; }
+      if (typeof window.fetch !== "function") {
+        msg.textContent = "Sharing isn’t available in this browser.";
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = "Sharing…";
+      msg.textContent = "";
+      window.fetch(REFLECT_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "apikey": SUPABASE_ANON,
+          "Authorization": "Bearer " + SUPABASE_ANON,
+          "Content-Type": "application/json",
+          "Prefer": "return=minimal"
+        },
+        body: JSON.stringify({
+          painting: pickToday().title,
+          reflection: text.slice(0, 2000)
+        })
+      }).then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        lsSet(KEY_REFLECTED, todayKey());
+        syncReflectState();
+      }).catch(function () {
+        btn.disabled = false;
+        btn.textContent = "Share reflection";
+        msg.textContent = "Couldn’t send just now — your words are still here, try again in a moment.";
+      });
+    });
   }
 
   /* ── read-aloud: the browser's own voices, nothing cloned ──────────── */

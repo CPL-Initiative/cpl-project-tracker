@@ -102,8 +102,39 @@ const isOpen = (dom) => {
   check("chip reopens on demand", isOpen(opt));
   check("opt-out checkbox reflected",
     opt.window.document.getElementById("cplfl-optout").checked === true);
+
+  // reflection: anonymous write-only POST, once per day per browser
+  const ta = opt.window.document.getElementById("cplfl-reflect");
+  check("reflection textarea present, capped at 2000", ta && ta.maxLength === 2000);
+  check("anonymity note shipped",
+    SRC.includes("reflections are anonymous"));
+  const calls = [];
+  opt.window.fetch = (url, opts) => { calls.push([url, opts]); return Promise.resolve({ ok: true }); };
+  ta.value = "  Poppies remind me why we do this work.  ";
+  opt.window.document.getElementById("cplfl-reflect-send").click();
+  await sleep(20);
+  check("submit posts to cpl_reflections", calls.length === 1 &&
+    calls[0][0].endsWith("/rest/v1/cpl_reflections"));
+  {
+    const body = calls.length ? JSON.parse(calls[0][1].body) : {};
+    check("payload = painting + trimmed reflection, nothing identifying",
+      body.reflection === "Poppies remind me why we do this work." &&
+      typeof body.painting === "string" &&
+      Object.keys(body).sort().join(",") === "painting,reflection");
+  }
+  check("share stamps the day gate",
+    opt.window.localStorage.getItem("cplFirstLight.reflected.v1") === today);
+  check("reflection locks after sharing", ta.disabled === true);
+  opt.window.document.getElementById("cplfl-reflect-send").click();
+  await sleep(20);
+  check("second share same day is blocked", calls.length === 1);
+
   opt.window.document.getElementById("cplfl-done").click();
   check("'Begin the day' closes", !isOpen(opt));
+
+  // gallery sizing shipped
+  check("dialog goes gallery-size", SRC.includes("max-width:min(1180px,94vw)"));
+  check("painting gets 66vh", SRC.includes("max-height:66vh"));
 
   // ── report ──
   let failed = 0;
