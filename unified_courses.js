@@ -1495,7 +1495,7 @@
         // count in the chip alongside the Phase-B consolidated M-IDs.
         var nCf = (r.consolidated_from || []).length, nMerged = nCf + (r.sfold || 0);
         out.appendChild(el("span", {
-          class: "uc-badge ok", style: "background:#ddf4ff;border:1px solid #54aeff;color:#0969da;",
+          class: "uc-badge", style: "color:var(--cobalt);",
           title: "Official-ID consolidation: " + nMerged +
             " minted identities that share this " + (idSysLabel(r.id_system) || "official") +
             " were merged into one" +
@@ -1892,7 +1892,7 @@
         "#tab-unified-courses .uc-aligned-wrap{margin-top:12px;padding-top:10px;border-top:1px dashed #cbd5e1;}" +
         "#tab-unified-courses .uc-aligned-head{font-size:.82rem;font-weight:700;color:#0f3d6e;margin-bottom:6px;}" +
         "#tab-unified-courses .uc-aligned-head .uc-aligned-sub{font-weight:400;color:#64748b;}" +
-        "#tab-unified-courses .uc-aligned-badge{display:inline-block;font-size:.66rem;font-weight:700;color:#fff;background:#0f766e;border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:middle;}";
+        "#tab-unified-courses .uc-aligned-badge{display:inline-block;font-size:.72rem;font-weight:600;color:var(--hunter);background:rgba(255,255,255,.5);border:1px solid var(--border-strong);border-radius:8px;padding:1px 7px;margin-left:6px;vertical-align:middle;}";
       document.head.appendChild(st);
     }
 
@@ -2097,7 +2097,7 @@
           uTd.appendChild(document.createTextNode(r.umin + "–" + r.umax));
           if (r.umax - r.umin > 2.0) uTd.appendChild(el("span",
             { title: "Unit spread > 2.0 across member colleges — likely an over-merge of different unit-load variants; review/split.",
-              style: "margin-left:4px;color:#b45309;cursor:help;" }, ["⚠"]));
+              style: "margin-left:4px;color:var(--mustard-text);cursor:help;" }, ["⚠"]));
         } else {
           uTd.appendChild(document.createTextNode(r.units == null ? "—" : String(r.units)));
         }
@@ -2112,7 +2112,7 @@
           euTd.appendChild(document.createTextNode(r.eu.toLocaleString()));
           if (r.flags && r.flags.over_merged) euTd.appendChild(el("span",
             { title: "Over-merged cluster — high-impact split candidate (the eligible-units may span conflated courses).",
-              style: "margin-left:4px;color:#b45309;cursor:help;" }, ["⚠"]));
+              style: "margin-left:4px;color:var(--mustard-text);cursor:help;" }, ["⚠"]));
         }
         tr.appendChild(euTd);
         tr.appendChild(el("td", {}, [r.st == null ? "—" : r.st.toLocaleString()]));

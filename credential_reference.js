@@ -1853,10 +1853,10 @@
     st.id = "cr-scope-css";
     st.textContent =
       "#tab-credential-reference .cr-scope-block{margin:2px 0 14px;}" +
-      "#tab-credential-reference .cr-chip{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:600;border:1px solid transparent;}" +
-      "#tab-credential-reference .cr-chip-ccc{background:var(--navy-primary);color:#fff;}" +
-      "#tab-credential-reference .cr-chip-local{background:var(--surface-muted);color:var(--text-strong);border-color:var(--border-strong);}" +
-      "#tab-credential-reference .cr-chip-gen{background:#FFF6E0;color:var(--mustard-text);border-color:var(--mustard-fill);}" +
+      "#tab-credential-reference .cr-chip{display:inline-block;padding:2px 8px;border-radius:8px;font-size:.72rem;font-weight:600;background:rgba(255,255,255,.5);border:1px solid var(--border-strong);}" +
+      "#tab-credential-reference .cr-chip-ccc{color:var(--hunter);}" +
+      "#tab-credential-reference .cr-chip-local{color:var(--text-muted);}" +
+      "#tab-credential-reference .cr-chip-gen{color:var(--violet);}" +
       "#tab-credential-reference .cr-chip-none{background:#f1f5f9;color:#94a3b8;}" +
       "#tab-credential-reference .cr-chip-cpl{background:#f1f5f9;color:#475569;border-color:#e2e8f0;font-weight:500;}" +
       "#tab-credential-reference .cr-rec{font-size:.78rem;color:#334155;margin-bottom:8px;}" +
@@ -1868,9 +1868,9 @@
       "#tab-credential-reference .cr-badge-group{display:flex;flex-wrap:wrap;gap:4px;align-items:center;}" +
       "#tab-credential-reference .cr-badge-grouplabel{font-size:.72rem;font-weight:600;color:#475569;margin-right:4px;}" +
       "#tab-credential-reference .cr-college-badge{display:inline-block;padding:1px 7px;border-radius:9px;font-size:.68rem;font-weight:500;border:1px solid;}" +
-      "#tab-credential-reference .cr-badge-green{background:#e6f4ea;color:#1e7e45;border-color:#a7d8b9;}" +
-      "#tab-credential-reference .cr-badge-orange{background:#fff4e5;color:#b45309;border-color:#f0c894;}" +
-      "#tab-credential-reference .cr-badge-more{font-size:.68rem;color:#2563eb;cursor:pointer;text-decoration:underline;}" +
+      "#tab-credential-reference .cr-badge-green{background:rgba(255,255,255,.5);color:var(--hunter);border-color:var(--border-strong);}" +
+      "#tab-credential-reference .cr-badge-orange{background:rgba(255,255,255,.5);color:var(--mustard-text);border-color:var(--border-strong);}" +
+      "#tab-credential-reference .cr-badge-more{font-size:.68rem;color:var(--cobalt);cursor:pointer;text-decoration:underline;}" +
       // Scope/CPL chips under the unified title on collapsed rows (compact).
       "#tab-credential-reference .cr-title-chips{display:flex;flex-wrap:wrap;gap:4px;margin:3px 0 0 18px;}" +
       "#tab-credential-reference .cr-title-chips .cr-chip{font-size:.62rem;padding:1px 6px;}" +
@@ -1941,10 +1941,10 @@
       // matches the file's existing gen-chip/triage palette) + the collapsed
       // elective-bucket disclosure. Native <details> marker kept (the expand
       // affordance) per the Session-28 toggle lesson.
-      "#tab-credential-reference .cr-art-outlier{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:#FFF6E0;color:var(--mustard-text);border:1px solid var(--mustard-fill);white-space:nowrap;}" +
+      "#tab-credential-reference .cr-art-outlier{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:rgba(255,255,255,.5);color:var(--mustard-text);border:1px solid var(--border-strong);white-space:nowrap;}" +
       // Consolidated-identity badge (2026-06-04) — informational (consolidation
       // is good), so navy-on-light like the Local chip, not the amber warn badges.
-      "#tab-credential-reference .cr-art-merged{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:var(--surface-muted);color:var(--text-strong);border:1px solid var(--border-strong);white-space:nowrap;cursor:help;}" +
+      "#tab-credential-reference .cr-art-merged{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:rgba(255,255,255,.5);color:var(--text-muted);border:1px solid var(--border-strong);white-space:nowrap;cursor:help;}" +
       "#tab-credential-reference .cr-bucket-details{margin:8px 0 4px;}" +
       "#tab-credential-reference .cr-bucket-summary{cursor:pointer;font-size:.78rem;font-weight:600;color:#92400e;background:#FEF3C7;border:1px solid #F59E0B;border-radius:6px;padding:4px 10px;display:inline-block;}" +
       "#tab-credential-reference .cr-bucket-note{font-size:.74rem;color:#6b7280;font-style:italic;margin:6px 0 4px;max-width:74ch;}" +
