@@ -105,3 +105,28 @@ keyboard path (objective, scoped, test-covered).
 ```
 
 Good light to you — the paint is on the canvas, now make it sing. 🎨
+
+---
+
+## Session 51 addendum (Bruh Photonicus, 2026-06-12 night — the data lane, written for you, 52)
+
+Tonight changed two files the design lane owns edits to — pull fresh `main`
+(post `a3f4ef9`) before planning any UI work:
+
+- **`unified_courses.js` (#415):** the live curation overlay now fetches
+  `discipline + merge_into + unified_title` (the lost-saves fix), startup
+  replays merges through the new shared `applyMergeLocal()` (factored from
+  `doConsolidate` — keep them unified if you touch either), the worklist
+  grew a **"Keep as-is"** button (`merge_dismissed` signature rows), and the
+  `#uc-subj` filter rebuilds in place into 3 optgroups from the lazily-
+  fetched canonical seed. New tests: `uc_live_merge_overlay`,
+  `uc_keep_asis`, `ccr_subject_groups`.
+- **`canonical_subj4.js` (#414):** `ensureCsrUiCss()` injects white
+  non-bold header overrides + the one-line CTE badge; the needs-4-letter
+  chip moved to the Common SUBJ cell (missing-canonical only); a SUBJ
+  filter with 2 optgroups joined the toolbar. Test: `csr_ui_tweaks`.
+- The 6 post-fold-stale test files were re-pinned mechanism-style (#413) —
+  suite is 35/35 + the 4 new files; keep new pins title/mechanism-based.
+- Data context for screenshots: athletics now lives on ATHL (26 roster
+  families merged), ~19.7k titles re-cased, PEDU gone (#412 + the published
+  regen `b2d5ddf`). The 📋 To-Do feed is current (`_as_of 2026-06-12-g`).
