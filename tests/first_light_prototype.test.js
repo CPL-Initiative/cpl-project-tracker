@@ -44,6 +44,13 @@ check("dialog semantics present",
 // reduced-motion + reduced-transparency media queries shipped
 check("prefers-reduced-transparency honored", HTML.includes("prefers-reduced-transparency"));
 check("prefers-reduced-motion honored", HTML.includes("prefers-reduced-motion"));
+// the dark masthead must never repaint white under solid-surface fallbacks
+// (its text is white): the sim-solid override excludes it + restates dark,
+// and the media-query path pins it with a higher-specificity selector
+check("sim-solid excludes masthead from glass whitening",
+  HTML.includes("body.sim-solid .glass:not(.masthead)"));
+check("sim-solid restates dark masthead", HTML.includes("body.sim-solid .masthead"));
+check("reduced-transparency pins dark masthead", HTML.includes("header.masthead { background:#1A1A22; }"));
 
 // ── Part B — greet state machine in jsdom ──
 function boot(storage) {
