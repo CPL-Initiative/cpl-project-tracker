@@ -1,6 +1,6 @@
 {
  "_about": "Split manifest: minted titles whose other members carry an official C-ID/CCN. Remnant stays minted (above); these promote in step 1b.",
- "count": 2069,
+ "count": 1989,
  "promotions": {
   "AGPR M1024": {
    "minted_remnant_members": 2,
@@ -622,28 +622,18 @@
    }
   },
   "ANTH M1032": {
-   "minted_remnant_members": 9,
+   "minted_remnant_members": 12,
    "official_targets": {
     "C-ID:ANTH 115 L": {
-     "members": 6,
+     "members": 8,
      "colleges": [
       "American River College",
       "Columbia College",
       "Diablo Valley College",
       "Las Positas College",
-      "Saddleback College",
-      "San Joaquin Delta College"
-     ]
-    }
-   }
-  },
-  "ANTH M1033": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:ANTH 115 L": {
-     "members": 2,
-     "colleges": [
       "Pasadena City College",
+      "Saddleback College",
+      "San Joaquin Delta College",
       "Southwestern College"
      ]
     }
@@ -699,33 +689,23 @@
     }
    }
   },
-  "ANTH M1036": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:ANTH 120": {
-     "members": 4,
-     "colleges": [
-      "College of the Canyons",
-      "De Anza College",
-      "Mt. San Antonio College",
-      "Orange Coast College"
-     ]
-    }
-   }
-  },
   "ANTH M1037": {
-   "minted_remnant_members": 4,
+   "minted_remnant_members": 6,
    "official_targets": {
     "C-ID:ANTH 120": {
-     "members": 9,
+     "members": 13,
      "colleges": [
       "American River College",
+      "College of the Canyons",
       "Cypress College",
+      "De Anza College",
       "Fullerton College",
       "Glendale Community College",
       "Long Beach City College",
       "Moreno Valley College",
+      "Mt. San Antonio College",
       "Mt. San Jacinto College",
+      "Orange Coast College",
       "Pasadena City College",
       "Saddleback College"
      ]
@@ -1353,31 +1333,6 @@
     }
    }
   },
-  "ARTS M1003": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:ARTS 230": {
-     "members": 2,
-     "colleges": [
-      "Coastline Community College",
-      "Modesto Junior College"
-     ]
-    }
-   }
-  },
-  "ARTS M1007": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:ARTS 210": {
-     "members": 3,
-     "colleges": [
-      "Allan Hancock College",
-      "Coastline Community College",
-      "Orange Coast College"
-     ]
-    }
-   }
-  },
   "ARTS M1016": {
    "minted_remnant_members": 3,
    "official_targets": {
@@ -1429,7 +1384,7 @@
    }
   },
   "ARTS M1037": {
-   "minted_remnant_members": 11,
+   "minted_remnant_members": 14,
    "official_targets": {
     "C-ID:ARTS 210": {
      "members": 2,
@@ -1695,10 +1650,10 @@
    }
   },
   "ARTS M1109": {
-   "minted_remnant_members": 29,
+   "minted_remnant_members": 34,
    "official_targets": {
     "C-ID:ARTH 100": {
-     "members": 17,
+     "members": 21,
      "colleges": [
       "American River College",
       "Antelope Valley College",
@@ -1713,53 +1668,33 @@
       "Evergreen Valley College",
       "Gavilan College",
       "Lemoore College",
-      "Mt. San Jacinto College",
-      "Saddleback College",
-      "San Joaquin Delta College",
-      "Sierra College"
-     ]
-    }
-   }
-  },
-  "ARTS M1111": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:ARTH 100": {
-     "members": 4,
-     "colleges": [
       "Los Angeles Harbor College",
       "Los Angeles Mission College",
       "Los Angeles Valley College",
+      "Mt. San Jacinto College",
+      "Saddleback College",
+      "San Joaquin Delta College",
+      "Sierra College",
       "West Los Angeles College"
      ]
     }
    }
   },
   "ARTS M1119": {
-   "minted_remnant_members": 6,
+   "minted_remnant_members": 10,
    "official_targets": {
     "C-ID:ARTH 130": {
-     "members": 3,
-     "colleges": [
-      "Las Positas College",
-      "Santa Ana College",
-      "Yuba College"
-     ]
-    }
-   }
-  },
-  "ARTS M1120": {
-   "minted_remnant_members": 4,
-   "official_targets": {
-    "C-ID:ARTH 130": {
-     "members": 6,
+     "members": 9,
      "colleges": [
       "Coastline Community College",
       "Diablo Valley College",
+      "Las Positas College",
       "Los Angeles Valley College",
       "Napa Valley College",
+      "Santa Ana College",
       "Santa Barbara City College",
-      "Sierra College"
+      "Sierra College",
+      "Yuba College"
      ]
     }
    }
@@ -1897,25 +1832,15 @@
    }
   },
   "ARTS M1159": {
-   "minted_remnant_members": 9,
+   "minted_remnant_members": 11,
    "official_targets": {
     "C-ID:ARTH 150": {
-     "members": 3,
+     "members": 4,
      "colleges": [
       "College of the Desert",
+      "Las Positas College",
       "Modesto Junior College",
       "Shasta College"
-     ]
-    }
-   }
-  },
-  "ARTS M1160": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:ARTH 150": {
-     "members": 1,
-     "colleges": [
-      "Las Positas College"
      ]
     }
    }
@@ -1978,6 +1903,17 @@
      "members": 1,
      "colleges": [
       "Fresno City College"
+     ]
+    }
+   }
+  },
+  "ARTS M1197": {
+   "minted_remnant_members": 4,
+   "official_targets": {
+    "C-ID:ARTS 100": {
+     "members": 1,
+     "colleges": [
+      "College of the Redwoods"
      ]
     }
    }
@@ -2057,7 +1993,7 @@
    }
   },
   "ARTS M1200": {
-   "minted_remnant_members": 17,
+   "minted_remnant_members": 21,
    "official_targets": {
     "C-ID:ARTS 230": {
      "members": 2,
@@ -2068,8 +2004,8 @@
     }
    }
   },
-  "ARTS M1209": {
-   "minted_remnant_members": 2,
+  "ARTS M1208": {
+   "minted_remnant_members": 5,
    "official_targets": {
     "C-ID:ARTS 110": {
      "members": 2,
@@ -2191,7 +2127,7 @@
    }
   },
   "ARTS M1225": {
-   "minted_remnant_members": 15,
+   "minted_remnant_members": 18,
    "official_targets": {
     "C-ID:ARTS 210": {
      "members": 12,
@@ -2225,7 +2161,7 @@
    }
   },
   "ARTS M1232": {
-   "minted_remnant_members": 18,
+   "minted_remnant_members": 24,
    "official_targets": {
     "C-ID:ARTS 240": {
      "members": 2,
@@ -2237,12 +2173,14 @@
    }
   },
   "ARTS M1268": {
-   "minted_remnant_members": 26,
+   "minted_remnant_members": 37,
    "official_targets": {
     "C-ID:ARTS 230": {
-     "members": 1,
+     "members": 3,
      "colleges": [
-      "Bakersfield College"
+      "Bakersfield College",
+      "Coastline Community College",
+      "Modesto Junior College"
      ]
     }
    }
@@ -2269,36 +2207,15 @@
     }
    }
   },
-  "ARTS M1287": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:ARTS 100": {
-     "members": 1,
-     "colleges": [
-      "College of the Redwoods"
-     ]
-    }
-   }
-  },
   "ARTS M1288": {
-   "minted_remnant_members": 3,
+   "minted_remnant_members": 6,
    "official_targets": {
     "C-ID:ARTS 270": {
-     "members": 1,
-     "colleges": [
-      "Moreno Valley College"
-     ]
-    }
-   }
-  },
-  "ARTS M1289": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:ARTS 270": {
-     "members": 2,
+     "members": 3,
      "colleges": [
       "Allan Hancock College",
-      "American River College"
+      "American River College",
+      "Moreno Valley College"
      ]
     }
    }
@@ -2333,26 +2250,16 @@
    }
   },
   "ARTS M1296": {
-   "minted_remnant_members": 5,
+   "minted_remnant_members": 9,
    "official_targets": {
     "C-ID:ARTS 110": {
-     "members": 2,
-     "colleges": [
-      "Gavilan College",
-      "MiraCosta College"
-     ]
-    }
-   }
-  },
-  "ARTS M1298": {
-   "minted_remnant_members": 4,
-   "official_targets": {
-    "C-ID:ARTS 110": {
-     "members": 8,
+     "members": 10,
      "colleges": [
       "American River College",
       "Cabrillo College",
       "College of Marin",
+      "Gavilan College",
+      "MiraCosta College",
       "Monterey Peninsula College",
       "Moorpark College",
       "Oxnard College",
@@ -2484,7 +2391,7 @@
    }
   },
   "ARTS M1339": {
-   "minted_remnant_members": 26,
+   "minted_remnant_members": 38,
    "official_targets": {
     "C-ID:ARTS 250": {
      "members": 1,
@@ -2533,17 +2440,6 @@
     }
    }
   },
-  "ARTS M1393": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:ARTS 110": {
-     "members": 1,
-     "colleges": [
-      "Antelope Valley College"
-     ]
-    }
-   }
-  },
   "ARTS M1394": {
    "minted_remnant_members": 2,
    "official_targets": {
@@ -2555,46 +2451,36 @@
     }
    }
   },
-  "ARTS M1395": {
-   "minted_remnant_members": 3,
+  "ARTS M1396": {
+   "minted_remnant_members": 11,
    "official_targets": {
     "C-ID:ARTS 200": {
-     "members": 9,
+     "members": 18,
      "colleges": [
+      "American River College",
       "Antelope Valley College",
+      "Bakersfield College",
+      "Butte College",
       "Chaffey College",
       "College of the Redwoods",
+      "Cuyamaca College",
+      "Diablo Valley College",
       "Glendale Community College",
+      "Grossmont College",
       "Lemoore College",
+      "MiraCosta College",
       "Modesto Junior College",
+      "Monterey Peninsula College",
       "Napa Valley College",
+      "Ohlone College",
       "Porterville College",
       "San Joaquin Delta College"
      ]
     }
    }
   },
-  "ARTS M1396": {
-   "minted_remnant_members": 8,
-   "official_targets": {
-    "C-ID:ARTS 200": {
-     "members": 9,
-     "colleges": [
-      "American River College",
-      "Bakersfield College",
-      "Butte College",
-      "Cuyamaca College",
-      "Diablo Valley College",
-      "Grossmont College",
-      "MiraCosta College",
-      "Monterey Peninsula College",
-      "Ohlone College"
-     ]
-    }
-   }
-  },
   "ARTS M1397": {
-   "minted_remnant_members": 17,
+   "minted_remnant_members": 19,
    "official_targets": {
     "C-ID:ARTS 205": {
      "members": 1,
@@ -2637,11 +2523,12 @@
    }
   },
   "ARTS M1409": {
-   "minted_remnant_members": 14,
+   "minted_remnant_members": 16,
    "official_targets": {
     "C-ID:ARTS 110": {
-     "members": 13,
+     "members": 14,
      "colleges": [
+      "Antelope Valley College",
       "Bakersfield College",
       "Butte College",
       "Cerro Coso Community College",
@@ -2660,16 +2547,20 @@
    }
   },
   "ARTS M1410": {
-   "minted_remnant_members": 16,
+   "minted_remnant_members": 28,
    "official_targets": {
     "C-ID:ARTS 200": {
-     "members": 7,
+     "members": 11,
      "colleges": [
       "Cabrillo College",
       "College of the Canyons",
+      "De Anza College",
+      "Gavilan College",
+      "Imperial Valley College",
       "Los Angeles City College",
       "Los Angeles Valley College",
       "Moorpark College",
+      "Mt. San Jacinto College",
       "Oxnard College",
       "Ventura College"
      ]
@@ -2753,38 +2644,13 @@
     }
    }
   },
-  "ARTS M1421": {
-   "minted_remnant_members": 12,
-   "official_targets": {
-    "C-ID:ARTS 200": {
-     "members": 4,
-     "colleges": [
-      "De Anza College",
-      "Gavilan College",
-      "Imperial Valley College",
-      "Mt. San Jacinto College"
-     ]
-    }
-   }
-  },
   "ARTS M1448": {
-   "minted_remnant_members": 4,
+   "minted_remnant_members": 6,
    "official_targets": {
     "C-ID:ARTS 210": {
      "members": 1,
      "colleges": [
       "Napa Valley College"
-     ]
-    }
-   }
-  },
-  "ARTS M1460": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:ARTS 210": {
-     "members": 1,
-     "colleges": [
-      "Ventura College"
      ]
     }
    }
@@ -2801,17 +2667,20 @@
    }
   },
   "ARTS M1464": {
-   "minted_remnant_members": 11,
+   "minted_remnant_members": 20,
    "official_targets": {
     "C-ID:ARTS 210": {
-     "members": 16,
+     "members": 20,
      "colleges": [
+      "Allan Hancock College",
       "American River College",
       "Bakersfield College",
       "Butte College",
       "Cabrillo College",
       "Cerro Coso Community College",
+      "Coastline Community College",
       "College of the Canyons",
+      "College of the Redwoods",
       "Cuesta College",
       "Cuyamaca College",
       "Glendale Community College",
@@ -2819,6 +2688,7 @@
       "Imperial Valley College",
       "Mt. San Jacinto College",
       "Ohlone College",
+      "Orange Coast College",
       "Saddleback College",
       "San Joaquin Delta College",
       "Yuba College"
@@ -2826,19 +2696,8 @@
     }
    }
   },
-  "ARTS M1465": {
-   "minted_remnant_members": 10,
-   "official_targets": {
-    "C-ID:ARTS 210": {
-     "members": 1,
-     "colleges": [
-      "De Anza College"
-     ]
-    }
-   }
-  },
   "ARTS M1467": {
-   "minted_remnant_members": 7,
+   "minted_remnant_members": 14,
    "official_targets": {
     "C-ID:ARTS 220": {
      "members": 2,
@@ -2849,8 +2708,19 @@
     }
    }
   },
+  "ARTS M1470": {
+   "minted_remnant_members": 45,
+   "official_targets": {
+    "C-ID:ARTS 240": {
+     "members": 1,
+     "colleges": [
+      "Napa Valley College"
+     ]
+    }
+   }
+  },
   "ARTS M1473": {
-   "minted_remnant_members": 11,
+   "minted_remnant_members": 22,
    "official_targets": {
     "C-ID:ARTS 210": {
      "members": 1,
@@ -2912,7 +2782,7 @@
    }
   },
   "ARTS M1526": {
-   "minted_remnant_members": 18,
+   "minted_remnant_members": 20,
    "official_targets": {
     "C-ID:ARTS 220": {
      "members": 3,
@@ -2935,6 +2805,17 @@
     }
    }
   },
+  "ARTS M1538": {
+   "minted_remnant_members": 7,
+   "official_targets": {
+    "C-ID:ARTS 210": {
+     "members": 1,
+     "colleges": [
+      "Ventura College"
+     ]
+    }
+   }
+  },
   "ARTS M1545": {
    "minted_remnant_members": 4,
    "official_targets": {
@@ -2952,13 +2833,13 @@
     }
    }
   },
-  "ARTS M1548": {
-   "minted_remnant_members": 7,
+  "ARTS M1553": {
+   "minted_remnant_members": 29,
    "official_targets": {
     "C-ID:ARTS 210": {
      "members": 1,
      "colleges": [
-      "College of the Redwoods"
+      "De Anza College"
      ]
     }
    }
@@ -2970,17 +2851,6 @@
      "members": 1,
      "colleges": [
       "American River College"
-     ]
-    }
-   }
-  },
-  "ARTS M1567": {
-   "minted_remnant_members": 16,
-   "official_targets": {
-    "C-ID:ARTS 240": {
-     "members": 1,
-     "colleges": [
-      "Napa Valley College"
      ]
     }
    }
@@ -3161,8 +3031,8 @@
     }
    }
   },
-  "AUTO M1094": {
-   "minted_remnant_members": 2,
+  "AUTO M1093": {
+   "minted_remnant_members": 4,
    "official_targets": {
     "C-ID:AUTO 130 X": {
      "members": 1,
@@ -3367,21 +3237,6 @@
     }
    }
   },
-  "BIOL M1025": {
-   "minted_remnant_members": 4,
-   "official_targets": {
-    "C-ID:BIOL 115 S": {
-     "members": 5,
-     "colleges": [
-      "Bakersfield College",
-      "College of the Canyons",
-      "De Anza College",
-      "Imperial Valley College",
-      "Lassen College"
-     ]
-    }
-   }
-  },
   "BIOL M1026": {
    "minted_remnant_members": 2,
    "official_targets": {
@@ -3395,27 +3250,17 @@
    }
   },
   "BIOL M1027": {
-   "minted_remnant_members": 4,
+   "minted_remnant_members": 6,
    "official_targets": {
     "C-ID:BIOL 115 S": {
-     "members": 4,
+     "members": 7,
      "colleges": [
       "Bakersfield College",
       "College of the Canyons",
       "De Anza College",
-      "Lassen College"
-     ]
-    }
-   }
-  },
-  "BIOL M1028": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:BIOL 115 S": {
-     "members": 3,
-     "colleges": [
       "Fresno City College",
       "Imperial Valley College",
+      "Lassen College",
       "Mt. San Jacinto College"
      ]
     }
@@ -3439,12 +3284,17 @@
    }
   },
   "BIOL M1031": {
-   "minted_remnant_members": 10,
+   "minted_remnant_members": 18,
    "official_targets": {
     "C-ID:BIOL 115 S": {
-     "members": 4,
+     "members": 9,
      "colleges": [
+      "Bakersfield College",
+      "College of the Canyons",
+      "De Anza College",
+      "Imperial Valley College",
       "Laney College",
+      "Lassen College",
       "Ohlone College"
      ]
     }
@@ -3473,7 +3323,7 @@
    }
   },
   "BIOL M1036": {
-   "minted_remnant_members": 11,
+   "minted_remnant_members": 14,
    "official_targets": {
     "C-ID:BIOL 115 S": {
      "members": 2,
@@ -3501,17 +3351,6 @@
      "members": 1,
      "colleges": [
       "Lemoore College"
-     ]
-    }
-   }
-  },
-  "BIOL M1051": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:HIT 105 X": {
-     "members": 1,
-     "colleges": [
-      "Moorpark College"
      ]
     }
    }
@@ -4322,6 +4161,17 @@
     }
    }
   },
+  "BIOL M1262": {
+   "minted_remnant_members": 15,
+   "official_targets": {
+    "C-ID:HIT 105 X": {
+     "members": 1,
+     "colleges": [
+      "Moorpark College"
+     ]
+    }
+   }
+  },
   "BIOL M1265": {
    "minted_remnant_members": 3,
    "official_targets": {
@@ -4807,10 +4657,10 @@
    }
   },
   "BUSI M1174": {
-   "minted_remnant_members": 9,
+   "minted_remnant_members": 11,
    "official_targets": {
     "C-ID:BUS 120": {
-     "members": 12,
+     "members": 13,
      "colleges": [
       "Cerritos College",
       "College of the Siskiyous",
@@ -4823,6 +4673,7 @@
       "San Joaquin Delta College",
       "Santa Ana College",
       "Santa Barbara City College",
+      "Santa Rosa Junior College",
       "Solano Community College"
      ]
     },
@@ -4830,17 +4681,6 @@
      "members": 1,
      "colleges": [
       "MiraCosta College"
-     ]
-    }
-   }
-  },
-  "BUSI M1175": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:BUS 120": {
-     "members": 1,
-     "colleges": [
-      "Santa Rosa Junior College"
      ]
     }
    }
@@ -4877,26 +4717,6 @@
       "Moreno Valley College",
       "Mt. San Jacinto College",
       "Saddleback College"
-     ]
-    }
-   }
-  },
-  "BUSI M1187": {
-   "minted_remnant_members": 12,
-   "official_targets": {
-    "C-ID:BUS 125": {
-     "members": 11,
-     "colleges": [
-      "Chaffey College",
-      "De Anza College",
-      "Glendale Community College",
-      "Los Angeles City College",
-      "Los Angeles Harbor College",
-      "Los Angeles Mission College",
-      "Los Angeles Trade Technical College",
-      "Los Angeles Valley College",
-      "Moreno Valley College",
-      "West Los Angeles College"
      ]
     }
    }
@@ -5002,19 +4822,10 @@
    }
   },
   "BUSI M1199": {
-   "minted_remnant_members": 19,
+   "minted_remnant_members": 31,
    "official_targets": {
-    "C-ID:BUS 120": {
-     "members": 4,
-     "colleges": [
-      "Cabrillo College",
-      "College of Marin",
-      "Cuesta College",
-      "Los Medanos College"
-     ]
-    },
     "C-ID:BUS 125": {
-     "members": 35,
+     "members": 46,
      "colleges": [
       "Allan Hancock College",
       "American River College",
@@ -5023,20 +4834,29 @@
       "CaÃ±ada College",
       "Cerritos College",
       "Cerro Coso Community College",
+      "Chaffey College",
       "Coalinga College",
       "College of the Canyons",
       "College of the Redwoods",
       "Columbia College",
       "Copper Mountain College",
       "Cosumnes River College",
+      "De Anza College",
       "Feather River College",
       "Gavilan College",
+      "Glendale Community College",
       "Las Positas College",
       "Lemoore College",
+      "Los Angeles City College",
+      "Los Angeles Harbor College",
+      "Los Angeles Mission College",
+      "Los Angeles Trade Technical College",
+      "Los Angeles Valley College",
       "Merced College",
       "Modesto Junior College",
       "Monterey Peninsula College",
       "Moorpark College",
+      "Moreno Valley College",
       "Mt. San Antonio College",
       "Ohlone College",
       "Orange Coast College",
@@ -5048,9 +4868,19 @@
       "Santa Barbara City College",
       "Sierra College",
       "Ventura College",
+      "West Los Angeles College",
       "West Valley College",
       "Woodland Community College",
       "Yuba College"
+     ]
+    },
+    "C-ID:BUS 120": {
+     "members": 4,
+     "colleges": [
+      "Cabrillo College",
+      "College of Marin",
+      "Cuesta College",
+      "Los Medanos College"
      ]
     }
    }
@@ -5195,18 +5025,6 @@
      "members": 1,
      "colleges": [
       "Moreno Valley College"
-     ]
-    }
-   }
-  },
-  "CHEM M1004": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:CHEM 120 S": {
-     "members": 2,
-     "colleges": [
-      "Modesto Junior College",
-      "Napa Valley College"
      ]
     }
    }
@@ -5368,51 +5186,6 @@
     }
    }
   },
-  "CHEM M1053": {
-   "minted_remnant_members": 16,
-   "official_targets": {
-    "C-ID:CHEM 110": {
-     "members": 17,
-     "colleges": [
-      "Antelope Valley College",
-      "Berkeley City College",
-      "Cerritos College",
-      "Clovis Community College",
-      "College of the Redwoods",
-      "Copper Mountain College",
-      "Evergreen Valley College",
-      "Gavilan College",
-      "Laney College",
-      "Merritt College",
-      "Ohlone College",
-      "Reedley College",
-      "Saddleback College",
-      "San Joaquin Delta College",
-      "Shasta College",
-      "West Valley College",
-      "Yuba College"
-     ]
-    },
-    "C-ID:CHEM 120 S": {
-     "members": 13,
-     "colleges": [
-      "Antelope Valley College",
-      "Berkeley City College",
-      "Cerritos College",
-      "College of the Redwoods",
-      "Copper Mountain College",
-      "Evergreen Valley College",
-      "Laney College",
-      "Ohlone College",
-      "Saddleback College",
-      "San Joaquin Delta College",
-      "Shasta College",
-      "West Valley College",
-      "Yuba College"
-     ]
-    }
-   }
-  },
   "CHEM M1054": {
    "minted_remnant_members": 2,
    "official_targets": {
@@ -5449,35 +5222,38 @@
    }
   },
   "CHEM M1056": {
-   "minted_remnant_members": 21,
+   "minted_remnant_members": 37,
    "official_targets": {
-    "C-ID:CHEM 101": {
-     "members": 1,
-     "colleges": [
-      "Fresno City College"
-     ]
-    },
     "C-ID:CHEM 110": {
-     "members": 39,
+     "members": 56,
      "colleges": [
       "American River College",
+      "Antelope Valley College",
       "Bakersfield College",
+      "Berkeley City College",
       "Butte College",
       "Cabrillo College",
+      "Cerritos College",
       "Chaffey College",
       "Citrus College",
+      "Clovis Community College",
       "Coalinga College",
       "College of San Mateo",
       "College of the Canyons",
       "College of the Desert",
+      "College of the Redwoods",
       "College of the Siskiyous",
       "Columbia College",
+      "Copper Mountain College",
       "Cosumnes River College",
       "Cuyamaca College",
       "Cypress College",
       "De Anza College",
+      "Evergreen Valley College",
       "Feather River College",
       "Fullerton College",
+      "Gavilan College",
+      "Laney College",
       "Lassen College",
       "Lemoore College",
       "Los Angeles City College",
@@ -5485,37 +5261,64 @@
       "Los Angeles Mission College",
       "Los Angeles Valley College",
       "Merced College",
+      "Merritt College",
       "Monterey Peninsula College",
       "Moorpark College",
       "Mt. San Antonio College",
       "Mt. San Jacinto College",
+      "Ohlone College",
       "Oxnard College",
       "Palo Verde College",
       "Porterville College",
+      "Reedley College",
       "Rio Hondo College",
+      "Saddleback College",
+      "San Joaquin Delta College",
       "Santa Barbara City College",
+      "Shasta College",
       "Sierra College",
       "Solano Community College",
       "Taft College",
       "Ventura College",
-      "Woodland Community College"
+      "West Valley College",
+      "Woodland Community College",
+      "Yuba College"
      ]
     },
     "C-ID:CHEM 120 S": {
-     "members": 6,
+     "members": 19,
      "colleges": [
+      "Antelope Valley College",
+      "Berkeley City College",
       "CaÃ±ada College",
+      "Cerritos College",
       "Cerro Coso Community College",
       "College of Marin",
+      "College of the Redwoods",
+      "Copper Mountain College",
+      "Evergreen Valley College",
       "Grossmont College",
+      "Laney College",
       "Moreno Valley College",
-      "West Los Angeles College"
+      "Ohlone College",
+      "Saddleback College",
+      "San Joaquin Delta College",
+      "Shasta College",
+      "West Los Angeles College",
+      "West Valley College",
+      "Yuba College"
+     ]
+    },
+    "C-ID:CHEM 101": {
+     "members": 1,
+     "colleges": [
+      "Fresno City College"
      ]
     }
    }
   },
   "CHEM M1057": {
-   "minted_remnant_members": 3,
+   "minted_remnant_members": 5,
    "official_targets": {
     "C-ID:CHEM 110": {
      "members": 1,
@@ -5526,17 +5329,10 @@
    }
   },
   "CHEM M1059": {
-   "minted_remnant_members": 26,
+   "minted_remnant_members": 28,
    "official_targets": {
-    "C-ID:CHEM 110": {
-     "members": 2,
-     "colleges": [
-      "De Anza College",
-      "Palo Verde College"
-     ]
-    },
     "C-ID:CHEM 120 S": {
-     "members": 37,
+     "members": 39,
      "colleges": [
       "Butte College",
       "Cabrillo College",
@@ -5561,11 +5357,13 @@
       "Los Angeles Mission College",
       "Los Angeles Valley College",
       "Merced College",
+      "Modesto Junior College",
       "Monterey Peninsula College",
       "Moorpark College",
       "Moreno Valley College",
       "Mt. San Antonio College",
       "Mt. San Jacinto College",
+      "Napa Valley College",
       "Oxnard College",
       "Porterville College",
       "Rio Hondo College",
@@ -5575,6 +5373,13 @@
       "Taft College",
       "West Los Angeles College",
       "Woodland Community College"
+     ]
+    },
+    "C-ID:CHEM 110": {
+     "members": 2,
+     "colleges": [
+      "De Anza College",
+      "Palo Verde College"
      ]
     }
    }
@@ -5640,30 +5445,21 @@
    }
   },
   "CHEM M1071": {
-   "minted_remnant_members": 3,
+   "minted_remnant_members": 8,
    "official_targets": {
     "C-ID:CHEM 150": {
-     "members": 1,
-     "colleges": [
-      "Columbia College"
-     ]
-    }
-   }
-  },
-  "CHEM M1072": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:CHEM 150": {
-     "members": 2,
+     "members": 3,
      "colleges": [
       "Cabrillo College",
+      "Columbia College",
       "Fresno City College"
      ]
     },
     "C-ID:CHEM 160 S": {
-     "members": 1,
+     "members": 3,
      "colleges": [
-      "Reedley College"
+      "Reedley College",
+      "Shasta College"
      ]
     }
    }
@@ -5689,55 +5485,8 @@
     }
    }
   },
-  "CHEM M1075": {
-   "minted_remnant_members": 26,
-   "official_targets": {
-    "C-ID:CHEM 150": {
-     "members": 24,
-     "colleges": [
-      "Allan Hancock College",
-      "American River College",
-      "Butte College",
-      "Cabrillo College",
-      "College of Marin",
-      "College of San Mateo",
-      "Columbia College",
-      "Cosumnes River College",
-      "Cuesta College",
-      "Cuyamaca College",
-      "De Anza College",
-      "Diablo Valley College",
-      "Fresno City College",
-      "Fullerton College",
-      "Los Medanos College",
-      "Monterey Peninsula College",
-      "Moorpark College",
-      "Mt. San Jacinto College",
-      "Oxnard College",
-      "Pasadena City College",
-      "Rio Hondo College",
-      "Santa Barbara City College",
-      "Solano Community College",
-      "Southwestern College"
-     ]
-    },
-    "C-ID:CHEM 160 S": {
-     "members": 8,
-     "colleges": [
-      "Cerro Coso Community College",
-      "College of San Mateo",
-      "College of the Canyons",
-      "College of the Desert",
-      "Cypress College",
-      "Imperial Valley College",
-      "Oxnard College",
-      "Reedley College"
-     ]
-    }
-   }
-  },
-  "CHEM M1077": {
-   "minted_remnant_members": 3,
+  "CHEM M1076": {
+   "minted_remnant_members": 8,
    "official_targets": {
     "C-ID:CHEM 160 S": {
      "members": 2,
@@ -5863,38 +5612,59 @@
     }
    }
   },
-  "CHEM M1084": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:CHEM 160 S": {
-     "members": 2,
-     "colleges": [
-      "Shasta College"
-     ]
-    }
-   }
-  },
   "CHEM M1086": {
-   "minted_remnant_members": 29,
+   "minted_remnant_members": 55,
    "official_targets": {
     "C-ID:CHEM 150": {
-     "members": 6,
+     "members": 30,
      "colleges": [
+      "Allan Hancock College",
+      "American River College",
+      "Butte College",
+      "Cabrillo College",
+      "College of Marin",
+      "College of San Mateo",
+      "Columbia College",
       "Copper Mountain College",
+      "Cosumnes River College",
+      "Cuesta College",
+      "Cuyamaca College",
+      "De Anza College",
+      "Diablo Valley College",
+      "Fresno City College",
+      "Fullerton College",
       "Laney College",
+      "Los Medanos College",
+      "Monterey Peninsula College",
+      "Moorpark College",
+      "Mt. San Jacinto College",
+      "Oxnard College",
+      "Pasadena City College",
+      "Rio Hondo College",
       "Saddleback College",
       "San Joaquin Delta College",
+      "Santa Barbara City College",
       "Santa Rosa Junior College",
+      "Solano Community College",
+      "Southwestern College",
       "West Valley College"
      ]
     },
     "C-ID:CHEM 160 S": {
-     "members": 9,
+     "members": 17,
      "colleges": [
       "Cerritos College",
+      "Cerro Coso Community College",
+      "College of San Mateo",
+      "College of the Canyons",
+      "College of the Desert",
       "Copper Mountain College",
+      "Cypress College",
+      "Imperial Valley College",
       "Laney College",
+      "Oxnard College",
       "Pasadena City College",
+      "Reedley College",
       "San Joaquin Delta College",
       "Santa Rosa Junior College",
       "Shasta College",
@@ -5941,8 +5711,8 @@
     }
    }
   },
-  "CHEM M1091": {
-   "minted_remnant_members": 3,
+  "CHEM M1092": {
+   "minted_remnant_members": 9,
    "official_targets": {
     "C-ID:CHEM 100": {
      "members": 3,
@@ -6256,7 +6026,7 @@
    }
   },
   "CISC M1065": {
-   "minted_remnant_members": 15,
+   "minted_remnant_members": 19,
    "official_targets": {
     "C-ID:ITIS 155": {
      "members": 2,
@@ -6571,18 +6341,6 @@
     }
    }
   },
-  "CISC M1192": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:COMP 122": {
-     "members": 2,
-     "colleges": [
-      "Copper Mountain College",
-      "San Joaquin Delta College"
-     ]
-    }
-   }
-  },
   "CISC M1193": {
    "minted_remnant_members": 3,
    "official_targets": {
@@ -6797,18 +6555,24 @@
    }
   },
   "CISC M1200": {
-   "minted_remnant_members": 9,
+   "minted_remnant_members": 14,
    "official_targets": {
     "C-ID:COMP 122": {
      "members": 1,
      "colleges": [
       "Los Angeles Mission College"
      ]
+    },
+    "C-ID:COMP 132": {
+     "members": 1,
+     "colleges": [
+      "Ventura College"
+     ]
     }
    }
   },
-  "CISC M1202": {
-   "minted_remnant_members": 18,
+  "CISC M1203": {
+   "minted_remnant_members": 41,
    "official_targets": {
     "C-ID:COMP 122": {
      "members": 4,
@@ -6817,12 +6581,7 @@
       "MiraCosta College",
       "Yuba College"
      ]
-    }
-   }
-  },
-  "CISC M1203": {
-   "minted_remnant_members": 21,
-   "official_targets": {
+    },
     "C-ID:COMP 112": {
      "members": 1,
      "colleges": [
@@ -6832,7 +6591,7 @@
    }
   },
   "CISC M1223": {
-   "minted_remnant_members": 6,
+   "minted_remnant_members": 8,
    "official_targets": {
     "C-ID:ITIS 160": {
      "members": 1,
@@ -6865,7 +6624,7 @@
    }
   },
   "CISC M1243": {
-   "minted_remnant_members": 8,
+   "minted_remnant_members": 11,
    "official_targets": {
     "C-ID:ITIS 171": {
      "members": 1,
@@ -6876,7 +6635,7 @@
    }
   },
   "CISC M1249": {
-   "minted_remnant_members": 10,
+   "minted_remnant_members": 12,
    "official_targets": {
     "C-ID:ITIS 110": {
      "members": 3,
@@ -7623,7 +7382,7 @@
    }
   },
   "CISC M1440": {
-   "minted_remnant_members": 9,
+   "minted_remnant_members": 13,
    "official_targets": {
     "C-ID:ITIS 150": {
      "members": 1,
@@ -7763,7 +7522,7 @@
    }
   },
   "CISC M1513": {
-   "minted_remnant_members": 14,
+   "minted_remnant_members": 16,
    "official_targets": {
     "C-ID:ITIS 130": {
      "members": 1,
@@ -7803,29 +7562,19 @@
    }
   },
   "CISC M1530": {
-   "minted_remnant_members": 17,
+   "minted_remnant_members": 26,
    "official_targets": {
     "C-ID:COMP 122": {
-     "members": 7,
+     "members": 8,
      "colleges": [
       "Cabrillo College",
       "Cypress College",
       "De Anza College",
+      "Los Angeles Valley College",
       "San Joaquin Delta College",
       "Santa Monica College",
       "Shasta College",
       "Yuba College"
-     ]
-    }
-   }
-  },
-  "CISC M1531": {
-   "minted_remnant_members": 7,
-   "official_targets": {
-    "C-ID:COMP 122": {
-     "members": 1,
-     "colleges": [
-      "Los Angeles Valley College"
      ]
     }
    }
@@ -7853,17 +7602,6 @@
     }
    }
   },
-  "CISC M1557": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:COMP 132": {
-     "members": 1,
-     "colleges": [
-      "Ventura College"
-     ]
-    }
-   }
-  },
   "CISC M1571": {
    "minted_remnant_members": 13,
    "official_targets": {
@@ -7871,6 +7609,18 @@
      "members": 1,
      "colleges": [
       "Cerritos College"
+     ]
+    }
+   }
+  },
+  "CISC M1573": {
+   "minted_remnant_members": 6,
+   "official_targets": {
+    "C-ID:COMP 122": {
+     "members": 2,
+     "colleges": [
+      "Copper Mountain College",
+      "San Joaquin Delta College"
      ]
     }
    }
@@ -8102,23 +7852,13 @@
    }
   },
   "COMM M1043": {
-   "minted_remnant_members": 2,
+   "minted_remnant_members": 4,
    "official_targets": {
     "C-ID:COMM 130": {
-     "members": 1,
-     "colleges": [
-      "Moreno Valley College"
-     ]
-    }
-   }
-  },
-  "COMM M1044": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:COMM 130": {
-     "members": 4,
+     "members": 5,
      "colleges": [
       "De Anza College",
+      "Moreno Valley College",
       "Mt. San Antonio College",
       "Rio Hondo College",
       "Santa Barbara City College"
@@ -8853,7 +8593,7 @@
    }
   },
   "COUN M1059": {
-   "minted_remnant_members": 4,
+   "minted_remnant_members": 6,
    "official_targets": {
     "C-ID:ADS 170 X": {
      "members": 2,
@@ -8944,7 +8684,7 @@
    }
   },
   "COUN M1150": {
-   "minted_remnant_members": 17,
+   "minted_remnant_members": 19,
    "official_targets": {
     "C-ID:SWHS 110": {
      "members": 11,
@@ -8998,31 +8738,15 @@
     }
    }
   },
-  "CRIM M1044": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:AJ 110": {
-     "members": 7,
-     "colleges": [
-      "Barstow Community College",
-      "Glendale Community College",
-      "Imperial Valley College",
-      "MiraCosta College",
-      "Moreno Valley College",
-      "Pasadena City College",
-      "Santa Barbara City College"
-     ]
-    }
-   }
-  },
   "CRIM M1045": {
-   "minted_remnant_members": 18,
+   "minted_remnant_members": 23,
    "official_targets": {
     "C-ID:AJ 110": {
-     "members": 27,
+     "members": 34,
      "colleges": [
       "American River College",
       "Antelope Valley College",
+      "Barstow Community College",
       "Cerritos College",
       "City College of San Francisco",
       "College of Marin",
@@ -9032,14 +8756,20 @@
       "East Los Angeles College",
       "Evergreen Valley College",
       "Gavilan College",
+      "Glendale Community College",
+      "Imperial Valley College",
       "Las Positas College",
       "Los Angeles City College",
       "Los Angeles Harbor College",
       "Los Angeles Pierce College",
+      "MiraCosta College",
       "Modesto Junior College",
       "Monterey Peninsula College",
+      "Moreno Valley College",
+      "Pasadena City College",
       "Porterville College",
       "Rio Hondo College",
+      "Santa Barbara City College",
       "Santa Monica College",
       "Santa Rosa Junior College",
       "Shasta College",
@@ -9443,17 +9173,6 @@
     }
    }
   },
-  "CRIM M1176": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:AJ 120": {
-     "members": 1,
-     "colleges": [
-      "Rio Hondo College"
-     ]
-    }
-   }
-  },
   "CRIM M1179": {
    "minted_remnant_members": 2,
    "official_targets": {
@@ -9554,10 +9273,10 @@
    }
   },
   "CRIM M1187": {
-   "minted_remnant_members": 17,
+   "minted_remnant_members": 20,
    "official_targets": {
     "C-ID:AJ 120": {
-     "members": 21,
+     "members": 22,
      "colleges": [
       "Antelope Valley College",
       "Bakersfield College",
@@ -9578,6 +9297,7 @@
       "Palo Verde College",
       "Porterville College",
       "Reedley College",
+      "Rio Hondo College",
       "Woodland Community College",
       "Yuba College"
      ]
@@ -9822,10 +9542,10 @@
    }
   },
   "CRIM M1287": {
-   "minted_remnant_members": 8,
+   "minted_remnant_members": 11,
    "official_targets": {
     "C-ID:AJ 122": {
-     "members": 19,
+     "members": 21,
      "colleges": [
       "City College of San Francisco",
       "College of the Canyons",
@@ -9840,21 +9560,11 @@
       "Moorpark College",
       "Moreno Valley College",
       "Porterville College",
+      "Reedley College",
       "San Joaquin Delta College",
       "Shasta College",
       "Southwestern College",
-      "West Los Angeles College"
-     ]
-    }
-   }
-  },
-  "CRIM M1288": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:AJ 122": {
-     "members": 2,
-     "colleges": [
-      "Reedley College",
+      "West Los Angeles College",
       "West Valley College"
      ]
     }
@@ -10574,26 +10284,14 @@
     }
    }
   },
-  "ECED M1109": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:CDEV 110": {
-     "members": 3,
-     "colleges": [
-      "Copper Mountain College",
-      "Modesto Junior College",
-      "Skyline College"
-     ]
-    }
-   }
-  },
   "ECED M1110": {
-   "minted_remnant_members": 22,
+   "minted_remnant_members": 31,
    "official_targets": {
     "C-ID:CDEV 110": {
-     "members": 41,
+     "members": 46,
      "colleges": [
       "Allan Hancock College",
+      "American River College",
       "Bakersfield College",
       "Butte College",
       "Cabrillo College",
@@ -10604,6 +10302,7 @@
       "College of Marin",
       "College of the Canyons",
       "Columbia College",
+      "Copper Mountain College",
       "Cuesta College",
       "Cuyamaca College",
       "East Los Angeles College",
@@ -10617,6 +10316,8 @@
       "Los Angeles Pierce College",
       "Los Medanos College",
       "Merced College",
+      "Merritt College",
+      "Modesto Junior College",
       "Monterey Peninsula College",
       "Moorpark College",
       "Moreno Valley College",
@@ -10629,23 +10330,12 @@
       "San Joaquin Delta College",
       "Santa Barbara City College",
       "Santa Monica College",
+      "Skyline College",
       "Solano Community College",
       "Ventura College",
       "West Los Angeles College",
       "West Valley College",
       "Woodland Community College"
-     ]
-    }
-   }
-  },
-  "ECED M1111": {
-   "minted_remnant_members": 4,
-   "official_targets": {
-    "C-ID:CDEV 110": {
-     "members": 2,
-     "colleges": [
-      "American River College",
-      "Merritt College"
      ]
     }
    }
@@ -10670,7 +10360,7 @@
    }
   },
   "ECED M1119": {
-   "minted_remnant_members": 22,
+   "minted_remnant_members": 24,
    "official_targets": {
     "C-ID:CDEV 100": {
      "members": 34,
@@ -10810,27 +10500,17 @@
    }
   },
   "ECED M1153": {
-   "minted_remnant_members": 3,
+   "minted_remnant_members": 5,
    "official_targets": {
     "C-ID:ECE 120": {
-     "members": 5,
+     "members": 7,
      "colleges": [
       "College of the Canyons",
       "Diablo Valley College",
       "Lemoore College",
-      "Rio Hondo College",
-      "Santa Rosa Junior College"
-     ]
-    }
-   }
-  },
-  "ECED M1154": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:ECE 120": {
-     "members": 2,
-     "colleges": [
       "Moorpark College",
+      "Rio Hondo College",
+      "Santa Rosa Junior College",
       "Ventura College"
      ]
     }
@@ -10849,25 +10529,15 @@
     }
    }
   },
-  "ECED M1175": {
-   "minted_remnant_members": 2,
+  "ECED M1176": {
+   "minted_remnant_members": 6,
    "official_targets": {
     "C-ID:ECE 220": {
-     "members": 3,
+     "members": 4,
      "colleges": [
       "American River College",
+      "Rio Hondo College",
       "Sacramento City College"
-     ]
-    }
-   }
-  },
-  "ECED M1176": {
-   "minted_remnant_members": 4,
-   "official_targets": {
-    "C-ID:ECE 220": {
-     "members": 1,
-     "colleges": [
-      "Rio Hondo College"
      ]
     }
    }
@@ -11735,49 +11405,18 @@
     }
    }
   },
-  "ENGL M1004": {
-   "minted_remnant_members": 2,
+  "ENGL M1011": {
+   "minted_remnant_members": 6,
    "official_targets": {
-    "C-ID:ENGL 160": {
-     "members": 2,
+    "C-ID:ENGL 130": {
+     "members": 6,
      "colleges": [
       "Cuesta College",
-      "Napa Valley College"
-     ]
-    }
-   }
-  },
-  "ENGL M1008": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:ENGL 140": {
-     "members": 1,
-     "colleges": [
-      "Antelope Valley College"
-     ]
-    }
-   }
-  },
-  "ENGL M1013": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:ENGL 140": {
-     "members": 1,
-     "colleges": [
-      "Shasta College"
-     ]
-    }
-   }
-  },
-  "ENGL M1015": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:ENGL 160": {
-     "members": 3,
-     "colleges": [
-      "Allan Hancock College",
-      "Coastline Community College",
-      "Fullerton College"
+      "Evergreen Valley College",
+      "Imperial Valley College",
+      "Monterey Peninsula College",
+      "Moorpark College",
+      "Solano Community College"
      ]
     }
    }
@@ -11794,22 +11433,12 @@
    }
   },
   "ENGL M1018": {
-   "minted_remnant_members": 2,
+   "minted_remnant_members": 4,
    "official_targets": {
     "C-ID:ENGL 135": {
-     "members": 1,
+     "members": 2,
      "colleges": [
-      "Cerro Coso Community College"
-     ]
-    }
-   }
-  },
-  "ENGL M1019": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:ENGL 135": {
-     "members": 1,
-     "colleges": [
+      "Cerro Coso Community College",
       "Ohlone College"
      ]
     }
@@ -11844,18 +11473,6 @@
      "members": 1,
      "colleges": [
       "Los Angeles Mission College"
-     ]
-    }
-   }
-  },
-  "ENGL M1024": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:ENGL 145": {
-     "members": 2,
-     "colleges": [
-      "Antelope Valley College",
-      "West Valley College"
      ]
     }
    }
@@ -12094,22 +11711,6 @@
       "Oxnard College",
       "Skyline College",
       "West Los Angeles College"
-     ]
-    }
-   }
-  },
-  "ENGL M1084": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:ENGL 130": {
-     "members": 6,
-     "colleges": [
-      "Cuesta College",
-      "Evergreen Valley College",
-      "Imperial Valley College",
-      "Monterey Peninsula College",
-      "Moorpark College",
-      "Solano Community College"
      ]
     }
    }
@@ -12566,15 +12167,18 @@
    }
   },
   "ENGL M1128": {
-   "minted_remnant_members": 4,
+   "minted_remnant_members": 6,
    "official_targets": {
     "C-ID:ENGL 160": {
-     "members": 8,
+     "members": 11,
      "colleges": [
+      "Allan Hancock College",
       "Butte College",
+      "Coastline Community College",
       "College of the Canyons",
       "College of the Siskiyous",
       "Cuyamaca College",
+      "Fullerton College",
       "Grossmont College",
       "Los Angeles City College",
       "Los Angeles Harbor College",
@@ -12584,13 +12188,15 @@
    }
   },
   "ENGL M1129": {
-   "minted_remnant_members": 9,
+   "minted_remnant_members": 11,
    "official_targets": {
     "C-ID:ENGL 160": {
-     "members": 4,
+     "members": 6,
      "colleges": [
       "Chaffey College",
+      "Cuesta College",
       "Monterey Peninsula College",
+      "Napa Valley College",
       "San Joaquin Delta College",
       "Skyline College"
      ]
@@ -12616,7 +12222,7 @@
    }
   },
   "ENGL M1132": {
-   "minted_remnant_members": 7,
+   "minted_remnant_members": 9,
    "official_targets": {
     "C-ID:ENGL 165": {
      "members": 4,
@@ -12651,36 +12257,20 @@
     }
    }
   },
-  "ENGL M1151": {
-   "minted_remnant_members": 2,
+  "ENGL M1152": {
+   "minted_remnant_members": 38,
    "official_targets": {
     "C-ID:ENGL 180": {
-     "members": 2,
+     "members": 25,
      "colleges": [
       "American River College",
-      "Cosumnes River College"
-     ]
-    }
-   }
-  },
-  "ENGL M1152": {
-   "minted_remnant_members": 36,
-   "official_targets": {
-    "C-ID:ENGL 120": {
-     "members": 1,
-     "colleges": [
-      "Santa Monica College"
-     ]
-    },
-    "C-ID:ENGL 180": {
-     "members": 23,
-     "colleges": [
       "Bakersfield College",
       "Berkeley City College",
       "CaÃ±ada College",
       "Coastline Community College",
       "College of the Siskiyous",
       "Columbia College",
+      "Cosumnes River College",
       "Gavilan College",
       "Imperial Valley College",
       "Los Angeles City College",
@@ -12698,6 +12288,12 @@
       "Shasta College",
       "Sierra College",
       "West Valley College"
+     ]
+    },
+    "C-ID:ENGL 120": {
+     "members": 1,
+     "colleges": [
+      "Santa Monica College"
      ]
     }
    }
@@ -12874,24 +12470,6 @@
     }
    }
   },
-  "ENGL M1207": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:ENGL 200": {
-     "members": 8,
-     "colleges": [
-      "Berkeley City College",
-      "College of Marin",
-      "College of San Mateo",
-      "Copper Mountain College",
-      "Laney College",
-      "Merritt College",
-      "Solano Community College",
-      "Southwestern College"
-     ]
-    }
-   }
-  },
   "ENGL M1209": {
    "minted_remnant_members": 12,
    "official_targets": {
@@ -12904,7 +12482,7 @@
    }
   },
   "ENGL M1215": {
-   "minted_remnant_members": 15,
+   "minted_remnant_members": 18,
    "official_targets": {
     "C-ID:ENGL 200": {
      "members": 19,
@@ -12946,21 +12524,27 @@
    }
   },
   "ENGL M1224": {
-   "minted_remnant_members": 38,
+   "minted_remnant_members": 41,
    "official_targets": {
     "C-ID:ENGL 200": {
-     "members": 21,
+     "members": 29,
      "colleges": [
       "Allan Hancock College",
       "American River College",
+      "Berkeley City College",
       "Butte College",
       "Cerritos College",
       "Coalinga College",
+      "College of Marin",
+      "College of San Mateo",
       "Columbia College",
+      "Copper Mountain College",
+      "Laney College",
       "Los Angeles City College",
       "Los Angeles Harbor College",
       "Los Angeles Mission College",
       "Merced College",
+      "Merritt College",
       "MiraCosta College",
       "Moorpark College",
       "Moreno Valley College",
@@ -12970,6 +12554,8 @@
       "Rio Hondo College",
       "Santa Ana College",
       "Shasta College",
+      "Solano Community College",
+      "Southwestern College",
       "Ventura College",
       "West Valley College"
      ]
@@ -13074,7 +12660,7 @@
    }
   },
   "ENGL M1254": {
-   "minted_remnant_members": 5,
+   "minted_remnant_members": 10,
    "official_targets": {
     "C-ID:ENGL 160": {
      "members": 3,
@@ -13154,12 +12740,13 @@
    }
   },
   "ENGL M1324": {
-   "minted_remnant_members": 8,
+   "minted_remnant_members": 18,
    "official_targets": {
     "C-ID:ENGL 140": {
-     "members": 10,
+     "members": 13,
      "colleges": [
       "American River College",
+      "Antelope Valley College",
       "Chaffey College",
       "College of the Canyons",
       "College of the Siskiyous",
@@ -13168,7 +12755,15 @@
       "Los Angeles Harbor College",
       "Los Angeles Mission College",
       "Los Angeles Trade Technical College",
-      "San Joaquin Delta College"
+      "San Joaquin Delta College",
+      "Shasta College",
+      "West Valley College"
+     ]
+    },
+    "C-ID:ENGL 145": {
+     "members": 1,
+     "colleges": [
+      "Lemoore College"
      ]
     }
    }
@@ -13187,12 +12782,13 @@
    }
   },
   "ENGL M1332": {
-   "minted_remnant_members": 11,
+   "minted_remnant_members": 14,
    "official_targets": {
     "C-ID:ENGL 145": {
-     "members": 9,
+     "members": 11,
      "colleges": [
       "American River College",
+      "Antelope Valley College",
       "Chaffey College",
       "College of the Canyons",
       "College of the Siskiyous",
@@ -13200,7 +12796,8 @@
       "Cuyamaca College",
       "Los Angeles City College",
       "Los Angeles Harbor College",
-      "San Joaquin Delta College"
+      "San Joaquin Delta College",
+      "West Valley College"
      ]
     }
    }
@@ -13326,23 +12923,6 @@
      "colleges": [
       "College of Marin",
       "Los Angeles City College"
-     ]
-    }
-   }
-  },
-  "ENGL M1394": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:ENGL 140": {
-     "members": 1,
-     "colleges": [
-      "West Valley College"
-     ]
-    },
-    "C-ID:ENGL 145": {
-     "members": 1,
-     "colleges": [
-      "Lemoore College"
      ]
     }
    }
@@ -14187,8 +13767,8 @@
     }
    }
   },
-  "ETHS M1191": {
-   "minted_remnant_members": 3,
+  "ETHS M1189": {
+   "minted_remnant_members": 6,
    "official_targets": {
     "C-ID:SJS 120": {
      "members": 3,
@@ -14198,8 +13778,8 @@
     }
    }
   },
-  "ETHS M1209": {
-   "minted_remnant_members": 4,
+  "ETHS M1210": {
+   "minted_remnant_members": 9,
    "official_targets": {
     "C-ID:SOCI 150": {
      "members": 2,
@@ -14370,8 +13950,8 @@
     }
    }
   },
-  "FIMS M1069": {
-   "minted_remnant_members": 2,
+  "FIMS M1068": {
+   "minted_remnant_members": 5,
    "official_targets": {
     "C-ID:FTVE 105": {
      "members": 1,
@@ -14416,7 +13996,7 @@
    }
   },
   "FIMS M1096": {
-   "minted_remnant_members": 6,
+   "minted_remnant_members": 8,
    "official_targets": {
     "C-ID:FTVE 105": {
      "members": 1,
@@ -14555,28 +14135,18 @@
    }
   },
   "FIRE M1283": {
-   "minted_remnant_members": 44,
+   "minted_remnant_members": 49,
    "official_targets": {
     "C-ID:FIRE 140 X": {
-     "members": 6,
+     "members": 7,
      "colleges": [
       "Antelope Valley College",
       "College of the Canyons",
       "Copper Mountain College",
       "Fresno City College",
+      "Glendale Community College",
       "Imperial Valley College",
       "Las Positas College"
-     ]
-    }
-   }
-  },
-  "FIRE M1284": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:FIRE 140 X": {
-     "members": 1,
-     "colleges": [
-      "Glendale Community College"
      ]
     }
    }
@@ -14636,11 +14206,12 @@
    }
   },
   "FIRE M1325": {
-   "minted_remnant_members": 18,
+   "minted_remnant_members": 24,
    "official_targets": {
     "C-ID:FIRE 150 X": {
-     "members": 4,
+     "members": 5,
      "colleges": [
+      "Copper Mountain College",
       "Glendale Community College",
       "Las Positas College",
       "Oxnard College",
@@ -14649,19 +14220,8 @@
     }
    }
   },
-  "FIRE M1326": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:FIRE 150 X": {
-     "members": 1,
-     "colleges": [
-      "Copper Mountain College"
-     ]
-    }
-   }
-  },
   "FIRE M1334": {
-   "minted_remnant_members": 27,
+   "minted_remnant_members": 30,
    "official_targets": {
     "C-ID:FIRE 120 X": {
      "members": 7,
@@ -15543,55 +15103,45 @@
     }
    }
   },
-  "GEOG M1023": {
-   "minted_remnant_members": 12,
-   "official_targets": {
-    "C-ID:GEOG 140": {
-     "members": 14,
-     "colleges": [
-      "Antelope Valley College",
-      "Cabrillo College",
-      "College of Alameda",
-      "College of the Canyons",
-      "Cypress College",
-      "Imperial Valley College",
-      "Laney College",
-      "Modesto Junior College",
-      "Ohlone College",
-      "Orange Coast College",
-      "Saddleback College",
-      "Santa Ana College",
-      "Santiago Canyon College",
-      "Shasta College"
-     ]
-    }
-   }
-  },
   "GEOG M1024": {
-   "minted_remnant_members": 22,
+   "minted_remnant_members": 34,
    "official_targets": {
     "C-ID:GEOG 140": {
-     "members": 20,
+     "members": 34,
      "colleges": [
       "Allan Hancock College",
       "American River College",
+      "Antelope Valley College",
       "Butte College",
+      "Cabrillo College",
       "Chaffey College",
       "Coalinga College",
+      "College of Alameda",
       "College of Marin",
+      "College of the Canyons",
       "Cosumnes River College",
+      "Cypress College",
       "East Los Angeles College",
       "Fresno City College",
       "Glendale Community College",
+      "Imperial Valley College",
+      "Laney College",
       "Lemoore College",
       "Los Angeles City College",
       "Los Angeles Mission College",
       "Los Angeles Valley College",
+      "Modesto Junior College",
       "Moreno Valley College",
       "Mt. San Antonio College",
+      "Ohlone College",
+      "Orange Coast College",
       "Oxnard College",
+      "Saddleback College",
       "San Joaquin Delta College",
+      "Santa Ana College",
       "Santa Barbara City College",
+      "Santiago Canyon College",
+      "Shasta College",
       "Ventura College"
      ]
     }
@@ -15779,23 +15329,13 @@
    }
   },
   "GEOG M1063": {
-   "minted_remnant_members": 11,
+   "minted_remnant_members": 14,
    "official_targets": {
     "C-ID:GEOG 160": {
-     "members": 4,
+     "members": 5,
      "colleges": [
+      "Glendale Community College",
       "Moreno Valley College"
-     ]
-    }
-   }
-  },
-  "GEOG M1064": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:GEOG 160": {
-     "members": 1,
-     "colleges": [
-      "Glendale Community College"
      ]
     }
    }
@@ -15814,18 +15354,6 @@
     }
    }
   },
-  "GEOG M1069": {
-   "minted_remnant_members": 7,
-   "official_targets": {
-    "C-ID:GEOG 155": {
-     "members": 3,
-     "colleges": [
-      "Ohlone College",
-      "Saddleback College"
-     ]
-    }
-   }
-  },
   "GEOG M1071": {
    "minted_remnant_members": 3,
    "official_targets": {
@@ -15838,10 +15366,10 @@
    }
   },
   "GEOG M1074": {
-   "minted_remnant_members": 15,
+   "minted_remnant_members": 22,
    "official_targets": {
     "C-ID:GEOG 155": {
-     "members": 15,
+     "members": 18,
      "colleges": [
       "Butte College",
       "College of Alameda",
@@ -15852,8 +15380,10 @@
       "Lemoore College",
       "Moorpark College",
       "Mt. San Antonio College",
+      "Ohlone College",
       "Oxnard College",
       "Pasadena City College",
+      "Saddleback College",
       "Santa Ana College",
       "Santiago Canyon College",
       "Shasta College"
@@ -16346,17 +15876,6 @@
     }
    }
   },
-  "GEOL M1005": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:GEOL 200": {
-     "members": 1,
-     "colleges": [
-      "Coastline Community College"
-     ]
-    }
-   }
-  },
   "GEOL M1006": {
    "minted_remnant_members": 6,
    "official_targets": {
@@ -16369,12 +15888,13 @@
    }
   },
   "GEOL M1007": {
-   "minted_remnant_members": 19,
+   "minted_remnant_members": 22,
    "official_targets": {
     "C-ID:GEOL 200": {
-     "members": 9,
+     "members": 10,
      "colleges": [
       "American River College",
+      "Coastline Community College",
       "Cuesta College",
       "Fresno City College",
       "Fullerton College",
@@ -17159,18 +16679,6 @@
     }
    }
   },
-  "HIST M1021": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:HIST 170": {
-     "members": 2,
-     "colleges": [
-      "Fresno City College",
-      "Reedley College"
-     ]
-    }
-   }
-  },
   "HIST M1041": {
    "minted_remnant_members": 2,
    "official_targets": {
@@ -17300,29 +16808,20 @@
     }
    }
   },
-  "HIST M1047": {
-   "minted_remnant_members": 2,
+  "HIST M1048": {
+   "minted_remnant_members": 15,
    "official_targets": {
     "C-ID:HIST 130": {
-     "members": 3,
+     "members": 8,
      "colleges": [
       "American River College",
-      "Modesto Junior College",
-      "Rio Hondo College"
-     ]
-    }
-   }
-  },
-  "HIST M1048": {
-   "minted_remnant_members": 6,
-   "official_targets": {
-    "C-ID:HIST 130": {
-     "members": 4,
-     "colleges": [
       "Cabrillo College",
       "City College of San Francisco",
+      "Modesto Junior College",
       "Napa Valley College",
-      "San Bernardino Valley College"
+      "Rio Hondo College",
+      "San Bernardino Valley College",
+      "San Joaquin Delta College"
      ]
     },
     "CCN:HIST C1001": {
@@ -17402,6 +16901,12 @@
       "West Valley College",
       "Woodland Community College",
       "Yuba College"
+     ]
+    },
+    "C-ID:HIST 140": {
+     "members": 1,
+     "colleges": [
+      "San Joaquin Delta College"
      ]
     }
    }
@@ -17793,26 +17298,12 @@
    }
   },
   "HIST M1148": {
-   "minted_remnant_members": 3,
+   "minted_remnant_members": 5,
    "official_targets": {
     "C-ID:HIST 180": {
      "members": 1,
      "colleges": [
       "American River College"
-     ]
-    }
-   }
-  },
-  "HIST M1149": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:HIST 170": {
-     "members": 4,
-     "colleges": [
-      "Butte College",
-      "CaÃ±ada College",
-      "College of San Mateo",
-      "Porterville College"
      ]
     }
    }
@@ -17832,12 +17323,16 @@
    }
   },
   "HIST M1152": {
-   "minted_remnant_members": 5,
+   "minted_remnant_members": 10,
    "official_targets": {
     "C-ID:HIST 170": {
-     "members": 3,
+     "members": 7,
      "colleges": [
+      "Butte College",
+      "CaÃ±ada College",
+      "College of San Mateo",
       "Cuesta College",
+      "Porterville College",
       "San Joaquin Delta College",
       "Santa Barbara City College"
      ]
@@ -17905,11 +17400,13 @@
    }
   },
   "HIST M1157": {
-   "minted_remnant_members": 4,
+   "minted_remnant_members": 6,
    "official_targets": {
     "C-ID:HIST 170": {
-     "members": 1,
+     "members": 3,
      "colleges": [
+      "Fresno City College",
+      "Reedley College",
       "Woodland Community College"
      ]
     }
@@ -17970,23 +17467,6 @@
       "Coalinga College",
       "Lemoore College",
       "Oxnard College"
-     ]
-    }
-   }
-  },
-  "HIST M1207": {
-   "minted_remnant_members": 4,
-   "official_targets": {
-    "C-ID:HIST 130": {
-     "members": 1,
-     "colleges": [
-      "San Joaquin Delta College"
-     ]
-    },
-    "C-ID:HIST 140": {
-     "members": 1,
-     "colleges": [
-      "San Joaquin Delta College"
      ]
     }
    }
@@ -18203,7 +17683,7 @@
    }
   },
   "HLTH M1103": {
-   "minted_remnant_members": 10,
+   "minted_remnant_members": 13,
    "official_targets": {
     "C-ID:PH 103": {
      "members": 6,
@@ -18913,7 +18393,7 @@
    }
   },
   "JOUR M1044": {
-   "minted_remnant_members": 2,
+   "minted_remnant_members": 4,
    "official_targets": {
     "C-ID:JOUR 130": {
      "members": 2,
@@ -19025,7 +18505,7 @@
    }
   },
   "JOUR M1086": {
-   "minted_remnant_members": 3,
+   "minted_remnant_members": 5,
    "official_targets": {
     "C-ID:JOUR 110": {
      "members": 3,
@@ -19076,7 +18556,7 @@
    }
   },
   "JOUR M1094": {
-   "minted_remnant_members": 16,
+   "minted_remnant_members": 19,
    "official_targets": {
     "C-ID:JOUR 160": {
      "members": 8,
@@ -19512,24 +18992,6 @@
     }
    }
   },
-  "MATH M1015": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:MATH 220": {
-     "members": 2,
-     "colleges": [
-      "Allan Hancock College",
-      "Orange Coast College"
-     ]
-    },
-    "C-ID:MATH 221": {
-     "members": 1,
-     "colleges": [
-      "Santa Monica College"
-     ]
-    }
-   }
-  },
   "MATH M1019": {
    "minted_remnant_members": 3,
    "official_targets": {
@@ -19607,11 +19069,12 @@
    }
   },
   "MATH M1063": {
-   "minted_remnant_members": 3,
+   "minted_remnant_members": 9,
    "official_targets": {
     "C-ID:MATH 240": {
-     "members": 1,
+     "members": 2,
      "colleges": [
+      "Cypress College",
       "Fresno City College"
      ]
     },
@@ -19622,34 +19085,18 @@
      ]
     },
     "C-ID:MATH 910 S": {
-     "members": 2,
+     "members": 4,
      "colleges": [
       "College of Marin",
+      "Fullerton College",
+      "Rio Hondo College",
       "Sierra College"
-     ]
-    }
-   }
-  },
-  "MATH M1065": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:MATH 240": {
-     "members": 1,
-     "colleges": [
-      "Cypress College"
      ]
     },
     "C-ID:MATH 250": {
      "members": 1,
      "colleges": [
       "Cerritos College"
-     ]
-    },
-    "C-ID:MATH 910 S": {
-     "members": 2,
-     "colleges": [
-      "Fullerton College",
-      "Rio Hondo College"
      ]
     }
    }
@@ -20209,39 +19656,33 @@
    }
   },
   "MATH M1105": {
-   "minted_remnant_members": 6,
+   "minted_remnant_members": 8,
    "official_targets": {
     "C-ID:MATH 210": {
-     "members": 2,
+     "members": 4,
      "colleges": [
+      "College of the Siskiyous",
+      "Los Medanos College",
       "Monterey Peninsula College",
       "Ventura College"
      ]
     }
    }
   },
-  "MATH M1106": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:MATH 210": {
-     "members": 2,
-     "colleges": [
-      "College of the Siskiyous",
-      "Los Medanos College"
-     ]
-    }
-   }
-  },
-  "MATH M1108": {
-   "minted_remnant_members": 3,
+  "MATH M1109": {
+   "minted_remnant_members": 8,
    "official_targets": {
     "C-ID:MATH 220": {
-     "members": 4,
+     "members": 8,
      "colleges": [
       "Cabrillo College",
       "College of Marin",
       "Diablo Valley College",
-      "Imperial Valley College"
+      "Imperial Valley College",
+      "Los Angeles Harbor College",
+      "Monterey Peninsula College",
+      "Santa Barbara City College",
+      "Ventura College"
      ]
     },
     "C-ID:MATH 221": {
@@ -20250,20 +19691,6 @@
       "Cerritos College",
       "Lassen College",
       "Mt. San Jacinto College"
-     ]
-    }
-   }
-  },
-  "MATH M1109": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:MATH 220": {
-     "members": 4,
-     "colleges": [
-      "Los Angeles Harbor College",
-      "Monterey Peninsula College",
-      "Santa Barbara City College",
-      "Ventura College"
      ]
     }
    }
@@ -20324,34 +19751,24 @@
    }
   },
   "MATH M1147": {
-   "minted_remnant_members": 5,
+   "minted_remnant_members": 10,
    "official_targets": {
     "C-ID:MATH 140": {
-     "members": 10,
+     "members": 14,
      "colleges": [
       "Cabrillo College",
+      "Chaffey College",
       "Coastline Community College",
       "Cypress College",
+      "Fullerton College",
+      "Glendale Community College",
       "Las Positas College",
+      "Modesto Junior College",
       "Orange Coast College",
       "Oxnard College",
       "Santa Rosa Junior College",
       "Sierra College",
       "Ventura College"
-     ]
-    }
-   }
-  },
-  "MATH M1148": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:MATH 140": {
-     "members": 4,
-     "colleges": [
-      "Chaffey College",
-      "Fullerton College",
-      "Glendale Community College",
-      "Modesto Junior College"
      ]
     }
    }
@@ -20369,17 +19786,6 @@
     }
    }
   },
-  "MATH M1152": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:MATH 140": {
-     "members": 1,
-     "colleges": [
-      "Los Angeles Valley College"
-     ]
-    }
-   }
-  },
   "MATH M1153": {
    "minted_remnant_members": 2,
    "official_targets": {
@@ -20393,14 +19799,15 @@
    }
   },
   "MATH M1154": {
-   "minted_remnant_members": 5,
+   "minted_remnant_members": 7,
    "official_targets": {
     "C-ID:MATH 140": {
-     "members": 4,
+     "members": 5,
      "colleges": [
       "College of the Canyons",
       "Evergreen Valley College",
       "Los Angeles Harbor College",
+      "Los Angeles Valley College",
       "Ohlone College"
      ]
     }
@@ -20494,7 +19901,7 @@
    }
   },
   "MATH M1175": {
-   "minted_remnant_members": 13,
+   "minted_remnant_members": 18,
    "official_targets": {
     "C-ID:MATH 210": {
      "members": 14,
@@ -20546,17 +19953,12 @@
    }
   },
   "MATH M1185": {
-   "minted_remnant_members": 13,
+   "minted_remnant_members": 15,
    "official_targets": {
-    "C-ID:MATH 210": {
-     "members": 1,
-     "colleges": [
-      "De Anza College"
-     ]
-    },
     "C-ID:MATH 220": {
-     "members": 12,
+     "members": 14,
      "colleges": [
+      "Allan Hancock College",
       "American River College",
       "Berkeley City College",
       "Cosumnes River College",
@@ -20566,20 +19968,28 @@
       "Los Angeles Mission College",
       "Merritt College",
       "Napa Valley College",
+      "Orange Coast College",
       "Rio Hondo College",
       "Sacramento City College",
       "San Joaquin Delta College"
      ]
     },
     "C-ID:MATH 221": {
-     "members": 6,
+     "members": 7,
      "colleges": [
       "Chaffey College",
       "College of the Canyons",
       "Cypress College",
       "Las Positas College",
       "Los Angeles City College",
-      "Los Angeles Valley College"
+      "Los Angeles Valley College",
+      "Santa Monica College"
+     ]
+    },
+    "C-ID:MATH 210": {
+     "members": 1,
+     "colleges": [
+      "De Anza College"
      ]
     }
    }
@@ -20807,7 +20217,7 @@
    }
   },
   "MATH M1227": {
-   "minted_remnant_members": 3,
+   "minted_remnant_members": 5,
    "official_targets": {
     "C-ID:MATH 120": {
      "members": 1,
@@ -21284,8 +20694,8 @@
     }
    }
   },
-  "MATH M1317": {
-   "minted_remnant_members": 8,
+  "MATH M1318": {
+   "minted_remnant_members": 25,
    "official_targets": {
     "C-ID:MATH 955": {
      "members": 2,
@@ -21474,13 +20884,19 @@
    }
   },
   "MUSI M1004": {
-   "minted_remnant_members": 2,
+   "minted_remnant_members": 4,
    "official_targets": {
     "C-ID:MUS 105": {
      "members": 2,
      "colleges": [
       "American River College",
       "Cosumnes River College"
+     ]
+    },
+    "C-ID:MUS 106": {
+     "members": 1,
+     "colleges": [
+      "American River College"
      ]
     }
    }
@@ -21492,17 +20908,6 @@
      "members": 1,
      "colleges": [
       "Santa Rosa Junior College"
-     ]
-    }
-   }
-  },
-  "MUSI M1006": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:MUS 106": {
-     "members": 1,
-     "colleges": [
-      "American River College"
      ]
     }
    }
@@ -21588,17 +20993,6 @@
     }
    }
   },
-  "MUSI M1069": {
-   "minted_remnant_members": 4,
-   "official_targets": {
-    "C-ID:MUS 160": {
-     "members": 4,
-     "colleges": [
-      "Santa Ana College"
-     ]
-    }
-   }
-  },
   "MUSI M1070": {
    "minted_remnant_members": 4,
    "official_targets": {
@@ -21627,10 +21021,10 @@
    }
   },
   "MUSI M1074": {
-   "minted_remnant_members": 13,
+   "minted_remnant_members": 19,
    "official_targets": {
     "C-ID:MUS 160": {
-     "members": 22,
+     "members": 27,
      "colleges": [
       "Allan Hancock College",
       "American River College",
@@ -21643,25 +21037,16 @@
       "Los Medanos College",
       "Merced College",
       "Monterey Peninsula College",
+      "Moreno Valley College",
       "Ohlone College",
       "Orange Coast College",
       "Porterville College",
       "Rio Hondo College",
       "Saddleback College",
       "San Joaquin Delta College",
+      "Santa Ana College",
       "Santa Barbara City College",
       "Shasta College"
-     ]
-    }
-   }
-  },
-  "MUSI M1075": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:MUS 160": {
-     "members": 1,
-     "colleges": [
-      "Moreno Valley College"
      ]
     }
    }
@@ -21680,11 +21065,12 @@
    }
   },
   "MUSI M1082": {
-   "minted_remnant_members": 4,
+   "minted_remnant_members": 7,
    "official_targets": {
     "C-ID:MUS 100": {
-     "members": 4,
+     "members": 5,
      "colleges": [
+      "Cerro Coso Community College",
       "Moorpark College",
       "Moreno Valley College",
       "Santa Ana College",
@@ -21693,19 +21079,8 @@
     }
    }
   },
-  "MUSI M1083": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:MUS 100": {
-     "members": 1,
-     "colleges": [
-      "Cerro Coso Community College"
-     ]
-    }
-   }
-  },
   "MUSI M1088": {
-   "minted_remnant_members": 27,
+   "minted_remnant_members": 31,
    "official_targets": {
     "C-ID:MUS 100": {
      "members": 44,
@@ -22307,10 +21682,10 @@
    }
   },
   "MUSI M1113": {
-   "minted_remnant_members": 19,
+   "minted_remnant_members": 21,
    "official_targets": {
     "C-ID:MUS 180": {
-     "members": 24,
+     "members": 25,
      "colleges": [
       "Allan Hancock College",
       "American River College",
@@ -22331,18 +21706,8 @@
       "Reedley College",
       "Santa Ana College",
       "Santa Barbara City College",
+      "Skyline College",
       "Solano Community College"
-     ]
-    }
-   }
-  },
-  "MUSI M1114": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:MUS 180": {
-     "members": 1,
-     "colleges": [
-      "Skyline College"
      ]
     }
    }
@@ -22545,8 +21910,8 @@
     }
    }
   },
-  "MUSI M1177": {
-   "minted_remnant_members": 10,
+  "MUSI M1180": {
+   "minted_remnant_members": 24,
    "official_targets": {
     "C-ID:CMUS 140 X": {
      "members": 1,
@@ -22703,14 +22068,16 @@
    }
   },
   "MUSI M1198": {
-   "minted_remnant_members": 17,
+   "minted_remnant_members": 23,
    "official_targets": {
     "C-ID:MUS 180": {
-     "members": 15,
+     "members": 18,
      "colleges": [
+      "American River College",
       "Chaffey College",
       "College of San Mateo",
       "College of the Siskiyous",
+      "Cosumnes River College",
       "Las Positas College",
       "Madera College",
       "Modesto Junior College",
@@ -22720,22 +22087,10 @@
       "Rio Hondo College",
       "San Joaquin Delta College",
       "Shasta College",
+      "Skyline College",
       "Ventura College",
       "West Valley College",
       "Yuba College"
-     ]
-    }
-   }
-  },
-  "MUSI M1199": {
-   "minted_remnant_members": 6,
-   "official_targets": {
-    "C-ID:MUS 180": {
-     "members": 3,
-     "colleges": [
-      "American River College",
-      "Cosumnes River College",
-      "Skyline College"
      ]
     }
    }
@@ -23141,7 +22496,7 @@
    }
   },
   "MUSI M1224": {
-   "minted_remnant_members": 11,
+   "minted_remnant_members": 20,
    "official_targets": {
     "C-ID:MUS 170": {
      "members": 2,
@@ -23149,11 +22504,17 @@
       "Grossmont College",
       "Moreno Valley College"
      ]
+    },
+    "C-ID:MUS 171": {
+     "members": 1,
+     "colleges": [
+      "Evergreen Valley College"
+     ]
     }
    }
   },
   "MUSI M1228": {
-   "minted_remnant_members": 10,
+   "minted_remnant_members": 13,
    "official_targets": {
     "C-ID:MUS 171": {
      "members": 2,
@@ -23165,24 +22526,13 @@
    }
   },
   "MUSI M1232": {
-   "minted_remnant_members": 8,
+   "minted_remnant_members": 10,
    "official_targets": {
     "C-ID:MUS 172": {
      "members": 2,
      "colleges": [
       "Grossmont College",
       "Moreno Valley College"
-     ]
-    }
-   }
-  },
-  "MUSI M1239": {
-   "minted_remnant_members": 6,
-   "official_targets": {
-    "C-ID:MUS 171": {
-     "members": 1,
-     "colleges": [
-      "Evergreen Valley College"
      ]
     }
    }
@@ -23268,7 +22618,7 @@
    }
   },
   "MUSI M1295": {
-   "minted_remnant_members": 7,
+   "minted_remnant_members": 11,
    "official_targets": {
     "C-ID:CMUS 110 X": {
      "members": 2,
@@ -23561,12 +22911,13 @@
    }
   },
   "MUSI M1320": {
-   "minted_remnant_members": 16,
+   "minted_remnant_members": 21,
    "official_targets": {
     "C-ID:MUS 180": {
-     "members": 6,
+     "members": 7,
      "colleges": [
       "Cerritos College",
+      "De Anza College",
       "Los Angeles City College",
       "Los Angeles Valley College",
       "Merced College",
@@ -23575,25 +22926,9 @@
      ]
     },
     "C-ID:MUS 185": {
-     "members": 1,
+     "members": 2,
      "colleges": [
-      "Butte College"
-     ]
-    }
-   }
-  },
-  "MUSI M1321": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:MUS 180": {
-     "members": 1,
-     "colleges": [
-      "De Anza College"
-     ]
-    },
-    "C-ID:MUS 185": {
-     "members": 1,
-     "colleges": [
+      "Butte College",
       "Skyline College"
      ]
     }
@@ -23649,6 +22984,24 @@
     }
    }
   },
+  "MUSI M1327": {
+   "minted_remnant_members": 4,
+   "official_targets": {
+    "C-ID:MUS 180": {
+     "members": 2,
+     "colleges": [
+      "Fresno City College",
+      "Pasadena City College"
+     ]
+    },
+    "C-ID:MUS 185": {
+     "members": 1,
+     "colleges": [
+      "American River College"
+     ]
+    }
+   }
+  },
   "MUSI M1331": {
    "minted_remnant_members": 3,
    "official_targets": {
@@ -23672,7 +23025,7 @@
    }
   },
   "MUSI M1341": {
-   "minted_remnant_members": 23,
+   "minted_remnant_members": 26,
    "official_targets": {
     "C-ID:MUS 180": {
      "members": 18,
@@ -23698,41 +23051,13 @@
     }
    }
   },
-  "MUSI M1342": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:MUS 180": {
-     "members": 2,
-     "colleges": [
-      "Fresno City College",
-      "Pasadena City College"
-     ]
-    },
-    "C-ID:MUS 185": {
-     "members": 1,
-     "colleges": [
-      "American River College"
-     ]
-    }
-   }
-  },
-  "MUSI M1344": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:MUS 180": {
-     "members": 1,
-     "colleges": [
-      "College of the Canyons"
-     ]
-    }
-   }
-  },
   "MUSI M1345": {
-   "minted_remnant_members": 11,
+   "minted_remnant_members": 16,
    "official_targets": {
     "C-ID:MUS 180": {
-     "members": 8,
+     "members": 9,
      "colleges": [
+      "College of the Canyons",
       "College of the Siskiyous",
       "Cuesta College",
       "Cypress College",
@@ -23775,7 +23100,7 @@
    }
   },
   "MUSI M1352": {
-   "minted_remnant_members": 11,
+   "minted_remnant_members": 13,
    "official_targets": {
     "C-ID:MUS 180": {
      "members": 1,
@@ -23831,59 +23156,49 @@
    }
   },
   "MUSI M1374": {
-   "minted_remnant_members": 23,
+   "minted_remnant_members": 38,
    "official_targets": {
     "C-ID:MUS 110": {
-     "members": 15,
-     "colleges": [
-      "Butte College",
-      "Columbia College",
-      "Cuyamaca College",
-      "Cypress College",
-      "De Anza College",
-      "Fresno City College",
-      "Merced College",
-      "Modesto Junior College",
-      "Mt. San Jacinto College",
-      "Santa Ana College",
-      "Santa Rosa Junior College",
-      "Santiago Canyon College",
-      "Shasta College",
-      "Woodland Community College",
-      "Yuba College"
-     ]
-    }
-   }
-  },
-  "MUSI M1375": {
-   "minted_remnant_members": 15,
-   "official_targets": {
-    "C-ID:MUS 110": {
-     "members": 17,
+     "members": 32,
      "colleges": [
       "Antelope Valley College",
+      "Butte College",
       "Cabrillo College",
       "CaÃ±ada College",
       "College of San Mateo",
       "College of the Canyons",
       "College of the Desert",
       "College of the Siskiyous",
+      "Columbia College",
+      "Cuyamaca College",
+      "Cypress College",
+      "De Anza College",
+      "Fresno City College",
       "Los Angeles City College",
       "Los Angeles Harbor College",
+      "Merced College",
+      "Modesto Junior College",
       "Moreno Valley College",
+      "Mt. San Jacinto College",
       "Napa Valley College",
       "Ohlone College",
       "Oxnard College",
       "Rio Hondo College",
+      "Santa Ana College",
+      "Santa Rosa Junior College",
+      "Santiago Canyon College",
+      "Shasta College",
       "Skyline College",
       "Ventura College",
-      "West Valley College"
+      "West Valley College",
+      "Woodland Community College",
+      "Yuba College"
      ]
     }
    }
   },
   "MUSI M1379": {
-   "minted_remnant_members": 15,
+   "minted_remnant_members": 22,
    "official_targets": {
     "C-ID:MUS 160": {
      "members": 1,
@@ -23995,7 +23310,7 @@
    }
   },
   "MUSI M1396": {
-   "minted_remnant_members": 4,
+   "minted_remnant_members": 6,
    "official_targets": {
     "C-ID:MUS 105": {
      "members": 1,
@@ -24088,10 +23403,10 @@
    }
   },
   "MUSI M1438": {
-   "minted_remnant_members": 18,
+   "minted_remnant_members": 21,
    "official_targets": {
     "C-ID:MUS 120": {
-     "members": 18,
+     "members": 19,
      "colleges": [
       "College of the Siskiyous",
       "Cosumnes River College",
@@ -24105,6 +23420,7 @@
       "Mt. San Jacinto College",
       "Ohlone College",
       "Oxnard College",
+      "Palo Verde College",
       "Pasadena City College",
       "Reedley College",
       "Skyline College",
@@ -24163,17 +23479,6 @@
     }
    }
   },
-  "MUSI M1442": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:MUS 180": {
-     "members": 1,
-     "colleges": [
-      "Skyline College"
-     ]
-    }
-   }
-  },
   "MUSI M1444": {
    "minted_remnant_members": 16,
    "official_targets": {
@@ -24187,17 +23492,6 @@
       "Los Angeles City College",
       "Monterey Peninsula College",
       "Oxnard College"
-     ]
-    }
-   }
-  },
-  "MUSI M1445": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:CMUS 130 X": {
-     "members": 1,
-     "colleges": [
-      "Rio Hondo College"
      ]
     }
    }
@@ -24337,7 +23631,7 @@
    }
   },
   "MUSI M1476": {
-   "minted_remnant_members": 3,
+   "minted_remnant_members": 5,
    "official_targets": {
     "C-ID:MUS 130": {
      "members": 1,
@@ -24390,26 +23684,16 @@
    }
   },
   "MUSI M1493": {
-   "minted_remnant_members": 3,
+   "minted_remnant_members": 5,
    "official_targets": {
     "C-ID:MUS 140": {
-     "members": 4,
+     "members": 5,
      "colleges": [
       "American River College",
+      "Cerritos College",
       "Chaffey College",
       "Porterville College",
       "San Joaquin Delta College"
-     ]
-    }
-   }
-  },
-  "MUSI M1494": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:MUS 140": {
-     "members": 1,
-     "colleges": [
-      "Cerritos College"
      ]
     }
    }
@@ -24507,7 +23791,7 @@
    }
   },
   "MUSI M1501": {
-   "minted_remnant_members": 3,
+   "minted_remnant_members": 5,
    "official_targets": {
     "C-ID:MUS 140": {
      "members": 1,
@@ -24677,11 +23961,12 @@
    }
   },
   "MUSI M1540": {
-   "minted_remnant_members": 3,
+   "minted_remnant_members": 5,
    "official_targets": {
     "C-ID:MUS 150": {
-     "members": 2,
+     "members": 3,
      "colleges": [
+      "Cerritos College",
       "Chaffey College",
       "San Joaquin Delta College"
      ]
@@ -24690,17 +23975,6 @@
      "members": 1,
      "colleges": [
       "American River College"
-     ]
-    }
-   }
-  },
-  "MUSI M1541": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:MUS 150": {
-     "members": 1,
-     "colleges": [
-      "Cerritos College"
      ]
     }
    }
@@ -24842,17 +24116,6 @@
     }
    }
   },
-  "MUSI M1567": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:MUS 120": {
-     "members": 1,
-     "colleges": [
-      "Palo Verde College"
-     ]
-    }
-   }
-  },
   "MUSI M1578": {
    "minted_remnant_members": 2,
    "official_targets": {
@@ -24888,7 +24151,7 @@
    }
   },
   "MUSI M1582": {
-   "minted_remnant_members": 10,
+   "minted_remnant_members": 12,
    "official_targets": {
     "C-ID:MUS 180": {
      "members": 10,
@@ -24919,14 +24182,15 @@
    }
   },
   "MUSI M1584": {
-   "minted_remnant_members": 6,
+   "minted_remnant_members": 8,
    "official_targets": {
     "C-ID:MUS 180": {
-     "members": 6,
+     "members": 7,
      "colleges": [
       "Fresno City College",
       "Imperial Valley College",
       "Santa Barbara City College",
+      "Skyline College",
       "Solano Community College",
       "Ventura College",
       "West Valley College"
@@ -24946,6 +24210,17 @@
       "Mt. San Jacinto College",
       "Ohlone College",
       "Shasta College"
+     ]
+    }
+   }
+  },
+  "MUSI M1590": {
+   "minted_remnant_members": 7,
+   "official_targets": {
+    "C-ID:CMUS 130 X": {
+     "members": 1,
+     "colleges": [
+      "Rio Hondo College"
      ]
     }
    }
@@ -25579,7 +24854,7 @@
    }
   },
   "PHIL M1047": {
-   "minted_remnant_members": 7,
+   "minted_remnant_members": 9,
    "official_targets": {
     "C-ID:PHIL 110": {
      "members": 5,
@@ -25865,49 +25140,25 @@
    }
   },
   "PHIL M1081": {
-   "minted_remnant_members": 7,
+   "minted_remnant_members": 10,
    "official_targets": {
     "C-ID:PHIL 100": {
-     "members": 9,
+     "members": 14,
      "colleges": [
+      "College of the Canyons",
       "Cypress College",
       "Fullerton College",
       "Glendale Community College",
       "Merced College",
       "Moorpark College",
-      "Oxnard College",
-      "Saddleback College",
-      "Santa Ana College",
-      "Santiago Canyon College"
-     ]
-    }
-   }
-  },
-  "PHIL M1082": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:PHIL 100": {
-     "members": 5,
-     "colleges": [
-      "College of the Canyons",
       "Mt. San Antonio College",
       "Orange Coast College",
+      "Oxnard College",
       "Rio Hondo College",
-      "Santa Barbara City College"
-     ]
-    }
-   }
-  },
-  "PHIL M1086": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:PHIL 210": {
-     "members": 4,
-     "colleges": [
-      "Los Angeles City College",
-      "Los Angeles Harbor College",
-      "Los Angeles Mission College",
-      "Los Angeles Valley College"
+      "Saddleback College",
+      "Santa Ana College",
+      "Santa Barbara City College",
+      "Santiago Canyon College"
      ]
     }
    }
@@ -26273,10 +25524,10 @@
    }
   },
   "PHIL M1107": {
-   "minted_remnant_members": 16,
+   "minted_remnant_members": 18,
    "official_targets": {
     "C-ID:PHIL 210": {
-     "members": 13,
+     "members": 17,
      "colleges": [
       "American River College",
       "Cabrillo College",
@@ -26285,6 +25536,10 @@
       "College of the Canyons",
       "Cypress College",
       "Diablo Valley College",
+      "Los Angeles City College",
+      "Los Angeles Harbor College",
+      "Los Angeles Mission College",
+      "Los Angeles Valley College",
       "Modesto Junior College",
       "Oxnard College",
       "Reedley College",
@@ -26320,7 +25575,7 @@
    }
   },
   "PHIL M1113": {
-   "minted_remnant_members": 13,
+   "minted_remnant_members": 15,
    "official_targets": {
     "C-ID:POLS 120": {
      "members": 1,
@@ -26691,19 +25946,14 @@
    }
   },
   "PHYS M1301": {
-   "minted_remnant_members": 3,
+   "minted_remnant_members": 5,
    "official_targets": {
     "C-ID:PHYS 100 S": {
      "members": 1,
      "colleges": [
       "Porterville College"
      ]
-    }
-   }
-  },
-  "PHYS M1302": {
-   "minted_remnant_members": 2,
-   "official_targets": {
+    },
     "C-ID:PHYS 105": {
      "members": 1,
      "colleges": [
@@ -27289,8 +26539,8 @@
     }
    }
   },
-  "PHYS M1754": {
-   "minted_remnant_members": 2,
+  "PHYS M1753": {
+   "minted_remnant_members": 5,
    "official_targets": {
     "C-ID:PHYS 140": {
      "members": 1,
@@ -28000,28 +27250,18 @@
    }
   },
   "PSYC M1009": {
-   "minted_remnant_members": 8,
+   "minted_remnant_members": 11,
    "official_targets": {
     "C-ID:PSY 115": {
-     "members": 6,
+     "members": 8,
      "colleges": [
       "Antelope Valley College",
       "Cabrillo College",
+      "Copper Mountain College",
       "Fresno City College",
       "Merced College",
       "Woodland Community College",
       "Yuba College"
-     ]
-    }
-   }
-  },
-  "PSYC M1010": {
-   "minted_remnant_members": 3,
-   "official_targets": {
-    "C-ID:PSY 115": {
-     "members": 2,
-     "colleges": [
-      "Copper Mountain College"
      ]
     }
    }
@@ -29491,31 +28731,21 @@
    }
   },
   "SOCI M1059": {
-   "minted_remnant_members": 6,
+   "minted_remnant_members": 8,
    "official_targets": {
     "C-ID:SOCI 110": {
-     "members": 5,
+     "members": 10,
      "colleges": [
+      "College of the Canyons",
       "Cypress College",
       "Fullerton College",
       "Glendale Community College",
-      "Santa Ana College",
-      "Santiago Canyon College"
-     ]
-    }
-   }
-  },
-  "SOCI M1061": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:SOCI 110": {
-     "members": 5,
-     "colleges": [
-      "College of the Canyons",
       "Mt. San Antonio College",
       "Orange Coast College",
       "Rio Hondo College",
-      "Santa Barbara City College"
+      "Santa Ana College",
+      "Santa Barbara City College",
+      "Santiago Canyon College"
      ]
     },
     "CCN:SOCI C1000H": {
@@ -30120,29 +29350,19 @@
     }
    }
   },
-  "THEA M1021": {
-   "minted_remnant_members": 2,
-   "official_targets": {
-    "C-ID:THTR 151": {
-     "members": 3,
-     "colleges": [
-      "College of the Canyons",
-      "Orange Coast College",
-      "Santa Ana College"
-     ]
-    }
-   }
-  },
   "THEA M1022": {
-   "minted_remnant_members": 5,
+   "minted_remnant_members": 7,
    "official_targets": {
     "C-ID:THTR 151": {
-     "members": 4,
+     "members": 7,
      "colleges": [
       "Antelope Valley College",
+      "College of the Canyons",
       "Modesto Junior College",
       "Mt. San Jacinto College",
-      "Saddleback College"
+      "Orange Coast College",
+      "Saddleback College",
+      "Santa Ana College"
      ]
     }
    }
@@ -30854,7 +30074,7 @@
    }
   },
   "THEA M1177": {
-   "minted_remnant_members": 4,
+   "minted_remnant_members": 6,
    "official_targets": {
     "C-ID:THTR 191": {
      "members": 1,
@@ -31276,42 +30496,31 @@
     }
    }
   },
-  "THEA M1216": {
-   "minted_remnant_members": 5,
-   "official_targets": {
-    "C-ID:THTR 111": {
-     "members": 10,
-     "colleges": [
-      "American River College",
-      "CaÃ±ada College",
-      "Cerritos College",
-      "College of Marin",
-      "Columbia College",
-      "Cosumnes River College",
-      "Cuyamaca College",
-      "Cypress College",
-      "Fullerton College",
-      "Santa Monica College"
-     ]
-    }
-   }
-  },
   "THEA M1217": {
-   "minted_remnant_members": 12,
+   "minted_remnant_members": 17,
    "official_targets": {
     "C-ID:THTR 111": {
-     "members": 27,
+     "members": 37,
      "colleges": [
       "Allan Hancock College",
+      "American River College",
       "Antelope Valley College",
       "Bakersfield College",
       "Butte College",
+      "CaÃ±ada College",
+      "Cerritos College",
       "Chaffey College",
       "City College of San Francisco",
+      "College of Marin",
       "College of the Redwoods",
       "College of the Siskiyous",
+      "Columbia College",
       "Copper Mountain College",
+      "Cosumnes River College",
       "Cuesta College",
+      "Cuyamaca College",
+      "Cypress College",
+      "Fullerton College",
       "Glendale Community College",
       "Grossmont College",
       "Imperial Valley College",
@@ -31324,6 +30533,7 @@
       "Rio Hondo College",
       "San Joaquin Delta College",
       "Santa Ana College",
+      "Santa Monica College",
       "Sierra College",
       "Solano Community College",
       "Taft College",
@@ -31432,24 +30642,14 @@
     }
    }
   },
-  "THEA M1229": {
-   "minted_remnant_members": 4,
-   "official_targets": {
-    "C-ID:THTR 175": {
-     "members": 1,
-     "colleges": [
-      "Antelope Valley College"
-     ]
-    }
-   }
-  },
   "THEA M1230": {
-   "minted_remnant_members": 10,
+   "minted_remnant_members": 14,
    "official_targets": {
     "C-ID:THTR 175": {
-     "members": 5,
+     "members": 6,
      "colleges": [
       "Allan Hancock College",
+      "Antelope Valley College",
       "College of the Siskiyous",
       "Evergreen Valley College",
       "Fullerton College",
@@ -31858,7 +31058,7 @@
    }
   }
  },
- "_rekeyed_at": "2026-06-11",
+ "_rekeyed_at": "2026-06-12",
  "_rekeyed_through": [
   "kb/subj4_apply/alias_map.json",
   "kb/crossdisc_out/alias_map.json",
@@ -31866,7 +31066,8 @@
   "kb/kin_pe_out/2026-06-10/alias_map.json",
   "kb/drama_theater_out/2026-06-10/alias_map.json",
   "kb/convergence_singletons_out/2026-06-10/alias_map.json",
-  "kb/twin_merge_out/2026-06-10/alias_map.json"
+  "kb/twin_merge_out/2026-06-10/alias_map.json",
+  "kb/twin_merge_out/2026-06-12/alias_map.json"
  ],
  "_rekey_note": "keys re-keyed to current ids through the applied alias chain (chronological single-step per map — an alias map is a simultaneous permutation, never iterated; see the module docstring of kb/_rekey_promotions.py); folded keys sum witnesses; _unresolved entries kept for investigation; receipt: kb/promotions_rekey_out/"
 }

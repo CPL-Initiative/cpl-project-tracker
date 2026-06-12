@@ -1,0 +1,1038 @@
+{
+ "date": "2026-06-12",
+ "baseline": "kb/promotions.json",
+ "maps_applied": [
+  "kb/twin_merge_out/2026-06-12/alias_map.json"
+ ],
+ "witness_total": 9826,
+ "targets": 446,
+ "stamp_gate": {
+  "checked": 0,
+  "conflicts": 0
+ },
+ "counts": {
+  "rekeyed": 99,
+  "folded": 80,
+  "unresolved": 0,
+  "unchanged": 1970
+ },
+ "rekeyed": [
+  {
+   "old": "ANTH M1033",
+   "new": "ANTH M1032",
+   "hops": [
+    "ANTH M1032"
+   ]
+  },
+  {
+   "old": "ANTH M1036",
+   "new": "ANTH M1037",
+   "hops": [
+    "ANTH M1037"
+   ]
+  },
+  {
+   "old": "ARTS M1003",
+   "new": "ARTS M1268",
+   "hops": [
+    "ARTS M1268"
+   ]
+  },
+  {
+   "old": "ARTS M1007",
+   "new": "ARTS M1464",
+   "hops": [
+    "ARTS M1464"
+   ]
+  },
+  {
+   "old": "ARTS M1111",
+   "new": "ARTS M1109",
+   "hops": [
+    "ARTS M1109"
+   ]
+  },
+  {
+   "old": "ARTS M1120",
+   "new": "ARTS M1119",
+   "hops": [
+    "ARTS M1119"
+   ]
+  },
+  {
+   "old": "ARTS M1160",
+   "new": "ARTS M1159",
+   "hops": [
+    "ARTS M1159"
+   ]
+  },
+  {
+   "old": "ARTS M1209",
+   "new": "ARTS M1208",
+   "hops": [
+    "ARTS M1208"
+   ]
+  },
+  {
+   "old": "ARTS M1287",
+   "new": "ARTS M1197",
+   "hops": [
+    "ARTS M1197"
+   ]
+  },
+  {
+   "old": "ARTS M1289",
+   "new": "ARTS M1288",
+   "hops": [
+    "ARTS M1288"
+   ]
+  },
+  {
+   "old": "ARTS M1298",
+   "new": "ARTS M1296",
+   "hops": [
+    "ARTS M1296"
+   ]
+  },
+  {
+   "old": "ARTS M1393",
+   "new": "ARTS M1409",
+   "hops": [
+    "ARTS M1409"
+   ]
+  },
+  {
+   "old": "ARTS M1395",
+   "new": "ARTS M1396",
+   "hops": [
+    "ARTS M1396"
+   ]
+  },
+  {
+   "old": "ARTS M1421",
+   "new": "ARTS M1410",
+   "hops": [
+    "ARTS M1410"
+   ]
+  },
+  {
+   "old": "ARTS M1460",
+   "new": "ARTS M1538",
+   "hops": [
+    "ARTS M1538"
+   ]
+  },
+  {
+   "old": "ARTS M1465",
+   "new": "ARTS M1553",
+   "hops": [
+    "ARTS M1553"
+   ]
+  },
+  {
+   "old": "ARTS M1548",
+   "new": "ARTS M1464",
+   "hops": [
+    "ARTS M1464"
+   ]
+  },
+  {
+   "old": "ARTS M1567",
+   "new": "ARTS M1470",
+   "hops": [
+    "ARTS M1470"
+   ]
+  },
+  {
+   "old": "AUTO M1094",
+   "new": "AUTO M1093",
+   "hops": [
+    "AUTO M1093"
+   ]
+  },
+  {
+   "old": "BIOL M1025",
+   "new": "BIOL M1031",
+   "hops": [
+    "BIOL M1031"
+   ]
+  },
+  {
+   "old": "BIOL M1028",
+   "new": "BIOL M1027",
+   "hops": [
+    "BIOL M1027"
+   ]
+  },
+  {
+   "old": "BIOL M1051",
+   "new": "BIOL M1262",
+   "hops": [
+    "BIOL M1262"
+   ]
+  },
+  {
+   "old": "BUSI M1175",
+   "new": "BUSI M1174",
+   "hops": [
+    "BUSI M1174"
+   ]
+  },
+  {
+   "old": "BUSI M1187",
+   "new": "BUSI M1199",
+   "hops": [
+    "BUSI M1199"
+   ]
+  },
+  {
+   "old": "CHEM M1004",
+   "new": "CHEM M1059",
+   "hops": [
+    "CHEM M1059"
+   ]
+  },
+  {
+   "old": "CHEM M1053",
+   "new": "CHEM M1056",
+   "hops": [
+    "CHEM M1056"
+   ]
+  },
+  {
+   "old": "CHEM M1072",
+   "new": "CHEM M1071",
+   "hops": [
+    "CHEM M1071"
+   ]
+  },
+  {
+   "old": "CHEM M1075",
+   "new": "CHEM M1086",
+   "hops": [
+    "CHEM M1086"
+   ]
+  },
+  {
+   "old": "CHEM M1077",
+   "new": "CHEM M1076",
+   "hops": [
+    "CHEM M1076"
+   ]
+  },
+  {
+   "old": "CHEM M1084",
+   "new": "CHEM M1071",
+   "hops": [
+    "CHEM M1071"
+   ]
+  },
+  {
+   "old": "CHEM M1091",
+   "new": "CHEM M1092",
+   "hops": [
+    "CHEM M1092"
+   ]
+  },
+  {
+   "old": "CISC M1192",
+   "new": "CISC M1573",
+   "hops": [
+    "CISC M1573"
+   ]
+  },
+  {
+   "old": "CISC M1202",
+   "new": "CISC M1203",
+   "hops": [
+    "CISC M1203"
+   ]
+  },
+  {
+   "old": "CISC M1531",
+   "new": "CISC M1530",
+   "hops": [
+    "CISC M1530"
+   ]
+  },
+  {
+   "old": "CISC M1557",
+   "new": "CISC M1200",
+   "hops": [
+    "CISC M1200"
+   ]
+  },
+  {
+   "old": "COMM M1044",
+   "new": "COMM M1043",
+   "hops": [
+    "COMM M1043"
+   ]
+  },
+  {
+   "old": "CRIM M1044",
+   "new": "CRIM M1045",
+   "hops": [
+    "CRIM M1045"
+   ]
+  },
+  {
+   "old": "CRIM M1176",
+   "new": "CRIM M1187",
+   "hops": [
+    "CRIM M1187"
+   ]
+  },
+  {
+   "old": "CRIM M1288",
+   "new": "CRIM M1287",
+   "hops": [
+    "CRIM M1287"
+   ]
+  },
+  {
+   "old": "ECED M1109",
+   "new": "ECED M1110",
+   "hops": [
+    "ECED M1110"
+   ]
+  },
+  {
+   "old": "ECED M1111",
+   "new": "ECED M1110",
+   "hops": [
+    "ECED M1110"
+   ]
+  },
+  {
+   "old": "ECED M1154",
+   "new": "ECED M1153",
+   "hops": [
+    "ECED M1153"
+   ]
+  },
+  {
+   "old": "ECED M1175",
+   "new": "ECED M1176",
+   "hops": [
+    "ECED M1176"
+   ]
+  },
+  {
+   "old": "ENGL M1004",
+   "new": "ENGL M1129",
+   "hops": [
+    "ENGL M1129"
+   ]
+  },
+  {
+   "old": "ENGL M1008",
+   "new": "ENGL M1324",
+   "hops": [
+    "ENGL M1324"
+   ]
+  },
+  {
+   "old": "ENGL M1013",
+   "new": "ENGL M1324",
+   "hops": [
+    "ENGL M1324"
+   ]
+  },
+  {
+   "old": "ENGL M1015",
+   "new": "ENGL M1128",
+   "hops": [
+    "ENGL M1128"
+   ]
+  },
+  {
+   "old": "ENGL M1019",
+   "new": "ENGL M1018",
+   "hops": [
+    "ENGL M1018"
+   ]
+  },
+  {
+   "old": "ENGL M1024",
+   "new": "ENGL M1332",
+   "hops": [
+    "ENGL M1332"
+   ]
+  },
+  {
+   "old": "ENGL M1084",
+   "new": "ENGL M1011",
+   "hops": [
+    "ENGL M1011"
+   ]
+  },
+  {
+   "old": "ENGL M1151",
+   "new": "ENGL M1152",
+   "hops": [
+    "ENGL M1152"
+   ]
+  },
+  {
+   "old": "ENGL M1207",
+   "new": "ENGL M1224",
+   "hops": [
+    "ENGL M1224"
+   ]
+  },
+  {
+   "old": "ENGL M1394",
+   "new": "ENGL M1324",
+   "hops": [
+    "ENGL M1324"
+   ]
+  },
+  {
+   "old": "ETHS M1191",
+   "new": "ETHS M1189",
+   "hops": [
+    "ETHS M1189"
+   ]
+  },
+  {
+   "old": "ETHS M1209",
+   "new": "ETHS M1210",
+   "hops": [
+    "ETHS M1210"
+   ]
+  },
+  {
+   "old": "FIMS M1069",
+   "new": "FIMS M1068",
+   "hops": [
+    "FIMS M1068"
+   ]
+  },
+  {
+   "old": "FIRE M1284",
+   "new": "FIRE M1283",
+   "hops": [
+    "FIRE M1283"
+   ]
+  },
+  {
+   "old": "FIRE M1326",
+   "new": "FIRE M1325",
+   "hops": [
+    "FIRE M1325"
+   ]
+  },
+  {
+   "old": "GEOG M1023",
+   "new": "GEOG M1024",
+   "hops": [
+    "GEOG M1024"
+   ]
+  },
+  {
+   "old": "GEOG M1064",
+   "new": "GEOG M1063",
+   "hops": [
+    "GEOG M1063"
+   ]
+  },
+  {
+   "old": "GEOG M1069",
+   "new": "GEOG M1074",
+   "hops": [
+    "GEOG M1074"
+   ]
+  },
+  {
+   "old": "GEOL M1005",
+   "new": "GEOL M1007",
+   "hops": [
+    "GEOL M1007"
+   ]
+  },
+  {
+   "old": "HIST M1021",
+   "new": "HIST M1157",
+   "hops": [
+    "HIST M1157"
+   ]
+  },
+  {
+   "old": "HIST M1047",
+   "new": "HIST M1048",
+   "hops": [
+    "HIST M1048"
+   ]
+  },
+  {
+   "old": "HIST M1149",
+   "new": "HIST M1152",
+   "hops": [
+    "HIST M1152"
+   ]
+  },
+  {
+   "old": "HIST M1207",
+   "new": "HIST M1048",
+   "hops": [
+    "HIST M1048"
+   ]
+  },
+  {
+   "old": "MATH M1015",
+   "new": "MATH M1185",
+   "hops": [
+    "MATH M1185"
+   ]
+  },
+  {
+   "old": "MATH M1065",
+   "new": "MATH M1063",
+   "hops": [
+    "MATH M1063"
+   ]
+  },
+  {
+   "old": "MATH M1106",
+   "new": "MATH M1105",
+   "hops": [
+    "MATH M1105"
+   ]
+  },
+  {
+   "old": "MATH M1108",
+   "new": "MATH M1109",
+   "hops": [
+    "MATH M1109"
+   ]
+  },
+  {
+   "old": "MATH M1148",
+   "new": "MATH M1147",
+   "hops": [
+    "MATH M1147"
+   ]
+  },
+  {
+   "old": "MATH M1152",
+   "new": "MATH M1154",
+   "hops": [
+    "MATH M1154"
+   ]
+  },
+  {
+   "old": "MATH M1317",
+   "new": "MATH M1318",
+   "hops": [
+    "MATH M1318"
+   ]
+  },
+  {
+   "old": "MUSI M1006",
+   "new": "MUSI M1004",
+   "hops": [
+    "MUSI M1004"
+   ]
+  },
+  {
+   "old": "MUSI M1069",
+   "new": "MUSI M1074",
+   "hops": [
+    "MUSI M1074"
+   ]
+  },
+  {
+   "old": "MUSI M1075",
+   "new": "MUSI M1074",
+   "hops": [
+    "MUSI M1074"
+   ]
+  },
+  {
+   "old": "MUSI M1083",
+   "new": "MUSI M1082",
+   "hops": [
+    "MUSI M1082"
+   ]
+  },
+  {
+   "old": "MUSI M1114",
+   "new": "MUSI M1113",
+   "hops": [
+    "MUSI M1113"
+   ]
+  },
+  {
+   "old": "MUSI M1177",
+   "new": "MUSI M1180",
+   "hops": [
+    "MUSI M1180"
+   ]
+  },
+  {
+   "old": "MUSI M1199",
+   "new": "MUSI M1198",
+   "hops": [
+    "MUSI M1198"
+   ]
+  },
+  {
+   "old": "MUSI M1239",
+   "new": "MUSI M1224",
+   "hops": [
+    "MUSI M1224"
+   ]
+  },
+  {
+   "old": "MUSI M1321",
+   "new": "MUSI M1320",
+   "hops": [
+    "MUSI M1320"
+   ]
+  },
+  {
+   "old": "MUSI M1342",
+   "new": "MUSI M1327",
+   "hops": [
+    "MUSI M1327"
+   ]
+  },
+  {
+   "old": "MUSI M1344",
+   "new": "MUSI M1345",
+   "hops": [
+    "MUSI M1345"
+   ]
+  },
+  {
+   "old": "MUSI M1375",
+   "new": "MUSI M1374",
+   "hops": [
+    "MUSI M1374"
+   ]
+  },
+  {
+   "old": "MUSI M1442",
+   "new": "MUSI M1584",
+   "hops": [
+    "MUSI M1584"
+   ]
+  },
+  {
+   "old": "MUSI M1445",
+   "new": "MUSI M1590",
+   "hops": [
+    "MUSI M1590"
+   ]
+  },
+  {
+   "old": "MUSI M1494",
+   "new": "MUSI M1493",
+   "hops": [
+    "MUSI M1493"
+   ]
+  },
+  {
+   "old": "MUSI M1541",
+   "new": "MUSI M1540",
+   "hops": [
+    "MUSI M1540"
+   ]
+  },
+  {
+   "old": "MUSI M1567",
+   "new": "MUSI M1438",
+   "hops": [
+    "MUSI M1438"
+   ]
+  },
+  {
+   "old": "PHIL M1082",
+   "new": "PHIL M1081",
+   "hops": [
+    "PHIL M1081"
+   ]
+  },
+  {
+   "old": "PHIL M1086",
+   "new": "PHIL M1107",
+   "hops": [
+    "PHIL M1107"
+   ]
+  },
+  {
+   "old": "PHYS M1302",
+   "new": "PHYS M1301",
+   "hops": [
+    "PHYS M1301"
+   ]
+  },
+  {
+   "old": "PHYS M1754",
+   "new": "PHYS M1753",
+   "hops": [
+    "PHYS M1753"
+   ]
+  },
+  {
+   "old": "PSYC M1010",
+   "new": "PSYC M1009",
+   "hops": [
+    "PSYC M1009"
+   ]
+  },
+  {
+   "old": "SOCI M1061",
+   "new": "SOCI M1059",
+   "hops": [
+    "SOCI M1059"
+   ]
+  },
+  {
+   "old": "THEA M1021",
+   "new": "THEA M1022",
+   "hops": [
+    "THEA M1022"
+   ]
+  },
+  {
+   "old": "THEA M1216",
+   "new": "THEA M1217",
+   "hops": [
+    "THEA M1217"
+   ]
+  },
+  {
+   "old": "THEA M1229",
+   "new": "THEA M1230",
+   "hops": [
+    "THEA M1230"
+   ]
+  }
+ ],
+ "folded": [
+  {
+   "into": "ANTH M1032",
+   "from": "ANTH M1033"
+  },
+  {
+   "into": "ANTH M1037",
+   "from": "ANTH M1037"
+  },
+  {
+   "into": "ARTS M1109",
+   "from": "ARTS M1111"
+  },
+  {
+   "into": "ARTS M1119",
+   "from": "ARTS M1120"
+  },
+  {
+   "into": "ARTS M1159",
+   "from": "ARTS M1160"
+  },
+  {
+   "into": "ARTS M1268",
+   "from": "ARTS M1268"
+  },
+  {
+   "into": "ARTS M1288",
+   "from": "ARTS M1289"
+  },
+  {
+   "into": "ARTS M1296",
+   "from": "ARTS M1298"
+  },
+  {
+   "into": "ARTS M1396",
+   "from": "ARTS M1396"
+  },
+  {
+   "into": "ARTS M1409",
+   "from": "ARTS M1409"
+  },
+  {
+   "into": "ARTS M1410",
+   "from": "ARTS M1421"
+  },
+  {
+   "into": "ARTS M1464",
+   "from": "ARTS M1464"
+  },
+  {
+   "into": "ARTS M1464",
+   "from": "ARTS M1548"
+  },
+  {
+   "into": "BIOL M1027",
+   "from": "BIOL M1028"
+  },
+  {
+   "into": "BIOL M1031",
+   "from": "BIOL M1031"
+  },
+  {
+   "into": "BUSI M1174",
+   "from": "BUSI M1175"
+  },
+  {
+   "into": "BUSI M1199",
+   "from": "BUSI M1199"
+  },
+  {
+   "into": "CHEM M1056",
+   "from": "CHEM M1056"
+  },
+  {
+   "into": "CHEM M1059",
+   "from": "CHEM M1059"
+  },
+  {
+   "into": "CHEM M1071",
+   "from": "CHEM M1072"
+  },
+  {
+   "into": "CHEM M1071",
+   "from": "CHEM M1084"
+  },
+  {
+   "into": "CHEM M1086",
+   "from": "CHEM M1086"
+  },
+  {
+   "into": "CISC M1203",
+   "from": "CISC M1203"
+  },
+  {
+   "into": "CISC M1530",
+   "from": "CISC M1531"
+  },
+  {
+   "into": "CISC M1200",
+   "from": "CISC M1557"
+  },
+  {
+   "into": "COMM M1043",
+   "from": "COMM M1044"
+  },
+  {
+   "into": "CRIM M1045",
+   "from": "CRIM M1045"
+  },
+  {
+   "into": "CRIM M1187",
+   "from": "CRIM M1187"
+  },
+  {
+   "into": "CRIM M1287",
+   "from": "CRIM M1288"
+  },
+  {
+   "into": "ECED M1110",
+   "from": "ECED M1110"
+  },
+  {
+   "into": "ECED M1110",
+   "from": "ECED M1111"
+  },
+  {
+   "into": "ECED M1153",
+   "from": "ECED M1154"
+  },
+  {
+   "into": "ECED M1176",
+   "from": "ECED M1176"
+  },
+  {
+   "into": "ENGL M1324",
+   "from": "ENGL M1013"
+  },
+  {
+   "into": "ENGL M1018",
+   "from": "ENGL M1019"
+  },
+  {
+   "into": "ENGL M1128",
+   "from": "ENGL M1128"
+  },
+  {
+   "into": "ENGL M1129",
+   "from": "ENGL M1129"
+  },
+  {
+   "into": "ENGL M1152",
+   "from": "ENGL M1152"
+  },
+  {
+   "into": "ENGL M1224",
+   "from": "ENGL M1224"
+  },
+  {
+   "into": "ENGL M1324",
+   "from": "ENGL M1324"
+  },
+  {
+   "into": "ENGL M1332",
+   "from": "ENGL M1332"
+  },
+  {
+   "into": "ENGL M1324",
+   "from": "ENGL M1394"
+  },
+  {
+   "into": "FIRE M1283",
+   "from": "FIRE M1284"
+  },
+  {
+   "into": "FIRE M1325",
+   "from": "FIRE M1326"
+  },
+  {
+   "into": "GEOG M1024",
+   "from": "GEOG M1024"
+  },
+  {
+   "into": "GEOG M1063",
+   "from": "GEOG M1064"
+  },
+  {
+   "into": "GEOG M1074",
+   "from": "GEOG M1074"
+  },
+  {
+   "into": "GEOL M1007",
+   "from": "GEOL M1007"
+  },
+  {
+   "into": "HIST M1048",
+   "from": "HIST M1048"
+  },
+  {
+   "into": "HIST M1152",
+   "from": "HIST M1152"
+  },
+  {
+   "into": "HIST M1157",
+   "from": "HIST M1157"
+  },
+  {
+   "into": "HIST M1048",
+   "from": "HIST M1207"
+  },
+  {
+   "into": "MATH M1063",
+   "from": "MATH M1065"
+  },
+  {
+   "into": "MATH M1105",
+   "from": "MATH M1106"
+  },
+  {
+   "into": "MATH M1109",
+   "from": "MATH M1109"
+  },
+  {
+   "into": "MATH M1147",
+   "from": "MATH M1148"
+  },
+  {
+   "into": "MATH M1154",
+   "from": "MATH M1154"
+  },
+  {
+   "into": "MATH M1185",
+   "from": "MATH M1185"
+  },
+  {
+   "into": "MUSI M1004",
+   "from": "MUSI M1006"
+  },
+  {
+   "into": "MUSI M1074",
+   "from": "MUSI M1074"
+  },
+  {
+   "into": "MUSI M1074",
+   "from": "MUSI M1075"
+  },
+  {
+   "into": "MUSI M1082",
+   "from": "MUSI M1083"
+  },
+  {
+   "into": "MUSI M1113",
+   "from": "MUSI M1114"
+  },
+  {
+   "into": "MUSI M1198",
+   "from": "MUSI M1199"
+  },
+  {
+   "into": "MUSI M1224",
+   "from": "MUSI M1239"
+  },
+  {
+   "into": "MUSI M1320",
+   "from": "MUSI M1321"
+  },
+  {
+   "into": "MUSI M1345",
+   "from": "MUSI M1345"
+  },
+  {
+   "into": "MUSI M1374",
+   "from": "MUSI M1375"
+  },
+  {
+   "into": "MUSI M1493",
+   "from": "MUSI M1494"
+  },
+  {
+   "into": "MUSI M1540",
+   "from": "MUSI M1541"
+  },
+  {
+   "into": "MUSI M1438",
+   "from": "MUSI M1567"
+  },
+  {
+   "into": "MUSI M1584",
+   "from": "MUSI M1584"
+  },
+  {
+   "into": "PHIL M1081",
+   "from": "PHIL M1082"
+  },
+  {
+   "into": "PHIL M1107",
+   "from": "PHIL M1107"
+  },
+  {
+   "into": "PHYS M1301",
+   "from": "PHYS M1302"
+  },
+  {
+   "into": "PSYC M1009",
+   "from": "PSYC M1010"
+  },
+  {
+   "into": "SOCI M1059",
+   "from": "SOCI M1061"
+  },
+  {
+   "into": "THEA M1022",
+   "from": "THEA M1022"
+  },
+  {
+   "into": "THEA M1217",
+   "from": "THEA M1217"
+  },
+  {
+   "into": "THEA M1230",
+   "from": "THEA M1230"
+  }
+ ],
+ "unresolved": [],
+ "unchanged": 1970
+}

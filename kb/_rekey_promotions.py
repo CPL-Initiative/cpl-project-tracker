@@ -93,6 +93,7 @@ ALIAS_MAPS = [
     "kb/drama_theater_out/2026-06-10/alias_map.json",     # 2026-06-10
     "kb/convergence_singletons_out/2026-06-10/alias_map.json",  # 2026-06-10
     "kb/twin_merge_out/2026-06-10/alias_map.json",        # 2026-06-10
+    "kb/twin_merge_out/2026-06-12/alias_map.json",        # 2026-06-12 (statewide twins, Session 46)
 ]
 
 

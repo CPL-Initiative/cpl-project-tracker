@@ -937,3 +937,69 @@ the ECED marquee family survives intact (8 members).
   never-auto-applied queue.
 - Receipt re-run cadence: termly, alongside the desc receipt (both join
   static committed receipts; the daily cron stays byte-stable mod stamp).
+
+### Session 46, part 2 — "consolidations that should happen": the statewide twin merge + the smog confirms (2026-06-12)
+
+Sam reviewed the CCR after #385 landed: *"Still seeing some apparent MID
+consolidations that should happen, so more rule sharpening perhaps. See AUTO
+M1001 … and M1002 as well as all the level II inspectors."* The insight: a
+**suggestion queue is the wrong tier for zero-judgment cases**. M1001/M1002
+are token-identical titles (pure word order) — they'd sat in the worklist
+since the mint. The repo already had the authorized instrument: the
+Session-39 KINE/FLSP strict twin-merge. Taking it statewide is the same
+move the router made in #379.
+
+**Shipped — `kb/_apply_twin_merge_statewide.py`** (the Session-39 pass,
+unscoped + hardened):
+- Same strict twin key: `(subj4, discipline, band, strict_fam,
+  credit_status, typical_units)`; blank-discipline parents skipped (89).
+- **PLUS the Session-46 guard suite as a clique gate** — the ordinal-rule
+  fam key drops "1" as non-distinguishing, so "X Level 1 & 2" fam-equals
+  "X Level 2"; the two-axis level marks catch it. Any conflicting pair
+  sends the WHOLE group to the worklist: 65 groups skipped (gendered
+  athletics "(MEN)/(WOMEN)" the parens-stripping fam key can't see;
+  "Advanced Ceramics" vs "Advanced Ceramics I"; Organic Chem A vs B).
+- **Dry-run damage findings → fixes**: "Elementary Algebra (Lab)" tried to
+  merge into "Elementary Algebra I" → `lab`/`laboratory` joined
+  VARIANT_WORDS; curators had already UI-merged some twin groups with their
+  own target (BUSI/ENGL) → the winner pick now defers to an existing
+  curator merge-target before corroboration; re-keyed `merge_into` pointers
+  that become self-referential are dropped.
+- **Result: 589 losers absorbed in 496 groups** (16,143 → 15,554 parents);
+  107 articulations re-pointed; all 9 curation re-keys turned out to be
+  curator merges into exactly the twin winner — fulfilled physically,
+  mirrored to Supabase as deletions. V-gates G1–G6 PASS. Alias receipt
+  `kb/twin_merge_out/2026-06-12/`, registered in `_rekey_promotions.py`
+  ALIAS_MAPS and applied (99 re-keyed, 80 folded, witnesses conserved,
+  V1–V5 PASS). CSR re-seeded; audit refreshed (seed-untouched 10,998 →
+  10,513; unit anomalies 4,347 → 4,194; title-mismatch 712 → 687).
+
+**The Sam-confirmed smog merges** (his message = the curator confirmation;
+written as `kb_curation` rows in Supabase + mirrored to the overlay):
+- **L1&2 family → `AUTO M1001`**: M1002 came via the twin pass; M1217
+  ("Smog Level One and Level Two", 5.5u) + stand-alone M10AG via curation.
+- **Level-2 inspector family → `AUTO M1007`**, unified title "Smog Check
+  Inspector Training Level 2": M1005, M1006, AUTB M1037 (the mis-keyed
+  Auto-Body row — folding it under M1007 also fixes its display
+  discipline) + 8 explicit-Level-2 stand-alones (M10BK, M10BL, M10BT,
+  M10PB, M11AA, M11CW, M11DB, M11NQ). **12 members, one row.** The
+  unmarked "Inspection Procedures" rows (M11DC/M11DE/M11NW) and the
+  noncredit pair (M9052/M90AK) stay in the queue — no explicit L2 mark =
+  curator territory.
+- Both receipts (desc 446 → 416, title 5,662 → 5,584) re-run against the
+  post-twin KB so the queue never shows already-merged ids.
+
+**Test lesson — marquee pins vs physical consolidation.** Two existing
+tests pinned pre-merge ids ("ECED M1099" in the desc test; "folds ≥10
+variants into EMST M1064" in the CER test). The twin pass absorbed M1099
+into its twin M1098, and EMST M1052 into M1064 — which legitimately
+SHRINKS the CER's display-level fold count (the same unification moved
+upstream into the KB). Pins updated; thresholds now guard the mechanism,
+not a high-water mark. **Expect this class of test movement whenever
+display-level consolidation becomes physical.**
+
+**Rules-contract honesty**: `docs/ccr_rules_brief.md` previously promised
+"title similarity alone is never enough to merge automatically" — amended
+to document the one exception (the strict twin tier, its full condition
+list, and the alias-map undo guarantee). The plain-language contract must
+track what the automation actually does.

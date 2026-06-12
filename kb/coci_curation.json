@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-12T00:33:55Z",
-  "count": 123,
+  "_synced_at": "2026-06-11T22:44:52Z",
+  "count": 128,
   "curations": {
     "AGRI M1002": {
       "cross_listed_disciplines": "Business",
@@ -20,11 +20,6 @@
       "reviewed_at": "2026-05-29T20:44:46.536545+00:00",
       "discipline": "Art History"
     },
-    "ARTS M1160": {
-      "merge_into": "ARTS M1159",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:44:46.536545+00:00"
-    },
     "ARTS M11AH": {
       "merge_into": "ARTS M1201",
       "reviewed_by": "map@rccd.edu",
@@ -36,11 +31,6 @@
       "reviewed_at": "2026-05-29T20:44:12.663107+00:00",
       "discipline": "Ceramic Technology"
     },
-    "ARTS M1202": {
-      "merge_into": "ARTS M1201",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:44:12.663107+00:00"
-    },
     "AUTB M1002": {
       "unified_title": "Advanced Auto Body Collision and Damage Repair",
       "reviewed_by": "map@rccd.edu",
@@ -50,6 +40,11 @@
       "merge_into": "AUTB M1002",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T21:25:33.462587+00:00"
+    },
+    "AUTB M1037": {
+      "merge_into": "AUTO M1007",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
     "AUTB M10BJ": {
       "discipline": "Agriculture",
@@ -62,10 +57,75 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T21:25:33.462587+00:00"
     },
+    "AUTO M1005": {
+      "merge_into": "AUTO M1007",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
+    "AUTO M1006": {
+      "merge_into": "AUTO M1007",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
+    "AUTO M1007": {
+      "unified_title": "Smog Check Inspector Training Level 2",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
+    "AUTO M10AG": {
+      "merge_into": "AUTO M1001",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
+    "AUTO M10BK": {
+      "merge_into": "AUTO M1007",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
+    "AUTO M10BL": {
+      "merge_into": "AUTO M1007",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
+    "AUTO M10BT": {
+      "merge_into": "AUTO M1007",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
     "AUTO M10CX": {
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "AUTO M10PB": {
+      "merge_into": "AUTO M1007",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
+    "AUTO M11AA": {
+      "merge_into": "AUTO M1007",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
+    "AUTO M11CW": {
+      "merge_into": "AUTO M1007",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
+    "AUTO M11DB": {
+      "merge_into": "AUTO M1007",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
+    "AUTO M11NQ": {
+      "merge_into": "AUTO M1007",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
+    },
+    "AUTO M1217": {
+      "merge_into": "AUTO M1001",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
     "BBK M1001": {
       "discipline": "Business",
@@ -117,16 +177,6 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:45:04.930041+00:00",
       "discipline": "Business"
-    },
-    "BUSI M1171": {
-      "merge_into": "BUSI M1170",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:45:04.930041+00:00"
-    },
-    "BUSI M1172": {
-      "merge_into": "BUSI M1170",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:45:04.930041+00:00"
     },
     "CISC M12GG": {
       "discipline": "Business",
@@ -208,16 +258,6 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:41:29.977439+00:00",
       "discipline": "English"
-    },
-    "ENGL M1218": {
-      "merge_into": "ENGL M1217",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:41:29.977439+00:00"
-    },
-    "ENGL M1219": {
-      "merge_into": "ENGL M1217",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:41:29.977439+00:00"
     },
     "ENGL M1367": {
       "unified_title": "Introduction to Shakespeare (The Drama)",
@@ -356,11 +396,6 @@
       "reviewed_at": "2026-05-29T20:42:04.429467+00:00"
     },
     "HIST M10RS": {
-      "merge_into": "HIST M1152",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:42:04.429467+00:00"
-    },
-    "HIST M1147": {
       "merge_into": "HIST M1152",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:04.429467+00:00"
@@ -577,16 +612,6 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:43:10.485612+00:00",
       "discipline": "Real Estate"
-    },
-    "REAL M1018": {
-      "merge_into": "REAL M1017",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:43:10.485612+00:00"
-    },
-    "REAL M1019": {
-      "merge_into": "REAL M1017",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-05-29T20:43:10.485612+00:00"
     },
     "REAL M10AE": {
       "merge_into": "REAL M1017",
