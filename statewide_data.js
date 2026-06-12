@@ -98038,11 +98038,12 @@ window.CPL_STATEWIDE = {
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
       "collaborative_type": "CCC Collaborative",
-      "adopters": 35,
+      "adopters": 36,
       "adopter_names": [
         "Bakersfield College",
         "Barstow Community College",
         "Butte College",
+        "CA MAP INITIATIVE COLLEGE",
         "Cabrillo College",
         "Cerro Coso Community College",
         "Chabot College",
@@ -98145,7 +98146,7 @@ window.CPL_STATEWIDE = {
         "West Valley College",
         "Yuba College"
       ],
-      "total_addressable": 101,
+      "total_addressable": 102,
       "credit_recs": [
         {
           "course": "ADJ 1",
@@ -98450,6 +98451,14 @@ window.CPL_STATEWIDE = {
         {
           "course": "CJ 5",
           "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ADJ 1",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "ADJ 20",
+          "credit": "3 hours in Introduction to Corrections"
         },
         {
           "course": "ACAD C200X",
@@ -221199,21 +221208,21 @@ window.CPL_STATEWIDE = {
         "pct": 0.7
       },
       {
+        "college": "CA MAP INITIATIVE COLLEGE",
+        "credit_recs": 77,
+        "exhibits": 75,
+        "disciplines": 5,
+        "ccc_collaborative": 3,
+        "industry_certs": 4,
+        "pct": 0.7
+      },
+      {
         "college": "Cuesta College",
         "credit_recs": 76,
         "exhibits": 58,
         "disciplines": 10,
         "ccc_collaborative": 1,
         "industry_certs": 11,
-        "pct": 0.7
-      },
-      {
-        "college": "CA MAP INITIATIVE COLLEGE",
-        "credit_recs": 75,
-        "exhibits": 74,
-        "disciplines": 4,
-        "ccc_collaborative": 1,
-        "industry_certs": 2,
         "pct": 0.7
       },
       {
@@ -221688,12 +221697,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1339,
+        "credit_recs": 1341,
         "exhibits": 402,
         "courses": 550,
-        "colleges": 48,
-        "ccc_collaborative": 544,
-        "pct": 11.7
+        "colleges": 49,
+        "ccc_collaborative": 546,
+        "pct": 11.8
       },
       {
         "discipline": "Interdisciplinary Studies",
@@ -221886,7 +221895,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3328,
+        "credit_recs": 3330,
         "exhibits": 1144,
         "colleges": 78,
         "pct": 29.2
@@ -221930,7 +221939,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2584,
+        "credit_recs": 2586,
         "exhibits": 942,
         "colleges": 74,
         "pct": 22.7
@@ -222003,11 +222012,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1304,
+        "credit_recs": 1306,
         "exhibits": 163,
         "colleges": 63,
         "disciplines": 9,
-        "pct": 11.4
+        "pct": 11.5
       },
       {
         "category": "Industry/Other",
@@ -222077,9 +222086,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
-        "credit_recs": 129,
-        "courses": 115,
-        "colleges": 22,
+        "credit_recs": 131,
+        "courses": 117,
+        "colleges": 23,
         "cpl_type": "Industry Certification",
         "discipline": "Public and Protective Services"
       },
@@ -222421,6 +222430,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-12T20:46:44",
-  "total_credit_recs": 11402
+  "generated_at": "2026-06-12T22:13:40",
+  "total_credit_recs": 11404
 };

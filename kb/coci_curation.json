@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-12T20:47:19Z",
-  "count": 364,
+  "_synced_at": "2026-06-12T22:14:14Z",
+  "count": 620,
   "curations": {
     "AGRI M1001": {
       "cross_listed_disciplines": "Business",
@@ -15,10 +15,25 @@
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00",
       "discipline": "Agriculture"
     },
+    "ANTH M1011": {
+      "unified_title": "Native Peoples of North America",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:45.407009+00:00"
+    },
     "ANTH M1046": {
       "unified_title": "Anthropology of Sex, Gender, and Sexuality",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:55:54.229701+00:00"
+    },
+    "ANTH M1047": {
+      "unified_title": "The Anthropology of Sexuality and Gender",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:47.323884+00:00"
+    },
+    "ANTH M10AW": {
+      "merge_into": "ANTH M1011",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:45.407009+00:00"
     },
     "ANTH M10EM": {
       "merge_into": "ANTH M1046",
@@ -29,6 +44,11 @@
       "merge_into": "ANTH M1046",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:55:54.229701+00:00"
+    },
+    "ANTH M10EO": {
+      "merge_into": "ANTH M1047",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:47.323884+00:00"
     },
     "ANTH M10KF": {
       "merge_into": "ANTH M1101",
@@ -45,27 +65,387 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:55:59.429615+00:00"
     },
+    "ARTH M1002": {
+      "unified_title": "History of African American Art (Past to Present)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:21.598674+00:00"
+    },
+    "ARTH M1005": {
+      "unified_title": "History of American Art",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:24.863639+00:00"
+    },
     "ARTH M1022": {
       "discipline": "Art History",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:44:46.536545+00:00",
       "unified_title": "History of Modern Art"
     },
+    "ARTH M10CB": {
+      "merge_into": "ARTS M1104",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:26.749577+00:00"
+    },
+    "ARTS M1024": {
+      "unified_title": "Painting 2: Acrylic",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:01.347996+00:00"
+    },
+    "ARTS M1025": {
+      "unified_title": "Painting 3: Acrylic",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:04.324156+00:00"
+    },
+    "ARTS M1034": {
+      "unified_title": "Advanced Ceramics 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:06.781776+00:00"
+    },
+    "ARTS M1057": {
+      "unified_title": "Painting - Advanced",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:10.731821+00:00"
+    },
+    "ARTS M1061": {
+      "unified_title": "Sculpture: Advanced",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:12.51811+00:00"
+    },
+    "ARTS M1062": {
+      "unified_title": "Watercolor, Advanced",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:14.054178+00:00"
+    },
+    "ARTS M1067": {
+      "merge_into": "ARTH M1002",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:21.598674+00:00"
+    },
+    "ARTS M1076": {
+      "merge_into": "ARTH M1005",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:24.863639+00:00"
+    },
+    "ARTS M10AD": {
+      "merge_into": "ARTS M1034",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:06.781776+00:00"
+    },
+    "ARTS M10AH": {
+      "merge_into": "ARTS M1215",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:45.843274+00:00"
+    },
+    "ARTS M10AM": {
+      "merge_into": "ARTS M1344",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:33.362267+00:00"
+    },
+    "ARTS M10AX": {
+      "merge_into": "ARTS M1412",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:56.525018+00:00"
+    },
+    "ARTS M10BB": {
+      "merge_into": "ARTS M1488",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:58.383954+00:00"
+    },
     "ARTS M10BJ": {
       "merge_into": "ARTH M1022",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:44:46.536545+00:00"
+    },
+    "ARTS M10CN": {
+      "merge_into": "ARTS M1301",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:38.697122+00:00"
+    },
+    "ARTS M10CY": {
+      "merge_into": "ARTS M1425",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:53.972391+00:00"
+    },
+    "ARTS M10EA": {
+      "merge_into": "ARTS M1372",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:51.611109+00:00"
+    },
+    "ARTS M10ED": {
+      "merge_into": "ARTS M1443",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:02.058014+00:00"
+    },
+    "ARTS M10EE": {
+      "merge_into": "ARTS M1444",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:11.150258+00:00"
+    },
+    "ARTS M10FD": {
+      "merge_into": "ARTS M1240",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:28.181178+00:00"
+    },
+    "ARTS M10FG": {
+      "merge_into": "ARTS M1473",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:00.28183+00:00"
+    },
+    "ARTS M10FH": {
+      "merge_into": "ARTS M1474",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:07.908621+00:00"
+    },
+    "ARTS M10GE": {
+      "merge_into": "ARTS M1024",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:01.347996+00:00"
+    },
+    "ARTS M10GF": {
+      "merge_into": "ARTS M1025",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:04.324156+00:00"
+    },
+    "ARTS M10JW": {
+      "merge_into": "ARTS M1057",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:10.731821+00:00"
+    },
+    "ARTS M10KE": {
+      "merge_into": "ARTS M1061",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:12.51811+00:00"
+    },
+    "ARTS M10KF": {
+      "merge_into": "ARTS M1062",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:14.054178+00:00"
+    },
+    "ARTS M10ZC": {
+      "merge_into": "ARTS M1174",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:31.306414+00:00"
+    },
+    "ARTS M1104": {
+      "unified_title": "Renaissance and Baroque Art",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:26.749577+00:00"
+    },
+    "ARTS M1174": {
+      "unified_title": "Collage and Assemblage",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:31.306414+00:00"
     },
     "ARTS M11AH": {
       "merge_into": "ARTS M1201",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:44:12.663107+00:00"
     },
+    "ARTS M11BX": {
+      "merge_into": "ARTS M1202",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:25.046767+00:00"
+    },
+    "ARTS M11HJ": {
+      "merge_into": "ARTS M1231",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:26.586991+00:00"
+    },
+    "ARTS M11HQ": {
+      "merge_into": "ARTS M1233",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:48.192704+00:00"
+    },
+    "ARTS M11IV": {
+      "merge_into": "ARTS M1238",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:19.87771+00:00"
+    },
+    "ARTS M11OD": {
+      "merge_into": "ARTS M1291",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:36.567199+00:00"
+    },
+    "ARTS M11WY": {
+      "merge_into": "ARTS M1403",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:09.782639+00:00"
+    },
     "ARTS M1201": {
       "unified_title": "Ceramics Beginning Handbuilding",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:44:12.663107+00:00",
       "discipline": "Ceramic Technology"
+    },
+    "ARTS M1202": {
+      "unified_title": "Printmaking - Beginning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:25.046767+00:00"
+    },
+    "ARTS M1215": {
+      "unified_title": "Hand-Built Ceramics 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:45.843274+00:00"
+    },
+    "ARTS M1231": {
+      "unified_title": "Ceramics - Handbuilding 3",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:26.586991+00:00"
+    },
+    "ARTS M1233": {
+      "unified_title": "History of World Ceramics",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:48.192704+00:00"
+    },
+    "ARTS M1238": {
+      "unified_title": "Wheel Thrown Ceramics, Intermediate",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:19.87771+00:00"
+    },
+    "ARTS M1240": {
+      "unified_title": "Ceramics 4",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:28.181178+00:00"
+    },
+    "ARTS M1291": {
+      "unified_title": "Gallery and Exhibition Design",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:36.567199+00:00"
+    },
+    "ARTS M12AL": {
+      "merge_into": "ARTS M1429",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:15.092012+00:00"
+    },
+    "ARTS M12BJ": {
+      "merge_into": "ARTS M1442",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:16.127663+00:00"
+    },
+    "ARTS M12BX": {
+      "merge_into": "ARTS M1451",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:06.543159+00:00"
+    },
+    "ARTS M12CO": {
+      "merge_into": "ARTS M1457",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:50.117925+00:00"
+    },
+    "ARTS M12GO": {
+      "merge_into": "ARTS M1506",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:13.007346+00:00"
+    },
+    "ARTS M1301": {
+      "unified_title": "Graphic Design 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:38.697122+00:00"
+    },
+    "ARTS M1344": {
+      "unified_title": "Digital Illustration 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:33.362267+00:00"
+    },
+    "ARTS M1372": {
+      "unified_title": "Life Drawing 3",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:51.611109+00:00"
+    },
+    "ARTS M1403": {
+      "unified_title": "Fundamentals of Sculpture",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:09.782639+00:00"
+    },
+    "ARTS M1412": {
+      "unified_title": "Life Sculpture 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:56.525018+00:00"
+    },
+    "ARTS M1425": {
+      "unified_title": "Life Painting 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:53.972391+00:00"
+    },
+    "ARTS M1429": {
+      "unified_title": "Painting 2: Watercolor",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:15.092012+00:00"
+    },
+    "ARTS M1442": {
+      "unified_title": "Painting 3: Watercolor",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:16.127663+00:00"
+    },
+    "ARTS M1443": {
+      "unified_title": "Printmaking 3",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:02.058014+00:00"
+    },
+    "ARTS M1444": {
+      "unified_title": "Sculpture 3",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:11.150258+00:00"
+    },
+    "ARTS M1451": {
+      "unified_title": "Printmaking: Intaglio",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:06.543159+00:00"
+    },
+    "ARTS M1457": {
+      "unified_title": "Intermediate Printmaking",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:50.117925+00:00"
+    },
+    "ARTS M1473": {
+      "unified_title": "Painting 4",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:00.28183+00:00"
+    },
+    "ARTS M1474": {
+      "unified_title": "Printmaking 4",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:07.908621+00:00"
+    },
+    "ARTS M1488": {
+      "unified_title": "Mural Painting",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:43:58.383954+00:00"
+    },
+    "ARTS M1506": {
+      "unified_title": "Studio Sculpture",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:13.007346+00:00"
+    },
+    "ASTR M1020": {
+      "unified_title": "Observational Astronomy Lab",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:01.93525+00:00"
+    },
+    "ASTR M1021": {
+      "unified_title": "Astronomy Laboratory",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:57.452426+00:00"
+    },
+    "ASTR M1044": {
+      "unified_title": "The Solar System",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:03.730595+00:00"
+    },
+    "ASTR M10BK": {
+      "merge_into": "ASTR M1020",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:01.93525+00:00"
+    },
+    "ASTR M10BL": {
+      "merge_into": "ASTR M1021",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:57.452426+00:00"
+    },
+    "ASTR M10CW": {
+      "merge_into": "ASTR M1044",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:03.730595+00:00"
     },
     "ATHL M1005": {
       "merge_into": "ATHL M1028",
@@ -747,6 +1127,31 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T01:03:44.485334+00:00"
     },
+    "BIOL M1022": {
+      "unified_title": "Anatomy of the Head and Neck",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:29.134288+00:00"
+    },
+    "BIOL M1032": {
+      "unified_title": "Introduction to Anatomy and Physiology",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:07.393488+00:00"
+    },
+    "BIOL M1086": {
+      "unified_title": "The Foundations of Biology",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:05.220691+00:00"
+    },
+    "BIOL M10EQ": {
+      "merge_into": "BIOL M1032",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:07.393488+00:00"
+    },
+    "BIOL M10NS": {
+      "merge_into": "BIOL M1086",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:05.220691+00:00"
+    },
     "BIOL M90BD": {
       "merge_into": "BIOL M90BE",
       "reviewed_by": "MAP@rccd.edu",
@@ -756,6 +1161,16 @@
       "discipline": "Interdisciplinary-Basic Skills: Noncredit 53412",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T19:22:55.870894+00:00"
+    },
+    "BSKL M9014": {
+      "unified_title": "College and Scholastic Assessment Preparation",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:10.893942+00:00"
+    },
+    "BSKL M90AS": {
+      "merge_into": "BSKL M9014",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:10.893942+00:00"
     },
     "BUSI M1001": {
       "unified_title": "Intermediate Accounting 1",
@@ -797,6 +1212,16 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
     },
+    "BUSI M10RL": {
+      "merge_into": "BUSI M1160",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:13.272395+00:00"
+    },
+    "BUSI M10WO": {
+      "merge_into": "BUSI M1216",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:19.755025+00:00"
+    },
     "BUSI M10ZQ": {
       "discipline": "Business",
       "reviewed_by": "MAP@rccd.edu",
@@ -806,6 +1231,11 @@
       "unified_title": "Bookkeeping",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:59:51.068236+00:00"
+    },
+    "BUSI M1160": {
+      "unified_title": "Economics of Business",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:13.272395+00:00"
     },
     "BUSI M1167": {
       "discipline": "Business",
@@ -823,15 +1253,40 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
+    "BUSI M11DW": {
+      "merge_into": "BUSI M1267",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:17.187133+00:00"
+    },
+    "BUSI M11JP": {
+      "merge_into": "BUSI M1312",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:15.078608+00:00"
+    },
     "BUSI M11PA": {
       "discipline": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
     },
+    "BUSI M1216": {
+      "unified_title": "Topics in Business",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:19.755025+00:00"
+    },
+    "BUSI M1267": {
+      "unified_title": "Managing Diversity in the Workplace",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:17.187133+00:00"
+    },
     "BUSI M1300": {
       "discipline": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
+    },
+    "BUSI M1312": {
+      "unified_title": "Investments and Financial Management",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:15.078608+00:00"
     },
     "BUSI M9003": {
       "discipline": "Business",
@@ -928,6 +1383,66 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T21:59:23.51233+00:00"
     },
+    "CHEM M1024": {
+      "unified_title": "Survey of Organic and Biochemistry",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:30.610224+00:00"
+    },
+    "CHEM M1078": {
+      "unified_title": "Chemistry and Society Laboratory",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:28.985201+00:00"
+    },
+    "CHEM M1086": {
+      "unified_title": "Topics in Chemistry",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:31.929839+00:00"
+    },
+    "CHEM M10CT": {
+      "merge_into": "CHEM M1024",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:30.610224+00:00"
+    },
+    "CHEM M10GF": {
+      "merge_into": "CHEM M1078",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:28.985201+00:00"
+    },
+    "CHEM M10GP": {
+      "merge_into": "CHEM M1086",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:31.929839+00:00"
+    },
+    "CISC M1065": {
+      "unified_title": "Python Programming for Data Science and Machine Learning",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:54.948406+00:00"
+    },
+    "CISC M10NJ": {
+      "merge_into": "CISC M1065",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:54.948406+00:00"
+    },
+    "COMM M1056": {
+      "unified_title": "Leadership and Communication",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:48.017751+00:00"
+    },
+    "COMM M10EA": {
+      "merge_into": "COMM M1056",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:48.017751+00:00"
+    },
+    "COSM M1039": {
+      "unified_title": "Fundamentals of Cosmetology",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:52.305596+00:00"
+    },
+    "COSM M10IA": {
+      "merge_into": "COSM M1039",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:52.305596+00:00"
+    },
     "COUN M1038": {
       "unified_title": "College and Career Success",
       "reviewed_by": "map@rccd.edu",
@@ -948,6 +1463,86 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:57:42.665612+00:00"
     },
+    "CRIM M10AK": {
+      "merge_into": "CRIM M1267",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:37.454179+00:00"
+    },
+    "CRIM M10BF": {
+      "merge_into": "CRIM M1173",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:09.683343+00:00"
+    },
+    "CRIM M10YC": {
+      "merge_into": "CRIM M1139",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:40.342786+00:00"
+    },
+    "CRIM M1139": {
+      "unified_title": "Narcotics and Vice Control",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:40.342786+00:00"
+    },
+    "CRIM M1173": {
+      "unified_title": "Criminal Law 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:09.683343+00:00"
+    },
+    "CRIM M11LW": {
+      "merge_into": "CRIM M1234",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:34.253269+00:00"
+    },
+    "CRIM M1234": {
+      "unified_title": "Field Officer Training",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:34.253269+00:00"
+    },
+    "CRIM M1267": {
+      "unified_title": "Introduction to Probation and Parole",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:37.454179+00:00"
+    },
+    "CSIS M1012": {
+      "unified_title": "Routing and Switching Essentials Cisco 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:41.300771+00:00"
+    },
+    "CSIS M1029": {
+      "unified_title": "Data Analytics (Advanced Excel and Acccess)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:38.478203+00:00"
+    },
+    "CSIS M10CO": {
+      "merge_into": "CSIS M1012",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:41.300771+00:00"
+    },
+    "CSIS M10FS": {
+      "merge_into": "CSIS M1029",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:38.478203+00:00"
+    },
+    "CSIS M10NH": {
+      "merge_into": "CSIS M1130",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:34.798911+00:00"
+    },
+    "CSIS M1130": {
+      "unified_title": "Artificial Intelligence (AI) Fundamentals",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:34.798911+00:00"
+    },
+    "CSIS M12IU": {
+      "merge_into": "CSIS M1448",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:46.126564+00:00"
+    },
+    "CSIS M1448": {
+      "unified_title": "Web Programming: JavaScript",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:46.126564+00:00"
+    },
     "CULN M1002": {
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
@@ -958,10 +1553,105 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
+    "DANC M1078": {
+      "unified_title": "Ballet 3 - Intermediate",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:07.037666+00:00"
+    },
+    "DANC M10CM": {
+      "merge_into": "DANC M1164",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:58.71558+00:00"
+    },
+    "DANC M10CS": {
+      "merge_into": "DANC M1200",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:03.396883+00:00"
+    },
+    "DANC M10OC": {
+      "merge_into": "DANC M1078",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:07.037666+00:00"
+    },
+    "DANC M10TA": {
+      "merge_into": "DANC M1180",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:43.766529+00:00"
+    },
+    "DANC M10VB": {
+      "merge_into": "DANC M1126",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:01.566405+00:00"
+    },
+    "DANC M10WB": {
+      "merge_into": "DANC M1133",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:09.637329+00:00"
+    },
+    "DANC M1101": {
+      "unified_title": "Beginning Choreography A",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:56.933272+00:00"
+    },
+    "DANC M1102": {
+      "merge_into": "DANC M1101",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:56.933272+00:00"
+    },
+    "DANC M1126": {
+      "unified_title": "Dance Composition - Theory and Choreography",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:01.566405+00:00"
+    },
+    "DANC M1133": {
+      "unified_title": "Intermediate Choreography A",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:09.637329+00:00"
+    },
+    "DANC M1164": {
+      "unified_title": "Contemporary Dance 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:58.71558+00:00"
+    },
+    "DANC M1180": {
+      "unified_title": "Middle Eastern Dance 3",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:43.766529+00:00"
+    },
+    "DANC M1200": {
+      "unified_title": "Hip Hop Dance 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:03.396883+00:00"
+    },
+    "DENT M1013": {
+      "merge_into": "BIOL M1022",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:29.134288+00:00"
+    },
     "DRAF M1002": {
       "discipline": "Drafting/CADD",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-21T19:21:54.054269+00:00"
+    },
+    "ECED M1173": {
+      "unified_title": "The Home, the School, the Community",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:25.763231+00:00"
+    },
+    "ECED M11EB": {
+      "merge_into": "ECED M1173",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:45:25.763231+00:00"
+    },
+    "ECON M1011": {
+      "unified_title": "Economics and the Environment",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:46.221707+00:00"
+    },
+    "ECON M10BG": {
+      "merge_into": "ECON M1011",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:46.221707+00:00"
     },
     "ECON M9003": {
       "merge_into": "ECON M9002",
@@ -993,6 +1683,36 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T20:00:06.858256+00:00"
     },
+    "ENGL M1079": {
+      "unified_title": "Multicultural American Literature",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:05.392727+00:00"
+    },
+    "ENGL M1096": {
+      "unified_title": "Authors of the Theatre",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:48.683487+00:00"
+    },
+    "ENGL M10KN": {
+      "merge_into": "ENGL M1079",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:05.392727+00:00"
+    },
+    "ENGL M10MU": {
+      "merge_into": "ENGL M1096",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:46:48.683487+00:00"
+    },
+    "ENGL M10OI": {
+      "merge_into": "ENGL M1110",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:13.970357+00:00"
+    },
+    "ENGL M10WG": {
+      "merge_into": "ENGL M1194",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:51:24.261811+00:00"
+    },
     "ENGL M10WM": {
       "merge_into": "ENGL M1197",
       "reviewed_by": "map@rccd.edu",
@@ -1003,11 +1723,26 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:41:44.880094+00:00"
     },
+    "ENGL M1110": {
+      "unified_title": "Survey of the Bible as Literature",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:13.970357+00:00"
+    },
+    "ENGL M1194": {
+      "unified_title": "Creative Writing: Introduction to Poetry",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:51:24.261811+00:00"
+    },
     "ENGL M1197": {
       "discipline": "English",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:41:29.977439+00:00",
       "unified_title": "Writing in Creative Nonfiction"
+    },
+    "ENGL M11BR": {
+      "merge_into": "ENGL M1254",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:51:46.671761+00:00"
     },
     "ENGL M11CD": {
       "merge_into": "ENGL M1260",
@@ -1029,6 +1764,21 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:09.917269+00:00"
     },
+    "ENGL M11DD": {
+      "merge_into": "ENGL M1266",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:08.684043+00:00"
+    },
+    "ENGL M11DO": {
+      "merge_into": "ENGL M1271",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:51:28.327102+00:00"
+    },
+    "ENGL M11FJ": {
+      "merge_into": "ENGL M1285",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:51:44.597481+00:00"
+    },
     "ENGL M11HU": {
       "merge_into": "ENGL M1330",
       "reviewed_by": "map@rccd.edu",
@@ -1038,6 +1788,21 @@
       "merge_into": "ENGL M1330",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:41:44.880094+00:00"
+    },
+    "ENGL M11IQ": {
+      "merge_into": "ENGL M1337",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:51:56.976236+00:00"
+    },
+    "ENGL M11LR": {
+      "merge_into": "ENGL M1368",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:12.31855+00:00"
+    },
+    "ENGL M1254": {
+      "unified_title": "Introduction to Fiction Writing",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:51:46.671761+00:00"
     },
     "ENGL M1260": {
       "unified_title": "Writing in Fiction",
@@ -1049,11 +1814,46 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:09.917269+00:00"
     },
+    "ENGL M1266": {
+      "unified_title": "Mythology and Folklore",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:08.684043+00:00"
+    },
+    "ENGL M1271": {
+      "unified_title": "Gender and Literature",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:51:28.327102+00:00"
+    },
+    "ENGL M1285": {
+      "unified_title": "Shakespeare Honors",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:51:44.597481+00:00"
+    },
     "ENGL M1330": {
       "discipline": "English",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:41:44.880094+00:00",
       "unified_title": "Introduction to Shakespeare (The Drama)"
+    },
+    "ENGL M1337": {
+      "unified_title": "Latino Literature",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:51:56.976236+00:00"
+    },
+    "ENGL M1368": {
+      "unified_title": "Survey of Shakespeare",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:12.31855+00:00"
+    },
+    "ENGR M1034": {
+      "unified_title": "Digital Logic and Design",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:15.463674+00:00"
+    },
+    "ENGR M10EP": {
+      "merge_into": "ENGR M1034",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:15.463674+00:00"
     },
     "ENTR M1001": {
       "cross_listed_disciplines": "Business",
@@ -1065,6 +1865,191 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
+    "ESLN M9002": {
+      "unified_title": "English Seminar for Speakers of Other Languages 3",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:02.139748+00:00"
+    },
+    "ESLN M9009": {
+      "unified_title": "English as a Second Language 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:48.997895+00:00"
+    },
+    "ESLN M9011": {
+      "unified_title": "English as a Second Language 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:53.00347+00:00"
+    },
+    "ESLN M90AE": {
+      "merge_into": "ESLN M9009",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:48.997895+00:00"
+    },
+    "ESLN M90AP": {
+      "merge_into": "ESLN M9011",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:53.00347+00:00"
+    },
+    "ESLN M90BE": {
+      "merge_into": "ESLN M9002",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:02.139748+00:00"
+    },
+    "ESOL M1076": {
+      "unified_title": "Academic Grammar, High-Intermediate",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:26.194999+00:00"
+    },
+    "ESOL M10AY": {
+      "merge_into": "ESOL M1263",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:18.493882+00:00"
+    },
+    "ESOL M10RC": {
+      "merge_into": "ESOL M1255",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:16.944483+00:00"
+    },
+    "ESOL M10UZ": {
+      "merge_into": "ESOL M1308",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:20.36351+00:00"
+    },
+    "ESOL M10XG": {
+      "merge_into": "ESOL M1354",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:41.819819+00:00"
+    },
+    "ESOL M1255": {
+      "unified_title": "Elementary Writing and Grammar",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:16.944483+00:00"
+    },
+    "ESOL M1263": {
+      "unified_title": "English Pronunciation 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:18.493882+00:00"
+    },
+    "ESOL M1308": {
+      "unified_title": "Grammar and Writing 4",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:20.36351+00:00"
+    },
+    "ESOL M1354": {
+      "unified_title": "Novice Listening and Speaking",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:41.819819+00:00"
+    },
+    "ESOL M9008": {
+      "unified_title": "ESL and Civics 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:36.126614+00:00"
+    },
+    "ESOL M9013": {
+      "unified_title": "English for Work I",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:52.872787+00:00"
+    },
+    "ESOL M9018": {
+      "unified_title": "ESL - Level 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:05.064914+00:00"
+    },
+    "ESOL M9034": {
+      "unified_title": "English for Work 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:59.69951+00:00"
+    },
+    "ESOL M9039": {
+      "unified_title": "ESL - Level 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:06.053892+00:00"
+    },
+    "ESOL M9049": {
+      "unified_title": "ESL - Level 3",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:06.964612+00:00"
+    },
+    "ESOL M9058": {
+      "unified_title": "ESL - Level 4",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:07.861234+00:00"
+    },
+    "ESOL M90GY": {
+      "merge_into": "ESOL M9183",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:38.275427+00:00"
+    },
+    "ESOL M90KM": {
+      "merge_into": "ESOL M1076",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:26.194999+00:00"
+    },
+    "ESOL M90NK": {
+      "merge_into": "ESOL M9103",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:02.007052+00:00"
+    },
+    "ESOL M90ZR": {
+      "merge_into": "ESOL M9008",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:36.126614+00:00"
+    },
+    "ESOL M9103": {
+      "unified_title": "ESL Advanced",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:02.007052+00:00"
+    },
+    "ESOL M9177": {
+      "unified_title": "ESL for Citizenship",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:03.227936+00:00"
+    },
+    "ESOL M9178": {
+      "merge_into": "ESOL M9177",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:03.227936+00:00"
+    },
+    "ESOL M9183": {
+      "unified_title": "ESL and Civics 3",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:38.275427+00:00"
+    },
+    "ESOL M91FV": {
+      "merge_into": "ESOL M9213",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:33.275645+00:00"
+    },
+    "ESOL M91GQ": {
+      "merge_into": "ESOL M9013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:52.872787+00:00"
+    },
+    "ESOL M91GW": {
+      "merge_into": "ESOL M9034",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:52:59.69951+00:00"
+    },
+    "ESOL M91IW": {
+      "merge_into": "ESOL M9221",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:04.64464+00:00"
+    },
+    "ESOL M91JO": {
+      "merge_into": "ESOL M9018",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:05.064914+00:00"
+    },
+    "ESOL M91JV": {
+      "merge_into": "ESOL M9039",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:06.053892+00:00"
+    },
+    "ESOL M91KA": {
+      "merge_into": "ESOL M9049",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:06.964612+00:00"
+    },
     "ESOL M91KE": {
       "merge_into": "ESOL M9232",
       "reviewed_by": "map@rccd.edu",
@@ -1075,10 +2060,120 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:15.841517+00:00"
     },
+    "ESOL M91KV": {
+      "merge_into": "ESOL M9058",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:07.861234+00:00"
+    },
+    "ESOL M91MM": {
+      "merge_into": "ESOL M9248",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:10.612796+00:00"
+    },
+    "ESOL M9213": {
+      "unified_title": "Low Intermediate English as a Second Language",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:33.275645+00:00"
+    },
+    "ESOL M9221": {
+      "unified_title": "High Intermediate ESL: Grammar",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:04.64464+00:00"
+    },
     "ESOL M9232": {
       "unified_title": "Intermediate ESL",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:15.841517+00:00"
+    },
+    "ESOL M9248": {
+      "unified_title": "Intermediate Writing and Grammar",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:53:10.612796+00:00"
+    },
+    "ETHS M1077": {
+      "unified_title": "The Asian-American Experience",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:06.642006+00:00"
+    },
+    "ETHS M10GI": {
+      "merge_into": "ETHS M1077",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:06.642006+00:00"
+    },
+    "FASH M1016": {
+      "unified_title": "Apparel Construction 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:08.340166+00:00"
+    },
+    "FASH M1066": {
+      "unified_title": "Field Studies in Fashion",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:10.071108+00:00"
+    },
+    "FASH M1074": {
+      "unified_title": "Introduction to the Fashion Industry",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:12.107457+00:00"
+    },
+    "FASH M10AB": {
+      "merge_into": "FASH M1016",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:08.340166+00:00"
+    },
+    "FASH M10PU": {
+      "merge_into": "FASH M1066",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:10.071108+00:00"
+    },
+    "FASH M10QG": {
+      "merge_into": "FASH M1074",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:12.107457+00:00"
+    },
+    "FIMS M1003": {
+      "unified_title": "History of Cinema (1950-Present) Honors",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:05.242439+00:00"
+    },
+    "FIMS M1007": {
+      "merge_into": "FIMS M1003",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:05.242439+00:00"
+    },
+    "FIMS M1009": {
+      "unified_title": "History of Cinema: 1960 to Present",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:18.758388+00:00"
+    },
+    "FIMS M1072": {
+      "unified_title": "Editing 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:13.812742+00:00"
+    },
+    "FIMS M10AD": {
+      "merge_into": "FIMS M1072",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:13.812742+00:00"
+    },
+    "FIMS M10AY": {
+      "merge_into": "FIMS M1009",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:18.758388+00:00"
+    },
+    "FIRE M10CH": {
+      "merge_into": "FIRE M1274",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:21.006861+00:00"
+    },
+    "FIRE M10CJ": {
+      "merge_into": "FIRE M1308",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:23.692771+00:00"
+    },
+    "FIRE M10WA": {
+      "merge_dismissed": "FIRE M10WA|FIRE M1239",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:51.514518+00:00"
     },
     "FIRE M1229": {
       "unified_title": "Introduction to Fire Suppression and Maintenance Manipulative Tasks (Intermediate)",
@@ -1089,6 +2184,16 @@
       "merge_into": "FIRE M1229",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:19.525146+00:00"
+    },
+    "FIRE M1274": {
+      "unified_title": "Building Construction for Fire Protection",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:21.006861+00:00"
+    },
+    "FIRE M1308": {
+      "unified_title": "Principles of Fire and Emergency Services Safety and Survival",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:23.692771+00:00"
     },
     "FIRE M1339": {
       "merge_into": "FIRE M1229",
@@ -1235,10 +2340,45 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T23:02:57.624485+00:00"
     },
+    "GEOL M1034": {
+      "unified_title": "Field Studies in Geology",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:07.235449+00:00"
+    },
     "GEOL M10FE": {
       "merge_into": "PHSC M1013",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:58:02.63145+00:00"
+    },
+    "GEOL M10GP": {
+      "merge_into": "GEOL M1034",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:07.235449+00:00"
+    },
+    "HIST M1042": {
+      "unified_title": "African American History 1877 to Present",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:10.357595+00:00"
+    },
+    "HIST M1053": {
+      "unified_title": "The United States Since 1945",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:50.773025+00:00"
+    },
+    "HIST M1065": {
+      "unified_title": "History of the African American",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:08.545576+00:00"
+    },
+    "HIST M10AA": {
+      "merge_into": "HIST M1107",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:25.581799+00:00"
+    },
+    "HIST M10BV": {
+      "merge_into": "HIST M1111",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:23.948433+00:00"
     },
     "HIST M10CP": {
       "merge_into": "HIST M1140",
@@ -1250,26 +2390,91 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:22.170829+00:00"
     },
+    "HIST M10FY": {
+      "merge_into": "HIST M1042",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:10.357595+00:00"
+    },
     "HIST M10GM": {
       "merge_into": "HIST M1101",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:22.170829+00:00"
+    },
+    "HIST M10IE": {
+      "merge_into": "HIST M1053",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:50.773025+00:00"
+    },
+    "HIST M10IK": {
+      "merge_into": "HIST M1108",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:26.944971+00:00"
+    },
+    "HIST M10JI": {
+      "merge_into": "HIST M1065",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:08.545576+00:00"
     },
     "HIST M10RP": {
       "merge_into": "HIST M1140",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:04.429467+00:00"
     },
+    "HIST M10SX": {
+      "merge_into": "HIST M1154",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:28.547738+00:00"
+    },
+    "HIST M10UQ": {
+      "merge_into": "HIST M1165",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:35.212698+00:00"
+    },
+    "HIST M10VK": {
+      "merge_into": "HIST M1175",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:47.044965+00:00"
+    },
     "HIST M1101": {
       "unified_title": "Women in American History (1865-Present)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:22.170829+00:00"
+    },
+    "HIST M1107": {
+      "unified_title": "History of the Americas 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:25.581799+00:00"
+    },
+    "HIST M1108": {
+      "unified_title": "History of the Americas 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:26.944971+00:00"
+    },
+    "HIST M1111": {
+      "unified_title": "History of East Asia (1600 - Present)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:23.948433+00:00"
     },
     "HIST M1140": {
       "discipline": "History",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:04.429467+00:00",
       "unified_title": "History of Western (European) Civilization"
+    },
+    "HIST M1154": {
+      "unified_title": "History of the Modern Middle East",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:28.547738+00:00"
+    },
+    "HIST M1165": {
+      "unified_title": "History of Women in the United States Honors",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:35.212698+00:00"
+    },
+    "HIST M1175": {
+      "unified_title": "LGBTQ+ History in the U.S.",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:55:47.044965+00:00"
     },
     "HLTH M1020": {
       "unified_title": "Certified Home Health Aide (CHHA)",
@@ -1285,6 +2490,16 @@
       "merge_into": "HLTH M1072",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:59:26.305623+00:00"
+    },
+    "HTEC M1031": {
+      "unified_title": "Basic Medical Terminology, Pathophysiology and Pharmacology",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:56:10.240136+00:00"
+    },
+    "HTEC M10ET": {
+      "merge_into": "HTEC M1031",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:56:10.240136+00:00"
     },
     "IDST M1058": {
       "unified_title": "Experimental Offering in Human Career Development",
@@ -1542,6 +2757,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:38.890153+00:00"
     },
+    "KINE M11ZL": {
+      "merge_into": "KINE M1358",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:36.274485+00:00"
+    },
     "KINE M1284": {
       "merge_into": "KINE M1305",
       "reviewed_by": "MAP@rccd.edu",
@@ -1567,6 +2787,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:42:38.890153+00:00",
       "unified_title": "Body Conditioning and Physical Fitness (Intermediate)"
+    },
+    "KINE M1358": {
+      "unified_title": "Fitness (Walking or Jogging)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:36.274485+00:00"
     },
     "KINE M13RT": {
       "merge_into": "KINE M1013",
@@ -1768,6 +2993,21 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
     },
+    "PARN M9003": {
+      "merge_dismissed": "PARN M9003|PARN M9014|PARN M9027",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:06.914272+00:00"
+    },
+    "PARN M9004": {
+      "merge_dismissed": "PARN M9004|PARN M9011|PARN M9025",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:41:57.591372+00:00"
+    },
+    "PARN M9007": {
+      "merge_dismissed": "PARN M9007|PARN M9015|PARN M9028",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:42:04.835733+00:00"
+    },
     "PARN M9012": {
       "unified_title": "Developmental Movement (Ages 3 - 4.5)",
       "reviewed_by": "map@rccd.edu",
@@ -1813,6 +3053,46 @@
       "merge_into": "REAL M1014",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:43:10.485612+00:00"
+    },
+    "SLNA M1005": {
+      "unified_title": "Beginning Interpreting and Ethics 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:29.464012+00:00"
+    },
+    "SLNA M1042": {
+      "unified_title": "Linguistics of American Sign Language",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:33.339645+00:00"
+    },
+    "SLNA M1053": {
+      "unified_title": "Linguistics of American Sign Language",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:55.622112+00:00"
+    },
+    "SLNA M1077": {
+      "unified_title": "Interpreting 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:31.025041+00:00"
+    },
+    "SLNA M10AP": {
+      "merge_into": "SLNA M1042",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:33.339645+00:00"
+    },
+    "SLNA M10AU": {
+      "merge_into": "SLNA M1005",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:29.464012+00:00"
+    },
+    "SLNA M10AW": {
+      "merge_into": "SLNA M1077",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:31.025041+00:00"
+    },
+    "SLNA M10FZ": {
+      "merge_into": "SLNA M1053",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:44:55.622112+00:00"
     },
     "WELD M1050": {
       "unified_title": "Gas Tungsten Arc Welding (GTAW)",
