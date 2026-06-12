@@ -149,6 +149,7 @@ result = gen._parse_exhibits(datasets)
 ccc = result["ccc_collaborative"]
 
 by_cat = {r["category"]: r for r in ccc["by_category"]}
+check("adopting colleges excludes the blank-adopter row", ccc["adopting_colleges"], 4)
 check("category rollup buckets", sorted(by_cat),
       sorted({"Welding", "Computer Information Systems", "Fire Technology", "Other Statewide"}))
 check("Welding row (exact-title match, dedup + blank-adopter)", by_cat.get("Welding"),
@@ -165,7 +166,23 @@ check("category count excludes fallback bucket", ccc["category_count"], 3)
 check("in-progress passthrough", ccc["in_progress"], ["HVAC — faculty currently meeting"])
 
 # ════ Card build + render (categories active) ════
-kpis = gen.merge_exhibit_metrics({}, result)
+# The kpis dict carries a Veteran Sprint stub (as built by build_kpis +
+# merge_live_metrics) so the 3c wiring — Basic Training Credit = colleges
+# with ≥1 JST student — is exercised; the fixture's military map has one
+# zero-count college that must not count.
+result["college_military_students"] = {"College One": 5, "College Two": 0,
+                                       "College Three": 2}
+kpis_in = {"veteran_sprint": {
+    "value": "50", "label": "VETERAN SPRINT", "sub": "Star Colleges",
+    "star": True,
+    "breakdowns": [
+        {"label": "JSTs Uploaded", "value": "24,514 / 30,000",
+         "note": "uploaded / sprint goal"},
+        {"label": "Basic Training Credit", "value": "50 Colleges"},
+        {"label": "Eligible CPL", "value": "113k Units"},
+    ],
+}}
+kpis = gen.merge_exhibit_metrics(kpis_in, result)
 card = kpis.get("statewide_exhibits")
 if not card:
     print("FAIL  statewide_exhibits card missing from kpis")
@@ -174,8 +191,9 @@ else:
     print("PASS  statewide_exhibits card present")
     check("card value", card["value"], "4")
     bd = {b["label"]: b["value"] for b in card["breakdowns"]}
-    check("card breakdown values", bd,
-          {"Program Areas": "3", "Credit Recommendations": "6", "Adoptions": "6"})
+    check("card breakdown values (incl. the consolidated Adopting Colleges)", bd,
+          {"Program Areas": "3", "Credit Recommendations": "6", "Adoptions": "6",
+           "Adopting Colleges": "4"})
     check("footnote rows (header + 4 categories + 1 in-progress)",
           len(card["footnote"]), 6)
     check("footnote per-category line", "Welding: 1 · 3 · 3" in card["footnote"], True)
@@ -183,15 +201,36 @@ else:
           "<em>HVAC — faculty currently meeting</em>")
     check("card is doublewide", card.get("wide"), True)
 
+# The CCC Collaborative Adoption card is CONSOLIDATED here (2026-06-12) —
+# it must no longer be built, and its key must be out of the display order.
+import inspect
+check("adoption card no longer built", "ccc_collaborative" in kpis, False)
+check("adoption card out of the default display order",
+      "ccc_collaborative" in inspect.getsource(gen.render_kpi_section_html), False)
+
+# Veteran Sprint 3c wiring: real colleges-with-a-JST count replaces the
+# star-college stand-in (zero-count colleges excluded), note attached.
+vs_bd = {b["label"]: b for b in kpis["veteran_sprint"]["breakdowns"]}
+check("Basic Training Credit = colleges with ≥1 JST student",
+      vs_bd["Basic Training Credit"]["value"], "2 Colleges")
+check("Basic Training Credit carries the qualifying note",
+      vs_bd["Basic Training Credit"]["note"], "≥1 student JST on file")
+check("JSTs Uploaded label intact", "JSTs Uploaded" in vs_bd, True)
+
 html = gen.render_kpi_section_html(kpis)
 check("card rendered", "Statewide Exhibits" in html, True)
 check("doublewide class rendered", 'class="kpi-card kpi-card-wide"' in html, True)
 check("normal cards keep plain class", 'class="kpi-card"' in html, True)
 check("per-category footnote rendered", "Welding: 1 · 3 · 3" in html, True)
-i_ccc = html.find("CCC Collaborative Adoption")
-i_sw = html.find("Statewide Exhibits")
-check("card ordered after CCC Collaborative Adoption", i_ccc != -1 and i_sw > i_ccc, True)
+check("Adopting Colleges breakdown rendered", "Adopting Colleges" in html, True)
+check("adoption card NOT rendered",  # label-div check: the phrase legitimately
+      # survives in the statewide card's methodology text ("formerly the …")
+      '<div class="kpi-label">CCC Collaborative Adoption</div>' in html, False)
+check("gold star rendered beside the Veteran Sprint headline",
+      '<div class="kpi-number">50<span class="kpi-star"' in html, True)
 check("methodology entry exists", "statewide_exhibits" in gen.ALGO_DESCRIPTIONS, True)
+check("adoption-card methodology entry retired",
+      "ccc_collaborative" in gen.ALGO_DESCRIPTIONS, False)
 check("doublewide CSS shipped in injected block",
       ".kpi-card-wide" in gen.EXHIBIT_ANALYSIS_CSS, True)
 

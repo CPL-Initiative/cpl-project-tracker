@@ -463,11 +463,13 @@
         .cpl-tab-pane.active { display: block; }
 
         /* Quick-start chat — slim banner above the tab nav.
-           Tier A: routing only; tier B will add filter URL-param consumption. */
+           Tier A: routing only; tier B will add filter URL-param consumption.
+           Width: span the full main column minus the same 2rem gutter the
+           KPI section header uses, so the box aligns with the content below
+           (was max-width:1400px centered — Sam, 2026-06-12). */
         .qs-chat {
-            max-width: 1400px;
-            margin: 0.5rem auto 0;
-            padding: 0.55rem 2rem 0.7rem;
+            margin: 0.5rem 2rem 0;
+            padding: 0.55rem 1.25rem 0.7rem;
             background: linear-gradient(180deg, rgba(227,179,65,0.07) 0%, rgba(227,179,65,0.02) 100%);
             border: 1px solid rgba(227,179,65,0.25);
             border-radius: 6px;
