@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-12T22:14:14Z",
-  "count": 620,
+  "_synced_at": "2026-06-12T22:50:47Z",
+  "count": 674,
   "curations": {
     "AGRI M1001": {
       "cross_listed_disciplines": "Business",
@@ -1152,6 +1152,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:45:05.220691+00:00"
     },
+    "BIOL M1204": {
+      "merge_into": "KINE M1529",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "BIOL M90BD": {
       "merge_into": "BIOL M90BE",
       "reviewed_by": "MAP@rccd.edu",
@@ -2090,6 +2095,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:53:10.612796+00:00"
     },
+    "ETHS M1020": {
+      "unified_title": "Beach Volleyball - Advanced",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "ETHS M1077": {
       "unified_title": "The Asian-American Experience",
       "reviewed_by": "map@rccd.edu",
@@ -2215,10 +2225,35 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:03.768114+00:00"
     },
+    "FLIT M1019": {
+      "unified_title": "Introduction to Italian Culture",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FLIT M1026": {
+      "unified_title": "Intermediate Italian 1",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "FLIT M1032": {
       "unified_title": "Intermediate Italian",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:28.736083+00:00"
+    },
+    "FLIT M1035": {
+      "unified_title": "Topics in Italian",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FLIT M10AE": {
+      "merge_into": "FLIT M1026",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FLIT M10BN": {
+      "merge_into": "FLIT M1019",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "FLIT M10CB": {
       "merge_into": "FLIT M1032",
@@ -2229,6 +2264,11 @@
       "merge_into": "FLIT M1032",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:28.736083+00:00"
+    },
+    "FLIT M10CL": {
+      "merge_into": "FLIT M1035",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "FLSP M1001": {
       "merge_into": "SPAN 100",
@@ -2476,20 +2516,45 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:55:47.044965+00:00"
     },
+    "HLTH M1014": {
+      "unified_title": "Health and Aging",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "HLTH M1020": {
       "unified_title": "Certified Home Health Aide (CHHA)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:59:31.86527+00:00"
+    },
+    "HLTH M1055": {
+      "unified_title": "Cardiopulmonary Resuscitation (Cpr)",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "HLTH M1072": {
       "unified_title": "Introduction to Clinical Laboratory Profession",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:59:26.305623+00:00"
     },
+    "HLTH M10FO": {
+      "merge_into": "HLTH M1014",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "HLTH M10QQ": {
       "merge_into": "HLTH M1072",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:59:26.305623+00:00"
+    },
+    "HORT M1004": {
+      "unified_title": "Arboriculture",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "HORT M10AI": {
+      "merge_into": "HORT M1004",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "HTEC M1031": {
       "unified_title": "Basic Medical Terminology, Pathophysiology and Pharmacology",
@@ -2500,6 +2565,36 @@
       "merge_into": "HTEC M1031",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:56:10.240136+00:00"
+    },
+    "HUMA M1018": {
+      "unified_title": "Honors Arts and Ideas: Ancient World Through the Late Medieval Period",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "HUMA M1019": {
+      "unified_title": "Arts and Ideas: Ancient World Through the Late Medieval Period",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "HUMA M1027": {
+      "unified_title": "Honors Arts and Ideas: The Renaissance Through the Modern Era",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "HUMA M10DK": {
+      "merge_into": "HUMA M1018",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "HUMA M10DL": {
+      "merge_into": "HUMA M1019",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "HUMA M10EY": {
+      "merge_into": "HUMA M1027",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "IDST M1058": {
       "unified_title": "Experimental Offering in Human Career Development",
@@ -2707,10 +2802,55 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
     },
+    "INTD M1002": {
+      "unified_title": "History of Interior Architecture and Furnishings 1",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "INTD M1003": {
+      "unified_title": "History of Interior Architecture and Furnishings 2",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "INTD M1020": {
+      "unified_title": "Interior Design Studio 1",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "INTD M1021": {
+      "unified_title": "Interior Design Studio 2",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "INTD M10AB": {
+      "merge_into": "INTD M1002",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "INTD M10AF": {
+      "merge_into": "INTD M1020",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "INTD M10AI": {
+      "merge_into": "INTD M1003",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "INTD M10AM": {
+      "merge_into": "INTD M1021",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "KINE M1013": {
       "unified_title": "Weight Training",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M1070": {
+      "merge_into": "ETHS M1020",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE M10MA": {
       "merge_into": "KINE M1350",
@@ -2767,6 +2907,11 @@
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
     },
+    "KINE M12JO": {
+      "merge_into": "KINE M1432",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "KINE M12OW": {
       "merge_into": "KINE M1013",
       "reviewed_by": "map@rccd.edu",
@@ -2793,6 +2938,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:54:36.274485+00:00"
     },
+    "KINE M13IA": {
+      "merge_into": "KINE M1921",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "KINE M13RT": {
       "merge_into": "KINE M1013",
       "reviewed_by": "map@rccd.edu",
@@ -2808,6 +2958,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
     },
+    "KINE M1432": {
+      "unified_title": "Theory of Coaching Sports",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "KINE M1455": {
       "merge_into": "KINE M1013",
       "reviewed_by": "map@rccd.edu",
@@ -2822,6 +2977,11 @@
       "merge_into": "KINE M1013",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
+    },
+    "KINE M1529": {
+      "unified_title": "Physiology of Exercise",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE M1556": {
       "merge_into": "KINE M1596",
@@ -2903,25 +3063,130 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-10T20:25:55.925477+00:00"
     },
+    "KINE M1921": {
+      "unified_title": "Jogging for Fitness",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MACH M1010": {
+      "unified_title": "Computer-Aided Manufacturing (CAM)",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MACH M10CK": {
+      "merge_into": "MACH M1010",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MATH M10PP": {
+      "merge_into": "MATH M1121",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MATH M10SH": {
+      "merge_into": "MATH M1145",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MATH M1121": {
+      "unified_title": "Math for Liberal Arts",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MATH M1145": {
+      "unified_title": "Support for Calculus for Business and the Social Sciences",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MATH M11EI": {
+      "merge_into": "MATH M1265",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MATH M11HF": {
+      "merge_into": "MATH M1279",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MATH M1265": {
+      "unified_title": "The Ideas of Mathematics",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MATH M1279": {
+      "unified_title": "The Nature of Mathematics",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "MGMT M10AI": {
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
       "reviewed_at": "2026-05-30T22:22:13.20997+00:00"
+    },
+    "MUSI M1025": {
+      "unified_title": "Intermediate/Advanced Piano",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MUSI M1079": {
+      "unified_title": "Jazz Composition and Arranging",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MUSI M1097": {
+      "unified_title": "Jazz Ensemble I-Big Band",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "MUSI M10AO": {
       "merge_into": "MUSI M1127",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:32.601268+00:00"
     },
+    "MUSI M10KE": {
+      "merge_into": "MUSI M1025",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MUSI M10QK": {
+      "merge_into": "MUSI M1079",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MUSI M10TO": {
+      "merge_into": "MUSI M1097",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "MUSI M10YK": {
       "merge_into": "MUSI M1127",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:32.601268+00:00"
     },
+    "MUSI M10YL": {
+      "merge_into": "MUSI M1129",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
     "MUSI M1127": {
       "unified_title": "Guitar: Beginning 1",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:32.601268+00:00"
+    },
+    "MUSI M1129": {
+      "unified_title": "Guitar: Beginning 2",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MUSI M11PT": {
+      "merge_into": "MUSI M1252",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MUSI M1252": {
+      "unified_title": "Music and Culture of Hip Hop",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "NRSR M10KV": {
       "merge_into": "HLTH M1020",
@@ -3053,6 +3318,11 @@
       "merge_into": "REAL M1014",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:43:10.485612+00:00"
+    },
+    "RSPT M10FR": {
+      "merge_into": "HLTH M1055",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "SLNA M1005": {
       "unified_title": "Beginning Interpreting and Ethics 2",
