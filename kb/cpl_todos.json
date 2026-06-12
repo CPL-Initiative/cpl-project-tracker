@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-06-12-b",
+  "_as_of": "2026-06-12-c",
   "_session": 48,
-  "_status": "Session 48 was the First Light design sprint (10 PRs): the dashboard now greets you once a day with a public-domain California plein air painting — full-color reveal, read-aloud, and an anonymous thought-for-the-day box (stored write-only; nobody can read them back except the service role). The visual spec for the coming dashboard re-theme is locked and BLESSED (prototype v1.4.2: monochrome + crimson/cobalt/hunter/violet/mustard, glass chrome, solid uniform chips). Next big Fable move: paint the live dashboard in the new theme. The Session-47 curation queues (CSR collisions, smog residuals, merge queues) remain the curator frontier.",
+  "_status": "Session 48 was the First Light design sprint (10 PRs): the dashboard now greets you once a day with a public-domain California plein air painting — full-color reveal, read-aloud, and an anonymous thought-for-the-day box (stored write-only; nobody can read them back except the service role). The visual spec for the coming dashboard re-theme is locked and BLESSED (prototype v1.4.2: monochrome + crimson/cobalt/hunter/violet/mustard, glass chrome, solid uniform chips). Next big Fable move: paint the live dashboard in the new theme. On the data side: Sam CURED all 11 shared Common SUBJ codes (2026-06-12) — the sweep is now alias-aware so convergence pairs stop flagging — and the SUBJ4 fold dry-run is the next Fable move there. Smog residuals + merge queues remain the curator frontier.",
   "items": [
     {
       "id": "sam-first-light",
@@ -11,10 +11,10 @@
       "text": "Tomorrow morning: enjoy First Light on the live dashboard ☀ — try the 🔊 read-aloud and share a reflection (it's anonymous). Reopen anytime via the 'Today's painting' chip in the header."
     },
     {
-      "id": "csr-collisions",
+      "id": "csr-thea-dram",
       "who": "sam",
       "tab": "canonical-subj4",
-      "text": "Run the ✓ Check SUBJ ⇄ CCR sweep: 11 shared Common SUBJ codes need a decision — INDT and INTD look accidental; ESOL and THEA look like convergences to confirm with a note; plus CISC, COSM, ELEC, HLTH, NUTR, PHYS, RADT."
+      "text": "One revisit: 'Theater Arts' is the recorded ALIAS of 'Drama/Theater Arts' (they converged in Session 38, both keyed THEA — the sweep wrongly flagged that as a collision; fixed now). Your DRAM re-code would re-key 1,540 rows and un-converge the pair at the fold. If you meant to re-split the two disciplines, keep DRAM; otherwise revert Drama/Theater Arts to THEA (one click on its row)."
     },
     {
       "id": "ccr-smog-residuals",
@@ -50,13 +50,13 @@
       "id": "fable-subj4-fold",
       "who": "fable",
       "tab": "canonical-subj4",
-      "text": "Scope the canonical-SUBJ4 fold re-mint: 59 disciplines / 7,436 off-canonical rows incl. stand-alones per the sweep. Identity-grain TOP-vs-SUBJ4 audit first; Rule-7 playbook; Sam's collision decisions feed it directly."
+      "text": "Scope + dry-run the canonical-SUBJ4 fold re-mint — UNBLOCKED: all 148 disciplines have a pick and all 11 shared codes are cured (2026-06-12). The sweep's off-canonical queue is the input (~7.4k rows incl. stand-alones, pending the THEA call). Identity-grain TOP-vs-SUBJ4 audit first; Rule-7 playbook."
     },
     {
       "id": "fable-cis-cs-gate",
       "who": "fable",
       "tab": "canonical-subj4",
-      "text": "CIS ↔ CS convergence scope — GATED on Sam's sign-off. The CISC collision in the sweep IS this decision surfacing."
+      "text": "CIS ↔ CS convergence scope — still GATED on Sam's sign-off, but note his codes now keep them distinct (CSIS vs CISC), which leans no-convergence. Confirm and close, or proceed with the scope."
     },
     {
       "id": "fable-router-phase2",
