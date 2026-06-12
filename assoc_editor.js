@@ -164,7 +164,7 @@
       var aid = rec.activity_id;
       var chip = el("span", {
         "class": rec.is_primary ? "wpg-act-chip wpg-act-chip-primary" : "wpg-act-chip",
-        "style": "display:inline-block;margin:0 0.25rem 0 0;padding:0.05rem 0.4rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.7rem;font-weight:600;"
+        "style": "display:inline-block;margin:0 0.25rem 0 0;padding:0.05rem 0.4rem;background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.7rem;font-weight:600;"
       }, []);
       // The chip body is "Activity N" (no curator string) — but stay on
       // textContent for the hygiene contract regardless.

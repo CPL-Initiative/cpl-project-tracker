@@ -116,7 +116,7 @@
   function buildAuthWidget(state, onChange) {
     var widget = el("div", {
       "class": "wpg-auth-widget",
-      "style": "margin:1rem 0 0.5rem 0;padding:0.75rem 1rem;background:#F4F5F7;border-radius:8px;font-size:0.85rem;color:#0A2240;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;"
+      "style": "margin:1rem 0 0.5rem 0;padding:0.75rem 1rem;background:var(--surface-subtle);border-radius:8px;font-size:0.85rem;color:var(--text-strong);display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;"
     }, []);
 
     if (state.sess) {
@@ -126,7 +126,7 @@
       widget.appendChild(sub);
       var btnAdd = el("button", {
         "class": "wpg-btn wpg-btn-add",
-        "style": "margin-left:auto;padding:0.35rem 0.75rem;border:1px solid #163A5F;background:#0A2240;color:#fff;border-radius:5px;font-size:0.8rem;cursor:pointer;font-weight:600;"
+        "style": "margin-left:auto;padding:0.35rem 0.75rem;border:1px solid var(--cobalt);background:var(--cobalt);color:#fff;border-radius:5px;font-size:0.8rem;cursor:pointer;font-weight:600;"
       }, ["+ Add new row"]);
       btnAdd.addEventListener("click", function () { openAddModal(state); });
       widget.appendChild(btnAdd);
@@ -149,7 +149,7 @@
       }, []);
       var btnIn = el("button", {
         "class": "wpg-btn",
-        "style": "padding:0.35rem 0.75rem;border:0;background:#0A2240;color:#fff;border-radius:5px;font-size:0.8rem;cursor:pointer;"
+        "style": "padding:0.35rem 0.75rem;border:0;background:var(--cobalt);color:#fff;border-radius:5px;font-size:0.8rem;cursor:pointer;"
       }, ["Sign in"]);
       var status = el("span", { "style": "color:#666;flex-basis:100%;font-size:0.8rem;" }, []);
 
@@ -160,7 +160,7 @@
           status.style.color = "#A33";
           return;
         }
-        status.style.color = "#0A2240";
+        status.style.color = "var(--text-strong)";
         status.textContent = "Sending magic link...";
         signIn(email).then(function (r) {
           if (r.ok) {
@@ -393,25 +393,25 @@
       + '.wpg-error { background: #FFEBEE !important; transition: background 0.4s; }'
       // PR-C add-flow modal
       + '.wpg-modal-overlay { position:fixed;inset:0;background:rgba(10,34,64,0.55);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:3rem 1rem; }'
-      + '.wpg-modal-card { background:#fff;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.25);max-width:640px;width:100%;padding:1.5rem;font-family:inherit;color:#0A2240; }'
-      + '.wpg-modal-card h3 { margin:0 0 0.25rem 0;color:#0A2240;font-size:1.1rem; }'
+      + '.wpg-modal-card { background:#fff;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.25);max-width:640px;width:100%;padding:1.5rem;font-family:inherit;color:var(--text-strong); }'
+      + '.wpg-modal-card h3 { margin:0 0 0.25rem 0;color:var(--text-strong);font-size:1.1rem; }'
       + '.wpg-modal-card .wpg-sub { color:#666;font-size:0.8rem;margin-bottom:1rem; }'
       + '.wpg-modal-card label { display:block;font-size:0.78rem;color:#666;margin:0.6rem 0 0.2rem 0;font-weight:600; }'
       + '.wpg-modal-card input[type="text"], .wpg-modal-card input[type="number"] { width:100%;padding:0.4rem 0.55rem;border:1px solid #ccc;border-radius:5px;font-size:0.85rem;box-sizing:border-box; }'
       + '.wpg-modal-card .wpg-radio-row { display:flex;gap:1.5rem;margin:0.3rem 0 0.5rem 0; }'
-      + '.wpg-modal-card .wpg-radio-row label { display:flex;align-items:center;gap:0.4rem;font-weight:500;color:#0A2240;margin:0;font-size:0.9rem;cursor:pointer; }'
+      + '.wpg-modal-card .wpg-radio-row label { display:flex;align-items:center;gap:0.4rem;font-weight:500;color:var(--text-strong);margin:0;font-size:0.9rem;cursor:pointer; }'
       + '.wpg-modal-card .wpg-grid-years { display:grid;grid-template-columns:repeat(5,1fr);gap:0.4rem; }'
       + '.wpg-modal-card .wpg-assoc-checkboxes { display:flex;flex-wrap:wrap;gap:0.6rem;padding:0.5rem 0.6rem;background:#F4F5F7;border-radius:5px; }'
-      + '.wpg-modal-card .wpg-assoc-checkboxes label { display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;font-weight:500;margin:0;color:#0A2240;cursor:pointer; }'
+      + '.wpg-modal-card .wpg-assoc-checkboxes label { display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;font-weight:500;margin:0;color:var(--text-strong);cursor:pointer; }'
       + '.wpg-modal-card .wpg-status { margin-top:0.75rem;font-size:0.82rem;min-height:1.2em; }'
       + '.wpg-modal-card .wpg-status.ok { color:#2A7D4F; }'
       + '.wpg-modal-card .wpg-status.err { color:#A33; }'
       + '.wpg-modal-card .wpg-modal-actions { display:flex;justify-content:flex-end;gap:0.5rem;margin-top:1rem; }'
       + '.wpg-modal-card .wpg-modal-actions button { padding:0.4rem 0.9rem;border-radius:5px;font-size:0.85rem;cursor:pointer;border:0; }'
       + '.wpg-modal-card .wpg-btn-cancel { background:#fff;border:1px solid #ccc !important;color:#333; }'
-      + '.wpg-modal-card .wpg-btn-submit { background:#0A2240;color:#fff;font-weight:600; }'
+      + '.wpg-modal-card .wpg-btn-submit { background:var(--cobalt);color:#fff;font-weight:600; }'
       + '.wpg-modal-card .wpg-btn-submit:disabled { opacity:0.6;cursor:not-allowed; }'
-      + '.wpg-act-chip { display:inline-block;padding:0.05rem 0.4rem;background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.7rem;font-weight:600; }';
+      + '.wpg-act-chip { display:inline-block;padding:0.05rem 0.4rem;background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.7rem;font-weight:600; }';
     var style = document.createElement("style");
     style.id = "wpg-editor-styles";
     style.textContent = css;

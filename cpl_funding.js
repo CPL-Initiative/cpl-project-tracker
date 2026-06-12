@@ -24,7 +24,7 @@
     ".cplfund-src a { color: var(--accent-link); }",
     ".cplfund h3 { color: var(--navy-primary); margin: 22px 0 10px; font-size: 1.15rem; }",
     ".cplfund-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }",
-    ".cplfund-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }",
+    ".cplfund-card { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }",
     ".cplfund-card .v { font-size: 1.35rem; font-weight: 700; color: var(--navy-primary); }",
     ".cplfund-card .v.neg { color: var(--red-alert); }",
     ".cplfund-card .l { font-size: .8rem; color: var(--text-muted); margin-top: 2px; line-height: 1.35; }",
@@ -42,16 +42,16 @@
     // centers text; the cards' data lines read better ragged-right.
     ".cplfund-prio .p .nums, .cplfund-prio .p .metric { text-align: left; }",
     ".cplfund-formula { background: var(--surface-muted); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .9rem; line-height: 1.55; }",
-    ".cplfund-formula code { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; white-space: nowrap; }",
+    ".cplfund-formula code { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; white-space: nowrap; }",
     ".cplfund-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 10px; }",
     ".cplfund-toolbar input { padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: 6px; font-size: .9rem; min-width: 220px; }",
     ".cplfund-toolbar input:focus { outline: none; border-color: var(--navy-secondary); }",
     ".cplfund-seg { display: inline-flex; border: 1px solid var(--border-strong); border-radius: 6px; overflow: hidden; }",
-    ".cplfund-seg button { background: var(--surface); color: var(--text-body); border: none; padding: 8px 12px; font-size: .85rem; cursor: pointer; }",
+    ".cplfund-seg button { background: var(--surface-opaque); color: var(--text-body); border: none; padding: 8px 12px; font-size: .85rem; cursor: pointer; }",
     ".cplfund-seg button + button { border-left: 1px solid var(--border-strong); }",
     ".cplfund-seg button.on { background: var(--navy-primary); color: var(--white); font-weight: 600; }",
     ".cplfund-count { font-size: .85rem; color: var(--text-muted); }",
-    ".cplfund-tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }",
+    ".cplfund-tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); }",
     // No-horizontal-scroll rule (Sam, 2026-06-11): tight padding/font, long
     // text cells truncate with the full value in title; overflow-x on the
     // wrap stays only as the narrow-screen safety net.
@@ -81,11 +81,11 @@
     ".cplfund-ed { font-size: 1.25rem; font-weight: 700; color: var(--navy-primary); border: none; border-bottom: 2px dashed var(--border-strong); background: transparent; width: 100%; padding: 0 0 2px; font-family: inherit; }",
     ".cplfund-ed:focus { outline: none; border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     ".cplfund-ed.neg { color: var(--red-alert); }",
-    ".cplfund-ed-s { width: 72px; font-size: .85rem; font-weight: 700; color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 4px; padding: 2px 6px; text-align: right; background: var(--surface); font-family: inherit; }",
+    ".cplfund-ed-s { width: 72px; font-size: .85rem; font-weight: 700; color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 4px; padding: 2px 6px; text-align: right; background: var(--surface-opaque); font-family: inherit; }",
     ".cplfund-ed-s:focus { outline: none; border-color: var(--gold-accent); }",
     ".cplfund-warn-text { color: var(--red-alert); font-weight: 600; }",
     ".cplfund .dk { color: var(--text-muted); font-weight: 400; }",
-    ".cplfund-draftchip { display: inline-block; margin-left: 10px; vertical-align: middle; background: var(--yellow-warning); color: var(--navy-primary); font-size: .42em; font-weight: 700; letter-spacing: .08em; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }",
+    ".cplfund-draftchip { display: inline-block; margin-left: 10px; vertical-align: middle; background: var(--mustard-fill); color: var(--text-strong); font-size: .42em; font-weight: 700; letter-spacing: .08em; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }",
     "@media (max-width: 700px) { .cplfund-toolbar input { min-width: 140px; flex: 1; } }"
   ].join("\n");
 

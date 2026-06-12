@@ -550,11 +550,11 @@ ALGO_DETAILS_CSS = """
     display: inline-block;
     font-size: 0.65rem;
     transition: transform 0.15s ease;
-    color: rgba(201,168,76,0.7);
+    color: rgba(227,179,65,0.7);
 }
 .algo-details[open] summary::before { transform: rotate(90deg); }
-.algo-details summary:hover { color: rgba(201,168,76,0.9); }
-.algo-details[open] summary { color: #C9A84C; }
+.algo-details summary:hover { color: rgba(227,179,65,0.9); }
+.algo-details[open] summary { color: var(--gold-accent); }
 .algo-details .algo-body {
     padding: 0.55rem 0 0.3rem;
     color: rgba(255,255,255,0.72);
@@ -563,7 +563,7 @@ ALGO_DETAILS_CSS = """
 .algo-details .algo-row { margin-bottom: 0.35rem; }
 .algo-details .algo-label {
     font-weight: 700;
-    color: rgba(201,168,76,0.9);
+    color: rgba(227,179,65,0.9);
     margin-right: 0.3rem;
     text-transform: uppercase;
     font-size: 0.62rem;
@@ -1283,17 +1283,17 @@ def render_annual_goals_table_html(annual_goals, activities=None):
     year_cols = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
 
     html = '''        <div style="margin:2rem 0;padding:1.5rem;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-            <h2 style="color:#0A2240;margin:0 0 1rem 0;">Annual Workplan Goals</h2>
+            <h2 style="color:var(--navy-primary);margin:0 0 1rem 0;">Annual Workplan Goals</h2>
             <div style="overflow-x:auto;">
             <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
                 <thead>
-                    <tr style="background:#0A2240;color:#fff;">
-                        <th style="padding:0.5rem 0.6rem;text-align:left;white-space:nowrap;border:1px solid #163A5F;">Sub-Activity</th>
-                        <th style="padding:0.5rem 0.4rem;text-align:center;width:55px;border:1px solid #163A5F;">Type</th>
+                    <tr style="background:var(--navy-primary);color:#fff;">
+                        <th style="padding:0.5rem 0.6rem;text-align:left;white-space:nowrap;border:1px solid var(--navy-secondary);">Sub-Activity</th>
+                        <th style="padding:0.5rem 0.4rem;text-align:center;width:55px;border:1px solid var(--navy-secondary);">Type</th>
 '''
     for yr in year_cols:
-        html += f'                        <th style="padding:0.5rem 0.4rem;text-align:right;white-space:nowrap;border:1px solid #163A5F;">{yr}</th>\n'
-    html += '                        <th style="padding:0.5rem 0.4rem;text-align:right;border:1px solid #163A5F;">TOTAL</th>\n'
+        html += f'                        <th style="padding:0.5rem 0.4rem;text-align:right;white-space:nowrap;border:1px solid var(--navy-secondary);">{yr}</th>\n'
+    html += '                        <th style="padding:0.5rem 0.4rem;text-align:right;border:1px solid var(--navy-secondary);">TOTAL</th>\n'
     html += '                    </tr>\n                </thead>\n                <tbody>\n'
 
     current_activity = ""
@@ -1301,15 +1301,15 @@ def render_annual_goals_table_html(annual_goals, activities=None):
         # Activity group header — curator-editable Activity name flows here
         if row["activity"] != current_activity:
             current_activity = row["activity"]
-            html += (f'                    <tr style="background:#163A5F;color:#fff;">\n'
-                     f'                        <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid #0A2240;">{html_escape(current_activity)}</td>\n'
+            html += (f'                    <tr style="background:var(--navy-secondary);color:#fff;">\n'
+                     f'                        <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid var(--navy-primary);">{html_escape(current_activity)}</td>\n'
                      f'                    </tr>\n')
 
         # Three rows per sub-activity: GOAL, CURRENT, STRETCH
         for rtype, vals, style in [
-            ("Goal", row["goal"], "background:#FAF8F4;font-weight:600;color:#0A2240;"),
-            ("Current", row["current"], "background:#fff;color:#2A7D4F;font-weight:700;"),
-            ("Stretch", row["stretch"], "background:#FAF8F4;color:#C9A84C;font-style:italic;"),
+            ("Goal", row["goal"], "background:var(--bg-off-white);font-weight:600;color:var(--navy-primary);"),
+            ("Current", row["current"], "background:#fff;color:var(--green-progress);font-weight:700;"),
+            ("Stretch", row["stretch"], "background:var(--bg-off-white);color:var(--mustard-text);font-style:italic;"),
         ]:
             is_first = rtype == "Goal"
             name_cell = ""
@@ -1334,7 +1334,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                     chips_html += (
                         f'<span class="{chip_cls}" '
                         f'style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;'
-                        f'background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.65rem;'
+                        f'background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.65rem;'
                         f'font-weight:600;">{star}Activity {assoc_id}</span>'
                     )
                 assoc_json = json.dumps(assoc_records, ensure_ascii=False)
@@ -1677,7 +1677,7 @@ def _att_badge(attachments, act_num=None, project_id=None):
         count = attachments.get("by_activity", {}).get(str(act_num), 0)
     if count <= 0:
         return ""
-    return (f' <span style="background:#C9A84C;color:#0A2240;font-size:0.6rem;'
+    return (f' <span style="background:var(--gold-accent);color:var(--navy-primary);font-size:0.6rem;'
             f'font-weight:700;padding:1px 5px;border-radius:8px;margin-left:2px;">'
             f'{count}</span>')
 
@@ -1724,13 +1724,13 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
 
         # Determine bar color based on avg progress
         if avg_pct >= 75:
-            bar_color = "#2A7D4F"  # green
+            bar_color = label_color = "var(--green-progress)"  # green
         elif avg_pct >= 50:
-            bar_color = "#C9A84C"  # gold
+            bar_color, label_color = "var(--gold-accent)", "var(--mustard-text)"  # gold bar, readable label
         elif avg_pct >= 25:
-            bar_color = "#4A90D9"  # blue
+            bar_color = label_color = "var(--cobalt)"  # blue
         else:
-            bar_color = "#888"     # gray
+            bar_color = label_color = "#888"     # gray
 
         # Build 2025-26 annual goals summary for this activity
         ag_items = ag_by_activity.get(act_num, [])
@@ -1763,7 +1763,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         html += (f'            <div style="padding:0 0.5rem 0.6rem 0.5rem;">\n'
                  f'                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25rem;">\n'
                  f'                    <span style="font-size:0.75rem;color:#555;">{html_escape(act_goal_text)}</span>\n'
-                 f'                    <span style="font-size:0.75rem;font-weight:700;color:{bar_color};white-space:nowrap;margin-left:0.5rem;">{avg_pct}% avg &middot; {completed}/{total_kpis} complete (toward 2030 goal)</span>\n'
+                 f'                    <span style="font-size:0.75rem;font-weight:700;color:{label_color};white-space:nowrap;margin-left:0.5rem;">{avg_pct}% avg &middot; {completed}/{total_kpis} complete (toward 2030 goal)</span>\n'
                  f'                </div>\n'
                  f'                <div style="height:6px;background:#e8e8e8;border-radius:3px;overflow:hidden;">\n'
                  f'                    <div style="height:100%;width:{avg_pct}%;background:{bar_color};border-radius:3px;transition:width 0.3s;"></div>\n'
@@ -1797,9 +1797,9 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
             goal_title = goal_info.get("title", "")
             if goal_key != "Other" and goal_title:
                 html += (f'            <div class="goal-subheader" style="margin:1rem 0 0.5rem 0;padding:0.5rem 0.8rem;'
-                         f'background:linear-gradient(90deg,#163A5F 0%,#0A2240 100%);border-radius:6px;">\n'
+                         f'background:linear-gradient(90deg,var(--navy-secondary) 0%,var(--navy-primary) 100%);border-radius:6px;">\n'
                          f'                <div style="display:flex;align-items:center;gap:0.6rem;">\n'
-                         f'                    <span style="color:#C9A84C;font-weight:700;font-size:0.85rem;white-space:nowrap;">{goal_key}</span>\n'
+                         f'                    <span style="color:var(--gold-accent);font-weight:700;font-size:0.85rem;white-space:nowrap;">{goal_key}</span>\n'
                          f'                    <span style="color:#fff;font-size:0.8rem;font-weight:600;">{html_escape(goal_title)}</span>\n'
                          f'                </div>\n')
                 # Add target text
@@ -1870,15 +1870,15 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                     html += '                  </tr>\n'
                     # Goal row
                     html += '                  <tr>\n'
-                    html += f'                    <td style="{td_style}font-weight:600;text-align:left;color:#0A2240;">GOAL</td>\n'
+                    html += f'                    <td style="{td_style}font-weight:600;text-align:left;color:var(--navy-primary);">GOAL</td>\n'
                     for v in [g2526, g2627, g2728, g2829, g2930_v]:
                         html += f'                    <td style="{td_style}">{v}</td>\n'
                     html += '                  </tr>\n'
                     # Stretch row
                     html += '                  <tr>\n'
-                    html += f'                    <td style="{td_style}font-weight:600;text-align:left;color:#C9A84C;">STRETCH</td>\n'
+                    html += f'                    <td style="{td_style}font-weight:600;text-align:left;color:var(--mustard-text);">STRETCH</td>\n'
                     for v in [s2526, s2627, s2728, s2829, s2930]:
-                        html += f'                    <td style="{td_style}color:#C9A84C;">{v}</td>\n'
+                        html += f'                    <td style="{td_style}color:var(--mustard-text);">{v}</td>\n'
                     html += '                  </tr>\n'
                     html += '                </table>\n'
                     html += ('                <div style="font-size:0.55rem;color:#999;'
@@ -1887,17 +1887,17 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 # Progress bar with percentage label
                 pct = kpi.get("pct", 0)
                 if pct >= 75:
-                    pbar_color = "#2A7D4F"
+                    pbar_color = plabel_color = "var(--green-progress)"
                 elif pct >= 50:
-                    pbar_color = "#C9A84C"
+                    pbar_color, plabel_color = "var(--gold-accent)", "var(--mustard-text)"
                 elif pct >= 25:
-                    pbar_color = "#4A90D9"
+                    pbar_color = plabel_color = "var(--cobalt)"
                 else:
-                    pbar_color = "#888"
+                    pbar_color = plabel_color = "#888"
                 html += (f'                <div class="akpi-progress" style="margin-top:0.5rem;">\n'
                          f'                    <div style="display:flex;justify-content:space-between;font-size:0.7rem;margin-bottom:0.15rem;">\n'
                          f'                        <span style="color:#666;">Progress</span>\n'
-                         f'                        <span style="font-weight:700;color:{pbar_color};">{pct}%</span>\n'
+                         f'                        <span style="font-weight:700;color:{plabel_color};">{pct}%</span>\n'
                          f'                    </div>\n'
                          f'                    <div style="height:5px;background:#e8e8e8;border-radius:3px;overflow:hidden;">\n'
                          f'                        <div style="height:100%;width:{pct}%;background:{pbar_color};border-radius:3px;"></div>\n'
@@ -1928,49 +1928,49 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                     if len(kpi_notes_list) > 1:
                         toggle_part = (
                             f'                        <label style="display:inline-flex;align-items:center;gap:0.3rem;'
-                            f'font-size:0.68rem;color:#163A5F;cursor:pointer;margin-left:auto;">'
+                            f'font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;">'
                             f'<input type="checkbox" class="notes-history-toggle" data-pid="{kpi_pid}" '
-                            f'style="accent-color:#C9A84C;cursor:pointer;"> '
+                            f'style="accent-color:var(--accent-link);cursor:pointer;"> '
                             f'Show all ({len(kpi_notes_list)})</label>\n'
                         )
 
                     html += (f'                <div style="margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;">\n'
                              f'                    <div style="display:flex;align-items:center;margin-bottom:0.3rem;">\n'
                              f'                        <span style="font-size:0.7rem;color:#888;">Last updated: '
-                             f'<strong style="color:#0A2240;">{kpi_date}</strong></span>\n'
+                             f'<strong style="color:var(--navy-primary);">{kpi_date}</strong></span>\n'
                              f'{toggle_part}'
                              f'                    </div>\n')
 
                     # Latest Update (col P)
                     if kpi_update:
                         html += (f'                    <div style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;">'
-                                 f'<span style="font-size:0.62rem;font-weight:600;background:#163A5F;color:#fff;'
+                                 f'<span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:#fff;'
                                  f'padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>'
                                  f'{kpi_update}</div>\n')
 
                     # Workplan Note (col V)
                     if kpi_wp:
                         html += (f'                    <div style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;">'
-                                 f'<span style="font-size:0.62rem;font-weight:600;background:#C9A84C;color:#0A2240;'
+                                 f'<span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--navy-primary);'
                                  f'padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>'
                                  f'{kpi_wp}</div>\n')
 
                     # Full history (hidden by default)
                     if len(kpi_notes_list) > 1:
                         type_badge_css = {
-                            "update":   "background:#163A5F;color:#fff;",
-                            "workplan": "background:#C9A84C;color:#0A2240;",
+                            "update":   "background:var(--navy-secondary);color:#fff;",
+                            "workplan": "background:var(--gold-accent);color:var(--navy-primary);",
                         }
                         type_labels = {"update": "Progress Update", "workplan": "Workplan Note"}
                         html += (f'                    <div class="notes-history" data-pid="{kpi_pid}" '
                                  f'style="display:none;margin-top:0.3rem;max-height:200px;overflow-y:auto;'
-                                 f'border-left:3px solid #C9A84C;padding-left:0.5rem;">\n')
+                                 f'border-left:3px solid var(--gold-accent);padding-left:0.5rem;">\n')
                         for n in kpi_notes_list:
                             ntype = n.get("type", "update")
                             badge_style = type_badge_css.get(ntype, type_badge_css["update"])
                             badge_label = type_labels.get(ntype, "Update")
                             html += (f'                        <div style="margin-bottom:0.4rem;">'
-                                     f'<span style="font-size:0.68rem;font-weight:700;color:#0A2240;'
+                                     f'<span style="font-size:0.68rem;font-weight:700;color:var(--navy-primary);'
                                      f'background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">{n["date"]}</span>'
                                      f' <span style="font-size:0.6rem;font-weight:600;{badge_style}'
                                      f'padding:0.1rem 0.3rem;border-radius:3px;">{badge_label}</span>'
@@ -1990,13 +1990,13 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                              'cursor:pointer;transition:background 0.2s;margin-right:0.4rem;')
                 html += (f'                <a href="reports/projects/{kpi_pid}_Report.docx" '
                          f'download class="report-btn" '
-                         f'style="{btn_style}color:#163A5F;background:#fafafa;"'
+                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
                          f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'">'
                          f'<span style="font-size:0.8rem;">&#128196;</span> Report</a>'
                          f'<a href="#" '
                          f'class="attach-btn" '
                          f'data-folder="{html_escape(str(kpi_pid) + " " + str(kpi.get("name", "")), quote=True)}" '
-                         f'style="{btn_style}color:#163A5F;background:#fafafa;"'
+                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
                          f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
                          f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
                          f'<span style="font-size:0.8rem;">&#128206;</span> Attach'
@@ -2099,11 +2099,11 @@ def render_workplan_goals_html(
         rows += (
             f'                        <td rowspan="2" style="padding:0.5rem 0.7rem;'
             f'border-bottom:1px solid #eee;vertical-align:top;font-weight:600;'
-            f'color:#0A2240;">{name_col_content}</td>\n'
+            f'color:var(--navy-primary);">{name_col_content}</td>\n'
         )
         rows += (
             f'                        <td style="text-align:center;padding:0.3rem 0.4rem;'
-            f'color:#163A5F;font-weight:600;font-size:0.72rem;">GOAL</td>\n'
+            f'color:var(--navy-secondary);font-weight:600;font-size:0.72rem;">GOAL</td>\n'
         )
         for v, yk, yl in zip(entry["goal"], year_key_list, year_label_list):
             rows += (
@@ -2117,7 +2117,7 @@ def render_workplan_goals_html(
             f'                        <td data-aid="{aid}"{kind_attr} data-rt="GOAL" '
             f'data-total="1" data-val="{entry["goal_total"]}"{pct_attr} '
             f'style="text-align:right;padding:0.3rem 0.7rem;font-weight:700;'
-            f'color:#0A2240;">{fmt_val(entry["goal_total"], is_pct)}</td>\n'
+            f'color:var(--navy-primary);">{fmt_val(entry["goal_total"], is_pct)}</td>\n'
         )
         rows += '                    </tr>\n'
 
@@ -2125,7 +2125,7 @@ def render_workplan_goals_html(
         rows += f'                    <tr style="background:{bg};">\n'
         rows += (
             f'                        <td style="text-align:center;padding:0.3rem 0.4rem;'
-            f'border-bottom:1px solid #eee;color:#C9A84C;font-weight:600;'
+            f'border-bottom:1px solid #eee;color:var(--mustard-text);font-weight:600;'
             f'font-size:0.72rem;">STRETCH</td>\n'
         )
         for v, yk, yl in zip(entry["stretch"], year_key_list, year_label_list):
@@ -2134,14 +2134,14 @@ def render_workplan_goals_html(
                 f'{kind_attr} data-rt="STRETCH" data-yr="{yl}" data-yr-key="{yk}" '
                 f'data-val="{v}"{pct_attr} '
                 f'style="text-align:right;padding:0.3rem 0.4rem;'
-                f'border-bottom:1px solid #eee;color:#C9A84C;">'
+                f'border-bottom:1px solid #eee;color:var(--mustard-text);">'
                 f'{fmt_val(v, is_pct)}</td>\n'
             )
         rows += (
             f'                        <td data-aid="{aid}"{kind_attr} data-rt="STRETCH" '
             f'data-total="1" data-val="{entry["stretch_total"]}"{pct_attr} '
             f'style="text-align:right;padding:0.3rem 0.7rem;'
-            f'border-bottom:1px solid #eee;font-weight:700;color:#C9A84C;">'
+            f'border-bottom:1px solid #eee;font-weight:700;color:var(--mustard-text);">'
             f'{fmt_val(entry["stretch_total"], is_pct)}</td>\n'
         )
         rows += '                    </tr>\n'
@@ -2149,8 +2149,8 @@ def render_workplan_goals_html(
 
     def _table_open(header_label):
         return f'''            <div style="margin-bottom:2rem;">
-            <div style="background:linear-gradient(135deg,#163A5F 0%,#0A2240 100%);border-radius:8px 8px 0 0;padding:0.6rem 1rem;">
-                <span style="color:#C9A84C;font-weight:700;font-size:0.9rem;">{header_label}</span>
+            <div style="background:linear-gradient(135deg,var(--navy-secondary) 0%,var(--navy-primary) 100%);border-radius:8px 8px 0 0;padding:0.6rem 1rem;">
+                <span style="color:var(--gold-accent);font-weight:700;font-size:0.9rem;">{header_label}</span>
             </div>
             <div style="overflow-x:auto;">
             <table style="width:100%;border-collapse:collapse;font-size:0.8rem;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:0 0 8px 8px;table-layout:fixed;">
@@ -2165,7 +2165,7 @@ def render_workplan_goals_html(
                     <col style="width:10%;">
                 </colgroup>
                 <thead>
-                    <tr style="background:#f0f4f8;">
+                    <tr style="background:var(--surface-subtle);">
                         <th style="text-align:left;padding:0.5rem 0.7rem;border-bottom:2px solid #ddd;">Activity</th>
                         <th style="text-align:center;padding:0.5rem 0.4rem;border-bottom:2px solid #ddd;color:#666;">Type</th>
                         <th style="text-align:right;padding:0.5rem 0.4rem;border-bottom:2px solid #ddd;">2025-26</th>
@@ -2194,7 +2194,7 @@ def render_workplan_goals_html(
             f'</p>'
         )
     html = f'''        <div class="workplan-goals-section" style="margin:2.5rem 0;">
-            <h2 style="color:#0A2240;margin-bottom:0.5rem;">Annual Workplan Goals & Stretch Targets</h2>
+            <h2 style="color:var(--navy-primary);margin-bottom:0.5rem;">Annual Workplan Goals & Stretch Targets</h2>
             <p style="color:#666;font-size:0.85rem;margin-bottom:1.5rem;">Five-year trajectory from the CCCCO CPL Workplan — Goal and Stretch targets per activity per year.</p>
             {stamp_html}
 '''
@@ -2203,7 +2203,7 @@ def render_workplan_goals_html(
     if activities:
         html += _table_open(
             "Activities — Top-Level Aggregate Targets "
-            "<span style='font-weight:400;color:#cfd6e0;font-size:0.78rem;'>(curator-managed; ladders default to 0 until set)</span>"
+            "<span style='font-weight:400;color:var(--text-faint);font-size:0.78rem;'>(curator-managed; ladders default to 0 until set)</span>"
         )
         for i, act in enumerate(activities):
             bg = "#fff" if i % 2 == 0 else "#fafbfc"
@@ -2266,7 +2266,7 @@ def render_workplan_goals_html(
                 chips_html += (
                     f'<span class="{chip_cls}" title="{html_escape(title_txt, quote=True)}" '
                     f'style="display:inline-block;margin:0 0.25rem 0 0;padding:0.05rem 0.4rem;'
-                    f'background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.7rem;'
+                    f'background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.7rem;'
                     f'font-weight:600;">{star}{short}</span>'
                 )
             # The editable chip cell. data-assoc carries the REAL association
@@ -2388,13 +2388,13 @@ def _render_single_project_card(p, update_log=None, attachments=None,
     current_notes_html = ""
     current_notes_html += (
         f'            <div style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
-        f'<span style="font-size:0.65rem;font-weight:600;background:#163A5F;color:#fff;'
+        f'<span style="font-size:0.65rem;font-weight:600;background:var(--navy-secondary);color:#fff;'
         f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Latest Update</span>'
         f'{_ed("latest_update", update_text, update_text, multiline=True)}</div>\n'
     )
     current_notes_html += (
         f'            <div style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
-        f'<span style="font-size:0.65rem;font-weight:600;background:#C9A84C;color:#0A2240;'
+        f'<span style="font-size:0.65rem;font-weight:600;background:var(--gold-accent);color:var(--navy-primary);'
         f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Workplan Note</span>'
         f'{_ed("wp_notes", wp_text, wp_text, multiline=True)}</div>\n'
     )
@@ -2404,14 +2404,14 @@ def _render_single_project_card(p, update_log=None, attachments=None,
     history_html = ""
     if len(all_notes) > 1:
         type_badge_css = {
-            "update":   "background:#163A5F;color:#fff;",
-            "workplan": "background:#C9A84C;color:#0A2240;",
+            "update":   "background:var(--navy-secondary);color:#fff;",
+            "workplan": "background:var(--gold-accent);color:var(--navy-primary);",
         }
         type_labels = {"update": "Progress Update", "workplan": "Workplan Note"}
         history_html += (
             f'            <div class="notes-history" data-pid="{pid}" '
             f'style="display:none;margin-top:0.4rem;max-height:240px;overflow-y:auto;'
-            f'border-left:3px solid #C9A84C;padding-left:0.6rem;">\n'
+            f'border-left:3px solid var(--gold-accent);padding-left:0.6rem;">\n'
         )
         for n in all_notes:
             ntype = n.get("type", "update")
@@ -2419,7 +2419,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
             badge_label = type_labels.get(ntype, "Update")
             history_html += (
                 f'                <div style="margin-bottom:0.5rem;">'
-                f'<span style="font-size:0.72rem;font-weight:700;color:#0A2240;'
+                f'<span style="font-size:0.72rem;font-weight:700;color:var(--navy-primary);'
                 f'background:#f0f0f0;padding:0.1rem 0.4rem;border-radius:3px;">{n["date"]}</span>'
                 f' <span style="font-size:0.65rem;font-weight:600;{badge_style}'
                 f'padding:0.1rem 0.35rem;border-radius:3px;">{badge_label}</span>'
@@ -2435,14 +2435,14 @@ def _render_single_project_card(p, update_log=None, attachments=None,
         if len(all_notes) > 1:
             toggle_html = (
                 f'                <label style="display:inline-flex;align-items:center;gap:0.3rem;'
-                f'font-size:0.72rem;color:#163A5F;cursor:pointer;margin-left:auto;">'
+                f'font-size:0.72rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;">'
                 f'<input type="checkbox" class="notes-history-toggle" data-pid="{pid}" '
-                f'style="accent-color:#C9A84C;cursor:pointer;"> '
+                f'style="accent-color:var(--accent-link);cursor:pointer;"> '
                 f'Show all ({len(all_notes)})</label>\n'
             )
         update_date_ed = _ed(
             "update_date", update_date,
-            f'<strong style="color:#0A2240;">{html_escape(str(update_date)) if update_date else "—"}</strong>',
+            f'<strong style="color:var(--navy-primary);">{html_escape(str(update_date)) if update_date else "—"}</strong>',
             dtype="date", body_is_html=True,
         )
         notes_html = (
@@ -2527,7 +2527,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
 {notes_html}            <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.5rem;">
                 <a href="reports/projects/{pid}_Report.docx" download class="report-btn"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
-                    font-size:0.75rem;color:#163A5F;text-decoration:none;font-weight:600;
+                    font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
@@ -2535,15 +2535,15 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                 <a href="#" class="proj-update-btn" data-pid="{html_escape(str(pid), quote=True)}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:#FFFFFF;text-decoration:none;font-weight:600;
-                    padding:0.3rem 0.6rem;border:1px solid #b89540;border-radius:4px;
-                    background:#C9A84C;cursor:pointer;transition:background 0.2s;"
-                    onmouseover="this.style.background='#b89540'" onmouseout="this.style.background='#C9A84C'"
+                    padding:0.3rem 0.6rem;border:1px solid var(--cobalt);border-radius:4px;
+                    background:var(--cobalt);cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='#003B8E'" onmouseout="this.style.background='var(--cobalt)'"
                     title="Add or edit this project's Latest Update (sign in to edit)">
                     <span style="font-size:0.85rem;">&#9998;</span> Update</a>
                 <a href="#" class="attach-btn"
                     data-folder="{html_escape(str(pid) + ' ' + str(p.get('name', '')), quote=True)}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
-                    font-size:0.75rem;color:#163A5F;text-decoration:none;font-weight:600;
+                    font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
                     background:#fafafa;cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
@@ -2643,12 +2643,12 @@ def render_projects_grid_html(projects, update_log=None, attachments=None,
                 bullets_html += '</ul>'
             stretch_html = ""
             if goal_stretch:
-                stretch_html = f'<div style="color:#C9A84C;font-size:0.7rem;margin-top:0.25rem;font-style:italic;">{goal_stretch}</div>'
+                stretch_html = f'<div style="color:var(--mustard-text);font-size:0.7rem;margin-top:0.25rem;font-style:italic;">{goal_stretch}</div>'
 
             html += (f'        <div class="goal-header" data-goal-key="{goal_key}" style="margin:1.5rem 0 0.75rem 0;padding:0.75rem 1rem;'
-                     f'background:linear-gradient(135deg,#163A5F 0%,#0A2240 100%);border-radius:8px;">\n'
+                     f'background:linear-gradient(135deg,var(--navy-secondary) 0%,var(--navy-primary) 100%);border-radius:8px;">\n'
                      f'            <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.3rem;">\n'
-                     f'                <span style="color:#C9A84C;font-weight:700;font-size:1rem;white-space:nowrap;">{goal_key}</span>\n'
+                     f'                <span style="color:var(--gold-accent);font-weight:700;font-size:1rem;white-space:nowrap;">{goal_key}</span>\n'
                      f'                <span style="color:#fff;font-size:0.95rem;font-weight:600;">{goal_title}</span>\n'
                      f'                <span style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin-left:auto;white-space:nowrap;">'
                      f'{len(goal_projects)} projects</span>\n'
@@ -2822,30 +2822,30 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
     data_json = _json.dumps(chart_data)
 
     html = f'''        <div style="margin:2rem 0;padding:1.5rem;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-            <h3 style="color:#0A2240;margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h3>
+            <h3 style="color:var(--navy-primary);margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h3>
             <p style="color:#888;font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
                 <div style="flex:1;min-width:340px;">
-                    <h4 style="color:#0A2240;font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h4>
-                    <canvas id="goalChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:#FAF8F4;"></canvas>
+                    <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h4>
+                    <canvas id="goalChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
                 <div style="flex:1;min-width:340px;">
-                    <h4 style="color:#0A2240;font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Stretch Trajectory (500K Target)</h4>
-                    <canvas id="stretchChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:#FAF8F4;"></canvas>
+                    <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Stretch Trajectory (500K Target)</h4>
+                    <canvas id="stretchChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
             </div>
             <div style="display:flex;flex-wrap:wrap;gap:0.8rem 1.5rem;margin-top:0.8rem;font-size:0.8rem;color:#555;align-items:center;">
-                <span><span style="display:inline-block;width:20px;height:3px;background:#0A2240;vertical-align:middle;margin-right:4px;"></span> Total</span>
-                <span><span style="display:inline-block;width:20px;height:3px;background:#C9A84C;vertical-align:middle;margin-right:4px;"></span> Military</span>
-                <span><span style="display:inline-block;width:20px;height:3px;background:#4A90D9;vertical-align:middle;margin-right:4px;"></span> Workforce/Other</span>
-                <span><span style="display:inline-block;width:20px;height:3px;background:#2A7D4F;vertical-align:middle;margin-right:4px;"></span> Apprentice</span>
+                <span><span style="display:inline-block;width:20px;height:3px;background:var(--navy-primary);vertical-align:middle;margin-right:4px;"></span> Total</span>
+                <span><span style="display:inline-block;width:20px;height:3px;background:var(--mustard-text);vertical-align:middle;margin-right:4px;"></span> Military</span>
+                <span><span style="display:inline-block;width:20px;height:3px;background:var(--cobalt);vertical-align:middle;margin-right:4px;"></span> Workforce/Other</span>
+                <span><span style="display:inline-block;width:20px;height:3px;background:var(--green-progress);vertical-align:middle;margin-right:4px;"></span> Apprentice</span>
                 <span style="color:#aaa;">&mdash; Solid = actual &nbsp; - - - Dashed = projected</span>
             </div>
         </div>
         <script>
         (function() {{
             var D = {data_json};
-            var COLORS = {{total:'#0A2240',military:'#C9A84C',workforce:'#4A90D9',apprentice:'#2A7D4F'}};
+            var COLORS = {{total:'#1C1C1A',military:'#8B6800',workforce:'#0047AB',apprentice:'#2C601A'}};
             var SERIES = ['total','military','workforce','apprentice'];
             var LABELS = {{total:'Total',military:'Military',workforce:'Workforce',apprentice:'Apprentice'}};
 
@@ -2882,7 +2882,7 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
                 }}
 
                 // Background
-                ctx.fillStyle = '#FAF8F4';
+                ctx.fillStyle = '#F4F2ED';
                 ctx.fillRect(0, 0, W, H);
 
                 // Grid lines
@@ -2908,7 +2908,7 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
                 }}
 
                 // Target ceiling line
-                ctx.strokeStyle = '#0A2240';
+                ctx.strokeStyle = '#1C1C1A';
                 ctx.lineWidth = 1.5;
                 ctx.setLineDash([8, 4]);
                 ctx.globalAlpha = 0.3;
@@ -2918,13 +2918,13 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
                 ctx.stroke();
                 ctx.setLineDash([]);
                 ctx.globalAlpha = 1;
-                ctx.fillStyle = '#0A2240';
+                ctx.fillStyle = '#1C1C1A';
                 ctx.textAlign = 'right';
                 ctx.font = 'bold 10px Calibri, sans-serif';
                 ctx.fillText(fmtK(targetVal) + ' Target', PAD_L + CW - 4, yPos(targetVal) - 5);
 
                 // "Now" vertical marker
-                ctx.strokeStyle = '#0A2240';
+                ctx.strokeStyle = '#1C1C1A';
                 ctx.lineWidth = 1;
                 ctx.setLineDash([3, 3]);
                 ctx.globalAlpha = 0.15;
@@ -2935,7 +2935,7 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
                 ctx.setLineDash([]);
                 ctx.globalAlpha = 1;
                 ctx.font = '9px Calibri, sans-serif';
-                ctx.fillStyle = 'rgba(10,34,64,0.5)';
+                ctx.fillStyle = 'rgba(28,28,26,0.5)';
                 ctx.textAlign = 'center';
                 ctx.fillText('Now', xPos(D.currentYear), PAD_T - 4);
 
@@ -3157,7 +3157,7 @@ def log_daily_snapshot(live_data, exhibit_data):
     return history
 
 
-def _sparkline_svg(values, width=110, height=30, color="#C9A84C"):
+def _sparkline_svg(values, width=110, height=30, color="#E3B341"):
     """Return an inline SVG sparkline for a list of numeric values."""
     vals = [v for v in values if v is not None and v > 0]
     if len(vals) < 2:
@@ -3208,7 +3208,7 @@ def _delta_badge(current, previous, abs_format=False):
     pct  = diff / previous * 100
     if abs(pct) < 0.05:
         return '<span style="color:rgba(255,255,255,0.35);font-size:0.68rem;">—</span>', 0
-    color = "#4CAF50" if diff >= 0 else "#f44336"
+    color = "var(--hunter-on-dark)" if diff >= 0 else "var(--crimson-on-dark)"  # dark trend card
     arrow = "▲" if diff >= 0 else "▼"
     if abs_format:
         label = f"{arrow}{abs(diff):,.0f}"
@@ -3299,9 +3299,9 @@ def render_kpi_history_card(history, kpi_params=None):
                        (f"padding:0.3rem 0.5rem;font-size:0.75rem;"
                         f"color:rgba(255,255,255,0.8);white-space:nowrap;{row_style}")
         value_style  = (f"padding:0.15rem 0.5rem;font-size:0.68rem;font-weight:600;"
-                        f"color:rgba(201,168,76,0.65);text-align:right;white-space:nowrap;{row_style}") if is_sub else \
+                        f"color:rgba(227,179,65,0.65);text-align:right;white-space:nowrap;{row_style}") if is_sub else \
                        (f"padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;"
-                        f"color:#C9A84C;text-align:right;white-space:nowrap;{row_style}")
+                        f"color:var(--gold-accent);text-align:right;white-space:nowrap;{row_style}")
         cell_style   = f"padding:{'0.15rem' if is_sub else '0.3rem'} 0.5rem;text-align:center;{row_style}"
         spark_style  = f"padding:{'0.15rem' if is_sub else '0.3rem'} 0.8rem;{row_style}"
 
@@ -3316,7 +3316,7 @@ def render_kpi_history_card(history, kpi_params=None):
 
         # Sparkline (smaller for sub-rows)
         spark_vals = [e.get(key, 0) for e in recent]
-        spark_color = "rgba(201,168,76,0.5)" if is_sub else "#C9A84C"
+        spark_color = "rgba(227,179,65,0.5)" if is_sub else "#E3B341"
         spark_svg   = _sparkline_svg(spark_vals, height=20 if is_sub else 30, color=spark_color)
 
         rows_html += (
@@ -7953,7 +7953,7 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None):
         w = min(pct_val, 100)
         return (f'<div style="display:inline-block;width:60px;height:8px;background:rgba(255,255,255,0.1);'
                 f'border-radius:4px;vertical-align:middle;margin-left:6px;">'
-                f'<div style="width:{w}%;height:100%;background:#C9A84C;border-radius:4px;"></div></div>')
+                f'<div style="width:{w}%;height:100%;background:var(--gold-accent);border-radius:4px;"></div></div>')
 
     # ── Card builder helper ──
     def table_card(card_id, title, subtitle, headers, rows_data, row_renderer,
@@ -8314,18 +8314,18 @@ EXHIBIT_ANALYSIS_CSS = """
 /* ═══ MAP Articulation Analysis Cards ═══ */
 /* ─── Budget inline editor (budget_editor.js) ─── */
 .budget-auth-widget { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center;
-    background:#F0F4F8; border:1px solid #D6E0EA; border-radius:8px;
+    background:rgba(0,71,171,0.06); border:1px solid var(--border-strong); border-radius:8px;
     padding:0.7rem 1rem; margin:0 0 1.25rem 0; font-size:0.85rem; }
-.budget-auth-widget input[type=email] { padding:0.4rem 0.6rem; border:1px solid #B9C7D6;
+.budget-auth-widget input[type=email] { padding:0.4rem 0.6rem; border:1px solid var(--border-strong);
     border-radius:5px; font-size:0.85rem; min-width:200px; }
-.budget-btn { background:#0A2240; color:#fff; border:none; border-radius:5px;
+.budget-btn { background:var(--cobalt); color:#fff; border:none; border-radius:5px;
     padding:0.4rem 0.9rem; font-size:0.82rem; cursor:pointer; }
-.budget-btn:hover { background:#163A5F; }
-.budget-btn-out { background:#6B7785; margin-left:auto; }
+.budget-btn:hover { background:#003B8E; }
+.budget-btn-out { background:var(--text-muted); margin-left:auto; }
 .budget-cell.budget-on { cursor:pointer; transition:background 0.15s; border-radius:3px; }
-.budget-cell.budget-on:hover { background:#EAF1F8; outline:1px dashed #4D7EA8; }
+.budget-cell.budget-on:hover { background:rgba(0,71,171,0.06); outline:1px dashed var(--cobalt); }
 .budget-cell-input { width:100%; box-sizing:border-box; text-align:right; padding:2px 4px;
-    border:1px solid #4D7EA8; border-radius:3px; font-size:0.85rem; font-family:inherit; }
+    border:1px solid var(--cobalt); border-radius:3px; font-size:0.85rem; font-family:inherit; }
 .budget-cell.budget-saving { background:#FFF6D9; }
 .budget-cell.budget-saved { background:#DBF0DD; }
 .budget-cell.budget-error { background:#F7D9D9; }
@@ -8360,9 +8360,9 @@ EXHIBIT_ANALYSIS_CSS = """
     margin: 0 auto;
 }
 .exhibit-card {
-    background: #0A2240;
-    border: 1px solid rgba(201,168,76,0.25);
-    border-top: 4px solid #C9A84C;
+    background: var(--navy-primary);
+    border: 1px solid rgba(227,179,65,0.25);
+    border-top: 4px solid var(--gold-accent);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
@@ -8380,7 +8380,7 @@ EXHIBIT_ANALYSIS_CSS = """
 .exhibit-card-title {
     font-size: 0.95rem;
     font-weight: 700;
-    color: #C9A84C;
+    color: var(--gold-accent);
 }
 .exhibit-card-subtitle {
     font-size: 0.7rem;
@@ -8392,8 +8392,8 @@ EXHIBIT_ANALYSIS_CSS = """
     align-items: center;
     gap: 0.25rem;
     background: transparent;
-    color: #C9A84C;
-    border: 1px solid rgba(201,168,76,0.5);
+    color: var(--gold-accent);
+    border: 1px solid rgba(227,179,65,0.5);
     padding: 4px 10px;
     border-radius: 4px;
     font-size: 0.7rem;
@@ -8403,14 +8403,14 @@ EXHIBIT_ANALYSIS_CSS = """
     transition: background 0.15s, color 0.15s;
 }
 .analytics-export-btn:hover {
-    background: #C9A84C;
-    color: #0A2240;
+    background: var(--gold-accent);
+    color: var(--navy-primary);
 }
 .exhibit-total-row td {
-    background: rgba(201,168,76,0.12);
-    color: #C9A84C;
+    background: rgba(227,179,65,0.12);
+    color: var(--gold-accent);
     font-weight: 700;
-    border-top: 2px solid rgba(201,168,76,0.4);
+    border-top: 2px solid rgba(227,179,65,0.4);
     position: sticky;
     bottom: 0;
 }
@@ -8418,7 +8418,7 @@ EXHIBIT_ANALYSIS_CSS = """
     max-height: 420px;
     overflow: auto;
     scrollbar-width: thin;
-    scrollbar-color: rgba(201,168,76,0.3) transparent;
+    scrollbar-color: rgba(227,179,65,0.3) transparent;
 }
 .exhibit-card-footer {
     padding: 0.45rem 1rem;
@@ -8428,7 +8428,7 @@ EXHIBIT_ANALYSIS_CSS = """
     font-style: italic;
 }
 .exhibit-card-body::-webkit-scrollbar { width: 6px; height: 6px; }
-.exhibit-card-body::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 3px; }
+.exhibit-card-body::-webkit-scrollbar-thumb { background: rgba(227,179,65,0.3); border-radius: 3px; }
 .exhibit-card-body::-webkit-scrollbar-track { background: transparent; }
 .exhibit-table {
     width: 100%;
@@ -8442,15 +8442,15 @@ EXHIBIT_ANALYSIS_CSS = """
     z-index: 2;
 }
 .exhibit-table th {
-    background: rgba(10,34,64,0.98);
-    color: #C9A84C;
+    background: rgba(28,28,26,0.98);
+    color: var(--gold-accent);
     font-size: 0.65rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.03em;
     padding: 0.45rem 0.5rem;
     text-align: left;
-    border-bottom: 1px solid rgba(201,168,76,0.3);
+    border-bottom: 1px solid rgba(227,179,65,0.3);
     white-space: nowrap;
 }
 /* CSC-G phase 2 — per-column header alignment so numeric / percent headers
@@ -8465,7 +8465,7 @@ EXHIBIT_ANALYSIS_CSS = """
     vertical-align: top;
 }
 .exhibit-table tbody tr:hover {
-    background: rgba(201,168,76,0.06);
+    background: rgba(227,179,65,0.06);
 }
 .exhibit-cell-name {
     max-width: 280px;
@@ -8500,26 +8500,26 @@ EXHIBIT_ANALYSIS_CSS = """
     letter-spacing: 0.02em;
 }
 .sw-conf-badge {
-    background: rgba(201,168,76,0.18);
-    color: #C9A84C;
-    border: 1px solid rgba(201,168,76,0.4);
+    background: rgba(227,179,65,0.18);
+    color: var(--gold-accent);
+    border: 1px solid rgba(227,179,65,0.4);
 }
 .sw-conf-low {
-    background: rgba(201,80,80,0.18);
-    color: #e8a3a3;
-    border-color: rgba(201,80,80,0.4);
+    background: rgba(207,143,143,0.18);
+    color: var(--crimson-on-dark);
+    border-color: rgba(207,143,143,0.4);
 }
 .sw-quality-badge {
-    background: rgba(201,80,80,0.15);
-    color: #e8a3a3;
-    border: 1px solid rgba(201,80,80,0.3);
+    background: rgba(207,143,143,0.15);
+    color: var(--crimson-on-dark);
+    border: 1px solid rgba(207,143,143,0.3);
 }
 .sw-also-entered {
     margin-top: 3px;
 }
 .sw-also-entered > summary {
     font-size: 0.7rem;
-    color: rgba(155,188,216,0.85);
+    color: rgba(125,161,212,0.85);
     cursor: pointer;
     list-style: none;
     user-select: none;
@@ -8534,7 +8534,7 @@ EXHIBIT_ANALYSIS_CSS = """
     transform: rotate(90deg);
 }
 .sw-also-entered > summary:hover {
-    color: #C9A84C;
+    color: var(--gold-accent);
 }
 .sw-raw-titles {
     list-style: none;
@@ -8545,7 +8545,7 @@ EXHIBIT_ANALYSIS_CSS = """
 }
 .sw-raw-titles li {
     padding: 1px 0;
-    border-left: 1px solid rgba(155,188,216,0.2);
+    border-left: 1px solid rgba(125,161,212,0.2);
     padding-left: 6px;
     margin-left: -8px;
     white-space: normal;
@@ -8579,123 +8579,123 @@ EXHIBIT_ANALYSIS_CSS = """
     white-space: nowrap;
 }
 .sw-adopted {
-    background: rgba(42,125,79,0.25);
-    color: #6fcf97;
-    border: 1px solid rgba(42,125,79,0.4);
+    background: rgba(44,96,26,0.25);
+    color: var(--hunter-on-dark);
+    border: 1px solid rgba(44,96,26,0.4);
 }
 .sw-potential {
-    background: rgba(201,168,76,0.12);
-    color: #C9A84C;
-    border: 1px solid rgba(201,168,76,0.25);
+    background: rgba(227,179,65,0.12);
+    color: var(--gold-accent);
+    border: 1px solid rgba(227,179,65,0.25);
 }
 /* ═══ Interactive Statewide Card ═══ */
 #statewide-interactive-container { grid-column: 1 / -1; }
-.sw-interactive { background:rgba(10,34,64,0.85); border:1px solid rgba(201,168,76,0.25); border-radius:10px; overflow:hidden; }
+.sw-interactive { background:rgba(28,28,26,0.85); border:1px solid rgba(227,179,65,0.25); border-radius:10px; overflow:hidden; }
 .sw-toolbar { padding:0.8rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.08); }
 .sw-toolbar input[type=text] { flex:1 1 200px; padding:0.4rem 0.6rem; border:1px solid rgba(255,255,255,0.2); border-radius:5px; background:rgba(255,255,255,0.06); color:#fff; font-size:0.78rem; outline:none; }
-.sw-toolbar input[type=text]:focus { border-color:#C9A84C; }
+.sw-toolbar input[type=text]:focus { border-color:var(--gold-accent); }
 .sw-toolbar input[type=text]::placeholder { color:rgba(255,255,255,0.35); }
 .sw-filter-group { position:relative; display:inline-block; }
 .sw-filter-btn { padding:0.35rem 0.7rem; border:1px solid rgba(255,255,255,0.2); border-radius:5px; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.8); font-size:0.72rem; cursor:pointer; white-space:nowrap; }
-.sw-filter-btn:hover, .sw-filter-btn.active { border-color:#C9A84C; color:#C9A84C; }
-.sw-filter-dropdown { display:none; position:absolute; top:100%; left:0; z-index:100; min-width:220px; max-height:280px; overflow-y:auto; background:#0e2a4a; border:1px solid rgba(201,168,76,0.3); border-radius:6px; box-shadow:0 6px 20px rgba(0,0,0,0.5); margin-top:4px; }
+.sw-filter-btn:hover, .sw-filter-btn.active { border-color:var(--gold-accent); color:var(--gold-accent); }
+.sw-filter-dropdown { display:none; position:absolute; top:100%; left:0; z-index:100; min-width:220px; max-height:280px; overflow-y:auto; background:#2A2A26; border:1px solid rgba(227,179,65,0.3); border-radius:6px; box-shadow:0 6px 20px rgba(0,0,0,0.5); margin-top:4px; }
 .sw-filter-dropdown.open { display:block; }
 .sw-filter-dropdown label { display:flex; align-items:center; gap:0.4rem; padding:0.3rem 0.6rem; font-size:0.7rem; color:rgba(255,255,255,0.8); cursor:pointer; }
-.sw-filter-dropdown label:hover { background:rgba(201,168,76,0.1); }
-.sw-filter-dropdown input[type=checkbox] { accent-color:#C9A84C; }
+.sw-filter-dropdown label:hover { background:rgba(227,179,65,0.1); }
+.sw-filter-dropdown input[type=checkbox] { accent-color:var(--accent-link); }
 .sw-filter-search { width:calc(100% - 1rem); margin:0.4rem 0.5rem; padding:0.3rem 0.5rem; border:1px solid rgba(255,255,255,0.15); border-radius:4px; background:rgba(255,255,255,0.05); color:#fff; font-size:0.68rem; }
 .sw-action-bar { padding:0.5rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.06); }
-.sw-action-btn { padding:0.35rem 0.9rem; border:1px solid rgba(201,168,76,0.4); border-radius:5px; background:rgba(201,168,76,0.1); color:#C9A84C; font-size:0.72rem; font-weight:600; cursor:pointer; transition:all 0.15s; }
-.sw-action-btn:hover { background:rgba(201,168,76,0.25); }
-.sw-action-btn.primary { background:#C9A84C; color:#0A2240; border-color:#C9A84C; }
-.sw-action-btn.primary:hover { background:#d4b35c; }
+.sw-action-btn { padding:0.35rem 0.9rem; border:1px solid rgba(227,179,65,0.4); border-radius:5px; background:rgba(227,179,65,0.1); color:var(--gold-accent); font-size:0.72rem; font-weight:600; cursor:pointer; transition:all 0.15s; }
+.sw-action-btn:hover { background:rgba(227,179,65,0.25); }
+.sw-action-btn.primary { background:var(--gold-accent); color:var(--navy-primary); border-color:var(--gold-accent); }
+.sw-action-btn.primary:hover { background:#EBC25D; }
 .sw-count { font-size:0.7rem; color:rgba(255,255,255,0.5); margin-left:auto; }
-.sw-table-wrap { max-height:600px; overflow:auto; scrollbar-width:thin; scrollbar-color:rgba(201,168,76,0.3) transparent; }
+.sw-table-wrap { max-height:600px; overflow:auto; scrollbar-width:thin; scrollbar-color:rgba(227,179,65,0.3) transparent; }
 .sw-table-wrap::-webkit-scrollbar { width:6px; height:6px; }
-.sw-table-wrap::-webkit-scrollbar-thumb { background:rgba(201,168,76,0.3); border-radius:3px; }
-.sw-chk { accent-color:#C9A84C; cursor:pointer; }
-.sw-row-selected { background:rgba(201,168,76,0.08) !important; }
+.sw-table-wrap::-webkit-scrollbar-thumb { background:rgba(227,179,65,0.3); border-radius:3px; }
+.sw-chk { accent-color:var(--accent-link); cursor:pointer; }
+.sw-row-selected { background:rgba(227,179,65,0.08) !important; }
 /* Badges */
 .sw-badge { display:inline-block; font-size:0.58rem; font-weight:700; padding:1px 5px; border-radius:3px; text-transform:uppercase; letter-spacing:0.03em; }
-.sw-badge-ccc { background:rgba(42,125,79,0.25); color:#6fcf97; border:1px solid rgba(42,125,79,0.4); }
-.sw-badge-local { background:rgba(100,149,237,0.15); color:#6495ed; border:1px solid rgba(100,149,237,0.3); }
+.sw-badge-ccc { background:rgba(44,96,26,0.25); color:var(--hunter-on-dark); border:1px solid rgba(44,96,26,0.4); }
+.sw-badge-local { background:rgba(125,161,212,0.15); color:var(--cobalt-on-dark); border:1px solid rgba(125,161,212,0.3); }
 /* Credit recs toggle */
-.sw-recs-toggle { cursor:pointer; color:#C9A84C; font-weight:600; }
+.sw-recs-toggle { cursor:pointer; color:var(--gold-accent); font-weight:600; }
 .sw-recs-toggle:hover { text-decoration:underline; }
 /* Credit recs panel */
-.sw-recs-panel { background:rgba(0,0,0,0.2); border:1px solid rgba(201,168,76,0.15); border-radius:6px; padding:0.4rem 0.6rem; max-height:200px; overflow-y:auto; }
+.sw-recs-panel { background:rgba(0,0,0,0.2); border:1px solid rgba(227,179,65,0.15); border-radius:6px; padding:0.4rem 0.6rem; max-height:200px; overflow-y:auto; }
 .sw-recs-row td { padding:0 !important; border-bottom:none !important; }
 /* Pagination */
 .sw-pagination { display:flex; justify-content:center; align-items:center; gap:4px; padding:0.6rem 1rem; border-top:1px solid rgba(255,255,255,0.06); }
 .sw-page-btn { padding:4px 10px; border:1px solid rgba(255,255,255,0.15); border-radius:4px; background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.7); font-size:0.68rem; cursor:pointer; }
-.sw-page-btn:hover:not([disabled]) { background:rgba(201,168,76,0.15); border-color:#C9A84C; color:#C9A84C; }
-.sw-page-btn.active { background:rgba(201,168,76,0.25); border-color:#C9A84C; color:#C9A84C; font-weight:700; }
+.sw-page-btn:hover:not([disabled]) { background:rgba(227,179,65,0.15); border-color:var(--gold-accent); color:var(--gold-accent); }
+.sw-page-btn.active { background:rgba(227,179,65,0.25); border-color:var(--gold-accent); color:var(--gold-accent); font-weight:700; }
 .sw-page-btn[disabled] { opacity:0.3; cursor:default; }
 /* Show more link */
-.sw-show-more { cursor:pointer; color:#C9A84C; font-size:0.62rem; font-weight:600; }
+.sw-show-more { cursor:pointer; color:var(--gold-accent); font-size:0.62rem; font-weight:600; }
 .sw-show-more:hover { text-decoration:underline; }
 /* Inline credit recs */
 .sw-credit-recs { margin-top:0.25rem; padding-top:0.2rem; border-top:1px solid rgba(255,255,255,0.05); }
 .sw-rec-line { font-size:0.64rem; color:rgba(255,255,255,0.55); line-height:1.5; padding:1px 0; }
-.sw-rec-course { font-size:0.58rem; color:rgba(201,168,76,0.5); }
+.sw-rec-course { font-size:0.58rem; color:rgba(227,179,65,0.5); }
 /* ═══ Projects inline editor (Phase 2 PR-5 — projects_editor.js) ═══ */
-.proj-auth-widget { margin:0 0 1rem 0; padding:0.75rem 1rem; background:#F4F5F7; border-radius:8px; font-size:0.85rem; color:#0A2240; display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
+.proj-auth-widget { margin:0 0 1rem 0; padding:0.75rem 1rem; background:var(--surface-subtle); border-radius:8px; font-size:0.85rem; color:var(--navy-primary); display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
 .proj-auth-widget input[type=email] { padding:0.35rem 0.5rem; border:1px solid #ccc; border-radius:5px; font-size:0.8rem; min-width:180px; }
-.proj-btn { padding:0.35rem 0.75rem; border:0; background:#0A2240; color:#fff; border-radius:5px; font-size:0.8rem; cursor:pointer; }
+.proj-btn { padding:0.35rem 0.75rem; border:0; background:var(--cobalt); color:#fff; border-radius:5px; font-size:0.8rem; cursor:pointer; }
 .proj-btn-out { border:1px solid #ccc; background:#fff; color:#333; }
 /* Click-to-edit affordance only lights up when signed in */
 .proj-editable.proj-on { cursor:pointer; border-bottom:1px dashed transparent; transition:background 0.15s, border-color 0.15s; }
-.proj-editable.proj-on:hover { background:#F0F4F8; border-bottom-color:#4D7EA8; }
+.proj-editable.proj-on:hover { background:rgba(0,71,171,0.06); border-bottom-color:var(--cobalt); }
 .proj-editing { background:#fff !important; }
-.proj-cell-input { box-sizing:border-box; padding:2px 4px; font:inherit; border:1px solid #4D7EA8; border-radius:3px; background:#fff; min-width:60px; }
+.proj-cell-input { box-sizing:border-box; padding:2px 4px; font:inherit; border:1px solid var(--cobalt); border-radius:3px; background:#fff; min-width:60px; }
 .proj-saving { background:#FFF8E1 !important; }
 .proj-saved { background:#E8F5E9 !important; transition:background 0.4s; }
 .proj-error { background:#FFEBEE !important; transition:background 0.4s; }
 /* Multi-line edit modal */
-.proj-modal-overlay { position:fixed; inset:0; background:rgba(10,34,64,0.55); z-index:9999; display:flex; align-items:flex-start; justify-content:center; overflow-y:auto; padding:3rem 1rem; }
-.proj-modal-card { background:#fff; border-radius:10px; box-shadow:0 8px 32px rgba(0,0,0,0.25); max-width:640px; width:100%; padding:1.5rem; font-family:inherit; color:#0A2240; }
-.proj-modal-card h3 { margin:0 0 0.5rem 0; color:#0A2240; font-size:1.05rem; }
+.proj-modal-overlay { position:fixed; inset:0; background:rgba(28,28,26,0.55); z-index:9999; display:flex; align-items:flex-start; justify-content:center; overflow-y:auto; padding:3rem 1rem; }
+.proj-modal-card { background:#fff; border-radius:10px; box-shadow:0 8px 32px rgba(0,0,0,0.25); max-width:640px; width:100%; padding:1.5rem; font-family:inherit; color:var(--navy-primary); }
+.proj-modal-card h3 { margin:0 0 0.5rem 0; color:var(--navy-primary); font-size:1.05rem; }
 .proj-modal-card .proj-modal-sub { color:#666; font-size:0.78rem; margin-bottom:0.75rem; }
 .proj-modal-card textarea { width:100%; min-height:140px; padding:0.5rem 0.6rem; border:1px solid #ccc; border-radius:6px; font-size:0.85rem; font-family:inherit; box-sizing:border-box; resize:vertical; }
 .proj-modal-card .proj-modal-status { margin-top:0.5rem; font-size:0.82rem; min-height:1.2em; }
-.proj-modal-card .proj-modal-status.err { color:#A33; }
+.proj-modal-card .proj-modal-status.err { color:var(--crimson); }
 .proj-modal-actions { display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1rem; }
 .proj-modal-actions button { padding:0.4rem 0.9rem; border-radius:5px; font-size:0.85rem; cursor:pointer; border:0; }
 .proj-btn-cancel { background:#fff; border:1px solid #ccc !important; color:#333; }
-.proj-btn-submit { background:#0A2240; color:#fff; font-weight:600; }
+.proj-btn-submit { background:var(--cobalt); color:#fff; font-weight:600; }
 .proj-btn-submit:disabled { opacity:0.6; cursor:not-allowed; }
 /* ── Activity↔Project association editor (workplan_goals.js) ── */
 /* Primary association chip (★) reads slightly bolder than a plain chip. */
-.wpg-act-chip-primary { background:#FBF3DA !important; color:#8A6D1F !important; }
+.wpg-act-chip-primary { background:#FBF3DA !important; color:var(--mustard-text) !important; }
 /* The ✎ pencil + click affordance only appear once a curator is signed in
    (workplan_goals.js adds .wpg-assoc-on to editable chip cells). */
-.wpg-assoc-edit-hint { color:#A9B4C2; font-size:0.72rem; opacity:0; transition:opacity 0.15s; }
+.wpg-assoc-edit-hint { color:var(--text-faint); font-size:0.72rem; opacity:0; transition:opacity 0.15s; }
 .wpg-assoc-cell.wpg-assoc-on { cursor:pointer; border-radius:4px; transition:background 0.15s; }
-.wpg-assoc-cell.wpg-assoc-on:hover { background:#F0F4F8; }
-.wpg-assoc-cell.wpg-assoc-on:hover .wpg-assoc-edit-hint { opacity:1; color:#4D7EA8; }
+.wpg-assoc-cell.wpg-assoc-on:hover { background:rgba(0,71,171,0.06); }
+.wpg-assoc-cell.wpg-assoc-on:hover .wpg-assoc-edit-hint { opacity:1; color:var(--cobalt); }
 .wpg-assoc-cell.wpg-assoc-saving { background:#FFF8E1 !important; }
 .wpg-assoc-cell.wpg-assoc-saved { background:#E8F5E9 !important; transition:background 0.4s; }
 .wpg-assoc-cell.wpg-assoc-error { background:#FFEBEE !important; transition:background 0.4s; }
 /* Association popover (anchored near the clicked chip cell) */
-.wpg-assoc-pop { position:absolute; z-index:10000; background:#fff; border:1px solid #c8d2de; border-radius:8px; box-shadow:0 8px 28px rgba(10,34,64,0.22); width:300px; max-width:92vw; padding:0.75rem 0.85rem; font-family:inherit; color:#0A2240; }
-.wpg-assoc-pop h4 { margin:0 0 0.15rem 0; font-size:0.9rem; color:#0A2240; }
+.wpg-assoc-pop { position:absolute; z-index:10000; background:#fff; border:1px solid var(--border-strong); border-radius:8px; box-shadow:0 8px 28px rgba(28,28,26,0.22); width:300px; max-width:92vw; padding:0.75rem 0.85rem; font-family:inherit; color:var(--navy-primary); }
+.wpg-assoc-pop h4 { margin:0 0 0.15rem 0; font-size:0.9rem; color:var(--navy-primary); }
 .wpg-assoc-pop .wpg-assoc-pop-sub { color:#666; font-size:0.72rem; margin-bottom:0.5rem; }
 .wpg-assoc-pop .wpg-assoc-list { display:flex; flex-direction:column; gap:0.15rem; max-height:240px; overflow-y:auto; }
 .wpg-assoc-pop .wpg-assoc-row { display:flex; align-items:center; gap:0.45rem; padding:0.2rem 0.25rem; border-radius:5px; font-size:0.8rem; }
-.wpg-assoc-pop .wpg-assoc-row:hover { background:#F4F6F9; }
+.wpg-assoc-pop .wpg-assoc-row:hover { background:var(--surface-subtle); }
 .wpg-assoc-pop .wpg-assoc-row label { flex:1; cursor:pointer; display:flex; align-items:center; gap:0.4rem; margin:0; font-weight:500; }
 .wpg-assoc-pop .wpg-assoc-row .wpg-assoc-name { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 /* "primary" radio column */
-.wpg-assoc-pop .wpg-assoc-prim { font-size:0.66rem; color:#8A6D1F; display:flex; align-items:center; gap:0.25rem; cursor:pointer; white-space:nowrap; }
+.wpg-assoc-pop .wpg-assoc-prim { font-size:0.66rem; color:var(--mustard-text); display:flex; align-items:center; gap:0.25rem; cursor:pointer; white-space:nowrap; }
 .wpg-assoc-pop .wpg-assoc-prim input { cursor:pointer; }
 .wpg-assoc-pop .wpg-assoc-prim.wpg-assoc-prim-disabled { color:#bbb; cursor:default; }
 .wpg-assoc-pop .wpg-assoc-pop-status { font-size:0.75rem; min-height:1.1em; margin-top:0.4rem; }
-.wpg-assoc-pop .wpg-assoc-pop-status.err { color:#A33; }
-.wpg-assoc-pop .wpg-assoc-pop-status.ok { color:#2A7D4F; }
+.wpg-assoc-pop .wpg-assoc-pop-status.err { color:var(--crimson); }
+.wpg-assoc-pop .wpg-assoc-pop-status.ok { color:var(--green-progress); }
 .wpg-assoc-pop .wpg-assoc-pop-actions { display:flex; justify-content:flex-end; gap:0.4rem; margin-top:0.6rem; }
 .wpg-assoc-pop .wpg-assoc-pop-actions button { padding:0.3rem 0.7rem; border-radius:5px; font-size:0.78rem; cursor:pointer; border:0; }
 .wpg-assoc-pop .wpg-assoc-cancel { background:#fff; border:1px solid #ccc !important; color:#333; }
-.wpg-assoc-pop .wpg-assoc-save { background:#0A2240; color:#fff; font-weight:600; }
+.wpg-assoc-pop .wpg-assoc-save { background:var(--cobalt); color:#fff; font-weight:600; }
 .wpg-assoc-pop .wpg-assoc-save:disabled { opacity:0.6; cursor:not-allowed; }
 .wpg-assoc-pop .wpg-assoc-note { font-size:0.68rem; color:#999; margin-top:0.45rem; line-height:1.3; }
 /* ═══ End MAP Articulation Analysis Cards ═══ */
@@ -8796,7 +8796,7 @@ def render_assoc_chip_line(pid, assoc_records, activity_options_json,
         chips_html += (
             f'<span class="{chip_cls}" title="{html_escape(title_txt, quote=True)}" '
             f'style="display:inline-block;margin:0 0.25rem 0 0;padding:0.05rem 0.4rem;'
-            f'background:#EEF3F8;color:#163A5F;border-radius:10px;font-size:0.7rem;'
+            f'background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.7rem;'
             f'font-weight:600;">{star}{short}</span>'
         )
 
@@ -9384,12 +9384,12 @@ def render_budget_html(budget, data_source_stamp=None):
     )
 
     # Color scheme
-    colors = ["#0A2240", "#163A5F", "#2A7D4F", "#C9A84C", "#9BBCD8"]
+    colors = ["var(--navy-primary)", "var(--navy-secondary)", "var(--green-progress)", "var(--gold-accent)", "var(--light-blue)"]
 
     # === SECTION 1: FUNDING OVERVIEW ===
     funding_html = '<div class="budget-funding-overview" id="budget-funding">\n'
     funding_html += f'        <h3>CPL 5-Year Funding Plan</h3>\n'
-    funding_html += f'        <p style="font-size:1.3rem;font-weight:bold;color:#0A2240;margin-bottom:1.5rem;">{fmt_dollars(grand_total)} Total Allocation</p>\n'
+    funding_html += f'        <p style="font-size:1.3rem;font-weight:bold;color:var(--navy-primary);margin-bottom:1.5rem;">{fmt_dollars(grand_total)} Total Allocation</p>\n'
 
     # Stacked bar chart (CSS-based)
     if sum(s.get("total", 0) for s in funding_sources) > 0:
@@ -9420,12 +9420,12 @@ def render_budget_html(budget, data_source_stamp=None):
     # Funding sources table
     funding_html += '        <table style="width:100%;border-collapse:collapse;margin-bottom:2rem;font-size:0.9rem;">\n'
     funding_html += '            <thead>\n'
-    funding_html += '                <tr style="background-color:#f5f5f5;border-bottom:2px solid #0A2240;">\n'
+    funding_html += '                <tr style="background-color:#f5f5f5;border-bottom:2px solid var(--navy-primary);">\n'
     funding_html += '                    <th style="padding:8px;text-align:left;font-weight:bold;">Funding Source</th>\n'
     for year in year_labels:
         funding_html += f'                    <th style="padding:8px;text-align:right;font-weight:bold;">{year}</th>\n'
     funding_html += '                    <th style="padding:8px;text-align:right;font-weight:bold;">2025-26 Expense</th>\n'
-    funding_html += '                    <th style="padding:8px;text-align:right;font-weight:bold;border-right:2px solid #0A2240;">Total</th>\n'
+    funding_html += '                    <th style="padding:8px;text-align:right;font-weight:bold;border-right:2px solid var(--navy-primary);">Total</th>\n'
     funding_html += '                </tr>\n'
     funding_html += '            </thead>\n'
     funding_html += '            <tbody>\n'
@@ -9459,7 +9459,7 @@ def render_budget_html(budget, data_source_stamp=None):
             val = budget_by_year[idx] if idx < len(budget_by_year) else 0
             funding_html += _bcell(YEAR_COLS[idx], val, bid)
         funding_html += _bcell("yr_2025_26_expense", expense_2025, bid, "color:#666;")
-        funding_html += _bcell("total", total, bid, "border-right:2px solid #0A2240;font-weight:bold;")
+        funding_html += _bcell("total", total, bid, "border-right:2px solid var(--navy-primary);font-weight:bold;")
         funding_html += f'                </tr>\n'
 
     funding_html += '            </tbody>\n'
@@ -9576,7 +9576,7 @@ def render_budget_html(budget, data_source_stamp=None):
             '    <div class="budget-expenditure-summary" id="budget-expenditure" style="margin-top:2rem;">\n'
             '        <h3>Expenditure Detail</h3>\n'
             '        <p style="color:#666;font-style:italic;background:#f5f5f5;'
-            'border-left:4px solid #C9A84C;padding:0.9rem 1.1rem;border-radius:4px;'
+            'border-left:4px solid var(--gold-accent);padding:0.9rem 1.1rem;border-radius:4px;'
             'margin:0;">Detailed expenditure line items and category breakdowns '
             'are being refreshed and will appear here once updated figures are '
             'entered. The funding plan and personnel below are current.</p>\n'
@@ -9592,13 +9592,13 @@ def render_budget_html(budget, data_source_stamp=None):
         personnel_html += '        <div style="overflow-x:auto;">\n'
         personnel_html += '            <table style="width:100%;border-collapse:collapse;margin-bottom:1.5rem;font-size:0.85rem;">\n'
         personnel_html += '                <thead>\n'
-        personnel_html += '                    <tr style="background-color:#f5f5f5;border-bottom:2px solid #0A2240;">\n'
+        personnel_html += '                    <tr style="background-color:#f5f5f5;border-bottom:2px solid var(--navy-primary);">\n'
         personnel_html += '                        <th style="padding:8px;text-align:left;font-weight:bold;">Position Title</th>\n'
 
         for year in year_labels:
             personnel_html += f'                        <th style="padding:8px;text-align:right;font-weight:bold;">FTE {year}</th>\n'
 
-        personnel_html += '                        <th style="padding:8px;text-align:right;font-weight:bold;border-right:2px solid #0A2240;">Total Compensation</th>\n'
+        personnel_html += '                        <th style="padding:8px;text-align:right;font-weight:bold;border-right:2px solid var(--navy-primary);">Total Compensation</th>\n'
         personnel_html += '                    </tr>\n'
         personnel_html += '                </thead>\n'
         personnel_html += '                <tbody>\n'
@@ -9614,20 +9614,20 @@ def render_budget_html(budget, data_source_stamp=None):
             for fte in fte_by_year:
                 personnel_html += f'                        <td style="padding:8px;text-align:right;">{fte:.2f}</td>\n'
 
-            personnel_html += f'                        <td style="padding:8px;text-align:right;border-right:2px solid #0A2240;font-weight:bold;">{fmt_dollars(total_comp)}</td>\n'
+            personnel_html += f'                        <td style="padding:8px;text-align:right;border-right:2px solid var(--navy-primary);font-weight:bold;">{fmt_dollars(total_comp)}</td>\n'
             personnel_html += f'                    </tr>\n'
 
         # Personnel totals
         total_fte = personnel_totals.get("total_fte", 0)
         total_comp = personnel_totals.get("total_comp", 0)
 
-        personnel_html += '                    <tr style="background-color:#f9f9f9;border-top:2px solid #0A2240;border-bottom:2px solid #0A2240;font-weight:bold;">\n'
+        personnel_html += '                    <tr style="background-color:#f9f9f9;border-top:2px solid var(--navy-primary);border-bottom:2px solid var(--navy-primary);font-weight:bold;">\n'
         personnel_html += f'                        <td style="padding:8px;">TOTAL</td>\n'
         # Calculate totals by year from individual positions
         for year_idx in range(5):
             year_fte = sum(p.get("fte_by_year", [])[year_idx] if year_idx < len(p.get("fte_by_year", [])) else 0 for p in personnel)
             personnel_html += f'                        <td style="padding:8px;text-align:right;">{year_fte:.2f}</td>\n'
-        personnel_html += f'                        <td style="padding:8px;text-align:right;border-right:2px solid #0A2240;">{fmt_dollars(total_comp)}</td>\n'
+        personnel_html += f'                        <td style="padding:8px;text-align:right;border-right:2px solid var(--navy-primary);">{fmt_dollars(total_comp)}</td>\n'
         personnel_html += '                    </tr>\n'
 
         personnel_html += '                </tbody>\n'
@@ -9651,9 +9651,9 @@ def render_budget_html(budget, data_source_stamp=None):
             except:
                 formatted = str(value)
 
-            personnel_html += f'            <div style="background-color:#f5f5f5;padding:1rem;border-radius:4px;border-left:4px solid #0A2240;">\n'
+            personnel_html += f'            <div style="background-color:#f5f5f5;padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">\n'
             personnel_html += f'                <div style="font-size:0.75rem;color:#666;text-transform:uppercase;font-weight:bold;margin-bottom:0.5rem;">{label}</div>\n'
-            personnel_html += f'                <div style="font-size:1.3rem;font-weight:bold;color:#0A2240;">{formatted}</div>\n'
+            personnel_html += f'                <div style="font-size:1.3rem;font-weight:bold;color:var(--navy-primary);">{formatted}</div>\n'
             personnel_html += f'            </div>\n'
 
         personnel_html += '        </div>\n'
@@ -10077,17 +10077,17 @@ def main():
             proj_info_parts.append(
                 f'<details class="project-description" style="max-width:800px;margin:0.4rem auto 0;'
                 f'cursor:pointer;">'
-                f'<summary style="font-size:0.82rem;color:#9BBCD8;font-weight:600;'
+                f'<summary style="font-size:0.82rem;color:var(--light-blue);font-weight:600;'
                 f'list-style:none;display:inline-flex;align-items:center;gap:0.3rem;">'
                 f'<span class="desc-arrow" style="font-size:0.7rem;transition:transform 0.2s;">&#9654;</span>'
                 f' Project Description</summary>'
                 f'<div style="font-size:0.82rem;color:#ccc;line-height:1.5;'
                 f'margin-top:0.4rem;padding:0.5rem 0.8rem;'
-                f'border-left:2px solid rgba(155,188,216,0.3);text-align:left;">'
+                f'border-left:2px solid rgba(125,161,212,0.3);text-align:left;">'
                 f'{escaped_desc}</div></details>'
                 f'<style>.project-description[open] .desc-arrow{{transform:rotate(90deg);}}</style>')
         att_count = attachments.get("total", 0)
-        badge_html = (f' <span style="background:#C9A84C;color:#0A2240;font-size:0.65rem;'
+        badge_html = (f' <span style="background:var(--gold-accent);color:var(--navy-primary);font-size:0.65rem;'
                       f'font-weight:700;padding:1px 6px;border-radius:8px;margin-left:4px;">'
                       f'{att_count}</span>') if att_count > 0 else ''
         proj_info_parts.append(
@@ -10610,12 +10610,12 @@ def main():
                 'setTimeout(function(){location.reload()},300000)}'
                 'else{b.textContent=\'❌ \'+( d.error||\'Unknown error\');b.disabled=false}})'
                 '.catch(function(e){b.textContent=\'❌ \'+e.message;b.disabled=false})" style="'
-                'background:transparent;color:#C9A84C;border:1px solid #C9A84C;'
+                'background:transparent;color:var(--gold-accent);border:1px solid var(--gold-accent);'
                 'padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;'
                 'font-size:0.8rem;font-family:\'Source Sans 3\',Arial,sans-serif;'
                 'transition:all 0.2s;" '
-                'onmouseover="if(!this.disabled){this.style.background=\'#C9A84C\';this.style.color=\'#0A2240\'}" '
-                'onmouseout="if(!this.disabled){this.style.background=\'transparent\';this.style.color=\'#C9A84C\'}">'
+                'onmouseover="if(!this.disabled){this.style.background=\'var(--gold-accent)\';this.style.color=\'var(--navy-primary)\'}" '
+                'onmouseout="if(!this.disabled){this.style.background=\'transparent\';this.style.color=\'var(--gold-accent)\'}">'
                 '&#x21bb; Refresh Today&#39;s Data</button></div>'
             )
             # Remove any existing refresh button first, then insert after last-updated.
@@ -10699,7 +10699,7 @@ def main():
                 </div>
 
                 <div class="vision-card">
-                    <h3 style="color:#C9A84C;">{CPL_GOALS["Goal 1"]["title"]}</h3>
+                    <h3 style="color:var(--mustard-text);">{CPL_GOALS["Goal 1"]["title"]}</h3>
                     <p style="font-size:0.85rem;">{CPL_GOALS["Goal 1"]["target"]}</p>
                     <ul style="font-size:0.82rem;color:#555;margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
                 for b in CPL_GOALS["Goal 1"]["bullets"]:
@@ -10715,7 +10715,7 @@ def main():
                 </div>
 
                 <div class="vision-card">
-                    <h3 style="color:#C9A84C;">{CPL_GOALS["Goal 2"]["title"]}</h3>
+                    <h3 style="color:var(--mustard-text);">{CPL_GOALS["Goal 2"]["title"]}</h3>
                     <p style="font-size:0.85rem;">{CPL_GOALS["Goal 2"]["target"]}</p>
                     <ul style="font-size:0.82rem;color:#555;margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
                 for b in CPL_GOALS["Goal 2"]["bullets"]:
@@ -10731,7 +10731,7 @@ def main():
                 </div>
 
                 <div class="vision-card">
-                    <h3 style="color:#C9A84C;">{CPL_GOALS["Goal 3"]["title"]}</h3>
+                    <h3 style="color:var(--mustard-text);">{CPL_GOALS["Goal 3"]["title"]}</h3>
                     <p style="font-size:0.85rem;">{CPL_GOALS["Goal 3"]["target"]}</p>
                     <ul style="font-size:0.82rem;color:#555;margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
                 for b in CPL_GOALS["Goal 3"]["bullets"]:

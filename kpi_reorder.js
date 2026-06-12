@@ -79,7 +79,7 @@
       ".kpi-reorder-reset { text-align: right; padding: 0.2rem 2rem 0.6rem; " +
       "background: #ffffff; margin-top: -1px; }\n" +
       ".kpi-reorder-reset button { background: none; border: none; cursor: pointer; " +
-      "font-size: 0.72rem; color: var(--navy-primary, #0A2240); opacity: 0.65; " +
+      "font-size: 0.72rem; color: var(--navy-primary, #1C1C1A); opacity: 0.65; " +
       "text-decoration: underline; padding: 0; }\n" +
       ".kpi-reorder-reset button:hover { opacity: 1; }";
     document.head.appendChild(st);

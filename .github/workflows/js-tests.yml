@@ -20,3 +20,9 @@ jobs:
           node-version: '20'
       - run: npm install
       - run: npm test
+      # First Light contrast lint (Session 49) — verifies the live :root in
+      # both HTMLs matches the blessed spec (prototype v1.6) and measures AA
+      # on worst-case backdrops. Pure-stdlib python; part of this same
+      # non-required check.
+      - name: Contrast lint (live :root vs First Light spec)
+        run: python3 prototype/check_contrast.py --live

@@ -124,7 +124,7 @@
           status.style.color = "#A33";
           return;
         }
-        status.style.color = "#0A2240";
+        status.style.color = "var(--text-strong)";
         status.textContent = "Sending magic link...";
         signIn(email).then(function (r) {
           if (r.ok) {

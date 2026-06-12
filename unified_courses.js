@@ -704,7 +704,7 @@
         overlay.appendChild(box);
         function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
         overlay.onclick = function (e) { if (e.target === overlay) close(); };
-        box.appendChild(el("h3", { style: "margin:0 0 4px;color:#0A2240;" }, ["Merge courses"]));
+        box.appendChild(el("h3", { style: "margin:0 0 4px;color:var(--text-strong);" }, ["Merge courses"]));
         box.appendChild(el("p", { style: "margin:0 0 12px;color:#6b7280;" },
           ["Select the courses that are the same as “" + (seed.title || seed.id) + "”. Exact-title matches are pre-checked; review the suggested near matches and search to add others (incl. Stand-Alone)."]));
         box.appendChild(el("label", { style: "display:block;font-weight:600;margin:8px 0 2px;" }, ["Unified title"]));
@@ -807,7 +807,7 @@
         var actions = el("div", { style: "margin-top:16px;display:flex;gap:10px;justify-content:flex-end;" });
         var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Cancel"]);
         cancel.onclick = close;
-        go = el("button", { type: "button", style: "padding:7px 14px;border:none;border-radius:6px;background:#0A2240;color:#C9A84C;font-weight:600;cursor:pointer;" }, ["Consolidate"]);
+        go = el("button", { type: "button", style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;" }, ["Consolidate"]);
         go.onclick = function () { doConsolidate(chosen, titleIn.value.trim(), (identSel.value ? "" : discSel.value), identSel.value, close); };
         refreshIdentity();
         actions.appendChild(cancel); actions.appendChild(go);
@@ -896,7 +896,7 @@
       if (!session) return;
       var dim = "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;";
       var boxCss = "background:#fff;max-width:720px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;";
-      var goCss = "padding:7px 14px;border:none;border-radius:6px;background:#0A2240;color:#C9A84C;font-weight:600;cursor:pointer;";
+      var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;";
       var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;";
       loadSuggestions().then(function (data) {
         var anchored = (data.groups || []).map(function (g) { g._kind = "anchored"; return g; });
@@ -950,7 +950,7 @@
           box.innerHTML = "";
           while (i < groups.length && liveMembers(groups[i]).length < 2) i++;
           if (i >= groups.length) {
-            box.appendChild(el("h3", { style: "margin:0 0 8px;color:#0A2240;" }, ["Suggested merges"]));
+            box.appendChild(el("h3", { style: "margin:0 0 8px;color:var(--text-strong);" }, ["Suggested merges"]));
             box.appendChild(el("p", { style: "color:#6b7280;" }, ["End of the worklist — nice work. New suggestions regenerate on the next daily build."]));
             var d = el("button", { style: goCss }, ["Done"]); d.onclick = close; box.appendChild(d);
             return;
@@ -960,7 +960,7 @@
           var isEvidence = g._kind === "evidence";
           var isDesc = g._kind === "desc";
           var isTitle = g._kind === "title";
-          box.appendChild(el("h3", { style: "margin:0 0 2px;color:#0A2240;" }, ["Suggested merge " + (i + 1) + " of " + groups.length]));
+          box.appendChild(el("h3", { style: "margin:0 0 2px;color:var(--text-strong);" }, ["Suggested merge " + (i + 1) + " of " + groups.length]));
           // Section badge so the curator knows whether this merges into an
           // existing identity or mints a brand-new unified course.
           var badge = isSingleton
@@ -1093,7 +1093,7 @@
       function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
       overlay.onclick = function (e) { if (e.target === overlay) close(); };
 
-      box.appendChild(el("h3", { style: "margin:0 0 2px;color:#0A2240;" }, [r.title || r.id || ""]));
+      box.appendChild(el("h3", { style: "margin:0 0 2px;color:var(--text-strong);" }, [r.title || r.id || ""]));
       box.appendChild(el("div", { style: "color:#6b7280;font-family:monospace;font-size:.8rem;margin-bottom:12px;" },
         [r.id + " · " + idSysLabel(r.id_system) + " · " + (r.kind || "") + " · " + statusOf(r)]));
 
@@ -1118,7 +1118,7 @@
       box.appendChild(dl);
 
       box.appendChild(el("div", { style: "display:flex;align-items:baseline;justify-content:space-between;margin:16px 0 4px;" }, [
-        el("label", { style: "font-weight:600;color:#0A2240;" }, ["Description"]),
+        el("label", { style: "font-weight:600;color:var(--text-strong);" }, ["Description"]),
         el("span", { id: "uc-desc-src", style: "font-size:.78rem;color:#94a3b8;" }, [""])
       ]));
       var descWrap = el("div", {});
@@ -1142,7 +1142,7 @@
           ta.value = text || "";
           descWrap.appendChild(ta);
           var saveRow = el("div", { style: "margin-top:6px;display:flex;align-items:center;gap:10px;" });
-          var save = el("button", { type: "button", style: "padding:6px 12px;border:none;border-radius:6px;background:#0A2240;color:#C9A84C;font-weight:600;cursor:pointer;" }, ["Save description"]);
+          var save = el("button", { type: "button", style: "padding:6px 12px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;" }, ["Save description"]);
           var note = el("span", { style: "font-size:.78rem;color:#94a3b8;" }, []);
           save.onclick = function () {
             var val = ta.value.trim();
@@ -1314,7 +1314,7 @@
       syncBadge.removeAttribute("style");
       var n = pendingSyncCount();
       if (!n) return;
-      syncBadge.setAttribute("style", "background:#FFF6E0;border:1px solid #C9A84C;color:#7a5c00;" +
+      syncBadge.setAttribute("style", "background:#FFF6E0;border:1px solid var(--mustard-fill);color:var(--mustard-text);" +
         "padding:3px 8px;border-radius:6px;font-size:.82rem;display:inline-flex;align-items:center;gap:6px;");
       syncBadge.appendChild(el("span", {
         title: "Curation is saved to the database instantly, then folded into git once a day (the dashboard rebuilds then)."
@@ -1935,7 +1935,7 @@
       st.id = "uc-fix-css";
       st.textContent =
         "#tab-unified-courses .uc-table td:nth-child(3) .uc-trunc{white-space:normal;overflow:visible;text-overflow:clip;}" +
-        "#tab-unified-courses .uc-member-table th{color:#fff;background:var(--navy-primary,#0A2240);}" +
+        "#tab-unified-courses .uc-member-table th{color:#fff;background:var(--navy-primary,#1C1C1A);}" +
         "#tab-unified-courses table.uc-table{table-layout:fixed;min-width:900px;}" +
         // Clip only the text-bearing columns (title/subj/disc/TOP/flags) —
         // numeric/enum cells can't overflow a fixed column, and a clip context

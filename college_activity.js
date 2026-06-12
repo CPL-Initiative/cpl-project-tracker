@@ -10,7 +10,7 @@
  * the data blobs, preventing layout regressions.
  */
     (function() {
-      const GOLD = '#C9A84C', GREEN = '#4CAF50', AMBER = '#FF9800', BLUE = '#5B9BD5', RED = '#EF5350';
+      const GOLD = '#E3B341', GREEN = '#89A67F', AMBER = '#FF9800', BLUE = '#7DA1D4', RED = '#CF8F8F';
 
       // Data embedded from Python
       const allData = window.COLLEGE_ACTIVITY_DATA || [];

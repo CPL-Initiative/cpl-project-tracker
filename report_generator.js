@@ -56,7 +56,7 @@
         html += '<div style="max-width:700px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">';
 
         // Header
-        html += '<div style="background:linear-gradient(135deg,#0A2240 0%,#163A5F 100%);padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">';
+        html += '<div style="background:linear-gradient(135deg,var(--navy-primary) 0%,var(--navy-secondary) 100%);padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">';
         html += '<h2 style="margin:0;color:#fff;font-size:1.1rem;">Custom Report Generator</h2>';
         html += '<button id="reportModalClose" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:0;line-height:1;">&times;</button>';
         html += '</div>';
@@ -66,7 +66,7 @@
 
         // Audience picker
         html += '<div style="margin-bottom:1.2rem;">';
-        html += '<label style="font-weight:700;color:#0A2240;font-size:0.9rem;display:block;margin-bottom:0.4rem;">Target Audience</label>';
+        html += '<label style="font-weight:700;color:var(--text-strong);font-size:0.9rem;display:block;margin-bottom:0.4rem;">Target Audience</label>';
         html += '<select id="reportAudience" style="width:100%;padding:8px 12px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;font-family:inherit;">';
         AUDIENCES.forEach(function (a) {
             html += '<option value="' + a.id + '">' + a.label + '</option>';
@@ -76,7 +76,7 @@
 
         // Select All / None
         html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">';
-        html += '<label style="font-weight:700;color:#0A2240;font-size:0.9rem;">Select Activities & Projects</label>';
+        html += '<label style="font-weight:700;color:var(--text-strong);font-size:0.9rem;">Select Activities & Projects</label>';
         html += '<div style="display:flex;gap:0.5rem;">';
         html += '<button class="rpt-sel-btn" data-action="all" style="font-size:0.75rem;padding:3px 10px;border:1px solid #ccc;border-radius:3px;background:#f5f5f5;cursor:pointer;font-family:inherit;">Select All</button>';
         html += '<button class="rpt-sel-btn" data-action="none" style="font-size:0.75rem;padding:3px 10px;border:1px solid #ccc;border-radius:3px;background:#f5f5f5;cursor:pointer;font-family:inherit;">Clear All</button>';
@@ -91,8 +91,8 @@
             html += '<div style="margin-bottom:0.8rem;border:1px solid #e8e8e8;border-radius:6px;overflow:hidden;">';
 
             // Activity header with checkbox
-            html += '<label style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0.8rem;background:#f0f4f8;cursor:pointer;font-weight:600;color:#0A2240;font-size:0.85rem;">';
-            html += '<input type="checkbox" class="rpt-activity-cb" data-activity="' + actId + '" checked style="accent-color:#C9A84C;cursor:pointer;">';
+            html += '<label style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0.8rem;background:#f0f4f8;cursor:pointer;font-weight:600;color:var(--text-strong);font-size:0.85rem;">';
+            html += '<input type="checkbox" class="rpt-activity-cb" data-activity="' + actId + '" checked style="accent-color:var(--accent-link);cursor:pointer;">';
             html += actKey;
             html += '</label>';
 
@@ -100,8 +100,8 @@
             html += '<div style="padding:0.3rem 0.8rem 0.5rem 2rem;">';
             projects.forEach(function (p) {
                 html += '<label style="display:flex;align-items:flex-start;gap:0.4rem;padding:0.2rem 0;cursor:pointer;font-size:0.82rem;color:#333;">';
-                html += '<input type="checkbox" class="rpt-project-cb" data-pid="' + p.id + '" data-activity="' + actId + '" checked style="margin-top:2px;accent-color:#C9A84C;cursor:pointer;">';
-                html += '<span><strong style="color:#163A5F;">' + p.id + '</strong> ' + p.name + '</span>';
+                html += '<input type="checkbox" class="rpt-project-cb" data-pid="' + p.id + '" data-activity="' + actId + '" checked style="margin-top:2px;accent-color:var(--accent-link);cursor:pointer;">';
+                html += '<span><strong style="color:var(--navy-secondary);">' + p.id + '</strong> ' + p.name + '</span>';
                 html += '</label>';
             });
             html += '</div></div>';
@@ -115,7 +115,7 @@
         html += '<div style="padding:1rem 1.5rem;border-top:1px solid #e8e8e8;display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap;">';
         html += '<div id="reportStatus" style="font-size:0.8rem;color:#666;"></div>';
         html += '<div style="display:flex;gap:0.5rem;">';
-        html += '<button id="reportGenBtn" style="padding:8px 20px;background:#0A2240;color:#fff;border:none;border-radius:4px;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;">Generate Report</button>';
+        html += '<button id="reportGenBtn" style="padding:8px 20px;background:var(--cobalt);color:#fff;border:none;border-radius:4px;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;">Generate Report</button>';
         html += '</div></div>';
 
         html += '</div></div>';
@@ -448,9 +448,9 @@
         btn.id = 'customReportBtn';
         btn.innerHTML = '&#128202; Custom Report';
         btn.type = 'button';
-        btn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:#0A2240;color:#fff;border:none;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;margin-left:0.5rem;transition:background 0.2s;";
-        btn.onmouseover = function () { this.style.background = '#163A5F'; };
-        btn.onmouseout = function () { this.style.background = '#0A2240'; };
+        btn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:var(--cobalt);color:#fff;border:none;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;margin-left:0.5rem;transition:background 0.2s;";
+        btn.onmouseover = function () { this.style.background = '#003B8E'; };
+        btn.onmouseout = function () { this.style.background = 'var(--cobalt)'; };
         btn.addEventListener('click', openModal);
         filterBtns.appendChild(btn);
     }
