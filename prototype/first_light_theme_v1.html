@@ -212,7 +212,7 @@ section > p.lede { color:var(--text-muted); font-size:.9rem; margin-bottom: .9re
 .chip {
   display:inline-flex; align-items:center; justify-content:center; gap:.35rem;
   font-size:.78rem; font-weight:600; border-radius:8px; border:none;
-  width:8.5rem; height:26px; padding:0 .55rem; box-sizing:border-box;
+  width:7.25rem; height:26px; padding:0 .45rem; box-sizing:border-box;
   color:#FFFFFF; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
 .chip-crimson { background:var(--crimson); }
@@ -329,7 +329,7 @@ footer .credit { margin-bottom:.3rem; }
 
 <div class="bg-art" id="bgArt" aria-hidden="true"></div>
 
-<div class="proto-note">Prototype v1.4.1 — “First Light” theme spec &amp; living mock · demo data only · token values AA-verified by <code>prototype/check_contrast.py</code></div>
+<div class="proto-note">Prototype v1.4.2 — “First Light” theme spec &amp; living mock · demo data only · token values AA-verified by <code>prototype/check_contrast.py</code></div>
 
 <header class="masthead glass">
   <h1>CPL Project Tracker</h1>
@@ -440,7 +440,7 @@ footer .credit { margin-bottom:.3rem; }
           <div class="job">AI-inferred · suggested · not yet human-verified</div>
           <div class="demo">
             <span class="chip chip-violet">⚙ Inferred</span>
-            <span class="chip chip-violet" title="✨ Suggested merge">✨ Suggested merge</span>
+            <span class="chip chip-violet" title="Suggested merge">✨ Suggested</span>
           </div>
         </div>
         <div class="role-card glass">
@@ -511,7 +511,7 @@ footer .credit { margin-bottom:.3rem; }
         <li><strong>Color never carries meaning alone</strong> — every semantic accent ships with a glyph (▲▼ ✓ ⚠ ⚙ ✨). Saves the crimson/hunter pair for color-blind readers.</li>
         <li><strong>Glass always carries a scrim</strong> — text contrast is computed against the worst-case composite behind it, never the best case. Data tables skip glass entirely.</li>
         <li><strong>Mustard’s bright hue is never text</strong> — chips fill with the derived <code>--mustard-chip</code> ochre under white labels (4.63:1); the bright hue is reserved for dots/banners with ink text (8.77:1).</li>
-        <li><strong>Chips are not buttons</strong> — same corner language, but smaller type, no hover, no pointer; only cobalt elements act. Uniform width applies to <em>labeled status</em> chips; glyph-only badges stay compact (<code>chip-fit</code>).</li>
+        <li><strong>Chips are not buttons</strong> — same corner language, but smaller type, no hover, no pointer; only cobalt elements act. Uniform width applies to <em>labeled status</em> chips (7.25rem — chip vocabulary stays one short word + glyph; "⚠ Needs review" is the width-setter); glyph-only badges stay compact (<code>chip-fit</code>).</li>
         <li><strong>Cobalt and violet stay structurally distinct</strong> (the one confusable pair): cobalt always with underline/ring affordances, violet always on glyph-badges.</li>
         <li><strong>OS preferences honored:</strong> <code>prefers-reduced-transparency</code> → solid surfaces; <code>prefers-reduced-motion</code> → no reveal animation; <code>prefers-contrast: more</code> → stronger borders + darker muted text.</li>
         <li><strong>Visible focus everywhere</strong> (3px cobalt ring, offset 2px) · interactive targets ≥24×24 px · the First Light dialog is a real <code>role="dialog"</code> with focus trap, ESC, and focus return.</li>
