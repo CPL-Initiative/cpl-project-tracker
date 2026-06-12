@@ -576,6 +576,18 @@ ALGO_DETAILS_CSS = """
     color: rgba(255,255,255,0.35);
     font-style: italic;
 }
+/* First Light (PR-2): headline KPI cards are light glass — algo text flips
+   to the ink scale there. The class-less dark cards (trend, College
+   Activity) keep the white-alpha base above. */
+.kpi-card .algo-details { border-top: 1px dashed var(--border); }
+.kpi-card .algo-details summary { color: var(--text-muted); }
+.kpi-card .algo-details summary::before { color: var(--mustard-text); }
+.kpi-card .algo-details summary:hover { color: var(--text-strong); }
+.kpi-card .algo-details[open] summary { color: var(--mustard-text); }
+.kpi-card .algo-details .algo-body { color: var(--text-body); }
+.kpi-card .algo-details .algo-label { color: var(--mustard-text); }
+.kpi-card .algo-details .algo-value { color: var(--text-body); }
+.kpi-card .algo-details .algo-meta { color: var(--text-muted); }
 /* ═══ End Collapsible Algorithm Descriptions ═══ */
 """
 
@@ -1630,7 +1642,7 @@ def render_kpi_section_html(kpis, kpi_display_order=None, kpi_params=None):
         # ── Standard KPI card rendering ──
         sub_html = ""
         if kpi.get("sub"):
-            sub_html = f'<div class="kpi-sub" style="font-size:0.75rem;opacity:0.85;margin-top:2px;color:#fff;">{kpi["sub"]}</div>'
+            sub_html = f'<div class="kpi-sub" style="font-size:0.75rem;opacity:0.85;margin-top:2px;color:var(--text-muted);">{kpi["sub"]}</div>'
         bd_html = ""
         if kpi.get("breakdowns"):
             rows = ""
