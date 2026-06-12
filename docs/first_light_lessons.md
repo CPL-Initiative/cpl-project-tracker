@@ -1,7 +1,7 @@
 ---
 title: First Light — daily plein air art, the theme spec, and the design sprint
 created: 2026-06-12
-updated: 2026-06-12
+updated: 2026-06-12 (Session 49 — the retheme ships)
 tags: [lessons, first-light, design-system, plein-air, accessibility, public-domain, ui]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -136,3 +136,74 @@ base class wears it everywhere; the solid v1.4.2 family is archived as
 findings if triage scanning ever needs the shout). The retheme paints with
 glass-quiet chips. Session 48's moniker, Sam-christened: **Bruh
 Glasstronaut**. 🚀
+
+## Session 49 (2026-06-12, Bruh Orbitron) — the retheme SHIPS: 3 PRs, prod repainted same-afternoon
+
+### What shipped
+
+- **#407 — the palette flip.** `:root` in both HTMLs swapped to the spec
+  values; legacy navy/gold token NAMES kept as remapped aliases so the
+  generator + older CSS converge without a rename (`--gold-accent` → the
+  bright `--mustard-on-dark`; `--navy-primary` → ink). Contextual legacy-hex
+  sweep (~250 sites): gold-as-text-on-light → `--mustard-text`; gold on dark
+  / banner fills → bright mustard with ink text (8.77:1); interactive
+  navies/blues → cobalt (+`#003B8E` hover); canvas `fillStyle` + SVG
+  presentation attributes get **literal** hexes (var() doesn't resolve
+  there). The generator moved in Rule-1 lockstep; the activity progress
+  **bar color split from its label color** (a bright bar must never produce
+  an unreadable label). `check_contrast.py` grew `--live` (Rule-4 identity +
+  spec drift-pins + recomputed AA on worst-case backdrops) wired into
+  js-tests; `tests/retheme_tokens.test.js` pins the flip.
+- **#408 — glass chrome + the ghosted painting.** `.glass` base +
+  `@supports` fallback + `prefers-reduced-transparency`/`contrast` honored;
+  masthead/rail/KPI-hero/filter-bar go glass; the KPI band goes transparent
+  so the painting shows between floating cards; the dark trend +
+  College Activity cards **deliberately stay ink** (data surfaces) — the
+  `algo-details` CSS gained a light variant scoped under `.kpi-card` while
+  class-less dark cards keep the white-alpha base. `first_light.js` grew
+  `.cplfl-bg` (today's pick, grayscale, 10%, fallback gradient, opt-out
+  lifts it live) and pinned the dialog to `--surface-opaque`.
+- **#410 — glass-quiet chips.** CCR `.uc-badge` + CSR `.cs-badge` (the
+  sweep chips) + CER `.cr-chip` family + To-Do FAB. Severity reads in TEXT
+  grades on translucent fills; CER's "Generated" moved from pre-spec amber
+  to the **violet machine lane**; the FAB became the cobalt primary action.
+
+### Lessons worth remembering
+
+1. **`var()` has hard no-go zones**: canvas `fillStyle`/`strokeStyle`, SVG
+   presentation attributes (`stroke=`, `fill=`, `stop-color=`), and mermaid
+   classDefs need resolved literals. The scratch-regen diff CAUGHT my
+   blanket sed putting `var()` into SVG attrs — regen-diff is a verifier.
+2. **One token can't serve two surfaces.** Old gold was text-on-dark AND
+   text-on-light; old `--surface` was chrome AND data. The fix is a
+   bright/text grade PAIR (`--mustard-fill`/`--mustard-text`) and a
+   glass/opaque pair (`--surface`/`--surface-opaque`) — then sweep consumers
+   to the right side. Same shape as the bar/label split.
+3. **Rebase inverts ours/theirs.** During `git rebase`, `--theirs` = YOUR
+   commit. My conflict script assumed merge semantics; the assertion tripped
+   and the right outcome happened anyway (my side carried the work). Assert
+   loudly in resolution scripts — silent wrong-side picks are the danger.
+4. **Mid-flight cron conflicts self-heal via converge-by-regen**: when the
+   dispatched daily run races a styleblock PR, take the side carrying the
+   CSS work, let the post-merge dispatch republish data freshness. Never
+   hand-merge a generated 14.5k-line HTML.
+5. **Sibling sessions interleave on main now** (the fold #409 landed
+   between my rebases and even fixed a data-fixture test under me).
+   `git fetch` + rebase before every push; expect `mergeable_state` to
+   wobble (`unknown` → `unstable`); merge on `unstable` per policy.
+6. **The !important uniform-header block earned its keep** — the masthead
+   flipped dark→glass with ZERO generator edits because the Session-34
+   override layer already owned every generator-emitted header item.
+
+### Current state / next steps (the design lane — docs/session_52_handoff.md)
+
+- **Sam's screenshot verdicts** drive the polish pass: chip width (uniform
+  6.5rem deliberately NOT applied to dense table cells), the ink data-cards
+  (lighten to opaque-light?), ghost-art opacity, glass intensity.
+- **kpi_reorder keyboard path** — the conformance gap Sam wants closed
+  (drag-drop kept).
+- Deferred surfaces: `Dashboard_Element_Map.html`, Word-docx + xlsx export
+  branding (different medium — Sam decision), EACR dark-card family,
+  per-tab neutral-gray sweeps (CCR/CER slate drift).
+- First Light carryover: manifest growth 3 → 60–90, reflections mining,
+  the Almanac.
