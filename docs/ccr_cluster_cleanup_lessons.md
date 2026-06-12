@@ -1265,7 +1265,7 @@ mid-print, BEFORE its writes — looked applied, wasn't. Pipe applies to a
 file (`> log 2>&1`), check the exit code, verify idempotency by re-running
 the dry-run.
 
-## Session 53 — auto-merge pass 1 + Sam's parallel UI batch (2026-06-12 night)
+## Session 53 — Bruh Infinitus: auto-merge pass 1 + Sam's parallel UI batch (2026-06-12 night)
 
 **What shipped (PRs #418–#424).** Sam drove live. (1) Worklist popup chrome —
 persistent drag-handle title bar + ✕ closer + PROPOSAL framing ("Proposed
