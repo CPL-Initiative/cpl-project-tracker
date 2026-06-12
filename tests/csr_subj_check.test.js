@@ -65,8 +65,34 @@ const SEED = {
       total_mids: 9, variants_observed: { XAAA: 5, XBBB: 4 },
       local_subject_variants: { XAAA: 5, XBBB: 4 }, top_category_2digit: "49", needs_review: true,
     },
+    // Fan-in alias pair sharing one code (the THEA case): "Theater Arts" is
+    // the recorded alternate name of "Drama/Theater Arts" — both on THEA is
+    // the convergence working, NOT a collision. (The 2026-06-12 sweep flagged
+    // exactly this and pushed a needless re-code.)
+    "Drama/Theater Arts": {
+      canonical_subj4: "THEA", source: "curator_override", reviewed_at: "2026-06-12T14:29:00Z",
+      reviewed_by: "map@rccd.edu", data_modal: "THEA", data_modal_is_4letter: true,
+      total_mids: 100, variants_observed: { THEA: 100 },
+      local_subject_variants: { THEA: 60, DRAM: 10 }, top_category_2digit: "10",
+    },
+    "Theater Arts": {
+      canonical_subj4: "THEA", source: "curator_override", reviewed_at: "2026-06-12T12:54:00Z",
+      reviewed_by: "map@rccd.edu", data_modal: "THEA", data_modal_is_4letter: true,
+      total_mids: 20, variants_observed: { THEA: 20 },
+      local_subject_variants: { THEA: 18 }, top_category_2digit: "10",
+    },
+    // Alias family with DRIFT across it (the production Kinesiology ⟵
+    // Physical Education fan-in): PE rows still keyed KINE must show as plain
+    // fold-queue drift, NOT cross-claimed against their own family's owner.
+    "Physical Education": {
+      canonical_subj4: "PEDU", source: "curator_override", reviewed_at: "2026-06-12T12:48:00Z",
+      reviewed_by: "map@rccd.edu", data_modal: "PE", data_modal_is_4letter: false,
+      total_mids: 35, variants_observed: { PEDU: 30, KINE: 5 },
+      local_subject_variants: { PE: 25, PEDU: 8 }, top_category_2digit: "08",
+    },
   },
 };
+const ALIASES = { aliases: { "Drama/Theater Arts": ["Theater Arts"], "Kinesiology": ["Physical Education"] } };
 const FLSPLIT = {
   discipline: "Foreign Languages",
   languages: {
@@ -85,6 +111,7 @@ function mockFetch(url, opts) {
   }
   const body =
     u.indexOf("discipline_canonical_subj4.json") >= 0 ? SEED :
+    u.indexOf("discipline_aliases.json") >= 0 ? ALIASES :
     u.indexOf("foreign_language_subj4.json") >= 0 ? FLSPLIT :
     u.indexOf("cid_descriptors") >= 0 ? { descriptors: [{ descriptor: "AUTO 100", title: "Intro Auto" }] } :
     u.indexOf("ccn_courses") >= 0 ? { courses: [] } :
@@ -151,6 +178,28 @@ setTimeout(() => {
     check("missing-canonical queue lists Mystery Studies", text.indexOf("Mystery Studies") >= 0);
     check("snapshot stamp shown", text.indexOf("2026-06-12") >= 0);
 
+    // ── alias-family exemption (the THEA case) ───────────────────────────
+    function sectionUl(headerSubstr) {
+      for (const h of doc.querySelectorAll("#cs-check-body .cs-check-section")) {
+        if (h.textContent.indexOf(headerSubstr) >= 0) {
+          let n = h.nextElementSibling;
+          while (n && n.tagName !== "UL") n = n.nextElementSibling;
+          return n ? n.textContent : "";
+        }
+      }
+      return "";
+    }
+    check("alias pair THEA is NOT a collision", sectionUl("Shared Common SUBJ").indexOf("THEA") < 0);
+    check("alias pair THEA lands in the alias-families info section",
+      sectionUl("Alias families").indexOf("THEA") >= 0 &&
+      sectionUl("Alias families").indexOf("Drama/Theater Arts") >= 0 &&
+      sectionUl("Alias families").indexOf("Theater Arts") >= 0);
+    const peDrift = [...doc.querySelectorAll("#cs-check-body .cs-check-list li")]
+      .map((li) => li.textContent).find((t) => t.indexOf("Physical Education") === 0);
+    check("PE drift lists KINE ×5 WITHOUT cross-claiming its own family's owner",
+      !!peDrift && peDrift.indexOf("KINE") >= 0 && peDrift.indexOf("×5") >= 0 &&
+      peDrift.indexOf("= Kinesiology") < 0);
+
     // ── the jump cure ────────────────────────────────────────────────────
     const jumps = [...doc.querySelectorAll(".cs-check-jump")].filter((b) => b.textContent.indexOf("Mystery Studies") >= 0);
     check("jump button exists for Mystery Studies", jumps.length > 0);
@@ -176,6 +225,19 @@ setTimeout(() => {
     const chipTexts = [...abHint.querySelectorAll(".cs-sugg-chip")].map((c) => c.textContent.trim());
     check("suggestions include the unclaimed local code ABOD", chipTexts.some((t) => t.indexOf("ABOD") === 0));
     check("suggestions exclude the owned-elsewhere code AUTO", !chipTexts.some((t) => t.indexOf("AUTO") === 0));
+
+    // Live input on an alias-family member: typing the family owner's code
+    // (KINE on the Physical Education row) shows neither the ✗ collision
+    // badge nor the ⚠ in-use badge — just the own-rows ✓.
+    const peRow = rowFor("Physical Education");
+    const peInput = peRow.querySelector("input.cs-canon");
+    const peHint = peRow.querySelector(".cs-subj-hint");
+    peInput.value = "KINE"; fire(peInput, "input");
+    check("alias family owner's code raises NO collision/in-use badge",
+      peHint.textContent.indexOf("Common SUBJ of") < 0 && peHint.textContent.indexOf("⚠") < 0);
+    check("alias family owner's code still shows the own-rows ✓",
+      /✓ on 5/.test(peHint.textContent));
+    peInput.value = "PEDU"; fire(peInput, "input"); // restore (no save — no blur)
 
     // ── chip click → fill + blur-save ────────────────────────────────────
     const abodChip = [...abHint.querySelectorAll(".cs-sugg-chip")].find((c) => c.textContent.indexOf("ABOD") === 0);

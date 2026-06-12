@@ -387,14 +387,35 @@
   }
   function invalidateSubjIndex() { state._subjIdx = null; }
 
-  // Disciplines (other than selfD) that OWN `code` as canonical/split/span.
-  function otherOwners(code, selfD) {
-    return (subjIndex().owners[code] || []).filter(function (o) { return o.d !== selfD; });
+  // Fan-in alias families: a converged discipline and its recorded alternate
+  // name(s) (kb/discipline_aliases.json) are ONE discipline for collision
+  // purposes — sharing a SUBJ4 inside the family is the convergence working,
+  // not an error. (The THEA lesson, 2026-06-12: the sweep flagged
+  // Drama/Theater Arts + its alias "Theater Arts" as a collision and pushed a
+  // needless re-code.)
+  function aliasFamilyOf(d) {
+    if (!state._aliasRev) {
+      var rev = {};
+      var a = state.aliases || {};
+      Object.keys(a).forEach(function (canon) {
+        (a[canon] || []).forEach(function (alt) { rev[alt] = canon; });
+      });
+      state._aliasRev = rev;
+    }
+    return state._aliasRev[d] || d;
   }
-  // Disciplines (other than selfD) whose CCR rows CARRY `code`, by count desc.
+  function sameAliasFamily(d1, d2) { return aliasFamilyOf(d1) === aliasFamilyOf(d2); }
+
+  // Disciplines (other than selfD's alias family) that OWN `code` as
+  // canonical/split/span.
+  function otherOwners(code, selfD) {
+    return (subjIndex().owners[code] || []).filter(function (o) { return !sameAliasFamily(o.d, selfD); });
+  }
+  // Disciplines (other than selfD's alias family) whose CCR rows CARRY `code`,
+  // by count desc.
   function otherUsers(code, selfD) {
     var m = subjIndex().observed[code] || {};
-    return Object.keys(m).filter(function (d) { return d !== selfD; })
+    return Object.keys(m).filter(function (d) { return !sameAliasFamily(d, selfD); })
       .map(function (d) { return { d: d, n: m[d] }; })
       .sort(function (a, b) { return b.n - a.n; });
   }
@@ -412,19 +433,25 @@
   function runSubjCheck() {
     var rows = mergedEntries();
     var idx = subjIndex();
-    var out = { collisions: [], drift: [], invalid: [], missing: [], nRowsOff: 0 };
+    var out = { collisions: [], aliasShared: [], drift: [], invalid: [], missing: [], nRowsOff: 0 };
 
     Object.keys(idx.owners).sort().forEach(function (code) {
       var ds = {};
       idx.owners[code].forEach(function (o) { if (!ds[o.d]) ds[o.d] = o.why; });
       var names = Object.keys(ds);
       if (names.length < 2) return;
-      out.collisions.push({
+      var families = {};
+      names.forEach(function (d) { families[aliasFamilyOf(d)] = true; });
+      var rec = {
         code: code,
         owners: names.map(function (d) {
           return { d: d, why: ds[d], n: (idx.observed[code] || {})[d] || 0 };
         }),
-      });
+      };
+      // One alias family sharing a code = the fan-in convergence working as
+      // designed — report it as informational, never as a collision.
+      if (Object.keys(families).length < 2) out.aliasShared.push(rec);
+      else out.collisions.push(rec);
     });
 
     rows.forEach(function (e) {
@@ -660,6 +687,24 @@
         ulC.appendChild(li);
       });
       body.appendChild(ulC);
+    }
+
+    if (res.aliasShared.length) {
+      body.appendChild(el("h5", { class: "cs-check-section" },
+        ["ℹ Alias families sharing one code (" + res.aliasShared.length + " — expected)"]));
+      body.appendChild(el("p", { class: "cs-check-note" }, [
+        "A converged discipline and its recorded alternate name share one Common SUBJ by design (fan-in " +
+        "convergence) — not an error, nothing to fix."]));
+      var ulAS = el("ul", { class: "cs-check-list" });
+      res.aliasShared.forEach(function (c) {
+        var li = el("li");
+        li.appendChild(el("strong", { class: "cs-mono" }, [c.code]));
+        li.appendChild(document.createTextNode(" — " + c.owners.map(function (o) {
+          return o.d + (o.n ? " ×" + o.n : "");
+        }).join("  +  ")));
+        ulAS.appendChild(li);
+      });
+      body.appendChild(ulAS);
     }
 
     if (res.invalid.length) {
