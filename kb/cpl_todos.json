@@ -2,7 +2,7 @@
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
   "_as_of": "2026-06-12-c",
   "_session": 48,
-  "_status": "Session 48 was the First Light design sprint (10 PRs): the dashboard now greets you once a day with a public-domain California plein air painting — full-color reveal, read-aloud, and an anonymous thought-for-the-day box (stored write-only; nobody can read them back except the service role). The visual spec for the coming dashboard re-theme is locked and BLESSED (prototype v1.4.2: monochrome + crimson/cobalt/hunter/violet/mustard, glass chrome, solid uniform chips). Next big Fable move: paint the live dashboard in the new theme. On the data side: Sam CURED all 11 shared Common SUBJ codes (2026-06-12) — the sweep is now alias-aware so convergence pairs stop flagging — and the SUBJ4 fold dry-run is the next Fable move there. Smog residuals + merge queues remain the curator frontier.",
+  "_status": "Session 48 was the First Light design sprint (10 PRs): the dashboard now greets you once a day with a public-domain California plein air painting — full-color reveal, read-aloud, and an anonymous thought-for-the-day box (stored write-only; nobody can read them back except the service role). The visual spec for the coming dashboard re-theme is locked and BLESSED (prototype v1.6: monochrome + crimson/cobalt/hunter/violet/mustard, glass chrome, GLASS-QUIET uniform chips — Sam graduated the glass view at session close). Next big Fable move: paint the live dashboard in the new theme. On the data side: Sam CURED all 11 shared Common SUBJ codes (2026-06-12) — the sweep is now alias-aware so convergence pairs stop flagging — and the SUBJ4 fold dry-run is the next Fable move there. Smog residuals + merge queues remain the curator frontier.",
   "items": [
     {
       "id": "sam-first-light",
@@ -38,7 +38,7 @@
       "id": "fable-retheme",
       "who": "fable",
       "tab": "all",
-      "text": "THE RETHEME — spec blessed (prototype v1.4.2), so paint the live dashboard: token-value swap in both HTMLs + generator CSS, ghosted painting, glass chrome, the new chip rules on live badges, CI contrast lint, KPI drag-reorder regression test + keyboard path. Plan: docs/session_49_handoff.md."
+      "text": "THE RETHEME — spec blessed at v1.6 (GLASS-QUIET chips graduated), so paint the live dashboard: token-value swap in both HTMLs + generator CSS, ghosted painting, glass chrome, glass-quiet chips on live badges INCLUDING the 📋 To-Do chips and the CSR sweep chips, CI contrast lint, KPI drag-reorder regression test + keyboard path. Plan: docs/session_49_handoff.md."
     },
     {
       "id": "fable-first-light-growth",

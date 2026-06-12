@@ -48,28 +48,29 @@ check("no dark masthead scrim remains", !HTML.includes("--scrim-dark"));
 // button-matched corners, fixed width; bright mustard NEVER text again
 check("bright mustard never used as a text color",
   !/color:\s*var\(--mustard-fill\)/.test(HTML));
+// v1.6 (GRADUATED): glass-quiet IS the chip spec — translucent fill with
+// NO per-chip backdrop blur, gray outline, dark accent labels, .72rem,
+// uniform 6.5rem x 26px
 {
   const base = HTML.match(/\.chip\s*\{[^}]*\}/);
-  check("chip base = borderless, uniform 7.25rem x 26px, 8px corners",
-    !!base && base[0].includes("border:none") && base[0].includes("width:7.25rem") &&
-    base[0].includes("height:26px") && base[0].includes("border-radius:8px") &&
-    base[0].includes("color:#FFFFFF"));
+  check("chip base = quiet glass (translucent, gray outline, .72rem, 6.5rem x 26px, no blur)",
+    !!base && base[0].includes("rgba(255,255,255,.5)") && base[0].includes("var(--border-strong)") &&
+    base[0].includes("font-size:.72rem") && base[0].includes("width:6.5rem") &&
+    base[0].includes("height:26px") && !base[0].includes("backdrop-filter"));
 }
-check("mustard chip uses the derived ochre fill",
-  /\.chip-mustard\s*\{\s*background:var\(--mustard-chip\)/.test(HTML));
-check("violet chip uses the darkened fill",
-  /\.chip-violet\s*\{\s*background:var\(--violet-chip\)/.test(HTML));
-// v1.5: Chip Studio — variant B coexists WITHOUT touching the blessed A
+check("mustard chip label uses the dark text grade",
+  /\.chip-mustard\s*\{\s*color:var\(--mustard-text\)/.test(HTML));
+check("violet chip label uses the core violet",
+  /\.chip-violet\s*\{\s*color:var\(--violet\)/.test(HTML));
+// the solid v1.4.2 family survives ONLY as the archived Studio reference
 {
-  const b = HTML.match(/\.chipb\s*\{[^}]*\}/);
-  check("variant B = quiet glass (translucent fill, gray outline, .72rem, 6.5rem, no blur)",
-    !!b && b[0].includes("rgba(255,255,255,.5)") && b[0].includes("var(--border-strong)") &&
-    b[0].includes("font-size:.72rem") && b[0].includes("width:6.5rem") &&
-    !b[0].includes("backdrop-filter"));
-  check("variant B mustard uses the dark text grade",
-    /\.chipb-mustard\s*\{\s*color:var\(--mustard-text\)/.test(HTML));
-  check("studio shows both rows", HTML.includes("A · solid (v1.4.2)") &&
-    HTML.includes("B · glass &amp; quiet"));
+  const a = HTML.match(/\.chipa\s*\{[^}]*\}/);
+  check("archived solid family present (white labels, solid fills)",
+    !!a && a[0].includes("color:#FFFFFF") &&
+    /\.chipa-mustard\s*\{\s*background:var\(--mustard-chip\)/.test(HTML) &&
+    /\.chipa-violet\s*\{\s*background:var\(--violet-chip\)/.test(HTML));
+  check("studio records the verdict", HTML.includes("BLESSED · glass &amp; quiet") &&
+    HTML.includes("archived · solid v1.4.2"));
 }
 // v1.4.1: glyph-only badges escape the uniform width (compact chip-fit)
 check("chip-fit modifier restores compact icon badges",

@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-12 (Session 48 — First Light: the design sprint, 10 PRs #391–#400 — daily PD plein air greeting LIVE on the dashboard (first_light.js: grayscale→color reveal, read-aloud, anonymous reflections → new write-only Supabase cpl_reflections) + the theme spec BLESSED (prototype v1.4.2 + check_contrast.py derived AA tokens; glass=chrome/opaque=data; solid uniform chips); NEW first_light_lessons + methodology-derived-aa-token-palette + reference-public-domain-art-sourcing; NEXT: the live-dashboard token retheme — GO)
+updated: 2026-06-12 (Session 48 — First Light: the design sprint, 10 PRs #391–#400 — daily PD plein air greeting LIVE on the dashboard (first_light.js: grayscale→color reveal, read-aloud, anonymous reflections → new write-only Supabase cpl_reflections) + the theme spec BLESSED (prototype v1.4.2 + check_contrast.py derived AA tokens; glass=chrome/opaque=data; solid uniform chips); NEW first_light_lessons + methodology-derived-aa-token-palette + reference-public-domain-art-sourcing; NEXT: the live-dashboard token retheme — GO; session close: Chip Studio A/B → GLASS-QUIET chips GRADUATED at v1.6, solid archived — Bruh Glasstronaut)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker

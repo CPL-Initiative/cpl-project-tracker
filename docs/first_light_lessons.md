@@ -123,3 +123,16 @@ neutral chips.
   Sam's notice text). Not yet scoped.
 - **Almanac**: the past-paintings gallery view (stub link exists in the
   dialog).
+
+## Coda — session close (17:20): the Chip Studio verdict + the callsign
+
+One more A/B at Sam's request (v1.5, #403): the blessed solid chips beside a
+**"glass & quiet"** family — subtle translucent fill (deliberately NO
+per-chip backdrop blur: faked glass, GPU-free on long tables), gray outline,
+darker accent text, .72rem → 6.5rem. Sam: *"Love the glass view. Let's run
+with that!"* → **v1.6 GRADUATED glass-quiet as THE chip spec** (the `.chip`
+base class wears it everywhere; the solid v1.4.2 family is archived as
+`.chipa` in the Studio's reference row; option on file: re-solid crimson for
+findings if triage scanning ever needs the shout). The retheme paints with
+glass-quiet chips. Session 48's moniker, Sam-christened: **Bruh
+Glasstronaut**. 🚀
