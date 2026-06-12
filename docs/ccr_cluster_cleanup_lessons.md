@@ -1264,3 +1264,63 @@ two stale pins passing GREEN on wrong rows — slot reuse's signature move).
 mid-print, BEFORE its writes — looked applied, wasn't. Pipe applies to a
 file (`> log 2>&1`), check the exit code, verify idempotency by re-running
 the dry-run.
+
+## Session 53 — auto-merge pass 1 + Sam's parallel UI batch (2026-06-12 night)
+
+**What shipped (PRs #418–#424).** Sam drove live. (1) Worklist popup chrome —
+persistent drag-handle title bar + ✕ closer + PROPOSAL framing ("Proposed
+unified title — applied only if you Confirm"; "Candidates (N) — each row is
+currently its own separate identity") after the Developmental-Movement-Lab
+confusion: the prefilled title read like current membership. (2) Regen
+verified + 4 artifact-pinned test files re-pinned to the normalized-title era
+(romans→digits, Title Case; the smog target now resolves via the curated key —
+its noncredit band twin shares the display title post-normalization).
+(3) KPI batch: CCC Collaborative Adoption card consolidated into Statewide
+Exhibits (+ blank-adopter guard), Veteran Sprint ⭐ + "JSTs Uploaded" + real
+colleges-with-a-JST count, quickstart banner full-width. (4) Mojibake: a
+cp1252→UTF-8 decode-loop repair (+ pair map for the NBSP artifact in all
+THREE case forms — the Session-51 title-caser had downcased mojibake
+mid-word) at raw-title ingestion; 395 member titles repaired + queued in
+`kb/coci_title_corrections.json`; CCR "⚠ fix in COCI" chip; 63 identity
+titles re-fixed by the upgraded normalizer.
+
+**The headline: auto-merge pass 1 APPLIED.** Sam reviewed ~80 of the 9,087
+worklist groups, found them dependable, asked for auto-curation with flags.
+`kb/_auto_merge_worklist.py` (dry-run default) planned ONLY the dependable
+lanes — anchored same-title + cross-college singletons; title/desc/family/
+evidence lanes stay human. Gates excluded 563: **325 band mixes (credit M1xxx
+vs noncredit M9xxx sharing a title — the single best argument for the
+dry-run)**, 214 same-college, 4 Keep-as-is dismissals, degenerate dupes.
+Title rule deterministic: official target → no write; curator title → kept;
+else normalize(longest) + Honors de-dash/case. Write shape == doConsolidate
+(merge_into + unified_title; NO discipline rows — merge ≠ verify). Sam
+skimmed the receipt → "apply": fresh-read gate (live == plan input state),
+then a **server-side apply**: postgres `http` extension fetched the
+SHA-pinned plan.json off main, gated on HTTP 200 + md5 byte-identity, one
+INSERT … ON CONFLICT DO NOTHING (human rows always win), extension dropped
+after. **5,838/5,838 rows, 0 conflicts; 2,272 targets; 941 UC-CUR-AUTO
+mints; cohort `reviewer_email='automerge-v1@bot'`.** Receipts + apply_log:
+`kb/automerge_out/2026-06-12/`.
+
+**Lessons.**
+- The pre-apply uniqueness gate earns its keep: it caught a payload quirk
+  (one id listed under two kinds in one group) AND surfaced 20 degenerate
+  self-groups. Cheap assertion, real catches.
+- Server-side md5-pinned apply beats shuttling 400KB of SQL through chat:
+  commit the receipt → DB fetches the SHA-pinned bytes → gate on md5 →
+  one statement. apply == spec, provably.
+- Container egress allowlists bite: Drive + Supabase REST both blocked from
+  the session container; the Supabase MCP + the GitHub raw fetch FROM the DB
+  are the workable channels.
+- The live schema is the truth, not the setup SQL: kb_curation's marker
+  column is `reviewer_email`, not the setup file's apparent `reviewed_by`.
+- Title normalization had created NEW mojibake case-variants ("ã‚â"/"Ã‚â")
+  by Title-Casing artifact bytes — fixers must handle the mangled forms of
+  their own pipeline's output.
+
+**Next.** ⚙ auto-merged chip + Triage lane (reviewer_email travels via the
+overlay sync — wire generator emit + client + test); title-lane pass-2
+decision after Sam spot-checks pass-1 in the CCR; post-regen suite re-pin
+check (the 2,272 folds shift artifact-pinned tests); MilStudents → Custom
+Reports wiring (unlocks the true JST-upload universe + more); the COCI
+title-correction campaign (395-row queue, Glendale + Canyons top).

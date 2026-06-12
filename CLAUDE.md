@@ -1563,22 +1563,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > Light design sprint #391–#404 — the daily plein air greeting LIVE + the
 > v1.6 glass-quiet theme spec BLESSED).
 
-### Session 50 — Bruh Dawnleader: the SUBJ4 canonical fold APPLIED (2026-06-12)
-
-The Rule-7 apply of dry-run #405, one PR, landed in the evening cron window.
-**71,037-alias permutation, 48,820 id moves** (10,974 SUBJ4 re-keys + bucket
-re-sequencing) across minted/singletons/memberships/articulations/curation +
-**119 Supabase ops** (md5-verified, PK-order simulated); plan recomputed at
-apply == frozen reviewed plan byte-identical (`compute_plan()` shared with the
-dry-run); post-fold twin pass +19 (15,535 parents); chain
-(`kb/_post_apply_chain.py`): promotions 1,678 re-keyed/0 unresolved/V5 clean,
-CSR re-seed, audit — **`subject_collision_signal` 1,206 → 3** (documented
-baseline-vs-overlay residuals), `mid_id_off_scheme` → 1; receipts re-run (415
-desc / 5,581 title); fold-verify re_key 0; suite 34/34 (title-lane pins →
-mechanism-style). Receipts `kb/subj4_fold_out/2026-06-12/`. Full story:
-`docs/ccr_cluster_cleanup_lessons.md` (Session 50); KB note:
-`methodology-apply-equals-spec-via-shared-allocator.md`. **NEXT: the CCR
-Subject-dropdown grouping** (`docs/session_51_handoff.md`).
+> **Session 50 narrative archived** → `docs/roadmap_archive.md` (the SUBJ4
+> canonical fold APPLIED — 71,037-alias permutation, receipts
+> `kb/subj4_fold_out/2026-06-12/`).
 
 
 ### Session 51 — Bruh Photonicus: KIN/PE pass 2 + the merging night (2026-06-12)
@@ -1599,6 +1586,25 @@ post-fold-stale test files (35/35). Full story:
 `docs/ccr_cluster_cleanup_lessons.md` (Session 51); KB note:
 `methodology-fanin-alias-lexicon-contamination.md`. **NEXT:
 `docs/session_53_handoff.md`** (verify regen; the FLAGGED family queues).
+
+
+### Session 53 — auto-merge pass 1 + Sam's UI batch (2026-06-12 night)
+
+Sam-interactive. PRs #418–#424, all squash-merged + published same-hour.
+**AUTO-MERGE PASS 1 APPLIED** (Sam reviewed ~80 of 9,087 worklist groups →
+"auto curate"): `kb/_auto_merge_worklist.py` planned the dependable lanes
+ONLY (anchored + cross-college singletons; gates: band purity caught 325
+credit/noncredit mixes, same-college 214, dismissals honored) → **2,272
+groups / 5,838 rows applied 5,838-for-0-conflicts** via SHA-pinned md5-gated
+server-side insert; cohort `reviewer_email='automerge-v1@bot'` (revert =
+delete the cohort); receipts+apply_log `kb/automerge_out/2026-06-12/`.
+Also: worklist popup chrome (#418 drag/✕/proposal framing), 4 stale test
+re-pins post-regen (#419), KPI consolidation + Veteran ⭐/JST + quickstart
+width (#420), mojibake repair + `kb/coci_title_corrections.json` queue +
+CCR "fix in COCI" chip (#421). Lessons: `docs/ccr_cluster_cleanup_lessons.md`
+(Session 53); KB note: `playbook-gated-bulk-autocuration.md`. **NEXT:
+`docs/session_54_handoff.md`** (⚙ auto-merged chip + Triage lane; title-lane
+pass-2 decision; post-regen suite re-pin check).
 
 
 ---
