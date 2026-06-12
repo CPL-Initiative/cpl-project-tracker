@@ -7,6 +7,12 @@ tracking statewide CPL adoption, articulation, and project work across all
 
 **Live site:** <https://cpl-initiative.github.io/cpl-project-tracker/>
 
+Each morning the dashboard opens with **First Light** — a once-a-day greeting
+featuring a public-domain California plein air painting (revealed grayscale →
+full color) with the artist's story, an optional read-aloud, and an anonymous
+"thought for the day" reflection box. Opt-out respected; reopen anytime via
+the "Today's painting" chip in the header.
+
 The dashboard combines (a) project-management data for the CPL Initiative
 itself (workplan, budget, personnel, deliverables) with (b) live statewide
 CPL metrics scraped daily from the CCCCO MAP CPL Dashboard, plus (c) a

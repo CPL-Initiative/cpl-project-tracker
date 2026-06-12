@@ -453,6 +453,7 @@ scraping proved unreliable.
 | `cpl_funding_performance.js` | Funding priority-metric actuals (`window.CPL_FUNDING_PERF`: per-college P2/P3 distinct-student counts + statewide, small-cell suppressed <5 per the RATIFIED `docs/kb-notes/adr-funding-priority-metrics-privacy.md`). **Daily-cron artifact**: built by `funding/_build_funding_performance.py` from the transient `CustomReport_latest.json` (workflow step 4a2; in the `git add` list); skips gracefully on fetch fallback. P1 is a deliberate gap (`docs/kb-notes/reference-p1-completion-data-gap.md`). |
 | `dashboard_filters.js` | Client-side filter/search/sort logic |
 | `kpi_reorder.js` | Login-free drag-to-reorder for the headline KPI grid (`.kpi-section`): per-browser order in localStorage (`cplKpiOrder.v1`), cards re-matched by label text across daily regens, new cards re-enter at default position, ↺ reset affordance. Static — NOT a daily-cron artifact. |
+| `first_light.js` | **First Light** — the once-a-day plein air greeting (added Session 48): date-seeded painting-of-the-day modal (grayscale→color reveal, gallery lightbox, read-aloud via browser `speechSynthesis`, hand-written alt text), opt-out + once-per-day localStorage guards, runtime-injected "Today's painting" header chip (regen-proof), and an anonymous reflection box POSTing `{painting, reflection}` to Supabase `cpl_reflections` (anon WRITE-ONLY RLS). Manifest = verified-PD paintings ONLY (sourcing rules: `docs/kb-notes/reference-public-domain-art-sourcing.md`). Static — NOT a daily-cron artifact. Theme spec/prototype: `prototype/first_light_theme_v1.html` (v1.4.2, BLESSED 2026-06-12) + `prototype/check_contrast.py`. Tests: `tests/first_light*.test.js`. |
 | `cpl_todos.js` | The 📋 To-Do button on every tab (added Session 47): renders `kb/cpl_todos.json` as a For-Sam / For-Fable daily checklist with a "where we are" status line; per-browser check-offs (`cplTodos.v1`, keyed by the feed's `_as_of` so each refresh starts fresh); per-tab badge + nav chips for other tabs' items. Feed refreshed at every Rule-8 checkpoint. Static — NOT a daily-cron artifact. |
 | `report_generator.js` | Custom Report Generator (Claude API via proxy) |
 | `docx.min.js` | Local copy of docx@8.0.4 UMD build (do **not** switch to CDN) |
@@ -778,6 +779,12 @@ reuse, so keep it self-contained behind its CONFIG block.
 
 - **Project**: `hvuwhnbuahrtptokpqfh.supabase.co`
 - **Tables**: projects, budget_expenditures, personnel, workplan_goals
+- **`cpl_reflections`** (added Session 48): First Light's anonymous daily
+  reflections — anon INSERT-only RLS with a 1–2000-char CHECK, **no SELECT
+  policy** (write-only from the public; service role reads for the future
+  uplifting-themes analysis). Never add a public read path; the payload shape
+  (`painting`, `reflection` — nothing identifying) is pinned by
+  `tests/first_light.test.js`.
 - Separate from live metrics scraping; handles project-level data storage.
 
 ### 9. EACR Exhibit Identity — current state and future direction
@@ -1538,28 +1545,12 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > locked decisions verbatim. Searching the archive for an id (e.g. "FLSP
 > M1379", "#310") is usually faster than re-deriving from code.
 
-> **Session 41 + 42 + 43 + 44 narratives archived** → `docs/roadmap_archive.md`
+> **Session 41 + 42 + 43 + 44 + 45 narratives archived** → `docs/roadmap_archive.md`
 > (witness-kinship gate + R4 singletons; the slot-fix + C-ID authority +
 > Phase-1 router; Starlord's cron-verify + off-pane-columns fix; Statewide
-> Exhibits KPI + program-area categories + KPI reorder).
-
-### Session 45 — CCR rules day: statewide C-ID routing + the CADM homonym + the description lane (2026-06-11)
-
-Sam's three asks, three PRs, merged on green. **#379** C-ID router **Phase 3
-statewide** (gate removed): 8,377 members under 454 descriptors, 174 M-IDs +
-1,682 stand-alones rfold; 0 members vanish, 125 invisible claimants
-materialize; 4 MATH∧SOCI dual-approval stats courses un-route (scope-gates
-must filter AFTER assembling the full approval set — scope §9). **#381** the
-screenshot's `CRIM M1003` root-caused to the `CADM` college-homonym lexicon
-entry laundered by the SUBJ4 re-key → `kb/_audit_subject_map.py` (TOP-division
-votes + minority-title grading), **college-scoped subject_map entries**,
-**retraction propagation**; 11 homonyms scoped, ~320 rows re-filled honestly
-(CRIM M1003 → Drafting/CADD). **#382** the dark 86% (13,922 M-IDs, no official
-evidence): TF-IDF description lane, level/gender/sport-guarded → **474 groups
-(135 cross-college)** as the worklist's 4th section (`desc_groups`, receipt
-`kb/desc_consolidation_out/candidates.json`, termly re-run). Suite 29/29.
-Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 45); KB note:
-`methodology-college-homonym-subject-codes.md`.
+> Exhibits KPI + program-area categories + KPI reorder; CCR rules day —
+> statewide C-ID router #379 + the CADM homonym repair #381 + the
+> description-evidence lane #382).
 
 ### Session 46 — the AUTO/smog over-mint case → the 🏷 title-evidence lane + the STATEWIDE twin merge (2026-06-12)
 
@@ -1583,6 +1574,21 @@ tier is the ONE title-based auto-merge, fully condition-listed. Smog: 52
 identities → 9 queue families → **2 merged rows + 8 residual queue groups**.
 Suite 30/30. Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 46 +
 part 2); KB note: `methodology-title-similarity-merge-guards.md`.
+
+### Session 48 — First Light: the design sprint (daily plein air art LIVE + the theme spec BLESSED) (2026-06-12)
+
+Sam's "personality" brief → a design system + a live feature; **10 PRs
+(#391–#400) merged same-day**. **LIVE:** `first_light.js` — once-a-day PD
+plein air greeting (Redmond/LACMA + 2 Paynes; Commons hotlinks + fallback),
+grayscale→color reveal, read-aloud (`speechSynthesis` — Huell declined on
+publicity-rights grounds), reflection box → NEW Supabase **`cpl_reflections`**
+(anon write-only RLS, verified as anon). **SPEC BLESSED (v1.4.2):**
+`prototype/first_light_theme_v1.html` + `check_contrast.py` (derived AA
+tokens — crimson `#920000` · cobalt `#0047AB` · hunter `#2C601A` · violet
+`#6D28D9`; glass=chrome/opaque=data; solid uniform chips 7.25rem + `chip-fit`).
+**NEXT: the live-dashboard token retheme — GO** (`docs/session_49_handoff.md`).
+Lessons: `docs/first_light_lessons.md`; KB notes:
+`methodology-derived-aa-token-palette`, `reference-public-domain-art-sourcing`.
 
 ---
 
