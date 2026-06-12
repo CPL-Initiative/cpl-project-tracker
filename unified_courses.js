@@ -114,11 +114,42 @@
     });
   }
   function signOut() { sessionStorage.removeItem("cpl_sb"); }
+  // Live curation overlay — ONE combined read split client-side. This used to
+  // pull field=eq.discipline ONLY, so a curator's confirmed merges (merge_into +
+  // unified_title rows) were never read back: after a reload the merged rows
+  // reappeared un-merged and the worklist re-offered the group, even though the
+  // saves were sitting in Supabase the whole time (the 2026-06-12 "merges didn't
+  // save" report — they had; the read-back was missing). disc keeps the original
+  // course_id -> row shape; merges/titles feed the startup replay.
   function fetchOverlay() {
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,value,reviewer_email,reviewed_at&field=eq.discipline",
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewer_email,reviewed_at&field=in.(discipline,merge_into,unified_title)",
       { headers: { "apikey": SUPABASE_ANON } })
       .then(function (r) { return r.ok ? r.json() : []; })
-      .then(function (arr) { var m = {}; arr.forEach(function (x) { m[x.course_id] = x; }); return m; })
+      .then(function (arr) {
+        var out = { disc: {}, merges: [], titles: {} };
+        arr.forEach(function (x) {
+          if (x.field === "discipline") out.disc[x.course_id] = x;
+          else if (x.field === "merge_into") { if (x.value) out.merges.push(x); }
+          else if (x.field === "unified_title") { if (x.value != null) out.titles[x.course_id] = x.value; }
+        });
+        return out;
+      })
+      .catch(function () { return { disc: {}, merges: [], titles: {} }; });
+  }
+  // Live "Keep as-is" worklist dismissals (field=merge_dismissed). One row per
+  // dismissed group; value = the group's live-member ids sorted asc, "|"-joined
+  // (the group signature). Returned as a signature set. If a later regen changes
+  // a group's membership, its CURRENT signature differs from the stored one and
+  // the group legitimately re-offers — that's by design, not a bug.
+  function fetchDismissals() {
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,value&field=eq.merge_dismissed",
+      { headers: { "apikey": SUPABASE_ANON } })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (arr) {
+        var s = {};
+        arr.forEach(function (x) { if (x.value) s[x.value] = 1; });
+        return s;
+      })
       .catch(function () { return {}; });
   }
   // Locked curated anchors (common_courses.json) are firewalled — the daily overlay
@@ -524,6 +555,12 @@
     // Live discipline overlay (course_id -> row), kept so it can also be applied
     // to stand-alone rows that load lazily after the initial fetch.
     var liveDiscOverlay = {};
+    // Live merge members not yet folded into git (member course_id -> target):
+    // populated by the startup merge replay AND by doConsolidate, so (a) the
+    // pending-sync badge counts merge edits, (b) lazily-loaded stand-alone rows
+    // get their _mergedAway mark, (c) the worklist never re-offers a confirmed
+    // group whose members aren't in the main payload.
+    var liveMergePending = {};
     // Live anchor discipline-correction proposals (course_id -> row) on the
     // firewalled curated anchors. Read-only suggestions; never mutate r.disc.
     var anchorProposals = {};
@@ -533,8 +570,15 @@
       targetRows.forEach(function (r) {
         var o = liveDiscOverlay[r.id];
         if (o && o.value != null) {
-          r.disc = o.value; r.flags.reviewed = true; r._curated = true;
-          r.reviewed_by = o.reviewer_email; r.reviewed_at = (o.reviewed_at || "").slice(0, 10);
+          r.disc = o.value;
+          // A synthetic merge target's discipline row was written by the merge
+          // dialog itself — merge ≠ verify (generator mirror: only validated_at
+          // promotes a UC-CUR target), so apply the value but don't stamp it
+          // reviewed/Verified.
+          if (!(r.mt && r.id_system === "Unified")) {
+            r.flags.reviewed = true; r._curated = true;
+            r.reviewed_by = o.reviewer_email; r.reviewed_at = (o.reviewed_at || "").slice(0, 10);
+          }
           changed = true;
         }
       });
@@ -552,6 +596,9 @@
           var d = window.CPL_UC_STANDALONE;
           if (d && d.rows && d.rows.length) {
             applyDiscOverlay(d.rows);          // honor live curation on the new rows
+            // Honor live (not-yet-committed) merges too: a stand-alone that was
+            // folded into a unified course this cycle must not resurface here.
+            d.rows.forEach(function (r) { if (liveMergePending[r.id]) r._mergedAway = true; });
             Array.prototype.push.apply(rows, d.rows);
           }
           _standaloneLoaded = true; resolve();
@@ -816,6 +863,107 @@
         titleIn.focus();
       });
     }
+    // In-page state mutation for a curator merge — ONE function shared by
+    // doConsolidate (live confirm) and the startup replay of live Supabase
+    // merge rows, so the two paths can't drift. Marks members merged away,
+    // creates/updates the target row, never stamps reviewed (merge ≠ verify,
+    // Sam 2026-06-10). `seed` carries what the caller knows beyond the
+    // in-payload rows (the dialog's chosen-tuple titles/subjects — covers
+    // members with no row object, e.g. Stand-Alones; absent-row members just
+    // don't contribute a variant/subj/impact value).
+    function applyMergeLocal(byId, target, memberIds, title, disc, seed) {
+      seed = seed || {};
+      memberIds.forEach(function (id) { if (byId[id]) byId[id]._mergedAway = true; });
+      var urow = byId[target], created = false;
+      if (!urow) {
+        urow = { id: target, adopted: [], potential: [], flags: {} };
+        rows.push(urow); byId[target] = urow; created = true;
+        // Merging into an existing identity keeps that identity's native
+        // kind/id_system (an M-ID gaining members is still that M-ID). A
+        // synthetic UC-CUR-* target is a brand-new "Unified" course (the
+        // "Cluster" label was retired 2026-05-30, Session 19). A row-less
+        // OFFICIAL target (#342 — a descriptor-catalog C-ID, or a CCN) gets
+        // its official id_system inferred from the id shape so it renders —
+        // and is title-firewalled — like the anchor it stands in for.
+        if (/^UC-CUR-/.test(target)) { urow.kind = "Unified"; urow.id_system = "Unified"; }
+        else if (/\sC\d{4}/.test(target)) { urow.kind = "Course"; urow.id_system = "CCN-ID"; }
+        else if (/\sM[0-9A-Z]{4}\b/.test(target)) { urow.kind = "Course"; urow.id_system = "M-ID"; }
+        else { urow.kind = "Course"; urow.id_system = "C-ID"; }
+      }
+      var official = urow.id_system === "C-ID" || urow.id_system === "CCN-ID";
+      // Title variants = pre-merge titles, deduped: target's own + the seed
+      // tuples + member rows present in the payload.
+      var vseen = {}, vlist = [];
+      function addVar(t) { if (t && !vseen[t]) { vseen[t] = 1; vlist.push(t); } }
+      (urow.title_variants || []).forEach(addVar);
+      addVar(urow.title);
+      (seed.variants || []).forEach(addVar);
+      memberIds.forEach(function (id) { var m = byId[id]; if (m) addVar(m.title); });
+      // An official C-ID/CCN target keeps its own authoritative title — never
+      // overwrite it (mirrors the firewalled anchor).
+      if (!official) urow.title = title || urow.title || vlist[0];
+      if (disc && urow.id_system === "Unified") urow.disc = disc;
+      var subjSet = {};
+      function addSubj(s) { if (s) subjSet[s] = 1; }
+      (urow.subj || []).forEach(addSubj);
+      (seed.subj || []).forEach(addSubj);
+      memberIds.forEach(function (id) { var m = byId[id]; if (m) (m.subj || []).forEach(addSubj); });
+      urow.subj = Object.keys(subjSet).sort();
+      // Members count = merged identities. A target that's already a merged row
+      // (mt) just grows; a fresh merge counts members + the target itself —
+      // except a freshly-minted Unified target, which has no underlying record
+      // of its own (generator mirror: all_members counts tgt only if tgt_v).
+      urow.members = urow.mt ? (urow.members || 0) + memberIds.length
+        : memberIds.length + (created && urow.id_system === "Unified" ? 0 : 1);
+      urow.title_variants = vlist; urow._mergedAway = false; urow.mt = 1;
+      urow.flags = urow.flags || {};
+      // Carry the members' CPL-impact values so the merged course doesn't
+      // vanish from the Students/Eligible sorts mid-session (the 2026-06-10
+      // Weight Training merge dropped KINE M1015's 4,823 students to the
+      // bottom). MAX, not sum — members may share a credential, so summing
+      // could double-count; the next daily regen computes the true union
+      // via the articulation crosswalk.
+      var st = urow.st || 0, eu = urow.eu || 0;
+      memberIds.forEach(function (id) {
+        var m = byId[id];
+        if (m) { if ((m.st || 0) > st) st = m.st; if ((m.eu || 0) > eu) eu = m.eu; }
+      });
+      if (st) urow.st = st;
+      if (eu) urow.eu = eu;
+      // The merge does NOT verify (merge ≠ verify): no reviewed/_curated
+      // stamping — the row promotes to Verified only via Verify (which
+      // validates the merge).
+      return urow;
+    }
+
+    // Replay live (Supabase-only) curator merges into the in-page rows — the
+    // read-back half of doConsolidate. Without it, a reload resurrected merged
+    // rows and the worklist re-offered confirmed groups (the saves were fine;
+    // fetchOverlay just never pulled merge_into rows). Committed merges are
+    // already baked by the generator (member rows absent from the payload,
+    // target synthesized with mt) — replay ONLY what's live: a member still
+    // present un-merged is live by definition; an absent member is treated as
+    // committed when the committed_curation snapshot (the same one the
+    // pending-sync badge diffs against) knows its course_id, else it's a lazy
+    // Stand-Alone whose mark waits for loadStandalone.
+    function replayLiveMerges(merges, titles) {
+      var committed = data.committed_curation || {};
+      var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
+      var groups = {};
+      merges.forEach(function (x) {
+        var m = x.course_id;
+        if (!byId[m] && Object.prototype.hasOwnProperty.call(committed, m)) return; // already baked
+        (groups[x.value] = groups[x.value] || []).push(m);
+      });
+      var changed = false;
+      Object.keys(groups).sort().forEach(function (tgt) {
+        groups[tgt].forEach(function (m) { liveMergePending[m] = tgt; });
+        applyMergeLocal(byId, tgt, groups[tgt], titles[tgt] || "", null, null);
+        changed = true;
+      });
+      return changed;
+    }
+
     function doConsolidate(chosen, title, disc, identity, close, quiet) {
       var ids = Object.keys(chosen);
       if (ids.length < 2) { alert("Select at least two courses to consolidate."); return; }
@@ -844,37 +992,16 @@
         saveCurations(items, sess).then(function (resp) {
           if (!resp.ok) { alert("Consolidation save failed (status " + resp.status + ")."); return; }
           var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
-          members.forEach(function (id) { if (byId[id]) byId[id]._mergedAway = true; });
-          var subjSet = {}; ids.forEach(function (id) { String(chosen[id][2] || "").split(";").forEach(function (s) { if (s) subjSet[s] = 1; }); });
+          // chosen-tuple-derived seeds cover members with no in-payload row
+          // (Stand-Alones, official descriptor targets) — same numbers the old
+          // inline mutation derived; the shared applyMergeLocal does the rest.
+          var seedSubj = {}; ids.forEach(function (id) { String(chosen[id][2] || "").split(";").forEach(function (s) { if (s) seedSubj[s] = 1; }); });
           var variants = ids.map(function (id) { return chosen[id][1]; }).filter(Boolean);
-          var urow = byId[target];
-          // Merging into an existing identity keeps that identity's native kind/id_system
-          // (an M-ID gaining members is still that M-ID). A brand-new synthetic target
-          // (no identity chosen → a generated UC-CUR-* id) is a "Unified" course. The
-          // "Cluster" label was retired 2026-05-30 (Session 19).
-          if (!urow) { urow = { id: target, adopted: [], potential: [], flags: {} }; rows.push(urow); }
-          if (synthetic) { urow.kind = "Unified"; urow.id_system = "Unified"; }
-          if (!tgtOfficial) urow.title = title || urow.title || variants[0];
-          if (synthetic && disc) urow.disc = disc;
-          urow.subj = Object.keys(subjSet).sort(); urow.members = ids.length;
-          urow.title_variants = variants; urow._mergedAway = false; urow.mt = 1;
-          urow.flags = urow.flags || {};
-          // Carry the members' CPL-impact values so the merged course doesn't
-          // vanish from the Students/Eligible sorts mid-session (the 2026-06-10
-          // Weight Training merge dropped KINE M1015's 4,823 students to the
-          // bottom). MAX, not sum — members may share a credential, so summing
-          // could double-count; the next daily regen computes the true union
-          // via the articulation crosswalk.
-          var st = urow.st || 0, eu = urow.eu || 0;
-          ids.forEach(function (id) {
-            var m = byId[id];
-            if (m) { if ((m.st || 0) > st) st = m.st; if ((m.eu || 0) > eu) eu = m.eu; }
-          });
-          if (st) urow.st = st;
-          if (eu) urow.eu = eu;
-          // The merge does NOT verify (merge ≠ verify, Sam 2026-06-10): no
-          // reviewed/_curated stamping — the row keeps its prior status and
-          // promotes to Verified only via Verify (which validates the merge).
+          applyMergeLocal(byId, target, members, title, (synthetic ? disc : null),
+            { variants: variants, subj: Object.keys(seedSubj) });
+          // Track the live merge so the pending-sync badge counts it, lazy
+          // stand-alone loads fold it, and the worklist won't re-offer it.
+          members.forEach(function (id) { liveMergePending[id] = target; });
           close(); render();
           if (!quiet) alert("Consolidated " + ids.length + " courses into " + target + ". It shows as Generated until you Verify it; it fully materializes on the next daily sync (or via Sync now).");
         }).catch(function (e) { alert("Could not save consolidation: " + ((e && e.message) || "network error")); });
@@ -898,7 +1025,8 @@
       var boxCss = "background:#fff;max-width:720px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;";
       var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;";
       var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;";
-      loadSuggestions().then(function (data) {
+      Promise.all([loadSuggestions(), fetchDismissals()]).then(function (res) {
+        var data = res[0], dismissed = res[1];
         var anchored = (data.groups || []).map(function (g) { g._kind = "anchored"; return g; });
         // Co-articulation family groups (2026-06-04): near-duplicate M-IDs the
         // level-safe signature misses, surfaced because they co-articulate to one
@@ -934,8 +1062,18 @@
         // Singleton (new-mint) section starts after anchored + family + desc + title + evidence.
         var nNonSingleton = anchored.length + family.length + desc.length + titleEv.length + evidence.length;
         var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
-        var mergedAway = function (id) { return byId[id] && byId[id]._mergedAway; };
+        // liveMergePending covers members with no in-payload row (e.g. a
+        // Stand-Alone folded this cycle) so a confirmed group can't re-offer.
+        var mergedAway = function (id) { return (byId[id] && byId[id]._mergedAway) || !!liveMergePending[id]; };
         function liveMembers(g) { return g.members.filter(function (m) { return !mergedAway(m.id); }); }
+        // Group signature for "Keep as-is" dismissals: the CURRENT live-member
+        // ids sorted asc, "|"-joined. Matching is exact-signature: if a later
+        // regen changes the group's membership the signature differs and the
+        // group legitimately re-offers (a dismissal covers a composition, not
+        // a topic).
+        function groupSig(g) {
+          return liveMembers(g).map(function (m) { return m.id; }).sort().join("|");
+        }
         function bestTitle(g) {
           return g.members.map(function (m) { return m.t || ""; })
             .sort(function (a, b) { return b.length - a.length; })[0] || g.members[0].id;
@@ -948,7 +1086,10 @@
 
         function renderGroup() {
           box.innerHTML = "";
-          while (i < groups.length && liveMembers(groups[i]).length < 2) i++;
+          // Skip exhausted groups AND persistently-dismissed ones ("Keep
+          // as-is" — matched on the current live-member signature).
+          while (i < groups.length &&
+                 (liveMembers(groups[i]).length < 2 || dismissed[groupSig(groups[i])])) i++;
           if (i >= groups.length) {
             box.appendChild(el("h3", { style: "margin:0 0 8px;color:var(--text-strong);" }, ["Suggested merges"]));
             box.appendChild(el("p", { style: "color:#6b7280;" }, ["End of the worklist — nice work. New suggestions regenerate on the next daily build."]));
@@ -1060,6 +1201,30 @@
           var actions = el("div", { style: "margin-top:14px;display:flex;gap:10px;justify-content:flex-end;" });
           var skip = el("button", { style: skipCss }, ["Skip →"]);
           skip.onclick = function () { i++; renderGroup(); };
+          // "Keep as-is" = a PERSISTENT dismissal (Skip only advances for the
+          // session). One kb_curation row: course_id = the group's first live
+          // member (sorted asc — deterministic), field merge_dismissed, value =
+          // the live-member signature. The worklist skips a group whose CURRENT
+          // signature matches; a regen that changes the membership changes the
+          // signature, so the group re-offers then — by design.
+          var keep = el("button", { style: skipCss,
+            title: "These stay separate — don't suggest this group again (unless its membership changes)" },
+            ["Keep as-is"]);
+          keep.onclick = function () {
+            var sig = groupSig(g);
+            if (!sig) { i++; renderGroup(); return; }
+            keep.disabled = true;
+            ensureFresh().then(function (sess) {
+              if (!sess) { signOut(); session = null; renderAuth(); render(); alert("Sign-in expired — please sign in again."); return; }
+              saveCurations([{ course_id: sig.split("|")[0], field: "merge_dismissed", value: sig }], sess)
+                .then(function (resp) {
+                  if (!resp.ok) { alert("Could not save the dismissal (status " + resp.status + "). Are you an allowed reviewer?"); keep.disabled = false; return; }
+                  dismissed[sig] = 1;
+                  i++; renderGroup();
+                })
+                .catch(function (e) { alert("Could not save the dismissal: " + ((e && e.message) || "network error")); keep.disabled = false; });
+            });
+          };
           var go = el("button", { style: goCss }, [isSingleton ? "✓ Create unified course" : "✓ Confirm merge"]);
           go.onclick = function () {
             var picked = cbs.filter(function (x) { return x.cb.checked; }).map(function (x) { return x.m; });
@@ -1077,7 +1242,7 @@
             picked.forEach(function (m) { chosen[m.id] = [m.id, m.t, m.s, m.k, m.u]; });
             doConsolidate(chosen, titleIn.value.trim(), discSel.value, target, function () { i++; renderGroup(); }, true);
           };
-          actions.appendChild(skip); actions.appendChild(go);
+          actions.appendChild(skip); actions.appendChild(keep); actions.appendChild(go);
           box.appendChild(actions);
         }
         document.body.appendChild(overlay);
@@ -1200,6 +1365,54 @@
     // #8 SUBJ filter — list the canonical SUBJ4 (one per row) so it matches the
     // Subject column display (passes() filters on subj4Of, below).
     var fSubj = sel("uc-subj", "All subjects", uniqSorted(rows.map(subj4Of).filter(Boolean)));
+    // Subject-dropdown optgroups (Session 51 spec, Sam-yes'd): the flat list
+    // above renders synchronously; once the canonical-SUBJ4 seed (the same
+    // file the CSR tab reads) loads, the options regroup IN PLACE into three
+    // <optgroup>s — (1) codes the curator-reviewed seed knows (canonical or
+    // observed-variant), (2) official C-ID/CCN codes outside the seed,
+    // (3) every other observed code: local-derived, awaiting a canonical fold
+    // — the live progress meter (near-empty post-fold). Only codes actually
+    // observed on rows are listed; option VALUES stay bare codes so passes()
+    // and state.subj are untouched; the current selection survives the
+    // rebuild. Fail-soft: a 404/network error keeps the flat list.
+    function regroupSubjFilter() {
+      fetch("kb/discipline_canonical_subj4.json", { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (seed) {
+          if (!seed || !seed.disciplines) return;
+          var known = {};
+          Object.keys(seed.disciplines).forEach(function (d) {
+            var rec = seed.disciplines[d] || {};
+            if (rec.canonical_subj4) known[rec.canonical_subj4] = 1;
+            Object.keys(rec.variants_observed || {}).forEach(function (c) { known[c] = 1; });
+          });
+          var officialObs = {};
+          rows.forEach(function (r) {
+            if (r.id_system === "C-ID" || r.id_system === "CCN-ID") {
+              var c = subj4Of(r);
+              if (c) officialObs[c] = 1;
+            }
+          });
+          var g1 = [], g2 = [], g3 = [];
+          uniqSorted(rows.map(subj4Of).filter(Boolean)).forEach(function (c) {
+            if (known[c]) g1.push(c);
+            else if (officialObs[c]) g2.push(c);
+            else g3.push(c);
+          });
+          var cur = fSubj.value;
+          fSubj.innerHTML = "";
+          fSubj.appendChild(el("option", { value: "" }, ["All subjects"]));
+          [["Common subjects ✓", g1], ["Official C-ID & CCN", g2], ["Local-derived (awaiting fold)", g3]]
+            .forEach(function (pair) {
+              var og = el("optgroup", { label: pair[0] });
+              pair[1].forEach(function (c) { og.appendChild(el("option", { value: c }, [c])); });
+              fSubj.appendChild(og);
+            });
+          fSubj.value = cur;   // preserve the selection across the rebuild
+        })
+        .catch(function () { /* fail-soft: the flat list stays */ });
+    }
+    regroupSubjFilter();
     var fCredit = sel("uc-credit", "All credit statuses", uniqSorted(rows.map(function (r) { return r.credit; })));
     var fConf = sel("uc-conf", "Any confidence", ["high (≥0.85)", "medium (0.7–0.84)", "low (<0.7)"]);
     var fArtic = sel("uc-artic", "Adoption: any", ["Has earned articulation", "No articulation yet"]);
@@ -1307,6 +1520,9 @@
       Object.keys(descOverlay).forEach(function (id) {
         if (descOverlay[id] != null && descOverlay[id] !== cd[id]) n++;
       });
+      // live merge members not yet folded into git (replayed at startup or
+      // confirmed this session) — one merge_into row = one edit awaiting sync
+      n += Object.keys(liveMergePending).length;
       return n;
     }
     function renderSyncBadge() {
@@ -2286,10 +2502,14 @@
     // is already stale, and schedule a renewal shortly before it expires.
     if (session && !tokenFresh(session)) ensureFresh().then(function () { render(); });
     scheduleRefresh();
-    // Merge any live Supabase curation overlay (so curated values show before git sync)
-    fetchOverlay().then(function (m) {
-      liveDiscOverlay = m;
-      if (applyDiscOverlay(rows)) render();
+    // Merge any live Supabase curation overlay (so curated values show before
+    // git sync): replay merges FIRST so replay-created target rows (UC-CUR-*)
+    // exist when the discipline overlay is applied over them.
+    fetchOverlay().then(function (o) {
+      liveDiscOverlay = o.disc;
+      var changed = replayLiveMerges(o.merges, o.titles);
+      if (applyDiscOverlay(rows)) changed = true;
+      if (changed) render();
     });
     // Load anchor discipline-correction proposals (read-only suggestions on the
     // firewalled curated anchors; visible to all, editable by signed-in reviewers).
