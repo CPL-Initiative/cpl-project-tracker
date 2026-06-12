@@ -94,6 +94,8 @@ ALIAS_MAPS = [
     "kb/convergence_singletons_out/2026-06-10/alias_map.json",  # 2026-06-10
     "kb/twin_merge_out/2026-06-10/alias_map.json",        # 2026-06-10
     "kb/twin_merge_out/2026-06-12/alias_map.json",        # 2026-06-12 (statewide twins, Session 46)
+    "kb/subj4_fold_out/2026-06-12/alias_map.json",        # 2026-06-12 (the canonical SUBJ4 fold, Session 50 — stamps: _subj4_fold_from)
+    "kb/twin_merge_out/2026-06-12-postfold/alias_map.json",  # 2026-06-12 (post-fold statewide twins, Session 50)
 ]
 
 
@@ -239,13 +241,24 @@ def main():
     live_single = set(sgd.get("singletons") or sgd.get("courses") or sgd)
     memberships = _load("kb/coci_minted_memberships.json")["memberships"]
 
-    # V5 ground truth: live rows carry the pre-SUBJ4 id they moved from
-    check_stamps = "kb/subj4_apply/alias_map.json" in pending_paths
+    # V5 ground truth: live rows carry the historical id they moved from.
+    # Exactly ONE permutation-era stamp source is checked per run — the one
+    # whose map is earliest among the pending maps. A pre-fold id and a
+    # pre-2026-05-23 id can collide via slot reuse, so checking a stamp field
+    # against keys of a DIFFERENT era would compare against the wrong family
+    # (the Session-42 lesson, one layer up).
+    if "kb/subj4_apply/alias_map.json" in pending_paths:
+        stamp_field = "_subj4_remint_from"   # rebuild-from-baseline era
+    elif "kb/subj4_fold_out/2026-06-12/alias_map.json" in pending_paths:
+        stamp_field = "_subj4_fold_from"     # the Session-50 fold era
+    else:
+        stamp_field = None
+    check_stamps = stamp_field is not None
     rev_stamp = {}
     if check_stamps:
         for rel in ("kb/coci_minted_courses.json", "kb/coci_minted_singletons.json"):
             for i, r in _load(rel)["courses"].items():
-                s = r.get("_subj4_remint_from")
+                s = r.get(stamp_field)
                 if s and s != i:
                     rev_stamp[s] = i
 
@@ -289,7 +302,13 @@ def main():
 
     dirname = date.today().isoformat() + (f"-{args.tag}" if args.tag else "")
     odir = os.path.join(ROOT, "kb", "promotions_rekey_out", dirname)
-    os.makedirs(odir, exist_ok=True)
+    # Never overwrite an earlier same-day receipt (Session 50 nearly clobbered
+    # Session 46's — same lesson as the twin merge's --tag): auto-suffix.
+    n = 2
+    while os.path.exists(odir):
+        odir = os.path.join(ROOT, "kb", "promotions_rekey_out", f"{dirname}-{n}")
+        n += 1
+    os.makedirs(odir)
     with open(os.path.join(odir, "rekey_receipt.json"), "w", encoding="utf-8") as f:
         json.dump({"date": date.today().isoformat(),
                    "baseline": args.baseline or "kb/promotions.json",

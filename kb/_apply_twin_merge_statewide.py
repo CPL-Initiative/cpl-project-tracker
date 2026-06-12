@@ -58,6 +58,10 @@ from datetime import datetime as _dt
 from _consolidation_guards import extract_marks, marks_conflict
 
 APPLY = "--apply" in sys.argv
+# --tag=<suffix> appends to the receipt dir date (kb/twin_merge_out/<date>-<tag>/)
+# so a same-day re-run (e.g. the Session-50 post-fold pass) NEVER overwrites an
+# earlier receipt already registered in kb/_rekey_promotions.py ALIAS_MAPS.
+TAG = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--tag=")), None)
 SD = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -213,12 +217,18 @@ if cur_hits:
     for k, f, old, new in cur_hits:
         print(f"     {k} | {f}: {old} → {new}")
 
-outdir = kb(os.path.join("twin_merge_out", _dt.now().strftime("%Y-%m-%d")))
+outdir = kb(os.path.join("twin_merge_out",
+                         _dt.now().strftime("%Y-%m-%d") + (f"-{TAG}" if TAG else "")))
 os.makedirs(outdir, exist_ok=True)
 json.dump({"generated_at": _dt.now().isoformat(), "scope": "STATEWIDE (all SUBJ4, disciplined parents)",
            "twin_key": "(subj4, discipline, band, strict_fam, credit_status, typical_units) + Session-46 guard clique",
            "alias_map": alias,
            "guard_skipped_groups": guard_skipped,
+           # The Supabase-mirror worklist (Session-39 lesson): every kb_curation
+           # row the apply re-keys, persisted here so the mirror ops are
+           # receipted, not just printed.
+           "curation_rekeys": [{"entry": k, "ref": f, "old": old, "new": new}
+                               for k, f, old, new in cur_hits],
            "merges": [{"from": a, "into": b, "from_title": t, "into_title": wt}
                       for a, b, t, wt in merges]},
           open(os.path.join(outdir, "twin_merge_manifest.json"), "w"), indent=1, ensure_ascii=False)

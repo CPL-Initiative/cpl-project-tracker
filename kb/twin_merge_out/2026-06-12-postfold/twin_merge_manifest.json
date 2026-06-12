@@ -1,0 +1,1690 @@
+{
+ "generated_at": "2026-06-12T18:12:31.603487",
+ "scope": "STATEWIDE (all SUBJ4, disciplined parents)",
+ "twin_key": "(subj4, discipline, band, strict_fam, credit_status, typical_units) + Session-46 guard clique",
+ "alias_map": {
+  "ARCH M1002": "ARCH M1102",
+  "BUSI M1212": "BUSI M1213",
+  "BUSI M1289": "BUSI M1288",
+  "BUSI M1299": "BUSI M1298",
+  "BUSI M1332": "BUSI M1361",
+  "CRIM M1169": "CRIM M1168",
+  "CSIS M1209": "CSIS M1208",
+  "CSIS M1444": "CSIS M1443",
+  "CSIS M1478": "CSIS M1477",
+  "FCSH M1002": "FCSH M1003",
+  "HLTH M1012": "HLTH M1011",
+  "HLTH M1035": "HLTH M1033",
+  "HLTH M1034": "HLTH M1033",
+  "IDST M9278": "IDST M9044",
+  "IDST M9179": "IDST M9176",
+  "IDST M9123": "IDST M9010",
+  "IDST M9206": "IDST M9301",
+  "IDST M9316": "IDST M9011",
+  "INDT M1079": "INDT M1078"
+ },
+ "guard_skipped_groups": [
+  {
+   "key": [
+    "ARTS",
+    "Art",
+    "1",
+    "advanced ceramics",
+    "Credit",
+    "3.0"
+   ],
+   "mids": [
+    "ARTS M1033",
+    "ARTS M1034"
+   ],
+   "pair": [
+    "ARTS M1033",
+    "ARTS M1034"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Advanced Ceramics",
+    "Advanced Ceramics I"
+   ]
+  },
+  {
+   "key": [
+    "ARTS",
+    "Art",
+    "1",
+    "advanced painting",
+    "Credit",
+    "3.0"
+   ],
+   "mids": [
+    "ARTS M1057",
+    "ARTS M1048"
+   ],
+   "pair": [
+    "ARTS M1057",
+    "ARTS M1048"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Advanced Painting",
+    "Advanced Painting I"
+   ]
+  },
+  {
+   "key": [
+    "ARTS",
+    "Art",
+    "1",
+    "design dimensional two",
+    "Credit",
+    "3.0"
+   ],
+   "mids": [
+    "ARTS M1289",
+    "ARTS M1286"
+   ],
+   "pair": [
+    "ARTS M1289",
+    "ARTS M1286"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Two-Dimensional Design",
+    "Two-Dimensional Design I"
+   ]
+  },
+  {
+   "key": [
+    "ATHL",
+    "Kinesiology",
+    "1",
+    "2 intercollegiate soccer",
+    "Credit",
+    "3.0"
+   ],
+   "mids": [
+    "ATHL M1158",
+    "ATHL M1162"
+   ],
+   "pair": [
+    "ATHL M1158",
+    "ATHL M1162"
+   ],
+   "why": "gender_risk",
+   "titles": [
+    "INTERCOLLEGIATE SOCCER II (MEN)",
+    "INTERCOLLEGIATE SOCCER II (WOMEN)"
+   ]
+  },
+  {
+   "key": [
+    "ATHL",
+    "Kinesiology",
+    "1",
+    "basketball intercollegiate",
+    "Credit",
+    "3.0"
+   ],
+   "mids": [
+    "ATHL M1042",
+    "ATHL M1043"
+   ],
+   "pair": [
+    "ATHL M1042",
+    "ATHL M1043"
+   ],
+   "why": "gender_risk",
+   "titles": [
+    "INTERCOLLEGIATE BASKETBALL I (MEN)",
+    "INTERCOLLEGIATE BASKETBALL I (WOMEN)"
+   ]
+  },
+  {
+   "key": [
+    "ATHL",
+    "Kinesiology",
+    "1",
+    "intercollegiate soccer",
+    "Credit",
+    "2.0"
+   ],
+   "mids": [
+    "ATHL M1148",
+    "ATHL M1152",
+    "ATHL M1151"
+   ],
+   "pair": [
+    "ATHL M1148",
+    "ATHL M1152"
+   ],
+   "why": "gender_risk",
+   "titles": [
+    "INTERCOLLEGIATE SOCCER I (MEN)",
+    "INTERCOLLEGIATE SOCCER I (WOMEN)",
+    "Intercollegiate Soccer I"
+   ]
+  },
+  {
+   "key": [
+    "BUSI",
+    "Business",
+    "1",
+    "accounting intermediate",
+    "Credit",
+    "3.0"
+   ],
+   "mids": [
+    "BUSI M1076",
+    "BUSI M1001",
+    "BUSI M1064"
+   ],
+   "pair": [
+    "BUSI M1076",
+    "BUSI M1001"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Intermediate Accounting",
+    "Intermediate Accounting 1",
+    "Intermediate Accounting I"
+   ]
+  },
+  {
+   "key": [
+    "CARP",
+    "Carpentry",
+    "1",
+    "rigging",
+    "Credit",
+    "1.5"
+   ],
+   "mids": [
+    "CARP M1059",
+    "CARP M1016"
+   ],
+   "pair": [
+    "CARP M1059",
+    "CARP M1016"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Rigging A",
+    "Rigging B"
+   ]
+  },
+  {
+   "key": [
+    "CHEM",
+    "Chemistry",
+    "1",
+    "chemistry organic",
+    "Credit",
+    "3.0"
+   ],
+   "mids": [
+    "CHEM M1080",
+    "CHEM M1014"
+   ],
+   "pair": [
+    "CHEM M1080",
+    "CHEM M1014"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Organic Chemistry A",
+    "Organic Chemistry B"
+   ]
+  },
+  {
+   "key": [
+    "COMM",
+    "Communication Studies",
+    "1",
+    "journalism lab",
+    "Credit",
+    "1.0"
+   ],
+   "mids": [
+    "COMM M1093",
+    "COMM M1016"
+   ],
+   "pair": [
+    "COMM M1093",
+    "COMM M1016"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "JOURNALISM LAB A",
+    "Journalism Lab B"
+   ]
+  },
+  {
+   "key": [
+    "DANC",
+    "Dance",
+    "1",
+    "2 dance modern",
+    "Credit",
+    "1.0"
+   ],
+   "mids": [
+    "DANC M1010",
+    "DANC M1250",
+    "DANC M1100"
+   ],
+   "pair": [
+    "DANC M1010",
+    "DANC M1100"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Modern Dance 2",
+    "Modern Dance II",
+    "Basic Modern Dance II"
+   ]
+  },
+  {
+   "key": [
+    "DANC",
+    "Dance",
+    "1",
+    "advanced dance jazz",
+    "Credit",
+    "1.0"
+   ],
+   "mids": [
+    "DANC M1031",
+    "DANC M1028"
+   ],
+   "pair": [
+    "DANC M1031",
+    "DANC M1028"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Advanced Jazz Dance",
+    "Advanced Jazz Dance I"
+   ]
+  },
+  {
+   "key": [
+    "DANC",
+    "Dance",
+    "1",
+    "ballet beginning",
+    "Credit",
+    "2.0"
+   ],
+   "mids": [
+    "DANC M1062",
+    "DANC M1059"
+   ],
+   "pair": [
+    "DANC M1062",
+    "DANC M1059"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Beginning Ballet A",
+    "Beginning Ballet B"
+   ]
+  },
+  {
+   "key": [
+    "DANC",
+    "Dance",
+    "1",
+    "ballet intermediate",
+    "Credit",
+    "1.0"
+   ],
+   "mids": [
+    "DANC M1080",
+    "DANC M1072",
+    "DANC M1082"
+   ],
+   "pair": [
+    "DANC M1080",
+    "DANC M1072"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Intermediate Ballet",
+    "Intermediate Ballet I",
+    "Ballet - Intermediate"
+   ]
+  },
+  {
+   "key": [
+    "DANC",
+    "Dance",
+    "1",
+    "beginning choreography",
+    "Credit",
+    "2.0"
+   ],
+   "mids": [
+    "DANC M1101",
+    "DANC M1102",
+    "DANC M1060"
+   ],
+   "pair": [
+    "DANC M1101",
+    "DANC M1102"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Beginning Choreography",
+    "Beginning Choreography A",
+    "Beginning Choreography B"
+   ]
+  },
+  {
+   "key": [
+    "DANC",
+    "Dance",
+    "1",
+    "dance intermediate modern",
+    "Credit",
+    "1.0"
+   ],
+   "mids": [
+    "DANC M1285",
+    "DANC M1211",
+    "DANC M1286"
+   ],
+   "pair": [
+    "DANC M1285",
+    "DANC M1211"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Intermediate Modern Dance",
+    "Intermediate Modern Dance I",
+    "Modern Dance, Intermediate"
+   ]
+  },
+  {
+   "key": [
+    "ECED",
+    "Child Development/Early Childhood Education",
+    "1",
+    "care child family management",
+    "Credit",
+    "3.0"
+   ],
+   "mids": [
+    "ECED M1082",
+    "ECED M1065"
+   ],
+   "pair": [
+    "ECED M1082",
+    "ECED M1065"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Family Child Care Management A",
+    "Family Child Care Management B"
+   ]
+  },
+  {
+   "key": [
+    "ECON",
+    "Economics",
+    "9",
+    "economics high school",
+    "Noncredit Enhanced",
+    "0.0"
+   ],
+   "mids": [
+    "ECON M9004",
+    "ECON M9001"
+   ],
+   "pair": [
+    "ECON M9004",
+    "ECON M9001"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "High School Economics A",
+    "High School Economics B"
+   ]
+  },
+  {
+   "key": [
+    "ELEC",
+    "Electricity",
+    "9",
+    "ged",
+    "Noncredit",
+    "0.0"
+   ],
+   "mids": [
+    "ELEC M9047",
+    "ELEC M9010"
+   ],
+   "pair": [
+    "ELEC M9047",
+    "ELEC M9010"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "GED Preparation - A",
+    "GED Preparation - B"
+   ]
+  },
+  {
+   "key": [
+    "ESLN",
+    "English as a Second Language Noncredit 53412",
+    "9",
+    "english language second",
+    "Noncredit Enhanced",
+    "0.0"
+   ],
+   "mids": [
+    "ESLN M9016",
+    "ESLN M9009"
+   ],
+   "pair": [
+    "ESLN M9016",
+    "ESLN M9009"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "ENGLISH AS A SECOND LANGUAGE",
+    "English as a Second Language I"
+   ]
+  },
+  {
+   "key": [
+    "ESOL",
+    "English as a Second Language",
+    "1",
+    "english lab",
+    "Credit",
+    "1.0"
+   ],
+   "mids": [
+    "ESOL M1270",
+    "ESOL M1160",
+    "ESOL M1195",
+    "ESOL M1247"
+   ],
+   "pair": [
+    "ESOL M1270",
+    "ESOL M1160"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "English in the Lab A",
+    "English in the Lab B",
+    "English in the Lab C",
+    "English in the Lab D"
+   ]
+  },
+  {
+   "key": [
+    "ESOL",
+    "English as a Second Language",
+    "1",
+    "pronunciation",
+    "Credit",
+    "2.0"
+   ],
+   "mids": [
+    "ESOL M1357",
+    "ESOL M1161"
+   ],
+   "pair": [
+    "ESOL M1357",
+    "ESOL M1161"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Pronunciation A",
+    "Pronunciation B"
+   ]
+  },
+  {
+   "key": [
+    "ESOL",
+    "English as a Second Language",
+    "9",
+    "english",
+    "Noncredit Enhanced",
+    "0.0"
+   ],
+   "mids": [
+    "ESOL M9130",
+    "ESOL M9128"
+   ],
+   "pair": [
+    "ESOL M9130",
+    "ESOL M9128"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Basic English A",
+    "Basic English C"
+   ]
+  },
+  {
+   "key": [
+    "ETHS",
+    "Ethnic Studies",
+    "1",
+    "african american history",
+    "Credit",
+    "3.0"
+   ],
+   "mids": [
+    "ETHS M1006",
+    "ETHS M1049",
+    "ETHS M1001"
+   ],
+   "pair": [
+    "ETHS M1006",
+    "ETHS M1001"
+   ],
+   "why": "year_risk",
+   "titles": [
+    "African American History: 1865-1945",
+    "THE AFRICAN AMERICAN IN THE HISTORY OF THE U.S. I",
+    "African American History 1619 to 1877"
+   ]
+  },
+  {
+   "key": [
+    "FIMS",
+    "Film and Media Studies",
+    "1",
+    "cinema history",
+    "Credit",
+    "4.0"
+   ],
+   "mids": [
+    "FIMS M1002",
+    "FIMS M1008"
+   ],
+   "pair": [
+    "FIMS M1002",
+    "FIMS M1008"
+   ],
+   "why": "year_risk",
+   "titles": [
+    "History of Cinema (1895-1950)",
+    "History of Cinema (1950-Present)"
+   ]
+  },
+  {
+   "key": [
+    "FIMS",
+    "Film and Media Studies",
+    "1",
+    "cinema history honors",
+    "Credit",
+    "4.0"
+   ],
+   "mids": [
+    "FIMS M1003",
+    "FIMS M1007"
+   ],
+   "pair": [
+    "FIMS M1003",
+    "FIMS M1007"
+   ],
+   "why": "year_risk",
+   "titles": [
+    "History of Cinema (1895-1950) - HONORS",
+    "History of Cinema (1950-Present) - HONORS"
+   ]
+  },
+  {
+   "key": [
+    "FIRE",
+    "Fire Technology",
+    "1",
+    "1a fire investigation",
+    "Credit",
+    "2.0"
+   ],
+   "mids": [
+    "FIRE M1036",
+    "FIRE M1027"
+   ],
+   "pair": [
+    "FIRE M1036",
+    "FIRE M1027"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Fire Investigation 1A",
+    "Fire Investigation 1A: Basic Fire Investigation"
+   ]
+  },
+  {
+   "key": [
+    "FIRE",
+    "Fire Technology",
+    "1",
+    "fire introduction maintenance manipulative suppression tasks",
+    "Credit",
+    "1.5"
+   ],
+   "mids": [
+    "FIRE M1229",
+    "FIRE M1267",
+    "FIRE M1339"
+   ],
+   "pair": [
+    "FIRE M1229",
+    "FIRE M1267"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Introduction to Fire Suppression and Maintenance Manipulative Tasks (Advanced)",
+    "Introduction to Fire Suppression and Maintenance Manipulative Tasks (Beginning)",
+    "Introduction to Fire Suppression and Maintenance Manipulative Tasks (Intermediate)"
+   ]
+  },
+  {
+   "key": [
+    "FLCH",
+    "Foreign Languages",
+    "1",
+    "chinese intermediate",
+    "Credit",
+    "5.0"
+   ],
+   "mids": [
+    "FLCH M1025",
+    "FLCH M1017"
+   ],
+   "pair": [
+    "FLCH M1025",
+    "FLCH M1017"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Intermediate Chinese",
+    "Intermediate Chinese I"
+   ]
+  },
+  {
+   "key": [
+    "FLCH",
+    "Foreign Languages",
+    "1",
+    "elementary mandarin",
+    "Credit",
+    "5.0"
+   ],
+   "mids": [
+    "FLCH M1032",
+    "FLCH M1031",
+    "FLCH M1033",
+    "FLCH M1034"
+   ],
+   "pair": [
+    "FLCH M1032",
+    "FLCH M1033"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Elementary Mandarin",
+    "Elementary Mandarin (First Quarter)",
+    "Elementary Mandarin (Second Quarter)",
+    "Elementary Mandarin (Third Quarter)"
+   ]
+  },
+  {
+   "key": [
+    "FLCH",
+    "Foreign Languages",
+    "1",
+    "intermediate mandarin",
+    "Credit",
+    "5.0"
+   ],
+   "mids": [
+    "FLCH M1036",
+    "FLCH M1040",
+    "FLCH M1041"
+   ],
+   "pair": [
+    "FLCH M1036",
+    "FLCH M1040"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Intermediate Mandarin (First Quarter)",
+    "Intermediate Mandarin (Second Quarter)",
+    "Intermediate Mandarin (Third Quarter)"
+   ]
+  },
+  {
+   "key": [
+    "FLFR",
+    "Foreign Languages",
+    "1",
+    "french intermediate",
+    "Credit",
+    "5.0"
+   ],
+   "mids": [
+    "FLFR M1045",
+    "FLFR M1040"
+   ],
+   "pair": [
+    "FLFR M1045",
+    "FLFR M1040"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "INTERMEDIATE FRENCH",
+    "Intermediate French I"
+   ]
+  },
+  {
+   "key": [
+    "FLGE",
+    "Foreign Languages",
+    "1",
+    "german intermediate",
+    "Credit",
+    "4.0"
+   ],
+   "mids": [
+    "FLGE M1001",
+    "FLGE M1022"
+   ],
+   "pair": [
+    "FLGE M1001",
+    "FLGE M1022"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Intermediate German 1",
+    "Intermediate German"
+   ]
+  },
+  {
+   "key": [
+    "FLJA",
+    "Foreign Languages",
+    "1",
+    "intermediate japanese",
+    "Credit",
+    "5.0"
+   ],
+   "mids": [
+    "FLJA M1028",
+    "FLJA M1021",
+    "FLJA M1001"
+   ],
+   "pair": [
+    "FLJA M1028",
+    "FLJA M1021"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Intermediate Japanese",
+    "Intermediate Japanese I",
+    "Intermediate Japanese 1"
+   ]
+  },
+  {
+   "key": [
+    "FLKO",
+    "Foreign Languages",
+    "1",
+    "intermediate korean",
+    "Credit",
+    "5.0"
+   ],
+   "mids": [
+    "FLKO M1010",
+    "FLKO M1009"
+   ],
+   "pair": [
+    "FLKO M1010",
+    "FLKO M1009"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Intermediate Korean",
+    "INTERMEDIATE KOREAN I"
+   ]
+  },
+  {
+   "key": [
+    "FLVI",
+    "Foreign Languages",
+    "1",
+    "intermediate vietnamese",
+    "Credit",
+    "4.0"
+   ],
+   "mids": [
+    "FLVI M1008",
+    "FLVI M1002"
+   ],
+   "pair": [
+    "FLVI M1008",
+    "FLVI M1002"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Intermediate Vietnamese",
+    "Intermediate Vietnamese 1"
+   ]
+  },
+  {
+   "key": [
+    "HIST",
+    "History",
+    "1",
+    "african american history",
+    "Credit",
+    "3.0"
+   ],
+   "mids": [
+    "HIST M1065",
+    "HIST M1035",
+    "HIST M1041"
+   ],
+   "pair": [
+    "HIST M1035",
+    "HIST M1041"
+   ],
+   "why": "year_risk",
+   "titles": [
+    "African American History",
+    "African American History to 1865",
+    "African American History to 1877"
+   ]
+  },
+  {
+   "key": [
+    "HIST",
+    "History",
+    "1",
+    "african american history since",
+    "Credit",
+    "3.0"
+   ],
+   "mids": [
+    "HIST M1036",
+    "HIST M1043"
+   ],
+   "pair": [
+    "HIST M1036",
+    "HIST M1043"
+   ],
+   "why": "year_risk",
+   "titles": [
+    "African American History since 1865",
+    "African American History Since 1877"
+   ]
+  },
+  {
+   "key": [
+    "HIST",
+    "History",
+    "1",
+    "culture history music rock roll",
+    "Credit",
+    "3.0"
+   ],
+   "mids": [
+    "HIST M1054",
+    "HIST M1055"
+   ],
+   "pair": [
+    "HIST M1054",
+    "HIST M1055"
+   ],
+   "why": "year_risk",
+   "titles": [
+    "History of Rock and Roll: Music and Culture of the 1950's",
+    "History of Rock and Roll: Music and Culture of the 1960'S"
+   ]
+  },
+  {
+   "key": [
+    "HIST",
+    "History",
+    "1",
+    "history world",
+    "Credit",
+    "3.0"
+   ],
+   "mids": [
+    "HIST M1167",
+    "HIST M1018",
+    "HIST M1015"
+   ],
+   "pair": [
+    "HIST M1018",
+    "HIST M1015"
+   ],
+   "why": "year_risk",
+   "titles": [
+    "World History I",
+    "World History I to 1600",
+    "World History to 1500"
+   ]
+  },
+  {
+   "key": [
+    "HIST",
+    "History",
+    "9",
+    "history world",
+    "Noncredit",
+    "0.0"
+   ],
+   "mids": [
+    "HIST M9004",
+    "HIST M9003"
+   ],
+   "pair": [
+    "HIST M9004",
+    "HIST M9003"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "World History A",
+    "World History B"
+   ]
+  },
+  {
+   "key": [
+    "IDST",
+    "Interdisciplinary Studies",
+    "9",
+    "government high school us",
+    "Noncredit Enhanced",
+    "0.0"
+   ],
+   "mids": [
+    "IDST M9260",
+    "IDST M9106"
+   ],
+   "pair": [
+    "IDST M9260",
+    "IDST M9106"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "High School US Government A",
+    "High School US Government B"
+   ]
+  },
+  {
+   "key": [
+    "IDST",
+    "Interdisciplinary Studies",
+    "9",
+    "physical science",
+    "Noncredit",
+    "0.0"
+   ],
+   "mids": [
+    "IDST M9310",
+    "IDST M9108",
+    "IDST M9026"
+   ],
+   "pair": [
+    "IDST M9310",
+    "IDST M9108"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Physical Science A",
+    "Physical Science B",
+    "PHYSICAL SCIENCE 1"
+   ]
+  },
+  {
+   "key": [
+    "MATH",
+    "Mathematics",
+    "1",
+    "algebra elementary",
+    "Credit",
+    "1.0"
+   ],
+   "mids": [
+    "MATH M1065",
+    "MATH M1070"
+   ],
+   "pair": [
+    "MATH M1065",
+    "MATH M1070"
+   ],
+   "why": "variant_risk",
+   "titles": [
+    "Elementary Algebra I",
+    "Elementary Algebra (Lab)"
+   ]
+  },
+  {
+   "key": [
+    "MATH",
+    "Mathematics",
+    "1",
+    "algebra intermediate",
+    "Credit",
+    "1.0"
+   ],
+   "mids": [
+    "MATH M1075",
+    "MATH M1081"
+   ],
+   "pair": [
+    "MATH M1075",
+    "MATH M1081"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Intermediate Algebra I",
+    "Intermediate Algebra (Lab)"
+   ]
+  },
+  {
+   "key": [
+    "MATH",
+    "Mathematics",
+    "9",
+    "algebra pre",
+    "Noncredit Enhanced",
+    "0.0"
+   ],
+   "mids": [
+    "MATH M9014",
+    "MATH M9013"
+   ],
+   "pair": [
+    "MATH M9014",
+    "MATH M9013"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Pre Algebra A",
+    "Pre-Algebra B"
+   ]
+  },
+  {
+   "key": [
+    "MATH",
+    "Mathematics",
+    "9",
+    "geometry",
+    "Noncredit Enhanced",
+    "0.0"
+   ],
+   "mids": [
+    "MATH M9029",
+    "MATH M9018"
+   ],
+   "pair": [
+    "MATH M9029",
+    "MATH M9018"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Geometry A",
+    "Geometry B"
+   ]
+  },
+  {
+   "key": [
+    "MULT",
+    "Multimedia",
+    "9",
+    "illustrator",
+    "Noncredit",
+    "0.0"
+   ],
+   "mids": [
+    "MULT M9005",
+    "MULT M9009"
+   ],
+   "pair": [
+    "MULT M9005",
+    "MULT M9009"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "ILLUSTRATOR (ADVANCED)",
+    "ILLUSTRATOR (BEGINNING)"
+   ]
+  },
+  {
+   "key": [
+    "MUSI",
+    "Music",
+    "1",
+    "guitar intermediate",
+    "Credit",
+    "2.0"
+   ],
+   "mids": [
+    "MUSI M1352",
+    "MUSI M1345"
+   ],
+   "pair": [
+    "MUSI M1352",
+    "MUSI M1345"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Intermediate Guitar",
+    "Intermediate Guitar I"
+   ]
+  },
+  {
+   "key": [
+    "MUSI",
+    "Music",
+    "1",
+    "intermediate voice",
+    "Credit",
+    "1.0"
+   ],
+   "mids": [
+    "MUSI M1478",
+    "MUSI M1385"
+   ],
+   "pair": [
+    "MUSI M1478",
+    "MUSI M1385"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Intermediate Voice",
+    "Intermediate Voice I"
+   ]
+  },
+  {
+   "key": [
+    "NRSR",
+    "Nursing",
+    "1",
+    "laboratory open skills",
+    "Credit",
+    "0.5"
+   ],
+   "mids": [
+    "NRSR M1159",
+    "NRSR M1038"
+   ],
+   "pair": [
+    "NRSR M1159",
+    "NRSR M1038"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Open Skills Laboratory A",
+    "Open Skills Laboratory B"
+   ]
+  },
+  {
+   "key": [
+    "NRSV",
+    "Licensed Vocational Nursing",
+    "1",
+    "pharmacology",
+    "Credit",
+    "0.5"
+   ],
+   "mids": [
+    "NRSV M1018",
+    "NRSV M1001",
+    "NRSV M1004"
+   ],
+   "pair": [
+    "NRSV M1018",
+    "NRSV M1001"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Pharmacology A",
+    "Pharmacology B",
+    "Pharmacology C"
+   ]
+  },
+  {
+   "key": [
+    "OTEC",
+    "Office Technologies",
+    "9",
+    "2 applications computer concepts",
+    "Noncredit Enhanced",
+    "0.0"
+   ],
+   "mids": [
+    "OTEC M9026",
+    "OTEC M9027",
+    "OTEC M9021",
+    "OTEC M9023"
+   ],
+   "pair": [
+    "OTEC M9026",
+    "OTEC M9027"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Computer Concepts and Applications II",
+    "Computer Concepts and Applications II A",
+    "Computer Concepts and Applications II B",
+    "Computer Concepts and Applications II C"
+   ]
+  },
+  {
+   "key": [
+    "OTEC",
+    "Office Technologies",
+    "9",
+    "3 applications computer concepts",
+    "Noncredit Enhanced",
+    "0.0"
+   ],
+   "mids": [
+    "OTEC M9028",
+    "OTEC M9029",
+    "OTEC M9022"
+   ],
+   "pair": [
+    "OTEC M9028",
+    "OTEC M9029"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Computer Concepts and Applications III",
+    "Computer Concepts and Applications III A",
+    "Computer Concepts and Applications III B"
+   ]
+  },
+  {
+   "key": [
+    "PARN",
+    "Parent Education: Noncredit",
+    "9",
+    "art joyful lab movement music parenting",
+    "Noncredit",
+    "0.0"
+   ],
+   "mids": [
+    "PARN M9001",
+    "PARN M9016"
+   ],
+   "pair": [
+    "PARN M9001",
+    "PARN M9016"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Joyful Parenting-Art, Music and Movement Lab (Ages 1.5 - 2.5 years)",
+    "Joyful Parenting- Art, Music and Movement Lab (Ages 2.5 - 4.5 years)"
+   ]
+  },
+  {
+   "key": [
+    "PARN",
+    "Parent Education: Noncredit",
+    "9",
+    "children lab raising thoughtful",
+    "Noncredit",
+    "0.0"
+   ],
+   "mids": [
+    "PARN M9002",
+    "PARN M9021"
+   ],
+   "pair": [
+    "PARN M9002",
+    "PARN M9021"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Raising Thoughtful Children Lab (Ages 1.5 - 2.5 years)",
+    "Raising Thoughtful Children Lab (Ages 2.5 - 5 years)"
+   ]
+  },
+  {
+   "key": [
+    "PARN",
+    "Parent Education: Noncredit",
+    "9",
+    "developmental lab movement",
+    "Noncredit",
+    "0.0"
+   ],
+   "mids": [
+    "PARN M9004",
+    "PARN M9011",
+    "PARN M9025"
+   ],
+   "pair": [
+    "PARN M9004",
+    "PARN M9011"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Developmental Movement Lab (Ages 1 - 2 years)",
+    "Developmental Movement Lab (Ages 2 - 3 years)",
+    "Developmental Movement Lab (Ages 3 - 4.5 years)"
+   ]
+  },
+  {
+   "key": [
+    "PARN",
+    "Parent Education: Noncredit",
+    "9",
+    "fun games movement",
+    "Noncredit",
+    "0.0"
+   ],
+   "mids": [
+    "PARN M9007",
+    "PARN M9015",
+    "PARN M9028"
+   ],
+   "pair": [
+    "PARN M9007",
+    "PARN M9015"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "MOVEMENT/GAMES/FUN (1-2)",
+    "MOVEMENT/GAMES/FUN (2-3)",
+    "MOVEMENT/GAMES/FUN (3-5)"
+   ]
+  },
+  {
+   "key": [
+    "PARN",
+    "Parent Education: Noncredit",
+    "9",
+    "kids love music",
+    "Noncredit",
+    "0.0"
+   ],
+   "mids": [
+    "PARN M9005",
+    "PARN M9020"
+   ],
+   "pair": [
+    "PARN M9005",
+    "PARN M9020"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "KIDS LOVE MUSIC (AGES 1-2)",
+    "KIDS LOVE MUSIC (AGES 2-4)"
+   ]
+  },
+  {
+   "key": [
+    "PARN",
+    "Parent Education: Noncredit",
+    "9",
+    "kindergym",
+    "Noncredit",
+    "0.0"
+   ],
+   "mids": [
+    "PARN M9013",
+    "PARN M9026"
+   ],
+   "pair": [
+    "PARN M9013",
+    "PARN M9026"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "KINDERGYM (AGES 2-3)",
+    "KINDERGYM (AGES 3-4.5)"
+   ]
+  },
+  {
+   "key": [
+    "PARN",
+    "Parent Education: Noncredit",
+    "9",
+    "preschoolers",
+    "Noncredit",
+    "0.0"
+   ],
+   "mids": [
+    "PARN M9003",
+    "PARN M9014",
+    "PARN M9027"
+   ],
+   "pair": [
+    "PARN M9003",
+    "PARN M9014"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "PRESCHOOLERS (AGES 1.5-2.5)",
+    "PRESCHOOLERS (AGES 2-3)",
+    "PRESCHOOLERS (AGES 3-5)"
+   ]
+  },
+  {
+   "key": [
+    "PHYS",
+    "Physics/Astronomy",
+    "1",
+    "college physics",
+    "Credit",
+    "4.0"
+   ],
+   "mids": [
+    "PHYS M1018",
+    "PHYS M1001",
+    "PHYS M1016"
+   ],
+   "pair": [
+    "PHYS M1018",
+    "PHYS M1001"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "College Physics A",
+    "College Physics B",
+    "College Physics I"
+   ]
+  },
+  {
+   "key": [
+    "SLNA",
+    "Sign Language, American",
+    "1",
+    "american intermediate language sign",
+    "Credit",
+    "4.0"
+   ],
+   "mids": [
+    "SLNA M1037",
+    "SLNA M1024"
+   ],
+   "pair": [
+    "SLNA M1037",
+    "SLNA M1024"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Intermediate American Sign Language",
+    "Intermediate American Sign Language I"
+   ]
+  },
+  {
+   "key": [
+    "VOCE",
+    "Vocational",
+    "9",
+    "english language second vocational",
+    "Noncredit Enhanced",
+    "0.0"
+   ],
+   "mids": [
+    "VOCE M9022",
+    "VOCE M9036"
+   ],
+   "pair": [
+    "VOCE M9022",
+    "VOCE M9036"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "VOCATIONAL ENGLISH AS A SECOND LANGUAGE B",
+    "VOCATIONAL ENGLISH AS A SECOND LANGUAGE C"
+   ]
+  },
+  {
+   "key": [
+    "WELD",
+    "Welding",
+    "1",
+    "structural welding",
+    "Credit",
+    "1.5"
+   ],
+   "mids": [
+    "WELD M1121",
+    "WELD M1066"
+   ],
+   "pair": [
+    "WELD M1121",
+    "WELD M1066"
+   ],
+   "why": "level_risk",
+   "titles": [
+    "Structural Welding A",
+    "Structural Welding B"
+   ]
+  }
+ ],
+ "curation_rekeys": [],
+ "merges": [
+  {
+   "from": "ARCH M1002",
+   "into": "ARCH M1102",
+   "from_title": "Visual Communication 1",
+   "into_title": "Visual Communication"
+  },
+  {
+   "from": "BUSI M1212",
+   "into": "BUSI M1213",
+   "from_title": "Statistics for Business",
+   "into_title": "Business Statistics"
+  },
+  {
+   "from": "BUSI M1289",
+   "into": "BUSI M1288",
+   "from_title": "Escrow Procedures",
+   "into_title": "Escrow Procedures I"
+  },
+  {
+   "from": "BUSI M1299",
+   "into": "BUSI M1298",
+   "from_title": "Principles of Exporting and Importing",
+   "into_title": "Principles of Importing and Exporting"
+  },
+  {
+   "from": "BUSI M1332",
+   "into": "BUSI M1361",
+   "from_title": "INTERNATIONAL MARKETING I",
+   "into_title": "International Marketing"
+  },
+  {
+   "from": "CRIM M1169",
+   "into": "CRIM M1168",
+   "from_title": "ETHICS AND THE CRIMINAL JUSTICE SYSTEM",
+   "into_title": "Ethics In The Criminal Justice System"
+  },
+  {
+   "from": "CSIS M1209",
+   "into": "CSIS M1208",
+   "from_title": "Information & Communication Technology Essentials",
+   "into_title": "Information and Communication Technology Essentials"
+  },
+  {
+   "from": "CSIS M1444",
+   "into": "CSIS M1443",
+   "from_title": "Object-Oriented Programming in Java",
+   "into_title": "Object Oriented Programming with Java"
+  },
+  {
+   "from": "CSIS M1478",
+   "into": "CSIS M1477",
+   "from_title": "Programming with Python",
+   "into_title": "Python Programming"
+  },
+  {
+   "from": "FCSH M1002",
+   "into": "FCSH M1003",
+   "from_title": "Admin II: Personnel & Leadership in Early Childhood Education",
+   "into_title": "Admin II: Personnel and Leadership in Early Childhood Education"
+  },
+  {
+   "from": "HLTH M1012",
+   "into": "HLTH M1011",
+   "from_title": "First Aid CPR AED",
+   "into_title": "First Aid, CPR, and AED"
+  },
+  {
+   "from": "HLTH M1035",
+   "into": "HLTH M1033",
+   "from_title": "Nurse Assistant Training",
+   "into_title": "Nurse Assistant"
+  },
+  {
+   "from": "HLTH M1034",
+   "into": "HLTH M1033",
+   "from_title": "NURSE ASSISTANT TRAINING PROGRAM",
+   "into_title": "Nurse Assistant"
+  },
+  {
+   "from": "IDST M9278",
+   "into": "IDST M9044",
+   "from_title": "HS/LIFE SCIENCE II",
+   "into_title": "HS LIFE SCIENCE 2"
+  },
+  {
+   "from": "IDST M9179",
+   "into": "IDST M9176",
+   "from_title": "Preparation for Citizenship",
+   "into_title": "Citizenship"
+  },
+  {
+   "from": "IDST M9123",
+   "into": "IDST M9010",
+   "from_title": "Basic Math",
+   "into_title": "MATH B-SEMESTER 1"
+  },
+  {
+   "from": "IDST M9206",
+   "into": "IDST M9301",
+   "from_title": "G.E.D. MATHEMATICS",
+   "into_title": "Mathematics"
+  },
+  {
+   "from": "IDST M9316",
+   "into": "IDST M9011",
+   "from_title": "Science",
+   "into_title": "Basic Science 1"
+  },
+  {
+   "from": "INDT M1079",
+   "into": "INDT M1078",
+   "from_title": "MATERIALS ENGINEERING",
+   "into_title": "Materials of Engineering"
+  }
+ ]
+}

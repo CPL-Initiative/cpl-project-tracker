@@ -1082,3 +1082,110 @@ Technology" (not an MQ name) — vocab cleanup later.
 - **Let the first dry-run fail.** Both real findings (the FL fold-back, the
   KINE overflow) came from running the stale machinery and reading its
   damage — the Session-45/46 pattern holding for re-mints too.
+
+## Session 50 — Bruh Dawnleader: the SUBJ4 canonical fold APPLIED (2026-06-12)
+
+The Rule-7 apply of Session 47's dry-run #405 — the largest re-key since the
+2026-05-23 canonicalization, landed in one evening window between crons (both
+of the day's scheduled runs had completed; next cron ~16h out).
+
+### What ran, in order (all receipted)
+
+1. **Pre-apply re-verification** (the handoff's "re-verify deterministic
+   assignments" path): live `kb_curation` rebuilt the committed overlay
+   byte-identically (137 rows → 128 entries); live canonical picks matched
+   the seed 123/123 (the 1 non-Supabase `curator_override` is the PEDS pin
+   the Session-38 convergence apply wrote directly, documented in its
+   `_notes`); a fresh dry-run reproduced the frozen plan **byte-identically**
+   (alias map + report). The 19 curated buckets Sam had in his To-Do feed are
+   exactly what executed — recorded as-executed in the apply receipt.
+2. **`kb/_subj4_apply.py` REBUILT** (the 2026-05-23 version consumed the
+   dry-run plan verbatim and would have overwritten the ALIAS_MAPS-registered
+   historical receipt in `kb/subj4_apply/`): `_subj4_dryrun.py` now exposes
+   `compute_plan()` (refactor proven byte-identical) and the apply calls the
+   SAME allocator — **apply == spec by construction** — with gates P1 plan
+   fidelity vs the frozen reviewed plan, P2 apply-readiness, P3 export
+   freshness (the `--curation-export` fresh-read must rebuild the committed
+   overlay), and G1–G8 post-mutation conservation (counts, untouched
+   byte-identity, exact keyset permutation, articulation multiset, overlay
+   liveness, `_subj4_fold_from` stamp coverage). Receipt:
+   `kb/subj4_fold_out/2026-06-12/` (the frozen dry-run's `_status` restamped
+   SUPERSEDED — the Session-42 receipt-honesty rule).
+3. **The fold**: **71,037 aliases, 48,820 id moves** (12,803 minted + 36,017
+   stand-alone rows; 10,974 are SUBJ4 re-keys, the rest are within-bucket
+   number re-sequencing — the permutation semantics the dry-run's own
+   docstring mandates, same as 2026-05-23). Ripple: 12,803 membership keys,
+   3,232 articulations, 108 curation keys + 39 `merge_into` values.
+4. **Supabase mirror in the same window**: 119 targeted ops (only rows whose
+   key or pointer moved — not a 71k fan-out), single transaction, ordered so
+   every slot-handoff vacates before it fills (simulated against the
+   composite PK first: 0 transient collisions in sorted order). Post-write
+   md5 matched the locally-derived expectation exactly; the overlay rebuilt
+   from post-write rows == the committed file, so the next cron sync is a
+   content no-op.
+5. **The bundled post-fold twin pass** (`--tag=postfold` so the receipt
+   can't clobber Session 46's same-day dir): **19 newly-key-equal twins
+   absorbed** in 18 groups (15,554 → 15,535 parents) — the predicted payoff,
+   cross-SUBJ4 twins the fold made key-equal ("Statistics for Business" →
+   "Business Statistics", the 3-way CNA family, "Object-Oriented Programming
+   in Java" → "… with Java"). 65 guard-skips all correct holds (gendered
+   athletics, A/B sequences, level ladders). 0 curation refs.
+6. **The chain** (`kb/_post_apply_chain.py`, written first as the handoff
+   suggested — fail-fast, `--from` resume): promotions re-key (1,678
+   re-keyed + 3 folds + **0 unresolved**, V5 stamp gate 1,675 checked / 0
+   conflicts against the new `_subj4_fold_from` stamps), CSR re-seed (148
+   disciplines, 0 needs-review, curator picks preserved), audit, both
+   consolidation receipts (desc 415, title 5,581 groups — re-run so the
+   queues never show dead ids), and a fold-verify dry-run into /tmp
+   (`SUBJ4_DRYRUN_OUT` seam): **re_key 0**, 71,691 ids all canonical.
+
+### The receipts
+
+- **`subject_collision_signal` 1,206 → 3.** The 3 residuals are the
+  cross-discipline curated re-keys (`ARTH M1022` ex-`ARTS M1159`,
+  `BUSI M9038/M9039` ex-`CISC M9029/M9030`): the fold honored the CURATED
+  discipline (overlay-wins, correct), but the rule reads the BASELINE file
+  discipline, which still says Art/Computer Science — honest, bounded flags
+  marking baseline↔overlay disagreement, not fold defects.
+- **`mid_id_off_scheme` 2 → 1** (`F M1002`, blank-discipline, unfixable
+  until disciplined; `N M9001` had gained an honest Social Science
+  discipline and folded to `SOCS M9003`).
+- Tests **34/34** after re-pinning `uc_title_lane.test.js` to MECHANISMS
+  (titles + pointer convergence) instead of ids — and the new assertions
+  were cross-checked green against the fresh receipt era too, so the suite
+  survives the post-dispatch artifact flip.
+
+### Lessons
+
+- **Under slot reuse, an id pin in a test asserts the wrong row after any
+  re-mint.** `!byId["AUTO M1002"]` was about to become FALSE-meaningful: the
+  slot gets re-occupied by an unrelated course at the next regen. Title +
+  pointer-convergence assertions are era-proof; concrete ids are kept only
+  where the fold proved them stable (`AUTB M1037`).
+- **Mirror ops need a PK-collision simulation, not hope.** With the
+  composite `(course_id, field)` PK, chained re-sequencing (`M1006→M1005`
+  while `M1005→M1004`) collides transiently if the fill precedes the vacate.
+  Simulating the op order against the PK set found sorted order safe HERE —
+  the check is one loop and belongs in every future apply.
+- **`compute_plan()` extraction is the cheap way to make apply == spec.**
+  The alternative (consume the frozen plan verbatim) is exactly what left a
+  stale `DRY-RUN` status on an applied receipt in May (Session 42's hour of
+  confusion). Recompute + byte-fidelity gate gets both: live inputs AND the
+  reviewed plan.
+- **The auditor's collision rule reads baseline discipline** — a documented
+  asymmetry now (the 3 residual flags). If cross-discipline curation grows,
+  teach `_build_disc_to_modal_subj4`/`_classify_subject_collision` the
+  overlay; at 3 rows it's a truthful diagnostic, not noise.
+
+### State / next
+
+KB: 15,535 parents + 56,156 singletons, every disciplined M-ID on its
+canonical SUBJ4. Artifacts regenerate via the post-merge `workflow_dispatch`
+(code-only-PR policy); the CCR's "Local-derived (awaiting fold)" population
+≈ empties, which is the planned progress meter for the **CCR
+subject-dropdown grouping** (handoff priority 2, unbuilt — sequence around
+the retheme lane's `unified_courses.js` work). Cleanups remaining: the
+`ARTS M1201` "Ceramic Technology" vocab stray (skip_unknown_disc — untouched
+by the fold, cure = pick the MQ discipline in the CCR then it folds next
+pass), the 95 umbrella-offcode rows (FL/KINE per-umbrella review), and the
+3 collision residuals above.

@@ -1,38 +1,44 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-06-12-d",
-  "_session": 48,
-  "_status": "Two lanes ran in parallel today. DESIGN (Session 48): First Light is live — a daily public-domain California plein air greeting with read-aloud and an anonymous reflection box — and the re-theme spec is BLESSED at v1.6 (glass-quiet chips graduated); painting the live dashboard is that lane's next move. DATA (Session 47, Bruh Supernova): the CSR grew SUBJ ⇄ CCR error checking with live collision-free suggestions, Sam cured all 11 shared Common SUBJ codes the same morning (the THEA alias false positive fixed + the DRAM re-code reverted — the convergence pair deliberately shares THEA), and the SUBJ4 fold DRY-RUN passed 5/5 gates (#405: 10,974 re-keys planned). Next data-lane move: the receipted APPLY with the twin-merge re-run bundled. Smog residuals + merge queues remain the curator frontier.",
+  "_as_of": "2026-06-12-e",
+  "_session": 50,
+  "_status": "THE FOLD IS LIVE (Session 50, Bruh Dawnleader): every course identity now wears its discipline's curator-confirmed Common SUBJ — 48,820 ids re-keyed in one receipted evening window (the 19 buckets you reviewed executed exactly as published), Supabase mirrored and checksum-verified, 19 newly-visible twins absorbed (15,535 parents), and the auditor's collision flag fell 1,206 → 3 (the three are documented baseline-vs-curated disagreements, not defects). Dashboard data regenerates via the post-merge run — an open tab may offer a one-time reload. DESIGN lane: the v1.6 glass-quiet retheme is still the next paint. Curator frontier: the smog residuals + the merge queues (5,581 title / 415 description groups, refreshed to the new ids).",
   "items": [
     {
       "id": "sam-first-light",
       "who": "sam",
       "tab": "all",
-      "text": "Tomorrow morning: enjoy First Light on the live dashboard ☀ — try the 🔊 read-aloud and share a reflection (it's anonymous). Reopen anytime via the 'Today's painting' chip in the header."
+      "text": "Enjoy First Light on the live dashboard ☀ — try the 🔊 read-aloud and share a reflection (it's anonymous). Reopen anytime via the 'Today's painting' chip in the header."
     },
     {
-      "id": "sam-fold-buckets",
+      "id": "sam-fold-landed",
       "who": "sam",
-      "tab": "canonical-subj4",
-      "text": "Before the fold APPLY: skim the 19 curated-collision buckets in kb/subj4_dryrun/report.md (deterministic re-numberings of rows you've curated — e.g. the smog family lands adjacent as AUTO M1004/05/06). A 👍 on that list is the last gate; Fable handles the rest of the apply."
+      "tab": "unified-courses",
+      "text": "The SUBJ4 fold you approved is LIVE — course ids re-sequenced (the smog family now sits adjacent as AUTO M1004/05/06). If a CCR tab was open across the regen, accept the one-time reload banner (or hard-refresh) so rows and ids line up."
     },
     {
       "id": "ccr-smog-residuals",
       "who": "sam",
       "tab": "unified-courses",
-      "text": "✨ Suggested merges → 🏷 title groups: the smog residuals await your judgment — the unmarked 'Inspection Procedures' rows (M11DC / M11DE / M11NW) in the Level-1 family group, plus the noncredit pair (M9052 / M90AK)."
+      "text": "✨ Suggested merges → 🏷 title groups: the smog residuals await your judgment — the unmarked 'Inspection Procedures' rows (now AUTO M11CR / M11CT / M11NL after the fold) plus the noncredit pair (M9052 / M90AK)."
     },
     {
       "id": "ccr-queues",
       "who": "sam",
       "tab": "unified-courses",
-      "text": "Work the merge queues as time allows, cross-college first: 🏷 title-evidence (5,584 groups), 📝 description-evidence (416), 🧾 COCI-evidence folds. Confirm what's right, Skip the rest — nothing applies without you."
+      "text": "Work the merge queues as time allows, cross-college first: 🏷 title-evidence (5,581 groups), 📝 description-evidence (415), 🧾 COCI-evidence folds — all refreshed to post-fold ids. Confirm what's right, Skip the rest — nothing applies without you."
     },
     {
       "id": "cer-statewide-bucket",
       "who": "sam",
       "tab": "credential-reference",
       "text": "Statewide-category review bucket: State Bar + HRCM 001 await a category call."
+    },
+    {
+      "id": "fable-verify-regen",
+      "who": "fable",
+      "tab": "unified-courses",
+      "text": "Verify the post-fold regen + next cron: CCR rows wear canonical SUBJ codes, audit chips line up, impact columns intact, suite green on the new artifacts, then stamp-normalized hashes on tomorrow's cron (expect byte-stable). Spec: docs/session_51_handoff.md item 1."
     },
     {
       "id": "fable-retheme",
@@ -47,34 +53,28 @@
       "text": "First Light growth: manifest 3 → 60–90 verified-PD paintings (sourcing rules in the KB note); later, the reflections themes job (service-role mining → a community card) and the Almanac gallery."
     },
     {
-      "id": "fable-subj4-apply",
-      "who": "fable",
-      "tab": "canonical-subj4",
-      "text": "The fold APPLY (dry-run #405 passed 5/5 — 10,974 re-keys): fresh-read kb_curation at write-time, land atomically in one cron window with the Supabase mirror, BUNDLE the statewide twin-merge re-run, then the full post-apply chain (promotions re-key → CSR re-seed → audit → both receipts → artifact regen). Consider the chain-driver script first. Spec: docs/session_50_handoff.md."
-    },
-    {
       "id": "fable-ccr-subj-groups",
       "who": "fable",
       "tab": "unified-courses",
-      "text": "CCR Subject filter grouping (Sam yes'd): one dropdown, three groups — Common ✓ / Official C-ID-CCN / Local-derived (awaiting fold; doubles as the fold's progress meter). Spec in docs/session_50_handoff.md; sequence around the retheme's unified_courses.js chip work."
+      "text": "CCR Subject filter grouping (Sam yes'd): one dropdown, three groups — Common ✓ / Official C-ID-CCN / Local-derived. Post-fold the third group should read ≈ EMPTY — it's now the fold's live progress meter (residuals: 95 umbrella-offcode + blank-discipline rows). Spec in docs/session_51_handoff.md; sequence around the retheme's unified_courses.js chip work."
+    },
+    {
+      "id": "fable-cleanups",
+      "who": "fable",
+      "tab": "canonical-subj4",
+      "text": "Post-fold cleanups: ARTS M1201's curated discipline 'Ceramic Technology' isn't an MQ name (re-curate → it folds next pass); the 95 umbrella-offcode FL/KINE rows; optionally teach the auditor's collision rule the curation overlay so the 3 residual flags clear."
     },
     {
       "id": "fable-cis-cs-gate",
       "who": "fable",
       "tab": "canonical-subj4",
-      "text": "CIS ↔ CS convergence scope — still GATED on Sam's sign-off, but note his codes now keep them distinct (CSIS vs CISC), which leans no-convergence. Confirm and close, or proceed with the scope."
+      "text": "CIS ↔ CS convergence scope — still GATED on Sam's sign-off, but his codes keep them distinct (CSIS vs CISC), which leans no-convergence. Confirm and close, or proceed with the scope."
     },
     {
       "id": "fable-router-phase2",
       "who": "fable",
       "tab": "unified-courses",
-      "text": "C-ID router Phase 2 + 3b: the ccn_equiv bridge, the termly refresh procedure, and curation surfaces for held classes."
-    },
-    {
-      "id": "fable-twin-cadence",
-      "who": "fable",
-      "tab": "unified-courses",
-      "text": "Twin-merge cadence: re-run the dry-run termly together with both consolidation receipts (the shared guards upgrade once → re-run all three)."
+      "text": "C-ID router Phase 2 + 3b: the ccn_equiv bridge, the termly refresh procedure, and curation surfaces for held classes. Termly cadence reminder: twin dry-run + desc + title receipts re-run together."
     }
   ]
 }

@@ -61,30 +61,44 @@ check("cross-college groups rank before same_college ones",
 check("groups carry similarity scores + shared terms",
   tg.every((g) => typeof g.score === "number" && Array.isArray(g.terms)));
 // a stable un-curated marquee: the state fire curriculum's HazMat First
-// Responder Operations/Decontamination family (10 ids across ~10 colleges)
-const fro = tg.find((g) => g.members.some((m) => m.id === "FIRE M1383"));
+// Responder Operations/Decontamination family (~10 ids across ~10 colleges).
+// Found by TITLE, not id — re-mints legitimately re-sequence ids (the
+// 2026-06-12 SUBJ4 fold moved FIRE M1383 → M1363); titles travel with rows.
+const fro = tg.find((g) =>
+  g.members.filter((m) => /decontamination|responder operation/i.test(m.t || "")).length >= 4);
 check("the HazMat FRO family surfaces as one title group",
   !!fro && fro.members.length >= 6);
 
-// the smog families themselves were CONSOLIDATED (Session 46, Sam-confirmed):
-// the strict twin pass absorbed AUTO M1002 into M1001 physically, and the
-// Level-2 inspector family merged into AUTO M1007 via curation — so they no
-// longer appear in the queue; assert the consolidation instead.
+// the smog families themselves were CONSOLIDATED (Session 46, Sam-confirmed).
+// Asserted by MECHANISM (titles + pointer convergence), never by pinned ids:
+// the 2026-06-12 SUBJ4 fold re-sequenced the AUTO bucket (M1007→M1006,
+// M1217→M1211, … — kb/subj4_fold_out/2026-06-12/alias_map.json), and under
+// slot reuse a vacated id is legitimately RE-OCCUPIED by a different course,
+// so id pins would assert the wrong row after any re-mint. (AUTB M1037 kept
+// its id and stays a concrete anchor for the cross-SUBJ4 fold.)
 const cur = JSON.parse(fs.readFileSync("kb/coci_curation.json", "utf8")).curations;
-check("smog Level-2 family is curation-merged into AUTO M1007",
-  cur["AUTO M1005"] && cur["AUTO M1005"].merge_into === "AUTO M1007"
-  && cur["AUTB M1037"] && cur["AUTB M1037"].merge_into === "AUTO M1007"
-  && cur["AUTO M1007"] && cur["AUTO M1007"].unified_title === "Smog Check Inspector Training Level 2");
-check("smog L1&2 family is merged under AUTO M1001 (twin absorb + curation)",
-  !byId["AUTO M1002"]
-  && cur["AUTO M1217"] && cur["AUTO M1217"].merge_into === "AUTO M1001"
-  && cur["AUTO M10AG"] && cur["AUTO M10AG"].merge_into === "AUTO M1001");
-const m1007 = byId["AUTO M1007"];
-check("AUTO M1007 renders as ONE Level-2 row (unified title, 10+ members)",
-  !!m1007 && m1007.title === "Smog Check Inspector Training Level 2" && m1007.members >= 10);
-check("consumed smog ids no longer appear in any title group",
-  !tg.some((g) => g.members.some((m) =>
-    ["AUTO M1002", "AUTO M1005", "AUTB M1037", "AUTO M1217"].includes(m.id))));
+const L2_TITLE = "Smog Check Inspector Training Level 2";
+const l2Key = Object.keys(cur).find((k) => cur[k].unified_title === L2_TITLE);
+const l2Pointers = Object.keys(cur).filter((k) => cur[k].merge_into === l2Key);
+check("smog Level-2 family converges on ONE curated target (incl. the AUTB row)",
+  !!l2Key && l2Pointers.length >= 10 && l2Pointers.includes("AUTB M1037"));
+const l12rows = data.rows.filter((r) => /smog check inspector level 1\s*&\s*2/i.test(r.title || ""));
+check("smog L1&2 family is ONE physical row with >= 2 curation folds",
+  l12rows.length === 1
+  && Object.keys(cur).filter((k) => cur[k].merge_into === l12rows[0].id).length >= 2);
+const l2row = data.rows.find((r) => (r.title || "") === L2_TITLE);
+check("the Level-2 target renders as ONE row (unified title, 10+ members)",
+  !!l2row && l2row.members >= 10);
+// The six consolidated variant titles must be out of the queue in EVERY id
+// era. The noncredit pair ("… Training Level II" / "Smog Level 2 …") is NOT
+// here — it legitimately stays queued (credit status differs; curator call).
+const CONSUMED_TITLES = new Set([
+  "smog check procedures training level 2", "smog check training level 2",
+  "smog check ii", "smog inspector - level 2 training",
+  "smog level one and level two", "level 1 and level 2 smog inspector training",
+]);
+check("consumed smog variants no longer appear in any title group",
+  !tg.some((g) => g.members.some((m) => CONSUMED_TITLES.has((m.t || "").toLowerCase()))));
 
 // ── B. jsdom consumer drive (stubbed payload — UI mechanics) ───────────────
 const src = fs.readFileSync("unified_courses.js", "utf8");

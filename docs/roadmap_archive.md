@@ -1251,3 +1251,23 @@ tier is the ONE title-based auto-merge, fully condition-listed. Smog: 52
 identities → 9 queue families → **2 merged rows + 8 residual queue groups**.
 Suite 30/30. Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 46 +
 part 2); KB note: `methodology-title-similarity-merge-guards.md`.
+
+### Session 47 — Bruh Supernova: SUBJ ⇄ CCR error checking, the To-Do feed, the fold dry-run (2026-06-12)
+
+Sam's asks, four PRs, all merged on green. **#388** the CSR "✓ Check SUBJ ⇄
+CCR" sweep + live Common SUBJ input feedback (collision/in-use badges,
+collision-free suggestion chips, confirm-on-collision); Sam cured **all 11
+shared Common SUBJ codes the same morning**. **#402** the sweep's THEA false
+positive (Drama/Theater Arts ↔ its alias "Theater Arts") → **alias-family
+awareness** (`kb/discipline_aliases.json` joins the umbrella exemptions as
+shared SUBJ4-consumer semantics); the needless DRAM re-code reverted with an
+intent note. **#389** the 📋 To-Do button on every tab (`cpl_todos.js` +
+`kb/cpl_todos.json` — the handoff distilled; Rule-8 item 9). **#405** the
+SUBJ4 fold DRY-RUN: seed synced, `_subj4_dryrun.py` taught the umbrella
+allowances (it predated them — was folding FL** back to FLNG + ATHL to KINE,
+bursting KINE M1###), **71,710 M-IDs → 10,974 re-keys, 5/5 gates PASS**;
+apply gate = 19 curated-collision buckets to approve. Suite 34/34. Lessons:
+`docs/ccr_cluster_cleanup_lessons.md` (Session 47); KB note:
+`methodology-subj4-consumer-semantics.md`. **NEXT: the receipted apply**
+(one cron window, twin-merge re-run bundled) + the CCR Subject-dropdown
+grouping (Sam yes'd; spec in `docs/session_50_handoff.md`).
