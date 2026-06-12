@@ -26,7 +26,13 @@ Method (lightweight TF-IDF, no deps):
       - LEVEL SAFETY: titles carrying DIFFERENT level markers (digits, roman
         numerals, A/B suffixes, beginning/intermediate/advanced/elementary,
         first/second semester) never pair — sequential levels share template
-        descriptions and folding them is the FLSP M1379 sin.
+        descriptions and folding them is the FLSP M1379 sin. Since Session 46
+        the marks are TWO-AXIS (word-levels vs digit-levels, via the shared
+        kb/_consolidation_guards.py) so "Elementary X 2" no longer matches
+        "Intermediate X 1" (both read {1,2} as a flat set), cardinal
+        word-numbers count ("Level Two"), 4-digit YEARS are edition marks,
+        and VARIANT-TYPE words (refresher/update/supplemental/instructor/
+        module/...) gate at strict equality.
       - GENDER SAFETY: "Men's Varsity X" vs "Women's Varsity X" never pair —
         athletics descriptions are template-identical across gender.
       - SPORT SAFETY: titles naming DIFFERENT sports never pair (the
@@ -54,6 +60,8 @@ import re
 from collections import Counter, defaultdict
 from datetime import date
 
+from _consolidation_guards import ROMAN, WORDNUM, extract_marks, marks_conflict
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.join(HERE, "desc_consolidation_out")
 
@@ -78,29 +86,10 @@ principles concepts techniques methods overview survey examination explore
 explores exploration develop develops development understanding designed
 intended required completion offered""".split())
 
-ROMAN = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5, "vi": 6, "vii": 7,
-         "viii": 8}
-LEVEL_WORDS = {"beginning": 1, "elementary": 1, "introductory": 1, "first": 1,
-               "intermediate": 2, "second": 2, "advanced": 3, "third": 3,
-               "fourth": 4}
-GENDER = {"men": "m", "mens": "m", "male": "m", "women": "w", "womens": "w",
-          "female": "w"}
-# closed-ish list of sport nouns whose off-season/varsity template
-# descriptions are interchangeable — titles naming DISJOINT sports never pair
-# (subset-or-empty passes: "Cross Country" pairs with "Cross Country, Men")
-SPORTS = {"baseball", "softball", "basketball", "volleyball", "soccer",
-          "football", "wrestling", "tennis", "golf", "swimming", "diving",
-          "badminton", "track", "country", "polo", "cheerleading",
-          "lacrosse", "rowing", "crew"}
-
-
-def title_marks(title, vocab):
-    t = str(title or "").lower()
-    out = set()
-    for w in re.split(r"[^a-z]+", t):
-        if w in vocab:
-            out.add(vocab[w] if isinstance(vocab, dict) else w)
-    return out
+# Title-safety marks (two-axis levels, cardinal word-numbers, years,
+# variant-type, gender, sport) live in kb/_consolidation_guards.py —
+# SHARED with the title lane (kb/_title_consolidation_dryrun.py) since
+# Session 46 so the two receipt builders can't drift.
 
 
 def load(name):
@@ -113,26 +102,6 @@ def tokens(text):
             if len(t) >= 3 and t not in STOP and t not in BOILER]
 
 
-def title_levels(title):
-    """Level markers in a course title: digits, roman numerals, trailing
-    A/B letters, level words. Returns a frozenset of normalized markers."""
-    t = str(title or "").lower()
-    out = set()
-    for w in re.split(r"[^a-z0-9]+", t):
-        if not w:
-            continue
-        if w.isdigit() and len(w) <= 2:
-            out.add(int(w))
-        elif w in ROMAN:
-            out.add(ROMAN[w])
-        elif w in LEVEL_WORDS:
-            out.add(LEVEL_WORDS[w])
-    m = re.search(r"\b([1-9])?([ab])\b\s*$", t)
-    if m and m.group(2):
-        out.add(m.group(2))
-    return frozenset(out)
-
-
 def sig(title):
     """The worklist's level-safe signature, abbreviated: parentheticals out,
     articles out, roman->digit, tokens sorted. Pairs sharing it are already
@@ -142,7 +111,11 @@ def sig(title):
     for w in re.split(r"[^a-z0-9]+", t):
         if not w or w in ("a", "an", "the", "of", "to", "and", "in", "for"):
             continue
-        ws.append(str(ROMAN[w]) if w in ROMAN else w)
+        if w in ROMAN:
+            w = str(ROMAN[w])
+        elif w in WORDNUM:  # lockstep with the enriched _sug_sig (Session 46)
+            w = str(WORDNUM[w])
+        ws.append(w)
     return " ".join(sorted(ws))
 
 
@@ -177,6 +150,7 @@ def main():
             "credit": v.get("credit_status"),
             "colleges": frozenset(m.get("college") for m in ms if m.get("college")),
             "disc": v.get("discipline"),
+            "marks": extract_marks(v.get("common_title")),
         }
 
     n = len(docs)
@@ -229,17 +203,9 @@ def main():
         if sig(ma["title"]) == sig(mb["title"]):
             stats["already_title_lane"] += 1
             continue
-        la, lb = title_levels(ma["title"]), title_levels(mb["title"])
-        if la and lb and la != lb:
-            stats["level_risk"] += 1
-            continue
-        ga, gb = title_marks(ma["title"], GENDER), title_marks(mb["title"], GENDER)
-        if ga and gb and ga != gb:
-            stats["gender_risk"] += 1
-            continue
-        sa, sb = title_marks(ma["title"], SPORTS), title_marks(mb["title"], SPORTS)
-        if sa and sb and not (sa <= sb or sb <= sa):
-            stats["sport_risk"] += 1
+        why = marks_conflict(ma["marks"], mb["marks"])
+        if why:
+            stats[why] += 1
             continue
         cos = sum(w * vec[b].get(t, 0.0) for t, w in vec[a].items())
         if cos < COSINE_MIN:

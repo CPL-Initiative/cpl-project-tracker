@@ -5362,7 +5362,13 @@ _FAM_FORMAT = {"basic", "training", "academy", "preparation", "prep",
 _FAM_DROP = {"the", "of", "to", "and", "for", "with", "in", "a", "an",
              "on", "at", "as", "or"}
 _FAM_ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5",
-              "vi": "6", "vii": "7", "viii": "8", "ix": "9"}
+              "vi": "6", "vii": "7", "viii": "8", "ix": "9",
+              # cardinal word-numbers fold like romans (Session 46 — the smog
+              # "Level One and Level Two" lesson); they hit the same digit
+              # rules below ("one"→"1" drops as non-distinguishing, "two"→"2"
+              # stays a distinguishing token).
+              "one": "1", "two": "2", "three": "3", "four": "4", "five": "5",
+              "six": "6", "seven": "7", "eight": "8", "nine": "9"}
 
 
 def _fam_key(title):
@@ -7332,7 +7338,12 @@ def export_unified_courses():
     from collections import Counter as _Ctr
     _SUG_DROP = {"the", "of", "to", "and", "for", "with", "in", "a", "an", "on", "at", "as"}
     _SUG_ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5",
-                  "vi": "6", "vii": "7", "viii": "8", "ix": "9", "x": "10"}
+                  "vi": "6", "vii": "7", "viii": "8", "ix": "9", "x": "10",
+                  # + cardinal word-numbers (Session 46): "Smog Level One and
+                  # Level Two" signatures like "Smog Level 1 and Level 2".
+                  "one": "1", "two": "2", "three": "3", "four": "4",
+                  "five": "5", "six": "6", "seven": "7", "eight": "8",
+                  "nine": "9", "ten": "10"}
 
     def _sug_sig(t):
         t = re.sub(r"\([^)]*\)", " ", str(t or "").lower())
@@ -7627,6 +7638,67 @@ def export_unified_courses():
         desc_groups.sort(key=lambda x: (x["same_college"], -(x["score"] or 0),
                                         x["sig"]))
 
+    # ── Title-evidence lane (Session 46 — the AUTO/smog over-mint case) ──────
+    # kb/title_consolidation_out/candidates.json is the committed receipt of
+    # kb/_title_consolidation_dryrun.py: IDF-weighted TITLE-token similarity
+    # over dark M-IDs PLUS Stand-Alone singletons (the desc lane can't see
+    # singletons, and its units gate blocks externally standardized curricula
+    # whose unit packaging varies by college — BAR smog runs 1.0-7.0 units for
+    # one state spec). Guards (two-axis levels, word-numbers, years, variant
+    # type, gender/sport, discipline-or-TOP corroboration) are applied at
+    # receipt build via kb/_consolidation_guards.py; here we only JOIN it:
+    # validate M-ID members are live mergeable rows and Stand-Alone members
+    # are live un-merged singletons, drop groups < 2. Mixed groups merge into
+    # the M-ID (the consumer's existing target pick); all-singleton groups
+    # mint a new unified course (target stays blank). Re-run MANUALLY like
+    # the desc receipt, so the daily cron stays byte-stable. NEVER auto-applied.
+    title_groups = []
+    _title_doc = _load(os.path.join("title_consolidation_out", "candidates.json"))
+    if _title_doc:
+        _mergeable_t = {r["id"]: r for r in rows
+                        if not r.get("locked")
+                        and r.get("id_system") in ("M-ID", "Unified")
+                        and not (r.get("match") or {}).get("cid_conflict")}
+        for g in _title_doc.get("groups", []):
+            members = []
+            for m in g.get("members", []):
+                mid = m.get("id")
+                if m.get("standalone"):
+                    sv = sg.get(mid)
+                    if not sv or mid in merge_into:
+                        continue
+                    members.append({"id": mid, "t": sv.get("common_title"),
+                                    "s": sv.get("subject") or "",
+                                    "u": sv.get("typical_units"),
+                                    "k": "Stand-Alone", "g": 1,
+                                    "_sort": (1, len(str(sv.get("common_title") or "").split()), mid)})
+                else:
+                    r = _mergeable_t.get(mid)
+                    if not r:
+                        continue
+                    members.append({"id": mid, "t": r.get("title"),
+                                    "s": ";".join(r.get("subj") or []),
+                                    "u": r.get("units"),
+                                    "k": r.get("id_system"),
+                                    "_sort": (0, len(str(r.get("title") or "").split()), mid)})
+            if len(members) < 2:
+                continue
+            # identities first (the Confirm target), cleanest title leading —
+            # mirrors the family/desc lanes' representative pick.
+            members.sort(key=lambda m: m["_sort"])
+            for m in members:
+                del m["_sort"]
+            title_groups.append({"sig": members[0]["t"] or members[0]["id"],
+                                 "n": len(members),
+                                 "score": g.get("cos_min"),
+                                 "cos_max": g.get("cos_max"),
+                                 "same_college": not g.get("cross_college"),
+                                 "spread": g.get("units_spread"),
+                                 "terms": (g.get("shared_terms") or [])[:5],
+                                 "members": members})
+        title_groups.sort(key=lambda x: (x["same_college"], -(x["score"] or 0),
+                                         x["sig"]))
+
     out_sug = os.path.join(odir, "unified_courses_suggestions.js")
     _sc_flagged = sum(1 for g in singleton_groups if g["same_college"])
     sug_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
@@ -7637,6 +7709,8 @@ def export_unified_courses():
                    "family_groups": family_groups,
                    "desc_count": len(desc_groups),
                    "desc_groups": desc_groups,
+                   "title_count": len(title_groups),
+                   "title_groups": title_groups,
                    "evidence_count": len(evidence_groups),
                    "evidence_groups": evidence_groups}
     with open(out_sug, "w", encoding="utf-8") as f:
@@ -7648,13 +7722,17 @@ def export_unified_courses():
                 "credential + the ordinal-rule family key); desc_groups = description-"
                 "evidence merges over DARK M-IDs (no official evidence anywhere; TF-IDF "
                 "catalog-description similarity, level/gender/sport-guarded — see "
-                "kb/_desc_consolidation_dryrun.py); evidence_groups = COCI-evidence "
+                "kb/_desc_consolidation_dryrun.py); title_groups = title-evidence merges "
+                "over dark M-IDs + Stand-Alone singletons (IDF-weighted title similarity, "
+                "guard-suite gated, NO units gate — externally standardized curricula vary "
+                "unit packaging by college; see kb/_title_consolidation_dryrun.py); "
+                "evidence_groups = COCI-evidence "
                 "folds into official C-ID/CCN ids (witness counts per member; x=1 members "
                 "are contested and pre-unchecked). HUMAN-CONFIRMED, NEVER auto-applied. */\n"
                 "window.CPL_UC_SUGGESTIONS = " + json.dumps(sug_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
     print(f"  Unified Courses: wrote {out_sug} ({len(sug_groups)} anchored + "
           f"{len(singleton_groups)} singleton-only + {len(family_groups)} co-articulation-family + "
-          f"{len(desc_groups)} description-evidence + "
+          f"{len(desc_groups)} description-evidence + {len(title_groups)} title-evidence + "
           f"{len(evidence_groups)} evidence groups [{_sc_flagged} same-college flagged])")
 
     mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])

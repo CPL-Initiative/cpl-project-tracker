@@ -1189,3 +1189,22 @@ fixed` + colgroups + min-width 900 net; clipping scoped to 5 text columns
 after a perf dip (**"still a bit slow" — WATCH**). KB note:
 [`methodology-fixed-table-layout-off-pane-columns.md`](docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md);
 lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 43).
+
+## Archived session narratives (Session 44) — moved 2026-06-12 (Session 46)
+
+### Session 44 — Statewide Exhibits KPI card + program-area categories + KPI reorder (2026-06-11)
+
+Sam's live feature day; 3 PRs, all merged on green + dispatched. **#375** new
+**Statewide Exhibits** headline KPI card (CCC Collaborative / ASCCC focus — a
+NEW card, not a revision of the adoption card, per Sam): exhibits + areas +
+credit recs + adoptions, total/per-area; **distinct (course,credit) recs vs
+row-count adoptions** semantics locked in the popover. **#376** rollup re-keyed
+from TOP disciplines to the **map.rccd.edu/statewidecpl program areas** via
+curated `kb/statewide_exhibit_categories.json` (merge-preserving seeder
+`kb/_seed_statewide_categories.py`; `^`-anchored pattern fallback; "Other
+Statewide" review bucket — State Bar + HRCM 001 parked for Sam) + **doublewide**
+card (`kpi-card-wide` rides `EXHIBIT_ANALYSIS_CSS`, no Rule-4 mirror). **#377**
+login-free **KPI card drag-to-reorder** (`kpi_reorder.js`, per-browser
+localStorage, label-identity re-match across regens, ↺ reset) — strategic-queue
+item 2. Full story: `docs/statewide_kpi_lessons.md`; pattern distilled:
+`docs/kb-notes/methodology-user-vocabulary-category-maps.md`. Checkpoint #378.
