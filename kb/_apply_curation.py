@@ -46,13 +46,26 @@ FIELDS = {"discipline", "merge_into", "unified_title", "description",
 
 
 def fetch_rows():
+    """Fetch ALL kb_curation rows, paginated. PostgREST caps one response at
+    1,000 rows (db-max-rows) — the table crossed that on 2026-06-12 when
+    auto-merge pass 1 landed 5,838 rows and the unpaginated fetch silently
+    folded only the first 1,000 (946 pre-existing + 54). Stable order +
+    Range pages until a short page."""
     endpoint = (f"{URL}/rest/v1/kb_curation"
                 "?select=course_id,field,value,reviewer_email,reviewed_at,"
-                "validated_at,validated_by")
-    req = urllib.request.Request(endpoint, headers={
-        "apikey": KEY, "Authorization": f"Bearer {KEY}", "Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+                "validated_at,validated_by&order=course_id.asc,field.asc")
+    out, page, start = [], 1000, 0
+    while True:
+        req = urllib.request.Request(endpoint, headers={
+            "apikey": KEY, "Authorization": f"Bearer {KEY}",
+            "Accept": "application/json",
+            "Range-Unit": "items", "Range": f"{start}-{start + page - 1}"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            batch = json.load(r)
+        out.extend(batch)
+        if len(batch) < page:
+            return out
+        start += page
 
 
 def main():
