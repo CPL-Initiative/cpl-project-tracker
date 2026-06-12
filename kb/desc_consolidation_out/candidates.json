@@ -1,6 +1,6 @@
 {
  "_generated_by": "kb/_desc_consolidation_dryrun.py",
- "_generated_at": "2026-06-11",
+ "_generated_at": "2026-06-12",
  "_status": "DRY-RUN — measurement receipt; nothing applied",
  "_params": {
   "cosine_min": 0.6,
@@ -11,15 +11,17 @@
  "population": {
   "dark_mids_with_desc": 12025,
   "candidate_pairs": 71436,
-  "passing_pairs": 1145,
+  "passing_pairs": 1093,
   "gate_rejections": {
-   "below_cosine": 24915,
+   "below_cosine": 24175,
+   "level_risk": 5376,
+   "variant_risk": 550,
    "units_mismatch": 28804,
-   "level_risk": 5183,
    "credit_mismatch": 9489,
    "already_title_lane": 150,
    "sport_risk": 1352,
-   "gender_risk": 398
+   "gender_risk": 398,
+   "year_risk": 49
   }
  },
  "groups": [
@@ -561,8 +563,8 @@
    "cos_max": 1.0,
    "cross_college": true,
    "shared_terms": [
-    "bureaucratic",
     "advocated",
+    "bureaucratic",
     "debated",
     "degradation",
     "democratic",
@@ -684,15 +686,6 @@
      ]
     },
     {
-     "id": "ETHS M1182",
-     "title": "Honors Latinx/Chicanx Literature",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Mt. San Jacinto College"
-     ]
-    },
-    {
      "id": "ETHS M1185",
      "title": "Latinx/Chicanx Literature",
      "units": 3.0,
@@ -702,8 +695,8 @@
      ]
     }
    ],
-   "n": 3,
-   "cos_min": 0.979,
+   "n": 2,
+   "cos_min": 0.993,
    "cos_max": 0.993,
    "cross_college": true,
    "shared_terms": [
@@ -912,24 +905,6 @@
      ]
     },
     {
-     "id": "ETHS M1013",
-     "title": "Honors Chicano History to 1877",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Cabrillo College"
-     ]
-    },
-    {
-     "id": "ETHS M1014",
-     "title": "Honors Chicano History Since 1877",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Cabrillo College"
-     ]
-    },
-    {
      "id": "ETHS M1015",
      "title": "Chicano History Since 1877",
      "units": 3.0,
@@ -961,8 +936,8 @@
      ]
     }
    ],
-   "n": 6,
-   "cos_min": 0.613,
+   "n": 4,
+   "cos_min": 0.655,
    "cos_max": 0.969,
    "cross_college": true,
    "shared_terms": [
@@ -1003,8 +978,8 @@
    "cross_college": true,
    "shared_terms": [
     "zeros",
-    "permutations",
     "axes",
+    "permutations",
     "binomial",
     "vectors",
     "induction"
@@ -1225,12 +1200,12 @@
    "cos_max": 0.959,
    "cross_college": true,
    "shared_terms": [
-    "litters",
     "lashing",
-    "stretcher",
     "webbing",
+    "litters",
+    "stretcher",
     "anchor",
-    "friction"
+    "advantage"
    ]
   },
   {
@@ -1260,8 +1235,8 @@
    "cos_max": 0.948,
    "cross_college": true,
    "shared_terms": [
-    "tender",
     "dumpsite",
+    "tender",
     "shuttle",
     "maneuvering",
     "fill",
@@ -1297,9 +1272,9 @@
    "cross_college": true,
    "shared_terms": [
     "contouring",
-    "canned",
-    "looping",
     "subroutines",
+    "looping",
+    "canned",
     "diameter",
     "cutter"
    ]
@@ -1551,7 +1526,7 @@
     "philosophies",
     "expectations",
     "line",
-    "officer"
+    "enforcement"
    ]
   },
   {
@@ -2050,8 +2025,8 @@
    "cos_max": 0.87,
    "cross_college": true,
    "shared_terms": [
-    "exemptions",
     "itemized",
+    "exemptions",
     "exclusions",
     "gains",
     "tax",
@@ -2090,8 +2065,8 @@
    "shared_terms": [
     "radiological",
     "operative",
-    "principals",
     "pathological",
+    "principals",
     "terms",
     "diseases"
    ]
@@ -2128,8 +2103,8 @@
    "cos_max": 0.858,
    "cross_college": true,
    "shared_terms": [
-    "standpipe",
     "supplying",
+    "standpipe",
     "sprinkler",
     "relay",
     "streams",
@@ -2164,8 +2139,8 @@
    "cos_max": 0.856,
    "cross_college": true,
    "shared_terms": [
-    "groupings",
     "metropolitan",
+    "groupings",
     "cities",
     "ever",
     "urban"
@@ -2480,8 +2455,8 @@
     "cognitively",
     "emotionally",
     "pregnancy",
-    "conception",
     "attachment",
+    "conception",
     "caring"
    ]
   },
@@ -2512,9 +2487,9 @@
    "cos_max": 0.826,
    "cross_college": true,
    "shared_terms": [
+    "tsunamis",
     "flooding",
     "volcanic",
-    "tsunamis",
     "hurricanes",
     "earthquakes",
     "disasters"
@@ -2757,8 +2732,8 @@
    "cos_max": 0.813,
    "cross_college": true,
    "shared_terms": [
-    "ruminants",
     "flocks",
+    "ruminants",
     "purebred",
     "goats",
     "goat",
@@ -2917,42 +2892,6 @@
   {
    "members": [
     {
-     "id": "FIRE M1002",
-     "title": "Fire Fighter 1 Academy Module 1A",
-     "units": 8.0,
-     "disc": "Fire Technology",
-     "colleges": [
-      "American River College",
-      "Folsom Lake College"
-     ]
-    },
-    {
-     "id": "FIRE M1035",
-     "title": "Fire Fighter 1A - Structure",
-     "units": 7.5,
-     "disc": "Fire Technology",
-     "colleges": [
-      "Moreno Valley College",
-      "Shasta College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.784,
-   "cos_max": 0.784,
-   "cross_college": true,
-   "shared_terms": [
-    "forcing",
-    "attacking",
-    "overhaul",
-    "ladder",
-    "suppression",
-    "cleaning"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "FIRE M1175",
      "title": "Chief Fire Officer 3A: Human Resource Management",
      "units": 2.5,
@@ -3028,8 +2967,8 @@
     "suas",
     "pilots",
     "referred",
-    "drones",
-    "rating"
+    "rating",
+    "drones"
    ]
   },
   {
@@ -3854,8 +3793,8 @@
     "container",
     "gardening",
     "botany",
-    "nursery",
-    "landscaping"
+    "landscaping",
+    "nursery"
    ]
   },
   {
@@ -3889,9 +3828,9 @@
    "cross_college": true,
    "shared_terms": [
     "spill",
-    "notification",
     "discharge",
     "witness",
+    "notification",
     "leak",
     "hazardous"
    ]
@@ -4190,8 +4129,8 @@
    "cross_college": true,
    "shared_terms": [
     "foxtrot",
-    "rumba",
     "tango",
+    "rumba",
     "waltz",
     "ballroom",
     "cha"
@@ -4301,9 +4240,9 @@
    "cross_college": true,
    "shared_terms": [
     "disadvantaged",
-    "encourages",
     "facilitates",
     "overcoming",
+    "encourages",
     "americans",
     "groups"
    ]
@@ -4456,8 +4395,8 @@
    "cos_max": 0.675,
    "cross_college": true,
    "shared_terms": [
-    "products",
     "interior",
+    "products",
     "evaluation",
     "materials",
     "application",
@@ -4602,9 +4541,9 @@
    "cos_max": 0.661,
    "cross_college": true,
    "shared_terms": [
-    "machinist",
     "grinders",
     "presses",
+    "machinist",
     "drill",
     "lathes",
     "milling"
@@ -5359,8 +5298,8 @@
    "shared_terms": [
     "saxophone",
     "bassoon",
-    "clarinet",
     "flute",
+    "clarinet",
     "oboe",
     "woodwind"
    ]
@@ -6341,75 +6280,6 @@
   {
    "members": [
     {
-     "id": "ENGL M1043",
-     "title": "Honors Adolescent Literature",
-     "units": 3.0,
-     "disc": "English",
-     "colleges": [
-      "Mt. San Jacinto College"
-     ]
-    },
-    {
-     "id": "ENGL M1044",
-     "title": "Adolescent Literature",
-     "units": 3.0,
-     "disc": "English",
-     "colleges": [
-      "Modesto Junior College",
-      "Mt. San Jacinto College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 1.0,
-   "cos_max": 1.0,
-   "cross_college": false,
-   "shared_terms": [
-    "adolescent",
-    "adolescents",
-    "moral",
-    "prose",
-    "analyzed",
-    "developmental"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ETHS M1089",
-     "title": "Black History in the American Context",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Mt. San Jacinto College"
-     ]
-    },
-    {
-     "id": "ETHS M1090",
-     "title": "Honors Black History in the American Context",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Mt. San Jacinto College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 1.0,
-   "cos_max": 1.0,
-   "cross_college": false,
-   "shared_terms": [
-    "characterized",
-    "encounter",
-    "interpretations",
-    "traces",
-    "nation",
-    "close"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "ETHS M1151",
      "title": "US Hist: Black Perspective I",
      "units": 3.0,
@@ -6434,9 +6304,9 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
-    "paradoxes",
-    "backdrop",
     "legalistic",
+    "backdrop",
+    "paradoxes",
     "continental",
     "constitutional",
     "slavery"
@@ -6549,9 +6419,9 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
+    "spotters",
     "skim",
     "bazooka",
-    "spotters",
     "butt",
     "coat",
     "boxes"
@@ -6608,9 +6478,9 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
+    "chancellor",
     "criterion",
     "discontinue",
-    "chancellor",
     "actually",
     "twice",
     "submitted"
@@ -6648,43 +6518,6 @@
     "infection",
     "disorders",
     "diseases"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "HIST M1175",
-     "title": "Honors History of Science",
-     "units": 3.0,
-     "disc": "History",
-     "colleges": [
-      "Glendale Community College",
-      "Mt. San Jacinto College"
-     ]
-    },
-    {
-     "id": "HIST M1206",
-     "title": "History of Science",
-     "units": 3.0,
-     "disc": "History",
-     "colleges": [
-      "Glendale Community College",
-      "Mt. San Jacinto College",
-      "Santa Monica College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 1.0,
-   "cos_max": 1.0,
-   "cross_college": false,
-   "shared_terms": [
-    "surveyed",
-    "humanity",
-    "assumptions",
-    "realities",
-    "innovations",
-    "beginnings"
    ]
   },
   {
@@ -6736,93 +6569,6 @@
     "competitions",
     "colleges",
     "coast"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "COMM M1072",
-     "title": "Introduction to Popular Culture",
-     "units": 4.0,
-     "disc": "Communication Studies",
-     "colleges": [
-      "Citrus College",
-      "Foothill College"
-     ]
-    },
-    {
-     "id": "HUMN M1002",
-     "title": "HONORS INTRODUCTION TO POPULAR CULTURE",
-     "units": 4.0,
-     "disc": null,
-     "colleges": [
-      "Foothill College"
-     ]
-    },
-    {
-     "id": "HUMN M1003",
-     "title": "HONORS POPULAR CULTURE & UNITED STATES HISTORY",
-     "units": 4.0,
-     "disc": null,
-     "colleges": [
-      "Foothill College"
-     ]
-    },
-    {
-     "id": "HUMN M1004",
-     "title": "POPULAR CULTURE & UNITED STATES HISTORY",
-     "units": 4.0,
-     "disc": null,
-     "colleges": [
-      "Foothill College"
-     ]
-    }
-   ],
-   "n": 4,
-   "cos_min": 0.662,
-   "cos_max": 1.0,
-   "cross_college": false,
-   "shared_terms": [
-    "humn",
-    "mdia",
-    "overarching",
-    "esll",
-    "placement",
-    "popular"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ETHS M1101",
-     "title": "Honors Ethnic American Literature",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Mt. San Jacinto College"
-     ]
-    },
-    {
-     "id": "ETHS M1102",
-     "title": "Ethnic American Literature",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Mt. San Jacinto College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 1.0,
-   "cos_max": 1.0,
-   "cross_college": false,
-   "shared_terms": [
-    "differ",
-    "interprets",
-    "indians",
-    "compares",
-    "chicanx",
-    "themselves"
    ]
   },
   {
@@ -6898,8 +6644,8 @@
    "cos_max": 0.989,
    "cross_college": false,
    "shared_terms": [
-    "ppo",
     "champus",
+    "ppo",
     "tricare",
     "medi",
     "medicaid",
@@ -6960,41 +6706,6 @@
     "lessons",
     "essentials",
     "direct"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ETHS M1071",
-     "title": "Honors Ethnic Politics in America",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Mt. San Jacinto College"
-     ]
-    },
-    {
-     "id": "ETHS M1072",
-     "title": "Ethnic Politics in America",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Antelope Valley College",
-      "Mt. San Jacinto College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.985,
-   "cos_max": 0.985,
-   "cross_college": false,
-   "shared_terms": [
-    "empowerment",
-    "asians",
-    "minorities",
-    "leaders",
-    "latinx",
-    "ethnic"
    ]
   },
   {
@@ -7094,7 +6805,7 @@
     "packages",
     "green",
     "buildings",
-    "compliance"
+    "efficiency"
    ]
   },
   {
@@ -7301,8 +7012,8 @@
    "cross_college": false,
    "shared_terms": [
     "organizers",
-    "sosc",
     "neighborhoods",
+    "sosc",
     "organizing",
     "ewrt",
     "hrs"
@@ -7375,8 +7086,8 @@
    "cos_max": 0.97,
    "cross_college": false,
    "shared_terms": [
-    "guards",
     "shin",
+    "guards",
     "cleats",
     "attire",
     "soccer",
@@ -7486,8 +7197,8 @@
    "shared_terms": [
     "jobsite",
     "drywall",
-    "attachment",
     "handle",
+    "attachment",
     "productivity",
     "properly"
    ]
@@ -7735,8 +7446,8 @@
    "cos_max": 0.957,
    "cross_college": false,
    "shared_terms": [
-    "illuminate",
     "mundane",
+    "illuminate",
     "accomplishments",
     "paradigms",
     "constructs",
@@ -8519,8 +8230,8 @@
    "cos_max": 0.944,
    "cross_college": false,
    "shared_terms": [
-    "reflection",
     "institution",
+    "reflection",
     "get",
     "civic",
     "offer",
@@ -8696,10 +8407,10 @@
    "shared_terms": [
     "bot",
     "less",
-    "mos",
     "desiring",
-    "similar",
-    "consider"
+    "mos",
+    "consider",
+    "similar"
    ]
   },
   {
@@ -8833,8 +8544,8 @@
     "semesters",
     "varsity",
     "subsequent",
-    "implementation",
-    "season"
+    "season",
+    "implementation"
    ]
   },
   {
@@ -8869,42 +8580,6 @@
     "soccer",
     "hrs",
     "competitive"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ETHS M1001",
-     "title": "African American History 1619 to 1877",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Ohlone College"
-     ]
-    },
-    {
-     "id": "HIST M1045",
-     "title": "African American History 1877 to present",
-     "units": 3.0,
-     "disc": "History",
-     "colleges": [
-      "Long Beach City College",
-      "Ohlone College",
-      "Yuba College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.93,
-   "cos_max": 0.93,
-   "cross_college": false,
-   "shared_terms": [
-    "contribution",
-    "sites",
-    "americans",
-    "african",
-    "local",
-    "part"
    ]
   },
   {
@@ -8970,37 +8645,10 @@
      "colleges": [
       "West Valley College"
      ]
-    },
-    {
-     "id": "ENGL M1074",
-     "title": "Asian American Literature",
-     "units": 3.0,
-     "disc": "English",
-     "colleges": [
-      "American River College",
-      "Bakersfield College",
-      "Cerritos College",
-      "Chabot College",
-      "Chaffey College",
-      "Citrus College",
-      "Crafton Hills College",
-      "Cypress College",
-      "Diablo Valley College",
-      "Foothill College",
-      "Fresno City College",
-      "Grossmont College",
-      "Mt. San Jacinto College",
-      "Sacramento City College",
-      "San Diego Mesa College",
-      "San Diego Miramar College",
-      "San Joaquin Delta College",
-      "Skyline College",
-      "West Valley College"
-     ]
     }
    ],
-   "n": 3,
-   "cos_min": 0.751,
+   "n": 2,
+   "cos_min": 0.929,
    "cos_max": 0.929,
    "cross_college": false,
    "shared_terms": [
@@ -9081,45 +8729,6 @@
     "presence",
     "tone",
     "identified"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ENGL M1291",
-     "title": "Honors Film and Literature",
-     "units": 3.0,
-     "disc": "English",
-     "colleges": [
-      "Long Beach City College",
-      "Mt. San Jacinto College"
-     ]
-    },
-    {
-     "id": "ENGL M1294",
-     "title": "Film and Literature",
-     "units": 3.0,
-     "disc": "English",
-     "colleges": [
-      "Antelope Valley College",
-      "College of San Mateo",
-      "Irvine Valley College",
-      "Long Beach City College",
-      "Mt. San Jacinto College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.928,
-   "cos_max": 0.928,
-   "cross_college": false,
-   "shared_terms": [
-    "unsuccessfully",
-    "translate",
-    "adaptations",
-    "theme",
-    "offer",
-    "ways"
    ]
   },
   {
@@ -9334,7 +8943,7 @@
     "publicity",
     "submission",
     "edition",
-    "magazine"
+    "copy"
    ]
   },
   {
@@ -9381,50 +8990,12 @@
    "cos_max": 0.922,
    "cross_college": false,
    "shared_terms": [
-    "pursue",
     "extended",
+    "pursue",
     "experiments",
     "regular",
     "available",
     "projects"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "TAFI M1006",
-     "title": "History of Film: 1880's through 1950's",
-     "units": 3.0,
-     "disc": null,
-     "colleges": [
-      "American River College",
-      "Folsom Lake College",
-      "Sacramento City College"
-     ]
-    },
-    {
-     "id": "TAFI M1007",
-     "title": "History of Film: 1950's to Present",
-     "units": 3.0,
-     "disc": null,
-     "colleges": [
-      "American River College",
-      "Folsom Lake College",
-      "Sacramento City College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.922,
-   "cos_max": 0.922,
-   "cross_college": false,
-   "shared_terms": [
-    "documentaries",
-    "facets",
-    "experimental",
-    "known",
-    "films",
-    "artistic"
    ]
   },
   {
@@ -9875,8 +9446,8 @@
    "cross_college": false,
    "shared_terms": [
     "rehearsing",
-    "microphone",
     "outcome",
+    "microphone",
     "rehearse",
     "articulation",
     "intonation"
@@ -10146,47 +9717,6 @@
   {
    "members": [
     {
-     "id": "PHIL M1083",
-     "title": "Honors Introduction to Religious Studies",
-     "units": 3.0,
-     "disc": "Philosophy",
-     "colleges": [
-      "Cypress College",
-      "Fullerton College"
-     ]
-    },
-    {
-     "id": "PHIL M1100",
-     "title": "Introduction to Religious Studies",
-     "units": 3.0,
-     "disc": "Philosophy",
-     "colleges": [
-      "Cerro Coso Community College",
-      "Crafton Hills College",
-      "Cypress College",
-      "Fullerton College",
-      "San Bernardino Valley College",
-      "Santa Rosa Junior College",
-      "Victor Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.899,
-   "cos_max": 0.899,
-   "cross_college": false,
-   "shared_terms": [
-    "theological",
-    "medieval",
-    "calgetc",
-    "drawn",
-    "engl",
-    "religious"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "FLIT M1046",
      "title": "Italian Life and Culture in Study Abroad",
      "units": 3.0,
@@ -10218,40 +9748,6 @@
     "abroad",
     "host",
     "competence"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ETHS M1107",
-     "title": "Native American Experiences in U.S. History - Honors",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "San Bernardino Valley College"
-     ]
-    },
-    {
-     "id": "ETHS M1108",
-     "title": "Native American Experiences in U.S. History",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "San Bernardino Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.898,
-   "cos_max": 0.898,
-   "cross_college": false,
-   "shared_terms": [
-    "preceding",
-    "termination",
-    "assimilation",
-    "removal",
-    "hist",
-    "region"
    ]
   },
   {
@@ -10361,6 +9857,40 @@
   {
    "members": [
     {
+     "id": "ETHS M1013",
+     "title": "Honors Chicano History to 1877",
+     "units": 3.0,
+     "disc": "Ethnic Studies",
+     "colleges": [
+      "Cabrillo College"
+     ]
+    },
+    {
+     "id": "ETHS M1014",
+     "title": "Honors Chicano History Since 1877",
+     "units": 3.0,
+     "disc": "Ethnic Studies",
+     "colleges": [
+      "Cabrillo College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.895,
+   "cos_max": 0.895,
+   "cross_college": false,
+   "shared_terms": [
+    "undergone",
+    "rigor",
+    "exceed",
+    "ethn",
+    "chicanos",
+    "played"
+   ]
+  },
+  {
+   "members": [
+    {
      "id": "WELD M1012",
      "title": "Gas Metal Arc Welding - Advanced",
      "units": 3.0,
@@ -10389,8 +9919,8 @@
     "contraction",
     "residual",
     "joint",
-    "weld",
     "pipe",
+    "weld",
     "welding"
    ]
   },
@@ -10430,8 +9960,8 @@
    "cross_college": false,
    "shared_terms": [
     "stay",
-    "overnight",
     "observed",
+    "overnight",
     "landscapes",
     "geographical",
     "possible"
@@ -10505,58 +10035,6 @@
     "individualized",
     "developed",
     "times"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "FIMS M1002",
-     "title": "History of Cinema (1895-1950)",
-     "units": 4.0,
-     "disc": "Film and Media Studies",
-     "colleges": [
-      "De Anza College"
-     ]
-    },
-    {
-     "id": "FIMS M1003",
-     "title": "History of Cinema (1895-1950) - HONORS",
-     "units": 4.0,
-     "disc": "Film and Media Studies",
-     "colleges": [
-      "De Anza College"
-     ]
-    },
-    {
-     "id": "FIMS M1007",
-     "title": "History of Cinema (1950-Present) - HONORS",
-     "units": 4.0,
-     "disc": "Film and Media Studies",
-     "colleges": [
-      "De Anza College"
-     ]
-    },
-    {
-     "id": "FIMS M1008",
-     "title": "History of Cinema (1950-Present)",
-     "units": 4.0,
-     "disc": "Film and Media Studies",
-     "colleges": [
-      "De Anza College"
-     ]
-    }
-   ],
-   "n": 4,
-   "cos_min": 0.759,
-   "cos_max": 0.892,
-   "cross_college": false,
-   "shared_terms": [
-    "notable",
-    "contributed",
-    "distinct",
-    "reflected",
-    "picture",
-    "classic"
    ]
   },
   {
@@ -10725,40 +10203,6 @@
   {
    "members": [
     {
-     "id": "MUSI M1262",
-     "title": "HONORS GREAT COMPOSERS & MUSIC MASTERPIECES",
-     "units": 5.0,
-     "disc": "Music",
-     "colleges": [
-      "Foothill College"
-     ]
-    },
-    {
-     "id": "MUSI M1263",
-     "title": "GREAT COMPOSERS & MUSIC MASTERPIECES",
-     "units": 5.0,
-     "disc": "Music",
-     "colleges": [
-      "Foothill College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.889,
-   "cos_max": 0.889,
-   "cross_college": false,
-   "shared_terms": [
-    "lassus",
-    "palestrina",
-    "monteverdi",
-    "vivaldi",
-    "josquin",
-    "handel"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "GEOG M1003",
      "title": "Geographic Information Systems (GIS): Advanced Project Development",
      "units": 1.5,
@@ -10788,40 +10232,6 @@
     "gis",
     "incorporate",
     "geographic"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ENGL M1319",
-     "title": "U.S. Latinx Literature - Honors",
-     "units": 3.0,
-     "disc": "English",
-     "colleges": [
-      "West Valley College"
-     ]
-    },
-    {
-     "id": "ENGL M1375",
-     "title": "U.S. Latinx Literature",
-     "units": 3.0,
-     "disc": "English",
-     "colleges": [
-      "West Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.884,
-   "cos_max": 0.884,
-   "cross_college": false,
-   "shared_terms": [
-    "uplifting",
-    "imperialism",
-    "latinx",
-    "histories",
-    "racism",
-    "ways"
    ]
   },
   {
@@ -11049,82 +10459,6 @@
   {
    "members": [
     {
-     "id": "ASTR M1041",
-     "title": "Honors The Solar System",
-     "units": 3.0,
-     "disc": "Astronomy",
-     "colleges": [
-      "Compton College",
-      "El Camino College"
-     ]
-    },
-    {
-     "id": "ASTR M1046",
-     "title": "The Solar System",
-     "units": 3.0,
-     "disc": "Astronomy",
-     "colleges": [
-      "American River College",
-      "College of San Mateo",
-      "Compton College",
-      "El Camino College",
-      "Folsom Lake College",
-      "Sacramento City College",
-      "Saddleback College",
-      "Solano Community College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.876,
-   "cos_max": 0.876,
-   "cross_college": false,
-   "shared_terms": [
-    "kuiper",
-    "copernican",
-    "seasons",
-    "eclipses",
-    "smaller",
-    "planets"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ICS M1004",
-     "title": "Grassroots Democracy: Leadership and Power",
-     "units": 4.0,
-     "disc": "Social Science",
-     "colleges": [
-      "De Anza College"
-     ]
-    },
-    {
-     "id": "ICS M1005",
-     "title": "Grassroots Democracy: Leadership and Power - HONORS",
-     "units": 4.0,
-     "disc": "Social Science",
-     "colleges": [
-      "De Anza College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.876,
-   "cos_max": 0.876,
-   "cross_college": false,
-   "shared_terms": [
-    "forums",
-    "democracies",
-    "democratic",
-    "mobilization",
-    "sensitive",
-    "recruitment"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "ENVR M1005",
      "title": "Global Environmental History",
      "units": 3.0,
@@ -11154,43 +10488,6 @@
     "interacted",
     "impacted",
     "animals"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ASTR M1036",
-     "title": "Honors Stars and Galaxies",
-     "units": 3.0,
-     "disc": "Astronomy",
-     "colleges": [
-      "Compton College",
-      "El Camino College"
-     ]
-    },
-    {
-     "id": "ASTR M1040",
-     "title": "Stars and Galaxies",
-     "units": 3.0,
-     "disc": "Astronomy",
-     "colleges": [
-      "Chaffey College",
-      "Compton College",
-      "El Camino College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.875,
-   "cos_max": 0.875,
-   "cross_college": false,
-   "shared_terms": [
-    "fates",
-    "bang",
-    "galaxy",
-    "milky",
-    "galaxies",
-    "universe"
    ]
   },
   {
@@ -11245,45 +10542,6 @@
   {
    "members": [
     {
-     "id": "ARTH M1006",
-     "title": "Honors History of American Art",
-     "units": 3.0,
-     "disc": "Art History",
-     "colleges": [
-      "El Camino College"
-     ]
-    },
-    {
-     "id": "ARTS M1092",
-     "title": "History of American Art",
-     "units": 3.0,
-     "disc": "Art",
-     "colleges": [
-      "American River College",
-      "El Camino College",
-      "Folsom Lake College",
-      "Rio Hondo College",
-      "Sacramento City College",
-      "Santa Barbara City College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.871,
-   "cos_max": 0.871,
-   "cross_college": false,
-   "shared_terms": [
-    "identifications",
-    "hybridity",
-    "canon",
-    "visibility",
-    "marginalization",
-    "factor"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "ESOL M1199",
      "title": "ESL Center: Intermediate-Low Support in ESL",
      "units": 0.5,
@@ -11330,16 +10588,6 @@
      ]
     },
     {
-     "id": "HUMA M1014",
-     "title": "Arts and Ideas: Ancient World Through the Late Medieval Period",
-     "units": 3.0,
-     "disc": "Humanities",
-     "colleges": [
-      "Moreno Valley College",
-      "Norco College"
-     ]
-    },
-    {
      "id": "HUMA M1024",
      "title": "Honors Arts and Ideas: The Renaissance through the Modern Era",
      "units": 3.0,
@@ -11348,29 +10596,18 @@
       "Moreno Valley College",
       "Norco College"
      ]
-    },
-    {
-     "id": "HUMA M1025",
-     "title": "Arts & Ideas: Renaissance through the Modern Era",
-     "units": 3.0,
-     "disc": "Humanities",
-     "colleges": [
-      "Moreno Valley College",
-      "Norco College",
-      "Riverside City College"
-     ]
     }
    ],
-   "n": 4,
-   "cos_min": 0.612,
+   "n": 2,
+   "cos_min": 0.867,
    "cos_max": 0.867,
    "cross_college": false,
    "shared_terms": [
     "achievements",
     "synthesis",
     "led",
-    "accelerated",
     "hum",
+    "accelerated",
     "enriched"
    ]
   },
@@ -11537,42 +10774,6 @@
   {
    "members": [
     {
-     "id": "ENGL M1302",
-     "title": "Honors Gender and Sexuality in Literature",
-     "units": 3.0,
-     "disc": "English",
-     "colleges": [
-      "Mt. San Jacinto College",
-      "West Valley College"
-     ]
-    },
-    {
-     "id": "ENGL M1305",
-     "title": "Gender and Sexuality in Literature",
-     "units": 3.0,
-     "disc": "English",
-     "colleges": [
-      "Mt. San Jacinto College",
-      "West Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.864,
-   "cos_max": 0.864,
-   "cross_college": false,
-   "shared_terms": [
-    "utopian",
-    "lgbtq",
-    "queer",
-    "narratives",
-    "nation",
-    "sexuality"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "DANC M1391",
      "title": "Jazz II",
      "units": 2.0,
@@ -11607,43 +10808,6 @@
     "concert",
     "master",
     "department"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "MUSI M1047",
-     "title": "Honors Music of Multicultural America",
-     "units": 3.0,
-     "disc": "Music",
-     "colleges": [
-      "Norco College",
-      "Riverside City College"
-     ]
-    },
-    {
-     "id": "MUSI M1050",
-     "title": "Music of Multicultural America",
-     "units": 3.0,
-     "disc": "Music",
-     "colleges": [
-      "Long Beach City College",
-      "Norco College",
-      "Riverside City College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.862,
-   "cos_max": 0.862,
-   "cross_college": false,
-   "shared_terms": [
-    "musics",
-    "integrative",
-    "recordings",
-    "multicultural",
-    "americans",
-    "musical"
    ]
   },
   {
@@ -11925,49 +11089,6 @@
   {
    "members": [
     {
-     "id": "ENGR M1002",
-     "title": "Advanced Robotic Programming Welding",
-     "units": 3.0,
-     "disc": "Engineering",
-     "colleges": [
-      "Santa Ana College"
-     ]
-    },
-    {
-     "id": "ENGR M1016",
-     "title": "Basic Robotic Programming",
-     "units": 3.0,
-     "disc": "Engineering",
-     "colleges": [
-      "Santa Ana College"
-     ]
-    },
-    {
-     "id": "ENGR M1070",
-     "title": "Intermediate Robotic Programming",
-     "units": 3.0,
-     "disc": "Engineering",
-     "colleges": [
-      "Santa Ana College"
-     ]
-    }
-   ],
-   "n": 3,
-   "cos_min": 0.795,
-   "cos_max": 0.852,
-   "cross_college": false,
-   "shared_terms": [
-    "pendant",
-    "robot",
-    "controller",
-    "manipulate",
-    "safely",
-    "teaches"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "DANC M1398",
      "title": "Jazz III",
      "units": 1.5,
@@ -12032,7 +11153,7 @@
     "arcgis",
     "smart",
     "raster",
-    "gps"
+    "projection"
    ]
   },
   {
@@ -12160,8 +11281,8 @@
    "cross_college": false,
    "shared_terms": [
     "cypress",
-    "composers",
     "concerts",
+    "composers",
     "guest",
     "attendance",
     "concert"
@@ -12369,8 +11490,8 @@
    "shared_terms": [
     "pepperwood",
     "erths",
-    "steward",
     "uneven",
+    "steward",
     "preserve",
     "terrain"
    ]
@@ -12564,51 +11685,11 @@
    "cross_college": false,
    "shared_terms": [
     "failed",
-    "fail",
     "retake",
+    "fail",
     "dismissal",
     "ccr",
     "when"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "CNST M1041",
-     "title": "Basic Commercial Framing",
-     "units": 1.5,
-     "disc": "Carpentry",
-     "colleges": [
-      "Norco College",
-      "Palomar College",
-      "Rio Hondo College",
-      "Santiago Canyon College"
-     ]
-    },
-    {
-     "id": "CNST M1081",
-     "title": "Intermediate Commercial Framing",
-     "units": 1.5,
-     "disc": "Carpentry",
-     "colleges": [
-      "Norco College",
-      "Palomar College",
-      "Rio Hondo College",
-      "Santiago Canyon College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.84,
-   "cos_max": 0.84,
-   "cross_college": false,
-   "shared_terms": [
-    "door",
-    "openings",
-    "plates",
-    "locating",
-    "wall",
-    "connections"
    ]
   },
   {
@@ -12799,40 +11880,6 @@
   {
    "members": [
     {
-     "id": "HVAC M1002",
-     "title": "Advanced Custom Auto Interiors",
-     "units": 3.5,
-     "disc": "Air Conditioning, Refrigeration, Heating",
-     "colleges": [
-      "San Bernardino Valley College"
-     ]
-    },
-    {
-     "id": "HVAC M1018",
-     "title": "Basic Auto Upholstery",
-     "units": 3.5,
-     "disc": "Air Conditioning, Refrigeration, Heating",
-     "colleges": [
-      "San Bernardino Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.829,
-   "cos_max": 0.829,
-   "cross_college": false,
-   "shared_terms": [
-    "autoin",
-    "sew",
-    "acr",
-    "interiors",
-    "fit",
-    "cut"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "ESCI M1029",
      "title": "Wastewater Collection I",
      "units": 3.0,
@@ -12904,8 +11951,8 @@
    "cos_max": 0.827,
    "cross_college": false,
    "shared_terms": [
-    "guards",
     "shin",
+    "guards",
     "cleats",
     "attire",
     "soccer",
@@ -12975,46 +12022,12 @@
    "cos_max": 0.824,
    "cross_college": false,
    "shared_terms": [
-    "microphone",
     "outcome",
+    "microphone",
     "rehearse",
     "articulation",
     "intonation",
     "instrument"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "FIMS M1018",
-     "title": "FILM AND AMERICAN CULTURE",
-     "units": 3.0,
-     "disc": "Film and Media Studies",
-     "colleges": [
-      "Irvine Valley College"
-     ]
-    },
-    {
-     "id": "FIMS M1019",
-     "title": "Film and American Culture Honors",
-     "units": 3.0,
-     "disc": "Film and Media Studies",
-     "colleges": [
-      "Irvine Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.823,
-   "cos_max": 0.823,
-   "cross_college": false,
-   "shared_terms": [
-    "subjectivity",
-    "objectivity",
-    "depiction",
-    "portrayal",
-    "realities",
-    "screenings"
    ]
   },
   {
@@ -13097,8 +12110,8 @@
    "cos_max": 0.822,
    "cross_college": false,
    "shared_terms": [
-    "combinations",
     "steps",
+    "combinations",
     "appreciation",
     "performing",
     "terminology",
@@ -13238,8 +12251,8 @@
    "cos_max": 0.82,
    "cross_college": false,
    "shared_terms": [
-    "microphone",
     "outcome",
+    "microphone",
     "rehearse",
     "articulation",
     "intonation",
@@ -13411,8 +12424,8 @@
    "cross_college": false,
    "shared_terms": [
     "vintages",
-    "cellar",
     "winery",
+    "cellar",
     "tasting",
     "wines",
     "participate"
@@ -13663,40 +12676,6 @@
   {
    "members": [
     {
-     "id": "ESOL M1185",
-     "title": "BEGINNING MULTISKILLS II",
-     "units": 6.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Saddleback College"
-     ]
-    },
-    {
-     "id": "ESOL M1333",
-     "title": "INTERMEDIATE MULTISKILLS I",
-     "units": 6.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Saddleback College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.809,
-   "cos_max": 0.809,
-   "cross_college": false,
-   "shared_terms": [
-    "zero",
-    "version",
-    "basis",
-    "repeated",
-    "exit",
-    "entry"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "DRAF M1008",
      "title": "Basic Fusion 360",
      "units": 3.0,
@@ -13833,16 +12812,6 @@
      ]
     },
     {
-     "id": "AVIA M1037",
-     "title": "Flight Instructor Flight Lab",
-     "units": 1.0,
-     "disc": "Aviation",
-     "colleges": [
-      "Orange Coast College",
-      "Reedley College"
-     ]
-    },
-    {
      "id": "AVIA M1039",
      "title": "Instrument Pilot Flight Lab",
      "units": 1.0,
@@ -13853,8 +12822,8 @@
      ]
     }
    ],
-   "n": 3,
-   "cos_min": 0.606,
+   "n": 2,
+   "cos_min": 0.802,
    "cos_max": 0.802,
    "cross_college": false,
    "shared_terms": [
@@ -13965,8 +12934,8 @@
    "shared_terms": [
     "gait",
     "therapist",
-    "signs",
     "vital",
+    "signs",
     "infection",
     "performed"
    ]
@@ -14285,55 +13254,6 @@
     "approved",
     "hrs",
     "technologies"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "CNST M1020",
-     "title": "Advanced Roof Framing",
-     "units": 1.5,
-     "disc": "Carpentry",
-     "colleges": [
-      "Norco College",
-      "Rio Hondo College",
-      "Santiago Canyon College"
-     ]
-    },
-    {
-     "id": "CNST M1046",
-     "title": "Basic Roof Framing",
-     "units": 1.5,
-     "disc": "Carpentry",
-     "colleges": [
-      "Norco College",
-      "Palomar College",
-      "Rio Hondo College",
-      "Santiago Canyon College"
-     ]
-    },
-    {
-     "id": "CNST M1082",
-     "title": "Commercial Roof Framing",
-     "units": 1.5,
-     "disc": "Carpentry",
-     "colleges": [
-      "Norco College",
-      "Santiago Canyon College"
-     ]
-    }
-   ],
-   "n": 3,
-   "cos_min": 0.667,
-   "cos_max": 0.792,
-   "cross_college": false,
-   "shared_terms": [
-    "rafter",
-    "framed",
-    "angles",
-    "roof",
-    "elevations",
-    "run"
    ]
   },
   {
@@ -14985,8 +13905,8 @@
    "shared_terms": [
     "engineer",
     "report",
-    "apprentices",
     "supplemental",
+    "apprentices",
     "confidence",
     "exams"
    ]
@@ -15244,81 +14164,6 @@
   {
    "members": [
     {
-     "id": "FLCH M1146",
-     "title": "Elementary Mandarin Chinese II",
-     "units": 4.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "Chaffey College",
-      "Ohlone College"
-     ]
-    },
-    {
-     "id": "FLCH M1149",
-     "title": "Intermediate Mandarin Chinese I",
-     "units": 4.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "Chaffey College",
-      "Ohlone College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.757,
-   "cos_max": 0.757,
-   "cross_college": false,
-   "shared_terms": [
-    "china",
-    "mandarin",
-    "customs",
-    "chinese",
-    "conversation",
-    "communicative"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "CNST M1026",
-     "title": "Advanced Stairs",
-     "units": 1.5,
-     "disc": "Carpentry",
-     "colleges": [
-      "Norco College",
-      "Palomar College",
-      "Santiago Canyon College"
-     ]
-    },
-    {
-     "id": "CNST M1052",
-     "title": "Basic Stairs",
-     "units": 1.5,
-     "disc": "Carpentry",
-     "colleges": [
-      "Norco College",
-      "Palomar College",
-      "Rio Hondo College",
-      "Santiago Canyon College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.757,
-   "cos_max": 0.757,
-   "cross_college": false,
-   "shared_terms": [
-    "handrail",
-    "riser",
-    "landing",
-    "height",
-    "stairs",
-    "stair"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "MATH M1046",
      "title": "Just in Time Support for College Algebra",
      "units": 1.0,
@@ -15394,40 +14239,6 @@
   {
    "members": [
     {
-     "id": "ESOL M1061",
-     "title": "Bridge to Academic Oral Communication",
-     "units": 3.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Barstow Community College"
-     ]
-    },
-    {
-     "id": "ESOL M1107",
-     "title": "Advanced ESL Oral Communication",
-     "units": 3.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Barstow Community College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.754,
-   "cos_max": 0.754,
-   "cross_college": false,
-   "shared_terms": [
-    "listen",
-    "bias",
-    "enrichment",
-    "connecting",
-    "takes",
-    "strengthening"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "AUTO M1084",
      "title": "Automotive Climate Control Systems Service and Repair",
      "units": 2.0,
@@ -15487,8 +14298,8 @@
    "cos_max": 0.753,
    "cross_college": false,
    "shared_terms": [
-    "miramar",
     "articulated",
+    "miramar",
     "malfunctions",
     "repairing",
     "natef",
@@ -15722,8 +14533,8 @@
    "cross_college": false,
    "shared_terms": [
     "kick",
-    "kickboxing",
     "boxing",
+    "kickboxing",
     "martial",
     "cardio"
    ]
@@ -15799,43 +14610,6 @@
     "driving",
     "vehicle",
     "emergency"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ESOL M1168",
-     "title": "Basic Reading and Vocabulary",
-     "units": 4.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Norco College",
-      "Riverside City College"
-     ]
-    },
-    {
-     "id": "ESOL M1361",
-     "title": "Intermediate Reading and Vocabulary",
-     "units": 4.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Norco College",
-      "Riverside City College",
-      "Santa Monica College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.741,
-   "cos_max": 0.741,
-   "cross_college": false,
-   "shared_terms": [
-    "productive",
-    "receptive",
-    "selections",
-    "adapted",
-    "expansion",
-    "acquisition"
    ]
   },
   {
@@ -16357,8 +15131,8 @@
    "cos_max": 0.717,
    "cross_college": false,
    "shared_terms": [
-    "combinations",
     "steps",
+    "combinations",
     "appreciation",
     "performing",
     "terminology",
@@ -16473,35 +15247,35 @@
   {
    "members": [
     {
-     "id": "ESOL M1165",
-     "title": "ESL through Basic Computer Technology",
-     "units": 1.0,
-     "disc": "English as a Second Language",
+     "id": "HUMN M1002",
+     "title": "HONORS INTRODUCTION TO POPULAR CULTURE",
+     "units": 4.0,
+     "disc": null,
      "colleges": [
-      "Sierra College"
+      "Foothill College"
      ]
     },
     {
-     "id": "ESOL M1243",
-     "title": "Intermediate ESL through Computer Technology",
-     "units": 1.0,
-     "disc": "English as a Second Language",
+     "id": "HUMN M1003",
+     "title": "HONORS POPULAR CULTURE & UNITED STATES HISTORY",
+     "units": 4.0,
+     "disc": null,
      "colleges": [
-      "Sierra College"
+      "Foothill College"
      ]
     }
    ],
    "n": 2,
-   "cos_min": 0.711,
-   "cos_max": 0.711,
+   "cos_min": 0.71,
+   "cos_max": 0.71,
    "cross_college": false,
    "shared_terms": [
-    "mysierra",
-    "canvas",
-    "keyboarding",
-    "supports",
-    "coursework",
-    "esl"
+    "humn",
+    "mdia",
+    "overarching",
+    "esll",
+    "placement",
+    "popular"
    ]
   },
   {
@@ -16537,8 +15311,8 @@
     "bias",
     "exposed",
     "surrounding",
-    "cases",
-    "vision"
+    "vision",
+    "cases"
    ]
   },
   {
@@ -16765,8 +15539,8 @@
    "cross_college": false,
    "shared_terms": [
     "mixture",
-    "manufacturer",
     "coating",
+    "manufacturer",
     "consistency",
     "finishing"
    ]
@@ -17059,8 +15833,8 @@
    "shared_terms": [
     "suspended",
     "ceilings",
-    "drywall",
     "square",
+    "drywall",
     "ceiling",
     "suspension"
    ]
@@ -17429,8 +16203,8 @@
    "cos_max": 0.679,
    "cross_college": false,
    "shared_terms": [
-    "rough",
     "brotherhood",
+    "rough",
     "lift",
     "powered",
     "terrain",
@@ -17463,8 +16237,8 @@
    "cos_max": 0.679,
    "cross_college": false,
    "shared_terms": [
-    "buses",
     "cert",
+    "buses",
     "transit",
     "troubleshooting",
     "certified"
@@ -17520,55 +16294,6 @@
     "staff",
     "association",
     "competency"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "MACH M1012",
-     "title": "Basic Toolmaking",
-     "units": 4.0,
-     "disc": "Machine Tool Technology",
-     "colleges": [
-      "Chabot College"
-     ]
-    },
-    {
-     "id": "MACH M1029",
-     "title": "Numerical Control Program I",
-     "units": 4.0,
-     "disc": "Machine Tool Technology",
-     "colleges": [
-      "Chabot College"
-     ]
-    },
-    {
-     "id": "MACH M1042",
-     "title": "Machine Tool Technology II",
-     "units": 4.0,
-     "disc": "Machine Tool Technology",
-     "colleges": [
-      "Chabot College"
-     ]
-    },
-    {
-     "id": "MACH M1054",
-     "title": "Production Practices",
-     "units": 4.0,
-     "disc": "Machine Tool Technology",
-     "colleges": [
-      "Chabot College"
-     ]
-    }
-   ],
-   "n": 4,
-   "cos_min": 0.613,
-   "cos_max": 0.678,
-   "cross_college": false,
-   "shared_terms": [
-    "appm",
-    "mtt",
-    "apprenticeship"
    ]
   },
   {
@@ -17671,11 +16396,11 @@
    "cross_college": false,
    "shared_terms": [
     "dips",
+    "pedicures",
     "manicures",
     "acrylics",
-    "pedicures",
-    "communicable",
-    "gels"
+    "gels",
+    "communicable"
    ]
   },
   {
@@ -17799,6 +16524,40 @@
     "difficulty",
     "cases",
     "determined"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "HUMA M1014",
+     "title": "Arts and Ideas: Ancient World Through the Late Medieval Period",
+     "units": 3.0,
+     "disc": "Humanities",
+     "colleges": [
+      "Moreno Valley College",
+      "Norco College"
+     ]
+    },
+    {
+     "id": "HUMA M1025",
+     "title": "Arts & Ideas: Renaissance through the Modern Era",
+     "units": 3.0,
+     "disc": "Humanities",
+     "colleges": [
+      "Moreno Valley College",
+      "Norco College",
+      "Riverside City College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.672,
+   "cos_max": 0.672,
+   "cross_college": false,
+   "shared_terms": [
+    "achievements",
+    "hum",
+    "thought"
    ]
   },
   {
@@ -17930,8 +16689,43 @@
     "acquired",
     "reviews",
     "year",
-    "texts",
-    "primary"
+    "primary",
+    "texts"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "CNST M1046",
+     "title": "Basic Roof Framing",
+     "units": 1.5,
+     "disc": "Carpentry",
+     "colleges": [
+      "Norco College",
+      "Palomar College",
+      "Rio Hondo College",
+      "Santiago Canyon College"
+     ]
+    },
+    {
+     "id": "CNST M1082",
+     "title": "Commercial Roof Framing",
+     "units": 1.5,
+     "disc": "Carpentry",
+     "colleges": [
+      "Norco College",
+      "Santiago Canyon College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.667,
+   "cos_max": 0.667,
+   "cross_college": false,
+   "shared_terms": [
+    "gable",
+    "rafter",
+    "roof"
    ]
   },
   {
@@ -18636,6 +17430,55 @@
   {
    "members": [
     {
+     "id": "MACH M1012",
+     "title": "Basic Toolmaking",
+     "units": 4.0,
+     "disc": "Machine Tool Technology",
+     "colleges": [
+      "Chabot College"
+     ]
+    },
+    {
+     "id": "MACH M1029",
+     "title": "Numerical Control Program I",
+     "units": 4.0,
+     "disc": "Machine Tool Technology",
+     "colleges": [
+      "Chabot College"
+     ]
+    },
+    {
+     "id": "MACH M1042",
+     "title": "Machine Tool Technology II",
+     "units": 4.0,
+     "disc": "Machine Tool Technology",
+     "colleges": [
+      "Chabot College"
+     ]
+    },
+    {
+     "id": "MACH M1054",
+     "title": "Production Practices",
+     "units": 4.0,
+     "disc": "Machine Tool Technology",
+     "colleges": [
+      "Chabot College"
+     ]
+    }
+   ],
+   "n": 4,
+   "cos_min": 0.613,
+   "cos_max": 0.646,
+   "cross_college": false,
+   "shared_terms": [
+    "appm",
+    "mtt",
+    "apprenticeship"
+   ]
+  },
+  {
+   "members": [
+    {
      "id": "ATHL M1266",
      "title": "Off Season Conditioning for Basketball",
      "units": 0.5,
@@ -18756,8 +17599,8 @@
     "curricular",
     "seminar",
     "identified",
-    "regulation",
-    "incorporating"
+    "incorporating",
+    "regulation"
    ]
   },
   {
@@ -18823,8 +17666,8 @@
    "cos_max": 0.639,
    "cross_college": false,
    "shared_terms": [
-    "prosthetics",
     "gore",
+    "prosthetics",
     "makeup",
     "blood",
     "noncredit"
@@ -19384,10 +18227,10 @@
    "cross_college": false,
    "shared_terms": [
     "holistic",
-    "transformative",
     "campuses",
-    "fund",
+    "transformative",
     "nine",
+    "fund",
     "education"
    ]
   },
@@ -20311,8 +19154,8 @@
    "cos_max": 0.605,
    "cross_college": false,
    "shared_terms": [
-    "rvpa",
     "santarosa",
+    "rvpa",
     "srjc",
     "edu"
    ]
@@ -20353,8 +19196,8 @@
    "cos_max": 0.603,
    "cross_college": false,
    "shared_terms": [
-    "neurodivergent",
     "adaptability",
+    "neurodivergent",
     "cohort",
     "disabled",
     "pursuing"

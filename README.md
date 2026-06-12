@@ -82,10 +82,14 @@ The whole ecosystem, end-to-end:
    under official C-ID/CCN anchors when the underlying members agree,
    a statewide **c-id.net articulation router** (per-college official
    approvals place 8,377 member courses under their C-ID descriptor rows —
-   no titles consulted), and a **description-evidence worklist lane** that
+   no titles consulted), a **description-evidence worklist lane** that
    surfaces same-course candidates among the M-IDs no official source
-   covers (TF-IDF over catalog descriptions, level/gender/sport-guarded,
-   always curator-confirmed). The rules in plain language:
+   covers (TF-IDF over catalog descriptions, guard-suite gated, always
+   curator-confirmed), and a **title-evidence worklist lane** that does the
+   same across near-duplicate titles — including the ~54k single-college
+   stand-alones — with no units gate, because externally standardized
+   curricula (BAR smog, POST academy modules) pack the same spec at
+   different unit loads per college. The rules in plain language:
    [`docs/ccr_rules_brief.md`](docs/ccr_rules_brief.md).
 4. **The Common Course Reference curation tab** (formerly "Unified Courses" —
    renamed to avoid UC/University-of-California confusion and to signal that

@@ -834,3 +834,106 @@ same-college amber); Confirm = the existing doConsolidate;
 - **Let the first run's output design the guards.** Both the scoped-entry
   design (#381) and the gender/sport guards (#382) came from running the
   naive version and reading its damage, not from up-front speculation.
+
+## Session 46 — the AUTO/smog over-mint case → the title-evidence lane (2026-06-12)
+
+Sam's brief: "tear into further rules refinement for minting and merging —
+have a look at the auto overmints, particularly in smog I and II", then
+generalize statewide. One PR.
+
+**The case study.** The California BAR (Bureau of Automotive Repair) Smog
+Check curriculum — a single state-regulated spec with ~5 course types
+(Level 1 Engine & Emission Control, Level 2 Inspection Procedures, combined
+L1&2, Diagnostic & Repair, license-renewal Update) — existed as **52
+identities** (10 M-IDs + 42 stand-alones) with only 3 trivial pairs
+surfaced by any lane. Structural causes, each now a rule:
+- **The desc lane can't see singletons** (42 of the 52) — its population
+  was minted M-IDs only.
+- **Units gates block licensure-spec courses**: the same BAR spec is
+  packaged at 1.0–7.0 units across colleges (POST modular academies run
+  7–21.5u). For externally standardized curricula, unit packaging is a
+  COLLEGE choice, not course identity. The exact-sig title lane never
+  gated units; near-title matching shouldn't either — show the spread,
+  don't gate it.
+- **Title decorations hide matches**: "BAR …", "Bureau of Automotive
+  Repair (BAR) …", "California State …" break token-set equality. IDF
+  weighting solves what filler-stripping can't (agency/geo tokens are
+  mid-IDF, content tokens like "smog" dominate).
+- **Word-number levels**: "Smog Level One and Level Two" never matched
+  "Level 1 & 2" (roman handled, cardinals not).
+
+**Shipped — `kb/_title_consolidation_dryrun.py` + the 🏷 title-evidence
+worklist lane** (6th section): IDF-weighted title cosine ≥ 0.62 over dark
+M-IDs **+ stand-alone singletons** (67,346 titles), discipline-OR-TOP-division
+corroboration (the mis-disciplined `AUTB M1037` "SMOG CHECK II" joins via
+TOP 09), ≥2 shared content tokens, NO units gate, **clique-consistent
+components** (an unmarked title can't chain Level 1 and Level 2 into one
+blob — every cross-pair must pass the guards before two components unite).
+**5,662 groups (4,376 cross-college; 2,255 mixed M-ID+stand-alone)**;
+receipt `kb/title_consolidation_out/candidates.json`, joined as
+`title_groups`, rendered with units-spread note + same-college amber.
+Smog: 52 fragments → 9 coherent families; the marquee L1&2 group
+(M1001+M1002+M1217+M10AG) and the 10-college Level-2 family assert in
+`tests/uc_title_lane.test.js`. Other first-page wins: POST Level III
+Reserve ×3 colleges, NWCG Fireline L-380, ASL Linguistics ×4, JavaScript
+×6 (3 SUBJ4s), Wills/Trusts paralegal family ×10.
+
+**The guard suite got a shared home — `kb/_consolidation_guards.py`**
+(imported by BOTH receipt builders; they were already drifting). Upgrades
+earned by reading the naive run's damage (the Session-45 pattern again):
+- **Two-axis level marks.** "Elementary Portuguese 2" vs "Intermediate
+  Portuguese - Level 1" both read {1,2} as a flat set — the desc lane's
+  guard had this collision too. Word-levels and digit-levels now gate
+  separately, then the combined set gates ("Basic X" {W:1} still blocks
+  "X II" {D:2}).
+- **Variant-type marks, STRICT equality** (refresher / update /
+  supplemental / instructor / supervisor / module / modular / bridge /
+  honors): asymmetric possession blocks — "EMT-I Refresher" never pairs
+  with "EMT-I" but pairs with "EMT 1- Refresher Course". CCN itself
+  treats Honors as a distinct course (the `H` speciality identifier).
+- **Year edition marks** (15xx–20xx): "2019 Smog Check Update" ≠ "2021
+  …"; "US History to 1865" ≠ "… 1877 to Present"; year-less pairs with
+  yeared (vacuous pass) so cross-college editions still group.
+- **Context-marked session letters** ("Honda IST Session C" ≠ "Session A").
+- **Cardinal word-numbers** fold to digits in marks AND in `_sug_sig` /
+  `_fam_key` / the desc lane's sig (lockstep — a sig-equal pair must be
+  the title lane's, never double-queued).
+
+**Desc receipt re-run under the new guards: 474 → 446 groups.** All 37
+removed groups were real conflations the old guards passed: Honors-vs-base
+(Chicano History, Adolescent Lit, History of Science), period splits
+("to 1877" vs "Since 1877"), Fire Module 1A chimeras. Strict improvement;
+the ECED marquee family survives intact (8 members).
+
+**Patterns (additions to the canon):**
+- **Read the over-mint before designing the merge rule.** The 52-fragment
+  smog corpus dictated every gate decision — population (singletons in),
+  units (out), corroboration (discipline OR TOP), normalization
+  (word-numbers). A rules pass designed from the schema alone would have
+  kept the units gate and missed 80% of the corpus.
+- **Clique-consistency beats size caps for chained components.** Union-find
+  over pairwise-gated edges still chains A–B–C where A–C violates a guard
+  (vacuous-pass semantics make unmarked titles bridges). Validating every
+  cross-pair at union time kills the leak generically; the desc lane's
+  GROUP_CAP was the blunt version.
+- **When two scripts share guard vocabulary, extract the module the day
+  the second script appears.** The desc lane's flat-set level guard had
+  already drifted from what the title lane needed; the shared module made
+  the upgrade land in both.
+
+**Carryover / observations for next sessions:**
+- `AUTB M1037` ("SMOG CHECK II" under Auto Body Technology) and `AVIA
+  M10KE` ("BAR Emissions Update" under an aviation SUBJ4) are
+  mis-disciplined rows the lane SURFACES but can't fix — both involve
+  apprenticeship-style subject codes (`APPR`, `ATECH`) that aren't in
+  `subject_map` (so the #381 homonym audit didn't see them). The eventual
+  canonical-SUBJ4 fold (collision-signal queue, handoff item 4) is the fix
+  vehicle; until then the Confirm flow parks them under the right family.
+- Known acceptable misses: different-year Update editions never group
+  cross-college (year guard); base ↔ "Beginning X" pairs rely on vacuous
+  pass (by design); contentful-difference damage ("Installation" vs
+  "Layout", "California" vs "Latin America") survives the gates at ~0.65
+  cosine — obvious-on-sight for the curator, acceptable for a
+  never-auto-applied queue.
+- Receipt re-run cadence: termly, alongside the desc receipt (both join
+  static committed receipts; the daily cron stays byte-stable mod stamp).

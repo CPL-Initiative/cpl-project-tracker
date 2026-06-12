@@ -1163,7 +1163,7 @@ workflow `git add` list (§6):
 | `unified_courses_standalone.js` | `CPL_UC_STANDALONE` | "Stand-Alone" kind filter | ~57.7k single-college rows (kept out of the main payload) |
 | `unified_courses_members.js` | `CPL_UC_MEMBERS` | row expand caret ▸ | `id → [{c:collegeIdx,n:code,t:title,u:units,p:topcode}]` member college courses + `topmap` (TOP code→title, deduped) |
 | `unified_courses_member_desc.js` | `CPL_UC_MEMBER_DESC` | member "Show descriptions" link | `id → [desc,…]` PARALLEL to `members[id]` (each ≤500 chars) — on-demand, ~51MB so loaded only when a curator opens member descriptions |
-| `unified_courses_suggestions.js` | `CPL_UC_SUGGESTIONS` | ✨ Suggested-merges worklist | `{groups:[…], singleton_groups:[{sig,n,score,same_college,members:[{id,t,s,u,k,g}]}], family_groups:[{sig,n,score,credential,members}]}` — `groups` = identity-anchored same-title merges; `singleton_groups` (V2) = singleton-only matches that mint a NEW unified course (`same_college` flags likely intra-college variants); `family_groups` (#310, 2026-06-04) = **co-articulation family merges** — near-duplicate M-IDs the level-safe `_sug_sig` misses, grouped by `(M-ID subject prefix, _fam_key)` GATED on a shared credential in `coci_articulations.json` (consumer `_kind:"family"`; merge into the existing identity; never auto-applied). Ranked by cohesion |
+| `unified_courses_suggestions.js` | `CPL_UC_SUGGESTIONS` | ✨ Suggested-merges worklist | **Six sections, all HUMAN-CONFIRMED / never auto-applied:** `groups` = identity-anchored same-title merges (level-safe `_sug_sig`, word-numbers folded since Session 46); `singleton_groups` (V2) = singleton-only matches that mint a NEW unified course (`same_college` flags likely intra-college variants); `family_groups` (#310) = co-articulation family merges (`(M-ID subject prefix, _fam_key)` gated on a shared credential); `desc_groups` (#382) = 📝 description-evidence merges over DARK M-IDs (TF-IDF catalog-description cosine; receipt `kb/desc_consolidation_out/`); `title_groups` (#385, Session 46) = 🏷 title-evidence merges over dark M-IDs + Stand-Alone singletons (IDF-weighted title cosine, guard suite `kb/_consolidation_guards.py`, NO units gate — receipt `kb/title_consolidation_out/`; mixed groups merge into the M-ID, all-singleton groups mint new); `evidence_groups` = 🧾 COCI-evidence folds into official C-IDs (witness counts; `x:1` members pre-unchecked). Ranked by cohesion, cross-college first |
 | `unified_courses_aligned.js` | `CPL_UC_ALIGNED` | row expand caret ▸ (CCR **inverse view**) | `aligned[course_id] → [{c:credential, i:issuer, p:CPL type, r:[credit recs], g:[earning colleges], n:#colleges, x:'CCC' if a statewide CCC-collaborative standard}]` — the **mirror of the EACR** (one row per course → the aligned exhibits/credentials that articulate to it). Built by `_build_aligned_exhibits_by_course()` from `kb/coci_articulations.json`; deterministic (no timestamp → no-op daily diff). 2,355 courses. Consumer unions Phase-B `consolidated_from` ids. |
 
 **Raw course source — `kb/reference/coci_course_list.xlsx`** (committed, ~24MB,
@@ -1530,27 +1530,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > locked decisions verbatim. Searching the archive for an id (e.g. "FLSP
 > M1379", "#310") is usually faster than re-deriving from code.
 
-> **Session 41 + 42 + 43 narratives archived** → `docs/roadmap_archive.md`
+> **Session 41 + 42 + 43 + 44 narratives archived** → `docs/roadmap_archive.md`
 > (witness-kinship gate + R4 singletons; the slot-fix + C-ID authority +
-> Phase-1 router; Starlord's cron-verify + off-pane-columns fix — all
-> 2026-06-11).
-
-### Session 44 — Statewide Exhibits KPI card + program-area categories + KPI reorder (2026-06-11)
-
-Sam's live feature day; 3 PRs, all merged on green + dispatched. **#375** new
-**Statewide Exhibits** headline KPI card (CCC Collaborative / ASCCC focus — a
-NEW card, not a revision of the adoption card, per Sam): exhibits + areas +
-credit recs + adoptions, total/per-area; **distinct (course,credit) recs vs
-row-count adoptions** semantics locked in the popover. **#376** rollup re-keyed
-from TOP disciplines to the **map.rccd.edu/statewidecpl program areas** via
-curated `kb/statewide_exhibit_categories.json` (merge-preserving seeder
-`kb/_seed_statewide_categories.py`; `^`-anchored pattern fallback; "Other
-Statewide" review bucket — State Bar + HRCM 001 parked for Sam) + **doublewide**
-card (`kpi-card-wide` rides `EXHIBIT_ANALYSIS_CSS`, no Rule-4 mirror). **#377**
-login-free **KPI card drag-to-reorder** (`kpi_reorder.js`, per-browser
-localStorage, label-identity re-match across regens, ↺ reset) — strategic-queue
-item 2. Full story: `docs/statewide_kpi_lessons.md`; pattern distilled:
-`docs/kb-notes/methodology-user-vocabulary-category-maps.md`. Checkpoint #378.
+> Phase-1 router; Starlord's cron-verify + off-pane-columns fix; Statewide
+> Exhibits KPI + program-area categories + KPI reorder).
 
 ### Session 45 — CCR rules day: statewide C-ID routing + the CADM homonym + the description lane (2026-06-11)
 
@@ -1569,6 +1552,24 @@ evidence): TF-IDF description lane, level/gender/sport-guarded → **474 groups
 `kb/desc_consolidation_out/candidates.json`, termly re-run). Suite 29/29.
 Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 45); KB note:
 `methodology-college-homonym-subject-codes.md`.
+
+### Session 46 — the AUTO/smog over-mint case → the 🏷 title-evidence lane (2026-06-12)
+
+Sam's brief: refine minting/merging rules off the AUTO over-mints (smog I/II),
+then statewide. One BAR state spec = **52 identities**; all lanes combined had
+surfaced 3 pairs. Shipped (#385): `kb/_title_consolidation_dryrun.py` — IDF-
+weighted title cosine over dark M-IDs **+ 54k stand-alones** (the desc lane
+can't see singletons), discipline-OR-TOP corroboration, **NO units gate**
+(licensure specs pack 1–7u by college), clique-consistent components →
+**5,662 groups (4,376 cross-college)**, receipt `kb/title_consolidation_out/`,
+6th worklist section. Shared guard suite `kb/_consolidation_guards.py` (both
+receipt builders): **two-axis level marks** (the "Elementary X 2" vs
+"Intermediate X 1" flat-set collision), **strict-equality variant marks**
+(refresher/instructor/module/honors), year-edition marks, word-number folds
+(also in `_sug_sig`/`_fam_key`). Desc receipt re-run: 474→446 (37 Honors/
+period/module conflations removed). Suite 30/30. Smog: 52 → 9 families.
+Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 46); KB note:
+`methodology-title-similarity-merge-guards.md`.
 
 ---
 

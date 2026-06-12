@@ -913,6 +913,15 @@
         // only lane that can connect "Intro to Programming" with "Programming
         // Fundamentals". Merges into an existing identity like family groups.
         var desc = (data.desc_groups || []).map(function (g) { g._kind = "desc"; return g; });
+        // Title-evidence lane (Session 46 — the AUTO/smog over-mint case):
+        // dark M-IDs + Stand-Alone singletons whose TITLES are near-duplicates
+        // under the guard suite (levels/years/variant/gender/sport) — the only
+        // lane that can reunite "Smog Check Training Level 2" with "Level 2
+        // Smog Technician Training" across colleges. NO units gate by design:
+        // externally standardized curricula (BAR smog, POST modules) vary unit
+        // packaging by college, so unit spread is SHOWN instead of gated.
+        // Mixed groups merge into the M-ID; all-singleton groups mint new.
+        var titleEv = (data.title_groups || []).map(function (g) { g._kind = "title"; return g; });
         // Evidence lane (2026-06-11): rows whose member courses carried an
         // official C-ID/CCN in COCI (witness counts per member) but didn't
         // clear the auto-fold bar — fold the checked members into the official
@@ -920,10 +929,10 @@
         // target) start UNCHECKED.
         var evidence = (data.evidence_groups || []).map(function (g) { g._kind = "evidence"; return g; });
         var singles = (data.singleton_groups || []).map(function (g) { g._kind = "singleton"; return g; });
-        var groups = anchored.concat(family).concat(desc).concat(evidence).concat(singles);
+        var groups = anchored.concat(family).concat(desc).concat(titleEv).concat(evidence).concat(singles);
         if (!groups.length) { alert("No suggested merges available in this build."); return; }
-        // Singleton (new-mint) section starts after anchored + family + desc + evidence.
-        var nNonSingleton = anchored.length + family.length + desc.length + evidence.length;
+        // Singleton (new-mint) section starts after anchored + family + desc + title + evidence.
+        var nNonSingleton = anchored.length + family.length + desc.length + titleEv.length + evidence.length;
         var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
         var mergedAway = function (id) { return byId[id] && byId[id]._mergedAway; };
         function liveMembers(g) { return g.members.filter(function (m) { return !mergedAway(m.id); }); }
@@ -950,6 +959,7 @@
           var isFamily = g._kind === "family";
           var isEvidence = g._kind === "evidence";
           var isDesc = g._kind === "desc";
+          var isTitle = g._kind === "title";
           box.appendChild(el("h3", { style: "margin:0 0 2px;color:#0A2240;" }, ["Suggested merge " + (i + 1) + " of " + groups.length]));
           // Section badge so the curator knows whether this merges into an
           // existing identity or mints a brand-new unified course.
@@ -965,6 +975,9 @@
             : isDesc
             ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#fce7f3;color:#9d174d;margin:0 0 8px;" },
                 ["📝 Description evidence · same catalog description"])
+            : isTitle
+            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#fef9c3;color:#854d0e;margin:0 0 8px;" },
+                ["🏷 Title evidence · near-duplicate course titles"])
             : el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#e0f2fe;color:#075985;margin:0 0 8px;" },
                 ["⛓ Merge into existing identity"]);
           box.appendChild(badge);
@@ -977,11 +990,15 @@
               ? "Member college courses of these identities carried " + (g.sig || "an official id") + " as their official C-ID/CCN in COCI — the 🧾 witness counts on each row. Confirming MERGES the checked members into the official id. Rows whose own colleges DISAGREE on the target start unchecked; check one only if you're sure. Nothing is applied until you confirm."
               : isDesc
               ? "These identities carry NO official identity evidence anywhere, but their catalog descriptions match across colleges (similarity " + (g.score != null ? g.score : "?") + (g.cos_max != null && g.cos_max !== g.score ? "–" + g.cos_max : "") + (g.terms && g.terms.length ? "; shared terms: " + g.terms.join(", ") : "") + "). Different course levels, genders, and sports were screened out, but read the titles — uncheck any genuinely different course, then Confirm. Nothing is applied until you confirm."
+              : isTitle
+              ? "These courses carry NO official identity evidence, but their TITLES are near-duplicates (similarity " + (g.score != null ? g.score : "?") + (g.cos_max != null && g.cos_max !== g.score ? "–" + g.cos_max : "") + (g.terms && g.terms.length ? "; shared: " + g.terms.join(", ") : "") + "). Levels, years, refresher/instructor variants, genders, and sports were screened out. Unit loads may differ" + (g.spread ? " (spread here: " + g.spread + "u)" : "") + " — externally standardized curricula (BAR smog, POST modules) are packaged differently per college, so units are shown, not gated. Read each title; uncheck any genuinely different course, then Confirm. Nothing is applied until you confirm."
               : "Same-title candidates (confidence score " + g.score + "). Uncheck any that differ, then Confirm — or Skip. Nothing is applied until you confirm."]));
-          if ((isSingleton || isDesc) && g.same_college) {
+          if ((isSingleton || isDesc || isTitle) && g.same_college) {
             box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
               [isDesc
                 ? "⚠ Every pair here shares a member college — same-college near-identical descriptions are often course variants (levels, credit/noncredit, formats), not duplicates. Review carefully before confirming."
+                : isTitle
+                ? "⚠ All members resolve to ONE college — same-college near-duplicate titles are often catalog editions or course variants (sessions, formats), not duplicates. Review carefully before confirming."
                 : "⚠ All members appear to be from the same college — these are often course variants (levels, credit/noncredit, language versions), not cross-college duplicates. Review carefully before confirming."]));
           }
           // Kinship-gate banner (Session 41): score 0 = NO witness in this group
