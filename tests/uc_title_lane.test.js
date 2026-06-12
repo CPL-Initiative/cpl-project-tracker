@@ -86,9 +86,13 @@ const l12rows = data.rows.filter((r) => /smog check inspector level 1\s*&\s*2/i.
 check("smog L1&2 family is ONE physical row with >= 2 curation folds",
   l12rows.length === 1
   && Object.keys(cur).filter((k) => cur[k].merge_into === l12rows[0].id).length >= 2);
-const l2row = data.rows.find((r) => (r.title || "") === L2_TITLE);
-check("the Level-2 target renders as ONE row (unified title, 10+ members)",
-  !!l2row && l2row.members >= 10);
+// Resolve the target ROW via the curated key, not a title find: since the
+// 2026-06-12 title normalization, the noncredit (M9xxx) twin — which the
+// band rule keeps separate by design — shares the exact display title, so
+// a first-by-title lookup can land on the 2-member noncredit row.
+const l2row = data.rows.find((r) => r.id === l2Key);
+check("the Level-2 curated target renders as ONE row (unified title, 10+ members)",
+  !!l2row && (l2row.title || "") === L2_TITLE && l2row.members >= 10);
 // The six consolidated variant titles must be out of the queue in EVERY id
 // era. The noncredit pair ("… Training Level II" / "Smog Level 2 …") is NOT
 // here — it legitimately stays queued (credit status differs; curator call).

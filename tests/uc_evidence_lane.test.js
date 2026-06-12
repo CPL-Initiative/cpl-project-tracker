@@ -69,9 +69,9 @@ if (span200) {
   check("the bare claimant is CONTESTED (x:1 — its colleges split between SPAN 200/210)",
     bareLane && bareLane.x === 1 && bareLane.ev
     && bareLane.ev["SPAN 200"] >= 1 && bareLane.ev["SPAN 210"] >= 1);
-  check("no clean 'Intermediate Spanish I' variant queues in the lane (it auto-folded via Phase B)",
+  check("no clean 'Intermediate Spanish 1' variant queues in the lane (it auto-folded via Phase B)",
     !span200.members.some((m) =>
-      m.k === "M-ID" && /^intermediate spanish i$/i.test((m.t || "").trim())));
+      m.k === "M-ID" && /^intermediate spanish (i|1)$/i.test((m.t || "").trim())));
 }
 
 const data = loadPayload("unified_courses_data.js", "window.CPL_UNIFIED_COURSES");
@@ -79,14 +79,16 @@ const byId = {};
 data.rows.forEach((r) => { byId[r.id] = r; });
 const s200 = byId["SPAN 200"], s210 = byId["SPAN 210"];
 // The folds are asserted via the anchors' title_variants (the folded
-// variants' titles travel onto the surviving row) + fold counts.
-check("SPAN 200 anchor row consolidated the Intermediate-Spanish-I family",
+// variants' titles travel onto the surviving row) + fold counts. Variant
+// titles are post-normalization (2026-06-12: romans→digits — "Intermediate
+// Spanish I" now reads "Intermediate Spanish 1").
+check("SPAN 200 anchor row consolidated the Intermediate-Spanish-1 family",
   s200 && (s200.consolidated_from || []).length >= 2
-       && (s200.title_variants || []).indexOf("Intermediate Spanish I") >= 0
+       && (s200.title_variants || []).indexOf("Intermediate Spanish 1") >= 0
        && (s200.title_variants || []).indexOf("Spanish 3") >= 0);
-check("SPAN 210 anchor row consolidated the II/2/4 family (plurality 24:1 included)",
+check("SPAN 210 anchor row consolidated the 2/4 family (plurality 24:1 included)",
   s210 && (s210.consolidated_from || []).length >= 2
-       && (s210.title_variants || []).indexOf("Intermediate Spanish II") >= 0
+       && (s210.title_variants || []).indexOf("Intermediate Spanish 2") >= 0
        && (s210.title_variants || []).indexOf("Spanish 4") >= 0);
 const folded = ((s200 && s200.consolidated_from) || [])
   .concat((s210 && s210.consolidated_from) || []);
