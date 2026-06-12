@@ -188,6 +188,13 @@ into the Pipeline Reference below or into dedicated docs.
      enough to be useful (~4500 chars / 170 lines is the sweet spot) — the next
      session is starting cold.
 
+   - **`kb/cpl_todos.json`** — **the dashboard To-Do feed (added Session 47),
+     refreshed on EVERY checkpoint alongside the handoff** (it is the handoff
+     distilled for the dashboard: ≤ ~12 layman-readable items split For Sam /
+     For Fable + a "where we are" `_status`, rendered by `cpl_todos.js` as the
+     📋 button on every tab). Bump `_as_of` (resets viewers' check-offs),
+     DELETE done items (never leave them checked), keep counts current.
+
    Capture in each: (a) what's been learned this checkpoint, (b) current
    state of the work, (c) strategic roadmap, (d) next concrete step.
    Better to checkpoint slightly early than slightly late — sessions can
@@ -446,6 +453,7 @@ scraping proved unreliable.
 | `cpl_funding_performance.js` | Funding priority-metric actuals (`window.CPL_FUNDING_PERF`: per-college P2/P3 distinct-student counts + statewide, small-cell suppressed <5 per the RATIFIED `docs/kb-notes/adr-funding-priority-metrics-privacy.md`). **Daily-cron artifact**: built by `funding/_build_funding_performance.py` from the transient `CustomReport_latest.json` (workflow step 4a2; in the `git add` list); skips gracefully on fetch fallback. P1 is a deliberate gap (`docs/kb-notes/reference-p1-completion-data-gap.md`). |
 | `dashboard_filters.js` | Client-side filter/search/sort logic |
 | `kpi_reorder.js` | Login-free drag-to-reorder for the headline KPI grid (`.kpi-section`): per-browser order in localStorage (`cplKpiOrder.v1`), cards re-matched by label text across daily regens, new cards re-enter at default position, ↺ reset affordance. Static — NOT a daily-cron artifact. |
+| `cpl_todos.js` | The 📋 To-Do button on every tab (added Session 47): renders `kb/cpl_todos.json` as a For-Sam / For-Fable daily checklist with a "where we are" status line; per-browser check-offs (`cplTodos.v1`, keyed by the feed's `_as_of` so each refresh starts fresh); per-tab badge + nav chips for other tabs' items. Feed refreshed at every Rule-8 checkpoint. Static — NOT a daily-cron artifact. |
 | `report_generator.js` | Custom Report Generator (Claude API via proxy) |
 | `docx.min.js` | Local copy of docx@8.0.4 UMD build (do **not** switch to CDN) |
 | `fetch_custom_report.py` | Fetches CustomReport JSON from the MAP API |
