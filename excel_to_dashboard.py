@@ -333,19 +333,12 @@ ALGO_DESCRIPTIONS = {
         "caveats":     "'Originating colleges' (62) counts colleges that created exhibits, not colleges that adopted them.",
         "last_modified": "2026-04-19",
     },
-    "ccc_collaborative": {
-        "source":      "MAP Custom Reporting Module (View_ArticulatedMAPExhibits).",
-        "formula":     "Distinct count of colleges that have adopted at least one exhibit whose Collaborative Type contains 'CCC'.",
-        "assumptions": "Adoption = a row exists where the college articulates a CCC Collaborative exhibit to a local course.",
-        "caveats":     "Counts adopting colleges only, not colleges that created collaborative exhibits.",
-        "last_modified": "2026-04-19",
-    },
     "statewide_exhibits": {
         "source":      "MAP Custom Reporting Module (View_ArticulatedMAPExhibits), rows whose Collaborative Type contains 'CCC'. Program-area categories per the Statewide CPL page (map.rccd.edu/statewidecpl), curated in kb/statewide_exhibit_categories.json.",
-        "formula":     "Exhibits = distinct credential groups (unified title + issuer + CPL type, the same grouping as the Exhibit Adoption table) with at least one CCC Collaborative row. Credit Recommendations = distinct (course, credit) pairs across each group's CCC rows. Adoptions = CCC rows carrying an Articulation College (one row = one college articulating one credit recommendation). Each exhibit's program area comes from the curated title map (keyword-rule fallback for new titles).",
+        "formula":     "Exhibits = distinct credential groups (unified title + issuer + CPL type, the same grouping as the Exhibit Adoption table) with at least one CCC Collaborative row. Credit Recommendations = distinct (course, credit) pairs across each group's CCC rows. Adoptions = CCC rows carrying an Articulation College (one row = one college articulating one credit recommendation). Adopting Colleges = distinct colleges articulating at least one statewide exhibit (formerly the 'CCC Collaborative Adoption' card's headline, consolidated here 2026-06-12). Each exhibit's program area comes from the curated title map (keyword-rule fallback for new titles).",
         "assumptions": "Tracks the CCC Collaborative statewide-standards work (the ASCCC focus project). A mixed group counts as statewide if ANY constituent exhibit row is CCC; only its CCC rows feed the rec/adoption counts.",
-        "caveats":     "Titles not yet in the curated map fall back to keyword rules, then to an 'Other Statewide' bucket (shown in the rollup, excluded from the Program Areas count) — edit kb/statewide_exhibit_categories.json to reassign. Distinct credit recs ≠ the row-count 'Collaborative Credit Recs' on the adoption card (that metric counts raw articulation rows).",
-        "last_modified": "2026-06-11",
+        "caveats":     "Titles not yet in the curated map fall back to keyword rules, then to an 'Other Statewide' bucket (shown in the rollup, excluded from the Program Areas count) — edit kb/statewide_exhibit_categories.json to reassign. Distinct credit recs ≠ the raw CCC row count shown on the Credit Recommendations card's 'CCC Collaborative' breakdown.",
+        "last_modified": "2026-06-12",
     },
     "active_colleges": {
         "source":      "CCCCO MAP CPL Dashboard (tier classification computed by the Cloudflare worker).",
@@ -369,11 +362,11 @@ ALGO_DESCRIPTIONS = {
         "last_modified": "2026-04-19",
     },
     "veteran_sprint": {
-        "source":      "Live CCCCO MAP CPL Dashboard scrape (star_college_count). Augmented with live military data from the same scrape.",
-        "formula":     "Headline = live star_college_count from the CCCCO scrape. JST Credits = military students (from cumulative_students breakdowns). Eligible CPL = military eligible units (from eligible_units breakdowns).",
-        "assumptions": "Goal for JST Credits = 30,000 at Veteran Star Colleges.",
-        "caveats":     "Headline value is the number of colleges participating, not students served. Pulled live from the CCCCO MAP CPL Dashboard each pipeline run.",
-        "last_modified": "2026-04-19",
+        "source":      "Live CCCCO MAP CPL Dashboard scrape (star_college_count) + military data from the same scrape + View_StudentAggregatedValues (Custom Reporting Module).",
+        "formula":     "Headline = live star_college_count from the CCCCO scrape (the gold ⭐). JSTs Uploaded = military students (from cumulative_students breakdowns — every MAP military student has an uploaded JST) against the 30,000 Vet Sprint goal. Basic Training Credit = colleges with at least one student carrying JST military credits (View_StudentAggregatedValues, Military Credits > 0). Eligible CPL = military eligible units (from eligible_units breakdowns).",
+        "assumptions": "Vet Sprint goal = 30,000 JSTs uploaded. Having a JST on file is the qualifying signal for basic-training credit — every service member with a JST has completed basic training.",
+        "caveats":     "Headline value is the number of colleges participating, not students served. The colleges-with-a-JST count requires the student to carry eligible military credits; the MilStudents ACE-exhibit dataset will widen this to the full JST-upload universe once it lands in the Custom Reports module.",
+        "last_modified": "2026-06-12",
     },
     "twenty_year_impact": {
         "source":      "CCCCO MAP CPL Dashboard (live scrape).",
@@ -1627,7 +1620,7 @@ def render_kpi_section_html(kpis, kpi_display_order=None, kpi_params=None):
                 interpolate placeholders in algo descriptions).
     """
     default_order = ['cumulative_students', 'eligible_units', 'transcripted_units',
-                     'credit_recommendations', 'map_exhibits', 'ccc_collaborative',
+                     'credit_recommendations', 'map_exhibits',
                      'statewide_exhibits',
                      'active_colleges', 'articulation_colleges',
                      'estimated_savings', 'veteran_sprint', 'twenty_year_impact']
@@ -1665,9 +1658,16 @@ def render_kpi_section_html(kpis, kpi_display_order=None, kpi_params=None):
         # "wide" cards span 2 grid columns (the Statewide Exhibits per-category
         # rollup) — CSS lives in EXHIBIT_ANALYSIS_CSS (.kpi-card-wide).
         card_cls = "kpi-card kpi-card-wide" if kpi.get("wide") else "kpi-card"
+        # "star" cards carry a gold ⭐ beside the headline number (Veteran
+        # Sprint — Star Colleges; same glyph the College Activity table uses
+        # for MAP Star College status). Decorative — kept out of kpi["value"]
+        # so exports/reports that read the value stay clean.
+        star_html = ('<span class="kpi-star" aria-hidden="true" title="MAP Star Colleges"'
+                     ' style="font-size:0.5em;vertical-align:0.35em;margin-left:0.12em;">⭐</span>'
+                     if kpi.get("star") else "")
         cards_html += (
             f'        <div class="{card_cls}">\n'
-            f'            <div class="kpi-number">{kpi["value"]}</div>\n'
+            f'            <div class="kpi-number">{kpi["value"]}{star_html}</div>\n'
             f'            <div class="kpi-label">{kpi["label"]}</div>\n'
             f'            {sub_html}\n'
             f'            {bd_html}\n'
@@ -3092,8 +3092,15 @@ def compute_headline_kpis(projects, budget, config_overrides=None, live_data=Non
             "value": (lambda v: str(v) if v else "—")(int((live_data or {}).get("star_college_count", 0))),
             "label": "VETERAN SPRINT",
             "sub": "Star Colleges",
+            "star": True,  # gold ⭐ beside the headline (Star Colleges)
             "breakdowns": [
-                {"label": "JST Credits", "value": "{jst_credits} / 30,000"},
+                # Value = military students from the live scrape (each MAP
+                # military student has an uploaded JST); 30,000 = sprint goal.
+                {"label": "JSTs Uploaded", "value": "{jst_credits} / 30,000",
+                 "note": "uploaded / sprint goal"},
+                # Star-college stand-in; replaced with the real colleges-with-
+                # a-JST count in merge_exhibit_metrics when the Custom Report
+                # data is present.
                 {"label": "Basic Training Credit",
                  "value": (lambda v: f'{v} Colleges' if v else '— Colleges')(int((live_data or {}).get("star_college_count", 0)))},
                 {"label": "Eligible CPL", "value": "{eligible_cpl} Units"},
@@ -3944,7 +3951,11 @@ def _parse_exhibits(datasets):
             if "CCC" in collab_type:
                 ccc_credit_recs += 1
                 ccc_exhibit_ids.add(exhibit_id)
-                ccc_artic_colleges.add(artic_college)
+                # Guard the blank: a CCC rec row with no adopter must not
+                # count an empty string as an "adopting college" (fixed
+                # 2026-06-12 during the card consolidation).
+                if artic_college:
+                    ccc_artic_colleges.add(artic_college)
 
             if cpl_type:
                 cpl_type_counts[cpl_type] = cpl_type_counts.get(cpl_type, 0) + 1
@@ -4159,25 +4170,14 @@ def merge_exhibit_metrics(kpis, exhibit_data):
         "live": True,
     }
 
-    # ── 3. CCC COLLABORATIVE ADOPTION KPI ──
-    kpis["ccc_collaborative"] = {
-        "value": _fmt_int(ccc["adopting_colleges"]),
-        "label": "CCC Collaborative Adoption",
-        "sub": "Colleges adopting statewide exhibits",
-        "breakdowns": [
-            {"label": "Collaborative Exhibits", "value": _fmt_int(ccc["unique_exhibits"])},
-            {"label": "Collaborative Credit Recs", "value": _fmt_int(ccc["credit_recs"])},
-        ],
-        "live": True,
-    }
-
-    # ── 3b. STATEWIDE EXHIBITS KPI — the CCC Collaborative / ASCCC focus card ──
-    # Deliberately a NEW card (not folded into the adoption card above): it adds
-    # program-area coverage + distinct credit recs + rec adoptions, total and
-    # per category (the map.rccd.edu/statewidecpl program areas). Renders
-    # doublewide ("wide") so the per-category rollup gets a 2-column footnote.
-    # Skipped when the rollup is absent (fallback dataset has no Collaborative
-    # Type column).
+    # ── 3. STATEWIDE EXHIBITS KPI — the CCC Collaborative / ASCCC focus card ──
+    # The former "CCC Collaborative Adoption" card was CONSOLIDATED into this
+    # one (Sam, 2026-06-12): its headline (adopting colleges) is now the
+    # "Adopting Colleges" breakdown below; its other two numbers were already
+    # here (exhibits = this card's headline) or on the Credit Recommendations
+    # card (raw CCC row count). Renders doublewide ("wide") so the
+    # per-category rollup gets a 2-column footnote. Skipped when the rollup
+    # is absent (fallback dataset has no Collaborative Type column).
     sw_disc = ccc.get("by_category") or []
     if sw_disc:
         fn = ["By program area — exhibits · credit recs · adoptions"]
@@ -4199,11 +4199,28 @@ def merge_exhibit_metrics(kpis, exhibit_data):
                  "note": "distinct course recs"},
                 {"label": "Adoptions", "value": _fmt_int(ccc.get("rec_adoptions", 0)),
                  "note": "college articulations of those recs"},
+                {"label": "Adopting Colleges", "value": _fmt_int(ccc["adopting_colleges"]),
+                 "note": "articulating ≥1 statewide exhibit"},
             ],
             "footnote": fn,
             "wide": True,
             "live": True,
         }
+
+    # ── 3c. VETERAN SPRINT — Basic Training Credit = colleges with a JST ──
+    # Colleges with ≥1 JST student (Military Credits > 0 in
+    # View_StudentAggregatedValues). Every service member with a JST has
+    # completed basic training, so "has a JST on file" is how a college
+    # qualifies (Sam, 2026-06-12) — replaces the star-college-count stand-in.
+    # The MilStudents dataset (ACE-exhibit grain) upgrades this to the true
+    # JST-upload universe once it lands in the Custom Reports module.
+    mil = exhibit_data.get("college_military_students") or {}
+    if mil and "veteran_sprint" in kpis:
+        n_jst = sum(1 for v in mil.values() if v)
+        for bd in kpis["veteran_sprint"].get("breakdowns", []):
+            if bd["label"] == "Basic Training Credit":
+                bd["value"] = f"{_fmt_int(n_jst)} Colleges"
+                bd["note"] = "≥1 student JST on file"
 
     # ── 4. ARTICULATING COLLEGES KPI ──
     kpis["articulation_colleges"] = {
@@ -9863,7 +9880,7 @@ def main():
         kpi_order_pairs.sort(key=lambda x: x[0])
         kpi_display_order = [k for _, k in kpi_order_pairs]
         default_keys = ['cumulative_students', 'eligible_units', 'transcripted_units',
-                        'credit_recommendations', 'map_exhibits', 'ccc_collaborative',
+                        'credit_recommendations', 'map_exhibits',
                         'statewide_exhibits',
                         'active_colleges', 'articulation_colleges',
                         'estimated_savings', 'veteran_sprint', 'twenty_year_impact']
