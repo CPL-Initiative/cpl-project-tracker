@@ -28,9 +28,9 @@ const HTML = fs.readFileSync("prototype/first_light_theme_v1.html", "utf8");
 // (d) every AA-verified hex from check_contrast.py must appear verbatim
 const SPEC_HEXES = [
   "#F4F2ED", "#1C1C1A", "#3A3A36", "#5C5C55",          // base grays
-  "#C8102E", "#0047AB", "#355E3B", "#6D28D9",          // accents, light grade
+  "#920000", "#0047AB", "#2C601A", "#6D28D9",          // accents, light grade (v1.4 crimson/hunter)
   "#E3B341", "#946F00", "#6324C5",                      // mustard fill + chip fills (white labels)
-  "#E28392", "#7DA1D4", "#8EA591", "#B28DEB",          // on-dark grades (reserved)
+  "#CF8F8F", "#7DA1D4", "#89A67F", "#B28DEB",          // on-dark grades (reserved)
 ];
 for (const hex of SPEC_HEXES) {
   check("spec hex present: " + hex, HTML.includes(hex));
@@ -50,9 +50,10 @@ check("bright mustard never used as a text color",
   !/color:\s*var\(--mustard-fill\)/.test(HTML));
 {
   const base = HTML.match(/\.chip\s*\{[^}]*\}/);
-  check("chip base = borderless, uniform width, 8px corners",
-    !!base && base[0].includes("border:none") && base[0].includes("width:10rem") &&
-    base[0].includes("border-radius:8px") && base[0].includes("color:#FFFFFF"));
+  check("chip base = borderless, uniform 8.5rem x 26px, 8px corners",
+    !!base && base[0].includes("border:none") && base[0].includes("width:8.5rem") &&
+    base[0].includes("height:26px") && base[0].includes("border-radius:8px") &&
+    base[0].includes("color:#FFFFFF"));
 }
 check("mustard chip uses the derived ochre fill",
   /\.chip-mustard\s*\{\s*background:var\(--mustard-chip\)/.test(HTML));

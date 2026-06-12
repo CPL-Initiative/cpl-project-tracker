@@ -32,9 +32,9 @@
   --border-strong: rgba(28,28,26,.30);
 
   /* the five accents — light-surface text/icon grades (≥4.5:1) */
-  --crimson: #C8102E;              /* negative · alerts · flags        5.26:1 */
+  --crimson: #920000;              /* negative · alerts · flags        8.45:1 */
   --cobalt:  #0047AB;              /* interactive · links · focus      7.54:1 */
-  --hunter:  #355E3B;              /* positive · savings · verified    6.67:1 */
+  --hunter:  #2C601A;              /* positive · savings · verified    6.72:1 */
   --violet:  #6D28D9;              /* machine-generated · inferred     6.35:1 */
   --mustard-fill: #E3B341;         /* bright brand hue — dots/banners only */
   --mustard-chip: #946F00;         /* solid chip fill (white label 4.63:1) — the
@@ -42,9 +42,9 @@
   --violet-chip:  #6324C5;         /* solid chip fill, darkened for pop (8.11:1) */
 
   /* on-dark grades — RESERVED (no dark chrome in v1.1; verified vs #27272E) */
-  --crimson-on-dark: #E28392;
+  --crimson-on-dark: #CF8F8F;
   --cobalt-on-dark:  #7DA1D4;
-  --hunter-on-dark:  #8EA591;
+  --hunter-on-dark:  #89A67F;
   --violet-on-dark:  #B28DEB;
   --mustard-on-dark: #E3B341;      /* 7.65:1 — mustard shines on dark */
 
@@ -212,7 +212,7 @@ section > p.lede { color:var(--text-muted); font-size:.9rem; margin-bottom: .9re
 .chip {
   display:inline-flex; align-items:center; justify-content:center; gap:.35rem;
   font-size:.78rem; font-weight:600; border-radius:8px; border:none;
-  width:10rem; padding:.26rem .6rem; min-height:24px;
+  width:8.5rem; height:26px; padding:0 .55rem; box-sizing:border-box;
   color:#FFFFFF; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
 .chip-crimson { background:var(--crimson); }
@@ -326,7 +326,7 @@ footer .credit { margin-bottom:.3rem; }
 
 <div class="bg-art" id="bgArt" aria-hidden="true"></div>
 
-<div class="proto-note">Prototype v1.3 — “First Light” theme spec &amp; living mock · demo data only · token values AA-verified by <code>prototype/check_contrast.py</code></div>
+<div class="proto-note">Prototype v1.4 — “First Light” theme spec &amp; living mock · demo data only · token values AA-verified by <code>prototype/check_contrast.py</code></div>
 
 <header class="masthead glass">
   <h1>CPL Project Tracker</h1>
@@ -484,15 +484,15 @@ footer .credit { margin-bottom:.3rem; }
             <tr><td><code>--text-body</code></td><td><span class="sw" style="background:#3A3A36"></span></td><td><code>#3A3A36</code></td><td>body text</td><td>10.21:1 paper</td><td class="pass">PASS</td></tr>
             <tr><td><code>--text-muted</code></td><td><span class="sw" style="background:#5C5C55"></span></td><td><code>#5C5C55</code></td><td>secondary text</td><td>6.02:1 paper</td><td class="pass">PASS</td></tr>
             <tr><td><code>--cobalt</code></td><td><span class="sw" style="background:#0047AB"></span></td><td><code>#0047AB</code></td><td>interactive · focus ring</td><td>7.54:1 paper</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--crimson</code></td><td><span class="sw" style="background:#C8102E"></span></td><td><code>#C8102E</code></td><td>negative · alerts</td><td>5.26:1 paper</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--hunter</code></td><td><span class="sw" style="background:#355E3B"></span></td><td><code>#355E3B</code></td><td>positive · verified</td><td>6.67:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--crimson</code></td><td><span class="sw" style="background:#920000"></span></td><td><code>#920000</code></td><td>negative · alerts (white on it: 9.45:1)</td><td>8.45:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--hunter</code></td><td><span class="sw" style="background:#2C601A"></span></td><td><code>#2C601A</code></td><td>positive · verified (white on it: 7.51:1)</td><td>6.72:1 paper</td><td class="pass">PASS</td></tr>
             <tr><td><code>--violet</code></td><td><span class="sw" style="background:#6D28D9"></span></td><td><code>#6D28D9</code></td><td>machine-generated</td><td>6.35:1 paper</td><td class="pass">PASS</td></tr>
             <tr><td><code>--mustard-fill</code></td><td><span class="sw" style="background:#E3B341"></span></td><td><code>#E3B341</code></td><td>brand hue — dots/banners (ink on it: 8.77:1)</td><td>8.77:1 ink-on-fill</td><td class="pass">PASS</td></tr>
             <tr><td><code>--mustard-chip</code></td><td><span class="sw" style="background:#946F00"></span></td><td><code>#946F00</code></td><td>solid caution chip (white label)</td><td>4.63:1 white-on-fill</td><td class="pass">PASS</td></tr>
             <tr><td><code>--violet-chip</code></td><td><span class="sw" style="background:#6324C5"></span></td><td><code>#6324C5</code></td><td>solid machine chip (white label)</td><td>8.11:1 white-on-fill</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--crimson-on-dark</code></td><td><span class="sw" style="background:#E28392"></span></td><td><code>#E28392</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--crimson-on-dark</code></td><td><span class="sw" style="background:#CF8F8F"></span></td><td><code>#CF8F8F</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
             <tr><td><code>--cobalt-on-dark</code></td><td><span class="sw" style="background:#7DA1D4"></span></td><td><code>#7DA1D4</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--hunter-on-dark</code></td><td><span class="sw" style="background:#8EA591"></span></td><td><code>#8EA591</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--hunter-on-dark</code></td><td><span class="sw" style="background:#89A67F"></span></td><td><code>#89A67F</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
             <tr><td><code>--violet-on-dark</code></td><td><span class="sw" style="background:#B28DEB"></span></td><td><code>#B28DEB</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
             <tr><td><code>--mustard-on-dark</code></td><td><span class="sw" style="background:#E3B341"></span></td><td><code>#E3B341</code></td><td>reserved (dark surfaces)</td><td>7.65:1 dark-worst</td><td class="pass">PASS</td></tr>
           </tbody>
@@ -562,7 +562,7 @@ footer .credit { margin-bottom:.3rem; }
 
 <footer>
   <div class="credit" id="footCredit"></div>
-  <div>First Light theme · prototype v1.3 (solid uniform chips · gallery painting · daily reflection) · next: the live-dashboard token retheme</div>
+  <div>First Light theme · prototype v1.4 (deep crimson/hunter · tightened uniform chips) · next: the live-dashboard token retheme</div>
 </footer>
 
 <script>

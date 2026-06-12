@@ -64,9 +64,9 @@ DARK_WORST = mix(PAPER, h2rgb("#15151D"), 0.92)     # masthead scrim composite
 
 # ── Brand hues (starting points) ────────────────────────────────────────
 BRAND = {
-    "crimson": "#C8102E",
+    "crimson": "#920000",   # deepened 2026-06-12 (Sam) — was #C8102E
     "cobalt":  "#0047AB",
-    "hunter":  "#355E3B",
+    "hunter":  "#2C601A",   # greened 2026-06-12 (Sam) — was #355E3B
     "violet":  "#6D28D9",
 }
 MUSTARD_FILL = "#E3B341"   # chip fill only — NEVER text on light surfaces
