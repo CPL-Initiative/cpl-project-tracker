@@ -63,12 +63,14 @@ check("MATH 210 counts routed identities (rfold ≥ 1)",
   byId["MATH 210"] && (byId["MATH 210"].rfold || 0) >= 1);
 
 // 3. the mixed row splits below family grain — residue stays. The residue is
-// the corroborated MATH M-ID still TITLED "Calculus I" (was MATH M1175; found
-// by title + shape since ids re-sequence — pick the largest if several).
+// the corroborated MATH M-ID still TITLED "Calculus 1" (was "Calculus I"
+// before the 2026-06-12 title normalization folded romans→digits, and
+// MATH M1175 pre-fold; found by title + shape since ids re-sequence — pick
+// the largest if several).
 const residue = data.rows.filter((r) =>
-    r.id_system === "M-ID" && /^MATH M1\d{3}$/.test(r.id) && (r.title || "") === "Calculus I")
+    r.id_system === "M-ID" && /^MATH M1\d{3}$/.test(r.id) && (r.title || "") === "Calculus 1")
   .sort((a, b) => (b.members || 0) - (a.members || 0))[0];
-check("the 'Calculus I' M-ID residue remains as a shrunken row (members < 13)",
+check("the 'Calculus 1' M-ID residue remains as a shrunken row (members < 13)",
   residue && typeof residue.members === "number" && residue.members > 0 && residue.members < 13);
 const t1175 = residue ? tableOf(residue.id) : [];
 check("the residue's member table no longer lists Folsom Lake (routed out)",
@@ -85,7 +87,7 @@ check("LA Pierce MATH 261 (approved for BOTH 210 and 211) stays in the residue's
 check("SPAN 200 keeps its kin folds AND gains routed members (rfold)",
   byId["SPAN 200"]
   && (byId["SPAN 200"].consolidated_from || []).length >= 2
-  && (byId["SPAN 200"].title_variants || []).indexOf("Intermediate Spanish I") >= 0
+  && (byId["SPAN 200"].title_variants || []).indexOf("Intermediate Spanish 1") >= 0
   && (byId["SPAN 200"].title_variants || []).indexOf("Spanish 3") >= 0
   && (byId["SPAN 200"].rfold || 0) >= 1);
 check("AUTO 120 X keeps descriptor title + kin folds AND gains rfold",
@@ -110,11 +112,13 @@ const saByTitle = {};
 (standalone.rows || standalone).forEach((r) => {
   (saByTitle[r.title] = saByTitle[r.title] || []).push(r.id);
 });
+// (the last two were ALL-CAPS in the raw catalog; the 2026-06-12 title
+// normalization re-cased every displayed title, so pin the Title Case form)
 [
   "Statistics - Social Sciences",
   "Introductory Statistics for the Behavioral and Social Sciences",
-  "SOCIAL JUSTICE STATISTICS",
-  "STATISTICAL METHODS IN THE BEHAVIORAL SCIENCES HONORS",
+  "Social Justice Statistics",
+  "Statistical Methods in the Behavioral Sciences Honors",
 ].forEach((t) => {
   const ids = saByTitle[t] || [];
   check(`dual-approval stats course '${t}' stays a stand-alone (held for curation)`,

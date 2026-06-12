@@ -90,15 +90,16 @@ check("the chimera rows carry NO official-id evidence at all (the slot-fix " +
 // The Session-40 win must survive the gate: witnesses' own courses were
 // title-kin ("Spanish 3" witnesses are titled "Spanish 3"), so these fold.
 // Folds asserted via the anchors' title_variants (the folded variants'
-// titles travel onto the surviving row; ids re-sequence under re-mints).
+// titles travel onto the surviving row; ids re-sequence under re-mints;
+// variants are post-normalization — 2026-06-12 romans→digits).
 const s200 = byId["SPAN 200"], s210 = byId["SPAN 210"];
 check("SPAN 200 keeps its Session-40 folds (gate preserves witness-kin evidence)",
   s200 && (s200.consolidated_from || []).length >= 2
-       && (s200.title_variants || []).indexOf("Intermediate Spanish I") >= 0
+       && (s200.title_variants || []).indexOf("Intermediate Spanish 1") >= 0
        && (s200.title_variants || []).indexOf("Spanish 3") >= 0);
 check("SPAN 210 keeps its folds (incl. the 24:1 plurality)",
   s210 && (s210.consolidated_from || []).length >= 1
-       && (s210.title_variants || []).indexOf("Intermediate Spanish II") >= 0);
+       && (s210.title_variants || []).indexOf("Intermediate Spanish 2") >= 0);
 
 // Claims-only official rows: officials whose only membership is raw COCI
 // claimants. They are unlocked C-ID/CCN rows with members but no folds.
@@ -114,9 +115,9 @@ check("claims-only official rows exist in force (the official reference layer)",
 const sfoldTotal = data.rows.reduce((n, r) => n + (r.sfold || 0), 0);
 check("R4 folded a substantial set of evidence-bearing stand-alones (sfold ≥ 200)",
   sfoldTotal >= 200);
-check("SPAN 210 absorbed its R4 stand-alone variants (Level II / IV / Advanced Intermediate)",
+check("SPAN 210 absorbed its R4 stand-alone variants (Level 2 / 4 / Advanced Intermediate)",
   byId["SPAN 210"] && (byId["SPAN 210"].sfold || 0) >= 2
-    && (byId["SPAN 210"].title_variants || []).indexOf("Intermediate Spanish: Level II") >= 0);
+    && (byId["SPAN 210"].title_variants || []).indexOf("Intermediate Spanish: Level 2") >= 0);
 // The R4-folded stand-alones are identified by TITLE (their ids re-sequence
 // under re-mints — FLSP M11HH/M11HY rode to M10LD/M10LN, AHSD M90BK to
 // IDST M90LB): once folded, their titles leave the stand-alone payload
@@ -124,8 +125,8 @@ check("SPAN 210 absorbed its R4 stand-alone variants (Level II / IV / Advanced I
 const saPayload = loadPayload("unified_courses_standalone.js", "window.CPL_UC_STANDALONE");
 const saTitles = new Set(saPayload.rows.map((r) => (r.title || "").trim()));
 check("R4-folded stand-alones are out of the stand-alone payload",
-  !saTitles.has("Intermediate Spanish: Level I")
-  && !saTitles.has("Intermediate Spanish: Level II")
+  !saTitles.has("Intermediate Spanish: Level 1")
+  && !saTitles.has("Intermediate Spanish: Level 2")
   && !saTitles.has("Introduction to American Government"));
 
 // Lane payload. Post-slot-fix the lane is the CONTESTED/queued evidence only:
