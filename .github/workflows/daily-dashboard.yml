@@ -90,7 +90,12 @@ jobs:
             # _CANON_SUBJ4::<discipline> keys) into kb/discipline_canonical_subj4.json.
             # Skipped gracefully if the seed file doesn't exist yet.
             if [ -f kb/discipline_canonical_subj4.json ]; then
-              python kb/_apply_canonical_subj4.py || echo "Canonical SUBJ4 sync failed — non-fatal"
+              # ::warning:: makes a silent-for-weeks failure LOUD in the run
+              # summary (Session 47 found CIS=CSIS sat unsynced since 05-23
+              # behind a bare `|| echo`). Still non-fatal — the dashboard
+              # publish must not die on a sync hiccup; the seed is
+              # eventually-consistent and appliers fresh-read at write-time.
+              python kb/_apply_canonical_subj4.py || echo "::warning title=Canonical SUBJ4 sync failed::kb/_apply_canonical_subj4.py exited non-zero — the committed seed may drift from Supabase picks until this passes. Check the step log."
             fi
             # Cred-Ref PR-5a: fold credential-review curator edits
             # (_CREDENTIAL_REVIEW::<unified_title> rows) into the git-canonical

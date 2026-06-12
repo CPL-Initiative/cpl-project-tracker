@@ -1,0 +1,877 @@
+{
+  "_about": "kb_curation mirror ops for the fold — computed from the fresh --curation-export at apply time. Execute via the MCP execute_sql lane in the SAME cron window as the commit (fresh-read at write-time is mandatory — Session 47's THEA race). Only rows whose key or merge_into value moved are touched.",
+  "_emitted_at": "2026-06-12T18:11:26Z",
+  "ops_count": 119,
+  "ops": [
+    {
+      "where_course_id": "AGRI M1002",
+      "where_field": "cross_listed_disciplines",
+      "set": {
+        "course_id": "AGRI M1001"
+      }
+    },
+    {
+      "where_course_id": "ARTS M10BJ",
+      "where_field": "merge_into",
+      "set": {
+        "value": "ARTH M1022"
+      }
+    },
+    {
+      "where_course_id": "ARTS M1159",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "ARTH M1022"
+      }
+    },
+    {
+      "where_course_id": "ARTS M1159",
+      "where_field": "unified_title",
+      "set": {
+        "course_id": "ARTH M1022"
+      }
+    },
+    {
+      "where_course_id": "AUTB M1037",
+      "where_field": "merge_into",
+      "set": {
+        "value": "AUTO M1006"
+      }
+    },
+    {
+      "where_course_id": "AUTB M10BJ",
+      "where_field": "cross_listed_disciplines",
+      "set": {
+        "course_id": "AGRI M10AL"
+      }
+    },
+    {
+      "where_course_id": "AUTB M10BJ",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "AGRI M10AL"
+      }
+    },
+    {
+      "where_course_id": "AUTB M10BN",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "AUTB M10BM"
+      }
+    },
+    {
+      "where_course_id": "AUTO M1005",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "AUTO M1004",
+        "value": "AUTO M1006"
+      }
+    },
+    {
+      "where_course_id": "AUTO M1006",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "AUTO M1005",
+        "value": "AUTO M1006"
+      }
+    },
+    {
+      "where_course_id": "AUTO M1007",
+      "where_field": "unified_title",
+      "set": {
+        "course_id": "AUTO M1006"
+      }
+    },
+    {
+      "where_course_id": "AUTO M10AG",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "AUTO M10AF"
+      }
+    },
+    {
+      "where_course_id": "AUTO M10BK",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "AUTO M10BJ",
+        "value": "AUTO M1006"
+      }
+    },
+    {
+      "where_course_id": "AUTO M10BL",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "AUTO M10BK",
+        "value": "AUTO M1006"
+      }
+    },
+    {
+      "where_course_id": "AUTO M10BT",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "AUTO M10BS",
+        "value": "AUTO M1006"
+      }
+    },
+    {
+      "where_course_id": "AUTO M10CX",
+      "where_field": "cross_listed_disciplines",
+      "set": {
+        "course_id": "AUTO M10CW"
+      }
+    },
+    {
+      "where_course_id": "AUTO M10PB",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "AUTO M10OX",
+        "value": "AUTO M1006"
+      }
+    },
+    {
+      "where_course_id": "AUTO M11AA",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "AUTO M10ZP",
+        "value": "AUTO M1006"
+      }
+    },
+    {
+      "where_course_id": "AUTO M11CW",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "AUTO M11CL",
+        "value": "AUTO M1006"
+      }
+    },
+    {
+      "where_course_id": "AUTO M11DB",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "AUTO M11CQ",
+        "value": "AUTO M1006"
+      }
+    },
+    {
+      "where_course_id": "AUTO M11NQ",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "AUTO M11NF",
+        "value": "AUTO M1006"
+      }
+    },
+    {
+      "where_course_id": "AUTO M1217",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "AUTO M1211"
+      }
+    },
+    {
+      "where_course_id": "BBK M1001",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M1002"
+      }
+    },
+    {
+      "where_course_id": "BBK M10AC",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M11PA"
+      }
+    },
+    {
+      "where_course_id": "BBK M9001",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M9003"
+      }
+    },
+    {
+      "where_course_id": "BSIC M9001",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BSKL M9001"
+      }
+    },
+    {
+      "where_course_id": "BUAC M10AE",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M11BL"
+      }
+    },
+    {
+      "where_course_id": "BUSA M1003",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M1300"
+      }
+    },
+    {
+      "where_course_id": "BUSA M10AF",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M10ZQ"
+      }
+    },
+    {
+      "where_course_id": "BUSA M10AJ",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M10MO"
+      }
+    },
+    {
+      "where_course_id": "BUSA M9003",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M9058"
+      }
+    },
+    {
+      "where_course_id": "BUSI M1170",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M1167"
+      }
+    },
+    {
+      "where_course_id": "BUSI M1170",
+      "where_field": "unified_title",
+      "set": {
+        "course_id": "BUSI M1167"
+      }
+    },
+    {
+      "where_course_id": "CISC M12GG",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M11CM"
+      }
+    },
+    {
+      "where_course_id": "CISC M9029",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M9038"
+      }
+    },
+    {
+      "where_course_id": "CISC M9030",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M9039"
+      }
+    },
+    {
+      "where_course_id": "CISC M90AQ",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90BV"
+      }
+    },
+    {
+      "where_course_id": "COUN M1045",
+      "where_field": "unified_title",
+      "set": {
+        "course_id": "COUN M1038"
+      }
+    },
+    {
+      "where_course_id": "COUN M10JJ",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "COUN M10JI",
+        "value": "COUN M1038"
+      }
+    },
+    {
+      "where_course_id": "COUN M10JK",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "COUN M10JJ",
+        "value": "COUN M1038"
+      }
+    },
+    {
+      "where_course_id": "CULN M1003",
+      "where_field": "cross_listed_disciplines",
+      "set": {
+        "course_id": "CULN M1002"
+      }
+    },
+    {
+      "where_course_id": "ELEC M1028",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "ELEC M1016"
+      }
+    },
+    {
+      "where_course_id": "ENGL M10WP",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "ENGL M10WM",
+        "value": "ENGL M1197"
+      }
+    },
+    {
+      "where_course_id": "ENGL M10YQ",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "ENGL M10YN",
+        "value": "ENGL M1330"
+      }
+    },
+    {
+      "where_course_id": "ENGL M11HY",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "ENGL M11HU",
+        "value": "ENGL M1330"
+      }
+    },
+    {
+      "where_course_id": "ENGL M11HZ",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "ENGL M11HV",
+        "value": "ENGL M1330"
+      }
+    },
+    {
+      "where_course_id": "ENGL M1217",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "ENGL M1197"
+      }
+    },
+    {
+      "where_course_id": "ENGL M1217",
+      "where_field": "unified_title",
+      "set": {
+        "course_id": "ENGL M1197"
+      }
+    },
+    {
+      "where_course_id": "ENGL M1367",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "ENGL M1330"
+      }
+    },
+    {
+      "where_course_id": "ENGL M1367",
+      "where_field": "unified_title",
+      "set": {
+        "course_id": "ENGL M1330"
+      }
+    },
+    {
+      "where_course_id": "ENTR M10BZ",
+      "where_field": "cross_listed_disciplines",
+      "set": {
+        "course_id": "ENTR M10BU"
+      }
+    },
+    {
+      "where_course_id": "FINC M9006",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M9144"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1019",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1001"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1040",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1003"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1125",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1035"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1130",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1036"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1175",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1047"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1176",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1048"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1194",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1056"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1235",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1068"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1245",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1070"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1272",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1074"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1279",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1075"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1282",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1077"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1295",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1078"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1322",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1081"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1323",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1082"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1334",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1085"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1335",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1086"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1336",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1087"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1347",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1091"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1349",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1092"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1357",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1095"
+      }
+    },
+    {
+      "where_course_id": "FLSP M1359",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "FLSP M1096"
+      }
+    },
+    {
+      "where_course_id": "HIST M10CQ",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "HIST M10CP",
+        "value": "HIST M1140"
+      }
+    },
+    {
+      "where_course_id": "HIST M10RS",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "HIST M10RP",
+        "value": "HIST M1140"
+      }
+    },
+    {
+      "where_course_id": "HIST M1152",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "HIST M1140"
+      }
+    },
+    {
+      "where_course_id": "HIST M1152",
+      "where_field": "unified_title",
+      "set": {
+        "course_id": "HIST M1140"
+      }
+    },
+    {
+      "where_course_id": "KINE M1015",
+      "where_field": "unified_title",
+      "set": {
+        "course_id": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M10SU",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M11MI",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M11XF",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M13RT",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M1289",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M1341",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M12BJ",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M13YC",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M12CC",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M14AA",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M1371",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M1455",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M13FH",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M11WI",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M13FJ",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M11UI",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M13FV",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M10MA",
+        "value": "KINE M1350"
+      }
+    },
+    {
+      "where_course_id": "KINE M13FX",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M11QW",
+        "value": "KINE M1350"
+      }
+    },
+    {
+      "where_course_id": "KINE M13FY",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M11YW",
+        "value": "KINE M1350"
+      }
+    },
+    {
+      "where_course_id": "KINE M13MA",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M11YX",
+        "value": "KINE M1350"
+      }
+    },
+    {
+      "where_course_id": "KINE M13QS",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M12OW",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M13VG",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M14AB",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M14HW",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M11MH",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M1704",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M1401",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M1873",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "KINE M1350"
+      }
+    },
+    {
+      "where_course_id": "KINE M1873",
+      "where_field": "unified_title",
+      "set": {
+        "course_id": "KINE M1350"
+      }
+    },
+    {
+      "where_course_id": "KINE M1925",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M1137",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "KINE M1946",
+      "where_field": "merge_into",
+      "set": {
+        "course_id": "KINE M1777",
+        "value": "KINE M1013"
+      }
+    },
+    {
+      "where_course_id": "NC M90LW",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90GN"
+      }
+    },
+    {
+      "where_course_id": "NC M90LX",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90GO"
+      }
+    },
+    {
+      "where_course_id": "NCBU M90AO",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90LE"
+      }
+    },
+    {
+      "where_course_id": "NCBU M90AP",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90EY"
+      }
+    },
+    {
+      "where_course_id": "OFFT M90AJ",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90DJ"
+      }
+    },
+    {
+      "where_course_id": "OFFT M90BB",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90IJ"
+      }
+    },
+    {
+      "where_course_id": "OTEC M10IN",
+      "where_field": "cross_listed_disciplines",
+      "set": {
+        "course_id": "OTEC M10IL"
+      }
+    },
+    {
+      "where_course_id": "OTEC M10IT",
+      "where_field": "cross_listed_disciplines",
+      "set": {
+        "course_id": "OTEC M10IR"
+      }
+    },
+    {
+      "where_course_id": "OTEC M10PM",
+      "where_field": "cross_listed_disciplines",
+      "set": {
+        "course_id": "OTEC M10PH"
+      }
+    },
+    {
+      "where_course_id": "OTEC M1132",
+      "where_field": "cross_listed_disciplines",
+      "set": {
+        "course_id": "OTEC M1134"
+      }
+    },
+    {
+      "where_course_id": "REAL M1017",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "REAL M1014"
+      }
+    },
+    {
+      "where_course_id": "REAL M1017",
+      "where_field": "unified_title",
+      "set": {
+        "course_id": "REAL M1014"
+      }
+    },
+    {
+      "where_course_id": "REAL M10AE",
+      "where_field": "merge_into",
+      "set": {
+        "value": "REAL M1014"
+      }
+    },
+    {
+      "where_course_id": "VBUS M90BG",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90KM"
+      }
+    },
+    {
+      "where_course_id": "VOCE M90CX",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90BO"
+      }
+    },
+    {
+      "where_course_id": "VOCE M90CY",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90BU"
+      }
+    },
+    {
+      "where_course_id": "VOCE M90CZ",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90BW"
+      }
+    },
+    {
+      "where_course_id": "VOCE M90DA",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90BY"
+      }
+    },
+    {
+      "where_course_id": "VOCE M90DB",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90BZ"
+      }
+    },
+    {
+      "where_course_id": "VOCE M90QC",
+      "where_field": "discipline",
+      "set": {
+        "course_id": "BUSI M90KH"
+      }
+    }
+  ],
+  "sql": "begin;\nupdate kb_curation set course_id = 'AGRI M1001' where course_id = 'AGRI M1002' and field = 'cross_listed_disciplines';\nupdate kb_curation set value = 'ARTH M1022' where course_id = 'ARTS M10BJ' and field = 'merge_into';\nupdate kb_curation set course_id = 'ARTH M1022' where course_id = 'ARTS M1159' and field = 'discipline';\nupdate kb_curation set course_id = 'ARTH M1022' where course_id = 'ARTS M1159' and field = 'unified_title';\nupdate kb_curation set value = 'AUTO M1006' where course_id = 'AUTB M1037' and field = 'merge_into';\nupdate kb_curation set course_id = 'AGRI M10AL' where course_id = 'AUTB M10BJ' and field = 'cross_listed_disciplines';\nupdate kb_curation set course_id = 'AGRI M10AL' where course_id = 'AUTB M10BJ' and field = 'discipline';\nupdate kb_curation set course_id = 'AUTB M10BM' where course_id = 'AUTB M10BN' and field = 'merge_into';\nupdate kb_curation set course_id = 'AUTO M1004', value = 'AUTO M1006' where course_id = 'AUTO M1005' and field = 'merge_into';\nupdate kb_curation set course_id = 'AUTO M1005', value = 'AUTO M1006' where course_id = 'AUTO M1006' and field = 'merge_into';\nupdate kb_curation set course_id = 'AUTO M1006' where course_id = 'AUTO M1007' and field = 'unified_title';\nupdate kb_curation set course_id = 'AUTO M10AF' where course_id = 'AUTO M10AG' and field = 'merge_into';\nupdate kb_curation set course_id = 'AUTO M10BJ', value = 'AUTO M1006' where course_id = 'AUTO M10BK' and field = 'merge_into';\nupdate kb_curation set course_id = 'AUTO M10BK', value = 'AUTO M1006' where course_id = 'AUTO M10BL' and field = 'merge_into';\nupdate kb_curation set course_id = 'AUTO M10BS', value = 'AUTO M1006' where course_id = 'AUTO M10BT' and field = 'merge_into';\nupdate kb_curation set course_id = 'AUTO M10CW' where course_id = 'AUTO M10CX' and field = 'cross_listed_disciplines';\nupdate kb_curation set course_id = 'AUTO M10OX', value = 'AUTO M1006' where course_id = 'AUTO M10PB' and field = 'merge_into';\nupdate kb_curation set course_id = 'AUTO M10ZP', value = 'AUTO M1006' where course_id = 'AUTO M11AA' and field = 'merge_into';\nupdate kb_curation set course_id = 'AUTO M11CL', value = 'AUTO M1006' where course_id = 'AUTO M11CW' and field = 'merge_into';\nupdate kb_curation set course_id = 'AUTO M11CQ', value = 'AUTO M1006' where course_id = 'AUTO M11DB' and field = 'merge_into';\nupdate kb_curation set course_id = 'AUTO M11NF', value = 'AUTO M1006' where course_id = 'AUTO M11NQ' and field = 'merge_into';\nupdate kb_curation set course_id = 'AUTO M1211' where course_id = 'AUTO M1217' and field = 'merge_into';\nupdate kb_curation set course_id = 'BUSI M1002' where course_id = 'BBK M1001' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M11PA' where course_id = 'BBK M10AC' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M9003' where course_id = 'BBK M9001' and field = 'discipline';\nupdate kb_curation set course_id = 'BSKL M9001' where course_id = 'BSIC M9001' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M11BL' where course_id = 'BUAC M10AE' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M1300' where course_id = 'BUSA M1003' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M10ZQ' where course_id = 'BUSA M10AF' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M10MO' where course_id = 'BUSA M10AJ' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M9058' where course_id = 'BUSA M9003' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M1167' where course_id = 'BUSI M1170' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M1167' where course_id = 'BUSI M1170' and field = 'unified_title';\nupdate kb_curation set course_id = 'BUSI M11CM' where course_id = 'CISC M12GG' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M9038' where course_id = 'CISC M9029' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M9039' where course_id = 'CISC M9030' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M90BV' where course_id = 'CISC M90AQ' and field = 'discipline';\nupdate kb_curation set course_id = 'COUN M1038' where course_id = 'COUN M1045' and field = 'unified_title';\nupdate kb_curation set course_id = 'COUN M10JI', value = 'COUN M1038' where course_id = 'COUN M10JJ' and field = 'merge_into';\nupdate kb_curation set course_id = 'COUN M10JJ', value = 'COUN M1038' where course_id = 'COUN M10JK' and field = 'merge_into';\nupdate kb_curation set course_id = 'CULN M1002' where course_id = 'CULN M1003' and field = 'cross_listed_disciplines';\nupdate kb_curation set course_id = 'ELEC M1016' where course_id = 'ELEC M1028' and field = 'discipline';\nupdate kb_curation set course_id = 'ENGL M10WM', value = 'ENGL M1197' where course_id = 'ENGL M10WP' and field = 'merge_into';\nupdate kb_curation set course_id = 'ENGL M10YN', value = 'ENGL M1330' where course_id = 'ENGL M10YQ' and field = 'merge_into';\nupdate kb_curation set course_id = 'ENGL M11HU', value = 'ENGL M1330' where course_id = 'ENGL M11HY' and field = 'merge_into';\nupdate kb_curation set course_id = 'ENGL M11HV', value = 'ENGL M1330' where course_id = 'ENGL M11HZ' and field = 'merge_into';\nupdate kb_curation set course_id = 'ENGL M1197' where course_id = 'ENGL M1217' and field = 'discipline';\nupdate kb_curation set course_id = 'ENGL M1197' where course_id = 'ENGL M1217' and field = 'unified_title';\nupdate kb_curation set course_id = 'ENGL M1330' where course_id = 'ENGL M1367' and field = 'discipline';\nupdate kb_curation set course_id = 'ENGL M1330' where course_id = 'ENGL M1367' and field = 'unified_title';\nupdate kb_curation set course_id = 'ENTR M10BU' where course_id = 'ENTR M10BZ' and field = 'cross_listed_disciplines';\nupdate kb_curation set course_id = 'BUSI M9144' where course_id = 'FINC M9006' and field = 'discipline';\nupdate kb_curation set course_id = 'FLSP M1001' where course_id = 'FLSP M1019' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1003' where course_id = 'FLSP M1040' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1035' where course_id = 'FLSP M1125' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1036' where course_id = 'FLSP M1130' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1047' where course_id = 'FLSP M1175' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1048' where course_id = 'FLSP M1176' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1056' where course_id = 'FLSP M1194' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1068' where course_id = 'FLSP M1235' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1070' where course_id = 'FLSP M1245' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1074' where course_id = 'FLSP M1272' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1075' where course_id = 'FLSP M1279' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1077' where course_id = 'FLSP M1282' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1078' where course_id = 'FLSP M1295' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1081' where course_id = 'FLSP M1322' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1082' where course_id = 'FLSP M1323' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1085' where course_id = 'FLSP M1334' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1086' where course_id = 'FLSP M1335' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1087' where course_id = 'FLSP M1336' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1091' where course_id = 'FLSP M1347' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1092' where course_id = 'FLSP M1349' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1095' where course_id = 'FLSP M1357' and field = 'merge_into';\nupdate kb_curation set course_id = 'FLSP M1096' where course_id = 'FLSP M1359' and field = 'merge_into';\nupdate kb_curation set course_id = 'HIST M10CP', value = 'HIST M1140' where course_id = 'HIST M10CQ' and field = 'merge_into';\nupdate kb_curation set course_id = 'HIST M10RP', value = 'HIST M1140' where course_id = 'HIST M10RS' and field = 'merge_into';\nupdate kb_curation set course_id = 'HIST M1140' where course_id = 'HIST M1152' and field = 'discipline';\nupdate kb_curation set course_id = 'HIST M1140' where course_id = 'HIST M1152' and field = 'unified_title';\nupdate kb_curation set course_id = 'KINE M1013' where course_id = 'KINE M1015' and field = 'unified_title';\nupdate kb_curation set course_id = 'KINE M11MI', value = 'KINE M1013' where course_id = 'KINE M10SU' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M13RT', value = 'KINE M1013' where course_id = 'KINE M11XF' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M1341', value = 'KINE M1013' where course_id = 'KINE M1289' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M13YC', value = 'KINE M1013' where course_id = 'KINE M12BJ' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M14AA', value = 'KINE M1013' where course_id = 'KINE M12CC' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M1455', value = 'KINE M1013' where course_id = 'KINE M1371' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M11WI', value = 'KINE M1013' where course_id = 'KINE M13FH' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M11UI', value = 'KINE M1013' where course_id = 'KINE M13FJ' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M10MA', value = 'KINE M1350' where course_id = 'KINE M13FV' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M11QW', value = 'KINE M1350' where course_id = 'KINE M13FX' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M11YW', value = 'KINE M1350' where course_id = 'KINE M13FY' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M11YX', value = 'KINE M1350' where course_id = 'KINE M13MA' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M12OW', value = 'KINE M1013' where course_id = 'KINE M13QS' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M14AB', value = 'KINE M1013' where course_id = 'KINE M13VG' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M11MH', value = 'KINE M1013' where course_id = 'KINE M14HW' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M1401', value = 'KINE M1013' where course_id = 'KINE M1704' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M1350' where course_id = 'KINE M1873' and field = 'discipline';\nupdate kb_curation set course_id = 'KINE M1350' where course_id = 'KINE M1873' and field = 'unified_title';\nupdate kb_curation set course_id = 'KINE M1137', value = 'KINE M1013' where course_id = 'KINE M1925' and field = 'merge_into';\nupdate kb_curation set course_id = 'KINE M1777', value = 'KINE M1013' where course_id = 'KINE M1946' and field = 'merge_into';\nupdate kb_curation set course_id = 'BUSI M90GN' where course_id = 'NC M90LW' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M90GO' where course_id = 'NC M90LX' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M90LE' where course_id = 'NCBU M90AO' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M90EY' where course_id = 'NCBU M90AP' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M90DJ' where course_id = 'OFFT M90AJ' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M90IJ' where course_id = 'OFFT M90BB' and field = 'discipline';\nupdate kb_curation set course_id = 'OTEC M10IL' where course_id = 'OTEC M10IN' and field = 'cross_listed_disciplines';\nupdate kb_curation set course_id = 'OTEC M10IR' where course_id = 'OTEC M10IT' and field = 'cross_listed_disciplines';\nupdate kb_curation set course_id = 'OTEC M10PH' where course_id = 'OTEC M10PM' and field = 'cross_listed_disciplines';\nupdate kb_curation set course_id = 'OTEC M1134' where course_id = 'OTEC M1132' and field = 'cross_listed_disciplines';\nupdate kb_curation set course_id = 'REAL M1014' where course_id = 'REAL M1017' and field = 'discipline';\nupdate kb_curation set course_id = 'REAL M1014' where course_id = 'REAL M1017' and field = 'unified_title';\nupdate kb_curation set value = 'REAL M1014' where course_id = 'REAL M10AE' and field = 'merge_into';\nupdate kb_curation set course_id = 'BUSI M90KM' where course_id = 'VBUS M90BG' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M90BO' where course_id = 'VOCE M90CX' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M90BU' where course_id = 'VOCE M90CY' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M90BW' where course_id = 'VOCE M90CZ' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M90BY' where course_id = 'VOCE M90DA' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M90BZ' where course_id = 'VOCE M90DB' and field = 'discipline';\nupdate kb_curation set course_id = 'BUSI M90KH' where course_id = 'VOCE M90QC' and field = 'discipline';\ncommit;"
+}

@@ -1,0 +1,103 @@
+{
+ "generated_at": "2026-06-12T18:12:33.260921",
+ "direction": "loser → winner (rollback = invert; losers were pure merges, no re-numbering)",
+ "alias_map": {
+  "ARCH M1002": "ARCH M1102",
+  "BUSI M1212": "BUSI M1213",
+  "BUSI M1289": "BUSI M1288",
+  "BUSI M1299": "BUSI M1298",
+  "BUSI M1332": "BUSI M1361",
+  "CRIM M1169": "CRIM M1168",
+  "CSIS M1209": "CSIS M1208",
+  "CSIS M1444": "CSIS M1443",
+  "CSIS M1478": "CSIS M1477",
+  "FCSH M1002": "FCSH M1003",
+  "HLTH M1012": "HLTH M1011",
+  "HLTH M1035": "HLTH M1033",
+  "HLTH M1034": "HLTH M1033",
+  "IDST M9278": "IDST M9044",
+  "IDST M9179": "IDST M9176",
+  "IDST M9123": "IDST M9010",
+  "IDST M9206": "IDST M9301",
+  "IDST M9316": "IDST M9011",
+  "INDT M1079": "INDT M1078"
+ },
+ "merges": [
+  {
+   "from": "ARCH M1002",
+   "into": "ARCH M1102"
+  },
+  {
+   "from": "BUSI M1212",
+   "into": "BUSI M1213"
+  },
+  {
+   "from": "BUSI M1289",
+   "into": "BUSI M1288"
+  },
+  {
+   "from": "BUSI M1299",
+   "into": "BUSI M1298"
+  },
+  {
+   "from": "BUSI M1332",
+   "into": "BUSI M1361"
+  },
+  {
+   "from": "CRIM M1169",
+   "into": "CRIM M1168"
+  },
+  {
+   "from": "CSIS M1209",
+   "into": "CSIS M1208"
+  },
+  {
+   "from": "CSIS M1444",
+   "into": "CSIS M1443"
+  },
+  {
+   "from": "CSIS M1478",
+   "into": "CSIS M1477"
+  },
+  {
+   "from": "FCSH M1002",
+   "into": "FCSH M1003"
+  },
+  {
+   "from": "HLTH M1012",
+   "into": "HLTH M1011"
+  },
+  {
+   "from": "HLTH M1035",
+   "into": "HLTH M1033"
+  },
+  {
+   "from": "HLTH M1034",
+   "into": "HLTH M1033"
+  },
+  {
+   "from": "IDST M9278",
+   "into": "IDST M9044"
+  },
+  {
+   "from": "IDST M9179",
+   "into": "IDST M9176"
+  },
+  {
+   "from": "IDST M9123",
+   "into": "IDST M9010"
+  },
+  {
+   "from": "IDST M9206",
+   "into": "IDST M9301"
+  },
+  {
+   "from": "IDST M9316",
+   "into": "IDST M9011"
+  },
+  {
+   "from": "INDT M1079",
+   "into": "INDT M1078"
+  }
+ ]
+}

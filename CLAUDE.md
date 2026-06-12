@@ -69,16 +69,17 @@ into the Pipeline Reference below or into dedicated docs.
 
    **M-ID structural invariants** (enforced at every re-mint; deviations
    become audit findings):
-   - SUBJ portion is exactly **4 letters**. The 27 single-letter SUBJ
-     artifacts the auditor flags as `mid_id_off_scheme` (`A M1001`,
-     `F M1001`, etc.) get folded into proper 4-char SUBJ at the next
-     re-mint.
+   - SUBJ portion is exactly **4 letters**. The single-letter SUBJ
+     artifacts (`A M1001`, `F M1001`, …) were folded by the 2026-06-12
+     canonical fold; residue = **1** (`F M1002`, blank-discipline —
+     unfoldable until disciplined; `mid_id_off_scheme` tracks it).
    - Within `id_system == "M-ID"`, **all rows sharing a `discipline`
-     share a SUBJ4.** The 10 SUBJ4 variants for `discipline ==
-     "Sign Language, American"` (ASL/AMSL/DEAF/SIGN/INT/INTR/ACCS/MULT/
-     SL/SNLA) collapse to a single canonical SUBJ4 at re-mint. The
-     `subject_collision_signal` rule (Phase 1c queued) surfaces these
-     so curators can confirm the canonical choice before re-mint.
+     share a SUBJ4** — **ENFORCED 2026-06-12 (Session 50): the canonical
+     fold re-keyed every disciplined M-ID to its curator-confirmed
+     canonical** (e.g. the 10 "Sign Language, American" variants → `SLNA`).
+     `subject_collision_signal` is the steady-state watchdog (3 documented
+     residuals = cross-discipline curated re-keys whose BASELINE file
+     discipline disagrees with the curated one — honest flags, not defects).
    - **Umbrella-discipline exception (2026-06-09, Session 37).** One MQ
      discipline that is genuinely a *parent over many distinct subjects*
      splits its SUBJ4 per subject — the invariant becomes *one **SUBJECT**
@@ -109,8 +110,9 @@ into the Pipeline Reference below or into dedicated docs.
      `ANTH C1000`). Never re-key.
    - New M-IDs minted by `_seed_coci_minted_mids.py` (or curator
      consolidation via the Suggested-merges worklist) consult
-     `kb/discipline_canonical_subj4.json` (TBD — created in the next
-     re-mint project) for the canonical SUBJ4 per discipline.
+     `kb/discipline_canonical_subj4.json` (live — 148 disciplines, all
+     curator-reviewed; synced from Supabase `_CANON_SUBJ4::` picks) for
+     the canonical SUBJ4 per discipline.
 
    Authoritative old→new aliases for every re-mint live at
    `kb/remint_out/<date>/alias_map.json`. Rollback notes per the playbook.
@@ -120,6 +122,11 @@ into the Pipeline Reference below or into dedicated docs.
    dead — those aliases preserved in `kb/remint_out/alias_map.json`. Full
    decisions + validation methodology:
    [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
+   Latest instance: the **2026-06-12 canonical-SUBJ4 fold** (Session 50) —
+   71,037-alias permutation, receipts `kb/subj4_fold_out/2026-06-12/`,
+   apply == dry-run spec via the shared `compute_plan()` allocator
+   (`kb/_subj4_apply.py`), downstream chain driven by
+   `kb/_post_apply_chain.py`.
 
 8. **Document at context checkpoints.** Roughly every ~100K tokens of context
    consumed in a session (heuristic — Claude Code doesn't expose an exact
@@ -1404,20 +1411,20 @@ Read-only auditor over every M-ID + Cluster. Per row, produces a Trust Card:
   missing / conflicting / not_yet_captured.
 - **Readiness tiers:** ready (≥0.85) / needs_review (≥0.65) /
   needs_repair (≥0.40) / not_ready.
-- **Rule tags + counts (refreshed 2026-06-12, Session 46 — after the statewide twin merge, #386):**
-  - `seed_untouched_discipline` (**10,513**, was 10,998 — the statewide twin merge absorbed 589 losers, many drafted) — Phase B subject_map draft never reviewed (Phase 1a)
-  - `subject_collision_signal` (**1,206**, was 1,210 — twins. History: 1,076 → 1,210 when Session 45's homonym repair re-filled ~320 minority-side rows with honest disciplines whose canonical SUBJ4 ≠ their key; queued for the next SUBJ4 re-mint, by design. Was 0 → 1,076 on 2026-06-09) — Phase 1e cleanup receipt; the Session-37 coarse TOP-division fill assigned ~1.2k blank minted parents a broad umbrella discipline **without** re-keying SUBJ4 to that discipline's canonical, so they re-trip the SUBJ4-collision diagnostic. Expected + honest — they're new candidates for a future canonical-SUBJ4 fold
-  - `unit_anomaly` (**4,194**, was 4,347) — typical_units represents <50% of member colleges (member-unit variance is high, possible over-merge across different unit-load variants); ~71% of flags are 2-member splits like `[3.0, 0.0]` (credit vs noncredit drift in the same M-ID) (Phase 1c)
-  - `member_top_divergence` (**1,255**, was 1,275) — an M-ID's member colleges carry TOP codes spanning ≥2 broad (2-digit) divisions with ≥30% minority share: the **cross-discipline over-merge** detector (a generic title — "Ethics and Leadership", "Undergraduate Research Experience" — minted courses from different program areas under one identity). It closes a real gap: `top_discipline_disagreement` only checks the M-ID's single *representative* TOP, so it missed the case where the *members* diverge but the representative matches (the motivating `CRIM M1231`). 2-digit division grouping inherently suppresses sister-discipline noise — no SISTER_PAIRS needed. Surfaces for review, not a verdict (TOP codes vary by college). (Phase 1c)
-  - `top_discipline_disagreement` (**916**, was 926 — twins; Session 45's homonym repair brought it 960 → 926; was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
-  - `blank_description` (**1,704**, was 1,732) — Phase 1a
+- **Rule tags + counts (refreshed 2026-06-12 evening, Session 50 — after the canonical-SUBJ4 fold + post-fold twins; 15,551 cards):**
+  - `seed_untouched_discipline` (**10,512**) — Phase B subject_map draft never reviewed (Phase 1a)
+  - `subject_collision_signal` (**3**, was 1,206 — **the fold's receipt**: every disciplined M-ID re-keyed to its curator-confirmed canonical SUBJ4 on 2026-06-12, Session 50. The 3 residuals are the cross-discipline curated re-keys — `ARTH M1022` ex-`ARTS M1159`, `BUSI M9038/M9039` ex-`CISC M9029/M9030` — whose BASELINE file discipline (Art / Computer Science) disagrees with the curated one the fold honored; the rule reads baseline, so these are honest, bounded flags. History: 0 → 1,076 (2026-06-09 coarse TOP-division fill) → 1,210 (Session-45 homonym repair) → 1,206 (twins) → **3** (the fold)) — Phase 1e CLOSED
+  - `unit_anomaly` (**4,189**, was 4,194) — typical_units represents <50% of member colleges (member-unit variance is high, possible over-merge across different unit-load variants); ~71% of flags are 2-member splits like `[3.0, 0.0]` (credit vs noncredit drift in the same M-ID) (Phase 1c)
+  - `member_top_divergence` (**1,253**, was 1,255) — an M-ID's member colleges carry TOP codes spanning ≥2 broad (2-digit) divisions with ≥30% minority share: the **cross-discipline over-merge** detector (a generic title — "Ethics and Leadership", "Undergraduate Research Experience" — minted courses from different program areas under one identity). It closes a real gap: `top_discipline_disagreement` only checks the M-ID's single *representative* TOP, so it missed the case where the *members* diverge but the representative matches (the motivating case lives in the CRIM family). 2-digit division grouping inherently suppresses sister-discipline noise — no SISTER_PAIRS needed. Surfaces for review, not a verdict (TOP codes vary by college). (Phase 1c)
+  - `top_discipline_disagreement` (**916** — twins; Session 45's homonym repair brought it 960 → 926; was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
+  - `blank_description` (**1,701**, was 1,704) — Phase 1a
   - `blank_discipline` (**82** — a few Session-45 retractions had no honest re-fill; 1,266 pre-2026-06-09) — Phase 1a; the coarse TOP-division fill cleared the minted-parent blank tail; residual = the no-honest-umbrella divisions
-  - `discipline_title_mismatch` (**687**, was 712 — twins; Session 45 repair brought it 773 → 712) — title shares 0 tokens with assigned discipline AND ≥2 with some other (Phase 1c)
+  - `discipline_title_mismatch` (**687** — twins; Session 45 repair brought it 773 → 712) — title shares 0 tokens with assigned discipline AND ≥2 with some other (Phase 1c)
   - `description_discipline_disagreement` (**73**, was 75) — description's safe-phrase set points elsewhere with ≥2 mentions (Phase 1c)
   - `generic_title_concrete_discipline` (44) — title is course-format generic; can't justify a specific discipline (Phase 1c)
-  - `mid_id_off_scheme` (**2** — `F M1002` + `N M9001`, both blank-discipline; unfixable residue) — was 27 pre-apply
-  - `merge_into_orphan` (**0** — preventive infrastructure; fires when a curation `merge_into` points to a target not in courses ∪ singletons ∪ `UC-CUR-*`. All 3 current pointers cleanly target `UC-CUR-MPG029OM`) (Phase 1c, 2026-05-27)
-  - `cluster_blanks_when_aggregatable` (6 — grew with Sam's 2026-06-10 worklist merges; each carries an `aggregate_from_members` suggested fix for the parked Phase 1b), `cluster_id_off_scheme` (1), `uc_cur_ripe_for_promotion` (1) — Phase 1a
+  - `mid_id_off_scheme` (**1** — `F M1002`, blank-discipline; unfoldable until disciplined. `N M9001` gained an honest Social Science discipline and folded to `SOCS M9003` in the 2026-06-12 fold) — was 27 pre-2026-05-23
+  - `merge_into_orphan` (**0** — preventive infrastructure; fires when a curation `merge_into` points to a target not in courses ∪ singletons ∪ `UC-CUR-*`) (Phase 1c, 2026-05-27)
+  - `cluster_blanks_when_aggregatable` (**14** — grew with the smog/worklist merges; each carries an `aggregate_from_members` suggested fix for the parked Phase 1b — at 14 the "build when ≥5 clusters exist" bar is met if curator demand appears), `cluster_id_off_scheme` (0), `uc_cur_ripe_for_promotion` (0) — Phase 1a
 
 - **Score now incorporates per-tag penalties (`TAG_PENALTY_ON_DISCIPLINE` + `TAG_PENALTY_ON_UNITS`).** Each cross-validation tag deducts from its target field's per-field score before the weighted mean (floored at 0). Tags compound: a row firing 3 discipline rules drops materially below a row firing 1, even with the same field states. Penalties: `discipline_title_mismatch` −0.20, `top_discipline_disagreement` −0.15, `description_discipline_disagreement` −0.15, `generic_title_concrete_discipline` −0.20, `member_top_divergence` −0.15 (all dock the `discipline` field); `unit_anomaly` −0.20 (docks the `typical_units` field). Mirrored client-side in `unified_courses.js` for the breakdown tooltip — keep the two in sync.
 
@@ -1551,27 +1558,25 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > Exhibits KPI + program-area categories + KPI reorder; CCR rules day —
 > statewide C-ID router #379 + the CADM homonym repair #381 + the
 > description-evidence lane #382; the AUTO/smog case — the 🏷 title lane
-> #385 + the STATEWIDE twin merge #386).
+> #385 + the STATEWIDE twin merge #386; Supernova's SUBJ ⇄ CCR checking +
+> To-Do feed + the fold dry-run #388/#389/#402/#405).
 
-### Session 47 — Bruh Supernova: SUBJ ⇄ CCR error checking, the To-Do feed, the fold dry-run (2026-06-12)
+### Session 50 — Bruh Dawnleader: the SUBJ4 canonical fold APPLIED (2026-06-12)
 
-Sam's asks, four PRs, all merged on green. **#388** the CSR "✓ Check SUBJ ⇄
-CCR" sweep + live Common SUBJ input feedback (collision/in-use badges,
-collision-free suggestion chips, confirm-on-collision); Sam cured **all 11
-shared Common SUBJ codes the same morning**. **#402** the sweep's THEA false
-positive (Drama/Theater Arts ↔ its alias "Theater Arts") → **alias-family
-awareness** (`kb/discipline_aliases.json` joins the umbrella exemptions as
-shared SUBJ4-consumer semantics); the needless DRAM re-code reverted with an
-intent note. **#389** the 📋 To-Do button on every tab (`cpl_todos.js` +
-`kb/cpl_todos.json` — the handoff distilled; Rule-8 item 9). **#405** the
-SUBJ4 fold DRY-RUN: seed synced, `_subj4_dryrun.py` taught the umbrella
-allowances (it predated them — was folding FL** back to FLNG + ATHL to KINE,
-bursting KINE M1###), **71,710 M-IDs → 10,974 re-keys, 5/5 gates PASS**;
-apply gate = 19 curated-collision buckets to approve. Suite 34/34. Lessons:
-`docs/ccr_cluster_cleanup_lessons.md` (Session 47); KB note:
-`methodology-subj4-consumer-semantics.md`. **NEXT: the receipted apply**
-(one cron window, twin-merge re-run bundled) + the CCR Subject-dropdown
-grouping (Sam yes'd; spec in `docs/session_50_handoff.md`).
+The Rule-7 apply of dry-run #405, one PR, landed in the evening cron window.
+**71,037-alias permutation, 48,820 id moves** (10,974 SUBJ4 re-keys + bucket
+re-sequencing) across minted/singletons/memberships/articulations/curation +
+**119 Supabase ops** (md5-verified, PK-order simulated); plan recomputed at
+apply == frozen reviewed plan byte-identical (`compute_plan()` shared with the
+dry-run); post-fold twin pass +19 (15,535 parents); chain
+(`kb/_post_apply_chain.py`): promotions 1,678 re-keyed/0 unresolved/V5 clean,
+CSR re-seed, audit — **`subject_collision_signal` 1,206 → 3** (documented
+baseline-vs-overlay residuals), `mid_id_off_scheme` → 1; receipts re-run (415
+desc / 5,581 title); fold-verify re_key 0; suite 34/34 (title-lane pins →
+mechanism-style). Receipts `kb/subj4_fold_out/2026-06-12/`. Full story:
+`docs/ccr_cluster_cleanup_lessons.md` (Session 50); KB note:
+`methodology-apply-equals-spec-via-shared-allocator.md`. **NEXT: the CCR
+Subject-dropdown grouping** (`docs/session_51_handoff.md`).
 
 
 ### Session 48 (Bruh Glasstronaut) — First Light: the design sprint (daily plein air art LIVE + the theme spec BLESSED) (2026-06-12)

@@ -42,7 +42,10 @@ UNIFIED_COURSES = os.path.join(HERE, "coci_unified_courses.json")
 CCN_REF = os.path.join(HERE, "reference", "ccn_courses.json")
 CID_REF = os.path.join(HERE, "reference", "cid_descriptors.json")
 FL_SPLIT = os.path.join(HERE, "foreign_language_subj4.json")
-OUT_DIR = os.path.join(HERE, "subj4_dryrun")
+# SUBJ4_DRYRUN_OUT redirects the artifacts (verification seam — the post-apply
+# chain re-runs this against the folded KB into /tmp to prove re_key == 0
+# without churning the frozen receipt files; same pattern as UC_OUT_DIR).
+OUT_DIR = os.environ.get("SUBJ4_DRYRUN_OUT") or os.path.join(HERE, "subj4_dryrun")
 
 # Umbrella disciplines legitimately span MANY SUBJ4s (mirror of
 # UMBRELLA_DISCIPLINES in kb/_row_audit.py — keep in sync). Added 2026-06-12
@@ -172,19 +175,17 @@ def parse_old(course_id: str):
     return (subj, band, suffix, "unknown")
 
 
-def main():
-    if not os.path.exists(CANONICAL):
-        raise SystemExit(f"Missing {CANONICAL} — run kb/_seed_canonical_subj4.py first.")
-    with open(CANONICAL, encoding="utf-8") as f:
-        canon_doc = json.load(f)
-    with open(COURSES, encoding="utf-8") as f:
-        courses = json.load(f)["courses"]
-    with open(SINGLETONS, encoding="utf-8") as f:
-        singletons = json.load(f)["courses"]
-    with open(CURATION, encoding="utf-8") as f:
-        curation_doc = json.load(f)
-    curations = curation_doc.get("curations", {}) or {}
+def compute_plan(courses, singletons, curations, canon_doc):
+    """Pure allocator — classify every M-ID's fate and assign new course_ids.
 
+    SHARED by this dry-run's main() and kb/_subj4_apply.py, so the apply
+    executes literally the allocation this dry-run reports (apply == spec by
+    construction — the Rule-7 fold playbook). NOTE: the curation discipline
+    overlay is applied onto the passed course/singleton dicts IN PLACE — pass
+    throwaway copies when the originals must stay pristine (the apply does:
+    it reloads the files separately for writing, so curated disciplines are
+    never baked into the KB baseline).
+    """
     canon_map = canon_doc.get("disciplines", {}) or {}
     umbrella_allowances = load_umbrella_allowances()
 
@@ -488,6 +489,64 @@ def main():
         if len(curated_in_bucket) >= 2:
             curated_collisions.append({"bucket": bucket_str, "curated": curated_in_bucket})
 
+    # ── Pass 6: per-discipline summary (top by impact) ──────────────────────
+    disc_summary = defaultdict(lambda: {"total": 0, "re_key": 0, "no_change": 0, "blocked": 0,
+                                         "canonical": None, "needs_review": True})
+    for r in rows:
+        d = r["discipline"]
+        if not d: continue
+        s = disc_summary[d]
+        s["total"] += 1
+        if r["fate"] == "re_key": s["re_key"] += 1
+        elif r["fate"] == "no_change": s["no_change"] += 1
+        elif r["fate"] == "blocked_on_curator": s["blocked"] += 1
+        s["canonical"] = canon_map.get(d, {}).get("canonical_subj4")
+        s["needs_review"] = canon_map.get(d, {}).get("needs_review", True)
+
+    return {
+        "rows": rows,
+        "fate_counts": fate_counts,
+        "alias_map": alias_map,
+        "collisions": collisions,
+        "curated_collisions": curated_collisions,
+        "curation_impact": curation_impact,
+        "validation": validation,
+        "disc_summary": disc_summary,
+        "overflow_corr": overflow_corr,
+        "overflow_sing": overflow_sing,
+        "id_reservations": id_reservations,
+        "reservation_skip_log": reservation_skip_log,
+        "umbrella_allowances": umbrella_allowances,
+    }
+
+
+def main():
+    if not os.path.exists(CANONICAL):
+        raise SystemExit(f"Missing {CANONICAL} — run kb/_seed_canonical_subj4.py first.")
+    with open(CANONICAL, encoding="utf-8") as f:
+        canon_doc = json.load(f)
+    with open(COURSES, encoding="utf-8") as f:
+        courses = json.load(f)["courses"]
+    with open(SINGLETONS, encoding="utf-8") as f:
+        singletons = json.load(f)["courses"]
+    with open(CURATION, encoding="utf-8") as f:
+        curation_doc = json.load(f)
+    curations = curation_doc.get("curations", {}) or {}
+
+    plan = compute_plan(courses, singletons, curations, canon_doc)
+    rows = plan["rows"]
+    fate_counts = plan["fate_counts"]
+    alias_map = plan["alias_map"]
+    collisions = plan["collisions"]
+    curated_collisions = plan["curated_collisions"]
+    curation_impact = plan["curation_impact"]
+    validation = plan["validation"]
+    disc_summary = plan["disc_summary"]
+    overflow_corr = plan["overflow_corr"]
+    overflow_sing = plan["overflow_sing"]
+    id_reservations = plan["id_reservations"]
+    reservation_skip_log = plan["reservation_skip_log"]
+
     # ── Pass 5b: downstream apply scope (memberships + articulations + clusters) ──
     # The dry-run doesn't TOUCH these — we just count what the apply step (5c)
     # will need to re-key, so the operator has a scope number going into the
@@ -514,20 +573,6 @@ def main():
             if touched:
                 downstream["cluster_total_touched"] += 1
                 downstream["cluster_members"] += touched
-
-    # ── Pass 6: per-discipline summary (top by impact) ──────────────────────
-    disc_summary = defaultdict(lambda: {"total": 0, "re_key": 0, "no_change": 0, "blocked": 0,
-                                         "canonical": None, "needs_review": True})
-    for r in rows:
-        d = r["discipline"]
-        if not d: continue
-        s = disc_summary[d]
-        s["total"] += 1
-        if r["fate"] == "re_key": s["re_key"] += 1
-        elif r["fate"] == "no_change": s["no_change"] += 1
-        elif r["fate"] == "blocked_on_curator": s["blocked"] += 1
-        s["canonical"] = canon_map.get(d, {}).get("canonical_subj4")
-        s["needs_review"] = canon_map.get(d, {}).get("needs_review", True)
 
     # ── Write artifacts ─────────────────────────────────────────────────────
     os.makedirs(OUT_DIR, exist_ok=True)
