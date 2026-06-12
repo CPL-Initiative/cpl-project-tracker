@@ -95,9 +95,9 @@
     if (document.getElementById("cpl-todo-css")) return;
     var css =
       ".cpl-todo-btn{position:fixed;right:18px;bottom:56px;z-index:900;display:flex;align-items:center;gap:6px;" +
-        "padding:8px 14px;border-radius:20px;border:1px solid var(--border-strong);background:var(--navy-primary);" +
-        "color:var(--white);font-size:.88rem;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.25);}" +
-      ".cpl-todo-btn:hover{background:var(--navy-secondary);}" +
+        "padding:8px 14px;border-radius:20px;border:none;background:var(--cobalt);" +
+        "color:#fff;font-size:.88rem;cursor:pointer;box-shadow:0 4px 12px rgba(20,20,30,0.25);}" +
+      ".cpl-todo-btn:hover{background:#003B8E;}" +
       ".cpl-todo-badge{background:var(--gold-accent);color:var(--navy-primary);border-radius:10px;font-size:.72rem;" +
         "font-weight:700;padding:1px 7px;}" +
       ".cpl-todo-panel{display:none;position:fixed;right:18px;bottom:104px;z-index:901;width:380px;max-width:92vw;" +
