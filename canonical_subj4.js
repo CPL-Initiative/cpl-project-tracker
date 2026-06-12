@@ -609,6 +609,31 @@
     ]));
   }
 
+  // One-time CSS overrides for the table chrome (Sam's 2026-06-12 CSR
+  // review). Injected from the tab's JS — the repo convention — so BOTH
+  // CPL_Dashboard.html and index.html are covered without a Rule-4 mirror
+  // edit. The base .cs-table rules live in the pane's in-body <style>
+  // block, so each override carries one extra level of specificity
+  // (thead / .cs-table ancestor) to win regardless of document order.
+  function ensureCsrUiCss() {
+    if (document.getElementById("cs-ui-css")) return;
+    document.head.appendChild(el("style", { id: "cs-ui-css" }, [
+      // Header text: white, NOT bold (was gold + UA-default bold). No
+      // non-deprecated white-on-dark text token exists in :root (--white
+      // sits in the deprecated legacy block), hence the literal #fff.
+      // The inactive sort arrows inherit the white at .55 opacity; the
+      // ACTIVE arrow keeps its gold accent rule so the affordance pops.
+      "#tab-canonical-subj4 .cs-table thead th{color:#fff;font-weight:normal;}" +
+      // CTE badge ("Y (90%)", "Y (all)") on ONE line. The extra width the
+      // column needs is stolen from the Notes textarea (30ch → 26ch — it
+      // has slack), NOT by widening the table: no horizontal scroll at
+      // desktop widths (standing rule).
+      "#tab-canonical-subj4 .cs-table td.cs-cte{white-space:nowrap;}" +
+      "#tab-canonical-subj4 .cs-table td.cs-cte .cs-badge{white-space:nowrap;}" +
+      "#tab-canonical-subj4 .cs-table textarea.cs-notes{width:26ch;}"
+    ]));
+  }
+
   // Inject the report modal once (same pattern as ensureCplModal — appended
   // inside the pane so the scoped .cs-modal rules apply; no HTML edit).
   function ensureCheckModal() {
@@ -633,10 +658,12 @@
   function jumpToDiscipline(d) {
     state.search = d.toLowerCase();
     state.subj = "";
+    state.subjSel = "";
     state.filter = "all";
     state.topFilter = "all";
     var inp = document.getElementById("cs-search"); if (inp) inp.value = d;
     var sj = document.getElementById("cs-subj-search"); if (sj) sj.value = "";
+    var sf = document.getElementById("cs-subj-filter"); if (sf) sf.value = "";
     var f = document.getElementById("cs-filter"); if (f) f.value = "all";
     var tf = document.getElementById("cs-top-filter"); if (tf) tf.value = "all";
     render();
@@ -916,6 +943,7 @@
     grouped: true,               // Group rows under TOP 2-digit category headers
     collapsedCats: {},           // {top_cat_2digit: bool} — collapsed category groups
     search: "",
+    subjSel: "",                 // SUBJ dropdown pick ("" = all) — see the cs-subj-filter select
     // Sort: default is re-key impact (descending). Curator clicks a sortable
     // header to override. Click again to flip direction. Clicking another
     // header switches the active column. When grouped, sort applies WITHIN
@@ -1065,6 +1093,38 @@
     subjSearch.value = state.subj || "";
     subjSearch.oninput = function () { state.subj = this.value.trim(); render(); };
     tb.appendChild(subjSearch);
+    // SUBJ dropdown (mirrors the CCR's Subject filter concept) — pick a
+    // 4-letter code and see the disciplines it belongs to. Two optgroups:
+    //   "Common subjects ✓"      — every distinct curator/seed canonical pick
+    //   "Local-derived variants" — codes observed on CCR rows that are not a
+    //                              canonical anywhere (post-fold this is
+    //                              nearly empty — it's a progress meter)
+    // A pick matches a discipline whose canonical IS the code OR whose
+    // variants_observed carries it. ANDs with the search/status/TOP filters.
+    if (state.seed) {
+      var canonSet = {}, variantSet = {};
+      mergedEntries().forEach(function (e) {
+        if (e.canonical_subj4) canonSet[e.canonical_subj4] = true;
+        Object.keys(e.variants_observed || {}).forEach(function (s) { variantSet[s] = true; });
+      });
+      var subjSel = el("select", {
+        class: "cs-filter", id: "cs-subj-filter",
+        title: "Filter disciplines by subject code: canonical Common SUBJ picks first, then local-derived variant codes not yet folded to a canonical.",
+      });
+      subjSel.appendChild(el("option", { value: "" }, ["All subjects"]));
+      var ogCanon = el("optgroup", { label: "Common subjects ✓" });
+      Object.keys(canonSet).sort().forEach(function (c) {
+        ogCanon.appendChild(el("option", { value: c }, [c]));
+      });
+      subjSel.appendChild(ogCanon);
+      var ogVar = el("optgroup", { label: "Local-derived variants" });
+      Object.keys(variantSet).filter(function (s) { return !canonSet[s]; }).sort()
+        .forEach(function (s) { ogVar.appendChild(el("option", { value: s }, [s])); });
+      subjSel.appendChild(ogVar);
+      subjSel.value = state.subjSel || "";
+      subjSel.onchange = function () { state.subjSel = this.value; render(); };
+      tb.appendChild(subjSel);
+    }
     // SUBJ ⇄ CCR checker — curator-initiated sweep (works signed-out; cures
     // need sign-in). See the "SUBJ ⇄ CCR error checking" block above.
     var checkBtn = el("button", {
@@ -1224,6 +1284,13 @@
           || (splitFor(e) || []).some(function (x) { return x.code.toUpperCase().indexOf(sq) >= 0; });
         if (!subjHit) return false;
       }
+      // SUBJ dropdown pick (exact code): the discipline's canonical IS the
+      // code, or its CCR rows carry it (variants_observed). ANDs with the
+      // other filters above/below.
+      if (state.subjSel) {
+        if ((e.canonical_subj4 || "") !== state.subjSel
+            && !Object.prototype.hasOwnProperty.call(e.variants_observed || {}, state.subjSel)) return false;
+      }
       return passesFilter(e);
     });
     filtered = sortRows(filtered);
@@ -1367,19 +1434,16 @@
     tr.appendChild(tdDisc);
     tr.appendChild(el("td", { class: "cs-mono" }, [String(entry.total_mids || 0)]));
     tr.appendChild(variantsCell(entry));
-    // Data-modal cell — show the most-common code colleges use today, with
-    // an obvious flag when it isn't 4 letters (so a curator knows they need
-    // to pick an expansion rather than just confirm).
+    // Data-modal cell — the most-used LOCAL college subject code. Local codes
+    // are the colleges' own vocabulary and are ALLOWED to be non-4-letter
+    // ("VN", "VOC ED"), so this cell carries NO warning chip (the old
+    // "⚠ needs 4-letter" here was noise — removed 2026-06-12, Sam's CSR
+    // review). The chip had been doing double duty: its real signal — the
+    // canonical pick is still MISSING because the modal couldn't be
+    // auto-seeded — now renders on the Common SUBJ cell (see tdCanon below),
+    // where the fix actually happens.
     var tdModal = el("td", { class: "cs-mono" });
     tdModal.appendChild(document.createTextNode(entry.data_modal || "—"));
-    if (entry.data_modal && !entry.data_modal_is_4letter) {
-      var warn = el("span", {
-        class: "cs-badge warn",
-        title: "Data modal is shorter than 4 letters — pick a 4-letter expansion.",
-      }, ["⚠ needs 4-letter"]);
-      warn.style.marginLeft = "6px";
-      tdModal.appendChild(warn);
-    }
     tr.appendChild(tdModal);
 
     // Canonical SUBJ4 input
@@ -1439,6 +1503,25 @@
     };
     input.onkeydown = function (e) { if (e.key === "Enter") input.blur(); };
     var tdCanon = el("td", null, [input, hint]);
+    // Residual "⚠ needs 4-letter" warning — a discipline whose canonical
+    // pick is MISSING (needs-review: no canonical_subj4, typically because
+    // the most-used local code isn't 4 letters so it couldn't be
+    // auto-seeded). This belongs HERE on the Common SUBJ cell — where the
+    // curator picks the code — not on the Most-used-locally cell (local
+    // codes are allowed to be non-4-letter; flagging them there was noise).
+    // The Status chip's "needs review" keeps surfacing the same state.
+    if (!entry.canonical_subj4) {
+      var needsPick = el("span", {
+        class: "cs-badge warn",
+        title: "No 4-letter Common SUBJ picked yet"
+          + (entry.data_modal && !entry.data_modal_is_4letter
+              ? " — the most-used local code (" + entry.data_modal
+                + ") isn't a usable 4-letter canonical, so pick an expansion here."
+              : " — pick one for this discipline."),
+      }, ["⚠ needs 4-letter"]);
+      needsPick.style.marginLeft = "6px";
+      tdCanon.appendChild(needsPick);
+    }
     // Multi-SUBJ4 umbrella (e.g. Foreign Languages): show the per-language
     // split codes so the curator sees the discipline isn't single-canonical,
     // and the codes are visibly searchable (matched in render()'s filter).
@@ -1515,8 +1598,10 @@
     // mapping finalizes. Always blank today.
     tr.appendChild(el("td", { class: "cs-mono", style: "color:#9ca3af", title: "CIP code — placeholder. The CCCCO is transitioning from TOP to CIP; column will populate when the mapping finalizes." }, ["—"]));
 
-    // CTE cell — show the flag as a badge with color reflecting the share
-    var tdCte = el("td");
+    // CTE cell — show the flag as a badge with color reflecting the share.
+    // .cs-cte rides ensureCsrUiCss(): the badge ("Y (90%)") stays on ONE
+    // line; the width it needs comes out of the Notes column's slack.
+    var tdCte = el("td", { class: "cs-cte" });
     if (entry.cte_flag && entry.cte_flag !== "none") {
       var cls = entry.cte_flag === "all" ? "ok"
               : entry.cte_flag === "most" ? "ok"
@@ -1743,6 +1828,7 @@
 
   function init() {
     if (!document.getElementById("tab-canonical-subj4")) return;
+    ensureCsrUiCss(); // table-chrome overrides (white non-bold header, one-line CTE)
     state.sess = getSession();
     wireGuidelinesModal();
     wireVariantsModal();
