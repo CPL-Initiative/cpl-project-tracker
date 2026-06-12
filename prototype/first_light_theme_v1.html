@@ -108,9 +108,16 @@ h1,h2,h3 { font-family:'Playfair Display', Georgia, serif; color:var(--text-stro
 @media (prefers-reduced-transparency: reduce) {
   .glass { background:var(--surface-opaque); backdrop-filter:none; -webkit-backdrop-filter:none; }
   .bg-art { display:none; }
+  /* the dark masthead must NEVER fall back to white — its text is white.
+     header.masthead (0,1,1) out-specifies the base .masthead rule that
+     follows this block in source order. */
+  header.masthead { background:#1A1A22; }
+  .fl-overlay { background:rgba(21,21,29,.78); backdrop-filter:none; -webkit-backdrop-filter:none; }
 }
-body.sim-solid .glass { background:var(--surface-opaque); backdrop-filter:none; -webkit-backdrop-filter:none; }
+body.sim-solid .glass:not(.masthead) { background:var(--surface-opaque); backdrop-filter:none; -webkit-backdrop-filter:none; }
+body.sim-solid .masthead { background:#1A1A22; backdrop-filter:none; -webkit-backdrop-filter:none; }
 body.sim-solid .bg-art { display:none; }
+body.sim-solid .fl-overlay { background:rgba(21,21,29,.78); backdrop-filter:none; -webkit-backdrop-filter:none; }
 @media (prefers-contrast: more) {
   :root { --border:rgba(28,28,26,.45); --text-muted:#3A3A36; }
 }
