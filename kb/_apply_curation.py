@@ -38,8 +38,11 @@ KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 # disciplines to a row without changing its primary `discipline` — for courses
 # that genuinely belong to two areas (e.g. "Agricultural Accounting" =
 # Agriculture + Business). Same course number; additive, no re-mint.
+# `merge_dismissed` is the worklist "Keep as-is": a persistent group dismissal
+# (value = the group's member ids sorted + "|"-joined), folded in for the audit
+# trail; the CCR worklist reads it live from Supabase to skip the group.
 FIELDS = {"discipline", "merge_into", "unified_title", "description",
-          "cross_listed_disciplines"}
+          "cross_listed_disciplines", "merge_dismissed"}
 
 
 def fetch_rows():
