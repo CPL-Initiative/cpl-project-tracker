@@ -29,20 +29,20 @@
   --surface-subtle: #F7F5F1;
   --border: rgba(28,28,26,.14);
   --border-strong: rgba(28,28,26,.30);
-  --scrim-dark: rgba(21,21,29,.92);/* masthead — composite worst-case #27272E */
 
   /* the five accents — light-surface text/icon grades (≥4.5:1) */
   --crimson: #C8102E;              /* negative · alerts · flags        5.26:1 */
   --cobalt:  #0047AB;              /* interactive · links · focus      7.54:1 */
   --hunter:  #355E3B;              /* positive · savings · verified    6.67:1 */
   --violet:  #6D28D9;              /* machine-generated · inferred     6.35:1 */
-  --mustard-fill: #E3B341;         /* caution chip FILL — never text on light */
+  --mustard-fill: #E3B341;         /* brand hue — fills/dots only, never text */
   --mustard-deep: #9A7400;         /* caution border/icon grade (≥3:1) 3.85:1 */
+  --mustard-text: #8B6800;         /* caution chip labels (≥4.5:1)     4.60:1 */
 
-  /* on-dark grades (≥5.5:1 on the masthead scrim, headroom past AA) */
+  /* on-dark grades — RESERVED (no dark chrome in v1.1; verified vs #27272E) */
   --crimson-on-dark: #E28392;
-  --cobalt-on-dark:  #7A9FD3;
-  --hunter-on-dark:  #8CA38F;
+  --cobalt-on-dark:  #7DA1D4;
+  --hunter-on-dark:  #8EA591;
   --violet-on-dark:  #B28DEB;
   --mustard-on-dark: #E3B341;      /* 7.65:1 — mustard shines on dark */
 
@@ -108,14 +108,9 @@ h1,h2,h3 { font-family:'Playfair Display', Georgia, serif; color:var(--text-stro
 @media (prefers-reduced-transparency: reduce) {
   .glass { background:var(--surface-opaque); backdrop-filter:none; -webkit-backdrop-filter:none; }
   .bg-art { display:none; }
-  /* the dark masthead must NEVER fall back to white — its text is white.
-     header.masthead (0,1,1) out-specifies the base .masthead rule that
-     follows this block in source order. */
-  header.masthead { background:#1A1A22; }
   .fl-overlay { background:rgba(21,21,29,.78); backdrop-filter:none; -webkit-backdrop-filter:none; }
 }
-body.sim-solid .glass:not(.masthead) { background:var(--surface-opaque); backdrop-filter:none; -webkit-backdrop-filter:none; }
-body.sim-solid .masthead { background:#1A1A22; backdrop-filter:none; -webkit-backdrop-filter:none; }
+body.sim-solid .glass { background:var(--surface-opaque); backdrop-filter:none; -webkit-backdrop-filter:none; }
 body.sim-solid .bg-art { display:none; }
 body.sim-solid .fl-overlay { background:rgba(21,21,29,.78); backdrop-filter:none; -webkit-backdrop-filter:none; }
 @media (prefers-contrast: more) {
@@ -142,28 +137,28 @@ body.sim-contrast { --border:rgba(28,28,26,.45); --text-muted:#3A3A36; }
 }
 .proto-note a { color:var(--text-strong); }
 
-/* ── masthead — dark glass band ─────────────────────────────────────── */
+/* ── masthead — simple light band (v1.1: the dark scrim is gone) ────── */
 .masthead {
-  background:var(--scrim-dark);
-  -webkit-backdrop-filter:blur(10px);
-  backdrop-filter:blur(10px);
-  color:#FFFFFF;
+  color:var(--text-body);
   display:flex; flex-wrap:wrap; align-items:baseline; gap:.35rem 1.4rem;
   padding:1.05rem 1.6rem;
   position:sticky; top:0; z-index:50;
+  border-radius:0;
+  border-left:none; border-right:none; border-top:none;
+  border-bottom:1px solid var(--border);
 }
-.masthead h1 { color:#FFF; font-size:1.45rem; font-weight:700; letter-spacing:.01em; }
-.masthead .sub { color:rgba(255,255,255,.82); font-size:.85rem; }
+.masthead h1 { color:var(--text-strong); font-size:1.45rem; font-weight:700; letter-spacing:.01em; }
+.masthead .sub { color:var(--text-muted); font-size:.85rem; }
 .masthead .spacer { flex:1; }
 .today-chip {
   display:inline-flex; align-items:center; gap:.45rem;
-  font-size:.82rem; color:var(--mustard-on-dark);
-  border:1px solid rgba(227,179,65,.45); border-radius:999px;
+  font-size:.82rem; font-weight:600; color:var(--mustard-text);
+  border:1px solid var(--mustard-deep); border-radius:999px;
   padding:.3rem .8rem; min-height:24px;
-  background:rgba(255,255,255,.06); cursor:pointer; font-family:inherit;
+  background:var(--surface-opaque); cursor:pointer; font-family:inherit;
 }
-.today-chip:hover { background:rgba(255,255,255,.12); }
-.today-chip .dot { width:9px; height:9px; border-radius:50%; background:var(--mustard-on-dark); }
+.today-chip:hover { background:var(--surface-subtle); }
+.today-chip .dot { width:9px; height:9px; border-radius:50%; background:var(--mustard-fill); border:1px solid var(--mustard-deep); box-sizing:border-box; }
 
 /* ── layout: rail + main ────────────────────────────────────────────── */
 .shell { display:flex; gap:1.25rem; padding:1.25rem 1.6rem 3rem; max-width:1480px; margin:0 auto; }
@@ -212,11 +207,14 @@ section > p.lede { color:var(--text-muted); font-size:.9rem; margin-bottom: .9re
   font-size:.78rem; font-weight:600; border-radius:999px;
   padding:.22rem .7rem; min-height:24px; min-width:24px; border:1px solid;
 }
-.chip-crimson { color:var(--crimson); border-color:var(--crimson); background:rgba(200,16,46,.07); }
-.chip-hunter  { color:var(--hunter);  border-color:var(--hunter);  background:rgba(53,94,59,.08); }
-.chip-violet  { color:var(--violet);  border-color:var(--violet);  background:rgba(109,40,217,.07); }
-.chip-mustard { color:var(--text-strong); border-color:var(--mustard-deep); background:var(--mustard-fill); }
-.chip-neutral { color:var(--text-muted); border-color:var(--border-strong); background:var(--surface-subtle); }
+/* v1.1: clear/white fills (Sam) — the accent lives in border + label.
+   Mustard labels use the dedicated --mustard-text grade (the bright hue
+   fails AA as text on light; that rule stands). */
+.chip-crimson { color:var(--crimson); border-color:var(--crimson); background:var(--surface-opaque); }
+.chip-hunter  { color:var(--hunter);  border-color:var(--hunter);  background:var(--surface-opaque); }
+.chip-violet  { color:var(--violet);  border-color:var(--violet);  background:var(--surface-opaque); }
+.chip-mustard { color:var(--mustard-text); border-color:var(--mustard-deep); background:var(--surface-opaque); }
+.chip-neutral { color:var(--text-muted); border-color:var(--border-strong); background:var(--surface-opaque); }
 
 .role-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(245px,1fr)); gap:1rem; }
 .role-card { padding:1rem 1.1rem; }
@@ -314,7 +312,7 @@ footer .credit { margin-bottom:.3rem; }
 
 <div class="bg-art" id="bgArt" aria-hidden="true"></div>
 
-<div class="proto-note">Prototype v1 — “First Light” theme spec &amp; living mock · demo data only · token values AA-verified by <code>prototype/check_contrast.py</code></div>
+<div class="proto-note">Prototype v1.1 — “First Light” theme spec &amp; living mock · demo data only · token values AA-verified by <code>prototype/check_contrast.py</code></div>
 
 <header class="masthead glass">
   <h1>CPL Project Tracker</h1>
@@ -381,7 +379,7 @@ footer .credit { margin-bottom:.3rem; }
     <!-- ── the five accents, each with ONE job ───────────────────────── -->
     <section aria-labelledby="accH">
       <h2 id="accH">Five accents, five jobs</h2>
-      <p class="lede">The base is monochrome; color is meaning. Each accent owns one semantic lane and always travels with a glyph. Mustard is fill-only on light surfaces (its text grade fails AA by nature — that’s a rule, not a bug).</p>
+      <p class="lede">The base is monochrome; color is meaning. Each accent owns one semantic lane and always travels with a glyph. Chips are white-filled — the accent lives in the border and label. Mustard’s bright hue is never text: labels use its dedicated darker text grade.</p>
       <div class="role-grid">
         <div class="role-card glass">
           <div class="swatch" style="background:var(--cobalt)"></div>
@@ -475,13 +473,14 @@ footer .credit { margin-bottom:.3rem; }
             <tr><td><code>--crimson</code></td><td><span class="sw" style="background:#C8102E"></span></td><td><code>#C8102E</code></td><td>negative · alerts</td><td>5.26:1 paper</td><td class="pass">PASS</td></tr>
             <tr><td><code>--hunter</code></td><td><span class="sw" style="background:#355E3B"></span></td><td><code>#355E3B</code></td><td>positive · verified</td><td>6.67:1 paper</td><td class="pass">PASS</td></tr>
             <tr><td><code>--violet</code></td><td><span class="sw" style="background:#6D28D9"></span></td><td><code>#6D28D9</code></td><td>machine-generated</td><td>6.35:1 paper</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--mustard-fill</code> + ink</td><td><span class="sw" style="background:#E3B341"></span></td><td><code>#E3B341</code></td><td>caution chip fill</td><td>8.77:1 ink-on-fill</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--mustard-fill</code></td><td><span class="sw" style="background:#E3B341"></span></td><td><code>#E3B341</code></td><td>brand hue — dots/banners (ink on it: 8.77:1)</td><td>8.77:1 ink-on-fill</td><td class="pass">PASS</td></tr>
             <tr><td><code>--mustard-deep</code></td><td><span class="sw" style="background:#9A7400"></span></td><td><code>#9A7400</code></td><td>caution border/icon (3:1)</td><td>3.85:1 paper</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--crimson-on-dark</code></td><td><span class="sw" style="background:#E28392"></span></td><td><code>#E28392</code></td><td>masthead accents</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--cobalt-on-dark</code></td><td><span class="sw" style="background:#7A9FD3"></span></td><td><code>#7A9FD3</code></td><td>masthead accents</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--hunter-on-dark</code></td><td><span class="sw" style="background:#8CA38F"></span></td><td><code>#8CA38F</code></td><td>masthead accents</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--violet-on-dark</code></td><td><span class="sw" style="background:#B28DEB"></span></td><td><code>#B28DEB</code></td><td>masthead accents</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--mustard-on-dark</code></td><td><span class="sw" style="background:#E3B341"></span></td><td><code>#E3B341</code></td><td>masthead accents</td><td>7.65:1 dark-worst</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--mustard-text</code></td><td><span class="sw" style="background:#8B6800"></span></td><td><code>#8B6800</code></td><td>caution chip labels</td><td>4.60:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--crimson-on-dark</code></td><td><span class="sw" style="background:#E28392"></span></td><td><code>#E28392</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--cobalt-on-dark</code></td><td><span class="sw" style="background:#7DA1D4"></span></td><td><code>#7DA1D4</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--hunter-on-dark</code></td><td><span class="sw" style="background:#8EA591"></span></td><td><code>#8EA591</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--violet-on-dark</code></td><td><span class="sw" style="background:#B28DEB"></span></td><td><code>#B28DEB</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--mustard-on-dark</code></td><td><span class="sw" style="background:#E3B341"></span></td><td><code>#E3B341</code></td><td>reserved (dark surfaces)</td><td>7.65:1 dark-worst</td><td class="pass">PASS</td></tr>
           </tbody>
         </table>
       </div>
@@ -494,7 +493,7 @@ footer .credit { margin-bottom:.3rem; }
       <ul class="rules">
         <li><strong>Color never carries meaning alone</strong> — every semantic accent ships with a glyph (▲▼ ✓ ⚠ ⚙ ✨). Saves the crimson/hunter pair for color-blind readers.</li>
         <li><strong>Glass always carries a scrim</strong> — text contrast is computed against the worst-case composite behind it, never the best case. Data tables skip glass entirely.</li>
-        <li><strong>Mustard is never text on light surfaces</strong> — chip fill with ink text, or the deep border grade.</li>
+        <li><strong>Mustard’s bright hue is never text</strong> — chip labels use the dedicated <code>--mustard-text</code> grade (4.6:1); borders/icons use the deep grade; the bright fill is for dots/banners only.</li>
         <li><strong>Cobalt and violet stay structurally distinct</strong> (the one confusable pair): cobalt always with underline/ring affordances, violet always on glyph-badges.</li>
         <li><strong>OS preferences honored:</strong> <code>prefers-reduced-transparency</code> → solid surfaces; <code>prefers-reduced-motion</code> → no reveal animation; <code>prefers-contrast: more</code> → stronger borders + darker muted text.</li>
         <li><strong>Visible focus everywhere</strong> (3px cobalt ring, offset 2px) · interactive targets ≥24×24 px · the First Light dialog is a real <code>role="dialog"</code> with focus trap, ESC, and focus return.</li>
@@ -531,6 +530,7 @@ footer .credit { margin-bottom:.3rem; }
       <p class="setting" id="flSetting"></p>
       <div class="fl-actions">
         <button class="btn" id="flDone" type="button">Begin the day</button>
+        <button class="btn ghost" id="flSpeak" type="button" aria-pressed="false">🔊 Read aloud</button>
         <a class="link" href="#" onclick="return false;">Browse the Almanac ↗ <span style="font-size:.75em;color:var(--text-muted)">(stub)</span></a>
         <label class="fl-optout"><input type="checkbox" id="flOptOut"> Don’t greet me with paintings</label>
       </div>
@@ -541,7 +541,7 @@ footer .credit { margin-bottom:.3rem; }
 
 <footer>
   <div class="credit" id="footCredit"></div>
-  <div>First Light theme · prototype v1 · next: lock the look → token retheme PR → First Light build</div>
+  <div>First Light theme · prototype v1.1 (light masthead · white chips · read-aloud) · next: token retheme PR → First Light production build</div>
 </footer>
 
 <script>
@@ -642,6 +642,7 @@ function openFL() {
 function closeFL() {
   overlay.classList.remove("open");
   document.removeEventListener("keydown", flKeys);
+  stopSpeaking();
   try { localStorage.setItem("flSeen.v1", todayKey); } catch (e) {}
   if (openerEl && openerEl.focus) openerEl.focus();
 }
@@ -670,6 +671,35 @@ document.getElementById("btnNewDay").addEventListener("click", function () {
 document.getElementById("flOptOut").addEventListener("change", function (e) {
   try { localStorage.setItem("flOptOut.v1", e.target.checked ? "1" : "0"); } catch (e2) {}
 });
+
+/* ── read-aloud — browser speechSynthesis, no cloud, no cloning ─────── */
+var speakBtn = document.getElementById("flSpeak");
+function stopSpeaking() {
+  if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+  speakBtn.setAttribute("aria-pressed", "false");
+  speakBtn.textContent = "🔊 Read aloud";
+}
+if (!("speechSynthesis" in window)) {
+  speakBtn.style.display = "none";
+} else {
+  speakBtn.addEventListener("click", function () {
+    if (window.speechSynthesis.speaking) { stopSpeaking(); return; }
+    var u = new SpeechSynthesisUtterance(
+      pick.title + ". " + pick.artist + ", " + pick.year + ". " +
+      pick.blurb + " " + pick.setting);
+    u.rate = 0.95;
+    /* prefer a warm en-US voice when the OS offers one */
+    var voices = window.speechSynthesis.getVoices() || [];
+    var pref = voices.find(function (v) { return /en[-_]US/i.test(v.lang) && /natural|samantha|allison|ava/i.test(v.name); }) ||
+               voices.find(function (v) { return /en[-_]US/i.test(v.lang); });
+    if (pref) u.voice = pref;
+    u.onend = stopSpeaking;
+    u.onerror = stopSpeaking;
+    speakBtn.setAttribute("aria-pressed", "true");
+    speakBtn.textContent = "⏹ Stop";
+    window.speechSynthesis.speak(u);
+  });
+}
 
 /* once per day, opt-out honored, never re-blocks the same day */
 (function maybeGreet() {
