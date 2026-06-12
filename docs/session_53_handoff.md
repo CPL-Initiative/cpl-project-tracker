@@ -1,14 +1,14 @@
 ---
 title: Session 53 Hand-off Prompt (data lane)
 date: 2026-06-12
-session: 51 → 53 hand-off (written at the Session-51 close; 52 is the design lane's — docs/session_52_handoff.md)
+session: 51 → 53 hand-off (written at the Session-51 close — Bruh Photonicus; 52 is the design lane's — docs/session_52_handoff.md)
 status: hand-off — paste the fenced block into the next DATA-lane session's first message
 tags: [handoff, session-prompt, ccr, csr, kin-pe-pass2, athletics, title-normalization, merge-curation]
 related:
   - docs/ccr_cluster_cleanup_lessons.md (Session 51 section — the full story)
   - docs/kb-notes/methodology-fanin-alias-lexicon-contamination.md (the durable lesson)
   - kb/kin_pe_pass2_out/2026-06-12/ (alias map, merging analysis, HS fold, Supabase ops)
-moniker_suggestion: Session 51 ran unnamed (the KINE/ATHL cleanup night); claim your own
+moniker_suggestion: Session 51 was "Bruh Photonicus" (Sam's christening, 2026-06-12 20:54 UTC); claim your own
 ---
 
 # Session 53 Hand-off Prompt — the data lane
@@ -29,7 +29,7 @@ Read these first, in order:
   4. kb/kin_pe_pass2_out/2026-06-12/athl_family_analysis.md + hs_title_fold.md
      (what was auto-merged vs FLAGGED — the flags are the curator queue).
 
-WHAT SHIPPED IN SESSION 51 (PRs #412 data · #413 test repins · #414 CSR ·
+WHAT SHIPPED IN SESSION 51 — Bruh Photonicus (PRs #412 data · #413 test repins · #414 CSR ·
 #415 CCR, all 2026-06-12 night):
   - KIN/PE PASS 2 (kb/_kin_pe_pass2.py, receipts kin_pe_pass2_out/): the
     fan-in convergences had never re-pointed the inference lexicons, so

@@ -1581,7 +1581,7 @@ mechanism-style). Receipts `kb/subj4_fold_out/2026-06-12/`. Full story:
 Subject-dropdown grouping** (`docs/session_51_handoff.md`).
 
 
-### Session 51 — the KINE/ATHL cleanup night: KIN/PE pass 2 + the merging night (2026-06-12)
+### Session 51 — Bruh Photonicus: KIN/PE pass 2 + the merging night (2026-06-12)
 
 Sam-interactive (his CCR/CSR screenshots + 5 live follow-ups). PRs #412–#415.
 **Root cause repaired:** the 2026-06-10 fan-ins never re-pointed the inference

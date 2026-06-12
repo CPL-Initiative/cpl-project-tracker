@@ -1192,7 +1192,7 @@ pass), the 95 umbrella-offcode rows (FL/KINE per-umbrella review), and the
 
 ---
 
-## Session 51 — 2026-06-12 (night): KIN/PE pass 2 — the PEDU parking lot dissolved + the merging night (#412–#415)
+## Session 51 — Bruh Photonicus, 2026-06-12 (night): KIN/PE pass 2 — the PEDU parking lot dissolved + the merging night (#412–#415)
 
 Sam drove this one live from the CCR/CSR (screenshots + five follow-ups while
 the session ran). Four PRs: #412 (data), #413 (test repins), #414 (CSR UI),
