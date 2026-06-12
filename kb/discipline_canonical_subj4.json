@@ -2887,7 +2887,7 @@
       "_notes": null
     },
     "Drama/Theater Arts": {
-      "canonical_subj4": "DRAM",
+      "canonical_subj4": "THEA",
       "source": "curator_override",
       "data_modal": "THEA",
       "data_modal_is_4letter": true,
@@ -2955,7 +2955,7 @@
       "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "Set by the 2026-06-10 fan-in convergence (Sam's decision; docs/kin_pe_convergence_scope.md / Drama-Theater apply)."
+      "_notes": "THEA deliberately shared with alias 'Theater Arts' — fan-in convergence (Session 38). Reverted from DRAM 2026-06-12 per Sam (the DRAM re-code was curing a sweep false positive, fixed in #402)."
     },
     "Earth Science": {
       "canonical_subj4": "GEOL",
@@ -10226,6 +10226,6 @@
       "_notes": null
     }
   },
-  "_synced_at": "2026-06-12T17:17:34Z",
-  "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
+  "_synced_at": "2026-06-12T17:30:00Z",
+  "_synced_from": "Supabase kb_curation (_CANON_SUBJ4::%) — cron sync 17:17 + Session-47 THEA revert (committed 17:18, one minute after the cron's read; next cron sync will agree)"
 }

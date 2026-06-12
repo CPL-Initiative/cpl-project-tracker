@@ -41,7 +41,29 @@ ARTICULATIONS = os.path.join(HERE, "coci_articulations.json")
 UNIFIED_COURSES = os.path.join(HERE, "coci_unified_courses.json")
 CCN_REF = os.path.join(HERE, "reference", "ccn_courses.json")
 CID_REF = os.path.join(HERE, "reference", "cid_descriptors.json")
+FL_SPLIT = os.path.join(HERE, "foreign_language_subj4.json")
 OUT_DIR = os.path.join(HERE, "subj4_dryrun")
+
+# Umbrella disciplines legitimately span MANY SUBJ4s (mirror of
+# UMBRELLA_DISCIPLINES in kb/_row_audit.py — keep in sync). Added 2026-06-12
+# (Session 47): this dry-run predates the umbrella concept and was folding the
+# per-language FL** rows back into FLNG (undoing the 2026-06-09 FL split
+# re-mint) and Kinesiology's ATHL athletics rows into KINE (bursting the
+# KINE M1### 999-seq capacity). A row whose SUBJ4 is inside its umbrella's
+# allowance is no_change AND KEEPS its own SUBJ4 (new_subj4 = old, not the
+# umbrella's nominal canonical); a row OUTSIDE the allowance is surfaced as
+# `skip_umbrella_offcode` for per-umbrella review — never auto-folded to the
+# nominal canonical (which language an off-code FL course belongs to is the
+# FL apply's decision, not this allocator's).
+def load_umbrella_allowances():
+    allow = {"Kinesiology": {"KINE", "ATHL"}}
+    if os.path.exists(FL_SPLIT):
+        with open(FL_SPLIT, encoding="utf-8") as f:
+            fl = json.load(f)
+        codes = {v.get("subj4") for v in (fl.get("languages") or {}).values() if v.get("subj4")}
+        codes.add("FLNG")  # the umbrella's own nominal canonical
+        allow[fl.get("discipline") or "Foreign Languages"] = codes
+    return allow
 
 SUBJ4_RE = re.compile(r"^[A-Z]{4}$")
 # A current M-ID course_id is "<SUBJ> M<band><suffix>" where SUBJ is 1-4 letters
@@ -164,6 +186,7 @@ def main():
     curations = curation_doc.get("curations", {}) or {}
 
     canon_map = canon_doc.get("disciplines", {}) or {}
+    umbrella_allowances = load_umbrella_allowances()
 
     # Apply curation overlay to the in-memory views so curator-set discipline
     # wins over the (often-blank) baseline in coci_minted_*.json. This mirrors
@@ -225,11 +248,21 @@ def main():
                 row["fate"] = "skip_offscheme_id"
             else:
                 canon = canon_map[disc].get("canonical_subj4")
+                umbrella_allow = umbrella_allowances.get(disc)
                 if not canon:
                     row["fate"] = "blocked_on_curator"
                 elif not SUBJ4_RE.match(canon):
                     row["fate"] = "invalid_canonical"
                     row["bad_canonical"] = canon
+                elif umbrella_allow is not None:
+                    # Umbrella discipline: a row inside the allowance keeps its
+                    # OWN SUBJ4 (per-language FL**, KINE/ATHL spans); a row
+                    # outside it is surfaced for per-umbrella review.
+                    if old_subj4 in umbrella_allow:
+                        row["fate"] = "no_change"
+                        row["new_subj4"] = old_subj4
+                    else:
+                        row["fate"] = "skip_umbrella_offcode"
                 elif canon == old_subj4:
                     row["fate"] = "no_change"
                     row["new_subj4"] = canon
@@ -266,7 +299,7 @@ def main():
     untouched_sing_suffixes = defaultdict(set)    # (s4, band) -> set of 3-char strings
     UNTOUCHED_FATES = {"skip_no_discipline", "skip_unknown_disc",
                        "blocked_on_curator", "skip_offscheme_id",
-                       "invalid_canonical"}
+                       "invalid_canonical", "skip_umbrella_offcode"}
     for r in rows:
         if r["fate"] not in UNTOUCHED_FATES:
             continue
@@ -373,10 +406,14 @@ def main():
         "pass": not bad_subj4,
         "bad_subj4_values": bad_subj4,
     }
-    # V2: within each touched discipline, exactly one new SUBJ4
+    # V2: within each touched discipline, exactly one new SUBJ4. Umbrella
+    # disciplines are exempt — they span many SUBJ4s BY DESIGN (per-language
+    # FL** splits, KINE/ATHL), mirroring the kb/_row_audit.py exemption.
     disc_to_new_subj4 = defaultdict(set)
     for r in rows:
         if r["fate"] in ("re_key", "no_change") and r.get("new_subj4"):
+            if r["discipline"] in umbrella_allowances:
+                continue
             disc_to_new_subj4[r["discipline"]].add(r["new_subj4"])
     disc_violations = {d: sorted(s) for d, s in disc_to_new_subj4.items() if len(s) > 1}
     validation["one_subj4_per_discipline"] = {
@@ -559,7 +596,8 @@ def main():
     print(f"[subj4_dryrun] {today}")
     print(f"  M-IDs total:               {sum(fate_counts.values())}")
     for k in ("re_key", "no_change", "blocked_on_curator", "skip_no_discipline",
-              "skip_unknown_disc", "skip_offscheme_id", "invalid_canonical"):
+              "skip_unknown_disc", "skip_offscheme_id", "invalid_canonical",
+              "skip_umbrella_offcode"):
         if fate_counts.get(k):
             mn = source_split["minted"].get(k, 0)
             sg = source_split["singleton"].get(k, 0)
@@ -624,6 +662,9 @@ def _render_report(*, today, canon_doc, rows, fate_counts, alias_map, collisions
         lines.append(f"  - {fate_counts['skip_unknown_disc']} skipped (discipline not in canonical map)")
     if fate_counts.get('skip_offscheme_id'):
         lines.append(f"  - {fate_counts['skip_offscheme_id']} skipped (old course_id off-scheme)")
+    if fate_counts.get('skip_umbrella_offcode'):
+        lines.append(f"  - {fate_counts['skip_umbrella_offcode']} skipped (umbrella-discipline row whose "
+                     f"SUBJ4 is outside the umbrella's allowance — per-umbrella review, never auto-folded)")
     lines.append(f"- Sequence-reallocation buckets: **{len(collisions)}** new (SUBJ4, band, kind) "
                  f"buckets contain ≥2 old M-IDs.")
     lines.append("")
