@@ -1080,9 +1080,40 @@
         }
         var i = 0;
         var overlay = el("div", { style: dim });
-        var box = el("div", { style: boxCss }); overlay.appendChild(box);
+        var shell = el("div", { style: boxCss }); overlay.appendChild(shell);
         function close() { if (overlay.parentNode) document.body.removeChild(overlay); render(); }
         overlay.onclick = function (e) { if (e.target === overlay) close(); };
+        // Persistent chrome above the per-group content (Sam, 2026-06-12): a
+        // drag-handle title bar with an explicit ✕ closer. renderGroup() wipes
+        // only `box` below, so the bar — and any dragged position — survives
+        // Skip/Keep/Confirm advances.
+        var head = el("div", { style: "display:flex;align-items:center;gap:10px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;border-radius:10px 10px 0 0;background:#f8fafc;cursor:move;user-select:none;" });
+        head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;" }, ["✨ Suggested merges"]));
+        head.appendChild(el("span", { style: "flex:1;font-size:.74rem;color:#94a3b8;" }, ["drag to move"]));
+        var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close",
+          style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["✕"]);
+        closeX.onclick = close;
+        head.appendChild(closeX);
+        shell.appendChild(head);
+        var box = el("div", {}); shell.appendChild(box);
+        // Drag = mousedown on the bar + document-level move/up, applied as a
+        // transform so the overlay's flex centering and scroll keep working.
+        var dragX = 0, dragY = 0;
+        head.onmousedown = function (e) {
+          if (closeX.contains(e.target)) return;
+          var sx = e.clientX - dragX, sy = e.clientY - dragY;
+          function mv(ev) {
+            dragX = ev.clientX - sx; dragY = ev.clientY - sy;
+            shell.style.transform = "translate(" + dragX + "px," + dragY + "px)";
+          }
+          function up() {
+            document.removeEventListener("mousemove", mv);
+            document.removeEventListener("mouseup", up);
+          }
+          document.addEventListener("mousemove", mv);
+          document.addEventListener("mouseup", up);
+          e.preventDefault();
+        };
 
         function renderGroup() {
           box.innerHTML = "";
@@ -1091,7 +1122,6 @@
           while (i < groups.length &&
                  (liveMembers(groups[i]).length < 2 || dismissed[groupSig(groups[i])])) i++;
           if (i >= groups.length) {
-            box.appendChild(el("h3", { style: "margin:0 0 8px;color:var(--text-strong);" }, ["Suggested merges"]));
             box.appendChild(el("p", { style: "color:#6b7280;" }, ["End of the worklist — nice work. New suggestions regenerate on the next daily build."]));
             var d = el("button", { style: goCss }, ["Done"]); d.onclick = close; box.appendChild(d);
             return;
@@ -1150,7 +1180,14 @@
             box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
               ["⚠ Every witness in this group is title-mismatched — the COCI claims came from courses that don't resemble these rows (stale evidence from a dissolved over-merge family). These are usually NOT the same course; Skip unless you recognize one."]));
           }
-          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:6px 0 2px;" }, ["Unified title"]));
+          // PROPOSAL framing (Sam, 2026-06-12): the pre-filled title used to
+          // read like "these courses already belong to this common course."
+          // They don't — it's only the name the merged course WOULD take.
+          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:6px 0 2px;" },
+            ["Proposed unified title ",
+             el("span", { style: "font-weight:400;font-size:.76rem;color:#94a3b8;" },
+               [isEvidence ? "— applied only if you Confirm (pre-filled with the official course title)"
+                           : "— applied only if you Confirm (pre-filled from the longest member title; edit freely)"])]));
           var titleIn = el("input", { type: "text", value: (isEvidence && g.official) || bestTitle(g), style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
           box.appendChild(titleIn);
           box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" }, ["Discipline (optional)"]));
@@ -1158,7 +1195,12 @@
           discSel.appendChild(el("option", { value: "" }, ["— choose —"]));
           mqList.forEach(function (d) { discSel.appendChild(el("option", { value: d }, [d])); });
           box.appendChild(discSel);
-          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 4px;" }, ["Members (" + mems.length + ")"]));
+          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" },
+            ["Candidates (" + mems.length + ") ",
+             el("span", { style: "font-weight:400;font-size:.76rem;color:#94a3b8;" },
+               ["— each row is currently its own separate identity"])]));
+          box.appendChild(el("div", { style: "margin:0 0 4px;font-size:.78rem;color:#6b7280;" },
+            ["These courses do NOT yet share an identity — the id on each row is that course's own, today. ✓ Confirm folds the checked rows into ONE identity; Keep as-is / Skip leave every id untouched."]));
           var list = el("div", { style: "max-height:240px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
           var cbs = [];
           mems.forEach(function (m) {
@@ -1170,7 +1212,8 @@
             row.appendChild(cb);
             row.appendChild(el("span", { style: "flex:1;" }, [m.t || m.id]));
             var isOfficial = m.k === "C-ID" || m.k === "CCN-ID";
-            row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;" },
+            row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;",
+              title: "This course's CURRENT identity — its own id today; it changes only if you Confirm a merge that folds it" },
               [m.id + " · " + (m.s || "") + (m.u != null ? " · " + m.u + "u" : "") + (m.g ? " · Stand-Alone" : "")
                + (isOfficial ? " · " + m.k : "")]));
             if (m.ev) {
