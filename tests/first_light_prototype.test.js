@@ -29,7 +29,7 @@ const HTML = fs.readFileSync("prototype/first_light_theme_v1.html", "utf8");
 const SPEC_HEXES = [
   "#F4F2ED", "#1C1C1A", "#3A3A36", "#5C5C55",          // base grays
   "#920000", "#0047AB", "#2C601A", "#6D28D9",          // accents, light grade (v1.4 crimson/hunter)
-  "#E3B341", "#946F00", "#6324C5",                      // mustard fill + chip fills (white labels)
+  "#E3B341", "#946F00", "#6324C5", "#8B6800",           // mustard fill + chip fills + variant-B text grade
   "#CF8F8F", "#7DA1D4", "#89A67F", "#B28DEB",          // on-dark grades (reserved)
 ];
 for (const hex of SPEC_HEXES) {
@@ -59,6 +59,18 @@ check("mustard chip uses the derived ochre fill",
   /\.chip-mustard\s*\{\s*background:var\(--mustard-chip\)/.test(HTML));
 check("violet chip uses the darkened fill",
   /\.chip-violet\s*\{\s*background:var\(--violet-chip\)/.test(HTML));
+// v1.5: Chip Studio — variant B coexists WITHOUT touching the blessed A
+{
+  const b = HTML.match(/\.chipb\s*\{[^}]*\}/);
+  check("variant B = quiet glass (translucent fill, gray outline, .72rem, 6.5rem, no blur)",
+    !!b && b[0].includes("rgba(255,255,255,.5)") && b[0].includes("var(--border-strong)") &&
+    b[0].includes("font-size:.72rem") && b[0].includes("width:6.5rem") &&
+    !b[0].includes("backdrop-filter"));
+  check("variant B mustard uses the dark text grade",
+    /\.chipb-mustard\s*\{\s*color:var\(--mustard-text\)/.test(HTML));
+  check("studio shows both rows", HTML.includes("A · solid (v1.4.2)") &&
+    HTML.includes("B · glass &amp; quiet"));
+}
 // v1.4.1: glyph-only badges escape the uniform width (compact chip-fit)
 check("chip-fit modifier restores compact icon badges",
   /\.chip\.chip-fit\s*\{\s*width:auto/.test(HTML));

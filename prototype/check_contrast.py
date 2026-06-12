@@ -104,8 +104,13 @@ for name, seed in BRAND.items():
     add(f"--{name}-on-dark", dark_hex, "text", DARK_WORST, "dark-worst", 4.5)
     print(f"  {name:8s} seed {seed} → light {text_hex} · on-dark {dark_hex}")
 
-# Mustard: bright fill (dots/banners; ink on it) + on-dark.
+# Mustard: bright fill (dots/banners; ink on it) + on-dark + the dark TEXT
+# grade (variant-B "glass & quiet" chips use darker accent text on a subtle
+# translucent fill — mustard's bright hue still can't be text).
 add("--ink on --mustard fill", "#1C1C1A", "text", h2rgb(MUSTARD_FILL), "mustard fill", 4.5)
+text_mustard, _ = derive(MUSTARD_SEED, PAPER, 4.5, "black")  # paper binds for dark text
+add("--mustard-text (variant-B chip labels)", text_mustard, "text", PAPER, "paper", 4.5)
+add("--mustard-text (variant-B chip labels)", text_mustard, "text", GLASS_WORST, "glass-worst", 4.5)
 mustard_dark, _ = derive(MUSTARD_FILL, DARK_WORST, 4.5, "white")
 add("--mustard-on-dark", mustard_dark, "text", DARK_WORST, "dark-worst", 4.5)
 print(f"  mustard  fill {MUSTARD_FILL} · on-dark {mustard_dark}")
