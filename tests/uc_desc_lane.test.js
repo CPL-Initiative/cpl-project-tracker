@@ -51,7 +51,9 @@ check("cross-college groups rank before same_college ones",
 check("groups carry similarity scores + shared terms",
   dg.every((g) => typeof g.score === "number" && Array.isArray(g.terms)));
 // the marquee find: the fragmented infant/toddler ECED family groups together
-const ecedG = dg.find((g) => g.members.some((m) => m.id === "ECED M1099"));
+// (pinned to ECED M1098 since the Session-46 statewide twin merge absorbed
+// its exact twin M1099 into it — the family re-forms around the survivor)
+const ecedG = dg.find((g) => g.members.some((m) => m.id === "ECED M1098"));
 check("the ECED infant/toddler fragmentation surfaces as one desc group",
   !!ecedG && ecedG.members.length >= 4);
 

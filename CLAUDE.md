@@ -1389,16 +1389,16 @@ Read-only auditor over every M-ID + Cluster. Per row, produces a Trust Card:
   missing / conflicting / not_yet_captured.
 - **Readiness tiers:** ready (≥0.85) / needs_review (≥0.65) /
   needs_repair (≥0.40) / not_ready.
-- **Rule tags + counts (refreshed 2026-06-11, Session 45 — after the homonym repair chain, #381):**
-  - `seed_untouched_discipline` (10,998, was 11,071 — 2026-06-10 twin-merge absorbed 73 drafted losers) — Phase B subject_map draft never reviewed (Phase 1a)
-  - `subject_collision_signal` (**1,210**, was 1,076 — Session 45's homonym repair re-filled ~320 minority-side rows with honest disciplines whose canonical SUBJ4 ≠ their key; queued for the next SUBJ4 re-mint, by design. Previously held at baseline through the 2026-06-10 convergences; Kinesiology joined `UMBRELLA_DISCIPLINES` since it deliberately spans KINE+ATHL, absorbing the +299 ATHL artifact. Was 0 → 1,076 on 2026-06-09) — Phase 1e cleanup receipt; the Session-37 coarse TOP-division fill assigned ~1.2k blank minted parents a broad umbrella discipline **without** re-keying SUBJ4 to that discipline's canonical, so they re-trip the SUBJ4-collision diagnostic. Expected + honest — they're new candidates for a future canonical-SUBJ4 fold; the previously-disciplined rows (incl. the FL split) stay collision-free
-  - `unit_anomaly` (4,347, was 4,360 — twin-merge) — typical_units represents <50% of member colleges (member-unit variance is high, possible over-merge across different unit-load variants); 71% of flags are 2-member splits like `[3.0, 0.0]` (credit vs noncredit drift in the same M-ID) (Phase 1c)
-  - `member_top_divergence` (**1,275**, was 1,286 — twin-merge) — an M-ID's member colleges carry TOP codes spanning ≥2 broad (2-digit) divisions with ≥30% minority share: the **cross-discipline over-merge** detector (a generic title — "Ethics and Leadership", "Undergraduate Research Experience" — minted courses from different program areas under one identity). **57% (736) carry no other strong signal** — it closes a real gap: `top_discipline_disagreement` only checks the M-ID's single *representative* TOP, so it missed the case where the *members* diverge but the representative matches (the motivating `CRIM M1231`: nursing TOP 1230.10 minority-merged into Admin-of-Justice). 2-digit division grouping inherently suppresses sister-discipline noise (Kinesiology/PE both 0835) — no SISTER_PAIRS needed. **255 are "mis-disciplined"** (assigned discipline isn't even the members' plurality division). Surfaces for review, not a verdict (TOP codes vary by college). (Phase 1c)
-  - `top_discipline_disagreement` (**926**, was 960 — Session 45 homonym repair aligned fills with TOP evidence; before that 857 → the coarse umbrella fills + 2026-06-10 convergence flips add TOP-vs-discipline tension rows; was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
-  - `blank_description` (1,732) — Phase 1a
-  - `blank_discipline` (**82**, was 73 — a few Session-45 retractions had no honest re-fill; 1,266 pre-2026-06-09) — Phase 1a; the coarse TOP-division fill cleared the minted-parent blank tail (1,268→80 blank; residual = the no-honest-umbrella divisions)
-  - `discipline_title_mismatch` (**712**, was 773 — Session 45 repair; 762 before the coarse fills) — title shares 0 tokens with assigned discipline AND ≥2 with some other; +20 from coarse umbrella fills (Phase 1c)
-  - `description_discipline_disagreement` (75, was 78) — description's safe-phrase set points elsewhere with ≥2 mentions (Phase 1c)
+- **Rule tags + counts (refreshed 2026-06-12, Session 46 — after the statewide twin merge, #386):**
+  - `seed_untouched_discipline` (**10,513**, was 10,998 — the statewide twin merge absorbed 589 losers, many drafted) — Phase B subject_map draft never reviewed (Phase 1a)
+  - `subject_collision_signal` (**1,206**, was 1,210 — twins. History: 1,076 → 1,210 when Session 45's homonym repair re-filled ~320 minority-side rows with honest disciplines whose canonical SUBJ4 ≠ their key; queued for the next SUBJ4 re-mint, by design. Was 0 → 1,076 on 2026-06-09) — Phase 1e cleanup receipt; the Session-37 coarse TOP-division fill assigned ~1.2k blank minted parents a broad umbrella discipline **without** re-keying SUBJ4 to that discipline's canonical, so they re-trip the SUBJ4-collision diagnostic. Expected + honest — they're new candidates for a future canonical-SUBJ4 fold
+  - `unit_anomaly` (**4,194**, was 4,347) — typical_units represents <50% of member colleges (member-unit variance is high, possible over-merge across different unit-load variants); ~71% of flags are 2-member splits like `[3.0, 0.0]` (credit vs noncredit drift in the same M-ID) (Phase 1c)
+  - `member_top_divergence` (**1,255**, was 1,275) — an M-ID's member colleges carry TOP codes spanning ≥2 broad (2-digit) divisions with ≥30% minority share: the **cross-discipline over-merge** detector (a generic title — "Ethics and Leadership", "Undergraduate Research Experience" — minted courses from different program areas under one identity). It closes a real gap: `top_discipline_disagreement` only checks the M-ID's single *representative* TOP, so it missed the case where the *members* diverge but the representative matches (the motivating `CRIM M1231`). 2-digit division grouping inherently suppresses sister-discipline noise — no SISTER_PAIRS needed. Surfaces for review, not a verdict (TOP codes vary by college). (Phase 1c)
+  - `top_discipline_disagreement` (**916**, was 926 — twins; Session 45's homonym repair brought it 960 → 926; was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
+  - `blank_description` (**1,704**, was 1,732) — Phase 1a
+  - `blank_discipline` (**82** — a few Session-45 retractions had no honest re-fill; 1,266 pre-2026-06-09) — Phase 1a; the coarse TOP-division fill cleared the minted-parent blank tail; residual = the no-honest-umbrella divisions
+  - `discipline_title_mismatch` (**687**, was 712 — twins; Session 45 repair brought it 773 → 712) — title shares 0 tokens with assigned discipline AND ≥2 with some other (Phase 1c)
+  - `description_discipline_disagreement` (**73**, was 75) — description's safe-phrase set points elsewhere with ≥2 mentions (Phase 1c)
   - `generic_title_concrete_discipline` (44) — title is course-format generic; can't justify a specific discipline (Phase 1c)
   - `mid_id_off_scheme` (**2** — `F M1002` + `N M9001`, both blank-discipline; unfixable residue) — was 27 pre-apply
   - `merge_into_orphan` (**0** — preventive infrastructure; fires when a curation `merge_into` points to a target not in courses ∪ singletons ∪ `UC-CUR-*`. All 3 current pointers cleanly target `UC-CUR-MPG029OM`) (Phase 1c, 2026-05-27)
@@ -1553,23 +1553,28 @@ evidence): TF-IDF description lane, level/gender/sport-guarded → **474 groups
 Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 45); KB note:
 `methodology-college-homonym-subject-codes.md`.
 
-### Session 46 — the AUTO/smog over-mint case → the 🏷 title-evidence lane (2026-06-12)
+### Session 46 — the AUTO/smog over-mint case → the 🏷 title-evidence lane + the STATEWIDE twin merge (2026-06-12)
 
 Sam's brief: refine minting/merging rules off the AUTO over-mints (smog I/II),
 then statewide. One BAR state spec = **52 identities**; all lanes combined had
-surfaced 3 pairs. Shipped (#385): `kb/_title_consolidation_dryrun.py` — IDF-
-weighted title cosine over dark M-IDs **+ 54k stand-alones** (the desc lane
-can't see singletons), discipline-OR-TOP corroboration, **NO units gate**
-(licensure specs pack 1–7u by college), clique-consistent components →
-**5,662 groups (4,376 cross-college)**, receipt `kb/title_consolidation_out/`,
-6th worklist section. Shared guard suite `kb/_consolidation_guards.py` (both
-receipt builders): **two-axis level marks** (the "Elementary X 2" vs
-"Intermediate X 1" flat-set collision), **strict-equality variant marks**
-(refresher/instructor/module/honors), year-edition marks, word-number folds
-(also in `_sug_sig`/`_fam_key`). Desc receipt re-run: 474→446 (37 Honors/
-period/module conflations removed). Suite 30/30. Smog: 52 → 9 families.
-Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 46); KB note:
-`methodology-title-similarity-merge-guards.md`.
+surfaced 3 pairs. **#385**: `kb/_title_consolidation_dryrun.py` — IDF-weighted
+title cosine over dark M-IDs **+ 54k stand-alones**, discipline-OR-TOP
+corroboration, **NO units gate** (licensure specs pack 1–7u by college),
+clique-consistent components → 6th worklist section (🏷); shared guard suite
+`kb/_consolidation_guards.py`: **two-axis level marks**, **strict-equality
+variant marks** (refresher/instructor/module/honors/lab), year-edition marks,
+word-number folds (also `_sug_sig`/`_fam_key`). **#386** (Sam: "consolidations
+that should happen — rule sharpening"): the Session-39 twin merge taken
+**STATEWIDE** (`kb/_apply_twin_merge_statewide.py`) + guard-clique gate —
+**589 token-identical twins absorbed** (16,143→15,554 parents; 65 groups
+guard-skipped; curator targets honored; V-gates + promotions re-key + receipts
+`kb/twin_merge_out/2026-06-12/`), **plus the Sam-confirmed smog merges**:
+L1&2 → `AUTO M1001`, the 12-member Level-2 family → `AUTO M1007` (Supabase
+`kb_curation` + overlay). `docs/ccr_rules_brief.md` amended — the strict twin
+tier is the ONE title-based auto-merge, fully condition-listed. Smog: 52
+identities → 9 queue families → **2 merged rows + 8 residual queue groups**.
+Suite 30/30. Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 46 +
+part 2); KB note: `methodology-title-similarity-merge-guards.md`.
 
 ---
 

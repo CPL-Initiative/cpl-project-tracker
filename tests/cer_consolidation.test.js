@@ -122,9 +122,14 @@ setTimeout(function () {
   if (emt) {
     const m = (emt.articulations || []).filter((a) => a.merged);
     check("EMT Certification has a consolidated identity in the baked payload", m.length >= 1);
+    // Threshold history: ≥10 until the Session-46 statewide twin merge began
+    // absorbing exact-twin M-IDs PHYSICALLY (EMST M1052 → M1064), which
+    // legitimately shrinks the display-level fold count — the same
+    // unification, moved upstream into the KB. Guard the mechanism, not a
+    // high-water mark.
     const core = m.find((a) => a.cid === "EMST M1064");
-    check("the EMT-Basic core folds ≥10 variants into EMST M1064",
-      !!core && core.merged >= 10);
+    check("the EMT-Basic core folds ≥5 variants into EMST M1064",
+      !!core && core.merged >= 5);
     // The genuinely-distinct sub-courses stay as their own rows (not folded).
     const ids = (emt.articulations || []).map((a) => a.cid);
     check("EMT 'Refresher' (M1061) stays a distinct row", ids.indexOf("EMST M1061") >= 0);

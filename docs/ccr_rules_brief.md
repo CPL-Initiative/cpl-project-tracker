@@ -57,15 +57,29 @@ these justifications — always the strongest available:
    own. Human decisions outrank everything above and are never overwritten
    by automation.
 
-Title similarity alone — "these two names look alike" — is **never** enough
-to merge anything automatically. It only produces *suggestions* for a person
-to confirm or skip. The same goes for **catalog-description similarity**: for
+Title *similarity* — "these two names look alike" — is not enough to merge
+anything automatically. It only produces *suggestions* for a person to
+confirm or skip. The same goes for **catalog-description similarity**: for
 courses no official source covers, we compare colleges' own catalog
 descriptions to find likely matches the names would never reveal ("Intro to
 Programming" vs "Programming Fundamentals") — with screens so that different
 course *levels*, men's vs women's athletics, and different sports never pair
 just because their descriptions share a template. Those, too, are only
 suggestions a person confirms.
+
+There is exactly **one title-based step that acts on its own**, and it is
+deliberately the strictest rule in the system: the **twin merge**
+(authorized by the project lead, first for two subjects in June 2026, then
+statewide). Two of *our own working labels* (M-IDs — never official rows)
+merge only when their titles contain **the same words** (order, punctuation,
+"&" vs "and", and Roman-vs-Arabic numerals aside — "Smog Check Inspector
+Level 1 & 2 Training" and "Smog Check Inspector Training, Level 1 & 2"),
+AND they sit in the same subject and discipline, AND they carry the same
+credit type and the same units, AND none of the safety screens object
+(course levels, Honors/Refresher/Lab-type variants, years, gender, sport).
+If *any* of that differs — even just the unit count — the pair stays a
+suggestion for a person. Every twin merge is recorded in a receipt with an
+undo map.
 
 ## What the automation refuses to do
 
@@ -88,6 +102,12 @@ underlying records. Nothing is deleted, no college's data is edited, and
 removing an input (or a rule) un-merges everything it caused. Every
 automatic step also leaves a written receipt — counts, sources, and dates —
 so any placement can be traced back to *why*.
+
+The one exception is the strict **twin merge** above, which folds two of
+our own working labels into one *in our records* (still never touching any
+college's data or any official identity). Each one is logged in an alias
+map — old label → surviving label — so it can be traced or reversed
+exactly.
 
 Rows the automation touched stay marked **Generated** until a person
 verifies them. **Verified** means a human looked.

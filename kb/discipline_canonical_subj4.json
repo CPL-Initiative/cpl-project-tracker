@@ -1,6 +1,6 @@
 {
   "_about": "Curator-confirmed canonical SUBJ4 per M-ID discipline. Consumed by the Phase 1e re-mint (kb/_subj4_dryrun.py / kb/_subj4_apply.py) to fold same-discipline SUBJ4 variants. Every canonical_subj4 MUST be exactly 4 letters [A-Z]{4}. Seeded from data-modal where the modal is 4 letters and comprises ≥60% of the discipline's M-IDs; otherwise blank pending curator review. Edited via the Canonical SUBJ4 tab (Supabase kb_curation, course_id namespace '_CANON_SUBJ4::<discipline>'); kb/_apply_canonical_subj4.py folds Supabase edits back into this file.",
-  "_seeded_at": "2026-06-11",
+  "_seeded_at": "2026-06-12",
   "_seeded_by": "kb/_seed_canonical_subj4.py",
   "_invariant": "every canonical_subj4 must match ^[A-Z]{4}$",
   "_counts": {
@@ -17,11 +17,11 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.234,
       "variants_observed": {
-        "CRIM": 1563,
+        "CRIM": 1556,
         "GRAF": 8,
         "MANU": 1
       },
-      "total_mids": 1572,
+      "total_mids": 1565,
       "local_subject_variants": {
         "AJ": 582,
         "ADMJ": 226,
@@ -73,7 +73,7 @@
       "top_category_title": "Public and Protective Services",
       "cte_share": 0.996,
       "cte_flag": "all",
-      "cte_known_n": 1569,
+      "cte_known_n": 1562,
       "cte_unknown_n": 3,
       "cip_code": null,
       "needs_review": false,
@@ -162,7 +162,7 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.164,
       "variants_observed": {
-        "AGRI": 546,
+        "AGRI": 545,
         "FNR": 17,
         "ORL": 17,
         "ENVR": 15,
@@ -223,7 +223,7 @@
         "VTAH": 1,
         "VWT": 1
       },
-      "total_mids": 804,
+      "total_mids": 803,
       "local_subject_variants": {
         "AG": 180,
         "AGNR": 71,
@@ -275,7 +275,7 @@
       "top_category_title": "Agriculture and Natural Resources",
       "cte_share": 0.991,
       "cte_flag": "all",
-      "cte_known_n": 689,
+      "cte_known_n": 688,
       "cte_unknown_n": 115,
       "cip_code": null,
       "needs_review": false,
@@ -364,9 +364,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.635,
       "variants_observed": {
-        "ANTH": 379
+        "ANTH": 372
       },
-      "total_mids": 379,
+      "total_mids": 372,
       "local_subject_variants": {
         "ANTH": 480,
         "ANTHRO": 103,
@@ -418,7 +418,7 @@
       "top_category_title": "Social Sciences",
       "cte_share": 0.003,
       "cte_flag": "none",
-      "cte_known_n": 377,
+      "cte_known_n": 370,
       "cte_unknown_n": 2,
       "cip_code": null,
       "needs_review": false,
@@ -435,7 +435,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.587,
       "variants_observed": {
-        "ARCH": 568,
+        "ARCH": 563,
         "SUST": 8,
         "DSGN": 7,
         "DESN": 4,
@@ -454,7 +454,7 @@
         "MULT": 1,
         "NCAR": 1
       },
-      "total_mids": 608,
+      "total_mids": 603,
       "local_subject_variants": {
         "ARCH": 540,
         "ARC": 86,
@@ -504,9 +504,9 @@
       "top_modal_title": "Architecture and Architectural Technology",
       "top_category_2digit": "02",
       "top_category_title": "Architecture and Related Technologies",
-      "cte_share": 0.984,
+      "cte_share": 0.983,
       "cte_flag": "all",
-      "cte_known_n": 608,
+      "cte_known_n": 603,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": true,
@@ -523,11 +523,11 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.773,
       "variants_observed": {
-        "ARTS": 2252,
+        "ARTS": 2187,
         "MULT": 2,
         "ARTH": 1
       },
-      "total_mids": 2255,
+      "total_mids": 2190,
       "local_subject_variants": {
         "ART": 3556,
         "ARTS": 164,
@@ -577,10 +577,10 @@
       "top_modal_title": "Art (Painting, Drawing, and Sculpture)",
       "top_category_2digit": "10",
       "top_category_title": "Fine and Applied Arts",
-      "cte_share": 0.218,
+      "cte_share": 0.222,
       "cte_flag": "mixed",
-      "cte_known_n": 1506,
-      "cte_unknown_n": 749,
+      "cte_known_n": 1464,
+      "cte_unknown_n": 726,
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:27:45.734358+00:00",
@@ -701,9 +701,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.649,
       "variants_observed": {
-        "ASTR": 121
+        "ASTR": 120
       },
-      "total_mids": 121,
+      "total_mids": 120,
       "local_subject_variants": {
         "ASTR": 192,
         "ASTRO": 38,
@@ -732,7 +732,7 @@
       "top_category_title": "Physical Sciences",
       "cte_share": 0.0,
       "cte_flag": "none",
-      "cte_known_n": 121,
+      "cte_known_n": 120,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -809,9 +809,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.521,
       "variants_observed": {
-        "AUTO": 1493
+        "AUTO": 1487
       },
-      "total_mids": 1493,
+      "total_mids": 1487,
       "local_subject_variants": {
         "AUTO": 1112,
         "AT": 186,
@@ -863,8 +863,8 @@
       "top_category_title": "Engineering and Industrial Technologies",
       "cte_share": 0.99,
       "cte_flag": "all",
-      "cte_known_n": 1421,
-      "cte_unknown_n": 72,
+      "cte_known_n": 1416,
+      "cte_unknown_n": 71,
       "cip_code": null,
       "needs_review": true,
       "reviewed_at": null,
@@ -987,7 +987,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.528,
       "variants_observed": {
-        "BIOL": 994,
+        "BIOL": 986,
         "MICR": 6,
         "NAT": 6,
         "ZOOL": 4,
@@ -1007,7 +1007,7 @@
         "PLNT": 1,
         "VHLT": 1
       },
-      "total_mids": 1036,
+      "total_mids": 1028,
       "local_subject_variants": {
         "BIOL": 1058,
         "BIO": 375,
@@ -1057,9 +1057,9 @@
       "top_modal_title": "Biology, General",
       "top_category_2digit": "04",
       "top_category_title": "Biological Sciences",
-      "cte_share": 0.175,
+      "cte_share": 0.176,
       "cte_flag": "mixed",
-      "cte_known_n": 1036,
+      "cte_known_n": 1028,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -1223,7 +1223,7 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.332,
       "variants_observed": {
-        "BUSI": 1700,
+        "BUSI": 1679,
         "EMP": 31,
         "COUR": 20,
         "NCCC": 18,
@@ -1327,7 +1327,7 @@
         "VIRT": 1,
         "VRE": 1
       },
-      "total_mids": 2096,
+      "total_mids": 2075,
       "local_subject_variants": {
         "BUS": 1441,
         "ACCT": 495,
@@ -1377,10 +1377,10 @@
       "top_modal_title": "Accounting",
       "top_category_2digit": "05",
       "top_category_title": "Business and Management",
-      "cte_share": 0.988,
+      "cte_share": 0.987,
       "cte_flag": "all",
-      "cte_known_n": 1843,
-      "cte_unknown_n": 253,
+      "cte_known_n": 1825,
+      "cte_unknown_n": 250,
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:25:34.266541+00:00",
@@ -1439,9 +1439,9 @@
       "data_modal_share": 0.188,
       "variants_observed": {
         "CARP": 146,
-        "CNST": 48
+        "CNST": 46
       },
-      "total_mids": 194,
+      "total_mids": 192,
       "local_subject_variants": {
         "CRP": 60,
         "CARP": 57,
@@ -1491,9 +1491,9 @@
       "top_modal_title": "Carpentry",
       "top_category_2digit": "09",
       "top_category_title": "Engineering and Industrial Technologies",
-      "cte_share": 0.046,
+      "cte_share": 0.047,
       "cte_flag": "none",
-      "cte_known_n": 194,
+      "cte_known_n": 192,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -1510,9 +1510,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.904,
       "variants_observed": {
-        "CHEM": 286
+        "CHEM": 278
       },
-      "total_mids": 286,
+      "total_mids": 278,
       "local_subject_variants": {
         "CHEM": 595,
         "CHM": 27,
@@ -1535,9 +1535,9 @@
       "top_modal_title": "Chemistry, General",
       "top_category_2digit": "19",
       "top_category_title": "Physical Sciences",
-      "cte_share": 0.042,
+      "cte_share": 0.043,
       "cte_flag": "none",
-      "cte_known_n": 286,
+      "cte_known_n": 278,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -1608,9 +1608,9 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.22,
       "variants_observed": {
-        "ECED": 1369
+        "ECED": 1349
       },
-      "total_mids": 1369,
+      "total_mids": 1349,
       "local_subject_variants": {
         "ECE": 498,
         "CD": 226,
@@ -1662,7 +1662,7 @@
       "top_category_title": "Family and Consumer Sciences",
       "cte_share": 0.993,
       "cte_flag": "all",
-      "cte_known_n": 1367,
+      "cte_known_n": 1347,
       "cte_unknown_n": 2,
       "cip_code": null,
       "needs_review": false,
@@ -1773,9 +1773,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.694,
       "variants_observed": {
-        "COMM": 333
+        "COMM": 329
       },
-      "total_mids": 333,
+      "total_mids": 329,
       "local_subject_variants": {
         "COMM": 516,
         "SPCH": 58,
@@ -1825,9 +1825,9 @@
       "top_modal_title": "Speech Communication",
       "top_category_2digit": "15",
       "top_category_title": "Humanities (Letters)",
-      "cte_share": 0.177,
+      "cte_share": 0.179,
       "cte_flag": "mixed",
-      "cte_known_n": 333,
+      "cte_known_n": 329,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -1844,7 +1844,7 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.411,
       "variants_observed": {
-        "CISC": 2222,
+        "CISC": 2206,
         "COMP": 20,
         "AI": 16,
         "ADED": 15,
@@ -1915,7 +1915,7 @@
         "NETE": 1,
         "ORA": 1
       },
-      "total_mids": 2475,
+      "total_mids": 2459,
       "local_subject_variants": {
         "CIS": 1619,
         "CSIS": 163,
@@ -1967,7 +1967,7 @@
       "top_category_title": "Information Technology",
       "cte_share": 0.994,
       "cte_flag": "all",
-      "cte_known_n": 2426,
+      "cte_known_n": 2410,
       "cte_unknown_n": 49,
       "cip_code": null,
       "needs_review": false,
@@ -1984,9 +1984,9 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.456,
       "variants_observed": {
-        "CISC": 715
+        "CISC": 710
       },
-      "total_mids": 715,
+      "total_mids": 710,
       "local_subject_variants": {
         "CS": 520,
         "COMP": 229,
@@ -2036,10 +2036,10 @@
       "top_modal_title": "Computer Programming",
       "top_category_2digit": "07",
       "top_category_title": "Information Technology",
-      "cte_share": 0.982,
+      "cte_share": 0.981,
       "cte_flag": "all",
-      "cte_known_n": 595,
-      "cte_unknown_n": 120,
+      "cte_known_n": 592,
+      "cte_unknown_n": 118,
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:31:34.900799+00:00",
@@ -2119,11 +2119,11 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.142,
       "variants_observed": {
-        "CNST": 694,
+        "CNST": 692,
         "CARP": 2,
         "CNSM": 1
       },
-      "total_mids": 697,
+      "total_mids": 695,
       "local_subject_variants": {
         "CT": 130,
         "CNST": 108,
@@ -2173,9 +2173,9 @@
       "top_modal_title": "Construction Crafts Technology",
       "top_category_2digit": "09",
       "top_category_title": "Engineering and Industrial Technologies",
-      "cte_share": 0.599,
+      "cte_share": 0.598,
       "cte_flag": "mixed",
-      "cte_known_n": 696,
+      "cte_known_n": 694,
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
@@ -2235,10 +2235,10 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.282,
       "variants_observed": {
-        "COUN": 822,
+        "COUN": 814,
         "CRIM": 1
       },
-      "total_mids": 823,
+      "total_mids": 815,
       "local_subject_variants": {
         "COUN": 390,
         "COUNS": 97,
@@ -2290,7 +2290,7 @@
       "top_category_title": "Public and Protective Services",
       "cte_share": 0.593,
       "cte_flag": "mixed",
-      "cte_known_n": 819,
+      "cte_known_n": 811,
       "cte_unknown_n": 4,
       "cip_code": null,
       "needs_review": false,
@@ -2343,10 +2343,10 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.182,
       "variants_observed": {
-        "CULN": 951,
+        "CULN": 950,
         "HOSP": 1
       },
-      "total_mids": 952,
+      "total_mids": 951,
       "local_subject_variants": {
         "CUL": 239,
         "HOSP": 131,
@@ -2398,7 +2398,7 @@
       "top_category_title": "Family and Consumer Sciences",
       "cte_share": 0.996,
       "cte_flag": "all",
-      "cte_known_n": 951,
+      "cte_known_n": 950,
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
@@ -2415,9 +2415,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.459,
       "variants_observed": {
-        "DANC": 1667
+        "DANC": 1639
       },
-      "total_mids": 1667,
+      "total_mids": 1639,
       "local_subject_variants": {
         "DANC": 1416,
         "DANCE": 561,
@@ -2467,9 +2467,9 @@
       "top_modal_title": "Dance",
       "top_category_2digit": "10",
       "top_category_title": "Fine and Applied Arts",
-      "cte_share": 0.164,
+      "cte_share": 0.166,
       "cte_flag": "mixed",
-      "cte_known_n": 1662,
+      "cte_known_n": 1634,
       "cte_unknown_n": 5,
       "cip_code": null,
       "needs_review": true,
@@ -2486,9 +2486,9 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.312,
       "variants_observed": {
-        "DENT": 578
+        "DENT": 576
       },
-      "total_mids": 578,
+      "total_mids": 576,
       "local_subject_variants": {
         "DH": 279,
         "DA": 133,
@@ -2540,7 +2540,7 @@
       "top_category_title": "Health",
       "cte_share": 0.983,
       "cte_flag": "all",
-      "cte_known_n": 578,
+      "cte_known_n": 576,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -2820,11 +2820,11 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.105,
       "variants_observed": {
-        "DRAF": 376,
+        "DRAF": 371,
         "CRIM": 3,
         "ESCI": 1
       },
-      "total_mids": 380,
+      "total_mids": 375,
       "local_subject_variants": {
         "CADD": 51,
         "DRFT": 37,
@@ -2876,7 +2876,7 @@
       "top_category_title": "Engineering and Industrial Technologies",
       "cte_share": 0.987,
       "cte_flag": "all",
-      "cte_known_n": 380,
+      "cte_known_n": 375,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -2893,9 +2893,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.28,
       "variants_observed": {
-        "THEA": 1546
+        "THEA": 1540
       },
-      "total_mids": 1546,
+      "total_mids": 1540,
       "local_subject_variants": {
         "THEA": 636,
         "TA": 344,
@@ -2945,9 +2945,9 @@
       "top_modal_title": "Dramatic Arts",
       "top_category_2digit": "10",
       "top_category_title": "Fine and Applied Arts",
-      "cte_share": 0.27,
+      "cte_share": 0.271,
       "cte_flag": "mixed",
-      "cte_known_n": 1545,
+      "cte_known_n": 1539,
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
@@ -2964,9 +2964,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.69,
       "variants_observed": {
-        "GEOL": 315
+        "GEOL": 313
       },
-      "total_mids": 315,
+      "total_mids": 313,
       "local_subject_variants": {
         "GEOL": 427,
         "ESCI": 82,
@@ -3013,7 +3013,7 @@
       "top_category_title": "Physical Sciences",
       "cte_share": 0.019,
       "cte_flag": "none",
-      "cte_known_n": 315,
+      "cte_known_n": 313,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -3400,10 +3400,10 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.263,
       "variants_observed": {
-        "ELEC": 510,
+        "ELEC": 509,
         "ELCT": 2
       },
-      "total_mids": 512,
+      "total_mids": 511,
       "local_subject_variants": {
         "ELEC": 176,
         "ET": 66,
@@ -3453,9 +3453,9 @@
       "top_modal_title": "Electronics and Electric Technology",
       "top_category_2digit": "09",
       "top_category_title": "Engineering and Industrial Technologies",
-      "cte_share": 0.894,
+      "cte_share": 0.893,
       "cte_flag": "most",
-      "cte_known_n": 508,
+      "cte_known_n": 507,
       "cte_unknown_n": 4,
       "cip_code": null,
       "needs_review": false,
@@ -3472,10 +3472,10 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.282,
       "variants_observed": {
-        "EMST": 553,
+        "EMST": 545,
         "CRIM": 1
       },
-      "total_mids": 554,
+      "total_mids": 546,
       "local_subject_variants": {
         "EMS": 231,
         "EMT": 123,
@@ -3527,7 +3527,7 @@
       "top_category_title": "Health",
       "cte_share": 0.996,
       "cte_flag": "all",
-      "cte_known_n": 553,
+      "cte_known_n": 545,
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
@@ -3615,9 +3615,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.341,
       "variants_observed": {
-        "ENGT": 157
+        "ENGT": 156
       },
-      "total_mids": 157,
+      "total_mids": 156,
       "local_subject_variants": {
         "ETEC": 71,
         "ENGT": 70,
@@ -3649,7 +3649,7 @@
       "top_category_title": "Engineering and Industrial Technologies",
       "cte_share": 0.922,
       "cte_flag": "most",
-      "cte_known_n": 154,
+      "cte_known_n": 153,
       "cte_unknown_n": 3,
       "cip_code": null,
       "needs_review": false,
@@ -3666,9 +3666,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.651,
       "variants_observed": {
-        "ENGL": 1576
+        "ENGL": 1537
       },
-      "total_mids": 1576,
+      "total_mids": 1537,
       "local_subject_variants": {
         "ENGL": 1923,
         "ENG": 186,
@@ -3720,7 +3720,7 @@
       "top_category_title": "Humanities (Letters)",
       "cte_share": 0.006,
       "cte_flag": "none",
-      "cte_known_n": 1536,
+      "cte_known_n": 1497,
       "cte_unknown_n": 40,
       "cip_code": null,
       "needs_review": false,
@@ -3737,9 +3737,9 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.515,
       "variants_observed": {
-        "ESOL": 2315
+        "ESOL": 2300
       },
-      "total_mids": 2315,
+      "total_mids": 2300,
       "local_subject_variants": {
         "ESL": 1786,
         "ESLA": 245,
@@ -3789,9 +3789,9 @@
       "top_modal_title": "English as a Second Language–Integrated2",
       "top_category_2digit": "49",
       "top_category_title": "Interdisciplinary Studies",
-      "cte_share": 0.073,
+      "cte_share": 0.074,
       "cte_flag": "mixed",
-      "cte_known_n": 2307,
+      "cte_known_n": 2292,
       "cte_unknown_n": 8,
       "cip_code": null,
       "needs_review": false,
@@ -3854,7 +3854,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.089,
       "variants_observed": {
-        "ESCI": 568,
+        "ESCI": 564,
         "ENVS": 5,
         "ESEC": 4,
         "ENSC": 3,
@@ -3868,7 +3868,7 @@
         "ET": 1,
         "SUST": 1
       },
-      "total_mids": 594,
+      "total_mids": 590,
       "local_subject_variants": {
         "WATR": 69,
         "ENVS": 61,
@@ -3918,9 +3918,9 @@
       "top_modal_title": "Water and Wastewater Technology",
       "top_category_2digit": "09",
       "top_category_title": "Engineering and Industrial Technologies",
-      "cte_share": 0.752,
+      "cte_share": 0.75,
       "cte_flag": "most",
-      "cte_known_n": 593,
+      "cte_known_n": 589,
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
@@ -3974,9 +3974,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.157,
       "variants_observed": {
-        "ETHS": 793
+        "ETHS": 787
       },
-      "total_mids": 793,
+      "total_mids": 787,
       "local_subject_variants": {
         "ETHN": 240,
         "ES": 194,
@@ -4028,7 +4028,7 @@
       "top_category_title": "Social Sciences",
       "cte_share": 0.035,
       "cte_flag": "none",
-      "cte_known_n": 772,
+      "cte_known_n": 766,
       "cte_unknown_n": 21,
       "cip_code": null,
       "needs_review": false,
@@ -4232,9 +4232,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.537,
       "variants_observed": {
-        "FASH": 681
+        "FASH": 678
       },
-      "total_mids": 681,
+      "total_mids": 678,
       "local_subject_variants": {
         "FASH": 501,
         "FASHDSN": 111,
@@ -4286,7 +4286,7 @@
       "top_category_title": "Family and Consumer Sciences",
       "cte_share": 0.999,
       "cte_flag": "all",
-      "cte_known_n": 680,
+      "cte_known_n": 677,
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": true,
@@ -4303,10 +4303,10 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.318,
       "variants_observed": {
-        "FIMS": 499,
+        "FIMS": 495,
         "FIRE": 4
       },
-      "total_mids": 503,
+      "total_mids": 499,
       "local_subject_variants": {
         "FILM": 248,
         "CINE": 69,
@@ -4356,10 +4356,10 @@
       "top_modal_title": "Film Production",
       "top_category_2digit": "06",
       "top_category_title": "Media and Communications",
-      "cte_share": 0.747,
+      "cte_share": 0.748,
       "cte_flag": "most",
-      "cte_known_n": 442,
-      "cte_unknown_n": 61,
+      "cte_known_n": 440,
+      "cte_unknown_n": 59,
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:34:59.258685+00:00",
@@ -4375,9 +4375,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.275,
       "variants_observed": {
-        "FIRE": 1524
+        "FIRE": 1507
       },
-      "total_mids": 1524,
+      "total_mids": 1507,
       "local_subject_variants": {
         "FIRE": 752,
         "FT": 268,
@@ -4429,7 +4429,7 @@
       "top_category_title": "Public and Protective Services",
       "cte_share": 0.998,
       "cte_flag": "all",
-      "cte_known_n": 1524,
+      "cte_known_n": 1507,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -4447,21 +4447,21 @@
       "data_modal_share": 0.249,
       "variants_observed": {
         "FLSP": 519,
-        "FLCH": 162,
-        "FLFR": 159,
-        "FLJA": 151,
-        "FLIT": 110,
-        "FLGE": 89,
-        "FLAR": 55,
+        "FLCH": 156,
+        "FLFR": 153,
+        "FLJA": 141,
+        "FLIT": 104,
+        "FLGE": 86,
+        "FLAR": 53,
         "FLRU": 47,
         "FLVI": 39,
         "FLKO": 33,
         "ARME": 18,
-        "FLPO": 16,
         "FLTA": 14,
-        "LATN": 13,
-        "FLHE": 11,
+        "FLPO": 13,
+        "LATN": 12,
         "FLPE": 11,
+        "FLHE": 10,
         "CHI": 8,
         "FLHM": 7,
         "FIL": 6,
@@ -4499,7 +4499,7 @@
         "VIET": 1,
         "YUR": 1
       },
-      "total_mids": 1530,
+      "total_mids": 1492,
       "local_subject_variants": {
         "SPAN": 709,
         "FREN": 219,
@@ -4549,10 +4549,10 @@
       "top_modal_title": "Spanish",
       "top_category_2digit": "11",
       "top_category_title": "Foreign Language",
-      "cte_share": 0.045,
+      "cte_share": 0.046,
       "cte_flag": "none",
-      "cte_known_n": 1459,
-      "cte_unknown_n": 71,
+      "cte_known_n": 1422,
+      "cte_unknown_n": 70,
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:26:10.27766+00:00",
@@ -4568,9 +4568,9 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.296,
       "variants_observed": {
-        "ENVR": 152
+        "ENVR": 151
       },
-      "total_mids": 152,
+      "total_mids": 151,
       "local_subject_variants": {
         "FOR": 63,
         "NR": 28,
@@ -4613,7 +4613,7 @@
       "top_category_title": "Agriculture and Natural Resources",
       "cte_share": 1.0,
       "cte_flag": "all",
-      "cte_known_n": 152,
+      "cte_known_n": 151,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -4665,9 +4665,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.674,
       "variants_observed": {
-        "GEOG": 299
+        "GEOG": 294
       },
-      "total_mids": 299,
+      "total_mids": 294,
       "local_subject_variants": {
         "GEOG": 486,
         "GIS": 67,
@@ -4719,7 +4719,7 @@
       "top_category_title": "Social Sciences",
       "cte_share": 0.405,
       "cte_flag": "mixed",
-      "cte_known_n": 299,
+      "cte_known_n": 294,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -4889,7 +4889,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.146,
       "variants_observed": {
-        "HLTH": 497,
+        "HLTH": 495,
         "MLT": 35,
         "HS": 34,
         "WELL": 30,
@@ -5047,7 +5047,7 @@
         "SPMD": 1,
         "VBUS": 1
       },
-      "total_mids": 1308,
+      "total_mids": 1306,
       "local_subject_variants": {
         "HLTH": 267,
         "HEALTH": 136,
@@ -5097,9 +5097,9 @@
       "top_modal_title": "Health Education",
       "top_category_2digit": "08",
       "top_category_title": "Education",
-      "cte_share": 0.737,
+      "cte_share": 0.738,
       "cte_flag": "most",
-      "cte_known_n": 1308,
+      "cte_known_n": 1306,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -5282,9 +5282,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.798,
       "variants_observed": {
-        "HIST": 809
+        "HIST": 792
       },
-      "total_mids": 809,
+      "total_mids": 792,
       "local_subject_variants": {
         "HIST": 1164,
         "HIS": 75,
@@ -5336,7 +5336,7 @@
       "top_category_title": "Social Sciences",
       "cte_share": 0.0,
       "cte_flag": "none",
-      "cte_known_n": 807,
+      "cte_known_n": 790,
       "cte_unknown_n": 2,
       "cip_code": null,
       "needs_review": false,
@@ -5353,7 +5353,7 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.274,
       "variants_observed": {
-        "HUMA": 277,
+        "HUMA": 272,
         "LING": 32,
         "COMS": 24,
         "LIT": 20,
@@ -5410,7 +5410,7 @@
         "THAR": 1,
         "WR": 1
       },
-      "total_mids": 527,
+      "total_mids": 522,
       "local_subject_variants": {
         "HUM": 211,
         "HUMAN": 148,
@@ -5460,9 +5460,9 @@
       "top_modal_title": "Other Humanities",
       "top_category_2digit": "15",
       "top_category_title": "Humanities (Letters)",
-      "cte_share": 0.034,
+      "cte_share": 0.035,
       "cte_flag": "none",
-      "cte_known_n": 525,
+      "cte_known_n": 520,
       "cte_unknown_n": 2,
       "cip_code": null,
       "needs_review": false,
@@ -5918,9 +5918,9 @@
       "variants_observed": {
         "NC": 82,
         "DSSS": 54,
-        "IHSS": 51,
         "WKPR": 51,
         "AHSD": 49,
+        "IHSS": 49,
         "PD": 45,
         "WFPR": 45,
         "TRST": 44,
@@ -5932,8 +5932,8 @@
         "ACCS": 29,
         "LNSK": 29,
         "HCD": 28,
-        "HSDP": 28,
         "ABED": 27,
+        "HSDP": 27,
         "LS": 27,
         "SPED": 27,
         "DEVS": 25,
@@ -6217,7 +6217,7 @@
         "WRLD": 1,
         "XENG": 1
       },
-      "total_mids": 2109,
+      "total_mids": 2106,
       "local_subject_variants": {
         "DSSS": 107,
         "IHSS": 102,
@@ -6269,7 +6269,7 @@
       "top_category_title": "Interdisciplinary Studies",
       "cte_share": 0.022,
       "cte_flag": "none",
-      "cte_known_n": 2093,
+      "cte_known_n": 2090,
       "cte_unknown_n": 16,
       "cip_code": null,
       "needs_review": true,
@@ -6332,9 +6332,9 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.421,
       "variants_observed": {
-        "INTD": 247
+        "INTD": 245
       },
-      "total_mids": 247,
+      "total_mids": 245,
       "local_subject_variants": {
         "ID": 138,
         "IDES": 64,
@@ -6365,7 +6365,7 @@
       "top_category_title": "Family and Consumer Sciences",
       "cte_share": 1.0,
       "cte_flag": "all",
-      "cte_known_n": 247,
+      "cte_known_n": 245,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -6382,9 +6382,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.499,
       "variants_observed": {
-        "JOUR": 340
+        "JOUR": 336
       },
-      "total_mids": 340,
+      "total_mids": 336,
       "local_subject_variants": {
         "JOUR": 270,
         "JOURNAL": 80,
@@ -6434,9 +6434,9 @@
       "top_modal_title": "Journalism",
       "top_category_2digit": "06",
       "top_category_title": "Media and Communications",
-      "cte_share": 0.985,
+      "cte_share": 0.988,
       "cte_flag": "all",
-      "cte_known_n": 340,
+      "cte_known_n": 336,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": true,
@@ -6454,9 +6454,9 @@
       "data_modal_share": 0.212,
       "variants_observed": {
         "KINE": 3872,
-        "ATHL": 864
+        "ATHL": 814
       },
-      "total_mids": 4736,
+      "total_mids": 4686,
       "local_subject_variants": {
         "KIN": 2024,
         "PE": 1231,
@@ -6508,8 +6508,8 @@
       "top_category_title": "Education",
       "cte_share": 0.099,
       "cte_flag": "mixed",
-      "cte_known_n": 3386,
-      "cte_unknown_n": 1350,
+      "cte_known_n": 3385,
+      "cte_unknown_n": 1301,
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:29:23.088926+00:00",
@@ -6975,11 +6975,11 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.229,
       "variants_observed": {
-        "MANU": 353,
+        "MANU": 351,
         "CULN": 2,
         "ELEC": 1
       },
-      "total_mids": 356,
+      "total_mids": 354,
       "local_subject_variants": {
         "DMT": 116,
         "MFGT": 80,
@@ -7031,7 +7031,7 @@
       "top_category_title": "Engineering and Industrial Technologies",
       "cte_share": 1.0,
       "cte_flag": "all",
-      "cte_known_n": 354,
+      "cte_known_n": 352,
       "cte_unknown_n": 2,
       "cip_code": null,
       "needs_review": false,
@@ -7141,7 +7141,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.788,
       "variants_observed": {
-        "MATH": 1541,
+        "MATH": 1519,
         "DS": 2,
         "FIRE": 1,
         "MM": 1,
@@ -7150,7 +7150,7 @@
         "TMAT": 1,
         "WORK": 1
       },
-      "total_mids": 1549,
+      "total_mids": 1527,
       "local_subject_variants": {
         "MATH": 2244,
         "MAT": 104,
@@ -7202,7 +7202,7 @@
       "top_category_title": "Mathematics",
       "cte_share": 0.025,
       "cte_flag": "none",
-      "cte_known_n": 1548,
+      "cte_known_n": 1526,
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
@@ -7317,11 +7317,11 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.082,
       "variants_observed": {
-        "MULT": 898,
+        "MULT": 895,
         "GRAF": 2,
         "BCST": 1
       },
-      "total_mids": 901,
+      "total_mids": 898,
       "local_subject_variants": {
         "DM": 103,
         "ANIM": 74,
@@ -7373,7 +7373,7 @@
       "top_category_title": "Media and Communications",
       "cte_share": 0.992,
       "cte_flag": "all",
-      "cte_known_n": 900,
+      "cte_known_n": 897,
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
@@ -7390,10 +7390,10 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.453,
       "variants_observed": {
-        "MUSI": 2634,
+        "MUSI": 2585,
         "MUSC": 1
       },
-      "total_mids": 2635,
+      "total_mids": 2586,
       "local_subject_variants": {
         "MUS": 2152,
         "MUSIC": 976,
@@ -7445,8 +7445,8 @@
       "top_category_title": "Fine and Applied Arts",
       "cte_share": 0.938,
       "cte_flag": "most",
-      "cte_known_n": 357,
-      "cte_unknown_n": 2278,
+      "cte_known_n": 356,
+      "cte_unknown_n": 2230,
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:26:48.719829+00:00",
@@ -7501,9 +7501,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.332,
       "variants_observed": {
-        "NRSR": 1440
+        "NRSR": 1432
       },
-      "total_mids": 1440,
+      "total_mids": 1432,
       "local_subject_variants": {
         "NURS": 708,
         "ADN": 130,
@@ -7555,7 +7555,7 @@
       "top_category_title": "Health",
       "cte_share": 0.994,
       "cte_flag": "all",
-      "cte_known_n": 1440,
+      "cte_known_n": 1432,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -7677,11 +7677,11 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.088,
       "variants_observed": {
-        "OTEC": 1026,
+        "OTEC": 1024,
         "BUSI": 4,
         "CISC": 3
       },
-      "total_mids": 1033,
+      "total_mids": 1031,
       "local_subject_variants": {
         "CAOT": 151,
         "BOT": 150,
@@ -7733,7 +7733,7 @@
       "top_category_title": "Business and Management",
       "cte_share": 0.981,
       "cte_flag": "all",
-      "cte_known_n": 1001,
+      "cte_known_n": 999,
       "cte_unknown_n": 32,
       "cip_code": null,
       "needs_review": false,
@@ -7821,9 +7821,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.419,
       "variants_observed": {
-        "HORT": 547
+        "HORT": 546
       },
-      "total_mids": 547,
+      "total_mids": 546,
       "local_subject_variants": {
         "HORT": 322,
         "LANHT": 115,
@@ -7875,7 +7875,7 @@
       "top_category_title": "Agriculture and Natural Resources",
       "cte_share": 0.996,
       "cte_flag": "all",
-      "cte_known_n": 540,
+      "cte_known_n": 539,
       "cte_unknown_n": 7,
       "cip_code": null,
       "needs_review": false,
@@ -7969,9 +7969,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.694,
       "variants_observed": {
-        "PHIL": 335
+        "PHIL": 330
       },
-      "total_mids": 335,
+      "total_mids": 330,
       "local_subject_variants": {
         "PHIL": 599,
         "PHILOS": 93,
@@ -8023,7 +8023,7 @@
       "top_category_title": "Humanities (Letters)",
       "cte_share": 0.012,
       "cte_flag": "none",
-      "cte_known_n": 335,
+      "cte_known_n": 330,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -8040,10 +8040,10 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.468,
       "variants_observed": {
-        "PHOT": 618,
+        "PHOT": 616,
         "GRAF": 1
       },
-      "total_mids": 619,
+      "total_mids": 617,
       "local_subject_variants": {
         "PHOT": 488,
         "PHOTO": 253,
@@ -8093,9 +8093,9 @@
       "top_modal_title": "Applied Photography",
       "top_category_2digit": "10",
       "top_category_title": "Fine and Applied Arts",
-      "cte_share": 0.812,
+      "cte_share": 0.813,
       "cte_flag": "most",
-      "cte_known_n": 618,
+      "cte_known_n": 616,
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": true,
@@ -8253,7 +8253,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.082,
       "variants_observed": {
-        "PHYS": 88,
+        "PHYS": 86,
         "ESC": 24,
         "ERTH": 17,
         "OCEA": 17,
@@ -8283,7 +8283,7 @@
         "PHS": 1,
         "PSC": 1
       },
-      "total_mids": 241,
+      "total_mids": 239,
       "local_subject_variants": {
         "PHSC": 30,
         "ESC": 28,
@@ -8335,7 +8335,7 @@
       "top_category_title": "Physical Sciences",
       "cte_share": 0.021,
       "cte_flag": "none",
-      "cte_known_n": 241,
+      "cte_known_n": 239,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -8395,9 +8395,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.734,
       "variants_observed": {
-        "PHYS": 241
+        "PHYS": 239
       },
-      "total_mids": 241,
+      "total_mids": 239,
       "local_subject_variants": {
         "PHYS": 359,
         "PHY": 51,
@@ -8420,7 +8420,7 @@
       "top_category_title": "Physical Sciences",
       "cte_share": 0.0,
       "cte_flag": "none",
-      "cte_known_n": 241,
+      "cte_known_n": 239,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -8437,10 +8437,10 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.276,
       "variants_observed": {
-        "PLMB": 147,
+        "PLMB": 146,
         "HVAC": 1
       },
-      "total_mids": 148,
+      "total_mids": 147,
       "local_subject_variants": {
         "PLUMB": 55,
         "PLMB": 21,
@@ -8490,9 +8490,9 @@
       "top_modal_title": "Plumbing, Pipefitting, and Steamfitting",
       "top_category_2digit": "09",
       "top_category_title": "Engineering and Industrial Technologies",
-      "cte_share": 0.122,
+      "cte_share": 0.116,
       "cte_flag": "mixed",
-      "cte_known_n": 148,
+      "cte_known_n": 147,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -8509,9 +8509,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.412,
       "variants_observed": {
-        "POSC": 284
+        "POSC": 283
       },
-      "total_mids": 284,
+      "total_mids": 283,
       "local_subject_variants": {
         "POLS": 223,
         "POLI": 49,
@@ -8563,7 +8563,7 @@
       "top_category_title": "Social Sciences",
       "cte_share": 0.035,
       "cte_flag": "none",
-      "cte_known_n": 283,
+      "cte_known_n": 282,
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
@@ -8621,7 +8621,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.514,
       "variants_observed": {
-        "PSYC": 415,
+        "PSYC": 409,
         "LLS": 7,
         "HUMD": 2,
         "NCPS": 2,
@@ -8637,7 +8637,7 @@
         "SLFO": 1,
         "SOSC": 1
       },
-      "total_mids": 438,
+      "total_mids": 432,
       "local_subject_variants": {
         "PSYC": 524,
         "PSYCH": 190,
@@ -8689,7 +8689,7 @@
       "top_category_title": "Psychology",
       "cte_share": 0.051,
       "cte_flag": "mixed",
-      "cte_known_n": 435,
+      "cte_known_n": 429,
       "cte_unknown_n": 3,
       "cip_code": null,
       "needs_review": true,
@@ -8951,9 +8951,9 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.449,
       "variants_observed": {
-        "REAL": 195
+        "REAL": 186
       },
-      "total_mids": 195,
+      "total_mids": 186,
       "local_subject_variants": {
         "RE": 293,
         "REAL": 78,
@@ -8996,7 +8996,7 @@
       "top_category_title": "Business and Management",
       "cte_share": 0.995,
       "cte_flag": "all",
-      "cte_known_n": 195,
+      "cte_known_n": 186,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -9099,10 +9099,10 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.175,
       "variants_observed": {
-        "RSPT": 402,
+        "RSPT": 401,
         "RCP": 1
       },
-      "total_mids": 403,
+      "total_mids": 402,
       "local_subject_variants": {
         "RESP": 84,
         "RSPT": 66,
@@ -9142,7 +9142,7 @@
       "top_category_title": "Health",
       "cte_share": 0.995,
       "cte_flag": "all",
-      "cte_known_n": 403,
+      "cte_known_n": 402,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -9286,9 +9286,9 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.555,
       "variants_observed": {
-        "SLNA": 364
+        "SLNA": 358
       },
-      "total_mids": 364,
+      "total_mids": 358,
       "local_subject_variants": {
         "ASL": 423,
         "SIGN": 97,
@@ -9329,7 +9329,7 @@
       "top_category_title": "Education",
       "cte_share": 0.335,
       "cte_flag": "mixed",
-      "cte_known_n": 364,
+      "cte_known_n": 358,
       "cte_unknown_n": 0,
       "cip_code": null,
       "needs_review": false,
@@ -9451,9 +9451,9 @@
         "EHST": 8,
         "GIST": 8,
         "GEOG": 7,
-        "ASAM": 6,
         "SJS": 6,
         "ANTR": 5,
+        "ASAM": 5,
         "ASIA": 5,
         "CISC": 5,
         "HIST": 5,
@@ -9540,7 +9540,7 @@
         "TAFI": 1,
         "WMN": 1
       },
-      "total_mids": 297,
+      "total_mids": 296,
       "local_subject_variants": {
         "GLST": 31,
         "HIST": 23,
@@ -9590,9 +9590,9 @@
       "top_modal_title": "Social Sciences, General",
       "top_category_2digit": "22",
       "top_category_title": "Social Sciences",
-      "cte_share": 0.069,
+      "cte_share": 0.07,
       "cte_flag": "mixed",
-      "cte_known_n": 274,
+      "cte_known_n": 273,
       "cte_unknown_n": 23,
       "cip_code": null,
       "needs_review": false,
@@ -9609,9 +9609,9 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.615,
       "variants_observed": {
-        "SOCI": 241
+        "SOCI": 239
       },
-      "total_mids": 241,
+      "total_mids": 239,
       "local_subject_variants": {
         "SOC": 351,
         "SOCI": 66,
@@ -9664,7 +9664,7 @@
       "cte_share": 0.08,
       "cte_flag": "mixed",
       "cte_known_n": 25,
-      "cte_unknown_n": 216,
+      "cte_unknown_n": 214,
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-05-23T17:43:03.388823+00:00",
@@ -10004,9 +10004,9 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.66,
       "variants_observed": {
-        "VOCE": 543
+        "VOCE": 542
       },
-      "total_mids": 543,
+      "total_mids": 542,
       "local_subject_variants": {
         "VOC ED": 436,
         "VOC": 131,
@@ -10037,7 +10037,7 @@
       "top_category_title": "Business and Management",
       "cte_share": 0.896,
       "cte_flag": "most",
-      "cte_known_n": 518,
+      "cte_known_n": 517,
       "cte_unknown_n": 25,
       "cip_code": null,
       "needs_review": true,
@@ -10054,10 +10054,10 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.566,
       "variants_observed": {
-        "WELD": 810,
+        "WELD": 802,
         "CNST": 2
       },
-      "total_mids": 812,
+      "total_mids": 804,
       "local_subject_variants": {
         "WELD": 652,
         "WLD": 109,
@@ -10107,9 +10107,9 @@
       "top_modal_title": "Welding Technology",
       "top_category_2digit": "09",
       "top_category_title": "Engineering and Industrial Technologies",
-      "cte_share": 0.969,
+      "cte_share": 0.97,
       "cte_flag": "all",
-      "cte_known_n": 811,
+      "cte_known_n": 803,
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": true,
@@ -10225,7 +10225,5 @@
       "validated_by": null,
       "_notes": null
     }
-  },
-  "_synced_at": "2026-06-12T00:33:56Z",
-  "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
+  }
 }

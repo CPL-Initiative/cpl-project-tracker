@@ -42,9 +42,13 @@ LEVEL_WORDS = {"beginning": 1, "elementary": 1, "introductory": 1, "first": 1,
                "third": 3, "fourth": 4}
 # Variant-type vocabulary — course flavors that are NEVER the base course.
 # STRICT-equality gated (possession on one side only blocks the pair).
+# lab/laboratory added Session 46 after the statewide twin dry-run tried to
+# merge "Elementary Algebra (Lab)" into "Elementary Algebra I" — a lab
+# component is a different course from its lecture ("Journalism Lab A" vs
+# "Journalism Lab B" still compare fine: both sides carry the mark).
 VARIANT_WORDS = {"refresher", "recertification", "recert", "supplemental",
                  "update", "instructor", "supervisor", "module", "modular",
-                 "bridge", "honors"}
+                 "bridge", "honors", "lab", "laboratory"}
 GENDER = {"men": "m", "mens": "m", "male": "m", "women": "w", "womens": "w",
           "female": "w"}
 # closed-ish list of sport nouns whose off-season/varsity template

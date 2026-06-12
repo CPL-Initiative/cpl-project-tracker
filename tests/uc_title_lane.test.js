@@ -60,15 +60,31 @@ check("cross-college groups rank before same_college ones",
            return f === -1 || tg.slice(f).every((g) => g.same_college); })());
 check("groups carry similarity scores + shared terms",
   tg.every((g) => typeof g.score === "number" && Array.isArray(g.terms)));
-// the marquee finds — the BAR smog families the other lanes structurally miss:
-// the combined Level 1 & 2 family, reunited across word-number drift
-const l12 = tg.find((g) => g.members.some((m) => m.id === "AUTO M1001"));
-check("smog L1&2 family reunites M1001 + M1002 + M1217 ('Level One and Level Two')",
-  !!l12 && ["AUTO M1002", "AUTO M1217"].every((id) => l12.members.some((m) => m.id === id)));
-// the Level-2 family crosses SUBJ4 (the mis-keyed AUTB row) via TOP corroboration
-const l2 = tg.find((g) => g.members.some((m) => m.id === "AUTO M1005"));
-check("smog Level-2 family spans SUBJ4s (AUTB M1037 via TOP corroboration)",
-  !!l2 && l2.members.some((m) => m.id === "AUTB M1037") && l2.members.length >= 6);
+// a stable un-curated marquee: the state fire curriculum's HazMat First
+// Responder Operations/Decontamination family (10 ids across ~10 colleges)
+const fro = tg.find((g) => g.members.some((m) => m.id === "FIRE M1383"));
+check("the HazMat FRO family surfaces as one title group",
+  !!fro && fro.members.length >= 6);
+
+// the smog families themselves were CONSOLIDATED (Session 46, Sam-confirmed):
+// the strict twin pass absorbed AUTO M1002 into M1001 physically, and the
+// Level-2 inspector family merged into AUTO M1007 via curation — so they no
+// longer appear in the queue; assert the consolidation instead.
+const cur = JSON.parse(fs.readFileSync("kb/coci_curation.json", "utf8")).curations;
+check("smog Level-2 family is curation-merged into AUTO M1007",
+  cur["AUTO M1005"] && cur["AUTO M1005"].merge_into === "AUTO M1007"
+  && cur["AUTB M1037"] && cur["AUTB M1037"].merge_into === "AUTO M1007"
+  && cur["AUTO M1007"] && cur["AUTO M1007"].unified_title === "Smog Check Inspector Training Level 2");
+check("smog L1&2 family is merged under AUTO M1001 (twin absorb + curation)",
+  !byId["AUTO M1002"]
+  && cur["AUTO M1217"] && cur["AUTO M1217"].merge_into === "AUTO M1001"
+  && cur["AUTO M10AG"] && cur["AUTO M10AG"].merge_into === "AUTO M1001");
+const m1007 = byId["AUTO M1007"];
+check("AUTO M1007 renders as ONE Level-2 row (unified title, 10+ members)",
+  !!m1007 && m1007.title === "Smog Check Inspector Training Level 2" && m1007.members >= 10);
+check("consumed smog ids no longer appear in any title group",
+  !tg.some((g) => g.members.some((m) =>
+    ["AUTO M1002", "AUTO M1005", "AUTB M1037", "AUTO M1217"].includes(m.id))));
 
 // ── B. jsdom consumer drive (stubbed payload — UI mechanics) ───────────────
 const src = fs.readFileSync("unified_courses.js", "utf8");
