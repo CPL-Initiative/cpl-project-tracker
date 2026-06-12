@@ -6363,6 +6363,19 @@ def export_unified_courses():
         parts = [p.strip() for p in str(v).split(",") if p.strip()]
         return parts or None
 
+    def substantive_curation(cid):
+        # Curation presence implies human review (Verified) — EXCEPT a
+        # `merge_dismissed` worklist dismissal (Session 51 "Keep as-is"):
+        # that row only records "these stay separate" on its keyed member;
+        # alone it must not promote the row to Verified nor hide its ⚙
+        # machine-provenance badge.
+        c = curation.get(cid)
+        if not c:
+            return None
+        return c if any(k for k in c if k not in (
+            "merge_dismissed", "reviewed_by", "reviewed_at",
+            "validated_at", "validated_by")) else None
+
     def reviewed_by_of(cid):
         return (curation.get(cid) or {}).get("reviewed_by")
 
@@ -6375,7 +6388,7 @@ def export_unified_courses():
         # Skip curated entries (human discipline, not an AI draft); the tab
         # renders those as Verified anyway. Lean: only emit when an AI source
         # exists, so blank/manual/anchor rows carry no extra keys.
-        if not curation.get(cid):
+        if not substantive_curation(cid):
             src = v.get("discipline_source")
             if src:
                 row["dsrc"] = src
@@ -6424,7 +6437,7 @@ def export_unified_courses():
             "credit_mixed": bool(v.get("credit_status_mixed")),
             "top_mixed": bool(v.get("top_code_mixed")),
             "ncc_mixed": bool(v.get("noncredit_category_mixed")),
-            "reviewed": bool(v.get("reviewed_at") or curation.get(cid)),
+            "reviewed": bool(v.get("reviewed_at") or substantive_curation(cid)),
         }
 
     rows = []

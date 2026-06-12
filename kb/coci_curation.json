@@ -2,7 +2,7 @@
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
   "_synced_at": "2026-06-12T18:50:24Z",
-  "count": 128,
+  "count": 298,
   "curations": {
     "AGRI M1001": {
       "cross_listed_disciplines": "Business",
@@ -652,6 +652,856 @@
       "merge_into": "REAL M1014",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-05-29T20:43:10.485612+00:00"
+    },
+    "KINE M1607": {
+      "merge_into": "KINE M1596",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1561": {
+      "merge_into": "KINE M1596",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1593": {
+      "merge_into": "KINE M1596",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1595": {
+      "merge_into": "KINE M1596",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1556": {
+      "merge_into": "KINE M1596",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1605": {
+      "merge_into": "KINE M1596",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1587": {
+      "merge_into": "KINE M1596",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1603": {
+      "merge_into": "KINE M1596",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1589": {
+      "merge_into": "KINE M1596",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1596": {
+      "unified_title": "Physical Fitness",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1584": {
+      "merge_into": "KINE M1582",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1582": {
+      "unified_title": "Lifelong Fitness Lab",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1590": {
+      "merge_into": "KINE M1586",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1586": {
+      "unified_title": "Fitness for Life",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1577": {
+      "merge_into": "KINE M1305",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1284": {
+      "merge_into": "KINE M1305",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "KINE M1305": {
+      "unified_title": "Walking/Jogging for Fitness — Beginning",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1022": {
+      "merge_into": "ATHL M1021",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1256": {
+      "merge_into": "ATHL M1021",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1021": {
+      "unified_title": "Intercollegiate Badminton — Women",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1005": {
+      "merge_into": "ATHL M1028",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1029": {
+      "merge_into": "ATHL M1028",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1031": {
+      "merge_into": "ATHL M1028",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1032": {
+      "merge_into": "ATHL M1028",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1258": {
+      "merge_into": "ATHL M1028",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1261": {
+      "merge_into": "ATHL M1028",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1264": {
+      "merge_into": "ATHL M1028",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1028": {
+      "unified_title": "Intercollegiate Baseball",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1045": {
+      "merge_into": "ATHL M1047",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1059": {
+      "merge_into": "ATHL M1047",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1060": {
+      "merge_into": "ATHL M1047",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1228": {
+      "merge_into": "ATHL M1047",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1270": {
+      "merge_into": "ATHL M1047",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1271": {
+      "merge_into": "ATHL M1047",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1047": {
+      "unified_title": "Intercollegiate Basketball — Men",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1052": {
+      "merge_into": "ATHL M1053",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1057": {
+      "merge_into": "ATHL M1053",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1062": {
+      "merge_into": "ATHL M1053",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1064": {
+      "merge_into": "ATHL M1053",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1229": {
+      "merge_into": "ATHL M1053",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1269": {
+      "merge_into": "ATHL M1053",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1274": {
+      "merge_into": "ATHL M1053",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1275": {
+      "merge_into": "ATHL M1053",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1053": {
+      "unified_title": "Intercollegiate Basketball — Women",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1066": {
+      "merge_into": "ATHL M1067",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1068": {
+      "merge_into": "ATHL M1067",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1069": {
+      "merge_into": "ATHL M1067",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1279": {
+      "merge_into": "ATHL M1067",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1067": {
+      "unified_title": "Intercollegiate Beach Volleyball",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1102": {
+      "merge_into": "ATHL M1093",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1230": {
+      "merge_into": "ATHL M1093",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1307": {
+      "merge_into": "ATHL M1093",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1308": {
+      "merge_into": "ATHL M1093",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1093": {
+      "unified_title": "Intercollegiate Cross Country — Men",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1104": {
+      "merge_into": "ATHL M1101",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1231": {
+      "merge_into": "ATHL M1101",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1309": {
+      "merge_into": "ATHL M1101",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1310": {
+      "merge_into": "ATHL M1101",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1101": {
+      "unified_title": "Intercollegiate Cross Country — Women",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1132": {
+      "merge_into": "ATHL M1131",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1131": {
+      "unified_title": "Intercollegiate Flag Football — Women",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1011": {
+      "merge_into": "ATHL M1135",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1136": {
+      "merge_into": "ATHL M1135",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1141": {
+      "merge_into": "ATHL M1135",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1142": {
+      "merge_into": "ATHL M1135",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1232": {
+      "merge_into": "ATHL M1135",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1321": {
+      "merge_into": "ATHL M1135",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1322": {
+      "merge_into": "ATHL M1135",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1325": {
+      "merge_into": "ATHL M1135",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1135": {
+      "unified_title": "Intercollegiate Football",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1145": {
+      "merge_into": "ATHL M1328",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1329": {
+      "merge_into": "ATHL M1328",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1328": {
+      "unified_title": "Intercollegiate Golf — Men",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1146": {
+      "merge_into": "ATHL M1144",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1144": {
+      "unified_title": "Intercollegiate Golf — Women",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1204": {
+      "merge_into": "ATHL M1175",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1234": {
+      "merge_into": "ATHL M1175",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1332": {
+      "merge_into": "ATHL M1175",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1336": {
+      "merge_into": "ATHL M1175",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1337": {
+      "merge_into": "ATHL M1175",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1175": {
+      "unified_title": "Intercollegiate Soccer — Men",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1210": {
+      "merge_into": "ATHL M1194",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1237": {
+      "merge_into": "ATHL M1194",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1333": {
+      "merge_into": "ATHL M1194",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1352": {
+      "merge_into": "ATHL M1194",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1355": {
+      "merge_into": "ATHL M1194",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1194": {
+      "unified_title": "Intercollegiate Soccer — Women",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1014": {
+      "merge_into": "ATHL M1195",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1191": {
+      "merge_into": "ATHL M1195",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1196": {
+      "merge_into": "ATHL M1195",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1211": {
+      "merge_into": "ATHL M1195",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1215": {
+      "merge_into": "ATHL M1195",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1282": {
+      "merge_into": "ATHL M1195",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1357": {
+      "merge_into": "ATHL M1195",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1358": {
+      "merge_into": "ATHL M1195",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1195": {
+      "unified_title": "Intercollegiate Softball",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1176": {
+      "merge_into": "ATHL M1338",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1338": {
+      "unified_title": "Intercollegiate Swimming — Men",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1198": {
+      "merge_into": "ATHL M1360",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1360": {
+      "unified_title": "Intercollegiate Swimming — Women",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1109": {
+      "merge_into": "ATHL M1106",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1106": {
+      "unified_title": "Intercollegiate Swimming and Diving — Men",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1110": {
+      "merge_into": "ATHL M1108",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1108": {
+      "unified_title": "Intercollegiate Swimming and Diving — Women",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1205": {
+      "merge_into": "ATHL M1177",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1341": {
+      "merge_into": "ATHL M1177",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1177": {
+      "unified_title": "Intercollegiate Tennis — Men",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1216": {
+      "merge_into": "ATHL M1199",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1364": {
+      "merge_into": "ATHL M1199",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1199": {
+      "unified_title": "Intercollegiate Tennis — Women",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1116": {
+      "merge_into": "ATHL M1115",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1123": {
+      "merge_into": "ATHL M1115",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1316": {
+      "merge_into": "ATHL M1115",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1115": {
+      "unified_title": "Intercollegiate Track and Field — Men",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1122": {
+      "merge_into": "ATHL M1121",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1124": {
+      "merge_into": "ATHL M1121",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1121": {
+      "unified_title": "Intercollegiate Track and Field — Women",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1340": {
+      "merge_into": "ATHL M1178",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1178": {
+      "unified_title": "Intercollegiate Volleyball — Men",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1192": {
+      "merge_into": "ATHL M1201",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1212": {
+      "merge_into": "ATHL M1201",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1238": {
+      "merge_into": "ATHL M1201",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1362": {
+      "merge_into": "ATHL M1201",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1365": {
+      "merge_into": "ATHL M1201",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1201": {
+      "unified_title": "Intercollegiate Volleyball — Women",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1203": {
+      "merge_into": "ATHL M1174",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1233": {
+      "merge_into": "ATHL M1174",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1334": {
+      "merge_into": "ATHL M1174",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1335": {
+      "merge_into": "ATHL M1174",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1174": {
+      "unified_title": "Intercollegiate Water Polo — Men",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1209": {
+      "merge_into": "ATHL M1190",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1236": {
+      "merge_into": "ATHL M1190",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1348": {
+      "merge_into": "ATHL M1190",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1350": {
+      "merge_into": "ATHL M1190",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "ATHL M1190": {
+      "unified_title": "Intercollegiate Water Polo — Women",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:31:51.123456+00:00"
+    },
+    "BIOL M90BD": {
+      "merge_into": "BIOL M90BE",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "ECON M9003": {
+      "merge_into": "ECON M9002",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M9036": {
+      "merge_into": "IDST M9035",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M9044": {
+      "merge_into": "IDST M90EE",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90BE": {
+      "merge_into": "IDST M9022",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90CJ": {
+      "merge_into": "IDST M9029",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90CY": {
+      "merge_into": "IDST M9030",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90DY": {
+      "merge_into": "IDST M90EB",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90EH": {
+      "merge_into": "IDST M90EL",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90GA": {
+      "merge_into": "IDST M90GB",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90LA": {
+      "merge_into": "IDST M9086",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90LV": {
+      "merge_into": "IDST M9035",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90OS": {
+      "merge_into": "IDST M90OR",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90OZ": {
+      "merge_into": "IDST M90PA",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90PN": {
+      "merge_into": "IDST M90PR",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90PQ": {
+      "merge_into": "IDST M9108",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90SI": {
+      "merge_into": "IDST M90SJ",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90VM": {
+      "merge_into": "IDST M90VQ",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M90WH": {
+      "merge_into": "IDST M90WI",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M9135": {
+      "merge_into": "IDST M90SF",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M91BB": {
+      "merge_into": "IDST M91BC",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M91BD": {
+      "merge_into": "IDST M91BE",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M91BW": {
+      "merge_into": "IDST M91CF",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M91DC": {
+      "merge_into": "IDST M9239",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M91FJ": {
+      "merge_into": "IDST M91FK",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M91GL": {
+      "merge_into": "IDST M91HD",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M91GS": {
+      "merge_into": "IDST M91KM",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M91GT": {
+      "merge_into": "IDST M91LI",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M91GU": {
+      "merge_into": "IDST M9310",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M91HG": {
+      "merge_into": "IDST M90BK",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M9264": {
+      "merge_into": "IDST M9263",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M9267": {
+      "merge_into": "IDST M91HE",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M9275": {
+      "merge_into": "IDST M91LZ",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "IDST M9277": {
+      "merge_into": "IDST M91MN",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
+    },
+    "PSYC M9006": {
+      "merge_into": "PSYC M9008",
+      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T20:36:18.654321+00:00"
     }
   }
 }

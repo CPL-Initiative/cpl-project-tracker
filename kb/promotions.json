@@ -31044,7 +31044,8 @@
   "kb/twin_merge_out/2026-06-10/alias_map.json",
   "kb/twin_merge_out/2026-06-12/alias_map.json",
   "kb/subj4_fold_out/2026-06-12/alias_map.json",
-  "kb/twin_merge_out/2026-06-12-postfold/alias_map.json"
+  "kb/twin_merge_out/2026-06-12-postfold/alias_map.json",
+  "kb/kin_pe_pass2_out/2026-06-12/alias_map.json"
  ],
  "_rekey_note": "keys re-keyed to current ids through the applied alias chain (chronological single-step per map — an alias map is a simultaneous permutation, never iterated; see the module docstring of kb/_rekey_promotions.py); folded keys sum witnesses; _unresolved entries kept for investigation; receipt: kb/promotions_rekey_out/"
 }

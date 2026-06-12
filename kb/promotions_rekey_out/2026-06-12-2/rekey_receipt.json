@@ -1,0 +1,23 @@
+{
+ "date": "2026-06-12",
+ "baseline": "kb/promotions.json",
+ "maps_applied": [
+  "kb/kin_pe_pass2_out/2026-06-12/alias_map.json"
+ ],
+ "witness_total": 9826,
+ "targets": 446,
+ "stamp_gate": {
+  "checked": 0,
+  "conflicts": 0
+ },
+ "counts": {
+  "rekeyed": 0,
+  "folded": 0,
+  "unresolved": 0,
+  "unchanged": 1986
+ },
+ "rekeyed": [],
+ "folded": [],
+ "unresolved": [],
+ "unchanged": 1986
+}

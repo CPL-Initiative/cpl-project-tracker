@@ -122,7 +122,7 @@ into the Pipeline Reference below or into dedicated docs.
    dead — those aliases preserved in `kb/remint_out/alias_map.json`. Full
    decisions + validation methodology:
    [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
-   Latest instance: the **2026-06-12 canonical-SUBJ4 fold** (Session 50) —
+   Latest instance: **KIN/PE pass 2** (Session 51, 2026-06-12 — `kb/_kin_pe_pass2.py`, 1,057 re-keys, receipts `kb/kin_pe_pass2_out/2026-06-12/`; lexicon alias-guard `kb/_alias_canon.py` now mandatory on every fan-in). Prior: the **2026-06-12 canonical-SUBJ4 fold** (Session 50) —
    71,037-alias permutation, receipts `kb/subj4_fold_out/2026-06-12/`,
    apply == dry-run spec via the shared `compute_plan()` allocator
    (`kb/_subj4_apply.py`), downstream chain driven by
@@ -1411,15 +1411,15 @@ Read-only auditor over every M-ID + Cluster. Per row, produces a Trust Card:
   missing / conflicting / not_yet_captured.
 - **Readiness tiers:** ready (≥0.85) / needs_review (≥0.65) /
   needs_repair (≥0.40) / not_ready.
-- **Rule tags + counts (refreshed 2026-06-12 evening, Session 50 — after the canonical-SUBJ4 fold + post-fold twins; 15,551 cards):**
-  - `seed_untouched_discipline` (**10,512**) — Phase B subject_map draft never reviewed (Phase 1a)
+- **Rule tags + counts (refreshed 2026-06-12 night, Session 51 — after KIN/PE pass 2 + the merge curation; 15,515 parents):**
+  - `seed_untouched_discipline` (**10,599**) — Phase B subject_map draft never reviewed (Phase 1a)
   - `subject_collision_signal` (**3**, was 1,206 — **the fold's receipt**: every disciplined M-ID re-keyed to its curator-confirmed canonical SUBJ4 on 2026-06-12, Session 50. The 3 residuals are the cross-discipline curated re-keys — `ARTH M1022` ex-`ARTS M1159`, `BUSI M9038/M9039` ex-`CISC M9029/M9030` — whose BASELINE file discipline (Art / Computer Science) disagrees with the curated one the fold honored; the rule reads baseline, so these are honest, bounded flags. History: 0 → 1,076 (2026-06-09 coarse TOP-division fill) → 1,210 (Session-45 homonym repair) → 1,206 (twins) → **3** (the fold)) — Phase 1e CLOSED
-  - `unit_anomaly` (**4,189**, was 4,194) — typical_units represents <50% of member colleges (member-unit variance is high, possible over-merge across different unit-load variants); ~71% of flags are 2-member splits like `[3.0, 0.0]` (credit vs noncredit drift in the same M-ID) (Phase 1c)
+  - `unit_anomaly` (**4,179**, was 4,189) — typical_units represents <50% of member colleges (member-unit variance is high, possible over-merge across different unit-load variants); ~71% of flags are 2-member splits like `[3.0, 0.0]` (credit vs noncredit drift in the same M-ID) (Phase 1c)
   - `member_top_divergence` (**1,253**, was 1,255) — an M-ID's member colleges carry TOP codes spanning ≥2 broad (2-digit) divisions with ≥30% minority share: the **cross-discipline over-merge** detector (a generic title — "Ethics and Leadership", "Undergraduate Research Experience" — minted courses from different program areas under one identity). It closes a real gap: `top_discipline_disagreement` only checks the M-ID's single *representative* TOP, so it missed the case where the *members* diverge but the representative matches (the motivating case lives in the CRIM family). 2-digit division grouping inherently suppresses sister-discipline noise — no SISTER_PAIRS needed. Surfaces for review, not a verdict (TOP codes vary by college). (Phase 1c)
-  - `top_discipline_disagreement` (**916** — twins; Session 45's homonym repair brought it 960 → 926; was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
+  - `top_discipline_disagreement` (**901** — pass 2; Session 45's homonym repair brought it 960 → 926; was 2,201 before SISTER_PAIRS) — TOP code → different discipline than assigned (Phase 1c)
   - `blank_description` (**1,701**, was 1,704) — Phase 1a
   - `blank_discipline` (**82** — a few Session-45 retractions had no honest re-fill; 1,266 pre-2026-06-09) — Phase 1a; the coarse TOP-division fill cleared the minted-parent blank tail; residual = the no-honest-umbrella divisions
-  - `discipline_title_mismatch` (**687** — twins; Session 45 repair brought it 773 → 712) — title shares 0 tokens with assigned discipline AND ≥2 with some other (Phase 1c)
+  - `discipline_title_mismatch` (**757** — grew with pass 2: sports-roster titles vs Kinesiology are honest umbrella noise; Session 45 repair brought it 773 → 712) — title shares 0 tokens with assigned discipline AND ≥2 with some other (Phase 1c)
   - `description_discipline_disagreement` (**73**, was 75) — description's safe-phrase set points elsewhere with ≥2 mentions (Phase 1c)
   - `generic_title_concrete_discipline` (44) — title is course-format generic; can't justify a specific discipline (Phase 1c)
   - `mid_id_off_scheme` (**1** — `F M1002`, blank-discipline; unfoldable until disciplined. `N M9001` gained an honest Social Science discipline and folded to `SOCS M9003` in the 2026-06-12 fold) — was 27 pre-2026-05-23
@@ -1552,7 +1552,7 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > locked decisions verbatim. Searching the archive for an id (e.g. "FLSP
 > M1379", "#310") is usually faster than re-deriving from code.
 
-> **Session 41 + 42 + 43 + 44 + 45 + 46 + 48 narratives archived** → `docs/roadmap_archive.md`
+> **Session 41 + 42 + 43 + 44 + 45 + 46 + 48 + 49 narratives archived** → `docs/roadmap_archive.md`
 > (witness-kinship gate + R4 singletons; the slot-fix + C-ID authority +
 > Phase-1 router; Starlord's cron-verify + off-pane-columns fix; Statewide
 > Exhibits KPI + program-area categories + KPI reorder; CCR rules day —
@@ -1562,25 +1562,6 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > To-Do feed + the fold dry-run #388/#389/#402/#405; Glasstronaut's First
 > Light design sprint #391–#404 — the daily plein air greeting LIVE + the
 > v1.6 glass-quiet theme spec BLESSED).
-
-### Session 49 (Bruh Orbitron) — the First Light retheme SHIPPED to prod (2026-06-12)
-
-The v1.6 spec painted onto the live dashboard, three PRs merged + dispatched
-same-afternoon: **#407** the palette flip (`:root` value-swap in BOTH HTMLs +
-legacy navy/gold aliases remapped; contextual legacy-hex sweep across the
-styleblock, body, `excel_to_dashboard.py` in Rule-1 lockstep, the College
-Activity template, and ~20 JS assets; canvas/SVG get literal hexes — `var()`
-doesn't resolve there; `check_contrast.py --live` CI lint + 27-pin
-`tests/retheme_tokens.test.js`); **#408** glass chrome (masthead/rail/KPI
-hero/filter bar) + the ghosted painting (`first_light.js` `.cplfl-bg`,
-opt-out-aware) + `prefers-reduced-transparency`/`contrast` honored — dark
-trend/College-Activity cards deliberately stay ink; **#410** glass-quiet
-chips (CCR `.uc-badge`, CSR `.cs-badge`, CER `.cr-chip` — Generated rides
-VIOLET now — To-Do FAB → cobalt). Word-docx/xlsx export branding + the
-Element Map deliberately untouched. Lessons: `docs/first_light_lessons.md`
-(Session 49); KB note: `methodology-token-retheme-on-generated-html`.
-**NEXT (design lane): `docs/session_52_handoff.md`** — Sam's screenshot
-verdicts, kpi_reorder keyboard path, per-tab polish.
 
 ### Session 50 — Bruh Dawnleader: the SUBJ4 canonical fold APPLIED (2026-06-12)
 
@@ -1598,6 +1579,26 @@ mechanism-style). Receipts `kb/subj4_fold_out/2026-06-12/`. Full story:
 `docs/ccr_cluster_cleanup_lessons.md` (Session 50); KB note:
 `methodology-apply-equals-spec-via-shared-allocator.md`. **NEXT: the CCR
 Subject-dropdown grouping** (`docs/session_51_handoff.md`).
+
+
+### Session 51 — the KINE/ATHL cleanup night: KIN/PE pass 2 + the merging night (2026-06-12)
+
+Sam-interactive (his CCR/CSR screenshots + 5 live follow-ups). PRs #412–#415.
+**Root cause repaired:** the 2026-06-10 fan-ins never re-pointed the inference
+lexicons → re-derivation resurrected "Physical Education" (605 rows → Sam's PEDU
+pin) + "Theater Arts" (147). Lexicons re-pointed (bare `intercollegiate` DROPPED),
+`kb/_alias_canon.py` guards all 4 passes, `kb/_kin_pe_pass2.py` re-keyed **1,057
+ids** (PEDU dissolved; refined athletics rule = modal TOP 0835.50 minus
+instruction-exceptions → 552 rows to ATHL; flips stamped manual). 19,739 titles
+normalized (Title Case / romans→digits / "(formerly…)" cut); **205 curation
+merges** mirrored to Supabase (26 roster families + Sam's fitness set + 35
+HS-title folds; analysis receipts `kb/kin_pe_pass2_out/2026-06-12/`). #415 fixed
+the lost-worklist-saves bug (overlay fetched only discipline rows) + added
+**Keep-as-is** + CCR Subject optgroups; #414 the CSR tweaks; #413 re-pinned the 6
+post-fold-stale test files (35/35). Full story:
+`docs/ccr_cluster_cleanup_lessons.md` (Session 51); KB note:
+`methodology-fanin-alias-lexicon-contamination.md`. **NEXT:
+`docs/session_53_handoff.md`** (verify regen; the FLAGGED family queues).
 
 
 ---

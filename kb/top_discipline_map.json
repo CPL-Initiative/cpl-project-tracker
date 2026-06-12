@@ -37,10 +37,10 @@
     "0707.10": "Computer Science",
     "0708.00": "Computer Information Systems",
     "0708.10": "Computer Information Systems",
-    "0835.00": "Physical Education",
-    "0835.10": "Physical Education",
-    "0835.50": "Physical Education",
-    "0835.80": "Physical Education",
+    "0835.00": "Kinesiology",
+    "0835.10": "Kinesiology",
+    "0835.50": "Kinesiology",
+    "0835.80": "Physical Education Disabled Students",
     "0837.00": "Health",
     "0850.10": "Sign Language/ English Interpreting",
     "0860.00": "Instructional Design/Technology",
@@ -68,7 +68,7 @@
     "1004.00": "Music",
     "1005.00": "Commercial Music",
     "1006.00": "Stagecraft",
-    "1007.00": "Theater Arts",
+    "1007.00": "Drama/Theater Arts",
     "1030.00": "Graphic Arts",
     "1208.00": "Health Care Ancillaries",
     "1210.00": "Respiratory Technologies",
@@ -105,5 +105,6 @@
     "2207.00": "Political Science",
     "4930.86": "English as a Second Language",
     "4930.87": "English as a Second Language"
-  }
+  },
+  "_revision_note_2026_06_12": "Session 51 fan-in alias repair: 0835.00/.10/.50 -> Kinesiology, 0835.80 (Adapted PE) -> Physical Education Disabled Students, 1007.00 -> Drama/Theater Arts. Folded alternate names must never be inference targets (kb/_alias_canon.py guards)."
 }

@@ -1,0 +1,15 @@
+{
+ "generated_at": "2026-06-12T20:20:28.008788",
+ "ops": [
+  {
+   "op": "delete_canon_pin",
+   "course_id": "_CANON_SUBJ4::Physical Education",
+   "why": "discipline folded to zero rows again; pin was the Session-50 parking lot"
+  },
+  {
+   "op": "delete_canon_pin",
+   "course_id": "_CANON_SUBJ4::Theater Arts",
+   "why": "discipline folded to zero rows again"
+  }
+ ]
+}

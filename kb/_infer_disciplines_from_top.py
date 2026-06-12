@@ -46,6 +46,12 @@ def dump(name, obj):
 def main():
     valid = set(load(os.path.join("reference", "mq_disciplines.json"))["disciplines"])
     topmap = load("top_discipline_map.json")["map"]
+    # Alias guard: a folded alternate discipline name must never be a target
+    # (it resurrects the folded discipline — the PEDU incident, Session 51).
+    from _alias_canon import alternate_to_canonical, resolve_target
+    _rev = alternate_to_canonical()
+    topmap = {c: resolve_target(d, _rev, f"top_discipline_map[{c}]")
+              for c, d in topmap.items()}
     bad = {d for d in topmap.values() if d not in valid}
     if bad:
         print("ABORT — top_discipline_map targets not in reference/mq_disciplines.json:")

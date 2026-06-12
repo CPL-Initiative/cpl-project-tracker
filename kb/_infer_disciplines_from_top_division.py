@@ -60,6 +60,12 @@ def discipline_for(record, divmap):
 def main():
     valid = set(load(os.path.join("reference", "mq_disciplines.json"))["disciplines"])
     divmap = load("top_division_discipline_map.json")["map"]
+    # Alias guard: a folded alternate discipline name must never be a target
+    # (it resurrects the folded discipline — the PEDU incident, Session 51).
+    from _alias_canon import alternate_to_canonical, resolve_target
+    _rev = alternate_to_canonical()
+    divmap = {c: resolve_target(d, _rev, f"top_division_discipline_map[{c}]")
+              for c, d in divmap.items()}
     bad = {d for d in divmap.values() if d not in valid}
     if bad:
         print("ABORT — top_division_discipline_map targets not in reference/mq_disciplines.json:")

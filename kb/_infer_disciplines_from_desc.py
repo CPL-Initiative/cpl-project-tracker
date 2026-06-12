@@ -106,6 +106,12 @@ def load_details():
 
 def main():
     valid = set(load(os.path.join(HERE, "reference", "mq_disciplines.json"))["disciplines"])
+    # Alias guard: a folded alternate discipline name must never be a target
+    # (it resurrects the folded discipline — the PEDU incident, Session 51).
+    from _alias_canon import alternate_to_canonical, resolve_target
+    _rev = alternate_to_canonical()
+    globals()["SAFE_PHRASES"] = [(terms, resolve_target(d, _rev, f"SAFE_PHRASES[{terms[0]}]"))
+                                 for terms, d in SAFE_PHRASES]
     bad = {d for _, d in SAFE_PHRASES if d not in valid}
     if bad:
         print("ABORT — phrase targets not in reference/mq_disciplines.json:")
