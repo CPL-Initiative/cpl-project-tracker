@@ -945,7 +945,7 @@
       "_notes": null
     },
     "Barbering": {
-      "canonical_subj4": "COSM",
+      "canonical_subj4": "BARB",
       "source": "curator_override",
       "data_modal": "BARB",
       "data_modal_is_4letter": true,
@@ -1838,7 +1838,7 @@
       "_notes": null
     },
     "Computer Information Systems": {
-      "canonical_subj4": "CISC",
+      "canonical_subj4": "CSIS",
       "source": "curator_override",
       "data_modal": "CIS",
       "data_modal_is_4letter": false,
@@ -2551,7 +2551,7 @@
       "_notes": null
     },
     "Diagnostic Medical Technology": {
-      "canonical_subj4": "RADT",
+      "canonical_subj4": "SONO",
       "source": "curator_override",
       "data_modal": "DMS",
       "data_modal_is_4letter": false,
@@ -2887,7 +2887,7 @@
       "_notes": null
     },
     "Drama/Theater Arts": {
-      "canonical_subj4": "THEA",
+      "canonical_subj4": "DRAM",
       "source": "curator_override",
       "data_modal": "THEA",
       "data_modal_is_4letter": true,
@@ -2951,8 +2951,8 @@
       "cte_unknown_n": 1,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-06-10T18:41:17.972235+00:00",
-      "reviewed_by": "MAP@rccd.edu",
+      "reviewed_at": "2026-06-12T14:29:15.876275+00:00",
+      "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
       "_notes": "Set by the 2026-06-10 fan-in convergence (Sam's decision; docs/kin_pe_convergence_scope.md / Drama-Theater apply)."
@@ -3394,7 +3394,7 @@
       "_notes": null
     },
     "Electronics": {
-      "canonical_subj4": "ELEC",
+      "canonical_subj4": "ELET",
       "source": "curator_override",
       "data_modal": "ELEC",
       "data_modal_is_4letter": true,
@@ -3802,7 +3802,7 @@
       "_notes": null
     },
     "English as a Second Language Noncredit 53412": {
-      "canonical_subj4": "ESOL",
+      "canonical_subj4": "ESLN",
       "source": "curator_override",
       "data_modal": "ESL NC",
       "data_modal_is_4letter": false,
@@ -5110,7 +5110,7 @@
       "_notes": null
     },
     "Health Care Ancillaries": {
-      "canonical_subj4": "HLTH",
+      "canonical_subj4": "HTEC",
       "source": "curator_override",
       "data_modal": "MEDA",
       "data_modal_is_4letter": true,
@@ -5870,7 +5870,7 @@
       "_notes": null
     },
     "Instructional Design/Technology": {
-      "canonical_subj4": "INDT",
+      "canonical_subj4": "EDTC",
       "source": "curator_override",
       "data_modal": "LINC",
       "data_modal_is_4letter": true,
@@ -5910,7 +5910,7 @@
       "_notes": null
     },
     "Interdisciplinary Studies": {
-      "canonical_subj4": "INTD",
+      "canonical_subj4": "IDST",
       "source": "curator_override",
       "data_modal": "DSSS",
       "data_modal_is_4letter": true,
@@ -6280,7 +6280,7 @@
       "_notes": null
     },
     "Interdisciplinary-Basic Skills: Noncredit 53412": {
-      "canonical_subj4": "INTD",
+      "canonical_subj4": "BSKL",
       "source": "curator_override",
       "data_modal": "BSICSKL",
       "data_modal_is_4letter": false,
@@ -7566,7 +7566,7 @@
       "_notes": null
     },
     "Nutritional Science/Dietetics": {
-      "canonical_subj4": "NUTR",
+      "canonical_subj4": "FDNT",
       "source": "curator_override",
       "data_modal": "NF",
       "data_modal_is_4letter": false,
@@ -8247,7 +8247,7 @@
       "_notes": "Set by the 2026-06-10 fan-in convergence (Sam's decision; docs/kin_pe_convergence_scope.md / Drama-Theater apply)."
     },
     "Physical Sciences": {
-      "canonical_subj4": "PHYS",
+      "canonical_subj4": "PHSC",
       "source": "curator_override",
       "data_modal": "PHSC",
       "data_modal_is_4letter": true,
@@ -10226,6 +10226,6 @@
       "_notes": null
     }
   },
-  "_synced_at": "2026-06-12T13:45:05Z",
+  "_synced_at": "2026-06-12T17:17:34Z",
   "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
 }
