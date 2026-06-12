@@ -121,10 +121,26 @@
   // saves were sitting in Supabase the whole time (the 2026-06-12 "merges didn't
   // save" report — they had; the read-back was missing). disc keeps the original
   // course_id -> row shape; merges/titles feed the startup replay.
+  // PostgREST caps one response at 1,000 rows (db-max-rows). The curation
+  // table crossed that on 2026-06-12 (auto-merge pass 1: +5,838 rows), which
+  // silently truncated the live overlay to an arbitrary first-1,000 subset.
+  // Page with Range headers + a stable order until a short page.
+  function fetchAllRows(query) {
+    var PAGE = 1000;
+    function page(start, acc) {
+      return fetch(SUPABASE_URL + query, {
+        headers: { "apikey": SUPABASE_ANON, "Range-Unit": "items",
+                   "Range": start + "-" + (start + PAGE - 1) } })
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (batch) {
+          acc = acc.concat(batch);
+          return batch.length < PAGE ? acc : page(start + PAGE, acc);
+        });
+    }
+    return page(0, []);
+  }
   function fetchOverlay() {
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewer_email,reviewed_at&field=in.(discipline,merge_into,unified_title)",
-      { headers: { "apikey": SUPABASE_ANON } })
-      .then(function (r) { return r.ok ? r.json() : []; })
+    return fetchAllRows("/rest/v1/kb_curation?select=course_id,field,value,reviewer_email,reviewed_at&field=in.(discipline,merge_into,unified_title)&order=course_id.asc,field.asc")
       .then(function (arr) {
         var out = { disc: {}, merges: [], titles: {} };
         arr.forEach(function (x) {
@@ -142,9 +158,7 @@
   // a group's membership, its CURRENT signature differs from the stored one and
   // the group legitimately re-offers — that's by design, not a bug.
   function fetchDismissals() {
-    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,value&field=eq.merge_dismissed",
-      { headers: { "apikey": SUPABASE_ANON } })
-      .then(function (r) { return r.ok ? r.json() : []; })
+    return fetchAllRows("/rest/v1/kb_curation?select=course_id,value&field=eq.merge_dismissed&order=course_id.asc")
       .then(function (arr) {
         var s = {};
         arr.forEach(function (x) { if (x.value) s[x.value] = 1; });

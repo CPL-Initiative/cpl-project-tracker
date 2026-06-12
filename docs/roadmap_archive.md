@@ -1311,3 +1311,20 @@ Element Map deliberately untouched. Lessons: `docs/first_light_lessons.md`
 (Session 49); KB note: `methodology-token-retheme-on-generated-html`.
 **NEXT (design lane): `docs/session_52_handoff.md`** — Sam's screenshot
 verdicts, kpi_reorder keyboard path, per-tab polish.
+
+### Session 50 — Bruh Dawnleader: the SUBJ4 canonical fold APPLIED (2026-06-12)
+
+The Rule-7 apply of dry-run #405, one PR, landed in the evening cron window.
+**71,037-alias permutation, 48,820 id moves** (10,974 SUBJ4 re-keys + bucket
+re-sequencing) across minted/singletons/memberships/articulations/curation +
+**119 Supabase ops** (md5-verified, PK-order simulated); plan recomputed at
+apply == frozen reviewed plan byte-identical (`compute_plan()` shared with the
+dry-run); post-fold twin pass +19 (15,535 parents); chain
+(`kb/_post_apply_chain.py`): promotions 1,678 re-keyed/0 unresolved/V5 clean,
+CSR re-seed, audit — **`subject_collision_signal` 1,206 → 3** (documented
+baseline-vs-overlay residuals), `mid_id_off_scheme` → 1; receipts re-run (415
+desc / 5,581 title); fold-verify re_key 0; suite 34/34 (title-lane pins →
+mechanism-style). Receipts `kb/subj4_fold_out/2026-06-12/`. Full story:
+`docs/ccr_cluster_cleanup_lessons.md` (Session 50); KB note:
+`methodology-apply-equals-spec-via-shared-allocator.md`. **NEXT: the CCR
+Subject-dropdown grouping** (`docs/session_51_handoff.md`).

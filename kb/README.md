@@ -481,3 +481,21 @@ training agency is 0.60 confident — keep them separate.
   workbook and live metrics.
 - Anything from the daily KPI snapshot. Lives in
   `kpi_history.json`.
+
+## Auto-merge pass 1 (Session 53, 2026-06-12)
+
+`kb/_auto_merge_worklist.py` — DRY-RUN planner for bulk-applying the
+dependable suggested-merge lanes (anchored same-title + cross-college
+singleton mints; band-purity/same-college/dismissal/contested gates; titles
+regularized deterministically via `_normalize_common_titles.normalize` + the
+Honors rule; write shape mirrors the CCR Confirm button, never a discipline
+row). Receipts + the applied plan + audit trail: `kb/automerge_out/<date>/`
+(plan.json `_status` restamped APPLIED; apply_log.json). Cohort marker
+`reviewer_email='automerge-v1@bot'` — the second-look / bulk-revert handle.
+Pattern doc: `docs/kb-notes/playbook-gated-bulk-autocuration.md`.
+
+`kb/coci_title_corrections.json` — the COCI source-correction queue: raw
+college course titles carrying encoding artifacts (mojibake), repaired for
+display by `excel_to_dashboard.py _fix_text_encoding()` (member rows flag
+`e:1` → the CCR "⚠ fix in COCI" chip). Regenerated each daily run;
+deterministic; rows leave as colleges fix their source records.
