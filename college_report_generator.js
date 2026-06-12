@@ -121,7 +121,7 @@
         html += '<div style="max-width:760px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">';
 
         // Header
-        html += '<div style="background:linear-gradient(135deg,#0A2240 0%,#163A5F 100%);padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">';
+        html += '<div style="background:linear-gradient(135deg,var(--navy-primary) 0%,var(--navy-secondary) 100%);padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">';
         html += '<h2 style="margin:0;color:#fff;font-size:1.1rem;">College Custom Report Generator</h2>';
         html += '<button id="collegeReportModalClose" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:0;line-height:1;">&times;</button>';
         html += '</div>';
@@ -130,7 +130,7 @@
 
         // Audience picker
         html += '<div style="margin-bottom:1.2rem;">';
-        html += '<label style="font-weight:700;color:#0A2240;font-size:0.9rem;display:block;margin-bottom:0.4rem;">Target Audience</label>';
+        html += '<label style="font-weight:700;color:var(--text-strong);font-size:0.9rem;display:block;margin-bottom:0.4rem;">Target Audience</label>';
         html += '<select id="collegeReportAudience" style="width:100%;padding:8px 12px;border:1px solid #ccc;border-radius:4px;font-size:0.85rem;font-family:inherit;">';
         AUDIENCES.forEach(function (a) {
             html += '<option value="' + a.id + '">' + a.label + '</option>';
@@ -139,12 +139,12 @@
 
         // Selection controls
         html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;flex-wrap:wrap;gap:0.4rem;">';
-        html += '<label style="font-weight:700;color:#0A2240;font-size:0.9rem;">Select Colleges</label>';
+        html += '<label style="font-weight:700;color:var(--text-strong);font-size:0.9rem;">Select Colleges</label>';
         html += '<div style="display:flex;gap:0.4rem;flex-wrap:wrap;">';
         html += '<button class="crpt-sel-btn" data-action="all"      style="font-size:0.72rem;padding:3px 8px;border:1px solid #ccc;border-radius:3px;background:#f5f5f5;cursor:pointer;font-family:inherit;">All</button>';
         html += '<button class="crpt-sel-btn" data-action="filtered" style="font-size:0.72rem;padding:3px 8px;border:1px solid #ccc;border-radius:3px;background:#f5f5f5;cursor:pointer;font-family:inherit;">Currently Filtered</button>';
-        html += '<button class="crpt-sel-btn" data-action="leading"  style="font-size:0.72rem;padding:3px 8px;border:1px solid #C9A84C;border-radius:3px;background:#fff8e6;cursor:pointer;font-family:inherit;color:#8a6a14;">Leading</button>';
-        html += '<button class="crpt-sel-btn" data-action="stars"    style="font-size:0.72rem;padding:3px 8px;border:1px solid #C9A84C;border-radius:3px;background:#fff8e6;cursor:pointer;font-family:inherit;color:#8a6a14;">Star Colleges</button>';
+        html += '<button class="crpt-sel-btn" data-action="leading"  style="font-size:0.72rem;padding:3px 8px;border:1px solid var(--mustard-fill);border-radius:3px;background:#fff8e6;cursor:pointer;font-family:inherit;color:var(--mustard-text);">Leading</button>';
+        html += '<button class="crpt-sel-btn" data-action="stars"    style="font-size:0.72rem;padding:3px 8px;border:1px solid var(--mustard-fill);border-radius:3px;background:#fff8e6;cursor:pointer;font-family:inherit;color:var(--mustard-text);">Star Colleges</button>';
         html += '<button class="crpt-sel-btn" data-action="none"     style="font-size:0.72rem;padding:3px 8px;border:1px solid #ccc;border-radius:3px;background:#f5f5f5;cursor:pointer;font-family:inherit;">Clear</button>';
         html += '</div></div>';
 
@@ -153,7 +153,7 @@
             var list = grouped[tier];
             if (!list.length) return;
             html += '<div style="margin-bottom:0.8rem;border:1px solid #e8e8e8;border-radius:6px;overflow:hidden;">';
-            html += '<div style="padding:0.4rem 0.8rem;background:#f0f4f8;font-weight:700;color:#0A2240;font-size:0.85rem;display:flex;justify-content:space-between;align-items:center;">';
+            html += '<div style="padding:0.4rem 0.8rem;background:#f0f4f8;font-weight:700;color:var(--text-strong);font-size:0.85rem;display:flex;justify-content:space-between;align-items:center;">';
             html += '<span>' + tier + ' <span style="color:#666;font-weight:400;">(' + list.length + ')</span></span>';
             html += '<button type="button" class="crpt-tier-toggle" data-tier="' + tier + '" style="font-size:0.7rem;padding:2px 8px;border:1px solid #aaa;border-radius:3px;background:#fff;cursor:pointer;font-family:inherit;">Toggle</button>';
             html += '</div>';
@@ -161,7 +161,7 @@
             list.forEach(function (r) {
                 var key = encodeURIComponent(r.college);
                 html += '<label style="display:flex;align-items:center;gap:0.5rem;padding:0.15rem 0;font-size:0.8rem;cursor:pointer;color:#333;">';
-                html += '<input type="checkbox" class="crpt-college-cb" data-tier="' + tier + '" data-college="' + key + '" style="accent-color:#C9A84C;cursor:pointer;">';
+                html += '<input type="checkbox" class="crpt-college-cb" data-tier="' + tier + '" data-college="' + key + '" style="accent-color:var(--accent-link);cursor:pointer;">';
                 html += '<span style="flex:1;">' + r.college + '</span>';
                 html += '<span style="color:#888;font-size:0.72rem;">' + fmtNum(r.students) + ' students</span>';
                 html += '</label>';
@@ -179,7 +179,7 @@
 
         // Status + Generate button
         html += '<div id="collegeReportStatus" style="font-size:0.82rem;color:#666;margin:0.8rem 0;min-height:1.2em;"></div>';
-        html += '<button id="collegeReportGenBtn" style="width:100%;padding:10px;background:linear-gradient(135deg,#C9A84C,#FF9800);color:#000;border:none;border-radius:6px;font-weight:700;font-size:0.95rem;cursor:pointer;font-family:inherit;">Generate Report</button>';
+        html += '<button id="collegeReportGenBtn" style="width:100%;padding:10px;background:linear-gradient(135deg,var(--mustard-fill),#FF9800);color:#000;border:none;border-radius:6px;font-weight:700;font-size:0.95rem;cursor:pointer;font-family:inherit;">Generate Report</button>';
 
         html += '</div></div></div>';
 
@@ -262,12 +262,12 @@
         css.textContent =
             '@keyframes crpt-stripes { from { background-position: 0 0; } to { background-position: 40px 0; } }' +
             '.crpt-progress-track { width:100%;height:40px;background:#eee;border-radius:6px;overflow:hidden;position:relative;font-family:inherit; }' +
-            '.crpt-progress-fill { position:absolute;top:0;bottom:0;left:0;width:0%;background-color:#C9A84C;' +
+            '.crpt-progress-fill { position:absolute;top:0;bottom:0;left:0;width:0%;background-color:var(--mustard-fill);' +
                 'background-image:linear-gradient(135deg, rgba(255,255,255,0.28) 25%, transparent 25%, transparent 50%,' +
                 ' rgba(255,255,255,0.28) 50%, rgba(255,255,255,0.28) 75%, transparent 75%);' +
                 'background-size:40px 40px;animation:crpt-stripes 1s linear infinite;transition:width 0.4s ease; }' +
             '.crpt-progress-label { position:absolute;inset:0;display:flex;align-items:center;justify-content:center;' +
-                'color:#0A2240;font-weight:700;font-size:0.9rem;z-index:1;pointer-events:none; }';
+                'color:var(--text-strong);font-weight:700;font-size:0.9rem;z-index:1;pointer-events:none; }';
         document.head.appendChild(css);
     }
 

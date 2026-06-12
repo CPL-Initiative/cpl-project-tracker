@@ -1,7 +1,7 @@
 ---
 title: Reference — Dashboard UI design system (tokens + canonical components)
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-06-12
 tags: [reference, ui, design-system, css, dashboard, aesthetics]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -37,31 +37,52 @@ inlining a hex.
 
 ### Tokens (the `:root` block, ~line 19 of both HTMLs)
 
-**Brand (pre-existing):**
-| Token | Hex | Use |
-|---|---|---|
-| `--navy-primary` | `#0A2240` | primary brand / headers / dark fills |
-| `--navy-secondary` | `#163A5F` | secondary navy |
-| `--gold-accent` | `#C9A84C` | accent / sticky-header text on navy |
-| `--light-blue` | `#9BBCD8` | soft accent / proposed status |
-| `--bg-off-white` | `#FAF8F4` | page background |
-| `--green-progress` `--status-completed` | `#2A7D4F` | progress / done |
-| `--red-alert` `--status-at-risk` | `#C73E3E` | error / at-risk |
-| `--yellow-warning` `--status-on-track` | `#D4AF37` | warning / on-track |
+> **FIRST LIGHT (Session 49, 2026-06-12).** The palette flipped to the
+> Sam-blessed First Light spec (`prototype/first_light_theme_v1.html` v1.6).
+> Values below ARE the spec; `prototype/check_contrast.py --live` lints the
+> live `:root` against them in CI (worst-case-backdrop AA math). Five accents,
+> one job each; the base is warm monochrome — **color is meaning**.
 
-**Surface / text / link (added Session 32 — converge new tabs onto these):**
-| Token | Hex | Use |
+**Base — warm monochrome:**
+| Token | Value | Use |
 |---|---|---|
-| `--surface` | `#FFFFFF` | card / table background |
-| `--surface-subtle` | `#F8FAFC` | subtle zebra / header fill |
-| `--surface-muted` | `#F1F5F9` | muted chip / hover fill |
-| `--border` | `#E5E7EB` | default hairline border |
-| `--border-strong` | `#CBD5E1` | input / stronger border |
-| `--text-strong` | `#1F2937` | headings / strong body |
-| `--text-body` | `#374151` | body text |
-| `--text-muted` | `#6B7280` | secondary / meta text |
-| `--text-faint` | `#94A3B8` | placeholder / disabled |
-| `--accent-link` | `#2563EB` | links / "+N more" affordances |
+| `--paper` | `#F4F2ED` | the page background |
+| `--text-strong` | `#1C1C1A` | ink — headings / emphasis (15.26:1) |
+| `--text-body` | `#3A3A36` | body text (10.21:1) |
+| `--text-muted` | `#5C5C55` | secondary / meta text (6.02:1) |
+| `--text-faint` | `#87877F` | decorative only — never essential text |
+| `--surface` | `rgba(255,255,255,.78)` | **glass CHROME fill** — rail/masthead/hero/modals |
+| `--surface-opaque` | `#FFFFFF` | **data** — tables NEVER on glass |
+| `--surface-subtle` | `#F7F5F1` | subtle zebra / header fill |
+| `--surface-muted` | `#ECE9E2` | muted chip / hover fill |
+| `--border` | `rgba(28,28,26,.14)` | default hairline border |
+| `--border-strong` | `rgba(28,28,26,.30)` | input / chip outline |
+
+**The five accents — one job each, always glyph-paired (▲▼ ✓ ⚠ ⚙ ✨):**
+| Token | Hex | Job |
+|---|---|---|
+| `--cobalt` (+`--accent-link`, `--focus-ring`) | `#0047AB` | interactive · links · focus · selection |
+| `--crimson` (+`--red-alert`) | `#920000` | negative · alerts · audit flags · LIVE dot |
+| `--hunter` (+`--green-progress`) | `#2C601A` | positive · savings · human-verified |
+| `--violet` | `#6D28D9` | machine-generated · inferred · suggested |
+| `--mustard-fill` | `#E3B341` | bright brand hue — dots/banners/on-dark; **NEVER text on light** |
+| `--mustard-text` (+`--yellow-warning`) | `#8B6800` | caution/brand TEXT grade on light |
+
+**On-dark grades** (ink cards, dark gradients — the analytics/KPI dark cards):
+`--crimson-on-dark #CF8F8F` · `--cobalt-on-dark #7DA1D4` · `--hunter-on-dark
+#89A67F` · `--violet-on-dark #B28DEB` · `--mustard-on-dark #E3B341`.
+
+**Legacy aliases (deprecated — still consumed by the generator + older CSS):**
+`--navy-primary → #1C1C1A` (ink) · `--navy-secondary → #3A3A36` ·
+`--gold-accent → var(--mustard-on-dark)` (bright; for TEXT on light use
+`--mustard-text`) · `--light-blue → var(--cobalt-on-dark)` · `--bg-off-white →
+var(--paper)` · `--text-gray → var(--text-body)` · status tokens map onto
+hunter/mustard-text/crimson/text-muted. New code uses the First Light names.
+
+**Hard-won pairing rules:** bright mustard takes INK text (8.77:1), never
+white; white text needs cobalt/crimson/hunter/violet fills; canvas
+`fillStyle`/SVG presentation attributes can't resolve `var()` — use the
+resolved literal hex there (chart code + `_sparkline_svg`).
 
 ### Canonical components (reuse these shapes/classes; don't invent new ones)
 
@@ -73,9 +94,10 @@ inlining a hex.
   in `title=""`.
 - **Audit/severity chip** — `⚠ N` graded by score: red `<0.40`, amber `0.40–0.65`,
   gray `≥0.65` (matches the auditor `READINESS_TIERS`).
-- **Data table** — sticky `<thead>` on `--navy-primary` with `--gold-accent`
-  text; rows hairline `--border`; long-text identifier columns left-aligned,
-  numeric centered/right.
+- **Data table** — sticky `<thead>` on `--navy-primary` (now ink) with
+  `--gold-accent` (bright mustard) text; rows hairline `--border`; long-text
+  identifier columns left-aligned, numeric centered/right. Tables sit on
+  `--surface-opaque` — never glass.
 - **Curate affordance** — a collapsed `✎ Curate` button that expands an inline
   panel (CER pattern), not a modal, for per-row edits.
 

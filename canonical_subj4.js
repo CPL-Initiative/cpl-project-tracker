@@ -586,7 +586,7 @@
     if (document.getElementById("cs-check-css")) return;
     document.head.appendChild(el("style", { id: "cs-check-css" }, [
       "#tab-canonical-subj4 .cs-check-btn{padding:6px 10px;border:1px solid var(--border-strong);border-radius:6px;" +
-        "background:var(--surface);font-size:.85rem;cursor:pointer;color:var(--text-strong);}" +
+        "background:var(--surface-opaque);font-size:.85rem;cursor:pointer;color:var(--text-strong);}" +
       "#tab-canonical-subj4 .cs-check-btn:hover{background:var(--surface-muted);}" +
       "#tab-canonical-subj4 .cs-subj-hint{display:none;margin-top:4px;text-align:left;line-height:1.9;max-width:34ch;}" +
       "#tab-canonical-subj4 .cs-subj-hint.show{display:block;}" +

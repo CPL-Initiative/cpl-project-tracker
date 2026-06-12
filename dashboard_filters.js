@@ -318,7 +318,7 @@ function resetFilters() {
         reportBtn.href = 'reports/CPL_Master_Report.docx';
         reportBtn.download = '';
         reportBtn.innerHTML = '&#128196; Master Report';
-        reportBtn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:#0A2240;border:1px solid #ccc;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;";
+        reportBtn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:var(--text-strong);border:1px solid #ccc;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;";
         reportBtn.onmouseover = function() { this.style.background = '#f5f5f5'; };
         reportBtn.onmouseout = function() { this.style.background = 'transparent'; };
         filterBtns.appendChild(reportBtn);
@@ -329,7 +329,7 @@ function resetFilters() {
             attachBtn.href = ATTACHMENTS_URL;
             attachBtn.target = '_blank';
             attachBtn.innerHTML = '&#128206; Attach Doc';
-            attachBtn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:#0A2240;border:1px solid #ccc;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;";
+            attachBtn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:transparent;color:var(--text-strong);border:1px solid #ccc;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;text-decoration:none;margin-left:0.5rem;transition:background 0.2s;";
             attachBtn.onmouseover = function() { this.style.background = '#f5f5f5'; };
             attachBtn.onmouseout = function() { this.style.background = 'transparent'; };
             attachBtn.title = 'Open SharePoint folder — use Upload or drag & drop to add files';

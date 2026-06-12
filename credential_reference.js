@@ -1854,14 +1854,14 @@
     st.textContent =
       "#tab-credential-reference .cr-scope-block{margin:2px 0 14px;}" +
       "#tab-credential-reference .cr-chip{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:600;border:1px solid transparent;}" +
-      "#tab-credential-reference .cr-chip-ccc{background:#0A2240;color:#fff;}" +
-      "#tab-credential-reference .cr-chip-local{background:#e8eef5;color:#0A2240;border-color:#cdd9e6;}" +
-      "#tab-credential-reference .cr-chip-gen{background:#FFF6E0;color:#7a5c00;border-color:#C9A84C;}" +
+      "#tab-credential-reference .cr-chip-ccc{background:var(--navy-primary);color:#fff;}" +
+      "#tab-credential-reference .cr-chip-local{background:var(--surface-muted);color:var(--text-strong);border-color:var(--border-strong);}" +
+      "#tab-credential-reference .cr-chip-gen{background:#FFF6E0;color:var(--mustard-text);border-color:var(--mustard-fill);}" +
       "#tab-credential-reference .cr-chip-none{background:#f1f5f9;color:#94a3b8;}" +
       "#tab-credential-reference .cr-chip-cpl{background:#f1f5f9;color:#475569;border-color:#e2e8f0;font-weight:500;}" +
       "#tab-credential-reference .cr-rec{font-size:.78rem;color:#334155;margin-bottom:8px;}" +
       "#tab-credential-reference .cr-rec-label{font-weight:600;}" +
-      "#tab-credential-reference .cr-rec-ccc{color:#0A2240;}" +
+      "#tab-credential-reference .cr-rec-ccc{color:var(--text-strong);}" +
       "#tab-credential-reference .cr-rec-gen{color:#7a5c00;}" +
       "#tab-credential-reference .cr-rec-val{font-family:ui-monospace,Menlo,monospace;}" +
       "#tab-credential-reference .cr-badges{display:flex;flex-direction:column;gap:6px;margin-bottom:6px;}" +
@@ -1879,9 +1879,9 @@
       "#tab-credential-reference table.cr-table td.cr-title-cell{text-align:left;}" +
       "#tab-credential-reference table.cr-table th:nth-child(2){text-align:left;}" +
       // Curate panel is now opened from the row's Action cell (2026-06-03).
-      "#tab-credential-reference .cr-curate-toggle{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;color:#0A2240;font-size:.74rem;font-weight:600;cursor:pointer;padding:3px 10px;margin-bottom:8px;}" +
+      "#tab-credential-reference .cr-curate-toggle{background:var(--surface-muted);border:1px solid var(--border-strong);border-radius:6px;color:var(--text-strong);font-size:.74rem;font-weight:600;cursor:pointer;padding:3px 10px;margin-bottom:8px;}" +
       "#tab-credential-reference .cr-curate-toggle:hover{background:#e2e8f0;}" +
-      "#tab-credential-reference .cr-curate-toggle.is-open{background:#0A2240;color:#fff;border-color:#0A2240;}" +
+      "#tab-credential-reference .cr-curate-toggle.is-open{background:var(--cobalt);color:#fff;border-color:var(--cobalt);}" +
       // Action cell stacks Curate over Mark-initiated / the ✓ initiated stamp.
       "#tab-credential-reference .cr-action-cell{display:flex;flex-direction:column;gap:4px;align-items:flex-start;}" +
       "#tab-credential-reference .cr-action-curate{margin-bottom:0;}" +
@@ -1894,12 +1894,12 @@
       "#tab-credential-reference .cr-worklist{padding:4px 2px 16px;}" +
       "#tab-credential-reference .cr-wl-back{font-size:.82rem;color:#2563eb;text-decoration:none;}" +
       "#tab-credential-reference .cr-wl-back:hover{text-decoration:underline;}" +
-      "#tab-credential-reference .cr-wl-title{color:#0A2240;margin:8px 0 4px;}" +
+      "#tab-credential-reference .cr-wl-title{color:var(--text-strong);margin:8px 0 4px;}" +
       "#tab-credential-reference .cr-wl-intro{color:#4b5563;font-size:.85rem;margin:0 0 8px;max-width:74ch;}" +
       "#tab-credential-reference .cr-wl-progress{font-size:.85rem;color:#374151;margin-bottom:10px;}" +
       "#tab-credential-reference .cr-wl-note{color:#6b7280;font-style:italic;}" +
       "#tab-credential-reference .cr-wl-table{border-collapse:collapse;width:100%;font-size:.85rem;}" +
-      "#tab-credential-reference .cr-wl-table th{text-align:left;background:#0A2240;color:#C9A84C;padding:7px 10px;position:sticky;top:0;}" +
+      "#tab-credential-reference .cr-wl-table th{text-align:left;background:var(--navy-primary);color:var(--gold-accent);padding:7px 10px;position:sticky;top:0;}" +
       "#tab-credential-reference .cr-wl-table td{padding:6px 10px;border-top:1px solid #eef2f7;vertical-align:top;}" +
       "#tab-credential-reference .cr-wl-row.cr-wl-done{background:#f0fdf4;}" +
       "#tab-credential-reference .cr-wl-raw{max-width:42ch;}" +
@@ -1907,7 +1907,7 @@
       "#tab-credential-reference .cr-wl-input{width:100%;min-width:15ch;padding:4px 6px;border:1px solid #cbd5e1;border-radius:5px;font-size:.82rem;}" +
       "#tab-credential-reference .cr-wl-input:disabled{background:#f8fafc;color:#94a3b8;}" +
       "#tab-credential-reference .cr-wl-act{white-space:nowrap;}" +
-      "#tab-credential-reference .cr-wl-save{background:#0A2240;color:#fff;border:none;border-radius:5px;font-size:.78rem;font-weight:600;cursor:pointer;padding:4px 12px;}" +
+      "#tab-credential-reference .cr-wl-save{background:var(--cobalt);color:#fff;border:none;border-radius:5px;font-size:.78rem;font-weight:600;cursor:pointer;padding:4px 12px;}" +
       "#tab-credential-reference .cr-wl-save:disabled{opacity:.6;cursor:default;}" +
       "#tab-credential-reference .cr-wl-clear{font-size:.74rem;color:#b45309;margin-left:8px;text-decoration:none;}" +
       "#tab-credential-reference .cr-wl-clear:hover{text-decoration:underline;}" +
@@ -1941,10 +1941,10 @@
       // matches the file's existing gen-chip/triage palette) + the collapsed
       // elective-bucket disclosure. Native <details> marker kept (the expand
       // affordance) per the Session-28 toggle lesson.
-      "#tab-credential-reference .cr-art-outlier{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:#FFF6E0;color:#7a5c00;border:1px solid #C9A84C;white-space:nowrap;}" +
+      "#tab-credential-reference .cr-art-outlier{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:#FFF6E0;color:var(--mustard-text);border:1px solid var(--mustard-fill);white-space:nowrap;}" +
       // Consolidated-identity badge (2026-06-04) — informational (consolidation
       // is good), so navy-on-light like the Local chip, not the amber warn badges.
-      "#tab-credential-reference .cr-art-merged{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:#e8eef5;color:#0A2240;border:1px solid #cdd9e6;white-space:nowrap;cursor:help;}" +
+      "#tab-credential-reference .cr-art-merged{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:var(--surface-muted);color:var(--text-strong);border:1px solid var(--border-strong);white-space:nowrap;cursor:help;}" +
       "#tab-credential-reference .cr-bucket-details{margin:8px 0 4px;}" +
       "#tab-credential-reference .cr-bucket-summary{cursor:pointer;font-size:.78rem;font-weight:600;color:#92400e;background:#FEF3C7;border:1px solid #F59E0B;border-radius:6px;padding:4px 10px;display:inline-block;}" +
       "#tab-credential-reference .cr-bucket-note{font-size:.74rem;color:#6b7280;font-style:italic;margin:6px 0 4px;max-width:74ch;}" +
@@ -1952,15 +1952,15 @@
       "#tab-credential-reference .cr-bucket-row .cr-id-code{color:#6b7280;}" +
       // System-level GE-Area AP-credit callout (2026-06-04) — navy/brand accent
       // (authoritative statewide info), sits at the top of the expanded body.
-      "#tab-credential-reference .cr-geap{border:1px solid #cdd9e6;border-left:4px solid #0A2240;background:#f6f9fc;border-radius:6px;padding:8px 12px;margin:2px 0 12px;}" +
-      "#tab-credential-reference .cr-geap-head{font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#0A2240;margin-bottom:3px;}" +
+      "#tab-credential-reference .cr-geap{border:1px solid var(--border-strong);border-left:4px solid var(--navy-primary);background:var(--surface-subtle);border-radius:6px;padding:8px 12px;margin:2px 0 12px;}" +
+      "#tab-credential-reference .cr-geap-head{font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-strong);margin-bottom:3px;}" +
       "#tab-credential-reference .cr-geap-body{font-size:.92rem;color:#1f2937;}" +
-      "#tab-credential-reference .cr-geap-area{color:#0A2240;}" +
+      "#tab-credential-reference .cr-geap-area{color:var(--text-strong);}" +
       "#tab-credential-reference .cr-geap-na{color:#7a5c00;font-weight:600;}" +
       "#tab-credential-reference .cr-geap-note{font-size:.72rem;color:#6b7280;font-style:italic;margin-top:4px;max-width:80ch;}" +
       // Students-served column (path 1) — the count stands out for triage; the
       // masked "<5" is muted (small-cell suppression).
-      "#tab-credential-reference .cr-served-n{font-weight:600;color:#0A2240;}" +
+      "#tab-credential-reference .cr-served-n{font-weight:600;color:var(--text-strong);}" +
       "#tab-credential-reference .cr-served-sup{color:#94a3b8;font-style:italic;font-size:.85em;}" +
       // GE-Area coherence (item #3) — per-identity "off GE Area" badge (warn) +
       // the credential-level callout note.

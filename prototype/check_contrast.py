@@ -55,6 +55,129 @@ def derive(start_hex, bg, target, toward):
             return rgb2h(c), ratio(c, bg)
     return rgb2h(end), ratio(end, bg)
 
+
+# ═══════════════════════════════════════════════════════════════════════
+# --live mode: lint the LIVE dashboard's :root against the spec.
+# Run from repo root:  python3 prototype/check_contrast.py --live
+# Used as a (non-required) CI step. Checks:
+#   1. CPL_Dashboard.html and index.html carry byte-identical :root blocks
+#      (Rule 4).
+#   2. Every First Light token is present with the exact spec value
+#      (drift-pin — the daily regen or a hand edit can't silently repaint).
+#   3. The text grades + accent text grades measure AA on the documented
+#      worst-case backdrops (recomputed, not trusted).
+#   4. Legacy alias tokens resolve to the intended palette roles.
+# ═══════════════════════════════════════════════════════════════════════
+import sys
+
+if "--live" in sys.argv:
+    import re as _re
+
+    def _root_block(path):
+        html = open(path, encoding="utf-8").read()
+        m = _re.search(r":root\s*\{(.*?)\}", html, _re.S)
+        if not m:
+            print(f"✗ {path}: no :root block found")
+            raise SystemExit(1)
+        return m.group(1)
+
+    def _parse_tokens(block):
+        toks = {}
+        for mm in _re.finditer(r"--([A-Za-z0-9-]+)\s*:\s*([^;]+);", block):
+            toks[mm.group(1)] = mm.group(2).strip()
+        return toks
+
+    def _resolve(toks, name, depth=0):
+        if depth > 10:
+            return None
+        v = toks.get(name)
+        if v is None:
+            return None
+        mv = _re.fullmatch(r"var\(--([A-Za-z0-9-]+)\)", v)
+        return _resolve(toks, mv.group(1), depth + 1) if mv else v
+
+    blocks = {p: _root_block(p) for p in ("CPL_Dashboard.html", "index.html")}
+    fails = []
+    if blocks["CPL_Dashboard.html"] != blocks["index.html"]:
+        fails.append("Rule 4: :root blocks differ between CPL_Dashboard.html and index.html")
+    toks = _parse_tokens(blocks["CPL_Dashboard.html"])
+
+    # 2. drift-pins — the spec values (prototype v1.6, Sam-blessed 2026-06-12)
+    SPEC = {
+        "paper": "#F4F2ED",
+        "text-strong": "#1C1C1A", "text-body": "#3A3A36",
+        "text-muted": "#5C5C55", "text-faint": "#87877F",
+        "surface-opaque": "#FFFFFF",
+        "surface-subtle": "#F7F5F1", "surface-muted": "#ECE9E2",
+        "crimson": "#920000", "cobalt": "#0047AB", "hunter": "#2C601A",
+        "violet": "#6D28D9",
+        "mustard-fill": "#E3B341", "mustard-text": "#8B6800",
+        "crimson-on-dark": "#CF8F8F", "cobalt-on-dark": "#7DA1D4",
+        "hunter-on-dark": "#89A67F", "violet-on-dark": "#B28DEB",
+        "mustard-on-dark": "#E3B341",
+    }
+    for name, want in SPEC.items():
+        got = _resolve(toks, name)
+        if got is None:
+            fails.append(f"missing token --{name}")
+        elif got.upper() != want.upper():
+            fails.append(f"--{name} is {got}, spec says {want}")
+
+    # 4. legacy aliases resolve onto the palette
+    ALIASES = {
+        "navy-primary": "#1C1C1A", "navy-secondary": "#3A3A36",
+        "gold-accent": "#E3B341", "light-blue": "#7DA1D4",
+        "bg-off-white": "#F4F2ED", "text-gray": "#3A3A36",
+        "green-progress": "#2C601A", "red-alert": "#920000",
+        "yellow-warning": "#8B6800", "accent-link": "#0047AB",
+        "status-completed": "#2C601A", "status-on-track": "#8B6800",
+        "status-at-risk": "#920000", "status-proposed": "#5C5C55",
+    }
+    for name, want in ALIASES.items():
+        got = _resolve(toks, name)
+        if got is None:
+            fails.append(f"missing legacy alias --{name}")
+        elif got.upper() != want.upper():
+            fails.append(f"legacy --{name} resolves to {got}, expected {want}")
+
+    # 3. AA measurements on worst-case backdrops (recomputed)
+    _PAPER = h2rgb("#F4F2ED")
+    _ART = mix(_PAPER, (0, 0, 0), 0.10)
+    _GLASS = mix(_ART, (255, 255, 255), 0.78)
+    _DARK = mix(_PAPER, h2rgb("#15151D"), 0.92)
+    _INK = h2rgb("#1C1C1A")
+
+    def _aa(name, bg, bgname, target=4.5):
+        hexv = _resolve(toks, name)
+        if not hexv or not hexv.startswith("#"):
+            return
+        r = ratio(h2rgb(hexv), bg)
+        if r < target:
+            fails.append(f"--{name} {hexv} measures {r:.2f}:1 vs {bgname} (needs {target}:1)")
+
+    for t in ("text-strong", "text-body", "text-muted",
+              "crimson", "cobalt", "hunter", "violet", "mustard-text"):
+        _aa(t, _PAPER, "paper")
+        _aa(t, _GLASS, "glass-worst")
+    for t in ("crimson-on-dark", "cobalt-on-dark", "hunter-on-dark",
+              "violet-on-dark", "mustard-on-dark"):
+        _aa(t, _DARK, "dark-worst")
+        _aa(t, _INK, "ink card")
+    # banner/badge pairs the live dashboard uses
+    if ratio(h2rgb("#1C1C1A"), h2rgb("#E3B341")) < 4.5:
+        fails.append("ink on mustard-fill banner pair under 4.5:1")
+    if ratio((255, 255, 255), h2rgb("#0047AB")) < 4.5:
+        fails.append("white on cobalt button pair under 4.5:1")
+
+    if fails:
+        print(f"✗ live :root lint — {len(fails)} failure(s):")
+        for f in fails:
+            print("   ", f)
+        raise SystemExit(1)
+    print(f"✓ live :root lint — both HTMLs identical, {len(SPEC)} spec tokens + "
+          f"{len(ALIASES)} aliases pinned, AA verified on worst-case backdrops")
+    raise SystemExit(0)
+
 # ── Worst-case backgrounds ──────────────────────────────────────────────
 PAPER = h2rgb("#F4F2ED")
 BLACK, WHITE = (0, 0, 0), (255, 255, 255)

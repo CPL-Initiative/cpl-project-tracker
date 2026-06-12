@@ -123,7 +123,7 @@
           status.style.color = "#A33";
           return;
         }
-        status.style.color = "#0A2240";
+        status.style.color = "var(--text-strong)";
         status.textContent = "Sending magic link...";
         signIn(email).then(function (r) {
           if (r.ok) {
@@ -466,7 +466,7 @@
     // Brief inline highlight (no CSS dependency — the editor's proj-* CSS is
     // injected by the daily regen, so a stylesheet rule could lag a deploy).
     var prev = widget.style.boxShadow;
-    widget.style.boxShadow = "0 0 0 3px #C9A84C";
+    widget.style.boxShadow = "0 0 0 3px #E3B341";
     setTimeout(function () { widget.style.boxShadow = prev; }, 1600);
   }
 

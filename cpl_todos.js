@@ -101,7 +101,7 @@
       ".cpl-todo-badge{background:var(--gold-accent);color:var(--navy-primary);border-radius:10px;font-size:.72rem;" +
         "font-weight:700;padding:1px 7px;}" +
       ".cpl-todo-panel{display:none;position:fixed;right:18px;bottom:104px;z-index:901;width:380px;max-width:92vw;" +
-        "max-height:70vh;overflow-y:auto;background:var(--surface);border:1px solid var(--border-strong);" +
+        "max-height:70vh;overflow-y:auto;background:var(--surface-opaque);border:1px solid var(--border-strong);" +
         "border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,0.3);padding:14px 16px;text-align:left;}" +
       ".cpl-todo-panel.show{display:block;}" +
       ".cpl-todo-panel h4{margin:0 0 2px;color:var(--navy-primary);font-size:1rem;}" +
