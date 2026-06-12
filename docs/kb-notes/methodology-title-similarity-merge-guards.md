@@ -1,16 +1,19 @@
 ---
 title: Title-similarity merge candidates — the guard suite and the licensure-spec lesson
 date: 2026-06-12
+updated: 2026-06-12 (Session 46 part 2 — the guards now also gate the twin auto-merge tier)
 kb-status: published
 type: methodology
-tags: [kb, consolidation, worklist, m-id, title-similarity, guards, ccr, licensure]
+tags: [kb, consolidation, worklist, m-id, title-similarity, guards, ccr, licensure, twin-merge]
 artifacts:
   - kb/_consolidation_guards.py (the shared guard suite)
   - kb/_title_consolidation_dryrun.py (the title-evidence lane; receipt kb/title_consolidation_out/candidates.json)
   - kb/_desc_consolidation_dryrun.py (imports the same guards since Session 46)
+  - kb/_apply_twin_merge_statewide.py (the auto-merge tier — guards as a clique gate)
   - tests/uc_title_lane.test.js
 related:
   - docs/ccr_cluster_cleanup_lessons.md (Session 45 + 46 sections)
+  - docs/ccr_rules_brief.md (the plain-language contract, incl. the twin tier)
   - docs/kb-notes/methodology-within-credential-identity-consolidation.md (the ordinal rule / _fam_key)
 ---
 
@@ -98,3 +101,25 @@ the titles are on screen at Confirm time and the curator unchecks — while a
 recall miss (the gate that would have blocked 80% of the smog corpus) is
 invisible forever. Gate only on what reliably marks a DIFFERENT course;
 report (units spread, same-college) what merely warrants attention.
+
+## The auto-merge tier (Session 46 part 2 — the twin merge)
+
+There is exactly one tier where title evidence ACTS instead of suggesting:
+the **strict twin merge** (`kb/_apply_twin_merge_statewide.py`; Session-39
+authorization, statewide Session 46). Its admission is much narrower than
+the lane's — token-identical titles (the ordinal-rule family key), same
+SUBJ4, same discipline, same credit class, same units — and the guard
+suite rides it as a **clique gate**: any mark conflict inside a twin group
+sends the WHOLE group back to the worklist (no partial auto-merges). That
+gate is load-bearing, not decorative — the family key drops "1" as
+non-distinguishing, so "X Level 1 & 2" fam-equals "X Level 2", and the
+two-axis level marks are what block it; the key also strips parentheticals,
+so "(MEN)" vs "(WOMEN)" athletics twins are visible ONLY to the marks.
+
+The general rule: **a queue and an apply can share evidence machinery, but
+the apply tier must be strictly narrower AND guard-clique-consistent, and
+its conditions belong in the public contract** (`docs/ccr_rules_brief.md`)
+with an alias-map undo path. When a curator (or the project lead, in
+writing) confirms a fuzzier family the auto tier won't touch, that
+confirmation is recorded as ordinary `kb_curation` merges — never by
+loosening the auto tier's key.
