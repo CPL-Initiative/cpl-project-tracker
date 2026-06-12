@@ -50,13 +50,22 @@ def kb(p):
 
 
 # Mojibake repair (UTF-8 read as cp1252, once or twice) — only sequences that
-# cannot occur in honest course titles.
+# cannot occur in honest course titles. Upgraded 2026-06-12 (Sam's
+# "IntroductionÃ‚Â To…" worklist find): fix_mojibake now leads with a bounded
+# cp1252→UTF-8 decode loop (it only "succeeds" on character runs that map to
+# VALID UTF-8 bytes, so honest text — incl. accented Spanish — can't be
+# harmed), then falls back to this pair map for remnants the loop can't
+# round-trip, then folds NBSPs to plain spaces. Mirror logic:
+# excel_to_dashboard.py _fix_text_encoding() (raw member titles) — keep the
+# two in sync.
 MOJIBAKE = [
     ("Ã¢â‚¬â„¢", "'"), ("â€™", "'"), ("Ã¢â‚¬Ëœ", "'"), ("â€˜", "'"),
-    ("Ã¢â‚¬â€œ", "–"), ("â€“", "–"), ("Ã¢â‚¬â€�", "—"), ("â€”", "—"),
-    ("Ã¢â‚¬Å“", '"'), ("â€œ", '"'), ("Ã¢â‚¬Â�", '"'), ("â€�", '"'),
+    ("Ã¢â‚¬â€œ", "–"), ("â€“", "–"), ("Ã¢â‚¬â€\x9d", "—"), ("â€”", "—"),
+    ("Ã¢â‚¬Å“", '"'), ("â€œ", '"'), ("Ã¢â‚¬Â\x9d", '"'), ("â€\x9d", '"'),
     ("Ã©", "é"), ("Ã±", "ñ"), ("Ã¡", "á"), ("Ã³", "ó"), ("Ã­", "í"),
+    ("Ã‚Â", " "), ("Ã‚â", " "), ("ã‚â", " "), ("Â ", " "), ("Â", ""),
 ]
+MOJIBAKE_HINT = re.compile(r"[ÃÂ]|â€|ã‚â")
 
 FORMERLY = re.compile(r"\s*\((?:formerly|formally)[^)]*\)", re.I)
 
@@ -97,10 +106,21 @@ SUBSEG = re.compile(r"([/\-–—:])")
 
 
 def fix_mojibake(t):
+    if not MOJIBAKE_HINT.search(t):
+        return t
+    for _ in range(3):
+        try:
+            cand = t.encode("cp1252").decode("utf-8")
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            break
+        if cand == t:
+            break
+        t = cand
     for bad, good in MOJIBAKE:
         if bad in t:
             t = t.replace(bad, good)
-    return t
+    t = t.replace(" ", " ")
+    return re.sub(r"\s{2,}", " ", t).strip()
 
 
 def convert_romans(t):

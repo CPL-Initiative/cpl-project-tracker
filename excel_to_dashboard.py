@@ -6306,6 +6306,52 @@ def export_credential_reference():
           f"(AP {_gec.get('AP',0)} · IB {_gec.get('IB',0)} · CLEP {_gec.get('CLEP',0)})")
 
 
+# ── Raw-title mojibake repair (Sam, 2026-06-12) ─────────────────────
+# Some colleges' COCI course titles carry encoding artifacts (UTF-8 read as
+# cp1252, once or twice): "IntroductionÃ‚Â To..." (double-encoded NBSP),
+# "Learnerâ€™s", "FolklÃ³rico". The dashboard repairs them for display and
+# FLAGS the member rows (e:1 → the CCR "fix in COCI" chip) + queues every
+# correction in kb/coci_title_corrections.json so the source records can be
+# fixed in COCI. Mirror logic: kb/_normalize_common_titles.py fix_mojibake()
+# (identity-level titles) — keep the two in sync.
+_MOJIBAKE_PAIRS = [  # longest-first; remnants the decode loop can't round-trip
+    ("Ã¢â‚¬â„¢", "'"), ("â€™", "'"), ("Ã¢â‚¬Ëœ", "'"), ("â€˜", "'"),
+    ("Ã¢â‚¬â€œ", "–"), ("â€“", "–"), ("Ã¢â‚¬â€\x9d", "—"), ("â€”", "—"),
+    ("Ã¢â‚¬Å“", '"'), ("â€œ", '"'), ("Ã¢â‚¬Â\x9d", '"'), ("â€\x9d", '"'),
+    ("Ã©", "é"), ("Ã±", "ñ"), ("Ã¡", "á"), ("Ã³", "ó"), ("Ã­", "í"),
+    ("Ã‚Â", " "), ("Ã‚â", " "), ("ã‚â", " "), ("Â ", " "), ("Â", ""),
+]
+_MOJIBAKE_HINT = re.compile(r"[ÃÂ]|â€|ã‚â")
+
+
+def _fix_text_encoding(s):
+    """Repair mojibake in a raw COCI text field. Returns (fixed, changed).
+
+    The cp1252→UTF-8 decode loop only "succeeds" when the characters map to
+    VALID UTF-8 byte sequences — honest text (including accented Spanish)
+    never does, so it cannot be harmed. Sequences the loop can't round-trip
+    (e.g. the NBSP artifact whose payload byte was flattened to a plain
+    space upstream) fall through to the explicit pair map. NBSPs become
+    plain spaces; whitespace runs collapse."""
+    if not s or not _MOJIBAKE_HINT.search(s):
+        return s, False
+    orig = s
+    for _ in range(3):
+        try:
+            cand = s.encode("cp1252").decode("utf-8")
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            break
+        if cand == s:
+            break
+        s = cand
+    for bad, good in _MOJIBAKE_PAIRS:
+        if bad in s:
+            s = s.replace(bad, good)
+    s = s.replace(" ", " ")
+    s = re.sub(r"\s{2,}", " ", s).strip()
+    return s, s != orig
+
+
 def export_unified_courses():
     """Build the Unified Courses tab data (window.CPL_UNIFIED_COURSES in
     unified_courses_data.js) + the full xlsx export, from the kb/coci_*.json
@@ -6743,6 +6789,7 @@ def export_unified_courses():
                 ROUTE[_cn] = next(iter(_cids))  # series-only approval
             # multiple non-series descriptors → curation, never auto-route
 
+    _title_fixes = []  # mojibake repairs → kb/coci_title_corrections.json (the COCI queue)
     if _have_raw:
         from openpyxl import load_workbook as _load_wb
         wb = _load_wb(raw_xlsx, read_only=True)
@@ -6757,6 +6804,16 @@ def export_unified_courses():
                 continue
             code = (f"{subj} {num}".strip() if subj is not None
                     else (str(num) if num is not None else ""))
+            # Repair encoding artifacts in the raw title for display; flag the
+            # ent (e:1 → the CCR member chip) and queue the correction so the
+            # source record can be fixed in COCI (Sam, 2026-06-12).
+            t_fixed = False
+            if title:
+                title, t_fixed = _fix_text_encoding(str(title))
+                if t_fixed:
+                    _title_fixes.append({
+                        "college": str(college), "control_number": ctrl,
+                        "course": code, "raw": str(row[4]), "corrected": title})
             cidn, ccnn = _nrm(cid), _nrm(ccn)
             if cidn in _NULLISH:
                 cidn = ""
@@ -6780,6 +6837,8 @@ def export_unified_courses():
                    "u": units if isinstance(units, (int, float)) else None,
                    "p": tcode,
                    "cid": cidn, "ccn": ccnn}
+            if t_fixed:
+                ent["e"] = 1
             if ctrl:
                 cn_rows.setdefault(ctrl, []).append(ent)
             if cidn:
@@ -6787,6 +6846,24 @@ def export_unified_courses():
             if ccnn:
                 ccn_rows.setdefault(ccnn, []).append(ent)
         wb.close()
+        # COCI source-correction queue: every raw title the display layer had
+        # to repair. Deterministic (sorted, no timestamp) → no-op daily diff
+        # while the source data is unchanged; rows leave the queue when the
+        # college fixes the title in COCI.
+        _title_fixes.sort(key=lambda x: (x["college"], x["course"], x["control_number"]))
+        _queue_path = os.path.join(SCRIPT_DIR, "kb", "coci_title_corrections.json")
+        with open(_queue_path, "w", encoding="utf-8") as f:
+            json.dump({
+                "_purpose": ("COCI source-data correction queue — raw college course "
+                             "titles carrying encoding artifacts (mojibake). The dashboard "
+                             "displays the corrected title (and chips the member row "
+                             "'fix in COCI'); the SOURCE record in COCI still needs the "
+                             "fix. Regenerated by export_unified_courses() each daily run."),
+                "count": len(_title_fixes),
+                "corrections": _title_fixes,
+            }, f, ensure_ascii=False, indent=1)
+        print(f"  Unified Courses: {len(_title_fixes)} raw titles carried encoding "
+              f"artifacts → repaired for display, queued in kb/coci_title_corrections.json")
 
     memships = (_load("coci_minted_memberships.json") or {}).get("memberships", {})
     promotions = (_load("promotions.json") or {}).get("promotions", {})
@@ -6858,8 +6935,11 @@ def export_unified_courses():
             k = (ent["c"], ent["n"], ent["t"])
             if k in seen:
                 continue
-            seen.add(k); out.append({"c": ent["c"], "n": ent["n"], "t": ent["t"],
-                                     "u": ent.get("u"), "p": ent.get("p") or "", "d": ent.get("d") or ""})
+            e2 = {"c": ent["c"], "n": ent["n"], "t": ent["t"],
+                  "u": ent.get("u"), "p": ent.get("p") or "", "d": ent.get("d") or ""}
+            if ent.get("e"):
+                e2["e"] = 1  # title repaired from mojibake — needs COCI fix
+            seen.add(k); out.append(e2)
         return out
 
     # Representative raw CatalogDescription for a row (longest among candidates).
@@ -7901,8 +7981,11 @@ def export_unified_courses():
             ents = _row_ents(r)
             if not ents:
                 continue
-            members[r["id"]] = [{"c": e["c"], "n": e["n"], "t": e["t"],
-                                 "u": e.get("u"), "p": e.get("p") or ""} for e in ents]
+            members[r["id"]] = [
+                dict({"c": e["c"], "n": e["n"], "t": e["t"],
+                      "u": e.get("u"), "p": e.get("p") or ""},
+                     **({"e": 1} if e.get("e") else {}))
+                for e in ents]
             ds = [(e.get("d") or "")[:500] for e in ents]
             if any(ds):
                 mdesc[r["id"]] = ds
@@ -7911,7 +7994,8 @@ def export_unified_courses():
         mem_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
                        "colleges": mcolleges, "members": members, "topmap": top_titles}
         with open(out_mem, "w", encoding="utf-8") as f:
-            f.write("/* Unified Courses member-college rows — id -> [{c:collegeIdx, n:code, t:title, u:units, p:topcode}]. "
+            f.write("/* Unified Courses member-college rows — id -> [{c:collegeIdx, n:code, t:title, u:units, p:topcode, e?:1}]. "
+                    "e:1 = the raw COCI title carried encoding artifacts (repaired for display; queued in kb/coci_title_corrections.json). "
                     "topmap maps a TOP code -> program title. Lazy-loaded when a row is expanded. "
                     "colleges[] holds the names. Descriptions are in unified_courses_member_desc.js. */\n"
                     "window.CPL_UC_MEMBERS = " + json.dumps(mem_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
