@@ -2,11 +2,11 @@
 
 Worklist payload: `2026-06-12 22:14` · curation overlay: synced same run · marker: `automerge-v1` · **nothing applied**.
 
-## Planned: **2292 groups** → 3589 merge rows + 2270 title rows (5859 curation upserts)
+## Planned: **2272 groups** → 3588 merge rows + 2250 title rows (5838 curation upserts)
 
 | lane | planned |
 |---|---|
-| anchored (merge into existing identity) | 1351 |
+| anchored (merge into existing identity) | 1331 |
 | singleton (mint new unified course) | 941 |
 
 ## Excluded (stays human / already handled)
@@ -14,21 +14,22 @@ Worklist payload: `2026-06-12 22:14` · curation overlay: synced same run · mar
 | reason | groups |
 |---|---|
 | anchored: Keep-as-is dismissed | 4 |
+| anchored: already consumed (<2 live members) | 20 |
 | anchored: band mix credit/noncredit (stays human) | 231 |
 | singleton: band mix credit/noncredit (stays human) | 94 |
 | singleton: same_college (stays human) | 214 |
 
-## Units spread across planned groups (2292)
+## Units spread across planned groups (2272)
 
 | spread | groups |
 |---|---|
-| 0 (uniform) | 1193 |
+| 0 (uniform) | 1173 |
 | ≤1u | 740 |
 | ≤2u | 192 |
 | ≤4u | 127 |
 | >4u | 40 |
 
-## Title regularizations (16 of 2292 planned groups)
+## Title regularizations (16 of 2272 planned groups)
 
 First 25 (longest-member title → chosen unified title):
 
@@ -51,261 +52,253 @@ First 25 (longest-member title → chosen unified title):
 
 ## Random sample of 60 planned groups (seeded — reproducible)
 
-### anchored → `CSIS M1395` (M-ID) · title: unchanged → **Information Systems Security**
-- `CSIS M1395` (M-ID) Information Systems Security · 3.0u
-- `CSIS M12FJ` (Stand-Alone) Information Security Systems · 3.0u
+### anchored → `COUN M1045` (M-ID) · title: unchanged → **Career Exploration and Life Planning**
+- `COUN M1045` (M-ID) Career Exploration and Life Planning · 3.0u
+- `IDST M10JV` (Stand-Alone) Career Planning and Life Exploration · 3.0u
 
-### singleton → `UC-CUR-AUTOEFB58642` (Unified (new)) · title: unchanged → **Acting for Film and Television 3**
-- `THEA M10HS` (Stand-Alone) Acting/Film & Television 3 · 3.0u
-- `THEA M10HT` (Stand-Alone) Acting for Film and Television 3 · 3.0u
+### singleton → `UC-CUR-AUTOE2DA7A70` (Unified (new)) · title: unchanged → **High-Beginning ESL (Noncredit)**
+- `ESOL M90VA` (Stand-Alone) ESL High Beginning · 0.0u
+- `ESOL M90VF` (Stand-Alone) High-Beginning ESL (Noncredit) · 0.0u
+- `ESOL M90VB` (Stand-Alone) High Beginning ESL A · 0.0u
 
-### singleton → `UC-CUR-AUTO6E038E55` (Unified (new)) · title: unchanged → **Hospitality and Tourism Marketing**
-- `FCSH M10HO` (Stand-Alone) Hospitality and Tourism Marketing · 3.0u
-- `MRKT M10BO` (Stand-Alone) Tourism and Hospitality Marketing · 3.0u
+### singleton → `UC-CUR-AUTO5E519903` (Unified (new)) · title: unchanged → **Neurorehabilitation for the PTA**
+- `HLTH M11ES` (Stand-Alone) Neurorehabilitation for the PTA · 3.0u
+- `PTAS M10DG` (Stand-Alone) Neurorehabilitation for PTA · 3.0u
 
-### anchored → `BIOL M1100` (M-ID) · title: unchanged → **Genetics and Molecular Biology**
-- `BIOL M1100` (M-ID) Genetics and Molecular Biology · 5.0u
-- `BIOL M10OJ` (Stand-Alone) Molecular Biology & Genetics · 4.0u
+### anchored → `COSM M1010` (M-ID) · title: unchanged → **Cosmetology: Level 4**
+- `COSM M1010` (M-ID) Cosmetology: Level 4 · 9.0u
+- `COSM M10IW` (Stand-Alone) Cosmetology, Level 4 · 9.5u
 
-### singleton → `UC-CUR-AUTOBB9F2C53` (Unified (new)) · title: unchanged → **Network and Systems Security**
-- `CSIS M12LC` (Stand-Alone) Network Systems Security · 4.0u
-- `CSIS M12LD` (Stand-Alone) Network and Systems Security · 3.0u
+### singleton → `UC-CUR-AUTO0E55A6F4` (Unified (new)) · title: unchanged → **Conditioning Dance: Pilates 1**
+- `DANC M10ZC` (Stand-Alone) Conditioning Dance: Pilates 1 · 2.0u
+- `DANC M10ZE` (Stand-Alone) Dance Conditioning/Pilates 1 · 0.5u
 
-### anchored → `CULN M1124` (M-ID) · title: unchanged → **Food and Wine Pairing**
-- `CULN M1124` (M-ID) Food and Wine Pairing · 2.0u
-- `CULN M10VL` (Stand-Alone) Wine and Food Pairing · 1.5u
-- `AGPR M10EO` (Stand-Alone) Pairing Wine and Food · 0.5u
+### singleton → `UC-CUR-AUTO46ADC8AF` (Unified (new)) · title: unchanged → **Literacy and Basic Skills Beginning**
+- `IDST M90QA` (Stand-Alone) Literacy and Basic Skills Beginning · 0.0u
+- `IDST M90QB` (Stand-Alone) Literacy & Basic Skills Beginning · 0.0u
 
-### anchored → `CRIM M1027` (M-ID) · title: unchanged → **Basic Police Academy, Module 3**
-- `CRIM M1027` (M-ID) Basic Police Academy Module 3 · 7.0u
-- `CRIM M10BO` (Stand-Alone) Basic Police Academy, Module 3 · 6.0u
+### anchored → `ASTR M1019` (M-ID) · title: unchanged → **Astronomy with Lab**
+- `ASTR M1019` (M-ID) Astronomy Lab · 1.0u
+- `PHSC M10BQ` (Stand-Alone) Astronomy with Lab · 4.0u
 
-### singleton → `UC-CUR-AUTO5B811454` (Unified (new)) · title: unchanged → **Dispatcher Update, Public Safety**
-- `CRIM M11HB` (Stand-Alone) Dispatcher Update, Public Safety · 1.0u
-- `CRIM M11HC` (Stand-Alone) Public Safety Dispatcher-Update · 1.0u
+### singleton → `UC-CUR-AUTOF3723FB2` (Unified (new)) · title: unchanged → **3D Layout and Lighting (RVPA)**
+- `DRAF M10CD` (Stand-Alone) 3D Layout and Lighting (RVPA) · 3.0u
+- `MULT M10EM` (Stand-Alone) 3D Layout and Lighting · 3.0u
 
-### singleton → `UC-CUR-AUTO9C41E251` (Unified (new)) · title: unchanged → **Topics in Architecture**
-- `ARCH M10KY` (Stand-Alone) Topics in Architecture · 0.3u
-- `ARCH M10KX` (Stand-Alone) Architecture Topics · 1.0u
+### singleton → `UC-CUR-AUTOC020D38A` (Unified (new)) · title: unchanged → **Practical Applications in Athletic Training 1**
+- `HLTH M10HR` (Stand-Alone) Practical Applications in Athletic Training 1 · 2.0u
+- `ATHL M10ZV` (Stand-Alone) Practical Applications of Athletic Training 1 · 3.0u
 
-### anchored → `KINE M1065` (M-ID) · title: unchanged → **Advanced Care and Prevention of Athletic Injuries**
-- `KINE M1065` (M-ID) Advanced Care and Prevention of Athletic Injuries · 3.0u
-- `KINE M10LC` (Stand-Alone) Advanced Prevention and Care of Athletic Injuries · 3.0u
+### anchored → `CRIM M1183` (M-ID) · title: unchanged → **Criminal Law and Procedure**
+- `CRIM M1183` (M-ID) Criminal Law and Procedure · 3.0u
+- `LEGL M1011` (M-ID) Criminal Law & Procedure · 3.0u
 
-### anchored → `CRIM M1135` (M-ID) · title: unchanged → **Control and Supervision in Corrections**
-- `CRIM M1135` (M-ID) Control and Supervision in Corrections · 3.0u
-- `PUBS M10AG` (Stand-Alone) Control and Supervision in Corrections · 3.0u
+### anchored → `DANC M1108` (M-ID) · title: unchanged → **Beginning Dance - Jazz**
+- `DANC M1108` (M-ID) Beginning Jazz Dance · 1.0u
+- `KINE M11SX` (Stand-Alone) Beginning Dance - Jazz · 1.0u
 
-### singleton → `UC-CUR-AUTO635E63B8` (Unified (new)) · title: unchanged → **Conditioning Dance: Pilates 3**
-- `DANC M10ZL` (Stand-Alone) Conditioning Dance: Pilates 3 · 2.0u
-- `DANC M10ZM` (Stand-Alone) Dance Conditioning/Pilates 3 · 0.5u
+### singleton → `UC-CUR-AUTOD037AB8C` (Unified (new)) · title: unchanged → **Mechanical and Electrical Devices**
+- `HVAC M10PQ` (Stand-Alone) Mechanical and Electrical Devices · 2.0u
+- `ENGT M10DG` (Stand-Alone) Electrical and Mechanical Devices · 3.0u
 
-### singleton → `UC-CUR-AUTO0714D921` (Unified (new)) · title: unchanged → **Dance Ensemble Performance**
-- `DANC M11DR` (Stand-Alone) Dance Ensemble Performance · 2.0u
-- `DANC M11DS` (Stand-Alone) Performance Dance Ensemble · 1.0u
+### singleton → `UC-CUR-AUTO69D5BCA4` (Unified (new)) · title: unchanged → **Fundamentals of Electronics**
+- `ELCT M10DY` (Stand-Alone) Electronics Fundamentals · 6.0u
+- `ELET M10LO` (Stand-Alone) Fundamentals of Electronics · 4.0u
 
-### anchored → `MUSI M1518` (M-ID) · title: unchanged → **A Survey of World Music**
-- `MUSI M1518` (M-ID) A Survey of World Music · 3.0u
-- `MUSI M12PM` (Stand-Alone) Survey of World Music · 3.0u
+### anchored → `HTEC M9015` (M-ID) · title: unchanged → **Personal Care Attendant 2: Dementia and End of Life Care**
+- `HTEC M9015` (M-ID) Personal Care Attendant 2 Dementia and End of Life Care · 0.0u
+- `HLTH M90AH` (Stand-Alone) Personal Care Attendant 2: Dementia and End of Life Care · 0.0u
 
-### anchored → `KINE M1297` (M-ID) · title: unchanged → **Rock Climbing: Beginning (Bay Area)**
-- `KINE M1297` (M-ID) Beginning Rock Climbing · 1.0u
-- `WELD M10MU` (Stand-Alone) Rock Climbing: Beginning · 1.5u
-- `WELD M10LD` (Stand-Alone) Rock Climbing: Beginning (Bay Area) · 1.8u
-- `WELD M10MV` (Stand-Alone) Rock Climbing: Beginning (Tahoe) · 1.8u
+### anchored → `ESOL M9162` (M-ID) · title: unchanged → **Beginning High A**
+- `ESOL M9162` (M-ID) Beginning High · 0.0u
+- `ESOL M90WC` (Stand-Alone) High Beginning · 0.0u
+- `ESOL M90WD` (Stand-Alone) Beginning High A · 0.0u
 
-### singleton → `UC-CUR-AUTOB8530F6C` (Unified (new)) · title: unchanged → **Elementary Filipino (Tagalog)**
-- `FILI M10AB` (Stand-Alone) Elementary Filipino · 5.0u
-- `FLTA M10AI` (Stand-Alone) Elementary Filipino (Tagalog) · 5.0u
+### singleton → `UC-CUR-AUTO93588331` (Unified (new)) · title: unchanged → **Medical Billing and Coding 2**
+- `BUSI M10AQ` (Stand-Alone) Medical Coding/Billing 2 · 3.0u
+- `OTEC M10HA` (Stand-Alone) Medical Billing and Coding 2 · 3.0u
 
-### singleton → `UC-CUR-AUTO80AA4692` (Unified (new)) · title: unchanged → **Geologic Field Studies of the Mojave Desert**
-- `GEOL M10EA` (Stand-Alone) Geologic Field Studies - Mojave Desert · 2.0u
-- `GEOL M10EB` (Stand-Alone) Geologic Field Studies of the Mojave Desert · 1.0u
+### singleton → `UC-CUR-AUTO423F8544` (Unified (new)) · title: unchanged → **Support Course for Math 150**
+- `MATH M10CH` (Stand-Alone) Math 150 Support Course · 1.0u
+- `MATH M10CI` (Stand-Alone) Support Course for Math 150 · 2.0u
 
-### singleton → `UC-CUR-AUTOAB4F679E` (Unified (new)) · title: unchanged → **Technology and Ethics**
-- `PHIL M10FB` (Stand-Alone) Ethics of Technology · 3.0u
-- `PHIL M10FC` (Stand-Alone) Technology and Ethics · 3.0u
+### singleton → `UC-CUR-AUTO043A2728` (Unified (new)) · title: unchanged → **Fundamentals of Gas Tungsten Arc Welding**
+- `WELD M10IV` (Stand-Alone) Fundamentals of Gas Tungsten Arc Welding · 2.0u
+- `WELD M10IW` (Stand-Alone) Gas Tungsten Arc Welding Fundamentals · 2.0u
 
-### anchored → `BUSI M1195` (M-ID) · title: unchanged → **Business Management**
-- `BUSI M1195` (M-ID) Business Management · 3.0u
-- `BUSI M10VE` (Stand-Alone) Management-Business · 3.0u
+### anchored → `ETHN M1031` (M-ID) · title: unchanged → **Chicanx/Latinx Literature**
+- `ETHN M1031` (M-ID) Chicanx/Latinx Literature · 3.0u
+- `ETHS M1180` (M-ID) Latinx/Chicanx Literature · 3.0u
 
 ### anchored → `REAL M1022` (M-ID) · title: unchanged → **Real Estate Economics**
 - `REAL M1022` (M-ID) Real Estate Economics · 3.0u
 - `REAL M10AH` (Stand-Alone) Real Estate Economics · 3.0u
 
-### singleton → `UC-CUR-AUTOD5BDF89D` (Unified (new)) · title: unchanged → **Hazardous Materials Management (HMM) Applications**
-- `ESCI M10CY` (Stand-Alone) Hazardous Materials Management (HMM) Applications · 4.0u
-- `ELET M10DT` (Stand-Alone) Hazardous Materials Management Applications · 4.0u
+### singleton → `UC-CUR-AUTOBBFC2846` (Unified (new)) · title: unchanged → **ESL Conversation - Intermediate High**
+- `ESOL M91DB` (Stand-Alone) ESL Conversation, High Intermediate · 0.0u
+- `ESOL M91DC` (Stand-Alone) ESL Conversation - Intermediate High · 0.0u
 
-### anchored → `DANC M1227` (M-ID) · title: unchanged → **Dance Production 1**
-- `DANC M1227` (M-ID) Dance Production 1 · 2.0u
-- `DANC M10BC` (Stand-Alone) Dance Production 1 · 1.0u
+### anchored → `ESOL M1306` (M-ID) · title: unchanged → **Intermediate Grammar for Reading and Writing**
+- `ESOL M1306` (M-ID) Intermediate Grammar for Reading and Writing · 3.0u
+- `ESOL M1307` (M-ID) Intermediate Reading, Writing, and Grammar · 6.0u
 
-### anchored → `COUN M1074` (M-ID) · title: unchanged → **Orientation to College**
-- `COUN M1074` (M-ID) College Orientation · 1.0u
-- `COUN M1075` (M-ID) Orientation to College · 0.5u
-- `COUN M10MN` (Stand-Alone) Orientation/College · 0.5u
+### anchored → `WELD M1046` (M-ID) · title: unchanged → **Intermediate Gas Tungsten Arc Welding (GTAW)**
+- `WELD M1046` (M-ID) Intermediate Gas Tungsten Arc Welding · 2.5u
+- `WELD M1042` (M-ID) Intermediate Gas Tungsten Arc Welding (GTAW) · 3.0u
+- `WELD M10JJ` (Stand-Alone) Gas Tungsten Arc Welding - Intermediate · 4.0u
+- `WELD M10JI` (Stand-Alone) Intermediate Gas Tungsten Arc Welding (TIG) · 3.0u
 
-### singleton → `UC-CUR-AUTO7636966D` (Unified (new)) · title: unchanged → **Polynesian Dance 2**
-- `DANC M10DA` (Stand-Alone) Polynesian Dance 2 · 1.0u
-- `DANC M11JU` (Stand-Alone) Polynesian Dance 2 · 1.0u
+### singleton → `UC-CUR-AUTO857FDF8F` (Unified (new)) · title: unchanged → **The Craft of Writing Poetry: Beginning**
+- `ENGL M10NV` (Stand-Alone) The Craft of Writing Poetry: Beginning · 3.0u
+- `ENGL M10NW` (Stand-Alone) Beginning Craft of Writing - Poetry · 3.0u
 
-### anchored → `CNST M1047` (M-ID) · title: unchanged → **Methods of Construction**
-- `CNST M1047` (M-ID) Construction Methods · 3.0u
-- `ARCH M10NS` (Stand-Alone) Methods of Construction · 2.0u
+### anchored → `DANC M1019` (M-ID) · title: unchanged → **Ballet, Advanced**
+- `DANC M1019` (M-ID) Advanced Ballet · 2.0u
+- `DANC M1020` (M-ID) Ballet, Advanced · 1.0u
 
-### singleton → `UC-CUR-AUTO0E630885` (Unified (new)) · title: unchanged → **Natural Hazards and Disasters**
-- `GEOG M10EI` (Stand-Alone) Natural Hazards and Disasters · 3.0u
-- `PHSC M10DX` (Stand-Alone) Natural Disasters and Hazards · 3.0u
+### singleton → `UC-CUR-AUTO9DC29CBC` (Unified (new)) · title: unchanged → **Intercollegiate Sports: Soccer (Women)**
+- `ATHL M11EV` (Stand-Alone) Intercollegiate Sports-Soccer · 3.0u
+- `ATHL M11EW` (Stand-Alone) Intercollegiate Sports: Soccer (Women) · 3.0u
 
-### anchored → `FLFR M1048` (M-ID) · title: unchanged → **Topics in French**
-- `FLFR M1048` (M-ID) Topics in French · 0.3u
-- `FLFR M10DU` (Stand-Alone) French Topics · 0.5u
+### anchored → `HIST M1157` (M-ID) · title: unchanged → **Ethnic Groups of the United States: Their Histories**
+- `HIST M1157` (M-ID) Ethnic Groups of the United States: Their Histories · 3.0u
+- `ETHS M10RT` (Stand-Alone) Ethnic Groups in the United States: Their Histories · 3.0u
 
-### anchored → `DANC M1080` (M-ID) · title: unchanged → **Intermediate Ballet A**
-- `DANC M1080` (M-ID) Intermediate Ballet · 1.0u
-- `DANC M1081` (M-ID) Intermediate Ballet A · 2.0u
-- `DANC M1082` (M-ID) Ballet - Intermediate · 1.0u
-- `DANC M10BK` (Stand-Alone) Intermediate Ballet · 1.5u
+### anchored → `INDT M1084` (M-ID) · title: unchanged → **Metal Fabrication and Layout**
+- `INDT M1084` (M-ID) Metal Fabrication and Layout · 2.0u
+- `WELD M10RQ` (Stand-Alone) Metal Layout for Fabrication · 3.0u
 
-### singleton → `UC-CUR-AUTOB173E8B2` (Unified (new)) · title: unchanged → **Principles of Graphic Design**
-- `GRAF M10AI` (Stand-Alone) Graphic Design Principles · 3.0u
-- `MULT M10PV` (Stand-Alone) Principles of Graphic Design · 3.0u
+### singleton → `UC-CUR-AUTO5159B1EA` (Unified (new)) · title: unchanged → **Analytical and Critical Thinking in Reading**
+- `ENGL M10KY` (Stand-Alone) Analytical and Critical Thinking in Reading · 3.0u
+- `READ M10AZ` (Stand-Alone) Critical Reading for Analytical Thinking · 3.0u
 
-### anchored → `FIMS M1095` (M-ID) · title: unchanged → **Screenwriting: Intermediate**
-- `FIMS M1095` (M-ID) Intermediate Screenwriting · 3.0u
-- `ENGL M11GV` (Stand-Alone) Screenwriting: Intermediate · 3.0u
+### anchored → `CISC M9038` (M-ID) · title: unchanged → **Computer/Skills (Bilingual)**
+- `CISC M9038` (M-ID) Computer Skills · 0.0u
+- `OTEC M90EF` (Stand-Alone) Computer/Skills (Bilingual) · 0.0u
 
-### anchored → `FIRE M1192` (M-ID) · title: unchanged → **Fire Control 4A (Ignitable Liquids and Gases Awareness/Operations)**
-- `FIRE M1192` (M-ID) Fire Control 4A (Ignitable Liquids and Gases Awareness/Operations) · 0.3u
-- `FIRE M10QI` (Stand-Alone) Fire Control 4A · 0.5u
+### anchored → `FIRE M1341` (M-ID) · title: unchanged → **Introduction to Fire Technology**
+- `FIRE M1341` (M-ID) Introduction to Fire Technology · 3.0u
+- `FIRE M10BY` (Stand-Alone) Introduction to Fire Technology · 3.0u
 
-### anchored → `CRIM M1086` (M-ID) · title: unchanged → **Requalification – Basic Course**
-- `CRIM M1086` (M-ID) Requalification – Basic Course · 7.0u
-- `CRIM M10QU` (Stand-Alone) Basic Course Requalification · 5.5u
+### anchored → `AUTO M1093` (M-ID) · title: unchanged → **Automotive Electrical and Electronic Systems**
+- `AUTO M1093` (M-ID) Automotive Electrical and Electronic Systems · 3.0u
+- `AUTO M1094` (M-ID) Automotive Electrical/Electronic Systems · 4.0u
 
-### anchored → `OTEC M1172` (M-ID) · title: unchanged → **Filing and Records Management**
-- `OTEC M1172` (M-ID) Filing/Records Management · 1.0u
-- `BUSI M1303` (M-ID) Filing and Records Management · 3.0u
-- `OTEC M1173` (M-ID) Records Management and Filing · 2.0u
+### anchored → `FIRE M1187` (M-ID) · title: unchanged → **Safety Officer (S-404)**
+- `FIRE M1187` (M-ID) Safety Officer (S-404) · 2.0u
+- `CRIM M11SD` (Stand-Alone) Officer Safety · 3.0u
+- `FIRE M11OJ` (Stand-Alone) Safety Officer (NWCG) · 1.5u
 
-### anchored → `ARCH M1021` (M-ID) · title: unchanged → **Introduction to Computer Aided Design (CAD)**
-- `ARCH M1021` (M-ID) Introduction to Computer Aided Design · 3.0u
-- `ENGR M10BA` (Stand-Alone) Introduction to Computer Aided Design (CAD) · 3.0u
+### anchored → `MUSI M1221` (M-ID) · title: unchanged → **Classical Guitar 4**
+- `MUSI M1221` (M-ID) Classical Guitar 4 · 2.0u
+- `MUSI M10FE` (Stand-Alone) Classical Guitar 4 · 2.0u
 
-### singleton → `UC-CUR-AUTO410E4B07` (Unified (new)) · title: unchanged → **Fundamentals of Digital Audio**
-- `MULT M10JU` (Stand-Alone) Fundamentals of Digital Audio · 3.0u
-- `MULT M10JV` (Stand-Alone) Digital Audio Fundamentals · 3.0u
+### singleton → `UC-CUR-AUTO06164037` (Unified (new)) · title: unchanged → **Vocabulary 2**
+- `ENGL M11GA` (Stand-Alone) Vocabulary 2 · 1.0u
+- `ESOL M10CQ` (Stand-Alone) Vocabulary 2 · 1.0u
 
-### anchored → `PSYC M1083` (M-ID) · title: unchanged → **Psychology and Film**
-- `PSYC M1083` (M-ID) Psychology in Film · 3.0u
-- `PSYC M10HD` (Stand-Alone) Psychology of Film · 3.0u
-- `PSYC M10HE` (Stand-Alone) Psychology and Film · 3.0u
+### anchored → `EMST M1065` (M-ID) · title: unchanged → **EMT Refresher (24 Hours)**
+- `EMST M1065` (M-ID) EMT Refresher · 0.0u
+- `EMST M10DP` (Stand-Alone) EMT Refresher (24 Hours) · 1.8u
+- `EMST M10EC` (Stand-Alone) EMT Refresher (40 Hours) · 2.5u
 
-### singleton → `UC-CUR-AUTO9D684DC7` (Unified (new)) · title: unchanged → **Low Intermediate ESL A**
-- `ESOL M91KL` (Stand-Alone) ESL Low Intermediate · 0.0u
-- `ESOL M91KM` (Stand-Alone) Low Intermediate ESL A · 0.0u
+### singleton → `UC-CUR-AUTOAB10E208` (Unified (new)) · title: unchanged → **Intermediate Fire Behavior (S-290)**
+- `FIRE M10JU` (Stand-Alone) Intermediate Fire Behavior (S-290) · 1.0u
+- `PUBS M10HS` (Stand-Alone) Intermediate Fire Behavior · 1.0u
 
-### anchored → `ATHL M1183` (M-ID) · title: unchanged → **Softball, Women, Off Season Intercollegiate**
-- `ATHL M1183` (M-ID) Softball, Women, Off Season Intercollegiate · 1.0u
-- `ATHL M10SD` (Stand-Alone) Intercollegiate Softball-Women Off Season · 1.0u
-- `ATHL M10SC` (Stand-Alone) Off Season Intercollegiate Softball - Women · 1.0u
+### anchored → `KINE M1076` (M-ID) · title: unchanged → **Advanced Tai Chi (Taiji)**
+- `KINE M1076` (M-ID) Advanced Tai Chi · 1.0u
+- `KINE M10MX` (Stand-Alone) Tai Chi - Advanced · 1.0u
+- `KINE M10MY` (Stand-Alone) Advanced Tai Chi (Taiji) · 1.0u
 
-### singleton → `UC-CUR-AUTO44166FCD` (Unified (new)) · title: unchanged → **ESL - Writing A**
-- `ESOL M91ME` (Stand-Alone) ESL Writing · 0.0u
-- `ESOL M91MF` (Stand-Alone) ESL - Writing A · 0.0u
+### singleton → `UC-CUR-AUTO599A74EA` (Unified (new)) · title: unchanged → **The History of England**
+- `HIST M10TE` (Stand-Alone) History of England · 3.0u
+- `HIST M10TF` (Stand-Alone) The History of England · 3.0u
 
-### anchored → `KINE M1725` (M-ID) · title: unchanged → **Weight Training 3**
-- `KINE M1725` (M-ID) Weight Training 3 · 1.0u
-- `KINE M10TT` (Stand-Alone) Weight Training 3 · 1.3u
+### anchored → `MULT M1026` (M-ID) · title: unchanged → **Adobe Illustrator, Advanced**
+- `MULT M1026` (M-ID) Advanced Adobe Illustrator · 3.0u
+- `GRAF M10AZ` (Stand-Alone) Adobe Illustrator, Advanced · 3.0u
 
-### singleton → `UC-CUR-AUTOB45B60C2` (Unified (new)) · title: unchanged → **Sculpture: Intermediate Life**
-- `ARTS M12CE` (Stand-Alone) Intermediate Life Sculpture · 3.0u
-- `ARTS M12CF` (Stand-Alone) Sculpture: Intermediate Life · 3.0u
+### singleton → `UC-CUR-AUTO7F65EE46` (Unified (new)) · title: unchanged → **Basketball – Women's Intercollegiate Off-Season (Spring)**
+- `ATHL M10GM` (Stand-Alone) Basketball – Women's Intercollegiate Off-Season (Spring) · 1.0u
+- `ATHL M10GN` (Stand-Alone) Off Season Intercollegiate Women's Basketball · 1.0u
 
-### anchored → `CSIS M1312` (M-ID) · title: unchanged → **Web Design 1**
-- `CSIS M1312` (M-ID) Web Design 1 · 3.0u
-- `GRAF M10AE` (Stand-Alone) Web Design 1 · 3.0u
+### anchored → `MUSI M1520` (M-ID) · title: unchanged → **Topics in Music**
+- `MUSI M1520` (M-ID) Topics in Music · 0.5u
+- `MUSI M12PQ` (Stand-Alone) Music Topics · 0.5u
 
-### singleton → `UC-CUR-AUTOE2CBB7C6` (Unified (new)) · title: unchanged → **Furniture Design and Woodworking: Beginning**
-- `ARTS M11AV` (Stand-Alone) Beginning Woodworking/Furniture Design · 1.0u
-- `ARTS M11AW` (Stand-Alone) Furniture Design and Woodworking: Beginning · 3.0u
+### singleton → `UC-CUR-AUTOB9E47C01` (Unified (new)) · title: unchanged → **Building Construction 1**
+- `CNST M10AB` (Stand-Alone) Building Construction 1 · 5.0u
+- `CNST M10FZ` (Stand-Alone) Building Construction 1 · 4.0u
 
-### anchored → `INTD M1007` (M-ID) · title: unchanged → **Kitchen and Bath Design**
-- `INTD M1007` (M-ID) Kitchen & Bath Design · 2.0u
-- `INTD M1008` (M-ID) Kitchen and Bath Design · 3.0u
+### anchored → `FLFR M1006` (M-ID) · title: unchanged → **Intermediate French 2**
+- `FLFR M1006` (M-ID) Intermediate French 2 · 4.0u
+- `FLFR M1042` (M-ID) Intermediate French 2 · 5.0u
 
-### anchored → `AGRI M1085` (M-ID) · title: unchanged → **Facility Management for Food Safety**
-- `AGRI M1085` (M-ID) Facility Management for Food Safety · 1.5u
-- `AGRI M10RO` (Stand-Alone) Facility Food Safety Management · 3.0u
+### anchored → `CSIS M1372` (M-ID) · title: unchanged → **Introduction to Game Programming**
+- `CSIS M1372` (M-ID) Introduction to Game Programming · 3.0u
+- `CISC M10QK` (Stand-Alone) Game Programming, Introduction · 4.0u
 
-### anchored → `RECR M1001` (M-ID) · title: unchanged → **School-Age Child Care and Recreation Activities (DS5)**
-- `RECR M1001` (M-ID) School-Age Child Care and Recreation Activities · 3.0u
-- `ECED M10BF` (Stand-Alone) School-Age Child Care and Recreation Activities (DS5) · 3.0u
+### anchored → `ARTH M1023` (M-ID) · title: unchanged → **History of Mexican Art**
+- `ARTH M1023` (M-ID) Mexican Art History · 3.0u
+- `ETHS M10KG` (Stand-Alone) History of Mexican Art · 3.0u
 
-### anchored → `PSYC M1053` (M-ID) · title: unchanged → **An Introduction to Cognitive Psychology**
-- `PSYC M1053` (M-ID) Introduction to Cognitive Psychology · 3.0u
-- `PSYC M10EP` (Stand-Alone) An Introduction to Cognitive Psychology · 4.0u
+### anchored → `ATHL M1195` (M-ID) · title: kept curator title
+- `ATHL M1195` (M-ID) Intercollegiate Softball · 3.0u
+- `ATHL M10UW` (Stand-Alone) Intercollegiate Softball (W) · 1.0u
 
-### singleton → `UC-CUR-AUTOF908AD48` (Unified (new)) · title: unchanged → **Introduction to Radio, TV and Film**
-- `MCOM M10AN` (Stand-Alone) Introduction to Radio, TV, Film · 3.0u
-- `BCST M10HL` (Stand-Alone) Introduction to Radio, TV and Film · 3.0u
+### singleton → `UC-CUR-AUTOC546B5B8` (Unified (new)) · title: unchanged → **Electricity for Air Conditioning and Refrigeration 2**
+- `HVAC M10FY` (Stand-Alone) Air Conditioning & Refrigeration Electricity 2 · 3.0u
+- `HVAC M10FZ` (Stand-Alone) Electricity for Air Conditioning and Refrigeration 2 · 3.0u
 
-### singleton → `UC-CUR-AUTOBAB72585` (Unified (new)) · title: unchanged → **JavaScript for Web Development**
-- `CISC M10OY` (Stand-Alone) Web Development - JavaScript · 3.0u
-- `CISC M10OZ` (Stand-Alone) JavaScript for Web Development · 4.0u
+### singleton → `UC-CUR-AUTO635E63B8` (Unified (new)) · title: unchanged → **Conditioning Dance: Pilates 3**
+- `DANC M10ZL` (Stand-Alone) Conditioning Dance: Pilates 3 · 2.0u
+- `DANC M10ZM` (Stand-Alone) Dance Conditioning/Pilates 3 · 0.5u
 
-### singleton → `UC-CUR-AUTO003AE051` (Unified (new)) · title: unchanged → **Intercollegiate Sports: Cross-Country (Women)**
-- `ATHL M11CW` (Stand-Alone) Intercollegiate Sports-Cross Country · 3.0u
-- `ATHL M11CX` (Stand-Alone) Intercollegiate Sports: Cross-Country (Women) · 3.0u
+### singleton → `UC-CUR-AUTOE83866B0` (Unified (new)) · title: unchanged → **Varsity Track and Field for Women**
+- `ATHL M10NH` (Stand-Alone) Track and Field, Varsity, Women · 3.0u
+- `ATHL M10NI` (Stand-Alone) Varsity Track and Field for Women · 3.0u
 
-### anchored → `MUSI M1043` (M-ID) · title: unchanged → **The Music of Multicultural America**
-- `MUSI M1043` (M-ID) Music of Multicultural America · 3.0u
-- `MUSI M10LR` (Stand-Alone) The Music of Multicultural America · 3.0u
-- `MUSI M10LS` (Stand-Alone) Multicultural Music in America · 3.0u
+### anchored → `ATHL M1120` (M-ID) · title: unchanged → **Intercollegiate Track and Field (W)**
+- `ATHL M1120` (M-ID) Intercollegiate Track and Field · 3.0u
+- `ATHL M10MZ` (Stand-Alone) Intercollegiate Track and Field (W) · 1.0u
 
-### anchored → `AUTO M1106` (M-ID) · title: unchanged → **Automotive Engine Repair (Lower End)**
-- `AUTO M1106` (M-ID) Automotive Engine Repair · 4.0u
-- `AUTO M10UD` (Stand-Alone) Automotive Engine Repair (Lower End) · 4.0u
-- `AUTO M10UG` (Stand-Alone) Automotive Engine Repair (Upper End) · 4.0u
+### anchored → `ARCH M1034` (M-ID) · title: unchanged → **Architectural Design 1**
+- `ARCH M1034` (M-ID) Architectural Design 1 · 3.0u
+- `ARCH M10AD` (Stand-Alone) Architectural Design 1 · 4.0u
 
-### singleton → `UC-CUR-AUTO44895F31` (Unified (new)) · title: unchanged → **General Astronomy of the Solar System**
-- `ASTR M10AX` (Stand-Alone) General Astronomy of the Solar System · 3.0u
-- `ASTR M10AY` (Stand-Alone) General Astronomy: Solar System · 5.0u
+### singleton → `UC-CUR-AUTOF9BF2009` (Unified (new)) · title: unchanged → **Math and Science for the Young Child**
+- `ECED M10UQ` (Stand-Alone) Math and Science for the Young Child · 3.0u
+- `ECED M10UR` (Stand-Alone) Science and Math for the Young Child · 2.0u
 
-### singleton → `UC-CUR-AUTO53679748` (Unified (new)) · title: unchanged → **Elementary French (Second Semester)**
-- `FLFR M10CL` (Stand-Alone) Elementary French (First Quarter) · 5.0u
-- `FLFR M10CM` (Stand-Alone) Elementary French (First Semester) · 4.0u
-- `FLFR M10CP` (Stand-Alone) Elementary French (Second Quarter) · 5.0u
-- `FLFR M10CR` (Stand-Alone) Elementary French (Second Semester) · 4.0u
-- `FLFR M10CQ` (Stand-Alone) Elementary French (Third Quarter) · 5.0u
+### singleton → `UC-CUR-AUTO5E18A35F` (Unified (new)) · title: unchanged → **Anthropology International Field Studies**
+- `ANTH M10EC` (Stand-Alone) Anthropology International Field Studies · 1.0u
+- `ANTH M10ED` (Stand-Alone) International Anthropology Field Studies · 3.0u
 
-### anchored → `CISC M1089` (M-ID) · title: unchanged → **Internet for Research**
-- `CISC M1089` (M-ID) Internet for Research · 0.5u
-- `CSIS M12GJ` (Stand-Alone) Internet Research · 2.0u
+### anchored → `DANC M1017` (M-ID) · title: unchanged → **Hip Hop 4**
+- `DANC M1017` (M-ID) Hip Hop 4 · 1.0u
+- `DANC M1352` (M-ID) Hip Hop 4 · 1.5u
 
-### anchored → `CSIS M1131` (M-ID) · title: unchanged → **Introduction to Artificial Intelligence (AI)**
-- `CSIS M1131` (M-ID) Introduction to Artificial Intelligence · 3.0u
-- `CISC M10DH` (Stand-Alone) Introduction to Artificial Intelligence (AI) · 3.0u
+### anchored → `COUN M1070` (M-ID) · title: unchanged → **Introduction to College and Strategies for Success**
+- `COUN M1070` (M-ID) Introduction to College Success Strategies · 1.0u
+- `COUN M10MH` (Stand-Alone) Introduction to College and Strategies for Success · 1.0u
 
-### anchored → `ARTS M1375` (M-ID) · title: unchanged → **Life Drawing - Intermediate**
-- `ARTS M1375` (M-ID) Intermediate Life Drawing · 3.0u
-- `ARTS M11SP` (Stand-Alone) Life Drawing - Intermediate · 3.0u
-- `ARTD M10BH` (Stand-Alone) Drawing: Life-Intermediate · 3.0u
+### anchored → `WELD M1033` (M-ID) · title: unchanged → **Beginning Shielded Metal Arc Welding (Stick 7018/ 6010 Basic)**
+- `WELD M1033` (M-ID) Shielded Metal Arc Welding - Beginning · 3.0u
+- `WELD M10HL` (Stand-Alone) Beginning Shielded Metal Arc Welding · 3.0u
+- `WELD M10CK` (Stand-Alone) Beginning Shielded Metal Arc Welding (Stick 7018/ 6010 Basic) · 3.0u
 
-### anchored → `DENT M1092` (M-ID) · title: unchanged → **General and Oral Pathology**
-- `DENT M1092` (M-ID) General and Oral Pathology · 4.0u
-- `DENT M1093` (M-ID) General & Oral Pathology · 2.0u
-- `HLTH M10YP` (Stand-Alone) Pathology-General and Oral · 3.0u
+### anchored → `JOUR 170` (C-ID) · title: official (no title write)
+- `JOUR 170` (C-ID) Introduction to Visual Communications · 2.0u
+- `COMM M1047` (M-ID) Introduction to Visual Communications · 3.0u
 
-### anchored → `HIST M1081` (M-ID) · title: unchanged → **The Asian American in the History of the United States**
-- `HIST M1081` (M-ID) The Asian American in the History of the United States · 3.0u
-- `HIST M10LJ` (Stand-Alone) History of the Asian American in the United States · 3.0u
+### anchored → `KINE M1570` (M-ID) · title: unchanged → **Jogging for Fitness, Intermediate**
+- `KINE M1570` (M-ID) Jogging for Fitness, Intermediate · 1.0u
+- `KINE M13GU` (Stand-Alone) Intermediate Jogging for Fitness · 1.0u
 
-### anchored → `PLGL M1013` (M-ID) · title: unchanged → **Business Organizations**
-- `PLGL M1013` (M-ID) Business Organizations · 3.0u
-- `PLGL M10AF` (Stand-Alone) Business Organizations · 3.0u
+### anchored → `MATH M1272` (M-ID) · title: unchanged → **Just in Time Support for Statistics**
+- `MATH M1272` (M-ID) Just in Time Support for Statistics · 2.0u
+- `MATH M11FR` (Stand-Alone) Just-In-Time Support-Statistics · 2.0u
 
 ## Apply procedure (NOT tonight — after Sam's skim)
 
