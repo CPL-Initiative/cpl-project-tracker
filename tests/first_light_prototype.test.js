@@ -50,8 +50,8 @@ check("bright mustard never used as a text color",
   !/color:\s*var\(--mustard-fill\)/.test(HTML));
 {
   const base = HTML.match(/\.chip\s*\{[^}]*\}/);
-  check("chip base = borderless, uniform 8.5rem x 26px, 8px corners",
-    !!base && base[0].includes("border:none") && base[0].includes("width:8.5rem") &&
+  check("chip base = borderless, uniform 7.25rem x 26px, 8px corners",
+    !!base && base[0].includes("border:none") && base[0].includes("width:7.25rem") &&
     base[0].includes("height:26px") && base[0].includes("border-radius:8px") &&
     base[0].includes("color:#FFFFFF"));
 }
