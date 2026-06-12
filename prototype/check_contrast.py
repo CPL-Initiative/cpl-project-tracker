@@ -115,9 +115,17 @@ text_mustard, _ = derive(MUSTARD_SEED, PAPER, 4.5, "black")  # paper binds for d
 add("--mustard-text (chip labels)", text_mustard, "text", PAPER, "paper", 4.5)
 add("--mustard-text (chip labels)", text_mustard, "text", GLASS_WORST, "glass-worst", 4.5)
 add("--mustard-text (chip labels)", text_mustard, "text", h2rgb("#FFFFFF"), "white chip", 4.5)
+# v1.2 (Sam): bright-mustard chip labels with a thin dark outline. With a
+# full halo, the halo is the color adjacent to every letterform — so the
+# pair that must clear 4.5:1 is FILL vs HALO (and halo vs the chip fill
+# behind it). Derive the halo dark enough for both.
+halo_mustard, _ = derive(MUSTARD_SEED, h2rgb(MUSTARD_FILL), 4.5, "black")
+add("--mustard-halo vs bright label", halo_mustard, "text", h2rgb(MUSTARD_FILL), "mustard fill", 4.5)
+add("--mustard-halo vs white chip", halo_mustard, "text", h2rgb("#FFFFFF"), "white chip", 4.5)
+add("--mustard-halo vs paper", halo_mustard, "text", PAPER, "paper", 4.5)
 mustard_dark, _ = derive(MUSTARD_FILL, DARK_WORST, 4.5, "white")
 add("--mustard-on-dark", mustard_dark, "text", DARK_WORST, "dark-worst", 4.5)
-print(f"  mustard  fill {MUSTARD_FILL} · deep {deep_hex} · text {text_mustard} · on-dark {mustard_dark}")
+print(f"  mustard  fill {MUSTARD_FILL} · deep {deep_hex} · text {text_mustard} · halo {halo_mustard} · on-dark {mustard_dark}")
 
 # Focus ring (cobalt graphic grade) must clear 3:1 against paper
 cobalt_text, _ = derive(BRAND["cobalt"], GLASS_WORST, 4.5, "black")

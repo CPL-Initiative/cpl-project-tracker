@@ -35,9 +35,10 @@
   --cobalt:  #0047AB;              /* interactive · links · focus      7.54:1 */
   --hunter:  #355E3B;              /* positive · savings · verified    6.67:1 */
   --violet:  #6D28D9;              /* machine-generated · inferred     6.35:1 */
-  --mustard-fill: #E3B341;         /* brand hue — fills/dots only, never text */
+  --mustard-fill: #E3B341;         /* brand hue — bright label/fills (halo-paired) */
   --mustard-deep: #9A7400;         /* caution border/icon grade (≥3:1) 3.85:1 */
-  --mustard-text: #8B6800;         /* caution chip labels (≥4.5:1)     4.60:1 */
+  --mustard-text: #8B6800;         /* dark caution text grade (≥4.5:1) 4.60:1 */
+  --mustard-halo: #5E4700;         /* outline behind bright labels — 4.54:1 vs fill */
 
   /* on-dark grades — RESERVED (no dark chrome in v1.1; verified vs #27272E) */
   --crimson-on-dark: #E28392;
@@ -208,12 +209,24 @@ section > p.lede { color:var(--text-muted); font-size:.9rem; margin-bottom: .9re
   padding:.22rem .7rem; min-height:24px; min-width:24px; border:1px solid;
 }
 /* v1.1: clear/white fills (Sam) — the accent lives in border + label.
-   Mustard labels use the dedicated --mustard-text grade (the bright hue
-   fails AA as text on light; that rule stands). */
+   v1.2 (Sam): mustard labels go BRIGHT with a thin dark outline — the
+   8-way halo is the color adjacent to every letterform, so the measured
+   AA pair is fill-vs-halo (4.54:1, derived), not fill-vs-white. The
+   bright hue still never appears as plain un-haloed text. */
 .chip-crimson { color:var(--crimson); border-color:var(--crimson); background:var(--surface-opaque); }
 .chip-hunter  { color:var(--hunter);  border-color:var(--hunter);  background:var(--surface-opaque); }
 .chip-violet  { color:var(--violet);  border-color:var(--violet);  background:var(--surface-opaque); }
-.chip-mustard { color:var(--mustard-text); border-color:var(--mustard-deep); background:var(--surface-opaque); }
+.chip-mustard {
+  color:var(--mustard-fill); border-color:var(--mustard-deep); background:var(--surface-opaque);
+  font-weight:700; letter-spacing:.01em;
+  text-shadow:
+    -1px -1px 0 var(--mustard-halo), 1px -1px 0 var(--mustard-halo),
+    -1px  1px 0 var(--mustard-halo), 1px  1px 0 var(--mustard-halo),
+    -1px  0   0 var(--mustard-halo), 1px  0   0 var(--mustard-halo),
+     0   -1px 0 var(--mustard-halo), 0    1px 0 var(--mustard-halo);
+}
+.chip-mustard-alt { color:var(--mustard-text); border-color:var(--mustard-deep); background:var(--surface-opaque); }
+.chip-cap { font-size:.68rem; color:var(--text-faint); align-self:center; }
 .chip-neutral { color:var(--text-muted); border-color:var(--border-strong); background:var(--surface-opaque); }
 
 .role-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(245px,1fr)); gap:1rem; }
@@ -257,7 +270,7 @@ td .id { font-weight:700; color:var(--text-strong); }
 .fl-overlay.open { display:flex; }
 .fl-dialog {
   background:var(--surface-opaque); border-radius:18px; overflow:hidden;
-  max-width:760px; width:100%; max-height:92vh; overflow-y:auto;
+  max-width:min(1180px, 94vw); width:100%; max-height:94vh; overflow-y:auto;
   box-shadow:0 30px 80px rgba(10,10,20,.4);
 }
 .fl-head {
@@ -274,7 +287,7 @@ td .id { font-weight:700; color:var(--text-strong); }
 .fl-close:hover { background:var(--surface-subtle); }
 .fl-art { background:#22221F; text-align:center; }
 .fl-art img {
-  max-width:100%; max-height:46vh; display:block; margin:0 auto;
+  max-width:100%; max-height:66vh; display:block; margin:0 auto;
   filter:grayscale(1); transition:filter 1.8s ease .35s;
 }
 .fl-overlay.open .fl-art img.revealed { filter:grayscale(0); }
@@ -288,6 +301,15 @@ td .id { font-weight:700; color:var(--text-strong); }
 .fl-body .blurb { font-size:.92rem; margin-bottom:.6rem; }
 .fl-body .setting { font-size:.86rem; color:var(--text-muted); margin-bottom:.8rem; }
 .fl-body .lic { font-size:.74rem; color:var(--text-muted); border-top:1px solid var(--border); padding-top:.7rem; display:flex; flex-wrap:wrap; gap:.4rem 1rem; align-items:center; }
+.fl-reflect { margin:.4rem 0 .2rem; }
+.fl-reflect-label { display:block; font-weight:600; font-size:.86rem; color:var(--text-strong); margin-bottom:.3rem; }
+.fl-reflect-label span { font-weight:400; color:var(--text-muted); }
+.fl-reflect textarea {
+  width:100%; resize:vertical; min-height:64px; font-family:inherit; font-size:.9rem;
+  color:var(--text-body); background:var(--surface-subtle);
+  border:1px solid var(--border-strong); border-radius:9px; padding:.55rem .7rem;
+}
+.fl-reflect-note { font-size:.74rem; color:var(--text-muted); display:block; margin-top:.35rem; max-width:70ch; }
 .fl-actions { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; margin:.9rem 0 .2rem; }
 .fl-optout { font-size:.8rem; color:var(--text-muted); display:flex; align-items:center; gap:.4rem; }
 .fl-optout input { width:16px; height:16px; accent-color:var(--cobalt); }
@@ -312,7 +334,7 @@ footer .credit { margin-bottom:.3rem; }
 
 <div class="bg-art" id="bgArt" aria-hidden="true"></div>
 
-<div class="proto-note">Prototype v1.1 — “First Light” theme spec &amp; living mock · demo data only · token values AA-verified by <code>prototype/check_contrast.py</code></div>
+<div class="proto-note">Prototype v1.2 — “First Light” theme spec &amp; living mock · demo data only · token values AA-verified by <code>prototype/check_contrast.py</code></div>
 
 <header class="masthead glass">
   <h1>CPL Project Tracker</h1>
@@ -415,6 +437,9 @@ footer .credit { margin-bottom:.3rem; }
           <div class="demo">
             <span class="chip chip-mustard">⚠ Needs review</span>
             <span class="chip chip-mustard">NEW</span>
+            <span class="chip-cap">v1.2 halo</span>
+            <span class="chip chip-mustard-alt">⚠ Needs review</span>
+            <span class="chip-cap">v1.1 alt</span>
           </div>
         </div>
         <div class="role-card glass">
@@ -475,7 +500,8 @@ footer .credit { margin-bottom:.3rem; }
             <tr><td><code>--violet</code></td><td><span class="sw" style="background:#6D28D9"></span></td><td><code>#6D28D9</code></td><td>machine-generated</td><td>6.35:1 paper</td><td class="pass">PASS</td></tr>
             <tr><td><code>--mustard-fill</code></td><td><span class="sw" style="background:#E3B341"></span></td><td><code>#E3B341</code></td><td>brand hue — dots/banners (ink on it: 8.77:1)</td><td>8.77:1 ink-on-fill</td><td class="pass">PASS</td></tr>
             <tr><td><code>--mustard-deep</code></td><td><span class="sw" style="background:#9A7400"></span></td><td><code>#9A7400</code></td><td>caution border/icon (3:1)</td><td>3.85:1 paper</td><td class="pass">PASS</td></tr>
-            <tr><td><code>--mustard-text</code></td><td><span class="sw" style="background:#8B6800"></span></td><td><code>#8B6800</code></td><td>caution chip labels</td><td>4.60:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--mustard-text</code></td><td><span class="sw" style="background:#8B6800"></span></td><td><code>#8B6800</code></td><td>dark caution text (un-haloed)</td><td>4.60:1 paper</td><td class="pass">PASS</td></tr>
+            <tr><td><code>--mustard-halo</code></td><td><span class="sw" style="background:#5E4700"></span></td><td><code>#5E4700</code></td><td>outline behind bright labels</td><td>4.54:1 vs label · 8.83:1 white</td><td class="pass">PASS</td></tr>
             <tr><td><code>--crimson-on-dark</code></td><td><span class="sw" style="background:#E28392"></span></td><td><code>#E28392</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
             <tr><td><code>--cobalt-on-dark</code></td><td><span class="sw" style="background:#7DA1D4"></span></td><td><code>#7DA1D4</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
             <tr><td><code>--hunter-on-dark</code></td><td><span class="sw" style="background:#8EA591"></span></td><td><code>#8EA591</code></td><td>reserved (dark surfaces)</td><td>≥5.5:1 dark-worst</td><td class="pass">PASS</td></tr>
@@ -493,7 +519,7 @@ footer .credit { margin-bottom:.3rem; }
       <ul class="rules">
         <li><strong>Color never carries meaning alone</strong> — every semantic accent ships with a glyph (▲▼ ✓ ⚠ ⚙ ✨). Saves the crimson/hunter pair for color-blind readers.</li>
         <li><strong>Glass always carries a scrim</strong> — text contrast is computed against the worst-case composite behind it, never the best case. Data tables skip glass entirely.</li>
-        <li><strong>Mustard’s bright hue is never text</strong> — chip labels use the dedicated <code>--mustard-text</code> grade (4.6:1); borders/icons use the deep grade; the bright fill is for dots/banners only.</li>
+        <li><strong>Mustard’s bright hue never appears as plain text</strong> — bright chip labels carry the 8-way <code>--mustard-halo</code> outline (the halo is the measured adjacent color: 4.54:1 vs the label, 8.83:1 vs white); un-haloed mustard text uses the dark <code>--mustard-text</code> grade.</li>
         <li><strong>Cobalt and violet stay structurally distinct</strong> (the one confusable pair): cobalt always with underline/ring affordances, violet always on glyph-badges.</li>
         <li><strong>OS preferences honored:</strong> <code>prefers-reduced-transparency</code> → solid surfaces; <code>prefers-reduced-motion</code> → no reveal animation; <code>prefers-contrast: more</code> → stronger borders + darker muted text.</li>
         <li><strong>Visible focus everywhere</strong> (3px cobalt ring, offset 2px) · interactive targets ≥24×24 px · the First Light dialog is a real <code>role="dialog"</code> with focus trap, ESC, and focus return.</li>
@@ -528,8 +554,14 @@ footer .credit { margin-bottom:.3rem; }
       <div class="byline" id="flByline"></div>
       <p class="blurb" id="flBlurb"></p>
       <p class="setting" id="flSetting"></p>
+      <div class="fl-reflect">
+        <label class="fl-reflect-label" for="flReflect">A thought for the day <span>(optional)</span></label>
+        <textarea id="flReflect" maxlength="2000" rows="3" placeholder="About the painting, your priorities — anything."></textarea>
+        <span class="fl-reflect-note">Don’t worry — reflections are anonymous, and we’ll only use them to look for uplifting themes and opportunities for growth and innovation for our colleagues and communities. <em>(Prototype: saved on this device only.)</em></span>
+      </div>
       <div class="fl-actions">
         <button class="btn" id="flDone" type="button">Begin the day</button>
+        <button class="btn ghost" id="flReflectSave" type="button">Share reflection</button>
         <button class="btn ghost" id="flSpeak" type="button" aria-pressed="false">🔊 Read aloud</button>
         <a class="link" href="#" onclick="return false;">Browse the Almanac ↗ <span style="font-size:.75em;color:var(--text-muted)">(stub)</span></a>
         <label class="fl-optout"><input type="checkbox" id="flOptOut"> Don’t greet me with paintings</label>
@@ -541,7 +573,7 @@ footer .credit { margin-bottom:.3rem; }
 
 <footer>
   <div class="credit" id="footCredit"></div>
-  <div>First Light theme · prototype v1.1 (light masthead · white chips · read-aloud) · next: token retheme PR → First Light production build</div>
+  <div>First Light theme · prototype v1.2 (gallery-size painting · halo mustard chips · daily reflection) · next: the live-dashboard token retheme</div>
 </footer>
 
 <script>
@@ -627,6 +659,7 @@ function fillModal() {
 function openFL() {
   openerEl = document.activeElement;
   fillModal();
+  syncReflectState();
   overlay.classList.add("open");
   var img = document.getElementById("flImg");
   img.classList.remove("revealed");
@@ -670,6 +703,32 @@ document.getElementById("btnNewDay").addEventListener("click", function () {
 });
 document.getElementById("flOptOut").addEventListener("change", function (e) {
   try { localStorage.setItem("flOptOut.v1", e.target.checked ? "1" : "0"); } catch (e2) {}
+});
+
+/* ── reflection (prototype: device-local; production posts anonymously
+      to a write-only store) ───────────────────────────────────────────── */
+var reflectTa = document.getElementById("flReflect");
+var reflectBtn = document.getElementById("flReflectSave");
+function reflectKey() { return "flReflection." + todayKey; }
+function syncReflectState() {
+  var saved = null;
+  try { saved = localStorage.getItem(reflectKey()); } catch (e) {}
+  if (saved !== null) {
+    reflectTa.value = saved;
+    reflectTa.disabled = true;
+    reflectBtn.disabled = true;
+    reflectBtn.textContent = "✓ Shared — thank you";
+  } else {
+    reflectTa.disabled = false;
+    reflectBtn.disabled = false;
+    reflectBtn.textContent = "Share reflection";
+  }
+}
+reflectBtn.addEventListener("click", function () {
+  var text = (reflectTa.value || "").trim();
+  if (!text) { reflectTa.focus(); return; }
+  try { localStorage.setItem(reflectKey(), text.slice(0, 2000)); } catch (e) {}
+  syncReflectState();
 });
 
 /* ── read-aloud — browser speechSynthesis, no cloud, no cloning ─────── */
