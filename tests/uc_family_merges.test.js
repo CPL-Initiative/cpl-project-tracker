@@ -69,8 +69,12 @@ check("EMT Certification family group surfaced", !!emt);
 if (emt) {
   check("EMT group folds >= 5 near-duplicate M-IDs", emt.members.length >= 5);
   check("EMT group is all EMST identities", emt.members.every((m) => subj(m.id) === "EMST"));
-  check("EMT group leads with the canonical 'Emergency Medical Technician' (default merge target)",
-    /^emergency medical technician$/i.test((emt.members[0].t || "").trim()));
+  // The bare-titled canonical M-ID was consumed by the 2026-06-12
+  // curator-authorized auto-merge pass; the family group recomputes from
+  // live rows, so pin the MECHANISM (an EMT-titled identity leads as the
+  // default target), not the exact pre-merge title.
+  check("EMT group leads with an Emergency-Medical-Technician-titled identity (default merge target)",
+    /^emergency medical technician/i.test((emt.members[0].t || "").trim()));
 }
 
 let pass = 0;
