@@ -143,7 +143,13 @@ def main():
 
     for lane, groups in lanes:
         for g in groups:
-            mem = [m for m in (g.get("members") or []) if m.get("id") not in merged]
+            # Dedupe by id — the payload can list one id under two kinds
+            # (e.g. an M-ID also present in the stand-alone payload); first
+            # occurrence wins so the write set stays unique per group.
+            seen_ids = set()
+            mem = [m for m in (g.get("members") or [])
+                   if m.get("id") not in merged
+                   and not (m["id"] in seen_ids or seen_ids.add(m["id"]))]
             if len(mem) < 2:
                 buckets[f"{lane}: already consumed (<2 live members)"] += 1
                 continue
