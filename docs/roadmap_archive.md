@@ -1290,3 +1290,24 @@ restyle checklist includes the To-Do chips + the CSR sweep chips, per the
 sibling CCR/CSR session's note).
 Lessons: `docs/first_light_lessons.md`; KB notes:
 `methodology-derived-aa-token-palette`, `reference-public-domain-art-sourcing`.
+
+---
+
+### Session 49 (Bruh Orbitron) — the First Light retheme SHIPPED to prod (2026-06-12)
+
+The v1.6 spec painted onto the live dashboard, three PRs merged + dispatched
+same-afternoon: **#407** the palette flip (`:root` value-swap in BOTH HTMLs +
+legacy navy/gold aliases remapped; contextual legacy-hex sweep across the
+styleblock, body, `excel_to_dashboard.py` in Rule-1 lockstep, the College
+Activity template, and ~20 JS assets; canvas/SVG get literal hexes — `var()`
+doesn't resolve there; `check_contrast.py --live` CI lint + 27-pin
+`tests/retheme_tokens.test.js`); **#408** glass chrome (masthead/rail/KPI
+hero/filter bar) + the ghosted painting (`first_light.js` `.cplfl-bg`,
+opt-out-aware) + `prefers-reduced-transparency`/`contrast` honored — dark
+trend/College-Activity cards deliberately stay ink; **#410** glass-quiet
+chips (CCR `.uc-badge`, CSR `.cs-badge`, CER `.cr-chip` — Generated rides
+VIOLET now — To-Do FAB → cobalt). Word-docx/xlsx export branding + the
+Element Map deliberately untouched. Lessons: `docs/first_light_lessons.md`
+(Session 49); KB note: `methodology-token-retheme-on-generated-html`.
+**NEXT (design lane): `docs/session_52_handoff.md`** — Sam's screenshot
+verdicts, kpi_reorder keyboard path, per-tab polish.

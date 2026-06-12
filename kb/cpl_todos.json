@@ -1,80 +1,56 @@
 {
-  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-06-12-f",
-  "_session": 49,
-  "_status": "TWO LANDINGS IN ONE DAY: the SUBJ4 fold is LIVE (Session 50 — every course identity wears its curator-confirmed Common SUBJ; collision flag 1,206 → 3) AND the FIRST LIGHT RETHEME is LIVE (Session 49 — the whole dashboard repainted to the blessed v1.6 spec: warm paper, ink text, the five accents, glass masthead/rail/KPI cards, today's painting ghosted behind the page, glass-quiet chips). Hard-refresh to see it. Curator frontier: the smog residuals + the merge queues; design frontier: your screenshot verdicts steer the polish pass (docs/session_52_handoff.md).",
-  "items": [
-    {
-      "id": "sam-retheme-look",
-      "who": "sam",
-      "tab": "all",
-      "text": "The First Light retheme is LIVE ☀ — hard-refresh and look around: warm paper, glass header and KPI cards, today's painting ghosted behind the page, quieter chips. Send screenshots + verdicts (chip width? ghost opacity? the dark data cards?) — they steer the polish pass."
-    },
-    {
-      "id": "sam-fold-landed",
-      "who": "sam",
-      "tab": "unified-courses",
-      "text": "The SUBJ4 fold you approved is LIVE — course ids re-sequenced (the smog family now sits adjacent as AUTO M1004/05/06). If a CCR tab was open across the regen, accept the one-time reload banner (or hard-refresh) so rows and ids line up."
-    },
-    {
-      "id": "ccr-smog-residuals",
-      "who": "sam",
-      "tab": "unified-courses",
-      "text": "✨ Suggested merges → 🏷 title groups: the smog residuals await your judgment — the unmarked 'Inspection Procedures' rows (now AUTO M11CR / M11CT / M11NL after the fold) plus the noncredit pair (M9052 / M90AK)."
-    },
-    {
-      "id": "ccr-queues",
-      "who": "sam",
-      "tab": "unified-courses",
-      "text": "Work the merge queues as time allows, cross-college first: 🏷 title-evidence (5,581 groups), 📝 description-evidence (415), 🧾 COCI-evidence folds — all refreshed to post-fold ids. Confirm what's right, Skip the rest — nothing applies without you."
-    },
-    {
-      "id": "cer-statewide-bucket",
-      "who": "sam",
-      "tab": "credential-reference",
-      "text": "Statewide-category review bucket: State Bar + HRCM 001 await a category call."
-    },
-    {
-      "id": "fable-verify-regen",
-      "who": "fable",
-      "tab": "unified-courses",
-      "text": "URGENT (data lane): the post-fold daily regen BROKE the lane test pins — 6 test files (title/desc/evidence/kinship/routing) fail on main after the cron commits, on fixtures like EMST M1064 / FLSP M1379 / MATH M1104 / SPAN 200-210 folds. Verify whether the cron's export re-derives different ids/routing each run (determinism bug — daily id churn would violate the stable-sequence rule) or the Session-50 pins encoded pre-regen state. CI js-tests is red on main until resolved."
-    },
-    {
-      "id": "fable-first-light-growth",
-      "who": "fable",
-      "tab": "all",
-      "text": "First Light growth: manifest 3 → 60–90 verified-PD paintings (sourcing rules in the KB note); later, the reflections themes job (service-role mining → a community card) and the Almanac gallery."
-    },
-    {
-      "id": "fable-ccr-subj-groups",
-      "who": "fable",
-      "tab": "unified-courses",
-      "text": "CCR Subject filter grouping (Sam yes'd): one dropdown, three groups — Common ✓ / Official C-ID-CCN / Local-derived. Post-fold the third group should read ≈ EMPTY — it's now the fold's live progress meter (residuals: 95 umbrella-offcode + blank-discipline rows). Spec in docs/session_51_handoff.md; sequence around the retheme's unified_courses.js chip work."
-    },
-    {
-      "id": "fable-cleanups",
-      "who": "fable",
-      "tab": "canonical-subj4",
-      "text": "Post-fold cleanups: ARTS M1201's curated discipline 'Ceramic Technology' isn't an MQ name (re-curate → it folds next pass); the 95 umbrella-offcode FL/KINE rows; optionally teach the auditor's collision rule the curation overlay so the 3 residual flags clear."
-    },
-    {
-      "id": "fable-cis-cs-gate",
-      "who": "fable",
-      "tab": "canonical-subj4",
-      "text": "CIS ↔ CS convergence scope — still GATED on Sam's sign-off, but his codes keep them distinct (CSIS vs CISC), which leans no-convergence. Confirm and close, or proceed with the scope."
-    },
-    {
-      "id": "fable-router-phase2",
-      "who": "fable",
-      "tab": "unified-courses",
-      "text": "C-ID router Phase 2 + 3b: the ccn_equiv bridge, the termly refresh procedure, and curation surfaces for held classes. Termly cadence reminder: twin dry-run + desc + title receipts re-run together."
-    },
-    {
-      "id": "fable-kpi-keyboard",
-      "who": "fable",
-      "tab": "dashboard",
-      "text": "Close the KPI drag-reorder keyboard gap (a11y): Space/Enter to lift a card, arrows to move, Escape to cancel — drag-drop stays. Then the per-tab polish sweeps from Sam's screenshot notes."
-    }
-  ]
+ "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
+ "_as_of": "2026-06-12-g",
+ "_session": 51,
+ "_status": "KINE/ATHL CLEANUP NIGHT (Session 51): every athletics course now lives on ATHL (“Basketball, Men” et al. — your screenshots drove a TOP-aware rule), the PEDU parking lot is dissolved, ~19.7k course titles are Title-Cased with 1/2/3 instead of I/II/III and “(formerly …)” cut, and 170 merges landed: 26 intercollegiate roster families, your fitness set (→ “Physical Fitness”; Walking kept its lane), and 35 “High School X” folds. Your “lost” worklist merges DID save — the tab just never read them back on reload; fixed, plus a new “Keep as-is” button and grouped Subject dropdowns on CCR + CSR. Hard-refresh after the next regen to see it all.",
+ "items": [
+  {
+   "id": "sam-verify-athl",
+   "who": "sam",
+   "tab": "unified-courses",
+   "text": "After the regen: filter CCR to Kinesiology — athletics should all wear ATHL, fitness family collapsed into “Physical Fitness”. Spot-check 3–4 sports + tell Fable what looks off."
+  },
+  {
+   "id": "sam-flagged-families",
+   "who": "sam",
+   "tab": "unified-courses",
+   "text": "The merging analysis flagged what it would NOT auto-merge (unmarked-gender teams like “Intercollegiate Wrestling”, Fall/Spring sections, 19 cross-subject “High School X” twins). Review: kb/kin_pe_pass2_out/2026-06-12/athl_family_analysis.md + hs_title_fold.md."
+  },
+  {
+   "id": "sam-keep-asis",
+   "who": "sam",
+   "tab": "unified-courses",
+   "text": "✨ Suggested merges now has “Keep as-is” (permanent dismiss) and your confirmed merges survive reload. Resume the queue when you have a minute — your ELEC/BUSI/IDST merges from tonight are all safe."
+  },
+  {
+   "id": "sam-csr-look",
+   "who": "sam",
+   "tab": "canonical-subj4",
+   "text": "CSR tweaks live after merge: white header, one-line CTE, no more needs-4-letter chip on local codes, SUBJ filter with groupings. Verdict?"
+  },
+  {
+   "id": "ccr-smog-residuals",
+   "who": "sam",
+   "tab": "unified-courses",
+   "text": "🏷 title groups: the smog residuals (AUTO M11CR/M11CT/M11NL + noncredit M9052/M90AK) + the 📝 description queue still await your Confirm/Keep-as-is."
+  },
+  {
+   "id": "fable-hs-followup",
+   "who": "fable",
+   "tab": "unified-courses",
+   "text": "HS-title fold round 2 if Sam wants: the 118 “High School X” rows with NO college twin yet (kept as-is by the title-match condition) — revisit when twins appear; also add HS to the casing keep-list."
+  },
+  {
+   "id": "fable-cron-verify",
+   "who": "fable",
+   "tab": "all",
+   "text": "Verify tomorrow’s 10:17 cron regen: CCR shows ATHL families merged, normalized titles, audit chips line up; suite stays 35/35 against the new artifacts."
+  },
+  {
+   "id": "fable-ceramic-tech",
+   "who": "fable",
+   "tab": "unified-courses",
+   "text": "Carryover: ARTS M1201 curated discipline “Ceramic Technology” isn’t an MQ name (skip_unknown_disc) — re-curate to an MQ discipline in the CCR; it folds next pass."
+  }
+ ]
 }

@@ -97,6 +97,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — re-mint applies: recompute through the dry-run's own allocator, gate on byte-fidelity to the reviewed plan](kb-notes/methodology-apply-equals-spec-via-shared-allocator.md) | methodology | published | 2026-06-12 | 2026-06-12 |
 | [Methodology — Witness-kinship gate (historical receipts need a present-tense validity check)](kb-notes/methodology-witness-kinship-gate.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Methodology — Alias maps are permutations, not graphs (slot-reuse resolution semantics)](kb-notes/methodology-alias-map-resolution-semantics.md) | methodology | published | 2026-06-11 | 2026-06-11 |
+| [`kb-notes/methodology-fanin-alias-lexicon-contamination.md`](kb-notes/methodology-fanin-alias-lexicon-contamination.md) | Fan-in folds must re-point inference lexicons (the PEDU incident) | Session 51 |
 | [Methodology — Rank a cleanup queue by downstream impact, not structural leverage](kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Coarse TOP-division discipline fallback (make the orphan tail visible)](kb-notes/methodology-coarse-top-division-discipline-fallback.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Surface a finer derived layer on a single-grain reference tab](kb-notes/methodology-surface-derived-layer-on-single-grain-tab.md) | methodology | published | 2026-06-09 | 2026-06-09 |
@@ -188,6 +189,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 48 → 49 | First Light design sprint #391–#400: daily plein air greeting LIVE + theme spec v1.4.2 BLESSED → the retheme is GO (handoff) | [`session_49_handoff.md`](session_49_handoff.md) |
 | 47 → 50 | Data lane (Bruh Supernova): SUBJ ⇄ CCR checker #388/#402 + 📋 To-Do feed #389 + SUBJ4 fold dry-run #405 (5/5 gates) → the receipted APPLY | [`session_50_handoff.md`](session_50_handoff.md) |
 | 50 → 51 | Data lane (Bruh Dawnleader): the SUBJ4 canonical fold APPLIED (71,037-alias permutation + Supabase mirror + post-fold twins + the full Rule-7 chain; collision signal 1,206 → 3) → verify regen, CCR Subject grouping | [`session_51_handoff.md`](session_51_handoff.md) |
+| 51 → 53 | Data lane: KIN/PE pass 2 — PEDU dissolved + TOP-aware ATHL carve-out (1,057 re-keys), 19.7k titles normalized, 205 merges (roster/fitness/HS), lost-saves fix + Keep-as-is + Subject optgroups (#412–#415) → verify regen, the flagged family queues | [`session_53_handoff.md`](session_53_handoff.md) |
 | 49 → 52 | Design lane (Bruh Orbitron): the First Light retheme SHIPPED (#407 palette flip · #408 glass + ghosted painting · #410 glass-quiet chips; --live contrast lint in CI) → Sam's screenshot verdicts, kpi_reorder keyboard path, per-tab polish | [`session_52_handoff.md`](session_52_handoff.md) |
 
 ---

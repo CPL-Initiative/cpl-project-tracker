@@ -1189,3 +1189,78 @@ the retheme lane's `unified_courses.js` work). Cleanups remaining: the
 by the fold, cure = pick the MQ discipline in the CCR then it folds next
 pass), the 95 umbrella-offcode rows (FL/KINE per-umbrella review), and the
 3 collision residuals above.
+
+---
+
+## Session 51 — 2026-06-12 (night): KIN/PE pass 2 — the PEDU parking lot dissolved + the merging night (#412–#415)
+
+Sam drove this one live from the CCR/CSR (screenshots + five follow-ups while
+the session ran). Four PRs: #412 (data), #413 (test repins), #414 (CSR UI),
+#415 (CCR worklist).
+
+**The root cause found and killed.** The PEDU rows in Sam's screenshot were
+the residue of a three-step accident: the 2026-06-10 fan-in convergences
+flipped disciplines but (a) left machine `discipline_source` stamps on the
+flipped rows and (b) never re-pointed the inference lexicons (9 subject_map
+entries, 3 title_keywords, 4 TOP codes still targeted "Physical Education";
+1 + 1 + 1 targeted "Theater Arts"). The Session-45 re-derivation then
+faithfully resurrected the aliases on 752 rows, and the Session-50 fold —
+needing a canonical for a discipline that "shouldn't exist" — got Sam's
+PEDU/THEA parking pins. Fix legs (all in #412): lexicons re-pointed (the
+bare `intercollegiate` keyword DROPPED — Intercollegiate Forensics is
+speech & debate, Intercollegiate Logging Sports is forestry; both got
+explicit per-id overrides instead), `kb/_alias_canon.py` guarding all four
+passes at load, and pass-2 flips stamped MANUAL (value, no source) — the
+only state no pass touches. KB note:
+[`kb-notes/methodology-fanin-alias-lexicon-contamination.md`](kb-notes/methodology-fanin-alias-lexicon-contamination.md).
+
+**The refined athletics rule.** Original carve-out was title-keyword-only;
+Sam's "Basketball, Men" examples carry no keyword. Pass 2 adds the
+colleges' own signal: modal `top_code == 0835.50` (Intercollegiate
+Athletics) → ATHL, EXCEPT an instruction-activity exception list
+(yoga/pilates/aerobics/kickboxing/karate/martial/tai-chi/zumba/dance — the
+measure-first dry-run caught "Yoga - Intermediate" mem=28 parked on
+0835.50). 133 KINE parents + 419 singles moved; 505 PEDU rows split
+ATHL/KINE/PEDS; 147 Theater-Arts flips; 20 exact fam-twin merges; 1,057
+ids re-keyed under G1–G8; chain green (fold-verify re_key 0, collision
+signal stays 3); the two Supabase parking pins deleted so any recurrence
+surfaces as `blocked_on_curator` instead of silently re-minting PEDU.
+
+**Sam's title asks, all shipped.** (1) `_normalize_common_titles.py`:
+19,739 titles → Title Case (acronym keep-lists; all-caps titles re-cased),
+sequence romans → digits with guards (clinical "IV Therapy", "Title V",
+pronoun-I, Malcolm-X), "(formerly …)" stripped (162), mojibake repaired.
+Display-only by construction — the member join is control-number exact and
+every identity comparator (fam/_sug_sig/kinship) lowercases + strips parens
++ folds romans already. (2) The HS fold: "High School X"/"HS X" venue
+markers cut **when a de-HS'd twin exists** (Sam's condition) at the SAME
+band + SAME SUBJ4 — 35 merged (replicating + flattening the Arithmetic-2
+chain Sam had hand-built an hour earlier), HS-Equivalency/Diploma subject
+phrases protected, 19 cross-SUBJ4 twins (ESL Civics vs diploma Civics)
+flagged only. Receipts: `kb/kin_pe_pass2_out/2026-06-12/`.
+
+**The merging analysis** (`athl_family_analysis.md`): 50 roster families
+parsed by facets (sport/gender/season/level/type); 26 auto-merged under a
+frozen contract (in-season team course per sport+gender; baseball/football
+→ men and softball/beach-volleyball → women by CCCAA reality); everything
+else — unmarked-gender dual sports, Fall/Spring sections, Defense/Offense
+positional units, conditioning/theory/fundamentals lanes, "Competitive X" —
+FLAGGED for the curator, never merged. Plus Sam's fitness set: the
+general-fitness core → `KINE M1596` "Physical Fitness"; Walking kept its
+lane (his call); noncredit `M9017` kept its band (the band contract beats
+the title match — explained to Sam rather than silently crossed).
+
+**The lost-saves bug (#415).** Sam: "they didn't save — tried it twice."
+They saved; `fetchOverlay()` read only `field=eq.discipline`, so reloads
+never replayed live merges and the worklist re-offered confirmed groups.
+Fixed with a combined overlay fetch + `applyMergeLocal` replay (factored
+from doConsolidate so the two paths can't drift) + the new **Keep as-is**
+button (persistent `merge_dismissed` signatures; membership change
+re-offers) + the CCR Subject optgroups. #414 delivered the four CSR tweaks.
+#413 re-pinned the 6 post-fold-stale test files mechanism-style (and caught
+two stale pins passing GREEN on wrong rows — slot reuse's signature move).
+
+**Mechanics lesson.** A long `--apply` piped through `head` died on SIGPIPE
+mid-print, BEFORE its writes — looked applied, wasn't. Pipe applies to a
+file (`> log 2>&1`), check the exit code, verify idempotency by re-running
+the dry-run.
