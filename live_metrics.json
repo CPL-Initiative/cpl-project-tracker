@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-11T22:44:51.354Z",
+  "scraped_at": "2026-06-12T00:33:54.567Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -983,13 +983,13 @@
         },
         {
           "college": "Oxnard College",
-          "students": 145,
+          "students": 147,
           "units": 572,
-          "avgUnits": 3.9448275862068964,
+          "avgUnits": 3.891156462585034,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 145,
+          "militaryStudents": 147,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 989560,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,739",
+      "value": "47,741",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,489"
+          "value": "24,491"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47739,
+    "Students": 47741,
     "Units": 228644.15000000002,
     "TranscribedUnits": 99030.95,
     "Savings": 318079410.25,
     "YearImpact": 1287994716.3999999,
-    "MilitaryStudents": 24489,
+    "MilitaryStudents": 24491,
     "NonMilitaryStudents": 23327,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.789462493977671,
-    "TranscribedAverage": 2.0744244747481093
+    "AverageUnits": 4.7892618504011235,
+    "TranscribedAverage": 2.074337571479441
   }
 }
