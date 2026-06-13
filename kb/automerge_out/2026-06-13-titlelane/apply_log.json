@@ -1,0 +1,26 @@
+{
+ "applied_at": "2026-06-13T17:48:47Z",
+ "authorized_by": "Sam (2026-06-13): chose 'Whole lane (5,457)' on the title-lane scope question, after I recommended a 461-group gated subset and showed the title-cosine over-merge risk (Barbering: Level 2 9.5u vs Barbering 2 2u at score 1.0). 'right into prod if you're OK with it.'",
+ "method": "server-side: postgres http extension fetched the SHA-pinned plan.json from commit 30e1aca76b87513f45be33d405299b78f2425900, gated on HTTP 200 + md5 d77938b149a065f10c38c5ef3fb71651 (byte-identical to the committed receipt), single INSERT ... ON CONFLICT (course_id, field) DO NOTHING; http extension dropped after",
+ "freshness_gate": "live kb_curation re-read pre-apply: 6,784 rows, latest reviewed_at 2026-06-12 22:47 (pass 1) = no human drift since; pass-2 cohort 0 pre-existing; plan dry-validated (n_groups 5456, write_rows 22025, all 22025 course_ids distinct, band purity 0 mixed-band groups)",
+ "result": {
+  "fetch_ok": 1,
+  "md5_ok": 1,
+  "plan_writes": 22025,
+  "inserted": 22025,
+  "inserted_merges": 16801,
+  "inserted_titles": 5224,
+  "conflicts_skipped": 0
+ },
+ "post_verify": {
+  "titlelane_cohort": 22025,
+  "distinct_targets": 5456,
+  "merge_rows": 16801,
+  "title_rows": 5224,
+  "pass1_cohort_unchanged": 5838,
+  "kb_curation_total": 28809
+ },
+ "cohort_marker": "reviewer_email = 'automerge-titlelane-v1@bot'",
+ "revert": "delete from kb_curation where reviewer_email = 'automerge-titlelane-v1@bot' (whole cohort); the daily sync then un-folds the CCR rows. Per-row: delete the specific course_id row.",
+ "caveat": "WHOLE title lane (Sam informed choice) — title-cosine, NO units gate; 191 groups carry >4u spread (over-merge risk, e.g. Barbering 9.5u/2u). Review via the auto-merged Triage lane (Cog chip); revert by cohort if too noisy."
+}

@@ -6473,18 +6473,20 @@ def export_unified_courses():
             merge_into[_cid] = _t
             merge_members.setdefault(_t, []).append(_cid)
 
-    # Auto-merge pass-1 cohort (Session 53): folds applied by the gated
-    # auto-curation bot (kb/_auto_merge_worklist.py) rather than a human carry
-    # reviewed_by == AUTOMERGE_MARKER on their merge_into curation. Count, per
-    # surviving merge target, how many of its folded members came from the bot,
-    # and stamp the target row with `auto_n` (>0 only). The CCR renders this as
-    # the ⚙ auto-merged second-look chip + an "Auto-merged" Triage lane so the
-    # whole cohort is a one-click review queue (revertible — delete the cohort).
-    AUTOMERGE_MARKER = "automerge-v1@bot"
+    # Auto-merge cohorts: folds applied by the gated auto-curation bot
+    # (kb/_auto_merge_worklist.py) rather than a human carry a bot reviewed_by on
+    # their merge_into curation — pass 1 "automerge-v1@bot" (Session 53), the
+    # title lane "automerge-titlelane-v1@bot" (Session 54). Count, per surviving
+    # merge target, how many folded members came from ANY such bot, and stamp the
+    # target row with `auto_n` (>0 only). The CCR renders this as the ⚙ auto-merged
+    # second-look chip + an "Auto-merged" Triage lane so every bot cohort is a
+    # one-click review queue (revertible — delete the cohort by reviewer_email).
+    def _is_automerge(rb):
+        return bool(rb) and rb.startswith("automerge") and rb.endswith("@bot")
 
     def _auto_fold_count(member_ids):
         return sum(1 for m in member_ids
-                   if (curation.get(m) or {}).get("reviewed_by") == AUTOMERGE_MARKER)
+                   if _is_automerge((curation.get(m) or {}).get("reviewed_by")))
 
     # ── Member re-home (Session 54) ──────────────────────────────────────────
     # A curation row keyed `CN:<control_number>` pulls ONE college course out of
