@@ -1309,6 +1309,16 @@ def main():
             "mc_readiness":        tier_of(m_score),
             "tags": tags,
         }
+        # Re-key provenance (Session 54): if a FLAGGED row's SUBJ4 was changed by
+        # a prior re-key (the SUBJ4 fold's _subj4_fold_from carries a DIFFERENT
+        # SUBJ4), surface that prior identity so a curator can tell a deliberate
+        # cross-discipline re-key (e.g. an ex-CISC → BUSI subject_collision row)
+        # from a real misassignment — without digging into the staging file.
+        if tags:
+            _ff = rec.get("_subj4_fold_from") or rec.get("_remint_from") or ""
+            _s4 = rec.get("subject_4letter") or ""
+            if _ff and _s4 and not _ff.replace("M-ID ", "").startswith(_s4 + " "):
+                card["rekey"] = _ff
         if cur:
             card["reviewed_by"] = cur.get("reviewed_by")
             card["reviewed_at"] = cur.get("reviewed_at")
@@ -1469,6 +1479,8 @@ def _write_outputs(cards):
             "mcr":  c["mc_readiness"],
             "tags": c["tags"],
         }
+        if c.get("rekey"):
+            s["rk"] = c["rekey"]   # prior cross-SUBJ4 identity (re-key provenance)
         # Unified merge targets: also inline the full breakdown — there are only
         # a handful, and Phase 1b's "Repair from members" action needs the
         # suggested_fix payload and the per-field state.

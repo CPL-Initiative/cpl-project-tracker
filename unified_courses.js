@@ -471,6 +471,12 @@
                    + unitsSignals.length + " signal" + (unitsSignals.length === 1 ? "" : "s") + ")");
       }
     }
+    // Re-key provenance (Session 54): a deliberate cross-subject re-key (e.g. a
+    // subject_collision row that was curator-moved from CISC → BUSI) carries its
+    // prior identity here, so the curator can tell it apart from a misassignment.
+    if (card.rk) {
+      lines.push("re-keyed from " + card.rk + " (prior identity — a deliberate cross-subject re-key, not a fresh mint)");
+    }
     lines.push("—");
     lines = lines.concat(tags.map(function (t) { return "• " + (AUDIT_TAG_LABELS[t] || t); }));
     return lines.join("\n");
