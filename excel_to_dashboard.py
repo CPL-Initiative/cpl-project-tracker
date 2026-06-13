@@ -6473,6 +6473,19 @@ def export_unified_courses():
             merge_into[_cid] = _t
             merge_members.setdefault(_t, []).append(_cid)
 
+    # Auto-merge pass-1 cohort (Session 53): folds applied by the gated
+    # auto-curation bot (kb/_auto_merge_worklist.py) rather than a human carry
+    # reviewed_by == AUTOMERGE_MARKER on their merge_into curation. Count, per
+    # surviving merge target, how many of its folded members came from the bot,
+    # and stamp the target row with `auto_n` (>0 only). The CCR renders this as
+    # the ⚙ auto-merged second-look chip + an "Auto-merged" Triage lane so the
+    # whole cohort is a one-click review queue (revertible — delete the cohort).
+    AUTOMERGE_MARKER = "automerge-v1@bot"
+
+    def _auto_fold_count(member_ids):
+        return sum(1 for m in member_ids
+                   if (curation.get(m) or {}).get("reviewed_by") == AUTOMERGE_MARKER)
+
     colleges, col_idx = [], {}
 
     def cidx(name):
@@ -6703,7 +6716,7 @@ def export_unified_courses():
         _synthetic = not tgt_v
         _validated = bool(cur.get("validated_at"))
         _verified = _validated or (not _synthetic and bool(cur.get("discipline")))
-        rows.append({"kind": t_kind, "id": tgt, "mt": 1,
+        _trow = {"kind": t_kind, "id": tgt, "mt": 1,
                      "title": cur.get("unified_title") or _member_title(tgt) or (variants[0] if variants else tgt),
                      "disc": cur.get("discipline") or tgt_v.get("discipline") or c_disc,
                      "credit": cur.get("credit_status") or c_credit,
@@ -6720,7 +6733,11 @@ def export_unified_courses():
                                      if _verified else None),
                      "reviewed_at": (((cur.get("validated_at") if _validated else cur.get("reviewed_at")) or "")[:10]
                                      if _verified else ""),
-                     "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]})
+                     "adopted": [cidx(c) for c in ad], "potential": [cidx(c) for c in pot]}
+        _an = _auto_fold_count(members)
+        if _an:
+            _trow["auto_n"] = _an
+        rows.append(_trow)
 
     # NOTE: unified_courses_data.js is written further down, AFTER the raw COCI
     # list is indexed, so each row can carry its matched official C-ID/CCN
