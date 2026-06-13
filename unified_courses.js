@@ -1484,6 +1484,10 @@
     // disagree, plus seed-untouched). Per-tag options match the named
     // rules so a curator working a specific cleanup pass (e.g.
     // discipline_title_mismatch) can scope to just that subset.
+    // Auto-merge pass-1 cohort lane (Session 53): row-level (r.auto_n > 0), NOT
+    // audit-card-backed — scopes the bot-applied folds for Sam's one-click
+    // second look. passes() special-cases this label before the audit lookup.
+    var AUTO_TRIAGE_LABEL = "Auto-merged (pass 1, second look)";
     var fTriage = sel("uc-triage", "Triage: any", [
       "Any audit flag",
       "3+ findings",
@@ -1497,6 +1501,7 @@
       "Seed untouched (never reviewed)",
       "Orphan merge target (dangling pointer)",
       "Unified issues",
+      AUTO_TRIAGE_LABEL,
     ]);
     // Map filter labels → predicate over an audit card (auditIndex[r.id]).
     var TRIAGE_PRED = {
@@ -1718,10 +1723,15 @@
       // If the audit overlay hasn't loaded yet, the filter silently
       // matches nothing (so the curator doesn't see a stale view).
       if (state.triage) {
-        var card = _ucAudit && _ucAudit.idx[r.id];
-        if (!card) return false;
-        var pred = TRIAGE_PRED[state.triage];
-        if (pred && !pred(card)) return false;
+        if (state.triage === AUTO_TRIAGE_LABEL) {
+          // Row-level cohort lane — independent of the audit overlay.
+          if (!(r.auto_n > 0)) return false;
+        } else {
+          var card = _ucAudit && _ucAudit.idx[r.id];
+          if (!card) return false;
+          var pred = TRIAGE_PRED[state.triage];
+          if (pred && !pred(card)) return false;
+        }
       }
       if (blanksCb.checked && r.disc) return false;
       if (state.q) {
@@ -1775,6 +1785,20 @@
             (nCf ? " (" + r.consolidated_from.join(", ") + (r.sfold ? " + " + r.sfold + " stand-alone" : "") + ")"
                  : " (" + r.sfold + " stand-alone)") + "."
         }, ["⛓ " + nMerged + " merged"]));
+      }
+      // Auto-merge pass-1 cohort (Session 53): folds applied by the gated
+      // auto-curation bot (automerge-v1@bot), not a human — a second-look
+      // candidate. Amber ⚙ chip (distinct from the cobalt ⛓ merged badge and
+      // the provenance ⚙ badges); the "Auto-merged" Triage lane scopes the
+      // whole cohort in one click. Reversible — the cohort can be reverted.
+      if (r.auto_n) {
+        out.appendChild(el("span", {
+          class: "uc-badge", style: "color:var(--mustard-text);border-color:var(--mustard-text);",
+          title: "Auto-merged (pass 1, Session 53): " + r.auto_n + " member" +
+            (r.auto_n > 1 ? "s were" : " was") + " folded in by the gated auto-curation " +
+            "bot (automerge-v1@bot), not a human review. Second-look candidate — spot-check the " +
+            "members, then Verify if right; the merge can be reverted. Triage → \"Auto-merged\" lists the whole cohort."
+        }, ["⚙ auto-merged"]));
       }
       // Phase A crosswalk surfacing: official C-ID / CCN carried by member courses.
       var mt = r.match || {};
@@ -2483,6 +2507,7 @@
       "Cross-discipline over-merge (member TOP)": 1,
       "Subject collision (Phase 1e re-mint target)": 1,
       "Seed untouched (never reviewed)": 1, "Unified issues": 1,
+      "Auto-merged (pass 1, second look)": 1,
     };
     function setSel(id, val) {
       var n = document.getElementById(id);
