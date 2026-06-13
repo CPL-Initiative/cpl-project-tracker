@@ -6882,6 +6882,42 @@ def export_unified_courses():
         print(f"  Unified Courses: {len(_title_fixes)} raw titles carried encoding "
               f"artifacts → repaired for display, queued in kb/coci_title_corrections.json")
 
+        # COCI duplicate-control-number queue: a CourseControlNumber (CB00) must be
+        # unique per course, but some colleges assigned ONE control # to TWO different
+        # courses (e.g. SJCC CCC000529719 = "Beginning Weight Training" 056 AND
+        # "Intermediate Badminton" 009B). That defeats the exact control-number
+        # member-join (both courses surface under any identity containing either),
+        # which _cn_match now disambiguates by the member's subject+number. This queue
+        # lists the GENUINE collisions (≥2 distinct subject+number codes under one
+        # control #) for the college/COCI to fix at source; a control # with only
+        # multiple TITLE spellings of ONE course (same code) is a benign variant and is
+        # NOT queued. Deterministic (sorted) → no-op daily diff while source is unchanged.
+        _dup_cn = []
+        for cn, ents in cn_rows.items():
+            if len({_nrm(e.get("n", "")) for e in ents}) < 2:
+                continue
+            _dup_cn.append({
+                "control_number": cn,
+                "college": mcolleges[ents[0]["c"]] if ents else "",
+                "courses": [{"code": c, "title": t} for c, t in
+                            sorted({(e.get("n", ""), e.get("t", "")) for e in ents})],
+            })
+        _dup_cn.sort(key=lambda x: (x["college"], x["control_number"]))
+        with open(os.path.join(SCRIPT_DIR, "kb", "coci_duplicate_control_numbers.json"),
+                  "w", encoding="utf-8") as f:
+            json.dump({
+                "_purpose": ("COCI source-data error queue — CourseControlNumbers (CB00) a "
+                             "college assigned to MORE THAN ONE distinct course (different "
+                             "Dept Name+Number). The control number must be unique per "
+                             "course; these defeat the exact control-number member-join, "
+                             "which the display disambiguates by subject+number. Take to the "
+                             "colleges/COCI to fix at source. Regenerated each run."),
+                "count": len(_dup_cn),
+                "duplicates": _dup_cn,
+            }, f, ensure_ascii=False, indent=1)
+        print(f"  Unified Courses: {len(_dup_cn)} duplicated CourseControlNumbers "
+              f"(one control # → ≥2 courses) → kb/coci_duplicate_control_numbers.json")
+
     memships = (_load("coci_minted_memberships.json") or {}).get("memberships", {})
     promotions = (_load("promotions.json") or {}).get("promotions", {})
 
@@ -6910,18 +6946,48 @@ def export_unified_courses():
             add_leaf(i)
         return leaves
 
+    def _mcode(p):
+        # The member's COCI Dept Name + Dept Number (= subject + course_number),
+        # normalized to match a raw ent's "n". Tie-breaks a DUPLICATED
+        # CourseControlNumber (a COCI/college error: one control # assigned to two
+        # different courses, e.g. SJCC CCC000529719 = "Beginning Weight Training" 056
+        # AND "Intermediate Badminton" 009B) so the member-join keeps the RIGHT
+        # raw course. (CourseID/CB00 would be an even tighter key but isn't in our
+        # extract; subject+number distinguishes the colliding courses just as well.)
+        subj, num = p.get("subject"), p.get("course_number")
+        code = (f"{subj} {num}".strip() if subj is not None
+                else (str(num) if num is not None else ""))
+        return _nrm(code)
+
     def _leaf_cns(i):
         # members routed by the C-ID articulation authority display under
         # their descriptor row (they joined cid_rows at read time) — they
-        # leave every identity-side member table here.
+        # leave every identity-side member table here. Each entry is
+        # (control_number, member_code); the code disambiguates a collided
+        # (duplicated) control number in _cn_match below.
         if i in memships:
-            return [cn for p in memships[i] if p.get("control_number")
-                    and (cn := _nrm(p["control_number"])) not in _routed_live]
+            out = []
+            for p in memships[i]:
+                cn = _nrm(p.get("control_number") or "")
+                if cn and cn not in _routed_live:
+                    out.append((cn, _mcode(p)))
+            return out
         sv = sg.get(i)
         if sv and sv.get("control_number"):
             cn = _nrm(sv["control_number"])
-            return [] if cn in _routed_live else [cn]
+            return [] if cn in _routed_live else [(cn, _mcode(sv))]
         return []
+
+    # A duplicated CourseControlNumber (one control # → two different courses, a
+    # COCI/college error) makes the exact control-number join ambiguous: cn_rows[cn]
+    # then holds >1 raw course. Disambiguate by the member's subject+number code;
+    # fall back to ALL ents if none match (never hide a member on a formatting quirk).
+    def _cn_match(cn, code):
+        ents = cn_rows.get(cn, [])
+        if len(ents) <= 1 or not code:
+            return ents
+        kept = [e for e in ents if _nrm(e.get("n", "")) == code]
+        return kept or ents
 
     # Candidate college-course ents for a displayed row — exact control-number join.
     def _row_candidates(r):
@@ -6936,13 +7002,13 @@ def export_unified_courses():
             out = list(ccn_rows.get(_nrm(rid), []) if idsys == "CCN-ID"
                        else cid_rows.get(_id_cid(rid) or _nrm(rid), []))
             for i in _leaf_ids(r):
-                for cn in _leaf_cns(i):
-                    out += cn_rows.get(cn, [])
+                for cn, code in _leaf_cns(i):
+                    out += _cn_match(cn, code)
             return out
         out = []
         for i in _leaf_ids(r):
-            for cn in _leaf_cns(i):
-                out += cn_rows.get(cn, [])
+            for cn, code in _leaf_cns(i):
+                out += _cn_match(cn, code)
         return out
 
     # Member entries (deduped, description stripped) for a displayed row.
