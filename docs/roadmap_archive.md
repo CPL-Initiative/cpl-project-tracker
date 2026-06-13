@@ -1328,3 +1328,21 @@ mechanism-style). Receipts `kb/subj4_fold_out/2026-06-12/`. Full story:
 `docs/ccr_cluster_cleanup_lessons.md` (Session 50); KB note:
 `methodology-apply-equals-spec-via-shared-allocator.md`. **NEXT: the CCR
 Subject-dropdown grouping** (`docs/session_51_handoff.md`).
+
+## Session 51 — Bruh Photonicus: KIN/PE pass 2 + the merging night (2026-06-12) — archived 2026-06-13 (Session 54)
+
+Sam-interactive (his CCR/CSR screenshots + 5 live follow-ups). PRs #412–#415.
+**Root cause repaired:** the 2026-06-10 fan-ins never re-pointed the inference
+lexicons → re-derivation resurrected "Physical Education" (605 rows → Sam's PEDU
+pin) + "Theater Arts" (147). Lexicons re-pointed (bare `intercollegiate` DROPPED),
+`kb/_alias_canon.py` guards all 4 passes, `kb/_kin_pe_pass2.py` re-keyed **1,057
+ids** (PEDU dissolved; refined athletics rule = modal TOP 0835.50 minus
+instruction-exceptions → 552 rows to ATHL; flips stamped manual). 19,739 titles
+normalized (Title Case / romans→digits / "(formerly…)" cut); **205 curation
+merges** mirrored to Supabase (26 roster families + Sam's fitness set + 35
+HS-title folds; analysis receipts `kb/kin_pe_pass2_out/2026-06-12/`). #415 fixed
+the lost-worklist-saves bug (overlay fetched only discipline rows) + added
+**Keep-as-is** + CCR Subject optgroups; #414 the CSR tweaks; #413 re-pinned the 6
+post-fold-stale test files (35/35). Full story:
+`docs/ccr_cluster_cleanup_lessons.md` (Session 51); KB note:
+`methodology-fanin-alias-lexicon-contamination.md`.
