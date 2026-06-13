@@ -6486,6 +6486,30 @@ def export_unified_courses():
         return sum(1 for m in member_ids
                    if (curation.get(m) or {}).get("reviewed_by") == AUTOMERGE_MARKER)
 
+    # ── Member re-home (Session 54) ──────────────────────────────────────────
+    # A curation row keyed `CN:<control_number>` pulls ONE college course out of
+    # the family that minted it and re-homes it: its merge_into points at the
+    # target (an existing identity, OR a freshly-minted UC-CUR-EXT* standalone).
+    # Built here so the merge-target loop and the member-join both honor it.
+    # Reversible — delete the CN: curation row to undo. (Control numbers are
+    # space-free, so strip+upper matches the _nrm() used by the member-join.)
+    memships = (_load("coci_minted_memberships.json") or {}).get("memberships", {})
+    member_extract = {str(k[3:]).strip().upper(): v for k, v in curation.items()
+                      if k.startswith("CN:") and str(k[3:]).strip()}
+    # control_number → a record carrying subject/units/top/credit so a re-homed
+    # course's NEW row gets real fields independent of the raw-list read order
+    # (memberships + singletons already carry these per member).
+    cn_fields = {}
+    for _plist in memships.values():
+        for _p in _plist:
+            _c = str(_p.get("control_number") or "").strip().upper()
+            if _c:
+                cn_fields.setdefault(_c, _p)
+    for _sv in sg.values():
+        _c = str(_sv.get("control_number") or "").strip().upper()
+        if _c:
+            cn_fields.setdefault(_c, _sv)
+
     colleges, col_idx = [], {}
 
     def cidx(name):
@@ -6627,6 +6651,17 @@ def export_unified_courses():
         pass
 
     def _member_v(m):
+        # A re-homed member (CN:<control_number>) synthesizes its fields from the
+        # cn_fields index (subject/units/TOP/credit) so its new target row is
+        # populated; its title comes from the target's `unified_title` curation.
+        if isinstance(m, str) and m.startswith("CN:"):
+            p = cn_fields.get(str(m[3:]).strip().upper())
+            if not p:
+                return {}
+            return {"subject": p.get("subject"),
+                    "typical_units": p.get("typical_units", p.get("units")),
+                    "top_code": p.get("top_code"),
+                    "credit_status": p.get("credit_status")}
         return cat.get(m) or sg.get(m) or cc.get(m) or clusters.get(m) or _cid_desc_rec.get(m) or {}
 
     def _member_title(m):
@@ -6852,7 +6887,7 @@ def export_unified_courses():
             ent = {"c": _mc(str(college)), "n": code, "t": title or "",
                    "d": str(desc) if (desc and str(desc).strip()) else "",
                    "u": units if isinstance(units, (int, float)) else None,
-                   "p": tcode,
+                   "p": tcode, "cn": ctrl,
                    "cid": cidn, "ccn": ccnn}
             if t_fixed:
                 ent["e"] = 1
@@ -6918,7 +6953,7 @@ def export_unified_courses():
         print(f"  Unified Courses: {len(_dup_cn)} duplicated CourseControlNumbers "
               f"(one control # → ≥2 courses) → kb/coci_duplicate_control_numbers.json")
 
-    memships = (_load("coci_minted_memberships.json") or {}).get("memberships", {})
+    # memships loaded earlier (member-re-home block); reuse it here.
     promotions = (_load("promotions.json") or {}).get("promotions", {})
 
     # Member-join is now EXACT (the re-mint): each membership member carries its
@@ -6965,17 +7000,25 @@ def export_unified_courses():
         # leave every identity-side member table here. Each entry is
         # (control_number, member_code); the code disambiguates a collided
         # (duplicated) control number in _cn_match below.
+        # A re-homed course (CN:<cn>) leaves its native family and joins its
+        # target — resolve it to its raw ent (for the target's member display).
+        if isinstance(i, str) and i.startswith("CN:"):
+            cn = _nrm(i[3:])
+            ents = cn_rows.get(cn, [])
+            return [(cn, _nrm(ents[0].get("n", "")))] if (cn and ents) else []
         if i in memships:
             out = []
             for p in memships[i]:
                 cn = _nrm(p.get("control_number") or "")
-                if cn and cn not in _routed_live:
+                if cn and cn not in _routed_live and cn not in member_extract:
                     out.append((cn, _mcode(p)))
             return out
         sv = sg.get(i)
         if sv and sv.get("control_number"):
             cn = _nrm(sv["control_number"])
-            return [] if cn in _routed_live else [(cn, _mcode(sv))]
+            if cn in _routed_live or cn in member_extract:
+                return []
+            return [(cn, _mcode(sv))]
         return []
 
     # A duplicated CourseControlNumber (one control # → two different courses, a
@@ -7019,7 +7062,8 @@ def export_unified_courses():
             if k in seen:
                 continue
             e2 = {"c": ent["c"], "n": ent["n"], "t": ent["t"],
-                  "u": ent.get("u"), "p": ent.get("p") or "", "d": ent.get("d") or ""}
+                  "u": ent.get("u"), "p": ent.get("p") or "", "d": ent.get("d") or "",
+                  "cn": ent.get("cn") or ""}  # control # — lets the ⤴ re-home key the member
             if ent.get("e"):
                 e2["e"] = 1  # title repaired from mojibake — needs COCI fix
             seen.add(k); out.append(e2)
@@ -8066,7 +8110,8 @@ def export_unified_courses():
                 continue
             members[r["id"]] = [
                 dict({"c": e["c"], "n": e["n"], "t": e["t"],
-                      "u": e.get("u"), "p": e.get("p") or ""},
+                      "u": e.get("u"), "p": e.get("p") or "",
+                      "cn": e.get("cn") or ""},  # control # → the ⤴ re-home key
                      **({"e": 1} if e.get("e") else {}))
                 for e in ents]
             ds = [(e.get("d") or "")[:500] for e in ents]

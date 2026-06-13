@@ -1022,6 +1022,117 @@
       });
     }
 
+    // ---- Member re-home (Session 54) ----------------------------------------
+    // Pull ONE college course out of an over-merged family and send it to its
+    // rightful place: merge into an EXISTING course (searched + similarity-
+    // suggested), or MINT a new standalone. Writes a `CN:<control#>` curation
+    // row the generator honors (drops the course from its old family, lands it
+    // at the target). Reversible — delete the CN: row. Triggered by the ⤴ on a
+    // member-course row. Re-uses findCandidates / saveCurations / mqList.
+    function openRehomeDialog(e, srcRow, college, onDone) {
+      if (!session || !e.cn) return;
+      loadIndex().then(function () {
+        var subj = (e.n || "").trim().split(/\s+/)[0] || "";
+        var cand = findCandidates({ id: "CN:" + e.cn, title: e.t, subj: [subj], units: e.u });
+        var target = "";   // "" = mint a new standalone course
+        var overlay = el("div", { style: "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10000;display:flex;align-items:flex-start;justify-content:center;overflow:auto;" });
+        var box = el("div", { style: "background:#fff;max-width:680px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
+        overlay.appendChild(box);
+        function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
+        overlay.onclick = function (ev) { if (ev.target === overlay) close(); };
+        box.appendChild(el("h3", { style: "margin:0 0 4px;color:var(--text-strong);" }, ["Re-home this course"]));
+        box.appendChild(el("p", { style: "margin:0 0 12px;color:#6b7280;" },
+          ["Move “" + (e.t || e.n) + "” (" + (college || "") + " · " + (e.n || "") + ") out of "
+            + srcRow.id + " “" + (srcRow.title || "") + "” to its rightful course."]));
+        var chosenLine = el("div", { style: "font-weight:600;color:#0f3d6e;margin:0 0 6px;" }, []);
+        box.appendChild(chosenLine);
+        // Mint-new fields — shown only when no existing target is picked.
+        var mintWrap = el("div", { style: "border:1px dashed #cbd5e1;border-radius:6px;padding:8px;margin:4px 0;" });
+        mintWrap.appendChild(el("div", { style: "font-weight:600;margin-bottom:4px;" }, ["✨ Mint a new standalone course"]));
+        var titleIn = el("input", { type: "text", value: e.t || "", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
+        mintWrap.appendChild(titleIn);
+        var discSel = el("select", { class: "uc-filter", style: "min-width:260px;margin-top:6px;" });
+        discSel.appendChild(el("option", { value: "" }, ["— discipline (optional) —"]));
+        mqList.forEach(function (d) { discSel.appendChild(el("option", { value: d }, [d])); });
+        mintWrap.appendChild(discSel);
+        box.appendChild(mintWrap);
+        var go;
+        function pick(id) { target = id; syncTarget(); }
+        function syncTarget() {
+          chosenLine.textContent = target ? ("→ merge into " + target) : "→ mint a NEW standalone course";
+          mintWrap.style.display = target ? "none" : "";
+          if (go) go.textContent = target ? ("Re-home into " + target) : "Re-home into NEW course";
+        }
+        function sugRow(en, tag) {
+          var b = el("button", { type: "button", style: "display:block;width:100%;text-align:left;padding:3px 6px;border:none;background:none;cursor:pointer;font-size:.82rem;" },
+            ["→ " + (en[1] || en[0]) + "  [" + en[0] + " · " + (en[2] || "") + "]" + (tag || "")]);
+          b.onclick = function () { pick(en[0]); };
+          return b;
+        }
+        if (cand.exact.length || cand.near.length) {
+          box.appendChild(el("div", { style: "font-size:.78rem;color:#94a3b8;margin-top:4px;" }, ["Suggested existing courses:"]));
+          var sug = el("div", { style: "max-height:160px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:4px;margin:2px 0;" });
+          cand.exact.forEach(function (en) { sug.appendChild(sugRow(en, "  · exact")); });
+          cand.near.slice(0, 12).forEach(function (en) { sug.appendChild(sugRow(en, "")); });
+          box.appendChild(sug);
+        }
+        box.appendChild(el("label", { style: "display:block;font-weight:600;margin:8px 0 2px;" }, ["Or search for the target course"]));
+        var srch = el("input", { type: "search", placeholder: "Search any course title or ID…", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
+        var srchRes = el("div", { style: "max-height:120px;overflow:auto;" });
+        box.appendChild(srch); box.appendChild(srchRes);
+        var st; srch.oninput = function () {
+          clearTimeout(st); var q = this.value.toLowerCase().trim();
+          st = setTimeout(function () {
+            srchRes.innerHTML = ""; if (q.length < 3) return;
+            for (var i = 0, hits = 0; i < (_ucIndex || []).length && hits < 20; i++) {
+              var en = _ucIndex[i];
+              if (en[0] === "CN:" + e.cn) continue;
+              if (((en[1] || "").toLowerCase().indexOf(q) >= 0) || ((en[0] || "").toLowerCase().indexOf(q) >= 0)) {
+                hits++;
+                (function (x) {
+                  var b = el("button", { type: "button", style: "display:block;width:100%;text-align:left;padding:3px 6px;border:none;background:none;cursor:pointer;font-size:.82rem;" },
+                    ["+ " + (x[1] || x[0]) + "  [" + x[0] + "]"]);
+                  b.onclick = function () { pick(x[0]); srchRes.innerHTML = ""; srch.value = x[1] || x[0]; };
+                  srchRes.appendChild(b);
+                })(en);
+              }
+            }
+          }, 200);
+        };
+        var resetBtn = el("button", { type: "button", style: "margin-top:4px;font-size:.78rem;background:none;border:none;color:#2563eb;cursor:pointer;" }, ["↺ clear target (mint a new course instead)"]);
+        resetBtn.onclick = function () { pick(""); };
+        box.appendChild(resetBtn);
+        var actions = el("div", { style: "margin-top:16px;display:flex;gap:10px;justify-content:flex-end;" });
+        var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Cancel"]);
+        cancel.onclick = close;
+        go = el("button", { type: "button", style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;" }, ["Re-home"]);
+        go.onclick = function () { doRehome(e, srcRow.id, target, titleIn.value.trim(), (target ? "" : discSel.value), close, onDone); };
+        actions.appendChild(cancel); actions.appendChild(go);
+        box.appendChild(actions);
+        document.body.appendChild(overlay);
+        syncTarget();
+      });
+    }
+    function doRehome(e, srcId, target, title, disc, close, onDone) {
+      ensureFresh().then(function (sess) {
+        if (!sess) { signOut(); session = null; renderAuth(); render(); alert("Sign-in expired — please sign in again."); return; }
+        var tgt = target || ("UC-CUR-EXT" + Date.now().toString(36).toUpperCase());
+        var mint = !target;
+        var items = [{ course_id: "CN:" + e.cn, field: "merge_into", value: tgt }];
+        if (mint && title) items.push({ course_id: tgt, field: "unified_title", value: title });
+        if (mint && disc) items.push({ course_id: tgt, field: "discipline", value: disc });
+        saveCurations(items, sess).then(function (resp) {
+          if (!resp.ok) { alert("Re-home save failed (status " + resp.status + ")."); return; }
+          // Track like a live merge so the pending-sync badge counts it.
+          liveMergePending["CN:" + e.cn] = tgt;
+          close();
+          if (onDone) onDone(tgt);
+          alert("Re-homed “" + (e.t || e.n) + "” to " + tgt + (mint ? " (a new standalone course)" : "")
+            + ". It fully materializes on the next daily sync (or Sync now).");
+        }).catch(function (err) { alert("Could not save re-home: " + ((err && err.message) || "network error")); });
+      });
+    }
+
     // ---- Suggested-merge worklist -------------------------------------------
     // A review queue over the precomputed same-title groups. One group at a time,
     // members pre-checked; Confirm reuses doConsolidate; Skip advances. NEVER
@@ -2156,6 +2267,25 @@
                   style: "margin-left:6px;font-size:.68rem;font-weight:600;padding:1px 6px;border-radius:9px;background:#fef3c7;color:#92400e;white-space:nowrap;vertical-align:middle;",
                   title: "The college's COCI course title contains encoding artifacts (e.g. Ã‚Â) — shown repaired here. The source record still needs correction in COCI; it's queued in kb/coci_title_corrections.json.",
                 }, ["⚠ fix in COCI"]));
+              }
+              // ⤴ Re-home (signed-in): pull this one course out of the family and
+              // send it to its rightful course (merge into an existing one or mint
+              // a new standalone). For when a generic title over-merged it here.
+              if (session && e.cn) {
+                var rh = el("a", { href: "#", "aria-label": "Re-home this course",
+                  style: "margin-left:8px;font-size:.85rem;text-decoration:none;color:#2563eb;cursor:pointer;vertical-align:middle;",
+                  title: "Re-home this course: pull it out of " + r.id + " and merge it into its rightful course, or mint a new standalone." }, ["⤴"]);
+                rh.onclick = function (ev) {
+                  ev.preventDefault();
+                  openRehomeDialog(e, r, cols[e.c] || "", function () {
+                    var idx = list.indexOf(e);
+                    if (idx >= 0) list.splice(idx, 1);
+                    paintBody();
+                    if (countDiv.firstChild) countDiv.firstChild.textContent =
+                      list.length + " member college course" + (list.length === 1 ? "" : "s") + " · ";
+                  });
+                };
+                tcell.appendChild(rh);
               }
               mr.appendChild(tcell);
               mr.appendChild(el("td", {}, [e.u != null ? String(e.u) : ""]));
