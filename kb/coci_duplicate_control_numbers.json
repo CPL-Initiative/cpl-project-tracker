@@ -1,0 +1,4944 @@
+{
+ "_purpose": "COCI source-data error queue — CourseControlNumbers (CB00) a college assigned to MORE THAN ONE distinct course (different Dept Name+Number). The control number must be unique per course; these defeat the exact control-number member-join, which the display disambiguates by subject+number. Take to the colleges/COCI to fix at source. Regenerated each run.",
+ "count": 335,
+ "duplicates": [
+  {
+   "control_number": "CCC000141468",
+   "college": "Allan Hancock College",
+   "courses": [
+    {
+     "code": "ANTH 101",
+     "title": "Intro to Biological Anthropology"
+    },
+    {
+     "code": "ANTH C1001",
+     "title": "Introduction to Biological Anthropology"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000165313",
+   "college": "Allan Hancock College",
+   "courses": [
+    {
+     "code": "ANTH 110",
+     "title": "Biological Anthropology Lab"
+    },
+    {
+     "code": "ANTH C1001L",
+     "title": "Biological Anthropology Lab"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000179046",
+   "college": "Allan Hancock College",
+   "courses": [
+    {
+     "code": "ECON 101",
+     "title": "Principles of Macro-Economics"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000180663",
+   "college": "Allan Hancock College",
+   "courses": [
+    {
+     "code": "HIST 108",
+     "title": "U S History from 1877 to the Present"
+    },
+    {
+     "code": "HIST C1002",
+     "title": "United States History since 1865"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000239362",
+   "college": "Allan Hancock College",
+   "courses": [
+    {
+     "code": "HIST 107",
+     "title": "U.S. History to 1877"
+    },
+    {
+     "code": "HIST C1001",
+     "title": "United States History to 1877"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000252696",
+   "college": "Allan Hancock College",
+   "courses": [
+    {
+     "code": "ENGL 102",
+     "title": "Freshman Composition: Literature"
+    },
+    {
+     "code": "ENGL C1002",
+     "title": "Introduction to Literature"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000291120",
+   "college": "Allan Hancock College",
+   "courses": [
+    {
+     "code": "ECON 102",
+     "title": "Principles of Micro-Economics"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000522369",
+   "college": "Allan Hancock College",
+   "courses": [
+    {
+     "code": "OLDR 7200A",
+     "title": "Intermediate Watercolor Painting"
+    },
+    {
+     "code": "OLDR 7355",
+     "title": "Advanced Watercolor Painting"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000218781",
+   "college": "Antelope Valley College",
+   "courses": [
+    {
+     "code": "ASTR 101L",
+     "title": "Astronomy Laboratory"
+    },
+    {
+     "code": "ASTR C1001L",
+     "title": "Introduction to Astronomy Lab"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000337640",
+   "college": "Antelope Valley College",
+   "courses": [
+    {
+     "code": "ECON 102",
+     "title": "Principles of Microeconomics"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000640901",
+   "college": "Antelope Valley College",
+   "courses": [
+    {
+     "code": "PHIL 130",
+     "title": "History of Ancient and Medieval Philosophy"
+    },
+    {
+     "code": "PHIL 230",
+     "title": "History of Ancient and Medieval Philosophy"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000640902",
+   "college": "Antelope Valley College",
+   "courses": [
+    {
+     "code": "PHIL 140",
+     "title": "History of Modern Philosophy"
+    },
+    {
+     "code": "PHIL 240",
+     "title": "History of Modern Philosophy"
+    }
+   ]
+  },
+  {
+   "control_number": "NULL",
+   "college": "Barstow Community College",
+   "courses": [
+    {
+     "code": "BIO 30",
+     "title": "The Natural History of California"
+    },
+    {
+     "code": "CNEE 147",
+     "title": "Ethical Hacking-Penetration Testing"
+    },
+    {
+     "code": "COMM C1000H",
+     "title": "Introduction to Public Speaking - Honors"
+    },
+    {
+     "code": "COSM 95",
+     "title": "Work Experience Education"
+    },
+    {
+     "code": "COUN 6",
+     "title": "Transfer Planning & Success"
+    },
+    {
+     "code": "CSC 144",
+     "title": "Data Wrangling and Visualization "
+    },
+    {
+     "code": "DA 160",
+     "title": "Comprehensive Dental Assisting Exam and Review"
+    },
+    {
+     "code": "ENGL 107",
+     "title": "20TH CEN POETRY I"
+    },
+    {
+     "code": "ETHN 10",
+     "title": "Introduction to Asian American Studies"
+    },
+    {
+     "code": "ETHN 4",
+     "title": "Introduction to African American Studies"
+    },
+    {
+     "code": "ETHN 7",
+     "title": "Introduction to Native American Studies"
+    },
+    {
+     "code": "ETHN 9",
+     "title": "Introduction to Native American Studies"
+    },
+    {
+     "code": "FIRE 171",
+     "title": "Fire Training In-Service Update: 54 Hours"
+    },
+    {
+     "code": "FIRE 174",
+     "title": "Fire Training In-Service Update: 135 Hours"
+    },
+    {
+     "code": "FIRE 176",
+     "title": "Fire Training In-Service Update: 189 Hours"
+    },
+    {
+     "code": "FIRE 178",
+     "title": "Fire Training In-Service Update: 243 Hours"
+    },
+    {
+     "code": "FTEC 101",
+     "title": "Fire Protect Organization"
+    },
+    {
+     "code": "GOLF 81",
+     "title": "Golf Courses - Public, Private and Resort"
+    },
+    {
+     "code": "KINE 300",
+     "title": "Kinesiology Skills Lab"
+    },
+    {
+     "code": "LING 107",
+     "title": "History of the English Language"
+    },
+    {
+     "code": "MATH 90S",
+     "title": "Corequisite Support for Calculus I"
+    },
+    {
+     "code": "MUS 221",
+     "title": "Guitar Ensemble"
+    },
+    {
+     "code": "PHOW NC201",
+     "title": "Photoshop I: For Digital Photographers"
+    },
+    {
+     "code": "PHOW NC202",
+     "title": "Photoshop II: For Digital Photographers"
+    },
+    {
+     "code": "REGNRSG 111",
+     "title": "NURSING LEADERSHIP AND MANAGEMENT"
+    },
+    {
+     "code": "SPAN 9011",
+     "title": "Noncredit Spanish for Medical Professions I"
+    },
+    {
+     "code": "SPAN 9012",
+     "title": "Noncredit Spanish for Medical Professions II"
+    },
+    {
+     "code": "THE 505",
+     "title": "Narrative Theatre for Older Adults"
+    },
+    {
+     "code": "THE 524",
+     "title": "Playwriting for Older Adults"
+    },
+    {
+     "code": "THEA 105C",
+     "title": "Improvisation for the Theatre - Advanced"
+    },
+    {
+     "code": "THEA 284A",
+     "title": "Acting Shakespeare I"
+    },
+    {
+     "code": "THEA 284B",
+     "title": "Acting Shakespeare II"
+    },
+    {
+     "code": "THEA 284C",
+     "title": "Acting Shakespeare III"
+    },
+    {
+     "code": "THEA 284D",
+     "title": "Acting Shakespeare IV"
+    },
+    {
+     "code": "THEA 294A",
+     "title": "Shakespeare in Production I"
+    },
+    {
+     "code": "THEA 294B",
+     "title": "Shakespeare in Production II"
+    },
+    {
+     "code": "THEA 294C",
+     "title": "Shakespeare in Production III"
+    },
+    {
+     "code": "THEA 294D",
+     "title": "Shakespeare in Production IV"
+    },
+    {
+     "code": "THTR 193",
+     "title": "Entertainment Rigging Practicum"
+    },
+    {
+     "code": "TRST 3331",
+     "title": "Academic Reading and Writing 3"
+    },
+    {
+     "code": "TRST 3333",
+     "title": "Elements of Speech"
+    },
+    {
+     "code": "TRST 3335",
+     "title": "Exploring Literature"
+    },
+    {
+     "code": "TRST 4600",
+     "title": "Pre-Voc Foundation Skills"
+    },
+    {
+     "code": "TRST 5036",
+     "title": "English 1"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000348053",
+   "college": "Berkeley City College",
+   "courses": [
+    {
+     "code": "ENGL 001B",
+     "title": "Composition and Reading"
+    },
+    {
+     "code": "ENGL C1002",
+     "title": "Introduction to Literature"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000356213",
+   "college": "Berkeley City College",
+   "courses": [
+    {
+     "code": "COMM 20",
+     "title": "Interpersonal Communication Skills"
+    },
+    {
+     "code": "COMM C1004",
+     "title": "Interpersonal Communication"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000413138",
+   "college": "Cerritos College",
+   "courses": [
+    {
+     "code": "HIST 102",
+     "title": "Political and Social History of the United States: 1500s to 1876"
+    },
+    {
+     "code": "HIST C1001",
+     "title": "United States History to 1877"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000603699",
+   "college": "Cerritos College",
+   "courses": [
+    {
+     "code": "COMM 120",
+     "title": "Interpersonal Communication"
+    },
+    {
+     "code": "COMM C1004",
+     "title": "Interpersonal Communication"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000616979",
+   "college": "Cerritos College",
+   "courses": [
+    {
+     "code": "POL 280",
+     "title": "Race, Ethnicity, and Gender Politics"
+    },
+    {
+     "code": "POLS 280",
+     "title": "Race, Ethnicity, and Gender Politics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000093679",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "BIOL C111H",
+     "title": "General Biology I: Honors"
+    },
+    {
+     "code": "BIOLC 111H",
+     "title": "General Biology I - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000137196",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "BSAD C155",
+     "title": "Human Resource Management"
+    },
+    {
+     "code": "BSADC 155",
+     "title": "Human Resource Management"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000174335",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "DMA C211",
+     "title": "Web Scripting with JavaScript"
+    },
+    {
+     "code": "DMAC 211",
+     "title": "Web Scripting with JavaScript"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000188908",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "BIOL C111",
+     "title": "General Biology I"
+    },
+    {
+     "code": "BIOLC 111",
+     "title": "General Biology I"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000270861",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "DMA C117",
+     "title": "Web Design"
+    },
+    {
+     "code": "DMAC 117",
+     "title": "Web Design"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000357037",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "DMA C280",
+     "title": "Web Production Management"
+    },
+    {
+     "code": "DMAC 280",
+     "title": "Web Production Management"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000462006",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "DMA C213",
+     "title": "Web Development with PHP and MySQL"
+    },
+    {
+     "code": "DMAC 213",
+     "title": "Web Development with PHP and MySQL"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000511802",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "BSAD C220",
+     "title": "Principles of Project Management"
+    },
+    {
+     "code": "BSADC 220",
+     "title": "Principles of Project Management"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000529054",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "BIOL C145",
+     "title": "Environmental Studies"
+    },
+    {
+     "code": "BIOLC 145",
+     "title": "Environmental Studies"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000532218",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "HCRS C133",
+     "title": "Medical Office Procedures"
+    },
+    {
+     "code": "HCRSC 133",
+     "title": "Medical Office Procedures"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000532219",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "HCRS C137",
+     "title": "Clinical Medical Assisting II"
+    },
+    {
+     "code": "HCRSC 137",
+     "title": "Clinical Medical Assisting II"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000532220",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "HCRS C139",
+     "title": "Laboratory Procedures"
+    },
+    {
+     "code": "HCRSC 139",
+     "title": "Laboratory Procedures"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000532262",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "HCRS C135",
+     "title": "Basic ICD and CPT Coding"
+    },
+    {
+     "code": "HCRSC 135",
+     "title": "Basic ICD and CPT Coding"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000532280",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "HCRS C136",
+     "title": "Clinical Medical Assisting I"
+    },
+    {
+     "code": "HCRSC 136",
+     "title": "Clinical Medical Assisting I"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000532292",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "HCRS C138",
+     "title": "Medication Administration for Medical Assisting"
+    },
+    {
+     "code": "HCRSC 138",
+     "title": "Medication Administration for Medical Assisting"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000534528",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "DMA C119",
+     "title": "Advanced Web Development"
+    },
+    {
+     "code": "DMAC 119",
+     "title": "Advanced Web Development"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000534930",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "DMA C201",
+     "title": "E-Commerce"
+    },
+    {
+     "code": "DMAC 201",
+     "title": "E-Commerce"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000547073",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "DMA C111",
+     "title": "Fundamentals of Web Development"
+    },
+    {
+     "code": "DMAC 111",
+     "title": "Fundamentals of Web Development"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000547181",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "FREN C101",
+     "title": "Elementary French I"
+    },
+    {
+     "code": "FRENC 101",
+     "title": "Elementary French I"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000581243",
+   "college": "Cerro Coso Community College",
+   "courses": [
+    {
+     "code": "DMA C113",
+     "title": "Accessibility and UX Design"
+    },
+    {
+     "code": "DMAC 113",
+     "title": "Accessibility and UX Design"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000395910",
+   "college": "Chaffey College",
+   "courses": [
+    {
+     "code": "ARTH 5",
+     "title": "Survey of Western Art from Renaissance to Contemporary"
+    },
+    {
+     "code": "ARTH C1200",
+     "title": "Survey of Art from the Renaissance to Contemporary"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000396079",
+   "college": "Chaffey College",
+   "courses": [
+    {
+     "code": "ECON 4",
+     "title": "Principles of Microeconomics"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000402678",
+   "college": "Chaffey College",
+   "courses": [
+    {
+     "code": "ENGL 1C",
+     "title": "Introduction to Literature"
+    },
+    {
+     "code": "ENGL C1002",
+     "title": "Introduction to Literature"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000403293",
+   "college": "Chaffey College",
+   "courses": [
+    {
+     "code": "HIST 18",
+     "title": "United States History from 1865"
+    },
+    {
+     "code": "HIST C1002",
+     "title": "United States History since 1865"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000418545",
+   "college": "Chaffey College",
+   "courses": [
+    {
+     "code": "HIST 17",
+     "title": "United States History through 1877"
+    },
+    {
+     "code": "HIST C1001",
+     "title": "United States History to 1877"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000425898",
+   "college": "Chaffey College",
+   "courses": [
+    {
+     "code": "ARTH 3",
+     "title": "Survey of Western Art from Prehistory through the Middle Ages"
+    },
+    {
+     "code": "ARTH C1100",
+     "title": "Survey of Art from Prehistory to the Medieval Era"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000426090",
+   "college": "Chaffey College",
+   "courses": [
+    {
+     "code": "ECON 2",
+     "title": "Principles of Macroeconomics"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000280616",
+   "college": "Citrus College",
+   "courses": [
+    {
+     "code": "ECON 1",
+     "title": "Principles of Macroeconomics"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000347127",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "CMST 20",
+     "title": "Interpersonal Communication"
+    },
+    {
+     "code": "COMM 20",
+     "title": "Interpersonal Communication"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000350731",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "CMST 5",
+     "title": "Intercultural Communication"
+    },
+    {
+     "code": "COMM 5",
+     "title": "Intercultural Communication"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000354694",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "HIST 17B",
+     "title": "The United States"
+    },
+    {
+     "code": "HIST C1002",
+     "title": "United States History since 1865"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000355026",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "ECON 3",
+     "title": "Principles of Microeconomics"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000355411",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "CMST 12",
+     "title": "Fundamentals of Oral Comm"
+    },
+    {
+     "code": "COMM 12",
+     "title": "Fundamentals of Oral Communication"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000356957",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "CMST 4",
+     "title": "Group Communication"
+    },
+    {
+     "code": "COMM 4",
+     "title": "Group Communication"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000360765",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "HIST 17A",
+     "title": "United States History to 1877"
+    },
+    {
+     "code": "HIST C1001",
+     "title": "United States History to 1877"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000362298",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "TH A 105",
+     "title": "MODERN DRAMA"
+    },
+    {
+     "code": "TH A 32",
+     "title": "Survey of Modern Drama"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000362898",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "CMST 3",
+     "title": "Argumentation and Debate"
+    },
+    {
+     "code": "COMM 3",
+     "title": "Argumentation and Debate"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000367247",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "ECON 1",
+     "title": "Principles of Macroeconomics"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000458696",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "CMST 2",
+     "title": "Intro to Rhetorical Criticism"
+    },
+    {
+     "code": "COMM 2",
+     "title": "Introduction to Rhetorical Criticism\t"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000525324",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "CMST 7",
+     "title": "Oral Interpretation of Literature"
+    },
+    {
+     "code": "COMM 7",
+     "title": "Oral Interpretation of Literature"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000556217",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "CMST 8",
+     "title": "Rhetoric of Popular Culture"
+    },
+    {
+     "code": "COMM 8",
+     "title": "Rhetoric of Popular Culture"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000594182",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "ENGL 1B",
+     "title": "Writing about Literature"
+    },
+    {
+     "code": "ENGL C1003",
+     "title": "Critical Thinking and Writing through Literature"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000594323",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "MATH 80S",
+     "title": "Support for Probability and Statistics"
+    },
+    {
+     "code": "STAT 80S",
+     "title": "Support for Probability and Statistics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000606629",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "JOUR 24B",
+     "title": "News Production and Publication II"
+    },
+    {
+     "code": "JOUR 25",
+     "title": "News Production II"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000652422",
+   "college": "City College of San Francisco",
+   "courses": [
+    {
+     "code": "STAT 1000E",
+     "title": "Introduction to Statistics"
+    },
+    {
+     "code": "STAT C1000E",
+     "title": "Introduction to Statistics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000640201",
+   "college": "College of Alameda",
+   "courses": [
+    {
+     "code": "ADAM 115",
+     "title": "Advanced Design and Line Development II"
+    },
+    {
+     "code": "ADAM 215",
+     "title": "Advanced Design and Line Development II"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000640202",
+   "college": "College of Alameda",
+   "courses": [
+    {
+     "code": "ADAM 21",
+     "title": "PATTERN DRAFTING I"
+    },
+    {
+     "code": "ADAM 221",
+     "title": "PATTERN DRAFTING I"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000190650",
+   "college": "College of the Canyons",
+   "courses": [
+    {
+     "code": "ECON 202",
+     "title": "Microeconomics"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000207492",
+   "college": "College of the Canyons",
+   "courses": [
+    {
+     "code": "ART 111",
+     "title": "Art History: Renaissance to Modern"
+    },
+    {
+     "code": "ARTH C1200",
+     "title": "Survey of Art from the Renaissance to Contemporary"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000249954",
+   "college": "College of the Canyons",
+   "courses": [
+    {
+     "code": "ECON 201",
+     "title": "Macroeconomics"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000321793",
+   "college": "College of the Canyons",
+   "courses": [
+    {
+     "code": "ART 110",
+     "title": "Art History: Paleolithic through the Middle Ages"
+    },
+    {
+     "code": "ARTH C1100",
+     "title": "Survey of Art from Prehistory to the Medieval Era"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000108012",
+   "college": "College of the Desert",
+   "courses": [
+    {
+     "code": "COMM  9",
+     "title": "Introduction to Interpersonal Communication"
+    },
+    {
+     "code": "COMM  C1004",
+     "title": "Interpersonal Communication"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000226600",
+   "college": "College of the Desert",
+   "courses": [
+    {
+     "code": "ECON 2",
+     "title": "Principles of Microeconomics"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000550980",
+   "college": "College of the Desert",
+   "courses": [
+    {
+     "code": "ENG 2",
+     "title": "Argumentative Writing and Critical Thinking through Literature"
+    },
+    {
+     "code": "ENGL C1003",
+     "title": "Critical Thinking and Writing through Literature"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000450791",
+   "college": "Compton College",
+   "courses": [
+    {
+     "code": "COMM C1004",
+     "title": "Interpersonal Communication"
+    },
+    {
+     "code": "COMS 130",
+     "title": "Interpersonal Communication"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000287431",
+   "college": "Contra Costa College",
+   "courses": [
+    {
+     "code": "ECON 221",
+     "title": "Introduction to Microeconomic Principles"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000301057",
+   "college": "Contra Costa College",
+   "courses": [
+    {
+     "code": "ECON 220",
+     "title": "Introduction to Macroeconomic Principles"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000601678",
+   "college": "Contra Costa College",
+   "courses": [
+    {
+     "code": "MATH 164S",
+     "title": "Support for STAT-C1000 Success"
+    },
+    {
+     "code": "STAT 10S",
+     "title": "Support for STAT-C1000 Success"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000589723",
+   "college": "Cosumnes River College",
+   "courses": [
+    {
+     "code": "ADAPT 333",
+     "title": "Adapted Deep Water Aerobics"
+    },
+    {
+     "code": "ADAPT 334",
+     "title": "Adapted Deep Water Aerobics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000651032",
+   "college": "Crafton Hills College",
+   "courses": [
+    {
+     "code": "MATH 250E",
+     "title": "Single Variable Calculus I Enhanced"
+    },
+    {
+     "code": "MATH C2210E",
+     "title": "Calculus I: Early Transcendentals – Embedded Support"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000194073",
+   "college": "De Anza College",
+   "courses": [
+    {
+     "code": "ECON 1",
+     "title": "Principles of Macroeconomics"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000558476",
+   "college": "De Anza College",
+   "courses": [
+    {
+     "code": "ECON 001H",
+     "title": "Principles of Macroeconomics - HONORS"
+    },
+    {
+     "code": "ECON C2002H",
+     "title": "Principles of Macroeconomics - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000229127",
+   "college": "Diablo Valley College",
+   "courses": [
+    {
+     "code": "HIST 120",
+     "title": "History of the United States before 1865"
+    },
+    {
+     "code": "HIST C1001",
+     "title": "United States History to 1877"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000296077",
+   "college": "Glendale Community College",
+   "courses": [
+    {
+     "code": "POL S 102",
+     "title": "Modern Comparative Governments"
+    },
+    {
+     "code": "POLS 102",
+     "title": "Modern Comparative Governments"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000653046",
+   "college": "Grossmont College",
+   "courses": [
+    {
+     "code": "MATH 22",
+     "title": "Foundations for Calculus II: Early Transcendentals"
+    },
+    {
+     "code": "MATH 82",
+     "title": "Foundations for Calculus and Analytic Geometry II"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000645120",
+   "college": "Irvine Valley College",
+   "courses": [
+    {
+     "code": "ENGL 1001",
+     "title": "Writing Conference for ENGL C10001 and C10001H"
+    },
+    {
+     "code": "WR 182",
+     "title": "WRITING CONFERENCE FOR WR 2/WR 2H"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000530136",
+   "college": "Laney College",
+   "courses": [
+    {
+     "code": "COMM 20",
+     "title": "Interpersonal Communication Skills"
+    },
+    {
+     "code": "COMM C1004",
+     "title": "Interpersonal Communication"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000566979",
+   "college": "Las Positas College",
+   "courses": [
+    {
+     "code": "AUTO L1L2",
+     "title": "Smog Level One and Level Two"
+    },
+    {
+     "code": "AUTO SMOG",
+     "title": "Smog Level One and Level Two"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000587700",
+   "college": "Lassen College",
+   "courses": [
+    {
+     "code": "ECON 10",
+     "title": "Macro-economics"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000587701",
+   "college": "Lassen College",
+   "courses": [
+    {
+     "code": "ECON 11",
+     "title": "Micro-economics"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000127272",
+   "college": "Los Angeles Harbor College",
+   "courses": [
+    {
+     "code": "ECON 1",
+     "title": "Principles of Microeconomics"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000295235",
+   "college": "Los Angeles Harbor College",
+   "courses": [
+    {
+     "code": "ECON 2",
+     "title": "Principles of Macroeconomics"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000598289",
+   "college": "Los Angeles Harbor College",
+   "courses": [
+    {
+     "code": "JOURNAL 218-1",
+     "title": "Practical Editing I"
+    },
+    {
+     "code": "JOURNAL 218-3",
+     "title": "PRACTICAL EDITING III"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000607526",
+   "college": "Los Angeles Harbor College",
+   "courses": [
+    {
+     "code": "HUMAN 2",
+     "title": "STUDIES IN SELECTED CULTURES"
+    },
+    {
+     "code": "HUMAN 8",
+     "title": "GREAT WOMEN IN THE HUMANITIES"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000607902",
+   "college": "Los Angeles Harbor College",
+   "courses": [
+    {
+     "code": "CIS 192",
+     "title": "INTRODUCTION TO CLOUD COMPUTING"
+    },
+    {
+     "code": "CIS 195",
+     "title": "SECURITY IN THE CLOUD"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000607904",
+   "college": "Los Angeles Harbor College",
+   "courses": [
+    {
+     "code": "CIS 111",
+     "title": "SUPPORTING WINDOWS DESKTOPS"
+    },
+    {
+     "code": "CIS 210",
+     "title": "INTRODUCTION TO COMPUTER NETWORKING"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000596623",
+   "college": "Los Angeles Southwest College",
+   "courses": [
+    {
+     "code": "MATHEMATICS  228A",
+     "title": "STATISTICS PATHWAY PART I "
+    },
+    {
+     "code": "MATHEMATICS  228B",
+     "title": "STATISTICS PATHWAY PART II "
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000608883",
+   "college": "Los Angeles Southwest College",
+   "courses": [
+    {
+     "code": "CIS 192",
+     "title": "INTRODUCTION TO CLOUD COMPUTING"
+    },
+    {
+     "code": "CIS 193",
+     "title": "Database Essentials in Amazon Web Services"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000608495",
+   "college": "Los Angeles Trade Technical College",
+   "courses": [
+    {
+     "code": "OPMA AP 720",
+     "title": "HVACR I"
+    },
+    {
+     "code": "OPMA AP720",
+     "title": "HVACR I"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000615529",
+   "college": "Madera College",
+   "courses": [
+    {
+     "code": "MATH 5A",
+     "title": "Calculus I"
+    },
+    {
+     "code": "MATH C2210",
+     "title": "Calculus I: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000615816",
+   "college": "Madera College",
+   "courses": [
+    {
+     "code": "ENGL 1B",
+     "title": "Introduction to the Study of Literature"
+    },
+    {
+     "code": "ENGL C1002",
+     "title": "Introduction to Literature"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000653323",
+   "college": "Madera College",
+   "courses": [
+    {
+     "code": "BIOL 10L",
+     "title": "Introduction to Life Science Laboratory"
+    },
+    {
+     "code": "BIOL C1001L",
+     "title": "Introduction to Biology Lab"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000359520",
+   "college": "Merced College",
+   "courses": [
+    {
+     "code": "ECON 1",
+     "title": "Introduction to Microeconomics"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000375454",
+   "college": "Merced College",
+   "courses": [
+    {
+     "code": "ECON 2",
+     "title": "Introduction to Macroeconomics"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000185921",
+   "college": "Modesto Junior College",
+   "courses": [
+    {
+     "code": "HIST 101",
+     "title": "History of the United States to 1877"
+    },
+    {
+     "code": "HIST C1001",
+     "title": "United States History to 1877"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000256802",
+   "college": "Modesto Junior College",
+   "courses": [
+    {
+     "code": "ENGL 102",
+     "title": "Advanced Composition & Introduction to Literature"
+    },
+    {
+     "code": "ENGL C1002",
+     "title": "Introduction to Literature"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000291427",
+   "college": "Modesto Junior College",
+   "courses": [
+    {
+     "code": "HIST 102",
+     "title": "History of the United States Since 1865"
+    },
+    {
+     "code": "HIST C1002",
+     "title": "United States History since 1865"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000572195",
+   "college": "Modesto Junior College",
+   "courses": [
+    {
+     "code": "AUTO 350",
+     "title": "The Future of Automotive Sales and Service"
+    },
+    {
+     "code": "PHYS 113",
+     "title": "Problem Solving and Technology for Physics 103"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000522062",
+   "college": "Monterey Peninsula College",
+   "courses": [
+    {
+     "code": "NURS 10",
+     "title": "Pharmacology for Nursing"
+    },
+    {
+     "code": "NURS 100",
+     "title": "Pharmacology for Nursing"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000384730",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "HIST 7",
+     "title": "History of the United States to 1877"
+    },
+    {
+     "code": "HIST C1001",
+     "title": "United States History to 1877"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000385142",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "HIST 8H",
+     "title": "History of the United States from 1865 - Honors"
+    },
+    {
+     "code": "HIST C1002H",
+     "title": "United States History since 1865 - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000385170",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "NURS 200",
+     "title": "Role Transition"
+    },
+    {
+     "code": "NURS 70",
+     "title": "Role Transition"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000387951",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "ENGL 1B",
+     "title": "English - Introduction to Literary Types"
+    },
+    {
+     "code": "ENGL C1002",
+     "title": "Introduction to Literature"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000399409",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "ENGL 1BH",
+     "title": "English - Introduction to Literary Types - Honors"
+    },
+    {
+     "code": "ENGL C1002H",
+     "title": "Introduction to Literature - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000400566",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "HIST 8",
+     "title": "History of the United States from 1865"
+    },
+    {
+     "code": "HIST C1002",
+     "title": "United States History since 1865"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000400953",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "HIST 7H",
+     "title": "History of the United States to 1877 - Honors"
+    },
+    {
+     "code": "HIST C1001H",
+     "title": "United States History to 1877 - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000409281",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "NURS 114",
+     "title": "Maternal-Newborn Nursing"
+    },
+    {
+     "code": "NURS 4",
+     "title": "Maternity Nursing"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000543769",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "NURS 11",
+     "title": "Preceptorship in Nursing"
+    },
+    {
+     "code": "NURS 212",
+     "title": "Preceptorship in Nursing"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000543998",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "NURS 20",
+     "title": "Nursing Work Experience Program"
+    },
+    {
+     "code": "NURS 97",
+     "title": "Nursing Work Experience Program"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000547584",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "NURS 102",
+     "title": "Pharmacology"
+    },
+    {
+     "code": "NURS 2",
+     "title": "Pharmacology"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000598324",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "ARTD 94",
+     "title": "Special Studies: Intaglio and Relief Printmaking"
+    },
+    {
+     "code": "ARTD 99D",
+     "title": "Special Studies: Intaglio and Relief Printmaking"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000612152",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "NURS 113",
+     "title": "Medical-Surgical Nursing: Locomotion/Sensory/Integument/Oncology/Immunology"
+    },
+    {
+     "code": "NURS 3",
+     "title": "Medical-Surgical Nursing: Locomotion/Sensory/Integument/Oncology/Immunology"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000643589",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "NURS 100",
+     "title": "The Nursing Process I"
+    },
+    {
+     "code": "NURS 1A",
+     "title": "The Nursing Process I"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000643591",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "NURS 207",
+     "title": "Psychiatric Mental Health Nursing"
+    },
+    {
+     "code": "NURS 5",
+     "title": "Psychiatric Nursing"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000643592",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "NURS 115",
+     "title": "Pediatric Nursing"
+    },
+    {
+     "code": "NURS 6",
+     "title": "Pediatric Nursing"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000643594",
+   "college": "Mt. San Antonio College",
+   "courses": [
+    {
+     "code": "NURS 210",
+     "title": "Medical-Surgical Nursing: Perfusion and Oxygenation"
+    },
+    {
+     "code": "NURS 8",
+     "title": "Medical-Surgical Nursing: Circulation and Oxygenation"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000295595",
+   "college": "Mt. San Jacinto College",
+   "courses": [
+    {
+     "code": "ECON 202",
+     "title": "Principles of Microeconomics"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000335718",
+   "college": "Mt. San Jacinto College",
+   "courses": [
+    {
+     "code": "ECON 201",
+     "title": "Principles of Macroeconomics"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000584443",
+   "college": "Mt. San Jacinto College",
+   "courses": [
+    {
+     "code": "BIOL 115",
+     "title": "Introductory Topics in Biology: Cells to Ecosystems (formerly Topics in Biology)"
+    },
+    {
+     "code": "BIOL C1000",
+     "title": "Introduction to Biology with Lab"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000598479",
+   "college": "Mt. San Jacinto College",
+   "courses": [
+    {
+     "code": "MATH 211",
+     "title": "Analytic Geometry and Calculus I"
+    },
+    {
+     "code": "MATH C2210",
+     "title": "Calculus I: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000598480",
+   "college": "Mt. San Jacinto College",
+   "courses": [
+    {
+     "code": "MATH 212",
+     "title": "Analytic Geometry and Calculus II"
+    },
+    {
+     "code": "MATH C2220",
+     "title": "Calculus II: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000511774",
+   "college": "Napa Valley College",
+   "courses": [
+    {
+     "code": "ARTH 105",
+     "title": "History of Western Art: Prehistoric through Medieval"
+    },
+    {
+     "code": "ARTH C1100",
+     "title": "Survey of Art from Prehistory to the Medieval Era"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000511775",
+   "college": "Napa Valley College",
+   "courses": [
+    {
+     "code": "ARTH 106",
+     "title": "History of Western Art: Renaissance to Contemporary"
+    },
+    {
+     "code": "ARTH C1200",
+     "title": "Survey of Art from the Renaissance to Contemporary"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000522977",
+   "college": "Napa Valley College",
+   "courses": [
+    {
+     "code": "MATH 121",
+     "title": "Calculus II"
+    },
+    {
+     "code": "MATH C2220",
+     "title": "Calculus II: Early Transcendentals "
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000541806",
+   "college": "Napa Valley College",
+   "courses": [
+    {
+     "code": "ECON 100",
+     "title": "Principles of Macroeconomics"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000541807",
+   "college": "Napa Valley College",
+   "courses": [
+    {
+     "code": "ECON 101",
+     "title": "Principles of Microeconomics"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000561098",
+   "college": "Napa Valley College",
+   "courses": [
+    {
+     "code": "MATH 120",
+     "title": "Calculus 1"
+    },
+    {
+     "code": "MATH C2210",
+     "title": "Calculus 1: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000546118",
+   "college": "Norco College",
+   "courses": [
+    {
+     "code": "CHI 11",
+     "title": "Chinese Culture and Civilization"
+    },
+    {
+     "code": "SOC 1H",
+     "title": "Honors Introduction to Sociology"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000180826",
+   "college": "Oxnard College",
+   "courses": [
+    {
+     "code": "ANTH C1001",
+     "title": "Introduction to Biological Anthropology"
+    },
+    {
+     "code": "ANTH R101",
+     "title": "Introduction to Biological Anthropology"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000194510",
+   "college": "Oxnard College",
+   "courses": [
+    {
+     "code": "AC R011L",
+     "title": "Air Conditioning and Refrigeration II Lab"
+    },
+    {
+     "code": "AC R015L",
+     "title": "HVAC/Refrigeration II Lab"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000312513",
+   "college": "Oxnard College",
+   "courses": [
+    {
+     "code": "AC R021L",
+     "title": "Electrical Systems II Lab"
+    },
+    {
+     "code": "AC R025L",
+     "title": " HVAC/R Electrical Systems II Lab"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000570030",
+   "college": "Oxnard College",
+   "courses": [
+    {
+     "code": "ANTH C1001H",
+     "title": "Introduction to Biological Anthropology - Honors"
+    },
+    {
+     "code": "ANTH R101H",
+     "title": "Honors: Introduction to Biological Anthropology"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000599725",
+   "college": "Oxnard College",
+   "courses": [
+    {
+     "code": "MATH R055S",
+     "title": "Algebra Support for STAT C1000"
+    },
+    {
+     "code": "STAT R055S",
+     "title": "Algebra Support for STAT C1000"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000643363",
+   "college": "Palomar College",
+   "courses": [
+    {
+     "code": "MIL 195",
+     "title": "Military Leadership: The Professional Warfighter"
+    },
+    {
+     "code": "MIL 197",
+     "title": "Military Leadership: The Professional Warfighter"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000041488",
+   "college": "Reedley College",
+   "courses": [
+    {
+     "code": "ENGL 1BH",
+     "title": "Honors Introduction to the Study of Literature"
+    },
+    {
+     "code": "ENGL C1002H",
+     "title": "Introduction to Literature - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000142676",
+   "college": "Reedley College",
+   "courses": [
+    {
+     "code": "ENGL 1B",
+     "title": "Introduction to the Study of Literature"
+    },
+    {
+     "code": "ENGL C1002",
+     "title": "Introduction to Literature"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000208894",
+   "college": "Reedley College",
+   "courses": [
+    {
+     "code": "MATH 5B",
+     "title": "Calculus II"
+    },
+    {
+     "code": "MATH C2220",
+     "title": "Calculus II: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000438097",
+   "college": "Reedley College",
+   "courses": [
+    {
+     "code": "MATH 5A",
+     "title": "Calculus I"
+    },
+    {
+     "code": "MATH C2210",
+     "title": "Calculus I: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000624534",
+   "college": "Reedley College",
+   "courses": [
+    {
+     "code": "NR 305",
+     "title": "Wildland Fire Technology"
+    },
+    {
+     "code": "WLF 305",
+     "title": "Wildland Fire Technology"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000631427",
+   "college": "Reedley College",
+   "courses": [
+    {
+     "code": "FOR 316",
+     "title": "Advanced Field Studies II"
+    },
+    {
+     "code": "NR 316",
+     "title": "Advanced Field Studies II"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000013678",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 11",
+     "title": "Military History of the United States to 1900"
+    },
+    {
+     "code": "HIST 11",
+     "title": "Military History of the United States to 1900"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000018233",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 14",
+     "title": "African American History I"
+    },
+    {
+     "code": "HIST 14",
+     "title": "African American History I"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000039563",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 31",
+     "title": "Introduction to Chicanx and Latinx Studies"
+    },
+    {
+     "code": "HIST 31",
+     "title": "Introduction to Chicanx and Latinx Studies"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000056977",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 34",
+     "title": "History of Women in the United States"
+    },
+    {
+     "code": "HIST 34",
+     "title": "History of Women in the United States"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000079604",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 2",
+     "title": "World History since 1500"
+    },
+    {
+     "code": "HIST 2",
+     "title": "World History since 1500"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000176408",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 26",
+     "title": "History of California"
+    },
+    {
+     "code": "HIST 26",
+     "title": "History of California"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000193807",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 29",
+     "title": "Native American History II: Contemporary Society"
+    },
+    {
+     "code": "HIST 29",
+     "title": "Native American History II: Contemporary Society"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000198202",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 12",
+     "title": "Military History of the United States Since 1900"
+    },
+    {
+     "code": "HIST 12",
+     "title": "Military History of the United States Since 1900"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000214622",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 15",
+     "title": "African American History II"
+    },
+    {
+     "code": "HIST 15",
+     "title": "African American History II"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000241023",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "MAT 1A",
+     "title": "Calculus I"
+    },
+    {
+     "code": "MATH C2210",
+     "title": "Calculus I: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000241880",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 35",
+     "title": "History of Britain"
+    },
+    {
+     "code": "HIST 35",
+     "title": "History of Britain"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000252185",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 6",
+     "title": "United States History to 1877"
+    },
+    {
+     "code": "HIST C1001",
+     "title": "United States History to 1877"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000272244",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "ECO 7",
+     "title": "Principles of Macroeconomics"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000292920",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "ECO 8",
+     "title": "Principles of Microeconomics"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000295562",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "MAT 1B",
+     "title": "Calculus II"
+    },
+    {
+     "code": "MATH C2220",
+     "title": "Calculus II: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000301523",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 1",
+     "title": "World History to 1500"
+    },
+    {
+     "code": "HIST 1",
+     "title": "World History to 1500"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000310000",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "MAT 25",
+     "title": "Mathematics for the Liberal Arts Student"
+    },
+    {
+     "code": "MATH 25",
+     "title": "Mathematics for the Liberal Arts Student"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000330851",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "MAT 11",
+     "title": "College Algebra"
+    },
+    {
+     "code": "MATH 11",
+     "title": "College Algebra"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000333533",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 25",
+     "title": "History of Mexico"
+    },
+    {
+     "code": "HIST 25",
+     "title": "History of Mexico"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000335450",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 7",
+     "title": "United States History from 1865"
+    },
+    {
+     "code": "HIST C1002",
+     "title": "United States History since 1865"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000338488",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 28",
+     "title": "Native American History to 1871"
+    },
+    {
+     "code": "HIST 28",
+     "title": "Native American History to 1871"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000441310",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 19",
+     "title": "Modern Russian History"
+    },
+    {
+     "code": "HIST 19",
+     "title": "Modern Russian History"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000560905",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 32",
+     "title": "History of Early Latin America"
+    },
+    {
+     "code": "HIST 32",
+     "title": "History of Early Latin America"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000569653",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 33",
+     "title": "History of Modern Latin America"
+    },
+    {
+     "code": "HIST 33",
+     "title": "History of Modern Latin America"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000570403",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 2H",
+     "title": "Honors World History since 1500"
+    },
+    {
+     "code": "HIST 2H",
+     "title": "Honors World History since 1500"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000597001",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 42",
+     "title": "History of East Asia"
+    },
+    {
+     "code": "HIST 42",
+     "title": "History of East Asia"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000597002",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 44",
+     "title": "Asian American History"
+    },
+    {
+     "code": "HIST 44",
+     "title": "Asian American History"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000621940",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "AHS 1",
+     "title": "History of Western Art: Prehistoric, Ancient, and Medieval"
+    },
+    {
+     "code": "ARTH C1100",
+     "title": "Survey of Art from Prehistory to the Medieval Era"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000621948",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "AHS 2",
+     "title": "History of Western Art: Renaissance through Contemporary"
+    },
+    {
+     "code": "ARTH C1200",
+     "title": "Survey of Art from the Renaissance to Contemporary"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000628691",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 16",
+     "title": "African History to 1800"
+    },
+    {
+     "code": "HIST 16",
+     "title": "African History to 1800"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000628692",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 17",
+     "title": "African History from 1800 to Present"
+    },
+    {
+     "code": "HIST 17",
+     "title": "African History from 1800 to Present"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000628693",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 18",
+     "title": "Modern European History"
+    },
+    {
+     "code": "HIST 18",
+     "title": "Modern European History"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000628694",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 38",
+     "title": "LGBTQ+ History in the United States"
+    },
+    {
+     "code": "HIST 38",
+     "title": "LGBTQ+ History in the United States"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000636373",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 60",
+     "title": "U.S. History from a Chicana/o/x Perspective: Pre-Columbian to 1848"
+    },
+    {
+     "code": "HIST 60",
+     "title": "U.S. History from a Chicana/o/x Perspective: Pre-Columbian to 1848"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000636374",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "HIS 61",
+     "title": "US History from a Chicana/o/x Perspective: 1848 to Present Day"
+    },
+    {
+     "code": "HIST 61",
+     "title": "US History from a Chicana/o/x Perspective: 1848 to Present Day"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000650142",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "MAT 111",
+     "title": "Corequisite Support Course for MAT-11"
+    },
+    {
+     "code": "MATH 111",
+     "title": "Corequisite Support Course for MAT-11"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000650143",
+   "college": "Riverside City College",
+   "courses": [
+    {
+     "code": "MAT 39",
+     "title": "Foundations of Calculus I"
+    },
+    {
+     "code": "MATH 39",
+     "title": "Foundations of Calculus I"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000384390",
+   "college": "Saddleback College",
+   "courses": [
+    {
+     "code": "ANTH 1L",
+     "title": "BIOLOGICAL ANTHROPOLOGY LABORATORY"
+    },
+    {
+     "code": "ANTH C1001L",
+     "title": "Biological Anthropology Lab"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000389880",
+   "college": "Saddleback College",
+   "courses": [
+    {
+     "code": "HIST 17",
+     "title": "HISTORY OF THE UNITED STATES SINCE 1876"
+    },
+    {
+     "code": "HIST C1002",
+     "title": "United States History since 1865"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000396528",
+   "college": "Saddleback College",
+   "courses": [
+    {
+     "code": "MATH 3B",
+     "title": "ANALYTIC GEOMETRY AND CALCULUS"
+    },
+    {
+     "code": "MATH C2220",
+     "title": "Calculus II: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000398709",
+   "college": "Saddleback College",
+   "courses": [
+    {
+     "code": "MATH 3A",
+     "title": "ANALYTIC GEOMETRY AND CALCULUS"
+    },
+    {
+     "code": "MATH C2210",
+     "title": "Calculus I: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000417388",
+   "college": "Saddleback College",
+   "courses": [
+    {
+     "code": "ENG 25",
+     "title": "INTRODUCTION TO LITERATURE"
+    },
+    {
+     "code": "ENGL C1002",
+     "title": "Introduction to Literature"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000420749",
+   "college": "Saddleback College",
+   "courses": [
+    {
+     "code": "ECON 2",
+     "title": "PRINCIPLES (MACRO)"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000423207",
+   "college": "Saddleback College",
+   "courses": [
+    {
+     "code": "ECON 4",
+     "title": "PRINCIPLES (MICRO)"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000423874",
+   "college": "Saddleback College",
+   "courses": [
+    {
+     "code": "ANTH 1",
+     "title": "BIOLOGICAL ANTHROPOLOGY"
+    },
+    {
+     "code": "ANTH C1001",
+     "title": "Introduction to Biological Anthropology"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000544865",
+   "college": "Saddleback College",
+   "courses": [
+    {
+     "code": "ARTH 26",
+     "title": "SURVEY OF WESTERN ART HISTORY - RENAISSANCE TO CONTEMPORARY"
+    },
+    {
+     "code": "ARTH C1200",
+     "title": "Survey of Art from the Renaissance to Contemporary"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000561440",
+   "college": "Saddleback College",
+   "courses": [
+    {
+     "code": "MATH 3AH",
+     "title": "HONORS ANALYTIC GEOMETRY AND CALCULUS"
+    },
+    {
+     "code": "MATH C2210H",
+     "title": "Calculus I: Early Transcendentals - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000576948",
+   "college": "Saddleback College",
+   "courses": [
+    {
+     "code": "ANTH 1H",
+     "title": "HONORS BIOLOGICAL ANTHROPOLOGY"
+    },
+    {
+     "code": "ANTH C1001H",
+     "title": "Introduction to Biological Anthropology - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000597711",
+   "college": "Saddleback College",
+   "courses": [
+    {
+     "code": "COMM 5",
+     "title": "INTERPERSONAL COMMUNICATION"
+    },
+    {
+     "code": "COMM C1004",
+     "title": "Interpersonal Communication"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000635579",
+   "college": "Saddleback College",
+   "courses": [
+    {
+     "code": "ENG 25H",
+     "title": "HONORS INTRODUCTION TO LITERATURE"
+    },
+    {
+     "code": "ENGL C1002H",
+     "title": "Introduction to Literature - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000426204",
+   "college": "San Bernardino Valley College",
+   "courses": [
+    {
+     "code": "HIST 100",
+     "title": "United States History to 1877"
+    },
+    {
+     "code": "HIST C1001",
+     "title": "United States History to 1877"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000650344",
+   "college": "San Bernardino Valley College",
+   "courses": [
+    {
+     "code": "COMM 111",
+     "title": "Interpersonal Communication"
+    },
+    {
+     "code": "COMM C1004",
+     "title": "Interpersonal Communication"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000650345",
+   "college": "San Bernardino Valley College",
+   "courses": [
+    {
+     "code": "COMM 111H",
+     "title": "Interpersonal Communication - Honors"
+    },
+    {
+     "code": "COMM C1004H",
+     "title": "Interpersonal Communication - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000026517",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Music (MUSIC) 083H",
+     "title": "Honors Exploring the World of Music"
+    },
+    {
+     "code": "Music (MUSIC) 83",
+     "title": "Exploring the World of Music"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000048925",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Early Childhood Education (ECE) 191",
+     "title": "Infant Toddler Development"
+    },
+    {
+     "code": "Early Childhood Education (ECE) 192",
+     "title": "Care and Education for Infants and Toddlers"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000089147",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    },
+    {
+     "code": "Economics (ECON) 010A",
+     "title": "Principles of Macroeconomic Theory"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000176518",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "HIST C1002",
+     "title": "United States History since 1865"
+    },
+    {
+     "code": "History (HIST) 001H",
+     "title": "Honors Survey of American History"
+    },
+    {
+     "code": "History (HIST) 017B",
+     "title": "History of the United States"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000182131",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "HIST C1001H",
+     "title": "United States History to 1877 - Honors"
+    },
+    {
+     "code": "History (HIST) 1",
+     "title": "Survey of American History"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000190150",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Chemistry (CHEM) 001AH",
+     "title": "Honors General Chemistry"
+    },
+    {
+     "code": "Chemistry (CHEM) 012B",
+     "title": "Organic Chemistry"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000224422",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Ethnic Studies (ETH) 22",
+     "title": "African American Cinema"
+    },
+    {
+     "code": "Ethnic Studies (ETH) 27",
+     "title": "Introduction to Race & Ethnicity in American History"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000250033",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Sociology (SOC) 11",
+     "title": "Social Problems"
+    },
+    {
+     "code": "Sociology (SOC) 17",
+     "title": "Sociology of Marriage and Family"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000253959",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    },
+    {
+     "code": "Economics (ECON) 010B",
+     "title": "Introduction to Microeconomic Theory"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000261619",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Sociology (SOC) 010H",
+     "title": "Honors Introduction to Sociology"
+    },
+    {
+     "code": "Sociology (SOC) 10",
+     "title": "Introduction to Sociology"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000287424",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "HIST C1001",
+     "title": "United States History to 1877"
+    },
+    {
+     "code": "HIST C1002H",
+     "title": "United States History since 1865 - Honors"
+    },
+    {
+     "code": "History (HIST) 017A",
+     "title": "History of the United States"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000300101",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "POLS C1000",
+     "title": "American Government and Politics"
+    },
+    {
+     "code": "POLS C1000H",
+     "title": "American Government and Politics - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000313196",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Mathematics (MATH) 20",
+     "title": "College Algebra"
+    },
+    {
+     "code": "Mathematics (MATH) 62",
+     "title": "Calculus for Business and the Social Sciences"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000335100",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Ethnic Studies (ETH) 027H",
+     "title": "Honors Introduction to Race & Ethnicity in American History"
+    },
+    {
+     "code": "Ethnic Studies (ETH) 26",
+     "title": "Vietnamese Women in the U.S."
+    },
+    {
+     "code": "Ethnic Studies (ETH) 29",
+     "title": "Women of Color in the United States"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000345660",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Construction (CNSTR) 107",
+     "title": "Principles of Contracting"
+    },
+    {
+     "code": "Construction Technology (CNSTR) 118",
+     "title": "Project Management for Construction"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000382199",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Administration of Justice (AJ) 13",
+     "title": "Criminal Procedures"
+    },
+    {
+     "code": "Administration of Justice (AJ) 16",
+     "title": "Street Law"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000457855",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Computer Information Systems (CIS) 122",
+     "title": "SQL for Data Analytics"
+    },
+    {
+     "code": "Computer Information Systems (CIS) 47",
+     "title": "Introduction to Web Development"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000457858",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "PSYC C1000H",
+     "title": "Introduction to Psychology - Honors"
+    },
+    {
+     "code": "Psychology (PSYCH) 35",
+     "title": "Psychology of Women"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000529719",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Kinesiology-Wellness (KINPE) 009B",
+     "title": "Intermediate Badminton"
+    },
+    {
+     "code": "Kinesiology-Wellness (KINPE) 56",
+     "title": "Beginning Weight Training"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000531807",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Computer Information Systems (CIS) 120",
+     "title": "Fundamentals of Business and Data Analytics"
+    },
+    {
+     "code": "Computer Information Systems (CIS) 123",
+     "title": "Data Visualization with Tableau"
+    },
+    {
+     "code": "Computer Information Systems (CIS) 124",
+     "title": "Utilizing Statistics for Data Analytics"
+    },
+    {
+     "code": "Computer Information Systems (CIS) 38",
+     "title": "Programming the Mobile Web"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000534006",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Guidance (GUIDE) 130",
+     "title": "College and Life Success"
+    },
+    {
+     "code": "Guidance (GUIDE) 96",
+     "title": "Career and Life Planning"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000551847",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Ethnic Studies (ETH) 18",
+     "title": "The African American Male Experience"
+    },
+    {
+     "code": "Ethnic Studies (ETH) 28",
+     "title": "Introduction to Critical Race & Social Justice"
+    },
+    {
+     "code": "Ethnic Studies (ETH) 41",
+     "title": "Vietnamese American Culture"
+    },
+    {
+     "code": "Ethnic Studies (ETH) 42",
+     "title": "Asian American Experience"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000559042",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Ethnic Studies (ETH) 037A",
+     "title": "Mexican American History I"
+    },
+    {
+     "code": "Ethnic Studies (ETH) 19",
+     "title": "The African American Family"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000559043",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Ethnic Studies (ETH) 037B",
+     "title": "Mexican American History II"
+    },
+    {
+     "code": "Ethnic Studies (ETH) 11",
+     "title": "Ethnic Film: Reel Studies"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000564983",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Chemistry (CHEM) 015H",
+     "title": "Honors Fundamentals of Chemistry"
+    },
+    {
+     "code": "Chemistry (CHEM) 10",
+     "title": "Everyday Chemistry"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000577068",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Alcohol and Drug Studies (ADS) 78",
+     "title": "Integrated Behavioral Health"
+    },
+    {
+     "code": "Alcohol and Drug Studies (ADS) 91",
+     "title": "EMS Pre-Hospital Behavioral Emergencies"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000586739",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Alcohol and Drug Studies (ADS) 075A",
+     "title": "Counseling Theories and Skills"
+    },
+    {
+     "code": "Alcohol and Drug Studies (ADS) 79",
+     "title": "Group Dynamics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000587767",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Construction (CNSTR) 500",
+     "title": "Building Trades Apprenticeship 1"
+    },
+    {
+     "code": "Construction (CNSTR) 502",
+     "title": "Building Trades Apprenticeship 3"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000590353",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Photography (PHOTO) 22",
+     "title": "Beginning Darkroom Photography"
+    },
+    {
+     "code": "Photography (PHOTO) 62",
+     "title": "Intermediate Photography"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000591752",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Kinesiology (KIN) 10",
+     "title": "Sports in Society"
+    },
+    {
+     "code": "Kinesiology (KIN) 25",
+     "title": "First Aid, CPR, & AED"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000591769",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Computer Information Systems (CIS) 106",
+     "title": "Introduction to Coding and Python Programming"
+    },
+    {
+     "code": "Computer Information Systems (CIS) 107",
+     "title": "Technest 2: Data Science"
+    },
+    {
+     "code": "Computer Information Systems (CIS) 108",
+     "title": "Technest 3: Internet of Things"
+    },
+    {
+     "code": "Computer Information Systems (CIS) 144",
+     "title": "IT Security: Defense Against the Digital Dark Arts"
+    },
+    {
+     "code": "Computer Information Systems (CIS) 160",
+     "title": "Introduction to Information Systems Security"
+    },
+    {
+     "code": "Computer Information Systems (CIS) 164",
+     "title": "Introduction to Cybersecurity: Ethical Hacking"
+    },
+    {
+     "code": "Computer Information Systems (CIS) 165",
+     "title": "Digital Forensics Fundamentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000592843",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Construction (CNSTR) 105",
+     "title": "Concrete Construction"
+    },
+    {
+     "code": "Construction (CNSTR) 115",
+     "title": "Blueprint Reading"
+    },
+    {
+     "code": "Construction (CNSTR) 120",
+     "title": "Building Codes"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000592844",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Construction (CNSTR) 101B",
+     "title": "Residential Construction Framing"
+    },
+    {
+     "code": "Construction (CNSTR) 116",
+     "title": "Estimating"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000595052",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Global Studies (GLOBL) 12",
+     "title": "World Regions in a Global Context"
+    },
+    {
+     "code": "Global Studies (GLOBL) 3",
+     "title": "Introduction to Sustainability"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000598634",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Mathematics (MATH) 020X",
+     "title": "Support for College Algebra"
+    },
+    {
+     "code": "Mathematics (MATH) 021X",
+     "title": "Support for Precalculus Algebra"
+    },
+    {
+     "code": "Mathematics (MATH) 025X",
+     "title": "Support for Precalculus Algebra and Trigonometry"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000598931",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Construction (CNSTR) 102B",
+     "title": "Residential/Commercial Wiring"
+    },
+    {
+     "code": "Construction Technology (CNSTR) 128",
+     "title": "National Electrical Code & Calculations"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000600518",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Kinesiology-Wellness (KINPE) 038A",
+     "title": "Intermediate Soccer"
+    },
+    {
+     "code": "Kinesiology-Wellness (KINPE) 039B",
+     "title": "Hatha Yoga-Intermediate"
+    },
+    {
+     "code": "Kinesiology-Wellness (KINPE) 17",
+     "title": "Beginning Pickleball"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000606099",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Medical Assisting (MA) 500A",
+     "title": "Fundamentals of Medical Terminology I"
+    },
+    {
+     "code": "Medical Assisting (MA) 500B",
+     "title": "Fundamentals of Medical Terminology II"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000609171",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Music (MUSIC) 040A",
+     "title": "Introduction to Digital Audio Production I"
+    },
+    {
+     "code": "Music (MUSIC) 041A",
+     "title": "Studio Recording Techniques I"
+    },
+    {
+     "code": "Music (MUSIC) 041B",
+     "title": "Studio Recording Techniques II"
+    },
+    {
+     "code": "Music (MUSIC) 43",
+     "title": "Introduction to MIDI and Electronic Music Production"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000619773",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Computer Information Systems (CIS) 140",
+     "title": "IT Technical Support Fundamentals"
+    },
+    {
+     "code": "Computer Information Systems (CIS) 141",
+     "title": "The Bits and Bytes of Computer Networking"
+    },
+    {
+     "code": "Computer Information Systems (CIS) 142",
+     "title": "Operating Systems and Becoming a Power User"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000619784",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Health Sciences (HSCI) 501",
+     "title": "Infectious Disease Case Investigator"
+    },
+    {
+     "code": "Health Sciences (HSCI) 502",
+     "title": "Work Place Safety - Infectious Disease"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000619787",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Medical Assisting (MA) 502",
+     "title": "Fundamentals of Health Navigation"
+    },
+    {
+     "code": "Medical Assisting (MA) 504",
+     "title": "Introduction to Health and Wellness"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000619788",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Medical Assisting (MA) 503",
+     "title": "Medical Law and Ethics"
+    },
+    {
+     "code": "Medical Assisting (MA) 505",
+     "title": "Professionalism in Healthcare"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000620206",
+   "college": "San Jose City College ",
+   "courses": [
+    {
+     "code": "Physical Educatiton (KINPE) 099B",
+     "title": "Intermediate Spin Cycling"
+    },
+    {
+     "code": "Physical Educatiton (KINPE) 70",
+     "title": "Beginning Hiking"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000383360",
+   "college": "Santa Ana College",
+   "courses": [
+    {
+     "code": "HIST 121",
+     "title": "The United States Since 1865"
+    },
+    {
+     "code": "HIST C1002",
+     "title": "United States History since 1865"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000391867",
+   "college": "Santa Ana College",
+   "courses": [
+    {
+     "code": "HIST 120",
+     "title": "The United States to 1877"
+    },
+    {
+     "code": "HIST C1001",
+     "title": "United States History to 1877"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000397809",
+   "college": "Santa Ana College",
+   "courses": [
+    {
+     "code": "MATH 180",
+     "title": "Single Variable Calculus I"
+    },
+    {
+     "code": "MATH C2210",
+     "title": "Calculus I: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000398412",
+   "college": "Santa Ana College",
+   "courses": [
+    {
+     "code": "MATH 185",
+     "title": "Single Variable Calculus II"
+    },
+    {
+     "code": "MATH C2220",
+     "title": "Calculus II: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000398414",
+   "college": "Santa Ana College",
+   "courses": [
+    {
+     "code": "CMST 101",
+     "title": "Introduction to Interpersonal Communication"
+    },
+    {
+     "code": "COMM C1004",
+     "title": "Interpersonal Communication"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000402076",
+   "college": "Santa Ana College",
+   "courses": [
+    {
+     "code": "ECON 121",
+     "title": "Principles/Micro"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000410168",
+   "college": "Santa Ana College",
+   "courses": [
+    {
+     "code": "ECON 120",
+     "title": "Principles/Macro"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000602710",
+   "college": "Santa Ana College",
+   "courses": [
+    {
+     "code": "CDEV 107",
+     "title": "Child Growth and Development (DS1)"
+    },
+    {
+     "code": "CDEV C1000",
+     "title": "Child Growth and Development"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000525186",
+   "college": "Santa Rosa Junior College",
+   "courses": [
+    {
+     "code": "KIN 10",
+     "title": "Theory of Coaching Sports"
+    },
+    {
+     "code": "KIN 55",
+     "title": "Theory of Coaching Sports"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000526738",
+   "college": "Santa Rosa Junior College",
+   "courses": [
+    {
+     "code": "KIN 62C",
+     "title": "Sports Medicine Experience C"
+    },
+    {
+     "code": "KINES 62C",
+     "title": "Sports Medicine Experience C"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000547707",
+   "college": "Santa Rosa Junior College",
+   "courses": [
+    {
+     "code": "KFIT 6.2",
+     "title": "Intermediate Yoga"
+    },
+    {
+     "code": "KFIT 62",
+     "title": "Personal Fitness Technique"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000547809",
+   "college": "Santa Rosa Junior College",
+   "courses": [
+    {
+     "code": "KAQUA 10.2",
+     "title": "Intermediate Springboard Diving"
+    },
+    {
+     "code": "KINA 10.2",
+     "title": "Intermediate Springboard Diving"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000560455",
+   "college": "Santa Rosa Junior College",
+   "courses": [
+    {
+     "code": "APED 350.8",
+     "title": "Maintenance, Repair and Roofing, Module 8"
+    },
+    {
+     "code": "APED 353.8",
+     "title": "Maintenance, Repair and Roofing, Module 8"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000566845",
+   "college": "Santa Rosa Junior College",
+   "courses": [
+    {
+     "code": "THAR 13.B",
+     "title": "Performance Workshop: Styles, Periods and Skills 2"
+    },
+    {
+     "code": "THAR 13B",
+     "title": "Performance Workshop: Styles, Periods and Skills 2"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000567147",
+   "college": "Santa Rosa Junior College",
+   "courses": [
+    {
+     "code": "THAR 13.AL",
+     "title": "Performance Workshop Lab: Styles, Periods and Skills 1"
+    },
+    {
+     "code": "THAR 13AL",
+     "title": "Performance Workshop Lab: Styles, Periods and Skills 1"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000643324",
+   "college": "Santa Rosa Junior College",
+   "courses": [
+    {
+     "code": "ATHL 46",
+     "title": "Women's Varsity Beach Volleyball"
+    },
+    {
+     "code": "ATHL 96",
+     "title": "Women's Varsity Beach Volleyball"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000037246",
+   "college": "Santiago Canyon College",
+   "courses": [
+    {
+     "code": "MATH 180H",
+     "title": "Honors Single Variable Calculus I"
+    },
+    {
+     "code": "MATH C2210H",
+     "title": "Calculus I: Early Transcendentals - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000100457",
+   "college": "Santiago Canyon College",
+   "courses": [
+    {
+     "code": "MATH 180",
+     "title": "Single Variable Calculus I"
+    },
+    {
+     "code": "MATH C2210",
+     "title": "Calculus I: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000163004",
+   "college": "Santiago Canyon College",
+   "courses": [
+    {
+     "code": "PBLC 115",
+     "title": "Plan Interpretation and Cost Estimating"
+    },
+    {
+     "code": "PBLC 61",
+     "title": "Plan Interpretation and Cost Estimating"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000176482",
+   "college": "Santiago Canyon College",
+   "courses": [
+    {
+     "code": "MATH 185",
+     "title": "Single Variable Calculus II"
+    },
+    {
+     "code": "MATH C2220",
+     "title": "Calculus II: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000214797",
+   "college": "Santiago Canyon College",
+   "courses": [
+    {
+     "code": "COMM 100H",
+     "title": "Honors Introduction to Interpersonal Communication"
+    },
+    {
+     "code": "COMM C1004H",
+     "title": "Interpersonal Communication - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000287505",
+   "college": "Santiago Canyon College",
+   "courses": [
+    {
+     "code": "HIST 120",
+     "title": "The United States to 1877"
+    },
+    {
+     "code": "HIST C1001",
+     "title": "United States History to 1877"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000287971",
+   "college": "Santiago Canyon College",
+   "courses": [
+    {
+     "code": "HIST 120H",
+     "title": "Honors The United States to 1877"
+    },
+    {
+     "code": "HIST C1001H",
+     "title": "United States History to 1877 - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000321141",
+   "college": "Santiago Canyon College",
+   "courses": [
+    {
+     "code": "PBLC 125",
+     "title": " Fundamentals of Construction"
+    },
+    {
+     "code": "PBLC 51",
+     "title": "Infrastructure Construction and Maintenance"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000654036",
+   "college": "Santiago Canyon College",
+   "courses": [
+    {
+     "code": "CDEV 107H",
+     "title": "Honors Child Growth and Development (DS1)"
+    },
+    {
+     "code": "CDEV C1000H",
+     "title": "Child Growth and Development - Honors"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000653955",
+   "college": "Shasta College",
+   "courses": [
+    {
+     "code": "ENGL 1D",
+     "title": "Critical Thinking and Writing Through Literature"
+    },
+    {
+     "code": "ENGL C1003",
+     "title": "Critical Thinking and Writing through Literature"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000359792",
+   "college": "Skyline College",
+   "courses": [
+    {
+     "code": "BIOL 110",
+     "title": "Principles Of Biology"
+    },
+    {
+     "code": "BIOL C1000",
+     "title": "Introduction to Biology with Lab "
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000650983",
+   "college": "Taft College",
+   "courses": [
+    {
+     "code": "COMM 1530",
+     "title": "Interpersonal Communication"
+    },
+    {
+     "code": "COMM C1004",
+     "title": "Interpersonal Communication"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000384527",
+   "college": "Ventura College",
+   "courses": [
+    {
+     "code": "MATH C2220",
+     "title": "Calculus II: Early Transcendentals"
+    },
+    {
+     "code": "MATH V21B",
+     "title": "Calculus with Analytic Geometry II"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000385610",
+   "college": "Ventura College",
+   "courses": [
+    {
+     "code": "MATH C2210",
+     "title": "Calculus I: Early Transcendentals"
+    },
+    {
+     "code": "MATH V21A",
+     "title": "Calculus with Analytic Geometry I"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000081249",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "AUTO 100",
+     "title": "Introduction to Automotive Technology"
+    },
+    {
+     "code": "AUTO 50",
+     "title": "Introduction to Automotive Technology"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000116085",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "POLS 101",
+     "title": "Introduction to Political Science"
+    },
+    {
+     "code": "POLS 1401",
+     "title": "Introduction to Political Science"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000185273",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "PHOT 133",
+     "title": "Introduction to Photoshop"
+    },
+    {
+     "code": "PHOT 1460",
+     "title": "Beginning Photoshop"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000246064",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "PSYC 110",
+     "title": "Developmental Psychology"
+    },
+    {
+     "code": "PSYC 1410",
+     "title": "Developmental Psychology"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000282644",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "PSYC 204",
+     "title": "Social Psychology"
+    },
+    {
+     "code": "PSYC 2420",
+     "title": "Social Psychology"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000287492",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "ENGL 116",
+     "title": "Authors of Theatre"
+    },
+    {
+     "code": "ENGL 1416",
+     "title": "Authors of the Theatre"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000288004",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "ELCT 131",
+     "title": "Dc Circuit Theory and Analysis"
+    },
+    {
+     "code": "ELCT 1500",
+     "title": "DC Circuit Theory and Analysis"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000298703",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "CJ 138",
+     "title": "Work Experience Education of Criminal Justice"
+    },
+    {
+     "code": "WEE CJ138",
+     "title": "Work Experience Education of Criminal Justice"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000317468",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "POLS 110",
+     "title": "Introduction to International Relations"
+    },
+    {
+     "code": "POLS 1410",
+     "title": "Introduction to International Relations"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000323558",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "PSYC 121",
+     "title": "Introduction to Human Sexuality"
+    },
+    {
+     "code": "PSYC 1440",
+     "title": "Psychology of Human Sexuality"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000328708",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "POLS 103",
+     "title": "State and Local Government"
+    },
+    {
+     "code": "POLS 1403",
+     "title": "American State and Local Government"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000336259",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "PHOT 101",
+     "title": "Intermediate Photo"
+    },
+    {
+     "code": "PHOT 1420",
+     "title": "Intermediate Photography"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000419655",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "ENGD 110",
+     "title": "Introduction to 2-D AutoCAD"
+    },
+    {
+     "code": "ENGD 1420",
+     "title": "Introduction to 2-D AutoCAD"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000439505",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "POLS 113",
+     "title": "Politics of Middle East & North Africa"
+    },
+    {
+     "code": "POLS 1413",
+     "title": "Politics of Middle East & North Africa"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000461493",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "AUTO 77.2",
+     "title": "Automotive Safety Training for Managers"
+    },
+    {
+     "code": "AUTO 772",
+     "title": "Automotive Safety Training for Managers"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000506849",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "AUTO 77.1",
+     "title": "Automotive Leadership and Team Building"
+    },
+    {
+     "code": "AUTO 771",
+     "title": "Automotive Leadership and Team Building"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000530179",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "POLS 206",
+     "title": "Introduction to Enviromental Policy  and Natural Resource Management"
+    },
+    {
+     "code": "POLS 2406",
+     "title": "Introduction to Enviromental Policy  and Natural Resource Management"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000533803",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "POLS 221",
+     "title": "Model United Nations"
+    },
+    {
+     "code": "POLS 2421",
+     "title": "Model United Nations"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000548065",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "KIND 1475",
+     "title": "Introduction to Dance Rehearsal and Performance I"
+    },
+    {
+     "code": "KIND 176A",
+     "title": "Introduction to Dance Rehearsal and Performance I"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000548066",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "KIND 1471",
+     "title": "Introduction to Modern Dance II"
+    },
+    {
+     "code": "KIND 175A",
+     "title": "Introduction to Modern Dance II"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000557274",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "PHOT 115",
+     "title": "History of Still Photography"
+    },
+    {
+     "code": "PHOT 1510",
+     "title": "History of Still Photography"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000557277",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "KIND 1472",
+     "title": "Basic Modern Dance II"
+    },
+    {
+     "code": "KIND 175B",
+     "title": "Basic Modern Dance II"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000558887",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "KIND 1474",
+     "title": "Intermediate Modern Dance II"
+    },
+    {
+     "code": "KIND 175D",
+     "title": "Intermediate Modern Dance II"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000558888",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "KIND 1473",
+     "title": "Modern Dance II"
+    },
+    {
+     "code": "KIND 175C",
+     "title": "Modern Dance II"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000570165",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "PHOT 111",
+     "title": "Beginning Digital Photography"
+    },
+    {
+     "code": "PHOT 1410",
+     "title": "Beginning Digital Photography"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000576174",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "AUTO 77.3",
+     "title": "Automotive Workplace Professionalism"
+    },
+    {
+     "code": "AUTO 773",
+     "title": "Automotive Workplace Professionalism"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000609226",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "PHOT 100",
+     "title": "Beginning Photo"
+    },
+    {
+     "code": "PHOT 1400",
+     "title": "Beginning Photography"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000609305",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "PHOT 105",
+     "title": "Portraiture"
+    },
+    {
+     "code": "PHOT 1500",
+     "title": "Portraiture"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000609306",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "PHOT 1430",
+     "title": "Photographic Lighting Techniques"
+    },
+    {
+     "code": "PHOT 153",
+     "title": "Photographic Lighting Techniques"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000611160",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "ENGD 130",
+     "title": "Introduction to SolidWorks"
+    },
+    {
+     "code": "ENGD 1410",
+     "title": "Introduction to SolidWorks"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000611162",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "ESL 26B",
+     "title": "Grammar, Writing, and Reading Level 2.5"
+    },
+    {
+     "code": "ESL 51",
+     "title": "Grammar, Writing, and Reading Level 2.5"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000616655",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "PHOT 106",
+     "title": "Intorduction to Photojournalism"
+    },
+    {
+     "code": "PHOT 1440",
+     "title": "Beginning Photojournalism"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000619125",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "HLTH 102",
+     "title": "Contemporary Problems in Personal and Community Health"
+    },
+    {
+     "code": "HLTH 1402",
+     "title": "Contemporary Problems in Personal and Community Health"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000619126",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "HLTH 203",
+     "title": "Women's Health Issues"
+    },
+    {
+     "code": "HLTH 2403",
+     "title": "Women's Health Issues"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000619129",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "PHOT 1480",
+     "title": "Commercial Photography"
+    },
+    {
+     "code": "PHOT 150",
+     "title": "Commercial Photography"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000619130",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "PHOT 1490",
+     "title": "Environmental Photography"
+    },
+    {
+     "code": "PHOT 151",
+     "title": "Environmental Photography"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000624174",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "POLS 217",
+     "title": "Introduction to Social Science Research Methods"
+    },
+    {
+     "code": "POLS 2417",
+     "title": "Introduction to Social Science Research Methods"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000633286",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "ESL 10.8",
+     "title": "Writing/Grammar/Reading High Intermediate Level 4"
+    },
+    {
+     "code": "ESL 9401",
+     "title": "Writing/Grammar/Reading High Intermediate Level 4"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000633649",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "ESL 10.6",
+     "title": "Reading and Writing Low Intermediate Level 3"
+    },
+    {
+     "code": "ESL 9301",
+     "title": "Reading and Writing Low Intermediate Level 3"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000634105",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "DVST 2",
+     "title": "Language Analysis Development 02"
+    },
+    {
+     "code": "DVST 9011",
+     "title": "College Reading and Language Development 2"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000634106",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "DVST 04A",
+     "title": "Basic Math Reasoning"
+    },
+    {
+     "code": "DVST 9020",
+     "title": "Math Reasoning for College Success 1"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000634960",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "NURS 221",
+     "title": "Nursing Process 1"
+    },
+    {
+     "code": "NURS 2421",
+     "title": "Nursing Process 1"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000635391",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "DVST 3",
+     "title": "Language Analysis Development 03"
+    },
+    {
+     "code": "DVST 9012",
+     "title": "College Reading and Language Development 3"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000637258",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "WELD 101",
+     "title": "Welding Laboratory Shield Metal Arc Welding"
+    },
+    {
+     "code": "WELD 60A",
+     "title": "Welding Laboratory Shield Metal Arc Welding"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000640382",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "HLTH 204",
+     "title": "Health and Social Justice"
+    },
+    {
+     "code": "HLTH 2404",
+     "title": "Health and Social Justice"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000641969",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "ESL 012A",
+     "title": "Computer Literacy Skills Level 3"
+    },
+    {
+     "code": "ESL 9302",
+     "title": "Computer Literacy Skills Level 3"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000642221",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "HLTH 205",
+     "title": "Drugs, Health and Society"
+    },
+    {
+     "code": "HLTH 2405",
+     "title": "Drugs, Health and Society"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000650669",
+   "college": "Victor Valley College",
+   "courses": [
+    {
+     "code": "DVST 56",
+     "title": "Wellness and Stress Management for Students with Disabilities"
+    },
+    {
+     "code": "DVST 9013",
+     "title": "Wellness and Stress Management for Students with Disabilities"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000085918",
+   "college": "West Los Angeles College",
+   "courses": [
+    {
+     "code": "ART 101",
+     "title": "SURVEY OF ART HISTORY I"
+    },
+    {
+     "code": "ART 102",
+     "title": "Survey of Art from Prehistory to the Medieval Era"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000595682",
+   "college": "West Los Angeles College",
+   "courses": [
+    {
+     "code": "BASIC SKILLS 098CE",
+     "title": "Math for College and Career Readiness"
+    },
+    {
+     "code": "BSICSKL 044CE",
+     "title": "Reading and Writing for College and Career Readiness"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000595685",
+   "college": "West Los Angeles College",
+   "courses": [
+    {
+     "code": "BASIC SKILLS 072CE",
+     "title": "The Creative Edge: Outstanding Leadership"
+    },
+    {
+     "code": "BASIC SKILLS 076CE",
+     "title": "Successful Innovation and Creativity in the Workplace"
+    },
+    {
+     "code": "BASIC SKILLS 079CE",
+     "title": "Creativity, Innovation and Leadership"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000599782",
+   "college": "West Los Angeles College",
+   "courses": [
+    {
+     "code": "BASIC SKILLS 101CE",
+     "title": "Introduction to Workforce Opportunities"
+    },
+    {
+     "code": "BASIC SKILLS 102CE",
+     "title": "Workforce Opportunities I"
+    },
+    {
+     "code": "BASIC SKILLS 103CE",
+     "title": "Workforce Opportunities II"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000602087",
+   "college": "West Los Angeles College",
+   "courses": [
+    {
+     "code": "VOC ED 289CE",
+     "title": "Computer Basics for the English Language Learner"
+    },
+    {
+     "code": "VOC ED 411CE",
+     "title": "Vocational English as a Second Language B"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000602287",
+   "college": "West Los Angeles College",
+   "courses": [
+    {
+     "code": "ACAD PR 016CE",
+     "title": "Algebra"
+    },
+    {
+     "code": "ACAD PR 017CE",
+     "title": "Geometry"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000500057",
+   "college": "Woodland Community College",
+   "courses": [
+    {
+     "code": "BIOL 10L",
+     "title": "General Biology"
+    },
+    {
+     "code": "BIOL C1000",
+     "title": "Introduction to Biology with Lab"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000500116",
+   "college": "Woodland Community College",
+   "courses": [
+    {
+     "code": "ECON 1A",
+     "title": "Elementary Economics-Macro"
+    },
+    {
+     "code": "ECON C2002",
+     "title": "Principles of Macroeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000500117",
+   "college": "Woodland Community College",
+   "courses": [
+    {
+     "code": "ECON 1B",
+     "title": "Elementary Economics-Micro"
+    },
+    {
+     "code": "ECON C2001",
+     "title": "Principles of Microeconomics"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000500194",
+   "college": "Woodland Community College",
+   "courses": [
+    {
+     "code": "HIST 17A",
+     "title": "United States History"
+    },
+    {
+     "code": "HIST C1001",
+     "title": "United States History to 1877"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000500240",
+   "college": "Woodland Community College",
+   "courses": [
+    {
+     "code": "MATH 1B",
+     "title": "Single Variable Calculus II -Early Trans"
+    },
+    {
+     "code": "MATH C2220",
+     "title": "Calculus II: Early Transcendentals"
+    }
+   ]
+  },
+  {
+   "control_number": "CCC000633746",
+   "college": "Woodland Community College",
+   "courses": [
+    {
+     "code": "MATH 1A",
+     "title": "Single Variable Calculus I - Early Transcendentals"
+    },
+    {
+     "code": "MATH C2210",
+     "title": "Calculus I: Early Transcendentals"
+    }
+   ]
+  }
+ ]
+}
