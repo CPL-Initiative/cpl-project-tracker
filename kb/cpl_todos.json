@@ -1,20 +1,26 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-12-h",
- "_session": 53,
- "_status": "AUTO-MERGE NIGHT (Session 53): you reviewed ~80 suggested merges, said “auto curate” — so the bot merged the 2,272 dependable groups for you (5,838 curation rows, zero collisions with your hand work; credit/noncredit mixes, same-college ladders, and your Keep-as-is calls were all EXCLUDED and stay in your queue). Every auto row is tagged automerge-v1@bot and reversible. Also tonight: the suggested-merges popup got an ✕ + drag bar + clearer wording, the KPI cards consolidated (adoption → Statewide Exhibits; Veteran ⭐ + JSTs Uploaded), the yellow quick-start banner widened, and 395 garbled course titles (Ã‚Â…) were repaired + queued for COCI source fixes. Hard-refresh after the regen.",
+ "_as_of": "2026-06-13-a",
+ "_session": 54,
+ "_status": "SESSION 54 (Bruh Spaceranger): the auto-merge pass 1 you OK'd last night is now visible + reviewable. Every auto-merged course wears a ⚙ auto-merged chip in the Course Crosswalk, and a new Triage → “Auto-merged” lane lists all 2,272 in one click for your second look (reversible). Verified the overnight regen published cleanly; the Pipeline tab now tells the auto-merge story. The suggested-merges worklist is down to ~6,583 groups — the big remaining lane is title-similarity (5,457), which awaits your go for a gated pass 2. Hard-refresh to see the chips.",
  "items": [
   {
    "id": "sam-spotcheck-automerge",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Spot-check the auto-merge: open CCR, expand a few ⛓ merged rows (e.g. search “Intermediate Italian”, “Arboriculture”, “Gas Tungsten”) — members and titles should read right. Anything off: tell Fable; one row or the whole pass can be reverted."
+   "text": "Second-look the auto-merge: open CCR, set Triage → “Auto-merged (pass 1, second look)” to list all 2,272 bot-merged courses; the ⚙ auto-merged chip also marks them inline. Expand a few ⛓ merged rows (try “Intermediate Gas Tungsten”, “Arboriculture”) — members/titles should read right. Anything off: tell Fable; one row or the whole cohort can be reverted."
   },
   {
-   "id": "sam-worklist-residue",
+   "id": "sam-titlelane-pass2",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "✨ Suggested merges now holds only what needs human eyes (~6,800: the title-similarity lane + credit/noncredit mixes + same-college ladders). Resume whenever — and say the word if you want a gated pass 2 on the title lane."
+   "text": "✨ Suggested merges now holds ~6,583 groups needing human eyes — the bulk is the 🏷 title-similarity lane (5,457). Say the word and Fable will DRY-RUN a high-cosine, cross-college, band-gated pass 2 (same reversible planner as pass 1) for your review before anything applies."
+  },
+  {
+   "id": "sam-ceramic-tech",
+   "who": "sam",
+   "tab": "unified-courses",
+   "text": "ARTS M1201’s discipline “Ceramic Technology” is a real MQ name but isn’t in the canonical-SUBJ4 map, so the SUBJ4 fold skips it. Your call: add a canonical SUBJ4 for “Ceramic Technology” (a _CANON_SUBJ4:: pick) or re-curate the row to “Art”. (Earlier note said it wasn’t an MQ name — that was imprecise; corrected.)"
   },
   {
    "id": "sam-coci-corrections",
@@ -26,37 +32,25 @@
    "id": "sam-milstudents",
    "who": "sam",
    "tab": "dashboard",
-   "text": "MilStudents dataset: ping Fable when it's live in the Custom Reports module — that wires the true JSTs-uploaded universe into the Veteran card (today's count = colleges with ≥1 student carrying JST credits) and unlocks the other gaps you mentioned."
+   "text": "MilStudents dataset: ping Fable when it’s live in the Custom Reports module — that wires the true JSTs-uploaded universe into the Veteran card (today’s count = colleges with ≥1 student carrying JST credits) and unlocks the other gaps you mentioned."
   },
   {
    "id": "sam-flagged-families",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Still open from last night: the flagged athletics families (unmarked-gender teams, Fall/Spring sections, 19 cross-subject High-School twins) — kb/kin_pe_pass2_out/2026-06-12/."
+   "text": "Still open from the KIN/PE pass: the flagged athletics families (unmarked-gender teams, Fall/Spring sections, 19 cross-subject High-School twins) — kb/kin_pe_pass2_out/2026-06-12/."
   },
   {
-   "id": "fable-automerge-chip",
+   "id": "fable-titlelane-dryrun",
    "who": "fable",
    "tab": "unified-courses",
-   "text": "Build the ⚙ auto-merged chip + a Triage “Auto-merged” mode in the CCR (reviewer_email='automerge-v1@bot' travels via the overlay sync) so Sam's second-look queue is one click."
+   "text": "On Sam’s go: dry-run the title-lane pass 2 — extend kb/_auto_merge_worklist.py with a title-lane config (high title-cosine + cross-college + band-purity gates), emit a receipt under kb/automerge_out/, present counts. DO NOT apply without sign-off."
   },
   {
-   "id": "fable-postapply-verify",
-   "who": "fable",
-   "tab": "all",
-   "text": "Verify the post-apply regen: 2,272 folds materialized, worklist shrank accordingly, suite green against the new artifacts (re-pin artifact-pinned tests mechanism-style if they legitimately shifted)."
-  },
-  {
-   "id": "fable-pipeline-tab",
-   "who": "fable",
-   "tab": "pipeline",
-   "text": "Refresh the Pipeline tab's “Recent re-mint/apply” card with auto-merge pass 1 (both HTMLs — deferred at checkpoint to avoid racing the publish regen)."
-  },
-  {
-   "id": "fable-ceramic-tech",
+   "id": "fable-second-look-followups",
    "who": "fable",
    "tab": "unified-courses",
-   "text": "Carryover: ARTS M1201 curated discipline “Ceramic Technology” isn't an MQ name (skip_unknown_disc) — re-curate to an MQ discipline; it folds next pass."
+   "text": "As Sam second-looks the cohort: wire a one-click revert affordance for an individual auto-merged row (and document the whole-cohort revert = delete reviewer_email='automerge-v1@bot'). Add the ⚙ chip to the CSR/CER if those surface merged identities."
   }
  ]
 }

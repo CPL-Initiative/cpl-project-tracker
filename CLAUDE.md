@@ -1563,29 +1563,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > Light design sprint #391–#404 — the daily plein air greeting LIVE + the
 > v1.6 glass-quiet theme spec BLESSED).
 
-> **Session 50 narrative archived** → `docs/roadmap_archive.md` (the SUBJ4
+> **Session 50 + 51 narratives archived** → `docs/roadmap_archive.md` (the SUBJ4
 > canonical fold APPLIED — 71,037-alias permutation, receipts
-> `kb/subj4_fold_out/2026-06-12/`).
-
-
-### Session 51 — Bruh Photonicus: KIN/PE pass 2 + the merging night (2026-06-12)
-
-Sam-interactive (his CCR/CSR screenshots + 5 live follow-ups). PRs #412–#415.
-**Root cause repaired:** the 2026-06-10 fan-ins never re-pointed the inference
-lexicons → re-derivation resurrected "Physical Education" (605 rows → Sam's PEDU
-pin) + "Theater Arts" (147). Lexicons re-pointed (bare `intercollegiate` DROPPED),
-`kb/_alias_canon.py` guards all 4 passes, `kb/_kin_pe_pass2.py` re-keyed **1,057
-ids** (PEDU dissolved; refined athletics rule = modal TOP 0835.50 minus
-instruction-exceptions → 552 rows to ATHL; flips stamped manual). 19,739 titles
-normalized (Title Case / romans→digits / "(formerly…)" cut); **205 curation
-merges** mirrored to Supabase (26 roster families + Sam's fitness set + 35
-HS-title folds; analysis receipts `kb/kin_pe_pass2_out/2026-06-12/`). #415 fixed
-the lost-worklist-saves bug (overlay fetched only discipline rows) + added
-**Keep-as-is** + CCR Subject optgroups; #414 the CSR tweaks; #413 re-pinned the 6
-post-fold-stale test files (35/35). Full story:
-`docs/ccr_cluster_cleanup_lessons.md` (Session 51); KB note:
-`methodology-fanin-alias-lexicon-contamination.md`. **NEXT:
-`docs/session_53_handoff.md`** (verify regen; the FLAGGED family queues).
+> `kb/subj4_fold_out/2026-06-12/`; KIN/PE pass 2 — PEDU dissolved + TOP-aware
+> ATHL carve-out, 1,057 re-keys, `kb/kin_pe_pass2_out/2026-06-12/`).
 
 
 ### Session 53 — Bruh Infinitus: auto-merge pass 1 + Sam's UI batch (2026-06-12 night)
@@ -1605,6 +1586,28 @@ CCR "fix in COCI" chip (#421). Lessons: `docs/ccr_cluster_cleanup_lessons.md`
 (Session 53); KB note: `playbook-gated-bulk-autocuration.md`. **NEXT:
 `docs/session_54_handoff.md`** (⚙ auto-merged chip + Triage lane; title-lane
 pass-2 decision; post-regen suite re-pin check).
+
+
+### Session 54 — Bruh Spaceranger: the auto-merge cohort made reviewable (2026-06-13)
+
+PR #428 (merged + dispatched + LIVE). Follow-through on Bruh Infinitus's
+auto-merge night: **verified** the overnight regen (941 `UC-CUR-AUTO*` mints +
+1,331 anchored = 2,272 targets / 3,588 folds, exact match to the receipt;
+worklist 9,087 → 6,583, **title lane 5,457** the big remainder; suite 43/43),
+then **surfaced** the cohort for one-click review. Generator stamps each merge
+target with `auto_n` (count of folds from `reviewed_by=='automerge-v1@bot'`,
+>0 only, in the single `merge_members` loop); consumer renders an amber **⚙
+auto-merged** chip (distinct from cobalt `⛓ merged`) + a **row-level "Auto-merged"
+Triage lane** (works without sign-in/audit overlay; QS_TRIAGE deep-linkable).
+Code-only PR; verified end-to-end via an isolated `export_unified_courses()`
+run (2,272, 0 leakage), then artifacts restored + cron-dispatched. Pipeline tab
+`#pl-section-remint` refreshed (both HTMLs). jsdom test
+`tests/uc_auto_merged_chip.test.js` (14). **Correction:** the ceramic-tech
+To-Do was imprecise — "Ceramic Technology" IS an MQ name; `skip_unknown_disc`
+fires from the SUBJ4 fold's `discipline_canonical_subj4.json` (148) lacking it
+→ a curator pick (surfaced to Sam). Lessons: `docs/ccr_cluster_cleanup_lessons.md`
+(Session 54). **NEXT: `docs/session_55_handoff.md`** (title-lane pass-2 DRY-RUN
+on Sam's go; per-row revert affordance; MilStudents wiring).
 
 
 ---

@@ -81,3 +81,27 @@ worklist groups / 5,838 `kb_curation` rows applied with zero conflicts.
   channels that work.
 - **raw.githubusercontent caching**: always fetch by commit SHA, never by
   branch — and md5-gate regardless.
+
+## Surfacing the cohort for second-look (added Session 54, 2026-06-13)
+
+A bulk-applied cohort is only trustworthy if the curator can find and audit it
+in one click. The cohort marker (`reviewer_email` / `reviewed_by` ==
+`automerge-v1@bot`) is both the **revert handle** and the **review handle**:
+
+- **Generator**: in the *single* place merge targets are emitted (the
+  `merge_members` loop of `export_unified_courses()`), count each surviving
+  target's folded members that carry the cohort marker and stamp the row with
+  `auto_n` (emit `>0` only — lean). No other emit path can carry the marker, so
+  one add covers the whole cohort. (Verified end-to-end: `auto_n` landed on
+  exactly 2,272 rows = the planned group count, 0 leakage onto non-targets.)
+- **Consumer**: a distinct chip (`⚙ auto-merged`, amber — set apart from the
+  cobalt `⛓ merged` consolidation badge) + a **row-level** Triage lane
+  (`r.auto_n > 0`). Crucially the lane is special-cased **before** the
+  audit-overlay lookup, so it works without sign-in and without the audit index
+  loaded — the cohort is public, reversible, and reviewable by anyone.
+- **Reversibility, restated for the reviewer**: whole-cohort revert = delete the
+  `reviewer_email='automerge-v1@bot'` rows; per-row revert = drop that row's
+  `merge_into` (a follow-up affordance). The chip tooltip says so.
+
+This closes the loop the apply opened: *apply == spec* gets the rows in safely;
+the chip + lane get them *seen*. Pattern instance: PR #428.

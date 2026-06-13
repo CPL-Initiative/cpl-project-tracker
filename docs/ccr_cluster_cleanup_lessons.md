@@ -1324,3 +1324,59 @@ decision after Sam spot-checks pass-1 in the CCR; post-regen suite re-pin
 check (the 2,272 folds shift artifact-pinned tests); MilStudents → Custom
 Reports wiring (unlocks the true JST-upload universe + more); the COCI
 title-correction campaign (395-row queue, Glendale + Canyons top).
+
+## Session 54 — Bruh Spaceranger: the auto-merge cohort made reviewable (2026-06-13)
+
+Follow-through on Bruh Infinitus's auto-merge night. Three things: **verified**
+the overnight regen, **surfaced** the 2,272-group cohort for one-click review,
+and **refreshed** the Pipeline tab. PR #428 (merged + dispatched + live).
+
+**1. Verified the post-apply regen** (the foundational gate). Auto-merge folds
+materialized — 941 `UC-CUR-AUTO*` mints + 1,331 anchored = 2,272 targets, 3,588
+folds (exact match to `kb/automerge_out/2026-06-12/`). Worklist shrank 9,087 →
+6,583 (groups 257 · singleton 308 · family 6 · desc 390 · **title 5,457** ·
+evidence 165). Suite green; no artifact-pinned test needed a re-pin this time
+(the prior `#419`/`#426` re-pins already covered the normalized-title era).
+
+**2. ⚙ auto-merged chip + "Auto-merged" Triage lane** (the deliverable). The
+cohort marker `reviewed_by == "automerge-v1@bot"` rides the overlay sync into
+`kb/coci_curation.json`. Generator: a `_auto_fold_count(members)` in the single
+`merge_members` loop stamps each surviving target with `auto_n` (>0 only) — no
+other emit path can carry the marker, so one add covers it. Consumer: an amber
+`⚙ auto-merged` chip (inline token style, distinct from the cobalt `⛓ merged`)
++ a **row-level** Triage lane (`r.auto_n>0`) special-cased *before* the
+audit-card lookup, so it works without sign-in or the audit overlay.
+
+**Lessons.**
+- **Measure the flag against LIVE data before writing generator code.** I
+  reconstructed `merge_into`/`merge_members` from `kb/coci_curation.json` in a
+  node one-liner and confirmed it yielded exactly 2,272/941/1,331/3,588 BEFORE
+  touching `.py`. The generator change was then a transcription of a proven
+  computation, not a hypothesis.
+- **Verify the generator end-to-end via an isolated `export_unified_courses()`
+  run.** `pip install -r requirements.txt`, then `python3 -c "import
+  excel_to_dashboard as e; e.export_unified_courses()"` — the function is
+  standalone (no `main()`), defines its own `kdir`, and writes only the UC
+  artifacts. Confirm `auto_n` in the output, then **restore the artifacts** →
+  code-only PR. Exact match again (2,272, 0 leakage onto non-targets).
+- **Edit HTML on POST-REGEN main.** The pipeline-tab refresh waited for the
+  dispatched cron commit to land (background git-poll), then reset onto it —
+  no generated-file conflict (the To-Do's standing warning, honored).
+- **Row-level Triage lanes** don't need the audit overlay: branch on the label
+  before the `auditIndex[r.id]` lookup; the lane filters on the row field.
+- **`send_later` was unavailable** this session. Substitutes: a background
+  `sleep` (run_in_background) re-invokes the session as a CI re-check timer,
+  and a background git-poll loop fires when `origin/main` advances (the regen
+  commit) — both respect "no foreground sleep / no busy-poll."
+
+**Correction logged.** The `fable-ceramic-tech` To-Do said `ARTS M1201`'s
+"Ceramic Technology" "isn't an MQ name." It IS (1 of 240 MQ disciplines);
+`skip_unknown_disc` actually fires from the **SUBJ4 fold** validating against
+`discipline_canonical_subj4.json` (148 curator-reviewed names), which lacks it.
+Fix is a curator pick (add a canonical SUBJ4, or fold to "Art") — surfaced to
+Sam, not guessed.
+
+**Next.** Title-lane pass 2 (DRY-RUN on Sam's go — 5,457 groups, propose a
+high-cosine cross-college band-gated SUBSET, same planner shape); a per-row
+revert affordance for an auto-merged row; the ceramic-tech curator pick;
+MilStudents wiring; the COCI title-correction campaign.
