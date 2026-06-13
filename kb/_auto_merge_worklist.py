@@ -79,6 +79,9 @@ _norm_spec.loader.exec_module(norm)
 sys.argv = _argv
 
 MARKER = "automerge-v1"
+PASS2_TITLE = "--pass2-title" in sys.argv   # pass 2: the 🏷 title-similarity lane
+if PASS2_TITLE:
+    MARKER = "automerge-titlelane-v1"        # distinct, separately-revertible cohort
 PRI = {"CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3}
 OFFICIAL = {"CCN-ID", "C-ID"}
 BAND_RE = re.compile(r"^[A-Z]{2,4} M(\d)")
@@ -131,11 +134,21 @@ def main():
     payload = load_payload()
     merged, cur_titles, dismissed = load_overlay()
     today = _dt.now().strftime("%Y-%m-%d")
-    odir = os.path.join(SD, "automerge_out", today)
+    odir = os.path.join(SD, "automerge_out", today + ("-titlelane" if PASS2_TITLE else ""))
     os.makedirs(odir, exist_ok=True)
 
-    lanes = [("anchored", payload.get("groups") or []),
-             ("singleton", payload.get("singleton_groups") or [])]
+    if PASS2_TITLE:
+        # Pass 2 (Sam, 2026-06-13 — INFORMED whole-lane choice after seeing the
+        # title-cosine over-merge risk, e.g. "Barbering: Level 2" 9.5u vs
+        # "Barbering 2" 2u at score 1.0). The 🏷 title-similarity lane, with the
+        # SAME correctness gates as pass 1 (band purity / Keep-as-is dismissed /
+        # contested / ≥2 live members). NO units/same-college gate — Sam took the
+        # whole lane; the residue is reviewable via the ⚙ Triage lane and the
+        # cohort is revertible (delete where reviewer_email = the marker).
+        lanes = [("title", payload.get("title_groups") or [])]
+    else:
+        lanes = [("anchored", payload.get("groups") or []),
+                 ("singleton", payload.get("singleton_groups") or [])]
 
     plan, buckets = [], Counter()
     title_changes, spreads = [], []
@@ -168,22 +181,25 @@ def main():
                 buckets[f"{lane}: band mix credit/noncredit (stays human)"] += 1
                 continue
 
-            if lane == "anchored":
-                cands = sorted([m for m in mem if m.get("k") != "Stand-Alone"],
-                               key=lambda m: PRI.get(m.get("k"), 9))
+            cands = sorted([m for m in mem if m.get("k") != "Stand-Alone"],
+                           key=lambda m: PRI.get(m.get("k"), 9))
+            # anchored ALWAYS needs an identity target; a title group merges INTO
+            # its M-ID when one is present, else MINTS (like a singleton group);
+            # singleton always mints.
+            if lane == "anchored" or (lane == "title" and cands):
                 if not cands:
                     buckets["anchored: no identity target (stays human)"] += 1
                     continue
                 target = cands[0]["id"]
                 target_kind = cands[0].get("k") or ""
                 if target in merged:
-                    buckets["anchored: target itself consumed (stays human)"] += 1
+                    buckets[f"{lane}: target itself consumed (stays human)"] += 1
                     continue
             else:
                 target = "UC-CUR-AUTO" + hashlib.md5(sig.encode()).hexdigest()[:8].upper()
                 target_kind = "Unified (new)"
                 if target in used_targets:   # md5[:8] collision — effectively never
-                    buckets["singleton: mint-id collision (stays human)"] += 1
+                    buckets[f"{lane}: mint-id collision (stays human)"] += 1
                     continue
             used_targets.add(target)
 
@@ -228,8 +244,12 @@ def main():
             "_generated_at": _dt.now().isoformat(timespec="seconds"),
             "_payload_generated_at": payload.get("generated_at"),
             "_marker": MARKER,
-            "_scope": "anchored groups + cross-college singleton_groups; "
-                      "title/desc/family/evidence lanes stay human (pass 1)",
+            "_scope": ("PASS 2 — the 🏷 title-similarity lane, WHOLE lane (Sam's "
+                       "informed choice 2026-06-13); correctness gates only (band "
+                       "purity/dismissed/contested/≥2-live); desc/family/evidence "
+                       "lanes stay human") if PASS2_TITLE else
+                      ("anchored groups + cross-college singleton_groups; "
+                       "title/desc/family/evidence lanes stay human (pass 1)"),
             "counts": {"groups_planned": len(plan),
                        "merge_rows": n_merge_rows, "title_rows": n_title_rows,
                        "excluded": dict(buckets)},
@@ -274,6 +294,7 @@ def main():
         "| lane | planned |", "|---|---|",
         f"| anchored (merge into existing identity) | {sum(1 for p in plan if p['lane'] == 'anchored')} |",
         f"| singleton (mint new unified course) | {sum(1 for p in plan if p['lane'] == 'singleton')} |",
+        f"| title (merge into M-ID, else mint) | {sum(1 for p in plan if p['lane'] == 'title')} |",
         "",
         "## Excluded (stays human / already handled)",
         "",
