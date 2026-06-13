@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-12T23:00:41.682Z",
+  "scraped_at": "2026-06-13T12:04:48.773Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -64,16 +64,16 @@
         {
           "college": "Norco College",
           "students": 736,
-          "units": 5437,
-          "avgUnits": 7.387228260869565,
+          "units": 5442,
+          "avgUnits": 7.394021739130435,
           "transcriptionRate": 61.3,
           "avgTranscribed": 4.529891304347826,
           "criteriaMetCount": 5,
           "militaryStudents": 490,
           "nonMilitaryStudents": 252,
           "apprenticeStudents": 93,
-          "savings": 10307910,
-          "yearImpact": 42485176,
+          "savings": 10316560,
+          "yearImpact": 42515511,
           "transcribedUnits": 3334
         },
         {
@@ -383,14 +383,14 @@
         },
         {
           "college": "Fullerton College",
-          "students": 561,
+          "students": 562,
           "units": 1074,
-          "avgUnits": 1.914438502673797,
+          "avgUnits": 1.9110320284697508,
           "transcriptionRate": 0.7,
-          "avgTranscribed": 0.012477718360071301,
+          "avgTranscribed": 0.012455516014234875,
           "criteriaMetCount": 1,
           "militaryStudents": 560,
-          "nonMilitaryStudents": 1,
+          "nonMilitaryStudents": 2,
           "apprenticeStudents": 0,
           "savings": 1863210,
           "yearImpact": 6534159,
@@ -459,16 +459,16 @@
         {
           "college": "Clovis Community College",
           "students": 182,
-          "units": 985,
-          "avgUnits": 5.412087912087912,
+          "units": 1075,
+          "avgUnits": 5.906593406593407,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
           "militaryStudents": 182,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 1704050,
-          "yearImpact": 5975995,
+          "savings": 1859750,
+          "yearImpact": 6522025,
           "transcribedUnits": 0
         },
         {
@@ -1757,7 +1757,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,764",
+      "value": "47,765",
       "breakdowns": [
         {
           "label": "Military",
@@ -1765,7 +1765,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "23,327"
+          "value": "23,328"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47764,
-    "Units": 228778.15000000002,
+    "Students": 47765,
+    "Units": 228873.15000000002,
     "TranscribedUnits": 99025.95,
-    "Savings": 318296265.25,
-    "YearImpact": 1288798406.8999999,
+    "Savings": 318460615.25,
+    "YearImpact": 1289374771.8999999,
     "MilitaryStudents": 24514,
-    "NonMilitaryStudents": 23327,
+    "NonMilitaryStudents": 23328,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.789761117159367,
-    "TranscribedAverage": 2.0732340256259945
+    "AverageUnits": 4.7916497435360625,
+    "TranscribedAverage": 2.0731906207474093
   }
 }
