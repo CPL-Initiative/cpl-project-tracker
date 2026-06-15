@@ -1407,20 +1407,29 @@
           // Mark the merge target (and a mint-new hint) from the live checked
           // set; re-run whenever a checkbox toggles. Reference-equality (x.m ===
           // tgt), not id, so duplicate-id rows don't both light up.
+          // Override target: a curator-chosen EXISTING identity to fold into,
+          // picked from the search index below (e.g. a real "Anatomy & Physiology"
+          // C-ID the title-signature grouping won't surface). null = use the
+          // in-group ★ precedence pick.
+          var overrideTarget = null;
           function refreshTarget() {
             var checked = cbs.filter(function (x) { return x.cb.checked; }).map(function (x) { return x.m; });
-            var tgt = targetMemberOf(checked);
+            var inGroupTgt = targetMemberOf(checked);
+            // An override supersedes the in-group ★, so hide the in-row badges then.
             cbs.forEach(function (x) {
-              var isT = !!tgt && x.cb.checked && x.m === tgt;
+              var isT = !overrideTarget && !!inGroupTgt && x.cb.checked && x.m === inGroupTgt;
               x.tgt.style.display = isT ? "inline-block" : "none";
               x.row.style.background = isT ? "#f0fdf4" : "";
             });
-            mintHint.style.display = (!tgt && checked.length >= 2) ? "block" : "none";
-            // Discipline only applies to a fresh mint; an existing ★ identity
-            // keeps its own, so disable + explain rather than silently ignore.
-            discSel.disabled = !!tgt;
-            discSel.style.opacity = tgt ? "0.55" : "";
-            discNote.textContent = tgt
+            var hasTgt = overrideTarget || inGroupTgt;
+            mintHint.style.display = (!hasTgt && checked.length >= 2) ? "block" : "none";
+            // Discipline only applies to a fresh mint; an existing target keeps
+            // its own, so disable + explain rather than silently ignore.
+            discSel.disabled = !!hasTgt;
+            discSel.style.opacity = hasTgt ? "0.55" : "";
+            discNote.textContent = overrideTarget
+              ? "Inherited from the course you're folding into — not needed here."
+              : inGroupTgt
               ? "Inherited from the ★ merge target — not needed here (merging keeps the target's discipline)."
               : "Optional — sets the discipline on the NEW unified course this Confirm mints. Merging doesn't require one.";
           }
@@ -1455,6 +1464,17 @@
           var go = el("button", { style: goCss }, [isSingleton ? "✓ Create unified course" : "✓ Confirm merge"]);
           go.onclick = function () {
             var picked = cbs.filter(function (x) { return x.cb.checked; }).map(function (x) { return x.m; });
+            if (overrideTarget) {
+              // Fold the checked members INTO the curator-chosen existing course.
+              // It keeps its own identity/title/discipline (title "" so
+              // doConsolidate doesn't rename it; disc "" — it's not synthetic).
+              if (picked.length < 1) { alert("Check at least one course to fold into " + overrideTarget[0] + "."); return; }
+              var oc = {}; oc[overrideTarget[0]] = overrideTarget;
+              picked.forEach(function (m) { if (m.id !== overrideTarget[0]) oc[m.id] = [m.id, m.t, m.s, m.k, m.u]; });
+              if (Object.keys(oc).length < 2) { alert("Pick a target different from the checked course."); return; }
+              doConsolidate(oc, "", "", overrideTarget[0], function () { i++; renderGroup(); }, true);
+              return;
+            }
             if (picked.length < 2) { alert("Check at least two members to merge."); return; }
             // Anchored: merge into the existing identity (the ★ row, by §10
             // precedence CCN > C-ID > M-ID/Unified) — same target the
@@ -1465,6 +1485,63 @@
             var chosen = {};
             picked.forEach(function (m) { chosen[m.id] = [m.id, m.t, m.s, m.k, m.u]; });
             doConsolidate(chosen, titleIn.value.trim(), discSel.value, target, function () { i++; renderGroup(); }, true);
+          };
+          // ── "Merge into a different existing course" (Sam, 2026-06-15) ──
+          // Reuse the ⚇ Unify search index so a curator can redirect this merge
+          // to ANY existing identity the title-signature grouping won't surface
+          // (e.g. a real Anatomy & Physiology C-ID for a Physiology row).
+          var ovWrap = el("div", { style: "margin:10px 0 0;" });
+          var ovToggle = el("a", { href: "#", style: "font-size:.82rem;color:var(--cobalt);text-decoration:none;" },
+            ["⌕ Merge into a different existing course instead…"]);
+          var ovPanel = el("div", { style: "display:none;margin:6px 0 0;padding:8px;border:1px solid #e5e7eb;border-radius:6px;background:#f8fafc;" });
+          var ovBanner = el("div", { style: "display:none;margin:0 0 6px;font-size:.82rem;color:#166534;" });
+          var ovSearch = el("input", { type: "search", placeholder: "Search any course title or ID…", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
+          var ovRes = el("div", { style: "max-height:150px;overflow:auto;margin-top:4px;" });
+          ovPanel.appendChild(ovBanner); ovPanel.appendChild(ovSearch); ovPanel.appendChild(ovRes);
+          ovWrap.appendChild(ovToggle); ovWrap.appendChild(ovPanel);
+          box.appendChild(ovWrap);
+          function setOverride(entry) {
+            overrideTarget = entry;
+            if (entry) {
+              ovBanner.style.display = "block"; ovBanner.innerHTML = "";
+              ovBanner.appendChild(document.createTextNode("✓ Folding the checked course(s) into: " + (entry[1] || entry[0]) + "  [" + entry[0] + " · " + (entry[2] || "") + " · " + idSysLabel(entry[3]) + "]  "));
+              var undo = el("a", { href: "#", style: "color:#b91c1c;font-weight:700;text-decoration:none;" }, ["✕ undo"]);
+              undo.onclick = function (ev) { ev.preventDefault(); setOverride(null); };
+              ovBanner.appendChild(undo);
+              titleIn.disabled = true; titleIn.style.opacity = "0.55";
+              go.textContent = "✓ Fold into " + entry[0];
+            } else {
+              ovBanner.style.display = "none";
+              titleIn.disabled = false; titleIn.style.opacity = "";
+              go.textContent = isSingleton ? "✓ Create unified course" : "✓ Confirm merge";
+            }
+            refreshTarget();
+          }
+          ovToggle.onclick = function (e) {
+            e.preventDefault();
+            var open = ovPanel.style.display === "none";
+            ovPanel.style.display = open ? "block" : "none";
+            if (open) { loadIndex(); ovSearch.focus(); }
+          };
+          var ovSt; ovSearch.oninput = function () {
+            clearTimeout(ovSt); var q = this.value.toLowerCase().trim();
+            ovSt = setTimeout(function () {
+              ovRes.innerHTML = ""; if (q.length < 3) return;
+              var idx = _ucIndex || [], hits = 0, inGroup = {};
+              mems.forEach(function (m) { inGroup[m.id] = 1; });
+              for (var k = 0; k < idx.length && hits < 25; k++) {
+                var en = idx[k];
+                if (inGroup[en[0]]) continue;  // don't offer a row already in this group
+                if (((en[1] || "").toLowerCase().indexOf(q) >= 0) || ((en[0] || "").toLowerCase().indexOf(q) >= 0)) {
+                  hits++;
+                  var b = el("button", { type: "button", style: "display:block;width:100%;text-align:left;padding:3px 6px;border:none;background:none;cursor:pointer;font-size:.82rem;" },
+                    ["→ " + (en[1] || en[0]) + "  [" + en[0] + " · " + (en[2] || "") + " · " + idSysLabel(en[3]) + "]"]);
+                  (function (e2) { b.onclick = function () { setOverride(e2); }; })(en);
+                  ovRes.appendChild(b);
+                }
+              }
+              if (!hits) ovRes.appendChild(el("div", { style: "font-size:.78rem;color:#94a3b8;padding:4px;" }, ["No matches — type 3+ characters of a title or id."]));
+            }, 200);
           };
           actions.appendChild(skip); actions.appendChild(keep); actions.appendChild(go);
           box.appendChild(actions);
