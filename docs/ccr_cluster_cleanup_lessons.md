@@ -1380,3 +1380,54 @@ Sam, not guessed.
 high-cosine cross-college band-gated SUBSET, same planner shape); a per-row
 revert affordance for an auto-merged row; the ceramic-tech curator pick;
 MilStudents wiring; the COCI title-correction campaign.
+
+---
+
+## Session 55 — Bruh Nebula: Suggested-merges clarity + the UC-CUR→Z scope (2026-06-15)
+
+Sam reviewed the worklist live (two screenshots) and surfaced real gaps. Shipped
+**#434–#437** (all squash-merged; the three UI ones are static `unified_courses.js`,
+so live-on-merge with no regen; #435 also touched the generator → dispatched).
+
+**(a) What we learned.**
+- **Self-merge ghosts were a data-integrity bug, not cosmetics.** When an
+  auto/curator merge folds a course INTO a single-college singleton, that id is
+  promoted to a multi-member payload row — **but its stale record stayed in the
+  singleton pool**, so the worklist's singleton-attach loop paired the identity
+  with its own ghost (member id == anchor id). 20 of 262 anchored groups. The
+  general lesson: **a generator that pools "orphans" must exclude records that
+  have been promoted to first-class identities**, or they shadow themselves. Fix:
+  skip any singleton whose id is already a payload row id (`_sug_row_ids`).
+  Verified 20→0 on the republished payload. → KB note
+  `methodology-promoted-record-ghosts-in-worklists.md`.
+- **A silently-ignored input is worse than a disabled one.** The Discipline
+  picker is only written when Confirm MINTS a new course (`synthetic`); on a
+  merge-into-existing it was dropped without a word — exactly Sam's "not clear
+  why or if I should choose a discipline." Now it **disables + explains**
+  ("Inherited from the ★ merge target") vs ("sets the NEW course's discipline"),
+  recomputed live with the checked set.
+- **The ★ target had to be visible.** The "Proposed unified title" names a common
+  course, but nothing said which checked row keeps its id and takes it. Badging
+  the §10-precedence pick (reference-equality, not id — duplicate-id rows exist!)
+  closed the loop, and `go.onclick` now reuses the shared `targetMemberOf()`.
+- **Reusing the `⚇ Unify` search index** (`CPL_UC_INDEX`) made the close-match
+  picker cheap: a curator can redirect a merge to ANY identity (e.g. a real
+  `Anatomy and Physiology` C-ID) the title-signature grouping won't surface. The
+  override folds the whole group into the chosen course, which keeps its
+  identity/title/discipline (title "" so `doConsolidate` won't rename it).
+
+**(b) Current state.** Worklist is materially clearer; ghost groups gone; tests
+44→47 (`uc_worklist_target_badge` 24, `uc_worklist_override_target` 15).
+
+**(c) Roadmap.** Sam approved the **UC-CUR→Z re-mint** (FULL re-key). Scope doc
+`docs/uc_cur_zscheme_remint_scope.md`: rename 4,053 `UC-CUR-*` → `SUBJ Z<band><seq>`;
+blast radius is **entirely inside curation** (4,053 targets + 4,053 title rows +
+10,682 `merge_into` pointers; **0** articulations/promotions — a much smaller job
+than the M-ID re-mints). `Z` = curator-minted/needs-attention, parallels CCN `C`
+/ minted `M`; id_system stays `Unified`.
+
+**(d) Next concrete step.** Build `kb/_uc_cur_zscheme_dryrun.py` per the scope —
+derive `(SUBJ4, band)` per target, assign `Z<band><seq:03d>` by normalized-title
+sort, emit `kb/uc_cur_zscheme_out/<date>/alias_map.json` + collision check +
+`report.md`, present to Sam. **Do NOT apply** without sign-off (Rule 7). Decide
+the persisted-counter question (recommend option B). Title-lane pass-2 still open.
