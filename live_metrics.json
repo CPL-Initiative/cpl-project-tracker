@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-15T19:59:37.666Z",
+  "scraped_at": "2026-06-15T23:00:43.223Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -563,13 +563,13 @@
         },
         {
           "college": "Moorpark College",
-          "students": 121,
+          "students": 123,
           "units": 14,
-          "avgUnits": 0.11570247933884298,
+          "avgUnits": 0.11382113821138211,
           "transcriptionRate": 28.6,
-          "avgTranscribed": 0.03305785123966942,
+          "avgTranscribed": 0.032520325203252036,
           "criteriaMetCount": 1,
-          "militaryStudents": 117,
+          "militaryStudents": 119,
           "nonMilitaryStudents": 4,
           "apprenticeStudents": 0,
           "savings": 18100,
@@ -743,14 +743,14 @@
         },
         {
           "college": "Santa Ana College",
-          "students": 453,
+          "students": 454,
           "units": 1813.1999999999998,
-          "avgUnits": 4.002649006622516,
+          "avgUnits": 3.9938325991189423,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 346,
-          "nonMilitaryStudents": 106,
+          "nonMilitaryStudents": 107,
           "apprenticeStudents": 7,
           "savings": 2881608.5,
           "yearImpact": 10741241.6,
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,773",
+      "value": "47,776",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,520"
+          "value": "24,522"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,329"
+          "value": "23,330"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47773,
+    "Students": 47776,
     "Units": 228873.15000000002,
     "TranscribedUnits": 99052.95,
     "Savings": 318460615.25,
     "YearImpact": 1289374771.8999999,
-    "MilitaryStudents": 24520,
-    "NonMilitaryStudents": 23329,
+    "MilitaryStudents": 24522,
+    "NonMilitaryStudents": 23330,
     "AprenticeStudents": 752,
-    "AverageUnits": 4.790847340548009,
-    "TranscribedAverage": 2.0734086199317607
+    "AverageUnits": 4.790546508707301,
+    "TranscribedAverage": 2.0732784243134628
   }
 }
