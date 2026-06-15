@@ -127,6 +127,13 @@ function shown(elm) { return elm && elm.style.display !== "none"; }
   check("the M-ID row carries a VISIBLE ★ merge-target badge", shown(badgeIn(midRow)));
   check("the Stand-Alone row does NOT show the ★ badge", !shown(badgeIn(saRow)));
 
+  // Discipline picker is DISABLED + explained when merging into an existing ★
+  // identity (it would be silently ignored otherwise).
+  const discSel1 = box.querySelector("select.uc-filter");
+  check("discipline select is DISABLED for an anchored merge", discSel1 && discSel1.disabled === true);
+  check("discipline note says it's inherited from the ★ target",
+    /Inherited from the ★ merge target/.test(box.textContent));
+
   // ── 2. the note explains the ★ identity + the 2-candidate guidance ──
   check("note flags the ★ row as the SURVIVING identity",
     /★ row is the SURVIVING identity/.test(box.textContent));
@@ -175,6 +182,11 @@ function shown(elm) { return elm && elm.style.display !== "none"; }
   const g3hint = Array.from(box.querySelectorAll("div"))
     .find((d) => /mint a brand-new unified course/i.test(txt(d)));
   check("mint-new hint visible for the singleton group", shown(g3hint));
+  // The discipline picker is ENABLED + explained when minting a new course.
+  const discSel3 = box.querySelector("select.uc-filter");
+  check("discipline select is ENABLED for a singleton mint", discSel3 && discSel3.disabled === false);
+  check("discipline note explains it sets the NEW course's discipline",
+    /sets the discipline on the NEW unified course/.test(box.textContent));
 
   // ── 5. Confirm still targets the M-ID (go back is awkward; assert on a fresh
   //       drive of group 1 via a brand-new dialog) ──

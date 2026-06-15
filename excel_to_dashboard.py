@@ -7631,9 +7631,18 @@ def export_unified_courses():
              "u": r.get("units"), "k": r.get("id_system")})
     # Singletons: attach to an anchored signature when one exists; otherwise
     # bucket by signature as a singleton-only merge candidate (V2).
+    _sug_row_ids = {r["id"] for r in rows}
     sing_only = {}
     for sid, v in sg.items():
         if sid in merge_into:
+            continue
+        # A singleton whose id is ALSO a payload identity row has been PROMOTED
+        # (a curator/auto merge folded a course into it, so it now renders as a
+        # multi-member Course/M-ID/Unified row). Its stale singleton record must
+        # not be re-offered as a free orphan — doing so paired the identity with
+        # its own ghost (member id == anchor id), a no-op "self-merge" the
+        # worklist surfaced as a confusing duplicate (Sam, 2026-06-15). Skip it.
+        if sid in _sug_row_ids:
             continue
         s = _sug_sig(v.get("common_title"))
         if not s:
