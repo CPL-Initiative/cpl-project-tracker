@@ -1,5 +1,5 @@
 {
-  "_status": "DRY-RUN — UC-CUR → Z-scheme re-mint; no kb files mutated, no Supabase writes. Restamp _status to APPLIED on apply.",
+  "_status": "APPLIED — git overlay re-keyed 2026-06-15; Supabase re-keyed live via supabase_apply.sql (MCP).",
   "_generated_by": "kb/_uc_cur_zscheme_dryrun.py",
   "_generated_at": "2026-06-15",
   "_canonical_map_synced_at": "2026-06-15T19:59:41Z",
@@ -40536,5 +40536,6 @@
       "title": "Advanced Restorative Mind Body Healing",
       "n_members": 2
     }
-  }
+  },
+  "_applied_at": "2026-06-15T22:11:40Z"
 }

@@ -409,9 +409,9 @@
   var AUDIT_TAG_LABELS = {
     cluster_blanks_when_aggregatable: "Unified-row fields aggregable from members but not curated",
     cluster_members_too_sparse:       "Unified-row members lack data to aggregate",
-    cluster_id_off_scheme:            "Unified-course ID off-scheme (UC-CUR-*) — promotion candidate",
+    cluster_id_off_scheme:            "Synthetic Unified ID off-scheme (transient UC-CUR-*, pre-Z re-mint)",
     cluster_member_unresolved:        "Unified row has unresolvable member ids",
-    uc_cur_ripe_for_promotion:        "Ripe for promotion from UC-CUR-* to a proper MID",
+    uc_cur_ripe_for_promotion:        "Ripe for promotion (synthetic UC-CUR/Z → a proper M-ID/C-ID)",
     seed_untouched_discipline:        "Discipline set by Phase B seed and never reviewed",
     blank_discipline:                 "Discipline missing",
     blank_description:                "Description missing",
@@ -900,12 +900,15 @@
         rows.push(urow); byId[target] = urow; created = true;
         // Merging into an existing identity keeps that identity's native
         // kind/id_system (an M-ID gaining members is still that M-ID). A
-        // synthetic UC-CUR-* target is a brand-new "Unified" course (the
-        // "Cluster" label was retired 2026-05-30, Session 19). A row-less
-        // OFFICIAL target (#342 — a descriptor-catalog C-ID, or a CCN) gets
-        // its official id_system inferred from the id shape so it renders —
-        // and is title-firewalled — like the anchor it stands in for.
-        if (/^UC-CUR-/.test(target)) { urow.kind = "Unified"; urow.id_system = "Unified"; }
+        // synthetic Unified target is a brand-new "Unified" course (the
+        // "Cluster" label was retired 2026-05-30, Session 19) — either the
+        // settled `SUBJ Z<band><seq>` form (the 2026-06-15 UC-CUR→Z re-mint)
+        // or a transient `UC-CUR-*` placeholder a client mint hasn't yet had
+        // promoted to Z by the daily generator. A row-less OFFICIAL target
+        // (#342 — a descriptor-catalog C-ID, or a CCN) gets its official
+        // id_system inferred from the id shape so it renders — and is
+        // title-firewalled — like the anchor it stands in for.
+        if (/^UC-CUR-/.test(target) || /\sZ\d{4}\b/.test(target)) { urow.kind = "Unified"; urow.id_system = "Unified"; }
         else if (/\sC\d{4}/.test(target)) { urow.kind = "Course"; urow.id_system = "CCN-ID"; }
         else if (/\sM[0-9A-Z]{4}\b/.test(target)) { urow.kind = "Course"; urow.id_system = "M-ID"; }
         else { urow.kind = "Course"; urow.id_system = "C-ID"; }

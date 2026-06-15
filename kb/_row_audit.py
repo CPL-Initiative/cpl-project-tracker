@@ -249,6 +249,10 @@ def tier_of(score: float) -> str:
 # ─── id-scheme classifier ────────────────────────────────────────────────────
 # CCN-aligned surrogate M-ID: SUBJ M####  or  SUBJ M<band><d><LL>  (4-char tail).
 M_ID_RE = re.compile(r"^[A-Z]{2,6} M[0-9][0-9A-Z]{3}$")
+# Curator/auto-minted Unified course: SUBJ Z<band><seq:03d> (the 2026-06-15
+# UC-CUR→Z re-mint). Z is ON-scheme — the intended synthetic-Unified format,
+# parallel to M/C — and a promotion candidate (§11 uc_cur_ripe_for_promotion).
+Z_ID_RE = re.compile(r"^[A-Z]{2,6} Z[0-9][0-9A-Z]{3}$")
 
 
 def id_in_scheme(course_id: str, id_system: str) -> bool:
@@ -256,12 +260,15 @@ def id_in_scheme(course_id: str, id_system: str) -> bool:
 
     M-ID expected `SUBJ M####` / `SUBJ M<band><d><LL>`.
     C-ID and CCN reference anchors carry their own format; trusted.
-    UC-CUR-* clusters are explicitly off-scheme (the user's concern).
+    Z-ids (`SUBJ Z<band><seq>`) are ON-scheme (the curator/auto Unified format).
+    Transient `UC-CUR-*` placeholders are off-scheme (re-mint them to Z).
     """
     if id_system in ("C-ID", "CCN", "CCN-ID"):
         return True
     if id_system == "M-ID":
         return bool(M_ID_RE.match(course_id or ""))
+    if course_id and Z_ID_RE.match(course_id):
+        return True
     if course_id and course_id.startswith("UC-CUR-"):
         return False
     return True  # unknown families: don't flag (no scheme to violate)
@@ -1094,6 +1101,8 @@ def _classify_merge_into_orphan(merge_into, source_id, courses, singletons,
         return False
     if merge_into.startswith("UC-CUR-"):
         return False
+    if Z_ID_RE.match(merge_into):
+        return False   # Z = valid synthetic Unified target (self-defining like UC-CUR)
     return True
 
 
@@ -1170,8 +1179,14 @@ def _tags_for_cluster(cluster_id, faculty_fields, members_resolved,
             tags.append("cluster_blanks_when_aggregatable")
         else:
             tags.append("cluster_members_too_sparse")
-    if cluster_id.startswith("UC-CUR-"):
+    _uc_cur = cluster_id.startswith("UC-CUR-")
+    _z = bool(Z_ID_RE.match(cluster_id))
+    if _uc_cur:
+        # Only the TRANSIENT UC-CUR-* placeholder is off-scheme now — Z is the
+        # intended synthetic-Unified format (2026-06-15 re-mint), so it never
+        # fires this tag.
         tags.append("cluster_id_off_scheme")
+    if _uc_cur or _z:
         # Ripeness for M-ID promotion: ≥3 members, ≥2 colleges (we know singletons
         # contribute distinct colleges; M-ID members contribute ≥1 each → so ≥2
         # distinct members carrying college signal is enough corroboration).

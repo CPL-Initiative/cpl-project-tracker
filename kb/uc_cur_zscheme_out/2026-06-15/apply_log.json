@@ -1,0 +1,9 @@
+{
+  "_status": "APPLIED",
+  "_applied_at": "2026-06-15T22:11:40Z",
+  "aliases": 4053,
+  "git_self_keys_rekeyed": 4053,
+  "git_merge_into_rekeyed": 10682,
+  "counter_buckets": 226,
+  "supabase": "run supabase_apply.sql via MCP in the same window"
+}
