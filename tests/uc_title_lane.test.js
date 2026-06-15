@@ -43,7 +43,10 @@ data.rows.forEach((r) => { byId[r.id] = r; });
 const sug = loadPayload("unified_courses_suggestions.js", "window.CPL_UC_SUGGESTIONS");
 const tg = sug.title_groups || [];
 
-check("title_groups present in the suggestions payload", Array.isArray(tg) && tg.length >= 1000);
+// Pass-2 applied the WHOLE title lane (89a6420), so the committed residual is
+// just the gated tail (5,457 groups pre-apply → ~168 now). Assert presence +
+// that the bulk WAS consumed, not a hard floor the daily regen would churn.
+check("title_groups present (residual tail after the pass-2 whole-lane apply)", Array.isArray(tg) && tg.length >= 1);
 check("title_count matches", sug.title_count === tg.length);
 check("every title group has >= 2 members", tg.every((g) => g.members.length >= 2 && g.n === g.members.length));
 check("every M-ID member is a live mergeable row; Stand-Alones carry g:1",
@@ -64,10 +67,12 @@ check("groups carry similarity scores + shared terms",
 // Responder Operations/Decontamination family (~10 ids across ~10 colleges).
 // Found by TITLE, not id — re-mints legitimately re-sequence ids (the
 // 2026-06-12 SUBJ4 fold moved FIRE M1383 → M1363); titles travel with rows.
+// The HazMat FRO family was part of the pass-2 cohort, so it must be OUT of
+// the queue now (mirrors the CONSUMED_TITLES guard below). Found by TITLE, not
+// id — re-mints legitimately re-sequence ids; titles travel with rows.
 const fro = tg.find((g) =>
   g.members.filter((m) => /decontamination|responder operation/i.test(m.t || "")).length >= 4);
-check("the HazMat FRO family surfaces as one title group",
-  !!fro && fro.members.length >= 6);
+check("the HazMat FRO family was consolidated out of the title queue", !fro);
 
 // the smog families themselves were CONSOLIDATED (Session 46, Sam-confirmed).
 // Asserted by MECHANISM (titles + pointer convergence), never by pinned ids:
