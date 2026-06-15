@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-15T16:07:09.182Z",
+  "scraped_at": "2026-06-15T18:48:00.556Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -1102,6 +1102,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Irvine Valley College",
+          "students": 107,
+          "units": 306,
+          "avgUnits": 2.8598130841121496,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 105,
+          "nonMilitaryStudents": 2,
+          "apprenticeStudents": 0,
+          "savings": 529380,
+          "yearImpact": 1856502,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Skyline College",
           "students": 105,
           "units": 315,
@@ -1114,21 +1129,6 @@
           "apprenticeStudents": 0,
           "savings": 544950,
           "yearImpact": 1911105,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Irvine Valley College",
-          "students": 105,
-          "units": 306,
-          "avgUnits": 2.914285714285714,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 103,
-          "nonMilitaryStudents": 2,
-          "apprenticeStudents": 0,
-          "savings": 529380,
-          "yearImpact": 1856502,
           "transcribedUnits": 0
         },
         {
@@ -1208,13 +1208,13 @@
         },
         {
           "college": "Sacramento City College",
-          "students": 61,
+          "students": 62,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 61,
+          "militaryStudents": 62,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 0,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,767",
+      "value": "47,770",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,515"
+          "value": "24,518"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47767,
+    "Students": 47770,
     "Units": 228873.15000000002,
     "TranscribedUnits": 99052.95,
     "Savings": 318460615.25,
     "YearImpact": 1289374771.8999999,
-    "MilitaryStudents": 24515,
+    "MilitaryStudents": 24518,
     "NonMilitaryStudents": 23328,
     "AprenticeStudents": 752,
-    "AverageUnits": 4.791449117591643,
-    "TranscribedAverage": 2.0736690602298657
+    "AverageUnits": 4.79114821017375,
+    "TranscribedAverage": 2.073538831902868
   }
 }
