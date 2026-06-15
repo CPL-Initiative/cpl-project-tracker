@@ -1,7 +1,7 @@
 ---
 title: CCR Cluster Cleanup — Lessons & State
 date: 2026-05-30
-last_updated: 2026-06-10  # Session 39
+last_updated: 2026-06-15  # Session 56
 session: 19 (CCR cluster dissolution)
 tags: [ccr, unified-courses, cluster, dissolution, curation-migration, supabase, m-id]
 artifacts:
@@ -1431,3 +1431,59 @@ derive `(SUBJ4, band)` per target, assign `Z<band><seq:03d>` by normalized-title
 sort, emit `kb/uc_cur_zscheme_out/<date>/alias_map.json` + collision check +
 `report.md`, present to Sam. **Do NOT apply** without sign-off (Rule 7). Decide
 the persisted-counter question (recommend option B). Title-lane pass-2 still open.
+
+## Session 56 — Star Treader: the UC-CUR → Z-scheme re-mint, APPLIED (2026-06-15)
+
+PR #439 (merged + both workflows dispatched + verified LIVE). Built the Z-scheme
+dry-run, Sam said "Go now," landed the full Rule-7 re-mint in one window.
+
+**What shipped.** The 4,053 synthetic `UC-CUR-AUTO*` unified-course ids →
+`SUBJ Z<band><seq:03d>` (e.g. `BIOL Z9001`). `Z` = curator/auto-minted Unified,
+needs faculty attention (parallel to CCN `C` / minted `M`). Dry-run
+`kb/_uc_cur_zscheme_dryrun.py` (7/7 gates) + apply `kb/_uc_cur_zscheme_apply.py`
+share `compute_plan()` so apply == spec. Receipts `kb/uc_cur_zscheme_out/2026-06-15/`.
+
+**Lessons / patterns to reuse:**
+
+- **You cannot hand-pass a re-mint alias map as SQL.** 4,053 arbitrary pairs is
+  ~106 KB of `VALUES` — too large to faithfully reproduce in a tool param, and a
+  single garbled pair silently mis-keys a live row. The reliable + REUSABLE
+  mechanism: a service-key script that *reads the committed alias map file* and
+  PATCHes the shared DB, run in **Actions** (the only place the service key
+  lives). `kb/_rekey_kb_curation_supabase.py` + `.github/workflows/supabase-rekey.yml`
+  are now general infra for every future re-mint. KB note:
+  `docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md`.
+- **md5 set-equality is the re-key verifier.** Before the write: `md5(string_agg(
+  id order by id))` of the UC-CUR surface, git vs live — byte-identical proved no
+  drift (the fresh-read safeguard). After: the same md5 of the resulting Z-key set
+  vs the alias map's new_ids — exact match proved the live re-key is correct
+  regardless of how it ran. Compact (one number) + definitive.
+- **Measure before assuming a code change.** The generator (`_target_identity`)
+  needed ZERO change: a Z id is disjoint from every native id set (cat/sg/cc/ccn/
+  cid), so it already falls through to `("Unified","Unified")`. The only coupled
+  code was the *consumer* `unified_courses.js` (a `\sZ\d{4}` target had been
+  mis-classified as C-ID by the id-shape branch → title-firewalled) + the auditor.
+  Grepping for *functional* `startswith("UC-CUR")` (vs comments) found the real
+  3 sites fast.
+- **The umbrella exception, again.** SUBJ4 = canonical of the members' modal
+  discipline EXCEPT Foreign Languages / Kinesiology, which keep the members' own
+  split code (FLSP/KINE/ATHL) — a naïve canonical-map pass would have re-collapsed
+  the FL per-language split (the same trap the Session-50 fold hit). Mirror
+  `UMBRELLA_DISCIPLINES` from `kb/_row_audit.py`.
+- **Atomic land sequence for a curation-layer re-mint.** merge the code PR (git
+  overlay re-keyed + coupled recognition) → dispatch `supabase-rekey.yml` (durable
+  source-of-truth) → verify (md5) → dispatch `daily-dashboard.yml` (rebuild overlay
+  from re-keyed Supabase + regenerate artifacts) → verify republished payload. The
+  cron rebuilds `coci_curation.json` from Supabase, so Supabase is the durable
+  target; git-only stamps wouldn't survive (and the clean bijection means no
+  per-row stamps are needed — the committed alias map is the rollback handle).
+
+**Current state.** Z is live everywhere: Supabase (md5-verified), overlay
+(0 UC-CUR / 4,053 Z), artifacts (4,053 Z rows, all `id_system` Unified, 0 leakage),
+consumer + auditor recognition. **Deferred** (graceful, no runs scheduled): the
+auto-merge mint → Z + the client-mint promote-step (option B's future-mint half —
+new UC-CUR mints still work via dual recognition); the auditor re-run (Z rows show
+no audit chip until `kb/_row_audit.py` re-runs + `latest.json` refreshes).
+
+**Next.** Title-lane pass-2 dry-run (5,457 groups, on Sam's go); wire the auto-merge
+mint → Z + the promote-step; per-row auto-merge revert; re-run the auditor.

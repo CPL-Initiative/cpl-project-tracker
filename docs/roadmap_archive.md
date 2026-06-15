@@ -1363,3 +1363,24 @@ re-pins post-regen (#419), KPI consolidation + Veteran ⭐/JST + quickstart
 width (#420), mojibake repair + `kb/coci_title_corrections.json` queue +
 CCR "fix in COCI" chip (#421). Lessons: `docs/ccr_cluster_cleanup_lessons.md`
 (Session 53); KB note: `playbook-gated-bulk-autocuration.md`.
+
+### Session 54 — Bruh Spaceranger: the auto-merge cohort made reviewable (2026-06-13)
+
+PR #428 (merged + dispatched + LIVE). Follow-through on Bruh Infinitus's
+auto-merge night: **verified** the overnight regen (941 `UC-CUR-AUTO*` mints +
+1,331 anchored = 2,272 targets / 3,588 folds, exact match to the receipt;
+worklist 9,087 → 6,583, **title lane 5,457** the big remainder; suite 43/43),
+then **surfaced** the cohort for one-click review. Generator stamps each merge
+target with `auto_n` (count of folds from `reviewed_by=='automerge-v1@bot'`,
+>0 only, in the single `merge_members` loop); consumer renders an amber **⚙
+auto-merged** chip (distinct from cobalt `⛓ merged`) + a **row-level "Auto-merged"
+Triage lane** (works without sign-in/audit overlay; QS_TRIAGE deep-linkable).
+Code-only PR; verified end-to-end via an isolated `export_unified_courses()`
+run (2,272, 0 leakage), then artifacts restored + cron-dispatched. Pipeline tab
+`#pl-section-remint` refreshed (both HTMLs). jsdom test
+`tests/uc_auto_merged_chip.test.js` (14). **Correction:** the ceramic-tech
+To-Do was imprecise — "Ceramic Technology" IS an MQ name; `skip_unknown_disc`
+fires from the SUBJ4 fold's `discipline_canonical_subj4.json` (148) lacking it
+→ a curator pick (surfaced to Sam). Lessons: `docs/ccr_cluster_cleanup_lessons.md`
+(Session 54). **NEXT: `docs/session_55_handoff.md`** (title-lane pass-2 DRY-RUN
+on Sam's go; per-row revert affordance; MilStudents wiring).
