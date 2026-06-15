@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-15T18:48:00.556Z",
+  "scraped_at": "2026-06-15T19:59:37.666Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -743,14 +743,14 @@
         },
         {
           "college": "Santa Ana College",
-          "students": 452,
+          "students": 453,
           "units": 1813.1999999999998,
-          "avgUnits": 4.011504424778761,
+          "avgUnits": 4.002649006622516,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 346,
-          "nonMilitaryStudents": 105,
+          "nonMilitaryStudents": 106,
           "apprenticeStudents": 7,
           "savings": 2881608.5,
           "yearImpact": 10741241.6,
@@ -1043,13 +1043,13 @@
         },
         {
           "college": "Allan Hancock College",
-          "students": 131,
+          "students": 133,
           "units": 524,
-          "avgUnits": 4,
+          "avgUnits": 3.9398496240601504,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 131,
+          "militaryStudents": 133,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 906520,
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,770",
+      "value": "47,773",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,518"
+          "value": "24,520"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,328"
+          "value": "23,329"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47770,
+    "Students": 47773,
     "Units": 228873.15000000002,
     "TranscribedUnits": 99052.95,
     "Savings": 318460615.25,
     "YearImpact": 1289374771.8999999,
-    "MilitaryStudents": 24518,
-    "NonMilitaryStudents": 23328,
+    "MilitaryStudents": 24520,
+    "NonMilitaryStudents": 23329,
     "AprenticeStudents": 752,
-    "AverageUnits": 4.79114821017375,
-    "TranscribedAverage": 2.073538831902868
+    "AverageUnits": 4.790847340548009,
+    "TranscribedAverage": 2.0734086199317607
   }
 }
