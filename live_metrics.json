@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-15T14:20:09.477Z",
+  "scraped_at": "2026-06-15T16:07:09.182Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -198,18 +198,18 @@
         },
         {
           "college": "Bakersfield College",
-          "students": 570,
+          "students": 572,
           "units": 8248,
-          "avgUnits": 14.470175438596492,
-          "transcriptionRate": 8.4,
-          "avgTranscribed": 1.2131578947368422,
+          "avgUnits": 14.41958041958042,
+          "transcriptionRate": 8.7,
+          "avgTranscribed": 1.256118881118881,
           "criteriaMetCount": 3,
-          "militaryStudents": 527,
+          "militaryStudents": 529,
           "nonMilitaryStudents": 51,
           "apprenticeStudents": 0,
           "savings": 15087792.5,
           "yearImpact": 53939806.5,
-          "transcribedUnits": 691.5
+          "transcribedUnits": 718.5
         },
         {
           "college": "Modesto Junior College",
@@ -749,9 +749,9 @@
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 347,
+          "militaryStudents": 346,
           "nonMilitaryStudents": 105,
-          "apprenticeStudents": 8,
+          "apprenticeStudents": 7,
           "savings": 2881608.5,
           "yearImpact": 10741241.6,
           "transcribedUnits": 0
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,765",
+      "value": "47,767",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,514"
+          "value": "24,515"
         },
         {
           "label": "Workforce/Other",
@@ -1769,7 +1769,7 @@
         },
         {
           "label": "Apprentice",
-          "value": "753"
+          "value": "752"
         }
       ]
     },
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47765,
+    "Students": 47767,
     "Units": 228873.15000000002,
-    "TranscribedUnits": 99025.95,
+    "TranscribedUnits": 99052.95,
     "Savings": 318460615.25,
     "YearImpact": 1289374771.8999999,
-    "MilitaryStudents": 24514,
+    "MilitaryStudents": 24515,
     "NonMilitaryStudents": 23328,
-    "AprenticeStudents": 753,
-    "AverageUnits": 4.7916497435360625,
-    "TranscribedAverage": 2.0731906207474093
+    "AprenticeStudents": 752,
+    "AverageUnits": 4.791449117591643,
+    "TranscribedAverage": 2.0736690602298657
   }
 }

@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-15T14:20:17Z",
-  "count": 28296,
+  "_synced_at": "2026-06-15T16:07:18Z",
+  "count": 28297,
   "curations": {
     "AERO M10BA": {
       "merge_into": "UC-CUR-AUTO8443D534",
@@ -105477,6 +105477,11 @@
       "unified_title": "Kindergym (Ages 3-4.5)",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "PARN M9015": {
+      "merge_dismissed": "PARN M9015|PARN M9028",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-15T14:35:00.631663+00:00"
     },
     "PARN M9016": {
       "merge_into": "PARN M9001",
