@@ -1326,6 +1326,12 @@
           discSel.appendChild(el("option", { value: "" }, ["— choose —"]));
           mqList.forEach(function (d) { discSel.appendChild(el("option", { value: d }, [d])); });
           box.appendChild(discSel);
+          // Clarify WHEN the discipline matters (Sam, 2026-06-15): it is written
+          // ONLY when this Confirm mints a brand-new course (no ★ target). For a
+          // merge into an existing ★ identity it's inherited from that identity
+          // and ignored here — so disable it then, rather than silently drop it.
+          var discNote = el("div", { style: "margin:3px 0 0;font-size:.76rem;color:#94a3b8;" }, []);
+          box.appendChild(discNote);
           box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" },
             ["Candidates (" + mems.length + ") ",
              el("span", { style: "font-weight:400;font-size:.76rem;color:#94a3b8;" },
@@ -1410,6 +1416,13 @@
               x.row.style.background = isT ? "#f0fdf4" : "";
             });
             mintHint.style.display = (!tgt && checked.length >= 2) ? "block" : "none";
+            // Discipline only applies to a fresh mint; an existing ★ identity
+            // keeps its own, so disable + explain rather than silently ignore.
+            discSel.disabled = !!tgt;
+            discSel.style.opacity = tgt ? "0.55" : "";
+            discNote.textContent = tgt
+              ? "Inherited from the ★ merge target — not needed here (merging keeps the target's discipline)."
+              : "Optional — sets the discipline on the NEW unified course this Confirm mints. Merging doesn't require one.";
           }
           refreshTarget();
           var actions = el("div", { style: "margin-top:14px;display:flex;gap:10px;justify-content:flex-end;" });
