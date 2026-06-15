@@ -1,0 +1,44 @@
+name: Supabase kb_curation re-key (re-mint)
+
+# One-shot, manual-only. Re-keys the LIVE Supabase public.kb_curation from a
+# committed re-mint alias map (the Supabase half of the Rule-7 re-mint playbook;
+# the git overlay is re-keyed offline by the *_apply.py scripts). Reusable for
+# every future re-mint — just point alias_map_path at its receipt.
+#
+# Runs kb/_rekey_kb_curation_supabase.py with the SUPABASE_SERVICE_KEY secret
+# (the only place that key lives). Idempotent: a clean-bijection re-key, so a
+# re-run only touches rows still on an old key (safe no-op once applied).
+#
+# Sequence (one cron window): merge the re-mint PR → dispatch THIS → verify →
+# dispatch daily-dashboard.yml to rebuild the overlay + regenerate artifacts.
+
+on:
+  workflow_dispatch:
+    inputs:
+      alias_map_path:
+        description: 'Path to the re-mint alias_map.json receipt'
+        required: true
+        default: 'kb/uc_cur_zscheme_out/2026-06-15/alias_map.json'
+
+concurrency:
+  group: supabase-rekey
+  cancel-in-progress: false
+
+jobs:
+  rekey:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Re-key Supabase kb_curation from the alias map
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 kb/_rekey_kb_curation_supabase.py "${{ inputs.alias_map_path }}"

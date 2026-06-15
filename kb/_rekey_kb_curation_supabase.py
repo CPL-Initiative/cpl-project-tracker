@@ -1,0 +1,133 @@
+"""
+Re-key the LIVE Supabase public.kb_curation table from a committed alias map.
+
+The Rule-7 re-mint playbook re-keys the git overlay (kb/coci_curation.json) AND
+the live Supabase source-of-truth in the same cron window. The git side is
+deterministic + offline (the *_apply.py scripts). THIS script is the Supabase
+side: it reads a committed alias_map.json and applies the same old→new key
+rewrite to kb_curation, so the daily cron's Supabase→git rebuild produces the
+re-keyed overlay.
+
+Why a script (not hand-run SQL via the MCP): a re-mint alias map is thousands of
+arbitrary pairs — far too large to pass faithfully into a one-off SQL string.
+Reading the committed file is exact and reusable for every future re-mint.
+
+Why a workflow (not a local session run): the service-role key lives only in
+GitHub Actions secrets (SUPABASE_SERVICE_KEY). Run via .github/workflows/
+supabase-rekey.yml (workflow_dispatch).
+
+Two rewrite classes, both idempotent (re-run only touches rows still on the old
+key — a clean bijection, so re-running is a safe no-op):
+  1. self-keyed rows:  course_id  old → new
+  2. merge_into ptrs:  value      old → new   (field = 'merge_into')
+
+Alias map format (the *_dryrun.py / *_apply.py receipt):
+  { "aliases": { "<old_id>": { "new_id": "<new>", ... }, ... } }
+
+Env:
+  SUPABASE_URL          (default https://hvuwhnbuahrtptokpqfh.supabase.co)
+  SUPABASE_SERVICE_KEY  (required for the live re-key; service_role / secret key)
+
+Run:
+  python3 kb/_rekey_kb_curation_supabase.py <alias_map.json>            # live re-key
+  python3 kb/_rekey_kb_curation_supabase.py <alias_map.json> --check    # offline: load + count only
+"""
+import json
+import os
+import sys
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+
+URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
+KEY = os.environ.get("SUPABASE_SERVICE_KEY")
+ENDPOINT = f"{URL}/rest/v1/kb_curation"
+
+
+def load_alias(path):
+    with open(path, encoding="utf-8") as f:
+        doc = json.load(f)
+    aliases = doc.get("aliases", doc)
+    pairs = {}
+    for old, v in aliases.items():
+        new = v["new_id"] if isinstance(v, dict) else v
+        if new and new != old:
+            pairs[old] = new
+    return pairs
+
+
+def _req(method, qs, body=None):
+    data = json.dumps(body).encode() if body is not None else None
+    req = urllib.request.Request(f"{ENDPOINT}?{qs}", data=data, method=method, headers={
+        "apikey": KEY, "Authorization": f"Bearer {KEY}",
+        "Content-Type": "application/json", "Prefer": "return=minimal"})
+    last = None
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return r.status
+        except urllib.error.HTTPError as e:
+            last = f"HTTP {e.code}: {e.read().decode()[:200]}"
+            if e.code in (429, 500, 502, 503, 504):
+                time.sleep(2 ** attempt)
+                continue
+            raise SystemExit(f"ABORT — {method} {qs[:80]}: {last}")
+        except Exception as e:                       # transient network
+            last = str(e)
+            time.sleep(2 ** attempt)
+    raise SystemExit(f"ABORT — {method} {qs[:80]} after retries: {last}")
+
+
+def _count(qs):
+    req = urllib.request.Request(f"{ENDPOINT}?{qs}", headers={
+        "apikey": KEY, "Authorization": f"Bearer {KEY}",
+        "Range-Unit": "items", "Range": "0-0", "Prefer": "count=exact"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        cr = r.headers.get("Content-Range", "*/0")    # e.g. "0-0/4053"
+        return int(cr.split("/")[-1]) if "/" in cr else 0
+
+
+def main():
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    check = "--check" in sys.argv
+    if not args:
+        sys.exit("usage: python3 kb/_rekey_kb_curation_supabase.py <alias_map.json> [--check]")
+    pairs = load_alias(args[0])
+    print(f"alias map: {len(pairs)} old→new pairs from {args[0]}")
+    bad = [n for n in pairs.values() if " Z" not in n]   # this re-key targets Z-ids
+    if bad:
+        print(f"  note: {len(bad)} targets are not Z-ids (e.g. {bad[:3]}) — generic re-key")
+    if check:
+        print("--check: alias map loads OK; no Supabase writes.")
+        return
+    if not KEY:
+        sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) to run the live re-key.")
+
+    before_keys = _count("course_id=in.(" + ",".join(
+        urllib.parse.quote(o) for o in list(pairs)[:1]) + ")") if pairs else 0
+    print(f"re-keying {len(pairs)} self-keyed rows + their merge_into pointers …")
+    n_self = n_ptr = 0
+    for i, (old, new) in enumerate(sorted(pairs.items()), 1):
+        o = urllib.parse.quote(old, safe="")
+        # 1. self-keyed rows: course_id old → new
+        _req("PATCH", f"course_id=eq.{o}", {"course_id": new})
+        n_self += 1
+        # 2. merge_into pointers: value old → new
+        _req("PATCH", f"field=eq.merge_into&value=eq.{o}", {"value": new})
+        n_ptr += 1
+        if i % 500 == 0:
+            print(f"  … {i}/{len(pairs)}")
+    print(f"PATCHed {n_self} self-key filters + {n_ptr} merge_into filters.")
+
+    # verify: 0 old keys remain on the re-key surface
+    left_keys = _count("course_id=like.UC-CUR-*")
+    left_ptrs = _count("field=eq.merge_into&value=like.UC-CUR-*")
+    print(f"VERIFY — UC-CUR self-keys left: {left_keys} | UC-CUR merge_into left: {left_ptrs}")
+    if left_keys or left_ptrs:
+        sys.exit(f"ABORT — {left_keys + left_ptrs} UC-CUR rows remain after re-key.")
+    print("✓ Supabase kb_curation re-keyed — 0 UC-CUR rows remain on the re-key surface.")
+
+
+if __name__ == "__main__":
+    main()
