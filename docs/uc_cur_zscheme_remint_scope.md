@@ -1,10 +1,13 @@
 ---
 title: UC-CUR → Z-scheme re-mint — scope
 date: 2026-06-15
-session: 55 (data lane)
-status: scope — dry-run NOT yet built (Rule 7: scope before build)
+session: 55 (data lane) · dry-run built Session 56 (Star Treader)
+status: DRY-RUN BUILT (Session 56) — mechanically ready, 7/7 gates pass; awaiting Sam's sign-off before apply (Rule 7)
 tags: [remint, uc-cur, z-scheme, identity, rule-7, scope]
 artifacts:
+  - kb/_uc_cur_zscheme_dryrun.py (the dry-run planner — compute_plan() shared with the future apply)
+  - kb/uc_cur_zscheme_out/2026-06-15/ (the dry-run receipt — alias_map.json + zseq_seed.json + report.md + collisions.json + supabase_ops.sql)
+  - tests/uc_cur_zscheme_dryrun_test.py (allocator self-test)
   - kb/coci_curation.json (the re-key surface)
   - kb/_auto_merge_worklist.py (UC-CUR-AUTO mint site)
   - unified_courses.js (mint + recognition sites)
@@ -91,25 +94,52 @@ or the daily auto-merge would re-number on every run. Two options:
   deterministic, no counter, but not a clean sequence.
 - **(B)** persist a counter (matches the M-ID minting; cleaner numbers, but the
   apply must write the counter state atomically).
-**Recommend (B)** to honor "MID number format," with the counter seeded from the
-re-key's deterministic title-sort assignment.
+**ADOPTED (B)** (Session 56) to honor "MID number format," with the counter
+seeded from the re-key's deterministic title-sort assignment (`zseq_seed.json`).
+See **Dry-run results** below for the client-mint placeholder mechanism.
 
-## Rule-7 dry-run plan (the build, NOT yet done)
+## Rule-7 dry-run plan
 
-1. `kb/_uc_cur_zscheme_dryrun.py` — read the 4,053 targets + their members,
-   derive `(SUBJ4, band)` per target (modal member subject + credit band), assign
-   `Z<band><seq:03d>` by normalized-title sort, emit:
-   - `kb/uc_cur_zscheme_out/<date>/alias_map.json` (old UC-CUR → new Z),
-   - a collision check (no two targets get the same Z; Z never collides with an
-     existing M-ID/CCN — different CTI letter guarantees it),
-   - `report.md` with counts + samples + the per-(SUBJ4,band) histogram.
+1. ✅ **BUILT (Session 56).** `kb/_uc_cur_zscheme_dryrun.py` reads the 4,053
+   targets + their members, derives `(SUBJ4, band)` per target, assigns
+   `Z<band><seq:03d>` by normalized-title sort, and emits the receipt under
+   `kb/uc_cur_zscheme_out/2026-06-15/` (alias_map.json + zseq_seed.json +
+   collisions.json + supabase_ops.sql + report.md). `compute_plan()` is the
+   SHARED pure allocator the apply will import (apply == spec).
 2. Present the dry-run to Sam. **Do NOT apply** without sign-off (restamp the
    receipt `_status` on apply).
-3. Apply (`kb/_uc_cur_zscheme_apply.py`): fresh-read `kb_curation`, re-key the
-   4,053 `course_id` rows + 10,682 `merge_into` values, write the persisted
-   counter, V5-validate against the alias map, atomic land in one cron window.
+3. Apply (`kb/_uc_cur_zscheme_apply.py`, NOT yet built): fresh-read `kb_curation`,
+   re-key the 4,053 `course_id` rows + 10,682 `merge_into` values, write the
+   persisted counter, stamp `_zscheme_from`, V-validate against the alias map,
+   atomic land in one cron window.
 4. Ship the code recognition/mint changes in the SAME window so new mints use Z
    and the auditor reads Z as on-scheme.
+
+### Dry-run results (2026-06-15, Session 56) — 7/7 gates pass
+
+| metric | value |
+|---|---|
+| UC-CUR targets → Z-ids | **4,053 → 4,053** (no drops) |
+| `merge_into` pointers re-pointed | **10,682** |
+| Downstream refs (articulations / promotions) | **0 / 0** (confirmed — re-key stays inside `kb_curation`) |
+| (SUBJ4, band) cohorts | **226** · credit (band 1) 3,584 · noncredit (band 9) 469 (**0** mixed) |
+| Max cohort size | **199** (`KINE` band 1) → `seq:03d` cap 999, **0** overflow |
+| Z-id collisions (vs existing ids / each other) | **0 / 0** |
+
+**SUBJ4 derivation** (new-mint convention — canonical SUBJ4 of the members'
+modal discipline, with the umbrella exception): 3,649 `canonical_discipline`,
+387 `umbrella_member_s4` (FL/KIN splits preserved — NOT collapsed to FLNG/KINE),
+13 `member_s4` (blank/out-of-map discipline), 4 `padded_fallback` (the
+genuinely-undisciplined short-code tail — `AFXX`/`ATXX`/`DBAX`, flagged for
+curation). Validation: all 4-letter, all unique, all aliased, band-pure,
+no overflow, alias invertible (rollback handle).
+
+**Persisted-counter decision — option B ADOPTED.** The apply drops
+`zseq_seed.json` in as `kb/uc_cur_zseq.json` (per-(SUBJ4, band) high-water seq);
+server-side allocators read+increment it so existing ids never renumber.
+Client-side `doConsolidate` keeps minting a transient `UC-CUR-EXT<ts>`
+placeholder that the daily generator promotes to a clean Z via the counter — so
+the shared recognition helper matches BOTH `^[A-Z]{2,4} Z\d` and `^UC-CUR-`.
 
 ## Guardrails
 
