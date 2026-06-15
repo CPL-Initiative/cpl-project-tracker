@@ -1569,23 +1569,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > ATHL carve-out, 1,057 re-keys, `kb/kin_pe_pass2_out/2026-06-12/`).
 
 
-### Session 53 — Bruh Infinitus: auto-merge pass 1 + Sam's UI batch (2026-06-12 night)
-
-Sam-interactive. PRs #418–#424, all squash-merged + published same-hour.
-**AUTO-MERGE PASS 1 APPLIED** (Sam reviewed ~80 of 9,087 worklist groups →
-"auto curate"): `kb/_auto_merge_worklist.py` planned the dependable lanes
-ONLY (anchored + cross-college singletons; gates: band purity caught 325
-credit/noncredit mixes, same-college 214, dismissals honored) → **2,272
-groups / 5,838 rows applied 5,838-for-0-conflicts** via SHA-pinned md5-gated
-server-side insert; cohort `reviewer_email='automerge-v1@bot'` (revert =
-delete the cohort); receipts+apply_log `kb/automerge_out/2026-06-12/`.
-Also: worklist popup chrome (#418 drag/✕/proposal framing), 4 stale test
-re-pins post-regen (#419), KPI consolidation + Veteran ⭐/JST + quickstart
-width (#420), mojibake repair + `kb/coci_title_corrections.json` queue +
-CCR "fix in COCI" chip (#421). Lessons: `docs/ccr_cluster_cleanup_lessons.md`
-(Session 53); KB note: `playbook-gated-bulk-autocuration.md`. **NEXT:
-`docs/session_54_handoff.md`** (⚙ auto-merged chip + Triage lane; title-lane
-pass-2 decision; post-regen suite re-pin check).
+> **Session 53 narrative archived** → `docs/roadmap_archive.md` (Bruh Infinitus —
+> auto-merge pass 1 APPLIED: 2,272 groups / 5,838 rows, cohort
+> `reviewer_email='automerge-v1@bot'`, receipts `kb/automerge_out/2026-06-12/`).
 
 
 ### Session 54 — Bruh Spaceranger: the auto-merge cohort made reviewable (2026-06-13)
@@ -1608,6 +1594,30 @@ fires from the SUBJ4 fold's `discipline_canonical_subj4.json` (148) lacking it
 → a curator pick (surfaced to Sam). Lessons: `docs/ccr_cluster_cleanup_lessons.md`
 (Session 54). **NEXT: `docs/session_55_handoff.md`** (title-lane pass-2 DRY-RUN
 on Sam's go; per-row revert affordance; MilStudents wiring).
+
+
+### Session 55 — Bruh Nebula: Suggested-merges clarity + the UC-CUR→Z scope (2026-06-15)
+
+Sam-interactive (his two CCR worklist screenshots). PRs #434–#437, all
+squash-merged. **Worklist UX, from Sam's confusion:** (#434) the surviving
+identity now wears a **★ merge target** badge (§10 CCN>C-ID>M-ID>Unified pick,
+live as checkboxes toggle, reference-equality so duplicate-id rows don't both
+light) + a dynamic note that spells out the 2-candidate case; (#435) the
+**self-merge ghost groups** — a promoted singleton re-offered as its own orphan
+(member id == anchor id) — fixed in `export_unified_courses()` (skip singletons
+whose id is already a payload row; **20→0** anchored ghosts, verified live), and
+the **Discipline picker** now disables + explains itself (it's only written on a
+fresh mint, silently ignored on a merge-into); (#436) a **"⌕ merge into a
+different existing course"** search picker reusing the `⚇ Unify` index — fold the
+group into ANY identity the title-signature grouping won't surface (e.g. a real
+Anatomy & Physiology C-ID). Suite 44→47. **Sam's UC-CUR→Z decision (#437, SCOPE
+only):** rename the 4,053 synthetic `UC-CUR-*` ids to `SUBJ Z<band><seq>` (e.g.
+`BIOL Z9001`; Z = curator-minted, needs attention) — **full re-key**, but the
+blast radius is **entirely inside curation** (4,053 targets + 4,053 title rows +
+10,682 `merge_into` pointers; **0** articulations/promotions). Scope:
+`docs/uc_cur_zscheme_remint_scope.md`. **NEXT: `docs/session_56_handoff.md`** —
+build the Z-scheme **dry-run** (`kb/_uc_cur_zscheme_dryrun.py`) per the scope, on
+Sam's go; title-lane pass-2 still open.
 
 
 ---

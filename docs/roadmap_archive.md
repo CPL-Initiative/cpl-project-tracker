@@ -1346,3 +1346,20 @@ the lost-worklist-saves bug (overlay fetched only discipline rows) + added
 post-fold-stale test files (35/35). Full story:
 `docs/ccr_cluster_cleanup_lessons.md` (Session 51); KB note:
 `methodology-fanin-alias-lexicon-contamination.md`.
+
+
+## Session 53 — Bruh Infinitus: auto-merge pass 1 + Sam's UI batch (2026-06-12 night) — archived 2026-06-15 (Session 55)
+
+Sam-interactive. PRs #418–#424, all squash-merged + published same-hour.
+**AUTO-MERGE PASS 1 APPLIED** (Sam reviewed ~80 of 9,087 worklist groups →
+"auto curate"): `kb/_auto_merge_worklist.py` planned the dependable lanes
+ONLY (anchored + cross-college singletons; gates: band purity caught 325
+credit/noncredit mixes, same-college 214, dismissals honored) → **2,272
+groups / 5,838 rows applied 5,838-for-0-conflicts** via SHA-pinned md5-gated
+server-side insert; cohort `reviewer_email='automerge-v1@bot'` (revert =
+delete the cohort); receipts+apply_log `kb/automerge_out/2026-06-12/`.
+Also: worklist popup chrome (#418 drag/✕/proposal framing), 4 stale test
+re-pins post-regen (#419), KPI consolidation + Veteran ⭐/JST + quickstart
+width (#420), mojibake repair + `kb/coci_title_corrections.json` queue +
+CCR "fix in COCI" chip (#421). Lessons: `docs/ccr_cluster_cleanup_lessons.md`
+(Session 53); KB note: `playbook-gated-bulk-autocuration.md`.
