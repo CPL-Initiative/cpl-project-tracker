@@ -1330,8 +1330,23 @@
             ["Candidates (" + mems.length + ") ",
              el("span", { style: "font-weight:400;font-size:.76rem;color:#94a3b8;" },
                ["— each row is currently its own separate identity"])]));
-          box.appendChild(el("div", { style: "margin:0 0 4px;font-size:.78rem;color:#6b7280;" },
-            ["These courses do NOT yet share an identity — the id on each row is that course's own, today. ✓ Confirm folds the checked rows into ONE identity; Keep as-is / Skip leave every id untouched."]));
+          // Which row is the MERGE TARGET — the surviving identity the others
+          // fold into (and which takes the Proposed title above, i.e. the
+          // "common course" slot). Precedence CCN > C-ID > M-ID > Unified
+          // (§10); a group of only Stand-Alones has no target → mint new.
+          // Single source of truth — also drives go.onclick.
+          var TPRI = { "CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3 };
+          function targetMemberOf(list) {
+            var mains = list.filter(function (m) { return m.k !== "Stand-Alone"; })
+              .slice().sort(function (a, b) { return (TPRI[a.k] != null ? TPRI[a.k] : 9) - (TPRI[b.k] != null ? TPRI[b.k] : 9); });
+            return mains.length ? mains[0] : null;
+          }
+          var hasTarget = !!targetMemberOf(mems);
+          var note = "These courses do NOT yet share an identity — the id on each row is that course's own, today. ✓ Confirm folds the checked rows into ONE identity; Keep as-is / Skip leave every id untouched.";
+          if (hasTarget) note += " The ★ row is the SURVIVING identity — it keeps its id and takes the Proposed title above (the “common course” slot); every other checked row folds into it.";
+          else note += " None of these is an existing identity, so Confirm MINTS a brand-new unified course named by the Proposed title above.";
+          if (mems.length === 2) note += " With only two candidates the choice is just Confirm (fold them into one) or Keep as-is / Skip — leave BOTH checked to merge; don't deselect either.";
+          box.appendChild(el("div", { style: "margin:0 0 4px;font-size:.78rem;color:#6b7280;" }, [note]));
           var list = el("div", { style: "max-height:240px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
           var cbs = [];
           mems.forEach(function (m) {
@@ -1339,7 +1354,7 @@
             // Contested evidence members (m.x — their own colleges disagree on
             // the official target) start UNCHECKED: the curator opts IN.
             var cb = el("input", { type: "checkbox" }); cb.checked = !m.x;
-            cbs.push({ cb: cb, m: m });
+            cb.onchange = function () { refreshTarget(); };
             row.appendChild(cb);
             row.appendChild(el("span", { style: "flex:1;" }, [m.t || m.id]));
             var isOfficial = m.k === "C-ID" || m.k === "CCN-ID";
@@ -1365,13 +1380,38 @@
                 title: m.tm + " witness" + (m.tm === 1 ? "" : "es") + " failed the title check: the claiming course's own title doesn't resemble this row (the receipt predates an over-merge split). Fold only if you recognize it as the same course.",
               }, ["⚠ title mismatch"]));
             }
-            if (isOfficial) row.appendChild(el("span", {
-              style: "font-size:.7rem;font-weight:600;padding:1px 7px;border-radius:10px;background:#dcfce7;color:#166534;white-space:nowrap;",
-              title: "Official identifier — the checked courses merge INTO this one (it stays the common course reference)",
-            }, ["← merge target"]));
+            // Merge-target badge — hidden until refreshTarget() marks the row
+            // that wins precedence among the CURRENTLY-checked members. Marks
+            // the surviving identity for ANY anchored merge (M-ID/Unified too),
+            // not just official C-ID/CCN rows.
+            var tgtBadge = el("span", {
+              style: "display:none;font-size:.7rem;font-weight:700;padding:1px 7px;border-radius:10px;background:#dcfce7;color:#166534;white-space:nowrap;",
+              title: "Merge target — the surviving identity. The other checked courses fold INTO this one; it keeps its id and takes the Proposed unified title above (the “common course” slot).",
+            }, ["★ merge target"]);
+            row.appendChild(tgtBadge);
+            cbs.push({ cb: cb, m: m, row: row, tgt: tgtBadge });
             list.appendChild(row);
           });
           box.appendChild(list);
+          // No existing identity among the checked rows → Confirm mints a new
+          // unified course. Surfaced live so a curator isn't surprised.
+          var mintHint = el("div", { style: "display:none;margin:6px 0 0;font-size:.78rem;color:#5b21b6;" },
+            ["✨ No existing identity is checked — Confirm will mint a brand-new unified course."]);
+          box.appendChild(mintHint);
+          // Mark the merge target (and a mint-new hint) from the live checked
+          // set; re-run whenever a checkbox toggles. Reference-equality (x.m ===
+          // tgt), not id, so duplicate-id rows don't both light up.
+          function refreshTarget() {
+            var checked = cbs.filter(function (x) { return x.cb.checked; }).map(function (x) { return x.m; });
+            var tgt = targetMemberOf(checked);
+            cbs.forEach(function (x) {
+              var isT = !!tgt && x.cb.checked && x.m === tgt;
+              x.tgt.style.display = isT ? "inline-block" : "none";
+              x.row.style.background = isT ? "#f0fdf4" : "";
+            });
+            mintHint.style.display = (!tgt && checked.length >= 2) ? "block" : "none";
+          }
+          refreshTarget();
           var actions = el("div", { style: "margin-top:14px;display:flex;gap:10px;justify-content:flex-end;" });
           var skip = el("button", { style: skipCss }, ["Skip →"]);
           skip.onclick = function () { i++; renderGroup(); };
@@ -1403,15 +1443,12 @@
           go.onclick = function () {
             var picked = cbs.filter(function (x) { return x.cb.checked; }).map(function (x) { return x.m; });
             if (picked.length < 2) { alert("Check at least two members to merge."); return; }
-            // Anchored: merge into the existing identity, preferring the OFFICIAL
-            // id when one is in the group (CCN > C-ID > M-ID/Unified — §10
-            // precedence; the official id IS the common course reference).
-            // Singleton-only: leave the target blank so doConsolidate mints a
-            // brand-new UC-CUR id.
-            var pri = { "CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3 };
-            var mainPick = picked.filter(function (m) { return m.k !== "Stand-Alone"; })
-              .slice().sort(function (a, b) { return (pri[a.k] != null ? pri[a.k] : 9) - (pri[b.k] != null ? pri[b.k] : 9); });
-            var target = mainPick.length ? mainPick[0].id : "";
+            // Anchored: merge into the existing identity (the ★ row, by §10
+            // precedence CCN > C-ID > M-ID/Unified) — same target the
+            // candidates list highlights. Singleton-only: blank target so
+            // doConsolidate mints a brand-new UC-CUR id.
+            var tgtM = targetMemberOf(picked);
+            var target = tgtM ? tgtM.id : "";
             var chosen = {};
             picked.forEach(function (m) { chosen[m.id] = [m.id, m.t, m.s, m.k, m.u]; });
             doConsolidate(chosen, titleIn.value.trim(), discSel.value, target, function () { i++; renderGroup(); }, true);
