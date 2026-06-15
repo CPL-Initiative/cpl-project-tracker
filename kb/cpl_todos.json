@@ -1,26 +1,14 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-15-a",
- "_session": 55,
- "_status": "SESSION 55 (Bruh Nebula): the ✨ Suggested merges dialog is clearer from your two screenshots. The surviving identity now wears a ★ merge target badge (so you can tell which row becomes the 'common course' above), the confusing duplicate rows are gone (a fix to how the list is built — 20 of them), the Discipline box now disables + explains itself, and there's a new '⌕ merge into a different existing course' search so you can fold a group into, say, a real Anatomy & Physiology C-ID. You also approved renaming the long UC-CUR ids to a clean SUBJ + Z + number form (e.g. BIOL Z9001) — that's scoped; the dry-run is next on Fable's go. Hard-refresh to see the worklist changes.",
+ "_as_of": "2026-06-15-b",
+ "_session": 56,
+ "_status": "SESSION 56 (Star Treader): the long UC-CUR ids are now clean SUBJ + Z + number ids (e.g. BIOL Z9001) — DONE and live everywhere. You said 'go', and the full re-mint landed in one window: 4,053 ids re-keyed in the database + the dashboard data, verified exact by checksum (0 leftovers). 'Z' means a curator/auto-minted course that still needs faculty attention. Two things are deliberately left for next session (they don't block anything): brand-new merges still get the old-style id until we wire the auto-namer (they still work), and the audit chips won't show on the re-keyed rows until the auditor re-runs. Next big curation lever waiting on you: the 🏷 title-similarity pass 2 (~5,457 groups). Hard-refresh to see the Z ids in the Course Crosswalk.",
  "items": [
-  {
-   "id": "sam-try-worklist",
-   "who": "sam",
-   "tab": "unified-courses",
-   "text": "Open ✨ Suggested merges and try the new clarity: the ★ merge target marks the row that survives + takes the title above; with only 2 candidates just Confirm or Skip (don't deselect either). Try '⌕ merge into a different existing course instead…' to redirect a group to an existing C-ID/M-ID the suggestions didn't offer."
-  },
-  {
-   "id": "sam-zscheme-go",
-   "who": "sam",
-   "tab": "unified-courses",
-   "text": "You approved renaming the 4,053 long UC-CUR ids → SUBJ Z<band><number> (e.g. BIOL Z9001; Z = curator-minted, needs attention). Fable will DRY-RUN it first for your review (alias map + counts) before anything changes. Say go when you want the dry-run — and confirm the format if you'd like a tweak."
-  },
   {
    "id": "sam-titlelane-pass2",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "✨ Suggested merges still holds the 🏷 title-similarity lane (~5,457 groups) awaiting human eyes. Say the word and Fable will DRY-RUN a high-cosine, cross-college, band-gated pass 2 (same reversible planner as the auto-merge) for your review before anything applies."
+   "text": "✨ Suggested merges still holds the 🏷 title-similarity lane (~5,457 groups) awaiting human eyes. Say the word and Fable will DRY-RUN a high-cosine, cross-college, band-gated pass 2 (same reversible planner as the auto-merge, marker automerge-titlelane-v1) for your review before anything applies."
   },
   {
    "id": "sam-spotcheck-automerge",
@@ -47,22 +35,22 @@
    "text": "MilStudents dataset: ping Fable when it's live in the Custom Reports module — that wires the true JSTs-uploaded universe into the Veteran card and unlocks the other gaps you mentioned (aggregates only, no student IDs)."
   },
   {
-   "id": "fable-zscheme-dryrun",
+   "id": "fable-zscheme-future-mint",
    "who": "fable",
    "tab": "unified-courses",
-   "text": "On Sam's go: build kb/_uc_cur_zscheme_dryrun.py per docs/uc_cur_zscheme_remint_scope.md — derive (SUBJ4, band) per UC-CUR target, assign Z<band><seq>, emit kb/uc_cur_zscheme_out/<date>/alias_map.json + report + collision check, present counts. DO NOT apply without sign-off (Rule 7). Re-key surface: 4,053 targets + 4,053 title rows + 10,682 merge_into pointers, all in kb_curation; 0 articulations/promotions."
+   "text": "Finish the Z scheme's future-mint half (deferred from S56): point kb/_auto_merge_worklist.py's mint + an excel_to_dashboard.py promote-step at the persisted counter kb/uc_cur_zseq.json so NEW merges get clean Z ids (reuse compute_plan's derive_subj4). Then re-run python3 kb/_row_audit.py + commit latest.json so Z rows get audit chips (the code is already Z-aware; just needs the re-run)."
   },
   {
    "id": "fable-titlelane-dryrun",
    "who": "fable",
    "tab": "unified-courses",
-   "text": "On Sam's go: dry-run the title-lane pass 2 — extend kb/_auto_merge_worklist.py with a title-lane config (high cosine + cross-college + band-purity gates), emit a receipt under kb/automerge_out/, present counts. DO NOT apply without sign-off."
+   "text": "On Sam's go: DRY-RUN title-lane pass 2 — the planner already supports it (`python3 kb/_auto_merge_worklist.py --pass2-title`, receipt kb/automerge_out/<date>-titlelane/). Present counts; apply only on sign-off, then re-key Supabase via the supabase-rekey workflow + dispatch."
   },
   {
    "id": "fable-second-look-followups",
    "who": "fable",
    "tab": "unified-courses",
-   "text": "Wire a one-click revert affordance for an individual auto-merged row (whole-cohort revert = delete reviewer_email='automerge-v1@bot'). Consider the ⚙ chip on the CSR/CER if they surface merged identities."
+   "text": "Wire a one-click revert affordance for an individual auto-merged row (whole-cohort revert = delete reviewer_email='automerge-v1@bot'). Consider the ⚙ auto-merged chip on the CSR/CER if they surface merged identities."
   }
  ]
 }

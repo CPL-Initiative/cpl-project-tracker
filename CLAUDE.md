@@ -122,11 +122,22 @@ into the Pipeline Reference below or into dedicated docs.
    dead — those aliases preserved in `kb/remint_out/alias_map.json`. Full
    decisions + validation methodology:
    [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
-   Latest instance: **KIN/PE pass 2** (Session 51, 2026-06-12 — `kb/_kin_pe_pass2.py`, 1,057 re-keys, receipts `kb/kin_pe_pass2_out/2026-06-12/`; lexicon alias-guard `kb/_alias_canon.py` now mandatory on every fan-in). Prior: the **2026-06-12 canonical-SUBJ4 fold** (Session 50) —
-   71,037-alias permutation, receipts `kb/subj4_fold_out/2026-06-12/`,
-   apply == dry-run spec via the shared `compute_plan()` allocator
-   (`kb/_subj4_apply.py`), downstream chain driven by
-   `kb/_post_apply_chain.py`.
+   Latest instance: the **UC-CUR → Z-scheme re-mint** (Session 56, 2026-06-15 —
+   the 4,053 synthetic `UC-CUR-AUTO*` unified-course ids → `SUBJ Z<band><seq:03d>`,
+   e.g. `BIOL Z9001`; dry-run `kb/_uc_cur_zscheme_dryrun.py` + apply
+   `kb/_uc_cur_zscheme_apply.py` share `compute_plan()`, receipts
+   `kb/uc_cur_zscheme_out/2026-06-15/`, scope
+   [`docs/uc_cur_zscheme_remint_scope.md`](docs/uc_cur_zscheme_remint_scope.md)).
+   Surface was **entirely inside `kb_curation`** (0 articulations/promotions), so
+   it added a **reusable** Supabase re-key path: `kb/_rekey_kb_curation_supabase.py`
+   + `.github/workflows/supabase-rekey.yml` (service-key, reads the committed
+   alias map — the only sane way to re-key thousands of rows when the alias map
+   is too large to hand-pass as SQL;
+   [`docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md`](docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md)).
+   Prior: **KIN/PE pass 2** (Session 51, `kb/_kin_pe_pass2.py`, 1,057 re-keys,
+   `kb/kin_pe_pass2_out/2026-06-12/`; alias-guard `kb/_alias_canon.py`) and the
+   **2026-06-12 canonical-SUBJ4 fold** (Session 50) — 71,037-alias permutation,
+   `kb/subj4_fold_out/2026-06-12/`, downstream chain `kb/_post_apply_chain.py`.
 
 8. **Document at context checkpoints.** Roughly every ~100K tokens of context
    consumed in a session (heuristic — Claude Code doesn't expose an exact
@@ -1574,26 +1585,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > `reviewer_email='automerge-v1@bot'`, receipts `kb/automerge_out/2026-06-12/`).
 
 
-### Session 54 — Bruh Spaceranger: the auto-merge cohort made reviewable (2026-06-13)
-
-PR #428 (merged + dispatched + LIVE). Follow-through on Bruh Infinitus's
-auto-merge night: **verified** the overnight regen (941 `UC-CUR-AUTO*` mints +
-1,331 anchored = 2,272 targets / 3,588 folds, exact match to the receipt;
-worklist 9,087 → 6,583, **title lane 5,457** the big remainder; suite 43/43),
-then **surfaced** the cohort for one-click review. Generator stamps each merge
-target with `auto_n` (count of folds from `reviewed_by=='automerge-v1@bot'`,
->0 only, in the single `merge_members` loop); consumer renders an amber **⚙
-auto-merged** chip (distinct from cobalt `⛓ merged`) + a **row-level "Auto-merged"
-Triage lane** (works without sign-in/audit overlay; QS_TRIAGE deep-linkable).
-Code-only PR; verified end-to-end via an isolated `export_unified_courses()`
-run (2,272, 0 leakage), then artifacts restored + cron-dispatched. Pipeline tab
-`#pl-section-remint` refreshed (both HTMLs). jsdom test
-`tests/uc_auto_merged_chip.test.js` (14). **Correction:** the ceramic-tech
-To-Do was imprecise — "Ceramic Technology" IS an MQ name; `skip_unknown_disc`
-fires from the SUBJ4 fold's `discipline_canonical_subj4.json` (148) lacking it
-→ a curator pick (surfaced to Sam). Lessons: `docs/ccr_cluster_cleanup_lessons.md`
-(Session 54). **NEXT: `docs/session_55_handoff.md`** (title-lane pass-2 DRY-RUN
-on Sam's go; per-row revert affordance; MilStudents wiring).
+> **Session 54 narrative archived** → `docs/roadmap_archive.md` (Bruh Spaceranger —
+> the auto-merge cohort made reviewable: `auto_n` stamp + the ⚙ auto-merged chip +
+> the "Auto-merged" Triage lane, PR #428; `tests/uc_auto_merged_chip.test.js`).
 
 
 ### Session 55 — Bruh Nebula: Suggested-merges clarity + the UC-CUR→Z scope (2026-06-15)
@@ -1618,6 +1612,35 @@ blast radius is **entirely inside curation** (4,053 targets + 4,053 title rows +
 `docs/uc_cur_zscheme_remint_scope.md`. **NEXT: `docs/session_56_handoff.md`** —
 build the Z-scheme **dry-run** (`kb/_uc_cur_zscheme_dryrun.py`) per the scope, on
 Sam's go; title-lane pass-2 still open.
+
+
+### Session 56 — Star Treader: the UC-CUR → Z-scheme re-mint, APPLIED (2026-06-15)
+
+PR #439 (merged + both workflows dispatched + LIVE). Built the Z-scheme dry-run,
+Sam said **"Go now,"** and landed the full Rule-7 re-mint same window. The 4,053
+synthetic `UC-CUR-AUTO*` ids → `SUBJ Z<band><seq:03d>` (e.g. `BIOL Z9001`;
+**Z** = curator/auto-minted Unified, needs attention — parallel to `C`/`M`).
+SUBJ4 = canonical of members' modal discipline **with the umbrella exception**
+(FL/KIN keep their split codes, never collapse to FLNG/KINE); band 9/1 from
+credit_status; persisted counter `kb/uc_cur_zseq.json` (option B). Dry-run 7/7
+gates; `compute_plan()` shared by dry-run + apply (apply == spec). Surface was
+**entirely inside `kb_curation`** (4,053 self-keys + 10,682 `merge_into`; **0**
+articulations/promotions), **fresh-read md5-verified git…live** before writing.
+Live Supabase re-keyed via a new **reusable** service-key path
+(`kb/_rekey_kb_curation_supabase.py` + `.github/workflows/supabase-rekey.yml` —
+the alias map is too large to hand-pass as SQL; read the committed file in
+Actions), verified by md5 (0 UC-CUR, 4,053 Z); then `daily-dashboard.yml`
+regenerated the overlay + `unified_courses_*.js` (4,053 Z rows, all `id_system`
+Unified, 0 leakage). Coupled consumer/auditor recognition shipped in the same PR
+(a `Z` target had been mis-classified as a C-ID). Tests:
+`tests/uc_zscheme_recognition.test.js` (8) + `tests/uc_cur_zscheme_dryrun_test.py`
+(12); suite 48 green. **Deferred** (graceful, no runs scheduled): auto-merge
+mint → Z + the client-mint promote-step (new UC-CUR mints still work via dual
+recognition); the auditor re-run (Z rows show no audit chip until `kb/_row_audit.py`
+re-runs). Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 56); KB note
+`docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md`. **NEXT:
+`docs/session_57_handoff.md`** — title-lane pass-2 dry-run on Sam's go; the
+deferred Z follow-ups; per-row auto-merge revert.
 
 
 ---
