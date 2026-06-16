@@ -41,3 +41,4 @@ kb/_classify_dryrun_sample.json
 # excel_to_dashboard.py at runtime; only the *aggregated* public artifacts
 # may be committed. Keep this raw file out of git (and out of GitHub Pages).
 CustomReport_*.json
+kb/similar_family_out/
