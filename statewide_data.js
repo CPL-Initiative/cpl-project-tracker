@@ -75019,6 +75019,349 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPICA-E1MB-1-001|MAPICA-EMT(-1-001|MAPICA-EMTR-1-001|MAPICI-CECO-1-001|MAPICI-CNRE-1-001|MAPICI-E1MA-1-001|MAPICI-E1MA1-1-001|MAPICI-E3MT-1-001|MAPICI-E3MT1-1-001|MAPICI-EMT(1-1-001|MAPICI-EMT(2-1-001|MAPICI-EMT1-1-001|MAPICI-EMT11-1-001|MAPICI-EMT2-1-001|MAPICI-EMT3-1-001|MAPICI-EMT4-1-001|MAPICI-EMT5-1-001|MAPICI-EMTH-1-001|MAPICI-EMTN-1-001|MAPICI-NREC-1-001|MAPICN-(9EM-1-001",
+      "exhibit_ids": [
+        "MAPICA-E1MB-1-001",
+        "MAPICA-EMT(-1-001",
+        "MAPICA-EMTR-1-001",
+        "MAPICI-CECO-1-001",
+        "MAPICI-CNRE-1-001",
+        "MAPICI-E1MA-1-001",
+        "MAPICI-E1MA1-1-001",
+        "MAPICI-E3MT-1-001",
+        "MAPICI-E3MT1-1-001",
+        "MAPICI-EMT(1-1-001",
+        "MAPICI-EMT(2-1-001",
+        "MAPICI-EMT1-1-001",
+        "MAPICI-EMT11-1-001",
+        "MAPICI-EMT2-1-001",
+        "MAPICI-EMT3-1-001",
+        "MAPICI-EMT4-1-001",
+        "MAPICI-EMT5-1-001",
+        "MAPICI-EMTH-1-001",
+        "MAPICI-EMTN-1-001",
+        "MAPICI-NREC-1-001",
+        "MAPICN-(9EM-1-001"
+      ],
+      "title": "EMT Certification",
+      "unified_title": "EMT Certification",
+      "is_classified": true,
+      "issuing_agency": "National Registry of Emergency Medical Technicians (NREMT)",
+      "training_agency": "",
+      "confidence_title": 0.95,
+      "confidence_issuer": 0.97,
+      "quality_flag": "",
+      "raw_titles": [
+        "Current EMT Certification or Paramedic License",
+        "Current NREMT certification or State of California EMT license AND current American Heart Association ‘BLS Provider' certification",
+        "EMERGENCY MEDICAL TECHNICIAN (EMS-50/51)",
+        "EMS 389\tEmergency Medical Technician 1- Clinical - Industry Certification",
+        "EMS 390\tEmergency Medical Technician 1 - Industry Certification",
+        "EMT 1 Module A and B",
+        "EMT 1, Module A",
+        "EMT 1, Module B",
+        "Emergency Medical Technician",
+        "Emergency Medical Technician (EMT)",
+        "Emergency Medical Technician 1, Module A",
+        "Emergency Medical Technician 1, Module B",
+        "Emergency Medical Technician Certificate",
+        "Emergency Medical Technician Health and Fitness",
+        "Emergency Medical Technician NRE and CPR",
+        "Emergency Medical Technician ROP",
+        "National Registry EMS Certification-EMT Level"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 24,
+      "adopter_names": [
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Cuesta College",
+        "East Los Angeles College",
+        "Lake Tahoe Community College",
+        "Los Angeles Pierce College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Modesto Junior College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Palo Verde College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Woodland Community College"
+      ],
+      "potential": 77,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Coalinga College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 101,
+      "credit_recs": [
+        {
+          "course": "EMGM 105A",
+          "credit": "6 hours in Emergency Medical Technician - National Registry"
+        },
+        {
+          "course": "EMGM 106",
+          "credit": "0.3 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"
+        },
+        {
+          "course": "EMGM 106",
+          "credit": "0.25 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"
+        },
+        {
+          "course": "AUTO 156G",
+          "credit": "0.3 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"
+        },
+        {
+          "course": "EMT 11",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMT 405",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMER 50A",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMGM 105A",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMGM 105A",
+          "credit": "7 hours in Emergency Medical Technician - National Registry"
+        },
+        {
+          "course": "EMS 4",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMER 50B",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "FT 183",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "FIRETEK 096",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "HEA 140E",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMS 010",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMT 61",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "FT 183L",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMS 95",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMT  084",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMS 57",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMT 101",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMS 135",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMS 201",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMED 110",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "LACCD GE Area 7",
+          "credit": "3 hours in Lifelong Learning and Self Development"
+        },
+        {
+          "course": "EMER 50A",
+          "credit": "2.5 hours in Emergency Medical Technician 1, Module A"
+        },
+        {
+          "course": "EMER 50B",
+          "credit": "4.5 hours in Emergency Medical Technician 1, Module B"
+        },
+        {
+          "course": "EMT 104",
+          "credit": "10 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "EMT 105",
+          "credit": "1 hour in Clinical EMT Skills Laboratory"
+        },
+        {
+          "course": "EMS 389",
+          "credit": "0.5 hours in Emergency Medical Technician 1- Clinical"
+        },
+        {
+          "course": "EMS 390",
+          "credit": "8 hours in Emergency Medical Technician 1"
+        },
+        {
+          "course": "EMS 50",
+          "credit": "5 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "EMS 51",
+          "credit": "1 hour in Emergency Medical Services-Basic Clinical/Field"
+        },
+        {
+          "course": "EMS 1",
+          "credit": "3 hours in First Responder"
+        },
+        {
+          "course": "EMS 3",
+          "credit": "9 hours in Emergency Medical Technician Academy"
+        },
+        {
+          "course": "EMT 90",
+          "credit": "7 units in Emergency Medical Technician"
+        },
+        {
+          "course": "EMT 90-A",
+          "credit": "1.5 units in Introduction to EMS System"
+        },
+        {
+          "course": "EMT 093",
+          "credit": "9 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "EMTC B50",
+          "credit": "9 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "EMS 161",
+          "credit": "1.5 hours in Emergency Medical Technician Refresher"
+        },
+        {
+          "course": "EMS 8",
+          "credit": "3 hours in Health & Fitness for Emergency Medical Services"
+        },
+        {
+          "course": "FT 183",
+          "credit": "7 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "KIN 13",
+          "credit": "3 hours in First Aid"
+        },
+        {
+          "course": "FT 183L",
+          "credit": "2 hours in Emergency Medical Technician Lab"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPCBES-N1-C-1-001",
       "exhibit_ids": [
         "MAPCBES-N1-C-1-001"
@@ -80665,353 +81008,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "NURADN 482",
           "credit": "1 hour in Cooperative Education: Nursing A.D.N"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICA-E1MB-1-001|MAPICA-EMT(-1-001|MAPICA-EMTR-1-001|MAPICI-CECO-1-001|MAPICI-CNRE-1-001|MAPICI-E1MA-1-001|MAPICI-E1MA1-1-001|MAPICI-E3MT-1-001|MAPICI-E3MT1-1-001|MAPICI-EMT(1-1-001|MAPICI-EMT(2-1-001|MAPICI-EMT1-1-001|MAPICI-EMT11-1-001|MAPICI-EMT2-1-001|MAPICI-EMT3-1-001|MAPICI-EMT4-1-001|MAPICI-EMT5-1-001|MAPICI-EMTH-1-001|MAPICI-EMTN-1-001|MAPICI-NREC-1-001|MAPICN-(9EM-1-001",
-      "exhibit_ids": [
-        "MAPICA-E1MB-1-001",
-        "MAPICA-EMT(-1-001",
-        "MAPICA-EMTR-1-001",
-        "MAPICI-CECO-1-001",
-        "MAPICI-CNRE-1-001",
-        "MAPICI-E1MA-1-001",
-        "MAPICI-E1MA1-1-001",
-        "MAPICI-E3MT-1-001",
-        "MAPICI-E3MT1-1-001",
-        "MAPICI-EMT(1-1-001",
-        "MAPICI-EMT(2-1-001",
-        "MAPICI-EMT1-1-001",
-        "MAPICI-EMT11-1-001",
-        "MAPICI-EMT2-1-001",
-        "MAPICI-EMT3-1-001",
-        "MAPICI-EMT4-1-001",
-        "MAPICI-EMT5-1-001",
-        "MAPICI-EMTH-1-001",
-        "MAPICI-EMTN-1-001",
-        "MAPICI-NREC-1-001",
-        "MAPICN-(9EM-1-001"
-      ],
-      "title": "EMT Certification",
-      "unified_title": "EMT Certification",
-      "is_classified": true,
-      "issuing_agency": "National Registry of Emergency Medical Technicians (NREMT)",
-      "training_agency": "",
-      "confidence_title": 0.95,
-      "confidence_issuer": 0.97,
-      "quality_flag": "",
-      "raw_titles": [
-        "Current EMT Certification or Paramedic License",
-        "Current NREMT certification or State of California EMT license AND current American Heart Association ‘BLS Provider' certification",
-        "EMERGENCY MEDICAL TECHNICIAN (EMS-50/51)",
-        "EMS 389\tEmergency Medical Technician 1- Clinical - Industry Certification",
-        "EMS 390\tEmergency Medical Technician 1 - Industry Certification",
-        "EMT 1 Module A and B",
-        "EMT 1, Module A",
-        "EMT 1, Module B",
-        "Emergency Medical Technician",
-        "Emergency Medical Technician (EMT)",
-        "Emergency Medical Technician 1, Module A",
-        "Emergency Medical Technician 1, Module B",
-        "Emergency Medical Technician Certificate",
-        "Emergency Medical Technician Health and Fitness",
-        "Emergency Medical Technician NRE and CPR",
-        "Emergency Medical Technician ROP",
-        "National Registry EMS Certification-EMT Level"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Health",
-      "sector": "Health",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 25,
-      "adopter_names": [
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Cuesta College",
-        "East Los Angeles College",
-        "Lake Tahoe Community College",
-        "Los Angeles Pierce College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Modesto Junior College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Palo Verde College",
-        "Rio Hondo College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Woodland Community College"
-      ],
-      "potential": 76,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Citrus College",
-        "Coalinga College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "EMGM 105A",
-          "credit": "6 hours in Emergency Medical Technician - National Registry"
-        },
-        {
-          "course": "EMGM 106",
-          "credit": "0.3 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"
-        },
-        {
-          "course": "EMGM 106",
-          "credit": "0.25 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"
-        },
-        {
-          "course": "AUTO 156G",
-          "credit": "0.3 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"
-        },
-        {
-          "course": "EMT 11",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMT 405",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMER 50A",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMGM 105A",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMGM 105A",
-          "credit": "7 hours in Emergency Medical Technician - National Registry"
-        },
-        {
-          "course": "EMT 100",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMS 4",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMER 50B",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "FT 183",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "FIRETEK 096",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "HEA 140E",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMS 010",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMT 61",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "FT 183L",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMS 95",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMT  084",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMS 57",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMT 101",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMS 135",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMS 201",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "EMED 110",
-          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
-        },
-        {
-          "course": "LACCD GE Area 7",
-          "credit": "3 hours in Lifelong Learning and Self Development"
-        },
-        {
-          "course": "EMER 50A",
-          "credit": "2.5 hours in Emergency Medical Technician 1, Module A"
-        },
-        {
-          "course": "EMER 50B",
-          "credit": "4.5 hours in Emergency Medical Technician 1, Module B"
-        },
-        {
-          "course": "EMT 104",
-          "credit": "10 hours in Emergency Medical Technician"
-        },
-        {
-          "course": "EMT 105",
-          "credit": "1 hour in Clinical EMT Skills Laboratory"
-        },
-        {
-          "course": "EMS 389",
-          "credit": "0.5 hours in Emergency Medical Technician 1- Clinical"
-        },
-        {
-          "course": "EMS 390",
-          "credit": "8 hours in Emergency Medical Technician 1"
-        },
-        {
-          "course": "EMS 50",
-          "credit": "5 hours in Emergency Medical Technician"
-        },
-        {
-          "course": "EMS 51",
-          "credit": "1 hour in Emergency Medical Services-Basic Clinical/Field"
-        },
-        {
-          "course": "EMS 1",
-          "credit": "3 hours in First Responder"
-        },
-        {
-          "course": "EMS 3",
-          "credit": "9 hours in Emergency Medical Technician Academy"
-        },
-        {
-          "course": "EMT 90",
-          "credit": "7.0 units in Emergency Medical Technician"
-        },
-        {
-          "course": "EMT 90-A",
-          "credit": "1.5 units in Introduction to EMS System"
-        },
-        {
-          "course": "EMT 093",
-          "credit": "9 hours in Emergency Medical Technician"
-        },
-        {
-          "course": "EMTC B50",
-          "credit": "9 hours in Emergency Medical Technician"
-        },
-        {
-          "course": "EMS 161",
-          "credit": "1.5 hours in Emergency Medical Technician Refresher"
-        },
-        {
-          "course": "EMS 8",
-          "credit": "3 hours in Health & Fitness for Emergency Medical Services"
-        },
-        {
-          "course": "FT 183",
-          "credit": "7 hours in Emergency Medical Technician"
-        },
-        {
-          "course": "KIN 13",
-          "credit": "3 hours in First Aid"
-        },
-        {
-          "course": "FT 183L",
-          "credit": "2 hours in Emergency Medical Technician Lab"
         }
       ]
     },
@@ -198489,22 +198485,20 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPICA-ACAI-1-001|MAPICA-ACAI1-1-001",
+      "exhibit_id": "MAPICA-ACAI-1-001",
       "exhibit_ids": [
-        "MAPICA-ACAI-1-001",
-        "MAPICA-ACAI1-1-001"
+        "MAPICA-ACAI-1-001"
       ],
-      "title": "Carpenters Apprenticeship — Acoustical Installer",
-      "unified_title": "Carpenters Apprenticeship — Acoustical Installer",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
-      "training_agency": "Joint Apprenticeship Training Committee (JATC)",
-      "confidence_title": 0.8,
-      "confidence_issuer": 0.6,
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, AS",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, AS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "Apprenticeship Carpentry, Acoustical Installer, AS",
-        "Apprenticeship Carpentry, Acoustical Installer, CA"
+        "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, AS"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -198609,22 +198603,248 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPICA-ACTA-1-001|MAPICA-ACTA1-1-001",
+      "exhibit_id": "MAPICA-ACAI1-1-001",
       "exhibit_ids": [
-        "MAPICA-ACTA-1-001",
-        "MAPICA-ACTA1-1-001"
+        "MAPICA-ACAI1-1-001"
       ],
-      "title": "Carpenters Apprenticeship — Tilt-Up",
-      "unified_title": "Carpenters Apprenticeship — Tilt-Up",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
-      "training_agency": "Joint Apprenticeship Training Committee (JATC)",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.6,
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, CA",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, CA",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "Apprenticeship Carpentry, Tilt-Up, AS",
-        "Apprenticeship Carpentry, Tilt-Up, CA"
+        "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, CA"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 11,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "College of the Redwoods",
+        "Laney College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Norco College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Santa Rosa Junior College"
+      ],
+      "total_addressable": 12,
+      "credit_recs": [
+        {
+          "course": "ACA 061A",
+          "credit": "1.5 hours in Acoustical Ceilings"
+        },
+        {
+          "course": "ACA 061B",
+          "credit": "1.5 hours in Advanced Acoustical Ceiling Layout"
+        },
+        {
+          "course": "ACA 061C",
+          "credit": "1.5 hours in Advanced Acoustical Ceiling Installation"
+        },
+        {
+          "course": "ACA 062",
+          "credit": "1.5 hours in Standard Acoustical Grids"
+        },
+        {
+          "course": "ACA 063",
+          "credit": "1.5 hours in Suspended Ceilings"
+        },
+        {
+          "course": "ACA 064",
+          "credit": "1.5 hours in Acoustical Soffits"
+        },
+        {
+          "course": "ACA 065",
+          "credit": "1.5 hours in Prefab/Sound Panels"
+        },
+        {
+          "course": "ACA 066",
+          "credit": "1.5 hours in Concealed/Glue-Up/Staple-Up Systems"
+        },
+        {
+          "course": "ACA 067",
+          "credit": "1.5 hours in Designer and Specialty Trims"
+        },
+        {
+          "course": "ACA 068",
+          "credit": "1.5 hours in Metal Pan and Security Systems"
+        },
+        {
+          "course": "ACA 071A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 071B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 071C",
+          "credit": "1.5 hours in Tool and Equipment Applications"
+        },
+        {
+          "course": "ACA 072A",
+          "credit": "1.5 hours in Basic Metal Framing"
+        },
+        {
+          "course": "ACA 073C",
+          "credit": "1.5 hours in Framing Curves and Arches"
+        },
+        {
+          "course": "ACA 074A",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "ACA 074B",
+          "credit": "2 hours in Advanced Print Reading"
+        },
+        {
+          "course": "ACA 079A",
+          "credit": "1.5 hours in Drywall Acoustical Ceilings"
+        },
+        {
+          "course": "ACA 083",
+          "credit": "1.5 hours in Door and Door Frames"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-ACTA-1-001",
+      "exhibit_ids": [
+        "MAPICA-ACTA-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, AS",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, AS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, AS"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 11,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "College of the Redwoods",
+        "Laney College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Norco College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Santa Rosa Junior College"
+      ],
+      "total_addressable": 12,
+      "credit_recs": [
+        {
+          "course": "ACA 002B",
+          "credit": "1.5 hours in Slabs/Interior-Exterior Footings"
+        },
+        {
+          "course": "ACA 003A",
+          "credit": "1.5 hours in Tilt-Up Introduction"
+        },
+        {
+          "course": "ACA 004A",
+          "credit": "1.5 hours in Lifting, and Bracing Safety"
+        },
+        {
+          "course": "ACA 004B",
+          "credit": "1.5 hours in Poured-in-Place Wall Forms"
+        },
+        {
+          "course": "ACA 005A",
+          "credit": "1.5 hours in Wall-Column Forms/Cutting and Burning"
+        },
+        {
+          "course": "ACA 005B",
+          "credit": "1.5 hours in Site Work/Curb and Gutter"
+        },
+        {
+          "course": "ACA 005C",
+          "credit": "1.5 hours in Specialized Forms and Rigging"
+        },
+        {
+          "course": "ACA 021A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 021B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 021C",
+          "credit": "1.5 hours in Basic Wall Framing"
+        },
+        {
+          "course": "ACA 022A",
+          "credit": "1.5 hours in Commercial Floor Framing"
+        },
+        {
+          "course": "ACA 022E",
+          "credit": "1.5 hours in Commercial Roof Framing"
+        },
+        {
+          "course": "ACA 024D",
+          "credit": "2 hours in Transit Level and Laser"
+        },
+        {
+          "course": "ACA 025A",
+          "credit": "1.5 hours in Foundations and Flatwork"
+        },
+        {
+          "course": "ACA 026B",
+          "credit": "1.5 hours in Wall Forming"
+        },
+        {
+          "course": "ACA 027D",
+          "credit": "1.5 hours in Stairs and Ramp Forming"
+        },
+        {
+          "course": "ACA 029A",
+          "credit": "1.5 hours in Rigging"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-ACTA1-1-001",
+      "exhibit_ids": [
+        "MAPICA-ACTA1-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, CA",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, CA",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, Tilt-Up, CA"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -208704,9 +208924,160 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPICA-ACDA-1-001|MAPICI-ACDC-1-001",
+      "exhibit_id": "MAPICA-ACDA-1-001",
       "exhibit_ids": [
-        "MAPICA-ACDA-1-001",
+        "MAPICA-ACDA-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 5,
+      "potential_names": [
+        "American River College",
+        "Los Angeles Southwest College",
+        "Norco College",
+        "Orange Coast College",
+        "Palomar College"
+      ],
+      "total_addressable": 6,
+      "credit_recs": [
+        {
+          "course": "ACA 071A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 071B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 071C",
+          "credit": "1.5 hours in Tool and Equipment Applications"
+        },
+        {
+          "course": "ACA 072A",
+          "credit": "1.5 hours in Basic Metal Framing"
+        },
+        {
+          "course": "ACA 072B",
+          "credit": "1.5 hours in Basic Lathing"
+        },
+        {
+          "course": "ACA 072C",
+          "credit": "1.5 hours in Advanced Lathing"
+        },
+        {
+          "course": "ACA 073A",
+          "credit": "1.5 hours in Framing Ceilings and Soffits"
+        },
+        {
+          "course": "ACA 073B",
+          "credit": "1.5 hours in Framing Suspended Ceilings"
+        },
+        {
+          "course": "ACA 073C",
+          "credit": "1.5 hours in Framing Curves and Arches"
+        },
+        {
+          "course": "ACA 074A",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "ACA 074B",
+          "credit": "2 hours in Advanced Print Reading"
+        },
+        {
+          "course": "ACA 074C",
+          "credit": "1.5 hours in Air, Moisture, and Thermal Barriers"
+        },
+        {
+          "course": "ACA 075A",
+          "credit": "1.5 hours in Light Gage AWS A"
+        },
+        {
+          "course": "ACA 075B",
+          "credit": "1.5 hours in Light Gage Welding LAC"
+        },
+        {
+          "course": "ACA 075C",
+          "credit": "1.5 hours in Light Gage AWS B"
+        },
+        {
+          "course": "ACA 076A",
+          "credit": "1.5 hours in Basic Hand Finishing"
+        },
+        {
+          "course": "ACA 076B",
+          "credit": "1.5 hours in Automatic Finishing Tools"
+        },
+        {
+          "course": "ACA 077A",
+          "credit": "1.5 hours in Drywall Installation/Finish Trims"
+        },
+        {
+          "course": "ACA 077B",
+          "credit": "1.5 hours in Advanced Hand Finishing"
+        },
+        {
+          "course": "ACA 077C",
+          "credit": "1.5 hours in Advanced Automatic Finishing Tools"
+        },
+        {
+          "course": "ACA 078B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        },
+        {
+          "course": "ACA 078C",
+          "credit": "1.5 hours in Wet Wall Finishes"
+        },
+        {
+          "course": "ACA 078D",
+          "credit": "1.5 hours in Ceiling and Soffit Finishing"
+        },
+        {
+          "course": "ACA 079A",
+          "credit": "1.5 hours in Drywall Acoustical Ceilings"
+        },
+        {
+          "course": "ACA 079C",
+          "credit": "1.5 hours in Drywall Applications"
+        },
+        {
+          "course": "ACA 082B",
+          "credit": "1.5 hours in S/B Firestop/Fireproofing Procedures"
+        },
+        {
+          "course": "ACA 082C",
+          "credit": "1.5 hours in Decorative Trims and Textures"
+        },
+        {
+          "course": "ACA 083",
+          "credit": "1.5 hours in Door and Door Frames"
+        },
+        {
+          "course": "ACA 089",
+          "credit": "1.5 hours in Freeform Lathing"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_ids": [
         "MAPICI-ACDC-1-001"
       ],
       "title": "Carpenters Apprenticeship — Drywall/Lather",
@@ -208718,7 +209089,6 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.6,
       "quality_flag": "",
       "raw_titles": [
-        "Apprenticeship Carpentry, Drywall/Lather, AS",
         "Apprenticeship Carpentry, Drywall/Lather, CA"
       ],
       "cpl_type": "Industry Certification",
@@ -220449,11 +220819,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "City College of San Francisco",
-        "credit_recs": 163,
-        "exhibits": 115,
+        "credit_recs": 162,
+        "exhibits": 114,
         "disciplines": 12,
-        "ccc_collaborative": 67,
-        "industry_certs": 97,
+        "ccc_collaborative": 66,
+        "industry_certs": 96,
         "pct": 1.4
       },
       {
@@ -221225,11 +221595,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Health",
-        "credit_recs": 421,
+        "credit_recs": 420,
         "exhibits": 193,
         "courses": 274,
         "colleges": 45,
-        "ccc_collaborative": 33,
+        "ccc_collaborative": 32,
         "pct": 3.7
       },
       {
@@ -221405,7 +221775,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3326,
+        "credit_recs": 3325,
         "exhibits": 1144,
         "colleges": 78,
         "pct": 29.4
@@ -221456,7 +221826,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1206,
+        "credit_recs": 1205,
         "exhibits": 556,
         "colleges": 42,
         "pct": 10.6
@@ -221522,7 +221892,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1305,
+        "credit_recs": 1304,
         "exhibits": 163,
         "colleges": 63,
         "disciplines": 9,
@@ -221940,6 +222310,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-16T18:41:22",
-  "total_credit_recs": 11327
+  "generated_at": "2026-06-16T19:39:20",
+  "total_credit_recs": 11326
 };

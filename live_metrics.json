@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-16T18:41:56.468Z",
+  "scraped_at": "2026-06-16T19:39:53.922Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -93,13 +93,13 @@
         },
         {
           "college": "West Los Angeles College",
-          "students": 680,
+          "students": 681,
           "units": 7758.5,
-          "avgUnits": 11.409558823529412,
+          "avgUnits": 11.3928046989721,
           "transcriptionRate": 90.2,
-          "avgTranscribed": 10.291176470588235,
+          "avgTranscribed": 10.276064610866372,
           "criteriaMetCount": 5,
-          "militaryStudents": 94,
+          "militaryStudents": 95,
           "nonMilitaryStudents": 588,
           "apprenticeStudents": 0,
           "savings": 8571520,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,783",
+      "value": "47,784",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,528"
+          "value": "24,529"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47783,
+    "Students": 47784,
     "Units": 228975.15000000002,
     "TranscribedUnits": 99049.95,
     "Savings": 318619220.25,
     "YearImpact": 1290005228.8999999,
-    "MilitaryStudents": 24528,
+    "MilitaryStudents": 24529,
     "NonMilitaryStudents": 23331,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.791979365046147,
-    "TranscribedAverage": 2.072911914279137
+    "AverageUnits": 4.791879080863888,
+    "TranscribedAverage": 2.0728685334003014
   }
 }
