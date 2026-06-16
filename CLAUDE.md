@@ -1135,15 +1135,22 @@ re-runnable (re-derives + RETRACTS its own prior fills when the lexicon changes 
   units as a 5th field). **Suggested-merges worklist** — a **"✨ Suggested
   merges"** toolbar button opens a review queue over precomputed same-course
   groups (`unified_courses_suggestions.js`, lazy). The generator groups identities
-  by a **level-COLLAPSING + segment-folding title signature** (parentheticals +
-  articles removed, the LEVEL axis folded out — level words begin/interm/advanced…,
-  roman/word/digit ordinals, bare a–h section letters — **plus structural DIVIDER
-  words `_SUG_SEGMENT = {part, semester, module, half, level, levels}`** since
-  Session 58 — tokens sorted, so "Japanese 1" / "Japanese II" / "Elementary
+  by a **level-COLLAPSING + segment-folding + synonym-normalizing title
+  signature** (parentheticals + articles removed, the LEVEL axis folded out —
+  level words begin/interm/advanced…, roman/word/digit ordinals, bare a–h section
+  letters — **plus structural DIVIDER words `_SUG_SEGMENT = {part, semester,
+  module, half, level, levels}`** since Session 58 **plus a curated
+  abbreviation↔expansion `kb/synonym_map.json`** (ESL≡English as a Second
+  Language, ASL/PE/Math — a similarity threshold can't bridge a zero-overlap
+  synonym) — tokens sorted, so "Japanese 1" / "Japanese II" / "Elementary
   Japanese" AND "Algebra 1-2, Semester 1" / "Elementary Algebra, Part 1" /
   "Algebra 3-4" all GROUP into one family; **loosened from level-SAFE in Session 57**
   per Sam's "over-merge > under-merge", Title 5 §55050 — the worklist is
-  curator-confirmed so this only changes what surfaces, never an auto-merge;
+  curator-confirmed so this only changes what surfaces, never an auto-merge.
+  **In the popup (Session 58):** a ➕ **keyword-gather** (search + multi-select
+  extra members into the merge) and a 🏷 **"match strength" looseness slider**
+  (filters the title-evidence lane by weakest-pair cosine; default 0.62, slide to
+  0.50 to reveal more — the title receipt's `COSINE_MIN` is now 0.50);
   measured by `kb/_sug_segment_dryrun.py`), ranked by cohesion (subject + units
   agreement + size).
   The payload has **two sections, anchored first**: `groups` are
@@ -1641,26 +1648,32 @@ note `docs/kb-notes/adr-level-collapsing-consolidation.md`. **NEXT:
 worklist; title-lane pass-2 still open.
 
 
-### Session 58 — Bruh Skyleader: three Suggested-merges refinements (2026-06-16)
+### Session 58 — Bruh Skyleader: Suggested-merges deep refinement (2026-06-16)
 
-Sam-interactive (his Algebra worklist screenshot). One code-only PR (cron/dispatch
-republishes the artifacts). **Task 1 — override picker repopulates + renames:**
-picking a NON-official course from "⌕ Merge into a different existing course" pulls
-its **cleaned** title into the Proposed-title field, **editable**, and the edited
-title renames the target on Confirm (`unified_title` write); official C-ID/CCN stays
-read-only/firewalled (unchanged). **Task 2 — segment-word fold in `_sug_sig`:**
-added `_SUG_SEGMENT = {part, semester, module, half, level, levels}` so structural
-divider words stop fragmenting a family — "Algebra 1-2, Semester 1" / "Elementary
-Algebra, Part 1" / "Algebra 3-4" now group under one `algebra` signature (Sam's
-"obvious keyword" ask). Measured (`kb/_sug_segment_dryrun.py`): 8,491→8,352 groups,
-**+165** identities into families, max 44→60; Linear/College/Pre-Algebra correctly
-stay apart. Suggestions-only/curator-confirmed. **Task 3 — completion note:** new
-`merge_note` curation field end-to-end (popup input → `_apply_curation.py` FIELDS →
-generator `r.note` → ⚑ chip + ⓘ-modal line + live overlay), for "both parts must be
-completed for full credit" on segmented A/B-1/2 mints. Tests 49→50
-(`tests/uc_worklist_note_rename.test.js`). Lessons:
-`docs/ccr_cluster_cleanup_lessons.md` (Session 58). **NEXT:
-`docs/session_59_handoff.md`** — the Jaccard measurement; title-lane pass-2.
+Sam-interactive (Algebra then ESL worklist screenshots). **Three code-only PRs**
+(cron/dispatch republishes artifacts). Full story:
+`docs/ccr_cluster_cleanup_lessons.md` (Session 58 + cont.).
+- **#445 — override-rename + segment-fold + completion note.** Picking a
+  NON-official course in "⌕ Merge into a different course" pulls its cleaned title
+  in **editable** (renames the target on Confirm; official stays firewalled);
+  `_SUG_SEGMENT = {part,semester,module,half,level,levels}` folds divider words so
+  "Algebra 1-2, Semester 1"/"…, Part 1"/"Algebra 3-4" group under one `algebra`
+  sig; new `merge_note` curation field (⚑ chip + ⓘ-modal line) for "both parts
+  required for full credit" on segmented mints.
+- **#446 — synonym map + keyword-gather.** `kb/synonym_map.json` normalizes
+  abbreviation↔expansion (ESL≡English as a Second Language, ASL/PE/Math) in
+  `_sug_sig` — **a similarity threshold can't bridge a zero-overlap synonym**
+  (ESL→84, ASL→60, PE→18; global flat). The popup ➕ **keyword-gather** lets the
+  curator search + multi-select extra members (the broad-family judgment).
+- **PR-B — looseness slider.** 🏷 "match strength ≥ X" header slider filters the
+  title lane by weakest-pair cosine; lowered the title dry-run `COSINE_MIN`
+  0.62→0.50 + regenerated the receipt (5.9MB→2.0MB — it was stale), default 0.62
+  = no-op, slide to 0.50 reveals ~1.3k weaker groups. The slider rides the title
+  lane because it's the ONLY continuous-score lane.
+
+Measure-first: `kb/_sug_segment_dryrun.py` (synonym-aware). Tests 48→53
+(override-rename, keyword-gather, looseness-slider). **NEXT:
+`docs/session_59_handoff.md`** — member-join Jaccard 0.5→0.4 (measure first).
 
 
 ---

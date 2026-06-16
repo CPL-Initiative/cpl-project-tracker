@@ -1266,6 +1266,13 @@
         // drag-handle title bar with an explicit ✕ closer. renderGroup() wipes
         // only `box` below, so the bar — and any dragged position — survives
         // Skip/Keep/Confirm advances.
+        // 🏷 looseness slider state (Session 58, Sam 2026-06-16). The title-
+        // similarity lane is the ONE lane with a continuous score (cos_min, the
+        // group's weakest pair). The receipt now carries the 0.50–0.62 band;
+        // this floor filters which 🏷 groups SURFACE. Default 0.62 reproduces the
+        // pre-slider behavior exactly (every pair ≥ 0.62); slide to 0.50 to
+        // reveal weaker title matches. Other lanes carry no cosine → unaffected.
+        var titleFloor = 0.62;
         var head = el("div", { style: "display:flex;align-items:center;gap:8px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;border-radius:10px 10px 0 0;background:#f8fafc;cursor:move;user-select:none;" });
         head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;" }, ["✨ Suggested merges"]));
         // The "N of M" position counter lives here next to the title (Sam,
@@ -1275,6 +1282,23 @@
         var headCount = el("span", { style: "font-size:.8rem;color:#64748b;font-weight:600;" }, [""]);
         head.appendChild(headCount);
         head.appendChild(el("span", { style: "flex:1;" }, []));
+        // 🏷 Match-strength looseness slider — title lane only.
+        var loosenWrap = el("label", {
+          title: "Looseness for the 🏷 title-similarity lane only. Lower = more (weaker) title-match groups surface; 0.62 is the default (today's behavior). Other lanes are unaffected, and every merge stays your one-click Confirm. Set it before you reach the 🏷 lane.",
+          style: "display:flex;align-items:center;gap:5px;font-size:.74rem;color:#64748b;font-weight:600;cursor:pointer;white-space:nowrap;" });
+        loosenWrap.appendChild(el("span", {}, ["🏷 strength ≥"]));
+        var loosen = el("input", { type: "range", min: "0.50", max: "0.85", step: "0.01", value: String(titleFloor), style: "width:84px;cursor:pointer;" });
+        loosen.onmousedown = function (e) { e.stopPropagation(); };   // drag the thumb, not the popup
+        var loosenVal = el("span", { style: "font-variant-numeric:tabular-nums;color:var(--text-strong);min-width:2.2em;" }, [titleFloor.toFixed(2)]);
+        loosen.oninput = function () {
+          var nf = parseFloat(this.value);
+          // Loosening can reveal 🏷 groups ANYWHERE (incl. before the cursor),
+          // so restart the queue; tightening only skips forward, keep position.
+          if (nf < titleFloor) i = 0;
+          titleFloor = nf; loosenVal.textContent = nf.toFixed(2); renderGroup();
+        };
+        loosenWrap.appendChild(loosen); loosenWrap.appendChild(loosenVal);
+        head.appendChild(loosenWrap);
         var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close",
           style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["✕"]);
         closeX.onclick = close;
@@ -1303,9 +1327,12 @@
         function renderGroup() {
           box.innerHTML = "";
           // Skip exhausted groups AND persistently-dismissed ones ("Keep
-          // as-is" — matched on the current live-member signature).
+          // as-is" — matched on the current live-member signature) AND 🏷 title-
+          // lane groups below the looseness floor (their weakest pair cosine =
+          // g.score; default 0.62 = today's behavior, slide down to reveal more).
           while (i < groups.length &&
-                 (liveMembers(groups[i]).length < 2 || dismissed[groupSig(groups[i])])) i++;
+                 (liveMembers(groups[i]).length < 2 || dismissed[groupSig(groups[i])]
+                  || (groups[i]._kind === "title" && (groups[i].score || 0) < titleFloor))) i++;
           if (i >= groups.length) {
             headCount.textContent = "";
             box.appendChild(el("p", { style: "color:#6b7280;" }, ["End of the worklist — nice work. New suggestions regenerate on the next daily build."]));

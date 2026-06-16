@@ -76,7 +76,14 @@ from _consolidation_guards import (ROMAN, WORDNUM, extract_marks,
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.join(HERE, "title_consolidation_out")
 
-COSINE_MIN = 0.62
+# Lowered 0.62 → 0.50 (Session 58, Sam 2026-06-16) to give the worklist's
+# "match strength" looseness slider headroom: the receipt now carries the weaker
+# 0.50–0.62 band (each group tagged cos_min/cos_max), and the consumer slider
+# filters which title-lane groups SURFACE — default floor 0.62 (today's
+# behavior), slide down to 0.50 to reveal more candidates. The guard suite
+# (_consolidation_guards: gender/sport/level conflicts) still blocks bad merges
+# regardless of cosine, and every merge stays curator-confirmed.
+COSINE_MIN = 0.50
 PAIR_DF_CAP = 60       # tokens more common than this don't generate candidates
 TOP_IDF_TOKENS = 3     # titles are short — index each doc's 3 rarest tokens
 GROUP_CAP = 10         # smog families run 8-12; chained blobs still capped

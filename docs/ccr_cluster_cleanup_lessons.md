@@ -1626,7 +1626,23 @@ but he wanted "ESL"-titled courses surfaced too, and floated a confidence slider
   `querySelector("input[type=search]")`; scoped them to the override panel via
   `toggle.parentNode`. Lesson: when adding a second instance of a control, the
   old test's unscoped selector silently grabs the wrong one.
-- **Layer 3 — looseness slider** (NEXT, separate PR): a narrow knob on the
-  title-similarity lane. Needs the title-lane generator to emit groups down to a
-  LOWER cosine floor + carry per-group cos, then the client slider raises/lowers
-  the floor live. Measure the lower-floor title-lane payload first.
+- **Layer 3 — looseness slider (SHIPPED, PR-B).** A 🏷 "match strength ≥ X"
+  slider in the worklist header filters which TITLE-lane groups surface by their
+  weakest-pair cosine (`g.score` = cos_min). Lowered the title dry-run's
+  `COSINE_MIN` 0.62→0.50 and regenerated the receipt so it carries the 0.50–0.62
+  band; default floor 0.62 reproduces today's behavior exactly, slide to 0.50 to
+  reveal ~1.3k weaker groups. Key realizations:
+  - **Filtering by cos_min at floor 0.62 == the old 0.62-pair-receipt.** The old
+    receipt required every pair ≥ 0.62; `score` = the group's weakest pair, so
+    `score ≥ 0.62` is identical → the slider default is a true no-op vs. today.
+  - **Regenerating the receipt SHRANK it (5.9MB→2.0MB)** even at a lower floor —
+    the committed receipt was stale (pre auto-merge + Z-remint), so current
+    staging has far fewer dark M-IDs to pair. Always re-measure against current
+    staging, not the committed receipt.
+  - **Loosening must reset the cursor** (`i = 0`): a revealed 🏷 group can sit
+    anywhere in the queue, incl. before the cursor; tightening only skips forward
+    so it keeps position. One-directional reset.
+  - The slider rides the title lane because it's the **only lane with a
+    continuous score** — anchored/singleton/family/evidence are signature-
+    equality, and the synonym/segment folds are binary. A slider has nothing to
+    turn on those. Test: `tests/uc_worklist_looseness_slider.test.js`.
