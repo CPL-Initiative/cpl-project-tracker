@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-16T15:37:59Z",
-  "count": 28325,
+  "_synced_at": "2026-06-16T18:42:05Z",
+  "count": 28335,
   "curations": {
     "AERO M10BA": {
       "merge_into": "AERO Z1001",
@@ -4522,6 +4522,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ART M1117": {
+      "unified_title": "Ceramic Sculpture Advanced",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T17:26:09.336429+00:00"
+    },
+    "ART M1118": {
+      "merge_into": "ART M1117",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T17:26:09.336429+00:00"
+    },
     "ARTA M10AI": {
       "merge_into": "ARTS M1436",
       "reviewed_by": "automerge-v1@bot",
@@ -5012,6 +5022,11 @@
       "merge_into": "ARTS M1169",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M1032": {
+      "merge_into": "ART M1117",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T17:26:09.336429+00:00"
     },
     "ARTS M1034": {
       "unified_title": "Advanced Ceramics 1",
@@ -7955,6 +7970,11 @@
       "unified_title": "Figurative Ceramic Sculpture 1",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M1222": {
+      "merge_into": "ART M1117",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T17:26:09.336429+00:00"
     },
     "ARTS M1229": {
       "unified_title": "Ceramics - Handbuilding 1",
@@ -107681,6 +107701,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "MATH M1066": {
+      "unified_title": "Elementary Algebra, Part 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T17:23:23.259963+00:00"
+    },
     "MATH M1070": {
       "merge_into": "MATH M1062",
       "reviewed_by": "automerge-v1@bot",
@@ -107725,6 +107750,16 @@
       "unified_title": "Math Immersion Review - Basic Concepts Level 1",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MATH M10AC": {
+      "merge_into": "MATH M1066",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T17:23:23.259963+00:00"
+    },
+    "MATH M10AE": {
+      "merge_into": "MATH M1066",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T17:23:23.259963+00:00"
     },
     "MATH M10AG": {
       "merge_into": "GRAF Z1011",
@@ -107860,6 +107895,11 @@
       "merge_into": "MATH Z1025",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MATH M10CX": {
+      "merge_into": "MATH M1066",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T17:23:23.259963+00:00"
     },
     "MATH M10DA": {
       "merge_into": "MATH M1002",
@@ -108096,6 +108136,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "MATH M10JZ": {
+      "merge_into": "MATH M1066",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T17:23:23.259963+00:00"
+    },
     "MATH M10KN": {
       "merge_into": "MATH M1028",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -108105,6 +108150,11 @@
       "merge_into": "MATH M1080",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MATH M10KX": {
+      "merge_into": "MATH M1066",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T17:23:23.259963+00:00"
     },
     "MATH M10LQ": {
       "merge_into": "MATH M1298",

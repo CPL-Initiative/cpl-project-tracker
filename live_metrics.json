@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-16T15:37:50.480Z",
+  "scraped_at": "2026-06-16T18:41:56.468Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -563,13 +563,13 @@
         },
         {
           "college": "Moorpark College",
-          "students": 123,
+          "students": 124,
           "units": 14,
-          "avgUnits": 0.11382113821138211,
+          "avgUnits": 0.11290322580645161,
           "transcriptionRate": 28.6,
-          "avgTranscribed": 0.032520325203252036,
+          "avgTranscribed": 0.03225806451612903,
           "criteriaMetCount": 1,
-          "militaryStudents": 119,
+          "militaryStudents": 120,
           "nonMilitaryStudents": 4,
           "apprenticeStudents": 0,
           "savings": 18100,
@@ -758,13 +758,13 @@
         },
         {
           "college": "Santa Rosa Junior College",
-          "students": 427,
+          "students": 429,
           "units": 1704,
-          "avgUnits": 3.990632318501171,
+          "avgUnits": 3.972027972027972,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 427,
+          "militaryStudents": 429,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 2947920,
@@ -893,13 +893,13 @@
         },
         {
           "college": "Citrus College",
-          "students": 200,
+          "students": 201,
           "units": 784,
-          "avgUnits": 3.92,
+          "avgUnits": 3.900497512437811,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 200,
+          "militaryStudents": 201,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 1356320,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,779",
+      "value": "47,783",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,524"
+          "value": "24,528"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47779,
+    "Students": 47783,
     "Units": 228975.15000000002,
     "TranscribedUnits": 99049.95,
     "Savings": 318619220.25,
     "YearImpact": 1290005228.8999999,
-    "MilitaryStudents": 24524,
+    "MilitaryStudents": 24528,
     "NonMilitaryStudents": 23331,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.7923805437535325,
-    "TranscribedAverage": 2.073085455953452
+    "AverageUnits": 4.791979365046147,
+    "TranscribedAverage": 2.072911914279137
   }
 }

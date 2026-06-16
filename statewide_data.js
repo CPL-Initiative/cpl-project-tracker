@@ -80986,10 +80986,6 @@ window.CPL_STATEWIDE = {
           "credit": "1.5 units in Introduction to EMS System"
         },
         {
-          "course": "EMT 90",
-          "credit": "Emergency Medical Technician"
-        },
-        {
           "course": "EMT 093",
           "credit": "9 hours in Emergency Medical Technician"
         },
@@ -146199,7 +146195,7 @@ window.CPL_STATEWIDE = {
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
       "collaborative_type": "Local",
-      "adopters": 82,
+      "adopters": 81,
       "adopter_names": [
         "Allan Hancock College",
         "American River College",
@@ -146208,7 +146204,6 @@ window.CPL_STATEWIDE = {
         "Barstow Community College",
         "Berkeley City College",
         "Butte College",
-        "CA MAP INITIATIVE COLLEGE",
         "Cabrillo College",
         "Cerritos College",
         "Chabot College",
@@ -146327,7 +146322,7 @@ window.CPL_STATEWIDE = {
         "Southwestern College",
         "Taft College"
       ],
-      "total_addressable": 122,
+      "total_addressable": 121,
       "credit_recs": [
         {
           "course": "MATH 10",
@@ -146368,10 +146363,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "SOC 125",
           "credit": "3 hours in Statistics for the Social Sciences"
-        },
-        {
-          "course": "ENE 35",
-          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         },
         {
           "course": "LACCD GE 2",
@@ -220710,11 +220701,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Mt. San Antonio College",
-        "credit_recs": 84,
+        "credit_recs": 83,
         "exhibits": 75,
         "disciplines": 4,
         "ccc_collaborative": 0,
-        "industry_certs": 3,
+        "industry_certs": 2,
         "pct": 0.7
       },
       {
@@ -221168,20 +221159,20 @@ window.CPL_STATEWIDE = {
         "pct": 0.0
       },
       {
-        "college": "CA MAP INITIATIVE COLLEGE",
-        "credit_recs": 3,
-        "exhibits": 2,
-        "disciplines": 2,
-        "ccc_collaborative": 2,
-        "industry_certs": 2,
-        "pct": 0.0
-      },
-      {
         "college": "Santa Barbara City College",
         "credit_recs": 2,
         "exhibits": 2,
         "disciplines": 1,
         "ccc_collaborative": 0,
+        "industry_certs": 2,
+        "pct": 0.0
+      },
+      {
+        "college": "CA MAP INITIATIVE COLLEGE",
+        "credit_recs": 2,
+        "exhibits": 1,
+        "disciplines": 1,
+        "ccc_collaborative": 2,
         "industry_certs": 2,
         "pct": 0.0
       },
@@ -221207,10 +221198,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 1962,
-        "exhibits": 1031,
-        "courses": 1100,
-        "colleges": 53,
+        "credit_recs": 1961,
+        "exhibits": 1030,
+        "courses": 1099,
+        "colleges": 52,
         "ccc_collaborative": 498,
         "pct": 17.3
       },
@@ -221230,11 +221221,11 @@ window.CPL_STATEWIDE = {
         "courses": 27,
         "colleges": 81,
         "ccc_collaborative": 1,
-        "pct": 5.6
+        "pct": 5.7
       },
       {
         "discipline": "Health",
-        "credit_recs": 422,
+        "credit_recs": 421,
         "exhibits": 193,
         "courses": 274,
         "colleges": 45,
@@ -221407,14 +221398,14 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 5762,
+        "credit_recs": 5761,
         "exhibits": 1181,
-        "colleges": 86,
+        "colleges": 85,
         "pct": 50.9
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3327,
+        "credit_recs": 3326,
         "exhibits": 1144,
         "colleges": 78,
         "pct": 29.4
@@ -221451,9 +221442,9 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 6802,
+        "credit_recs": 6801,
         "exhibits": 1883,
-        "colleges": 92,
+        "colleges": 91,
         "pct": 60.0
       },
       {
@@ -221479,7 +221470,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Noncredit, community education, and contract education coursework (N)",
-        "credit_recs": 204,
+        "credit_recs": 203,
         "exhibits": 168,
         "colleges": 11,
         "pct": 1.8
@@ -221523,9 +221514,9 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 9799,
+        "credit_recs": 9797,
         "exhibits": 3696,
-        "colleges": 99,
+        "colleges": 98,
         "disciplines": 23,
         "pct": 86.5
       },
@@ -221949,6 +221940,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-16T15:37:15",
-  "total_credit_recs": 11329
+  "generated_at": "2026-06-16T18:41:22",
+  "total_credit_recs": 11327
 };
