@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSTI ↔ CPL Quick-Win Brief</title>
+<style>
+  :root{
+    --ink:#1a2433; --muted:#5b6675; --line:#dfe4ea; --bg:#f4f6f9; --card:#ffffff;
+    --brand:#0b5a8a; --brand-soft:#e7f1f8;
+    --ready:#137a4b; --ready-bg:#e3f5ec;
+    --verify:#9a6b00; --verify-bg:#fbf1d9;
+    --hi:#b3261e;  --hi-bg:#fbe6e4;
+    --med:#9a6b00; --med-bg:#fbf1d9;
+    --low:#5b6675; --low-bg:#eceff3;
+    --flag-bg:#fff8e6; --flag-line:#e8c96a;
+    --note-bg:#eef4f9; --note-line:#bcd6e8;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1180px; margin:0 auto; padding:28px 20px 60px}
+  header.page{border-bottom:3px solid var(--brand); padding-bottom:16px; margin-bottom:8px}
+  header.page .kicker{color:var(--brand); font-weight:700; letter-spacing:.06em; text-transform:uppercase; font-size:12px}
+  header.page h1{margin:6px 0 4px; font-size:27px; line-height:1.2}
+  header.page .sub{color:var(--muted); font-size:14px}
+  header.page .sub b{color:var(--ink)}
+
+  /* live metric strip */
+  .stats{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 6px}
+  .stat{flex:1 1 150px; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px}
+  .stat .n{font-size:22px; font-weight:700; color:var(--brand)}
+  .stat .l{font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-top:2px}
+
+  .callout{border-radius:10px; padding:13px 15px; margin:18px 0; font-size:13.5px; line-height:1.55}
+  .callout.note{background:var(--note-bg); border:1px solid var(--note-line)}
+  .callout.flag{background:var(--flag-bg); border:1px solid var(--flag-line)}
+  .callout b{color:var(--ink)}
+  .callout .h{font-weight:700; display:block; margin-bottom:4px}
+
+  h2.sec{margin:34px 0 4px; font-size:20px}
+  h2.sec .tag{font-weight:500; color:var(--muted); font-size:13.5px}
+  .deck{color:var(--muted); font-size:13px; margin:0 0 12px; font-style:italic}
+
+  table{width:100%; border-collapse:collapse; background:var(--card);
+    border:1px solid var(--line); border-radius:10px; overflow:hidden; font-size:13px}
+  thead th{background:var(--brand); color:#fff; text-align:left; padding:9px 11px; font-size:11.5px;
+    text-transform:uppercase; letter-spacing:.03em; vertical-align:bottom; font-weight:600}
+  tbody td{padding:10px 11px; border-top:1px solid var(--line); vertical-align:top}
+  tbody tr:nth-child(even){background:#fbfcfd}
+  td .prog{font-weight:700; color:var(--ink)}
+  td .code{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace; font-weight:700}
+  td .src{display:block; margin-top:5px; font-size:11px; color:var(--muted)}
+  td .src::before{content:"⛓ "; opacity:.6}
+
+  .badge{display:inline-block; padding:2px 9px; border-radius:999px; font-size:11.5px; font-weight:700; white-space:nowrap}
+  .b-ready{color:var(--ready); background:var(--ready-bg)}
+  .b-verify{color:var(--verify); background:var(--verify-bg)}
+  .b-h{color:var(--hi); background:var(--hi-bg)}
+  .b-m{color:var(--med); background:var(--med-bg)}
+  .b-l{color:var(--low); background:var(--low-bg)}
+  .college{font-weight:700; color:var(--brand)}
+  .unver{color:var(--hi); font-weight:600}
+
+  .startbox{margin-top:30px; background:linear-gradient(180deg,#0b5a8a,#0a4d77); color:#fff;
+    border-radius:12px; padding:20px 22px}
+  .startbox h2{margin:0 0 8px; font-size:19px; letter-spacing:.02em}
+  .startbox h2 span{font-size:22px}
+  .startbox p{margin:8px 0; font-size:14px; line-height:1.6}
+  .startbox b{color:#ffd98a}
+  .startbox .row{display:flex; gap:18px; flex-wrap:wrap; margin-top:6px}
+  .startbox .row > div{flex:1 1 280px; background:rgba(255,255,255,.08); border-radius:9px; padding:12px 14px}
+  .startbox .row .lbl{font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#bcd6e8; font-weight:700}
+
+  footer{margin-top:30px; color:var(--muted); font-size:11.5px; border-top:1px solid var(--line); padding-top:12px}
+  footer a{color:var(--brand)}
+
+  @media print{
+    body{background:#fff}
+    .wrap{max-width:none; padding:0}
+    .stat,.callout,table,.startbox{break-inside:avoid}
+    thead th{background:#0b5a8a !important; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .startbox{background:#0b5a8a !important; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="page">
+    <div class="kicker">CCCCO × Cal OES / CSTI Partnership</div>
+    <h1>CSTI ↔ Credit for Prior Learning — Quick-Win Brief</h1>
+    <div class="sub"><b>MOU prep · September 2026 Board of Governors</b> &nbsp;·&nbsp; Prepared 2026-06-16 &nbsp;·&nbsp; MAP / CPL team</div>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><div class="n">98</div><div class="l">Active colleges</div></div>
+    <div class="stat"><div class="n">15</div><div class="l">Leading colleges</div></div>
+    <div class="stat"><div class="n">47,779</div><div class="l">Students served</div></div>
+    <div class="stat"><div class="n">24,524</div><div class="l">Military learners</div></div>
+    <div class="stat"><div class="n">$319M</div><div class="l">Est. savings</div></div>
+  </div>
+  <div class="deck">Live dashboard metrics, scraped 2026-06-16 15:24 UTC.</div>
+
+  <div class="callout note">
+    <span class="h">Sourcing caveat — read first</span>
+    The live catalog/portal pages (hancockcollege.edu, cuesta.edu, map.rccd.edu, acenet.edu) all returned
+    <b>HTTP 403 to automated fetch</b> this session. Figures were triangulated from (a) the repo's
+    <b>daily-synced MAP mirror</b> (<code>statewide_data.js</code>, <code>kb/credentials.json</code>,
+    <code>kb/reference/cid_descriptors.json</code> — authoritative for "what's published statewide") and
+    (b) verbatim web-search snippets of the live catalog PDFs. Course names are well-corroborated; some
+    <span class="unver">unit values and course numbers are flagged UNVERIFIED</span> and should be confirmed
+    against the live catalog before the MOU.
+  </div>
+
+  <!-- ===================== TABLE A ===================== -->
+  <h2 class="sec">Table A — Quick-win CPL adoptions at Allan Hancock &amp; Cuesta</h2>
+  <p class="deck">College already teaches it + a statewide rec is already published → adoptable now, no new faculty workgroup required.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:8%">College</th>
+        <th style="width:21%">Local program / course</th>
+        <th style="width:24%">Matching PUBLISHED statewide rec</th>
+        <th style="width:11%">Approx. units*</th>
+        <th style="width:9%">Readiness</th>
+        <th style="width:27%">Suggested action · source</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="college">Hancock</td>
+        <td><span class="code">FT 307 + FT 308</span> Firefighter I Academy (NFPA 1001, SFT)</td>
+        <td><span class="prog">Firefighter 1</span> — CCC Collaborative, SFT · <b>17 colleges</b> (most-adopted fire cred)</td>
+        <td>~13u (6 + 7)</td>
+        <td><span class="badge b-ready">Ready now</span></td>
+        <td>Adopt the FF1 rec into its academy; SFT cert holders earn CPL.
+          <span class="src">hancockcollege.edu (firetech.php / FT catalog); map.rccd.edu/statewidecpl</span></td>
+      </tr>
+      <tr>
+        <td class="college">Hancock</td>
+        <td><span class="code">EMS 301</span> EMS Academy 1A (EMT)</td>
+        <td><span class="prog">EMT</span> — CCC Collaborative, NREMT · <b>25 colleges</b></td>
+        <td>~6u</td>
+        <td><span class="badge b-ready">Ready now</span></td>
+        <td>Adopt EMT rec → EMS 301.
+          <span class="src">hancockcollege.edu (EMS catalog); map.rccd.edu/statewidecpl</span></td>
+      </tr>
+      <tr>
+        <td class="college">Hancock</td>
+        <td><span class="code">EMSP 323 / 324</span> Paramedicine Theory / Lab (academy)</td>
+        <td><span class="prog">Paramedic License</span> — CCC Collaborative, EMSA · C-ID EMS 100X–105X</td>
+        <td>core ~8u; full cert larger</td>
+        <td><span class="badge b-ready">Ready now</span></td>
+        <td>Adopt Paramedic rec → EMSP series.
+          <span class="src">hancockcollege.edu (Paramedic cert); map.rccd.edu/statewidecpl</span></td>
+      </tr>
+      <tr>
+        <td class="college">Hancock</td>
+        <td><span class="code">LE 321 + LE 322</span> Basic Law Enforcement Academy (POST)</td>
+        <td><span class="prog">Administration of Justice (POST)</span> — published MAP workgroup area</td>
+        <td>~20u (catalog)</td>
+        <td><span class="badge b-verify">Verify</span></td>
+        <td>Confirm exact published POST rec, then adopt; custody (LE 330 / STC) as fast-follow.
+          <span class="src">hancockcollege.edu (LE academy); map.rccd.edu/about</span></td>
+      </tr>
+      <tr>
+        <td class="college">Hancock</td>
+        <td><span class="code">WFTO 310 (S-110), WFTO 313 (S-190)</span> Wildland</td>
+        <td><span class="prog">Wildland</span> — published only as <b>NWCG bundles</b>, not standalone S-130/S-190</td>
+        <td><span class="unver">UNVERIFIED</span></td>
+        <td><span class="badge b-verify">Verify</span></td>
+        <td>Confirm Hancock's WFTO set matches a published NWCG bundle (standalone S-130/S-190 is Local only).
+          <span class="src">hancockcollege.edu (WFTO); map.rccd.edu/statewidecpl</span></td>
+      </tr>
+      <tr>
+        <td class="college">Cuesta</td>
+        <td><span class="code">EMS 201</span> Emergency Medical Technician</td>
+        <td><span class="prog">EMT</span> — CCC Collaborative, NREMT · <b>25 colleges</b></td>
+        <td>9.5u</td>
+        <td><span class="badge b-ready">Ready now</span></td>
+        <td>Adopt EMT rec → EMS 201.
+          <span class="src">cuesta.edu (EMS dept); map.rccd.edu/statewidecpl</span></td>
+      </tr>
+      <tr>
+        <td class="college">Cuesta</td>
+        <td><span class="prog">Paramedic</span> (CAAHEP-accredited, EMS prefix; A.S. + certs)</td>
+        <td><span class="prog">Paramedic License</span> — CCC Collaborative, EMSA</td>
+        <td><span class="unver">course #s / units UNVERIFIED</span></td>
+        <td><span class="badge b-ready">Ready now</span></td>
+        <td>Adopt Paramedic rec; CAAHEP accreditation strengthens it.
+          <span class="src">cuesta.edu (Paramedic); map.rccd.edu/statewidecpl</span></td>
+      </tr>
+      <tr>
+        <td class="college">Cuesta</td>
+        <td><span class="code">AJ</span> Admin of Justice (AS-T) / Criminal Justice (AA)</td>
+        <td><span class="prog">Administration of Justice (POST)</span> area</td>
+        <td><span class="unver">per-course UNVERIFIED</span></td>
+        <td><span class="badge b-verify">Verify</span></td>
+        <td>Cuesta has AJ degrees but no own POST academy — articulate POST-academy completion (e.g. Hancock's) into AJ.
+          <span class="src">cuesta.edu (CJ dept); map.rccd.edu/about</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout note" style="font-size:12.5px">
+    <b>*Units</b> = the local course value the credit maps to; the <b>statewide rec itself fixes no units</b> — faculty determine the award per <b>Title&nbsp;5 §55050</b>.
+  </div>
+  <div class="callout flag">
+    <span class="h">Table A flags</span>
+    Cuesta Paramedic/AJ course numbers &amp; units unverified (WAF blocked the catalog); Hancock WFTO units +
+    standalone-wildland rec unverified; the published EMT rec shows <b>~25 total adopter colleges</b> in the mirror —
+    your "15 of 24 fire-college subset" figure could <b>not</b> be directly confirmed (15 is also the live Leading-college
+    count — possible crossed wire). C-ID FIRE/EMS descriptors in the CCCCO file show 2022–23 expirations — confirm current validity.
+  </div>
+
+  <!-- ===================== TABLE B ===================== -->
+  <h2 class="sec">Table B — CSTI certs to evaluate next <span class="tag">(new statewide recommendations)</span></h2>
+  <p class="deck">CSTI's own courses have <b>no</b> ACE National Guide entry and <b>no</b> statewide rec — confirmed. ACE credit in this space attaches only to the FEMA NFA/EMPP (and select EMI-IS) courses CSTI sometimes <i>delivers</i>, never to CSTI's own curriculum.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:18%">CSTI cert / series</th>
+        <th style="width:17%">Existing credit anywhere?</th>
+        <th style="width:18%">Target CCC course / C-ID FIRE descriptor</th>
+        <th style="width:11%">Degree destination</th>
+        <th style="width:9%">Priority</th>
+        <th style="width:27%">Rationale + first workgroup step</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="prog">HazMat First Responder Ops (FRO, 16h) / Awareness (8h)</span></td>
+        <td>None ACE; <b>regional articulation EXISTS</b> (Hancock ENVT 156; Palomar)</td>
+        <td>College EH&amp;S FRO course (Hancock <span class="code">ENVT 156</span>, 1u); no precise C-ID (FIRE 232X is IC-level)</td>
+        <td>Miramar PSMA</td>
+        <td><span class="badge b-h">H</span></td>
+        <td>Local precedent already exists → fastest, lowest-risk first rec. <b>Step:</b> convene EH&amp;S/fire faculty; use Hancock ENVT 156 as the model crosswalk (AI drafts → faculty validate).
+          <span class="src">caloes.ca.gov (CSTI HMEP)</span></td>
+      </tr>
+      <tr>
+        <td><span class="prog">HazMat Technician (160h) + Specialist (80h) + Incident Commander (16h)</span></td>
+        <td>None ACE; IC articulated locally (Palomar)</td>
+        <td>College HazMat Technician course / <b>C-ID FIRE 232X "Hazardous Materials Incident Commander"</b> (exists — best C-ID match)</td>
+        <td>Miramar PSMA</td>
+        <td><span class="badge b-h">H</span></td>
+        <td>Most contact hours, clearest OSHA 1910.120 / NFPA 472 competencies, unit-bearing. <b>Step:</b> faculty map the Tech module sequence (A–D) to course SLOs; verify FIRE 232X currency for the IC level.
+          <span class="src">caloes.ca.gov (CSTI)</span></td>
+      </tr>
+      <tr>
+        <td><span class="prog">Emergency Management Specialist</span> (SEMS/NIMS/ICS; 4 core + ≥72 elec hrs)</td>
+        <td>None on CSTI's own (FEMA EMI core codes route via FEMA, not CSTI)</td>
+        <td>Lower-div Emergency Management courses; FIRE 231X (Intro ICS) partial</td>
+        <td><b>MVC BSEM</b> (direct feeder) + Miramar PSMA</td>
+        <td><span class="badge b-h">H</span></td>
+        <td>Aligns to a dedicated B.S. degree; highest strategic value. <b>Step:</b> stand up workgroup at Moreno Valley (EM degree); crosswalk the Specialist core to lower-div EM courses.
+          <span class="src">caloes.ca.gov (CSTI EM program)</span></td>
+      </tr>
+      <tr>
+        <td><span class="prog">Terrorism / Homeland Security Specialist</span> (Terrorism I 24h / II 16h / III 24h + elec)</td>
+        <td>None</td>
+        <td>AJ / Homeland Security courses (no fire C-ID; AJ has its own)</td>
+        <td>Miramar PSMA (Public Safety Mgmt)</td>
+        <td><span class="badge b-m">M</span></td>
+        <td>Clean AJ/POST-relevant pathway, narrower audience. <b>Step:</b> AJ/HS faculty draft crosswalk of Terrorism I–III to AJ course outcomes.
+          <span class="src">caloes.ca.gov (CSTI CJ/HS)</span></td>
+      </tr>
+      <tr>
+        <td><span class="prog">Public Information Officer ladder</span> (Basic L0105 → Intermediate 24h → Advanced L0388)</td>
+        <td>None on CSTI delivery (L0105/L0388 are FEMA EMI numbers)</td>
+        <td>EM / Communications elective</td>
+        <td>MVC BSEM / Miramar PSMA elective</td>
+        <td><span class="badge b-m">M / L</span></td>
+        <td>Narrow but clean Specialist Certificate. <b>Step:</b> pilot as an EM/Comms elective crosswalk; lowest urgency.
+          <span class="src">caloes.ca.gov (CSTI)</span></td>
+      </tr>
+      <tr>
+        <td><span class="prog">ICS / IS short courses</span> (ICS-100–400, IS-700/800)</td>
+        <td><b>FEMA courses</b> — some carry ACE / college equivalency; credit is FEMA's, not CSTI's</td>
+        <td>FIRE 231X aligns ICS — but route via FEMA/ACE</td>
+        <td>n/a</td>
+        <td><span class="badge b-l">L</span></td>
+        <td><b>Do NOT build a CSTI rec.</b> Handle via FEMA/ACE/college equivalency; don't assign fixed units to short ICS/IS (Title&nbsp;5 / accuracy guard).
+          <span class="src">usfa.fema.gov (NFA college-credit)</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout flag">
+    <span class="h">Table B flags</span>
+    ACE-on-CSTI = <b>negative confirmed</b> but couldn't be machine-proven exhaustively (ACE site 403'd); the ACE National
+    Guide attaches credit to FEMA NFA/EMPP and select EMI-IS courses CSTI <i>delivers</i>, never to CSTI's own curriculum —
+    keep ACE language off CSTI's proprietary certs. A few CSTI elective hours came from aggregator pages, not a single live CSTI catalog.
+  </div>
+
+  <!-- ===================== START HERE ===================== -->
+  <div class="startbox">
+    <h2><span>🚩</span> START HERE</h2>
+    <div class="row">
+      <div>
+        <div class="lbl">Adopt now — Allan Hancock</div>
+        <p style="margin:6px 0 0">Adopt the <b>Firefighter 1</b> statewide rec into its FT 307/308 SFT academy — the most-adopted fire credential statewide.</p>
+      </div>
+      <div>
+        <div class="lbl">Adopt now — Cuesta</div>
+        <p style="margin:6px 0 0">Adopt the <b>EMT</b> rec into EMS 201 — the most mature rec (25 adopters) and Cuesta's strongest lane (no fire program).</p>
+      </div>
+    </div>
+    <p style="margin-top:14px"><b>Workgroup first:</b> put the <b>CSTI Hazardous Materials series (FRO → Technician)</b> through the faculty workgroup before anything else — Allan Hancock already grants for-credit standing to CSTI HazMat certs (ENVT 150/156), giving a ready, faculty-validated local crosswalk to scale into California's first CSTI-origin statewide CPL recommendation, with the <b>Emergency Management Specialist → Moreno Valley BSEM</b> pathway as the high-value fast-follow.</p>
+  </div>
+
+  <footer>
+    Definitions — <b>"Hit the ground running":</b> a course/academy the college already offers that maps to an already-published statewide CPL credit recommendation (adoptable now). &nbsp;
+    <b>"CSTI certs we haven't evaluated":</b> CSTI certifications with no existing statewide CPL recommendation and no ACE National Guide entry (candidates for a new statewide recommendation). &nbsp;
+    Faculty determine credit per CA Title 5 §55050. SFT certification authority = Office of the State Fire Marshal / CAL FIRE (not Cal OES).
+    <br>Live metrics: live_metrics.json · Statewide recs: map.rccd.edu/statewidecpl · ASCCC Pathways to Credit: asccc.org/pathways-credit · CSTI: caloes.ca.gov · CPL Knowledge Base: github.com/CPL-Initiative/cpl-knowledge-base
+  </footer>
+
+</div>
+</body>
+</html>
