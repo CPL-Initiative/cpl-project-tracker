@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-16T21:35:47.421Z",
+  "scraped_at": "2026-06-16T22:50:42.816Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -893,17 +893,17 @@
         },
         {
           "college": "Citrus College",
-          "students": 201,
-          "units": 784,
-          "avgUnits": 3.900497512437811,
+          "students": 202,
+          "units": 780,
+          "avgUnits": 3.8613861386138613,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 201,
+          "militaryStudents": 202,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 1356320,
-          "yearImpact": 4756528,
+          "savings": 1349400,
+          "yearImpact": 4732260,
           "transcribedUnits": 0
         },
         {
@@ -1512,30 +1512,15 @@
           "transcribedUnits": 0
         },
         {
-          "college": "Ohlone College",
-          "students": 6,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 6,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "MiraCosta College",
+          "college": "Imperial Valley College",
           "students": 3,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 2,
-          "nonMilitaryStudents": 1,
+          "militaryStudents": 1,
+          "nonMilitaryStudents": 2,
           "apprenticeStudents": 0,
           "savings": 0,
           "yearImpact": 0,
@@ -1557,14 +1542,29 @@
           "transcribedUnits": 0
         },
         {
-          "college": "Imperial Valley College",
+          "college": "MiraCosta College",
           "students": 3,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 1,
+          "militaryStudents": 2,
+          "nonMilitaryStudents": 1,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
+          "college": "Rio Hondo College",
+          "students": 2,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 0,
           "nonMilitaryStudents": 2,
           "apprenticeStudents": 0,
           "savings": 0,
@@ -1587,15 +1587,30 @@
           "transcribedUnits": 0
         },
         {
-          "college": "Rio Hondo College",
-          "students": 2,
+          "college": "Grossmont College",
+          "students": 1,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 0,
-          "nonMilitaryStudents": 2,
+          "militaryStudents": 1,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
+          "college": "Palomar College",
+          "students": 1,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 1,
+          "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 0,
           "yearImpact": 0,
@@ -1632,29 +1647,14 @@
           "transcribedUnits": 0
         },
         {
-          "college": "Grossmont College",
-          "students": 1,
+          "college": "Ohlone College",
+          "students": 0,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 1,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Palomar College",
-          "students": 1,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 1,
+          "militaryStudents": 0,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 0,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,784",
+      "value": "47,779",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,529"
+          "value": "24,524"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47784,
-    "Units": 228975.15000000002,
+    "Students": 47779,
+    "Units": 228971.15000000002,
     "TranscribedUnits": 99049.95,
-    "Savings": 318619220.25,
-    "YearImpact": 1290005228.8999999,
-    "MilitaryStudents": 24529,
+    "Savings": 318612300.25,
+    "YearImpact": 1289980960.8999999,
+    "MilitaryStudents": 24524,
     "NonMilitaryStudents": 23331,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.791879080863888,
-    "TranscribedAverage": 2.0728685334003014
+    "AverageUnits": 4.792296824964943,
+    "TranscribedAverage": 2.073085455953452
   }
 }

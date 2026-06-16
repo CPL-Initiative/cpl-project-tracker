@@ -141366,22 +141366,185 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPICA-ACMA-1-001|MAPICA-ACMC-1-001",
+      "exhibit_id": "MAPICA-ACMA-1-001",
       "exhibit_ids": [
-        "MAPICA-ACMA-1-001",
-        "MAPICA-ACMC-1-001"
+        "MAPICA-ACMA-1-001"
       ],
-      "title": "Carpenters Apprenticeship — Millwright",
-      "unified_title": "Carpenters Apprenticeship — Millwright",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
-      "training_agency": "Joint Apprenticeship Training Committee (JATC)",
-      "confidence_title": 0.8,
-      "confidence_issuer": 0.6,
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "Apprenticeship Carpentry, Millwrighting, AS",
-        "Apprenticeship Carpentry, Millwrighting, CA"
+        "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 46,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Coastline Community College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Mendocino College",
+        "Merced College",
+        "Modesto Junior College",
+        "Napa Valley College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 47,
+      "credit_recs": [
+        {
+          "course": "AMW 033",
+          "credit": "1.5 hours in Conveyor Systems"
+        },
+        {
+          "course": "AMW 039",
+          "credit": "1.5 hours in Compressor Theory and Maintenance"
+        },
+        {
+          "course": "AMW 021",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "AMW 022",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "AMW 023A",
+          "credit": "1.5 hours in General Skills"
+        },
+        {
+          "course": "AMW 023B",
+          "credit": "1.5 hours in Millwright General Skills - B"
+        },
+        {
+          "course": "AMW 024",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "AMW 025",
+          "credit": "1.5 hours in Welding Fabrication"
+        },
+        {
+          "course": "AMW 026",
+          "credit": "1.5 hours in Cutting and Burning"
+        },
+        {
+          "course": "AMW 027",
+          "credit": "1.5 hours in Precision Optics"
+        },
+        {
+          "course": "AMW 028",
+          "credit": "1.5 hours in Machinery Shaft Alignment"
+        },
+        {
+          "course": "AMW 029A",
+          "credit": "1.5 hours in Structural Welding A"
+        },
+        {
+          "course": "AMW 029B",
+          "credit": "1.5 hours in Structural Welding B"
+        },
+        {
+          "course": "AMW 030",
+          "credit": "1.5 hours in Rigging Hardware and Procedures"
+        },
+        {
+          "course": "AMW 031",
+          "credit": "1.5 hours in Turbine Familiarization"
+        },
+        {
+          "course": "AMW 032",
+          "credit": "1.5 hours in Pumps"
+        },
+        {
+          "course": "AMW 034",
+          "credit": "1.5 hours in Drives, Pulleys and Belts"
+        },
+        {
+          "course": "AMW 036A",
+          "credit": "1.5 hours in Machinery Installation and Erection - A"
+        },
+        {
+          "course": "AMW 036B",
+          "credit": "1.5 hours in Machinery Installation and Erection - B"
+        },
+        {
+          "course": "AMW 037",
+          "credit": "1.5 hours in Gas Turbine"
+        },
+        {
+          "course": "AMW 043",
+          "credit": "1.5 hours in Tool and Equipment Application"
+        },
+        {
+          "course": "AMW 051",
+          "credit": "1.5 hours in Solar Installer Level 1"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-ACMC-1-001",
+      "exhibit_ids": [
+        "MAPICA-ACMC-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, CA",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, CA",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, CA"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -211257,16 +211420,16 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICA-ACDF-1-001"
       ],
-      "title": "Carpenters Apprenticeship — Drywall Finisher",
-      "unified_title": "Carpenters Apprenticeship — Drywall Finisher",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
-      "training_agency": "Joint Apprenticeship Training Committee (JATC)",
-      "confidence_title": 0.8,
-      "confidence_issuer": 0.6,
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, AS",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, AS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "Apprenticeship Carpentry, Drywall Finisher, AS"
+        "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, AS"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -220746,6 +220909,33 @@ window.CPL_STATEWIDE = {
       "potential_names": [],
       "total_addressable": 0,
       "credit_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXO-F3DF-1-001",
+      "exhibit_ids": [
+        "MAPCXO-F3DF-1-001"
+      ],
+      "title": "FILM 31, Digital Filmmaking",
+      "unified_title": "FILM 31, Digital Filmmaking",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "FILM 31, Digital Filmmaking"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": []
     }
   ],
   "analysis": {
@@ -221672,8 +221862,8 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 4534,
-        "exhibits": 882,
+        "credit_recs": 4535,
+        "exhibits": 883,
         "courses": 160,
         "colleges": 84,
         "ccc_collaborative": 25,
@@ -221895,8 +222085,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 1654,
-        "exhibits": 1186,
+        "credit_recs": 1655,
+        "exhibits": 1187,
         "colleges": 55,
         "pct": 14.6
       },
@@ -221967,9 +222157,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Other (O)",
-        "credit_recs": 52,
-        "exhibits": 34,
-        "colleges": 6,
+        "credit_recs": 53,
+        "exhibits": 35,
+        "colleges": 7,
         "pct": 0.5
       },
       {
@@ -221997,8 +222187,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 9799,
-        "exhibits": 3697,
+        "credit_recs": 9800,
+        "exhibits": 3698,
         "colleges": 98,
         "disciplines": 23,
         "pct": 86.5
@@ -222423,6 +222613,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-16T21:35:14",
-  "total_credit_recs": 11328
+  "generated_at": "2026-06-16T22:50:09",
+  "total_credit_recs": 11329
 };
