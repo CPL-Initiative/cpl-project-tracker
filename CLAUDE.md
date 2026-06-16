@@ -469,6 +469,9 @@ scraping proved unreliable.
 | `cpl_funding.js` | Implementation Funding tab renderer (`window.CPL_FUNDING_TAB`). Lazy-loaded by the tab shell's inline boot on first `#implementation-funding` open; injects its own `var(--token)` CSS (no Rule-4 mirror needed). Static — NOT a daily-cron artifact. Docs: `docs/cpl_funding_lessons.md`. |
 | `cpl_funding_data.js` | Funding-model data (`window.CPL_FUNDING`: pools, 3 priorities, 118 colleges + SYSTEM). Built one-shot by `funding/_build_funding_data.py` from the committed `funding/CPL_Funding_Model_2026.xlsx` (PII-clean institutional/census aggregates; builder re-derives every allocation and asserts <1¢ drift). Static — NOT a daily-cron artifact; new workbook edition → re-run builder → commit both. |
 | `cpl_funding_performance.js` | Funding priority-metric actuals (`window.CPL_FUNDING_PERF`: per-college P2/P3 distinct-student counts + statewide, small-cell suppressed <5 per the RATIFIED `docs/kb-notes/adr-funding-priority-metrics-privacy.md`). **Daily-cron artifact**: built by `funding/_build_funding_performance.py` from the transient `CustomReport_latest.json` (workflow step 4a2; in the `git add` list); skips gracefully on fetch fallback. P1 is a deliberate gap (`docs/kb-notes/reference-p1-completion-data-gap.md`). |
+| `tmc_builder.js` | TMC Builder tab renderer (`window.CPL_TMC_BUILDER`). Lazy-loaded on first `#tmc-builder` open; injects own `var(--token)` CSS. College+TMC selectors → fixed C-ID left / COCI-dropdown right, C-ID auto-match, units check, Total Units, Supabase Save/Resume, export (.docx/print/JSON). Static — NOT a daily-cron artifact. Docs: `docs/tmc_builder_lessons.md`. |
+| `tmc_templates.js` | The 8 **DRAFT** TMC definitions (`window.CPL_TMC_TEMPLATES`) — the fixed left-side C-ID course lists (Required Core / List A/B/C). Slot C-IDs are real (from `cid_descriptors.json`); section/unit/select details need faculty verification. Add the rest by appending to `templates[]`. Static. |
+| `tmc_college_courses.js` | Per-college COCI course index (`window.CPL_TMC_COLLEGE_COURSES`: 120 colleges, 141,699 courses, 7.5 MB) powering the right-side pickers. Built one-shot by `tmc/_build_college_courses.py` from `kb/reference/coci_course_list.xlsx`; `cid` normalized to the descriptor key for auto-match. Static — rebuild only on a fresh COCI extract; NOT in the daily `git add` list. |
 | `dashboard_filters.js` | Client-side filter/search/sort logic |
 | `kpi_reorder.js` | Login-free drag-to-reorder for the headline KPI grid (`.kpi-section`): per-browser order in localStorage (`cplKpiOrder.v1`), cards re-matched by label text across daily regens, new cards re-enter at default position, ↺ reset affordance. Static — NOT a daily-cron artifact. |
 | `first_light.js` | **First Light** — the once-a-day plein air greeting (added Session 48): date-seeded painting-of-the-day modal (grayscale→color reveal, gallery lightbox, read-aloud via browser `speechSynthesis`, hand-written alt text), opt-out + once-per-day localStorage guards, runtime-injected "Today's painting" header chip (regen-proof), an anonymous reflection box POSTing `{painting, reflection}` to Supabase `cpl_reflections` (anon WRITE-ONLY RLS), and — since the Session-49 retheme — the **ghosted painting layer** behind the whole page (`.cplfl-bg`: today's pick grayscaled at 10% opacity, painterly fallback, honors the opt-out + `prefers-reduced-transparency`/`contrast`). Manifest = verified-PD paintings ONLY (sourcing rules: `docs/kb-notes/reference-public-domain-art-sourcing.md`). Static — NOT a daily-cron artifact. Theme spec/prototype: `prototype/first_light_theme_v1.html` (**v1.6 — GLASS-QUIET chips graduated**, Sam-blessed 2026-06-12; solid family archived in the Chip Studio) + `prototype/check_contrast.py` (whose `--live` mode lints the live `:root` in CI — the retheme SHIPPED Session 49, PRs #407/#408/#410). Tests: `tests/first_light*.test.js`. |
@@ -717,8 +720,9 @@ hash so they are linkable and survive a refresh. `tabs.js` **auto-derives
 `VALID_TABS` from the rendered nav buttons** — adding a tab is "drop a nav
 button + a pane," no whitelist edit. The core data tabs (the rest —
 `unified-courses`/CCR, `canonical-subj4`/CSR, `credential-reference`/CER,
-`exhibit-adoption`, `pipeline`, `letters`, `chatbot`/CPL Assistant — are
-documented elsewhere; the CPL Assistant RAG tab is detailed in §7c):
+`exhibit-adoption`, `tmc-builder`/TMC Builder (§7d), `pipeline`, `letters`,
+`chatbot`/CPL Assistant — are documented elsewhere; the CPL Assistant RAG tab is
+detailed in §7c):
 
 | Tab key (hash) | Display label | Content |
 |----------------|---------------|---------|
@@ -793,10 +797,41 @@ reuse, so keep it self-contained behind its CONFIG block.
   redeploy procedure:
   [`docs/kb-notes/playbook-deploy-shared-supabase-edge-function.md`](docs/kb-notes/playbook-deploy-shared-supabase-edge-function.md).
 
+### 7d. TMC Builder — interactive ADT submission tab (Session 59, 2026-06-16)
+
+The **TMC Builder** tab (`#tmc-builder`, hash `tmc-builder`) lets a college align
+its local courses to an ASCCC **Transfer Model Curriculum** (the basis for an
+Associate Degree for Transfer). Pick a *College* + a *TMC* at the top → the LEFT
+column is the **fixed** ASCCC-defined C-ID course list (Required Core / List A/B/C);
+the RIGHT column is a searchable picker of **that college's own COCI offerings**,
+**auto-populating** the local course that already carries each slot's C-ID. Shows
+**Total Units** of the selected courses; exports (.docx via `docx.min.js` / print /
+JSON) and Saves/Resumes to Supabase `tmc_submissions`.
+
+- **Real ASCCC transfer process — NOT the §11 M-ID/MC lane** (which deliberately
+  avoids the transferability claim). Keep the two framings separate.
+- All-**STATIC**, all-**lazy**, NOT regenerated by `excel_to_dashboard.py` and NOT
+  daily-cron artifacts: the boot wiring lazy-loads `tmc_builder.js` → which loads
+  `tmc_templates.js` (the 8 **DRAFT** TMC defs — faculty must verify; add the rest
+  by appending) → then `tmc_college_courses.js` (per-college COCI index, 7.5 MB,
+  rebuild only on a fresh extract: `python3 tmc/_build_college_courses.py`).
+- Auto-match is **C-ID-exact only** (COCI `CIDNumber` == descriptor key); never
+  title-guessed. ~1/4 of colleges report sparse C-IDs in the COCI extract → they
+  pick manually. No contact-hours in COCI → legitimacy = units + C-ID for now.
+- Tab nav button + pane + boot wiring are mirrored in BOTH HTMLs (Rule 4). Schema
+  of record: `tmc/supabase_tmc_submissions.sql`. Full story:
+  [`docs/tmc_builder_lessons.md`](docs/tmc_builder_lessons.md);
+  data model: [`docs/kb-notes/reference-tmc-adt-data-model.md`](docs/kb-notes/reference-tmc-adt-data-model.md).
+
 ### 8. Supabase Database (Separate System)
 
 - **Project**: `hvuwhnbuahrtptokpqfh.supabase.co`
 - **Tables**: projects, budget_expenditures, personnel, workplan_goals
+- **`tmc_submissions`** (added Session 59): TMC Builder's per-college course→TMC
+  alignment store. Anon INSERT/UPDATE/SELECT RLS (institutional curriculum data,
+  **no student PII**), `(college, tmc_id)` unique → upsert/resume. The always-true
+  anon write policies are deliberate (mirror `chat_interactions`); the authoritative
+  submission is the exported form. Schema: `tmc/supabase_tmc_submissions.sql`.
 - **`cpl_reflections`** (added Session 48): First Light's anonymous daily
   reflections — anon INSERT-only RLS with a 1–2000-char CHECK, **no SELECT
   policy** (write-only from the public; service role reads for the future
