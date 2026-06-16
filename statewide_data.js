@@ -209193,16 +209193,16 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-ACDC-1-001"
       ],
-      "title": "Carpenters Apprenticeship — Drywall/Lather",
-      "unified_title": "Carpenters Apprenticeship — Drywall/Lather",
-      "is_classified": true,
-      "issuing_agency": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
-      "training_agency": "Joint Apprenticeship Training Committee (JATC)",
-      "confidence_title": 0.8,
-      "confidence_issuer": 0.6,
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "Apprenticeship Carpentry, Drywall/Lather, CA"
+        "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -222423,6 +222423,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-16T20:43:45",
+  "generated_at": "2026-06-16T21:00:39",
   "total_credit_recs": 11328
 };
