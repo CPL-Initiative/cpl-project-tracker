@@ -1536,3 +1536,64 @@ families to a bulk auto-merge cohort once curators work the bigger worklist.
 **(d) Next concrete step.** Build the Jaccard member-flip measurement (prototype
 over the title-filtered raw-list join, count member rows that attach/detach at
 0.4 vs 0.5, sample the borderline band) and present before committing.
+
+---
+
+## Session 58 — Bruh Skyleader (2026-06-16): three Suggested-merges refinements
+
+Sam-interactive, off his screenshot of the Algebra worklist group. Three asks,
+one code-only PR (no regenerated artifacts — cron/dispatch republishes).
+
+**(a) What shipped.**
+- **Task 1 — override picker repopulates + renames.** Picking a NON-official
+  course from "⌕ Merge into a different existing course" now pulls that course's
+  **cleaned** title up into the Proposed-title field and keeps it **editable**;
+  on Confirm the edited title renames the target (a `unified_title` write). An
+  official C-ID/CCN target stays read-only/firewalled (unchanged — the
+  `uc_worklist_override_target` test still proves no `unified_title` on ANAT 100).
+- **Task 2 — segment-word fold in `_sug_sig`.** Added `_SUG_SEGMENT =
+  {part, semester, module, half, level, levels}` to the worklist signature.
+  Structural divider words fragmented otherwise-identical families: "Algebra
+  1-2, Semester 1" → `algebra semester`, "Elementary Algebra, Part 1" →
+  `algebra part`, but "Algebra 3-4" → `algebra`. Folding them collapses the
+  keyword family to ONE signature → it surfaces as one group (Sam: "courses
+  with an obvious keyword that signals strong alignment"). **Measured**
+  (`kb/_sug_segment_dryrun.py`): 8,491→8,352 multi-member groups, **+165**
+  identities into families, max group 44→60; every large proposed group is a
+  coherent same-subject family (ASL/ballet/algebra/piano/the languages/ESL/
+  cosmetology). Genuinely-distinct courses STAY apart — Linear/College/Pre-
+  Algebra keep their distinguishing token.
+- **Task 3 — completion note.** New `merge_note` curation field, end-to-end:
+  an optional "Completion note" input in the merge popup → `merge_note` row on
+  the target (gated `!tgtOfficial`) → `_apply_curation.py` FIELDS → generator
+  emits `r.note` → consumer renders a **⚑ note** chip + a "Completion note"
+  line in the ⓘ modal, and applies it live. Sam's case: minting "Elementary
+  Algebra 1-2" from Part-1 + Part-2 members with "both segments must be
+  completed for full credit."
+
+**(b) Lessons.**
+- **The signature was still too strict on the STRUCTURAL axis.** Session 57
+  folded the LEVEL axis (1/2/Elementary/Advanced); the remaining fragmentation
+  was DIVIDER words (part/semester/half/level). Same philosophy, different axis
+  — fold the words that denote "this course is in N pieces," keep the words that
+  denote a different course.
+- **Tight beats broad for a fold set.** Excluded `section` (Conic Sections),
+  `unit/units` (Intensive Care Unit), `course(s)`, `series/sequence/term` — each
+  is a real content noun somewhere. The 6-word tight set got the families Sam
+  wanted with no mega-group cross-contamination.
+- **Firewall parity is the reusable pattern.** `merge_note` rides the SAME
+  `!tgtOfficial` gate as `unified_title` — a curator annotation never lands on
+  an authoritative C-ID/CCN anchor. Reuse the existing firewall, don't invent a
+  new guard.
+- **A new curation field is ~4 small edits** (UI capture → FIELDS → generator
+  emit → consumer render) + the live-overlay pull (`fetchOverlay` field list +
+  `replayLiveMerges` thread-through) so it shows on reload before the daily bake.
+
+**(c) Current state.** `_sug_sig` is level-COLLAPSING **+ segment-folding**.
+`merge_note` is a live curation field. Tests 49→50 (`uc_worklist_note_rename`).
+All three are suggestions-only / curator-confirmed / reversible.
+
+**(d) Next concrete step.** Unchanged top lever: the **member-join Jaccard
+0.5→~0.4** measurement (`kb/README.md` mandates measuring member-row flips
+first). Then work the bigger worklist; if a class of bad segment-fold families
+recurs, tighten one token in `_SUG_SEGMENT`.

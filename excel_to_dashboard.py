@@ -6774,6 +6774,13 @@ def export_unified_courses():
         _an = _auto_fold_count(members)
         if _an:
             _trow["auto_n"] = _an
+        # Completion / merge note (Session 58, Sam 2026-06-16, task 3): a curator
+        # annotation captured at merge time — e.g. "Complete both parts (1 & 2)
+        # for full credit" on a course minted from segmented A/B / 1-2 members.
+        # Surfaced as a ⚑ chip + a Completion-note line in the row's ⓘ modal.
+        # Firewalled like unified_title: never written on an official C-ID/CCN.
+        if cur.get("merge_note") and t_idsys not in ("C-ID", "CCN-ID"):
+            _trow["note"] = cur.get("merge_note")
         rows.append(_trow)
 
     # NOTE: unified_courses_data.js is written further down, AFTER the raw COCI
@@ -7609,6 +7616,23 @@ def export_unified_courses():
                        "introduction", "intro", "first", "basic", "preparatory",
                        "prep", "developmental", "intermediate", "second",
                        "advanced", "third", "fourth"}
+    # STRUCTURAL SEGMENT/DIVIDER words (Session 58, Sam 2026-06-16, task 2). A
+    # course split into segments ("Algebra 1-2, Semester 1" / "Elementary
+    # Algebra, Part 1" / "ASL Level 1") fragmented into a DIFFERENT signature
+    # than the un-segmented family ("Algebra 3-4" → "algebra") because the
+    # divider word (part/semester/level) survived. Folding these out groups the
+    # whole keyword family under one signature so the worklist surfaces it as ONE
+    # group — Sam's ask: "courses with an obvious keyword that signals strong
+    # alignment" should appear in the initial Suggested Merges. TIGHT, high-
+    # confidence set ONLY — segment markers that are almost never a content noun.
+    # Deliberately EXCLUDED as too risky (real content words): "section" (Conic
+    # Sections), "unit"/"units" (Intensive Care Unit), "course"/"courses",
+    # "series"/"sequence"/"term"/"quarter"/"block"/"phase". Measured impact:
+    # 8,491 → 8,352 multi-member groups, +165 identities into families, max group
+    # 44 → 60; genuinely-distinct courses STAY apart (Linear/College/Pre-Algebra
+    # keep their distinguishing token). Suggestions-only — the curator confirms
+    # every group, so this only changes what SURFACES, never an auto-merge.
+    _SUG_SEGMENT = {"part", "semester", "module", "half", "level", "levels"}
 
     def _sug_sig(t):
         t = re.sub(r"\([^)]*\)", " ", str(t or "").lower())
@@ -7617,6 +7641,8 @@ def export_unified_courses():
         for w in t.split():
             if w in _SUG_DROP or w in _SUG_LEVELWORDS or w in _SUG_ROMAN:
                 continue                        # article / level word / ordinal
+            if w in _SUG_SEGMENT:
+                continue                        # structural segment divider
             if w.isdigit():
                 continue                        # numeric level/sequence
             if len(w) == 1 and "a" <= w <= "h":

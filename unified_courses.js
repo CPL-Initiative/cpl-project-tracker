@@ -140,17 +140,18 @@
     return page(0, []);
   }
   function fetchOverlay() {
-    return fetchAllRows("/rest/v1/kb_curation?select=course_id,field,value,reviewer_email,reviewed_at&field=in.(discipline,merge_into,unified_title)&order=course_id.asc,field.asc")
+    return fetchAllRows("/rest/v1/kb_curation?select=course_id,field,value,reviewer_email,reviewed_at&field=in.(discipline,merge_into,unified_title,merge_note)&order=course_id.asc,field.asc")
       .then(function (arr) {
-        var out = { disc: {}, merges: [], titles: {} };
+        var out = { disc: {}, merges: [], titles: {}, notes: {} };
         arr.forEach(function (x) {
           if (x.field === "discipline") out.disc[x.course_id] = x;
           else if (x.field === "merge_into") { if (x.value) out.merges.push(x); }
           else if (x.field === "unified_title") { if (x.value != null) out.titles[x.course_id] = x.value; }
+          else if (x.field === "merge_note") { if (x.value != null) out.notes[x.course_id] = x.value; }
         });
         return out;
       })
-      .catch(function () { return { disc: {}, merges: [], titles: {} }; });
+      .catch(function () { return { disc: {}, merges: [], titles: {}, notes: {} }; });
   }
   // Live "Keep as-is" worklist dismissals (field=merge_dismissed). One row per
   // dismissed group; value = the group's live-member ids sorted asc, "|"-joined
@@ -891,7 +892,7 @@
     // in-payload rows (the dialog's chosen-tuple titles/subjects — covers
     // members with no row object, e.g. Stand-Alones; absent-row members just
     // don't contribute a variant/subj/impact value).
-    function applyMergeLocal(byId, target, memberIds, title, disc, seed) {
+    function applyMergeLocal(byId, target, memberIds, title, disc, seed, note) {
       seed = seed || {};
       memberIds.forEach(function (id) { if (byId[id]) byId[id]._mergedAway = true; });
       var urow = byId[target], created = false;
@@ -926,6 +927,8 @@
       // overwrite it (mirrors the firewalled anchor).
       if (!official) urow.title = title || urow.title || vlist[0];
       if (disc && urow.id_system === "Unified") urow.disc = disc;
+      // Completion/merge note (task 3) — never on a firewalled official anchor.
+      if (note && !official) urow.note = note;
       var subjSet = {};
       function addSubj(s) { if (s) subjSet[s] = 1; }
       (urow.subj || []).forEach(addSubj);
@@ -969,7 +972,8 @@
     // committed when the committed_curation snapshot (the same one the
     // pending-sync badge diffs against) knows its course_id, else it's a lazy
     // Stand-Alone whose mark waits for loadStandalone.
-    function replayLiveMerges(merges, titles) {
+    function replayLiveMerges(merges, titles, notes) {
+      notes = notes || {};
       var committed = data.committed_curation || {};
       var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
       var groups = {};
@@ -981,13 +985,13 @@
       var changed = false;
       Object.keys(groups).sort().forEach(function (tgt) {
         groups[tgt].forEach(function (m) { liveMergePending[m] = tgt; });
-        applyMergeLocal(byId, tgt, groups[tgt], titles[tgt] || "", null, null);
+        applyMergeLocal(byId, tgt, groups[tgt], titles[tgt] || "", null, null, notes[tgt]);
         changed = true;
       });
       return changed;
     }
 
-    function doConsolidate(chosen, title, disc, identity, close, quiet) {
+    function doConsolidate(chosen, title, disc, identity, close, quiet, note) {
       var ids = Object.keys(chosen);
       if (ids.length < 2) { alert("Select at least two courses to consolidate."); return; }
       ensureFresh().then(function (sess) {
@@ -1012,6 +1016,10 @@
         // keeps its own discipline — and "discipline curation present" stays a
         // clean explicit-verify signal for the daily regen (merge ≠ verify).
         if (disc && synthetic) items.push({ course_id: target, field: "discipline", value: disc });
+        // Completion/merge note (task 3) — a curator annotation on the surviving
+        // target (e.g. "Complete both parts for full credit"). Firewalled like
+        // the title: never written on an official C-ID/CCN anchor.
+        if (note && !tgtOfficial) items.push({ course_id: target, field: "merge_note", value: note });
         saveCurations(items, sess).then(function (resp) {
           if (!resp.ok) { alert("Consolidation save failed (status " + resp.status + ")."); return; }
           var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
@@ -1021,7 +1029,7 @@
           var seedSubj = {}; ids.forEach(function (id) { String(chosen[id][2] || "").split(";").forEach(function (s) { if (s) seedSubj[s] = 1; }); });
           var variants = ids.map(function (id) { return chosen[id][1]; }).filter(Boolean);
           applyMergeLocal(byId, target, members, title, (synthetic ? disc : null),
-            { variants: variants, subj: Object.keys(seedSubj) });
+            { variants: variants, subj: Object.keys(seedSubj) }, note);
           // Track the live merge so the pending-sync badge counts it, lazy
           // stand-alone loads fold it, and the worklist won't re-offer it.
           members.forEach(function (id) { liveMergePending[id] = target; });
@@ -1368,6 +1376,7 @@
                            : "— applied only if you Confirm (pre-filled from the longest member title; edit freely)"])]));
           var titleIn = el("input", { type: "text", value: (isEvidence && g.official) || bestTitle(g), style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
           box.appendChild(titleIn);
+          var titleDefault = titleIn.value;   // restored when an override is undone
           box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" }, ["Discipline"]));
           var discSel = el("select", { class: "uc-filter", style: "min-width:280px;" });
           discSel.appendChild(el("option", { value: "" }, ["— choose —"]));
@@ -1396,6 +1405,18 @@
           // and ignored here — so disable it then, rather than silently drop it.
           var discNote = el("div", { style: "margin:3px 0 0;font-size:.76rem;color:#94a3b8;" }, []);
           box.appendChild(discNote);
+          // Completion note (Session 58, Sam 2026-06-16, task 3): an optional
+          // curator annotation written onto the surviving target — for a course
+          // minted from segmented A/B / 1-2 members, e.g. "Complete both parts
+          // for full credit." Persists as a ⚑ chip + a Completion-note line in
+          // the row's ⓘ modal. Skipped on a firewalled official C-ID/CCN target.
+          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" },
+            ["Completion note ",
+             el("span", { style: "font-weight:400;font-size:.76rem;color:#94a3b8;" },
+               ["— optional; written on the merged course (e.g. “Complete both parts 1 & 2 for full credit”)"])]));
+          var noteIn = el("input", { type: "text", placeholder: "e.g. Both segments (1 & 2) must be completed for full credit — optional",
+            style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
+          box.appendChild(noteIn);
           box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" },
             ["Candidates (" + mems.length + ") ",
              el("span", { style: "font-weight:400;font-size:.76rem;color:#94a3b8;" },
@@ -1568,7 +1589,12 @@
               var oc = {}; oc[overrideTarget[0]] = overrideTarget;
               picked.forEach(function (m) { if (m.id !== overrideTarget[0]) oc[m.id] = [m.id, m.t, m.s, m.k, m.u]; });
               if (Object.keys(oc).length < 2) { alert("Pick a target different from the checked course."); return; }
-              doConsolidate(oc, "", "", overrideTarget[0], function () { i++; renderGroup(); }, true);
+              // A non-official override target adopts the (possibly edited)
+              // Proposed title — task 1 lets the curator tidy it. An official
+              // anchor keeps its authoritative name (doConsolidate gates the
+              // unified_title write on tgtOfficial, so passing it is harmless).
+              var ovOfficial = overrideTarget[3] === "C-ID" || overrideTarget[3] === "CCN-ID";
+              doConsolidate(oc, ovOfficial ? "" : titleIn.value.trim(), "", overrideTarget[0], function () { i++; renderGroup(); }, true, noteIn.value.trim());
               return;
             }
             if (picked.length < 2) { alert("Check at least two members to merge."); return; }
@@ -1580,7 +1606,7 @@
             var target = tgtM ? tgtM.id : "";
             var chosen = {};
             picked.forEach(function (m) { chosen[m.id] = [m.id, m.t, m.s, m.k, m.u]; });
-            doConsolidate(chosen, titleIn.value.trim(), discSel.value, target, function () { i++; renderGroup(); }, true);
+            doConsolidate(chosen, titleIn.value.trim(), discSel.value, target, function () { i++; renderGroup(); }, true, noteIn.value.trim());
           };
           // ── "Merge into a different existing course" (Sam, 2026-06-15) ──
           // Reuse the ⚇ Unify search index so a curator can redirect this merge
@@ -1599,15 +1625,31 @@
           function setOverride(entry) {
             overrideTarget = entry;
             if (entry) {
+              // Official C-ID/CCN anchors are firewalled — their title is
+              // authoritative and can't be renamed, so the field stays read-only.
+              // A non-official identity (M-ID/Unified) CAN be renamed: pull its
+              // CLEANED title up into the Proposed-title field and keep it
+              // EDITABLE so the curator can tidy it (Session 58, Sam 2026-06-16,
+              // task 1 — "repopulate the common course title and let me adjust it").
+              var ovOfficial = entry[3] === "C-ID" || entry[3] === "CCN-ID";
               ovBanner.style.display = "block"; ovBanner.innerHTML = "";
               ovBanner.appendChild(document.createTextNode("✓ Folding the checked course(s) into: " + (entry[1] || entry[0]) + "  [" + entry[0] + " · " + (entry[2] || "") + " · " + idSysLabel(entry[3]) + "]  "));
               var undo = el("a", { href: "#", style: "color:#b91c1c;font-weight:700;text-decoration:none;" }, ["✕ undo"]);
               undo.onclick = function (ev) { ev.preventDefault(); setOverride(null); };
               ovBanner.appendChild(undo);
-              titleIn.disabled = true; titleIn.style.opacity = "0.55";
+              if (ovOfficial) {
+                titleIn.value = entry[1] || titleIn.value;
+                titleIn.disabled = true; titleIn.style.opacity = "0.55";
+              } else {
+                titleIn.value = cleanTitle(entry[1] || entry[0]) || titleIn.value;
+                titleIn.disabled = false; titleIn.style.opacity = "";
+                ovBanner.appendChild(el("div", { style: "margin-top:2px;font-size:.76rem;color:#64748b;" },
+                  ["Editing the Proposed title above renames this course when you fold in."]));
+              }
               go.textContent = "✓ Fold into " + entry[0];
             } else {
               ovBanner.style.display = "none";
+              titleIn.value = titleDefault;
               titleIn.disabled = false; titleIn.style.opacity = "";
               go.textContent = isSingleton ? "✓ Create unified course" : "✓ Confirm merge";
             }
@@ -1677,6 +1719,7 @@
       field("Adopted", (r.adopted && r.adopted.length) ? r.adopted.length + " — " + shortNames(r.adopted).join(", ") : "");
       field("Adoptable (potential)", (r.potential && r.potential.length) ? r.potential.length + " — " + shortNames(r.potential).join(", ") : "");
       if (r.title_variants && r.title_variants.length) field("Title variants", r.title_variants);
+      field("Completion note", r.note);
       box.appendChild(dl);
 
       box.appendChild(el("div", { style: "display:flex;align-items:baseline;justify-content:space-between;margin:16px 0 4px;" }, [
@@ -2139,6 +2182,16 @@
             "bot (automerge-v1@bot), not a human review. Second-look candidate — spot-check the " +
             "members, then Verify if right; the merge can be reverted. Triage → \"Auto-merged\" lists the whole cohort."
         }, ["⚙ auto-merged"]));
+      }
+      // Completion/merge note (Session 58, task 3): a curator annotation on a
+      // merged course (e.g. "Complete both parts for full credit" on a course
+      // minted from segmented 1-2 / A-B members). Full text in the title + the
+      // row's ⓘ modal.
+      if (r.note) {
+        out.appendChild(el("span", {
+          class: "uc-badge", style: "color:var(--cobalt);border-color:var(--cobalt);",
+          title: "Completion note: " + r.note
+        }, ["⚑ note"]));
       }
       // Phase A crosswalk surfacing: official C-ID / CCN carried by member courses.
       var mt = r.match || {};
@@ -2963,7 +3016,7 @@
     // exist when the discipline overlay is applied over them.
     fetchOverlay().then(function (o) {
       liveDiscOverlay = o.disc;
-      var changed = replayLiveMerges(o.merges, o.titles);
+      var changed = replayLiveMerges(o.merges, o.titles, o.notes);
       if (applyDiscOverlay(rows)) changed = true;
       if (changed) render();
     });
