@@ -1384,3 +1384,25 @@ fires from the SUBJ4 fold's `discipline_canonical_subj4.json` (148) lacking it
 → a curator pick (surfaced to Sam). Lessons: `docs/ccr_cluster_cleanup_lessons.md`
 (Session 54). **NEXT: `docs/session_55_handoff.md`** (title-lane pass-2 DRY-RUN
 on Sam's go; per-row revert affordance; MilStudents wiring).
+
+
+### Session 55 — Bruh Nebula: Suggested-merges clarity + the UC-CUR→Z scope (2026-06-15)
+
+Sam-interactive (his two CCR worklist screenshots). PRs #434–#437, all
+squash-merged. **Worklist UX, from Sam's confusion:** (#434) the surviving
+identity now wears a **★ merge target** badge (§10 CCN>C-ID>M-ID>Unified pick,
+live as checkboxes toggle, reference-equality so duplicate-id rows don't both
+light) + a dynamic note that spells out the 2-candidate case; (#435) the
+**self-merge ghost groups** — a promoted singleton re-offered as its own orphan
+(member id == anchor id) — fixed in `export_unified_courses()` (skip singletons
+whose id is already a payload row; **20→0** anchored ghosts, verified live), and
+the **Discipline picker** now disables + explains itself (it's only written on a
+fresh mint, silently ignored on a merge-into); (#436) a **"⌕ merge into a
+different existing course"** search picker reusing the `⚇ Unify` index — fold the
+group into ANY identity the title-signature grouping won't surface (e.g. a real
+Anatomy & Physiology C-ID). Suite 44→47. **Sam's UC-CUR→Z decision (#437, SCOPE
+only):** rename the 4,053 synthetic `UC-CUR-*` ids to `SUBJ Z<band><seq>` (e.g.
+`BIOL Z9001`; Z = curator-minted, needs attention) — **full re-key**, but the
+blast radius is **entirely inside curation** (4,053 targets + 4,053 title rows +
+10,682 `merge_into` pointers; **0** articulations/promotions). Scope:
+`docs/uc_cur_zscheme_remint_scope.md`.

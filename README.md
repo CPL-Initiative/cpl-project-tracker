@@ -98,7 +98,11 @@ The whole ecosystem, end-to-end:
    different unit loads per college. One deliberately strict exception
    acts on its own: the **twin merge** folds M-IDs whose titles contain
    the same words AND match on subject, discipline, credit, and units —
-   every twin carries an alias receipt. The rules in plain language:
+   every twin carries an alias receipt. The worklist's core same-title
+   grouping is **level-collapsing** (Session 57) — "Beginning / Intermediate /
+   Advanced X" surface as one family — so curators consolidate aggressively
+   (Title 5 §55050 grants credit for *similar* learning), always one
+   confirm at a time. The rules in plain language:
    [`docs/ccr_rules_brief.md`](docs/ccr_rules_brief.md).
 4. **The Common Course Reference curation tab** (formerly "Unified Courses" —
    renamed to avoid UC/University-of-California confusion and to signal that
