@@ -2,7 +2,7 @@
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
  "_as_of": "2026-06-16",
  "_session": 59,
- "_status": "SESSION 59 (Bruh Star Navicus) — a design detour: a NEW 'TMC Builder' tab. Pick your College + a Transfer Model Curriculum (ADT) at the top; the LEFT column is the fixed, ASCCC-defined C-ID course list (Required Core / List A/B/C), and the RIGHT column is a dropdown of YOUR college's own COCI courses — auto-filling the course that already carries each C-ID. It totals your units, saves to Supabase so you can resume, and exports a Word/PDF/JSON of the completed form. Shipped with 8 DRAFT TMCs (Psychology, Sociology, Anthropology, Communication, History, Business Admin, Math, Biology) — the slot C-IDs are real but section/unit details need a faculty pass, and the other ~37 TMCs still need adding. Hard-refresh, open 'TMC Builder', try your college. The data lane (Suggested-merges + the Jaccard) is paused but intact — see docs/session_59_handoff.md.",
+ "_status": "SESSION 59 (Bruh Star Navicus) — a NEW 'TMC Builder' tab, LIVE (it wowed the exec group!). Pick your College + a Transfer Model Curriculum (ADT) at the top; the LEFT column is the fixed, ASCCC-defined C-ID course list, the RIGHT column is a dropdown of YOUR college's own COCI courses — auto-filling the course that already carries each C-ID. It totals your units, saves to Supabase, and exports Word/PDF/JSON. Now a full 45-TMC catalog with a STATUS indicator per TMC: 8 'Available now' (draft, faculty-verify) + 37 'Coming soon' (each links to its official template). To encode the 37, I need the official PDFs — the C-ID site Cloudflare-blocks my fetcher, so please upload them here (like you did the .docx). The data lane (Suggested-merges + the Jaccard) is paused but intact — see docs/session_59_handoff.md.",
  "items": [
   {
    "id": "sam-tmc-try",
@@ -14,7 +14,7 @@
    "id": "sam-tmc-data",
    "who": "sam",
    "tab": "tmc-builder",
-   "text": "The C-ID TMC site (c-idsystem.org/transfer-efforts) blocks my fetcher, so I seeded only 8 TMCs. If you can drop me the official TMC template PDFs (or a link I can reach), I'll encode all ~45 authoritatively. Also note: ~1/4 of colleges (incl. Riverside) report few C-IDs in the COCI extract, so their auto-match is sparse — they pick from the dropdown."
+   "text": "Got your TMC-download doc — I pulled all 45 official template links, and every 'Coming soon' TMC now links to its PDF. But the C-ID site Cloudflare-blocks my fetcher (even direct PDF URLs), so I can't read the contents to encode them. Please UPLOAD the TMC PDFs here (like the .docx) — a batch or a few at a time — and I'll turn each into a real 'Available now' TMC. Also note: ~1/4 of colleges (incl. Riverside) report few C-IDs in the COCI extract, so their auto-match is sparse — they pick from the dropdown."
   },
   {
    "id": "sam-work-families",

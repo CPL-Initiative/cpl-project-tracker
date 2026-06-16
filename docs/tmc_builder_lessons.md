@@ -83,6 +83,29 @@ the data lane, built interactively against his live direction.
    lazy-loads `tmc_builder.js`, which lazy-loads `tmc_templates.js` then the 7.5 MB
    `tmc_college_courses.js` (precedent: the CCR's 34 MB details file).
 
+## Session 59 cont. — Status indicator + 45-TMC catalog (2026-06-16)
+
+Sam asked for "a Status indicator for each TMC" and sent the official **TMC
+download .docx** (89 embedded links). Extracted all 45 TMC template URLs from
+`word/_rels/document.xml.rels` (the `.docx` is a zip; hyperlink targets live in
+the rels, display text in `document.xml`).
+
+- **Catalog grew to 45 TMCs**: the 8 detailed (`draft`) + 37 `planned` stubs
+  (id + discipline + status), each mapped to its official-template PDF in
+  `_meta.sources`.
+- **Status model** (`tmcStatus()` in `tmc_builder.js`): `official` (encoded from
+  the authoritative template) / `draft` (sections present, faculty-verify) /
+  `planned` (catalog only). Surfaced as: optgroups in the picker (**Available now
+  (8)** / **Coming soon (37)**), a status chip in each option + the form header,
+  an "**N of 45 built**" legend, and a **Coming soon panel** (with the
+  official-template link) when a planned TMC is selected.
+- **Blocker that remains**: c-idsystem.org **Cloudflare-blocks** automated fetch
+  even for direct PDF URLs and even with a browser UA + sandbox off (403, 101-byte
+  challenge page). So the 37 can't be auto-encoded — **Sam needs to upload the
+  PDFs** (he can, like the .docx) and a session parses + encodes them. Until then
+  they're honest `planned` stubs that link out.
+- Test grew 27 → 34 assertions; no HTML changed → Rule 4 intact.
+
 ## Next concrete steps
 
 - **Faculty verification of the 8 seed TMCs** + author the remaining ~37 from the
