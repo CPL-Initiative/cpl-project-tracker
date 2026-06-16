@@ -9,7 +9,7 @@ related:
   - docs/kb-notes/adr-level-collapsing-consolidation.md (the over-merge decision)
   - docs/similar_course_family_scope.md (the consolidation loosening + measure-first)
   - docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md (the Supabase re-key tool)
-moniker_suggestion: Session 58 was "Bruh Skyleader"; claim your own
+moniker_suggestion: Session 58 was "Bruh Skyleader"; Sam named you "Bruh StarNavicus" — own it or claim another
 ---
 
 # Session 59 Hand-off Prompt — the data lane
@@ -53,7 +53,13 @@ WHAT SHIPPED IN SESSION 58 (THREE code-only PRs, all merged + dispatched + LIVE)
     cosine (g.score). Lowered title dry-run COSINE_MIN 0.62→0.50 + regenerated the
     receipt (5.9MB→2.0MB, it was stale); default 0.62 = no-op, slide to 0.50 for
     ~1.3k weaker groups. Loosening resets the cursor (i=0); tightening keeps it.
-  - Tests 48→53. All three PRs code-only; cron/dispatch republishes the artifacts.
+  PR #448 — synonym map: Administration of Justice ≡ AJ:
+  - Added "administration of justice"/"admin of justice" → "aj" after measuring
+    the bare "aj" token is unambiguous (all 5 standalone-aj titles are genuinely
+    AJ). The map GROWS one measured pair at a time — grep the bare canonical token
+    for collisions before adding; CS/IT stay excluded as ambiguous. Good next
+    candidates Sam floated: ECE, CIS, EMT (EMT may already group via level folds).
+  - Tests 48→53. All PRs code-only; cron/dispatch republishes the artifacts.
 
 YOUR PRIORITY QUEUE:
   1. THE MEMBER-JOIN JACCARD (deferred since S57, Sam endorsed it). Lower the
