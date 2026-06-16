@@ -31,27 +31,29 @@ Read these first, in order:
   3. docs/kb-notes/adr-level-collapsing-consolidation.md (why over-merge > under-merge).
   4. docs/similar_course_family_scope.md (the loosening + the deferred Jaccard).
 
-WHAT SHIPPED IN SESSION 58 (one code-only PR, merged + dispatched + LIVE):
-  - TASK 1 — override picker repopulates + renames. Picking a NON-official course
-    from "⌕ Merge into a different existing course" now pulls its CLEANED title
-    into the Proposed-title box, EDITABLE; on Confirm the edited title renames the
-    target (unified_title write). Official C-ID/CCN stays read-only/firewalled
-    (unchanged; uc_worklist_override_target still proves no write on ANAT 100).
-  - TASK 2 — segment-word fold in _sug_sig. Added _SUG_SEGMENT = {part, semester,
-    module, half, level, levels} so structural divider words stop fragmenting a
-    family: "Algebra 1-2, Semester 1" / "Elementary Algebra, Part 1" / "Algebra
-    3-4" now group under one 'algebra' signature. Measured by
-    kb/_sug_segment_dryrun.py: 8,491→8,352 groups, +165 identities into families,
-    max 44→60; Linear/College/Pre-Algebra correctly STAY apart (distinguishing
-    token survives). Suggestions-only / curator-confirmed / reversible.
-  - TASK 3 — completion note. New merge_note curation field end-to-end: a popup
-    "Completion note" input → _apply_curation.py FIELDS → generator emits r.note →
-    consumer ⚑ note chip + "Completion note" line in the ⓘ modal + live overlay
-    (fetchOverlay pulls merge_note, replayLiveMerges threads it). Firewalled like
-    unified_title (never on an official anchor). For "both parts must be completed
-    for full credit" on a segmented 1-2 / A-B mint.
-  - Tests 49→50 (tests/uc_worklist_note_rename.test.js). PR code-only; the daily
-    cron/dispatch republishes unified_courses_suggestions.js + the data artifacts.
+WHAT SHIPPED IN SESSION 58 (THREE code-only PRs, all merged + dispatched + LIVE):
+  PR #445 — override-rename + segment-fold + completion note:
+  - Override picker repopulates + renames: picking a NON-official course in "⌕
+    Merge into a different course" pulls its CLEANED title in EDITABLE; Confirm
+    renames the target (unified_title). Official C-ID/CCN stays firewalled.
+  - _SUG_SEGMENT = {part,semester,module,half,level,levels} folds divider words so
+    "Algebra 1-2, Semester 1"/"…, Part 1"/"Algebra 3-4" group under one 'algebra'
+    sig (kb/_sug_segment_dryrun.py: 8,491→8,352 groups, +165 in families).
+  - merge_note curation field end-to-end (⚑ chip + ⓘ-modal line + live overlay)
+    for "both parts required for full credit" on segmented mints.
+  PR #446 — synonym map + keyword-gather:
+  - kb/synonym_map.json normalizes abbreviation↔expansion in _sug_sig (ESL≡English
+    as a Second Language, ASL/PE/Math). KEY INSIGHT: a similarity threshold can't
+    bridge a zero-overlap synonym (no shared token). ESL→84, ASL→60, PE→18; global
+    flat. Grow the map for more pairs (unambiguous-standalone-abbrev ONLY).
+  - ➕ keyword-gather in the popup: search + multi-select extra members into the
+    merge (addCandidateRow factored so gathered rows render like native ones).
+  PR-B — looseness slider:
+  - 🏷 "match strength ≥ X" header slider filters the title lane by weakest-pair
+    cosine (g.score). Lowered title dry-run COSINE_MIN 0.62→0.50 + regenerated the
+    receipt (5.9MB→2.0MB, it was stale); default 0.62 = no-op, slide to 0.50 for
+    ~1.3k weaker groups. Loosening resets the cursor (i=0); tightening keeps it.
+  - Tests 48→53. All three PRs code-only; cron/dispatch republishes the artifacts.
 
 YOUR PRIORITY QUEUE:
   1. THE MEMBER-JOIN JACCARD (deferred since S57, Sam endorsed it). Lower the
