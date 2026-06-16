@@ -1,26 +1,32 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
  "_as_of": "2026-06-16",
- "_session": 58,
- "_status": "SESSION 58 (Bruh Skyleader): a big Suggested-merges upgrade across THREE shipped PRs, off your Algebra + ESL screenshots. (1) Groups by the OBVIOUS keyword now — Part/Semester/Level divider words fold, so 'Algebra 1-2, Semester 1' / 'Elementary Algebra, Part 1' / 'Algebra 3-4' are ONE family; and a synonym map means 'ESL' and 'English as a Second Language' finally group together (ASL, PE, Math too) — a slider could never do that, since the two share no words. (2) Pick a course in 'Merge into a different course' and its title fills the box so you can CLEAN IT UP before folding. (3) A '➕ Add more courses by keyword' search lets you pull in extras (type 'ESL', check the ones that fit). (4) A 🏷 'match strength' slider in the popup header reveals weaker title matches when you slide it down (default 0.62 = today; slide to 0.50 for more). (5) A 'Completion note' box stamps a merge ('both parts required for full credit') as a ⚑ chip. Every merge is still your one-click Confirm. Hard-refresh to see it all. Next engineering lever (measured first): the member-join Jaccard.",
+ "_session": 59,
+ "_status": "SESSION 59 (Bruh Star Navicus) — a design detour: a NEW 'TMC Builder' tab. Pick your College + a Transfer Model Curriculum (ADT) at the top; the LEFT column is the fixed, ASCCC-defined C-ID course list (Required Core / List A/B/C), and the RIGHT column is a dropdown of YOUR college's own COCI courses — auto-filling the course that already carries each C-ID. It totals your units, saves to Supabase so you can resume, and exports a Word/PDF/JSON of the completed form. Shipped with 8 DRAFT TMCs (Psychology, Sociology, Anthropology, Communication, History, Business Admin, Math, Biology) — the slot C-IDs are real but section/unit details need a faculty pass, and the other ~37 TMCs still need adding. Hard-refresh, open 'TMC Builder', try your college. The data lane (Suggested-merges + the Jaccard) is paused but intact — see docs/session_59_handoff.md.",
  "items": [
+  {
+   "id": "sam-tmc-try",
+   "who": "sam",
+   "tab": "tmc-builder",
+   "text": "NEW tab → 'TMC Builder'. Pick a college + a TMC; the right side auto-fills your courses that already carry each C-ID, totals the units, and exports a Word/PDF you could submit. Try a few colleges + disciplines and tell me what feels off — especially whether the 8 seed TMCs' Required Core / List A-B-C groupings + unit ranges match the official templates (they need a faculty verify)."
+  },
+  {
+   "id": "sam-tmc-data",
+   "who": "sam",
+   "tab": "tmc-builder",
+   "text": "The C-ID TMC site (c-idsystem.org/transfer-efforts) blocks my fetcher, so I seeded only 8 TMCs. If you can drop me the official TMC template PDFs (or a link I can reach), I'll encode all ~45 authoritatively. Also note: ~1/4 of colleges (incl. Riverside) report few C-IDs in the COCI extract, so their auto-match is sparse — they pick from the dropdown."
+  },
   {
    "id": "sam-work-families",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "✨ Suggested merges got a big upgrade: groups by the obvious keyword (Algebra, the languages, ESL, Ballet, Cosmetology) — divider words AND abbreviations fold (ESL ≡ English as a Second Language). Confirm the obvious families; UNCHECK or Skip a genuine progression (units are the tell). NEW tools in the popup: '➕ Add more courses by keyword' (pull in extras by search), the 🏷 'match strength' slider (slide down to see weaker title matches), title-cleanup when you pick a different target course, and a 'Completion note' box (⚑ chip, e.g. 'both parts required'). If a keyword over-merges, tell Fable and we'll tighten the map/token."
+   "text": "✨ Suggested merges (data lane, still live): groups by the obvious keyword (Algebra, the languages, ESL, Ballet) — divider words AND abbreviations fold. Confirm the obvious families; UNCHECK or Skip a genuine progression (units are the tell). Popup tools: '➕ Add more courses by keyword', the 🏷 'match strength' slider, title-cleanup on a different target, and a 'Completion note' box."
   },
   {
    "id": "sam-titlelane-pass2",
    "who": "sam",
    "tab": "unified-courses",
    "text": "Still queued: the 🏷 title-similarity lane (~5,457 groups). Say the word and Fable DRY-RUNs a high-cosine, cross-college, band-gated pass 2 (reversible, marker automerge-titlelane-v1) for your review before anything applies."
-  },
-  {
-   "id": "sam-spotcheck-automerge",
-   "who": "sam",
-   "tab": "unified-courses",
-   "text": "Second-look the earlier auto-merge cohort: CCR → Triage → 'Auto-merged' lists all 2,272 bot-merged courses (⚙ chip inline). Expand a few ⛓ merged rows — anything off, tell Fable; one row or the whole cohort can be reverted."
   },
   {
    "id": "sam-ceramic-tech",
@@ -41,22 +47,28 @@
    "text": "MilStudents dataset: ping Fable when it's live in the Custom Reports module — that wires the true JSTs-uploaded universe into the Veteran card (aggregates only, no student IDs)."
   },
   {
+   "id": "fable-tmc-followups",
+   "who": "fable",
+   "tab": "tmc-builder",
+   "text": "TMC Builder follow-ups: (1) add the remaining ~37 TMCs to tmc_templates.js once Sam supplies the official templates; (2) a 'N of your courses carry a C-ID in COCI' coverage hint + a title-similarity 'suggested (verify)' secondary fill for sparse-coverage colleges (distinct from C-ID auto-fill); (3) wire contact-name/notes + a 'mark submitted' status; (4) optional statewide adoption view off tmc_submissions (no PII — easy)."
+  },
+  {
    "id": "fable-jaccard-measure",
    "who": "fable",
    "tab": "unified-courses",
-   "text": "Next consolidation lever (Sam endorsed): lower the member-join title Jaccard 0.5 → ~0.4 so more raw college courses attach per identity. kb/README mandates MEASURING member-row flips FIRST — prototype the title-filtered raw-list join, count attach/detach at 0.4 vs 0.5, sample the 0.3–0.5 band, present before committing. Higher blast radius than the worklist loosening (changes membership + units/disc aggregation), so its own measured PR + dispatch."
+   "text": "Data lane (paused): lower the member-join title Jaccard 0.5 → ~0.4 so more raw college courses attach per identity. kb/README mandates MEASURING member-row flips FIRST — prototype the title-filtered raw-list join, count attach/detach at 0.4 vs 0.5, sample the 0.3–0.5 band, present before committing. Its own measured PR + dispatch."
   },
   {
    "id": "fable-titlelane-dryrun",
    "who": "fable",
    "tab": "unified-courses",
-   "text": "On Sam's go: DRY-RUN title-lane pass 2 — the planner already supports it (`python3 kb/_auto_merge_worklist.py --pass2-title`, receipt kb/automerge_out/<date>-titlelane/). Present counts; apply only on sign-off, then re-key Supabase via the supabase-rekey workflow + dispatch."
+   "text": "On Sam's go: DRY-RUN title-lane pass 2 — `python3 kb/_auto_merge_worklist.py --pass2-title` (receipt kb/automerge_out/<date>-titlelane/). Present counts; apply only on sign-off, then re-key Supabase via the supabase-rekey workflow + dispatch."
   },
   {
    "id": "fable-zscheme-future-mint",
    "who": "fable",
    "tab": "unified-courses",
-   "text": "Finish the Z scheme's future-mint half (deferred S56): point kb/_auto_merge_worklist.py's mint + an excel_to_dashboard.py promote-step at the persisted counter kb/uc_cur_zseq.json so NEW merges get clean Z ids (reuse compute_plan's derive_subj4). Then re-run python3 kb/_row_audit.py + commit latest.json so Z rows get audit chips."
+   "text": "Finish the Z scheme's future-mint half (deferred S56): point kb/_auto_merge_worklist.py's mint + an excel_to_dashboard.py promote-step at the persisted counter kb/uc_cur_zseq.json so NEW merges get clean Z ids. Then re-run python3 kb/_row_audit.py + commit latest.json so Z rows get audit chips."
   },
   {
    "id": "fable-second-look-followups",
