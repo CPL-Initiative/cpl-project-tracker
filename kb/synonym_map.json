@@ -1,0 +1,18 @@
+{
+  "_about": "Curated SYNONYM / alias map for the Suggested-merges worklist signature (Session 58, Sam 2026-06-16). The worklist groups identities by a normalized title signature (_sug_sig in excel_to_dashboard.py). Abbreviations and their expansions share ZERO tokens — 'ESL' and 'English as a Second Language' never group, even though they are the same course family — and NO similarity threshold can bridge a zero-overlap pair. This map normalizes the EXPANSION phrase to its canonical short form BEFORE tokenizing, so both collapse to the same signature. Measured: with 'english as a second language'->'esl', the bare 'esl' family unifies to ~84 identities while sub-families (esl grammar / esl reading writing / esl conversation) correctly stay apart on their distinguishing word.",
+  "_rules": [
+    "Keys are EXPANSION phrases (lowercased, single-spaced); values are the canonical SHORT token the abbreviation-style titles already use.",
+    "Only add a pair when the abbreviation is UNAMBIGUOUS as a standalone word (ESL/ASL/PE/Math) — never an ambiguous short form (CS, IT, AJ) that could collide with another subject.",
+    "Phrase replacement is word-boundary anchored and applied longest-first, so 'english as a second language' resolves before any shorter sub-phrase.",
+    "Suggestions-only: this only changes which groups SURFACE in the worklist; the curator confirms every merge, nothing auto-applies.",
+    "Measure after editing: python3 kb/_sug_segment_dryrun.py (it loads this map)."
+  ],
+  "synonyms": {
+    "english as a second language": "esl",
+    "english for speakers of other languages": "esl",
+    "american sign language": "asl",
+    "physical education": "pe",
+    "mathematics": "math",
+    "maths": "math"
+  }
+}

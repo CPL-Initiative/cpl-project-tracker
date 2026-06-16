@@ -1597,3 +1597,36 @@ All three are suggestions-only / curator-confirmed / reversible.
 0.5→~0.4** measurement (`kb/README.md` mandates measuring member-row flips
 first). Then work the bigger worklist; if a class of bad segment-fold families
 recurs, tighten one token in `_SUG_SEGMENT`.
+
+### Session 58 (cont.) — extending the merge candidate set (the ESL ask)
+
+Off Sam's ESL screenshot: the worklist grouped on "English as a Second Language"
+but he wanted "ESL"-titled courses surfaced too, and floated a confidence slider
++ search-term keywords. Three-layer strategy (he chose all three).
+
+- **The clinching insight: a similarity threshold can NOT bridge a zero-overlap
+  synonym.** "ESL" and "English as a Second Language" share no token, so any
+  cosine/Jaccard score is 0 — lowering a slider never connects them. Only a
+  SYNONYM MAP can. This is why the slider is the wrong *primary* tool and the map
+  is necessary. Worth stating plainly whenever someone reaches for a threshold.
+- **Layer 1 — synonym map (`kb/synonym_map.json` → `_sug_sig`).** Expansion
+  phrase → canonical short token, applied BEFORE tokenizing. Curated, unambiguous-
+  standalone-abbreviation ONLY (ESL/ASL/PE/Math — never CS/IT/AJ, which collide).
+  Measured (`kb/_sug_segment_dryrun.py`, now synonym-aware): ESL→84, ASL→60, PE→18;
+  global flat (8,352→8,359). Sub-families (esl grammar / reading-writing /
+  conversation) correctly stay apart on their distinguishing word.
+- **Layer 2 — keyword-gather in the popup.** Upgraded the search from "redirect
+  into ONE off-signature target" to "GATHER many members": type a term, click
+  matches to add them as checked candidates (➕ added chip, ✕ to drop), fold all
+  in. Hands the BROAD-family judgment (Vocational vs Academic vs Workplace ESL) to
+  the curator instead of the generator guessing. Factored `addCandidateRow()` so
+  gathered rows render identically to native ones. Test:
+  `tests/uc_worklist_keyword_gather.test.js`.
+- **Two search boxes now** — the gather search broke two tests that did a bare
+  `querySelector("input[type=search]")`; scoped them to the override panel via
+  `toggle.parentNode`. Lesson: when adding a second instance of a control, the
+  old test's unscoped selector silently grabs the wrong one.
+- **Layer 3 — looseness slider** (NEXT, separate PR): a narrow knob on the
+  title-similarity lane. Needs the title-lane generator to emit groups down to a
+  LOWER cosine floor + carry per-group cos, then the client slider raises/lowers
+  the floor live. Measure the lower-floor title-lane payload first.
