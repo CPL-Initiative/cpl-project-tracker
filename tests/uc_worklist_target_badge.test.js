@@ -96,7 +96,7 @@ check("consumer init does not throw", !threw);
 
 // The currently-rendered worklist group box (renderGroup re-fills `box`).
 function curBox(doc) {
-  const boxes = Array.from(doc.querySelectorAll("div")).filter((d) => /Suggested merge \d+ of/.test(txt(d)));
+  const boxes = Array.from(doc.querySelectorAll("div")).filter((d) => /Proposed unified title/.test(txt(d)));
   return boxes[boxes.length - 1];
 }
 // The member rows are fl/checkbox rows inside the candidates list.
@@ -186,7 +186,7 @@ function shown(elm) { return elm && elm.style.display !== "none"; }
   const discSel3 = box.querySelector("select.uc-filter");
   check("discipline select is ENABLED for a singleton mint", discSel3 && discSel3.disabled === false);
   check("discipline note explains it sets the NEW course's discipline",
-    /sets the discipline on the NEW unified course/.test(box.textContent));
+    /discipline for the NEW unified course/.test(box.textContent));
 
   // ── 5. Confirm still targets the M-ID (go back is awkward; assert on a fresh
   //       drive of group 1 via a brand-new dialog) ──

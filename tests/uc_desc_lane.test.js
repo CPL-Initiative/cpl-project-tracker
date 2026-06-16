@@ -143,7 +143,7 @@ check("consumer init does not throw", !threw);
     /NO official identity evidence/.test(doc.body.textContent)
     && /0\.98/.test(doc.body.textContent)
     && /briefings/.test(doc.body.textContent));
-  const boxes = Array.from(doc.querySelectorAll("div")).filter((d) => /Suggested merge 1 of/.test(txt(d)));
+  const boxes = Array.from(doc.querySelectorAll("div")).filter((d) => /Proposed unified title/.test(txt(d)));
   const box = boxes[boxes.length - 1];
   const cbs = box ? Array.from(box.querySelectorAll("input[type=checkbox]")) : [];
   check("both members render with checkboxes pre-CHECKED",
@@ -158,7 +158,7 @@ check("consumer init does not throw", !threw);
   await sleep(300);
   check("Confirm fired the curation write (fetch POST)", posts.length >= 1);
   check("worklist advanced to the same_college group",
-    /Suggested merge 2 of 2/.test(doc.body.textContent));
+    /2 of 2/.test(doc.body.textContent));
   check("same_college desc group shows the amber variants banner",
     /shares a member college/.test(doc.body.textContent));
 

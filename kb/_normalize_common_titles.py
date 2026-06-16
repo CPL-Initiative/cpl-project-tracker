@@ -4,10 +4,16 @@
 DRY-RUN by default (prints counts + samples, writes the receipt); ``--apply``
 mutates kb/coci_minted_courses.json + kb/coci_minted_singletons.json.
 
-Three transforms, in order, applied to every M-ID ``common_title``:
+Four transforms, in order, applied to every M-ID ``common_title``:
 
   1. Strip "(formerly …)" parentheticals — local college renumbering notes
      ("(formally …)" typos included), never part of the course's identity.
+  1b. Strip noncredit-status parentheticals — "(NC)" / "(N/C)" / "(Noncredit)"
+     / "(Non-Credit)". These are redundant with the credit_status field and
+     are pure display noise; "we had a rule to eliminate extras like (NC) …
+     but they're back" (Sam, 2026-06-16). Anchored to a lone parenthetical so
+     "(NCAA)" and words like "INC" can never be caught; MEANINGFUL
+     parentheticals ("(BIM)", "(QuickBooks)", "(Tableau)", "(EI)") are kept.
   2. Roman numerals -> digits for SEQUENCE romans (I, II, … IX):
        * II/III/VI/VII/VIII/IX convert anywhere (no English collision).
        * I converts only at title end / before a separator / in "I and II"
@@ -68,6 +74,10 @@ MOJIBAKE = [
 MOJIBAKE_HINT = re.compile(r"[ÃÂ]|â€|ã‚â")
 
 FORMERLY = re.compile(r"\s*\((?:formerly|formally)[^)]*\)", re.I)
+# Noncredit-status noise — only a lone parenthetical whose ENTIRE contents are
+# a noncredit marker (so "(NCAA)"/"(Inc.)" are safe); meaningful parentheticals
+# pass through untouched.
+CREDIT_NOISE = re.compile(r"\s*\(\s*(?:non[\s\-]?credit|n\s*/?\s*c)\s*\)", re.I)
 
 ROMAN_VAL = {"I": "1", "II": "2", "III": "3", "IV": "4", "V": "5",
              "VI": "6", "VII": "7", "VIII": "8", "IX": "9"}
@@ -209,6 +219,7 @@ def normalize(t):
         return t
     t0 = fix_mojibake(str(t))
     t0 = FORMERLY.sub("", t0)
+    t0 = CREDIT_NOISE.sub("", t0)
     t0 = re.sub(r"\s{2,}", " ", t0).strip()
     t0 = convert_romans(t0)
     return title_case(t0)
@@ -229,6 +240,8 @@ def main():
                 stats[fname] += 1
                 if FORMERLY.search(str(old)):
                     stats["formerly_stripped"] += 1
+                if CREDIT_NOISE.search(str(old)):
+                    stats["credit_noise_stripped"] += 1
                 if len(samples) < 60:
                     samples.append((cid, old, new))
                 if APPLY:

@@ -7628,7 +7628,7 @@ def export_unified_courses():
             continue
         sug.setdefault(s, {"main": [], "sing": []})["main"].append(
             {"id": r["id"], "t": r.get("title"), "s": ";".join(r.get("subj") or []),
-             "u": r.get("units"), "k": r.get("id_system")})
+             "u": r.get("units"), "k": r.get("id_system"), "d": r.get("disc")})
     # Singletons: attach to an anchored signature when one exists; otherwise
     # bucket by signature as a singleton-only merge candidate (V2).
     _sug_row_ids = {r["id"] for r in rows}
@@ -7648,7 +7648,8 @@ def export_unified_courses():
         if not s:
             continue
         m = {"id": sid, "t": v.get("common_title"), "s": v.get("subject") or "",
-             "u": v.get("typical_units"), "k": "Stand-Alone", "g": 1}
+             "u": v.get("typical_units"), "k": "Stand-Alone", "g": 1,
+             "d": v.get("discipline")}
         g = sug.get(s)
         if g:  # attach only to an existing main-anchored signature
             g["sing"].append(m)
@@ -7760,7 +7761,8 @@ def export_unified_courses():
                 members = [{"id": cid, "t": _row_by_id[cid].get("title"),
                             "s": ";".join(_row_by_id[cid].get("subj") or []),
                             "u": _row_by_id[cid].get("units"),
-                            "k": _row_by_id[cid].get("id_system")}
+                            "k": _row_by_id[cid].get("id_system"),
+                            "d": _row_by_id[cid].get("disc")}
                            for cid in _cids]
                 family_groups.append({"sig": k, "n": len(members),
                                       "score": _sug_score(members),
@@ -7823,7 +7825,7 @@ def export_unified_courses():
             ev = (r.get("match") or {}).get("evidence") or {}
             m = {"id": r["id"], "t": r.get("title"),
                  "s": ";".join(r.get("subj") or []), "u": r.get("units"),
-                 "k": r.get("id_system"),
+                 "k": r.get("id_system"), "d": r.get("disc"),
                  "ev": {k.split(":", 1)[1]: v
                         for k, v in sorted(ev.items(), key=lambda x: -x[1])}}
             if r.get("_sg"):
@@ -7884,7 +7886,8 @@ def export_unified_courses():
             members = [{"id": m["id"], "t": _mergeable[m["id"]].get("title"),
                         "s": ";".join(_mergeable[m["id"]].get("subj") or []),
                         "u": _mergeable[m["id"]].get("units"),
-                        "k": _mergeable[m["id"]].get("id_system")}
+                        "k": _mergeable[m["id"]].get("id_system"),
+                        "d": _mergeable[m["id"]].get("disc")}
                        for m in live]
             desc_groups.append({"sig": members[0]["t"] or members[0]["id"],
                                 "n": len(members),
@@ -7931,6 +7934,7 @@ def export_unified_courses():
                                     "s": sv.get("subject") or "",
                                     "u": sv.get("typical_units"),
                                     "k": "Stand-Alone", "g": 1,
+                                    "d": sv.get("discipline"),
                                     "_sort": (1, len(str(sv.get("common_title") or "").split()), mid)})
                 else:
                     r = _mergeable_t.get(mid)
@@ -7940,6 +7944,7 @@ def export_unified_courses():
                                     "s": ";".join(r.get("subj") or []),
                                     "u": r.get("units"),
                                     "k": r.get("id_system"),
+                                    "d": r.get("disc"),
                                     "_sort": (0, len(str(r.get("title") or "").split()), mid)})
             if len(members) < 2:
                 continue

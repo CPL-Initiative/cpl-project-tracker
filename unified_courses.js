@@ -1208,9 +1208,46 @@
         function groupSig(g) {
           return liveMembers(g).map(function (m) { return m.id; }).sort().join("|");
         }
+        // Credit-status noise like "(NC)" / "(Noncredit)" is redundant with the
+        // Credit field, so it must never become the minted common-course name
+        // (Sam, 2026-06-16). Meaningful parentheticals (BIM, QuickBooks, Tableau,
+        // …) are left intact — only the noncredit markers are stripped.
+        function cleanTitle(t) {
+          return String(t || "")
+            .replace(/\s*\(\s*(?:non[\s\-]?credit|n\s*\/?\s*c)\s*\)/ig, "")
+            .replace(/\s{2,}/g, " ").trim();
+        }
+        // Merge-target precedence: CCN > C-ID > M-ID > Unified (§10). A group of
+        // only Stand-Alones has no target → Confirm mints a new unified course.
+        // Hoisted to the worklist scope so bestTitle() + renderGroup() share it.
+        var TPRI = { "CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3 };
+        function targetMemberOf(list) {
+          var mains = list.filter(function (m) { return m.k !== "Stand-Alone"; })
+            .slice().sort(function (a, b) { return (TPRI[a.k] != null ? TPRI[a.k] : 9) - (TPRI[b.k] != null ? TPRI[b.k] : 9); });
+          return mains.length ? mains[0] : null;
+        }
+        // Proposed unified-title default: the surviving ★ identity's CLEANED name
+        // (it keeps its id and the "common course" slot). For an all-singleton
+        // mint there's no target, so take the MODAL cleaned title — "Voice" wins
+        // over "Voice (NC)" — tiebroken toward the most canonical (fewest tokens,
+        // then shortest). (Was "longest member title", which surfaced the noisy
+        // variant as the default — Sam, 2026-06-16.)
         function bestTitle(g) {
-          return g.members.map(function (m) { return m.t || ""; })
-            .sort(function (a, b) { return b.length - a.length; })[0] || g.members[0].id;
+          var mems = g.members || [];
+          var tgt = targetMemberOf(mems);
+          if (tgt && tgt.t) return cleanTitle(tgt.t);
+          var counts = {}, order = [];
+          mems.forEach(function (m) {
+            var c = cleanTitle(m.t); if (!c) return;
+            if (counts[c] == null) { counts[c] = 0; order.push(c); }
+            counts[c]++;
+          });
+          order.sort(function (a, b) {
+            return counts[b] - counts[a]
+                || a.split(/\s+/).length - b.split(/\s+/).length
+                || a.length - b.length;
+          });
+          return order[0] || cleanTitle((mems[0] || {}).t) || (mems[0] || {}).id || "";
         }
         var i = 0;
         var overlay = el("div", { style: dim });
@@ -1221,9 +1258,15 @@
         // drag-handle title bar with an explicit ✕ closer. renderGroup() wipes
         // only `box` below, so the bar — and any dragged position — survives
         // Skip/Keep/Confirm advances.
-        var head = el("div", { style: "display:flex;align-items:center;gap:10px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;border-radius:10px 10px 0 0;background:#f8fafc;cursor:move;user-select:none;" });
+        var head = el("div", { style: "display:flex;align-items:center;gap:8px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;border-radius:10px 10px 0 0;background:#f8fafc;cursor:move;user-select:none;" });
         head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;" }, ["✨ Suggested merges"]));
-        head.appendChild(el("span", { style: "flex:1;font-size:.74rem;color:#94a3b8;" }, ["drag to move"]));
+        // The "N of M" position counter lives here next to the title (Sam,
+        // 2026-06-16) — renderGroup() updates it per group; the old in-box
+        // "Suggested merge N of M" subtitle + "drag to move" hint were dropped
+        // as redundant (the move-cursor on this bar is self-evident).
+        var headCount = el("span", { style: "font-size:.8rem;color:#64748b;font-weight:600;" }, [""]);
+        head.appendChild(headCount);
+        head.appendChild(el("span", { style: "flex:1;" }, []));
         var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close",
           style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["✕"]);
         closeX.onclick = close;
@@ -1256,16 +1299,17 @@
           while (i < groups.length &&
                  (liveMembers(groups[i]).length < 2 || dismissed[groupSig(groups[i])])) i++;
           if (i >= groups.length) {
+            headCount.textContent = "";
             box.appendChild(el("p", { style: "color:#6b7280;" }, ["End of the worklist — nice work. New suggestions regenerate on the next daily build."]));
             var d = el("button", { style: goCss }, ["Done"]); d.onclick = close; box.appendChild(d);
             return;
           }
+          headCount.textContent = (i + 1) + " of " + groups.length;
           var g = groups[i], mems = liveMembers(g), isSingleton = g._kind === "singleton";
           var isFamily = g._kind === "family";
           var isEvidence = g._kind === "evidence";
           var isDesc = g._kind === "desc";
           var isTitle = g._kind === "title";
-          box.appendChild(el("h3", { style: "margin:0 0 2px;color:var(--text-strong);" }, ["Suggested merge " + (i + 1) + " of " + groups.length]));
           // Section badge so the curator knows whether this merges into an
           // existing identity or mints a brand-new unified course.
           var badge = isSingleton
@@ -1324,11 +1368,28 @@
                            : "— applied only if you Confirm (pre-filled from the longest member title; edit freely)"])]));
           var titleIn = el("input", { type: "text", value: (isEvidence && g.official) || bestTitle(g), style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
           box.appendChild(titleIn);
-          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" }, ["Discipline (optional)"]));
+          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" }, ["Discipline"]));
           var discSel = el("select", { class: "uc-filter", style: "min-width:280px;" });
           discSel.appendChild(el("option", { value: "" }, ["— choose —"]));
-          mqList.forEach(function (d) { discSel.appendChild(el("option", { value: d }, [d])); });
+          var mqSet = {};
+          mqList.forEach(function (d) { mqSet[d] = 1; discSel.appendChild(el("option", { value: d }, [d])); });
           box.appendChild(discSel);
+          // Track explicit curator picks so refreshTarget()'s auto pre-select
+          // (below) never clobbers a deliberate choice on a checkbox toggle.
+          discSel.onchange = function () { discSel._userPicked = true; };
+          // Modal discipline across a set of members (member `d` from the
+          // generator, falling back to the live row when the member is in the
+          // payload) — the suggested pick for a fresh mint (task 4, Sam 2026-06-16).
+          function modalDisc(members) {
+            var c = {}, best = "", bestN = 0;
+            members.forEach(function (m) {
+              var d = m.d || (byId[m.id] && byId[m.id].disc) || "";
+              if (!d) return;
+              c[d] = (c[d] || 0) + 1;
+              if (c[d] > bestN) { bestN = c[d]; best = d; }
+            });
+            return best;
+          }
           // Clarify WHEN the discipline matters (Sam, 2026-06-15): it is written
           // ONLY when this Confirm mints a brand-new course (no ★ target). For a
           // merge into an existing ★ identity it's inherited from that identity
@@ -1339,17 +1400,9 @@
             ["Candidates (" + mems.length + ") ",
              el("span", { style: "font-weight:400;font-size:.76rem;color:#94a3b8;" },
                ["— each row is currently its own separate identity"])]));
-          // Which row is the MERGE TARGET — the surviving identity the others
-          // fold into (and which takes the Proposed title above, i.e. the
-          // "common course" slot). Precedence CCN > C-ID > M-ID > Unified
-          // (§10); a group of only Stand-Alones has no target → mint new.
-          // Single source of truth — also drives go.onclick.
-          var TPRI = { "CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3 };
-          function targetMemberOf(list) {
-            var mains = list.filter(function (m) { return m.k !== "Stand-Alone"; })
-              .slice().sort(function (a, b) { return (TPRI[a.k] != null ? TPRI[a.k] : 9) - (TPRI[b.k] != null ? TPRI[b.k] : 9); });
-            return mains.length ? mains[0] : null;
-          }
+          // The MERGE TARGET (surviving identity the others fold into, taking the
+          // Proposed title's "common course" slot) is picked by targetMemberOf()
+          // — hoisted to the worklist scope above so bestTitle() shares it.
           var hasTarget = !!targetMemberOf(mems);
           var note = "These courses do NOT yet share an identity — the id on each row is that course's own, today. ✓ Confirm folds the checked rows into ONE identity; Keep as-is / Skip leave every id untouched.";
           if (hasTarget) note += " The ★ row is the SURVIVING identity — it keeps its id and takes the Proposed title above (the “common course” slot); every other checked row folds into it.";
@@ -1398,8 +1451,33 @@
               title: "Merge target — the surviving identity. The other checked courses fold INTO this one; it keeps its id and takes the Proposed unified title above (the “common course” slot).",
             }, ["★ merge target"]);
             row.appendChild(tgtBadge);
+            // ⓘ description toggle (task 3, Sam 2026-06-16) — lazy-load this
+            // course's catalog description inline so a curator can disambiguate
+            // near-duplicate titles without leaving the popup. One descBox per
+            // row, appended just below it in the list.
+            var descBox = el("div", { style: "display:none;font-size:.8rem;line-height:1.4;color:#475569;background:#f8fafc;border:1px solid #eef2f7;border-radius:6px;padding:6px 9px;margin:0 4px 5px 26px;" });
+            var dTog = el("a", { href: "#", title: "Show this course's catalog description",
+              style: "font-size:.78rem;color:var(--cobalt);text-decoration:none;white-space:nowrap;" }, ["ⓘ"]);
+            (function (mm, bx, tg) {
+              tg.onclick = function (e) {
+                e.preventDefault();
+                var open = bx.style.display === "none";
+                bx.style.display = open ? "block" : "none";
+                tg.style.color = open ? "var(--text-strong)" : "var(--cobalt)";
+                if (open && !bx._loaded) {
+                  bx._loaded = true;
+                  bx.textContent = "Loading description…";
+                  loadDetails().then(function (det) {
+                    var d = det[mm.id];
+                    bx.textContent = (d && d.d) ? d.d : "No catalog description on file for this course.";
+                  });
+                }
+              };
+            })(m, descBox, dTog);
+            row.appendChild(dTog);
             cbs.push({ cb: cb, m: m, row: row, tgt: tgtBadge });
             list.appendChild(row);
+            list.appendChild(descBox);
           });
           box.appendChild(list);
           // No existing identity among the checked rows → Confirm mints a new
@@ -1427,14 +1505,29 @@
             var hasTgt = overrideTarget || inGroupTgt;
             mintHint.style.display = (!hasTgt && checked.length >= 2) ? "block" : "none";
             // Discipline only applies to a fresh mint; an existing target keeps
-            // its own, so disable + explain rather than silently ignore.
+            // its own, so SHOW the inherited discipline (read-only) rather than a
+            // bare "— choose —", and for a mint PRE-SELECT the modal member
+            // discipline so the curator just confirms (task 4, Sam 2026-06-16).
             discSel.disabled = !!hasTgt;
-            discSel.style.opacity = hasTgt ? "0.55" : "";
-            discNote.textContent = overrideTarget
-              ? "Inherited from the course you're folding into — not needed here."
-              : inGroupTgt
-              ? "Inherited from the ★ merge target — not needed here (merging keeps the target's discipline)."
-              : "Optional — sets the discipline on the NEW unified course this Confirm mints. Merging doesn't require one.";
+            discSel.style.opacity = hasTgt ? "0.7" : "";
+            if (hasTgt) {
+              var tId = overrideTarget ? overrideTarget[0] : inGroupTgt.id;
+              var tDisc = (byId[tId] && byId[tId].disc) || (inGroupTgt && inGroupTgt.d) || "";
+              discSel.value = (tDisc && mqSet[tDisc]) ? tDisc : "";
+              discNote.textContent = tDisc
+                ? (overrideTarget ? "Inherited from the course you're folding into — kept as-is."
+                                  : "Inherited from the ★ merge target — merging keeps it.")
+                : "The merge target has no discipline yet — set one from its row after merging.";
+            } else {
+              // Mint: seed the modal member discipline (unless the curator picked).
+              if (!discSel._userPicked) {
+                var md = modalDisc(checked);
+                discSel.value = (md && mqSet[md]) ? md : "";
+              }
+              discNote.textContent = discSel.value
+                ? "Pre-selected from the members — change it if the new course belongs elsewhere."
+                : "Choose a discipline for the NEW unified course this Confirm mints.";
+            }
           }
           refreshTarget();
           var actions = el("div", { style: "margin-top:14px;display:flex;gap:10px;justify-content:flex-end;" });
@@ -2510,14 +2603,19 @@
         "#tab-unified-courses .uc-table td:nth-child(3) .uc-trunc{white-space:normal;overflow:visible;text-overflow:clip;}" +
         "#tab-unified-courses .uc-member-table th{color:#fff;background:var(--navy-primary,#1C1C1A);}" +
         "#tab-unified-courses table.uc-table{table-layout:fixed;min-width:900px;}" +
-        // Clip only the text-bearing columns (title/subj/disc/TOP/flags) —
+        // Clip only the text-bearing columns (id/title/subj/disc/TOP/flags) —
         // numeric/enum cells can't overflow a fixed column, and a clip context
         // on all 15 cells × 500 rows measurably dragged scroll/render (Sam,
-        // 2026-06-12 "noticeably slower"). 5 columns keeps the unbreakable-
-        // token protection at a third of the paint cost.
-        "#tab-unified-courses .uc-table td:nth-child(3),#tab-unified-courses .uc-table td:nth-child(4)," +
+        // 2026-06-12 "noticeably slower"). These keep the unbreakable-token
+        // protection at a fraction of the paint cost.
+        // The id column (nth-child 2) was clipping-exempt, so a long "SUBJ M####"
+        // id overflowed its fixed column and overlapped the Title — clip it +
+        // break-word so it WRAPS like the title (Sam, 2026-06-16, task 6).
+        "#tab-unified-courses .uc-table td:nth-child(2),#tab-unified-courses .uc-table td:nth-child(3)," +
+        "#tab-unified-courses .uc-table td:nth-child(4)," +
         "#tab-unified-courses .uc-table td:nth-child(5),#tab-unified-courses .uc-table td:nth-child(8)," +
         "#tab-unified-courses .uc-table td:nth-child(15){overflow:hidden;}" +
+        "#tab-unified-courses .uc-table td.uc-id{word-break:break-word;}" +
         "#tab-unified-courses .uc-member-table{table-layout:fixed;}" +
         "#tab-unified-courses .uc-member-table td{overflow:hidden;}";
       document.head.appendChild(st);
@@ -2617,8 +2715,8 @@
       var table = el("table", { class: "uc-table" });
       // Explicit column proportions for table-layout:fixed (ensureUcFixCss #3)
       // — without a colgroup, fixed layout would split all 15 columns evenly.
-      var COL_W = { kind: 5.5, id: 7.5, title: 14, subj: 5.5, disc: 10, credit: 6,
-                    units: 4.5, top: 11, members: 4.5, adopted: 4.5, potential: 5,
+      var COL_W = { kind: 5.5, id: 9, title: 14, subj: 5.5, disc: 10, credit: 6,
+                    units: 4.5, top: 9.5, members: 4.5, adopted: 4.5, potential: 5,
                     eu: 5, st: 4.5, conf: 3.5, flags: 10.5 };
       var cgroup = el("colgroup", {});
       COLS.forEach(function (c) {

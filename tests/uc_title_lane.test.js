@@ -186,7 +186,7 @@ check("consumer init does not throw", !threw);
     /TITLES are near-duplicates/.test(doc.body.textContent)
     && /0\.81/.test(doc.body.textContent)
     && /spread here: 1\.5u/.test(doc.body.textContent));
-  const boxes = Array.from(doc.querySelectorAll("div")).filter((d) => /Suggested merge 1 of/.test(txt(d)));
+  const boxes = Array.from(doc.querySelectorAll("div")).filter((d) => /Proposed unified title/.test(txt(d)));
   const box = boxes[boxes.length - 1];
   const cbs = box ? Array.from(box.querySelectorAll("input[type=checkbox]")) : [];
   check("both members render with checkboxes pre-CHECKED",
@@ -207,7 +207,7 @@ check("consumer init does not throw", !threw);
     && /"value":\s*"AUTO M9101"/.test(allBodies)
     && /"course_id":\s*"AUTO M9102"/.test(allBodies));
   check("worklist advanced to the same_college group",
-    /Suggested merge 2 of 2/.test(doc.body.textContent));
+    /2 of 2/.test(doc.body.textContent));
   check("same_college title group shows the amber banner",
     /resolve to ONE college/.test(doc.body.textContent));
 

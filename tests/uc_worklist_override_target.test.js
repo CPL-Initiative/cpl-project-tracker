@@ -72,7 +72,7 @@ try { window.eval(src); } catch (e) { threw = true; console.error("init threw:",
 check("consumer init does not throw", !threw);
 
 function curBox(doc) {
-  const boxes = Array.from(doc.querySelectorAll("div")).filter((d) => /Suggested merge \d+ of/.test(txt(d)));
+  const boxes = Array.from(doc.querySelectorAll("div")).filter((d) => /Proposed unified title/.test(txt(d)));
   return boxes[boxes.length - 1];
 }
 

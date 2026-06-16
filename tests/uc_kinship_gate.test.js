@@ -236,7 +236,7 @@ check("consumer init does not throw", !threw);
     /Every witness in this group is title-mismatched/.test(doc.body.textContent));
   const chips = Array.from(doc.querySelectorAll("span")).filter((s) => /title mismatch/.test(txt(s)));
   check("⚠ title-mismatch chip renders on the kin-failed member", chips.length >= 1);
-  const dialogBoxes = Array.from(doc.querySelectorAll("div")).filter((d) => /Suggested merge 1 of/.test(txt(d)));
+  const dialogBoxes = Array.from(doc.querySelectorAll("div")).filter((d) => /Proposed unified title/.test(txt(d)));
   const box = dialogBoxes[dialogBoxes.length - 1];
   const cbRows = box ? Array.from(box.querySelectorAll("input[type=checkbox]")) : [];
   const mismatchCb = cbRows.find((cb) => (cb.parentNode.textContent || "").indexOf("AUTO M9901") >= 0);
