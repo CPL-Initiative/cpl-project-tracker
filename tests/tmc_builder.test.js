@@ -58,7 +58,10 @@ const document = window.document;
 
 // Mock the lazy data the module expects (pre-set so ensureScript resolves immediately).
 window.CPL_TMC_TEMPLATES = {
-  _meta: { draft: true },
+  _meta: { draft: true, sources: {
+    "test-psych": "https://example.org/psych.pdf",
+    "test-planned": "https://example.org/planned.pdf"
+  } },
   templates: [{
     id: "test-psych", discipline: "Test Psychology", degree: "AA-T", total_units: 10,
     version: "draft", sections: [
@@ -70,7 +73,8 @@ window.CPL_TMC_TEMPLATES = {
         { cid: "", title: "Introduction to Biology", units: "3–4", noncid: true }
       ]}
     ]
-  }]
+  },
+  { id: "test-planned", discipline: "Test Planned", status: "planned" }]
 };
 window.CPL_TMC_COLLEGE_COURSES = {
   colleges: ["Test College", "Other College"],
@@ -96,7 +100,7 @@ window.CPL_TMC_BUILDER.boot();
 const colSel = document.getElementById("tmc-college-sel");
 const tmcSel = document.getElementById("tmc-tmc-sel");
 check("college dropdown populated from COCI colleges", colSel && colSel.options.length === 3); // placeholder + 2
-check("TMC dropdown populated from templates", tmcSel && tmcSel.options.length === 2);          // placeholder + 1
+check("TMC dropdown populated from templates", tmcSel && tmcSel.options.length === 3);          // placeholder + 1 draft + 1 planned
 
 function selectVal(sel, val) {
   sel.value = val;
@@ -140,6 +144,29 @@ function selectVal(sel, val) {
   check("opening a picker with a null-title course in the catalog does not throw", !pickThrew);
   const opts = document.querySelectorAll("#tab-tmc-builder .tmc-opt");
   check("picker lists the college's courses as options", opts.length >= 1);
+
+  // (3) STATUS INDICATOR — dropdown groups, legend, header chip + official link
+  const optgroups = tmcSel.querySelectorAll("optgroup");
+  check("TMC dropdown groups by status (Available now / Coming soon)",
+    optgroups.length === 2 && /Available now/.test(optgroups[0].label) && /Coming soon/.test(optgroups[1].label));
+  const legend = document.querySelector("#tab-tmc-builder .tmc-statuslegend");
+  check("status legend shows 'N of M TMCs built'", legend && /1 of 2/.test(txt(legend)));
+  const chip = document.querySelector("#tab-tmc-builder .tmc-formhead .tmc-stchip");
+  check("draft TMC header shows a Draft status chip", chip && /Draft/.test(txt(chip)));
+  const srclink = document.querySelector("#tab-tmc-builder .tmc-formhead .tmc-srclink");
+  check("draft TMC header links to the official template",
+    srclink && /example\.org\/psych\.pdf/.test(srclink.getAttribute("href")));
+
+  // planned TMC: coming-soon panel + official-template link, NO form slots, no crash
+  selectVal(document.getElementById("tmc-tmc-sel"), "test-planned");
+  await sleep(0);
+  const soon = document.querySelector("#tab-tmc-builder .tmc-soon-badge");
+  check("planned TMC shows a Coming soon panel", soon && /Coming soon/.test(txt(soon)));
+  const psrc = document.querySelector("#tab-tmc-builder .tmc-srclink");
+  check("planned TMC links to its official template",
+    psrc && /example\.org\/planned\.pdf/.test(psrc.getAttribute("href")));
+  check("planned TMC renders no form slots (not yet encoded)",
+    document.querySelectorAll("#tab-tmc-builder .tmc-slot").length === 0);
 
   check("no unhandled promise rejections", rejections.length === 0);
 
