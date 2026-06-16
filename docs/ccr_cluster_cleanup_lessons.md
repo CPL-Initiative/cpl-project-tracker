@@ -1,7 +1,7 @@
 ---
 title: CCR Cluster Cleanup — Lessons & State
 date: 2026-05-30
-last_updated: 2026-06-15  # Session 56
+last_updated: 2026-06-16  # Session 57
 session: 19 (CCR cluster dissolution)
 tags: [ccr, unified-courses, cluster, dissolution, curation-migration, supabase, m-id]
 artifacts:
@@ -1487,3 +1487,52 @@ no audit chip until `kb/_row_audit.py` re-runs + `latest.json` refreshes).
 
 **Next.** Title-lane pass-2 dry-run (5,457 groups, on Sam's go); wire the auto-merge
 mint → Z + the promote-step; per-row auto-merge revert; re-run the auditor.
+
+---
+
+## Session 57 — Bruh Skydriver: worklist polish + the consolidation loosening (2026-06-16)
+
+Sam-interactive off his "Voice (NC)" worklist screenshot. Two merged PRs (#441
+popup/CCR + the "(NC)" data fix; #442 the consolidation loosening), both
+dispatched + LIVE.
+
+**(a) Learned this checkpoint.**
+- **Curated `unified_title` is Supabase-synced — editing the committed
+  `coci_curation.json` alone is futile.** The daily cron's `_apply_curation.py`
+  regenerates the snapshot FROM Supabase `kb_curation`, so a title fix must hit
+  the **source** (a targeted `UPDATE … WHERE field='unified_title'`), then the
+  snapshot follows. The 13 noisy "(NC)" titles were 100% `automerge-*@bot` (no
+  human text), so cleaning them was in-scope curation; scoping the UPDATE to the
+  bot cohorts preserved the cohort revert handle (`reviewer_email`).
+- **`regularize_title()` in the auto-merge worklist calls
+  `_normalize_common_titles.normalize`** — so extending the normalizer (the
+  noncredit-paren strip) auto-cleans every FUTURE bot mint for free. One fix,
+  two surfaces.
+- **The proposed-title heuristic was "longest member title"** — which surfaced
+  the *noisiest* variant ("Voice (NC)") as the default common-course name. The
+  fix: prefer the **★ target's cleaned title**, else the **modal cleaned title**.
+  A merge's default name should come from the surviving identity, not length.
+- **Loosening the worklist grouping is LOW-risk because it's suggestions-only.**
+  Making `_sug_sig` aggressive only changes what the curator is *offered* — every
+  merge is still a human Confirm. That's what made it safe to flip a core
+  grouping function on Sam's word.
+- **Measure against the LIVE residual, not the raw catalog.** The dry-run over
+  the raw minted files found 7,849 families, but the live worklist impact (after
+  the existing auto-merge cohorts already consumed most) was 229→2,665 anchored /
+  217→2,519 singleton. Size a change against post-merge live data.
+
+**(b) Current state.** `_sug_sig` is level-COLLAPSING (folds level words +
+roman/word/digit ordinals + a–h section letters). Worklist ~10× bigger. "(NC)"
+noise gone from singleton `common_title` (110), the auto-merge future path, and
+the 13 bot curated titles (Supabase + snapshot). Popup: count in the bar, ⓘ
+description toggle, discipline show/pre-select, clean-title proposal. CCR id
+column wraps. Suite 48→49.
+
+**(c) Roadmap.** PARKED-with-a-plan: the **member-join Jaccard 0.5→~0.4** (Sam
+endorsed it, but `kb/README.md` mandates measuring member-row flips first → its
+own measured PR). Follow-on: promote the cleanest cross-college + uniform-units
+families to a bulk auto-merge cohort once curators work the bigger worklist.
+
+**(d) Next concrete step.** Build the Jaccard member-flip measurement (prototype
+over the title-filtered raw-list join, count member rows that attach/detach at
+0.4 vs 0.5, sample the borderline band) and present before committing.
