@@ -84072,6 +84072,119 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPICI-CEMT2-1-001",
+      "exhibit_ids": [
+        "MAPICI-CEMT2-1-001"
+      ],
+      "title": "California Emergency Medical Technician (EMT)",
+      "unified_title": "California Emergency Medical Technician (EMT)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "California Emergency Medical Technician (EMT)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "City College of San Francisco"
+      ],
+      "potential": 74,
+      "potential_names": [
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 75,
+      "credit_recs": [
+        {
+          "course": "EMT 100",
+          "credit": "8 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "EMT 12",
+          "credit": "0.5 hours in Basic Life Support for Healthcare Providers"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPOA-ATAP-1-001",
       "exhibit_ids": [
         "MAPOA-ATAP-1-001"
@@ -220819,11 +220932,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "City College of San Francisco",
-        "credit_recs": 162,
-        "exhibits": 114,
+        "credit_recs": 164,
+        "exhibits": 115,
         "disciplines": 12,
         "ccc_collaborative": 66,
-        "industry_certs": 96,
+        "industry_certs": 98,
         "pct": 1.4
       },
       {
@@ -221591,12 +221704,12 @@ window.CPL_STATEWIDE = {
         "courses": 27,
         "colleges": 81,
         "ccc_collaborative": 1,
-        "pct": 5.7
+        "pct": 5.6
       },
       {
         "discipline": "Health",
-        "credit_recs": 420,
-        "exhibits": 193,
+        "credit_recs": 422,
+        "exhibits": 194,
         "courses": 274,
         "colleges": 45,
         "ccc_collaborative": 32,
@@ -221775,8 +221888,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3325,
-        "exhibits": 1144,
+        "credit_recs": 3327,
+        "exhibits": 1145,
         "colleges": 78,
         "pct": 29.4
       },
@@ -221819,8 +221932,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2584,
-        "exhibits": 942,
+        "credit_recs": 2586,
+        "exhibits": 943,
         "colleges": 74,
         "pct": 22.8
       },
@@ -221884,8 +221997,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 9797,
-        "exhibits": 3696,
+        "credit_recs": 9799,
+        "exhibits": 3697,
         "colleges": 98,
         "disciplines": 23,
         "pct": 86.5
@@ -222310,6 +222423,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-16T19:39:20",
-  "total_credit_recs": 11326
+  "generated_at": "2026-06-16T20:43:45",
+  "total_credit_recs": 11328
 };

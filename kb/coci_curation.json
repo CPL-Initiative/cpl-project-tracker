@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-16T19:40:02Z",
-  "count": 28335,
+  "_synced_at": "2026-06-16T20:44:30Z",
+  "count": 28374,
   "curations": {
     "AERO M10BA": {
       "merge_into": "AERO Z1001",
@@ -4523,9 +4523,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ART M1117": {
-      "unified_title": "Ceramic Sculpture Advanced",
+      "merge_into": "ARTS M1177",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-16T17:26:09.336429+00:00"
+      "reviewed_at": "2026-06-16T20:16:27.011578+00:00",
+      "unified_title": "Ceramic Sculpture Advanced"
     },
     "ART M1118": {
       "merge_into": "ART M1117",
@@ -5048,6 +5049,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARTS M1045": {
+      "unified_title": "Advanced Figure Drawing",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:23.758663+00:00"
+    },
     "ARTS M1056": {
       "merge_into": "ARTS M1025",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -5548,6 +5554,11 @@
       "merge_into": "ARTS M1137",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M10IR": {
+      "merge_into": "ARTS M1045",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:23.758663+00:00"
     },
     "ARTS M10IU": {
       "merge_into": "ARTS M1385",
@@ -6289,6 +6300,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
       "unified_title": "Beginning Photography : Black and White"
+    },
+    "ARTS M1177": {
+      "unified_title": "Beginning Ceramic Sculpture",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:27.011578+00:00"
     },
     "ARTS M1179": {
       "unified_title": "Ceramics: Beginning 2",
@@ -7976,6 +7992,21 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-16T17:26:09.336429+00:00"
     },
+    "ARTS M1223": {
+      "merge_into": "ARTS M1177",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:27.011578+00:00"
+    },
+    "ARTS M1224": {
+      "merge_into": "ARTS M1177",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:27.011578+00:00"
+    },
+    "ARTS M1225": {
+      "merge_into": "ARTS M1177",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:27.011578+00:00"
+    },
     "ARTS M1229": {
       "unified_title": "Ceramics - Handbuilding 1",
       "reviewed_by": "automerge-v1@bot",
@@ -8551,6 +8582,16 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:43:33.362267+00:00"
     },
+    "ARTS M1358": {
+      "merge_into": "ARTS M1045",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:23.758663+00:00"
+    },
+    "ARTS M1361": {
+      "merge_into": "ARTS M1045",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:23.758663+00:00"
+    },
     "ARTS M1372": {
       "unified_title": "Life Drawing 3",
       "reviewed_by": "map@rccd.edu",
@@ -8735,7 +8776,7 @@
     },
     "ARTS M1462": {
       "unified_title": "Jewelry 1: Intro to Jewelry and Metalsmithing",
-      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTS M1464": {
@@ -9059,9 +9100,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTS Z1008": {
-      "unified_title": "Jewelry and Metalsmithing 1",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "ARTS M1462",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:01:54.319546+00:00",
+      "unified_title": "Jewelry and Metalsmithing 1"
     },
     "ARTS Z1009": {
       "unified_title": "Laboratory Practice in Photography 1",
@@ -9194,9 +9236,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ARTS Z1035": {
-      "unified_title": "Jewelry and Metalsmithing 2",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "ARTS M1462",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:01:54.319546+00:00",
+      "unified_title": "Jewelry and Metalsmithing 2"
     },
     "ARTS Z1036": {
       "unified_title": "Laboratory Practice in Photography 2",
@@ -9219,9 +9262,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTS Z1040": {
-      "unified_title": "Jewelry and Metalsmithing 3",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "ARTS M1462",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:01:54.319546+00:00",
+      "unified_title": "Jewelry and Metalsmithing 3"
     },
     "ARTS Z1041": {
       "unified_title": "Laboratory Practice in Photography 3",
@@ -9249,9 +9293,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTS Z1046": {
-      "unified_title": "Jewelry and Metalsmithing 4",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "ARTS M1462",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:01:54.319546+00:00",
+      "unified_title": "Jewelry and Metalsmithing 4"
     },
     "ARTS Z1047": {
       "unified_title": "Laboratory Practice in Photography 4",
@@ -9729,9 +9774,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ARTS Z1142": {
-      "unified_title": "Intermediate Jewelry and Metalsmithing",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "ARTS M1462",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:01:54.319546+00:00",
+      "unified_title": "Intermediate Jewelry and Metalsmithing"
     },
     "ARTS Z1143": {
       "unified_title": "Sculpture: Intermediate Life",
@@ -55311,6 +55357,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "EDUC M1040": {
+      "unified_title": "Teacher Preparation 3",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:56:04.227031+00:00"
+    },
     "EDUC M1046": {
       "unified_title": "Success for Online Learning",
       "reviewed_by": "automerge-v1@bot",
@@ -55320,6 +55371,11 @@
       "unified_title": "Teacher Preparation Orientation",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "EDUC M1048": {
+      "merge_into": "EDUC M1040",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:56:04.227031+00:00"
     },
     "EDUC M10AA": {
       "merge_into": "EDUC Z1001",
@@ -55606,10 +55662,20 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "EDUC M10HH": {
+      "merge_into": "EDUC M1040",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:56:04.227031+00:00"
+    },
     "EDUC M10HS": {
       "merge_into": "EDUC M1024",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "EDUC M10HT": {
+      "merge_into": "EDUC M1040",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:56:04.227031+00:00"
     },
     "EDUC M10HV": {
       "merge_into": "CSIS Z1143",
@@ -55630,6 +55696,16 @@
       "merge_into": "KINE M1410",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "EDUC M10IG": {
+      "merge_into": "EDUC M1040",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:56:04.227031+00:00"
+    },
+    "EDUC M10IH": {
+      "merge_into": "EDUC M1040",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:56:04.227031+00:00"
     },
     "EDUC M9006": {
       "unified_title": "Instructional Aide Training: Roles and Responsibilities",
@@ -58978,6 +59054,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M1043": {
+      "merge_into": "ENGL M1343",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:20:55.290203+00:00"
+    },
     "ENGL M1044": {
       "merge_into": "ENGL M1302",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -60073,6 +60154,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M1104": {
+      "merge_into": "ENGL M1343",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:20:55.290203+00:00"
+    },
     "ENGL M1105": {
       "unified_title": "Screenwriting: Beginning",
       "reviewed_by": "automerge-v1@bot",
@@ -60312,6 +60398,11 @@
       "merge_into": "ENGL M1243",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M11BP": {
+      "merge_into": "ENGL M1250",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:53:26.028148+00:00"
     },
     "ENGL M11BQ": {
       "merge_into": "ENGL Z1014",
@@ -60607,6 +60698,11 @@
       "merge_into": "ENGL M1369",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M11HB": {
+      "merge_into": "ENGL M1343",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:20:55.290203+00:00"
     },
     "ENGL M11HF": {
       "merge_into": "ENGL M1312",
@@ -60913,10 +61009,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ENGL M1254": {
-      "unified_title": "Introduction to Fiction Writing",
+    "ENGL M1250": {
+      "unified_title": "Intermediate Fiction Writing",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-12T21:51:46.671761+00:00"
+      "reviewed_at": "2026-06-16T19:53:26.028148+00:00"
+    },
+    "ENGL M1254": {
+      "merge_into": "ENGL M1250",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:53:26.028148+00:00",
+      "unified_title": "Introduction to Fiction Writing"
     },
     "ENGL M1259": {
       "unified_title": "Fiction Workshop (the Writer, Producer, Director)",
@@ -60924,9 +61026,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ENGL M1260": {
-      "unified_title": "Writing in Fiction",
+      "merge_into": "ENGL M1250",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-12T19:56:06.603883+00:00"
+      "reviewed_at": "2026-06-16T19:53:26.028148+00:00",
+      "unified_title": "Writing in Fiction"
     },
     "ENGL M1261": {
       "unified_title": "Honors Literature and Film",
@@ -61058,6 +61161,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M1308": {
+      "merge_into": "ENGL M1343",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:20:55.290203+00:00"
+    },
     "ENGL M1309": {
       "merge_into": "ENGL M1298",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -61158,6 +61266,11 @@
       "unified_title": "Introduction to LGBT Literature",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M1343": {
+      "unified_title": "Literary Magazine Production",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:20:55.290203+00:00"
     },
     "ENGL M1344": {
       "merge_into": "ENGL M1334",
@@ -64669,6 +64782,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ESOL M9001": {
+      "unified_title": "English for Every Day",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:56:31.806642+00:00"
+    },
     "ESOL M9002": {
       "unified_title": "Beg High Prevocational ESL 1",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -64685,9 +64803,15 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ESOL M9008": {
-      "unified_title": "ESL and Civics 1",
+      "merge_into": "ESOL M9184",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-12T21:53:36.126614+00:00"
+      "reviewed_at": "2026-06-16T20:21:11.189167+00:00",
+      "unified_title": "ESL and Civics 1"
+    },
+    "ESOL M9011": {
+      "merge_into": "ESOL M9001",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:56:31.806642+00:00"
     },
     "ESOL M9013": {
       "unified_title": "English for Work I",
@@ -64719,6 +64843,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:53:05.064914+00:00"
     },
+    "ESOL M9019": {
+      "merge_dismissed": "ESOL M9019|ESOL M9040|ESOL M9050|ESOL M9059|ESOL M9067|ESOL M9071",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:56:45.299862+00:00"
+    },
     "ESOL M9023": {
       "unified_title": "Beg High Prevocational ESL 2",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -64738,6 +64867,11 @@
       "merge_into": "ESOL M9023",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ESOL M9031": {
+      "merge_into": "ESOL M9001",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:56:31.806642+00:00"
     },
     "ESOL M9034": {
       "unified_title": "English for Work 2",
@@ -64759,20 +64893,40 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ESOL M9038": {
+      "unified_title": "ESL 2 Low Intermediate",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:08.968524+00:00"
+    },
     "ESOL M9039": {
       "unified_title": "ESL - Level 2",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:53:06.053892+00:00"
+    },
+    "ESOL M9047": {
+      "merge_into": "ESOL M9001",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:56:31.806642+00:00"
     },
     "ESOL M9049": {
       "unified_title": "ESL - Level 3",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:53:06.964612+00:00"
     },
+    "ESOL M9055": {
+      "merge_into": "ESOL M9001",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:56:31.806642+00:00"
+    },
     "ESOL M9058": {
       "unified_title": "ESL - Level 4",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:53:07.861234+00:00"
+    },
+    "ESOL M9062": {
+      "merge_into": "ESOL M9001",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:56:31.806642+00:00"
     },
     "ESOL M9073": {
       "unified_title": "ESL Citizenship: Abridged",
@@ -64954,20 +65108,40 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ESOL M90GQ": {
+      "merge_into": "ESOL M9038",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:08.968524+00:00"
+    },
     "ESOL M90GS": {
       "merge_into": "ESOL Z9013",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ESOL M90GX": {
+      "merge_into": "ESOL M9038",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:08.968524+00:00"
     },
     "ESOL M90GY": {
       "merge_into": "ESOL M9183",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:53:38.275427+00:00"
     },
+    "ESOL M90HB": {
+      "merge_into": "ESOL M9038",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:08.968524+00:00"
+    },
     "ESOL M90HF": {
       "merge_into": "ESOL M9229",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ESOL M90HH": {
+      "merge_into": "ESOL M9038",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:08.968524+00:00"
     },
     "ESOL M90HY": {
       "merge_into": "ESOL Z9014",
@@ -65223,6 +65397,11 @@
       "merge_into": "ESOL Z9033",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ESOL M90RO": {
+      "merge_into": "ESOL M9038",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:08.968524+00:00"
     },
     "ESOL M90RW": {
       "merge_into": "ESOL Z9032",
@@ -65545,9 +65724,25 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ESOL M9183": {
-      "unified_title": "ESL and Civics 3",
+      "merge_into": "ESOL M9184",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-12T21:53:38.275427+00:00"
+      "reviewed_at": "2026-06-16T20:21:11.189167+00:00",
+      "unified_title": "ESL and Civics 3"
+    },
+    "ESOL M9184": {
+      "unified_title": "ESL and Civics",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:21:11.189167+00:00"
+    },
+    "ESOL M9185": {
+      "merge_into": "ESOL M9184",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:21:11.189167+00:00"
+    },
+    "ESOL M9186": {
+      "merge_into": "ESOL M9184",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:21:11.189167+00:00"
     },
     "ESOL M9197": {
       "unified_title": "Conversation(intermediate)",
@@ -66375,9 +66570,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ESOL Z9060": {
-      "unified_title": "Low Intermediate ESL A",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "ESOL M9038",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:16:08.968524+00:00",
+      "unified_title": "Low Intermediate ESL A"
     },
     "ESOL Z9061": {
       "unified_title": "ESL: Preperation for the Workplace",
@@ -78288,8 +78484,8 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "FLRU M1002": {
-      "unified_title": "Elementary Russian (Second Quarter)",
-      "reviewed_by": "automerge-titlelane-v1@bot",
+      "unified_title": "Russian 1",
+      "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "FLRU M1003": {
@@ -78484,14 +78680,16 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "FLRU Z1001": {
-      "unified_title": "Intermediate Russian - Level 1",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "FLRU M1002",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:54:42.504237+00:00",
+      "unified_title": "Intermediate Russian - Level 1"
     },
     "FLRU Z1002": {
-      "unified_title": "Russian 1",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "FLRU M1002",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T19:54:42.504237+00:00",
+      "unified_title": "Russian 1"
     },
     "FLRU Z1003": {
       "unified_title": "Russian 2",
@@ -86603,6 +86801,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HORT M1001": {
+      "unified_title": "Landscape Design Advanced",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:01:46.854884+00:00"
+    },
     "HORT M1004": {
       "unified_title": "Arboriculture",
       "reviewed_by": "automerge-v1@bot",
@@ -87333,6 +87536,11 @@
       "merge_into": "HORT Z1022",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HORT M10HY": {
+      "merge_into": "HORT M1001",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T20:01:46.854884+00:00"
     },
     "HORT M10HZ": {
       "merge_into": "HORT Z1004",
