@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-16T13:32:47Z",
-  "count": 28297,
+  "_synced_at": "2026-06-16T15:08:13Z",
+  "count": 28325,
   "curations": {
     "AERO M10BA": {
       "merge_into": "AERO Z1001",
@@ -40201,6 +40201,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CSIS M1123": {
+      "unified_title": "ArcGIS Desktop",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:47:09.531642+00:00"
+    },
+    "CSIS M1124": {
+      "unified_title": "ArcGIS Online",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:47:21.024666+00:00"
+    },
     "CSIS M1125": {
       "merge_into": "CSIS M1025",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -42902,6 +42912,16 @@
       "merge_into": "CSIS Z9004",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "CSIS M90CQ": {
+      "merge_into": "CSIS M1123",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:47:09.531642+00:00"
+    },
+    "CSIS M90CR": {
+      "merge_into": "CSIS M1124",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:47:21.024666+00:00"
     },
     "CSIS M90DQ": {
       "merge_into": "CSIS Z9007",
@@ -53841,6 +53861,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ECED M1104": {
+      "unified_title": "Introduction to Child Development",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:47:34.73872+00:00"
+    },
     "ECED M1107": {
       "unified_title": "Guidance and Discipline in Child Development Settings",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -54560,6 +54585,11 @@
       "merge_into": "ECED Z9003",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ECED M90CP": {
+      "merge_into": "ECED M1104",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:47:34.73872+00:00"
     },
     "ECED M90CX": {
       "merge_into": "ECED M9008",
@@ -59618,6 +59648,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M10RA": {
+      "merge_into": "ENGL M9027",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:57:25.024747+00:00"
+    },
     "ENGL M10RC": {
       "merge_into": "ENGL Z1002",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -60763,6 +60798,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ENGL M11LI": {
+      "merge_into": "ENGL M9040",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:57:20.531654+00:00"
+    },
     "ENGL M11LP": {
       "merge_into": "ENGL M1234",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -61196,6 +61236,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M9027": {
+      "unified_title": "Writing Clinic (English)",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:57:25.024747+00:00"
+    },
     "ENGL M9032": {
       "unified_title": "Great Literature: Selected Reading",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -61210,6 +61255,11 @@
       "unified_title": "Everyday Writing: The Single Paragraph (Career Preparation)",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M9040": {
+      "unified_title": "Support with Writing and Reading",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:57:20.531654+00:00"
     },
     "ENGL M90AE": {
       "merge_into": "ENGL Z9001",
@@ -63928,6 +63978,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:52:26.194999+00:00"
     },
+    "ESOL M1077": {
+      "unified_title": "Academic Grammar, Intermediate",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:57:32.035537+00:00"
+    },
     "ESOL M1080": {
       "unified_title": "High-Intermediate Academic Reading and Writing",
       "reviewed_by": "automerge-v1@bot",
@@ -64032,6 +64087,11 @@
       "merge_into": "ESOL M1254",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ESOL M10GU": {
+      "merge_into": "ESOL M9084",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:58:09.516585+00:00"
     },
     "ESOL M10HR": {
       "merge_into": "ESOL Z1009",
@@ -64463,6 +64523,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:52:18.493882+00:00"
     },
+    "ESOL M1267": {
+      "unified_title": "Intermediate English as a Second Language",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:57:41.661044+00:00"
+    },
     "ESOL M1274": {
       "merge_into": "ESOL M1358",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -64523,6 +64588,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ESOL M1312": {
+      "unified_title": "Intermediate-High Integrated Reading and Writing",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:57:51.407546+00:00"
+    },
     "ESOL M1313": {
       "merge_into": "IDST M1162",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -64532,6 +64602,11 @@
       "merge_into": "IDST M1162",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ESOL M1323": {
+      "unified_title": "Listening and Speaking, Level I",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:58:03.011516+00:00"
     },
     "ESOL M1333": {
       "unified_title": "Pronunciation 2",
@@ -64689,6 +64764,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ESOL M9084": {
+      "unified_title": "Intermediate Academic Reading and Writing",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:58:09.516585+00:00"
+    },
     "ESOL M9091": {
       "unified_title": "ESL Int/Adv Pronunciation",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -64758,6 +64838,11 @@
       "merge_into": "ESOL M9014",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ESOL M90CX": {
+      "merge_into": "ESOL M1323",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:58:03.011516+00:00"
     },
     "ESOL M90DA": {
       "merge_into": "ESOL Z9017",
@@ -64908,6 +64993,11 @@
       "merge_into": "ESOL M1076",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:52:26.194999+00:00"
+    },
+    "ESOL M90KN": {
+      "merge_into": "ESOL M1077",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:57:32.035537+00:00"
     },
     "ESOL M90LC": {
       "merge_into": "ESOL Z9018",
@@ -65759,6 +65849,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ESOL M91MQ": {
+      "merge_into": "ESOL M1312",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:57:51.407546+00:00"
+    },
     "ESOL M91MS": {
       "merge_into": "ESOL M9249",
       "reviewed_by": "automerge-v1@bot",
@@ -65803,6 +65898,11 @@
       "unified_title": "Low Intermediate English as a Second Language",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:53:33.275645+00:00"
+    },
+    "ESOL M9214": {
+      "merge_into": "ESOL M1267",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:57:41.661044+00:00"
     },
     "ESOL M9216": {
       "unified_title": "English for Job Searching",
@@ -115698,6 +115798,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "MUSI M1539": {
+      "unified_title": "Piano",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:58:22.725535+00:00"
+    },
     "MUSI M1540": {
       "merge_into": "MUSI M1437",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -116112,6 +116217,11 @@
       "merge_into": "MUSI Z9012",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MUSI M90FS": {
+      "merge_into": "MUSI M1539",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:58:22.725535+00:00"
     },
     "MUSI M90FV": {
       "merge_into": "MUSI Z9010",
@@ -121875,6 +121985,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "OTEC M1098": {
+      "unified_title": "Introduction to Business Information Worker",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:43:10.205646+00:00"
+    },
     "OTEC M10AA": {
       "merge_into": "OTEC M1232",
       "reviewed_by": "automerge-v1@bot",
@@ -122600,6 +122715,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "OTEC M1128": {
+      "unified_title": "Project Management Concepts and Software",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:46:59.986593+00:00"
+    },
     "OTEC M1129": {
       "merge_into": "MGMT M1016",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -122710,6 +122830,11 @@
       "unified_title": "Introduction to Microsoft Windows",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "OTEC M1201": {
+      "unified_title": "Introduction to Word Processing - Using MS Word",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:46:49.107953+00:00"
     },
     "OTEC M1203": {
       "unified_title": "Job Retention and Responsibilities",
@@ -123082,6 +123207,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "OTEC M90EV": {
+      "merge_into": "OTEC M1098",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:43:10.205646+00:00"
+    },
     "OTEC M90FF": {
       "merge_into": "OTEC Z9009",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -123101,6 +123231,11 @@
       "merge_into": "OTEC Z9010",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "OTEC M90FS": {
+      "merge_into": "OTEC M1128",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:46:59.986593+00:00"
     },
     "OTEC M90FX": {
       "merge_into": "BUSI M9118",
@@ -123201,6 +123336,11 @@
       "merge_into": "OTEC M9093",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "OTEC M90IN": {
+      "merge_into": "OTEC M1201",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-16T13:46:49.107953+00:00"
     },
     "OTEC M90IP": {
       "merge_into": "OTEC Z9011",
