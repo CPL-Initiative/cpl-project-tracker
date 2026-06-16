@@ -7567,12 +7567,19 @@ def export_unified_courses():
 
     # ---- suggested-merge worklist (lazy) ------------------------------------
     # Precompute groups of courses that look like the SAME course, so a reviewer
-    # can confirm merges in one click. Grouping key is a level-SAFE title
-    # signature: parentheticals removed, articles dropped, roman numerals
-    # normalized to digits, remaining tokens sorted — so "Japanese I"/"Japanese 1"
-    # group but "Japanese I" and "Japanese II" do NOT. NEVER auto-applied — purely
-    # a worklist surfaced in the tab; the curator confirms each group. (Generated
-    # file — add to the daily workflow git-add list.)
+    # can confirm merges in one click. Grouping key is a level-COLLAPSING title
+    # signature (Session 57, Sam's "loosen existing lanes" — Title 5 §55050 lets a
+    # college grant CPL for learning *similar* to a course's objectives, so level
+    # variants are one common course; "better to over-merge than under-merge").
+    # It removes parentheticals + articles AND folds the LEVEL axis (level words
+    # begin/interm/advanced…, roman/word/digit ordinals, bare a–h section letters),
+    # then sorts the remaining same-subject tokens — so "Japanese 1"/"Japanese II"/
+    # "Elementary Japanese" now GROUP into one family (was level-SAFE: they stayed
+    # apart). The level vocabulary mirrors kb/_similar_family_dryrun.py (the
+    # measure-first dry-run that validated this: 99% discipline-unanimous within
+    # family). STILL NEVER auto-applied — purely a worklist; the curator confirms
+    # each group, so this only changes what SUGGESTIONS appear, never a merge.
+    # (Generated file — add to the daily workflow git-add list.)
     #
     # Two sections (V2):
     #  - groups  (identity-anchored) — every group has >=1 main-payload identity
@@ -7595,11 +7602,27 @@ def export_unified_courses():
                   "one": "1", "two": "2", "three": "3", "four": "4",
                   "five": "5", "six": "6", "seven": "7", "eight": "8",
                   "nine": "9", "ten": "10"}
+    # Level words we FOLD OUT (mirrors kb/_similar_family_dryrun.py, which mirrors
+    # _consolidation_guards' level axis). Ambiguous markers (high/low/upper/lower)
+    # are deliberately NOT folded — "High Voltage"/"High School" aren't levels.
+    _SUG_LEVELWORDS = {"beginning", "beginner", "elementary", "introductory",
+                       "introduction", "intro", "first", "basic", "preparatory",
+                       "prep", "developmental", "intermediate", "second",
+                       "advanced", "third", "fourth"}
 
     def _sug_sig(t):
         t = re.sub(r"\([^)]*\)", " ", str(t or "").lower())
         t = re.sub(r"[^a-z0-9 ]+", " ", t)
-        return " ".join(sorted(_SUG_ROMAN.get(w, w) for w in t.split() if w not in _SUG_DROP))
+        toks = []
+        for w in t.split():
+            if w in _SUG_DROP or w in _SUG_LEVELWORDS or w in _SUG_ROMAN:
+                continue                        # article / level word / ordinal
+            if w.isdigit():
+                continue                        # numeric level/sequence
+            if len(w) == 1 and "a" <= w <= "h":
+                continue                        # bare a–h section letter
+            toks.append(w)
+        return " ".join(sorted(set(toks)))
 
     def _sug_score(members):
         # cohesion: subject agreement (modal share) + units agreement + size.

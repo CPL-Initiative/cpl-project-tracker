@@ -70,27 +70,40 @@ discipline ~unanimous and ⅔ of families have identical units.
 vs Advanced 9u). That's the band a curator must scrutinize, and the signal the UI
 must surface.
 
-## Proposed lane design (pending Sam's go)
+## Decision (Sam, 2026-06-16): LOOSEN the existing lanes — not a separate lane
 
-Mirrors the existing Confirm/Skip UX; all merges reversible (`merge_into` / cohort):
+After the measure-first numbers, Sam chose the more aggressive path: instead of
+adding a separate opt-in "family" worklist lane, make level-collapsing the
+**default grouping of the existing anchored + singleton-only lanes**. So the main
+worklist itself now merges across levels — `_sug_sig` in `excel_to_dashboard.py`
+was changed from level-SAFE to **level-COLLAPSING** (the same level vocabulary the
+dry-run validated). Still **suggestions-only / curator-confirmed** — it changes
+what appears in the worklist, never an auto-merge, and is reversible.
 
-- One family per screen, members pre-checked, **units + discipline shown per row**
-  (the Session-57 ⓘ description toggle helps disambiguate).
-- **Rank:** cross-college + uniform-units + disc-unanimous first; **same-college
-  (3,151, likely intra-college ladders) and wide-spread (>2u) last, with a ⚠ flag**
-  reusing the existing over-merge alarm.
-- Confirm folds into the ★ target (highest-precedence identity, §10) or mints a
-  new unified course if all members are singletons.
+**Impact on the live worklist** (regenerated; the residual *after* the existing
+auto-merge cohorts):
 
-**Open guard question for Sam:** wide-spread (>2u) families — flag-and-rank-last
-(plan) or exclude until units are reconciled?
+| Lane | Before (level-safe) | After (level-collapse) |
+|---|---|---|
+| anchored `groups` | 229 | **2,665** |
+| `singleton_groups` | 217 | **2,519** |
+| family / title / desc / evidence | unchanged (own keys/receipts) | — |
 
-**Follow-on (Sam's "go further" path):** once the lane proves out, the cleanest
-cross-college + uniform-units families are natural candidates to promote to a bulk
-**auto-merge cohort** (like the title-lane pass-2), incrementally.
+Biggest families now surfaced for one-click review: `dance modern` (30),
+`ceramics` (27), `ballet` (26), `algebra` (26), `english language` (26),
+`cosmetology` (25). The curator unchecks any genuine progression (units shown per
+row) before Confirm. The family lane (`_fam_key`, co-articulation-gated) is now
+largely subsumed but left in place.
 
 ## Status
 
-- ✅ Dry-run + receipt + this scope (measure-first).
-- ⏳ Wiring (worklist lane + generator join + tests) — **follow-up after Sam reviews
-  the quality above.**
+- ✅ Measure-first dry-run + receipt + scope (`kb/_similar_family_dryrun.py`).
+- ✅ **Loosening shipped**: `_sug_sig` level-collapse (the core lever); worklist
+  regrouped 229→2,665 anchored / 217→2,519 singleton; generator clean; tests green.
+- ⏳ **Member-join Jaccard 0.5 → ~0.4** (the second knob Sam endorsed) — DEFERRED to
+  its own measured PR. `kb/README.md` mandates *measuring how many member rows flip
+  before committing* (it changes every identity's membership/aggregation, not just
+  suggestions), so it is not bundled here.
+- ⏳ **Follow-on:** once curators work the bigger worklist, the cleanest
+  cross-college + uniform-units families are candidates for a bulk **auto-merge
+  cohort** (Sam's "go further" path), incrementally.
