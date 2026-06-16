@@ -91,7 +91,12 @@ check("init does not throw", !threw);
   check("title bar is styled as a drag handle (cursor:move)", head && head.style.cursor === "move");
   const closeX = head && Array.from(head.querySelectorAll("button")).find((b) => b.getAttribute("aria-label") === "Close");
   check("✕ closer present in the title bar (aria-label Close)", !!closeX && txt(closeX) === "✕");
-  check("per-group heading still renders below the bar", /Suggested merge 1 of 2/.test(doc.body.textContent));
+  // task 1 (Sam, 2026-06-16): the "N of M" position counter moved UP into the
+  // title bar; the redundant in-box "Suggested merge N of M" subtitle and the
+  // "drag to move" hint were removed.
+  check("position counter renders in the title bar", /1 of 2/.test(txt(head)));
+  check("redundant in-box subtitle removed", !/Suggested merge \d+ of/.test(doc.body.textContent));
+  check("'drag to move' hint removed", !/drag to move/.test(doc.body.textContent));
 
   // ── 3. proposal framing copy ─────────────────────────────────────────────
   const bodyTx = doc.body.textContent;
@@ -123,7 +128,7 @@ check("init does not throw", !threw);
   const skip = Array.from(doc.querySelectorAll("button")).find((b) => /Skip/.test(txt(b)));
   skip.dispatchEvent(new window.Event("click"));
   await sleep(50);
-  check("Skip advanced to group 2", /Suggested merge 2 of 2/.test(doc.body.textContent));
+  check("Skip advanced to group 2", /2 of 2/.test(txt(head)));
   check("dragged position persists across Skip", shell.style.transform === "translate(90px,50px)");
 
   // mousedown on the ✕ must NOT start a drag…
@@ -133,7 +138,7 @@ check("init does not throw", !threw);
   // …and clicking it closes the popup.
   closeX.dispatchEvent(new window.Event("click", { bubbles: true }));
   await sleep(50);
-  check("✕ closes the popup", !/Suggested merge \d of/.test(doc.body.textContent)
+  check("✕ closes the popup", !/Proposed unified title/.test(doc.body.textContent)
     && !doc.body.contains(shell));
 
   let pass = 0;

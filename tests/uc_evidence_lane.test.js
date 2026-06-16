@@ -181,7 +181,7 @@ check("consumer init does not throw", !threw);
   check("witness chips render (🧾 SPAN 200 ×8 · SPAN 210 ×6)",
     /SPAN 200 ×8/.test(doc.body.textContent) && /SPAN 210 ×6/.test(doc.body.textContent));
 
-  const dialogBoxes = Array.from(doc.querySelectorAll("div")).filter((d) => /Suggested merge 1 of/.test(txt(d)));
+  const dialogBoxes = Array.from(doc.querySelectorAll("div")).filter((d) => /Proposed unified title/.test(txt(d)));
   const box = dialogBoxes[dialogBoxes.length - 1];
   const cbRows = Array.from(box.querySelectorAll("input[type=checkbox]"));
   check("3 member checkboxes render", cbRows.length === 3);

@@ -89,7 +89,7 @@ check("init does not throw", !threw);
   sugBtn.dispatchEvent(new window.Event("click"));
   await sleep(200);
   const overlay1 = doc.body.lastElementChild;
-  check("group 1 shows first", /Suggested merge 1 of 2/.test(doc.body.textContent)
+  check("group 1 shows first", /1 of 2/.test(doc.body.textContent)
     && doc.body.textContent.indexOf("Ceramics") >= 0);
   const keep = Array.from(doc.querySelectorAll("button")).find((b) => txt(b) === "Keep as-is");
   check("Keep as-is button renders alongside Confirm/Skip", !!keep);
@@ -107,18 +107,18 @@ check("init does not throw", !threw);
   check("dismissal value = live-member ids sorted asc joined with |",
     item && item.value === "ARTS M1001|ARTS M1002");
   check("worklist advanced to group 2 after Keep as-is",
-    /Suggested merge 2 of 2/.test(doc.body.textContent));
+    /2 of 2/.test(doc.body.textContent));
 
   // ── 3. re-open with the dismissal in the overlay: group 1 is skipped ─────
   overlay1.dispatchEvent(new window.Event("click"));   // backdrop click closes
   await sleep(50);
-  check("worklist closed", !/Suggested merge \d of/.test(doc.body.textContent));
+  check("worklist closed", !/Proposed unified title/.test(doc.body.textContent));
   dismissalRows = [{ course_id: item.course_id, value: item.value }];
   sugBtn.dispatchEvent(new window.Event("click"));
   await sleep(200);
   check("re-open skips the dismissed group (group 2 shows first)",
-    /Suggested merge 2 of 2/.test(doc.body.textContent)
-    && !/Suggested merge 1 of 2/.test(doc.body.textContent));
+    /2 of 2/.test(doc.body.textContent)
+    && !/1 of 2/.test(doc.body.textContent));
   // Scope the member check to the worklist overlay (the main table behind it
   // legitimately still lists ARTS M1001 — it was dismissed, not merged).
   const overlay2 = doc.body.lastElementChild;
