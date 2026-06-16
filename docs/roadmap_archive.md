@@ -1406,3 +1406,29 @@ only):** rename the 4,053 synthetic `UC-CUR-*` ids to `SUBJ Z<band><seq>` (e.g.
 blast radius is **entirely inside curation** (4,053 targets + 4,053 title rows +
 10,682 `merge_into` pointers; **0** articulations/promotions). Scope:
 `docs/uc_cur_zscheme_remint_scope.md`.
+
+### Session 56 — Star Treader: the UC-CUR → Z-scheme re-mint, APPLIED (2026-06-15)
+
+PR #439 (merged + both workflows dispatched + LIVE). Built the Z-scheme dry-run,
+Sam said **"Go now,"** and landed the full Rule-7 re-mint same window. The 4,053
+synthetic `UC-CUR-AUTO*` ids → `SUBJ Z<band><seq:03d>` (e.g. `BIOL Z9001`;
+**Z** = curator/auto-minted Unified, needs attention — parallel to `C`/`M`).
+SUBJ4 = canonical of members' modal discipline **with the umbrella exception**
+(FL/KIN keep their split codes, never collapse to FLNG/KINE); band 9/1 from
+credit_status; persisted counter `kb/uc_cur_zseq.json` (option B). Dry-run 7/7
+gates; `compute_plan()` shared by dry-run + apply (apply == spec). Surface was
+**entirely inside `kb_curation`** (4,053 self-keys + 10,682 `merge_into`; **0**
+articulations/promotions), **fresh-read md5-verified git…live** before writing.
+Live Supabase re-keyed via a new **reusable** service-key path
+(`kb/_rekey_kb_curation_supabase.py` + `.github/workflows/supabase-rekey.yml` —
+the alias map is too large to hand-pass as SQL; read the committed file in
+Actions), verified by md5 (0 UC-CUR, 4,053 Z); then `daily-dashboard.yml`
+regenerated the overlay + `unified_courses_*.js` (4,053 Z rows, all `id_system`
+Unified, 0 leakage). Coupled consumer/auditor recognition shipped in the same PR
+(a `Z` target had been mis-classified as a C-ID). Tests:
+`tests/uc_zscheme_recognition.test.js` (8) + `tests/uc_cur_zscheme_dryrun_test.py`
+(12); suite 48 green. **Deferred** (graceful, no runs scheduled): auto-merge
+mint → Z + the client-mint promote-step (new UC-CUR mints still work via dual
+recognition); the auditor re-run (Z rows show no audit chip until `kb/_row_audit.py`
+re-runs). Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 56); KB note
+`docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md`.

@@ -1135,13 +1135,17 @@ re-runnable (re-derives + RETRACTS its own prior fills when the lexicon changes 
   units as a 5th field). **Suggested-merges worklist** — a **"✨ Suggested
   merges"** toolbar button opens a review queue over precomputed same-course
   groups (`unified_courses_suggestions.js`, lazy). The generator groups identities
-  by a **level-COLLAPSING title signature** (parentheticals + articles removed,
-  the LEVEL axis folded out — level words begin/interm/advanced…, roman/word/digit
-  ordinals, bare a–h section letters — tokens sorted, so "Japanese 1" / "Japanese
-  II" / "Elementary Japanese" all GROUP into one family; **loosened from level-SAFE
-  in Session 57** per Sam's "over-merge > under-merge", Title 5 §55050 — the
-  worklist is curator-confirmed so this only changes what surfaces, never an
-  auto-merge), ranked by cohesion (subject + units agreement + size).
+  by a **level-COLLAPSING + segment-folding title signature** (parentheticals +
+  articles removed, the LEVEL axis folded out — level words begin/interm/advanced…,
+  roman/word/digit ordinals, bare a–h section letters — **plus structural DIVIDER
+  words `_SUG_SEGMENT = {part, semester, module, half, level, levels}`** since
+  Session 58 — tokens sorted, so "Japanese 1" / "Japanese II" / "Elementary
+  Japanese" AND "Algebra 1-2, Semester 1" / "Elementary Algebra, Part 1" /
+  "Algebra 3-4" all GROUP into one family; **loosened from level-SAFE in Session 57**
+  per Sam's "over-merge > under-merge", Title 5 §55050 — the worklist is
+  curator-confirmed so this only changes what surfaces, never an auto-merge;
+  measured by `kb/_sug_segment_dryrun.py`), ranked by cohesion (subject + units
+  agreement + size).
   The payload has **two sections, anchored first**: `groups` are
   **identity-anchored** (every group has ≥1 main M-ID/Cluster identity, excludes
   `cid_conflict` over-merges, attaches matching orphan singletons) — **Confirm
@@ -1202,7 +1206,7 @@ workflow `git add` list (§6):
 | `unified_courses_standalone.js` | `CPL_UC_STANDALONE` | "Stand-Alone" kind filter | ~57.7k single-college rows (kept out of the main payload) |
 | `unified_courses_members.js` | `CPL_UC_MEMBERS` | row expand caret ▸ | `id → [{c:collegeIdx,n:code,t:title,u:units,p:topcode}]` member college courses + `topmap` (TOP code→title, deduped) |
 | `unified_courses_member_desc.js` | `CPL_UC_MEMBER_DESC` | member "Show descriptions" link | `id → [desc,…]` PARALLEL to `members[id]` (each ≤500 chars) — on-demand, ~51MB so loaded only when a curator opens member descriptions |
-| `unified_courses_suggestions.js` | `CPL_UC_SUGGESTIONS` | ✨ Suggested-merges worklist | **Six sections, all HUMAN-CONFIRMED / never auto-applied:** `groups` = identity-anchored same-title merges (**level-COLLAPSING `_sug_sig`** since Session 57 — folds the level axis so "X 1"/"X II"/"Elementary X" group into one family; word-numbers folded since Session 46); `singleton_groups` (V2) = singleton-only matches that mint a NEW unified course (`same_college` flags likely intra-college variants); `family_groups` (#310) = co-articulation family merges (`(M-ID subject prefix, _fam_key)` gated on a shared credential); `desc_groups` (#382) = 📝 description-evidence merges over DARK M-IDs (TF-IDF catalog-description cosine; receipt `kb/desc_consolidation_out/`); `title_groups` (#385, Session 46) = 🏷 title-evidence merges over dark M-IDs + Stand-Alone singletons (IDF-weighted title cosine, guard suite `kb/_consolidation_guards.py`, NO units gate — receipt `kb/title_consolidation_out/`; mixed groups merge into the M-ID, all-singleton groups mint new); `evidence_groups` = 🧾 COCI-evidence folds into official C-IDs (witness counts; `x:1` members pre-unchecked). Ranked by cohesion, cross-college first |
+| `unified_courses_suggestions.js` | `CPL_UC_SUGGESTIONS` | ✨ Suggested-merges worklist | **Six sections, all HUMAN-CONFIRMED / never auto-applied:** `groups` = identity-anchored same-title merges (**level-COLLAPSING + segment-folding `_sug_sig`** — folds the level axis since Session 57 (word-numbers since Session 46) AND structural divider words `_SUG_SEGMENT` {part/semester/module/half/level} since Session 58, so "X 1"/"X II"/"Elementary X" and "X 1-2, Semester 1"/"X, Part 1" group into one family); `singleton_groups` (V2) = singleton-only matches that mint a NEW unified course (`same_college` flags likely intra-college variants); `family_groups` (#310) = co-articulation family merges (`(M-ID subject prefix, _fam_key)` gated on a shared credential); `desc_groups` (#382) = 📝 description-evidence merges over DARK M-IDs (TF-IDF catalog-description cosine; receipt `kb/desc_consolidation_out/`); `title_groups` (#385, Session 46) = 🏷 title-evidence merges over dark M-IDs + Stand-Alone singletons (IDF-weighted title cosine, guard suite `kb/_consolidation_guards.py`, NO units gate — receipt `kb/title_consolidation_out/`; mixed groups merge into the M-ID, all-singleton groups mint new); `evidence_groups` = 🧾 COCI-evidence folds into official C-IDs (witness counts; `x:1` members pre-unchecked). Ranked by cohesion, cross-college first |
 | `unified_courses_aligned.js` | `CPL_UC_ALIGNED` | row expand caret ▸ (CCR **inverse view**) | `aligned[course_id] → [{c:credential, i:issuer, p:CPL type, r:[credit recs], g:[earning colleges], n:#colleges, x:'CCC' if a statewide CCC-collaborative standard}]` — the **mirror of the EACR** (one row per course → the aligned exhibits/credentials that articulate to it). Built by `_build_aligned_exhibits_by_course()` from `kb/coci_articulations.json`; deterministic (no timestamp → no-op daily diff). 2,355 courses. Consumer unions Phase-B `consolidated_from` ids. |
 
 **Raw course source — `kb/reference/coci_course_list.xlsx`** (committed, ~24MB,
@@ -1602,33 +1606,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > + the UC-CUR→Z SCOPE decision #437).
 
 
-### Session 56 — Star Treader: the UC-CUR → Z-scheme re-mint, APPLIED (2026-06-15)
-
-PR #439 (merged + both workflows dispatched + LIVE). Built the Z-scheme dry-run,
-Sam said **"Go now,"** and landed the full Rule-7 re-mint same window. The 4,053
-synthetic `UC-CUR-AUTO*` ids → `SUBJ Z<band><seq:03d>` (e.g. `BIOL Z9001`;
-**Z** = curator/auto-minted Unified, needs attention — parallel to `C`/`M`).
-SUBJ4 = canonical of members' modal discipline **with the umbrella exception**
-(FL/KIN keep their split codes, never collapse to FLNG/KINE); band 9/1 from
-credit_status; persisted counter `kb/uc_cur_zseq.json` (option B). Dry-run 7/7
-gates; `compute_plan()` shared by dry-run + apply (apply == spec). Surface was
-**entirely inside `kb_curation`** (4,053 self-keys + 10,682 `merge_into`; **0**
-articulations/promotions), **fresh-read md5-verified git…live** before writing.
-Live Supabase re-keyed via a new **reusable** service-key path
-(`kb/_rekey_kb_curation_supabase.py` + `.github/workflows/supabase-rekey.yml` —
-the alias map is too large to hand-pass as SQL; read the committed file in
-Actions), verified by md5 (0 UC-CUR, 4,053 Z); then `daily-dashboard.yml`
-regenerated the overlay + `unified_courses_*.js` (4,053 Z rows, all `id_system`
-Unified, 0 leakage). Coupled consumer/auditor recognition shipped in the same PR
-(a `Z` target had been mis-classified as a C-ID). Tests:
-`tests/uc_zscheme_recognition.test.js` (8) + `tests/uc_cur_zscheme_dryrun_test.py`
-(12); suite 48 green. **Deferred** (graceful, no runs scheduled): auto-merge
-mint → Z + the client-mint promote-step (new UC-CUR mints still work via dual
-recognition); the auditor re-run (Z rows show no audit chip until `kb/_row_audit.py`
-re-runs). Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 56); KB note
-`docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md`. **NEXT:
-`docs/session_57_handoff.md`** — title-lane pass-2 dry-run on Sam's go; the
-deferred Z follow-ups; per-row auto-merge revert.
+> **Session 56 narrative archived** → `docs/roadmap_archive.md` (Star Treader —
+> the UC-CUR → Z-scheme re-mint APPLIED: 4,053 synthetic `UC-CUR-AUTO*` →
+> `SUBJ Z<band><seq>`, surface entirely inside `kb_curation`, re-keyed via the
+> reusable `kb/_rekey_kb_curation_supabase.py` + `supabase-rekey.yml`; suite 48).
 
 
 ### Session 57 — Bruh Skydriver: worklist polish + the consolidation loosening (2026-06-16)
@@ -1658,6 +1639,28 @@ member-row flips first): the member-join **Jaccard 0.5→~0.4**. Lessons:
 note `docs/kb-notes/adr-level-collapsing-consolidation.md`. **NEXT:
 `docs/session_58_handoff.md`** — the Jaccard measurement; work the 10× bigger
 worklist; title-lane pass-2 still open.
+
+
+### Session 58 — Bruh Skyleader: three Suggested-merges refinements (2026-06-16)
+
+Sam-interactive (his Algebra worklist screenshot). One code-only PR (cron/dispatch
+republishes the artifacts). **Task 1 — override picker repopulates + renames:**
+picking a NON-official course from "⌕ Merge into a different existing course" pulls
+its **cleaned** title into the Proposed-title field, **editable**, and the edited
+title renames the target on Confirm (`unified_title` write); official C-ID/CCN stays
+read-only/firewalled (unchanged). **Task 2 — segment-word fold in `_sug_sig`:**
+added `_SUG_SEGMENT = {part, semester, module, half, level, levels}` so structural
+divider words stop fragmenting a family — "Algebra 1-2, Semester 1" / "Elementary
+Algebra, Part 1" / "Algebra 3-4" now group under one `algebra` signature (Sam's
+"obvious keyword" ask). Measured (`kb/_sug_segment_dryrun.py`): 8,491→8,352 groups,
+**+165** identities into families, max 44→60; Linear/College/Pre-Algebra correctly
+stay apart. Suggestions-only/curator-confirmed. **Task 3 — completion note:** new
+`merge_note` curation field end-to-end (popup input → `_apply_curation.py` FIELDS →
+generator `r.note` → ⚑ chip + ⓘ-modal line + live overlay), for "both parts must be
+completed for full credit" on segmented A/B-1/2 mints. Tests 49→50
+(`tests/uc_worklist_note_rename.test.js`). Lessons:
+`docs/ccr_cluster_cleanup_lessons.md` (Session 58). **NEXT:
+`docs/session_59_handoff.md`** — the Jaccard measurement; title-lane pass-2.
 
 
 ---

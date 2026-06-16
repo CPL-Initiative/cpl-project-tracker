@@ -41,8 +41,11 @@ KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 # `merge_dismissed` is the worklist "Keep as-is": a persistent group dismissal
 # (value = the group's member ids sorted + "|"-joined), folded in for the audit
 # trail; the CCR worklist reads it live from Supabase to skip the group.
+# `merge_note` is a curator annotation captured at merge time on the surviving
+# target (e.g. "Complete both parts for full credit" on a course minted from
+# segmented A/B / 1-2 members); the generator emits it as the row's `note`.
 FIELDS = {"discipline", "merge_into", "unified_title", "description",
-          "cross_listed_disciplines", "merge_dismissed"}
+          "cross_listed_disciplines", "merge_dismissed", "merge_note"}
 
 
 def fetch_rows():
