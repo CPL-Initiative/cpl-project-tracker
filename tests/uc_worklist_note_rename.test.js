@@ -94,7 +94,8 @@ function curBox(doc) {
   const toggle = Array.from(box.querySelectorAll("a")).find((a) => /different existing course/.test(txt(a)));
   toggle.dispatchEvent(new window.Event("click"));
   await sleep(20);
-  const search = box.querySelector("input[type=search]");
+  // Scope to the override panel (a second ➕ keyword-gather search also exists).
+  const search = toggle.parentNode.querySelector("input[type=search]");
   search.value = "algebra";
   search.dispatchEvent(new window.Event("input"));
   await sleep(300);

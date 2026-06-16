@@ -1432,7 +1432,10 @@
           box.appendChild(el("div", { style: "margin:0 0 4px;font-size:.78rem;color:#6b7280;" }, [note]));
           var list = el("div", { style: "max-height:240px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
           var cbs = [];
-          mems.forEach(function (m) {
+          // One candidate row. `gathered` = pulled in via the ➕ keyword search
+          // below (Session 58) rather than a native group member — it gets an
+          // "added" chip + a ✕ to drop it back out. Returns the cbs entry.
+          function addCandidateRow(m, gathered) {
             var row = el("div", { style: "display:flex;align-items:center;gap:8px;padding:3px 4px;border-bottom:1px solid #f1f5f9;" });
             // Contested evidence members (m.x — their own colleges disagree on
             // the official target) start UNCHECKED: the curator opts IN.
@@ -1462,6 +1465,12 @@
                 style: "font-size:.7rem;font-weight:600;padding:1px 7px;border-radius:10px;white-space:nowrap;background:#fee2e2;color:#b91c1c;",
                 title: m.tm + " witness" + (m.tm === 1 ? "" : "es") + " failed the title check: the claiming course's own title doesn't resemble this row (the receipt predates an over-merge split). Fold only if you recognize it as the same course.",
               }, ["⚠ title mismatch"]));
+            }
+            if (gathered) {
+              row.appendChild(el("span", {
+                style: "font-size:.7rem;font-weight:600;padding:1px 7px;border-radius:10px;white-space:nowrap;background:#ede9fe;color:#5b21b6;",
+                title: "Added via the ➕ keyword search — not a native member of this suggested group.",
+              }, ["➕ added"]));
             }
             // Merge-target badge — hidden until refreshTarget() marks the row
             // that wins precedence among the CURRENTLY-checked members. Marks
@@ -1496,11 +1505,78 @@
               };
             })(m, descBox, dTog);
             row.appendChild(dTog);
-            cbs.push({ cb: cb, m: m, row: row, tgt: tgtBadge });
+            var entry = { cb: cb, m: m, row: row, tgt: tgtBadge };
+            if (gathered) {
+              var rm = el("a", { href: "#", title: "Remove from this merge",
+                style: "font-size:.82rem;color:#b91c1c;text-decoration:none;white-space:nowrap;font-weight:700;" }, ["✕"]);
+              rm.onclick = function (e) {
+                e.preventDefault();
+                var ix = cbs.indexOf(entry); if (ix >= 0) cbs.splice(ix, 1);
+                if (row.parentNode) list.removeChild(row);
+                if (descBox.parentNode) list.removeChild(descBox);
+                refreshTarget();
+              };
+              row.appendChild(rm);
+            }
+            cbs.push(entry);
             list.appendChild(row);
             list.appendChild(descBox);
-          });
+            return entry;
+          }
+          mems.forEach(function (m) { addCandidateRow(m, false); });
           box.appendChild(list);
+          // ── ➕ Add more courses to this merge by keyword (Session 58, Sam
+          // 2026-06-16) ── The synonym map + signature can't surface every
+          // related course (e.g. the broad ESL family — Vocational / Academic /
+          // Workplace ESL are different courses sharing the keyword). This lets
+          // the curator GATHER extras by search (the ⚇ Unify index): type a
+          // term, click matches to add them as checked candidates, fold them all
+          // in. Distinct from "Merge into a DIFFERENT course" below (which
+          // redirects the whole merge into one off-signature target).
+          var gatherWrap = el("div", { style: "margin:8px 0 0;" });
+          var gatherToggle = el("a", { href: "#", style: "font-size:.82rem;color:var(--cobalt);text-decoration:none;" },
+            ["➕ Add more courses to this merge by keyword…"]);
+          var gatherPanel = el("div", { style: "display:none;margin:6px 0 0;padding:8px;border:1px solid #e5e7eb;border-radius:6px;background:#faf5ff;" });
+          gatherPanel.appendChild(el("div", { style: "font-size:.78rem;color:#6b7280;margin:0 0 5px;" },
+            ["Search any course title or id (e.g. “ESL”, “welding”) and click to add it as a checked candidate above. Uncheck or ✕ to remove."]));
+          var gatherSearch = el("input", { type: "search", placeholder: "Search a keyword or title…", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
+          var gatherRes = el("div", { style: "max-height:170px;overflow:auto;margin-top:4px;" });
+          gatherPanel.appendChild(gatherSearch); gatherPanel.appendChild(gatherRes);
+          gatherWrap.appendChild(gatherToggle); gatherWrap.appendChild(gatherPanel);
+          box.appendChild(gatherWrap);
+          gatherToggle.onclick = function (e) {
+            e.preventDefault();
+            var open = gatherPanel.style.display === "none";
+            gatherPanel.style.display = open ? "block" : "none";
+            if (open) { loadIndex(); gatherSearch.focus(); }
+          };
+          var gSt; gatherSearch.oninput = function () {
+            clearTimeout(gSt); var q = this.value.toLowerCase().trim();
+            gSt = setTimeout(function () {
+              gatherRes.innerHTML = ""; if (q.length < 3) return;
+              var idx = _ucIndex || [], hits = 0, have = {};
+              cbs.forEach(function (x) { have[x.m.id] = 1; });   // exclude rows already in the merge
+              for (var k = 0; k < idx.length && hits < 25; k++) {
+                var en = idx[k];
+                if (have[en[0]]) continue;
+                if (((en[1] || "").toLowerCase().indexOf(q) >= 0) || ((en[0] || "").toLowerCase().indexOf(q) >= 0)) {
+                  hits++;
+                  var b = el("button", { type: "button", style: "display:block;width:100%;text-align:left;padding:3px 6px;border:none;background:none;cursor:pointer;font-size:.82rem;" },
+                    ["+ " + (en[1] || en[0]) + "  [" + en[0] + " · " + (en[2] || "") + " · " + idSysLabel(en[3]) + "]"]);
+                  (function (e2, btn) {
+                    btn.onclick = function () {
+                      addCandidateRow({ id: e2[0], t: e2[1], s: e2[2], k: e2[3], u: e2[4],
+                        g: e2[3] === "Stand-Alone" ? 1 : 0 }, true);
+                      btn.disabled = true; btn.style.opacity = "0.45"; btn.textContent = "✓ added — " + (e2[1] || e2[0]);
+                      refreshTarget();
+                    };
+                  })(en, b);
+                  gatherRes.appendChild(b);
+                }
+              }
+              if (!hits) gatherRes.appendChild(el("div", { style: "font-size:.78rem;color:#94a3b8;padding:4px;" }, ["No matches — type 3+ characters of a title or id."]));
+            }, 200);
+          };
           // No existing identity among the checked rows → Confirm mints a new
           // unified course. Surfaced live so a curator isn't surprised.
           var mintHint = el("div", { style: "display:none;margin:6px 0 0;font-size:.78rem;color:#5b21b6;" },

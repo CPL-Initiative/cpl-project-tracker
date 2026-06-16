@@ -7634,9 +7634,35 @@ def export_unified_courses():
     # every group, so this only changes what SURFACES, never an auto-merge.
     _SUG_SEGMENT = {"part", "semester", "module", "half", "level", "levels"}
 
+    # SYNONYM / alias map (Session 58, Sam 2026-06-16). Abbreviation↔expansion
+    # pairs share ZERO tokens — "ESL" and "English as a Second Language" never
+    # group, and no similarity threshold can bridge a zero-overlap pair (the
+    # strings have no word in common). This normalizes the EXPANSION phrase to
+    # its canonical short form BEFORE tokenizing, so both collapse to the same
+    # signature. Curated, unambiguous-standalone-abbreviation only (ESL/ASL/PE/
+    # Math) — kb/synonym_map.json carries the rules + grows over time. Phrases
+    # are word-boundary anchored + applied longest-first. Measured: ESL family
+    # unifies to ~84 identities; sub-families (esl grammar / reading-writing /
+    # conversation) correctly stay apart on their distinguishing word; global
+    # group count essentially flat (8,352→8,358). Suggestions-only.
+    _sug_syn = {}
+    try:
+        _sm = _load("synonym_map.json") or {}
+        _sug_syn = {str(k).lower().strip(): str(v).lower().strip()
+                    for k, v in (_sm.get("synonyms") or {}).items() if k and v}
+    except Exception:
+        _sug_syn = {}
+    # Longest phrase first so multi-word expansions resolve before sub-phrases.
+    _sug_syn_pairs = [(re.compile(r"\b" + re.escape(k) + r"\b"), v)
+                      for k, v in sorted(_sug_syn.items(), key=lambda kv: -len(kv[0]))]
+
     def _sug_sig(t):
         t = re.sub(r"\([^)]*\)", " ", str(t or "").lower())
         t = re.sub(r"[^a-z0-9 ]+", " ", t)
+        if _sug_syn_pairs:
+            t = " ".join(t.split())          # single-space so phrases match
+            for _rx, _rep in _sug_syn_pairs:
+                t = _rx.sub(_rep, t)
         toks = []
         for w in t.split():
             if w in _SUG_DROP or w in _SUG_LEVELWORDS or w in _SUG_ROMAN:

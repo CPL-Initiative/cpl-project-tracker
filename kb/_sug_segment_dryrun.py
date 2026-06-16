@@ -44,10 +44,26 @@ LEVEL = {"beginning", "beginner", "elementary", "introductory", "introduction",
 # Unit), course(s), series/sequence/term/quarter/block/phase.
 SEGMENT = {"part", "semester", "module", "half", "level", "levels"}
 
+# Synonym/alias map (kb/synonym_map.json) — same one the generator loads, so the
+# measurement reflects real grouping. Expansion phrase -> canonical short token.
+_SYN = {}
+try:
+    _sm = json.load(open(os.path.join(SD, "synonym_map.json")))
+    _SYN = {str(k).lower().strip(): str(v).lower().strip()
+            for k, v in (_sm.get("synonyms") or {}).items() if k and v}
+except Exception:
+    _SYN = {}
+SYN_PAIRS = [(re.compile(r"\b" + re.escape(k) + r"\b"), v)
+             for k, v in sorted(_SYN.items(), key=lambda kv: -len(kv[0]))]
 
-def sig(t, fold_segment):
+
+def sig(t, fold_segment, fold_syn=True):
     t = re.sub(r"\([^)]*\)", " ", str(t or "").lower())
     t = re.sub(r"[^a-z0-9 ]+", " ", t)
+    if fold_syn and SYN_PAIRS:
+        t = " ".join(t.split())
+        for rx, rep in SYN_PAIRS:
+            t = rx.sub(rep, t)
     toks = []
     for w in t.split():
         if w in DROP or w in LEVEL or w in ROMAN:
@@ -69,15 +85,17 @@ def main():
     for cid, rec in json.load(open(os.path.join(SD, "coci_minted_singletons.json")))["courses"].items():
         mem[cid] = rec.get("common_title")
 
-    def groups(fold):
+    def groups(fold_segment, fold_syn):
         g = defaultdict(list)
         for cid, t in mem.items():
-            s = sig(t, fold)
+            s = sig(t, fold_segment, fold_syn)
             if s:
                 g[s].append(cid)
         return {k: v for k, v in g.items() if len(v) >= 2}
 
-    cur, prop = groups(False), groups(True)
+    base = groups(False, False)   # pre-Session-58 baseline
+    seg = groups(True, False)     # + segment fold
+    live = groups(True, True)     # + segment fold + synonym map (the live generator)
 
     def line(g, label):
         sizes = Counter("2" if len(v) == 2 else "3-5" if len(v) <= 5 else "6-10"
@@ -88,16 +106,23 @@ def main():
         print(f"  {label}: {len(g):>5} groups | {covered:>6} covered | max {mx:>3} | "
               + "  ".join(f"{k}:{sizes[k]}" for k in ("2", "3-5", "6-10", "11-25", "26+")))
 
-    print(f"Worklist signature SEGMENT-fold dry-run — segment set {sorted(SEGMENT)}")
-    line(cur, "CURRENT ")
-    line(prop, "PROPOSED")
-    print(f"  net identities pulled into multi-member groups: "
-          f"+{sum(len(v) for v in prop.values()) - sum(len(v) for v in cur.values())}")
-    print("\n  Biggest PROPOSED groups (over-merge guard — should be coherent families):")
-    for s, ids in sorted(prop.items(), key=lambda kv: -len(kv[1]))[:10]:
+    print(f"Worklist signature dry-run — segment {sorted(SEGMENT)} | synonyms {sorted(_SYN)}")
+    line(base, "BASELINE       ")
+    line(seg, "+ segment fold ")
+    line(live, "+ synonyms (LIVE)")
+    print(f"  net identities pulled into multi-member groups vs baseline: "
+          f"+{sum(len(v) for v in live.values()) - sum(len(v) for v in base.values())}")
+    print("\n  Biggest LIVE groups (over-merge guard — should be coherent families):")
+    for s, ids in sorted(live.items(), key=lambda kv: -len(kv[1]))[:10]:
         seen = list(dict.fromkeys(mem[i] for i in ids))
         print(f"    [{len(ids):>3}] {s!r}: " + " | ".join(repr(x) for x in seen[:4])
               + (" …" if len(seen) > 4 else ""))
+    print("\n  Synonym-unified families (contain a canonical short token):")
+    for tok in sorted(set(_SYN.values())):
+        hits = sorted(((s, ids) for s, ids in live.items() if tok in s.split()),
+                      key=lambda kv: -len(kv[1]))[:1]
+        for s, ids in hits:
+            print(f"    {tok:5} → [{len(ids):>2}] {s!r}")
     print("\n  MEASUREMENT ONLY — the worklist is suggestions-only / curator-confirmed.")
 
 

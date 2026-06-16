@@ -87,7 +87,9 @@ function curBox(doc) {
   // The toggle is present; clicking reveals the search panel.
   const toggle = Array.from(box.querySelectorAll("a")).find((a) => /different existing course/.test(txt(a)));
   check("the ⌕ override toggle is present", !!toggle);
-  const search = box.querySelector("input[type=search]");
+  // Scope to the override panel — a second search (the ➕ keyword-gather) now
+  // also lives in the box, so a bare querySelector could grab the wrong one.
+  const search = toggle.parentNode.querySelector("input[type=search]");
   check("search input hidden until toggled", search && hidden(search));
   toggle.dispatchEvent(new window.Event("click"));
   await sleep(20);
