@@ -1141,7 +1141,7 @@ re-runnable (re-derives + RETRACTS its own prior fills when the lexicon changes 
   letters — **plus structural DIVIDER words `_SUG_SEGMENT = {part, semester,
   module, half, level, levels}`** since Session 58 **plus a curated
   abbreviation↔expansion `kb/synonym_map.json`** (ESL≡English as a Second
-  Language, ASL/PE/Math — a similarity threshold can't bridge a zero-overlap
+  Language, ASL/PE/Math/AJ — a similarity threshold can't bridge a zero-overlap
   synonym) — tokens sorted, so "Japanese 1" / "Japanese II" / "Elementary
   Japanese" AND "Algebra 1-2, Semester 1" / "Elementary Algebra, Part 1" /
   "Algebra 3-4" all GROUP into one family; **loosened from level-SAFE in Session 57**
@@ -1661,7 +1661,7 @@ Sam-interactive (Algebra then ESL worklist screenshots). **Three code-only PRs**
   sig; new `merge_note` curation field (⚑ chip + ⓘ-modal line) for "both parts
   required for full credit" on segmented mints.
 - **#446 — synonym map + keyword-gather.** `kb/synonym_map.json` normalizes
-  abbreviation↔expansion (ESL≡English as a Second Language, ASL/PE/Math) in
+  abbreviation↔expansion (ESL≡English as a Second Language, ASL/PE/Math/AJ) in
   `_sug_sig` — **a similarity threshold can't bridge a zero-overlap synonym**
   (ESL→84, ASL→60, PE→18; global flat). The popup ➕ **keyword-gather** lets the
   curator search + multi-select extra members (the broad-family judgment).

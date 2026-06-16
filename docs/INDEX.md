@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-16 (Session 57 — Bruh Skydriver: worklist popup polish + "(NC)" title cleanup #441 + the CONSOLIDATION LOOSENING #442 (_sug_sig level-COLLAPSING — the worklist merges across course levels by default, ~10× bigger, suggestions-only); NEW adr-level-collapsing-consolidation + similar_course_family_scope + session_58_handoff)
+updated: 2026-06-16 (Session 58 — Bruh Skyleader: extend the merge candidate set — override-rename + segment-fold + completion note #445, synonym map + keyword-gather #446, looseness slider #447, AJ synonym #448; NEW methodology-synonym-map-vs-similarity-threshold + session_59_handoff)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -100,6 +100,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [`kb-notes/methodology-fanin-alias-lexicon-contamination.md`](kb-notes/methodology-fanin-alias-lexicon-contamination.md) | Fan-in folds must re-point inference lexicons (the PEDU incident) | Session 51 |
 | [`kb-notes/playbook-gated-bulk-autocuration.md`](kb-notes/playbook-gated-bulk-autocuration.md) | Gated bulk auto-curation: dry-run receipt → human skim → md5-pinned server-side apply (auto-merge pass 1) | Session 53 |
 | [Methodology — Promoted-record ghosts in candidate worklists (exclude promoted orphans at join time)](kb-notes/methodology-promoted-record-ghosts-in-worklists.md) | methodology | published | 2026-06-15 | 2026-06-15 |
+| [Methodology — A similarity threshold can't bridge a zero-overlap synonym; use a curated synonym map](kb-notes/methodology-synonym-map-vs-similarity-threshold.md) | methodology | published | 2026-06-16 | 2026-06-16 |
 | [Playbook — Re-keying a shared DB from a committed re-mint alias map (service-key script in CI + md5 set-equality)](kb-notes/playbook-rekey-shared-db-from-alias-map.md) | playbook | published | 2026-06-15 | 2026-06-15 (Session 56 — the UC-CUR→Z re-mint) |
 | [Methodology — Rank a cleanup queue by downstream impact, not structural leverage](kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Methodology — Coarse TOP-division discipline fallback (make the orphan tail visible)](kb-notes/methodology-coarse-top-division-discipline-fallback.md) | methodology | published | 2026-06-09 | 2026-06-09 |
@@ -201,6 +202,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 55 → 56 | Data lane (Bruh Nebula): Suggested-merges clarity — ★ merge-target badge #434, self-merge ghosts fixed + Discipline picker disable/explain #435, "⌕ merge into a different existing course" search picker #436, + the UC-CUR→Z re-mint SCOPE #437 → build the Z-scheme DRY-RUN (Sam's go), title-lane pass-2 | [`session_56_handoff.md`](session_56_handoff.md) |
 | 56 → 57 | Data lane (Star Treader): the UC-CUR → Z-scheme re-mint APPLIED #439 (4,053 ids → SUBJ Z<band><seq>, dry-run 7/7 → Sam's "Go now" → atomic land, live md5-verified; reusable Supabase re-key tool + workflow) → the Z future-mint half + auditor re-run, title-lane pass-2 dry-run, per-row auto-merge revert | [`session_57_handoff.md`](session_57_handoff.md) |
 | 57 → 58 | Data lane (Bruh Skydriver): worklist popup polish + "(NC)" cleanup #441 + the CONSOLIDATION LOOSENING #442 (_sug_sig level-COLLAPSING, worklist ~10× bigger, suggestions-only) → the member-join Jaccard 0.5→~0.4 (measure member-flips first), work the bigger worklist, title-lane pass-2 | [`session_58_handoff.md`](session_58_handoff.md) |
+| 58 → 59 | Data lane (Bruh Skyleader): extend the merge candidate set — override-rename + segment-fold + completion note #445, synonym map + keyword-gather #446, looseness slider #447, AJ synonym #448 (a threshold can't bridge a zero-overlap synonym — use the map) → the member-join Jaccard 0.5→~0.4 (measure member-flips first), grow the synonym map, title-lane pass-2 | [`session_59_handoff.md`](session_59_handoff.md) |
 | 49 → 52 | Design lane (Bruh Orbitron): the First Light retheme SHIPPED (#407 palette flip · #408 glass + ghosted painting · #410 glass-quiet chips; --live contrast lint in CI) → Sam's screenshot verdicts, kpi_reorder keyboard path, per-tab polish | [`session_52_handoff.md`](session_52_handoff.md) |
 
 ---
