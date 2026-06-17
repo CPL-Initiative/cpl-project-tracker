@@ -83,6 +83,47 @@ the data lane, built interactively against his live direction.
    lazy-loads `tmc_builder.js`, which lazy-loads `tmc_templates.js` then the 7.5 MB
    `tmc_college_courses.js` (precedent: the CCR's 34 MB details file).
 
+## Session 60 (Bruh Momentus) — list-first redesign + real-estate consolidation (2026-06-17)
+
+Sam wanted the tab to do two jobs cleanly: **(a)** a directory of *every* TMC (any
+status) any reviewer/initiator/collaborator can jump into, and **(b)** the
+individual build/review/submit flow. Five asks, all shipped in `tmc_builder.js`
+(STATIC — no HTML/Rule-4 touch) + `quickstart.js`:
+
+1. **List-first.** The tab now lands on a **TMC directory** (`renderList()`): a
+   filterable table of all 45 TMCs (Discipline · Degree · Status chip · C-ID slots
+   · *Your auto-matches* when a college is picked · official/PDF links). Clicking a
+   row (`openTmc`) opens that one TMC's builder; a **← All TMCs** back link
+   (`backToList`) returns. The old **Program/Discipline (TMC) dropdown was dropped**
+   — the list replaces it as the selector. `state.view` ∈ `list` | `detail`.
+2. **"All colleges" default = review mode.** The college filter leads with **All
+   colleges (browse/review)** (`state.college === ""`). Opening a TMC then shows the
+   fixed C-ID list + curator notes with the right column muted ("Select a college to
+   align a local course"), a review banner, and Save/Submit hidden (Export/Print
+   kept). Pick a real college → full **build mode** (auto-match, Total Units,
+   save/submit) **and** the directory gains a per-TMC **coverage** column
+   (`coverageFor()` = how many slots' C-IDs that college already carries).
+3. **"Coming soon" retired.** All 45 TMCs are `draft`, so `planned`/"Coming soon"
+   was an empty, confusing bucket. `STATUS_META` is now **official | draft** only;
+   `tmcStatus()` returns `official` iff `status==="official"`, else `draft`. Removed
+   from the Show filter, the optgroup split, the legend, and the planned panel.
+4. **Consolidated filters.** One `.tmc-filters` block — **College · Show · Find a
+   TMC · Curator sign-in** — replaces the old separate topbar (auth+status) and
+   pickers row. The big yellow draft box + long intro paragraph are gone; the draft
+   disclosure is now a slim **"· Draft, for test & development"** note appended to
+   the single `<h2>` title.
+5. **Quickstart lifted to the header.** The global **"What are you working on"**
+   bar (`quickstart.js`) now mounts right after `.header` (full-width global chrome)
+   instead of at the top of each tab's main column — frees real estate on *every*
+   tab. Single global widget, so it still shows on all tabs.
+
+Tests: `tests/tmc_builder.test.js` rewritten to the list-first model (drove the
+removed dropdown / planned panel before) — **42 → 52 assertions**, full suite green
+(53 files). **Open/pushback for Sam:** the quickstart bar scrolls with the header
+(not pinned) — say the word to make it sticky. CLAUDE.md §7d still describes the
+old dropdown/Coming-soon model in places; full §7d rewrite deferred to the next
+checkpoint once the TMC design settles.
+
 ## Session 59 cont. (3) — curator layer: login, status filter, requests, notes, PDF artifacts (2026-06-17)
 
 Five Sam asks, all reusing existing infra:
