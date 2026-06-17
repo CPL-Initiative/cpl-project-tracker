@@ -25,6 +25,7 @@
     tmc: null,            // selected template object
     view: "list",         // "list" (the TMC directory) | "detail" (one TMC's builder)
     listQuery: "",        // free-text filter for the TMC list
+    gePattern: "cal-getc", // selected GE Breadth pattern (cal-getc | igetc | csu-ge)
     courses: [],          // [[subj,num,title,units,cid], ...] for the college
     byCid: null,          // Map cid -> [courseObj,...]
     choice: {},           // slotKey -> courseObj | null
@@ -126,6 +127,19 @@
       "#tab-tmc-builder .tmc-back:hover{text-decoration:underline;}" +
       "#tab-tmc-builder .tmc-reviewbar{background:#eef6ff;border:1px solid #c7ddff;border-radius:8px;padding:9px 14px;font-size:.84rem;color:#1e3a5f;margin-bottom:12px;}" +
       "#tab-tmc-builder .tmc-pickhint{color:var(--text-muted);font-size:.84rem;font-style:italic;padding:8px 2px;}" +
+      // GE Breadth companion panel (the GE half of the ADT)
+      "#tab-tmc-builder .tmc-ge{margin-top:22px;border:1px solid var(--border-strong,#cbd5e1);border-top:3px solid var(--gold-accent,#e3b341);border-radius:10px;background:#fff;overflow:hidden;}" +
+      "#tab-tmc-builder .tmc-ge-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;background:#fbf7ec;border-bottom:1px solid #eee3c5;}" +
+      "#tab-tmc-builder .tmc-ge-head h3{margin:0;font-size:1.1rem;color:var(--navy-primary);}" +
+      "#tab-tmc-builder .tmc-ge-sub{font-weight:400;color:var(--text-muted);font-size:.86rem;}" +
+      "#tab-tmc-builder .tmc-ge-pick{display:flex;align-items:center;gap:8px;}" +
+      "#tab-tmc-builder .tmc-ge-pick label{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);font-weight:700;}" +
+      "#tab-tmc-builder .tmc-ge-pick select{padding:7px 10px;border:1px solid var(--border-strong,#cbd5e1);border-radius:7px;font-size:.9rem;background:#fff;}" +
+      "#tab-tmc-builder .tmc-ge-note{padding:9px 18px;font-size:.82rem;color:#4b5563;background:#fffdf6;border-bottom:1px solid #f0e8d6;}" +
+      "#tab-tmc-builder .tmc-ge-note em{color:#92400e;font-style:italic;}" +
+      "#tab-tmc-builder .tmc-ge-legacy{display:inline-block;font-size:.66rem;font-weight:700;color:#92400e;background:#fffbeb;border:1px solid #fcd34d;border-radius:20px;padding:0 8px;}" +
+      "#tab-tmc-builder .tmc-ge-tag{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:.7rem;font-weight:700;color:#7a5c00;background:#fdf3d4;border:1px solid var(--gold-accent,#e3b341);border-radius:5px;padding:1px 7px;margin-right:6px;}" +
+      "#tab-tmc-builder .tmc-ge .tmc-body{border:none;}" +
       "#tab-tmc-builder .tmc-pickers{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;background:var(--surface-subtle,#f8fafc);border:1px solid var(--border-strong,#cbd5e1);border-radius:10px;padding:14px 16px;margin-bottom:18px;}" +
       "#tab-tmc-builder .tmc-pick label{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);font-weight:700;margin-bottom:4px;}" +
       "#tab-tmc-builder .tmc-pick select{padding:8px 10px;border:1px solid var(--border-strong,#cbd5e1);border-radius:7px;font-size:.95rem;background:#fff;min-width:260px;max-width:100%;}" +
@@ -362,6 +376,14 @@
     var cids = slotCids(slot);
     var hasCid = course.cid && cids.indexOf(normCid(course.cid)) !== -1;
     var ur = unitsInRange(course.units, slot.units);
+    if (slot.ge) {
+      // GE areas are college-certified (no C-ID); `units` is a per-course MINIMUM.
+      var gr = unitRange(slot.units);
+      var gcu = course.units == null ? null : parseFloat(course.units);
+      if (gr && gcu != null && !isNaN(gcu) && gcu + 0.01 < gr[0])
+        return { cls: "warn", label: "⚠ below the " + slot.units + "-unit minimum (" + fmtU(course.units) + ")" };
+      return { cls: "ok", label: "✓ selected" };
+    }
     if (slot.noncid && !slot.cid) {
       if (ur === false) return { cls: "warn", label: "⚠ units differ (" + fmtU(course.units) + " vs " + slot.units + ")" };
       return { cls: "ok", label: "✓ selected" };
@@ -375,13 +397,33 @@
   function fmtU(u) { return u == null ? "?" : (u % 1 === 0 ? String(u) : String(u)); }
 
   /* -------------------------------------------------------------- counters */
-  function sectionUnits(si) {
-    var sec = state.tmc.sections[si], sum = 0;
-    sec.slots.forEach(function (slot, sj) {
-      var c = state.choice[si + ":" + sj];
+  function sumSectionUnits(sections, si, prefix) {
+    var sec = sections[si], sum = 0;
+    (sec.slots || []).forEach(function (slot, sj) {
+      var c = state.choice[(prefix || "") + si + ":" + sj];
       if (c && c.units != null && !isNaN(parseFloat(c.units))) sum += parseFloat(c.units);
     });
     return Math.round(sum * 10) / 10;
+  }
+  function sectionUnits(si) { return sumSectionUnits(state.tmc.sections, si, ""); }
+
+  /* ---- GE Breadth (the GE half of the ADT) -------------------------------- */
+  function gePatterns() { return (window.CPL_TMC_GE_PATTERNS && window.CPL_TMC_GE_PATTERNS.patterns) || []; }
+  function currentGe() {
+    var ps = gePatterns();
+    return ps.filter(function (p) { return p.id === state.gePattern; })[0] || ps[0] || null;
+  }
+  function geTally() {
+    var filled = 0, required = 0, units = 0, p = currentGe();
+    if (!p) return { filled: filled, required: required, units: units };
+    p.sections.forEach(function (sec, si) {
+      required += sec.slots.length;
+      sec.slots.forEach(function (slot, sj) {
+        var c = state.choice["ge:" + si + ":" + sj];
+        if (c) { filled++; if (c.units != null && !isNaN(parseFloat(c.units))) units += parseFloat(c.units); }
+      });
+    });
+    return { filled: filled, required: required, units: Math.round(units * 10) / 10 };
   }
   function tally() {
     var filled = 0, required = 0, units = 0, aligned = 0;
@@ -654,6 +696,9 @@
     card.appendChild(totals);
     mount.appendChild(card);
 
+    // GE Breadth companion — the GE half of the ADT (major + GE + electives = 60)
+    renderGeInto(mount, reviewMode);
+
     // legend (build mode only — the ✓/⚠/○ statuses describe a college's match)
     if (!reviewMode) {
       var legend = el("div", "tmc-legend");
@@ -689,6 +734,74 @@
     b.type = "button";
     b.onclick = fn;
     return b;
+  }
+
+  /* ---- GE Breadth companion panel (the GE half of the ADT) ---------------- */
+  function renderGeInto(mount, reviewMode) {
+    var ps = gePatterns();
+    var wrap = el("div", "tmc-ge");
+    var head = el("div", "tmc-ge-head");
+    head.appendChild(el("div", null, "<h3>General Education — Breadth <span class='tmc-ge-sub'>· the GE half of the ADT</span></h3>"));
+    if (!ps.length) {
+      // patterns file not loaded yet — show a slim placeholder, no crash
+      wrap.appendChild(head);
+      wrap.appendChild(el("div", "tmc-ge-note", "<div class='tmc-loading'>Loading GE Breadth patterns…</div>"));
+      mount.appendChild(wrap);
+      return;
+    }
+    var p = currentGe();
+    // GE pattern selector (Cal-GETC default; IGETC / CSU GE Breadth are legacy)
+    var selWrap = el("div", "tmc-ge-pick");
+    selWrap.appendChild(el("label", null, "GE pattern"));
+    var sel = el("select"); sel.id = "tmc-ge-sel";
+    ps.forEach(function (pp) {
+      var o = new Option(pp.name, pp.id);
+      if (pp.id === p.id) o.selected = true;
+      sel.appendChild(o);
+    });
+    sel.onchange = function () { state.gePattern = sel.value; renderBody(); };
+    selWrap.appendChild(sel);
+    head.appendChild(selWrap);
+    wrap.appendChild(head);
+
+    // pattern descriptor + draft disclosure
+    wrap.appendChild(el("div", "tmc-ge-note",
+      "<b>" + esc(p.full) + "</b>" + (p.effective ? " · " + esc(p.effective) : "") +
+      (p.legacy ? " · <span class='tmc-ge-legacy'>legacy</span>" : "") + ". " + esc(p.note || "") +
+      " <em>Draft area structure — verify against the official Breadth Form.</em>"));
+
+    // areas (sections) — GE key prefix; in review mode renderSlot mutes the picker
+    var body = el("div", "tmc-body");
+    p.sections.forEach(function (sec, si) {
+      var sed = el("div", "tmc-section");
+      var secU = sumSectionUnits(p.sections, si, "ge:");
+      var sh = el("div", "tmc-sechead");
+      sh.innerHTML = "<span>" + esc(sec.name) + "</span><span class='tmc-secmeta'>" +
+        (sec.units && sec.units !== "0" ? "req " + esc(sec.units) + " u" : "") +
+        (reviewMode ? "" : " · <b class='tmc-secsel'>your courses: " + secU + " u</b>") + "</span>";
+      sed.appendChild(sh);
+      if (sec.note) sed.appendChild(el("div", "tmc-secnote", esc(sec.note)));
+      var ch = el("div", "tmc-colhead");
+      ch.innerHTML = "<div>GE Area</div><div>Your College's Course (from COCI)</div>";
+      sed.appendChild(ch);
+      sec.slots.forEach(function (slot, sj) { sed.appendChild(renderSlot(si, sj, slot, "ge:")); });
+      body.appendChild(sed);
+    });
+    wrap.appendChild(body);
+
+    // GE total + combined full-ADT total
+    var foot = el("div", "tmc-totals");
+    if (reviewMode) {
+      foot.innerHTML = "<span>GE pattern: <b>" + esc(p.name) + "</b> — " + p.sections.length + " areas</span>" +
+        "<span class='tmc-totals-target'>" + (p.total_units ? "GE target ≈ " + esc(String(p.total_units)) + " u (draft)" : "") + "</span>";
+    } else {
+      var gt = geTally(), mt = tally();
+      var adt = Math.round((mt.units + gt.units) * 10) / 10;
+      foot.innerHTML = "<span>GE units selected: <b id='tmc-ge-units'>" + gt.units + "</b> u · " + gt.filled + " of " + gt.required + " areas</span>" +
+        "<span class='tmc-totals-target'>Full ADT (draft): major <b>" + mt.units + "</b> + GE <b>" + gt.units + "</b> = <b>" + adt + "</b> u · plus CSU-transferable electives to reach 60</span>";
+    }
+    wrap.appendChild(foot);
+    mount.appendChild(wrap);
   }
 
   /* --------------------------------------------------- features: auth UI */
@@ -797,18 +910,26 @@
     mount.appendChild(q);
   }
 
-  function renderSlot(si, sj, slot) {
-    var key = si + ":" + sj;
+  function renderSlot(si, sj, slot, keyPrefix) {
+    keyPrefix = keyPrefix || "";
+    var key = keyPrefix + si + ":" + sj;
     var row = el("div", "tmc-slot");
     var leftc = el("div", "tmc-left");
-    var cidHtml = slot.cid
-      ? "<span class='tmc-cid'>" + esc(slot.cid) + "</span>" +
-        (slot.cid_unverified ? "<span class='tmc-unv' title='This C-ID is not in our C-ID reference — a possible C-ID update signal'>⚠ not in C-ID ref</span>" : "")
-      : "<span class='tmc-cid noncid'>non-C-ID</span>";
-    var altHtml = slot.alts && slot.alts.length ? " <span class='tmc-units'>or " + slot.alts.map(esc).join(", ") + "</span>" : "";
-    leftc.innerHTML = cidHtml + "<span class='tmc-ctitle'>" + esc(slot.title) + "</span>" +
-      "<span class='tmc-units'>Required units: " + esc(slot.units || "—") + altHtml + "</span>";
-    renderNoteInto(leftc, key);
+    if (slot.ge) {
+      // GE area row — no C-ID badge; units are a per-course minimum
+      leftc.innerHTML = "<span class='tmc-ge-tag'>GE</span>" +
+        "<span class='tmc-ctitle'>" + esc(slot.title) + "</span>" +
+        "<span class='tmc-units'>Min units: " + esc(slot.units != null ? String(slot.units) : "—") + "</span>";
+    } else {
+      var cidHtml = slot.cid
+        ? "<span class='tmc-cid'>" + esc(slot.cid) + "</span>" +
+          (slot.cid_unverified ? "<span class='tmc-unv' title='This C-ID is not in our C-ID reference — a possible C-ID update signal'>⚠ not in C-ID ref</span>" : "")
+        : "<span class='tmc-cid noncid'>non-C-ID</span>";
+      var altHtml = slot.alts && slot.alts.length ? " <span class='tmc-units'>or " + slot.alts.map(esc).join(", ") + "</span>" : "";
+      leftc.innerHTML = cidHtml + "<span class='tmc-ctitle'>" + esc(slot.title) + "</span>" +
+        "<span class='tmc-units'>Required units: " + esc(slot.units || "—") + altHtml + "</span>";
+      renderNoteInto(leftc, key);
+    }
     row.appendChild(leftc);
 
     var rightc = el("div", "tmc-right");
@@ -820,7 +941,7 @@
       var chosen = state.choice[key];
       var stt = statusFor(slot, chosen);
       var pill = el("span", "tmc-status " + stt.cls, esc(stt.label));
-      pill.id = "tmc-st-" + key.replace(":", "-");
+      pill.id = "tmc-st-" + key.replace(/:/g, "-");
       rightc.appendChild(pill);
       if (chosen) {
         var clr = el("span", "tmc-clear", "clear");
@@ -922,11 +1043,28 @@
         }
       });
     });
-    var t = tally();
+    // Fold the GE Breadth half into the same jsonb (ge:-prefixed keys + a meta
+    // record of the chosen pattern) so no schema migration is needed.
+    var gp = currentGe();
+    if (gp) {
+      alignments["_ge_pattern"] = { ge_pattern: gp.id, ge_pattern_name: gp.name };
+      gp.sections.forEach(function (sec, si) {
+        sec.slots.forEach(function (slot, sj) {
+          var c = state.choice["ge:" + si + ":" + sj];
+          if (c) {
+            alignments["ge:" + si + ":" + sj] = {
+              ge: true, area: slot.title, slot_units: slot.units || "",
+              subj: c.subj, num: c.num, title: c.title, units: c.units
+            };
+          }
+        });
+      });
+    }
+    var t = tally(), g = geTally();
     return {
       college: state.college, tmc_id: state.tmc.id, tmc_discipline: state.tmc.discipline,
       degree_type: state.tmc.degree, alignments: alignments, status: status || "draft",
-      total_major_units: t.units, filled_slots: t.filled, total_slots: t.required
+      total_major_units: t.units, filled_slots: t.filled + g.filled, total_slots: t.required + g.required
     };
   }
 
@@ -971,17 +1109,31 @@
       });
     });
     var t = tally();
-    var doc = new d.Document({
-      sections: [{
-        children: [
-          new d.Paragraph({ text: state.tmc.discipline + " — " + state.tmc.degree, heading: d.HeadingLevel.HEADING_1 }),
-          new d.Paragraph({ text: (state.college || "All colleges (template)") + "   ·   TMC alignment (DRAFT — verify against official template)" }),
-          new d.Paragraph({ text: t.aligned + " C-ID aligned · " + t.filled + "/" + t.required + " slots filled · " + t.units + " units mapped" }),
-          new d.Paragraph({ text: "" }),
-          new d.Table({ width: { size: 100, type: d.WidthType.PERCENTAGE }, rows: rows })
-        ]
-      }]
-    });
+    var children = [
+      new d.Paragraph({ text: state.tmc.discipline + " — " + state.tmc.degree, heading: d.HeadingLevel.HEADING_1 }),
+      new d.Paragraph({ text: (state.college || "All colleges (template)") + "   ·   ADT alignment (DRAFT — verify against official template + Breadth Form)" }),
+      new d.Paragraph({ text: "Major: " + t.aligned + " C-ID aligned · " + t.filled + "/" + t.required + " slots filled · " + t.units + " units mapped" }),
+      new d.Paragraph({ text: "" }),
+      new d.Paragraph({ text: "Major Requirements (Transfer Model Curriculum)", heading: d.HeadingLevel.HEADING_2 }),
+      new d.Table({ width: { size: 100, type: d.WidthType.PERCENTAGE }, rows: rows })
+    ];
+    // GE Breadth half of the ADT
+    var gp = currentGe();
+    if (gp) {
+      var g = geTally();
+      var geRows = [headerRow(d)];
+      gp.sections.forEach(function (sec, si) {
+        geRows.push(sectionRow(d, sec));
+        sec.slots.forEach(function (slot, sj) { geRows.push(slotRow(d, slot, state.choice["ge:" + si + ":" + sj])); });
+      });
+      children.push(new d.Paragraph({ text: "" }));
+      children.push(new d.Paragraph({ text: "General Education — " + gp.name + " (Breadth)", heading: d.HeadingLevel.HEADING_2 }));
+      children.push(new d.Paragraph({ text: gp.full + (gp.legacy ? " · LEGACY (pre-Fall 2025)" : "") + " · GE units mapped: " + g.units + " · " + g.filled + "/" + g.required + " areas" }));
+      children.push(new d.Table({ width: { size: 100, type: d.WidthType.PERCENTAGE }, rows: geRows }));
+      children.push(new d.Paragraph({ text: "" }));
+      children.push(new d.Paragraph({ text: "Full ADT (draft): major " + t.units + " + GE " + g.units + " = " + (Math.round((t.units + g.units) * 10) / 10) + " units, plus CSU-transferable electives to reach 60." }));
+    }
+    var doc = new d.Document({ sections: [{ children: children }] });
     d.Packer.toBlob(doc).then(function (blob) { downloadBlob(blob, slug() + ".docx"); });
   }
   function cell(d, text, opts) {
@@ -1050,6 +1202,7 @@
       // only adopt saved rows the curator hadn't already auto/hand-matched away from
       Object.keys(row.alignments).forEach(function (k) {
         var a = row.alignments[k];
+        if (k === "_ge_pattern") { if (a && a.ge_pattern) state.gePattern = a.ge_pattern; return; }
         state.choice[k] = { subj: a.subj, num: a.num, title: a.title, units: a.units, cid: a.course_cid || null };
       });
       if (state.view === "detail") renderBody();
@@ -1091,6 +1244,10 @@
         state.loadedCourses = ok;
         render(); // college dropdown now populated
       });
+    });
+    // GE Breadth patterns (small, static) for the full-ADT companion panel
+    ensureScript("tmc_ge_patterns.js", "CPL_TMC_GE_PATTERNS", function () {
+      if (state.view === "detail") renderBody(); // fill the GE panel once available
     });
   }
 
