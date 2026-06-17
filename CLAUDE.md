@@ -827,6 +827,17 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
 - Auto-match is **C-ID-exact only** (COCI `CIDNumber` == descriptor key); never
   title-guessed. ~1/4 of colleges report sparse C-IDs in the COCI extract → they
   pick manually. No contact-hours in COCI → legitimacy = units + C-ID for now.
+- **Curator + submission layer (Session 59 follow-up).** A **Status filter**
+  (All / Official / Draft / Coming soon / **New requests**) sits atop the form;
+  **New requests** = the **CO-review queue** (colleges' completed alignments
+  submitted to the Chancellor's Office — a `tmc_submissions` row with
+  `status='submitted'`, written by the form's **📤 Submit for CO review** action).
+  **Magic-link login** reuses the CCR's shared `cpl_sb` session + `allowed_reviewers`
+  (`map@rccd.edu` now; a CCCCO account later) — public reads, reviewer writes.
+  Signed-in reviewers add a **global curator note** per course row
+  (`tmc_curator_notes`, reviewer-gated by `is_allowed_reviewer()`). Each TMC also
+  links its **committed PDF artifact** (`tmc/source_pdfs/<file>`, Pages-served) +
+  the external template. `cid_unverified` slots show a **⚠ not in C-ID ref** flag.
 - Tab nav button + pane + boot wiring are mirrored in BOTH HTMLs (Rule 4). Schema
   of record: `tmc/supabase_tmc_submissions.sql`. Full story:
   [`docs/tmc_builder_lessons.md`](docs/tmc_builder_lessons.md);
@@ -841,6 +852,12 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   **no student PII**), `(college, tmc_id)` unique → upsert/resume. The always-true
   anon write policies are deliberate (mirror `chat_interactions`); the authoritative
   submission is the exported form. Schema: `tmc/supabase_tmc_submissions.sql`.
+- **`tmc_curator_notes`** + **`tmc_requests`** (added Session 59): TMC Builder's
+  curator layer. `tmc_curator_notes` = one global note per (tmc_id, slot_key),
+  anon SELECT + **reviewer-gated** INSERT/UPDATE (`is_allowed_reviewer()`).
+  `tmc_requests` = free-form "request a TMC" log (anon insert/read). The primary
+  "new request" path is a `tmc_submissions` row with `status='submitted'` (CO-review
+  queue). Schema: `tmc/supabase_tmc_curator.sql`.
 - **`cpl_reflections`** (added Session 48): First Light's anonymous daily
   reflections — anon INSERT-only RLS with a 1–2000-char CHECK, **no SELECT
   policy** (write-only from the public; service role reads for the future

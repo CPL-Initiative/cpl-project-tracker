@@ -26,7 +26,12 @@
     courses: [],          // [[subj,num,title,units,cid], ...] for the college
     byCid: null,          // Map cid -> [courseObj,...]
     choice: {},           // slotKey -> courseObj | null
-    loadedCourses: false
+    loadedCourses: false,
+    session: null,        // Supabase auth session (shared cpl_sb key with the CCR)
+    email: "",            // signed-in reviewer email
+    statusFilter: "all",  // TMC status filter; "requested" = the CO-review queue
+    notes: {},            // slotKey -> {note, by, at} — global curator notes for the selected TMC
+    requests: []          // submitted ADT requests (status=submitted) for CO review
   };
 
   /* ----------------------------------------------------------------- utils */
@@ -159,6 +164,30 @@
       "#tab-tmc-builder .tmc-srclink{color:var(--navy-primary);font-weight:600;text-decoration:underline;}" +
       "#tab-tmc-builder .tmc-formhead .tmc-srclink{color:#cfe3ff;}" +
       "#tab-tmc-builder .tmc-soon-badge{display:inline-block;font-size:.74rem;font-weight:700;color:#475569;background:#eef2f7;border:1px solid #cbd5e1;border-radius:20px;padding:3px 12px;margin-bottom:6px;}" +
+      "#tab-tmc-builder .tmc-topbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:flex-end;margin-bottom:10px;}" +
+      "#tab-tmc-builder .tmc-topbar .tmc-filter-lbl{font-size:.74rem;color:var(--text-muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-right:-4px;}" +
+      "#tab-tmc-builder .tmc-topbar select{padding:6px 8px;border:1px solid var(--border-strong,#cbd5e1);border-radius:6px;font-size:.82rem;background:#fff;}" +
+      "#tab-tmc-builder .tmc-auth{margin-right:auto;font-size:.82rem;color:var(--text-muted);}" +
+      "#tab-tmc-builder .tmc-auth a,#tab-tmc-builder .tmc-link{color:var(--navy-primary);font-weight:600;cursor:pointer;text-decoration:underline;}" +
+      "#tab-tmc-builder .tmc-auth-on{color:#166534;font-weight:600;}" +
+      "#tab-tmc-builder .tmc-pdf{display:inline-block;margin-left:8px;font-size:.78rem;}" +
+      "#tab-tmc-builder .tmc-formhead .tmc-pdf a{color:#cfe3ff;font-weight:600;text-decoration:underline;}" +
+      "#tab-tmc-builder .tmc-note{margin-top:5px;font-size:.78rem;background:#fffdf5;border:1px solid var(--gold-accent,#e3c34d);border-radius:6px;padding:5px 8px;color:#5b4a00;}" +
+      "#tab-tmc-builder .tmc-note .tmc-note-meta{color:#9a8a3a;font-size:.7rem;}" +
+      "#tab-tmc-builder .tmc-note-add{margin-top:4px;font-size:.74rem;color:var(--navy-primary);cursor:pointer;text-decoration:underline;display:inline-block;}" +
+      "#tab-tmc-builder .tmc-note-edit{margin-top:5px;}" +
+      "#tab-tmc-builder .tmc-note-edit textarea{width:100%;box-sizing:border-box;border:1px solid var(--border-strong,#cbd5e1);border-radius:6px;font-size:.8rem;padding:6px;min-height:48px;font-family:inherit;}" +
+      "#tab-tmc-builder .tmc-unv{display:inline-block;font-size:.68rem;font-weight:700;color:#92400e;background:#fffbeb;border:1px solid #fcd34d;border-radius:4px;padding:0 5px;margin-left:6px;}" +
+      "#tab-tmc-builder .tmc-reqlist{border:1px solid var(--border-strong,#cbd5e1);border-radius:10px;overflow:hidden;}" +
+      "#tab-tmc-builder .tmc-reqlist table{width:100%;border-collapse:collapse;font-size:.85rem;}" +
+      "#tab-tmc-builder .tmc-reqlist th{background:var(--navy-primary);color:#fff;text-align:left;padding:8px 12px;font-size:.78rem;}" +
+      "#tab-tmc-builder .tmc-reqlist td{padding:7px 12px;border-top:1px solid #eef2f7;}" +
+      "#tab-tmc-builder .tmc-reqlist tr:hover td{background:#f8fafc;}" +
+      "#tab-tmc-builder .tmc-modal-bg{position:fixed;inset:0;background:rgba(28,28,26,.5);z-index:100000;display:flex;align-items:flex-start;justify-content:center;padding:5rem 1rem;}" +
+      "#tab-tmc-builder .tmc-modal{background:#fff;max-width:520px;width:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.35);padding:20px 22px;}" +
+      "#tab-tmc-builder .tmc-modal h3{margin:0 0 10px;color:var(--navy-primary);}" +
+      "#tab-tmc-builder .tmc-modal label{display:block;font-size:.78rem;font-weight:700;color:#374151;margin:8px 0 3px;}" +
+      "#tab-tmc-builder .tmc-modal input,#tab-tmc-builder .tmc-modal textarea{width:100%;box-sizing:border-box;border:1px solid var(--border-strong,#cbd5e1);border-radius:6px;padding:7px 9px;font-size:.85rem;font-family:inherit;}" +
       "@media (max-width:720px){#tab-tmc-builder .tmc-slot,#tab-tmc-builder .tmc-colhead{grid-template-columns:1fr;}}" +
       "@media print{body *{visibility:hidden;}#tab-tmc-builder,#tab-tmc-builder *{visibility:visible;}#tab-tmc-builder .tmc-pickers,#tab-tmc-builder .tmc-actions,#tab-tmc-builder .tmc-pop{display:none!important;}#tab-tmc-builder{position:absolute;left:0;top:0;width:100%;}}";
     var st = el("style");
@@ -186,6 +215,62 @@
       headers: sbHeaders({ Prefer: "resolution=merge-duplicates,return=representation" }),
       body: JSON.stringify(payload)
     });
+  }
+
+  /* ---- auth (magic-link; reuses the CCR's shared cpl_sb session) ----------- */
+  function jwtEmail(t) {
+    try { return JSON.parse(atob(t.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))).email || ""; }
+    catch (e) { return ""; }
+  }
+  function isValidJwt(t) { return typeof t === "string" && /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(t); }
+  function getSession() {
+    try {
+      var s = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
+      if (s && isValidJwt(s.access_token) && (s.refresh_token || s.exp > Date.now())) return s;
+    } catch (e) {}
+    return null;
+  }
+  function signIn(email) {
+    try { sessionStorage.setItem("cpl_sb_return_tab", "tmc-builder"); } catch (e) {}
+    var redirect = encodeURIComponent(location.origin + location.pathname);
+    return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
+      method: "POST", headers: sbHeaders(),
+      body: JSON.stringify({ email: email, create_user: true })
+    });
+  }
+  function signOut() { try { sessionStorage.removeItem("cpl_sb"); } catch (e) {} state.session = null; state.email = ""; }
+  function authHeaders(extra) {
+    var h = sbHeaders(extra);
+    if (state.session && state.session.access_token) h["Authorization"] = "Bearer " + state.session.access_token;
+    return h;
+  }
+
+  /* ---- global curator notes on TMC course rows (tmc_curator_notes) --------- */
+  function loadNotes(tmcId, cb) {
+    state.notes = {};
+    var q = "/rest/v1/tmc_curator_notes?tmc_id=eq." + encodeURIComponent(tmcId) + "&select=slot_key,note,reviewer_email,updated_at";
+    fetch(SUPABASE_URL + q, { headers: sbHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        (rows || []).forEach(function (r) { state.notes[r.slot_key] = { note: r.note, by: r.reviewer_email, at: r.updated_at }; });
+        if (cb) cb();
+      }).catch(function () { if (cb) cb(); });
+  }
+  function saveNote(tmcId, slotKey, note) {
+    return fetch(SUPABASE_URL + "/rest/v1/tmc_curator_notes?on_conflict=tmc_id,slot_key", {
+      method: "POST",
+      headers: authHeaders({ Prefer: "resolution=merge-duplicates,return=minimal" }),
+      body: JSON.stringify({ tmc_id: tmcId, slot_key: slotKey, note: note, reviewer_email: state.email })
+    });
+  }
+
+  /* ---- ADT requests for CO review (a tmc_submissions row, status=submitted) */
+  function loadRequests(cb) {
+    var q = "/rest/v1/tmc_submissions?status=eq.submitted&select=college,tmc_id,tmc_discipline,degree_type,filled_slots,total_slots,updated_at&order=updated_at.desc";
+    fetch(SUPABASE_URL + q, { headers: sbHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) { state.requests = rows || []; if (cb) cb(); })
+      .catch(function () { if (cb) cb(); });
   }
 
   /* ---------------------------------------------------------- data loading */
@@ -307,6 +392,21 @@
       "Pick your <strong>college</strong> and a <strong>Transfer Model Curriculum</strong>. The left column is the fixed, ASCCC-defined C-ID course list; " +
       "for each row, choose the matching course from <strong>your college's COCI offerings</strong> on the right. Courses that already carry the slot's C-ID are matched automatically."));
 
+    // top bar: curator sign-in (left) + Status filter (right)
+    var top = el("div", "tmc-topbar");
+    var auth = el("span", "tmc-auth"); auth.id = "tmc-auth";
+    renderAuthInto(auth);
+    top.appendChild(auth);
+    top.appendChild(el("span", "tmc-filter-lbl", "Show"));
+    var sf = el("select"); sf.id = "tmc-status-filter";
+    [["all", "All TMCs"], ["official", "✓ Official"], ["draft", "⚠ Draft"], ["planned", "◷ Coming soon"],
+     ["requested", "📤 New requests (CO review)"]].forEach(function (o) {
+      var op = new Option(o[1], o[0]); if (state.statusFilter === o[0]) op.selected = true; sf.appendChild(op);
+    });
+    sf.onchange = function () { state.statusFilter = sf.value; render(); };
+    top.appendChild(sf);
+    wrap.appendChild(top);
+
     // pickers
     var pk = el("div", "tmc-pickers");
     var colPick = el("div", "tmc-pick");
@@ -332,8 +432,10 @@
     var tlist = (window.CPL_TMC_TEMPLATES ? window.CPL_TMC_TEMPLATES.templates : []).slice().sort(function (a, b) {
       return a.discipline < b.discipline ? -1 : 1;
     });
-    var avail = tlist.filter(function (t) { return tmcStatus(t) !== "planned"; });
-    var soon = tlist.filter(function (t) { return tmcStatus(t) === "planned"; });
+    var fstat = state.statusFilter;
+    var shown = tlist.filter(function (t) { return fstat === "all" || fstat === "requested" || tmcStatus(t) === fstat; });
+    var avail = shown.filter(function (t) { return tmcStatus(t) !== "planned"; });
+    var soon = shown.filter(function (t) { return tmcStatus(t) === "planned"; });
     function addOptGroup(label, arr) {
       if (!arr.length) return;
       var og = document.createElement("optgroup");
@@ -367,7 +469,8 @@
     mount.id = "tmc-form-mount";
     wrap.appendChild(mount);
     root.appendChild(wrap);
-    renderForm(mount);
+    if (state.statusFilter === "requested") renderRequestQueue(mount);
+    else renderForm(mount);
   }
 
   function renderForm(mount) {
@@ -376,13 +479,14 @@
     // link (no college needed). This is the "status indicator" payoff for the
     // 37 TMCs we haven't encoded yet — they're visible and link out.
     if (state.tmc && tmcStatus(state.tmc) === "planned") {
-      var pt = state.tmc, psrc = tmcSource(pt);
+      var pt = state.tmc, psrc = tmcSource(pt), ppdf = pdfPath(pt);
       var panel = el("div", "tmc-empty");
       panel.innerHTML =
         "<div class='tmc-soon-badge'>◷ Coming soon</div>" +
         "<h3 style='margin:8px 0 4px'>" + esc(pt.discipline) + " TMC</h3>" +
         "<p style='max-width:580px;margin:0 auto 12px'>This Transfer Model Curriculum is in our catalog — we're encoding its fixed C-ID course list from the official ASCCC template. Pick an <strong>Available now</strong> TMC to build today, or open the official template:</p>" +
-        (psrc ? "<a class='tmc-srclink' href='" + esc(psrc) + "' target='_blank' rel='noopener'>📄 View the official " + esc(pt.discipline) + " TMC ↗</a>" : "");
+        (psrc ? "<a class='tmc-srclink' href='" + esc(psrc) + "' target='_blank' rel='noopener'>📄 View the official " + esc(pt.discipline) + " TMC ↗</a>" : "") +
+        (ppdf ? " &nbsp; <a class='tmc-srclink' href='" + esc(ppdf) + "' target='_blank' rel='noopener'>📎 PDF</a>" : "");
       mount.appendChild(panel);
       return;
     }
@@ -396,6 +500,7 @@
     var t = state.tmc;
     var st = statusMeta(t);
     var src = tmcSource(t);
+    var pdf = pdfPath(t);
     var card = el("div");
     // header
     var head = el("div", "tmc-formhead");
@@ -404,7 +509,8 @@
       (t.degree ? "<span class='tmc-deg'>" + esc(t.degree) + "</span>" : "") +
       "<span class='tmc-stchip " + st.cls + "'>" + esc(st.label) + "</span></h3>" +
       "<div class='tmc-collegelbl'>" + esc(state.college) + " · " + esc(t.version || "draft") +
-      (src ? " · <a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener'>official template ↗</a>" : "") + "</div>";
+      (src ? " · <a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener'>official template ↗</a>" : "") +
+      (pdf ? " <span class='tmc-pdf'>· <a href='" + esc(pdf) + "' target='_blank' rel='noopener'>📎 PDF</a></span>" : "") + "</div>";
     head.appendChild(left);
     var meterBox = el("div", "tmc-meter");
     meterBox.id = "tmc-meter";
@@ -452,7 +558,8 @@
     mount.appendChild(legend);
 
     var act = el("div", "tmc-actions");
-    act.appendChild(mkBtn("💾 Save to Supabase", "primary", doSave));
+    act.appendChild(mkBtn("💾 Save draft", "primary", doSave));
+    act.appendChild(mkBtn("📤 Submit for CO review", "", doSubmitReview));
     act.appendChild(mkBtn("📄 Export Word (.docx)", "", doDocx));
     act.appendChild(mkBtn("🖨 Print / PDF", "", function () { window.print(); }));
     act.appendChild(mkBtn("{ } Export JSON", "", doJson));
@@ -471,16 +578,124 @@
     return b;
   }
 
+  /* --------------------------------------------------- features: auth UI */
+  function renderAuthInto(node) {
+    node.innerHTML = "";
+    if (state.email) {
+      node.innerHTML = "<span class='tmc-auth-on'>✓ Curator: " + esc(state.email) + "</span> · <a class='tmc-link' id='tmc-signout'>Sign out</a>";
+      var so = node.querySelector("#tmc-signout");
+      if (so) so.onclick = function () { signOut(); renderAuthInto(node); if (state.tmc) renderForm(document.getElementById("tmc-form-mount")); };
+    } else {
+      node.innerHTML = "Curator? <a class='tmc-link' id='tmc-signin'>Sign in</a> to add notes";
+      var si = node.querySelector("#tmc-signin");
+      if (si) si.onclick = function () { showSignin(node); };
+    }
+  }
+  function showSignin(node) {
+    node.innerHTML = "";
+    var inp = el("input"); inp.type = "email"; inp.placeholder = "you@college.edu";
+    inp.style.cssText = "padding:5px 8px;border:1px solid #cbd5e1;border-radius:6px;font-size:.82rem;";
+    var btn = mkBtn("Send link", "", function () {
+      var em = (inp.value || "").trim();
+      if (!em) { msg.textContent = "Enter your email."; msg.className = "tmc-msg err"; return; }
+      msg.textContent = "Sending…"; msg.className = "tmc-msg";
+      signIn(em).then(function (r) {
+        msg.textContent = r.ok ? "✓ Check your email for the sign-in link." : "Sign-in failed (" + r.status + ").";
+        msg.className = "tmc-msg " + (r.ok ? "ok" : "err");
+      }).catch(function () { msg.textContent = "Network error."; msg.className = "tmc-msg err"; });
+    });
+    var msg = el("span", "tmc-msg");
+    node.appendChild(inp); node.appendChild(document.createTextNode(" ")); node.appendChild(btn); node.appendChild(msg);
+    inp.focus();
+  }
+
+  /* ---- PDF artifact path (the committed copy, served by GitHub Pages) ------ */
+  function pdfPath(t) {
+    var s = tmcSource(t);
+    return s ? "tmc/source_pdfs/" + s.split("/").pop() : "";
+  }
+
+  /* ---- global curator note on a course row -------------------------------- */
+  function renderNoteInto(leftc, key) {
+    var n = state.notes[key];
+    if (n && n.note) {
+      var box = el("div", "tmc-note");
+      box.innerHTML = "📝 " + esc(n.note) + " <span class='tmc-note-meta'>— " + esc(n.by || "curator") +
+        (n.at ? ", " + esc(String(n.at).slice(0, 10)) : "") + "</span>";
+      leftc.appendChild(box);
+    }
+    if (state.email) {
+      var add = el("span", "tmc-note-add", n && n.note ? "✎ edit note" : "✎ add curator note");
+      add.onclick = function () { openNoteEditor(leftc, key, n && n.note ? n.note : ""); };
+      leftc.appendChild(add);
+    }
+  }
+  function openNoteEditor(leftc, key, cur) {
+    var ed = el("div", "tmc-note-edit");
+    var ta = el("textarea"); ta.value = cur; ta.placeholder = "Curator note for this course row (visible to everyone)…";
+    var msg = el("span", "tmc-msg");
+    var save = mkBtn("Save note", "primary", function () {
+      msg.textContent = "Saving…"; msg.className = "tmc-msg";
+      saveNote(state.tmc.id, key, (ta.value || "").trim()).then(function (r) {
+        if (r.ok) {
+          state.notes[key] = { note: (ta.value || "").trim(), by: state.email, at: new Date().toISOString() };
+          renderForm(document.getElementById("tmc-form-mount"));
+        } else r.text().then(function (tx) { msg.textContent = "Save failed: " + (tx || r.status); msg.className = "tmc-msg err"; });
+      }).catch(function (e) { msg.textContent = "Save failed: " + e.message; msg.className = "tmc-msg err"; });
+    });
+    var cancel = mkBtn("Cancel", "", function () { renderForm(document.getElementById("tmc-form-mount")); });
+    var bar = el("div"); bar.style.marginTop = "4px";
+    bar.appendChild(save); bar.appendChild(document.createTextNode(" ")); bar.appendChild(cancel); bar.appendChild(msg);
+    ed.appendChild(ta); ed.appendChild(bar);
+    leftc.appendChild(ed); ta.focus();
+  }
+
+  /* ---- submit the completed alignment as an ADT request for CO review ----- */
+  function doSubmitReview() {
+    if (!state.college || !state.tmc) return;
+    if (tally().filled === 0) { setMsg("Select at least one course before submitting.", "err"); return; }
+    if (!window.confirm("Submit " + state.college + "'s " + state.tmc.discipline +
+        " alignment to the Chancellor's Office for review? You can keep editing and re-submit.")) return;
+    setMsg("Submitting…", "");
+    sbSave(collectPayload("submitted")).then(function (r) {
+      if (r.ok) { setMsg("📤 Submitted for CO review — it now appears under “New requests”.", "ok"); loadRequests(); }
+      else r.text().then(function (tx) { setMsg("Submit failed: " + (tx || r.status), "err"); });
+    }).catch(function (e) { setMsg("Submit failed: " + e.message, "err"); });
+  }
+
+  /* ---- the CO-review queue (Status filter = New requests) ----------------- */
+  function renderRequestQueue(mount) {
+    mount.innerHTML = "";
+    var q = el("div");
+    q.appendChild(el("h3", null, "📤 New ADT requests for CO review"));
+    q.appendChild(el("p", "tmc-intro", "Completed TMC/ADT alignments colleges have submitted to the Chancellor's Office for review. (A future CCCCO sign-in will let CO staff triage these.)"));
+    if (!state.requests.length) {
+      q.appendChild(el("div", "tmc-empty", "No submitted requests yet. Build an alignment, then “📤 Submit for CO review”."));
+      mount.appendChild(q); return;
+    }
+    var box = el("div", "tmc-reqlist");
+    var rows = state.requests.map(function (r) {
+      return "<tr><td>" + esc(r.college || "—") + "</td><td>" + esc(r.tmc_discipline || r.tmc_id || "—") + "</td>" +
+        "<td>" + esc(r.degree_type || "") + "</td><td>" + (r.filled_slots != null ? esc(r.filled_slots + "/" + (r.total_slots || "?")) : "—") +
+        "</td><td>" + esc(String(r.updated_at || "").slice(0, 10)) + "</td></tr>";
+    }).join("");
+    box.innerHTML = "<table><thead><tr><th>College</th><th>TMC / Discipline</th><th>Degree</th><th>Courses</th><th>Submitted</th></tr></thead><tbody>" + rows + "</tbody></table>";
+    q.appendChild(box);
+    mount.appendChild(q);
+  }
+
   function renderSlot(si, sj, slot) {
     var key = si + ":" + sj;
     var row = el("div", "tmc-slot");
     var leftc = el("div", "tmc-left");
     var cidHtml = slot.cid
-      ? "<span class='tmc-cid'>" + esc(slot.cid) + "</span>"
+      ? "<span class='tmc-cid'>" + esc(slot.cid) + "</span>" +
+        (slot.cid_unverified ? "<span class='tmc-unv' title='This C-ID is not in our C-ID reference — a possible C-ID update signal'>⚠ not in C-ID ref</span>" : "")
       : "<span class='tmc-cid noncid'>non-C-ID</span>";
     var altHtml = slot.alts && slot.alts.length ? " <span class='tmc-units'>or " + slot.alts.map(esc).join(", ") + "</span>" : "";
     leftc.innerHTML = cidHtml + "<span class='tmc-ctitle'>" + esc(slot.title) + "</span>" +
       "<span class='tmc-units'>Required units: " + esc(slot.units || "—") + altHtml + "</span>";
+    renderNoteInto(leftc, key);
     row.appendChild(leftc);
 
     var rightc = el("div", "tmc-right");
@@ -690,8 +905,10 @@
   function onTmc(id) {
     state.tmc = (window.CPL_TMC_TEMPLATES.templates || []).filter(function (t) { return t.id === id; })[0] || null;
     state.choice = {};
+    state.notes = {};
     if (state.college && state.tmc) autoMatch();
     maybeResume();
+    if (state.tmc) loadNotes(state.tmc.id, function () { if (state.statusFilter !== "requested") renderForm(document.getElementById("tmc-form-mount")); });
     renderForm(document.getElementById("tmc-form-mount"));
   }
 
@@ -726,6 +943,21 @@
     });
   }
 
+  // restore the shared cpl_sb session (refreshing if it's expiring), then cb
+  function restoreSession(cb) {
+    var s = getSession();
+    if (!s) { cb(); return; }
+    if (s.exp && s.exp > Date.now() + 60000) { state.session = s; state.email = s.email || jwtEmail(s.access_token); cb(); return; }
+    if (s.refresh_token) {
+      refreshToken(s.refresh_token).then(function (tok) {
+        var ns = { access_token: tok.access_token, refresh_token: tok.refresh_token || s.refresh_token,
+                   email: jwtEmail(tok.access_token), exp: Date.now() + (parseInt(tok.expires_in || "3600", 10) * 1000) };
+        try { sessionStorage.setItem("cpl_sb", JSON.stringify(ns)); } catch (e) {}
+        state.session = ns; state.email = ns.email; cb();
+      }).catch(function () { state.session = s; state.email = s.email || jwtEmail(s.access_token); cb(); });
+    } else { state.session = s; state.email = s.email || jwtEmail(s.access_token); cb(); }
+  }
+
   /* ------------------------------------------------------------------ boot */
   function boot() {
     if (booted) return;
@@ -733,7 +965,11 @@
     ensureCss();
     root = document.getElementById("tmc-builder-root");
     if (!root) return;
+    var s0 = getSession();
+    if (s0) { state.session = s0; state.email = s0.email || jwtEmail(s0.access_token); }
     render(); // shell + (empty) selectors immediately
+    restoreSession(function () { var a = document.getElementById("tmc-auth"); if (a) renderAuthInto(a); });
+    loadRequests();
     // lazy-load the TMC templates (small) then the per-college COCI index (big)
     ensureScript("tmc_templates.js", "CPL_TMC_TEMPLATES", function () {
       render(); // TMC dropdown now populated
