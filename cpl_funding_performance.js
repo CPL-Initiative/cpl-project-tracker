@@ -3,12 +3,12 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-06-16",
+ "as_of": "2026-06-17",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL (per MAP)",
  "suppress_below": 5,
  "statewide": {
   "p2": 4637,
-  "p3": 16152
+  "p3": 16153
  },
  "colleges": {
   "Bakersfield": {
@@ -93,7 +93,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Moreno Valley": {
    "p2": 358,
-   "p3": 1362
+   "p3": 1363
   },
   "Norco College": {
    "p2": 111,
