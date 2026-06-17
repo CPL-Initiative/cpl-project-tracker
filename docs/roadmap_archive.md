@@ -1432,3 +1432,55 @@ mint → Z + the client-mint promote-step (new UC-CUR mints still work via dual
 recognition); the auditor re-run (Z rows show no audit chip until `kb/_row_audit.py`
 re-runs). Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 56); KB note
 `docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md`.
+
+### Session 57 — Bruh Skydriver: worklist polish + the consolidation loosening (2026-06-16)
+
+Sam-interactive (his "Voice (NC)" worklist screenshot). Two merged PRs, both
+dispatched + LIVE. **#441 — the worklist popup + CCR:** count "N of M" moved into
+the title bar (subtitle + "drag to move" dropped); the proposed title now prefers
+the ★ target's **cleaned** name (new client `cleanTitle()` strips "(NC)"); a
+per-candidate **ⓘ description toggle**; the Discipline field shows the inherited
+disc / **pre-selects the modal member disc** on a mint (generator emits per-member
+`d`); CCR course-ID column wraps/clips instead of overlapping the title. **"(NC)"
+cleanup** (data half): `_normalize_common_titles.py` gained a noncredit-paren strip
+(110 singleton titles; meaningful parens like (BIM)/(FSVP) kept) — the auto-merge
+worklist auto-cleans future mints via the shared `regularize_title()` — and the 13
+bot-minted curated `unified_title`s carrying the noise were stripped in **Supabase
+`kb_curation` + the snapshot** (all `automerge-*@bot`, no human text). **#442 — the
+consolidation push:** Sam chose to **loosen the existing lanes** (over the measured
+opt-in-lane option), so `_sug_sig` went **level-SAFE → level-COLLAPSING** (folds
+the level axis: level words, roman/word/digit ordinals, a–h section letters) — the
+worklist now merges across levels by default. Suggestions-only / curator-confirmed
+/ reversible. Worklist regrouped **229→2,665 anchored, 217→2,519 singleton**
+(other lanes unchanged). Measure-first evidence committed: `kb/_similar_family_
+dryrun.py` (7,849 families, 99% disc-unanimous; receipt gitignored — regenerable).
+Suite 48→49. **DEFERRED** (its own measured PR — `kb/README.md` mandates measuring
+member-row flips first): the member-join **Jaccard 0.5→~0.4**. Lessons:
+`docs/ccr_cluster_cleanup_lessons.md` + `docs/similar_course_family_scope.md`; KB
+note `docs/kb-notes/adr-level-collapsing-consolidation.md`.
+
+### Session 58 — Bruh Skyleader: Suggested-merges deep refinement (2026-06-16)
+
+Sam-interactive (Algebra then ESL worklist screenshots). **Three code-only PRs**
+(cron/dispatch republishes artifacts). Full story:
+`docs/ccr_cluster_cleanup_lessons.md` (Session 58 + cont.).
+- **#445 — override-rename + segment-fold + completion note.** Picking a
+  NON-official course in "⌕ Merge into a different course" pulls its cleaned title
+  in **editable** (renames the target on Confirm; official stays firewalled);
+  `_SUG_SEGMENT = {part,semester,module,half,level,levels}` folds divider words so
+  "Algebra 1-2, Semester 1"/"…, Part 1"/"Algebra 3-4" group under one `algebra`
+  sig; new `merge_note` curation field (⚑ chip + ⓘ-modal line) for "both parts
+  required for full credit" on segmented mints.
+- **#446 — synonym map + keyword-gather.** `kb/synonym_map.json` normalizes
+  abbreviation↔expansion (ESL≡English as a Second Language, ASL/PE/Math/AJ) in
+  `_sug_sig` — **a similarity threshold can't bridge a zero-overlap synonym**
+  (ESL→84, ASL→60, PE→18; global flat). The popup ➕ **keyword-gather** lets the
+  curator search + multi-select extra members (the broad-family judgment).
+- **PR-B — looseness slider.** 🏷 "match strength ≥ X" header slider filters the
+  title lane by weakest-pair cosine; lowered the title dry-run `COSINE_MIN`
+  0.62→0.50 + regenerated the receipt (5.9MB→2.0MB — it was stale), default 0.62
+  = no-op, slide to 0.50 reveals ~1.3k weaker groups. The slider rides the title
+  lane because it's the ONLY continuous-score lane.
+
+Measure-first: `kb/_sug_segment_dryrun.py` (synonym-aware). Tests 48→53
+(override-rename, keyword-gather, looseness-slider).

@@ -154,6 +154,47 @@ removed dropdown / planned panel before) — **42 → 52 assertions**, full suit
 old dropdown/Coming-soon model in places; full §7d rewrite deferred to the next
 checkpoint once the TMC design settles.
 
+## Session 60 checkpoint (Bruh Momentus) — quickstart pinned + Cal-GETC verified (2026-06-17)
+
+Closing the session. Two follow-ups landed after the GE companion + list-first work
+above, plus the doc-debt reconcile:
+
+1. **#455 — quickstart bar pinned (resolves the pushback above).** Sam said the
+   word: the global "What are you working on" header bar (`quickstart.js`) is now
+   **sticky on desktop** (scrolls-with → pinned). The "(not pinned)" open item above
+   is **closed**.
+2. **#457 — Cal-GETC VERIFIED against the official Cal-GETC Standards v1.3.** Sam
+   confirmed the forms he'd sent are the **TMC major templates** (not the GE Breadth
+   Forms), so the GE patterns stayed encoded-from-public-standards — but Cal-GETC
+   itself was trued up against the **official Cal-GETC Standards v1.3 PDF**: **Area 3
+   (Arts & Humanities) corrected to 2 courses** (was modeled with the wrong
+   select-count), so the pattern now sums to the correct **34 semester units**.
+   Cal-GETC is now the one **verified** GE pattern; **IGETC + CSU GE Breadth remain
+   draft** (encoded from public standards — next session can true them up the same
+   way once Sam supplies, or against the official CCCCO Breadth Forms if the bot-block
+   lifts). `tests/tmc_ge_breadth.test.js` pins the corrected Area-3 count + the 34-unit
+   total.
+3. **§7d reconcile (partial).** CLAUDE.md §7d already carries the Session-60 list-first
+   + GE bullets at the top; the stale dropdown/Coming-soon prose lower in §7d is
+   flagged inline ("reconcile at the next checkpoint") and left for a focused §7d
+   rewrite — not worth a churny line-by-line edit while the TMC design is still moving.
+
+**Lesson — verify the GE pattern against its OWN authority, not the major template.**
+A TMC major template and a GE Breadth pattern are different documents from different
+bodies (ASCCC discipline faculty vs the CCCCO/ICAS GE standard). When Sam "sent the
+forms," they were majors — the GE side needed its own source (Cal-GETC Standards
+v1.3). Cross-check each layer of the full ADT against the authority that defines
+*that* layer; don't assume one upload covers both. Select-count errors (Area 3
+modeled as 1 course when the standard requires 2) silently break the unit total —
+pin the total in a test so the next true-up has a tripwire.
+
+**Carryover for Session 61:** true up IGETC + CSU GE Breadth against their official
+forms (same v1.3-style verification); the **CPL-native TMC wiring** (per-slot "this
+C-ID may be earnable via CPL" chip off `kb/coci_articulations.json` — scope with Sam
+first, keep it "CPL-eligible at colleges X," never "guaranteed credit"); and the
+TMC Builder follow-ups already in the To-Do feed (coverage hint, sparse-college
+suggested-fill, the remaining draft-TMC faculty verification).
+
 ## Session 59 cont. (3) — curator layer: login, status filter, requests, notes, PDF artifacts (2026-06-17)
 
 Five Sam asks, all reusing existing infra:

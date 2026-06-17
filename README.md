@@ -74,7 +74,14 @@ The whole ecosystem, end-to-end:
    sandbox** — edit the pools, priority shares, and projection targets and
    every figure recomputes in your browser — plus live P2/P3 priority-metric
    actuals from MAP; Priority 1 completions are a deliberate, labeled data
-   gap kept as an incentive), and a **Pipeline** progress board.
+   gap kept as an incentive), a **TMC Builder** tab (the real ASCCC transfer
+   process: a list-first directory of all 45 official Transfer Model Curricula —
+   pick a college + a TMC and the right column auto-fills the college's own COCI
+   courses that already carry each slot's C-ID, totalling units and exporting a
+   Word/PDF/JSON alignment; a paired **GE Breadth companion** for the full ADT
+   — Cal-GETC, IGETC, CSU GE Breadth — and a curator layer with magic-link
+   login, a CO-review queue, per-row notes, and each TMC's official PDF), and a
+   **Pipeline** progress board.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,
    then `excel_to_dashboard.py` regenerates the dashboard HTML, exports the
