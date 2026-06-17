@@ -29,6 +29,10 @@ check("Cal-GETC present and NOT legacy", calgetc && calgetc.legacy === false);
 check("IGETC + CSU GE Breadth present and flagged legacy", igetc && igetc.legacy === true && csu && csu.legacy === true);
 check("Cal-GETC has Areas 1–6 (6 areas)", calgetc && calgetc.sections.length === 6);
 check("Cal-GETC has an Ethnic Studies area", calgetc && calgetc.sections.some((s) => /Ethnic Studies/.test(s.name)));
+check("Cal-GETC Area 3 (Arts & Humanities) = 2 courses / 6 units (NOT the IGETC 3/9)",
+  (function () { const a = (calgetc.sections || []).filter((s) => /Area 3/.test(s.name))[0]; return a && a.slots.length === 2 && a.units === "6"; })());
+check("Cal-GETC area units sum to the official 34 semester-unit minimum",
+  calgetc && calgetc.sections.reduce((t, s) => t + parseInt(s.units, 10), 0) === 34);
 check("Cal-GETC has NO Language-Other-Than-English area (dropped vs IGETC)",
   calgetc && !calgetc.sections.some((s) => /Language Other Than English/.test(s.name)));
 check("IGETC keeps the LOTE area", igetc && igetc.sections.some((s) => /Language Other Than English/.test(s.name)));
@@ -70,7 +74,7 @@ window.CPL_TMC_BUILDER.boot();
   const geSel = document.getElementById("tmc-ge-sel");
   check("GE pattern selector offers all three patterns", geSel && geSel.options.length === 3);
   check("GE pattern selector defaults to Cal-GETC", geSel && geSel.value === "cal-getc");
-  check("Cal-GETC renders 12 GE area rows", ge.querySelectorAll(".tmc-slot").length === 12);
+  check("Cal-GETC renders 11 GE area rows (11 courses / 34 units)", ge.querySelectorAll(".tmc-slot").length === 11);
   check("GE rows carry a 'GE' tag (not a C-ID badge)", ge.querySelector(".tmc-ge-tag") && !ge.querySelector(".tmc-cid"));
 
   // pick a course into the first GE area (1A) and confirm the totals move
