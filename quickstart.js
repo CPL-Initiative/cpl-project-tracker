@@ -510,31 +510,64 @@
     }
   }
 
+  // Inject the sticky-chrome CSS once: PIN the quick-start bar at the top on
+  // desktop, and offset the other viewport-level sticky elements (the left rail
+  // + the Activities filter bar) by the bar's height so it never covers them.
+  // The CCR/CER/CSR/exhibit table headers stick inside their own max-height
+  // scroll wraps (not the viewport), so they're unaffected. Injected from JS so
+  // one static file covers both HTMLs with no Rule-4 mirror.
+  function ensureChromeCss() {
+    if (document.getElementById('qs-chrome-css')) return;
+    var st = document.createElement('style');
+    st.id = 'qs-chrome-css';
+    st.textContent =
+      '#qs-chat{margin-bottom:0.5rem;}' +
+      '@media (min-width:901px){' +
+        '#qs-chat{position:sticky;top:0;z-index:150;margin-top:0;margin-bottom:0;' +
+          'background:linear-gradient(180deg,rgba(227,179,65,0.13),rgba(227,179,65,0.05)),#fffdf6;' +
+          'border-bottom:1px solid var(--border,#e6e0cf);box-shadow:0 3px 10px rgba(20,20,30,0.07);}' +
+        '.cpl-sidebar{top:var(--qs-h,0px);min-height:calc(100vh - var(--qs-h,0px));max-height:calc(100vh - var(--qs-h,0px));}' +
+        '.filter-bar{top:var(--qs-h,0px);}' +
+      '}';
+    document.head.appendChild(st);
+  }
+
+  // Publish the bar's height as --qs-h so the offset rules above tuck the rail +
+  // filter bar right beneath it. Re-measure on resize (the bar can wrap narrow).
+  function setQsHeight() {
+    var w = document.getElementById('qs-chat');
+    if (!w) return;
+    var h = Math.round(w.getBoundingClientRect().height);
+    if (h) document.documentElement.style.setProperty('--qs-h', h + 'px');
+  }
+
   function mount() {
     if (document.getElementById('qs-chat')) return; // idempotent
+    ensureChromeCss();
     var widget = buildWidget();
-    widget.style.marginBottom = '0.5rem';
     // Session 60 (Sam): lift the quick-start bar up to the overall header level
     // so it spans full width as global chrome and frees the top of every tab
-    // pane. It's a single global widget (outside the panes), so it still shows
-    // on every tab — now it just reads as part of the header, not tab content.
+    // pane; PINNED on desktop (ensureChromeCss) so it stays visible while
+    // scrolling. It's a single global widget (outside the panes), so it shows
+    // on every tab — now it reads as part of the header, not tab content.
     var header = document.querySelector('.header');
     if (header && header.parentNode) {
       header.parentNode.insertBefore(widget, header.nextSibling);
-      return;
+    } else {
+      // Fallbacks for older layouts: top of the main column, else before the nav.
+      var main = document.querySelector('main.cpl-main');
+      if (main) {
+        main.insertBefore(widget, main.firstChild);
+      } else {
+        var nav = document.querySelector('nav.cpl-tabs');
+        if (nav && nav.parentNode) { nav.parentNode.insertBefore(widget, nav); }
+        else { console.warn('[quickstart] no mount target (.header / main.cpl-main / nav.cpl-tabs)'); return; }
+      }
     }
-    // Fallbacks for older layouts: top of the main column, else before the nav.
-    var main = document.querySelector('main.cpl-main');
-    if (main) {
-      main.insertBefore(widget, main.firstChild);
-      return;
-    }
-    var nav = document.querySelector('nav.cpl-tabs');
-    if (nav && nav.parentNode) {
-      nav.parentNode.insertBefore(widget, nav);
-      return;
-    }
-    console.warn('[quickstart] no mount target (.header / main.cpl-main / nav.cpl-tabs)');
+    // measure after layout settles, then keep --qs-h fresh on resize
+    (window.requestAnimationFrame || setTimeout)(setQsHeight);
+    setTimeout(setQsHeight, 200);
+    window.addEventListener('resize', setQsHeight);
   }
 
   if (document.readyState === 'loading') {
