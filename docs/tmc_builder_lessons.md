@@ -83,6 +83,36 @@ the data lane, built interactively against his live direction.
    lazy-loads `tmc_builder.js`, which lazy-loads `tmc_templates.js` then the 7.5 MB
    `tmc_college_courses.js` (precedent: the CCR's 34 MB details file).
 
+## Session 60 cont. (Bruh Momentus) — GE Breadth companion: the full ADT package (2026-06-17)
+
+Sam: integrate the CCCCO **IGETC / Cal-GETC Breadth Forms** on the TMC tab, paired
+with each TMC, legacy patterns included. (The CCCCO site Cloudflare-blocks the agent
+env — page + direct `/-/media/…pdf` both 403, same as c-idsystem.org — so the
+official Breadth Form PDFs await Sam's upload; encoded from public ASCCC/CCC
+standards meanwhile, flagged draft-for-verification like the 45 majors.)
+
+- **An ADT = a TMC major + a GE Breadth pattern + electives to 60 CSU-transferable
+  units.** The builder did the major; this adds the **GE half**.
+- **`tmc_ge_patterns.js`** (new STATIC, lazy-loaded like `tmc_templates.js`):
+  three patterns — **`cal-getc`** (the single statewide ADT GE pattern as of Fall
+  2025, AB 928; primary) + legacy **`igetc`** and **`csu-ge`**. Each is modeled as
+  `sections[].slots[]` exactly like a TMC, but slots are **`ge:true` + `noncid:true`**
+  (GE areas are college-certified, not C-ID-keyed) so the builder renders a manual
+  picker (no C-ID auto-match) and treats `units` as a per-course **minimum**.
+- **Builder reuse, not a fork.** `renderSlot` gained a `keyPrefix` param (GE choices
+  live under `ge:`-prefixed keys in the same `state.choice`); a `renderGeInto()`
+  companion panel renders below the major with a **GE pattern selector** (Cal-GETC
+  default, IGETC/CSU GE flagged legacy), a combined **Full ADT total** (major + GE),
+  and review-mode read-only. `statusFor` got a GE branch (warn only when *below* the
+  area minimum). Save/Resume + the `.docx`/JSON export carry GE under the same
+  `alignments` jsonb (`ge:`-keys + a `_ge_pattern` meta record) — **no Supabase
+  schema migration**.
+- **No HTML touched** (builder loads `tmc_ge_patterns.js` itself) → Rule 4 intact.
+  Tests: `tests/tmc_ge_breadth.test.js` (24 assertions). Suite 54 → 55 files green.
+- **Open:** GE auto-match isn't possible (COCI carries no GE-area flag) — manual pick
+  for now; true up the area structures + counts when Sam uploads the official Breadth
+  Form PDFs.
+
 ## Session 60 (Bruh Momentus) — list-first redesign + real-estate consolidation (2026-06-17)
 
 Sam wanted the tab to do two jobs cleanly: **(a)** a directory of *every* TMC (any
