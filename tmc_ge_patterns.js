@@ -12,11 +12,11 @@
  *                catalog rights). UC/CSU; keeps the LOTE requirement.
  *   - csu-ge     CSU GE Breadth — LEGACY (pre-Fall-2025 catalog rights). CSU only.
  *
- * The area structures are a DRAFT encoded from public ASCCC / CCC standards
- * (Cal-GETC 2025–26 and the legacy IGETC / CSU GE Breadth patterns) — the
- * official CCCCO Breadth Forms Cloudflare-block automated fetch, so these are
- * flagged draft-for-verification exactly like the 45 TMC majors. Replace with
- * the parsed official forms when uploaded.
+ * Cal-GETC is VERIFIED against the official Cal-GETC Standards v1.3 (ICAS/CCCCO,
+ * June 2025): 11 courses / 34 semester-unit minimum. The legacy IGETC / CSU GE
+ * Breadth patterns remain a DRAFT encoded from public ASCCC / CCC standards —
+ * the official CCCCO Breadth Forms Cloudflare-block automated fetch, so they
+ * stay flagged draft-for-verification exactly like the 45 TMC majors.
  *
  * Slot shape mirrors a TMC slot but with `ge:true` + `noncid:true` (GE areas
  * are college-certified, not C-ID-keyed) so the builder renders a manual course
@@ -25,7 +25,7 @@
 window.CPL_TMC_GE_PATTERNS = {
   _meta: {
     draft: true,
-    note: "Draft GE Breadth area structures encoded from public ASCCC / California Community Colleges standards (Cal-GETC 2025–26; legacy IGETC & CSU GE Breadth). Verify each against the official CCCCO Breadth Form before submission.",
+    note: "Cal-GETC area structure verified against the official Cal-GETC Standards v1.3 (ICAS/CCCCO, June 2025). The legacy IGETC & CSU GE Breadth patterns are still draft — encoded from public ASCCC / California Community Colleges standards; verify against the official CCCCO Breadth Form before submission.",
     source: "https://www.cccco.edu/About-Us/Chancellors-Office/Divisions/Educational-Services-and-Support/What-we-do/Curriculum-and-Instruction-Unit/Templates-For-Approved-Transfer-Model-Curriculum"
   },
   patterns: [
@@ -35,28 +35,27 @@ window.CPL_TMC_GE_PATTERNS = {
       full: "California General Education Transfer Curriculum",
       legacy: false,
       effective: "Fall 2025",
-      status: "draft",
+      status: "verified",
       total_units: "34",
-      note: "The single statewide lower-division GE pathway for ADTs as of Fall 2025 (AB 928) — meets CSU and UC transfer admission. Replaces IGETC and CSU GE Breadth. No Language-Other-Than-English requirement. Minimum 34 semester units.",
+      note: "The single statewide lower-division GE pathway for ADTs as of Fall 2025 (AB 928) — meets CSU and UC transfer admission. Replaces IGETC and CSU GE Breadth. No Language-Other-Than-English requirement. 11 courses / 34 semester-unit minimum. Verified against the official Cal-GETC Standards v1.3 (June 2025).",
       sections: [
         { name: "Area 1 — English Communication", select: "all", units: "9", slots: [
           { title: "1A — English Composition", units: "3", ge: true, noncid: true },
           { title: "1B — Critical Thinking & Composition", units: "3", ge: true, noncid: true },
           { title: "1C — Oral Communication", units: "3", ge: true, noncid: true }
         ]},
-        { name: "Area 2 — Mathematical Concepts & Quantitative Reasoning", select: "all", units: "3", slots: [
-          { title: "Mathematics / Quantitative Reasoning", units: "3", ge: true, noncid: true }
+        { name: "Area 2A — Mathematical Concepts & Quantitative Reasoning", select: "all", units: "3", slots: [
+          { title: "2A — Mathematics / Quantitative Reasoning", units: "3", ge: true, noncid: true }
         ]},
-        { name: "Area 3 — Arts & Humanities", select: "all", units: "9", slots: [
+        { name: "Area 3 — Arts & Humanities", select: "all", units: "6", note: "One course from 3A Arts and one from 3B Humanities (2 courses, 6 units).", slots: [
           { title: "3A — Arts", units: "3", ge: true, noncid: true },
-          { title: "3B — Humanities", units: "3", ge: true, noncid: true },
-          { title: "Third course — Arts (3A) or Humanities (3B)", units: "3", ge: true, noncid: true }
+          { title: "3B — Humanities", units: "3", ge: true, noncid: true }
         ]},
         { name: "Area 4 — Social & Behavioral Sciences", select: "all", units: "6", slots: [
           { title: "Social & Behavioral Sciences — course 1", units: "3", ge: true, noncid: true },
           { title: "Social & Behavioral Sciences — course 2", units: "3", ge: true, noncid: true }
         ]},
-        { name: "Area 5 — Physical & Biological Sciences", select: "all", units: "7", note: "At least one Area 5 course must include a laboratory (5C).", slots: [
+        { name: "Area 5 — Physical & Biological Sciences", select: "all", units: "7", note: "5A Physical Science (3) + 5B Biological Science (3); at least one must include a laboratory (5C, +1 unit) — 7 units minimum.", slots: [
           { title: "5A — Physical Science", units: "3", ge: true, noncid: true },
           { title: "5B — Biological Science", units: "3", ge: true, noncid: true }
         ]},
