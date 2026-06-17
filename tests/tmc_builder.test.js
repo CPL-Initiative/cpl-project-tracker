@@ -67,7 +67,7 @@ window.CPL_TMC_TEMPLATES = {
     version: "draft", sections: [
       { name: "Required Core", select: "all", units: "6–7", slots: [
         { cid: "PSY 110", title: "Introductory Psychology", units: "3" },
-        { cid: "MATH 110", title: "Introduction to Statistics", units: "3–4", alts: ["SOCI 125"] }
+        { cid: "MATH 110", title: "Introduction to Statistics", units: "3–4", alts: ["SOCI 125"], cid_unverified: true }
       ]},
       { name: "List A — select one", select: 1, units: "3–4", slots: [
         { cid: "", title: "Introduction to Biology", units: "3–4", noncid: true }
@@ -88,8 +88,22 @@ window.CPL_TMC_COLLEGE_COURSES = {
     "1": [["PSYC", "2", "Other Psych", 3, "PSY 999"]]
   }
 };
-// Supabase resume fetch → empty (no saved row)
-window.fetch = function () { return Promise.resolve({ ok: true, json: () => Promise.resolve([]) }); };
+// Signed-in curator session (shared cpl_sb key) so curator affordances render.
+const fakeJwt = "h." + Buffer.from(JSON.stringify({ email: "map@rccd.edu" })).toString("base64url") + ".s";
+window.sessionStorage.setItem("cpl_sb", JSON.stringify({
+  access_token: fakeJwt, refresh_token: "r", email: "map@rccd.edu", exp: Date.now() + 3600000
+}));
+// Mock the feature endpoints: a curator note on slot 0:0, one submitted request.
+window.fetch = function (url, opts) {
+  url = String(url);
+  if (url.indexOf("status=eq.submitted") >= 0)
+    return Promise.resolve({ ok: true, json: () => Promise.resolve([
+      { college: "Test College", tmc_id: "test-psych", tmc_discipline: "Test Psychology", degree_type: "AA-T", filled_slots: 2, total_slots: 3, updated_at: "2026-06-17" }]) });
+  if (url.indexOf("tmc_curator_notes") >= 0 && (!opts || opts.method !== "POST"))
+    return Promise.resolve({ ok: true, json: () => Promise.resolve([
+      { slot_key: "0:0", note: "C-ID under revision", reviewer_email: "map@rccd.edu", updated_at: "2026-06-17" }]) });
+  return Promise.resolve({ ok: true, json: () => Promise.resolve([]) });
+};
 
 let threw = false;
 try { window.eval(builderSrc); } catch (e) { threw = true; console.error("tmc_builder.js eval threw:", e); }
@@ -167,6 +181,32 @@ function selectVal(sel, val) {
     psrc && /example\.org\/planned\.pdf/.test(psrc.getAttribute("href")));
   check("planned TMC renders no form slots (not yet encoded)",
     document.querySelectorAll("#tab-tmc-builder .tmc-slot").length === 0);
+
+  // (4) CURATOR FEATURES — auth, status filter, PDF artifact, notes, discrepancy, queue
+  selectVal(document.getElementById("tmc-tmc-sel"), "test-psych"); // back to the real form
+  await sleep(0); // let loadNotes settle
+  const authBar = txt(document.getElementById("tmc-auth"));
+  check("signed-in curator shown in the auth bar", /map@rccd\.edu/.test(authBar));
+  const stFilter = document.getElementById("tmc-status-filter");
+  check("Status filter present with a 'New requests' option", stFilter &&
+    Array.prototype.some.call(stFilter.options, function (o) { return o.value === "requested"; }));
+  const pdf = document.querySelector("#tab-tmc-builder .tmc-pdf a");
+  check("PDF artifact link points at the committed tmc/source_pdfs copy", pdf &&
+    /tmc\/source_pdfs\/psych\.pdf/.test(pdf.getAttribute("href")));
+  const submitBtn = Array.prototype.filter.call(document.querySelectorAll("#tab-tmc-builder .tmc-btn"),
+    function (b) { return /Submit for CO review/.test(txt(b)); });
+  check("'Submit for CO review' action present", submitBtn.length === 1);
+  const note = document.querySelector("#tab-tmc-builder .tmc-note");
+  check("global curator note renders on its course row", note && /C-ID under revision/.test(txt(note)));
+  check("signed-in curator gets an add/edit-note affordance", document.querySelector("#tab-tmc-builder .tmc-note-add"));
+  check("cid_unverified slot shows a C-ID discrepancy flag", document.querySelector("#tab-tmc-builder .tmc-unv"));
+
+  // switch the Status filter to the CO-review queue
+  stFilter.value = "requested";
+  stFilter.dispatchEvent(new window.Event("change"));
+  await sleep(0);
+  const queue = document.querySelector("#tab-tmc-builder .tmc-reqlist");
+  check("'New requests' filter renders the CO-review queue", queue && /Test College/.test(txt(queue)));
 
   check("no unhandled promise rejections", rejections.length === 0);
 

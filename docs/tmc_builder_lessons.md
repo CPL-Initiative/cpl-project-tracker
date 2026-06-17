@@ -83,6 +83,58 @@ the data lane, built interactively against his live direction.
    lazy-loads `tmc_builder.js`, which lazy-loads `tmc_templates.js` then the 7.5 MB
    `tmc_college_courses.js` (precedent: the CCR's 34 MB details file).
 
+## Session 59 cont. (3) — curator layer: login, status filter, requests, notes, PDF artifacts (2026-06-17)
+
+Five Sam asks, all reusing existing infra:
+- **Login**: ported the CCR's magic-link auth into `tmc_builder.js`, reusing the
+  **shared `cpl_sb` sessionStorage key** — so signing in on the CCR carries over,
+  and the eager CCR script already handles the redirect-hash. `allowed_reviewers`
+  gates writes (`map@rccd.edu` now; CCCCO later). Public read, reviewer write.
+- **Status filter** (All / Official / Draft / Coming soon / **New requests**) atop
+  the form; non-"requested" values filter the TMC picker, "New requests" swaps the
+  body for the **CO-review queue**.
+- **"New request" = submit for CO review** (Sam's clarification: "a college wants
+  to complete a new TMC ADT request for the CO to review"). The form's **📤 Submit
+  for CO review** sets the `tmc_submissions` row to `status='submitted'` — no new
+  table needed; the queue reads `status=eq.submitted`. (`tmc_requests` exists for
+  free-form discipline requests but the submission-status IS the request.)
+- **Global curator notes** per course row (`tmc_curator_notes`, one per
+  (tmc_id, slot_key), reviewer-gated). Fits the C-ID-discrepancy use; the 25
+  `cid_unverified` slots also show a **⚠ not in C-ID ref** flag inline.
+- **PDF artifacts**: since the 45 PDFs are committed under `tmc/source_pdfs/`,
+  GitHub Pages serves them — each TMC links `tmc/source_pdfs/<basename(source)>`
+  (no Cloudflare). Derived in JS from the `_meta.sources` URL; no data change.
+
+New Supabase tables: `tmc_curator_notes`, `tmc_requests` (`tmc/supabase_tmc_curator.sql`).
+Tests 34 → 42 (auth bar, status filter, PDF link, submit action, curator note,
+discrepancy flag, CO-review queue). Verified anon can read notes but not write them.
+
+## Session 59 cont. (2) — all 45 TMCs encoded from the official PDFs (2026-06-16)
+
+Sam ran a PowerShell `Invoke-WebRequest` loop **on his own machine** (his network
+passes Cloudflare; mine 403s even with a browser UA + sandbox off — confirmed with
+curl AND urllib) and **uploaded the 45 PDFs as a zip**. That's the durable pattern
+when a host bot-blocks the agent env: the human (browser/desktop) fetches, uploads;
+the agent parses.
+
+- **Parser** `tmc/_parse_tmc_pdfs.py` (committed, re-runnable; PDFs committed under
+  `tmc/source_pdfs/`). PDF text via **PyMuPDF** (`fitz`) — pdfplumber/pypdf both
+  import a **broken `cryptography` rust binding** in this container (`_cffi_backend`
+  missing → pyo3 panic); PyMuPDF is self-contained and sidesteps it.
+- **The key robustness move**: extract C-IDs from the table cells, validate against
+  `cid_descriptors.json`, and for any VERIFIED C-ID use the **descriptor's official
+  title** — so PDF column/line noise in titles is irrelevant (the C-ID is what drives
+  auto-match anyway). Humanities/social-science TMCs parse near-perfectly; science
+  TMCs with "OR" sequence-branches are messier but their C-IDs extract fine.
+- **`cid_unverified` flags (25 across the set)** are KEPT as a deliberate
+  **discrepancy signal** (Sam: "an indicator that perhaps C-ID needs updating, or
+  otherwise") — usually a 2026 TMC (e.g. Music Industry Studies, 10/10) whose codes
+  post-date our 2026-05 descriptor extract.
+- Result: **45/45 `draft`** (756 slots), 0 planned. Footer-cut at "TOTAL MAJOR
+  UNITS", section regex tolerates a "Courses:" prefix (Chemistry), `PSY 205B`→
+  `PSY 205 B` canonicalization, per-section dedupe by C-ID, GE-prefix strip on
+  non-C-ID titles. Tests still 34/34 (Part A evals the real file).
+
 ## Session 59 cont. — Status indicator + 45-TMC catalog (2026-06-16)
 
 Sam asked for "a Status indicator for each TMC" and sent the official **TMC
