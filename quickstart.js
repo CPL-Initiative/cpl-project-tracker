@@ -513,10 +513,17 @@
   function mount() {
     if (document.getElementById('qs-chat')) return; // idempotent
     var widget = buildWidget();
-    // PR-Sidebar-A: nav is now inside <aside class="cpl-sidebar">. Mount the
-    // quickstart chat above the first tab pane in the main column so it spans
-    // the right pane only (not the rail). Fallback to inserting before the nav
-    // for older layouts.
+    widget.style.marginBottom = '0.5rem';
+    // Session 60 (Sam): lift the quick-start bar up to the overall header level
+    // so it spans full width as global chrome and frees the top of every tab
+    // pane. It's a single global widget (outside the panes), so it still shows
+    // on every tab — now it just reads as part of the header, not tab content.
+    var header = document.querySelector('.header');
+    if (header && header.parentNode) {
+      header.parentNode.insertBefore(widget, header.nextSibling);
+      return;
+    }
+    // Fallbacks for older layouts: top of the main column, else before the nav.
     var main = document.querySelector('main.cpl-main');
     if (main) {
       main.insertBefore(widget, main.firstChild);
@@ -527,7 +534,7 @@
       nav.parentNode.insertBefore(widget, nav);
       return;
     }
-    console.warn('[quickstart] no mount target (main.cpl-main / nav.cpl-tabs)');
+    console.warn('[quickstart] no mount target (.header / main.cpl-main / nav.cpl-tabs)');
   }
 
   if (document.readyState === 'loading') {

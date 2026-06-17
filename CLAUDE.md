@@ -808,13 +808,25 @@ the RIGHT column is a searchable picker of **that college's own COCI offerings**
 **Total Units** of the selected courses; exports (.docx via `docx.min.js` / print /
 JSON) and Saves/Resumes to Supabase `tmc_submissions`.
 
-- **Per-TMC status indicator** (Session 59 follow-up): the picker is the full
-  **45-TMC catalog**, grouped **Available now** / **Coming soon** by status, with a
-  status chip (`✓ Official` / `⚠ Draft` / `◷ Coming soon`) + an **official-template
-  link** (`_meta.sources[id]`). **All 45 are now `draft`** — parsed from the official
+- **List-first redesign (Session 60).** The tab lands on a filterable **TMC
+  directory** (all 45, any status) — click a row to open one TMC's builder, **←
+  All TMCs** to return (the old Program/Discipline dropdown was dropped). One
+  consolidated filter block: **College · Show · Find a TMC · Curator sign-in**.
+  The college filter leads with **All colleges** = a review view (fixed C-ID list
+  + curator notes, no picker, Save/Submit hidden); pick a real college → build
+  mode + a per-TMC **auto-matches coverage** column in the directory. The
+  **"Coming soon"/`planned` status was retired** (all 45 are `draft`) — status is
+  now **Official | Draft** only. The "What are you working on" bar moved to the
+  overall header level (`quickstart.js`). Full story:
+  [`docs/tmc_builder_lessons.md`](docs/tmc_builder_lessons.md) (Session 60). Some
+  bullets below still describe the prior dropdown model — reconcile at the next
+  checkpoint.
+- **Per-TMC status indicator** (Session 59 follow-up): the directory/list is the
+  full **45-TMC catalog**, with a status chip (`✓ Official` / `⚠ Draft`) + an
+  **official-template link** (`_meta.sources[id]`). **All 45 are now `draft`** — parsed from the official
   ASCCC PDFs by `tmc/_parse_tmc_pdfs.py` (Sam supplied the PDFs; the C-ID site
   Cloudflare-blocks automated fetch — even direct PDF URLs 403). `tmcStatus()`
-  infers `draft` when `sections` exist, `planned` otherwise; flip to `official`
+  returns `official` iff `status==="official"`, else `draft`; flip to `official`
   when faculty-verified. `cid_unverified` slots are C-ID-discrepancy signals.
 - **Real ASCCC transfer process — NOT the §11 M-ID/MC lane** (which deliberately
   avoids the transferability claim). Keep the two framings separate.
@@ -827,8 +839,8 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
 - Auto-match is **C-ID-exact only** (COCI `CIDNumber` == descriptor key); never
   title-guessed. ~1/4 of colleges report sparse C-IDs in the COCI extract → they
   pick manually. No contact-hours in COCI → legitimacy = units + C-ID for now.
-- **Curator + submission layer (Session 59 follow-up).** A **Status filter**
-  (All / Official / Draft / Coming soon / **New requests**) sits atop the form;
+- **Curator + submission layer (Session 59 follow-up).** A **Status filter** ("Show")
+  (All / Official / Draft / **New requests**) sits in the filter block;
   **New requests** = the **CO-review queue** (colleges' completed alignments
   submitted to the Chancellor's Office — a `tmc_submissions` row with
   `status='submitted'`, written by the form's **📤 Submit for CO review** action).

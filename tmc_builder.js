@@ -20,9 +20,11 @@
   var CC_GLOBAL = "CPL_TMC_COLLEGE_COURSES";
   var booted = false;
   var state = {
-    college: "",
+    college: "",          // "" = All colleges (browse/review mode); else a college name (build mode)
     collegeIdx: -1,
     tmc: null,            // selected template object
+    view: "list",         // "list" (the TMC directory) | "detail" (one TMC's builder)
+    listQuery: "",        // free-text filter for the TMC list
     courses: [],          // [[subj,num,title,units,cid], ...] for the college
     byCid: null,          // Map cid -> [courseObj,...]
     choice: {},           // slotKey -> courseObj | null
@@ -73,15 +75,16 @@
     return arr;
   }
 
-  // Per-TMC status: 'official' (encoded from the authoritative template) /
-  // 'draft' (seed sections present, faculty-verify) / 'planned' (catalog only).
+  // Per-TMC status — two states only: 'official' (faculty-verified against the
+  // authoritative template) vs 'draft' (seed, verify). The old 'planned /
+  // Coming soon' bucket was retired in Session 60 — all 45 TMCs are encoded, so
+  // it was an empty, confusing category.
   var STATUS_META = {
     official: { label: "✓ Official", cls: "ok" },
-    draft:    { label: "⚠ Draft", cls: "warn" },
-    planned:  { label: "◷ Coming soon", cls: "muted" }
+    draft:    { label: "⚠ Draft", cls: "warn" }
   };
-  function tmcStatus(t) { return (t && t.status) || (t && t.sections && t.sections.length ? "draft" : "planned"); }
-  function statusMeta(t) { return STATUS_META[tmcStatus(t)] || STATUS_META.planned; }
+  function tmcStatus(t) { return (t && t.status === "official") ? "official" : "draft"; }
+  function statusMeta(t) { return STATUS_META[tmcStatus(t)] || STATUS_META.draft; }
   function tmcSource(t) {
     if (t && t.source) return t.source;
     var m = (window.CPL_TMC_TEMPLATES && window.CPL_TMC_TEMPLATES._meta && window.CPL_TMC_TEMPLATES._meta.sources) || {};
@@ -93,10 +96,36 @@
     if (document.getElementById("tmc-builder-css")) return;
     var css = "" +
       "#tab-tmc-builder .tmc-wrap{max-width:1100px;}" +
-      "#tab-tmc-builder .tmc-draft{background:#FFF6E0;border:1px solid var(--gold-accent);color:#7a5c00;padding:10px 14px;border-radius:8px;font-size:.85rem;margin-bottom:14px;}" +
-      "#tab-tmc-builder h2{margin:0 0 4px;}" +
+      "#tab-tmc-builder h2{margin:0 0 12px;}" +
       "#tab-tmc-builder .tmc-sub{font-weight:400;color:var(--text-muted);font-size:1rem;}" +
+      "#tab-tmc-builder .tmc-draftnote{color:#92400e;font-weight:600;}" +
       "#tab-tmc-builder .tmc-intro{color:#4b5563;margin:0 0 16px;max-width:880px;}" +
+      // consolidated filter block (College · Show · Find · Curator) — replaces the old topbar + pickers
+      "#tab-tmc-builder .tmc-filters{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;background:var(--surface-subtle,#f8fafc);border:1px solid var(--border-strong,#cbd5e1);border-radius:10px;padding:12px 16px;margin-bottom:16px;}" +
+      "#tab-tmc-builder .tmc-filters .tmc-auth{margin-left:auto;align-self:center;}" +
+      "#tab-tmc-builder .tmc-pick-find{flex:1 1 180px;min-width:150px;}" +
+      "#tab-tmc-builder .tmc-pick-find input{width:100%;box-sizing:border-box;padding:8px 10px;border:1px solid var(--border-strong,#cbd5e1);border-radius:7px;font-size:.9rem;}" +
+      // TMC directory (list view)
+      "#tab-tmc-builder .tmc-listhead{font-size:.9rem;color:#4b5563;margin:0 2px 12px;}" +
+      "#tab-tmc-builder .tmc-listcount{display:inline-block;font-weight:700;color:var(--navy-primary);background:#eef2fb;border:1px solid #d6e0f5;border-radius:20px;padding:1px 10px;margin-right:8px;font-size:.82rem;}" +
+      "#tab-tmc-builder .tmc-listbox{border:1px solid var(--border-strong,#cbd5e1);border-radius:10px;overflow:hidden;}" +
+      "#tab-tmc-builder .tmc-listtable{width:100%;border-collapse:collapse;font-size:.9rem;}" +
+      "#tab-tmc-builder .tmc-listtable th{background:var(--navy-primary);color:#fff;text-align:left;padding:9px 14px;font-size:.72rem;text-transform:uppercase;letter-spacing:.03em;}" +
+      "#tab-tmc-builder .tmc-listtable th.tmc-num,#tab-tmc-builder .tmc-listtable td.tmc-num{text-align:center;}" +
+      "#tab-tmc-builder .tmc-listtable td{padding:9px 14px;border-top:1px solid #eef2f7;vertical-align:middle;}" +
+      "#tab-tmc-builder .tmc-listrow{cursor:pointer;}" +
+      "#tab-tmc-builder .tmc-listrow:hover td{background:#eef6ff;}" +
+      "#tab-tmc-builder .tmc-listrow:focus{outline:2px solid var(--navy-primary);outline-offset:-2px;}" +
+      "#tab-tmc-builder .tmc-lt-name{font-weight:600;color:#1f2937;}" +
+      "#tab-tmc-builder .tmc-deg-sm{display:inline-block;background:#eef2fb;color:var(--navy-primary);font-weight:700;font-size:.72rem;padding:1px 8px;border-radius:20px;}" +
+      "#tab-tmc-builder .tmc-cov{font-weight:700;color:#065f46;}" +
+      "#tab-tmc-builder .tmc-lt-links{white-space:nowrap;font-size:.8rem;}" +
+      "#tab-tmc-builder .tmc-lt-links a{margin-right:8px;}" +
+      // detail-view chrome (back link, review banner, muted right column)
+      "#tab-tmc-builder .tmc-back{display:inline-block;margin-bottom:12px;color:var(--navy-primary);font-weight:600;cursor:pointer;text-decoration:none;font-size:.86rem;}" +
+      "#tab-tmc-builder .tmc-back:hover{text-decoration:underline;}" +
+      "#tab-tmc-builder .tmc-reviewbar{background:#eef6ff;border:1px solid #c7ddff;border-radius:8px;padding:9px 14px;font-size:.84rem;color:#1e3a5f;margin-bottom:12px;}" +
+      "#tab-tmc-builder .tmc-pickhint{color:var(--text-muted);font-size:.84rem;font-style:italic;padding:8px 2px;}" +
       "#tab-tmc-builder .tmc-pickers{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;background:var(--surface-subtle,#f8fafc);border:1px solid var(--border-strong,#cbd5e1);border-radius:10px;padding:14px 16px;margin-bottom:18px;}" +
       "#tab-tmc-builder .tmc-pick label{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);font-weight:700;margin-bottom:4px;}" +
       "#tab-tmc-builder .tmc-pick select{padding:8px 10px;border:1px solid var(--border-strong,#cbd5e1);border-radius:7px;font-size:.95rem;background:#fff;min-width:260px;max-width:100%;}" +
@@ -160,14 +189,9 @@
       "#tab-tmc-builder .tmc-stchip.ok{background:#ecfdf5;color:#065f46;border:1px solid #34d399;}" +
       "#tab-tmc-builder .tmc-stchip.warn{background:#fffbeb;color:#92400e;border:1px solid #fcd34d;}" +
       "#tab-tmc-builder .tmc-stchip.muted{background:#eef2f7;color:#475569;border:1px solid #cbd5e1;}" +
-      "#tab-tmc-builder .tmc-statuslegend{font-size:.76rem;color:var(--text-muted);margin:-8px 0 16px;}" +
       "#tab-tmc-builder .tmc-srclink{color:var(--navy-primary);font-weight:600;text-decoration:underline;}" +
       "#tab-tmc-builder .tmc-formhead .tmc-srclink{color:#cfe3ff;}" +
-      "#tab-tmc-builder .tmc-soon-badge{display:inline-block;font-size:.74rem;font-weight:700;color:#475569;background:#eef2f7;border:1px solid #cbd5e1;border-radius:20px;padding:3px 12px;margin-bottom:6px;}" +
-      "#tab-tmc-builder .tmc-topbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:flex-end;margin-bottom:10px;}" +
-      "#tab-tmc-builder .tmc-topbar .tmc-filter-lbl{font-size:.74rem;color:var(--text-muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-right:-4px;}" +
-      "#tab-tmc-builder .tmc-topbar select{padding:6px 8px;border:1px solid var(--border-strong,#cbd5e1);border-radius:6px;font-size:.82rem;background:#fff;}" +
-      "#tab-tmc-builder .tmc-auth{margin-right:auto;font-size:.82rem;color:var(--text-muted);}" +
+      "#tab-tmc-builder .tmc-auth{font-size:.82rem;color:var(--text-muted);}" +
       "#tab-tmc-builder .tmc-auth a,#tab-tmc-builder .tmc-link{color:var(--navy-primary);font-weight:600;cursor:pointer;text-decoration:underline;}" +
       "#tab-tmc-builder .tmc-auth-on{color:#166534;font-weight:600;}" +
       "#tab-tmc-builder .tmc-pdf{display:inline-block;margin-left:8px;font-size:.78rem;}" +
@@ -383,120 +407,188 @@
   function render() {
     root.innerHTML = "";
     var wrap = el("div", "tmc-wrap");
-    wrap.appendChild(el("div", "tmc-draft",
-      "⚠️ <strong>Draft tool</strong> — the left-side C-ID course lists are seed data pending faculty/articulation-officer verification against the official template at " +
-      "<a href='https://c-idsystem.org/transfer-efforts/' target='_blank' rel='noopener'>c-idsystem.org</a>. " +
-      "Your local-course selections are saved to help you prepare the official ADT submission."));
-    wrap.appendChild(el("h2", null, "TMC Builder <span class='tmc-sub'>— align your courses to a Transfer Model Curriculum (ADT)</span>"));
-    wrap.appendChild(el("p", "tmc-intro",
-      "Pick your <strong>college</strong> and a <strong>Transfer Model Curriculum</strong>. The left column is the fixed, ASCCC-defined C-ID course list; " +
-      "for each row, choose the matching course from <strong>your college's COCI offerings</strong> on the right. Courses that already carry the slot's C-ID are matched automatically."));
 
-    // top bar: curator sign-in (left) + Status filter (right)
-    var top = el("div", "tmc-topbar");
-    var auth = el("span", "tmc-auth"); auth.id = "tmc-auth";
-    renderAuthInto(auth);
-    top.appendChild(auth);
-    top.appendChild(el("span", "tmc-filter-lbl", "Show"));
+    // One slim title carries the draft disclosure (no separate box / intro). The
+    // sidebar nav already labels the tab, so we keep a single content heading.
+    wrap.appendChild(el("h2", null,
+      "TMC Builder <span class='tmc-sub'>— align your courses to a Transfer Model Curriculum (ADT) " +
+      "<span class='tmc-draftnote'>· Draft, for test &amp; development</span></span>"));
+
+    // ── one consolidated filter block: College · Show · Find · Curator sign-in ──
+    var filt = el("div", "tmc-filters");
+
+    var colPick = el("div", "tmc-pick");
+    colPick.appendChild(el("label", null, "College"));
+    var colSel = el("select");
+    colSel.id = "tmc-college-sel";
+    colSel.appendChild(new Option("All colleges (browse / review)", ""));
+    var data = window[CC_GLOBAL];
+    (data ? data.colleges : []).forEach(function (n) {
+      colSel.appendChild(new Option(n, n));
+    });
+    colSel.value = state.college; // "" selects All colleges
+    colSel.onchange = function () { onCollege(colSel.value); };
+    colPick.appendChild(colSel);
+    filt.appendChild(colPick);
+
+    var stPick = el("div", "tmc-pick");
+    stPick.appendChild(el("label", null, "Show"));
     var sf = el("select"); sf.id = "tmc-status-filter";
-    [["all", "All TMCs"], ["official", "✓ Official"], ["draft", "⚠ Draft"], ["planned", "◷ Coming soon"],
+    [["all", "All TMCs"], ["official", "✓ Official"], ["draft", "⚠ Draft"],
      ["requested", "📤 New requests (CO review)"]].forEach(function (o) {
       var op = new Option(o[1], o[0]); if (state.statusFilter === o[0]) op.selected = true; sf.appendChild(op);
     });
-    sf.onchange = function () { state.statusFilter = sf.value; render(); };
-    top.appendChild(sf);
-    wrap.appendChild(top);
+    sf.onchange = function () { state.statusFilter = sf.value; state.view = "list"; render(); };
+    stPick.appendChild(sf);
+    filt.appendChild(stPick);
 
-    // pickers
-    var pk = el("div", "tmc-pickers");
-    var colPick = el("div", "tmc-pick");
-    colPick.appendChild(el("label", null, "Submitting College"));
-    var colSel = el("select");
-    colSel.id = "tmc-college-sel";
-    colSel.appendChild(new Option("Select your college…", ""));
-    var data = window[CC_GLOBAL];
-    (data ? data.colleges : []).forEach(function (n) {
-      var o = new Option(n, n);
-      if (n === state.college) o.selected = true;
-      colSel.appendChild(o);
-    });
-    colSel.onchange = function () { onCollege(colSel.value); };
-    colPick.appendChild(colSel);
-    pk.appendChild(colPick);
-
-    var tmcPick = el("div", "tmc-pick");
-    tmcPick.appendChild(el("label", null, "Program / Discipline (TMC)"));
-    var tmcSel = el("select");
-    tmcSel.id = "tmc-tmc-sel";
-    tmcSel.appendChild(new Option("Select a TMC…", ""));
-    var tlist = (window.CPL_TMC_TEMPLATES ? window.CPL_TMC_TEMPLATES.templates : []).slice().sort(function (a, b) {
-      return a.discipline < b.discipline ? -1 : 1;
-    });
-    var fstat = state.statusFilter;
-    var shown = tlist.filter(function (t) { return fstat === "all" || fstat === "requested" || tmcStatus(t) === fstat; });
-    var avail = shown.filter(function (t) { return tmcStatus(t) !== "planned"; });
-    var soon = shown.filter(function (t) { return tmcStatus(t) === "planned"; });
-    function addOptGroup(label, arr) {
-      if (!arr.length) return;
-      var og = document.createElement("optgroup");
-      og.label = label;
-      arr.forEach(function (t) {
-        var deg = t.degree ? " (" + t.degree + ")" : "";
-        var stext = statusMeta(t).label.replace(/^[^A-Za-z]+\s*/, ""); // strip the emoji
-        var o = new Option(t.discipline + deg + " — " + stext, t.id);
-        if (state.tmc && state.tmc.id === t.id) o.selected = true;
-        og.appendChild(o);
-      });
-      tmcSel.appendChild(og);
+    // "Find a TMC" only matters on the directory; hide it inside a single TMC.
+    if (state.view === "list" && state.statusFilter !== "requested") {
+      var findPick = el("div", "tmc-pick tmc-pick-find");
+      findPick.appendChild(el("label", null, "Find a TMC"));
+      var find = el("input");
+      find.type = "text"; find.id = "tmc-find"; find.placeholder = "e.g. Biology, Business…";
+      find.value = state.listQuery;
+      find.oninput = function () { state.listQuery = find.value; renderBody(); };
+      findPick.appendChild(find);
+      filt.appendChild(findPick);
     }
-    addOptGroup("Available now (" + avail.length + ")", avail);
-    addOptGroup("Coming soon (" + soon.length + ")", soon);
-    tmcSel.onchange = function () { onTmc(tmcSel.value); };
-    tmcPick.appendChild(tmcSel);
-    pk.appendChild(tmcPick);
-    wrap.appendChild(pk);
 
-    if (tlist.length) {
-      var legend = el("div", "tmc-statuslegend");
-      legend.innerHTML = "<strong>" + avail.length + " of " + tlist.length + "</strong> TMCs built so far · status: " +
-        "<b class='tmc-stchip warn'>⚠ Draft</b> seed (verify) · " +
-        "<b class='tmc-stchip muted'>◷ Coming soon</b> (official template linked) · " +
-        "<b class='tmc-stchip ok'>✓ Official</b> once encoded";
-      wrap.appendChild(legend);
-    }
+    var auth = el("span", "tmc-auth"); auth.id = "tmc-auth";
+    renderAuthInto(auth);
+    filt.appendChild(auth);
+
+    wrap.appendChild(filt);
 
     var mount = el("div");
     mount.id = "tmc-form-mount";
     wrap.appendChild(mount);
     root.appendChild(wrap);
-    if (state.statusFilter === "requested") renderRequestQueue(mount);
-    else renderForm(mount);
+    renderBody();
+  }
+
+  // Body = the CO-review queue, a single TMC's builder, or the TMC directory.
+  function renderBody() {
+    var mount = document.getElementById("tmc-form-mount");
+    if (!mount) return;
+    if (state.statusFilter === "requested") { renderRequestQueue(mount); return; }
+    if (state.view === "detail" && state.tmc) { renderForm(mount); return; }
+    renderList(mount);
+  }
+
+  /* ----------------------------------------------------------- list (directory) */
+  function countSlots(t) {
+    var n = 0;
+    (t && t.sections || []).forEach(function (s) { n += (s.slots || []).length; });
+    return n;
+  }
+  // how many of a TMC's slots the selected college already carries the C-ID for
+  function coverageFor(t) {
+    if (!state.byCid) return null;
+    var n = 0;
+    (t.sections || []).forEach(function (sec) {
+      (sec.slots || []).forEach(function (slot) {
+        var cids = slotCids(slot);
+        for (var i = 0; i < cids.length; i++) { if (state.byCid.get(cids[i])) { n++; break; } }
+      });
+    });
+    return n;
+  }
+
+  function renderList(mount) {
+    mount.innerHTML = "";
+    var tlist = (window.CPL_TMC_TEMPLATES ? window.CPL_TMC_TEMPLATES.templates : []) || [];
+    if (!tlist.length) {
+      mount.appendChild(el("div", "tmc-empty", "<div class='tmc-loading'>Loading the TMC catalog…</div>"));
+      return;
+    }
+    var fstat = state.statusFilter;
+    var q = (state.listQuery || "").trim().toLowerCase();
+    var rows = tlist.filter(function (t) {
+      if (fstat !== "all" && tmcStatus(t) !== fstat) return false;
+      if (q && (t.discipline + " " + (t.degree || "")).toLowerCase().indexOf(q) === -1) return false;
+      return true;
+    });
+    rows.sort(function (a, b) {
+      var ra = tmcStatus(a) === "official" ? 0 : 1, rb = tmcStatus(b) === "official" ? 0 : 1;
+      if (ra !== rb) return ra - rb;                       // Official first, then Draft
+      return a.discipline < b.discipline ? -1 : (a.discipline > b.discipline ? 1 : 0);
+    });
+
+    var showCov = !!state.college && !!state.byCid;
+    var hdr = el("div", "tmc-listhead");
+    var note = state.college
+      ? "Showing how <b>" + esc(state.college) + "</b>’s courses auto-match each TMC — open one to build & submit."
+      : "Browse every Transfer Model Curriculum. Open one to view its C-ID course list" +
+        (state.email ? " and add curator notes" : "") + ", or pick your college above to start building.";
+    hdr.innerHTML = "<span class='tmc-listcount'>" + rows.length + " of " + tlist.length + " TMCs</span> " + note;
+    mount.appendChild(hdr);
+
+    if (!rows.length) { mount.appendChild(el("div", "tmc-empty", "No TMC matches your filters.")); return; }
+
+    var box = el("div", "tmc-listbox");
+    var table = el("table", "tmc-listtable");
+    table.innerHTML = "<thead><tr><th>Transfer Model Curriculum</th><th>Degree</th><th>Status</th>" +
+      "<th class='tmc-num'>C-ID slots</th>" + (showCov ? "<th class='tmc-num'>Your auto-matches</th>" : "") +
+      "<th>Template</th></tr></thead>";
+    var tb = el("tbody");
+    rows.forEach(function (t) {
+      var sm = statusMeta(t), nslots = countSlots(t), cov = showCov ? coverageFor(t) : null;
+      var src = tmcSource(t), pdf = pdfPath(t);
+      var links = (src ? "<a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>official ↗</a>" : "") +
+                  (pdf ? " <a class='tmc-srclink' href='" + esc(pdf) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>📎 PDF</a>" : "");
+      var tr = el("tr", "tmc-listrow");
+      tr.tabIndex = 0;
+      tr.setAttribute("role", "button");
+      tr.setAttribute("aria-label", "Open " + t.discipline + " TMC");
+      tr.innerHTML =
+        "<td class='tmc-lt-name'>" + esc(t.discipline) + "</td>" +
+        "<td>" + (t.degree ? "<span class='tmc-deg-sm'>" + esc(t.degree) + "</span>" : "—") + "</td>" +
+        "<td><span class='tmc-stchip " + sm.cls + "'>" + esc(sm.label) + "</span></td>" +
+        "<td class='tmc-num'>" + nslots + "</td>" +
+        (showCov ? "<td class='tmc-num'>" + (cov != null ? "<span class='tmc-cov'>" + cov + "</span> / " + nslots : "—") + "</td>" : "") +
+        "<td class='tmc-lt-links'>" + (links || "—") + "</td>";
+      tr.onclick = function () { openTmc(t.id); };
+      tr.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openTmc(t.id); } };
+      tb.appendChild(tr);
+    });
+    table.appendChild(tb);
+    box.appendChild(table);
+    mount.appendChild(box);
+  }
+
+  function openTmc(id) {
+    state.tmc = (window.CPL_TMC_TEMPLATES.templates || []).filter(function (t) { return t.id === id; })[0] || null;
+    state.choice = {};
+    state.notes = {};
+    state.view = "detail";
+    if (state.college && state.tmc) autoMatch();
+    maybeResume();
+    if (state.tmc) loadNotes(state.tmc.id, function () { if (state.view === "detail") renderBody(); });
+    render();
+  }
+  function backToList() {
+    state.view = "list";
+    state.tmc = null;
+    render();
   }
 
   function renderForm(mount) {
     mount.innerHTML = "";
-    // A planned / not-yet-encoded TMC: show a catalog panel + official-template
-    // link (no college needed). This is the "status indicator" payoff for the
-    // 37 TMCs we haven't encoded yet — they're visible and link out.
-    if (state.tmc && tmcStatus(state.tmc) === "planned") {
-      var pt = state.tmc, psrc = tmcSource(pt), ppdf = pdfPath(pt);
-      var panel = el("div", "tmc-empty");
-      panel.innerHTML =
-        "<div class='tmc-soon-badge'>◷ Coming soon</div>" +
-        "<h3 style='margin:8px 0 4px'>" + esc(pt.discipline) + " TMC</h3>" +
-        "<p style='max-width:580px;margin:0 auto 12px'>This Transfer Model Curriculum is in our catalog — we're encoding its fixed C-ID course list from the official ASCCC template. Pick an <strong>Available now</strong> TMC to build today, or open the official template:</p>" +
-        (psrc ? "<a class='tmc-srclink' href='" + esc(psrc) + "' target='_blank' rel='noopener'>📄 View the official " + esc(pt.discipline) + " TMC ↗</a>" : "") +
-        (ppdf ? " &nbsp; <a class='tmc-srclink' href='" + esc(ppdf) + "' target='_blank' rel='noopener'>📎 PDF</a>" : "");
-      mount.appendChild(panel);
+    if (!state.tmc) { renderList(mount); return; }
+    var reviewMode = !state.college; // All colleges → review-only (no per-college picker)
+
+    var back = el("a", "tmc-back", "← All TMCs");
+    back.setAttribute("role", "button"); back.tabIndex = 0;
+    back.onclick = backToList;
+    back.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); backToList(); } };
+    mount.appendChild(back);
+
+    if (!reviewMode && !window[CC_GLOBAL]) {
+      mount.appendChild(el("div", "tmc-empty", "<div class='tmc-loading'>Loading college course catalog…</div>"));
       return;
     }
-    if (!state.college || !state.tmc) {
-      mount.appendChild(el("div", "tmc-empty",
-        !window[CC_GLOBAL]
-          ? "<div class='tmc-loading'>Loading college course catalog…</div>"
-          : "Select a college and a TMC above to begin building the submission."));
-      return;
-    }
+
     var t = state.tmc;
     var st = statusMeta(t);
     var src = tmcSource(t);
@@ -508,7 +600,7 @@
     left.innerHTML = "<h3>" + esc(t.discipline) +
       (t.degree ? "<span class='tmc-deg'>" + esc(t.degree) + "</span>" : "") +
       "<span class='tmc-stchip " + st.cls + "'>" + esc(st.label) + "</span></h3>" +
-      "<div class='tmc-collegelbl'>" + esc(state.college) + " · " + esc(t.version || "draft") +
+      "<div class='tmc-collegelbl'>" + (reviewMode ? "All colleges · review view" : esc(state.college)) + " · " + esc(t.version || "draft") +
       (src ? " · <a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener'>official template ↗</a>" : "") +
       (pdf ? " <span class='tmc-pdf'>· <a href='" + esc(pdf) + "' target='_blank' rel='noopener'>📎 PDF</a></span>" : "") + "</div>";
     head.appendChild(left);
@@ -517,15 +609,21 @@
     head.appendChild(meterBox);
     card.appendChild(head);
 
+    if (reviewMode) {
+      card.appendChild(el("div", "tmc-reviewbar",
+        "👀 <strong>Review view</strong> — this is the fixed, ASCCC-defined C-ID course list. " +
+        "Select your <strong>college</strong> above to auto-match your local courses, track Total Units, save a draft, and submit for CO review."));
+    }
+
     var body = el("div", "tmc-body");
-    t.sections.forEach(function (sec, si) {
+    (t.sections || []).forEach(function (sec, si) {
       var sed = el("div", "tmc-section");
       var need = sec.select === "all" ? "all required" : ("select " + sec.select);
       var secU = sectionUnits(si);
       var sh = el("div", "tmc-sechead");
       sh.innerHTML = "<span>" + esc(sec.name) + "</span><span class='tmc-secmeta'>" + esc(need) +
         (sec.units ? " · req " + esc(sec.units) + " u" : "") +
-        " · <b class='tmc-secsel'>your courses: " + secU + " u</b></span>";
+        (reviewMode ? "" : " · <b class='tmc-secsel'>your courses: " + secU + " u</b>") + "</span>";
       sed.appendChild(sh);
       if (sec.note) sed.appendChild(el("div", "tmc-secnote", esc(sec.note)));
       var ch = el("div", "tmc-colhead");
@@ -538,31 +636,46 @@
     });
     card.appendChild(body);
 
-    // grand-total footer — Total Units of the college's selected (right-side) courses
-    var gt = tally();
+    // grand-total footer
     var totals = el("div", "tmc-totals");
     totals.id = "tmc-totals";
-    totals.innerHTML =
-      "<span>Total Units — your selected courses: <b id='tmc-total-units'>" + gt.units + "</b> u</span>" +
-      "<span class='tmc-totals-target'>" + gt.filled + " of " + gt.required + " required courses selected" +
-      (t.total_units ? " · TMC major-units target ≈ " + esc(String(t.total_units)) + " u (draft)" : "") + "</span>";
+    if (reviewMode) {
+      totals.innerHTML =
+        "<span>Fixed ASCCC C-ID course list — <b>" + countSlots(t) + "</b> slots</span>" +
+        "<span class='tmc-totals-target'>" +
+        (t.total_units ? "TMC major-units target ≈ " + esc(String(t.total_units)) + " u (draft)" : "Select a college to track your Total Units") + "</span>";
+    } else {
+      var gt = tally();
+      totals.innerHTML =
+        "<span>Total Units — your selected courses: <b id='tmc-total-units'>" + gt.units + "</b> u</span>" +
+        "<span class='tmc-totals-target'>" + gt.filled + " of " + gt.required + " required courses selected" +
+        (t.total_units ? " · TMC major-units target ≈ " + esc(String(t.total_units)) + " u (draft)" : "") + "</span>";
+    }
     card.appendChild(totals);
     mount.appendChild(card);
 
-    // legend + actions
-    var legend = el("div", "tmc-legend");
-    legend.innerHTML =
-      "<span><b style='color:#065f46'>✓ C-ID aligned</b> — your course carries this C-ID</span>" +
-      "<span><b style='color:#92400e'>⚠ units differ</b> — review unit/contact-hour match</span>" +
-      "<span><b style='color:#475569'>○ no C-ID</b> — align content or pursue C-ID approval</span>";
-    mount.appendChild(legend);
+    // legend (build mode only — the ✓/⚠/○ statuses describe a college's match)
+    if (!reviewMode) {
+      var legend = el("div", "tmc-legend");
+      legend.innerHTML =
+        "<span><b style='color:#065f46'>✓ C-ID aligned</b> — your course carries this C-ID</span>" +
+        "<span><b style='color:#92400e'>⚠ units differ</b> — review unit/contact-hour match</span>" +
+        "<span><b style='color:#475569'>○ no C-ID</b> — align content or pursue C-ID approval</span>";
+      mount.appendChild(legend);
+    }
 
     var act = el("div", "tmc-actions");
-    act.appendChild(mkBtn("💾 Save draft", "primary", doSave));
-    act.appendChild(mkBtn("📤 Submit for CO review", "", doSubmitReview));
-    act.appendChild(mkBtn("📄 Export Word (.docx)", "", doDocx));
-    act.appendChild(mkBtn("🖨 Print / PDF", "", function () { window.print(); }));
-    act.appendChild(mkBtn("{ } Export JSON", "", doJson));
+    if (reviewMode) {
+      // No college selected → export the fixed template; can't save/submit a college-less alignment.
+      act.appendChild(mkBtn("📄 Export Word (.docx)", "", doDocx));
+      act.appendChild(mkBtn("🖨 Print / PDF", "", function () { window.print(); }));
+    } else {
+      act.appendChild(mkBtn("💾 Save draft", "primary", doSave));
+      act.appendChild(mkBtn("📤 Submit for CO review", "", doSubmitReview));
+      act.appendChild(mkBtn("📄 Export Word (.docx)", "", doDocx));
+      act.appendChild(mkBtn("🖨 Print / PDF", "", function () { window.print(); }));
+      act.appendChild(mkBtn("{ } Export JSON", "", doJson));
+    }
     var msg = el("span", "tmc-msg");
     msg.id = "tmc-msg";
     act.appendChild(msg);
@@ -584,7 +697,7 @@
     if (state.email) {
       node.innerHTML = "<span class='tmc-auth-on'>✓ Curator: " + esc(state.email) + "</span> · <a class='tmc-link' id='tmc-signout'>Sign out</a>";
       var so = node.querySelector("#tmc-signout");
-      if (so) so.onclick = function () { signOut(); renderAuthInto(node); if (state.tmc) renderForm(document.getElementById("tmc-form-mount")); };
+      if (so) so.onclick = function () { signOut(); renderAuthInto(node); renderBody(); };
     } else {
       node.innerHTML = "Curator? <a class='tmc-link' id='tmc-signin'>Sign in</a> to add notes";
       var si = node.querySelector("#tmc-signin");
@@ -639,11 +752,11 @@
       saveNote(state.tmc.id, key, (ta.value || "").trim()).then(function (r) {
         if (r.ok) {
           state.notes[key] = { note: (ta.value || "").trim(), by: state.email, at: new Date().toISOString() };
-          renderForm(document.getElementById("tmc-form-mount"));
+          renderBody();
         } else r.text().then(function (tx) { msg.textContent = "Save failed: " + (tx || r.status); msg.className = "tmc-msg err"; });
       }).catch(function (e) { msg.textContent = "Save failed: " + e.message; msg.className = "tmc-msg err"; });
     });
-    var cancel = mkBtn("Cancel", "", function () { renderForm(document.getElementById("tmc-form-mount")); });
+    var cancel = mkBtn("Cancel", "", function () { renderBody(); });
     var bar = el("div"); bar.style.marginTop = "4px";
     bar.appendChild(save); bar.appendChild(document.createTextNode(" ")); bar.appendChild(cancel); bar.appendChild(msg);
     ed.appendChild(ta); ed.appendChild(bar);
@@ -699,16 +812,21 @@
     row.appendChild(leftc);
 
     var rightc = el("div", "tmc-right");
-    rightc.appendChild(renderPicker(key, slot));
-    var chosen = state.choice[key];
-    var stt = statusFor(slot, chosen);
-    var pill = el("span", "tmc-status " + stt.cls, esc(stt.label));
-    pill.id = "tmc-st-" + key.replace(":", "-");
-    rightc.appendChild(pill);
-    if (chosen) {
-      var clr = el("span", "tmc-clear", "clear");
-      clr.onclick = function () { setChoice(key, null); };
-      rightc.appendChild(clr);
+    if (!state.college) {
+      // review mode — no college, so no local-course picker
+      rightc.appendChild(el("div", "tmc-pickhint", "Select a college to align a local course"));
+    } else {
+      rightc.appendChild(renderPicker(key, slot));
+      var chosen = state.choice[key];
+      var stt = statusFor(slot, chosen);
+      var pill = el("span", "tmc-status " + stt.cls, esc(stt.label));
+      pill.id = "tmc-st-" + key.replace(":", "-");
+      rightc.appendChild(pill);
+      if (chosen) {
+        var clr = el("span", "tmc-clear", "clear");
+        clr.onclick = function () { setChoice(key, null); };
+        rightc.appendChild(clr);
+      }
     }
     row.appendChild(rightc);
     return row;
@@ -774,12 +892,17 @@
   function setChoice(key, course) {
     state.choice[key] = course;
     // re-render just the affected slot + meter (cheap full re-render of the form mount)
-    renderForm(document.getElementById("tmc-form-mount"));
+    renderBody();
   }
 
   function updateMeter() {
     var m = document.getElementById("tmc-meter");
     if (!m) return;
+    if (!state.college) {
+      var n = countSlots(state.tmc);
+      m.innerHTML = "<b>" + n + "</b> C-ID slots" + (state.tmc && state.tmc.total_units ? " · target ≈ <b>" + esc(String(state.tmc.total_units)) + "</b> u" : "");
+      return;
+    }
     var t = tally();
     m.innerHTML = "Total Units: <b>" + t.units + "</b> · <b>" + t.aligned + "</b> C-ID aligned · <b>" + t.filled + "/" + t.required + "</b> slots";
   }
@@ -826,7 +949,7 @@
   }
 
   function slug() {
-    return (state.college + "_" + state.tmc.discipline).replace(/[^A-Za-z0-9]+/g, "_") + "_TMC";
+    return ((state.college || "All_Colleges") + "_" + state.tmc.discipline).replace(/[^A-Za-z0-9]+/g, "_").replace(/^_+/, "") + "_TMC";
   }
   function downloadBlob(blob, name) {
     var a = el("a");
@@ -852,7 +975,7 @@
       sections: [{
         children: [
           new d.Paragraph({ text: state.tmc.discipline + " — " + state.tmc.degree, heading: d.HeadingLevel.HEADING_1 }),
-          new d.Paragraph({ text: state.college + "   ·   TMC alignment (DRAFT — verify against official template)" }),
+          new d.Paragraph({ text: (state.college || "All colleges (template)") + "   ·   TMC alignment (DRAFT — verify against official template)" }),
           new d.Paragraph({ text: t.aligned + " C-ID aligned · " + t.filled + "/" + t.required + " slots filled · " + t.units + " units mapped" }),
           new d.Paragraph({ text: "" }),
           new d.Table({ width: { size: 100, type: d.WidthType.PERCENTAGE }, rows: rows })
@@ -900,16 +1023,7 @@
     setCollege(name);
     if (state.college && state.tmc) autoMatch();   // auto-populate the C-ID matches
     maybeResume();
-    renderForm(document.getElementById("tmc-form-mount"));
-  }
-  function onTmc(id) {
-    state.tmc = (window.CPL_TMC_TEMPLATES.templates || []).filter(function (t) { return t.id === id; })[0] || null;
-    state.choice = {};
-    state.notes = {};
-    if (state.college && state.tmc) autoMatch();
-    maybeResume();
-    if (state.tmc) loadNotes(state.tmc.id, function () { if (state.statusFilter !== "requested") renderForm(document.getElementById("tmc-form-mount")); });
-    renderForm(document.getElementById("tmc-form-mount"));
+    renderBody();   // stay in the current view (list gains a coverage column; detail re-matches)
   }
 
   // pre-select the college's course that already carries each slot's C-ID
@@ -938,7 +1052,7 @@
         var a = row.alignments[k];
         state.choice[k] = { subj: a.subj, num: a.num, title: a.title, units: a.units, cid: a.course_cid || null };
       });
-      renderForm(document.getElementById("tmc-form-mount"));
+      if (state.view === "detail") renderBody();
       setMsg("Resumed your saved alignment from " + (row.updated_at || "Supabase").slice(0, 10) + ".", "ok");
     });
   }
