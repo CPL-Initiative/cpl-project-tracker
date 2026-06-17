@@ -83,6 +83,32 @@ the data lane, built interactively against his live direction.
    lazy-loads `tmc_builder.js`, which lazy-loads `tmc_templates.js` then the 7.5 MB
    `tmc_college_courses.js` (precedent: the CCR's 34 MB details file).
 
+## Session 59 cont. (2) — all 45 TMCs encoded from the official PDFs (2026-06-16)
+
+Sam ran a PowerShell `Invoke-WebRequest` loop **on his own machine** (his network
+passes Cloudflare; mine 403s even with a browser UA + sandbox off — confirmed with
+curl AND urllib) and **uploaded the 45 PDFs as a zip**. That's the durable pattern
+when a host bot-blocks the agent env: the human (browser/desktop) fetches, uploads;
+the agent parses.
+
+- **Parser** `tmc/_parse_tmc_pdfs.py` (committed, re-runnable; PDFs committed under
+  `tmc/source_pdfs/`). PDF text via **PyMuPDF** (`fitz`) — pdfplumber/pypdf both
+  import a **broken `cryptography` rust binding** in this container (`_cffi_backend`
+  missing → pyo3 panic); PyMuPDF is self-contained and sidesteps it.
+- **The key robustness move**: extract C-IDs from the table cells, validate against
+  `cid_descriptors.json`, and for any VERIFIED C-ID use the **descriptor's official
+  title** — so PDF column/line noise in titles is irrelevant (the C-ID is what drives
+  auto-match anyway). Humanities/social-science TMCs parse near-perfectly; science
+  TMCs with "OR" sequence-branches are messier but their C-IDs extract fine.
+- **`cid_unverified` flags (25 across the set)** are KEPT as a deliberate
+  **discrepancy signal** (Sam: "an indicator that perhaps C-ID needs updating, or
+  otherwise") — usually a 2026 TMC (e.g. Music Industry Studies, 10/10) whose codes
+  post-date our 2026-05 descriptor extract.
+- Result: **45/45 `draft`** (756 slots), 0 planned. Footer-cut at "TOTAL MAJOR
+  UNITS", section regex tolerates a "Courses:" prefix (Chemistry), `PSY 205B`→
+  `PSY 205 B` canonicalization, per-section dedupe by C-ID, GE-prefix strip on
+  non-C-ID titles. Tests still 34/34 (Part A evals the real file).
+
 ## Session 59 cont. — Status indicator + 45-TMC catalog (2026-06-16)
 
 Sam asked for "a Status indicator for each TMC" and sent the official **TMC
