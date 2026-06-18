@@ -3,12 +3,12 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-06-17",
+ "as_of": "2026-06-18",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "p2": 4638,
-  "p3": 16154
+  "p2": 4644,
+  "p3": 16164
  },
  "colleges": {
   "Bakersfield": {
@@ -20,8 +20,8 @@ window.CPL_FUNDING_PERF = {
    "p3": 42
   },
   "Chaffey": {
-   "p2": 12,
-   "p3": 19
+   "p2": 13,
+   "p3": 20
   },
   "Cuesta": {
    "p2": null,
@@ -60,8 +60,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "LA Pierce": {
-   "p2": 1300,
-   "p3": 1730
+   "p2": 1302,
+   "p3": 1732
   },
   "LA Valley": {
    "p2": 0,
@@ -92,8 +92,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Moreno Valley": {
-   "p2": 358,
-   "p3": 1363
+   "p2": 361,
+   "p3": 1370
   },
   "Norco College": {
    "p2": 111,

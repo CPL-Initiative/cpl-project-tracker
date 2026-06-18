@@ -1169,5 +1169,23 @@
     "map_exhibits": 2465,
     "ccc_collaborative": 62,
     "articulating_colleges": 102
+  },
+  {
+    "date": "2026-06-18",
+    "students": 47845,
+    "students_military": 24554,
+    "students_workforce": 23367,
+    "students_apprentice": 753,
+    "eligible_units": 229168,
+    "transcribed_units": 99209,
+    "savings_m": 318.9,
+    "year_impact_b": 1.29,
+    "active_colleges": 98,
+    "leading_colleges": 15,
+    "star_colleges": 50,
+    "credit_recs": 11330,
+    "map_exhibits": 2466,
+    "ccc_collaborative": 62,
+    "articulating_colleges": 102
   }
 ]
