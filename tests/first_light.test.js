@@ -41,6 +41,30 @@ const SRC = fs.readFileSync("first_light.js", "utf8");
     ps.every((p) => p.alt && p.alt.length > 20 && p.blurb && p.setting && p.title && p.artist));
 }
 
+// (g) rotation — no painting repeats on consecutive days, every painting shows
+//     once before any repeat, and the seed is the viewer's LOCAL calendar day.
+//     (Session 62: the old UTC-day seed ticked at ~5pm in California, drifting a
+//     calendar day out of step with the local greeting reset, which could
+//     surface the same painting across two local days.)
+{
+  const dom = boot({});
+  const fl = dom.window.CPL_FIRST_LIGHT;
+  const n = fl.paintings.length;
+  let noRepeat = true;
+  for (let d = -400; d < 400; d++) {            // negatives exercise the modulo guard
+    if (fl.paintingForDay(d) === fl.paintingForDay(d + 1)) noRepeat = false;
+  }
+  check("no painting repeats on consecutive days", noRepeat);
+  const seen = new Set();
+  for (let d = 0; d < n; d++) seen.add(fl.paintingForDay(d).title);
+  check("every painting shows once within a full cycle", seen.size === n);
+  const expected = (function () {
+    const x = new Date();
+    return Math.floor(Date.UTC(x.getFullYear(), x.getMonth(), x.getDate()) / 86400000);
+  })();
+  check("localDayNumber tracks the local calendar day", fl.localDayNumber() === expected);
+}
+
 // ── Part B — greet state machine in jsdom ──
 function boot(storage) {
   const dom = new JSDOM(
