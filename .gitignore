@@ -4,9 +4,12 @@ __pycache__/
 .DS_Store
 
 # First Light reflections digest — anonymous user musings rendered for the
-# PRIVATE cpl-knowledge-base vault (reflections/build_reflections_digest.py).
-# NEVER commit reflection text to this PUBLIC repo; the digest is gitignored
-# and is meant to land in the vault clone (or via a weekly workflow in that repo).
+# PRIVATE vault samueltlee/CPLBrain (reflections/build_reflections_digest.py).
+# NEVER commit reflection text to this PUBLIC repo; the digest is gitignored and
+# is meant to land in the private vault clone (or via a weekly workflow in that
+# repo). cpl-knowledge-base is a PUBLIC subset of the vault — never the digest
+# target. (The aggregate-only reflections/summary.json — counts + painting
+# tallies, no text — IS safe to commit and is intentionally NOT ignored.)
 reflections_out/
 
 # Claude Code background-agent worktrees (transient, harness-managed)
