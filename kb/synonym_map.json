@@ -15,6 +15,15 @@
     "mathematics": "math",
     "maths": "math",
     "administration of justice": "aj",
-    "admin of justice": "aj"
+    "admin of justice": "aj",
+    "early childhood education": "ece",
+    "emergency medical technician": "emt",
+    "emergency medical technology": "emt",
+    "certified nursing assistant": "cna",
+    "certified nurse assistant": "cna",
+    "heating ventilation and air conditioning": "hvac",
+    "heating ventilation air conditioning": "hvac",
+    "licensed vocational nursing": "lvn",
+    "licensed vocational nurse": "lvn"
   }
 }
