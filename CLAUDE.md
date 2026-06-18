@@ -1723,33 +1723,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > reusable `kb/_rekey_kb_curation_supabase.py` + `supabase-rekey.yml`; suite 48).
 
 
-### Session 57 — Bruh Skydriver: worklist polish + the consolidation loosening (2026-06-16)
-
-Sam-interactive (his "Voice (NC)" worklist screenshot). Two merged PRs, both
-dispatched + LIVE. **#441 — the worklist popup + CCR:** count "N of M" moved into
-the title bar (subtitle + "drag to move" dropped); the proposed title now prefers
-the ★ target's **cleaned** name (new client `cleanTitle()` strips "(NC)"); a
-per-candidate **ⓘ description toggle**; the Discipline field shows the inherited
-disc / **pre-selects the modal member disc** on a mint (generator emits per-member
-`d`); CCR course-ID column wraps/clips instead of overlapping the title. **"(NC)"
-cleanup** (data half): `_normalize_common_titles.py` gained a noncredit-paren strip
-(110 singleton titles; meaningful parens like (BIM)/(FSVP) kept) — the auto-merge
-worklist auto-cleans future mints via the shared `regularize_title()` — and the 13
-bot-minted curated `unified_title`s carrying the noise were stripped in **Supabase
-`kb_curation` + the snapshot** (all `automerge-*@bot`, no human text). **#442 — the
-consolidation push:** Sam chose to **loosen the existing lanes** (over the measured
-opt-in-lane option), so `_sug_sig` went **level-SAFE → level-COLLAPSING** (folds
-the level axis: level words, roman/word/digit ordinals, a–h section letters) — the
-worklist now merges across levels by default. Suggestions-only / curator-confirmed
-/ reversible. Worklist regrouped **229→2,665 anchored, 217→2,519 singleton**
-(other lanes unchanged). Measure-first evidence committed: `kb/_similar_family_
-dryrun.py` (7,849 families, 99% disc-unanimous; receipt gitignored — regenerable).
-Suite 48→49. **DEFERRED** (its own measured PR — `kb/README.md` mandates measuring
-member-row flips first): the member-join **Jaccard 0.5→~0.4**. Lessons:
-`docs/ccr_cluster_cleanup_lessons.md` + `docs/similar_course_family_scope.md`; KB
-note `docs/kb-notes/adr-level-collapsing-consolidation.md`. **NEXT:
-`docs/session_58_handoff.md`** — the Jaccard measurement; work the 10× bigger
-worklist; title-lane pass-2 still open.
+> **Session 57 narrative archived** → `docs/roadmap_archive.md` (Bruh Skydriver —
+> worklist popup + CCR polish #441; the consolidation loosening #442:
+> `_sug_sig` level-SAFE → level-COLLAPSING; "(NC)" cleanup; Jaccard 0.5→0.4
+> deferred).
 
 
 ### Session 58 — Bruh Skyleader: Suggested-merges deep refinement (2026-06-16)
@@ -1778,6 +1755,33 @@ Sam-interactive (Algebra then ESL worklist screenshots). **Three code-only PRs**
 Measure-first: `kb/_sug_segment_dryrun.py` (synonym-aware). Tests 48→53
 (override-rename, keyword-gather, looseness-slider). **NEXT:
 `docs/session_59_handoff.md`** — member-join Jaccard 0.5→0.4 (measure first).
+
+> Sessions 59 (Bruh Star Navicus) + 60 (Bruh Momentus) built the **TMC Builder**
+> tab end-to-end (§7d) — no inline §11 narrative; see `docs/tmc_builder_lessons.md`
+> + `docs/session_60_handoff.md`.
+
+### Session 61 — Bruh Skymarker: the per-college approved-ADT overlay (2026-06-18)
+
+Sam-interactive. The COCI **program** export (the 2nd COCI principal set —
+alongside the *course* set we already had) is now in the library as the
+**authoritative approved-ADT source**. **PR #458** (merged + LIVE):
+`tmc/_build_college_adts.py` → `tmc_college_adts.js` (lazy) — **3,238
+(college,TMC) pairs · 115 colleges · 42 ASCCC TMCs + UCTP**, mapped **99.9%**
+via TOP-code-corroborated title match. The TMC tab now stamps a per-college ADT
+status onto every TMC: a directory **ADT column** (✓ Approved / ⏳ In progress /
+◐ Teachout when a college is picked; the **statewide approved-college count** in
+review mode), a detail **status banner** (`adtBannerEl`), and a **"this college's
+approved ADTs / not yet established"** filter. **UCTP** (Chemistry/Physics *for UC
+Transfer*, sub-award "A.S. UCTP Degree") = its **own instances** (`extra_tmcs`,
+`renderPathwayDetail`), never folded into the Chem/Physics ADT (Sam's mid-build
+call). "Approved" = STATUS ∈ {Active, Approved}; PH-Science + ETE-plain fold;
+Inactive hidden. Tests 55→56 files. Sam's **taxonomy** ask → ADR: keep college
+names **committed JSON**, Supabase only for live curation. Full story:
+`docs/tmc_builder_lessons.md` (S61); KB notes
+`adr-reference-data-committed-json-vs-supabase` +
+`methodology-coded-key-over-freehand-text-join`. **NEXT:
+`docs/session_62_handoff.md`** — faculty-verify the drafts + the taxonomy
+follow-up (`college_short_names.json` hardening).
 
 
 ---

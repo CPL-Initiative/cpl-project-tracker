@@ -1,20 +1,20 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-16",
- "_session": 59,
- "_status": "SESSION 59 (Bruh Star Navicus) — the NEW 'TMC Builder' tab is LIVE and now carries ALL 45 official Transfer Model Curricula (parsed from the PDFs Sam uploaded; 756 course slots; 25 rows flagged where the C-ID isn't in our reference). Pick a college + TMC and the right side auto-fills your matching courses. Plus a full CURATOR layer: a Status filter (incl. a 'New requests' CO-review queue), a 📤 'Submit for CO review' action, magic-link login (map@rccd.edu; CCCCO account later) gating per-row curator notes, each TMC's PDF attached as a downloadable artifact, and the C-ID discrepancies shown inline. Data lane (Suggested-merges + Jaccard) still paused — docs/session_59_handoff.md.",
+ "_as_of": "2026-06-18",
+ "_session": 61,
+ "_status": "SESSION 61 (Bruh Skymarker) — the TMC Builder now shows each college's REAL approved ADTs, sourced from the COCI program export (the 2nd COCI dataset — we already had the course list; this is the program/degree list). Pick your college on the TMC Builder tab and every Transfer Model Curriculum gets a status badge: ✓ Approved / ⏳ In progress / ◐ Teach-out — with the control number + approval date + units; with 'All colleges' it shows how many California colleges already have each one. 3,238 approved-ADT records across 115 colleges, mapped 99.9% by TOP code. UC Transfer Pathway (Chemistry/Physics for UC Transfer) shows as its own thing, not folded into the regular ADT. Data lane (Suggested-merges + Jaccard) still paused — docs/session_62_handoff.md.",
  "items": [
   {
-   "id": "sam-tmc-try",
+   "id": "sam-tmc-adts",
    "who": "sam",
    "tab": "tmc-builder",
-   "text": "ALL 45 TMCs are now in (parsed from the official PDFs you uploaded). Pick a college + a TMC; the right side auto-fills your courses that already carry each C-ID, totals the units, exports Word/PDF. Spot-check a few against the official template (linked in the header) — they're 'draft' pending faculty verify. The humanities/social-science ones parsed cleanly; the science ones with 'OR' sequences (Biology/Chemistry/Physics) are rougher — flag any that look off and I'll hand-fix."
+   "text": "NEW: pick your college on the TMC Builder tab — every TMC now shows whether you already have that ADT approved (✓ Approved / ⏳ In progress / ◐ Teach-out, with the control number + approval date), and opening one shows a banner up top. With 'All colleges' selected, each TMC shows how many CA colleges already have it. It's straight from the COCI program export you sent. Spot-check a few of your college's against what you know — flag anything that looks wrong (it dedupes old→new, so a replaced degree shows the new one)."
   },
   {
    "id": "sam-tmc-discrepancies",
    "who": "sam",
    "tab": "tmc-builder",
-   "text": "25 course rows across the 45 TMCs carry a C-ID that ISN'T in our C-ID reference (most are the 2026 TMCs — Music Industry Studies is 10/10). Per your note, that's a useful 'maybe C-ID needs updating (or our reference is stale)' signal. Want me to surface these as a visible ⚠ flag on the row + a small report you could send to the C-ID team?"
+   "text": "The C-ID discrepancies (rows whose C-ID isn't in our reference) now show a ⚠ flag inline. Still on offer: an exportable report of those discrepancies you could hand to the C-ID team. Say the word and Fable builds it."
   },
   {
    "id": "sam-work-families",
@@ -50,7 +50,7 @@
    "id": "fable-tmc-followups",
    "who": "fable",
    "tab": "tmc-builder",
-   "text": "TMC Builder follow-ups: (1) add the remaining ~37 TMCs to tmc_templates.js once Sam supplies the official templates; (2) a 'N of your courses carry a C-ID in COCI' coverage hint + a title-similarity 'suggested (verify)' secondary fill for sparse-coverage colleges (distinct from C-ID auto-fill); (3) wire contact-name/notes + a 'mark submitted' status; (4) optional statewide adoption view off tmc_submissions (no PII — easy)."
+   "text": "TMC Builder follow-ups (all 45 TMCs + the per-college ADT overlay now shipped): (1) the TAXONOMY follow-up — harden kb/college_short_names.json with the COCI-program aliases now in tmc/_build_college_adts.py's PROGRAM_COLLEGE_ALIASES + regen college_short_names.js (one authority for every loose dataset); (2) ADT overlay REFRESH on a fresh COCI program extract (drop CSV in tmc/source_data/, bump SRC_CSV, run tmc/_build_college_adts.py); (3) C-ID-coverage hint + a title-similarity 'suggested (verify)' fill for sparse-C-ID colleges (distinct from C-ID auto-fill); (4) contact-name/notes + 'mark submitted'; (5) the C-ID-discrepancy export report."
   },
   {
    "id": "fable-jaccard-measure",
