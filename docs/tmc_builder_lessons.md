@@ -240,3 +240,74 @@ the rels, display text in `document.xml`).
   aligned which TMCs) — privacy is trivial here (no PII), unlike the EACR.
 - Wire a **contact-name/email + notes** capture into the form (columns already
   exist) and a "mark submitted" status.
+
+---
+
+## Session 61 — Bruh Skymarker: the per-college approved-ADT overlay (2026-06-18)
+
+Sam-interactive. Sam supplied the **COCI program export** (the second COCI
+principal set — *program*, alongside the *course* set we already had as
+`coci_course_list.xlsx`) and asked: is it in our library, and use it as the
+**authoritative source for which colleges have an approved ADT** on the TMC tab.
+Answer to "did I add it?": **no** — this PR adds it.
+
+**What shipped (one PR, code + the static artifact + provenance CSV):**
+- `tmc/_build_college_adts.py` → `tmc_college_adts.js`
+  (`window.CPL_TMC_COLLEGE_ADTS`, lazy). Distills the program export's ADT rows
+  (`AWARD ∈ {A.A-T, A.S-T}` ∪ `SUB AWARD ∈ {ADT Degree, A.S. UCTP Degree}`) into
+  `by_college[college][tmc_id] → {b,s,c,a,u,t}` + `tmc_totals` + `extra_tmcs`.
+  **3,238 (college,TMC) pairs · 115 colleges · 42 ASCCC TMCs + UCTP.**
+- TMC tab (`tmc_builder.js`): a directory **ADT column** (the college's status
+  when one is picked; the **statewide approved-college count** in review mode), a
+  prominent **status banner** on the TMC detail (`adtBannerEl`), a **"this
+  college's approved ADTs / not yet established"** Show-filter, and the UCTP
+  **pathway detail** (`renderPathwayDetail`).
+- `tests/tmc_college_adts.test.js` (30 checks): Part A locks build-correctness
+  invariants on the *committed* artifact (no orphan tmc_ids, every college joins
+  the tab list, valid buckets, UCTP-as-own-instance); Part B drives the new UI.
+
+**Decisions (Sam, 2026-06-18):**
+- **"Approved" = COCI STATUS ∈ {Active, Approved}.** Also surface ⏳ in-progress
+  (Submitted/Review/Revision/Draft) + ◐ teachout; **Inactive kept in data, hidden
+  in UI.** Dedup per (college,TMC) keeps the most-affirmative bucket (a college
+  mid-transition from an old inactive to a new active reads ✓ Approved).
+- **UCTP gets its own instances.** Sam's mid-build correction: "Chemistry for UC
+  Transfer needs its own instance." UCTP = the *UC Transfer Pathway* (sub-award
+  "A.S. UCTP Degree", TOP "…for UC Transfer"), a UC instrument, **not** an ASCCC
+  ADT-T. So `uctp-chemistry` / `uctp-physics` are `extra_tmcs`
+  (`kind:"uc-transfer-pathway"`), never folded into Chemistry/Physics. Public
+  Health Science + Elementary Teacher Education (plain) **did** fold into their
+  nearest TMC per Sam's Q2 call.
+
+**Matching that worked:**
+- **TOP code is the bulletproof key, not freehand titles.** Title normalization
+  alone matched 93/197 distinct titles; TOP-code corroboration + folding the
+  Social Justice Studies concentrations + a small alias map → **3,814/3,819 rows
+  (99.9%)**. Each TMC discipline maps to ~one modal TOP at ~100%.
+- **College-name reconciliation is the loose-data tax.** The program export uses
+  short labels ("L.A. CITY", "SAN FRANCISCO CITY", "MIRA COSTA"); the tab joins on
+  the full *course*-export names ("Los Angeles City College", …). Resolver =
+  normalize() vs the tab's own college list + a consult of
+  `kb/college_short_names.json` + a 13-entry explicit fallback; any unresolved
+  college **fails the build loud** (so a future extract can't silently drop one).
+
+**Taxonomy recommendation (Sam asked for pushback).** Sam floated a Supabase
+college-name taxonomy. Recommendation: **keep it committed JSON** (extend
+`college_short_names.json`) — the consumers are the cron + static builders
+(CI/offline), where a committed file is zero-dependency, diffable, Obsidian-synced,
+and college identity rarely changes. Promote to a Supabase overlay **only if** live
+curator editing of name-variants becomes a workflow (the `kb_curation` pattern).
+Kept the program→tab aliases in the builder for now to keep this PR one-concern; a
+focused `college_short_names.json` alias-hardening pass is the clean follow-up.
+
+## Next concrete steps (Session 61 → 62)
+- **Faculty-verify the draft TMCs**, then the ADT overlay reads even better
+  (Official template + your approved ADT side by side).
+- **Refresh cadence**: the overlay is a snapshot — re-run
+  `python3 tmc/_build_college_adts.py` on a fresh COCI program extract (drop the
+  new CSV in `tmc/source_data/`, update `SRC_CSV`).
+- **Taxonomy follow-up**: harden `kb/college_short_names.json` with per-source
+  COCI-program aliases + regen `college_short_names.js`, so every loose dataset
+  resolves through one authority (the down-payment on Sam's taxonomy ask).
+- **UCTP depth**: if faculty want a UCTP slot-by-slot builder, source the UCTP
+  templates (we only host the COCI standing today).

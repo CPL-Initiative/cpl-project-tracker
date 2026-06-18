@@ -82,14 +82,64 @@
   // it was an empty, confusing category.
   var STATUS_META = {
     official: { label: "✓ Official", cls: "ok" },
-    draft:    { label: "⚠ Draft", cls: "warn" }
+    draft:    { label: "⚠ Draft", cls: "warn" },
+    pathway:  { label: "◆ UC Transfer Pathway", cls: "path" }
   };
-  function tmcStatus(t) { return (t && t.status === "official") ? "official" : "draft"; }
+  function tmcStatus(t) {
+    if (t && t._pathway) return "pathway";
+    return (t && t.status === "official") ? "official" : "draft";
+  }
   function statusMeta(t) { return STATUS_META[tmcStatus(t)] || STATUS_META.draft; }
   function tmcSource(t) {
     if (t && t.source) return t.source;
     var m = (window.CPL_TMC_TEMPLATES && window.CPL_TMC_TEMPLATES._meta && window.CPL_TMC_TEMPLATES._meta.sources) || {};
     return (t && m[t.id]) || "";
+  }
+
+  /* --------------------------------------------- per-college approved ADTs ---
+   * The authoritative source for which colleges hold an approved ADT in each
+   * discipline is the COCI *program* export, distilled into the lazy overlay
+   * window.CPL_TMC_COLLEGE_ADTS (built by tmc/_build_college_adts.py). We stamp
+   * a per-college status onto each TMC: ✓ Approved / ⏳ In progress / ◐ Teachout
+   * (Inactive is kept in the data but hidden in the UI per Sam, 2026-06-18). */
+  var ADT_BADGE = {
+    approved:    { label: "✓ Approved",    cls: "adt-ok" },
+    in_progress: { label: "⏳ In progress", cls: "adt-prog" },
+    teachout:    { label: "◐ Teachout",    cls: "adt-teach" },
+    inactive:    { label: "○ Inactive",    cls: "adt-off" }
+  };
+  function adtData() { return window.CPL_TMC_COLLEGE_ADTS || null; }
+  function adtFor(tmcId) {                       // selected college's ADT for a TMC
+    var d = adtData();
+    if (!d || !state.college) return null;
+    var m = d.by_college && d.by_college[state.college];
+    return (m && m[tmcId]) || null;
+  }
+  function adtTotals(tmcId) {                    // statewide approved/in-progress counts
+    var d = adtData();
+    return (d && d.tmc_totals && d.tmc_totals[tmcId]) || null;
+  }
+  function adtShown(a) { return a && a.b && a.b !== "inactive"; }  // surfaced vs hidden
+  function adtMetaStr(a) {                       // "Control #… · approved … · N units (COCI)"
+    var bits = [];
+    if (a.c) bits.push("Control #" + a.c);
+    if (a.a) bits.push("approved " + a.a);
+    if (a.u) bits.push(a.u + " units");
+    return bits.join(" · ") + (bits.length ? " · " : "") + "COCI program inventory";
+  }
+  // the UC Transfer Pathway pseudo-TMCs (their own instances, not ASCCC ADTs)
+  function extraTmcRows() {
+    var d = adtData();
+    return (d && d.extra_tmcs || []).map(function (x) {
+      return { id: x.id, discipline: x.title, degree: x.degree, kind: x.kind,
+               _pathway: true, sections: [] };
+    });
+  }
+  function findCatalog(id) {
+    var t = ((window.CPL_TMC_TEMPLATES && window.CPL_TMC_TEMPLATES.templates) || [])
+      .filter(function (x) { return x.id === id; })[0];
+    if (t) return t;
+    return extraTmcRows().filter(function (x) { return x.id === id; })[0] || null;
   }
 
   /* --------------------------------------------------------------- styling */
@@ -203,6 +253,20 @@
       "#tab-tmc-builder .tmc-stchip.ok{background:#ecfdf5;color:#065f46;border:1px solid #34d399;}" +
       "#tab-tmc-builder .tmc-stchip.warn{background:#fffbeb;color:#92400e;border:1px solid #fcd34d;}" +
       "#tab-tmc-builder .tmc-stchip.muted{background:#eef2f7;color:#475569;border:1px solid #cbd5e1;}" +
+      "#tab-tmc-builder .tmc-stchip.path{background:#f3e8ff;color:#6b21a8;border:1px solid #d8b4fe;}" +
+      // per-college approved-ADT chips (directory column) + the detail banner
+      "#tab-tmc-builder .tmc-adt{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 8px;border-radius:20px;white-space:nowrap;}" +
+      "#tab-tmc-builder .tmc-adt.adt-ok{background:#ecfdf5;color:#065f46;border:1px solid #34d399;}" +
+      "#tab-tmc-builder .tmc-adt.adt-prog{background:#eff6ff;color:#1e40af;border:1px solid #93c5fd;}" +
+      "#tab-tmc-builder .tmc-adt.adt-teach{background:#fffbeb;color:#92400e;border:1px solid #fcd34d;}" +
+      "#tab-tmc-builder .tmc-adt.adt-off,#tab-tmc-builder .tmc-adt.adt-none{background:transparent;color:#9ca3af;border:1px dashed #d1d5db;}" +
+      "#tab-tmc-builder .tmc-adtbanner{border-radius:9px;padding:10px 14px;font-size:.9rem;margin:0 0 14px;line-height:1.45;}" +
+      "#tab-tmc-builder .tmc-adtbanner.adt-ok{background:#ecfdf5;border:1px solid #6ee7b7;color:#065f46;}" +
+      "#tab-tmc-builder .tmc-adtbanner.adt-prog{background:#eff6ff;border:1px solid #93c5fd;color:#1e40af;}" +
+      "#tab-tmc-builder .tmc-adtbanner.adt-teach{background:#fffbeb;border:1px solid #fcd34d;color:#92400e;}" +
+      "#tab-tmc-builder .tmc-adtbanner.adt-none{background:var(--surface-subtle,#f8fafc);border:1px dashed #cbd5e1;color:#475569;}" +
+      "#tab-tmc-builder .tmc-adtbanner.adt-state{background:#f5f3ff;border:1px solid #ddd6fe;color:#5b21b6;}" +
+      "#tab-tmc-builder .tmc-adt-src{color:var(--text-muted);font-weight:400;font-size:.84em;}" +
       "#tab-tmc-builder .tmc-srclink{color:var(--navy-primary);font-weight:600;text-decoration:underline;}" +
       "#tab-tmc-builder .tmc-formhead .tmc-srclink{color:#cfe3ff;}" +
       "#tab-tmc-builder .tmc-auth{font-size:.82rem;color:var(--text-muted);}" +
@@ -476,8 +540,12 @@
     var stPick = el("div", "tmc-pick");
     stPick.appendChild(el("label", null, "Show"));
     var sf = el("select"); sf.id = "tmc-status-filter";
-    [["all", "All TMCs"], ["official", "✓ Official"], ["draft", "⚠ Draft"],
-     ["requested", "📤 New requests (CO review)"]].forEach(function (o) {
+    var opts = [["all", "All TMCs"]];
+    if (state.college) opts.push(["adt-yes", "✓ This college's approved ADTs"],
+                                 ["adt-no", "◻ Not yet established here"]);
+    opts.push(["official", "✓ Official"], ["draft", "⚠ Draft"],
+              ["requested", "📤 New requests (CO review)"]);
+    opts.forEach(function (o) {
       var op = new Option(o[1], o[0]); if (state.statusFilter === o[0]) op.selected = true; sf.appendChild(op);
     });
     sf.onchange = function () { state.statusFilter = sf.value; state.view = "list"; render(); };
@@ -537,33 +605,63 @@
     return n;
   }
 
+  // ADT-status cell HTML for a catalog row, in both college and review modes.
+  function adtCellHtml(t) {
+    if (state.college) {
+      var a = adtFor(t.id);
+      if (adtShown(a)) {
+        var bm = ADT_BADGE[a.b] || ADT_BADGE.approved;
+        return "<span class='tmc-adt " + bm.cls + "' title='" +
+          esc(a.t + " · " + a.s + " · " + adtMetaStr(a)) + "'>" + bm.label + "</span>";
+      }
+      return "<span class='tmc-adt adt-none' title='No approved ADT in this discipline at " +
+        esc(state.college) + " (COCI program inventory)'>—</span>";
+    }
+    var tot = adtTotals(t.id);
+    if (tot && tot.colleges) {
+      var extra = tot.in_progress ? " <span class='tmc-adt adt-prog' title='in progress'>+" +
+        tot.in_progress + "</span>" : "";
+      return "<span class='tmc-adt adt-ok' title='Colleges with an approved or active ADT (COCI program inventory)'>" +
+        tot.approved + " colleges</span>" + extra;
+    }
+    return "<span class='tmc-adt adt-none' title='No approved ADT statewide yet (COCI program inventory)'>—</span>";
+  }
+
   function renderList(mount) {
     mount.innerHTML = "";
-    var tlist = (window.CPL_TMC_TEMPLATES ? window.CPL_TMC_TEMPLATES.templates : []) || [];
-    if (!tlist.length) {
+    var templates = (window.CPL_TMC_TEMPLATES ? window.CPL_TMC_TEMPLATES.templates : []) || [];
+    if (!templates.length) {
       mount.appendChild(el("div", "tmc-empty", "<div class='tmc-loading'>Loading the TMC catalog…</div>"));
       return;
     }
+    // the full catalog = the 45 ASCCC TMCs + the UC Transfer Pathway instances
+    var catalog = templates.concat(extraTmcRows());
     var fstat = state.statusFilter;
+    if ((fstat === "adt-yes" || fstat === "adt-no") && !state.college) fstat = "all";
     var q = (state.listQuery || "").trim().toLowerCase();
-    var rows = tlist.filter(function (t) {
-      if (fstat !== "all" && tmcStatus(t) !== fstat) return false;
+    var rows = catalog.filter(function (t) {
+      if (fstat === "adt-yes") { if (!adtShown(adtFor(t.id))) return false; }
+      else if (fstat === "adt-no") { if (adtShown(adtFor(t.id))) return false; }
+      else if (fstat === "official" || fstat === "draft") { if (tmcStatus(t) !== fstat) return false; }
       if (q && (t.discipline + " " + (t.degree || "")).toLowerCase().indexOf(q) === -1) return false;
       return true;
     });
+    var rank = { official: 0, draft: 1, pathway: 2 };
     rows.sort(function (a, b) {
-      var ra = tmcStatus(a) === "official" ? 0 : 1, rb = tmcStatus(b) === "official" ? 0 : 1;
-      if (ra !== rb) return ra - rb;                       // Official first, then Draft
+      var ra = rank[tmcStatus(a)], rb = rank[tmcStatus(b)];
+      if (ra !== rb) return ra - rb;                       // Official, then Draft, then Pathways
       return a.discipline < b.discipline ? -1 : (a.discipline > b.discipline ? 1 : 0);
     });
 
     var showCov = !!state.college && !!state.byCid;
+    var hasAdt = !!adtData();
+    var adtHdr = state.college ? "This college's ADT" : "Approved (CA)";
     var hdr = el("div", "tmc-listhead");
     var note = state.college
-      ? "Showing how <b>" + esc(state.college) + "</b>’s courses auto-match each TMC — open one to build & submit."
-      : "Browse every Transfer Model Curriculum. Open one to view its C-ID course list" +
-        (state.email ? " and add curator notes" : "") + ", or pick your college above to start building.";
-    hdr.innerHTML = "<span class='tmc-listcount'>" + rows.length + " of " + tlist.length + " TMCs</span> " + note;
+      ? "Showing <b>" + esc(state.college) + "</b>’s approved ADTs (from the COCI program inventory) and how its courses auto-match each TMC — open one to build & submit."
+      : "Browse every Transfer Model Curriculum, with the count of California colleges that already have each one approved. Open one to view its C-ID course list" +
+        (state.email ? " and add curator notes" : "") + ", or pick your college above to see your status and start building.";
+    hdr.innerHTML = "<span class='tmc-listcount'>" + rows.length + " of " + catalog.length + " TMCs</span> " + note;
     mount.appendChild(hdr);
 
     if (!rows.length) { mount.appendChild(el("div", "tmc-empty", "No TMC matches your filters.")); return; }
@@ -571,23 +669,26 @@
     var box = el("div", "tmc-listbox");
     var table = el("table", "tmc-listtable");
     table.innerHTML = "<thead><tr><th>Transfer Model Curriculum</th><th>Degree</th><th>Status</th>" +
+      (hasAdt ? "<th>" + esc(adtHdr) + "</th>" : "") +
       "<th class='tmc-num'>C-ID slots</th>" + (showCov ? "<th class='tmc-num'>Your auto-matches</th>" : "") +
       "<th>Template</th></tr></thead>";
     var tb = el("tbody");
     rows.forEach(function (t) {
-      var sm = statusMeta(t), nslots = countSlots(t), cov = showCov ? coverageFor(t) : null;
+      var sm = statusMeta(t), pathway = !!t._pathway;
+      var nslots = pathway ? null : countSlots(t), cov = (showCov && !pathway) ? coverageFor(t) : null;
       var src = tmcSource(t), pdf = pdfPath(t);
       var links = (src ? "<a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>official ↗</a>" : "") +
                   (pdf ? " <a class='tmc-srclink' href='" + esc(pdf) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>📎 PDF</a>" : "");
       var tr = el("tr", "tmc-listrow");
       tr.tabIndex = 0;
       tr.setAttribute("role", "button");
-      tr.setAttribute("aria-label", "Open " + t.discipline + " TMC");
+      tr.setAttribute("aria-label", "Open " + t.discipline + (pathway ? " pathway" : " TMC"));
       tr.innerHTML =
         "<td class='tmc-lt-name'>" + esc(t.discipline) + "</td>" +
         "<td>" + (t.degree ? "<span class='tmc-deg-sm'>" + esc(t.degree) + "</span>" : "—") + "</td>" +
         "<td><span class='tmc-stchip " + sm.cls + "'>" + esc(sm.label) + "</span></td>" +
-        "<td class='tmc-num'>" + nslots + "</td>" +
+        (hasAdt ? "<td>" + adtCellHtml(t) + "</td>" : "") +
+        "<td class='tmc-num'>" + (nslots == null ? "—" : nslots) + "</td>" +
         (showCov ? "<td class='tmc-num'>" + (cov != null ? "<span class='tmc-cov'>" + cov + "</span> / " + nslots : "—") + "</td>" : "") +
         "<td class='tmc-lt-links'>" + (links || "—") + "</td>";
       tr.onclick = function () { openTmc(t.id); };
@@ -600,7 +701,7 @@
   }
 
   function openTmc(id) {
-    state.tmc = (window.CPL_TMC_TEMPLATES.templates || []).filter(function (t) { return t.id === id; })[0] || null;
+    state.tmc = findCatalog(id);
     state.choice = {};
     state.notes = {};
     state.view = "detail";
@@ -615,6 +716,70 @@
     render();
   }
 
+  // The prominent per-college (or statewide) ADT-status banner under a TMC's
+  // header. null until the COCI overlay has lazy-loaded (avoids a misleading
+  // "not established" flash before the data arrives).
+  function adtBannerEl(t) {
+    if (!adtData()) return null;
+    var kind = t._pathway ? "pathway" : "ADT";
+    if (state.college) {
+      var a = adtFor(t.id), cls, html;
+      if (a && a.b === "approved") {
+        cls = "adt-ok";
+        html = "✓ <strong>" + esc(state.college) + "</strong> has an <strong>approved " +
+          esc(t.discipline) + (t._pathway ? "" : " ADT") + "</strong> — " + esc(adtMetaStr(a));
+      } else if (a && a.b === "teachout") {
+        cls = "adt-teach";
+        html = "◐ <strong>" + esc(state.college) + "</strong>’s " + esc(t.discipline) +
+          " " + kind + " is in <strong>teach-out</strong> (approved, being phased out) — " + esc(adtMetaStr(a));
+      } else if (a && a.b === "in_progress") {
+        cls = "adt-prog";
+        html = "⏳ <strong>" + esc(state.college) + "</strong>’s " + esc(t.discipline) +
+          " " + kind + " is <strong>" + esc(a.s.toLowerCase()) + "</strong> at the Chancellor’s Office — " + esc(adtMetaStr(a));
+      } else {
+        cls = "adt-none";
+        html = "○ <strong>" + esc(state.college) + "</strong> hasn’t established this " + kind +
+          " yet — use the alignment below to build and submit it. <span class='tmc-adt-src'>(COCI program inventory)</span>";
+      }
+      var b = el("div", "tmc-adtbanner " + cls); b.innerHTML = html; return b;
+    }
+    var tot = adtTotals(t.id);
+    var sb = el("div", "tmc-adtbanner adt-state");
+    sb.innerHTML = (tot && tot.colleges)
+      ? "📊 <strong>" + tot.approved + "</strong> California college" + (tot.approved === 1 ? "" : "s") +
+        " already " + (tot.approved === 1 ? "has" : "have") + " an approved " + esc(t.discipline) +
+        (t._pathway ? "" : " ADT") + (tot.in_progress ? (" · <strong>" + tot.in_progress + "</strong> in progress") : "") +
+        ". <span class='tmc-adt-src'>(COCI program inventory)</span>"
+      : "📊 No college has an approved " + esc(t.discipline) + (t._pathway ? "" : " ADT") +
+        " yet — an opportunity to be first. <span class='tmc-adt-src'>(COCI program inventory)</span>";
+    return sb;
+  }
+
+  // Minimal detail for a UC Transfer Pathway instance (uctp-*). We don't host a
+  // slot-by-slot UCTP template, so this surfaces the college's UCTP standing
+  // from the COCI inventory and points back to the parallel ASCCC ADT.
+  function renderPathwayDetail(mount) {
+    var t = state.tmc;
+    var card = el("div");
+    var head = el("div", "tmc-formhead");
+    var left = el("div");
+    left.innerHTML = "<h3>" + esc(t.discipline) +
+      (t.degree ? "<span class='tmc-deg'>" + esc(t.degree) + "</span>" : "") +
+      "<span class='tmc-stchip path'>◆ UC Transfer Pathway</span></h3>" +
+      "<div class='tmc-collegelbl'>" + (state.college ? esc(state.college) : "All colleges") +
+      " · UC Transfer Pathway (UCTP)</div>";
+    head.appendChild(left);
+    card.appendChild(head);
+    var bn = adtBannerEl(t); if (bn) card.appendChild(bn);
+    card.appendChild(el("div", "tmc-reviewbar",
+      "◆ <strong>UC Transfer Pathway</strong> — the UCTP is the University of California’s lower-division " +
+      "transfer-preparation pattern, distinct from an ASCCC Associate Degree for Transfer (ADT-T). We don’t " +
+      "host a slot-by-slot UCTP template yet; this card surfaces your college’s UCTP standing from the COCI " +
+      "program inventory. The ASCCC " + esc(t.discipline.replace(/ for UC Transfer$/, "")) +
+      " ADT is listed separately in the directory."));
+    mount.appendChild(card);
+  }
+
   function renderForm(mount) {
     mount.innerHTML = "";
     if (!state.tmc) { renderList(mount); return; }
@@ -625,6 +790,8 @@
     back.onclick = backToList;
     back.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); backToList(); } };
     mount.appendChild(back);
+
+    if (state.tmc._pathway) { renderPathwayDetail(mount); return; }
 
     if (!reviewMode && !window[CC_GLOBAL]) {
       mount.appendChild(el("div", "tmc-empty", "<div class='tmc-loading'>Loading college course catalog…</div>"));
@@ -650,6 +817,8 @@
     meterBox.id = "tmc-meter";
     head.appendChild(meterBox);
     card.appendChild(head);
+
+    var adtBn = adtBannerEl(t); if (adtBn) card.appendChild(adtBn);
 
     if (reviewMode) {
       card.appendChild(el("div", "tmc-reviewbar",
@@ -1175,7 +1344,10 @@
     setCollege(name);
     if (state.college && state.tmc) autoMatch();   // auto-populate the C-ID matches
     maybeResume();
-    renderBody();   // stay in the current view (list gains a coverage column; detail re-matches)
+    // full re-render so the filter bar rebuilds too (the Show dropdown gains/loses
+    // the college-specific "this college's approved ADTs" options); render() ends
+    // by calling renderBody(), so the current list/detail view is preserved.
+    render();
   }
 
   // pre-select the college's course that already carries each slot's C-ID
@@ -1248,6 +1420,11 @@
     // GE Breadth patterns (small, static) for the full-ADT companion panel
     ensureScript("tmc_ge_patterns.js", "CPL_TMC_GE_PATTERNS", function () {
       if (state.view === "detail") renderBody(); // fill the GE panel once available
+    });
+    // per-college approved-ADT overlay (small, static) — the authoritative COCI
+    // program inventory; stamps each TMC with the selected college's ADT status
+    ensureScript("tmc_college_adts.js", "CPL_TMC_COLLEGE_ADTS", function () {
+      renderBody(); // directory gains the ADT column; detail gains the banner
     });
   }
 
