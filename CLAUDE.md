@@ -476,7 +476,7 @@ scraping proved unreliable.
 | `tmc_ge_patterns.js` | The **GE Breadth patterns** (`window.CPL_TMC_GE_PATTERNS`) for the full-ADT companion panel (Session 60): **Cal-GETC** (the single statewide ADT GE pattern as of Fall 2025, AB 928; primary) + legacy **IGETC** and **CSU GE Breadth**. Each modeled as `sections[].slots[]` like a TMC but `ge:true`+`noncid:true` (college-certified GE areas, no C-ID auto-match; `units` = per-course minimum). **DRAFT** — encoded from public ASCCC/CCC standards (CCCCO Breadth Form PDFs bot-block the agent env), verify against the official forms. Lazy-loaded by `tmc_builder.js`. Static — NOT a daily-cron artifact. |
 | `dashboard_filters.js` | Client-side filter/search/sort logic |
 | `kpi_reorder.js` | Login-free drag-to-reorder for the headline KPI grid (`.kpi-section`): per-browser order in localStorage (`cplKpiOrder.v1`), cards re-matched by label text across daily regens, new cards re-enter at default position, ↺ reset affordance. Static — NOT a daily-cron artifact. |
-| `first_light.js` | **First Light** — the once-a-day plein air greeting (added Session 48): date-seeded painting-of-the-day modal (grayscale→color reveal, gallery lightbox, read-aloud via browser `speechSynthesis`, hand-written alt text), opt-out + once-per-day localStorage guards, runtime-injected "Today's painting" header chip (regen-proof), an anonymous reflection box POSTing `{painting, reflection}` to Supabase `cpl_reflections` (anon WRITE-ONLY RLS), and — since the Session-49 retheme — the **ghosted painting layer** behind the whole page (`.cplfl-bg`: today's pick grayscaled at 10% opacity, painterly fallback, honors the opt-out + `prefers-reduced-transparency`/`contrast`). Manifest = verified-PD paintings ONLY (sourcing rules: `docs/kb-notes/reference-public-domain-art-sourcing.md`). Static — NOT a daily-cron artifact. Theme spec/prototype: `prototype/first_light_theme_v1.html` (**v1.6 — GLASS-QUIET chips graduated**, Sam-blessed 2026-06-12; solid family archived in the Chip Studio) + `prototype/check_contrast.py` (whose `--live` mode lints the live `:root` in CI — the retheme SHIPPED Session 49, PRs #407/#408/#410). Tests: `tests/first_light*.test.js`. |
+| `first_light.js` | **First Light** — the once-a-day plein air greeting (added Session 48): date-seeded painting-of-the-day modal with **local-day rotation** (no day-to-day repeats, Session 62; grayscale→color reveal, gallery lightbox, read-aloud via browser `speechSynthesis`, hand-written alt text), opt-out + once-per-day localStorage guards, runtime-injected "Today's painting" header chip (regen-proof), an anonymous reflection box POSTing `{painting, reflection}` to Supabase `cpl_reflections` (anon WRITE-ONLY RLS; the weekly **musings digest** reads them server-side via `reflections/build_reflections_digest.py` → output bound for the private `cpl-knowledge-base` vault, NOT this repo), and — since the Session-49 retheme — the **ghosted painting layer** behind the whole page (`.cplfl-bg`: today's pick grayscaled at 10% opacity, painterly fallback, honors the opt-out + `prefers-reduced-transparency`/`contrast`). Manifest = verified-PD paintings ONLY (sourcing rules: `docs/kb-notes/reference-public-domain-art-sourcing.md`). Static — NOT a daily-cron artifact. Theme spec/prototype: `prototype/first_light_theme_v1.html` (**v1.6 — GLASS-QUIET chips graduated**, Sam-blessed 2026-06-12; solid family archived in the Chip Studio) + `prototype/check_contrast.py` (whose `--live` mode lints the live `:root` in CI — the retheme SHIPPED Session 49, PRs #407/#408/#410). Tests: `tests/first_light*.test.js`. |
 | `cpl_todos.js` | The 📋 To-Do button on every tab (added Session 47): renders `kb/cpl_todos.json` as a For-Sam / For-Fable daily checklist with a "where we are" status line; per-browser check-offs (`cplTodos.v1`, keyed by the feed's `_as_of` so each refresh starts fresh); per-tab badge + nav chips for other tabs' items. Feed refreshed at every Rule-8 checkpoint. Static — NOT a daily-cron artifact. |
 | `report_generator.js` | Custom Report Generator (Claude API via proxy) |
 | `docx.min.js` | Local copy of docx@8.0.4 UMD build (do **not** switch to CDN) |
@@ -1729,32 +1729,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > deferred).
 
 
-### Session 58 — Bruh Skyleader: Suggested-merges deep refinement (2026-06-16)
-
-Sam-interactive (Algebra then ESL worklist screenshots). **Three code-only PRs**
-(cron/dispatch republishes artifacts). Full story:
-`docs/ccr_cluster_cleanup_lessons.md` (Session 58 + cont.).
-- **#445 — override-rename + segment-fold + completion note.** Picking a
-  NON-official course in "⌕ Merge into a different course" pulls its cleaned title
-  in **editable** (renames the target on Confirm; official stays firewalled);
-  `_SUG_SEGMENT = {part,semester,module,half,level,levels}` folds divider words so
-  "Algebra 1-2, Semester 1"/"…, Part 1"/"Algebra 3-4" group under one `algebra`
-  sig; new `merge_note` curation field (⚑ chip + ⓘ-modal line) for "both parts
-  required for full credit" on segmented mints.
-- **#446 — synonym map + keyword-gather.** `kb/synonym_map.json` normalizes
-  abbreviation↔expansion (ESL≡English as a Second Language, ASL/PE/Math/AJ) in
-  `_sug_sig` — **a similarity threshold can't bridge a zero-overlap synonym**
-  (ESL→84, ASL→60, PE→18; global flat). The popup ➕ **keyword-gather** lets the
-  curator search + multi-select extra members (the broad-family judgment).
-- **PR-B — looseness slider.** 🏷 "match strength ≥ X" header slider filters the
-  title lane by weakest-pair cosine; lowered the title dry-run `COSINE_MIN`
-  0.62→0.50 + regenerated the receipt (5.9MB→2.0MB — it was stale), default 0.62
-  = no-op, slide to 0.50 reveals ~1.3k weaker groups. The slider rides the title
-  lane because it's the ONLY continuous-score lane.
-
-Measure-first: `kb/_sug_segment_dryrun.py` (synonym-aware). Tests 48→53
-(override-rename, keyword-gather, looseness-slider). **NEXT:
-`docs/session_59_handoff.md`** — member-join Jaccard 0.5→0.4 (measure first).
+> **Session 58 narrative archived** → `docs/roadmap_archive.md` (Bruh Skyleader —
+> Suggested-merges deep refinement: override-rename + segment-fold + `merge_note`
+> #445; synonym map + keyword-gather #446; the looseness slider — title-lane
+> `COSINE_MIN` 0.62→0.50).
 
 > Sessions 59 (Bruh Star Navicus) + 60 (Bruh Momentus) built the **TMC Builder**
 > tab end-to-end (§7d) — no inline §11 narrative; see `docs/tmc_builder_lessons.md`
@@ -1783,6 +1761,24 @@ names **committed JSON**, Supabase only for live curation. Full story:
 `docs/session_62_handoff.md`** — faculty-verify the drafts + the taxonomy
 follow-up (`college_short_names.json` hardening).
 
+### Session 62 — SkyLion: First Light reflections digest + CCR synonym pairings (2026-06-18)
+
+Two code-only PRs. **#460** — First Light **local-day painting rotation** (no
+day-to-day repeats) + the **weekly reflections digest builder**
+(`reflections/build_reflections_digest.py` + README): reads the anonymous
+write-only `cpl_reflections` via the **service role**, renders per-ISO-week
+Obsidian "musings" — output **gitignored here**, bound for the **private
+`cpl-knowledge-base` vault** (a sibling session is wiring the weekly GitHub Action
+there; needs Sam to add `SUPABASE_SERVICE_KEY` on that repo). **#461** — CCR
+Suggested-merges **synonym-map growth** (ECE/EMT/CNA/HVAC/LVN; +13 ids into
+multi-member groups, no over-merge) + an ambiguity validator
+`kb/_synonym_candidate_dryrun.py` (rejected `cis`/`cd`/`ma`). Also re-installed the
+canonical stop-hook over a stale container copy (a squash-merge `noreply@github.com`
+false-positive). Full story: `docs/first_light_lessons.md` +
+`docs/ccr_cluster_cleanup_lessons.md` (S62); new reflections-digest playbook KB
+note + the synonym note extended. **NEXT: `docs/session_63_handoff.md`** —
+morphological-variant CCR pass (Medical Assisting/Assistant) + faculty-verify the
+TMC drafts.
 
 ---
 

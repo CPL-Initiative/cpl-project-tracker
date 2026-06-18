@@ -1462,3 +1462,32 @@ member-row flips first): the member-join **Jaccard 0.5→~0.4**. Lessons:
 note `docs/kb-notes/adr-level-collapsing-consolidation.md`. **NEXT:
 `docs/session_58_handoff.md`** — the Jaccard measurement; work the 10× bigger
 worklist; title-lane pass-2 still open.
+
+## Archived session narrative (Session 58) — moved 2026-06-18 (Session 62)
+
+### Session 58 — Bruh Skyleader: Suggested-merges deep refinement (2026-06-16)
+
+Sam-interactive (Algebra then ESL worklist screenshots). **Three code-only PRs**
+(cron/dispatch republishes artifacts). Full story:
+`docs/ccr_cluster_cleanup_lessons.md` (Session 58 + cont.).
+- **#445 — override-rename + segment-fold + completion note.** Picking a
+  NON-official course in "⌕ Merge into a different course" pulls its cleaned title
+  in **editable** (renames the target on Confirm; official stays firewalled);
+  `_SUG_SEGMENT = {part,semester,module,half,level,levels}` folds divider words so
+  "Algebra 1-2, Semester 1"/"…, Part 1"/"Algebra 3-4" group under one `algebra`
+  sig; new `merge_note` curation field (⚑ chip + ⓘ-modal line) for "both parts
+  required for full credit" on segmented mints.
+- **#446 — synonym map + keyword-gather.** `kb/synonym_map.json` normalizes
+  abbreviation↔expansion (ESL≡English as a Second Language, ASL/PE/Math/AJ) in
+  `_sug_sig` — **a similarity threshold can't bridge a zero-overlap synonym**
+  (ESL→84, ASL→60, PE→18; global flat). The popup ➕ **keyword-gather** lets the
+  curator search + multi-select extra members (the broad-family judgment).
+- **PR-B — looseness slider.** 🏷 "match strength ≥ X" header slider filters the
+  title lane by weakest-pair cosine; lowered the title dry-run `COSINE_MIN`
+  0.62→0.50 + regenerated the receipt (5.9MB→2.0MB — it was stale), default 0.62
+  = no-op, slide to 0.50 reveals ~1.3k weaker groups. The slider rides the title
+  lane because it's the ONLY continuous-score lane.
+
+Measure-first: `kb/_sug_segment_dryrun.py` (synonym-aware). Tests 48→53
+(override-rename, keyword-gather, looseness-slider). **NEXT:
+`docs/session_59_handoff.md`** — member-join Jaccard 0.5→0.4 (measure first).

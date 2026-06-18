@@ -1,6 +1,7 @@
 ---
 title: A similarity threshold can't bridge a zero-overlap synonym — use a curated synonym map
 date: 2026-06-16
+updated: 2026-06-18 (Session 62 — the candidate-validator script)
 kb-status: published
 type: methodology
 tags: [kb, ccr, suggested-merges, consolidation, signature, synonyms, similarity]
@@ -8,6 +9,7 @@ artifacts:
   - kb/synonym_map.json (the curated abbreviation↔expansion map)
   - excel_to_dashboard.py (_sug_sig — applies the map before tokenizing)
   - kb/_sug_segment_dryrun.py (synonym-aware measurement)
+  - kb/_synonym_candidate_dryrun.py (the candidate ambiguity validator, Session 62)
 related:
   - docs/ccr_cluster_cleanup_lessons.md (Session 58 cont.)
   - docs/kb-notes/adr-level-collapsing-consolidation.md (the over-merge decision)
@@ -58,6 +60,18 @@ repo: `kb/synonym_map.json` → `_sug_sig` in `excel_to_dashboard.py`.)
 - **Suggestions-only.** This only changes which groups *surface* in the
   curator worklist; every merge is still a human Confirm. That's what makes an
   aggressive normalization safe.
+
+## The candidate validator (added Session 62)
+
+`kb/_synonym_candidate_dryrun.py` turns the "measure the bare token first" rule
+into a script. For each proposed `expansion → canonical` pair it scans the title
+corpus for the **standalone** canonical token and reports the hits, so you can
+confirm they're all genuinely that subject before committing the entry. Session 62
+used it to clear **ECE / EMT / CNA / HVAC / LVN** (PR #461) and to **reject**
+`cis`, `cd`, and `ma` — short forms whose standalone token collides across subjects
+(MA = Medical Assisting *and* Master of Arts). Reject-on-evidence is as
+load-bearing as accept: the map stays precise because every entry passed the check,
+one measured pair at a time.
 
 ## When a slider IS the right tool
 
