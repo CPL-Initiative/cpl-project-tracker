@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-18T13:45:23.841Z",
+  "scraped_at": "2026-06-18T17:31:11.110Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -93,14 +93,14 @@
         },
         {
           "college": "West Los Angeles College",
-          "students": 688,
+          "students": 690,
           "units": 7771.5,
-          "avgUnits": 11.29578488372093,
+          "avgUnits": 11.263043478260869,
           "transcriptionRate": 90,
-          "avgTranscribed": 10.171511627906977,
+          "avgTranscribed": 10.142028985507247,
           "criteriaMetCount": 5,
           "militaryStudents": 95,
-          "nonMilitaryStudents": 595,
+          "nonMilitaryStudents": 597,
           "apprenticeStudents": 0,
           "savings": 8584065,
           "yearImpact": 41111441,
@@ -138,13 +138,13 @@
         },
         {
           "college": "Chaffey College",
-          "students": 3573,
+          "students": 3640,
           "units": 18521,
-          "avgUnits": 5.183599216344808,
+          "avgUnits": 5.088186813186813,
           "transcriptionRate": 1,
-          "avgTranscribed": 0.05289672544080604,
+          "avgTranscribed": 0.051923076923076926,
           "criteriaMetCount": 3,
-          "militaryStudents": 247,
+          "militaryStudents": 314,
           "nonMilitaryStudents": 3327,
           "apprenticeStudents": 10,
           "savings": 18671645,
@@ -168,13 +168,13 @@
         },
         {
           "college": "De Anza College",
-          "students": 982,
+          "students": 983,
           "units": 4945,
-          "avgUnits": 5.035641547861507,
+          "avgUnits": 5.030518819938963,
           "transcriptionRate": 1.2,
-          "avgTranscribed": 0.05957230142566192,
+          "avgTranscribed": 0.0595116988809766,
           "criteriaMetCount": 3,
-          "militaryStudents": 977,
+          "militaryStudents": 978,
           "nonMilitaryStudents": 5,
           "apprenticeStudents": 0,
           "savings": 8510097.5,
@@ -308,13 +308,13 @@
         },
         {
           "college": "College of the Desert",
-          "students": 379,
+          "students": 382,
           "units": 2191.5,
-          "avgUnits": 5.782321899736147,
+          "avgUnits": 5.736910994764398,
           "transcriptionRate": 37.9,
-          "avgTranscribed": 2.1939313984168867,
+          "avgTranscribed": 2.176701570680628,
           "criteriaMetCount": 2,
-          "militaryStudents": 343,
+          "militaryStudents": 346,
           "nonMilitaryStudents": 37,
           "apprenticeStudents": 0,
           "savings": 3184312.5,
@@ -983,13 +983,13 @@
         },
         {
           "college": "Oxnard College",
-          "students": 147,
+          "students": 148,
           "units": 580,
-          "avgUnits": 3.945578231292517,
+          "avgUnits": 3.918918918918919,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 147,
+          "militaryStudents": 148,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 1003400,
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "47,845",
+      "value": "47,919",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,554"
+          "value": "24,626"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,367"
+          "value": "23,369"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 47845,
+    "Students": 47919,
     "Units": 229168.15000000002,
     "TranscribedUnits": 99209.95,
     "Savings": 318941105.25,
     "YearImpact": 1291170503.8999999,
-    "MilitaryStudents": 24554,
-    "NonMilitaryStudents": 23367,
+    "MilitaryStudents": 24626,
+    "NonMilitaryStudents": 23369,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.789803532239524,
-    "TranscribedAverage": 2.07356986100951
+    "AverageUnits": 4.7824067697573,
+    "TranscribedAverage": 2.0703677038335524
   }
 }

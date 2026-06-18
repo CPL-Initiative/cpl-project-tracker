@@ -98123,10 +98123,6 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Community Relations"
         },
         {
-          "course": "ADJ 1",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
           "course": "ADJ 20",
           "credit": "3 hours in Introduction to Corrections"
         },
@@ -221932,21 +221928,21 @@ window.CPL_STATEWIDE = {
         "pct": 0.0
       },
       {
-        "college": "CA MAP INITIATIVE COLLEGE",
-        "credit_recs": 2,
-        "exhibits": 1,
-        "disciplines": 1,
-        "ccc_collaborative": 2,
-        "industry_certs": 2,
-        "pct": 0.0
-      },
-      {
         "college": "Southwestern College",
         "credit_recs": 2,
         "exhibits": 1,
         "disciplines": 2,
         "ccc_collaborative": 0,
         "industry_certs": 0,
+        "pct": 0.0
+      },
+      {
+        "college": "CA MAP INITIATIVE COLLEGE",
+        "credit_recs": 1,
+        "exhibits": 1,
+        "disciplines": 1,
+        "ccc_collaborative": 1,
+        "industry_certs": 1,
         "pct": 0.0
       }
     ],
@@ -221971,11 +221967,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1341,
+        "credit_recs": 1340,
         "exhibits": 403,
         "courses": 551,
         "colleges": 49,
-        "ccc_collaborative": 546,
+        "ccc_collaborative": 545,
         "pct": 11.8
       },
       {
@@ -222165,11 +222161,11 @@ window.CPL_STATEWIDE = {
         "credit_recs": 5761,
         "exhibits": 1181,
         "colleges": 85,
-        "pct": 50.8
+        "pct": 50.9
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3329,
+        "credit_recs": 3328,
         "exhibits": 1146,
         "colleges": 78,
         "pct": 29.4
@@ -222213,7 +222209,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2588,
+        "credit_recs": 2587,
         "exhibits": 944,
         "colleges": 74,
         "pct": 22.8
@@ -222286,7 +222282,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1305,
+        "credit_recs": 1304,
         "exhibits": 163,
         "colleges": 63,
         "disciplines": 9,
@@ -222360,8 +222356,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
-        "credit_recs": 131,
-        "courses": 117,
+        "credit_recs": 130,
+        "courses": 116,
         "colleges": 23,
         "cpl_type": "Industry Certification",
         "discipline": "Public and Protective Services"
@@ -222704,6 +222700,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-18T13:44:45",
-  "total_credit_recs": 11330
+  "generated_at": "2026-06-18T17:30:34",
+  "total_credit_recs": 11329
 };
