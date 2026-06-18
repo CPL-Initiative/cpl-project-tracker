@@ -1646,3 +1646,47 @@ but he wanted "ESL"-titled courses surfaced too, and floated a confidence slider
     continuous score** — anchored/singleton/family/evidence are signature-
     equality, and the synonym/segment folds are binary. A slider has nothing to
     turn on those. Test: `tests/uc_worklist_looseness_slider.test.js`.
+
+## Session 62 (2026-06-18, SkyLion) — synonym-map growth + the candidate ambiguity dry-run
+
+One code-only PR (**#461**), the natural continuation of Session 58's synonym
+layer. Sam's worklist keeps surfacing abbreviation/expansion splits the cosine
+lanes can't bridge (a zero-overlap synonym scores 0 — see
+`docs/kb-notes/methodology-synonym-map-vs-similarity-threshold.md`).
+
+### What shipped (#461)
+
+- **Five new families in `kb/synonym_map.json`:** ECE (Early Childhood Education),
+  EMT (Emergency Medical Technician), CNA (Certified Nursing Assistant), HVAC
+  (Heating, Ventilation, Air Conditioning), LVN (Licensed Vocational Nurse). Each
+  expansion phrase → its canonical short token, applied before tokenizing in
+  `_sug_sig`, so "Early Childhood Education 1" and "ECE 1" group.
+- **A dedicated validator — `kb/_synonym_candidate_dryrun.py`.** Session 58
+  established the rule *grep the bare canonical token for collisions before adding
+  a pair*; this script automates it. For each candidate it scans the title corpus
+  for the standalone token and reports whether every hit is genuinely that subject.
+- **Measured:** +13 identities pulled into multi-member worklist groups, **no
+  over-merge** (`kb/_sug_segment_dryrun.py`, synonym-aware). Suggestions-only /
+  curator-confirmed.
+
+### Lessons
+
+- **Reject-on-evidence is as important as accept.** `cis`, `cd`, and `ma` were
+  *rejected* — their standalone tokens collide across subjects (MA = Medical
+  Assisting *and* Master of Arts / a name fragment; CIS spans Computer Information
+  Systems and others). The validator turns "feels ambiguous" into a counted
+  decision.
+- **Grow the map one measured pair at a time.** The map is precise precisely
+  because every entry passed the corpus-collision check; a bulk import would
+  reintroduce the homonym risk the Session-45 CADM work fought.
+- **Suggestions-only is the safety net, not the precision.** An over-eager pair
+  would only change what *surfaces*, never auto-merge — but the validator keeps the
+  surfaced groups trustworthy so the curator isn't wading through noise.
+
+### Next concrete step
+
+Standing top lever unchanged (carried since Session 57): the **member-join Jaccard
+0.5→~0.4** measurement (`kb/README.md` mandates measuring member-row flips first).
+The **morphological-variant pass** (Medical Assisting **vs** Assistant — a stem the
+whole-phrase synonym map can't express) is the next CCR refinement SkyLion
+recommended; see `docs/session_63_handoff.md`.

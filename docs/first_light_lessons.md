@@ -1,7 +1,7 @@
 ---
 title: First Light — daily plein air art, the theme spec, and the design sprint
 created: 2026-06-12
-updated: 2026-06-12 (Session 49 — the retheme ships)
+updated: 2026-06-18 (Session 62 — local-day painting rotation + the weekly reflections digest)
 tags: [lessons, first-light, design-system, plein-air, accessibility, public-domain, ui]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -207,3 +207,51 @@ Glasstronaut**. 🚀
   per-tab neutral-gray sweeps (CCR/CER slate drift).
 - First Light carryover: manifest growth 3 → 60–90, reflections mining,
   the Almanac.
+
+## Session 62 (2026-06-18, SkyLion) — the painting rotation + the reflections digest
+
+Two durable First Light follow-ons (one code-only PR, **#460**), plus the
+cross-repo wiring of the long-promised **reflections mining**.
+
+### What shipped (#460)
+
+- **Local-day painting rotation.** The greeting advances the painting by the
+  viewer's **local calendar day** with **no day-to-day repeats** — the date seed
+  walks the manifest so consecutive days never show the same canvas (a pure
+  date-hash could repeat back-to-back as the pool grew). Still one painting per
+  day shared across viewers; opt-out + once-per-day guards intact.
+- **The weekly reflections digest builder** (`reflections/build_reflections_digest.py`
+  + `reflections/README.md`). First Light's anonymous reflections land in
+  write-only `cpl_reflections` (no SELECT). This stdlib-only script reads them with
+  the **service role**, groups by ISO week, and renders gentle Obsidian-friendly
+  "musings" markdown (one `YYYY-Www.md` per week + a rolling `index.md`).
+
+### The privacy spine (don't break it)
+
+- The read side is **server-only** (service role in CI) — never a public SELECT.
+  The write-only contract on `cpl_reflections` is preserved.
+- The digest carries only **painting + reflection + the calendar day** — never an
+  id, IP, or precise timestamp.
+- Output is **gitignored in this public repo** (`reflections_out/` default) and is
+  bound for the **private `cpl-knowledge-base` vault** only. The words never touch
+  the public tracker.
+- **Fail-soft:** no `SUPABASE_SERVICE_KEY` / HTTP error / blocked network → prints
+  a notice, exits 0. It pre-stages cleanly before the secret exists and never
+  reddens a workflow.
+
+### Wiring (delegated)
+
+The end-to-end automation lives in **`cpl-knowledge-base`** (a weekly GitHub Action
+that runs the script + commits `musings/`), so reflection text only ever lands in
+the private vault. SkyLion wrote a paste-able prompt for a sibling
+`cpl-knowledge-base` session to stand it up; the one human step is Sam adding
+`SUPABASE_SERVICE_KEY` (the service-role key for `hvuwhnbuahrtptokpqfh`) to that
+repo's Actions secrets. Pattern distilled in the new KB note
+`docs/kb-notes/playbook-write-only-table-private-vault-digest.md`.
+
+### Next steps
+
+- Manifest growth 3 → 60–90 paintings (the rotation's value scales with the pool).
+- The reflections **themes card** (the original "uplifting themes" idea) once a few
+  weeks of musings exist — a service-role read → aggregate themes, same spine.
+- The Almanac (past-paintings gallery).

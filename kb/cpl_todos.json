@@ -1,14 +1,20 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-18",
- "_session": 61,
- "_status": "SESSION 61 (Bruh Skymarker) — the TMC Builder now shows each college's REAL approved ADTs, sourced from the COCI program export (the 2nd COCI dataset — we already had the course list; this is the program/degree list). Pick your college on the TMC Builder tab and every Transfer Model Curriculum gets a status badge: ✓ Approved / ⏳ In progress / ◐ Teach-out — with the control number + approval date + units; with 'All colleges' it shows how many California colleges already have each one. 3,238 approved-ADT records across 115 colleges, mapped 99.9% by TOP code. UC Transfer Pathway (Chemistry/Physics for UC Transfer) shows as its own thing, not folded into the regular ADT. Data lane (Suggested-merges + Jaccard) still paused — docs/session_62_handoff.md.",
+ "_as_of": "2026-06-18 (SkyLion)",
+ "_session": 62,
+ "_status": "SESSION 62 (SkyLion) — two small but durable First Light + CCR follow-ons. The daily painting now ROTATES (a fresh California plein air canvas each day, no day-to-day repeats), and the anonymous 'thought for the day' reflections now feed a weekly 'musings' DIGEST — a gentle private write-up for our Obsidian vault, never public. The digest goes live the moment the cpl-knowledge-base repo gets its service key (a one-time Sam step; a sibling session is wiring the weekly job there). On the CCR data lane, the Suggested-merges synonym map grew (ECE/EMT/CNA/HVAC/LVN) so more abbreviation/spelled-out pairs group, with a new validator that REJECTS ambiguous ones (cis/cd/ma). Next CCR lever: morphological variants (Medical Assisting vs Assistant). Data lane otherwise still paused — docs/session_63_handoff.md.",
  "items": [
+  {
+   "id": "sam-reflections-secret",
+   "who": "sam",
+   "tab": "dashboard",
+   "text": "First Light's anonymous reflections can now become a gentle weekly 'musings' digest for our Obsidian vault (kept private — never on the public site). It's READY; the only thing it needs is the service key on the cpl-knowledge-base repo. One-time step: add an Actions secret named SUPABASE_SERVICE_KEY (the same Supabase service-role key the dashboard's daily sync uses) to cpl-knowledge-base. A sibling Claude session is wiring the weekly job there — ping it once the secret's in."
+  },
   {
    "id": "sam-tmc-adts",
    "who": "sam",
    "tab": "tmc-builder",
-   "text": "NEW: pick your college on the TMC Builder tab — every TMC now shows whether you already have that ADT approved (✓ Approved / ⏳ In progress / ◐ Teach-out, with the control number + approval date), and opening one shows a banner up top. With 'All colleges' selected, each TMC shows how many CA colleges already have it. It's straight from the COCI program export you sent. Spot-check a few of your college's against what you know — flag anything that looks wrong (it dedupes old→new, so a replaced degree shows the new one)."
+   "text": "Pick your college on the TMC Builder tab — every TMC shows whether you already have that ADT approved (✓ Approved / ⏳ In progress / ◐ Teach-out, with the control number + approval date), and opening one shows a banner up top. With 'All colleges' selected, each TMC shows how many CA colleges already have it. Spot-check a few of your college's against what you know — flag anything that looks wrong (it dedupes old→new, so a replaced degree shows the new one)."
   },
   {
    "id": "sam-tmc-discrepancies",
@@ -20,7 +26,7 @@
    "id": "sam-work-families",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "✨ Suggested merges (data lane, still live): groups by the obvious keyword (Algebra, the languages, ESL, Ballet) — divider words AND abbreviations fold. Confirm the obvious families; UNCHECK or Skip a genuine progression (units are the tell). Popup tools: '➕ Add more courses by keyword', the 🏷 'match strength' slider, title-cleanup on a different target, and a 'Completion note' box."
+   "text": "✨ Suggested merges (data lane, still live): groups by the obvious keyword (Algebra, the languages, ESL, Ballet, and now ECE/EMT/CNA/HVAC/LVN) — divider words AND abbreviations fold. Confirm the obvious families; UNCHECK or Skip a genuine progression (units are the tell). Popup tools: '➕ Add more courses by keyword', the 🏷 'match strength' slider, title-cleanup on a different target, and a 'Completion note' box."
   },
   {
    "id": "sam-titlelane-pass2",
@@ -47,10 +53,10 @@
    "text": "MilStudents dataset: ping Fable when it's live in the Custom Reports module — that wires the true JSTs-uploaded universe into the Veteran card (aggregates only, no student IDs)."
   },
   {
-   "id": "fable-tmc-followups",
+   "id": "fable-morphological",
    "who": "fable",
-   "tab": "tmc-builder",
-   "text": "TMC Builder follow-ups (all 45 TMCs + the per-college ADT overlay now shipped): (1) the TAXONOMY follow-up — harden kb/college_short_names.json with the COCI-program aliases now in tmc/_build_college_adts.py's PROGRAM_COLLEGE_ALIASES + regen college_short_names.js (one authority for every loose dataset); (2) ADT overlay REFRESH on a fresh COCI program extract (drop CSV in tmc/source_data/, bump SRC_CSV, run tmc/_build_college_adts.py); (3) C-ID-coverage hint + a title-similarity 'suggested (verify)' fill for sparse-C-ID colleges (distinct from C-ID auto-fill); (4) contact-name/notes + 'mark submitted'; (5) the C-ID-discrepancy export report."
+   "tab": "unified-courses",
+   "text": "NEXT CCR lever (SkyLion's rec): the morphological-variant pass — Medical Assisting vs Medical Assistant, and the -ing/-ant/-ology family. The whole-phrase synonym map can't express a shared STEM, so scope a measured, suggestions-only pass (lemmatize/stem the title token before _sug_sig, or a targeted stem-pair map) and MEASURE regroup impact + over-merge before committing. Its own dry-run PR; cron/dispatch republishes."
   },
   {
    "id": "fable-jaccard-measure",
@@ -62,19 +68,13 @@
    "id": "fable-titlelane-dryrun",
    "who": "fable",
    "tab": "unified-courses",
-   "text": "On Sam's go: DRY-RUN title-lane pass 2 — `python3 kb/_auto_merge_worklist.py --pass2-title` (receipt kb/automerge_out/<date>-titlelane/). Present counts; apply only on sign-off, then re-key Supabase via the supabase-rekey workflow + dispatch."
+   "text": "On Sam's go: DRY-RUN title-lane pass 2 — `python3 kb/_auto_merge_worklist.py --pass2-title` (receipt kb/automerge_out/<date>-titlelane/). Present counts; apply only on sign-off, then re-key Supabase via the supabase-rekey workflow + dispatch. (Deferred carryover also tracked in the handoff: the Z future-mint half + the per-row auto-merge revert.)"
   },
   {
-   "id": "fable-zscheme-future-mint",
+   "id": "fable-tmc-followups",
    "who": "fable",
-   "tab": "unified-courses",
-   "text": "Finish the Z scheme's future-mint half (deferred S56): point kb/_auto_merge_worklist.py's mint + an excel_to_dashboard.py promote-step at the persisted counter kb/uc_cur_zseq.json so NEW merges get clean Z ids. Then re-run python3 kb/_row_audit.py + commit latest.json so Z rows get audit chips."
-  },
-  {
-   "id": "fable-second-look-followups",
-   "who": "fable",
-   "tab": "unified-courses",
-   "text": "Wire a one-click revert for an individual auto-merged row (whole-cohort revert = delete reviewer_email='automerge-v1@bot'). Consider the ⚙ auto-merged chip on the CSR/CER if they surface merged identities."
+   "tab": "tmc-builder",
+   "text": "TMC Builder follow-ups: (1) the TAXONOMY follow-up — harden kb/college_short_names.json with the COCI-program aliases now in tmc/_build_college_adts.py's PROGRAM_COLLEGE_ALIASES + regen college_short_names.js; (2) ADT overlay REFRESH on a fresh COCI program extract (drop CSV in tmc/source_data/, bump SRC_CSV, run tmc/_build_college_adts.py); (3) C-ID-coverage hint + a title-similarity 'suggested (verify)' fill for sparse-C-ID colleges; (4) the C-ID-discrepancy export report; (5) faculty-verify the 45 draft TMCs."
   }
  ]
 }
