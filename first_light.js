@@ -73,9 +73,27 @@
   var REFLECT_ENDPOINT = SUPABASE_URL + "/rest/v1/cpl_reflections";
 
   function todayKey() { return new Date().toDateString(); }
-  function pickToday() {
-    return PAINTINGS[Math.floor(Date.now() / 86400000) % PAINTINGS.length];
+
+  // Day index in the viewer's LOCAL calendar — increments at local midnight,
+  // in lockstep with todayKey()'s local toDateString() gate. (The old seed,
+  // Math.floor(Date.now()/86400000), ticked at *UTC* midnight — ~5pm in
+  // California — so the pick drifted a calendar day out of step with the
+  // greeting reset and could surface the same painting across two local days.
+  // Date.UTC(localY,localM,localD) gives a DST-proof integer day number.
+  // — Session 62.)
+  function localDayNumber() {
+    var d = new Date();
+    return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000);
   }
+  // Sequential rotation: index = day % N. Consecutive days can never collide
+  // (i and i+1 mod N differ for any N>1) and every painting shows exactly once
+  // before any repeat — so there is NO day-to-day repeat, by construction, for
+  // any manifest size. Pure + deterministic so it's unit-testable across days.
+  function paintingForDay(dayNum) {
+    var n = PAINTINGS.length;
+    return PAINTINGS[((dayNum % n) + n) % n];
+  }
+  function pickToday() { return paintingForDay(localDayNumber()); }
   function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 
@@ -392,7 +410,8 @@
     maybeGreet();
   }
 
-  window.CPL_FIRST_LIGHT = { init: init, open: open, close: close, paintings: PAINTINGS };
+  window.CPL_FIRST_LIGHT = { init: init, open: open, close: close, paintings: PAINTINGS,
+    paintingForDay: paintingForDay, localDayNumber: localDayNumber };
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);

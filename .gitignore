@@ -3,6 +3,12 @@ __pycache__/
 *.pyc
 .DS_Store
 
+# First Light reflections digest — anonymous user musings rendered for the
+# PRIVATE cpl-knowledge-base vault (reflections/build_reflections_digest.py).
+# NEVER commit reflection text to this PUBLIC repo; the digest is gitignored
+# and is meant to land in the vault clone (or via a weekly workflow in that repo).
+reflections_out/
+
 # Claude Code background-agent worktrees (transient, harness-managed)
 .claude/worktrees/
 
