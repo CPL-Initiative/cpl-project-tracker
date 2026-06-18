@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-16 (Session 58 — Bruh Skyleader: extend the merge candidate set — override-rename + segment-fold + completion note #445, synonym map + keyword-gather #446, looseness slider #447, AJ synonym #448; NEW methodology-synonym-map-vs-similarity-threshold + session_59_handoff)
+updated: 2026-06-18 (Session 61 — Bruh Skymarker: the per-college approved-ADT overlay from the COCI program export #458 — TMC tab now stamps each college's approved ADTs; NEW adr-reference-data-committed-json-vs-supabase + methodology-coded-key-over-freehand-text-join + session_62_handoff)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -113,6 +113,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Retheming a generator-owned HTML monolith via token value-swap](kb-notes/methodology-token-retheme-on-generated-html.md) | methodology | published | 2026-06-12 | 2026-06-12 |
 | [Reference — Public-domain art sourcing for the dashboard (Adams 79-AA, CA Impressionists, the four traps)](kb-notes/reference-public-domain-art-sourcing.md) | reference | published | 2026-06-12 | 2026-06-12 |
 | [ADR — Level-collapsing consolidation: over-merge beats under-merge for CPL (Title 5 §55050; suggestions-only so safe to be aggressive)](kb-notes/adr-level-collapsing-consolidation.md) | adr | published | 2026-06-16 | 2026-06-16 |
+| [ADR — Reference-data home: committed JSON by default, Supabase only for live curation](kb-notes/adr-reference-data-committed-json-vs-supabase.md) | adr | published | 2026-06-18 | 2026-06-18 |
+| [Methodology — Join loose institutional datasets on the coded key, not freehand text](kb-notes/methodology-coded-key-over-freehand-text-join.md) | methodology | published | 2026-06-18 | 2026-06-18 |
 
 ---
 
@@ -131,7 +133,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G; **Session 37: orphan-tail discipline fallback #330 + FL-split CSR search/display #331** | **Session 37 (2026-06-09)** |
 | [`cpl_assistant_lessons.md`](cpl_assistant_lessons.md) | CPL Assistant (in-dashboard RAG chatbot tab; Phase 1 shipped + live `cpl-chat` v14) | **Session 26 (Bruh 26, 2026-06-01) NEW** |
 | [`cpl_funding_lessons.md`](cpl_funding_lessons.md) | CPL Implementation Funding tab — full arc #352–#368: shell → data/renderer → what-if sandbox → shares-first rev2 workbook → P2/P3 actuals (ratified ADR) → roster edits + no-scroll rule. Scope: [`funding_priority_metrics_scope.md`](funding_priority_metrics_scope.md); own handoff: [`cpl_funding_handoff.md`](cpl_funding_handoff.md) | **2026-06-11 (13 PRs, Rule-8 checkpointed)** |
-| [`tmc_builder_lessons.md`](tmc_builder_lessons.md) | TMC Builder tab (Session 59) — interactive ADT submission: fixed C-ID left / per-college COCI-dropdown right, C-ID auto-match, Total Units, Supabase Save/Resume + export. 8 DRAFT TMCs; data model in [`kb-notes/reference-tmc-adt-data-model.md`](kb-notes/reference-tmc-adt-data-model.md) | **2026-06-16** |
+| [`tmc_builder_lessons.md`](tmc_builder_lessons.md) | TMC Builder tab — interactive ADT submission (fixed C-ID left / per-college COCI-dropdown right, C-ID auto-match, Total Units, Save/Resume + export); Session 60 list-first + GE companion; **Session 61: the per-college approved-ADT overlay from the COCI program export #458 (`tmc_college_adts.js`, 3,238 pairs/115 colleges, UCTP as own instance, the taxonomy ADR)**. Data model in [`kb-notes/reference-tmc-adt-data-model.md`](kb-notes/reference-tmc-adt-data-model.md) | **Session 61 (2026-06-18)** |
 | [`first_light_lessons.md`](first_light_lessons.md) | First Light — daily PD plein air greeting LIVE (#394/#396: gallery reveal, read-aloud, anonymous write-only reflections) + the theme spec (prototype v1.4.2 BLESSED: derived AA tokens, glass=chrome/opaque=data, solid uniform chips); next = the live retheme | **Session 48 (2026-06-12) NEW** |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
@@ -206,6 +208,8 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 57 → 58 | Data lane (Bruh Skydriver): worklist popup polish + "(NC)" cleanup #441 + the CONSOLIDATION LOOSENING #442 (_sug_sig level-COLLAPSING, worklist ~10× bigger, suggestions-only) → the member-join Jaccard 0.5→~0.4 (measure member-flips first), work the bigger worklist, title-lane pass-2 | [`session_58_handoff.md`](session_58_handoff.md) |
 | 58 → 59 | Data lane (Bruh Skyleader): extend the merge candidate set — override-rename + segment-fold + completion note #445, synonym map + keyword-gather #446, looseness slider #447, AJ synonym #448 (a threshold can't bridge a zero-overlap synonym — use the map) → the member-join Jaccard 0.5→~0.4 (measure member-flips first), grow the synonym map, title-lane pass-2 | [`session_59_handoff.md`](session_59_handoff.md) |
 | 49 → 52 | Design lane (Bruh Orbitron): the First Light retheme SHIPPED (#407 palette flip · #408 glass + ghosted painting · #410 glass-quiet chips; --live contrast lint in CI) → Sam's screenshot verdicts, kpi_reorder keyboard path, per-tab polish | [`session_52_handoff.md`](session_52_handoff.md) |
+| 59 → 60 | TMC Builder (Bruh Star Navicus → Momentus): the new tab end-to-end #450–#452 (all 45 official TMCs, C-ID auto-match, curator layer + CO-review queue) → the list-first redesign + GE Breadth companion, then CPL-native TMC wiring | [`session_60_handoff.md`](session_60_handoff.md) |
+| 61 → 62 | Bruh Skymarker: the per-college approved-ADT overlay from the COCI program export #458 (`tmc_college_adts.js`, 3,238 pairs/115 colleges/99.9% by TOP code, UCTP own instance, the taxonomy ADR) → faculty-verify the drafts + the `college_short_names.json` taxonomy follow-up | [`session_62_handoff.md`](session_62_handoff.md) |
 
 ---
 

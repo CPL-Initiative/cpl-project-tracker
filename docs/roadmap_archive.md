@@ -1432,3 +1432,33 @@ mint → Z + the client-mint promote-step (new UC-CUR mints still work via dual
 recognition); the auditor re-run (Z rows show no audit chip until `kb/_row_audit.py`
 re-runs). Lessons: `docs/ccr_cluster_cleanup_lessons.md` (Session 56); KB note
 `docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md`.
+
+## Archived session narrative (Session 57) — moved 2026-06-18 (Session 61)
+
+### Session 57 — Bruh Skydriver: worklist polish + the consolidation loosening (2026-06-16)
+
+Sam-interactive (his "Voice (NC)" worklist screenshot). Two merged PRs, both
+dispatched + LIVE. **#441 — the worklist popup + CCR:** count "N of M" moved into
+the title bar (subtitle + "drag to move" dropped); the proposed title now prefers
+the ★ target's **cleaned** name (new client `cleanTitle()` strips "(NC)"); a
+per-candidate **ⓘ description toggle**; the Discipline field shows the inherited
+disc / **pre-selects the modal member disc** on a mint (generator emits per-member
+`d`); CCR course-ID column wraps/clips instead of overlapping the title. **"(NC)"
+cleanup** (data half): `_normalize_common_titles.py` gained a noncredit-paren strip
+(110 singleton titles; meaningful parens like (BIM)/(FSVP) kept) — the auto-merge
+worklist auto-cleans future mints via the shared `regularize_title()` — and the 13
+bot-minted curated `unified_title`s carrying the noise were stripped in **Supabase
+`kb_curation` + the snapshot** (all `automerge-*@bot`, no human text). **#442 — the
+consolidation push:** Sam chose to **loosen the existing lanes** (over the measured
+opt-in-lane option), so `_sug_sig` went **level-SAFE → level-COLLAPSING** (folds
+the level axis: level words, roman/word/digit ordinals, a–h section letters) — the
+worklist now merges across levels by default. Suggestions-only / curator-confirmed
+/ reversible. Worklist regrouped **229→2,665 anchored, 217→2,519 singleton**
+(other lanes unchanged). Measure-first evidence committed: `kb/_similar_family_
+dryrun.py` (7,849 families, 99% disc-unanimous; receipt gitignored — regenerable).
+Suite 48→49. **DEFERRED** (its own measured PR — `kb/README.md` mandates measuring
+member-row flips first): the member-join **Jaccard 0.5→~0.4**. Lessons:
+`docs/ccr_cluster_cleanup_lessons.md` + `docs/similar_course_family_scope.md`; KB
+note `docs/kb-notes/adr-level-collapsing-consolidation.md`. **NEXT:
+`docs/session_58_handoff.md`** — the Jaccard measurement; work the 10× bigger
+worklist; title-lane pass-2 still open.

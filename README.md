@@ -74,7 +74,14 @@ The whole ecosystem, end-to-end:
    sandbox** — edit the pools, priority shares, and projection targets and
    every figure recomputes in your browser — plus live P2/P3 priority-metric
    actuals from MAP; Priority 1 completions are a deliberate, labeled data
-   gap kept as an incentive), and a **Pipeline** progress board.
+   gap kept as an incentive), a **TMC Builder** tab (align a college's local
+   courses to an ASCCC Transfer Model Curriculum / ADT — pick a college + a TMC
+   and the right column auto-fills the local course already carrying each
+   slot's C-ID; all 45 official TMCs, a GE Breadth companion for the full ADT,
+   curator notes, and a **per-college approved-ADT overlay** sourced from the
+   COCI program export so each TMC shows whether that college already has the
+   ADT approved — ✓ Approved / ⏳ in progress / ◐ teach-out — plus the statewide
+   approved-college count), and a **Pipeline** progress board.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,
    then `excel_to_dashboard.py` regenerates the dashboard HTML, exports the
