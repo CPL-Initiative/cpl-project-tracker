@@ -1,0 +1,22 @@
+{
+  "generated": "2026-06-18",
+  "total_reflections": 2,
+  "active_days": 2,
+  "first_day": "2026-06-12",
+  "latest_day": "2026-06-13",
+  "top_paintings": [
+    {
+      "painting": "California Poppy Field",
+      "count": 1
+    },
+    {
+      "painting": "The Rendezvous, Santa Cruz Island",
+      "count": 1
+    }
+  ],
+  "min_sample_for_themes": 10,
+  "themes_suppressed": true,
+  "themes": [],
+  "positivity": null,
+  "note": "Aggregate, anonymous summary of First Light reflections. No individual reflection text is ever published."
+}
