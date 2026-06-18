@@ -1,0 +1,70 @@
+name: Weekly reflections summary
+
+# Aggregate-only First Light reflections summary for THIS public repo. Runs
+# reflections/build_reflections_summary.py with the EXISTING SUPABASE_SERVICE_KEY
+# secret (the service role reads the write-only cpl_reflections table) and commits
+# reflections/summary.json — counts + painting tallies only; single-word themes
+# surface solely above a volume floor (>=10 reflections, >=3-reflection support).
+# NEVER reflection text. The script fails soft (no key / HTTP error / blocked
+# network -> notice + exit 0 + existing file kept), so this workflow stays green.
+#
+# The full-TEXT digest (build_reflections_digest.py) is a SEPARATE workflow that
+# lives in the PRIVATE vault repo (samueltlee/CPLBrain) — never here. See
+# reflections/README.md.
+
+on:
+  schedule:
+    - cron: '30 15 * * 1'   # Mondays ~15:30 UTC, after the ISO week closes
+  workflow_dispatch:         # allow manual trigger from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-reflections-summary
+  cancel-in-progress: false
+
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Build the aggregate-only reflections summary
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 reflections/build_reflections_summary.py --out reflections/summary.json
+
+      - name: Commit summary if changed
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reflections/summary.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No summary changes to commit."
+            exit 0
+          fi
+          git commit -m "Weekly reflections summary — $(date +%Y-%m-%d)"
+          # Retry push with rebase on non-fast-forward (concurrent pushes to main)
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded on attempt $attempt."
+              exit 0
+            fi
+            echo "Push attempt $attempt failed — rebasing onto origin/main and retrying."
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((attempt * 2))
+          done
+          echo "Push failed after 5 attempts."
+          exit 1
