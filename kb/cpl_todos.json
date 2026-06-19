@@ -1,9 +1,15 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-18 (SkyLion)",
- "_session": 62,
- "_status": "SESSION 62 (SkyLion) — two small but durable First Light + CCR follow-ons. The daily painting now ROTATES (a fresh California plein air canvas each day, no day-to-day repeats), and the anonymous 'thought for the day' reflections now feed a weekly 'musings' DIGEST — a gentle private write-up for our Obsidian vault, never public. The digest goes live the moment the cpl-knowledge-base repo gets its service key (a one-time Sam step; a sibling session is wiring the weekly job there). On the CCR data lane, the Suggested-merges synonym map grew (ECE/EMT/CNA/HVAC/LVN) so more abbreviation/spelled-out pairs group, with a new validator that REJECTS ambiguous ones (cis/cd/ma). Next CCR lever: morphological variants (Medical Assisting vs Assistant). Data lane otherwise still paused — docs/session_63_handoff.md.",
+ "_as_of": "2026-06-19 (SkyGate)",
+ "_session": 63,
+ "_status": "SESSION 63 (SkyGate) — we built a Knowledge Base PORTAL right into the dashboard. There's a new 'Knowledge Base' tab: sign in with a magic link (Sam or Malone) and it opens our curated CPL Knowledge Base for clean reading. Even better, signed-in folks get a '✍️ New doc' button — write or PASTE notes, optionally drop in attachments (PDF, Word, Excel, images, or plain text), let Claude polish it into a tidy Knowledge-Base page, and commit it to GitHub as yourself (no coding, no tokens). Five small PRs (#464–#468), all live. Two quick asks below: Sam, kick the tires on the 5 attachment types; Fable (next session), confirm the in-browser file readers behave in the wild. The data/CCR + TMC clean-up lanes are otherwise paused and waiting — docs/session_64_handoff.md.",
  "items": [
+  {
+   "id": "sam-kb-portal",
+   "who": "sam",
+   "tab": "knowledge-base",
+   "text": "The new Knowledge Base tab is LIVE — sign in with your magic link. Try the ✍️ New doc composer: write or paste notes, attach a file or two (plain text, PDF, Word, Excel, or a screenshot), hit ✨ Polish with Claude, then 'Open in GitHub →' to commit it as yourself. Please smoke-test ALL FIVE attachment types and flag anything that throws a red error chip. One decision for you: only the dashboard's copy of the portal got these new features — should we keep the knowledge-base repo's copy in sync too, or treat the dashboard copy as the canonical one?"
+  },
   {
    "id": "sam-reflections-secret",
    "who": "sam",
@@ -35,22 +41,16 @@
    "text": "Still queued: the 🏷 title-similarity lane (~5,457 groups). Say the word and Fable DRY-RUNs a high-cosine, cross-college, band-gated pass 2 (reversible, marker automerge-titlelane-v1) for your review before anything applies."
   },
   {
-   "id": "sam-ceramic-tech",
-   "who": "sam",
-   "tab": "unified-courses",
-   "text": "ARTS M1201's discipline 'Ceramic Technology' is a real MQ name but isn't in the canonical-SUBJ4 map, so the SUBJ4 fold skips it. Your call: add a canonical SUBJ4 for it (a _CANON_SUBJ4:: pick) or re-curate the row to 'Art'."
-  },
-  {
    "id": "sam-coci-corrections",
    "who": "sam",
    "tab": "unified-courses",
    "text": "395 college course titles carry encoding garbage at the source. The dashboard shows them repaired with a '⚠ fix in COCI' chip; the campaign list is kb/coci_title_corrections.json — take it to the colleges when ready."
   },
   {
-   "id": "sam-milstudents",
-   "who": "sam",
-   "tab": "dashboard",
-   "text": "MilStudents dataset: ping Fable when it's live in the Custom Reports module — that wires the true JSTs-uploaded universe into the Veteran card (aggregates only, no student IDs)."
+   "id": "fable-kb-portal-libs",
+   "who": "fable",
+   "tab": "knowledge-base",
+   "text": "Verify the KB-portal attachment extractors work in a real browser. pdf.js / mammoth / SheetJS + the canvas image-downscale are browser-only — CI only covers the pure logic in composer_util.js. If Sam reports a file type erroring, the usual cause is an esm.sh path in kb-portal/app.js (ATT_LIB) — a one-line fix. Also resolve the bundle-divergence decision once Sam answers (backport the tab+composer+attachments to cpl-knowledge-base/kb-portal/, or declare the tracker copy canonical). Full context: docs/kb_portal_lessons.md + docs/session_64_handoff.md."
   },
   {
    "id": "fable-morphological",

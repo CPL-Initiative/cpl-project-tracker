@@ -1491,3 +1491,26 @@ Sam-interactive (Algebra then ESL worklist screenshots). **Three code-only PRs**
 Measure-first: `kb/_sug_segment_dryrun.py` (synonym-aware). Tests 48→53
 (override-rename, keyword-gather, looseness-slider). **NEXT:
 `docs/session_59_handoff.md`** — member-join Jaccard 0.5→0.4 (measure first).
+
+### Session 61 — Bruh Skymarker: the per-college approved-ADT overlay (2026-06-18)
+
+Sam-interactive. The COCI **program** export (the 2nd COCI principal set —
+alongside the *course* set we already had) is now in the library as the
+**authoritative approved-ADT source**. **PR #458** (merged + LIVE):
+`tmc/_build_college_adts.py` → `tmc_college_adts.js` (lazy) — **3,238
+(college,TMC) pairs · 115 colleges · 42 ASCCC TMCs + UCTP**, mapped **99.9%**
+via TOP-code-corroborated title match. The TMC tab now stamps a per-college ADT
+status onto every TMC: a directory **ADT column** (✓ Approved / ⏳ In progress /
+◐ Teachout when a college is picked; the **statewide approved-college count** in
+review mode), a detail **status banner** (`adtBannerEl`), and a **"this college's
+approved ADTs / not yet established"** filter. **UCTP** (Chemistry/Physics *for UC
+Transfer*, sub-award "A.S. UCTP Degree") = its **own instances** (`extra_tmcs`,
+`renderPathwayDetail`), never folded into the Chem/Physics ADT (Sam's mid-build
+call). "Approved" = STATUS ∈ {Active, Approved}; PH-Science + ETE-plain fold;
+Inactive hidden. Tests 55→56 files. Sam's **taxonomy** ask → ADR: keep college
+names **committed JSON**, Supabase only for live curation. Full story:
+`docs/tmc_builder_lessons.md` (S61); KB notes
+`adr-reference-data-committed-json-vs-supabase` +
+`methodology-coded-key-over-freehand-text-join`. **NEXT:
+`docs/session_62_handoff.md`** — faculty-verify the drafts + the taxonomy
+follow-up (`college_short_names.json` hardening).

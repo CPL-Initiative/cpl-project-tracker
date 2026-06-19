@@ -734,6 +734,7 @@ detailed in §7c):
 | `budget` | Budget | CPL Budget & Expenditure Plan |
 | `implementation-funding` | Implementation Funding | CPL Implementation Funding model (DRAFT-chipped) — 2026-30 one-time pools, 3 priorities (shares-first, rev2 workbook), 119 colleges' potential allocations, a **what-if sandbox** (pools/shares/targets editable, per-browser, Reset-to-workbook), and **P2/P3 actuals vs target** from the daily `cpl_funding_performance.js` (P1 = deliberate incentive gap). Shell static; renders from `cpl_funding.js` + `cpl_funding_data.js` (lazy; data static, actuals cron). **Built 2026-06-11, PRs #352–#368** — `docs/cpl_funding_lessons.md` + `docs/cpl_funding_handoff.md`. |
 | `vision-2030` | Vision 2030 | Vision 2030 Alignment cards with live progress |
+| `knowledge-base` | Knowledge Base | Sign-in-gated **KB Portal** — an `<iframe src="kb-portal/">` (like Letters) over the public CPL Knowledge Base: a magic-link-gated reader + a **New-doc composer** (draft/upload → Claude polish → tokenless GitHub commit). The bundle's own Supabase auth is the gate. **Added Session 63, PRs #464/#465/#467/#468.** Docs: `docs/kb_portal_lessons.md`. |
 
 Implementation notes (important — keep in sync with the generator):
 
@@ -1738,28 +1739,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > tab end-to-end (§7d) — no inline §11 narrative; see `docs/tmc_builder_lessons.md`
 > + `docs/session_60_handoff.md`.
 
-### Session 61 — Bruh Skymarker: the per-college approved-ADT overlay (2026-06-18)
-
-Sam-interactive. The COCI **program** export (the 2nd COCI principal set —
-alongside the *course* set we already had) is now in the library as the
-**authoritative approved-ADT source**. **PR #458** (merged + LIVE):
-`tmc/_build_college_adts.py` → `tmc_college_adts.js` (lazy) — **3,238
-(college,TMC) pairs · 115 colleges · 42 ASCCC TMCs + UCTP**, mapped **99.9%**
-via TOP-code-corroborated title match. The TMC tab now stamps a per-college ADT
-status onto every TMC: a directory **ADT column** (✓ Approved / ⏳ In progress /
-◐ Teachout when a college is picked; the **statewide approved-college count** in
-review mode), a detail **status banner** (`adtBannerEl`), and a **"this college's
-approved ADTs / not yet established"** filter. **UCTP** (Chemistry/Physics *for UC
-Transfer*, sub-award "A.S. UCTP Degree") = its **own instances** (`extra_tmcs`,
-`renderPathwayDetail`), never folded into the Chem/Physics ADT (Sam's mid-build
-call). "Approved" = STATUS ∈ {Active, Approved}; PH-Science + ETE-plain fold;
-Inactive hidden. Tests 55→56 files. Sam's **taxonomy** ask → ADR: keep college
-names **committed JSON**, Supabase only for live curation. Full story:
-`docs/tmc_builder_lessons.md` (S61); KB notes
-`adr-reference-data-committed-json-vs-supabase` +
-`methodology-coded-key-over-freehand-text-join`. **NEXT:
-`docs/session_62_handoff.md`** — faculty-verify the drafts + the taxonomy
-follow-up (`college_short_names.json` hardening).
+> **Session 61 narrative archived** → `docs/roadmap_archive.md` (Bruh Skymarker —
+> the per-college approved-ADT overlay from the COCI program export #458:
+> `tmc_college_adts.js`, 3,238 pairs/115 colleges/99.9% by TOP code, UCTP as its
+> own instance, the reference-data-home ADR).
 
 ### Session 62 — SkyLion: First Light reflections digest + CCR synonym pairings (2026-06-18)
 
@@ -1779,6 +1762,25 @@ false-positive). Full story: `docs/first_light_lessons.md` +
 note + the synonym note extended. **NEXT: `docs/session_63_handoff.md`** —
 morphological-variant CCR pass (Medical Assisting/Assistant) + faculty-verify the
 TMC drafts.
+
+### Session 63 — SkyGate: the KB Portal (transplant → login-gated tab → composer) (2026-06-19)
+
+Sam-interactive, fast loop; a side-quest off the data/TMC lanes. Five squash-merged
+PRs built the **KB Portal** end-to-end: **#464** transplanted the self-contained
+`kb-portal/` bundle (a Supabase-magic-link reader over the public KB) into the tracker;
+**#465** wired it in as a login-gated **Knowledge Base** tab (`<iframe src="kb-portal/">`
+in BOTH HTMLs per Rule 4, like Letters; `tabs.js` auto-derives it); **#466** the **✍️
+New-doc composer** (draft → ✨ Claude polish → tokenless GitHub create-file deep-link,
+author commits as themselves — no write token in the app); **#467** a **← Dashboard**
+back button (`target="_top"` to escape the iframe); **#468** **attachment upload**
+(text/PDF/Word/Excel/images → in-browser pdf.js/mammoth/SheetJS extraction + image
+downscale, dodging the proxy's 256 KB cap). Gate = the bundle's own allowlist
+(`slee@cccco.edu` + `malone.dunlavy@rccd.edu`; `map@rccd.edu` deliberately OFF — it can
+reach private CPLBrain). Tests 56→58 files. Full story: `docs/kb_portal_lessons.md`;
+2 new KB notes (embed-bundle-as-tab playbook + browser-doc-capture methodology).
+**NEXT: `docs/session_64_handoff.md`** — Sam smoke-tests the 5 attachment types (fix any
+esm.sh lib path); the bundle-divergence decision (backport vs canonical); then the
+standing data/CCR + TMC lanes resume.
 
 ---
 

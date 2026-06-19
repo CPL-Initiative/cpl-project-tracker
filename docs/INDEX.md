@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-18 (Session 62 — SkyLion: First Light local-day painting rotation + the weekly reflections digest #460, CCR synonym-map growth #461 + the candidate validator; NEW playbook-write-only-table-private-vault-digest + session_63_handoff)
+updated: 2026-06-19 (Session 63 — SkyGate: the KB Portal — transplant #464 + login-gated Knowledge Base tab #465 + New-doc composer #466/#467 + attachment upload #468; NEW kb_portal_lessons + 2 KB notes: playbook-embed-auth-gated-bundle-as-dashboard-tab + methodology-browser-doc-capture-to-claude-and-github + session_64_handoff)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -116,6 +116,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [ADR — Reference-data home: committed JSON by default, Supabase only for live curation](kb-notes/adr-reference-data-committed-json-vs-supabase.md) | adr | published | 2026-06-18 | 2026-06-18 |
 | [Methodology — Join loose institutional datasets on the coded key, not freehand text](kb-notes/methodology-coded-key-over-freehand-text-join.md) | methodology | published | 2026-06-18 | 2026-06-18 |
 | [Playbook — Digest an anonymous write-only table into a private vault (service-role in CI, output never touches the public repo)](kb-notes/playbook-write-only-table-private-vault-digest.md) | playbook | published | 2026-06-18 | 2026-06-18 |
+| [Playbook — Embed a self-contained auth-gated bundle as a dashboard tab (iframe; directory-`src` + `target="_top"`)](kb-notes/playbook-embed-auth-gated-bundle-as-dashboard-tab.md) | playbook | published | 2026-06-19 | 2026-06-19 |
+| [Methodology — In-browser doc capture → Claude → tokenless GitHub write (extract-text-to-dodge-proxy-cap, vision blocks, create-new-file deep-link)](kb-notes/methodology-browser-doc-capture-to-claude-and-github.md) | methodology | published | 2026-06-19 | 2026-06-19 |
 
 ---
 
@@ -136,6 +138,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`cpl_funding_lessons.md`](cpl_funding_lessons.md) | CPL Implementation Funding tab — full arc #352–#368: shell → data/renderer → what-if sandbox → shares-first rev2 workbook → P2/P3 actuals (ratified ADR) → roster edits + no-scroll rule. Scope: [`funding_priority_metrics_scope.md`](funding_priority_metrics_scope.md); own handoff: [`cpl_funding_handoff.md`](cpl_funding_handoff.md) | **2026-06-11 (13 PRs, Rule-8 checkpointed)** |
 | [`tmc_builder_lessons.md`](tmc_builder_lessons.md) | TMC Builder tab — interactive ADT submission (fixed C-ID left / per-college COCI-dropdown right, C-ID auto-match, Total Units, Save/Resume + export); Session 60 list-first + GE companion; **Session 61: the per-college approved-ADT overlay from the COCI program export #458 (`tmc_college_adts.js`, 3,238 pairs/115 colleges, UCTP as own instance, the taxonomy ADR)**. Data model in [`kb-notes/reference-tmc-adt-data-model.md`](kb-notes/reference-tmc-adt-data-model.md) | **Session 61 (2026-06-18)** |
 | [`first_light_lessons.md`](first_light_lessons.md) | First Light — daily PD plein air greeting LIVE (#394/#396: gallery reveal, read-aloud, anonymous write-only reflections) + the theme spec (prototype v1.4.2 BLESSED: derived AA tokens, glass=chrome/opaque=data, solid uniform chips); retheme shipped S49; **S62: local-day painting rotation + the weekly reflections digest #460** | **Session 62 (2026-06-18)** |
+| [`kb_portal_lessons.md`](kb_portal_lessons.md) | KB Portal — transplant #464 + login-gated Knowledge Base tab (iframe) #465 + the New-doc composer (draft → Claude polish → tokenless GitHub deep-link) #466/#467 + attachment upload (in-browser pdf.js/mammoth/SheetJS extraction + image downscale) #468 | **Session 63 (2026-06-19) NEW** |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
 | [`exhibit_canonicalization_lessons.md`](exhibit_canonicalization_lessons.md) | Credential identity / EACR / Cred-Ref / CER triage / **merge tool** | **Session 32 (CER refinement #284/#285/#286 + the existing→existing credential MERGE tool)** |
@@ -212,6 +215,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 59 → 60 | TMC Builder (Bruh Star Navicus → Momentus): the new tab end-to-end #450–#452 (all 45 official TMCs, C-ID auto-match, curator layer + CO-review queue) → the list-first redesign + GE Breadth companion, then CPL-native TMC wiring | [`session_60_handoff.md`](session_60_handoff.md) |
 | 61 → 62 | Bruh Skymarker: the per-college approved-ADT overlay from the COCI program export #458 (`tmc_college_adts.js`, 3,238 pairs/115 colleges/99.9% by TOP code, UCTP own instance, the taxonomy ADR) → faculty-verify the drafts + the `college_short_names.json` taxonomy follow-up | [`session_62_handoff.md`](session_62_handoff.md) |
 | 62 → 63 | SkyLion: First Light reflections digest #460 + CCR synonym pairings #461 (candidate validator) → morphological-variant CCR pass (Med Assisting/Assistant) + faculty-verify the TMC drafts | [`session_63_handoff.md`](session_63_handoff.md) |
+| 63 → 64 | SkyGate: the KB Portal end-to-end — transplant #464 + login-gated Knowledge Base tab #465 + New-doc composer #466/#467 + attachment upload #468 → smoke-test the 5 attachment types (fix any esm.sh path), the bundle-divergence decision, then data/CCR + TMC lanes | [`session_64_handoff.md`](session_64_handoff.md) |
 
 ---
 
