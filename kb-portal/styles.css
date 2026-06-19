@@ -172,6 +172,25 @@ a.btn { text-decoration: none; display: inline-flex; align-items: center; }
 }
 .composer-actions { margin-top: 6px; }
 .composer-foot { margin: 14px 0 0; font-size: 0.8rem; }
+
+/* attachments */
+.composer-attach-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.composer-attach-hint { font-size: 0.8rem; }
+.composer-attach-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.composer-attach-list:empty { display: none; }
+.composer-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #eef2f8; border: 1px solid var(--map-border);
+  border-radius: 14px; padding: 4px 6px 4px 10px; font-size: 0.82rem;
+}
+.composer-chip-extracting { opacity: 0.7; }
+.composer-chip-error { background: #fdeceb; border-color: #f3c4c1; color: var(--map-error); }
+.composer-chip-x {
+  background: transparent; border: none; cursor: pointer;
+  font-size: 0.8rem; line-height: 1; color: var(--map-muted); padding: 0 2px;
+}
+.composer-chip-x:hover { color: var(--map-text); }
+
 @media (max-width: 600px) { .composer { padding: 16px; } }
 
 /* ── responsive ── */

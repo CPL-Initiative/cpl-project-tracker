@@ -133,6 +133,69 @@
     ].join("\n");
   }
 
+  // ───────────────────────── attachments ─────────────────────────
+  // The composer can attach files for Claude to read during Polish. Text-bearing
+  // files (txt/md/csv/json, PDF text layer, Word, Excel) are extracted to text
+  // IN THE BROWSER (app.js) and folded into the prompt — this sidesteps the
+  // proxy's ~256 KB request cap that base64 PDFs would blow. Images go as Claude
+  // vision blocks (downscaled in app.js to fit the cap). These helpers are the
+  // pure routing/shaping logic; the actual extraction + downscaling live in app.js.
+  var TEXT_EXT = ["txt", "md", "markdown", "csv", "tsv", "json", "log", "yml", "yaml", "text"];
+
+  function extOf(name) {
+    var m = String(name == null ? "" : name).toLowerCase().match(/\.([a-z0-9]+)$/);
+    return m ? m[1] : "";
+  }
+
+  // Route a file to an extraction strategy by MIME + extension.
+  function fileKind(name, mime) {
+    mime = String(mime == null ? "" : mime).toLowerCase();
+    var ext = extOf(name);
+    if (mime.indexOf("image/") === 0 || ["png", "jpg", "jpeg", "gif", "webp"].indexOf(ext) !== -1) return "image";
+    if (mime === "application/pdf" || ext === "pdf") return "pdf";
+    if (mime.indexOf("wordprocessingml") !== -1 || ext === "docx") return "docx";
+    if (mime.indexOf("spreadsheetml") !== -1 || mime.indexOf("ms-excel") !== -1 || ext === "xlsx" || ext === "xls") return "xlsx";
+    if (mime.indexOf("text/") === 0 || mime === "application/json" || TEXT_EXT.indexOf(ext) !== -1) return "text";
+    return "unknown";
+  }
+
+  // The Claude-vision media type for an image file (one of the 4 supported; png default).
+  function imageMediaType(name, mime) {
+    mime = String(mime == null ? "" : mime).toLowerCase();
+    if (["image/png", "image/jpeg", "image/gif", "image/webp"].indexOf(mime) !== -1) return mime;
+    var byExt = { png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg", gif: "image/gif", webp: "image/webp" };
+    return byExt[extOf(name)] || "image/png";
+  }
+
+  // Truncate extracted text to a char cap, appending a marker when cut.
+  function extractTextCap(text, maxChars) {
+    text = String(text == null ? "" : text);
+    maxChars = maxChars || 150000;
+    if (text.length <= maxChars) return { text: text, truncated: false };
+    return { text: text.slice(0, maxChars) + "\n\n…[truncated — attachment longer than " + maxChars + " chars]", truncated: true };
+  }
+
+  // Shape the Messages API user `content` for the polish call: ONE text block (the
+  // prompt + each text-extracted attachment, delimited) followed by an image block
+  // per image attachment. Returns a plain string when there are no attachments
+  // (keeps the no-attachment request identical to before).
+  function buildPolishContent(opts) {
+    opts = opts || {};
+    var atts = opts.attachments || [];
+    if (!atts.length) return String(opts.prompt || "");
+    var textParts = [String(opts.prompt || "")];
+    var blocks = [];
+    for (var i = 0; i < atts.length; i++) {
+      var a = atts[i] || {};
+      if (a.text) {
+        textParts.push("\n\n===== Attached file: " + (a.name || "untitled") + " =====\n" + a.text);
+      } else if (a.image) {
+        blocks.push({ type: "image", source: { type: "base64", media_type: a.mediaType || "image/png", data: a.image } });
+      }
+    }
+    return [{ type: "text", text: textParts.join("") }].concat(blocks);
+  }
+
   root.KBComposer = {
     slugify: slugify,
     todayISO: todayISO,
@@ -142,6 +205,10 @@
     composeMarkdown: composeMarkdown,
     docPath: docPath,
     githubNewFileUrl: githubNewFileUrl,
-    polishPrompt: polishPrompt
+    polishPrompt: polishPrompt,
+    fileKind: fileKind,
+    imageMediaType: imageMediaType,
+    extractTextCap: extractTextCap,
+    buildPolishContent: buildPolishContent
   };
 })(typeof window !== "undefined" ? window : globalThis);
