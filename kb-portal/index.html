@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CPL Knowledge Base — Team Portal</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<header class="brand">
+  <div>
+    <h1>CPL Knowledge Base</h1>
+    <div class="sub">California Community Colleges • MAP Initiative • Team Portal</div>
+  </div>
+  <div id="session-box" class="session-box" style="display:none">
+    <span id="session-email" class="session-email"></span>
+    <button id="btn-signout" class="btn btn-ghost btn-sm">Sign out</button>
+  </div>
+</header>
+
+<!-- ───────────────────────── Boot / loading ───────────────────────── -->
+<main id="boot" class="container">
+  <div class="card"><p class="muted">Loading…</p></div>
+</main>
+
+<!-- ───────────────────────── Sign-in view ─────────────────────────── -->
+<main id="login" class="container" style="display:none">
+  <div class="ask-box">
+    <div>Team access to the curated CPL knowledge base</div>
+    <div class="amount" style="font-size:1.3rem">Sign in with a magic link</div>
+    <div class="breakdown">No password — we email you a one-time sign-in link.</div>
+  </div>
+
+  <div class="card">
+    <h2>Sign in</h2>
+    <p class="muted">Enter your work email. If your address is authorized, a one-time
+       sign-in link will arrive in your inbox. Access is limited to designated MAP
+       team members.</p>
+    <form id="login-form" autocomplete="off">
+      <div class="field">
+        <label for="email">Work email</label>
+        <input type="email" id="email" name="email" inputmode="email"
+               placeholder="you@cccco.edu or you@rccd.edu" required>
+      </div>
+      <div class="actions">
+        <button type="submit" class="btn btn-primary" id="btn-send">Email me a sign-in link</button>
+      </div>
+    </form>
+    <div id="login-msg" class="status-banner info" style="display:none;margin-top:14px"></div>
+    <p class="muted" style="margin-top:14px">
+      The content here is the public CPL Knowledge Base, presented as a team reading
+      portal. For live operational figures, use the
+      <a href="https://cpl-initiative.github.io/cpl-project-tracker/" target="_blank" rel="noopener">CPL Project Dashboard</a>.
+    </p>
+  </div>
+</main>
+
+<!-- ───────────────────────── Portal / reader view ─────────────────── -->
+<main id="portal" class="reader" style="display:none">
+  <aside class="sidebar">
+    <input type="search" id="nav-filter" class="nav-filter" placeholder="Filter documents…" aria-label="Filter documents">
+    <nav id="nav" class="nav" aria-label="Knowledge base sections"></nav>
+  </aside>
+  <section class="content">
+    <div id="doc-meta" class="doc-meta"></div>
+    <article id="doc" class="markdown-body">
+      <div class="card welcome">
+        <h2>Welcome to the CPL Knowledge Base</h2>
+        <p class="muted">Pick a document from the left to start reading. This portal
+          renders the curated, public knowledge base for the CPL Initiative, the MAP
+          Platform, and AI-Ready California.</p>
+        <p class="muted">Operational metrics are not stored here — they live on the
+          <a href="https://cpl-initiative.github.io/cpl-project-tracker/" target="_blank" rel="noopener">CPL Project Dashboard</a>
+          and the
+          <a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener">MAP CPL Insights Dashboard</a>.</p>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer class="foot">
+  CPL Knowledge Base • Team portal •
+  <a href="https://github.com/CPL-Initiative/cpl-knowledge-base" target="_blank" rel="noopener">Source repo</a> •
+  <a href="https://cpl-initiative.github.io/cpl-project-tracker/" target="_blank" rel="noopener">Project dashboard</a>
+</footer>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
