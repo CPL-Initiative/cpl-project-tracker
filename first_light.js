@@ -95,6 +95,16 @@
       lic: "Public domain · The Frick Collection, New York · via Wikimedia Commons"
     },
     {
+      title: "The Great Wave off Kanagawa",
+      artist: "Katsushika Hokusai", year: "c. 1831",
+      museum: "Color woodblock print · Thirty-Six Views of Mount Fuji",
+      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Katsushika%20Hokusai%20-%20Thirty-Six%20Views%20of%20Mount%20Fuji-%20The%20Great%20Wave%20Off%20the%20Coast%20of%20Kanagawa%20-%20Google%20Art%20Project.jpg?width=1600",
+      alt: "A great cresting wave with clawlike foam towers over three slender boats, a small snow-capped Mount Fuji on the far horizon.",
+      blurb: "Hokusai was in his seventies when he designed this print for his series Thirty-Six Views of Mount Fuji. A claw of foam rears over three slender boats while the sacred mountain sits tiny and calm on the horizon — the wave, for one instant, taller than Fuji itself. He once said he wouldn't truly master his art until he was 110; he died at 88, still reaching. Few images on Earth are more recognized.",
+      setting: "From the woodblock series that fixed Mount Fuji in the world's imagination, printed in the thousands from carved cherry blocks.",
+      lic: "Public domain · Color woodblock print · Thirty-Six Views of Mount Fuji · via Wikimedia Commons"
+    },
+    {
       title: "The Mowers (When Hearts Beat as One)",
       artist: "Granville Redmond", year: "1907",
       museum: "de Young Museum, San Francisco",
@@ -154,6 +164,16 @@
       blurb: "Friedrich loved fog and cloud because they let a landscape keep its secrets — mountains that surface slowly from the haze feel vast and unknowable. Painted soon after he took up oils, this is all delicate veils of gray and blue, the peak dissolving into light. Look closely and a tiny cross stands at the summit: for Friedrich, the divine revealed only to those willing to climb toward it.",
       setting: "A leading voice of German Romanticism, Friedrich made the quiet awe of nature his lifelong subject.",
       lic: "Public domain · Thüringer Landesmuseum Heidecksburg, Rudolstadt · via Wikimedia Commons"
+    },
+    {
+      title: "Sudden Shower over Shin-Ōhashi Bridge and Atake",
+      artist: "Utagawa Hiroshige", year: "1857",
+      museum: "Color woodblock print · One Hundred Famous Views of Edo",
+      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Hiroshige%2C%20Sudden%20shower%20over%20Shin-%C5%8Chashi%20bridge%20and%20Atake%2C%201857.jpg?width=1600",
+      alt: "People with umbrellas and straw capes hurry across a long wooden bridge in driving rain drawn as dense diagonal lines, a dim far shore beyond.",
+      blurb: "Hiroshige caught a cloudburst as no Western artist had dared — rain drawn as thousands of fine straight lines slashing down on travelers who hunch and scatter across a wooden bridge. Vincent van Gogh loved this print so much he copied it in oils, line for line. It comes from Hiroshige's last great series, One Hundred Famous Views of Edo, finished the year before he died.",
+      setting: "Edo — old Tokyo — at the Shin-Ōhashi bridge over the Sumida River, the dark bank of Atake across the water.",
+      lic: "Public domain · Color woodblock print · One Hundred Famous Views of Edo · via Wikimedia Commons"
     },
     {
       title: "Quiet Moonlight (beyond Catalina Island)",
@@ -217,6 +237,16 @@
       lic: "Public domain · The Museum of Fine Arts, Houston · via Wikimedia Commons"
     },
     {
+      title: "Wanderer above the Sea of Fog",
+      artist: "Caspar David Friedrich", year: "c. 1818",
+      museum: "Hamburger Kunsthalle, Hamburg",
+      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Wanderer%20above%20the%20sea%20of%20fog.jpg?width=1600",
+      alt: "A man in a dark coat stands on a rocky outcrop with his back turned, gazing over rolling fog and distant mountain peaks.",
+      blurb: "A lone figure stands on a dark crag, his back to us, gazing across a sea of fog that swallows the peaks below. By turning the man away, Friedrich makes him a stand-in for you — you are the one on the summit, small before the vastness. It became the defining image of German Romanticism: the human soul humbled and exalted at once before nature.",
+      setting: "The Elbe Sandstone Mountains of Saxony, which Friedrich recombined from real sketches into an invented summit.",
+      lic: "Public domain · Hamburger Kunsthalle, Hamburg · via Wikimedia Commons"
+    },
+    {
       title: "Coastal Wildflowers",
       artist: "Granville Redmond", year: "c. 1912",
       museum: "Private collection",
@@ -276,6 +306,16 @@
       blurb: "Cole imagined a person's whole life as a journey down a river, told in four paintings — childhood, youth, manhood, and old age. This is his oil study for the second scene: a young man stands in his little boat, reaching toward a shimmering castle in the clouds while his guardian angel waves him on. The finished series became one of the most beloved works of nineteenth-century America, and you can already feel the dream in this first sketch.",
       setting: "Cole founded the Hudson River School and worked from the Catskills of New York, where the wild scenery shaped a distinctly American art.",
       lic: "Public domain · Albany Institute of History & Art, Albany · via Wikimedia Commons"
+    },
+    {
+      title: "The Hay Wain",
+      artist: "John Constable", year: "1821",
+      museum: "The National Gallery, London",
+      img: "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Constable%20-%20The%20Hay%20Wain%20(1821).jpg?width=1600",
+      alt: "A wooden wagon stands in a shallow river beside a brick cottage under a wide sky of broken clouds, with green meadows and trees around.",
+      blurb: "Constable painted the ordinary countryside of his Suffolk boyhood — a hay wagon pausing in a shallow river, a cottage, a clouded English sky — and insisted that was enough for great art. Overlooked at home, it stunned Paris when shown there in 1824 and helped nudge French painting toward Impressionism. The dog, the wagon, the drifting clouds: nothing happens, and everything does.",
+      setting: "The River Stour at Flatford in Suffolk; Willy Lott's cottage still stands in what's now called 'Constable Country.'",
+      lic: "Public domain · The National Gallery, London · via Wikimedia Commons"
     },
     {
       title: "Mountain Lake",
@@ -339,6 +379,16 @@
       lic: "Public domain · Clark Art Institute, Williamstown · via Wikimedia Commons"
     },
     {
+      title: "Fine Wind, Clear Morning (Red Fuji)",
+      artist: "Katsushika Hokusai", year: "c. 1830–1832",
+      museum: "Color woodblock print · Thirty-Six Views of Mount Fuji",
+      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Katsushika%20Hokusai%20-%20Fine%20Wind%2C%20Clear%20Morning%20(Gaif%C5%AB%20kaisei)%20-%20Google%20Art%20Project.jpg?width=1600",
+      alt: "A broad reddish-brown Mount Fuji with a snow-streaked summit rises against a blue sky scattered with small white clouds.",
+      blurb: "Also from the Thirty-Six Views, this is Fuji nearly alone — no wave, no travelers, just the mountain catching the first red-gold light of a late-summer dawn as a band of mackerel clouds drifts across deep blue. Collectors nicknamed it 'Red Fuji.' Hokusai reduces a whole mountain to three colors and a few perfect shapes, and somehow it reads as reverence.",
+      setting: "A companion to the Great Wave in the same series; the warm southerly summer wind turns Fuji's slopes to copper at sunrise.",
+      lic: "Public domain · Color woodblock print · Thirty-Six Views of Mount Fuji · via Wikimedia Commons"
+    },
+    {
       title: "Italian Fishing Boats",
       artist: "Edgar Payne", year: "c. 1920s",
       museum: "Private collection",
@@ -397,6 +447,16 @@
       blurb: "Long before the woodblock prints that made him world-famous, Hokusai was a painter of fine brushwork on silk and paper. Mount Fuji, the sacred peak he returned to again and again, presides here over the Seven Gods of Good Fortune — a beloved band of lucky deities who sail Japan's folklore bringing prosperity and joy. It is a wish for a happy life, set beneath the mountain Hokusai cherished above all others.",
       setting: "Hokusai is perhaps Japan's most celebrated artist; Fuji was his lifelong muse, the same mountain behind his legendary 'Great Wave.'",
       lic: "Public domain · The Nelson-Atkins Museum of Art, Kansas City · via Wikimedia Commons"
+    },
+    {
+      title: "The Oxbow",
+      artist: "Thomas Cole", year: "1836",
+      museum: "The Metropolitan Museum of Art, New York",
+      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Cole%20Thomas%20The%20Oxbow%20(The%20Connecticut%20River%20near%20Northampton%201836).jpg?width=1600",
+      alt: "A sweeping landscape split between dark stormy wilderness at left and a sunlit cultivated valley at right, where a broad river loops in an oxbow bend.",
+      blurb: "Cole splits the canvas in two — on the left a dark wilderness of storm-bent trees and torn sky; on the right a sunlit valley tamed into farms, the river curling into its famous oxbow. The founder of the Hudson River School was asking America a question: how much of this wild continent to clear, and how much to keep wild? Look closely and his tiny self-portrait sits at the seam, painting.",
+      setting: "The Connecticut River seen from Mount Holyoke, Massachusetts, in the clearing after a thunderstorm.",
+      lic: "Public domain · The Metropolitan Museum of Art, New York · via Wikimedia Commons"
     },
     {
       title: "Sunset, Canyon de Chelly",
