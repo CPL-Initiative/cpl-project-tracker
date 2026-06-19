@@ -24,7 +24,10 @@ const ROOT = new URL("..", import.meta.url).pathname;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const MIN_WIDTH = 900;          // skip thumbnails / tiny crops
-const PER_CATEGORY_CAP = 120;   // keep the candidate pool bounded; curate by hand after
+const PER_ROOT_CAP = 120;       // keep each artist/topic's contribution bounded
+const MAX_DEPTH = 1;            // recurse one level of subcategories (the masters
+                                // file under "Paintings by X / <decade|museum>")
+const SUBCAT_BUDGET = 60;       // max subcategories visited per root
 
 function stripHtml(s) {
   if (!s) return "";
@@ -35,17 +38,17 @@ function stripHtml(s) {
 }
 
 // A file is usable iff Commons declares it Public Domain or CC0. This is the
-// safety net: categories like "Craftsman architecture" hold modern CC-BY-SA
-// photos too — those get DROPPED here, only genuinely free-of-copyright files
-// (PD-Art, PD-US, PD-old, PD-USGov/NARA/HABS, CC0) survive.
+// safety net: categories like "California on photochrome prints" or "Gamble
+// House" hold modern CC-BY-SA photos too — those get DROPPED here; only
+// genuinely free-of-copyright files (PD-Art, PD-US, PD-old, PD-USGov/NARA/HABS,
+// CC0) survive.
 function isPublicDomain(ext) {
   const short = (ext.LicenseShortName && ext.LicenseShortName.value) || "";
   const code = (ext.License && ext.License.value) || "";
   const usage = (ext.UsageTerms && ext.UsageTerms.value) || "";
   const hay = (short + " " + code + " " + usage).toLowerCase();
   if (/cc[\s-]?by|cc[\s-]?sa|attribution|share[\s-]?alike|fair use|gfdl/.test(hay)) {
-    // CC-BY / CC-BY-SA / GFDL are free but NOT public domain — exclude.
-    if (!/public domain|cc0|cc[\s-]?zero/.test(hay)) return false;
+    if (!/public domain|cc0|cc[\s-]?zero/.test(hay)) return false; // CC-BY/SA/GFDL are free but NOT PD
   }
   return /public domain|cc0|cc[\s-]?zero|^pd|\bpd-|\bpd /.test(hay);
 }
@@ -72,14 +75,13 @@ async function apiGet(params) {
   }
 }
 
-async function pullCategory(cat) {
-  const out = [];
+// Files directly in ONE category title (e.g. "Category:Paintings by Edgar Payne").
+async function collectFiles(catTitle, push, enough) {
   let cont = undefined;
   do {
     const params = {
       action: "query", format: "json", formatversion: "1",
-      generator: "categorymembers",
-      gcmtitle: "Category:" + cat,
+      generator: "categorymembers", gcmtitle: catTitle,
       gcmtype: "file", gcmlimit: "200", gcmnamespace: "6",
       prop: "imageinfo",
       iiprop: "extmetadata|mediatype|url|size",
@@ -92,14 +94,13 @@ async function pullCategory(cat) {
     for (const p of Object.values(pages)) {
       const ii = p.imageinfo && p.imageinfo[0];
       if (!ii || !ii.extmetadata) continue;
-      if (ii.mediatype !== "BITMAP") continue;             // paintings/photos, not vector drawings
+      if (ii.mediatype !== "BITMAP") continue;
       if ((ii.width || 0) < MIN_WIDTH) continue;
       if (!isPublicDomain(ii.extmetadata)) continue;
-      const ext = ii.extmetadata;
       const title = p.title;
-      if (/\b(detail|sketch|study|verso|frame|x-ray|infrared|signature)\b/i.test(title)) continue;
-      out.push({
-        category: cat,
+      if (/\b(detail|sketch|study|verso|reverse|frame|x-ray|infrared|signature|diagram|map)\b/i.test(title)) continue;
+      const ext = ii.extmetadata;
+      push({
         file: title.replace(/^File:/, ""),
         img: filePathUrl(title),
         license: stripHtml(ext.LicenseShortName && ext.LicenseShortName.value) || "Public domain",
@@ -108,15 +109,56 @@ async function pullCategory(cat) {
         object: stripHtml(ext.ObjectName && ext.ObjectName.value),
         credit: stripHtml(ext.Credit && ext.Credit.value).slice(0, 200),
         desc: stripHtml(ext.ImageDescription && ext.ImageDescription.value).slice(0, 240),
-        width: ii.width, height: ii.height,
-        page: ii.descriptionurl,
+        width: ii.width, height: ii.height, page: ii.descriptionurl,
       });
-      if (out.length >= PER_CATEGORY_CAP) return { cat, items: out, capped: true };
+      if (enough()) return;
     }
     cont = data && data.continue && data.continue.gcmcontinue;
-    await sleep(250);
+    await sleep(150);
   } while (cont);
-  return { cat, items: out, capped: false };
+}
+
+async function listSubcats(catTitle) {
+  const subs = [];
+  let cont = undefined;
+  do {
+    const params = {
+      action: "query", format: "json", formatversion: "1",
+      list: "categorymembers", cmtitle: catTitle,
+      cmtype: "subcat", cmlimit: "200",
+    };
+    if (cont) params.cmcontinue = cont;
+    const data = await apiGet(params);
+    for (const m of (data.query && data.query.categorymembers) || []) subs.push(m.title);
+    cont = data && data.continue && data.continue.cmcontinue;
+    await sleep(150);
+  } while (cont);
+  return subs;
+}
+
+// One root → its direct files + one level of subcategory files, deduped, capped.
+async function pullRoot(root, seenFiles) {
+  const items = [];
+  const visited = new Set();
+  const enough = () => items.length >= PER_ROOT_CAP;
+  const push = (it) => { if (!seenFiles.has(it.file)) { seenFiles.add(it.file); items.push({ ...it, category: root }); } };
+  const queue = [["Category:" + root, 0]];
+  let subcatBudget = SUBCAT_BUDGET;
+  while (queue.length && !enough()) {
+    const [cat, depth] = queue.shift();
+    if (visited.has(cat)) continue;
+    visited.add(cat);
+    await collectFiles(cat, push, enough);
+    if (depth < MAX_DEPTH && subcatBudget > 0 && !enough()) {
+      let subs = [];
+      try { subs = await listSubcats(cat); } catch { /* ignore */ }
+      for (const s of subs) {
+        if (subcatBudget <= 0) break;
+        if (!visited.has(s)) { queue.push([s, depth + 1]); subcatBudget--; }
+      }
+    }
+  }
+  return items;
 }
 
 async function doSource() {
@@ -124,23 +166,19 @@ async function doSource() {
   const cats = cfg.categories || [];
   const all = [];
   const summary = [];
-  const seen = new Set();
+  const seenFiles = new Set();
   for (const cat of cats) {
-    let r;
-    try { r = await pullCategory(cat); }
-    catch (e) { summary.push({ category: cat, count: 0, error: String(e.message || e) }); continue; }
-    let kept = 0;
-    for (const it of r.items) {
-      if (seen.has(it.file)) continue;
-      seen.add(it.file); all.push(it); kept++;
-    }
-    summary.push({ category: cat, count: kept, capped: r.capped });
-    console.log(`  ${String(kept).padStart(4)}  ${cat}${r.capped ? "  (capped)" : ""}`);
+    let items;
+    try { items = await pullRoot(cat, seenFiles); }
+    catch (e) { summary.push({ category: cat, count: 0, error: String(e.message || e) }); console.log(`  ERR   ${cat}: ${e.message || e}`); continue; }
+    all.push(...items);
+    summary.push({ category: cat, count: items.length, capped: items.length >= PER_ROOT_CAP });
+    console.log(`  ${String(items.length).padStart(4)}  ${cat}${items.length >= PER_ROOT_CAP ? "  (capped)" : ""}`);
   }
   all.sort((a, b) => a.category.localeCompare(b.category) || a.file.localeCompare(b.file));
   const payload = {
     _generated: new Date().toISOString(),
-    _note: "Verified public-domain candidates from Wikimedia Commons. Curate by hand into first_light.js; write OUR OWN blurb/setting/alt per entry. Filenames are EXACT (do not edit).",
+    _note: "Verified public-domain candidates from Wikimedia Commons (direct + 1 level of subcategories). Curate by hand into tools/first_light_selection.json; write OUR OWN blurb/setting/alt per entry. Filenames are EXACT (do not edit).",
     total: all.length,
     by_category: summary,
     candidates: all,
@@ -151,10 +189,7 @@ async function doSource() {
 
 async function checkUrl(url) {
   try {
-    const res = await fetch(url, {
-      headers: { "User-Agent": UA, "Range": "bytes=0-2047" },
-      redirect: "follow",
-    });
+    const res = await fetch(url, { headers: { "User-Agent": UA, "Range": "bytes=0-2047" }, redirect: "follow" });
     const ct = res.headers.get("content-type") || "";
     return { url, status: res.status, ok: (res.status === 200 || res.status === 206) && /^image\//i.test(ct), contentType: ct };
   } catch (e) {
