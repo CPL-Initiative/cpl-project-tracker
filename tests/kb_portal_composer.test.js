@@ -76,6 +76,17 @@ check("polishPrompt pins the frontmatter contract", /last_updated: 2026-06-19/.t
 check("polishPrompt carries the don't-invent-facts guard", /do NOT invent/i.test(pp));
 check("polishPrompt includes the author draft + section", pp.includes("draft text") && pp.includes("Methodology"));
 
+// ── portal shell: back-to-tracker link ──
+// The portal runs inside the dashboard's iframe; the back link MUST target _top so
+// it navigates the whole tab, not the iframe (which would nest the dashboard inside
+// itself). Guard that subtle invariant + the right href.
+const idxHtml = fs.readFileSync("kb-portal/index.html", "utf8");
+const backTag = (idxHtml.match(/<a[^>]*id="back-to-tracker"[^>]*>/) || [])[0] || "";
+check("portal has a back-to-tracker link", !!backTag);
+check('back-to-tracker uses target="_top" (escapes the iframe)', /target="_top"/.test(backTag));
+check("back-to-tracker points at the project tracker",
+  /href="https:\/\/cpl-initiative\.github\.io\/cpl-project-tracker\/"/.test(backTag));
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);
