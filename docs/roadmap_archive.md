@@ -26,6 +26,27 @@ Session-25 strategic queue, and the most-recent session narrative, see
 
 ---
 
+## Archived session narrative — Session 62 (SkyLion, moved out Session 64)
+
+### Session 62 — SkyLion: First Light reflections digest + CCR synonym pairings (2026-06-18)
+
+Two code-only PRs. **#460** — First Light **local-day painting rotation** (no
+day-to-day repeats) + the **weekly reflections digest builder**
+(`reflections/build_reflections_digest.py` + README): reads the anonymous
+write-only `cpl_reflections` via the **service role**, renders per-ISO-week
+Obsidian "musings" — output **gitignored here**, bound for the **private
+`cpl-knowledge-base` vault** (a sibling session is wiring the weekly GitHub Action
+there; needs Sam to add `SUPABASE_SERVICE_KEY` on that repo). **#461** — CCR
+Suggested-merges **synonym-map growth** (ECE/EMT/CNA/HVAC/LVN; +13 ids into
+multi-member groups, no over-merge) + an ambiguity validator
+`kb/_synonym_candidate_dryrun.py` (rejected `cis`/`cd`/`ma`). Also re-installed the
+canonical stop-hook over a stale container copy (a squash-merge `noreply@github.com`
+false-positive). Full story: `docs/first_light_lessons.md` +
+`docs/ccr_cluster_cleanup_lessons.md` (S62); new reflections-digest playbook KB
+note + the synonym note extended.
+
+---
+
 ## Completed roadmap rows (DONE / N-A / superseded)
 
 These are the shipped phases. The still-open rows stayed in CLAUDE.md §11 Roadmap.

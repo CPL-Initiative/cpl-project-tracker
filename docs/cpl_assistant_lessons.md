@@ -6,7 +6,7 @@ artifacts:
   - cpl_chat.js (front-end chat panel — static asset)
   - chatbox/supabase/functions/cpl-chat/index.ts (captured live Edge Function source)
   - chatbox/README.md (deploy mechanics + request/response contract)
-  - "Supabase Edge Function cpl-chat (project hvuwhnbuahrtptokpqfh) — v14 ACTIVE, verify_jwt:false"
+  - "Supabase Edge Function cpl-chat (project hvuwhnbuahrtptokpqfh) — v15 ACTIVE, verify_jwt:false (model claude-sonnet-4-6)"
   - docs/kb-notes/cpl-chatbox-integration-scope.md (the Phase-0 scope/plan)
   - docs/kb-notes/playbook-deploy-shared-supabase-edge-function.md (the durable redeploy procedure)
 related:
@@ -128,3 +128,84 @@ markdown for RAG-readiness, and confirm the GLOBAL-swap decision before any data
 op. Until then, Phase 1 stands complete and live; the Session-26 strategic queue
 (KPI reorder, student-eligibility counts, contacts panel, EACR↔CER, project→
 activity) + Excel-retirement P5 are the other open lanes.
+
+---
+
+## Session 64 (Bruh Startripper) — 2026-06-19 — the retired-model 502 + the CCR/CER kickoff
+
+### (a) What was learned / done this checkpoint
+
+**The CPL Assistant went dark with a 502 on every turn; root cause was a retired
+model id.** The shared `cpl-chat` function called **`claude-sonnet-4-20250514`**
+(Sonnet 4.0), which **Anthropic retired 2026-06-15** — so the Anthropic API 404'd and
+the function's `!anthropicRes.ok` guard returned 502. Diagnosis was ~2 min of
+read-only work: `get_logs` showed **fast (~1–1.5 s) POST→502 + healthy OPTIONS→204**
+(a fast downstream failure, not a boot error or timeout), the source emits 502 at
+exactly one branch (the Anthropic `!ok`), and the `claude-api` skill's retired-models
+table confirmed the id was dead.
+
+- **Fix (PR #471, MERGED + LIVE):** swapped to **`claude-sonnet-4-6`** (active Sonnet,
+  the documented drop-in). One-token change — the function already streams and uses no
+  thinking/sampling/prefill params, and the SSE event shapes it parses are unchanged
+  across Claude 4.x. **Deployed live as `cpl-chat` v15** via the Supabase MCP,
+  `verify_jwt` preserved `false`. Restored both the dashboard tab AND the production
+  `map.rccd.edu` widget (same shared function). Swept the repo — no other feature on a
+  retired id (report/portal gens = `claude-sonnet-4-5-20250929` active; quickstart =
+  Haiku 4.5 active).
+- New durable note: **`docs/kb-notes/playbook-edge-function-502-retired-model.md`**.
+
+**Then a strategy session with Sam kicked off a major new workstream** (scope doc
+**PR #472, MERGED**): turn this assistant into (1) the **CCR/CER-grounded
+recommendation reference** and (2) a **real-time-data benchmark** for the imminent MAP
+Student Portal bot, + a per-college **demand signal** on the college CPL Landing Sites.
+Full scope + locked decisions: **`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`**.
+
+### Patterns that worked / things worth remembering
+
+- **A shared-function 502 → suspect a retired model id FIRST** (fast POST-only 502 +
+  healthy OPTIONS is the tell). Invoke the `claude-api` skill to confirm active vs
+  retired — don't trust memory on model ids.
+- **Diagnose-fix-verify through the Supabase MCP.** The agent egress policy blocked a
+  direct `curl` to the Supabase host, but `get_logs` / `deploy_edge_function` /
+  `execute_sql` all work over MCP; Sam browser-smoke-tested the live result.
+- **`chat_interactions` is write-only-to-public by design** — when you analyze usage,
+  pull aggregates (counts, topic_match, distinct sessions), never dump raw question
+  text (it can contain whatever a visitor typed).
+- The **role reframe** matters: this assistant is *not* the public student face (the
+  portal is) — it's the **benchmark + CCR/CER recommender**, which softens the
+  RAG-corpus-re-point urgency (still worth doing — the 41 docs are private-vault-sourced
+  and reachable via the public widget; folded into M1).
+
+### (b) Current state
+
+- **`cpl-chat` v15 ACTIVE**, `verify_jwt:false`, model `claude-sonnet-4-6`. Assistant
+  live + answering (Sam confirmed "working great"). Corpus unchanged (41 private-vault
+  docs + live KPIs + 2,397 exhibits + 122 college profiles).
+- **CCR/CER workstream: scoped, not built.** Decisions D1–D5 locked; build ladder
+  (ETL → M1 → M3 → M2) in the scope doc. Sam green-lit "kick it off" → the ETL is the
+  unblocked first build.
+- Usage so far (pre-promotion): 32 logged questions / 16 sessions / avg ~352 out-tokens
+  (21 of 32 were topic/college-specific). `chat_analysis` table exists but is **empty**
+  — the natural substrate for the M3 demand stamp.
+
+### (c) Strategic roadmap
+
+The scope doc supersedes the old Phase 2/3 framing in the Session-26 section above:
+- **ETL** — slim CCR (`unified_courses_data.js`) + CER (`credential_reference_data.js`)
+  + adoption (`statewide_prescriptive.js` / `kb/coci_articulations.json`) → **shared
+  Supabase tables** (extend the daily cron). *No live bot change — start here.*
+- **M1** — wire those into `cpl-chat`'s retrieval + recommendation synthesis; re-point
+  the RAG corpus (D5). Careful redeploy of the SHARED function.
+- **M3** — demand stamp (college, credential, `unmet`, adoption_target) → demand table;
+  privacy ADR first; per-college panel on the CPL Landing Site (aggregate, suppressed).
+- **M2** — benchmark battery vs the portal bot (BLOCKED on portal-bot access).
+- **Opportunity:** the richer **MAP Custom Reports** feed (`fetch_custom_report.py`, 9
+  cat / 151 fields) — incl. **College Contacts → coordinator routing** — behind a
+  public/coordinator-only/off-limits field classification.
+
+### (d) Next concrete step
+
+Build the **ETL** (CCR/CER/adoption → shared Supabase tables). It's green-lit, touches
+nothing live, and is the foundation M1/M2/M3 all read from. Confirm Sam's 3 open
+decisions (portal-bot access, landing-site mechanics, Custom Reports field
+classification) before the M1 redeploy. See `docs/session_65_handoff.md`.

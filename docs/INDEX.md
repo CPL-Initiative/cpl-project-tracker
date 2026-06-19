@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-19 (Session 63 — SkyGate: the KB Portal — transplant #464 + login-gated Knowledge Base tab #465 + New-doc composer #466/#467 + attachment upload #468; NEW kb_portal_lessons + 2 KB notes: playbook-embed-auth-gated-bundle-as-dashboard-tab + methodology-browser-doc-capture-to-claude-and-github + session_64_handoff)
+updated: 2026-06-19 (Session 64 — Startripper: the retired-model 502 fix #471 [cpl-chat v15, claude-sonnet-4-6] + the CCR/CER recommender kickoff #472; NEW playbook-edge-function-502-retired-model + cpl-assistant-ccr-cer-recommendation-scope KB notes + session_65_handoff)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -118,6 +118,8 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Playbook — Digest an anonymous write-only table into a private vault (service-role in CI, output never touches the public repo)](kb-notes/playbook-write-only-table-private-vault-digest.md) | playbook | published | 2026-06-18 | 2026-06-18 |
 | [Playbook — Embed a self-contained auth-gated bundle as a dashboard tab (iframe; directory-`src` + `target="_top"`)](kb-notes/playbook-embed-auth-gated-bundle-as-dashboard-tab.md) | playbook | published | 2026-06-19 | 2026-06-19 |
 | [Methodology — In-browser doc capture → Claude → tokenless GitHub write (extract-text-to-dodge-proxy-cap, vision blocks, create-new-file deep-link)](kb-notes/methodology-browser-doc-capture-to-claude-and-github.md) | methodology | published | 2026-06-19 | 2026-06-19 |
+| [Playbook — A live Edge Function 502 is often a RETIRED model id (diagnose via logs, fix via model swap)](kb-notes/playbook-edge-function-502-retired-model.md) | playbook | published | 2026-06-19 | 2026-06-19 |
+| [Scope — CPL Assistant CCR/CER-grounded recommendations + real-time benchmark + landing-site demand signal (D1–D5, build ladder, Custom Reports opportunity)](kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md) | scope | published | 2026-06-19 | 2026-06-19 |
 
 ---
 
@@ -134,7 +136,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes; **Session 23: #2 sidebar sub-links + #3 display-label map** | Session 23 (Bruh 23, 2026-05-31) |
 | [`engineering_practices_lessons.md`](engineering_practices_lessons.md) | Dev infra / testing / design system (committed jsdom harness + CI, stop-hook fix, `:root` tokens + `var()` rule, prototype-first) | **Session 32 (Busy Feynman, 2026-06-04) NEW** |
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G; **Session 37: orphan-tail discipline fallback #330 + FL-split CSR search/display #331** | **Session 37 (2026-06-09)** |
-| [`cpl_assistant_lessons.md`](cpl_assistant_lessons.md) | CPL Assistant (in-dashboard RAG chatbot tab; Phase 1 shipped + live `cpl-chat` v14) | **Session 26 (Bruh 26, 2026-06-01) NEW** |
+| [`cpl_assistant_lessons.md`](cpl_assistant_lessons.md) | CPL Assistant (in-dashboard RAG chatbot tab); **Session 64: the retired-model 502 fix (cpl-chat v15, `claude-sonnet-4-6`) + the CCR/CER recommender + benchmark + landing-site demand kickoff (scope #472)** | **Session 64 (Startripper, 2026-06-19)** |
 | [`cpl_funding_lessons.md`](cpl_funding_lessons.md) | CPL Implementation Funding tab — full arc #352–#368: shell → data/renderer → what-if sandbox → shares-first rev2 workbook → P2/P3 actuals (ratified ADR) → roster edits + no-scroll rule. Scope: [`funding_priority_metrics_scope.md`](funding_priority_metrics_scope.md); own handoff: [`cpl_funding_handoff.md`](cpl_funding_handoff.md) | **2026-06-11 (13 PRs, Rule-8 checkpointed)** |
 | [`tmc_builder_lessons.md`](tmc_builder_lessons.md) | TMC Builder tab — interactive ADT submission (fixed C-ID left / per-college COCI-dropdown right, C-ID auto-match, Total Units, Save/Resume + export); Session 60 list-first + GE companion; **Session 61: the per-college approved-ADT overlay from the COCI program export #458 (`tmc_college_adts.js`, 3,238 pairs/115 colleges, UCTP as own instance, the taxonomy ADR)**. Data model in [`kb-notes/reference-tmc-adt-data-model.md`](kb-notes/reference-tmc-adt-data-model.md) | **Session 61 (2026-06-18)** |
 | [`first_light_lessons.md`](first_light_lessons.md) | First Light — daily PD plein air greeting LIVE (#394/#396: gallery reveal, read-aloud, anonymous write-only reflections) + the theme spec (prototype v1.4.2 BLESSED: derived AA tokens, glass=chrome/opaque=data, solid uniform chips); retheme shipped S49; **S62: local-day painting rotation + the weekly reflections digest #460** | **Session 62 (2026-06-18)** |
@@ -216,6 +218,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 61 → 62 | Bruh Skymarker: the per-college approved-ADT overlay from the COCI program export #458 (`tmc_college_adts.js`, 3,238 pairs/115 colleges/99.9% by TOP code, UCTP own instance, the taxonomy ADR) → faculty-verify the drafts + the `college_short_names.json` taxonomy follow-up | [`session_62_handoff.md`](session_62_handoff.md) |
 | 62 → 63 | SkyLion: First Light reflections digest #460 + CCR synonym pairings #461 (candidate validator) → morphological-variant CCR pass (Med Assisting/Assistant) + faculty-verify the TMC drafts | [`session_63_handoff.md`](session_63_handoff.md) |
 | 63 → 64 | SkyGate: the KB Portal end-to-end — transplant #464 + login-gated Knowledge Base tab #465 + New-doc composer #466/#467 + attachment upload #468 → smoke-test the 5 attachment types (fix any esm.sh path), the bundle-divergence decision, then data/CCR + TMC lanes | [`session_64_handoff.md`](session_64_handoff.md) |
+| 64 → 65 | Startripper: the retired-model 502 fix #471 (`cpl-chat` v15, `claude-sonnet-4-6`) + the CCR/CER recommender + real-time benchmark + landing-site demand kickoff (scope #472) → build the CCR/CER/adoption ETL into shared Supabase, then M1 | [`session_65_handoff.md`](session_65_handoff.md) |
 
 ---
 
