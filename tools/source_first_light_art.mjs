@@ -191,31 +191,45 @@ async function doSource() {
   console.log(`\nSOURCED ${all.length} public-domain candidates across ${cats.length} categories.`);
 }
 
-async function checkUrl(url) {
-  try {
-    const res = await fetch(url, { headers: { "User-Agent": UA, "Range": "bytes=0-2047" }, redirect: "follow" });
-    const ct = res.headers.get("content-type") || "";
-    return { url, status: res.status, ok: (res.status === 200 || res.status === 206) && /^image\//i.test(ct), contentType: ct };
-  } catch (e) {
-    return { url, status: 0, ok: false, contentType: "", error: String(e.message || e) };
-  }
+// Verify liveness via the Commons API (does the File: page exist?) rather than
+// fetching the actual image bytes. Hammering the CDN with 80+ image GETs in a
+// loop trips Commons' per-IP rate limit (HTTP 429) even though every file is
+// fine — a false alarm. The API confirms existence in a couple of batched
+// calls; if the file exists, the browser's Special:FilePath/<name> request
+// resolves to the image (and each visitor only loads ONE image per day anyway).
+function fileTitleFromImg(url) {
+  const m = url.match(/Special:FilePath\/([^?]+)/);
+  return m ? "File:" + decodeURIComponent(m[1]) : null;
 }
 
 async function doVerify() {
   const src = fs.readFileSync(ROOT + "first_light.js", "utf8");
   const urls = [...src.matchAll(/img:\s*"([^"]+)"/g)].map((m) => m[1]);
+  const items = urls.map((u) => ({ url: u, title: fileTitleFromImg(u) }));
   const results = [];
   let broken = 0;
-  for (const url of urls) {
-    const r = await checkUrl(url);
-    results.push(r);
-    if (!r.ok) broken++;
-    console.log(`${r.ok ? "OK  " : "DEAD"}  ${r.status}  ${url}`);
-    await sleep(120);
+  for (let i = 0; i < items.length; i += 50) {
+    const batch = items.slice(i, i + 50);
+    const data = await apiGet({
+      action: "query", format: "json", formatversion: "2",
+      titles: batch.map((b) => b.title).filter(Boolean).join("|"),
+      prop: "imageinfo", iiprop: "url|mediatype",
+    });
+    const norm = {};
+    for (const n of (data.query && data.query.normalized) || []) norm[n.from] = n.to;
+    const exists = {};
+    for (const p of (data.query && data.query.pages) || []) exists[p.title] = !p.missing && !!(p.imageinfo && p.imageinfo.length);
+    for (const b of batch) {
+      const ok = exists[norm[b.title] || b.title] === true;
+      results.push({ url: b.url, title: b.title, ok });
+      if (!ok) broken++;
+      console.log(`${ok ? "OK  " : "MISSING"}  ${b.title}`);
+    }
+    await sleep(400);
   }
   fs.writeFileSync(ROOT + "tools/first_light_verify.json",
-    JSON.stringify({ _generated: new Date().toISOString(), total: urls.length, broken, results }, null, 2));
-  console.log(`\nVERIFY: ${urls.length - broken}/${urls.length} image URLs live; ${broken} broken.`);
+    JSON.stringify({ _generated: new Date().toISOString(), total: items.length, broken, results }, null, 2));
+  console.log(`\nVERIFY: ${items.length - broken}/${items.length} files exist on Commons; ${broken} missing.`);
   return broken;
 }
 
