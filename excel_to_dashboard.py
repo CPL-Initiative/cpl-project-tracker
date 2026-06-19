@@ -10391,13 +10391,17 @@ def main():
         attach_url = project_config.get("attachments_url", "")
         dash_title = f"{proj_title} &mdash; Project Dashboard"
 
-        # Replace <title> tag
+        # Replace <title> tag + masthead <h1> with the COBI brand. Decoupled
+        # from proj_title (which still names the Word reports) so the dashboard
+        # masthead reads "COBI" while the project keeps its own title elsewhere.
+        # The rotating "Mamba" subtitle + 8→24 wink are layered on at runtime by
+        # cobi_brand.js (static, regen-proof).
         import re
-        html = re.sub(r'<title>[^<]*</title>', f'<title>{proj_title} — Project Dashboard</title>', html)
+        html = re.sub(r'<title>[^<]*</title>', "<title>COBI — Chancellor's Office Business Intelligence</title>", html)
         # Replace <h1> in header
         html = re.sub(
             r'<h1>[^<]*</h1>',
-            f'<h1>{proj_title} &mdash; Project Dashboard</h1>',
+            '<h1>COBI</h1>',
             html,
             count=1
         )
@@ -10468,7 +10472,7 @@ def main():
             insert_pos = subtitle_end + len('</div>')
             html = html[:insert_pos] + '\n        ' + proj_info_html + html[insert_pos:]
 
-        print(f"  Updated dashboard title: {proj_title}")
+        print("  Updated dashboard title: COBI — Chancellor's Office Business Intelligence")
 
         # ── Inject attachments URL from Excel config into JS global ──
         att_script_marker = '<script src="dashboard_filters.js">'
