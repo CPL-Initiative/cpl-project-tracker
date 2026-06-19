@@ -23,6 +23,23 @@ export const REPO_REF   = "main";
 export const RAW_BASE   = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${REPO_REF}`;
 export const TREE_API   = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/${REPO_REF}?recursive=1`;
 
+// ── "New doc" composer (sign-in-gated authoring panel) ──
+// New docs are committed to the SAME public KB repo the portal reads. The composer
+// produces a GitHub "create new file" deep-link to this branch; the author commits
+// there AS THEMSELVES (commit-direct or open-a-PR — their choice in GitHub's
+// editor). No write token ever lives in this app — that's the Tier-1 posture.
+export const WRITE_BRANCH = "main";
+
+// The optional "Polish with Claude" step routes through the dashboard's shared
+// Cloudflare Worker proxy (the same one the Custom Report generator uses). The
+// Anthropic key lives ONLY on the Worker, which gates by an origin allowlist that
+// already includes cpl-initiative.github.io — so the portal calls it with no
+// secret of its own. Drafts are destined for the PUBLIC KB, so sending them to
+// Claude for formatting carries no privacy concern. Leave PROXY_URL "" to hide
+// the Polish button (Copy / Download / Open-in-GitHub still work without it).
+export const PROXY_URL    = "https://cpl-proxy.slee-548.workers.dev";
+export const POLISH_MODEL = "claude-sonnet-4-5-20250929";
+
 // Who may sign in (display/UX only — the real gate is enforced in Supabase:
 // signups disabled + only these users provisioned). map@rccd.edu is intentionally
 // NOT here, since that inbox has access to private CPLBrain content.
