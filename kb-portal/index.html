@@ -13,10 +13,16 @@
     <h1>CPL Knowledge Base</h1>
     <div class="sub">California Community Colleges • MAP Initiative • Team Portal</div>
   </div>
-  <div id="session-box" class="session-box" style="display:none">
-    <span id="session-email" class="session-email"></span>
-    <button id="btn-new-doc" class="btn btn-ghost btn-sm" title="Draft a new Knowledge Base document">✍️ New doc</button>
-    <button id="btn-signout" class="btn btn-ghost btn-sm">Sign out</button>
+  <div class="header-right">
+    <!-- target="_top" so it escapes the dashboard iframe (and works standalone too). -->
+    <a id="back-to-tracker" class="btn btn-ghost btn-sm" target="_top"
+       href="https://cpl-initiative.github.io/cpl-project-tracker/"
+       title="Back to the CPL Project Tracker dashboard">← Dashboard</a>
+    <div id="session-box" class="session-box" style="display:none">
+      <span id="session-email" class="session-email"></span>
+      <button id="btn-new-doc" class="btn btn-ghost btn-sm" title="Draft a new Knowledge Base document">✍️ New doc</button>
+      <button id="btn-signout" class="btn btn-ghost btn-sm">Sign out</button>
+    </div>
   </div>
 </header>
 
