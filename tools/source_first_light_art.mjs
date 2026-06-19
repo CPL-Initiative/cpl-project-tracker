@@ -25,9 +25,17 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const MIN_WIDTH = 900;          // skip thumbnails / tiny crops
 const PER_ROOT_CAP = 120;       // keep each artist/topic's contribution bounded
-const MAX_DEPTH = 1;            // recurse one level of subcategories (the masters
-                                // file under "Paintings by X / <decade|museum>")
-const SUBCAT_BUDGET = 60;       // max subcategories visited per root
+const SUBCAT_BUDGET = 40;       // max subcategories visited per root
+const SUBCAT_CONCURRENCY = 6;   // parallel subcategory fetches (the masters file
+                                // works under per-museum/per-decade subcats)
+
+// Bounded-concurrency map — keeps Commons happy while cutting wall time ~6x.
+async function mapPool(items, n, fn) {
+  const q = items.slice();
+  const workers = [];
+  for (let i = 0; i < n; i++) workers.push((async () => { while (q.length) await fn(q.shift()); })());
+  await Promise.all(workers);
+}
 
 function stripHtml(s) {
   if (!s) return "";
@@ -114,7 +122,7 @@ async function collectFiles(catTitle, push, enough) {
       if (enough()) return;
     }
     cont = data && data.continue && data.continue.gcmcontinue;
-    await sleep(150);
+    await sleep(60);
   } while (cont);
 }
 
@@ -131,34 +139,30 @@ async function listSubcats(catTitle) {
     const data = await apiGet(params);
     for (const m of (data.query && data.query.categorymembers) || []) subs.push(m.title);
     cont = data && data.continue && data.continue.cmcontinue;
-    await sleep(150);
+    await sleep(60);
   } while (cont);
   return subs;
 }
 
-// One root → its direct files + one level of subcategory files, deduped, capped.
+// One root → its direct files + one level of subcategory files (fetched
+// concurrently), deduped, capped. Recursing one level lets container categories
+// (e.g. "Paintings by Claude Monet", which files works under per-museum subcats)
+// resolve.
 async function pullRoot(root, seenFiles) {
   const items = [];
-  const visited = new Set();
   const enough = () => items.length >= PER_ROOT_CAP;
   const push = (it) => { if (!seenFiles.has(it.file)) { seenFiles.add(it.file); items.push({ ...it, category: root }); } };
-  const queue = [["Category:" + root, 0]];
-  let subcatBudget = SUBCAT_BUDGET;
-  while (queue.length && !enough()) {
-    const [cat, depth] = queue.shift();
-    if (visited.has(cat)) continue;
-    visited.add(cat);
-    await collectFiles(cat, push, enough);
-    if (depth < MAX_DEPTH && subcatBudget > 0 && !enough()) {
-      let subs = [];
-      try { subs = await listSubcats(cat); } catch { /* ignore */ }
-      for (const s of subs) {
-        if (subcatBudget <= 0) break;
-        if (!visited.has(s)) { queue.push([s, depth + 1]); subcatBudget--; }
-      }
-    }
+  const rootTitle = "Category:" + root;
+  await collectFiles(rootTitle, push, enough);
+  if (!enough()) {
+    let subs = [];
+    try { subs = (await listSubcats(rootTitle)).slice(0, SUBCAT_BUDGET); } catch { /* ignore */ }
+    await mapPool(subs, SUBCAT_CONCURRENCY, async (s) => {
+      if (enough()) return;
+      await collectFiles(s, push, enough);
+    });
   }
-  return items;
+  return items.slice(0, PER_ROOT_CAP);
 }
 
 async function doSource() {
