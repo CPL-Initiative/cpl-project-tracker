@@ -76,14 +76,39 @@ python3 -m http.server 8000
 # open http://localhost:8000/kb-portal/  (add this URL to Supabase Redirect URLs)
 ```
 
+## ✍️ New-doc composer (sign-in gated)
+
+Signed-in team members get a **✍️ New doc** button (header) that opens a composer
+for adding a document to the KB:
+
+1. **Draft** — title, target section, and content (Markdown, or just pasted notes).
+2. **✨ Polish with Claude** *(optional)* — formats the draft into clean,
+   KB-convention Markdown (frontmatter + headings), preserving your facts and
+   inventing nothing. Routes through the dashboard's shared Cloudflare Worker proxy
+   (the same one Custom Reports uses); the Anthropic key lives only on the Worker.
+3. **Commit** — **Open in GitHub →** deep-links into GitHub's *create-new-file*
+   editor with the path + content prefilled; you commit there **as yourself**
+   (directly or as a PR). **Copy Markdown** / **Download .md** are always available
+   (and are the fallback when a long doc would overflow the prefill URL).
+
+This is a **Tier-1 convenience capture**, deliberately *not* a write service: no
+GitHub token ever lives in this static app, so the security posture matches the
+read side — your own GitHub identity does the write, and review happens in GitHub.
+For substantial authoring, a Claude Code session on the repo remains the power
+tool (judgment, cross-linking, the public-vs-private-vault call, multi-file PRs).
+
+> Drafts here are destined for the **public** KB, so the Polish step sending them
+> to Claude carries no privacy concern. Don't paste private/CPLBrain-only material.
+
 ## Files
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Login view + reader shell |
-| `app.js` | Supabase magic-link auth, live nav from the repo tree, sanitized markdown render |
-| `config.js` | Supabase URL + publishable key, repo source, allowlist (display), nav sections |
-| `styles.css` | MAP-branded styling (login + reader) |
+| `index.html` | Login view + reader shell + the New-doc composer modal |
+| `app.js` | Supabase magic-link auth, live nav from the repo tree, sanitized markdown render, composer wiring (Claude polish + GitHub deep-link) |
+| `composer_util.js` | Pure composer helpers (slug / frontmatter / `composeMarkdown` / GitHub new-file URL / polish prompt) on `window.KBComposer` — classic script, unit-tested in Node (`tests/kb_portal_composer.test.js`) |
+| `config.js` | Supabase URL + publishable key, repo source, allowlist (display), nav sections, the Claude proxy URL + model, and the write branch |
+| `styles.css` | MAP-branded styling (login + reader + composer) |
 
 Rendering uses `marked` for Markdown and `DOMPurify` to sanitize output (defense
 in depth, even though the source is our own public repo), both from `esm.sh`.

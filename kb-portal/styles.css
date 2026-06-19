@@ -137,6 +137,41 @@ header.brand .sub { font-size: 0.82rem; opacity: 0.85; }
 .markdown-body th, .markdown-body td { border: 1px solid var(--map-border); padding: 6px 10px; text-align: left; }
 .markdown-body th { background: #eef2f8; }
 
+/* ── New-doc composer (modal) ── */
+.composer-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(12, 22, 40, 0.55);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 28px 16px; overflow-y: auto;
+}
+.composer {
+  background: var(--map-card); border: 1px solid var(--map-border);
+  border-radius: 10px; width: 100%; max-width: 760px; padding: 22px 24px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+.composer-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.composer-head h2 { margin: 0; color: var(--map-blue); font-size: 1.2rem; }
+.composer-x {
+  background: transparent; border: none; font-size: 1.05rem; cursor: pointer;
+  color: var(--map-muted); padding: 4px 9px; border-radius: 6px; line-height: 1;
+}
+.composer-x:hover { background: #eef2f8; color: var(--map-text); }
+.composer-intro { margin: 6px 0 16px; }
+.composer-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.composer-row .field { flex: 1 1 220px; }
+.composer input[type="text"], .composer select, .composer textarea {
+  width: 100%; padding: 10px 12px; font-size: 0.95rem;
+  border: 1px solid var(--map-border); border-radius: 6px;
+  font-family: inherit; background: #fff; color: var(--map-text);
+}
+.composer textarea {
+  resize: vertical; min-height: 180px; line-height: 1.45;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.86rem;
+}
+.composer-actions { margin-top: 6px; }
+.composer-foot { margin: 14px 0 0; font-size: 0.8rem; }
+@media (max-width: 600px) { .composer { padding: 16px; } }
+
 /* ── responsive ── */
 @media (max-width: 720px) {
   .reader { grid-template-columns: 1fr; }

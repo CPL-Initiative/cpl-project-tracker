@@ -15,6 +15,7 @@ import DOMPurify        from "https://esm.sh/dompurify@3.1.6";
 import {
   SUPABASE_URL, SUPABASE_ANON, RAW_BASE, TREE_API,
   SECTIONS, TOP_LEVEL_DOCS, FALLBACK_TREE,
+  REPO_OWNER, REPO_NAME, WRITE_BRANCH, PROXY_URL, POLISH_MODEL,
 } from "./config.js";
 
 const sb = createClient(SUPABASE_URL, SUPABASE_ANON, {
@@ -227,5 +228,159 @@ function markActive(path) {
     a.classList.toggle("active", a.dataset.path === path);
   }
 }
+
+// ───────────────────────────── New-doc composer ─────────────────────
+// Sign-in-gated authoring panel: draft → (optional) Claude polish → GitHub
+// "create new file" deep-link. No write token in the client — the author commits
+// as themselves on GitHub. Pure string/Markdown/URL logic lives in
+// window.KBComposer (composer_util.js) so it stays unit-testable.
+const KBC = window.KBComposer;
+let filenameTouched = false;
+
+function composerStatus(msg, kind) {
+  const el = $("composer-status");
+  if (!el) return;
+  if (!msg) { el.style.display = "none"; return; }
+  el.className = "status-banner " + (kind || "info");
+  el.textContent = msg;
+  el.style.display = "";
+}
+
+function populateComposerSections() {
+  const sel = $("composer-section");
+  if (!sel || sel.options.length) return;
+  for (const s of SECTIONS) {
+    const o = document.createElement("option");
+    o.value = s.dir; o.textContent = s.label;
+    sel.appendChild(o);
+  }
+  const top = document.createElement("option");
+  top.value = ""; top.textContent = "Top level (no folder)";
+  sel.appendChild(top);
+}
+
+function syncFilename() {
+  if (filenameTouched) return;
+  const t = $("composer-doc-title").value.trim();
+  $("composer-filename").value = t ? KBC.slugify(t) + ".md" : "";
+}
+
+function currentDocPath() {
+  const raw = $("composer-filename").value.trim() || $("composer-doc-title").value.trim();
+  return KBC.docPath($("composer-section").value, KBC.slugify(raw.replace(/\.md$/i, "")));
+}
+
+function currentMarkdown() {
+  return KBC.composeMarkdown({
+    title: $("composer-doc-title").value.trim() || "Untitled",
+    body: $("composer-body").value,
+  });
+}
+
+function openComposer() {
+  populateComposerSections();
+  composerStatus("");
+  $("composer-overlay").style.display = "";
+  $("composer-doc-title").focus();
+}
+function closeComposer() { $("composer-overlay").style.display = "none"; }
+
+async function polishWithClaude() {
+  const title = $("composer-doc-title").value.trim();
+  const body = $("composer-body").value.trim();
+  if (!body) { composerStatus("Add some content first.", "error"); return; }
+  if (!PROXY_URL) { composerStatus("Polish proxy not configured.", "error"); return; }
+  const btn = $("composer-polish");
+  btn.disabled = true;
+  composerStatus("✨ Asking Claude to format your draft…", "info");
+  try {
+    const prompt = KBC.polishPrompt({
+      title, body,
+      section: $("composer-section").selectedOptions[0]?.textContent || "",
+    });
+    const resp = await fetch(PROXY_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "anthropic-version": "2023-06-01" },
+      body: JSON.stringify({
+        model: POLISH_MODEL,
+        max_tokens: 8000,
+        messages: [{ role: "user", content: prompt }],
+      }),
+    });
+    if (!resp.ok) throw new Error("proxy " + resp.status + ": " + (await resp.text()).slice(0, 160));
+    const json = await resp.json();
+    const text = json?.content?.[0]?.text;
+    if (!text) throw new Error("unexpected response shape");
+    $("composer-body").value = KBC.stripCodeFences(text);
+    // If the author left the title blank, adopt the one Claude wrote into the frontmatter.
+    if (!title) {
+      const m = $("composer-body").value.match(/^title:\s*(.+)$/m);
+      if (m) { $("composer-doc-title").value = m[1].trim(); syncFilename(); }
+    }
+    composerStatus("✓ Formatted. Review it, then “Open in GitHub →” to commit.", "success");
+  } catch (err) {
+    composerStatus("Couldn't reach the formatter (" + (err.message || err) + "). You can still commit your draft as-is.", "error");
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function copyMarkdown(silent) {
+  const md = currentMarkdown();
+  if (!navigator.clipboard) { composerStatus("Clipboard unavailable — use Download .md instead.", "error"); return; }
+  navigator.clipboard.writeText(md).then(
+    () => { if (!silent) composerStatus("Markdown copied to clipboard.", "success"); },
+    () => composerStatus("Couldn't copy — select the text manually or use Download.", "error")
+  );
+}
+
+function downloadMarkdown() {
+  const path = currentDocPath();
+  const blob = new Blob([currentMarkdown()], { type: "text/markdown;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = path.split("/").pop();
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  composerStatus("Downloaded " + a.download + ".", "success");
+}
+
+function openInGitHub() {
+  if (!$("composer-doc-title").value.trim() && !$("composer-body").value.trim()) {
+    composerStatus("Add a title and some content first.", "error");
+    return;
+  }
+  const path = currentDocPath();
+  const { url, prefilled } = KBC.githubNewFileUrl({
+    owner: REPO_OWNER, repo: REPO_NAME, branch: WRITE_BRANCH,
+    path, content: currentMarkdown(),
+  });
+  window.open(url, "_blank", "noopener");
+  if (prefilled) {
+    composerStatus("Opened GitHub with " + path + " prefilled — commit there (directly or as a PR).", "success");
+  } else {
+    copyMarkdown(true);
+    composerStatus("Draft is long, so GitHub opened with just the path (" + path + "). Your Markdown is copied — paste it into the editor.", "info");
+  }
+}
+
+(function wireComposer() {
+  const on = (id, evt, fn) => { const el = $(id); if (el) el.addEventListener(evt, fn); };
+  on("btn-new-doc", "click", openComposer);
+  on("composer-close", "click", closeComposer);
+  on("composer-doc-title", "input", syncFilename);
+  on("composer-filename", "input", () => { filenameTouched = true; });
+  on("composer-polish", "click", polishWithClaude);
+  on("composer-github", "click", openInGitHub);
+  on("composer-copy", "click", () => copyMarkdown(false));
+  on("composer-download", "click", downloadMarkdown);
+  const ov = $("composer-overlay");
+  if (ov) ov.addEventListener("click", (e) => { if (e.target === ov) closeComposer(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && ov && ov.style.display !== "none") closeComposer();
+  });
+  // Hide the Polish button if no proxy is configured (Copy/Download/GitHub still work).
+  if (!PROXY_URL) { const p = $("composer-polish"); if (p) p.style.display = "none"; }
+})();
 
 init();

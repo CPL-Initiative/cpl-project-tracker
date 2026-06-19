@@ -15,6 +15,7 @@
   </div>
   <div id="session-box" class="session-box" style="display:none">
     <span id="session-email" class="session-email"></span>
+    <button id="btn-new-doc" class="btn btn-ghost btn-sm" title="Draft a new Knowledge Base document">✍️ New doc</button>
     <button id="btn-signout" class="btn btn-ghost btn-sm">Sign out</button>
   </div>
 </header>
@@ -85,6 +86,57 @@
   <a href="https://cpl-initiative.github.io/cpl-project-tracker/" target="_blank" rel="noopener">Project dashboard</a>
 </footer>
 
+<!-- ───────────────── New-doc composer (sign-in gated) ──────────────── -->
+<!-- Draft → optional Claude polish → GitHub "new file" deep-link. The author
+     commits as themselves on GitHub; no write token lives here (Tier 1). -->
+<div id="composer-overlay" class="composer-overlay" style="display:none" role="dialog" aria-modal="true" aria-labelledby="composer-title">
+  <div class="composer">
+    <div class="composer-head">
+      <h2 id="composer-title">✍️ Add a document to the Knowledge Base</h2>
+      <button id="composer-close" class="composer-x" type="button" aria-label="Close">✕</button>
+    </div>
+    <p class="muted composer-intro">
+      Draft a doc (or paste notes), optionally let Claude format it into clean
+      Knowledge-Base Markdown, then open it in GitHub to commit — directly or as a
+      pull request. It lands in the public <code>cpl-knowledge-base</code> repo, the
+      same content this portal reads.
+    </p>
+
+    <div class="field">
+      <label for="composer-doc-title">Title</label>
+      <input type="text" id="composer-doc-title" placeholder="e.g. Veteran CPL Intake Checklist" autocomplete="off">
+    </div>
+    <div class="composer-row">
+      <div class="field">
+        <label for="composer-section">Section</label>
+        <select id="composer-section"></select>
+      </div>
+      <div class="field">
+        <label for="composer-filename">File name</label>
+        <input type="text" id="composer-filename" placeholder="auto from title" spellcheck="false" autocomplete="off">
+      </div>
+    </div>
+    <div class="field">
+      <label for="composer-body">Content <span class="muted">— Markdown, or just paste your notes</span></label>
+      <textarea id="composer-body" rows="12" placeholder="Paste or type the document. Markdown welcome; ✨ Polish will tidy it into Knowledge-Base format with frontmatter."></textarea>
+    </div>
+
+    <div class="actions composer-actions">
+      <button id="composer-polish" class="btn btn-primary" type="button">✨ Polish with Claude</button>
+      <button id="composer-github" class="btn btn-primary" type="button">Open in GitHub →</button>
+      <button id="composer-copy" class="btn" type="button">Copy Markdown</button>
+      <button id="composer-download" class="btn" type="button">Download .md</button>
+    </div>
+    <div id="composer-status" class="status-banner info" style="display:none;margin-top:14px"></div>
+    <p class="muted composer-foot">
+      “Polish with Claude” sends your draft to Claude (via the project’s secure proxy) to format it —
+      use it for public KB content only. Nothing is committed until <em>you</em> do it in GitHub.
+    </p>
+  </div>
+</div>
+
+<!-- Pure composer helpers (classic script → window.KBComposer; unit-tested in Node). -->
+<script src="./composer_util.js"></script>
 <script type="module" src="./app.js"></script>
 </body>
 </html>
