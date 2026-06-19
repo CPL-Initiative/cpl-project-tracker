@@ -81,7 +81,10 @@ The whole ecosystem, end-to-end:
    curator notes, and a **per-college approved-ADT overlay** sourced from the
    COCI program export so each TMC shows whether that college already has the
    ADT approved — ✓ Approved / ⏳ in progress / ◐ teach-out — plus the statewide
-   approved-college count), and a **Pipeline** progress board.
+   approved-college count), a **Knowledge Base** tab (a sign-in-gated
+   portal over the public CPL Knowledge Base — read the curated docs, and
+   compose a new doc with optional file attachments + Claude polish, then
+   commit it to GitHub as yourself), and a **Pipeline** progress board.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,
    then `excel_to_dashboard.py` regenerates the dashboard HTML, exports the
