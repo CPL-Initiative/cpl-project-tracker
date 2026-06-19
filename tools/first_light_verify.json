@@ -1,505 +1,422 @@
 {
-  "_generated": "2026-06-19T23:21:16.485Z",
+  "_generated": "2026-06-19T23:25:11.473Z",
   "total": 83,
-  "broken": 68,
+  "broken": 0,
   "results": [
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20California%20poppy%20field.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:Granville Redmond - California poppy field.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Albert%20Bierstadt%2C%20Mount%20Corcoran%2C%20c.%201876-1877%2C%20NGA%20166428.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:Albert Bierstadt, Mount Corcoran, c. 1876-1877, NGA 166428.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ansel%20Adams%20-%20National%20Archives%2079-AA-G01.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:Ansel Adams - National Archives 79-AA-G01.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%2C%20Water%20Lilies%2C%20ca.%201915-1926.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:Claude Monet, Water Lilies, ca. 1915-1926.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Childe%20Hassam%20-%20Isle%20Of%20Shoals%20-%2066.2404%20-%20Hirshhorn%20Museum%20and%20Sculpture%20Garden.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:Childe Hassam - Isle Of Shoals - 66.2404 - Hirshhorn Museum and Sculpture Garden.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Constable%2C%20The%20White%20Horse%2C%201818-1819%2C%20NGA%201146.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:John Constable, The White Horse, 1818-1819, NGA 1146.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Mowers%20(When%20Hearts%20Beat%20as%20One)%20by%20Granville%20Redmond.JPG?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:The Mowers (When Hearts Beat as One) by Granville Redmond.JPG",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sierra%20Nevada%20Morning%20oil%201870%20Albert%20Bierstadt.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:Sierra Nevada Morning oil 1870 Albert Bierstadt.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ansel%20Adams%20-%20National%20Archives%2079-AA-F13.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:Ansel Adams - National Archives 79-AA-F13.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/1994-04-05%20-%20Les%20Coquelicots%20-%20Claude%20Monet.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:1994-04-05 - Les Coquelicots - Claude Monet.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Street%20in%20Portsmouth%20MET%2035038.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:Street in Portsmouth MET 35038.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Morgennebel%20im%20Gebirge%20(Caspar%20David%20Friedrich)-WUS03249.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Morgennebel im Gebirge (Caspar David Friedrich)-WUS03249.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20Quiet%20moonlight%20(beyond%20Catalina%20Island).jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Granville Redmond - Quiet moonlight (beyond Catalina Island).jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Albert%20Bierstadt%20-%20Scene%20in%20Yosemite%20Valley.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Albert Bierstadt - Scene in Yosemite Valley.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ansel%20Adams%20-%20National%20Archives%2079-AA-D01.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Ansel Adams - National Archives 79-AA-D01.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet-RouenKathedrale%20von%20Rouen%20DSC8884.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Monet-RouenKathedrale von Rouen DSC8884.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Henry%20Twachtman%2C%20Winter%20Harmony%2C%20c.%201890-1900%2C%20NGA%2050257.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:John Henry Twachtman, Winter Harmony, c. 1890-1900, NGA 50257.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frederic%20Edwin%20Church%20-%20Cotopaxi%20-%2074.58%20-%20Museum%20of%20Fine%20Arts.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Frederic Edwin Church - Cotopaxi - 74.58 - Museum of Fine Arts.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20Coastal%20wildflowers.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Granville Redmond - Coastal wildflowers.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Albert%20Bierstadt%20-%20Mariposa%20Indian%20Encampment%2C%20Yosemite%20Valley%2C%20California.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Albert Bierstadt - Mariposa Indian Encampment, Yosemite Valley, California.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carleton%20e%20watkins%20mount%20watkins%20fully%20reflected%20in%20mirror%20lake%20yosemi024656).jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Carleton e watkins mount watkins fully reflected in mirror lake yosemi024656).jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Luncheon%20of%20the%20Boating%20Party%20-%20Google%20Art%20Project.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Pierre-Auguste Renoir - Luncheon of the Boating Party - Google Art Project.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Singer%20Sargent%20-%20The%20Mosquito%20Net%20-%20Google%20Art%20Project.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:John Singer Sargent - The Mosquito Net - Google Art Project.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Cole%20-%20The%20Voyage%20of%20Life%20Youth%2C%201839%20(Albany%20Institute%20of%20History%20%26%20Art).jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Thomas Cole - The Voyage of Life Youth, 1839 (Albany Institute of History & Art).jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mountain%20Lake%20by%20Edgar%20Alwin%20Payne%2C%20Phoenix%20Art%20Museum.JPG?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Mountain Lake by Edgar Alwin Payne, Phoenix Art Museum.JPG",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Smithsonian-Moran-The%20Chasm%20of%20the%20Colorado-2287.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Smithsonian-Moran-The Chasm of the Colorado-2287.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carleton%20e%20watkins%20yosemite%20falls%201865-1866024709.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Carleton e watkins yosemite falls 1865-1866024709.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20-%20Boulevard%20Montmartre%2C%20Spring%20-%20Google%20Art%20Project.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:Camille Pissarro - Boulevard Montmartre, Spring - Google Art Project.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/1908%20Cassat%20Mother%20Rose%20Tela%20Aviv%20Museum%20of%20Art%20anagoria.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:1908 Cassat Mother Rose Tela Aviv Museum of Art anagoria.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Winslow%20Homer%20-%20Saco%20Bay%20(1896).jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Winslow Homer - Saco Bay (1896).jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Italian%20Fishing%20Boats%2C%20by%20Edgar%20Alwin%20Payne.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Italian Fishing Boats, by Edgar Alwin Payne.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rainbow%20over%20the%20Grand%20Canyon%20of%20the%20Yellowstone%2C%201900%2C%20by%20Thomas%20Moran%20-%20SAAM%20-%20DSC00847.JPG?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Rainbow over the Grand Canyon of the Yellowstone, 1900, by Thomas Moran - SAAM - DSC00847.JPG",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcatraz%20and%20the%20Golden%20Gate%2C%20San%20Francisco%20Bay%2C%20California%2C%201898-1905.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Alcatraz and the Golden Gate, San Francisco Bay, California, 1898-1905.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/1877%20Sisley%20Die%20Br%C3%BCcke%20bei%20S%C3%A8vres%20Nationalgalerie%20Prag%20anagoria.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:1877 Sisley Die Brücke bei Sèvres Nationalgalerie Prag anagoria.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20-%20Madone%20%C3%A0%20la%20grenade.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Sandro Botticelli - Madone à la grenade.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount%20Fuji%20and%20the%20Seven%20Gods%20of%20Good%20Fortune%2C%20by%20Katsushika%20Hokusai%20-%20Nelson-Atkins%20Museum%20of%20Art%20-%20DSC09106.JPG?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Mount Fuji and the Seven Gods of Good Fortune, by Katsushika Hokusai - Nelson-Atkins Museum of Art - DSC09106.JPG",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sunset%2C%20Canyon%20de%20Chelly.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Edgar Payne Sunset, Canyon de Chelly.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cliffs%20of%20Green%20River%2C%20Wyoming%2C%20by%20Thomas%20Moran.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Cliffs of Green River, Wyoming, by Thomas Moran.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mission%20San%20Antonio%20de%20Padua%2C%20Monterey%20County%2C%20California%2C%201898.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Mission San Antonio de Padua, Monterey County, California, 1898.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Degas%20-%20Ballet%20(L'%C3%89toile).jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Edgar Degas - Ballet (L'Étoile).jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lady%20with%20an%20Ermine%20-%20Leonardo%20da%20Vinci%20-%20Google%20Art%20Project.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Lady with an Ermine - Leonardo da Vinci - Google Art Project.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Katsushika%20Hokusai%20-%20Shell%20Gathering%20-%20Google%20Art%20Project.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Katsushika Hokusai - Shell Gathering - Google Art Project.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Laguna%20Beach%2C%20by%20Edgar%20Alwin%20Payne.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Laguna Beach, by Edgar Alwin Payne.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20Yosemite%20-%201984.31%20-%20Dallas%20Museum%20of%20Art.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Thomas Hill - Yosemite - 1984.31 - Dallas Museum of Art.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/View%20from%20Smiley's%20Heights%2C%20Redlands%2C%20Cal-LCCN2008678115.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:View from Smiley's Heights, Redlands, Cal-LCCN2008678115.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Morisot%20-%20a-summer-s-day.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Morisot - a-summer-s-day.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio%20-%20Bacco%20adolescente%20-%20Google%20Art%20Project.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Caravaggio - Bacco adolescente - Google Art Project.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Utagawa%20Hiroshige%20-%20Three%20Beauties%20in%20Snow%20-%2081.2.5%20-%20Minneapolis%20Institute%20of%20Art.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Utagawa Hiroshige - Three Beauties in Snow - 81.2.5 - Minneapolis Institute of Art.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20Carmel%20Dunes%20(c.%201918-20).jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Guy Rose - Carmel Dunes (c. 1918-20).jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20Emerald%20Bay%2C%20Lake%20Tahoe%20(1864).jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Thomas Hill - Emerald Bay, Lake Tahoe (1864).jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mission%20Santa%20Barbara%20by%20Oriana%20Weatherbee%20Day.JPG?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Mission Santa Barbara by Oriana Weatherbee Day.JPG",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustave%20Caillebotte%20-%20Paris%20Street%3B%20Rainy%20Day%20-%20Google%20Art%20Project.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Gustave Caillebotte - Paris Street; Rainy Day - Google Art Project.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio%20-%20Natura%20morta%20con%20frutta%20(collezione%20dell%E2%80%99Ambrosiana).jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Caravaggio - Natura morta con frutta (collezione dell’Ambrosiana).jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Kiss%20-%20Gustav%20Klimt%20-%20Google%20Cultural%20Institute.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:The Kiss - Gustav Klimt - Google Cultural Institute.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%2C%20Off%20Mission%20Point%20(Point%20Lobos)%2C%20n.d.%20Oil%20on%20canvas%2C%2024%20x%2029%20inches.%20Crocker%20Art%20Museum.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Guy Rose, Off Mission Point (Point Lobos), n.d. Oil on canvas, 24 x 29 inches. Crocker Art Museum.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/William%20Keith%20-%20Sunset%20on%20Mount%20Diablo%20(Marin%20Sunset)%20-%20Google%20Art%20Project.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:William Keith - Sunset on Mount Diablo (Marin Sunset) - Google Art Project.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chapel%20and%20bell%20tower%20of%20Mission%20San%20Juan%20Capistrano%2C%201901%20(CHS-2093).jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Chapel and bell tower of Mission San Juan Capistrano, 1901 (CHS-2093).jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Gogh%20-%20Starry%20Night%20-%20Google%20Art%20Project.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:Van Gogh - Starry Night - Google Art Project.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan%20Vermeer%20van%20Delft%20-%20Meisje%20met%20de%20parel%20(1665).jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Jan Vermeer van Delft - Meisje met de parel (1665).jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Munch%20Girls%20on%20the%20pier.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Munch Girls on the pier.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20Late%20Afternoon%2C%20Giverny.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Guy Rose - Late Afternoon, Giverny.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Headwaters%20of%20the%20San%20Joaquin%20by%20William%20Keith.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Headwaters of the San Joaquin by William Keith.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20Berry%20Gamble%20house%2C%204%20Westmoreland%20Place%2C%20Pasadena%2C%20California.%20Water%20terrace%20LCCN00651248.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:David Berry Gamble house, 4 Westmoreland Place, Pasadena, California. Water terrace LCCN00651248.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Sunflowers%20-%20VGM%20F458.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Vincent van Gogh - Sunflowers - VGM F458.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20van%20Rijn%20-%20Self-Portrait%20-%20Google%20Art%20Project.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Rembrandt van Rijn - Self-Portrait - Google Art Project.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/James%20McNeill%20Whistler%20-%20Nocturne%20in%20Blue%20and%20Silver%20-%20Google%20Art%20Project.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:James McNeill Whistler - Nocturne in Blue and Silver - Google Art Project.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/William%20Wendt%20-%20Mount%20San%20Antonio%20-%201913.3%20-%20Dallas%20Museum%20of%20Art.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:William Wendt - Mount San Antonio - 1913.3 - Dallas Museum of Art.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles%20Marion%20Russell%20%E2%80%93%20In%20Without%20Knocking%20%E2%80%93%20Google%20Art%20Project.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Charles Marion Russell – In Without Knocking – Google Art Project.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Oranges%20and%20Poppies%20(Boston%20Public%20Library).jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Oranges and Poppies (Boston Public Library).jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Amandelbloesem%20-%20s0176V1962%20-%20Van%20Gogh%20Museum.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Amandelbloesem - s0176V1962 - Van Gogh Museum.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Las%20Meninas%2C%20by%20Diego%20Vel%C3%A1zquez%2C%20from%20Prado%20in%20Google%20Earth.jpg?width=1600",
-      "status": 206,
-      "ok": true,
-      "contentType": "image/jpeg"
+      "title": "File:Las Meninas, by Diego Velázquez, from Prado in Google Earth.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Arroyo%20Seco%2C%20Pasadena%2C%20by%20Franz%20Bischoff.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Arroyo Seco, Pasadena, by Franz Bischoff.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles%20M.%20Russell%20Where%20Great%20Herds%20Come%20To%20Drink%2C%201901.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Charles M. Russell Where Great Herds Come To Drink, 1901.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Montagne%20Sainte-Victoire%20vue%20de%20la%20carri%C3%A8re%20Bib%C3%A9mus%2C%20par%20Paul%20C%C3%A9zanne.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:La Montagne Sainte-Victoire vue de la carrière Bibémus, par Paul Cézanne.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Veronese%20-%20Die%20Hochzeit%20zu%20Kana%20-%20ca1570.jpeg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Paolo Veronese - Die Hochzeit zu Kana - ca1570.jpeg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Franz%20arthur%20bischoff%20red%20and%20yellow%20roses023424).jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Franz arthur bischoff red and yellow roses023424).jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frederic%20Remington%20-%20Moonlight%2C%20Wolf.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Frederic Remington - Moonlight, Wolf.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fatata%20te%20Miti.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Fatata te Miti.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bacchanal%20of%20the%20Andrians%20by%20Titian%20in%20the%20Prado%20Museum.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Bacchanal of the Andrians by Titian in the Prado Museum.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Southern%20California%20Landscape%20by%20Maurice%20Braun%2C%20San%20Diego%20Museum%20of%20Art.JPG?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Southern California Landscape by Maurice Braun, San Diego Museum of Art.JPG",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Fall%20of%20the%20Cowboy%2C%201895%2C%20by%20Frederic%20S.%20Remington.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:The Fall of the Cowboy, 1895, by Frederic S. Remington.jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gray%20Weather%2C%20Grand%20Jatte%20(1888)%20-%20Georges%20Seurat%20(Metropolitan%20Museum%20of%20Art).jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:Gray Weather, Grand Jatte (1888) - Georges Seurat (Metropolitan Museum of Art).jpg",
+      "ok": true
     },
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/(Albi)%20Au%20Cabaret%20-%201898%20-%20Henri%20de%20Toulouse-Lautrec%20-%20Mus%C3%A9e%20de%20Libourne.jpg?width=1600",
-      "status": 429,
-      "ok": false,
-      "contentType": "text/html; charset=utf-8"
+      "title": "File:(Albi) Au Cabaret - 1898 - Henri de Toulouse-Lautrec - Musée de Libourne.jpg",
+      "ok": true
     }
   ]
 }
