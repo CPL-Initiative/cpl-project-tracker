@@ -781,7 +781,7 @@ Edge Function **`cpl-chat`** and streams the answer over SSE (`event: sources`
 → `event: text` deltas → `event: done`). The function runs 4 parallel lookups
 (pgvector RAG over `cpl_documents`/`cpl_document_sections`, college detection,
 live `live_metrics.json` fetch, topic exhibit search) → a streamed
-`claude-sonnet-4-20250514` answer. Model output is HTML-escaped **before** the
+`claude-sonnet-4-6` answer. Model output is HTML-escaped **before** the
 markdown-lite pass (XSS-safe). The browser uses only the public anon key (the
 same one already in `unified_courses.js`); 20 req/min/IP rate limit; every turn
 is logged to `chat_interactions` (anon-INSERT, no-SELECT) — **don't put PII in
@@ -802,8 +802,16 @@ reuse, so keep it self-contained behind its CONFIG block.
   part of the daily GitHub Actions cron. Source-of-record is the **live
   function**, captured at `chatbox/supabase/functions/cpl-chat/index.ts`
   (re-capture with `get_edge_function` before editing if in doubt).
-- Live now: **v14 ACTIVE** (= v13 + `https://cpl-initiative.github.io` added to
-  `ALLOWED_ORIGINS` so the deployed dashboard can call it). Scope + phased plan
+- Live now: **v15 ACTIVE** (= v14 + the model swapped `claude-sonnet-4-20250514` →
+  **`claude-sonnet-4-6`** after Anthropic retired the dated Sonnet-4.0 snapshot
+  2026-06-15, which 404'd → 502 on every turn; Session 64, PR #471. v14 had added
+  `https://cpl-initiative.github.io` to `ALLOWED_ORIGINS`). **Use unversioned model
+  aliases here, not dated snapshots** — a pinned `claude-*-YYYYMMDD` is a latent
+  outage on its retirement date (`docs/kb-notes/playbook-edge-function-502-retired-model.md`).
+  **NEXT for this surface:** the CCR/CER-grounded recommender + real-time benchmark +
+  landing-site demand signal — scope + locked decisions in
+  [`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`](docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md).
+  Scope + phased plan
   (Phase 2 content re-point CPLBrain → `cpl-knowledge-base`; Phase 3 Student
   Portal):
   [`docs/kb-notes/cpl-chatbox-integration-scope.md`](docs/kb-notes/cpl-chatbox-integration-scope.md);
@@ -1755,24 +1763,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > `tmc_college_adts.js`, 3,238 pairs/115 colleges/99.9% by TOP code, UCTP as its
 > own instance, the reference-data-home ADR).
 
-### Session 62 — SkyLion: First Light reflections digest + CCR synonym pairings (2026-06-18)
-
-Two code-only PRs. **#460** — First Light **local-day painting rotation** (no
-day-to-day repeats) + the **weekly reflections digest builder**
-(`reflections/build_reflections_digest.py` + README): reads the anonymous
-write-only `cpl_reflections` via the **service role**, renders per-ISO-week
-Obsidian "musings" — output **gitignored here**, bound for the **private
-`cpl-knowledge-base` vault** (a sibling session is wiring the weekly GitHub Action
-there; needs Sam to add `SUPABASE_SERVICE_KEY` on that repo). **#461** — CCR
-Suggested-merges **synonym-map growth** (ECE/EMT/CNA/HVAC/LVN; +13 ids into
-multi-member groups, no over-merge) + an ambiguity validator
-`kb/_synonym_candidate_dryrun.py` (rejected `cis`/`cd`/`ma`). Also re-installed the
-canonical stop-hook over a stale container copy (a squash-merge `noreply@github.com`
-false-positive). Full story: `docs/first_light_lessons.md` +
-`docs/ccr_cluster_cleanup_lessons.md` (S62); new reflections-digest playbook KB
-note + the synonym note extended. **NEXT: `docs/session_63_handoff.md`** —
-morphological-variant CCR pass (Medical Assisting/Assistant) + faculty-verify the
-TMC drafts.
+> **Session 62 narrative archived** → `docs/roadmap_archive.md` (SkyLion — First Light
+> local-day painting rotation + the weekly reflections digest #460; CCR synonym-map
+> growth ECE/EMT/CNA/HVAC/LVN + the ambiguity validator #461). Full story:
+> `docs/first_light_lessons.md` + `docs/ccr_cluster_cleanup_lessons.md`.
 
 ### Session 63 — SkyGate: the KB Portal (transplant → login-gated tab → composer) (2026-06-19)
 
@@ -1792,6 +1786,23 @@ reach private CPLBrain). Tests 56→58 files. Full story: `docs/kb_portal_lesson
 **NEXT: `docs/session_64_handoff.md`** — Sam smoke-tests the 5 attachment types (fix any
 esm.sh lib path); the bundle-divergence decision (backport vs canonical); then the
 standing data/CCR + TMC lanes resume.
+
+### Session 64 — Startripper: the retired-model 502 fix + the CCR/CER recommender kickoff (2026-06-19)
+
+The CPL Assistant (and the shared `map.rccd.edu` widget) was 502ing on **every** turn —
+the `cpl-chat` Edge Function called `claude-sonnet-4-20250514`, which Anthropic
+**retired 2026-06-15** (404 → the `!anthropicRes.ok` guard's 502). Swapped to
+**`claude-sonnet-4-6`**, **deployed live as v15** (`verify_jwt:false`), PR #471; repo
+swept — no other feature on a retired id. New note:
+`docs/kb-notes/playbook-edge-function-502-retired-model.md`. Then a strategy session
+with Sam kicked off a workstream (scope **PR #472**): make this assistant the
+**CCR/CER-grounded recommendation reference + real-time benchmark** for the MAP Student
+Portal bot, + a per-college **demand signal** on the college CPL Landing Sites — full
+scope + locked decisions D1–D5 in
+[`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`](docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md).
+Full story: `docs/cpl_assistant_lessons.md` (S64). **NEXT: `docs/session_65_handoff.md`**
+— build the CCR/CER/adoption ETL into shared Supabase (green-lit), then M1; the standing
+data/CCR + TMC + KB-portal lanes resume.
 
 ---
 
