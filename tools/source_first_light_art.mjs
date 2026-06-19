@@ -179,16 +179,81 @@ async function doSource() {
     summary.push({ category: cat, count: items.length, capped: items.length >= PER_ROOT_CAP });
     console.log(`  ${String(items.length).padStart(4)}  ${cat}${items.length >= PER_ROOT_CAP ? "  (capped)" : ""}`);
   }
+  const have = new Set(all.map((c) => c.file));
+  const extraAdded = await appendExtrasInto(all, have);
+  if (extraAdded) console.log(`  +${extraAdded} iconic extra file(s)`);
   all.sort((a, b) => a.category.localeCompare(b.category) || a.file.localeCompare(b.file));
   const payload = {
     _generated: new Date().toISOString(),
-    _note: "Verified public-domain candidates from Wikimedia Commons (direct + 1 level of subcategories). Curate by hand into tools/first_light_selection.json; write OUR OWN blurb/setting/alt per entry. Filenames are EXACT (do not edit).",
+    _note: "Verified public-domain candidates from Wikimedia Commons (direct + 1 level of subcategories + tools/art_extra_files.json). Curate by hand into tools/first_light_selection.json; write OUR OWN blurb/setting/alt per entry. Filenames are EXACT (do not edit).",
     total: all.length,
     by_category: summary,
     candidates: all,
   };
   fs.writeFileSync(ROOT + "tools/first_light_candidates.json", JSON.stringify(payload, null, 2));
   console.log(`\nSOURCED ${all.length} public-domain candidates across ${cats.length} categories.`);
+}
+
+// Append specific iconic public-domain works by EXACT Commons filename — for
+// works that don't live in a clean "Paintings by X" category (woodblock prints,
+// single-work categories). Each is API-verified (exists + BITMAP + PD) before
+// it's added. Used both by `all` (so a full re-source keeps them — durable) and
+// by `extras` mode (append-only, preserving existing curated selections).
+async function appendExtrasInto(list, have) {
+  const cfgPath = ROOT + "tools/art_extra_files.json";
+  if (!fs.existsSync(cfgPath)) return 0;
+  let files = [];
+  try { files = (JSON.parse(fs.readFileSync(cfgPath, "utf8")).files) || []; } catch { return 0; }
+  let added = 0;
+  for (let i = 0; i < files.length; i += 50) {
+    const batch = files.slice(i, i + 50);
+    const data = await apiGet({
+      action: "query", format: "json", formatversion: "2",
+      titles: batch.map((f) => "File:" + f).join("|"),
+      prop: "imageinfo", iiprop: "extmetadata|mediatype|url|size",
+      iiextmetadatafilter: "LicenseShortName|License|UsageTerms|Artist|DateTimeOriginal|ObjectName|Credit|ImageDescription",
+    });
+    const norm = {};
+    for (const n of (data.query && data.query.normalized) || []) norm[n.from] = n.to;
+    const byTitle = {};
+    for (const p of (data.query && data.query.pages) || []) byTitle[p.title] = p;
+    for (const f of batch) {
+      const p = byTitle[norm["File:" + f] || ("File:" + f)];
+      if (!p || p.missing) { console.log("  extra MISSING: " + f); continue; }
+      const ii = p.imageinfo && p.imageinfo[0];
+      if (!ii || !ii.extmetadata || ii.mediatype !== "BITMAP") { console.log("  extra no-imageinfo/!bitmap: " + f); continue; }
+      if (!isPublicDomain(ii.extmetadata)) { console.log("  extra NOT public domain: " + f); continue; }
+      const file = p.title.replace(/^File:/, "");
+      if (have.has(file)) { console.log("  extra already present: " + file); continue; }
+      const ext = ii.extmetadata;
+      list.push({
+        category: "Iconic works", file, img: filePathUrl(p.title),
+        license: stripHtml(ext.LicenseShortName && ext.LicenseShortName.value) || "Public domain",
+        artist: stripHtml(ext.Artist && ext.Artist.value),
+        year: stripHtml(ext.DateTimeOriginal && ext.DateTimeOriginal.value),
+        object: stripHtml(ext.ObjectName && ext.ObjectName.value),
+        credit: stripHtml(ext.Credit && ext.Credit.value).slice(0, 200),
+        desc: stripHtml(ext.ImageDescription && ext.ImageDescription.value).slice(0, 240),
+        width: ii.width, height: ii.height, page: ii.descriptionurl,
+      });
+      have.add(file); added++;
+      console.log("  extra added: " + file);
+    }
+    await sleep(300);
+  }
+  return added;
+}
+
+async function doExtras() {
+  const candPath = ROOT + "tools/first_light_candidates.json";
+  const payload = JSON.parse(fs.readFileSync(candPath, "utf8"));
+  const have = new Set(payload.candidates.map((c) => c.file));
+  const added = await appendExtrasInto(payload.candidates, have);
+  payload.candidates.sort((a, b) => a.category.localeCompare(b.category) || a.file.localeCompare(b.file));
+  payload.total = payload.candidates.length;
+  payload._generated = new Date().toISOString();
+  fs.writeFileSync(candPath, JSON.stringify(payload, null, 2));
+  console.log(`\nEXTRAS: appended ${added} iconic file(s); total now ${payload.total}.`);
 }
 
 // Verify liveness via the Commons API (does the File: page exist?) rather than
@@ -235,5 +300,6 @@ async function doVerify() {
 
 const mode = (process.argv[2] || "all").toLowerCase();
 if (mode === "source") { await doSource(); }
+else if (mode === "extras") { await doExtras(); }
 else if (mode === "verify") { const b = await doVerify(); if (process.env.STRICT_VERIFY === "1" && b) process.exit(1); }
 else { await doSource(); console.log("\n──── verify ────"); await doVerify(); }
