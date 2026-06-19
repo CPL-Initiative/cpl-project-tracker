@@ -237,6 +237,120 @@ function markActive(path) {
 const KBC = window.KBComposer;
 let filenameTouched = false;
 
+// ── attachments: extract text (or downscale images) in-browser, feed to Polish ──
+// Extractor libs are dynamic-imported from esm.sh ONLY when a matching file is
+// attached, so they never weigh on initial load. Each extraction is wrapped so one
+// bad file degrades to an error chip rather than breaking the composer.
+const ATT_LIB = {
+  pdf:       "https://esm.sh/pdfjs-dist@4.7.76/build/pdf.min.mjs",
+  pdfWorker: "https://esm.sh/pdfjs-dist@4.7.76/build/pdf.worker.min.mjs",
+  mammoth:   "https://esm.sh/mammoth@1.8.0",
+  xlsx:      "https://esm.sh/xlsx@0.18.5",
+};
+let attachId = 0;
+const attachments = [];
+
+async function extractFileText(file, kind) {
+  if (kind === "text") return (await file.text()).trim();
+  if (kind === "pdf") {
+    const pdfjs = await import(ATT_LIB.pdf);
+    try { pdfjs.GlobalWorkerOptions.workerSrc = ATT_LIB.pdfWorker; } catch (e) {}
+    const doc = await pdfjs.getDocument({ data: await file.arrayBuffer() }).promise;
+    let out = "";
+    for (let p = 1; p <= doc.numPages; p++) {
+      const tc = await (await doc.getPage(p)).getTextContent();
+      out += tc.items.map((it) => it.str).join(" ") + "\n\n";
+    }
+    return out.trim();
+  }
+  if (kind === "docx") {
+    const mod = await import(ATT_LIB.mammoth);
+    const mammoth = mod.default || mod;
+    const res = await mammoth.extractRawText({ arrayBuffer: await file.arrayBuffer() });
+    return ((res && res.value) || "").trim();
+  }
+  if (kind === "xlsx") {
+    const mod = await import(ATT_LIB.xlsx);
+    const XLSX = mod.default || mod;
+    const wb = XLSX.read(await file.arrayBuffer(), { type: "array" });
+    return wb.SheetNames.map((n) => "## " + n + "\n" + XLSX.utils.sheet_to_csv(wb.Sheets[n])).join("\n\n").trim();
+  }
+  return "";
+}
+
+// Downscale + re-encode an image as JPEG until its base64 fits the per-image budget
+// (the proxy caps the whole request at ~256 KB). Returns null if it can't fit.
+async function downscaleImage(file, targetB64Bytes) {
+  targetB64Bytes = targetB64Bytes || 110000;
+  const dataUrl = await new Promise((res, rej) => {
+    const fr = new FileReader(); fr.onload = () => res(fr.result); fr.onerror = rej; fr.readAsDataURL(file);
+  });
+  const img = await new Promise((res, rej) => {
+    const im = new Image(); im.onload = () => res(im); im.onerror = rej; im.src = dataUrl;
+  });
+  let maxEdge = 1400, quality = 0.8;
+  for (let attempt = 0; attempt < 7; attempt++) {
+    const scale = Math.min(1, maxEdge / Math.max(img.width || 1, img.height || 1));
+    const w = Math.max(1, Math.round((img.width || 1) * scale));
+    const h = Math.max(1, Math.round((img.height || 1) * scale));
+    const canvas = document.createElement("canvas");
+    canvas.width = w; canvas.height = h;
+    canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+    const b64 = (canvas.toDataURL("image/jpeg", quality).split(",")[1]) || "";
+    if (b64.length <= targetB64Bytes) return { data: b64, mediaType: "image/jpeg" };
+    if (quality > 0.5) quality -= 0.15; else maxEdge = Math.round(maxEdge * 0.8);
+  }
+  return null;
+}
+
+function renderAttachments() {
+  const list = $("composer-attach-list");
+  if (!list) return;
+  list.innerHTML = "";
+  const ICON = { image: "🖼", pdf: "📄", docx: "📝", xlsx: "📊", text: "📃", unknown: "❔" };
+  for (const a of attachments) {
+    const chip = document.createElement("span");
+    chip.className = "composer-chip composer-chip-" + a.status;
+    chip.appendChild(document.createTextNode(
+      (ICON[a.kind] || "📎") + " " + a.name +
+      (a.status === "extracting" ? " …" : a.note ? " (" + a.note + ")" : "")
+    ));
+    const x = document.createElement("button");
+    x.type = "button"; x.className = "composer-chip-x"; x.textContent = "✕";
+    x.setAttribute("aria-label", "Remove " + a.name);
+    x.addEventListener("click", () => {
+      const i = attachments.indexOf(a); if (i >= 0) attachments.splice(i, 1); renderAttachments();
+    });
+    chip.appendChild(x);
+    list.appendChild(chip);
+  }
+}
+
+async function addFiles(fileList) {
+  for (const file of Array.from(fileList || [])) {
+    const kind = KBC.fileKind(file.name, file.type);
+    const rec = { id: ++attachId, name: file.name, kind, status: "extracting" };
+    attachments.push(rec);
+    renderAttachments();
+    try {
+      if (kind === "unknown") {
+        rec.status = "error"; rec.note = "unsupported type";
+      } else if (kind === "image") {
+        const r = await downscaleImage(file);
+        if (!r) { rec.status = "error"; rec.note = "image too large to fit"; }
+        else { rec.image = r.data; rec.mediaType = r.mediaType; rec.status = "ready"; }
+      } else {
+        const raw = await extractFileText(file, kind);
+        if (!raw) { rec.status = "error"; rec.note = kind === "pdf" ? "no text (scanned PDF?)" : "no text found"; }
+        else { const c = KBC.extractTextCap(raw); rec.text = c.text; rec.status = "ready"; if (c.truncated) rec.note = "truncated to fit"; }
+      }
+    } catch (err) {
+      rec.status = "error"; rec.note = String((err && err.message) || "extract failed").slice(0, 50);
+    }
+    renderAttachments();
+  }
+}
+
 function composerStatus(msg, kind) {
   const el = $("composer-status");
   if (!el) return;
@@ -288,24 +402,41 @@ function closeComposer() { $("composer-overlay").style.display = "none"; }
 async function polishWithClaude() {
   const title = $("composer-doc-title").value.trim();
   const body = $("composer-body").value.trim();
-  if (!body) { composerStatus("Add some content first.", "error"); return; }
+  const ready = attachments.filter((a) => a.status === "ready");
+  if (!body && !ready.length) { composerStatus("Add some content or an attachment first.", "error"); return; }
+  if (attachments.some((a) => a.status === "extracting")) { composerStatus("Still reading an attachment — try again in a moment.", "info"); return; }
   if (!PROXY_URL) { composerStatus("Polish proxy not configured.", "error"); return; }
   const btn = $("composer-polish");
   btn.disabled = true;
-  composerStatus("✨ Asking Claude to format your draft…", "info");
+  composerStatus("✨ Asking Claude to format your draft" + (ready.length ? " + " + ready.length + " attachment(s)" : "") + "…", "info");
   try {
     const prompt = KBC.polishPrompt({
       title, body,
       section: $("composer-section").selectedOptions[0]?.textContent || "",
     });
+    let content = KBC.buildPolishContent({ prompt, attachments: ready });
+    const reqBody = () => JSON.stringify({ model: POLISH_MODEL, max_tokens: 8000, messages: [{ role: "user", content }] });
+    // The proxy caps the request at ~256 KB. If attachments push us over, drop
+    // images first (biggest), then trim the text block — never silently exceed.
+    const CAP = 240000;
+    let droppedImgs = 0;
+    if (Array.isArray(content)) {
+      while (reqBody().length > CAP) {
+        let imgIdx = -1;
+        for (let i = content.length - 1; i >= 0; i--) { if (content[i].type === "image") { imgIdx = i; break; } }
+        if (imgIdx !== -1) { content.splice(imgIdx, 1); droppedImgs++; continue; }
+        if (content[0] && content[0].text && content[0].text.length > 6000) {
+          content[0].text = content[0].text.slice(0, content[0].text.length - 20000) + "\n…[trimmed to fit the size limit]";
+          continue;
+        }
+        break;
+      }
+      if (droppedImgs) composerStatus("⚠ Dropped " + droppedImgs + " image(s) to fit the size limit; formatting the rest…", "info");
+    }
     const resp = await fetch(PROXY_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json", "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({
-        model: POLISH_MODEL,
-        max_tokens: 8000,
-        messages: [{ role: "user", content: prompt }],
-      }),
+      body: reqBody(),
     });
     if (!resp.ok) throw new Error("proxy " + resp.status + ": " + (await resp.text()).slice(0, 160));
     const json = await resp.json();
@@ -317,7 +448,7 @@ async function polishWithClaude() {
       const m = $("composer-body").value.match(/^title:\s*(.+)$/m);
       if (m) { $("composer-doc-title").value = m[1].trim(); syncFilename(); }
     }
-    composerStatus("✓ Formatted. Review it, then “Open in GitHub →” to commit.", "success");
+    composerStatus("✓ Formatted from your draft" + (ready.length ? " + attachment(s)" : "") + ". Review it, then “Open in GitHub →” to commit.", "success");
   } catch (err) {
     composerStatus("Couldn't reach the formatter (" + (err.message || err) + "). You can still commit your draft as-is.", "error");
   } finally {
@@ -374,6 +505,7 @@ function openInGitHub() {
   on("composer-github", "click", openInGitHub);
   on("composer-copy", "click", () => copyMarkdown(false));
   on("composer-download", "click", downloadMarkdown);
+  on("composer-files", "change", (e) => { addFiles(e.target.files); e.target.value = ""; });
   const ov = $("composer-overlay");
   if (ov) ov.addEventListener("click", (e) => { if (e.target === ov) closeComposer(); });
   document.addEventListener("keydown", (e) => {

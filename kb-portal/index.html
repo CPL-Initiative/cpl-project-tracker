@@ -127,6 +127,16 @@
       <textarea id="composer-body" rows="12" placeholder="Paste or type the document. Markdown welcome; ✨ Polish will tidy it into Knowledge-Base format with frontmatter."></textarea>
     </div>
 
+    <div class="field composer-attach">
+      <label for="composer-files">Attachments <span class="muted">— optional; Claude reads them when you ✨ Polish</span></label>
+      <div class="composer-attach-row">
+        <input type="file" id="composer-files" multiple
+               accept=".txt,.md,.markdown,.csv,.tsv,.json,.log,.yml,.yaml,.pdf,.docx,.xls,.xlsx,image/*">
+        <span class="muted composer-attach-hint">Text, PDF, Word, Excel, or images. Extracted in your browser; large scanned PDFs may not fit.</span>
+      </div>
+      <div id="composer-attach-list" class="composer-attach-list"></div>
+    </div>
+
     <div class="actions composer-actions">
       <button id="composer-polish" class="btn btn-primary" type="button">✨ Polish with Claude</button>
       <button id="composer-github" class="btn btn-primary" type="button">Open in GitHub →</button>
