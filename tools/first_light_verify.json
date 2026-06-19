@@ -1,6 +1,6 @@
 {
-  "_generated": "2026-06-19T23:34:43.808Z",
-  "total": 83,
+  "_generated": "2026-06-19T23:37:33.783Z",
+  "total": 89,
   "broken": 0,
   "results": [
     {
@@ -34,6 +34,11 @@
       "ok": true
     },
     {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Katsushika%20Hokusai%20-%20Thirty-Six%20Views%20of%20Mount%20Fuji-%20The%20Great%20Wave%20Off%20the%20Coast%20of%20Kanagawa%20-%20Google%20Art%20Project.jpg?width=1600",
+      "title": "File:Katsushika Hokusai - Thirty-Six Views of Mount Fuji- The Great Wave Off the Coast of Kanagawa - Google Art Project.jpg",
+      "ok": true
+    },
+    {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Mowers%20(When%20Hearts%20Beat%20as%20One)%20by%20Granville%20Redmond.JPG?width=1600",
       "title": "File:The Mowers (When Hearts Beat as One) by Granville Redmond.JPG",
       "ok": true
@@ -61,6 +66,11 @@
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Morgennebel%20im%20Gebirge%20(Caspar%20David%20Friedrich)-WUS03249.jpg?width=1600",
       "title": "File:Morgennebel im Gebirge (Caspar David Friedrich)-WUS03249.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hiroshige%2C%20Sudden%20shower%20over%20Shin-%C5%8Chashi%20bridge%20and%20Atake%2C%201857.jpg?width=1600",
+      "title": "File:Hiroshige, Sudden shower over Shin-Ōhashi bridge and Atake, 1857.jpg",
       "ok": true
     },
     {
@@ -94,6 +104,11 @@
       "ok": true
     },
     {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Wanderer%20above%20the%20sea%20of%20fog.jpg?width=1600",
+      "title": "File:Caspar David Friedrich - Wanderer above the sea of fog.jpg",
+      "ok": true
+    },
+    {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20Coastal%20wildflowers.jpg?width=1600",
       "title": "File:Granville Redmond - Coastal wildflowers.jpg",
       "ok": true
@@ -121,6 +136,11 @@
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Cole%20-%20The%20Voyage%20of%20Life%20Youth%2C%201839%20(Albany%20Institute%20of%20History%20%26%20Art).jpg?width=1600",
       "title": "File:Thomas Cole - The Voyage of Life Youth, 1839 (Albany Institute of History & Art).jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Constable%20-%20The%20Hay%20Wain%20(1821).jpg?width=1600",
+      "title": "File:John Constable - The Hay Wain (1821).jpg",
       "ok": true
     },
     {
@@ -154,6 +174,11 @@
       "ok": true
     },
     {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Katsushika%20Hokusai%20-%20Fine%20Wind%2C%20Clear%20Morning%20(Gaif%C5%AB%20kaisei)%20-%20Google%20Art%20Project.jpg?width=1600",
+      "title": "File:Katsushika Hokusai - Fine Wind, Clear Morning (Gaifū kaisei) - Google Art Project.jpg",
+      "ok": true
+    },
+    {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Italian%20Fishing%20Boats%2C%20by%20Edgar%20Alwin%20Payne.jpg?width=1600",
       "title": "File:Italian Fishing Boats, by Edgar Alwin Payne.jpg",
       "ok": true
@@ -181,6 +206,11 @@
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount%20Fuji%20and%20the%20Seven%20Gods%20of%20Good%20Fortune%2C%20by%20Katsushika%20Hokusai%20-%20Nelson-Atkins%20Museum%20of%20Art%20-%20DSC09106.JPG?width=1600",
       "title": "File:Mount Fuji and the Seven Gods of Good Fortune, by Katsushika Hokusai - Nelson-Atkins Museum of Art - DSC09106.JPG",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cole%20Thomas%20The%20Oxbow%20(The%20Connecticut%20River%20near%20Northampton%201836).jpg?width=1600",
+      "title": "File:Cole Thomas The Oxbow (The Connecticut River near Northampton 1836).jpg",
       "ok": true
     },
     {
