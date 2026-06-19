@@ -1,0 +1,11 @@
+{
+  "_note": "Specific iconic public-domain works to append to the candidate pool by EXACT Commons filename — works that DON'T live in a clean 'Paintings by X' category (woodblock prints, single-work categories). The first-light-art workflow's 'extras' path API-verifies each (exists + BITMAP + public domain) and appends to tools/first_light_candidates.json WITHOUT regenerating the whole pool, so existing curated selections stay valid; a full 'all' re-source also includes them (durable). Edit + bump tools/.art-extras to run.",
+  "files": [
+    "Katsushika Hokusai - Thirty-Six Views of Mount Fuji- The Great Wave Off the Coast of Kanagawa - Google Art Project.jpg",
+    "Katsushika Hokusai - Fine Wind, Clear Morning (Gaifū kaisei) - Google Art Project.jpg",
+    "Hiroshige, Sudden shower over Shin-Ōhashi bridge and Atake, 1857.jpg",
+    "Caspar David Friedrich - Wanderer above the sea of fog.jpg",
+    "John Constable - The Hay Wain (1821).jpg",
+    "Cole Thomas The Oxbow (The Connecticut River near Northampton 1836).jpg"
+  ]
+}

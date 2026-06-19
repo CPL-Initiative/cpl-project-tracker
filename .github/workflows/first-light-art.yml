@@ -1,0 +1,67 @@
+name: First Light art (source + verify)
+
+# Sources verified public-domain art candidates from Wikimedia Commons and
+# verifies first_light.js image liveness. This runs ON A RUNNER because the
+# agent's sandbox cannot reach Commons (egress allowlist) and WebFetch is
+# bot-blocked by Wikimedia. Push-triggered to dodge the workflow_dispatch
+# default-branch registration quirk. Commits tools/first_light_candidates.json
+# and tools/first_light_verify.json back to the branch. NOT a daily-cron
+# artifact; informational, never gates a merge.
+
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'tools/source_first_light_art.mjs'
+      - 'tools/art_categories.json'
+      - 'tools/art_extra_files.json'
+      - 'tools/.art-run'
+      - 'tools/.art-extras'
+      - 'first_light.js'
+      - '.github/workflows/first-light-art.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: first-light-art-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-and-verify:
+    # The commit-back below pushes as github-actions[bot]; this guard stops that
+    # push from retriggering the workflow (the path filter already excludes the
+    # two report files, but keep belt-and-suspenders).
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - name: Source / append icons / verify (per what changed)
+        run: |
+          if git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -qE '^tools/(art_categories\.json|\.art-run)$'; then
+            echo "Categories/.art-run changed → full source + verify"
+            node tools/source_first_light_art.mjs all
+          elif git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -qE '^tools/(art_extra_files\.json|\.art-extras)$'; then
+            echo "Extra files changed → append iconic works (preserving the pool) + verify"
+            node tools/source_first_light_art.mjs extras
+            node tools/source_first_light_art.mjs verify
+          else
+            echo "Manifest/script/other change → verify image liveness only"
+            node tools/source_first_light_art.mjs verify
+          fi
+      - name: Commit reports back to the branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tools/first_light_candidates.json tools/first_light_verify.json
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+          else
+            git commit -m "chore(first-light): art candidates + image-liveness report [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          fi

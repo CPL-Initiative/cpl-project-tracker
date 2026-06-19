@@ -51,3 +51,6 @@ kb/_classify_dryrun_sample.json
 # may be committed. Keep this raw file out of git (and out of GitHub Pages).
 CustomReport_*.json
 kb/similar_family_out/
+
+# First Light curation scratch (assembled into tools/first_light_selection.json, then discarded)
+tools/_fl_sel/
