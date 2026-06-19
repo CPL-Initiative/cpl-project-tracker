@@ -1,4 +1,7 @@
-# CPL Project Tracker
+# COBI — Chancellor's Office Business Intelligence
+
+> The CPL Project Tracker, renamed. The masthead carries a light Kobe homage —
+> a rotating *Mamba Mentality* subtitle and an 8→24 wink (`cobi_brand.js`).
 
 A live dashboard, data pipeline, and curation workbench for the
 **California Community Colleges Credit for Prior Learning Initiative** —
