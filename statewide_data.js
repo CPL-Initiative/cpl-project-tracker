@@ -98355,6 +98355,10 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Community Relations"
         },
         {
+          "course": "CJ 5",
+          "credit": "3 hours in Legal Aspects of Evidence"
+        },
+        {
           "course": "CRIM 1",
           "credit": "3 hours in Introduction to Criminology"
         },
@@ -163121,6 +163125,316 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPICA-JCAC1-1-001",
+      "exhibit_ids": [
+        "MAPICA-JCAC1-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS (Active from Fall 2025)",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS (Active from Fall 2025)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, AS (Active from Fall 2025)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 32,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Coastline Community College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Cosumnes River College",
+        "Cuyamaca College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Laney College",
+        "Las Positas College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Mendocino College",
+        "Napa Valley College",
+        "Norco College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "Santa Rosa Junior College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 33,
+      "credit_recs": [
+        {
+          "course": "AMW 033",
+          "credit": "1.5 hours in Conveyor Systems"
+        },
+        {
+          "course": "AMW 039",
+          "credit": "1.5 hours in Compressor Theory and Maintenance"
+        },
+        {
+          "course": "AMW 021",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "AMW 022",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "AMW 023A",
+          "credit": "1.5 hours in General Skills"
+        },
+        {
+          "course": "AMW 024",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "AMW 025",
+          "credit": "1.5 hours in Welding Fabrication"
+        },
+        {
+          "course": "AMW 026",
+          "credit": "1.5 hours in Cutting and Burning"
+        },
+        {
+          "course": "AMW 027",
+          "credit": "1.5 hours in Precision Optics"
+        },
+        {
+          "course": "AMW 029A",
+          "credit": "1.5 hours in Structural Welding A"
+        },
+        {
+          "course": "AMW 029B",
+          "credit": "1.5 hours in Structural Welding B"
+        },
+        {
+          "course": "AMW 031",
+          "credit": "1.5 hours in Turbine Familiarization"
+        },
+        {
+          "course": "AMW 032",
+          "credit": "1.5 hours in Pumps"
+        },
+        {
+          "course": "AMW 037",
+          "credit": "1.5 hours in Gas Turbine"
+        },
+        {
+          "course": "AMW 041A",
+          "credit": "1.5 hours in Alignment A"
+        },
+        {
+          "course": "AMW 041B",
+          "credit": "1.5 hours in Alignment B"
+        },
+        {
+          "course": "AMW 042A",
+          "credit": "2 hours in Rigging A"
+        },
+        {
+          "course": "AMW 042B",
+          "credit": "1.5 hours in Rigging B"
+        },
+        {
+          "course": "AMW 043",
+          "credit": "1.5 hours in Tool and Equipment Application"
+        },
+        {
+          "course": "AMW 044",
+          "credit": "1.5 hours in Power Transmission Systems"
+        },
+        {
+          "course": "AMW 045",
+          "credit": "1.5 hours in Machinery Tool Practices"
+        },
+        {
+          "course": "AMW 046",
+          "credit": "1.5 hours in Introduction to Welding"
+        },
+        {
+          "course": "AMW 047",
+          "credit": "1.5 hours in Steam Turbine"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-JCAC2-1-001",
+      "exhibit_ids": [
+        "MAPICA-JCAC2-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, CA (Active from Fall 2025)",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, CA (Active from Fall 2025)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting, CA (Active from Fall 2025)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 32,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Coastline Community College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Cosumnes River College",
+        "Cuyamaca College",
+        "Diablo Valley College",
+        "Fullerton College",
+        "Laney College",
+        "Las Positas College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Mendocino College",
+        "Napa Valley College",
+        "Norco College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "Santa Rosa Junior College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 33,
+      "credit_recs": [
+        {
+          "course": "AMW 033",
+          "credit": "1.5 hours in Conveyor Systems"
+        },
+        {
+          "course": "AMW 039",
+          "credit": "1.5 hours in Compressor Theory and Maintenance"
+        },
+        {
+          "course": "AMW 021",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "AMW 022",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "AMW 023A",
+          "credit": "1.5 hours in General Skills"
+        },
+        {
+          "course": "AMW 024",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "AMW 025",
+          "credit": "1.5 hours in Welding Fabrication"
+        },
+        {
+          "course": "AMW 026",
+          "credit": "1.5 hours in Cutting and Burning"
+        },
+        {
+          "course": "AMW 027",
+          "credit": "1.5 hours in Precision Optics"
+        },
+        {
+          "course": "AMW 029A",
+          "credit": "1.5 hours in Structural Welding A"
+        },
+        {
+          "course": "AMW 029B",
+          "credit": "1.5 hours in Structural Welding B"
+        },
+        {
+          "course": "AMW 031",
+          "credit": "1.5 hours in Turbine Familiarization"
+        },
+        {
+          "course": "AMW 032",
+          "credit": "1.5 hours in Pumps"
+        },
+        {
+          "course": "AMW 037",
+          "credit": "1.5 hours in Gas Turbine"
+        },
+        {
+          "course": "AMW 041A",
+          "credit": "1.5 hours in Alignment A"
+        },
+        {
+          "course": "AMW 041B",
+          "credit": "1.5 hours in Alignment B"
+        },
+        {
+          "course": "AMW 042A",
+          "credit": "2 hours in Rigging A"
+        },
+        {
+          "course": "AMW 042B",
+          "credit": "1.5 hours in Rigging B"
+        },
+        {
+          "course": "AMW 043",
+          "credit": "1.5 hours in Tool and Equipment Application"
+        },
+        {
+          "course": "AMW 044",
+          "credit": "1.5 hours in Power Transmission Systems"
+        },
+        {
+          "course": "AMW 045",
+          "credit": "1.5 hours in Machinery Tool Practices"
+        },
+        {
+          "course": "AMW 046",
+          "credit": "1.5 hours in Introduction to Welding"
+        },
+        {
+          "course": "AMW 047",
+          "credit": "1.5 hours in Steam Turbine"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPSAH-AC1-1-001|MAPSAH-ACE-1-001|MAPSAS-A-C1-1-001|MAPSAS-A:C1-1-001|MAPSAS-AC(O-1-001|MAPSAS-AC(O1-1-001|MAPSAS-AC1-1-001|MAPSAS-AC12-1-001|MAPSAS-AC13-1-001|MAPSAS-AC2-1-001|MAPSAS-AC3-1-001|MAPSAS-AC4-1-001|MAPSAS-AC5-1-001|MAPSAS-AC6-1-001|MAPSAS-AC7-1-001|MAPSAS-AC8-1-001|MAPSAS-AE-C-1-001|MAPSAS-AEC(-1-001|MAPSAS-AEC1-1-001",
       "exhibit_ids": [
         "MAPSAH-AC1-1-001",
@@ -195287,6 +195601,498 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPICA-JCCD-1-001",
+      "exhibit_ids": [
+        "MAPICA-JCCD-1-001"
+      ],
+      "title": "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)",
+      "unified_title": "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 12,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "College of the Redwoods",
+        "Laney College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Norco College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Santa Rosa Junior College"
+      ],
+      "total_addressable": 13,
+      "credit_recs": [
+        {
+          "course": "ACA 071A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 071B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 071C",
+          "credit": "1.5 hours in Tool and Equipment Applications"
+        },
+        {
+          "course": "ACA 072A",
+          "credit": "1.5 hours in Basic Metal Framing"
+        },
+        {
+          "course": "ACA 072B",
+          "credit": "1.5 hours in Basic Lathing"
+        },
+        {
+          "course": "ACA 072C",
+          "credit": "1.5 hours in Advanced Lathing"
+        },
+        {
+          "course": "ACA 073A",
+          "credit": "1.5 hours in Framing Ceilings and Soffits"
+        },
+        {
+          "course": "ACA 073B",
+          "credit": "1.5 hours in Framing Suspended Ceilings"
+        },
+        {
+          "course": "ACA 073C",
+          "credit": "1.5 hours in Framing Curves and Arches"
+        },
+        {
+          "course": "ACA 074A",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "ACA 074B",
+          "credit": "2 hours in Advanced Print Reading"
+        },
+        {
+          "course": "ACA 075A",
+          "credit": "1.5 hours in Light Gage AWS A"
+        },
+        {
+          "course": "ACA 075C",
+          "credit": "1.5 hours in Light Gage AWS B"
+        },
+        {
+          "course": "ACA 078B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        },
+        {
+          "course": "ACA 079A",
+          "credit": "1.5 hours in Drywall Acoustical Ceilings"
+        },
+        {
+          "course": "ACA 079C",
+          "credit": "1.5 hours in Drywall Applications"
+        },
+        {
+          "course": "ACA 083",
+          "credit": "1.5 hours in Door and Door Frames"
+        },
+        {
+          "course": "ACA 086A",
+          "credit": "1.5 hours in Exterior Insulation Finish Systems"
+        },
+        {
+          "course": "ACA 089",
+          "credit": "1.5 hours in Freeform Lathing"
+        },
+        {
+          "course": "ACA 096",
+          "credit": "1.5 hours in Building Envelope Principles"
+        },
+        {
+          "course": "ACA 097",
+          "credit": "1.5 hours in Exterior Metal Frame"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-JCAC-1-001",
+      "exhibit_ids": [
+        "MAPICA-JCAC-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 12,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "College of the Redwoods",
+        "Laney College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Norco College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Santa Rosa Junior College"
+      ],
+      "total_addressable": 13,
+      "credit_recs": [
+        {
+          "course": "ACA 071A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 071B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 071C",
+          "credit": "1.5 hours in Tool and Equipment Applications"
+        },
+        {
+          "course": "ACA 072A",
+          "credit": "1.5 hours in Basic Metal Framing"
+        },
+        {
+          "course": "ACA 072B",
+          "credit": "1.5 hours in Basic Lathing"
+        },
+        {
+          "course": "ACA 072C",
+          "credit": "1.5 hours in Advanced Lathing"
+        },
+        {
+          "course": "ACA 073A",
+          "credit": "1.5 hours in Framing Ceilings and Soffits"
+        },
+        {
+          "course": "ACA 073B",
+          "credit": "1.5 hours in Framing Suspended Ceilings"
+        },
+        {
+          "course": "ACA 073C",
+          "credit": "1.5 hours in Framing Curves and Arches"
+        },
+        {
+          "course": "ACA 074A",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "ACA 074B",
+          "credit": "2 hours in Advanced Print Reading"
+        },
+        {
+          "course": "ACA 075A",
+          "credit": "1.5 hours in Light Gage AWS A"
+        },
+        {
+          "course": "ACA 075C",
+          "credit": "1.5 hours in Light Gage AWS B"
+        },
+        {
+          "course": "ACA 078B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        },
+        {
+          "course": "ACA 079A",
+          "credit": "1.5 hours in Drywall Acoustical Ceilings"
+        },
+        {
+          "course": "ACA 079C",
+          "credit": "1.5 hours in Drywall Applications"
+        },
+        {
+          "course": "ACA 083",
+          "credit": "1.5 hours in Door and Door Frames"
+        },
+        {
+          "course": "ACA 086A",
+          "credit": "1.5 hours in Exterior Insulation Finish Systems"
+        },
+        {
+          "course": "ACA 089",
+          "credit": "1.5 hours in Freeform Lathing"
+        },
+        {
+          "course": "ACA 096",
+          "credit": "1.5 hours in Building Envelope Principles"
+        },
+        {
+          "course": "ACA 097",
+          "credit": "1.5 hours in Exterior Metal Frame"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-JCAC3-1-001",
+      "exhibit_ids": [
+        "MAPICA-JCAC3-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Plastering, AS",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Plastering, AS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, Plastering, AS"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 12,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "College of the Redwoods",
+        "Laney College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Norco College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Santa Rosa Junior College"
+      ],
+      "total_addressable": 13,
+      "credit_recs": [
+        {
+          "course": "ACPL 027",
+          "credit": "1 hour in Dot and Screed Techniques"
+        },
+        {
+          "course": "ACA 071A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 071B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 072B",
+          "credit": "1.5 hours in Basic Lathing"
+        },
+        {
+          "course": "ACA 074A",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "ACA 074B",
+          "credit": "2 hours in Advanced Print Reading"
+        },
+        {
+          "course": "ACA 074C",
+          "credit": "1.5 hours in Air Moisture and Barrier Installation"
+        },
+        {
+          "course": "ACA 082B",
+          "credit": "1.5 hours in S/B Firestop/Fireproofing Procedures"
+        },
+        {
+          "course": "ACPL 023",
+          "credit": "1.5 hours in Tool/Equipment Applications"
+        },
+        {
+          "course": "ACPL 025",
+          "credit": "1.5 hours in Basic Plastering"
+        },
+        {
+          "course": "ACPL 026",
+          "credit": "1.5 hours in Exterior Plastering"
+        },
+        {
+          "course": "ACPL 028",
+          "credit": "1.5 hours in Interior Plastering"
+        },
+        {
+          "course": "ACPL 029",
+          "credit": "1.5 hours in Tender and Plastering Equipment"
+        },
+        {
+          "course": "ACPL 030",
+          "credit": "1.5 hours in Exterior Insulation Finish Systems (EIFS)"
+        },
+        {
+          "course": "ACPL 031",
+          "credit": "1.5 hours in Ornamental Plastering"
+        },
+        {
+          "course": "ACPL 032",
+          "credit": "1.5 hours in Plastering Equipment Application"
+        },
+        {
+          "course": "ACPL 033",
+          "credit": "1.5 hours in Finish Applications"
+        },
+        {
+          "course": "ACPL 034",
+          "credit": "1.5 hours in Theme Plastering"
+        },
+        {
+          "course": "AMF 030",
+          "credit": "2.5 hours in Crew Lead Customer Service Training"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-JCAC4-1-001",
+      "exhibit_ids": [
+        "MAPICA-JCAC4-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Plastering, CA",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Plastering, CA",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, Plastering, CA"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 12,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "College of the Redwoods",
+        "Laney College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Norco College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Santa Rosa Junior College"
+      ],
+      "total_addressable": 13,
+      "credit_recs": [
+        {
+          "course": "ACPL 027",
+          "credit": "1 hour in Dot and Screed Techniques"
+        },
+        {
+          "course": "ACA 071A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 071B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 072B",
+          "credit": "1.5 hours in Basic Lathing"
+        },
+        {
+          "course": "ACA 074A",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "ACA 074B",
+          "credit": "2 hours in Advanced Print Reading"
+        },
+        {
+          "course": "ACA 074C",
+          "credit": "1.5 hours in Air Moisture and Barrier Installation"
+        },
+        {
+          "course": "ACA 082B",
+          "credit": "1.5 hours in S/B Firestop/Fireproofing Procedures"
+        },
+        {
+          "course": "ACPL 023",
+          "credit": "1.5 hours in Tool/Equipment Applications"
+        },
+        {
+          "course": "ACPL 025",
+          "credit": "1.5 hours in Basic Plastering"
+        },
+        {
+          "course": "ACPL 026",
+          "credit": "1.5 hours in Exterior Plastering"
+        },
+        {
+          "course": "ACPL 028",
+          "credit": "1.5 hours in Interior Plastering"
+        },
+        {
+          "course": "ACPL 029",
+          "credit": "1.5 hours in Tender and Plastering Equipment"
+        },
+        {
+          "course": "ACPL 030",
+          "credit": "1.5 hours in Exterior Insulation Finish Systems (EIFS)"
+        },
+        {
+          "course": "ACPL 031",
+          "credit": "1.5 hours in Ornamental Plastering"
+        },
+        {
+          "course": "ACPL 032",
+          "credit": "1.5 hours in Plastering Equipment Application"
+        },
+        {
+          "course": "ACPL 033",
+          "credit": "1.5 hours in Finish Applications"
+        },
+        {
+          "course": "ACPL 034",
+          "credit": "1.5 hours in Theme Plastering"
+        },
+        {
+          "course": "AMF 030",
+          "credit": "2.5 hours in Crew Lead Customer Service Training"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPPRA-CAC-1-001",
       "exhibit_ids": [
         "MAPPRA-CAC-1-001"
@@ -221043,15 +221849,15 @@ window.CPL_STATEWIDE = {
         "disciplines": 20,
         "ccc_collaborative": 148,
         "industry_certs": 212,
-        "pct": 4.2
+        "pct": 4.1
       },
       {
         "college": "Chaffey College",
-        "credit_recs": 430,
+        "credit_recs": 431,
         "exhibits": 367,
         "disciplines": 18,
         "ccc_collaborative": 59,
-        "industry_certs": 90,
+        "industry_certs": 91,
         "pct": 3.8
       },
       {
@@ -221082,13 +221888,22 @@ window.CPL_STATEWIDE = {
         "pct": 2.9
       },
       {
+        "college": "Santiago Canyon College",
+        "credit_recs": 315,
+        "exhibits": 15,
+        "disciplines": 1,
+        "ccc_collaborative": 0,
+        "industry_certs": 315,
+        "pct": 2.7
+      },
+      {
         "college": "Cabrillo College",
         "credit_recs": 312,
         "exhibits": 210,
         "disciplines": 13,
         "ccc_collaborative": 125,
         "industry_certs": 192,
-        "pct": 2.8
+        "pct": 2.7
       },
       {
         "college": "Los Angeles Pierce College",
@@ -221106,7 +221921,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 19,
         "ccc_collaborative": 0,
         "industry_certs": 20,
-        "pct": 2.4
+        "pct": 2.3
       },
       {
         "college": "American River College",
@@ -221172,15 +221987,6 @@ window.CPL_STATEWIDE = {
         "pct": 1.7
       },
       {
-        "college": "Santiago Canyon College",
-        "credit_recs": 189,
-        "exhibits": 9,
-        "disciplines": 1,
-        "ccc_collaborative": 0,
-        "industry_certs": 189,
-        "pct": 1.7
-      },
-      {
         "college": "Merced College",
         "credit_recs": 182,
         "exhibits": 142,
@@ -221205,7 +222011,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 15,
         "ccc_collaborative": 4,
         "industry_certs": 32,
-        "pct": 1.5
+        "pct": 1.4
       },
       {
         "college": "City College of San Francisco",
@@ -221304,7 +222110,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 14,
         "ccc_collaborative": 1,
         "industry_certs": 12,
-        "pct": 1.1
+        "pct": 1.0
       },
       {
         "college": "Santa Monica College",
@@ -221493,7 +222299,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 5,
         "ccc_collaborative": 11,
         "industry_certs": 11,
-        "pct": 0.7
+        "pct": 0.6
       },
       {
         "college": "Columbia College",
@@ -221954,25 +222760,25 @@ window.CPL_STATEWIDE = {
         "courses": 160,
         "colleges": 84,
         "ccc_collaborative": 25,
-        "pct": 40.0
+        "pct": 39.6
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 1962,
-        "exhibits": 1030,
-        "courses": 1099,
+        "credit_recs": 2088,
+        "exhibits": 1036,
+        "courses": 1122,
         "colleges": 52,
         "ccc_collaborative": 499,
-        "pct": 17.3
+        "pct": 18.2
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1340,
+        "credit_recs": 1341,
         "exhibits": 403,
         "courses": 551,
         "colleges": 49,
         "ccc_collaborative": 545,
-        "pct": 11.8
+        "pct": 11.7
       },
       {
         "discipline": "Interdisciplinary Studies",
@@ -221999,7 +222805,7 @@ window.CPL_STATEWIDE = {
         "courses": 192,
         "colleges": 36,
         "ccc_collaborative": 46,
-        "pct": 3.7
+        "pct": 3.6
       },
       {
         "discipline": "Information Technology",
@@ -222116,7 +222922,7 @@ window.CPL_STATEWIDE = {
         "courses": 29,
         "colleges": 21,
         "ccc_collaborative": 0,
-        "pct": 0.5
+        "pct": 0.4
       },
       {
         "discipline": "Psychology",
@@ -222161,28 +222967,28 @@ window.CPL_STATEWIDE = {
         "credit_recs": 5761,
         "exhibits": 1181,
         "colleges": 85,
-        "pct": 50.9
+        "pct": 50.3
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3328,
-        "exhibits": 1146,
+        "credit_recs": 3455,
+        "exhibits": 1152,
         "colleges": 78,
-        "pct": 29.4
+        "pct": 30.2
       },
       {
         "cpl_type": "Credit By Exam",
         "credit_recs": 1654,
         "exhibits": 1187,
         "colleges": 56,
-        "pct": 14.6
+        "pct": 14.4
       },
       {
         "cpl_type": "Portfolio Review",
         "credit_recs": 383,
         "exhibits": 313,
         "colleges": 26,
-        "pct": 3.4
+        "pct": 3.3
       },
       {
         "cpl_type": "Military",
@@ -222205,21 +223011,21 @@ window.CPL_STATEWIDE = {
         "credit_recs": 6800,
         "exhibits": 1883,
         "colleges": 91,
-        "pct": 60.0
+        "pct": 59.4
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2587,
+        "credit_recs": 2588,
         "exhibits": 944,
         "colleges": 74,
-        "pct": 22.8
+        "pct": 22.6
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1205,
-        "exhibits": 556,
+        "credit_recs": 1331,
+        "exhibits": 562,
         "colleges": 42,
-        "pct": 10.6
+        "pct": 11.6
       },
       {
         "mode": "High school coursework (H)",
@@ -222274,11 +223080,11 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 9800,
-        "exhibits": 3699,
+        "credit_recs": 9927,
+        "exhibits": 3705,
         "colleges": 98,
         "disciplines": 23,
-        "pct": 86.5
+        "pct": 86.7
       },
       {
         "category": "CCC Collaborative",
@@ -222286,7 +223092,7 @@ window.CPL_STATEWIDE = {
         "exhibits": 163,
         "colleges": 63,
         "disciplines": 9,
-        "pct": 11.5
+        "pct": 11.4
       },
       {
         "category": "Industry/Other",
@@ -222700,6 +223506,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-18T17:30:34",
-  "total_credit_recs": 11329
+  "generated_at": "2026-06-19T13:51:19",
+  "total_credit_recs": 11456
 };
