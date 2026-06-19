@@ -1,0 +1,25 @@
+{
+  "_generated": "2026-06-19T22:23:05.660Z",
+  "total": 3,
+  "broken": 0,
+  "results": [
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/WLA%20lacma%20Granville%20Redmond%20California%20Poppy%20Field.jpg?width=1600",
+      "status": 206,
+      "ok": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20The%20Rendezvous%2C%20Santa%20Cruz%20Island.jpg?width=1600",
+      "status": 206,
+      "ok": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Laguna%20Seascape%202.jpg?width=1600",
+      "status": 206,
+      "ok": true,
+      "contentType": "image/jpeg"
+    }
+  ]
+}
