@@ -418,6 +418,17 @@ Vault-side hygiene: heavy non-markdown paths (`kb/coci_*.json`,
 `unified_courses_*.js`, `kb/row_audit/`, etc.) are excluded in Obsidian's
 **Files & Links → Excluded files** so the graph stays clean.
 
+**Checkpoint scope — vault, never the public KB.** Rule 8 / `/checkpoint`
+refreshes *this* repo's docs (`docs/kb-notes/`, lessons, §11, the To-Do feed),
+which auto-sync into Sam's Obsidian vault + the `CPLBrain` repo with no review
+gate — correct for internal working memory. Checkpoint must **never** write to
+the public `cpl-knowledge-base`. That repo is a separate, audience-facing store
+reached **only** through its curation pipeline (`CPLBrain/audit/curation-manifest.tsv`
+→ `cpl-knowledge-base/tools/curation_assistant.py` → a human-reviewed **draft
+PR** per its `CURATION.md` — its "Promoting a checkpoint or vault note" section
+is the explicit path). Promoting a checkpoint learning into the public KB is a
+deliberate, human-gated step — never a checkpoint side effect.
+
 ---
 
 ## Pipeline Reference
