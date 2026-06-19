@@ -34,11 +34,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
       - uses: actions/setup-node@v6
         with:
           node-version: '20'
-      - name: Source PD candidates + verify image liveness
-        run: node tools/source_first_light_art.mjs all
+      - name: Source (only if sourcing inputs changed) + verify image liveness
+        run: |
+          if git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -qE '^tools/(source_first_light_art\.mjs|art_categories\.json|\.art-run)$'; then
+            echo "Sourcing inputs changed → full source + verify"
+            node tools/source_first_light_art.mjs all
+          else
+            echo "Manifest/other change → verify image liveness only"
+            node tools/source_first_light_art.mjs verify
+          fi
       - name: Commit reports back to the branch
         run: |
           git config user.name "github-actions[bot]"
