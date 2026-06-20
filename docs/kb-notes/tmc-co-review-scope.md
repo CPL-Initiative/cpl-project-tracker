@@ -15,6 +15,7 @@ artifacts:
   - tmc/_export_program_course_files.*           # Playwright bulk extractor (Data Mart College_MCF.aspx, all 115)
   - tmc/_build_college_adt_courses.py            # PCF → tmc_college_adt_courses.js (per-ADT real course roster)
 related:
+  - docs/kb-notes/reference-adt-acceptance-rules.md
   - docs/tmc_builder_lessons.md
   - docs/kb-notes/reference-tmc-adt-data-model.md
 ---
@@ -103,17 +104,25 @@ at every college regardless of C-ID** — that half is bulletproof.
   approved ADTs; status-driven "what's actually approved" view. Serves **both**
   the college "see current" view and the CO baseline. *(Needs the bulk PCF.)*
 - **Phase 2 — the CO review/compliance tool (the priority).** In the review queue,
-  run automated checks on a submission (or an existing ADT): per-slot **units
-  match** (±), **title/number** similarity, **total units** vs the program's MAJOR
-  UNITS, ≤60 transferable, + the **handbook criteria**. Render ✓ / Δ / ✗ per slot
-  + a "ready to approve / N issues" summary; staffer adds notes, **approves /
-  denies / returns** → status + notify. Extend `tmc_submissions.status` beyond
-  `draft|submitted` (→ `approved|denied|returned`). *(Needs handbook criteria +
-  repaired templates.)*
+  run the **tiered acceptance engine** from
+  [`reference-adt-acceptance-rules.md`](reference-adt-acceptance-rules.md): (1) C-ID
+  match → **mandatory auto-accept**; (2) no C-ID but a flexible-list slot + ASSIST
+  evidence → accept (evidence-flagged); (3) descriptor exists → surface it for
+  faculty COR comparison; plus the **structural checklist** (major ≥ 18 sem units,
+  ≤ 60 total, Required-Core present, List select-counts met, **no added local
+  requirements**). Render ✓ / ⚠ / ✗ per slot + a "ready to approve / N issues"
+  summary; staffer adds notes, **approves / denies / returns** → status + notify.
+  Extend `tmc_submissions.status` beyond `draft|submitted` (→
+  `approved|denied|returned`). **Non-C-ID ≠ non-compliant** — the engine triages,
+  it doesn't verdict. *(Needs: per-TMC flexibility metadata on the templates +
+  repaired templates; grades/hours stay manual.)*
 - **Phase 3 — college submission polish (secondary).** Pre-fill the builder from
   the college's current ADT (PCF), clean "submit new TMC" flow, status display.
-- **Cross-cutting:** repair the 0-C-ID-slot templates (real rosters + official
-  PDFs); surface per-college C-ID coverage honestly; the hours gap (manual flag).
+- **Cross-cutting:** add **per-TMC flexibility metadata** (Required Core vs List
+  A/B/C, select-counts, "any articulated…" provisos) to `tmc_templates.js` from the
+  official PDFs — the §2/§3 prerequisite; repair the 0-C-ID-slot templates (real
+  rosters + official PDFs); surface per-college C-ID coverage honestly; the hours
+  gap (manual flag).
 
 ## Prerequisites / unblocks
 1. **Bulk PCF (all 115).** Data Mart `College_MCF.aspx` is a **DevExpress**
@@ -124,15 +133,17 @@ at every college regardless of C-ID** — that half is bulletproof.
    self-discovers the dropdown options is the robust path — runs on a host that
    reaches `datamart.cccco.edu` (the agent sandbox can't), ~10–15 min, drops 115
    CSVs. *Ready to write.*
-2. **Handbook compliance criteria** — the *checklist* the staffer applies
-   (course-level title/number/units/hours rules + program-level total-units / GE /
-   double-counting), not the whole process. Scopes exactly what Phase 2 checks.
+2. **Compliance criteria — ✅ PROVIDED & distilled** (Sam, 2026-06-20) into
+   [`reference-adt-acceptance-rules.md`](reference-adt-acceptance-rules.md) (the two
+   ASCCC C-ID docs + the STAR Act). Phase 2 implements that ruleset. **Remaining
+   data need: per-TMC flexibility metadata** on the templates (cross-cutting above).
 3. **Status model** for CO review (approve/deny/return) — small schema extension.
 
 ## Open decisions
-- Exact compliance checks (from the handbook).
-- **Hours** are in *no* data we have (PCF, COCI course list, descriptors) — manual
-  flag unless the handbook points to a source.
+- ~~Exact compliance checks~~ → **RESOLVED**: the ASCCC ruleset in
+  [`reference-adt-acceptance-rules.md`](reference-adt-acceptance-rules.md).
+- **Hours** confirmed absent from the rules' data world too (the ASCCC docs key on
+  C-ID/units/articulation, **not** contact hours) → stays a **manual** flag.
 - **Denied** ADTs are invisible in the COCI extract (8 statuses, none "Denied") —
   does the tool *become* the system-of-record the CO currently lacks?
 - Where the bulk PCF lives: a committed **static artifact** like

@@ -122,6 +122,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Playbook — A live Edge Function 502 is often a RETIRED model id (diagnose via logs, fix via model swap)](kb-notes/playbook-edge-function-502-retired-model.md) | playbook | published | 2026-06-19 | 2026-06-19 |
 | [Scope — CPL Assistant CCR/CER-grounded recommendations + real-time benchmark + landing-site demand signal (D1–D5, build ladder, Custom Reports opportunity)](kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md) | scope | published | 2026-06-19 | 2026-06-19 |
 | [Scope — TMC tab → CO-staff ADT review/processing tool (validated PCF↔COCI joins, C-ID coverage limiter, CO-first phased plan)](kb-notes/tmc-co-review-scope.md) | scope | published | 2026-06-20 | 2026-06-20 |
+| [Reference — ADT acceptance & course-substitution rules (ASCCC C-ID guidance + STAR Act; the tiered-acceptance engine, structural checklist, per-TMC flexibility)](kb-notes/reference-adt-acceptance-rules.md) | reference | published | 2026-06-20 | 2026-06-20 |
 
 ---
 
