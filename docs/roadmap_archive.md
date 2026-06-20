@@ -1535,3 +1535,41 @@ names **committed JSON**, Supabase only for live curation. Full story:
 `methodology-coded-key-over-freehand-text-join`. **NEXT:
 `docs/session_62_handoff.md`** — faculty-verify the drafts + the taxonomy
 follow-up (`college_short_names.json` hardening).
+
+## Archived session narratives (Sessions 63–64) — moved 2026-06-20 (Session 66)
+
+### Session 63 — SkyGate: the KB Portal (transplant → login-gated tab → composer) (2026-06-19)
+
+Sam-interactive, fast loop; a side-quest off the data/TMC lanes. Five squash-merged
+PRs built the **KB Portal** end-to-end: **#464** transplanted the self-contained
+`kb-portal/` bundle (a Supabase-magic-link reader over the public KB) into the tracker;
+**#465** wired it in as a login-gated **Knowledge Base** tab (`<iframe src="kb-portal/">`
+in BOTH HTMLs per Rule 4, like Letters; `tabs.js` auto-derives it); **#466** the **✍️
+New-doc composer** (draft → ✨ Claude polish → tokenless GitHub create-file deep-link,
+author commits as themselves — no write token in the app); **#467** a **← Dashboard**
+back button (`target="_top"` to escape the iframe); **#468** **attachment upload**
+(text/PDF/Word/Excel/images → in-browser pdf.js/mammoth/SheetJS extraction + image
+downscale, dodging the proxy's 256 KB cap). Gate = the bundle's own allowlist
+(`slee@cccco.edu` + `malone.dunlavy@rccd.edu`; `map@rccd.edu` deliberately OFF — it can
+reach private CPLBrain). Tests 56→58 files. Full story: `docs/kb_portal_lessons.md`;
+2 new KB notes (embed-bundle-as-tab playbook + browser-doc-capture methodology).
+**NEXT: `docs/session_64_handoff.md`** — Sam smoke-tests the 5 attachment types (fix any
+esm.sh lib path); the bundle-divergence decision (backport vs canonical); then the
+standing data/CCR + TMC lanes resume.
+
+### Session 64 — Startripper: the retired-model 502 fix + the CCR/CER recommender kickoff (2026-06-19)
+
+The CPL Assistant (and the shared `map.rccd.edu` widget) was 502ing on **every** turn —
+the `cpl-chat` Edge Function called `claude-sonnet-4-20250514`, which Anthropic
+**retired 2026-06-15** (404 → the `!anthropicRes.ok` guard's 502). Swapped to
+**`claude-sonnet-4-6`**, **deployed live as v15** (`verify_jwt:false`), PR #471; repo
+swept — no other feature on a retired id. New note:
+`docs/kb-notes/playbook-edge-function-502-retired-model.md`. Then a strategy session
+with Sam kicked off a workstream (scope **PR #472**): make this assistant the
+**CCR/CER-grounded recommendation reference + real-time benchmark** for the MAP Student
+Portal bot, + a per-college **demand signal** on the college CPL Landing Sites — full
+scope + locked decisions D1–D5 in
+[`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`](docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md).
+Full story: `docs/cpl_assistant_lessons.md` (S64). **NEXT: `docs/session_65_handoff.md`**
+— build the CCR/CER/adoption ETL into shared Supabase (green-lit), then M1; the standing
+data/CCR + TMC + KB-portal lanes resume.
