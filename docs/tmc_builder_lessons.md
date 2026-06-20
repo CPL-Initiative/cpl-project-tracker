@@ -357,3 +357,40 @@ a daily-cron artifact (the cron doesn't rebuild it), so the regenerated overlay
 - Teachout (25) + in-progress (99) remain their own buckets; a future "pipeline
   view" could foreground the in-progress/teachout lanes (the parked Session-61
   "Pipeline & teach-out focus" direction).
+
+## Session 66 cont. — Skylander: TMC template structure + flexibility metadata (2026-06-20)
+
+Sam set the priority — a **CO-staff ADT review/processing tool**
+([scope](kb-notes/tmc-co-review-scope.md)) grounded in the ASCCC acceptance
+ruleset ([rules](kb-notes/reference-adt-acceptance-rules.md)). The first build
+step (Sam: "kick off tmc") is making `tmc_templates.js` carry the structure the
+Phase-2 acceptance engine needs.
+
+- **`refine_slot()` in `tmc/_parse_tmc_pdfs.py`** post-processes every non-C-ID
+  slot into one of: (1) **recover an embedded C-ID** — an explicit inline
+  "…C-ID AFS 100", or a stray VERIFIED token like "ARTS 230" sitting in a clean
+  specific title → promote to a real `cid` slot; (2) **flag a FLEXIBLE proviso**
+  ("any articulated major-prep / CSU-transferable course", "another … course")
+  `flexible:true` — acceptance-engine tier 2 (accept any qualifying course +
+  ASSIST evidence); (3) leave genuine specific non-C-ID example courses.
+- **Results:** C-ID slots 569 → **584** (15 recovered); **African American
+  Studies 0 → 3** — the *only* 0-C-ID template, and the bug was simply that its
+  C-IDs were inline in the title text ("…C-ID AFS 100"), not in their own cell;
+  **119 flexible** slots flagged; per-TMC **`flexibility: 'fixed'|'flexible'`**
+  (5 fixed: Chemistry / Computer Science / Environmental Science / Geology /
+  Music Industry Studies). *(My earlier "Math/Biology/Business have 0 C-ID slots"
+  was a false alarm — a `discipline`-exact-match bug in a throwaway probe; those
+  templates carry a "2.0" suffix the COCI ADT titles lack. They were never broken.)*
+- **Faithful-to-the-PDF nuance:** the 2019 ASCCC paper calls ECE "zero
+  flexibility," yet the live 2023 ECE template has a "maximum of two … articulated"
+  allowance → we classify on the **actual PDF**, not the doc's illustrative example.
+- Order in `refine_slot` matters: explicit inline C-ID first; **then** flexible
+  flagging (so an *example* C-ID named inside an "any … such as …" proviso stays
+  flexible — the Sociology `SOCI 125` case); token-recovery only on clean
+  specific titles.
+- Test: `tests/tmc_templates_structure.test.js` (9 checks — no 0-C-ID templates,
+  recovered C-IDs present, flexible/flexibility invariants). Suite 59 → 60 files.
+- **Next:** the Phase-2 **acceptance engine** consumes `flexible`/`flexibility`
+  (C-ID match = mandatory accept · flexible slot = accept-with-ASSIST · descriptor
+  comparison = human) + the structural checklist; and the **bulk PCF** (Playwright)
+  for the current-state bootstrap.

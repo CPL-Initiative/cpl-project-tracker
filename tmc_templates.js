@@ -4,10 +4,10 @@
 window.CPL_TMC_TEMPLATES = {
  "_meta": {
   "draft": true,
-  "generated": "2026-06-17",
+  "generated": "2026-06-20",
   "generated_by": "tmc/_parse_tmc_pdfs.py (from tmc/source_pdfs/*.pdf)",
   "source": "Official ASCCC C-ID Transfer Model Curriculum PDFs (c-idsystem.org/transfer-efforts)",
-  "note": "Per-TMC status: 'official' (faculty-verified) / 'draft' (parsed from the official template, faculty-verify) / 'planned' (catalog only). Slots with cid_unverified:true carry a C-ID not in our descriptor extract — a discrepancy signal that C-ID (or our reference) may need updating. Titles for verified C-IDs come from kb/reference/cid_descriptors.json.",
+  "note": "Per-TMC status: 'official' (faculty-verified) / 'draft' (parsed from the official template, faculty-verify) / 'planned' (catalog only). Slots with cid_unverified:true carry a C-ID not in our descriptor extract — a discrepancy signal that C-ID (or our reference) may need updating. Titles for verified C-IDs come from kb/reference/cid_descriptors.json. Per-slot flexible:true marks a FLEXIBLE proviso ('any articulated major-prep / CSU-transferable course') that accepts any qualifying course + ASSIST evidence (acceptance-engine tier 2; see docs/kb-notes/reference-adt-acceptance-rules.md). Per-TMC flexibility:'fixed' (no substitution latitude, e.g. ECE) | 'flexible' (has select-N lists or flexible slots).",
   "sources": {
    "administration-of-justice": "https://c-idsystem.org/wp-content/uploads/2025/06/2023_Nov_Administration_of_Justice_TMC_r.pdf",
    "african-american-studies": "https://c-idsystem.org/wp-content/uploads/2025/08/2025_Jun_African_American_Studies_TMC_v2_r.pdf",
@@ -156,17 +156,20 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any CSU transferable Administration of Justice lower division course",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Courses outside the Administration of Justice discipline that are articulated as lower division major preparation for the Criminal Justice or Criminology Major at any CSU campus.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "african-american-studies",
@@ -181,19 +184,19 @@ window.CPL_TMC_TEMPLATES = {
      "select": "all",
      "slots": [
       {
-       "title": "Introduction to African American Studies C-ID AFS 100",
-       "noncid": true,
-       "units": "3"
+       "title": "Introduction to African American Studies",
+       "units": "3",
+       "cid": "AFS 100"
       },
       {
-       "title": "AND African American History of the U.S. to Reconstruction C-ID AFS 140",
-       "noncid": true,
-       "units": "3"
+       "title": "African American History of the U.S. to Reconstruction",
+       "units": "3",
+       "cid": "AFS 140"
       },
       {
-       "title": "African American History of the U.S. since Reconstruction C-ID AFS 141",
-       "noncid": true,
-       "units": "3"
+       "title": "African American History of the U.S. since Reconstruction",
+       "units": "3",
+       "cid": "AFS 141"
       }
      ],
      "units": "6"
@@ -204,12 +207,14 @@ window.CPL_TMC_TEMPLATES = {
      "slots": [
       {
        "title": "Any course with an African American discipline designator articulated as lower division preparation in the African American Studies major at the CSU",
-       "noncid": true
+       "noncid": true,
+       "flexible": true
       },
       {
        "title": "Any African American Studies course with an African American discipline designator articulated as fulfilling CSUGE Area C or D; or IGETC 3 or 4; or comparable areas in CalGETC",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ]
     },
@@ -220,22 +225,26 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any African American Studies course with an African American discipline designator articulated as fulfilling CSUGE-B Area F; or comparable areas in CalGETC",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "language course, other than English, articulated as fulfilling Cal-GETC Area 3B",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable African American Studies course with an African American discipline designator",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "agriculture-animal-sciences",
@@ -346,12 +355,14 @@ window.CPL_TMC_TEMPLATES = {
      "slots": [
       {
        "title": "Any course(s) not selected above or any courses that are articulated for lower division preparation for the targeted major at the main transfer university.",
-       "noncid": true
+       "noncid": true,
+       "flexible": true
       }
      ],
      "units": "0-8"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "agriculture-business",
@@ -450,17 +461,20 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course(s) not selected above",
        "noncid": true,
-       "units": "3-5"
+       "units": "3-5",
+       "flexible": true
       },
       {
        "title": "Any courses that are articulated for lower division preparation for the targeted major at the main transfer university.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "0-9"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "agriculture-plant-sciences",
@@ -527,16 +541,19 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course(s) not selected above",
        "noncid": true,
-       "units": "3-5"
+       "units": "3-5",
+       "flexible": true
       },
       {
        "title": "Any courses that are articulated for lower division preparation for the targeted major at the main transfer university",
-       "noncid": true
+       "noncid": true,
+       "flexible": true
       }
      ],
      "units": "0-8"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "american-indian-studies",
@@ -570,12 +587,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course articulated as lower division preparation in the American Indian Studies major at a CSU",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any American Indian Studies course articulated as fulfilling Cal-GETC 3 or 4",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
@@ -587,22 +606,26 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any American Indian Studies course articulated as fulfilling Cal-GETC Area 6",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "language course, other than English, articulated as fulfilling Cal-GETC Area 3B",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable American Indian Studies course",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "anthropology",
@@ -646,7 +669,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course that is articulated as lower division major preparation for the anthropology major at a CSU or UC",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "ANTH 130",
@@ -673,22 +697,26 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any courses not selected from List A",
        "noncid": true,
-       "units": "3-6"
+       "units": "3-6",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable anthropology course",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any course from Cal-GETC Area 3 and/or 4 emphasizing Human Culture",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any Social Science course in Cal-GETC Area 4 or Area 6",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
@@ -700,7 +728,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any courses not selected from List A or List B",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Philosophy of Science",
@@ -765,7 +794,8 @@ window.CPL_TMC_TEMPLATES = {
      ],
      "units": "2-4"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "art-history",
@@ -792,7 +822,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any CSU transferable non-western art history course",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "ARTS 110",
@@ -801,7 +832,8 @@ window.CPL_TMC_TEMPLATES = {
       },
       {
        "title": "Any Basic Core Studio Arts class",
-       "noncid": true
+       "noncid": true,
+       "flexible": true
       }
      ],
      "units": "9"
@@ -828,7 +860,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any CSU transferable art history course",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
@@ -853,14 +886,14 @@ window.CPL_TMC_TEMPLATES = {
        "units": "3"
       },
       {
-       "title": "Introduction to Ceramics ARTS 230 or AAM",
-       "noncid": true,
-       "units": "3"
+       "title": "Introduction to Ceramics (Archived - for reference only)",
+       "units": "3",
+       "cid": "ARTS 230"
       },
       {
-       "title": "Sculpture ARTS 240 or AAM",
-       "noncid": true,
-       "units": "3"
+       "title": "Sculpture (Archived - for reference only)",
+       "units": "3",
+       "cid": "ARTS 240"
       },
       {
        "cid": "ARTS 250",
@@ -868,14 +901,15 @@ window.CPL_TMC_TEMPLATES = {
        "units": "3"
       },
       {
-       "title": "Introduction to Photography ARTS 260 or AAM",
-       "noncid": true,
-       "units": "3"
+       "title": "Introduction to Photography (Archived - for reference only)",
+       "units": "3",
+       "cid": "ARTS 260"
       },
       {
        "title": "Any studio arts course that transfers as Cal-GETC or as major preparation for the studio arts major or similar at the CSU. GECC or AAM",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
@@ -887,31 +921,37 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course from List A or List B not already used",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable Art History course (Note: EXCEPT ARTH 100 Art Appreciation, which is EXCLUDED as fulfilling the art history major prep)",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any Art or Humanities course articulated as Cal-GETC Area 3A",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any course articulated as Cal-GETC Area 3B in: A Language other than English (except ASL); Art, History, Humanities; Philosophy; Religion/Religious Studies; or The History of Costume;",
        "noncid": true,
-       "units": "3-5"
+       "units": "3-5",
+       "flexible": true
       },
       {
        "title": "Any course Anthropology, Archaeology, Ethnic Studies, Gender Studies, or History course articulated as Cal-GETC Area 4",
-       "noncid": true
+       "noncid": true,
+       "flexible": true
       }
      ],
      "units": "3-5"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "asian-american-studies",
@@ -955,12 +995,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any REQUIRED CORE course(s) not previously selected Any course articulated as lower division preparation in the Asian American Studies major at a CSU",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any course in Asian American Studies or other Ethnic Studies course (ex. Black Studies; African American Studies; Africana Studies; American Indian/Native American Studies; Chicano/a/x; Latino/a/x Studies/La Raza Studies; Ethnic Studies) articulated as Cal-GETC Area 3 or 6",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
@@ -972,22 +1014,26 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course in Asian American Studies or other Ethnic Studies course (ex. Black Studies; African American Studies; Africana Studies; American Indian/Native American Studies; Chicano/a/x; Latino/a/x Studies/La Raza Studies; Ethnic Studies) articulated as Cal-GETC Area 4 or 6",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "language course, other than English, articulated as fulfilling Cal-GETC Area 3B",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable in Asian American Studies or other Ethnic Studies course (ex. Black Studies; African American Studies; Africana Studies; American Indian/Native American Studies; Chicano/a/x; Latino/a/x Studies/La Raza Studies; Ethnic Studies",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "biology",
@@ -1061,11 +1107,13 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Select one (1) additional course that is articulated as major preparation at a CSU campus",
        "noncid": true,
-       "units": "0-4"
+       "units": "0-4",
+       "flexible": true
       }
      ]
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "business-administration",
@@ -1112,7 +1160,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "math course (excluding Statistics) articulated for the Business major at a CSU campus",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "ECON 201",
@@ -1142,7 +1191,8 @@ window.CPL_TMC_TEMPLATES = {
      ],
      "units": "24"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "chemistry",
@@ -1204,7 +1254,8 @@ window.CPL_TMC_TEMPLATES = {
      ],
      "units": "36"
     }
-   ]
+   ],
+   "flexibility": "fixed"
   },
   {
    "id": "chicana-o-studies-latina-o-studies",
@@ -1243,12 +1294,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course articulated as lower division preparation in the Chicana/o major at a CSU",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any Chicana/o course articulated a fulfilling Cal-GETC 3 or 4",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
@@ -1260,22 +1313,26 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any Chicana/o Studies course articulated as fulfilling Cal-GETC Area 6",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "language course, other than English, articulated as fulfilling Cal-GETC Area 3B",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable Chicana/o Studies course",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "child-and-adolescent-development",
@@ -1312,7 +1369,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Another CSU transferable statistics course that has been approved for Cal-GETC Area 2 and is articulated as major preparation for the Child Development major AAM and GECC",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "9"
@@ -1364,12 +1422,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "maximum of two courses not listed above that are articulated for lower division major preparation in the Child Development Major at a CSU campus",
        "noncid": true,
-       "units": "3-6"
+       "units": "3-6",
+       "flexible": true
       }
      ],
      "units": "9"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "communication-studies",
@@ -1448,7 +1508,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Title C-ID Designation or other Justification C-ID Units (or sample units) Proposed Cal-GETC Area for double counting Any course articulated as lower division preparation in the Communication, Communication Studies major at a CSU.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "9"
@@ -1460,7 +1521,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any List A course not already used",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "COMM 115",
@@ -1505,12 +1567,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any CSU transferable Communication Studies course",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "computer-science",
@@ -1597,7 +1661,8 @@ window.CPL_TMC_TEMPLATES = {
      ],
      "units": "28"
     }
-   ]
+   ],
+   "flexibility": "fixed"
   },
   {
    "id": "early-childhood-education",
@@ -1654,12 +1719,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "maximum of two courses not listed above that are articulated for lower division major preparation in the Child Development Major at a CSU.",
        "noncid": true,
-       "units": "0-6"
+       "units": "0-6",
+       "flexible": true
       }
      ],
      "units": "24"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "economics",
@@ -1699,9 +1766,9 @@ window.CPL_TMC_TEMPLATES = {
        "units": "4"
       },
       {
-       "title": "Single Variable Calculus I – Late Transcendentals MATH 211",
-       "noncid": true,
-       "units": "4"
+       "title": "Single Variable Calculus I Late Transcendentals",
+       "units": "4",
+       "cid": "MATH 211"
       },
       {
        "cid": "MATH 900 S",
@@ -1718,7 +1785,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course that is articulated as major preparation for the Economics major at any CSU campus",
        "noncid": true,
-       "units": "3-4"
+       "units": "3-4",
+       "flexible": true
       },
       {
        "cid": "MATH 130",
@@ -1765,17 +1833,20 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course not used in List A",
        "noncid": true,
-       "units": "3-4"
+       "units": "3-4",
+       "flexible": true
       },
       {
        "title": "Any lower division Economics elective course that is CSU transferable",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable introductory course in the social sciences articulated as filling Cal-GETC Area 4",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "MATH 230",
@@ -1790,7 +1861,8 @@ window.CPL_TMC_TEMPLATES = {
      ],
      "units": "3-4"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "elementary-teacher-education-integrated-programs",
@@ -1957,12 +2029,14 @@ window.CPL_TMC_TEMPLATES = {
       },
       {
        "title": "Any courses that are lower preparation for the targeted major at a university",
-       "noncid": true
+       "noncid": true,
+       "flexible": true
       }
      ],
      "units": "0-12"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "english",
@@ -2053,12 +2127,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course from List A not used",
        "noncid": true,
-       "units": "3-4"
+       "units": "3-4",
+       "flexible": true
       },
       {
        "title": "Any English course articulated for preparation for the English major at any CSU",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "ENGL 200",
@@ -2080,22 +2156,26 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course from Lists A or B not used above",
        "noncid": true,
-       "units": "3-4"
+       "units": "3-4",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable English course",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any language course other than English which is articulated to fulfill Cal-GETC Area 3B",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable literature course offered in another department",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "JOUR 110",
@@ -2135,7 +2215,8 @@ window.CPL_TMC_TEMPLATES = {
      ],
      "units": "3"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "environmental-science",
@@ -2262,7 +2343,8 @@ window.CPL_TMC_TEMPLATES = {
      ],
      "units": "37-39"
     }
-   ]
+   ],
+   "flexibility": "fixed"
   },
   {
    "id": "film-television-and-electronic-media",
@@ -2348,7 +2430,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course articulated as lower division major preparation for the Film, Television and Electronic Media major at a CSU campus. (See examples below)",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
@@ -2380,17 +2463,20 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course articulated as fulfilling Cal-GETC Area 3",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable film, television, and electronic media course",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "geography",
@@ -2486,17 +2572,20 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any CSU transferable geography courses",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Other courses, in or outside the discipline, that are articulated as lower division major preparation for the geography major at a CSU.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "geology",
@@ -2573,7 +2662,8 @@ window.CPL_TMC_TEMPLATES = {
      ],
      "units": "26"
     }
-   ]
+   ],
+   "flexibility": "fixed"
   },
   {
    "id": "global-studies",
@@ -2617,7 +2707,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any anthropology or history course articulated as major preparation for one of the CSU majors associated with the AoE.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "GEOG 110",
@@ -2637,7 +2728,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any geography course articulated as major preparation for one of the CSU majors associated with the Area of Emphasis",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "ECON 201",
@@ -2652,7 +2744,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any economics course articulated as major preparation for one of the CSU majors associated with the Area of Emphasis.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "POLS 130",
@@ -2667,7 +2760,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any political science course articulated as major preparation for one of the CSU majors associated with the Area of Emphasis",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "ENGL 140",
@@ -2681,17 +2775,20 @@ window.CPL_TMC_TEMPLATES = {
       },
       {
        "title": "Any 3rd or 4th term foreign language course.",
-       "noncid": true
+       "noncid": true,
+       "flexible": true
       },
       {
        "title": "Any course articulated as major preparation for one of the CSU majors associated with the Area of Emphasis and articulated as Cal-GETC 3A or 3B AAM and GECC",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "15"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "history",
@@ -2762,17 +2859,20 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "non-western history course (any history course not pertaining to the US or Europe) articulated as fulfilling Cal-GETC Area 3B or 4",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any course from the humanities or social sciences (including history) that addresses any historically under-represented group or non- western subject articulated as fulfilling Cal- GETC Area 3B or 4",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "language other than English which is articulated as fulfilling Cal-GETC Area 3B",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Area 2 Any history course (including List A courses, if not used above)",
@@ -2782,17 +2882,20 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any non-history course from the humanities or social sciences related to history articulated as fulfilling Cal-GETC Area 3B or 4",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any introductory level social sciences course articulated as fulfilling Cal-GETC Area 4",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "hospitality-management",
@@ -2863,7 +2966,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any courses from List A not already used",
        "noncid": true,
-       "units": "2-3"
+       "units": "2-3",
+       "flexible": true
       },
       {
        "cid": "ACCT 110",
@@ -2883,12 +2987,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any lower division course articulated for the Hospitality Management degree at the CSU (3-4)",
        "noncid": true,
-       "units": "3-4"
+       "units": "3-4",
+       "flexible": true
       }
      ],
      "units": "6-7"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "journalism",
@@ -2962,9 +3068,9 @@ window.CPL_TMC_TEMPLATES = {
      "select": 2,
      "slots": [
       {
-       "title": "Introduction to Photography ARTS 260 or AAM",
-       "noncid": true,
-       "units": "3"
+       "title": "Introduction to Photography (Archived - for reference only)",
+       "units": "3",
+       "cid": "ARTS 260"
       },
       {
        "title": "Desktop Publishing",
@@ -3034,17 +3140,20 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any GE course from two different Areas within 1A-4",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable course(s) that are articulated as lower division major preparation for the Journalism major at a CSU campus (not completed under List A)",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "kinesiology",
@@ -3142,7 +3251,8 @@ window.CPL_TMC_TEMPLATES = {
      ],
      "units": "6"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "law-public-policy-and-society",
@@ -3386,7 +3496,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course that is CSU transferable and focuses on public administration or public policy",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "ANTH 120",
@@ -3416,22 +3527,26 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Various - Any course that emphasizes the perspectives of under-represented groups and has articulation as CSU GE Area D or E Cal- GETC Area 4",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Title C-ID Designation or other Justification C-ID Units (or sample units) Proposed Cal-GETC Area for double counting College Success Various - A CSU-transferable course that is: • Articulated for CSU GE Area E • UC transferable The course title must refer to student success, college success, or academic skills (or similar). And the course must have specific content areas to include, but not limited to, study skills, time management, note taking, goal setting, test taking, learning styles, and critical thinking.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Internship/Fieldwork Any CSU-transferable internship or fieldwork course deemed appropriate by the college. “Internship” or “Fieldwork” must be in the course title, or the course must be identified as cooperative work experience.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "mathematics",
@@ -3456,9 +3571,9 @@ window.CPL_TMC_TEMPLATES = {
        "units": "4"
       },
       {
-       "title": "and Single Variable Calculus II – Early Transcendentals MATH 220",
-       "noncid": true,
-       "units": "4"
+       "title": "Single Variable Calculus II Early Transcendentals",
+       "units": "4",
+       "cid": "MATH 220"
       },
       {
        "cid": "MATH 211",
@@ -3505,7 +3620,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any Introductory Programming Course such as C++, Python, and such that is articulated for transfer for the major",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "PHYS 205",
@@ -3515,7 +3631,8 @@ window.CPL_TMC_TEMPLATES = {
      ],
      "units": "3-4"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "music",
@@ -3625,7 +3742,8 @@ window.CPL_TMC_TEMPLATES = {
       }
      ]
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "music-industry-studies",
@@ -3702,7 +3820,8 @@ window.CPL_TMC_TEMPLATES = {
      ],
      "units": "21"
     }
-   ]
+   ],
+   "flexibility": "fixed"
   },
   {
    "id": "nutrition-and-dietetics",
@@ -3799,12 +3918,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any other course(s) articulated as major preparation for the nutrition/dietetics major at CSU or UC.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "philosophy",
@@ -3858,7 +3979,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any courses that are articulated as lower division major preparation for the Philosophy major at a CSU, UC, or other accredited university.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
@@ -3890,7 +4012,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any courses articulated as lower division major preparation for the Philosophy major at a CSU campus.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
@@ -3902,17 +4025,20 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course not selected from List A or List B OR Any CSU transferable course that has been articulated to fulfill preparation for the Philosophy major",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable course that has been articulated to fulfill Cal-GETC Area 3B",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "physics-2-0",
@@ -3991,11 +4117,13 @@ window.CPL_TMC_TEMPLATES = {
       },
       {
        "title": "Any Introductory Programming Course such as C++, Python, and such that is articulated for transfer for the major",
-       "noncid": true
+       "noncid": true,
+       "flexible": true
       }
      ]
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "political-science",
@@ -4039,7 +4167,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course not selected from Core",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "POLS 150",
@@ -4069,7 +4198,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any CSU transferable political science courses",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
@@ -4081,27 +4211,32 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any courses not selected from Required Core or List A",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable political science courses",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Other courses that are articulated as lower division preparation for the political science major at a CSU or UC.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable introductory course in the social sciences (i.e., articulated as filling CalGETC Area 4).",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "psychology",
@@ -4167,12 +4302,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any List A course not used above.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any course that has articulation as lower division major preparation for the psychology major at a CSU (if utilized for double counting the course must be UC transferable).",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
@@ -4184,22 +4321,26 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any courses not selected above",
        "noncid": true,
-       "units": "3-4"
+       "units": "3-4",
+       "flexible": true
       },
       {
        "title": "Any CSU transferable psychology course (if utilized for double counting the course must be UC transferable)",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Other courses that are lower division preparation for the psychology major at a university - in or outside of the discipline.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "public-health",
@@ -4236,7 +4377,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any statistics course articulated as Area 2",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Introduction to Biology with Lab",
@@ -4377,12 +4519,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course articulated as major preparation for the public health and related majors at CSU or UC**",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "social-justice-studies",
@@ -4424,12 +4568,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course listed above, not already used.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any course with articulation as major preparation for a major the TMC is intended to serve",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "9"
@@ -4487,7 +4633,8 @@ window.CPL_TMC_TEMPLATES = {
       }
      ]
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "social-work-and-human-services",
@@ -4559,7 +4706,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Other Biology course articulated as major preparation",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "ECON 201",
@@ -4653,17 +4801,20 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any other course or courses that have articulation as major preparation for one the identified destination majors at a CSU",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any CSU-transferable course that is part of a CAADE or CAADAC recognized program at a CCC.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "sociology",
@@ -4717,7 +4868,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Another CSU and UC transferable behavioral or social science research methods course that has either a prerequisite of SOCI 125 or PSY 11 or articulation as major preparation (Research Methods for the Behavioral and/or Social Sciences)",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "cid": "SOCI 130",
@@ -4747,7 +4899,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any sociology course that is articulated as lower major preparation at a CSU or UC",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "6"
@@ -4759,12 +4912,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any List A course not selected above Any CSU or UC transferable sociology course",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Other courses (in or outside the sociology discipline) that are articulated as lower division major preparation for the Sociology major at a CSU or UC (e.g. Cultural Anthropology, General Psychology)",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "An introductory course in the social sciences",
@@ -4774,7 +4929,8 @@ window.CPL_TMC_TEMPLATES = {
      ],
      "units": "3"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "spanish",
@@ -4858,12 +5014,14 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any course articulated as major preparation for the Spanish major",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3-4"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "studio-art",
@@ -4922,7 +5080,8 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Any other Art History survey articulated for lower division major preparation (Art Appreciation courses do not count towards this requirement)",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "3"
@@ -4945,19 +5104,19 @@ window.CPL_TMC_TEMPLATES = {
        "units": "3"
       },
       {
-       "title": "Printmaking Introduction to Printmaking ARTS 220 or AAM",
-       "noncid": true,
-       "units": "3"
+       "title": "Introduction to Printmaking (Archived - for reference only)",
+       "units": "3",
+       "cid": "ARTS 220"
       },
       {
-       "title": "Ceramics Introduction to Ceramics ARTS 230 or AAM",
-       "noncid": true,
-       "units": "3"
+       "title": "Introduction to Ceramics (Archived - for reference only)",
+       "units": "3",
+       "cid": "ARTS 230"
       },
       {
-       "title": "Sculpture Sculpture ARTS 240 or AAM",
-       "noncid": true,
-       "units": "3"
+       "title": "Sculpture (Archived - for reference only)",
+       "units": "3",
+       "cid": "ARTS 240"
       },
       {
        "cid": "ARTS 250",
@@ -4965,9 +5124,9 @@ window.CPL_TMC_TEMPLATES = {
        "units": "3"
       },
       {
-       "title": "Photography Introduction to Photography ARTS 260 or AAM",
-       "noncid": true,
-       "units": "3"
+       "title": "Introduction to Photography (Archived - for reference only)",
+       "units": "3",
+       "cid": "ARTS 260"
       },
       {
        "cid": "ARTS 270",
@@ -4977,22 +5136,26 @@ window.CPL_TMC_TEMPLATES = {
       {
        "title": "Applied Design Introduction to Crafts ARTS 280 or AAM OR Introduction to Jewelry and Metalsmithing ARTS 281 or AAM OR Introduction to Fiber Arts ARTS 282 or AAM Other Media Courses articulated as lower division major preparation for the Studio Arts major in curricular areas not represented above.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Second Semester Second-semester courses in the above curricular areas articulated as required lower division major preparation for a particular area of emphasis within the major.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       },
       {
        "title": "Any other local Studio Arts course within these curricular areas may be used that is CSU transferable and articulated as lower division major preparation for the Studio Arts major.",
        "noncid": true,
-       "units": "3"
+       "units": "3",
+       "flexible": true
       }
      ],
      "units": "9"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   },
   {
    "id": "theatre-arts",
@@ -5086,7 +5249,8 @@ window.CPL_TMC_TEMPLATES = {
      ],
      "units": "9"
     }
-   ]
+   ],
+   "flexibility": "flexible"
   }
  ]
 };
