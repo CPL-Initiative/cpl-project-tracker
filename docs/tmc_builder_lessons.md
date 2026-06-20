@@ -311,3 +311,49 @@ focused `college_short_names.json` alias-hardening pass is the clean follow-up.
   resolves through one authority (the down-payment on Sam's taxonomy ask).
 - **UCTP depth**: if faculty want a UCTP slot-by-slot builder, source the UCTP
   templates (we only host the COCI standing today).
+
+---
+
+## Session 66 — Skylander: split Active vs Approved program status (2026-06-20)
+
+Sam-interactive. Building on the Session 61 ADT overlay, Sam chose to make the
+per-college program status **faithful to COCI's two distinct affirmative
+states** instead of collapsing them into one badge:
+
+- **Active** (`STATUS = "Active"`) — approved AND live in the college catalog
+  (students can enroll). **2,867** of the 3,238 (college,TMC) pairs.
+- **Approved** (`STATUS = "Approved"`) — CO-approved but **not yet activated**
+  in the catalog (pending). **218** pairs across **40 of 44** TMCs — previously
+  invisible (indistinguishable from live ADTs).
+
+**What shipped (one PR, code + the static artifact):**
+- `tmc/_build_college_adts.py` — split the old `approved={Active,Approved}`
+  bucket into `active` + `approved`; `BUCKET_RANK` makes **Active outrank
+  Approved** in the per-(college,TMC) dedup (a college with a live ADT reads
+  "Active" even if a newer revision is pending). `tmc_totals` now carries both
+  counts; `colleges` (the truthiness gate) is unchanged in value
+  (active+approved == old approved). Added a bucket tally to the run summary.
+- `tmc_builder.js` — `ADT_BADGE` gains **✓ Active** (green `adt-ok`) and
+  restyles **✓ Approved** to a distinct teal `adt-appr` (chip + banner CSS).
+  The detail banner gets an Active branch ("…has an **active** … ADT (live in
+  the catalog)…") ahead of the Approved one ("…**is approved** — pending
+  activation in the catalog…"). The statewide review banner + directory cell now
+  show the **established** count (active+approved) and surface the split
+  ("N active · M approved (pending activation)") only when pending ones exist;
+  the review banner handles the in-progress-only edge case cleanly.
+- `tests/tmc_college_adts.test.js` — Part A valid-bucket set gains `active`; the
+  Business-Admin invariant checks `active+approved > 50`. Part B adds a third
+  mock TMC so all three surfaced states are covered (active / approved-pending /
+  none) + a teal-banner assertion. **30 → 33 checks; full suite 59 files green.**
+
+**Why it's a static-artifact PR (not code-only):** `tmc_college_adts.js` is NOT
+a daily-cron artifact (the cron doesn't rebuild it), so the regenerated overlay
+**must** be committed — unlike the `unified_courses_*` artifact policy.
+
+**Next concrete steps (Session 66 →):**
+- The directory header still reads "Approved (CA)" — kept as a colloquial
+  shorthand (cell tooltip breaks down active vs pending). Rename to
+  "Established (CA)" if Sam prefers.
+- Teachout (25) + in-progress (99) remain their own buckets; a future "pipeline
+  view" could foreground the in-progress/teachout lanes (the parked Session-61
+  "Pipeline & teach-out focus" direction).

@@ -100,10 +100,14 @@
    * The authoritative source for which colleges hold an approved ADT in each
    * discipline is the COCI *program* export, distilled into the lazy overlay
    * window.CPL_TMC_COLLEGE_ADTS (built by tmc/_build_college_adts.py). We stamp
-   * a per-college status onto each TMC: ✓ Approved / ⏳ In progress / ◐ Teachout
+   * a per-college status onto each TMC, mirroring COCI's two affirmative states
+   * separately (Sam, 2026-06-20 — "split Active vs Approved"):
+   *   ✓ Active (live in the catalog) · ✓ Approved (CO-approved, pending
+   *   activation) · ⏳ In progress · ◐ Teachout
    * (Inactive is kept in the data but hidden in the UI per Sam, 2026-06-18). */
   var ADT_BADGE = {
-    approved:    { label: "✓ Approved",    cls: "adt-ok" },
+    active:      { label: "✓ Active",      cls: "adt-ok" },
+    approved:    { label: "✓ Approved",    cls: "adt-appr" },
     in_progress: { label: "⏳ In progress", cls: "adt-prog" },
     teachout:    { label: "◐ Teachout",    cls: "adt-teach" },
     inactive:    { label: "○ Inactive",    cls: "adt-off" }
@@ -257,11 +261,13 @@
       // per-college approved-ADT chips (directory column) + the detail banner
       "#tab-tmc-builder .tmc-adt{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 8px;border-radius:20px;white-space:nowrap;}" +
       "#tab-tmc-builder .tmc-adt.adt-ok{background:#ecfdf5;color:#065f46;border:1px solid #34d399;}" +
+      "#tab-tmc-builder .tmc-adt.adt-appr{background:#f0fdfa;color:#115e59;border:1px solid #5eead4;}" +
       "#tab-tmc-builder .tmc-adt.adt-prog{background:#eff6ff;color:#1e40af;border:1px solid #93c5fd;}" +
       "#tab-tmc-builder .tmc-adt.adt-teach{background:#fffbeb;color:#92400e;border:1px solid #fcd34d;}" +
       "#tab-tmc-builder .tmc-adt.adt-off,#tab-tmc-builder .tmc-adt.adt-none{background:transparent;color:#9ca3af;border:1px dashed #d1d5db;}" +
       "#tab-tmc-builder .tmc-adtbanner{border-radius:9px;padding:10px 14px;font-size:.9rem;margin:0 0 14px;line-height:1.45;}" +
       "#tab-tmc-builder .tmc-adtbanner.adt-ok{background:#ecfdf5;border:1px solid #6ee7b7;color:#065f46;}" +
+      "#tab-tmc-builder .tmc-adtbanner.adt-appr{background:#f0fdfa;border:1px solid #99f6e4;color:#115e59;}" +
       "#tab-tmc-builder .tmc-adtbanner.adt-prog{background:#eff6ff;border:1px solid #93c5fd;color:#1e40af;}" +
       "#tab-tmc-builder .tmc-adtbanner.adt-teach{background:#fffbeb;border:1px solid #fcd34d;color:#92400e;}" +
       "#tab-tmc-builder .tmc-adtbanner.adt-none{background:var(--surface-subtle,#f8fafc);border:1px dashed #cbd5e1;color:#475569;}" +
@@ -619,10 +625,13 @@
     }
     var tot = adtTotals(t.id);
     if (tot && tot.colleges) {
+      var have = (tot.active || 0) + (tot.approved || 0); // established = live + pending
       var extra = tot.in_progress ? " <span class='tmc-adt adt-prog' title='in progress'>+" +
         tot.in_progress + "</span>" : "";
-      return "<span class='tmc-adt adt-ok' title='Colleges with an approved or active ADT (COCI program inventory)'>" +
-        tot.approved + " colleges</span>" + extra;
+      var ttl = "Colleges with an established ADT (" + (tot.active || 0) + " active, " +
+        (tot.approved || 0) + " approved/pending) — COCI program inventory";
+      return "<span class='tmc-adt adt-ok' title='" + esc(ttl) + "'>" +
+        have + " colleges</span>" + extra;
     }
     return "<span class='tmc-adt adt-none' title='No approved ADT statewide yet (COCI program inventory)'>—</span>";
   }
@@ -724,10 +733,16 @@
     var kind = t._pathway ? "pathway" : "ADT";
     if (state.college) {
       var a = adtFor(t.id), cls, html;
-      if (a && a.b === "approved") {
+      if (a && a.b === "active") {
         cls = "adt-ok";
-        html = "✓ <strong>" + esc(state.college) + "</strong> has an <strong>approved " +
-          esc(t.discipline) + (t._pathway ? "" : " ADT") + "</strong> — " + esc(adtMetaStr(a));
+        html = "✓ <strong>" + esc(state.college) + "</strong> has an <strong>active " +
+          esc(t.discipline) + (t._pathway ? "" : " ADT") + "</strong> (live in the catalog) — " +
+          esc(adtMetaStr(a));
+      } else if (a && a.b === "approved") {
+        cls = "adt-appr";
+        html = "✓ <strong>" + esc(state.college) + "</strong>’s <strong>" +
+          esc(t.discipline) + (t._pathway ? "" : " ADT") + " is approved</strong> — pending " +
+          "activation in the catalog — " + esc(adtMetaStr(a));
       } else if (a && a.b === "teachout") {
         cls = "adt-teach";
         html = "◐ <strong>" + esc(state.college) + "</strong>’s " + esc(t.discipline) +
@@ -745,13 +760,26 @@
     }
     var tot = adtTotals(t.id);
     var sb = el("div", "tmc-adtbanner adt-state");
-    sb.innerHTML = (tot && tot.colleges)
-      ? "📊 <strong>" + tot.approved + "</strong> California college" + (tot.approved === 1 ? "" : "s") +
-        " already " + (tot.approved === 1 ? "has" : "have") + " an approved " + esc(t.discipline) +
-        (t._pathway ? "" : " ADT") + (tot.in_progress ? (" · <strong>" + tot.in_progress + "</strong> in progress") : "") +
-        ". <span class='tmc-adt-src'>(COCI program inventory)</span>"
-      : "📊 No college has an approved " + esc(t.discipline) + (t._pathway ? "" : " ADT") +
-        " yet — an opportunity to be first. <span class='tmc-adt-src'>(COCI program inventory)</span>";
+    var have = tot ? (tot.active || 0) + (tot.approved || 0) : 0; // established = live + pending
+    var prog = (tot && tot.in_progress) || 0;
+    var disc = esc(t.discipline) + (t._pathway ? "" : " ADT");
+    var src = " <span class='tmc-adt-src'>(COCI program inventory)</span>";
+    var html;
+    if (have) {
+      var split = tot.approved              // surface the split only when pending ones exist
+        ? " — <strong>" + (tot.active || 0) + "</strong> active, <strong>" + tot.approved +
+          "</strong> approved (pending activation)"
+        : "";
+      var progClause = prog ? " · <strong>" + prog + "</strong> in progress" : "";
+      html = "📊 <strong>" + have + "</strong> California college" + (have === 1 ? "" : "s") +
+        " already " + (have === 1 ? "has" : "have") + " the " + disc + split + progClause + "." + src;
+    } else if (prog) {
+      html = "📊 No college has an established " + disc + " yet — <strong>" + prog +
+        "</strong> in progress at the Chancellor’s Office." + src;
+    } else {
+      html = "📊 No college has an approved " + disc + " yet — an opportunity to be first." + src;
+    }
+    sb.innerHTML = html;
     return sb;
   }
 

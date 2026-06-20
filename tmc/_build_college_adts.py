@@ -24,8 +24,10 @@ fallback for spellings neither bridges. Any college that fails to resolve is
 reported in _meta.unmatched_colleges and the build fails loud — so a future
 extract that introduces a new spelling can't silently drop a college.
 
-Decisions baked in (Sam, 2026-06-18):
-  * "Approved" on the tab = COCI STATUS in {Active, Approved}. Also surface
+Decisions baked in (Sam, 2026-06-18; revised 2026-06-20):
+  * COCI's two affirmative states are kept SEPARATE (Sam, 2026-06-20 — "split
+    Active vs Approved"): active (STATUS "Active" — live in the catalog) vs
+    approved (STATUS "Approved" — CO-approved, pending activation). Also surface
     in_progress (Submitted/Review/Revision/Draft) and teachout
     (Active - Teachout Only); Inactive is kept in the data but the UI hides it.
   * Public Health Science folds into the Public Health TMC; Elementary Teacher
@@ -58,14 +60,23 @@ ADT_AWARDS = {"A.A- T Degree", "A.S. T Degree"}
 ADT_SUBAWARDS = {"ADT Degree", "A.S. UCTP Degree"}
 
 # ---- status buckets ---------------------------------------------------------
-APPROVED = {"Active", "Approved"}
+# COCI distinguishes two affirmative program states that we keep SEPARATE
+# (Sam, 2026-06-20 — "split Active vs Approved" so the badge mirrors COCI):
+#   * Active   = approved AND live in the college catalog (students can enroll)
+#   * Approved = CO-approved but not yet activated in the catalog (pending)
+# Active is the stronger signal, so it outranks Approved in the dedup below.
+ACTIVE = {"Active"}
+APPROVED = {"Approved"}
 IN_PROGRESS = {"Submitted", "Review", "Revision", "Draft"}
 TEACHOUT = {"Active - Teachout Only"}
 INACTIVE = {"Inactive"}
-BUCKET_RANK = {"approved": 0, "in_progress": 1, "teachout": 2, "inactive": 3, "other": 4}
+BUCKET_RANK = {"active": 0, "approved": 1, "in_progress": 2,
+               "teachout": 3, "inactive": 4, "other": 5}
 
 
 def bucket_of(status):
+    if status in ACTIVE:
+        return "active"
     if status in APPROVED:
         return "approved"
     if status in IN_PROGRESS:
@@ -319,11 +330,16 @@ def main():
                 cnt[cmap[tid]["b"]] += 1
         if cnt:
             tmc_totals[tid] = {
+                "active": cnt["active"],
                 "approved": cnt["approved"],
                 "in_progress": cnt["in_progress"],
                 "teachout": cnt["teachout"],
                 "inactive": cnt["inactive"],
-                "colleges": cnt["approved"] + cnt["in_progress"] + cnt["teachout"],
+                # "colleges" = the established set (active + approved + teachout),
+                # plus in-progress, for the directory's truthiness gate. Unchanged
+                # in value from the pre-split build (active+approved == old approved).
+                "colleges": cnt["active"] + cnt["approved"]
+                + cnt["in_progress"] + cnt["teachout"],
             }
 
     meta = {
@@ -336,6 +352,7 @@ def main():
                   "STATIC artifact, NOT a daily-cron artifact — rebuild on a fresh "
                   "COCI program extract."),
         "status_buckets": {
+            "active": sorted(ACTIVE),
             "approved": sorted(APPROVED),
             "in_progress": sorted(IN_PROGRESS),
             "teachout": sorted(TEACHOUT),
@@ -364,9 +381,13 @@ def main():
         json.dump(payload, f, ensure_ascii=False, separators=(",", ":"))
         f.write(";\n")
 
+    bucket_tally = Counter(rec["b"] for rec in best.values())
     print(f"Wrote {os.path.relpath(OUT, ROOT)}")
     print(f"  ADT rows read={len(rows)} mapped={len(best)} "
           f"colleges={len(by_college)} tmcs_with_adts={len(tmc_totals)}")
+    print("  per (college,TMC) bucket: " + " · ".join(
+        f"{b}={bucket_tally.get(b, 0)}"
+        for b in ("active", "approved", "in_progress", "teachout", "inactive", "other")))
     if unmatched_titles:
         print(f"  unmatched titles (dropped, not ADTs): {sum(unmatched_titles.values())} rows, "
               f"{len(unmatched_titles)} distinct")
