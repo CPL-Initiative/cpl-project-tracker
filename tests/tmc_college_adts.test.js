@@ -6,7 +6,8 @@
 //       Pathway extra id (no orphan keys)
 //     * every college key joins to the tab's own college list (the loose
 //       COCI-program names were reconciled to the full course-export names)
-//     * every record bucket is one of the four known buckets
+//     * every record bucket is one of the five known buckets
+//       (active / approved / in_progress / teachout / inactive)
 //     * the UCTP pathways are their OWN instances (not folded into Chem/Physics)
 //   Part B — the tab wiring (jsdom) with controlled mock data:
 //     * the directory gains an ADT column (statewide count in review mode; the
@@ -43,7 +44,7 @@ check("by_college is non-empty (every CA college with an ADT)",
 const templateIds = new Set((TT.templates || []).map((t) => t.id));
 const extraIds = new Set((A.extra_tmcs || []).map((x) => x.id));
 const validIds = new Set([...templateIds, ...extraIds]);
-const BUCKETS = new Set(["approved", "in_progress", "teachout", "inactive"]);
+const BUCKETS = new Set(["active", "approved", "in_progress", "teachout", "inactive"]);
 
 let orphanTmc = 0, badBucket = 0, badCollege = 0, recCount = 0;
 Object.keys(A.by_college || {}).forEach((college) => {
@@ -71,9 +72,14 @@ check("UCTP Physics is its own instance", uctpPhys && uctpPhys.kind === "uc-tran
 check("uctp-* ids are NOT template ids (kept distinct from the 45 ASCCC TMCs)",
   !templateIds.has("uctp-chemistry") && !templateIds.has("uctp-physics"));
 
-// statewide totals are present + sane for a well-adopted TMC
+// statewide totals are present + sane for a well-adopted TMC. Active and
+// Approved (pending activation) are now SEPARATE counts (Sam, 2026-06-20);
+// the established set is active + approved.
 const ba = A.tmc_totals["business-administration"];
-check("tmc_totals has Business Administration with approved colleges", ba && ba.approved > 50);
+check("tmc_totals splits active vs approved (both numeric)",
+  ba && typeof ba.active === "number" && typeof ba.approved === "number");
+check("tmc_totals has Business Administration well-established (active+approved > 50)",
+  ba && (ba.active + ba.approved) > 50);
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Part B — tab wiring with mock data (jsdom)
@@ -98,6 +104,9 @@ window.CPL_TMC_TEMPLATES = {
     { id: "test-official", discipline: "Test Official", degree: "AS-T", status: "official", version: "2026",
       total_units: 6, sections: [{ name: "Required Core", select: "all", units: "6",
         slots: [{ cid: "BIOL 110", title: "General Biology", units: "3" }] }] },
+    { id: "test-history", discipline: "Test History", degree: "AA-T", status: "draft", version: "draft",
+      total_units: 6, sections: [{ name: "Required Core", select: "all", units: "6",
+        slots: [{ cid: "HIST 130", title: "US History", units: "3" }] }] },
     { id: "test-psych", discipline: "Test Psychology", degree: "AA-T", status: "draft", version: "draft",
       total_units: 6, sections: [{ name: "Required Core", select: "all", units: "6",
         slots: [{ cid: "PSY 110", title: "Introductory Psychology", units: "3" }] }] }
@@ -108,21 +117,27 @@ window.CPL_TMC_COLLEGE_COURSES = {
   courses: { "0": [["BIOL", "10", "General Biology", 3, "BIOL 110"]], "1": [] }
 };
 window.CPL_TMC_GE_PATTERNS = { _meta: {}, patterns: {} };
-// the overlay: Test College has Test Official APPROVED + the UCTP chem pathway,
-// but NOT Test Psychology → that one reads "not established".
+// the overlay: Test College has Test Official ACTIVE (live in catalog), Test
+// History APPROVED (pending activation), + the UCTP chem pathway active; but
+// NOT Test Psychology → that one reads "not established". This covers all three
+// surfaced states (active / approved-pending / none) per the S64 Active-vs-
+// Approved split.
 window.CPL_TMC_COLLEGE_ADTS = {
   _meta: { unmatched_colleges: {} },
   extra_tmcs: [{ id: "uctp-chemistry", title: "Chemistry for UC Transfer", degree: "AS", kind: "uc-transfer-pathway" }],
   by_college: {
     "Test College": {
-      "test-official": { b: "approved", s: "Active", c: "12345", a: "2019-05-01", u: "18", t: "Test Official" },
-      "uctp-chemistry": { b: "approved", s: "Active", c: "67890", a: "2022-01-01", u: "30", t: "UCTP Chemistry" }
+      "test-official": { b: "active", s: "Active", c: "12345", a: "2019-05-01", u: "18", t: "Test Official" },
+      "test-history": { b: "approved", s: "Approved", c: "55555", a: "2024-03-01", u: "19", t: "Test History" },
+      "uctp-chemistry": { b: "active", s: "Active", c: "67890", a: "2022-01-01", u: "30", t: "UCTP Chemistry" }
     }
   },
   tmc_totals: {
-    "test-official": { approved: 12, in_progress: 1, teachout: 0, inactive: 0, colleges: 13 },
-    "test-psych": { approved: 3, in_progress: 0, teachout: 0, inactive: 0, colleges: 3 },
-    "uctp-chemistry": { approved: 5, in_progress: 0, teachout: 0, inactive: 0, colleges: 5 }
+    // test-official: 10 active + 2 approved = 12 established, +1 in progress
+    "test-official": { active: 10, approved: 2, in_progress: 1, teachout: 0, inactive: 0, colleges: 13 },
+    "test-history": { active: 1, approved: 2, in_progress: 0, teachout: 0, inactive: 0, colleges: 3 },
+    "test-psych": { active: 3, approved: 0, in_progress: 0, teachout: 0, inactive: 0, colleges: 3 },
+    "uctp-chemistry": { active: 5, approved: 0, in_progress: 0, teachout: 0, inactive: 0, colleges: 5 }
   }
 };
 window.fetch = function () { return Promise.resolve({ ok: true, json: () => Promise.resolve([]) }); };
@@ -152,25 +167,40 @@ function theadTxt() { return txt(document.querySelector("#tab-tmc-builder .tmc-l
   selectVal(document.getElementById("tmc-college-sel"), "Test College");
   await sleep(0);
   check("column header switches to \"This college's ADT\"", /This college's ADT/.test(theadTxt()));
-  check("an approved TMC shows a ✓ Approved chip", /✓ Approved/.test(txt(rowFor(/Test Official/))));
+  // Active vs Approved are now distinct badges (Sam, 2026-06-20 split)
+  check("an ACTIVE TMC shows a ✓ Active chip (adt-ok)",
+    /✓ Active/.test(txt(rowFor(/Test Official/))) &&
+    !!rowFor(/Test Official/).querySelector(".tmc-adt.adt-ok"));
+  check("an APPROVED-pending TMC shows a ✓ Approved chip (adt-appr)",
+    /✓ Approved/.test(txt(rowFor(/Test History/))) &&
+    !!rowFor(/Test History/).querySelector(".tmc-adt.adt-appr"));
   check("a not-established TMC shows a '—' in the ADT column",
     /—/.test(txt(rowFor(/Test Psychology/).querySelector(".tmc-adt"))));
   const stf = document.getElementById("tmc-status-filter");
   check("the Show filter gains a 'this college's approved ADTs' option",
     Array.prototype.some.call(stf.options, (o) => o.value === "adt-yes"));
 
-  // ── filter to the college's approved ADTs ──
+  // ── filter to the college's established ADTs (active + approved-pending) ──
   selectVal(stf, "adt-yes");
   await sleep(0);
-  check("the adt-yes filter keeps only this college's approved rows (Official + UCTP)",
-    listRows().length === 2 && !rowFor(/Test Psychology/));
+  check("the adt-yes filter keeps this college's established rows (Active + Approved + UCTP)",
+    listRows().length === 3 && !rowFor(/Test Psychology/));
 
-  // ── open the approved TMC → green 'has an approved ADT' banner ──
+  // ── open the ACTIVE TMC → green 'has an active ADT' banner ──
   selectVal(stf, "all"); await sleep(0);
   rowFor(/Test Official/).click(); await sleep(0);
   const banner = document.querySelector("#tab-tmc-builder .tmc-adtbanner.adt-ok");
-  check("approved TMC detail shows a green 'has an approved ADT' banner",
-    banner && /has an .*approved.*ADT/.test(txt(banner)) && /Control #12345/.test(txt(banner)));
+  check("active TMC detail shows a green 'has an active ADT (live in the catalog)' banner",
+    banner && /has an .*active.*ADT/.test(txt(banner)) && /live in the catalog/.test(txt(banner)) &&
+    /Control #12345/.test(txt(banner)));
+
+  // ── open the APPROVED-pending TMC → teal 'approved, pending activation' banner ──
+  document.querySelector("#tab-tmc-builder .tmc-back").click(); await sleep(0);
+  rowFor(/Test History/).click(); await sleep(0);
+  const apprBanner = document.querySelector("#tab-tmc-builder .tmc-adtbanner.adt-appr");
+  check("approved-pending TMC detail shows a teal 'approved — pending activation' banner",
+    apprBanner && /is approved/.test(txt(apprBanner)) && /pending activation/.test(txt(apprBanner)) &&
+    /Control #55555/.test(txt(apprBanner)));
 
   // ── open a not-established TMC → the invitation banner ──
   document.querySelector("#tab-tmc-builder .tmc-back").click(); await sleep(0);
