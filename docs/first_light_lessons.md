@@ -1,7 +1,7 @@
 ---
 title: First Light — daily plein air art, the theme spec, and the design sprint
 created: 2026-06-12
-updated: 2026-06-18 (Session 62 — local-day painting rotation + the weekly reflections digest)
+updated: 2026-06-19 (Session 65 — gallery 3→89 + the runner-as-Commons-proxy sourcing pipeline)
 tags: [lessons, first-light, design-system, plein-air, accessibility, public-domain, ui]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -251,7 +251,68 @@ repo's Actions secrets. Pattern distilled in the new KB note
 
 ### Next steps
 
-- Manifest growth 3 → 60–90 paintings (the rotation's value scales with the pool).
+- ~~Manifest growth 3 → 60–90 paintings~~ — **DONE Session 65 (3 → 89).**
 - The reflections **themes card** (the original "uplifting themes" idea) once a few
   weeks of musings exist — a service-role read → aggregate themes, same spine.
-- The Almanac (past-paintings gallery).
+- ~~The Almanac (past-paintings gallery).~~ **Parked — maybe never** (Sam, 2026-06-19:
+  "keep them hungry"). The once-a-day scarcity *is* the feature; a browse-all view
+  would dilute the daily surprise. Revisit only if asked.
+
+## Session 65 (2026-06-19, Skyloft) — the gallery 3 → 89 + the sourcing pipeline
+
+Sam noticed *The Rendezvous* repeating every 3 days and asked if the rotation was
+wired right. **It was** — `localDayNumber()` + `day % N` is correct and never
+repeats back-to-back; the pool was just **3 deep**, so the cycle was 3 days.
+"Go big" → grew it to **89 verified public-domain works** (PR #474), spanning
+California plein air, Sierra/Western landscape, PD photography (Ansel Adams's NARA
+set, Watkins, photochromes, the missions, the Gamble House), French & American
+Impressionism, Renaissance/Baroque incl. **Caravaggio**, Romantic landscape, and
+the iconic **woodblock prints** (Hokusai's Great Wave + Red Fuji, Hiroshige,
+Friedrich's Wanderer, Constable's Hay Wain, Cole's Oxbow). Round-robin interleaved
+so consecutive days alternate California ↔ world. Ghost background nudged .10 → .14.
+
+### What shipped (PR #474)
+
+- **A runner-as-Commons-proxy sourcing pipeline** — the durable win, distilled in
+  the new KB note [[docs/kb-notes/playbook-runner-as-external-api-proxy]]. The agent
+  sandbox can't reach Wikimedia (egress allowlist + WebFetch 403), so a
+  push-triggered workflow (`.github/workflows/first-light-art.yml`) runs
+  `tools/source_first_light_art.mjs` on a runner to pull **exact** PD/CC0 filenames
+  from the Commons API (hard license filter; depth-1 subcategory recursion so
+  container categories like *Paintings by Claude Monet* resolve; bounded
+  concurrency) and **verifies every manifest image URL exists**, committing the
+  reports back for the agent to `git`-pull.
+- **`tools/build_first_light_manifest.mjs`** — assembles the `PAINTINGS` array from
+  a curated `tools/first_light_selection.json`, copying each `img` URL **straight
+  from the verified pool** so no filename is ever hand-typed (build fails loud on
+  an unknown file).
+- **Six parallel curation subagents** — one per theme, each read the candidate
+  pool, picked the gorgeous full works (skipping the noise — crops/"Ausschnitt",
+  stamps, scan-date `year`), wrote our-own-words prose + alt text. 83 picks, 0
+  validation problems. (Then +6 icons via the additive `extras` path → 89.)
+
+### Lessons worth remembering
+
+1. **"Wired right" ≠ "behaving right."** The rotation logic was perfect; the
+   *content pool* was the bug. Check the data depth before the algorithm.
+2. **Verify existence via the API, not the CDN.** Looping image GETs tripped
+   Commons' rate limit (HTTP 429 — a false "broken"); one batched `imageinfo`
+   call is gentle + authoritative. (KB note.)
+3. **Append, don't regenerate, to protect curated selections.** The `extras` path
+   adds specific files to the existing pool; a full re-source with
+   non-deterministic per-category capping could drop an already-picked file.
+4. **Subagents are great for fan-out curation + prose** when you hand them the
+   authoritative key (the exact `file`) and a strict style spec + anti-noise
+   rules; a builder that validates filenames is the safety net.
+5. **The PD filter is the firewall.** Sourcing by *category* pulls mixed
+   licensing; the hard "Commons declares it PD/CC0" gate is what makes
+   broad categories (even "Craftsman architecture") safe — and kept Ansel Adams
+   strictly to the public-domain NARA set.
+
+### Next steps (First Light)
+
+- Reflections themes card (unchanged; needs a few weeks of musings).
+- Manifest is now easy to grow: add a category to `tools/art_categories.json`
+  (or a file to `tools/art_extra_files.json`) + bump the trigger → curate the new
+  candidates → rebuild. Turner/Raphael/Bruegel/Metcalf came back empty this pass
+  (deeper nesting) — easy adds if wanted.
