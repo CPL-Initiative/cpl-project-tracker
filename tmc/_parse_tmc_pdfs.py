@@ -16,6 +16,10 @@ Strategy that makes the parse robust:
     newer 2026 TMC whose codes post-date our descriptor extract.
   - "Any course not used…" rows become non-C-ID slots; "OR …" lines fold into the
     prior slot's alternates.
+  - refine_slot() then post-processes each non-C-ID slot (Session 66): recover an
+    embedded C-ID into a real slot (e.g. "…C-ID AFS 100"), or flag a FLEXIBLE
+    proviso (flexible:true) for the CO-review acceptance engine; each TMC gets a
+    flexibility: 'fixed'|'flexible' classification.
 
 Output status: every parsed TMC ships as `draft` (real data from the official
 template, pending faculty verification); a TMC that yields no sections stays a
@@ -143,6 +147,54 @@ def canon_cid(c):
     if m and norm(m.group(1) + " " + m.group(2)) in CIDS: return norm(m.group(1) + " " + m.group(2)), True
     return c, False
 
+# --- noncid-slot refinement (added Session 66, for the CO-review acceptance engine) ---
+# A `noncid` slot is one of three things; tell them apart so the Phase-2 engine
+# (docs/kb-notes/reference-adt-acceptance-rules.md §3) can act on each:
+#   (1) a specific course whose C-ID is embedded in the title text the parser
+#       didn't lift into its own cell — recover it to a real `cid` slot;
+#   (2) a FLEXIBLE proviso ("any articulated major-prep course", "any CSU
+#       transferable course", "courses outside the discipline") — flag
+#       `flexible:true` (accept any qualifying course + ASSIST evidence);
+#   (3) a genuine specific non-C-ID course / example — leave as-is.
+INLINE_CID = re.compile(r"C-?ID\s+([A-Z]{2,4}\s*\d{2,3}\s*[A-Z]?)", re.I)
+CID_TOKEN = re.compile(r"\b([A-Z]{2,4}\s*\d{2,3}\s*[A-Z]?)\b")
+WILD_START = re.compile(r"^\s*(any\b|other courses\b|other\b)", re.I)
+FLEX_MID = re.compile(
+    r"\b(articulated (as|for)|csu[ -]?transferable|transferable course|"
+    r"additional course that is articulated|, ?other than english|"
+    r"courses outside the|any course|"
+    r"transferable[^.]{0,60}\bcourse|another[^.]{0,60}\bcourse)\b", re.I)
+
+
+def refine_slot(slot):
+    if slot.get("cid"):
+        return slot
+    title = slot.get("title", "")
+    # (1) explicit inline "C-ID XXX" — highest confidence (e.g. African American Studies)
+    m = INLINE_CID.search(title)
+    if m:
+        c, ok = canon_cid(m.group(1))
+        slot.pop("noncid", None)
+        slot["cid"] = c
+        slot["title"] = TITLE.get(c) or re.sub(r"\s*C-?ID\s+[A-Z].*$", "", title, flags=re.I).strip()
+        if not ok:
+            slot["cid_unverified"] = True
+        return slot
+    # (2) flexible/wildcard proviso — flag it; do NOT token-recover (avoids
+    #     grabbing an *example* C-ID named inside an "any … such as …" proviso)
+    if WILD_START.match(title) or FLEX_MID.search(title):
+        slot["flexible"] = True
+        return slot
+    # (3) a clean specific title carrying a stray VERIFIED C-ID token — recover it
+    for mm in CID_TOKEN.finditer(norm(title)):
+        c, ok = canon_cid(mm.group(1))
+        if ok:
+            slot.pop("noncid", None)
+            slot["cid"] = c
+            slot["title"] = TITLE.get(c) or title
+            return slot
+    return slot
+
 def clean_units(u):
     u = re.sub(r"\s*units?\b.*$", "", str(u), flags=re.I).strip()
     return re.sub(r"\s*[-–]\s*", "-", u)
@@ -194,6 +246,7 @@ def parse_body(body):
         folded.append(r)
     seen = set(); out = []
     for r in folded:
+        r = refine_slot(r)  # recover an embedded C-ID, or flag a flexible proviso
         key = r.get("cid") or ("NC:" + r["title"][:40].lower())
         if not r.get("title") and not r.get("cid"): continue
         if key in seen: continue
@@ -241,14 +294,20 @@ def main():
         degree, total, version, sections = parse(p)
         ncid = sum(1 for s in sections for x in s["slots"] if x.get("cid"))
         unv = sum(1 for s in sections for x in s["slots"] if x.get("cid_unverified"))
+        flex = sum(1 for s in sections for x in s["slots"] if x.get("flexible"))
+        has_select = any(s["select"] != "all" for s in sections)
         t = {"id": tid, "discipline": disc}
         if degree: t["degree"] = degree
         if total: t["total_units"] = total
         t["version"] = version
         t["status"] = "draft" if sections else "planned"
-        if sections: t["sections"] = sections
+        if sections:
+            t["sections"] = sections
+            # "fixed" = all Required Core + all specific slots (no select-N list, no
+            # flexible proviso) → no substitution latitude (e.g. ECE). Else "flexible".
+            t["flexibility"] = "flexible" if (has_select or flex) else "fixed"
         templates.append(t)
-        rpt.append((disc, degree, total, len(sections), ncid, unv, t["status"]))
+        rpt.append((disc, degree, total, len(sections), ncid, unv, flex, t.get("flexibility", "-"), t["status"]))
 
     payload = {
         "_meta": {
@@ -260,7 +319,12 @@ def main():
                      "official template, faculty-verify) / 'planned' (catalog only). Slots with "
                      "cid_unverified:true carry a C-ID not in our descriptor extract — a discrepancy "
                      "signal that C-ID (or our reference) may need updating. Titles for verified "
-                     "C-IDs come from kb/reference/cid_descriptors.json."),
+                     "C-IDs come from kb/reference/cid_descriptors.json. Per-slot flexible:true marks "
+                     "a FLEXIBLE proviso ('any articulated major-prep / CSU-transferable course') that "
+                     "accepts any qualifying course + ASSIST evidence (acceptance-engine tier 2; see "
+                     "docs/kb-notes/reference-adt-acceptance-rules.md). Per-TMC flexibility:'fixed' "
+                     "(no substitution latitude, e.g. ECE) | 'flexible' (has select-N lists or "
+                     "flexible slots)."),
             "sources": SOURCES,
         },
         "templates": templates,
@@ -273,11 +337,13 @@ def main():
         json.dump(payload, f, ensure_ascii=False, indent=1)
         f.write(";\n")
 
-    drafted = sum(1 for r in rpt if r[6] == "draft")
-    print(f"wrote {OUT}: {len(templates)} TMCs ({drafted} draft, {len(templates)-drafted} planned)")
-    print("%-44s %-5s %-7s sec cid unv status" % ("DISCIPLINE", "DEG", "TOTAL"))
-    for disc, deg, tot, ns, nc, uv, st in rpt:
-        print("%-44s %-5s %-7s %3d %3d %3d %s" % (disc[:44], deg, tot, ns, nc, uv, st))
+    drafted = sum(1 for r in rpt if r[8] == "draft")
+    nfixed = sum(1 for r in rpt if r[7] == "fixed")
+    print(f"wrote {OUT}: {len(templates)} TMCs ({drafted} draft, {len(templates)-drafted} planned); "
+          f"{nfixed} fixed / {len(templates)-nfixed} flexible")
+    print("%-42s %-5s %-7s sec cid unv flx flexibility" % ("DISCIPLINE", "DEG", "TOTAL"))
+    for disc, deg, tot, ns, nc, uv, fx, flb, st in rpt:
+        print("%-42s %-5s %-7s %3d %3d %3d %3d %-8s %s" % (disc[:42], deg, tot, ns, nc, uv, fx, flb, st))
 
 if __name__ == "__main__":
     main()
