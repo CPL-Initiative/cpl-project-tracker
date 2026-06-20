@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-19 (Session 64 — Startripper: the retired-model 502 fix #471 [cpl-chat v15, claude-sonnet-4-6] + the CCR/CER recommender kickoff #472; NEW playbook-edge-function-502-retired-model + cpl-assistant-ccr-cer-recommendation-scope KB notes + session_65_handoff)
+updated: 2026-06-20 (Session 65 — Skyloft: First Light gallery 3→89 #474 [runner-as-Commons-proxy sourcing pipeline] + the COBI masthead rename #475; NEW playbook-runner-as-external-api-proxy KB note + cobi_lessons + session_66_handoff)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,6 +70,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Playbook — Pre-stage optional auth before an external API enforces it (no-op until secret set)](kb-notes/playbook-prestage-optional-external-auth.md) | playbook | published | 2026-06-01 | 2026-06-01 |
 | [Methodology — A self-contained injected component must paint its own canvas, not just its text](kb-notes/methodology-self-contained-injected-component-styling.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [Playbook — Resuming a frozen session: check `main` before rebuilding its in-flight work](kb-notes/playbook-resume-frozen-session-check-main-first.md) | playbook | published | 2026-06-02 | 2026-06-02 |
+| [Playbook — Runner-as-proxy for an external API the sandbox can't reach (source/verify on a CI runner, commit back)](kb-notes/playbook-runner-as-external-api-proxy.md) | playbook | published | 2026-06-19 | 2026-06-19 |
 | [Methodology — Ship generator changes live-on-merge when the artifact regenerates from committed inputs](kb-notes/methodology-ship-generator-changes-live-on-merge.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [Methodology — Adding a curation surface with a synthesized kb_curation namespace (zero schema migration)](kb-notes/methodology-kb-curation-synthesized-namespace.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [Methodology — Resolving the V4 articulation-ripple gate when folding a CER unclassified title](kb-notes/methodology-cer-fold-articulation-ripple-sync.md) | methodology | published | 2026-06-03 | 2026-06-03 |
@@ -139,7 +140,8 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`cpl_assistant_lessons.md`](cpl_assistant_lessons.md) | CPL Assistant (in-dashboard RAG chatbot tab); **Session 64: the retired-model 502 fix (cpl-chat v15, `claude-sonnet-4-6`) + the CCR/CER recommender + benchmark + landing-site demand kickoff (scope #472)** | **Session 64 (Startripper, 2026-06-19)** |
 | [`cpl_funding_lessons.md`](cpl_funding_lessons.md) | CPL Implementation Funding tab — full arc #352–#368: shell → data/renderer → what-if sandbox → shares-first rev2 workbook → P2/P3 actuals (ratified ADR) → roster edits + no-scroll rule. Scope: [`funding_priority_metrics_scope.md`](funding_priority_metrics_scope.md); own handoff: [`cpl_funding_handoff.md`](cpl_funding_handoff.md) | **2026-06-11 (13 PRs, Rule-8 checkpointed)** |
 | [`tmc_builder_lessons.md`](tmc_builder_lessons.md) | TMC Builder tab — interactive ADT submission (fixed C-ID left / per-college COCI-dropdown right, C-ID auto-match, Total Units, Save/Resume + export); Session 60 list-first + GE companion; **Session 61: the per-college approved-ADT overlay from the COCI program export #458 (`tmc_college_adts.js`, 3,238 pairs/115 colleges, UCTP as own instance, the taxonomy ADR)**. Data model in [`kb-notes/reference-tmc-adt-data-model.md`](kb-notes/reference-tmc-adt-data-model.md) | **Session 61 (2026-06-18)** |
-| [`first_light_lessons.md`](first_light_lessons.md) | First Light — daily PD plein air greeting LIVE (#394/#396: gallery reveal, read-aloud, anonymous write-only reflections) + the theme spec (prototype v1.4.2 BLESSED: derived AA tokens, glass=chrome/opaque=data, solid uniform chips); retheme shipped S49; **S62: local-day painting rotation + the weekly reflections digest #460** | **Session 62 (2026-06-18)** |
+| [`first_light_lessons.md`](first_light_lessons.md) | First Light — daily PD plein air greeting LIVE (#394/#396: gallery reveal, read-aloud, anonymous write-only reflections) + the theme spec (prototype v1.4.2 BLESSED: derived AA tokens, glass=chrome/opaque=data, solid uniform chips); retheme shipped S49; **S62: local-day rotation + the reflections digest #460; S65: gallery 3→89 + the runner-as-Commons-proxy sourcing pipeline #474** | **Session 65 (2026-06-19)** |
+| [`cobi_lessons.md`](cobi_lessons.md) | COBI — masthead rename to *Chancellor's Office Business Intelligence* + `cobi_brand.js` (rotating Mamba subtitle, 8→24 wink, Mamba Day purple-and-gold); generator `<title>`/`<h1>` decoupled from `proj_title` #475 | **Session 65 (2026-06-19) NEW** |
 | [`kb_portal_lessons.md`](kb_portal_lessons.md) | KB Portal — transplant #464 + login-gated Knowledge Base tab (iframe) #465 + the New-doc composer (draft → Claude polish → tokenless GitHub deep-link) #466/#467 + attachment upload (in-browser pdf.js/mammoth/SheetJS extraction + image downscale) #468 | **Session 63 (2026-06-19) NEW** |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
@@ -219,6 +221,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 62 → 63 | SkyLion: First Light reflections digest #460 + CCR synonym pairings #461 (candidate validator) → morphological-variant CCR pass (Med Assisting/Assistant) + faculty-verify the TMC drafts | [`session_63_handoff.md`](session_63_handoff.md) |
 | 63 → 64 | SkyGate: the KB Portal end-to-end — transplant #464 + login-gated Knowledge Base tab #465 + New-doc composer #466/#467 + attachment upload #468 → smoke-test the 5 attachment types (fix any esm.sh path), the bundle-divergence decision, then data/CCR + TMC lanes | [`session_64_handoff.md`](session_64_handoff.md) |
 | 64 → 65 | Startripper: the retired-model 502 fix #471 (`cpl-chat` v15, `claude-sonnet-4-6`) + the CCR/CER recommender + real-time benchmark + landing-site demand kickoff (scope #472) → build the CCR/CER/adoption ETL into shared Supabase, then M1 | [`session_65_handoff.md`](session_65_handoff.md) |
+| 65 → 66 | Skyloft: First Light gallery 3→89 via the runner-as-Commons-proxy pipeline #474 + the COBI masthead rename #475 (Mamba brand layer) → the standing data/CCR (CPL-Assistant CCR/CER recommender ETL, green-lit) + TMC + KB-portal lanes resume | [`session_66_handoff.md`](session_66_handoff.md) |
 
 ---
 
