@@ -83,8 +83,10 @@ The whole ecosystem, end-to-end:
    slot's C-ID; all 45 official TMCs, a GE Breadth companion for the full ADT,
    curator notes, and a **per-college approved-ADT overlay** sourced from the
    COCI program export so each TMC shows whether that college already has the
-   ADT approved — ✓ Approved / ⏳ in progress / ◐ teach-out — plus the statewide
-   approved-college count), a **Knowledge Base** tab (a sign-in-gated
+   ADT — ✓ Active (live in the catalog) / ✓ Approved (pending activation) /
+   ⏳ in progress / ◐ teach-out — plus the statewide established-college count;
+   the templates carry per-slot acceptance metadata toward an in-tool ADT
+   review/compliance engine), a **Knowledge Base** tab (a sign-in-gated
    portal over the public CPL Knowledge Base — read the curated docs, and
    compose a new doc with optional file attachments + Claude polish, then
    commit it to GitHub as yourself), and a **Pipeline** progress board.

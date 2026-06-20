@@ -1772,41 +1772,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > growth ECE/EMT/CNA/HVAC/LVN + the ambiguity validator #461). Full story:
 > `docs/first_light_lessons.md` + `docs/ccr_cluster_cleanup_lessons.md`.
 
-### Session 63 — SkyGate: the KB Portal (transplant → login-gated tab → composer) (2026-06-19)
-
-Sam-interactive, fast loop; a side-quest off the data/TMC lanes. Five squash-merged
-PRs built the **KB Portal** end-to-end: **#464** transplanted the self-contained
-`kb-portal/` bundle (a Supabase-magic-link reader over the public KB) into the tracker;
-**#465** wired it in as a login-gated **Knowledge Base** tab (`<iframe src="kb-portal/">`
-in BOTH HTMLs per Rule 4, like Letters; `tabs.js` auto-derives it); **#466** the **✍️
-New-doc composer** (draft → ✨ Claude polish → tokenless GitHub create-file deep-link,
-author commits as themselves — no write token in the app); **#467** a **← Dashboard**
-back button (`target="_top"` to escape the iframe); **#468** **attachment upload**
-(text/PDF/Word/Excel/images → in-browser pdf.js/mammoth/SheetJS extraction + image
-downscale, dodging the proxy's 256 KB cap). Gate = the bundle's own allowlist
-(`slee@cccco.edu` + `malone.dunlavy@rccd.edu`; `map@rccd.edu` deliberately OFF — it can
-reach private CPLBrain). Tests 56→58 files. Full story: `docs/kb_portal_lessons.md`;
-2 new KB notes (embed-bundle-as-tab playbook + browser-doc-capture methodology).
-**NEXT: `docs/session_64_handoff.md`** — Sam smoke-tests the 5 attachment types (fix any
-esm.sh lib path); the bundle-divergence decision (backport vs canonical); then the
-standing data/CCR + TMC lanes resume.
-
-### Session 64 — Startripper: the retired-model 502 fix + the CCR/CER recommender kickoff (2026-06-19)
-
-The CPL Assistant (and the shared `map.rccd.edu` widget) was 502ing on **every** turn —
-the `cpl-chat` Edge Function called `claude-sonnet-4-20250514`, which Anthropic
-**retired 2026-06-15** (404 → the `!anthropicRes.ok` guard's 502). Swapped to
-**`claude-sonnet-4-6`**, **deployed live as v15** (`verify_jwt:false`), PR #471; repo
-swept — no other feature on a retired id. New note:
-`docs/kb-notes/playbook-edge-function-502-retired-model.md`. Then a strategy session
-with Sam kicked off a workstream (scope **PR #472**): make this assistant the
-**CCR/CER-grounded recommendation reference + real-time benchmark** for the MAP Student
-Portal bot, + a per-college **demand signal** on the college CPL Landing Sites — full
-scope + locked decisions D1–D5 in
-[`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`](docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md).
-Full story: `docs/cpl_assistant_lessons.md` (S64). **NEXT: `docs/session_65_handoff.md`**
-— build the CCR/CER/adoption ETL into shared Supabase (green-lit), then M1; the standing
-data/CCR + TMC + KB-portal lanes resume.
+> **Sessions 63 (SkyGate — the KB Portal end-to-end #464–#468) + 64 (Startripper —
+> the retired-model `cpl-chat` 502 fix #471 + the CCR/CER recommender kickoff #472)
+> narratives archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
 
 > **Session 65 narrative (Skyloft) — a design side-quest, both LIVE on `main`:**
 > **First Light gallery 3 → 89** verified-PD paintings (PR #474) via a new
@@ -1821,6 +1789,24 @@ data/CCR + TMC + KB-portal lanes resume.
 > `docs/cobi_lessons.md`; pipeline KB note
 > `docs/kb-notes/playbook-runner-as-external-api-proxy.md`. **NEXT:
 > `docs/session_66_handoff.md`** — the standing data/CCR + TMC + KB-portal lanes resume.
+
+### Session 66 — Skylander: TMC → a CO-staff ADT review tool (split · scope · rules · template metadata) (2026-06-20)
+
+A Sam-directed pivot into the **TMC Builder** lane, building toward a Chancellor's-Office
+ADT **review/processing tool** (it replaces the manual PDF-vs-PDF course-by-course diffing
+CO staff do today). Three PRs: **#477** split the COCI program status into **✓ Active**
+(live in the catalog) vs **✓ Approved** (CO-approved, pending activation) — 2,867 active /
+218 pending across 40 TMCs (previously invisible). **#478** the scope
+([`tmc-co-review-scope.md`](docs/kb-notes/tmc-co-review-scope.md)) + the **ASCCC acceptance
+ruleset** distilled ([`reference-adt-acceptance-rules.md`](docs/kb-notes/reference-adt-acceptance-rules.md));
+Phase-0 joins VALIDATED on 4 colleges (PCF `Program Control Number` = 100%, course-join
+90–95%, C-ID coverage 51/29/8/0% — but **non-C-ID ≠ non-compliant**). **#479** the
+**acceptance metadata** on `tmc_templates.js` (`refine_slot()`): **119 flexible slots**
+flagged, per-TMC **`flexibility:fixed|flexible`**, 15 embedded C-IDs recovered (African
+American Studies 0→3 — the only empty template, fixed). Full story:
+[`docs/tmc_builder_lessons.md`](docs/tmc_builder_lessons.md) (S66). **NEXT:
+[`docs/session_67_handoff.md`](docs/session_67_handoff.md)** — build the Phase-2
+**acceptance engine** (Sam: "Go for A!") + the bulk-PCF Playwright extractor.
 
 ---
 

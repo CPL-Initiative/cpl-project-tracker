@@ -1,32 +1,38 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-20 (Skyloft)",
- "_session": 65,
- "_status": "SESSION 65 (Skyloft) — a design side-quest, both shipped LIVE. First Light's painting-of-the-day gallery grew from 3 → 89 verified public-domain works (it kept repeating because the pool was only 3 deep), spanning California plein air, Yosemite/Western landscape, public-domain photography (Ansel Adams, Carleton Watkins, the missions, the Gamble House), the Impressionists, Caravaggio + the Old Masters, and the famous woodblock prints (Hokusai's Great Wave, Hiroshige, Friedrich, Constable, Cole) — no repeats for ~3 months now. Open the ☀ 'Today's painting' chip in the header to revisit it. And the dashboard masthead is now COBI — Chancellor's Office Business Intelligence (a light Kobe homage: a rotating 'Mamba' subtitle, an 8→24 hover wink, and a once-a-year Mamba Day on Aug 24 that goes purple-and-gold). The standing priority resumes: wiring the CPL Assistant into our CCR/CER data as a recommendation engine (the ETL is green-lit). TMC + Knowledge-Base + CCR-data lanes continue — docs/session_66_handoff.md.",
+ "_as_of": "2026-06-20 (Skylander)",
+ "_session": 66,
+ "_status": "SESSION 66 (Skylander) — pivoted into the TMC Builder lane (Sam's direction) to build a Chancellor's-Office ADT review tool that replaces the painful manual PDF-vs-PDF course-by-course diffing CO staff do today. Shipped 3 PRs: (1) split the COCI program status into ✓ Active (live in the catalog) vs ✓ Approved (pending activation) — 2,867 active / 218 pending across 40 TMCs, previously invisible; (2) the scope + the ASCCC acceptance ruleset distilled (the CO program-approval checklist + the tiered C-ID / flexible-with-ASSIST / faculty-review acceptance ladder), with the data joins validated on 4 colleges; (3) the acceptance metadata on the 45 TMC templates — 119 'flexible' slots flagged, a per-TMC fixed/flexible classification, 15 embedded C-IDs recovered (African American Studies fixed). NEXT (Sam: 'Go for A'): build the acceptance engine — per-slot ✓ accept / ⚠ ASSIST-evidence / needs-review + a 'ready / N issues' summary. docs/session_67_handoff.md.",
  "items": [
+  {
+   "id": "sam-tmc-adts",
+   "who": "sam",
+   "tab": "tmc-builder",
+   "text": "Pick your college on the TMC Builder tab — every TMC shows whether you already have that ADT, now split into ✓ Active (live in your catalog) vs ✓ Approved (CO-approved, pending activation) + ⏳ In progress / ◐ Teach-out. We're building this into a Chancellor's-Office REVIEW tool: it will check a college's courses against each TMC's C-ID requirements automatically (replacing the manual PDF-vs-PDF diff). Spot-check your college's badges and flag anything off."
+  },
+  {
+   "id": "sam-tmc-bulk-pcf",
+   "who": "sam",
+   "tab": "tmc-builder",
+   "text": "To populate every approved ADT with its REAL course list, we need the MIS Data Mart 'Program Course File' for all ~115 colleges. Fable will hand you a Playwright script that drives your browser through every college (select → View Report → Export) unattended in ~10–15 min — run it once on your machine (it reaches datamart.cccco.edu; the agent sandbox can't), then upload the folder of CSVs. No rush — the review engine is being built first and needs nothing from you."
+  },
   {
    "id": "sam-cpl-assistant-next",
    "who": "sam",
    "tab": "chatbot",
-   "text": "The CPL Assistant is working again — give it a try (ask about a credential at your college). Next, we want to ground its recommendations in our CCR/CER data so a question resolves to 'here's the credential, where it's articulated, the local course, and the adoption path for your college' — and surface a per-college demand signal on the CPL Landing Sites. Three decisions would unblock the build: (1) the MAP Student Portal's own bot — same backend or separate, and can Fable see/call it for a quality comparison? (2) how should a per-college 'student demand' panel embed in the customizable CPL Landing Site? (3) a quick pass on which MAP Custom Reports fields are public-safe vs coordinator-only vs off-limits. Full plan: the CCR/CER scope doc."
+   "text": "(Standing, paused for the TMC push.) The CPL Assistant works again — try it. The green-lit next step is grounding its recommendations in our CCR/CER data + a per-college demand signal on the CPL Landing Sites. Three decisions unblock it: (1) the MAP Student Portal's own bot — same backend or separate, and can Fable see/call it? (2) how a per-college 'student demand' panel embeds in the Landing Site; (3) which MAP Custom Reports fields are public-safe vs coordinator-only. Plan: the CCR/CER scope doc."
   },
   {
    "id": "sam-kb-portal",
    "who": "sam",
    "tab": "knowledge-base",
-   "text": "The Knowledge Base tab is LIVE — sign in with your magic link and try the ✍️ New doc composer: write or paste notes, attach a file (plain text, PDF, Word, Excel, or a screenshot), hit ✨ Polish with Claude, then 'Open in GitHub →' to commit it as yourself. Please smoke-test ALL FIVE attachment types and flag anything that throws a red error chip. One decision: keep the knowledge-base repo's copy of the portal in sync too, or treat the dashboard copy as canonical?"
+   "text": "The Knowledge Base tab is LIVE — sign in with your magic link and try the ✍️ New doc composer: write/paste notes, attach a file (text, PDF, Word, Excel, or a screenshot), ✨ Polish with Claude, then 'Open in GitHub →' to commit it as yourself. Please smoke-test ALL FIVE attachment types and flag any red error chip. One decision: keep the knowledge-base repo's copy of the portal in sync too, or treat the dashboard copy as canonical?"
   },
   {
    "id": "sam-reflections-secret",
    "who": "sam",
    "tab": "dashboard",
    "text": "First Light's anonymous reflections can become a gentle weekly 'musings' digest for our private Obsidian vault (never the public site). It's READY; it just needs the service key on the cpl-knowledge-base repo. One-time step: add an Actions secret named SUPABASE_SERVICE_KEY (the same Supabase service-role key the dashboard's daily sync uses) to cpl-knowledge-base."
-  },
-  {
-   "id": "sam-tmc-adts",
-   "who": "sam",
-   "tab": "tmc-builder",
-   "text": "Pick your college on the TMC Builder tab — every TMC shows whether you already have that ADT approved (✓ Approved / ⏳ In progress / ◐ Teach-out, with control number + approval date). With 'All colleges' selected, each TMC shows how many CA colleges already have it. Spot-check a few of your college's against what you know — flag anything off (it dedupes old→new, so a replaced degree shows the new one)."
   },
   {
    "id": "sam-work-families",
@@ -41,34 +47,28 @@
    "text": "395 college course titles carry encoding garbage at the source. The dashboard shows them repaired with a '⚠ fix in COCI' chip; the campaign list is kb/coci_title_corrections.json — take it to the colleges when ready."
   },
   {
+   "id": "fable-tmc-engine",
+   "who": "fable",
+   "tab": "tmc-builder",
+   "text": "PRIORITY (Sam: 'Go for A'): build the Phase-2 ACCEPTANCE ENGINE in tmc_builder.js — per-slot verdict from the ASCCC rules (C-ID match = ✓ mandatory accept · slot.flexible = ⚠ accept-with-ASSIST · specific C-ID filled by a non-match = faculty review · unfilled = ○ needs a course) + the structural checklist (major ≥18 sem · ≤60 · select-counts · no local add-ons) + a 'Ready / N issues' banner. Extend statusFor(); consume slot.flexible + t.flexibility (#479). No new data — demo on Allan Hancock (rich C-ID) vs San Diego City (zero). Commit a jsdom test. Scope: docs/kb-notes/tmc-co-review-scope.md; rules: reference-adt-acceptance-rules.md."
+  },
+  {
+   "id": "fable-tmc-pcf-script",
+   "who": "fable",
+   "tab": "tmc-builder",
+   "text": "Write the Playwright bulk-PCF extractor for Sam to run (DevExpress College_MCF.aspx: per college select → View Report → Export CSV; self-discover the dropdown; college code in ASPxComboBoxC_VI). Then tmc/_build_college_adt_courses.py joins PCF→COCI course list → tmc_college_adt_courses.js (per college,ADT → real member courses + C-ID/units) = the Phase-1 current-state bootstrap. Also the older TMC follow-ups: harden kb/college_short_names.json with the PROGRAM_COLLEGE_ALIASES; ADT-overlay refresh on a fresh extract; a C-ID-discrepancy export; faculty-verify the 45 drafts."
+  },
+  {
    "id": "fable-cpl-assistant-etl",
    "who": "fable",
    "tab": "chatbot",
-   "text": "NEW priority workstream (Sam green-lit 'kick it off'): build the CPL-Assistant CCR/CER recommender per docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md. START with the ETL — land a slim CCR (unified_courses_data.js) + CER (credential_reference_data.js) + adoption (statewide_prescriptive.js / kb/coci_articulations.json) dataset into SHARED Supabase tables via the daily cron (no live bot change). Then M1 wires those into cpl-chat (careful redeploy of the SHARED function — capture version, verify_jwt:false, smoke 4 modes). M3 = the demand stamp (privacy ADR first). M2 (benchmark) is blocked on portal-bot access."
+   "text": "(Standing, paused for the TMC push.) The CPL-Assistant CCR/CER recommender per docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md. START with the ETL — land a slim CCR + CER + adoption dataset into SHARED Supabase via the daily cron (no live bot change). Then M1 wires it into cpl-chat (careful redeploy of the SHARED function — capture version, verify_jwt:false, smoke 4 modes). M3 = the demand stamp (privacy ADR first). M2 (benchmark) blocked on portal-bot access."
   },
   {
-   "id": "fable-kb-portal-libs",
-   "who": "fable",
-   "tab": "knowledge-base",
-   "text": "Verify the KB-portal attachment extractors work in a real browser. pdf.js / mammoth / SheetJS + the canvas image-downscale are browser-only — CI only covers the pure logic in composer_util.js. If Sam reports a file type erroring, the usual cause is an esm.sh path in kb-portal/app.js (ATT_LIB) — a one-line fix. Also resolve the bundle-divergence decision once Sam answers. Context: docs/kb_portal_lessons.md."
-  },
-  {
-   "id": "fable-morphological",
+   "id": "fable-ccr-data-lane",
    "who": "fable",
    "tab": "unified-courses",
-   "text": "CCR data lever (SkyLion's rec, still queued): the morphological-variant pass — Medical Assisting vs Medical Assistant, the -ing/-ant/-ology family. The whole-phrase synonym map can't express a shared STEM, so scope a measured, suggestions-only pass (lemmatize/stem the title token before _sug_sig, or a targeted stem-pair map) and MEASURE regroup impact + over-merge before committing. Its own dry-run PR; cron/dispatch republishes."
-  },
-  {
-   "id": "fable-titlelane-dryrun",
-   "who": "fable",
-   "tab": "unified-courses",
-   "text": "On Sam's go: DRY-RUN title-lane pass 2 — `python3 kb/_auto_merge_worklist.py --pass2-title` (receipt kb/automerge_out/<date>-titlelane/). Present counts; apply only on sign-off, then re-key Supabase via the supabase-rekey workflow + dispatch. (Deferred carryover: the Z future-mint half + the per-row auto-merge revert; the member-join Jaccard 0.5→0.4 measure.)"
-  },
-  {
-   "id": "fable-tmc-followups",
-   "who": "fable",
-   "tab": "tmc-builder",
-   "text": "TMC Builder follow-ups: (1) harden kb/college_short_names.json with the COCI-program aliases now in tmc/_build_college_adts.py's PROGRAM_COLLEGE_ALIASES + regen college_short_names.js; (2) ADT overlay REFRESH on a fresh COCI program extract; (3) a C-ID-discrepancy export report for the C-ID team; (4) faculty-verify the 45 draft TMCs."
+   "text": "CCR data passes (queued, measure-first, own dry-run PRs): (1) the morphological-variant pass — Medical Assisting vs Assistant, the -ing/-ant/-ology family (lemmatize/stem the title token before _sug_sig, or a stem-pair map); MEASURE regroup + over-merge first. (2) On Sam's go, DRY-RUN title-lane pass 2 (`kb/_auto_merge_worklist.py --pass2-title`); apply only on sign-off, then re-key Supabase + dispatch."
   }
  ]
 }
