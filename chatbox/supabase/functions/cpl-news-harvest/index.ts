@@ -31,10 +31,14 @@
 // Secrets used (all already set project-wide; cpl-chat uses the same):
 //   ANTHROPIC_API_KEY, SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY.
 
-const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
-const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://hvuwhnbuahrtptokpqfh.supabase.co";
 const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY") || "";
 const MODEL = "claude-sonnet-4-6"; // unversioned alias — never a dated snapshot
+// The caller's bearer — validated as a service-role credential via a capability
+// probe (can it read RLS-protected allowed_reviewers?) — is then used for ALL DB
+// ops. Robust to the GitHub Actions secret and the function's auto-injected key
+// being different-but-both-valid service keys/formats (the v1 HTTP 401 cause).
+let CRED = "";
 
 const RELEVANCE_MIN = 0.4;
 const MAX_NEW_CANDIDATES = 80; // bound Claude cost/time per run
@@ -327,7 +331,7 @@ async function harvestRequests(): Promise<Candidate[]> {
   try {
     const r = await timedFetch(
       `${SUPABASE_URL}/rest/v1/cpl_news_requests?status=eq.pending&select=id,url,note,source_hint&order=created_at.asc&limit=25`,
-      { headers: { apikey: SERVICE_KEY, Authorization: `Bearer ${SERVICE_KEY}` } },
+      { headers: { apikey: CRED, Authorization: `Bearer ${CRED}` } },
     );
     if (!r.ok) return [];
     const rows = await r.json().catch(() => []);
@@ -372,6 +376,23 @@ async function harvestRequests(): Promise<Candidate[]> {
 }
 
 // ── Dedup against existing rows ──────────────────────────────────────────────
+// Capability probe: a service-role key can read RLS-protected allowed_reviewers
+// (RLS on, no policies → anon/user get 0 rows; service role bypasses). This
+// authenticates the caller without depending on the exact key string/format.
+async function isServiceCred(bearer: string): Promise<boolean> {
+  try {
+    const r = await timedFetch(
+      `${SUPABASE_URL}/rest/v1/allowed_reviewers?select=email&limit=1`,
+      { headers: { apikey: bearer, Authorization: `Bearer ${bearer}` } },
+    );
+    if (!r.ok) return false;
+    const rows = await r.json().catch(() => []);
+    return Array.isArray(rows) && rows.length >= 1;
+  } catch (_e) {
+    return false;
+  }
+}
+
 async function existing(field: "url" | "title_key", values: string[]): Promise<Set<string>> {
   const found = new Set<string>();
   const uniq = [...new Set(values.filter(Boolean))];
@@ -381,7 +402,7 @@ async function existing(field: "url" | "title_key", values: string[]): Promise<S
     try {
       const r = await timedFetch(
         `${SUPABASE_URL}/rest/v1/cpl_news?select=${field}&${field}=in.${encodeURIComponent(inList)}`,
-        { headers: { apikey: SERVICE_KEY, Authorization: `Bearer ${SERVICE_KEY}` } },
+        { headers: { apikey: CRED, Authorization: `Bearer ${CRED}` } },
       );
       if (r.ok) {
         const rows = await r.json();
@@ -445,8 +466,8 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
 
   const auth = req.headers.get("authorization") || "";
-  const token = auth.replace(/^Bearer\s+/i, "").trim();
-  if (!token || token !== SERVICE_KEY) {
+  CRED = auth.replace(/^Bearer\s+/i, "").trim();
+  if (!CRED || !(await isServiceCred(CRED))) {
     return new Response(JSON.stringify({ error: "unauthorized" }), {
       status: 401,
       headers: { ...CORS, "content-type": "application/json" },
@@ -572,8 +593,8 @@ Deno.serve(async (req) => {
     const r = await fetch(`${SUPABASE_URL}/rest/v1/cpl_news?on_conflict=url`, {
       method: "POST",
       headers: {
-        apikey: SERVICE_KEY,
-        Authorization: `Bearer ${SERVICE_KEY}`,
+        apikey: CRED,
+        Authorization: `Bearer ${CRED}`,
         "content-type": "application/json",
         Prefer: "resolution=ignore-duplicates,return=representation",
       },
@@ -594,8 +615,8 @@ Deno.serve(async (req) => {
       await fetch(`${SUPABASE_URL}/rest/v1/cpl_news_requests?id=eq.${pr.id}`, {
         method: "PATCH",
         headers: {
-          apikey: SERVICE_KEY,
-          Authorization: `Bearer ${SERVICE_KEY}`,
+          apikey: CRED,
+          Authorization: `Bearer ${CRED}`,
           "content-type": "application/json",
           Prefer: "return=minimal",
         },
