@@ -1,0 +1,63 @@
+name: CPL News harvest
+
+# Invokes the cpl-news-harvest Supabase Edge Function, which harvests CPL news
+# from free adapters (Google News RSS, GDELT, CalMatters, CCCCO, Bluesky) + the
+# manual suggest-a-story queue, Claude-analyzes + dedups them, and upserts into
+# public.cpl_news. The dashboard's CPL News tab reads that table live (anon key)
+# — so there is NO committed artifact and this is decoupled from the daily
+# dashboard cron. The Edge Function holds ANTHROPIC_API_KEY + the service role;
+# this workflow only needs the service-role key (already a repo secret) to
+# authenticate the call.
+#
+# Triggers: a daily cron, manual dispatch, AND a push trigger on claude/**
+# (scoped to this workflow / the function source / the .harvest-run sentinel) so
+# a branch can verify end-to-end before merge — the same dodge first-light-art.yml
+# uses for the workflow_dispatch default-branch registration quirk.
+
+on:
+  schedule:
+    - cron: '17 13 * * *'   # 13:17 UTC daily (~6:17 AM PT) — after the morning news cycle
+  workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths:
+      - '.github/workflows/cpl-news.yml'
+      - 'chatbox/supabase/functions/cpl-news-harvest/index.ts'
+      - 'news/.harvest-run'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cpl-news-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  harvest:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Invoke cpl-news-harvest Edge Function
+        env:
+          SVC: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          if [ -z "$SVC" ]; then
+            echo "SUPABASE_SERVICE_KEY not set — skipping (configure it in repo Actions secrets)."
+            exit 0
+          fi
+          echo "POST cpl-news-harvest …"
+          code=$(curl -sS -o resp.json -w '%{http_code}' \
+            -X POST 'https://hvuwhnbuahrtptokpqfh.supabase.co/functions/v1/cpl-news-harvest' \
+            -H "Authorization: Bearer $SVC" \
+            -H 'Content-Type: application/json' \
+            --max-time 290 \
+            -d '{}') || true
+          echo "HTTP $code"
+          echo "----- function report -----"
+          cat resp.json || true
+          echo
+          echo "---------------------------"
+          if [ "$code" != "200" ]; then
+            echo "::error::cpl-news-harvest returned HTTP $code"
+            exit 1
+          fi

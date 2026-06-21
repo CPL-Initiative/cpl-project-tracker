@@ -1,0 +1,3 @@
+# Touch this file + push to a claude/** branch to trigger an on-demand CPL News harvest.
+# (The cpl-news.yml workflow watches this path.)
+run: 2026-06-21T00:00:01Z  initial harvest (Skywatch news lane)
