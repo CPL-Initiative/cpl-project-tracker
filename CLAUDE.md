@@ -493,6 +493,7 @@ scraping proved unreliable.
 | `report_generator.js` | Custom Report Generator (Claude API via proxy) |
 | `docx.min.js` | Local copy of docx@8.0.4 UMD build (do **not** switch to CDN) |
 | `fetch_custom_report.py` | Fetches CustomReport JSON from the MAP API |
+| `cpl_news.js` | **CPL News** tab renderer (`window.CPL_NEWS_TAB`). Lazy-loaded on first `#cpl-news` open; injects own `var(--token)` CSS; reads `public.cpl_news` LIVE (anon) — CA-first, scope/source/search filters, suggest-a-story, reviewer feature/hide. Static — NOT a daily-cron artifact (the feed is the live table, not a committed file). Fed by the **`cpl-news-harvest`** Supabase Edge Function (`chatbox/supabase/functions/cpl-news-harvest/index.ts`) invoked by **`.github/workflows/cpl-news.yml`** (cron 13:17 UTC). Schema: `news/supabase_cpl_news.sql`. Docs: `docs/cpl_news_lessons.md` + `docs/kb-notes/playbook-cpl-news-aggregation.md`. Added Session 67 (Skywatch, PR #481). |
 
 ### 3. Cloudflare Worker (cpl-proxy)
 
@@ -747,6 +748,7 @@ detailed in §7c):
 | `implementation-funding` | Implementation Funding | CPL Implementation Funding model (DRAFT-chipped) — 2026-30 one-time pools, 3 priorities (shares-first, rev2 workbook), 119 colleges' potential allocations, a **what-if sandbox** (pools/shares/targets editable, per-browser, Reset-to-workbook), and **P2/P3 actuals vs target** from the daily `cpl_funding_performance.js` (P1 = deliberate incentive gap). Shell static; renders from `cpl_funding.js` + `cpl_funding_data.js` (lazy; data static, actuals cron). **Built 2026-06-11, PRs #352–#368** — `docs/cpl_funding_lessons.md` + `docs/cpl_funding_handoff.md`. |
 | `vision-2030` | Vision 2030 | Vision 2030 Alignment cards with live progress |
 | `knowledge-base` | Knowledge Base | Sign-in-gated **KB Portal** — an `<iframe src="kb-portal/">` (like Letters) over the public CPL Knowledge Base: a magic-link-gated reader + a **New-doc composer** (draft/upload → Claude polish → tokenless GitHub commit). The bundle's own Supabase auth is the gate. **Added Session 63, PRs #464/#465/#467/#468.** Docs: `docs/kb_portal_lessons.md`. |
+| `cpl-news` | CPL News | **Auto-curated** CPL news feed (CA-first, then national; + adjacent systems Career Passport / CA Master Plan / workforce-upskilling + CA budget items). Live-reads `public.cpl_news` (filled daily by the `cpl-news-harvest` Edge Function); filters, suggest-a-story (the path closed socials enter), reviewer feature/hide. Renderer `cpl_news.js` (static, lazy). **Added Session 67 (Skywatch), PR #481.** Docs: `docs/cpl_news_lessons.md`. |
 
 Implementation notes (important — keep in sync with the generator):
 
@@ -1807,6 +1809,18 @@ American Studies 0→3 — the only empty template, fixed). Full story:
 [`docs/tmc_builder_lessons.md`](docs/tmc_builder_lessons.md) (S66). **NEXT:
 [`docs/session_67_handoff.md`](docs/session_67_handoff.md)** — build the Phase-2
 **acceptance engine** (Sam: "Go for A!") + the bulk-PCF Playwright extractor.
+
+> **Session 67 narrative (Skywatch) — the CPL News lane** → full story in
+> [`docs/cpl_news_lessons.md`](docs/cpl_news_lessons.md) + the reusable
+> [`docs/kb-notes/playbook-cpl-news-aggregation.md`](docs/kb-notes/playbook-cpl-news-aggregation.md).
+> A Sam-commissioned, **unattended** CPL News tab (`#cpl-news`): the
+> `cpl-news-harvest` Edge Function (Google News/GDELT/CalMatters/CCCCO/Bluesky +
+> a manual suggest-a-story queue for closed socials via OpenGraph) → Claude
+> triage → `public.cpl_news`; `cpl-news.yml` cron 13:17 UTC; `cpl_news.js`
+> live-reads it (CA-first). First run: 12 CA items, avg rel 0.84 (Career Passport
+> launch, CCCCO earn-and-learn, CA budget). Harvested news also auto-flows to the
+> CPLBrain vault digest (`05-knowledge/cpl-news/`); the **public KB stays
+> human-gated** (not auto-written). PRs: #481 (tracker), CPLBrain #9.
 
 ---
 
