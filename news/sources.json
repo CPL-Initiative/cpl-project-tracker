@@ -1,0 +1,69 @@
+{
+  "_comment": "Human-readable mirror of the harvest adapters. The AUTHORITATIVE copy lives in chatbox/supabase/functions/cpl-news-harvest/index.ts — edit there and redeploy; keep this in sync for reviewability.",
+  "relevance_min": 0.4,
+  "max_new_candidates_per_run": 80,
+  "model": "claude-sonnet-4-6",
+  "scope_priority": ["ca", "national", "other"],
+  "adapters": {
+    "google_news_rss": {
+      "type": "news",
+      "free": true,
+      "note": "Workhorse. Free, no key. when:30d recency window, 8 items/query.",
+      "queries": [
+        {"q": "\"credit for prior learning\" California community colleges", "scope": "ca"},
+        {"q": "\"prior learning assessment\" California community college", "scope": "ca"},
+        {"q": "\"credit for prior learning\" California apportionment OR funding", "scope": "ca"},
+        {"q": "California community colleges veterans \"military credit\" OR \"JST\"", "scope": "ca"},
+        {"q": "\"AB 123\" California \"prior learning\" OR \"credit\"", "scope": "ca"},
+        {"q": "\"Career Passport\" California", "scope": "ca"},
+        {"q": "California \"Master Plan\" higher education workforce", "scope": "ca"},
+        {"q": "California community college \"earn and learn\" OR upskilling workforce", "scope": "ca"},
+        {"q": "California budget community colleges \"prior learning\" OR workforce", "scope": "ca"},
+        {"q": "\"credit for prior learning\" college (CAEL OR ACE OR workforce)", "scope": "national"},
+        {"q": "\"prior learning assessment\" college credit workforce", "scope": "national"}
+      ]
+    },
+    "gdelt_doc_2": {
+      "type": "news",
+      "free": true,
+      "note": "Free, no key. 45d window, breadth across outlets.",
+      "queries": [
+        {"q": "\"credit for prior learning\" community college", "scope": "national"},
+        {"q": "\"prior learning assessment\" college credit", "scope": "national"}
+      ]
+    },
+    "calmatters_rss": {
+      "type": "news",
+      "free": true,
+      "feeds": [
+        "https://calmatters.org/category/education/feed/",
+        "https://calmatters.org/education/higher-education/feed/"
+      ]
+    },
+    "cccco_press": {
+      "type": "official",
+      "free": true,
+      "url": "https://www.cccco.edu/About-Us/News-and-Media/Press-Releases",
+      "note": "Scraped listing page; Claude filters for CPL relevance."
+    },
+    "bluesky": {
+      "type": "social",
+      "free": true,
+      "note": "The one open social API (AT Protocol public search, no auth).",
+      "queries": [
+        "credit for prior learning community college",
+        "prior learning assessment college credit"
+      ]
+    },
+    "manual_requests": {
+      "type": "manual",
+      "free": true,
+      "note": "public.cpl_news_requests — anon can suggest a URL via the tab. How CLOSED socials (LinkedIn / X / Facebook / Instagram) enter: the function reads the URL's OpenGraph preview, no scraping. Closed-platform APIs are paywalled/forbidden in 2026."
+    }
+  },
+  "closed_social_status_2026": {
+    "x_twitter": "No free tier (pay-per-read since Feb 2026). Manual path only.",
+    "linkedin": "Public API closed; ToS bans automated collection. Manual path only.",
+    "facebook_instagram": "No public search API. Manual path (OpenGraph) only."
+  }
+}
