@@ -84,7 +84,9 @@ digest. PR #481 (tracker) + #9 (CPLBrain).
 ### Strategic roadmap / next
 - Sam to eyeball the feed; tune `GOOGLE_NEWS_QUERIES` / `RELEVANCE_MIN` (edit the
   function + `news/sources.json`, redeploy).
-- Decide the **public-KB** question (auto-stage a curated news page? leave private?).
+- ~~Decide the public-KB question~~ — **DECIDED 2026-06-22: leave it private to CPLBrain**
+  (Sam: "not sure how much I trust it; will see over time if it should flow to the public
+  KB"). Revisit later; until then, never auto-write the public KB.
 - Optional: decode Google News opaque redirect URLs → final article links;
   add per-college/CCC official-site adapters; add paid social if funded;
   RAG-ingest summaries into `cpl_documents` so the Assistant cites current news.

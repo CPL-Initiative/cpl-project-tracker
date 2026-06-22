@@ -59,8 +59,9 @@ Plus the bulk-PCF Playwright extractor Sam is owed (Phase 1).
 ## Priority B — CPL News follow-ups (after Sam reviews the feed)
 - **Tune** `GOOGLE_NEWS_QUERIES` + `RELEVANCE_MIN` (0.4) in the function (mirror
   `news/sources.json`, redeploy via Supabase MCP — `verify_jwt:false`, capability-probe).
-- **Sam's open decision**: should harvested news flow into the **public KB**, or stay
-  private to CPLBrain? (Private-only now. If yes → curate via `CURATION.md`, never auto.)
+- **DECIDED (Sam, 2026-06-22): news stays PRIVATE to CPLBrain for now** — he wants to
+  build trust in the feed over time before any public-KB flow. Do NOT auto-write the
+  public KB; revisit only if Sam reopens it (then via `CURATION.md`, never auto).
 - Optional: decode Google News opaque redirect URLs → final article links; per-college/
   CCC official-site adapters; paid social if funded; RAG-ingest summaries into
   `cpl_documents` so the Assistant cites current news (needs the embedding pipeline).
