@@ -1,9 +1,9 @@
 {
-  "generated": "2026-06-18",
-  "total_reflections": 2,
-  "active_days": 2,
+  "generated": "2026-06-22",
+  "total_reflections": 3,
+  "active_days": 3,
   "first_day": "2026-06-12",
-  "latest_day": "2026-06-13",
+  "latest_day": "2026-06-22",
   "top_paintings": [
     {
       "painting": "California Poppy Field",
@@ -11,6 +11,10 @@
     },
     {
       "painting": "The Rendezvous, Santa Cruz Island",
+      "count": 1
+    },
+    {
+      "painting": "Headwaters of the San Joaquin",
       "count": 1
     }
   ],
