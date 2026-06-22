@@ -22,6 +22,7 @@ Then review the diff and commit kb/coci_curation.json.
 import json
 import os
 import sys
+import time
 import urllib.request
 from datetime import datetime, timezone
 
@@ -48,6 +49,27 @@ FIELDS = {"discipline", "merge_into", "unified_title", "description",
           "cross_listed_disciplines", "merge_dismissed", "merge_note"}
 
 
+def _fetch_json(req, attempts=4):
+    """urlopen + parse JSON, retrying transient network/TLS failures (e.g. the
+    'SSL: UNEXPECTED_EOF_WHILE_READING' blips that intermittently hit Supabase
+    from CI runners — one failed the 2026-06-22 manual run). SSLError / URLError
+    / socket timeout / connection resets are all OSError subclasses. Re-raises
+    after the final attempt so a persistent outage still surfaces (the workflow
+    then treats it as non-fatal and falls back to the committed overlay)."""
+    delay = 1.0
+    for n in range(1, attempts + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return json.load(r)
+        except OSError as e:
+            if n == attempts:
+                raise
+            print(f"  fetch attempt {n}/{attempts} failed ({e}); retry in {delay:.0f}s",
+                  file=sys.stderr)
+            time.sleep(delay)
+            delay *= 2
+
+
 def fetch_rows():
     """Fetch ALL kb_curation rows, paginated. PostgREST caps one response at
     1,000 rows (db-max-rows) — the table crossed that on 2026-06-12 when
@@ -63,8 +85,7 @@ def fetch_rows():
             "apikey": KEY, "Authorization": f"Bearer {KEY}",
             "Accept": "application/json",
             "Range-Unit": "items", "Range": f"{start}-{start + page - 1}"})
-        with urllib.request.urlopen(req, timeout=30) as r:
-            batch = json.load(r)
+        batch = _fetch_json(req)
         out.extend(batch)
         if len(batch) < page:
             return out

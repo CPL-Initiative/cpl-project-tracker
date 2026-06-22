@@ -88,7 +88,13 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
           if [ -n "${SUPABASE_SERVICE_KEY:-}" ]; then
-            python kb/_apply_curation.py
+            # Non-fatal like its siblings below: the curation sync is an overlay
+            # enhancement and the generator falls back to the committed
+            # kb/coci_curation.json. _apply_curation.py now retries transient
+            # network/TLS blips itself; this guard backstops a persistent Supabase
+            # outage so it can't abort the whole daily publish (a transient SSL
+            # EOF here failed the 2026-06-22 manual run).
+            python kb/_apply_curation.py || echo "::warning title=Curation sync failed::kb/_apply_curation.py exited non-zero — dashboard publishes from the committed kb/coci_curation.json; next run re-syncs. Check the step log."
             # Phase 1e: fold Canonical SUBJ4 curator edits (synthesized
             # _CANON_SUBJ4::<discipline> keys) into kb/discipline_canonical_subj4.json.
             # Skipped gracefully if the seed file doesn't exist yet.
