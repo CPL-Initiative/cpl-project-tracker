@@ -7,21 +7,21 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "p2": 4644,
-  "p3": 16164
+  "p2": 4650,
+  "p3": 16172
  },
  "colleges": {
   "Bakersfield": {
-   "p2": 30,
-   "p3": 31
+   "p2": 33,
+   "p3": 34
   },
   "Cabrillo": {
    "p2": 16,
    "p3": 42
   },
   "Chaffey": {
-   "p2": 13,
-   "p3": 20
+   "p2": 16,
+   "p3": 25
   },
   "Cuesta": {
    "p2": null,
