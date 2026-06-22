@@ -1,6 +1,6 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-21 (Skywatch)",
+ "_as_of": "2026-06-22 (Skywatch)",
  "_session": 67,
  "_status": "SESSION 67 (Skywatch) — built the CPL News lane Sam asked for: a self-refreshing CPL News tab (#cpl-news) so the long-retired news section finally stays fresh WITHOUT hand-curation (the reason it died before). A daily Supabase Edge Function (cpl-news-harvest) harvests free sources — Google News, GDELT, CalMatters, CCCCO, Bluesky — plus a 'suggest a story' queue (how closed socials LinkedIn/X/FB/IG enter, via their link preview), Claude triages each item (on-topic? CA or national? one-sentence summary?), and the tab reads the result LIVE. Priority: California CPL first, national second, + adjacent systems (Career Passport, CA Master Plan, workforce/upskilling) + CA budget items. First run: 12 California items, avg relevance 0.84 (the Career Passport launch, the CCCCO earn-and-learn report, CA workforce-funding). Harvested news also auto-flows into the private CPLBrain vault digest; the PUBLIC knowledge base stays human-gated (not auto-written). PRs #481 (dashboard) + CPLBrain #9. docs/cpl_news_lessons.md.",
  "items": [
@@ -8,7 +8,7 @@
    "id": "sam-cpl-news",
    "who": "sam",
    "tab": "cpl-news",
-   "text": "NEW: the CPL News tab is LIVE — open it. It auto-harvests California CPL news first (Career Passport, workforce/upskilling, CA budget items) + national, every day, and Claude triages it — no hand-curation, so it won't go stale like last time. Eyeball the ~12 starter items, use ★ Feature / Hide to curate, and 'Suggest a story' to drop in any link (incl. a LinkedIn/X/Facebook/Instagram post — we read its preview). ONE DECISION for you: should harvested news also flow into the PUBLIC knowledge base, or stay private to our CPLBrain vault? (It's private-only right now, per the curation guardrail.)"
+   "text": "The CPL News tab is LIVE — open it. It auto-harvests California CPL news first (Career Passport, workforce/upskilling, CA budget items) + national, every day, and Claude triages it — no hand-curation, so it won't go stale like last time. Eyeball the items, use ★ Feature / Hide to curate, and 'Suggest a story' to drop in any link (incl. a LinkedIn/X/Facebook/Instagram post — we read its preview). DECIDED 2026-06-22: news stays PRIVATE to the CPLBrain vault for now — revisit a public-KB flow over time as trust in the feed builds."
   },
   {
    "id": "sam-tmc-adts",
