@@ -43,6 +43,7 @@
             --violet:  #6D28D9;               /* machine-generated · inferred */
             --mustard-fill: #E3B341;          /* bright brand hue — dots/banners/on-dark; NEVER text on light */
             --mustard-text: #8B6800;          /* caution/brand TEXT grade on light surfaces */
+            --seal-blue: #00356B;             /* CCCCO seal navy — the COBI wordmark; refine to the sampled hex once assets/cccco_seal.png lands */
 
             /* on-dark grades (ink cards, dark gradients) */
             --crimson-on-dark: #CF8F8F;
@@ -2685,291 +2686,28 @@
 <body>
     <!-- Header -->
     <div class="header">
-        <h1>COBI</h1>
-        <div class="cobi-tagline">Chancellor&#39;s Office Business Intelligence</div>
-        <div class="subtitle" id="cobi-mamba">Mamba Mentality</div>
-        <!-- PROJ-INFO-START -->
-        <details class="project-description" style="max-width:800px;margin:0.4rem auto 0;cursor:pointer;"><summary style="font-size:0.82rem;color:var(--light-blue);font-weight:600;list-style:none;display:inline-flex;align-items:center;gap:0.3rem;"><span class="desc-arrow" style="font-size:0.7rem;transition:transform 0.2s;">&#9654;</span> Project Description</summary><div style="font-size:0.82rem;color:#ccc;line-height:1.5;margin-top:0.4rem;padding:0.5rem 0.8rem;border-left:2px solid rgba(125,161,212,0.3);text-align:left;">The CPL Initiative is a statewide effort led by the California Community Colleges Chancellor's Office to expand Credit for Prior Learning opportunities for veterans, working adults, and apprentices across all 116 colleges. Aligned with Vision 2030, the initiative builds AI-enhanced infrastructure, faculty-led credit recommendations, student-centered data systems, and strategic partnerships to ensure prior learning is recognized and applied toward degree completion and career advancement. The initiative has served over 43,000 students, transcribed 97,000+ units, and established the foundation for a permanent statewide CPL service.</div></details><style>.project-description[open] .desc-arrow{transform:rotate(90deg);}</style>
-        <div style="margin-top:0.5rem;"><a href="#" class="attach-btn" target="_blank" style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.82rem;color:#fff;text-decoration:none;font-weight:600;padding:6px 14px;border:1px solid rgba(255,255,255,0.3);border-radius:4px;background:rgba(255,255,255,0.1);cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files">&#128206; See Attachments</a></div>
-        <div style="margin-top:0.5rem;"><button type="button" class="attach-btn" onclick="kbcsOpen()" style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.82rem;color:#fff;text-decoration:none;font-weight:600;padding:6px 14px;border:1px solid rgba(255,255,255,0.3);border-radius:4px;background:rgba(255,255,255,0.1);cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'" title="How to use Claude Code with the CPL Knowledge Base">&#128214; Claude + KB Cheat Sheet</button></div>
-        <!-- PROJ-INFO-END -->
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <div class="last-updated">Last Updated: June 22, 2026 at 7:57 AM PT</div>
-        <div style="text-align:center;margin-top:0.5rem;"><button id="refreshBtn" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger?secret=CPL_SCRAPE_2026',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})" style="background:transparent;color:var(--gold-accent);border:1px solid var(--gold-accent);padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.8rem;font-family:'Source Sans 3',Arial,sans-serif;transition:all 0.2s;" onmouseover="if(!this.disabled){this.style.background='var(--gold-accent)';this.style.color='var(--navy-primary)'}" onmouseout="if(!this.disabled){this.style.background='transparent';this.style.color='var(--gold-accent)'}">&#x21bb; Refresh Today&#39;s Data</button></div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      <div class="cobi-brand">
+        <img class="cobi-seal" src="cccco_seal.png" alt="California Community Colleges seal" width="46" height="46" onerror="this.style.display='none'">
+        <div class="cobi-brandtext">
+          <h1>COBI</h1>
+          <div class="cobi-tagline">Chancellor&#39;s Office Business Intelligence</div>
+        </div>
+      </div>
+      <div class="cobi-qs-slot" id="cobiQsSlot"></div>
+      <div class="cobi-utility">
+        <span class="cobi-about">
+          <button type="button" id="cobiAboutBtn" class="cobi-util-link" aria-haspopup="true" aria-expanded="false">&#8505; About &#9662;</button>
+          <div class="cobi-about-panel" id="cobiAboutPanel" role="menu">
+            <h4>About COBI</h4>
+            <div class="subtitle" id="cobi-mamba" style="display:none" aria-hidden="true"></div>
+            <!-- PROJ-INFO-START --><!-- PROJ-INFO-END -->
+            <div class="cobi-about-links">
+              <button type="button" class="cobi-about-link" id="cobiPaintingLink">&#127912; Today&#39;s painting</button>
+            </div>
+          </div>
+        </span>
+        <div class="last-updated">Last Updated: June 21, 2026 at 9:13 AM PT</div>
+      </div>
     </div>
     </div>
 
