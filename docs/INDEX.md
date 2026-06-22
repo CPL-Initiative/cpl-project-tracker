@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-21 (Session 67 — Skywatch: the CPL News lane — cpl-news-harvest Edge Function + cpl-news.yml cron + #cpl-news tab #481, CPLBrain vault digest #9; NEW kb-note playbook-cpl-news-aggregation + cpl_news_lessons + session_68_handoff)
+updated: 2026-06-22 (Session 68 — SkyAlizarin: cron ladder #485 + curation-sync resilience #486 + the COBI masthead consolidation #487 (ready, holding for the seal); NEW kb-note methodology-regen-safe-section-rework + cobi_lessons S68 + session_69_handoff)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -53,7 +53,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Playbook — Phase 2 projects migration scope (column map, KPI ladder contract, 6 forks for Sam)](kb-notes/phase-2-projects-migration-scope.md) | playbook | published | 2026-05-28 | 2026-05-28 |
 | [Playbook — Cross-discipline over-merge re-mint scope (split algorithm, 60% de-corroboration, 6 forks for Sam)](kb-notes/over-merge-remint-scope.md) | playbook | published | 2026-05-29 | 2026-05-29 |
 | [Playbook — Moving a generator-managed dashboard section to its own tab (end-anchor classify + sentinel marker)](kb-notes/playbook-move-generated-section-to-tab.md) | playbook | published | 2026-05-30 | 2026-05-30 |
-| [Playbook — GitHub scheduled-workflow reliability (diagnose a missed cron + backstop-cron fix)](kb-notes/playbook-github-scheduled-workflow-reliability.md) | playbook | published | 2026-06-01 | 2026-06-01 |
+| [Playbook — GitHub scheduled-workflow reliability (diagnose a missed cron + backstop-cron fix)](kb-notes/playbook-github-scheduled-workflow-reliability.md) | playbook | published | 2026-06-01 | 2026-06-22 (S68 — 3-cron ladder + transient-failure resilience) |
 | [Playbook — Full Excel retirement final scope (KPI ladder blank-vs-0 crux, D.* helpers, read_projects sunset, 5 forks)](kb-notes/excel-retirement-final-scope.md) | playbook | published | 2026-05-31 | 2026-05-31 |
 | [Playbook — CPL Chatbox → dashboard integration + cpl-knowledge-base re-point (shared-backend finding, 6 forks)](kb-notes/cpl-chatbox-integration-scope.md) | playbook | published | 2026-06-01 | 2026-06-01 (Phase 1 SHIPPED + LIVE v14) |
 | [Playbook — Redeploying a shared, live Supabase Edge Function safely (capture-before-redeploy, preserve verify_jwt, fail-closed)](kb-notes/playbook-deploy-shared-supabase-edge-function.md) | playbook | published | 2026-06-01 | 2026-06-01 |
@@ -124,6 +124,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Scope — TMC tab → CO-staff ADT review/processing tool (validated PCF↔COCI joins, C-ID coverage limiter, CO-first phased plan)](kb-notes/tmc-co-review-scope.md) | scope | published | 2026-06-20 | 2026-06-20 |
 | [Reference — ADT acceptance & course-substitution rules (ASCCC C-ID guidance + STAR Act; the tiered-acceptance engine, structural checklist, per-TMC flexibility)](kb-notes/reference-adt-acceptance-rules.md) | reference | published | 2026-06-20 | 2026-06-20 |
 | [Playbook — Unattended news aggregation into a live dashboard tab (free adapters, capability-probe auth, closed-social manual queue, curation boundary)](kb-notes/playbook-cpl-news-aggregation.md) | playbook | published | 2026-06-21 | 2026-06-21 |
+| [Methodology — Reworking a generator-managed section without touching the generator (anchor-park + CSS-from-JS + run-twice idempotency)](kb-notes/methodology-regen-safe-section-rework.md) | methodology | published | 2026-06-22 | 2026-06-22 |
 
 ---
 
@@ -144,7 +145,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`cpl_funding_lessons.md`](cpl_funding_lessons.md) | CPL Implementation Funding tab — full arc #352–#368: shell → data/renderer → what-if sandbox → shares-first rev2 workbook → P2/P3 actuals (ratified ADR) → roster edits + no-scroll rule. Scope: [`funding_priority_metrics_scope.md`](funding_priority_metrics_scope.md); own handoff: [`cpl_funding_handoff.md`](cpl_funding_handoff.md) | **2026-06-11 (13 PRs, Rule-8 checkpointed)** |
 | [`tmc_builder_lessons.md`](tmc_builder_lessons.md) | TMC Builder tab — interactive ADT submission (fixed C-ID left / per-college COCI-dropdown right, C-ID auto-match, Total Units, Save/Resume + export); Session 60 list-first + GE companion; Session 61: the per-college approved-ADT overlay #458; **Session 66: the CO-review pivot — Active/Approved split #477, scope + ASCCC acceptance ruleset #478, acceptance metadata on the templates #479 (flexible slots + per-TMC flexibility + recovered C-IDs)**. Data model: [`kb-notes/reference-tmc-adt-data-model.md`](kb-notes/reference-tmc-adt-data-model.md); scope: [`kb-notes/tmc-co-review-scope.md`](kb-notes/tmc-co-review-scope.md); rules: [`kb-notes/reference-adt-acceptance-rules.md`](kb-notes/reference-adt-acceptance-rules.md) | **Session 66 (2026-06-20)** |
 | [`first_light_lessons.md`](first_light_lessons.md) | First Light — daily PD plein air greeting LIVE (#394/#396: gallery reveal, read-aloud, anonymous write-only reflections) + the theme spec (prototype v1.4.2 BLESSED: derived AA tokens, glass=chrome/opaque=data, solid uniform chips); retheme shipped S49; **S62: local-day rotation + the reflections digest #460; S65: gallery 3→89 + the runner-as-Commons-proxy sourcing pipeline #474** | **Session 65 (2026-06-19)** |
-| [`cobi_lessons.md`](cobi_lessons.md) | COBI — masthead rename to *Chancellor's Office Business Intelligence* + `cobi_brand.js` (rotating Mamba subtitle, 8→24 wink, Mamba Day purple-and-gold); generator `<title>`/`<h1>` decoupled from `proj_title` #475 | **Session 65 (2026-06-19) NEW** |
+| [`cobi_lessons.md`](cobi_lessons.md) | COBI — masthead rename #475 (Mamba brand layer); **Session 68: the single-row masthead consolidation #487 — app bar (seal + COBI`CPL` / centered "Where To?" search / ℹ About popover + Manually Refresh COBI), Mamba retired, regen-safe port (anchor-park + CSS-from-JS)** | **Session 68 (2026-06-22)** |
 | [`cpl_news_lessons.md`](cpl_news_lessons.md) | CPL News lane — automated harvest (cpl-news-harvest Edge Function: Google News/GDELT/CalMatters/CCCCO/Bluesky + a suggest-a-story queue) → Claude triage → `public.cpl_news` → `#cpl-news` tab (live-read) + CPLBrain vault digest; capability-probe auth; first run 12 CA items (avg rel 0.84) | **Session 67 (Skywatch, 2026-06-21) NEW** |
 | [`kb_portal_lessons.md`](kb_portal_lessons.md) | KB Portal — transplant #464 + login-gated Knowledge Base tab (iframe) #465 + the New-doc composer (draft → Claude polish → tokenless GitHub deep-link) #466/#467 + attachment upload (in-browser pdf.js/mammoth/SheetJS extraction + image downscale) #468 | **Session 63 (2026-06-19) NEW** |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
@@ -228,6 +229,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 65 → 66 | Skyloft: First Light gallery 3→89 via the runner-as-Commons-proxy pipeline #474 + the COBI masthead rename #475 (Mamba brand layer) → the standing data/CCR (CPL-Assistant CCR/CER recommender ETL, green-lit) + TMC + KB-portal lanes resume | [`session_66_handoff.md`](session_66_handoff.md) |
 | 66 → 67 | Skylander: TMC → a CO-staff ADT review tool — the Active/Approved split #477, the scope + ASCCC acceptance ruleset #478, the template acceptance metadata #479 (119 flexible slots + per-TMC flexibility + 15 recovered C-IDs, AfAm 0→3) → build the Phase-2 acceptance engine (Sam: "Go for A") + the bulk-PCF Playwright extractor | [`session_67_handoff.md`](session_67_handoff.md) |
 | 67 → 68 | Skywatch (nick SkyMurrow): the CPL News lane — cpl-news-harvest Edge Function + cron + `#cpl-news` tab #481 + CPLBrain vault digest #9 (12 CA items, avg rel 0.84; capability-probe auth; closed-social manual queue; CA-first) → the TMC acceptance engine (still queued from the S67 handoff) + CPL News tuning + the public-KB decision | [`session_68_handoff.md`](session_68_handoff.md) |
+| 68 → 69 | SkyAlizarin: spotty-cron fixes — the 06:17/09:17/12:17 UTC cron ladder #485 + the curation-sync resilience fix #486 (transient Supabase TLS was killing the whole publish) — AND the COBI masthead consolidation #487 (single-row app bar, ready + tested, holding for Sam's seal upload) → finish #487 (sample the seal navy → merge → dispatch), then the TMC acceptance engine | [`session_69_handoff.md`](session_69_handoff.md) |
 
 ---
 

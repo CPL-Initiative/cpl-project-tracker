@@ -1795,23 +1795,11 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > `docs/kb-notes/playbook-runner-as-external-api-proxy.md`. **NEXT:
 > `docs/session_66_handoff.md`** — the standing data/CCR + TMC + KB-portal lanes resume.
 
-### Session 66 — Skylander: TMC → a CO-staff ADT review tool (split · scope · rules · template metadata) (2026-06-20)
-
-A Sam-directed pivot into the **TMC Builder** lane, building toward a Chancellor's-Office
-ADT **review/processing tool** (it replaces the manual PDF-vs-PDF course-by-course diffing
-CO staff do today). Three PRs: **#477** split the COCI program status into **✓ Active**
-(live in the catalog) vs **✓ Approved** (CO-approved, pending activation) — 2,867 active /
-218 pending across 40 TMCs (previously invisible). **#478** the scope
-([`tmc-co-review-scope.md`](docs/kb-notes/tmc-co-review-scope.md)) + the **ASCCC acceptance
-ruleset** distilled ([`reference-adt-acceptance-rules.md`](docs/kb-notes/reference-adt-acceptance-rules.md));
-Phase-0 joins VALIDATED on 4 colleges (PCF `Program Control Number` = 100%, course-join
-90–95%, C-ID coverage 51/29/8/0% — but **non-C-ID ≠ non-compliant**). **#479** the
-**acceptance metadata** on `tmc_templates.js` (`refine_slot()`): **119 flexible slots**
-flagged, per-TMC **`flexibility:fixed|flexible`**, 15 embedded C-IDs recovered (African
-American Studies 0→3 — the only empty template, fixed). Full story:
-[`docs/tmc_builder_lessons.md`](docs/tmc_builder_lessons.md) (S66). **NEXT:
-[`docs/session_67_handoff.md`](docs/session_67_handoff.md)** — build the Phase-2
-**acceptance engine** (Sam: "Go for A!") + the bulk-PCF Playwright extractor.
+> **Session 66 narrative (Skylander) — TMC → a CO-staff ADT review tool** → archived in
+> [`docs/roadmap_archive.md`](docs/roadmap_archive.md) (the Active/Approved COCI status
+> split #477; the CO-review scope + ASCCC acceptance ruleset #478; the template
+> acceptance metadata #479 — 119 flexible slots + per-TMC flexibility + 15 recovered
+> C-IDs, AfAm 0→3). Full story: [`docs/tmc_builder_lessons.md`](docs/tmc_builder_lessons.md).
 
 > **Session 67 narrative (Skywatch) — the CPL News lane** → full story in
 > [`docs/cpl_news_lessons.md`](docs/cpl_news_lessons.md) + the reusable
@@ -1824,6 +1812,24 @@ American Studies 0→3 — the only empty template, fixed). Full story:
 > launch, CCCCO earn-and-learn, CA budget). Harvested news also auto-flows to the
 > CPLBrain vault digest (`05-knowledge/cpl-news/`); the **public KB stays
 > human-gated** (not auto-written). PRs: #481 (tracker), CPLBrain #9.
+
+### Session 68 — SkyAlizarin: spotty-cron fixes + the COBI masthead consolidation (2026-06-22)
+
+A live UI+ops session. **Ops (both merged):** the daily refresh was "spotty" — measured
+~25 runs and found GitHub's scheduler **delays** this cron 1.5–4h (not drops), so it
+published mid-morning; pulled it **earlier + a 3rd cron** → the **06:17/09:17/12:17 UTC
+ladder** (#485, Rule 1 + §6 updated). Then found the real miss-cause: a transient Supabase
+TLS blip in `kb/_apply_curation.py` (the one unguarded sync call) aborted the *whole*
+publish → **retry + non-fatal guard** (#486); today re-dispatched + current. **UI (PR #487 —
+built, tested 61 files, ready, HOLDING for Sam's seal upload):** the **COBI masthead → a
+single-row app bar** (seal + COBI`CPL` / tagline · centered **"Where To?"** search · subtle
+**ℹ About** popover + **Manually Refresh COBI**); Mamba retired, gold CPL superscript, COBI
+in seal-navy. Ported **regen-safe** (anchor-parked generator + CSS-from-JS; idempotent,
+−159 blank lines). Method:
+[`docs/kb-notes/methodology-regen-safe-section-rework.md`](docs/kb-notes/methodology-regen-safe-section-rework.md);
+full story: [`docs/cobi_lessons.md`](docs/cobi_lessons.md). **NEXT:
+[`docs/session_69_handoff.md`](docs/session_69_handoff.md)** — finish #487 (sample the seal
+navy → merge → dispatch), then the TMC acceptance engine.
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: GitHub scheduled-workflow reliability — diagnosing a missed cron + the backstop-cron fix
 created: 2026-06-01
-updated: 2026-06-01
-tags: [playbook, github-actions, cron, scheduling, daily-dashboard, ops]
+updated: 2026-06-22
+tags: [playbook, github-actions, cron, scheduling, daily-dashboard, ops, resilience]
 kb-status: published
 kb-type: playbook
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -88,5 +88,31 @@ run.** Not your code.
 
 ## See also
 
-- `.github/workflows/daily-dashboard.yml` (the two-cron setup); CLAUDE.md §6.
+- `.github/workflows/daily-dashboard.yml` (the cron ladder); CLAUDE.md §6.
 - PR #216 (backstop cron); the 2026-06-01 investigation.
+
+## Update — 2026-06-22 (Session 68): schedule EARLY + a transient-failure lesson
+
+Two refinements after the dashboard was "spotty" again (PRs #485, #486):
+
+**1. Measure the delay, then schedule for buffer (not just redundancy).** Pulled ~25
+runs via `actions_list(list_workflow_runs)` and parsed `created_at` vs the `:17` cron
+target: the primary was firing **+1.75 to +4h late, every day** — and *every* recent
+day actually ran. So the problem was **delay, not drops**. You can't shrink GitHub's
+delay, so **schedule EARLY** for buffer and let later crons catch an over-delayed one.
+The two-cron setup became a **3-cron ladder ~3h apart**: `17 6` / `17 9` / `17 12 * * *`
+UTC (≈11 PM / 2 AM / 5 AM PT) — the primary now lands overnight even after a 4h slip;
+the last backstop is the pre-workday net. Keep `:17` (never `:00`); never 00:00 UTC.
+
+**2. A daily pipeline also dies from a *transient* error in an unguarded step — audit
+every external call to be non-fatal + retried.** The actual cause of a failed run was
+a one-off `URLError: [SSL: UNEXPECTED_EOF_WHILE_READING]` reaching Supabase in
+`kb/_apply_curation.py` — the **one** Supabase call in step 3 with no `|| echo` guard
+(its three siblings were already non-fatal). A momentary blip aborted the *entire*
+publish. Fix = two layers: a **retry** in the fetch (transient TLS/network self-heals
+within the run, 4 tries, backoff) **and** a **non-fatal `::warning::` guard** (a
+persistent outage falls back to the committed overlay — the generator already tolerates
+Supabase being down). It's safe to skip because the script **fetches before it writes**,
+so a failed fetch leaves the last-good file untouched. **Lesson:** in a daily pipeline,
+the publish must survive any single source hiccup — make every external call non-fatal,
+retry the transient ones, and verify each step has a committed fallback.
