@@ -89,7 +89,12 @@ The whole ecosystem, end-to-end:
    review/compliance engine), a **Knowledge Base** tab (a sign-in-gated
    portal over the public CPL Knowledge Base — read the curated docs, and
    compose a new doc with optional file attachments + Claude polish, then
-   commit it to GitHub as yourself), and a **Pipeline** progress board.
+   commit it to GitHub as yourself), a **CPL News** tab (an auto-curated CPL
+   news feed — California-first, then national, plus adjacent systems
+   (Career Passport, CA Master Plan, workforce/upskilling) and CA budget
+   items; harvested daily from free sources + a suggest-a-story queue and
+   Claude-triaged, read live so it never goes stale), and a **Pipeline**
+   progress board.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,
    then `excel_to_dashboard.py` regenerates the dashboard HTML, exports the
