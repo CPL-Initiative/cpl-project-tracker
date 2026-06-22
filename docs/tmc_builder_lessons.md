@@ -394,3 +394,70 @@ Phase-2 acceptance engine needs.
   (C-ID match = mandatory accept · flexible slot = accept-with-ASSIST · descriptor
   comparison = human) + the structural checklist; and the **bulk PCF** (Playwright)
   for the current-state bootstrap.
+
+## Session 69 — Bruh Stargaze: title-fill recovery for approved ADTs + the Status/ADT consolidation (2026-06-22)
+
+Sam-async (he set the direction, then left for a meeting; "act on your best
+judgement … exploratory … doesn't impact prod"). Three asks, all in
+`tmc_builder.js` (STATIC — no HTML/Rule-4 touch, not a cron artifact; live on
+the next Pages deploy):
+
+1. **Default `Show` = "✓ This college's approved ADTs."** `state.statusFilter`
+   defaults to `adt-yes`. It's college-gated (meaningless without a college) and
+   falls back to `all` until a college is picked AND the ADT overlay has loaded
+   (`renderList`: `(!state.college || !adtData())`). So: land on All-colleges →
+   all TMCs; pick your college → your approved ADTs (the screenshot state). No
+   "my college" concept exists, so the *filter* default is the realizable "default
+   view" — it engages the moment a college is chosen.
+
+2. **Title-fill recovery on approved ADTs (the meaty one).** Approval implies every
+   course was CO-vetted, but the CO keeps no parseable PDF and COCI often doesn't
+   record the C-ID → the slot can't C-ID auto-match even though the course exists.
+   New second pass `titleAutoFill()` (after the C-ID `autoMatch()`, wrapped as
+   `autoPopulate()`): for colleges holding an **active/approved/teachout** ADT in
+   that discipline, fill each blank C-ID slot with the best **title-matching** local
+   course. Flagged **`≈ title-matched — verify C-ID`** (new `tmatch` status cls,
+   blue) — *never* `✓ C-ID aligned`; a headstart, not a claim.
+   - **Matcher:** token-set Jaccard with a tiny stopword set + **light stemming**
+     (`introductory|introduction|intro → intro`, `fundamental(s)`, `principle(s)`),
+     threshold **0.72**, ties broken by same-subject-as-the-C-ID then units-in-range,
+     greedy with no double-assignment. `course._tt` memoizes per-course tokens.
+   - **Measure-first (the pattern that worked):** validated against the real
+     `tmc_college_courses.js` BEFORE building. **24,004** blank C-ID slots on
+     active/approved ADTs → **~5,250 title-filled (21.9%)**, **84% exact-title**;
+     stemming added ~250 (the very common `Introductory X` ↔ `Introduction to X`
+     C-ID pattern). Fuzzy band (0.72–0.99) is overwhelmingly the same course under a
+     different local subject code (`PSY 200 Research Methods → PSYC 12 Research
+     Methods in Psychology`); imperfect ones (lab vs lecture) carry a units-differ
+     sub-flag. **0.72 rejects the near-misses** (`SOCI 125 Intro to Statistics in
+     Sociology` ≠ `SOC 101 Intro to Sociology` @ 0.67). Sam's exact example —
+     Allan Hancock `AJ 200 Introduction to Corrections → AJ 130 Introduction to
+     Corrections` — fills at J=1.00.
+   - Surfaced: per-slot `tmatch` pill + a `≈ title-matched` legend entry + a meter
+     count + an explainer note in the form (only when an approved ADT has title-fills).
+     `statusFor` computes the title match directly, so it also labels a *manual*
+     same-title pick — no extra state.
+
+3. **Consolidated the Status + "This college's ADT" columns (Sam: "please advise").**
+   The standalone **Status** column read "⚠ Draft" for all 45 TMCs → pure noise.
+   Removed it; moved the positive signal **inline** next to the TMC name and only
+   when it carries meaning (**✓ Official** / **◆ UC Transfer Pathway** — the uniform
+   Draft is covered by the global "· Draft" h2 disclosure). The single ADT column now
+   also folds in the old Draft *meaning* Sam described — a not-established TMC reads
+   **`○ Potential`** ("open it to pre-populate the aligned C-IDs and build a
+   submission") instead of a bare `—`. One column covers all bases: established →
+   COCI status badge; not-established → a build-it opportunity. **My advice to Sam:**
+   the consolidation is the right call (the uniform Draft column was noise; the
+   Official chip returns as a real signal the day faculty verify a template). Fully
+   reversible if he prefers the separate column back.
+
+- Tests: new `tests/tmc_title_fill.test.js` (15 checks — exact + stemmed recovery,
+  C-ID still wins, no false fill, the explainer/legend/meter, and the **scope gate**:
+  a college without an approved ADT gets NO title-fill though the same titles exist
+  locally). `tests/tmc_college_adts.test.js` updated for the new default + the
+  `○ Potential` cell + the removed Status column. **Suite 61 → 62 files green.**
+- **Open / for Sam's afternoon review:** (a) the consolidation visual — confirm or ask
+  for the Status column back; (b) `filled/required` can read e.g. `12/6` on select-N
+  lists (pre-existing — auto-match + title-fill populate *every* matchable slot, not
+  just the `select N`; deselect extras — not changed here); (c) extend title-fill to
+  *in-progress* ADTs? (currently approved-only, the defensible scope).

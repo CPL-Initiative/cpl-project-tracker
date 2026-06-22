@@ -32,7 +32,9 @@
     loadedCourses: false,
     session: null,        // Supabase auth session (shared cpl_sb key with the CCR)
     email: "",            // signed-in reviewer email
-    statusFilter: "all",  // TMC status filter; "requested" = the CO-review queue
+    statusFilter: "adt-yes", // Show default = this college's approved ADTs (Session 69);
+                            // "requested" = the CO-review queue. Falls back to "all" when no
+                            // college is picked or before the ADT overlay has loaded.
     notes: {},            // slotKey -> {note, by, at} — global curator notes for the selected TMC
     requests: []          // submitted ADT requests (status=submitted) for CO review
   };
@@ -74,6 +76,60 @@
     if (slot.cid) arr.push(normCid(slot.cid));
     (slot.alts || []).forEach(function (a) { arr.push(normCid(a)); });
     return arr;
+  }
+
+  /* ---- title matching (Session 69) -------------------------------------------
+   * For colleges that ALREADY hold an approved ADT, approval implies every course
+   * was vetted — but the CO doesn't retain a parseable PDF and the C-ID is often
+   * not recorded in COCI, so the slot can't C-ID auto-match. We recover the
+   * mapping by matching the slot's title to a local course title (light stemming
+   * so the common C-ID pattern "Introductory X" ↔ "Introduction to X" matches).
+   * These fills are flagged "≈ title-matched (verify)", NEVER "C-ID aligned" — a
+   * headstart, not a claim. Tuned on the COCI master file: ≥0.72 Jaccard fills
+   * ~22% of blank approved-ADT slots, 84% of them exact-title, with high
+   * precision (cross-subject hits like PSY 200 → PSYC 12 "Research Methods in
+   * Psychology" are the same course under a different local subject code). */
+  var TITLE_STOP = { to: 1, the: 1, of: 1, and: 1, a: 1, an: 1, "in": 1, "for": 1, or: 1, with: 1 };
+  var TITLE_MATCH_MIN = 0.72;
+  function titleStem(t) {
+    if (t === "introductory" || t === "introduction" || t === "intro") return "intro";
+    if (t === "fundamentals" || t === "fundamental") return "fundamental";
+    if (t === "principles" || t === "principle") return "principle";
+    return t;
+  }
+  function titleTokens(s) {
+    var set = {};
+    String(s == null ? "" : s).toLowerCase().replace(/\(.*?\)/g, " ")
+      .replace(/[^a-z0-9]+/g, " ").split(" ").forEach(function (t) {
+        if (t && !TITLE_STOP[t]) set[titleStem(t)] = 1;
+      });
+    return set;
+  }
+  function courseTokens(c) { return c._tt || (c._tt = titleTokens(c.title)); }
+  function titleJaccard(a, b) {
+    var ka = Object.keys(a), kb = Object.keys(b), inter = 0;
+    if (!ka.length || !kb.length) return 0;
+    ka.forEach(function (k) { if (b[k]) inter++; });
+    return inter / (ka.length + kb.length - inter);
+  }
+  // best title-matching local course for a C-ID slot (excludes already-used courses);
+  // ties broken by same-subject-as-the-C-ID, then units in range.
+  function titleMatchFor(slot, used) {
+    if (!slot || !slot.cid || !state.courses.length) return null;
+    var st = titleTokens(slot.title);
+    if (!Object.keys(st).length) return null;
+    var subjHint = (slot.cid || "").split(" ")[0].toUpperCase();
+    var best = null, bestScore = -1, bestRank = -1;
+    state.courses.forEach(function (c) {
+      if (used && used[c.subj + " " + c.num]) return;
+      var j = titleJaccard(st, courseTokens(c));
+      if (j < TITLE_MATCH_MIN) return;
+      var rank = (String(c.subj).toUpperCase() === subjHint ? 2 : 0) + (unitsInRange(c.units, slot.units) ? 1 : 0);
+      if (j > bestScore + 1e-9 || (Math.abs(j - bestScore) < 1e-9 && rank > bestRank)) {
+        best = c; bestScore = j; bestRank = rank;
+      }
+    });
+    return best ? { course: best, score: bestScore } : null;
   }
 
   // Per-TMC status — two states only: 'official' (faculty-verified against the
@@ -224,6 +280,7 @@
       "#tab-tmc-builder .tmc-status{display:inline-block;font-size:.72rem;font-weight:700;margin-top:5px;padding:1px 8px;border-radius:20px;}" +
       "#tab-tmc-builder .tmc-status.ok{color:#065f46;background:#ecfdf5;border:1px solid #34d399;}" +
       "#tab-tmc-builder .tmc-status.warn{color:#92400e;background:#fffbeb;border:1px solid #fcd34d;}" +
+      "#tab-tmc-builder .tmc-status.tmatch{color:#1e40af;background:#eff6ff;border:1px solid #93c5fd;}" +
       "#tab-tmc-builder .tmc-status.none{color:#475569;background:#f1f5f9;border:1px solid #cbd5e1;}" +
       "#tab-tmc-builder .tmc-status.empty{color:#9ca3af;background:transparent;border:1px dashed #cbd5e1;}" +
       "#tab-tmc-builder .tmc-clear{margin-left:8px;color:#9ca3af;cursor:pointer;font-size:.72rem;text-decoration:underline;}" +
@@ -462,6 +519,12 @@
       if (ur === false) return { cls: "warn", label: "⚠ C-ID match · units differ (" + fmtU(course.units) + " vs " + slot.units + ")" };
       return { cls: "ok", label: "✓ C-ID aligned" };
     }
+    // No C-ID on file, but the local title closely matches this slot's course — a
+    // recovered "title match" (verify), distinct from a C-ID-aligned slot.
+    if (slot.cid && titleJaccard(titleTokens(slot.title), courseTokens(course)) >= TITLE_MATCH_MIN) {
+      if (ur === false) return { cls: "tmatch", label: "≈ title match · units differ (" + fmtU(course.units) + " vs " + slot.units + ") — verify" };
+      return { cls: "tmatch", label: "≈ title-matched — verify C-ID" };
+    }
     return { cls: "none", label: "○ no C-ID on file — align or pursue C-ID" };
   }
   function fmtU(u) { return u == null ? "?" : (u % 1 === 0 ? String(u) : String(u)); }
@@ -496,8 +559,8 @@
     return { filled: filled, required: required, units: Math.round(units * 10) / 10 };
   }
   function tally() {
-    var filled = 0, required = 0, units = 0, aligned = 0;
-    if (!state.tmc || !state.tmc.sections) return { filled: filled, required: required, units: units, aligned: aligned };
+    var filled = 0, required = 0, units = 0, aligned = 0, tmatched = 0;
+    if (!state.tmc || !state.tmc.sections) return { filled: filled, required: required, units: units, aligned: aligned, tmatched: tmatched };
     state.tmc.sections.forEach(function (sec, si) {
       var need = sec.select === "all" ? sec.slots.length : sec.select;
       required += need;
@@ -508,10 +571,11 @@
           if (c.units != null && !isNaN(parseFloat(c.units))) units += parseFloat(c.units);
           var stt = statusFor(slot, c);
           if (stt.cls === "ok") aligned++;
+          else if (stt.cls === "tmatch") tmatched++;
         }
       });
     });
-    return { filled: filled, required: required, units: Math.round(units * 10) / 10, aligned: aligned };
+    return { filled: filled, required: required, units: Math.round(units * 10) / 10, aligned: aligned, tmatched: tmatched };
   }
 
   /* ----------------------------------------------------------------- views */
@@ -620,8 +684,10 @@
         return "<span class='tmc-adt " + bm.cls + "' title='" +
           esc(a.t + " · " + a.s + " · " + adtMetaStr(a)) + "'>" + bm.label + "</span>";
       }
+      // Not established here → a potential ADT the college could build (the old
+      // "Draft" status meaning, folded in per Session 69): open it for a headstart.
       return "<span class='tmc-adt adt-none' title='No approved ADT in this discipline at " +
-        esc(state.college) + " (COCI program inventory)'>—</span>";
+        esc(state.college) + " yet — open it to pre-populate the aligned C-IDs and build a submission (COCI program inventory)'>○ Potential</span>";
     }
     var tot = adtTotals(t.id);
     if (tot && tot.colleges) {
@@ -646,7 +712,10 @@
     // the full catalog = the 45 ASCCC TMCs + the UC Transfer Pathway instances
     var catalog = templates.concat(extraTmcRows());
     var fstat = state.statusFilter;
-    if ((fstat === "adt-yes" || fstat === "adt-no") && !state.college) fstat = "all";
+    // the default Show is "adt-yes" (this college's approved ADTs) — but that only
+    // means anything once a college is picked AND the ADT overlay has loaded; until
+    // then, show everything rather than an empty list.
+    if ((fstat === "adt-yes" || fstat === "adt-no") && (!state.college || !adtData())) fstat = "all";
     var q = (state.listQuery || "").trim().toLowerCase();
     var rows = catalog.filter(function (t) {
       if (fstat === "adt-yes") { if (!adtShown(adtFor(t.id))) return false; }
@@ -677,7 +746,7 @@
 
     var box = el("div", "tmc-listbox");
     var table = el("table", "tmc-listtable");
-    table.innerHTML = "<thead><tr><th>Transfer Model Curriculum</th><th>Degree</th><th>Status</th>" +
+    table.innerHTML = "<thead><tr><th>Transfer Model Curriculum</th><th>Degree</th>" +
       (hasAdt ? "<th>" + esc(adtHdr) + "</th>" : "") +
       "<th class='tmc-num'>C-ID slots</th>" + (showCov ? "<th class='tmc-num'>Your auto-matches</th>" : "") +
       "<th>Template</th></tr></thead>";
@@ -692,10 +761,15 @@
       tr.tabIndex = 0;
       tr.setAttribute("role", "button");
       tr.setAttribute("aria-label", "Open " + t.discipline + (pathway ? " pathway" : " TMC"));
+      // Official/Pathway carries a positive signal worth surfacing inline by the
+      // name; the uniform "Draft" chip was retired (Session 69 — it was noise, and
+      // the global "· Draft" disclosure covers it). The per-college ADT column
+      // (below) now folds in the not-established "○ Potential" state.
+      var nameChip = (tmcStatus(t) === "official" || pathway)
+        ? " <span class='tmc-stchip " + sm.cls + "'>" + esc(sm.label) + "</span>" : "";
       tr.innerHTML =
-        "<td class='tmc-lt-name'>" + esc(t.discipline) + "</td>" +
+        "<td class='tmc-lt-name'>" + esc(t.discipline) + nameChip + "</td>" +
         "<td>" + (t.degree ? "<span class='tmc-deg-sm'>" + esc(t.degree) + "</span>" : "—") + "</td>" +
-        "<td><span class='tmc-stchip " + sm.cls + "'>" + esc(sm.label) + "</span></td>" +
         (hasAdt ? "<td>" + adtCellHtml(t) + "</td>" : "") +
         "<td class='tmc-num'>" + (nslots == null ? "—" : nslots) + "</td>" +
         (showCov ? "<td class='tmc-num'>" + (cov != null ? "<span class='tmc-cov'>" + cov + "</span> / " + nslots : "—") + "</td>" : "") +
@@ -714,7 +788,7 @@
     state.choice = {};
     state.notes = {};
     state.view = "detail";
-    if (state.college && state.tmc) autoMatch();
+    if (state.college && state.tmc) autoPopulate();
     maybeResume();
     if (state.tmc) loadNotes(state.tmc.id, function () { if (state.view === "detail") renderBody(); });
     render();
@@ -848,6 +922,20 @@
 
     var adtBn = adtBannerEl(t); if (adtBn) card.appendChild(adtBn);
 
+    // Approved-ADT title-fill explainer (Session 69): when blank C-ID slots were
+    // recovered by title match, say why + that each still needs verifying.
+    if (!reviewMode && adtIsApproved(t.id)) {
+      var tmf = tally();
+      if (tmf.tmatched) {
+        card.appendChild(el("div", "tmc-reviewbar",
+          "≈ <strong>" + tmf.tmatched + " slot" + (tmf.tmatched === 1 ? "" : "s") +
+          " pre-filled by title match.</strong> " + esc(state.college) + " holds an approved ADT here, so every " +
+          "course was CO-vetted — but the Chancellor's Office doesn't retain a parseable PDF and the C-ID often isn't " +
+          "recorded in COCI. We matched each blank slot's title to your local course as a headstart; they're marked " +
+          "<em>≈ verify</em>. Confirm or swap before submitting."));
+      }
+    }
+
     if (reviewMode) {
       card.appendChild(el("div", "tmc-reviewbar",
         "👀 <strong>Review view</strong> — this is the fixed, ASCCC-defined C-ID course list. " +
@@ -901,6 +989,7 @@
       var legend = el("div", "tmc-legend");
       legend.innerHTML =
         "<span><b style='color:#065f46'>✓ C-ID aligned</b> — your course carries this C-ID</span>" +
+        "<span><b style='color:#1e40af'>≈ title-matched</b> — same title, no C-ID recorded; verify</span>" +
         "<span><b style='color:#92400e'>⚠ units differ</b> — review unit/contact-hour match</span>" +
         "<span><b style='color:#475569'>○ no C-ID</b> — align content or pursue C-ID approval</span>";
       mount.appendChild(legend);
@@ -1222,7 +1311,9 @@
       return;
     }
     var t = tally();
-    m.innerHTML = "Total Units: <b>" + t.units + "</b> · <b>" + t.aligned + "</b> C-ID aligned · <b>" + t.filled + "/" + t.required + "</b> slots";
+    m.innerHTML = "Total Units: <b>" + t.units + "</b> · <b>" + t.aligned + "</b> C-ID aligned" +
+      (t.tmatched ? " · <b>" + t.tmatched + "</b> title-matched" : "") +
+      " · <b>" + t.filled + "/" + t.required + "</b> slots";
   }
 
   /* --------------------------------------------------------------- actions */
@@ -1370,7 +1461,7 @@
   /* ------------------------------------------------------------- selection */
   function onCollege(name) {
     setCollege(name);
-    if (state.college && state.tmc) autoMatch();   // auto-populate the C-ID matches
+    if (state.college && state.tmc) autoPopulate();   // C-ID auto-match + (approved ADTs) title-fill
     maybeResume();
     // full re-render so the filter bar rebuilds too (the Show dropdown gains/loses
     // the college-specific "this college's approved ADTs" options); render() ends
@@ -1393,6 +1484,37 @@
       });
     });
   }
+
+  // does the selected college already hold an approved ADT for this TMC? (active /
+  // approved-pending / teach-out all imply the courses were CO-vetted)
+  function adtIsApproved(tmcId) {
+    var a = adtFor(tmcId);
+    return !!(a && (a.b === "active" || a.b === "approved" || a.b === "teachout"));
+  }
+
+  // Second-pass fill for APPROVED ADTs only: every blank C-ID slot gets its best
+  // title-matching local course (the C-ID just isn't recorded in COCI). Greedy +
+  // no double-assignment. Flagged "≈ title-matched (verify)" by statusFor, never
+  // "C-ID aligned". (Sam, Session 69 — recover the mapping the CO didn't retain.)
+  function titleAutoFill() {
+    if (!state.tmc || !state.tmc.sections || !state.courses.length) return;
+    if (!adtIsApproved(state.tmc.id)) return;
+    var used = {};
+    Object.keys(state.choice).forEach(function (k) {
+      var c = state.choice[k]; if (c) used[c.subj + " " + c.num] = 1;
+    });
+    state.tmc.sections.forEach(function (sec, si) {
+      sec.slots.forEach(function (slot, sj) {
+        var key = si + ":" + sj;
+        if (state.choice[key] || !slot.cid) return;   // skip filled + non-C-ID slots
+        var m = titleMatchFor(slot, used);
+        if (m) { state.choice[key] = m.course; used[m.course.subj + " " + m.course.num] = 1; }
+      });
+    });
+  }
+
+  // C-ID exact auto-match, then (approved ADTs only) the title-match recovery pass
+  function autoPopulate() { autoMatch(); titleAutoFill(); }
 
   // if a saved submission exists for (college, tmc), load its alignments
   function maybeResume() {
@@ -1452,6 +1574,9 @@
     // per-college approved-ADT overlay (small, static) — the authoritative COCI
     // program inventory; stamps each TMC with the selected college's ADT status
     ensureScript("tmc_college_adts.js", "CPL_TMC_COLLEGE_ADTS", function () {
+      // the overlay decides which directory rows show (default = approved ADTs) and
+      // gates the approved-ADT title-fill — re-run it for an already-open TMC.
+      if (state.view === "detail" && state.college && state.tmc) titleAutoFill();
       renderBody(); // directory gains the ADT column; detail gains the banner
     });
   }
