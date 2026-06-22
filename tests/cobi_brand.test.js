@@ -1,9 +1,13 @@
-// COBI brand layer (cobi_brand.js) — the masthead personality.
+// COBI masthead (cobi_brand.js + quickstart.js slot) — the consolidated header.
 //
-// Guards: (a) Rule 4 (both HTMLs identical) + the script tag + the COBI
-// masthead markup; (b) the rotating Mamba subtitle is set from the lineup;
-// (c) the 8→24 jersey wink injects + flips on hover; (d) Mamba Day (Aug 24)
-// flips the masthead into its purple-and-gold state.
+// Guards: (a) Rule 4 (both HTMLs identical) + the script tag + the masthead
+// markup (seal, COBI wordmark, "…Business Intelligence" tagline with NO
+// "for CPL", the ℹ About popover holding the generator-injected Project
+// Description / Attachments + the static Today's painting link, the center
+// search slot, and the "Manually Refresh COBI" button); (b) the gold CPL
+// superscript injects at runtime; (c) the About popover toggles; (d) the
+// painting link calls First Light; (e) quickstart mounts "Where To?" into the
+// center slot.
 //
 // Run from repo root: `npm test` (or `node tests/cobi_brand.test.js`).
 const fs = require("fs");
@@ -19,70 +23,110 @@ check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 const tag = '<script src="cobi_brand.js"></script>';
 check("cobi_brand.js script tag present exactly once", cpl.split(tag).length === 2);
 check("masthead wordmark is COBI", /<h1>COBI<\/h1>/.test(cpl));
-check("backronym tagline present", /class="cobi-tagline">Chancellor(&#39;|')s Office Business Intelligence/.test(cpl));
-check("rotating Mamba slot present", /id="cobi-mamba"/.test(cpl));
-check("nav label renamed to COBI", /data-tab="dashboard">COBI<\/a>/.test(cpl));
-check("old 'CPL Initiative — Project Dashboard' h1 gone", !/CPL Initiative &mdash; Project Dashboard/.test(cpl));
+check("tagline present without 'for CPL' suffix",
+  /class="cobi-tagline">Chancellor(&#39;|')s Office Business Intelligence<\/div>/.test(cpl));
+check("the Mamba/8→24 wink is retired (no rotating subtitle text)",
+  !/Mamba Mentality/.test(cpl) && !/Black Mambanator/.test(cpl));
+check("hidden #cobi-mamba anchor kept for the generator PROJ-INFO inject", /id="cobi-mamba"/.test(cpl));
+check("seal img present (graceful onerror-hide)",
+  /class="cobi-seal"[^>]*src="cccco_seal\.png"[^>]*onerror=/.test(cpl));
+check("brand uses --seal-blue token", /--seal-blue:/.test(cpl));
+check("center search slot present", /id="cobiQsSlot"/.test(cpl));
+check("ℹ About button + panel present", /id="cobiAboutBtn"/.test(cpl) && /id="cobiAboutPanel"/.test(cpl));
+check("Today's painting link present in About", /id="cobiPaintingLink"/.test(cpl));
+// The generator fills the PROJ-INFO markers (Project Description / Attachments /
+// Cheat Sheet) on each run — code-only, the empty markers must sit INSIDE the
+// About panel, before the painting link, so the inject lands there.
+check("PROJ-INFO markers sit inside the About panel (before the painting link)",
+  cpl.indexOf("cobiAboutPanel") < cpl.indexOf("<!-- PROJ-INFO-START -->") &&
+  cpl.indexOf("<!-- PROJ-INFO-START -->") < cpl.indexOf("cobi-about-links"));
+check("nav label is COBI", /data-tab="dashboard">COBI<\/a>/.test(cpl));
 
-const SRC = fs.readFileSync("cobi_brand.js", "utf8");
+// ── Generator (source-of-truth) — the Refresh button is injected each run ──
+const gen = fs.readFileSync("excel_to_dashboard.py", "utf8");
+check("generator emits the 'Manually Refresh COBI' button as a subtle cobi-util-link",
+  /Manually Refresh COBI<\/button>/.test(gen) && /id="refreshBtn" class="cobi-util-link"/.test(gen));
+check("generator no longer emits 'Refresh Today's Data'", !/Refresh Today&#39;s Data/.test(gen));
+check("generator strips the refresh button by id (regen-safe, idempotent)",
+  gen.includes('<button id="refreshBtn".*?</button>'));
+
+// The masthead structure used to boot the JS (mirrors the static template).
 const MAST =
-  '<div class="header"><h1>COBI</h1>' +
-  '<div class="cobi-tagline">Chancellor&#39;s Office Business Intelligence</div>' +
-  '<div class="subtitle" id="cobi-mamba">Mamba Mentality</div></div>';
+  '<div class="header">' +
+  '<div class="cobi-brand"><img class="cobi-seal" src="cccco_seal.png" onerror="this.style.display=\'none\'">' +
+  '<div class="cobi-brandtext"><h1>COBI</h1>' +
+  '<div class="cobi-tagline">Chancellor&#39;s Office Business Intelligence</div></div></div>' +
+  '<div class="cobi-qs-slot" id="cobiQsSlot"></div>' +
+  '<div class="cobi-utility"><span class="cobi-about">' +
+  '<button type="button" id="cobiAboutBtn" aria-expanded="false">About</button>' +
+  '<div class="cobi-about-panel" id="cobiAboutPanel">' +
+  '<div class="subtitle" id="cobi-mamba" style="display:none"></div>' +
+  '<details class="project-description"><summary>Project Description</summary></details>' +
+  '<div class="cobi-about-links"><button class="cobi-about-link" id="cobiPaintingLink">Today’s painting</button></div>' +
+  '</div></span>' +
+  '<div class="last-updated">Last Updated: today</div></div></div>';
 
-function boot(forceDate) {
-  const dom = new JSDOM("<!doctype html><html><head></head><body>" + MAST + "</body></html>",
+const BRAND_SRC = fs.readFileSync("cobi_brand.js", "utf8");
+const QS_SRC = fs.readFileSync("quickstart.js", "utf8");
+
+function dom() {
+  return new JSDOM("<!doctype html><html><head></head><body>" + MAST + "</body></html>",
     { runScripts: "outside-only", url: "https://example.org/" });
-  if (forceDate) {
-    const Real = dom.window.Date;
-    function Fake() { return new Real(forceDate.y, forceDate.m, forceDate.d); }
-    Fake.now = function () { return new Real(forceDate.y, forceDate.m, forceDate.d).getTime(); };
-    dom.window.Date = Fake;
-  }
-  dom.window.eval(SRC);
-  dom.window.COBI_BRAND.init(); // jsdom sits at readyState "loading"; init is idempotent
-  return dom;
 }
 
-// (b) rotating subtitle is one of the lineup
+// (b) gold CPL superscript injected at runtime
 {
-  const dom = boot();
-  const phrases = dom.window.COBI_BRAND.mambaPhrases;
-  const sub = dom.window.document.getElementById("cobi-mamba").textContent;
-  check("Mamba subtitle set from the lineup", phrases.indexOf(sub) !== -1);
-  check("lineup carries the curated picks",
-    phrases.indexOf("Bean Counting") !== -1 && phrases.indexOf("Mamba Mentality") !== -1 &&
-    phrases.indexOf("Black Mambanator") !== -1);
-
-  // (c) 8 → 24 jersey wink
-  const num = dom.window.document.querySelector(".header h1 .cobi-num");
-  check("8 → 24 wink injected onto the wordmark", !!num && num.textContent === "8");
-  if (num) {
-    num.dispatchEvent(new dom.window.MouseEvent("mouseenter"));
-    check("wink flips to 24 on hover", num.textContent === "24");
-    num.dispatchEvent(new dom.window.MouseEvent("mouseleave"));
-    check("wink flips back to 8", num.textContent === "8");
-  } else { check("wink flips to 24 on hover", false); check("wink flips back to 8", false); }
-
-  check("normal day: not in Mamba-Day state",
-    !dom.window.document.body.classList.contains("cobi-mamba-day"));
+  const d = dom();
+  d.window.eval(BRAND_SRC);
+  d.window.COBI_BRAND.init();
+  const num = d.window.document.querySelector(".header h1 .cobi-num");
+  check("CPL superscript injected onto the wordmark", !!num && num.textContent === "CPL");
+  check("#cobi-mamba stays empty (no phrase)", d.window.document.getElementById("cobi-mamba").textContent === "");
+  // idempotent — a second init doesn't double the superscript
+  d.window.COBI_BRAND.init();
+  check("superscript not duplicated on re-init",
+    d.window.document.querySelectorAll(".header h1 .cobi-num").length === 1);
 }
 
-// (d) Mamba Day — Aug 24 (month index 7)
+// (c) About popover toggles open/closed
 {
-  const dom = boot({ y: 2026, m: 7, d: 24 });
-  check("Mamba Day: masthead goes purple-and-gold",
-    dom.window.document.body.classList.contains("cobi-mamba-day"));
-  check("Mamba Day: subtitle salutes the day",
-    /Mamba Mentality/.test(dom.window.document.getElementById("cobi-mamba").textContent));
+  const d = dom();
+  d.window.eval(BRAND_SRC);
+  d.window.COBI_BRAND.init();
+  const btn = d.window.document.getElementById("cobiAboutBtn");
+  const panel = d.window.document.getElementById("cobiAboutPanel");
+  check("About panel starts closed", !panel.classList.contains("open"));
+  btn.dispatchEvent(new d.window.MouseEvent("click", { bubbles: true }));
+  check("About panel opens on click", panel.classList.contains("open"));
+  check("aria-expanded reflects open", btn.getAttribute("aria-expanded") === "true");
 }
 
-// isMambaDay logic
+// (d) painting link calls First Light
 {
-  const dom = boot();
-  const f = dom.window.COBI_BRAND.isMambaDay;
-  check("isMambaDay true on Aug 24", f(new Date(2026, 7, 24)) === true);
-  check("isMambaDay false otherwise", f(new Date(2026, 5, 19)) === false);
+  const d = dom();
+  let opened = 0;
+  d.window.CPL_FIRST_LIGHT = { open: function () { opened++; } };
+  d.window.eval(BRAND_SRC);
+  d.window.COBI_BRAND.init();
+  d.window.document.getElementById("cobiPaintingLink")
+    .dispatchEvent(new d.window.MouseEvent("click", { bubbles: true }));
+  check("Today's painting link opens First Light", opened === 1);
+}
+
+// (e) quickstart mounts "Where To?" into the center slot
+{
+  const d = dom();
+  d.window.eval(QS_SRC);
+  // jsdom sits at readyState "loading", so quickstart registered its mount on
+  // DOMContentLoaded — fire it (as a real page load would).
+  d.window.document.dispatchEvent(new d.window.Event("DOMContentLoaded"));
+  const slot = d.window.document.getElementById("cobiQsSlot");
+  const chat = slot.querySelector("#qs-chat");
+  check("quickstart widget mounted inside #cobiQsSlot", !!chat);
+  const label = chat && chat.querySelector(".qs-label");
+  check("label reads 'Where To?'", !!label && /Where To\?/.test(label.textContent));
+  check("label + input share one row (.qs-row)",
+    !!(chat && chat.querySelector(".qs-row .qs-label") && chat.querySelector(".qs-row .qs-input")));
 }
 
 let failed = 0;

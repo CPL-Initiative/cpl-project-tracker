@@ -10937,8 +10937,8 @@ def main():
 
             # ── Inject Refresh Data button below the last-updated div ──
             refresh_btn = (
-                '<div style="text-align:center;margin-top:0.5rem;">'
-                '<button id="refreshBtn" onclick="'
+                '<button id="refreshBtn" class="cobi-util-link" '
+                'title="Re-scrape live MAP data and regenerate the dashboard now" onclick="'
                 'if(!confirm(\'⚠️ Manual Pipeline Run\\n\\n'
                 'This will re-scrape live data from the MAP CPL Dashboard, '
                 'regenerate all charts and KPIs, and overwrite today\\\'s deployed dashboard.\\n\\n'
@@ -10958,19 +10958,13 @@ def main():
                 'if(d.success){b.textContent=\'✅ Pipeline running — page will refresh in 5 min\';'
                 'setTimeout(function(){location.reload()},300000)}'
                 'else{b.textContent=\'❌ \'+( d.error||\'Unknown error\');b.disabled=false}})'
-                '.catch(function(e){b.textContent=\'❌ \'+e.message;b.disabled=false})" style="'
-                'background:transparent;color:var(--gold-accent);border:1px solid var(--gold-accent);'
-                'padding:6px 18px;font-weight:600;cursor:pointer;border-radius:4px;'
-                'font-size:0.8rem;font-family:\'Source Sans 3\',Arial,sans-serif;'
-                'transition:all 0.2s;" '
-                'onmouseover="if(!this.disabled){this.style.background=\'var(--gold-accent)\';this.style.color=\'var(--navy-primary)\'}" '
-                'onmouseout="if(!this.disabled){this.style.background=\'transparent\';this.style.color=\'var(--gold-accent)\'}">'
-                '&#x21bb; Refresh Today&#39;s Data</button></div>'
+                '.catch(function(e){b.textContent=\'❌ \'+e.message;b.disabled=false})">'
+                '&#x21bb; Manually Refresh COBI</button>'
             )
             # Remove any existing refresh button first, then insert after last-updated.
             # Consume the leading newline+indent too, else a blank indented line
             # accretes on every regen (idempotency — Session 26 audit IDEM-1).
-            html = re.sub(r'\n\s*<div style="text-align:center;margin-top:0\.5rem;">.*?Refresh.*?Data.*?</div>', '', html)
+            html = re.sub(r'\n\s*<button id="refreshBtn".*?</button>', '', html)
             html = html.replace(
                 '<div class="last-updated">Last Updated: ' + data["last_updated"] + '</div>',
                 '<div class="last-updated">Last Updated: ' + data["last_updated"] + '</div>\n        ' + refresh_btn
