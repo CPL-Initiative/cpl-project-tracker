@@ -922,17 +922,23 @@
 
     var adtBn = adtBannerEl(t); if (adtBn) card.appendChild(adtBn);
 
-    // Approved-ADT title-fill explainer (Session 69): when blank C-ID slots were
-    // recovered by title match, say why + that each still needs verifying.
-    if (!reviewMode && adtIsApproved(t.id)) {
+    // Title-fill explainer (Session 69): when blank C-ID slots were recovered by
+    // title match, say why + that each still needs verifying. Wording depends on
+    // whether the ADT is established (courses CO-vetted) or in-progress (being built).
+    if (!reviewMode && adtFillEligible(t.id)) {
       var tmf = tally();
       if (tmf.tmatched) {
+        var fa = adtFor(t.id);
+        var established = fa && (fa.b === "active" || fa.b === "approved" || fa.b === "teachout");
+        var why = established
+          ? esc(state.college) + " holds an approved ADT here, so every course was CO-vetted — but the " +
+            "Chancellor's Office doesn't retain a parseable PDF and the C-ID often isn't recorded in COCI."
+          : esc(state.college) + " is building this ADT (" + esc((fa && fa.s) || "in progress") + "), so we " +
+            "matched each blank slot's title to a local course to give the build a headstart.";
         card.appendChild(el("div", "tmc-reviewbar",
           "≈ <strong>" + tmf.tmatched + " slot" + (tmf.tmatched === 1 ? "" : "s") +
-          " pre-filled by title match.</strong> " + esc(state.college) + " holds an approved ADT here, so every " +
-          "course was CO-vetted — but the Chancellor's Office doesn't retain a parseable PDF and the C-ID often isn't " +
-          "recorded in COCI. We matched each blank slot's title to your local course as a headstart; they're marked " +
-          "<em>≈ verify</em>. Confirm or swap before submitting."));
+          " pre-filled by title match.</strong> " + why +
+          " They're marked <em>≈ verify</em> — confirm or swap before submitting."));
       }
     }
 
@@ -1485,12 +1491,12 @@
     });
   }
 
-  // does the selected college already hold an approved ADT for this TMC? (active /
-  // approved-pending / teach-out all imply the courses were CO-vetted)
-  function adtIsApproved(tmcId) {
-    var a = adtFor(tmcId);
-    return !!(a && (a.b === "active" || a.b === "approved" || a.b === "teachout"));
-  }
+  // Is the selected college eligible for the title-fill headstart on this TMC?
+  // YES for any real ADT presence — established (active / approved-pending /
+  // teach-out → the courses were CO-vetted) OR in-progress (they're building it).
+  // Same set as adtShown (everything but inactive / none). (Sam, Session 69:
+  // "yes to in-progress also".)
+  function adtFillEligible(tmcId) { return adtShown(adtFor(tmcId)); }
 
   // Second-pass fill for APPROVED ADTs only: every blank C-ID slot gets its best
   // title-matching local course (the C-ID just isn't recorded in COCI). Greedy +
@@ -1498,7 +1504,7 @@
   // "C-ID aligned". (Sam, Session 69 — recover the mapping the CO didn't retain.)
   function titleAutoFill() {
     if (!state.tmc || !state.tmc.sections || !state.courses.length) return;
-    if (!adtIsApproved(state.tmc.id)) return;
+    if (!adtFillEligible(state.tmc.id)) return;
     var used = {};
     Object.keys(state.choice).forEach(function (k) {
       var c = state.choice[k]; if (c) used[c.subj + " " + c.num] = 1;

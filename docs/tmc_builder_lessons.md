@@ -414,8 +414,10 @@ the next Pages deploy):
    course was CO-vetted, but the CO keeps no parseable PDF and COCI often doesn't
    record the C-ID → the slot can't C-ID auto-match even though the course exists.
    New second pass `titleAutoFill()` (after the C-ID `autoMatch()`, wrapped as
-   `autoPopulate()`): for colleges holding an **active/approved/teachout** ADT in
-   that discipline, fill each blank C-ID slot with the best **title-matching** local
+   `autoPopulate()`): for colleges with a **real ADT presence** in that discipline —
+   established (active/approved/teachout → courses CO-vetted) OR **in-progress**
+   (building it; widened from approved-only when Sam said "yes to in-progress also",
+   S69) — fill each blank C-ID slot with the best **title-matching** local
    course. Flagged **`≈ title-matched — verify C-ID`** (new `tmatch` status cls,
    blue) — *never* `✓ C-ID aligned`; a headstart, not a claim.
    - **Matcher:** token-set Jaccard with a tiny stopword set + **light stemming**
@@ -456,8 +458,10 @@ the next Pages deploy):
   a college without an approved ADT gets NO title-fill though the same titles exist
   locally). `tests/tmc_college_adts.test.js` updated for the new default + the
   `○ Potential` cell + the removed Status column. **Suite 61 → 62 files green.**
-- **Open / for Sam's afternoon review:** (a) the consolidation visual — confirm or ask
-  for the Status column back; (b) `filled/required` can read e.g. `12/6` on select-N
-  lists (pre-existing — auto-match + title-fill populate *every* matchable slot, not
-  just the `select N`; deselect extras — not changed here); (c) extend title-fill to
-  *in-progress* ADTs? (currently approved-only, the defensible scope).
+- **Sam's calls (afternoon review — all settled):** (a) **keep the consolidation**;
+  (b) **extend title-fill to in-progress ADTs too — DONE** (gate widened to any real
+  ADT presence via `adtFillEligible` = `adtShown`; the explainer note is now
+  status-aware — "building this ADT (<status>)" for in-progress vs the CO-vetted
+  framing for established); (c) the `12/6` select-N counter — **leave as-is until Sam
+  checks it** (pre-existing — auto-match + title-fill populate *every* matchable slot,
+  not just the `select N`; deselect extras).
