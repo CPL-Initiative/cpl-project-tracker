@@ -13812,6 +13812,152 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPPRA-AMF-1-001",
+      "exhibit_ids": [
+        "MAPPRA-AMF-1-001"
+      ],
+      "title": "Advanced Metal Framing",
+      "unified_title": "Advanced Metal Framing",
+      "is_classified": true,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.7,
+      "confidence_issuer": 0.7,
+      "quality_flag": "",
+      "raw_titles": [
+        "Advanced Metal Framing"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "CA MAP INITIATIVE COLLEGE",
+        "Norco College"
+      ],
+      "potential": 106,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 108,
+      "credit_recs": [
+        {
+          "course": "CRP 478B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        },
+        {
+          "course": "ACC 1B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        }
+      ]
+    },
+    {
       "exhibit_id": "MAPICI-CP1-1-001|MAPICI-CPC1-1-001",
       "exhibit_ids": [
         "MAPICI-CP1-1-001",
@@ -13956,6 +14102,1176 @@ window.CPL_STATEWIDE = {
         {
           "course": "CIS 095B",
           "credit": "4 hours in Project Planning and Control - A Practicum"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-ACDF-1-001",
+      "exhibit_ids": [
+        "MAPICA-ACDF-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, AS",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, AS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, AS"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "CA MAP INITIATIVE COLLEGE",
+        "Santiago Canyon College"
+      ],
+      "potential": 106,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 108,
+      "credit_recs": [
+        {
+          "course": "ACA 071A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 071B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 072A",
+          "credit": "1.5 hours in Basic Metal Framing"
+        },
+        {
+          "course": "ACA 074A",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "ACA 076A",
+          "credit": "1.5 hours in Basic Hand Finishing"
+        },
+        {
+          "course": "ACA 076B",
+          "credit": "1.5 hours in Automatic Finishing Tools"
+        },
+        {
+          "course": "ACA 077A",
+          "credit": "1.5 hours in Drywall Installation/Finish Trims"
+        },
+        {
+          "course": "ACA 077B",
+          "credit": "1.5 hours in Advanced Hand Finishing"
+        },
+        {
+          "course": "ACA 077C",
+          "credit": "1.5 hours in Advanced Automatic Finishing Tools"
+        },
+        {
+          "course": "ACA 078B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        },
+        {
+          "course": "ACA 078C",
+          "credit": "1.5 hours in Wet Wall Finishes"
+        },
+        {
+          "course": "ACA 078D",
+          "credit": "1.5 hours in Ceiling and Soffit Finishing"
+        },
+        {
+          "course": "ACA 079A",
+          "credit": "1.5 hours in Drywall Acoustical Ceilings"
+        },
+        {
+          "course": "ACA 082B",
+          "credit": "1.5 hours in S/B Firestop/Fireproofing Procedures"
+        },
+        {
+          "course": "ACA 082C",
+          "credit": "1.5 hours in Decorative Trims and Textures"
+        },
+        {
+          "course": "ACC 1B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_ids": [
+        "MAPICA-ACDA-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "CA MAP INITIATIVE COLLEGE",
+        "Santiago Canyon College"
+      ],
+      "potential": 106,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 108,
+      "credit_recs": [
+        {
+          "course": "ACA 071A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 071B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 071C",
+          "credit": "1.5 hours in Tool and Equipment Applications"
+        },
+        {
+          "course": "ACA 072A",
+          "credit": "1.5 hours in Basic Metal Framing"
+        },
+        {
+          "course": "ACA 072B",
+          "credit": "1.5 hours in Basic Lathing"
+        },
+        {
+          "course": "ACA 072C",
+          "credit": "1.5 hours in Advanced Lathing"
+        },
+        {
+          "course": "ACA 073A",
+          "credit": "1.5 hours in Framing Ceilings and Soffits"
+        },
+        {
+          "course": "ACA 073B",
+          "credit": "1.5 hours in Framing Suspended Ceilings"
+        },
+        {
+          "course": "ACA 073C",
+          "credit": "1.5 hours in Framing Curves and Arches"
+        },
+        {
+          "course": "ACA 074A",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "ACA 074B",
+          "credit": "2 hours in Advanced Print Reading"
+        },
+        {
+          "course": "ACA 074C",
+          "credit": "1.5 hours in Air, Moisture, and Thermal Barriers"
+        },
+        {
+          "course": "ACA 075A",
+          "credit": "1.5 hours in Light Gage AWS A"
+        },
+        {
+          "course": "ACA 075B",
+          "credit": "1.5 hours in Light Gage Welding LAC"
+        },
+        {
+          "course": "ACA 075C",
+          "credit": "1.5 hours in Light Gage AWS B"
+        },
+        {
+          "course": "ACA 076A",
+          "credit": "1.5 hours in Basic Hand Finishing"
+        },
+        {
+          "course": "ACA 076B",
+          "credit": "1.5 hours in Automatic Finishing Tools"
+        },
+        {
+          "course": "ACA 077A",
+          "credit": "1.5 hours in Drywall Installation/Finish Trims"
+        },
+        {
+          "course": "ACA 077B",
+          "credit": "1.5 hours in Advanced Hand Finishing"
+        },
+        {
+          "course": "ACA 077C",
+          "credit": "1.5 hours in Advanced Automatic Finishing Tools"
+        },
+        {
+          "course": "ACA 078B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        },
+        {
+          "course": "ACA 078C",
+          "credit": "1.5 hours in Wet Wall Finishes"
+        },
+        {
+          "course": "ACA 078D",
+          "credit": "1.5 hours in Ceiling and Soffit Finishing"
+        },
+        {
+          "course": "ACA 079A",
+          "credit": "1.5 hours in Drywall Acoustical Ceilings"
+        },
+        {
+          "course": "ACA 079C",
+          "credit": "1.5 hours in Drywall Applications"
+        },
+        {
+          "course": "ACA 082B",
+          "credit": "1.5 hours in S/B Firestop/Fireproofing Procedures"
+        },
+        {
+          "course": "ACA 082C",
+          "credit": "1.5 hours in Decorative Trims and Textures"
+        },
+        {
+          "course": "ACA 083",
+          "credit": "1.5 hours in Door and Door Frames"
+        },
+        {
+          "course": "ACA 089",
+          "credit": "1.5 hours in Freeform Lathing"
+        },
+        {
+          "course": "ACC 1B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_ids": [
+        "MAPICI-ACDC-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "CA MAP INITIATIVE COLLEGE",
+        "Santiago Canyon College"
+      ],
+      "potential": 106,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 108,
+      "credit_recs": [
+        {
+          "course": "ACA 071A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 071B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 071C",
+          "credit": "1.5 hours in Tool and Equipment Applications"
+        },
+        {
+          "course": "ACA 072A",
+          "credit": "1.5 hours in Basic Metal Framing"
+        },
+        {
+          "course": "ACA 072B",
+          "credit": "1.5 hours in Basic Lathing"
+        },
+        {
+          "course": "ACA 072C",
+          "credit": "1.5 hours in Advanced Lathing"
+        },
+        {
+          "course": "ACA 073A",
+          "credit": "1.5 hours in Framing Ceilings and Soffits"
+        },
+        {
+          "course": "ACA 073B",
+          "credit": "1.5 hours in Framing Suspended Ceilings"
+        },
+        {
+          "course": "ACA 073C",
+          "credit": "1.5 hours in Framing Curves and Arches"
+        },
+        {
+          "course": "ACA 074A",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "ACA 074B",
+          "credit": "2 hours in Advanced Print Reading"
+        },
+        {
+          "course": "ACA 074C",
+          "credit": "1.5 hours in Air, Moisture, and Thermal Barriers"
+        },
+        {
+          "course": "ACA 075A",
+          "credit": "1.5 hours in Light Gage AWS A"
+        },
+        {
+          "course": "ACA 075B",
+          "credit": "1.5 hours in Light Gage Welding LAC"
+        },
+        {
+          "course": "ACA 075C",
+          "credit": "1.5 hours in Light Gage AWS B"
+        },
+        {
+          "course": "ACA 076A",
+          "credit": "1.5 hours in Basic Hand Finishing"
+        },
+        {
+          "course": "ACA 076B",
+          "credit": "1.5 hours in Automatic Finishing Tools"
+        },
+        {
+          "course": "ACA 077A",
+          "credit": "1.5 hours in Drywall Installation/Finish Trims"
+        },
+        {
+          "course": "ACA 077B",
+          "credit": "1.5 hours in Advanced Hand Finishing"
+        },
+        {
+          "course": "ACA 077C",
+          "credit": "1.5 hours in Advanced Automatic Finishing Tools"
+        },
+        {
+          "course": "ACA 078B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        },
+        {
+          "course": "ACA 078C",
+          "credit": "1.5 hours in Wet Wall Finishes"
+        },
+        {
+          "course": "ACA 078D",
+          "credit": "1.5 hours in Ceiling and Soffit Finishing"
+        },
+        {
+          "course": "ACA 079A",
+          "credit": "1.5 hours in Drywall Acoustical Ceilings"
+        },
+        {
+          "course": "ACA 079C",
+          "credit": "1.5 hours in Drywall Applications"
+        },
+        {
+          "course": "ACA 082B",
+          "credit": "1.5 hours in S/B Firestop/Fireproofing Procedures"
+        },
+        {
+          "course": "ACA 082C",
+          "credit": "1.5 hours in Decorative Trims and Textures"
+        },
+        {
+          "course": "ACA 083",
+          "credit": "1.5 hours in Door and Door Frames"
+        },
+        {
+          "course": "ACA 089",
+          "credit": "1.5 hours in Freeform Lathing"
+        },
+        {
+          "course": "ACC 1B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-JCCD-1-001",
+      "exhibit_ids": [
+        "MAPICA-JCCD-1-001"
+      ],
+      "title": "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)",
+      "unified_title": "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "CA MAP INITIATIVE COLLEGE",
+        "Santiago Canyon College"
+      ],
+      "potential": 106,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 108,
+      "credit_recs": [
+        {
+          "course": "ACA 071A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 071B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 071C",
+          "credit": "1.5 hours in Tool and Equipment Applications"
+        },
+        {
+          "course": "ACA 072A",
+          "credit": "1.5 hours in Basic Metal Framing"
+        },
+        {
+          "course": "ACA 072B",
+          "credit": "1.5 hours in Basic Lathing"
+        },
+        {
+          "course": "ACA 072C",
+          "credit": "1.5 hours in Advanced Lathing"
+        },
+        {
+          "course": "ACA 073A",
+          "credit": "1.5 hours in Framing Ceilings and Soffits"
+        },
+        {
+          "course": "ACA 073B",
+          "credit": "1.5 hours in Framing Suspended Ceilings"
+        },
+        {
+          "course": "ACA 073C",
+          "credit": "1.5 hours in Framing Curves and Arches"
+        },
+        {
+          "course": "ACA 074A",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "ACA 074B",
+          "credit": "2 hours in Advanced Print Reading"
+        },
+        {
+          "course": "ACA 075A",
+          "credit": "1.5 hours in Light Gage AWS A"
+        },
+        {
+          "course": "ACA 075C",
+          "credit": "1.5 hours in Light Gage AWS B"
+        },
+        {
+          "course": "ACA 078B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        },
+        {
+          "course": "ACA 079A",
+          "credit": "1.5 hours in Drywall Acoustical Ceilings"
+        },
+        {
+          "course": "ACA 079C",
+          "credit": "1.5 hours in Drywall Applications"
+        },
+        {
+          "course": "ACA 083",
+          "credit": "1.5 hours in Door and Door Frames"
+        },
+        {
+          "course": "ACA 086A",
+          "credit": "1.5 hours in Exterior Insulation Finish Systems"
+        },
+        {
+          "course": "ACA 089",
+          "credit": "1.5 hours in Freeform Lathing"
+        },
+        {
+          "course": "ACA 096",
+          "credit": "1.5 hours in Building Envelope Principles"
+        },
+        {
+          "course": "ACA 097",
+          "credit": "1.5 hours in Exterior Metal Frame"
+        },
+        {
+          "course": "ACC 1B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "MAPICA-JCAC-1-001",
+      "exhibit_ids": [
+        "MAPICA-JCAC-1-001"
+      ],
+      "title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)",
+      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "CA MAP INITIATIVE COLLEGE",
+        "Santiago Canyon College"
+      ],
+      "potential": 106,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 108,
+      "credit_recs": [
+        {
+          "course": "ACA 071A",
+          "credit": "2 hours in Orientation"
+        },
+        {
+          "course": "ACA 071B",
+          "credit": "2 hours in Safety and Health"
+        },
+        {
+          "course": "ACA 071C",
+          "credit": "1.5 hours in Tool and Equipment Applications"
+        },
+        {
+          "course": "ACA 072A",
+          "credit": "1.5 hours in Basic Metal Framing"
+        },
+        {
+          "course": "ACA 072B",
+          "credit": "1.5 hours in Basic Lathing"
+        },
+        {
+          "course": "ACA 072C",
+          "credit": "1.5 hours in Advanced Lathing"
+        },
+        {
+          "course": "ACA 073A",
+          "credit": "1.5 hours in Framing Ceilings and Soffits"
+        },
+        {
+          "course": "ACA 073B",
+          "credit": "1.5 hours in Framing Suspended Ceilings"
+        },
+        {
+          "course": "ACA 073C",
+          "credit": "1.5 hours in Framing Curves and Arches"
+        },
+        {
+          "course": "ACA 074A",
+          "credit": "2 hours in Printreading"
+        },
+        {
+          "course": "ACA 074B",
+          "credit": "2 hours in Advanced Print Reading"
+        },
+        {
+          "course": "ACA 075A",
+          "credit": "1.5 hours in Light Gage AWS A"
+        },
+        {
+          "course": "ACA 075C",
+          "credit": "1.5 hours in Light Gage AWS B"
+        },
+        {
+          "course": "ACA 078B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        },
+        {
+          "course": "ACA 079A",
+          "credit": "1.5 hours in Drywall Acoustical Ceilings"
+        },
+        {
+          "course": "ACA 079C",
+          "credit": "1.5 hours in Drywall Applications"
+        },
+        {
+          "course": "ACA 083",
+          "credit": "1.5 hours in Door and Door Frames"
+        },
+        {
+          "course": "ACA 086A",
+          "credit": "1.5 hours in Exterior Insulation Finish Systems"
+        },
+        {
+          "course": "ACA 089",
+          "credit": "1.5 hours in Freeform Lathing"
+        },
+        {
+          "course": "ACA 096",
+          "credit": "1.5 hours in Building Envelope Principles"
+        },
+        {
+          "course": "ACA 097",
+          "credit": "1.5 hours in Exterior Metal Frame"
+        },
+        {
+          "course": "ACC 1B",
+          "credit": "1.5 hours in Advanced Metal Framing"
         }
       ]
     },
@@ -195601,260 +196917,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPICA-JCCD-1-001",
-      "exhibit_ids": [
-        "MAPICA-JCCD-1-001"
-      ],
-      "title": "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)",
-      "unified_title": "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Santiago Canyon College"
-      ],
-      "potential": 12,
-      "potential_names": [
-        "American River College",
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Orange Coast College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College"
-      ],
-      "total_addressable": 13,
-      "credit_recs": [
-        {
-          "course": "ACA 071A",
-          "credit": "2 hours in Orientation"
-        },
-        {
-          "course": "ACA 071B",
-          "credit": "2 hours in Safety and Health"
-        },
-        {
-          "course": "ACA 071C",
-          "credit": "1.5 hours in Tool and Equipment Applications"
-        },
-        {
-          "course": "ACA 072A",
-          "credit": "1.5 hours in Basic Metal Framing"
-        },
-        {
-          "course": "ACA 072B",
-          "credit": "1.5 hours in Basic Lathing"
-        },
-        {
-          "course": "ACA 072C",
-          "credit": "1.5 hours in Advanced Lathing"
-        },
-        {
-          "course": "ACA 073A",
-          "credit": "1.5 hours in Framing Ceilings and Soffits"
-        },
-        {
-          "course": "ACA 073B",
-          "credit": "1.5 hours in Framing Suspended Ceilings"
-        },
-        {
-          "course": "ACA 073C",
-          "credit": "1.5 hours in Framing Curves and Arches"
-        },
-        {
-          "course": "ACA 074A",
-          "credit": "2 hours in Printreading"
-        },
-        {
-          "course": "ACA 074B",
-          "credit": "2 hours in Advanced Print Reading"
-        },
-        {
-          "course": "ACA 075A",
-          "credit": "1.5 hours in Light Gage AWS A"
-        },
-        {
-          "course": "ACA 075C",
-          "credit": "1.5 hours in Light Gage AWS B"
-        },
-        {
-          "course": "ACA 078B",
-          "credit": "1.5 hours in Advanced Metal Framing"
-        },
-        {
-          "course": "ACA 079A",
-          "credit": "1.5 hours in Drywall Acoustical Ceilings"
-        },
-        {
-          "course": "ACA 079C",
-          "credit": "1.5 hours in Drywall Applications"
-        },
-        {
-          "course": "ACA 083",
-          "credit": "1.5 hours in Door and Door Frames"
-        },
-        {
-          "course": "ACA 086A",
-          "credit": "1.5 hours in Exterior Insulation Finish Systems"
-        },
-        {
-          "course": "ACA 089",
-          "credit": "1.5 hours in Freeform Lathing"
-        },
-        {
-          "course": "ACA 096",
-          "credit": "1.5 hours in Building Envelope Principles"
-        },
-        {
-          "course": "ACA 097",
-          "credit": "1.5 hours in Exterior Metal Frame"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICA-JCAC-1-001",
-      "exhibit_ids": [
-        "MAPICA-JCAC-1-001"
-      ],
-      "title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)",
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Santiago Canyon College"
-      ],
-      "potential": 12,
-      "potential_names": [
-        "American River College",
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Laney College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Norco College",
-        "Orange Coast College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College"
-      ],
-      "total_addressable": 13,
-      "credit_recs": [
-        {
-          "course": "ACA 071A",
-          "credit": "2 hours in Orientation"
-        },
-        {
-          "course": "ACA 071B",
-          "credit": "2 hours in Safety and Health"
-        },
-        {
-          "course": "ACA 071C",
-          "credit": "1.5 hours in Tool and Equipment Applications"
-        },
-        {
-          "course": "ACA 072A",
-          "credit": "1.5 hours in Basic Metal Framing"
-        },
-        {
-          "course": "ACA 072B",
-          "credit": "1.5 hours in Basic Lathing"
-        },
-        {
-          "course": "ACA 072C",
-          "credit": "1.5 hours in Advanced Lathing"
-        },
-        {
-          "course": "ACA 073A",
-          "credit": "1.5 hours in Framing Ceilings and Soffits"
-        },
-        {
-          "course": "ACA 073B",
-          "credit": "1.5 hours in Framing Suspended Ceilings"
-        },
-        {
-          "course": "ACA 073C",
-          "credit": "1.5 hours in Framing Curves and Arches"
-        },
-        {
-          "course": "ACA 074A",
-          "credit": "2 hours in Printreading"
-        },
-        {
-          "course": "ACA 074B",
-          "credit": "2 hours in Advanced Print Reading"
-        },
-        {
-          "course": "ACA 075A",
-          "credit": "1.5 hours in Light Gage AWS A"
-        },
-        {
-          "course": "ACA 075C",
-          "credit": "1.5 hours in Light Gage AWS B"
-        },
-        {
-          "course": "ACA 078B",
-          "credit": "1.5 hours in Advanced Metal Framing"
-        },
-        {
-          "course": "ACA 079A",
-          "credit": "1.5 hours in Drywall Acoustical Ceilings"
-        },
-        {
-          "course": "ACA 079C",
-          "credit": "1.5 hours in Drywall Applications"
-        },
-        {
-          "course": "ACA 083",
-          "credit": "1.5 hours in Door and Door Frames"
-        },
-        {
-          "course": "ACA 086A",
-          "credit": "1.5 hours in Exterior Insulation Finish Systems"
-        },
-        {
-          "course": "ACA 089",
-          "credit": "1.5 hours in Freeform Lathing"
-        },
-        {
-          "course": "ACA 096",
-          "credit": "1.5 hours in Building Envelope Principles"
-        },
-        {
-          "course": "ACA 097",
-          "credit": "1.5 hours in Exterior Metal Frame"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICA-JCAC3-1-001",
       "exhibit_ids": [
         "MAPICA-JCAC3-1-001"
@@ -210120,310 +211182,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPICA-ACDA-1-001",
-      "exhibit_ids": [
-        "MAPICA-ACDA-1-001"
-      ],
-      "title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS",
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Santiago Canyon College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "American River College",
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Orange Coast College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "ACA 071A",
-          "credit": "2 hours in Orientation"
-        },
-        {
-          "course": "ACA 071B",
-          "credit": "2 hours in Safety and Health"
-        },
-        {
-          "course": "ACA 071C",
-          "credit": "1.5 hours in Tool and Equipment Applications"
-        },
-        {
-          "course": "ACA 072A",
-          "credit": "1.5 hours in Basic Metal Framing"
-        },
-        {
-          "course": "ACA 072B",
-          "credit": "1.5 hours in Basic Lathing"
-        },
-        {
-          "course": "ACA 072C",
-          "credit": "1.5 hours in Advanced Lathing"
-        },
-        {
-          "course": "ACA 073A",
-          "credit": "1.5 hours in Framing Ceilings and Soffits"
-        },
-        {
-          "course": "ACA 073B",
-          "credit": "1.5 hours in Framing Suspended Ceilings"
-        },
-        {
-          "course": "ACA 073C",
-          "credit": "1.5 hours in Framing Curves and Arches"
-        },
-        {
-          "course": "ACA 074A",
-          "credit": "2 hours in Printreading"
-        },
-        {
-          "course": "ACA 074B",
-          "credit": "2 hours in Advanced Print Reading"
-        },
-        {
-          "course": "ACA 074C",
-          "credit": "1.5 hours in Air, Moisture, and Thermal Barriers"
-        },
-        {
-          "course": "ACA 075A",
-          "credit": "1.5 hours in Light Gage AWS A"
-        },
-        {
-          "course": "ACA 075B",
-          "credit": "1.5 hours in Light Gage Welding LAC"
-        },
-        {
-          "course": "ACA 075C",
-          "credit": "1.5 hours in Light Gage AWS B"
-        },
-        {
-          "course": "ACA 076A",
-          "credit": "1.5 hours in Basic Hand Finishing"
-        },
-        {
-          "course": "ACA 076B",
-          "credit": "1.5 hours in Automatic Finishing Tools"
-        },
-        {
-          "course": "ACA 077A",
-          "credit": "1.5 hours in Drywall Installation/Finish Trims"
-        },
-        {
-          "course": "ACA 077B",
-          "credit": "1.5 hours in Advanced Hand Finishing"
-        },
-        {
-          "course": "ACA 077C",
-          "credit": "1.5 hours in Advanced Automatic Finishing Tools"
-        },
-        {
-          "course": "ACA 078B",
-          "credit": "1.5 hours in Advanced Metal Framing"
-        },
-        {
-          "course": "ACA 078C",
-          "credit": "1.5 hours in Wet Wall Finishes"
-        },
-        {
-          "course": "ACA 078D",
-          "credit": "1.5 hours in Ceiling and Soffit Finishing"
-        },
-        {
-          "course": "ACA 079A",
-          "credit": "1.5 hours in Drywall Acoustical Ceilings"
-        },
-        {
-          "course": "ACA 079C",
-          "credit": "1.5 hours in Drywall Applications"
-        },
-        {
-          "course": "ACA 082B",
-          "credit": "1.5 hours in S/B Firestop/Fireproofing Procedures"
-        },
-        {
-          "course": "ACA 082C",
-          "credit": "1.5 hours in Decorative Trims and Textures"
-        },
-        {
-          "course": "ACA 083",
-          "credit": "1.5 hours in Door and Door Frames"
-        },
-        {
-          "course": "ACA 089",
-          "credit": "1.5 hours in Freeform Lathing"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICI-ACDC-1-001",
-      "exhibit_ids": [
-        "MAPICI-ACDC-1-001"
-      ],
-      "title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA",
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Santiago Canyon College"
-      ],
-      "potential": 5,
-      "potential_names": [
-        "American River College",
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Orange Coast College",
-        "Palomar College"
-      ],
-      "total_addressable": 6,
-      "credit_recs": [
-        {
-          "course": "ACA 071A",
-          "credit": "2 hours in Orientation"
-        },
-        {
-          "course": "ACA 071B",
-          "credit": "2 hours in Safety and Health"
-        },
-        {
-          "course": "ACA 071C",
-          "credit": "1.5 hours in Tool and Equipment Applications"
-        },
-        {
-          "course": "ACA 072A",
-          "credit": "1.5 hours in Basic Metal Framing"
-        },
-        {
-          "course": "ACA 072B",
-          "credit": "1.5 hours in Basic Lathing"
-        },
-        {
-          "course": "ACA 072C",
-          "credit": "1.5 hours in Advanced Lathing"
-        },
-        {
-          "course": "ACA 073A",
-          "credit": "1.5 hours in Framing Ceilings and Soffits"
-        },
-        {
-          "course": "ACA 073B",
-          "credit": "1.5 hours in Framing Suspended Ceilings"
-        },
-        {
-          "course": "ACA 073C",
-          "credit": "1.5 hours in Framing Curves and Arches"
-        },
-        {
-          "course": "ACA 074A",
-          "credit": "2 hours in Printreading"
-        },
-        {
-          "course": "ACA 074B",
-          "credit": "2 hours in Advanced Print Reading"
-        },
-        {
-          "course": "ACA 074C",
-          "credit": "1.5 hours in Air, Moisture, and Thermal Barriers"
-        },
-        {
-          "course": "ACA 075A",
-          "credit": "1.5 hours in Light Gage AWS A"
-        },
-        {
-          "course": "ACA 075B",
-          "credit": "1.5 hours in Light Gage Welding LAC"
-        },
-        {
-          "course": "ACA 075C",
-          "credit": "1.5 hours in Light Gage AWS B"
-        },
-        {
-          "course": "ACA 076A",
-          "credit": "1.5 hours in Basic Hand Finishing"
-        },
-        {
-          "course": "ACA 076B",
-          "credit": "1.5 hours in Automatic Finishing Tools"
-        },
-        {
-          "course": "ACA 077A",
-          "credit": "1.5 hours in Drywall Installation/Finish Trims"
-        },
-        {
-          "course": "ACA 077B",
-          "credit": "1.5 hours in Advanced Hand Finishing"
-        },
-        {
-          "course": "ACA 077C",
-          "credit": "1.5 hours in Advanced Automatic Finishing Tools"
-        },
-        {
-          "course": "ACA 078B",
-          "credit": "1.5 hours in Advanced Metal Framing"
-        },
-        {
-          "course": "ACA 078C",
-          "credit": "1.5 hours in Wet Wall Finishes"
-        },
-        {
-          "course": "ACA 078D",
-          "credit": "1.5 hours in Ceiling and Soffit Finishing"
-        },
-        {
-          "course": "ACA 079A",
-          "credit": "1.5 hours in Drywall Acoustical Ceilings"
-        },
-        {
-          "course": "ACA 079C",
-          "credit": "1.5 hours in Drywall Applications"
-        },
-        {
-          "course": "ACA 082B",
-          "credit": "1.5 hours in S/B Firestop/Fireproofing Procedures"
-        },
-        {
-          "course": "ACA 082C",
-          "credit": "1.5 hours in Decorative Trims and Textures"
-        },
-        {
-          "course": "ACA 083",
-          "credit": "1.5 hours in Door and Door Frames"
-        },
-        {
-          "course": "ACA 089",
-          "credit": "1.5 hours in Freeform Lathing"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICA-IWTC-1-001",
       "exhibit_ids": [
         "MAPICA-IWTC-1-001"
@@ -212219,45 +212977,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPPRA-AMF-1-001",
-      "exhibit_ids": [
-        "MAPPRA-AMF-1-001"
-      ],
-      "title": "Advanced Metal Framing",
-      "unified_title": "Advanced Metal Framing",
-      "is_classified": true,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Advanced Metal Framing"
-      ],
-      "cpl_type": "Portfolio Review",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Norco College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "American River College",
-        "Los Angeles Southwest College",
-        "Palomar College",
-        "Santiago Canyon College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "CRP 478B",
-          "credit": "1.5 hours in Advanced Metal Framing"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPPRA-BL-1-001",
       "exhibit_ids": [
         "MAPPRA-BL-1-001"
@@ -212332,101 +213051,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "CRP 474C",
           "credit": "1 hour in Air, Moisture,Thermal Barriers"
-        }
-      ]
-    },
-    {
-      "exhibit_id": "MAPICA-ACDF-1-001",
-      "exhibit_ids": [
-        "MAPICA-ACDF-1-001"
-      ],
-      "title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, AS",
-      "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, AS",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, AS"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Santiago Canyon College"
-      ],
-      "potential": 4,
-      "potential_names": [
-        "American River College",
-        "Los Angeles Southwest College",
-        "Norco College",
-        "Palomar College"
-      ],
-      "total_addressable": 5,
-      "credit_recs": [
-        {
-          "course": "ACA 071A",
-          "credit": "2 hours in Orientation"
-        },
-        {
-          "course": "ACA 071B",
-          "credit": "2 hours in Safety and Health"
-        },
-        {
-          "course": "ACA 072A",
-          "credit": "1.5 hours in Basic Metal Framing"
-        },
-        {
-          "course": "ACA 074A",
-          "credit": "2 hours in Printreading"
-        },
-        {
-          "course": "ACA 076A",
-          "credit": "1.5 hours in Basic Hand Finishing"
-        },
-        {
-          "course": "ACA 076B",
-          "credit": "1.5 hours in Automatic Finishing Tools"
-        },
-        {
-          "course": "ACA 077A",
-          "credit": "1.5 hours in Drywall Installation/Finish Trims"
-        },
-        {
-          "course": "ACA 077B",
-          "credit": "1.5 hours in Advanced Hand Finishing"
-        },
-        {
-          "course": "ACA 077C",
-          "credit": "1.5 hours in Advanced Automatic Finishing Tools"
-        },
-        {
-          "course": "ACA 078B",
-          "credit": "1.5 hours in Advanced Metal Framing"
-        },
-        {
-          "course": "ACA 078C",
-          "credit": "1.5 hours in Wet Wall Finishes"
-        },
-        {
-          "course": "ACA 078D",
-          "credit": "1.5 hours in Ceiling and Soffit Finishing"
-        },
-        {
-          "course": "ACA 079A",
-          "credit": "1.5 hours in Drywall Acoustical Ceilings"
-        },
-        {
-          "course": "ACA 082B",
-          "credit": "1.5 hours in S/B Firestop/Fireproofing Procedures"
-        },
-        {
-          "course": "ACA 082C",
-          "credit": "1.5 hours in Decorative Trims and Textures"
         }
       ]
     },
@@ -222716,6 +223340,15 @@ window.CPL_STATEWIDE = {
         "pct": 0.1
       },
       {
+        "college": "CA MAP INITIATIVE COLLEGE",
+        "credit_recs": 7,
+        "exhibits": 7,
+        "disciplines": 2,
+        "ccc_collaborative": 1,
+        "industry_certs": 6,
+        "pct": 0.1
+      },
+      {
         "college": "Orange Coast College",
         "credit_recs": 5,
         "exhibits": 5,
@@ -222740,15 +223373,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 2,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 0.0
-      },
-      {
-        "college": "CA MAP INITIATIVE COLLEGE",
-        "credit_recs": 1,
-        "exhibits": 1,
-        "disciplines": 1,
-        "ccc_collaborative": 1,
-        "industry_certs": 1,
         "pct": 0.0
       }
     ],
@@ -222800,12 +223424,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Business and Management",
-        "credit_recs": 416,
-        "exhibits": 219,
-        "courses": 192,
-        "colleges": 36,
+        "credit_recs": 422,
+        "exhibits": 225,
+        "courses": 193,
+        "colleges": 37,
         "ccc_collaborative": 46,
-        "pct": 3.6
+        "pct": 3.7
       },
       {
         "discipline": "Information Technology",
@@ -222971,7 +223595,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3455,
+        "credit_recs": 3460,
         "exhibits": 1152,
         "colleges": 78,
         "pct": 30.2
@@ -222985,10 +223609,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Portfolio Review",
-        "credit_recs": 383,
+        "credit_recs": 384,
         "exhibits": 313,
-        "colleges": 26,
-        "pct": 3.3
+        "colleges": 27,
+        "pct": 3.4
       },
       {
         "cpl_type": "Military",
@@ -223011,21 +223635,21 @@ window.CPL_STATEWIDE = {
         "credit_recs": 6800,
         "exhibits": 1883,
         "colleges": 91,
-        "pct": 59.4
+        "pct": 59.3
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2588,
+        "credit_recs": 2589,
         "exhibits": 944,
         "colleges": 74,
         "pct": 22.6
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1331,
+        "credit_recs": 1336,
         "exhibits": 562,
-        "colleges": 42,
-        "pct": 11.6
+        "colleges": 43,
+        "pct": 11.7
       },
       {
         "mode": "High school coursework (H)",
@@ -223080,9 +223704,9 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 9927,
+        "credit_recs": 9933,
         "exhibits": 3705,
-        "colleges": 98,
+        "colleges": 99,
         "disciplines": 23,
         "pct": 86.7
       },
@@ -223506,6 +224130,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-06-21T16:12:27",
-  "total_credit_recs": 11456
+  "generated_at": "2026-06-22T14:56:41",
+  "total_credit_recs": 11462
 };
