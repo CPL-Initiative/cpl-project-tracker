@@ -333,10 +333,11 @@
   function buildWidget() {
     var wrap = el('div', {id: 'qs-chat', className: 'qs-chat'});
 
-    var label = el('label', {className: 'qs-label', 'for': 'qs-input'}, '✨ What are you working on today?');
-    wrap.appendChild(label);
-
     var row = el('div', {className: 'qs-row'});
+    // Label sits INLINE with the input now (Session 68 — the search lives in the
+    // masthead's center slot, one line: "Where To?" + box + Go).
+    var label = el('label', {className: 'qs-label', 'for': 'qs-input'}, '✨ Where To?');
+    row.appendChild(label);
     var inputBox = el('div', {className: 'qs-suggest', style: {flex: '1 1 auto', minWidth: '0', position: 'relative'}});
     var input = el('input', {
       type: 'text',
@@ -543,28 +544,32 @@
 
   function mount() {
     if (document.getElementById('qs-chat')) return; // idempotent
-    ensureChromeCss();
     var widget = buildWidget();
-    // Session 60 (Sam): lift the quick-start bar up to the overall header level
-    // so it spans full width as global chrome and frees the top of every tab
-    // pane; PINNED on desktop (ensureChromeCss) so it stays visible while
-    // scrolling. It's a single global widget (outside the panes), so it shows
-    // on every tab — now it reads as part of the header, not tab content.
+    // Session 68 (Sam): the quick-start "Where To?" search now lives INSIDE the
+    // masthead's center slot (#cobiQsSlot) as part of the consolidated single-row
+    // header. cobi_brand.js carries the in-slot layout CSS; no separate sticky
+    // bar / --qs-h sidebar offset is needed in this layout.
+    var slot = document.getElementById('cobiQsSlot');
+    if (slot) {
+      slot.appendChild(widget);
+      return;
+    }
+    // Fallback (older layouts without the center slot): the prior pinned bar
+    // just below the header.
+    ensureChromeCss();
     var header = document.querySelector('.header');
     if (header && header.parentNode) {
       header.parentNode.insertBefore(widget, header.nextSibling);
     } else {
-      // Fallbacks for older layouts: top of the main column, else before the nav.
       var main = document.querySelector('main.cpl-main');
       if (main) {
         main.insertBefore(widget, main.firstChild);
       } else {
         var nav = document.querySelector('nav.cpl-tabs');
         if (nav && nav.parentNode) { nav.parentNode.insertBefore(widget, nav); }
-        else { console.warn('[quickstart] no mount target (.header / main.cpl-main / nav.cpl-tabs)'); return; }
+        else { console.warn('[quickstart] no mount target (#cobiQsSlot / .header / main.cpl-main / nav.cpl-tabs)'); return; }
       }
     }
-    // measure after layout settles, then keep --qs-h fresh on resize
     (window.requestAnimationFrame || setTimeout)(setQsHeight);
     setTimeout(setQsHeight, 200);
     window.addEventListener('resize', setQsHeight);

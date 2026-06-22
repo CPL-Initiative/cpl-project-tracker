@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COBI header — consolidation prototype v1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Real First Light tokens (copied from CPL_Dashboard.html :root) so the
+   mock reads exactly like production. */
+:root{
+  --paper:#F4F2ED; --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55;
+  --text-faint:#87877F; --surface:rgba(255,255,255,.78); --surface-opaque:#fff;
+  --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2; --border:rgba(28,28,26,.14);
+  --border-strong:rgba(28,28,26,.30); --crimson:#920000; --cobalt:#0047AB;
+  --hunter:#2C601A; --violet:#6D28D9; --mustard-fill:#E3B341; --mustard-text:#8B6800;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Arial,sans-serif;background:var(--paper);color:var(--text-body);line-height:1.6}
+h1{font-family:'Playfair Display',Georgia,serif}
+
+/* faint paper texture hint of the ghosted-painting background */
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+  background:radial-gradient(120% 90% at 80% 0%,rgba(227,179,65,.07),transparent 60%),var(--paper);}
+
+/* ─────────────────────────────────────────────────────────────
+   THE NEW MASTHEAD
+   row 1: brand (COBI + tagline under it)  ......  subtle utility links
+   row 2: the quick-start — label + input + Go all on one line
+   ───────────────────────────────────────────────────────────── */
+.header{
+  background:var(--surface);
+  -webkit-backdrop-filter:blur(14px) saturate(1.05);
+  backdrop-filter:blur(14px) saturate(1.05);
+  border-bottom:1px solid var(--border);
+  padding:.7rem 1.5rem .75rem;
+  display:flex;flex-direction:column;gap:.55rem;
+}
+
+/* ── row 1 ── */
+.cobi-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem 1.5rem;flex-wrap:wrap}
+
+.cobi-brand{display:flex;flex-direction:column;line-height:1.15}
+.cobi-brand h1{
+  font-size:1.7rem;font-weight:800;letter-spacing:.08em;color:var(--text-strong);margin:0;
+}
+.cobi-brand h1 .cobi-num{
+  font-size:.46em;vertical-align:super;margin-left:.16em;font-weight:700;
+  color:var(--mustard-text);cursor:default;transition:color .15s;
+}
+.cobi-brand h1 .cobi-num:hover{color:var(--cobalt)}
+.cobi-tagline{
+  font-family:'Source Sans 3',Arial,sans-serif;
+  font-size:.82rem;font-weight:600;letter-spacing:.02em;color:var(--text-muted);margin:.15rem 0 0;
+}
+.cobi-mamba{font-size:.7rem;font-style:italic;color:var(--text-faint);margin:.05rem 0 0;letter-spacing:.02em}
+
+/* ── subtle utility links (right side of row 1) ── */
+.cobi-utility{
+  display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;
+  gap:.15rem .4rem;max-width:560px;font-size:.74rem;
+}
+.cobi-utility a,.cobi-utility button,.cobi-utility .cobi-stamp{
+  font-family:'Source Sans 3',Arial,sans-serif;font-size:.74rem;font-weight:600;
+  color:var(--text-faint);background:none;border:none;cursor:pointer;
+  text-decoration:none;padding:.15rem .25rem;display:inline-flex;align-items:center;gap:.25rem;
+  transition:color .15s;white-space:nowrap;
+}
+.cobi-utility a:hover,.cobi-utility button:hover{color:var(--cobalt)}
+.cobi-utility .sep{color:var(--border-strong);font-size:.7rem;user-select:none}
+.cobi-utility .cobi-stamp{color:var(--text-faint);cursor:default;font-weight:400}
+.cobi-utility .ico{font-size:.78rem;opacity:.75}
+/* the painting chip keeps its sun-dot cue but stays quiet like the rest */
+.cobi-utility .sun{width:.55rem;height:.55rem;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#F6D36B,var(--mustard-fill));display:inline-block}
+
+/* ── row 2 : the quick-start, one line ── */
+.cobi-qs{display:flex;align-items:center;gap:.6rem;
+  border-top:1px solid var(--border);padding-top:.55rem}
+.cobi-qs .qs-label{
+  font-size:.85rem;font-weight:700;color:var(--text-strong);white-space:nowrap;
+  display:inline-flex;align-items:center;gap:.35rem;
+}
+.cobi-qs .qs-input{
+  flex:1 1 auto;min-width:0;padding:.45rem .8rem;font-family:inherit;font-size:.92rem;
+  color:var(--text-strong);background:#fff;border:1px solid var(--border-strong);
+  border-radius:5px;outline:none;
+}
+.cobi-qs .qs-input:focus{border-color:var(--cobalt);box-shadow:0 0 0 2px rgba(0,71,171,.15)}
+.cobi-qs .qs-go{
+  flex:0 0 auto;background:var(--cobalt);color:#fff;border:none;border-radius:5px;
+  padding:.45rem 1.3rem;font-family:inherit;font-weight:700;font-size:.9rem;cursor:pointer;
+  transition:background .15s;
+}
+.cobi-qs .qs-go:hover{background:#003B8E}
+
+@media (max-width:760px){
+  .cobi-utility{justify-content:flex-start;max-width:none}
+  .cobi-qs{flex-wrap:wrap}
+  .cobi-qs .qs-label{flex-basis:100%}
+}
+
+/* ── a faint hint of the page below, for context only ── */
+.demo-wrap{display:flex;gap:0}
+.demo-rail{width:150px;padding:1rem .9rem;font-size:.8rem;color:var(--text-muted);
+  border-right:1px solid var(--border)}
+.demo-rail .brand{font-family:'Playfair Display',serif;font-weight:800;letter-spacing:.06em;
+  color:var(--text-strong);font-size:1rem;margin-bottom:.8rem}
+.demo-rail div.item{padding:.3rem .2rem;color:var(--text-muted)}
+.demo-rail div.item.active{color:var(--cobalt);font-weight:700}
+.demo-main{flex:1;padding:1.3rem 1.5rem}
+.demo-kpis{display:flex;gap:1rem;flex-wrap:wrap}
+.demo-card{background:var(--surface-opaque);border:1px solid var(--border);border-radius:8px;
+  padding:1.1rem 1.2rem;min-width:150px;box-shadow:0 2px 10px rgba(20,20,30,.05)}
+.demo-card .n{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--text-strong)}
+.demo-card .l{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-top:.3rem}
+.note{max-width:880px;margin:1.4rem auto;padding:0 1.5rem;font-size:.85rem;color:var(--text-muted)}
+.note code{background:var(--surface-muted);padding:.05rem .3rem;border-radius:3px;font-size:.82em}
+</style>
+</head>
+<body>
+
+<!-- ============ NEW HEADER ============ -->
+<div class="header">
+  <div class="cobi-top">
+    <div class="cobi-brand">
+      <h1>COBI<span class="cobi-num" title="8 → 24"
+          onmouseover="this.textContent='24'" onmouseout="this.textContent='8'">8</span></h1>
+      <div class="cobi-tagline">Chancellor&#39;s Office Business Intelligence for CPL</div>
+      <div class="cobi-mamba">Black Mambanator</div>
+    </div>
+
+    <div class="cobi-utility">
+      <a href="#"><span class="ico">&#9654;</span>Project Description</a>
+      <span class="sep">&middot;</span>
+      <a href="#"><span class="ico">&#128206;</span>See Attachments</a>
+      <span class="sep">&middot;</span>
+      <a href="#"><span class="ico">&#128214;</span>Claude + KB Cheat Sheet</a>
+      <span class="sep">&middot;</span>
+      <button type="button"><span class="ico">&#8635;</span>Refresh Today&#39;s Data</button>
+      <span class="sep">&middot;</span>
+      <button type="button"><span class="sun"></span>Today&#39;s painting</button>
+      <span class="sep">&middot;</span>
+      <span class="cobi-stamp">Updated Jun 21, 2026 &middot; 9:13 AM PT</span>
+    </div>
+  </div>
+
+  <div class="cobi-qs">
+    <label class="qs-label" for="qs"><span>&#10024;</span>What are you working on today?</label>
+    <input id="qs" class="qs-input" type="text"
+           placeholder="e.g. apprenticeship sprint, budget, review credentials&hellip;">
+    <button type="button" class="qs-go">Go &rarr;</button>
+  </div>
+</div>
+
+<!-- ============ faint page context ============ -->
+<div class="demo-wrap">
+  <div class="demo-rail">
+    <div class="brand">COBI</div>
+    <div class="item active">Dashboard</div>
+    <div class="item">Activities &amp; Projects</div>
+    <div class="item">Budget</div>
+    <div class="item">TMC Builder</div>
+    <div class="item">CPL News</div>
+  </div>
+  <div class="demo-main">
+    <div class="demo-kpis">
+      <div class="demo-card"><div class="n">47,900</div><div class="l">Cumulative CPL Students</div></div>
+      <div class="demo-card"><div class="n">229k</div><div class="l">Eligible Units</div></div>
+      <div class="demo-card"><div class="n">$319M</div><div class="l">Estimated Savings</div></div>
+      <div class="demo-card"><div class="n">98</div><div class="l">Active Colleges</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <p><strong>Prototype v1 — the consolidated COBI masthead.</strong> Mock only (real tokens + fonts);
+  no JS wiring. Changes vs. today:</p>
+  <ol>
+    <li><strong>Tagline wraps under <code>COBI</code></strong> and reads &ldquo;&hellip;for CPL&rdquo;; the rotating
+      Mamba phrase tucks beneath it as a tiny quiet italic.</li>
+    <li><strong>Utility links are now subtle</strong> &mdash; quiet gray text links (no pill chrome),
+      right-aligned, with the &ldquo;Updated&hellip;&rdquo; stamp folded into the same cluster.</li>
+    <li><strong>&ldquo;What are you working on&rdquo; moved into the header</strong> as row 2, with the
+      label, input, and Go button <strong>all on one line</strong>.</li>
+  </ol>
+  <p>Hover <code>COBI8</code> for the 8&rarr;24 wink. Resize narrow to see the responsive stack.</p>
+</div>
+
+</body>
+</html>

@@ -1253,6 +1253,10 @@
         daily regen of header contents can never strand it in git) ────── */
   function injectChip() {
     if (document.getElementById("cplfl-chip")) return;
+    // Session 68: the masthead's ℹ About popover carries the "Today's painting"
+    // link (#cobiPaintingLink, wired by cobi_brand.js) — that's the painting
+    // entry point now, so don't also append a header chip.
+    if (document.getElementById("cobiPaintingLink")) return;
     var header = document.querySelector(".header");
     if (!header) return;
     var chip = document.createElement("button");

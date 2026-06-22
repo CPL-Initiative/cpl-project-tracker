@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COBI header — consolidation prototype v4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F2ED; --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55;
+  --text-faint:#87877F; --surface:rgba(255,255,255,.78); --surface-opaque:#fff;
+  --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2; --border:rgba(28,28,26,.14);
+  --border-strong:rgba(28,28,26,.30); --crimson:#920000; --cobalt:#0047AB;
+  --hunter:#2C601A; --violet:#6D28D9; --mustard-fill:#E3B341; --mustard-text:#8B6800;
+  /* NEW — seal blue (PLACEHOLDER value; will be sampled from the real seal) */
+  --seal-blue:#00467F;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Arial,sans-serif;background:var(--paper);color:var(--text-body);line-height:1.6}
+h1{font-family:'Playfair Display',Georgia,serif}
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+  background:radial-gradient(120% 90% at 80% 0%,rgba(227,179,65,.07),transparent 60%),var(--paper)}
+
+/* ════════ MASTHEAD — single row: brand | centered search | actions ════════ */
+.header{background:var(--surface);
+  -webkit-backdrop-filter:blur(14px) saturate(1.05);backdrop-filter:blur(14px) saturate(1.05);
+  border-bottom:1px solid var(--border);padding:.7rem 1.5rem;
+  display:grid;grid-template-columns:1fr minmax(300px,580px) 1fr;align-items:center;column-gap:1.25rem}
+
+/* brand: seal + (COBI^CPL / tagline) */
+.cobi-brand{justify-self:start;display:flex;align-items:center;gap:.65rem}
+.cobi-seal{flex:0 0 auto;width:46px;height:46px;border-radius:50%;
+  background:radial-gradient(circle at 50% 38%,#0a5a9c,var(--seal-blue) 72%);
+  border:2px solid #C9A227;display:flex;align-items:center;justify-content:center;
+  color:#EBCF7A;font-size:.42rem;font-weight:700;text-align:center;line-height:1.05;
+  letter-spacing:.03em;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.bwrap{display:flex;flex-direction:column;line-height:1.12}
+.cobi-brand h1{font-size:1.7rem;font-weight:800;letter-spacing:.08em;color:var(--seal-blue);margin:0;white-space:nowrap}
+.cobi-brand h1 .cobi-num{font-size:.40em;vertical-align:super;margin-left:.18em;font-weight:700;
+  letter-spacing:.06em;color:var(--mustard-text)}
+.cobi-tagline{font-family:'Source Sans 3',Arial,sans-serif;font-size:.8rem;font-weight:600;
+  letter-spacing:.02em;color:var(--text-muted);margin:.12rem 0 0}
+
+/* centered search — short label + input + Go */
+.cobi-qs{justify-self:stretch;display:flex;align-items:center;gap:.5rem;min-width:0}
+.cobi-qs .qs-label{font-size:.85rem;font-weight:700;color:var(--text-strong);white-space:nowrap;
+  display:inline-flex;align-items:center;gap:.3rem}
+.qs-input{flex:1 1 auto;min-width:0;padding:.45rem .8rem;font-family:inherit;font-size:.92rem;
+  color:var(--text-strong);background:#fff;border:1px solid var(--border-strong);border-radius:5px;outline:none}
+.qs-input:focus{border-color:var(--cobalt);box-shadow:0 0 0 2px rgba(0,71,171,.15)}
+.qs-go{flex:0 0 auto;background:var(--cobalt);color:#fff;border:none;border-radius:5px;
+  padding:.45rem 1.2rem;font-family:inherit;font-weight:700;font-size:.9rem;cursor:pointer;transition:background .15s}
+.qs-go:hover{background:#003B8E}
+
+/* right cluster — subtle actions (Today's painting now lives inside About) */
+.cobi-utility{justify-self:end;display:flex;align-items:center;justify-content:flex-end;
+  flex-wrap:wrap;gap:.1rem .45rem;font-size:.74rem}
+.cobi-utility button,.cobi-utility a,.cobi-utility .cobi-stamp{
+  font-family:'Source Sans 3',Arial,sans-serif;font-size:.74rem;font-weight:600;color:var(--text-faint);
+  background:none;border:none;cursor:pointer;text-decoration:none;padding:.15rem .25rem;
+  display:inline-flex;align-items:center;gap:.25rem;transition:color .15s;white-space:nowrap}
+.cobi-utility button:hover,.cobi-utility a:hover{color:var(--cobalt)}
+.cobi-utility .sep{color:var(--border-strong);font-size:.7rem;user-select:none}
+.cobi-utility .ico{font-size:.78rem;opacity:.75}
+.cobi-utility .cobi-stamp{color:var(--text-faint);cursor:default;font-weight:400;flex-basis:100%;
+  justify-content:flex-end;margin-top:.05rem}
+
+/* ── About popover ── */
+.cobi-about{position:relative}
+.cobi-about-panel{position:absolute;right:0;top:calc(100% + .4rem);z-index:50;width:320px;
+  background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:8px;
+  box-shadow:0 10px 30px rgba(20,20,30,.16);padding:.85rem .95rem;display:none;text-align:left}
+.cobi-about-panel.open{display:block}
+.cobi-about-panel h4{font-family:'Source Sans 3',sans-serif;font-size:.72rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--text-muted);margin:0 0 .35rem}
+.cobi-about-panel p{font-size:.78rem;color:var(--text-body);line-height:1.5;margin:0 0 .6rem}
+.cobi-about-panel a{display:flex;align-items:center;gap:.4rem;font-size:.82rem;font-weight:600;
+  color:var(--cobalt);text-decoration:none;padding:.28rem 0}
+.cobi-about-panel a:hover{text-decoration:underline}
+.cobi-about-panel .about-links{display:flex;flex-direction:column;border-top:1px solid var(--border);padding-top:.4rem}
+.cobi-about-panel .sun{width:.6rem;height:.6rem;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#F6D36B,var(--mustard-fill));display:inline-block}
+
+@media (max-width:1000px){
+  .header{grid-template-columns:1fr auto;row-gap:.55rem}
+  .cobi-qs{grid-column:1 / -1;order:3;border-top:1px solid var(--border);padding-top:.55rem}
+}
+
+/* page context */
+.kpis{display:flex;gap:1rem;flex-wrap:wrap;padding:1.2rem 1.5rem}
+.card{background:var(--surface-opaque);border:1px solid var(--border);border-radius:8px;
+  padding:1rem 1.15rem;min-width:150px;box-shadow:0 2px 10px rgba(20,20,30,.05)}
+.card .n{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--text-strong)}
+.card .l{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-top:.25rem}
+.note{max-width:1000px;margin:2rem auto;padding:0 1.5rem;font-size:.85rem;color:var(--text-muted)}
+.note code{background:var(--surface-muted);padding:.05rem .3rem;border-radius:3px;font-size:.82em}
+.note .ph{color:var(--crimson);font-weight:700}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="cobi-brand">
+    <span class="cobi-seal" title="PLACEHOLDER — drop the real Chancellor's Office seal here">C C C C O<br>SEAL</span>
+    <div class="bwrap">
+      <h1>COBI<span class="cobi-num">CPL</span></h1>
+      <div class="cobi-tagline">Chancellor&#39;s Office Business Intelligence</div>
+    </div>
+  </div>
+
+  <div class="cobi-qs">
+    <label class="qs-label" for="qs"><span>&#10024;</span>Where To?</label>
+    <input id="qs" class="qs-input" type="text" placeholder="e.g. apprenticeship sprint, budget, review credentials&hellip;">
+    <button type="button" class="qs-go">Go &rarr;</button>
+  </div>
+
+  <div class="cobi-utility">
+    <span class="cobi-about">
+      <button type="button" id="aboutBtn" aria-haspopup="true" aria-expanded="false"><span class="ico">&#8505;</span>About &#9662;</button>
+      <div class="cobi-about-panel" id="aboutPanel" role="menu">
+        <h4>About COBI</h4>
+        <p>A statewide effort led by the California Community Colleges Chancellor&#39;s Office to expand
+           Credit for Prior Learning for veterans, working adults, and apprentices across all 116 colleges.</p>
+        <div class="about-links">
+          <a href="#"><span class="ico">&#128206;</span>See Attachments</a>
+          <a href="#"><span class="ico">&#128214;</span>Claude + KB Cheat Sheet</a>
+          <a href="#"><span class="sun"></span>Today&#39;s painting</a>
+        </div>
+      </div>
+    </span>
+    <span class="sep">&middot;</span>
+    <button type="button"><span class="ico">&#8635;</span>Manually Refresh COBI</button>
+    <span class="cobi-stamp">Updated Jun 21 &middot; 9:13 AM PT</span>
+  </div>
+</div>
+
+<div class="kpis">
+  <div class="card"><div class="n">47,900</div><div class="l">CPL Students</div></div>
+  <div class="card"><div class="n">229k</div><div class="l">Eligible Units</div></div>
+  <div class="card"><div class="n">99k</div><div class="l">Transcribed Units</div></div>
+  <div class="card"><div class="n">$319M</div><div class="l">Est. Savings</div></div>
+  <div class="card"><div class="n">98</div><div class="l">Active Colleges</div></div>
+</div>
+
+<div class="note">
+  <p><strong>v4 changes:</strong></p>
+  <ol>
+    <li>Search label &rarr; <strong>&ldquo;Where To?&rdquo;</strong></li>
+    <li><strong>Today&#39;s painting moved into the ℹ About popover</strong> (click About) and removed from the top bar.</li>
+    <li>Wordmark superscript is now <strong>CPL</strong> (the 8&rarr;24 wink is gone); tagline drops &ldquo;for CPL&rdquo; &rarr; just &ldquo;Chancellor&#39;s Office Business Intelligence.&rdquo;</li>
+    <li>&ldquo;Refresh&rdquo; &rarr; <strong>&ldquo;Manually Refresh COBI.&rdquo;</strong></li>
+    <li><strong>COBI</strong> is now seal-blue, with a seal to its left.</li>
+  </ol>
+  <p><span class="ph">⚠ The seal is a PLACEHOLDER roundel</span> — the repo has no seal asset. Send me the official full-color
+  Chancellor&#39;s Office seal (PNG/SVG, transparent background ideal) and I&#39;ll drop it in and sample its exact blue for
+  <code>--seal-blue</code> (currently an approximate <code>#00467F</code>). The gold <strong>CPL</strong> superscript is kept gold for a
+  blue+gold seal pairing — say if you&#39;d rather it match the blue.</p>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('aboutBtn'), panel=document.getElementById('aboutPanel');
+  function close(){panel.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+  btn.addEventListener('click',function(e){e.stopPropagation();
+    var open=panel.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');});
+  document.addEventListener('click',function(e){if(!panel.contains(e.target)&&e.target!==btn)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+</body>
+</html>
