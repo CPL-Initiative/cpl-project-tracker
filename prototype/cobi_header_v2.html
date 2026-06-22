@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COBI header — consolidation prototype v2 (centered search)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F2ED; --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55;
+  --text-faint:#87877F; --surface:rgba(255,255,255,.78); --surface-opaque:#fff;
+  --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2; --border:rgba(28,28,26,.14);
+  --border-strong:rgba(28,28,26,.30); --crimson:#920000; --cobalt:#0047AB;
+  --hunter:#2C601A; --violet:#6D28D9; --mustard-fill:#E3B341; --mustard-text:#8B6800;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',Arial,sans-serif;background:var(--paper);color:var(--text-body);line-height:1.6}
+h1{font-family:'Playfair Display',Georgia,serif}
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+  background:radial-gradient(120% 90% at 80% 0%,rgba(227,179,65,.07),transparent 60%),var(--paper)}
+
+/* ── shared masthead pieces ── */
+.header{background:var(--surface);
+  -webkit-backdrop-filter:blur(14px) saturate(1.05);backdrop-filter:blur(14px) saturate(1.05);
+  border-bottom:1px solid var(--border);padding:.7rem 1.5rem}
+
+.cobi-brand{display:flex;flex-direction:column;line-height:1.15}
+.cobi-brand h1{font-size:1.7rem;font-weight:800;letter-spacing:.08em;color:var(--text-strong);margin:0;white-space:nowrap}
+.cobi-brand h1 .cobi-num{font-size:.46em;vertical-align:super;margin-left:.16em;font-weight:700;
+  color:var(--mustard-text);cursor:default;transition:color .15s}
+.cobi-brand h1 .cobi-num:hover{color:var(--cobalt)}
+.cobi-tagline{font-family:'Source Sans 3',Arial,sans-serif;font-size:.82rem;font-weight:600;
+  letter-spacing:.02em;color:var(--text-muted);margin:.15rem 0 0}
+.cobi-mamba{font-size:.7rem;font-style:italic;color:var(--text-faint);margin:.05rem 0 0;letter-spacing:.02em}
+
+.cobi-utility{display:flex;align-items:center;flex-wrap:wrap;gap:.15rem .4rem;font-size:.74rem}
+.cobi-utility a,.cobi-utility button,.cobi-utility .cobi-stamp{
+  font-family:'Source Sans 3',Arial,sans-serif;font-size:.74rem;font-weight:600;color:var(--text-faint);
+  background:none;border:none;cursor:pointer;text-decoration:none;padding:.15rem .25rem;
+  display:inline-flex;align-items:center;gap:.25rem;transition:color .15s;white-space:nowrap}
+.cobi-utility a:hover,.cobi-utility button:hover{color:var(--cobalt)}
+.cobi-utility .sep{color:var(--border-strong);font-size:.7rem;user-select:none}
+.cobi-utility .cobi-stamp{color:var(--text-faint);cursor:default;font-weight:400}
+.cobi-utility .ico{font-size:.78rem;opacity:.75}
+.cobi-utility .sun{width:.55rem;height:.55rem;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#F6D36B,var(--mustard-fill));display:inline-block}
+
+.qs-input{flex:1 1 auto;min-width:0;padding:.45rem .8rem;font-family:inherit;font-size:.92rem;
+  color:var(--text-strong);background:#fff;border:1px solid var(--border-strong);border-radius:5px;outline:none}
+.qs-input:focus{border-color:var(--cobalt);box-shadow:0 0 0 2px rgba(0,71,171,.15)}
+.qs-go{flex:0 0 auto;background:var(--cobalt);color:#fff;border:none;border-radius:5px;
+  padding:.45rem 1.3rem;font-family:inherit;font-weight:700;font-size:.9rem;cursor:pointer;transition:background .15s}
+.qs-go:hover{background:#003B8E}
+
+/* ════════ OPTION B — centered search, single row ════════
+   grid: brand | search(capped, centered) | links */
+.opt-b .header{display:grid;grid-template-columns:1fr minmax(300px,600px) 1fr;
+  align-items:center;column-gap:1.25rem}
+.opt-b .cobi-brand{justify-self:start}
+.opt-b .cobi-qs{justify-self:stretch;display:flex;align-items:center;gap:.5rem}
+.opt-b .cobi-utility{justify-self:end;justify-content:flex-end;max-width:100%}
+/* the prompt lives in the placeholder; a faint ✨ sits inside the field */
+.opt-b .qs-wrap{position:relative;flex:1 1 auto;min-width:0}
+.opt-b .qs-wrap .spark{position:absolute;left:.6rem;top:50%;transform:translateY(-50%);
+  font-size:.85rem;opacity:.6;pointer-events:none}
+.opt-b .qs-wrap .qs-input{width:100%;padding-left:1.9rem}
+@media (max-width:1000px){
+  .opt-b .header{grid-template-columns:1fr auto;row-gap:.6rem}
+  .opt-b .cobi-qs{grid-column:1 / -1;order:3;border-top:1px solid var(--border);padding-top:.55rem}
+  .opt-b .cobi-utility{justify-self:end}
+}
+
+/* ════════ OPTION B2 — centered search WITH a short visible label ════════ */
+.opt-b2 .cobi-qs .qs-label{font-size:.8rem;font-weight:700;color:var(--text-strong);
+  white-space:nowrap;display:inline-flex;align-items:center;gap:.3rem}
+
+/* ── tiny page context under each ── */
+.kpis{display:flex;gap:1rem;flex-wrap:wrap;padding:1rem 1.5rem}
+.card{background:var(--surface-opaque);border:1px solid var(--border);border-radius:8px;
+  padding:.9rem 1.1rem;min-width:140px;box-shadow:0 2px 10px rgba(20,20,30,.05)}
+.card .n{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--text-strong)}
+.card .l{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-top:.25rem}
+.optlabel{max-width:1100px;margin:1.6rem auto .2rem;padding:0 1.5rem;font-size:.95rem;font-weight:700;color:var(--text-strong)}
+.optlabel span{font-weight:400;color:var(--text-muted);font-size:.85rem}
+.frame{border:1px solid var(--border);border-radius:10px;margin:.4rem 1.5rem 0;overflow:hidden;background:var(--paper)}
+.note{max-width:1000px;margin:2rem auto;padding:0 1.5rem;font-size:.85rem;color:var(--text-muted)}
+.note code{background:var(--surface-muted);padding:.05rem .3rem;border-radius:3px;font-size:.82em}
+</style>
+</head>
+<body>
+
+<!-- ══════════ OPTION B : centered search, prompt-as-placeholder ══════════ -->
+<div class="optlabel">Option B — search centered in the top row <span>(prompt is the placeholder; no separate label)</span></div>
+<div class="frame opt-b">
+  <div class="header">
+    <div class="cobi-brand">
+      <h1>COBI<span class="cobi-num" title="8 → 24" onmouseover="this.textContent='24'" onmouseout="this.textContent='8'">8</span></h1>
+      <div class="cobi-tagline">Chancellor&#39;s Office Business Intelligence for CPL</div>
+      <div class="cobi-mamba">Black Mambanator</div>
+    </div>
+    <div class="cobi-qs">
+      <div class="qs-wrap">
+        <span class="spark">&#10024;</span>
+        <input class="qs-input" type="text" placeholder="What are you working on today?">
+      </div>
+      <button type="button" class="qs-go">Go &rarr;</button>
+    </div>
+    <div class="cobi-utility">
+      <a href="#"><span class="ico">&#9654;</span>Project Description</a>
+      <span class="sep">&middot;</span>
+      <a href="#"><span class="ico">&#128206;</span>Attachments</a>
+      <span class="sep">&middot;</span>
+      <a href="#"><span class="ico">&#128214;</span>Cheat Sheet</a>
+      <span class="sep">&middot;</span>
+      <button type="button"><span class="ico">&#8635;</span>Refresh</button>
+      <span class="sep">&middot;</span>
+      <button type="button"><span class="sun"></span>Today&#39;s painting</button>
+      <span class="cobi-stamp" style="flex-basis:100%;justify-content:flex-end;display:flex;margin-top:.1rem">Updated Jun 21 &middot; 9:13 AM PT</span>
+    </div>
+  </div>
+  <div class="kpis">
+    <div class="card"><div class="n">47,900</div><div class="l">CPL Students</div></div>
+    <div class="card"><div class="n">229k</div><div class="l">Eligible Units</div></div>
+    <div class="card"><div class="n">$319M</div><div class="l">Est. Savings</div></div>
+    <div class="card"><div class="n">98</div><div class="l">Active Colleges</div></div>
+  </div>
+</div>
+
+<!-- ══════════ OPTION B2 : centered search WITH a short visible label ══════════ -->
+<div class="optlabel">Option B2 — same, but keeping a short visible label <span>(&ldquo;✨ What are you working on?&rdquo; beside the box)</span></div>
+<div class="frame opt-b opt-b2">
+  <div class="header">
+    <div class="cobi-brand">
+      <h1>COBI<span class="cobi-num" title="8 → 24" onmouseover="this.textContent='24'" onmouseout="this.textContent='8'">8</span></h1>
+      <div class="cobi-tagline">Chancellor&#39;s Office Business Intelligence for CPL</div>
+      <div class="cobi-mamba">Black Mambanator</div>
+    </div>
+    <div class="cobi-qs">
+      <label class="qs-label"><span>&#10024;</span>What are you working on?</label>
+      <input class="qs-input" type="text" placeholder="e.g. apprenticeship sprint, budget&hellip;">
+      <button type="button" class="qs-go">Go &rarr;</button>
+    </div>
+    <div class="cobi-utility">
+      <a href="#"><span class="ico">&#9654;</span>Project Description</a>
+      <span class="sep">&middot;</span>
+      <a href="#"><span class="ico">&#128206;</span>Attachments</a>
+      <span class="sep">&middot;</span>
+      <a href="#"><span class="ico">&#128214;</span>Cheat Sheet</a>
+      <span class="sep">&middot;</span>
+      <button type="button"><span class="ico">&#8635;</span>Refresh</button>
+      <span class="sep">&middot;</span>
+      <button type="button"><span class="sun"></span>Today&#39;s painting</button>
+    </div>
+  </div>
+  <div class="kpis">
+    <div class="card"><div class="n">47,900</div><div class="l">CPL Students</div></div>
+    <div class="card"><div class="n">229k</div><div class="l">Eligible Units</div></div>
+    <div class="card"><div class="n">$319M</div><div class="l">Est. Savings</div></div>
+    <div class="card"><div class="n">98</div><div class="l">Active Colleges</div></div>
+  </div>
+</div>
+
+<div class="note">
+  <p><strong>Centered single-row masthead.</strong> Brand left, search centered + width-capped, subtle links right.
+  <strong>Option B</strong> drops the separate label (prompt becomes the placeholder, with a faint ✨ inside the field) — the most compact / cleanest center.
+  <strong>Option B2</strong> keeps a shortened visible label beside the box, as you'd asked earlier — costs a little width.</p>
+  <p>Both fall back to a 2-row layout under ~1000px wide (resize to see). If the right side feels busy, I can collapse
+  Project Description / Attachments / Cheat Sheet into one &ldquo;ℹ About&rdquo; menu to give the center more air.</p>
+</div>
+
+</body>
+</html>
