@@ -6,13 +6,15 @@
 // C-ID auto-match. The builder recovers the mapping by matching the slot's title
 // to a local course title (light stemming so "Introductory X" ↔ "Introduction to
 // X" matches). These fills are flagged "≈ title-matched (verify)", NEVER "C-ID
-// aligned", and are scoped to APPROVED ADTs only.
+// aligned", and are scoped to colleges with a real ADT presence — established
+// (active/approved/teachout) OR in-progress (Sam, S69: "yes to in-progress also").
 //
 // Guards: (1) exact-title recovery (Sam's AJ 200 → AJ 130 example); (2) stemmed
 // recovery (PSY 110 "Introductory Psychology" → "Introduction to Psychology");
 // (3) C-ID auto-match still wins (stays ✓ ok, not ≈ tmatch); (4) no false fill
-// when nothing matches; (5) the scope gate — a college WITHOUT an approved ADT
-// gets NO title auto-fill even though the same titles exist locally.
+// when nothing matches; (5) the scope gate — a college WITHOUT any ADT presence
+// gets NO title auto-fill even though the same titles exist locally; (6) an
+// in-progress ADT ALSO title-fills.
 //
 // Run from repo root: `npm test` (or `node tests/tmc_title_fill.test.js`).
 const fs = require("fs");
@@ -56,17 +58,18 @@ const courses = [
   ["BIOL", "1", "General Biology", 4, null]                 // distractor — must NOT fill Forensic Botany
 ];
 window.CPL_TMC_COLLEGE_COURSES = {
-  colleges: ["Approved College", "No-ADT College"],
-  courses: { "0": courses, "1": courses }
+  colleges: ["Approved College", "No-ADT College", "In-Progress College"],
+  courses: { "0": courses, "1": courses, "2": courses }
 };
 window.CPL_TMC_GE_PATTERNS = { _meta: {}, patterns: [] };
 // Approved College holds test-aj ACTIVE; No-ADT College holds nothing.
 window.CPL_TMC_COLLEGE_ADTS = {
   _meta: { unmatched_colleges: {} }, extra_tmcs: [],
-  by_college: { "Approved College": {
-    "test-aj": { b: "active", s: "Active", c: "10101", a: "2020-01-01", u: "18", t: "Test AJ" }
-  } },
-  tmc_totals: { "test-aj": { active: 1, approved: 0, in_progress: 0, teachout: 0, inactive: 0, colleges: 1 } }
+  by_college: {
+    "Approved College": { "test-aj": { b: "active", s: "Active", c: "10101", a: "2020-01-01", u: "18", t: "Test AJ" } },
+    "In-Progress College": { "test-aj": { b: "in_progress", s: "Submitted", c: "20202", a: "", u: "18", t: "Test AJ" } }
+  },
+  tmc_totals: { "test-aj": { active: 1, approved: 0, in_progress: 1, teachout: 0, inactive: 0, colleges: 2 } }
 };
 window.fetch = function () { return Promise.resolve({ ok: true, json: () => Promise.resolve([]) }); };
 
@@ -135,6 +138,19 @@ function statusPills() { return document.querySelectorAll("#tab-tmc-builder .tmc
     /MATH\s*20/.test(txt(btns2[2])));
   check("scope gate: no ≈ title-matched pills without an approved ADT",
     document.querySelectorAll("#tab-tmc-builder .tmc-status.tmatch").length === 0);
+
+  // ── IN-PROGRESS COLLEGE (Sam, S69: "yes to in-progress also") → title-fill applies ──
+  document.querySelector("#tab-tmc-builder .tmc-back").click(); await sleep(0);
+  selectVal(document.getElementById("tmc-college-sel"), "In-Progress College"); await sleep(0);
+  rowFor(/Test AJ/).click(); await sleep(0);
+  const btns3 = pickerBtns();
+  check("in-progress ADT ALSO title-fills (AJ 200 → AJ 130 + PSY 110 → PSYC 5)",
+    /AJ\s*130/.test(txt(btns3[0])) && /PSYC\s*5/.test(txt(btns3[1])));
+  check("in-progress title-fills are flagged ≈ title-matched",
+    document.querySelectorAll("#tab-tmc-builder .tmc-status.tmatch").length === 2);
+  check("in-progress explainer note says 'building this ADT' (not 'CO-vetted')",
+    Array.prototype.some.call(document.querySelectorAll("#tab-tmc-builder .tmc-reviewbar"),
+      (b) => /building this ADT/.test(txt(b)) && !/CO-vetted/.test(txt(b))));
 
   // ── report ──
   let failed = 0;
