@@ -3,13 +3,16 @@ name: Daily CPL Dashboard
 on:
   schedule:
     # GitHub's scheduled trigger is best-effort: it routinely delays this repo's
-    # cron by 1.5-3h+ and occasionally DROPS a run entirely (no failed run, none
-    # queued). So we run two crons a few hours apart — if the primary is dropped/
-    # over-delayed, the backstop catches it. The job is idempotent (concurrency
-    # serializes them; kpi_history overwrites same-day; "no changes -> no commit"),
-    # so a backstop firing after a good primary run is a safe no-op.
-    - cron: '17 10 * * *'   # primary  — 3:17 AM PDT target (GitHub UTC, no DST)
-    - cron: '17 14 * * *'   # backstop — ~4h later, catches a dropped/late primary
+    # cron by 1.5-4h and occasionally DROPS a run entirely (no failed run, none
+    # queued). We can't shrink that delay, so we (a) schedule EARLY for buffer and
+    # (b) run a 3-cron ladder ~3h apart — if an earlier cron is dropped/over-delayed,
+    # a later one still refreshes the dashboard before the workday. The job is
+    # idempotent (concurrency serializes them; kpi_history overwrites same-day;
+    # "no changes -> no commit"), so a later cron firing after a good earlier run
+    # is a safe no-op. Times are fixed UTC (cron has no DST -> ~1h seasonal drift).
+    - cron: '17 6 * * *'    # primary    — ~11:17 PM PT prev night (10:17 PM PST); lands overnight even after delay
+    - cron: '17 9 * * *'    # backstop 1 — ~2:17 AM PT (1:17 AM PST)
+    - cron: '17 12 * * *'   # backstop 2 — ~5:17 AM PT (4:17 AM PST); last safety net before the workday
   workflow_dispatch:         # allow manual trigger from GitHub UI
 
 concurrency:
