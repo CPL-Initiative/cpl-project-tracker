@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-20 (Session 66 — Skylander: TMC → CO-staff ADT review tool — the Active/Approved split #477, the scope + ASCCC acceptance ruleset #478, the template acceptance metadata #479; NEW kb-notes tmc-co-review-scope + reference-adt-acceptance-rules, + session_67_handoff + the tmc_templates_structure test)
+updated: 2026-06-21 (Session 67 — Skywatch: the CPL News lane — cpl-news-harvest Edge Function + cpl-news.yml cron + #cpl-news tab #481, CPLBrain vault digest #9; NEW kb-note playbook-cpl-news-aggregation + cpl_news_lessons + session_68_handoff)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -123,6 +123,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Scope — CPL Assistant CCR/CER-grounded recommendations + real-time benchmark + landing-site demand signal (D1–D5, build ladder, Custom Reports opportunity)](kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md) | scope | published | 2026-06-19 | 2026-06-19 |
 | [Scope — TMC tab → CO-staff ADT review/processing tool (validated PCF↔COCI joins, C-ID coverage limiter, CO-first phased plan)](kb-notes/tmc-co-review-scope.md) | scope | published | 2026-06-20 | 2026-06-20 |
 | [Reference — ADT acceptance & course-substitution rules (ASCCC C-ID guidance + STAR Act; the tiered-acceptance engine, structural checklist, per-TMC flexibility)](kb-notes/reference-adt-acceptance-rules.md) | reference | published | 2026-06-20 | 2026-06-20 |
+| [Playbook — Unattended news aggregation into a live dashboard tab (free adapters, capability-probe auth, closed-social manual queue, curation boundary)](kb-notes/playbook-cpl-news-aggregation.md) | playbook | published | 2026-06-21 | 2026-06-21 |
 
 ---
 
@@ -144,6 +145,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`tmc_builder_lessons.md`](tmc_builder_lessons.md) | TMC Builder tab — interactive ADT submission (fixed C-ID left / per-college COCI-dropdown right, C-ID auto-match, Total Units, Save/Resume + export); Session 60 list-first + GE companion; Session 61: the per-college approved-ADT overlay #458; **Session 66: the CO-review pivot — Active/Approved split #477, scope + ASCCC acceptance ruleset #478, acceptance metadata on the templates #479 (flexible slots + per-TMC flexibility + recovered C-IDs)**. Data model: [`kb-notes/reference-tmc-adt-data-model.md`](kb-notes/reference-tmc-adt-data-model.md); scope: [`kb-notes/tmc-co-review-scope.md`](kb-notes/tmc-co-review-scope.md); rules: [`kb-notes/reference-adt-acceptance-rules.md`](kb-notes/reference-adt-acceptance-rules.md) | **Session 66 (2026-06-20)** |
 | [`first_light_lessons.md`](first_light_lessons.md) | First Light — daily PD plein air greeting LIVE (#394/#396: gallery reveal, read-aloud, anonymous write-only reflections) + the theme spec (prototype v1.4.2 BLESSED: derived AA tokens, glass=chrome/opaque=data, solid uniform chips); retheme shipped S49; **S62: local-day rotation + the reflections digest #460; S65: gallery 3→89 + the runner-as-Commons-proxy sourcing pipeline #474** | **Session 65 (2026-06-19)** |
 | [`cobi_lessons.md`](cobi_lessons.md) | COBI — masthead rename to *Chancellor's Office Business Intelligence* + `cobi_brand.js` (rotating Mamba subtitle, 8→24 wink, Mamba Day purple-and-gold); generator `<title>`/`<h1>` decoupled from `proj_title` #475 | **Session 65 (2026-06-19) NEW** |
+| [`cpl_news_lessons.md`](cpl_news_lessons.md) | CPL News lane — automated harvest (cpl-news-harvest Edge Function: Google News/GDELT/CalMatters/CCCCO/Bluesky + a suggest-a-story queue) → Claude triage → `public.cpl_news` → `#cpl-news` tab (live-read) + CPLBrain vault digest; capability-probe auth; first run 12 CA items (avg rel 0.84) | **Session 67 (Skywatch, 2026-06-21) NEW** |
 | [`kb_portal_lessons.md`](kb_portal_lessons.md) | KB Portal — transplant #464 + login-gated Knowledge Base tab (iframe) #465 + the New-doc composer (draft → Claude polish → tokenless GitHub deep-link) #466/#467 + attachment upload (in-browser pdf.js/mammoth/SheetJS extraction + image downscale) #468 | **Session 63 (2026-06-19) NEW** |
 | [`coursecontrolnumber_remint.md`](coursecontrolnumber_remint.md) | Re-mint playbook (THE reference) | Session 5 |
 | [`excel_to_supabase_lessons.md`](excel_to_supabase_lessons.md) | Excel → Supabase migration (Phase 1 + Activity↔Project + Phase 2 + Budget read-path + **Excel-retirement P1/P2/P4 DONE** + the daily-pipeline reference doc) | **Session 25 (Bruh 25, 2026-06-01)** |
@@ -225,6 +227,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 64 → 65 | Startripper: the retired-model 502 fix #471 (`cpl-chat` v15, `claude-sonnet-4-6`) + the CCR/CER recommender + real-time benchmark + landing-site demand kickoff (scope #472) → build the CCR/CER/adoption ETL into shared Supabase, then M1 | [`session_65_handoff.md`](session_65_handoff.md) |
 | 65 → 66 | Skyloft: First Light gallery 3→89 via the runner-as-Commons-proxy pipeline #474 + the COBI masthead rename #475 (Mamba brand layer) → the standing data/CCR (CPL-Assistant CCR/CER recommender ETL, green-lit) + TMC + KB-portal lanes resume | [`session_66_handoff.md`](session_66_handoff.md) |
 | 66 → 67 | Skylander: TMC → a CO-staff ADT review tool — the Active/Approved split #477, the scope + ASCCC acceptance ruleset #478, the template acceptance metadata #479 (119 flexible slots + per-TMC flexibility + 15 recovered C-IDs, AfAm 0→3) → build the Phase-2 acceptance engine (Sam: "Go for A") + the bulk-PCF Playwright extractor | [`session_67_handoff.md`](session_67_handoff.md) |
+| 67 → 68 | Skywatch (nick SkyMurrow): the CPL News lane — cpl-news-harvest Edge Function + cron + `#cpl-news` tab #481 + CPLBrain vault digest #9 (12 CA items, avg rel 0.84; capability-probe auth; closed-social manual queue; CA-first) → the TMC acceptance engine (still queued from the S67 handoff) + CPL News tuning + the public-KB decision | [`session_68_handoff.md`](session_68_handoff.md) |
 
 ---
 
