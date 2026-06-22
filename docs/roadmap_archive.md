@@ -1573,3 +1573,21 @@ scope + locked decisions D1–D5 in
 Full story: `docs/cpl_assistant_lessons.md` (S64). **NEXT: `docs/session_65_handoff.md`**
 — build the CCR/CER/adoption ETL into shared Supabase (green-lit), then M1; the standing
 data/CCR + TMC + KB-portal lanes resume.
+
+### Session 66 — Skylander: TMC → a CO-staff ADT review tool (split · scope · rules · template metadata) (2026-06-20)
+
+A Sam-directed pivot into the **TMC Builder** lane, building toward a Chancellor's-Office
+ADT **review/processing tool** (it replaces the manual PDF-vs-PDF course-by-course diffing
+CO staff do today). Three PRs: **#477** split the COCI program status into **✓ Active**
+(live in the catalog) vs **✓ Approved** (CO-approved, pending activation) — 2,867 active /
+218 pending across 40 TMCs (previously invisible). **#478** the scope
+([`tmc-co-review-scope.md`](docs/kb-notes/tmc-co-review-scope.md)) + the **ASCCC acceptance
+ruleset** distilled ([`reference-adt-acceptance-rules.md`](docs/kb-notes/reference-adt-acceptance-rules.md));
+Phase-0 joins VALIDATED on 4 colleges (PCF `Program Control Number` = 100%, course-join
+90–95%, C-ID coverage 51/29/8/0% — but **non-C-ID ≠ non-compliant**). **#479** the
+**acceptance metadata** on `tmc_templates.js` (`refine_slot()`): **119 flexible slots**
+flagged, per-TMC **`flexibility:fixed|flexible`**, 15 embedded C-IDs recovered (African
+American Studies 0→3 — the only empty template, fixed). Full story:
+[`docs/tmc_builder_lessons.md`](docs/tmc_builder_lessons.md) (S66). **NEXT:
+[`docs/session_67_handoff.md`](docs/session_67_handoff.md)** — build the Phase-2
+**acceptance engine** (Sam: "Go for A!") + the bulk-PCF Playwright extractor.

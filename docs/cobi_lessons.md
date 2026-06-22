@@ -1,7 +1,7 @@
 ---
 title: COBI — the masthead rename and the Mamba brand layer
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-06-22
 tags: [lessons, cobi, branding, masthead, ui, easter-egg]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -67,3 +67,50 @@ Chancellor's Office Business Intelligence**, a light Kobe homage Sam asked for.
 - Tunables on the table if Sam wants: wordmark size/letter-spacing, the Mamba
   lineup (add/cut phrases in `cobi_brand.js` `MAMBA`), the Mamba-Day colors.
 - No follow-on work queued. The rename is self-contained.
+
+## Session 68 (2026-06-22, SkyAlizarin) — the masthead consolidation (PR #487)
+
+Sam asked to make the whole title "as simple and cohesive as possible." Iterated
+five prototypes (`prototype/cobi_header_v1..v5.html`, sent via `SendUserFile` with
+real tokens/fonts) → locked a **single-row "app bar"**, then ported it regen-safe.
+
+### What shipped (PR #487 — built, tested, ready; holding merge for the seal asset)
+- **Layout**: `seal + COBI`​`CPL` / tagline` (left) · **centered "Where To?" search**
+  (the quick-start, moved out of its own yellow band into the masthead center slot,
+  label + box + Go on one line) · subtle utility cluster (**ℹ About** popover ·
+  **Manually Refresh COBI** · Updated stamp).
+- **ℹ About popover** collapses the three info links (Project Description / See
+  Attachments / Cheat Sheet) + **Today's painting** into one menu — the top bar reads
+  as identity + one action, not a row of competing chrome.
+- **Brand**: tagline = "Chancellor's Office Business Intelligence" **under COBI** (the
+  "for CPL" suffix dropped); the **Kobe 8→24 wink → a gold `CPL` superscript**; the
+  rotating **Mamba subtitle retired** ("for now," Sam). A v5 hairline outline on the
+  gold CPL was tried then **removed** (Sam). **COBI now renders in seal-navy**
+  (`--seal-blue`, a new `:root` token) with a Chancellor's-Office **seal to its left**.
+
+### Lessons worth remembering
+1. **You can rework a generator-owned + Rule-4 region almost without touching the
+   generator** — park its text-anchor (the now-hidden `#cobi-mamba`) *inside* the new
+   structure so the existing PROJ-INFO inject lands where you want; inject the new
+   layout CSS from `cobi_brand.js` (no Rule-4 `<style>` mirror); keep `<h1>COBI</h1>`
+   plain for the regex; only the Refresh button needed a generator edit (label +
+   **strip-by-id** so a label change can't orphan a duplicate). Full method:
+   `docs/kb-notes/methodology-regen-safe-section-rework.md`.
+2. **Prove idempotency by running `excel_to_dashboard.py` twice and diffing** — the
+   only delta should be the timestamp. (Also cleared 159 blank lines the old header
+   had silently accreted.) jsdom test rewritten to 26 checks; full suite 61 files green.
+3. **Code-only PR** — reset the HTMLs to the cron's `main`, re-apply *only* the
+   structure + token, leave PROJ-INFO empty + no Refresh seed; the post-merge dispatch
+   repopulates. Never commit the regenerated `unified_courses_*.js` data artifacts.
+4. **Graceful-degrade a pending hand-off asset** — the seal `<img onerror=…hide>` means
+   the rework merges with no broken image, decoupled from the seal upload.
+5. **An image binary can't be pulled from chat** in this sandbox — Sam must upload the
+   seal to the repo (GitHub web upload to the branch). Plan the hand-off, don't fight it.
+
+### Current state / next steps
+- **PR #487 is READY**, all green, **holding the merge only on the seal upload**
+  (`assets/cccco_seal.png` on `claude/awesome-brown-dyd33o`). Next session: pull it,
+  point `<img src>` at it, **sample its exact navy into `--seal-blue` (both HTMLs)**,
+  commit, squash-merge, **dispatch the daily workflow** to publish the populated header.
+- The seal `<img>` onerror-hides, so "merge now" (seal-less, fills in later) is a safe
+  fallback if Sam prefers.
