@@ -9,8 +9,8 @@ into the Pipeline Reference below or into dedicated docs.
 ## Critical Rules (do not violate)
 
 1. **The daily GitHub Actions workflow regenerates the dashboard.**
-   `.github/workflows/daily-dashboard.yml` runs daily (cron `17 10 * * *`, ≈10:17
-   UTC). It executes
+   `.github/workflows/daily-dashboard.yml` runs daily on a 3-cron ladder
+   (`17 6`/`17 9`/`17 12 * * *` = 06:17/09:17/12:17 UTC). It executes
    `python excel_to_dashboard.py`, which reads the existing `CPL_Dashboard.html`
    and **replaces entire sections** (Filter Bar, Activity KPIs, Projects Grid,
    KPI section, exhibit CSS, title/h1). Any hand-edit inside one of those
@@ -59,7 +59,7 @@ into the Pipeline Reference below or into dedicated docs.
    stamps; an apply that consumes a dry-run plan must RESTAMP the receipt's
    `_status` —
    [`docs/kb-notes/methodology-alias-map-resolution-semantics.md`](docs/kb-notes/methodology-alias-map-resolution-semantics.md)),
-   atomic land within one cron window (10:17 UTC). The "never bulk renumber" framing that previously lived
+   atomic land within one cron window (06:17 UTC primary). The "never bulk renumber" framing that previously lived
    here was **defensive** (against accidental re-keys); it's been relaxed
    for the staging phase. **Never re-mint casually** — the playbook is
    mandatory. Once we explicitly declare the M-ID layer
@@ -573,15 +573,18 @@ python3 excel_to_dashboard.py
 
 ### 6. Daily GitHub Actions Workflow
 
-`.github/workflows/daily-dashboard.yml` — runs daily on **two crons**
-(`17 10 * * *` primary + `17 14 * * *` backstop, added 2026-06-01 PR #216) and
-on manual dispatch. The backstop exists because GitHub's `schedule` trigger is
-best-effort: it chronically delays this cron 1.5–3h+ and occasionally **drops** a
-run with no failed run + nothing queued (e.g. 2026-06-01; prior 2026-04-18 needed
-a Rule-3 interpolated `kpi_history` backfill). The job is idempotent (concurrency
-group `daily-dashboard` + same-day snapshot/`kpi_history` overwrite +
-"no staged diff → no commit"), so a backstop firing after a good primary is a safe
-no-op. Diagnosis + fix playbook:
+`.github/workflows/daily-dashboard.yml` — runs daily on a **3-cron ladder**
+(`17 6` / `17 9` / `17 12 * * *` = 06:17 / 09:17 / 12:17 UTC, ~3h apart; pulled
+earlier + a 3rd cron added 2026-06-22, superseding the 2026-06-01 PR #216 two-cron
+setup) and on manual dispatch. The ladder exists because GitHub's `schedule`
+trigger is best-effort: it chronically delays this cron 1.5–4h and occasionally
+**drops** a run with no failed run + nothing queued (e.g. 2026-06-01; prior
+2026-04-18 needed a Rule-3 interpolated `kpi_history` backfill). We can't shrink
+the delay, so we schedule EARLY (primary ≈11 PM PT the night before) for buffer
+and let later crons catch a dropped/over-delayed earlier one before the workday.
+The job is idempotent (concurrency group `daily-dashboard` + same-day
+snapshot/`kpi_history` overwrite + "no staged diff → no commit"), so a later cron
+firing after a good earlier run is a safe no-op. Diagnosis + fix playbook:
 [`docs/kb-notes/playbook-github-scheduled-workflow-reliability.md`](docs/kb-notes/playbook-github-scheduled-workflow-reliability.md).
 Uses `actions/checkout@v6` + `actions/setup-python@v6`.
 
