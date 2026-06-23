@@ -1591,3 +1591,16 @@ American Studies 0→3 — the only empty template, fixed). Full story:
 [`docs/tmc_builder_lessons.md`](docs/tmc_builder_lessons.md) (S66). **NEXT:
 [`docs/session_67_handoff.md`](docs/session_67_handoff.md)** — build the Phase-2
 **acceptance engine** (Sam: "Go for A!") + the bulk-PCF Playwright extractor.
+
+### Session 67 — Skywatch (nick SkyMurrow): the CPL News lane (2026-06-21)
+
+A Sam-commissioned, **unattended** CPL News tab (`#cpl-news`): the `cpl-news-harvest`
+Edge Function (Google News / GDELT / CalMatters / CCCCO / Bluesky + a manual
+suggest-a-story queue for closed socials via OpenGraph) → Claude triage →
+`public.cpl_news`; `cpl-news.yml` cron 13:17 UTC; `cpl_news.js` live-reads it (CA-first).
+First run: **12 CA items, avg rel 0.84** (Career Passport launch, CCCCO earn-and-learn, CA
+budget). Capability-probe auth; harvested news also auto-flows to the CPLBrain vault digest
+(`05-knowledge/cpl-news/`); the **public KB stays human-gated** (not auto-written). PRs:
+**#481** (tracker), CPLBrain #9. Full story:
+[`docs/cpl_news_lessons.md`](cpl_news_lessons.md) + the reusable
+[`docs/kb-notes/playbook-cpl-news-aggregation.md`](kb-notes/playbook-cpl-news-aggregation.md).
