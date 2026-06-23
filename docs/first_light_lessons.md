@@ -317,7 +317,7 @@ so consecutive days alternate California ↔ world. Ghost background nudged .10 
   candidates → rebuild. Turner/Raphael/Bruegel/Metcalf came back empty this pass
   (deeper nesting) — easy adds if wanted.
 
-## 2026-06-23 — Selection-quality pass: the Gamble House swap + the mono reveal-skip
+## 2026-06-23 — Selection-quality pass: the Gamble House swap, the mono reveal-skip, + a private reviewer almanac
 
 Sam flagged a daily greeting: a murky B&W photo of the Gamble House **garden /
 water terrace** whose blurb described the **house** — image and prose didn't
@@ -356,8 +356,29 @@ it's lovely"* + *"would love a pic of the actual Gamble House."*
 - Kept the **Mission San Juan Capistrano** B&W — my "murky" was a blind guess (the
   sandbox can't reach Wikimedia to view it), and loveliness is the bar. Easy to swap
   to the iconic campanario/belfry shot (CHS-719) or front view (CHS-1292) if wanted.
-- Tests (`tests/first_light.test.js`, +3 checks): no un-flagged B&W ships, lovely
-  B&W is retained, and the reveal-skip wiring exists.
+- Tests (`tests/first_light.test.js`): no un-flagged B&W ships, lovely B&W is
+  retained, the reveal-skip wiring exists, + the almanac open/step/keys/no-consume.
+
+### A private reviewer almanac (the "hidden button only I know about")
+
+Sam wanted to flip through the whole catalog to QA it without turning First Light
+into a public browse-all (which would dilute the daily surprise — "keep them
+hungry," parked since Session 62). The answer: a **hidden** review mode.
+
+- **Hidden entry: type `almanac`** anywhere on the dashboard (outside a text
+  field — the listener ignores INPUT/TEXTAREA/SELECT/contentEditable and any
+  modifier chord). No visible affordance, works regardless of how the painting is
+  normally opened (Session 68 moved that to the masthead ℹ-About `#cobiPaintingLink`,
+  so a chip-based trigger would've been fragile). `window.CPL_FIRST_LIGHT.openReview()`
+  is the programmatic entry.
+- In review mode the dialog grows **‹ Prev / Next ›** buttons + an **"N / 89"
+  counter**, **← / →** flip, and the daily-greeting bits (reflection box, opt-out,
+  "Begin the day") are hidden — it's a QA view, not the morning greeting.
+- **A review pass does NOT stamp `seen`** (`close()` only stamps when
+  `!reviewMode`), so QA-ing the catalog never robs you of that day's real greeting.
+
+Because the trigger is hidden, it's documented here + in `CLAUDE.md` (a hidden
+feature nobody can rediscover is a feature you've lost).
 
 ### Lesson
 

@@ -175,6 +175,37 @@ const isOpen = (dom) => {
   check("dialog goes gallery-size", SRC.includes("max-width:min(1180px,94vw)"));
   check("painting gets 66vh", SRC.includes("max-height:66vh"));
 
+  // ── almanac review mode: a private, hidden QA pass over the full catalog ──
+  {
+    const rev = boot({});
+    const w = rev.window, d = w.document;
+    const n = w.CPL_FIRST_LIGHT.paintings.length;
+    w.CPL_FIRST_LIGHT.openReview();
+    check("almanac: opens the dialog", isOpen(rev));
+    check("almanac: review bar visible", d.getElementById("cplfl-review").style.display === "flex");
+    check("almanac: reflection hidden during review",
+      d.getElementById("cplfl-reflect-wrap").style.display === "none");
+    check("almanac: counter starts at 1 / N", d.getElementById("cplfl-count").textContent === "1 / " + n);
+    const first = d.getElementById("cplfl-ptitle").textContent;
+    d.getElementById("cplfl-next").click();
+    check("almanac: Next advances the counter", d.getElementById("cplfl-count").textContent === "2 / " + n);
+    check("almanac: Next shows a different painting", d.getElementById("cplfl-ptitle").textContent !== first);
+    d.dispatchEvent(new w.KeyboardEvent("keydown", { key: "ArrowLeft" }));
+    check("almanac: ← steps back to 1 / N", d.getElementById("cplfl-count").textContent === "1 / " + n);
+    d.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape" }));
+    check("almanac: a review pass does NOT consume the daily greeting",
+      rev.window.localStorage.getItem("cplFirstLight.seen.v1") !== new Date().toDateString());
+  }
+
+  // hidden trigger — typing "almanac" outside a text field opens review mode
+  {
+    const k = boot({});
+    const w = k.window, d = w.document;
+    "almanac".split("").forEach((ch) => d.dispatchEvent(new w.KeyboardEvent("keydown", { key: ch })));
+    check("typing 'almanac' opens review mode",
+      isOpen(k) && d.getElementById("cplfl-review").style.display === "flex");
+  }
+
   // ── report ──
   let failed = 0;
   for (const [name, ok] of results) {
