@@ -79,4 +79,13 @@ create policy kb_curation_update on public.kb_curation
     and lower(reviewer_email) = lower(auth.jwt() ->> 'email')
   );
 
+-- Allowed reviewers may DELETE rows (Session 70 — powers the CCR Pending-merges
+-- panel's Undo). Same trust as UPDATE: a reviewer can already neutralize any row
+-- by overwriting its value, so deleting their pending merge_into row is no
+-- broader a capability. Reviewer-gated; anon stays read-only.
+drop policy if exists kb_curation_delete on public.kb_curation;
+create policy kb_curation_delete on public.kb_curation
+  for delete to authenticated
+  using (public.is_allowed_reviewer());
+
 -- Done. Verify: select * from public.allowed_reviewers;
