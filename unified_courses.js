@@ -660,7 +660,32 @@
       if (r.id_system === "Unified" || /^UC-/.test(r.id || "")) return (r.subj || []).join(", ");
       return String(r.id || "").split(/\s+/)[0] || (r.subj || []).join(", ");
     }
-    function subjKey(r) { return String(subj4Of(r)).toLowerCase(); }
+    function subjKey(r) { return String(commonSubjOf(r)).toLowerCase(); }
+    // Forward-looking Common SUBJ (Sam, S70). Common SUBJ is a FUNCTION of the
+    // course's DISCIPLINE — one discipline → one canonical SUBJ4 (§11), never an
+    // independently-edited field. The M-ID's letters only re-key to that canonical
+    // at the next canonical-SUBJ4 fold, so a freshly *curated* re-discipline
+    // (ARTS M1348 → Photography) would otherwise keep showing the stale "ARTS"
+    // until the fold runs. For CURATED disciplines we therefore show where the
+    // course WILL be keyed (PHOT) immediately; the ID letters lag, the
+    // subject_collision_signal tracks the gap, and the fold reconciles it. GENERATED
+    // (machine-inferred) disciplines stay literal so the column doesn't churn on
+    // low-confidence fills (the collision signal already flags those). Built atop
+    // DISC_COMMON_SUBJ (assigned at render setup, before any of these are called).
+    function curatedDisc(r) {
+      var o = liveDiscOverlay[r.id];
+      if (o && o.value != null) return o.value;
+      return (r._curated && r.disc) ? r.disc : null;
+    }
+    function commonSubjOf(r) {
+      var d = curatedDisc(r);
+      if (d && typeof DISC_COMMON_SUBJ !== "undefined") {
+        var cs = DISC_COMMON_SUBJ[d];
+        if (cs && cs !== subj4Of(r)) return cs;
+      }
+      return subj4Of(r);
+    }
+    function commonSubjPending(r) { return commonSubjOf(r) !== subj4Of(r); }
     // Verified = human-verified (curated, reviewed, or the curated anchor);
     // Generated = machine-produced, not yet verified.
     function statusOf(r) {
@@ -805,6 +830,19 @@
         var identSel = el("select", { class: "uc-filter" });
         var go;                  // confirm button — defined below, label synced here
         var userPickedTarget = false;
+        // Re-discipline support (Sam, S70): merging INTO an existing course can also
+        // re-discipline the survivor (which re-keys its Common SUBJ). Build a row
+        // lookup + a validity set so we can pre-fill / firewall officials.
+        var byId0 = {}; rows.forEach(function (r) { byId0[r.id] = r; });
+        var mqSet0 = {}; mqList.forEach(function (d) { mqSet0[d] = 1; });
+        var discUserPicked = false;
+        function tgtOfficial(tgt) {
+          var e = chosen[tgt];
+          if (e && (e[3] === "C-ID" || e[3] === "CCN-ID")) return true;
+          var r = byId0[tgt];
+          return !!(r && (r.id_system === "C-ID" || r.id_system === "CCN-ID"));
+        }
+        function tgtDiscOf(tgt) { var r = byId0[tgt]; return (r && r.disc) || ""; }
         // Keep the target selector, the discipline note, and the confirm-button
         // label telling ONE story about what Confirm will do. A blank default
         // used to silently mint a synthetic UC-CUR course (the 2026-06-10
@@ -813,14 +851,34 @@
         function syncTargetUi() {
           var n = Object.keys(chosen).length;
           var tgt = identSel.value;
-          discSel.disabled = !!tgt;
-          discNote.textContent = tgt
-            ? "Merging into an existing course — it keeps its own discipline."
-            : "Applies to the NEW unified course.";
+          var off = !!tgt && tgtOfficial(tgt);
+          // Enabled for a MINT (no target) and for re-disciplining a non-official
+          // existing target; disabled (firewalled) for an official C-ID/CCN anchor.
+          discSel.disabled = off;
+          // Pre-fill with the target's current discipline so leaving it untouched
+          // keeps the discipline; changing it re-disciplines (re-keys Common SUBJ).
+          if (tgt && !off && !discUserPicked) {
+            var td = tgtDiscOf(tgt);
+            discSel.value = (td && mqSet0[td]) ? td : "";
+          }
+          var md = discSel.value, cs = md ? DISC_COMMON_SUBJ[md] : "";
+          if (off) {
+            discNote.textContent = "Official course — keeps its authoritative discipline & Common SUBJ.";
+          } else if (tgt) {
+            discNote.textContent = md
+              ? ("Re-discipline this course (optional) → Common SUBJ " + (cs || ("a new one for " + md))
+                 + " — the M-ID's letters re-key at the next canonical-SUBJ4 fold.")
+              : "Re-discipline this course (optional) — pick a discipline to change its Common SUBJ.";
+          } else {
+            discNote.textContent = md
+              ? ("Applies to the NEW unified course → Common SUBJ " + (cs || ("a new one for " + md)) + ".")
+              : "Applies to the NEW unified course.";
+          }
           if (go) go.textContent = tgt
             ? ("Merge " + Math.max(n - 1, 0) + " course" + (n === 2 ? "" : "s") + " into " + tgt)
             : ("Mint NEW unified course from " + n);
         }
+        discSel.addEventListener("change", function () { discUserPicked = true; syncTargetUi(); });
         // Identifier precedence for the default target (§10): CCN > C-ID > M-ID.
         // When an official id is among the chosen, the variants merge INTO it —
         // we only mint/keep M-IDs where no official id exists (Sam 2026-06-10).
@@ -890,7 +948,14 @@
         var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Cancel"]);
         cancel.onclick = close;
         go = el("button", { type: "button", style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;" }, ["Consolidate"]);
-        go.onclick = function () { doConsolidate(chosen, titleIn.value.trim(), (identSel.value ? "" : discSel.value), identSel.value, close); };
+        go.onclick = function () {
+          var tgt = identSel.value;
+          // Pass the discipline when MINTING (no target) OR re-disciplining a
+          // non-official existing target; never write a discipline on an official
+          // C-ID/CCN anchor (firewalled).
+          var discOut = (tgt && tgtOfficial(tgt)) ? "" : discSel.value;
+          doConsolidate(chosen, titleIn.value.trim(), discOut, tgt, close);
+        };
         refreshIdentity();
         actions.appendChild(cancel); actions.appendChild(go);
         box.appendChild(actions);
@@ -940,7 +1005,9 @@
       // An official C-ID/CCN target keeps its own authoritative title — never
       // overwrite it (mirrors the firewalled anchor).
       if (!official) urow.title = title || urow.title || vlist[0];
-      if (disc && urow.id_system === "Unified") urow.disc = disc;
+      // Apply the discipline to a minted Unified target OR a re-disciplined M-ID
+      // target (Sam, S70); never to an official C-ID/CCN anchor (keeps its own).
+      if (disc && urow.id_system !== "C-ID" && urow.id_system !== "CCN-ID") urow.disc = disc;
       // Completion/merge note (task 3) — never on a firewalled official anchor.
       if (note && !official) urow.note = note;
       var subjSet = {};
@@ -1025,11 +1092,15 @@
         var members = ids.filter(function (id) { return id !== target; });
         var items = members.map(function (id) { return { course_id: id, field: "merge_into", value: target }; });
         if (title && !tgtOfficial) items.push({ course_id: target, field: "unified_title", value: title });
-        // A discipline curation is written only when MINTING a new unified
-        // course (it has no underlying record). An existing-identity target
-        // keeps its own discipline — and "discipline curation present" stays a
-        // clean explicit-verify signal for the daily regen (merge ≠ verify).
-        if (disc && synthetic) items.push({ course_id: target, field: "discipline", value: disc });
+        // A discipline curation is written when MINTING a new unified course, OR
+        // when RE-DISCIPLINING an existing non-official target to a DIFFERENT
+        // discipline (Sam, S70). Re-disciplining re-keys the survivor's Common SUBJ
+        // (the discipline → canonical SUBJ4 invariant, §11); the M-ID's letters
+        // catch up at the next canonical-SUBJ4 fold, with subject_collision_signal
+        // tracking the gap. Never written on an official C-ID/CCN anchor (firewalled).
+        var tgtCurDisc = (tgtRow0 && tgtRow0.disc) || "";
+        var writeDisc = !!disc && !tgtOfficial && (synthetic || disc !== tgtCurDisc);
+        if (writeDisc) items.push({ course_id: target, field: "discipline", value: disc });
         // Completion/merge note (task 3) — a curator annotation on the surviving
         // target (e.g. "Complete both parts for full credit"). Firewalled like
         // the title: never written on an official C-ID/CCN anchor.
@@ -1042,8 +1113,12 @@
           // inline mutation derived; the shared applyMergeLocal does the rest.
           var seedSubj = {}; ids.forEach(function (id) { String(chosen[id][2] || "").split(";").forEach(function (s) { if (s) seedSubj[s] = 1; }); });
           var variants = ids.map(function (id) { return chosen[id][1]; }).filter(Boolean);
-          applyMergeLocal(byId, target, members, title, (synthetic ? disc : null),
+          applyMergeLocal(byId, target, members, title, (tgtOfficial ? null : disc),
             { variants: variants, subj: Object.keys(seedSubj) }, note);
+          // A re-discipline write feeds the live disc overlay so the forward-looking
+          // Common SUBJ (commonSubjOf) reflects the new canonical immediately and a
+          // reload reads it back the same way a Discipline-cell edit does.
+          if (writeDisc) liveDiscOverlay[target] = { value: disc, reviewer_email: sess.email, reviewed_at: today() };
           // Track the live merge so the pending-sync badge counts it, lazy
           // stand-alone loads fold it, and the worklist won't re-offer it.
           members.forEach(function (id) { liveMergePending[id] = target; });
@@ -2085,7 +2160,7 @@
     fDisc.style.minWidth = "230px";   // #4 a touch wider for the inline subject hint
     // #8 SUBJ filter — list the canonical SUBJ4 (one per row) so it matches the
     // Subject column display (passes() filters on subj4Of, below).
-    var fSubj = sel("uc-subj", "All Common SUBJ", uniqSorted(rows.map(subj4Of).filter(Boolean)));
+    var fSubj = sel("uc-subj", "All Common SUBJ", uniqSorted(rows.map(commonSubjOf).filter(Boolean)));
     fSubj.style.maxWidth = "150px";   // #3 narrow to fit the codes; long optgroup labels truncate in the open list
     // Subject-dropdown optgroups (Session 51 spec, Sam-yes'd): the flat list
     // above renders synchronously; once the canonical-SUBJ4 seed (the same
@@ -2102,6 +2177,16 @@
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (seed) {
           if (!seed || !seed.disciplines) return;
+          // Authoritative override (S70): bootstrap DISC_COMMON_SUBJ from the row
+          // modal, but once the curator-confirmed seed loads prefer its
+          // canonical_subj4 — so the forward-looking Common SUBJ (commonSubjOf) and
+          // the mint preview can't be skewed by a wave of re-disciplined-but-not-
+          // yet-folded rows tallying their stale prefix under the new discipline.
+          var canonChanged = false;
+          Object.keys(seed.disciplines).forEach(function (d) {
+            var cs = (seed.disciplines[d] || {}).canonical_subj4;
+            if (cs && DISC_COMMON_SUBJ[d] !== cs) { DISC_COMMON_SUBJ[d] = cs; canonChanged = true; }
+          });
           var known = {};
           Object.keys(seed.disciplines).forEach(function (d) {
             var rec = seed.disciplines[d] || {};
@@ -2116,7 +2201,7 @@
             }
           });
           var g1 = [], g2 = [], g3 = [];
-          uniqSorted(rows.map(subj4Of).filter(Boolean)).forEach(function (c) {
+          uniqSorted(rows.map(commonSubjOf).filter(Boolean)).forEach(function (c) {
             if (known[c]) g1.push(c);
             else if (officialObs[c]) g2.push(c);
             else g3.push(c);
@@ -2131,6 +2216,10 @@
               fSubj.appendChild(og);
             });
           fSubj.value = cur;   // preserve the selection across the rebuild
+          // If the authoritative canonical moved any DISC_COMMON_SUBJ entry, re-render
+          // so the forward-looking Common SUBJ column reflects it (render() does not
+          // re-run this regroup, so there's no loop).
+          if (canonChanged) render();
         })
         .catch(function () { /* fail-soft: the flat list stays */ });
     }
@@ -2480,7 +2569,7 @@
       if (state.source && r.id_system !== state.source) return false;
       if (state.status && statusOf(r) !== state.status) return false;
       if (state.disc && r.disc !== state.disc && !(r.xdisc && r.xdisc.indexOf(state.disc) >= 0)) return false;
-      if (state.subj && subj4Of(r) !== state.subj) return false;
+      if (state.subj && commonSubjOf(r) !== state.subj) return false;
       if (state.credit && r.credit !== state.credit) return false;
       if (state.conf && confTier(r.conf) !== state.conf) return false;
       var hasArt = (r.adopted && r.adopted.length) || (r.potential && r.potential.length);
@@ -3227,7 +3316,17 @@
         var subjTitle = (r.title_variants && r.title_variants.length)
           ? r.title_variants.join("\n") : (r.title || "");
         var localCodes = (r.subj || []).join(", ");
-        tr.appendChild(el("td", { title: "Local SUBJ code(s): " + (localCodes || "—") + (subjTitle ? "\n" + subjTitle : "") }, [subj4Of(r)]));
+        // Common SUBJ shows the forward-looking value (commonSubjOf): for a curated
+        // re-discipline it's the discipline's canonical SUBJ4 even while the M-ID
+        // letters still read the old prefix — a ⟲ pending marker flags that lag.
+        var csv = commonSubjOf(r), csPend = commonSubjPending(r);
+        var csTitle = "Local SUBJ code(s): " + (localCodes || "—") + (subjTitle ? "\n" + subjTitle : "")
+          + (csPend ? "\nM-ID still keyed " + subj4Of(r) + " — re-keys to " + csv + " at the next canonical-SUBJ4 fold (discipline already set)." : "");
+        var csTd = el("td", { title: csTitle }, [csv]);
+        if (csPend) csTd.appendChild(el("span",
+          { title: "Pending re-key: M-ID letters " + subj4Of(r) + " → " + csv + " at the next canonical-SUBJ4 fold (discipline already curated).",
+            style: "margin-left:4px;color:var(--mustard-text);cursor:help;font-size:.8rem;" }, ["⟲"]));
+        tr.appendChild(csTd);
         tr.appendChild(disciplineCell(r));
         tr.appendChild(el("td", {}, [r.credit || "—"]));
         // Units: show a RANGE (lo–hi) when member colleges disagree (umin/umax baked by
