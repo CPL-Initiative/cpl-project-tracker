@@ -1599,7 +1599,7 @@
             // a DIFFERENT checked candidate to survive — incl. one with a different
             // SUBJ (every other member then folds into it and adopts its id/SUBJ).
             // Shown on the non-target checked rows; clicking pins manualTarget.
-            var mkTgt = el("a", { href: "#", title: "Make this the surviving identity — the other checked courses fold into it and take its id/subject",
+            var mkTgt = el("a", { href: "#", title: "Make this the surviving identity — the other checked courses fold into it and take its id / Common SUBJ",
               style: "display:none;font-size:.72rem;color:var(--cobalt);text-decoration:none;white-space:nowrap;" }, ["☆ set as target"]);
             (function (mm) { mkTgt.onclick = function (e) { e.preventDefault(); manualTarget = mm.id; refreshTarget(); }; })(m);
             row.appendChild(mkTgt);
@@ -1932,7 +1932,7 @@
         ? (r.umin + "–" + r.umax + (r.units == null ? "" : " (typical " + r.units + ")"))
         : (r.units == null ? "" : r.units));
       field("TOP code", r.top && topMap[r.top] ? r.top + ": " + topMap[r.top] : r.top);
-      field("Subject(s)", r.subj);
+      field("Local SUBJ", r.subj);
       field("Members", r.members == null ? "" : r.members);
       field("Confidence", r.conf == null ? "" : r.conf.toFixed(2));
       field("Adopted", (r.adopted && r.adopted.length) ? r.adopted.length + " — " + shortNames(r.adopted).join(", ") : "");
@@ -2040,7 +2040,7 @@
     fDisc.style.minWidth = "230px";   // #4 a touch wider for the inline subject hint
     // #8 SUBJ filter — list the canonical SUBJ4 (one per row) so it matches the
     // Subject column display (passes() filters on subj4Of, below).
-    var fSubj = sel("uc-subj", "All subjects", uniqSorted(rows.map(subj4Of).filter(Boolean)));
+    var fSubj = sel("uc-subj", "All Common SUBJ", uniqSorted(rows.map(subj4Of).filter(Boolean)));
     fSubj.style.maxWidth = "150px";   // #3 narrow to fit the codes; long optgroup labels truncate in the open list
     // Subject-dropdown optgroups (Session 51 spec, Sam-yes'd): the flat list
     // above renders synchronously; once the canonical-SUBJ4 seed (the same
@@ -2078,7 +2078,7 @@
           });
           var cur = fSubj.value;
           fSubj.innerHTML = "";
-          fSubj.appendChild(el("option", { value: "" }, ["All subjects"]));
+          fSubj.appendChild(el("option", { value: "" }, ["All Common SUBJ"]));
           [["Common subjects ✓", g1], ["Official C-ID & CCN", g2], ["Local-derived (awaiting fold)", g3]]
             .forEach(function (pair) {
               var og = el("optgroup", { label: pair[0] });
@@ -2698,7 +2698,7 @@
 
     var COLS = [
       { key: "kind", label: "Kind" }, { key: "id", label: "ID" }, { key: "title", label: "Title" },
-      { key: "subj", label: "Subject(s)" },   // just left of Discipline for clarity (Sam 2026-06-10)
+      { key: "subj", label: "Common SUBJ" },   // canonical shared subject; local per-college codes on hover (Sam 2026-06-10/23)
       { key: "disc", label: "Discipline" }, { key: "credit", label: "Credit" },
       { key: "units", label: "Units" }, { key: "top", label: "TOP" },
       { key: "members", label: "Members" }, { key: "adopted", label: "Adopted" },
@@ -2999,7 +2999,7 @@
       if (state.disc && DISC_SUBJECTS[state.disc] && DISC_SUBJECTS[state.disc].length) {
         var legend = el("span", { class: "uc-disc-legend",
           style: "display:block;margin-top:5px;font-size:.85em;color:var(--text-muted,#6b7280);" }, []);
-        legend.appendChild(document.createTextNode("Subjects seen in “" + state.disc + "”: "));
+        legend.appendChild(document.createTextNode("Local SUBJ seen in “" + state.disc + "”: "));
         DISC_SUBJECTS[state.disc].forEach(function (s) {
           legend.appendChild(el("span", { class: "uc-disc-legend-chip",
             style: "display:inline-block;margin:0 3px 2px 0;padding:0 6px;border:1px solid var(--line,#cbd5e1);border-radius:10px;background:var(--surface-2,#f1f5f9);" }, [s]));
@@ -3062,12 +3062,12 @@
         // bare <td> is ignored under table-layout:auto) so all columns fit without
         // horizontal scroll; full title on the cell hover + ⓘ modal.
         tr.appendChild(el("td", { title: r.title || "" }, [el("span", { class: "uc-trunc" }, [r.title || ""])]));
-        // Subject(s) sits just left of Discipline (Sam 2026-06-10) — canonical
-        // SUBJ4 shown; raw per-college local code(s) stay on the hover.
+        // Common SUBJ sits just left of Discipline (Sam 2026-06-10) — the canonical
+        // shared subject is shown; raw per-college Local SUBJ code(s) stay on hover.
         var subjTitle = (r.title_variants && r.title_variants.length)
           ? r.title_variants.join("\n") : (r.title || "");
         var localCodes = (r.subj || []).join(", ");
-        tr.appendChild(el("td", { title: "Local member subject code(s): " + (localCodes || "—") + (subjTitle ? "\n" + subjTitle : "") }, [subj4Of(r)]));
+        tr.appendChild(el("td", { title: "Local SUBJ code(s): " + (localCodes || "—") + (subjTitle ? "\n" + subjTitle : "") }, [subj4Of(r)]));
         tr.appendChild(disciplineCell(r));
         tr.appendChild(el("td", {}, [r.credit || "—"]));
         // Units: show a RANGE (lo–hi) when member colleges disagree (umin/umax baked by
