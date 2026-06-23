@@ -720,12 +720,12 @@
       lic: "Public domain · Private collection · via Wikimedia Commons"
     },
     {
-      title: "The Gamble House, Pasadena — Garden Front",
-      artist: "Frances Benjamin Johnston", year: "c. 1920s",
+      title: "The Gamble House, Pasadena",
+      artist: "Frances Benjamin Johnston", year: "1917",
       museum: "Library of Congress, Washington, D.C.",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/David%20Berry%20Gamble%20house%2C%204%20Westmoreland%20Place%2C%20Pasadena%2C%20California.%20Water%20terrace%20LCCN00651248.jpg?width=1600",
-      alt: "A black-and-white photograph of a low, wide wooden house with deep overhanging eaves, seen across a garden terrace and reflecting pool.",
-      blurb: "Brothers Charles and Henry Greene built this house in 1908 for the Gamble family of Procter & Gamble, and it became the great masterpiece of the American Arts and Crafts movement — all broad sheltering eaves, hand-shaped teak, and joinery left honestly visible. Frances Benjamin Johnston, one of the first women to make a career in photography, captured its garden side reflected over a low water terrace. The Greenes treated the whole house like a single piece of furniture, indoors and out.",
+      img: "https://commons.wikimedia.org/wiki/Special:FilePath/David%20Berry%20Gamble%20house%2C%204%20Westmoreland%20Place%2C%20Pasadena%2C%20California.%20View%20to%20sleeping%20porch%20LCCN00651250.jpg?width=1600",
+      alt: "A black-and-white photograph of the wooden Gamble House, its broad upper sleeping porches and deep overhanging eaves stepping out beneath the trees.",
+      blurb: "Brothers Charles and Henry Greene built this house in 1908 for the Gamble family of Procter & Gamble, and it became the great masterpiece of the American Arts and Crafts movement — all broad sheltering eaves, hand-shaped teak, and joinery left honestly visible. Frances Benjamin Johnston, one of the first women to make a career in photography, framed its great cantilevered sleeping porches, where the open-air timberwork shows the brothers' craft most plainly. The Greenes treated the whole house like a single piece of furniture, indoors and out.",
       setting: "Pasadena, California — the Gamble House still stands as a museum, the finest surviving example of Greene and Greene's California craftsman work.",
       mono: true,
       lic: "Public domain · Library of Congress, Washington, D.C. · via Wikimedia Commons"
@@ -993,6 +993,9 @@
       ".cplfl-art{background:#22221F;text-align:center}" +
       ".cplfl-art img{max-width:100%;max-height:66vh;display:block;margin:0 auto;filter:grayscale(1);transition:filter 1.8s ease .35s}" +
       ".cplfl-overlay.open .cplfl-art img.cplfl-revealed{filter:grayscale(0)}" +
+      // mono (B&W photographs): no colour to reveal, so skip the grayscale→colour
+      // fade entirely — show the print at full fidelity, no no-op animation.
+      ".cplfl-overlay.open .cplfl-art img.cplfl-mono{filter:none;transition:none}" +
       ".cplfl-imgfallback{display:none;padding:3rem 1rem;color:rgba(255,255,255,.88);font-size:.85rem;" +
       "background:linear-gradient(160deg,#8a6d2e 0%,#a8842f 30%,#6e7d52 65%,#43523f 100%)}" +
       ".cplfl-body{padding:1rem 1.3rem 1.2rem}" +
@@ -1096,6 +1099,8 @@
     byId("cplfl-optout").checked = lsGet(KEY_OPTOUT) === "1";
     var img = byId("cplfl-img");
     img.alt = p.alt;
+    // mono prints opt out of the grayscale→colour reveal (nothing to reveal).
+    if (p.mono) img.classList.add("cplfl-mono"); else img.classList.remove("cplfl-mono");
     img.style.display = "";
     byId("cplfl-imgfallback").style.display = "none";
     img.onerror = function () {

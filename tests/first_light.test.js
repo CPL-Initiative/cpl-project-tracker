@@ -41,6 +41,21 @@ const SRC = fs.readFileSync("first_light.js", "utf8");
     ps.every((p) => p.alt && p.alt.length > 20 && p.blurb && p.setting && p.title && p.artist));
 }
 
+// (h) monochrome reveal-skip — the signature is the grayscale→colour reveal, a
+//     no-op on a B&W image. B&W is welcome when lovely, but every monochrome
+//     print MUST be flagged mono:true (enforced at build in
+//     build_first_light_manifest.mjs) and the player must wire .cplfl-mono so the
+//     dead fade is skipped rather than animating nothing.
+{
+  const ps = boot({}).window.CPL_FIRST_LIGHT.paintings;
+  const monoRe = /\b(black[- ]and[- ]white|b&w|monochrome|grayscale|greyscale|sepia)\b/i;
+  check("every B&W-described painting is flagged mono (reveal-skip)",
+    ps.every((p) => !monoRe.test(p.alt) || p.mono === true));
+  check("manifest still carries lovely B&W (mono) entries", ps.some((p) => p.mono === true));
+  check("mono reveal-skip wired in CSS + fill()",
+    /img\.cplfl-mono\{filter:none/.test(SRC) && SRC.includes('classList.add("cplfl-mono")'));
+}
+
 // (g) rotation — no painting repeats on consecutive days, every painting shows
 //     once before any repeat, and the seed is the viewer's LOCAL calendar day.
 //     (Session 62: the old UTC-day seed ticked at ~5pm in California, drifting a
