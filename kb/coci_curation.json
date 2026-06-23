@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-22T17:47:03Z",
-  "count": 28374,
+  "_synced_at": "2026-06-23T01:04:56Z",
+  "count": 28385,
   "curations": {
     "AERO M10BA": {
       "merge_into": "AERO Z1001",
@@ -8582,6 +8582,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:43:33.362267+00:00"
     },
+    "ARTS M1345": {
+      "merge_into": "PHOT M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-23T00:52:22.74047+00:00"
+    },
     "ARTS M1358": {
       "merge_into": "ARTS M1045",
       "reviewed_by": "map@rccd.edu",
@@ -9699,9 +9704,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ARTS Z1127": {
-      "unified_title": "Digital Imaging: Photoshop",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "PHOT M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-23T00:52:22.74047+00:00",
+      "unified_title": "Digital Imaging: Photoshop"
     },
     "ARTS Z1128": {
       "unified_title": "Drawing the Head and Hands",
@@ -81502,6 +81508,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "GRAF M10BG": {
+      "merge_into": "PHOT M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-23T00:52:22.74047+00:00"
+    },
     "GRAF M10BI": {
       "merge_into": "CISC Z1001",
       "reviewed_by": "automerge-v1@bot",
@@ -81581,6 +81592,11 @@
       "merge_into": "GRAF Z1004",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "GRAF M10EB": {
+      "merge_into": "PHOT M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-23T00:52:22.74047+00:00"
     },
     "GRAF M10EC": {
       "merge_into": "GRAF M1033",
@@ -81711,6 +81727,11 @@
       "merge_into": "GRAF M1010",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "GRAF M10GK": {
+      "merge_into": "PHOT M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-23T00:52:22.74047+00:00"
     },
     "GRAF M10GT": {
       "merge_into": "ARTS M1467",
@@ -107974,6 +107995,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "MATH M10AH": {
+      "merge_into": "PHOT M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-23T00:52:22.74047+00:00"
+    },
     "MATH M10AK": {
       "merge_into": "MATH M1002",
       "reviewed_by": "automerge-v1@bot",
@@ -112519,6 +112545,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "MULT M90BS": {
+      "merge_into": "PHOT M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-23T00:52:22.74047+00:00"
+    },
     "MULT M90BV": {
       "merge_into": "MULT Z9001",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -112535,9 +112566,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "MULT Z1003": {
-      "unified_title": "Photoshop for Digital Imaging 1",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "PHOT M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-23T00:52:22.74047+00:00",
+      "unified_title": "Photoshop for Digital Imaging 1"
     },
     "MULT Z1004": {
       "unified_title": "Final Cut Pro 2: Intermediate Nonlinear Editing for Video, Broadcast and Digital Cinematography",
@@ -125094,6 +125126,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "PHOT M1064": {
+      "unified_title": "Digital Imaging 1",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-23T00:52:22.74047+00:00"
+    },
     "PHOT M1068": {
       "unified_title": "Community Documentary Photography",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -125158,6 +125195,11 @@
       "merge_into": "ARTS M1290",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "PHOT M10AH": {
+      "merge_into": "PHOT M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-23T00:52:22.74047+00:00"
     },
     "PHOT M10AK": {
       "merge_into": "PHO M1003",
@@ -125378,6 +125420,11 @@
       "merge_into": "ARTS M1176",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "PHOT M10FD": {
+      "merge_into": "PHOT M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-23T00:52:22.74047+00:00"
     },
     "PHOT M10FE": {
       "merge_into": "PHOT Z1016",
@@ -125613,6 +125660,11 @@
       "merge_into": "PHOT M1006",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "PHOT M10KN": {
+      "merge_into": "PHOT M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-23T00:52:22.74047+00:00"
     },
     "PHOT M10KP": {
       "merge_into": "PHOT M1006",
@@ -125953,6 +126005,11 @@
       "unified_title": "Visual Storytelling: Structure and Form",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "PHOT M9005": {
+      "merge_into": "PHOT M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-23T00:52:22.74047+00:00"
     },
     "PHOT M90AT": {
       "merge_into": "PHOT Z9001",
