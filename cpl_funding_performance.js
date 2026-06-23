@@ -8,20 +8,20 @@ window.CPL_FUNDING_PERF = {
  "suppress_below": 5,
  "statewide": {
   "p2": 4652,
-  "p3": 16174
+  "p3": 16177
  },
  "colleges": {
   "Bakersfield": {
-   "p2": 35,
-   "p3": 36
+   "p2": 37,
+   "p3": 38
   },
   "Cabrillo": {
    "p2": 16,
    "p3": 42
   },
   "Chaffey": {
-   "p2": 16,
-   "p3": 25
+   "p2": 14,
+   "p3": 26
   },
   "Cuesta": {
    "p2": null,
