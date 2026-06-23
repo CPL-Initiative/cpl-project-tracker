@@ -1904,7 +1904,24 @@
     var fKind = sel("uc-kind", "All kinds", ["Course", "Unified", "Stand-Alone"]);
     var fSource = sel("uc-source", "All sources", uniqSorted(rows.map(function (r) { return r.id_system; })), idSysLabel);
     var fStatus = sel("uc-status", "All statuses", ["Verified", "Generated"]);
-    var fDisc = sel("uc-disc", "All disciplines", uniqSorted(rows.map(function (r) { return r.disc; })));
+    // #4 (Sam, S69): a discipline (our normalized field) gathers many local
+    // SUBJECT codes (Art ← ART / ARTS / PHOT / MMST…). Roll up the noisy local
+    // r.subj codes per discipline so the filter options + a legend row can show
+    // them — clarifying discipline-vs-subject. "Seen in", not authoritative: a
+    // code can sit under >1 discipline at different colleges (homonyms).
+    var DISC_SUBJECTS = {};
+    rows.forEach(function (r) {
+      if (!r.disc) return;
+      (r.subj || []).forEach(function (s) { s = String(s).trim(); if (s) (DISC_SUBJECTS[r.disc] = DISC_SUBJECTS[r.disc] || {})[s] = 1; });
+    });
+    Object.keys(DISC_SUBJECTS).forEach(function (d) { DISC_SUBJECTS[d] = Object.keys(DISC_SUBJECTS[d]).sort(); });
+    function discOptLabel(d) {
+      var subs = DISC_SUBJECTS[d];
+      if (!subs || !subs.length) return d;
+      return d + " — " + subs.slice(0, 3).join(" · ") + (subs.length > 3 ? " · +" + (subs.length - 3) : "");
+    }
+    var fDisc = sel("uc-disc", "All disciplines", uniqSorted(rows.map(function (r) { return r.disc; })), discOptLabel);
+    fDisc.style.minWidth = "230px";   // #4 a touch wider for the inline subject hint
     // #8 SUBJ filter — list the canonical SUBJ4 (one per row) so it matches the
     // Subject column display (passes() filters on subj4Of, below).
     var fSubj = sel("uc-subj", "All subjects", uniqSorted(rows.map(subj4Of).filter(Boolean)));
@@ -2858,6 +2875,23 @@
       brief.textContent = " · How courses get merged here (the rules, in plain terms)";
       brief.style.cssText = "font-size:inherit;";
       summary.appendChild(brief);
+
+      // #4 discipline↔subject legend: when a discipline is filtered, show the
+      // local SUBJ codes that roll up to it as chips (with the homonym caveat),
+      // so "discipline" (our normalized field) vs "subject" (the local code) reads
+      // clearly. Rebuilt each render off the same DISC_SUBJECTS rollup.
+      if (state.disc && DISC_SUBJECTS[state.disc] && DISC_SUBJECTS[state.disc].length) {
+        var legend = el("span", { class: "uc-disc-legend",
+          style: "display:block;margin-top:5px;font-size:.85em;color:var(--text-muted,#6b7280);" }, []);
+        legend.appendChild(document.createTextNode("Subjects seen in “" + state.disc + "”: "));
+        DISC_SUBJECTS[state.disc].forEach(function (s) {
+          legend.appendChild(el("span", { class: "uc-disc-legend-chip",
+            style: "display:inline-block;margin:0 3px 2px 0;padding:0 6px;border:1px solid var(--line,#cbd5e1);border-radius:10px;background:var(--surface-2,#f1f5f9);" }, [s]));
+        });
+        legend.appendChild(el("span", { class: "uc-disc-legend-info", style: "cursor:help;margin-left:2px;",
+          title: "A local subject code can appear under more than one discipline at different colleges (homonyms), so this is the set OBSERVED for this discipline — not an authoritative roster." }, ["ⓘ"]));
+        summary.appendChild(legend);
+      }
 
       // Batch-verify control: count the filtered Generated rows that carry a
       // discipline (verifiable as-is) and reflect it on the toolbar button.
