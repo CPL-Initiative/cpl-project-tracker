@@ -1604,3 +1604,18 @@ budget). Capability-probe auth; harvested news also auto-flows to the CPLBrain v
 **#481** (tracker), CPLBrain #9. Full story:
 [`docs/cpl_news_lessons.md`](cpl_news_lessons.md) + the reusable
 [`docs/kb-notes/playbook-cpl-news-aggregation.md`](kb-notes/playbook-cpl-news-aggregation.md).
+
+### Session 68 — SkyAlizarin: spotty-cron fixes + the COBI masthead consolidation (2026-06-22)
+
+A live UI+ops session. **Ops (both merged):** the daily refresh was "spotty" — measured
+~25 runs and found GitHub's scheduler **delays** this cron 1.5–4h (not drops), so it
+published mid-morning; pulled it **earlier + a 3rd cron** → the **06:17/09:17/12:17 UTC
+ladder** (#485, Rule 1 + §6 updated). Then found the real miss-cause: a transient Supabase
+TLS blip in `kb/_apply_curation.py` (the one unguarded sync call) aborted the *whole*
+publish → **retry + non-fatal guard** (#486); today re-dispatched + current. **UI (PR #487):**
+the **COBI masthead → a single-row app bar** (seal + COBI`CPL` / tagline · centered
+**"Where To?"** search · subtle **ℹ About** popover + **Manually Refresh COBI**); Mamba
+retired, gold CPL superscript, COBI in seal-navy. Ported **regen-safe** (anchor-parked
+generator + CSS-from-JS; idempotent, −159 blank lines). Method:
+[`docs/kb-notes/methodology-regen-safe-section-rework.md`](kb-notes/methodology-regen-safe-section-rework.md);
+full story: [`docs/cobi_lessons.md`](cobi_lessons.md).
