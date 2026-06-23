@@ -2237,9 +2237,21 @@
       var f = r.flags || {}, out = el("span", {});
       function b(on, txt, cls, tip) { if (on) out.appendChild(el("span", { class: "uc-badge " + cls, title: tip }, [txt])); }
       b(f.over_merged, "over-merge", "warn", "subject_spread ≥ 8 — possible over-merge; review");
-      b(f.credit_mixed, "credit", "mix", "members disagree on credit status");
+      // #6 (Sam, S69): the row's PRIMARY credit status is already in the Credit
+      // column, so credit_mixed surfaces the OTHER status the row ALSO carries —
+      // a "+ NC" / "+ CR" addition (abbrev per Sam), not a redundant status word.
+      if (f.credit_mixed) {
+        var primCredit = /^credit/i.test(r.credit || "");
+        out.appendChild(el("span", { class: "uc-badge mix",
+          title: primCredit
+            ? "Primarily Credit — but some member colleges offer this Noncredit (members split on credit status)."
+            : "Primarily Noncredit — but some member colleges offer this for Credit (members split on credit status)." },
+          [primCredit ? "+ NC" : "+ CR"]));
+      }
       b(f.top_mixed, "TOP", "mix", "members disagree on TOP code");
-      b(f.ncc_mixed, "noncredit", "mix", "members disagree on noncredit category");
+      // ncc_mixed = noncredit CATEGORY disagreement (CDCP program type), distinct
+      // from the credit/noncredit status mix above → "NC type" (abbrev per Sam).
+      b(f.ncc_mixed, "NC type", "mix", "Members disagree on the noncredit category (CDCP program type — e.g. Short-term Vocational vs ESL).");
       b(r.locked, "anchor", "ok", "curated common-course anchor (" + idSysLabel(r.id_system) + ") — read-only");
       // Trust-Card auditor overlay (lazy — only present after loadAudit() resolves).
       // Renders a "⚠ N · 0.XX" chip on rows the auditor flagged so the curator sees
