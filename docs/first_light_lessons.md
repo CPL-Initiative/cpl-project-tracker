@@ -1,7 +1,7 @@
 ---
 title: First Light — daily plein air art, the theme spec, and the design sprint
 created: 2026-06-12
-updated: 2026-06-19 (Session 65 — gallery 3→89 + the runner-as-Commons-proxy sourcing pipeline)
+updated: 2026-06-23 (selection-quality pass — the Gamble House swap + the mono reveal-skip)
 tags: [lessons, first-light, design-system, plein-air, accessibility, public-domain, ui]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -316,3 +316,72 @@ so consecutive days alternate California ↔ world. Ghost background nudged .10 
   (or a file to `tools/art_extra_files.json`) + bump the trigger → curate the new
   candidates → rebuild. Turner/Raphael/Bruegel/Metcalf came back empty this pass
   (deeper nesting) — easy adds if wanted.
+
+## 2026-06-23 — Selection-quality pass: the Gamble House swap, the mono reveal-skip, + a private reviewer almanac
+
+Sam flagged a daily greeting: a murky B&W photo of the Gamble House **garden /
+water terrace** whose blurb described the **house** — image and prose didn't
+match, and it wasn't lovely. His bar, stated plainly: *"B&W is fine as long as
+it's lovely"* + *"would love a pic of the actual Gamble House."*
+
+### Two root causes
+
+1. **The signature grayscale→colour reveal is a no-op on a B&W image** — it fades
+   from B&W to B&W. Seven entries are `mono:true` (the Adams NARA set, Watkins ×2,
+   two missions, the Gamble House), and the **`mono` flag was DEAD**: authored in
+   the selection file, copied into the manifest, **never read** by `first_light.js`.
+   A quality flag that nothing consumes *looks* like a guardrail but isn't — worse
+   than no flag, because it lulls you. The Gamble House was exactly the failure it
+   should have caught.
+2. **Blurb/image drift** — the title said "Garden Front," the image was the garden,
+   the blurb led with the house. The blurb must describe the image actually shown.
+
+### What shipped (code-only PR; gallery stays 89 — a swap, not a cut)
+
+- **Swapped the Gamble image → the actual house**: Frances Benjamin Johnston's
+  *"View to sleeping porch"* (LoC, LCCN00651250, 1917) — same photographer/credit,
+  the house's iconic cantilevered sleeping porches; rewrote the blurb's middle
+  sentence + the alt to match. **Alternate on file** (one-line swap if a *colour*
+  full-house view is preferred): the modern NARA *"Arroyo Seco — Gamble House"*
+  (7717021), captioned the "internationally famed icon" of the Craftsman style.
+- **Made `mono` load-bearing**: `.cplfl-overlay.open .cplfl-art img.cplfl-mono
+  {filter:none;transition:none}` + a class toggle in `fill()`. The 7 B&W prints now
+  show at full fidelity with **no dead fade** instead of animating nothing.
+- **Build guard** (`build_first_light_manifest.mjs`): an entry whose **alt** reads
+  black-and-white but lacks `mono:true` fails the build. Scans the *alt* (a literal
+  image description), NOT the blurb — Remington's "near-monochrome palette" nocturne
+  is a colour painting and must not trip it (verified: alt-only ⇒ 0 mismatches over
+  all 89). Loveliness stays a human call; the guard only enforces the mechanical
+  reveal-skip contract.
+- Kept the **Mission San Juan Capistrano** B&W — my "murky" was a blind guess (the
+  sandbox can't reach Wikimedia to view it), and loveliness is the bar. Easy to swap
+  to the iconic campanario/belfry shot (CHS-719) or front view (CHS-1292) if wanted.
+- Tests (`tests/first_light.test.js`): no un-flagged B&W ships, lovely B&W is
+  retained, the reveal-skip wiring exists, + the almanac open/step/keys/no-consume.
+
+### A private reviewer almanac (the "hidden button only I know about")
+
+Sam wanted to flip through the whole catalog to QA it without turning First Light
+into a public browse-all (which would dilute the daily surprise — "keep them
+hungry," parked since Session 62). The answer: a **hidden** review mode.
+
+- **Hidden entry: type `almanac`** anywhere on the dashboard (outside a text
+  field — the listener ignores INPUT/TEXTAREA/SELECT/contentEditable and any
+  modifier chord). No visible affordance, works regardless of how the painting is
+  normally opened (Session 68 moved that to the masthead ℹ-About `#cobiPaintingLink`,
+  so a chip-based trigger would've been fragile). `window.CPL_FIRST_LIGHT.openReview()`
+  is the programmatic entry.
+- In review mode the dialog grows **‹ Prev / Next ›** buttons + an **"N / 89"
+  counter**, **← / →** flip, and the daily-greeting bits (reflection box, opt-out,
+  "Begin the day") are hidden — it's a QA view, not the morning greeting.
+- **A review pass does NOT stamp `seen`** (`close()` only stamps when
+  `!reviewMode`), so QA-ing the catalog never robs you of that day's real greeting.
+
+Because the trigger is hidden, it's documented here + in `CLAUDE.md` (a hidden
+feature nobody can rediscover is a feature you've lost).
+
+### Lesson
+
+A curation **flag nobody reads is a latent bug**, not a safeguard — wire it or
+delete it. And "lovely" is the real bar (not colour-vs-B&W): the fix is a *quality
+gate + a better image*, not a blanket "drop the photos."

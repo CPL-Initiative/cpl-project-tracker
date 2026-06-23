@@ -720,12 +720,12 @@
       lic: "Public domain · Private collection · via Wikimedia Commons"
     },
     {
-      title: "The Gamble House, Pasadena — Garden Front",
-      artist: "Frances Benjamin Johnston", year: "c. 1920s",
+      title: "The Gamble House, Pasadena",
+      artist: "Frances Benjamin Johnston", year: "1917",
       museum: "Library of Congress, Washington, D.C.",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/David%20Berry%20Gamble%20house%2C%204%20Westmoreland%20Place%2C%20Pasadena%2C%20California.%20Water%20terrace%20LCCN00651248.jpg?width=1600",
-      alt: "A black-and-white photograph of a low, wide wooden house with deep overhanging eaves, seen across a garden terrace and reflecting pool.",
-      blurb: "Brothers Charles and Henry Greene built this house in 1908 for the Gamble family of Procter & Gamble, and it became the great masterpiece of the American Arts and Crafts movement — all broad sheltering eaves, hand-shaped teak, and joinery left honestly visible. Frances Benjamin Johnston, one of the first women to make a career in photography, captured its garden side reflected over a low water terrace. The Greenes treated the whole house like a single piece of furniture, indoors and out.",
+      img: "https://commons.wikimedia.org/wiki/Special:FilePath/David%20Berry%20Gamble%20house%2C%204%20Westmoreland%20Place%2C%20Pasadena%2C%20California.%20View%20to%20sleeping%20porch%20LCCN00651250.jpg?width=1600",
+      alt: "A black-and-white photograph of the wooden Gamble House, its broad upper sleeping porches and deep overhanging eaves stepping out beneath the trees.",
+      blurb: "Brothers Charles and Henry Greene built this house in 1908 for the Gamble family of Procter & Gamble, and it became the great masterpiece of the American Arts and Crafts movement — all broad sheltering eaves, hand-shaped teak, and joinery left honestly visible. Frances Benjamin Johnston, one of the first women to make a career in photography, framed its great cantilevered sleeping porches, where the open-air timberwork shows the brothers' craft most plainly. The Greenes treated the whole house like a single piece of furniture, indoors and out.",
       setting: "Pasadena, California — the Gamble House still stands as a museum, the finest surviving example of Greene and Greene's California craftsman work.",
       mono: true,
       lic: "Public domain · Library of Congress, Washington, D.C. · via Wikimedia Commons"
@@ -968,6 +968,34 @@
     return PAINTINGS[((dayNum % n) + n) % n];
   }
   function pickToday() { return paintingForDay(localDayNumber()); }
+
+  // ── Almanac review mode — a private QA pass over the whole catalog ──────
+  // Hidden entry: type "almanac" anywhere (outside a text field). Steps through
+  // every painting with ‹ Prev / Next › + ← → and an "N / total" counter, so the
+  // selections can be eyeballed end-to-end. Deliberately NOT a public browse-all
+  // (the once-a-day scarcity IS the feature) — no visible affordance, and a
+  // review pass does NOT consume the day's greeting.
+  var reviewMode = false, reviewIdx = 0;
+  function reviewPick() {
+    var n = PAINTINGS.length;
+    return PAINTINGS[((reviewIdx % n) + n) % n];
+  }
+  function current() { return reviewMode ? reviewPick() : pickToday(); }
+  function reviewStep(delta) { reviewIdx += delta; fill(); }
+  function syncReviewChrome() {
+    var bar = byId("cplfl-review"); if (!bar) return;
+    bar.style.display = reviewMode ? "flex" : "none";
+    var hide = reviewMode ? "none" : "";
+    var refl = byId("cplfl-reflect-wrap"); if (refl) refl.style.display = hide;
+    var done = byId("cplfl-done"); if (done) done.style.display = hide;
+    var send = byId("cplfl-reflect-send"); if (send) send.style.display = hide;
+    var oo = byId("cplfl-optout-lbl"); if (oo) oo.style.display = hide;
+    if (reviewMode) {
+      var n = PAINTINGS.length, i = ((reviewIdx % n) + n) % n;
+      byId("cplfl-count").textContent = (i + 1) + " / " + n;
+    }
+  }
+  function openReview() { reviewMode = true; reviewIdx = 0; open(); }
   function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 
@@ -993,6 +1021,14 @@
       ".cplfl-art{background:#22221F;text-align:center}" +
       ".cplfl-art img{max-width:100%;max-height:66vh;display:block;margin:0 auto;filter:grayscale(1);transition:filter 1.8s ease .35s}" +
       ".cplfl-overlay.open .cplfl-art img.cplfl-revealed{filter:grayscale(0)}" +
+      // mono (B&W photographs): no colour to reveal, so skip the grayscale→colour
+      // fade entirely — show the print at full fidelity, no no-op animation.
+      ".cplfl-overlay.open .cplfl-art img.cplfl-mono{filter:none;transition:none}" +
+      ".cplfl-review{display:none;align-items:center;justify-content:center;gap:1rem;margin:.1rem 0 .7rem}" +
+      ".cplfl-nav{background:none;border:1.5px solid var(--border-strong,rgba(28,28,26,.30));border-radius:8px;" +
+      "padding:.3rem .8rem;cursor:pointer;font-size:.8rem;font-weight:600;color:var(--text-body,#3A3A36)}" +
+      ".cplfl-nav:hover{background:var(--surface-muted,#ECE9E2)}" +
+      ".cplfl-count{font-size:.82rem;font-weight:700;color:var(--text-strong,#1C1C1A);min-width:5.5rem;text-align:center}" +
       ".cplfl-imgfallback{display:none;padding:3rem 1rem;color:rgba(255,255,255,.88);font-size:.85rem;" +
       "background:linear-gradient(160deg,#8a6d2e 0%,#a8842f 30%,#6e7d52 65%,#43523f 100%)}" +
       ".cplfl-body{padding:1rem 1.3rem 1.2rem}" +
@@ -1057,7 +1093,12 @@
       '<div class="cplfl-byline" id="cplfl-byline"></div>' +
       '<p class="cplfl-blurb" id="cplfl-blurb"></p>' +
       '<p class="cplfl-setting" id="cplfl-setting"></p>' +
-      '<div class="cplfl-reflect">' +
+      '<div class="cplfl-review" id="cplfl-review" style="display:none">' +
+      '<button class="cplfl-nav" id="cplfl-prev" type="button" aria-label="Previous painting">‹ Prev</button>' +
+      '<span class="cplfl-count" id="cplfl-count" aria-live="polite"></span>' +
+      '<button class="cplfl-nav" id="cplfl-next" type="button" aria-label="Next painting">Next ›</button>' +
+      '</div>' +
+      '<div class="cplfl-reflect" id="cplfl-reflect-wrap">' +
       '<label for="cplfl-reflect">A thought for the day <span>(optional)</span></label>' +
       '<textarea id="cplfl-reflect" maxlength="2000" rows="3" placeholder="About the painting, your priorities — anything."></textarea>' +
       '<span class="cplfl-reflect-note">Don’t worry — reflections are anonymous, and we’ll only use them to look for uplifting themes and opportunities for growth and innovation for our colleagues and communities.</span>' +
@@ -1066,7 +1107,7 @@
       '<button class="cplfl-btn" id="cplfl-done" type="button">Begin the day</button>' +
       '<button class="cplfl-btn cplfl-ghost" id="cplfl-reflect-send" type="button">Share reflection</button>' +
       '<button class="cplfl-btn cplfl-ghost" id="cplfl-speak" type="button" aria-pressed="false">🔊 Read aloud</button>' +
-      '<label class="cplfl-optout"><input type="checkbox" id="cplfl-optout"> Don’t greet me with paintings</label>' +
+      '<label class="cplfl-optout" id="cplfl-optout-lbl"><input type="checkbox" id="cplfl-optout"> Don’t greet me with paintings</label>' +
       '<span class="cplfl-reflect-msg" id="cplfl-reflect-msg" role="status"></span>' +
       '</div><div class="cplfl-lic" id="cplfl-lic"></div></div></div>';
     document.body.appendChild(overlay);
@@ -1078,6 +1119,8 @@
       lsSet(KEY_OPTOUT, e.target.checked ? "1" : "0");
       ensureBgArt();   // opting out also lifts the painting off the page
     });
+    byId("cplfl-prev").addEventListener("click", function () { reviewStep(-1); });
+    byId("cplfl-next").addEventListener("click", function () { reviewStep(1); });
     wireReflect();
     wireSpeak();
   }
@@ -1085,7 +1128,7 @@
   function byId(id) { return document.getElementById(id); }
 
   function fill() {
-    var p = pickToday();
+    var p = current();
     byId("cplfl-day").textContent = new Date().toLocaleDateString(undefined,
       { weekday: "long", month: "long", day: "numeric" });
     byId("cplfl-ptitle").textContent = p.title;
@@ -1096,6 +1139,8 @@
     byId("cplfl-optout").checked = lsGet(KEY_OPTOUT) === "1";
     var img = byId("cplfl-img");
     img.alt = p.alt;
+    // mono prints opt out of the grayscale→colour reveal (nothing to reveal).
+    if (p.mono) img.classList.add("cplfl-mono"); else img.classList.remove("cplfl-mono");
     img.style.display = "";
     byId("cplfl-imgfallback").style.display = "none";
     img.onerror = function () {
@@ -1103,6 +1148,7 @@
       byId("cplfl-imgfallback").style.display = "block";
     };
     img.src = p.img;
+    syncReviewChrome();
   }
 
   function open() {
@@ -1125,12 +1171,16 @@
     overlay.classList.remove("open");
     if (keysBound) { document.removeEventListener("keydown", onKeys); keysBound = false; }
     stopSpeaking();
-    lsSet(KEY_SEEN, todayKey());
+    if (!reviewMode) lsSet(KEY_SEEN, todayKey());  // a review pass doesn't consume the daily greeting
+    reviewMode = false;
     if (openerEl && openerEl.focus) openerEl.focus();
   }
 
   function onKeys(e) {
     if (e.key === "Escape") { close(); return; }
+    if (reviewMode && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
+      reviewStep(e.key === "ArrowRight" ? 1 : -1); e.preventDefault(); return;
+    }
     if (e.key !== "Tab") return;
     var items = overlay.querySelectorAll("button, a[href], input");
     var list = Array.prototype.filter.call(items, function (el) {
@@ -1278,6 +1328,21 @@
     }, GREET_DELAY_MS);
   }
 
+  // The hidden entry to review mode: type "almanac" anywhere outside a text
+  // field. No visible button — only someone who knows the word finds it.
+  var almanacBound = false, almanacSeq = "";
+  function bindAlmanacKey() {
+    if (almanacBound) return;
+    almanacBound = true;
+    document.addEventListener("keydown", function (e) {
+      var t = e.target;
+      if (t && (/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || t.isContentEditable)) return;
+      if (!e.key || e.key.length !== 1 || e.altKey || e.ctrlKey || e.metaKey) return;
+      almanacSeq = (almanacSeq + e.key.toLowerCase()).slice(-7);
+      if (almanacSeq === "almanac") { almanacSeq = ""; openReview(); }
+    });
+  }
+
   var inited = false;
   function init() {
     if (inited) return;
@@ -1285,11 +1350,12 @@
     ensureCss();
     ensureBgArt();
     injectChip();
+    bindAlmanacKey();
     maybeGreet();
   }
 
   window.CPL_FIRST_LIGHT = { init: init, open: open, close: close, paintings: PAINTINGS,
-    paintingForDay: paintingForDay, localDayNumber: localDayNumber };
+    paintingForDay: paintingForDay, localDayNumber: localDayNumber, openReview: openReview };
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);

@@ -33,6 +33,15 @@ entries.forEach((e, i) => {
   for (const k of need) if (!e[k] || !String(e[k]).trim()) errors.push(`${where}: missing "${k}".`);
   if (e.alt && String(e.alt).trim().length <= 20) errors.push(`${where}: alt text too short (need > 20 chars for a11y).`);
   if (e.blurb && String(e.blurb).trim().length < 30) errors.push(`${where}: blurb too short (< 30 chars).`);
+  // Quality bar: First Light's signature is the grayscale→colour reveal, which is
+  // a no-op on a black-and-white image. B&W is welcome when it's lovely, but it
+  // MUST be flagged mono:true so the greeting skips the dead fade (see first_light.js
+  // .cplfl-mono). Scan the ALT (a literal description of the image) — not the blurb,
+  // whose prose may say "monochrome" figuratively (e.g. Remington's nocturne).
+  if (!e.mono && /\b(black[- ]and[- ]white|b&w|monochrome|grayscale|greyscale|sepia)\b/i.test(e.alt || "")) {
+    errors.push(`${where}: alt reads as monochrome but mono:true is not set — set mono:true (B&W is fine when it's lovely) so the reveal skips the no-op fade, or choose a colour image.`);
+  }
+  if ("mono" in e && e.mono !== true) errors.push(`${where}: mono must be omitted or exactly true (got ${JSON.stringify(e.mono)}).`);
   const lic = e.lic || ("Public domain · " + (e.museum || "via Wikimedia Commons") + " · via Wikimedia Commons");
   if (!/public domain/i.test(lic)) errors.push(`${where}: lic must say "public domain".`);
   out.push({

@@ -41,6 +41,21 @@ const SRC = fs.readFileSync("first_light.js", "utf8");
     ps.every((p) => p.alt && p.alt.length > 20 && p.blurb && p.setting && p.title && p.artist));
 }
 
+// (h) monochrome reveal-skip — the signature is the grayscale→colour reveal, a
+//     no-op on a B&W image. B&W is welcome when lovely, but every monochrome
+//     print MUST be flagged mono:true (enforced at build in
+//     build_first_light_manifest.mjs) and the player must wire .cplfl-mono so the
+//     dead fade is skipped rather than animating nothing.
+{
+  const ps = boot({}).window.CPL_FIRST_LIGHT.paintings;
+  const monoRe = /\b(black[- ]and[- ]white|b&w|monochrome|grayscale|greyscale|sepia)\b/i;
+  check("every B&W-described painting is flagged mono (reveal-skip)",
+    ps.every((p) => !monoRe.test(p.alt) || p.mono === true));
+  check("manifest still carries lovely B&W (mono) entries", ps.some((p) => p.mono === true));
+  check("mono reveal-skip wired in CSS + fill()",
+    /img\.cplfl-mono\{filter:none/.test(SRC) && SRC.includes('classList.add("cplfl-mono")'));
+}
+
 // (g) rotation — no painting repeats on consecutive days, every painting shows
 //     once before any repeat, and the seed is the viewer's LOCAL calendar day.
 //     (Session 62: the old UTC-day seed ticked at ~5pm in California, drifting a
@@ -159,6 +174,37 @@ const isOpen = (dom) => {
   // gallery sizing shipped
   check("dialog goes gallery-size", SRC.includes("max-width:min(1180px,94vw)"));
   check("painting gets 66vh", SRC.includes("max-height:66vh"));
+
+  // ── almanac review mode: a private, hidden QA pass over the full catalog ──
+  {
+    const rev = boot({});
+    const w = rev.window, d = w.document;
+    const n = w.CPL_FIRST_LIGHT.paintings.length;
+    w.CPL_FIRST_LIGHT.openReview();
+    check("almanac: opens the dialog", isOpen(rev));
+    check("almanac: review bar visible", d.getElementById("cplfl-review").style.display === "flex");
+    check("almanac: reflection hidden during review",
+      d.getElementById("cplfl-reflect-wrap").style.display === "none");
+    check("almanac: counter starts at 1 / N", d.getElementById("cplfl-count").textContent === "1 / " + n);
+    const first = d.getElementById("cplfl-ptitle").textContent;
+    d.getElementById("cplfl-next").click();
+    check("almanac: Next advances the counter", d.getElementById("cplfl-count").textContent === "2 / " + n);
+    check("almanac: Next shows a different painting", d.getElementById("cplfl-ptitle").textContent !== first);
+    d.dispatchEvent(new w.KeyboardEvent("keydown", { key: "ArrowLeft" }));
+    check("almanac: ← steps back to 1 / N", d.getElementById("cplfl-count").textContent === "1 / " + n);
+    d.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape" }));
+    check("almanac: a review pass does NOT consume the daily greeting",
+      rev.window.localStorage.getItem("cplFirstLight.seen.v1") !== new Date().toDateString());
+  }
+
+  // hidden trigger — typing "almanac" outside a text field opens review mode
+  {
+    const k = boot({});
+    const w = k.window, d = w.document;
+    "almanac".split("").forEach((ch) => d.dispatchEvent(new w.KeyboardEvent("keydown", { key: ch })));
+    check("typing 'almanac' opens review mode",
+      isOpen(k) && d.getElementById("cplfl-review").style.display === "flex");
+  }
 
   // ── report ──
   let failed = 0;
