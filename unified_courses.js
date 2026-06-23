@@ -1164,7 +1164,9 @@
     function openSuggestions() {
       if (!session) return;
       var dim = "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;";
-      var boxCss = "background:#fff;max-width:720px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;";
+      // Wider + taller popup (Sam, S70 task 3 — "see more content"): 720→940px,
+      // 92→94% on narrow screens. The candidate list max-height grows in step below.
+      var boxCss = "background:#fff;max-width:940px;width:94%;margin:32px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;";
       var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;";
       var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;";
       Promise.all([loadSuggestions(), fetchDismissals()]).then(function (res) {
@@ -1208,6 +1210,31 @@
         // Stand-Alone folded this cycle) so a confirmed group can't re-offer.
         var mergedAway = function (id) { return (byId[id] && byId[id]._mergedAway) || !!liveMergePending[id]; };
         function liveMembers(g) { return g.members.filter(function (m) { return !mergedAway(m.id); }); }
+        // ── CCR filter carry-over (Sam, S70 task 1) ──────────────────────────
+        // The filters the curator set on the main CCR table (discipline, subject,
+        // source, credit, confidence, audit-triage, blank-only, …) carry into the
+        // worklist: a group surfaces only when ≥1 of its live members satisfies
+        // them, and the in-popup ➕/⌕ searches are constrained the same way. The
+        // CCR free-text search is carried VISIBLY instead — it pre-seeds the
+        // worklist's own search box (below) so it stays editable and doesn't
+        // double-constrain. A checkbox lets the curator drop the carry-over.
+        var applyCcr = true;
+        function ccrFiltersActive() {
+          return !!(state.kind || state.source || state.status || state.disc || state.subj
+            || state.credit || state.conf || state.artic || state.official
+            || state.flagged || state.impactOnly || state.triage
+            || (blanksCb && blanksCb.checked));
+        }
+        // passes() but ignoring the CCR text box (state.q) — the worklist has its
+        // own search; carrying q here too would just hide everything.
+        function passesNoQ(r) { var sq = state.q; state.q = ""; var ok = passes(r); state.q = sq; return ok; }
+        function rowPassesCcr(en) { var r = byId[en[0] != null ? en[0] : en.id]; return r ? passesNoQ(r) : true; }
+        function groupMatchesCcr(g) {
+          if (!applyCcr || !ccrFiltersActive()) return true;
+          var judged = 0, passed = 0;
+          liveMembers(g).forEach(function (m) { var r = byId[m.id]; if (r) { judged++; if (passesNoQ(r)) passed++; } });
+          return judged ? passed > 0 : true;   // can't judge off-payload members → don't hide
+        }
         // Group signature for "Keep as-is" dismissals: the CURRENT live-member
         // ids sorted asc, "|"-joined. Matching is exact-signature: if a later
         // regen changes the group's membership the signature differs and the
@@ -1309,15 +1336,30 @@
         // already covers ad-hoc merging, so this is the "find it in the worklist"
         // path. It filters which groups SURFACE (groupPasses()); never alters a
         // group's membership.
-        var sugQuery = "";
+        // Carry the CCR free-text search into the worklist's own search box —
+        // visible + editable, not silently double-applied (task 1).
+        var sugQuery = (state.q || "").trim().toLowerCase();
         var searchRow = el("div", { style: "margin:-2px 0 10px;" });
-        var sugSearch = el("input", { type: "search", placeholder: "🔍 Filter the worklist by course title or ID…",
+        var sugSearch = el("input", { type: "search", value: state.q || "",
+          placeholder: "🔍 Filter the worklist by course title or ID…",
           style: "width:100%;padding:5px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;font-size:.85rem;" });
         var sugSt; sugSearch.oninput = function () {
           clearTimeout(sugSt); var v = this.value;
           sugSt = setTimeout(function () { sugQuery = v.trim().toLowerCase(); i = 0; renderGroup(); }, 180);
         };
-        searchRow.appendChild(sugSearch); shell.appendChild(searchRow);
+        searchRow.appendChild(sugSearch);
+        // CCR-filter carry-over toggle (task 1): on by default when the curator
+        // arrived with CCR filters set; otherwise a no-op the curator can ignore.
+        var ccrRow = el("label", { style: "display:flex;align-items:center;gap:6px;margin:6px 0 0;font-size:.78rem;color:#64748b;cursor:pointer;" });
+        var ccrCb = el("input", { type: "checkbox" }); ccrCb.checked = applyCcr;
+        ccrCb.onchange = function () { applyCcr = this.checked; i = 0; renderGroup(); };
+        ccrRow.appendChild(ccrCb);
+        ccrRow.appendChild(document.createTextNode(
+          ccrFiltersActive()
+            ? "Match the CCR table filters (discipline, subject, source, credit…) — also constrains the ➕/⌕ searches below"
+            : "Match the CCR table filters (none set right now)"));
+        searchRow.appendChild(ccrRow);
+        shell.appendChild(searchRow);
         var box = el("div", {}); shell.appendChild(box);
         // Drag = mousedown on the bar + document-level move/up, applied as a
         // transform so the overlay's flex centering and scroll keep working.
@@ -1353,6 +1395,7 @@
           var g = groups[idx];
           return liveMembers(g).length >= 2 && !dismissed[groupSig(g)]
             && !(g._kind === "title" && (g.score || 0) < titleFloor)
+            && groupMatchesCcr(g)
             && matchesQuery(g);
         }
 
@@ -1373,9 +1416,11 @@
             box.appendChild(d);
             return;
           }
-          // Count: the existing absolute "N of M" when unfiltered; when a search is
-          // active, show the position among MATCHING groups instead.
-          if (sugQuery) {
+          // Count: the absolute "N of M" when nothing is filtering; when the
+          // search OR the CCR carry-over is narrowing the set, show the position
+          // among MATCHING groups instead (task 1).
+          var filtering = !!sugQuery || (applyCcr && ccrFiltersActive());
+          if (filtering) {
             var passList = []; for (var pj = 0; pj < groups.length; pj++) if (groupPasses(pj)) passList.push(pj);
             headCount.textContent = (passList.indexOf(i) + 1) + " of " + passList.length + " matching";
           } else {
@@ -1498,7 +1543,7 @@
           else note += " None of these is an existing identity, so Confirm MINTS a brand-new unified course named by the Proposed title above.";
           if (mems.length === 2) note += " With only two candidates the choice is just Confirm (fold them into one) or Keep as-is / Skip — leave BOTH checked to merge; don't deselect either.";
           box.appendChild(el("div", { style: "margin:0 0 4px;font-size:.78rem;color:#6b7280;" }, [note]));
-          var list = el("div", { style: "max-height:240px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
+          var list = el("div", { style: "max-height:360px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
           var cbs = [];
           // One candidate row. `gathered` = pulled in via the ➕ keyword search
           // below (Session 58) rather than a native group member — it gets an
@@ -1549,6 +1594,15 @@
               title: "Merge target — the surviving identity. The other checked courses fold INTO this one; it keeps its id and takes the Proposed unified title above (the “common course” slot).",
             }, ["★ merge target"]);
             row.appendChild(tgtBadge);
+            // "Set as target" affordance (Sam, S70 tasks 2 & 4): the surviving
+            // identity is auto-picked by §10 precedence, but the curator may want
+            // a DIFFERENT checked candidate to survive — incl. one with a different
+            // SUBJ (every other member then folds into it and adopts its id/SUBJ).
+            // Shown on the non-target checked rows; clicking pins manualTarget.
+            var mkTgt = el("a", { href: "#", title: "Make this the surviving identity — the other checked courses fold into it and take its id/subject",
+              style: "display:none;font-size:.72rem;color:var(--cobalt);text-decoration:none;white-space:nowrap;" }, ["☆ set as target"]);
+            (function (mm) { mkTgt.onclick = function (e) { e.preventDefault(); manualTarget = mm.id; refreshTarget(); }; })(m);
+            row.appendChild(mkTgt);
             // ⓘ description toggle (task 3, Sam 2026-06-16) — lazy-load this
             // course's catalog description inline so a curator can disambiguate
             // near-duplicate titles without leaving the popup. One descBox per
@@ -1573,7 +1627,7 @@
               };
             })(m, descBox, dTog);
             row.appendChild(dTog);
-            var entry = { cb: cb, m: m, row: row, tgt: tgtBadge };
+            var entry = { cb: cb, m: m, row: row, tgt: tgtBadge, mk: mkTgt };
             if (gathered) {
               var rm = el("a", { href: "#", title: "Remove from this merge",
                 style: "font-size:.82rem;color:#b91c1c;text-decoration:none;white-space:nowrap;font-weight:700;" }, ["✕"]);
@@ -1627,6 +1681,7 @@
               for (var k = 0; k < idx.length && hits < 25; k++) {
                 var en = idx[k];
                 if (have[en[0]]) continue;
+                if (!rowPassesCcr(en)) continue;   // honor the CCR filter carry-over (task 1)
                 if (((en[1] || "").toLowerCase().indexOf(q) >= 0) || ((en[0] || "").toLowerCase().indexOf(q) >= 0)) {
                   hits++;
                   var b = el("button", { type: "button", style: "display:block;width:100%;text-align:left;padding:3px 6px;border:none;background:none;cursor:pointer;font-size:.82rem;" },
@@ -1658,14 +1713,33 @@
           // C-ID the title-signature grouping won't surface). null = use the
           // in-group ★ precedence pick.
           var overrideTarget = null;
+          // Curator-pinned in-group target (Sam, S70 tasks 2 & 4): when set, this
+          // checked candidate survives instead of the §10 auto-pick — so the
+          // curator can fold everything into the course (and SUBJ) they want, not
+          // whichever the precedence rule chose. Cleared if its row is unchecked.
+          var manualTarget = null;
+          // The surviving in-group identity among the checked members: the pinned
+          // one if it's still checked, else the §10 precedence pick.
+          function inGroupTargetOf(checked) {
+            if (manualTarget) {
+              var pinned = checked.filter(function (m) { return m.id === manualTarget; })[0];
+              if (pinned) return pinned;
+            }
+            return targetMemberOf(checked);
+          }
           function refreshTarget() {
             var checked = cbs.filter(function (x) { return x.cb.checked; }).map(function (x) { return x.m; });
-            var inGroupTgt = targetMemberOf(checked);
+            // Drop a stale pin (its row was unchecked) so we don't strand the target.
+            if (manualTarget && !checked.some(function (m) { return m.id === manualTarget; })) manualTarget = null;
+            var inGroupTgt = inGroupTargetOf(checked);
             // An override supersedes the in-group ★, so hide the in-row badges then.
             cbs.forEach(function (x) {
               var isT = !overrideTarget && !!inGroupTgt && x.cb.checked && x.m === inGroupTgt;
               x.tgt.style.display = isT ? "inline-block" : "none";
               x.row.style.background = isT ? "#f0fdf4" : "";
+              // Offer "☆ set as target" on the OTHER checked candidates (only when
+              // a real merge target exists and no off-group override is active).
+              if (x.mk) x.mk.style.display = (!overrideTarget && !!inGroupTgt && x.cb.checked && x.m !== inGroupTgt) ? "inline-block" : "none";
             });
             var hasTgt = overrideTarget || inGroupTgt;
             mintHint.style.display = (!hasTgt && checked.length >= 2) ? "block" : "none";
@@ -1742,11 +1816,11 @@
               return;
             }
             if (picked.length < 2) { alert("Check at least two members to merge."); return; }
-            // Anchored: merge into the existing identity (the ★ row, by §10
-            // precedence CCN > C-ID > M-ID/Unified) — same target the
-            // candidates list highlights. Singleton-only: blank target so
-            // doConsolidate mints a brand-new UC-CUR id.
-            var tgtM = targetMemberOf(picked);
+            // Anchored: merge into the surviving identity — the curator-pinned ★
+            // if set (tasks 2 & 4), else the §10 precedence pick (CCN > C-ID >
+            // M-ID/Unified) — the same target the candidates list highlights.
+            // Singleton-only: blank target so doConsolidate mints a new UC-CUR id.
+            var tgtM = inGroupTargetOf(picked);
             var target = tgtM ? tgtM.id : "";
             var chosen = {};
             picked.forEach(function (m) { chosen[m.id] = [m.id, m.t, m.s, m.k, m.u]; });
@@ -1814,6 +1888,7 @@
               for (var k = 0; k < idx.length && hits < 25; k++) {
                 var en = idx[k];
                 if (inGroup[en[0]]) continue;  // don't offer a row already in this group
+                if (!rowPassesCcr(en)) continue;   // honor the CCR filter carry-over (task 1)
                 if (((en[1] || "").toLowerCase().indexOf(q) >= 0) || ((en[0] || "").toLowerCase().indexOf(q) >= 0)) {
                   hits++;
                   var b = el("button", { type: "button", style: "display:block;width:100%;text-align:left;padding:3px 6px;border:none;background:none;cursor:pointer;font-size:.82rem;" },
