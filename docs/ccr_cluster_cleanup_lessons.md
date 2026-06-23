@@ -1,7 +1,7 @@
 ---
 title: CCR Cluster Cleanup — Lessons & State
 date: 2026-05-30
-last_updated: 2026-06-16  # Session 57
+last_updated: 2026-06-23  # Session 70
 session: 19 (CCR cluster dissolution)
 tags: [ccr, unified-courses, cluster, dissolution, curation-migration, supabase, m-id]
 artifacts:
@@ -1720,3 +1720,53 @@ plus the live-merge durability clarification.
   regen is infeasible (multi-min Python pipeline). The open item is a **Pending-merges
   tracking panel** (visibility + undo), not a regen routine. Full model:
   [`docs/kb-notes/reference-ccr-curation-sync-and-live-merge.md`](kb-notes/reference-ccr-curation-sync-and-live-merge.md).
+
+---
+
+## Session 70 — PaintSky: the Pending-merges panel + the mint→Common SUBJ preview (2026-06-23)
+
+The Session-69 handoff's #1 priority, plus an empty-squash recovery. One PR (**#500**), three
+tested features, all on `main`.
+
+### What shipped (PR #500)
+
+1. **Pending-merges tracking panel.** The `⟳ N edits awaiting daily sync` badge became a
+   click-through **📋 Review merges (N)** panel listing **this session's merges** —
+   each as **target ← absorbed members** — with **per-member Undo** and **per-group Undo**.
+   All client-side off the `kb_curation` overlay (diffed against the dataset's
+   `committed_curation` snapshot); no pipeline change. Background model:
+   [`docs/kb-notes/reference-ccr-curation-sync-and-live-merge.md`](kb-notes/reference-ccr-curation-sync-and-live-merge.md).
+   The live view already *folds* merges on click (`passes()` excludes `_mergedAway`,
+   `replayLiveMerges` restores across reloads) — this adds the missing **visibility + revert**.
+2. **Mint → Common SUBJ preview.** In the ✨ Suggested-merges popup, picking a discipline for a
+   group that will **mint a new identity** (`UC-CUR`/`Z` target, no native id) now previews the
+   Common SUBJ it'll land under — *"will mint under Common SUBJ **PHOT**"* — via a
+   `DISC_COMMON_SUBJ` lookup over `discipline_canonical_subj4.json`. Reinforces the §11
+   "one discipline → one canonical SUBJ4" invariant at the moment of minting.
+3. **Reviewer-gated `DELETE` policy on `kb_curation`** (`is_allowed_reviewer()`, applied to the
+   live DB + committed to `kb/supabase_curation_setup.sql`) so Undo can actually retract the
+   row, not just hide it client-side.
+
+Tests: `tests/uc_pending_merges_panel.test.js`, `tests/uc_worklist_mint_preview.test.js`,
+`tests/uc_common_local_subj_labels.test.js` (the last guards the re-landed #499 label sweep).
+
+### The empty-squash recovery (the real lesson of the session)
+
+**PR #499** (the Local/Common SUBJ vocabulary sweep + the discipline-cardinality KB note +
+its test) had been stacked on the **same branch** as #500. #499 squash-merged first; when
+#500 squash-merged, GitHub reported **"merged"** with a green check but landed an **empty
+commit** for #499's portion — the label sweep, the note, and the test were **never on
+`main`**. Caught only by **verifying `origin/main` actually contained the diff**
+(`git diff --stat origin/main~1 origin/main` + grepping for marker strings), not by trusting
+the merge status. #500 re-landed all of #499's content. Two durable rules, now in
+[`docs/kb-notes/methodology-stacked-pr-empty-squash.md`](kb-notes/methodology-stacked-pr-empty-squash.md):
+**branch fresh per independent PR off `main`** (don't stack), and **verify the artifact after
+every squash-merge** (the receipt is not the outcome).
+
+### State + next
+
+The Pending-merges panel closes the Session-69 #1 carryover. The CCR data lane is unchanged:
+the **unverified-M-ID renumber re-mint** ([`unverified_mid_renumber_scope.md`](unverified_mid_renumber_scope.md))
+remains queued — **build it once the merge wave settles**, as ONE Rule-7 pass, not per-merge.
+The morphological-variant pass (Med Assisting/Assistant) and the title-lane pass-2 dry-run
+stay measure-first, own-PR, Sam's-go-before-apply.

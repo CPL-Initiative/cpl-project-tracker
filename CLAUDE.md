@@ -1806,21 +1806,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > `cpl-news-harvest` Edge Function + `#cpl-news` tab #481; CA-first; full story
 > [`docs/cpl_news_lessons.md`](docs/cpl_news_lessons.md)).
 
-### Session 68 — SkyAlizarin: spotty-cron fixes + the COBI masthead consolidation (2026-06-22)
-
-A live UI+ops session. **Ops (both merged):** the daily refresh was "spotty" — measured
-~25 runs and found GitHub's scheduler **delays** this cron 1.5–4h (not drops), so it
-published mid-morning; pulled it **earlier + a 3rd cron** → the **06:17/09:17/12:17 UTC
-ladder** (#485, Rule 1 + §6 updated). Then found the real miss-cause: a transient Supabase
-TLS blip in `kb/_apply_curation.py` (the one unguarded sync call) aborted the *whole*
-publish → **retry + non-fatal guard** (#486); today re-dispatched + current. **UI (PR #487 —
-built, tested 61 files, ready, HOLDING for Sam's seal upload):** the **COBI masthead → a
-single-row app bar** (seal + COBI`CPL` / tagline · centered **"Where To?"** search · subtle
-**ℹ About** popover + **Manually Refresh COBI**); Mamba retired, gold CPL superscript, COBI
-in seal-navy. Ported **regen-safe** (anchor-parked generator + CSS-from-JS; idempotent,
-−159 blank lines). Method:
-[`docs/kb-notes/methodology-regen-safe-section-rework.md`](docs/kb-notes/methodology-regen-safe-section-rework.md);
-full story: [`docs/cobi_lessons.md`](docs/cobi_lessons.md). (#487 merged.)
+> **Session 68 narrative (SkyAlizarin) archived** → `docs/roadmap_archive.md`
+> (spotty-cron fixes — the 06:17/09:17/12:17 UTC cron ladder #485 + the
+> curation-sync transient-TLS resilience guard #486; the COBI masthead → a
+> single-row app bar #487, ported regen-safe).
 
 ### Session 69 — Stargaze: TMC title-fill + the CCR polish sweep (2026-06-23)
 
@@ -1842,6 +1831,28 @@ Full stories: [`docs/ccr_cluster_cleanup_lessons.md`](docs/ccr_cluster_cleanup_l
 [`docs/tmc_builder_lessons.md`](docs/tmc_builder_lessons.md) (Session 69). **NEXT:
 [`docs/session_70_handoff.md`](docs/session_70_handoff.md)** — the Pending-merges tracking
 panel, then the re-mint build (when merges settle) + the TMC acceptance engine.
+
+### Session 70 — PaintSky: the Pending-merges panel + the mint→Common SUBJ preview (2026-06-23)
+
+A short CCR-curation session (PR #500), built on top of an empty-squash recovery. **Shipped:**
+(1) the **Pending-merges tracking panel** — the `⟳ N edits awaiting daily sync` badge is now a
+**📋 Review merges (N)** click-through listing this session's merges (target ← absorbed
+members) with **per-member and per-group Undo**, all client-side off the `kb_curation`
+overlay (no pipeline change; the live view already folds merges via `passes()` +
+`replayLiveMerges`); (2) a **mint → Common SUBJ preview** in the ✨ Suggested-merges popup —
+picking a discipline for a new (`UC-CUR`/`Z`) mint previews *"will mint under Common SUBJ
+**PHOT**"* via `DISC_COMMON_SUBJ` (`discipline_canonical_subj4.json`); (3) a **reviewer-gated
+`DELETE` policy on `kb_curation`** (`is_allowed_reviewer()`, applied to the live DB) so Undo
+can actually retract a row. **Also re-landed PR #499**, which had **silently squash-merged
+empty** (the Local/Common SUBJ label sweep + its KB note + test) — caught by verifying
+`origin/main` contained the diff, not by trusting the green "merged". New KB note:
+`methodology-stacked-pr-empty-squash.md` (branch fresh per PR; verify the artifact, not the
+status). Three jsdom tests added. Full story:
+[`docs/ccr_cluster_cleanup_lessons.md`](docs/ccr_cluster_cleanup_lessons.md) (Session 70).
+**Bonus flagged for a future session** (Sam): grow First Light with more *Arroyo Seco,
+Pasadena*–style CA plein-air / impressionist landscapes. **NEXT:
+[`docs/session_71_handoff.md`](docs/session_71_handoff.md)** — the unverified-M-ID renumber
+re-mint (when merges settle) + the TMC acceptance engine.
 
 ---
 
