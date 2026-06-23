@@ -1304,6 +1304,20 @@
         closeX.onclick = close;
         head.appendChild(closeX);
         shell.appendChild(head);
+        // #5 (Sam, S69): a search row to jump the worklist to groups whose member
+        // titles/ids match a term (e.g. "digital imag"). The per-row Merge chip
+        // already covers ad-hoc merging, so this is the "find it in the worklist"
+        // path. It filters which groups SURFACE (groupPasses()); never alters a
+        // group's membership.
+        var sugQuery = "";
+        var searchRow = el("div", { style: "margin:-2px 0 10px;" });
+        var sugSearch = el("input", { type: "search", placeholder: "🔍 Filter the worklist by course title or ID…",
+          style: "width:100%;padding:5px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;font-size:.85rem;" });
+        var sugSt; sugSearch.oninput = function () {
+          clearTimeout(sugSt); var v = this.value;
+          sugSt = setTimeout(function () { sugQuery = v.trim().toLowerCase(); i = 0; renderGroup(); }, 180);
+        };
+        searchRow.appendChild(sugSearch); shell.appendChild(searchRow);
         var box = el("div", {}); shell.appendChild(box);
         // Drag = mousedown on the bar + document-level move/up, applied as a
         // transform so the overlay's flex centering and scroll keep working.
@@ -1324,22 +1338,49 @@
           e.preventDefault();
         };
 
+        // #5 worklist filter: a group SURFACES iff it has ≥2 live members, isn't
+        // dismissed, clears the 🏷 looseness floor, AND matches the search term
+        // (proposed title or any member title/id).
+        function matchesQuery(g) {
+          if (!sugQuery) return true;
+          if (bestTitle(g).toLowerCase().indexOf(sugQuery) >= 0) return true;
+          return (g.members || []).some(function (m) {
+            return String(m.t || "").toLowerCase().indexOf(sugQuery) >= 0
+                || String(m.id || "").toLowerCase().indexOf(sugQuery) >= 0;
+          });
+        }
+        function groupPasses(idx) {
+          var g = groups[idx];
+          return liveMembers(g).length >= 2 && !dismissed[groupSig(g)]
+            && !(g._kind === "title" && (g.score || 0) < titleFloor)
+            && matchesQuery(g);
+        }
+
         function renderGroup() {
           box.innerHTML = "";
           // Skip exhausted groups AND persistently-dismissed ones ("Keep
           // as-is" — matched on the current live-member signature) AND 🏷 title-
           // lane groups below the looseness floor (their weakest pair cosine =
           // g.score; default 0.62 = today's behavior, slide down to reveal more).
-          while (i < groups.length &&
-                 (liveMembers(groups[i]).length < 2 || dismissed[groupSig(groups[i])]
-                  || (groups[i]._kind === "title" && (groups[i].score || 0) < titleFloor))) i++;
+          while (i < groups.length && !groupPasses(i)) i++;
           if (i >= groups.length) {
             headCount.textContent = "";
-            box.appendChild(el("p", { style: "color:#6b7280;" }, ["End of the worklist — nice work. New suggestions regenerate on the next daily build."]));
-            var d = el("button", { style: goCss }, ["Done"]); d.onclick = close; box.appendChild(d);
+            box.appendChild(el("p", { style: "color:#6b7280;" }, [sugQuery
+              ? "No suggested merges match “" + sugQuery + "”. Clear the filter to see the rest of the worklist."
+              : "End of the worklist — nice work. New suggestions regenerate on the next daily build."]));
+            var d = el("button", { style: goCss }, [sugQuery ? "Clear filter" : "Done"]);
+            d.onclick = sugQuery ? function () { sugQuery = ""; sugSearch.value = ""; i = 0; renderGroup(); } : close;
+            box.appendChild(d);
             return;
           }
-          headCount.textContent = (i + 1) + " of " + groups.length;
+          // Count: the existing absolute "N of M" when unfiltered; when a search is
+          // active, show the position among MATCHING groups instead.
+          if (sugQuery) {
+            var passList = []; for (var pj = 0; pj < groups.length; pj++) if (groupPasses(pj)) passList.push(pj);
+            headCount.textContent = (passList.indexOf(i) + 1) + " of " + passList.length + " matching";
+          } else {
+            headCount.textContent = (i + 1) + " of " + groups.length;
+          }
           var g = groups[i], mems = liveMembers(g), isSingleton = g._kind === "singleton";
           var isFamily = g._kind === "family";
           var isEvidence = g._kind === "evidence";
