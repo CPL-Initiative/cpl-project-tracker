@@ -233,6 +233,20 @@
       body: JSON.stringify(body)
     });
   }
+  // Delete one curation row (course_id, field) — the primitive behind the
+  // Pending-merges panel's Undo (Session 70). Reviewer-gated by the kb_curation
+  // DELETE RLS policy (kb/supabase_curation_setup.sql); mirrors the existing
+  // reviewer UPDATE trust (a reviewer can already overwrite any row's value).
+  function deleteCuration(courseId, field, sess) {
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation?course_id=eq." + encodeURIComponent(courseId)
+        + "&field=eq." + encodeURIComponent(field), {
+      method: "DELETE",
+      headers: {
+        "apikey": SUPABASE_ANON, "Authorization": "Bearer " + sess.access_token,
+        "Prefer": "return=minimal"
+      }
+    });
+  }
   // All live curated descriptions (course_id -> value) — used to count
   // description edits not yet folded into git for the pending-sync badge.
   function fetchDescriptionOverlay() {
@@ -1498,7 +1512,7 @@
           box.appendChild(discSel);
           // Track explicit curator picks so refreshTarget()'s auto pre-select
           // (below) never clobbers a deliberate choice on a checkbox toggle.
-          discSel.onchange = function () { discSel._userPicked = true; };
+          discSel.onchange = function () { discSel._userPicked = true; refreshTarget(); };
           // Modal discipline across a set of members (member `d` from the
           // generator, falling back to the live row when the member is in the
           // payload) — the suggested pick for a fresh mint (task 4, Sam 2026-06-16).
@@ -1599,7 +1613,7 @@
             // a DIFFERENT checked candidate to survive — incl. one with a different
             // SUBJ (every other member then folds into it and adopts its id/SUBJ).
             // Shown on the non-target checked rows; clicking pins manualTarget.
-            var mkTgt = el("a", { href: "#", title: "Make this the surviving identity — the other checked courses fold into it and take its id/subject",
+            var mkTgt = el("a", { href: "#", title: "Make this the surviving identity — the other checked courses fold into it and take its id / Common SUBJ",
               style: "display:none;font-size:.72rem;color:var(--cobalt);text-decoration:none;white-space:nowrap;" }, ["☆ set as target"]);
             (function (mm) { mkTgt.onclick = function (e) { e.preventDefault(); manualTarget = mm.id; refreshTarget(); }; })(m);
             row.appendChild(mkTgt);
@@ -1743,6 +1757,18 @@
             });
             var hasTgt = overrideTarget || inGroupTgt;
             mintHint.style.display = (!hasTgt && checked.length >= 2) ? "block" : "none";
+            // Live "will mint under …" preview (Sam, S70): a fresh mint's Common
+            // SUBJ is derived from the chosen discipline; show that destination so
+            // the curator sees it before Confirm (the banded number is still
+            // assigned at the next build, so the live id is a UC-CUR placeholder).
+            if (!hasTgt) {
+              var md0 = discSel.value, cs0 = md0 ? DISC_COMMON_SUBJ[md0] : "";
+              mintHint.textContent = "✨ No existing identity checked — Confirm will mint a brand-new unified course"
+                + (md0
+                    ? (cs0 ? " under Common SUBJ " + cs0 : " under a new Common SUBJ for " + md0)
+                    : "; pick a discipline to set its Common SUBJ")
+                + " (its banded course number is assigned at the next build).";
+            }
             // Discipline only applies to a fresh mint; an existing target keeps
             // its own, so SHOW the inherited discipline (read-only) rather than a
             // bare "— choose —", and for a mint PRE-SELECT the modal member
@@ -1932,7 +1958,7 @@
         ? (r.umin + "–" + r.umax + (r.units == null ? "" : " (typical " + r.units + ")"))
         : (r.units == null ? "" : r.units));
       field("TOP code", r.top && topMap[r.top] ? r.top + ": " + topMap[r.top] : r.top);
-      field("Subject(s)", r.subj);
+      field("Local SUBJ", r.subj);
       field("Members", r.members == null ? "" : r.members);
       field("Confidence", r.conf == null ? "" : r.conf.toFixed(2));
       field("Adopted", (r.adopted && r.adopted.length) ? r.adopted.length + " — " + shortNames(r.adopted).join(", ") : "");
@@ -2031,6 +2057,25 @@
       (r.subj || []).forEach(function (s) { s = String(s).trim(); if (s) (DISC_SUBJECTS[r.disc] = DISC_SUBJECTS[r.disc] || {})[s] = 1; });
     });
     Object.keys(DISC_SUBJECTS).forEach(function (d) { DISC_SUBJECTS[d] = Object.keys(DISC_SUBJECTS[d]).sort(); });
+    // Discipline → its modal Common SUBJ among existing M-ID rows (the canonical
+    // shared subject a NEW course in that discipline would mint under, since
+    // Common SUBJ is derived from discipline via discipline_canonical_subj4.json).
+    // Used for the worklist's "will mint under …" preview. Built from the loaded
+    // M-ID rows (their subj4Of IS the Common SUBJ); blank ⇒ no existing M-ID, so
+    // the build assigns a fresh one. (FL/KIN umbrellas resolve to their plurality.)
+    var DISC_COMMON_SUBJ = (function () {
+      var tally = {};
+      rows.forEach(function (r) {
+        if (!r.disc || r.id_system !== "M-ID") return;
+        var s = subj4Of(r); if (!s) return;
+        (tally[r.disc] = tally[r.disc] || {})[s] = (tally[r.disc][s] || 0) + 1;
+      });
+      var out = {};
+      Object.keys(tally).forEach(function (d) {
+        out[d] = Object.keys(tally[d]).sort(function (a, b) { return tally[d][b] - tally[d][a] || (a < b ? -1 : 1); })[0];
+      });
+      return out;
+    })();
     function discOptLabel(d) {
       var subs = DISC_SUBJECTS[d];
       if (!subs || !subs.length) return d;
@@ -2040,7 +2085,7 @@
     fDisc.style.minWidth = "230px";   // #4 a touch wider for the inline subject hint
     // #8 SUBJ filter — list the canonical SUBJ4 (one per row) so it matches the
     // Subject column display (passes() filters on subj4Of, below).
-    var fSubj = sel("uc-subj", "All subjects", uniqSorted(rows.map(subj4Of).filter(Boolean)));
+    var fSubj = sel("uc-subj", "All Common SUBJ", uniqSorted(rows.map(subj4Of).filter(Boolean)));
     fSubj.style.maxWidth = "150px";   // #3 narrow to fit the codes; long optgroup labels truncate in the open list
     // Subject-dropdown optgroups (Session 51 spec, Sam-yes'd): the flat list
     // above renders synchronously; once the canonical-SUBJ4 seed (the same
@@ -2078,7 +2123,7 @@
           });
           var cur = fSubj.value;
           fSubj.innerHTML = "";
-          fSubj.appendChild(el("option", { value: "" }, ["All subjects"]));
+          fSubj.appendChild(el("option", { value: "" }, ["All Common SUBJ"]));
           [["Common subjects ✓", g1], ["Official C-ID & CCN", g2], ["Local-derived (awaiting fold)", g3]]
             .forEach(function (pair) {
               var og = el("optgroup", { label: pair[0] });
@@ -2190,6 +2235,111 @@
     [search, fKind, fSource, fStatus, fDisc, fSubj, fCredit, fConf, fArtic, fOfficial, fTriage, flagged, blanksBtn, verifyAllBtn, suggestBtn, impactBtn, auth, syncBadge, auditStatus, exportBtn]
       .forEach(function (c) { toolbar.appendChild(c); });
 
+    // ---- Pending-merges tracking panel (Session 70) -------------------------
+    // The live view already folds merges on click and the daily build
+    // materializes them — but the curator had no running list of "what did I
+    // merge this session, and can I undo one before it syncs?" This panel reads
+    // liveMergePending (this session's confirmed merges + any replayed from
+    // Supabase that aren't in git yet), grouped target ← absorbed members, with
+    // per-member and per-group Undo. All client-side off kb_curation.
+    function liveMergeGroups() {
+      var g = {};
+      Object.keys(liveMergePending).forEach(function (m) {
+        var t = liveMergePending[m]; (g[t] = g[t] || []).push(m);
+      });
+      return g;
+    }
+    // Undo: delete the members' merge_into rows from Supabase, un-hide them
+    // locally, and recompute/clean the target. Best-effort local reversal —
+    // the authoritative aggregates recompute on the next daily build; the
+    // Supabase delete (so the merge never syncs) is exact.
+    function undoMergeGroup(target, memberIds, onDone) {
+      ensureFresh().then(function (sess) {
+        if (!sess) { signOut(); session = null; renderAuth(); render(); alert("Sign-in expired — please sign in again."); return; }
+        var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
+        Promise.all(memberIds.map(function (m) { return deleteCuration(m, "merge_into", sess); }))
+          .then(function (resps) {
+            var bad = resps.filter(function (r) { return !r.ok; });
+            if (bad.length) { alert("Undo failed (status " + bad[0].status + "). Are you an allowed reviewer, and is the kb_curation DELETE policy enabled?"); return; }
+            memberIds.forEach(function (m) { delete liveMergePending[m]; if (byId[m]) byId[m]._mergedAway = false; });
+            var stillMerged = Object.keys(liveMergePending).filter(function (id) { return liveMergePending[id] === target; });
+            var trow = byId[target];
+            var sessionMint = /^UC-CUR-/.test(target) || /\sZ\d{4}\b/.test(target);
+            if (trow) {
+              if (sessionMint && !stillMerged.length) {
+                trow._mergedAway = true;   // a course minted this session, now emptied → remove it
+                deleteCuration(target, "unified_title", sess);
+                deleteCuration(target, "discipline", sess);
+                deleteCuration(target, "merge_note", sess);
+              } else {
+                trow.members = Math.max((trow.members || 1) - memberIds.length, sessionMint ? 0 : 1);
+                if (!stillMerged.length && !sessionMint) trow.mt = 0;
+              }
+            }
+            if (onDone) onDone();
+            render();
+          })
+          .catch(function (e) { alert("Could not undo: " + ((e && e.message) || "network error")); });
+      });
+    }
+    function openPendingMerges() {
+      var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
+      function titleOf(id) { var r = byId[id]; return (r && r.title) ? r.title : id; }
+      var overlay = el("div", { style: "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;" });
+      var box = el("div", { style: "background:#fff;max-width:760px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
+      overlay.appendChild(box);
+      function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
+      overlay.onclick = function (e) { if (e.target === overlay) close(); };
+      function rebuild() {
+        box.innerHTML = "";
+        var head = el("div", { style: "display:flex;align-items:center;gap:8px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;border-radius:10px 10px 0 0;background:#f8fafc;" });
+        head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;" }, ["📋 Pending merges"]));
+        head.appendChild(el("span", { style: "flex:1;" }, []));
+        var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close",
+          style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["✕"]);
+        closeX.onclick = close; head.appendChild(closeX);
+        box.appendChild(head);
+        var g = liveMergeGroups(), ts = Object.keys(g).sort();
+        var total = Object.keys(liveMergePending).length;
+        box.appendChild(el("p", { style: "margin:0 0 12px;color:#6b7280;" }, [ts.length
+          ? (total + " course" + (total === 1 ? "" : "s") + " merged into " + ts.length + " identit" + (ts.length === 1 ? "y" : "ies") + ", not yet folded into git. Undo any before the daily build syncs them — afterward, re-split is a re-mint."
+             + (session ? "" : " (Sign in to undo.)"))
+          : "No pending merges right now. Merges you confirm appear here until the daily build folds them in."]));
+        ts.forEach(function (t) {
+          var members = g[t];
+          var card = el("div", { style: "border:1px solid #e5e7eb;border-radius:8px;padding:9px 11px;margin:0 0 9px;" });
+          var hd = el("div", { style: "display:flex;align-items:center;gap:8px;margin:0 0 6px;" });
+          hd.appendChild(el("span", { style: "flex:1;font-weight:600;color:var(--text-strong);" },
+            ["★ " + titleOf(t) + "  ",
+             el("span", { style: "font-weight:400;font-family:monospace;font-size:.78rem;color:#64748b;" }, ["[" + t + "]"])]));
+          if (session) {
+            var undoAll = el("button", { style: "padding:4px 10px;border:1px solid #fecaca;border-radius:6px;background:#fef2f2;color:#b91c1c;cursor:pointer;font-size:.8rem;font-weight:600;white-space:nowrap;" },
+              ["↶ Undo all (" + members.length + ")"]);
+            undoAll.onclick = function () { undoAll.disabled = true; undoMergeGroup(t, members.slice(), rebuild); };
+            hd.appendChild(undoAll);
+          }
+          card.appendChild(hd);
+          members.slice().sort().forEach(function (m) {
+            var row = el("div", { style: "display:flex;align-items:center;gap:8px;padding:2px 0 2px 10px;border-top:1px solid #f1f5f9;" });
+            row.appendChild(el("span", { style: "flex:1;" },
+              ["↳ " + titleOf(m) + "  ",
+               el("span", { style: "font-family:monospace;font-size:.76rem;color:#94a3b8;" }, ["[" + m + "]"])]));
+            if (session) {
+              var u = el("a", { href: "#", title: "Undo this one merge", style: "color:#b91c1c;text-decoration:none;font-weight:700;font-size:.82rem;white-space:nowrap;" }, ["✕ undo"]);
+              u.onclick = function (e) { e.preventDefault(); undoMergeGroup(t, [m], rebuild); };
+              row.appendChild(u);
+            }
+            card.appendChild(row);
+          });
+          box.appendChild(card);
+        });
+        var done = el("button", { style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;margin-top:4px;" }, ["Done"]);
+        done.onclick = close; box.appendChild(done);
+      }
+      rebuild();
+      document.body.appendChild(overlay);
+    }
+
     // Curation edits hit Supabase instantly but are only folded into git
     // (kb/coci_curation.json) by the daily workflow. Count edits in the live
     // overlay whose discipline differs from what was committed at build time.
@@ -2223,6 +2373,16 @@
         title: "Sync runs automatically once a day. Click to open the workflow and run it now (requires GitHub repo access)."
       }, ["Sync now ↗"]);
       syncBadge.appendChild(a);
+      // Pending-merges review/undo entry point (Session 70): a click-to-review
+      // list of this session's merges, surfaced only when there are live merges.
+      var nMerges = Object.keys(liveMergePending).length;
+      if (nMerges) {
+        var rev = el("a", { href: "#", class: "uc-auth-link",
+          title: "Review and undo this session's merges before the daily build folds them in" },
+          ["📋 Review merges (" + nMerges + ")"]);
+        rev.onclick = function (e) { e.preventDefault(); openPendingMerges(); };
+        syncBadge.appendChild(rev);
+      }
     }
 
     function renderAuth() {
@@ -2698,7 +2858,7 @@
 
     var COLS = [
       { key: "kind", label: "Kind" }, { key: "id", label: "ID" }, { key: "title", label: "Title" },
-      { key: "subj", label: "Subject(s)" },   // just left of Discipline for clarity (Sam 2026-06-10)
+      { key: "subj", label: "Common SUBJ" },   // canonical shared subject; local per-college codes on hover (Sam 2026-06-10/23)
       { key: "disc", label: "Discipline" }, { key: "credit", label: "Credit" },
       { key: "units", label: "Units" }, { key: "top", label: "TOP" },
       { key: "members", label: "Members" }, { key: "adopted", label: "Adopted" },
@@ -2999,7 +3159,7 @@
       if (state.disc && DISC_SUBJECTS[state.disc] && DISC_SUBJECTS[state.disc].length) {
         var legend = el("span", { class: "uc-disc-legend",
           style: "display:block;margin-top:5px;font-size:.85em;color:var(--text-muted,#6b7280);" }, []);
-        legend.appendChild(document.createTextNode("Subjects seen in “" + state.disc + "”: "));
+        legend.appendChild(document.createTextNode("Local SUBJ seen in “" + state.disc + "”: "));
         DISC_SUBJECTS[state.disc].forEach(function (s) {
           legend.appendChild(el("span", { class: "uc-disc-legend-chip",
             style: "display:inline-block;margin:0 3px 2px 0;padding:0 6px;border:1px solid var(--line,#cbd5e1);border-radius:10px;background:var(--surface-2,#f1f5f9);" }, [s]));
@@ -3062,12 +3222,12 @@
         // bare <td> is ignored under table-layout:auto) so all columns fit without
         // horizontal scroll; full title on the cell hover + ⓘ modal.
         tr.appendChild(el("td", { title: r.title || "" }, [el("span", { class: "uc-trunc" }, [r.title || ""])]));
-        // Subject(s) sits just left of Discipline (Sam 2026-06-10) — canonical
-        // SUBJ4 shown; raw per-college local code(s) stay on the hover.
+        // Common SUBJ sits just left of Discipline (Sam 2026-06-10) — the canonical
+        // shared subject is shown; raw per-college Local SUBJ code(s) stay on hover.
         var subjTitle = (r.title_variants && r.title_variants.length)
           ? r.title_variants.join("\n") : (r.title || "");
         var localCodes = (r.subj || []).join(", ");
-        tr.appendChild(el("td", { title: "Local member subject code(s): " + (localCodes || "—") + (subjTitle ? "\n" + subjTitle : "") }, [subj4Of(r)]));
+        tr.appendChild(el("td", { title: "Local SUBJ code(s): " + (localCodes || "—") + (subjTitle ? "\n" + subjTitle : "") }, [subj4Of(r)]));
         tr.appendChild(disciplineCell(r));
         tr.appendChild(el("td", {}, [r.credit || "—"]));
         // Units: show a RANGE (lo–hi) when member colleges disagree (umin/umax baked by
