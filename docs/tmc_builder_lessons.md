@@ -465,3 +465,30 @@ the next Pages deploy):
   framing for established); (c) the `12/6` select-N counter — **leave as-is until Sam
   checks it** (pre-existing — auto-match + title-fill populate *every* matchable slot,
   not just the `select N`; deselect extras).
+
+## Session 69 (Bruh Stargaze, 2026-06-23) — title-fill + the COR-upload reframe
+
+Title-fill recovery (#489/#490) is documented above. Net: a college that holds **or is
+building** an ADT gets blank C-ID slots pre-filled from title matches (`≈ verify`), and
+the directory's Status column folded into the ADT column (`○ Potential`…).
+
+**The strategic reframe — TMC tab as ADT intake (#491, scope-only).** The CO keeps no
+queryable store of completed ADT applications, and **contact hours** are absent from every
+structured source we hold (COCI / PCF / C-ID descriptors — they live on the per-course
+**COR**). So rather than reverse-engineer hours forever, make the tab the **intake that
+mints the structured data**: every in-tool submission is born structured (the
+`tmc_submissions` alignment jsonb) **plus a COR attached per course** for the hours. That
+needs a **document-upload layer** — scoped in
+[`docs/kb-notes/tmc-adt-document-upload-scope.md`](kb-notes/tmc-adt-document-upload-scope.md):
+Supabase Storage **private** bucket + a thin `tmc_submission_docs` index, **submitting
+college uploads** (Sam's call, anon), reviewer 📄 COR link; two feeds (backfilled CO-queue
+PDFs + forward uploads) on one model; phasing (capture+surface → parse-for-hours, which is
+format-dependent). Schema of record: `tmc/supabase_tmc_submission_docs.sql` (proposed, not
+applied). Plus the honest **COCI-embed/SSO** analysis: an embed *can't sniff* COCI's
+session (cross-origin) — it's a CCC-Tech-Center partnership via OIDC/LTI/signed-token, so
+build standalone-with-our-auth now behind a **swappable identity shim**, then pitch the
+embed as the graduation step with the prototype in hand.
+
+**Still queued:** the Phase-2 **acceptance engine** (Sam: "Go for A") — per-slot verdicts
+from `slot.flexible` + `t.flexibility` (#479) + the structural checklist + the bulk-PCF
+Playwright extractor. Hours stay a manual flag until the COR-upload layer lands.
