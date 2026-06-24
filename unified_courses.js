@@ -712,6 +712,26 @@
       var k = courseBands(m && (m.t || m.title));
       return !!b[k.level] || (k.lab && b.lab) || (k.wkexp && b.wkexp);
     }
+    // ── Shared merge helpers (hoisted to init scope, Session 71) ──────────────
+    // Used by BOTH the ✨ worklist and the shared merge-editor (buildMergeEditor)
+    // so the per-row ⚇ dialog can reuse them in PR-2 without a second copy.
+    // Credit-status noise like "(NC)" / "(Noncredit)" is redundant with the
+    // Credit field, so it must never become the minted common-course name
+    // (Sam, 2026-06-16). Meaningful parentheticals (BIM, QuickBooks, Tableau, …)
+    // are left intact — only the noncredit markers are stripped.
+    function cleanTitle(t) {
+      return String(t || "")
+        .replace(/\s*\(\s*(?:non[\s\-]?credit|n\s*\/?\s*c)\s*\)/ig, "")
+        .replace(/\s{2,}/g, " ").trim();
+    }
+    // Merge-target precedence: CCN > C-ID > M-ID > Unified (§10). A group of only
+    // Stand-Alones has no target → Confirm mints a new unified course.
+    var TPRI = { "CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3 };
+    function targetMemberOf(list) {
+      var mains = list.filter(function (m) { return m.k !== "Stand-Alone"; })
+        .slice().sort(function (a, b) { return (TPRI[a.k] != null ? TPRI[a.k] : 9) - (TPRI[b.k] != null ? TPRI[b.k] : 9); });
+      return mains.length ? mains[0] : null;
+    }
     // Verified = human-verified (curated, reviewed, or the curated anchor);
     // Generated = machine-produced, not yet verified.
     function statusOf(r) {
@@ -1385,24 +1405,8 @@
         function groupSig(g) {
           return liveMembers(g).map(function (m) { return m.id; }).sort().join("|");
         }
-        // Credit-status noise like "(NC)" / "(Noncredit)" is redundant with the
-        // Credit field, so it must never become the minted common-course name
-        // (Sam, 2026-06-16). Meaningful parentheticals (BIM, QuickBooks, Tableau,
-        // …) are left intact — only the noncredit markers are stripped.
-        function cleanTitle(t) {
-          return String(t || "")
-            .replace(/\s*\(\s*(?:non[\s\-]?credit|n\s*\/?\s*c)\s*\)/ig, "")
-            .replace(/\s{2,}/g, " ").trim();
-        }
-        // Merge-target precedence: CCN > C-ID > M-ID > Unified (§10). A group of
-        // only Stand-Alones has no target → Confirm mints a new unified course.
-        // Hoisted to the worklist scope so bestTitle() + renderGroup() share it.
-        var TPRI = { "CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3 };
-        function targetMemberOf(list) {
-          var mains = list.filter(function (m) { return m.k !== "Stand-Alone"; })
-            .slice().sort(function (a, b) { return (TPRI[a.k] != null ? TPRI[a.k] : 9) - (TPRI[b.k] != null ? TPRI[b.k] : 9); });
-          return mains.length ? mains[0] : null;
-        }
+        // cleanTitle() + targetMemberOf()/TPRI are hoisted to init scope (Session
+        // 71) so the shared merge-editor reaches them — see near courseBands().
         // Proposed unified-title default: the surviving ★ identity's CLEANED name
         // (it keeps its id and the "common course" slot). For an all-singleton
         // mint there's no target, so take the MODAL cleaned title — "Voice" wins
@@ -1588,120 +1592,34 @@
             && matchesQuery(g);
         }
 
-        function renderGroup() {
-          box.innerHTML = "";
-          // Skip exhausted groups AND persistently-dismissed ones ("Keep
-          // as-is" — matched on the current live-member signature) AND 🏷 title-
-          // lane groups below the looseness floor (their weakest pair cosine =
-          // g.score; default 0.62 = today's behavior, slide down to reveal more).
-          while (i < groups.length && !groupPasses(i)) i++;
-          if (i >= groups.length) {
-            headCount.textContent = "";
-            box.appendChild(el("p", { style: "color:#6b7280;" }, [sugQuery
-              ? "No suggested merges match “" + sugQuery + "”. Clear the filter to see the rest of the worklist."
-              : "End of the worklist — nice work. New suggestions regenerate on the next daily build."]));
-            var d = el("button", { style: goCss }, [sugQuery ? "Clear filter" : "Done"]);
-            d.onclick = sugQuery ? function () { sugQuery = ""; sugSearch.value = ""; i = 0; renderGroup(); } : close;
-            box.appendChild(d);
-            return;
-          }
-          // Count: the absolute "N of M" when nothing is filtering; when the
-          // search OR the CCR carry-over is narrowing the set, show the position
-          // among MATCHING groups instead (task 1).
-          var filtering = !!sugQuery || (applyCcr && ccrFiltersActive())
-            || !bandsAllOn(bands) || cohesionFloor !== DEFAULT_FLOOR;
-          if (filtering) {
-            var passList = []; for (var pj = 0; pj < groups.length; pj++) if (groupPasses(pj)) passList.push(pj);
-            headCount.textContent = (passList.indexOf(i) + 1) + " of " + passList.length + " matching";
-          } else {
-            headCount.textContent = (i + 1) + " of " + groups.length;
-          }
-          var g = groups[i], mems = liveMembers(g), isSingleton = g._kind === "singleton";
-          var isFamily = g._kind === "family";
-          var isEvidence = g._kind === "evidence";
-          var isDesc = g._kind === "desc";
-          var isTitle = g._kind === "title";
-          // Section badge so the curator knows whether this merges into an
-          // existing identity or mints a brand-new unified course.
-          var badge = isSingleton
-            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#ede9fe;color:#5b21b6;margin:0 0 8px;" },
-                ["✨ New unified course · stand-alone matches (" + (i - nNonSingleton + 1) + " of " + (groups.length - nNonSingleton) + ")"])
-            : isFamily
-            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#dbeafe;color:#1e40af;margin:0 0 8px;" },
-                ["⛓ Co-articulation family · merge near-duplicate identities"])
-            : isEvidence
-            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#dcfce7;color:#166534;margin:0 0 8px;" },
-                ["🧾 COCI evidence · fold into " + (g.sig || "the official id")])
-            : isDesc
-            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#fce7f3;color:#9d174d;margin:0 0 8px;" },
-                ["📝 Description evidence · same catalog description"])
-            : isTitle
-            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#fef9c3;color:#854d0e;margin:0 0 8px;" },
-                ["🏷 Title evidence · near-duplicate course titles"])
-            : el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#e0f2fe;color:#075985;margin:0 0 8px;" },
-                ["⛓ Merge into existing identity"]);
-          box.appendChild(badge);
-          box.appendChild(el("p", { style: "margin:0 0 10px;color:#6b7280;" },
-            [isSingleton
-              ? "Single-college courses that share a title but match no existing identity (confidence score " + g.score + "). Check the ones that are the same course, then Confirm to create a NEW unified course from them — or Skip."
-              : isFamily
-              ? "These identities co-articulate to “" + (g.credential || "the same credential") + "” and share a course family the level-safe worklist skips (level/format title drift — e.g. “Academy” / “Basic” / “I” / “Training”). Confirming MERGES the checked members into one identity. Uncheck any genuinely different course, then Confirm — or Skip."
-              : isEvidence
-              ? "Member college courses of these identities carried " + (g.sig || "an official id") + " as their official C-ID/CCN in COCI — the 🧾 witness counts on each row. Confirming MERGES the checked members into the official id. Rows whose own colleges DISAGREE on the target start unchecked; check one only if you're sure. Nothing is applied until you confirm."
-              : isDesc
-              ? "These identities carry NO official identity evidence anywhere, but their catalog descriptions match across colleges (similarity " + (g.score != null ? g.score : "?") + (g.cos_max != null && g.cos_max !== g.score ? "–" + g.cos_max : "") + (g.terms && g.terms.length ? "; shared terms: " + g.terms.join(", ") : "") + "). Different course levels, genders, and sports were screened out, but read the titles — uncheck any genuinely different course, then Confirm. Nothing is applied until you confirm."
-              : isTitle
-              ? "These courses carry NO official identity evidence, but their TITLES are near-duplicates (similarity " + (g.score != null ? g.score : "?") + (g.cos_max != null && g.cos_max !== g.score ? "–" + g.cos_max : "") + (g.terms && g.terms.length ? "; shared: " + g.terms.join(", ") : "") + "). Levels, years, refresher/instructor variants, genders, and sports were screened out. Unit loads may differ" + (g.spread ? " (spread here: " + g.spread + "u)" : "") + " — externally standardized curricula (BAR smog, POST modules) are packaged differently per college, so units are shown, not gated. Read each title; uncheck any genuinely different course, then Confirm. Nothing is applied until you confirm."
-              : "Same-title candidates (confidence score " + g.score + "). The ★ target is pre-checked; check each course to fold into it, then Confirm — or Skip. Nothing is applied until you confirm."]));
-          if ((isSingleton || isDesc || isTitle) && g.same_college) {
-            box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
-              [isDesc
-                ? "⚠ Every pair here shares a member college — same-college near-identical descriptions are often course variants (levels, credit/noncredit, formats), not duplicates. Review carefully before confirming."
-                : isTitle
-                ? "⚠ All members resolve to ONE college — same-college near-duplicate titles are often catalog editions or course variants (sessions, formats), not duplicates. Review carefully before confirming."
-                : "⚠ All members appear to be from the same college — these are often course variants (levels, credit/noncredit, language versions), not cross-college duplicates. Review carefully before confirming."]));
-          }
-          // Cross-discipline flag (Session 70). The morphological fold can fuse
-          // courses that share a stemmed word across DIFFERENT disciplines — most
-          // are the same course tagged inconsistently (fine to merge), but a few
-          // are homonyms (music vs office "keyboard", ASL vs comm "interpret").
-          // Surface, don't withhold (suggestions-only; the curator confirms) — but
-          // flag it so the homonyms jump out for review.
-          (function () {
-            var ds = {};
-            mems.forEach(function (m) { var d = m.d || (byId[m.id] && byId[m.id].disc) || ""; if (d) ds[d] = 1; });
-            var dl = Object.keys(ds);
-            if (dl.length >= 2) {
-              box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
-                ["⚠ Spans " + dl.length + " disciplines: " + dl.join(" · ")
-                 + " — usually the same course tagged inconsistently (fine to merge), but check it isn't a shared word that means different things across fields (e.g. music vs office “keyboard”). Uncheck any that don't belong."]));
-            }
-          })();
-          // Kinship-gate banner (Session 41): score 0 = NO witness in this group
-          // passed the title check — the receipts date from a pre-split chimera
-          // family (e.g. the witness is a transmissions course vouching for an
-          // engine-performance remnant). Almost always Skip material.
-          if (isEvidence && g.tm && !g.score) {
-            box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
-              ["⚠ Every witness in this group is title-mismatched — the COCI claims came from courses that don't resemble these rows (stale evidence from a dissolved over-merge family). These are usually NOT the same course; Skip unless you recognize one."]));
-          }
+        // ── Shared merge-editor (Session 71, PR-1) ───────────────
+        // ONE editor body for "pick a survivor + members → onConfirm", embedded
+        // by the ✨ worklist now and (PR-2) the per-row ⚇ dialog. Appends its
+        // nodes directly to `container` so the DOM stays byte-identical to the
+        // pre-extraction worklist (the uc_worklist_* suite is the parity guard).
+        // Scope: docs/ccr_merge_workspace_epic_scope.md.
+        // opts: { members, isSingleton, isEvidence, preTitle, extraActions:[node],
+        //         onConfirm(result) } · result = { chosen, title, disc, target, note }
+        function buildMergeEditor(container, opts) {
+          var members = opts.members || [];
+          var isSingleton = !!opts.isSingleton, isEvidence = !!opts.isEvidence;
           // PROPOSAL framing (Sam, 2026-06-12): the pre-filled title used to
           // read like "these courses already belong to this common course."
           // They don't — it's only the name the merged course WOULD take.
-          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:6px 0 2px;" },
+          container.appendChild(el("label", { style: "display:block;font-weight:600;margin:6px 0 2px;" },
             ["Proposed unified title ",
              el("span", { style: "font-weight:400;font-size:.76rem;color:#94a3b8;" },
                [isEvidence ? "— applied only if you Confirm (pre-filled with the official course title)"
                            : "— applied only if you Confirm (pre-filled from the longest member title; edit freely)"])]));
-          var titleIn = el("input", { type: "text", value: (isEvidence && g.official) || bestTitle(g), style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
-          box.appendChild(titleIn);
+          var titleIn = el("input", { type: "text", value: opts.preTitle, style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
+          container.appendChild(titleIn);
           var titleDefault = titleIn.value;   // restored when an override is undone
-          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" }, ["Discipline"]));
+          container.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" }, ["Discipline"]));
           var discSel = el("select", { class: "uc-filter", style: "min-width:280px;" });
           discSel.appendChild(el("option", { value: "" }, ["— choose —"]));
           var mqSet = {};
           mqList.forEach(function (d) { mqSet[d] = 1; discSel.appendChild(el("option", { value: d }, [d])); });
-          box.appendChild(discSel);
+          container.appendChild(discSel);
           // Track explicit curator picks so refreshTarget()'s auto pre-select
           // (below) never clobbers a deliberate choice on a checkbox toggle.
           discSel.onchange = function () { discSel._userPicked = true; refreshTarget(); };
@@ -1723,34 +1641,34 @@
           // merge into an existing ★ identity it's inherited from that identity
           // and ignored here — so disable it then, rather than silently drop it.
           var discNote = el("div", { style: "margin:3px 0 0;font-size:.76rem;color:#94a3b8;" }, []);
-          box.appendChild(discNote);
+          container.appendChild(discNote);
           // Completion note (Session 58, Sam 2026-06-16, task 3): an optional
           // curator annotation written onto the surviving target — for a course
           // minted from segmented A/B / 1-2 members, e.g. "Complete both parts
           // for full credit." Persists as a ⚑ chip + a Completion-note line in
           // the row's ⓘ modal. Skipped on a firewalled official C-ID/CCN target.
-          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" },
+          container.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" },
             ["Completion note ",
              el("span", { style: "font-weight:400;font-size:.76rem;color:#94a3b8;" },
                ["— optional; written on the merged course (e.g. “Complete both parts 1 & 2 for full credit”)"])]));
           var noteIn = el("input", { type: "text", placeholder: "e.g. Both segments (1 & 2) must be completed for full credit — optional",
             style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
-          box.appendChild(noteIn);
-          box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" },
-            ["Candidates (" + mems.length + ") ",
+          container.appendChild(noteIn);
+          container.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" },
+            ["Candidates (" + members.length + ") ",
              el("span", { style: "font-weight:400;font-size:.76rem;color:#94a3b8;" },
                ["— each row is currently its own separate identity"])]));
           // The MERGE TARGET (surviving identity the others fold into, taking the
           // Proposed title's "common course" slot) is picked by targetMemberOf()
-          // — hoisted to the worklist scope above so bestTitle() shares it.
-          var defTgt = targetMemberOf(mems);
+          // — targetMemberOf() is the §10 precedence pick (hoisted to init scope).
+          var defTgt = targetMemberOf(members);
           var hasTarget = !!defTgt;
           var defTgtId = defTgt ? defTgt.id : null;   // the only member that starts checked
           var note = "These courses do NOT yet share an identity — the id on each row is that course's own, today. Check the courses to fold in, then ✓ Confirm; Keep as-is / Skip leave every id untouched.";
           if (hasTarget) note += " The ★ row is the SURVIVING identity (pre-checked) — it keeps its id and takes the Proposed title above (the “common course” slot); check each other row you want folded into it.";
           else note += " None of these is an existing identity, so check the ones to combine and Confirm MINTS a brand-new unified course named by the Proposed title above.";
-          if (mems.length === 2) note += " With only two candidates the choice is just Confirm (fold them into one) or Keep as-is / Skip — leave BOTH checked to merge; don't deselect either.";
-          box.appendChild(el("div", { style: "margin:0 0 4px;font-size:.78rem;color:#6b7280;" }, [note]));
+          if (members.length === 2) note += " With only two candidates the choice is just Confirm (fold them into one) or Keep as-is / Skip — leave BOTH checked to merge; don't deselect either.";
+          container.appendChild(el("div", { style: "margin:0 0 4px;font-size:.78rem;color:#6b7280;" }, [note]));
           var list = el("div", { style: "max-height:360px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
           var cbs = [];
           // One candidate row. `gathered` = pulled in via the ➕ keyword search
@@ -1865,8 +1783,8 @@
             list.appendChild(descBox);
             return entry;
           }
-          mems.forEach(function (m) { addCandidateRow(m, false); });
-          box.appendChild(list);
+          members.forEach(function (m) { addCandidateRow(m, false); });
+          container.appendChild(list);
           // ── ➕ Add more courses to this merge by keyword (Session 58, Sam
           // 2026-06-16) ── The synonym map + signature can't surface every
           // related course (e.g. the broad ESL family — Vocational / Academic /
@@ -1885,7 +1803,7 @@
           var gatherRes = el("div", { style: "max-height:170px;overflow:auto;margin-top:4px;" });
           gatherPanel.appendChild(gatherSearch); gatherPanel.appendChild(gatherRes);
           gatherWrap.appendChild(gatherToggle); gatherWrap.appendChild(gatherPanel);
-          box.appendChild(gatherWrap);
+          container.appendChild(gatherWrap);
           gatherToggle.onclick = function (e) {
             e.preventDefault();
             var open = gatherPanel.style.display === "none";
@@ -1924,7 +1842,7 @@
           // unified course. Surfaced live so a curator isn't surprised.
           var mintHint = el("div", { style: "display:none;margin:6px 0 0;font-size:.78rem;color:#5b21b6;" },
             ["✨ No existing identity is checked — Confirm will mint a brand-new unified course."]);
-          box.appendChild(mintHint);
+          container.appendChild(mintHint);
           // Mark the merge target (and a mint-new hint) from the live checked
           // set; re-run whenever a checkbox toggles. Reference-equality (x.m ===
           // tgt), not id, so duplicate-id rows don't both light up.
@@ -2002,32 +1920,6 @@
           }
           refreshTarget();
           var actions = el("div", { style: "margin-top:14px;display:flex;gap:10px;justify-content:flex-end;" });
-          var skip = el("button", { style: skipCss }, ["Skip →"]);
-          skip.onclick = function () { i++; renderGroup(); };
-          // "Keep as-is" = a PERSISTENT dismissal (Skip only advances for the
-          // session). One kb_curation row: course_id = the group's first live
-          // member (sorted asc — deterministic), field merge_dismissed, value =
-          // the live-member signature. The worklist skips a group whose CURRENT
-          // signature matches; a regen that changes the membership changes the
-          // signature, so the group re-offers then — by design.
-          var keep = el("button", { style: skipCss,
-            title: "These stay separate — don't suggest this group again (unless its membership changes)" },
-            ["Keep as-is"]);
-          keep.onclick = function () {
-            var sig = groupSig(g);
-            if (!sig) { i++; renderGroup(); return; }
-            keep.disabled = true;
-            ensureFresh().then(function (sess) {
-              if (!sess) { signOut(); session = null; renderAuth(); render(); alert("Sign-in expired — please sign in again."); return; }
-              saveCurations([{ course_id: sig.split("|")[0], field: "merge_dismissed", value: sig }], sess)
-                .then(function (resp) {
-                  if (!resp.ok) { alert("Could not save the dismissal (status " + resp.status + "). Are you an allowed reviewer?"); keep.disabled = false; return; }
-                  dismissed[sig] = 1;
-                  i++; renderGroup();
-                })
-                .catch(function (e) { alert("Could not save the dismissal: " + ((e && e.message) || "network error")); keep.disabled = false; });
-            });
-          };
           var go = el("button", { style: goCss }, [isSingleton ? "✓ Create unified course" : "✓ Confirm merge"]);
           go.onclick = function () {
             var picked = cbs.filter(function (x) { return x.cb.checked; }).map(function (x) { return x.m; });
@@ -2044,7 +1936,7 @@
               // anchor keeps its authoritative name (doConsolidate gates the
               // unified_title write on tgtOfficial, so passing it is harmless).
               var ovOfficial = overrideTarget[3] === "C-ID" || overrideTarget[3] === "CCN-ID";
-              doConsolidate(oc, ovOfficial ? "" : titleIn.value.trim(), "", overrideTarget[0], function () { i++; renderGroup(); }, true, noteIn.value.trim());
+              opts.onConfirm({ chosen: oc, title: ovOfficial ? "" : titleIn.value.trim(), disc: "", target: overrideTarget[0], note: noteIn.value.trim() });
               return;
             }
             if (picked.length < 2) { alert("Check at least two members to merge."); return; }
@@ -2056,7 +1948,7 @@
             var target = tgtM ? tgtM.id : "";
             var chosen = {};
             picked.forEach(function (m) { chosen[m.id] = [m.id, m.t, m.s, m.k, m.u]; });
-            doConsolidate(chosen, titleIn.value.trim(), discSel.value, target, function () { i++; renderGroup(); }, true, noteIn.value.trim());
+            opts.onConfirm({ chosen: chosen, title: titleIn.value.trim(), disc: discSel.value, target: target, note: noteIn.value.trim() });
           };
           // ── "Merge into a different existing course" (Sam, 2026-06-15) ──
           // Reuse the ⚇ Unify search index so a curator can redirect this merge
@@ -2071,7 +1963,7 @@
           var ovRes = el("div", { style: "max-height:150px;overflow:auto;margin-top:4px;" });
           ovPanel.appendChild(ovBanner); ovPanel.appendChild(ovSearch); ovPanel.appendChild(ovRes);
           ovWrap.appendChild(ovToggle); ovWrap.appendChild(ovPanel);
-          box.appendChild(ovWrap);
+          container.appendChild(ovWrap);
           function setOverride(entry) {
             overrideTarget = entry;
             if (entry) {
@@ -2116,7 +2008,7 @@
             ovSt = setTimeout(function () {
               ovRes.innerHTML = ""; if (q.length < 3) return;
               var idx = _ucIndex || [], hits = 0, inGroup = {};
-              mems.forEach(function (m) { inGroup[m.id] = 1; });
+              members.forEach(function (m) { inGroup[m.id] = 1; });
               for (var k = 0; k < idx.length && hits < 25; k++) {
                 var en = idx[k];
                 if (inGroup[en[0]]) continue;  // don't offer a row already in this group
@@ -2132,8 +2024,146 @@
               if (!hits) ovRes.appendChild(el("div", { style: "font-size:.78rem;color:#94a3b8;padding:4px;" }, ["No matches — type 3+ characters of a title or id."]));
             }, 200);
           };
-          actions.appendChild(skip); actions.appendChild(keep); actions.appendChild(go);
-          box.appendChild(actions);
+          (opts.extraActions || []).forEach(function (b) { actions.appendChild(b); });
+          actions.appendChild(go);
+          container.appendChild(actions);
+        }
+
+        function renderGroup() {
+          box.innerHTML = "";
+          // Skip exhausted groups AND persistently-dismissed ones ("Keep
+          // as-is" — matched on the current live-member signature) AND 🏷 title-
+          // lane groups below the looseness floor (their weakest pair cosine =
+          // g.score; default 0.62 = today's behavior, slide down to reveal more).
+          while (i < groups.length && !groupPasses(i)) i++;
+          if (i >= groups.length) {
+            headCount.textContent = "";
+            box.appendChild(el("p", { style: "color:#6b7280;" }, [sugQuery
+              ? "No suggested merges match “" + sugQuery + "”. Clear the filter to see the rest of the worklist."
+              : "End of the worklist — nice work. New suggestions regenerate on the next daily build."]));
+            var d = el("button", { style: goCss }, [sugQuery ? "Clear filter" : "Done"]);
+            d.onclick = sugQuery ? function () { sugQuery = ""; sugSearch.value = ""; i = 0; renderGroup(); } : close;
+            box.appendChild(d);
+            return;
+          }
+          // Count: the absolute "N of M" when nothing is filtering; when the
+          // search OR the CCR carry-over is narrowing the set, show the position
+          // among MATCHING groups instead (task 1).
+          var filtering = !!sugQuery || (applyCcr && ccrFiltersActive())
+            || !bandsAllOn(bands) || cohesionFloor !== DEFAULT_FLOOR;
+          if (filtering) {
+            var passList = []; for (var pj = 0; pj < groups.length; pj++) if (groupPasses(pj)) passList.push(pj);
+            headCount.textContent = (passList.indexOf(i) + 1) + " of " + passList.length + " matching";
+          } else {
+            headCount.textContent = (i + 1) + " of " + groups.length;
+          }
+          var g = groups[i], mems = liveMembers(g), isSingleton = g._kind === "singleton";
+          var isFamily = g._kind === "family";
+          var isEvidence = g._kind === "evidence";
+          var isDesc = g._kind === "desc";
+          var isTitle = g._kind === "title";
+          // Section badge so the curator knows whether this merges into an
+          // existing identity or mints a brand-new unified course.
+          var badge = isSingleton
+            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#ede9fe;color:#5b21b6;margin:0 0 8px;" },
+                ["✨ New unified course · stand-alone matches (" + (i - nNonSingleton + 1) + " of " + (groups.length - nNonSingleton) + ")"])
+            : isFamily
+            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#dbeafe;color:#1e40af;margin:0 0 8px;" },
+                ["⛓ Co-articulation family · merge near-duplicate identities"])
+            : isEvidence
+            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#dcfce7;color:#166534;margin:0 0 8px;" },
+                ["🧾 COCI evidence · fold into " + (g.sig || "the official id")])
+            : isDesc
+            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#fce7f3;color:#9d174d;margin:0 0 8px;" },
+                ["📝 Description evidence · same catalog description"])
+            : isTitle
+            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#fef9c3;color:#854d0e;margin:0 0 8px;" },
+                ["🏷 Title evidence · near-duplicate course titles"])
+            : el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#e0f2fe;color:#075985;margin:0 0 8px;" },
+                ["⛓ Merge into existing identity"]);
+          box.appendChild(badge);
+          box.appendChild(el("p", { style: "margin:0 0 10px;color:#6b7280;" },
+            [isSingleton
+              ? "Single-college courses that share a title but match no existing identity (confidence score " + g.score + "). Check the ones that are the same course, then Confirm to create a NEW unified course from them — or Skip."
+              : isFamily
+              ? "These identities co-articulate to “" + (g.credential || "the same credential") + "” and share a course family the level-safe worklist skips (level/format title drift — e.g. “Academy” / “Basic” / “I” / “Training”). Confirming MERGES the checked members into one identity. Uncheck any genuinely different course, then Confirm — or Skip."
+              : isEvidence
+              ? "Member college courses of these identities carried " + (g.sig || "an official id") + " as their official C-ID/CCN in COCI — the 🧾 witness counts on each row. Confirming MERGES the checked members into the official id. Rows whose own colleges DISAGREE on the target start unchecked; check one only if you're sure. Nothing is applied until you confirm."
+              : isDesc
+              ? "These identities carry NO official identity evidence anywhere, but their catalog descriptions match across colleges (similarity " + (g.score != null ? g.score : "?") + (g.cos_max != null && g.cos_max !== g.score ? "–" + g.cos_max : "") + (g.terms && g.terms.length ? "; shared terms: " + g.terms.join(", ") : "") + "). Different course levels, genders, and sports were screened out, but read the titles — uncheck any genuinely different course, then Confirm. Nothing is applied until you confirm."
+              : isTitle
+              ? "These courses carry NO official identity evidence, but their TITLES are near-duplicates (similarity " + (g.score != null ? g.score : "?") + (g.cos_max != null && g.cos_max !== g.score ? "–" + g.cos_max : "") + (g.terms && g.terms.length ? "; shared: " + g.terms.join(", ") : "") + "). Levels, years, refresher/instructor variants, genders, and sports were screened out. Unit loads may differ" + (g.spread ? " (spread here: " + g.spread + "u)" : "") + " — externally standardized curricula (BAR smog, POST modules) are packaged differently per college, so units are shown, not gated. Read each title; uncheck any genuinely different course, then Confirm. Nothing is applied until you confirm."
+              : "Same-title candidates (confidence score " + g.score + "). The ★ target is pre-checked; check each course to fold into it, then Confirm — or Skip. Nothing is applied until you confirm."]));
+          if ((isSingleton || isDesc || isTitle) && g.same_college) {
+            box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
+              [isDesc
+                ? "⚠ Every pair here shares a member college — same-college near-identical descriptions are often course variants (levels, credit/noncredit, formats), not duplicates. Review carefully before confirming."
+                : isTitle
+                ? "⚠ All members resolve to ONE college — same-college near-duplicate titles are often catalog editions or course variants (sessions, formats), not duplicates. Review carefully before confirming."
+                : "⚠ All members appear to be from the same college — these are often course variants (levels, credit/noncredit, language versions), not cross-college duplicates. Review carefully before confirming."]));
+          }
+          // Cross-discipline flag (Session 70). The morphological fold can fuse
+          // courses that share a stemmed word across DIFFERENT disciplines — most
+          // are the same course tagged inconsistently (fine to merge), but a few
+          // are homonyms (music vs office "keyboard", ASL vs comm "interpret").
+          // Surface, don't withhold (suggestions-only; the curator confirms) — but
+          // flag it so the homonyms jump out for review.
+          (function () {
+            var ds = {};
+            mems.forEach(function (m) { var d = m.d || (byId[m.id] && byId[m.id].disc) || ""; if (d) ds[d] = 1; });
+            var dl = Object.keys(ds);
+            if (dl.length >= 2) {
+              box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
+                ["⚠ Spans " + dl.length + " disciplines: " + dl.join(" · ")
+                 + " — usually the same course tagged inconsistently (fine to merge), but check it isn't a shared word that means different things across fields (e.g. music vs office “keyboard”). Uncheck any that don't belong."]));
+            }
+          })();
+          // Kinship-gate banner (Session 41): score 0 = NO witness in this group
+          // passed the title check — the receipts date from a pre-split chimera
+          // family (e.g. the witness is a transmissions course vouching for an
+          // engine-performance remnant). Almost always Skip material.
+          if (isEvidence && g.tm && !g.score) {
+            box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
+              ["⚠ Every witness in this group is title-mismatched — the COCI claims came from courses that don't resemble these rows (stale evidence from a dissolved over-merge family). These are usually NOT the same course; Skip unless you recognize one."]));
+          }
+          // Title default (caller-computed): evidence groups pre-fill the
+          // official course title; everything else the bestTitle proposal.
+          var preTitle = (isEvidence && g.official) || bestTitle(g);
+          // Skip / Keep-as-is are QUEUE chrome (advance / persistent dismissal),
+          // built here and handed to the shared editor as extra action buttons.
+          var skip = el("button", { style: skipCss }, ["Skip →"]);
+          skip.onclick = function () { i++; renderGroup(); };
+          // "Keep as-is" = a PERSISTENT dismissal (Skip only advances for the
+          // session). One kb_curation row: course_id = the group's first live
+          // member (sorted asc — deterministic), field merge_dismissed, value =
+          // the live-member signature. The worklist skips a group whose CURRENT
+          // signature matches; a regen that changes the membership changes the
+          // signature, so the group re-offers then — by design.
+          var keep = el("button", { style: skipCss,
+            title: "These stay separate — don't suggest this group again (unless its membership changes)" },
+            ["Keep as-is"]);
+          keep.onclick = function () {
+            var sig = groupSig(g);
+            if (!sig) { i++; renderGroup(); return; }
+            keep.disabled = true;
+            ensureFresh().then(function (sess) {
+              if (!sess) { signOut(); session = null; renderAuth(); render(); alert("Sign-in expired — please sign in again."); return; }
+              saveCurations([{ course_id: sig.split("|")[0], field: "merge_dismissed", value: sig }], sess)
+                .then(function (resp) {
+                  if (!resp.ok) { alert("Could not save the dismissal (status " + resp.status + "). Are you an allowed reviewer?"); keep.disabled = false; return; }
+                  dismissed[sig] = 1;
+                  i++; renderGroup();
+                })
+                .catch(function (e) { alert("Could not save the dismissal: " + ((e && e.message) || "network error")); keep.disabled = false; });
+            });
+          };
+          buildMergeEditor(box, {
+            members: mems, isSingleton: isSingleton, isEvidence: isEvidence,
+            preTitle: preTitle, extraActions: [skip, keep],
+            onConfirm: function (r) {
+              doConsolidate(r.chosen, r.title, r.disc, r.target, function () { i++; renderGroup(); }, true, r.note);
+            },
+          });
         }
         document.body.appendChild(overlay);
         renderGroup();
