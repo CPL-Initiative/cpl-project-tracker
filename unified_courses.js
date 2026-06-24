@@ -1661,6 +1661,22 @@
                 ? "⚠ All members resolve to ONE college — same-college near-duplicate titles are often catalog editions or course variants (sessions, formats), not duplicates. Review carefully before confirming."
                 : "⚠ All members appear to be from the same college — these are often course variants (levels, credit/noncredit, language versions), not cross-college duplicates. Review carefully before confirming."]));
           }
+          // Cross-discipline flag (Session 70). The morphological fold can fuse
+          // courses that share a stemmed word across DIFFERENT disciplines — most
+          // are the same course tagged inconsistently (fine to merge), but a few
+          // are homonyms (music vs office "keyboard", ASL vs comm "interpret").
+          // Surface, don't withhold (suggestions-only; the curator confirms) — but
+          // flag it so the homonyms jump out for review.
+          (function () {
+            var ds = {};
+            mems.forEach(function (m) { var d = m.d || (byId[m.id] && byId[m.id].disc) || ""; if (d) ds[d] = 1; });
+            var dl = Object.keys(ds);
+            if (dl.length >= 2) {
+              box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
+                ["⚠ Spans " + dl.length + " disciplines: " + dl.join(" · ")
+                 + " — usually the same course tagged inconsistently (fine to merge), but check it isn't a shared word that means different things across fields (e.g. music vs office “keyboard”). Uncheck any that don't belong."]));
+            }
+          })();
           // Kinship-gate banner (Session 41): score 0 = NO witness in this group
           // passed the title check — the receipts date from a pre-split chimera
           // family (e.g. the witness is a transmissions course vouching for an
