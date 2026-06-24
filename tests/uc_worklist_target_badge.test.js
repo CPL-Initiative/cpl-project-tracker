@@ -135,12 +135,15 @@ function shown(elm) { return elm && elm.style.display !== "none"; }
     /Inherited from the ★ merge target/.test(box.textContent));
 
   // ── 2. the note explains the ★ identity + the 2-candidate guidance ──
+  // The guidance note moved into the Candidates-label ⓘ tooltip (Session 72 #4)
+  // to reclaim panel space — assert it in the [title] attributes.
+  const noteTitles = () => Array.from(box.querySelectorAll("[title]")).map((e) => e.getAttribute("title")).join(" │ ");
   check("note flags the ★ row as the SURVIVING identity",
-    /★ row is the SURVIVING identity/.test(box.textContent));
+    /★ row is the SURVIVING identity/.test(noteTitles()));
   check("note explains the common-course slot",
-    /common course/i.test(box.textContent));
+    /common course/i.test(noteTitles()));
   check("note gives the two-candidate guidance (check the second course too)",
-    /only two candidates/i.test(box.textContent) && /check the second course/i.test(box.textContent));
+    /only two candidates/i.test(noteTitles()) && /check the second course/i.test(noteTitles()));
 
   // Skip to group 2 (the 3-member live-recompute path).
   const skip = Array.from(box.querySelectorAll("button")).find((b) => /Skip/.test(txt(b)));
@@ -183,8 +186,9 @@ function shown(elm) { return elm && elm.style.display !== "none"; }
     /New unified course/.test(box.textContent));
   check("no ★ merge-target badge in a singleton-only group",
     !memberRows(box).some((r) => shown(badgeIn(r))));
-  check("note says Confirm MINTS a brand-new unified course",
-    /MINTS a brand-new unified course/.test(box.textContent));
+  check("note (ⓘ tooltip) says Confirm MINTS a brand-new unified course",
+    /MINTS a brand-new unified course/.test(
+      Array.from(box.querySelectorAll("[title]")).map((e) => e.getAttribute("title")).join(" │ ")));
   const g3hint = Array.from(box.querySelectorAll("div"))
     .find((d) => /mint a brand-new unified course/i.test(txt(d)));
   // A singleton-only group has NO ★ target → candidates start UNCHECKED (Sam,
