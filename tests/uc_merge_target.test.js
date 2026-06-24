@@ -85,26 +85,36 @@ check("init does not throw", !threw);
   const rowFor = (id) => Array.from(doc.querySelectorAll("table.uc-table tbody tr"))
     .find((tr) => txt(tr.querySelectorAll("td")[1]).indexOf(id) >= 0);
 
-  // ── 1. dialog target defaults + button copy ──────────────────────────────
+  // The per-row ⚇ dialog now embeds the SHARED merge-editor (Session 71): the
+  // target is the in-row ★, not a "Merge into" dropdown. Helpers to read it.
+  function candRow(id) {
+    return Array.from(doc.querySelectorAll("div"))
+      .find((d) => d.querySelector(":scope > input.uc-cand-cb") && d.textContent.indexOf(id) >= 0);
+  }
+  function candCb(id) { const r = candRow(id); return r && r.querySelector("input.uc-cand-cb"); }
+  function starShown(id) {
+    const r = candRow(id); if (!r) return false;
+    const b = Array.from(r.querySelectorAll("span")).find((s) => /★\s*merge target/.test(txt(s)));
+    return !!(b && b.style.display !== "none");
+  }
+  function confirmBtn() { return Array.from(doc.querySelectorAll("button")).find((b) => /✓ Confirm merge/.test(txt(b))); }
+
+  // ── 1. dialog seeds the opened row as the ★ target ────────────────────────
   const seedRow = rowFor("KINE M1015");
   const mergeLink = seedRow && seedRow.querySelector("a.uc-merge-link");
   check("signed-in row renders an enabled ⚇ Merge link", !!mergeLink);
   mergeLink.dispatchEvent(new window.Event("click"));
-  await sleep(300);   // loadIndex + dialog build (search debounce not needed)
+  await sleep(300);   // loadIndex + dialog build
 
-  const identSel = Array.from(doc.querySelectorAll("select")).find((s) =>
-    Array.from(s.options).some((o) => /Mint a NEW unified course/.test(o.textContent)));
-  check("dialog renders the 'Merge into' selector with an explicit mint-new option", !!identSel);
-  check("target DEFAULTS to the seed row's identity (not mint-new)",
-    identSel && identSel.value === "KINE M1015");
-  // Exact/near matches now start UNCHECKED (Sam, S70) — opt in the twin to merge it.
-  const twinCb = doc.querySelector('[data-id="KINE M1371"] input[type="checkbox"]');
+  check("the opened seed row is the ★ merge target (in-row model)", starShown("KINE M1015"));
+  // Exact/near matches start UNCHECKED (Sam, S70) — opt in the twin to merge it.
+  const twinCb = candCb("KINE M1371");
   check("exact-title twin starts UNCHECKED (curator opts in)", twinCb && twinCb.checked === false);
   twinCb.checked = true; twinCb.dispatchEvent(new window.Event("change"));
   await sleep(20);
-  const goBtn = Array.from(doc.querySelectorAll("button")).find((b) => /Merge \d+ course/.test(txt(b)));
-  check("confirm button says what it will do ('Merge N course(s) into KINE M1015')",
-    goBtn && /into KINE M1015$/.test(txt(goBtn)));
+  check("target stays on the seed M-ID after opting in the twin", starShown("KINE M1015"));
+  const goBtn = confirmBtn();
+  check("confirm button present (✓ Confirm merge)", !!goBtn);
 
   // ── 2 + 3 + 4. consolidate into the existing identity ────────────────────
   goBtn.dispatchEvent(new window.Event("click"));

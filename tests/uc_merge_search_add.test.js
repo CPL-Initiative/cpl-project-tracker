@@ -1,8 +1,9 @@
-// Session 70 (PaintSky) — the merge dialog's "Add more by search" must actually
-// add a course on click. Two failure modes fixed: (a) clicking a result already
-// in the members list silently no-op'd (read as "search doesn't add"); (b) a new
-// add appended below the fold so it looked like nothing happened. Now every click
-// adds-or-ensures-checked, scrolls the row into view, and marks the result added.
+// The per-row ⚇ Merge dialog's "add more by search" must actually add a course.
+// Session 71 (PR-2b) consolidated the per-row dialog onto the shared merge-editor,
+// so this now exercises the editor's ➕ keyword-gather panel in the per-row
+// context: a NEW course is added as a CHECKED candidate + the result button is
+// marked "✓ added"/disabled, and a course already in the merge is EXCLUDED from
+// the gather results (rather than the old dialog's "✓ in list").
 //
 // Run from repo root: `npm test` (or `node tests/uc_merge_search_add.test.js`).
 const fs = require("fs");
@@ -45,42 +46,52 @@ let threw = false;
 try { window.eval(src); } catch (e) { threw = true; console.error("init threw:", e); }
 check("consumer init does not throw", !threw);
 
-function memberIds() {
-  return Array.from(document.querySelectorAll('[data-id]')).map(function (d) { return d.getAttribute("data-id"); });
+// Per-row dialog now embeds the shared editor (Session 71). Candidate rows are
+// .uc-cand-cb checkbox rows (no [data-id]); "Add more by search" is the editor's
+// ➕ keyword-gather panel.
+function candCb(id) {
+  return Array.from(document.querySelectorAll("input.uc-cand-cb"))
+    .find(function (cb) { return cb.parentNode.textContent.indexOf(id) >= 0; });
 }
+function hasCand(id) { return !!candCb(id); }
 
 (async function () {
   await sleep(120);
   const merge = Array.from(document.querySelectorAll("a")).find(function (a) { return /Merge/.test(a.textContent); });
   check("per-row ⚇ Merge link present", !!merge);
   if (merge) merge.onclick({ preventDefault: function () {} });
-  await sleep(120);
+  await sleep(300);
 
-  const srch = Array.from(document.querySelectorAll('input[type="search"]')).pop();
-  check("merge dialog search box present", !!srch);
+  // The per-row dialog embeds the shared editor — "Add more by search" is the
+  // editor's ➕ keyword-gather panel. Open it, then use its search box.
+  const gatherToggle = Array.from(document.querySelectorAll("a"))
+    .find(function (a) { return /Add more courses to this merge by keyword/.test(a.textContent); });
+  check("➕ keyword-gather toggle present", !!gatherToggle);
+  gatherToggle.onclick({ preventDefault: function () {} });
+  await sleep(60);
+  const srch = Array.from(document.querySelectorAll('input[type="search"]'))
+    .find(function (i) { return /keyword or title/.test(i.placeholder); });
+  check("the gather search box is present", !!srch);
 
-  // --- NEW course: clicking adds it to the members list (checked) ---
+  // --- NEW course: clicking adds it as a checked candidate ---
   srch.value = "interface"; srch.dispatchEvent(new window.Event("input"));
   await sleep(300);
   let resBtns = Array.from(document.querySelectorAll("button")).filter(function (b) { return /MIDI Interface/.test(b.textContent); });
-  check("search surfaces the new MUSC Z1009 result", resBtns.length > 0);
+  check("gather surfaces the new MUSC Z1009 result", resBtns.length > 0);
   check("new result shows the '+ ' add affordance", resBtns[0] && /^\+ /.test(resBtns[0].textContent));
-  const beforeNew = memberIds();
+  const beforeNew = hasCand("MUSC Z1009");
   if (resBtns[0]) resBtns[0].onclick();
   await sleep(60);
-  const afterNew = memberIds();
-  check("clicking a NEW result adds it to the members list", afterNew.indexOf("MUSC Z1009") >= 0 && beforeNew.indexOf("MUSC Z1009") < 0);
+  check("clicking a gather result adds it as a candidate", !beforeNew && hasCand("MUSC Z1009"));
+  check("the gathered candidate starts CHECKED (opted in by the add)", candCb("MUSC Z1009") && candCb("MUSC Z1009").checked === true);
   check("the added result is marked '✓ added'", resBtns[0] && /✓ added/.test(resBtns[0].textContent));
   check("the added result button is disabled", resBtns[0] && resBtns[0].disabled === true);
-  // Confirm-button count reflects the add (2 members → 'Merge 1 course into …' since seed is the target).
-  const goBtn = Array.from(document.querySelectorAll("button")).find(function (b) { return /Merge \d|Mint NEW/.test(b.textContent); });
-  check("the merge confirm count updated after the add", goBtn && /Merge 1 course/.test(goBtn.textContent));
 
-  // --- Already-in-list course: clicking is NOT a silent no-op ---
+  // --- Already-in-the-merge course is EXCLUDED from gather results ---
   srch.value = "digital imaging"; srch.dispatchEvent(new window.Event("input"));
   await sleep(300);
   const seedBtn = Array.from(document.querySelectorAll("button")).find(function (b) { return /GRAF M1028/.test(b.textContent); });
-  check("an already-listed course shows '✓ in list'", seedBtn && /✓ in list/.test(seedBtn.textContent));
+  check("the seed (already in the merge) is NOT offered by the gather", !seedBtn);
 
   // ---- report ----
   let pass = 0;
