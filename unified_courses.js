@@ -584,6 +584,10 @@
     }
 
     var state = { kind: "", source: "", status: "", disc: "", credit: "", conf: "", artic: "", official: "", triage: "", flagged: false, impactOnly: false, q: "", sort: "subj", dir: 1 };
+    // PR-4 hook: when the Suggested-merges DOCK is open, openSuggestions assigns
+    // a refilter fn here so render() (the funnel for every CCR filter change) can
+    // re-run the worklist live. Null when the dock is closed.
+    var worklistRefilter = null;
     // Live curated descriptions (course_id -> value), loaded on init + updated on
     // save; diffed against data.committed_descriptions for the pending-sync count.
     var descOverlay = {};
@@ -1801,7 +1805,7 @@
           function up() { document.removeEventListener("mousemove", mv); document.removeEventListener("mouseup", up); saveDock(); }
           document.addEventListener("mousemove", mv); document.addEventListener("mouseup", up);
         };
-        function close() { if (overlay.parentNode) document.body.removeChild(overlay); pageReflow(0); render(); }
+        function close() { worklistRefilter = null; if (overlay.parentNode) document.body.removeChild(overlay); pageReflow(0); render(); }
         // Persistent chrome above the per-group content (Sam, 2026-06-12): a
         // drag-handle title bar with an explicit ✕ closer. renderGroup() wipes
         // only `box` below, so the bar — and any dragged position — survives
@@ -2085,6 +2089,27 @@
             },
           });
         }
+        // ── PR-4: live CCR↔worklist re-filter ───────────────────────────────
+        // While the dock is open, a change to a carried-over CCR filter
+        // (discipline/subject/source/credit/audit/…) re-runs the queue from the
+        // top. Keyed on a SIGNATURE of just those fields so: a post-merge render()
+        // (filters unchanged → sig same) does NOT reset the queue mid-curation,
+        // and typing in the CCR search box (state.q — not in the sig, and the
+        // worklist has its own search) doesn't either. Off when the carry-over
+        // checkbox is unchecked → the dock stays independent of the table.
+        function ccrSig() {
+          return [state.kind, state.source, state.status, state.disc, state.subj,
+                  state.credit, state.conf, state.artic, state.official, state.triage,
+                  state.flagged, state.impactOnly, !!(blanksCb && blanksCb.checked)].join("|");
+        }
+        var lastCcrSig = ccrSig();
+        worklistRefilter = function () {
+          if (!overlay.parentNode) { worklistRefilter = null; return; }   // dock gone
+          var sig = ccrSig();
+          if (!applyCcr) { lastCcrSig = sig; return; }   // carry-over off → independent
+          if (sig === lastCcrSig) return;                // nothing the worklist tracks changed
+          lastCcrSig = sig; i = 0; renderGroup();
+        };
         // A dock reflows the page persistently, so never stack two — drop any
         // existing one before mounting (re-opening from the ✨ button).
         var priorDock = document.querySelector(".uc-worklist-dock");
@@ -3478,6 +3503,8 @@
       table.appendChild(tb);
       wrap.innerHTML = ""; wrap.appendChild(table);
       renderSyncBadge();
+      // PR-4: keep an open Suggested-merges dock in sync with the table filters.
+      if (worklistRefilter) worklistRefilter();
     }
 
     fKind.onchange = function () {
