@@ -686,6 +686,32 @@
       return subj4Of(r);
     }
     function commonSubjPending(r) { return commonSubjOf(r) !== subj4Of(r); }
+    // Course level/format bands from a title (Sam, S70 — the worklist
+    // Beg/Int/Adv/Lab/WkExp filter). LEVEL is one of beg/int/adv and is mutually
+    // exclusive (adv > int > beg by precedence); an UNQUALIFIED title counts as
+    // beginning ("including those with no level qualifier"). LAB and WkExp are
+    // independent format flags — Lab / Lec / Lec-Lab are distinct courses, so a
+    // Lab must be curatable on its own (never folded into a Lec course). Digits
+    // are read only as whole tokens 1–4 (so "CS6"/"2D" don't misread as a level).
+    function courseBands(title) {
+      var t = " " + String(title || "").toLowerCase().replace(/[^a-z0-9]+/g, " ") + " ";
+      var lab = /\blab(s|oratory)?\b/.test(t);
+      var wkexp = /\b(work experience|internship|cooperative|occupational work|cwe|cwee|practicum|fieldwork|externship)\b/.test(t);
+      var level;
+      if (/\b(advanced|adv|iii|iv|3|4)\b/.test(t)) level = "adv";
+      else if (/\b(intermediate|inter|ii|2)\b/.test(t)) level = "int";
+      else level = "beg";   // beginning|intro|fundamental|elementary|basic|i|1 OR unqualified
+      return { level: level, lab: lab, wkexp: wkexp };
+    }
+    // A course matches the active band set (OR semantics): its level is checked,
+    // OR it's a Lab and Lab is checked, OR it's WkExp and WkExp is checked. With
+    // all five checked nothing is filtered.
+    function bandsAllOn(b) { return b.beg && b.int && b.adv && b.lab && b.wkexp; }
+    function memberMatchesBands(m, b) {
+      if (bandsAllOn(b)) return true;
+      var k = courseBands(m && (m.t || m.title));
+      return !!b[k.level] || (k.lab && b.lab) || (k.wkexp && b.wkexp);
+    }
     // Verified = human-verified (curated, reviewed, or the curated anchor);
     // Generated = machine-produced, not yet verified.
     function statusOf(r) {
@@ -1416,6 +1442,18 @@
         // pre-slider behavior exactly (every pair ≥ 0.62); slide to 0.50 to
         // reveal weaker title matches. Other lanes carry no cosine → unaffected.
         var titleFloor = 0.62;
+        // Level/format band filter (Sam, S70). Walk the worklist one level/format
+        // band at a time: a group surfaces only when ≥2 of its live members match
+        // the checked bands, and within a surfaced group only matching members are
+        // pre-checked. Default all-on = no filtering. (See courseBands above; Lab
+        // isolates lab-only merges since Lab ≠ Lec is a distinct course.)
+        var bands = { beg: true, int: true, adv: true, lab: true, wkexp: true };
+        function groupMatchesBands(g) {
+          if (bandsAllOn(bands)) return true;
+          var n = 0;
+          liveMembers(g).forEach(function (m) { if (memberMatchesBands(m, bands)) n++; });
+          return n >= 2;
+        }
         var head = el("div", { style: "display:flex;align-items:center;gap:8px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;border-radius:10px 10px 0 0;background:#f8fafc;cursor:move;user-select:none;" });
         head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;" }, ["✨ Suggested merges"]));
         // The "N of M" position counter lives here next to the title (Sam,
@@ -1475,6 +1513,21 @@
             ? "Match the CCR table filters (discipline, subject, source, credit…) — also constrains the ➕/⌕ searches below"
             : "Match the CCR table filters (none set right now)"));
         searchRow.appendChild(ccrRow);
+        // Level/format band filter row (Sam, S70): Beg/Int/Adv/Lab/WkExp. Walk the
+        // worklist one band at a time — toggling any OFF narrows to groups with ≥2
+        // matching members and pre-checks only matching members. "Beg" includes
+        // unqualified titles; "Lab" isolates lab-only merges (Lab ≠ Lec).
+        var bandRow = el("div", { style: "display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;margin:7px 0 0;font-size:.76rem;color:#64748b;" });
+        bandRow.appendChild(el("span", { style: "font-weight:600;",
+          title: "Show only merge candidates in the checked level/format bands. Beg = beginning/intro/foundations/elementary/1/I AND any title with no level qualifier. Lab = only Lab/Laboratory courses (kept separate from Lec). Uncheck a band to exclude it; a group needs ≥2 matching members to surface." }, ["Levels:"]));
+        [["beg", "Beg"], ["int", "Int"], ["adv", "Adv"], ["lab", "Lab"], ["wkexp", "WkExp"]].forEach(function (pair) {
+          var lab = el("label", { style: "display:inline-flex;align-items:center;gap:3px;cursor:pointer;" });
+          var cb = el("input", { type: "checkbox" }); cb.checked = true;
+          cb.onchange = function () { bands[pair[0]] = cb.checked; i = 0; renderGroup(); };
+          lab.appendChild(cb); lab.appendChild(document.createTextNode(pair[1]));
+          bandRow.appendChild(lab);
+        });
+        searchRow.appendChild(bandRow);
         shell.appendChild(searchRow);
         var box = el("div", {}); shell.appendChild(box);
         // Drag = mousedown on the bar + document-level move/up, applied as a
@@ -1511,6 +1564,7 @@
           var g = groups[idx];
           return liveMembers(g).length >= 2 && !dismissed[groupSig(g)]
             && !(g._kind === "title" && (g.score || 0) < titleFloor)
+            && groupMatchesBands(g)
             && groupMatchesCcr(g)
             && matchesQuery(g);
         }
@@ -1667,11 +1721,22 @@
           function addCandidateRow(m, gathered) {
             var row = el("div", { style: "display:flex;align-items:center;gap:8px;padding:3px 4px;border-bottom:1px solid #f1f5f9;" });
             // Contested evidence members (m.x — their own colleges disagree on
-            // the official target) start UNCHECKED: the curator opts IN.
-            var cb = el("input", { type: "checkbox" }); cb.checked = !m.x;
+            // the official target) start UNCHECKED: the curator opts IN. When a
+            // level/format band filter is active, members outside the checked
+            // bands also start unchecked (the curator opts them back in).
+            var cb = el("input", { type: "checkbox" }); cb.checked = !m.x && (bandsAllOn(bands) || memberMatchesBands(m, bands));
             cb.onchange = function () { refreshTarget(); };
             row.appendChild(cb);
             row.appendChild(el("span", { style: "flex:1;" }, [m.t || m.id]));
+            // Level/format band chip (Sam, S70) — Beg/Int/Adv + Lab/WkExp tags.
+            var bk = courseBands(m.t || m.title);
+            var bTags = [{ beg: "Beg", int: "Int", adv: "Adv" }[bk.level]];
+            if (bk.lab) bTags.push("Lab");
+            if (bk.wkexp) bTags.push("WkExp");
+            row.appendChild(el("span", {
+              style: "font-size:.68rem;font-weight:600;padding:1px 6px;border-radius:10px;white-space:nowrap;background:#f1f5f9;color:#475569;",
+              title: "Detected level/format band (from the title): " + bTags.join(" · ") + ". Beg includes unqualified titles." },
+              [bTags.join("·")]));
             var isOfficial = m.k === "C-ID" || m.k === "CCN-ID";
             row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;",
               title: "This course's CURRENT identity — its own id today; it changes only if you Confirm a merge that folds it" },
