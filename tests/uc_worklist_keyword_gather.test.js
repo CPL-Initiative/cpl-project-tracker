@@ -114,6 +114,13 @@ function curBox(doc) {
   const addedCb = addedRow && addedRow.querySelector("input[type=checkbox]");
   check("the gathered candidate starts checked", addedCb && addedCb.checked === true);
 
+  // Native candidates start UNCHECKED (Sam, S70) — opt the native ESOL M9030 in.
+  // (The ★ target ESOL M9010 + the gathered ESOL M9046 are already checked.)
+  for (const cb of Array.from(box.querySelectorAll(".uc-cand-cb"))) {
+    if (!cb.checked) { cb.checked = true; cb.dispatchEvent(new window.Event("change")); }
+  }
+  await sleep(20);
+
   // Confirm → all three fold into the M-ID target (ESOL M9010 by precedence).
   const go = Array.from(box.querySelectorAll("button")).find((b) => /Confirm merge/.test(txt(b)));
   go.dispatchEvent(new window.Event("click"));
