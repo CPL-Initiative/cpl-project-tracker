@@ -7656,6 +7656,45 @@ def export_unified_courses():
     _sug_syn_pairs = [(re.compile(r"\b" + re.escape(k) + r"\b"), v)
                       for k, v in sorted(_sug_syn.items(), key=lambda kv: -len(kv[0]))]
 
+    # Conservative morphological stemmer (Session 70 — Sam's "Conversational ≠
+    # Conversation" find). Folds inflectional/derivational suffixes so title
+    # variants converge BEFORE the signature is formed (conversation/
+    # conversational→conv, assisting/assistant→assist, welding/welds→weld,
+    # electrical/electricity→electr). Suffix-strip, longest-meaningful-first,
+    # iterated to a fixed point with a 4-char minimum stem. Identical to the
+    # measure-first dry-run (kb/_morphological_variant_dryrun.py) that sized this:
+    # +866 identities into merge groups, 326 clean / 246 cross-discipline unions —
+    # the latter are flagged (not withheld) in the worklist, since it's
+    # suggestions-only and the curator confirms every group.
+    _SUG_STEM_SUF = ("ization", "ation", "ition", "ement", "ment", "ance",
+                     "ence", "ing", "ed", "ant", "ent", "ive", "ity", "al",
+                     "ics", "ic", "es", "er", "or")
+
+    def _sug_stem1(w):
+        if len(w) <= 4:
+            return w
+        if w.endswith("ies") and len(w) - 3 >= 3:
+            return w[:-3] + "y"
+        if w.endswith("ological"):
+            return w[:-8] + "olog"
+        if w.endswith("ology") and len(w) - 5 >= 3:
+            return w[:-5] + "olog"
+        for suf in _SUG_STEM_SUF:
+            if w.endswith(suf) and len(w) - len(suf) >= 4:
+                return w[:-len(suf)]
+        if w.endswith("s") and not w.endswith("ss") and len(w) - 1 >= 4:
+            return w[:-1]
+        return w
+
+    def _sug_stem(w):
+        prev = None
+        for _ in range(4):
+            if w == prev:
+                break
+            prev = w
+            w = _sug_stem1(w)
+        return w
+
     def _sug_sig(t):
         t = re.sub(r"\([^)]*\)", " ", str(t or "").lower())
         t = re.sub(r"[^a-z0-9 ]+", " ", t)
@@ -7673,7 +7712,7 @@ def export_unified_courses():
                 continue                        # numeric level/sequence
             if len(w) == 1 and "a" <= w <= "h":
                 continue                        # bare a–h section letter
-            toks.append(w)
+            toks.append(_sug_stem(w))           # morphological fold (Session 70)
         return " ".join(sorted(set(toks)))
 
     def _sug_score(members):
