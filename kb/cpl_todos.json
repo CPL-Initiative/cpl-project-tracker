@@ -1,62 +1,56 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-23 (PaintSky)",
+ "_as_of": "2026-06-24 (PaintSky · merge workspace)",
  "_session": 70,
- "_status": "SESSION 70 (PaintSky) — a short CCR-curation session. The big one: the ✨ Suggested-merges sync badge ('⟳ N edits awaiting daily sync') is now a click-through '📋 Review merges' panel that lists every merge you made this session (target ← the courses folded into it) with an UNDO button per course and per group — so you can see / verify / revert before the daily publish, exactly the 'I don't want to lose track' concern from the Digital Imaging 12→1 merge. Also: when you pick a discipline for a merge that MINTS a brand-new course, it now previews the Common SUBJ it'll land under (e.g. 'will mint under Common SUBJ PHOT'). Behind the scenes, a label sweep + a knowledge-base note that had silently merged EMPTY were caught and re-landed. NEXT: when your merge wave settles, Fable builds the unverified-M-ID renumber (tidies the M-ID numbers), then the TMC acceptance engine.",
+ "_status": "SESSION 70 (PaintSky) — a big CCR-curation session (9 PRs) that rebuilt the merge workspace. On the ✨ Suggested merges worklist and the per-row ⚇ Merge popup you can now: re-discipline a course right where you merge it (its Common SUBJ flips to the new canonical immediately, with a ⟲ 'letters catch up at the next fold' marker); filter candidates by level (Beg/Int/Adv/Lab/WkExp); slide one Conservative↔Aggressive bar to widen or tighten how many merges are suggested across every lane; and the checkboxes now start UN-checked (only the surviving ★ target is checked — you opt each course in). Behind the scenes, the grouping now understands word variants, so 'Conversational Japanese' and 'Japanese Conversation' (and ~866 more like them) finally group together — with an amber '⚠ Spans N disciplines' flag where a shared word might mean different things (music vs office 'keyboard'). The search-add bug is fixed too. NEXT (Fable): the big one — dock the worklist as a panel + merge the two popups into one shared editor.",
  "items": [
   {
-   "id": "sam-pending-merges-panel",
+   "id": "sam-redISCipline-on-merge",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "NEW: click the '⟳ N edits awaiting daily sync' badge (now '📋 Review merges') to see every merge you've made this session — each shown as the surviving course ← the courses folded into it — with an UNDO per course and per group. Use it to double-check a big merge (like your Digital Imaging 12→1) before the daily sync, and to revert a misfire instantly."
+   "text": "When you ⚇ Merge a course, you can now also RE-DISCIPLINE the survivor (the discipline picker is no longer greyed out). Change it and its Common SUBJ previews the new canonical (e.g. → PHOT); the column shows PHOT ⟲ right away. The M-ID's letters physically re-key to PHOT at the next batched fold — the ⟲ marks that wait. Official C-ID/CCN courses stay locked."
   },
   {
-   "id": "sam-mint-common-subj-preview",
+   "id": "sam-worklist-controls",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "When a Suggested-merge will MINT a brand-new unified course (no existing C-ID/M-ID), picking its Discipline now previews the Common SUBJ it lands under — e.g. 'will mint under Common SUBJ PHOT'. That's our 4-letter canonical subject for the discipline; it confirms the new course files where you'd expect."
+   "text": "✨ Suggested merges has new controls: Beg/Int/Adv/Lab/WkExp LEVEL filters (walk one band at a time; Lab stays separate from Lec), and one Conservative↔Aggressive SLIDER — drag right for more/looser suggestions, left for only tight ones (watch the 'of N' count move). The slider widens the QUEUE; it can't add courses to a group the grouping missed — use ➕ Add more for that."
   },
   {
-   "id": "sam-tmc-titlefill",
+   "id": "sam-optin-checkboxes",
    "who": "sam",
-   "tab": "tmc-builder",
-   "text": "On the TMC Builder, for a college that already holds (or is building) an ADT, blank C-ID slots pre-fill with title-matching local courses, flagged '≈ verify' (a headstart, not a C-ID claim). Confirm or swap each before submitting."
+   "tab": "unified-courses",
+   "text": "Merge checkboxes now start UN-checked — only the surviving ★ target is pre-checked, and you tick each course you want folded in. (Deliberate, so a stray Confirm can't fold the wrong courses.) The ➕-added ones still arrive checked."
   },
   {
-   "id": "sam-tmc-adts",
+   "id": "sam-morphological-fold",
    "who": "sam",
-   "tab": "tmc-builder",
-   "text": "Pick your college on the TMC Builder — every TMC shows whether you already hold that ADT: ✓ Active (live in catalog) vs ✓ Approved (CO-approved, pending activation) + ⏳ In progress / ◐ Teach-out. Spot-check your college's badges; we're building toward a CO review tool that auto-checks courses against each TMC's C-ID requirements."
-  },
-  {
-   "id": "sam-co-cor-docs",
-   "who": "sam",
-   "tab": "tmc-builder",
-   "text": "When the CO gets back to you on the pending-ADT docs: ask for the queue as a SPREADSHEET if possible (>> PDFs), and whether there's a course export WITH lecture/lab contact hours — that single file would crack the hours gap tab-wide. The COR-upload design is scoped (docs/kb-notes/tmc-adt-document-upload-scope.md); submitting college uploads, private Storage bucket."
+   "tab": "unified-courses",
+   "text": "The worklist now groups WORD VARIANTS: 'Conversational Japanese' ↔ 'Japanese Conversation', 'Assisting' ↔ 'Assistant', 'Welding' ↔ 'Welds' (~866 more courses now group). Where a merge spans 2+ disciplines you'll see an amber '⚠ Spans N disciplines' note — usually fine (same course tagged differently), but eyeball it for homonyms (music vs office 'keyboard'). Confirm the language-conversation families when you get a chance — they're clean wins."
   },
   {
    "id": "sam-first-light-bonus",
    "who": "sam",
    "tab": "dashboard",
-   "text": "First Light almanac landed well! Bonus standing: we'll keep adding more Arroyo-Seco-style California plein-air landscapes (Redmond, Guy Rose, Wendt, Payne…) — all public domain. Flag any artist/work you'd love to see and we'll source it."
+   "text": "Standing bonus: we'll keep adding Arroyo-Seco-style California plein-air landscapes (Redmond, Guy Rose, Wendt, Payne) to First Light — flag any artist/work you'd love and we'll source it."
+  },
+  {
+   "id": "fable-merge-epic",
+   "who": "fable",
+   "tab": "unified-courses",
+   "text": "PRIORITY (scope-first): the merge-workspace EPIC. (1) Consolidate the two merge popups — the per-row ⚇ dialog and the ✨ worklist have drifted (re-discipline + search-fix only in the dialog; band filters/slider/★-target only in the worklist). Extract ONE shared merge-editor both embed (two feeders: ad-hoc seed vs precomputed group). (2) Dock the worklist as a collapsible panel in the CCR tab (Sam's pick) so the CCR list stays co-visible. Riskiest surface — write a scope doc first; both popups now have committed tests to guard the refactor."
   },
   {
    "id": "fable-mid-renumber",
    "who": "fable",
    "tab": "unified-courses",
-   "text": "When the merge wave settles (NOT per-merge): build the unverified-M-ID renumber re-mint — close the gaps + re-sort contiguous 001,002… by title within each (canonical SUBJ4, band). Full Rule-7 re-mint, unverified-only (verified numbers frozen), ONE pass. Scope + the grounded re-key chain: docs/unverified_mid_renumber_scope.md. Mirror the UC-CUR→Z pair; dry-run first, Sam's go before apply."
+   "text": "When the merge wave settles (NOT per-merge): the unverified-M-ID renumber re-mint — close gaps + re-sort 001,002… by title within each (canonical SUBJ4, band). Full Rule-7, unverified-only, ONE pass. Scope: docs/unverified_mid_renumber_scope.md. Dry-run first, Sam's go before apply + Supabase re-key."
   },
   {
    "id": "fable-tmc-engine",
    "who": "fable",
    "tab": "tmc-builder",
-   "text": "TMC Phase-2 ACCEPTANCE ENGINE in tmc_builder.js (Sam: 'Go for A'): per-slot verdict from the ASCCC rules (C-ID match = ✓ accept · slot.flexible = ⚠ accept-with-ASSIST · specific C-ID filled by a non-match = faculty review · unfilled = ○) + structural checklist (major ≥18 sem · ≤60 · select-counts) + a 'Ready / N issues' banner. Consume slot.flexible + t.flexibility (#479). Demo Allan Hancock vs San Diego City. jsdom test. Scope: docs/kb-notes/tmc-co-review-scope.md."
-  },
-  {
-   "id": "fable-ccr-data-lane",
-   "who": "fable",
-   "tab": "unified-courses",
-   "text": "CCR data passes (queued, measure-first, own dry-run PRs): (1) the morphological-variant pass — Medical Assisting vs Assistant, the -ing/-ant/-ology family (lemmatize/stem the title token before _sug_sig); MEASURE regroup + over-merge first. (2) On Sam's go, DRY-RUN title-lane pass 2 (kb/_auto_merge_worklist.py --pass2-title); apply only on sign-off, then re-key Supabase + dispatch."
+   "text": "TMC Phase-2 ACCEPTANCE ENGINE in tmc_builder.js (Sam: 'Go for A'): per-slot verdict from the ASCCC rules (C-ID match = ✓ · slot.flexible = ⚠ accept-with-ASSIST · specific C-ID filled by a non-match = faculty review · unfilled = ○) + structural checklist + a Ready/N-issues banner. Consume slot.flexible + t.flexibility (#479). Scope: docs/kb-notes/tmc-co-review-scope.md."
   },
   {
    "id": "fable-assistant-etl",

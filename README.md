@@ -138,7 +138,14 @@ The whole ecosystem, end-to-end:
    surfaced **"⚇ Merge"** affordance leads each row's actions cell, the
    expanded member table is **click-to-sort**, and Units shows a **range**
    (e.g. `1–1.5`) with a ⚠ alarm when the spread exceeds 2.0 — a likely
-   over-merge signal.
+   over-merge signal. **Session 70 — the merge workspace:** the per-row ⚇ Merge
+   dialog can now **re-discipline** the surviving course (its Common SUBJ shows
+   the new canonical immediately with a ⟲ "re-keys at the next fold" marker), and
+   the ✨ Suggested-merges worklist gained **Beg/Int/Adv/Lab/WkExp level filters**,
+   a global **Conservative↔Aggressive** slider, **opt-in checkboxes** (only the ★
+   target pre-checked), and a **morphological fold** so word-order/suffix variants
+   (Conversational ↔ Conversation) group together, with an amber **"⚠ Spans N
+   disciplines"** flag on cross-discipline groups.
 5. **The row Trust-Card auditor** (`kb/_row_audit.py`) — produces a per-row
    Trust Card for every M-ID + Cluster with a `faculty_trust_score` (the
    bar for cross-college articulation adoption) and an `mc_ready_score`
