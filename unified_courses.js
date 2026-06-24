@@ -904,7 +904,15 @@
         }
         identSel.onchange = function () { userPickedTarget = true; syncTargetUi(); };
         function addRow(entry, checked, isSeed) {
-          if (list.querySelector('[data-id="' + cssEsc(entry[0]) + '"]')) return;
+          var existing = list.querySelector('[data-id="' + cssEsc(entry[0]) + '"]');
+          if (existing) {
+            // Already listed — clicking a search hit must still DO something
+            // (the old code silently no-op'd, which read as "search doesn't add").
+            // Re-check it + ensure it's in `chosen`, then let the caller surface it.
+            var ecb = existing.querySelector('input[type="checkbox"]');
+            if (ecb && !ecb.disabled && !ecb.checked) { ecb.checked = true; chosen[entry[0]] = entry; refreshIdentity(); }
+            return existing;
+          }
           var row = el("div", { "data-id": entry[0], style: "display:flex;align-items:center;gap:8px;padding:3px 4px;border-bottom:1px solid #f1f5f9;" });
           var cb = el("input", { type: "checkbox" }); cb.checked = !!checked; if (isSeed) cb.disabled = true;
           if (cb.checked) chosen[entry[0]] = entry;
@@ -913,6 +921,7 @@
           row.appendChild(el("span", { style: "flex:1;" }, [entry[1] || entry[0]]));
           row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;" }, [entry[0] + " · " + (entry[2] || "") + " · " + idSysLabel(entry[3])]));
           list.appendChild(row);
+          return row;
         }
         addRow([seed.id, seed.title, (seed.subj || []).join(";"),
                 (seed.id_system === "C-ID" || seed.id_system === "CCN-ID") ? seed.id_system : seed.kind], true, true);
@@ -934,9 +943,27 @@
               var e = _ucIndex[i];
               if (((e[1] || "").toLowerCase().indexOf(q) >= 0) || ((e[0] || "").toLowerCase().indexOf(q) >= 0)) {
                 hits++;
-                var b = el("button", { type: "button", style: "display:block;width:100%;text-align:left;padding:3px 6px;border:none;background:none;cursor:pointer;font-size:.82rem;" },
-                  ["+ " + (e[1] || e[0]) + "  [" + e[0] + " · " + (e[2] || "") + "]"]);
-                (function (en) { b.onclick = function () { addRow(en, true, false); chosen[en[0]] = en; refreshIdentity(); }; })(e);
+                var inList = !!list.querySelector('[data-id="' + cssEsc(e[0]) + '"]');
+                var b = el("button", { type: "button", style: "display:block;width:100%;text-align:left;padding:3px 6px;border:none;background:none;cursor:pointer;font-size:.82rem;" + (inList ? "color:#16a34a;" : "") },
+                  [(inList ? "✓ in list — " : "+ ") + (e[1] || e[0]) + "  [" + e[0] + " · " + (e[2] || "") + "]"]);
+                // Click ALWAYS surfaces the row: add-or-ensure-checked, scroll it into
+                // view + a brief highlight, then mark the result added (the old handler
+                // silently no-op'd on rows already in the list — Sam, S70).
+                (function (en, btn) {
+                  btn.onclick = function () {
+                    var row = addRow(en, true, false);
+                    chosen[en[0]] = en;
+                    refreshIdentity();
+                    if (row) {
+                      if (row.scrollIntoView) row.scrollIntoView({ block: "nearest" });
+                      row.style.transition = "background-color .6s";
+                      row.style.backgroundColor = "#fef9c3";
+                      setTimeout(function () { row.style.backgroundColor = ""; }, 700);
+                    }
+                    btn.textContent = "✓ added — " + (en[1] || en[0]);
+                    btn.style.color = "#16a34a"; btn.style.cursor = "default"; btn.disabled = true;
+                  };
+                })(e, b);
                 srchRes.appendChild(b);
               }
             }
