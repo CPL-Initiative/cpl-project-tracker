@@ -97,6 +97,11 @@ check("init does not throw", !threw);
   check("dialog renders the 'Merge into' selector with an explicit mint-new option", !!identSel);
   check("target DEFAULTS to the seed row's identity (not mint-new)",
     identSel && identSel.value === "KINE M1015");
+  // Exact/near matches now start UNCHECKED (Sam, S70) — opt in the twin to merge it.
+  const twinCb = doc.querySelector('[data-id="KINE M1371"] input[type="checkbox"]');
+  check("exact-title twin starts UNCHECKED (curator opts in)", twinCb && twinCb.checked === false);
+  twinCb.checked = true; twinCb.dispatchEvent(new window.Event("change"));
+  await sleep(20);
   const goBtn = Array.from(doc.querySelectorAll("button")).find((b) => /Merge \d+ course/.test(txt(b)));
   check("confirm button says what it will do ('Merge N course(s) into KINE M1015')",
     goBtn && /into KINE M1015$/.test(txt(goBtn)));

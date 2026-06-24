@@ -186,14 +186,18 @@ check("consumer init does not throw", !threw);
     /TITLES are near-duplicates/.test(doc.body.textContent)
     && /0\.81/.test(doc.body.textContent)
     && /spread here: 1\.5u/.test(doc.body.textContent));
-  const boxes = Array.from(doc.querySelectorAll("div")).filter((d) => /Proposed unified title/.test(txt(d)));
-  const box = boxes[boxes.length - 1];
-  const cbs = box ? Array.from(box.querySelectorAll("input[type=checkbox]")) : [];
-  check("both members render with checkboxes pre-CHECKED",
-    cbs.length === 2 && cbs.every((cb) => cb.checked));
+  const candCbs = Array.from(doc.querySelectorAll(".uc-cand-cb"));
+  check("both members render with candidate checkboxes (target pre-checked, others opt-in)",
+    candCbs.length === 2 && candCbs.filter((cb) => cb.checked).length === 1);
   check("Stand-Alone member is labelled", /Stand-Alone/.test(doc.body.textContent));
   check("cross-college group shows NO same-college banner",
     !/resolve to ONE college/.test(doc.body.textContent));
+
+  // Candidates start UNCHECKED (Sam, S70) — opt every member into this merge.
+  for (const cb of candCbs) {
+    if (!cb.checked) { cb.checked = true; cb.dispatchEvent(new window.Event("change")); }
+  }
+  await sleep(20);
 
   // Confirm the merge — merge_into must point at the M-ID, not the Stand-Alone.
   const go = Array.from(doc.querySelectorAll("button")).find((b) => /Confirm merge/.test(txt(b)));

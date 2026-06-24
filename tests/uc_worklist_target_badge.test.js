@@ -156,6 +156,12 @@ function shown(elm) { return elm && elm.style.display !== "none"; }
   const mintHint = Array.from(box.querySelectorAll("div"))
     .find((d) => /mint a brand-new unified course/i.test(txt(d)));
   check("mint-new hint hidden while the identity is checked", !shown(mintHint));
+  // Stand-Alones start UNCHECKED (Sam, S70) — opt them in so that, once the only
+  // identity is unchecked, ≥2 members remain checked (the mint-new precondition).
+  for (const cb of Array.from(box.querySelectorAll(".uc-cand-cb"))) {
+    if (!cb.checked) { cb.checked = true; cb.dispatchEvent(new window.Event("change")); }
+  }
+  await sleep(20);
   const g2cb = g2mid.querySelector("input[type=checkbox]");
   g2cb.checked = false; g2cb.dispatchEvent(new window.Event("change"));
   await sleep(20);
@@ -181,6 +187,12 @@ function shown(elm) { return elm && elm.style.display !== "none"; }
     /MINTS a brand-new unified course/.test(box.textContent));
   const g3hint = Array.from(box.querySelectorAll("div"))
     .find((d) => /mint a brand-new unified course/i.test(txt(d)));
+  // A singleton-only group has NO ★ target → candidates start UNCHECKED (Sam,
+  // S70). Opt ≥2 members in so the mint-new hint surfaces (its precondition).
+  for (const cb of Array.from(box.querySelectorAll(".uc-cand-cb"))) {
+    if (!cb.checked) { cb.checked = true; cb.dispatchEvent(new window.Event("change")); }
+  }
+  await sleep(20);
   check("mint-new hint visible for the singleton group", shown(g3hint));
   // The discipline picker is ENABLED + explained when minting a new course.
   const discSel3 = box.querySelector("select.uc-filter");
@@ -195,6 +207,12 @@ function shown(elm) { return elm && elm.style.display !== "none"; }
     .dispatchEvent(new window.Event("click"));
   await sleep(200);
   box = curBox(doc);
+  // The Stand-Alone starts UNCHECKED (Sam, S70) — opt it in so it folds into the
+  // ★ M-ID target on Confirm. (The M-ID target itself is already checked.)
+  for (const cb of Array.from(box.querySelectorAll(".uc-cand-cb"))) {
+    if (!cb.checked) { cb.checked = true; cb.dispatchEvent(new window.Event("change")); }
+  }
+  await sleep(20);
   const go = Array.from(box.querySelectorAll("button")).find((b) => /Confirm merge/.test(txt(b)));
   go.dispatchEvent(new window.Event("click"));
   await sleep(250);

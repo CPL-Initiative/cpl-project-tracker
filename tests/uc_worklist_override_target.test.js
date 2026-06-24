@@ -84,6 +84,13 @@ function curBox(doc) {
   await sleep(250);
   let box = curBox(doc);
 
+  // Candidates start UNCHECKED (Sam, S70) — opt every member in so the whole
+  // group (incl. the Stand-Alone) gets redirected into the override target.
+  for (const cb of Array.from(box.querySelectorAll(".uc-cand-cb"))) {
+    if (!cb.checked) { cb.checked = true; cb.dispatchEvent(new window.Event("change")); }
+  }
+  await sleep(20);
+
   // The toggle is present; clicking reveals the search panel.
   const toggle = Array.from(box.querySelectorAll("a")).find((a) => /different existing course/.test(txt(a)));
   check("the ⌕ override toggle is present", !!toggle);

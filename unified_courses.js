@@ -839,7 +839,7 @@
         overlay.onclick = function (e) { if (e.target === overlay) close(); };
         box.appendChild(el("h3", { style: "margin:0 0 4px;color:var(--text-strong);" }, ["Merge courses"]));
         box.appendChild(el("p", { style: "margin:0 0 12px;color:#6b7280;" },
-          ["Select the courses that are the same as “" + (seed.title || seed.id) + "”. Exact-title matches are pre-checked; review the suggested near matches and search to add others (incl. Stand-Alone)."]));
+          ["Select the courses that are the same as “" + (seed.title || seed.id) + "”. This course is the target (kept checked); check each exact / near match you want to fold in, and search to add others (incl. Stand-Alone). Nothing merges until you Confirm."]));
         box.appendChild(el("label", { style: "display:block;font-weight:600;margin:8px 0 2px;" }, ["Unified title"]));
         var titleIn = el("input", { type: "text", value: seed.title || "", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
         box.appendChild(titleIn);
@@ -951,7 +951,7 @@
         }
         addRow([seed.id, seed.title, (seed.subj || []).join(";"),
                 (seed.id_system === "C-ID" || seed.id_system === "CCN-ID") ? seed.id_system : seed.kind], true, true);
-        cand.exact.forEach(function (e) { addRow(e, true, false); });
+        cand.exact.forEach(function (e) { addRow(e, false, false); });   // start unchecked — opt in (Sam, S70)
         if (cand.near.length) {
           list.appendChild(el("div", { style: "font-size:.78rem;color:#94a3b8;padding:4px;" }, ["— suggested near matches —"]));
           cand.near.forEach(function (e) { addRow(e, false, false); });
@@ -1643,7 +1643,7 @@
           box.appendChild(badge);
           box.appendChild(el("p", { style: "margin:0 0 10px;color:#6b7280;" },
             [isSingleton
-              ? "Single-college courses that share a title but match no existing identity (confidence score " + g.score + "). Confirming creates a NEW unified course from the checked members. Uncheck any that differ — or Skip."
+              ? "Single-college courses that share a title but match no existing identity (confidence score " + g.score + "). Check the ones that are the same course, then Confirm to create a NEW unified course from them — or Skip."
               : isFamily
               ? "These identities co-articulate to “" + (g.credential || "the same credential") + "” and share a course family the level-safe worklist skips (level/format title drift — e.g. “Academy” / “Basic” / “I” / “Training”). Confirming MERGES the checked members into one identity. Uncheck any genuinely different course, then Confirm — or Skip."
               : isEvidence
@@ -1652,7 +1652,7 @@
               ? "These identities carry NO official identity evidence anywhere, but their catalog descriptions match across colleges (similarity " + (g.score != null ? g.score : "?") + (g.cos_max != null && g.cos_max !== g.score ? "–" + g.cos_max : "") + (g.terms && g.terms.length ? "; shared terms: " + g.terms.join(", ") : "") + "). Different course levels, genders, and sports were screened out, but read the titles — uncheck any genuinely different course, then Confirm. Nothing is applied until you confirm."
               : isTitle
               ? "These courses carry NO official identity evidence, but their TITLES are near-duplicates (similarity " + (g.score != null ? g.score : "?") + (g.cos_max != null && g.cos_max !== g.score ? "–" + g.cos_max : "") + (g.terms && g.terms.length ? "; shared: " + g.terms.join(", ") : "") + "). Levels, years, refresher/instructor variants, genders, and sports were screened out. Unit loads may differ" + (g.spread ? " (spread here: " + g.spread + "u)" : "") + " — externally standardized curricula (BAR smog, POST modules) are packaged differently per college, so units are shown, not gated. Read each title; uncheck any genuinely different course, then Confirm. Nothing is applied until you confirm."
-              : "Same-title candidates (confidence score " + g.score + "). Uncheck any that differ, then Confirm — or Skip. Nothing is applied until you confirm."]));
+              : "Same-title candidates (confidence score " + g.score + "). The ★ target is pre-checked; check each course to fold into it, then Confirm — or Skip. Nothing is applied until you confirm."]));
           if ((isSingleton || isDesc || isTitle) && g.same_college) {
             box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
               [isDesc
@@ -1727,10 +1727,12 @@
           // The MERGE TARGET (surviving identity the others fold into, taking the
           // Proposed title's "common course" slot) is picked by targetMemberOf()
           // — hoisted to the worklist scope above so bestTitle() shares it.
-          var hasTarget = !!targetMemberOf(mems);
-          var note = "These courses do NOT yet share an identity — the id on each row is that course's own, today. ✓ Confirm folds the checked rows into ONE identity; Keep as-is / Skip leave every id untouched.";
-          if (hasTarget) note += " The ★ row is the SURVIVING identity — it keeps its id and takes the Proposed title above (the “common course” slot); every other checked row folds into it.";
-          else note += " None of these is an existing identity, so Confirm MINTS a brand-new unified course named by the Proposed title above.";
+          var defTgt = targetMemberOf(mems);
+          var hasTarget = !!defTgt;
+          var defTgtId = defTgt ? defTgt.id : null;   // the only member that starts checked
+          var note = "These courses do NOT yet share an identity — the id on each row is that course's own, today. Check the courses to fold in, then ✓ Confirm; Keep as-is / Skip leave every id untouched.";
+          if (hasTarget) note += " The ★ row is the SURVIVING identity (pre-checked) — it keeps its id and takes the Proposed title above (the “common course” slot); check each other row you want folded into it.";
+          else note += " None of these is an existing identity, so check the ones to combine and Confirm MINTS a brand-new unified course named by the Proposed title above.";
           if (mems.length === 2) note += " With only two candidates the choice is just Confirm (fold them into one) or Keep as-is / Skip — leave BOTH checked to merge; don't deselect either.";
           box.appendChild(el("div", { style: "margin:0 0 4px;font-size:.78rem;color:#6b7280;" }, [note]));
           var list = el("div", { style: "max-height:360px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
@@ -1740,11 +1742,12 @@
           // "added" chip + a ✕ to drop it back out. Returns the cbs entry.
           function addCandidateRow(m, gathered) {
             var row = el("div", { style: "display:flex;align-items:center;gap:8px;padding:3px 4px;border-bottom:1px solid #f1f5f9;" });
-            // Contested evidence members (m.x — their own colleges disagree on
-            // the official target) start UNCHECKED: the curator opts IN. When a
-            // level/format band filter is active, members outside the checked
-            // bands also start unchecked (the curator opts them back in).
-            var cb = el("input", { type: "checkbox" }); cb.checked = !m.x && (bandsAllOn(bands) || memberMatchesBands(m, bands));
+            // Candidates start UNCHECKED — the curator opts IN to each course to
+            // fold (Sam, S70). Exceptions: the default ★ merge target stays checked
+            // (a merge needs a survivor), and a member the curator just pulled in
+            // via the ➕ keyword search (gathered) stays checked. Contested evidence
+            // members (m.x) never auto-check.
+            var cb = el("input", { type: "checkbox", class: "uc-cand-cb" }); cb.checked = !m.x && (gathered || m.id === defTgtId);
             cb.onchange = function () { refreshTarget(); };
             row.appendChild(cb);
             row.appendChild(el("span", { style: "flex:1;" }, [m.t || m.id]));

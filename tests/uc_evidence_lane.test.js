@@ -186,13 +186,19 @@ check("consumer init does not throw", !threw);
   const cbRows = Array.from(box.querySelectorAll("input[type=checkbox]"));
   check("3 member checkboxes render", cbRows.length === 3);
   const rowOf = (id) => cbRows.find((cb) => (cb.parentNode.textContent || "").indexOf(id) >= 0);
-  check("official target + clean claimant start CHECKED",
-    rowOf("SPAN 200") && rowOf("SPAN 200").checked && rowOf("FLSP M1246") && rowOf("FLSP M1246").checked);
+  // Candidates start UNCHECKED (Sam, S70); only the official ★ target is pre-checked.
+  check("official target starts CHECKED; clean claimant starts UNCHECKED (curator opts in)",
+    rowOf("SPAN 200") && rowOf("SPAN 200").checked && rowOf("FLSP M1246") && !rowOf("FLSP M1246").checked);
   check("contested claimant (x:1) starts UNCHECKED",
     rowOf("FLSP M1379") && !rowOf("FLSP M1379").checked);
   const titleIn = box.querySelector("input[type=text]");
   check("dialog title defaults to the OFFICIAL descriptor title",
     titleIn && titleIn.value === "Intermediate Spanish I");
+
+  // Opt the CLEAN claimant in; leave the contested (x:1) member unchecked.
+  rowOf("FLSP M1246").checked = true;
+  rowOf("FLSP M1246").dispatchEvent(new window.Event("change"));
+  await sleep(20);
 
   // Confirm: checked = official + clean claimant; contested stays out.
   const goBtn = Array.from(box.querySelectorAll("button")).find((b) => /Confirm merge/.test(txt(b)));

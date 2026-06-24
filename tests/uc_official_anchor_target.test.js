@@ -89,6 +89,12 @@ check("init does not throw", !threw);
   const identSel = Array.from(doc.querySelectorAll("select")).find((s) =>
     Array.from(s.options).some((o) => /Mint a NEW unified course/.test(o.textContent)));
   check("dialog renders the Merge-into selector", !!identSel);
+  // Exact-title matches start UNCHECKED (Sam, S70) — opt the official anchor in so it
+  // joins the merge and wins target precedence (CCN > C-ID > M-ID) over the seed.
+  const anchorCb = doc.querySelector('[data-id="SPAN 100"] input[type="checkbox"]');
+  check("exact-title official anchor starts UNCHECKED (curator opts in)", anchorCb && anchorCb.checked === false);
+  anchorCb.checked = true; anchorCb.dispatchEvent(new window.Event("change"));
+  await sleep(20);
   check("target DEFAULTS to the official C-ID (SPAN 100), beating the M-ID seed",
     identSel && identSel.value === "SPAN 100");
   const goBtn = Array.from(doc.querySelectorAll("button")).find((b) => /Merge \d+ course/.test(txt(b)));

@@ -116,6 +116,12 @@ check("init does not throw", !threw);
   // ── task 4: mint pre-selects the modal member discipline, ENABLED ──────────
   const discSel = box.querySelector("select.uc-filter");
   check("discipline select is ENABLED for a mint", discSel && discSel.disabled === false);
+  // A singleton mint group has NO ★ target → candidates start UNCHECKED (Sam,
+  // S70). Opt the members in (≥2 to mint) so the modal member discipline seeds.
+  for (const cb of Array.from(box.querySelectorAll(".uc-cand-cb"))) {
+    if (!cb.checked) { cb.checked = true; cb.dispatchEvent(new window.Event("change")); }
+  }
+  await sleep(20);
   check("discipline PRE-SELECTED to the modal member discipline (Music)",
     discSel && discSel.value === "Music");
 

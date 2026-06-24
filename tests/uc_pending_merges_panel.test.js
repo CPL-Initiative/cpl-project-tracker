@@ -81,6 +81,12 @@ function panelBox(doc) {
     .dispatchEvent(new window.Event("click"));
   await sleep(220);
   let box = curBox(doc);
+  // The Stand-Alone starts UNCHECKED (Sam, S70) — opt it in so the merge fires
+  // and folds it into the ★ M-ID target. (The M-ID target is already checked.)
+  for (const cb of Array.from(box.querySelectorAll(".uc-cand-cb"))) {
+    if (!cb.checked) { cb.checked = true; cb.dispatchEvent(new window.Event("change")); }
+  }
+  await sleep(20);
   Array.from(box.querySelectorAll("button")).find((b) => /Confirm merge/.test(txt(b)))
     .dispatchEvent(new window.Event("click"));
   await sleep(200);

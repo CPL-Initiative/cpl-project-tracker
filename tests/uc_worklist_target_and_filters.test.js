@@ -126,6 +126,11 @@ function closeWorklist(doc) {
   const photRow = mrows.find((r) => /PHOT M1064/.test(txt(r)));
   check("ART M1011 is the §10 auto-pick target", shown(badgeIn(artRow)));
   check("PHOT M1064 is NOT the target yet", !shown(badgeIn(photRow)));
+  // The ☆ set-as-target link only appears on a CHECKED non-target row, and
+  // candidates start UNCHECKED (Sam, S70) — opt PHOT M1064 in so it can be pinned.
+  const photCb = photRow.querySelector(".uc-cand-cb");
+  photCb.checked = true; photCb.dispatchEvent(new window.Event("change"));
+  await sleep(20);
   // The non-target checked row offers a ☆ set-as-target link.
   const photSet = setLink(photRow);
   check("the non-target row offers a ☆ set-as-target link", shown(photSet));
