@@ -32,6 +32,7 @@ is the workstream scratchpad; the plan of record is
 | **#513** | **PR-2a** — hoist the editor to `init` scope with a `deps` contract (worklist parity) | merged |
 | **#514** | **PR-2b** — the **per-row ⚇ dialog** adopts the shared editor (in-row ★ model) | merged |
 | **#516** | **PR-3** — dock the ✨ worklist as a **right-hand collapsible/resizable panel** | merged |
+| **#518** | **PR-4** — **live CCR↔worklist re-filter** (signature-keyed; survives post-merge renders) | merged |
 
 After #514 there is **one merge editor, two feeders**: the worklist (precomputed groups) and the
 per-row dialog (`findCandidates` seed). Sam's locked decisions: **in-row ★ target** model
@@ -99,11 +100,23 @@ Skip/Keep, slider, band/CCR filters) are untouched. The per-row ⚇ dialog **sta
 
 ## State + next
 
-- **Done — the epic is COMPLETE.** One shared editor, two feeders (worklist + per-row dialog), and the
-  worklist docked right. All merged (#511 scope · #512 PR-1 · #513 PR-2a · #514 PR-2b · #515 lessons ·
-  #516 PR-3), 77/77 green. The drift that caused the Session-70 bugs is structurally gone: any future
+- **Done — the epic is COMPLETE, all four ladder steps + the optional PR-4.** One shared editor, two
+  feeders (worklist + per-row dialog), the worklist docked right, and the dock now re-filters live with
+  the CCR table. All merged (#511 scope · #512 PR-1 · #513 PR-2a · #514 PR-2b · #515 lessons · #516 PR-3 ·
+  #518 PR-4), 78/78 green. The drift that caused the Session-70 bugs is structurally gone: any future
   merge-UX change lands once, in `buildMergeEditor`, and both surfaces get it.
-- **PR-4 (optional, deferred):** live CCR↔worklist re-filter — the docked panel re-filters as the CCR
-  table filters change (today the CCR carry-over is snapshotted at open). Build only if Sam asks.
-- **Beyond the epic** (standing lanes, unchanged): the unverified-M-ID renumber re-mint (after the merge
-  wave settles), the TMC Phase-2 acceptance engine, the CPL-Assistant CCR/CER recommender ETL.
+
+### PR-4 — live CCR↔worklist re-filter (#518)
+
+`render()` is the single funnel for every CCR filter change, so an open dock subscribes to it: it
+assigns a `worklistRefilter` that `render()` calls at its end (nulled on close). The trick is the
+**signature key** — `worklistRefilter` resets the queue only when a *carried CCR field* changes (a
+`ccrSig()` of discipline/subject/source/credit/audit/… ). That one idea solves three problems at once:
+a **post-merge `render()`** (filters unchanged → sig unchanged) doesn't clobber the Confirm's `i++`
+advance; **typing in the CCR search box** (`state.q`, deliberately not in the sig) doesn't reset the
+queue; and with the **carry-over checkbox off** the dock is independent. **Lesson:** when a global
+event (`render()`) fires for many reasons, gate the reaction on a *content signature* of just the
+inputs you care about — far cleaner than threading a "why did this fire" flag through every caller.
+
+- **Beyond the epic** (standing lanes): the unverified-M-ID renumber re-mint (after the merge wave
+  settles), the TMC Phase-2 acceptance engine, the CPL-Assistant CCR/CER recommender ETL.
