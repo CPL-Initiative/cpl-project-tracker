@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-24T15:13:21.875Z",
+  "scraped_at": "2026-06-24T16:52:53.283Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -198,13 +198,13 @@
         },
         {
           "college": "Bakersfield College",
-          "students": 579,
+          "students": 580,
           "units": 8327,
-          "avgUnits": 14.381692573402418,
+          "avgUnits": 14.356896551724137,
           "transcriptionRate": 10.8,
-          "avgTranscribed": 1.5483592400690847,
+          "avgTranscribed": 1.5456896551724137,
           "criteriaMetCount": 3,
-          "militaryStudents": 536,
+          "militaryStudents": 537,
           "nonMilitaryStudents": 51,
           "apprenticeStudents": 0,
           "savings": 15288472.5,
@@ -213,13 +213,13 @@
         },
         {
           "college": "Modesto Junior College",
-          "students": 378,
+          "students": 379,
           "units": 2197,
-          "avgUnits": 5.8121693121693125,
+          "avgUnits": 5.796833773087071,
           "transcriptionRate": 64.5,
-          "avgTranscribed": 3.75,
+          "avgTranscribed": 3.7401055408970976,
           "criteriaMetCount": 3,
-          "militaryStudents": 140,
+          "militaryStudents": 141,
           "nonMilitaryStudents": 241,
           "apprenticeStudents": 38,
           "savings": 2960182.5,
@@ -458,13 +458,13 @@
         },
         {
           "college": "Clovis Community College",
-          "students": 182,
+          "students": 184,
           "units": 1075,
-          "avgUnits": 5.906593406593407,
+          "avgUnits": 5.842391304347826,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 182,
+          "militaryStudents": 184,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 1859750,
@@ -547,6 +547,21 @@
           "transcribedUnits": 6
         },
         {
+          "college": "Moorpark College",
+          "students": 126,
+          "units": 14,
+          "avgUnits": 0.1111111111111111,
+          "transcriptionRate": 28.6,
+          "avgTranscribed": 0.031746031746031744,
+          "criteriaMetCount": 1,
+          "militaryStudents": 122,
+          "nonMilitaryStudents": 4,
+          "apprenticeStudents": 0,
+          "savings": 18100,
+          "yearImpact": 74274,
+          "transcribedUnits": 4
+        },
+        {
           "college": "San Jose City College ",
           "students": 125,
           "units": 630,
@@ -560,21 +575,6 @@
           "savings": 1089900,
           "yearImpact": 3822210,
           "transcribedUnits": 0
-        },
-        {
-          "college": "Moorpark College",
-          "students": 125,
-          "units": 14,
-          "avgUnits": 0.112,
-          "transcriptionRate": 28.6,
-          "avgTranscribed": 0.032,
-          "criteriaMetCount": 1,
-          "militaryStudents": 121,
-          "nonMilitaryStudents": 4,
-          "apprenticeStudents": 0,
-          "savings": 18100,
-          "yearImpact": 74274,
-          "transcribedUnits": 4
         },
         {
           "college": "Evergreen Valley College",
@@ -1208,13 +1208,13 @@
         },
         {
           "college": "Sacramento City College",
-          "students": 63,
+          "students": 64,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 63,
+          "militaryStudents": 64,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 0,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,009",
+      "value": "48,015",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,710"
+          "value": "24,716"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48009,
+    "Students": 48015,
     "Units": 230009.15000000002,
     "TranscribedUnits": 99421.95,
     "Savings": 320490612.75,
     "YearImpact": 1296672693.3999999,
-    "MilitaryStudents": 24710,
+    "MilitaryStudents": 24716,
     "NonMilitaryStudents": 23375,
     "AprenticeStudents": 752,
-    "AverageUnits": 4.790958986856632,
-    "TranscribedAverage": 2.0709023308129724
+    "AverageUnits": 4.790360304071645,
+    "TranscribedAverage": 2.0706435488909714
   }
 }
