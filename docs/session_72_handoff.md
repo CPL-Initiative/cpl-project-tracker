@@ -35,9 +35,13 @@ docked right-hand panel. 🛠️
 - **#516 — PR-3** — the ✨ worklist is now a **right-hand docked, collapsible/resizable panel**
   (drag left edge to resize · » collapse to a rail · ✕ close; page reflows via `body padding-right`;
   `localStorage` `cplWorklistDock.v1`). Per-row dialog stays a modal.
+- **#518 — PR-4** — the dock **re-filters LIVE** with the CCR table (`render()` → an assigned
+  `worklistRefilter`, gated on a `ccrSig()` of the carried filter fields so a post-merge render /
+  CCR-search keystroke never resets the queue; the carry-over checkbox is the off switch).
 
-**77/77 tests green throughout.** The drift that caused Session-70 bugs is structurally gone: a
-future merge-UX change lands once in `buildMergeEditor` and both surfaces inherit it.
+**78/78 tests green throughout.** The whole epic is shipped (scope → consolidation → dock → live
+re-filter). The drift that caused Session-70 bugs is structurally gone: a future merge-UX change
+lands once in `buildMergeEditor` and both surfaces inherit it.
 
 ## Read these first (in order)
 1. [`docs/ccr_merge_workspace_lessons.md`](ccr_merge_workspace_lessons.md) — the full epic arc + lessons.
@@ -62,10 +66,9 @@ Opts that differ per feeder (each defaults to the worklist's behavior): `members
 `deps:{byId, rowPassesCcr}`. **Change merge UX once, here — never fork the two surfaces again.**
 
 ## Your options (pick with Sam — no single forced #1)
-- **Epic PR-4 (optional, deferred):** make the docked worklist re-filter **live** as the CCR table
-  filters change (today the CCR carry-over is snapshotted when the panel opens). Small; build only if
-  Sam wants it. Sam will eyeball the dock on the deployed site — **act on any look feedback first**
-  (default width/side, reflow behavior).
+- **The merge-workspace epic is fully DONE** (incl. PR-4 #518). Sam will eyeball the docked panel on
+  the deployed site — **act on any look feedback first** (default width/side, reflow behavior, the
+  live-refilter feel).
 - **Unverified-M-ID renumber re-mint** — *when the merge wave settles* (NOT per-merge). Full Rule-7,
   unverified-only, ONE pass, close-gaps + re-sort. [`docs/unverified_mid_renumber_scope.md`](unverified_mid_renumber_scope.md).
   Dry-run → Sam's go → apply + Supabase re-key.

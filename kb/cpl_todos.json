@@ -1,14 +1,14 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-24 (Session 71 · merge-workspace epic complete)",
+ "_as_of": "2026-06-24 (Session 71 · merge-workspace epic complete + PR-4)",
  "_session": 71,
- "_status": "SESSION 71 — completed the merge-workspace EPIC Session 70 scoped (6 PRs, #511–#516). The two merge popups are now ONE shared editor: the per-row ⚇ Merge dialog and the ✨ Suggested-merges worklist behave identically (same in-row ★ target, completion note, level/format chips, ⓘ descriptions, ➕ keyword-gather, ⌕ merge-into-a-different-course). And the ✨ worklist is now a DOCKED right-hand panel (drag the left edge to resize · » to collapse to a rail · ✕ to close) so the CCR table stays visible beside it while you curate — no more centered pop-up that hides the list. Re-discipline-on-merge from Session 70 is preserved everywhere. NEXT (Fable): the standing lanes resume — the unverified-M-ID renumber re-mint (when the merge wave settles), the TMC acceptance engine, the CPL-Assistant recommender ETL.",
+ "_status": "SESSION 71 — completed the ENTIRE merge-workspace EPIC Session 70 scoped (7 PRs, #511–#518). The two merge popups are now ONE shared editor: the per-row ⚇ Merge dialog and the ✨ Suggested-merges worklist behave identically (same in-row ★ target, completion note, level/format chips, ⓘ descriptions, ➕ keyword-gather, ⌕ merge-into-a-different-course). The ✨ worklist is now a DOCKED right-hand panel (drag the left edge to resize · » to collapse to a rail · ✕ to close) so the CCR table stays visible beside it — AND it now re-filters LIVE as you change the table's filters (discipline, subject, source, credit…); a 'Match the CCR table filters' checkbox in the panel turns that link off if you want it independent. Re-discipline-on-merge from Session 70 is preserved everywhere. NEXT (Fable): the standing lanes resume — the unverified-M-ID renumber re-mint (when the merge wave settles), the TMC acceptance engine, the CPL-Assistant recommender ETL.",
  "items": [
   {
    "id": "sam-docked-worklist",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "✨ Suggested merges now opens as a PANEL docked on the RIGHT, not a centered pop-up — so the course list stays visible beside it. Drag its LEFT edge to resize, click » to collapse it to a thin rail (click the rail to re-open), ✕ to close. Your width + collapsed choice are remembered per browser. Take it for a spin and tell me if the default width / side feel right."
+   "text": "✨ Suggested merges now opens as a PANEL docked on the RIGHT, not a centered pop-up — so the course list stays visible beside it AND the panel re-filters LIVE as you change the table's filters (discipline, subject, credit…). Drag its LEFT edge to resize, click » to collapse it to a thin rail (click the rail to re-open), ✕ to close. The 'Match the CCR table filters' checkbox in the panel turns the live link off if you'd rather it stay put. Your width + collapsed choice are remembered per browser. Take it for a spin and tell me if the default width / side feel right."
   },
   {
    "id": "sam-one-merge-editor",
@@ -27,12 +27,6 @@
    "who": "sam",
    "tab": "dashboard",
    "text": "Standing bonus: we'll keep adding Arroyo-Seco-style California plein-air landscapes (Redmond, Guy Rose, Wendt, Payne) to First Light — flag any artist/work you'd love and we'll source it."
-  },
-  {
-   "id": "fable-merge-pr4-optional",
-   "who": "fable",
-   "tab": "unified-courses",
-   "text": "OPTIONAL (epic PR-4, deferred unless Sam asks): make the docked worklist re-filter LIVE as the CCR table filters change (today the CCR carry-over is snapshotted when the panel opens). The 'consolidate the two merge popups' goal is now DONE (#512–#514). Scope: docs/ccr_merge_workspace_epic_scope.md."
   },
   {
    "id": "fable-mid-renumber",

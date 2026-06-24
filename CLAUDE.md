@@ -1849,14 +1849,16 @@ hoist it to `init` scope with a `deps` contract; **#514 PR-2b** the per-row dial
 (in-row ★ model — Sam's pick; gains completion-note/band-chips/ⓘ/gather/override, keeps
 re-discipline #503 via `allowRediscipline`); **#516 PR-3** the worklist is now a **right-hand
 docked panel** (resize grip · » collapse-to-rail · ✕; page reflows via `body padding-right`;
-`localStorage` `cplWorklistDock.v1`). The four parameterized opts (`preCheckedIds`,
-`allowRediscipline`, `dismissLabel`, `deps`) each default to the worklist's behavior, so adopting
-the editor regressed neither surface. A latent bug the move surfaced: the seed member's `k` must
-be its id_system (§10 axis), not the display `kind`. Full story:
+`localStorage` `cplWorklistDock.v1`); **#518 PR-4** the dock **re-filters LIVE** with the CCR table
+(`render()` calls an assigned `worklistRefilter`, gated on a `ccrSig()` of the carried filter fields
+so a post-merge render / CCR-search keystroke never resets the queue; carry-over checkbox = off
+switch). The four parameterized opts (`preCheckedIds`, `allowRediscipline`, `dismissLabel`, `deps`)
+each default to the worklist's behavior, so adopting the editor regressed neither surface. A latent
+bug the move surfaced: the seed member's `k` must be its id_system (§10 axis), not the display
+`kind`. Full story:
 [`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md). **NEXT:
-[`docs/session_72_handoff.md`](docs/session_72_handoff.md)** — PR-4 (live CCR↔worklist re-filter,
-optional) then the standing lanes: unverified-M-ID renumber re-mint, TMC acceptance engine,
-CPL-Assistant recommender ETL.
+[`docs/session_72_handoff.md`](docs/session_72_handoff.md)** — the epic is DONE; the standing lanes:
+unverified-M-ID renumber re-mint, TMC acceptance engine, CPL-Assistant recommender ETL.
 
 ---
 
