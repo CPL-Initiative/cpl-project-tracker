@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-24T12:03:14Z",
-  "count": 28386,
+  "_synced_at": "2026-06-24T15:13:27Z",
+  "count": 28392,
   "curations": {
     "AERO M10BA": {
       "merge_into": "AERO Z1001",
@@ -5049,6 +5049,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARTS M1042": {
+      "merge_into": "GRAF M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-24T14:22:04.109275+00:00"
+    },
     "ARTS M1045": {
       "unified_title": "Advanced Figure Drawing",
       "reviewed_by": "map@rccd.edu",
@@ -8587,6 +8592,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-23T00:52:22.74047+00:00"
     },
+    "ARTS M1348": {
+      "merge_into": "GRAF M1011",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-24T14:16:35.545556+00:00"
+    },
     "ARTS M1358": {
       "merge_into": "ARTS M1045",
       "reviewed_by": "map@rccd.edu",
@@ -8623,9 +8633,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTS M1384": {
-      "unified_title": "Introduction to Digital Image Editing",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "GRAF M1011",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-24T14:16:35.545556+00:00",
+      "unified_title": "Introduction to Digital Image Editing"
     },
     "ARTS M1385": {
       "unified_title": "The Art and History of Motion Picture Editing",
@@ -9704,7 +9715,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ARTS Z1127": {
-      "merge_into": "PHOT M1064",
+      "merge_into": "GRAF M1011",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-23T00:52:22.74047+00:00",
       "unified_title": "Digital Imaging: Photoshop"
@@ -42924,6 +42935,11 @@
       "merge_into": "CSIS M9009",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "CSIS M9033": {
+      "merge_into": "PHOT M1064",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-24T14:16:35.545556+00:00"
     },
     "CSIS M9038": {
       "unified_title": "Microsoft Outlook Essentials for the Workplace",
@@ -81369,14 +81385,19 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "GRAF M1011": {
-      "unified_title": "Digital Image Manipulation in Adobe Photoshop",
-      "reviewed_by": "automerge-titlelane-v1@bot",
+      "unified_title": "Digital Imaging 1",
+      "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "GRAF M1012": {
       "unified_title": "Adobe InDesign/Professional Publishing",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "GRAF M1013": {
+      "unified_title": "Digital Illustration 2",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-24T14:22:04.109275+00:00"
     },
     "GRAF M1015": {
       "unified_title": "After Effects: Motion Graphics for Video, Broadcast and Digital Cinematography",
@@ -108135,6 +108156,11 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-16T17:23:23.259963+00:00"
     },
+    "MATH M10CZ": {
+      "merge_into": "GRAF M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-24T14:22:04.109275+00:00"
+    },
     "MATH M10DA": {
       "merge_into": "MATH M1002",
       "reviewed_by": "automerge-v1@bot",
@@ -111410,9 +111436,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "MULT M1096": {
-      "unified_title": "Digital Illustration 2",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "GRAF M1013",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-24T14:22:04.109275+00:00",
+      "unified_title": "Digital Illustration 2"
     },
     "MULT M10AD": {
       "merge_into": "ARTS M1086",
@@ -111908,6 +111935,11 @@
       "merge_into": "CISC Z1002",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MULT M10KO": {
+      "merge_into": "GRAF M1011",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-24T14:30:16.415708+00:00"
     },
     "MULT M10KW": {
       "merge_into": "MULT Z1008",
@@ -112566,7 +112598,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "MULT Z1003": {
-      "merge_into": "PHOT M1064",
+      "merge_into": "GRAF M1011",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-23T00:52:22.74047+00:00",
       "unified_title": "Photoshop for Digital Imaging 1"
@@ -125074,7 +125106,8 @@
     "PHOT M1032": {
       "merge_dismissed": "PHOT M1032|PHOT M10KK",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-23T13:48:13.05405+00:00"
+      "reviewed_at": "2026-06-24T14:16:35.545556+00:00",
+      "merge_into": "PHOT M1064"
     },
     "PHOT M1035": {
       "merge_into": "ARTS M1384",

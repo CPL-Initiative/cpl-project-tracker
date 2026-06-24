@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-24T12:03:07.278Z",
+  "scraped_at": "2026-06-24T15:13:21.875Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -428,13 +428,13 @@
         },
         {
           "college": "Cuesta College",
-          "students": 232,
+          "students": 237,
           "units": 61.5,
-          "avgUnits": 0.2650862068965517,
+          "avgUnits": 0.25949367088607594,
           "transcriptionRate": 95.1,
-          "avgTranscribed": 0.2521551724137931,
+          "avgTranscribed": 0.2468354430379747,
           "criteriaMetCount": 1,
-          "militaryStudents": 138,
+          "militaryStudents": 143,
           "nonMilitaryStudents": 94,
           "apprenticeStudents": 1,
           "savings": 61942.5,
@@ -443,13 +443,13 @@
         },
         {
           "college": "Cabrillo College",
-          "students": 205,
+          "students": 206,
           "units": 1172.5,
-          "avgUnits": 5.719512195121951,
+          "avgUnits": 5.691747572815534,
           "transcriptionRate": 21.1,
-          "avgTranscribed": 1.2073170731707317,
+          "avgTranscribed": 1.2014563106796117,
           "criteriaMetCount": 1,
-          "militaryStudents": 176,
+          "militaryStudents": 177,
           "nonMilitaryStudents": 32,
           "apprenticeStudents": 5,
           "savings": 2704472.5,
@@ -848,13 +848,13 @@
         },
         {
           "college": "Antelope Valley College",
-          "students": 264,
+          "students": 265,
           "units": 1063,
-          "avgUnits": 4.026515151515151,
+          "avgUnits": 4.011320754716981,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 264,
+          "militaryStudents": 265,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 1838990,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,002",
+      "value": "48,009",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,703"
+          "value": "24,710"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48002,
+    "Students": 48009,
     "Units": 230009.15000000002,
     "TranscribedUnits": 99421.95,
     "Savings": 320490612.75,
     "YearImpact": 1296672693.3999999,
-    "MilitaryStudents": 24703,
+    "MilitaryStudents": 24710,
     "NonMilitaryStudents": 23375,
     "AprenticeStudents": 752,
-    "AverageUnits": 4.791657639265031,
-    "TranscribedAverage": 2.0712043248197993
+    "AverageUnits": 4.790958986856632,
+    "TranscribedAverage": 2.0709023308129724
   }
 }
