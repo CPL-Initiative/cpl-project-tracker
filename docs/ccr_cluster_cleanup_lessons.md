@@ -1,7 +1,7 @@
 ---
 title: CCR Cluster Cleanup — Lessons & State
 date: 2026-05-30
-last_updated: 2026-06-23  # Session 70
+last_updated: 2026-06-24  # Session 70 (merge workspace)
 session: 19 (CCR cluster dissolution)
 tags: [ccr, unified-courses, cluster, dissolution, curation-migration, supabase, m-id]
 artifacts:
@@ -1770,3 +1770,75 @@ the **unverified-M-ID renumber re-mint** ([`unverified_mid_renumber_scope.md`](u
 remains queued — **build it once the merge wave settles**, as ONE Rule-7 pass, not per-merge.
 The morphological-variant pass (Med Assisting/Assistant) and the title-lane pass-2 dry-run
 stay measure-first, own-PR, Sam's-go-before-apply.
+
+---
+
+## Session 70 (cont.) — the merge workspace arc (2026-06-24, PaintSky)
+
+Sam dug into Disciplines/Subjects/merging and surfaced a string of improvements. Seven more
+PRs (#503–#509), each one focused + jsdom-tested, merge-on-green.
+
+### #503 — re-discipline ON the merge + forward-looking Common SUBJ
+The reframe Sam and I aligned on: **Common SUBJ is not a separate field — it's a function of
+Discipline** (one discipline → one canonical SUBJ4, §11). Two layers move at different speeds:
+discipline is **live curation**; the M-ID's 4 letters only re-key at the next canonical-SUBJ4
+**fold** (Rule 7). So:
+- The per-row ⚇ Merge dialog now lets you **re-discipline the survivor** even when merging
+  into an existing course (the picker was disabled before) — pre-filled, with a live
+  "→ Common SUBJ PHOT" preview. Firewalled for official C-ID/CCN targets.
+- The **Common SUBJ column is forward-looking** (`commonSubjOf`): a *curated* re-discipline
+  shows the discipline's canonical (`PHOT`) **immediately** with a ⟲ pending marker; the ID
+  letters lag, `subject_collision_signal` tracks the gap, the fold reconciles it. Generated
+  (inferred) disciplines stay literal so the column doesn't churn. Hardening: when
+  `discipline_canonical_subj4.json` loads, its curator-confirmed canonical overrides the
+  row-modal `DISC_COMMON_SUBJ` so a wave of re-disciplined-not-yet-folded rows can't skew the
+  forward value. **Lesson → KB note** `methodology-forward-looking-display-curate-now-rekey-later.md`.
+
+### #504 — the merge "Add more by search" silently no-op'd
+Clicking a result already in the members list early-returned (and a new add landed below the
+fold) → "doesn't add." Fix: every click adds-or-ensures-checked, scrolls + highlights the row,
+marks the result "✓ added"; already-listed results render "✓ in list". **Lesson:** a click on
+an actionable control must always produce a visible effect — a silent no-op reads as a bug.
+
+### #505/#506/#507 — worklist controls (Sam: "give faculty a good foundation")
+- **#505 band filters** Beg/Int/Adv/Lab/WkExp (`courseBands`): unqualified = beginning; Lab is
+  an isolator (Lab ≠ Lec ≠ Lec-Lab are distinct courses). A band off → groups need ≥2 matching
+  members to surface; chips per row.
+- **#506 global Conservative↔Aggressive slider**: the old 🏷 slider gated only the title lane
+  (no-op'd elsewhere — Sam saw it "do nothing"). Replaced with one cohesion floor over ALL
+  scored lanes (anchored/singleton/family `_sug_score`, desc/title `cos_min`); the witness-count
+  evidence lane is exempt. Right = aggressive = lower floor. **Lesson:** one global control beats
+  a lane-specific one that silently no-ops on most groups.
+- **#507 opt-in checkboxes** (Sam: "should not be prechecked"): only the ★ target/seed starts
+  checked; you opt each course in. Reversed a long-standing pre-check default → **11 test files**
+  updated (delegated to a subagent with a strict guardrail: opt members in before Confirm, never
+  weaken a write-assertion). **Lesson:** a deliberate default-reversal's cost is the test suite;
+  budget for it and verify the artifact, not the agent's report.
+
+### #508/#509 — the morphological-variant fold (the "Conversational ≠ Conversation" find)
+Sam noticed the worklist missed obvious siblings ("Conversational Japanese" vs "Japanese
+Conversation 1") — the signature matched an exact token SET, so morphological + word-order
+variants never grouped. **Measure-first**: `kb/_morphological_variant_dryrun.py` replicated
+`_sug_sig`, added a conservative stemmer, and sized it over 51,486 identities → **+866**
+identities into groups via 572 new unions (**326 clean / 246 cross-discipline**). Sam's call:
+stem `_sug_sig` globally + **surface all with a flag**. Applied: the generator stems tokens
+(byte-identical to the validated dry-run), and the worklist shows an amber **"⚠ Spans N
+disciplines"** banner on cross-discipline groups (the homonym guard — music vs office
+"keyboard", ASL vs comm "interpret"). Code-only; the suggestions artifact regenerated via a
+post-merge `workflow_dispatch`. **Lesson:** for a grouping-signature change, a dry-run that
+reports *regroup count + over-merge signal (cross-category spread)* before applying is the right
+gate — and the over-merge surfaces as a review flag, not a withhold (suggestions-only).
+
+### Process lesson (reinforced)
+Mis-pushed once to a **stale local branch** (the squashed slider branch) — the push looked fine
+but carried the wrong commit. Caught by diffing the branch vs `origin/main`. Branch fresh per
+PR off `main`; verify the *diff*, not the push message (same family as
+`methodology-stacked-pr-empty-squash`).
+
+### State + next
+The CCR merge workspace is much stronger: re-discipline, band filters, a real aggressiveness
+slider, opt-in selection, and morphologically-aware grouping with a homonym flag. **Next is the
+EPIC** (scope-first): **dock the worklist as a collapsible panel** in the CCR tab + **consolidate
+the two merge popups** (per-row dialog vs worklist) into ONE shared merge-editor (two feeders:
+ad-hoc seed vs precomputed group). The drift between the two surfaces caused several of this
+session's bugs — unifying them is the durable fix.

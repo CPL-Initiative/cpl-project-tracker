@@ -1832,27 +1832,28 @@ Full stories: [`docs/ccr_cluster_cleanup_lessons.md`](docs/ccr_cluster_cleanup_l
 [`docs/session_70_handoff.md`](docs/session_70_handoff.md)** — the Pending-merges tracking
 panel, then the re-mint build (when merges settle) + the TMC acceptance engine.
 
-### Session 70 — PaintSky: the Pending-merges panel + the mint→Common SUBJ preview (2026-06-23)
+### Session 70 — PaintSky: the CCR merge workspace, leveled up (2026-06-23/24)
 
-A short CCR-curation session (PR #500), built on top of an empty-squash recovery. **Shipped:**
-(1) the **Pending-merges tracking panel** — the `⟳ N edits awaiting daily sync` badge is now a
-**📋 Review merges (N)** click-through listing this session's merges (target ← absorbed
-members) with **per-member and per-group Undo**, all client-side off the `kb_curation`
-overlay (no pipeline change; the live view already folds merges via `passes()` +
-`replayLiveMerges`); (2) a **mint → Common SUBJ preview** in the ✨ Suggested-merges popup —
-picking a discipline for a new (`UC-CUR`/`Z`) mint previews *"will mint under Common SUBJ
-**PHOT**"* via `DISC_COMMON_SUBJ` (`discipline_canonical_subj4.json`); (3) a **reviewer-gated
-`DELETE` policy on `kb_curation`** (`is_allowed_reviewer()`, applied to the live DB) so Undo
-can actually retract a row. **Also re-landed PR #499**, which had **silently squash-merged
-empty** (the Local/Common SUBJ label sweep + its KB note + test) — caught by verifying
-`origin/main` contained the diff, not by trusting the green "merged". New KB note:
-`methodology-stacked-pr-empty-squash.md` (branch fresh per PR; verify the artifact, not the
-status). Three jsdom tests added. Full story:
-[`docs/ccr_cluster_cleanup_lessons.md`](docs/ccr_cluster_cleanup_lessons.md) (Session 70).
-**Bonus flagged for a future session** (Sam): grow First Light with more *Arroyo Seco,
-Pasadena*–style CA plein-air / impressionist landscapes. **NEXT:
-[`docs/session_71_handoff.md`](docs/session_71_handoff.md)** — the unverified-M-ID renumber
-re-mint (when merges settle) + the TMC acceptance engine.
+A long, live CCR-curation session — **9 PRs**. **First half (#500):** the **Pending-merges
+tracking panel** (the `⟳ N edits awaiting sync` badge → a **📋 Review merges** click-through
+with per-member/group **Undo**), a **mint → Common SUBJ preview** in the worklist, a
+reviewer-gated `kb_curation` **DELETE** policy, and re-landing the **empty-squashed #499**
+(KB note `methodology-stacked-pr-empty-squash.md`). **Second half — the merge workspace arc**
+(Sam digging into Disciplines/Subjects/merging): **#503** re-discipline ON the merge dialog +
+a **forward-looking Common SUBJ** column (curated discipline → shows its canonical `PHOT ⟲`
+immediately; M-ID letters re-key at the next fold; KB note
+`methodology-forward-looking-display-curate-now-rekey-later.md`); **#504** fixed the merge
+search-add silently no-op'ing; **#505** Beg/Int/Adv/Lab/WkExp **band filters**; **#506** a
+global **Conservative↔Aggressive slider** (replaced the title-only one; gates all scored
+lanes, evidence exempt); **#507** **opt-in checkboxes** (only the ★ target pre-checked);
+**#508/#509** the **morphological-variant fold** — `_sug_sig` now stems tokens
+(conversation/conversational→conv, …; measure-first dry-run sized it: **+866** identities into
+groups, 326 clean / 246 cross-discipline) + an amber **"⚠ Spans N disciplines"** worklist flag
+for the homonym risk (workflow-dispatched live). Two architecture asks captured for the epic:
+**dock the worklist as a panel** + **consolidate the two merge popups into one shared editor**.
+Full story: [`docs/ccr_cluster_cleanup_lessons.md`](docs/ccr_cluster_cleanup_lessons.md)
+(Session 70). **NEXT: [`docs/session_71_handoff.md`](docs/session_71_handoff.md)** — the
+merge-workspace epic (scope-first), then the unverified-M-ID renumber re-mint + TMC engine.
 
 ---
 
