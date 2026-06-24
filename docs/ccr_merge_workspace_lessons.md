@@ -31,6 +31,7 @@ is the workstream scratchpad; the plan of record is
 | **#512** | **PR-1** — extract `buildMergeEditor(container, opts)`; the **worklist** embeds it (parity) | merged |
 | **#513** | **PR-2a** — hoist the editor to `init` scope with a `deps` contract (worklist parity) | merged |
 | **#514** | **PR-2b** — the **per-row ⚇ dialog** adopts the shared editor (in-row ★ model) | merged |
+| **#516** | **PR-3** — dock the ✨ worklist as a **right-hand collapsible/resizable panel** | merged |
 
 After #514 there is **one merge editor, two feeders**: the worklist (precomputed groups) and the
 per-row dialog (`findCandidates` seed). Sam's locked decisions: **in-row ★ target** model
@@ -83,13 +84,26 @@ the per-row dialog regressed nothing and the worklist stayed byte-identical.
   per-row tests were rewritten to the new DOM; their *behavioral* assertions (merge_into routing,
   official firewall, impact value, Verify stamp) were preserved verbatim — only the selectors moved.
 
+### PR-3 — the dock (#516)
+
+The worklist's centered drag-to-move **modal** became a **right-hand docked panel**: `position:fixed`
+at `right:0`, full height; the page **reflows** (`body padding-right`) so the CCR table stays
+co-visible rather than being overlaid. A left-edge grip resizes the width (360–900px); a » button
+collapses it to a thin vertical **rail** that re-expands on click; ✕ closes + clears the reflow.
+Width + collapsed persist in `localStorage` (`cplWorklistDock.v1`); a re-open drops any prior dock so
+the reflow never stacks. **Only the shell changed** — the shared editor + queue chrome (N-of-M,
+Skip/Keep, slider, band/CCR filters) are untouched. The per-row ⚇ dialog **stays a modal** (Sam's pick).
+**Lesson:** swapping a modal shell for a dock means re-pointing the tests that asserted modal mechanics —
+`uc_worklist_chrome` (drag-to-move → collapse/resize/close + reflow) and `uc_keep_asis` (backdrop-click
+→ ✕). The 12 other `uc_worklist_*` tests, which only inspect the rendered content, passed unchanged.
+
 ## State + next
 
-- **Done:** the consolidation (the epic's core + riskiest part). One editor, two feeders, all green
-  (77/77), worklist byte-identical, per-row gained completion-note / band chips / ⓘ / gather /
-  override and kept #503.
-- **Next — PR-3:** dock the worklist as a **right-hand collapsible/resizable panel** (Sam's pick)
-  so the CCR table stays co-visible while curating; per-row stays a modal. The shared editor is
-  unchanged — PR-3 only swaps the worklist's modal shell for a dock + persists open/size in
-  `localStorage`. It's a **visual rework** → a "lock the look with Sam" candidate per the
-  engineering practices. PR-4 (live CCR↔worklist re-filter) is optional, deferred unless Sam wants it.
+- **Done — the epic is COMPLETE.** One shared editor, two feeders (worklist + per-row dialog), and the
+  worklist docked right. All merged (#511 scope · #512 PR-1 · #513 PR-2a · #514 PR-2b · #515 lessons ·
+  #516 PR-3), 77/77 green. The drift that caused the Session-70 bugs is structurally gone: any future
+  merge-UX change lands once, in `buildMergeEditor`, and both surfaces get it.
+- **PR-4 (optional, deferred):** live CCR↔worklist re-filter — the docked panel re-filters as the CCR
+  table filters change (today the CCR carry-over is snapshotted at open). Build only if Sam asks.
+- **Beyond the epic** (standing lanes, unchanged): the unverified-M-ID renumber re-mint (after the merge
+  wave settles), the TMC Phase-2 acceptance engine, the CPL-Assistant CCR/CER recommender ETL.
