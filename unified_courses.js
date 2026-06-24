@@ -1280,7 +1280,7 @@
       var note = "These courses do NOT yet share an identity — the id on each row is that course's own, today. Check the courses to fold in, then ✓ Confirm; " + dismissLabel + " leave" + (opts.dismissLabel ? "s" : "") + " every id untouched.";
       if (hasTarget) note += " The ★ row is the SURVIVING identity (pre-checked) — it keeps its id and takes the Proposed title above (the “common course” slot); check each other row you want folded into it.";
       else note += " None of these is an existing identity, so check the ones to combine and Confirm MINTS a brand-new unified course named by the Proposed title above.";
-      if (members.length === 2) note += " With only two candidates the choice is just Confirm (fold them into one) or " + dismissLabel + " — leave BOTH checked to merge; don't deselect either.";
+      if (members.length === 2) note += " With only two candidates, check the second course too so both are ticked, then Confirm (folds them into one) — or " + dismissLabel + " to leave them as separate courses. (Confirm stays disabled until at least two are checked.)";
       container.appendChild(el("div", { style: "margin:0 0 4px;font-size:.78rem;color:#6b7280;" }, [note]));
       var list = el("div", { style: "max-height:360px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
       var cbs = [];
@@ -1549,6 +1549,18 @@
             ? "Pre-selected from the members — change it if the new course belongs elsewhere."
             : "Choose a discipline for the NEW unified course this Confirm mints.";
         }
+        // Gate Confirm on a valid selection so it can't silently no-op (the opt-in
+        // model leaves only the ★ pre-checked, so a group's natural Confirm would
+        // otherwise just alert — Sam, S72 #3). Disabled + dimmed until enough rows
+        // are checked: ≥1 to fold into an off-group override target, else ≥2 to
+        // merge/mint. `go` is a hoisted var (undefined on the first call, before
+        // the button exists) — guard for it.
+        if (go) {
+          var nChk = cbs.filter(function (x) { return x.cb.checked; }).length;
+          go.disabled = nChk < (overrideTarget ? 1 : 2);
+          go.style.opacity = go.disabled ? "0.5" : "";
+          go.style.cursor = go.disabled ? "not-allowed" : "pointer";
+        }
       }
       refreshTarget();
       var actions = el("div", { style: "margin-top:14px;display:flex;gap:10px;justify-content:flex-end;" });
@@ -1659,6 +1671,11 @@
       (opts.extraActions || []).forEach(function (b) { actions.appendChild(b); });
       actions.appendChild(go);
       container.appendChild(actions);
+      // Re-run now that `go` exists so its initial disabled state reflects the
+      // (opt-in) checked count — the first refreshTarget() above ran before the
+      // button was created, so without this the Confirm would start enabled and
+      // could be clicked into the silent no-op (Sam, S72 #3).
+      refreshTarget();
     }
 
 
@@ -1830,9 +1847,14 @@
         }
         function passesAggr(g) { var s = groupAggrScore(g); return s == null || s >= cohesionFloor; }
         // Slider position is "aggressiveness" 0–100 (right = more aggressive = LOWER
-        // floor = more merges surface); floor spans 0.85 (conservative) → 0.40.
-        function floorFromAggr(v) { return Math.round((0.85 - (v / 100) * 0.45) * 100) / 100; }
-        function aggrFromFloor(f) { return Math.round((0.85 - f) / 0.45 * 100); }
+        // floor = more merges surface); floor spans 0.85 (conservative) → 0.00 (Sam,
+        // S72 — "even more powerful on the aggressive side": the old 0.40 aggressive
+        // floor still hid the loosest-cohesion lanes; dragging fully right now drops
+        // the bar to 0.00 so EVERY scored group surfaces, the evidence lane being
+        // always-exempt either way). DEFAULT_FLOOR 0.62 now sits at ~27% of travel,
+        // leaving the bulk of the track for the aggressive reveal.
+        function floorFromAggr(v) { return Math.round((0.85 - (v / 100) * 0.85) * 100) / 100; }
+        function aggrFromFloor(f) { return Math.round((0.85 - f) / 0.85 * 100); }
         // Level/format band filter (Sam, S70). Walk the worklist one level/format
         // band at a time: a group surfaces only when ≥2 of its live members match
         // the checked bands, and within a surfaced group only matching members are

@@ -86,10 +86,10 @@ function readout() {
   check("conservative readout ≥ 0.85", readout() === "≥ 0.85");
   check("conservative floor surfaces 2 groups (0.90 + exempt evidence)", matchCount() === 2);
 
-  // Aggressive extreme (value 100 → floor 0.40): all 4 groups pass.
+  // Aggressive extreme (value 100 → floor 0.00, Sam S72): all 4 groups pass.
   slider.value = "100"; slider.dispatchEvent(new window.Event("input"));
   await sleep(60);
-  check("aggressive readout ≥ 0.40", readout() === "≥ 0.40");
+  check("aggressive readout ≥ 0.00 (S72 — deepened from 0.40)", readout() === "≥ 0.00");
   check("aggressive floor surfaces all 4 groups", matchCount() === 4);
 
   // Evidence exemption: even at the strictest floor it survived (2 included it).

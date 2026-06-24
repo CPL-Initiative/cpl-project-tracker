@@ -139,8 +139,8 @@ function shown(elm) { return elm && elm.style.display !== "none"; }
     /★ row is the SURVIVING identity/.test(box.textContent));
   check("note explains the common-course slot",
     /common course/i.test(box.textContent));
-  check("note gives the two-candidate guidance (don't deselect either)",
-    /only two candidates/i.test(box.textContent) && /don't deselect either/i.test(box.textContent));
+  check("note gives the two-candidate guidance (check the second course too)",
+    /only two candidates/i.test(box.textContent) && /check the second course/i.test(box.textContent));
 
   // Skip to group 2 (the 3-member live-recompute path).
   const skip = Array.from(box.querySelectorAll("button")).find((b) => /Skip/.test(txt(b)));

@@ -80,12 +80,12 @@ check("consumer init does not throw", !threw);
   check("weak 0.55 title group HIDDEN at default floor (no group form shown)",
     !/Proposed unified title/.test(doc.body.textContent) && /End of the worklist/.test(doc.body.textContent));
 
-  // Slide toward Aggressive (value 100 → floor 0.40) → the title group surfaces
-  // (its form + its title-lane-only candidate "Intro to Welding Tech").
+  // Slide toward Aggressive (value 100 → floor 0.00, Sam S72) → the title group
+  // surfaces (its form + its title-lane-only candidate "Intro to Welding Tech").
   slider.value = "100";
   slider.dispatchEvent(new window.Event("input"));
   await sleep(60);
-  check("aggressive floor (≥ 0.40) reached", readout() === "≥ 0.40");
+  check("aggressive floor (≥ 0.00) reached", readout() === "≥ 0.00");
   check("sliding Aggressive REVEALS the weak title group (Proposed-title form appears)",
     /Proposed unified title/.test(doc.body.textContent));
   check("the revealed group shows its title-lane candidate",
