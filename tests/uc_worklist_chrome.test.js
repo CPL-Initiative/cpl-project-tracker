@@ -108,12 +108,15 @@ check("init does not throw", !threw);
   check("'drag to move' hint removed", !/drag to move/.test(doc.body.textContent));
 
   // ── 3. proposal framing copy ─────────────────────────────────────────────
+  // The explanatory hints moved into ⓘ hover tooltips (Session 72 #4) to reclaim
+  // panel real estate — assert them in the [title] attributes, not textContent.
   const bodyTx = doc.body.textContent;
+  const titles = Array.from(shell.querySelectorAll("[title]")).map((e) => e.getAttribute("title")).join(" │ ");
   check("title field is framed as a PROPOSAL", /Proposed unified title/.test(bodyTx));
-  check("proposal hint says it applies only on Confirm", /applied only if you Confirm/.test(bodyTx));
+  check("proposal hint (now an ⓘ tooltip) says it applies only on Confirm", /applied only if you Confirm/.test(titles));
   check("member list is labelled Candidates (N)", /Candidates \(2\)/.test(bodyTx));
-  check("label states each row is currently its own identity", /each row is currently its own separate identity/.test(bodyTx));
-  check("explainer states the group does NOT yet share an identity", /do NOT yet share an identity/.test(bodyTx));
+  check("Candidates ⓘ tooltip states each row is currently its own identity", /each row is currently its own separate identity/i.test(titles));
+  check("Candidates ⓘ tooltip states the group does NOT yet share an identity", /do NOT yet share an identity/.test(titles));
   const idSpan = Array.from(shell.querySelectorAll("span")).find((s) => /ARTS M1001/.test(txt(s)));
   check("member id carries the current-identity tooltip",
     idSpan && /CURRENT identity/.test(idSpan.getAttribute("title") || ""));

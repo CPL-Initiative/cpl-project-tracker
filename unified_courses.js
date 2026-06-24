@@ -1207,14 +1207,20 @@
       var byId = (opts.deps && opts.deps.byId) || {};
       var rowPassesCcr = (opts.deps && opts.deps.rowPassesCcr) || function () { return true; };
       var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;";
+      // Compact ⓘ that holds explanatory copy in a hover tooltip instead of an
+      // always-on gray paragraph — reclaims vertical space in the panel (Sam,
+      // S72 #4). Returns the span so callers that carry DYNAMIC copy (the
+      // Candidates guidance) can update its `title` in place.
+      function infoIcon(text) {
+        return el("span", { title: text, style: "cursor:help;color:#94a3b8;font-size:.82rem;font-weight:400;margin-left:5px;user-select:none;" }, ["ⓘ"]);
+      }
       // PROPOSAL framing (Sam, 2026-06-12): the pre-filled title used to
       // read like "these courses already belong to this common course."
       // They don't — it's only the name the merged course WOULD take.
       container.appendChild(el("label", { style: "display:block;font-weight:600;margin:6px 0 2px;" },
-        ["Proposed unified title ",
-         el("span", { style: "font-weight:400;font-size:.76rem;color:#94a3b8;" },
-           [isEvidence ? "— applied only if you Confirm (pre-filled with the official course title)"
-                       : "— applied only if you Confirm (pre-filled from the longest member title; edit freely)"])]));
+        ["Proposed unified title",
+         infoIcon(isEvidence ? "Pre-filled with the official course title; applied only if you Confirm."
+                             : "Pre-filled from the longest member title; applied only if you Confirm — edit freely.")]));
       var titleIn = el("input", { type: "text", value: opts.preTitle, style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
       container.appendChild(titleIn);
       var titleDefault = titleIn.value;   // restored when an override is undone
@@ -1252,16 +1258,14 @@
       // for full credit." Persists as a ⚑ chip + a Completion-note line in
       // the row's ⓘ modal. Skipped on a firewalled official C-ID/CCN target.
       container.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" },
-        ["Completion note ",
-         el("span", { style: "font-weight:400;font-size:.76rem;color:#94a3b8;" },
-           ["— optional; written on the merged course (e.g. “Complete both parts 1 & 2 for full credit”)"])]));
+        ["Completion note",
+         infoIcon("Optional; written on the merged course (e.g. “Complete both parts 1 & 2 for full credit”).")]));
       var noteIn = el("input", { type: "text", placeholder: "e.g. Both segments (1 & 2) must be completed for full credit — optional",
         style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
       container.appendChild(noteIn);
+      var candInfo = infoIcon("");   // title set below, once `note` is computed
       container.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" },
-        ["Candidates (" + members.length + ") ",
-         el("span", { style: "font-weight:400;font-size:.76rem;color:#94a3b8;" },
-           ["— each row is currently its own separate identity"])]));
+        ["Candidates (" + members.length + ")", candInfo]));
       // The MERGE TARGET (surviving identity the others fold into, taking the
       // Proposed title's "common course" slot) is picked by targetMemberOf()
       // — targetMemberOf() is the §10 precedence pick (hoisted to init scope).
@@ -1277,11 +1281,14 @@
       // The button that leaves everything untouched: "Keep as-is / Skip" in the
       // worklist (default), "Cancel" in the per-row dialog (opts.dismissLabel).
       var dismissLabel = opts.dismissLabel || "Keep as-is / Skip";
-      var note = "These courses do NOT yet share an identity — the id on each row is that course's own, today. Check the courses to fold in, then ✓ Confirm; " + dismissLabel + " leave" + (opts.dismissLabel ? "s" : "") + " every id untouched.";
+      // The candidates guidance now lives in the Candidates-label ⓘ tooltip
+      // (Sam, S72 #4) rather than an always-on paragraph — each row is currently
+      // its own separate identity.
+      var note = "Each row is currently its own separate identity. These courses do NOT yet share an identity — the id on each row is that course's own, today. Check the courses to fold in, then ✓ Confirm; " + dismissLabel + " leave" + (opts.dismissLabel ? "s" : "") + " every id untouched.";
       if (hasTarget) note += " The ★ row is the SURVIVING identity (pre-checked) — it keeps its id and takes the Proposed title above (the “common course” slot); check each other row you want folded into it.";
       else note += " None of these is an existing identity, so check the ones to combine and Confirm MINTS a brand-new unified course named by the Proposed title above.";
       if (members.length === 2) note += " With only two candidates, check the second course too so both are ticked, then Confirm (folds them into one) — or " + dismissLabel + " to leave them as separate courses. (Confirm stays disabled until at least two are checked.)";
-      container.appendChild(el("div", { style: "margin:0 0 4px;font-size:.78rem;color:#6b7280;" }, [note]));
+      candInfo.title = note;
       var list = el("div", { style: "max-height:360px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
       var cbs = [];
       // One candidate row. `gathered` = pulled in via the ➕ keyword search
@@ -1597,8 +1604,12 @@
       // ── "Merge into a different existing course" (Sam, 2026-06-15) ──
       // Reuse the ⚇ Unify search index so a curator can redirect this merge
       // to ANY existing identity the title-signature grouping won't surface
-      // (e.g. a real Anatomy & Physiology C-ID for a Physiology row).
-      var ovWrap = el("div", { style: "margin:10px 0 0;" });
+      // (e.g. a real Anatomy & Physiology C-ID for a Physiology row). Mounted
+      // up under the Proposed-title field (Sam, S72 #5 — "move it up where the
+      // main course is listed"; a curator working the worklist out of order
+      // wants to redirect to a specific course right away) rather than at the
+      // bottom of the panel.
+      var ovWrap = el("div", { style: "margin:6px 0 2px;" });
       var ovToggle = el("a", { href: "#", style: "font-size:.82rem;color:var(--cobalt);text-decoration:none;" },
         ["⌕ Merge into a different existing course instead…"]);
       var ovPanel = el("div", { style: "display:none;margin:6px 0 0;padding:8px;border:1px solid #e5e7eb;border-radius:6px;background:#f8fafc;" });
@@ -1607,7 +1618,11 @@
       var ovRes = el("div", { style: "max-height:150px;overflow:auto;margin-top:4px;" });
       ovPanel.appendChild(ovBanner); ovPanel.appendChild(ovSearch); ovPanel.appendChild(ovRes);
       ovWrap.appendChild(ovToggle); ovWrap.appendChild(ovPanel);
-      container.appendChild(ovWrap);
+      // Insert right after the Proposed-title input (before the Discipline label),
+      // not at the panel bottom — the DOM nodes/handlers are built here but the
+      // mount point is up top (titleIn.nextSibling). `go` is hoisted, so
+      // setOverride()'s reference to it resolves at click-time regardless.
+      container.insertBefore(ovWrap, titleIn.nextSibling);
       function setOverride(entry) {
         overrideTarget = entry;
         if (entry) {
