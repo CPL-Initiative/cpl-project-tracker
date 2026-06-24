@@ -1441,7 +1441,23 @@
         // this floor filters which 🏷 groups SURFACE. Default 0.62 reproduces the
         // pre-slider behavior exactly (every pair ≥ 0.62); slide to 0.50 to
         // reveal weaker title matches. Other lanes carry no cosine → unaffected.
-        var titleFloor = 0.62;
+        // Global Conservative↔Aggressive cohesion floor (Sam, S70 — replaces the
+        // title-only 🏷 slider, which no-op'd on every non-title group). One bar
+        // that gates ALL scored lanes by their 0–1 cohesion/similarity: anchored/
+        // singleton/family carry _sug_score, desc/title carry cos_min. The
+        // COCI-evidence lane carries a witness COUNT (not a 0–1 score) so it's
+        // exempt — always shown. Default 0.62 preserves the prior title-lane bar.
+        var DEFAULT_FLOOR = 0.62;
+        var cohesionFloor = DEFAULT_FLOOR;
+        function groupAggrScore(g) {
+          if (g._kind === "evidence") return null;            // witness count → never slider-gated
+          return (typeof g.score === "number") ? g.score : null;   // null = ungated, always shows
+        }
+        function passesAggr(g) { var s = groupAggrScore(g); return s == null || s >= cohesionFloor; }
+        // Slider position is "aggressiveness" 0–100 (right = more aggressive = LOWER
+        // floor = more merges surface); floor spans 0.85 (conservative) → 0.40.
+        function floorFromAggr(v) { return Math.round((0.85 - (v / 100) * 0.45) * 100) / 100; }
+        function aggrFromFloor(f) { return Math.round((0.85 - f) / 0.45 * 100); }
         // Level/format band filter (Sam, S70). Walk the worklist one level/format
         // band at a time: a group surfaces only when ≥2 of its live members match
         // the checked bands, and within a surfaced group only matching members are
@@ -1463,22 +1479,25 @@
         var headCount = el("span", { style: "font-size:.8rem;color:#64748b;font-weight:600;" }, [""]);
         head.appendChild(headCount);
         head.appendChild(el("span", { style: "flex:1;" }, []));
-        // 🏷 Match-strength looseness slider — title lane only.
+        // Global Conservative↔Aggressive slider (Sam, S70). One control that
+        // recalibrates how many suggestions surface across all scored lanes.
         var loosenWrap = el("label", {
-          title: "Looseness for the 🏷 title-similarity lane only. Lower = more (weaker) title-match groups surface; 0.62 is the default (today's behavior). Other lanes are unaffected, and every merge stays your one-click Confirm. Set it before you reach the 🏷 lane.",
+          title: "Recalibrate how aggressive the suggestions are. Slide RIGHT = more aggressive (lower bar → more, looser merges surface across every lane); LEFT = conservative (only tight matches). Gates anchored/singleton/family (cohesion) and description/title (similarity) groups by their 0–1 score; the 🧾 COCI-evidence lane is always shown. Nothing is auto-applied — every merge stays your one-click Confirm.",
           style: "display:flex;align-items:center;gap:5px;font-size:.74rem;color:#64748b;font-weight:600;cursor:pointer;white-space:nowrap;" });
-        loosenWrap.appendChild(el("span", {}, ["🏷 strength ≥"]));
-        var loosen = el("input", { type: "range", min: "0.50", max: "0.85", step: "0.01", value: String(titleFloor), style: "width:84px;cursor:pointer;" });
+        loosenWrap.appendChild(el("span", {}, ["Cons."]));
+        var loosen = el("input", { type: "range", min: "0", max: "100", step: "1", value: String(aggrFromFloor(cohesionFloor)), style: "width:90px;cursor:pointer;" });
         loosen.onmousedown = function (e) { e.stopPropagation(); };   // drag the thumb, not the popup
-        var loosenVal = el("span", { style: "font-variant-numeric:tabular-nums;color:var(--text-strong);min-width:2.2em;" }, [titleFloor.toFixed(2)]);
+        var loosenVal = el("span", { style: "font-variant-numeric:tabular-nums;color:var(--text-strong);min-width:5.2em;" }, ["≥ " + cohesionFloor.toFixed(2)]);
         loosen.oninput = function () {
-          var nf = parseFloat(this.value);
-          // Loosening can reveal 🏷 groups ANYWHERE (incl. before the cursor),
-          // so restart the queue; tightening only skips forward, keep position.
-          if (nf < titleFloor) i = 0;
-          titleFloor = nf; loosenVal.textContent = nf.toFixed(2); renderGroup();
+          var nf = floorFromAggr(parseFloat(this.value));
+          // Lowering the floor (more aggressive) can reveal groups ANYWHERE incl.
+          // before the cursor → restart the queue; raising it only skips forward.
+          if (nf < cohesionFloor) i = 0;
+          cohesionFloor = nf; loosenVal.textContent = "≥ " + nf.toFixed(2); renderGroup();
         };
-        loosenWrap.appendChild(loosen); loosenWrap.appendChild(loosenVal);
+        loosenWrap.appendChild(loosen);
+        loosenWrap.appendChild(el("span", {}, ["Aggr."]));
+        loosenWrap.appendChild(loosenVal);
         head.appendChild(loosenWrap);
         var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close",
           style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["✕"]);
@@ -1563,7 +1582,7 @@
         function groupPasses(idx) {
           var g = groups[idx];
           return liveMembers(g).length >= 2 && !dismissed[groupSig(g)]
-            && !(g._kind === "title" && (g.score || 0) < titleFloor)
+            && passesAggr(g)
             && groupMatchesBands(g)
             && groupMatchesCcr(g)
             && matchesQuery(g);
@@ -1589,7 +1608,8 @@
           // Count: the absolute "N of M" when nothing is filtering; when the
           // search OR the CCR carry-over is narrowing the set, show the position
           // among MATCHING groups instead (task 1).
-          var filtering = !!sugQuery || (applyCcr && ccrFiltersActive());
+          var filtering = !!sugQuery || (applyCcr && ccrFiltersActive())
+            || !bandsAllOn(bands) || cohesionFloor !== DEFAULT_FLOOR;
           if (filtering) {
             var passList = []; for (var pj = 0; pj < groups.length; pj++) if (groupPasses(pj)) passList.push(pj);
             headCount.textContent = (passList.indexOf(i) + 1) + " of " + passList.length + " matching";
