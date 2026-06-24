@@ -110,7 +110,10 @@ check("init does not throw", !threw);
     /2 of 2/.test(doc.body.textContent));
 
   // ── 3. re-open with the dismissal in the overlay: group 1 is skipped ─────
-  overlay1.dispatchEvent(new window.Event("click"));   // backdrop click closes
+  // The worklist is now a DOCKED panel (PR-3), not a backdrop modal — close it
+  // via the ✕ closer in the title bar.
+  const closeX1 = Array.from(overlay1.querySelectorAll("button")).find((b) => b.getAttribute("aria-label") === "Close");
+  closeX1.dispatchEvent(new window.Event("click"));
   await sleep(50);
   check("worklist closed", !/Proposed unified title/.test(doc.body.textContent));
   dismissalRows = [{ course_id: item.course_id, value: item.value }];

@@ -1660,10 +1660,13 @@
 
     function openSuggestions() {
       if (!session) return;
-      var dim = "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;";
-      // Wider + taller popup (Sam, S70 task 3 — "see more content"): 720→940px,
-      // 92→94% on narrow screens. The candidate list max-height grows in step below.
-      var boxCss = "background:#fff;max-width:940px;width:94%;margin:32px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;";
+      // Docked RIGHT-HAND panel (Session 71, PR-3 — Sam's pick over a modal) so
+      // the CCR table stays co-visible while curating. The page REFLOWS (body
+      // padding-right), it doesn't overlay the table; width + collapsed persist
+      // per-browser. `dim` is now the dock wrapper (no full-screen backdrop);
+      // `boxCss` is the scrollable content column that fills it.
+      var dim = "position:fixed;top:0;right:0;height:100vh;z-index:9999;display:flex;background:#fff;box-shadow:-4px 0 24px rgba(0,0,0,.18);";
+      var boxCss = "flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto;background:#fff;padding:18px 20px;font-size:.9rem;";
       var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;";
       var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;";
       Promise.all([loadSuggestions(), fetchDismissals()]).then(function (res) {
@@ -1766,10 +1769,39 @@
           return order[0] || cleanTitle((mems[0] || {}).t) || (mems[0] || {}).id || "";
         }
         var i = 0;
-        var overlay = el("div", { style: dim });
-        var shell = el("div", { style: boxCss }); overlay.appendChild(shell);
-        function close() { if (overlay.parentNode) document.body.removeChild(overlay); render(); }
-        overlay.onclick = function (e) { if (e.target === overlay) close(); };
+        // ── Dock geometry + per-browser persistence (PR-3) ──────────────────
+        var DOCK_KEY = "cplWorklistDock.v1", RAIL = 44;
+        var dockState = (function () { try { return JSON.parse(localStorage.getItem(DOCK_KEY)) || {}; } catch (e) { return {}; } })();
+        var dockW = Math.min(Math.max(dockState.width || 470, 360), 900);
+        var collapsed = !!dockState.collapsed;
+        function saveDock() { try { localStorage.setItem(DOCK_KEY, JSON.stringify({ width: dockW, collapsed: collapsed })); } catch (e) {} }
+        function pageReflow(px) { document.body.style.paddingRight = px ? (px + "px") : ""; }
+        var overlay = el("div", { class: "uc-worklist-dock", style: dim });
+        // Left-edge resize grip (drag to set the dock width — replaces the old
+        // modal drag-to-MOVE; a dock resizes, it doesn't float).
+        var grip = el("div", { title: "Drag to resize the panel",
+          style: "width:6px;flex:none;cursor:ew-resize;background:#e5e7eb;" });
+        var shell = el("div", { style: boxCss });
+        // Collapsed rail: a thin vertical strip that re-expands on click, so the
+        // worklist can sit parked beside the table without taking real estate.
+        var rail = el("div", { title: "Expand the Suggested-merges panel",
+          style: "display:none;flex:1;align-items:center;justify-content:center;cursor:pointer;background:#f8fafc;writing-mode:vertical-rl;font-weight:600;color:var(--text-strong);font-size:.82rem;letter-spacing:.04em;" }, ["✨ Suggested merges"]);
+        rail.onclick = function () { collapsed = false; applyDockSize(); saveDock(); };
+        overlay.appendChild(grip); overlay.appendChild(shell); overlay.appendChild(rail);
+        function applyDockSize() {
+          overlay.style.width = (collapsed ? RAIL : dockW) + "px";
+          shell.style.display = collapsed ? "none" : "flex";
+          grip.style.display = collapsed ? "none" : "block";
+          rail.style.display = collapsed ? "flex" : "none";
+          pageReflow(collapsed ? RAIL : dockW);
+        }
+        grip.onmousedown = function (e) {
+          e.preventDefault();
+          function mv(ev) { dockW = Math.min(Math.max(window.innerWidth - ev.clientX, 360), 900); overlay.style.width = dockW + "px"; pageReflow(dockW); }
+          function up() { document.removeEventListener("mousemove", mv); document.removeEventListener("mouseup", up); saveDock(); }
+          document.addEventListener("mousemove", mv); document.addEventListener("mouseup", up);
+        };
+        function close() { if (overlay.parentNode) document.body.removeChild(overlay); pageReflow(0); render(); }
         // Persistent chrome above the per-group content (Sam, 2026-06-12): a
         // drag-handle title bar with an explicit ✕ closer. renderGroup() wipes
         // only `box` below, so the bar — and any dragged position — survives
@@ -1809,7 +1841,7 @@
           liveMembers(g).forEach(function (m) { if (memberMatchesBands(m, bands)) n++; });
           return n >= 2;
         }
-        var head = el("div", { style: "display:flex;align-items:center;gap:8px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;border-radius:10px 10px 0 0;background:#f8fafc;cursor:move;user-select:none;" });
+        var head = el("div", { style: "display:flex;align-items:center;gap:8px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;background:#f8fafc;user-select:none;" });
         head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;" }, ["✨ Suggested merges"]));
         // The "N of M" position counter lives here next to the title (Sam,
         // 2026-06-16) — renderGroup() updates it per group; the old in-box
@@ -1838,6 +1870,11 @@
         loosenWrap.appendChild(el("span", {}, ["Aggr."]));
         loosenWrap.appendChild(loosenVal);
         head.appendChild(loosenWrap);
+        // Collapse to the rail (PR-3) — parks the panel without losing the queue.
+        var collapseBtn = el("button", { type: "button", "aria-label": "Collapse", title: "Collapse to a rail",
+          style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["»"]);
+        collapseBtn.onclick = function () { collapsed = true; applyDockSize(); saveDock(); };
+        head.appendChild(collapseBtn);
         var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close",
           style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["✕"]);
         closeX.onclick = close;
@@ -1887,25 +1924,9 @@
         });
         searchRow.appendChild(bandRow);
         shell.appendChild(searchRow);
-        var box = el("div", {}); shell.appendChild(box);
-        // Drag = mousedown on the bar + document-level move/up, applied as a
-        // transform so the overlay's flex centering and scroll keep working.
-        var dragX = 0, dragY = 0;
-        head.onmousedown = function (e) {
-          if (closeX.contains(e.target)) return;
-          var sx = e.clientX - dragX, sy = e.clientY - dragY;
-          function mv(ev) {
-            dragX = ev.clientX - sx; dragY = ev.clientY - sy;
-            shell.style.transform = "translate(" + dragX + "px," + dragY + "px)";
-          }
-          function up() {
-            document.removeEventListener("mousemove", mv);
-            document.removeEventListener("mouseup", up);
-          }
-          document.addEventListener("mousemove", mv);
-          document.addEventListener("mouseup", up);
-          e.preventDefault();
-        };
+        var box = el("div", { style: "flex:1;" }); shell.appendChild(box);
+        // (PR-3) The panel is DOCKED right — width is set via the left grip, not a
+        // drag-to-move; collapse parks it to the rail. No floating transform.
 
         // #5 worklist filter: a group SURFACES iff it has ≥2 live members, isn't
         // dismissed, clears the 🏷 looseness floor, AND matches the search term
@@ -2064,7 +2085,12 @@
             },
           });
         }
+        // A dock reflows the page persistently, so never stack two — drop any
+        // existing one before mounting (re-opening from the ✨ button).
+        var priorDock = document.querySelector(".uc-worklist-dock");
+        if (priorDock && priorDock.parentNode) priorDock.parentNode.removeChild(priorDock);
         document.body.appendChild(overlay);
+        applyDockSize();   // sets width, reflows the page, restores collapsed state
         renderGroup();
       });
     }
