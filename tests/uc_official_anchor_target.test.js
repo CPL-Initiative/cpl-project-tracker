@@ -82,23 +82,38 @@ check("init does not throw", !threw);
   check("locked C-ID anchor renders an ENABLED ⚇ Merge link",
     !!(anchorRow && anchorRow.querySelector("a.uc-merge-link")));
 
-  // 2. open the merge from the M-ID seed; the anchor (exact-title match) is
-  // pre-checked and the TARGET defaults to the official id, not the seed.
+  // The per-row ⚇ dialog now embeds the SHARED merge-editor (Session 71): the
+  // target is the in-row ★, not a "Merge into" dropdown.
+  function candRow(id) {
+    return Array.from(doc.querySelectorAll("div"))
+      .find((d) => d.querySelector(":scope > input.uc-cand-cb") && d.textContent.indexOf(id) >= 0);
+  }
+  function candCb(id) { const r = candRow(id); return r && r.querySelector("input.uc-cand-cb"); }
+  function starShown(id) {
+    const r = candRow(id); if (!r) return false;
+    const b = Array.from(r.querySelectorAll("span")).find((s) => /★\s*merge target/.test(txt(s)));
+    return !!(b && b.style.display !== "none");
+  }
+
+  // 2. open the merge from the M-ID seed; opting the official anchor in makes it
+  // win target precedence (CCN > C-ID > M-ID) over the seed → it becomes the ★.
   rowFor("FLSP M1272").querySelector("a.uc-merge-link").dispatchEvent(new window.Event("click"));
   await sleep(300);
-  const identSel = Array.from(doc.querySelectorAll("select")).find((s) =>
-    Array.from(s.options).some((o) => /Mint a NEW unified course/.test(o.textContent)));
-  check("dialog renders the Merge-into selector", !!identSel);
-  // Exact-title matches start UNCHECKED (Sam, S70) — opt the official anchor in so it
-  // joins the merge and wins target precedence (CCN > C-ID > M-ID) over the seed.
-  const anchorCb = doc.querySelector('[data-id="SPAN 100"] input[type="checkbox"]');
+  check("the opened seed M-ID is the ★ target before opting the anchor in",
+    starShown("FLSP M1272"));
+  // Exact-title matches start UNCHECKED (Sam, S70) — opt the official anchor in.
+  const anchorCb = candCb("SPAN 100");
   check("exact-title official anchor starts UNCHECKED (curator opts in)", anchorCb && anchorCb.checked === false);
   anchorCb.checked = true; anchorCb.dispatchEvent(new window.Event("change"));
   await sleep(20);
-  check("target DEFAULTS to the official C-ID (SPAN 100), beating the M-ID seed",
-    identSel && identSel.value === "SPAN 100");
-  const goBtn = Array.from(doc.querySelectorAll("button")).find((b) => /Merge \d+ course/.test(txt(b)));
-  check("confirm button names the official target", goBtn && /into SPAN 100$/.test(txt(goBtn)));
+  check("★ target moves to the official C-ID (SPAN 100), beating the M-ID seed",
+    starShown("SPAN 100") && !starShown("FLSP M1272"));
+  // Official C-ID target → discipline picker is FIREWALLED (disabled, inherited).
+  const discSel = Array.from(doc.querySelectorAll("select.uc-filter")).pop();
+  check("discipline picker is disabled (firewalled) for the official anchor target",
+    discSel && discSel.disabled === true);
+  const goBtn = Array.from(doc.querySelectorAll("button")).find((b) => /✓ Confirm merge/.test(txt(b)));
+  check("confirm button present (✓ Confirm merge)", !!goBtn);
 
   // 3. confirm writes ONLY merge_into pointers (anchor stays authoritative)
   goBtn.dispatchEvent(new window.Event("click"));

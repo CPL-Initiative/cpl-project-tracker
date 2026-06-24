@@ -820,7 +820,6 @@
     }
 
     // ---- Generate unified course (consolidation) ----------------------------
-    function cssEsc(s) { return String(s).replace(/["\\]/g, "\\$&"); }
     function findCandidates(seed) {
       // Title token Jaccard gates inclusion (>=0.5); subject + units agreement
       // then BOOST the rank so same-subject / same-units candidates surface
@@ -851,7 +850,7 @@
     function openUnifyDialog(seed) {
       if (!session) return;
       loadIndex().then(function () {
-        var cand = findCandidates(seed), chosen = {};
+        var cand = findCandidates(seed);
         var overlay = el("div", { style: "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;" });
         var box = el("div", { style: "background:#fff;max-width:760px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
         overlay.appendChild(box);
@@ -859,181 +858,45 @@
         overlay.onclick = function (e) { if (e.target === overlay) close(); };
         box.appendChild(el("h3", { style: "margin:0 0 4px;color:var(--text-strong);" }, ["Merge courses"]));
         box.appendChild(el("p", { style: "margin:0 0 12px;color:#6b7280;" },
-          ["Select the courses that are the same as “" + (seed.title || seed.id) + "”. This course is the target (kept checked); check each exact / near match you want to fold in, and search to add others (incl. Stand-Alone). Nothing merges until you Confirm."]));
-        box.appendChild(el("label", { style: "display:block;font-weight:600;margin:8px 0 2px;" }, ["Unified title"]));
-        var titleIn = el("input", { type: "text", value: seed.title || "", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
-        box.appendChild(titleIn);
-        box.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" }, ["Discipline (optional)"]));
-        var discSel = el("select", { class: "uc-filter", style: "min-width:280px;" });
-        discSel.appendChild(el("option", { value: "" }, ["— choose —"]));
-        mqList.forEach(function (d) { var o = el("option", { value: d }, [d]); if (d === seed.disc) o.setAttribute("selected", "selected"); discSel.appendChild(o); });
-        box.appendChild(discSel);
-        var discNote = el("div", { style: "font-size:.78rem;color:#94a3b8;margin:2px 0 0;" }, [""]);
-        box.appendChild(discNote);
-        box.appendChild(el("label", { style: "display:block;font-weight:600;margin:12px 0 4px;" }, ["Members"]));
-        var list = el("div", { style: "max-height:260px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
-        box.appendChild(list);
-        var identSel = el("select", { class: "uc-filter" });
-        var go;                  // confirm button — defined below, label synced here
-        var userPickedTarget = false;
-        // Re-discipline support (Sam, S70): merging INTO an existing course can also
-        // re-discipline the survivor (which re-keys its Common SUBJ). Build a row
-        // lookup + a validity set so we can pre-fill / firewall officials.
+          ["Select the courses that are the same as \u201c" + (seed.title || seed.id) + "\u201d. The course you opened from is the target (kept checked); check each match you want to fold in, search to add others (incl. Stand-Alone), or set a different survivor. Nothing merges until you Confirm."]));
+        // Per-row feeder for the SHARED merge-editor (Session 71, PR-2b). The old
+        // identSel "Merge into" dropdown + bespoke add-by-search list are gone:
+        // this dialog now embeds the same editor as the \u2728 worklist (in-row \u2605
+        // target model — Sam). Seed + its findCandidates() exact/near matches map
+        // to the editor's member shape; the seed is the anchor (preCheckedIds);
+        // re-discipline-on-merge stays available (#503, allowRediscipline). The
+        // editor's own \u2795 keyword-gather + \u2315 override-target panel replace the
+        // dropdown and "Add more by search".
         var byId0 = {}; rows.forEach(function (r) { byId0[r.id] = r; });
-        var mqSet0 = {}; mqList.forEach(function (d) { mqSet0[d] = 1; });
-        var discUserPicked = false;
-        function tgtOfficial(tgt) {
-          var e = chosen[tgt];
-          if (e && (e[3] === "C-ID" || e[3] === "CCN-ID")) return true;
-          var r = byId0[tgt];
-          return !!(r && (r.id_system === "C-ID" || r.id_system === "CCN-ID"));
+        function toMember(en) {
+          return { id: en[0], t: en[1], s: en[2], k: en[3], u: en[4],
+                   g: en[3] === "Stand-Alone" ? 1 : 0,
+                   d: (byId0[en[0]] && byId0[en[0]].disc) || "" };
         }
-        function tgtDiscOf(tgt) { var r = byId0[tgt]; return (r && r.disc) || ""; }
-        // Keep the target selector, the discipline note, and the confirm-button
-        // label telling ONE story about what Confirm will do. A blank default
-        // used to silently mint a synthetic UC-CUR course (the 2026-06-10
-        // Weight Training merge surprise) — the target now defaults to the row
-        // the curator opened the merge from.
-        function syncTargetUi() {
-          var n = Object.keys(chosen).length;
-          var tgt = identSel.value;
-          var off = !!tgt && tgtOfficial(tgt);
-          // Enabled for a MINT (no target) and for re-disciplining a non-official
-          // existing target; disabled (firewalled) for an official C-ID/CCN anchor.
-          discSel.disabled = off;
-          // Pre-fill with the target's current discipline so leaving it untouched
-          // keeps the discipline; changing it re-disciplines (re-keys Common SUBJ).
-          if (tgt && !off && !discUserPicked) {
-            var td = tgtDiscOf(tgt);
-            discSel.value = (td && mqSet0[td]) ? td : "";
-          }
-          var md = discSel.value, cs = md ? DISC_COMMON_SUBJ[md] : "";
-          if (off) {
-            discNote.textContent = "Official course — keeps its authoritative discipline & Common SUBJ.";
-          } else if (tgt) {
-            discNote.textContent = md
-              ? ("Re-discipline this course (optional) → Common SUBJ " + (cs || ("a new one for " + md))
-                 + " — the M-ID's letters re-key at the next canonical-SUBJ4 fold.")
-              : "Re-discipline this course (optional) — pick a discipline to change its Common SUBJ.";
-          } else {
-            discNote.textContent = md
-              ? ("Applies to the NEW unified course → Common SUBJ " + (cs || ("a new one for " + md)) + ".")
-              : "Applies to the NEW unified course.";
-          }
-          if (go) go.textContent = tgt
-            ? ("Merge " + Math.max(n - 1, 0) + " course" + (n === 2 ? "" : "s") + " into " + tgt)
-            : ("Mint NEW unified course from " + n);
-        }
-        discSel.addEventListener("change", function () { discUserPicked = true; syncTargetUi(); });
-        // Identifier precedence for the default target (§10): CCN > C-ID > M-ID.
-        // When an official id is among the chosen, the variants merge INTO it —
-        // we only mint/keep M-IDs where no official id exists (Sam 2026-06-10).
-        function kindPri(k) { return k === "CCN-ID" ? 0 : k === "C-ID" ? 1 : 2; }
-        function refreshIdentity() {
-          var cur = identSel.value; identSel.innerHTML = "";
-          identSel.appendChild(el("option", { value: "" }, ["✨ Mint a NEW unified course"]));
-          var eligible = [];
-          Object.keys(chosen).forEach(function (id) {
-            var e = chosen[id];
-            if (e[3] && e[3] !== "Stand-Alone") {
-              identSel.appendChild(el("option", { value: id }, [id + " — " + (e[1] || "") + " (" + idSysLabel(e[3]) + ")"]));
-              eligible.push(id);
-            }
-          });
-          var official = eligible.filter(function (id) { return kindPri(chosen[id][3]) < 2; })
-            .sort(function (a, b) { return kindPri(chosen[a][3]) - kindPri(chosen[b][3]); });
-          if (userPickedTarget && (cur === "" || chosen[cur])) identSel.value = cur;
-          else if (official.length) identSel.value = official[0];
-          else if (eligible.indexOf(seed.id) >= 0) identSel.value = seed.id;
-          else if (eligible.length) identSel.value = eligible[0];
-          syncTargetUi();
-        }
-        identSel.onchange = function () { userPickedTarget = true; syncTargetUi(); };
-        function addRow(entry, checked, isSeed) {
-          var existing = list.querySelector('[data-id="' + cssEsc(entry[0]) + '"]');
-          if (existing) {
-            // Already listed — clicking a search hit must still DO something
-            // (the old code silently no-op'd, which read as "search doesn't add").
-            // Re-check it + ensure it's in `chosen`, then let the caller surface it.
-            var ecb = existing.querySelector('input[type="checkbox"]');
-            if (ecb && !ecb.disabled && !ecb.checked) { ecb.checked = true; chosen[entry[0]] = entry; refreshIdentity(); }
-            return existing;
-          }
-          var row = el("div", { "data-id": entry[0], style: "display:flex;align-items:center;gap:8px;padding:3px 4px;border-bottom:1px solid #f1f5f9;" });
-          var cb = el("input", { type: "checkbox" }); cb.checked = !!checked; if (isSeed) cb.disabled = true;
-          if (cb.checked) chosen[entry[0]] = entry;
-          cb.onchange = function () { if (cb.checked) chosen[entry[0]] = entry; else delete chosen[entry[0]]; refreshIdentity(); };
-          row.appendChild(cb);
-          row.appendChild(el("span", { style: "flex:1;" }, [entry[1] || entry[0]]));
-          row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;" }, [entry[0] + " · " + (entry[2] || "") + " · " + idSysLabel(entry[3])]));
-          list.appendChild(row);
-          return row;
-        }
-        addRow([seed.id, seed.title, (seed.subj || []).join(";"),
-                (seed.id_system === "C-ID" || seed.id_system === "CCN-ID") ? seed.id_system : seed.kind], true, true);
-        cand.exact.forEach(function (e) { addRow(e, false, false); });   // start unchecked — opt in (Sam, S70)
-        if (cand.near.length) {
-          list.appendChild(el("div", { style: "font-size:.78rem;color:#94a3b8;padding:4px;" }, ["— suggested near matches —"]));
-          cand.near.forEach(function (e) { addRow(e, false, false); });
-        }
-        box.appendChild(el("label", { style: "display:block;font-weight:600;margin:12px 0 2px;" }, ["Add more by search"]));
-        var srch = el("input", { type: "search", placeholder: "Search any course title or ID…", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
-        var srchRes = el("div", { style: "max-height:140px;overflow:auto;" });
-        box.appendChild(srch); box.appendChild(srchRes);
-        var st; srch.oninput = function () {
-          clearTimeout(st); var q = this.value.toLowerCase().trim();
-          st = setTimeout(function () {
-            srchRes.innerHTML = ""; if (q.length < 3) return;
-            var hits = 0;
-            for (var i = 0; i < _ucIndex.length && hits < 25; i++) {
-              var e = _ucIndex[i];
-              if (((e[1] || "").toLowerCase().indexOf(q) >= 0) || ((e[0] || "").toLowerCase().indexOf(q) >= 0)) {
-                hits++;
-                var inList = !!list.querySelector('[data-id="' + cssEsc(e[0]) + '"]');
-                var b = el("button", { type: "button", style: "display:block;width:100%;text-align:left;padding:3px 6px;border:none;background:none;cursor:pointer;font-size:.82rem;" + (inList ? "color:#16a34a;" : "") },
-                  [(inList ? "✓ in list — " : "+ ") + (e[1] || e[0]) + "  [" + e[0] + " · " + (e[2] || "") + "]"]);
-                // Click ALWAYS surfaces the row: add-or-ensure-checked, scroll it into
-                // view + a brief highlight, then mark the result added (the old handler
-                // silently no-op'd on rows already in the list — Sam, S70).
-                (function (en, btn) {
-                  btn.onclick = function () {
-                    var row = addRow(en, true, false);
-                    chosen[en[0]] = en;
-                    refreshIdentity();
-                    if (row) {
-                      if (row.scrollIntoView) row.scrollIntoView({ block: "nearest" });
-                      row.style.transition = "background-color .6s";
-                      row.style.backgroundColor = "#fef9c3";
-                      setTimeout(function () { row.style.backgroundColor = ""; }, 700);
-                    }
-                    btn.textContent = "✓ added — " + (en[1] || en[0]);
-                    btn.style.color = "#16a34a"; btn.style.cursor = "default"; btn.disabled = true;
-                  };
-                })(e, b);
-                srchRes.appendChild(b);
-              }
-            }
-          }, 200);
-        };
-        box.appendChild(el("label", { style: "display:block;font-weight:600;margin:12px 0 2px;" }, ["Merge into"]));
-        box.appendChild(identSel);
-        var actions = el("div", { style: "margin-top:16px;display:flex;gap:10px;justify-content:flex-end;" });
+        // `k` must follow the index/worklist convention (the §10-precedence axis):
+        // the id_system (M-ID/C-ID/CCN-ID/Unified), or "Stand-Alone". Using the
+        // row's display `kind` ("Course") would drop the seed below every M-ID in
+        // targetMemberOf and silently retarget the merge to a near-match.
+        var seedKind = seed.kind === "Stand-Alone" ? "Stand-Alone" : (seed.id_system || seed.kind);
+        var members = [{ id: seed.id, t: seed.title, s: (seed.subj || []).join(";"), k: seedKind,
+                         u: seed.units, g: seedKind === "Stand-Alone" ? 1 : 0, d: seed.disc || "" }];
+        var seen = {}; seen[seed.id] = 1;
+        cand.exact.concat(cand.near).forEach(function (en) {
+          if (seen[en[0]]) return; seen[en[0]] = 1; members.push(toMember(en));
+        });
         var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Cancel"]);
         cancel.onclick = close;
-        go = el("button", { type: "button", style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;" }, ["Consolidate"]);
-        go.onclick = function () {
-          var tgt = identSel.value;
-          // Pass the discipline when MINTING (no target) OR re-disciplining a
-          // non-official existing target; never write a discipline on an official
-          // C-ID/CCN anchor (firewalled).
-          var discOut = (tgt && tgtOfficial(tgt)) ? "" : discSel.value;
-          doConsolidate(chosen, titleIn.value.trim(), discOut, tgt, close);
-        };
-        refreshIdentity();
-        actions.appendChild(cancel); actions.appendChild(go);
-        box.appendChild(actions);
+        buildMergeEditor(box, {
+          members: members,
+          preTitle: seed.title || "",
+          preCheckedIds: [seed.id],
+          allowRediscipline: true,
+          dismissLabel: "Cancel",
+          extraActions: [cancel],
+          onConfirm: function (r) { doConsolidate(r.chosen, r.title, r.disc, r.target, close); },
+          deps: { byId: byId0 },
+        });
         document.body.appendChild(overlay);
-        titleIn.focus();
       });
     }
     // In-page state mutation for a curator merge — ONE function shared by
@@ -1401,10 +1264,19 @@
       var defTgt = targetMemberOf(members);
       var hasTarget = !!defTgt;
       var defTgtId = defTgt ? defTgt.id : null;   // the only member that starts checked
-      var note = "These courses do NOT yet share an identity — the id on each row is that course's own, today. Check the courses to fold in, then ✓ Confirm; Keep as-is / Skip leave every id untouched.";
+      // Initial-check policy. Default (worklist): only the §10 ★ target starts
+      // checked. A feeder may instead name the rows that start checked via
+      // opts.preCheckedIds — the per-row ⚇ dialog (PR-2b) passes [seed.id] so the
+      // course the curator opened from is the anchor regardless of precedence.
+      var usePreChecked = !!opts.preCheckedIds;
+      var preCheckedSet = {}; (opts.preCheckedIds || []).forEach(function (id) { preCheckedSet[id] = 1; });
+      // The button that leaves everything untouched: "Keep as-is / Skip" in the
+      // worklist (default), "Cancel" in the per-row dialog (opts.dismissLabel).
+      var dismissLabel = opts.dismissLabel || "Keep as-is / Skip";
+      var note = "These courses do NOT yet share an identity — the id on each row is that course's own, today. Check the courses to fold in, then ✓ Confirm; " + dismissLabel + " leave" + (opts.dismissLabel ? "s" : "") + " every id untouched.";
       if (hasTarget) note += " The ★ row is the SURVIVING identity (pre-checked) — it keeps its id and takes the Proposed title above (the “common course” slot); check each other row you want folded into it.";
       else note += " None of these is an existing identity, so check the ones to combine and Confirm MINTS a brand-new unified course named by the Proposed title above.";
-      if (members.length === 2) note += " With only two candidates the choice is just Confirm (fold them into one) or Keep as-is / Skip — leave BOTH checked to merge; don't deselect either.";
+      if (members.length === 2) note += " With only two candidates the choice is just Confirm (fold them into one) or " + dismissLabel + " — leave BOTH checked to merge; don't deselect either.";
       container.appendChild(el("div", { style: "margin:0 0 4px;font-size:.78rem;color:#6b7280;" }, [note]));
       var list = el("div", { style: "max-height:360px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
       var cbs = [];
@@ -1418,7 +1290,8 @@
         // (a merge needs a survivor), and a member the curator just pulled in
         // via the ➕ keyword search (gathered) stays checked. Contested evidence
         // members (m.x) never auto-check.
-        var cb = el("input", { type: "checkbox", class: "uc-cand-cb" }); cb.checked = !m.x && (gathered || m.id === defTgtId);
+        var cb = el("input", { type: "checkbox", class: "uc-cand-cb" });
+        cb.checked = !m.x && (gathered || (usePreChecked ? !!preCheckedSet[m.id] : m.id === defTgtId));
         cb.onchange = function () { refreshTarget(); };
         row.appendChild(cb);
         row.appendChild(el("span", { style: "flex:1;" }, [m.t || m.id]));
@@ -1634,17 +1507,35 @@
         // its own, so SHOW the inherited discipline (read-only) rather than a
         // bare "— choose —", and for a mint PRE-SELECT the modal member
         // discipline so the curator just confirms (task 4, Sam 2026-06-16).
-        discSel.disabled = !!hasTgt;
-        discSel.style.opacity = hasTgt ? "0.7" : "";
         if (hasTgt) {
           var tId = overrideTarget ? overrideTarget[0] : inGroupTgt.id;
+          var tKind = overrideTarget ? overrideTarget[3] : (inGroupTgt && inGroupTgt.k);
+          var tOfficial = tKind === "C-ID" || tKind === "CCN-ID"
+            || !!(byId[tId] && (byId[tId].id_system === "C-ID" || byId[tId].id_system === "CCN-ID"));
+          // Re-discipline-on-merge (#503): a feeder that opts in (opts.allowRediscipline
+          // — the per-row ⚇ dialog) may re-discipline a NON-official survivor, which
+          // re-keys its Common SUBJ (§11). The worklist leaves it off → inherited +
+          // read-only (parity). Official C-ID/CCN targets are always firewalled.
+          var canRedisc = !!opts.allowRediscipline && !tOfficial;
           var tDisc = (byId[tId] && byId[tId].disc) || (inGroupTgt && inGroupTgt.d) || "";
-          discSel.value = (tDisc && mqSet[tDisc]) ? tDisc : "";
-          discNote.textContent = tDisc
-            ? (overrideTarget ? "Inherited from the course you're folding into — kept as-is."
-                              : "Inherited from the ★ merge target — merging keeps it.")
-            : "The merge target has no discipline yet — set one from its row after merging.";
+          discSel.disabled = !canRedisc;
+          discSel.style.opacity = canRedisc ? "" : "0.7";
+          if (!canRedisc || !discSel._userPicked) discSel.value = (tDisc && mqSet[tDisc]) ? tDisc : "";
+          if (canRedisc) {
+            var csR = discSel.value ? DISC_COMMON_SUBJ[discSel.value] : "";
+            discNote.textContent = discSel.value
+              ? ("Re-discipline this course (optional) → Common SUBJ " + (csR || ("a new one for " + discSel.value))
+                 + " — the M-ID's letters re-key at the next canonical-SUBJ4 fold.")
+              : "Re-discipline this course (optional) — pick a discipline to change its Common SUBJ.";
+          } else {
+            discNote.textContent = tDisc
+              ? (overrideTarget ? "Inherited from the course you're folding into — kept as-is."
+                                : "Inherited from the ★ merge target — merging keeps it.")
+              : "The merge target has no discipline yet — set one from its row after merging.";
+          }
         } else {
+          discSel.disabled = false;
+          discSel.style.opacity = "";
           // Mint: seed the modal member discipline (unless the curator picked).
           if (!discSel._userPicked) {
             var md = modalDisc(checked);
