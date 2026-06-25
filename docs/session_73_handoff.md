@@ -13,25 +13,36 @@ related:
 
 # You are Session 73
 
-Session 72 (StarLander) ran a **hands-on CCR merge-workspace polish pass** with Sam — **six asks,
-all shipped + merged across 5 PRs**. The shared `buildMergeEditor` from Session 71 paid off: every
-editor-internal change landed once and BOTH the ✨ worklist and the per-row ⚇ dialog inherited it. 🛠️
+Session 72 (StarLander) ran a **multi-wave CCR merge-workspace polish pass** with Sam — **13 PRs
+#520–#532, all merged, 87/87 green**. The shared `buildMergeEditor` from Session 71 kept paying off:
+every editor-internal change landed once and BOTH the ✨ worklist and the per-row ⚇ dialog inherited
+it. 🛠️
 
-## What shipped this session (all on `main`, 81/81 green)
-- **#520** — Cons↔Aggr slider floor **0.40 → 0.00** at full-aggressive; **opt-in Confirm no-op fixed**
-  (Sam's "tried to save, it did nothing" = the ≥2 `alert` with only the ★ pre-checked → now Confirm is
-  **disabled+dimmed until valid**, re-enables live; stale 2-member help text corrected).
-- **#521 (#4 + #5)** — "⌕ Merge into a different course" **moved up under the title**; verbose gray
-  paragraphs → compact **ⓘ hover tooltips** (`infoIcon()`); the dynamic discipline note stays visible.
-- **#522 (#2)** — the collapsible "➕ Add more by keyword" → an **always-visible "Add more courses"
-  search** whose matches drop into the Candidates list as **unchecked** rows (tick to merge / ignore;
-  unchecked clear on query change, checked persist).
-- **#523 (#1)** — per-row **⚇ Merge opens the docked sidebar itself**, not a modal: same dock shell +
-  shared editor; **single-course mode** drops the queue chrome (no N-of-M / Skip-Keep / slider) and
-  keeps a **band row filtering the candidate pool** (new `setBandFilter` API the editor returns).
+## What shipped this session (all on `main`, 87/87 green)
+**Wave 1/2 (#520–#525)** — the original six-ask review + the candidate slider:
+- **#520** Cons↔Aggr slider floor **0.40 → 0.00**; opt-in **Confirm no-op fixed** (disabled+dimmed
+  until ≥2 checked — Sam's "tried to save, it did nothing").
+- **#521** "⌕ Merge into a different course" **up under the title**; verbose copy → **ⓘ tooltips**.
+- **#522** "Add more courses" search drops matches into Candidates as **unchecked** rows.
+- **#523** per-row **⚇ Merge opens the docked sidebar itself** (single-course mode; `setBandFilter`).
+- **#525** "Add more" → a **keyword guide + Tight↔Loose candidate-looseness slider** (the control Sam
+  expected the strength bar to be); on BOTH surfaces.
+
+**Wave 3 (#527–#531)** — Sam's 9-item refinement list:
+- **#527** "Discipline" → **"Course Discipline"**; dropped the "Merge into existing" chip → a note;
+  the **Title-5 §55050 level convention** in `courseBands()` (first cut).
+- **#528** candidate slider **defaults Loose**, persists (`cplCandLoosen.v1`), **auto-surfaces**.
+- **#529** sidebar **Prev/Next pager** + worklist **Discipline filter**.
+- **#530** **one top Search box** (editor keyword box removed) + **multi-term comma=OR** w/ ghost text.
+- **#531** **CCR table syncs to the sidebar's current course** (`state.focusId` floats it + subject
+  neighbors to the top; "Sync the CCR list" toggle on by default; close clears focus).
+
+**Wave 4 (#532)** — Sam reversed the label call: keep the human labels **Beg / Int / Adv** (the
+L1/L2/L3 from #527 reverted). Internal keys stay `beg/int/adv`; `courseBands()` logic untouched.
 
 Full story + lessons: [`docs/ccr_merge_workspace_lessons.md`](ccr_merge_workspace_lessons.md)
-(Session 72 section).
+(Session 72 — Wave 1/2 + Wave 3/4 sections). NEW KB note:
+[`docs/kb-notes/reference-course-level-convention.md`](kb-notes/reference-course-level-convention.md).
 
 ## Read these first (in order)
 1. [`docs/ccr_merge_workspace_lessons.md`](ccr_merge_workspace_lessons.md) — the Session 71 epic + the
@@ -46,26 +57,26 @@ Full story + lessons: [`docs/ccr_merge_workspace_lessons.md`](ccr_merge_workspac
 `buildMergeEditor(container, opts)` (init scope in `unified_courses.js`) owns ONE merge decision and
 is fed by **two feeders + a returned API**:
 - **Worklist** (`openSuggestions`/`renderGroup`) — docked right panel, a QUEUE of suggestion groups
-  with N-of-M / Skip / Keep / the Cons↔Aggr slider / band + CCR filters / live re-filter.
-- **Per-row** (`openUnifyDialog`) — **now ALSO a docked panel** (#523), single-course mode: the dock
-  shell mirrors the worklist's, but no queue chrome — just the seed's `findCandidates` + a band row
-  wired to the editor's returned `setBandFilter(bands)` (hides candidate rows without rebuilding).
+  with a **Prev/Next pager** (#529), **Discipline filter** (#529), N-of-M / Skip / Keep, the queue
+  **Cons↔Aggr** slider, band + CCR filters, live re-filter + **CCR-table sync** (#531).
+- **Per-row** (`openUnifyDialog`) — **also a docked panel** (#523), single-course mode: the dock shell
+  mirrors the worklist's, no queue chrome — just the seed's candidates + a band row wired to the
+  editor's returned `setBandFilter(bands)`.
 - The editor returns `{ setBandFilter }`. Inside it: Proposed title, **⌕ override up by the title**
-  (#521), Discipline + forward Common SUBJ, completion note, in-row ★ target, the **"Add more
-  courses" control** — now a **keyword guide + Tight↔Loose candidate-looseness slider** (#525:
-  loosen → surface more title/description-similar courses as unchecked rows; `scoreEn` blends
-  description lazily on a deep loosen), ⓘ tooltips (#521), **Confirm disabled until ≥2 checked**
-  (#520). **Change merge UX once, here.** Note: the worklist now has TWO range sliders — the header
-  queue Cons↔Aggr (which *groups* to review) + this per-merge Tight↔Loose (candidates for *this*
-  merge); keep them labeled distinctly.
+  (#521), **Course Discipline** + forward Common SUBJ (#527 label), completion note, in-row ★ target,
+  the **candidate Tight↔Loose looseness slider** (defaults Loose + persists + auto-surfaces, #528),
+  ⓘ tooltips (#521), **Confirm disabled until ≥2 checked** (#520), the **Beg/Int/Adv/Lab/WkExp band
+  filter** (§55050 levels, #527/#532). The **one keyword source is the top Search box** (#530,
+  multi-term comma=OR). **Change merge UX once, here.**
 
-Two dock shells now exist (worklist + per-row) — a small presentational duplication; a future
-`buildDock()` extraction would consolidate them (not load-bearing).
+Note: the worklist now has TWO range sliders — the header **queue Cons↔Aggr** (which *groups* to
+review) + the per-merge **Tight↔Loose** (candidates for *this* merge). Sam OK'd it but wanted to feel
+it in real use — if it reads as one slider too many, collapse/relabel. Two dock shells (worklist +
+per-row) also coexist — a small presentational duplication; a future `buildDock()` would consolidate.
 
 ## Your options (pick with Sam — no single forced #1)
-- **Watch the two-slider worklist (eyeball):** #525 added a per-merge Tight↔Loose candidate slider
-  to the editor, so the worklist now shows it alongside its header Cons↔Aggr queue slider. Sam OK'd
-  this but wanted to feel it in real use — if it reads as one slider too many, collapse/relabel.
+- **Eyeball the live merge workspace** — the two-slider worklist + the CCR-sync float; trim if Sam
+  finds either noisy in real curation.
 - **Unverified-M-ID renumber re-mint** — *when the merge wave settles* (NOT per-merge). Full Rule-7,
   unverified-only, ONE pass, close-gaps + re-sort. [`docs/unverified_mid_renumber_scope.md`](unverified_mid_renumber_scope.md).
   Dry-run → Sam's go → apply + Supabase re-key.
@@ -74,18 +85,19 @@ Two dock shells now exist (worklist + per-row) — a small presentational duplic
 - **First Light bonus** — more CA plein-air via the runner-as-Commons-proxy pipeline.
 
 ## Patterns that worked (reuse them)
-- **A "did nothing" report is usually a silent guard, not a crash.** Reproduce the user's exact click
-  path; the fix is often to make the dead-end *visible* (disable the button), not chase a phantom.
-- **A container swap (modal → dock) is cheap when the tests are DOM-position-agnostic.** Grep the
-  consumers for container-specific assumptions first; ours located the editor via document-wide
-  `querySelectorAll`, so the per-row tests passed unchanged.
-- **Relocating copy into `[title]` tooltips breaks `textContent` assertions** — keep the phrase
-  verbatim, point the test at `[title]` (watch sentence-case → use `/i`).
-- **The Edit tool chokes on this file's Unicode comments** (emoji, em-dashes). Split big replacements
-  into small plain-ASCII anchors; disambiguate near-identical blocks by their unique tail.
+- **A "did nothing" report is usually a silent guard, not a crash.** Reproduce the exact click path;
+  the fix is often to make the dead-end *visible* (disable the button), not chase a phantom.
+- **Labels are cheap to flip; classification logic is not — keep them decoupled.** Beg/Int/Adv ⇄
+  L1/L2/L3 touched only display sites + tooltips because `courseBands()` returns stable internal keys.
+- **A bare-number course level is a HINT, never a lock** — one title can't reveal sequence length;
+  classify on explicit ranges/words/ordinals, leave the rest curator-overridable.
+- **After a bulk `sed` find-replace, RUN THE SUITE** — a quoted-string replace misses unquoted
+  regexes (the Wave-4 `/^L[123]$/` test-helper FAIL).
 - **Filter candidate rows by hiding, not rebuilding** — rebuilding wipes checkbox/typed state.
+  Float-don't-filter for context (the `focusId` CCR sort keeps adjacents scrollable).
 - **One concern per PR, branch fresh off `main`, merge each on green** before branching the next
   (sibling branches that all touch `unified_courses.js` conflict otherwise).
+- **When a default changes (e.g. slider defaults Loose), grep tests for exact-count assertions first.**
 
 ## Safety patterns to honor
 - **CCR = static `unified_courses.js`** (Pages-served, live on merge) — ship code-only; the CCR DATA +

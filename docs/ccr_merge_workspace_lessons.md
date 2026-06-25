@@ -185,9 +185,56 @@ already loaded from an ⓘ toggle the blend kicks in immediately). **Lessons:**
   Tight↔Loose in the editor). The per-row-dock test had to stop asserting "no range slider" and
   instead assert no *Cons↔Aggr* (queue) slider while the *Tight↔Loose* candidate slider IS present.
 
-### State + next
+### State + next (as of #525)
 - **All six S72 items + the #525 follow-up DONE + merged.** Possible next polish: the two dock shells
   (worklist + per-row) could fold into a `buildDock()` helper; watch whether the worklist's two
   sliders read as one too many in real use (Sam to eyeball).
+- Standing lanes unchanged: unverified-M-ID renumber re-mint, TMC Phase-2 acceptance engine,
+  CPL-Assistant CCR/CER recommender ETL.
+
+### Wave 3 (#527–#531) + Wave 4 (#532) — Sam's 9-item refinement list (2026-06-25)
+
+After more hands-on use Sam sent nine refinements. Shipped one-concern-per-PR off fresh branches:
+
+| PR | Items | What |
+|---|---|---|
+| **#527** | #6 + #8 + #9 | "Discipline" → **"Course Discipline"** label + note; dropped the redundant "Merge into existing" chip → a section note; the **Title-5 §55050 level convention** (first cut, labels Level 1/2/3). |
+| **#528** | #4 | The candidate Tight↔Loose slider now **defaults near-full Loose**, **persists** per-browser (`cplCandLoosen.v1`), and **auto-surfaces** the looser candidate set on open (no drag needed). |
+| **#529** | #1 + #2 | Sidebar **Prev/Next pager** at the bottom (`nextPassing(from,dir)` walks the filtered queue); a **Discipline filter** in the worklist (`discSel` from `discCount`, `groupMatchesDisc` in `groupPasses`). |
+| **#530** | #5 + #7 | **Eliminated the editor's own keyword box** — one **top Search box** is the single keyword source; made it **multi-term (comma = OR)** with ghost text ("digital, imag"). |
+| **#531** | #3 | **CCR table syncs to the sidebar's current course** — `state.focusId` floats that course + its subject neighbors to the top of the CCR list (still scrollable), focused row highlighted; a "Sync the CCR list" toggle (on by default); closing the worklist clears the focus. |
+| **#532** | Wave 4 | Sam reversed the label call: **keep Beg/Int/Adv** (the L1/L2/L3 from #527 reverted). Internal keys stay `beg/int/adv`, `courseBands()` logic untouched — pure label revert. |
+
+**Lessons:**
+- **Default-Loose + auto-surface broke "group starts with N members" assumptions.** #528 made the
+  editor open with extra candidates already surfaced, so two tests that counted the initial member
+  list failed. Fix: pin `localStorage.setItem("cplCandLoosen.v1","0")` (Tight) in the keyword-gather
+  test, and make any keyword-path fixture title *dissimilar* from the seed so the auto-surface doesn't
+  pre-pull it. When a default changes, grep the tests for "starts with"/exact-count assertions first.
+- **A bare-number level is a HINT, never a lock.** "Spanish 3" is Int in a six-part ladder, Adv in a
+  three-part one — one title can't reveal sequence length. `courseBands()` reads **explicit
+  ranges (1-2/3-4/5-6) and words/Roman ordinals reliably, a bare single digit only as a hint**, and
+  bare numbers are matched **as whole single-digit tokens** so `CS6`/`2D`/`Math 56` (a course
+  *number*) don't misread. The convention is **authoritative by curation**; the classifier is the
+  assist. Full convention: [`docs/kb-notes/reference-course-level-convention.md`](kb-notes/reference-course-level-convention.md).
+- **Labels are cheap to flip; classification logic is not — keep them decoupled.** The Beg/Int/Adv ⇄
+  L1/L2/L3 round-trip (#527 → #532) touched only three display sites + tooltips + the doc, because the
+  classifier returns stable internal keys (`beg/int/adv`) and the UI maps them at render. A label A/B
+  is a one-line dictionary swap when the data layer never learns the label.
+- **`sed`-reverting quoted strings misses regexes.** The Wave-4 revert `sed`'d `"L1"→"Beg"` etc. in
+  the tests but left a test helper's `/^L[123]$/` regex (unquoted) pointing at the old labels → a
+  silent FAIL. After a bulk find-replace, **run the suite** — don't trust the grep that only checked
+  the quoted forms.
+- **`focusId` sort floats without losing adjacency.** #531's CCR-sync sorts the focused course +
+  same-subject neighbors to the top rather than *filtering* to them, so the curator can still scroll
+  to true adjacents — a "float, don't filter" pattern that keeps context while answering "where is the
+  course I'm merging in the big list?".
+
+### State + next (as of #532 — Session 72 close)
+- **All 13 PRs (#520–#532) merged; 87/87 green.** The merge workspace is the most-iterated surface in
+  the CCR now — one shared `buildMergeEditor`, two feeders, a docked panel on both, a candidate
+  looseness slider, the §55050 level filter, CCR-table sync, and a multi-term search.
+- **Possible next polish (unchanged):** fold the two dock shells into a `buildDock()` helper; eyeball
+  whether the worklist's two sliders (queue Cons↔Aggr + per-merge Tight↔Loose) read as one too many.
 - Standing lanes unchanged: unverified-M-ID renumber re-mint, TMC Phase-2 acceptance engine,
   CPL-Assistant CCR/CER recommender ETL.

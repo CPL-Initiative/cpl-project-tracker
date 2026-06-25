@@ -1844,22 +1844,23 @@ unverified-M-ID renumber re-mint, TMC acceptance engine, CPL-Assistant recommend
 
 ### Session 72 — StarLander: the post-consolidation polish pass (2026-06-24/25)
 
-Sam's hands-on review of the now-shared merge workspace — **six asks, all shipped + merged across
-5 PRs**; because the editor is shared, each editor-internal change landed once and BOTH surfaces
-(✨ worklist + per-row ⚇ dialog) inherited it. **#520** deepened the Cons↔Aggr slider floor
-**0.40 → 0.00** + fixed the opt-in **Confirm silent no-op** (disabled-until-≥2-checked, the "it did
-nothing" report). **#521** moved **"⌕ Merge into a different course" up under the title** + collapsed
-verbose copy into **ⓘ tooltips** (`infoIcon()`). **#522** replaced the collapsible "➕ Add more" with
-an **always-visible "Add more courses" search** whose matches drop into the candidate list as
-**unchecked** rows. **#523 (#1)** — the per-row **⚇ Merge now opens the docked sidebar itself** (not a
-modal): same dock shell + shared editor, single-course mode (no queue chrome; a band row filters the
-candidate pool via a new `setBandFilter` API). Then **#525** consolidated "Add more" into a
-**keyword guide + a Tight↔Loose candidate-looseness slider** (loosen → surface more
-title/description-similar courses as unchecked rows; the slider Sam expected the strength bar to
-be) — in the shared editor, so the worklist now also carries it alongside its queue Cons↔Aggr bar.
-81→83 green. Full story:
-[`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md) (Session 72). **NEXT:
-[`docs/session_73_handoff.md`](docs/session_73_handoff.md)** — standing lanes: unverified-M-ID
+Sam's hands-on review of the now-shared merge workspace — **13 PRs #520–#532, all merged**; because
+the editor is shared, each editor-internal change landed once and BOTH surfaces (✨ worklist +
+per-row ⚇ dialog) inherited it. **Wave 1/2 (#520–#525):** Cons↔Aggr slider floor 0.40→0.00 + the
+opt-in **Confirm no-op fix** (disabled-until-≥2-checked); ⌕ override moved up under the title +
+verbose copy → ⓘ tooltips; "Add more" → search-into-candidate-list; the **per-row ⚇ Merge opens the
+docked sidebar** (single-course mode, `setBandFilter`); and the **Tight↔Loose candidate-looseness
+slider** (the control Sam expected the strength bar to be). **Wave 3 (#527–#531) — 9 refinements:**
+sidebar Prev/Next pager · worklist **Discipline filter** · **CCR table syncs to the sidebar's
+current course** (`state.focusId` floats it + subject neighbors to top) · candidate slider defaults
+**Loose** + persists (`cplCandLoosen.v1`) + auto-surfaces · editor keyword box **eliminated** (one
+top Search box) · multi-term **comma=OR** search w/ ghost text · "Merge into existing" chip → section
+note · the **Title-5 §55050 level convention** in `courseBands()` (ranges/words/ordinals classify;
+bare numbers a curator-overridable hint). **Wave 4 (#532):** kept the human labels **Beg/Int/Adv**
+(tried L1/L2/L3, reverted — internal keys stay `beg/int/adv`, no data churn). 81→**87 green**. Full
+story: [`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md); NEW KB note
+[`docs/kb-notes/reference-course-level-convention.md`](docs/kb-notes/reference-course-level-convention.md).
+**NEXT: [`docs/session_73_handoff.md`](docs/session_73_handoff.md)** — standing lanes: unverified-M-ID
 renumber re-mint, TMC Phase-2 acceptance engine, CPL-Assistant CCR/CER recommender ETL.
 
 ---

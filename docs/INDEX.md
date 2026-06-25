@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-24 (Session 70 — PaintSky: the CCR merge-workspace arc #500/#503–#509 — Pending-merges panel + mint→Common SUBJ preview + re-discipline-on-merge + forward-looking Common SUBJ + search-add fix + Beg/Int/Adv/Lab/WkExp band filters + Conservative↔Aggressive slider + opt-in checkboxes + morphological-variant fold + cross-discipline flag; NEW kb-notes methodology-stacked-pr-empty-squash + methodology-forward-looking-display-curate-now-rekey-later + reference-common-vs-local-subj-and-discipline-cardinality)
+updated: 2026-06-25 (Session 72 — StarLander: the CCR merge-workspace polish pass, 13 PRs #520–#532 — Wave 1/2 six asks + #525 candidate Tight↔Loose slider; Wave 3 nine refinements #527–#531 — sidebar pager + worklist Discipline filter + CCR-table sync-to-current-course + Loose slider default + one top Search box + multi-term comma=OR + the §55050 level convention; Wave 4 #532 Beg/Int/Adv relabel; NEW kb-note reference-course-level-convention)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -130,6 +130,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Reference — Common SUBJ vs Local SUBJ, and the real discipline↔subject invariant (one discipline → one canonical SUBJ4; C-ID/CCN verbatim; the cardinality table)](kb-notes/reference-common-vs-local-subj-and-discipline-cardinality.md) | reference | published | 2026-06-23 | 2026-06-23 |
 | [Methodology — A stacked PR can squash to an empty commit; verify `main` has the diff (branch fresh per PR; the receipt is not the outcome)](kb-notes/methodology-stacked-pr-empty-squash.md) | methodology | published | 2026-06-23 | 2026-06-23 |
 | [Methodology — Forward-looking display for a curate-now / re-key-later split (show the destination + a pending marker; don't let the deferred backlog skew the derived map)](kb-notes/methodology-forward-looking-display-curate-now-rekey-later.md) | methodology | published | 2026-06-24 | 2026-06-24 |
+| [Reference — Common-Course level convention (Beg/Int/Adv; the §55050 classifier — ranges/words/ordinals win, bare numbers are a curator-overridable hint; the Levels filter + chip)](kb-notes/reference-course-level-convention.md) | reference | published | 2026-06-25 | 2026-06-25 |
 
 ---
 
@@ -144,7 +145,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [Scope — UC-CUR → Z-scheme re-mint (full re-key of 4,053 synthetic ids → SUBJ Z<band><seq>; Rule 7, **APPLIED Session 56**, PR #439)](uc_cur_zscheme_remint_scope.md) | 2026-06-15 | 2026-06-15 |
 | [Scope — Unverified-M-ID renumber re-mint (close gaps + re-sort; full Rule-7, unverified-only, ONE pass after the merge wave; the grounded re-key chain; #494)](unverified_mid_renumber_scope.md) | 2026-06-23 | 2026-06-23 |
 | [Scope — CCR merge-workspace EPIC (consolidate the two merge popups into one shared MergeEditor + dock the worklist panel; divergence table, two-feeders design, 4-PR ladder, Session 71)](ccr_merge_workspace_epic_scope.md) | 2026-06-24 | 2026-06-24 |
-| [`ccr_merge_workspace_lessons.md`](ccr_merge_workspace_lessons.md) — Session 71: the shared-editor extraction (#511 scope → #512 PR-1 → #513 PR-2a → #514 PR-2b); two-feeders/one-editor design, the seed-`k` precedence bug, deterministic-splice method; PR-3 (dock) next | 2026-06-24 | 2026-06-24 |
+| [`ccr_merge_workspace_lessons.md`](ccr_merge_workspace_lessons.md) — Session 71: the shared-editor extraction (#511–#518); two-feeders/one-editor design, the seed-`k` precedence bug, deterministic-splice method. **Session 72 (StarLander): the post-consolidation polish pass — 13 PRs #520–#532 (Wave 1/2 six asks + #525 candidate slider; Wave 3 nine refinements #527–#531 — pager/disc-filter/CCR-sync/Loose-default/one-Search-box/multi-term-OR/§55050-levels; Wave 4 Beg/Int/Adv relabel #532)** | 2026-06-24 | 2026-06-25 |
 | [Scope — C-ID articulation authority (the math cleanup)](cid_articulation_authority_scope.md) | 2026-06-11 | 2026-06-11 |
 | [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes; **Session 23: #2 sidebar sub-links + #3 display-label map** | Session 23 (Bruh 23, 2026-05-31) |
 | [`engineering_practices_lessons.md`](engineering_practices_lessons.md) | Dev infra / testing / design system (committed jsdom harness + CI, stop-hook fix, `:root` tokens + `var()` rule, prototype-first) | **Session 32 (Busy Feynman, 2026-06-04) NEW** |
