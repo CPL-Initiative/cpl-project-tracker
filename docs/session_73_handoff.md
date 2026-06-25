@@ -13,12 +13,12 @@ related:
 
 # You are Session 73
 
-Session 72 (StarLander) ran a **multi-wave CCR merge-workspace polish pass** with Sam — **13 PRs
-#520–#532, all merged, 87/87 green**. The shared `buildMergeEditor` from Session 71 kept paying off:
+Session 72 (StarLander) ran a **multi-wave CCR merge-workspace polish pass** with Sam — **14 PRs
+#520–#534, all merged, 88/88 green**. The shared `buildMergeEditor` from Session 71 kept paying off:
 every editor-internal change landed once and BOTH the ✨ worklist and the per-row ⚇ dialog inherited
-it. 🛠️
+it. 🛠️ Sam's verdict at the end: *"Things are working nicely."*
 
-## What shipped this session (all on `main`, 87/87 green)
+## What shipped this session (all on `main`, 88/88 green)
 **Wave 1/2 (#520–#525)** — the original six-ask review + the candidate slider:
 - **#520** Cons↔Aggr slider floor **0.40 → 0.00**; opt-in **Confirm no-op fixed** (disabled+dimmed
   until ≥2 checked — Sam's "tried to save, it did nothing").
@@ -40,8 +40,19 @@ it. 🛠️
 **Wave 4 (#532)** — Sam reversed the label call: keep the human labels **Beg / Int / Adv** (the
 L1/L2/L3 from #527 reverted). Internal keys stay `beg/int/adv`; `courseBands()` logic untouched.
 
+**Wave 5 (#534)** — Sam's "poke a bit more" review:
+- **Dropped "Match the CCR table filters"** → the worklist is **DECOUPLED** from the main CCR table's
+  filters (`applyCcr` defaults false; `rowPassesCcr` gates on it). It has its own Search + Discipline
+  + Level controls; the checkbox was redundant AND quietly hid courses from the keyword search.
+- **Keyword surfaces ALL matching courses** — no longer CCR-gated, cap **25 → 100** for explicit
+  keyword searches (a low-similarity match below the Tight threshold now surfaces by keyword).
+- **Single-course RENAME → Save** — only the ★ checked + an edited title flips "✓ Confirm merge" to
+  **"✓ Save"**, writing `unified_title` via a new **`doRename()`** (no `merge_into`, no merged-row
+  side-effects). `titleIn.oninput = refreshTarget` is load-bearing.
+- **Header Prev/Next (‹ ›)** next to the counter for backward nav.
+
 Full story + lessons: [`docs/ccr_merge_workspace_lessons.md`](ccr_merge_workspace_lessons.md)
-(Session 72 — Wave 1/2 + Wave 3/4 sections). NEW KB note:
+(Session 72 — Wave 1/2, Wave 3/4, Wave 5 sections). NEW KB note:
 [`docs/kb-notes/reference-course-level-convention.md`](kb-notes/reference-course-level-convention.md).
 
 ## Read these first (in order)
@@ -57,17 +68,23 @@ Full story + lessons: [`docs/ccr_merge_workspace_lessons.md`](ccr_merge_workspac
 `buildMergeEditor(container, opts)` (init scope in `unified_courses.js`) owns ONE merge decision and
 is fed by **two feeders + a returned API**:
 - **Worklist** (`openSuggestions`/`renderGroup`) — docked right panel, a QUEUE of suggestion groups
-  with a **Prev/Next pager** (#529), **Discipline filter** (#529), N-of-M / Skip / Keep, the queue
-  **Cons↔Aggr** slider, band + CCR filters, live re-filter + **CCR-table sync** (#531).
+  with a **header Prev/Next ‹ ›** (#534) + the bottom **Prev/Next pager** (#529), **Discipline filter**
+  (#529), N-of-M / Skip / Keep, the queue **Cons↔Aggr** slider, **CCR-table sync** (#531). **It is now
+  DECOUPLED from the CCR table filters** (#534 — `applyCcr` defaults false; the "Match the CCR table
+  filters" checkbox is gone; the `worklistRefilter` hook + `ccrSig` guard remain as a no-op).
 - **Per-row** (`openUnifyDialog`) — **also a docked panel** (#523), single-course mode: the dock shell
   mirrors the worklist's, no queue chrome — just the seed's candidates + a band row wired to the
   editor's returned `setBandFilter(bands)`.
-- The editor returns `{ setBandFilter }`. Inside it: Proposed title, **⌕ override up by the title**
+- The editor returns `{ setBandFilter, refreshCandidates }`. Inside it: Proposed title (`titleIn.oninput
+  = refreshTarget` so the action button re-evaluates as you type), **⌕ override up by the title**
   (#521), **Course Discipline** + forward Common SUBJ (#527 label), completion note, in-row ★ target,
   the **candidate Tight↔Loose looseness slider** (defaults Loose + persists + auto-surfaces, #528),
-  ⓘ tooltips (#521), **Confirm disabled until ≥2 checked** (#520), the **Beg/Int/Adv/Lab/WkExp band
-  filter** (§55050 levels, #527/#532). The **one keyword source is the top Search box** (#530,
-  multi-term comma=OR). **Change merge UX once, here.**
+  ⓘ tooltips (#521), the **Beg/Int/Adv/Lab/WkExp band filter** (§55050 levels, #527/#532). The **one
+  keyword source is the top Search box** (#530, multi-term comma=OR; #534 made it surface ALL matches —
+  cap 100, not CCR-gated). **Confirm disabled until ≥2 checked** (#520) — EXCEPT a **single-course
+  rename** (#534): only the ★ checked + an edited title → "✓ Confirm merge" becomes **"✓ Save"**, which
+  fires `opts.onRename` → `doRename()` (writes `unified_title`, no `merge_into`). **Change merge UX once,
+  here.**
 
 Note: the worklist now has TWO range sliders — the header **queue Cons↔Aggr** (which *groups* to
 review) + the per-merge **Tight↔Loose** (candidates for *this* merge). Sam OK'd it but wanted to feel
