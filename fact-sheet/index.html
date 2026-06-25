@@ -9,9 +9,6 @@
 <meta property="og:description" content="Credit for Prior Learning Initiative — California Community Colleges. Live systemwide data, Vision 2030 goals, and resources.">
 <meta property="og:type" content="article">
 <link rel="icon" href="../cccco_seal.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./factsheet.css">
 </head>
 <body>
@@ -47,7 +44,7 @@
       <h3 style="margin-top:0">Contents</h3>
       <nav class="toc">
         <a href="#what-is-cpl">What is CPL &amp; why it matters</a>
-        <a href="#progress">Current CPL progress (live)</a>
+        <a href="#progress">Key performance indicators</a>
         <a href="#workplan-metrics">Vision 2030 workplan metrics</a>
         <a href="#vision-goals">Vision 2030 goals &amp; impact</a>
         <a href="#funding">Funding history &amp; allocations</a>
@@ -112,15 +109,28 @@
 
     <h3>Equitable access and completion without debt</h3>
     <p>CPL disproportionately benefits working adults, veterans, Pell-eligible, and historically underserved
-      communities who have acquired real skills but lack formal credentials. Research shows CPL drives
-      measurable equity gains:</p>
+      communities who have acquired real skills but lack formal credentials.</p>
+
+    <h4>The CPL Bump</h4>
+    <p style="margin-top:0">National research on Prior Learning Assessment — the
+      <strong>CAEL &amp; WICHE <a href="https://www.wiche.edu/wp-content/uploads/2020/10/PLA-Boost-Report-CAEL-WICHE-Revised-Dec-2020.pdf" target="_blank" rel="noopener">PLA&nbsp;Boost</a></strong>
+      study, a 72-institution analysis of adult-student outcomes — shows that earning credit for prior learning
+      measurably lifts completion, with the largest gains for historically underserved learners:</p>
+    <div class="stat-grid">
+      <div class="stat green"><div class="big">49% vs 27%</div><div class="cap">Graduation rate: CPL recipients vs. non-CPL students</div></div>
+      <div class="stat"><div class="big">+25%</div><div class="cap">Overall completion boost from CPL at community colleges</div></div>
+      <div class="stat"><div class="big">+24%</div><div class="cap">Completion boost for Latinx students</div></div>
+      <div class="stat"><div class="big">+14%</div><div class="cap">Completion boost for Black students</div></div>
+      <div class="stat"><div class="big">+19%</div><div class="cap">Completion boost for Pell Grant recipients</div></div>
+    </div>
+    <p style="font-size:.82rem;color:var(--muted);margin:8px 0 0">Source: CAEL &amp; WICHE,
+      <em><a href="https://www.wiche.edu/wp-content/uploads/2020/10/PLA-Boost-Report-CAEL-WICHE-Revised-Dec-2020.pdf" target="_blank" rel="noopener">The PLA Boost: Results from a 72-Institution Targeted Study of Prior Learning Assessment and Adult Student Outcomes</a></em> (revised Dec 2020).</p>
+
+    <h4>For veterans &amp; working learners</h4>
     <ul class="tightlist">
-      <li><strong>+25%</strong> overall completion boost from CPL at community colleges (WICHE/CAEL)</li>
-      <li><strong>+24%</strong> completion boost for Latinx students</li>
-      <li><strong>+14%</strong> completion boost for Black students</li>
-      <li><strong>+19%</strong> completion boost for Pell Grant recipients</li>
       <li>Only <strong>1 in 4</strong> veterans believe they received the college credit they deserve for military training</li>
       <li><strong>25%</strong> of surveyed veterans report running out of military benefits before completing a credential — CPL can bridge this gap, enabling veterans to reach up to a master's degree at no additional cost</li>
+      <li><strong>$14,653–$26,115</strong> in educational benefits preserved per student (≈15 units of CPL), with up to <strong>36 months</strong> of Post-9/11 GI&nbsp;Bill eligibility stretched further toward higher degrees</li>
       <li>CPL reduces loan burden, preserves GI&nbsp;Bill and Pell benefits, and accelerates time to degree for working learners</li>
     </ul>
     <div class="note">CPL also increases college funding through the Student-Centered Funding Formula: students who
@@ -131,14 +141,18 @@
 
   <!-- ── Current progress (LIVE) ───────────────────────────────────────── -->
   <section id="progress">
-    <h2>Current CPL progress</h2>
-    <p class="lede">Systemwide totals from the MAP CPL Dashboard — <strong data-bind="as_of_inline">updated live</strong>.
-      Visit <a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener">the live dashboard</a> for college-level detail.</p>
+    <h2>Key performance indicators</h2>
+    <p class="lede">Systemwide KPIs from the MAP CPL Dashboard, as shown on COBI. The six headline metrics update
+      <strong data-bind="as_of_inline">live</strong>; the exhibit &amp; recommendation counts are a current snapshot
+      from the MAP Custom Reporting Module. See the
+      <a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener">live dashboard</a>
+      for college-level detail.</p>
 
     <div class="kpi-grid">
       <div class="kpi">
-        <div class="kpi-label">Students Served</div>
+        <div class="kpi-label">Cumulative CPL Students</div>
         <div class="kpi-value" data-bind="students.total">48,029</div>
+        <div class="kpi-sub">Target: 250,000 by 2030</div>
         <div class="bd"><span class="bd-label">Military</span><span class="bd-val" data-bind="students.military">24,724</span></div>
         <div class="bd"><span class="bd-label">Workforce / Other</span><span class="bd-val" data-bind="students.workforce">23,381</span></div>
         <div class="bd"><span class="bd-label">Apprentice</span><span class="bd-val" data-bind="students.apprentice">752</span></div>
@@ -146,6 +160,7 @@
       <div class="kpi">
         <div class="kpi-label">Eligible Units</div>
         <div class="kpi-value" data-bind="eligible.total">230k</div>
+        <div class="kpi-sub">Units eligible for CPL credit</div>
         <div class="bd"><span class="bd-label">Military</span><span class="bd-val" data-bind="eligible.military">114k</span></div>
         <div class="bd"><span class="bd-label">Workforce / Other</span><span class="bd-val" data-bind="eligible.workforce">122k</span></div>
         <div class="bd"><span class="bd-label">Apprentice</span><span class="bd-val" data-bind="eligible.apprentice">6k</span></div>
@@ -153,30 +168,74 @@
       <div class="kpi">
         <div class="kpi-label">Transcribed Units</div>
         <div class="kpi-value" data-bind="transcribed.total">99k</div>
+        <div class="kpi-sub">Target: 85,000 — exceeded</div>
         <div class="bd"><span class="bd-label">Military</span><span class="bd-val" data-bind="transcribed.military">13k</span></div>
         <div class="bd"><span class="bd-label">Workforce / Other</span><span class="bd-val" data-bind="transcribed.workforce">86k</span></div>
         <div class="bd"><span class="bd-label">Apprentice</span><span class="bd-val" data-bind="transcribed.apprentice">6k</span></div>
+        <div class="bd"><span class="bd-label">Applied Credits</span><span class="bd-val">230,037</span></div>
       </div>
-      <div class="kpi savings">
-        <div class="kpi-label">Estimated Savings</div>
-        <div class="kpi-value" data-bind="savings.total">$321M</div>
-        <div class="bd"><span class="bd-label">Military</span><span class="bd-val" data-bind="savings.military">$159M</span></div>
-        <div class="bd"><span class="bd-label">Workforce / Other</span><span class="bd-val" data-bind="savings.workforce">$169M</span></div>
-        <div class="bd"><span class="bd-label">Apprentice</span><span class="bd-val" data-bind="savings.apprentice">$9M</span></div>
+      <div class="kpi">
+        <div class="kpi-label">Credit Recommendations</div>
+        <div class="kpi-value">11,789</div>
+        <div class="kpi-sub">MAP Custom Reporting Module</div>
+        <div class="bd"><span class="bd-label">CCC Collaborative</span><span class="bd-val">1,304</span></div>
+        <div class="bd"><span class="bd-label">Local (college articulations)</span><span class="bd-val">10,485</span></div>
+        <div class="kpi-fn">By type — Standardized Assessment 5,968 · Industry Cert 3,579 · Credit by Exam 1,654 · Portfolio 384 · Military 116</div>
       </div>
-      <div class="kpi savings">
-        <div class="kpi-label">20-Year Economic Impact</div>
-        <div class="kpi-value" data-bind="impact.total">$1.3B</div>
-        <div class="bd"><span class="bd-label">Military</span><span class="bd-val" data-bind="impact.military">$642M</span></div>
-        <div class="bd"><span class="bd-label">Workforce / Other</span><span class="bd-val" data-bind="impact.workforce">$685M</span></div>
-        <div class="bd"><span class="bd-label">Apprentice</span><span class="bd-val" data-bind="impact.apprentice">$36M</span></div>
+      <div class="kpi">
+        <div class="kpi-label">MAP Exhibits</div>
+        <div class="kpi-value">2,530</div>
+        <div class="kpi-sub">75 originating colleges</div>
+        <div class="bd"><span class="bd-label">CCC Collaborative</span><span class="bd-val">132</span></div>
+        <div class="bd"><span class="bd-label">Local (college-created)</span><span class="bd-val">2,398</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Statewide Exhibits</div>
+        <div class="kpi-value">132</div>
+        <div class="kpi-sub">CCC Collaborative standards in MAP</div>
+        <div class="bd"><span class="bd-label">Program Areas</span><span class="bd-val">12</span></div>
+        <div class="bd"><span class="bd-label">Credit Recommendations</span><span class="bd-val">1,101</span></div>
+        <div class="bd"><span class="bd-label">Adoptions</span><span class="bd-val">1,298</span></div>
+        <div class="bd"><span class="bd-label">Adopting Colleges</span><span class="bd-val">62</span></div>
       </div>
       <div class="kpi">
         <div class="kpi-label">Active Colleges</div>
         <div class="kpi-value" data-bind="colleges.total">99</div>
+        <div class="kpi-sub">of 116 system colleges</div>
         <div class="bd"><span class="bd-label">Leading</span><span class="bd-val" data-bind="colleges.leading">15</span></div>
         <div class="bd"><span class="bd-label">Advancing</span><span class="bd-val" data-bind="colleges.advancing">84</span></div>
         <div class="bd"><span class="bd-label">Inactive</span><span class="bd-val" data-bind="colleges.inactive">16</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Articulating Colleges</div>
+        <div class="kpi-value">102</div>
+        <div class="kpi-sub">Colleges with MAP exhibits</div>
+        <div class="bd"><span class="bd-label">Originating (created exhibits)</span><span class="bd-val">75</span></div>
+        <div class="bd"><span class="bd-label">Adopting CCC Collaborative</span><span class="bd-val">62</span></div>
+      </div>
+      <div class="kpi savings">
+        <div class="kpi-label">Estimated Savings</div>
+        <div class="kpi-value" data-bind="savings.total">$321M</div>
+        <div class="kpi-sub">Eligible units · Beacon Economics</div>
+        <div class="bd"><span class="bd-label">Military</span><span class="bd-val" data-bind="savings.military">$159M</span></div>
+        <div class="bd"><span class="bd-label">Workforce / Other</span><span class="bd-val" data-bind="savings.workforce">$169M</span></div>
+        <div class="bd"><span class="bd-label">Apprentice</span><span class="bd-val" data-bind="savings.apprentice">$9M</span></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Veteran Sprint</div>
+        <div class="kpi-value">50 ⭐</div>
+        <div class="kpi-sub">MAP Star Colleges</div>
+        <div class="bd"><span class="bd-label">JSTs Uploaded (of 30,000)</span><span class="bd-val"><span data-bind="students.military">24,724</span> / 30k</span></div>
+        <div class="bd"><span class="bd-label">Basic Training Credit</span><span class="bd-val">89 colleges</span></div>
+        <div class="bd"><span class="bd-label">Eligible CPL</span><span class="bd-val"><span data-bind="eligible.military">114k</span> units</span></div>
+      </div>
+      <div class="kpi savings">
+        <div class="kpi-label">20-Year Economic Impact</div>
+        <div class="kpi-value" data-bind="impact.total">$1.3B</div>
+        <div class="kpi-sub">Beacon Economics · MAP CPL Dashboard</div>
+        <div class="bd"><span class="bd-label">Military</span><span class="bd-val" data-bind="impact.military">$642M</span></div>
+        <div class="bd"><span class="bd-label">Workforce / Other</span><span class="bd-val" data-bind="impact.workforce">$685M</span></div>
+        <div class="bd"><span class="bd-label">Apprentice</span><span class="bd-val" data-bind="impact.apprentice">$36M</span></div>
       </div>
     </div>
   </section>
@@ -214,13 +273,6 @@
       <div class="stat green"><div class="big">$1.6B</div><div class="cap">Estimated impact if Veteran Sprint Phase 1 goal is met (30,000 vets × avg. 5 units)</div></div>
     </div>
 
-    <h3>Student success data</h3>
-    <div class="stat-grid">
-      <div class="stat"><div class="big">49% vs 27%</div><div class="cap">Graduation rate: CPL recipients vs. non-CPL students (WICHE/CAEL PLA Boost)</div></div>
-      <div class="stat"><div class="big">+25%</div><div class="cap">Overall completion boost from CPL at community colleges</div></div>
-      <div class="stat"><div class="big">$14,653–$26,115</div><div class="cap">Educational benefits preserved per student (≈15 units of CPL)</div></div>
-      <div class="stat"><div class="big">36 months</div><div class="cap">Maximum Post-9/11 GI Bill eligibility — CPL helps veterans stretch it toward higher degrees</div></div>
-    </div>
   </section>
 
   <!-- ── Funding ───────────────────────────────────────────────────────── -->
@@ -452,7 +504,7 @@
       <div class="res"><a class="res-title" href="https://map.rccd.edu/library" target="_blank" rel="noopener">MAP Resource Library ↗</a><div class="res-desc">Full archive of research, training materials, policy briefs, and resources.</div></div>
       <div class="res"><a class="res-title" href="https://map.rccd.edu/counselors/" target="_blank" rel="noopener">Counselor Resources Hub ↗</a><div class="res-desc">Tools and guides designed for counselors advising CPL-eligible students.</div></div>
       <div class="res"><a class="res-title" href="https://veteransmapsearch.azurewebsites.net/default.aspx" target="_blank" rel="noopener">JST Upload Tool (Veterans) ↗</a><div class="res-desc">Veterans can upload their Joint Services Transcript for CPL credit review.</div></div>
-      <div class="res"><a class="res-title" href="https://www.wiche.edu/resources/pla-boost-report-updated-12-2020/" target="_blank" rel="noopener">WICHE/CAEL PLA Boost Study ↗</a><div class="res-desc">CPL student-outcomes research underpinning the equity and completion figures.</div></div>
+      <div class="res"><a class="res-title" href="https://www.wiche.edu/wp-content/uploads/2020/10/PLA-Boost-Report-CAEL-WICHE-Revised-Dec-2020.pdf" target="_blank" rel="noopener">CAEL &amp; WICHE — The PLA Boost ↗</a><div class="res-desc">The 72-institution study behind "The CPL Bump" — the prior-learning research underpinning the equity and completion figures.</div></div>
     </div>
   </section>
 

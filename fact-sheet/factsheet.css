@@ -26,6 +26,10 @@
   --radius-sm: 8px;
   --shadow: 0 1px 3px rgba(28,28,26,.08), 0 8px 24px rgba(28,28,26,.06);
   --maxw: 940px;
+  /* Document typography: Cambria for prose/headings; Calibri for data + KPIs.
+     Caladea/Carlito are the metric-compatible Linux clones (harmless if absent). */
+  --font-body: 'Cambria', 'Caladea', Georgia, 'Times New Roman', serif;
+  --font-data: 'Calibri', 'Carlito', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -34,12 +38,15 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  font-family: var(--font-body);
   background: var(--paper);
   color: var(--body);
-  line-height: 1.58;
+  line-height: 1.55;
   font-size: 16px;
 }
+
+/* Data + KPIs render in Calibri; everything else stays Cambria. */
+.kpi, .stat, table.data { font-family: var(--font-data); }
 
 a { color: var(--cobalt); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -115,13 +122,14 @@ strong { color: var(--ink); }
   border-left: 3px solid var(--mustard-fill); padding: 8px 12px; border-radius: 0 6px 6px 0; margin: 12px 0; }
 
 /* ── KPI cards (live) ──────────────────────────────────────────────────── */
-.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(218px, 1fr)); gap: 12px; }
 .kpi {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-  box-shadow: var(--shadow); padding: 16px 18px; border-top: 4px solid var(--seal-blue);
+  box-shadow: var(--shadow); padding: 13px 15px; border-top: 4px solid var(--seal-blue);
 }
-.kpi .kpi-label { font-size: .76rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
-.kpi .kpi-value { font-size: 2.05rem; font-weight: 800; color: var(--seal-blue); line-height: 1.05; margin: 4px 0 8px; }
+.kpi .kpi-label { font-size: .74rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.kpi .kpi-value { font-size: 1.72rem; font-weight: 800; color: var(--seal-blue); line-height: 1.05; margin: 3px 0 2px; }
+.kpi .kpi-sub { font-size: .74rem; color: var(--faint); margin: 0 0 7px; }
 .kpi.savings { border-top-color: var(--hunter); }
 .kpi.savings .kpi-value { color: var(--hunter); }
 .kpi .bd { display: flex; justify-content: space-between; gap: 10px; font-size: .9rem; padding: 3px 0; border-top: 1px dashed var(--border); }
@@ -129,6 +137,7 @@ strong { color: var(--ink); }
 .kpi .bd .bd-label { color: var(--muted); }
 .kpi .bd .bd-val { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
 .kpi .bd .note { background: none; border: none; padding: 0; margin: 0; display: block; font-size: .76rem; color: var(--faint); }
+.kpi .kpi-fn { font-size: .68rem; color: var(--faint); line-height: 1.35; margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border); }
 
 /* ── Stat tiles (Vision 2030 / impact / success) ──────────────────────── */
 .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
@@ -197,7 +206,7 @@ footer.foot strong { color: var(--ink); }
    PRINT — "Save as PDF" produces a clean, letter-size journalist fact sheet.
    =========================================================================== */
 @media print {
-  @page { size: letter; margin: 0.6in 0.5in; }
+  @page { size: letter; margin: 0.4in; }
   :root { --shadow: none; }
   body { background: #fff; font-size: 10.5pt; line-height: 1.4; }
   .actionbar, .no-print { display: none !important; }
