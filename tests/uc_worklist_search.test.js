@@ -63,7 +63,7 @@ check("consumer init does not throw", !threw);
 
 function worklistSearch(doc) {
   return Array.from(doc.querySelectorAll('input[type=search]'))
-    .find((i) => /Filter the worklist/.test(i.placeholder || ""));
+    .find((i) => /comma separates terms/.test(i.placeholder || ""));
 }
 
 (async function main() {

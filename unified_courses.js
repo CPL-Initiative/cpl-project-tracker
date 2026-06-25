@@ -946,6 +946,12 @@
         shell.appendChild(head);
         shell.appendChild(el("p", { style: "margin:0 0 8px;color:#6b7280;font-size:.82rem;" },
           ["Check the courses that are the same as this one to fold them in, search to add others, or set a different survivor. Nothing merges until you Confirm."]));
+        // Top Search box (Sam, S72 #5) — the one search box that guides candidate
+        // surfacing for this course (the editor's own keyword box was removed).
+        // Comma = OR (S72 #7). A keystroke re-surfaces via editorApi.refreshCandidates.
+        var perRowSearch = el("input", { type: "search", placeholder: "🔍 Search title or ID to add more — comma separates terms (e.g. digital, imag)", style: "width:100%;padding:5px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;font-size:.85rem;margin:0 0 8px;" });
+        var perRowSt; perRowSearch.oninput = function () { clearTimeout(perRowSt); perRowSt = setTimeout(function () { if (editorApi) editorApi.refreshCandidates(); }, 220); };
+        shell.appendChild(perRowSearch);
         // Band filter row — the one piece of worklist chrome that's meaningful
         // for a single course (it filters the candidate POOL, not a queue).
         var bands = { beg: true, int: true, adv: true, lab: true, wkexp: true };
@@ -970,6 +976,7 @@
           allowRediscipline: true,
           dismissLabel: "Cancel",
           extraActions: [cancel],
+          getKeyword: function () { return perRowSearch.value; },   // top Search box (S72 #5)
           onConfirm: function (r) { doConsolidate(r.chosen, r.title, r.disc, r.target, close); },
           deps: { byId: byId0 },
         });
@@ -1536,10 +1543,15 @@
       // setting per-browser across re-renders / filter changes / merges.
       var LOOSE_KEY = "cplCandLoosen.v1";
       var loosenDefault = (function () { var v = parseFloat(localStorage.getItem(LOOSE_KEY)); return (v >= 0 && v <= 100) ? v : 85; })();
+      // The candidate KEYWORD now comes from the surface's own top Search box
+      // (Sam, S72 #5 — "rely just on the top search by"), not a box inside the
+      // editor. The feeder supplies it via opts.getKeyword (the ✨ worklist's
+      // Search box, the per-row dock's Search box); absent → similarity-only.
+      var getKeyword = (typeof opts.getKeyword === "function") ? opts.getKeyword : function () { return ""; };
       var searchWrap = el("div", { style: "margin:8px 0 0;" });
       searchWrap.appendChild(el("label", { style: "display:block;font-weight:600;margin:0 0 2px;font-size:.85rem;" },
         ["Add more courses",
-         infoIcon("Two ways to pull in more candidates: (1) drag the Tight↔Loose slider toward Loose to surface courses similar to this one — ranked by title, and by catalog description once it loads; (2) type a keyword (e.g. “ESL”, “welding”) to find specific courses regardless of similarity. Matches appear in the Candidates list above as unchecked rows — tick the ones to fold in, ignore the rest. The CCR table filters carry over.")]));
+         infoIcon("Drag the Tight↔Loose slider toward Loose to surface courses similar to this one — ranked by title, and by catalog description once it loads. To find specific courses regardless of similarity, type in the Search box at the top of this panel (comma separates terms). Matches appear in the Candidates list above as unchecked rows — tick the ones to fold in, ignore the rest. The CCR table filters carry over.")]));
       var looseRow = el("div", { style: "display:flex;align-items:center;gap:6px;font-size:.76rem;color:#64748b;margin:0 0 4px;" });
       looseRow.appendChild(el("span", { style: "font-weight:600;white-space:nowrap;" }, ["Find similar:"]));
       looseRow.appendChild(el("span", {}, ["Tight"]));
@@ -1548,9 +1560,8 @@
       looseRow.appendChild(el("span", {}, ["Loose"]));
       var countOut = el("span", { style: "font-variant-numeric:tabular-nums;color:var(--text-strong);white-space:nowrap;min-width:5.5em;text-align:right;" }, [""]);
       looseRow.appendChild(countOut);
-      var addSearch = el("input", { type: "search", placeholder: "🔎 …or search a keyword to guide (optional)…", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
-      var addNoHits = el("div", { style: "display:none;font-size:.78rem;color:#94a3b8;padding:3px 2px;" }, ["No more matches — drag toward Loose or try a different keyword."]);
-      searchWrap.appendChild(looseRow); searchWrap.appendChild(addSearch); searchWrap.appendChild(addNoHits);
+      var addNoHits = el("div", { style: "display:none;font-size:.78rem;color:#94a3b8;padding:3px 2px;" }, ["No more matches — drag toward Loose or search a different term up top."]);
+      searchWrap.appendChild(looseRow); searchWrap.appendChild(addNoHits);
       container.appendChild(searchWrap);
       // Drop the search-added rows the curator DIDN'T tick (a changed slider/query
       // shouldn't leave stale results lying around), but KEEP any they checked —
@@ -1567,7 +1578,10 @@
       }
       function surfaceCandidates(userInitiated) {
         clearUncheckedSearchRows();
-        var q = addSearch.value.toLowerCase().trim();
+        // KEYWORD from the top Search box (S72 #5), comma = OR (S72 #7 — "digital,
+        // imag" surfaces either term). No keyword → the slider's similarity drives.
+        var raw = (getKeyword() || "").toLowerCase().trim();
+        var terms = raw ? raw.split(",").map(function (t) { return t.trim(); }).filter(function (t) { return t.length >= 2; }) : [];
         var pos = parseFloat(loosen.value) || 0, threshold = threshFromPos(pos);
         loadIndex().then(function () {
           ensureIdxTok();
@@ -1580,9 +1594,10 @@
           for (var i = 0; i < idxTok.length && pool.length < 400; i++) {
             var en = idxTok[i].en;
             if (have[en[0]] || !rowPassesCcr(en)) continue;
-            if (q.length >= 2) {
-              if (((en[1] || "").toLowerCase().indexOf(q) >= 0) || ((en[0] || "").toLowerCase().indexOf(q) >= 0))
-                pool.push([scoreEn(en, idxTok[i].tok) + 1, en]);   // keyword = explicit → not similarity-gated
+            if (terms.length) {
+              var t1 = (en[1] || "").toLowerCase(), id1 = (en[0] || "").toLowerCase(), hit = false;
+              for (var ti = 0; ti < terms.length; ti++) { if (t1.indexOf(terms[ti]) >= 0 || id1.indexOf(terms[ti]) >= 0) { hit = true; break; } }
+              if (hit) pool.push([scoreEn(en, idxTok[i].tok) + 1, en]);   // keyword = explicit → not similarity-gated
             } else {
               var s = scoreEn(en, idxTok[i].tok);
               if (s >= threshold) pool.push([s, en]);
@@ -1595,7 +1610,7 @@
             addCandidateRow({ id: en[0], t: en[1], s: en[2], k: en[3], u: en[4], g: en[3] === "Stand-Alone" ? 1 : 0 }, true);
           });
           countOut.textContent = shown.length ? ("+" + shown.length + (pool.length > 25 ? "+" : "")) : "";
-          addNoHits.style.display = (!shown.length && (q.length >= 2 || pos > 0)) ? "block" : "none";
+          addNoHits.style.display = (!shown.length && (terms.length || pos > 0)) ? "block" : "none";
           refreshTarget();
           // Lazy DESCRIPTION blend (Sam: "title and description if available"):
           // fetch the heavy detail file ONCE only on an EXPLICIT deep loosen
@@ -1603,7 +1618,7 @@
           // (so a Loose default doesn't trigger a ~34MB download every time the
           // panel opens), nor on a keyword (substring is the intent there).
           // Then cache the reference's tokens + re-rank.
-          if (userInitiated && !q && !descTried && !_ucDetails && pos >= 50) {
+          if (userInitiated && !terms.length && !descTried && !_ucDetails && pos >= 50) {
             descTried = true;
             loadDetails().then(function () {
               if (refId && _ucDetails && _ucDetails[refId]) refDescSet = toSet(titleTokens(_ucDetails[refId].d || ""));
@@ -1612,7 +1627,6 @@
           }
         });
       }
-      var aSt; addSearch.oninput = function () { clearTimeout(aSt); aSt = setTimeout(function () { surfaceCandidates(true); }, 220); };
       var lSt; loosen.oninput = function () {
         try { localStorage.setItem(LOOSE_KEY, loosen.value); } catch (e) {}   // persist (S72 #4)
         clearTimeout(lSt); lSt = setTimeout(function () { surfaceCandidates(true); }, 160);
@@ -1867,6 +1881,11 @@
             if (x.descBox && !show) x.descBox.style.display = "none";
           });
         },
+        // Re-surface candidates — called by a feeder whose top Search box (the
+        // keyword source, S72 #5) changed. userInitiated so a keyword search
+        // behaves like a manual one (but never triggers the description fetch —
+        // that's gated on a no-keyword deep loosen inside surfaceCandidates).
+        refreshCandidates: function () { surfaceCandidates(true); },
       };
     }
 
@@ -2108,7 +2127,7 @@
         var sugQuery = (state.q || "").trim().toLowerCase();
         var searchRow = el("div", { style: "margin:-2px 0 10px;" });
         var sugSearch = el("input", { type: "search", value: state.q || "",
-          placeholder: "🔍 Filter the worklist by course title or ID…",
+          placeholder: "🔍 Search title or ID — comma separates terms (e.g. digital, imag)",
           style: "width:100%;padding:5px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;font-size:.85rem;" });
         var sugSt; sugSearch.oninput = function () {
           clearTimeout(sugSt); var v = this.value;
@@ -2170,10 +2189,17 @@
         // (proposed title or any member title/id).
         function matchesQuery(g) {
           if (!sugQuery) return true;
-          if (bestTitle(g).toLowerCase().indexOf(sugQuery) >= 0) return true;
-          return (g.members || []).some(function (m) {
-            return String(m.t || "").toLowerCase().indexOf(sugQuery) >= 0
-                || String(m.id || "").toLowerCase().indexOf(sugQuery) >= 0;
+          // Multi-term: comma = OR (S72 #7 — "digital, imag" matches either term).
+          var terms = sugQuery.split(",").map(function (t) { return t.trim(); }).filter(Boolean);
+          if (!terms.length) return true;
+          var bt = bestTitle(g).toLowerCase();
+          var mems = g.members || [];
+          return terms.some(function (term) {
+            if (bt.indexOf(term) >= 0) return true;
+            return mems.some(function (m) {
+              return String(m.t || "").toLowerCase().indexOf(term) >= 0
+                  || String(m.id || "").toLowerCase().indexOf(term) >= 0;
+            });
           });
         }
         function groupPasses(idx) {
@@ -2326,6 +2352,10 @@
             members: mems, isSingleton: isSingleton, isEvidence: isEvidence,
             preTitle: preTitle, extraActions: [skip, keep],
             deps: { byId: byId, rowPassesCcr: rowPassesCcr },
+            // The top Search box is the candidate keyword now (S72 #5). A keystroke
+            // there re-runs renderGroup (rebuilding this editor), so the rebuilt
+            // editor's auto-surface reads the current value — no extra wiring.
+            getKeyword: function () { return sugSearch.value; },
             onConfirm: function (r) {
               doConsolidate(r.chosen, r.title, r.disc, r.target, function () { i++; renderGroup(); }, true, r.note);
             },
