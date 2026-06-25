@@ -329,6 +329,10 @@
   // Lazy-load the heavy course-description detail file (id -> {d, s}) — only
   // when a reviewer opens the row-details modal, keeping the main payload lean.
   var _ucDetails = null, _ucDetailsP = null;
+  // [{en, tok}] tokenized ⚇ index — built ONCE and reused across every merge
+  // editor's candidate surfacer (the editor auto-surfaces on open now, so
+  // re-tokenizing 70k titles per group navigation would lag the worklist).
+  var _mergeIdxTok = null;
   function loadDetails() {
     if (_ucDetails) return Promise.resolve(_ucDetails);
     if (_ucDetailsP) return _ucDetailsP;
@@ -1512,7 +1516,10 @@
       }
       var refSet = toSet(titleTokens(refTitle));
       var refDescSet = null, idxTok = null, descTokCache = {}, descTried = false;
-      function ensureIdxTok() { if (!idxTok) idxTok = (_ucIndex || []).map(function (en) { return { en: en, tok: titleTokens(en[1]) }; }); }
+      function ensureIdxTok() {
+        if (!_mergeIdxTok) _mergeIdxTok = (_ucIndex || []).map(function (en) { return { en: en, tok: titleTokens(en[1]) }; });
+        idxTok = _mergeIdxTok;
+      }
       function descTokOf(id) {
         if (descTokCache[id]) return descTokCache[id];
         var d = _ucDetails && _ucDetails[id]; var t = titleTokens(d && d.d ? d.d : "");
@@ -1524,6 +1531,11 @@
         return s;
       }
       function threshFromPos(v) { return Math.round((0.70 - (v / 100) * 0.62) * 100) / 100; }   // 0.70 (Tight) → 0.08 (Loose)
+      // Candidate-looseness default + persistence (Sam, S72 #4): default near-full
+      // Loose so related courses surface on open, and remember the curator's
+      // setting per-browser across re-renders / filter changes / merges.
+      var LOOSE_KEY = "cplCandLoosen.v1";
+      var loosenDefault = (function () { var v = parseFloat(localStorage.getItem(LOOSE_KEY)); return (v >= 0 && v <= 100) ? v : 85; })();
       var searchWrap = el("div", { style: "margin:8px 0 0;" });
       searchWrap.appendChild(el("label", { style: "display:block;font-weight:600;margin:0 0 2px;font-size:.85rem;" },
         ["Add more courses",
@@ -1531,7 +1543,7 @@
       var looseRow = el("div", { style: "display:flex;align-items:center;gap:6px;font-size:.76rem;color:#64748b;margin:0 0 4px;" });
       looseRow.appendChild(el("span", { style: "font-weight:600;white-space:nowrap;" }, ["Find similar:"]));
       looseRow.appendChild(el("span", {}, ["Tight"]));
-      var loosen = el("input", { type: "range", min: "0", max: "100", step: "1", value: "0", style: "flex:1;min-width:80px;cursor:pointer;" });
+      var loosen = el("input", { type: "range", min: "0", max: "100", step: "1", value: String(loosenDefault), style: "flex:1;min-width:80px;cursor:pointer;" });
       looseRow.appendChild(loosen);
       looseRow.appendChild(el("span", {}, ["Loose"]));
       var countOut = el("span", { style: "font-variant-numeric:tabular-nums;color:var(--text-strong);white-space:nowrap;min-width:5.5em;text-align:right;" }, [""]);
@@ -1553,7 +1565,7 @@
           }
         }
       }
-      function surfaceCandidates() {
+      function surfaceCandidates(userInitiated) {
         clearUncheckedSearchRows();
         var q = addSearch.value.toLowerCase().trim();
         var pos = parseFloat(loosen.value) || 0, threshold = threshFromPos(pos);
@@ -1586,21 +1598,29 @@
           addNoHits.style.display = (!shown.length && (q.length >= 2 || pos > 0)) ? "block" : "none";
           refreshTarget();
           // Lazy DESCRIPTION blend (Sam: "title and description if available"):
-          // fetch the heavy detail file ONCE when the curator loosens deeply
-          // (where description discovery actually pays off) — not on a keyword
-          // (substring is the intent there) or mild loosening, to avoid a
-          // surprise ~34MB download. Then cache the reference's tokens + re-rank.
-          if (!descTried && !_ucDetails && pos >= 50) {
+          // fetch the heavy detail file ONCE only on an EXPLICIT deep loosen
+          // (userInitiated, no keyword) — never on the open-time auto-surface
+          // (so a Loose default doesn't trigger a ~34MB download every time the
+          // panel opens), nor on a keyword (substring is the intent there).
+          // Then cache the reference's tokens + re-rank.
+          if (userInitiated && !q && !descTried && !_ucDetails && pos >= 50) {
             descTried = true;
             loadDetails().then(function () {
               if (refId && _ucDetails && _ucDetails[refId]) refDescSet = toSet(titleTokens(_ucDetails[refId].d || ""));
-              surfaceCandidates();
+              surfaceCandidates(true);
             });
           }
         });
       }
-      var aSt; addSearch.oninput = function () { clearTimeout(aSt); aSt = setTimeout(surfaceCandidates, 220); };
-      var lSt; loosen.oninput = function () { clearTimeout(lSt); lSt = setTimeout(surfaceCandidates, 160); };
+      var aSt; addSearch.oninput = function () { clearTimeout(aSt); aSt = setTimeout(function () { surfaceCandidates(true); }, 220); };
+      var lSt; loosen.oninput = function () {
+        try { localStorage.setItem(LOOSE_KEY, loosen.value); } catch (e) {}   // persist (S72 #4)
+        clearTimeout(lSt); lSt = setTimeout(function () { surfaceCandidates(true); }, 160);
+      };
+      // Auto-surface at the persisted (default-Loose) position on open, so related
+      // courses are visible immediately (Sam, S72 #4). Title-only — no description
+      // fetch until an explicit deep drag (the userInitiated guard above).
+      surfaceCandidates(false);
       // No existing identity among the checked rows → Confirm mints a new
       // unified course. Surfaced live so a curator isn't surprised.
       var mintHint = el("div", { style: "display:none;margin:6px 0 0;font-size:.78rem;color:#5b21b6;" },

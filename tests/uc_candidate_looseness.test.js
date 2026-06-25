@@ -87,32 +87,34 @@ check("init does not throw", !threw);
   const kw = Array.from(dock.querySelectorAll('input[type=search]')).find((i) => /keyword to guide/i.test(i.placeholder || ""));
   check("looseness slider present", !!slider);
   check("keyword guide box present", !!kw);
+  check("slider DEFAULTS to near-full Loose (S72 #4)", parseInt(slider.value, 10) >= 70);
 
-  // ── 1. default (Tight): the loose 0.25 match is NOT surfaced ──
+  // ── 1. default is Loose (S72 #4): the 0.25 match auto-surfaces on open ──
   check("exact 'Welding Technology' IS in the base candidate list", !!candRow("WELD M1002"));
-  check("loose 'Pipe Welding Inspection' NOT shown at the default Tight slider", !candRow("WELD M1050"));
-
-  // ── 2. drag toward Loose → it surfaces as an UNCHECKED candidate ──
-  slider.value = "100"; slider.dispatchEvent(new window.Event("input"));
-  await sleep(350);
-  check("loosening surfaces 'Pipe Welding Inspection'", !!candRow("WELD M1050"));
+  check("loose 0.25 match 'Pipe Welding Inspection' is auto-surfaced at the Loose default", !!candRow("WELD M1050"));
   check("the surfaced candidate starts UNCHECKED", candCb("WELD M1050") && candCb("WELD M1050").checked === false);
   check("the surfaced row carries the ➕ added chip", candRow("WELD M1050") && /➕ added/.test(txt(candRow("WELD M1050"))));
   check("the unrelated 'Automotive Brakes' never surfaces (no title overlap)", !candRow("AUTO M1009"));
 
-  // Tick it, then tighten back → the ticked row persists (it's a real selection).
+  // ── 2. tighten to 0 → the unchecked 0.25 match is dropped + the value persists ──
+  slider.value = "0"; slider.dispatchEvent(new window.Event("input"));
+  await sleep(300);
+  check("tightening to Tight drops the 0.25 match", !candRow("WELD M1050"));
+  check("the slider position persists to localStorage (S72 #4)",
+    window.localStorage.getItem("cplCandLoosen.v1") === "0");
+
+  // ── 3. loosen back, tick it, tighten → the ticked row persists ──
+  slider.value = "100"; slider.dispatchEvent(new window.Event("input"));
+  await sleep(350);
+  check("loosening re-surfaces 'Pipe Welding Inspection'", !!candRow("WELD M1050"));
   candCb("WELD M1050").checked = true; candCb("WELD M1050").dispatchEvent(new window.Event("change"));
   slider.value = "0"; slider.dispatchEvent(new window.Event("input"));
   await sleep(300);
   check("a ticked surfaced row persists after tightening", candCb("WELD M1050") && candCb("WELD M1050").checked === true);
 
-  // Untick → next tighten removes it.
+  // ── 4. keyword guide surfaces a specific course even at Tight ──
   candCb("WELD M1050").checked = false; candCb("WELD M1050").dispatchEvent(new window.Event("change"));
-  slider.value = "0"; slider.dispatchEvent(new window.Event("input"));
-  await sleep(300);
-  check("an unchecked surfaced row clears when tightened", !candRow("WELD M1050"));
-
-  // ── 3. keyword guide surfaces a specific course regardless of slider ──
+  await sleep(50);
   kw.value = "pipe"; kw.dispatchEvent(new window.Event("input"));
   await sleep(350);
   check("keyword 'pipe' surfaces 'Pipe Welding Inspection' even at Tight", !!candRow("WELD M1050"));

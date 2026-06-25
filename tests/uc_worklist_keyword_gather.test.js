@@ -33,10 +33,12 @@ const sugStub = {
   ],
   singleton_groups: [], family_groups: [], desc_groups: [], evidence_groups: [], title_groups: [],
 };
-// ⚇ Unify index [id,title,subject,kind,units]. M9046 is an ESL course NOT in the
-// suggested group — the curator gathers it in by keyword.
+// ⚇ Unify index [id,title,subject,kind,units]. M9046 is an ESL-adjacent course
+// NOT in the suggested group; its title is dissimilar enough that it does NOT
+// auto-surface at the Tight pin, so the curator gathers it in by the KEYWORD
+// "english" — the path this test exercises.
 const idx = [
-  ["ESOL M9046", "English as a Second Language Level 3", "ESLN", "M-ID", 0],
+  ["ESOL M9046", "Vocational English Communication", "ESLN", "M-ID", 0],
   ["ESOL M9010", "English as a Second Language Level 1", "ESLN", "M-ID", 0],
   ["ESOL M9030", "English as a Second Language Level 2", "ESLN", "M-ID", 0],
 ];
@@ -54,6 +56,10 @@ const html = `<!DOCTYPE html><html><head></head><body>
 
 const dom = new JSDOM(html, { runScripts: "dangerously", url: "https://example.org/" });
 const { window } = dom;
+// Pin the candidate-looseness slider to Tight so the editor doesn't auto-surface
+// extra similar candidates (Session 72 #4 made the default Loose) — this test
+// exercises the keyword path against a group that starts with only its 2 members.
+window.localStorage.setItem("cplCandLoosen.v1", "0");
 window.sessionStorage.setItem("cpl_sb", JSON.stringify({
   access_token: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0In0.c2lnbmF0dXJl",
   refresh_token: "r", email: "test@rccd.edu", exp: Date.now() + 3600000,
