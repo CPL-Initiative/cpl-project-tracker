@@ -224,6 +224,24 @@ NAV_LAST = {"chancellor", "dashboard"}
 DASH_BASE = "https://cpldashboardcccco.azurewebsites.net/"
 
 
+RAW_PORTAL_RE = re.compile(r"cpl-student-portal/([A-Za-z0-9._%\-]+)", re.I)
+
+
+def extract_raw(html: str, span_before: int = 180, span_after: int = 50):
+    """Recon: every distinct cpl-student-portal/<CODE> in the RAW html with
+    surrounding markup, so we can see HOW the college links are embedded when
+    they're not <a href> anchors."""
+    seen, items = set(), []
+    for m in RAW_PORTAL_RE.finditer(html):
+        code = m.group(1)
+        if code.lower() in NAV_LAST or code.lower() in seen:
+            continue
+        seen.add(code.lower())
+        ctx = html[max(0, m.start() - span_before): m.end() + span_after]
+        items.append({"code": code, "context": WS_RE.sub(" ", ctx).strip()})
+    return items
+
+
 def code_of(url: str) -> str:
     seg = urllib.parse.urlparse(url).path.rstrip("/").rsplit("/", 1)[-1]
     return urllib.parse.unquote(seg)
@@ -387,10 +405,8 @@ def main():
     diagnostics(html)
 
     scraped = parse_links(html, args.url)
-    print(f"[parse] {len(scraped)} landing links")
-    if not scraped:
-        print("::error::no landing-page links parsed")
-        # still write provenance so the failure is visible/committed
+    raw = extract_raw(html)
+    print(f"[parse] {len(scraped)} landing links | {len(raw)} raw portal codes")
     scraped.sort(key=lambda r: r["college"].lower())
 
     # Verify the portal→dashboard redirect on a few samples so we KNOW storing
@@ -427,6 +443,8 @@ def main():
         "_note": ("url = direct cpldashboardcccco/<CODE> landing (the redirect "
                   "target of the page's /cpl-student-portal/<CODE> link)"),
         "_redirect_probe": probe,
+        "_debug": {"page_chars": len(html), "raw_portal_count": len(raw),
+                   "raw_portal_samples": raw[:45]},
         "scraped": scraped,
     }
 
@@ -464,8 +482,14 @@ def main():
         fh.write("\n")
     print(f"[write] {OUT_JSON} ({len(scraped)} links)")
 
-    if not scraped:
+    if not scraped and not raw:
+        print("::error::no landing links AND no raw portal codes — page not fetched")
         sys.exit(1)
+    if not scraped:
+        # Data is present but not as anchors — commit the _debug so the markup
+        # structure can be inspected; don't fail the run.
+        print("::warning::0 anchor links parsed but raw portal codes exist — "
+              "see _debug.raw_portal_samples")
 
 
 if __name__ == "__main__":
