@@ -1815,28 +1815,10 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > sweep #492/#493/#495/#496 + the unverified-M-ID renumber scope #494) archived**
 > → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
 
-### Session 70 — PaintSky: the CCR merge workspace, leveled up (2026-06-23/24)
-
-A long, live CCR-curation session — **9 PRs**. **First half (#500):** the **Pending-merges
-tracking panel** (the `⟳ N edits awaiting sync` badge → a **📋 Review merges** click-through
-with per-member/group **Undo**), a **mint → Common SUBJ preview** in the worklist, a
-reviewer-gated `kb_curation` **DELETE** policy, and re-landing the **empty-squashed #499**
-(KB note `methodology-stacked-pr-empty-squash.md`). **Second half — the merge workspace arc**
-(Sam digging into Disciplines/Subjects/merging): **#503** re-discipline ON the merge dialog +
-a **forward-looking Common SUBJ** column (curated discipline → shows its canonical `PHOT ⟲`
-immediately; M-ID letters re-key at the next fold; KB note
-`methodology-forward-looking-display-curate-now-rekey-later.md`); **#504** fixed the merge
-search-add silently no-op'ing; **#505** Beg/Int/Adv/Lab/WkExp **band filters**; **#506** a
-global **Conservative↔Aggressive slider** (replaced the title-only one; gates all scored
-lanes, evidence exempt); **#507** **opt-in checkboxes** (only the ★ target pre-checked);
-**#508/#509** the **morphological-variant fold** — `_sug_sig` now stems tokens
-(conversation/conversational→conv, …; measure-first dry-run sized it: **+866** identities into
-groups, 326 clean / 246 cross-discipline) + an amber **"⚠ Spans N disciplines"** worklist flag
-for the homonym risk (workflow-dispatched live). Two architecture asks captured for the epic:
-**dock the worklist as a panel** + **consolidate the two merge popups into one shared editor**.
-Full story: [`docs/ccr_cluster_cleanup_lessons.md`](docs/ccr_cluster_cleanup_lessons.md)
-(Session 70). **NEXT: [`docs/session_71_handoff.md`](docs/session_71_handoff.md)** — the
-merge-workspace epic (scope-first), then the unverified-M-ID renumber re-mint + TMC engine.
+> **Session 70 narrative (PaintSky — the CCR merge-workspace level-up, 9 PRs incl. the
+> pending-merges panel #500, re-discipline-on-merge + forward-looking Common SUBJ #503, band
+> filters #505, the global Cons↔Aggr slider #506, opt-in checkboxes #507, the morphological fold
+> #508/#509) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
 
 ### Session 71 — the CCR merge-workspace epic, completed (2026-06-24)
 
@@ -1859,6 +1841,23 @@ bug the move surfaced: the seed member's `k` must be its id_system (§10 axis), 
 [`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md). **NEXT:
 [`docs/session_72_handoff.md`](docs/session_72_handoff.md)** — the epic is DONE; the standing lanes:
 unverified-M-ID renumber re-mint, TMC acceptance engine, CPL-Assistant recommender ETL.
+
+### Session 72 — StarLander: the post-consolidation polish pass (2026-06-24/25)
+
+Sam's hands-on review of the now-shared merge workspace — **six asks, all shipped + merged across
+5 PRs**; because the editor is shared, each editor-internal change landed once and BOTH surfaces
+(✨ worklist + per-row ⚇ dialog) inherited it. **#520** deepened the Cons↔Aggr slider floor
+**0.40 → 0.00** + fixed the opt-in **Confirm silent no-op** (disabled-until-≥2-checked, the "it did
+nothing" report). **#521** moved **"⌕ Merge into a different course" up under the title** + collapsed
+verbose copy into **ⓘ tooltips** (`infoIcon()`). **#522** replaced the collapsible "➕ Add more" with
+an **always-visible "Add more courses" search** whose matches drop into the candidate list as
+**unchecked** rows. **#523 (#1)** — the per-row **⚇ Merge now opens the docked sidebar itself** (not a
+modal): same dock shell + shared editor, single-course mode (no queue chrome; a band row filters the
+candidate pool via a new `setBandFilter` API). 81/81 green throughout. Full story:
+[`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md) (Session 72). Open
+follow-up: repurpose the slider in single-course mode (left out as a no-op). **NEXT:
+[`docs/session_73_handoff.md`](docs/session_73_handoff.md)** — standing lanes: unverified-M-ID
+renumber re-mint, TMC Phase-2 acceptance engine, CPL-Assistant CCR/CER recommender ETL.
 
 ---
 

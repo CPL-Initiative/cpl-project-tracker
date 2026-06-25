@@ -120,3 +120,54 @@ inputs you care about — far cleaner than threading a "why did this fire" flag 
 
 - **Beyond the epic** (standing lanes): the unverified-M-ID renumber re-mint (after the merge wave
   settles), the TMC Phase-2 acceptance engine, the CPL-Assistant CCR/CER recommender ETL.
+
+---
+
+## Session 72 (StarLander) — the post-consolidation polish pass (2026-06-24/25)
+
+Session 71 consolidated the two merge popups into one shared `buildMergeEditor`. Session 72 was
+Sam's hands-on review of that workspace — **six asks, all shipped + merged across 5 PRs.** Because
+the editor is now shared, every editor-internal change landed once and BOTH surfaces (the ✨ worklist
+and the per-row ⚇ dialog) inherited it — exactly the payoff the consolidation was for.
+
+| PR | Item | What |
+|---|---|---|
+| **#520** | slider + **#3** | Aggressiveness slider floor **0.40 → 0.00** at full-right (deeper aggressive reveal). Opt-in **Confirm no-op fixed**: it was silently `alert()`-ing "check at least two" with only the ★ pre-checked → now **disabled+dimmed until ≥2 checked** (≥1 for an override target), re-enables live; stale 2-member help text corrected. |
+| **#521** | **#4 + #5** | "⌕ Merge into a different course" **moved up under the title** (`insertBefore(ovWrap, titleIn.nextSibling)`). Verbose gray paragraphs → compact **ⓘ hover tooltips** (`infoIcon()`); the dynamic discipline note stays visible (it's live state, not static copy). |
+| **#522** | **#2** | The collapsible "➕ Add more by keyword" panel → an **always-visible "Add more courses" search** whose matches drop straight into the Candidates list as **unchecked** rows (tick to merge / ignore). Unchecked search rows clear on query change; checked ones persist. |
+| **#523** | **#1** | Per-row **⚇ Merge opens the docked sidebar** (Sam: "open the sidebar itself"), not a modal — same dock shell, same shared editor. **Single-course mode** drops the queue chrome (no N-of-M / Skip-Keep / slider) and keeps a **band row that filters the candidate pool** via a new `setBandFilter` API the editor returns. |
+
+### Lessons / gotchas
+
+- **A "did nothing" bug is often a silent guard, not a crash.** Sam's #3 ("tried to save, it did
+  nothing") reproduced as the opt-in model leaving only the ★ checked → Confirm hit the ≥2 `alert`.
+  The fix is to make the dead-end *visible* (disable the button) rather than chase a phantom crash.
+  The first `refreshTarget()` runs before `go` exists (hoisted `var`, `undefined`), so the disabled
+  state needs a **second `refreshTarget()` after the button is created** — easy to miss.
+- **Relocating explanatory copy into `[title]` tooltips breaks `textContent` assertions.** Five test
+  assertions across `uc_worklist_chrome` + `uc_worklist_target_badge` read the copy from
+  `body.textContent`; moving it to `infoIcon` titles meant pointing them at `[title]` attributes.
+  Keep the phrase **verbatim** in the title so only the *lookup location* changes (watch sentence-case
+  — "Each row…" vs the old "each row…" needed an `/i` flag).
+- **The per-row dock was low-risk because the per-row tests were DOM-position-agnostic.** They locate
+  the editor via document-wide `querySelectorAll` (Proposed title / candidates / Confirm), not via the
+  modal overlay — so swapping the modal container for a dock shell passed them **unchanged**. Grep the
+  consumers for container-specific assumptions *before* assuming a container swap is expensive.
+- **Filter candidate rows by hiding, never by rebuilding.** The band filter in single-course mode
+  hides non-matching rows (`row.style.display`) via the returned `setBandFilter` — rebuilding the
+  editor would wipe the curator's checkboxes + typed title.
+- **The Edit tool chokes on the Unicode in this file's comments** (emoji ✨⚇➕⌕★, em-dashes). When a
+  large `old_string` won't match, split into small **plain-ASCII** anchors and match the unique tail
+  (the per-row dock block ends the function; the worklist's calls `renderGroup()` — that's the
+  disambiguator).
+- **Dock-shell duplication is acceptable; editor duplication is not.** The per-row dock replicates the
+  worklist's ~40-line shell (a future consolidation target), but the load-bearing merge UX stays in
+  the one `buildMergeEditor`. Sharing `DOCK_KEY` means the per-row dock opens at the worklist's width
+  (nice) — but force `collapsed = false` so a clicked Merge never appears as just a rail.
+
+### State + next
+- **All six S72 items DONE + merged.** Open follow-up Sam may want: repurpose the **aggressiveness
+  slider** in single-course mode to filter candidates by title-similarity (left out as a no-op for now
+  — flagged in #523's body). The two dock shells could be consolidated into a `buildDock()` helper.
+- Standing lanes unchanged: unverified-M-ID renumber re-mint, TMC Phase-2 acceptance engine,
+  CPL-Assistant CCR/CER recommender ETL.

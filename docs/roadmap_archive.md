@@ -1638,3 +1638,26 @@ and the live-merge durability note
 ([`reference-ccr-curation-sync-and-live-merge.md`](kb-notes/reference-ccr-curation-sync-and-live-merge.md)).
 Full stories: [`docs/ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md) +
 [`docs/tmc_builder_lessons.md`](tmc_builder_lessons.md) (Session 69).
+
+### Session 70 — PaintSky: the CCR merge workspace, leveled up (2026-06-23/24)
+
+A long, live CCR-curation session — **9 PRs**. **First half (#500):** the **Pending-merges
+tracking panel** (the `⟳ N edits awaiting sync` badge → a **📋 Review merges** click-through
+with per-member/group **Undo**), a **mint → Common SUBJ preview** in the worklist, a
+reviewer-gated `kb_curation` **DELETE** policy, and re-landing the **empty-squashed #499**
+(KB note `methodology-stacked-pr-empty-squash.md`). **Second half — the merge workspace arc**
+(Sam digging into Disciplines/Subjects/merging): **#503** re-discipline ON the merge dialog +
+a **forward-looking Common SUBJ** column (curated discipline → shows its canonical `PHOT ⟲`
+immediately; M-ID letters re-key at the next fold; KB note
+`methodology-forward-looking-display-curate-now-rekey-later.md`); **#504** fixed the merge
+search-add silently no-op'ing; **#505** Beg/Int/Adv/Lab/WkExp **band filters**; **#506** a
+global **Conservative↔Aggressive slider** (replaced the title-only one; gates all scored
+lanes, evidence exempt); **#507** **opt-in checkboxes** (only the ★ target pre-checked);
+**#508/#509** the **morphological-variant fold** — `_sug_sig` now stems tokens
+(conversation/conversational→conv, …; measure-first dry-run sized it: **+866** identities into
+groups, 326 clean / 246 cross-discipline) + an amber **"⚠ Spans N disciplines"** worklist flag
+for the homonym risk (workflow-dispatched live). Two architecture asks captured for the epic:
+**dock the worklist as a panel** + **consolidate the two merge popups into one shared editor**.
+Full story: [`docs/ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md)
+(Session 70). **NEXT: [`docs/session_71_handoff.md`](session_71_handoff.md)** — the
+merge-workspace epic (scope-first), then the unverified-M-ID renumber re-mint + TMC engine.
