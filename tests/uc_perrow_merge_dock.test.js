@@ -88,14 +88,20 @@ check("init does not throw", !threw);
   check("header carries the course title", /Weight Training/.test(txt(strong.parentNode)));
 
   // ── 2. single-course mode: queue chrome dropped, editor + band row present ─
-  check("no aggressiveness slider in single-course mode", !dock.querySelector('input[type="range"]'));
+  // The QUEUE aggressiveness slider (Cons↔Aggr, gates the suggestion queue) is
+  // dropped; the editor's candidate Tight↔Loose looseness slider IS present
+  // (Sam S72 follow-up — it's the "add more similar courses" control).
+  check("no QUEUE aggressiveness slider (Cons↔Aggr) in single-course mode",
+    !/Cons\.|Aggr\./.test(txt(dock)));
   check("no Skip / Keep-as-is buttons", !Array.from(dock.querySelectorAll("button")).some((b) => /Skip|Keep as-is/.test(txt(b))));
   check("no 'N of M' queue counter", !/\d+ of \d+/.test(txt(dock)));
   check("embeds the shared editor (Proposed unified title)", /Proposed unified title/.test(dock.textContent));
   check("embeds the shared editor (Confirm merge)",
     Array.from(dock.querySelectorAll("button")).some((b) => /Confirm merge/.test(txt(b))));
-  check("inline 'Add more courses' search present (shared editor)",
-    Array.from(dock.querySelectorAll('input[type=search]')).some((i) => /add more candidates/i.test(i.placeholder || "")));
+  check("the candidate Tight↔Loose looseness slider IS present",
+    !!dock.querySelector('input[type="range"]') && /Tight/.test(txt(dock)) && /Loose/.test(txt(dock)));
+  check("inline 'Add more courses' keyword box present (shared editor)",
+    Array.from(dock.querySelectorAll('input[type=search]')).some((i) => /keyword to guide/i.test(i.placeholder || "")));
   const bandLabels = Array.from(dock.querySelectorAll("label")).filter((l) => /^(Beg|Int|Adv|Lab|WkExp)$/.test(txt(l)));
   check("Beg/Int/Adv/Lab/WkExp band row present", bandLabels.length === 5);
 

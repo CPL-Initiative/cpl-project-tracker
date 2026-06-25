@@ -116,7 +116,7 @@ function curBox(doc) {
   // keyword panel.
   check("editor offers the inline 'Add more courses' search",
     /Add more courses/i.test(box.textContent)
-    && Array.from(box.querySelectorAll('input[type=search]')).some((i) => /add more candidates/i.test(i.placeholder || "")));
+    && Array.from(box.querySelectorAll('input[type=search]')).some((i) => /keyword to guide/i.test(i.placeholder || "")));
   check("editor offers the ⌕ merge-into-a-different-course affordance",
     /Merge into a different existing course/i.test(box.textContent));
 

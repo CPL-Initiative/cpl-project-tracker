@@ -1476,26 +1476,61 @@
       }
       members.forEach(function (m) { addCandidateRow(m, false); });
       container.appendChild(list);
-      // ── 🔎 Add more courses to this merge (Sam, S72 #2) ── Replaces the old
-      // collapsible "➕ Add more by keyword" panel (toggle → search → click each
-      // result to add). Now an ALWAYS-VISIBLE search whose matches drop straight
-      // INTO the Candidates list above as UNCHECKED rows — the curator ticks the
-      // ones to fold in and ignores the rest, no click-to-add step. Needed
-      // because the synonym map + signature can't surface every related course
-      // (the broad ESL family — Vocational / Academic / Workplace — are different
-      // courses sharing a keyword). Distinct from "⌕ Merge into a different
-      // course" up top (which redirects the whole merge to one off-group target).
+      // ── Add more courses — keyword guide + Tight↔Loose slider (Sam, S72
+      // follow-up) ── Consolidates the old substring-only "Add more" search with
+      // the candidate-looseness idea Sam expected the strength bar to be: the
+      // SLIDER is the "add more" control (loosen → surface more SIMILAR courses,
+      // ranked by TITLE and — when the description file is loaded — catalog
+      // DESCRIPTION), and the keyword box GUIDES it (type a term to find specific
+      // courses regardless of similarity). Matches drop into the Candidates list
+      // as UNCHECKED rows; tick the ones to fold in, ignore the rest. Unchecked
+      // surfaced rows clear when the slider/keyword change; checked ones persist.
+      // Shared editor → both the per-row ⚇ dock and the worklist groups get it.
+      // Distinct from "⌕ Merge into a different course" up top (one off-group
+      // target) and the per-row dock's Beg/Lab band row (a level/format axis).
+      var refTitle = opts.refTitle || opts.preTitle || "";
+      var refId = opts.refId || (targetMemberOf(members) || members[0] || {}).id || "";
+      function toSet(toks) { var s = { _n: 0 }; toks.forEach(function (w) { if (!s[w]) { s[w] = 1; s._n++; } }); return s; }
+      function jac(set, toks) {
+        if (!set._n || !toks.length) return 0;
+        var shared = 0, seen = {};
+        for (var i = 0; i < toks.length; i++) { var w = toks[i]; if (!seen[w] && set[w]) { shared++; seen[w] = 1; } }
+        var bn = 0, sn = {}; for (var j = 0; j < toks.length; j++) { if (!sn[toks[j]]) { sn[toks[j]] = 1; bn++; } }
+        return shared / (set._n + bn - shared);
+      }
+      var refSet = toSet(titleTokens(refTitle));
+      var refDescSet = null, idxTok = null, descTokCache = {}, descTried = false;
+      function ensureIdxTok() { if (!idxTok) idxTok = (_ucIndex || []).map(function (en) { return { en: en, tok: titleTokens(en[1]) }; }); }
+      function descTokOf(id) {
+        if (descTokCache[id]) return descTokCache[id];
+        var d = _ucDetails && _ucDetails[id]; var t = titleTokens(d && d.d ? d.d : "");
+        return (descTokCache[id] = t);
+      }
+      function scoreEn(en, tok) {
+        var s = jac(refSet, tok);
+        if (_ucDetails && refDescSet && refDescSet._n) { var ds = 0.85 * jac(refDescSet, descTokOf(en[0])); if (ds > s) s = ds; }
+        return s;
+      }
+      function threshFromPos(v) { return Math.round((0.70 - (v / 100) * 0.62) * 100) / 100; }   // 0.70 (Tight) → 0.08 (Loose)
       var searchWrap = el("div", { style: "margin:8px 0 0;" });
       searchWrap.appendChild(el("label", { style: "display:block;font-weight:600;margin:0 0 2px;font-size:.85rem;" },
         ["Add more courses",
-         infoIcon("Search any course title or id (e.g. “ESL”, “welding”). Matches appear in the Candidates list above as unchecked rows — tick the ones to fold in, ignore the rest. Unchecked results clear when you change or empty the search; the CCR table filters carry over.")]));
-      var addSearch = el("input", { type: "search", placeholder: "🔎 Search a title or id to add more candidates…", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
-      var addNoHits = el("div", { style: "display:none;font-size:.78rem;color:#94a3b8;padding:3px 2px;" }, ["No matches — type 3+ characters of a title or id."]);
-      searchWrap.appendChild(addSearch); searchWrap.appendChild(addNoHits);
+         infoIcon("Two ways to pull in more candidates: (1) drag the Tight↔Loose slider toward Loose to surface courses similar to this one — ranked by title, and by catalog description once it loads; (2) type a keyword (e.g. “ESL”, “welding”) to find specific courses regardless of similarity. Matches appear in the Candidates list above as unchecked rows — tick the ones to fold in, ignore the rest. The CCR table filters carry over.")]));
+      var looseRow = el("div", { style: "display:flex;align-items:center;gap:6px;font-size:.76rem;color:#64748b;margin:0 0 4px;" });
+      looseRow.appendChild(el("span", { style: "font-weight:600;white-space:nowrap;" }, ["Find similar:"]));
+      looseRow.appendChild(el("span", {}, ["Tight"]));
+      var loosen = el("input", { type: "range", min: "0", max: "100", step: "1", value: "0", style: "flex:1;min-width:80px;cursor:pointer;" });
+      looseRow.appendChild(loosen);
+      looseRow.appendChild(el("span", {}, ["Loose"]));
+      var countOut = el("span", { style: "font-variant-numeric:tabular-nums;color:var(--text-strong);white-space:nowrap;min-width:5.5em;text-align:right;" }, [""]);
+      looseRow.appendChild(countOut);
+      var addSearch = el("input", { type: "search", placeholder: "🔎 …or search a keyword to guide (optional)…", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
+      var addNoHits = el("div", { style: "display:none;font-size:.78rem;color:#94a3b8;padding:3px 2px;" }, ["No more matches — drag toward Loose or try a different keyword."]);
+      searchWrap.appendChild(looseRow); searchWrap.appendChild(addSearch); searchWrap.appendChild(addNoHits);
       container.appendChild(searchWrap);
-      // Drop the search-added rows the curator DIDN'T tick (a changed/emptied
-      // query shouldn't leave stale results lying around), but KEEP any they
-      // checked — those are real selections now.
+      // Drop the search-added rows the curator DIDN'T tick (a changed slider/query
+      // shouldn't leave stale results lying around), but KEEP any they checked —
+      // those are real selections now.
       function clearUncheckedSearchRows() {
         for (var j = cbs.length - 1; j >= 0; j--) {
           var x = cbs[j];
@@ -1506,30 +1541,54 @@
           }
         }
       }
-      var aSt; addSearch.oninput = function () {
-        clearTimeout(aSt); var q = this.value.toLowerCase().trim();
-        aSt = setTimeout(function () {
-          clearUncheckedSearchRows();
-          addNoHits.style.display = "none";
-          if (q.length < 3) { refreshTarget(); return; }
-          loadIndex().then(function () {
-            var idx = _ucIndex || [], hits = 0, have = {};
-            cbs.forEach(function (x) { have[x.m.id] = 1; });   // exclude rows already in the merge
-            for (var k = 0; k < idx.length && hits < 15; k++) {
-              var en = idx[k];
-              if (have[en[0]]) continue;
-              if (!rowPassesCcr(en)) continue;   // honor the CCR filter carry-over
-              if (((en[1] || "").toLowerCase().indexOf(q) >= 0) || ((en[0] || "").toLowerCase().indexOf(q) >= 0)) {
-                hits++; have[en[0]] = 1;
-                addCandidateRow({ id: en[0], t: en[1], s: en[2], k: en[3], u: en[4],
-                  g: en[3] === "Stand-Alone" ? 1 : 0 }, true);
-              }
+      function surfaceCandidates() {
+        clearUncheckedSearchRows();
+        var q = addSearch.value.toLowerCase().trim();
+        var pos = parseFloat(loosen.value) || 0, threshold = threshFromPos(pos);
+        loadIndex().then(function () {
+          ensureIdxTok();
+          // If the description file is already loaded (e.g. the curator used an
+          // ⓘ description toggle), pick up the reference's description tokens now
+          // so scoreEn() blends it immediately — not only via the lazy path below.
+          if (_ucDetails && !refDescSet && refId && _ucDetails[refId]) refDescSet = toSet(titleTokens(_ucDetails[refId].d || ""));
+          var have = {}; cbs.forEach(function (x) { have[x.m.id] = 1; });
+          var pool = [];
+          for (var i = 0; i < idxTok.length && pool.length < 400; i++) {
+            var en = idxTok[i].en;
+            if (have[en[0]] || !rowPassesCcr(en)) continue;
+            if (q.length >= 2) {
+              if (((en[1] || "").toLowerCase().indexOf(q) >= 0) || ((en[0] || "").toLowerCase().indexOf(q) >= 0))
+                pool.push([scoreEn(en, idxTok[i].tok) + 1, en]);   // keyword = explicit → not similarity-gated
+            } else {
+              var s = scoreEn(en, idxTok[i].tok);
+              if (s >= threshold) pool.push([s, en]);
             }
-            addNoHits.style.display = hits ? "none" : "block";
-            refreshTarget();
+          }
+          pool.sort(function (a, b) { return b[0] - a[0]; });
+          var shown = pool.slice(0, 25);
+          shown.forEach(function (p) {
+            var en = p[1];
+            addCandidateRow({ id: en[0], t: en[1], s: en[2], k: en[3], u: en[4], g: en[3] === "Stand-Alone" ? 1 : 0 }, true);
           });
-        }, 200);
-      };
+          countOut.textContent = shown.length ? ("+" + shown.length + (pool.length > 25 ? "+" : "")) : "";
+          addNoHits.style.display = (!shown.length && (q.length >= 2 || pos > 0)) ? "block" : "none";
+          refreshTarget();
+          // Lazy DESCRIPTION blend (Sam: "title and description if available"):
+          // fetch the heavy detail file ONCE when the curator loosens deeply
+          // (where description discovery actually pays off) — not on a keyword
+          // (substring is the intent there) or mild loosening, to avoid a
+          // surprise ~34MB download. Then cache the reference's tokens + re-rank.
+          if (!descTried && !_ucDetails && pos >= 50) {
+            descTried = true;
+            loadDetails().then(function () {
+              if (refId && _ucDetails && _ucDetails[refId]) refDescSet = toSet(titleTokens(_ucDetails[refId].d || ""));
+              surfaceCandidates();
+            });
+          }
+        });
+      }
+      var aSt; addSearch.oninput = function () { clearTimeout(aSt); aSt = setTimeout(surfaceCandidates, 220); };
+      var lSt; loosen.oninput = function () { clearTimeout(lSt); lSt = setTimeout(surfaceCandidates, 160); };
       // No existing identity among the checked rows → Confirm mints a new
       // unified course. Surfaced live so a curator isn't surprised.
       var mintHint = el("div", { style: "display:none;margin:6px 0 0;font-size:.78rem;color:#5b21b6;" },

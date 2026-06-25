@@ -66,7 +66,7 @@ function hasCand(id) { return !!candCb(id); }
   // The per-row dialog embeds the shared editor — "Add more courses" is now an
   // always-visible inline search (no toggle); matches land in the Candidates list.
   const srch = Array.from(document.querySelectorAll('input[type="search"]'))
-    .find(function (i) { return /add more candidates/i.test(i.placeholder || ""); });
+    .find(function (i) { return /keyword to guide/i.test(i.placeholder || ""); });
   check("the inline 'Add more courses' search box is present", !!srch);
 
   // --- NEW course: typing drops it into the list as an UNCHECKED candidate ---

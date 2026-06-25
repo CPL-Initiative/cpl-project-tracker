@@ -89,7 +89,7 @@ function curBox(doc) {
 
   // The "Add more courses" search is ALWAYS visible (no toggle).
   const addSearch = Array.from(box.querySelectorAll("input[type=search]"))
-    .find((i) => /add more candidates/i.test(i.placeholder || ""));
+    .find((i) => /keyword to guide/i.test(i.placeholder || ""));
   check("the inline 'Add more courses' search is present (no toggle)", !!addSearch);
   check("no collapsible ➕ keyword-gather toggle remains",
     !Array.from(box.querySelectorAll("a")).some((a) => /Add more courses to this merge by keyword/.test(txt(a))));
