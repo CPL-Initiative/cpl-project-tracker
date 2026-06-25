@@ -1,20 +1,26 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-24 (Session 71 · merge-workspace epic complete + PR-4)",
- "_session": 71,
- "_status": "SESSION 71 — completed the ENTIRE merge-workspace EPIC Session 70 scoped (7 PRs, #511–#518). The two merge popups are now ONE shared editor: the per-row ⚇ Merge dialog and the ✨ Suggested-merges worklist behave identically (same in-row ★ target, completion note, level/format chips, ⓘ descriptions, ➕ keyword-gather, ⌕ merge-into-a-different-course). The ✨ worklist is now a DOCKED right-hand panel (drag the left edge to resize · » to collapse to a rail · ✕ to close) so the CCR table stays visible beside it — AND it now re-filters LIVE as you change the table's filters (discipline, subject, source, credit…); a 'Match the CCR table filters' checkbox in the panel turns that link off if you want it independent. Re-discipline-on-merge from Session 70 is preserved everywhere. NEXT (Fable): the standing lanes resume — the unverified-M-ID renumber re-mint (when the merge wave settles), the TMC acceptance engine, the CPL-Assistant recommender ETL.",
+ "_as_of": "2026-06-25 (Session 72 · merge-workspace polish — all 6 asks shipped)",
+ "_session": 72,
+ "_status": "SESSION 72 — your 6-item merge-workspace review is DONE (5 PRs, #520–#523). The per-row ⚇ Merge now opens the SAME docked sidebar as ✨ Suggested merges (no more cramped pop-up). The Aggressive end of the strength slider now goes all the way (floor 0.00 = show everything). The 'Save did nothing' bug is fixed — Confirm now stays greyed out until you've checked at least two courses, so it can't silently no-op. 'Merge into a different course' moved UP next to the title; the wordy gray helper text is now behind little ⓘ hover icons; and 'Add more courses' is a live search whose matches drop straight into the candidate list as unchecked rows to tick or ignore. NEXT (Fable): the standing lanes — the unverified-M-ID renumber re-mint (when the merge wave settles), the TMC acceptance engine, the CPL-Assistant recommender ETL.",
  "items": [
   {
-   "id": "sam-docked-worklist",
+   "id": "sam-perrow-dock",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "✨ Suggested merges now opens as a PANEL docked on the RIGHT, not a centered pop-up — so the course list stays visible beside it AND the panel re-filters LIVE as you change the table's filters (discipline, subject, credit…). Drag its LEFT edge to resize, click » to collapse it to a thin rail (click the rail to re-open), ✕ to close. The 'Match the CCR table filters' checkbox in the panel turns the live link off if you'd rather it stay put. Your width + collapsed choice are remembered per browser. Take it for a spin and tell me if the default width / side feel right."
+   "text": "Per-row ⚇ Merge (from any CCR row) now opens the SAME docked sidebar as ✨ Suggested merges — same roomy panel, same editor (inline 'Add more' search, ⌕ merge-into-a-different-course up by the title, candidate level filters). It drops the queue-only bits that don't apply to one course (no Skip/Keep, no N-of-M, no strength slider). The Beg/Int/Adv/Lab band row filters the candidate list. Try merging a specific course this way and tell me if it feels right — and whether you want the strength slider back here too (I left it out since there's no suggestion queue to gate)."
   },
   {
-   "id": "sam-one-merge-editor",
+   "id": "sam-slider-confirm",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "The per-row ⚇ Merge popup and the ✨ worklist now use the SAME editor — so everything you learned in one works in the other: the surviving course is the in-row ★ (click '☆ set as target' to pick a different survivor), plus completion notes, level chips, ⓘ descriptions, ➕ add-more-by-keyword, and ⌕ merge-into-a-different-course. Re-discipline-on-merge still works on both. If anything feels different between the two, flag it — they should match now."
+   "text": "Two fixes to try: (1) the Conservative↔Aggressive strength slider now reaches all the way to 0.00 on the Aggressive end (drag fully right = surface EVERY suggested group). (2) the 'I clicked Save and nothing happened' issue is gone — Confirm now stays greyed-out until at least two courses are ticked (with opt-in checkboxes only the ★ survivor starts checked, so you tick the ones to fold in). Flag anything that still feels off."
+  },
+  {
+   "id": "sam-editor-tidy",
+   "who": "sam",
+   "tab": "unified-courses",
+   "text": "Merge editor tidy-up: 'Merge into a different existing course' moved UP under the course title (so you can redirect to a specific course right away when working out of order), and the long gray explainer paragraphs are now tucked behind small ⓘ hover icons to save space. The 'Add more courses' search now drops matches straight into the candidate list as UNCHECKED rows — tick the ones to merge, ignore the rest (no separate add step). Say the word if you want any of that copy back on-screen."
   },
   {
    "id": "sam-morphological-fold",
