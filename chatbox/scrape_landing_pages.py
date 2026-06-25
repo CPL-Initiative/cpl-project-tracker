@@ -1,25 +1,27 @@
 #!/usr/bin/env python3
-"""Scrape college CPL landing-page links from map.rccd.edu/cpllandingpages/.
+"""Scrape the college CPL landing-page links from map.rccd.edu/cpllandingpages/
+and sync them into chatbox_college_profiles.landing_page_url.
 
-WHY THIS RUNS ON A RUNNER (not in the agent sandbox): the Claude session's
-egress policy blocks map.rccd.edu (proxy 403), and WebFetch is bot-blocked, so
-this uses the repo's "runner-as-proxy" pattern (see
-docs/kb-notes/playbook-runner-as-external-api-proxy.md). A GitHub Actions runner
-has open internet; it scrapes, reconciles, and (optionally) writes Supabase.
+WHY A RUNNER: the Claude session's egress policy blocks map.rccd.edu, so this
+runs on a GitHub Actions runner (the repo's runner-as-proxy pattern — see
+docs/kb-notes/playbook-runner-as-external-api-proxy.md).
 
-WHAT IT DOES
-  1. Fetch the landing-pages index page.
-  2. Parse anchor links into {college name -> landing-page URL}.
-  3. Write chatbox/college_landing_pages.json (provenance + raw scrape +
-     reconciliation against the live chatbox_college_profiles table).
-  4. With SUPABASE_SERVICE_KEY present, READ the profile college list and
-     reconcile names; with --apply, PATCH chatbox_college_profiles.landing_page_url.
+WHERE THE DATA IS: the page (WordPress) embeds the authoritative list as a JS
+object — `let mapfyCollegeUrls = {"updated":"…","colleges":[{College,
+CollegeLandingURL}]}` — NOT as <a> anchors. We parse that blob directly.
 
-The CPL Assistant (cpl-chat Edge Function) joins chatbox_college_profiles on the
-`college` name to surface each college's CPL landing page in chat answers, so
-keeping landing_page_url correct here fixes the broken links in the assistant.
+WHAT WE STORE: each college's official `https://map.rccd.edu/cpl-student-portal/
+<CODE>` link (path-encoded). That canonical link 302-redirects to wherever the
+landing app currently lives (a Vercel app as of 2026-06), so it survives backend
+moves. The CPL Assistant (cpl-chat Edge Function) joins chatbox_college_profiles
+on the college name to surface these links in chat answers.
 
-Stdlib only (urllib) so the runner needs no pip install.
+WHY IT CAN FAIL TO FETCH: map.rccd.edu sits behind an intermittent Sucuri WAF
+('sgcaptcha'). We retry the plain fetch with a cookie jar and, as a last resort,
+render with headless Chromium.
+
+Stdlib only (except the optional playwright fallback) so the runner needs no pip
+install for the common path.
 
 Usage:
   python3 chatbox/scrape_landing_pages.py [--apply] [--dump-html PATH] [--url URL]
@@ -43,22 +45,21 @@ OUT_JSON = os.path.join(os.path.dirname(__file__), "college_landing_pages.json")
 SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co"
 PROFILE_TABLE = "chatbox_college_profiles"
 
-# Landing-page URLs we recognize. The authoritative host today is the Azure
-# dashboard (https://cpldashboardcccco.azurewebsites.net/<CODE>); the older
-# map.rccd.edu/cpl-student-portal/<CODE> form is also accepted so a future
-# host change is caught rather than silently dropped.
-LANDING_HOST_RE = re.compile(
-    r"https?://(?:cpldashboardcccco\.azurewebsites\.net|map\.rccd\.edu/cpl-student-portal)",
-    re.I,
-)
 ANCHOR_RE = re.compile(r"<a\b([^>]*)>(.*?)</a>", re.I | re.S)
 HREF_RE = re.compile(r"""href\s*=\s*["']([^"']+)["']""", re.I)
 TAG_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"\s+")
+# A per-college landing href points at either host; the page renders most as
+# relative /cpl-student-portal/<CODE>. Two paths under it are nav, not colleges.
+LANDING_RE = re.compile(
+    r"(?:cpldashboardcccco\.azurewebsites\.net/|cpl-student-portal/)", re.I)
+NAV_LAST = {"chancellor", "dashboard"}
+# Placeholder codes in the official blob that must never overwrite a real URL.
+PLACEHOLDER_CODES = {"test", "", "dashboard", "chancellor", "insights"}
+RAW_PORTAL_RE = re.compile(r"cpl-student-portal/([A-Za-z0-9._%\-]+)", re.I)
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
-
 
 # Persist cookies across requests so a Sucuri WAF clearance cookie carries from
 # the challenge response into the retry (which then gets the real page).
@@ -66,9 +67,8 @@ _OPENER = urllib.request.build_opener(
     urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
 
 
+# ── fetch (WAF-aware) ──────────────────────────────────────────────────
 def looks_like_challenge(html: str) -> bool:
-    """map.rccd.edu sits behind a Sucuri WAF that serves a JS/meta-refresh
-    'sgcaptcha' bot-challenge to plain fetchers instead of the real page."""
     low = html.lower()
     return ("sgcaptcha" in low or "sucuri" in low
             or ('http-equiv="refresh"' in low and len(html) < 1500))
@@ -76,7 +76,7 @@ def looks_like_challenge(html: str) -> bool:
 
 def is_full_page(html: str) -> bool:
     """The real index lists ~115 colleges, so it carries many cpl-student-portal
-    links. The WAF challenge / bare SPA shell carries almost none."""
+    references. The WAF challenge / bare SPA shell carries almost none."""
     return html.lower().count("cpl-student-portal") >= 50
 
 
@@ -94,19 +94,7 @@ def fetch_plain(url: str) -> str:
         return body
 
 
-# The college landing list goes to cpldashboardcccco.azurewebsites.net/<CODE>;
-# the SPA also renders a couple of static nav links (…/insights/dashboard,
-# cpl-student-portal/chancellor|dashboard). A real per-college link is one of
-# these hosts whose path is NOT one of those nav targets.
-COLLEGE_ANCHOR_JS = """() => document.querySelectorAll(
-  "a[href*='cpldashboardcccco.azurewebsites.net/']:not([href*='/insights']), "
-  + "a[href*='/cpl-student-portal/']:not([href$='/chancellor']):not([href$='/dashboard'])"
-).length"""
-
-
 def _safe_content(page) -> str:
-    """page.content() throws mid-navigation (the WAF meta-refresh keeps
-    bouncing the page); retry until it settles."""
     for _ in range(8):
         try:
             return page.content()
@@ -116,69 +104,30 @@ def _safe_content(page) -> str:
 
 
 def fetch_browser(url: str) -> str:
-    """Render with headless Chromium: clear the Sucuri JS challenge, then wait
-    for the Angular SPA to fetch + render the per-college landing list. Also
-    logs the network so we can see the SPA's data API (the long-term source).
-    Never raises — always returns the best HTML it can so diagnostics run."""
+    """Last resort: headless Chromium clears the Sucuri JS challenge and waits
+    for the full college list to render. Never raises."""
     from playwright.sync_api import sync_playwright
-    print("[fetch] launching headless Chromium to clear the WAF + render the SPA…")
-    api_hits = []
-
-    def on_response(resp):
-        try:
-            ct = (resp.headers or {}).get("content-type", "")
-            u = resp.url
-            if "json" in ct.lower() or any(k in u.lower() for k in (
-                    "api", "landing", "college", "portal", "list")):
-                body = ""
-                if "json" in ct.lower():
-                    try:
-                        body = resp.text()[:240]
-                    except Exception:
-                        body = "(unreadable)"
-                api_hits.append((u, ct, body))
-        except Exception:
-            pass
-
+    print("[fetch] launching headless Chromium to clear the WAF…")
     html = ""
     with sync_playwright() as p:
         browser = p.chromium.launch(args=[
             "--no-sandbox", "--disable-blink-features=AutomationControlled"])
         ctx = browser.new_context(user_agent=UA, locale="en-US")
         page = ctx.new_page()
-        page.on("response", on_response)
         try:
             page.goto(url, wait_until="domcontentloaded", timeout=60000)
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001
             print(f"[fetch] goto note: {e}")
-        # One resilient wait handles BOTH the WAF meta-refresh bounce AND the
-        # full-page render — wait_for_function re-polls across navigations. Wait
-        # for the WordPress index's many cpl-student-portal links, not just a few
-        # anchors (the SPA shell has the nav links but not the college list).
         try:
             page.wait_for_function(
                 "() => (document.documentElement.innerHTML.match"
                 "(/cpl-student-portal/gi) || []).length >= 50", timeout=60000)
         except Exception:
             print("[fetch] full college list never rendered — capturing anyway")
-        page.wait_for_timeout(3000)  # let any final render settle
+        page.wait_for_timeout(3000)
         html = _safe_content(page)
-        try:
-            n = page.evaluate(COLLEGE_ANCHOR_JS)
-        except Exception:
-            n = "?"
-        print(f"[fetch] browser rendered {len(html)} chars, {n} college anchors, "
-              f"from {page.url}")
+        print(f"[fetch] browser rendered {len(html)} chars from {page.url}")
         browser.close()
-
-    if api_hits:
-        print(f"[net] {len(api_hits)} JSON/api-ish responses observed:")
-        for u, ct, body in api_hits[:30]:
-            print(f"[net]   {ct[:30]:30} {u}")
-            if body:
-                print(f"[net]      body: {WS_RE.sub(' ', body)}")
-    else:
-        print("[net] no JSON/api-ish responses observed")
     return html
 
 
@@ -211,35 +160,9 @@ def fetch(url: str) -> str:
     return best
 
 
+# ── parse ──────────────────────────────────────────────────────────────
 def clean_text(html_fragment: str) -> str:
     return WS_RE.sub(" ", unescape(TAG_RE.sub(" ", html_fragment))).strip()
-
-
-# A real per-college landing link points at either host; the page (a WordPress
-# page) renders most as RELATIVE hrefs (/cpl-student-portal/<CODE>), so resolve
-# against the base. Two nav links under that path are NOT colleges.
-LANDING_RE = re.compile(
-    r"(?:cpldashboardcccco\.azurewebsites\.net/|cpl-student-portal/)", re.I)
-NAV_LAST = {"chancellor", "dashboard"}
-DASH_BASE = "https://cpldashboardcccco.azurewebsites.net/"
-
-
-RAW_PORTAL_RE = re.compile(r"cpl-student-portal/([A-Za-z0-9._%\-]+)", re.I)
-
-
-def extract_raw(html: str, span_before: int = 180, span_after: int = 50):
-    """Recon: every distinct cpl-student-portal/<CODE> in the RAW html with
-    surrounding markup, so we can see HOW the college links are embedded when
-    they're not <a href> anchors."""
-    seen, items = set(), []
-    for m in RAW_PORTAL_RE.finditer(html):
-        code = m.group(1)
-        if code.lower() in NAV_LAST or code.lower() in seen:
-            continue
-        seen.add(code.lower())
-        ctx = html[max(0, m.start() - span_before): m.end() + span_after]
-        items.append({"code": code, "context": WS_RE.sub(" ", ctx).strip()})
-    return items
 
 
 def code_of(url: str) -> str:
@@ -247,18 +170,16 @@ def code_of(url: str) -> str:
     return urllib.parse.unquote(seg)
 
 
-def to_dashboard(code: str) -> str:
-    return DASH_BASE + code
-
-
-# Placeholder codes in the official blob that must never overwrite a real URL.
-PLACEHOLDER_CODES = {"test", "", "dashboard", "chancellor", "insights"}
+def encode_url(url: str) -> str:
+    """Percent-encode the path so a stray space in the source (e.g. El Camino's
+    'EL C') yields a valid, clickable URL."""
+    p = urllib.parse.urlsplit(url)
+    return urllib.parse.urlunsplit(
+        (p.scheme, p.netloc, urllib.parse.quote(p.path), p.query, p.fragment))
 
 
 def extract_mapfy(html: str):
-    """The page embeds the authoritative list as a JS object:
-       let mapfyCollegeUrls = {"updated":"...","colleges":[{College, CollegeLandingURL}]}
-    Pull it out with balanced-brace matching and parse it as JSON."""
+    """Pull `mapfyCollegeUrls = {…}` out with balanced-brace matching + JSON."""
     m = re.search(r"mapfyCollegeUrls\s*=\s*\{", html)
     if not m:
         return None
@@ -279,10 +200,9 @@ def extract_mapfy(html: str):
 
 
 def parse_links(html: str, base_url: str = DEFAULT_URL):
-    """Authoritative path: parse the embedded mapfyCollegeUrls JSON. Each row:
-    {college, code, portal_url (official cpl-student-portal link),
-     dashboard_url (the cpldashboardcccco redirect target)}. Falls back to anchor
-    scraping if the blob isn't present."""
+    """Authoritative path: parse the embedded mapfyCollegeUrls JSON. Each row
+    {college, code, url} where url is the official, path-encoded
+    cpl-student-portal link. Falls back to anchor scraping if the blob is absent."""
     blob = extract_mapfy(html)
     if blob and isinstance(blob.get("colleges"), list):
         print(f"[blob] mapfyCollegeUrls updated={blob.get('updated')!r} "
@@ -300,12 +220,7 @@ def parse_links(html: str, base_url: str = DEFAULT_URL):
             if name.lower() in seen:
                 continue
             seen.add(name.lower())
-            out.append({
-                "college": name,
-                "code": code,
-                "portal_url": portal,
-                "dashboard_url": to_dashboard(code),
-            })
+            out.append({"college": name, "code": code, "url": encode_url(portal)})
         return out
     print("[blob] mapfyCollegeUrls not found — falling back to anchor scrape")
     return parse_anchors(html, base_url)
@@ -321,70 +236,79 @@ def parse_anchors(html: str, base_url: str = DEFAULT_URL):
         raw = unescape(m.group(1)).strip()
         if not LANDING_RE.search(raw):
             continue
-        portal_url = urllib.parse.urljoin(base_url, raw)
-        path = urllib.parse.urlparse(portal_url).path.lower().rstrip("/")
-        if "/insights" in path:                       # nav: MAP CPL Dashboard
+        url = urllib.parse.urljoin(base_url, raw)
+        path = urllib.parse.urlparse(url).path.lower().rstrip("/")
+        if "/insights" in path:
             continue
         last = path.rsplit("/", 1)[-1]
         if "/cpl-student-portal/" in path + "/" and last in NAV_LAST:
-            continue                                   # nav: CPL Dashboard/Inventory
+            continue
         name = clean_text(inner)
         if not name or name.lower().startswith("http"):
             tm = re.search(r"""(?:title|aria-label)\s*=\s*["']([^"']+)["']""",
                            attrs, re.I)
             name = clean_text(tm.group(1)) if tm else ""
-        code = code_of(portal_url)
+        code = code_of(url)
         if not name or not code:
             continue
         key = (name.lower(), code.lower())
         if key in seen:
             continue
         seen.add(key)
-        out.append({
-            "college": name,
-            "code": code,
-            "portal_url": portal_url,
-            "dashboard_url": to_dashboard(code),
-        })
+        out.append({"college": name, "code": code, "url": encode_url(url)})
     return out
 
 
+def extract_raw(html: str, span_before: int = 160, span_after: int = 40):
+    """Recon-only: distinct cpl-student-portal/<CODE> in the raw html with
+    surrounding markup, so the embedding can be inspected if parsing ever drifts."""
+    seen, items = set(), []
+    for m in RAW_PORTAL_RE.finditer(html):
+        code = m.group(1)
+        if code.lower() in NAV_LAST or code.lower() in seen:
+            continue
+        seen.add(code.lower())
+        ctx = html[max(0, m.start() - span_before): m.end() + span_after]
+        items.append({"code": code, "context": WS_RE.sub(" ", ctx).strip()})
+    return items
+
+
 def resolve_redirect(url: str):
-    """Follow redirects; return (final_url, status). Used to VERIFY that the
-    page's /cpl-student-portal/<CODE> link resolves to cpldashboardcccco/<CODE>."""
+    """Follow redirects; return (final_url, status). Informational only — records
+    where the official link currently resolves (a Vercel app as of 2026-06)."""
     try:
         req = urllib.request.Request(url, headers={"User-Agent": UA})
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        with _OPENER.open(req, timeout=30) as resp:
             return resp.geturl(), resp.status
-    except Exception as e:  # noqa: BLE001 — record the failure, don't crash
+    except Exception as e:  # noqa: BLE001
         return f"(error: {type(e).__name__}: {e})", None
 
 
 def diagnostics(html: str):
-    print("[diag] ---- recon ----")
-    for needle in ("cpldashboardcccco", "cpl-student-portal", "<a ", "href="):
-        print(f"[diag] count {needle!r}: {html.lower().count(needle.lower())}")
-    print("[diag] ----------------")
+    print("[diag] " + " | ".join(
+        f"{n!r}={html.lower().count(n.lower())}"
+        for n in ("cpldashboardcccco", "cpl-student-portal", "<a ", "href=")))
 
 
 # ── name reconciliation ────────────────────────────────────────────────
 def norm(name: str) -> str:
     s = unicodedata.normalize("NFKD", name)
-    s = "".join(c for c in s if not unicodedata.combining(c))
-    s = s.lower()
+    s = "".join(c for c in s if not unicodedata.combining(c)).lower()
     s = s.replace("&", " and ").replace("-", " ").replace(".", " ").replace(",", " ")
     s = re.sub(r"\b(the)\b", " ", s)
     s = re.sub(r"\bmt\b", "mount", s)
     s = re.sub(r"\bsaint\b", "st", s)
-    s = WS_RE.sub(" ", s).strip()
-    return s
+    return WS_RE.sub(" ", s).strip()
+
+
+def nospace(name: str) -> str:
+    """Space-insensitive key so 'Deanza' matches 'De Anza'."""
+    return norm(name).replace(" ", "")
 
 
 def core(name: str) -> str:
-    """Aggressive key: drop generic suffix words to catch 'X' vs 'X College'."""
-    s = norm(name)
     s = re.sub(r"\b(community|college|of|center|continuing|education|"
-               r"credit|non credit|noncredit)\b", " ", s)
+               r"credit|non credit|noncredit)\b", " ", norm(name))
     return WS_RE.sub(" ", s).strip()
 
 
@@ -406,14 +330,17 @@ def reconcile(scraped, key: str):
     """Match scraped names to profile rows. Returns (updates, report)."""
     _, profiles = sb_request(
         "GET", f"{PROFILE_TABLE}?select=college,landing_page_url", key)
-    by_norm, by_core = {}, {}
+    by_norm, by_nospace, by_core = {}, {}, {}
     for p in profiles:
         by_norm.setdefault(norm(p["college"]), p)
+        by_nospace.setdefault(nospace(p["college"]), p)
         by_core.setdefault(core(p["college"]), p)
 
     updates, matched_profiles, unmatched_scraped = [], set(), []
     for row in scraped:
-        prof = by_norm.get(norm(row["college"])) or by_core.get(core(row["college"]))
+        prof = (by_norm.get(norm(row["college"]))
+                or by_nospace.get(nospace(row["college"]))
+                or by_core.get(core(row["college"])))
         if not prof:
             unmatched_scraped.append(row)
             continue
@@ -452,10 +379,6 @@ def main():
     ap.add_argument("--url", default=DEFAULT_URL)
     ap.add_argument("--apply", action="store_true",
                     help="write landing_page_url to chatbox_college_profiles")
-    ap.add_argument("--store", choices=("auto", "portal", "dashboard"),
-                    default="auto",
-                    help="which URL form to store (default auto: dashboard if "
-                         "the redirect probe confirms, else the portal link)")
     ap.add_argument("--dump-html", help="write the raw fetched HTML here")
     args = ap.parse_args()
 
@@ -471,89 +394,49 @@ def main():
     print(f"[parse] {len(scraped)} landing links | {len(raw)} raw portal codes")
     scraped.sort(key=lambda r: r["college"].lower())
 
-    # Probe the official portal link's redirect on a spread of samples (incl.
-    # San Diego Miramar) to learn where /cpl-student-portal/<CODE> resolves.
+    # Informational: where do the official links currently resolve? (Records the
+    # current backend host without affecting what we store.)
     probe = []
-    if scraped:
-        picks, names = [], ("miramar", "mesa", "bakersfield", "santa rosa")
-        for want in names:
-            for r in scraped:
-                if want in r["college"].lower() and r not in picks:
-                    picks.append(r)
-                    break
-        for r in scraped:
-            if len(picks) >= 5:
-                break
-            if r not in picks:
-                picks.append(r)
-        for r in picks:
-            final, status = resolve_redirect(r["portal_url"])
-            probe.append({
-                "college": r["college"], "code": r["code"],
-                "portal_url": r["portal_url"], "dashboard_url": r["dashboard_url"],
-                "redirect_final": final, "redirect_status": status,
-                "matches_dashboard": isinstance(final, str)
-                and final.rstrip("/") == r["dashboard_url"].rstrip("/"),
-            })
-            print(f"[probe] {r['college']}: {r['portal_url']} -> {final}")
-
-    # Decide which URL to STORE. 'auto': use the direct cpldashboardcccco/<CODE>
-    # form only if every probe confirms the redirect preserves the code;
-    # otherwise fall back to the official portal link (always correct).
-    store_field = "portal_url"
-    if args.store == "dashboard":
-        store_field = "dashboard_url"
-    elif args.store == "portal":
-        store_field = "portal_url"
-    elif probe and all(p["matches_dashboard"] for p in probe):
-        store_field = "dashboard_url"
-    for r in scraped:
-        r["url"] = r[store_field]
-    print(f"[store] using {store_field} as landing_page_url "
-          f"(probe confirmed: {sum(p['matches_dashboard'] for p in probe)}/{len(probe)})")
+    for r in scraped[:4]:
+        final, status = resolve_redirect(r["url"])
+        probe.append({"college": r["college"], "url": r["url"],
+                      "resolves_to": final, "status": status})
+        print(f"[probe] {r['college']}: {r['url']} -> {final}")
 
     payload = {
         "_source": args.url,
         "_scraped_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "_count_scraped": len(scraped),
-        "_store_field": store_field,
-        "_note": ("url = the value stored to landing_page_url; portal_url is the "
-                  "official cpl-student-portal link, dashboard_url its "
-                  "cpldashboardcccco redirect target"),
+        "_note": ("url = the official map.rccd.edu/cpl-student-portal/<CODE> link "
+                  "(path-encoded); it 302-redirects to the current landing host "
+                  "(see _redirect_probe.resolves_to)."),
         "_redirect_probe": probe,
         "_debug": {"page_chars": len(html), "raw_portal_count": len(raw),
-                   "raw_portal_samples": raw[:20]},
+                   "raw_portal_samples": raw[:12]},
         "scraped": scraped,
     }
 
     key = os.environ.get("SUPABASE_SERVICE_KEY") or os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
-    applied = 0
     if key and scraped:
         updates, report = reconcile(scraped, key)
         changed = [u for u in updates if u["changed"]]
-        payload["reconciliation"] = {
-            "matched": len(updates),
-            "would_change": len(changed),
-            **report,
-        }
+        payload["reconciliation"] = {"matched": len(updates),
+                                     "would_change": len(changed), **report}
         payload["updates"] = updates
-        print(f"[reconcile] matched {len(updates)}/{len(scraped)} scraped to "
-              f"profiles; {len(changed)} differ from current value")
+        print(f"[reconcile] matched {len(updates)}/{len(scraped)}; "
+              f"{len(changed)} differ from current value")
         if report["unmatched_scraped"]:
-            print("[reconcile] scraped names with NO profile row:",
+            print("[reconcile] scraped with NO profile row:",
                   [r["college"] for r in report["unmatched_scraped"]])
-        if report["unmatched_profiles"]:
-            print(f"[reconcile] {len(report['unmatched_profiles'])} profile rows "
-                  f"got no scraped match (test rows / closed colleges expected)")
         if args.apply:
-            applied = apply_updates(changed, key)
+            n = apply_updates(changed, key)
             payload["_applied_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
-            payload["_applied_count"] = applied
-            print(f"[apply] PATCHed {applied} rows")
+            payload["_applied_count"] = n
+            print(f"[apply] PATCHed {n} rows")
         else:
             print("[apply] dry-run (pass --apply to write Supabase)")
     elif not key:
-        print("[reconcile] SUPABASE_SERVICE_KEY unset — scrape only, no reconciliation")
+        print("[reconcile] SUPABASE_SERVICE_KEY unset — scrape only")
 
     with open(OUT_JSON, "w", encoding="utf-8") as fh:
         json.dump(payload, fh, indent=2, ensure_ascii=False)
@@ -564,10 +447,7 @@ def main():
         print("::error::no landing links AND no raw portal codes — page not fetched")
         sys.exit(1)
     if not scraped:
-        # Data is present but not as anchors — commit the _debug so the markup
-        # structure can be inspected; don't fail the run.
-        print("::warning::0 anchor links parsed but raw portal codes exist — "
-              "see _debug.raw_portal_samples")
+        print("::warning::0 links parsed but raw portal codes exist — see _debug")
 
 
 if __name__ == "__main__":
