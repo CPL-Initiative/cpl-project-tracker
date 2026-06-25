@@ -1,32 +1,32 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-25 (Session 73 · CPL Assistant response-logic tuning — live on cpl-chat v17)",
- "_session": 73,
- "_status": "SESSION 73 — the CPL Assistant ('Sierra', going forward) just got three response-logic tweaks you asked for, now LIVE on both the dashboard tab AND the production map.rccd.edu widget (they share one backend): (1) it no longer says a STATEWIDE credit lives at one college — statewide recommendations are system-wide and you access them through YOUR OWN college's landing page; (2) instead of '6 credit recommendations' it now LISTS the actual course titles + units you'd be eligible for; (3) for a broad question that matches lots of colleges it first ASKS 'any particular part of California, or want to see them all?' before dumping the list. Earlier this session: the broken college landing-page links are fixed + auto-refreshing from the MAP API. Give all of it a spin and tell me what to refine next. NEXT (Fable): the CPL-Assistant CCR/CER recommender ETL is the big build; the M-ID renumber re-mint + TMC acceptance engine lanes still stand.",
+ "_as_of": "2026-06-25 (Session 74 · SkyBlaster — the public CPL Fact Sheet shipped, PRs #537/#540 LIVE; plus Session 73's CPL Assistant response-logic tuning, live on cpl-chat v17)",
+ "_session": 74,
+ "_status": "SESSION 74 — SkyBlaster built the public CPL Fact Sheet end-to-end and it's LIVE: a standalone, shareable page at cpl-initiative.github.io/cpl-project-tracker/fact-sheet/ that recreates the journalist Fact Sheet, pulls the headline KPIs live from live_metrics.json, and prints to a clean PDF — it 'sits alone' (no COBI nav) so consultants can be linked to it without reaching the internal tabs, opened from the 📄 CPL Fact Sheet link in the left nav rail. It also got the full COBI KPI grid, 'The CPL Bump' (CAEL/WICHE), and a Statewide Exhibits section (132 exhibits / 12 program areas, expandable) that reconciles the two cards' statewide credit-rec counts (1,304 articulation rows vs 1,101 distinct recs vs 1,298 adoptions). ALSO live from Session 73: the CPL Assistant's three response-logic tweaks (statewide framing, course-list answers, multi-turn follow-up) + fixed college landing-page links. NEXT (Fable): live-wire the Fact Sheet's snapshot KPI tier (in progress), then the standing lanes — M-ID renumber, TMC acceptance engine, CPL-Assistant CCR/CER recommender ETL.",
  "items": [
+  {
+   "id": "sam-factsheet-live",
+   "who": "sam",
+   "tab": "dashboard",
+   "text": "NEW: the public CPL Fact Sheet is LIVE — share cpl-initiative.github.io/cpl-project-tracker/fact-sheet/ with consultants (it sits alone — no access to the other COBI tabs), or open it from the 📄 CPL Fact Sheet link in the left nav rail. The headline KPIs auto-update; hit '🖨 Print / Save PDF' for the always-current PDF. When you have a moment, eyeball the SEMI-STATIC figures (the Vision 2030 workplan SCRs 332/889/37.35%/274 and the 5-year funding table) and tell me any that have moved — those are baked, not live."
+  },
   {
    "id": "sam-assistant-tweaks",
    "who": "sam",
    "tab": "chatbot",
-   "text": "NEW: the CPL Assistant has three improvements live now — try a few questions and tell me what to tune. (1) Ask about a STATEWIDE credit (e.g. a statewide RE or firefighter recommendation): it should say it's available system-wide and point you to YOUR college's landing page, not to one specific college. (2) Ask 'what credit can I get for an EMT license?': it should LIST the eligible course titles + units, not just a number. (3) Ask a broad 'which colleges give credit for X' question: it should ASK whether you want a specific region or all options before showing a long list, then refine when you answer (e.g. 'Southern California')."
+   "text": "From Session 73 (live now): the CPL Assistant has three improvements — try a few questions and tell me what to tune. (1) Ask about a STATEWIDE credit (e.g. a statewide RE or firefighter recommendation): it should say it's available system-wide and point you to YOUR college's landing page, not one specific college. (2) Ask 'what credit can I get for an EMT license?': it should LIST the eligible course titles + units, not just a number. (3) Ask a broad 'which colleges give credit for X': it should ASK whether you want a specific region or all options before showing a long list."
   },
   {
    "id": "sam-landing-links",
    "who": "sam",
    "tab": "chatbot",
-   "text": "Also fixed this session: the assistant's college CPL landing-page links were broken/stale (San Diego Miramar was pointing at the wrong code). They're now synced from the MAP College Landing Page API and auto-refresh weekly, so they should match map.rccd.edu/cpllandingpages. Click a couple from a college-specific answer and flag any that still misfire."
-  },
-  {
-   "id": "sam-levels",
-   "who": "sam",
-   "tab": "unified-courses",
-   "text": "Carry-over: in the ✨ Suggested-merges / ⚇ Merge sidebar, each candidate shows a Beg / Int / Adv level chip (classified by Title-5 §55050). Explicit ranges + words/ordinals are reliable; a bare single number ('Spanish 3') is just a hint you can override. Eyeball a language or ESL family and correct any level that reads wrong."
+   "text": "Also fixed Session 73: the assistant's college CPL landing-page links were broken/stale (San Diego Miramar pointed at the wrong code). They're now synced from the MAP College Landing Page API and auto-refresh weekly, so they should match map.rccd.edu/cpllandingpages. Click a couple from a college-specific answer and flag any that still misfire."
   },
   {
    "id": "sam-morphological-fold",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Carry-over: the worklist groups WORD VARIANTS — 'Conversational Japanese' ↔ 'Japanese Conversation', 'Assisting' ↔ 'Assistant'. Confirm the clean language-conversation families when you get a chance. Where a group shows an amber '⚠ Spans N disciplines' note, eyeball it for homonyms (music vs office 'keyboard') before confirming."
+   "text": "Carry-over: the merge worklist groups WORD VARIANTS — 'Conversational Japanese' ↔ 'Japanese Conversation', 'Assisting' ↔ 'Assistant' (~866 more group). Confirm the clean language-conversation families when you get a chance. Where a group shows an amber '⚠ Spans N disciplines' note, eyeball it for homonyms (music vs office 'keyboard') before confirming."
   },
   {
    "id": "sam-first-light-bonus",
@@ -35,10 +35,10 @@
    "text": "Standing bonus: we'll keep adding Arroyo-Seco-style California plein-air landscapes (Redmond, Guy Rose, Wendt, Payne) to First Light — flag any artist/work you'd love and we'll source it."
   },
   {
-   "id": "fable-assistant-etl",
+   "id": "fable-factsheet-followups",
    "who": "fable",
-   "tab": "chatbot",
-   "text": "CPL-Assistant CCR/CER-grounded recommender ETL (green-lit, the big next build): build the CCR/CER/adoption-leverage ETL into shared Supabase so the Assistant can recommend the likely local course + credit rec, grounded in real course-identity data. Scope: docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md. The v17 multi-turn plumbing is the foundation. Sierra rename lands with the Student Portal, not piecemeal."
+   "tab": "dashboard",
+   "text": "Fact-Sheet follow-ups: (1) IN PROGRESS — live-wire the SNAPSHOT tier so the 5 exhibit/recommendation KPI cards + the Statewide Exhibits per-sector counts auto-update (a committed daily CustomReport snapshot the page fetches). (2) Reproduce the 'One Knowledge Layer' technology-landscape diagram as live HTML/SVG (sharper + regen-proof). Read docs/fact_sheet_lessons.md + docs/kb-notes/playbook-standalone-public-page.md first."
   },
   {
    "id": "fable-mid-renumber",
@@ -51,6 +51,12 @@
    "who": "fable",
    "tab": "tmc-builder",
    "text": "TMC Phase-2 ACCEPTANCE ENGINE in tmc_builder.js (Sam: 'Go for A'): per-slot verdict from the ASCCC rules (C-ID match = ✓ · slot.flexible = ⚠ accept-with-ASSIST · specific C-ID filled by a non-match = faculty review · unfilled = ○) + structural checklist + a Ready/N-issues banner. Consume slot.flexible + t.flexibility (#479). Scope: docs/kb-notes/tmc-co-review-scope.md."
+  },
+  {
+   "id": "fable-assistant-etl",
+   "who": "fable",
+   "tab": "chatbot",
+   "text": "CPL-Assistant CCR/CER-grounded recommender ETL (green-lit, the big next build): build the CCR/CER/adoption-leverage ETL into shared Supabase so the Assistant can recommend the likely local course + credit rec, grounded in real course-identity data. Scope: docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md. The v17 multi-turn plumbing is the foundation. Sierra rename lands with the Student Portal, not piecemeal."
   }
  ]
 }

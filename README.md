@@ -160,6 +160,13 @@ The whole ecosystem, end-to-end:
 6. **Custom Word reports** — a per-college "[College Name] CPL Update"
    .docx generated on demand via a Claude API proxy (also a Cloudflare
    Worker endpoint), suitable for board / trustee distribution.
+7. **A public CPL Fact Sheet** — a self-contained, shareable page at
+   [`/fact-sheet/`](https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/)
+   that recreates the journalist Fact Sheet, pulls the headline KPIs live from
+   `live_metrics.json`, and prints to a clean PDF. It **"sits alone"** (no
+   dashboard nav) so it can be shared publicly without exposing the internal
+   tabs; a "📄 CPL Fact Sheet" link in the left nav rail opens it. Built
+   Session 74 — see [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md).
 
 ---
 
@@ -239,6 +246,7 @@ data refresh are captured atomically.
 ├── excel_to_dashboard.py              ← main pipeline (reads Excel + live_metrics, generates HTML/JS/docx)
 ├── CPL_Dashboard.html                 ← generated dashboard (mirror of index.html)
 ├── index.html                         ← served by GitHub Pages
+├── fact-sheet/                        ← public standalone CPL Fact Sheet (live KPIs + print-to-PDF; sits alone)
 ├── CPL_Data.js / statewide_data.js    ← client-side data for filters/search
 ├── statewide_prescriptive.js          ← EACR prescriptive layer (who could adopt → likely local course)
 ├── unified_courses*.js                ← Unified Courses tab data + lazy files

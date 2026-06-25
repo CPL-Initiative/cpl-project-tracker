@@ -1661,3 +1661,23 @@ for the homonym risk (workflow-dispatched live). Two architecture asks captured 
 Full story: [`docs/ccr_cluster_cleanup_lessons.md`](ccr_cluster_cleanup_lessons.md)
 (Session 70). **NEXT: [`docs/session_71_handoff.md`](session_71_handoff.md)** — the
 merge-workspace epic (scope-first), then the unverified-M-ID renumber re-mint + TMC engine.
+
+### Session 71 — the CCR merge-workspace epic, completed (2026-06-24)
+
+Executed the Session-70 epic end-to-end — **6 PRs, all merged**. The CCR had **two** merge
+popups (the per-row ⚇ `openUnifyDialog` + the ✨ worklist `renderGroup`) that had **drifted**,
+causing several Session-70 bugs. Now they are **one shared `buildMergeEditor(container, opts)`,
+two feeders**: **#511** scope ([`docs/ccr_merge_workspace_epic_scope.md`](docs/ccr_merge_workspace_epic_scope.md));
+**#512 PR-1** extract the editor, worklist embeds it (byte-identical DOM, parity); **#513 PR-2a**
+hoist it to `init` scope with a `deps` contract; **#514 PR-2b** the per-row dialog adopts it
+(in-row ★ model — Sam's pick; gains completion-note/band-chips/ⓘ/gather/override, keeps
+re-discipline #503 via `allowRediscipline`); **#516 PR-3** the worklist is now a **right-hand
+docked panel** (resize grip · » collapse-to-rail · ✕; page reflows via `body padding-right`;
+`localStorage` `cplWorklistDock.v1`); **#518 PR-4** the dock **re-filters LIVE** with the CCR table
+(`render()` calls an assigned `worklistRefilter`, gated on a `ccrSig()` of the carried filter fields
+so a post-merge render / CCR-search keystroke never resets the queue; carry-over checkbox = off
+switch). The four parameterized opts (`preCheckedIds`, `allowRediscipline`, `dismissLabel`, `deps`)
+each default to the worklist's behavior, so adopting the editor regressed neither surface. A latent
+bug the move surfaced: the seed member's `k` must be its id_system (§10 axis), not the display
+`kind`. Full story:
+[`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md).
