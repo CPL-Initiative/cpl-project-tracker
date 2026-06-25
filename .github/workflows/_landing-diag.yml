@@ -1,0 +1,45 @@
+name: _landing diag (temporary)
+
+# TEMPORARY one-shot diagnostic to compare the embedded mapfyCollegeUrls blob
+# against the page's real links. Delete after use.
+
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'chatbox/_landing_diag.py'
+      - '.github/workflows/_landing-diag.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: landing-diag-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  diag:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install Playwright Chromium (WAF fallback)
+        run: |
+          python3 -m pip install --quiet playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Run diagnostic
+        run: python3 chatbox/_landing_diag.py
+      - name: Commit diagnostic back
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add chatbox/_landing_diag.json
+          if git diff --cached --quiet; then
+            echo "No diag changes."
+          else
+            git commit -m "chore: landing-page diagnostic [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
