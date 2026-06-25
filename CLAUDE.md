@@ -1857,8 +1857,14 @@ current course** (`state.focusId` floats it + subject neighbors to top) · candi
 top Search box) · multi-term **comma=OR** search w/ ghost text · "Merge into existing" chip → section
 note · the **Title-5 §55050 level convention** in `courseBands()` (ranges/words/ordinals classify;
 bare numbers a curator-overridable hint). **Wave 4 (#532):** kept the human labels **Beg/Int/Adv**
-(tried L1/L2/L3, reverted — internal keys stay `beg/int/adv`, no data churn). 81→**87 green**. Full
-story: [`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md); NEW KB note
+(tried L1/L2/L3, reverted — internal keys stay `beg/int/adv`, no data churn). **Wave 5 (#534):**
+**DECOUPLED the worklist from the CCR table filters** (dropped the "Match the CCR table filters"
+checkbox — `applyCcr` now false; `rowPassesCcr` gates on it) so a **keyword surfaces ALL matching
+courses** (cap 25→100, no longer CCR-gated — fixes a low-similarity match not appearing); a
+**single-course RENAME** (only the ★ checked + an edited title → "✓ Confirm merge" becomes
+**"✓ Save"**, writes `unified_title` via a new `doRename()`, no `merge_into`/no merged-row
+side-effects); and **header Prev/Next** (‹ ›) next to the counter for backward nav. 81→**88 green**.
+Full story: [`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md); NEW KB note
 [`docs/kb-notes/reference-course-level-convention.md`](docs/kb-notes/reference-course-level-convention.md).
 **NEXT: [`docs/session_73_handoff.md`](docs/session_73_handoff.md)** — standing lanes: unverified-M-ID
 renumber re-mint, TMC Phase-2 acceptance engine, CPL-Assistant CCR/CER recommender ETL.
