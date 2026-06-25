@@ -111,8 +111,12 @@ function curBox(doc) {
     !!Array.from(box.querySelectorAll("button")).find((b) => /Confirm merge/.test(txt(b))));
 
   // ── 2. editor-owned search affordances ──
-  check("editor offers the ➕ keyword-gather affordance",
-    /Add more courses to this merge by keyword/i.test(box.textContent));
+  // The "Add more" search is now an always-visible inline box (Session 72 #2 —
+  // matches drop into the Candidates list as unchecked rows), not a collapsible
+  // keyword panel.
+  check("editor offers the inline 'Add more courses' search",
+    /Add more courses/i.test(box.textContent)
+    && Array.from(box.querySelectorAll('input[type=search]')).some((i) => /add more candidates/i.test(i.placeholder || "")));
   check("editor offers the ⌕ merge-into-a-different-course affordance",
     /Merge into a different existing course/i.test(box.textContent));
 

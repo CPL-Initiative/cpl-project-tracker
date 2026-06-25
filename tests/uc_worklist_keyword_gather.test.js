@@ -1,10 +1,11 @@
-// Guards the Session-58 keyword-gather (Sam, 2026-06-16): the merge popup lets a
-// curator GATHER extra courses into the merge by keyword search (the ⚇ Unify
-// index) — type a term (e.g. "ESL"), click matches to add them as checked
-// candidates, fold them all in. Distinct from "Merge into a DIFFERENT course"
-// (which redirects the whole merge into one off-signature target). Needed
-// because the synonym map + signature can't surface every related course (the
-// broad ESL family — Vocational / Academic / Workplace — are different courses).
+// Guards the "Add more courses" search (Session 72 #2, Sam — supersedes the
+// Session-58 collapsible ➕ keyword-gather): an always-visible search whose
+// matches drop straight INTO the Candidates list as UNCHECKED rows. The curator
+// ticks the ones to fold in and ignores the rest — no click-to-add step. Rows
+// already in the group are excluded; unchecked search rows clear on a changed/
+// emptied query while checked ones persist. Needed because the synonym map +
+// signature can't surface every related course (the broad ESL family —
+// Vocational / Academic / Workplace — are different courses sharing a keyword).
 //
 // Run from repo root: `npm test` (or `node tests/uc_worklist_keyword_gather.test.js`).
 const fs = require("fs");
@@ -83,39 +84,35 @@ function curBox(doc) {
   const box = curBox(doc);
 
   // The group starts with 2 candidate rows.
-  const nStart = box.querySelectorAll("input[type=checkbox]").length;
+  const nStart = box.querySelectorAll("input.uc-cand-cb").length;
   check("group starts with 2 candidates", nStart === 2);
 
-  // Open the ➕ keyword-gather; its search reveals.
-  const gToggle = Array.from(box.querySelectorAll("a")).find((a) => /Add more courses to this merge/.test(txt(a)));
-  check("the ➕ keyword-gather toggle is present", !!gToggle);
-  const gSearch = gToggle.parentNode.querySelector("input[type=search]");
-  check("gather search hidden until toggled", gSearch && hidden(gSearch));
-  gToggle.dispatchEvent(new window.Event("click"));
-  await sleep(20);
-  check("gather search shown after toggle", gSearch && !hidden(gSearch));
+  // The "Add more courses" search is ALWAYS visible (no toggle).
+  const addSearch = Array.from(box.querySelectorAll("input[type=search]"))
+    .find((i) => /add more candidates/i.test(i.placeholder || ""));
+  check("the inline 'Add more courses' search is present (no toggle)", !!addSearch);
+  check("no collapsible ➕ keyword-gather toggle remains",
+    !Array.from(box.querySelectorAll("a")).some((a) => /Add more courses to this merge by keyword/.test(txt(a))));
 
-  // Search "english" → M9046 surfaces; rows already in the group are excluded.
-  gSearch.value = "english";
-  gSearch.dispatchEvent(new window.Event("input"));
+  // Search "english" → M9046 drops into the Candidates list as a NEW unchecked
+  // row; rows already in the group are excluded (no duplicate).
+  addSearch.value = "english";
+  addSearch.dispatchEvent(new window.Event("input"));
   await sleep(300);
-  const panel = gToggle.parentNode;
-  const resBtn = Array.from(panel.querySelectorAll("button")).find((b) => /ESOL M9046/.test(txt(b)));
-  check("typing surfaces the off-group ESOL M9046", !!resBtn);
-  check("a row already in the group is NOT offered to gather",
-    !Array.from(panel.querySelectorAll("button")).some((b) => /ESOL M9010/.test(txt(b)) || /ESOL M9030/.test(txt(b))));
+  check("typing adds a 3rd candidate row directly in the list",
+    box.querySelectorAll("input.uc-cand-cb").length === 3);
+  const addedRow = Array.from(box.querySelectorAll("div"))
+    .find((d) => d.querySelector(":scope > input.uc-cand-cb") && /ESOL M9046/.test(txt(d)));
+  check("the search-added row carries the ➕ added chip", addedRow && /➕ added/.test(txt(addedRow)));
+  const addedCb = addedRow && addedRow.querySelector(":scope > input.uc-cand-cb");
+  check("the search-added candidate starts UNCHECKED (check to merge or ignore)",
+    addedCb && addedCb.checked === false);
+  check("a row already in the group is NOT re-added by the search",
+    Array.from(box.querySelectorAll("div"))
+      .filter((d) => d.querySelector(":scope > input.uc-cand-cb") && /ESOL M9010/.test(txt(d))).length === 1);
 
-  // Click it → a new CHECKED candidate row appears with the ➕ added chip.
-  resBtn.dispatchEvent(new window.Event("click"));
-  await sleep(30);
-  check("gathering adds a 3rd candidate row", box.querySelectorAll("input[type=checkbox]").length === 3);
-  const addedRow = Array.from(box.querySelectorAll("div")).find((d) => /ESOL M9046/.test(txt(d)) && /➕ added/.test(txt(d)));
-  check("the gathered row carries the ➕ added chip", !!addedRow);
-  const addedCb = addedRow && addedRow.querySelector("input[type=checkbox]");
-  check("the gathered candidate starts checked", addedCb && addedCb.checked === true);
-
-  // Native candidates start UNCHECKED (Sam, S70) — opt the native ESOL M9030 in.
-  // (The ★ target ESOL M9010 + the gathered ESOL M9046 are already checked.)
+  // Tick the search-added row + the native ESOL M9030 → all three merge.
+  addedCb.checked = true; addedCb.dispatchEvent(new window.Event("change"));
   for (const cb of Array.from(box.querySelectorAll(".uc-cand-cb"))) {
     if (!cb.checked) { cb.checked = true; cb.dispatchEvent(new window.Event("change")); }
   }
