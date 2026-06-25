@@ -956,9 +956,9 @@
         // for a single course (it filters the candidate POOL, not a queue).
         var bands = { beg: true, int: true, adv: true, lab: true, wkexp: true };
         var bandRow = el("div", { style: "display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;margin:0 0 10px;font-size:.76rem;color:#64748b;" });
-        bandRow.appendChild(el("span", { style: "font-weight:600;", title: "Show only candidates in the checked level/format bands (Common-Course level convention): L1 Introduction/Elementary/Beginning/I/1 (incl. unqualified) · L2 Intermediate/Second/II/2 · L3 Advanced/Third/III/3+ (long sequences pack 1-2/3-4/5-6 → L1/L2/L3). Lab isolates lab-only courses (kept separate from Lec)." }, ["Levels:"]));
+        bandRow.appendChild(el("span", { style: "font-weight:600;", title: "Show only candidates in the checked level/format bands (Common-Course level convention): Beg = Introduction/Elementary/Beginning/I/1 (incl. unqualified) · Int = Intermediate/Second/II/2 · Adv = Advanced/Third/III/3+ (long sequences pack 1-2/3-4/5-6 → Beg/Int/Adv). Lab isolates lab-only courses (kept separate from Lec)." }, ["Levels:"]));
         var editorApi = null;
-        [["beg", "L1"], ["int", "L2"], ["adv", "L3"], ["lab", "Lab"], ["wkexp", "WkExp"]].forEach(function (pair) {
+        [["beg", "Beg"], ["int", "Int"], ["adv", "Adv"], ["lab", "Lab"], ["wkexp", "WkExp"]].forEach(function (pair) {
           var lab = el("label", { style: "display:inline-flex;align-items:center;gap:3px;cursor:pointer;" });
           var cb = el("input", { type: "checkbox" }); cb.checked = true;
           cb.onchange = function () { bands[pair[0]] = cb.checked; if (editorApi) editorApi.setBandFilter(bands); };
@@ -1398,15 +1398,16 @@
         cb.onchange = function () { refreshTarget(); };
         row.appendChild(cb);
         row.appendChild(el("span", { style: "flex:1;" }, [m.t || m.id]));
-        // Level/format band chip (Sam, S70; relabeled L1/L2/L3 per the §55050
-        // level convention, S72 #9) — Level 1/2/3 + Lab/WkExp tags.
+        // Level/format band chip (Sam, S70) — Beg/Int/Adv + Lab/WkExp tags. The
+        // §55050 level convention (S72 #9) drives the classification underneath;
+        // the labels stay Beg/Int/Adv (Sam, S72 follow-up).
         var bk = courseBands(m.t || m.title);
-        var bTags = [{ beg: "L1", int: "L2", adv: "L3" }[bk.level]];
+        var bTags = [{ beg: "Beg", int: "Int", adv: "Adv" }[bk.level]];
         if (bk.lab) bTags.push("Lab");
         if (bk.wkexp) bTags.push("WkExp");
         row.appendChild(el("span", {
           style: "font-size:.68rem;font-weight:600;padding:1px 6px;border-radius:10px;white-space:nowrap;background:#f1f5f9;color:#475569;",
-          title: "Detected course level/format (from the title): " + bTags.join(" · ") + ". Levels follow the Common-Course convention — L1 Introduction/Elementary/Beginning/I/1 (incl. unqualified) · L2 Intermediate/Second/II/2 · L3 Advanced/Third/III/3+. A bare number is a hint; override it where a long sequence packs 1-2/3-4/5-6 into L1/L2/L3." },
+          title: "Detected course level/format (from the title): " + bTags.join(" · ") + ". Levels follow the Common-Course convention — Beg = Introduction/Elementary/Beginning/I/1 (incl. unqualified) · Int = Intermediate/Second/II/2 · Adv = Advanced/Third/III/3+. A bare number is a hint; override it where a long sequence packs 1-2/3-4/5-6 into Beg/Int/Adv." },
           [bTags.join("·")]));
         var isOfficial = m.k === "C-ID" || m.k === "CCN-ID";
         row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;",
@@ -2145,14 +2146,15 @@
             ? "Match the CCR table filters (discipline, subject, source, credit…) — also constrains the ➕/⌕ searches below"
             : "Match the CCR table filters (none set right now)"));
         searchRow.appendChild(ccrRow);
-        // Level/format band filter row (Sam, S70; relabeled L1/L2/L3 per the
-        // §55050 level convention, S72 #9). Walk the worklist one level at a time —
-        // toggling any OFF narrows to groups with ≥2 matching members. L1 includes
-        // unqualified titles; Lab isolates lab-only merges (Lab ≠ Lec).
+        // Level/format band filter row (Sam, S70). Walk the worklist one level at
+        // a time — toggling any OFF narrows to groups with ≥2 matching members. The
+        // §55050 level convention (S72 #9) drives the classification underneath; the
+        // labels stay Beg/Int/Adv (Sam). Beg includes unqualified titles; Lab
+        // isolates lab-only merges (Lab ≠ Lec).
         var bandRow = el("div", { style: "display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;margin:7px 0 0;font-size:.76rem;color:#64748b;" });
         bandRow.appendChild(el("span", { style: "font-weight:600;",
-          title: "Show only merge candidates in the checked course-level/format bands (Common-Course convention): L1 Introduction/Elementary/Beginning/Foundations/I/1 AND any title with no level qualifier · L2 Intermediate/Second/II/2 · L3 Advanced/Third/III/3+ (long sequences pack 1-2/3-4/5-6 → L1/L2/L3; a bare number is a hint). Lab = only Lab/Laboratory courses (kept separate from Lec). Uncheck a level to exclude it; a group needs ≥2 matching members to surface." }, ["Levels:"]));
-        [["beg", "L1"], ["int", "L2"], ["adv", "L3"], ["lab", "Lab"], ["wkexp", "WkExp"]].forEach(function (pair) {
+          title: "Show only merge candidates in the checked course-level/format bands (Common-Course convention): Beg = Introduction/Elementary/Beginning/Foundations/I/1 AND any title with no level qualifier · Int = Intermediate/Second/II/2 · Adv = Advanced/Third/III/3+ (long sequences pack 1-2/3-4/5-6 → Beg/Int/Adv; a bare number is a hint). Lab = only Lab/Laboratory courses (kept separate from Lec). Uncheck a level to exclude it; a group needs ≥2 matching members to surface." }, ["Levels:"]));
+        [["beg", "Beg"], ["int", "Int"], ["adv", "Adv"], ["lab", "Lab"], ["wkexp", "WkExp"]].forEach(function (pair) {
           var lab = el("label", { style: "display:inline-flex;align-items:center;gap:3px;cursor:pointer;" });
           var cb = el("input", { type: "checkbox" }); cb.checked = true;
           cb.onchange = function () { bands[pair[0]] = cb.checked; i = 0; renderGroup(); };
