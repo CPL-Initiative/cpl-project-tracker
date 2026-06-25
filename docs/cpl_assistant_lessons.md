@@ -299,3 +299,51 @@ recommendations on where to get/request CPL). Not wired now, but the direction:
 Confirm the v17 smoke run is green (push → Actions log), spot-checking that a broad
 topic now asks the follow-up and statewide answers don't name one college. Then, on
 Sam's Portal greenlight: the Sierra persona rename + the recommender ETL.
+
+### Pass 2 — 2026-06-25 (Session 73): the multi-turn retrieval-fold fix (v17 → v18)
+
+Sam tested more and hit a real miss: *"Which colleges give credit for a real estate
+license?"* → *"Southern CA in the LA area"* → *"How about West LA? I live near
+there."* answered that **West LA doesn't do real estate** — but it **does** (a local
+exhibit, "CA Real Estate Salesperson").
+
+**Root cause — retrieval lost the topic across turns.** Pass-1's refinement fold only
+fired for **≤5-word** turns and only folded the **single prior** turn. "How about West
+LA? I live near there." is 8 words → no fold; and even the prior turn ("Southern CA in
+the LA area") didn't contain "real estate" — the subject was **two turns back**. So the
+exhibit search ran on "west/live/near", found no West LA real-estate exhibit, and the
+function fell back to West LA's **profile sample** (only ~8 exhibits, all dental/health)
+→ wrong "no real estate" conclusion. (Turn 2 had "worked" only because the model could
+*recall* turn 1's list — turn 3 needed a fact never surfaced, so memory couldn't save
+it.)
+
+**Fix (v18).** Replace the ≤5-word rule with a content test: a turn is a *refinement*
+when it has **< 2 topic keywords of its own** after dropping place/region/proximity +
+"show all" continuation words (new `REFINE_NOISE` set). When so, fold the **whole recent
+conversation's user turns** (not just the last) into the retrieval text — so "real
+estate" (2 turns back) drives the search and West LA's exhibit surfaces. A genuine topic
+switch (≥2 of its own topic words, e.g. "what about nursing?") searches the new topic,
+unchanged. The current query goes first in `searchText` so the 1000-char cap never
+truncates it.
+
+**Lessons:**
+- **A refinement is defined by content, not length.** "Southern California" and "How
+  about West LA? I live near there." are the same *kind* of turn (narrowing, no new
+  topic) at very different word counts. Gate on "does this turn carry its own topic?",
+  not on how many words it has.
+- **Conversation topic can be N turns deep.** Fold the *accumulated* user turns, not
+  just the immediately-prior one — the subject may have been stated several turns ago
+  and only narrowed since.
+- **Over-include in RETRIEVAL, under-include in the ANSWER.** Folding extra context only
+  widens the candidate set the model sees; the model still answers the literal current
+  query. Missing context (this bug) is far costlier than a little extra.
+- **Secondary (noted, not fixed):** college **profiles carry only ~8 sample exhibits**,
+  skewed by whatever sorted first — so "college-only" mode is blind to the rest. The
+  fold sidesteps it here; broadening/round-robining the profile sample is a separate
+  follow-up.
+- New smoke guard: `chatbox/smoke_test.sh` mode 6 replays this exact 3-turn West-LA
+  conversation and asserts the answer talks real estate and does **not** repeat the
+  wrong-conclusion phrasings.
+
+**Still deferred:** the **Sierra** rename (Sam, with a wink, "you can rename her 'Maybe
+Sierra'…") — it lands with the Student Portal, not piecemeal.

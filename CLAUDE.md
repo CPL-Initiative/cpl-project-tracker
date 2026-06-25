@@ -816,8 +816,12 @@ reuse, so keep it self-contained behind its CONFIG block.
   part of the daily GitHub Actions cron. Source-of-record is the **live
   function**, captured at `chatbox/supabase/functions/cpl-chat/index.ts`
   (re-capture with `get_edge_function` before editing if in doubt).
-- Live now: **v17 ACTIVE** (model `claude-sonnet-4-6`; v15→v17 = the Session-73
-  response-logic tuning below. v15 = v14 + the model swap from the retired
+- Live now: **v18 ACTIVE** (model `claude-sonnet-4-6`; v15→v18 = the Session-73
+  response-logic tuning below — v16/v17 the three tweaks, **v18 the multi-turn
+  retrieval-fold fix**: a place-only refinement ("How about West LA?") whose topic
+  was set turns earlier now folds the whole recent conversation's topic into the
+  search via `REFINE_NOISE` + `ownTopic.length < 2`, instead of the brittle
+  ≤5-word rule that lost it. v15 = v14 + the model swap from the retired
   `claude-sonnet-4-20250514` snapshot, Session 64 PR #471; v14 added
   `https://cpl-initiative.github.io` to `ALLOWED_ORIGINS`). **Use unversioned model
   aliases here, not dated snapshots** — a pinned `claude-*-YYYYMMDD` is a latent

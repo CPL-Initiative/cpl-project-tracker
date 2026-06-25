@@ -266,6 +266,23 @@ function extractTopicKeywords(query: string): string[] {
     .filter((w) => w.length >= 3 && !TOPIC_STOP_WORDS.has(w));
 }
 
+// Words that mark a follow-up as NARROWING (a place/region/proximity filter, or a
+// "show me all" continuation) rather than introducing a NEW topic. Used only to
+// decide whether to fold the prior conversation's topic into the retrieval text —
+// a turn whose only keywords are these has no topic of its own, so the real
+// subject (e.g. "real estate license", asked turns ago) must be folded in.
+const REFINE_NOISE = new Set([
+  // place / region / proximity
+  "north", "south", "east", "west", "northern", "southern", "eastern", "western",
+  "california", "socal", "norcal", "bay", "area", "areas", "region", "regional",
+  "county", "local", "locally", "near", "nearby", "around", "home", "here", "there",
+  "live", "living", "city", "town", "inland", "empire", "coast", "coastal", "valley",
+  // list / continuation meta
+  "show", "see", "list", "option", "options", "all", "more", "them", "both",
+  "everything", "please", "thanks", "thank", "want", "like", "would", "could",
+  "tell", "give", "one", "ones",
+]);
+
 /** Expand topic keywords with synonyms to catch related exhibits */
 function expandWithSynonyms(keywords: string[]): string[] {
   const expanded = new Set(keywords);
@@ -633,12 +650,23 @@ Deno.serve(async (req: Request) => {
     // entirely → single-turn → never asks (unchanged behavior).
     const multiTurn = Array.isArray(history);
 
-    // Retrieval text: a short follow-up ("Southern California", "Bakersfield",
-    // "show all") carries little topic signal on its own, so fold in the prior
-    // user turn so topic/college search still finds the original subject.
-    const lastUserTurn = [...convo].reverse().find((m: any) => m.role === "user")?.content || "";
-    const isRefinement = lastUserTurn.length > 0 && trimmedQuery.split(/\s+/).length <= 5;
-    const searchText = (isRefinement ? `${lastUserTurn} ${trimmedQuery}` : trimmedQuery).slice(0, 1000);
+    // Retrieval text: a follow-up that only NARROWS by place/region or says
+    // "show all" ("Southern California", "How about West LA? I live near there.")
+    // carries no NEW topic of its own — and the real subject ("real estate
+    // license") may be SEVERAL turns back, not just the last one. So when the
+    // current turn has no topic keywords of its own (after dropping place/region
+    // and continuation noise), fold the WHOLE recent conversation's user turns
+    // into the retrieval text so topic/college search still finds that subject.
+    // A genuine topic switch (>=2 of its own topic words, e.g. "what about
+    // nursing?") searches the new topic instead, unaffected.
+    const priorUserText = convo
+      .filter((m: any) => m.role === "user")
+      .map((m: any) => m.content)
+      .join("  ");
+    const ownTopic = extractTopicKeywords(trimmedQuery).filter((w) => !REFINE_NOISE.has(w));
+    const isRefinement = priorUserText.length > 0 && ownTopic.length < 2;
+    // Current query FIRST so it's never lost to the 1000-char cap.
+    const searchText = (isRefinement ? `${trimmedQuery}  ${priorUserText}` : trimmedQuery).slice(0, 1000);
 
     const sb = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
 
