@@ -2782,6 +2782,11 @@
             <button class="cpl-tab" data-tab="cpl-news" role="tab" aria-selected="false">CPL News</button>
             <button class="cpl-tab" data-tab="chatbot" role="tab" aria-selected="false">CPL Assistant</button>
             <button class="cpl-tab" data-tab="knowledge-base" role="tab" aria-selected="false">Knowledge Base</button>
+            <!-- External launch: the public, standalone CPL Fact Sheet (own page, no COBI nav).
+                 NOT a tab (no data-tab) so tabs.js ignores it; opens in a new tab. Mirror this block in the sibling HTML (Rule 4). -->
+            <a class="cpl-tab cpl-tab-external" href="fact-sheet/" target="_blank" rel="noopener"
+               style="text-decoration:none;display:block"
+               title="Open the public CPL Fact Sheet (live data) in a new tab — standalone &amp; shareable">📄 CPL Fact Sheet ↗</a>
         </nav>
         <div class="cpl-sidebar-footer">
             <div id="cpl-rail-auth"></div>
