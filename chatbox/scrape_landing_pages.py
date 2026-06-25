@@ -90,10 +90,22 @@ COLLEGE_ANCHOR_JS = """() => document.querySelectorAll(
 ).length"""
 
 
+def _safe_content(page) -> str:
+    """page.content() throws mid-navigation (the WAF meta-refresh keeps
+    bouncing the page); retry until it settles."""
+    for _ in range(8):
+        try:
+            return page.content()
+        except Exception:
+            page.wait_for_timeout(1000)
+    return ""
+
+
 def fetch_browser(url: str) -> str:
     """Render with headless Chromium: clear the Sucuri JS challenge, then wait
     for the Angular SPA to fetch + render the per-college landing list. Also
-    logs the network so we can see the SPA's data API (the long-term source)."""
+    logs the network so we can see the SPA's data API (the long-term source).
+    Never raises — always returns the best HTML it can so diagnostics run."""
     from playwright.sync_api import sync_playwright
     print("[fetch] launching headless Chromium to clear the WAF + render the SPA…")
     api_hits = []
@@ -114,31 +126,25 @@ def fetch_browser(url: str) -> str:
         except Exception:
             pass
 
+    html = ""
     with sync_playwright() as p:
         browser = p.chromium.launch(args=[
             "--no-sandbox", "--disable-blink-features=AutomationControlled"])
         ctx = browser.new_context(user_agent=UA, locale="en-US")
         page = ctx.new_page()
         page.on("response", on_response)
-        page.goto(url, wait_until="domcontentloaded", timeout=60000)
-        if looks_like_challenge(page.content()):
-            try:
-                page.wait_for_function("() => !document.documentElement.innerHTML."
-                                       "toLowerCase().includes('sgcaptcha')",
-                                       timeout=45000)
-            except Exception:
-                for _ in range(3):
-                    page.wait_for_timeout(4000)
-                    page.goto(url, wait_until="networkidle", timeout=60000)
-                    if not looks_like_challenge(page.content()):
-                        break
-        # WAF cleared — now wait for the SPA to render the per-college list.
         try:
-            page.wait_for_function(f"{COLLEGE_ANCHOR_JS} >= 10", timeout=45000)
+            page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        except Exception as e:
+            print(f"[fetch] goto note: {e}")
+        # One resilient wait handles BOTH the WAF meta-refresh bounce AND the
+        # SPA render — wait_for_function re-polls across navigations.
+        try:
+            page.wait_for_function(f"{COLLEGE_ANCHOR_JS} >= 10", timeout=60000)
         except Exception:
-            print("[fetch] college-list selector never reached 10 — capturing anyway")
-        page.wait_for_timeout(2500)  # let any final render settle
-        html = page.content()
+            print("[fetch] college list never reached 10 anchors — capturing anyway")
+        page.wait_for_timeout(3000)  # let any final render settle
+        html = _safe_content(page)
         try:
             n = page.evaluate(COLLEGE_ANCHOR_JS)
         except Exception:
@@ -149,10 +155,12 @@ def fetch_browser(url: str) -> str:
 
     if api_hits:
         print(f"[net] {len(api_hits)} JSON/api-ish responses observed:")
-        for u, ct, body in api_hits[:25]:
+        for u, ct, body in api_hits[:30]:
             print(f"[net]   {ct[:30]:30} {u}")
             if body:
                 print(f"[net]      body: {WS_RE.sub(' ', body)}")
+    else:
+        print("[net] no JSON/api-ish responses observed")
     return html
 
 
