@@ -251,10 +251,68 @@ def to_dashboard(code: str) -> str:
     return DASH_BASE + code
 
 
+# Placeholder codes in the official blob that must never overwrite a real URL.
+PLACEHOLDER_CODES = {"test", "", "dashboard", "chancellor", "insights"}
+
+
+def extract_mapfy(html: str):
+    """The page embeds the authoritative list as a JS object:
+       let mapfyCollegeUrls = {"updated":"...","colleges":[{College, CollegeLandingURL}]}
+    Pull it out with balanced-brace matching and parse it as JSON."""
+    m = re.search(r"mapfyCollegeUrls\s*=\s*\{", html)
+    if not m:
+        return None
+    start, depth = m.end() - 1, 0
+    for j in range(start, len(html)):
+        ch = html[j]
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                try:
+                    return json.loads(html[start:j + 1])
+                except Exception as e:  # noqa: BLE001
+                    print(f"[blob] JSON parse failed: {e}")
+                    return None
+    return None
+
+
 def parse_links(html: str, base_url: str = DEFAULT_URL):
-    """Return [{college, url, code, portal_url}] for every per-college landing
-    anchor. `url` is the DIRECT dashboard URL (the redirect target the page's
-    /cpl-student-portal/<CODE> link resolves to); `portal_url` is the page href."""
+    """Authoritative path: parse the embedded mapfyCollegeUrls JSON. Each row:
+    {college, code, portal_url (official cpl-student-portal link),
+     dashboard_url (the cpldashboardcccco redirect target)}. Falls back to anchor
+    scraping if the blob isn't present."""
+    blob = extract_mapfy(html)
+    if blob and isinstance(blob.get("colleges"), list):
+        print(f"[blob] mapfyCollegeUrls updated={blob.get('updated')!r} "
+              f"colleges={len(blob['colleges'])}")
+        out, seen = [], set()
+        for c in blob["colleges"]:
+            name = (c.get("College") or "").strip()
+            portal = (c.get("CollegeLandingURL") or "").strip()
+            if not name or not portal:
+                continue
+            code = code_of(portal)
+            if code.lower() in PLACEHOLDER_CODES:
+                print(f"[blob] skip placeholder: {name} -> {portal}")
+                continue
+            if name.lower() in seen:
+                continue
+            seen.add(name.lower())
+            out.append({
+                "college": name,
+                "code": code,
+                "portal_url": portal,
+                "dashboard_url": to_dashboard(code),
+            })
+        return out
+    print("[blob] mapfyCollegeUrls not found — falling back to anchor scrape")
+    return parse_anchors(html, base_url)
+
+
+def parse_anchors(html: str, base_url: str = DEFAULT_URL):
+    """Fallback: scrape per-college landing anchors from the rendered DOM."""
     out, seen = [], set()
     for attrs, inner in ANCHOR_RE.findall(html):
         m = HREF_RE.search(attrs)
@@ -285,8 +343,8 @@ def parse_links(html: str, base_url: str = DEFAULT_URL):
         out.append({
             "college": name,
             "code": code,
-            "url": to_dashboard(code),   # what we store: the direct dashboard URL
-            "portal_url": portal_url,    # the page's (redirecting) href
+            "portal_url": portal_url,
+            "dashboard_url": to_dashboard(code),
         })
     return out
 
@@ -394,6 +452,10 @@ def main():
     ap.add_argument("--url", default=DEFAULT_URL)
     ap.add_argument("--apply", action="store_true",
                     help="write landing_page_url to chatbox_college_profiles")
+    ap.add_argument("--store", choices=("auto", "portal", "dashboard"),
+                    default="auto",
+                    help="which URL form to store (default auto: dashboard if "
+                         "the redirect probe confirms, else the portal link)")
     ap.add_argument("--dump-html", help="write the raw fetched HTML here")
     args = ap.parse_args()
 
@@ -409,9 +471,8 @@ def main():
     print(f"[parse] {len(scraped)} landing links | {len(raw)} raw portal codes")
     scraped.sort(key=lambda r: r["college"].lower())
 
-    # Verify the portal→dashboard redirect on a few samples so we KNOW storing
-    # cpldashboardcccco/<CODE> is correct (the page links to the redirecting
-    # /cpl-student-portal/<CODE>). Pick a spread, including San Diego Miramar.
+    # Probe the official portal link's redirect on a spread of samples (incl.
+    # San Diego Miramar) to learn where /cpl-student-portal/<CODE> resolves.
     probe = []
     if scraped:
         picks, names = [], ("miramar", "mesa", "bakersfield", "santa rosa")
@@ -420,8 +481,8 @@ def main():
                 if want in r["college"].lower() and r not in picks:
                     picks.append(r)
                     break
-        for r in scraped:                       # pad to 4 with the first rows
-            if len(picks) >= 4:
+        for r in scraped:
+            if len(picks) >= 5:
                 break
             if r not in picks:
                 picks.append(r)
@@ -429,22 +490,39 @@ def main():
             final, status = resolve_redirect(r["portal_url"])
             probe.append({
                 "college": r["college"], "code": r["code"],
-                "portal_url": r["portal_url"], "dashboard_url": r["url"],
+                "portal_url": r["portal_url"], "dashboard_url": r["dashboard_url"],
                 "redirect_final": final, "redirect_status": status,
                 "matches_dashboard": isinstance(final, str)
-                and final.rstrip("/") == r["url"].rstrip("/"),
+                and final.rstrip("/") == r["dashboard_url"].rstrip("/"),
             })
             print(f"[probe] {r['college']}: {r['portal_url']} -> {final}")
+
+    # Decide which URL to STORE. 'auto': use the direct cpldashboardcccco/<CODE>
+    # form only if every probe confirms the redirect preserves the code;
+    # otherwise fall back to the official portal link (always correct).
+    store_field = "portal_url"
+    if args.store == "dashboard":
+        store_field = "dashboard_url"
+    elif args.store == "portal":
+        store_field = "portal_url"
+    elif probe and all(p["matches_dashboard"] for p in probe):
+        store_field = "dashboard_url"
+    for r in scraped:
+        r["url"] = r[store_field]
+    print(f"[store] using {store_field} as landing_page_url "
+          f"(probe confirmed: {sum(p['matches_dashboard'] for p in probe)}/{len(probe)})")
 
     payload = {
         "_source": args.url,
         "_scraped_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "_count_scraped": len(scraped),
-        "_note": ("url = direct cpldashboardcccco/<CODE> landing (the redirect "
-                  "target of the page's /cpl-student-portal/<CODE> link)"),
+        "_store_field": store_field,
+        "_note": ("url = the value stored to landing_page_url; portal_url is the "
+                  "official cpl-student-portal link, dashboard_url its "
+                  "cpldashboardcccco redirect target"),
         "_redirect_probe": probe,
         "_debug": {"page_chars": len(html), "raw_portal_count": len(raw),
-                   "raw_portal_samples": raw[:45]},
+                   "raw_portal_samples": raw[:20]},
         "scraped": scraped,
     }
 
