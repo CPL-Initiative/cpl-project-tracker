@@ -179,47 +179,79 @@ def clean_text(html_fragment: str) -> str:
     return WS_RE.sub(" ", unescape(TAG_RE.sub(" ", html_fragment))).strip()
 
 
-def parse_links(html: str):
-    """Return [{college, url}] from anchors that point at a landing page."""
+# A real per-college landing link points at either host; the page (a WordPress
+# page) renders most as RELATIVE hrefs (/cpl-student-portal/<CODE>), so resolve
+# against the base. Two nav links under that path are NOT colleges.
+LANDING_RE = re.compile(
+    r"(?:cpldashboardcccco\.azurewebsites\.net/|cpl-student-portal/)", re.I)
+NAV_LAST = {"chancellor", "dashboard"}
+DASH_BASE = "https://cpldashboardcccco.azurewebsites.net/"
+
+
+def code_of(url: str) -> str:
+    seg = urllib.parse.urlparse(url).path.rstrip("/").rsplit("/", 1)[-1]
+    return urllib.parse.unquote(seg)
+
+
+def to_dashboard(code: str) -> str:
+    return DASH_BASE + code
+
+
+def parse_links(html: str, base_url: str = DEFAULT_URL):
+    """Return [{college, url, code, portal_url}] for every per-college landing
+    anchor. `url` is the DIRECT dashboard URL (the redirect target the page's
+    /cpl-student-portal/<CODE> link resolves to); `portal_url` is the page href."""
     out, seen = [], set()
     for attrs, inner in ANCHOR_RE.findall(html):
         m = HREF_RE.search(attrs)
         if not m:
             continue
-        href = unescape(m.group(1)).strip()
-        if not LANDING_HOST_RE.match(href):
+        raw = unescape(m.group(1)).strip()
+        if not LANDING_RE.search(raw):
             continue
+        portal_url = urllib.parse.urljoin(base_url, raw)
+        path = urllib.parse.urlparse(portal_url).path.lower().rstrip("/")
+        if "/insights" in path:                       # nav: MAP CPL Dashboard
+            continue
+        last = path.rsplit("/", 1)[-1]
+        if "/cpl-student-portal/" in path + "/" and last in NAV_LAST:
+            continue                                   # nav: CPL Dashboard/Inventory
         name = clean_text(inner)
-        # Some lists put the college name in a sibling cell, not the <a> text.
-        # If the anchor text is empty or just the URL, fall back to the title attr.
         if not name or name.lower().startswith("http"):
-            tm = re.search(r"""(?:title|aria-label)\s*=\s*["']([^"']+)["']""", attrs, re.I)
+            tm = re.search(r"""(?:title|aria-label)\s*=\s*["']([^"']+)["']""",
+                           attrs, re.I)
             name = clean_text(tm.group(1)) if tm else ""
-        key = (name.lower(), href.lower())
-        if name and key not in seen:
-            seen.add(key)
-            out.append({"college": name, "url": href})
+        code = code_of(portal_url)
+        if not name or not code:
+            continue
+        key = (name.lower(), code.lower())
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append({
+            "college": name,
+            "code": code,
+            "url": to_dashboard(code),   # what we store: the direct dashboard URL
+            "portal_url": portal_url,    # the page's (redirecting) href
+        })
     return out
+
+
+def resolve_redirect(url: str):
+    """Follow redirects; return (final_url, status). Used to VERIFY that the
+    page's /cpl-student-portal/<CODE> link resolves to cpldashboardcccco/<CODE>."""
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return resp.geturl(), resp.status
+    except Exception as e:  # noqa: BLE001 — record the failure, don't crash
+        return f"(error: {type(e).__name__}: {e})", None
 
 
 def diagnostics(html: str):
     print("[diag] ---- recon ----")
     for needle in ("cpldashboardcccco", "cpl-student-portal", "<a ", "href="):
         print(f"[diag] count {needle!r}: {html.lower().count(needle.lower())}")
-    # show the first few landing-host hrefs in context
-    hits = [m.group(0) for m in re.finditer(
-        r'<a\b[^>]*href\s*=\s*["\'][^"\']*'
-        r'(?:cpldashboardcccco|cpl-student-portal)[^"\']*["\'][^>]*>.{0,80}',
-        html, re.I | re.S)][:8]
-    for h in hits:
-        print("[diag] sample:", WS_RE.sub(" ", h)[:200])
-    if not hits:
-        # SPA / different structure: show a window so we can see what we got
-        idx = html.lower().find("cpldashboard")
-        if idx == -1:
-            idx = html.lower().find("college")
-        print("[diag] no landing anchors found; window:")
-        print(html[max(0, idx - 200): idx + 1200] if idx != -1 else html[:1400])
     print("[diag] ----------------")
 
 
@@ -318,17 +350,47 @@ def main():
         print(f"[dump] wrote {args.dump_html}")
     diagnostics(html)
 
-    scraped = parse_links(html)
+    scraped = parse_links(html, args.url)
     print(f"[parse] {len(scraped)} landing links")
     if not scraped:
-        print("::error::no landing-page links parsed — see recon window above")
+        print("::error::no landing-page links parsed")
         # still write provenance so the failure is visible/committed
     scraped.sort(key=lambda r: r["college"].lower())
+
+    # Verify the portal→dashboard redirect on a few samples so we KNOW storing
+    # cpldashboardcccco/<CODE> is correct (the page links to the redirecting
+    # /cpl-student-portal/<CODE>). Pick a spread, including San Diego Miramar.
+    probe = []
+    if scraped:
+        picks, names = [], ("miramar", "mesa", "bakersfield", "santa rosa")
+        for want in names:
+            for r in scraped:
+                if want in r["college"].lower() and r not in picks:
+                    picks.append(r)
+                    break
+        for r in scraped:                       # pad to 4 with the first rows
+            if len(picks) >= 4:
+                break
+            if r not in picks:
+                picks.append(r)
+        for r in picks:
+            final, status = resolve_redirect(r["portal_url"])
+            probe.append({
+                "college": r["college"], "code": r["code"],
+                "portal_url": r["portal_url"], "dashboard_url": r["url"],
+                "redirect_final": final, "redirect_status": status,
+                "matches_dashboard": isinstance(final, str)
+                and final.rstrip("/") == r["url"].rstrip("/"),
+            })
+            print(f"[probe] {r['college']}: {r['portal_url']} -> {final}")
 
     payload = {
         "_source": args.url,
         "_scraped_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "_count_scraped": len(scraped),
+        "_note": ("url = direct cpldashboardcccco/<CODE> landing (the redirect "
+                  "target of the page's /cpl-student-portal/<CODE> link)"),
+        "_redirect_probe": probe,
         "scraped": scraped,
     }
 
