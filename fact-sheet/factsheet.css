@@ -106,6 +106,13 @@ section > h2 {
   padding-bottom: 8px; border-bottom: 2px solid var(--surface-muted);
 }
 section > .lede { color: var(--muted); margin: 2px 0 14px; }
+
+/* ── Collapsible sections (screen) — click an h2 to fold; print forces open ── */
+h2.sec-toggle { cursor: pointer; user-select: none; }
+h2.sec-toggle::before { content: "▾"; color: var(--mustard-text); font-size: .72em; margin-right: 10px; vertical-align: middle; }
+section.collapsed > h2.sec-toggle::before { content: "▸"; }
+section.collapsed > *:not(h2) { display: none; }
+h2.sec-toggle:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; border-radius: 4px; }
 h3 { font-size: 1.12rem; color: var(--ink); margin: 22px 0 6px; }
 h4 { font-size: 1rem; color: var(--seal-blue); margin: 16px 0 4px; }
 p { margin: 8px 0; }
@@ -231,6 +238,9 @@ footer.foot strong { color: var(--ink); }
   .masthead .wrap { padding: 6px 0 10px; }
   .masthead h1 { font-size: 18pt; }
   section { margin-top: 14pt; break-inside: avoid-page; }
+  section.collapsed > * { display: block !important; }   /* collapsed-on-screen prints fully */
+  h2.sec-toggle { cursor: auto; }
+  h2.sec-toggle::before { content: none; }
   section > h2 { font-size: 13pt; break-after: avoid; }
   h3, h4 { break-after: avoid; }
   .card, .kpi, .stat, .res, figure, .person, .strategy, table.data, .story { box-shadow: none; break-inside: avoid; }
