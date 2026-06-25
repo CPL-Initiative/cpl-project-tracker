@@ -828,19 +828,24 @@ reuse, so keep it self-contained behind its CONFIG block.
 - **College landing-page links (added Session 73, 2026-06-25).** The assistant
   surfaces each college's CPL landing page from
   **`chatbox_college_profiles.landing_page_url`** (the `cpl-chat` function joins
-  it on the college name, LIVE). Those URLs are kept fresh by
+  it on the college name, LIVE). Kept fresh by
   **`chatbox/scrape_landing_pages.py`** + **`.github/workflows/cpl-landing-pages.yml`**
-  (push = dry-run, weekly cron + dispatch = `--apply`). The authoritative source
-  is the `mapfyCollegeUrls` JSON blob embedded in **map.rccd.edu/cpllandingpages/**
-  ({College, CollegeLandingURL}); we store the official path-encoded
-  `map.rccd.edu/cpl-student-portal/<CODE>` link (it 302-redirects to the current
-  landing host — a Vercel app as of 2026-06 — so it survives backend moves;
-  `cpldashboardcccco` was the old, now-stale host). Runs on a runner because
-  map.rccd.edu is egress-blocked from the agent sandbox AND behind an intermittent
-  Sucuri WAF (the scraper retries with a cookie jar + a headless-Chromium
-  fallback). The committed `chatbox/college_landing_pages.json` is the audit
-  receipt. **Editing the function does NOT touch these links** (they're table
-  data, not code). Story: `docs/cpl_landing_pages_lessons.md`.
+  (push = dry-run, weekly cron + dispatch = `--apply`). **Source = the MAP
+  College Landing Page API** (`POST .../api/mapcollegelanding/GetData {}` → full
+  `{College, CollegeLandingURL}` list — the same one the public page's script
+  calls; no auth). We rewrite the old base `map.rccd.edu/cpl-student-portal/<code>`
+  → **`cpldashboardcccco.azurewebsites.net/<code>`** (path-encoded) and store
+  that — the exact link the official page's buttons use, which Sam verified work.
+  Runs on a runner because the Azure API host is egress-blocked from the agent
+  sandbox (a plain JSON POST — no browser/WAF). **Pitfall:** the page ALSO embeds
+  a STALE inline `mapfyCollegeUrls` blob (2025-08-18, wrong codes like Allan
+  Hancock=`test`); the first build scraped that by mistake — use the API, not the
+  page HTML. 2 source-side data errors (Cerritos=`www.cerritos.edu`, East
+  LA=`elac.edu`) are mirrored + flagged. **Editing the `cpl-chat` function does
+  NOT touch these links** (they're table data, not code). **⚠ INTERIM:** Sam is
+  adding these URLs to the MAP Custom Report → when that lands, retire the scraper
+  + workflow and source from the Custom Report. Story:
+  `docs/cpl_landing_pages_lessons.md`.
 
 ### 7d. TMC Builder — interactive ADT submission tab (Session 59, 2026-06-16)
 
