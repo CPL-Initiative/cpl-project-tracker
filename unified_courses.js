@@ -855,14 +855,6 @@
       if (!session) return;
       loadIndex().then(function () {
         var cand = findCandidates(seed);
-        var overlay = el("div", { style: "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;" });
-        var box = el("div", { style: "background:#fff;max-width:760px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
-        overlay.appendChild(box);
-        function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
-        overlay.onclick = function (e) { if (e.target === overlay) close(); };
-        box.appendChild(el("h3", { style: "margin:0 0 4px;color:var(--text-strong);" }, ["Merge courses"]));
-        box.appendChild(el("p", { style: "margin:0 0 12px;color:#6b7280;" },
-          ["Select the courses that are the same as \u201c" + (seed.title || seed.id) + "\u201d. The course you opened from is the target (kept checked); check each match you want to fold in, search to add others (incl. Stand-Alone), or set a different survivor. Nothing merges until you Confirm."]));
         // Per-row feeder for the SHARED merge-editor (Session 71, PR-2b). The old
         // identSel "Merge into" dropdown + bespoke add-by-search list are gone:
         // this dialog now embeds the same editor as the \u2728 worklist (in-row \u2605
@@ -888,9 +880,77 @@
         cand.exact.concat(cand.near).forEach(function (en) {
           if (seen[en[0]]) return; seen[en[0]] = 1; members.push(toMember(en));
         });
+        // ── Per-row Merge opens the DOCKED sidebar (Sam, S72 #1 — "open the
+        // sidebar itself"), not a centered modal: the same right-hand dock shell
+        // as the worklist (resize grip / collapse-to-rail / close; the page
+        // reflows; width+collapsed shared via DOCK_KEY) embedding the SAME shared
+        // buildMergeEditor (inline Add-more search, override up top, tooltips,
+        // in-row star target). Single-course mode = NO suggestion QUEUE (no
+        // N-of-M / Skip / Keep / aggressiveness slider — those navigate a queue
+        // of suggestions, which a one-off merge has none of); a Beg/Int/Adv/Lab/
+        // WkExp band row filters the candidate POOL instead. The dock shell
+        // mirrors openSuggestions' (a small presentational duplication — the
+        // load-bearing merge UX lives once in buildMergeEditor).
+        var dim = "position:fixed;top:0;right:0;height:100vh;z-index:9999;display:flex;background:#fff;box-shadow:-4px 0 24px rgba(0,0,0,.18);";
+        var boxCss = "flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto;background:#fff;padding:18px 20px;font-size:.9rem;";
+        var DOCK_KEY = "cplWorklistDock.v1", RAIL = 44;
+        var dockState = (function () { try { return JSON.parse(localStorage.getItem(DOCK_KEY)) || {}; } catch (e) { return {}; } })();
+        var dockW = Math.min(Math.max(dockState.width || 470, 360), 900);
+        var collapsed = !!dockState.collapsed;
+        function saveDock() { try { localStorage.setItem(DOCK_KEY, JSON.stringify({ width: dockW, collapsed: collapsed })); } catch (e) {} }
+        function pageReflow(px) { document.body.style.paddingRight = px ? (px + "px") : ""; }
+        var overlay = el("div", { class: "uc-worklist-dock", style: dim });
+        var grip = el("div", { title: "Drag to resize the panel", style: "width:6px;flex:none;cursor:ew-resize;background:#e5e7eb;" });
+        var shell = el("div", { style: boxCss });
+        var rail = el("div", { title: "Expand the Merge panel",
+          style: "display:none;flex:1;align-items:center;justify-content:center;cursor:pointer;background:#f8fafc;writing-mode:vertical-rl;font-weight:600;color:var(--text-strong);font-size:.82rem;letter-spacing:.04em;" }, ["⚇ Merge"]);
+        rail.onclick = function () { collapsed = false; applyDockSize(); saveDock(); };
+        overlay.appendChild(grip); overlay.appendChild(shell); overlay.appendChild(rail);
+        function applyDockSize() {
+          overlay.style.width = (collapsed ? RAIL : dockW) + "px";
+          shell.style.display = collapsed ? "none" : "flex";
+          grip.style.display = collapsed ? "none" : "block";
+          rail.style.display = collapsed ? "flex" : "none";
+          pageReflow(collapsed ? RAIL : dockW);
+        }
+        grip.onmousedown = function (e) {
+          e.preventDefault();
+          function mv(ev) { dockW = Math.min(Math.max(window.innerWidth - ev.clientX, 360), 900); overlay.style.width = dockW + "px"; pageReflow(dockW); }
+          function up() { document.removeEventListener("mousemove", mv); document.removeEventListener("mouseup", up); saveDock(); }
+          document.addEventListener("mousemove", mv); document.addEventListener("mouseup", up);
+        };
+        function close() { if (overlay.parentNode) document.body.removeChild(overlay); pageReflow(0); }
+        var head = el("div", { style: "display:flex;align-items:center;gap:8px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;background:#f8fafc;user-select:none;" });
+        head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;white-space:nowrap;" }, ["⚇ Merge"]));
+        head.appendChild(el("span", { style: "font-size:.8rem;color:#64748b;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;", title: seed.title || seed.id }, [seed.title || seed.id]));
+        head.appendChild(el("span", { style: "flex:1;" }, []));
+        var collapseBtn = el("button", { type: "button", "aria-label": "Collapse", title: "Collapse to a rail", style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["»"]);
+        collapseBtn.onclick = function () { collapsed = true; applyDockSize(); saveDock(); };
+        head.appendChild(collapseBtn);
+        var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close", style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["✕"]);
+        closeX.onclick = close;
+        head.appendChild(closeX);
+        shell.appendChild(head);
+        shell.appendChild(el("p", { style: "margin:0 0 8px;color:#6b7280;font-size:.82rem;" },
+          ["Check the courses that are the same as this one to fold them in, search to add others, or set a different survivor. Nothing merges until you Confirm."]));
+        // Band filter row — the one piece of worklist chrome that's meaningful
+        // for a single course (it filters the candidate POOL, not a queue).
+        var bands = { beg: true, int: true, adv: true, lab: true, wkexp: true };
+        var bandRow = el("div", { style: "display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;margin:0 0 10px;font-size:.76rem;color:#64748b;" });
+        bandRow.appendChild(el("span", { style: "font-weight:600;", title: "Show only candidates in the checked level/format bands. Beg includes unqualified titles; Lab isolates lab-only courses (kept separate from Lec)." }, ["Levels:"]));
+        var editorApi = null;
+        [["beg", "Beg"], ["int", "Int"], ["adv", "Adv"], ["lab", "Lab"], ["wkexp", "WkExp"]].forEach(function (pair) {
+          var lab = el("label", { style: "display:inline-flex;align-items:center;gap:3px;cursor:pointer;" });
+          var cb = el("input", { type: "checkbox" }); cb.checked = true;
+          cb.onchange = function () { bands[pair[0]] = cb.checked; if (editorApi) editorApi.setBandFilter(bands); };
+          lab.appendChild(cb); lab.appendChild(document.createTextNode(pair[1]));
+          bandRow.appendChild(lab);
+        });
+        shell.appendChild(bandRow);
+        var content = el("div", { style: "flex:1;" }); shell.appendChild(content);
         var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Cancel"]);
         cancel.onclick = close;
-        buildMergeEditor(box, {
+        editorApi = buildMergeEditor(content, {
           members: members,
           preTitle: seed.title || "",
           preCheckedIds: [seed.id],
@@ -900,7 +960,14 @@
           onConfirm: function (r) { doConsolidate(r.chosen, r.title, r.disc, r.target, close); },
           deps: { byId: byId0 },
         });
+        // Never stack two docks — drop any open one (worklist or a prior Merge) first.
+        var priorDock = document.querySelector(".uc-worklist-dock");
+        if (priorDock && priorDock.parentNode) priorDock.parentNode.removeChild(priorDock);
+        collapsed = false;   // per-row Merge always opens EXPANDED — it shares the
+                             // collapsed/width state with the worklist via DOCK_KEY,
+                             // but a clicked Merge shouldn't appear as just a rail.
         document.body.appendChild(overlay);
+        applyDockSize();   // sets width + reflows the page
       });
     }
     // In-page state mutation for a curator merge — ONE function shared by
@@ -1695,6 +1762,21 @@
       // button was created, so without this the Confirm would start enabled and
       // could be clicked into the silent no-op (Sam, S72 #3).
       refreshTarget();
+      // Small API for a feeder that wraps its own chrome — the per-row ⚇ dock
+      // (Sam, S72 #1) uses setBandFilter to hide candidate ROWS outside the
+      // checked level/format bands WITHOUT rebuilding the editor (which would
+      // lose checkbox / typed state). Display-only: a hidden-but-checked row
+      // still merges; the band filter is a find aid over a long candidate pool.
+      return {
+        setBandFilter: function (bands) {
+          var all = bandsAllOn(bands);
+          cbs.forEach(function (x) {
+            var show = all || memberMatchesBands(x.m, bands);
+            x.row.style.display = show ? "" : "none";
+            if (x.descBox && !show) x.descBox.style.display = "none";
+          });
+        },
+      };
     }
 
 
