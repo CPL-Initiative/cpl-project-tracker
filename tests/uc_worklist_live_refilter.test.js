@@ -1,13 +1,15 @@
-// Session 71 (PR-4): the docked Suggested-merges worklist re-filters LIVE as the
-// CCR table filters change (before PR-4 the CCR carry-over was snapshotted when
-// the panel opened). Guards:
-//   1. With the carry-over ON, changing the CCR Discipline filter while the dock
-//      is open re-runs the queue to the matching group (Art group → Biology group).
-//   2. The position counter reflects the live-filtered set ("N of M matching").
-//   3. With the carry-over OFF, a CCR filter change does NOT disturb the dock
-//      (it stays independent).
-//   4. The wiring exists (worklistRefilter + the sig guard) so a post-merge
-//      render() — filters unchanged → signature unchanged — never resets the queue.
+// Session 71 added a live CCR↔worklist re-filter (PR-4). Session 72 followup
+// item 1 DECOUPLED the two: the worklist is now driven by its OWN Search box +
+// Discipline filter + Level bands, NOT the main CCR table's filters (the "Match
+// the CCR table filters" carry-over checkbox was removed — it was redundant and
+// quietly hid courses from the candidate keyword search). Guards:
+//   1. The refilter wiring still EXISTS (worklistRefilter + the ccrSig guard) —
+//      it just no-ops while decoupled (applyCcr=false), so a post-merge render()
+//      never throws or resets the queue.
+//   2. Opening the dock lands on the first group regardless of CCR state.
+//   3. Changing a CCR table filter while the dock is open does NOT disturb it
+//      (decoupled — item 1).
+//   4. The removed "Match the CCR table filters" checkbox is gone.
 //
 // Run from repo root: `npm test` (or `node tests/uc_worklist_live_refilter.test.js`).
 const fs = require("fs");
@@ -90,33 +92,24 @@ function dockText(doc) {
   sugBtn.dispatchEvent(new window.Event("click"));
   await sleep(200);
 
-  // ── 1. open with no filter: group 1 (Art) shows ──
+  // ── 2. open with no filter: group 1 (Art) shows, absolute count "1 of 2" ──
   check("dock opens on the Art group", /Drawing I/.test(dockText(doc)) && /1 of 2/.test(dockText(doc)));
 
-  // ── 2. change the CCR Discipline filter → live re-filter to the Biology group ──
+  // ── 3. changing a CCR table filter does NOT disturb the decoupled dock ──
   const discSel = doc.getElementById("uc-disc");
   check("CCR discipline filter present", !!discSel);
+  const before = dockText(doc);
   discSel.value = "Biology";
   discSel.dispatchEvent(new window.Event("change"));
   await sleep(60);
-  check("changing the CCR filter live-refilters the dock to the Biology group",
-    /General Biology/.test(dockText(doc)) && !/Drawing I/.test(dockText(doc)));
-  check("the counter reflects the live-filtered set ('matching')",
-    /of \d+ matching/.test(dockText(doc)));
+  check("changing the CCR filter leaves the worklist on the Art group (decoupled — item 1)",
+    /Drawing I/.test(dockText(doc)) && !/General Biology/.test(dockText(doc)));
+  check("the worklist still shows the absolute count, not 'matching'",
+    /1 of 2/.test(dockText(doc)) && !/of \d+ matching/.test(dockText(doc)));
 
-  // ── 3. carry-over OFF → CCR filter changes no longer disturb the dock ──
-  const ccrCb = Array.from(doc.querySelectorAll(".uc-worklist-dock label"))
-    .map((l) => ({ l, cb: l.querySelector("input[type=checkbox]") }))
-    .find((x) => x.cb && /Match the CCR table filters/.test(txt(x.l)));
-  check("carry-over checkbox present in the dock", !!(ccrCb && ccrCb.cb));
-  ccrCb.cb.checked = false; ccrCb.cb.dispatchEvent(new window.Event("change"));
-  await sleep(40);
-  const before = dockText(doc);
-  // Flip the discipline filter again; with carry-over OFF the dock must not move.
-  discSel.value = "Art"; discSel.dispatchEvent(new window.Event("change"));
-  await sleep(60);
-  check("with carry-over OFF, a CCR filter change does not disturb the dock",
-    dockText(doc) === before);
+  // ── 4. the removed "Match the CCR table filters" checkbox is gone ──
+  check("no 'Match the CCR table filters' checkbox in the dock",
+    !Array.from(doc.querySelectorAll(".uc-worklist-dock label")).some((l) => /Match the CCR table filters/.test(txt(l))));
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
