@@ -66,11 +66,54 @@ def main():
             "context": WS(html[max(0, idx - 120): idx + 120]) if idx >= 0 else None,
         }
 
+    # The url-building JS: dump a window before the first linkbtn template.
+    tm = re.search(r'<a[^>]*class="[^"]*mapfy-linkbtn', html, re.I)
+    if tm:
+        out["url_build_js"] = WS(html[max(0, tm.start() - 2600): tm.start()])
+
+    # RENDER with Chromium so the JS builds the buttons, then read each
+    # button's href (cpldashboardcccco/<code>) + aria-label (the college name).
+    out["rendered"] = render_buttons(scr.DEFAULT_URL)
+
     with open(OUT, "w", encoding="utf-8") as fh:
         json.dump(out, fh, indent=2, ensure_ascii=False)
         fh.write("\n")
     print(f"[diag] wrote {OUT}: {out.get('blob_updated')=} "
           f"codes={out['all_portal_code_count']}")
+
+
+def render_buttons(url):
+    """Render with Chromium and read every mapfy-linkbtn (href + aria-label).
+    Returns a dict so failures are visible, not silent."""
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        return {"error": "playwright not installed"}
+    EXTRACT = """() => Array.from(
+        document.querySelectorAll('a.mapfy-linkbtn[href]')).map(a => ({
+        url: a.href,
+        label: a.getAttribute('aria-label') || a.getAttribute('title') || ''
+    }))"""
+    try:
+        with sync_playwright() as p:
+            b = p.chromium.launch(args=["--no-sandbox",
+                                        "--disable-blink-features=AutomationControlled"])
+            pg = b.new_context(user_agent=scr.UA, locale="en-US").new_page()
+            pg.goto(url, wait_until="domcontentloaded", timeout=60000)
+            try:
+                pg.wait_for_function(
+                    "() => document.querySelectorAll('a.mapfy-linkbtn[href]')"
+                    ".length >= 30", timeout=60000)
+            except Exception:
+                pass
+            pg.wait_for_timeout(4000)
+            items = pg.evaluate(EXTRACT)
+            cnt = pg.evaluate("() => document.querySelectorAll('a.mapfy-linkbtn').length")
+            b.close()
+            return {"count_all": cnt, "count_with_href": len(items),
+                    "buttons": items}
+    except Exception as e:  # noqa: BLE001
+        return {"error": f"{type(e).__name__}: {e}"}
 
 
 def WS(s):
