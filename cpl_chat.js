@@ -110,6 +110,16 @@
     return html;
   }
 
+  // ── Conversation history (multi-turn) ──
+  // Prior {role,content} turns sent with each request so the cpl-chat function
+  // can carry a back-and-forth (e.g. ask a focusing follow-up before dumping a
+  // big list, then honor "Southern California" / "show all"). Sending this field
+  // — even as [] on the first turn — opts this client into multi-turn mode; the
+  // production map.rccd.edu widget omits it and stays single-turn. Bounded to the
+  // last few turns (the function re-trims to 6).
+  var convo = [];
+  var CONVO_MAX = 8;
+
   // ── Chat transcript helpers ──
   var logEl, inputEl, sendBtn, statusEl;
 
@@ -152,7 +162,9 @@
           'apikey': SUPABASE_ANON,
           'Authorization': 'Bearer ' + SUPABASE_ANON,
         },
-        body: JSON.stringify({ query: query, session_id: sessionId() }),
+        // Send the PRIOR turns; the function appends this query as the final
+        // user turn. The empty [] on turn 1 still opts us into multi-turn mode.
+        body: JSON.stringify({ query: query, session_id: sessionId(), history: convo.slice() }),
       });
     } catch (e) {
       bubble.innerHTML = renderMarkdown('Sorry — I couldn\'t reach the assistant. Please check your connection and try again.');
@@ -205,7 +217,13 @@
     } finally {
       reader.releaseLock();
     }
-    if (!full) bubble.innerHTML = renderMarkdown('I don\'t have an answer for that yet. Try rephrasing, or email MAP@rccd.edu.');
+    if (!full) {
+      bubble.innerHTML = renderMarkdown('I don\'t have an answer for that yet. Try rephrasing, or email MAP@rccd.edu.');
+      return;
+    }
+    // Record this completed turn so the next request carries the back-and-forth.
+    convo.push({ role: 'user', content: query }, { role: 'assistant', content: full });
+    if (convo.length > CONVO_MAX) convo = convo.slice(-CONVO_MAX);
   }
 
   // Parse one SSE event block ("event: <name>\ndata: <json>")

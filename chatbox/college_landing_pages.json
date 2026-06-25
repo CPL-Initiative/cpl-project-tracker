@@ -1,6 +1,6 @@
 {
   "_source": "https://map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01.azurewebsites.net/api/mapcollegelanding/GetData",
-  "_scraped_at": "2026-06-25T22:10:55+00:00",
+  "_scraped_at": "2026-06-25T23:03:35+00:00",
   "_note": "Landing links from the MAP College Landing Page API, base rewritten to cpldashboardcccco/<code>. INTERIM — superseded by the MAP Custom Report when it carries landing URLs.",
   "_count": 120,
   "_flagged_page_errors": [
@@ -490,35 +490,10 @@
     }
   ],
   "reconciliation": {
-    "profile_rows": 128,
-    "would_update": 2,
-    "would_insert": 2
+    "profile_rows": 130,
+    "would_update": 0,
+    "would_insert": 0
   },
-  "updates": [
-    {
-      "college": "Calbright College Non-Credit",
-      "url": "https://cpldashboardcccco.azurewebsites.net/CALC",
-      "old_url": "https://map.rccd.edu/cpl-student-portal/CALC"
-    },
-    {
-      "college": "San Diego College of Continuing Education",
-      "url": "https://cpldashboardcccco.azurewebsites.net/SDCCE",
-      "old_url": "https://map.rccd.edu/cpl-student-portal/SDCCE"
-    }
-  ],
-  "inserts": [
-    {
-      "college": "Futuro Health",
-      "url": "https://cpldashboardcccco.azurewebsites.net/FUTURO"
-    },
-    {
-      "college": "Launch Apprenticeship",
-      "url": "https://cpldashboardcccco.azurewebsites.net/LAUNCH"
-    }
-  ],
-  "_applied": {
-    "updated": 2,
-    "inserted": 2,
-    "at": "2026-06-25T22:10:56+00:00"
-  }
+  "updates": [],
+  "inserts": []
 }

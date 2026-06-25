@@ -1,0 +1,26 @@
+name: cpl-chat smoke test
+
+# Smoke-test the live shared cpl-chat Edge Function across its 4 modes + a
+# multi-turn follow-up. Runs on a runner because the agent sandbox is
+# egress-blocked from *.supabase.co. See chatbox/smoke_test.sh + CLAUDE.md §7c.
+#
+# Triggers: manual dispatch, and any push that touches the smoke script or this
+# workflow (so a cpl-chat change pushed alongside the script is verified). It
+# does NOT run on the daily cron — it's a deploy-time check, not a scheduled job.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - chatbox/smoke_test.sh
+      - .github/workflows/cpl-chat-smoke.yml
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: Run cpl-chat smoke test
+        run: bash chatbox/smoke_test.sh

@@ -385,18 +385,22 @@ function buildTopicContext(results: any[], isCollegeSpecific: boolean = false): 
   ctx += `Found ${totalExhibits} matching exhibit(s) across ${totalColleges} college(s) with ${totalRecs} total credit recommendation(s).\n`;
 
   if (statewideExhibits.length > 0) {
-    ctx += `\n### STATEWIDE COLLABORATIVE (CCC) EXHIBITS — available at multiple colleges\n`;
-    ctx += `${statewideExhibits.length} statewide exhibit(s) found:\n`;
+    // Statewide (CCC) standards are NOT housed at any one college — the same
+    // standard appears in the data under every college that has it, so dedupe by
+    // title and do NOT attribute it to one college / one landing page (see the
+    // STATEWIDE rule in the system prompt).
+    const seenStatewide = new Set<string>();
+    ctx += `\n### STATEWIDE COLLABORATIVE (CCC) STANDARDS — system-wide, adopted/adapted by local colleges (not housed at one college)\n`;
     for (const ex of statewideExhibits) {
+      const titleKey = (ex.exhibit_title || "").toLowerCase().trim();
+      if (seenStatewide.has(titleKey)) continue;
+      seenStatewide.add(titleKey);
       ctx += `  - ${ex.exhibit_title} [Statewide Collaborative]`;
       if (ex.discipline) ctx += ` [${ex.discipline}]`;
-      ctx += ` — ${ex.rec_count} credit recommendation(s)`;
-      ctx += ` (via ${ex.college})`;
-      if (ex.landing_page_url) ctx += ` | Landing page: ${ex.landing_page_url}`;
       ctx += `\n`;
       if (ex.sample_credit_recs && ex.sample_credit_recs.length > 0) {
-        ctx += `    Sample credits: ${ex.sample_credit_recs.slice(0, 3).join("; ")}`;
-        if (ex.rec_count > 3) ctx += ` ... and ${ex.rec_count - 3} more`;
+        ctx += `    Eligible courses (title — units/credit): ${ex.sample_credit_recs.slice(0, 12).join("; ")}`;
+        if (ex.rec_count > ex.sample_credit_recs.length) ctx += ` ... and more`;
         ctx += `\n`;
       }
     }
@@ -418,11 +422,10 @@ function buildTopicContext(results: any[], isCollegeSpecific: boolean = false): 
       for (const ex of exhibits.slice(0, 8)) {
         ctx += `  - ${ex.exhibit_title}`;
         if (ex.discipline) ctx += ` [${ex.discipline}]`;
-        if (ex.rec_count > 1) ctx += ` (${ex.rec_count} credit recs)`;
         ctx += `\n`;
         if (ex.sample_credit_recs && ex.sample_credit_recs.length > 0) {
-          ctx += `    Credits: ${ex.sample_credit_recs.slice(0, 2).join("; ")}`;
-          if (ex.rec_count > 2) ctx += ` ... +${ex.rec_count - 2} more`;
+          ctx += `    Eligible courses (title — units/credit): ${ex.sample_credit_recs.slice(0, 8).join("; ")}`;
+          if (ex.rec_count > ex.sample_credit_recs.length) ctx += ` ... and more`;
           ctx += `\n`;
         }
       }
@@ -480,12 +483,19 @@ function buildCollegeContext(profile: any): string {
   }).join("\n");
 }
 
+// Reusable response rules (tuned ongoing — see docs/cpl_assistant_lessons.md).
+// #1 — Statewide credit recommendations are not housed at one college.
+const STATEWIDE_RULE = `\n\nABOUT STATEWIDE COLLABORATIVE (CCC) CREDIT RECOMMENDATIONS: these are system-wide standards developed through statewide faculty workgroups — they are NOT housed at, or owned by, any single college (one college may serve as the initiator or lead that signs off, but that does not make it "the place" to get the credit). Local colleges ADOPT or ADAPT them, and a student earns/accesses them through THEIR OWN college's CPL landing page. So when presenting a statewide standard: describe it as available system-wide, and point the visitor to their own (or a chosen) college's CPL landing page to pursue it — never tell them to go to one specific college's page to "access" a statewide credit.`;
+// #2 — List course titles + units, not a bare count.
+const CREDIT_LIST_RULE = `\n\nWHEN DESCRIBING WHAT CREDIT IS AVAILABLE: do NOT just state a count like "6 credit recommendations." Instead, LIST the specific course titles and the units/credit each is eligible for, using the "Eligible courses (title — units/credit)" lines provided, e.g. "Fire Behavior and Combustion (3 units); Principles of Emergency Services (3 units)". If more exist than are listed in the context, add "…and more" rather than inventing course names.`;
+
 function buildSystemPrompt(
   sections: any[],
   liveMetrics: any,
   collegeContext: string,
   topicContext: string,
-  searchMode: "college" | "topic" | "college_topic" | "general"
+  searchMode: "college" | "topic" | "college_topic" | "general",
+  multiTurn: boolean = false
 ): string {
   let context = sections
     .map((s: any, i: number) => {
@@ -526,18 +536,24 @@ function buildSystemPrompt(
     } catch { /* skip */ }
   }
 
+  // #3 — ask before dumping big results, but only when we can carry the
+  // follow-up (multi-turn). Stateless callers keep the show-top-N behavior.
+  const FOLLOWUP_RULE = multiTurn
+    ? `\n- IF MANY COLLEGES MATCH (more than ~6): do NOT dump the full list at once. First give a brief orientation — the statewide option(s) and roughly how many colleges offer this — then ASK a short follow-up like "Any particular part of California you'd like me to focus on (a region or your local college), or would you like to see all your options?" Wait for their answer, then show the focused list (or all, if they ask for all).`
+    : `\n- If many colleges match, highlight the most relevant handful and state the total count so the visitor can narrow or ask for more.`;
+
   let specialInstruction = "";
   switch (searchMode) {
     case "college_topic":
-      specialInstruction = `\n\nThe visitor is asking about a SPECIFIC TOPIC at a SPECIFIC COLLEGE. This is a combined query. You have both the college profile and topic search results below. Present what you found:\n- If the college has matching exhibits for this topic, show those first with credit recommendation counts and details.\n- If the college does NOT have exhibits for this topic, say so clearly and helpfully — then show other colleges that DO offer CPL for this topic.\n- Highlight any Statewide Collaborative (CCC) exhibits, which are available across multiple colleges including potentially the one asked about.\n- Always share the CPL Landing Page URL so the visitor can explore exhibits and submit CPL requests.\n- Mention the total number of credit recommendations available (rec_count), not just the sample shown.`;
+      specialInstruction = `\n\nThe visitor is asking about a SPECIFIC TOPIC at a SPECIFIC COLLEGE. You have both the college profile and topic results below:\n- If that college has matching LOCAL exhibits, show those first and share that college's CPL Landing Page URL.\n- If it does NOT, say so warmly, then point to any Statewide Collaborative standard and other colleges that do.\n- For Statewide Collaborative standards, follow the STATEWIDE rule (don't tie them to one college).` + FOLLOWUP_RULE;
       break;
 
     case "college":
-      specialInstruction = `\n\nThe visitor is asking about a specific college. Use the college profile data below to give a specific, data-backed answer. Mention their exhibits, credit recommendations, disciplines, and CPL contact person when relevant. Cite specific numbers naturally. If a CPL Landing Page URL is provided for the college, share it with the visitor and let them know they can visit that page to search for credit recommendations, view available exhibits, and submit CPL requests at their college.`;
+      specialInstruction = `\n\nThe visitor is asking about a specific college. Use the college profile to give a specific, data-backed answer — list the eligible courses + units (per the CREDIT rule), their disciplines, and the CPL contact when relevant. Share that college's CPL Landing Page URL so they can explore and submit CPL requests there.`;
       break;
 
     case "topic":
-      specialInstruction = `\n\nThe visitor is asking about a specific topic, credential, or license — not a particular college. Topic search results below show which colleges have matching CPL exhibits. Present the results organized by college:\n- Lead with Statewide Collaborative (CCC) exhibits first — these are available at many colleges.\n- Then show local exhibits grouped by college, starting with those that have the most matches.\n- Mention the total number of credit recommendations available per exhibit (rec_count), not just the samples shown.\n- Always share the CPL Landing Page URL for each college so the visitor can explore further and submit CPL requests.\n- If many colleges match, highlight the top 4-5 most relevant and mention the total count.\n- Be specific about what credit is available.`;
+      specialInstruction = `\n\nThe visitor is asking about a topic, credential, or license — not a particular college. Present the results:\n- Lead with Statewide Collaborative (CCC) standards (per the STATEWIDE rule — system-wide, accessed via the visitor's own college).\n- Then show LOCAL exhibits grouped by college, starting with those that have the most matches; share each college's CPL Landing Page URL for its LOCAL exhibits.\n- Be specific about what credit is available (per the CREDIT rule — list course titles + units).` + FOLLOWUP_RULE;
       break;
   }
 
@@ -549,7 +565,7 @@ Be concise, friendly, and professional. Use plain language.
 
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 
-${context}${metricsContext}${collegeContext}${topicContext}${specialInstruction}`;
+${context}${metricsContext}${collegeContext}${topicContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${specialInstruction}`;
 }
 
 async function fetchLiveMetrics(): Promise<any> {
@@ -588,7 +604,7 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
-    const { query, session_id } = await req.json();
+    const { query, session_id, history } = await req.json();
     if (!query || typeof query !== "string" || query.trim().length === 0) {
       return new Response(JSON.stringify({ error: "Query is required" }), {
         status: 400,
@@ -597,12 +613,39 @@ Deno.serve(async (req: Request) => {
     }
 
     const trimmedQuery = query.trim().slice(0, 1000);
+
+    // Optional conversation history (multi-turn). Backward-compatible: callers
+    // that omit it (e.g. the production widget) stay single-turn. Sanitize to
+    // {role:"user"|"assistant", content:string}; keep the last 6 turns.
+    const convoRaw = (Array.isArray(history) ? history : [])
+      .filter((m: any) => m && (m.role === "user" || m.role === "assistant")
+        && typeof m.content === "string" && m.content.trim().length > 0)
+      .slice(-6)
+      .map((m: any) => ({ role: m.role, content: String(m.content).slice(0, 2000) }));
+    // Anthropic requires the messages array to start with a user turn and
+    // alternate — drop any leading assistant turn from the trimmed window.
+    const firstUser = convoRaw.findIndex((m: any) => m.role === "user");
+    const convo = firstUser < 0 ? [] : convoRaw.slice(firstUser);
+    // multiTurn = the CLIENT opted into a back-and-forth by sending a `history`
+    // field (even an empty []). This gates the "ask a focusing follow-up before
+    // dumping a big list" behavior — which is most useful on the FIRST broad
+    // question, when convo is still empty. The production widget omits `history`
+    // entirely → single-turn → never asks (unchanged behavior).
+    const multiTurn = Array.isArray(history);
+
+    // Retrieval text: a short follow-up ("Southern California", "Bakersfield",
+    // "show all") carries little topic signal on its own, so fold in the prior
+    // user turn so topic/college search still finds the original subject.
+    const lastUserTurn = [...convo].reverse().find((m: any) => m.role === "user")?.content || "";
+    const isRefinement = lastUserTurn.length > 0 && trimmedQuery.split(/\s+/).length <= 5;
+    const searchText = (isRefinement ? `${lastUserTurn} ${trimmedQuery}` : trimmedQuery).slice(0, 1000);
+
     const sb = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
 
-    // 1. Generate query embedding
+    // 1. Generate query embedding (over the retrieval text)
     // @ts-ignore
     const session = new Supabase.ai.Session("gte-small");
-    const queryEmbedding = await session.run(trimmedQuery, {
+    const queryEmbedding = await session.run(searchText, {
       mean_pool: true,
       normalize: true,
     });
@@ -614,9 +657,9 @@ Deno.serve(async (req: Request) => {
         match_threshold: MATCH_THRESHOLD,
         match_count: MATCH_COUNT,
       }),
-      detectAndFetchCollegeProfile(trimmedQuery, sb),
+      detectAndFetchCollegeProfile(searchText, sb),
       fetchLiveMetrics(),
-      searchExhibitsByTopic(trimmedQuery, sb), // broad search first (no college filter)
+      searchExhibitsByTopic(searchText, sb), // broad search first (no college filter)
     ]);
 
     const sections = searchResult.data;
@@ -672,7 +715,7 @@ Deno.serve(async (req: Request) => {
     }
     // else: GENERAL MODE — just RAG + live metrics
 
-    const systemPrompt = buildSystemPrompt(sections || [], liveMetrics, collegeContext, topicContext, searchMode);
+    const systemPrompt = buildSystemPrompt(sections || [], liveMetrics, collegeContext, topicContext, searchMode, multiTurn);
 
     // 4. Call Claude Sonnet
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {
@@ -687,7 +730,7 @@ Deno.serve(async (req: Request) => {
         max_tokens: MAX_TOKENS,
         stream: true,
         system: systemPrompt,
-        messages: [{ role: "user", content: trimmedQuery }],
+        messages: [...convo, { role: "user", content: trimmedQuery }],
       }),
     });
 
