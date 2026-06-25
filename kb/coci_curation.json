@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-06-25T11:51:58Z",
-  "count": 28396,
+  "_synced_at": "2026-06-25T15:20:53Z",
+  "count": 28406,
   "curations": {
     "AERO M10BA": {
       "merge_into": "AERO Z1001",
@@ -5000,7 +5000,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTS M1024": {
-      "unified_title": "Painting 2: Acrylic",
+      "unified_title": "Painting 2",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:43:01.347996+00:00"
     },
@@ -5404,6 +5404,11 @@
       "merge_into": "ARTS Z1017",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ARTS M10GB": {
+      "merge_into": "ARTS M1024",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T14:49:24.133845+00:00"
     },
     "ARTS M10GC": {
       "merge_into": "ARTS Z1049",
@@ -6307,9 +6312,10 @@
       "unified_title": "Beginning Photography : Black and White"
     },
     "ARTS M1177": {
-      "unified_title": "Beginning Ceramic Sculpture",
+      "merge_into": "ARTS M1244",
       "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-06-16T20:16:27.011578+00:00"
+      "reviewed_at": "2026-06-25T14:46:16.337244+00:00",
+      "unified_title": "Beginning Ceramic Sculpture"
     },
     "ARTS M1179": {
       "unified_title": "Ceramics: Beginning 2",
@@ -6325,6 +6331,11 @@
       "unified_title": "Beginning Clay Sculpture",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M1192": {
+      "merge_into": "ARTS M1024",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T14:49:24.133845+00:00"
     },
     "ARTS M11AA": {
       "merge_into": "ARTS Z1090",
@@ -6375,6 +6386,11 @@
       "merge_into": "ARTS Z1083",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ARTS M11AM": {
+      "merge_into": "ARTS M1244",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T14:46:16.337244+00:00"
     },
     "ARTS M11AN": {
       "merge_into": "ARTS Z1084",
@@ -8057,6 +8073,11 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ARTS M1244": {
+      "unified_title": "Sculpture - Ceramics",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T14:46:16.337244+00:00"
+    },
     "ARTS M1246": {
       "unified_title": "Clay and Glaze Formulation",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -8713,10 +8734,20 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARTS M1424": {
+      "merge_into": "ARTS M1024",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T14:49:24.133845+00:00"
+    },
     "ARTS M1425": {
       "unified_title": "Life Painting 2",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:43:53.972391+00:00"
+    },
+    "ARTS M1428": {
+      "merge_into": "ARTS M1024",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T14:49:24.133845+00:00"
     },
     "ARTS M1429": {
       "unified_title": "Painting 2: Watercolor",
@@ -8774,6 +8805,11 @@
       "merge_into": "ARTS M1024",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M1454": {
+      "merge_into": "ARTS M1024",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T14:49:24.133845+00:00"
     },
     "ARTS M1456": {
       "unified_title": "Computer Techniques for Screen Printing",
@@ -8939,6 +8975,11 @@
       "merge_into": "ARTS Z9002",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M90AN": {
+      "merge_into": "ARTS M1024",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T14:49:24.133845+00:00"
     },
     "ARTS M90AV": {
       "merge_into": "ARTS Z9004",
@@ -9157,14 +9198,16 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTS Z1016": {
-      "unified_title": "Oil/Acrylic Painting: Beginning 2",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "ARTS M1024",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T14:49:24.133845+00:00",
+      "unified_title": "Oil/Acrylic Painting: Beginning 2"
     },
     "ARTS Z1017": {
-      "unified_title": "Acrylic Painting-Beginning 2",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "ARTS M1024",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T14:49:24.133845+00:00",
+      "unified_title": "Acrylic Painting-Beginning 2"
     },
     "ARTS Z1018": {
       "unified_title": "Plein Air Painting 2",
@@ -59931,6 +59974,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M10VI": {
+      "merge_into": "ENGL M1250",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T14:51:50.315572+00:00"
+    },
     "ENGL M10VJ": {
       "merge_into": "ENGL Z1042",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -61031,8 +61079,13 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M1248": {
+      "merge_into": "ENGL M1250",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T14:51:50.315572+00:00"
+    },
     "ENGL M1250": {
-      "unified_title": "Intermediate Fiction Writing",
+      "unified_title": "Fiction Writing 2",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-16T19:53:26.028148+00:00"
     },
@@ -78516,9 +78569,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "FLRU M1004": {
-      "unified_title": "First Course in Russian",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "FLRU M1002",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-25T14:44:52.829751+00:00",
+      "unified_title": "First Course in Russian"
     },
     "FLRU M1005": {
       "unified_title": "Second Course in Russian",
