@@ -1,7 +1,7 @@
-// Session 70 (PaintSky) — the ✨ Suggested-merges worklist Beg/Int/Adv/Lab/WkExp
+// Session 70 (PaintSky) — the ✨ Suggested-merges worklist L1/L2/L3/Lab/WkExp
 // band filter. Walk the worklist one level/format band at a time: toggling a band
 // OFF narrows to groups with ≥2 matching members and pre-checks only matching
-// members. "Beg" includes unqualified titles; "Lab" isolates lab-only merges.
+// members. "L1" includes unqualified titles; "Lab" isolates lab-only merges.
 //
 // Run from repo root: `npm test` (or `node tests/uc_worklist_level_filters.test.js`).
 const fs = require("fs");
@@ -72,29 +72,29 @@ function proposedTitle() {
   await sleep(240);
 
   // 1. The band filter row renders with all five toggles.
-  ["Beg", "Int", "Adv", "Lab", "WkExp"].forEach(function (lbl) {
+  ["L1", "L2", "L3", "Lab", "WkExp"].forEach(function (lbl) {
     check("band toggle '" + lbl + "' present", !!bandCb(lbl));
   });
 
   // 2. First (beginning) group renders + a member row shows a 'Beg' chip.
   check("first group is the beginning pair", /Welding/.test(proposedTitle()));
   check("a 'Beg' level chip renders on a member row",
-    Array.from(document.querySelectorAll("span")).some(function (s) { return txt(s) === "Beg"; }));
+    Array.from(document.querySelectorAll("span")).some(function (s) { return txt(s) === "L1"; }));
 
   // 3. Uncheck 'Beg' → the all-beginning group is hidden; worklist advances to the
   //    advanced group (its title shown, an 'Adv' chip present).
-  const begCb = bandCb("Beg").querySelector('input[type="checkbox"]');
+  const begCb = bandCb("L1").querySelector('input[type="checkbox"]');
   begCb.checked = false; begCb.dispatchEvent(new window.Event("change"));
   await sleep(60);
   check("unchecking Beg advances to the advanced group", /Advanced Welding|Welding III/.test(proposedTitle()));
   check("an 'Adv' chip renders after the band switch",
-    Array.from(document.querySelectorAll("span")).some(function (s) { return txt(s) === "Adv"; }));
+    Array.from(document.querySelectorAll("span")).some(function (s) { return txt(s) === "L3"; }));
 
   // 4. Re-check Beg, then leave ONLY 'Lab' on → neither group has lab members →
   //    end-of-worklist message.
   begCb.checked = true; begCb.dispatchEvent(new window.Event("change"));
   await sleep(40);
-  ["Beg", "Int", "Adv", "WkExp"].forEach(function (lbl) {
+  ["L1", "L2", "L3", "WkExp"].forEach(function (lbl) {
     var c = bandCb(lbl).querySelector('input[type="checkbox"]'); c.checked = false; c.dispatchEvent(new window.Event("change"));
   });
   await sleep(60);
