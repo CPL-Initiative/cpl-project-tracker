@@ -1,38 +1,38 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-25 (Session 72 · merge-workspace polish — 6 asks + the candidate slider)",
+ "_as_of": "2026-06-25 (Session 72 · merge-workspace polish — Waves 1–4, PRs #520–#532, 13 merged)",
  "_session": 72,
- "_status": "SESSION 72 — your 6-item merge-workspace review is DONE (#520–#523) PLUS your follow-up (#525): 'Add more courses' is now the candidate Tight↔Loose slider you expected the strength bar to be — drag toward Loose to surface more SIMILAR courses (by title, and description once it loads) as unchecked rows; the keyword box beside it guides the search. It's on BOTH the per-row ⚇ dock and the worklist groups. Also from the review: per-row ⚇ Merge opens the docked sidebar (no cramped pop-up); the Aggressive slider reaches floor 0.00; the 'Save did nothing' bug is fixed (Confirm greys out until ≥2 checked); 'Merge into a different course' moved up by the title; wordy helper text → ⓘ hovers. NEXT (Fable): the standing lanes — the unverified-M-ID renumber re-mint (when the merge wave settles), the TMC acceptance engine, the CPL-Assistant recommender ETL.",
+ "_status": "SESSION 72 — the whole merge-workspace polish run is DONE + live (13 PRs #520–#532). Newest to try, all in the ✨ Suggested merges / per-row ⚇ Merge sidebar: the CCR table now SYNCS to whatever course the sidebar is on (it + its subject-neighbors float to the top, highlighted — toggle off with 'Sync the CCR list'); a Prev/Next pager + a Discipline filter walk the queue; the candidate strength slider now STARTS Loose (more similar courses already surfaced — drag toward Tight for fewer); ONE Search box up top is the keyword source, and it takes multiple terms separated by COMMAS (= OR: 'digital, imag'). Course levels stay labeled Beg / Int / Adv (we tried Level 1/2/3 and reverted on your call). NEXT (Fable): the standing lanes — the unverified-M-ID renumber re-mint (when the merge wave settles), the TMC acceptance engine, the CPL-Assistant recommender ETL.",
  "items": [
   {
-   "id": "sam-candidate-slider",
+   "id": "sam-ccr-sync",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "NEW: 'Add more courses' is now a Tight↔Loose CANDIDATE slider (the 'add more' you expected the strength bar to do) — drag toward Loose and more courses SIMILAR to the one you're merging appear in the list as unchecked rows (ranked by title, and by catalog description once that file loads on a deep loosen). The keyword box beside it GUIDES the search (type 'ESL'/'welding' to pull in specific courses). On both the per-row ⚇ dock and the worklist. Heads-up: the worklist now shows TWO sliders — the top Cons↔Aggr one (how many SUGGESTIONS to review) and this per-merge Tight↔Loose one (candidates for THIS merge). Tell me if that reads as one slider too many, or if the default (starts Tight, you opt into more) + the title-vs-description balance feel right."
+   "text": "NEW: when you're working a merge in the ✨ Suggested-merges sidebar (or a per-row ⚇ Merge), the big CCR table now SYNCS to it — the course you're on plus its same-subject neighbors float to the TOP of the list and the focused row is highlighted, so you can always see where it sits without scrolling. It's still a full list (scroll past the floated rows to reach true adjacents). Turn it off with the 'Sync the CCR list to the current course' checkbox in the sidebar. Tell me if the float helps or if you'd rather the table never moved."
   },
   {
-   "id": "sam-perrow-dock",
+   "id": "sam-pager-discfilter",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Per-row ⚇ Merge (from any CCR row) now opens the SAME docked sidebar as ✨ Suggested merges — same roomy panel, same editor (the new candidate slider + keyword search, ⌕ merge-into-a-different-course up by the title, Beg/Int/Adv/Lab level filters). It drops the queue-only bits that don't apply to one course (no Skip/Keep, no N-of-M, no Cons↔Aggr suggestion slider). Try merging a specific course this way and tell me if it feels right."
+   "text": "Two ways to steer the worklist now: a ‹ Prev / Next › pager at the bottom of the sidebar (walk the queue without the keyboard), and a Discipline filter up top (narrow the suggested merges to one discipline at a time — e.g. just Foreign Languages, or just Nursing). Say if you want the pager somewhere more reachable."
   },
   {
-   "id": "sam-slider-confirm",
+   "id": "sam-loose-default-search",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Two fixes to try: (1) the Conservative↔Aggressive strength slider now reaches all the way to 0.00 on the Aggressive end (drag fully right = surface EVERY suggested group). (2) the 'I clicked Save and nothing happened' issue is gone — Confirm now stays greyed-out until at least two courses are ticked (with opt-in checkboxes only the ★ survivor starts checked, so you tick the ones to fold in). Flag anything that still feels off."
+   "text": "The candidate strength slider now STARTS toward Loose — so more courses SIMILAR to the one you're merging are already in the list (unchecked) when the sidebar opens; drag toward Tight if it's too many. And the editor's own keyword box is GONE — the single Search box at the top of the sidebar is now the one place to type, and it takes MULTIPLE terms separated by commas (comma = OR, e.g. 'digital, imag' surfaces both). Flag it if the Loose default pulls in too much noise."
   },
   {
-   "id": "sam-editor-tidy",
+   "id": "sam-levels",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Merge editor tidy-up: 'Merge into a different existing course' moved UP under the course title (so you can redirect to a specific course right away when working out of order), and the long gray explainer paragraphs are now tucked behind small ⓘ hover icons to save space. The 'Add more courses' search now drops matches straight into the candidate list as UNCHECKED rows — tick the ones to merge, ignore the rest (no separate add step). Say the word if you want any of that copy back on-screen."
+   "text": "Course levels: each candidate now shows a Beg / Int / Adv chip and the Levels filter reads Beg · Int · Adv · Lab · WkExp (we briefly tried Level 1/2/3 and reverted to Beg/Int/Adv on your call). It classifies by Title-5 §55050 — explicit ranges (1-2/3-4/5-6) and words/ordinals are reliable; a bare single number ('Spanish 3') is just a HINT you can override, since the same title can be Int in a long ladder or Adv in a short one. Eyeball a language or ESL family and correct any level that reads wrong."
   },
   {
    "id": "sam-morphological-fold",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Carry-over from S70 (still worth doing): the worklist now groups WORD VARIANTS — 'Conversational Japanese' ↔ 'Japanese Conversation', 'Assisting' ↔ 'Assistant' (~866 more group). Confirm the clean language-conversation families when you get a chance. Where a group shows an amber '⚠ Spans N disciplines' note, eyeball it for homonyms (music vs office 'keyboard') before confirming."
+   "text": "Carry-over from S70 (still worth doing): the worklist groups WORD VARIANTS — 'Conversational Japanese' ↔ 'Japanese Conversation', 'Assisting' ↔ 'Assistant' (~866 more group). Confirm the clean language-conversation families when you get a chance. Where a group shows an amber '⚠ Spans N disciplines' note, eyeball it for homonyms (music vs office 'keyboard') before confirming."
   },
   {
    "id": "sam-first-light-bonus",
