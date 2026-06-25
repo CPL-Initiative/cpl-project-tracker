@@ -1,0 +1,121 @@
+{
+ "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
+ "_as_of": "2026-06-25T15:20:46.964Z",
+ "credit_recommendations": {
+  "total": "11,789",
+  "ccc": "1,304",
+  "local": "10,485",
+  "by_type": [
+   "Standardized Assessment: 5,968",
+   "Industry Certification: 3,579",
+   "Credit By Exam: 1,654",
+   "Portfolio Review: 384",
+   "Military: 116"
+  ]
+ },
+ "map_exhibits": {
+  "total": "2,530",
+  "ccc": "132",
+  "local": "2,398",
+  "originating_colleges": "75"
+ },
+ "statewide_exhibits": {
+  "total": "132",
+  "program_areas": "12",
+  "distinct_credit_recs": "1,101",
+  "adoptions": "1,298",
+  "adopting_colleges": "62",
+  "by_sector": [
+   {
+    "sector": "Construction Technology",
+    "exhibits": 46,
+    "credit_recs": 122,
+    "adoptions": 122
+   },
+   {
+    "sector": "Welding",
+    "exhibits": 23,
+    "credit_recs": 183,
+    "adoptions": 228
+   },
+   {
+    "sector": "Fire Technology",
+    "exhibits": 16,
+    "credit_recs": 260,
+    "adoptions": 342
+   },
+   {
+    "sector": "Computer Information Systems",
+    "exhibits": 15,
+    "credit_recs": 101,
+    "adoptions": 105
+   },
+   {
+    "sector": "Automotive Technology",
+    "exhibits": 11,
+    "credit_recs": 149,
+    "adoptions": 149
+   },
+   {
+    "sector": "Fire Technology - Wildland",
+    "exhibits": 6,
+    "credit_recs": 9,
+    "adoptions": 10
+   },
+   {
+    "sector": "Emergency Medical Services",
+    "exhibits": 5,
+    "credit_recs": 65,
+    "adoptions": 66
+   },
+   {
+    "sector": "Corrections",
+    "exhibits": 2,
+    "credit_recs": 30,
+    "adoptions": 46
+   },
+   {
+    "sector": "Real Estate",
+    "exhibits": 2,
+    "credit_recs": 24,
+    "adoptions": 38
+   },
+   {
+    "sector": "World Languages",
+    "exhibits": 2,
+    "credit_recs": 13,
+    "adoptions": 36
+   },
+   {
+    "sector": "Administration of Justice",
+    "exhibits": 1,
+    "credit_recs": 114,
+    "adoptions": 117
+   },
+   {
+    "sector": "Kinesiology/Health",
+    "exhibits": 1,
+    "credit_recs": 23,
+    "adoptions": 31
+   },
+   {
+    "sector": "Other Statewide",
+    "exhibits": 2,
+    "credit_recs": 8,
+    "adoptions": 8
+   }
+  ],
+  "in_progress": [
+   "HVAC — faculty currently meeting"
+  ]
+ },
+ "articulating_colleges": {
+  "total": "102",
+  "originating": "75",
+  "adopting_ccc": "62"
+ },
+ "veteran_sprint": {
+  "star_colleges": "50",
+  "basic_training_colleges": "89 Colleges"
+ }
+}

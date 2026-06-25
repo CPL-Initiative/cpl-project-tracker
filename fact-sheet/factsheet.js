@@ -18,6 +18,9 @@
   // live_metrics.json sits one level up, served from the same GitHub Pages
   // origin as this page (…/cpl-project-tracker/fact-sheet/ → …/live_metrics.json).
   var METRICS_URL = '../live_metrics.json';
+  // Snapshot tier — the exhibit/recommendation counts the COBI cards show,
+  // emitted daily by excel_to_dashboard.py (NOT in live_metrics.json).
+  var SNAPSHOT_URL = '../fact_sheet_metrics.json';
 
   // metric title (UPPER) -> bind-key prefix
   var TITLE_KEY = {
@@ -99,6 +102,106 @@
     if (btn) btn.addEventListener('click', function () { window.print(); });
   }
 
+  function num(n) { var v = Number(n); return isNaN(v) ? String(n) : v.toLocaleString('en-US'); }
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  // Bind the snapshot tier (the 5 exhibit/recommendation KPI cards + the
+  // Statewide Exhibits per-sector table) from fact_sheet_metrics.json. Same
+  // source COBI's headline cards use, so they never diverge. Baked HTML stands
+  // in if the file is absent.
+  function loadSnapshot() {
+    fetch(SNAPSHOT_URL, { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (d) {
+        var cr = d.credit_recommendations || {}, me = d.map_exhibits || {},
+            sw = d.statewide_exhibits || {}, ac = d.articulating_colleges || {},
+            vs = d.veteran_sprint || {};
+        apply({
+          'cr.total': cr.total, 'cr.ccc': cr.ccc, 'cr.local': cr.local,
+          'me.total': me.total, 'me.ccc': me.ccc, 'me.local': me.local, 'me.orig': me.originating_colleges,
+          'sw.total': sw.total, 'sw.program_areas': sw.program_areas, 'sw.distinct_recs': sw.distinct_credit_recs,
+          'sw.adoptions': sw.adoptions, 'sw.adopting': sw.adopting_colleges,
+          'ac.total': ac.total, 'ac.orig': ac.originating, 'ac.adopting_ccc': ac.adopting_ccc,
+          'vs.star': vs.star_colleges, 'vs.basic': vs.basic_training_colleges
+        });
+        var bt = $('#cr-by-type');
+        if (bt && cr.by_type && cr.by_type.length) bt.textContent = 'By type — ' + cr.by_type.join(' · ');
+
+        var sectors = (sw.by_sector || []).slice().sort(function (a, b) { return (b.exhibits || 0) - (a.exhibits || 0); });
+        if (sectors.length) {
+          var tb = $('#sw-tbody');
+          if (tb) {
+            var rows = '', te = 0, tr = 0, ta = 0;
+            for (var i = 0; i < sectors.length; i++) {
+              var s = sectors[i];
+              te += (+s.exhibits || 0); tr += (+s.credit_recs || 0); ta += (+s.adoptions || 0);
+              rows += '<tr data-sector="' + esc(s.sector) + '"><td>' + esc(s.sector) + '</td><td class="num">' +
+                num(s.exhibits) + '</td><td class="num">' + num(s.credit_recs) + '</td><td class="num">' + num(s.adoptions) + '</td></tr>';
+            }
+            rows += '<tr class="total"><td>Total — ' + sectors.length + ' program areas</td><td class="num">' +
+              num(te) + '</td><td class="num">' + num(tr) + '</td><td class="num">' + num(ta) + '</td></tr>';
+            tb.innerHTML = rows;
+          }
+          // refresh each <details> summary meta (match by attribute, no selector escaping)
+          var metaBy = {};
+          sectors.forEach(function (s) {
+            metaBy[s.sector] = num(s.exhibits) + ' exhibit' + (s.exhibits == 1 ? '' : 's') + ' · ' +
+              num(s.credit_recs) + ' rec' + (s.credit_recs == 1 ? '' : 's') + ' · ' +
+              num(s.adoptions) + ' adoption' + (s.adoptions == 1 ? '' : 's');
+          });
+          var dets = document.querySelectorAll('details[data-sector]');
+          for (var j = 0; j < dets.length; j++) {
+            var key = dets[j].getAttribute('data-sector'), m = dets[j].querySelector('.sw-meta');
+            if (m && metaBy[key]) m.textContent = metaBy[key];
+          }
+        }
+      })
+      .catch(function (err) {
+        if (window.console && console.warn) console.warn('[fact-sheet] snapshot metrics unavailable:', err && err.message);
+      });
+  }
+
+  // Make every content section (those with an <h2>) collapsible. Expanded by
+  // default; print forces all open (see factsheet.css @media print).
+  function setupCollapse() {
+    var secs = document.querySelectorAll('main > section');
+    for (var i = 0; i < secs.length; i++) {
+      (function (sec) {
+        var h = sec.querySelector('h2');
+        if (!h || h.parentNode !== sec) return;
+        h.classList.add('sec-toggle');
+        h.setAttribute('role', 'button');
+        h.setAttribute('tabindex', '0');
+        h.setAttribute('aria-expanded', 'true');
+        function toggle() {
+          var collapsed = sec.classList.toggle('collapsed');
+          h.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+        }
+        h.addEventListener('click', toggle);
+        h.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        });
+      })(secs[i]);
+    }
+    var btn = $('#btn-collapse-all');
+    if (btn) btn.addEventListener('click', function () {
+      var anyOpen = !!document.querySelector('main > section:not(.collapsed) > h2.sec-toggle');
+      var s = document.querySelectorAll('main > section');
+      for (var k = 0; k < s.length; k++) {
+        var th = s[k].querySelector('h2.sec-toggle');
+        if (th && th.parentNode === s[k]) {
+          s[k].classList.toggle('collapsed', anyOpen);
+          th.setAttribute('aria-expanded', anyOpen ? 'false' : 'true');
+        }
+      }
+      btn.textContent = anyOpen ? '⊞ Expand all' : '⊟ Collapse all';
+    });
+  }
+
   // Expand every <details> (the statewide sector lists) for print/PDF, restore after.
   function setupPrintExpand() {
     var opened = [];
@@ -122,6 +225,8 @@
   function load() {
     wirePrint();
     setupPrintExpand();
+    setupCollapse();
+    loadSnapshot();
 
     fetch(METRICS_URL, { cache: 'no-store' })
       .then(function (r) {

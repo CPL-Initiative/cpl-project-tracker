@@ -4131,6 +4131,79 @@ def _fmt_int(n):
     return f"{n:,}"
 
 
+def _write_fact_sheet_metrics(kpis, exhibit_data, live_data=None):
+    """Emit fact_sheet_metrics.json — the snapshot-tier numbers the public CPL
+    Fact Sheet (fact-sheet/) binds for its 5 exhibit/recommendation KPI cards +
+    the Statewide Exhibits per-sector table. Sourced from the SAME exhibit_data /
+    merged kpis the COBI headline cards use, so the public sheet never diverges
+    from COBI. A daily-cron artifact (in the workflow git-add list); the page
+    falls back to its baked snapshot if the file is absent. Call AFTER
+    merge_exhibit_metrics so the kpi cards carry the final formatted values."""
+    if not exhibit_data:
+        return
+    ccc = exhibit_data.get("ccc_collaborative", {}) or {}
+
+    def _cv(key):
+        return str(kpis.get(key, {}).get("value", "") or "")
+
+    def _bd(key, label):
+        for b in kpis.get(key, {}).get("breakdowns", []) or []:
+            if b.get("label") == label:
+                return str(b.get("value", "") or "")
+        return ""
+
+    out = {
+        "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). "
+                  "Sourced from the same MAP Custom Reporting Module exhibit data as "
+                  "COBI's headline KPI cards, so the two never diverge. Refreshed by "
+                  "the daily dashboard cron.",
+        "_as_of": (live_data or {}).get("scraped_at") or datetime.now(timezone.utc).isoformat(),
+        "credit_recommendations": {
+            "total": _cv("credit_recommendations"),
+            "ccc": _bd("credit_recommendations", "CCC Collaborative"),
+            "local": _bd("credit_recommendations", "Local"),
+            "by_type": list(kpis.get("credit_recommendations", {}).get("footnote", []) or []),
+        },
+        "map_exhibits": {
+            "total": _cv("map_exhibits"),
+            "ccc": _bd("map_exhibits", "CCC Collaborative"),
+            "local": _bd("map_exhibits", "Local"),
+            "originating_colleges": _fmt_int(exhibit_data.get("originating_colleges", 0)),
+        },
+        "statewide_exhibits": {
+            "total": _cv("statewide_exhibits") or _fmt_int(ccc.get("unique_exhibits", 0)),
+            "program_areas": _bd("statewide_exhibits", "Program Areas") or _fmt_int(ccc.get("category_count", 0)),
+            "distinct_credit_recs": _bd("statewide_exhibits", "Credit Recommendations") or _fmt_int(ccc.get("distinct_credit_recs", 0)),
+            "adoptions": _bd("statewide_exhibits", "Adoptions") or _fmt_int(ccc.get("rec_adoptions", 0)),
+            "adopting_colleges": _bd("statewide_exhibits", "Adopting Colleges") or _fmt_int(ccc.get("adopting_colleges", 0)),
+            "by_sector": [
+                {"sector": r.get("category", ""), "exhibits": r.get("exhibits", 0),
+                 "credit_recs": r.get("credit_recs", 0), "adoptions": r.get("adoptions", 0)}
+                for r in (ccc.get("by_category") or [])
+            ],
+            "in_progress": list(ccc.get("in_progress", []) or []),
+        },
+        "articulating_colleges": {
+            "total": _cv("articulation_colleges"),
+            "originating": _bd("articulation_colleges", "Originating Colleges"),
+            "adopting_ccc": _bd("articulation_colleges", "Adopting CCC Collaborative"),
+        },
+        "veteran_sprint": {
+            "star_colleges": _fmt_int((live_data or {}).get("star_college_count", 0)),
+            "basic_training_colleges": _bd("veteran_sprint", "Basic Training Credit"),
+        },
+    }
+    try:
+        path = os.path.join(SCRIPT_DIR, "fact_sheet_metrics.json")
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(out, f, indent=1, ensure_ascii=False)
+        sw = out["statewide_exhibits"]
+        print(f"Wrote fact_sheet_metrics.json (statewide {sw['total']} exhibits / "
+              f"{len(sw['by_sector'])} sectors, {out['credit_recommendations']['total']} credit recs)")
+    except Exception as e:
+        print(f"  WARNING: could not write fact_sheet_metrics.json: {e}")
+
+
 def merge_exhibit_metrics(kpis, exhibit_data):
     """
     Merge exhibit metrics into headline KPIs.
@@ -10246,6 +10319,7 @@ def main():
     exhibit_data = read_exhibit_metrics()
     if exhibit_data:
         kpis = merge_exhibit_metrics(kpis, exhibit_data)
+        _write_fact_sheet_metrics(kpis, exhibit_data, live_data)
         ds_list = exhibit_data.get('datasets_found', [])
         print(f"Merged exhibit metrics from {exhibit_data.get('source_file', 'unknown')} "
               f"({len(ds_list)} datasets, "
