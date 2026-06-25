@@ -99,8 +99,29 @@
     if (btn) btn.addEventListener('click', function () { window.print(); });
   }
 
+  // Expand every <details> (the statewide sector lists) for print/PDF, restore after.
+  function setupPrintExpand() {
+    var opened = [];
+    function expand() {
+      opened = [];
+      var nodes = document.querySelectorAll('details:not([open])');
+      for (var i = 0; i < nodes.length; i++) { nodes[i].open = true; opened.push(nodes[i]); }
+    }
+    function restore() {
+      for (var i = 0; i < opened.length; i++) { opened[i].open = false; }
+      opened = [];
+    }
+    window.addEventListener('beforeprint', expand);
+    window.addEventListener('afterprint', restore);
+    if (window.matchMedia) {
+      var mq = window.matchMedia('print');
+      if (mq.addEventListener) mq.addEventListener('change', function (e) { e.matches ? expand() : restore(); });
+    }
+  }
+
   function load() {
     wirePrint();
+    setupPrintExpand();
 
     fetch(METRICS_URL, { cache: 'no-store' })
       .then(function (r) {
