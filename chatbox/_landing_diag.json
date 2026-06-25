@@ -1,5 +1,5 @@
 {
-  "page_chars": 479623,
+  "page_chars": 293267,
   "blob_updated": "2025-08-18",
   "blob_count": 118,
   "blob_map": {
@@ -250,26 +250,30 @@
     "mapfyStats =",
     "mapfyCollegeUrls ="
   ],
+  "linkbtn_cards": [
+    "div>` : ''; // Disable per-card \"Go\" if no articulations (or if URL missing or no slug) // Disable per-card \"Go\" if URL is missing or has no slug function hasValidSlug(url) { if (!url) return false; const normalized = String(url).trim(); const match = normalized.match(/^https?:\\/\\/cpldashboardcccco\\.azurewebsites\\.net\\/(.+)$/i); if (!match) return false; const slug = match[1].trim(); return slug.length > 0; } const canGo = hasValidSlug(url); const tooltipNoUrl = 'CPL page unavailable'; const label = canGo ? `Open ${escapeAttr(name)} CPL page in a new tab` : tooltipNoUrl; const btn = canGo ? `<a class=\"mapfy-linkbtn\" href=\"${escapeAttr(url)}\" rel=\"noopener\" target=\"_blank\" aria-label=\"${label}\" title=\"${label}\">Open CPL page</a>` : `<span class=\"mapfy-linkbtn mapfy-linkbtn-dis"
+  ],
+  "linkbtn_count": 9,
   "needle_hits": {
     "allan": {
-      "count": 17,
-      "context": "ria-expanded=\"false\" aria-controls=\"mapfy-typeahead-list\"> <datalist id=\"mapfy-college-datalist\"><option value=\"Allan Hancock College\"></option><option value=\"American River College\"></option><option value=\"Antelope Valley College\">"
+      "count": 4,
+      "context": "========== */ const mapfyRDC = {\"updated\":\"2025-08-18\",\"regions\":[{\"name\":\"South Central\",\"districts\":[{\"name\":\"Allan Hancock Joint Community College District\",\"colleges\":[\"Allan Hancock College\"]},{\"name\":\"Antelope Valley Community"
     },
     "losmedanos": {
-      "count": 2,
-      "context": "\">Non-mil: 53</span> </div> </div> <a class=\"mapfy-linkbtn\" href=\"https://cpldashboardcccco.azurewebsites.net/losmedanos\" rel=\"noopener\" target=\"_blank\" aria-label=\"Open Los Medanos College CPL page in a new tab\" title=\"Open Los M"
+      "count": 0,
+      "context": null
     },
     "mendocino": {
-      "count": 15,
-      "context": "></option><option value=\"Los Medanos College\"></option><option value=\"Madera Community College\"></option><option value=\"Mendocino College\"></option><option value=\"Merced College\"></option><option value=\"Merritt College\"></option><option val"
+      "count": 4,
+      "context": "colleges\":[\"American River College\",\"Cosumnes River College\",\"Folsom Lake College\",\"Sacramento City College\"]},{\"name\":\"Mendocino-Lake Community College District\",\"colleges\":[\"Mendocino College\"]},{\"name\":\"Napa Valley Community College Dist"
     },
     "LOSC": {
       "count": 1,
       "context": "cpl-student-portal/VLAC\"},{\"College\":\"Los Medanos College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/LOSC\"},{\"College\":\"Madera College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/MADC\"},{\"College\":\"Mendo"
     },
     "MENC": {
-      "count": 3,
-      "context": "\">Non-mil: 60</span> </div> </div> <a class=\"mapfy-linkbtn\" href=\"https://cpldashboardcccco.azurewebsites.net/MENC\" rel=\"noopener\" target=\"_blank\" aria-label=\"Open Mendocino College CPL page in a new tab\" title=\"Open Mendocino Col"
+      "count": 1,
+      "context": "u/cpl-student-portal/MADC\"},{\"College\":\"Mendocino College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/MENC\"},{\"College\":\"Merced College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/MC\"},{\"College\":\"Merritt"
     },
     "/test": {
       "count": 2,
