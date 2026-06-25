@@ -494,6 +494,7 @@ scraping proved unreliable.
 | `docx.min.js` | Local copy of docx@8.0.4 UMD build (do **not** switch to CDN) |
 | `fetch_custom_report.py` | Fetches CustomReport JSON from the MAP API |
 | `cpl_news.js` | **CPL News** tab renderer (`window.CPL_NEWS_TAB`). Lazy-loaded on first `#cpl-news` open; injects own `var(--token)` CSS; reads `public.cpl_news` LIVE (anon) — CA-first, scope/source/search filters, suggest-a-story, reviewer feature/hide. Static — NOT a daily-cron artifact (the feed is the live table, not a committed file). Fed by the **`cpl-news-harvest`** Supabase Edge Function (`chatbox/supabase/functions/cpl-news-harvest/index.ts`) invoked by **`.github/workflows/cpl-news.yml`** (cron 13:17 UTC). Schema: `news/supabase_cpl_news.sql`. Docs: `docs/cpl_news_lessons.md` + `docs/kb-notes/playbook-cpl-news-aggregation.md`. Added Session 67 (Skywatch, PR #481). |
+| `fact-sheet/` | **Public CPL Fact Sheet** — a self-contained, **standalone** page (`index.html` + `factsheet.css` + `factsheet.js` + `img/`) recreating the Feb-2026 journalist Fact Sheet PDF, served publicly by Pages at `…/cpl-project-tracker/fact-sheet/`. "Sits alone" (NO COBI nav) so it's shareable without exposing the internal tabs — the `kb-portal/` pattern, minus the auth gate. `factsheet.js` binds the 6 headline KPIs (+ Military/Workforce/Apprentice breakdowns + Veteran-Sprint figures) from `../live_metrics.json` on load (baked values = graceful fallback); the 5 exhibit/recommendation KPI cards + the Statewide Exhibits per-sector counts are a **labeled MAP Custom Reporting Module snapshot** (not live). Cambria prose / Calibri data; print CSS at 0.4in → browser "Save as PDF" is the export (opens `<details>` for print). Launched from COBI by a **non-tab** `📄 CPL Fact Sheet ↗` anchor in the nav rail (`<a class="cpl-tab cpl-tab-external">`, no `data-tab` so `tabs.js` ignores it; mirrored in BOTH HTMLs, Rule 4). Statewide exhibit lists come from `kb/statewide_exhibit_categories.json`. Static — NOT a daily-cron artifact. Added Session 74 (SkyBlaster), PRs #537/#540. Docs: `docs/fact_sheet_lessons.md` + `docs/kb-notes/playbook-standalone-public-page.md`. |
 
 ### 3. Cloudflare Worker (cpl-proxy)
 
@@ -752,6 +753,13 @@ detailed in §7c):
 | `vision-2030` | Vision 2030 | Vision 2030 Alignment cards with live progress |
 | `knowledge-base` | Knowledge Base | Sign-in-gated **KB Portal** — an `<iframe src="kb-portal/">` (like Letters) over the public CPL Knowledge Base: a magic-link-gated reader + a **New-doc composer** (draft/upload → Claude polish → tokenless GitHub commit). The bundle's own Supabase auth is the gate. **Added Session 63, PRs #464/#465/#467/#468.** Docs: `docs/kb_portal_lessons.md`. |
 | `cpl-news` | CPL News | **Auto-curated** CPL news feed (CA-first, then national; + adjacent systems Career Passport / CA Master Plan / workforce-upskilling + CA budget items). Live-reads `public.cpl_news` (filled daily by the `cpl-news-harvest` Edge Function); filters, suggest-a-story (the path closed socials enter), reviewer feature/hide. Renderer `cpl_news.js` (static, lazy). **Added Session 67 (Skywatch), PR #481.** Docs: `docs/cpl_news_lessons.md`. |
+
+**Not a tab, but launched from the rail:** the **public CPL Fact Sheet**
+(`fact-sheet/`, §2 File Inventory) is reached by a `📄 CPL Fact Sheet ↗` anchor at
+the bottom of the nav rail — an `<a class="cpl-tab cpl-tab-external">` with **no
+`data-tab`**, so `tabs.js` (which derives tabs from `.cpl-tab[data-tab]`) ignores
+it and it opens the standalone page in a new tab. Mirrored in both HTMLs (Rule 4).
+Added Session 74.
 
 Implementation notes (important — keep in sync with the generator):
 
@@ -1872,27 +1880,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > filters #505, the global Cons↔Aggr slider #506, opt-in checkboxes #507, the morphological fold
 > #508/#509) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
 
-### Session 71 — the CCR merge-workspace epic, completed (2026-06-24)
-
-Executed the Session-70 epic end-to-end — **6 PRs, all merged**. The CCR had **two** merge
-popups (the per-row ⚇ `openUnifyDialog` + the ✨ worklist `renderGroup`) that had **drifted**,
-causing several Session-70 bugs. Now they are **one shared `buildMergeEditor(container, opts)`,
-two feeders**: **#511** scope ([`docs/ccr_merge_workspace_epic_scope.md`](docs/ccr_merge_workspace_epic_scope.md));
-**#512 PR-1** extract the editor, worklist embeds it (byte-identical DOM, parity); **#513 PR-2a**
-hoist it to `init` scope with a `deps` contract; **#514 PR-2b** the per-row dialog adopts it
-(in-row ★ model — Sam's pick; gains completion-note/band-chips/ⓘ/gather/override, keeps
-re-discipline #503 via `allowRediscipline`); **#516 PR-3** the worklist is now a **right-hand
-docked panel** (resize grip · » collapse-to-rail · ✕; page reflows via `body padding-right`;
-`localStorage` `cplWorklistDock.v1`); **#518 PR-4** the dock **re-filters LIVE** with the CCR table
-(`render()` calls an assigned `worklistRefilter`, gated on a `ccrSig()` of the carried filter fields
-so a post-merge render / CCR-search keystroke never resets the queue; carry-over checkbox = off
-switch). The four parameterized opts (`preCheckedIds`, `allowRediscipline`, `dismissLabel`, `deps`)
-each default to the worklist's behavior, so adopting the editor regressed neither surface. A latent
-bug the move surfaced: the seed member's `k` must be its id_system (§10 axis), not the display
-`kind`. Full story:
-[`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md). **NEXT:
-[`docs/session_72_handoff.md`](docs/session_72_handoff.md)** — the epic is DONE; the standing lanes:
-unverified-M-ID renumber re-mint, TMC acceptance engine, CPL-Assistant recommender ETL.
+> **Session 71 narrative (the CCR merge-workspace epic — one shared
+> `buildMergeEditor`, two feeders; the right-hand docked worklist #511–#518)
+> archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
 
 ### Session 72 — StarLander: the post-consolidation polish pass (2026-06-24/25)
 
@@ -1920,6 +1910,26 @@ Full story: [`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_les
 [`docs/kb-notes/reference-course-level-convention.md`](docs/kb-notes/reference-course-level-convention.md).
 **NEXT: [`docs/session_73_handoff.md`](docs/session_73_handoff.md)** — standing lanes: unverified-M-ID
 renumber re-mint, TMC Phase-2 acceptance engine, CPL-Assistant CCR/CER recommender ETL.
+
+### Session 74 — SkyBlaster: the public CPL Fact Sheet (2026-06-25)
+
+A self-contained product sprint with Sam in the loop. Built **`fact-sheet/`** — a
+**standalone, public** page (own HTML/CSS/JS, NO COBI nav, the `kb-portal/` pattern
+minus auth) that recreates the Feb-2026 journalist Fact Sheet PDF, served by Pages at
+`…/fact-sheet/`, and a **`📄 CPL Fact Sheet ↗`** launch link in the COBI nav rail (a
+non-tab `<a class="cpl-tab">`, no `data-tab` → `tabs.js` ignores it; both HTMLs, Rule 4).
+`factsheet.js` binds the 6 headline KPIs (+ breakdowns + Veteran-Sprint figures) from
+`../live_metrics.json` (baked values = fallback); the exhibit/recommendation KPI cards +
+Statewide Exhibits counts are a labeled MAP Custom Reporting Module **snapshot**. Cambria
+prose / Calibri data; print CSS (0.4in) → "Save as PDF" is the export. Reconciled the two
+KPI cards' statewide credit-rec counts (**1,304** CCC articulation rows = **1,298**
+adoptions + 6; **1,101** = distinct recs) and added a **Statewide Exhibits** section (132
+exhibits / 12 program areas, expandable per-sector lists from
+`kb/statewide_exhibit_categories.json`). **PRs #537 + #540, both merged + LIVE.** Full
+story: [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md); reusable pattern:
+[`docs/kb-notes/playbook-standalone-public-page.md`](docs/kb-notes/playbook-standalone-public-page.md).
+**NEXT: [`docs/session_75_handoff.md`](docs/session_75_handoff.md)** — Fact-Sheet follow-ups
+(live-wire the snapshot tier; tech-landscape diagram → live HTML) + the standing lanes.
 
 ---
 
