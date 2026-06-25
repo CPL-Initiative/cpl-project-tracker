@@ -1,9 +1,56 @@
 {
   "_source": "https://map.rccd.edu/cpllandingpages/",
-  "_scraped_at": "2026-06-25T20:43:41+00:00",
-  "_count_scraped": 0,
-  "_note": "url = direct cpldashboardcccco/<CODE> landing (the redirect target of the page's /cpl-student-portal/<CODE> link)",
-  "_redirect_probe": [],
+  "_scraped_at": "2026-06-25T20:50:43+00:00",
+  "_count_scraped": 116,
+  "_store_field": "portal_url",
+  "_note": "url = the value stored to landing_page_url; portal_url is the official cpl-student-portal link, dashboard_url its cpldashboardcccco redirect target",
+  "_redirect_probe": [
+    {
+      "college": "San Diego Miramar College",
+      "code": "SDMIRA",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SDMIRA",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SDMIRA",
+      "redirect_final": "https://cpl-landing-pages-eight.vercel.app/SDMIRA",
+      "redirect_status": 200,
+      "matches_dashboard": false
+    },
+    {
+      "college": "San Diego Mesa College",
+      "code": "SDMESA",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SDMESA",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SDMESA",
+      "redirect_final": "https://cpl-landing-pages-eight.vercel.app/SDMESA",
+      "redirect_status": 200,
+      "matches_dashboard": false
+    },
+    {
+      "college": "Bakersfield College",
+      "code": "Bakersfieldcollege",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/Bakersfieldcollege",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/Bakersfieldcollege",
+      "redirect_final": "https://cpl-landing-pages-eight.vercel.app/Bakersfieldcollege",
+      "redirect_status": 200,
+      "matches_dashboard": false
+    },
+    {
+      "college": "Santa Rosa Junior College",
+      "code": "SRJC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SRJC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SRJC",
+      "redirect_final": "https://cpl-landing-pages-eight.vercel.app/SRJC",
+      "redirect_status": 200,
+      "matches_dashboard": false
+    },
+    {
+      "college": "American River College",
+      "code": "AMEC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/AMEC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/AMEC",
+      "redirect_final": "https://cpl-landing-pages-eight.vercel.app/AMEC",
+      "redirect_status": 200,
+      "matches_dashboard": false
+    }
+  ],
   "_debug": {
     "page_chars": 293267,
     "raw_portal_count": 117,
@@ -87,108 +134,1657 @@
       {
         "code": "COM",
         "context": "l/COAC\"},{\"College\":\"College of Alameda\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COA\"},{\"College\":\"College of Marin\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COM\"},{\"College\":\"College of San Mateo\",\"CollegeLandi"
-      },
-      {
-        "code": "M",
-        "context": "/COA\"},{\"College\":\"College of Marin\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COM\"},{\"College\":\"College of San Mateo\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/M\"},{\"College\":\"College of the Canyons\",\"CollegeLan"
-      },
-      {
-        "code": "COC",
-        "context": "\"},{\"College\":\"College of San Mateo\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/M\"},{\"College\":\"College of the Canyons\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COC\"},{\"College\":\"College of the Desert\",\"CollegeLand"
-      },
-      {
-        "code": "COD",
-        "context": "{\"College\":\"College of the Canyons\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COC\"},{\"College\":\"College of the Desert\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COD\"},{\"College\":\"College of the Redwoods\",\"CollegeLa"
-      },
-      {
-        "code": "COR",
-        "context": "\"College\":\"College of the Desert\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COD\"},{\"College\":\"College of the Redwoods\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COR\"},{\"College\":\"College of the Sequoias\",\"CollegeLa"
-      },
-      {
-        "code": "sequoias",
-        "context": "ollege\":\"College of the Redwoods\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COR\"},{\"College\":\"College of the Sequoias\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/sequoias\"},{\"College\":\"College of the Siskiyous\",\"CollegeL"
-      },
-      {
-        "code": "COSY",
-        "context": "\":\"College of the Sequoias\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/sequoias\"},{\"College\":\"College of the Siskiyous\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COSY\"},{\"College\":\"Columbia College\",\"CollegeLandingUR"
-      },
-      {
-        "code": "CC",
-        "context": "},{\"College\":\"College of the Siskiyous\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COSY\"},{\"College\":\"Columbia College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CC\"},{\"College\":\"Compton College\",\"CollegeLandingURL"
-      },
-      {
-        "code": "COMC",
-        "context": "ortal/COSY\"},{\"College\":\"Columbia College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CC\"},{\"College\":\"Compton College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COMC\"},{\"College\":\"Contra Costa College\",\"CollegeLandi"
-      },
-      {
-        "code": "CONC",
-        "context": "l/CC\"},{\"College\":\"Compton College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COMC\"},{\"College\":\"Contra Costa College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CONC\"},{\"College\":\"Copper Mountain College\",\"CollegeLa"
-      },
-      {
-        "code": "CMC",
-        "context": "\"College\":\"Contra Costa College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CONC\"},{\"College\":\"Copper Mountain College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CMC\"},{\"College\":\"Cosumnes River College\",\"CollegeLan"
-      },
-      {
-        "code": "COSC",
-        "context": "College\":\"Copper Mountain College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CMC\"},{\"College\":\"Cosumnes River College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COSC\"},{\"College\":\"Crafton Hills College\",\"CollegeLand"
-      },
-      {
-        "code": "CRAFC",
-        "context": "\"College\":\"Cosumnes River College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/COSC\"},{\"College\":\"Crafton Hills College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CRAFC\"},{\"College\":\"Cuesta College\",\"CollegeLandingURL\""
-      },
-      {
-        "code": "CUEC",
-        "context": "OSC\"},{\"College\":\"Crafton Hills College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CRAFC\"},{\"College\":\"Cuesta College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CUEC\"},{\"College\":\"Cuyamaca College\",\"CollegeLandingUR"
-      },
-      {
-        "code": "CUYC",
-        "context": "tal/CRAFC\"},{\"College\":\"Cuesta College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CUEC\"},{\"College\":\"Cuyamaca College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CUYC\"},{\"College\":\"Cypress College \",\"CollegeLandingUR"
-      },
-      {
-        "code": "CYPC",
-        "context": "al/CUEC\"},{\"College\":\"Cuyamaca College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CUYC\"},{\"College\":\"Cypress College \",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CYPC\"},{\"College\":\"Deanza College\",\"CollegeLandingURL\""
-      },
-      {
-        "code": "DEAC",
-        "context": "rtal/CUYC\"},{\"College\":\"Cypress College \",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/CYPC\"},{\"College\":\"Deanza College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/DEAC\"},{\"College\":\"Diablo Valley College\",\"CollegeLand"
-      },
-      {
-        "code": "DIAC",
-        "context": "CYPC\"},{\"College\":\"Deanza College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/DEAC\"},{\"College\":\"Diablo Valley College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/DIAC\"},{\"College\":\"East Los Angeles College\",\"CollegeL"
-      },
-      {
-        "code": "EASC",
-        "context": "ollege\":\"Diablo Valley College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/DIAC\"},{\"College\":\"East Los Angeles College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/EASC\"},{\"College\":\"El Camino College\",\"CollegeLandingU"
-      },
-      {
-        "code": "EL",
-        "context": ",{\"College\":\"East Los Angeles College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/EASC\"},{\"College\":\"El Camino College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/EL C\"},{\"College\":\"Evergreen Valley College\",\"Colleg"
-      },
-      {
-        "code": "EVEC",
-        "context": ",{\"College\":\"El Camino College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/EL C\"},{\"College\":\"Evergreen Valley College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/EVEC\"},{\"College\":\"Feather River College\",\"CollegeLand"
-      },
-      {
-        "code": "FEAC",
-        "context": "ollege\":\"Evergreen Valley College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/EVEC\"},{\"College\":\"Feather River College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/FEAC\"},{\"College\":\"Folsom Lake College\",\"CollegeLandin"
-      },
-      {
-        "code": "FOLC",
-        "context": "},{\"College\":\"Feather River College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/FEAC\"},{\"College\":\"Folsom Lake College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/FOLC\"},{\"College\":\"Foothill College\",\"CollegeLandingUR"
-      },
-      {
-        "code": "FOOC",
-        "context": "FEAC\"},{\"College\":\"Folsom Lake College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/FOLC\"},{\"College\":\"Foothill College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/FOOC\"},{\"College\":\"Fresno City College\",\"CollegeLandin"
-      },
-      {
-        "code": "FREC",
-        "context": "FOLC\"},{\"College\":\"Foothill College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/FOOC\"},{\"College\":\"Fresno City College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/FREC\"},{\"College\":\"Fullerton College\",\"CollegeLandingU"
-      },
-      {
-        "code": "FULC",
-        "context": "OOC\"},{\"College\":\"Fresno City College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/FREC\"},{\"College\":\"Fullerton College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/FULC\"},{\"College\":\"Gavilan College\",\"CollegeLandingURL"
       }
     ]
   },
-  "scraped": []
+  "scraped": [
+    {
+      "college": "American River College",
+      "code": "AMEC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/AMEC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/AMEC",
+      "url": "https://map.rccd.edu/cpl-student-portal/AMEC"
+    },
+    {
+      "college": "Antelope Valley College",
+      "code": "AVC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/AVC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/AVC",
+      "url": "https://map.rccd.edu/cpl-student-portal/AVC"
+    },
+    {
+      "college": "Bakersfield College",
+      "code": "Bakersfieldcollege",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/Bakersfieldcollege",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/Bakersfieldcollege",
+      "url": "https://map.rccd.edu/cpl-student-portal/Bakersfieldcollege"
+    },
+    {
+      "college": "Barstow Community College",
+      "code": "BC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/BC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/BC",
+      "url": "https://map.rccd.edu/cpl-student-portal/BC"
+    },
+    {
+      "college": "Berkeley City College",
+      "code": "BERC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/BERC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/BERC",
+      "url": "https://map.rccd.edu/cpl-student-portal/BERC"
+    },
+    {
+      "college": "Butte College",
+      "code": "BUTC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/BUTC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/BUTC",
+      "url": "https://map.rccd.edu/cpl-student-portal/BUTC"
+    },
+    {
+      "college": "Cabrillo College",
+      "code": "CABC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CABC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CABC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CABC"
+    },
+    {
+      "college": "Calbright College",
+      "code": "CALC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CALC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CALC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CALC"
+    },
+    {
+      "college": "Cañada College",
+      "code": "CAÑC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CAÑC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CAÑC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CAÑC"
+    },
+    {
+      "college": "Cerritos College",
+      "code": "CCC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CCC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CCC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CCC"
+    },
+    {
+      "college": "Cerro Coso Community College",
+      "code": "CCCC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CCCC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CCCC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CCCC"
+    },
+    {
+      "college": "Chabot College",
+      "code": "CHAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CHAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CHAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CHAC"
+    },
+    {
+      "college": "Chaffey College",
+      "code": "CHC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CHC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CHC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CHC"
+    },
+    {
+      "college": "Citrus College",
+      "code": "CITR",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CITR",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CITR",
+      "url": "https://map.rccd.edu/cpl-student-portal/CITR"
+    },
+    {
+      "college": "Clovis Community College",
+      "code": "CLOC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CLOC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CLOC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CLOC"
+    },
+    {
+      "college": "Coalinga College",
+      "code": "COAL",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/COAL",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/COAL",
+      "url": "https://map.rccd.edu/cpl-student-portal/COAL"
+    },
+    {
+      "college": "Coastline Community College",
+      "code": "COAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/COAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/COAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/COAC"
+    },
+    {
+      "college": "College of Alameda",
+      "code": "COA",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/COA",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/COA",
+      "url": "https://map.rccd.edu/cpl-student-portal/COA"
+    },
+    {
+      "college": "College of Marin",
+      "code": "COM",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/COM",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/COM",
+      "url": "https://map.rccd.edu/cpl-student-portal/COM"
+    },
+    {
+      "college": "College of San Mateo",
+      "code": "M",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/M",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/M",
+      "url": "https://map.rccd.edu/cpl-student-portal/M"
+    },
+    {
+      "college": "College of the Canyons",
+      "code": "COC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/COC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/COC",
+      "url": "https://map.rccd.edu/cpl-student-portal/COC"
+    },
+    {
+      "college": "College of the Desert",
+      "code": "COD",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/COD",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/COD",
+      "url": "https://map.rccd.edu/cpl-student-portal/COD"
+    },
+    {
+      "college": "College of the Redwoods",
+      "code": "COR",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/COR",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/COR",
+      "url": "https://map.rccd.edu/cpl-student-portal/COR"
+    },
+    {
+      "college": "College of the Sequoias",
+      "code": "sequoias",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/sequoias",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/sequoias",
+      "url": "https://map.rccd.edu/cpl-student-portal/sequoias"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "code": "COSY",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/COSY",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/COSY",
+      "url": "https://map.rccd.edu/cpl-student-portal/COSY"
+    },
+    {
+      "college": "Columbia College",
+      "code": "CC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CC"
+    },
+    {
+      "college": "Compton College",
+      "code": "COMC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/COMC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/COMC",
+      "url": "https://map.rccd.edu/cpl-student-portal/COMC"
+    },
+    {
+      "college": "Contra Costa College",
+      "code": "CONC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CONC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CONC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CONC"
+    },
+    {
+      "college": "Copper Mountain College",
+      "code": "CMC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CMC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CMC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CMC"
+    },
+    {
+      "college": "Cosumnes River College",
+      "code": "COSC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/COSC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/COSC",
+      "url": "https://map.rccd.edu/cpl-student-portal/COSC"
+    },
+    {
+      "college": "Crafton Hills College",
+      "code": "CRAFC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CRAFC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CRAFC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CRAFC"
+    },
+    {
+      "college": "Cuesta College",
+      "code": "CUEC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CUEC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CUEC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CUEC"
+    },
+    {
+      "college": "Cuyamaca College",
+      "code": "CUYC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CUYC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CUYC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CUYC"
+    },
+    {
+      "college": "Cypress College",
+      "code": "CYPC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CYPC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CYPC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CYPC"
+    },
+    {
+      "college": "Deanza College",
+      "code": "DEAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/DEAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/DEAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/DEAC"
+    },
+    {
+      "college": "Diablo Valley College",
+      "code": "DIAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/DIAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/DIAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/DIAC"
+    },
+    {
+      "college": "East Los Angeles College",
+      "code": "EASC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/EASC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/EASC",
+      "url": "https://map.rccd.edu/cpl-student-portal/EASC"
+    },
+    {
+      "college": "El Camino College",
+      "code": "EL C",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/EL C",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/EL C",
+      "url": "https://map.rccd.edu/cpl-student-portal/EL C"
+    },
+    {
+      "college": "Evergreen Valley College",
+      "code": "EVEC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/EVEC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/EVEC",
+      "url": "https://map.rccd.edu/cpl-student-portal/EVEC"
+    },
+    {
+      "college": "Feather River College",
+      "code": "FEAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/FEAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/FEAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/FEAC"
+    },
+    {
+      "college": "Folsom Lake College",
+      "code": "FOLC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/FOLC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/FOLC",
+      "url": "https://map.rccd.edu/cpl-student-portal/FOLC"
+    },
+    {
+      "college": "Foothill College",
+      "code": "FOOC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/FOOC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/FOOC",
+      "url": "https://map.rccd.edu/cpl-student-portal/FOOC"
+    },
+    {
+      "college": "Fresno City College",
+      "code": "FREC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/FREC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/FREC",
+      "url": "https://map.rccd.edu/cpl-student-portal/FREC"
+    },
+    {
+      "college": "Fullerton College",
+      "code": "FULC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/FULC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/FULC",
+      "url": "https://map.rccd.edu/cpl-student-portal/FULC"
+    },
+    {
+      "college": "Gavilan College",
+      "code": "GAVC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/GAVC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/GAVC",
+      "url": "https://map.rccd.edu/cpl-student-portal/GAVC"
+    },
+    {
+      "college": "Glendale Community College",
+      "code": "GLEC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/GLEC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/GLEC",
+      "url": "https://map.rccd.edu/cpl-student-portal/GLEC"
+    },
+    {
+      "college": "Golden West College",
+      "code": "GOLC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/GOLC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/GOLC",
+      "url": "https://map.rccd.edu/cpl-student-portal/GOLC"
+    },
+    {
+      "college": "Grossmont College",
+      "code": "GROC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/GROC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/GROC",
+      "url": "https://map.rccd.edu/cpl-student-portal/GROC"
+    },
+    {
+      "college": "Hartnell College",
+      "code": "HARC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/HARC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/HARC",
+      "url": "https://map.rccd.edu/cpl-student-portal/HARC"
+    },
+    {
+      "college": "Imperial Valley College",
+      "code": "IMPC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/IMPC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/IMPC",
+      "url": "https://map.rccd.edu/cpl-student-portal/IMPC"
+    },
+    {
+      "college": "Irvine Valley College",
+      "code": "IRVC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/IRVC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/IRVC",
+      "url": "https://map.rccd.edu/cpl-student-portal/IRVC"
+    },
+    {
+      "college": "Lake Tahoe Community College",
+      "code": "LAKC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/LAKC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/LAKC",
+      "url": "https://map.rccd.edu/cpl-student-portal/LAKC"
+    },
+    {
+      "college": "Laney College",
+      "code": "Laney",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/Laney",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/Laney",
+      "url": "https://map.rccd.edu/cpl-student-portal/Laney"
+    },
+    {
+      "college": "Las Positas College",
+      "code": "LPCC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/LPCC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/LPCC",
+      "url": "https://map.rccd.edu/cpl-student-portal/LPCC"
+    },
+    {
+      "college": "Lassen College",
+      "code": "LCC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/LCC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/LCC",
+      "url": "https://map.rccd.edu/cpl-student-portal/LCC"
+    },
+    {
+      "college": "Lemoore College",
+      "code": "LECC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/LECC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/LECC",
+      "url": "https://map.rccd.edu/cpl-student-portal/LECC"
+    },
+    {
+      "college": "Long Beach City College",
+      "code": "LONC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/LONC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/LONC",
+      "url": "https://map.rccd.edu/cpl-student-portal/LONC"
+    },
+    {
+      "college": "Los Angeles City College",
+      "code": "CLAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/CLAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/CLAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/CLAC"
+    },
+    {
+      "college": "Los Angeles Harbor College",
+      "code": "HLAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/HLAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/HLAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/HLAC"
+    },
+    {
+      "college": "Los Angeles Mission College",
+      "code": "MLAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/MLAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MLAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/MLAC"
+    },
+    {
+      "college": "Los Angeles Pierce College",
+      "code": "PLAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/PLAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/PLAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/PLAC"
+    },
+    {
+      "college": "Los Angeles Southwest College",
+      "code": "SLAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SLAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SLAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/SLAC"
+    },
+    {
+      "college": "Los Angeles Trade Technical College",
+      "code": "TLAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/TLAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/TLAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/TLAC"
+    },
+    {
+      "college": "Los Angeles Valley College",
+      "code": "VLAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/VLAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/VLAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/VLAC"
+    },
+    {
+      "college": "Los Medanos College",
+      "code": "LOSC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/LOSC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/LOSC",
+      "url": "https://map.rccd.edu/cpl-student-portal/LOSC"
+    },
+    {
+      "college": "Madera College",
+      "code": "MADC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/MADC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MADC",
+      "url": "https://map.rccd.edu/cpl-student-portal/MADC"
+    },
+    {
+      "college": "Mendocino College",
+      "code": "MENC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/MENC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MENC",
+      "url": "https://map.rccd.edu/cpl-student-portal/MENC"
+    },
+    {
+      "college": "Merced College",
+      "code": "MC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/MC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MC",
+      "url": "https://map.rccd.edu/cpl-student-portal/MC"
+    },
+    {
+      "college": "Merritt College",
+      "code": "MCC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/MCC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MCC",
+      "url": "https://map.rccd.edu/cpl-student-portal/MCC"
+    },
+    {
+      "college": "MiraCosta College",
+      "code": "MIRC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/MIRC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MIRC",
+      "url": "https://map.rccd.edu/cpl-student-portal/MIRC"
+    },
+    {
+      "college": "Mission College",
+      "code": "MISC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/MISC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MISC",
+      "url": "https://map.rccd.edu/cpl-student-portal/MISC"
+    },
+    {
+      "college": "Modesto Junior College",
+      "code": "MJC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/MJC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MJC",
+      "url": "https://map.rccd.edu/cpl-student-portal/MJC"
+    },
+    {
+      "college": "Monterey Peninsula College",
+      "code": "MPC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/MPC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MPC",
+      "url": "https://map.rccd.edu/cpl-student-portal/MPC"
+    },
+    {
+      "college": "Moorpark College",
+      "code": "MOOC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/MOOC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MOOC",
+      "url": "https://map.rccd.edu/cpl-student-portal/MOOC"
+    },
+    {
+      "college": "Moreno Valley College",
+      "code": "morenovalley",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/morenovalley",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/morenovalley",
+      "url": "https://map.rccd.edu/cpl-student-portal/morenovalley"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "code": "MT.C",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/MT.C",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MT.C",
+      "url": "https://map.rccd.edu/cpl-student-portal/MT.C"
+    },
+    {
+      "college": "Mt. San Jacinto College",
+      "code": "m.sjc",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/m.sjc",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/m.sjc",
+      "url": "https://map.rccd.edu/cpl-student-portal/m.sjc"
+    },
+    {
+      "college": "Napa Valley College",
+      "code": "NAPC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/NAPC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/NAPC",
+      "url": "https://map.rccd.edu/cpl-student-portal/NAPC"
+    },
+    {
+      "college": "Norco College",
+      "code": "norcocollege",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/norcocollege",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/norcocollege",
+      "url": "https://map.rccd.edu/cpl-student-portal/norcocollege"
+    },
+    {
+      "college": "North Orange Continuing Education",
+      "code": "NOCE",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/NOCE",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/NOCE",
+      "url": "https://map.rccd.edu/cpl-student-portal/NOCE"
+    },
+    {
+      "college": "Ohlone College",
+      "code": "OHLC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/OHLC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/OHLC",
+      "url": "https://map.rccd.edu/cpl-student-portal/OHLC"
+    },
+    {
+      "college": "Orange Coast College",
+      "code": "ORAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/ORAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/ORAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/ORAC"
+    },
+    {
+      "college": "Oxnard College",
+      "code": "OXNC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/OXNC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/OXNC",
+      "url": "https://map.rccd.edu/cpl-student-portal/OXNC"
+    },
+    {
+      "college": "Palo Verde College",
+      "code": "PVC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/PVC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/PVC",
+      "url": "https://map.rccd.edu/cpl-student-portal/PVC"
+    },
+    {
+      "college": "Palomar College",
+      "code": "PAL",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/PAL",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/PAL",
+      "url": "https://map.rccd.edu/cpl-student-portal/PAL"
+    },
+    {
+      "college": "Pasadena City College",
+      "code": "PCC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/PCC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/PCC",
+      "url": "https://map.rccd.edu/cpl-student-portal/PCC"
+    },
+    {
+      "college": "Porterville College",
+      "code": "PORC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/PORC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/PORC",
+      "url": "https://map.rccd.edu/cpl-student-portal/PORC"
+    },
+    {
+      "college": "Reedley College",
+      "code": "REEC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/REEC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/REEC",
+      "url": "https://map.rccd.edu/cpl-student-portal/REEC"
+    },
+    {
+      "college": "Rio Hondo College",
+      "code": "RIOC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/RIOC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/RIOC",
+      "url": "https://map.rccd.edu/cpl-student-portal/RIOC"
+    },
+    {
+      "college": "Riverside City College",
+      "code": "RCC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/RCC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/RCC",
+      "url": "https://map.rccd.edu/cpl-student-portal/RCC"
+    },
+    {
+      "college": "Sacramento City College",
+      "code": "SACC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SACC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SACC",
+      "url": "https://map.rccd.edu/cpl-student-portal/SACC"
+    },
+    {
+      "college": "Saddleback College",
+      "code": "Saddleback",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/Saddleback",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/Saddleback",
+      "url": "https://map.rccd.edu/cpl-student-portal/Saddleback"
+    },
+    {
+      "college": "San Bernardino Valley College",
+      "code": "sanbernardino",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/sanbernardino",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/sanbernardino",
+      "url": "https://map.rccd.edu/cpl-student-portal/sanbernardino"
+    },
+    {
+      "college": "San Diego City College",
+      "code": "sandiegocity",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/sandiegocity",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/sandiegocity",
+      "url": "https://map.rccd.edu/cpl-student-portal/sandiegocity"
+    },
+    {
+      "college": "San Diego College of Continuing Education",
+      "code": "SDCCE",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SDCCE",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SDCCE",
+      "url": "https://map.rccd.edu/cpl-student-portal/SDCCE"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "code": "SDMESA",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SDMESA",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SDMESA",
+      "url": "https://map.rccd.edu/cpl-student-portal/SDMESA"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "code": "SDMIRA",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SDMIRA",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SDMIRA",
+      "url": "https://map.rccd.edu/cpl-student-portal/SDMIRA"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "code": "SJDC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SJDC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SJDC",
+      "url": "https://map.rccd.edu/cpl-student-portal/SJDC"
+    },
+    {
+      "college": "San Jose City College",
+      "code": "SJCC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SJCC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SJCC",
+      "url": "https://map.rccd.edu/cpl-student-portal/SJCC"
+    },
+    {
+      "college": "Santa Ana College",
+      "code": "SAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/SAC"
+    },
+    {
+      "college": "Santa Barbara City College",
+      "code": "SBCC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SBCC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SBCC",
+      "url": "https://map.rccd.edu/cpl-student-portal/SBCC"
+    },
+    {
+      "college": "Santa Monica College",
+      "code": "SMC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SMC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SMC",
+      "url": "https://map.rccd.edu/cpl-student-portal/SMC"
+    },
+    {
+      "college": "Santa Rosa Junior College",
+      "code": "SRJC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SRJC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SRJC",
+      "url": "https://map.rccd.edu/cpl-student-portal/SRJC"
+    },
+    {
+      "college": "Santiago Canyon College",
+      "code": "SCC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SCC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SCC",
+      "url": "https://map.rccd.edu/cpl-student-portal/SCC"
+    },
+    {
+      "college": "Shasta College",
+      "code": "shasta",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/shasta",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/shasta",
+      "url": "https://map.rccd.edu/cpl-student-portal/shasta"
+    },
+    {
+      "college": "Sierra College",
+      "code": "SIEC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SIEC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SIEC",
+      "url": "https://map.rccd.edu/cpl-student-portal/SIEC"
+    },
+    {
+      "college": "Skyline College",
+      "code": "SKYC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SKYC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SKYC",
+      "url": "https://map.rccd.edu/cpl-student-portal/SKYC"
+    },
+    {
+      "college": "Solano Community College",
+      "code": "SOLC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SOLC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SOLC",
+      "url": "https://map.rccd.edu/cpl-student-portal/SOLC"
+    },
+    {
+      "college": "Southwestern College",
+      "code": "SOUC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/SOUC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SOUC",
+      "url": "https://map.rccd.edu/cpl-student-portal/SOUC"
+    },
+    {
+      "college": "Taft College",
+      "code": "TAFC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/TAFC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/TAFC",
+      "url": "https://map.rccd.edu/cpl-student-portal/TAFC"
+    },
+    {
+      "college": "Ventura College",
+      "code": "VENC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/VENC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/VENC",
+      "url": "https://map.rccd.edu/cpl-student-portal/VENC"
+    },
+    {
+      "college": "Victor Valley College",
+      "code": "VVC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/VVC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/VVC",
+      "url": "https://map.rccd.edu/cpl-student-portal/VVC"
+    },
+    {
+      "college": "West Los Angeles College",
+      "code": "WLAC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/WLAC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/WLAC",
+      "url": "https://map.rccd.edu/cpl-student-portal/WLAC"
+    },
+    {
+      "college": "West Valley College",
+      "code": "WVC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/WVC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/WVC",
+      "url": "https://map.rccd.edu/cpl-student-portal/WVC"
+    },
+    {
+      "college": "Woodland Community College",
+      "code": "WOOC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/WOOC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/WOOC",
+      "url": "https://map.rccd.edu/cpl-student-portal/WOOC"
+    },
+    {
+      "college": "Yuba College",
+      "code": "YUC",
+      "portal_url": "https://map.rccd.edu/cpl-student-portal/YUC",
+      "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/YUC",
+      "url": "https://map.rccd.edu/cpl-student-portal/YUC"
+    }
+  ],
+  "reconciliation": {
+    "matched": 109,
+    "would_change": 40,
+    "profile_rows": 122,
+    "unmatched_scraped": [
+      {
+        "college": "Deanza College",
+        "code": "DEAC",
+        "portal_url": "https://map.rccd.edu/cpl-student-portal/DEAC",
+        "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/DEAC",
+        "url": "https://map.rccd.edu/cpl-student-portal/DEAC"
+      },
+      {
+        "college": "Los Medanos College",
+        "code": "LOSC",
+        "portal_url": "https://map.rccd.edu/cpl-student-portal/LOSC",
+        "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/LOSC",
+        "url": "https://map.rccd.edu/cpl-student-portal/LOSC"
+      },
+      {
+        "college": "Mendocino College",
+        "code": "MENC",
+        "portal_url": "https://map.rccd.edu/cpl-student-portal/MENC",
+        "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MENC",
+        "url": "https://map.rccd.edu/cpl-student-portal/MENC"
+      },
+      {
+        "college": "MiraCosta College",
+        "code": "MIRC",
+        "portal_url": "https://map.rccd.edu/cpl-student-portal/MIRC",
+        "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MIRC",
+        "url": "https://map.rccd.edu/cpl-student-portal/MIRC"
+      },
+      {
+        "college": "Mission College",
+        "code": "MISC",
+        "portal_url": "https://map.rccd.edu/cpl-student-portal/MISC",
+        "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/MISC",
+        "url": "https://map.rccd.edu/cpl-student-portal/MISC"
+      },
+      {
+        "college": "North Orange Continuing Education",
+        "code": "NOCE",
+        "portal_url": "https://map.rccd.edu/cpl-student-portal/NOCE",
+        "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/NOCE",
+        "url": "https://map.rccd.edu/cpl-student-portal/NOCE"
+      },
+      {
+        "college": "Sacramento City College",
+        "code": "SACC",
+        "portal_url": "https://map.rccd.edu/cpl-student-portal/SACC",
+        "dashboard_url": "https://cpldashboardcccco.azurewebsites.net/SACC",
+        "url": "https://map.rccd.edu/cpl-student-portal/SACC"
+      }
+    ],
+    "unmatched_profiles": [
+      "Allan Hancock College",
+      "CA MAP INITIATIVE COLLEGE",
+      "CabTest College",
+      "Calbright College Non-Credit",
+      "City College of San Francisco",
+      "De Anza College",
+      "Las PosTest College",
+      "Launch Apprenticeship Non-Credit",
+      "Pima Medical Institute",
+      "Sage College",
+      "San Diego College of Continuing Education Credit",
+      "San Diego Continuing Education",
+      "SantTest Ana College"
+    ]
+  },
+  "updates": [
+    {
+      "profile_college": "American River College",
+      "url": "https://map.rccd.edu/cpl-student-portal/AMEC",
+      "matched_from": "American River College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/AMEC",
+      "changed": false
+    },
+    {
+      "profile_college": "Antelope Valley College",
+      "url": "https://map.rccd.edu/cpl-student-portal/AVC",
+      "matched_from": "Antelope Valley College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/AVC",
+      "changed": false
+    },
+    {
+      "profile_college": "Bakersfield College",
+      "url": "https://map.rccd.edu/cpl-student-portal/Bakersfieldcollege",
+      "matched_from": "Bakersfield College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/Bakersfieldcollege",
+      "changed": false
+    },
+    {
+      "profile_college": "Barstow Community College",
+      "url": "https://map.rccd.edu/cpl-student-portal/BC",
+      "matched_from": "Barstow Community College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/BC",
+      "changed": false
+    },
+    {
+      "profile_college": "Berkeley City College",
+      "url": "https://map.rccd.edu/cpl-student-portal/BERC",
+      "matched_from": "Berkeley City College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/BERC",
+      "changed": false
+    },
+    {
+      "profile_college": "Butte College",
+      "url": "https://map.rccd.edu/cpl-student-portal/BUTC",
+      "matched_from": "Butte College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/BUTC",
+      "changed": false
+    },
+    {
+      "profile_college": "Cabrillo College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CABC",
+      "matched_from": "Cabrillo College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CABC",
+      "changed": false
+    },
+    {
+      "profile_college": "Calbright College Credit",
+      "url": "https://map.rccd.edu/cpl-student-portal/CALC",
+      "matched_from": "Calbright College",
+      "old_url": null,
+      "changed": true
+    },
+    {
+      "profile_college": "Cañada College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CAÑC",
+      "matched_from": "Cañada College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CAÑC",
+      "changed": false
+    },
+    {
+      "profile_college": "Cerritos College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CCC",
+      "matched_from": "Cerritos College",
+      "old_url": "https://www.cerritos.edu",
+      "changed": true
+    },
+    {
+      "profile_college": "Cerro Coso Community College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CCCC",
+      "matched_from": "Cerro Coso Community College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CCCC",
+      "changed": false
+    },
+    {
+      "profile_college": "Chabot College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CHAC",
+      "matched_from": "Chabot College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CHAC",
+      "changed": false
+    },
+    {
+      "profile_college": "Chaffey College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CHC",
+      "matched_from": "Chaffey College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CHC",
+      "changed": false
+    },
+    {
+      "profile_college": "Citrus College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CITR",
+      "matched_from": "Citrus College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CITR",
+      "changed": false
+    },
+    {
+      "profile_college": "Clovis Community College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CLOC",
+      "matched_from": "Clovis Community College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CLOC",
+      "changed": false
+    },
+    {
+      "profile_college": "Coalinga College",
+      "url": "https://map.rccd.edu/cpl-student-portal/COAL",
+      "matched_from": "Coalinga College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/COAL",
+      "changed": false
+    },
+    {
+      "profile_college": "Coastline Community College",
+      "url": "https://map.rccd.edu/cpl-student-portal/COAC",
+      "matched_from": "Coastline Community College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/COAC",
+      "changed": false
+    },
+    {
+      "profile_college": "College of Alameda",
+      "url": "https://map.rccd.edu/cpl-student-portal/COA",
+      "matched_from": "College of Alameda",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/COA",
+      "changed": false
+    },
+    {
+      "profile_college": "College of Marin",
+      "url": "https://map.rccd.edu/cpl-student-portal/COM",
+      "matched_from": "College of Marin",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/COM",
+      "changed": false
+    },
+    {
+      "profile_college": "College of San Mateo",
+      "url": "https://map.rccd.edu/cpl-student-portal/M",
+      "matched_from": "College of San Mateo",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/M",
+      "changed": false
+    },
+    {
+      "profile_college": "College of the Canyons",
+      "url": "https://map.rccd.edu/cpl-student-portal/COC",
+      "matched_from": "College of the Canyons",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/Collegeofthecanyons",
+      "changed": true
+    },
+    {
+      "profile_college": "College of the Desert",
+      "url": "https://map.rccd.edu/cpl-student-portal/COD",
+      "matched_from": "College of the Desert",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/COD",
+      "changed": false
+    },
+    {
+      "profile_college": "College of the Redwoods",
+      "url": "https://map.rccd.edu/cpl-student-portal/COR",
+      "matched_from": "College of the Redwoods",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/COR",
+      "changed": false
+    },
+    {
+      "profile_college": "College of the Sequoias",
+      "url": "https://map.rccd.edu/cpl-student-portal/sequoias",
+      "matched_from": "College of the Sequoias",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/sequoias",
+      "changed": false
+    },
+    {
+      "profile_college": "College of the Siskiyous",
+      "url": "https://map.rccd.edu/cpl-student-portal/COSY",
+      "matched_from": "College of the Siskiyous",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/COSY",
+      "changed": false
+    },
+    {
+      "profile_college": "Columbia College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CC",
+      "matched_from": "Columbia College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CC",
+      "changed": false
+    },
+    {
+      "profile_college": "Compton College",
+      "url": "https://map.rccd.edu/cpl-student-portal/COMC",
+      "matched_from": "Compton College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/COMC",
+      "changed": false
+    },
+    {
+      "profile_college": "Contra Costa College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CONC",
+      "matched_from": "Contra Costa College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CONC",
+      "changed": false
+    },
+    {
+      "profile_college": "Copper Mountain College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CMC",
+      "matched_from": "Copper Mountain College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CMC",
+      "changed": false
+    },
+    {
+      "profile_college": "Cosumnes River College",
+      "url": "https://map.rccd.edu/cpl-student-portal/COSC",
+      "matched_from": "Cosumnes River College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/COSC",
+      "changed": false
+    },
+    {
+      "profile_college": "Crafton Hills College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CRAFC",
+      "matched_from": "Crafton Hills College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CRAFC",
+      "changed": false
+    },
+    {
+      "profile_college": "Cuesta College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CUEC",
+      "matched_from": "Cuesta College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CUEC",
+      "changed": false
+    },
+    {
+      "profile_college": "Cuyamaca College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CUYC",
+      "matched_from": "Cuyamaca College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CUYC",
+      "changed": false
+    },
+    {
+      "profile_college": "Cypress College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CYPC",
+      "matched_from": "Cypress College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CYPC",
+      "changed": false
+    },
+    {
+      "profile_college": "Diablo Valley College",
+      "url": "https://map.rccd.edu/cpl-student-portal/DIAC",
+      "matched_from": "Diablo Valley College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/DIAC",
+      "changed": false
+    },
+    {
+      "profile_college": "East Los Angeles College",
+      "url": "https://map.rccd.edu/cpl-student-portal/EASC",
+      "matched_from": "East Los Angeles College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/ELAC",
+      "changed": true
+    },
+    {
+      "profile_college": "El Camino College",
+      "url": "https://map.rccd.edu/cpl-student-portal/EL C",
+      "matched_from": "El Camino College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/ELCC",
+      "changed": true
+    },
+    {
+      "profile_college": "Evergreen Valley College",
+      "url": "https://map.rccd.edu/cpl-student-portal/EVEC",
+      "matched_from": "Evergreen Valley College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/EVC",
+      "changed": true
+    },
+    {
+      "profile_college": "Feather River College",
+      "url": "https://map.rccd.edu/cpl-student-portal/FEAC",
+      "matched_from": "Feather River College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/FEAC",
+      "changed": false
+    },
+    {
+      "profile_college": "Folsom Lake College",
+      "url": "https://map.rccd.edu/cpl-student-portal/FOLC",
+      "matched_from": "Folsom Lake College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/FOLC",
+      "changed": false
+    },
+    {
+      "profile_college": "Foothill College",
+      "url": "https://map.rccd.edu/cpl-student-portal/FOOC",
+      "matched_from": "Foothill College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/FOOC",
+      "changed": false
+    },
+    {
+      "profile_college": "Fresno City College",
+      "url": "https://map.rccd.edu/cpl-student-portal/FREC",
+      "matched_from": "Fresno City College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/FREC",
+      "changed": false
+    },
+    {
+      "profile_college": "Fullerton College",
+      "url": "https://map.rccd.edu/cpl-student-portal/FULC",
+      "matched_from": "Fullerton College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/FULC",
+      "changed": false
+    },
+    {
+      "profile_college": "Gavilan College",
+      "url": "https://map.rccd.edu/cpl-student-portal/GAVC",
+      "matched_from": "Gavilan College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/GAVC",
+      "changed": false
+    },
+    {
+      "profile_college": "Glendale Community College",
+      "url": "https://map.rccd.edu/cpl-student-portal/GLEC",
+      "matched_from": "Glendale Community College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/GLEC",
+      "changed": false
+    },
+    {
+      "profile_college": "Golden West College",
+      "url": "https://map.rccd.edu/cpl-student-portal/GOLC",
+      "matched_from": "Golden West College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/GOLC",
+      "changed": false
+    },
+    {
+      "profile_college": "Grossmont College",
+      "url": "https://map.rccd.edu/cpl-student-portal/GROC",
+      "matched_from": "Grossmont College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/GROC",
+      "changed": false
+    },
+    {
+      "profile_college": "Hartnell College",
+      "url": "https://map.rccd.edu/cpl-student-portal/HARC",
+      "matched_from": "Hartnell College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/HARC",
+      "changed": false
+    },
+    {
+      "profile_college": "Imperial Valley College",
+      "url": "https://map.rccd.edu/cpl-student-portal/IMPC",
+      "matched_from": "Imperial Valley College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/IMPC",
+      "changed": false
+    },
+    {
+      "profile_college": "Irvine Valley College",
+      "url": "https://map.rccd.edu/cpl-student-portal/IRVC",
+      "matched_from": "Irvine Valley College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/IVC",
+      "changed": true
+    },
+    {
+      "profile_college": "Lake Tahoe Community College",
+      "url": "https://map.rccd.edu/cpl-student-portal/LAKC",
+      "matched_from": "Lake Tahoe Community College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/LTCC",
+      "changed": true
+    },
+    {
+      "profile_college": "Laney College",
+      "url": "https://map.rccd.edu/cpl-student-portal/Laney",
+      "matched_from": "Laney College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/LANC",
+      "changed": true
+    },
+    {
+      "profile_college": "Las Positas College",
+      "url": "https://map.rccd.edu/cpl-student-portal/LPCC",
+      "matched_from": "Las Positas College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/LAPC",
+      "changed": true
+    },
+    {
+      "profile_college": "Lassen College",
+      "url": "https://map.rccd.edu/cpl-student-portal/LCC",
+      "matched_from": "Lassen College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/LASC",
+      "changed": true
+    },
+    {
+      "profile_college": "Lemoore College",
+      "url": "https://map.rccd.edu/cpl-student-portal/LECC",
+      "matched_from": "Lemoore College",
+      "old_url": null,
+      "changed": true
+    },
+    {
+      "profile_college": "Long Beach City College",
+      "url": "https://map.rccd.edu/cpl-student-portal/LONC",
+      "matched_from": "Long Beach City College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/LBCC",
+      "changed": true
+    },
+    {
+      "profile_college": "Los Angeles City College",
+      "url": "https://map.rccd.edu/cpl-student-portal/CLAC",
+      "matched_from": "Los Angeles City College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/CLAC",
+      "changed": false
+    },
+    {
+      "profile_college": "Los Angeles Harbor College",
+      "url": "https://map.rccd.edu/cpl-student-portal/HLAC",
+      "matched_from": "Los Angeles Harbor College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/LAHC",
+      "changed": true
+    },
+    {
+      "profile_college": "Los Angeles Mission College",
+      "url": "https://map.rccd.edu/cpl-student-portal/MLAC",
+      "matched_from": "Los Angeles Mission College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/LAMC",
+      "changed": true
+    },
+    {
+      "profile_college": "Los Angeles Pierce College",
+      "url": "https://map.rccd.edu/cpl-student-portal/PLAC",
+      "matched_from": "Los Angeles Pierce College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/LAPC",
+      "changed": true
+    },
+    {
+      "profile_college": "Los Angeles Southwest College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SLAC",
+      "matched_from": "Los Angeles Southwest College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/LASC2",
+      "changed": true
+    },
+    {
+      "profile_college": "Los Angeles Trade Technical College",
+      "url": "https://map.rccd.edu/cpl-student-portal/TLAC",
+      "matched_from": "Los Angeles Trade Technical College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/LATTC",
+      "changed": true
+    },
+    {
+      "profile_college": "Los Angeles Valley College",
+      "url": "https://map.rccd.edu/cpl-student-portal/VLAC",
+      "matched_from": "Los Angeles Valley College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/LAVC",
+      "changed": true
+    },
+    {
+      "profile_college": "Madera College",
+      "url": "https://map.rccd.edu/cpl-student-portal/MADC",
+      "matched_from": "Madera College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/MADC",
+      "changed": false
+    },
+    {
+      "profile_college": "Merced College",
+      "url": "https://map.rccd.edu/cpl-student-portal/MC",
+      "matched_from": "Merced College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/MERC",
+      "changed": true
+    },
+    {
+      "profile_college": "Merritt College",
+      "url": "https://map.rccd.edu/cpl-student-portal/MCC",
+      "matched_from": "Merritt College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/MERC",
+      "changed": true
+    },
+    {
+      "profile_college": "Modesto Junior College",
+      "url": "https://map.rccd.edu/cpl-student-portal/MJC",
+      "matched_from": "Modesto Junior College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/MOJC",
+      "changed": true
+    },
+    {
+      "profile_college": "Monterey Peninsula College",
+      "url": "https://map.rccd.edu/cpl-student-portal/MPC",
+      "matched_from": "Monterey Peninsula College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/MONC",
+      "changed": true
+    },
+    {
+      "profile_college": "Moorpark College",
+      "url": "https://map.rccd.edu/cpl-student-portal/MOOC",
+      "matched_from": "Moorpark College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/MOPC",
+      "changed": true
+    },
+    {
+      "profile_college": "Moreno Valley College",
+      "url": "https://map.rccd.edu/cpl-student-portal/morenovalley",
+      "matched_from": "Moreno Valley College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/MVC",
+      "changed": true
+    },
+    {
+      "profile_college": "Mt. San Antonio College",
+      "url": "https://map.rccd.edu/cpl-student-portal/MT.C",
+      "matched_from": "Mt. San Antonio College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/MT.C",
+      "changed": false
+    },
+    {
+      "profile_college": "Mt. San Jacinto College",
+      "url": "https://map.rccd.edu/cpl-student-portal/m.sjc",
+      "matched_from": "Mt. San Jacinto College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/MSJC",
+      "changed": true
+    },
+    {
+      "profile_college": "Napa Valley College",
+      "url": "https://map.rccd.edu/cpl-student-portal/NAPC",
+      "matched_from": "Napa Valley College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/NAPC",
+      "changed": false
+    },
+    {
+      "profile_college": "Norco College",
+      "url": "https://map.rccd.edu/cpl-student-portal/norcocollege",
+      "matched_from": "Norco College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/NORC",
+      "changed": true
+    },
+    {
+      "profile_college": "Ohlone College",
+      "url": "https://map.rccd.edu/cpl-student-portal/OHLC",
+      "matched_from": "Ohlone College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/OHLC",
+      "changed": false
+    },
+    {
+      "profile_college": "Orange Coast College",
+      "url": "https://map.rccd.edu/cpl-student-portal/ORAC",
+      "matched_from": "Orange Coast College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/ORAC",
+      "changed": false
+    },
+    {
+      "profile_college": "Oxnard College",
+      "url": "https://map.rccd.edu/cpl-student-portal/OXNC",
+      "matched_from": "Oxnard College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/OXNC",
+      "changed": false
+    },
+    {
+      "profile_college": "Palo Verde College",
+      "url": "https://map.rccd.edu/cpl-student-portal/PVC",
+      "matched_from": "Palo Verde College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/PVC",
+      "changed": false
+    },
+    {
+      "profile_college": "Palomar College",
+      "url": "https://map.rccd.edu/cpl-student-portal/PAL",
+      "matched_from": "Palomar College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/PAL",
+      "changed": false
+    },
+    {
+      "profile_college": "Pasadena City College",
+      "url": "https://map.rccd.edu/cpl-student-portal/PCC",
+      "matched_from": "Pasadena City College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/PCC",
+      "changed": false
+    },
+    {
+      "profile_college": "Porterville College",
+      "url": "https://map.rccd.edu/cpl-student-portal/PORC",
+      "matched_from": "Porterville College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/PORC",
+      "changed": false
+    },
+    {
+      "profile_college": "Reedley College",
+      "url": "https://map.rccd.edu/cpl-student-portal/REEC",
+      "matched_from": "Reedley College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/REEC",
+      "changed": false
+    },
+    {
+      "profile_college": "Rio Hondo College",
+      "url": "https://map.rccd.edu/cpl-student-portal/RIOC",
+      "matched_from": "Rio Hondo College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/RHC",
+      "changed": true
+    },
+    {
+      "profile_college": "Riverside City College",
+      "url": "https://map.rccd.edu/cpl-student-portal/RCC",
+      "matched_from": "Riverside City College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/RCC",
+      "changed": false
+    },
+    {
+      "profile_college": "Saddleback College",
+      "url": "https://map.rccd.edu/cpl-student-portal/Saddleback",
+      "matched_from": "Saddleback College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SADC",
+      "changed": true
+    },
+    {
+      "profile_college": "San Bernardino Valley College",
+      "url": "https://map.rccd.edu/cpl-student-portal/sanbernardino",
+      "matched_from": "San Bernardino Valley College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SBVC",
+      "changed": true
+    },
+    {
+      "profile_college": "San Diego City College",
+      "url": "https://map.rccd.edu/cpl-student-portal/sandiegocity",
+      "matched_from": "San Diego City College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SDCC",
+      "changed": true
+    },
+    {
+      "profile_college": "San Diego College of Continuing Education",
+      "url": "https://map.rccd.edu/cpl-student-portal/SDCCE",
+      "matched_from": "San Diego College of Continuing Education",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SDCC",
+      "changed": true
+    },
+    {
+      "profile_college": "San Diego Mesa College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SDMESA",
+      "matched_from": "San Diego Mesa College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SDMESA",
+      "changed": false
+    },
+    {
+      "profile_college": "San Diego Miramar College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SDMIRA",
+      "matched_from": "San Diego Miramar College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SDMC",
+      "changed": true
+    },
+    {
+      "profile_college": "San Joaquin Delta College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SJDC",
+      "matched_from": "San Joaquin Delta College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SJDC",
+      "changed": false
+    },
+    {
+      "profile_college": "San Jose City College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SJCC",
+      "matched_from": "San Jose City College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SJCC",
+      "changed": false
+    },
+    {
+      "profile_college": "Santa Ana College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SAC",
+      "matched_from": "Santa Ana College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SANC",
+      "changed": true
+    },
+    {
+      "profile_college": "Santa Barbara City College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SBCC",
+      "matched_from": "Santa Barbara City College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SBCC",
+      "changed": false
+    },
+    {
+      "profile_college": "Santa Monica College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SMC",
+      "matched_from": "Santa Monica College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SMC",
+      "changed": false
+    },
+    {
+      "profile_college": "Santa Rosa Junior College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SRJC",
+      "matched_from": "Santa Rosa Junior College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SRJC",
+      "changed": false
+    },
+    {
+      "profile_college": "Santiago Canyon College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SCC",
+      "matched_from": "Santiago Canyon College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SCNC",
+      "changed": true
+    },
+    {
+      "profile_college": "Shasta College",
+      "url": "https://map.rccd.edu/cpl-student-portal/shasta",
+      "matched_from": "Shasta College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SHAC",
+      "changed": true
+    },
+    {
+      "profile_college": "Sierra College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SIEC",
+      "matched_from": "Sierra College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SIEC",
+      "changed": false
+    },
+    {
+      "profile_college": "Skyline College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SKYC",
+      "matched_from": "Skyline College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SKYC",
+      "changed": false
+    },
+    {
+      "profile_college": "Solano Community College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SOLC",
+      "matched_from": "Solano Community College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SOLC",
+      "changed": false
+    },
+    {
+      "profile_college": "Southwestern College",
+      "url": "https://map.rccd.edu/cpl-student-portal/SOUC",
+      "matched_from": "Southwestern College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/SWC",
+      "changed": true
+    },
+    {
+      "profile_college": "Taft College",
+      "url": "https://map.rccd.edu/cpl-student-portal/TAFC",
+      "matched_from": "Taft College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/TAFC",
+      "changed": false
+    },
+    {
+      "profile_college": "Ventura College",
+      "url": "https://map.rccd.edu/cpl-student-portal/VENC",
+      "matched_from": "Ventura College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/VENC",
+      "changed": false
+    },
+    {
+      "profile_college": "Victor Valley College",
+      "url": "https://map.rccd.edu/cpl-student-portal/VVC",
+      "matched_from": "Victor Valley College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/VICC",
+      "changed": true
+    },
+    {
+      "profile_college": "West Los Angeles College",
+      "url": "https://map.rccd.edu/cpl-student-portal/WLAC",
+      "matched_from": "West Los Angeles College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/WLAC",
+      "changed": false
+    },
+    {
+      "profile_college": "West Valley College",
+      "url": "https://map.rccd.edu/cpl-student-portal/WVC",
+      "matched_from": "West Valley College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/WEVC",
+      "changed": true
+    },
+    {
+      "profile_college": "Woodland Community College",
+      "url": "https://map.rccd.edu/cpl-student-portal/WOOC",
+      "matched_from": "Woodland Community College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/WOOC",
+      "changed": false
+    },
+    {
+      "profile_college": "Yuba College",
+      "url": "https://map.rccd.edu/cpl-student-portal/YUC",
+      "matched_from": "Yuba College",
+      "old_url": "https://map.rccd.edu/cpl-student-portal/YUBC",
+      "changed": true
+    }
+  ]
 }
