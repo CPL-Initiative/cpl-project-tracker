@@ -5,9 +5,10 @@
 //   with a different SUBJ) as the survivor. The ★ badge moves to the pinned row
 //   and Confirm folds the others INTO it (its id/subject win).
 //
-//   Task 1 — CCR filter carry-over: the discipline/subject/etc. filters set on
-//   the main CCR table carry into the worklist — a group surfaces only when ≥1
-//   live member satisfies them. A checkbox lets the curator drop the carry-over.
+//   Item 1 (S72 followup) — DECOUPLE from the CCR table: the worklist is no
+//   longer constrained by the main CCR table's filters (it has its own Search +
+//   Discipline + Level controls). The "Match the CCR table filters" carry-over
+//   checkbox was removed. (Was "Task 1 — CCR filter carry-over", now reversed.)
 //
 // Run from repo root: `npm test` (or `node tests/uc_worklist_target_and_filters.test.js`).
 const fs = require("fs");
@@ -156,32 +157,26 @@ function closeWorklist(doc) {
   closeWorklist(doc);
   await sleep(40);
 
-  // ── Task 1: CCR discipline filter carries into the worklist ──
-  // Reset to a clean view, then filter the CCR table to Welding.
+  // ── Item 1 (S72 followup): the worklist is DECOUPLED from the CCR table ──
+  // Task 2 consumed the Photography group (it was merged), so only the Welding
+  // group remains. Filter the CCR table to a discipline (Photography) that does
+  // NOT match the Welding group: under the OLD carry-over the Welding group
+  // would be HIDDEN; DECOUPLED, it still surfaces. The carry-over checkbox is
+  // gone, and the count is never narrowed to "N of M matching".
   posts.length = 0;
   const fDisc = doc.getElementById("uc-disc");
   check("the CCR discipline filter exists", !!fDisc);
-  fDisc.value = "Welding"; fDisc.dispatchEvent(new window.Event("change"));
+  fDisc.value = "Photography"; fDisc.dispatchEvent(new window.Event("change"));
   await sleep(60);
   openWorklist(doc);
   await sleep(220);
   box = curBox(doc);
-  check("with Welding selected, the worklist surfaces a Welding group",
-    /Welding Safety/i.test(box.textContent) || /Welding/i.test(box.textContent));
-  check("the Photography (ART/PHOT) group is filtered out", !/Adobe Photoshop/i.test(box.textContent));
-  check("the carry-over count reflects a single matching group", /1 of 1/.test(headCount(box)) || /1 of 1/.test(box.textContent + headCount(box)));
-
-  // The carry-over checkbox is present and labelled; unchecking it restores all.
-  const ccrLabel = Array.from(box.parentNode.querySelectorAll("label"))
-    .find((l) => /Match the CCR table filters/.test(txt(l)))
-    || Array.from(doc.querySelectorAll("label")).find((l) => /Match the CCR table filters/.test(txt(l)));
-  check("a 'Match the CCR table filters' toggle is present", !!ccrLabel);
-  const ccrCb = ccrLabel && ccrLabel.querySelector("input[type=checkbox]");
-  check("the carry-over toggle is ON by default", ccrCb && ccrCb.checked === true);
-  ccrCb.checked = false; ccrCb.dispatchEvent(new window.Event("change"));
-  await sleep(40);
-  check("dropping the carry-over re-reveals both groups (2 total)",
-    /of 2/.test(headCount(box) + " " + box.textContent));
+  check("with the CCR filtered to Photography, the worklist still surfaces the (non-matching) Welding group — decoupled, item 1",
+    /Welding/i.test(box.textContent));
+  check("the worklist count is NOT constrained by the CCR filter (no 'matching' narrowing)",
+    !/of \d+ matching/.test(headCount(box) + " " + box.textContent));
+  check("the removed 'Match the CCR table filters' checkbox is GONE",
+    !Array.from(doc.querySelectorAll("label")).some((l) => /Match the CCR table filters/.test(txt(l))));
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

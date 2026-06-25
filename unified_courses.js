@@ -978,6 +978,9 @@
           extraActions: [cancel],
           getKeyword: function () { return perRowSearch.value; },   // top Search box (S72 #5)
           onConfirm: function (r) { doConsolidate(r.chosen, r.title, r.disc, r.target, close); },
+          // Single-course rename (S72 item 3) — Save the edited title/discipline
+          // to this one course (re-discipline is enabled on the per-row dock).
+          onRename: function (id, t, d, n) { doRename(id, t, d, n, close); },
           deps: { byId: byId0 },
         });
         // Never stack two docks — drop any open one (worklist or a prior Merge) first.
@@ -1155,6 +1158,43 @@
       });
     }
 
+    // ---- Single-course RENAME (Sam, S72 followup item 3) --------------------
+    // The merge editor doubles as a rename tool: when only ONE course is checked
+    // (nothing to merge it with), Confirm becomes "Save" and writes the edited
+    // title (and, on the per-row dock, discipline / note) to that one course —
+    // NO merge_into, NO merge side-effects (so it isn't marked as a merged row
+    // the way doConsolidate→applyMergeLocal would). unified_title is the same
+    // curation field a merge writes on its target, so the generator renames the
+    // course on the next sync; we mirror it locally now. Reversible (delete the
+    // kb_curation row). Official C-ID/CCN titles are firewalled — refused here.
+    function doRename(id, title, disc, note, done) {
+      ensureFresh().then(function (sess) {
+        if (!sess) { signOut(); session = null; renderAuth(); render(); alert("Sign-in expired — please sign in again."); return; }
+        var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
+        var r0 = byId[id];
+        if (r0 && (r0.id_system === "C-ID" || r0.id_system === "CCN-ID")) {
+          alert("This is an official C-ID/CCN course — its title is authoritative and can't be renamed here."); return;
+        }
+        var curDisc = (r0 && r0.disc) || "";
+        var items = [];
+        if (title) items.push({ course_id: id, field: "unified_title", value: title });
+        if (disc && disc !== curDisc) items.push({ course_id: id, field: "discipline", value: disc });
+        if (note) items.push({ course_id: id, field: "merge_note", value: note });
+        if (!items.length) { alert("Nothing to save — edit the title, discipline, or note first."); return; }
+        saveCurations(items, sess).then(function (resp) {
+          if (!resp.ok) { alert("Save failed (status " + resp.status + ")."); return; }
+          if (r0) {
+            if (title) r0.title = title;
+            if (disc && disc !== curDisc) { r0.disc = disc; liveDiscOverlay[id] = { value: disc, reviewer_email: sess.email, reviewed_at: today() }; }
+            if (note) r0.note = note;
+          }
+          if (done) done();
+          render();
+          alert("Saved “" + (title || (r0 && r0.title) || id) + "”. It shows as Generated until you Verify it; it fully materializes on the next daily sync (or via Sync now).");
+        }).catch(function (e) { alert("Could not save: " + ((e && e.message) || "network error")); });
+      });
+    }
+
     // ---- Member re-home (Session 54) ----------------------------------------
     // Pull ONE college course out of an over-merged family and send it to its
     // rightful place: merge into an EXISTING course (searched + similarity-
@@ -1311,6 +1351,9 @@
       var titleIn = el("input", { type: "text", value: opts.preTitle, style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
       container.appendChild(titleIn);
       var titleDefault = titleIn.value;   // restored when an override is undone
+      // Re-evaluate the Confirm/Save button as the curator edits the title — a
+      // single checked course + an edited title flips it to "Save" (S72 item 3).
+      titleIn.oninput = function () { refreshTarget(); };
       container.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" },
         ["Course Discipline",
          infoIcon("The MQ discipline of the merged course. When you merge INTO an existing course it's inherited from that surviving ★ course (shown below, read-only here) — change it later from that course's row, or on the per-row ⚇ dialog where re-disciplining is enabled. When you MINT a new course it's pre-filled from the members and editable here. Never set on a firewalled official C-ID/CCN course (it keeps its own).")]));
@@ -1605,12 +1648,16 @@
             }
           }
           pool.sort(function (a, b) { return b[0] - a[0]; });
-          var shown = pool.slice(0, 25);
+          // An EXPLICIT keyword should surface ALL matches (Sam, S72 item 2 —
+          // "pull in all courses with the term"), so it gets a roomy cap; the
+          // similarity (no-keyword) path stays tight at 25 to avoid noise.
+          var cap = terms.length ? 100 : 25;
+          var shown = pool.slice(0, cap);
           shown.forEach(function (p) {
             var en = p[1];
             addCandidateRow({ id: en[0], t: en[1], s: en[2], k: en[3], u: en[4], g: en[3] === "Stand-Alone" ? 1 : 0 }, true);
           });
-          countOut.textContent = shown.length ? ("+" + shown.length + (pool.length > 25 ? "+" : "")) : "";
+          countOut.textContent = shown.length ? ("+" + shown.length + (pool.length > cap ? "+" : "")) : "";
           addNoHits.style.display = (!shown.length && (terms.length || pos > 0)) ? "block" : "none";
           refreshTarget();
           // Lazy DESCRIPTION blend (Sam: "title and description if available"):
@@ -1740,8 +1787,26 @@
         // merge/mint. `go` is a hoisted var (undefined on the first call, before
         // the button exists) — guard for it.
         if (go) {
-          var nChk = cbs.filter(function (x) { return x.cb.checked; }).length;
-          go.disabled = nChk < (overrideTarget ? 1 : 2);
+          var chk = cbs.filter(function (x) { return x.cb.checked; });
+          var nChk = chk.length;
+          // Single-course RENAME (Sam, S72 followup item 3): exactly one course
+          // checked, with nothing to merge it into, and the title (or, on a
+          // re-discipline-enabled feeder, the discipline) has been edited → the
+          // button becomes "Save" so the curator can rename a lone course (e.g.
+          // "Russian 1" → "Russian (Beg)") without needing a second course.
+          var one = nChk === 1 ? chk[0].m : null;
+          var oneCur = one ? ((byId[one.id] && byId[one.id].disc) || one.d || "") : "";
+          var titleChanged = !!titleIn.value.trim() && titleIn.value.trim() !== (titleDefault || "").trim();
+          var discChanged = !discSel.disabled && !!discSel.value && discSel.value !== oneCur;
+          var renameMode = !overrideTarget && !isSingleton && nChk === 1 && (titleChanged || discChanged);
+          if (renameMode) {
+            go.textContent = "✓ Save";
+            go.disabled = false;
+          } else {
+            go.textContent = isSingleton ? "✓ Create unified course"
+              : (overrideTarget ? ("✓ Fold into " + overrideTarget[0]) : "✓ Confirm merge");
+            go.disabled = nChk < (overrideTarget ? 1 : 2);
+          }
           go.style.opacity = go.disabled ? "0.5" : "";
           go.style.cursor = go.disabled ? "not-allowed" : "pointer";
         }
@@ -1751,6 +1816,21 @@
       var go = el("button", { style: goCss }, [isSingleton ? "✓ Create unified course" : "✓ Confirm merge"]);
       go.onclick = function () {
         var picked = cbs.filter(function (x) { return x.cb.checked; }).map(function (x) { return x.m; });
+        // Single-course RENAME (Sam, S72 followup item 3): one course checked,
+        // nothing to merge it with → Save the edited title (+ discipline/note)
+        // to that one course. Routed through opts.onRename so the feeder owns
+        // persistence (no merge_into, no merged-row side-effects).
+        if (!overrideTarget && !isSingleton && picked.length === 1 && opts.onRename) {
+          var one = picked[0];
+          var newTitle = titleIn.value.trim();
+          var newDisc = (!discSel.disabled && discSel.value) ? discSel.value : "";
+          var newNote = noteIn.value.trim();
+          if (!newTitle && !newDisc && !newNote) {
+            alert("Edit the title (or discipline) to save a rename, or check another course to merge into."); return;
+          }
+          opts.onRename(one.id, newTitle, newDisc, newNote);
+          return;
+        }
         if (overrideTarget) {
           // Fold the checked members INTO the curator-chosen existing course.
           // It keeps its own identity/title/discipline (title "" so
@@ -1943,15 +2023,17 @@
         // Stand-Alone folded this cycle) so a confirmed group can't re-offer.
         var mergedAway = function (id) { return (byId[id] && byId[id]._mergedAway) || !!liveMergePending[id]; };
         function liveMembers(g) { return g.members.filter(function (m) { return !mergedAway(m.id); }); }
-        // ── CCR filter carry-over (Sam, S70 task 1) ──────────────────────────
-        // The filters the curator set on the main CCR table (discipline, subject,
-        // source, credit, confidence, audit-triage, blank-only, …) carry into the
-        // worklist: a group surfaces only when ≥1 of its live members satisfies
-        // them, and the in-popup ➕/⌕ searches are constrained the same way. The
-        // CCR free-text search is carried VISIBLY instead — it pre-seeds the
-        // worklist's own search box (below) so it stays editable and doesn't
-        // double-constrain. A checkbox lets the curator drop the carry-over.
-        var applyCcr = true;
+        // ── CCR filter coupling (DECOUPLED — Sam, S72 followup item 1) ───────
+        // The worklist used to mirror the main CCR table's filters (discipline,
+        // subject, source, credit, …) behind a "Match the CCR table filters"
+        // checkbox, and gate its ➕/⌕ candidate searches the same way. Sam found
+        // it redundant — the worklist has its OWN Search box + Discipline filter +
+        // Level bands — and it silently hid courses from the keyword search (a
+        // keyword should "pull in all courses with that term", item 2). So the
+        // coupling is OFF: `applyCcr` stays false, the checkbox is gone, and the
+        // candidate/override searches are NOT CCR-gated. The CCR free-text search
+        // is still carried VISIBLY into the worklist's own search box (below).
+        var applyCcr = false;
         function ccrFiltersActive() {
           return !!(state.kind || state.source || state.status || state.disc || state.subj
             || state.credit || state.conf || state.artic || state.official
@@ -1961,7 +2043,10 @@
         // passes() but ignoring the CCR text box (state.q) — the worklist has its
         // own search; carrying q here too would just hide everything.
         function passesNoQ(r) { var sq = state.q; state.q = ""; var ok = passes(r); state.q = sq; return ok; }
-        function rowPassesCcr(en) { var r = byId[en[0] != null ? en[0] : en.id]; return r ? passesNoQ(r) : true; }
+        // Candidate/override search gate. With the coupling off (applyCcr false,
+        // the default now), this returns true for everything so a keyword surfaces
+        // EVERY matching course regardless of the CCR table's filters (item 2).
+        function rowPassesCcr(en) { var r = byId[en[0] != null ? en[0] : en.id]; return (r && applyCcr) ? passesNoQ(r) : true; }
         function groupMatchesCcr(g) {
           if (!applyCcr || !ccrFiltersActive()) return true;
           var judged = 0, passed = 0;
@@ -2087,6 +2172,25 @@
         // as redundant (the move-cursor on this bar is self-evident).
         var headCount = el("span", { style: "font-size:.8rem;color:#64748b;font-weight:600;" }, [""]);
         head.appendChild(headCount);
+        // Prev/Next at the TOP next to the counter (Sam, S72 followup item 4 —
+        // the bottom pager was below the fold on a long candidate list, so there
+        // was no visible way to step BACKWARD). Jumps to the adjacent PASSING
+        // group; disabled state is refreshed per render. nextPassing/renderGroup/i
+        // are hoisted in this scope, resolved at click time.
+        var headNavCss = "border:1px solid #cbd5e1;background:#fff;border-radius:5px;cursor:pointer;font-size:.85rem;line-height:1;color:#334155;padding:2px 7px;";
+        var headPrev = el("button", { type: "button", "aria-label": "Previous suggestion", title: "Previous suggestion", style: headNavCss }, ["‹"]);
+        var headNext = el("button", { type: "button", "aria-label": "Next suggestion", title: "Next suggestion", style: headNavCss }, ["›"]);
+        headPrev.onclick = function () { var p = nextPassing(i, -1); if (p >= 0) { i = p; renderGroup(); } };
+        headNext.onclick = function () { var n = nextPassing(i, 1); if (n >= 0) { i = n; renderGroup(); } };
+        head.appendChild(headPrev); head.appendChild(headNext);
+        function syncHeadNav() {
+          var p = nextPassing(Math.min(i, groups.length), -1), n = nextPassing(i, 1);
+          [[headPrev, p], [headNext, n]].forEach(function (pair) {
+            pair[0].disabled = pair[1] < 0;
+            pair[0].style.opacity = pair[1] < 0 ? ".4" : "";
+            pair[0].style.cursor = pair[1] < 0 ? "default" : "pointer";
+          });
+        }
         head.appendChild(el("span", { style: "flex:1;" }, []));
         // Global Conservative↔Aggressive slider (Sam, S70). One control that
         // recalibrates how many suggestions surface across all scored lanes.
@@ -2135,17 +2239,11 @@
           sugSt = setTimeout(function () { sugQuery = v.trim().toLowerCase(); i = 0; renderGroup(); }, 180);
         };
         searchRow.appendChild(sugSearch);
-        // CCR-filter carry-over toggle (task 1): on by default when the curator
-        // arrived with CCR filters set; otherwise a no-op the curator can ignore.
-        var ccrRow = el("label", { style: "display:flex;align-items:center;gap:6px;margin:6px 0 0;font-size:.78rem;color:#64748b;cursor:pointer;" });
-        var ccrCb = el("input", { type: "checkbox" }); ccrCb.checked = applyCcr;
-        ccrCb.onchange = function () { applyCcr = this.checked; i = 0; renderGroup(); };
-        ccrRow.appendChild(ccrCb);
-        ccrRow.appendChild(document.createTextNode(
-          ccrFiltersActive()
-            ? "Match the CCR table filters (discipline, subject, source, credit…) — also constrains the ➕/⌕ searches below"
-            : "Match the CCR table filters (none set right now)"));
-        searchRow.appendChild(ccrRow);
+        // (The "Match the CCR table filters" checkbox was REMOVED — Sam, S72
+        // followup item 1. The worklist is driven by its own Search box +
+        // Discipline filter + Level bands; it is no longer coupled to the main
+        // CCR table's filters, which were redundant and quietly hid courses from
+        // the candidate keyword search. `applyCcr` stays false, see above.)
         // Level/format band filter row (Sam, S70). Walk the worklist one level at
         // a time — toggling any OFF narrows to groups with ≥2 matching members. The
         // §55050 level convention (S72 #9) drives the classification underneath; the
@@ -2247,6 +2345,7 @@
           // lane groups below the looseness floor (their weakest pair cosine =
           // g.score; default 0.62 = today's behavior, slide down to reveal more).
           while (i < groups.length && !groupPasses(i)) i++;
+          syncHeadNav();   // keep the header Prev/Next in sync (S72 item 4)
           if (i >= groups.length) {
             headCount.textContent = "";
             box.appendChild(el("p", { style: "color:#6b7280;" }, [sugQuery
@@ -2380,6 +2479,9 @@
             onConfirm: function (r) {
               doConsolidate(r.chosen, r.title, r.disc, r.target, function () { i++; renderGroup(); }, true, r.note);
             },
+            // Single-course rename (S72 item 3) — Save the edited title to the
+            // one checked course, then re-render this group so it reflects it.
+            onRename: function (id, t, d, n) { doRename(id, t, d, n, function () { renderGroup(); }); },
           });
           // ── Pager (Sam, S72 #1) ── A ‹ Prev · position · Next › selector at the
           // sidebar bottom so you can step BACKWARD/forward through the queue, not
