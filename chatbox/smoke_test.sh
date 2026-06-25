@@ -18,8 +18,12 @@ ANON="${CPL_CHAT_ANON:-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFz
 
 fail=0
 
-extract() { # parse SSE on stdin -> concatenated assistant text
-  python3 - <<'PY'
+# Write the SSE parser to a file ONCE. (Don't inline it as `python3 - <<'PY'`
+# inside a function that also receives piped data — the heredoc becomes python's
+# stdin and the piped SSE never reaches sys.stdin.read(), so every answer parses
+# as empty. That bug made an earlier run report all 5 modes "empty".)
+PARSER="$(mktemp)"
+cat > "$PARSER" <<'PY'
 import sys, json
 out = []
 for blk in sys.stdin.read().split("\n\n"):
@@ -35,7 +39,8 @@ for blk in sys.stdin.read().split("\n\n"):
             pass
 sys.stdout.write("".join(out))
 PY
-}
+
+extract() { python3 "$PARSER"; }   # reads the SSE from its (piped) stdin
 
 run() { # label  json-body
   local label="$1" body="$2"
