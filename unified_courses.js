@@ -690,21 +690,30 @@
       return subj4Of(r);
     }
     function commonSubjPending(r) { return commonSubjOf(r) !== subj4Of(r); }
-    // Course level/format bands from a title (Sam, S70 — the worklist
-    // Beg/Int/Adv/Lab/WkExp filter). LEVEL is one of beg/int/adv and is mutually
-    // exclusive (adv > int > beg by precedence); an UNQUALIFIED title counts as
-    // beginning ("including those with no level qualifier"). LAB and WkExp are
-    // independent format flags — Lab / Lec / Lec-Lab are distinct courses, so a
-    // Lab must be curatable on its own (never folded into a Lec course). Digits
-    // are read only as whole tokens 1–4 (so "CS6"/"2D" don't misread as a level).
+    // Course level from a title — the Title-5-§55050 Common-Course LEVEL
+    // convention (Sam, S72 #9). Three levels (internal keys stay beg/int/adv =
+    // the UI's Level 1/2/3); precedence adv > int > beg; an UNQUALIFIED title is
+    // Level 1. Classification order: (1) explicit ranges win — a long sequence
+    // packs by pairs 1-2→L1 · 3-4→L2 · 5-6→L3 (after the punctuation strip a
+    // range reads as two single-digit tokens, e.g. "1 2"); (2) words + Roman
+    // ordinals + "First/Second/Third Semester"; (3) a bare SINGLE number as a
+    // HINT — 1→L1, 2→L2, 3+→L3 (a lone "3" can't reveal whether it's mid-ladder
+    // (L2) or top-of-3 (L3), so the curator overrides). Bare numbers are read
+    // only as whole single-digit tokens (so "CS6"/"2D"/"Math 56" don't misread).
+    // LAB and WkExp are independent format flags — Lab / Lec / Lec-Lab are
+    // distinct courses, so a Lab must be curatable on its own. Full convention:
+    // docs/kb-notes/reference-course-level-convention.md.
     function courseBands(title) {
       var t = " " + String(title || "").toLowerCase().replace(/[^a-z0-9]+/g, " ") + " ";
       var lab = /\blab(s|oratory)?\b/.test(t);
       var wkexp = /\b(work experience|internship|cooperative|occupational work|cwe|cwee|practicum|fieldwork|externship)\b/.test(t);
       var level;
-      if (/\b(advanced|adv|iii|iv|3|4)\b/.test(t)) level = "adv";
-      else if (/\b(intermediate|inter|ii|2)\b/.test(t)) level = "int";
-      else level = "beg";   // beginning|intro|fundamental|elementary|basic|i|1 OR unqualified
+      if (/\b5\s+6\b/.test(t)) level = "adv";              // range 5-6 → Level 3
+      else if (/\b3\s+4\b/.test(t)) level = "int";         // range 3-4 → Level 2
+      else if (/\b1\s+2\b/.test(t)) level = "beg";         // range 1-2 → Level 1
+      else if (/\b(advanced|adv|third|iii|iv|3|4|5|6)\b/.test(t)) level = "adv";
+      else if (/\b(intermediate|inter|second|ii|2)\b/.test(t)) level = "int";
+      else level = "beg";   // introduction|elementary|beginning|basic|fundamentals|first|i|1 OR unqualified
       return { level: level, lab: lab, wkexp: wkexp };
     }
     // A course matches the active band set (OR semantics): its level is checked,
@@ -937,9 +946,9 @@
         // for a single course (it filters the candidate POOL, not a queue).
         var bands = { beg: true, int: true, adv: true, lab: true, wkexp: true };
         var bandRow = el("div", { style: "display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;margin:0 0 10px;font-size:.76rem;color:#64748b;" });
-        bandRow.appendChild(el("span", { style: "font-weight:600;", title: "Show only candidates in the checked level/format bands. Beg includes unqualified titles; Lab isolates lab-only courses (kept separate from Lec)." }, ["Levels:"]));
+        bandRow.appendChild(el("span", { style: "font-weight:600;", title: "Show only candidates in the checked level/format bands (Common-Course level convention): L1 Introduction/Elementary/Beginning/I/1 (incl. unqualified) · L2 Intermediate/Second/II/2 · L3 Advanced/Third/III/3+ (long sequences pack 1-2/3-4/5-6 → L1/L2/L3). Lab isolates lab-only courses (kept separate from Lec)." }, ["Levels:"]));
         var editorApi = null;
-        [["beg", "Beg"], ["int", "Int"], ["adv", "Adv"], ["lab", "Lab"], ["wkexp", "WkExp"]].forEach(function (pair) {
+        [["beg", "L1"], ["int", "L2"], ["adv", "L3"], ["lab", "Lab"], ["wkexp", "WkExp"]].forEach(function (pair) {
           var lab = el("label", { style: "display:inline-flex;align-items:center;gap:3px;cursor:pointer;" });
           var cb = el("input", { type: "checkbox" }); cb.checked = true;
           cb.onchange = function () { bands[pair[0]] = cb.checked; if (editorApi) editorApi.setBandFilter(bands); };
@@ -1291,7 +1300,9 @@
       var titleIn = el("input", { type: "text", value: opts.preTitle, style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
       container.appendChild(titleIn);
       var titleDefault = titleIn.value;   // restored when an override is undone
-      container.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" }, ["Discipline"]));
+      container.appendChild(el("label", { style: "display:block;font-weight:600;margin:10px 0 2px;" },
+        ["Course Discipline",
+         infoIcon("The MQ discipline of the merged course. When you merge INTO an existing course it's inherited from that surviving ★ course (shown below, read-only here) — change it later from that course's row, or on the per-row ⚇ dialog where re-disciplining is enabled. When you MINT a new course it's pre-filled from the members and editable here. Never set on a firewalled official C-ID/CCN course (it keeps its own).")]));
       var discSel = el("select", { class: "uc-filter", style: "min-width:280px;" });
       discSel.appendChild(el("option", { value: "" }, ["— choose —"]));
       var mqSet = {};
@@ -1376,14 +1387,15 @@
         cb.onchange = function () { refreshTarget(); };
         row.appendChild(cb);
         row.appendChild(el("span", { style: "flex:1;" }, [m.t || m.id]));
-        // Level/format band chip (Sam, S70) — Beg/Int/Adv + Lab/WkExp tags.
+        // Level/format band chip (Sam, S70; relabeled L1/L2/L3 per the §55050
+        // level convention, S72 #9) — Level 1/2/3 + Lab/WkExp tags.
         var bk = courseBands(m.t || m.title);
-        var bTags = [{ beg: "Beg", int: "Int", adv: "Adv" }[bk.level]];
+        var bTags = [{ beg: "L1", int: "L2", adv: "L3" }[bk.level]];
         if (bk.lab) bTags.push("Lab");
         if (bk.wkexp) bTags.push("WkExp");
         row.appendChild(el("span", {
           style: "font-size:.68rem;font-weight:600;padding:1px 6px;border-radius:10px;white-space:nowrap;background:#f1f5f9;color:#475569;",
-          title: "Detected level/format band (from the title): " + bTags.join(" · ") + ". Beg includes unqualified titles." },
+          title: "Detected course level/format (from the title): " + bTags.join(" · ") + ". Levels follow the Common-Course convention — L1 Introduction/Elementary/Beginning/I/1 (incl. unqualified) · L2 Intermediate/Second/II/2 · L3 Advanced/Third/III/3+. A bare number is a hint; override it where a long sequence packs 1-2/3-4/5-6 into L1/L2/L3." },
           [bTags.join("·")]));
         var isOfficial = m.k === "C-ID" || m.k === "CCN-ID";
         row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;",
@@ -2094,14 +2106,14 @@
             ? "Match the CCR table filters (discipline, subject, source, credit…) — also constrains the ➕/⌕ searches below"
             : "Match the CCR table filters (none set right now)"));
         searchRow.appendChild(ccrRow);
-        // Level/format band filter row (Sam, S70): Beg/Int/Adv/Lab/WkExp. Walk the
-        // worklist one band at a time — toggling any OFF narrows to groups with ≥2
-        // matching members and pre-checks only matching members. "Beg" includes
-        // unqualified titles; "Lab" isolates lab-only merges (Lab ≠ Lec).
+        // Level/format band filter row (Sam, S70; relabeled L1/L2/L3 per the
+        // §55050 level convention, S72 #9). Walk the worklist one level at a time —
+        // toggling any OFF narrows to groups with ≥2 matching members. L1 includes
+        // unqualified titles; Lab isolates lab-only merges (Lab ≠ Lec).
         var bandRow = el("div", { style: "display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;margin:7px 0 0;font-size:.76rem;color:#64748b;" });
         bandRow.appendChild(el("span", { style: "font-weight:600;",
-          title: "Show only merge candidates in the checked level/format bands. Beg = beginning/intro/foundations/elementary/1/I AND any title with no level qualifier. Lab = only Lab/Laboratory courses (kept separate from Lec). Uncheck a band to exclude it; a group needs ≥2 matching members to surface." }, ["Levels:"]));
-        [["beg", "Beg"], ["int", "Int"], ["adv", "Adv"], ["lab", "Lab"], ["wkexp", "WkExp"]].forEach(function (pair) {
+          title: "Show only merge candidates in the checked course-level/format bands (Common-Course convention): L1 Introduction/Elementary/Beginning/Foundations/I/1 AND any title with no level qualifier · L2 Intermediate/Second/II/2 · L3 Advanced/Third/III/3+ (long sequences pack 1-2/3-4/5-6 → L1/L2/L3; a bare number is a hint). Lab = only Lab/Laboratory courses (kept separate from Lec). Uncheck a level to exclude it; a group needs ≥2 matching members to surface." }, ["Levels:"]));
+        [["beg", "L1"], ["int", "L2"], ["adv", "L3"], ["lab", "Lab"], ["wkexp", "WkExp"]].forEach(function (pair) {
           var lab = el("label", { style: "display:inline-flex;align-items:center;gap:3px;cursor:pointer;" });
           var cb = el("input", { type: "checkbox" }); cb.checked = true;
           cb.onchange = function () { bands[pair[0]] = cb.checked; i = 0; renderGroup(); };
@@ -2184,9 +2196,10 @@
             : isTitle
             ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#fef9c3;color:#854d0e;margin:0 0 8px;" },
                 ["🏷 Title evidence · near-duplicate course titles"])
-            : el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#e0f2fe;color:#075985;margin:0 0 8px;" },
-                ["⛓ Merge into existing identity"]);
-          box.appendChild(badge);
+            : null;   // the default "merge into existing identity" chip is dropped
+                      // (Sam, S72 #8 — it states the obvious for the normal case);
+                      // its meaning leads the paragraph below instead.
+          if (badge) box.appendChild(badge);
           box.appendChild(el("p", { style: "margin:0 0 10px;color:#6b7280;" },
             [isSingleton
               ? "Single-college courses that share a title but match no existing identity (confidence score " + g.score + "). Check the ones that are the same course, then Confirm to create a NEW unified course from them — or Skip."
@@ -2198,7 +2211,7 @@
               ? "These identities carry NO official identity evidence anywhere, but their catalog descriptions match across colleges (similarity " + (g.score != null ? g.score : "?") + (g.cos_max != null && g.cos_max !== g.score ? "–" + g.cos_max : "") + (g.terms && g.terms.length ? "; shared terms: " + g.terms.join(", ") : "") + "). Different course levels, genders, and sports were screened out, but read the titles — uncheck any genuinely different course, then Confirm. Nothing is applied until you confirm."
               : isTitle
               ? "These courses carry NO official identity evidence, but their TITLES are near-duplicates (similarity " + (g.score != null ? g.score : "?") + (g.cos_max != null && g.cos_max !== g.score ? "–" + g.cos_max : "") + (g.terms && g.terms.length ? "; shared: " + g.terms.join(", ") : "") + "). Levels, years, refresher/instructor variants, genders, and sports were screened out. Unit loads may differ" + (g.spread ? " (spread here: " + g.spread + "u)" : "") + " — externally standardized curricula (BAR smog, POST modules) are packaged differently per college, so units are shown, not gated. Read each title; uncheck any genuinely different course, then Confirm. Nothing is applied until you confirm."
-              : "Same-title candidates (confidence score " + g.score + "). The ★ target is pre-checked; check each course to fold into it, then Confirm — or Skip. Nothing is applied until you confirm."]));
+              : "Merge into the existing identity — same-title candidates (confidence score " + g.score + "). The ★ target is pre-checked; check each course to fold into it, then Confirm — or Skip. Nothing is applied until you confirm."]));
           if ((isSingleton || isDesc || isTitle) && g.same_college) {
             box.appendChild(el("div", { style: "margin:0 0 10px;padding:7px 10px;border-radius:6px;background:#fef3c7;color:#92400e;font-size:.82rem;" },
               [isDesc

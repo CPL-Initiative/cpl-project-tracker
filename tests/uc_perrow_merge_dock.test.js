@@ -5,8 +5,8 @@
 //      "⚇ Merge" header carrying the course title.
 //   2. Single-course mode drops the suggestion-QUEUE chrome (no aggressiveness
 //      slider, no Skip/Keep, no "N of M") but embeds the SAME shared editor
-//      (Proposed unified title + Confirm) and a Beg/Int/Adv/Lab/WkExp band row.
-//   3. The band row filters the candidate POOL: unchecking "Adv" hides the
+//      (Proposed unified title + Confirm) and a L1/L2/L3/Lab/WkExp band row.
+//   3. The band row filters the candidate POOL: unchecking "L3" hides the
 //      advanced candidate row (display:none) without touching the others.
 //   4. ✕ closes the dock and clears the page reflow.
 //
@@ -102,13 +102,13 @@ check("init does not throw", !threw);
     !!dock.querySelector('input[type="range"]') && /Tight/.test(txt(dock)) && /Loose/.test(txt(dock)));
   check("inline 'Add more courses' keyword box present (shared editor)",
     Array.from(dock.querySelectorAll('input[type=search]')).some((i) => /keyword to guide/i.test(i.placeholder || "")));
-  const bandLabels = Array.from(dock.querySelectorAll("label")).filter((l) => /^(Beg|Int|Adv|Lab|WkExp)$/.test(txt(l)));
-  check("Beg/Int/Adv/Lab/WkExp band row present", bandLabels.length === 5);
+  const bandLabels = Array.from(dock.querySelectorAll("label")).filter((l) => /^(L1|L2|L3|Lab|WkExp)$/.test(txt(l)));
+  check("L1/L2/L3/Lab/WkExp band row present", bandLabels.length === 5);
 
   // ── 3. band filter hides candidate rows ───────────────────────────────────
   check("advanced candidate row visible before filtering",
     candRow("WEIG M1002") && candRow("WEIG M1002").style.display !== "none");
-  const advCb = bandLabels.find((l) => txt(l) === "Adv").querySelector('input[type=checkbox]');
+  const advCb = bandLabels.find((l) => txt(l) === "L3").querySelector('input[type=checkbox]');
   advCb.checked = false; advCb.dispatchEvent(new window.Event("change"));
   await sleep(20);
   check("unchecking Adv hides the advanced candidate row",
