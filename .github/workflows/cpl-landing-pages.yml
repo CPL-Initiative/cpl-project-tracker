@@ -1,18 +1,20 @@
-name: CPL college landing pages (scrape + sync)
+name: CPL college landing pages (sync)
 
-# Scrapes the college CPL landing-page links from map.rccd.edu/cpllandingpages/
-# and syncs them into chatbox_college_profiles.landing_page_url, which the CPL
-# Assistant (cpl-chat Edge Function) joins on the college name to surface each
-# college's CPL landing page in chat answers. Without this, those links go stale
-# (the old map.rccd.edu/cpl-student-portal/<CODE> form is dead).
+# Syncs each college's CPL landing-page link into
+# chatbox_college_profiles.landing_page_url, which the CPL Assistant (cpl-chat
+# Edge Function) joins on the college name to surface in chat answers.
 #
-# This RUNS ON A RUNNER because the agent sandbox is egress-blocked from
-# map.rccd.edu — the repo's runner-as-proxy pattern
-# (docs/kb-notes/playbook-runner-as-external-api-proxy.md).
+# SOURCE: the MAP College Landing Page API (POST {} → full {College,
+# CollegeLandingURL} list), the same one the public page's script calls. The old
+# base is rewritten to cpldashboardcccco/<code>. Runs ON A RUNNER because that
+# Azure host is egress-blocked from the agent sandbox (runner-as-proxy pattern).
+# A plain JSON POST — no browser/WAF handling.
+#
+# ⚠ INTERIM: superseded once these URLs land in the MAP Custom Report (then the
+# daily dashboard cron can publish them and this workflow is retired).
 #
 # Triggers:
-#   - push to claude/** (scoped) → DRY-RUN: scrape + reconcile, commit the JSON
-#     and upload the raw HTML so the result can be reviewed before any live write.
+#   - push to claude/** (scoped) → DRY-RUN: fetch + reconcile, commit the JSON.
 #   - schedule (weekly) → --apply: refresh the live table.
 #   - workflow_dispatch → --apply when the `apply` input is true (default).
 
@@ -28,7 +30,7 @@ on:
   workflow_dispatch:
     inputs:
       apply:
-        description: 'Write the scraped URLs to chatbox_college_profiles'
+        description: 'Write the landing URLs to chatbox_college_profiles'
         type: boolean
         default: true
 
@@ -40,7 +42,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  scrape-and-sync:
+  sync:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
@@ -48,11 +50,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-      - name: Install Playwright Chromium (to clear the map.rccd.edu WAF challenge)
-        run: |
-          python3 -m pip install --quiet playwright
-          python3 -m playwright install --with-deps chromium
-      - name: Scrape landing pages (apply on schedule / dispatch-apply)
+      - name: Sync landing pages (apply on schedule / dispatch-apply)
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
@@ -60,15 +58,8 @@ jobs:
           if [ "${{ github.event_name }}" = "schedule" ]; then APPLY="--apply"; fi
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.apply }}" = "true" ]; then APPLY="--apply"; fi
           echo "event=${{ github.event_name }} apply='${APPLY:-(dry-run)}'"
-          python3 chatbox/scrape_landing_pages.py $APPLY --dump-html /tmp/landing.html
-      - name: Upload raw HTML (recon)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: landing-html
-          path: /tmp/landing.html
-          if-no-files-found: ignore
-      - name: Commit the scraped mapping back to the branch
+          python3 chatbox/scrape_landing_pages.py $APPLY
+      - name: Commit the landing mapping back to the branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
