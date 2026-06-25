@@ -1,10 +1,11 @@
 // Session 72 (StarLander) #9 — the Title-5-§55050 Common-Course LEVEL convention.
-// courseBands() now classifies a title to Level 1/2/3 (internal beg/int/adv) and
-// the per-candidate chip shows L1/L2/L3. Order: explicit ranges (1-2/3-4/5-6 →
-// L1/L2/L3) win, then words + Roman ordinals + First/Second/Third Semester, then
-// a bare single number as a HINT (1→L1, 2→L2, 3+→L3). Verified via the per-row ⚇
-// dock's candidate level chips (all "Spanish …" variants share the token
-// {spanish}, so they all surface as candidates of the seed).
+// courseBands() classifies a title to a level (internal beg/int/adv) and the
+// per-candidate chip shows Beg/Int/Adv (Sam, S72: keep the human Beg/Int/Adv
+// labels; the §55050 classification logic stays). Order: explicit ranges
+// (1-2/3-4/5-6 → Beg/Int/Adv) win, then words + Roman ordinals + First/Second/
+// Third Semester, then a bare single number as a HINT (1→Beg, 2→Int, 3+→Adv).
+// Verified via the per-row ⚇ dock's candidate level chips (all "Spanish …"
+// variants share the token {spanish}, so they all surface as candidates of the seed).
 //
 // Run from repo root: `npm test` (or `node tests/uc_course_level_convention.test.js`).
 const fs = require("fs");
@@ -24,16 +25,16 @@ const mk = (id, title) => ({
 });
 // id → [title, expected level chip]
 const cases = {
-  "SPAN M1001": ["Spanish", "L1"],                    // unqualified → L1 (seed)
-  "SPAN M1012": ["Spanish 1-2", "L1"],                // range 1-2 → L1
-  "SPAN M1034": ["Spanish 3-4", "L2"],                // range 3-4 → L2
-  "SPAN M1056": ["Spanish 5-6", "L3"],                // range 5-6 → L3
-  "SPAN M1100": ["Intermediate Spanish", "L2"],       // word → L2
-  "SPAN M1101": ["Spanish III", "L3"],                // Roman ordinal → L3
-  "SPAN M1102": ["Second Semester Spanish", "L2"],    // First/Second/Third Semester → L2
-  "SPAN M1103": ["Advanced Spanish", "L3"],           // word → L3
-  "SPAN M1104": ["Spanish 2", "L2"],                  // bare number hint → L2
-  "SPAN M1105": ["Spanish 3", "L3"],                  // bare number hint (3+) → L3
+  "SPAN M1001": ["Spanish", "Beg"],                    // unqualified → Beg (seed)
+  "SPAN M1012": ["Spanish 1-2", "Beg"],                // range 1-2 → Beg
+  "SPAN M1034": ["Spanish 3-4", "Int"],                // range 3-4 → Int
+  "SPAN M1056": ["Spanish 5-6", "Adv"],                // range 5-6 → Adv
+  "SPAN M1100": ["Intermediate Spanish", "Int"],       // word → Int
+  "SPAN M1101": ["Spanish III", "Adv"],                // Roman ordinal → Adv
+  "SPAN M1102": ["Second Semester Spanish", "Int"],    // First/Second/Third Semester → Int
+  "SPAN M1103": ["Advanced Spanish", "Adv"],           // word → Adv
+  "SPAN M1104": ["Spanish 2", "Int"],                  // bare number hint → Int
+  "SPAN M1105": ["Spanish 3", "Adv"],                  // bare number hint (3+) → Adv
 };
 const rows = Object.keys(cases).map((id) => mk(id, cases[id][0]));
 const idx = Object.keys(cases).map((id) => [id, cases[id][0], "SPAN", "M-ID", 4]);
@@ -76,7 +77,7 @@ check("init does not throw", !threw);
   }
   function levelChip(id) {
     const r = candRow(id); if (!r) return null;
-    const s = Array.from(r.querySelectorAll("span")).find((x) => /^L[123]$/.test(txt(x)));
+    const s = Array.from(r.querySelectorAll("span")).find((x) => /^(Beg|Int|Adv)$/.test(txt(x)));
     return s ? txt(s) : null;
   }
 
