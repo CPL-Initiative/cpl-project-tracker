@@ -84,7 +84,7 @@ check("init does not throw", !threw);
   await sleep(300);
   const dock = doc.querySelector(".uc-worklist-dock");
   const slider = dock.querySelector('input[type="range"]');
-  const kw = Array.from(dock.querySelectorAll('input[type=search]')).find((i) => /keyword to guide/i.test(i.placeholder || ""));
+  const kw = Array.from(dock.querySelectorAll('input[type=search]')).find((i) => /to add more/i.test(i.placeholder || ""));
   check("looseness slider present", !!slider);
   check("keyword guide box present", !!kw);
   check("slider DEFAULTS to near-full Loose (S72 #4)", parseInt(slider.value, 10) >= 70);

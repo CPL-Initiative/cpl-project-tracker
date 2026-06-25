@@ -100,8 +100,8 @@ check("init does not throw", !threw);
     Array.from(dock.querySelectorAll("button")).some((b) => /Confirm merge/.test(txt(b))));
   check("the candidate Tight↔Loose looseness slider IS present",
     !!dock.querySelector('input[type="range"]') && /Tight/.test(txt(dock)) && /Loose/.test(txt(dock)));
-  check("inline 'Add more courses' keyword box present (shared editor)",
-    Array.from(dock.querySelectorAll('input[type=search]')).some((i) => /keyword to guide/i.test(i.placeholder || "")));
+  check("top Search box present (the single keyword source, S72 #5)",
+    Array.from(dock.querySelectorAll('input[type=search]')).some((i) => /to add more/i.test(i.placeholder || "")));
   const bandLabels = Array.from(dock.querySelectorAll("label")).filter((l) => /^(L1|L2|L3|Lab|WkExp)$/.test(txt(l)));
   check("L1/L2/L3/Lab/WkExp band row present", bandLabels.length === 5);
 

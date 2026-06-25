@@ -63,11 +63,11 @@ function hasCand(id) { return !!candCb(id); }
   if (merge) merge.onclick({ preventDefault: function () {} });
   await sleep(300);
 
-  // The per-row dialog embeds the shared editor — "Add more courses" is now an
-  // always-visible inline search (no toggle); matches land in the Candidates list.
+  // The per-row dock's top Search box is the single keyword source (S72 #5);
+  // matches land in the Candidates list as unchecked rows.
   const srch = Array.from(document.querySelectorAll('input[type="search"]'))
-    .find(function (i) { return /keyword to guide/i.test(i.placeholder || ""); });
-  check("the inline 'Add more courses' search box is present", !!srch);
+    .find(function (i) { return /to add more/i.test(i.placeholder || ""); });
+  check("the top Search box is present", !!srch);
 
   // --- NEW course: typing drops it into the list as an UNCHECKED candidate ---
   const beforeNew = hasCand("MUSC Z1009");

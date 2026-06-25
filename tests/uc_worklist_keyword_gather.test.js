@@ -87,25 +87,29 @@ function curBox(doc) {
   Array.from(doc.querySelectorAll("button, a")).find((b) => /Suggested merges/.test(txt(b)))
     .dispatchEvent(new window.Event("click"));
   await sleep(250);
-  const box = curBox(doc);
+  let box = curBox(doc);
 
-  // The group starts with 2 candidate rows.
+  // The group starts with 2 candidate rows (Tight pin → no auto-surface).
   const nStart = box.querySelectorAll("input.uc-cand-cb").length;
   check("group starts with 2 candidates", nStart === 2);
 
-  // The "Add more courses" search is ALWAYS visible (no toggle).
-  const addSearch = Array.from(box.querySelectorAll("input[type=search]"))
-    .find((i) => /keyword to guide/i.test(i.placeholder || ""));
-  check("the inline 'Add more courses' search is present (no toggle)", !!addSearch);
-  check("no collapsible ➕ keyword-gather toggle remains",
-    !Array.from(box.querySelectorAll("a")).some((a) => /Add more courses to this merge by keyword/.test(txt(a))));
+  // The keyword now comes from the worklist's TOP Search box (S72 #5), not a box
+  // inside the editor — typing there guides the shown group's candidate surfacing.
+  const dock = box.closest(".uc-worklist-dock");
+  const sugSearch = Array.from(dock.querySelectorAll("input[type=search]"))
+    .find((i) => /comma separates terms/i.test(i.placeholder || ""));
+  check("the worklist top Search box is present", !!sugSearch);
+  check("the editor no longer has its own keyword box",
+    !Array.from(box.querySelectorAll("input[type=search]")).some((i) => /keyword to guide/i.test(i.placeholder || "")));
 
-  // Search "english" → M9046 drops into the Candidates list as a NEW unchecked
-  // row; rows already in the group are excluded (no duplicate).
-  addSearch.value = "english";
-  addSearch.dispatchEvent(new window.Event("input"));
-  await sleep(300);
-  check("typing adds a 3rd candidate row directly in the list",
+  // Search "english" → the ESL group stays (it matches) and the off-group
+  // "Vocational English Communication" (M9046) surfaces as a NEW unchecked row;
+  // rows already in the group are excluded (no duplicate).
+  sugSearch.value = "english";
+  sugSearch.dispatchEvent(new window.Event("input"));
+  await sleep(350);
+  box = curBox(doc);
+  check("typing the keyword surfaces a 3rd candidate row",
     box.querySelectorAll("input.uc-cand-cb").length === 3);
   const addedRow = Array.from(box.querySelectorAll("div"))
     .find((d) => d.querySelector(":scope > input.uc-cand-cb") && /ESOL M9046/.test(txt(d)));

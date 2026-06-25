@@ -111,12 +111,13 @@ function curBox(doc) {
     !!Array.from(box.querySelectorAll("button")).find((b) => /Confirm merge/.test(txt(b))));
 
   // ── 2. editor-owned search affordances ──
-  // The "Add more" search is now an always-visible inline box (Session 72 #2 —
-  // matches drop into the Candidates list as unchecked rows), not a collapsible
-  // keyword panel.
-  check("editor offers the inline 'Add more courses' search",
-    /Add more courses/i.test(box.textContent)
-    && Array.from(box.querySelectorAll('input[type=search]')).some((i) => /keyword to guide/i.test(i.placeholder || "")));
+  // The "Add more" control is the Tight↔Loose candidate slider (Session 72 #4);
+  // the keyword now comes from the surface's top Search box (#5), not a box in
+  // the editor — so there's no /keyword to guide/ input inside the editor.
+  check("editor offers the 'Add more courses' looseness slider",
+    /Add more courses/i.test(box.textContent) && !!box.querySelector('input[type=range]'));
+  check("editor no longer has its own keyword box (moved to the top Search)",
+    !Array.from(box.querySelectorAll('input[type=search]')).some((i) => /keyword to guide/i.test(i.placeholder || "")));
   check("editor offers the ⌕ merge-into-a-different-course affordance",
     /Merge into a different existing course/i.test(box.textContent));
 
