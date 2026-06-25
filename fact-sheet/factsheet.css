@@ -1,0 +1,231 @@
+/* ===========================================================================
+   CPL Fact Sheet — standalone public page styles
+   Self-contained. Brand tokens mirror COBI's :root (cpl-project-tracker index.html)
+   so the sheet feels native, but this page carries NO COBI nav/chrome — it
+   "sits alone" so it can be shared publicly without exposing the other tabs.
+   =========================================================================== */
+
+:root {
+  --paper:        #F4F2ED;
+  --surface:      #FFFFFF;
+  --surface-subtle:#F7F5F1;
+  --surface-muted:#ECE9E2;
+  --ink:          #1C1C1A;   /* headings, emphasis */
+  --body:         #3A3A36;
+  --muted:        #5C5C55;
+  --faint:        #87877F;
+  --border:       rgba(28,28,26,.14);
+  --border-strong:rgba(28,28,26,.30);
+  --seal-blue:    #002F6D;   /* CCCCO seal navy — the masthead/heading hue */
+  --cobalt:       #0047AB;   /* links / interactive */
+  --hunter:       #2C601A;   /* positive · savings · live */
+  --crimson:      #920000;   /* alerts */
+  --mustard-fill: #E3B341;   /* bright brand accent (bars/dots/on-dark) */
+  --mustard-text: #8B6800;   /* caution/brand text grade on light */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 3px rgba(28,28,26,.08), 0 8px 24px rgba(28,28,26,.06);
+  --maxw: 940px;
+  /* Document typography: Cambria for prose/headings; Calibri for data + KPIs.
+     Caladea/Carlito are the metric-compatible Linux clones (harmless if absent). */
+  --font-body: 'Cambria', 'Caladea', Georgia, 'Times New Roman', serif;
+  --font-data: 'Calibri', 'Carlito', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--body);
+  line-height: 1.55;
+  font-size: 16px;
+}
+
+/* Data + KPIs render in Calibri; everything else stays Cambria. */
+.kpi, .stat, table.data { font-family: var(--font-data); }
+
+a { color: var(--cobalt); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+
+/* ── Sticky action bar (screen only) ───────────────────────────────────── */
+.actionbar {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.actionbar .wrap {
+  display: flex; align-items: center; gap: 14px;
+  min-height: 54px; padding-top: 8px; padding-bottom: 8px;
+}
+.actionbar .ab-title { font-weight: 700; color: var(--seal-blue); font-size: 1rem; margin-right:auto; }
+.live-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: .82rem; font-weight: 600; color: var(--hunter);
+  background: rgba(44,96,26,.10); border: 1px solid rgba(44,96,26,.25);
+  border-radius: 999px; padding: 4px 11px; white-space: nowrap;
+}
+.live-chip.stale { color: var(--mustard-text); background: rgba(139,104,0,.10); border-color: rgba(139,104,0,.30); }
+.live-chip .dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--hunter);
+  box-shadow: 0 0 0 0 rgba(44,96,26,.55); animation: pulse 2.4s infinite;
+}
+.live-chip.stale .dot { background: var(--mustard-text); animation: none; }
+@keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(44,96,26,.45);} 70%{box-shadow:0 0 0 7px rgba(44,96,26,0);} 100%{box-shadow:0 0 0 0 rgba(44,96,26,0);} }
+
+.btn {
+  font: inherit; font-weight: 600; cursor: pointer;
+  border: 1px solid var(--border-strong); background: var(--surface);
+  color: var(--ink); border-radius: var(--radius-sm); padding: 8px 14px;
+  display: inline-flex; align-items: center; gap: 8px; transition: background .12s, border-color .12s;
+}
+.btn:hover { background: var(--surface-subtle); }
+.btn-primary { background: var(--seal-blue); border-color: var(--seal-blue); color: #fff; }
+.btn-primary:hover { background: #013a86; }
+
+/* ── Masthead ──────────────────────────────────────────────────────────── */
+.masthead { background: var(--surface); border-bottom: 4px solid var(--mustard-fill); }
+.masthead .wrap { padding-top: 26px; padding-bottom: 24px; display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+.masthead img.logo { height: 58px; width: auto; }
+.masthead .mh-text { min-width: 240px; flex: 1; }
+.masthead .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; font-weight: 700; color: var(--mustard-text); }
+.masthead h1 { margin: 4px 0 2px; font-size: 1.9rem; line-height: 1.15; color: var(--seal-blue); }
+.masthead .sub { color: var(--muted); font-size: 1rem; }
+
+/* ── Section + headings ────────────────────────────────────────────────── */
+main { padding: 8px 0 60px; }
+section { margin-top: 38px; scroll-margin-top: 70px; }
+section > h2 {
+  font-size: 1.42rem; color: var(--seal-blue); margin: 0 0 4px;
+  padding-bottom: 8px; border-bottom: 2px solid var(--surface-muted);
+}
+section > .lede { color: var(--muted); margin: 2px 0 14px; }
+h3 { font-size: 1.12rem; color: var(--ink); margin: 22px 0 6px; }
+h4 { font-size: 1rem; color: var(--seal-blue); margin: 16px 0 4px; }
+p { margin: 8px 0; }
+ul, ol { margin: 8px 0; padding-left: 22px; }
+li { margin: 4px 0; }
+.tightlist li { margin: 2px 0; }
+strong { color: var(--ink); }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 20px;
+}
+.note { font-size: .9rem; color: var(--muted); background: var(--surface-subtle);
+  border-left: 3px solid var(--mustard-fill); padding: 8px 12px; border-radius: 0 6px 6px 0; margin: 12px 0; }
+
+/* ── KPI cards (live) ──────────────────────────────────────────────────── */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(218px, 1fr)); gap: 12px; }
+.kpi {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 13px 15px; border-top: 4px solid var(--seal-blue);
+}
+.kpi .kpi-label { font-size: .74rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.kpi .kpi-value { font-size: 1.72rem; font-weight: 800; color: var(--seal-blue); line-height: 1.05; margin: 3px 0 2px; }
+.kpi .kpi-sub { font-size: .74rem; color: var(--faint); margin: 0 0 7px; }
+.kpi.savings { border-top-color: var(--hunter); }
+.kpi.savings .kpi-value { color: var(--hunter); }
+.kpi .bd { display: flex; justify-content: space-between; gap: 10px; font-size: .9rem; padding: 3px 0; border-top: 1px dashed var(--border); }
+.kpi .bd:first-of-type { border-top: none; }
+.kpi .bd .bd-label { color: var(--muted); }
+.kpi .bd .bd-val { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.kpi .bd .note { background: none; border: none; padding: 0; margin: 0; display: block; font-size: .76rem; color: var(--faint); }
+.kpi .kpi-fn { font-size: .68rem; color: var(--faint); line-height: 1.35; margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border); }
+
+/* ── Stat tiles (Vision 2030 / impact / success) ──────────────────────── */
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+.stat {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 16px 18px; text-align: left;
+}
+.stat .big { font-size: 1.85rem; font-weight: 800; color: var(--seal-blue); line-height: 1.05; }
+.stat.green .big { color: var(--hunter); }
+.stat .cap { font-size: .92rem; color: var(--muted); margin-top: 4px; }
+
+/* ── Tables ────────────────────────────────────────────────────────────── */
+.tbl-wrap { overflow-x: auto; }
+table.data { width: 100%; border-collapse: collapse; background: var(--surface); font-size: .92rem; }
+table.data th, table.data td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+table.data thead th { background: var(--seal-blue); color: #fff; font-size: .82rem; letter-spacing: .02em; }
+table.data tbody tr:nth-child(even) { background: var(--surface-subtle); }
+table.data td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+table.data tr.total td { font-weight: 800; background: var(--surface-muted); border-top: 2px solid var(--border-strong); }
+
+/* ── Resource link table ───────────────────────────────────────────────── */
+.res-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 12px; }
+.res {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 12px 14px; box-shadow: var(--shadow);
+}
+.res a.res-title { font-weight: 700; color: var(--seal-blue); }
+.res .res-desc { font-size: .86rem; color: var(--muted); margin-top: 3px; }
+
+/* ── Image figures (preserved screenshots) ─────────────────────────────── */
+figure { margin: 16px 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+figure img { display: block; width: 100%; height: auto; }
+figure figcaption { font-size: .85rem; color: var(--muted); padding: 8px 14px; border-top: 1px solid var(--border); }
+
+/* The student story card pairs an image with a pull quote */
+.story { display: grid; grid-template-columns: minmax(180px, 280px) 1fr; gap: 0; align-items: stretch; }
+.story img { width: 100%; height: 100%; min-width: 0; object-fit: cover; display: block; }
+.story .story-body { padding: 18px 22px; }
+.story blockquote { margin: 0; font-size: 1.02rem; color: var(--ink); }
+.story .story-by { margin-top: 10px; font-weight: 700; color: var(--seal-blue); }
+@media (max-width: 620px) { .story { grid-template-columns: 1fr; } .story img { max-height: 320px; } }
+
+/* ── Two-column feature blocks ─────────────────────────────────────────── */
+.cols-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.strategy { border-top: 4px solid var(--mustard-fill); }
+.strategy h4 { margin-top: 0; }
+
+/* ── Team roster ───────────────────────────────────────────────────────── */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 10px; }
+.person { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 13px; }
+.person .pn { font-weight: 700; color: var(--ink); }
+.person .pr { font-size: .86rem; color: var(--muted); }
+.person .pe { font-size: .82rem; }
+
+/* ── TOC ───────────────────────────────────────────────────────────────── */
+.toc { columns: 2; column-gap: 28px; font-size: .94rem; }
+.toc a { display: block; padding: 2px 0; }
+@media (max-width: 560px) { .toc { columns: 1; } }
+
+/* ── Footer ────────────────────────────────────────────────────────────── */
+footer.foot { border-top: 4px solid var(--seal-blue); background: var(--surface); margin-top: 40px; }
+footer.foot .wrap { padding: 22px; color: var(--muted); font-size: .9rem; }
+footer.foot strong { color: var(--ink); }
+
+/* ===========================================================================
+   PRINT — "Save as PDF" produces a clean, letter-size journalist fact sheet.
+   =========================================================================== */
+@media print {
+  @page { size: letter; margin: 0.4in; }
+  :root { --shadow: none; }
+  body { background: #fff; font-size: 10.5pt; line-height: 1.4; }
+  .actionbar, .no-print { display: none !important; }
+  .wrap { max-width: none; padding: 0; }
+  a { color: var(--seal-blue); text-decoration: none; }
+  /* show the URL after external links so the printed sheet keeps the resource directory usable */
+  .res a.res-title[href]::after { content: " — " attr(href); font-weight: 400; font-size: 8pt; color: var(--muted); word-break: break-all; }
+  .masthead { border-bottom-width: 3px; }
+  .masthead .wrap { padding: 6px 0 10px; }
+  .masthead h1 { font-size: 18pt; }
+  section { margin-top: 14pt; break-inside: avoid-page; }
+  section > h2 { font-size: 13pt; break-after: avoid; }
+  h3, h4 { break-after: avoid; }
+  .card, .kpi, .stat, .res, figure, .person, .strategy, table.data, .story { box-shadow: none; break-inside: avoid; }
+  .kpi-grid, .stat-grid { gap: 8px; }
+  .kpi .kpi-value { font-size: 15pt; }
+  .stat .big { font-size: 14pt; }
+  figure img { max-height: 3.4in; width: auto; max-width: 100%; margin: 0 auto; }
+  .story img { max-height: 2.6in; }
+  thead { display: table-header-group; }
+  footer.foot { break-inside: avoid; }
+}
