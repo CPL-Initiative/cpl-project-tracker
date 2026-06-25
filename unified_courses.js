@@ -2141,6 +2141,25 @@
           bandRow.appendChild(lab);
         });
         searchRow.appendChild(bandRow);
+        // ── Discipline filter (Sam, S72 #2) ── Work the worklist one MQ discipline
+        // at a time — "you need to see how courses fit together in disciplines."
+        // Populated from the disciplines actually present in the suggestion set
+        // (with group counts), so it's a short, useful menu. A group surfaces only
+        // if a live member carries the chosen discipline.
+        function memDisc(m) { return m.d || (byId[m.id] && byId[m.id].disc) || ""; }
+        function groupDiscs(g) { var s = {}; liveMembers(g).forEach(function (m) { var d = memDisc(m); if (d) s[d] = 1; }); return Object.keys(s); }
+        var discCount = {};
+        groups.forEach(function (g) { groupDiscs(g).forEach(function (d) { discCount[d] = (discCount[d] || 0) + 1; }); });
+        var discFilter = "";
+        function groupMatchesDisc(g) { return !discFilter || groupDiscs(g).indexOf(discFilter) >= 0; }
+        var discRow = el("div", { style: "margin:7px 0 0;font-size:.78rem;color:#64748b;display:flex;align-items:center;gap:5px;" });
+        discRow.appendChild(el("span", { style: "font-weight:600;" }, ["Discipline:"]));
+        var discSel = el("select", { class: "uc-filter", style: "max-width:75%;font-size:.8rem;" });
+        discSel.appendChild(el("option", { value: "" }, ["All disciplines"]));
+        Object.keys(discCount).sort().forEach(function (d) { discSel.appendChild(el("option", { value: d }, [d + " (" + discCount[d] + ")"])); });
+        discSel.onchange = function () { discFilter = this.value; i = 0; renderGroup(); };
+        discRow.appendChild(discSel);
+        searchRow.appendChild(discRow);
         shell.appendChild(searchRow);
         var box = el("div", { style: "flex:1;" }); shell.appendChild(box);
         // (PR-3) The panel is DOCKED right — width is set via the left grip, not a
@@ -2163,7 +2182,15 @@
             && passesAggr(g)
             && groupMatchesBands(g)
             && groupMatchesCcr(g)
+            && groupMatchesDisc(g)
             && matchesQuery(g);
+        }
+        // Adjacent PASSING group in a direction (Sam, S72 #1 pager) — skips over
+        // dismissed/filtered groups so Prev/Next land on a real one.
+        function nextPassing(from, dir) {
+          var j = from + dir;
+          while (j >= 0 && j < groups.length) { if (groupPasses(j)) return j; j += dir; }
+          return -1;
         }
 
         function renderGroup() {
@@ -2187,7 +2214,7 @@
           // search OR the CCR carry-over is narrowing the set, show the position
           // among MATCHING groups instead (task 1).
           var filtering = !!sugQuery || (applyCcr && ccrFiltersActive())
-            || !bandsAllOn(bands) || cohesionFloor !== DEFAULT_FLOOR;
+            || !bandsAllOn(bands) || cohesionFloor !== DEFAULT_FLOOR || !!discFilter;
           if (filtering) {
             var passList = []; for (var pj = 0; pj < groups.length; pj++) if (groupPasses(pj)) passList.push(pj);
             headCount.textContent = (passList.indexOf(i) + 1) + " of " + passList.length + " matching";
@@ -2303,6 +2330,22 @@
               doConsolidate(r.chosen, r.title, r.disc, r.target, function () { i++; renderGroup(); }, true, r.note);
             },
           });
+          // ── Pager (Sam, S72 #1) ── A ‹ Prev · position · Next › selector at the
+          // sidebar bottom so you can step BACKWARD/forward through the queue, not
+          // only Skip-forward. Prev/Next jump to the adjacent PASSING group.
+          var pagerCss = "padding:4px 12px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;font-size:.82rem;";
+          var prevIdx = nextPassing(i, -1), nextIdx = nextPassing(i, 1);
+          var pager = el("div", { style: "display:flex;align-items:center;justify-content:space-between;gap:8px;margin:14px 0 2px;padding-top:10px;border-top:1px solid #eef2f7;" });
+          var prevB = el("button", { type: "button", style: pagerCss + (prevIdx < 0 ? "opacity:.45;cursor:not-allowed;" : "cursor:pointer;") }, ["‹ Prev"]);
+          prevB.disabled = prevIdx < 0;
+          prevB.onclick = function () { if (prevIdx >= 0) { i = prevIdx; renderGroup(); } };
+          var nextB = el("button", { type: "button", style: pagerCss + (nextIdx < 0 ? "opacity:.45;cursor:not-allowed;" : "cursor:pointer;") }, ["Next ›"]);
+          nextB.disabled = nextIdx < 0;
+          nextB.onclick = function () { if (nextIdx >= 0) { i = nextIdx; renderGroup(); } };
+          pager.appendChild(prevB);
+          pager.appendChild(el("span", { style: "font-size:.78rem;color:#64748b;font-weight:600;white-space:nowrap;" }, [headCount.textContent]));
+          pager.appendChild(nextB);
+          box.appendChild(pager);
         }
         // ── PR-4: live CCR↔worklist re-filter ───────────────────────────────
         // While the dock is open, a change to a carried-over CCR filter
