@@ -30,84 +30,98 @@
     "sector": "Construction Technology",
     "exhibits": 46,
     "credit_recs": 122,
-    "adoptions": 122
+    "adoptions": 122,
+    "could_adopt": 0
    },
    {
     "sector": "Welding",
     "exhibits": 23,
     "credit_recs": 183,
-    "adoptions": 228
+    "adoptions": 228,
+    "could_adopt": 27
    },
    {
     "sector": "Fire Technology",
     "exhibits": 16,
     "credit_recs": 260,
-    "adoptions": 342
+    "adoptions": 342,
+    "could_adopt": 45
    },
    {
     "sector": "Computer Information Systems",
     "exhibits": 15,
     "credit_recs": 101,
-    "adoptions": 105
+    "adoptions": 105,
+    "could_adopt": 74
    },
    {
     "sector": "Automotive Technology",
     "exhibits": 11,
     "credit_recs": 149,
-    "adoptions": 149
+    "adoptions": 149,
+    "could_adopt": 63
    },
    {
     "sector": "Fire Technology - Wildland",
     "exhibits": 6,
     "credit_recs": 9,
-    "adoptions": 10
+    "adoptions": 10,
+    "could_adopt": 0
    },
    {
     "sector": "Emergency Medical Services",
     "exhibits": 5,
     "credit_recs": 65,
-    "adoptions": 66
+    "adoptions": 66,
+    "could_adopt": 59
    },
    {
     "sector": "Corrections",
     "exhibits": 2,
     "credit_recs": 30,
-    "adoptions": 46
+    "adoptions": 46,
+    "could_adopt": 2
    },
    {
     "sector": "Real Estate",
     "exhibits": 2,
     "credit_recs": 24,
-    "adoptions": 38
+    "adoptions": 38,
+    "could_adopt": 27
    },
    {
     "sector": "World Languages",
     "exhibits": 2,
     "credit_recs": 13,
-    "adoptions": 36
+    "adoptions": 36,
+    "could_adopt": 34
    },
    {
     "sector": "Administration of Justice",
     "exhibits": 1,
     "credit_recs": 114,
-    "adoptions": 117
+    "adoptions": 117,
+    "could_adopt": 55
    },
    {
     "sector": "Kinesiology/Health",
     "exhibits": 1,
     "credit_recs": 23,
-    "adoptions": 31
+    "adoptions": 31,
+    "could_adopt": 56
    },
    {
     "sector": "Other Statewide",
     "exhibits": 2,
     "credit_recs": 8,
-    "adoptions": 8
+    "adoptions": 8,
+    "could_adopt": 12
    }
   ],
   "in_progress": [
    "HVAC — faculty currently meeting"
-  ]
+  ],
+  "could_adopt_total": 116
  },
  "articulating_colleges": {
   "total": "102",
