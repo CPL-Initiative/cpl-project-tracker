@@ -47,6 +47,15 @@ def main():
                                 html, re.I))[:3]]
     out["linkbtn_count"] = len(re.findall(r"mapfy-linkbtn", html))
 
+    # The buttons are JS-built from a per-college data source. Dump the raw text
+    # right after each mapfy* assignment so we can see which holds the CURRENT
+    # cpldashboardcccco URLs + college names.
+    out["mapfy_var_samples"] = {}
+    for var in ("mapfyRDC", "mapfyStats", "mapfyCollegeUrls"):
+        m = re.search(re.escape(var) + r"\s*=\s*", html)
+        if m:
+            out["mapfy_var_samples"][var] = WS(html[m.end(): m.end() + 1400])
+
     # Does the page contain Sam's real codes anywhere (a fresher source)?
     out["needle_hits"] = {}
     for needle in ("allan", "losmedanos", "mendocino", "LOSC", "MENC",
