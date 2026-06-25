@@ -80,35 +80,80 @@ def fetch_plain(url: str) -> str:
         return body
 
 
+# The college landing list goes to cpldashboardcccco.azurewebsites.net/<CODE>;
+# the SPA also renders a couple of static nav links (…/insights/dashboard,
+# cpl-student-portal/chancellor|dashboard). A real per-college link is one of
+# these hosts whose path is NOT one of those nav targets.
+COLLEGE_ANCHOR_JS = """() => document.querySelectorAll(
+  "a[href*='cpldashboardcccco.azurewebsites.net/']:not([href*='/insights']), "
+  + "a[href*='/cpl-student-portal/']:not([href$='/chancellor']):not([href$='/dashboard'])"
+).length"""
+
+
 def fetch_browser(url: str) -> str:
-    """Render with headless Chromium so the Sucuri JS challenge can resolve
-    (it sets a cookie and reloads back to the real page)."""
+    """Render with headless Chromium: clear the Sucuri JS challenge, then wait
+    for the Angular SPA to fetch + render the per-college landing list. Also
+    logs the network so we can see the SPA's data API (the long-term source)."""
     from playwright.sync_api import sync_playwright
-    print("[fetch] launching headless Chromium to clear the WAF challenge…")
+    print("[fetch] launching headless Chromium to clear the WAF + render the SPA…")
+    api_hits = []
+
+    def on_response(resp):
+        try:
+            ct = (resp.headers or {}).get("content-type", "")
+            u = resp.url
+            if "json" in ct.lower() or any(k in u.lower() for k in (
+                    "api", "landing", "college", "portal", "list")):
+                body = ""
+                if "json" in ct.lower():
+                    try:
+                        body = resp.text()[:240]
+                    except Exception:
+                        body = "(unreadable)"
+                api_hits.append((u, ct, body))
+        except Exception:
+            pass
+
     with sync_playwright() as p:
-        browser = p.chromium.launch(args=["--no-sandbox"])
+        browser = p.chromium.launch(args=[
+            "--no-sandbox", "--disable-blink-features=AutomationControlled"])
         ctx = browser.new_context(user_agent=UA, locale="en-US")
         page = ctx.new_page()
+        page.on("response", on_response)
         page.goto(url, wait_until="domcontentloaded", timeout=60000)
-        html = page.content()
-        if looks_like_challenge(html):
-            # Wait for the challenge to set its cookie and bounce back; the real
-            # page carries landing anchors, so wait for one to appear.
+        if looks_like_challenge(page.content()):
             try:
-                page.wait_for_selector(
-                    "a[href*='cpldashboardcccco'], a[href*='cpl-student-portal']",
-                    timeout=45000)
+                page.wait_for_function("() => !document.documentElement.innerHTML."
+                                       "toLowerCase().includes('sgcaptcha')",
+                                       timeout=45000)
             except Exception:
-                # last resort: a couple of explicit reloads
                 for _ in range(3):
                     page.wait_for_timeout(4000)
                     page.goto(url, wait_until="networkidle", timeout=60000)
                     if not looks_like_challenge(page.content()):
                         break
-            html = page.content()
-        print(f"[fetch] browser rendered {len(html)} chars from {page.url}")
+        # WAF cleared — now wait for the SPA to render the per-college list.
+        try:
+            page.wait_for_function(f"{COLLEGE_ANCHOR_JS} >= 10", timeout=45000)
+        except Exception:
+            print("[fetch] college-list selector never reached 10 — capturing anyway")
+        page.wait_for_timeout(2500)  # let any final render settle
+        html = page.content()
+        try:
+            n = page.evaluate(COLLEGE_ANCHOR_JS)
+        except Exception:
+            n = "?"
+        print(f"[fetch] browser rendered {len(html)} chars, {n} college anchors, "
+              f"from {page.url}")
         browser.close()
-        return html
+
+    if api_hits:
+        print(f"[net] {len(api_hits)} JSON/api-ish responses observed:")
+        for u, ct, body in api_hits[:25]:
+            print(f"[net]   {ct[:30]:30} {u}")
+            if body:
+                print(f"[net]      body: {WS_RE.sub(' ', body)}")
+    return html
 
 
 def fetch(url: str) -> str:
