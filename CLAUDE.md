@@ -808,12 +808,42 @@ reuse, so keep it self-contained behind its CONFIG block.
   part of the daily GitHub Actions cron. Source-of-record is the **live
   function**, captured at `chatbox/supabase/functions/cpl-chat/index.ts`
   (re-capture with `get_edge_function` before editing if in doubt).
-- Live now: **v15 ACTIVE** (= v14 + the model swapped `claude-sonnet-4-20250514` →
-  **`claude-sonnet-4-6`** after Anthropic retired the dated Sonnet-4.0 snapshot
-  2026-06-15, which 404'd → 502 on every turn; Session 64, PR #471. v14 had added
+- Live now: **v17 ACTIVE** (model `claude-sonnet-4-6`; v15→v17 = the Session-73
+  response-logic tuning below. v15 = v14 + the model swap from the retired
+  `claude-sonnet-4-20250514` snapshot, Session 64 PR #471; v14 added
   `https://cpl-initiative.github.io` to `ALLOWED_ORIGINS`). **Use unversioned model
   aliases here, not dated snapshots** — a pinned `claude-*-YYYYMMDD` is a latent
   outage on its retirement date (`docs/kb-notes/playbook-edge-function-502-retired-model.md`).
+- **Response-logic conventions (tuned ongoing — `docs/cpl_assistant_lessons.md`).**
+  Answer *wording/behavior* is tuned by editing the system prompt + context builders
+  in `index.ts`, redeploying, and re-smoke-testing — a recurring activity (Sam:
+  "we'll be honing the logic for some time to come"). Standing rules baked into v17:
+  ① **Statewide ≠ one college** — Statewide Collaborative (CCC) standards are
+  system-wide; present them as available statewide and route the visitor to *their
+  own* college's landing page, never one college's page (`STATEWIDE_RULE` +
+  dedupe-by-title in `buildTopicContext`; the durable fact is
+  [`docs/kb-notes/reference-statewide-credit-recommendations.md`](docs/kb-notes/reference-statewide-credit-recommendations.md)).
+  ② **List course titles + units, never a bare "N credit recs"** (`CREDIT_LIST_RULE`
+  + `Eligible courses (title — units/credit)` lines). ③ **Ask a focusing follow-up
+  before dumping a big list** (`FOLLOWUP_RULE`), gated on the **client opting into
+  multi-turn** by sending a `history` field — `multiTurn = Array.isArray(history)`,
+  NOT `history.length` (the ask must be able to fire on the *first* broad question).
+  Cross-cutting rules go in a **module-level const appended to every mode's prompt**,
+  not inlined per-mode. `cpl_chat.js` sends `history`; the production widget omits it
+  and stays single-turn (backward-compatible — never regress that).
+- **Smoke-test on a RUNNER, not the sandbox.** `*.supabase.co` is egress-blocked
+  (org policy → 403 at the agent proxy), so you can't curl the function locally.
+  `chatbox/smoke_test.sh` + `.github/workflows/cpl-chat-smoke.yml` run all 4 modes +
+  a multi-turn follow-up on a GitHub Actions runner (push the script → read the
+  Actions log). Re-run after every redeploy.
+- **Heading toward "Sierra" + the CPL Student Portal.** Sam: the assistant will be
+  named **Sierra** and embedded in the upcoming **CPL Student Portal** (students
+  assemble a prior-learning portfolio + document storage + statewide
+  get/request-CPL recommendations). Not wired now; the multi-turn plumbing (v17) is
+  the foundation. The **Sierra rename** (base-prompt persona — currently still "You
+  are the CPL Chatbox" — + the tab avatar/intro/name chip) lands WITH the Portal,
+  not piecemeal. Keep `cpl_chat.js` self-contained behind its CONFIG block (it's the
+  embed unit).
   **NEXT for this surface:** the CCR/CER-grounded recommender + real-time benchmark +
   landing-site demand signal — scope + locked decisions in
   [`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`](docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md).

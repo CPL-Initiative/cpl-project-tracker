@@ -1,44 +1,44 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-25 (Session 72 · merge-workspace polish — Waves 1–4, PRs #520–#532, 13 merged)",
- "_session": 72,
- "_status": "SESSION 72 — the whole merge-workspace polish run is DONE + live (13 PRs #520–#532). Newest to try, all in the ✨ Suggested merges / per-row ⚇ Merge sidebar: the CCR table now SYNCS to whatever course the sidebar is on (it + its subject-neighbors float to the top, highlighted — toggle off with 'Sync the CCR list'); a Prev/Next pager + a Discipline filter walk the queue; the candidate strength slider now STARTS Loose (more similar courses already surfaced — drag toward Tight for fewer); ONE Search box up top is the keyword source, and it takes multiple terms separated by COMMAS (= OR: 'digital, imag'). Course levels stay labeled Beg / Int / Adv (we tried Level 1/2/3 and reverted on your call). NEXT (Fable): the standing lanes — the unverified-M-ID renumber re-mint (when the merge wave settles), the TMC acceptance engine, the CPL-Assistant recommender ETL.",
+ "_as_of": "2026-06-25 (Session 73 · CPL Assistant response-logic tuning — live on cpl-chat v17)",
+ "_session": 73,
+ "_status": "SESSION 73 — the CPL Assistant ('Sierra', going forward) just got three response-logic tweaks you asked for, now LIVE on both the dashboard tab AND the production map.rccd.edu widget (they share one backend): (1) it no longer says a STATEWIDE credit lives at one college — statewide recommendations are system-wide and you access them through YOUR OWN college's landing page; (2) instead of '6 credit recommendations' it now LISTS the actual course titles + units you'd be eligible for; (3) for a broad question that matches lots of colleges it first ASKS 'any particular part of California, or want to see them all?' before dumping the list. Earlier this session: the broken college landing-page links are fixed + auto-refreshing from the MAP API. Give all of it a spin and tell me what to refine next. NEXT (Fable): the CPL-Assistant CCR/CER recommender ETL is the big build; the M-ID renumber re-mint + TMC acceptance engine lanes still stand.",
  "items": [
   {
-   "id": "sam-ccr-sync",
+   "id": "sam-assistant-tweaks",
    "who": "sam",
-   "tab": "unified-courses",
-   "text": "NEW: when you're working a merge in the ✨ Suggested-merges sidebar (or a per-row ⚇ Merge), the big CCR table now SYNCS to it — the course you're on plus its same-subject neighbors float to the TOP of the list and the focused row is highlighted, so you can always see where it sits without scrolling. It's still a full list (scroll past the floated rows to reach true adjacents). Turn it off with the 'Sync the CCR list to the current course' checkbox in the sidebar. Tell me if the float helps or if you'd rather the table never moved."
+   "tab": "chatbot",
+   "text": "NEW: the CPL Assistant has three improvements live now — try a few questions and tell me what to tune. (1) Ask about a STATEWIDE credit (e.g. a statewide RE or firefighter recommendation): it should say it's available system-wide and point you to YOUR college's landing page, not to one specific college. (2) Ask 'what credit can I get for an EMT license?': it should LIST the eligible course titles + units, not just a number. (3) Ask a broad 'which colleges give credit for X' question: it should ASK whether you want a specific region or all options before showing a long list, then refine when you answer (e.g. 'Southern California')."
   },
   {
-   "id": "sam-pager-discfilter",
+   "id": "sam-landing-links",
    "who": "sam",
-   "tab": "unified-courses",
-   "text": "Two ways to steer the worklist now: a ‹ Prev / Next › pager at the bottom of the sidebar (walk the queue without the keyboard), and a Discipline filter up top (narrow the suggested merges to one discipline at a time — e.g. just Foreign Languages, or just Nursing). Say if you want the pager somewhere more reachable."
-  },
-  {
-   "id": "sam-loose-default-search",
-   "who": "sam",
-   "tab": "unified-courses",
-   "text": "The candidate strength slider now STARTS toward Loose — so more courses SIMILAR to the one you're merging are already in the list (unchecked) when the sidebar opens; drag toward Tight if it's too many. And the editor's own keyword box is GONE — the single Search box at the top of the sidebar is now the one place to type, and it takes MULTIPLE terms separated by commas (comma = OR, e.g. 'digital, imag' surfaces both). Flag it if the Loose default pulls in too much noise."
+   "tab": "chatbot",
+   "text": "Also fixed this session: the assistant's college CPL landing-page links were broken/stale (San Diego Miramar was pointing at the wrong code). They're now synced from the MAP College Landing Page API and auto-refresh weekly, so they should match map.rccd.edu/cpllandingpages. Click a couple from a college-specific answer and flag any that still misfire."
   },
   {
    "id": "sam-levels",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Course levels: each candidate now shows a Beg / Int / Adv chip and the Levels filter reads Beg · Int · Adv · Lab · WkExp (we briefly tried Level 1/2/3 and reverted to Beg/Int/Adv on your call). It classifies by Title-5 §55050 — explicit ranges (1-2/3-4/5-6) and words/ordinals are reliable; a bare single number ('Spanish 3') is just a HINT you can override, since the same title can be Int in a long ladder or Adv in a short one. Eyeball a language or ESL family and correct any level that reads wrong."
+   "text": "Carry-over: in the ✨ Suggested-merges / ⚇ Merge sidebar, each candidate shows a Beg / Int / Adv level chip (classified by Title-5 §55050). Explicit ranges + words/ordinals are reliable; a bare single number ('Spanish 3') is just a hint you can override. Eyeball a language or ESL family and correct any level that reads wrong."
   },
   {
    "id": "sam-morphological-fold",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Carry-over from S70 (still worth doing): the worklist groups WORD VARIANTS — 'Conversational Japanese' ↔ 'Japanese Conversation', 'Assisting' ↔ 'Assistant' (~866 more group). Confirm the clean language-conversation families when you get a chance. Where a group shows an amber '⚠ Spans N disciplines' note, eyeball it for homonyms (music vs office 'keyboard') before confirming."
+   "text": "Carry-over: the worklist groups WORD VARIANTS — 'Conversational Japanese' ↔ 'Japanese Conversation', 'Assisting' ↔ 'Assistant'. Confirm the clean language-conversation families when you get a chance. Where a group shows an amber '⚠ Spans N disciplines' note, eyeball it for homonyms (music vs office 'keyboard') before confirming."
   },
   {
    "id": "sam-first-light-bonus",
    "who": "sam",
    "tab": "dashboard",
    "text": "Standing bonus: we'll keep adding Arroyo-Seco-style California plein-air landscapes (Redmond, Guy Rose, Wendt, Payne) to First Light — flag any artist/work you'd love and we'll source it."
+  },
+  {
+   "id": "fable-assistant-etl",
+   "who": "fable",
+   "tab": "chatbot",
+   "text": "CPL-Assistant CCR/CER-grounded recommender ETL (green-lit, the big next build): build the CCR/CER/adoption-leverage ETL into shared Supabase so the Assistant can recommend the likely local course + credit rec, grounded in real course-identity data. Scope: docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md. The v17 multi-turn plumbing is the foundation. Sierra rename lands with the Student Portal, not piecemeal."
   },
   {
    "id": "fable-mid-renumber",
@@ -51,12 +51,6 @@
    "who": "fable",
    "tab": "tmc-builder",
    "text": "TMC Phase-2 ACCEPTANCE ENGINE in tmc_builder.js (Sam: 'Go for A'): per-slot verdict from the ASCCC rules (C-ID match = ✓ · slot.flexible = ⚠ accept-with-ASSIST · specific C-ID filled by a non-match = faculty review · unfilled = ○) + structural checklist + a Ready/N-issues banner. Consume slot.flexible + t.flexibility (#479). Scope: docs/kb-notes/tmc-co-review-scope.md."
-  },
-  {
-   "id": "fable-assistant-etl",
-   "who": "fable",
-   "tab": "chatbot",
-   "text": "CPL-Assistant CCR/CER-grounded recommender ETL (green-lit, queued): build the CCR/CER/adoption-leverage ETL into shared Supabase so the Assistant can recommend the likely local course + credit rec. Scope: docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md."
   }
  ]
 }

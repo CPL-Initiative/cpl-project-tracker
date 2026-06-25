@@ -131,6 +131,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — A stacked PR can squash to an empty commit; verify `main` has the diff (branch fresh per PR; the receipt is not the outcome)](kb-notes/methodology-stacked-pr-empty-squash.md) | methodology | published | 2026-06-23 | 2026-06-23 |
 | [Methodology — Forward-looking display for a curate-now / re-key-later split (show the destination + a pending marker; don't let the deferred backlog skew the derived map)](kb-notes/methodology-forward-looking-display-curate-now-rekey-later.md) | methodology | published | 2026-06-24 | 2026-06-24 |
 | [Reference — Common-Course level convention (Beg/Int/Adv; the §55050 classifier — ranges/words/ordinals win, bare numbers are a curator-overridable hint; the Levels filter + chip)](kb-notes/reference-course-level-convention.md) | reference | published | 2026-06-25 | 2026-06-25 |
+| [Reference — Statewide Collaborative (CCC) credit recommendations are not housed at one college (system-wide standards; access via your OWN college's landing page)](kb-notes/reference-statewide-credit-recommendations.md) | reference | published | 2026-06-25 | 2026-06-25 |
 
 ---
 

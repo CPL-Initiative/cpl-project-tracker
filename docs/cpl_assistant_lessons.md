@@ -209,3 +209,93 @@ Build the **ETL** (CCR/CER/adoption → shared Supabase tables). It's green-lit,
 nothing live, and is the foundation M1/M2/M3 all read from. Confirm Sam's 3 open
 decisions (portal-bot access, landing-site mechanics, Custom Reports field
 classification) before the M1 redeploy. See `docs/session_65_handoff.md`.
+
+---
+
+## Session 73 — 2026-06-25 — response-logic tuning (v15 → v17) + the multi-turn foundation
+
+> **This section is the ongoing-tuning record Sam asked for** ("ensure all CPL
+> Assistant work is in our checkpoint artifacts… we'll be honing the logic behind
+> responses for some time to come"). Every future tuning pass appends here.
+
+### (a) What was learned / done this checkpoint
+
+Sam reviewed a live answer and requested **three response-logic tweaks**, all edits
+to the shared `cpl-chat` function (`chatbox/supabase/functions/cpl-chat/index.ts`).
+Captured live **v15** for rollback, then deployed **v16 → v17** (the v17 redeploy
+corrected a multi-turn design bug found pre-test). `verify_jwt` stayed **false**.
+
+1. **Statewide credit recommendations are NOT housed at one college.** The answer
+   had pointed a visitor to *Saddleback's* page to "access" a statewide RE credit.
+   Statewide Collaborative (CCC) standards come from statewide faculty workgroups; a
+   college may *initiate/sign off* as the lead, but students **adopt/adapt and access
+   them via their OWN college's** CPL landing page. Fix: a module-level
+   **`STATEWIDE_RULE`** const appended to every prompt + `buildTopicContext`'s
+   statewide section now **dedupes by title** and **drops the single-college
+   attribution + landing-page URL**. → durable fact committed to its own KB note,
+   `docs/kb-notes/reference-statewide-credit-recommendations.md`.
+
+2. **List course titles + units, not "N credit recommendations."** A bare count
+   doesn't tell a student what they'd earn. Fix: a **`CREDIT_LIST_RULE`** const; both
+   context builders emit `Eligible courses (title — units/credit): …` (statewide ≤12,
+   local ≤8), prompt says list them with "…and more" when truncated (never invent
+   names). Dropped the `(N credit recs)` chrome.
+
+3. **Ask a focusing follow-up before dumping a big list.** Fix: made `cpl-chat`
+   **multi-turn-capable** behind a backward-compatible **`history`** param.
+   `buildSystemPrompt` gained a `multiTurn` flag → a `FOLLOWUP_RULE` that (multi-turn)
+   asks "any particular part of California, or see all your options?" before a
+   >~6-college dump, else keeps the old "handful + total count." The handler folds a
+   short refinement turn ("Southern California") into the **retrieval text**
+   (`searchText`) so topic/college search still finds the original subject. `cpl_chat.js`
+   keeps a bounded `convo` array and sends it as `history`.
+
+### Patterns that worked / things worth remembering
+
+- **Make multi-turn behavior a CLIENT opt-in, not a `history.length` check.** First
+  cut gated the follow-up ASK on `convo.length > 0` → it would **never ask on the
+  first question**, which is exactly when it should. Corrected to
+  `multiTurn = Array.isArray(history)`: the client opts in by *sending the field*
+  (even `[]`); the production widget omits it and stays single-turn. Caught at review,
+  before the smoke test — re-deployed v16→v17.
+- **Cross-cutting wording → a reusable const, appended to every mode's prompt.**
+  `STATEWIDE_RULE` / `CREDIT_LIST_RULE` are module-level template strings, so one edit
+  covers all 4 modes. Add the next rule the same way; don't inline per-mode.
+- **You can't curl the function from the sandbox** — `*.supabase.co` is egress-blocked
+  (org policy → 403 at the proxy, same as the Azure/MAP hosts in the landing-page
+  saga). The smoke test must run on a runner: `chatbox/smoke_test.sh` +
+  `.github/workflows/cpl-chat-smoke.yml` (push the script → read the Actions log).
+  Committed as a **reusable** deploy-time check — re-run it after every future tune.
+- **Capture-before-redeploy is the rollback** (held v15). The deploy **fails closed**
+  (Deno validates; a bad deploy leaves the prior version up), so v17 ACTIVE = it
+  compiled.
+
+### (b) Current state
+
+- **`cpl-chat` v17 ACTIVE**, `verify_jwt:false`, model `claude-sonnet-4-6`. All three
+  tweaks live on BOTH surfaces (dashboard tab + production widget — they share the
+  function). `cpl_chat.js` now sends `history` (multi-turn); the production widget,
+  which sends only `{query, session_id}`, is unaffected (single-turn).
+- Base prompt still reads **"You are the CPL Chatbox"** — the **Sierra** rename is
+  deliberately deferred to the Student-Portal phase.
+- Smoke harness committed; first run validates v17 across all 4 modes + a multi-turn
+  follow-up.
+
+### (c) Strategic roadmap — the CPL Student Portal & "Sierra"
+
+Sam: the assistant will become **"Sierra"** inside the upcoming **CPL Student Portal**
+(students assemble a prior-learning portfolio + document storage + statewide
+recommendations on where to get/request CPL). Not wired now, but the direction:
+- `cpl_chat.js` stays self-contained behind its CONFIG block (it's the embed unit).
+- The multi-turn plumbing added here is the foundation for a portfolio-aware Sierra.
+- The **Sierra rename** (base-prompt persona + the tab's avatar/intro/name chip) lands
+  with the Portal, not piecemeal.
+- The **CCR/CER recommender ETL** (`docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md`,
+  green-lit Session 64) is the next big capability — "where can I get this credit?"
+  answered from real course-identity + adoption-leverage data.
+
+### (d) Next concrete step
+
+Confirm the v17 smoke run is green (push → Actions log), spot-checking that a broad
+topic now asks the follow-up and statewide answers don't name one college. Then, on
+Sam's Portal greenlight: the Sierra persona rename + the recommender ETL.
