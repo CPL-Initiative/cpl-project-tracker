@@ -165,18 +165,31 @@ table.data tbody tr:nth-child(even) { background: var(--surface-subtle); }
 table.data td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 table.data tr.total td { font-weight: 800; background: var(--surface-muted); border-top: 2px solid var(--border-strong); }
 
-/* ── Statewide exhibits — expandable per program area ──────────────────── */
-.sw-details { display: grid; gap: 8px; }
-.sw-details details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); box-shadow: var(--shadow); overflow: hidden; }
-.sw-details summary { cursor: pointer; list-style: none; padding: 9px 14px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-.sw-details summary::-webkit-details-marker { display: none; }
-.sw-details summary::before { content: "▸"; color: var(--mustard-text); margin-right: 8px; }
-.sw-details details[open] summary::before { content: "▾"; }
-.sw-details .sw-sec { font-weight: 700; color: var(--seal-blue); }
-.sw-details .sw-meta { font-weight: 400; font-size: .8rem; color: var(--muted); font-family: var(--font-data); white-space: nowrap; }
-.sw-details .sw-list { margin: 0; padding: 2px 14px 12px 34px; columns: 2; column-gap: 26px; font-size: .9rem; list-style: disc; }
-.sw-details .sw-list li { margin: 2px 0; break-inside: avoid; }
-@media (max-width: 560px) { .sw-details .sw-list { columns: 1; } }
+/* ── Statewide exhibits — consolidated collapsible listing with centered columns ── */
+.sw-grid { display: block; }
+/* the shared 5-column track: program area (flex) + 4 centered numeric columns */
+.sw-head, .sw-grid summary, .sw-total {
+  display: grid; grid-template-columns: minmax(0, 1fr) 70px 84px 80px 88px;
+  align-items: center; gap: 8px; padding: 9px 14px;
+}
+.sw-head { font-size: .7rem; text-transform: uppercase; letter-spacing: .02em; color: var(--muted);
+  font-weight: 700; border-bottom: 2px solid var(--border-strong); }
+.sw-grid details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow); overflow: hidden; margin-top: 8px; }
+.sw-grid summary { cursor: pointer; list-style: none; }
+.sw-grid summary::-webkit-details-marker { display: none; }
+.sw-grid .sw-sec { font-weight: 700; color: var(--seal-blue); min-width: 0; }
+.sw-grid summary .sw-sec::before { content: "▸"; color: var(--mustard-text); margin-right: 8px; }
+.sw-grid details[open] summary .sw-sec::before { content: "▾"; }
+.sw-grid .sw-col { text-align: center; font-family: var(--font-data); font-variant-numeric: tabular-nums; line-height: 1.15; }
+.sw-head .sw-col { color: var(--muted); }
+.sw-grid summary .sw-col { font-weight: 700; color: var(--ink); }
+.sw-total { font-weight: 800; background: var(--surface-muted); border: 1px solid var(--border);
+  border-top: 2px solid var(--border-strong); border-radius: var(--radius-sm); margin-top: 8px; }
+.sw-total .sw-sec { color: var(--ink); }
+.sw-grid .sw-list { margin: 0; padding: 4px 14px 12px 32px; columns: 2; column-gap: 26px; font-size: .9rem; list-style: disc; }
+.sw-grid .sw-list li { margin: 2px 0; break-inside: avoid; }
+@media (max-width: 620px) { .sw-grid .sw-list { columns: 1; } }
 
 /* ── Resource link table ───────────────────────────────────────────────── */
 .res-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 12px; }

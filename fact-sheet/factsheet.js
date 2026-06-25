@@ -108,6 +108,14 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
     });
   }
+  function setCol(det, col, val) {
+    var c = det.querySelector('summary .sw-col[data-col="' + col + '"]');
+    if (c && val != null) c.textContent = num(val);
+  }
+  function setTCol(tot, col, val) {
+    var c = tot.querySelector('.sw-col[data-tcol="' + col + '"]');
+    if (c && val != null) c.textContent = num(val);
+  }
 
   // Bind the snapshot tier (the 5 exhibit/recommendation KPI cards + the
   // Statewide Exhibits per-sector table) from fact_sheet_metrics.json. Same
@@ -124,40 +132,30 @@
           'cr.total': cr.total, 'cr.ccc': cr.ccc, 'cr.local': cr.local,
           'me.total': me.total, 'me.ccc': me.ccc, 'me.local': me.local, 'me.orig': me.originating_colleges,
           'sw.total': sw.total, 'sw.program_areas': sw.program_areas, 'sw.distinct_recs': sw.distinct_credit_recs,
-          'sw.adoptions': sw.adoptions, 'sw.adopting': sw.adopting_colleges,
+          'sw.adoptions': sw.adoptions, 'sw.adopting': sw.adopting_colleges, 'sw.could_total': sw.could_adopt_total,
           'ac.total': ac.total, 'ac.orig': ac.originating, 'ac.adopting_ccc': ac.adopting_ccc,
           'vs.star': vs.star_colleges, 'vs.basic': vs.basic_training_colleges
         });
         var bt = $('#cr-by-type');
         if (bt && cr.by_type && cr.by_type.length) bt.textContent = 'By type — ' + cr.by_type.join(' · ');
 
-        var sectors = (sw.by_sector || []).slice().sort(function (a, b) { return (b.exhibits || 0) - (a.exhibits || 0); });
+        // Per-sector columns inside each collapsible header + the total row.
+        var sectors = sw.by_sector || [];
         if (sectors.length) {
-          var tb = $('#sw-tbody');
-          if (tb) {
-            var rows = '', te = 0, tr = 0, ta = 0;
-            for (var i = 0; i < sectors.length; i++) {
-              var s = sectors[i];
-              te += (+s.exhibits || 0); tr += (+s.credit_recs || 0); ta += (+s.adoptions || 0);
-              rows += '<tr data-sector="' + esc(s.sector) + '"><td>' + esc(s.sector) + '</td><td class="num">' +
-                num(s.exhibits) + '</td><td class="num">' + num(s.credit_recs) + '</td><td class="num">' + num(s.adoptions) + '</td></tr>';
-            }
-            rows += '<tr class="total"><td>Total — ' + sectors.length + ' program areas</td><td class="num">' +
-              num(te) + '</td><td class="num">' + num(tr) + '</td><td class="num">' + num(ta) + '</td></tr>';
-            tb.innerHTML = rows;
-          }
-          // refresh each <details> summary meta (match by attribute, no selector escaping)
-          var metaBy = {};
+          var bySec = {}, te = 0, tr = 0, ta = 0;
           sectors.forEach(function (s) {
-            metaBy[s.sector] = num(s.exhibits) + ' exhibit' + (s.exhibits == 1 ? '' : 's') + ' · ' +
-              num(s.credit_recs) + ' rec' + (s.credit_recs == 1 ? '' : 's') + ' · ' +
-              num(s.adoptions) + ' adoption' + (s.adoptions == 1 ? '' : 's');
+            bySec[s.sector] = s;
+            te += (+s.exhibits || 0); tr += (+s.credit_recs || 0); ta += (+s.adoptions || 0);
           });
           var dets = document.querySelectorAll('details[data-sector]');
           for (var j = 0; j < dets.length; j++) {
-            var key = dets[j].getAttribute('data-sector'), m = dets[j].querySelector('.sw-meta');
-            if (m && metaBy[key]) m.textContent = metaBy[key];
+            var s2 = bySec[dets[j].getAttribute('data-sector')];
+            if (!s2) continue;
+            setCol(dets[j], 'ex', s2.exhibits); setCol(dets[j], 'rec', s2.credit_recs);
+            setCol(dets[j], 'adopt', s2.adoptions); setCol(dets[j], 'could', s2.could_adopt);
           }
+          var tot = $('.sw-total');
+          if (tot) { setTCol(tot, 'ex', te); setTCol(tot, 'rec', tr); setTCol(tot, 'adopt', ta); }
         }
       })
       .catch(function (err) {

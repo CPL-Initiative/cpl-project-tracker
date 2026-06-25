@@ -4131,6 +4131,54 @@ def _fmt_int(n):
     return f"{n:,}"
 
 
+def _statewide_could_adopt_by_sector():
+    """Per program-area count of colleges that already teach an aligned local
+    course but have NOT yet adopted (articulated) the statewide credit
+    recommendation — the adoption-leverage "untapped adoption" signal. Distinct
+    colleges per sector (a college may appear in several sectors), plus the total
+    distinct across all sectors. Joins kb/coci_articulations.json
+    adoption_leverage → the statewide program-area via
+    kb/statewide_exhibit_categories.json (matched on the unified credential
+    title). M-ID leverage only (mirrors _build_statewide_prescriptive; C-ID
+    leverage deferred), over_merged withheld. Returns ({sector: n}, n_total) or
+    ({}, 0) when inputs are absent."""
+    art_path = os.path.join(SCRIPT_DIR, "kb", "coci_articulations.json")
+    cats = _load_statewide_categories()
+    if not (cats and os.path.exists(art_path)):
+        return {}, 0
+    try:
+        with open(art_path, encoding="utf-8") as f:
+            art = json.load(f)
+    except Exception as e:
+        print(f"  could-adopt: failed to load coci_articulations.json ({e})")
+        return {}, 0
+    titles = cats.get("titles", {}) or {}
+    ids = art.get("identities", {}) or {}
+    from collections import defaultdict
+    bysector = defaultdict(set)
+    allcols = set()
+    for r in (art.get("articulations") or []):
+        if r.get("identity_system") != "M-ID":
+            continue
+        lev = r.get("adoption_leverage")
+        if not isinstance(lev, list) or not lev:
+            continue
+        cid = r.get("course_id")
+        if bool(r.get("over_merged")) or bool((ids.get(cid) or {}).get("over_merged")):
+            continue
+        # Exact statewide-exhibit title match only (titles are pre-casefolded by
+        # _load_statewide_categories) — NOT the fallback bucket, so non-statewide
+        # credentials (AP exams, other certs) are correctly excluded.
+        sec = titles.get((r.get("unified_title") or "").strip().casefold())
+        if not sec:
+            continue
+        for c in lev:
+            c = (c or "").strip()
+            if c:
+                bysector[sec].add(c); allcols.add(c)
+    return {k: len(v) for k, v in bysector.items()}, len(allcols)
+
+
 def _write_fact_sheet_metrics(kpis, exhibit_data, live_data=None):
     """Emit fact_sheet_metrics.json — the snapshot-tier numbers the public CPL
     Fact Sheet (fact-sheet/) binds for its 5 exhibit/recommendation KPI cards +
@@ -4142,6 +4190,7 @@ def _write_fact_sheet_metrics(kpis, exhibit_data, live_data=None):
     if not exhibit_data:
         return
     ccc = exhibit_data.get("ccc_collaborative", {}) or {}
+    could, could_total = _statewide_could_adopt_by_sector()
 
     def _cv(key):
         return str(kpis.get(key, {}).get("value", "") or "")
@@ -4178,9 +4227,11 @@ def _write_fact_sheet_metrics(kpis, exhibit_data, live_data=None):
             "adopting_colleges": _bd("statewide_exhibits", "Adopting Colleges") or _fmt_int(ccc.get("adopting_colleges", 0)),
             "by_sector": [
                 {"sector": r.get("category", ""), "exhibits": r.get("exhibits", 0),
-                 "credit_recs": r.get("credit_recs", 0), "adoptions": r.get("adoptions", 0)}
+                 "credit_recs": r.get("credit_recs", 0), "adoptions": r.get("adoptions", 0),
+                 "could_adopt": could.get(r.get("category", ""), 0)}
                 for r in (ccc.get("by_category") or [])
             ],
+            "could_adopt_total": could_total,
             "in_progress": list(ccc.get("in_progress", []) or []),
         },
         "articulating_colleges": {
