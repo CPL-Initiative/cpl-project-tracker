@@ -1,0 +1,81 @@
+name: CPL college landing pages (scrape + sync)
+
+# Scrapes the college CPL landing-page links from map.rccd.edu/cpllandingpages/
+# and syncs them into chatbox_college_profiles.landing_page_url, which the CPL
+# Assistant (cpl-chat Edge Function) joins on the college name to surface each
+# college's CPL landing page in chat answers. Without this, those links go stale
+# (the old map.rccd.edu/cpl-student-portal/<CODE> form is dead).
+#
+# This RUNS ON A RUNNER because the agent sandbox is egress-blocked from
+# map.rccd.edu — the repo's runner-as-proxy pattern
+# (docs/kb-notes/playbook-runner-as-external-api-proxy.md).
+#
+# Triggers:
+#   - push to claude/** (scoped) → DRY-RUN: scrape + reconcile, commit the JSON
+#     and upload the raw HTML so the result can be reviewed before any live write.
+#   - schedule (weekly) → --apply: refresh the live table.
+#   - workflow_dispatch → --apply when the `apply` input is true (default).
+
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - '.github/workflows/cpl-landing-pages.yml'
+      - 'chatbox/scrape_landing_pages.py'
+      - 'chatbox/.landing-run'
+  schedule:
+    - cron: '37 14 * * 1'   # Mondays 14:37 UTC (~6:37 AM PT) — rarely-changing list
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'Write the scraped URLs to chatbox_college_profiles'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cpl-landing-pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  scrape-and-sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install Playwright Chromium (to clear the map.rccd.edu WAF challenge)
+        run: |
+          python3 -m pip install --quiet playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Scrape landing pages (apply on schedule / dispatch-apply)
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          APPLY=""
+          if [ "${{ github.event_name }}" = "schedule" ]; then APPLY="--apply"; fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.apply }}" = "true" ]; then APPLY="--apply"; fi
+          echo "event=${{ github.event_name }} apply='${APPLY:-(dry-run)}'"
+          python3 chatbox/scrape_landing_pages.py $APPLY --dump-html /tmp/landing.html
+      - name: Upload raw HTML (recon)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: landing-html
+          path: /tmp/landing.html
+          if-no-files-found: ignore
+      - name: Commit the scraped mapping back to the branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add chatbox/college_landing_pages.json
+          if git diff --cached --quiet; then
+            echo "No mapping changes to commit."
+          else
+            git commit -m "chore(chatbox): refresh college landing-page links [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
