@@ -230,11 +230,48 @@ After more hands-on use Sam sent nine refinements. Shipped one-concern-per-PR of
   to true adjacents — a "float, don't filter" pattern that keeps context while answering "where is the
   course I'm merging in the big list?".
 
-### State + next (as of #532 — Session 72 close)
-- **All 13 PRs (#520–#532) merged; 87/87 green.** The merge workspace is the most-iterated surface in
-  the CCR now — one shared `buildMergeEditor`, two feeders, a docked panel on both, a candidate
-  looseness slider, the §55050 level filter, CCR-table sync, and a multi-term search.
-- **Possible next polish (unchanged):** fold the two dock shells into a `buildDock()` helper; eyeball
-  whether the worklist's two sliders (queue Cons↔Aggr + per-merge Tight↔Loose) read as one too many.
+### State + next (as of #532)
+- All 13 PRs (#520–#532) merged. The merge workspace is the most-iterated surface in the CCR —
+  one shared `buildMergeEditor`, two feeders, a docked panel on both, a candidate looseness slider,
+  the §55050 level filter, CCR-table sync, and a multi-term search.
+
+### Wave 5 (#534) — Sam's "poke a bit more" review (2026-06-25)
+
+Four more asks after live use, all in the shared editor → both surfaces inherited them:
+
+| Ask | What |
+|---|---|
+| **Drop "Match the CCR table filters"** | The checkbox was redundant (the worklist has its own Search + Discipline + Level controls) and quietly hid courses from the candidate keyword search. **DECOUPLED**: `applyCcr` defaults **false**, `rowPassesCcr()` gates on it, so candidate/override searches are no longer CCR-constrained. The CCR free-text search still pre-seeds the worklist's own Search box. |
+| **Keyword surfaces ALL matching** | With the decouple + the result cap raised **25→100** for explicit keyword searches, a low-similarity match ("…Russian for Heritage Speakers" vs seed "Russian 1") now surfaces by keyword (it's below the Tight similarity threshold but the keyword bypasses similarity). |
+| **Single-course RENAME → Save** | Only the ★ target checked + an edited title → "✓ Confirm merge" becomes **"✓ Save"**, writing `unified_title` to that one course via a new **`doRename()`** — NO `merge_into`. |
+| **Header Prev/Next** | ‹ › next to the "N of M" counter so you can step BACKWARD without scrolling to the bottom pager (below the fold on a long candidate list). |
+
+**Lessons:**
+- **A single-course rename must NOT route through the merge path.** `doConsolidate`→`applyMergeLocal`
+  stamps `mt=1` / `members=1` / recomputes subj+variants — correct for a merge, WRONG for a rename
+  (it would mark a lone course as a merged row). Added a dedicated `doRename()` that writes only
+  `unified_title` (+ optional discipline via `liveDiscOverlay`, + note) and mirrors it locally —
+  same curation field a merge writes on its target, so the generator renames on the next sync.
+- **Decoupling surfaced two stale tests, not a regression.** `uc_worklist_live_refilter` +
+  `_target_and_filters` Task-1 asserted the *old* "the worklist re-filters live from the CCR table"
+  behavior — which is exactly what the decouple removes. Rewrote them to assert the new contract
+  (a CCR filter change does NOT disturb the dock; the checkbox is gone). The discriminating test:
+  filter the CCR to a discipline the remaining group does NOT match, and assert the group still
+  surfaces. (Don't assert "1 of 2" after an earlier section already *consumed* a group via a merge —
+  count the live set.)
+- **`rowPassesCcr` was gating the candidate search even with the checkbox OFF.** It applied
+  `passesNoQ` unconditionally (ignored `applyCcr`), so the keyword search was CCR-constrained
+  regardless of the toggle — a latent cause of "my keyword didn't pull in course X". Gating it on
+  `applyCcr` (now false) is what truly decouples the search.
+- **Re-evaluate the action button on title `input`.** The Save/Confirm flip depends on whether the
+  title changed, so `titleIn.oninput = refreshTarget` is load-bearing — without it the button
+  wouldn't switch to "Save" until some other event (a checkbox toggle) re-ran `refreshTarget`.
+
+### State + next (as of #534 — Session 72 close)
+- **All 14 PRs (#520–#534) merged; 88/88 green.** Sam: "Things are working nicely."
+- **Possible next polish:** fold the two dock shells into a `buildDock()` helper; eyeball whether the
+  worklist's two sliders (queue Cons↔Aggr + per-merge Tight↔Loose) read as one too many; optionally
+  extend the keyword candidate search to the Stand-Alone pool (`CPL_UC_STANDALONE`) so single-college
+  courses surface by keyword too (deferred — Sam's reported case was an index row, already fixed).
 - Standing lanes unchanged: unverified-M-ID renumber re-mint, TMC Phase-2 acceptance engine,
   CPL-Assistant CCR/CER recommender ETL.
