@@ -1291,18 +1291,21 @@
       candInfo.title = note;
       var list = el("div", { style: "max-height:360px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:6px;" });
       var cbs = [];
-      // One candidate row. `gathered` = pulled in via the ➕ keyword search
-      // below (Session 58) rather than a native group member — it gets an
-      // "added" chip + a ✕ to drop it back out. Returns the cbs entry.
+      // One candidate row. `gathered` = surfaced by the "Add more" search below
+      // (Sam, S72 #2) rather than a native group member — it drops straight into
+      // the list UNCHECKED with a "➕ added" chip + a ✕ to drop it back out, so
+      // the curator ticks the ones to fold in and ignores the rest. Returns the
+      // cbs entry (carries `searched` + its `descBox` so an empty/changed query
+      // can clear the unchecked search rows without disturbing native members).
       function addCandidateRow(m, gathered) {
         var row = el("div", { style: "display:flex;align-items:center;gap:8px;padding:3px 4px;border-bottom:1px solid #f1f5f9;" });
-        // Candidates start UNCHECKED — the curator opts IN to each course to
-        // fold (Sam, S70). Exceptions: the default ★ merge target stays checked
-        // (a merge needs a survivor), and a member the curator just pulled in
-        // via the ➕ keyword search (gathered) stays checked. Contested evidence
-        // members (m.x) never auto-check.
+        // Candidates start UNCHECKED — the curator opts IN to each course to fold
+        // (Sam, S70). The default ★ merge target starts checked (a merge needs a
+        // survivor); search-added rows ALSO start unchecked now (Sam, S72 #2 —
+        // "check them to merge or just ignore"). Contested evidence members (m.x)
+        // never auto-check.
         var cb = el("input", { type: "checkbox", class: "uc-cand-cb" });
-        cb.checked = !m.x && (gathered || (usePreChecked ? !!preCheckedSet[m.id] : m.id === defTgtId));
+        cb.checked = !m.x && (usePreChecked ? !!preCheckedSet[m.id] : m.id === defTgtId);
         cb.onchange = function () { refreshTarget(); };
         row.appendChild(cb);
         row.appendChild(el("span", { style: "flex:1;" }, [m.t || m.id]));
@@ -1386,7 +1389,7 @@
           };
         })(m, descBox, dTog);
         row.appendChild(dTog);
-        var entry = { cb: cb, m: m, row: row, tgt: tgtBadge, mk: mkTgt };
+        var entry = { cb: cb, m: m, row: row, tgt: tgtBadge, mk: mkTgt, searched: !!gathered, descBox: descBox };
         if (gathered) {
           var rm = el("a", { href: "#", title: "Remove from this merge",
             style: "font-size:.82rem;color:#b91c1c;text-decoration:none;white-space:nowrap;font-weight:700;" }, ["✕"]);
@@ -1406,57 +1409,58 @@
       }
       members.forEach(function (m) { addCandidateRow(m, false); });
       container.appendChild(list);
-      // ── ➕ Add more courses to this merge by keyword (Session 58, Sam
-      // 2026-06-16) ── The synonym map + signature can't surface every
-      // related course (e.g. the broad ESL family — Vocational / Academic /
-      // Workplace ESL are different courses sharing the keyword). This lets
-      // the curator GATHER extras by search (the ⚇ Unify index): type a
-      // term, click matches to add them as checked candidates, fold them all
-      // in. Distinct from "Merge into a DIFFERENT course" below (which
-      // redirects the whole merge into one off-signature target).
-      var gatherWrap = el("div", { style: "margin:8px 0 0;" });
-      var gatherToggle = el("a", { href: "#", style: "font-size:.82rem;color:var(--cobalt);text-decoration:none;" },
-        ["➕ Add more courses to this merge by keyword…"]);
-      var gatherPanel = el("div", { style: "display:none;margin:6px 0 0;padding:8px;border:1px solid #e5e7eb;border-radius:6px;background:#faf5ff;" });
-      gatherPanel.appendChild(el("div", { style: "font-size:.78rem;color:#6b7280;margin:0 0 5px;" },
-        ["Search any course title or id (e.g. “ESL”, “welding”) and click to add it as a checked candidate above. Uncheck or ✕ to remove."]));
-      var gatherSearch = el("input", { type: "search", placeholder: "Search a keyword or title…", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
-      var gatherRes = el("div", { style: "max-height:170px;overflow:auto;margin-top:4px;" });
-      gatherPanel.appendChild(gatherSearch); gatherPanel.appendChild(gatherRes);
-      gatherWrap.appendChild(gatherToggle); gatherWrap.appendChild(gatherPanel);
-      container.appendChild(gatherWrap);
-      gatherToggle.onclick = function (e) {
-        e.preventDefault();
-        var open = gatherPanel.style.display === "none";
-        gatherPanel.style.display = open ? "block" : "none";
-        if (open) { loadIndex(); gatherSearch.focus(); }
-      };
-      var gSt; gatherSearch.oninput = function () {
-        clearTimeout(gSt); var q = this.value.toLowerCase().trim();
-        gSt = setTimeout(function () {
-          gatherRes.innerHTML = ""; if (q.length < 3) return;
-          var idx = _ucIndex || [], hits = 0, have = {};
-          cbs.forEach(function (x) { have[x.m.id] = 1; });   // exclude rows already in the merge
-          for (var k = 0; k < idx.length && hits < 25; k++) {
-            var en = idx[k];
-            if (have[en[0]]) continue;
-            if (!rowPassesCcr(en)) continue;   // honor the CCR filter carry-over (task 1)
-            if (((en[1] || "").toLowerCase().indexOf(q) >= 0) || ((en[0] || "").toLowerCase().indexOf(q) >= 0)) {
-              hits++;
-              var b = el("button", { type: "button", style: "display:block;width:100%;text-align:left;padding:3px 6px;border:none;background:none;cursor:pointer;font-size:.82rem;" },
-                ["+ " + (en[1] || en[0]) + "  [" + en[0] + " · " + (en[2] || "") + " · " + idSysLabel(en[3]) + "]"]);
-              (function (e2, btn) {
-                btn.onclick = function () {
-                  addCandidateRow({ id: e2[0], t: e2[1], s: e2[2], k: e2[3], u: e2[4],
-                    g: e2[3] === "Stand-Alone" ? 1 : 0 }, true);
-                  btn.disabled = true; btn.style.opacity = "0.45"; btn.textContent = "✓ added — " + (e2[1] || e2[0]);
-                  refreshTarget();
-                };
-              })(en, b);
-              gatherRes.appendChild(b);
-            }
+      // ── 🔎 Add more courses to this merge (Sam, S72 #2) ── Replaces the old
+      // collapsible "➕ Add more by keyword" panel (toggle → search → click each
+      // result to add). Now an ALWAYS-VISIBLE search whose matches drop straight
+      // INTO the Candidates list above as UNCHECKED rows — the curator ticks the
+      // ones to fold in and ignores the rest, no click-to-add step. Needed
+      // because the synonym map + signature can't surface every related course
+      // (the broad ESL family — Vocational / Academic / Workplace — are different
+      // courses sharing a keyword). Distinct from "⌕ Merge into a different
+      // course" up top (which redirects the whole merge to one off-group target).
+      var searchWrap = el("div", { style: "margin:8px 0 0;" });
+      searchWrap.appendChild(el("label", { style: "display:block;font-weight:600;margin:0 0 2px;font-size:.85rem;" },
+        ["Add more courses",
+         infoIcon("Search any course title or id (e.g. “ESL”, “welding”). Matches appear in the Candidates list above as unchecked rows — tick the ones to fold in, ignore the rest. Unchecked results clear when you change or empty the search; the CCR table filters carry over.")]));
+      var addSearch = el("input", { type: "search", placeholder: "🔎 Search a title or id to add more candidates…", style: "width:100%;padding:6px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;" });
+      var addNoHits = el("div", { style: "display:none;font-size:.78rem;color:#94a3b8;padding:3px 2px;" }, ["No matches — type 3+ characters of a title or id."]);
+      searchWrap.appendChild(addSearch); searchWrap.appendChild(addNoHits);
+      container.appendChild(searchWrap);
+      // Drop the search-added rows the curator DIDN'T tick (a changed/emptied
+      // query shouldn't leave stale results lying around), but KEEP any they
+      // checked — those are real selections now.
+      function clearUncheckedSearchRows() {
+        for (var j = cbs.length - 1; j >= 0; j--) {
+          var x = cbs[j];
+          if (x.searched && !x.cb.checked) {
+            if (x.row.parentNode) list.removeChild(x.row);
+            if (x.descBox && x.descBox.parentNode) list.removeChild(x.descBox);
+            cbs.splice(j, 1);
           }
-          if (!hits) gatherRes.appendChild(el("div", { style: "font-size:.78rem;color:#94a3b8;padding:4px;" }, ["No matches — type 3+ characters of a title or id."]));
+        }
+      }
+      var aSt; addSearch.oninput = function () {
+        clearTimeout(aSt); var q = this.value.toLowerCase().trim();
+        aSt = setTimeout(function () {
+          clearUncheckedSearchRows();
+          addNoHits.style.display = "none";
+          if (q.length < 3) { refreshTarget(); return; }
+          loadIndex().then(function () {
+            var idx = _ucIndex || [], hits = 0, have = {};
+            cbs.forEach(function (x) { have[x.m.id] = 1; });   // exclude rows already in the merge
+            for (var k = 0; k < idx.length && hits < 15; k++) {
+              var en = idx[k];
+              if (have[en[0]]) continue;
+              if (!rowPassesCcr(en)) continue;   // honor the CCR filter carry-over
+              if (((en[1] || "").toLowerCase().indexOf(q) >= 0) || ((en[0] || "").toLowerCase().indexOf(q) >= 0)) {
+                hits++; have[en[0]] = 1;
+                addCandidateRow({ id: en[0], t: en[1], s: en[2], k: en[3], u: en[4],
+                  g: en[3] === "Stand-Alone" ? 1 : 0 }, true);
+              }
+            }
+            addNoHits.style.display = hits ? "none" : "block";
+            refreshTarget();
+          });
         }, 200);
       };
       // No existing identity among the checked rows → Confirm mints a new

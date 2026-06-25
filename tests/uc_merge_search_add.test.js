@@ -1,9 +1,10 @@
-// The per-row ⚇ Merge dialog's "add more by search" must actually add a course.
-// Session 71 (PR-2b) consolidated the per-row dialog onto the shared merge-editor,
-// so this now exercises the editor's ➕ keyword-gather panel in the per-row
-// context: a NEW course is added as a CHECKED candidate + the result button is
-// marked "✓ added"/disabled, and a course already in the merge is EXCLUDED from
-// the gather results (rather than the old dialog's "✓ in list").
+// The per-row ⚇ Merge dialog's "Add more courses" search must actually add a
+// course. Session 71 (PR-2b) consolidated the per-row dialog onto the shared
+// merge-editor; Session 72 (#2) replaced the collapsible ➕ keyword-gather with
+// an always-visible inline search whose matches drop straight into the
+// Candidates list as UNCHECKED rows. This exercises that in the per-row context:
+// a NEW course appears as an unchecked candidate, and a course already in the
+// merge is EXCLUDED from the results.
 //
 // Run from repo root: `npm test` (or `node tests/uc_merge_search_add.test.js`).
 const fs = require("fs");
@@ -62,36 +63,29 @@ function hasCand(id) { return !!candCb(id); }
   if (merge) merge.onclick({ preventDefault: function () {} });
   await sleep(300);
 
-  // The per-row dialog embeds the shared editor — "Add more by search" is the
-  // editor's ➕ keyword-gather panel. Open it, then use its search box.
-  const gatherToggle = Array.from(document.querySelectorAll("a"))
-    .find(function (a) { return /Add more courses to this merge by keyword/.test(a.textContent); });
-  check("➕ keyword-gather toggle present", !!gatherToggle);
-  gatherToggle.onclick({ preventDefault: function () {} });
-  await sleep(60);
+  // The per-row dialog embeds the shared editor — "Add more courses" is now an
+  // always-visible inline search (no toggle); matches land in the Candidates list.
   const srch = Array.from(document.querySelectorAll('input[type="search"]'))
-    .find(function (i) { return /keyword or title/.test(i.placeholder); });
-  check("the gather search box is present", !!srch);
+    .find(function (i) { return /add more candidates/i.test(i.placeholder || ""); });
+  check("the inline 'Add more courses' search box is present", !!srch);
 
-  // --- NEW course: clicking adds it as a checked candidate ---
+  // --- NEW course: typing drops it into the list as an UNCHECKED candidate ---
+  const beforeNew = hasCand("MUSC Z1009");
   srch.value = "interface"; srch.dispatchEvent(new window.Event("input"));
   await sleep(300);
-  let resBtns = Array.from(document.querySelectorAll("button")).filter(function (b) { return /MIDI Interface/.test(b.textContent); });
-  check("gather surfaces the new MUSC Z1009 result", resBtns.length > 0);
-  check("new result shows the '+ ' add affordance", resBtns[0] && /^\+ /.test(resBtns[0].textContent));
-  const beforeNew = hasCand("MUSC Z1009");
-  if (resBtns[0]) resBtns[0].onclick();
-  await sleep(60);
-  check("clicking a gather result adds it as a candidate", !beforeNew && hasCand("MUSC Z1009"));
-  check("the gathered candidate starts CHECKED (opted in by the add)", candCb("MUSC Z1009") && candCb("MUSC Z1009").checked === true);
-  check("the added result is marked '✓ added'", resBtns[0] && /✓ added/.test(resBtns[0].textContent));
-  check("the added result button is disabled", resBtns[0] && resBtns[0].disabled === true);
+  check("typing adds the new MUSC Z1009 as a candidate row", !beforeNew && hasCand("MUSC Z1009"));
+  check("the search-added candidate starts UNCHECKED (check to merge or ignore)",
+    candCb("MUSC Z1009") && candCb("MUSC Z1009").checked === false);
+  // Ticking it includes it; it survives a later (different) search.
+  const z = candCb("MUSC Z1009"); z.checked = true; z.dispatchEvent(new window.Event("change"));
 
-  // --- Already-in-the-merge course is EXCLUDED from gather results ---
+  // --- Already-in-the-merge course is EXCLUDED from results ---
   srch.value = "digital imaging"; srch.dispatchEvent(new window.Event("input"));
   await sleep(300);
-  const seedBtn = Array.from(document.querySelectorAll("button")).find(function (b) { return /GRAF M1028/.test(b.textContent); });
-  check("the seed (already in the merge) is NOT offered by the gather", !seedBtn);
+  const seedRows = Array.from(document.querySelectorAll("div"))
+    .filter(function (d) { return d.querySelector(":scope > input.uc-cand-cb") && /GRAF M1028/.test(d.textContent); });
+  check("the seed (already in the merge) is NOT re-added by the search", seedRows.length === 1);
+  check("a ticked search-added row persists across a new query", candCb("MUSC Z1009") && candCb("MUSC Z1009").checked === true);
 
   // ---- report ----
   let pass = 0;
