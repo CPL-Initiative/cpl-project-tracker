@@ -3,17 +3,17 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-06-24",
+ "as_of": "2026-06-25",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "p2": 4659,
-  "p3": 16184
+  "p2": 4663,
+  "p3": 16188
  },
  "colleges": {
   "Bakersfield": {
-   "p2": 44,
-   "p3": 45
+   "p2": 48,
+   "p3": 49
   },
   "Cabrillo": {
    "p2": 16,
