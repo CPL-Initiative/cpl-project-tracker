@@ -825,6 +825,23 @@ reuse, so keep it self-contained behind its CONFIG block.
   redeploy procedure:
   [`docs/kb-notes/playbook-deploy-shared-supabase-edge-function.md`](docs/kb-notes/playbook-deploy-shared-supabase-edge-function.md).
 
+- **College landing-page links (added Session 73, 2026-06-25).** The assistant
+  surfaces each college's CPL landing page from
+  **`chatbox_college_profiles.landing_page_url`** (the `cpl-chat` function joins
+  it on the college name, LIVE). Those URLs are kept fresh by
+  **`chatbox/scrape_landing_pages.py`** + **`.github/workflows/cpl-landing-pages.yml`**
+  (push = dry-run, weekly cron + dispatch = `--apply`). The authoritative source
+  is the `mapfyCollegeUrls` JSON blob embedded in **map.rccd.edu/cpllandingpages/**
+  ({College, CollegeLandingURL}); we store the official path-encoded
+  `map.rccd.edu/cpl-student-portal/<CODE>` link (it 302-redirects to the current
+  landing host — a Vercel app as of 2026-06 — so it survives backend moves;
+  `cpldashboardcccco` was the old, now-stale host). Runs on a runner because
+  map.rccd.edu is egress-blocked from the agent sandbox AND behind an intermittent
+  Sucuri WAF (the scraper retries with a cookie jar + a headless-Chromium
+  fallback). The committed `chatbox/college_landing_pages.json` is the audit
+  receipt. **Editing the function does NOT touch these links** (they're table
+  data, not code). Story: `docs/cpl_landing_pages_lessons.md`.
+
 ### 7d. TMC Builder — interactive ADT submission tab (Session 59, 2026-06-16)
 
 The **TMC Builder** tab (`#tmc-builder`, hash `tmc-builder`) lets a college align
