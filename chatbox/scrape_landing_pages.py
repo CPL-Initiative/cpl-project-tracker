@@ -25,10 +25,12 @@ Usage:
   python3 chatbox/scrape_landing_pages.py [--apply] [--dump-html PATH] [--url URL]
 """
 import argparse
+import http.cookiejar
 import json
 import os
 import re
 import sys
+import time
 import unicodedata
 import urllib.parse
 import urllib.request
@@ -58,6 +60,12 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 
 
+# Persist cookies across requests so a Sucuri WAF clearance cookie carries from
+# the challenge response into the retry (which then gets the real page).
+_OPENER = urllib.request.build_opener(
+    urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+
+
 def looks_like_challenge(html: str) -> bool:
     """map.rccd.edu sits behind a Sucuri WAF that serves a JS/meta-refresh
     'sgcaptcha' bot-challenge to plain fetchers instead of the real page."""
@@ -66,13 +74,19 @@ def looks_like_challenge(html: str) -> bool:
             or ('http-equiv="refresh"' in low and len(html) < 1500))
 
 
+def is_full_page(html: str) -> bool:
+    """The real index lists ~115 colleges, so it carries many cpl-student-portal
+    links. The WAF challenge / bare SPA shell carries almost none."""
+    return html.lower().count("cpl-student-portal") >= 50
+
+
 def fetch_plain(url: str) -> str:
     req = urllib.request.Request(url, headers={
         "User-Agent": UA,
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
     })
-    with urllib.request.urlopen(req, timeout=60) as resp:
+    with _OPENER.open(req, timeout=60) as resp:
         charset = resp.headers.get_content_charset() or "utf-8"
         body = resp.read().decode(charset, errors="replace")
         print(f"[fetch] plain {resp.status} {resp.headers.get('Content-Type','?')} "
@@ -138,11 +152,15 @@ def fetch_browser(url: str) -> str:
         except Exception as e:
             print(f"[fetch] goto note: {e}")
         # One resilient wait handles BOTH the WAF meta-refresh bounce AND the
-        # SPA render — wait_for_function re-polls across navigations.
+        # full-page render — wait_for_function re-polls across navigations. Wait
+        # for the WordPress index's many cpl-student-portal links, not just a few
+        # anchors (the SPA shell has the nav links but not the college list).
         try:
-            page.wait_for_function(f"{COLLEGE_ANCHOR_JS} >= 10", timeout=60000)
+            page.wait_for_function(
+                "() => (document.documentElement.innerHTML.match"
+                "(/cpl-student-portal/gi) || []).length >= 50", timeout=60000)
         except Exception:
-            print("[fetch] college list never reached 10 anchors — capturing anyway")
+            print("[fetch] full college list never rendered — capturing anyway")
         page.wait_for_timeout(3000)  # let any final render settle
         html = _safe_content(page)
         try:
@@ -165,14 +183,32 @@ def fetch_browser(url: str) -> str:
 
 
 def fetch(url: str) -> str:
-    html = fetch_plain(url)
-    if looks_like_challenge(html):
-        print("[fetch] WAF challenge detected on plain fetch → escalating to browser")
+    """The WAF is intermittent: a plain fetch often returns the full page, and a
+    cookie-jar retry usually clears a challenge. Try plain a few times, then fall
+    back to the browser. Return the best (most complete) HTML seen."""
+    best = ""
+    for attempt in range(1, 5):
         try:
-            html = fetch_browser(url)
-        except ImportError:
-            print("::warning::playwright not installed — cannot clear WAF challenge")
-    return html
+            html = fetch_plain(url)
+        except Exception as e:  # noqa: BLE001
+            print(f"[fetch] plain attempt {attempt} error: {e}")
+            html = ""
+        if is_full_page(html):
+            return html
+        if len(html) > len(best):
+            best = html
+        why = ("WAF challenge" if looks_like_challenge(html)
+               else f"{html.lower().count('cpl-student-portal')} portal refs (<50)")
+        print(f"[fetch] plain attempt {attempt}: {why} → retrying")
+        time.sleep(3)
+    print("[fetch] plain retries exhausted → escalating to browser")
+    try:
+        b = fetch_browser(url)
+        if is_full_page(b) or len(b) > len(best):
+            best = b
+    except ImportError:
+        print("::warning::playwright not installed — cannot clear WAF challenge")
+    return best
 
 
 def clean_text(html_fragment: str) -> str:
