@@ -1,5 +1,5 @@
 {
-  "page_chars": 479623,
+  "page_chars": 293267,
   "blob_updated": "2025-08-18",
   "blob_count": 118,
   "blob_map": {
@@ -251,11 +251,9 @@
     "mapfyCollegeUrls ="
   ],
   "linkbtn_cards": [
-    "ass=\"mapfy-title\">All Colleges</div> <span class=\"mapfy-count\">116</span> </div> <div class=\"mapfy-laneTrack\" role=\"region\" aria-label=\"All colleges (grid)\"> <article class=\"mapfy-card has-stats\" aria-label=\"Bakersfield College card\"> <div class=\"mapfy-card-head\" style=\"background:rgb(30, 57, 100)\"> <h3>Bakersfield College</h3> </div> <p>Kern Community College District</p> <p><!-- <span class=\"mapfy-chip\" aria-label=\"Region\">Central</span> --> </p> <div class=\"mapfy-statrow\"> <span class=\"mapfy-chip stat\" title=\"Total articulations\">Total Articulations: 5573</span> <div class=\"mapfy-second-row\"> <span class=\"mapfy-chip stat\" title=\"Military articulations\">Military: 5423</span> <span class=\"mapfy-chip stat\" title=\"Non-military articulations\">Non-mil: 150</span> </div> </div> <a class=\"mapfy-linkbtn\" href=\"https://cpldashboardcccco.azurewebsites.net/Bakersfieldcollege\" rel=\"noopener\" target=\"_blank\" aria-label=\"Open Bakersfield College CPL page in a new tab\" title=\"Open Bakersfield College CPL page in a new tab\">Open CPL page</a> </article> <article class=\"mapfy-card has-stats\" aria-",
-    "ollege\" rel=\"noopener\" target=\"_blank\" aria-label=\"Open Bakersfield College CPL page in a new tab\" title=\"Open Bakersfield College CPL page in a new tab\">Open CPL page</a> </article> <article class=\"mapfy-card has-stats\" aria-label=\"City College of San Francisco card\"> <div class=\"mapfy-card-head\" style=\"background:rgb(30, 57, 101)\"> <h3>City College of San Francisco</h3> </div> <p>San Francisco Community College District</p> <p><!-- <span class=\"mapfy-chip\" aria-label=\"Region\">Bay Area</span> --> </p> <div class=\"mapfy-statrow\"> <span class=\"mapfy-chip stat\" title=\"Total articulations\">Total Articulations: 3635</span> <div class=\"mapfy-second-row\"> <span class=\"mapfy-chip stat\" title=\"Military articulations\">Military: 3473</span> <span class=\"mapfy-chip stat\" title=\"Non-military articulations\">Non-mil: 162</span> </div> </div> <a class=\"mapfy-linkbtn\" href=\"https://cpldashboardcccco.azurewebsites.net/CITC\" rel=\"noopener\" target=\"_blank\" aria-label=\"Open City College of San Francisco CPL page in a new tab\" title=\"Open City College of San Francisco CPL page in a new tab\">Open CPL page</a> </article> <article class=\"mapfy-card has-stats\" aria-",
-    "C\" rel=\"noopener\" target=\"_blank\" aria-label=\"Open City College of San Francisco CPL page in a new tab\" title=\"Open City College of San Francisco CPL page in a new tab\">Open CPL page</a> </article> <article class=\"mapfy-card has-stats\" aria-label=\"Woodland Community College card\"> <div class=\"mapfy-card-head\" style=\"background:rgb(31, 58, 101)\"> <h3>Woodland Community College</h3> </div> <p>Yuba Community College District</p> <p><!-- <span class=\"mapfy-chip\" aria-label=\"Region\">Northern</span> --> </p> <div class=\"mapfy-statrow\"> <span class=\"mapfy-chip stat\" title=\"Total articulations\">Total Articulations: 3349</span> <div class=\"mapfy-second-row\"> <span class=\"mapfy-chip stat\" title=\"Military articulations\">Military: 3246</span> <span class=\"mapfy-chip stat\" title=\"Non-military articulations\">Non-mil: 103</span> </div> </div> <a class=\"mapfy-linkbtn\" href=\"https://cpldashboardcccco.azurewebsites.net/WOOC\" rel=\"noopener\" target=\"_blank\" aria-label=\"Open Woodland Community College CPL page in a new tab\" title=\"Open Woodland Community College CPL page in a new tab\">Open CPL page</a> </article> <article class=\"mapfy-card has-stats\" aria-"
+    "div>` : ''; // Disable per-card \"Go\" if no articulations (or if URL missing or no slug) // Disable per-card \"Go\" if URL is missing or has no slug function hasValidSlug(url) { if (!url) return false; const normalized = String(url).trim(); const match = normalized.match(/^https?:\\/\\/cpldashboardcccco\\.azurewebsites\\.net\\/(.+)$/i); if (!match) return false; const slug = match[1].trim(); return slug.length > 0; } const canGo = hasValidSlug(url); const tooltipNoUrl = 'CPL page unavailable'; const label = canGo ? `Open ${escapeAttr(name)} CPL page in a new tab` : tooltipNoUrl; const btn = canGo ? `<a class=\"mapfy-linkbtn\" href=\"${escapeAttr(url)}\" rel=\"noopener\" target=\"_blank\" aria-label=\"${label}\" title=\"${label}\">Open CPL page</a>` : `<span class=\"mapfy-linkbtn mapfy-linkbtn-dis"
   ],
-  "linkbtn_count": 125,
+  "linkbtn_count": 9,
   "mapfy_var_samples": {
     "mapfyRDC": "{\"updated\":\"2025-08-18\",\"regions\":[{\"name\":\"South Central\",\"districts\":[{\"name\":\"Allan Hancock Joint Community College District\",\"colleges\":[\"Allan Hancock College\"]},{\"name\":\"Antelope Valley Community College District\",\"colleges\":[\"Antelope Valley College\"]}]},{\"name\":\"Inland Empire\",\"districts\":[{\"name\":\"Barstow Community College District\",\"colleges\":[\"Barstow College\"]}]},{\"name\":\"Northern\",\"districts\":[{\"name\":\"Butte-Glenn Community College District\",\"colleges\":[\"Butte College\"]},{\"name\":\"Feather River Community College District\",\"colleges\":[\"Feather River College\"]},{\"name\":\"Lassen Community College District\",\"colleges\":[\"Lassen College\"]},{\"name\":\"Los Rios Community College District\",\"colleges\":[\"American River College\",\"Cosumnes River College\",\"Folsom Lake College\",\"Sacramento City College\"]},{\"name\":\"Mendocino-Lake Community College District\",\"colleges\":[\"Mendocino College\"]},{\"name\":\"Napa Valley Community College District\",\"colleges\":[\"Napa Valley College\"]},{\"name\":\"Redwoods Community College District\",\"colleges\":[\"College of the Redwoods\"]},{\"name\":\"San Jose-Evergreen Community College District\",\"colleges\":[\"Evergreen Valley College\",\"San Jose City College\"]},{\"name\":\"Shasta-Tehama-Trinity Joint Community College District\",\"colleges\":[\"Shasta College\"]},{\"name\":\"Sierra Joint Community College District\",\"colleges\":[\"Sierra College\"]},{\"name\":\"Siskiyou Joint Community",
     "mapfyStats": "{\"updated\":\"2026-06-04T14:56:23.715734+00:00\",\"colleges\":[{\"College\":\"Bakersfield College\",\"rank\":1,\"total\":5573,\"military\":5423,\"nonMilitaryTotal\":150,\"nonMilitaryByType\":{\"Industry Certification\":98,\"Standardized Assessment\":52}},{\"College\":\"City College of San Francisco\",\"rank\":2,\"total\":3635,\"military\":3473,\"nonMilitaryTotal\":162,\"nonMilitaryByType\":{\"Credit By Exam\":4,\"Industry Certification\":96,\"Portfolio Review\":4,\"Standardized Assessment\":58}},{\"College\":\"Woodland Community College\",\"rank\":3,\"total\":3349,\"military\":3246,\"nonMilitaryTotal\":103,\"nonMilitaryByType\":{\"Credit By Exam\":2,\"Industry Certification\":11,\"Standardized Assessment\":90}},{\"College\":\"Fullerton College\",\"rank\":4,\"total\":2607,\"military\":2582,\"nonMilitaryTotal\":25,\"nonMilitaryByType\":{\"Credit By Exam\":4,\"Industry Certification\":21}},{\"College\":\"West Los Angeles College\",\"rank\":5,\"total\":2047,\"military\":1869,\"nonMilitaryTotal\":178,\"nonMilitaryByType\":{\"Credit By Exam\":17,\"Industry Certification\":109,\"Standardized Assessment\":52}},{\"College\":\"Reedley College\",\"rank\":6,\"total\":1864,\"military\":1755,\"nonMilitaryTotal\":109,\"nonMilitaryByType\":{\"Industry Certification\":41,\"Portfolio Review\":16,\"Standardized Assessment\":52}},{\"College\":\"San Bernardino Valley College\",\"rank\":7,\"total\":1796,\"military\":1571,\"nonMilitaryTotal\":225,\"nonMilitaryByType\":{\"Credit By Exam\":24,\"Industry Certification\":76,\"Other\":51,\"Portfo",
@@ -263,24 +261,24 @@
   },
   "needle_hits": {
     "allan": {
-      "count": 17,
-      "context": "ria-expanded=\"false\" aria-controls=\"mapfy-typeahead-list\"> <datalist id=\"mapfy-college-datalist\"><option value=\"Allan Hancock College\"></option><option value=\"American River College\"></option><option value=\"Antelope Valley College\">"
+      "count": 4,
+      "context": "========== */ const mapfyRDC = {\"updated\":\"2025-08-18\",\"regions\":[{\"name\":\"South Central\",\"districts\":[{\"name\":\"Allan Hancock Joint Community College District\",\"colleges\":[\"Allan Hancock College\"]},{\"name\":\"Antelope Valley Community"
     },
     "losmedanos": {
-      "count": 2,
-      "context": "\">Non-mil: 53</span> </div> </div> <a class=\"mapfy-linkbtn\" href=\"https://cpldashboardcccco.azurewebsites.net/losmedanos\" rel=\"noopener\" target=\"_blank\" aria-label=\"Open Los Medanos College CPL page in a new tab\" title=\"Open Los M"
+      "count": 0,
+      "context": null
     },
     "mendocino": {
-      "count": 15,
-      "context": "></option><option value=\"Los Medanos College\"></option><option value=\"Madera Community College\"></option><option value=\"Mendocino College\"></option><option value=\"Merced College\"></option><option value=\"Merritt College\"></option><option val"
+      "count": 4,
+      "context": "colleges\":[\"American River College\",\"Cosumnes River College\",\"Folsom Lake College\",\"Sacramento City College\"]},{\"name\":\"Mendocino-Lake Community College District\",\"colleges\":[\"Mendocino College\"]},{\"name\":\"Napa Valley Community College Dist"
     },
     "LOSC": {
       "count": 1,
       "context": "cpl-student-portal/VLAC\"},{\"College\":\"Los Medanos College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/LOSC\"},{\"College\":\"Madera College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/MADC\"},{\"College\":\"Mendo"
     },
     "MENC": {
-      "count": 3,
-      "context": "\">Non-mil: 60</span> </div> </div> <a class=\"mapfy-linkbtn\" href=\"https://cpldashboardcccco.azurewebsites.net/MENC\" rel=\"noopener\" target=\"_blank\" aria-label=\"Open Mendocino College CPL page in a new tab\" title=\"Open Mendocino Col"
+      "count": 1,
+      "context": "u/cpl-student-portal/MADC\"},{\"College\":\"Mendocino College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/MENC\"},{\"College\":\"Merced College\",\"CollegeLandingURL\":\"https://map.rccd.edu/cpl-student-portal/MC\"},{\"College\":\"Merritt"
     },
     "/test": {
       "count": 2,
@@ -298,5 +296,476 @@
       "count": 0,
       "context": null
     }
+  },
+  "url_build_js": "lectedDist)) el.district.value = ''; // Regions depend on: search + chosen district const forRegions = filterColleges(colleges, q, el.district.value, ''); const regCounts = new Map(); forRegions.forEach(c => regCounts.set(c.region, (regCounts.get(c.region) || 0) + 1)); const allRegs = Array.from(regCounts.keys()).sort((a, b) => String(a).localeCompare(String(b))); el.region.innerHTML = `<option value=\"\">All regions</option>` + allRegs.map(r => `<option value=\"${escapeHtml(r)}\"${r===selectedReg?' selected':''}>${escapeHtml(r)}</option>`).join(''); if (selectedReg && !regCounts.has(selectedReg)) el.region.value = ''; } function cardHTML(c) { const name = c.College ?? c.name ?? ''; const rawUrl = c.CollegeLandingURL ?? c.url ?? null; const url = normalizeCollegeUrl(rawUrl); const s = c.stats || null; // Header color from rank; dark gray if 0 total; brand if unknown const hdr = rankToColor(s); const headHTML = ` <div class=\"mapfy-card-head\" style=\"${hdr ? `background:${hdr}` : ''}\"> <h3>${escapeHtml(name)}</h3> </div>`; // Stat chips const statsHTML = s ? ` <div class=\"mapfy-statrow\"> <span class=\"mapfy-chip stat\" title=\"Total articulations\">Total Articulations: ${s.total}</span> <div class=\"mapfy-second-row\"> <span class=\"mapfy-chip stat\" title=\"Military articulations\">Military: ${s.military}</span> <span class=\"mapfy-chip stat\" title=\"Non-military articulations\">Non-mil: ${s.nonMilTotal}</span> </div> </div>` : ''; // Disable per-card \"Go\" if no articulations (or if URL missing or no slug) // Disable per-card \"Go\" if URL is missing or has no slug function hasValidSlug(url) { if (!url) return false; const normalized = String(url).trim(); const match = normalized.match(/^https?:\\/\\/cpldashboardcccco\\.azurewebsites\\.net\\/(.+)$/i); if (!match) return false; const slug = match[1].trim(); return slug.length > 0; } const canGo = hasValidSlug(url); const tooltipNoUrl = 'CPL page unavailable'; const label = canGo ? `Open ${escapeAttr(name)} CPL page in a new tab` : tooltipNoUrl; const btn = canGo ? `",
+  "rendered": {
+    "count_all": 116,
+    "count_with_href": 116,
+    "buttons": [
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/Bakersfieldcollege",
+        "label": "Open Bakersfield College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CITC",
+        "label": "Open City College of San Francisco CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/WOOC",
+        "label": "Open Woodland Community College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/FULC",
+        "label": "Open Fullerton College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/WLAC",
+        "label": "Open West Los Angeles College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/REEC",
+        "label": "Open Reedley College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/sanbernardino",
+        "label": "Open San Bernardino Valley College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/norcocollege",
+        "label": "Open Norco College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/RCC",
+        "label": "Open Riverside City College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CABC",
+        "label": "Open Cabrillo College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/morenovalley",
+        "label": "Open Moreno Valley College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CHC",
+        "label": "Open Chaffey College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/COMC",
+        "label": "Open Compton College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CMC",
+        "label": "Open Copper Mountain College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/MJC",
+        "label": "Open Modesto Junior College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SOLC",
+        "label": "Open Solano Community College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/LAPC",
+        "label": "Open Los Angeles Pierce College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SAC",
+        "label": "Open Santa Ana College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/COAC",
+        "label": "Open Coastline College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SDMIRA",
+        "label": "Open San Diego Miramar College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/LBCC",
+        "label": "Open Long Beach City College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/Saddleback",
+        "label": "Open Saddleback College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/AMEC",
+        "label": "Open American River College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/MLAC",
+        "label": "Open Los Angeles Mission College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/TLAC",
+        "label": "Open Los Angeles Trade-Tech College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SCC",
+        "label": "Open Santiago Canyon College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SDMESA",
+        "label": "Open San Diego Mesa College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/MC",
+        "label": "Open Merced College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/LPCC",
+        "label": "Open Las Positas College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/LAVC",
+        "label": "Open Los Angeles Valley College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SJCC",
+        "label": "Open San Jose City College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CLOC",
+        "label": "Open Clovis Community College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/BC",
+        "label": "Open Barstow College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/sandiegocity",
+        "label": "Open San Diego City College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/FOOC",
+        "label": "Open Foothill College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/LAKC",
+        "label": "Open Lake Tahoe Community College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/AVC",
+        "label": "Open Antelope Valley College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/COD",
+        "label": "Open College of the Desert CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/MPC",
+        "label": "Open Monterey Peninsula College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SMC",
+        "label": "Open Santa Monica College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/GLEC",
+        "label": "Open Glendale Community College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/NAPC",
+        "label": "Open Napa Valley College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/VENC",
+        "label": "Open Ventura College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CHAC",
+        "label": "Open Chabot College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SIEC",
+        "label": "Open Sierra College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CYPC",
+        "label": "Open Cypress College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/MCC",
+        "label": "Open Madera Community College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/OHLC",
+        "label": "Open Ohlone College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/Merritt",
+        "label": "Open Merritt College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/www.cerritos.edu",
+        "label": "Open Cerritos College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/MT.C",
+        "label": "Open Mt. San Antonio College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CUEC",
+        "label": "Open Cuesta College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/shasta",
+        "label": "Open Shasta College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/elac.edu",
+        "label": "Open East Los Angeles College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CC",
+        "label": "Open Columbia College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/EVEC",
+        "label": "Open Evergreen Valley College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/losmedanos",
+        "label": "Open Los Medanos College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/COM",
+        "label": "Open College of Marin CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/Laney",
+        "label": "Open Laney College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/MENC",
+        "label": "Open Mendocino College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/GOLC",
+        "label": "Open Golden West College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CONC",
+        "label": "Open Contra Costa College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/FREC",
+        "label": "Open Fresno City College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/allan",
+        "label": "Open Allan Hancock College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SJDC",
+        "label": "Open San Joaquin Delta College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/YUC",
+        "label": "Open Yuba College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/BERC",
+        "label": "Open Berkeley City College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/BUTC",
+        "label": "Open Butte College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CITR",
+        "label": "Open Citrus College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/COAL",
+        "label": "Open Coalinga College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/Collegeofthecanyons",
+        "label": "Open College of the Canyons CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/COR",
+        "label": "Open College of the Redwoods CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/sequoias",
+        "label": "Open College of the Sequoias CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/DIAC",
+        "label": "Open Diablo Valley College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/EL%20C",
+        "label": "Open El Camino College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/FLC",
+        "label": "Open Folsom Lake College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/HARC",
+        "label": "Open Hartnell College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CLAC",
+        "label": "Open Los Angeles City College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/OXNC",
+        "label": "Open Oxnard College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/PCC",
+        "label": "Open Pasadena City College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SACC",
+        "label": "Open Sacramento City College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SRJC",
+        "label": "Open Santa Rosa Junior College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/VVC",
+        "label": "Open Victor Valley College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/WVC",
+        "label": "Open West Valley College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/PVC",
+        "label": "Open Palo Verde College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/LECC",
+        "label": "Open Lemoore College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/MoorparkCollege",
+        "label": "Open Moorpark College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/m.sjc",
+        "label": "Open Mt. San Jacinto College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SLAC",
+        "label": "Open Los Angeles Southwest College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CCCC",
+        "label": "Open Cerro Coso Community College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/MISC",
+        "label": "Open Mission College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/LCC",
+        "label": "Open Lassen College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/RIOC",
+        "label": "Open Rio Hondo College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/M",
+        "label": "Open College of San Mateo CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SKYC",
+        "label": "Open Skyline College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/HLAC",
+        "label": "Open Los Angeles Harbor College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CA%C3%91C",
+        "label": "Open Cañada College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/COA",
+        "label": "Open College of Alameda CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/COSY",
+        "label": "Open College of the Siskiyous CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/COSC",
+        "label": "Open Cosumnes River College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CRAFC",
+        "label": "Open Crafton Hills College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/CUYC",
+        "label": "Open Cuyamaca College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/DEAC",
+        "label": "Open De Anza College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/FEAC",
+        "label": "Open Feather River College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/GAVC",
+        "label": "Open Gavilan College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/GROC",
+        "label": "Open Grossmont College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/IMPC",
+        "label": "Open Imperial Valley College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/IRVC",
+        "label": "Open Irvine Valley College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/MIRC",
+        "label": "Open MiraCosta College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/NOCE",
+        "label": "Open North Orange Continuing Education CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/ORAC",
+        "label": "Open Orange Coast College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/PAL",
+        "label": "Open Palomar College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/PORC",
+        "label": "Open Porterville College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SBCC",
+        "label": "Open Santa Barbara City College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/SOUC",
+        "label": "Open Southwestern College CPL page in a new tab"
+      },
+      {
+        "url": "https://cpldashboardcccco.azurewebsites.net/TAFC",
+        "label": "Open Taft College CPL page in a new tab"
+      }
+    ]
   }
 }
