@@ -587,7 +587,7 @@
       }).catch(function () { return null; });
     }
 
-    var state = { kind: "", source: "", status: "", disc: "", credit: "", conf: "", artic: "", official: "", triage: "", flagged: false, impactOnly: false, q: "", sort: "subj", dir: 1 };
+    var state = { kind: "", source: "", status: "", disc: "", credit: "", conf: "", artic: "", official: "", triage: "", flagged: false, impactOnly: false, q: "", sort: "subj", dir: 1, focusId: "" };
     // PR-4 hook: when the Suggested-merges DOCK is open, openSuggestions assigns
     // a refilter fn here so render() (the funnel for every CCR filter change) can
     // re-run the worklist live. Null when the dock is closed.
@@ -2033,7 +2033,7 @@
           function up() { document.removeEventListener("mousemove", mv); document.removeEventListener("mouseup", up); saveDock(); }
           document.addEventListener("mousemove", mv); document.addEventListener("mouseup", up);
         };
-        function close() { worklistRefilter = null; if (overlay.parentNode) document.body.removeChild(overlay); pageReflow(0); render(); }
+        function close() { worklistRefilter = null; state.focusId = ""; if (overlay.parentNode) document.body.removeChild(overlay); pageReflow(0); render(); }
         // Persistent chrome above the per-group content (Sam, 2026-06-12): a
         // drag-handle title bar with an explicit ✕ closer. renderGroup() wipes
         // only `box` below, so the bar — and any dragged position — survives
@@ -2179,6 +2179,25 @@
         discSel.onchange = function () { discFilter = this.value; i = 0; renderGroup(); };
         discRow.appendChild(discSel);
         searchRow.appendChild(discRow);
+        // ── Sync the CCR table to the current course (Sam, S72 #3) ── Float the
+        // sidebar's current course (then its subject neighbors) to the TOP of the
+        // CCR list so you can scroll to adjacent courses. On by default; toggling
+        // off restores the table's own sort.
+        var syncCcr = true;
+        var syncRow = el("label", { style: "display:flex;align-items:center;gap:6px;margin:6px 0 0;font-size:.78rem;color:#64748b;cursor:pointer;" });
+        var syncCb = el("input", { type: "checkbox" }); syncCb.checked = syncCcr;
+        syncCb.onchange = function () {
+          syncCcr = this.checked;
+          if (!syncCcr) { if (state.focusId) { state.focusId = ""; render(); } }
+          else { renderGroup(); }   // re-sets the focus to the current course
+        };
+        syncRow.appendChild(syncCb);
+        syncRow.appendChild(document.createTextNode("Sync the CCR list to the current course (sorts it to the top)"));
+        searchRow.appendChild(syncRow);
+        function syncCcrFocus(mems) {
+          var fid = syncCcr ? ((targetMemberOf(mems) || mems[0] || {}).id || "") : "";
+          if (state.focusId !== fid) { state.focusId = fid; render(); }
+        }
         shell.appendChild(searchRow);
         var box = el("div", { style: "flex:1;" }); shell.appendChild(box);
         // (PR-3) The panel is DOCKED right — width is set via the left grip, not a
@@ -2376,6 +2395,7 @@
           pager.appendChild(el("span", { style: "font-size:.78rem;color:#64748b;font-weight:600;white-space:nowrap;" }, [headCount.textContent]));
           pager.appendChild(nextB);
           box.appendChild(pager);
+          syncCcrFocus(mems);   // S72 #3: float this group's course to the CCR top
         }
         // ── PR-4: live CCR↔worklist re-filter ───────────────────────────────
         // While the dock is open, a change to a carried-over CCR filter
@@ -3615,7 +3635,19 @@
       ensureMergeCss();
       ensureUcFixCss();
       var matched = rows.filter(passes);
+      // CCR↔sidebar sync (Sam, S72 #3): when the worklist focuses a course,
+      // float it — then its subject neighbors — to the TOP, so you can scroll to
+      // adjacent courses. It overrides the column sort only for that clustering;
+      // within each tier the normal sort still applies.
+      var focusRow = state.focusId ? rows.filter(function (r) { return r.id === state.focusId; })[0] : null;
+      var focusSubj = focusRow ? subjKey(focusRow) : null;
       matched.sort(function (a, b) {
+        if (focusRow) {
+          var af = a.id === state.focusId ? 0 : 1, bf = b.id === state.focusId ? 0 : 1;
+          if (af !== bf) return af - bf;                         // the focused course first
+          var asu = subjKey(a) === focusSubj ? 0 : 1, bsu = subjKey(b) === focusSubj ? 0 : 1;
+          if (asu !== bsu) return asu - bsu;                     // then its subject neighbors
+        }
         var k = state.sort, av, bv;
         if (k === "subj") {  // Subject(s) primary, then numeric course number.
           var as = subjKey(a), bs = subjKey(b);
@@ -3694,6 +3726,9 @@
       var tb = el("tbody");
       matched.slice(0, MAX_VISIBLE).forEach(function (r) {
         var tr = el("tr");
+        // Highlight the worklist-focused course (S72 #3) so the curator sees it
+        // floated to the top.
+        if (state.focusId && r.id === state.focusId) { tr.style.background = "var(--surface-2,#eef6ff)"; tr.style.boxShadow = "inset 3px 0 0 var(--cobalt,#2563eb)"; }
         var kindTd = el("td", { class: "uc-kind-cell" });
         var caret = el("a", { href: "#", class: "uc-caret", title: "Show member college courses + aligned exhibits/credentials" }, ["▸"]);
         caret.onclick = function (e) { e.preventDefault(); toggleMembers(tr, r, caret); };
