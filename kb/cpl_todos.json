@@ -1,14 +1,20 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-25 (Session 72 · merge-workspace polish — all 6 asks shipped)",
+ "_as_of": "2026-06-25 (Session 72 · merge-workspace polish — 6 asks + the candidate slider)",
  "_session": 72,
- "_status": "SESSION 72 — your 6-item merge-workspace review is DONE (5 PRs, #520–#523). The per-row ⚇ Merge now opens the SAME docked sidebar as ✨ Suggested merges (no more cramped pop-up). The Aggressive end of the strength slider now goes all the way (floor 0.00 = show everything). The 'Save did nothing' bug is fixed — Confirm now stays greyed out until you've checked at least two courses, so it can't silently no-op. 'Merge into a different course' moved UP next to the title; the wordy gray helper text is now behind little ⓘ hover icons; and 'Add more courses' is a live search whose matches drop straight into the candidate list as unchecked rows to tick or ignore. NEXT (Fable): the standing lanes — the unverified-M-ID renumber re-mint (when the merge wave settles), the TMC acceptance engine, the CPL-Assistant recommender ETL.",
+ "_status": "SESSION 72 — your 6-item merge-workspace review is DONE (#520–#523) PLUS your follow-up (#525): 'Add more courses' is now the candidate Tight↔Loose slider you expected the strength bar to be — drag toward Loose to surface more SIMILAR courses (by title, and description once it loads) as unchecked rows; the keyword box beside it guides the search. It's on BOTH the per-row ⚇ dock and the worklist groups. Also from the review: per-row ⚇ Merge opens the docked sidebar (no cramped pop-up); the Aggressive slider reaches floor 0.00; the 'Save did nothing' bug is fixed (Confirm greys out until ≥2 checked); 'Merge into a different course' moved up by the title; wordy helper text → ⓘ hovers. NEXT (Fable): the standing lanes — the unverified-M-ID renumber re-mint (when the merge wave settles), the TMC acceptance engine, the CPL-Assistant recommender ETL.",
  "items": [
+  {
+   "id": "sam-candidate-slider",
+   "who": "sam",
+   "tab": "unified-courses",
+   "text": "NEW: 'Add more courses' is now a Tight↔Loose CANDIDATE slider (the 'add more' you expected the strength bar to do) — drag toward Loose and more courses SIMILAR to the one you're merging appear in the list as unchecked rows (ranked by title, and by catalog description once that file loads on a deep loosen). The keyword box beside it GUIDES the search (type 'ESL'/'welding' to pull in specific courses). On both the per-row ⚇ dock and the worklist. Heads-up: the worklist now shows TWO sliders — the top Cons↔Aggr one (how many SUGGESTIONS to review) and this per-merge Tight↔Loose one (candidates for THIS merge). Tell me if that reads as one slider too many, or if the default (starts Tight, you opt into more) + the title-vs-description balance feel right."
+  },
   {
    "id": "sam-perrow-dock",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Per-row ⚇ Merge (from any CCR row) now opens the SAME docked sidebar as ✨ Suggested merges — same roomy panel, same editor (inline 'Add more' search, ⌕ merge-into-a-different-course up by the title, candidate level filters). It drops the queue-only bits that don't apply to one course (no Skip/Keep, no N-of-M, no strength slider). The Beg/Int/Adv/Lab band row filters the candidate list. Try merging a specific course this way and tell me if it feels right — and whether you want the strength slider back here too (I left it out since there's no suggestion queue to gate)."
+   "text": "Per-row ⚇ Merge (from any CCR row) now opens the SAME docked sidebar as ✨ Suggested merges — same roomy panel, same editor (the new candidate slider + keyword search, ⌕ merge-into-a-different-course up by the title, Beg/Int/Adv/Lab level filters). It drops the queue-only bits that don't apply to one course (no Skip/Keep, no N-of-M, no Cons↔Aggr suggestion slider). Try merging a specific course this way and tell me if it feels right."
   },
   {
    "id": "sam-slider-confirm",

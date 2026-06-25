@@ -165,9 +165,29 @@ and the per-row ⚇ dialog) inherited it — exactly the payoff the consolidatio
   the one `buildMergeEditor`. Sharing `DOCK_KEY` means the per-row dock opens at the worklist's width
   (nice) — but force `collapsed = false` so a clicked Merge never appears as just a rail.
 
+### #525 — "Add more" → keyword guide + Tight↔Loose candidate slider
+
+Sam's follow-up after #523: *"the way it adds more is the function I expected the strength bar to
+do — consolidate, keyword as guide; rely on title (and description if available)."* He chose to
+apply it to **both** surfaces. The editor's "Add more courses" search became one control: a
+**Tight↔Loose slider** that surfaces more *similar* candidates (loosen → lower the title-Jaccard
+threshold → more unchecked rows), a **keyword box** that guides it (explicit substring search, not
+similarity-gated), and a **lazy description blend** (`scoreEn` = `max(titleJac, 0.85·descJac)`;
+the ~34MB detail file is fetched only on a *deep* loosen — `pos ≥ 50` — cached, then re-ranked; if
+already loaded from an ⓘ toggle the blend kicks in immediately). **Lessons:**
+- **No feeder changes needed** — `refTitle` defaults to `opts.preTitle` and `refId` derives from
+  `targetMemberOf(members)`, so both the per-row dock and the worklist groups inherited it for free.
+- **Pre-tokenize the index once** (`ensureIdxTok`) — re-tokenizing 70k titles per slider tick is the
+  obvious perf trap; cache `{en, tok}` and reuse, debounce the slider (160ms) + keyword (220ms).
+- **Eagerly seed `refDescSet` when `_ucDetails` is already present** — the lazy `loadDetails().then`
+  path only runs once, so without the eager check a pre-loaded detail file would never blend.
+- **Two range sliders now coexist in the worklist** (queue Cons↔Aggr in the header + candidate
+  Tight↔Loose in the editor). The per-row-dock test had to stop asserting "no range slider" and
+  instead assert no *Cons↔Aggr* (queue) slider while the *Tight↔Loose* candidate slider IS present.
+
 ### State + next
-- **All six S72 items DONE + merged.** Open follow-up Sam may want: repurpose the **aggressiveness
-  slider** in single-course mode to filter candidates by title-similarity (left out as a no-op for now
-  — flagged in #523's body). The two dock shells could be consolidated into a `buildDock()` helper.
+- **All six S72 items + the #525 follow-up DONE + merged.** Possible next polish: the two dock shells
+  (worklist + per-row) could fold into a `buildDock()` helper; watch whether the worklist's two
+  sliders read as one too many in real use (Sam to eyeball).
 - Standing lanes unchanged: unverified-M-ID renumber re-mint, TMC Phase-2 acceptance engine,
   CPL-Assistant CCR/CER recommender ETL.
