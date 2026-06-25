@@ -69,8 +69,13 @@ def fetch_records(url: str):
 
 
 def normalize_url(u: str) -> str:
-    """Rewrite the old MAP base to the live dashboard base (the page does this)."""
-    return OLD_BASE_RE.sub(NEW_BASE, (u or "").strip())
+    """Rewrite the old MAP base to the live dashboard base (the page does this),
+    then percent-encode the path so a raw space ('EL C') or 'ñ' yields a valid,
+    clickable URL — matching the page's rendered (browser-encoded) buttons."""
+    u = OLD_BASE_RE.sub(NEW_BASE, (u or "").strip())
+    p = urllib.parse.urlsplit(u)
+    return urllib.parse.urlunsplit(
+        (p.scheme, p.netloc, urllib.parse.quote(p.path), p.query, p.fragment))
 
 
 def code_of(u: str) -> str:
