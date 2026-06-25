@@ -345,5 +345,14 @@ truncates it.
   conversation and asserts the answer talks real estate and does **not** repeat the
   wrong-conclusion phrasings.
 
-**Still deferred:** the **Sierra** rename (Sam, with a wink, "you can rename her 'Maybe
-Sierra'…") — it lands with the Student Portal, not piecemeal.
+**Still deferred / future direction:**
+- The **Sierra** rename (Sam, with a wink, "you can rename her 'Maybe Sierra'…") —
+  lands with the Student Portal, not piecemeal.
+- A **curator login to edit the assistant's response text on the fly** (Sam, 2026-06-25:
+  "later we'll add a curate login so I can edit the text on the fly"). Natural fit for
+  the existing magic-link reviewer pattern (the CCR/CER `allowed_reviewers` + Supabase
+  overlay) applied to the *response copy* — e.g. the reusable rule consts
+  (`STATEWIDE_RULE` / `CREDIT_LIST_RULE` / the special-mode instructions) and the intro
+  text move from hard-coded `index.ts` strings into a Supabase-backed, reviewer-editable
+  config the function reads live, so tuning the wording stops requiring a redeploy. Keep
+  the current consts as the seed/default. Scope before building.
