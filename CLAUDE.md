@@ -1853,9 +1853,12 @@ verbose copy into **ⓘ tooltips** (`infoIcon()`). **#522** replaced the collaps
 an **always-visible "Add more courses" search** whose matches drop into the candidate list as
 **unchecked** rows. **#523 (#1)** — the per-row **⚇ Merge now opens the docked sidebar itself** (not a
 modal): same dock shell + shared editor, single-course mode (no queue chrome; a band row filters the
-candidate pool via a new `setBandFilter` API). 81/81 green throughout. Full story:
-[`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md) (Session 72). Open
-follow-up: repurpose the slider in single-course mode (left out as a no-op). **NEXT:
+candidate pool via a new `setBandFilter` API). Then **#525** consolidated "Add more" into a
+**keyword guide + a Tight↔Loose candidate-looseness slider** (loosen → surface more
+title/description-similar courses as unchecked rows; the slider Sam expected the strength bar to
+be) — in the shared editor, so the worklist now also carries it alongside its queue Cons↔Aggr bar.
+81→83 green. Full story:
+[`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md) (Session 72). **NEXT:
 [`docs/session_73_handoff.md`](docs/session_73_handoff.md)** — standing lanes: unverified-M-ID
 renumber re-mint, TMC Phase-2 acceptance engine, CPL-Assistant CCR/CER recommender ETL.
 

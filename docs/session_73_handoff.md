@@ -51,17 +51,21 @@ is fed by **two feeders + a returned API**:
   shell mirrors the worklist's, but no queue chrome — just the seed's `findCandidates` + a band row
   wired to the editor's returned `setBandFilter(bands)` (hides candidate rows without rebuilding).
 - The editor returns `{ setBandFilter }`. Inside it: Proposed title, **⌕ override up by the title**
-  (#521), Discipline + forward Common SUBJ, completion note, in-row ★ target, **inline "Add more"
-  search → unchecked candidates** (#522), ⓘ tooltips (#521), **Confirm disabled until ≥2 checked**
-  (#520). **Change merge UX once, here.**
+  (#521), Discipline + forward Common SUBJ, completion note, in-row ★ target, the **"Add more
+  courses" control** — now a **keyword guide + Tight↔Loose candidate-looseness slider** (#525:
+  loosen → surface more title/description-similar courses as unchecked rows; `scoreEn` blends
+  description lazily on a deep loosen), ⓘ tooltips (#521), **Confirm disabled until ≥2 checked**
+  (#520). **Change merge UX once, here.** Note: the worklist now has TWO range sliders — the header
+  queue Cons↔Aggr (which *groups* to review) + this per-merge Tight↔Loose (candidates for *this*
+  merge); keep them labeled distinctly.
 
 Two dock shells now exist (worklist + per-row) — a small presentational duplication; a future
 `buildDock()` extraction would consolidate them (not load-bearing).
 
 ## Your options (pick with Sam — no single forced #1)
-- **S72 follow-up (small):** Sam may want the **aggressiveness slider in the per-row single-course
-  view** repurposed to filter candidates by title-similarity — I left it out as a no-op (flagged in
-  #523's body). Quick if he asks.
+- **Watch the two-slider worklist (eyeball):** #525 added a per-merge Tight↔Loose candidate slider
+  to the editor, so the worklist now shows it alongside its header Cons↔Aggr queue slider. Sam OK'd
+  this but wanted to feel it in real use — if it reads as one slider too many, collapse/relabel.
 - **Unverified-M-ID renumber re-mint** — *when the merge wave settles* (NOT per-merge). Full Rule-7,
   unverified-only, ONE pass, close-gaps + re-sort. [`docs/unverified_mid_renumber_scope.md`](unverified_mid_renumber_scope.md).
   Dry-run → Sam's go → apply + Supabase re-key.
