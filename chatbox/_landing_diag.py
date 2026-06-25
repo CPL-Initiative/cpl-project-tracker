@@ -39,6 +39,14 @@ def main():
     out["mapfy_assignments"] = [WS(m.group(0)) for m in re.finditer(
         r"\bmapfy[A-Za-z]*\s*=", html)][:10]
 
+    # Dump full CARD structure around the real link buttons so we can extract
+    # the college name that pairs with each cpldashboardcccco/<code> button.
+    out["linkbtn_cards"] = [WS(html[max(0, m.start() - 900): m.end() + 80])
+                            for m in list(re.finditer(
+                                r'<a[^>]*class="[^"]*mapfy-linkbtn[^"]*"[^>]*>',
+                                html, re.I))[:3]]
+    out["linkbtn_count"] = len(re.findall(r"mapfy-linkbtn", html))
+
     # Does the page contain Sam's real codes anywhere (a fresher source)?
     out["needle_hits"] = {}
     for needle in ("allan", "losmedanos", "mendocino", "LOSC", "MENC",
