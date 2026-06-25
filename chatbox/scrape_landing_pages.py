@@ -58,7 +58,15 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 
 
-def fetch(url: str) -> str:
+def looks_like_challenge(html: str) -> bool:
+    """map.rccd.edu sits behind a Sucuri WAF that serves a JS/meta-refresh
+    'sgcaptcha' bot-challenge to plain fetchers instead of the real page."""
+    low = html.lower()
+    return ("sgcaptcha" in low or "sucuri" in low
+            or ('http-equiv="refresh"' in low and len(html) < 1500))
+
+
+def fetch_plain(url: str) -> str:
     req = urllib.request.Request(url, headers={
         "User-Agent": UA,
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -67,9 +75,51 @@ def fetch(url: str) -> str:
     with urllib.request.urlopen(req, timeout=60) as resp:
         charset = resp.headers.get_content_charset() or "utf-8"
         body = resp.read().decode(charset, errors="replace")
-        print(f"[fetch] {resp.status} {resp.headers.get('Content-Type','?')} "
+        print(f"[fetch] plain {resp.status} {resp.headers.get('Content-Type','?')} "
               f"{len(body)} chars from {resp.geturl()}")
         return body
+
+
+def fetch_browser(url: str) -> str:
+    """Render with headless Chromium so the Sucuri JS challenge can resolve
+    (it sets a cookie and reloads back to the real page)."""
+    from playwright.sync_api import sync_playwright
+    print("[fetch] launching headless Chromium to clear the WAF challenge…")
+    with sync_playwright() as p:
+        browser = p.chromium.launch(args=["--no-sandbox"])
+        ctx = browser.new_context(user_agent=UA, locale="en-US")
+        page = ctx.new_page()
+        page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        html = page.content()
+        if looks_like_challenge(html):
+            # Wait for the challenge to set its cookie and bounce back; the real
+            # page carries landing anchors, so wait for one to appear.
+            try:
+                page.wait_for_selector(
+                    "a[href*='cpldashboardcccco'], a[href*='cpl-student-portal']",
+                    timeout=45000)
+            except Exception:
+                # last resort: a couple of explicit reloads
+                for _ in range(3):
+                    page.wait_for_timeout(4000)
+                    page.goto(url, wait_until="networkidle", timeout=60000)
+                    if not looks_like_challenge(page.content()):
+                        break
+            html = page.content()
+        print(f"[fetch] browser rendered {len(html)} chars from {page.url}")
+        browser.close()
+        return html
+
+
+def fetch(url: str) -> str:
+    html = fetch_plain(url)
+    if looks_like_challenge(html):
+        print("[fetch] WAF challenge detected on plain fetch → escalating to browser")
+        try:
+            html = fetch_browser(url)
+        except ImportError:
+            print("::warning::playwright not installed — cannot clear WAF challenge")
+    return html
 
 
 def clean_text(html_fragment: str) -> str:

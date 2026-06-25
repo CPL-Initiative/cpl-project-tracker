@@ -48,6 +48,10 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+      - name: Install Playwright Chromium (to clear the map.rccd.edu WAF challenge)
+        run: |
+          python3 -m pip install --quiet playwright
+          python3 -m playwright install --with-deps chromium
       - name: Scrape landing pages (apply on schedule / dispatch-apply)
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
