@@ -462,6 +462,9 @@
           var k = item.type + ":" + item.id;
           (state.updates[k] = state.updates[k] || []).unshift(rec);
           ta.value = ""; msg.textContent = "✓ Saved."; save.disabled = false; paintHist(); render();
+          // Let the Activity/Project card overlay (card_updates.js) refresh so the
+          // just-posted update appears on the card face without a reload.
+          try { window.dispatchEvent(new CustomEvent("cpl-item-updated", { detail: { key: k } })); } catch (e) {}
         }).catch(function (e) { msg.textContent = e.message; save.disabled = false; });
       });
       body.push(el("div", { "class": "raci-upd-h" }, ["Add an update"]),
