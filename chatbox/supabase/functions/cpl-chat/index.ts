@@ -57,6 +57,8 @@ const COLLEGE_ALIASES: Record<string, string> = {
   "lapc": "Los Angeles Pierce College",
   "lasw": "Los Angeles Southwest College",
   "wlac": "West Los Angeles College",
+  "west la": "West Los Angeles College",
+  "west los angeles": "West Los Angeles College",
   "sbvc": "San Bernardino Valley College",
   "crafton": "Crafton Hills College",
   "mvc": "Moreno Valley College",
@@ -704,8 +706,23 @@ Deno.serve(async (req: Request) => {
     let collegeContext = "";
     let topicContext = "";
 
-    const singleProfile = collegeProfile && !Array.isArray(collegeProfile) ? collegeProfile :
-                          (Array.isArray(collegeProfile) && collegeProfile.length === 1 ? collegeProfile[0] : null);
+    // If college detection was AMBIGUOUS (a token like "west" ilike-matched
+    // several colleges → an array) but the topic search DID find exhibits, narrow
+    // to the matched college that actually has topic hits. Otherwise we'd fall
+    // into college-only mode and silently DISCARD the topic results — the West-LA
+    // real-estate bug (5 "west" colleges → array → topic dropped → "no real
+    // estate" even though West LA has the exhibit).
+    let resolvedProfile: any = collegeProfile;
+    if (Array.isArray(collegeProfile) && collegeProfile.length > 1 && topicResults && topicResults.length > 0) {
+      const ranked = collegeProfile
+        .map((p: any) => ({ p, n: topicResults.filter((r: any) => r.college === p.college).length }))
+        .filter((x: any) => x.n > 0)
+        .sort((a: any, b: any) => b.n - a.n);
+      if (ranked.length > 0) resolvedProfile = ranked[0].p;
+    }
+
+    const singleProfile = resolvedProfile && !Array.isArray(resolvedProfile) ? resolvedProfile :
+                          (Array.isArray(resolvedProfile) && resolvedProfile.length === 1 ? resolvedProfile[0] : null);
 
     if (singleProfile && topicResults && topicResults.length > 0) {
       // COMBINED MODE: both college and topic detected
@@ -730,10 +747,10 @@ Deno.serve(async (req: Request) => {
         topicContext = `\n\nNote: ${collegeName} does not currently have CPL exhibits matching this topic in our database.\n` + topicContext;
       }
 
-    } else if (singleProfile || (Array.isArray(collegeProfile) && collegeProfile.length > 0)) {
+    } else if (singleProfile || (Array.isArray(resolvedProfile) && resolvedProfile.length > 0)) {
       // COLLEGE-ONLY MODE
       searchMode = "college";
-      collegeContext = buildCollegeContext(collegeProfile);
+      collegeContext = buildCollegeContext(resolvedProfile);
 
     } else if (topicResults && topicResults.length > 0) {
       // TOPIC-ONLY MODE

@@ -12,6 +12,7 @@ on:
   push:
     paths:
       - chatbox/smoke_test.sh
+      - chatbox/supabase/functions/cpl-chat/index.ts
       - .github/workflows/cpl-chat-smoke.yml
 
 jobs:

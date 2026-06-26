@@ -300,7 +300,7 @@ Confirm the v17 smoke run is green (push → Actions log), spot-checking that a 
 topic now asks the follow-up and statewide answers don't name one college. Then, on
 Sam's Portal greenlight: the Sierra persona rename + the recommender ETL.
 
-### Pass 2 — 2026-06-25 (Session 73): the multi-turn retrieval-fold fix (v17 → v18)
+### Pass 2 — 2026-06-25 (Session 73): the West-LA real-estate miss (v17 → v19)
 
 Sam tested more and hit a real miss: *"Which colleges give credit for a real estate
 license?"* → *"Southern CA in the LA area"* → *"How about West LA? I live near
@@ -317,33 +317,52 @@ function fell back to West LA's **profile sample** (only ~8 exhibits, all dental
 *recall* turn 1's list — turn 3 needed a fact never surfaced, so memory couldn't save
 it.)
 
-**Fix (v18).** Replace the ≤5-word rule with a content test: a turn is a *refinement*
-when it has **< 2 topic keywords of its own** after dropping place/region/proximity +
-"show all" continuation words (new `REFINE_NOISE` set). When so, fold the **whole recent
-conversation's user turns** (not just the last) into the retrieval text — so "real
-estate" (2 turns back) drives the search and West LA's exhibit surfaces. A genuine topic
-switch (≥2 of its own topic words, e.g. "what about nursing?") searches the new topic,
-unchanged. The current query goes first in `searchText` so the 1000-char cap never
-truncates it.
+**Fix attempt 1 (v18) — necessary but NOT sufficient.** Replace the ≤5-word rule with a
+content test: a turn is a *refinement* when it has **< 2 topic keywords of its own** after
+dropping place/region/proximity + "show all" continuation words (new `REFINE_NOISE` set);
+then fold the **whole recent conversation's user turns** into the retrieval text — so
+"real estate" (2 turns back) drives the search. A genuine topic switch (≥2 own topic
+words) searches the new topic, unchanged. **This is needed** (without it the exhibit
+search has no "real estate" at all) — but the committed smoke guard (mode 6) caught that
+v18 STILL answered "no real estate." The fold wasn't the whole story.
+
+**The ACTUAL root cause (found via the smoke failure + querying the data) — ambiguous
+college detection discards the topic.** `detectAndFetchCollegeProfile` does
+`ilike('college','%west%')` for the token "west" — and there are **5 "west" colleges**
+(Golden West, LA Southwest, Southwestern, West LA, West Valley). It matches several →
+returns an **array**. The mode router then treats an array as COLLEGE-ONLY mode and
+**discards `topicResults` entirely** — even though those results *did* include West LA's
+"CA Real Estate Salesperson" (confirmed: the noisy folded query returns it,
+`noisy_westla=2`). With topics dropped, the model saw only West LA's profile sample (~8
+exhibits, all dental/health) → "no real estate." This was the original bug all along; the
+fold never touched it.
+
+**Fix (v19).** Two changes: (1) when detection returns an array AND `topicResults` exist,
+**narrow to the matched college that actually has topic hits** (`resolvedProfile`) so it
+routes to college_topic instead of dropping the topic; (2) add a direct `"west la"` /
+`"west los angeles"` alias so the common phrasing resolves to West LA singly. The v18 fold
+stays (it's what puts "real estate" into the search).
 
 **Lessons:**
-- **A refinement is defined by content, not length.** "Southern California" and "How
-  about West LA? I live near there." are the same *kind* of turn (narrowing, no new
-  topic) at very different word counts. Gate on "does this turn carry its own topic?",
-  not on how many words it has.
-- **Conversation topic can be N turns deep.** Fold the *accumulated* user turns, not
-  just the immediately-prior one — the subject may have been stated several turns ago
-  and only narrowed since.
-- **Over-include in RETRIEVAL, under-include in the ANSWER.** Folding extra context only
-  widens the candidate set the model sees; the model still answers the literal current
-  query. Missing context (this bug) is far costlier than a little extra.
+- **An empty/ambiguous "no match" path can SILENTLY drop a whole signal.** The router
+  collapsed `college array + topics` into college-only and threw the topics away. When two
+  signals disagree, decide deliberately — don't let one quietly win.
+- **A committed regression test earns its keep on the FIRST iteration.** The smoke guard
+  (mode 6) caught that v18 didn't actually fix it — before Sam did. Without it I'd have
+  shipped a non-fix. Assert on the *symptom the user reported*, not just liveness.
+- **Confirm the mechanism in the data before re-deploying.** Querying the search RPC
+  (noisy vs clean) + counting "%west%" colleges turned a plausible-but-wrong theory (the
+  fold) into the real one (ambiguous detection) in one round, saving another bad deploy.
+- **A refinement is defined by content, not length** (the v18 insight still holds):
+  "Southern California" and "How about West LA? I live near there." are the same *kind* of
+  turn at very different word counts. Gate on "does this turn carry its own topic?".
 - **Secondary (noted, not fixed):** college **profiles carry only ~8 sample exhibits**,
-  skewed by whatever sorted first — so "college-only" mode is blind to the rest. The
-  fold sidesteps it here; broadening/round-robining the profile sample is a separate
-  follow-up.
+  skewed by sort order — so "college-only" mode is blind to the rest. v19 sidesteps it by
+  not falling into college-only here; broadening the profile sample is a separate follow-up.
 - New smoke guard: `chatbox/smoke_test.sh` mode 6 replays this exact 3-turn West-LA
   conversation and asserts the answer talks real estate and does **not** repeat the
-  wrong-conclusion phrasings.
+  wrong-conclusion phrasings. The workflow now also re-runs on any change to the function
+  source (`index.ts`), so a function tweak is always smoke-verified.
 
 **Still deferred / future direction:**
 - The **Sierra** rename (Sam, with a wink, "you can rename her 'Maybe Sierra'…") —
