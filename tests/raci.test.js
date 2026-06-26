@@ -214,6 +214,34 @@ const RACI_ROWS = [
       w[0].body.raci.R.length === 1 && w[0].body.raci.R[0].name === "Crystal Nasio");
   }
 
+  // ── (i) Manual nudge button (Session 77 — StarPort): mailto draft to opted-in ──
+  check("anon: no nudge button on the matrix", !anon.window.document.querySelector(".raci-filter-nudge"));
+  check("signed-in: 📣 nudge button on the matrix", !!sdoc.querySelector(".raci-filter-nudge"));
+  const href = signed.window.CPL_RACI_TAB._nudgeHref();
+  check("nudge href is a mailto to the opted-in members (both, default-on)",
+    /^mailto:/.test(href) &&
+    /crystal\.nasio%40rccd\.edu/.test(href) && /terence\.nelson%40rccd\.edu/.test(href));
+  check("nudge href carries a subject + dashboard link",
+    /subject=/.test(href) && /%23raci/.test(href));
+
+  // ── (j) Check-all / clear-all on the Team Directory nudge column ──
+  const sdir = makeDom(MEMBERS, RACI_ROWS, { session: { access_token: "aaa.bbb.ccc" } });
+  sdir.window.CPL_RACI_TAB.boot();
+  await new Promise((r) => setTimeout(r, 30));
+  const ddoc = sdir.window.document;
+  let dirToggle = null;
+  ddoc.querySelectorAll(".raci-tg").forEach(function (b) { if (/Directory/.test(b.textContent)) dirToggle = b; });
+  if (dirToggle) dirToggle.click();
+  const allCb = ddoc.querySelector(".raci-nudge-all");
+  check("directory: check-all master checkbox in the nudge header", !!allCb);
+  check("check-all reflects all-on by default (both members default-on)", !!allCb && allCb.checked === true);
+  if (allCb) {
+    allCb.checked = false; allCb.dispatchEvent(new sdir.window.Event("change"));
+    await new Promise((r) => setTimeout(r, 30));
+    const clears = sdir._writes.filter((x) => /team_members/.test(x.url) && x.method === "PATCH" && x.body && x.body.nudge === false);
+    check("clear-all PATCHes every member's nudge to false", clears.length === 2);
+  }
+
   let failed = 0;
   for (const [name, ok] of results) {
     console.log((ok ? "PASS" : "FAIL") + "  " + name);

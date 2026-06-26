@@ -450,7 +450,15 @@
       state.mfilter.scope = "all"; state.mfilter.q = "";
       sel.value = "all"; search.value = ""; fillMatrixTable(holder);
     });
-    wrap.appendChild(el("div", { "class": "raci-filter-bar" }, [sel, search, clear]));
+    // Manual nudge — signed-in only; drafts a mailto to the opted-in team.
+    var nudgeBtn = null;
+    if (state.sess) {
+      nudgeBtn = el("button", { "class": "raci-btn raci-filter-nudge",
+        title: "Email the opted-in team members for status updates (opens your mail app — nothing is auto-sent)" },
+        ["📣 Nudge for updates"]);
+      nudgeBtn.addEventListener("click", openNudge);
+    }
+    wrap.appendChild(el("div", { "class": "raci-filter-bar" }, [sel, search, clear, nudgeBtn]));
 
     fillMatrixTable(holder);
     wrap.appendChild(holder);
@@ -503,9 +511,22 @@
 
   function renderDirectory() {
     var canEdit = !!state.sess;
+    // Column-header check-all / clear-all for the nudge opt-in (signed-in only).
+    var emailMembers = state.members.filter(function (m) { return m.email; });
+    var onCount = emailMembers.filter(function (m) { return m.nudge !== false; }).length;
+    var allCb = el("input", { type: "checkbox", "class": "raci-nudge-cb raci-nudge-all" });
+    allCb.checked = !!emailMembers.length && onCount === emailMembers.length;
+    allCb.indeterminate = onCount > 0 && onCount < emailMembers.length;
+    allCb.disabled = !canEdit || !emailMembers.length;
+    allCb.title = canEdit ? "Check all / clear all" : "Sign in to change";
+    allCb.addEventListener("change", function () { setAllNudge(allCb.checked); });
+    var nudgeTh = el("th", { "class": "raci-th-nudge", title: "Include members in the update nudges" }, [
+      el("div", { "class": "raci-th-nudge-wrap" }, ["Nudge for Updates",
+        canEdit ? el("label", { "class": "raci-nudge-all-lbl", title: "Check all / clear all" },
+          [allCb, el("span", {}, ["all"])]) : null])]);
     var tbl = el("table", { "class": "raci-table raci-dir" }, [
       el("tr", {}, [el("th", {}, ["Name"]), el("th", {}, ["Role / title"]), el("th", {}, ["Email"]),
-        el("th", { "class": "raci-th-nudge", title: "Include this member in the weekly update nudges" }, ["Nudge for Updates"])])]);
+        nudgeTh])]);
     state.members.forEach(function (m) {
       var on = m.nudge !== false; // default true
       var cb = el("input", { type: "checkbox", "class": "raci-nudge-cb" });
@@ -528,6 +549,49 @@
       el("div", { "class": "raci-legend" }, [canEdit
         ? "Uncheck a member to hold them out of the update nudges (re-check to re-enable anytime)."
         : "“Nudge for Updates” controls who receives the weekly update reminders — sign in to change."])]);
+  }
+
+  // Check-all / clear-all the nudge opt-in for every member with an email.
+  // Optimistic re-render, then one PATCH per changed member; rolls back on error.
+  function setAllNudge(want) {
+    if (!state.sess) { alert("Sign in to change nudges."); return; }
+    var targets = state.members.filter(function (m) { return m.email && (m.nudge !== false) !== want; });
+    if (!targets.length) { render(); return; }
+    targets.forEach(function (m) { m.nudge = want; });
+    render();
+    Promise.all(targets.map(function (m) {
+      return sbWrite("PATCH", "team_members?id=eq." + encodeURIComponent(m.id), { nudge: want }, "return=minimal")
+        .then(function (r) { if (!r.ok) throw new Error("save failed (" + r.status + ")"); });
+    })).catch(function () {
+      targets.forEach(function (m) { m.nudge = !want; }); render();
+      alert("Could not update all members — are you a signed-in reviewer?");
+    });
+  }
+
+  // ─── Manual nudge (mailto draft to the opted-in team) ──────────────────────
+  // v1 channel = a mailto: draft: opens the reviewer's mail app pre-addressed
+  // to every member opted in for nudges (nudge !== false AND has an email), so
+  // nothing is auto-sent — the reviewer reviews + clicks send. Auto-send via a
+  // Teams webhook / Graph sendMail is a later upgrade (handoff decision #1).
+  function nudgeRecipients() {
+    return state.members.filter(function (m) { return m.email && m.nudge !== false; });
+  }
+  function buildNudgeHref() {
+    var recips = nudgeRecipients();
+    if (!recips.length) return null;
+    var emails = recips.map(function (m) { return m.email; }).join(",");
+    var subject = "CPL Workplan — quick update request";
+    var url = location.origin + location.pathname + "#raci";
+    var body = "Hi team,\n\nPlease take a moment to update the status of your CPL workplan "
+      + "items (your Responsible/Accountable assignments) on the dashboard:\n" + url
+      + "\n\nThank you!\n";
+    return "mailto:" + encodeURIComponent(emails)
+      + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  }
+  function openNudge() {
+    var href = buildNudgeHref();
+    if (!href) { alert("No team members are opted in for nudges. Set them in the Team Directory."); return; }
+    window.location.href = href;
   }
 
   function toggleNudge(m, cb) {
@@ -673,6 +737,10 @@
       ".raci-dir-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;color:#555;font-size:.85rem;}" +
       ".raci-dir-n{font-weight:600;color:var(--text-strong,#222);}.raci-dir-r{color:#555;}.raci-dir-e a{color:var(--accent-link,#1c5d99);}" +
       ".raci-th-nudge{text-align:center;white-space:nowrap;}.raci-nudge-cell{text-align:center;}" +
+      ".raci-th-nudge-wrap{display:flex;flex-direction:column;align-items:center;gap:.15rem;}" +
+      ".raci-nudge-all-lbl{display:inline-flex;align-items:center;gap:.25rem;font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;color:var(--text-faint,#888);cursor:pointer;}" +
+      ".raci-filter-nudge{margin-left:auto;background:var(--navy-primary,#0A2240);color:#fff;border-color:var(--navy-primary,#0A2240);}" +
+      ".raci-filter-nudge:hover{background:var(--navy-secondary,#1c3d5a);}" +
       ".raci-nudge-cb{width:16px;height:16px;cursor:pointer;accent-color:var(--navy-primary,#0A2240);}" +
       ".raci-row-muted{opacity:.5;}.raci-row-muted .raci-dir-n{font-weight:500;}" +
       ".raci-edit-cell{cursor:text;border-radius:4px;}.raci-edit-cell:hover{background:var(--surface-2,#eef3f9);outline:1px dashed var(--border,#cdd7e1);}" +
@@ -716,5 +784,6 @@
     load(function () { render(); consumePendingFocus(); });
   }
 
-  window.CPL_RACI_TAB = { boot: boot, render: render, focusItem: focusItem };
+  window.CPL_RACI_TAB = { boot: boot, render: render, focusItem: focusItem,
+    _nudgeHref: buildNudgeHref };
 })();
