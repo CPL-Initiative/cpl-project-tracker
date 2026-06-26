@@ -53,6 +53,12 @@
    "text": "Standing bonus: we'll keep adding Arroyo-Seco-style California plein-air landscapes (Redmond, Guy Rose, Wendt, Payne) to First Light — flag any artist/work you'd love and we'll source it."
   },
   {
+   "id": "fable-raci-copy-row",
+   "who": "fable",
+   "tab": "raci",
+   "text": "TOP / READY: Sam asked for a 'copy one row's R/A/C/I to other rows' action on the RACI matrix (he loves the tab). Design is fully specced in docs/session_77_handoff.md (TOP carry-over): a ⧉ copy button on populated rows → modal with a checkbox target list + search + 'select all shown' → Promise.all(saveRaci) to each target. raci.js only, static (live on merge), ~1 modal + tests. v1 = replace. Build it first."
+  },
+  {
    "id": "fable-factsheet-followups",
    "who": "fable",
    "tab": "dashboard",

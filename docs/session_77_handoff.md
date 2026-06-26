@@ -37,6 +37,31 @@ this. Everything below shipped to `main` (tracker) / merged (vault); one public-
 
 ## Carry-over (priority order)
 
+**TOP / READY TO BUILD — Copy-RACI (Sam asked for it, loves the tab):** add a
+"copy one row's R/A/C/I to other rows" action to the matrix. Design is fully
+specced (worked out from the code at Session-76 end), `raci.js` only, ~1 modal +
+a button + CSS + tests, low risk:
+- **Affordance:** in `fillMatrixTable`, when `canEdit` AND the source row has ≥1
+  assignment (`hasAny(raciFor(item))`), append a small `⧉ copy` button to the
+  **item cell** (the first `<td>` — it has no click handler, so no conflict with
+  the RACI cells' `openRoleEditor`).
+- **`openCopyRaci(sourceItem)` modal:** show the source's R/A/C/I as chips
+  (confirm what's copied); a "Copy to:" target list = **all other rows** in tree
+  order, depth-indented, each a checkbox (reuse `.raci-pick` styling); a **search
+  box** filtering id/name; a **"select all shown"** master checkbox (so you can
+  search `4.` → select all → copy an Activity's RACI to its whole subtree); a
+  warning line *"replaces each selected row's current R/A/C/I"*; footer **"Copy to
+  N rows"** (disabled until ≥1 checked) + Cancel.
+- **Confirm:** `Promise.all(targets.map(t => saveRaci(t, JSON.parse(JSON.stringify(raciFor(source))))))`
+  then `closeModal(); render();`. `saveRaci` already upserts `item_raci` on
+  `(item_type,item_id)`, so each target is one write. Reuse `showModal`, `raciFor`,
+  `saveRaci`, `chip`.
+- **Tests (`tests/raci.test.js`):** the `⧉ copy` button shows only when signed-in
+  AND populated; clicking it + selecting a target + confirm POSTs the source's raci
+  to the target's key (mock the `item_raci` POST and assert the body). Keep suite green.
+- v1 = **replace** (not merge); a merge mode can come later. No RACI-key change,
+  no generator change, static asset → live on merge.
+
 **DECISION-GATED — ask Sam, don't guess:**
 1. **Nudge SEND channel (#2)** — `nudges/build_nudges.py` only drafts today. Pick: Outlook (zero infra),
    Teams Power Automate webhook (`TEAMS_NUDGE_WEBHOOK`), or Graph `sendMail`. (In the To-Do feed.)
