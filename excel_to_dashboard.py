@@ -1814,6 +1814,12 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         if annual_summary:
             html += f'            <div style="padding:0 0.5rem 0.3rem 0.5rem;">{annual_summary}</div>\n'
 
+        # Live-update hook (Activity level) — card_updates.js fills this from the
+        # Supabase `item_updates` table (RACI tab 📝 composer, keyed `activity:N`),
+        # showing the newest posted Activity update with a timestamp. Hidden until populated.
+        html += (f'            <div class="cpl-live-update" data-update-key="activity:{act_num}" '
+                 f'style="display:none;margin:0 0.5rem 0.4rem 0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;"></div>\n')
+
         # Group KPIs by their primary Goal
         goal_groups = {}
         for kpi in group["kpis"]:
@@ -1963,6 +1969,14 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 kpi_pid = kpi["id"]
                 kpi_notes_list = (update_log or {}).get(kpi_pid, [])
 
+                # Live-update hook — card_updates.js fills this from the Supabase
+                # `item_updates` table (the RACI tab's 📝 composer writes here),
+                # showing the newest posted update with a timestamp. Hidden until
+                # populated; when shown it hides the creation-era static line below.
+                html += (f'                <div class="cpl-live-update" '
+                         f'data-update-key="project:{html_escape(str(kpi_pid), quote=True)}" '
+                         f'style="display:none;margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;"></div>\n')
+
                 if kpi_update or kpi_wp:
                     # Toggle for full history
                     toggle_part = ""
@@ -1984,7 +1998,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
 
                     # Latest Update (col P)
                     if kpi_update:
-                        html += (f'                    <div style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;">'
+                        html += (f'                    <div class="cpl-static-update" style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;">'
                                  f'<span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:#fff;'
                                  f'padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>'
                                  f'{kpi_update}</div>\n')
@@ -2021,14 +2035,17 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
 
                     html += '                </div>\n'
 
-                # Report + Attach buttons. (The Excel "Update" deep-link was
-                # removed in Excel-retirement P1 — these activity-KPI cards are
-                # aggregates with no single editable row; curators edit the
-                # underlying project on its card in the Projects Grid below.)
+                # Report + Attach + RACI + Update buttons. Each sub-activity is
+                # its own RACI row (keyed `project:<id>`, like the Projects Grid
+                # card below), so the 📝 Update composer + 👥 RACI deep-links work
+                # here too (the Excel "Update" deep-link removed in Excel-retirement
+                # P1 was a different, Excel-bound editor — this is the RACI tab's
+                # braindump→CC composer).
                 btn_style = ('display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;'
                              'font-size:0.7rem;text-decoration:none;font-weight:600;'
                              'padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;'
                              'cursor:pointer;transition:background 0.2s;margin-right:0.4rem;')
+                kpi_pid_q = html_escape(str(kpi_pid), quote=True)
                 html += (f'                <a href="reports/projects/{kpi_pid}_Report.docx" '
                          f'download class="report-btn" '
                          f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
@@ -2041,7 +2058,19 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                          f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
                          f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
                          f'<span style="font-size:0.8rem;">&#128206;</span> Attach'
-                         f'{_att_badge(attachments, act_num)}</a>\n')
+                         f'{_att_badge(attachments, act_num)}</a>'
+                         f'<a href="#raci" class="raci-link" '
+                         f'onclick="try{{sessionStorage.setItem(\'cpl_raci_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
+                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
+                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
+                         f' title="Who\'s Responsible / Accountable / Consulted / Informed — open Team &amp; RACI">'
+                         f'<span style="font-size:0.8rem;">&#128101;</span> RACI</a>'
+                         f'<a href="#raci" class="update-link" '
+                         f'onclick="try{{sessionStorage.setItem(\'cpl_update_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
+                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
+                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
+                         f' title="Braindump a quick status update — CC writes it up and saves it to this card">'
+                         f'<span style="font-size:0.8rem;">&#128221;</span> Update</a>\n')
 
                 html += '            </div>\n'  # close activity-kpi-card
 
@@ -2428,7 +2457,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
     # so a curator can add a first note (preview shows "(none — click to add)").
     current_notes_html = ""
     current_notes_html += (
-        f'            <div style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
+        f'            <div class="cpl-static-update" style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
         f'<span style="font-size:0.65rem;font-weight:600;background:var(--navy-secondary);color:#fff;'
         f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Latest Update</span>'
         f'{_ed("latest_update", update_text, update_text, multiline=True)}</div>\n'
@@ -2486,6 +2515,14 @@ def _render_single_project_card(p, update_log=None, attachments=None,
             f'<strong style="color:var(--navy-primary);">{html_escape(str(update_date)) if update_date else "—"}</strong>',
             dtype="date", body_is_html=True,
         )
+        # Live-update hook — card_updates.js fills this from the Supabase
+        # `item_updates` table (RACI tab 📝 composer, keyed `project:<id>`), showing
+        # the newest posted update with a timestamp; hides the static line when shown.
+        live_hook = (
+            f'                <div class="cpl-live-update" '
+            f'data-update-key="project:{html_escape(str(pid), quote=True)}" '
+            f'style="display:none;margin-bottom:0.35rem;"></div>\n'
+        )
         notes_html = (
             f'            <div style="margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.5rem;">\n'
             f'                <div style="display:flex;align-items:center;margin-bottom:0.35rem;">\n'
@@ -2493,6 +2530,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
             f'{update_date_ed}</span>\n'
             f'{toggle_html}'
             f'                </div>\n'
+            f'{live_hook}'
             f'{current_notes_html}'
             f'{history_html}'
             f'            </div>\n'
