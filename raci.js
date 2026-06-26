@@ -199,11 +199,18 @@
   function load(cb) {
     state.sess = getSession();
     state.items = buildItems();
-    Promise.all([sbGet("team_members?select=*&order=sort_order,name"), sbGet("item_raci?select=*")])
+    Promise.all([sbGet("team_members?select=*&order=sort_order,name"), sbGet("item_raci?select=*"),
+      sbGet("item_updates?select=*&order=created_at.desc")])
       .then(function (res) {
         state.members = res[0] || [];
         state.raci = {};
         (res[1] || []).forEach(function (r) { state.raci[r.item_type + ":" + r.item_id] = r.raci || {}; });
+        // Group the update log by item key (newest first — the query is ordered).
+        state.updates = {};
+        (res[2] || []).forEach(function (u) {
+          var k = u.item_type + ":" + u.item_id;
+          (state.updates[k] = state.updates[k] || []).push(u);
+        });
         state.loaded = true;
         if (cb) cb();
       });
@@ -211,6 +218,7 @@
 
   // ─── RACI helpers ──────────────────────────────────────────────────────────
   function raciFor(item) { return state.raci[item.type + ":" + item.id] || { R: [], A: [], C: [], I: [] }; }
+  function updatesFor(item) { return (state.updates && state.updates[item.type + ":" + item.id]) || []; }
   function names(arr) { return (arr || []).map(function (m) { return m && m.name ? m.name : m; }); }
   function hasAny(r) { return !!(r && ((r.R || []).length + (r.A || []).length + (r.C || []).length + (r.I || []).length)); }
 
@@ -341,6 +349,131 @@
       [go]);
   }
 
+  // ─── Update composer (braindump → CC writes it up → item_updates) ──────────
+  // The "COBI card that summarizes it" pulled from window.CPL_DATA for an item.
+  function cplItem(item) {
+    var d = window.CPL_DATA || {};
+    if (item.type === "activity") {
+      var a = (d.activity_kpis || []).filter(function (g) {
+        return String(g.activity_id || "").replace(/[^0-9]/g, "") === item.id; })[0];
+      return { name: (a && a.activity_name) || ("Activity " + item.id), desc: "", status: "", metric: "", update: "", update_date: "", lead: "" };
+    }
+    var kp = null;
+    (d.activity_kpis || []).forEach(function (g) { (g.kpis || []).forEach(function (k) { if (String(k.id) === item.id) kp = k; }); });
+    var pr = (d.projects || []).filter(function (p) { return String(p.id) === item.id; })[0];
+    return {
+      name: (kp && kp.name) || (pr && pr.name) || item.name,
+      desc: (pr && pr.desc) || "",
+      status: (kp && kp.status) || "",
+      metric: kp && kp.metric ? (kp.metric + (kp.unit ? " " + kp.unit : "")) : "",
+      update: (kp && kp.update) || "",
+      update_date: (kp && kp.update_date) || "",
+      lead: (pr && pr.lead) || ""
+    };
+  }
+  // The summary text that doubles as the email body (Phase 2) + composer header.
+  function itemSummaryText(item) {
+    var c = cplItem(item);
+    var lines = [(item.isActivity ? "Activity " + item.id : item.id) + " — " + c.name];
+    if (c.status) lines.push("Status: " + c.status);
+    if (c.metric) lines.push("Progress: " + c.metric);
+    if (c.lead) lines.push("Lead: " + c.lead);
+    if (c.update) lines.push("Latest note: " + c.update + (c.update_date ? " (" + c.update_date + ")" : ""));
+    if (c.desc) lines.push(c.desc);
+    return lines.join("\n");
+  }
+  function callClaudeUpdate(braindump, name) {
+    var url = window.CPL_REPORT_PROXY_URL || "";
+    if (!url) return Promise.reject(new Error("AI proxy not configured"));
+    var prompt = "Rewrite this brain-dump into a concise, professional status update "
+      + "(1–3 sentences) for the CPL workplan item \"" + name + "\". Keep it factual — do "
+      + "NOT invent specifics, numbers, or names not present. Return ONLY the update text.\n\n"
+      + "Brain-dump:\n" + braindump;
+    return fetch(url, {
+      method: "POST", headers: { "Content-Type": "application/json", "anthropic-version": "2023-06-01" },
+      body: JSON.stringify({ model: "claude-sonnet-4-5-20250929", max_tokens: 1024,
+        messages: [{ role: "user", content: prompt }] })
+    }).then(function (r) {
+      if (!r.ok) return r.text().then(function (t) { throw new Error("AI error (" + r.status + "): " + t.substring(0, 140)); });
+      return r.json();
+    }).then(function (j) {
+      if (j.content && j.content[0] && j.content[0].text) return j.content[0].text.trim();
+      throw new Error("Unexpected AI response");
+    });
+  }
+  function postUpdate(item, body, raw) {
+    var row = { item_type: item.type, item_id: item.id, body: body, raw: raw || null,
+      author: (state.sess && state.sess.email) || null };
+    return sbWrite("POST", "item_updates", row, "return=representation").then(function (r) {
+      if (!r.ok) throw new Error("save failed (" + r.status + ")");
+      return r.json().catch(function () { return [row]; });
+    });
+  }
+  // The composer: anyone can VIEW the summary + update history; a signed-in
+  // reviewer can braindump → ✨ have CC write it up → Save (appends item_updates).
+  function openUpdate(item) {
+    var c = cplItem(item);
+    var canEdit = !!state.sess;
+    var hist = el("div", { "class": "raci-upd-hist" }, []);
+    function paintHist() {
+      hist.innerHTML = "";
+      var ups = updatesFor(item);
+      if (!ups.length) { hist.appendChild(el("div", { "class": "raci-empty" }, ["No updates recorded yet."])); return; }
+      ups.forEach(function (u) {
+        hist.appendChild(el("div", { "class": "raci-upd-entry" }, [
+          el("div", { "class": "raci-upd-body" }, [u.body || ""]),
+          el("div", { "class": "raci-upd-meta" }, [(u.author || "—") + " · " + relTime(u.created_at)])]));
+      });
+    }
+    paintHist();
+
+    var summary = el("div", { "class": "raci-upd-summary" }, [
+      c.status ? el("div", {}, [el("strong", {}, ["Status: "]), c.status]) : null,
+      c.metric ? el("div", {}, [el("strong", {}, ["Progress: "]), c.metric]) : null,
+      c.lead ? el("div", {}, [el("strong", {}, ["Lead: "]), c.lead]) : null,
+      c.update ? el("div", { "class": "raci-upd-prev" }, ["Latest note: " + c.update + (c.update_date ? " (" + c.update_date + ")" : "")]) : null,
+      c.desc ? el("div", { "class": "raci-upd-desc" }, [c.desc]) : null]);
+
+    var body = [el("div", { "class": "raci-modal-sub" }, ["The card so far:"]), summary,
+      el("div", { "class": "raci-upd-h" }, ["Updates"]), hist];
+
+    if (canEdit) {
+      var ta = el("textarea", { "class": "raci-in raci-upd-ta", rows: "4",
+        placeholder: "Brain-dump a few details — bullets, fragments, whatever. CC will write it up." }, []);
+      var msg = el("div", { "class": "raci-modal-msg" }, []);
+      var polish = el("button", { "class": "raci-btn", title: window.CPL_REPORT_PROXY_URL ? "Let CC turn your brain-dump into a clean update" : "AI proxy not configured" }, ["✨ Let CC write it up"]);
+      if (!window.CPL_REPORT_PROXY_URL) polish.disabled = true;
+      var save = el("button", { "class": "raci-btn raci-btn-go" }, ["Save update"]);
+      polish.addEventListener("click", function () {
+        var raw = ta.value.trim();
+        if (!raw) { msg.textContent = "Type a few details first."; return; }
+        msg.textContent = "CC is writing it up…"; polish.disabled = true;
+        callClaudeUpdate(raw, c.name).then(function (txt) {
+          ta.value = txt; msg.textContent = "✓ Polished — edit if needed, then Save.";
+        }).catch(function (e) { msg.textContent = e.message; })
+          .then(function () { polish.disabled = !window.CPL_REPORT_PROXY_URL ? true : false; });
+      });
+      save.addEventListener("click", function () {
+        var text = ta.value.trim();
+        if (!text) { msg.textContent = "Nothing to save."; return; }
+        msg.textContent = "Saving…"; save.disabled = true;
+        postUpdate(item, text, null).then(function (rows) {
+          var rec = (rows && rows[0]) || { body: text, author: (state.sess && state.sess.email) || null, created_at: new Date().toISOString() };
+          var k = item.type + ":" + item.id;
+          (state.updates[k] = state.updates[k] || []).unshift(rec);
+          ta.value = ""; msg.textContent = "✓ Saved."; save.disabled = false; paintHist(); render();
+        }).catch(function (e) { msg.textContent = e.message; save.disabled = false; });
+      });
+      body.push(el("div", { "class": "raci-upd-h" }, ["Add an update"]),
+        el("div", { "class": "raci-modal-sub" }, ["Reviewers only — braindump, let CC polish, then save."]),
+        ta, el("div", { "class": "raci-upd-actions" }, [polish]), msg);
+      showModal("Update — " + (item.isActivity ? "Activity " + item.id : item.id) + "  " + c.name, body, [save]);
+    } else {
+      showModal("Update — " + (item.isActivity ? "Activity " + item.id : item.id) + "  " + c.name,
+        body.concat([el("div", { "class": "raci-modal-sub" }, ["Sign in (CCCCO MAP) to add an update."])]), []);
+    }
+  }
+
   // ─── Add-member modal ──────────────────────────────────────────────────────
   function openAddMember() {
     if (!state.sess) { alert("Sign in to add a team member."); return; }
@@ -448,6 +581,13 @@
         })(item);
         itemCell.appendChild(cpBtn);
       }
+      // 📝 update — view the card's update history (anyone); post one (signed-in).
+      var nUp = updatesFor(item).length;
+      var upBtn = el("button", { "class": "raci-upd-btn" + (nUp ? " has" : ""),
+        title: canEdit ? "Add / view status updates for this item" : "View status updates" },
+        ["📝" + (nUp ? " " + nUp : "")]);
+      (function (it) { upBtn.addEventListener("click", function (e) { e.stopPropagation(); openUpdate(it); }); })(item);
+      itemCell.appendChild(upBtn);
       tr.appendChild(itemCell);
       ROLES.forEach(function (role) {
         var cell = el("td", { "class": "raci-cell" + (canEdit ? " raci-cell-edit" : ""),
@@ -731,8 +871,26 @@
   // cold deep-link case, where the activation event fired before this script
   // loaded), then scroll the matrix to that row and flash it.
   var FOCUS_KEY = "cpl_raci_focus";
+  var UPDATE_KEY = "cpl_update_focus";
   function consumePendingFocus() {
     if (!state.loaded) return; // leave the key for boot's render callback
+    // (a) Update deep-link — the nudge email links to a specific item's update
+    // composer (Phase 2). Accept either a ?update=<type>:<id> query param (the
+    // email URL) or sessionStorage cpl_update_focus (in-app cards). Opens the
+    // braindump composer straight away.
+    var u = null;
+    try {
+      var qp = new URLSearchParams(location.search || "");
+      u = qp.get("update") || sessionStorage.getItem(UPDATE_KEY);
+      if (qp.get("update")) { qp.delete("update"); var qs = qp.toString();
+        history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash); }
+      sessionStorage.removeItem(UPDATE_KEY);
+    } catch (e) {}
+    if (u && u.indexOf(":") > 0) {
+      var it = state.items.filter(function (x) { return x.key === u; })[0];
+      if (it) { focusItem(it.type, it.id); openUpdate(it); return; }
+    }
+    // (b) RACI row focus (per-card 👥 RACI link).
     var f = null;
     try { f = sessionStorage.getItem(FOCUS_KEY); } catch (e) {}
     if (!f) return;
@@ -862,6 +1020,18 @@
       ".raci-st-wait{color:var(--text-faint,#777);}" +
       ".raci-st-overdue{color:#b3261e;font-weight:600;}" +
       ".raci-st-none{color:var(--text-faint,#aaa);}" +
+      ".raci-upd-btn{margin-left:.4rem;font-size:.66rem;font-weight:600;color:var(--text-faint,#777);background:none;border:1px solid transparent;border-radius:4px;padding:.04rem .3rem;cursor:pointer;vertical-align:middle;}" +
+      ".raci-upd-btn:hover{background:var(--surface-2,#eef3f9);border-color:var(--border,#d4dde7);}" +
+      ".raci-upd-btn.has{color:var(--navy-secondary,#1c3d5a);}" +
+      ".raci-upd-summary{background:var(--surface-2,#f4f7fb);border-radius:6px;padding:.5rem .6rem;margin:.2rem 0 .6rem;font-size:.82rem;line-height:1.4;}" +
+      ".raci-upd-prev{color:var(--text-faint,#555);margin-top:.2rem;}.raci-upd-desc{color:var(--text-faint,#777);margin-top:.2rem;font-size:.78rem;}" +
+      ".raci-upd-h{font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.03em;color:var(--text-faint,#888);margin:.6rem 0 .3rem;}" +
+      ".raci-upd-hist{display:flex;flex-direction:column;gap:.4rem;max-height:30vh;overflow:auto;}" +
+      ".raci-upd-entry{border-left:3px solid var(--gold-accent,#B8860B);padding:.2rem .5rem;background:var(--surface-2,#f8fafc);border-radius:0 5px 5px 0;}" +
+      ".raci-upd-body{font-size:.85rem;color:var(--text-strong,#222);}" +
+      ".raci-upd-meta{font-size:.72rem;color:var(--text-faint,#999);margin-top:.15rem;}" +
+      ".raci-upd-ta{width:100%;box-sizing:border-box;font-family:inherit;font-size:.85rem;}" +
+      ".raci-upd-actions{display:flex;gap:.5rem;margin:.3rem 0;}" +
       ".raci-nudge-cb{width:16px;height:16px;cursor:pointer;accent-color:var(--navy-primary,#0A2240);}" +
       ".raci-row-muted{opacity:.5;}.raci-row-muted .raci-dir-n{font-weight:500;}" +
       ".raci-edit-cell{cursor:text;border-radius:4px;}.raci-edit-cell:hover{background:var(--surface-2,#eef3f9);outline:1px dashed var(--border,#cdd7e1);}" +
@@ -906,5 +1076,5 @@
   }
 
   window.CPL_RACI_TAB = { boot: boot, render: render, focusItem: focusItem,
-    _nudgeHref: buildNudgeHref };
+    _nudgeHref: buildNudgeHref, _openUpdate: openUpdate, _itemSummary: itemSummaryText };
 })();

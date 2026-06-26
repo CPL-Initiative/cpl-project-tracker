@@ -61,3 +61,29 @@ create policy tm_write on public.team_members for all
 drop policy if exists ir_write on public.item_raci;
 create policy ir_write on public.item_raci for all
   using (is_allowed_reviewer()) with check (is_allowed_reviewer());
+
+-- ─────────────────────────────────────────────────────────────────────────
+-- item_updates — the append-only Update Log (StarPort, 2026-06-26).
+-- One row per status update on an Activity/sub-activity/project; written by the
+-- RACI tab's 📝 braindump→CC-polish composer. The single live source for card
+-- updates (both activities AND projects — keyed like item_raci). Public read,
+-- reviewer-gated insert, NO update/delete (immutable history).
+-- (A pre-existing project-only `update_log` table is unrelated/vestigial.)
+-- ─────────────────────────────────────────────────────────────────────────
+create table if not exists public.item_updates (
+  id          bigint generated always as identity primary key,
+  item_type   text not null check (item_type in ('activity','project')),
+  item_id     text not null,
+  body        text not null,          -- the finished (CC-polished or hand-written) update
+  raw         text,                   -- the original braindump, kept for provenance (optional)
+  author      text,                   -- reviewer email who posted it
+  scope       text not null default 'cpl-initiative',
+  created_at  timestamptz not null default now()
+);
+create index if not exists item_updates_item_idx on public.item_updates (item_type, item_id, created_at desc);
+
+alter table public.item_updates enable row level security;
+drop policy if exists iu_select on public.item_updates;
+create policy iu_select on public.item_updates for select using (true);
+drop policy if exists iu_insert on public.item_updates;
+create policy iu_insert on public.item_updates for insert with check (is_allowed_reviewer());
