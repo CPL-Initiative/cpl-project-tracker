@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-06-26 (Session 77 — StarPort: the RACI update loop end-to-end, 8 PRs #556–#562 — Copy-RACI, Annual Report tab, the save-persistence token-refresh fix + nudge accountability, the 📝 braindump→CC composer + `item_updates`, per-item 📣 nudge, 📝 on every card; NEW kb-note methodology-refresh-token-before-write)
+updated: 2026-06-26 (Session 78 — SkyMap: posted `item_updates` now surface ON the Activity/sub-activity/project card face + 📝/👥 deep-links on sub-activity cards, PR #564 — new read-only overlay `card_updates.js`; NEW kb-note methodology-live-overlay-onto-generated-cards)
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -134,6 +134,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Reference — Statewide Collaborative (CCC) credit recommendations are not housed at one college (system-wide standards; access via your OWN college's landing page)](kb-notes/reference-statewide-credit-recommendations.md) | reference | published | 2026-06-25 | 2026-06-25 |
 | [Methodology — Build a hierarchy from dotted ids without migrating stored keys (id-prefix parenting; re-tier visually, keep the persisted key stable)](kb-notes/methodology-tree-from-dotted-ids-stable-keys.md) | methodology | published | 2026-06-26 | 2026-06-26 |
 | [Methodology — Refresh the access token before every write (don't trust a format-valid JWT; the silent-401 phantom-save trap)](kb-notes/methodology-refresh-token-before-write.md) | methodology | published | 2026-06-26 | 2026-06-26 (Session 77 — StarPort) |
+| [Methodology — Overlay live data onto generated cards via a stamped data-key hook (generator stamps the hook, a static read-only JS overlay fills it)](kb-notes/methodology-live-overlay-onto-generated-cards.md) | methodology | published | 2026-06-26 | 2026-06-26 (Session 78 — SkyMap) |
 | [Playbook — A standalone public page on the COBI Pages site (sits-alone subdir, live data via `../live_metrics.json`, non-tab nav anchor, print-to-PDF)](kb-notes/playbook-standalone-public-page.md) | playbook | published | 2026-06-25 | 2026-06-25 (Session 74 — the Fact Sheet) |
 
 ---
@@ -151,6 +152,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [Scope — CCR merge-workspace EPIC (consolidate the two merge popups into one shared MergeEditor + dock the worklist panel; divergence table, two-feeders design, 4-PR ladder, Session 71)](ccr_merge_workspace_epic_scope.md) | 2026-06-24 | 2026-06-24 |
 | [`ccr_merge_workspace_lessons.md`](ccr_merge_workspace_lessons.md) — Session 71: the shared-editor extraction (#511–#518); two-feeders/one-editor design, the seed-`k` precedence bug, deterministic-splice method. **Session 72 (StarLander): the post-consolidation polish pass — 14 PRs #520–#534 (Wave 1/2 six asks + candidate slider; Wave 3 nine refinements #527–#531; Wave 4 Beg/Int/Adv relabel #532; Wave 5 #534 — decouple-from-CCR-filters + keyword-surfaces-all + single-course-rename→Save + header Prev/Next)** | 2026-06-24 | 2026-06-25 |
 | [Scope — C-ID articulation authority (the math cleanup)](cid_articulation_authority_scope.md) | 2026-06-11 | 2026-06-11 |
+| [`cobi_raci_nudge_lessons.md`](cobi_raci_nudge_lessons.md) | Team & RACI tab + the update-nudge loop. **Session 77 (StarPort):** the full nudge → braindump → CC-writes-it-up → card loop + the save-persistence token-refresh fix (#556–#562). **Session 78 (SkyMap):** posted `item_updates` surface ON the Activity/sub-activity/project card face + 📝/👥 deep-links on sub-activity cards (#564, `card_updates.js`) | **Session 78 (SkyMap, 2026-06-26)** |
 | [`dashboard_cleanup_lessons.md`](dashboard_cleanup_lessons.md) | Dashboard cleanup (renames, CER, slim header, SUBJ filters, Exhibit Adoption tab) + cross-disc accounting + 3 rule changes; **Session 23: #2 sidebar sub-links + #3 display-label map** | Session 23 (Bruh 23, 2026-05-31) |
 | [`engineering_practices_lessons.md`](engineering_practices_lessons.md) | Dev infra / testing / design system (committed jsdom harness + CI, stop-hook fix, `:root` tokens + `var()` rule, prototype-first) | **Session 32 (Busy Feynman, 2026-06-04) NEW** |
 | [`common_subject_code_tab_lessons.md`](common_subject_code_tab_lessons.md) | CSC tab / canonical SUBJ4 / CSC-G; **Session 37: orphan-tail discipline fallback #330 + FL-split CSR search/display #331** | **Session 37 (2026-06-09)** |
@@ -252,6 +254,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | 75 → 76 | SkyMaster: the COBI ownership + nudge + report layer — workplan-alignment regroup #545, Team & RACI tab + registry #546, nudge toggle + test modes #547, editable Directory cells #548; Annual Report draft delivered (not a tab yet) → the RACI carry-overs (matrix filter, nudge SEND channel, `allowed_reviewers`, per-card RACI links, `update_log`, Report tab) | [`session_76_handoff.md`](session_76_handoff.md) |
 | 76 → 77 | SkyTrek: Team & RACI — matrix **filter** + per-card **`👥 RACI` deep-links** #550, the **CI-poll-via-MCP** learning → CLAUDE.md #552, and the **3-tier matrix** (Activity → sub-activity → project, hierarchical filter) #553; PLUS the **Veterans Sprint + Military Base dp plans** added to the vault (CPLBrain #10/#11) and a scrubbed public-KB mirror (draft PR #15, awaiting Sam) → the decision-gated RACI carry-overs (nudge channel, lead emails, `update_log`) + the Annual Report tab + the standing lanes | [`session_77_handoff.md`](session_77_handoff.md) |
 | 77 → 78 | StarPort: the RACI update loop end-to-end (8 PRs #556–#562) — Copy-RACI #556, Annual Report tab #557, check-all/clear-all + manual nudge #558, **the save-persistence token-refresh fix** + nudge accountability #559, the 📝 braindump→CC composer + `item_updates` #560, per-item 📣 nudge #561, 📝 on every card #562 → surface `item_updates` on the card face + Annual Report (self-freshening); the 3 lead emails; standing lanes | [`session_78_handoff.md`](session_78_handoff.md) |
+| 78 → 79 | SkyMap: posted updates surface ON the card face (PR #564) — 📝/👥 deep-links on sub-activity cards + the read-only `card_updates.js` overlay (newest `item_updates` per `activity:N`/`project:<id>` key → card, hides the creation-era line); NEW kb-note `methodology-live-overlay-onto-generated-cards` → the Annual Report half of the same carryover (fold `item_updates` into `annual_report.js`); the 3 lead emails; standing lanes | [`session_79_handoff.md`](session_79_handoff.md) |
 
 ---
 
