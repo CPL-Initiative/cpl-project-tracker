@@ -81,11 +81,17 @@ const RACI_ROWS = [
   check("RACI chip rendered for an assigned member", /raci-chip/.test(doc.body.innerHTML)
     && /Crystal Nasio/.test(doc.body.innerHTML));
 
-  // (e) directory view lists members
-  T.render && (dom.window.CPL_RACI_TAB && null);
-  // switch to directory via the exposed render after flipping view is internal;
-  // instead assert the matrix legend + that members loaded by re-rendering.
-  check("two members loaded into directory source", /Terence Nelson/.test(JSON.stringify(MEMBERS)));
+  // (e) directory view: switch via the toggle, assert members + the
+  // "Nudge for Updates" opt-in column render.
+  const toggles = doc.querySelectorAll(".raci-tg");
+  let dirBtn = null;
+  toggles.forEach(function (b) { if (/Directory/.test(b.textContent)) dirBtn = b; });
+  check("directory toggle present", !!dirBtn);
+  if (dirBtn) dirBtn.click();
+  check("directory lists a member", /Terence Nelson/.test(doc.body.innerHTML));
+  check("'Nudge for Updates' column header present", !!doc.querySelector(".raci-th-nudge")
+    && /Nudge for Updates/.test(doc.body.innerHTML));
+  check("per-member nudge checkbox rendered", doc.querySelectorAll(".raci-nudge-cb").length >= 1);
 
   let failed = 0;
   for (const [name, ok] of results) {

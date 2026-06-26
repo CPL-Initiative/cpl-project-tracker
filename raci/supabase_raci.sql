@@ -22,6 +22,7 @@ create table if not exists public.team_members (
   role        text,
   org         text not null default 'MAP',          -- tenant/division (forward-compat)
   active      boolean not null default true,
+  nudge       boolean not null default true,        -- per-member update-nudge opt-in (Team & RACI toggle)
   sort_order  int,
   created_at  timestamptz not null default now(),
   updated_at  timestamptz not null default now()

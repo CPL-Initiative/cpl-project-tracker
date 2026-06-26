@@ -222,19 +222,46 @@
   function renderDirectory() {
     var canEdit = !!state.sess;
     var tbl = el("table", { "class": "raci-table raci-dir" }, [
-      el("tr", {}, [el("th", {}, ["Name"]), el("th", {}, ["Role / title"]), el("th", {}, ["Email"])])]);
+      el("tr", {}, [el("th", {}, ["Name"]), el("th", {}, ["Role / title"]), el("th", {}, ["Email"]),
+        el("th", { "class": "raci-th-nudge", title: "Include this member in the weekly update nudges" }, ["Nudge for Updates"])])]);
     state.members.forEach(function (m) {
-      tbl.appendChild(el("tr", {}, [
+      var on = m.nudge !== false; // default true
+      var cb = el("input", { type: "checkbox", "class": "raci-nudge-cb" });
+      cb.checked = on; cb.disabled = !canEdit || !m.email;
+      cb.title = !m.email ? "Add an email before enabling nudges" : (canEdit ? "" : "Sign in to change");
+      if (canEdit && m.email) cb.addEventListener("change", function () { toggleNudge(m, cb); });
+      tbl.appendChild(el("tr", { "class": on ? "" : "raci-row-muted" }, [
         el("td", { "class": "raci-dir-n" }, [m.name]),
         el("td", { "class": "raci-dir-r" }, [m.role || "—"]),
         el("td", { "class": "raci-dir-e" }, [m.email
-          ? el("a", { href: "mailto:" + m.email }, [m.email]) : el("span", { "class": "raci-empty" }, ["—"])])]));
+          ? el("a", { href: "mailto:" + m.email }, [m.email]) : el("span", { "class": "raci-empty" }, ["—"])]),
+        el("td", { "class": "raci-nudge-cell" }, [cb])]));
     });
+    var nudgeOn = state.members.filter(function (m) { return m.nudge !== false && m.email; }).length;
     var head = el("div", { "class": "raci-dir-head" }, [
       el("span", {}, [state.members.length + " team members · " +
-        state.members.filter(function (m) { return m.email; }).length + " with email"])]);
+        state.members.filter(function (m) { return m.email; }).length + " with email · " +
+        nudgeOn + " set to nudge"])]);
     if (canEdit) head.appendChild(el("button", { "class": "raci-btn raci-btn-go", onclick: openAddMember }, ["+ Add member"]));
-    return el("div", {}, [head, tbl]);
+    return el("div", {}, [head, tbl,
+      el("div", { "class": "raci-legend" }, [canEdit
+        ? "Uncheck a member to hold them out of the update nudges (re-check to re-enable anytime)."
+        : "“Nudge for Updates” controls who receives the weekly update reminders — sign in to change."])]);
+  }
+
+  function toggleNudge(m, cb) {
+    var want = cb.checked;
+    cb.disabled = true;
+    sbWrite("PATCH", "team_members?id=eq." + encodeURIComponent(m.id), { nudge: want }, "return=minimal")
+      .then(function (r) {
+        if (!r.ok) throw new Error();
+        m.nudge = want; cb.disabled = false;
+        var tr = cb.closest("tr"); if (tr) tr.className = want ? "" : "raci-row-muted";
+        var head = document.querySelector(".raci-dir-head span");
+        if (head) { var n = state.members.filter(function (x) { return x.nudge !== false && x.email; }).length;
+          head.textContent = head.textContent.replace(/\d+ set to nudge/, n + " set to nudge"); }
+      })
+      .catch(function () { cb.checked = !want; cb.disabled = false; alert("Could not save — are you a signed-in reviewer?"); });
   }
 
   function render() {
@@ -318,6 +345,9 @@
       ".raci-legend{margin-top:.5rem;color:var(--text-faint,#777);font-size:.78rem;}" +
       ".raci-dir-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;color:#555;font-size:.85rem;}" +
       ".raci-dir-n{font-weight:600;color:var(--text-strong,#222);}.raci-dir-r{color:#555;}.raci-dir-e a{color:var(--accent-link,#1c5d99);}" +
+      ".raci-th-nudge{text-align:center;white-space:nowrap;}.raci-nudge-cell{text-align:center;}" +
+      ".raci-nudge-cb{width:16px;height:16px;cursor:pointer;accent-color:var(--navy-primary,#0A2240);}" +
+      ".raci-row-muted{opacity:.5;}.raci-row-muted .raci-dir-n{font-weight:500;}" +
       ".raci-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10000;display:flex;align-items:flex-start;justify-content:center;padding:4vh 1rem;overflow:auto;}" +
       ".raci-modal{background:#fff;border-radius:10px;max-width:480px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.25);}" +
       ".raci-modal-h{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 1rem;background:var(--navy-primary,#0A2240);color:#fff;border-radius:10px 10px 0 0;font-size:.92rem;}" +
