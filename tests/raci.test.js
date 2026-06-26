@@ -308,6 +308,38 @@ const RACI_ROWS = [
     check("the write lands with the refreshed Bearer token", fresh.length >= 1);
   }
 
+  // ── (m) Update composer (Phase 1 of the braindump→CC-polish epic) ──
+  check("matrix rows carry a 📝 update button", !!sdoc.querySelector('[data-raci-key="project:1.1"] .raci-upd-btn'));
+  check("item summary pulls the card name", /MAP Platform Development/.test(signed.window.CPL_RACI_TAB._itemSummary({ type: "project", id: "1.1", name: "x", isActivity: false })));
+  // Open the composer for 1.1 and post an update.
+  sdoc.querySelector('[data-raci-key="project:1.1"] .raci-upd-btn').click();
+  check("update composer opens with the card summary", !!sdoc.getElementById("raciOverlay") && !!sdoc.querySelector(".raci-upd-summary"));
+  const uta = sdoc.querySelector(".raci-upd-ta");
+  check("signed-in reviewer sees the braindump box", !!uta);
+  if (uta) {
+    uta.value = "shipped the portal; 3 colleges onboarded";
+    const saveBtn = Array.from(sdoc.querySelectorAll(".raci-btn-go")).filter((b) => /Save update/.test(b.textContent))[0];
+    check("composer has a Save button", !!saveBtn);
+    if (saveBtn) {
+      saveBtn.click();
+      await new Promise((r) => setTimeout(r, 30));
+      const posted = signed._writes.filter((x) => /item_updates/.test(x.url) && x.method === "POST" && x.body && x.body.body === "shipped the portal; 3 colleges onboarded");
+      check("Save POSTs the update to item_updates with the item key",
+        posted.length === 1 && posted[0].body.item_type === "project" && posted[0].body.item_id === "1.1");
+    }
+  }
+
+  // Deep-link: ?update / sessionStorage cpl_update_focus opens the composer.
+  const dl = makeDom(MEMBERS, RACI_ROWS, { session: { access_token: "aaa.bbb.ccc" } });
+  dl.window.CPL_RACI_TAB.boot();
+  await new Promise((r) => setTimeout(r, 30));
+  dl.window.sessionStorage.setItem("cpl_update_focus", "project:3.2");
+  dl.window.dispatchEvent(new dl.window.CustomEvent("cpl-tab-activated", { detail: { tab: "raci" } }));
+  check("update deep-link opens the composer for the target item",
+    !!dl.window.document.getElementById("raciOverlay") && /CPL Units Transcription/.test(dl.window.document.body.textContent));
+  check("update deep-link consumes the sessionStorage key",
+    dl.window.sessionStorage.getItem("cpl_update_focus") === null);
+
   let failed = 0;
   for (const [name, ok] of results) {
     console.log((ok ? "PASS" : "FAIL") + "  " + name);
