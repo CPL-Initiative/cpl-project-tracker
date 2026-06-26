@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-26T15:26:55.810Z",
+  "scraped_at": "2026-06-26T17:37:26.155Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -183,13 +183,13 @@
         },
         {
           "college": "Long Beach City College",
-          "students": 812,
+          "students": 813,
           "units": 5445.5,
-          "avgUnits": 6.70628078817734,
+          "avgUnits": 6.698031980319803,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 3,
-          "militaryStudents": 807,
+          "militaryStudents": 808,
           "nonMilitaryStudents": 5,
           "apprenticeStudents": 0,
           "savings": 9498565,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "48,131",
+      "value": "48,132",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "24,825"
+          "value": "24,826"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 48131,
+    "Students": 48132,
     "Units": 230263.65000000002,
     "TranscribedUnits": 99469.95,
     "Savings": 320978990.25,
     "YearImpact": 1298398225.3999999,
-    "MilitaryStudents": 24825,
+    "MilitaryStudents": 24826,
     "NonMilitaryStudents": 23382,
     "AprenticeStudents": 753,
-    "AverageUnits": 4.784102761214187,
-    "TranscribedAverage": 2.066650391639484
+    "AverageUnits": 4.784003365744204,
+    "TranscribedAverage": 2.0666074545001245
   }
 }
