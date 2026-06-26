@@ -339,6 +339,11 @@ const RACI_ROWS = [
     !!dl.window.document.getElementById("raciOverlay") && /CPL Units Transcription/.test(dl.window.document.body.textContent));
   check("update deep-link consumes the sessionStorage key",
     dl.window.sessionStorage.getItem("cpl_update_focus") === null);
+  // Activity-card deep-link target (the Activity header 📝 Update link).
+  dl.window.sessionStorage.setItem("cpl_update_focus", "activity:4");
+  dl.window.dispatchEvent(new dl.window.CustomEvent("cpl-tab-activated", { detail: { tab: "raci" } }));
+  check("update deep-link opens the composer for an Activity target",
+    !!dl.window.document.getElementById("raciOverlay") && /Activity 4/.test(dl.window.document.body.textContent));
 
   // ── (n) Per-item nudge (Phase 2): email the item's R/A people, card + link ──
   // 1.1 has R: Crystal Nasio (email) → a per-row 📣 should appear (signed-in).
