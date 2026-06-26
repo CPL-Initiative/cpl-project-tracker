@@ -221,8 +221,23 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--stale-days", type=int, default=DEFAULT_STALE_DAYS)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--test", metavar="EMAIL",
+                    help="TEST MODE: redirect every nudge to EMAIL and prefix the subject "
+                         "with [TEST] (real per-lead content, nobody on the team is emailed).")
+    ap.add_argument("--only", metavar="NAME",
+                    help="Render only the lead whose name contains NAME (case-insensitive).")
     args = ap.parse_args()
     out = build(stale_days=args.stale_days)
+    if args.only:
+        out["nudges"] = [n for n in out["nudges"] if args.only.lower() in n["name"].lower()]
+    if args.test:
+        out["_test_mode"] = args.test
+        for n in out["nudges"]:
+            n["intended_for"] = n["email"]
+            n["email"] = args.test
+            n["subject"] = "[TEST] " + n["subject"]
+            n["body"] = ("(TEST nudge — in production this goes to " +
+                         (n["intended_for"] or n["name"]) + ")\n\n") + n["body"]
     with open(PAYLOAD, "w", encoding="utf-8") as fh:
         json.dump(out, fh, indent=2, ensure_ascii=False)
     with open(PREVIEW, "w", encoding="utf-8") as fh:
