@@ -24,7 +24,14 @@ import argparse
 import json
 import os
 import sys
+import urllib.request
 from datetime import datetime, timezone
+
+# Public anon key (read-only; same key the dashboard tabs use). Lets the nudge
+# job read the live team_members registry — including each member's `nudge`
+# opt-in toggle — from a runner. Egress-blocked sandboxes fall back gracefully.
+SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co"
+SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM"
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -87,6 +94,24 @@ def _load_emails():
     return merged
 
 
+def _team_members_supabase():
+    """Live team_members registry from Supabase (public anon read): name →
+    {email, nudge}. Carries each member's `nudge` opt-in toggle (set on the
+    Team & RACI tab). Returns {} on any failure (egress-blocked sandbox / offline)
+    — the caller then can't filter by nudge and falls back to the Fact Sheet."""
+    try:
+        req = urllib.request.Request(
+            SUPABASE_URL + "/rest/v1/team_members?select=name,email,nudge",
+            headers={"apikey": SUPABASE_ANON, "Authorization": "Bearer " + SUPABASE_ANON})
+        with urllib.request.urlopen(req, timeout=15) as r:
+            rows = json.load(r)
+        return {_norm(x.get("name")): {"email": (x.get("email") or "").strip(),
+                                       "nudge": x.get("nudge") is not False} for x in rows}
+    except Exception as e:
+        print(f"  note: team_members registry unreachable ({e}); nudge opt-out not applied.", file=sys.stderr)
+        return {}
+
+
 def _resolve_email(name, emails):
     """Exact normalized match, else a substring match either direction
     (so directory 'Gloria' resolves the Fact Sheet's 'Calvin Klein Gloria')."""
@@ -97,6 +122,18 @@ def _resolve_email(name, emails):
         if n and (n in k or k in n):
             return v
     return ""
+
+
+def _resolve_tm(name, tm):
+    """Find a team_members record for a directory lead by exact-then-substring
+    name match (same tolerance as _resolve_email)."""
+    n = _norm(name)
+    if n in tm:
+        return tm[n]
+    for k, v in tm.items():
+        if n and (n in k or k in n):
+            return v
+    return None
 
 
 def _norm(s):
@@ -123,14 +160,21 @@ def build(stale_days=DEFAULT_STALE_DAYS, today=None):
     projects = projects if isinstance(projects, list) else projects.get("rows", projects)
     directory = _load(DIRECTORY)
     emails = _load_emails()
+    tm = _team_members_supabase()  # live registry: name -> {email, nudge}
     link = directory.get("update_link", "")
     leads = [l for l in directory.get("leads", []) if l.get("name")]
 
     nudges = []
-    unmatched_leads, no_email = [], []
+    unmatched_leads, no_email, nudge_excluded = [], [], []
     for lead in leads:
         name = lead["name"]
-        email = _resolve_email(name, emails).strip()
+        # The live Team & RACI registry is authoritative for both the address
+        # AND the per-member nudge opt-in toggle.
+        rec = _resolve_tm(name, tm)
+        if rec and rec.get("nudge") is False:
+            nudge_excluded.append(name)
+            continue
+        email = ((rec and rec.get("email")) or _resolve_email(name, emails)).strip()
         # Match this directory lead against the free-text project `lead` field.
         items = [p for p in projects if _norm(name) in _norm(p.get("lead"))]
         if not items:
@@ -165,6 +209,7 @@ def build(stale_days=DEFAULT_STALE_DAYS, today=None):
         "_as_of": str(today), "stale_days": stale_days,
         "update_link": link, "nudges": nudges,
         "unmatched_leads": unmatched_leads, "leads_missing_email": no_email,
+        "nudge_excluded": nudge_excluded,
     }
 
 
@@ -221,8 +266,23 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--stale-days", type=int, default=DEFAULT_STALE_DAYS)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--test", metavar="EMAIL",
+                    help="TEST MODE: redirect every nudge to EMAIL and prefix the subject "
+                         "with [TEST] (real per-lead content, nobody on the team is emailed).")
+    ap.add_argument("--only", metavar="NAME",
+                    help="Render only the lead whose name contains NAME (case-insensitive).")
     args = ap.parse_args()
     out = build(stale_days=args.stale_days)
+    if args.only:
+        out["nudges"] = [n for n in out["nudges"] if args.only.lower() in n["name"].lower()]
+    if args.test:
+        out["_test_mode"] = args.test
+        for n in out["nudges"]:
+            n["intended_for"] = n["email"]
+            n["email"] = args.test
+            n["subject"] = "[TEST] " + n["subject"]
+            n["body"] = ("(TEST nudge — in production this goes to " +
+                         (n["intended_for"] or n["name"]) + ")\n\n") + n["body"]
     with open(PAYLOAD, "w", encoding="utf-8") as fh:
         json.dump(out, fh, indent=2, ensure_ascii=False)
     with open(PREVIEW, "w", encoding="utf-8") as fh:
@@ -230,7 +290,8 @@ def main():
     print(f"Wrote {PREVIEW} and {PAYLOAD}")
     print(f"  {len(out['nudges'])} leads · "
           f"{sum(n['due_count'] for n in out['nudges'])} items due · "
-          f"missing emails: {out['leads_missing_email'] or 'none'}")
+          f"missing emails: {out['leads_missing_email'] or 'none'} · "
+          f"nudge-excluded: {out.get('nudge_excluded') or 'none'}")
     if args.dry_run:
         for n in out["nudges"]:
             print("\n" + "=" * 70)
