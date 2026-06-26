@@ -1,86 +1,74 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-26 (Session 76 · SkyTrek — the 3-tier RACI matrix + filter + deep-links live; Veterans Sprint & Military Base plans added to the KB)",
- "_session": 76,
- "_status": "SESSION 76 — SkyTrek leveled up the Team & RACI tab and added the Veterans plans to the KB. RACI now: (1) a hierarchical filter — pick an Activity OR one of its sub-activities; (2) per-card 👥 RACI deep-links from every Activity header + project card; (3) the matrix is now a 3-TIER tree — Activity → sub-activity → project/work item (so 4.1 Sprints nests 4.1.4 29 Palms Demo + 4.1.1 Veteran Sprint), each with its OWN RACI. Also: the Veterans Sprint plan AND its Military Base demonstration plan are now in the vault (full) + drafted as scrubbed public-KB pages (awaiting your review). Remaining RACI work needs three calls from you (nudge send channel, the 3 lead emails, update-log decision). NEXT for Fable: the Annual Report tab + the standing lanes (Fact-Sheet snapshot, M-ID renumber, TMC engine, CPL-Assistant ETL).",
+ "_as_of": "2026-06-26 (Session 77 · StarPort — the full nudge → braindump → CC-writes-it-up → card update loop is LIVE + the RACI save-persistence bug fixed)",
+ "_session": 77,
+ "_status": "SESSION 77 — StarPort built the whole update loop, end to end. (1) FIXED a real bug: RACI saves weren't persisting after ~1h (an expired sign-in token, silently) — now auto-refreshed, so assignments stick. Anything you saved earlier today that vanished needs a redo. (2) NEW: a 📝 Update button on EVERY Activity & Project card (and RACI row) — click it, braindump a couple lines, and CC writes them into a clean status update saved to the card. (3) NEW: a 📣 nudge on each RACI row emails THAT item's Responsible/Accountable people, quotes the card, and links them straight to the braindump box (no email account needed). (4) NEW: the Team Directory shows Last-nudged + a ✓ responded / ⏳ awaiting status so you can see who's gone quiet. (5) NEW: an Annual Report tab that assembles a draft from live data (✨AI polish / ⬇Word / 🖨Print). To finish the loop I need the 3 lead emails so they can post their own updates. NEXT for Fable: surface posted updates ON the card face + Annual Report, then the standing lanes.",
  "items": [
   {
-   "id": "sam-raci-3tier-live",
+   "id": "sam-try-update-loop",
+   "who": "sam",
+   "tab": "activities-projects",
+   "text": "TRY IT (live now): every Activity header + Project card has a 📝 Update link. Click it → it drops you into a braindump box for that exact item → type a few fragments → '✨ Let CC write it up' turns them into a clean status update → Save. You wrote your first one already — now it's on all the cards so anyone can pop in anytime. Tell me how it feels in the wild."
+  },
+  {
+   "id": "sam-try-item-nudge",
    "who": "sam",
    "tab": "raci",
-   "text": "NEW (live now): the RACI Matrix is a 3-tier tree — Activity → sub-activity → project — each row independently RACI-able, indented and tagged. The filter dropdown is now hierarchical: pick an Activity, or expand to one of its sub-activities (e.g. just '4.1 Sprints' and its child projects). Per-card 👥 RACI links jump straight here and flash the row. Have a click around and tell me if the nesting + filter match how you think about the workplan."
+   "text": "TRY IT: on a RACI row where someone is Responsible/Accountable (with an email), the per-row 📣 drafts an email to THOSE people that quotes the card AND links them straight to the braindump box — no email account or reply-parsing needed, they just click and type. Send one to yourself to see the round-trip. The Team Directory now also shows Last-nudged + ✓ responded / ⏳ awaiting so you can spot who's overdue."
+  },
+  {
+   "id": "sam-lead-emails",
+   "who": "sam",
+   "tab": "raci",
+   "text": "NEED FROM YOU to finish the loop: the exact email addresses for Crystal Nasio, Terence Nelson, and Calvin/Gloria so I can add them as allowed reviewers (then THEY can post their own braindump updates + edit RACI). Add your own slee@cccco.edu too. Until then, only map@rccd.edu can save. (You picked: keep the mailto-draft nudge for now; the update-log question is resolved — the new composer replaces it.)"
+  },
+  {
+   "id": "sam-annual-report",
+   "who": "sam",
+   "tab": "annual-report",
+   "text": "NEW tab — Annual Report: it auto-assembles a full draft from live data (Exec Summary · Vision 2030 & Goals · the 4 Activities · Statewide Impact · Spotlights · Looking Ahead), editable in place with a live preview, plus ✨AI polish, ⬇Word, and 🖨Print. The Activity/Spotlight content is creation-era for now — it'll freshen automatically once your team's braindump updates start landing. Eyeball the structure + tell me what sections to add/cut."
   },
   {
    "id": "sam-vet-plans-kb",
    "who": "sam",
    "tab": "raci",
-   "text": "Added to the KB: the Veterans Sprint plan AND its Military Base CPL Demonstration (29 Palms / Copper Mountain) plan — full versions in your CPLBrain vault (names + RACI intact, cross-linked, under the CPL Initiative project's Plans). I also drafted SCRUBBED public-facing versions for the public Knowledge Base (cpl-knowledge-base PR #15) — names/rosters removed, dashboard banner added. That public PR is waiting on YOUR review/merge (your review is the sensitivity check). Eyeball the two overview/ pages when you can."
+   "text": "STILL WAITING ON YOU: the public-KB versions of the Veterans Sprint + Military Base plans (cpl-knowledge-base PR #15, scrubbed of names/rosters) are drafted and waiting on your review/merge — your review IS the sensitivity check. The full versions are already in your CPLBrain vault."
   },
   {
-   "id": "sam-raci-decisions",
-   "who": "sam",
-   "tab": "raci",
-   "text": "To keep the ownership/nudge loop moving I need three calls: (a) how should the weekly update NUDGES actually send — you forward the generated per-lead emails from Outlook (works today, zero setup), or we wire a Teams 'Power Automate' webhook? (b) the email addresses for Crystal Nasio, Terence Nelson, and Calvin/Gloria so I can let them self-update (and add your own slee@cccco.edu via the editable Email cell). (c) do you want the 'update log' history table built now, or keep just the latest-update field? (You'd parked that one before.)"
-  },
-  {
-   "id": "sam-factsheet-live",
+   "id": "sam-factsheet-semistatic",
    "who": "sam",
    "tab": "dashboard",
-   "text": "NEW: the public CPL Fact Sheet is LIVE — share cpl-initiative.github.io/cpl-project-tracker/fact-sheet/ with consultants (it sits alone — no access to the other COBI tabs), or open it from the 📄 CPL Fact Sheet link in the left nav rail. The headline KPIs auto-update; hit '🖨 Print / Save PDF' for the always-current PDF. When you have a moment, eyeball the SEMI-STATIC figures (the Vision 2030 workplan SCRs 332/889/37.35%/274 and the 5-year funding table) and tell me any that have moved — those are baked, not live."
-  },
-  {
-   "id": "sam-assistant-tweaks",
-   "who": "sam",
-   "tab": "chatbot",
-   "text": "From Session 73 (live now): the CPL Assistant has three improvements — try a few questions and tell me what to tune. (1) Ask about a STATEWIDE credit (e.g. a statewide RE or firefighter recommendation): it should say it's available system-wide and point you to YOUR college's landing page, not one specific college. (2) Ask 'what credit can I get for an EMT license?': it should LIST the eligible course titles + units, not just a number. (3) Ask a broad 'which colleges give credit for X': it should ASK whether you want a specific region or all options before showing a long list."
-  },
-  {
-   "id": "sam-landing-links",
-   "who": "sam",
-   "tab": "chatbot",
-   "text": "Also fixed Session 73: the assistant's college CPL landing-page links were broken/stale (San Diego Miramar pointed at the wrong code). They're now synced from the MAP College Landing Page API and auto-refresh weekly, so they should match map.rccd.edu/cpllandingpages. Click a couple from a college-specific answer and flag any that still misfire."
+   "text": "When you have a moment: the public CPL Fact Sheet (📄 in the left nav) has a few SEMI-STATIC figures baked in (Vision 2030 SCRs 332/889/37.35%/274, the 5-year funding table). The headline KPIs auto-update; tell me any baked ones that have moved so I refresh them."
   },
   {
    "id": "sam-morphological-fold",
    "who": "sam",
    "tab": "unified-courses",
-   "text": "Carry-over: the merge worklist groups WORD VARIANTS — 'Conversational Japanese' ↔ 'Japanese Conversation', 'Assisting' ↔ 'Assistant' (~866 more group). Confirm the clean language-conversation families when you get a chance. Where a group shows an amber '⚠ Spans N disciplines' note, eyeball it for homonyms (music vs office 'keyboard') before confirming."
+   "text": "Carry-over: the merge worklist groups WORD VARIANTS ('Conversational Japanese' ↔ 'Japanese Conversation', 'Assisting' ↔ 'Assistant'). Confirm the clean language families when you can; where a group shows an amber '⚠ Spans N disciplines' note, eyeball for homonyms first."
   },
   {
-   "id": "sam-first-light-bonus",
-   "who": "sam",
-   "tab": "dashboard",
-   "text": "Standing bonus: we'll keep adding Arroyo-Seco-style California plein-air landscapes (Redmond, Guy Rose, Wendt, Payne) to First Light — flag any artist/work you'd love and we'll source it."
-  },
-  {
-   "id": "fable-raci-copy-row",
+   "id": "fable-surface-updates",
    "who": "fable",
-   "tab": "raci",
-   "text": "TOP / READY: Sam asked for a 'copy one row's R/A/C/I to other rows' action on the RACI matrix (he loves the tab). Design is fully specced in docs/session_77_handoff.md (TOP carry-over): a ⧉ copy button on populated rows → modal with a checkbox target list + search + 'select all shown' → Promise.all(saveRaci) to each target. raci.js only, static (live on merge), ~1 modal + tests. v1 = replace. Build it first."
-  },
-  {
-   "id": "fable-factsheet-followups",
-   "who": "fable",
-   "tab": "dashboard",
-   "text": "Fact-Sheet follow-ups: (1) IN PROGRESS — live-wire the SNAPSHOT tier so the 5 exhibit/recommendation KPI cards + the Statewide Exhibits per-sector counts auto-update (a committed daily CustomReport snapshot the page fetches). (2) Reproduce the 'One Knowledge Layer' technology-landscape diagram as live HTML/SVG (sharper + regen-proof). Read docs/fact_sheet_lessons.md + docs/kb-notes/playbook-standalone-public-page.md first."
+   "tab": "activities-projects",
+   "text": "EPIC POLISH (autonomous, top of the list): surface the posted item_updates ON the card face + in the Annual Report. Today the 📝 composer writes to item_updates but cards still show projects.latest_update and the Annual Report uses creation-era CPL_DATA. Make both show the latest item_updates entry (cron has SUPABASE_SERVICE_KEY → generator could read it; or overlay live in the consumer). Makes the Annual Report self-freshening. See docs/cobi_raci_nudge_lessons.md (Session 77)."
   },
   {
    "id": "fable-mid-renumber",
    "who": "fable",
    "tab": "unified-courses",
-   "text": "When the merge wave settles (NOT per-merge): the unverified-M-ID renumber re-mint — close gaps + re-sort 001,002… by title within each (canonical SUBJ4, band). Full Rule-7, unverified-only, ONE pass. Scope: docs/unverified_mid_renumber_scope.md. Dry-run first, Sam's go before apply + Supabase re-key."
+   "text": "Standing lane: the unverified-M-ID renumber re-mint — close gaps + re-sort 001,002… by title within each (canonical SUBJ4, band). Full Rule-7, unverified-only, ONE pass when the merge wave settles. Scope: docs/unverified_mid_renumber_scope.md. Dry-run first, Sam's go before apply."
   },
   {
    "id": "fable-tmc-engine",
    "who": "fable",
    "tab": "tmc-builder",
-   "text": "TMC Phase-2 ACCEPTANCE ENGINE in tmc_builder.js (Sam: 'Go for A'): per-slot verdict from the ASCCC rules (C-ID match = ✓ · slot.flexible = ⚠ accept-with-ASSIST · specific C-ID filled by a non-match = faculty review · unfilled = ○) + structural checklist + a Ready/N-issues banner. Consume slot.flexible + t.flexibility (#479). Scope: docs/kb-notes/tmc-co-review-scope.md."
+   "text": "Standing lane: TMC Phase-2 ACCEPTANCE ENGINE in tmc_builder.js — per-slot verdict from the ASCCC rules (C-ID match ✓ · slot.flexible ⚠ accept-with-ASSIST · specific C-ID by non-match = faculty review · unfilled ○) + a Ready/N-issues banner. Consume slot.flexible + t.flexibility. Scope: docs/kb-notes/tmc-co-review-scope.md."
   },
   {
    "id": "fable-assistant-etl",
    "who": "fable",
    "tab": "chatbot",
-   "text": "CPL-Assistant CCR/CER-grounded recommender ETL (green-lit, the big next build): build the CCR/CER/adoption-leverage ETL into shared Supabase so the Assistant can recommend the likely local course + credit rec, grounded in real course-identity data. Scope: docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md. The v17 multi-turn plumbing is the foundation. Sierra rename lands with the Student Portal, not piecemeal."
+   "text": "Standing lane (the big one): the CPL-Assistant CCR/CER-grounded recommender ETL into shared Supabase, so the Assistant can recommend the likely local course + credit rec from real course-identity data. Scope: docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md. Sierra rename lands with the Student Portal."
   }
  ]
 }

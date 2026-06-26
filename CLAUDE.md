@@ -504,7 +504,8 @@ scraping proved unreliable.
 | `fetch_custom_report.py` | Fetches CustomReport JSON from the MAP API |
 | `cpl_news.js` | **CPL News** tab renderer (`window.CPL_NEWS_TAB`). Lazy-loaded on first `#cpl-news` open; injects own `var(--token)` CSS; reads `public.cpl_news` LIVE (anon) — CA-first, scope/source/search filters, suggest-a-story, reviewer feature/hide. Static — NOT a daily-cron artifact (the feed is the live table, not a committed file). Fed by the **`cpl-news-harvest`** Supabase Edge Function (`chatbox/supabase/functions/cpl-news-harvest/index.ts`) invoked by **`.github/workflows/cpl-news.yml`** (cron 13:17 UTC). Schema: `news/supabase_cpl_news.sql`. Docs: `docs/cpl_news_lessons.md` + `docs/kb-notes/playbook-cpl-news-aggregation.md`. Added Session 67 (Skywatch, PR #481). |
 | `fact-sheet/` | **Public CPL Fact Sheet** — a self-contained, **standalone** page (`index.html` + `factsheet.css` + `factsheet.js` + `img/`) recreating the Feb-2026 journalist Fact Sheet PDF, served publicly by Pages at `…/cpl-project-tracker/fact-sheet/`. "Sits alone" (NO COBI nav) so it's shareable without exposing the internal tabs — the `kb-portal/` pattern, minus the auth gate. `factsheet.js` binds the 6 headline KPIs (+ Military/Workforce/Apprentice breakdowns + Veteran-Sprint figures) from `../live_metrics.json` on load (baked values = graceful fallback); the 5 exhibit/recommendation KPI cards + the Statewide Exhibits per-sector counts are a **labeled MAP Custom Reporting Module snapshot** (not live). Cambria prose / Calibri data; print CSS at 0.4in → browser "Save as PDF" is the export (opens `<details>` for print). Launched from COBI by a **non-tab** `📄 CPL Fact Sheet ↗` anchor in the nav rail (`<a class="cpl-tab cpl-tab-external">`, no `data-tab` so `tabs.js` ignores it; mirrored in BOTH HTMLs, Rule 4). Statewide exhibit lists come from `kb/statewide_exhibit_categories.json`. Static — NOT a daily-cron artifact. Added Session 74 (SkyBlaster), PRs #537/#540. Docs: `docs/fact_sheet_lessons.md` + `docs/kb-notes/playbook-standalone-public-page.md`. |
-| `raci.js` | **Team & RACI** tab renderer (`window.CPL_RACI_TAB`, `#raci`). Lazy-loaded on first `#raci` open; injects own `var(--token)` CSS. A **RACI Matrix** (4 Activities + their projects × R/A/C/I, click a cell → member-picker) + an editable **Team Directory** + per-member **Nudge for Updates** toggle. Public reads of Supabase `team_members` + `item_raci` (anon); writes gated by the shared `cpl_sb` magic-link reviewer session + `is_allowed_reviewer()`. **Session 76 (SkyTrek) made the matrix a 3-tier tree** — `buildItems()` nests **Activity → sub-activity → project/work item** from `window.CPL_DATA` (`activity_kpis` = the official sub-activity ids; `projects`' **dotted ids** encode the nesting via id-prefix parenting, `4.1`→`4.1.1`, `3.1.2`→`3.1.2a`; `5.x` with no numbered parent nest under their Activity). 38 rows, depth-indented + tier-styled (`sub-activity` tag). Each row independently RACI-able; **non-Activity rows keep `item_type:"project"`** so no key migration / no lost assignments. Nav: a **hierarchical scope filter** (`<optgroup>` per Activity → "▸ All of Activity N" + its sub-activities; scope `all`/`act:N`/`sub:ID`, ancestor-preserving search) + per-card **`👥 RACI` deep-links** (cards set `sessionStorage['cpl_raci_focus']` then navigate `#raci`; consumer flashes the row — every `<tr>` carries `data-raci-key`). Static — NOT a daily-cron artifact; only the nav button + pane + boot are mirrored in BOTH HTMLs (Rule 4). Schema: `raci/supabase_raci.sql`. Tests: `tests/raci.test.js` (30 checks). Docs: `docs/cobi_raci_nudge_lessons.md`. Added Session 75 (SkyMaster), PRs #546–#548; nav + 3-tier PRs #550/#553 (Session 76). |
+| `raci.js` | **Team & RACI** tab renderer (`window.CPL_RACI_TAB`, `#raci`). Lazy-loaded on first `#raci` open; injects own `var(--token)` CSS. A **RACI Matrix** (4 Activities + their projects × R/A/C/I, click a cell → member-picker) + an editable **Team Directory** + per-member **Nudge for Updates** toggle. Public reads of Supabase `team_members` + `item_raci` (anon); writes gated by the shared `cpl_sb` magic-link reviewer session + `is_allowed_reviewer()`. **Session 76 (SkyTrek) made the matrix a 3-tier tree** — `buildItems()` nests **Activity → sub-activity → project/work item** from `window.CPL_DATA` (`activity_kpis` = the official sub-activity ids; `projects`' **dotted ids** encode the nesting via id-prefix parenting, `4.1`→`4.1.1`, `3.1.2`→`3.1.2a`; `5.x` with no numbered parent nest under their Activity). 38 rows, depth-indented + tier-styled (`sub-activity` tag). Each row independently RACI-able; **non-Activity rows keep `item_type:"project"`** so no key migration / no lost assignments. Nav: a **hierarchical scope filter** (`<optgroup>` per Activity → "▸ All of Activity N" + its sub-activities; scope `all`/`act:N`/`sub:ID`, ancestor-preserving search) + per-card **`👥 RACI` deep-links** (cards set `sessionStorage['cpl_raci_focus']` then navigate `#raci`; consumer flashes the row — every `<tr>` carries `data-raci-key`). Static — NOT a daily-cron artifact; only the nav button + pane + boot are mirrored in BOTH HTMLs (Rule 4). Schema: `raci/supabase_raci.sql`. Tests: `tests/raci.test.js` (64 checks). Docs: `docs/cobi_raci_nudge_lessons.md`. Added Session 75 (SkyMaster), PRs #546–#548; nav + 3-tier PRs #550/#553 (Session 76). **Session 77 (StarPort) added** (PRs #556–#562): **Copy-RACI** (`⧉ copy` a row's R/A/C/I to others), the **token-refresh-on-write fix** (`ensureFresh()` renews the magic-link access token before every `sbWrite` — a format-valid-but-expired JWT was 401-ing saves silently; `saveRaci` rolls back optimistic state on failure — `docs/kb-notes/methodology-refresh-token-before-write.md`), the **nudge accountability layer** (`team_members += last_nudged_at/last_response_at`; directory Last-nudged + ✓responded/⏳awaiting columns; manual team 📣 + check-all/clear-all), the **per-item 📣 nudge** (emails a row's R/A people, quotes the card + a deep-link to its composer), and the **📝 update composer** (braindump → ✨"Let CC write it up" via the report proxy → appends `item_updates`; deep-link consumer `?update=<key>#raci` / `sessionStorage.cpl_update_focus`; the 📝 link is emitted on every Activity/Project card by the generator). |
+| `annual_report.js` | **Annual Report tab** renderer (`window.CPL_ANNUAL_REPORT`, `#annual-report`). Lazy-loaded on first open; injects own `var(--token)` CSS. Assembles a 6-section report draft from live `window.CPL_DATA` each open — Exec Summary · Vision 2030 & Goals · Activity Progress (the 4) · Statewide Impact · Spotlights (Veteran Sprint / Military Base) · Looking Ahead — EDITABLE in place (textarea) with a live markdown preview; toolbar = ↻ Rebuild from data · ✨ AI polish (reuses `CPL_REPORT_PROXY_URL`; disabled if unset) · ⬇ Word (`docx.min.js`) · 🖨 Print. Content is creation-era until `item_updates` is surfaced into it (next). Static — NOT a daily-cron artifact. Tests: `tests/annual_report.test.js` (29). Added Session 77 (StarPort), PR #557. Docs: `docs/cobi_raci_nudge_lessons.md`. |
 
 ### 3. Cloudflare Worker (cpl-proxy)
 
@@ -761,6 +762,7 @@ detailed in §7c):
 | `budget` | Budget | CPL Budget & Expenditure Plan |
 | `implementation-funding` | Implementation Funding | CPL Implementation Funding model (DRAFT-chipped) — 2026-30 one-time pools, 3 priorities (shares-first, rev2 workbook), 119 colleges' potential allocations, a **what-if sandbox** (pools/shares/targets editable, per-browser, Reset-to-workbook), and **P2/P3 actuals vs target** from the daily `cpl_funding_performance.js` (P1 = deliberate incentive gap). Shell static; renders from `cpl_funding.js` + `cpl_funding_data.js` (lazy; data static, actuals cron). **Built 2026-06-11, PRs #352–#368** — `docs/cpl_funding_lessons.md` + `docs/cpl_funding_handoff.md`. |
 | `vision-2030` | Vision 2030 | Vision 2030 Alignment cards with live progress |
+| `annual-report` | Annual Report | Capstone — assembles a 6-section CPL Annual Report draft from live `CPL_DATA` (Exec Summary · Vision 2030 & Goals · Activity Progress · Statewide Impact · Spotlights · Looking Ahead), editable + live preview + ✨AI polish / ⬇Word / 🖨Print. Renderer `annual_report.js` (static, lazy). **Added Session 77 (StarPort), PR #557.** |
 | `knowledge-base` | Knowledge Base | Sign-in-gated **KB Portal** — an `<iframe src="kb-portal/">` (like Letters) over the public CPL Knowledge Base: a magic-link-gated reader + a **New-doc composer** (draft/upload → Claude polish → tokenless GitHub commit). The bundle's own Supabase auth is the gate. **Added Session 63, PRs #464/#465/#467/#468.** Docs: `docs/kb_portal_lessons.md`. |
 | `cpl-news` | CPL News | **Auto-curated** CPL news feed (CA-first, then national; + adjacent systems Career Passport / CA Master Plan / workforce-upskilling + CA budget items). Live-reads `public.cpl_news` (filled daily by the `cpl-news-harvest` Edge Function); filters, suggest-a-story (the path closed socials enter), reviewer feature/hide. Renderer `cpl_news.js` (static, lazy). **Added Session 67 (Skywatch), PR #481.** Docs: `docs/cpl_news_lessons.md`. |
 | `raci` | Team & RACI | Ownership spine for the workplan — a **3-tier RACI Matrix** (Activity → sub-activity → project/work item, each RACI-able × R/A/C/I) + an editable **Team Directory** + per-member update-**nudge** toggle, over Supabase `team_members` + `item_raci` (public read, reviewer write). Matrix has a **hierarchical scope filter** (Activity / sub-activity optgroups) + per-card **`👥 RACI` deep-links** (Session 76). Renderer `raci.js` (static, lazy). **Added Session 75 (SkyMaster), PRs #546–#548; nav PR #550 + 3-tier PR #553 (Session 76).** Docs: `docs/cobi_raci_nudge_lessons.md`. |
@@ -1014,6 +1016,13 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   uplifting-themes analysis). Never add a public read path; the payload shape
   (`painting`, `reflection` — nothing identifying) is pinned by
   `tests/first_light.test.js`.
+- **`item_updates`** (added Session 77): the append-only Update Log behind the RACI tab's 📝 braindump→CC
+  composer. One row per status update on an Activity/sub-activity/project, keyed `(item_type, item_id)`
+  like `item_raci`. Anon SELECT + **reviewer-gated** INSERT (`is_allowed_reviewer()`), **no update/delete**
+  (immutable history). The single live source for both activity AND project card updates. Schema:
+  `raci/supabase_raci.sql`. (A pre-existing project-only `update_log` table — id/project_id/update_text —
+  is unrelated/vestigial; left untouched.) `team_members` also gained `last_nudged_at` + `last_response_at`
+  (nudge accountability).
 - Separate from live metrics scraping; handles project-level data storage.
 
 ### 9. EACR Exhibit Identity — current state and future direction
@@ -1902,32 +1911,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > `buildMergeEditor`, two feeders; the right-hand docked worklist #511–#518)
 > archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md).
 
-### Session 72 — StarLander: the post-consolidation polish pass (2026-06-24/25)
-
-Sam's hands-on review of the now-shared merge workspace — **13 PRs #520–#532, all merged**; because
-the editor is shared, each editor-internal change landed once and BOTH surfaces (✨ worklist +
-per-row ⚇ dialog) inherited it. **Wave 1/2 (#520–#525):** Cons↔Aggr slider floor 0.40→0.00 + the
-opt-in **Confirm no-op fix** (disabled-until-≥2-checked); ⌕ override moved up under the title +
-verbose copy → ⓘ tooltips; "Add more" → search-into-candidate-list; the **per-row ⚇ Merge opens the
-docked sidebar** (single-course mode, `setBandFilter`); and the **Tight↔Loose candidate-looseness
-slider** (the control Sam expected the strength bar to be). **Wave 3 (#527–#531) — 9 refinements:**
-sidebar Prev/Next pager · worklist **Discipline filter** · **CCR table syncs to the sidebar's
-current course** (`state.focusId` floats it + subject neighbors to top) · candidate slider defaults
-**Loose** + persists (`cplCandLoosen.v1`) + auto-surfaces · editor keyword box **eliminated** (one
-top Search box) · multi-term **comma=OR** search w/ ghost text · "Merge into existing" chip → section
-note · the **Title-5 §55050 level convention** in `courseBands()` (ranges/words/ordinals classify;
-bare numbers a curator-overridable hint). **Wave 4 (#532):** kept the human labels **Beg/Int/Adv**
-(tried L1/L2/L3, reverted — internal keys stay `beg/int/adv`, no data churn). **Wave 5 (#534):**
-**DECOUPLED the worklist from the CCR table filters** (dropped the "Match the CCR table filters"
-checkbox — `applyCcr` now false; `rowPassesCcr` gates on it) so a **keyword surfaces ALL matching
-courses** (cap 25→100, no longer CCR-gated — fixes a low-similarity match not appearing); a
-**single-course RENAME** (only the ★ checked + an edited title → "✓ Confirm merge" becomes
-**"✓ Save"**, writes `unified_title` via a new `doRename()`, no `merge_into`/no merged-row
-side-effects); and **header Prev/Next** (‹ ›) next to the counter for backward nav. 81→**88 green**.
-Full story: [`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md); NEW KB note
-[`docs/kb-notes/reference-course-level-convention.md`](docs/kb-notes/reference-course-level-convention.md).
-**NEXT: [`docs/session_73_handoff.md`](docs/session_73_handoff.md)** — standing lanes: unverified-M-ID
-renumber re-mint, TMC Phase-2 acceptance engine, CPL-Assistant CCR/CER recommender ETL.
+> **Session 72 narrative (StarLander — the post-consolidation merge-workspace polish pass, 13 PRs
+> #520–#534) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
+> [`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md).
 
 ### Session 74 — SkyBlaster: the public CPL Fact Sheet (2026-06-25)
 
@@ -1948,6 +1934,25 @@ story: [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md); reusable patt
 [`docs/kb-notes/playbook-standalone-public-page.md`](docs/kb-notes/playbook-standalone-public-page.md).
 **NEXT: [`docs/session_75_handoff.md`](docs/session_75_handoff.md)** — Fact-Sheet follow-ups
 (live-wire the snapshot tier; tech-landscape diagram → live HTML) + the standing lanes.
+
+### Session 77 — StarPort: the RACI update loop, end to end (2026-06-26)
+
+A hyperglide sprint, Sam live-testing throughout — **8 PRs #556–#562, all merged + live.** Built the
+full *"nudge → braindump → CC writes it up → card"* loop on the Team & RACI tab, and fixed a real
+save-persistence bug along the way. Headlines: **Copy-RACI** (#556 — `⧉ copy` a row's R/A/C/I to others);
+**Annual Report tab** (#557 — `annual_report.js`, 6-section draft from live `CPL_DATA` + ✨AI/⬇Word/🖨Print);
+**check-all/clear-all + manual 📣 team nudge** (#558); **🐛 the save-persistence fix** (#559 — `raci.js`
+never refreshed the magic-link token, so writes 401'd silently after ~1h; `sbWrite` is now refresh-gated +
+`saveRaci` rolls back on failure — plus the **nudge accountability layer**: `last_nudged_at`/
+`last_response_at` + directory Last-nudged/✓responded/⏳awaiting columns); the **📝 update composer**
+(#560 — braindump → CC polish → new immutable `item_updates` table; deep-link consumer
+`?update=<key>#raci`); the **per-item 📣 nudge** (#561 — emails a row's R/A people, quotes the card +
+links to the composer); and **📝 on every Activity/Project card** (#562 — generator deep-link; retired the
+old `✎ Update` button; dispatched the daily workflow). Round-trip = **link-to-form**, no mailbox. New KB
+note: [`methodology-refresh-token-before-write.md`](docs/kb-notes/methodology-refresh-token-before-write.md).
+Full story: [`docs/cobi_raci_nudge_lessons.md`](docs/cobi_raci_nudge_lessons.md) (Session 77). **NEXT:
+[`docs/session_78_handoff.md`](docs/session_78_handoff.md)** — surface `item_updates` on the card face +
+Annual Report (self-freshening); the 3 lead emails for `allowed_reviewers`; the standing lanes.
 
 ---
 
