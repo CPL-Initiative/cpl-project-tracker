@@ -55,10 +55,48 @@
   function esc(s) { return (s == null ? "" : String(s)); }
 
   // ─── Auth (shared cpl_sb session) ──────────────────────────────────────────
+  // The session is minted by the magic-link callback (shared across tabs) and
+  // carries access_token + refresh_token + exp. The access token expires (~1h),
+  // so EVERY write must refresh it first via the refresh_token — otherwise an
+  // expired-but-format-valid token 401s silently while the UI still says
+  // "Signed in" (the 2026-06-26 "RACI saves don't persist" bug: only the first
+  // assignment landed; later ones hit a dead token). Mirrors unified_courses.js.
   function isValidJwt(t) { return typeof t === "string" && /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(t); }
   function getSession() {
-    try { var s = JSON.parse(sessionStorage.getItem("cpl_sb") || "null"); if (s && isValidJwt(s.access_token)) return s; } catch (e) {}
+    try {
+      var s = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
+      // Keep a session that's still fresh OR carries a refresh_token to renew.
+      if (s && isValidJwt(s.access_token) && (s.refresh_token || !s.exp || s.exp > Date.now())) return s;
+    } catch (e) {}
+    sessionStorage.removeItem("cpl_sb");
     return null;
+  }
+  function refreshToken(rt) {
+    return fetch(SUPABASE_URL + "/auth/v1/token?grant_type=refresh_token", {
+      method: "POST", headers: { apikey: SUPABASE_ANON, "Content-Type": "application/json" },
+      body: JSON.stringify({ refresh_token: rt })
+    }).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("refresh " + r.status)); });
+  }
+  // Resolve to a session whose access token is fresh, renewing if needed. On a
+  // failed refresh, drops the dead session so the UI flips back to "Sign in"
+  // rather than pretending to be authed.
+  function ensureFresh() {
+    var s = state.sess;
+    if (!s) return Promise.resolve(null);
+    if (s.exp && s.exp <= Date.now() + 60000 && s.refresh_token) {
+      return refreshToken(s.refresh_token).then(function (tok) {
+        if (!isValidJwt(tok.access_token)) throw new Error("bad refresh");
+        s = { access_token: tok.access_token, refresh_token: tok.refresh_token || s.refresh_token,
+          email: s.email, exp: Date.now() + (parseInt(tok.expires_in || "3600", 10) * 1000) };
+        state.sess = s;
+        try { sessionStorage.setItem("cpl_sb", JSON.stringify(s)); } catch (e) {}
+        return s;
+      }).catch(function () {
+        state.sess = null; try { sessionStorage.removeItem("cpl_sb"); } catch (e) {}
+        return null;
+      });
+    }
+    return Promise.resolve(s);
   }
   function signIn(email) {
     try { sessionStorage.setItem("cpl_sb_return_tab", "raci"); } catch (e) {}
@@ -75,11 +113,17 @@
     return fetch(SUPABASE_URL + "/rest/v1/" + path, { headers: { apikey: SUPABASE_ANON } })
       .then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
   }
+  // Refresh-gated write: renews the access token first so a stale token never
+  // silently 401s a save. A null session (refresh failed) surfaces as a 401 the
+  // caller reports — no silent optimistic "save".
   function sbWrite(method, path, body, prefer) {
-    var headers = { apikey: SUPABASE_ANON, "Content-Type": "application/json",
-      Authorization: "Bearer " + (state.sess && state.sess.access_token) };
-    if (prefer) headers.Prefer = prefer;
-    return fetch(SUPABASE_URL + "/rest/v1/" + path, { method: method, headers: headers, body: JSON.stringify(body) });
+    return ensureFresh().then(function (s) {
+      var token = (s && s.access_token) || "";
+      var headers = { apikey: SUPABASE_ANON, "Content-Type": "application/json",
+        Authorization: "Bearer " + token };
+      if (prefer) headers.Prefer = prefer;
+      return fetch(SUPABASE_URL + "/rest/v1/" + path, { method: method, headers: headers, body: JSON.stringify(body) });
+    });
   }
 
   // ─── Load ──────────────────────────────────────────────────────────────────
@@ -171,11 +215,17 @@
   function hasAny(r) { return !!(r && ((r.R || []).length + (r.A || []).length + (r.C || []).length + (r.I || []).length)); }
 
   function saveRaci(item, raciObj) {
+    var key = item.type + ":" + item.id;
+    var prev = state.raci[key];
     var row = { item_type: item.type, item_id: item.id, raci: raciObj,
       updated_by: (state.sess && state.sess.email) || null, updated_at: new Date().toISOString() };
-    state.raci[item.type + ":" + item.id] = raciObj; // optimistic
+    state.raci[key] = raciObj; // optimistic
     return sbWrite("POST", "item_raci?on_conflict=item_type,item_id", row, "resolution=merge-duplicates")
-      .then(function (r) { if (!r.ok) throw new Error("save failed (" + r.status + ")"); });
+      .then(function (r) {
+        // Roll back the optimistic state on failure so the UI reflects reality
+        // (don't leave a change that didn't persist looking saved).
+        if (!r.ok) { state.raci[key] = prev; throw new Error("save failed (" + r.status + ")"); }
+      });
   }
 
   // ─── Member-picker modal (assign people to one role of one item) ───────────
@@ -526,18 +576,30 @@
           [allCb, el("span", {}, ["all"])]) : null])]);
     var tbl = el("table", { "class": "raci-table raci-dir" }, [
       el("tr", {}, [el("th", {}, ["Name"]), el("th", {}, ["Role / title"]), el("th", {}, ["Email"]),
-        nudgeTh])]);
+        nudgeTh,
+        el("th", { "class": "raci-th-nudge", title: "When this member was last nudged" }, ["Last nudged"]),
+        el("th", { "class": "raci-th-nudge", title: "Whether a response has been recorded since the last nudge" }, ["Status"])])]);
     state.members.forEach(function (m) {
       var on = m.nudge !== false; // default true
       var cb = el("input", { type: "checkbox", "class": "raci-nudge-cb" });
       cb.checked = on; cb.disabled = !canEdit || !m.email;
       cb.title = !m.email ? "Add an email before enabling nudges" : (canEdit ? "" : "Sign in to change");
       if (canEdit && m.email) cb.addEventListener("change", function () { toggleNudge(m, cb); });
+      // Last-nudged + response-status cells (the accountability columns).
+      var nudgedTd = el("td", { "class": "raci-nudged-cell" }, [m.last_nudged_at ? relTime(m.last_nudged_at) : "—"]);
+      var st = nudgeStatus(m);
+      var statusTd = el("td", { "class": "raci-status-cell " + st.cls }, [st.txt]);
+      if (canEdit) {
+        statusTd.title = "Click to mark this member as having responded now";
+        statusTd.style.cursor = "pointer";
+        statusTd.addEventListener("click", function () { markResponded(m); });
+      }
       tbl.appendChild(el("tr", { "class": on ? "" : "raci-row-muted" }, [
         editCell(m, "name", "raci-dir-n"),
         editCell(m, "role", "raci-dir-r"),
         editCell(m, "email", "raci-dir-e"),
-        el("td", { "class": "raci-nudge-cell" }, [cb])]));
+        el("td", { "class": "raci-nudge-cell" }, [cb]),
+        nudgedTd, statusTd]));
     });
     var nudgeOn = state.members.filter(function (m) { return m.nudge !== false && m.email; }).length;
     var head = el("div", { "class": "raci-dir-head" }, [
@@ -582,16 +644,69 @@
     var emails = recips.map(function (m) { return m.email; }).join(",");
     var subject = "CPL Workplan — quick update request";
     var url = location.origin + location.pathname + "#raci";
-    var body = "Hi team,\n\nPlease take a moment to update the status of your CPL workplan "
-      + "items (your Responsible/Accountable assignments) on the dashboard:\n" + url
-      + "\n\nThank you!\n";
+    var body = "Hi team,\n\nPlease reply with a short status update on your CPL workplan "
+      + "items (your Responsible / Accountable assignments) — even if there's nothing new, "
+      + "just reply \"no activity this period\" so we know you're current.\n\n"
+      + "Your items live here: " + url + "\n\nThank you!\n";
     return "mailto:" + encodeURIComponent(emails)
       + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  }
+  // Record that a nudge was fired at each opted-in member (last_nudged_at = now),
+  // so the directory can show who's been nudged + who's gone quiet. Optimistic;
+  // best-effort PATCH (the mailto is the real action).
+  function stampNudged() {
+    if (!state.sess) return;
+    var recips = nudgeRecipients();
+    if (!recips.length) return;
+    var now = new Date().toISOString();
+    recips.forEach(function (m) { m.last_nudged_at = now; });
+    if (state.view === "directory") render();
+    recips.forEach(function (m) {
+      sbWrite("PATCH", "team_members?id=eq." + encodeURIComponent(m.id), { last_nudged_at: now }, "return=minimal");
+    });
   }
   function openNudge() {
     var href = buildNudgeHref();
     if (!href) { alert("No team members are opted in for nudges. Set them in the Team Directory."); return; }
+    stampNudged();
     window.location.href = href;
+  }
+  // Relative time for the directory's nudge-status columns.
+  function relTime(iso) {
+    if (!iso) return "";
+    var t = new Date(iso).getTime();
+    if (isNaN(t)) return "";
+    var days = Math.floor((Date.now() - t) / 86400000);
+    if (days <= 0) return "today";
+    if (days === 1) return "1d ago";
+    if (days < 30) return days + "d ago";
+    var mo = Math.floor(days / 30);
+    return mo + "mo ago";
+  }
+  // Response status for a member: responded (✓) when last_response_at is at or
+  // after the last nudge; otherwise awaiting (overdue ≥7d), or — if never nudged.
+  function nudgeStatus(m) {
+    var nud = m.last_nudged_at ? new Date(m.last_nudged_at).getTime() : 0;
+    var resp = m.last_response_at ? new Date(m.last_response_at).getTime() : 0;
+    if (resp && resp >= nud) return { txt: "✓ responded " + relTime(m.last_response_at), cls: "raci-st-ok" };
+    if (nud) {
+      var days = Math.floor((Date.now() - nud) / 86400000);
+      return { txt: "⏳ awaiting" + (days >= 1 ? " " + days + "d" : ""),
+        cls: days >= 7 ? "raci-st-overdue" : "raci-st-wait" };
+    }
+    return { txt: "—", cls: "raci-st-none" };
+  }
+
+  // Mark a member as having responded now (sets last_response_at). Reviewer-only;
+  // optimistic re-render, rolls back on error. Auto-set later when the braindump
+  // composer lands (posting an update records a response).
+  function markResponded(m) {
+    if (!state.sess) { alert("Sign in to record a response."); return; }
+    var now = new Date().toISOString();
+    var prev = m.last_response_at; m.last_response_at = now; render();
+    sbWrite("PATCH", "team_members?id=eq." + encodeURIComponent(m.id), { last_response_at: now }, "return=minimal")
+      .then(function (r) { if (!r.ok) throw new Error(); })
+      .catch(function () { m.last_response_at = prev; render(); alert("Could not save — are you a signed-in reviewer?"); });
   }
 
   function toggleNudge(m, cb) {
@@ -741,6 +856,12 @@
       ".raci-nudge-all-lbl{display:inline-flex;align-items:center;gap:.25rem;font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;color:var(--text-faint,#888);cursor:pointer;}" +
       ".raci-filter-nudge{margin-left:auto;background:var(--navy-primary,#0A2240);color:#fff;border-color:var(--navy-primary,#0A2240);}" +
       ".raci-filter-nudge:hover{background:var(--navy-secondary,#1c3d5a);}" +
+      ".raci-nudged-cell{text-align:center;font-size:.78rem;color:var(--text-faint,#777);white-space:nowrap;}" +
+      ".raci-status-cell{text-align:center;font-size:.78rem;white-space:nowrap;}" +
+      ".raci-st-ok{color:var(--ok,#2e7d32);font-weight:600;}" +
+      ".raci-st-wait{color:var(--text-faint,#777);}" +
+      ".raci-st-overdue{color:#b3261e;font-weight:600;}" +
+      ".raci-st-none{color:var(--text-faint,#aaa);}" +
       ".raci-nudge-cb{width:16px;height:16px;cursor:pointer;accent-color:var(--navy-primary,#0A2240);}" +
       ".raci-row-muted{opacity:.5;}.raci-row-muted .raci-dir-n{font-weight:500;}" +
       ".raci-edit-cell{cursor:text;border-radius:4px;}.raci-edit-cell:hover{background:var(--surface-2,#eef3f9);outline:1px dashed var(--border,#cdd7e1);}" +
