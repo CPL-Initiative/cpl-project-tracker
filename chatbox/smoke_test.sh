@@ -42,8 +42,11 @@ PY
 
 extract() { python3 "$PARSER"; }   # reads the SSE from its (piped) stdin
 
+LAST_ANSWER=""   # captured text of the most recent run(), for assertions
+
 run() { # label  json-body
   local label="$1" body="$2"
+  LAST_ANSWER=""
   echo "===================================================================="
   echo "MODE: $label"
   echo "REQUEST: $body"
@@ -58,10 +61,31 @@ run() { # label  json-body
   esac
   local ans
   ans="$(printf '%s' "$raw" | extract)"
+  LAST_ANSWER="$ans"
   echo "$ans"
   if [ -z "${ans// /}" ]; then echo "::error::empty answer for $label"; fail=1; fi
   echo
   sleep 1   # stay well under the 20 req/min/IP rate limit
+}
+
+# Content assertions on the LAST run()'s answer. Optional leading -i = ignore case.
+answer_must_match() {     # [-i] regex label
+  local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
+  local re="$1" label="$2"
+  if printf '%s' "$LAST_ANSWER" | grep -E $flag -q -- "$re"; then
+    echo "  [assert ok] $label matches /$re/"
+  else
+    echo "::error::$label: expected answer to match /$re/"; fail=1
+  fi
+}
+answer_must_not_match() { # [-i] regex label
+  local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
+  local re="$1" label="$2"
+  if printf '%s' "$LAST_ANSWER" | grep -E $flag -q -- "$re"; then
+    echo "::error::$label: answer should NOT match /$re/ (regression)"; fail=1
+  else
+    echo "  [assert ok] $label does not match /$re/"
+  fi
 }
 
 run "1 general" \
@@ -86,6 +110,18 @@ run "4 college_topic (Saddleback firefighter)" \
 # SoCal-focused list (tweak #3 follow-through).
 run "5 multi-turn follow-up (\"Southern California\")" \
   '{"query":"Southern California","session_id":"smoke-ci","history":[{"role":"user","content":"Which colleges give credit for an EMT license?"},{"role":"assistant","content":"Many California community colleges offer EMT credit, and there is a statewide standard too. Any particular part of California you would like me to focus on, or would you like to see all your options?"}]}'
+
+# REGRESSION GUARD (v18): a verbose place-only refinement ("How about West LA? I
+# live near there.") whose topic ("real estate") was set TWO turns earlier must
+# still surface West LA's local "CA Real Estate Salesperson" exhibit — not fall
+# back to its dental/health profile and wrongly say it has no real estate.
+# answer_must / answer_must_not assert on the captured text of the LAST run.
+run "6 deep multi-turn fold (West LA real estate)" \
+  '{"query":"How about West LA? I live near there.","session_id":"smoke-ci","history":[{"role":"user","content":"Which colleges give credit for a real estate license?"},{"role":"assistant","content":"There are statewide options plus several local college exhibits. Which part of California are you in, or do you have a specific college in mind?"},{"role":"user","content":"Southern CA in the LA area"},{"role":"assistant","content":"Here are the LA-area colleges with real estate CPL exhibits, including Los Angeles Pierce College."}]}'
+answer_must_match -i "real estate" "6 West LA"
+# The exact wrong-conclusion phrasings from the pre-v18 bug (targeted to avoid
+# false-positives on a correct, nuanced answer):
+answer_must_not_match -i "focused on dental|don.?t see a real estate|no real estate( license)? exhibit|does not (currently )?have( any)? real estate" "6 West LA"
 
 if [ "$fail" -ne 0 ]; then
   echo "SMOKE TEST FAILED"

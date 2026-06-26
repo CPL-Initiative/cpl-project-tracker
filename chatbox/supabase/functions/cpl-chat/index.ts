@@ -57,6 +57,8 @@ const COLLEGE_ALIASES: Record<string, string> = {
   "lapc": "Los Angeles Pierce College",
   "lasw": "Los Angeles Southwest College",
   "wlac": "West Los Angeles College",
+  "west la": "West Los Angeles College",
+  "west los angeles": "West Los Angeles College",
   "sbvc": "San Bernardino Valley College",
   "crafton": "Crafton Hills College",
   "mvc": "Moreno Valley College",
@@ -265,6 +267,23 @@ function extractTopicKeywords(query: string): string[] {
     .split(/\s+/)
     .filter((w) => w.length >= 3 && !TOPIC_STOP_WORDS.has(w));
 }
+
+// Words that mark a follow-up as NARROWING (a place/region/proximity filter, or a
+// "show me all" continuation) rather than introducing a NEW topic. Used only to
+// decide whether to fold the prior conversation's topic into the retrieval text —
+// a turn whose only keywords are these has no topic of its own, so the real
+// subject (e.g. "real estate license", asked turns ago) must be folded in.
+const REFINE_NOISE = new Set([
+  // place / region / proximity
+  "north", "south", "east", "west", "northern", "southern", "eastern", "western",
+  "california", "socal", "norcal", "bay", "area", "areas", "region", "regional",
+  "county", "local", "locally", "near", "nearby", "around", "home", "here", "there",
+  "live", "living", "city", "town", "inland", "empire", "coast", "coastal", "valley",
+  // list / continuation meta
+  "show", "see", "list", "option", "options", "all", "more", "them", "both",
+  "everything", "please", "thanks", "thank", "want", "like", "would", "could",
+  "tell", "give", "one", "ones",
+]);
 
 /** Expand topic keywords with synonyms to catch related exhibits */
 function expandWithSynonyms(keywords: string[]): string[] {
@@ -633,12 +652,23 @@ Deno.serve(async (req: Request) => {
     // entirely → single-turn → never asks (unchanged behavior).
     const multiTurn = Array.isArray(history);
 
-    // Retrieval text: a short follow-up ("Southern California", "Bakersfield",
-    // "show all") carries little topic signal on its own, so fold in the prior
-    // user turn so topic/college search still finds the original subject.
-    const lastUserTurn = [...convo].reverse().find((m: any) => m.role === "user")?.content || "";
-    const isRefinement = lastUserTurn.length > 0 && trimmedQuery.split(/\s+/).length <= 5;
-    const searchText = (isRefinement ? `${lastUserTurn} ${trimmedQuery}` : trimmedQuery).slice(0, 1000);
+    // Retrieval text: a follow-up that only NARROWS by place/region or says
+    // "show all" ("Southern California", "How about West LA? I live near there.")
+    // carries no NEW topic of its own — and the real subject ("real estate
+    // license") may be SEVERAL turns back, not just the last one. So when the
+    // current turn has no topic keywords of its own (after dropping place/region
+    // and continuation noise), fold the WHOLE recent conversation's user turns
+    // into the retrieval text so topic/college search still finds that subject.
+    // A genuine topic switch (>=2 of its own topic words, e.g. "what about
+    // nursing?") searches the new topic instead, unaffected.
+    const priorUserText = convo
+      .filter((m: any) => m.role === "user")
+      .map((m: any) => m.content)
+      .join("  ");
+    const ownTopic = extractTopicKeywords(trimmedQuery).filter((w) => !REFINE_NOISE.has(w));
+    const isRefinement = priorUserText.length > 0 && ownTopic.length < 2;
+    // Current query FIRST so it's never lost to the 1000-char cap.
+    const searchText = (isRefinement ? `${trimmedQuery}  ${priorUserText}` : trimmedQuery).slice(0, 1000);
 
     const sb = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
 
@@ -676,8 +706,23 @@ Deno.serve(async (req: Request) => {
     let collegeContext = "";
     let topicContext = "";
 
-    const singleProfile = collegeProfile && !Array.isArray(collegeProfile) ? collegeProfile :
-                          (Array.isArray(collegeProfile) && collegeProfile.length === 1 ? collegeProfile[0] : null);
+    // If college detection was AMBIGUOUS (a token like "west" ilike-matched
+    // several colleges → an array) but the topic search DID find exhibits, narrow
+    // to the matched college that actually has topic hits. Otherwise we'd fall
+    // into college-only mode and silently DISCARD the topic results — the West-LA
+    // real-estate bug (5 "west" colleges → array → topic dropped → "no real
+    // estate" even though West LA has the exhibit).
+    let resolvedProfile: any = collegeProfile;
+    if (Array.isArray(collegeProfile) && collegeProfile.length > 1 && topicResults && topicResults.length > 0) {
+      const ranked = collegeProfile
+        .map((p: any) => ({ p, n: topicResults.filter((r: any) => r.college === p.college).length }))
+        .filter((x: any) => x.n > 0)
+        .sort((a: any, b: any) => b.n - a.n);
+      if (ranked.length > 0) resolvedProfile = ranked[0].p;
+    }
+
+    const singleProfile = resolvedProfile && !Array.isArray(resolvedProfile) ? resolvedProfile :
+                          (Array.isArray(resolvedProfile) && resolvedProfile.length === 1 ? resolvedProfile[0] : null);
 
     if (singleProfile && topicResults && topicResults.length > 0) {
       // COMBINED MODE: both college and topic detected
@@ -702,10 +747,10 @@ Deno.serve(async (req: Request) => {
         topicContext = `\n\nNote: ${collegeName} does not currently have CPL exhibits matching this topic in our database.\n` + topicContext;
       }
 
-    } else if (singleProfile || (Array.isArray(collegeProfile) && collegeProfile.length > 0)) {
+    } else if (singleProfile || (Array.isArray(resolvedProfile) && resolvedProfile.length > 0)) {
       // COLLEGE-ONLY MODE
       searchMode = "college";
-      collegeContext = buildCollegeContext(collegeProfile);
+      collegeContext = buildCollegeContext(resolvedProfile);
 
     } else if (topicResults && topicResults.length > 0) {
       // TOPIC-ONLY MODE
