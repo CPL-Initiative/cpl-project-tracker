@@ -27,11 +27,14 @@ check("lazy boot wiring present",
 // ── Part B — behavior, loaded into jsdom ──
 const SRC = fs.readFileSync("raci.js", "utf8");
 
-function makeDom(members, raciRows) {
+function makeDom(members, raciRows, opts) {
+  opts = opts || {};
   const dom = new JSDOM(
     "<!doctype html><html><head></head><body><div id='raci-root'></div></body></html>",
     { runScripts: "outside-only", url: "https://cpl-initiative.github.io/cpl-project-tracker/" });
   const w = dom.window;
+  dom._writes = [];
+  if (opts.session) w.sessionStorage.setItem("cpl_sb", JSON.stringify(opts.session));
   // Mock the items source + Supabase REST.
   w.CPL_DATA = {
     activity_kpis: [
@@ -49,7 +52,13 @@ function makeDom(members, raciRows) {
       { id: "9.9", name: "Orphan no activity", activity: "" }, // failure-mode guard
     ],
   };
-  w.fetch = function (url) {
+  w.fetch = function (url, init) {
+    const method = (init && init.method) || "GET";
+    if (method !== "GET") {
+      let parsed = null; try { parsed = JSON.parse((init && init.body) || "null"); } catch (e) {}
+      dom._writes.push({ url: url, method: method, body: parsed });
+      return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve([]); } });
+    }
     let body = [];
     if (/team_members/.test(url)) body = members;
     else if (/item_raci/.test(url)) body = raciRows;
@@ -166,6 +175,44 @@ const RACI_ROWS = [
   check("'Nudge for Updates' column header present", !!doc.querySelector(".raci-th-nudge")
     && /Nudge for Updates/.test(doc.body.innerHTML));
   check("per-member nudge checkbox rendered", doc.querySelectorAll(".raci-nudge-cb").length >= 1);
+
+  // ── (h) Copy-RACI (Session 77 — StarPort): copy one row's R/A/C/I to others ──
+  // Anonymous viewer: no ⧉ copy affordance.
+  const anon = makeDom(MEMBERS, RACI_ROWS);
+  anon.window.CPL_RACI_TAB.boot();
+  await new Promise((r) => setTimeout(r, 30));
+  check("anon: no ⧉ copy button", anon.window.document.querySelectorAll(".raci-copy-btn").length === 0);
+
+  // Signed-in reviewer: copy button on POPULATED rows only.
+  const signed = makeDom(MEMBERS, RACI_ROWS, { session: { access_token: "aaa.bbb.ccc" } });
+  signed.window.CPL_RACI_TAB.boot();
+  await new Promise((r) => setTimeout(r, 30));
+  const sdoc = signed.window.document;
+  check("signed-in: ⧉ copy button on a populated row (1.1)",
+    !!sdoc.querySelector('[data-raci-key="project:1.1"] .raci-copy-btn'));
+  check("signed-in: NO copy button on an empty row (3.2)",
+    !sdoc.querySelector('[data-raci-key="project:3.2"] .raci-copy-btn'));
+
+  // Click copy on 1.1 → modal opens with a target list.
+  sdoc.querySelector('[data-raci-key="project:1.1"] .raci-copy-btn').click();
+  check("copy modal opens", !!sdoc.getElementById("raciOverlay") && !!sdoc.querySelector(".raci-copy-list"));
+  const pick = sdoc.querySelector('.raci-copy-pick[data-search^="3.2 "]');
+  check("copy modal lists target rows", !!pick);
+  if (pick) {
+    const cb = pick.querySelector("input");
+    cb.checked = true; cb.dispatchEvent(new signed.window.Event("change"));
+    const goBtn = Array.from(sdoc.querySelectorAll(".raci-btn-go"))
+      .filter((b) => /Copy to/.test(b.textContent))[0];
+    check("Copy button enables + counts the selection",
+      goBtn && !goBtn.disabled && /Copy to 1 row/.test(goBtn.textContent));
+    goBtn.click();
+    await new Promise((r) => setTimeout(r, 30));
+    const w = signed._writes.filter((x) => /item_raci/.test(x.url) && x.body && x.body.item_id === "3.2");
+    check("Copy POSTs the source RACI to the target key (3.2)",
+      w.length === 1 && w[0].body.item_type === "project" &&
+      w[0].body.raci && Array.isArray(w[0].body.raci.R) &&
+      w[0].body.raci.R.length === 1 && w[0].body.raci.R[0].name === "Crystal Nasio");
+  }
 
   let failed = 0;
   for (const [name, ok] of results) {
