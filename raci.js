@@ -168,6 +168,7 @@
   // ─── RACI helpers ──────────────────────────────────────────────────────────
   function raciFor(item) { return state.raci[item.type + ":" + item.id] || { R: [], A: [], C: [], I: [] }; }
   function names(arr) { return (arr || []).map(function (m) { return m && m.name ? m.name : m; }); }
+  function hasAny(r) { return !!(r && ((r.R || []).length + (r.A || []).length + (r.C || []).length + (r.I || []).length)); }
 
   function saveRaci(item, raciObj) {
     var row = { item_type: item.type, item_id: item.id, raci: raciObj,
@@ -205,6 +206,89 @@
     showModal(role.label + " — " + (item.isActivity ? "Activity " + item.id : item.id) + "  " + item.name,
       [el("div", { "class": "raci-modal-sub" }, [role.desc]), list, msg],
       [save]);
+  }
+
+  // ─── Copy-RACI modal (copy one row's R/A/C/I onto other rows) ──────────────
+  // v1 = REPLACE: each selected target's R/A/C/I is overwritten with a deep
+  // copy of the source's. One upsert per target (saveRaci on item_type,item_id).
+  function openCopyRaci(source) {
+    if (!state.sess) { alert("Sign in (CCCCO MAP) to copy RACI."); return; }
+    var src = raciFor(source);
+
+    // Source summary — confirm exactly what's being copied.
+    var summary = el("div", { "class": "raci-copy-summary" }, ROLES.map(function (role) {
+      var ns = names(src[role.k]);
+      return el("div", { "class": "raci-copy-role" }, [
+        el("span", { "class": "raci-copy-rk", title: role.label }, [role.k]),
+        ns.length ? el("span", {}, ns.map(function (n) { return chip(n); }))
+                  : el("span", { "class": "raci-empty" }, ["—"])]);
+    }));
+
+    // Targets = every OTHER row, in tree order, depth-indented.
+    var srcKey = source.type + ":" + source.id;
+    var checks = [];
+    var rows = state.items.filter(function (it) { return (it.type + ":" + it.id) !== srcKey; })
+      .map(function (it) {
+        var cb = el("input", { type: "checkbox" });
+        checks.push({ cb: cb, item: it });
+        cb.addEventListener("change", updateBtn);
+        return el("label", { "class": "raci-pick raci-copy-pick",
+          style: "padding-left:" + (0.35 + it.depth * 0.9) + "rem;",
+          "data-search": (it.id + " " + it.name).toLowerCase() }, [cb,
+          el("span", { "class": "raci-pick-n" },
+            [(it.isActivity ? "Activity " + it.id : it.id) + "  " + it.name]),
+          it.isSub ? el("span", { "class": "raci-tier-tag" }, ["sub"]) : null]);
+      });
+    var list = el("div", { "class": "raci-pick-list raci-copy-list" }, rows);
+
+    var go = el("button", { "class": "raci-btn raci-btn-go" }, ["Copy to 0 rows"]);
+    go.disabled = true;
+    function shownRows() { return rows.filter(function (r) { return r.style.display !== "none"; }); }
+    function updateBtn() {
+      var n = checks.filter(function (c) { return c.cb.checked; }).length;
+      go.textContent = "Copy to " + n + " row" + (n === 1 ? "" : "s");
+      go.disabled = !n;
+    }
+
+    var search = el("input", { type: "search", "class": "raci-in", placeholder: "Filter target rows…" });
+    var master = el("input", { type: "checkbox" });
+    search.addEventListener("input", function () {
+      var q = search.value.trim().toLowerCase();
+      rows.forEach(function (r) {
+        r.style.display = (!q || r.getAttribute("data-search").indexOf(q) >= 0) ? "" : "none";
+      });
+      master.checked = false;
+    });
+    master.addEventListener("change", function () {
+      shownRows().forEach(function (r) {
+        var inp = r.querySelector("input");
+        var c = checks.filter(function (x) { return x.cb === inp; })[0];
+        if (c) c.cb.checked = master.checked;
+      });
+      updateBtn();
+    });
+    var masterLbl = el("label", { "class": "raci-copy-all" },
+      [master, el("span", {}, ["Select all shown"])]);
+
+    var msg = el("div", { "class": "raci-modal-msg" }, []);
+    go.addEventListener("click", function () {
+      var chosen = checks.filter(function (c) { return c.cb.checked; });
+      if (!chosen.length) return;
+      msg.textContent = "Copying…"; go.disabled = true;
+      Promise.all(chosen.map(function (c) {
+        return saveRaci(c.item, JSON.parse(JSON.stringify(raciFor(source))));
+      })).then(function () { closeModal(); render(); })
+        .catch(function (e) { msg.textContent = e.message; updateBtn(); });
+    });
+
+    showModal("Copy RACI — " + (source.isActivity ? "Activity " + source.id : source.id) + "  " + source.name,
+      [el("div", { "class": "raci-modal-sub" }, ["Copy this row's assignments onto other rows."]),
+       summary,
+       el("div", { "class": "raci-copy-tools" }, [search, masterLbl]),
+       list,
+       el("div", { "class": "raci-copy-warn" }, ["Replaces each selected row's current R / A / C / I."]),
+       msg],
+      [go]);
   }
 
   // ─── Add-member modal ──────────────────────────────────────────────────────
@@ -298,11 +382,23 @@
       var rowCls = item.isActivity ? "raci-row-act" : (item.isSub ? "raci-row-sub" : "raci-row-proj");
       var tr = el("tr", { "class": rowCls, "data-raci-key": item.type + ":" + item.id,
         "data-depth": String(item.depth) }, []);
-      tr.appendChild(el("td", { "class": "raci-item-cell",
+      var itemCell = el("td", { "class": "raci-item-cell",
         style: "padding-left:" + (0.6 + item.depth * 1.15) + "rem;" }, [
         el("span", { "class": "raci-item-id" }, [item.isActivity ? "Activity " + item.id : item.id]),
         el("span", { "class": "raci-item-name" }, [item.name]),
-        item.isSub ? el("span", { "class": "raci-tier-tag", title: "Workplan sub-activity" }, ["sub-activity"]) : null]));
+        item.isSub ? el("span", { "class": "raci-tier-tag", title: "Workplan sub-activity" }, ["sub-activity"]) : null]);
+      // ⧉ copy — only when a reviewer is signed in AND this row has ≥1 assignment.
+      // Lives in the item cell (no click handler of its own), so no conflict with
+      // the RACI cells' openRoleEditor.
+      if (canEdit && hasAny(rc)) {
+        var cpBtn = el("button", { "class": "raci-copy-btn",
+          title: "Copy this row's R/A/C/I to other rows" }, ["⧉ copy"]);
+        (function (src) {
+          cpBtn.addEventListener("click", function (e) { e.stopPropagation(); openCopyRaci(src); });
+        })(item);
+        itemCell.appendChild(cpBtn);
+      }
+      tr.appendChild(itemCell);
       ROLES.forEach(function (role) {
         var cell = el("td", { "class": "raci-cell" + (canEdit ? " raci-cell-edit" : ""),
           title: canEdit ? "Click to assign " + role.label : "" }, []);
@@ -593,7 +689,17 @@
       ".raci-pick:hover{background:var(--surface-2,#f4f7fb);}" +
       ".raci-pick-n{font-weight:600;color:var(--text-strong,#222);font-size:.85rem;}" +
       ".raci-pick-r{color:#888;font-size:.76rem;margin-left:auto;text-align:right;}" +
-      ".raci-modal-b .raci-in{display:block;width:100%;margin-bottom:.5rem;box-sizing:border-box;}";
+      ".raci-modal-b .raci-in{display:block;width:100%;margin-bottom:.5rem;box-sizing:border-box;}" +
+      ".raci-copy-btn{margin-left:.5rem;font-size:.64rem;font-weight:600;color:var(--accent-link,#1c5d99);background:var(--surface-2,#eef3f9);border:1px solid var(--border,#d4dde7);border-radius:4px;padding:.04rem .35rem;cursor:pointer;vertical-align:middle;}" +
+      ".raci-copy-btn:hover{background:var(--gold-soft,#fbf3d9);border-color:var(--gold-accent,#B8860B);}" +
+      ".raci-copy-summary{display:flex;flex-direction:column;gap:.25rem;margin:0 0 .7rem;padding:.5rem .6rem;background:var(--surface-2,#f4f7fb);border-radius:6px;}" +
+      ".raci-copy-role{display:flex;align-items:center;gap:.5rem;}" +
+      ".raci-copy-rk{font-weight:700;color:var(--navy-secondary,#1c3d5a);min-width:1.1rem;}" +
+      ".raci-copy-tools{display:flex;align-items:center;gap:.7rem;margin-bottom:.4rem;}" +
+      ".raci-copy-tools .raci-in{flex:1 1 auto;margin-bottom:0;}" +
+      ".raci-copy-all{display:flex;align-items:center;gap:.35rem;white-space:nowrap;font-size:.78rem;color:#555;cursor:pointer;}" +
+      ".raci-copy-list{max-height:38vh;overflow:auto;border:1px solid var(--border,#e3e9f0);border-radius:6px;padding:.2rem;}" +
+      ".raci-copy-warn{margin-top:.5rem;font-size:.76rem;color:#A33;}";
     document.head.appendChild(el("style", { id: "raci-css", html: css }));
   }
 
