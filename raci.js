@@ -588,6 +588,13 @@
         ["📝" + (nUp ? " " + nUp : "")]);
       (function (it) { upBtn.addEventListener("click", function (e) { e.stopPropagation(); openUpdate(it); }); })(item);
       itemCell.appendChild(upBtn);
+      // 📣 per-item nudge — emails this item's R/A people the card + composer link.
+      if (canEdit && itemNudgeRecipients(item).length) {
+        var inBtn = el("button", { "class": "raci-itemnudge-btn",
+          title: "Nudge this item's Responsible/Accountable people — emails the card + a link to update it" }, ["📣"]);
+        (function (it) { inBtn.addEventListener("click", function (e) { e.stopPropagation(); openItemNudge(it); }); })(item);
+        itemCell.appendChild(inBtn);
+      }
       tr.appendChild(itemCell);
       ROLES.forEach(function (role) {
         var cell = el("td", { "class": "raci-cell" + (canEdit ? " raci-cell-edit" : ""),
@@ -811,6 +818,47 @@
     stampNudged();
     window.location.href = href;
   }
+
+  // ─── Per-item nudge (Phase 2): email THIS item's R/A people, quote the card,
+  // and link straight to its update composer (?update=<key>#raci → openUpdate).
+  function itemNudgeRecipients(item) {
+    var rc = raciFor(item), seen = {}, out = [];
+    ["R", "A"].forEach(function (k) {
+      (rc[k] || []).forEach(function (m) {
+        var e = m && m.email; if (e && !seen[e.toLowerCase()]) { seen[e.toLowerCase()] = 1; out.push(m); }
+      });
+    });
+    return out;
+  }
+  function buildItemNudgeHref(item) {
+    var recips = itemNudgeRecipients(item);
+    if (!recips.length) return null;
+    var emails = recips.map(function (m) { return m.email; }).join(",");
+    var c = cplItem(item);
+    var link = location.origin + location.pathname + "?update=" + encodeURIComponent(item.key) + "#raci";
+    var subject = "CPL update request — " + (item.isActivity ? "Activity " + item.id : item.id) + " " + c.name;
+    var body = "Hi,\n\nQuick status check on your CPL workplan item:\n\n" + itemSummaryText(item)
+      + "\n\nPlease share a few details — even \"no activity this period\" is helpful. "
+      + "Click here and braindump a couple lines; CC will write it up for you:\n" + link
+      + "\n\nThank you!\n";
+    return "mailto:" + encodeURIComponent(emails)
+      + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  }
+  function stampItemNudged(item) {
+    if (!state.sess) return;
+    var want = {}; itemNudgeRecipients(item).forEach(function (m) { want[(m.email || "").toLowerCase()] = 1; });
+    var now = new Date().toISOString();
+    var hit = state.members.filter(function (m) { return m.email && want[m.email.toLowerCase()]; });
+    hit.forEach(function (m) { m.last_nudged_at = now; });
+    if (state.view === "directory") render();
+    hit.forEach(function (m) { sbWrite("PATCH", "team_members?id=eq." + encodeURIComponent(m.id), { last_nudged_at: now }, "return=minimal"); });
+  }
+  function openItemNudge(item) {
+    var href = buildItemNudgeHref(item);
+    if (!href) { alert("No Responsible/Accountable member with an email on this item — assign someone (with an email) first."); return; }
+    stampItemNudged(item);
+    window.location.href = href;
+  }
   // Relative time for the directory's nudge-status columns.
   function relTime(iso) {
     if (!iso) return "";
@@ -1032,6 +1080,8 @@
       ".raci-upd-meta{font-size:.72rem;color:var(--text-faint,#999);margin-top:.15rem;}" +
       ".raci-upd-ta{width:100%;box-sizing:border-box;font-family:inherit;font-size:.85rem;}" +
       ".raci-upd-actions{display:flex;gap:.5rem;margin:.3rem 0;}" +
+      ".raci-itemnudge-btn{margin-left:.3rem;font-size:.66rem;background:none;border:1px solid transparent;border-radius:4px;padding:.04rem .3rem;cursor:pointer;vertical-align:middle;}" +
+      ".raci-itemnudge-btn:hover{background:var(--gold-soft,#fbf3d9);border-color:var(--gold-accent,#B8860B);}" +
       ".raci-nudge-cb{width:16px;height:16px;cursor:pointer;accent-color:var(--navy-primary,#0A2240);}" +
       ".raci-row-muted{opacity:.5;}.raci-row-muted .raci-dir-n{font-weight:500;}" +
       ".raci-edit-cell{cursor:text;border-radius:4px;}.raci-edit-cell:hover{background:var(--surface-2,#eef3f9);outline:1px dashed var(--border,#cdd7e1);}" +
@@ -1076,5 +1126,6 @@
   }
 
   window.CPL_RACI_TAB = { boot: boot, render: render, focusItem: focusItem,
-    _nudgeHref: buildNudgeHref, _openUpdate: openUpdate, _itemSummary: itemSummaryText };
+    _nudgeHref: buildNudgeHref, _openUpdate: openUpdate, _itemSummary: itemSummaryText,
+    _itemNudgeHref: buildItemNudgeHref };
 })();
