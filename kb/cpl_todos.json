@@ -1,32 +1,32 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-06-26 (Session 77 · StarPort — the full nudge → braindump → CC-writes-it-up → card update loop is LIVE + the RACI save-persistence bug fixed)",
- "_session": 77,
- "_status": "SESSION 77 — StarPort built the whole update loop, end to end. (1) FIXED a real bug: RACI saves weren't persisting after ~1h (an expired sign-in token, silently) — now auto-refreshed, so assignments stick. Anything you saved earlier today that vanished needs a redo. (2) NEW: a 📝 Update button on EVERY Activity & Project card (and RACI row) — click it, braindump a couple lines, and CC writes them into a clean status update saved to the card. (3) NEW: a 📣 nudge on each RACI row emails THAT item's Responsible/Accountable people, quotes the card, and links them straight to the braindump box (no email account needed). (4) NEW: the Team Directory shows Last-nudged + a ✓ responded / ⏳ awaiting status so you can see who's gone quiet. (5) NEW: an Annual Report tab that assembles a draft from live data (✨AI polish / ⬇Word / 🖨Print). To finish the loop I need the 3 lead emails so they can post their own updates. NEXT for Fable: surface posted updates ON the card face + Annual Report, then the standing lanes.",
+ "_as_of": "2026-06-26 (Session 78 · SkyMap — the updates you post on the RACI tab now show ON the Activity/Project cards too, with a timestamp)",
+ "_session": 78,
+ "_status": "SESSION 78 — SkyMap, a short snappy follow-on to StarPort. Closed half of the big polish item: an update you post via a 📝 card link (or the RACI composer) now appears ON the card face itself — newest one, with a date + who wrote it — not just inside the RACI tab. Also added the 📝 Update + 👥 RACI links to every SUB-ACTIVITY card (1.1, 1.2, …) so they match the project cards. NEXT for Fable: the other half — fold those same posted updates into the Annual Report so it self-freshens. Still need the 3 lead emails from you so your team can post their own updates.",
  "items": [
   {
-   "id": "sam-try-update-loop",
+   "id": "sam-try-card-updates",
    "who": "sam",
    "tab": "activities-projects",
-   "text": "TRY IT (live now): every Activity header + Project card has a 📝 Update link. Click it → it drops you into a braindump box for that exact item → type a few fragments → '✨ Let CC write it up' turns them into a clean status update → Save. You wrote your first one already — now it's on all the cards so anyone can pop in anytime. Tell me how it feels in the wild."
+   "text": "TRY IT (live now): the test update you posted to 1.1 now shows up ON the card, not just in the RACI tab — look for the 'Latest Update' line with a timestamp + author. Post a 📝 update on any Activity or Project card and watch it land on the card face. The 📝 Update + 👥 RACI links are now on the sub-activity cards (1.1–1.4 etc.) too, matching the project cards."
   },
   {
    "id": "sam-try-item-nudge",
    "who": "sam",
    "tab": "raci",
-   "text": "TRY IT: on a RACI row where someone is Responsible/Accountable (with an email), the per-row 📣 drafts an email to THOSE people that quotes the card AND links them straight to the braindump box — no email account or reply-parsing needed, they just click and type. Send one to yourself to see the round-trip. The Team Directory now also shows Last-nudged + ✓ responded / ⏳ awaiting so you can spot who's overdue."
+   "text": "TRY IT: on a RACI row where someone is Responsible/Accountable (with an email), the per-row 📣 drafts an email to THOSE people that quotes the card AND links them straight to the braindump box — no email account or reply-parsing needed. Send one to yourself to see the round-trip. The Team Directory also shows Last-nudged + ✓ responded / ⏳ awaiting so you can spot who's overdue."
   },
   {
    "id": "sam-lead-emails",
    "who": "sam",
    "tab": "raci",
-   "text": "NEED FROM YOU to finish the loop: the exact email addresses for Crystal Nasio, Terence Nelson, and Calvin/Gloria so I can add them as allowed reviewers (then THEY can post their own braindump updates + edit RACI). Add your own slee@cccco.edu too. Until then, only map@rccd.edu can save. (You picked: keep the mailto-draft nudge for now; the update-log question is resolved — the new composer replaces it.)"
+   "text": "NEED FROM YOU to finish the loop: the exact email addresses for Crystal Nasio, Terence Nelson, and Calvin/Gloria so I can add them as allowed reviewers (then THEY can post their own braindump updates + edit RACI). Add your own slee@cccco.edu too. Until then only map@rccd.edu can save — but anyone can already SEE the updates on the cards."
   },
   {
    "id": "sam-annual-report",
    "who": "sam",
    "tab": "annual-report",
-   "text": "NEW tab — Annual Report: it auto-assembles a full draft from live data (Exec Summary · Vision 2030 & Goals · the 4 Activities · Statewide Impact · Spotlights · Looking Ahead), editable in place with a live preview, plus ✨AI polish, ⬇Word, and 🖨Print. The Activity/Spotlight content is creation-era for now — it'll freshen automatically once your team's braindump updates start landing. Eyeball the structure + tell me what sections to add/cut."
+   "text": "NEW tab — Annual Report: auto-assembles a full draft from live data (Exec Summary · Vision 2030 & Goals · the 4 Activities · Statewide Impact · Spotlights · Looking Ahead), editable in place with a live preview, plus ✨AI polish, ⬇Word, 🖨Print. The Activity/Spotlight content is creation-era for now — it'll freshen automatically once Fable folds your team's braindump updates into it (next up). Eyeball the structure + tell me what sections to add/cut."
   },
   {
    "id": "sam-vet-plans-kb",
@@ -47,10 +47,10 @@
    "text": "Carry-over: the merge worklist groups WORD VARIANTS ('Conversational Japanese' ↔ 'Japanese Conversation', 'Assisting' ↔ 'Assistant'). Confirm the clean language families when you can; where a group shows an amber '⚠ Spans N disciplines' note, eyeball for homonyms first."
   },
   {
-   "id": "fable-surface-updates",
+   "id": "fable-annual-report-fresh",
    "who": "fable",
-   "tab": "activities-projects",
-   "text": "EPIC POLISH (autonomous, top of the list): surface the posted item_updates ON the card face + in the Annual Report. Today the 📝 composer writes to item_updates but cards still show projects.latest_update and the Annual Report uses creation-era CPL_DATA. Make both show the latest item_updates entry (cron has SUPABASE_SERVICE_KEY → generator could read it; or overlay live in the consumer). Makes the Annual Report self-freshening. See docs/cobi_raci_nudge_lessons.md (Session 77)."
+   "tab": "annual-report",
+   "text": "TOP of the list (autonomous — the second half of Session-78's job): surface the posted item_updates INTO annual_report.js. Cards already self-freshen (card_updates.js, Session 78); the Annual Report still assembles from creation-era CPL_DATA. Fold the newest item_updates per item into the Activity-Progress + Spotlight sections so the Report self-freshens too. Same anon-read pattern as card_updates.js. See docs/cobi_raci_nudge_lessons.md (Session 78)."
   },
   {
    "id": "fable-mid-renumber",

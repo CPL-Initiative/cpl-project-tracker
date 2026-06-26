@@ -1916,25 +1916,9 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > #520–#534) archived** → [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
 > [`docs/ccr_merge_workspace_lessons.md`](docs/ccr_merge_workspace_lessons.md).
 
-### Session 74 — SkyBlaster: the public CPL Fact Sheet (2026-06-25)
-
-A self-contained product sprint with Sam in the loop. Built **`fact-sheet/`** — a
-**standalone, public** page (own HTML/CSS/JS, NO COBI nav, the `kb-portal/` pattern
-minus auth) that recreates the Feb-2026 journalist Fact Sheet PDF, served by Pages at
-`…/fact-sheet/`, and a **`📄 CPL Fact Sheet ↗`** launch link in the COBI nav rail (a
-non-tab `<a class="cpl-tab">`, no `data-tab` → `tabs.js` ignores it; both HTMLs, Rule 4).
-`factsheet.js` binds the 6 headline KPIs (+ breakdowns + Veteran-Sprint figures) from
-`../live_metrics.json` (baked values = fallback); the exhibit/recommendation KPI cards +
-Statewide Exhibits counts are a labeled MAP Custom Reporting Module **snapshot**. Cambria
-prose / Calibri data; print CSS (0.4in) → "Save as PDF" is the export. Reconciled the two
-KPI cards' statewide credit-rec counts (**1,304** CCC articulation rows = **1,298**
-adoptions + 6; **1,101** = distinct recs) and added a **Statewide Exhibits** section (132
-exhibits / 12 program areas, expandable per-sector lists from
-`kb/statewide_exhibit_categories.json`). **PRs #537 + #540, both merged + LIVE.** Full
-story: [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md); reusable pattern:
-[`docs/kb-notes/playbook-standalone-public-page.md`](docs/kb-notes/playbook-standalone-public-page.md).
-**NEXT: [`docs/session_75_handoff.md`](docs/session_75_handoff.md)** — Fact-Sheet follow-ups
-(live-wire the snapshot tier; tech-landscape diagram → live HTML) + the standing lanes.
+> **Session 74 narrative (SkyBlaster — the public CPL Fact Sheet, PRs #537/#540) archived**
+> → [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
+> [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md).
 
 ### Session 77 — StarPort: the RACI update loop, end to end (2026-06-26)
 
@@ -1954,6 +1938,24 @@ note: [`methodology-refresh-token-before-write.md`](docs/kb-notes/methodology-re
 Full story: [`docs/cobi_raci_nudge_lessons.md`](docs/cobi_raci_nudge_lessons.md) (Session 77). **NEXT:
 [`docs/session_78_handoff.md`](docs/session_78_handoff.md)** — surface `item_updates` on the card face +
 Annual Report (self-freshening); the 3 lead emails for `allowed_reviewers`; the standing lanes.
+
+### Session 78 — SkyMap: posted updates surface on the card face (2026-06-26)
+
+A short, snappy follow-on to StarPort — **1 PR #564, merged + live** — closing Session-77 carryover #4
+(the first half). Two RACI-update tweaks Sam flagged: **(1) the 📝 Update + 👥 RACI deep-links now render
+on every SUB-ACTIVITY card** (the `activity-kpi` cards 1.1/1.2/…), not just the Activity header + Project
+cards — each sub-activity is its own RACI row keyed `project:<id>`, so the composer/focus already worked
+there. **(2) posted `item_updates` now show ON the card face** via a new read-only overlay
+**`card_updates.js`**: the generator stamps a hidden `<div class="cpl-live-update" data-update-key="…">`
+hook (keyed `activity:N`/`project:<id>`) on every Activity/sub-activity/project card; the overlay fetches
+the newest `item_updates` row per key (anon read), fills it with **body + date + author**, and **hides that
+card's creation-era `.cpl-static-update` line** so there's one current "Latest Update." Code-only PR
+(hooks/links are regenerated sections) → dispatched the daily workflow post-merge. New KB note:
+[`methodology-live-overlay-onto-generated-cards.md`](docs/kb-notes/methodology-live-overlay-onto-generated-cards.md).
+Tests: `tests/card_updates.test.js` (17). Full story:
+[`docs/cobi_raci_nudge_lessons.md`](docs/cobi_raci_nudge_lessons.md) (Session 78). **NEXT:
+[`docs/session_79_handoff.md`](docs/session_79_handoff.md)** — the Annual Report half of the same carryover
+(surface `item_updates` into `annual_report.js`); the 3 lead emails; the standing lanes.
 
 ---
 
