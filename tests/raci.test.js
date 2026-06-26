@@ -33,12 +33,22 @@ function makeDom(members, raciRows) {
     { runScripts: "outside-only", url: "https://cpl-initiative.github.io/cpl-project-tracker/" });
   const w = dom.window;
   // Mock the items source + Supabase REST.
-  w.CPL_DATA = { projects: [
-    { id: "1.1", name: "MAP Platform Development", activity: "Activity 1: Build AI-Enhanced CPL Infrastructure" },
-    { id: "3.2", name: "CPL Units Transcription", activity: "Activity 3: Build Robust CPL Data Infrastructure" },
-    { id: "5.1", name: "AI-Ready California Demonstration", activity: "Activity 4: Sprints, Projects & Partnerships" },
-    { id: "9.9", name: "Orphan no activity", activity: "" }, // failure-mode guard
-  ] };
+  w.CPL_DATA = {
+    activity_kpis: [
+      { activity_id: "Activity 1", activity_name: "Build AI-Enhanced CPL Infrastructure",
+        kpis: [{ id: "1.1", name: "MAP Platform Development" }] },
+      { activity_id: "Activity 4", activity_name: "Sprints, Projects & Partnerships",
+        kpis: [{ id: "4.1", name: "Sprints" }] },
+    ],
+    projects: [
+      { id: "1.1", name: "MAP Platform Development", activity: "Activity 1: Build AI-Enhanced CPL Infrastructure" },
+      { id: "4.1", name: "Sprints and Projects", activity: "Activity 4: Sprints, Projects & Partnerships" },
+      { id: "4.1.1", name: "Veteran Sprint", activity: "Activity 4: Sprints, Projects & Partnerships" }, // nests under 4.1
+      { id: "3.2", name: "CPL Units Transcription", activity: "Activity 3: Build Robust CPL Data Infrastructure" },
+      { id: "5.1", name: "AI-Ready California Demonstration", activity: "Activity 4: Sprints, Projects & Partnerships" },
+      { id: "9.9", name: "Orphan no activity", activity: "" }, // failure-mode guard
+    ],
+  };
   w.fetch = function (url) {
     let body = [];
     if (/team_members/.test(url)) body = members;
@@ -81,26 +91,47 @@ const RACI_ROWS = [
   check("RACI chip rendered for an assigned member", /raci-chip/.test(doc.body.innerHTML)
     && /Crystal Nasio/.test(doc.body.innerHTML));
 
-  // (f) matrix Activity/search filter (Session 76 — SkyTrek).
+  // (f) 3-tier hierarchy: Activity → sub-activity → project (Session 76 — SkyTrek).
+  check("sub-activity row tagged + styled (4.1 from activity_kpis)",
+    !!doc.querySelector('.raci-row-sub[data-raci-key="project:4.1"]') &&
+    /sub-activity/.test(doc.body.innerHTML));
+  check("project nests under its sub-activity (4.1.1 at depth 2)",
+    (doc.querySelector('[data-raci-key="project:4.1.1"]') || {}).getAttribute &&
+    doc.querySelector('[data-raci-key="project:4.1.1"]').getAttribute("data-depth") === "2");
+  check("a 5.x project nests directly under its Activity (depth 1)",
+    doc.querySelector('[data-raci-key="project:5.1"]').getAttribute("data-depth") === "1");
+
+  // (g) hierarchical scope filter + search.
   const fsel = doc.querySelector(".raci-filter-sel");
   const fq = doc.querySelector(".raci-filter-q");
-  check("matrix filter bar present (Activity dropdown + search)", !!fsel && !!fq);
+  // Scope assertions read the MATRIX TABLE text, not body (the dropdown <option>
+  // labels now contain sub-activity names, which would false-match on body).
+  const mtext = () => { const t = doc.querySelector(".raci-table"); return t ? t.textContent : ""; };
+  check("filter bar present (scope dropdown + search)", !!fsel && !!fq);
+  check("dropdown exposes sub-activities as options (optgroup)",
+    !!doc.querySelector('option[value="sub:4.1"]') && !!doc.querySelector('optgroup'));
   if (fsel) {
-    // Filter to Activity 1 → only Activity 1's header + its projects show.
-    fsel.value = "1";
+    // Scope to Activity 1 → only Activity 1's subtree.
+    fsel.value = "act:1";
     fsel.dispatchEvent(new dom.window.Event("change"));
-    check("Activity filter narrows to one Activity header",
+    check("Activity scope narrows to one Activity header",
       doc.querySelectorAll(".raci-row-act").length === 1);
-    check("Activity-1 filter keeps its project (MAP Platform)",
-      /MAP Platform/.test(doc.body.innerHTML) && !/CPL Units Transcription/.test(doc.body.innerHTML));
-    // Back to all, then search by project name.
+    check("Activity-1 scope keeps its sub-activity (MAP Platform), drops others",
+      /MAP Platform/.test(mtext()) && !/CPL Units Transcription/.test(mtext()));
+    // Scope to a single SUB-ACTIVITY → it + its child project + its Activity header.
+    fsel.value = "sub:4.1"; fsel.dispatchEvent(new dom.window.Event("change"));
+    check("sub-activity scope shows the sub + its child project",
+      /Sprints and Projects/.test(mtext()) && /Veteran Sprint/.test(mtext()));
+    check("sub-activity scope excludes sibling 5.x project + other Activities",
+      !/AI-Ready California/.test(mtext()) && !/MAP Platform/.test(mtext()));
+    // Back to all, search by project name → match + ancestor chain.
     fsel.value = "all"; fsel.dispatchEvent(new dom.window.Event("change"));
     fq.value = "transcription"; fq.dispatchEvent(new dom.window.Event("input"));
     check("search surfaces the matching project + its Activity header",
-      /CPL Units Transcription/.test(doc.body.innerHTML) && !/MAP Platform/.test(doc.body.innerHTML));
+      /CPL Units Transcription/.test(mtext()) && !/MAP Platform/.test(mtext()));
     check("a no-match search shows the empty-state row", (function () {
       fq.value = "zzzznomatch"; fq.dispatchEvent(new dom.window.Event("input"));
-      return /No Activities or Projects match/.test(doc.body.innerHTML);
+      return /No Activities or Projects match/.test(mtext());
     })());
     // Reset for the directory-view checks below.
     const clr = doc.querySelector(".raci-filter-clear");
