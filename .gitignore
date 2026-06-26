@@ -54,3 +54,8 @@ kb/similar_family_out/
 
 # First Light curation scratch (assembled into tools/first_light_selection.json, then discarded)
 tools/_fl_sel/
+
+# CPL nudges — runtime PII + generated outputs stay out of git (repo is public)
+nudges/emails.local.json
+nudges/nudges.json
+nudges/nudges_preview.md

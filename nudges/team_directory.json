@@ -1,0 +1,13 @@
+{
+  "_about": "Lead directory for the CPL update nudges (NAMES + roles only — this repo is PUBLIC, so NO emails live here). Names are matched as a case-insensitive substring against each project's free-text `lead` field. Emails are injected at run time from a gitignored `nudges/emails.local.json` (manual path) or the `CPL_NUDGE_EMAILS` env/secret (automated path), keyed by name — see build_nudges.py. PII stays out of git.",
+  "_as_of": "2026-06-26",
+  "update_link": "https://cpl-initiative.github.io/cpl-project-tracker/#activities-projects",
+  "leads": [
+    { "name": "Crystal Nasio",   "role": "" },
+    { "name": "Samuel Lee",      "role": "Director" },
+    { "name": "Terence Nelson",  "role": "" },
+    { "name": "Gloria",          "role": "", "_note": "lead field reads 'Calvin Klein Gloria' — confirm the right name" },
+    { "name": "James Todd",      "role": "" },
+    { "name": "Beth Kay",        "role": "" }
+  ]
+}
