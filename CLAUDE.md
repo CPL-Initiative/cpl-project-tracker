@@ -279,6 +279,15 @@ into the Pipeline Reference below or into dedicated docs.
     (Over-waiting for `clean` on `unstable` PRs — then ending the turn so the
     CI-success event never woke the session — is what made #221/#223 sit until
     Sam nudged "Go!", 2026-06-01. Don't.)
+  - **Poll CI via the MCP `github` tools, NOT `curl` (Session 76).** The remote
+    sandbox's `GH_TOKEN`/`curl` against `api.github.com` returns *"GitHub access
+    is not enabled for this session"* — only the **MCP `github` server** can reach
+    GitHub. So a `Monitor`/Bash loop that curls the check-runs API to watch CI
+    **silently times out** (it never gets data). Check status with
+    `pull_request_read {method:"get"}` (small — read `mergeable_state`) or
+    `actions_list {method:"list_workflow_runs"}` (large — parse the saved
+    tool-result file with python, don't read it inline). Webhooks don't deliver
+    CI *success*, so you must poll.
   - **Autonomous engineering PRs → merge on green; don't wait for a comment,
     review, or "Go!".** For the session's *own* work (refactors, migrations, bug
     fixes, dead-code deletes, generator/doc changes it initiated), Sam's
