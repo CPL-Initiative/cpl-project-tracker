@@ -47,9 +47,14 @@ function makeDom(rows) {
       "</body></html>",
     { runScripts: "outside-only", url: "https://cpl-initiative.github.io/cpl-project-tracker/" });
   const w = dom.window;
+  // A mutable holder so a test can change what the NEXT fetch returns (guards the
+  // refetch-on-re-run path — the "_loading never cleared" bug).
+  dom._rows = rows;
+  dom._fetches = 0;
   w.fetch = function (url) {
     if (/item_updates/.test(url)) {
-      return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(rows); } });
+      dom._fetches++;
+      return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(dom._rows); } });
     }
     return Promise.resolve({ ok: false, status: 404, json: function () { return Promise.resolve([]); } });
   };
@@ -109,6 +114,18 @@ const ROWS = [
   try { API.run(); await new Promise((r) => setTimeout(r, 10)); } catch (e) { threw = true; }
   check("re-run is idempotent (no throw, still one block)", !threw &&
     doc.querySelectorAll('.cpl-live-update[data-update-key="project:1.1"] [style*="Latest Update"], .cpl-live-update[data-update-key="project:1.1"] span').length >= 1);
+
+  // (f) the refetch fix — a NEWLY posted update must refresh an already-filled
+  // hook (the "_loading never cleared / skip data-filled" bug). Change the mocked
+  // rows + fire cpl-item-updated → the hook reflects the newer body.
+  const fetchesBefore = probe._fetches;
+  probe._rows = [
+    { item_type: "project", item_id: "1.1", body: "Even newer 1.1", author: "map@rccd.edu", created_at: "2026-06-27T09:00:00Z" }
+  ].concat(ROWS);
+  probe.window.dispatchEvent(new probe.window.CustomEvent("cpl-item-updated", { detail: { key: "project:1.1" } }));
+  await new Promise((r) => setTimeout(r, 30));
+  check("cpl-item-updated triggers a refetch (not a stale re-apply)", probe._fetches > fetchesBefore);
+  check("a newly posted update refreshes the already-filled hook", /Even newer 1\.1/.test(hook11.innerHTML));
 
   // ── report ──
   let failed = 0;
